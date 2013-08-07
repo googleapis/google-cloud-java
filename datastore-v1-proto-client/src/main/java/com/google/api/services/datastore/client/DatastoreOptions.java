@@ -17,6 +17,9 @@ package com.google.api.services.datastore.client;
 
 import com.google.api.client.auth.oauth2.Credential;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * A mutable object containing settings for the datastore.
  *
@@ -40,8 +43,9 @@ public class DatastoreOptions {
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
 
   private final Credential credential;
-  public static final String SCOPE = "https://www.googleapis.com/auth/datastore" +
-      " https://www.googleapis.com/auth/userinfo.email";
+  public static final List<String> SCOPES = Arrays.asList(
+      "https://www.googleapis.com/auth/datastore",
+      "https://www.googleapis.com/auth/userinfo.email");
 
   DatastoreOptions(String dataset, String host, Credential credential) {
     this.dataset = dataset;

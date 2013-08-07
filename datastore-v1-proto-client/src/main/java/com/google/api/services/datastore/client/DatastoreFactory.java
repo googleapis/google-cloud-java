@@ -72,7 +72,8 @@ public class DatastoreFactory {
       throw new IllegalArgumentException("options not set");
     }
     HttpRequestFactory client = makeClient(options);
-    return new RemoteRpc(client, buildUrl(options));
+    return new RemoteRpc(client,
+        buildUrl(options, System.getenv("DATASTORE_URL_INTERNAL_OVERRIDE")));
   }
 
   /**
@@ -102,14 +103,19 @@ public class DatastoreFactory {
    /**
    * Build a valid datastore URL.
    */
-  private String buildUrl(DatastoreOptions options) {
+  String buildUrl(DatastoreOptions options, String overrideUrl) {
     try {
       if (options.getDataset() == null) {
         throw new IllegalArgumentException("datastore dataset not set in options");
       }
-      URI validUri = new URI(String.format("%s/datastore/%s/datasets/%s",
-          options.getHost(), VERSION, options.getDataset()));
-      return validUri.toString();
+      String url;
+      if (overrideUrl != null) {
+        url = String.format("%s/datasets/%s", overrideUrl, options.getDataset());
+      } else {
+        url = String.format("%s/datastore/%s/datasets/%s",
+            options.getHost(), VERSION, options.getDataset());
+      }
+      return new URI(url).toString();
     } catch (URISyntaxException e) {
       throw new IllegalArgumentException(e);
     }

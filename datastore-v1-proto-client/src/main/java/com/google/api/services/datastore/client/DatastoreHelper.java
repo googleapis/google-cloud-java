@@ -42,8 +42,10 @@ import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -54,6 +56,59 @@ import java.util.logging.Logger;
  */
 public class DatastoreHelper {
   private static final Logger logger = Logger.getLogger(DatastoreHelper.class.getName());
+
+  /** The property used in the Datastore to give us a random distribution. **/
+  public static final String SCATTER_PROPERTY_NAME = "__scatter__";
+
+  /** The property used in the Datastore to get the key of the entity. **/
+  public static final String KEY_PROPERTY_NAME = "__key__";
+
+  /**
+   * Comparator for Keys
+   */
+  private static final class KeyComparator implements Comparator<Key> {
+
+    static final KeyComparator INSTANCE = new KeyComparator();
+
+    private int comparePathElement(PathElement thisElement, PathElement otherElement) {
+      int result = thisElement.getKind().compareTo(otherElement.getKind());
+      if (result != 0) {
+        return result;
+      }
+      if (thisElement.hasId()) {
+        if (!otherElement.hasId()) {
+          return -1;
+        }
+        return Long.valueOf(thisElement.getId()).compareTo(otherElement.getId());
+      }
+      if (otherElement.hasId()) {
+        return 1;
+      }
+
+      return thisElement.getName().compareTo(otherElement.getName());
+    }
+
+    @Override
+    public int compare(Key thisKey, Key otherKey) {
+      if (!thisKey.getPartitionId().equals(otherKey.getPartitionId())) {
+        throw new IllegalArgumentException("Cannot compare keys with different partition ids.");
+      }
+
+      Iterator<PathElement> thisPath = thisKey.getPathElementList().iterator();
+      Iterator<PathElement> otherPath = otherKey.getPathElementList().iterator();
+      while (thisPath.hasNext()) {
+        if (!otherPath.hasNext()) {
+          return 1;
+        }
+        int result = comparePathElement(thisPath.next(), otherPath.next());
+        if (result != 0) {
+          return result;
+        }
+      }
+
+      return otherPath.hasNext() ? -1 : 0;
+    }
+  }
 
   private DatastoreHelper() {}
 
@@ -91,7 +146,7 @@ public class DatastoreHelper {
         .setTransport(transport)
         .setJsonFactory(jsonFactory)
         .setServiceAccountId(account)
-        .setServiceAccountScopes(DatastoreOptions.SCOPE)
+        .setServiceAccountScopes(DatastoreOptions.SCOPES)
         .setServiceAccountPrivateKeyFromP12File(new File(privateKeyFile))
         .build();
   }
@@ -132,6 +187,20 @@ public class DatastoreHelper {
    */
   public static Datastore getDatastoreFromEnv() throws GeneralSecurityException, IOException {
     return DatastoreFactory.get().create(getOptionsfromEnv().build());
+  }
+
+  /**
+   * Gets a {@link QuerySplitter}.
+   *
+   * The returned {@link QuerySplitter#getSplits} cannot accept a query that contains inequality
+   * filters, a sort filter, or a missing kind.
+   */
+  public static QuerySplitter getQuerySplitter() {
+    return QuerySplitterImpl.INSTANCE;
+  }
+
+  public static Comparator<Key> getKeyComparator() {
+    return KeyComparator.INSTANCE;
   }
 
   /**
