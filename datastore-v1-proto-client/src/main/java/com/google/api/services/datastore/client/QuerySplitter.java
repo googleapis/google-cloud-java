@@ -28,8 +28,10 @@ public interface QuerySplitter {
   /**
    * Returns a list of sharded {@link Query}s for the given query.
    *
-   * This will create up to the desired number of splits, however it may return less splits if
-   * the desired number of splits is unavailable.
+   * <p>This will create up to the desired number of splits, however it may return less splits if
+   * the desired number of splits is unavailable. This will happen if the number of split points
+   * provided by the underlying Datastore is less than the desired number, which will occur if the
+   * number of results for the query is too small.
    *
    * @param query the query to split.
    * @param numSplits the desired number of splits.

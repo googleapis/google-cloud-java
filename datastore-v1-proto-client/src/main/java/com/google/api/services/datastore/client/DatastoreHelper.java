@@ -39,7 +39,6 @@ import com.google.protobuf.ByteString;
 import java.io.File;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -238,8 +237,8 @@ public class DatastoreHelper {
    *
    * Uses AND to combine filters.
    */
-  public static Filter.Builder makeFilter(Filter ...subfilters) {
-    return makeCompositeFilter(Arrays.asList(subfilters));
+  public static Filter.Builder makeFilter(Filter... subfilters) {
+    return makeFilter(Arrays.asList(subfilters));
   }
 
   /**
@@ -247,7 +246,7 @@ public class DatastoreHelper {
    *
    * Uses AND to combine filters.
    */
-  public static Filter.Builder makeCompositeFilter(Iterable<Filter> subfilters) {
+  public static Filter.Builder makeFilter(Iterable<Filter> subfilters) {
     return Filter.newBuilder()
         .setCompositeFilter(CompositeFilter.newBuilder()
             .addAllFilter(subfilters)
@@ -258,7 +257,7 @@ public class DatastoreHelper {
    * Make an entity property with the specified value.
    */
   public static Property.Builder makeProperty(String name, Value value) {
-    return Property.newBuilder().setName(name).addValue(value);
+    return Property.newBuilder().setName(name).setValue(value);
   }
 
   /**
@@ -269,35 +268,35 @@ public class DatastoreHelper {
   }
 
   /**
-   * Make an entity property with the specified values.
-   */
-  public static Property.Builder makeProperty(String name, Iterable<Value> values) {
-    return Property.newBuilder().setName(name).setMulti(true).addAllValue(values);
-  }
-
-  /**
-   * Make an entity property with the specified values.
-   */
-  public static Property.Builder makeProperty(String name, Value ...values) {
-    return makeProperty(name, Arrays.asList(values));
-  }
-
-  /**
-   * Make an entity property with the specified values.
-   */
-  public static Property.Builder makeProperty(String name, Value.Builder ...builders) {
-    Property.Builder prop = makeProperty(name, Collections.<Value>emptyList());
-    for (Value.Builder builder : builders) {
-      prop.addValue(builder);
-    }
-    return prop;
-  }
-
-  /**
    * Make a property reference for use in a query.
    */
   public static PropertyReference.Builder makePropertyReference(String propertyName) {
     return PropertyReference.newBuilder().setName(propertyName);
+  }
+
+  /**
+   * Make an entity value with the specified list values.
+   */
+  public static Value.Builder makeValue(Iterable<Value> listValues) {
+    return Value.newBuilder().addAllListValue(listValues);
+  }
+
+  /**
+   * Make an entity value with the specified list values.
+   */
+  public static Value.Builder makeValue(Value... values) {
+    return makeValue(Arrays.asList(values));
+  }
+
+  /**
+   * Make an entity value with the specified list values.
+   */
+  public static Value.Builder makeValue(Value.Builder... builders) {
+    Value.Builder value = Value.newBuilder();
+    for (Value.Builder builder : builders) {
+      value.addListValue(builder);
+    }
+    return value;
   }
 
   /**
@@ -419,64 +418,140 @@ public class DatastoreHelper {
   }
 
   /**
-   * Return a map of property name to java object.
-   *
-   * Looses microseconds on timestamp values, meaning and indexing information.
-   *
-   * @param entity the entity to search for the property.
-   * @return The property value, or null if it's not found.
+   * @return a map of property name to value
    */
-  public static Map<String, Object> getPropertyMap(EntityOrBuilder entity) {
-    Map<String, Object> result = new HashMap<String, Object>();
+  public static Map<String, Value> getPropertyMap(EntityOrBuilder entity) {
+    Map<String, Value> result = new HashMap<String, Value>();
     for (PropertyOrBuilder property : entity.getPropertyList()) {
-      Object value;
-      if (property.getMulti()) {
-        List<Object> values = new ArrayList<Object>(property.getValueCount());
-        for (ValueOrBuilder subValue : property.getValueList()) {
-          values.add(getValue(subValue));
-        }
-        value = values;
-      } else {
-        value = getValue(property.getValue(0));
-      }
-      result.put(property.getName(), value);
+      result.put(property.getName(), property.getValue());
     }
     return Collections.unmodifiableMap(result);
   }
 
   /**
-   * Convert a Value to a Java Object. Ignores meaning.
-   *
-   * Looses microseconds on timestamp values, meaning and indexing information.
+   * @return the double contained in value
+   * @throws IllegalArgumentException if the value does not contain a double.
    */
-  public static Object getValue(ValueOrBuilder value) {
-    if (value.hasBooleanValue()) {
-      return value.getBooleanValue();
+  public static double getDouble(ValueOrBuilder value) {
+    if (!value.hasDoubleValue()) {
+      throw new IllegalArgumentException("Value does not contain a double.");
     }
-    if (value.hasIntegerValue()) {
-      return value.getIntegerValue();
+    return value.getDoubleValue();
+  }
+
+  /**
+   * @return the key contained in value
+   * @throws IllegalArgumentException if the value does not contain a key.
+   */
+  public static Key getKey(ValueOrBuilder value) {
+    if (!value.hasKeyValue()) {
+      throw new IllegalArgumentException("Value does not contain a key.");
     }
-    if (value.hasDoubleValue()) {
-      return value.getDoubleValue();
-    }
-    if (value.hasTimestampMicrosecondsValue()) {
-      return new Date(value.getTimestampMicrosecondsValue() / 1000L);
-    }
-    if (value.hasKeyValue()) {
-      return value.getKeyValue();
-    }
-    if (value.hasBlobKeyValue()) {
-      return value;  // Returning value directly to avoid loosing type info.
-    }
-    if (value.hasStringValue()) {
-      return value.getStringValue();
-    }
-    if (value.hasBlobValue()) {
+    return value.getKeyValue();
+  }
+
+  /**
+   * @return the blob contained in value
+   * @throws IllegalArgumentException if the value does not contain a blob.
+   */
+  public static ByteString getByteString(ValueOrBuilder value) {
+    if (value.getMeaning() == 18 && value.hasStringValue()) {
+      return value.getStringValueBytes();
+    } else if (value.hasBlobValue()) {
       return value.getBlobValue();
     }
-    if (value.hasEntityValue()) {
-      return value.getEntityValue();
+    throw new IllegalArgumentException("Value does not contain a bob.");
+  }
+
+  /**
+   * @return the blob key contained in value
+   * @throws IllegalArgumentException if the value does not contain a blob key.
+   */
+  public static String getBlobKey(ValueOrBuilder value) {
+    if (value.getMeaning() == 18 && value.hasStringValue()) {
+      return value.getStringValue();
+    } else if (value.hasBlobKeyValue()) {
+      return value.getBlobKeyValue();
     }
-    return null;
+    throw new IllegalArgumentException("Value does not contain a bob key.");
+  }
+
+  /**
+   * @return the entity contained in value
+   * @throws IllegalArgumentException if the value does not contain an entity.
+   */
+  public static Entity getEntity(ValueOrBuilder value) {
+    if (!value.hasEntityValue()) {
+      throw new IllegalArgumentException("Value does not contain an Entity.");
+    }
+    return value.getEntityValue();
+  }
+
+  /**
+   * @return the string contained in value
+   * @throws IllegalArgumentException if the value does not contain a string.
+   */
+  public static String getString(ValueOrBuilder value) {
+    if (!value.hasStringValue()) {
+      throw new IllegalArgumentException("Value does not contain a string.");
+    }
+    return value.getStringValue();
+  }
+
+  /**
+   * @return the boolean contained in value
+   * @throws IllegalArgumentException if the value does not contain a boolean.
+   */
+  public static boolean getBoolean(ValueOrBuilder value) {
+    if (!value.hasBooleanValue()) {
+      throw new IllegalArgumentException("Value does not contain a boolean.");
+    }
+    return value.getBooleanValue();
+  }
+
+  /**
+   * @return the long contained in value
+   * @throws IllegalArgumentException if the value does not contain a long.
+   */
+  public static long getLong(ValueOrBuilder value) {
+    if (!value.hasIntegerValue()) {
+      throw new IllegalArgumentException("Value does not contain an integer.");
+    }
+    return value.getIntegerValue();
+  }
+
+  /**
+   * @return the timestamp in microseconds contained in value
+   * @throws IllegalArgumentException if the value does not contain a timestamp.
+   */
+  public static long getTimestamp(ValueOrBuilder value) {
+    if (value.getMeaning() == 18 && value.hasIntegerValue()) {
+      return value.getIntegerValue();
+    } else if (value.hasTimestampMicrosecondsValue()) {
+      return value.getTimestampMicrosecondsValue();
+    }
+    throw new IllegalArgumentException("Value does not contain a timestamp.");
+  }
+
+  /**
+   * @return the list contained in value
+   * @throws IllegalArgumentException if the value does not contain a list.
+   */
+  public static List<Value> getList(ValueOrBuilder value) {
+    if (value.getListValueCount() == 0) {
+      throw new IllegalArgumentException("Value does not contain a list.");
+    }
+    return value.getListValueList();
+  }
+
+  /**
+   * Convert a timestamp value into a {@link Date} clipping off the microseconds.
+   *
+   * @param value a timestamp value to convert
+   * @return the resulting {@link Date}
+   * @throws IllegalArgumentException if the value does not contain a timestamp.
+   */
+  public static Date toDate(ValueOrBuilder value) {
+    return new Date(getTimestamp(value) / 1000);
   }
 }

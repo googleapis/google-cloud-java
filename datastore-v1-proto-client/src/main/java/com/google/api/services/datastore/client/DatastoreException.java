@@ -20,8 +20,22 @@ package com.google.api.services.datastore.client;
  *
  */
 public class DatastoreException extends Exception {
-  public final String methodName;
-  public final int code;
+  private final String methodName;
+  private final int code;
+
+  /**
+   * @return the HTTP response code
+   */
+  public int getCode() {
+    return code;
+  }
+
+  /**
+   * @return the datastore method name
+   */
+  public String getMethodName() {
+    return methodName;
+  }
 
   public DatastoreException(String methodName, int code, String message, Throwable cause) {
     super(message, cause);

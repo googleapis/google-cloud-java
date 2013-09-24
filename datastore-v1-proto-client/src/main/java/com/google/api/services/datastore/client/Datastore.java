@@ -20,8 +20,6 @@ import com.google.api.services.datastore.DatastoreV1.AllocateIdsRequest;
 import com.google.api.services.datastore.DatastoreV1.AllocateIdsResponse;
 import com.google.api.services.datastore.DatastoreV1.BeginTransactionRequest;
 import com.google.api.services.datastore.DatastoreV1.BeginTransactionResponse;
-import com.google.api.services.datastore.DatastoreV1.BlindWriteRequest;
-import com.google.api.services.datastore.DatastoreV1.BlindWriteResponse;
 import com.google.api.services.datastore.DatastoreV1.CommitRequest;
 import com.google.api.services.datastore.DatastoreV1.CommitResponse;
 import com.google.api.services.datastore.DatastoreV1.LookupRequest;
@@ -111,14 +109,6 @@ public class Datastore {
       return RunQueryResponse.parseFrom(remoteRpc.call("runQuery", request));
     } catch (IOException exception) {
       throw invalidResponseException("runQuery", exception);
-    }
-  }
-
-  public BlindWriteResponse blindWrite(BlindWriteRequest request) throws DatastoreException {
-    try {
-      return BlindWriteResponse.parseFrom(remoteRpc.call("blindWrite", request));
-    } catch (IOException exception) {
-      throw invalidResponseException("blindWrite", exception);
     }
   }
 }

@@ -39,7 +39,7 @@ public class DatastoreFactory {
 
   /** Singleton factory instance. */
   private static final DatastoreFactory INSTANCE = new DatastoreFactory();
-  private static final String VERSION = "v1beta1";
+  private static final String VERSION = "v1beta2";
 
   // Lazy load this because we might be running inside App Engine and this
   // class isn't on the whitelist.
