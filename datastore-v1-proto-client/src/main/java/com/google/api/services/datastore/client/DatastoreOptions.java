@@ -16,6 +16,7 @@
 package com.google.api.services.datastore.client;
 
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.api.client.http.HttpRequestInitializer;
 
 import java.util.Arrays;
 import java.util.List;
@@ -42,14 +43,18 @@ public class DatastoreOptions {
   private final String host;
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
 
+  private final HttpRequestInitializer initializer;
+
   private final Credential credential;
   public static final List<String> SCOPES = Arrays.asList(
       "https://www.googleapis.com/auth/datastore",
       "https://www.googleapis.com/auth/userinfo.email");
 
-  DatastoreOptions(String dataset, String host, Credential credential) {
+  DatastoreOptions(String dataset, String host, HttpRequestInitializer initializer,
+      Credential credential) {
     this.dataset = dataset;
     this.host = host != null ? host : DEFAULT_HOST;
+    this.initializer = initializer;
     this.credential = credential;
   }
 
@@ -59,6 +64,7 @@ public class DatastoreOptions {
   public static class Builder {
     private String dataset;
     private String host;
+    private HttpRequestInitializer initializer;
     private Credential credential;
 
     public Builder() { }
@@ -66,11 +72,12 @@ public class DatastoreOptions {
     public Builder(DatastoreOptions options) {
       this.dataset = options.dataset;
       this.host = options.host;
+      this.initializer = options.initializer;
       this.credential = options.credential;
     }
 
     public DatastoreOptions build() {
-      return new DatastoreOptions(dataset, host, credential);
+      return new DatastoreOptions(dataset, host, initializer, credential);
     }
 
     /**
@@ -86,6 +93,14 @@ public class DatastoreOptions {
      */
     public Builder host(String newHost) {
       host = newHost;
+      return this;
+    }
+
+    /**
+     * Sets the (optional) initializer to run on HTTP requests to the API.
+     */
+    public Builder initializer(HttpRequestInitializer newInitializer) {
+      initializer = newInitializer;
       return this;
     }
 
@@ -108,8 +123,11 @@ public class DatastoreOptions {
     return host;
   }
 
+  public HttpRequestInitializer getInitializer() {
+    return initializer;
+  }
+
   public Credential getCredential() {
     return credential;
   }
-
 }

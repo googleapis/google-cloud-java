@@ -72,7 +72,7 @@ public class DatastoreFactory {
       throw new IllegalArgumentException("options not set");
     }
     HttpRequestFactory client = makeClient(options);
-    return new RemoteRpc(client,
+    return new RemoteRpc(client, options.getInitializer(),
         buildUrl(options, System.getenv("DATASTORE_URL_INTERNAL_OVERRIDE")));
   }
 

@@ -16,12 +16,13 @@
 package com.google.api.services.datastore.client;
 
 import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
+import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.protobuf.ProtoHttpContent;
-
 import com.google.protobuf.MessageLite;
 
 import java.io.IOException;
@@ -35,12 +36,14 @@ import java.util.logging.Logger;
 class RemoteRpc {
   private static final Logger logger = Logger.getLogger(RemoteRpc.class.getName());
 
-  private HttpRequestFactory client;
-  private String url;
+  private final HttpRequestFactory client;
+  private final HttpRequestInitializer initializer;
+  private final String url;
   private int rpcCount = 0;
 
-  RemoteRpc(HttpRequestFactory client, String url) {
+  RemoteRpc(HttpRequestFactory client, HttpRequestInitializer initializer, String url) {
     this.client = client;
+    this.initializer = initializer;
     this.url = url;
     try {
       resolveURL("dummyRpc");
@@ -67,7 +70,11 @@ class RemoteRpc {
       try {
         rpcCount++;
         ProtoHttpContent payload = new ProtoHttpContent(request);
-        httpResponse = client.buildPostRequest(resolveURL(methodName), payload).execute();
+        HttpRequest httpRequest = client.buildPostRequest(resolveURL(methodName), payload);
+        if (initializer != null) {
+          initializer.initialize(httpRequest);
+        }
+        httpResponse = httpRequest.execute();
         return httpResponse.getContent();
       } catch (HttpResponseException e) {
         throw makeException(url, methodName, e.getStatusCode(), e.getContent(), e);
