@@ -3,4 +3,16 @@
   <groupId>com.ozarov.testing</groupId>
   <artifactId>git-demo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.google.http-client</groupId>
+  		<artifactId>google-http-client</artifactId>
+  		<version>1.18.0-rc</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.google.oauth-client</groupId>
+  		<artifactId>google-oauth-client</artifactId>
+  		<version>1.18.0-rc</version>
+  	</dependency>
+  </dependencies>
 </project>
