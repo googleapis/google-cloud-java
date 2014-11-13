@@ -1,15 +1,15 @@
 package com.google.gcloud.datastore;
 
-import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
 
-import java.util.List;
+import java.util.Set;
 
 public class DatastoreServiceOptions extends ServiceOptions {
 
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final String USERINFO_SCOPE = "https://www.googleapis.com/auth/userinfo.email";
-  private static final List<String> SCOPES = ImmutableList.of(DATASTORE_SCOPE, USERINFO_SCOPE);
+  private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE, USERINFO_SCOPE);
 
   private final String dataset;
 
