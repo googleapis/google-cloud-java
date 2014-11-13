@@ -14,5 +14,10 @@
   		<artifactId>google-oauth-client</artifactId>
   		<version>1.18.0-rc</version>
   	</dependency>
+  	<dependency>
+  		<groupId>com.google.guava</groupId>
+  		<artifactId>guava</artifactId>
+  		<version>RELEASE</version>
+  	</dependency>
   </dependencies>
 </project>
