@@ -1,7 +1,9 @@
 package com.google.gcloud.datastore;
 
 
-public interface DatastoreServiceFactory {
+public class DatastoreServiceFactory {
 
-  DatastoreService getDatastoreService(DatastoreServiceOptions options);
+  public DatastoreService getDatastoreService(DatastoreServiceOptions options) {
+    return new DatastoreServiceImpl(options);
+  }
 }

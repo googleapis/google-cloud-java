@@ -14,5 +14,17 @@
   		<artifactId>google-oauth-client</artifactId>
   		<version>1.18.0-rc</version>
   	</dependency>
+  	<dependency>
+  		<groupId>com.google.guava</groupId>
+  		<artifactId>guava</artifactId>
+  		<version>RELEASE</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.google.apis</groupId>
+  		<artifactId>
+  			google-api-services-datastore-protobuf
+  		</artifactId>
+  		<version>v1beta2-rev1-2.1.0</version>
+  	</dependency>
   </dependencies>
 </project>

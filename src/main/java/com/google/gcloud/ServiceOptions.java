@@ -1,116 +1,105 @@
 package com.google.gcloud;
 
-import java.util.Arrays;
-import java.util.List;
 
-import com.google.api.client.auth.oauth2.Credential;
+import com.google.api.client.googleapis.compute.ComputeCredential;
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.jackson.JacksonFactory;
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 
-public class ServiceOptions {
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.security.PrivateKey;
+import java.util.Set;
+
+public abstract class ServiceOptions {
+
+  private static final String DEFAULT_HOST = "https://www.googleapis.com";
 
   private final String host;
-  private static final String DEFAULT_HOST = "https://www.googleapis.com";
-  private final HttpRequestInitializer initializer;
-  private final Credential credential;
-  private final HttpTransport transport;
+  private final HttpTransport httpTransport;
+  private final HttpRequestInitializer httpRequestInitializer;
 
-  public static final List<String> SCOPES = Arrays.asList(
-      "https://www.googleapis.com/auth/datastore",
-      "https://www.googleapis.com/auth/userinfo.email");
-
-  ServiceOptions(Builder b) {
-    this.dataset = b.dataset;
-    this.host = b.host != null ? b.host : DEFAULT_HOST;
-    this.initializer = b.initializer;
-    this.credential = b.credential;
-    this.transport = b.transport;
+  protected ServiceOptions(Builder builder) {
+    host = MoreObjects.firstNonNull(builder.host, DEFAULT_HOST);
+    httpTransport = MoreObjects.firstNonNull(builder.httpTransport, getDefaultHttpTransport());
+    httpRequestInitializer = builder.httpRequestInitializer;
   }
 
-  /**
-   * Builder for {@link ServiceOptions}.
-   */
-  protected static class Builder {
-    private String dataset;
+  private static HttpTransport getDefaultHttpTransport() {
+    try {
+      NetHttpTransport transport = GoogleNetHttpTransport.newTrustedTransport();
+      // Try to connect using Google Compute Engine service account credentials.
+      ComputeCredential credential = new ComputeCredential(transport, new JacksonFactory());
+      // Force token refresh to detect if we are running on Google Compute Engine.
+      credential.refreshToken();
+      return credential.getTransport();
+    } catch (IOException | GeneralSecurityException e) {
+      return new NetHttpTransport();
+    }
+  }
+
+  protected abstract static class Builder {
+
     private String host;
-    private HttpRequestInitializer initializer;
-    private Credential credential;
-    private HttpTransport transport;
+    private HttpTransport httpTransport;
+    private HttpRequestInitializer httpRequestInitializer;
+    private PrivateKey privateKey;
 
-    public Builder() { }
+    public Builder() {}
 
-    public Builder(ServiceOptions options) {
-      this.dataset = options.dataset;
-      this.host = options.host;
-      this.initializer = options.initializer;
-      this.credential = options.credential;
-      this.transport = options.transport;
+    protected Builder(ServiceOptions options) {
+      host = options.host;
+      httpTransport = options.httpTransport;
+      httpRequestInitializer = options.httpRequestInitializer;
     }
 
-    public ServiceOptions build() {
-      return new ServiceOptions(this);
-    }
+    protected abstract ServiceOptions build();
 
-    /**
-     * Sets the dataset used to access the datastore.
-     */
-    public Builder dataset(String newDataset) {
-      dataset = newDataset;
+    public Builder setHost(String host) {
+      this.host = host;
       return this;
     }
 
-    /**
-     * Sets the host used to access the datastore.
-     */
-    public Builder host(String newHost) {
-      host = newHost;
+    public Builder setHttpTransport(HttpTransport httpTransport) {
+      this.httpTransport = httpTransport;
       return this;
     }
 
-    /**
-     * Sets the (optional) initializer to run on HTTP requests to the API.
-     */
-    public Builder initializer(HttpRequestInitializer newInitializer) {
-      initializer = newInitializer;
+    public Builder setHttpRequestInitializer(HttpRequestInitializer httpRequestInitializer) {
+      // TODO: replace HttpRequestInitializer with CrendentialProvider - 2 subclasses
+      // one that is set with HttpRequestInitializer (and another that is set
+      // with both private key and service account)
+      // Also, consider instead of HttpRequestIntializer option to have "AppEngine" option
+      // which will use reflection to create HttpRequestInitializer
+      Preconditions.checkArgument(
+          privateKey == null, "Can't set both PrivateKey and HttpRequestInitializer");
+      this.httpRequestInitializer = httpRequestInitializer;
       return this;
     }
 
-    /**
-     * Sets the Google APIs credentials used to access the API.
-     */
-    public Builder credential(Credential newCredential) {
-      credential = newCredential;
-      return this;
-    }
-
-    /**
-     * Sets the transport used to access the API.
-     */
-    public Builder transport(HttpTransport transport) {
-      this.transport = transport;
+    public Builder setPrivateKey(PrivateKey privateKey) {
+      Preconditions.checkArgument(
+          httpRequestInitializer == null, "Can't set both PrivateKey and HttpRequestInitializer");
+      this.privateKey = privateKey;
       return this;
     }
   }
 
-  // === getters ===
-
-  public String getDataset() {
-    return dataset;
-  }
+  protected abstract Set<String> getScopes();
 
   public String getHost() {
     return host;
   }
 
-  public HttpRequestInitializer getInitializer() {
-    return initializer;
+  public HttpTransport getHttpTransport() {
+    return httpTransport;
   }
 
-  public Credential getCredential() {
-    return credential;
-  }
-
-  public HttpTransport getTransport() {
-    return transport;
+  public HttpRequestInitializer getHttpRequestInitializer() {
+    return httpRequestInitializer;
   }
 }
