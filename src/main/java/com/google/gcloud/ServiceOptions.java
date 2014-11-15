@@ -1,6 +1,7 @@
 package com.google.gcloud;
 
 
+import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
 import com.google.api.client.googleapis.compute.ComputeCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -8,11 +9,9 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Preconditions;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.security.PrivateKey;
 import java.util.Set;
 
 public abstract class ServiceOptions {
@@ -21,40 +20,76 @@ public abstract class ServiceOptions {
 
   private final String host;
   private final HttpTransport httpTransport;
-  private final HttpRequestInitializer httpRequestInitializer;
+  private final AuthConfig authConfig;
 
   protected ServiceOptions(Builder builder) {
     host = MoreObjects.firstNonNull(builder.host, DEFAULT_HOST);
     httpTransport = MoreObjects.firstNonNull(builder.httpTransport, getDefaultHttpTransport());
-    httpRequestInitializer = builder.httpRequestInitializer;
+    authConfig = MoreObjects.firstNonNull(builder.authConfig, getDefaultAuthConfig());
   }
 
   private static HttpTransport getDefaultHttpTransport() {
+    // Consider App Engine
+    if (System.getProperty("com.google.appengine.application.id") != null) {
+      try {
+        return new UrlFetchTransport();
+      } catch (Exception ignore) {
+        // Maybe not on App Engine
+      }
+    }
+    // Consider Compute
     try {
-      NetHttpTransport transport = GoogleNetHttpTransport.newTrustedTransport();
-      // Try to connect using Google Compute Engine service account credentials.
-      ComputeCredential credential = new ComputeCredential(transport, new JacksonFactory());
-      // Force token refresh to detect if we are running on Google Compute Engine.
-      credential.refreshToken();
-      return credential.getTransport();
+      return getComputeCredential().getTransport();
     } catch (IOException | GeneralSecurityException e) {
       return new NetHttpTransport();
     }
+  }
+
+  private static AuthConfig getDefaultAuthConfig() {
+    // Consider App Engine
+    if (System.getProperty("com.google.appengine.application.id") != null) {
+      try {
+        return AuthConfig.createForAppEngine();
+      } catch (Exception ignore) {
+        // Maybe not on App Engine
+      }
+    }
+    // Consider Compute
+    try {
+      final ComputeCredential cred = getComputeCredential();
+      return new AuthConfig() {
+        @Override protected HttpRequestInitializer getHttpRequestInitializer(
+            HttpTransport transport, Set<String> scopes) {
+          return cred;
+        }
+      };
+    } catch (IOException | GeneralSecurityException e) {
+      return AuthConfig.createForAccount(null, null);
+    }
+  }
+
+  private static ComputeCredential getComputeCredential()
+      throws IOException, GeneralSecurityException {
+    NetHttpTransport transport = GoogleNetHttpTransport.newTrustedTransport();
+    // Try to connect using Google Compute Engine service account credentials.
+    ComputeCredential credential = new ComputeCredential(transport, new JacksonFactory());
+    // Force token refresh to detect if we are running on Google Compute Engine.
+    credential.refreshToken();
+    return credential;
   }
 
   protected abstract static class Builder {
 
     private String host;
     private HttpTransport httpTransport;
-    private HttpRequestInitializer httpRequestInitializer;
-    private PrivateKey privateKey;
+    private AuthConfig authConfig;
 
     public Builder() {}
 
     protected Builder(ServiceOptions options) {
       host = options.host;
       httpTransport = options.httpTransport;
-      httpRequestInitializer = options.httpRequestInitializer;
+      authConfig = options.authConfig;
     }
 
     protected abstract ServiceOptions build();
@@ -69,22 +104,8 @@ public abstract class ServiceOptions {
       return this;
     }
 
-    public Builder setHttpRequestInitializer(HttpRequestInitializer httpRequestInitializer) {
-      // TODO: replace HttpRequestInitializer with CrendentialProvider - 2 subclasses
-      // one that is set with HttpRequestInitializer (and another that is set
-      // with both private key and service account)
-      // Also, consider instead of HttpRequestIntializer option to have "AppEngine" option
-      // which will use reflection to create HttpRequestInitializer
-      Preconditions.checkArgument(
-          privateKey == null, "Can't set both PrivateKey and HttpRequestInitializer");
-      this.httpRequestInitializer = httpRequestInitializer;
-      return this;
-    }
-
-    public Builder setPrivateKey(PrivateKey privateKey) {
-      Preconditions.checkArgument(
-          httpRequestInitializer == null, "Can't set both PrivateKey and HttpRequestInitializer");
-      this.privateKey = privateKey;
+    public Builder setAuthConfig(AuthConfig authConfig) {
+      this.authConfig = authConfig;
       return this;
     }
   }
@@ -99,7 +120,7 @@ public abstract class ServiceOptions {
     return httpTransport;
   }
 
-  public HttpRequestInitializer getHttpRequestInitializer() {
-    return httpRequestInitializer;
+  public AuthConfig getAuthConfig() {
+    return authConfig;
   }
 }

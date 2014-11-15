@@ -26,5 +26,10 @@
   		</artifactId>
   		<version>v1beta2-rev1-2.1.0</version>
   	</dependency>
+  	<dependency>
+  		<groupId>com.google.api-client</groupId>
+  		<artifactId>google-api-client-appengine</artifactId>
+  		<version>1.18.0-rc</version>
+  	</dependency>
   </dependencies>
 </project>

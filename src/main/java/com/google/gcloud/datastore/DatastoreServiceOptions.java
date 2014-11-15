@@ -43,4 +43,9 @@ public class DatastoreServiceOptions extends ServiceOptions {
   public String getDataset() {
     return dataset;
   }
+
+  @Override
+  protected Set<String> getScopes() {
+    return SCOPES;
+  }
 }
