@@ -8,10 +8,4 @@ final class DatastoreServiceImpl implements DatastoreService {
     this.options = options;
   }
 
-  @Override
-  public String get(String key) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
 }

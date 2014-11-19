@@ -1,6 +1,8 @@
 package com.google.gcloud;
 
 
+import static com.google.common.base.MoreObjects.firstNonNull;
+
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
 import com.google.api.client.googleapis.compute.ComputeCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
@@ -8,7 +10,6 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
-import com.google.common.base.MoreObjects;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -23,14 +24,14 @@ public abstract class ServiceOptions {
   private final AuthConfig authConfig;
 
   protected ServiceOptions(Builder builder) {
-    host = MoreObjects.firstNonNull(builder.host, DEFAULT_HOST);
-    httpTransport = MoreObjects.firstNonNull(builder.httpTransport, getDefaultHttpTransport());
-    authConfig = MoreObjects.firstNonNull(builder.authConfig, getDefaultAuthConfig());
+    host = firstNonNull(builder.host, DEFAULT_HOST);
+    httpTransport = firstNonNull(builder.httpTransport, getDefaultHttpTransport());
+    authConfig = firstNonNull(builder.authConfig, getDefaultAuthConfig());
   }
 
   private static HttpTransport getDefaultHttpTransport() {
     // Consider App Engine
-    if (System.getProperty("com.google.appengine.application.id") != null) {
+    if (getAppEngineAppId() != null) {
       try {
         return new UrlFetchTransport();
       } catch (Exception ignore) {
@@ -40,14 +41,15 @@ public abstract class ServiceOptions {
     // Consider Compute
     try {
       return getComputeCredential().getTransport();
-    } catch (IOException | GeneralSecurityException e) {
-      return new NetHttpTransport();
+    } catch (Exception e) {
+      // Maybe not on GCE
     }
+    return new NetHttpTransport();
   }
 
   private static AuthConfig getDefaultAuthConfig() {
     // Consider App Engine
-    if (System.getProperty("com.google.appengine.application.id") != null) {
+    if (getAppEngineAppId() != null) {
       try {
         return AuthConfig.createForAppEngine();
       } catch (Exception ignore) {
@@ -63,9 +65,14 @@ public abstract class ServiceOptions {
           return cred;
         }
       };
-    } catch (IOException | GeneralSecurityException e) {
-      return AuthConfig.createForAccount(null, null);
+    } catch (Exception ignore) {
+      // Maybe not on GCE
     }
+    return AuthConfig.createForAccount(null, null);
+  }
+
+  protected static String getAppEngineAppId() {
+    return System.getProperty("com.google.appengine.application.id");
   }
 
   private static ComputeCredential getComputeCredential()
