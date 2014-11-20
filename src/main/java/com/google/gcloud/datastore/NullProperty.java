@@ -2,7 +2,7 @@ package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1.Value;
 
-public final class NullProperty extends Property {
+public final class NullProperty extends Property<NullProperty> {
 
   static final Provider<NullProperty> PROVIDER = new Provider<NullProperty>() {
     @Override
@@ -17,26 +17,31 @@ public final class NullProperty extends Property {
       super(Type.NULL);
     }
 
+    public Builder(NullProperty property) {
+      super(property);
+    }
+
     @Override
     public NullProperty build() {
-      return new NullProperty();
+      return new NullProperty(this);
     }
   }
 
   public NullProperty() {
-    this(true);
+    this(new Builder());
   }
 
-  public NullProperty(boolean indexed) {
-    this(indexed, null);
-  }
-
-  public NullProperty(boolean indexed, Integer meaning) {
-    super(Type.NULL, indexed, meaning);
+  NullProperty(Builder builder) {
+    super(builder);
   }
 
   @Override
-  protected void addValueToProto(Builder builder) {
+  protected void addValueToProto(Value.Builder builder) {
     // set nothing
+  }
+
+  @Override
+  public Property.Builder<NullProperty> toBuilder() {
+    return new Builder(this);
   }
 }

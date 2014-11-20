@@ -5,24 +5,23 @@ import static com.google.api.services.datastore.DatastoreV1.Value.STRING_VALUE_F
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.services.datastore.DatastoreV1.Value;
-import com.google.api.services.datastore.DatastoreV1.Value.Builder;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 
 import java.util.Objects;
 
-public abstract class Property {
+public abstract class Property<P extends Property<P>>  {
 
   private final Type type;
   private final boolean indexed;
   private final Integer meaning;
 
-  abstract static class Provider<V extends Property> {
+  abstract static class Provider<P extends Property<P>> {
 
-    final V get(Value proto) {
+    final P get(Value proto) {
       return get(proto, proto.getIndexed(), proto.hasMeaning() ? proto.getMeaning() : null);
     }
 
-    abstract V get(Value proto, boolean indexed, Integer meaning);
+    abstract P get(Value proto, boolean indexed, Integer meaning);
   }
 
   public enum Type {
@@ -45,15 +44,15 @@ public abstract class Property {
     // GEO_POINT(GeoPointValue.class, 8) // Does not seem to be public yet...
      */
 
-    private final Provider<? extends Property> provider;
+    private final Provider<? extends Property<?>> provider;
     private FieldDescriptor field;
 
-    Type(Provider<? extends Property> provider, int idx) {
+    Type(Provider<? extends Property<?>> provider, int idx) {
       this.provider = provider;
       field = Value.getDescriptor().findFieldByNumber(idx);
     }
 
-    Provider<? extends Property> getProvider() {
+    Provider<? extends Property<?>> getProvider() {
       return provider;
     }
 
@@ -62,11 +61,17 @@ public abstract class Property {
     }
   }
 
-  public static abstract class Builder<P extends Property> {
+  public abstract static class Builder<P extends Property<P>> {
 
     private final Type type;
     private boolean indexed = true;
     private Integer meaning;
+
+    protected Builder(Property<P> property) {
+      this.type = property.type;
+      this.indexed = property.indexed;
+      this.meaning = property.meaning;
+    }
 
     protected Builder(Type type) {
       this.type = type;
@@ -83,10 +88,10 @@ public abstract class Property {
     public abstract P build();
   }
 
-  Property(Type type, boolean indexed, Integer meaning) {
-    this.type = type;
-    this.indexed = indexed;
-    this.meaning = meaning;
+  Property(Builder<P> builder) {
+    this.type = builder.type;
+    this.indexed = builder.indexed;
+    this.meaning = builder.meaning;
     // some validations:
     if (meaning != null) {
       // TODO: consider supplying Ranges for allowed meaning and validating it here
@@ -122,14 +127,14 @@ public abstract class Property {
       return false;
     }
 
-    Property otherValue = (Property) other;
+    Property<?> otherValue = (Property<?>) other;
     return Objects.equals(type, otherValue.type)
         && Objects.equals(indexed, otherValue.indexed)
         && Objects.equals(meaning, otherValue.meaning);
   }
 
   final Value toProto() {
-    Builder builder = Value.newBuilder();
+    Value.Builder builder = Value.newBuilder();
     builder.setIndexed(indexed);
     if (meaning != null) {
       builder.setMeaning(meaning);
@@ -140,7 +145,7 @@ public abstract class Property {
 
   // TODO: toString, clone?, serialize?, toBuilder, fromBuilder,...
 
-  static Property fromProto(Value proto) {
+  static Property<?> fromProto(Value proto) {
     for (Type type : Type.values()) {
       if (proto.hasField(type.getDescriptor())) {
         return type.getProvider().get(proto);
@@ -153,5 +158,7 @@ public abstract class Property {
     return NullProperty.PROVIDER.get(proto);
   }
 
-  protected abstract void addValueToProto(Builder builder);
+  public abstract Builder<P> toBuilder();
+
+  protected abstract void addValueToProto(Value.Builder builder);
 }
