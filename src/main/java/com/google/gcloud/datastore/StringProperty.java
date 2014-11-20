@@ -3,31 +3,31 @@ package com.google.gcloud.datastore;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.datastore.DatastoreV1.Value;
 import com.google.api.services.datastore.DatastoreV1.Value.Builder;
 
 // TODO: add javadoc, find the right place to describe that null should only
 // be represented by NullValue (so nulls are not allowed here).
-public final class StringValue extends Value {
+public final class StringProperty extends Property {
 
   private final String content;
 
-  static final Provider<StringValue> PROVIDER = new Provider<StringValue>() {
+  static final Provider<StringProperty> PROVIDER = new Provider<StringProperty>() {
     @Override
-    StringValue get(com.google.api.services.datastore.DatastoreV1.Value proto, boolean indexed,
-        Integer meaning) {
-      return new StringValue(proto.getStringValue(), indexed, meaning);
+    StringProperty get(Value proto, boolean indexed, Integer meaning) {
+      return new StringProperty(proto.getStringValue(), indexed, meaning);
     }
   };
 
-  public StringValue(String content) {
+  public StringProperty(String content) {
     this(content, true);
   }
 
-  public StringValue(String content, boolean indexed) {
+  public StringProperty(String content, boolean indexed) {
     this(content, indexed, null);
   }
 
-  public StringValue(String content, boolean indexed, Integer meaning) {
+  public StringProperty(String content, boolean indexed, Integer meaning) {
     super(Type.STRING, indexed, meaning);
     this.content = checkNotNull(content);
     // some validations:

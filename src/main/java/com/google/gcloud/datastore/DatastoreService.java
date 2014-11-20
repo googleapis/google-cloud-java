@@ -6,9 +6,9 @@ public interface DatastoreService {
 
   DatastoreServiceOptions getOptions();
 
-  CompleteKey put(Key key, Map<String, Value> values);
+  CompleteKey put(Key key, Map<String, Property> values);
 
-  Map<String, Value> get(CompleteKey key);
+  Map<String, Property> get(CompleteKey key);
 
   void delete(CompleteKey... key);
 

@@ -1,30 +1,40 @@
 package com.google.gcloud.datastore;
 
+import static com.google.api.services.datastore.DatastoreV1.Value.ENTITY_VALUE_FIELD_NUMBER;
 import static com.google.api.services.datastore.DatastoreV1.Value.STRING_VALUE_FIELD_NUMBER;
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.services.datastore.DatastoreV1.Value;
 import com.google.api.services.datastore.DatastoreV1.Value.Builder;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 
 import java.util.Objects;
 
-public abstract class Value {
+public abstract class Property {
 
-  abstract static class Provider<V extends Value> {
+  private final Type type;
+  private final boolean indexed;
+  private final Integer meaning;
 
-    final V get(com.google.api.services.datastore.DatastoreV1.Value proto) {
+  abstract static class Provider<V extends Property> {
+
+    final V get(Value proto) {
       return get(proto, proto.getIndexed(), proto.hasMeaning() ? proto.getMeaning() : null);
     }
 
-    abstract V get(com.google.api.services.datastore.DatastoreV1.Value proto, boolean indexed,
-        Integer meaning);
+    abstract V get(Value proto, boolean indexed, Integer meaning);
   }
 
   public enum Type {
-    NULL(NullValue.PROVIDER, 0),
-    STRING(StringValue.PROVIDER, STRING_VALUE_FIELD_NUMBER),
+
+    NULL(NullProperty.PROVIDER, 0),
+    STRING(StringProperty.PROVIDER, STRING_VALUE_FIELD_NUMBER),
+    // COMPLETE_KEY_VALUE(CompleteKeyValue.PROVIDER, KEY_VALUE_FIELD_NUMBER),
+    KEY_MAP_VALUE(KeyMapValue.PROVIDER, ENTITY_VALUE_FIELD_NUMBER);
+    // List_VALUE(ListValue.class, LIST_VALUE_FIELD_NUMBER);
+
     /*
-    TODO: implement
+    TODO: Also implement
     LONG(LongValue.class, INTEGER_VALUE_FIELD_NUMBER),
     DOUBLE(DoubleValue.class, DOUBLE_VALUE_FIELD_NUMBER),
     // TODO: make sure that getContent returns an immutable value or at least a copy
@@ -32,23 +42,18 @@ public abstract class Value {
     BOOLEAN(BooleanValue.class, BOOLEAN_VALUE_FIELD_NUMBER),
     BLOB(BlobValue.class, BLOB_VALUE_FIELD_NUMBER),
     BLOB_KEY(BlobKeyValue.class, BLOB_KEY_VALUE_FIELD_NUMBER),
-    */
-    // TODO: does not seem to be public...
-    // GEO_POINT(GeoPointValue.class, 8),
-    COMPLETE_KEY_VALUE(CompleteKeyValue.PROVIDER, KEY_VALUE_FIELD_NUMBER),
-    KEY_MAP_VALUE(KeyMapValue.class, ENTITY_VALUE_FIELD_NUMBER),
-    List_VALUE(ListValue.class, LIST_VALUE_FIELD_NUMBER);
+    // GEO_POINT(GeoPointValue.class, 8) // Does not seem to be public yet...
+     */
 
-    private final Provider<? extends Value> provider;
+    private final Provider<? extends Property> provider;
     private FieldDescriptor field;
 
-    Type(Provider<? extends Value> provider, int idx) {
+    Type(Provider<? extends Property> provider, int idx) {
       this.provider = provider;
-      this.field = com.google.api.services.datastore.DatastoreV1.Value.getDescriptor()
-          .findFieldByNumber(idx);
+      field = Value.getDescriptor().findFieldByNumber(idx);
     }
 
-    Provider<? extends Value> getProvider() {
+    Provider<? extends Property> getProvider() {
       return provider;
     }
 
@@ -57,11 +62,28 @@ public abstract class Value {
     }
   }
 
-  private final Type type;
-  private final boolean indexed;
-  private final Integer meaning;
+  public static abstract class Builder<P extends Property> {
 
-  Value(Type type, boolean indexed, Integer meaning) {
+    private final Type type;
+    private boolean indexed = true;
+    private Integer meaning;
+
+    protected Builder(Type type) {
+      this.type = type;
+    }
+
+    public void setIndexed(boolean indexed) {
+      this.indexed = indexed;
+    }
+
+    public void setMeaning(Integer meaning) {
+      this.meaning = meaning;
+    }
+
+    public abstract P build();
+  }
+
+  Property(Type type, boolean indexed, Integer meaning) {
     this.type = type;
     this.indexed = indexed;
     this.meaning = meaning;
@@ -100,14 +122,14 @@ public abstract class Value {
       return false;
     }
 
-    Value otherValue = (Value) other;
+    Property otherValue = (Property) other;
     return Objects.equals(type, otherValue.type)
         && Objects.equals(indexed, otherValue.indexed)
         && Objects.equals(meaning, otherValue.meaning);
   }
 
-  final com.google.api.services.datastore.DatastoreV1.Value toProto() {
-    Builder builder = com.google.api.services.datastore.DatastoreV1.Value.newBuilder();
+  final Value toProto() {
+    Builder builder = Value.newBuilder();
     builder.setIndexed(indexed);
     if (meaning != null) {
       builder.setMeaning(meaning);
@@ -116,13 +138,19 @@ public abstract class Value {
     return builder.build();
   }
 
-  static Value fromProto(com.google.api.services.datastore.DatastoreV1.Value proto) {
+  // TODO: toString, clone?, serialize?, toBuilder, fromBuilder,...
+
+  static Property fromProto(Value proto) {
     for (Type type : Type.values()) {
       if (proto.hasField(type.getDescriptor())) {
         return type.getProvider().get(proto);
       }
     }
-    return NullValue.PROVIDER.get(proto);
+    // change strategy to return RawProperty (package scope constructor)
+    // when no match instead of null. This could only be done
+    // when using the V1 API which added a NullValue type to distinct the cases
+    // and the use of oneof which generates an enum of all possible values.
+    return NullProperty.PROVIDER.get(proto);
   }
 
   protected abstract void addValueToProto(Builder builder);

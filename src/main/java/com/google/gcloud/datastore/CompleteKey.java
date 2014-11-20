@@ -74,6 +74,10 @@ public final class CompleteKey {
     return leaf.hasId() ? leaf.getId() : leaf.getName();
   }
 
+  public Key toKey() {
+    return key;
+  }
+
   @Override
   public String toString() {
     return key.toString();
@@ -91,4 +95,10 @@ public final class CompleteKey {
     }
     return key.equals(((CompleteKey) other).key);
   }
+
+  // TODO (here and in key - also consider for Properties):
+  // 1) cloneable
+  // 2) serializable (or externalizable)
+  // 3) toBuilder (and builder supports clear,...)
+  // 4) Builder accept builder
 }
