@@ -1,29 +1,55 @@
 package com.google.gcloud.datastore;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 import com.google.api.services.datastore.DatastoreV1.Value;
 
-public final class NullProperty extends Property<NullProperty> {
+public final class NullProperty extends Property<Void, NullProperty, NullProperty.Builder> {
 
-  static final Provider<NullProperty> PROVIDER = new Provider<NullProperty>() {
+  static final Marshaller<Void, NullProperty, Builder> MARSHALLER =
+      new BaseMarshaller<Void, NullProperty, Builder>() {
+
     @Override
-    NullProperty get(Value proto, boolean indexed, Integer meaning) {
-      return new NullProperty(indexed, meaning);
+    public Builder newBuilder() {
+      return new Builder();
+    }
+
+    @Override
+    public int getProtoFieldId() {
+      return 0;
+    }
+
+    @Override
+    protected void set(Value from, Builder to) {
+      // nothing to set
+    }
+
+    @Override
+    protected void set(NullProperty from, Value.Builder to) {
+      // nothing to set
     }
   };
 
-  public static class Builder extends Property.Builder<NullProperty> {
+  public static final class Builder extends Property.Builder<Void, NullProperty, Builder> {
 
     public Builder() {
       super(Type.NULL);
     }
 
-    public Builder(NullProperty property) {
-      super(property);
-    }
-
     @Override
     public NullProperty build() {
       return new NullProperty(this);
+    }
+
+    @Override
+    public Void validate(Void value) {
+      checkArgument(value == null, "Only null values are allowed");
+      return null;
+    }
+
+    @Override
+    protected Builder self() {
+      return this;
     }
   }
 
@@ -33,15 +59,5 @@ public final class NullProperty extends Property<NullProperty> {
 
   NullProperty(Builder builder) {
     super(builder);
-  }
-
-  @Override
-  protected void addValueToProto(Value.Builder builder) {
-    // set nothing
-  }
-
-  @Override
-  public Property.Builder<NullProperty> toBuilder() {
-    return new Builder(this);
   }
 }
