@@ -4,6 +4,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
 import static com.google.gcloud.datastore.DatastoreServiceOptions.validateDataset;
 
+import com.google.api.services.datastore.DatastoreV1;
 import com.google.api.services.datastore.DatastoreV1.Key.PathElement;
 import com.google.api.services.datastore.DatastoreV1.PartitionId;
 import com.google.common.base.Strings;
@@ -127,10 +128,7 @@ public final class Key {
 
   @Override
   public String toString() {
-    com.google.api.services.datastore.DatastoreV1.Value.Builder builder =
-        com.google.api.services.datastore.DatastoreV1.Value.newBuilder();
-    addToPb(builder);
-    return builder.build().toString();
+    return toPb().toString();
   }
 
   @Override
@@ -153,31 +151,52 @@ public final class Key {
     return path.get(path.size() - 1);
   }
 
-  void addToPb(com.google.api.services.datastore.DatastoreV1.Value.Builder builder) {
-    com.google.api.services.datastore.DatastoreV1.Key.Builder keyBuilder =
-        com.google.api.services.datastore.DatastoreV1.Key.newBuilder();
-    com.google.api.services.datastore.DatastoreV1.PartitionId.Builder partitionBuilder =
-        PartitionId.newBuilder();
+  static Key fromPb(DatastoreV1.Key keyPb) {
+    Builder builder = new Builder();
+    if (keyPb.hasPartitionId()) {
+      PartitionId partitionIdPb = keyPb.getPartitionId();
+      if (partitionIdPb.hasDatasetId()) {
+        builder.setDataset(partitionIdPb.getDatasetId());
+      }
+      if (partitionIdPb.hasNamespace()) {
+        builder.setNamespace(partitionIdPb.getNamespace());
+      }
+    }
+    for (PathElement pathElementPb : keyPb.getPathElementList()) {
+      String kind = pathElementPb.getKind();
+      if (pathElementPb.hasId()) {
+        builder.addChild(kind, pathElementPb.getId());
+      } else if (pathElementPb.hasName()) {
+        builder.addChild(kind, pathElementPb.getName());
+      } else {
+        builder.addChild(kind);
+      }
+    }
+    return builder.build();
+  }
+
+  DatastoreV1.Key toPb() {
+    DatastoreV1.Key.Builder keyPb = DatastoreV1.Key.newBuilder();
+    PartitionId.Builder partitionIdPb = PartitionId.newBuilder();
     if (dataset != null) {
-      partitionBuilder.setDatasetId(dataset);
+      partitionIdPb.setDatasetId(dataset);
     }
     if (namespace != null) {
-      partitionBuilder.setNamespace(namespace);
+      partitionIdPb.setNamespace(namespace);
     }
-    if (partitionBuilder.hasDatasetId() || partitionBuilder.hasNamespace()) {
-      keyBuilder.setPartitionId(partitionBuilder.build());
+    if (partitionIdPb.hasDatasetId() || partitionIdPb.hasNamespace()) {
+      keyPb.setPartitionId(partitionIdPb.build());
     }
     for (PathEntry pathEntry : path) {
-      com.google.api.services.datastore.DatastoreV1.Key.PathElement.Builder pathElementBuilder =
-          PathElement.newBuilder();
-      pathElementBuilder.setKind(pathEntry.kind);
+      PathElement.Builder pathElementPb = PathElement.newBuilder();
+      pathElementPb.setKind(pathEntry.kind);
       if (pathEntry.id != null) {
-        pathElementBuilder.setId(pathEntry.id);
+        pathElementPb.setId(pathEntry.id);
       } else if (pathEntry.name != null) {
-        pathElementBuilder.setName(pathEntry.name);
+        pathElementPb.setName(pathEntry.name);
       }
-      keyBuilder.addPathElement(pathElementBuilder.build());
+      keyPb.addPathElement(pathElementPb.build());
     }
-    builder.setKeyValue(keyBuilder.build());
+    return keyPb.build();
   }
 }

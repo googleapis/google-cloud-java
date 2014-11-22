@@ -4,15 +4,9 @@ package com.google.gcloud;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
-import com.google.api.client.googleapis.compute.ComputeCredential;
-import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
-import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson.JacksonFactory;
 
-import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.Set;
 
 public abstract class ServiceOptions {
@@ -40,7 +34,7 @@ public abstract class ServiceOptions {
     }
     // Consider Compute
     try {
-      return getComputeCredential().getTransport();
+      return AuthConfig.getComputeCredential().getTransport();
     } catch (Exception e) {
       // Maybe not on GCE
     }
@@ -58,13 +52,7 @@ public abstract class ServiceOptions {
     }
     // Consider Compute
     try {
-      final ComputeCredential cred = getComputeCredential();
-      return new AuthConfig() {
-        @Override protected HttpRequestInitializer getHttpRequestInitializer(
-            HttpTransport transport, Set<String> scopes) {
-          return cred;
-        }
-      };
+      return AuthConfig.createForComputeEngine();
     } catch (Exception ignore) {
       // Maybe not on GCE
     }
@@ -73,16 +61,6 @@ public abstract class ServiceOptions {
 
   protected static String getAppEngineAppId() {
     return System.getProperty("com.google.appengine.application.id");
-  }
-
-  private static ComputeCredential getComputeCredential()
-      throws IOException, GeneralSecurityException {
-    NetHttpTransport transport = GoogleNetHttpTransport.newTrustedTransport();
-    // Try to connect using Google Compute Engine service account credentials.
-    ComputeCredential credential = new ComputeCredential(transport, new JacksonFactory());
-    // Force token refresh to detect if we are running on Google Compute Engine.
-    credential.refreshToken();
-    return credential;
   }
 
   protected abstract static class Builder {

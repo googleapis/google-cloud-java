@@ -2,7 +2,6 @@ package com.google.gcloud.datastore;
 
 import static com.google.api.services.datastore.DatastoreV1.Value.STRING_VALUE_FIELD_NUMBER;
 import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.datastore.DatastoreV1.Value;
 
@@ -19,26 +18,17 @@ public final class StringProperty extends Property<String, StringProperty, Strin
     }
 
     @Override
-    public Builder newBuilder() {
-      return new Builder();
+    protected Builder newBuilder(Value from) {
+      return new Builder(from.getStringValue());
     }
 
     @Override
-    protected void set(Value from, Builder to) {
-      to.setValue(from.getStringValue());
-    }
-
-    @Override
-    protected void set(StringProperty from, Value.Builder to) {
+    protected void setValueField(StringProperty from, Value.Builder to) {
       to.setStringValue(from.getValue());
     }
   };
 
-  public static final class Builder extends Property.Builder<String, StringProperty, Builder> {
-
-    Builder() {
-      this("");
-    }
+  public static final class Builder extends Property.BaseBuilder<String, StringProperty, Builder> {
 
     public Builder(String value) {
       super(Type.STRING);
@@ -51,11 +41,6 @@ public final class StringProperty extends Property<String, StringProperty, Strin
         checkArgument(getValue().length() <= 500, "Indexed string is limited to 500 characters");
       }
       return new StringProperty(this);
-    }
-
-    @Override
-    public String validate(String value) {
-      return checkNotNull(value);
     }
 
     @Override

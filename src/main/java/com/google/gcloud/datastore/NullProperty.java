@@ -10,7 +10,7 @@ public final class NullProperty extends Property<Void, NullProperty, NullPropert
       new BaseMarshaller<Void, NullProperty, Builder>() {
 
     @Override
-    public Builder newBuilder() {
+    public Builder newBuilder(Value from) {
       return new Builder();
     }
 
@@ -20,17 +20,12 @@ public final class NullProperty extends Property<Void, NullProperty, NullPropert
     }
 
     @Override
-    protected void set(Value from, Builder to) {
-      // nothing to set
-    }
-
-    @Override
-    protected void set(NullProperty from, Value.Builder to) {
+    protected void setValueField(NullProperty from, Value.Builder to) {
       // nothing to set
     }
   };
 
-  public static final class Builder extends Property.Builder<Void, NullProperty, Builder> {
+  public static final class Builder extends Property.BaseBuilder<Void, NullProperty, Builder> {
 
     public Builder() {
       super(Type.NULL);
@@ -42,9 +37,9 @@ public final class NullProperty extends Property<Void, NullProperty, NullPropert
     }
 
     @Override
-    public Void validate(Void value) {
+    public Builder setValue(Void value) {
       checkArgument(value == null, "Only null values are allowed");
-      return null;
+      return this;
     }
 
     @Override

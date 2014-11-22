@@ -1,14 +1,15 @@
 package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.datastore.DatastoreV1.Value;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 
 import java.util.Objects;
 
-public abstract class Property<V, P extends Property<V, P, B>,
-    B extends Property.Builder<V, P, B>>  {
+public abstract class
+    Property<V, P extends Property<V, P, B>, B extends Property.Builder<V, P, B>> {
 
   private final Type type;
   private final boolean indexed;
@@ -18,8 +19,8 @@ public abstract class Property<V, P extends Property<V, P, B>,
   public enum Type {
 
     NULL(NullProperty.MARSHALLER),
-    STRING(StringProperty.MARSHALLER);
-    // MapValue -> MapValueProperty
+    STRING(StringProperty.MARSHALLER),
+    PROPERTY_MAP(PropertyMapProperty.MARSHALLER);
     // ListValue -> ListValueProperty
     // CompleteKey -> CompleteKeyProperty
     // COMPLETE_KEY_VALUE(CompleteKeyValue.PROVIDER, KEY_VALUE_FIELD_NUMBER),
@@ -58,11 +59,30 @@ public abstract class Property<V, P extends Property<V, P, B>,
     }
   }
 
+  interface Builder<V, P extends Property<V, P, B>, B extends Builder<V, P, B>> {
+
+    Type getType();
+
+    B mergeFrom(P other);
+
+    boolean isIndexed();
+
+    B setIndexed(boolean indexed);
+
+    Integer getMeaning();
+
+    B setMeaning(Integer meaning);
+
+    V getValue();
+
+    B setValue(V value);
+
+    P build();
+  }
+
   interface Marshaller<V, P extends Property<V, P, B>, B extends Builder<V, P, B>> {
 
-    B newBuilder();
-
-    P fromProto(Value proto);
+    B fromProto(Value proto);
 
     Value toProto(P property);
 
@@ -73,14 +93,13 @@ public abstract class Property<V, P extends Property<V, P, B>,
       implements Marshaller<V, P, B> {
 
     @Override
-    public P fromProto(Value proto) {
-      B builder = newBuilder();
+    public final B fromProto(Value proto) {
+      B builder = newBuilder(proto);
       builder.setIndexed(proto.getIndexed());
       if (proto.hasMeaning()) {
         builder.setMeaning(proto.getMeaning());
       }
-      set(proto, builder);
-      return builder.build();
+      return builder;
     }
 
     @Override
@@ -90,30 +109,33 @@ public abstract class Property<V, P extends Property<V, P, B>,
       if (property.getMeaning() != null) {
         builder.setMeaning(property.getMeaning());
       }
-      set(property, builder);
+      setValueField(property, builder);
       return builder.build();
     }
 
-    protected abstract void set(Value from, B to);
+    protected abstract B newBuilder(Value from);
 
-    protected abstract void set(P from, Value.Builder to);
+    protected abstract void setValueField(P from, Value.Builder to);
   }
 
-  public abstract static class Builder<V, P extends Property<V, P, B>, B extends Builder<V, P, B>> {
+  abstract static class BaseBuilder<V, P extends Property<V, P, B>, B extends BaseBuilder<V, P, B>>
+      implements Builder<V, P, B> {
 
     private final Type type;
     private boolean indexed = true;
     private Integer meaning;
     private V value;
 
-    protected Builder(Type type) {
+    protected BaseBuilder(Type type) {
       this.type = type;
     }
 
+    @Override
     public Type getType() {
       return type;
     }
 
+    @Override
     public B mergeFrom(P other) {
       indexed = other.isIndexed();
       meaning = other.getMeaning();
@@ -121,39 +143,42 @@ public abstract class Property<V, P extends Property<V, P, B>,
       return self();
     }
 
+    @Override
     public boolean isIndexed() {
       return indexed;
     }
 
+    @Override
     public B setIndexed(boolean indexed) {
       this.indexed = indexed;
       return self();
     }
 
+    @Override
     public Integer getMeaning() {
       return meaning;
     }
 
+    @Override
     public B setMeaning(Integer meaning) {
       this.meaning = meaning;
       return self();
     }
 
+    @Override
     public V getValue() {
       return value;
     }
 
+    @Override
     public B setValue(V value) {
-      this.value = validate(value);
+      this.value = checkNotNull(value);
       return self();
-    }
-
-    protected V validate(V value) {
-      return value;
     }
 
     protected abstract B self();
 
+    @Override
     public abstract P build();
   }
 
@@ -190,12 +215,9 @@ public abstract class Property<V, P extends Property<V, P, B>,
     return value;
   }
 
-  @SuppressWarnings("unchecked")
-  public Builder<V, P, B> toBuilder() {
-    @SuppressWarnings("rawtypes")
-    Builder builder = getType().getMarshaller().newBuilder();
-    builder.mergeFrom(this);
-    return builder;
+  public final B toBuilder() {
+    Marshaller<V, P, B> marshaller = getType().getMarshaller();
+    return marshaller.fromProto(toPb());
   }
 
   @Override
@@ -217,25 +239,24 @@ public abstract class Property<V, P extends Property<V, P, B>,
         && Objects.equals(getValue(), otherProperty.getValue());
   }
 
-  @SuppressWarnings({ "unchecked", "rawtypes" })
-  final Value toProto() {
-    return ((Marshaller) getType().getMarshaller()).toProto(this);
+  @SuppressWarnings("unchecked")
+  Value toPb() {
+    Marshaller<V, P, B> marshaller = getType().getMarshaller();
+    return marshaller.toProto((P) this);
   }
-
-  // TODO: toString, clone?, serialize?, toBuilder, fromBuilder,...
 
   @SuppressWarnings("unchecked")
   static <V, P extends Property<V, P, B>, B extends Property.Builder<V, P, B>> Property<V, P, B>
-      fromProto(Value proto) {
+      fromPb(Value proto) {
     for (Type type : Type.values()) {
       if (proto.hasField(type.getDescriptor())) {
-        return (Property<V, P, B>) type.getMarshaller().fromProto(proto);
+        return (Property<V, P, B>) type.getMarshaller().fromProto(proto).build();
       }
     }
     // change strategy to return RawProperty (package scope constructor)
     // when no match instead of null. This could only be done
     // when using the V1 API which added a NullValue type to distinct the cases
     // and the use of oneof which generates an enum of all possible values.
-    return (Property<V, P, B>) NullProperty.MARSHALLER.fromProto(proto);
+    return (Property<V, P, B>) new NullProperty();
   }
 }
