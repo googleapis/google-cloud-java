@@ -5,9 +5,9 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.services.datastore.DatastoreV1.Value;
 
-// TODO: add javadoc, find the right place to describe that null should only
-// be represented by NullValue (so nulls are not allowed here).
 public final class StringProperty extends Property<String, StringProperty, StringProperty.Builder> {
+
+  private static final long serialVersionUID = -3105699707394545523L;
 
   static final Marshaller<String, StringProperty, Builder> MARSHALLER =
       new BaseMarshaller<String, StringProperty, Builder>() {

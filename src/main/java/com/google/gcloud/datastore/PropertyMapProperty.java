@@ -13,7 +13,9 @@ import java.util.Map;
 public final class PropertyMapProperty extends
     Property<Map<String, Property<?, ?, ?>>, PropertyMapProperty, PropertyMapProperty.Builder> {
 
-  private final Key key;
+  private static final long serialVersionUID = -5461475706792576395L;
+
+  private final IncompleteKey key;
 
   static final Marshaller<Map<String, Property<?, ?, ?>>, PropertyMapProperty, Builder> MARSHALLER =
       new BaseMarshaller<Map<String, Property<?, ?, ?>>, PropertyMapProperty, Builder>() {
@@ -28,7 +30,7 @@ public final class PropertyMapProperty extends
       Builder builder = new Builder();
       Entity entityPb = from.getEntityValue();
       if (entityPb.hasKey()) {
-        builder.setKey(Key.fromPb(entityPb.getKey()));
+        builder.setKey(IncompleteKey.fromPb(entityPb.getKey()));
       }
       for (DatastoreV1.Property propertyPb : entityPb.getPropertyList()) {
         builder.addProperty(propertyPb.getName(), Property.fromPb(propertyPb.getValue()));
@@ -52,7 +54,7 @@ public final class PropertyMapProperty extends
   public static final class Builder extends
       Property.BaseBuilder<Map<String, Property<?, ?, ?>>, PropertyMapProperty, Builder> {
 
-    private Key key;
+    private IncompleteKey key;
     private ImmutableMap.Builder<String, Property<?, ?, ?>> mapBuilder = ImmutableMap.builder();
 
     public Builder() {
@@ -60,11 +62,11 @@ public final class PropertyMapProperty extends
       setIndexed(false);
     }
 
-    public Key getKey() {
+    public IncompleteKey getKey() {
       return key;
     }
 
-    public Builder setKey(Key key) {
+    public Builder setKey(IncompleteKey key) {
       this.key = key;
       return this;
     }
@@ -96,7 +98,7 @@ public final class PropertyMapProperty extends
     }
   }
 
-  public PropertyMapProperty(Key key, Map<String, Property<?, ?, ?>> properties) {
+  public PropertyMapProperty(IncompleteKey key, Map<String, Property<?, ?, ?>> properties) {
     this(new Builder().setValue(properties).setKey(key));
   }
 
@@ -105,7 +107,7 @@ public final class PropertyMapProperty extends
     key = builder.key;
   }
 
-  public Key getKey() {
+  public IncompleteKey getKey() {
     return key;
   }
 }

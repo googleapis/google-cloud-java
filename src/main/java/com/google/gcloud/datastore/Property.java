@@ -6,26 +6,33 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.datastore.DatastoreV1.Value;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.ObjectStreamException;
+import java.io.Serializable;
 import java.util.Objects;
 
+// TODO: add javadoc, and mention that  null should only be represented by NullValue.
 public abstract class
-    Property<V, P extends Property<V, P, B>, B extends Property.Builder<V, P, B>> {
+    Property<V, P extends Property<V, P, B>, B extends Property.Builder<V, P, B>>
+    implements Serializable {
 
-  private final Type type;
-  private final boolean indexed;
-  private final Integer meaning;
-  private final V value;
+  private static final long serialVersionUID = -1899638277588872742L;
+
+  private transient final Type type;
+  private transient final boolean indexed;
+  private transient final Integer meaning;
+  private transient final V value;
+  private transient Value tempValuePb; // only for deserialization
 
   public enum Type {
 
     NULL(NullProperty.MARSHALLER),
     STRING(StringProperty.MARSHALLER),
-    PROPERTY_MAP(PropertyMapProperty.MARSHALLER);
-    // ListValue -> ListValueProperty
-    // CompleteKey -> CompleteKeyProperty
-    // COMPLETE_KEY_VALUE(CompleteKeyValue.PROVIDER, KEY_VALUE_FIELD_NUMBER),
-    //KEY_MAP_VALUE(KeyMapValue.MARSHALLER);
-    // List_VALUE(ListValue.class, LIST_VALUE_FIELD_NUMBER);
+    PROPERTY_MAP(PropertyMapProperty.MARSHALLER),
+    PROPERTY_LIST(PropertyListProperty.MARSHALLER),
+    KEY(KeyProperty.MARSHALLER);
 
     /*
     TODO: Also implement
@@ -258,5 +265,22 @@ public abstract class
     // when using the V1 API which added a NullValue type to distinct the cases
     // and the use of oneof which generates an enum of all possible values.
     return (Property<V, P, B>) new NullProperty();
+  }
+
+
+  private void writeObject(ObjectOutputStream out) throws IOException {
+    out.defaultWriteObject();
+    out.writeObject(toPb().toByteArray());
+  }
+
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+    byte[] bytes = (byte[]) in.readObject();
+    tempValuePb = Value.parseFrom(bytes);
+  }
+
+  @SuppressWarnings("unused")
+  private Object readResolve() throws ObjectStreamException {
+    return fromPb(tempValuePb);
   }
 }

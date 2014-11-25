@@ -6,6 +6,8 @@ import com.google.api.services.datastore.DatastoreV1.Value;
 
 public final class NullProperty extends Property<Void, NullProperty, NullProperty.Builder> {
 
+  private static final long serialVersionUID = 8497300779013002270L;
+
   static final Marshaller<Void, NullProperty, Builder> MARSHALLER =
       new BaseMarshaller<Void, NullProperty, Builder>() {
 
