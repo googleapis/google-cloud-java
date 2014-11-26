@@ -30,7 +30,7 @@ public abstract class
 
     NULL(NullProperty.MARSHALLER),
     STRING(StringProperty.MARSHALLER),
-    PROPERTY_MAP(PropertyMapProperty.MARSHALLER),
+    EMBEDDED_ENTITY(EmbeddedEntityProperty.MARSHALLER),
     PROPERTY_LIST(PropertyListProperty.MARSHALLER),
     KEY(KeyProperty.MARSHALLER);
 
@@ -101,7 +101,7 @@ public abstract class
 
     @Override
     public final B fromProto(Value proto) {
-      B builder = newBuilder(proto);
+      B builder = newBuilder(getValue(proto));
       builder.setIndexed(proto.getIndexed());
       if (proto.hasMeaning()) {
         builder.setMeaning(proto.getMeaning());
@@ -116,13 +116,16 @@ public abstract class
       if (property.getMeaning() != null) {
         builder.setMeaning(property.getMeaning());
       }
-      setValueField(property, builder);
+      setValue(property, builder);
       return builder.build();
     }
 
-    protected abstract B newBuilder(Value from);
+    // Move to a Builder Factory
+    protected abstract B newBuilder(V value);
 
-    protected abstract void setValueField(P from, Value.Builder to);
+    protected abstract V getValue(Value from);
+
+    protected abstract void setValue(P from, Value.Builder to);
   }
 
   abstract static class BaseBuilder<V, P extends Property<V, P, B>, B extends BaseBuilder<V, P, B>>

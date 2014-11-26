@@ -17,12 +17,17 @@ public final class KeyProperty extends Property<Key, KeyProperty, KeyProperty.Bu
     }
 
     @Override
-    protected Builder newBuilder(Value from) {
-      return new Builder(Key.fromPb(from.getKeyValue()));
+    protected Builder newBuilder(Key key) {
+      return new Builder(key);
     }
 
     @Override
-    protected void setValueField(KeyProperty from, Value.Builder to) {
+    protected Key getValue(Value from) {
+      return Key.fromPb(from.getKeyValue());
+    }
+
+    @Override
+    protected void setValue(KeyProperty from, Value.Builder to) {
       to.setKeyValue(from.getValue().toPb());
     }
   };

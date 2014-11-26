@@ -6,6 +6,7 @@ import static com.google.common.base.Preconditions.checkState;
 import static com.google.gcloud.datastore.DatastoreServiceOptions.validateDataset;
 
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 
@@ -14,6 +15,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -23,10 +25,10 @@ public class IncompleteKey implements Serializable {
 
   private final transient String dataset;
   private final transient String namespace;
-  private final transient ImmutableList<PathEntry> path;
-  private transient DatastoreV1.Key temp; // only for deserialization
+  private final transient ImmutableList<PathElement> path;
+  private transient DatastoreV1.Key tempKeyPb; // only for deserialization
 
-  public static final class PathEntry implements Serializable {
+  public static final class PathElement implements Serializable {
 
     private static final long serialVersionUID = -7968078857690784595L;
 
@@ -35,17 +37,17 @@ public class IncompleteKey implements Serializable {
     private final transient String name;
     private transient DatastoreV1.Key.PathElement tempPathElementPb;  // only for deserialization
 
-    private PathEntry(String kind) {
+    private PathElement(String kind) {
       this(kind, null);
     }
 
-    public PathEntry(String kind, long id) {
+    public PathElement(String kind, long id) {
       this.kind = kind;
       this.id = id;
       this.name = null;
     }
 
-    public PathEntry(String kind, String name) {
+    public PathElement(String kind, String name) {
       this.kind = kind;
       this.name = name;
       this.id = null;
@@ -87,23 +89,23 @@ public class IncompleteKey implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-      if (!(obj instanceof PathEntry)) {
+      if (!(obj instanceof PathElement)) {
         return false;
       }
-      PathEntry other = (PathEntry) obj;
+      PathElement other = (PathElement) obj;
       return Objects.equals(kind, other.kind)
           && Objects.equals(id, other.id)
           && Objects.equals(name, other.name);
     }
 
-    static PathEntry fromPb(DatastoreV1.Key.PathElement pathElementPb) {
+    static PathElement fromPb(DatastoreV1.Key.PathElement pathElementPb) {
       String kind = pathElementPb.getKind();
       if (pathElementPb.hasId()) {
-        return new PathEntry(kind, pathElementPb.getId());
+        return new PathElement(kind, pathElementPb.getId());
       } else if (pathElementPb.hasName()) {
-        return new PathEntry(kind, pathElementPb.getName());
+        return new PathElement(kind, pathElementPb.getName());
       }
-      return new PathEntry(kind);
+      return new PathElement(kind);
     }
 
     DatastoreV1.Key.PathElement toPb() {
@@ -134,14 +136,15 @@ public class IncompleteKey implements Serializable {
     }
   }
 
-  public static class Builder {
+  public static final class Builder {
 
     private String dataset;
     private String namespace = DEFAULT_NAMESPACE;
     private String kind;
-    private ImmutableList.Builder<PathEntry> path = ImmutableList.builder();
+    private List<PathElement> path = new LinkedList<>();
 
     private static final String DEFAULT_NAMESPACE = "";
+    private static final int MAX_PATH = 100;
 
     public Builder(String dataset, String kind) {
       this.dataset = validateDataset(dataset);
@@ -151,25 +154,25 @@ public class IncompleteKey implements Serializable {
     public Builder(IncompleteKey key) {
       dataset = key.dataset;
       namespace = key.namespace;
-      path = ImmutableList.<PathEntry>builder().addAll(key.getAncestorPath());
       kind = key.getKind();
+      path.addAll(key.getAncestorPath());
     }
 
     public Builder addToPath(String kind, long id) {
       checkArgument(id != 0, "id must not be equal to zero");
-      path.add(new PathEntry(kind, id));
-      return this;
+      return addToPath(new PathElement(kind, id));
     }
 
     public Builder addToPath(String kind, String name) {
       checkArgument(Strings.isNullOrEmpty(name) , "name must not be empty or null");
       checkArgument(name.length() <= 500, "name must not exceed 500 characters");
-      path.add(new PathEntry(kind, name));
-      return this;
+      return addToPath(new PathElement(kind, name));
     }
 
-    public void addToPath(PathEntry pathEntry) {
+    public Builder addToPath(PathElement pathEntry) {
+      Preconditions.checkState(path.size() < MAX_PATH, "path can have at most 100 elements");
       path.add(pathEntry);
+      return this;
     }
 
     public Builder setKind(String kind) {
@@ -184,7 +187,7 @@ public class IncompleteKey implements Serializable {
     }
 
     public Builder clearPath() {
-      path = ImmutableList.builder();
+      path.clear();
       return this;
     }
 
@@ -199,14 +202,14 @@ public class IncompleteKey implements Serializable {
     }
 
     public IncompleteKey build() {
-      PathEntry leaf = new PathEntry(kind);
-      ImmutableList<PathEntry> pathList =
-          ImmutableList.<PathEntry>builder().addAll(path.build()).add(leaf).build();
+      PathElement leaf = new PathElement(kind);
+      ImmutableList<PathElement> pathList =
+          ImmutableList.<PathElement>builder().addAll(path).add(leaf).build();
       return new IncompleteKey(dataset, namespace, pathList);
     }
   }
 
-  IncompleteKey(String dataset, String namespace, ImmutableList<PathEntry> path) {
+  IncompleteKey(String dataset, String namespace, ImmutableList<PathElement> path) {
     checkState(!path.isEmpty(), "path must not be empty");
     this.dataset = dataset;
     this.namespace = namespace;
@@ -221,11 +224,7 @@ public class IncompleteKey implements Serializable {
     return namespace;
   }
 
-  protected List<PathEntry> getFullPath() {
-    return path;
-  }
-
-  public List<PathEntry> getAncestorPath() {
+  public List<PathElement> getAncestorPath() {
     return path.subList(0, path.size() - 1);
   }
 
@@ -254,7 +253,7 @@ public class IncompleteKey implements Serializable {
         && Objects.equals(path, otherKey.path);
   }
 
-  PathEntry getLeaf() {
+  PathElement getLeaf() {
     return path.get(path.size() - 1);
   }
 
@@ -270,9 +269,9 @@ public class IncompleteKey implements Serializable {
         namespace = partitionIdPb.getNamespace();
       }
     }
-    ImmutableList.Builder<PathEntry> pathBuilder = ImmutableList.builder();
+    ImmutableList.Builder<PathElement> pathBuilder = ImmutableList.builder();
     for (DatastoreV1.Key.PathElement pathElementPb : keyPb.getPathElementList()) {
-      pathBuilder.add(PathEntry.fromPb(pathElementPb));
+      pathBuilder.add(PathElement.fromPb(pathElementPb));
     }
     return new IncompleteKey(dataset, namespace, pathBuilder.build());
   }
@@ -289,7 +288,7 @@ public class IncompleteKey implements Serializable {
     if (partitionIdPb.hasDatasetId() || partitionIdPb.hasNamespace()) {
       keyPb.setPartitionId(partitionIdPb.build());
     }
-    for (PathEntry pathEntry : path) {
+    for (PathElement pathEntry : path) {
       keyPb.addPathElement(pathEntry.toPb());
     }
     return keyPb.build();
@@ -303,11 +302,11 @@ public class IncompleteKey implements Serializable {
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
     byte[] bytes = (byte[]) in.readObject();
-    temp = DatastoreV1.Key.parseFrom(bytes);
+    tempKeyPb = DatastoreV1.Key.parseFrom(bytes);
   }
 
   @SuppressWarnings("unused")
   private Object readResolve() throws ObjectStreamException {
-    return fromPb(temp);
+    return fromPb(tempKeyPb);
   }
 }

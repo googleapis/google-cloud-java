@@ -18,12 +18,17 @@ public final class StringProperty extends Property<String, StringProperty, Strin
     }
 
     @Override
-    protected Builder newBuilder(Value from) {
-      return new Builder(from.getStringValue());
+    protected Builder newBuilder(String value) {
+      return new Builder(value);
     }
 
     @Override
-    protected void setValueField(StringProperty from, Value.Builder to) {
+    protected String getValue(Value from) {
+      return from.getStringValue();
+    }
+
+    @Override
+    protected void setValue(StringProperty from, Value.Builder to) {
       to.setStringValue(from.getValue());
     }
   };

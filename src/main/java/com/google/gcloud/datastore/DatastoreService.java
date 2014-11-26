@@ -16,6 +16,7 @@ public interface DatastoreService {
     //QueryResult runQuery(Query query);
   }
 
+  // TODO: remove all refrence of IncomplteKey (except allocate and use Entity instead of Map)
 
   interface DatastoreWriter {
 
@@ -68,8 +69,6 @@ public interface DatastoreService {
   Transaction newTransaction(TransactionOptions tsOptions);
 
   Batch newBatch();
-
-  P
 
   Key allocateId(IncompleteKey key);
 

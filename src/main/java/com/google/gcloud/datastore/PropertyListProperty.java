@@ -1,12 +1,12 @@
 package com.google.gcloud.datastore;
 
-import static com.google.api.client.util.Preconditions.checkNotNull;
 import static com.google.api.services.datastore.DatastoreV1.Value.LIST_VALUE_FIELD_NUMBER;
 
 import com.google.api.services.datastore.DatastoreV1.Value;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public final class PropertyListProperty extends
@@ -23,16 +23,21 @@ public final class PropertyListProperty extends
     }
 
     @Override
-    protected Builder newBuilder(Value from) {
-      Builder builder = new Builder();
-      for (Value valuePb : from.getListValueList()) {
-        builder.addProperty(Property.fromPb(valuePb));
-      }
-      return builder;
+    protected Builder newBuilder(List<Property<?, ?, ?>> properties) {
+      return new Builder().setValue(properties);
     }
 
     @Override
-    protected void setValueField(PropertyListProperty from, Value.Builder to) {
+    protected List<Property<?, ?, ?>> getValue(Value from) {
+      List<Property<?, ?, ?>> properties = new ArrayList<>(from.getListValueCount());
+      for (Value valuePb : from.getListValueList()) {
+        properties.add(Property.fromPb(valuePb));
+      }
+      return properties;
+    }
+
+    @Override
+    protected void setValue(PropertyListProperty from, Value.Builder to) {
       for (Property<?, ?, ?> property : from.getValue()) {
         to.addListValue(property.toPb());
       }
@@ -50,13 +55,18 @@ public final class PropertyListProperty extends
     }
 
     public Builder addProperty(Property<?, ?, ?> property) {
+      Preconditions.checkArgument(
+          property.getType() != Type.PROPERTY_LIST, "Cannot contain another list");
       listBuilder.add(property);
       return this;
     }
 
     @Override
-    public Builder setValue(List<Property<?, ?, ?>> value) {
-      listBuilder = ImmutableList.<Property<?, ?, ?>>builder().addAll(checkNotNull(value));
+    public Builder setValue(List<Property<?, ?, ?>> properties) {
+      listBuilder = ImmutableList.<Property<?, ?, ?>>builder();
+      for (Property<?, ?, ?> property : properties) {
+        addProperty(property);
+      }
       return this;
     }
 
