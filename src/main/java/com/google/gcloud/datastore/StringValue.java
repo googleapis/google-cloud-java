@@ -5,12 +5,12 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class StringProperty extends Property<String, StringProperty, StringProperty.Builder> {
+public final class StringValue extends Value<String, StringValue, StringValue.Builder> {
 
   private static final long serialVersionUID = -3105699707394545523L;
 
-  static final BaseMarshaller<String, StringProperty, Builder> MARSHALLER =
-      new BaseMarshaller<String, StringProperty, Builder>() {
+  static final BaseMarshaller<String, StringValue, Builder> MARSHALLER =
+      new BaseMarshaller<String, StringValue, Builder>() {
 
     @Override
     public int getProtoFieldId() {
@@ -28,12 +28,12 @@ public final class StringProperty extends Property<String, StringProperty, Strin
     }
 
     @Override
-    protected void setValue(StringProperty from, DatastoreV1.Value.Builder to) {
+    protected void setValue(StringValue from, DatastoreV1.Value.Builder to) {
       to.setStringValue(from.get());
     }
   };
 
-  public static final class Builder extends Property.BaseBuilder<String, StringProperty, Builder> {
+  public static final class Builder extends Value.BaseBuilder<String, StringValue, Builder> {
 
     public Builder(String value) {
       super(Type.STRING);
@@ -41,19 +41,19 @@ public final class StringProperty extends Property<String, StringProperty, Strin
     }
 
     @Override
-    public StringProperty build() {
+    public StringValue build() {
       if (getIndexed()) {
         checkArgument(get().length() <= 500, "Indexed string is limited to 500 characters");
       }
-      return new StringProperty(this);
+      return new StringValue(this);
     }
   }
 
-  public StringProperty(String content) {
+  public StringValue(String content) {
     this(new Builder(content));
   }
 
-  StringProperty(Builder builder) {
+  StringValue(Builder builder) {
     super(builder);
   }
 }

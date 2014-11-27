@@ -18,13 +18,13 @@ public final class EmbeddedEntity implements Serializable {
   private static final long serialVersionUID = 6492561268709192891L;
 
   private final transient IncompleteKey key;
-  private final transient ImmutableSortedMap<String, Property<?, ?, ?>> properties;
+  private final transient ImmutableSortedMap<String, Value<?, ?, ?>> properties;
   private transient DatastoreV1.Entity tempEntityPb; // only for deserialization
 
   public static final class Builder {
 
     private IncompleteKey key;
-    private Map<String, Property<?, ?, ?>> properties = new HashMap<>();
+    private Map<String, Value<?, ?, ?>> properties = new HashMap<>();
 
     public Builder() {
     }
@@ -54,8 +54,8 @@ public final class EmbeddedEntity implements Serializable {
       return this;
     }
 
-    public Builder setProperty(String name, Property<?, ?, ?> property) {
-      properties.put(name, property);
+    public Builder setProperty(String name, Value<?, ?, ?> value) {
+      properties.put(name, value);
       return this;
     }
 
@@ -85,7 +85,7 @@ public final class EmbeddedEntity implements Serializable {
     return properties.containsKey(name);
   }
 
-  public Property<?, ?, ?> getProperty(String name) {
+  public Value<?, ?, ?> getProperty(String name) {
     return properties.get(name);
   }
 
@@ -119,7 +119,7 @@ public final class EmbeddedEntity implements Serializable {
       builder.setKey(IncompleteKey.fromPb(entityPb.getKey()));
     }
     for (DatastoreV1.Property property : entityPb.getPropertyList()) {
-      builder.setProperty(property.getName(), Property.fromPb(property.getValue()));
+      builder.setProperty(property.getName(), Value.fromPb(property.getValue()));
     }
     return builder.build();
   }
@@ -129,7 +129,7 @@ public final class EmbeddedEntity implements Serializable {
     if (key != null) {
       entityPb.setKey(key.toPb());
     }
-    for (Map.Entry<String, Property<?, ?, ?>> entry : properties.entrySet()) {
+    for (Map.Entry<String, Value<?, ?, ?>> entry : properties.entrySet()) {
       DatastoreV1.Property.Builder propertyPb = DatastoreV1.Property.newBuilder();
       propertyPb.setName(entry.getKey());
       propertyPb.setValue(entry.getValue().toPb());

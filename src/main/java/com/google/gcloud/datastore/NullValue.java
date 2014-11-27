@@ -4,12 +4,12 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class NullProperty extends Property<Void, NullProperty, NullProperty.Builder> {
+public final class NullValue extends Value<Void, NullValue, NullValue.Builder> {
 
   private static final long serialVersionUID = 8497300779013002270L;
 
-  static final BaseMarshaller<Void, NullProperty, Builder> MARSHALLER =
-      new BaseMarshaller<Void, NullProperty, Builder>() {
+  static final BaseMarshaller<Void, NullValue, Builder> MARSHALLER =
+      new BaseMarshaller<Void, NullValue, Builder>() {
 
     @Override
     public Builder newBuilder(Void value) {
@@ -27,20 +27,20 @@ public final class NullProperty extends Property<Void, NullProperty, NullPropert
     }
 
     @Override
-    protected void setValue(NullProperty from, DatastoreV1.Value.Builder to) {
+    protected void setValue(NullValue from, DatastoreV1.Value.Builder to) {
       // nothing to set
     }
   };
 
-  public static final class Builder extends Property.BaseBuilder<Void, NullProperty, Builder> {
+  public static final class Builder extends Value.BaseBuilder<Void, NullValue, Builder> {
 
     public Builder() {
       super(Type.NULL);
     }
 
     @Override
-    public NullProperty build() {
-      return new NullProperty(this);
+    public NullValue build() {
+      return new NullValue(this);
     }
 
     @Override
@@ -50,11 +50,11 @@ public final class NullProperty extends Property<Void, NullProperty, NullPropert
     }
   }
 
-  public NullProperty() {
+  public NullValue() {
     this(new Builder().indexed(true));
   }
 
-  NullProperty(Builder builder) {
+  NullValue(Builder builder) {
     super(builder);
   }
 }

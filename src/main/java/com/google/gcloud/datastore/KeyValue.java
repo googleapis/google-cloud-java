@@ -4,12 +4,12 @@ import static com.google.api.services.datastore.DatastoreV1.Value.KEY_VALUE_FIEL
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class KeyProperty extends Property<Key, KeyProperty, KeyProperty.Builder> {
+public final class KeyValue extends Value<Key, KeyValue, KeyValue.Builder> {
 
   private static final long serialVersionUID = -1318353707326704821L;
 
-  static final BaseMarshaller<Key, KeyProperty, Builder> MARSHALLER =
-      new BaseMarshaller<Key, KeyProperty, Builder>() {
+  static final BaseMarshaller<Key, KeyValue, Builder> MARSHALLER =
+      new BaseMarshaller<Key, KeyValue, Builder>() {
 
     @Override
     public int getProtoFieldId() {
@@ -27,12 +27,12 @@ public final class KeyProperty extends Property<Key, KeyProperty, KeyProperty.Bu
     }
 
     @Override
-    protected void setValue(KeyProperty from, DatastoreV1.Value.Builder to) {
+    protected void setValue(KeyValue from, DatastoreV1.Value.Builder to) {
       to.setKeyValue(from.get().toPb());
     }
   };
 
-  public static final class Builder extends Property.BaseBuilder<Key, KeyProperty, Builder> {
+  public static final class Builder extends Value.BaseBuilder<Key, KeyValue, Builder> {
 
     public Builder(Key value) {
       super(Type.KEY);
@@ -40,16 +40,16 @@ public final class KeyProperty extends Property<Key, KeyProperty, KeyProperty.Bu
     }
 
     @Override
-    public KeyProperty build() {
-      return new KeyProperty(this);
+    public KeyValue build() {
+      return new KeyValue(this);
     }
   }
 
-  public KeyProperty(Key key) {
+  public KeyValue(Key key) {
     this(new Builder(key));
   }
 
-  KeyProperty(Builder builder) {
+  KeyValue(Builder builder) {
     super(builder);
   }
 }

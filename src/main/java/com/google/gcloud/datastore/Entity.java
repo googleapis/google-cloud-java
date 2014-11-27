@@ -21,13 +21,13 @@ public final class Entity implements Serializable {
   private static final long serialVersionUID = 432961565733066915L;
 
   private final transient Key key;
-  private final transient ImmutableSortedMap<String, Property<?, ?, ?>> properties;
+  private final transient ImmutableSortedMap<String, Value<?, ?, ?>> properties;
   private transient DatastoreV1.Entity tempEntityPb; // only for deserialization
 
   public static final class Builder {
 
     private Key key;
-    private Map<String, Property<?, ?, ?>> properties;
+    private Map<String, Value<?, ?, ?>> properties;
 
     public Builder(Key key) {
       this.key = checkNotNull(key);
@@ -49,8 +49,8 @@ public final class Entity implements Serializable {
       return this;
     }
 
-    public Builder setProperty(String name, Property<?, ?, ?> property) {
-      properties.put(name, property);
+    public Builder setProperty(String name, Value<?, ?, ?> value) {
+      properties.put(name, value);
       return this;
     }
 
@@ -72,7 +72,7 @@ public final class Entity implements Serializable {
     return properties.containsKey(name);
   }
 
-  public Property<?, ?, ?> getProperty(String name) {
+  public Value<?, ?, ?> getProperty(String name) {
     return properties.get(name);
   }
 
@@ -80,7 +80,7 @@ public final class Entity implements Serializable {
     return properties.keySet();
   }
 
-  ImmutableSortedMap<String, Property<?, ?, ?>> getProperties() {
+  ImmutableSortedMap<String, Value<?, ?, ?>> getProperties() {
     return properties;
   }
 
@@ -108,7 +108,7 @@ public final class Entity implements Serializable {
     Preconditions.checkArgument(entityPb.hasKey());
     Builder builder = new Builder(Key.fromPb(entityPb.getKey()));
     for (DatastoreV1.Property property : entityPb.getPropertyList()) {
-      builder.setProperty(property.getName(), Property.fromPb(property.getValue()));
+      builder.setProperty(property.getName(), Value.fromPb(property.getValue()));
     }
     return builder.build();
   }
@@ -116,7 +116,7 @@ public final class Entity implements Serializable {
   DatastoreV1.Entity toPb() {
     DatastoreV1.Entity.Builder entityPb = DatastoreV1.Entity.newBuilder();
     entityPb.setKey(key.toPb());
-    for (Map.Entry<String, Property<?, ?, ?>> entry : properties.entrySet()) {
+    for (Map.Entry<String, Value<?, ?, ?>> entry : properties.entrySet()) {
       DatastoreV1.Property.Builder propertyPb = DatastoreV1.Property.newBuilder();
       propertyPb.setName(entry.getKey());
       propertyPb.setValue(entry.getValue().toPb());

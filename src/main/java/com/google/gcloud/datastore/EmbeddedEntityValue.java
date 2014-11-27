@@ -4,13 +4,13 @@ import static com.google.api.services.datastore.DatastoreV1.Value.ENTITY_VALUE_F
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class EmbeddedEntityProperty extends
-    Property<EmbeddedEntity, EmbeddedEntityProperty, EmbeddedEntityProperty.Builder> {
+public final class EmbeddedEntityValue extends
+    Value<EmbeddedEntity, EmbeddedEntityValue, EmbeddedEntityValue.Builder> {
 
   private static final long serialVersionUID = -5461475706792576395L;
 
-  static final BaseMarshaller<EmbeddedEntity, EmbeddedEntityProperty, Builder> MARSHALLER =
-      new BaseMarshaller<EmbeddedEntity, EmbeddedEntityProperty, Builder>() {
+  static final BaseMarshaller<EmbeddedEntity, EmbeddedEntityValue, Builder> MARSHALLER =
+      new BaseMarshaller<EmbeddedEntity, EmbeddedEntityValue, Builder>() {
 
     @Override
     public int getProtoFieldId() {
@@ -28,13 +28,13 @@ public final class EmbeddedEntityProperty extends
     }
 
     @Override
-    protected void setValue(EmbeddedEntityProperty from, DatastoreV1.Value.Builder to) {
+    protected void setValue(EmbeddedEntityValue from, DatastoreV1.Value.Builder to) {
       to.setEntityValue(from.get().toPb());
     }
   };
 
   public static final class Builder extends
-      Property.BaseBuilder<EmbeddedEntity, EmbeddedEntityProperty, Builder> {
+      Value.BaseBuilder<EmbeddedEntity, EmbeddedEntityValue, Builder> {
 
     public Builder(EmbeddedEntity entity) {
       super(Type.EMBEDDED_ENTITY);
@@ -43,16 +43,16 @@ public final class EmbeddedEntityProperty extends
     }
 
     @Override
-    public EmbeddedEntityProperty build() {
-      return new EmbeddedEntityProperty(this);
+    public EmbeddedEntityValue build() {
+      return new EmbeddedEntityValue(this);
     }
   }
 
-  public EmbeddedEntityProperty(EmbeddedEntity entity) {
+  public EmbeddedEntityValue(EmbeddedEntity entity) {
     this(new Builder(entity));
   }
 
-  EmbeddedEntityProperty(Builder builder) {
+  EmbeddedEntityValue(Builder builder) {
     super(builder);
   }
 }

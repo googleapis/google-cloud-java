@@ -15,7 +15,7 @@ import java.util.Objects;
 
 // TODO: add javadoc, and mention that null should only be represented by NullValue.
 public abstract class
-    Property<V, P extends Property<V, P, B>, B extends Property.Builder<V, P, B>>
+    Value<V, P extends Value<V, P, B>, B extends Value.Builder<V, P, B>>
     implements Serializable {
 
   private static final long serialVersionUID = -1899638277588872742L;
@@ -28,11 +28,11 @@ public abstract class
 
   public enum Type {
 
-    NULL(NullProperty.MARSHALLER, NullProperty.MARSHALLER),
-    STRING(StringProperty.MARSHALLER, StringProperty.MARSHALLER),
-    EMBEDDED_ENTITY(EmbeddedEntityProperty.MARSHALLER, EmbeddedEntityProperty.MARSHALLER),
-    PROPERTY_LIST(PropertyListProperty.MARSHALLER, PropertyListProperty.MARSHALLER),
-    KEY(KeyProperty.MARSHALLER, KeyProperty.MARSHALLER);
+    NULL(NullValue.MARSHALLER, NullValue.MARSHALLER),
+    STRING(StringValue.MARSHALLER, StringValue.MARSHALLER),
+    EMBEDDED_ENTITY(EmbeddedEntityValue.MARSHALLER, EmbeddedEntityValue.MARSHALLER),
+    LIST(ListValue.MARSHALLER, ListValue.MARSHALLER),
+    KEY(KeyValue.MARSHALLER, KeyValue.MARSHALLER);
 
     /*
     TODO: Also implement
@@ -50,19 +50,19 @@ public abstract class
     @SuppressWarnings("rawtypes") private final Marshaller marshaller;
     private FieldDescriptor field;
 
-    <V, P extends Property<V, P, B>, B extends Builder<V, P, B>>
+    <V, P extends Value<V, P, B>, B extends Builder<V, P, B>>
         Type(Marshaller<V, P, B> marshaller, BuilderFactory<V, P, B> builderFactory) {
       this.marshaller = marshaller;
       this.builderFactory = builderFactory;
       field = DatastoreV1.Value.getDescriptor().findFieldByNumber(marshaller.getProtoFieldId());
     }
 
-    <V, P extends Property<V, P, B>, B extends Builder<V, P, B>> Marshaller<V, P, B>
+    <V, P extends Value<V, P, B>, B extends Builder<V, P, B>> Marshaller<V, P, B>
         getMarshaller() {
       return marshaller;
     }
 
-    <V, P extends Property<V, P, B>, B extends Builder<V, P, B>> BuilderFactory<V, P, B>
+    <V, P extends Value<V, P, B>, B extends Builder<V, P, B>> BuilderFactory<V, P, B>
         getBuilderFactory() {
       return builderFactory;
     }
@@ -72,12 +72,12 @@ public abstract class
     }
   }
 
-  interface BuilderFactory<V, P extends Property<V, P, B>, B extends Builder<V, P, B>> {
+  interface BuilderFactory<V, P extends Value<V, P, B>, B extends Builder<V, P, B>> {
 
     B newBuilder(V value);
   }
 
-  interface Builder<V, P extends Property<V, P, B>, B extends Builder<V, P, B>> {
+  interface Builder<V, P extends Value<V, P, B>, B extends Builder<V, P, B>> {
 
     Type getType();
 
@@ -98,16 +98,16 @@ public abstract class
     P build();
   }
 
-  interface Marshaller<V, P extends Property<V, P, B>, B extends Builder<V, P, B>> {
+  interface Marshaller<V, P extends Value<V, P, B>, B extends Builder<V, P, B>> {
 
     B fromProto(DatastoreV1.Value proto);
 
-    DatastoreV1.Value toProto(P property);
+    DatastoreV1.Value toProto(P value);
 
     int getProtoFieldId();
   }
 
-  abstract static class BaseMarshaller<V, P extends Property<V, P, B>, B extends Builder<V, P, B>>
+  abstract static class BaseMarshaller<V, P extends Value<V, P, B>, B extends Builder<V, P, B>>
       implements Marshaller<V, P, B>, BuilderFactory<V, P, B> {
 
     @Override
@@ -121,13 +121,13 @@ public abstract class
     }
 
     @Override
-    public final DatastoreV1.Value toProto(P property) {
+    public final DatastoreV1.Value toProto(P value) {
       DatastoreV1.Value.Builder builder = DatastoreV1.Value.newBuilder();
-      builder.setIndexed(property.getIndexed());
-      if (property.getMeaning() != null) {
-        builder.setMeaning(property.getMeaning());
+      builder.setIndexed(value.getIndexed());
+      if (value.getMeaning() != null) {
+        builder.setMeaning(value.getMeaning());
       }
-      setValue(property, builder);
+      setValue(value, builder);
       return builder.build();
     }
 
@@ -136,7 +136,7 @@ public abstract class
     protected abstract void setValue(P from, DatastoreV1.Value.Builder to);
   }
 
-  abstract static class BaseBuilder<V, P extends Property<V, P, B>, B extends BaseBuilder<V, P, B>>
+  abstract static class BaseBuilder<V, P extends Value<V, P, B>, B extends BaseBuilder<V, P, B>>
       implements Builder<V, P, B> {
 
     private final Type type;
@@ -203,7 +203,7 @@ public abstract class
     public abstract P build();
   }
 
-  Property(Builder<V, P, B> builder) {
+  Value(Builder<V, P, B> builder) {
     type = builder.getType();
     indexed = builder.getIndexed();
     meaning = builder.getMeaning();
@@ -255,11 +255,11 @@ public abstract class
       return false;
     }
 
-    Property<V, P, B> otherProperty = (Property<V, P, B>) other;
-    return Objects.equals(type, otherProperty.getType())
-        && Objects.equals(indexed, otherProperty.getIndexed())
-        && Objects.equals(meaning, otherProperty.getMeaning())
-        && Objects.equals(value, otherProperty.get());
+    Value<V, P, B> otherValue = (Value<V, P, B>) other;
+    return Objects.equals(type, otherValue.getType())
+        && Objects.equals(indexed, otherValue.getIndexed())
+        && Objects.equals(meaning, otherValue.getMeaning())
+        && Objects.equals(value, otherValue.get());
   }
 
   @SuppressWarnings("unchecked")
@@ -269,9 +269,9 @@ public abstract class
   }
 
   @SuppressWarnings({ "rawtypes", "unchecked" })
-  static <V, P extends Property<V, P, B>, B extends Property.Builder<V, P, B>> Property<V, P, B>
+  static <V, P extends Value<V, P, B>, B extends Value.Builder<V, P, B>> Value<V, P, B>
       fromPb(DatastoreV1.Value proto) {
-    Marshaller marshaller = NullProperty.MARSHALLER;
+    Marshaller marshaller = NullValue.MARSHALLER;
     for (Type type : Type.values()) {
       FieldDescriptor descriptor = type.getDescriptor();
       if (descriptor != null) {
@@ -286,7 +286,7 @@ public abstract class
         }
       }
     }
-    // change strategy to return RawProperty (package scope constructor)
+    // change strategy to return RawValue (package scope constructor)
     // when no match instead of null. This could only be done
     // when using the V3 API which added a NullValue type to distinct the cases
     // and the use of oneof which generates an enum of all possible values.

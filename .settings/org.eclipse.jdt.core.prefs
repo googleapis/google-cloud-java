@@ -2,3 +2,7 @@
 <<<<<<<=HEAD
 >>>>>>>=ef72daa81c73f99e2156f5bfe8127591fc6358e9
 eclipse.preferences.version=1
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.7
+org.eclipse.jdt.core.compiler.compliance=1.7
+org.eclipse.jdt.core.compiler.problem.forbiddenReference=warning
+org.eclipse.jdt.core.compiler.source=1.7
