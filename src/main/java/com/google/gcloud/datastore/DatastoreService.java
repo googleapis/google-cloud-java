@@ -5,7 +5,8 @@ import java.util.Iterator;
 public interface DatastoreService extends DatastoreReader, DatastoreWriter {
 
   interface Query {
-
+    // TODO
+    // consider 2 types of queries regualr and Gql
   }
 
 
