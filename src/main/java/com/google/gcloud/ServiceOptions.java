@@ -79,17 +79,17 @@ public abstract class ServiceOptions {
 
     protected abstract ServiceOptions build();
 
-    public Builder setHost(String host) {
+    public Builder host(String host) {
       this.host = host;
       return this;
     }
 
-    public Builder setHttpTransport(HttpTransport httpTransport) {
+    public Builder httpTransport(HttpTransport httpTransport) {
       this.httpTransport = httpTransport;
       return this;
     }
 
-    public Builder setAuthConfig(AuthConfig authConfig) {
+    public Builder authConfig(AuthConfig authConfig) {
       this.authConfig = authConfig;
       return this;
     }

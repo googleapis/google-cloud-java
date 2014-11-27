@@ -17,23 +17,28 @@ public class DatastoreServiceOptions extends ServiceOptions {
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE, USERINFO_SCOPE);
   private static final Pattern PATTERN = Pattern.compile(
       "([a-z\\d\\-]{1,100}~)?([a-z\\d][a-z\\d\\-\\.]{0,99}\\:)?([a-z\\d][a-z\\d\\-]{0,99})");
+
   private final String dataset;
+  private final boolean force;
 
   DatastoreServiceOptions(Builder builder) {
     super(builder);
     dataset = firstNonNull(builder.dataset, getAppEngineAppId());
     checkArgument(dataset != null, "missing dataset");
+    force = builder.force;
   }
 
   public static class Builder extends ServiceOptions.Builder {
 
     private String dataset;
+    private boolean force = false;
 
     public Builder() {}
 
     public Builder(DatastoreServiceOptions options) {
       super(options);
       dataset = options.dataset;
+      force = options.force;
     }
 
     @Override
@@ -41,8 +46,13 @@ public class DatastoreServiceOptions extends ServiceOptions {
       return new DatastoreServiceOptions(this);
     }
 
-    public Builder setDataset(String dataset) {
+    public Builder dataset(String dataset) {
       this.dataset = validateDataset(dataset);
+      return this;
+    }
+
+    public Builder force(boolean force) {
+      this.force = force;
       return this;
     }
   }
@@ -60,6 +70,10 @@ public class DatastoreServiceOptions extends ServiceOptions {
 
   public String getDataset() {
     return dataset;
+  }
+
+  public boolean getForce() {
+    return force;
   }
 
   @Override

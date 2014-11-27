@@ -23,6 +23,7 @@
 		</attributes>
 		<accessrules>
 			<accessrule kind="nonaccessible" pattern="**/repackaged/**"/>
+			<accessrule kind="nonaccessible" pattern="com/google/api/client/util/**"/>
 		</accessrules>
 	</classpathentry>
 	<classpathentry kind="var" path="ECLIPSE_HOME"/>

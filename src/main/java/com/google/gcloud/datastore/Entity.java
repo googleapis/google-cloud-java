@@ -4,7 +4,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSortedMap;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -21,7 +21,7 @@ public final class Entity implements Serializable {
   private static final long serialVersionUID = 432961565733066915L;
 
   private final transient Key key;
-  private final transient ImmutableMap<String, Property<?, ?, ?>> properties;
+  private final transient ImmutableSortedMap<String, Property<?, ?, ?>> properties;
   private transient DatastoreV1.Entity tempEntityPb; // only for deserialization
 
   public static final class Builder {
@@ -61,7 +61,7 @@ public final class Entity implements Serializable {
 
   private Entity(Builder builder) {
     key = builder.key;
-    properties = ImmutableMap.copyOf(builder.properties);
+    properties = ImmutableSortedMap.copyOf(builder.properties);
   }
 
   public Key getKey() {
@@ -80,7 +80,7 @@ public final class Entity implements Serializable {
     return properties.keySet();
   }
 
-  Map<String, Property<?, ?, ?>> getProperties() {
+  ImmutableSortedMap<String, Property<?, ?, ?>> getProperties() {
     return properties;
   }
 

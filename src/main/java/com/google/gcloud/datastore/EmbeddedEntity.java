@@ -1,7 +1,7 @@
 package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
-import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSortedMap;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -18,7 +18,7 @@ public final class EmbeddedEntity implements Serializable {
   private static final long serialVersionUID = 6492561268709192891L;
 
   private final transient IncompleteKey key;
-  private final transient ImmutableMap<String, Property<?, ?, ?>> properties;
+  private final transient ImmutableSortedMap<String, Property<?, ?, ?>> properties;
   private transient DatastoreV1.Entity tempEntityPb; // only for deserialization
 
   public static final class Builder {
@@ -66,7 +66,12 @@ public final class EmbeddedEntity implements Serializable {
 
   private EmbeddedEntity(Builder builder) {
     key = builder.key;
-    properties = ImmutableMap.copyOf(builder.properties);
+    properties = ImmutableSortedMap.copyOf(builder.properties);
+  }
+
+  public EmbeddedEntity(Entity entity) {
+    key = entity.getKey();
+    properties = entity.getProperties();
   }
 
   /**

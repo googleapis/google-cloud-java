@@ -8,7 +8,7 @@ public final class KeyProperty extends Property<Key, KeyProperty, KeyProperty.Bu
 
   private static final long serialVersionUID = -1318353707326704821L;
 
-  static final Marshaller<Key, KeyProperty, Builder> MARSHALLER =
+  static final BaseMarshaller<Key, KeyProperty, Builder> MARSHALLER =
       new BaseMarshaller<Key, KeyProperty, Builder>() {
 
     @Override
@@ -17,7 +17,7 @@ public final class KeyProperty extends Property<Key, KeyProperty, KeyProperty.Bu
     }
 
     @Override
-    protected Builder newBuilder(Key key) {
+    public Builder newBuilder(Key key) {
       return new Builder(key);
     }
 
@@ -28,7 +28,7 @@ public final class KeyProperty extends Property<Key, KeyProperty, KeyProperty.Bu
 
     @Override
     protected void setValue(KeyProperty from, Value.Builder to) {
-      to.setKeyValue(from.getValue().toPb());
+      to.setKeyValue(from.get().toPb());
     }
   };
 
@@ -36,17 +36,12 @@ public final class KeyProperty extends Property<Key, KeyProperty, KeyProperty.Bu
 
     public Builder(Key value) {
       super(Type.KEY);
-      setValue(value);
+      set(value);
     }
 
     @Override
     public KeyProperty build() {
       return new KeyProperty(this);
-    }
-
-    @Override
-    protected Builder self() {
-      return this;
     }
   }
 

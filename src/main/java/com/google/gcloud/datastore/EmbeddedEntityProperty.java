@@ -9,7 +9,7 @@ public final class EmbeddedEntityProperty extends
 
   private static final long serialVersionUID = -5461475706792576395L;
 
-  static final Marshaller<EmbeddedEntity, EmbeddedEntityProperty, Builder> MARSHALLER =
+  static final BaseMarshaller<EmbeddedEntity, EmbeddedEntityProperty, Builder> MARSHALLER =
       new BaseMarshaller<EmbeddedEntity, EmbeddedEntityProperty, Builder>() {
 
     @Override
@@ -18,7 +18,7 @@ public final class EmbeddedEntityProperty extends
     }
 
     @Override
-    protected Builder newBuilder(EmbeddedEntity value) {
+    public Builder newBuilder(EmbeddedEntity value) {
       return new Builder(value);
     }
 
@@ -29,7 +29,7 @@ public final class EmbeddedEntityProperty extends
 
     @Override
     protected void setValue(EmbeddedEntityProperty from, DatastoreV1.Value.Builder to) {
-      to.setEntityValue(from.getValue().toPb());
+      to.setEntityValue(from.get().toPb());
     }
   };
 
@@ -38,13 +38,8 @@ public final class EmbeddedEntityProperty extends
 
     public Builder(EmbeddedEntity entity) {
       super(Type.EMBEDDED_ENTITY);
-      setIndexed(false);
-      setValue(entity);
-    }
-
-    @Override
-    protected Builder self() {
-      return this;
+      indexed(false);
+      set(entity);
     }
 
     @Override

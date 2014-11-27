@@ -9,7 +9,7 @@ public final class StringProperty extends Property<String, StringProperty, Strin
 
   private static final long serialVersionUID = -3105699707394545523L;
 
-  static final Marshaller<String, StringProperty, Builder> MARSHALLER =
+  static final BaseMarshaller<String, StringProperty, Builder> MARSHALLER =
       new BaseMarshaller<String, StringProperty, Builder>() {
 
     @Override
@@ -18,7 +18,7 @@ public final class StringProperty extends Property<String, StringProperty, Strin
     }
 
     @Override
-    protected Builder newBuilder(String value) {
+    public Builder newBuilder(String value) {
       return new Builder(value);
     }
 
@@ -29,7 +29,7 @@ public final class StringProperty extends Property<String, StringProperty, Strin
 
     @Override
     protected void setValue(StringProperty from, Value.Builder to) {
-      to.setStringValue(from.getValue());
+      to.setStringValue(from.get());
     }
   };
 
@@ -37,20 +37,15 @@ public final class StringProperty extends Property<String, StringProperty, Strin
 
     public Builder(String value) {
       super(Type.STRING);
-      setValue(value);
+      set(value);
     }
 
     @Override
     public StringProperty build() {
-      if (isIndexed()) {
-        checkArgument(getValue().length() <= 500, "Indexed string is limited to 500 characters");
+      if (getIndexed()) {
+        checkArgument(get().length() <= 500, "Indexed string is limited to 500 characters");
       }
       return new StringProperty(this);
-    }
-
-    @Override
-    protected Builder self() {
-      return this;
     }
   }
 

@@ -8,7 +8,7 @@ public final class NullProperty extends Property<Void, NullProperty, NullPropert
 
   private static final long serialVersionUID = 8497300779013002270L;
 
-  static final Marshaller<Void, NullProperty, Builder> MARSHALLER =
+  static final BaseMarshaller<Void, NullProperty, Builder> MARSHALLER =
       new BaseMarshaller<Void, NullProperty, Builder>() {
 
     @Override
@@ -44,19 +44,14 @@ public final class NullProperty extends Property<Void, NullProperty, NullPropert
     }
 
     @Override
-    public Builder setValue(Void value) {
+    public Builder set(Void value) {
       checkArgument(value == null, "Only null values are allowed");
-      return this;
-    }
-
-    @Override
-    protected Builder self() {
       return this;
     }
   }
 
   public NullProperty() {
-    this(new Builder());
+    this(new Builder().indexed(true));
   }
 
   NullProperty(Builder builder) {

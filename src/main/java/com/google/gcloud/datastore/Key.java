@@ -8,6 +8,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 
+import java.io.ObjectStreamException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -150,6 +151,12 @@ public final class Key extends IncompleteKey {
 
   static Key fromPb(DatastoreV1.Key keyPb) {
     return fromIncompleteKey(IncompleteKey.fromPb(keyPb));
+  }
+
+  @Override
+  @SuppressWarnings("unused")
+  protected Object readResolve() throws ObjectStreamException {
+    return fromIncompleteKey((IncompleteKey) super.readResolve());
   }
 
   private static ImmutableList<PathElement> newPath(IncompleteKey key, String name) {

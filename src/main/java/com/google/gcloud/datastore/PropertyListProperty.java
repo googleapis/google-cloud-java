@@ -14,7 +14,7 @@ public final class PropertyListProperty extends
 
   private static final long serialVersionUID = -5461475706792576395L;
 
-  static final Marshaller<List<Property<?, ?, ?>>, PropertyListProperty, Builder> MARSHALLER =
+  static final BaseMarshaller<List<Property<?, ?, ?>>, PropertyListProperty, Builder> MARSHALLER =
       new BaseMarshaller<List<Property<?, ?, ?>>, PropertyListProperty, Builder>() {
 
     @Override
@@ -23,8 +23,8 @@ public final class PropertyListProperty extends
     }
 
     @Override
-    protected Builder newBuilder(List<Property<?, ?, ?>> properties) {
-      return new Builder().setValue(properties);
+    public Builder newBuilder(List<Property<?, ?, ?>> properties) {
+      return new Builder().set(properties);
     }
 
     @Override
@@ -38,7 +38,7 @@ public final class PropertyListProperty extends
 
     @Override
     protected void setValue(PropertyListProperty from, Value.Builder to) {
-      for (Property<?, ?, ?> property : from.getValue()) {
+      for (Property<?, ?, ?> property : from.get()) {
         to.addListValue(property.toPb());
       }
     }
@@ -51,7 +51,7 @@ public final class PropertyListProperty extends
 
     public Builder() {
       super(Type.PROPERTY_LIST);
-      setIndexed(false);
+      indexed(false);
     }
 
     public Builder addProperty(Property<?, ?, ?> property) {
@@ -61,8 +61,18 @@ public final class PropertyListProperty extends
       return this;
     }
 
+    public Builder addProperty(Property<?, ?, ?> first, Property<?, ?, ?>... other) {
+      addProperty(first);
+      for (Property<?, ?, ?> property : other) {
+        Preconditions.checkArgument(
+            property.getType() != Type.PROPERTY_LIST, "Cannot contain another list");
+        listBuilder.add(property);
+      }
+      return this;
+    }
+
     @Override
-    public Builder setValue(List<Property<?, ?, ?>> properties) {
+    public Builder set(List<Property<?, ?, ?>> properties) {
       listBuilder = ImmutableList.<Property<?, ?, ?>>builder();
       for (Property<?, ?, ?> property : properties) {
         addProperty(property);
@@ -71,24 +81,23 @@ public final class PropertyListProperty extends
     }
 
     @Override
-    public List<Property<?, ?, ?>> getValue() {
+    public List<Property<?, ?, ?>> get() {
       return listBuilder.build();
     }
 
     @Override
-    protected Builder self() {
-      return this;
-    }
-
-    @Override
     public PropertyListProperty build() {
-      Preconditions.checkState(!getValue().isEmpty(), "Property list could not be empty");
+      Preconditions.checkState(!get().isEmpty(), "Property list could not be empty");
       return new PropertyListProperty(this);
     }
   }
 
   public PropertyListProperty(List<Property<?, ?, ?>> properties) {
-    this(new Builder().setValue(properties));
+    this(new Builder().set(properties));
+  }
+
+  public PropertyListProperty(Property<?, ?, ?> first, Property<?, ?, ?>... other) {
+    this(new Builder().addProperty(first, other));
   }
 
   PropertyListProperty(Builder builder) {

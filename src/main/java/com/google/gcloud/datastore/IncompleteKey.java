@@ -181,7 +181,7 @@ public class IncompleteKey implements Serializable {
     }
 
     private String validateKind(String kind) {
-      checkArgument(Strings.isNullOrEmpty(kind), "kind must not be empty or null");
+      checkArgument(!Strings.isNullOrEmpty(kind), "kind must not be empty or null");
       checkArgument(kind.length() <= 500, "kind must not contain more than 500 characters");
       return kind;
     }
@@ -306,7 +306,7 @@ public class IncompleteKey implements Serializable {
   }
 
   @SuppressWarnings("unused")
-  private Object readResolve() throws ObjectStreamException {
+  protected Object readResolve() throws ObjectStreamException {
     return fromPb(tempKeyPb);
   }
 }

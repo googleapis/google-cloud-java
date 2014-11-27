@@ -1,32 +1,11 @@
 package com.google.gcloud.datastore;
 
 import java.util.Iterator;
-import java.util.Map;
 
-public interface DatastoreService {
+public interface DatastoreService extends DatastoreReader, DatastoreWriter {
 
-  interface DatastoreReader {
+  interface Query {
 
-    Map<String, Property<?, ?, ?>> get(Key key);
-
-    // return the result in the given order
-    Iterator<Map<String, Property<?, ?, ?>>> get(Iterator<Key> key);
-
-    // query result item is a tuple of (key, value...) where values may be empty
-    //QueryResult runQuery(Query query);
-  }
-
-  // TODO: remove all refrence of IncomplteKey (except allocate and use Entity instead of Map)
-
-  interface DatastoreWriter {
-
-    Key add(IncompleteKey key, Map<String, Property<?, ?, ?>> values);
-
-    void update(Key key , Map<String, Property<?, ?, ?>> values);
-
-    Key put(IncompleteKey key, Map<String, Property<?, ?, ?>> values);
-
-    void delete(Key key);
   }
 
 
@@ -43,35 +22,28 @@ public interface DatastoreService {
       SERIALIZABLE, SNAPSHOT;
     }
 
+
     IsolationLevel getIsolationLevel();
+
+    boolean force();
   }
 
-  public interface Batch extends DatastoreWriter {
-
-    @Override
-    void add(Key key, Map<String, Property<?, ?, ?>> values);
-
-    @Override
-    void update(Key key , Map<String, Property<?, ?, ?>> values);
-
-    @Override
-    void put(Key key, Map<String, Property<?, ?, ?>> values);
+  public interface BatchWriter extends DatastoreWriter {
 
     void submit();
   }
 
   public interface BatchOptions {
-
   }
 
   DatastoreServiceOptions getOptions();
 
-  Transaction newTransaction(TransactionOptions tsOptions);
+  Transaction newTransaction(TransactionOptions transactionOptions);
 
-  Batch newBatch();
+  BatchWriter newBatchWriter(BatchOptions batchOptions);
 
   Key allocateId(IncompleteKey key);
 
-  // results are returned in request order
-  Iterator<Key> allocateIds(Iterator<IncompleteKey> key);
+  // results are returned using request order
+  Iterator<Key> allocateIds(IncompleteKey... key);
 }

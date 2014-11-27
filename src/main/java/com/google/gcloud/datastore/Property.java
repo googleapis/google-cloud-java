@@ -13,26 +13,26 @@ import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.util.Objects;
 
-// TODO: add javadoc, and mention that  null should only be represented by NullValue.
+// TODO: add javadoc, and mention that null should only be represented by NullValue.
 public abstract class
     Property<V, P extends Property<V, P, B>, B extends Property.Builder<V, P, B>>
     implements Serializable {
 
   private static final long serialVersionUID = -1899638277588872742L;
 
-  private transient final Type type;
-  private transient final boolean indexed;
-  private transient final Integer meaning;
-  private transient final V value;
+  private final transient Type type;
+  private final transient boolean indexed;
+  private final transient Integer meaning;
+  private final transient V value;
   private transient Value tempValuePb; // only for deserialization
 
   public enum Type {
 
-    NULL(NullProperty.MARSHALLER),
-    STRING(StringProperty.MARSHALLER),
-    EMBEDDED_ENTITY(EmbeddedEntityProperty.MARSHALLER),
-    PROPERTY_LIST(PropertyListProperty.MARSHALLER),
-    KEY(KeyProperty.MARSHALLER);
+    NULL(NullProperty.MARSHALLER, NullProperty.MARSHALLER),
+    STRING(StringProperty.MARSHALLER, StringProperty.MARSHALLER),
+    EMBEDDED_ENTITY(EmbeddedEntityProperty.MARSHALLER, EmbeddedEntityProperty.MARSHALLER),
+    PROPERTY_LIST(PropertyListProperty.MARSHALLER, PropertyListProperty.MARSHALLER),
+    KEY(KeyProperty.MARSHALLER, KeyProperty.MARSHALLER);
 
     /*
     TODO: Also implement
@@ -46,13 +46,14 @@ public abstract class
     // GEO_POINT(GeoPointValue.class, 8) // Does not seem to be public yet...
      */
 
-    @SuppressWarnings("rawtypes")
-    private final Marshaller marshaller;
+    @SuppressWarnings("rawtypes") private final BuilderFactory builderFactory;
+    @SuppressWarnings("rawtypes") private final Marshaller marshaller;
     private FieldDescriptor field;
 
     <V, P extends Property<V, P, B>, B extends Builder<V, P, B>>
-        Type(Marshaller<V, P, B> marshaller) {
+        Type(Marshaller<V, P, B> marshaller, BuilderFactory<V, P, B> builderFactory) {
       this.marshaller = marshaller;
+      this.builderFactory = builderFactory;
       field = Value.getDescriptor().findFieldByNumber(marshaller.getProtoFieldId());
     }
 
@@ -61,9 +62,19 @@ public abstract class
       return marshaller;
     }
 
+    <V, P extends Property<V, P, B>, B extends Builder<V, P, B>> BuilderFactory<V, P, B>
+        getBuilderFactory() {
+      return builderFactory;
+    }
+
     FieldDescriptor getDescriptor() {
       return field;
     }
+  }
+
+  interface BuilderFactory<V, P extends Property<V, P, B>, B extends Builder<V, P, B>> {
+
+    B newBuilder(V value);
   }
 
   interface Builder<V, P extends Property<V, P, B>, B extends Builder<V, P, B>> {
@@ -72,17 +83,17 @@ public abstract class
 
     B mergeFrom(P other);
 
-    boolean isIndexed();
+    boolean getIndexed();
 
-    B setIndexed(boolean indexed);
+    B indexed(boolean indexed);
 
     Integer getMeaning();
 
-    B setMeaning(Integer meaning);
+    B meaning(Integer meaning);
 
-    V getValue();
+    V get();
 
-    B setValue(V value);
+    B set(V value);
 
     P build();
   }
@@ -97,14 +108,14 @@ public abstract class
   }
 
   abstract static class BaseMarshaller<V, P extends Property<V, P, B>, B extends Builder<V, P, B>>
-      implements Marshaller<V, P, B> {
+      implements Marshaller<V, P, B>, BuilderFactory<V, P, B> {
 
     @Override
     public final B fromProto(Value proto) {
       B builder = newBuilder(getValue(proto));
-      builder.setIndexed(proto.getIndexed());
+      builder.indexed(proto.getIndexed());
       if (proto.hasMeaning()) {
-        builder.setMeaning(proto.getMeaning());
+        builder.meaning(proto.getMeaning());
       }
       return builder;
     }
@@ -112,16 +123,13 @@ public abstract class
     @Override
     public final Value toProto(P property) {
       Value.Builder builder = Value.newBuilder();
-      builder.setIndexed(property.isIndexed());
+      builder.setIndexed(property.getIndexed());
       if (property.getMeaning() != null) {
         builder.setMeaning(property.getMeaning());
       }
       setValue(property, builder);
       return builder.build();
     }
-
-    // Move to a Builder Factory
-    protected abstract B newBuilder(V value);
 
     protected abstract V getValue(Value from);
 
@@ -147,19 +155,19 @@ public abstract class
 
     @Override
     public B mergeFrom(P other) {
-      indexed = other.isIndexed();
+      indexed = other.getIndexed();
       meaning = other.getMeaning();
-      setValue(other.getValue());
+      set(other.get());
       return self();
     }
 
     @Override
-    public boolean isIndexed() {
+    public boolean getIndexed() {
       return indexed;
     }
 
     @Override
-    public B setIndexed(boolean indexed) {
+    public B indexed(boolean indexed) {
       this.indexed = indexed;
       return self();
     }
@@ -170,23 +178,26 @@ public abstract class
     }
 
     @Override
-    public B setMeaning(Integer meaning) {
+    public B meaning(Integer meaning) {
       this.meaning = meaning;
       return self();
     }
 
     @Override
-    public V getValue() {
+    public V get() {
       return value;
     }
 
     @Override
-    public B setValue(V value) {
+    public B set(V value) {
       this.value = checkNotNull(value);
       return self();
     }
 
-    protected abstract B self();
+    @SuppressWarnings("unchecked")
+    private B self() {
+      return (B) this;
+    }
 
     @Override
     public abstract P build();
@@ -194,7 +205,7 @@ public abstract class
 
   Property(Builder<V, P, B> builder) {
     type = builder.getType();
-    indexed = builder.isIndexed();
+    indexed = builder.getIndexed();
     meaning = builder.getMeaning();
     // some validations:
     if (meaning != null) {
@@ -206,14 +217,14 @@ public abstract class
             "Indexed values should not have meaning with 15 or 22");
       }
     }
-    value = builder.getValue();
+    value = builder.get();
   }
 
   public final Type getType() {
     return type;
   }
 
-  public final boolean isIndexed() {
+  public final boolean getIndexed() {
     return indexed;
   }
 
@@ -221,18 +232,19 @@ public abstract class
     return meaning;
   }
 
-  public final V getValue() {
+  public final V get() {
     return value;
   }
 
   public final B toBuilder() {
-    Marshaller<V, P, B> marshaller = getType().getMarshaller();
-    return marshaller.fromProto(toPb());
+    BuilderFactory<V, P, B> builderFactory = getType().getBuilderFactory();
+    B builder = builderFactory.newBuilder(get());
+    return builder.mergeFrom((P) this);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getType(), isIndexed(), getMeaning());
+    return Objects.hash(type, indexed, meaning);
   }
 
   @SuppressWarnings("unchecked")
@@ -244,9 +256,9 @@ public abstract class
 
     Property<V, P, B> otherProperty = (Property<V, P, B>) other;
     return Objects.equals(type, otherProperty.getType())
-        && Objects.equals(indexed, otherProperty.isIndexed())
+        && Objects.equals(indexed, otherProperty.getIndexed())
         && Objects.equals(meaning, otherProperty.getMeaning())
-        && Objects.equals(getValue(), otherProperty.getValue());
+        && Objects.equals(value, otherProperty.get());
   }
 
   @SuppressWarnings("unchecked")
@@ -255,21 +267,30 @@ public abstract class
     return marshaller.toProto((P) this);
   }
 
-  @SuppressWarnings("unchecked")
+  @SuppressWarnings({ "rawtypes", "unchecked" })
   static <V, P extends Property<V, P, B>, B extends Property.Builder<V, P, B>> Property<V, P, B>
       fromPb(Value proto) {
+    Marshaller marshaller = NullProperty.MARSHALLER;
     for (Type type : Type.values()) {
-      if (proto.hasField(type.getDescriptor())) {
-        return (Property<V, P, B>) type.getMarshaller().fromProto(proto).build();
+      FieldDescriptor descriptor = type.getDescriptor();
+      if (descriptor != null) {
+        if (descriptor.isRepeated()) {
+          if (proto.getRepeatedFieldCount(descriptor) > 0) {
+            marshaller = type.getMarshaller();
+            break;
+          }
+        } else if (proto.hasField(descriptor)) {
+          marshaller = type.getMarshaller();
+          break;
+        }
       }
     }
     // change strategy to return RawProperty (package scope constructor)
     // when no match instead of null. This could only be done
-    // when using the V1 API which added a NullValue type to distinct the cases
+    // when using the V3 API which added a NullValue type to distinct the cases
     // and the use of oneof which generates an enum of all possible values.
-    return (Property<V, P, B>) new NullProperty();
+    return marshaller.fromProto(proto).build();
   }
-
 
   private void writeObject(ObjectOutputStream out) throws IOException {
     out.defaultWriteObject();
@@ -283,7 +304,7 @@ public abstract class
   }
 
   @SuppressWarnings("unused")
-  private Object readResolve() throws ObjectStreamException {
+  protected Object readResolve() throws ObjectStreamException {
     return fromPb(tempValuePb);
   }
 }
