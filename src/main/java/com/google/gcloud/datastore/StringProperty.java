@@ -3,7 +3,7 @@ package com.google.gcloud.datastore;
 import static com.google.api.services.datastore.DatastoreV1.Value.STRING_VALUE_FIELD_NUMBER;
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.api.services.datastore.DatastoreV1.Value;
+import com.google.api.services.datastore.DatastoreV1;
 
 public final class StringProperty extends Property<String, StringProperty, StringProperty.Builder> {
 
@@ -23,12 +23,12 @@ public final class StringProperty extends Property<String, StringProperty, Strin
     }
 
     @Override
-    protected String getValue(Value from) {
+    protected String getValue(DatastoreV1.Value from) {
       return from.getStringValue();
     }
 
     @Override
-    protected void setValue(StringProperty from, Value.Builder to) {
+    protected void setValue(StringProperty from, DatastoreV1.Value.Builder to) {
       to.setStringValue(from.get());
     }
   };

@@ -2,7 +2,7 @@ package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.api.services.datastore.DatastoreV1.Value;
+import com.google.api.services.datastore.DatastoreV1;
 
 public final class NullProperty extends Property<Void, NullProperty, NullProperty.Builder> {
 
@@ -22,12 +22,12 @@ public final class NullProperty extends Property<Void, NullProperty, NullPropert
     }
 
     @Override
-    protected Void getValue(Value from) {
+    protected Void getValue(DatastoreV1.Value from) {
       return null;
     }
 
     @Override
-    protected void setValue(NullProperty from, Value.Builder to) {
+    protected void setValue(NullProperty from, DatastoreV1.Value.Builder to) {
       // nothing to set
     }
   };

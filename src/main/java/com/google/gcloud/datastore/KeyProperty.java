@@ -2,7 +2,7 @@ package com.google.gcloud.datastore;
 
 import static com.google.api.services.datastore.DatastoreV1.Value.KEY_VALUE_FIELD_NUMBER;
 
-import com.google.api.services.datastore.DatastoreV1.Value;
+import com.google.api.services.datastore.DatastoreV1;
 
 public final class KeyProperty extends Property<Key, KeyProperty, KeyProperty.Builder> {
 
@@ -22,12 +22,12 @@ public final class KeyProperty extends Property<Key, KeyProperty, KeyProperty.Bu
     }
 
     @Override
-    protected Key getValue(Value from) {
+    protected Key getValue(DatastoreV1.Value from) {
       return Key.fromPb(from.getKeyValue());
     }
 
     @Override
-    protected void setValue(KeyProperty from, Value.Builder to) {
+    protected void setValue(KeyProperty from, DatastoreV1.Value.Builder to) {
       to.setKeyValue(from.get().toPb());
     }
   };

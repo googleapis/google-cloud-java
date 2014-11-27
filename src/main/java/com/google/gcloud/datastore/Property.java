@@ -3,7 +3,7 @@ package com.google.gcloud.datastore;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.services.datastore.DatastoreV1.Value;
+import com.google.api.services.datastore.DatastoreV1;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 
 import java.io.IOException;
@@ -24,7 +24,7 @@ public abstract class
   private final transient boolean indexed;
   private final transient Integer meaning;
   private final transient V value;
-  private transient Value tempValuePb; // only for deserialization
+  private transient DatastoreV1.Value tempValuePb; // only for deserialization
 
   public enum Type {
 
@@ -54,7 +54,7 @@ public abstract class
         Type(Marshaller<V, P, B> marshaller, BuilderFactory<V, P, B> builderFactory) {
       this.marshaller = marshaller;
       this.builderFactory = builderFactory;
-      field = Value.getDescriptor().findFieldByNumber(marshaller.getProtoFieldId());
+      field = DatastoreV1.Value.getDescriptor().findFieldByNumber(marshaller.getProtoFieldId());
     }
 
     <V, P extends Property<V, P, B>, B extends Builder<V, P, B>> Marshaller<V, P, B>
@@ -100,9 +100,9 @@ public abstract class
 
   interface Marshaller<V, P extends Property<V, P, B>, B extends Builder<V, P, B>> {
 
-    B fromProto(Value proto);
+    B fromProto(DatastoreV1.Value proto);
 
-    Value toProto(P property);
+    DatastoreV1.Value toProto(P property);
 
     int getProtoFieldId();
   }
@@ -111,7 +111,7 @@ public abstract class
       implements Marshaller<V, P, B>, BuilderFactory<V, P, B> {
 
     @Override
-    public final B fromProto(Value proto) {
+    public final B fromProto(DatastoreV1.Value proto) {
       B builder = newBuilder(getValue(proto));
       builder.indexed(proto.getIndexed());
       if (proto.hasMeaning()) {
@@ -121,8 +121,8 @@ public abstract class
     }
 
     @Override
-    public final Value toProto(P property) {
-      Value.Builder builder = Value.newBuilder();
+    public final DatastoreV1.Value toProto(P property) {
+      DatastoreV1.Value.Builder builder = DatastoreV1.Value.newBuilder();
       builder.setIndexed(property.getIndexed());
       if (property.getMeaning() != null) {
         builder.setMeaning(property.getMeaning());
@@ -131,9 +131,9 @@ public abstract class
       return builder.build();
     }
 
-    protected abstract V getValue(Value from);
+    protected abstract V getValue(DatastoreV1.Value from);
 
-    protected abstract void setValue(P from, Value.Builder to);
+    protected abstract void setValue(P from, DatastoreV1.Value.Builder to);
   }
 
   abstract static class BaseBuilder<V, P extends Property<V, P, B>, B extends BaseBuilder<V, P, B>>
@@ -236,6 +236,7 @@ public abstract class
     return value;
   }
 
+  @SuppressWarnings("unchecked")
   public final B toBuilder() {
     BuilderFactory<V, P, B> builderFactory = getType().getBuilderFactory();
     B builder = builderFactory.newBuilder(get());
@@ -262,14 +263,14 @@ public abstract class
   }
 
   @SuppressWarnings("unchecked")
-  Value toPb() {
+  DatastoreV1.Value toPb() {
     Marshaller<V, P, B> marshaller = getType().getMarshaller();
     return marshaller.toProto((P) this);
   }
 
   @SuppressWarnings({ "rawtypes", "unchecked" })
   static <V, P extends Property<V, P, B>, B extends Property.Builder<V, P, B>> Property<V, P, B>
-      fromPb(Value proto) {
+      fromPb(DatastoreV1.Value proto) {
     Marshaller marshaller = NullProperty.MARSHALLER;
     for (Type type : Type.values()) {
       FieldDescriptor descriptor = type.getDescriptor();
@@ -300,7 +301,7 @@ public abstract class
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
     byte[] bytes = (byte[]) in.readObject();
-    tempValuePb = Value.parseFrom(bytes);
+    tempValuePb = DatastoreV1.Value.parseFrom(bytes);
   }
 
   @SuppressWarnings("unused")
