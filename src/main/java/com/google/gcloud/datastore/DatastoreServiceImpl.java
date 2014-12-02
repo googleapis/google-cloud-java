@@ -17,25 +17,25 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   @Override
-  public Transaction newTransaction(TransactionOptions transactionOptions) {
+  public Transaction newTransaction(TransactionOption... transactionOption) {
     // TODO Auto-generated method stub
     return null;
   }
 
   @Override
-  public BatchWriter newBatchWriter(BatchOptions batchOptions) {
+  public BatchWriter newBatchWriter(BatchWriteOption... batchWriteOption) {
     // TODO Auto-generated method stub
     return null;
   }
 
   @Override
-  public Key allocateId(IncompleteKey key) {
+  public Key allocateId(PartialKey key) {
     // TODO Auto-generated method stub
     return null;
   }
 
   @Override
-  public Iterator<Key> allocateIds(IncompleteKey... key) {
+  public Iterator<Key> allocateIds(PartialKey... key) {
     // TODO Auto-generated method stub
     return null;
   }
@@ -74,5 +74,10 @@ final class DatastoreServiceImpl implements DatastoreService {
   public void delete(Key... key) {
     // TODO Auto-generated method stub
 
+  }
+
+  @Override
+  public KeyBuilder newKeyBuilder(String kind) {
+    return new KeyBuilder(kind, options.getDefaultNamespace(), kind);
   }
 }

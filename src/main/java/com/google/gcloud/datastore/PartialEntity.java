@@ -13,33 +13,29 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-public final class EmbeddedEntity implements Serializable {
+public class PartialEntity implements Serializable {
 
   private static final long serialVersionUID = 6492561268709192891L;
 
-  private final transient IncompleteKey key;
+  private final transient PartialKey key;
   private final transient ImmutableSortedMap<String, Value<?, ?, ?>> properties;
-  private transient DatastoreV1.Entity tempEntityPb; // only for deserialization
+  protected transient DatastoreV1.Entity tempEntityPb; // only for deserialization
 
   public static final class Builder {
 
-    private IncompleteKey key;
-    private Map<String, Value<?, ?, ?>> properties = new HashMap<>();
+    private PartialKey key;
+    private Map<String, Value<?, ?, ?>> properties;
 
     public Builder() {
+      properties = new HashMap<>();
     }
 
-    public Builder(EmbeddedEntity entity) {
-      this.key = entity.key;
-      this.properties = new HashMap<>(entity.properties);
-    }
-
-    public Builder(Entity entity) {
+    public Builder(PartialEntity entity) {
       this.key = entity.getKey();
       this.properties = new HashMap<>(entity.getProperties());
     }
 
-    public Builder setKey(IncompleteKey key) {
+    public Builder setKey(PartialKey key) {
       this.key = key;
       return this;
     }
@@ -59,25 +55,20 @@ public final class EmbeddedEntity implements Serializable {
       return this;
     }
 
-    public EmbeddedEntity build() {
-      return new EmbeddedEntity(this);
+    public PartialEntity build() {
+      return new PartialEntity(key, ImmutableSortedMap.copyOf(properties));
     }
   }
 
-  private EmbeddedEntity(Builder builder) {
-    key = builder.key;
-    properties = ImmutableSortedMap.copyOf(builder.properties);
-  }
-
-  public EmbeddedEntity(Entity entity) {
-    key = entity.getKey();
-    properties = entity.getProperties();
+  protected PartialEntity(PartialKey key, ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
+    this.key = key;
+    this.properties = properties;
   }
 
   /**
    * Returns the key or null if not provided.
    */
-  public IncompleteKey getKey() {
+  public PartialKey getKey() {
     return key;
   }
 
@@ -105,18 +96,22 @@ public final class EmbeddedEntity implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof EmbeddedEntity)) {
+    if (!(obj instanceof PartialEntity)) {
       return false;
     }
-    EmbeddedEntity other = (EmbeddedEntity) obj;
+    PartialEntity other = (PartialEntity) obj;
     return Objects.equals(key, other.key)
         && Objects.equals(properties, other.properties);
   }
 
-  static EmbeddedEntity fromPb(DatastoreV1.Entity entityPb) {
+  ImmutableSortedMap<String, Value<?, ?, ?>> getProperties() {
+    return properties;
+  }
+
+  static PartialEntity fromPb(DatastoreV1.Entity entityPb) {
     Builder builder = new Builder();
     if (entityPb.hasKey()) {
-      builder.setKey(IncompleteKey.fromPb(entityPb.getKey()));
+      builder.setKey(PartialKey.fromPb(entityPb.getKey()));
     }
     for (DatastoreV1.Property property : entityPb.getPropertyList()) {
       builder.setProperty(property.getName(), Value.fromPb(property.getValue()));
@@ -124,7 +119,7 @@ public final class EmbeddedEntity implements Serializable {
     return builder.build();
   }
 
-  DatastoreV1.Entity toPb() {
+  protected DatastoreV1.Entity toPb() {
     DatastoreV1.Entity.Builder entityPb = DatastoreV1.Entity.newBuilder();
     if (key != null) {
       entityPb.setKey(key.toPb());
@@ -150,7 +145,7 @@ public final class EmbeddedEntity implements Serializable {
   }
 
   @SuppressWarnings("unused")
-  private Object readResolve() throws ObjectStreamException {
+  protected Object readResolve() throws ObjectStreamException {
     return fromPb(tempEntityPb);
   }
 }

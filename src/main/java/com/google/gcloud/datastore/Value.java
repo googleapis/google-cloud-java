@@ -30,7 +30,7 @@ public abstract class
 
     NULL(NullValue.MARSHALLER, NullValue.MARSHALLER),
     STRING(StringValue.MARSHALLER, StringValue.MARSHALLER),
-    EMBEDDED_ENTITY(EmbeddedEntityValue.MARSHALLER, EmbeddedEntityValue.MARSHALLER),
+    PARTIAL_ENTITY(PartialEntityValue.MARSHALLER, PartialEntityValue.MARSHALLER),
     LIST(ListValue.MARSHALLER, ListValue.MARSHALLER),
     KEY(KeyValue.MARSHALLER, KeyValue.MARSHALLER);
 

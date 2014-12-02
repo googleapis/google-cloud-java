@@ -15,8 +15,8 @@ import java.util.Map;
 
 public class SerializationTest {
 
-  private static final IncompleteKey INCOMPLETE_KEY =
-      new IncompleteKey.Builder("ds", "k").addToPath("p", 1).build();
+  private static final PartialKey INCOMPLETE_KEY =
+      new PartialKey.Builder("ds", "k").addToPath("p", 1).build();
   private static final Key KEY1 = new Key.Builder("ds", "k", "n").build();
   private static final Key KEY2 = new Key.Builder(INCOMPLETE_KEY, 2).build();
   private static final KeyValue KEY_PROPERTY = new KeyValue(KEY1);
@@ -26,20 +26,20 @@ public class SerializationTest {
   private static final Entity ENTITY1 = new Entity.Builder(KEY1).build();
   private static final Entity ENTITY2 =
       new Entity.Builder(KEY2).setProperty("null", new NullValue()).build();
-  private static final EmbeddedEntity EMBEDDED_ENTITY1 = new EmbeddedEntity(ENTITY1);
-  private static final EmbeddedEntity EMBEDDED_ENTITY2 = new EmbeddedEntity(ENTITY2);
-  private static final EmbeddedEntity EMBEDDED_ENTITY3 =
-      new EmbeddedEntity.Builder()
+  private static final PartialEntity EMBEDDED_ENTITY1 = ENTITY1;
+  private static final PartialEntity EMBEDDED_ENTITY2 = ENTITY2;
+  private static final PartialEntity EMBEDDED_ENTITY3 =
+      new PartialEntity.Builder()
           .setKey(INCOMPLETE_KEY)
           .setProperty("p1", STRING_PROPERTY)
           .setProperty("p2", STRING_PROPERTY)
           .build();
-  private static final EmbeddedEntityValue EMBEDDED_ENTITY_PROPERTY1 =
-      new EmbeddedEntityValue(EMBEDDED_ENTITY1);
-  private static final EmbeddedEntityValue EMBEDDED_ENTITY_PROPERTY2 =
-      new EmbeddedEntityValue(EMBEDDED_ENTITY2);
-  private static final EmbeddedEntityValue EMBEDDED_ENTITY_PROPERTY3 =
-      new EmbeddedEntityValue(EMBEDDED_ENTITY3);
+  private static final PartialEntityValue EMBEDDED_ENTITY_PROPERTY1 =
+      new PartialEntityValue(EMBEDDED_ENTITY1);
+  private static final PartialEntityValue EMBEDDED_ENTITY_PROPERTY2 =
+      new PartialEntityValue(EMBEDDED_ENTITY2);
+  private static final PartialEntityValue EMBEDDED_ENTITY_PROPERTY3 =
+      new PartialEntityValue(EMBEDDED_ENTITY3);
   private static final ListValue PROPERTY_LIST_PROPERTY =
       new ListValue.Builder()
           .addValue(NULL_PROPERTY)
@@ -51,7 +51,7 @@ public class SerializationTest {
       Type.NULL, array(NULL_PROPERTY),
       Type.KEY, array(KEY_PROPERTY),
       Type.STRING, array(STRING_PROPERTY),
-      Type.EMBEDDED_ENTITY, array(EMBEDDED_ENTITY_PROPERTY1, EMBEDDED_ENTITY_PROPERTY2,
+      Type.PARTIAL_ENTITY, array(EMBEDDED_ENTITY_PROPERTY1, EMBEDDED_ENTITY_PROPERTY2,
           EMBEDDED_ENTITY_PROPERTY3),
       Type.LIST, array(PROPERTY_LIST_PROPERTY));
 

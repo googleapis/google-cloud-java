@@ -16,43 +16,43 @@ import java.net.URLEncoder;
 /**
  * A key that is guaranteed to be complete.
  */
-public final class Key extends IncompleteKey {
+public final class Key extends PartialKey {
 
   private static final long serialVersionUID = 3160994559785491356L;
 
   public static class Builder {
 
-    private final IncompleteKey.Builder keyBuilder;
+    private final PartialKey.Builder delegate;
     private String name;
     private Long id;
 
     public Builder(String dataset, String kind, String name) {
-      keyBuilder = new IncompleteKey.Builder(dataset, kind);
+      delegate = new PartialKey.Builder(dataset, kind);
       this.name = name;
     }
 
     public Builder(String dataset, String kind, long id) {
-      keyBuilder = new IncompleteKey.Builder(dataset, kind);
+      delegate = new PartialKey.Builder(dataset, kind);
       this.id = id;
     }
 
-    public Builder(IncompleteKey key, String name) {
-      keyBuilder = new IncompleteKey.Builder(key);
+    public Builder(PartialKey key, String name) {
+      delegate = new PartialKey.Builder(key);
       this.name = name;
     }
 
-    public Builder(IncompleteKey key, long id) {
-      keyBuilder = new IncompleteKey.Builder(key);
+    public Builder(PartialKey key, long id) {
+      delegate = new PartialKey.Builder(key);
       this.id = id;
     }
 
     public Builder setDataset(String dataset) {
-      keyBuilder.setDataset(checkNotNull(dataset));
+      delegate.setDataset(checkNotNull(dataset));
       return this;
     }
 
     public Builder setNamespace(String namespace) {
-      keyBuilder.setNamespace(checkNotNull(namespace));
+      delegate.setNamespace(checkNotNull(namespace));
       return this;
     }
 
@@ -69,31 +69,31 @@ public final class Key extends IncompleteKey {
     }
 
     public Builder addToPath(String kind, long id) {
-      keyBuilder.addToPath(kind, id);
+      delegate.addToPath(kind, id);
       return this;
     }
 
     public Builder addToPath(String kind, String name) {
-      keyBuilder.addToPath(kind, name);
+      delegate.addToPath(kind, name);
       return this;
     }
 
     public Builder clearPath() {
-      keyBuilder.clearPath();
+      delegate.clearPath();
       return this;
     }
 
     public Key build() {
-      IncompleteKey key = keyBuilder.build();
+      PartialKey key = delegate.build();
       return id == null ? new Key(key, name) : new Key(key, id);
     }
   }
 
-  private Key(IncompleteKey key, String name) {
+  private Key(PartialKey key, String name) {
     super(key.getDataset(), key.getNamespace(), newPath(key, name));
   }
 
-  private Key(IncompleteKey key, long id) {
+  private Key(PartialKey key, long id) {
     super(key.getDataset(), key.getNamespace(), newPath(key, id));
   }
 
@@ -136,7 +136,7 @@ public final class Key extends IncompleteKey {
 
    * @throws IllegalArgumentException if provided key is not complete.
    */
-  public static Key fromIncompleteKey(IncompleteKey key) {
+  public static Key fromIncompleteKey(PartialKey key) {
     if (key instanceof Key) {
       return (Key) key;
     }
@@ -150,23 +150,22 @@ public final class Key extends IncompleteKey {
   }
 
   static Key fromPb(DatastoreV1.Key keyPb) {
-    return fromIncompleteKey(IncompleteKey.fromPb(keyPb));
+    return fromIncompleteKey(PartialKey.fromPb(keyPb));
   }
 
   @Override
-  @SuppressWarnings("unused")
   protected Object readResolve() throws ObjectStreamException {
-    return fromIncompleteKey((IncompleteKey) super.readResolve());
+    return fromIncompleteKey((PartialKey) super.readResolve());
   }
 
-  private static ImmutableList<PathElement> newPath(IncompleteKey key, String name) {
+  private static ImmutableList<PathElement> newPath(PartialKey key, String name) {
     ImmutableList.Builder<PathElement> path = ImmutableList.builder();
     path.addAll(key.getAncestorPath());
     path.add(new PathElement(key.getKind(), name));
     return path.build();
   }
 
-  private static ImmutableList<PathElement> newPath(IncompleteKey key, long id) {
+  private static ImmutableList<PathElement> newPath(PartialKey key, long id) {
     ImmutableList.Builder<PathElement> path = ImmutableList.builder();
     path.addAll(key.getAncestorPath());
     path.add(new PathElement(key.getKind(), id));

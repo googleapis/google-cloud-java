@@ -4,47 +4,48 @@ import java.util.Iterator;
 
 public interface DatastoreService extends DatastoreReader, DatastoreWriter {
 
+  enum QueryType {
+    PROJECTION,
+    FULL;
+  }
+
+  /*
+  interface QueryResult<T> {
+
+  }
+
+  // consider 2 types of queries regualr and Gql
   interface Query {
-    // TODO
-    // consider 2 types of queries regualr and Gql
+    QueryResult<T> keysOnly(QueryType query);
   }
+*/
 
-
-  public interface Transaction extends DatastoreReader, DatastoreWriter {
-
-    void commit();
-
-    void rollback();
-  }
-
-  public interface TransactionOptions {
-
-    enum IsolationLevel {
-      SERIALIZABLE, SNAPSHOT;
-    }
-
-
-    IsolationLevel getIsolationLevel();
-
-    boolean force();
-  }
-
-  public interface BatchWriter extends DatastoreWriter {
-
-    void submit();
-  }
-
-  public interface BatchOptions {
-  }
 
   DatastoreServiceOptions getOptions();
 
-  Transaction newTransaction(TransactionOptions transactionOptions);
+  KeyBuilder newKeyBuilder(String kind);
 
-  BatchWriter newBatchWriter(BatchOptions batchOptions);
+  /**
+   * Returns a new Datastore transaction.
+   *
+   * @throws DatastoreServiceExcepiton upon failure
+   */
+  Transaction newTransaction(TransactionOption... transactionOption);
 
-  Key allocateId(IncompleteKey key);
+  BatchWriter newBatchWriter(BatchWriteOption... batchWriteOption);
 
+  /**
+   * Returns a key with a newly allocated id.
+   *
+   * @throws DatastoreServiceExcepiton upon failure
+   */
+  Key allocateId(PartialKey key);
+
+  /**
+   * Returns a list of keys using the allocated ids ordered by the input.
+   *
+   * @throws DatastoreServiceExcepiton upon failure
+   */
   // results are returned using request order
-  Iterator<Key> allocateIds(IncompleteKey... key);
+  Iterator<Key> allocateIds(PartialKey... key);
 }

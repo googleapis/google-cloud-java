@@ -7,6 +7,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
 
+import java.lang.reflect.Method;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -70,6 +71,18 @@ public class DatastoreServiceOptions extends ServiceOptions {
 
   public String getDataset() {
     return dataset;
+  }
+
+  public String getDefaultNamespace() {
+    // TODO(ozarov): An alternative to reflection would be to depend on AE api jar:
+    // http://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk/1.2.0
+    try {
+      Class<?> clazz = Class.forName("com.google.appengine.api.NamespaceManager");
+      Method method = clazz.getMethod("get");
+      return (String) method.invoke(null);
+    } catch (Exception ex) {
+      return "";
+    }
   }
 
   public boolean getForce() {

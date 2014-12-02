@@ -19,7 +19,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-public class IncompleteKey implements Serializable {
+public class PartialKey implements Serializable {
 
   private static final long serialVersionUID = -75301206578793347L;
 
@@ -151,7 +151,7 @@ public class IncompleteKey implements Serializable {
       this.kind = validateKind(kind);
     }
 
-    public Builder(IncompleteKey key) {
+    public Builder(PartialKey key) {
       dataset = key.dataset;
       namespace = key.namespace;
       kind = key.getKind();
@@ -201,15 +201,15 @@ public class IncompleteKey implements Serializable {
       return this;
     }
 
-    public IncompleteKey build() {
+    public PartialKey build() {
       PathElement leaf = new PathElement(kind);
       ImmutableList<PathElement> pathList =
           ImmutableList.<PathElement>builder().addAll(path).add(leaf).build();
-      return new IncompleteKey(dataset, namespace, pathList);
+      return new PartialKey(dataset, namespace, pathList);
     }
   }
 
-  IncompleteKey(String dataset, String namespace, ImmutableList<PathElement> path) {
+  PartialKey(String dataset, String namespace, ImmutableList<PathElement> path) {
     checkState(!path.isEmpty(), "path must not be empty");
     this.dataset = dataset;
     this.namespace = namespace;
@@ -244,10 +244,10 @@ public class IncompleteKey implements Serializable {
 
   @Override
   public boolean equals(Object other) {
-    if (!(other instanceof IncompleteKey)) {
+    if (!(other instanceof PartialKey)) {
       return false;
     }
-    IncompleteKey otherKey = (IncompleteKey) other;
+    PartialKey otherKey = (PartialKey) other;
     return Objects.equals(dataset, otherKey.dataset)
         && Objects.equals(namespace, otherKey.namespace)
         && Objects.equals(path, otherKey.path);
@@ -257,7 +257,7 @@ public class IncompleteKey implements Serializable {
     return path.get(path.size() - 1);
   }
 
-  static IncompleteKey fromPb(DatastoreV1.Key keyPb) {
+  static PartialKey fromPb(DatastoreV1.Key keyPb) {
     String dataset = null;
     String namespace = null;
     if (keyPb.hasPartitionId()) {
@@ -273,7 +273,7 @@ public class IncompleteKey implements Serializable {
     for (DatastoreV1.Key.PathElement pathElementPb : keyPb.getPathElementList()) {
       pathBuilder.add(PathElement.fromPb(pathElementPb));
     }
-    return new IncompleteKey(dataset, namespace, pathBuilder.build());
+    return new PartialKey(dataset, namespace, pathBuilder.build());
   }
 
   DatastoreV1.Key toPb() {
