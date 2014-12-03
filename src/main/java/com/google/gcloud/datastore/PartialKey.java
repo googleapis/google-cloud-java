@@ -9,33 +9,27 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
+import com.google.protobuf.InvalidProtocolBufferException;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.ObjectStreamException;
-import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-public class PartialKey implements Serializable {
+public class PartialKey extends Serializable<DatastoreV1.Key> {
 
   private static final long serialVersionUID = -75301206578793347L;
 
   private final transient String dataset;
   private final transient String namespace;
   private final transient ImmutableList<PathElement> path;
-  private transient DatastoreV1.Key tempKeyPb; // only for deserialization
 
-  public static final class PathElement implements Serializable {
+  public static final class PathElement extends Serializable<DatastoreV1.Key.PathElement> {
 
     private static final long serialVersionUID = -7968078857690784595L;
 
     private final transient String kind;
     private final transient Long id;
     private final transient String name;
-    private transient DatastoreV1.Key.PathElement tempPathElementPb;  // only for deserialization
 
     private PathElement(String kind) {
       this(kind, null);
@@ -78,11 +72,6 @@ public class PartialKey implements Serializable {
     }
 
     @Override
-    public String toString() {
-      return toPb().toString();
-    }
-
-    @Override
     public int hashCode() {
       return Objects.hash(kind, id, name);
     }
@@ -98,17 +87,8 @@ public class PartialKey implements Serializable {
           && Objects.equals(name, other.name);
     }
 
-    static PathElement fromPb(DatastoreV1.Key.PathElement pathElementPb) {
-      String kind = pathElementPb.getKind();
-      if (pathElementPb.hasId()) {
-        return new PathElement(kind, pathElementPb.getId());
-      } else if (pathElementPb.hasName()) {
-        return new PathElement(kind, pathElementPb.getName());
-      }
-      return new PathElement(kind);
-    }
-
-    DatastoreV1.Key.PathElement toPb() {
+    @Override
+    protected DatastoreV1.Key.PathElement toPb() {
       DatastoreV1.Key.PathElement.Builder pathElementPb = DatastoreV1.Key.PathElement.newBuilder();
       pathElementPb.setKind(kind);
       if (id != null) {
@@ -119,20 +99,19 @@ public class PartialKey implements Serializable {
       return pathElementPb.build();
     }
 
-    private void writeObject(ObjectOutputStream out) throws IOException {
-      out.defaultWriteObject();
-      out.writeObject(toPb().toByteArray());
+    @Override
+    protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+      return fromPb(DatastoreV1.Key.PathElement.parseFrom(bytesPb));
     }
 
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-      in.defaultReadObject();
-      byte[] bytes = (byte[]) in.readObject();
-      tempPathElementPb = DatastoreV1.Key.PathElement.parseFrom(bytes);
-    }
-
-    @SuppressWarnings("unused")
-    private Object readResolve() throws ObjectStreamException {
-      return fromPb(tempPathElementPb);
+    static PathElement fromPb(DatastoreV1.Key.PathElement pathElementPb) {
+      String kind = pathElementPb.getKind();
+      if (pathElementPb.hasId()) {
+        return new PathElement(kind, pathElementPb.getId());
+      } else if (pathElementPb.hasName()) {
+        return new PathElement(kind, pathElementPb.getName());
+      }
+      return new PathElement(kind);
     }
   }
 
@@ -233,11 +212,6 @@ public class PartialKey implements Serializable {
   }
 
   @Override
-  public String toString() {
-    return toPb().toString();
-  }
-
-  @Override
   public int hashCode() {
     return Objects.hash(dataset, namespace, path);
   }
@@ -253,8 +227,28 @@ public class PartialKey implements Serializable {
         && Objects.equals(path, otherKey.path);
   }
 
-  PathElement getLeaf() {
-    return path.get(path.size() - 1);
+  @Override
+  protected DatastoreV1.Key toPb() {
+    DatastoreV1.Key.Builder keyPb = DatastoreV1.Key.newBuilder();
+    DatastoreV1.PartitionId.Builder partitionIdPb = DatastoreV1.PartitionId.newBuilder();
+    if (dataset != null) {
+      partitionIdPb.setDatasetId(dataset);
+    }
+    if (namespace != null) {
+      partitionIdPb.setNamespace(namespace);
+    }
+    if (partitionIdPb.hasDatasetId() || partitionIdPb.hasNamespace()) {
+      keyPb.setPartitionId(partitionIdPb.build());
+    }
+    for (PathElement pathEntry : path) {
+      keyPb.addPathElement(pathEntry.toPb());
+    }
+    return keyPb.build();
+  }
+
+  @Override
+  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+    return fromPb(DatastoreV1.Key.parseFrom(bytesPb));
   }
 
   static PartialKey fromPb(DatastoreV1.Key keyPb) {
@@ -276,37 +270,7 @@ public class PartialKey implements Serializable {
     return new PartialKey(dataset, namespace, pathBuilder.build());
   }
 
-  DatastoreV1.Key toPb() {
-    DatastoreV1.Key.Builder keyPb = DatastoreV1.Key.newBuilder();
-    DatastoreV1.PartitionId.Builder partitionIdPb = DatastoreV1.PartitionId.newBuilder();
-    if (dataset != null) {
-      partitionIdPb.setDatasetId(dataset);
-    }
-    if (namespace != null) {
-      partitionIdPb.setNamespace(namespace);
-    }
-    if (partitionIdPb.hasDatasetId() || partitionIdPb.hasNamespace()) {
-      keyPb.setPartitionId(partitionIdPb.build());
-    }
-    for (PathElement pathEntry : path) {
-      keyPb.addPathElement(pathEntry.toPb());
-    }
-    return keyPb.build();
-  }
-
-  private void writeObject(ObjectOutputStream out) throws IOException {
-    out.defaultWriteObject();
-    out.writeObject(toPb().toByteArray());
-  }
-
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
-    byte[] bytes = (byte[]) in.readObject();
-    tempKeyPb = DatastoreV1.Key.parseFrom(bytes);
-  }
-
-  @SuppressWarnings("unused")
-  protected Object readResolve() throws ObjectStreamException {
-    return fromPb(tempKeyPb);
+  PathElement getLeaf() {
+    return path.get(path.size() - 1);
   }
 }

@@ -62,9 +62,9 @@ public class SerializationTest {
   @Test
   public void testValues() throws Exception {
     for (Type type : Type.values()) {
-      Value[] values = typeToValues.get(type);
-      for (Value value : values) {
-        Value copy = serialiazeAndDeserialize(value);
+      Value<?, ?, ?>[] values = typeToValues.get(type);
+      for (Value<?, ?, ?> value : values) {
+        Value<?, ?, ?> copy = serialiazeAndDeserialize(value);
         assertEquals(value, copy);
         assertEquals(value.get(), copy.get());
       }

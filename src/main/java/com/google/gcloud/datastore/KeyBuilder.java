@@ -1,14 +1,22 @@
 package com.google.gcloud.datastore;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+/**
+ * An helper for creating keys for a {@link DatastoreService}.
+ */
 public final class KeyBuilder {
 
   private final PartialKey.Builder delegate;
+  private final DatastoreService service;
 
-  public KeyBuilder(String dataset, String namespace, String kind) {
-    delegate = new PartialKey.Builder(dataset, kind);
-    if (namespace != null) {
-      delegate.setNamespace(namespace);
-    }
+  /**
+   * Constructing a KeyBuilder.
+   */
+  public KeyBuilder(DatastoreService service, String kind) {
+    this.service = checkNotNull(service);
+    delegate = new PartialKey.Builder(service.getOptions().getDataset(), kind);
+    delegate.setNamespace(service.getOptions().getDefaultNamespace());
   }
 
   public KeyBuilder addToPath(String kind, String name) {
@@ -26,8 +34,12 @@ public final class KeyBuilder {
     return this;
   }
 
-  public PartialKey build() {
-    return delegate.build();
+  /**
+   * Builds a key with a newly allocated id.
+   * @throws DatastoreServiceException if allocation failed.
+   */
+  public Key allocateIdAndBuild() {
+    return service.allocateId(build());
   }
 
   public Key build(String name) {
@@ -36,5 +48,9 @@ public final class KeyBuilder {
 
   public Key build(long id) {
     return new Key.Builder(build(), id).build();
+  }
+
+  public PartialKey build() {
+    return delegate.build();
   }
 }

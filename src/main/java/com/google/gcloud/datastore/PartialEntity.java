@@ -2,24 +2,19 @@ package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableSortedMap;
+import com.google.protobuf.InvalidProtocolBufferException;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.ObjectStreamException;
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-public class PartialEntity implements Serializable {
+public class PartialEntity extends Serializable<DatastoreV1.Entity> {
 
   private static final long serialVersionUID = 6492561268709192891L;
 
   private final transient PartialKey key;
   private final transient ImmutableSortedMap<String, Value<?, ?, ?>> properties;
-  protected transient DatastoreV1.Entity tempEntityPb; // only for deserialization
 
   public static final class Builder {
 
@@ -84,9 +79,8 @@ public class PartialEntity implements Serializable {
     return properties.keySet();
   }
 
-  @Override
-  public String toString() {
-    return toPb().toString();
+  ImmutableSortedMap<String, Value<?, ?, ?>> getProperties() {
+    return properties;
   }
 
   @Override
@@ -104,21 +98,7 @@ public class PartialEntity implements Serializable {
         && Objects.equals(properties, other.properties);
   }
 
-  ImmutableSortedMap<String, Value<?, ?, ?>> getProperties() {
-    return properties;
-  }
-
-  static PartialEntity fromPb(DatastoreV1.Entity entityPb) {
-    Builder builder = new Builder();
-    if (entityPb.hasKey()) {
-      builder.setKey(PartialKey.fromPb(entityPb.getKey()));
-    }
-    for (DatastoreV1.Property property : entityPb.getPropertyList()) {
-      builder.setProperty(property.getName(), Value.fromPb(property.getValue()));
-    }
-    return builder.build();
-  }
-
+  @Override
   protected DatastoreV1.Entity toPb() {
     DatastoreV1.Entity.Builder entityPb = DatastoreV1.Entity.newBuilder();
     if (key != null) {
@@ -133,19 +113,19 @@ public class PartialEntity implements Serializable {
     return entityPb.build();
   }
 
-  private void writeObject(ObjectOutputStream out) throws IOException {
-    out.defaultWriteObject();
-    out.writeObject(toPb().toByteArray());
+  @Override
+  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+    return fromPb(DatastoreV1.Entity.parseFrom(bytesPb));
   }
 
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
-    byte[] bytes = (byte[]) in.readObject();
-    tempEntityPb = DatastoreV1.Entity.parseFrom(bytes);
-  }
-
-  @SuppressWarnings("unused")
-  protected Object readResolve() throws ObjectStreamException {
-    return fromPb(tempEntityPb);
+  static PartialEntity fromPb(DatastoreV1.Entity entityPb) {
+    Builder builder = new Builder();
+    if (entityPb.hasKey()) {
+      builder.setKey(PartialKey.fromPb(entityPb.getKey()));
+    }
+    for (DatastoreV1.Property property : entityPb.getPropertyList()) {
+      builder.setProperty(property.getName(), Value.fromPb(property.getValue()));
+    }
+    return builder.build();
   }
 }

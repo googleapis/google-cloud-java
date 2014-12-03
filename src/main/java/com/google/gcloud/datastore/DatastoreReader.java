@@ -2,6 +2,9 @@ package com.google.gcloud.datastore;
 
 import java.util.Iterator;
 
+/**
+ * An interface to represent Google Cloud Datastore read operations.
+ */
 public interface DatastoreReader {
 
   Entity get(Key key);
@@ -9,6 +12,5 @@ public interface DatastoreReader {
   // results are returned using request order
   Iterator<Entity> get(Key... key);
 
-  // query result item is a tuple of (key, value...) where values may be empty
-  //QueryResult runQuery(Query query);
+  QueryResult<PartialEntity> runQuery(Query query);
 }

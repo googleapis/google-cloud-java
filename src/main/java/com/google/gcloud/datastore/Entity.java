@@ -5,8 +5,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSortedMap;
-
-import java.io.ObjectStreamException;
+import com.google.protobuf.InvalidProtocolBufferException;
 
 public final class Entity extends PartialEntity {
 
@@ -58,6 +57,11 @@ public final class Entity extends PartialEntity {
     return (Key) super.getKey();
   }
 
+  @Override
+  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+    return fromPb(DatastoreV1.Entity.parseFrom(bytesPb));
+  }
+
   static Entity fromPb(DatastoreV1.Entity entityPb) {
     Preconditions.checkArgument(entityPb.hasKey());
     Builder builder = new Builder(Key.fromPb(entityPb.getKey()));
@@ -65,10 +69,5 @@ public final class Entity extends PartialEntity {
       builder.setProperty(property.getName(), Value.fromPb(property.getValue()));
     }
     return builder.build();
-  }
-
-  @Override
-  protected Object readResolve() throws ObjectStreamException {
-    return fromPb(tempEntityPb);
   }
 }

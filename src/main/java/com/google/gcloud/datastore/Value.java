@@ -5,18 +5,14 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.protobuf.Descriptors.FieldDescriptor;
+import com.google.protobuf.InvalidProtocolBufferException;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.ObjectStreamException;
-import java.io.Serializable;
 import java.util.Objects;
 
 // TODO: add javadoc, and mention that null should only be represented by NullValue.
 public abstract class
     Value<V, P extends Value<V, P, B>, B extends Value.Builder<V, P, B>>
-    implements Serializable {
+    extends Serializable<DatastoreV1.Value> {
 
   private static final long serialVersionUID = -1899638277588872742L;
 
@@ -24,7 +20,6 @@ public abstract class
   private final transient boolean indexed;
   private final transient Integer meaning;
   private final transient V value;
-  private transient DatastoreV1.Value tempValuePb; // only for deserialization
 
   public enum Type {
 
@@ -262,8 +257,9 @@ public abstract class
         && Objects.equals(value, otherValue.get());
   }
 
+  @Override
   @SuppressWarnings("unchecked")
-  DatastoreV1.Value toPb() {
+  protected DatastoreV1.Value toPb() {
     Marshaller<V, P, B> marshaller = getType().getMarshaller();
     return marshaller.toProto((P) this);
   }
@@ -293,19 +289,8 @@ public abstract class
     return marshaller.fromProto(proto).build();
   }
 
-  private void writeObject(ObjectOutputStream out) throws IOException {
-    out.defaultWriteObject();
-    out.writeObject(toPb().toByteArray());
-  }
-
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
-    byte[] bytes = (byte[]) in.readObject();
-    tempValuePb = DatastoreV1.Value.parseFrom(bytes);
-  }
-
-  @SuppressWarnings("unused")
-  protected Object readResolve() throws ObjectStreamException {
-    return fromPb(tempValuePb);
+  @Override
+  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+    return fromPb(DatastoreV1.Value.parseFrom(bytesPb));
   }
 }
