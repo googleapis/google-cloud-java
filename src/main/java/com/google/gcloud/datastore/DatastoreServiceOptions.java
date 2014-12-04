@@ -3,6 +3,7 @@ package com.google.gcloud.datastore;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.services.datastore.client.DatastoreOptions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
@@ -29,7 +30,7 @@ public class DatastoreServiceOptions extends ServiceOptions {
     force = builder.force;
   }
 
-  public static class Builder extends ServiceOptions.Builder {
+  public static class Builder extends ServiceOptions.Builder<Builder> {
 
     private String dataset;
     private boolean force = false;
@@ -69,11 +70,11 @@ public class DatastoreServiceOptions extends ServiceOptions {
     return dataset;
   }
 
-  public String getDataset() {
+  public String dataset() {
     return dataset;
   }
 
-  public String getDefaultNamespace() {
+  public String defaultNamespace() {
     // TODO(ozarov): An alternative to reflection would be to depend on AE api jar:
     // http://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk/1.2.0
     try {
@@ -85,12 +86,20 @@ public class DatastoreServiceOptions extends ServiceOptions {
     }
   }
 
-  public boolean getForce() {
+  public boolean force() {
     return force;
   }
 
   @Override
-  protected Set<String> getScopes() {
+  protected Set<String> scopes() {
     return SCOPES;
+  }
+
+  DatastoreOptions toDatastoreOptions() {
+    return new DatastoreOptions.Builder()
+        .dataset(dataset())
+        .host(host())
+        .initializer(httpRequestInitializer())
+        .build();
   }
 }

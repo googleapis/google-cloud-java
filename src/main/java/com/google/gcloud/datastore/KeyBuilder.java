@@ -15,8 +15,8 @@ public final class KeyBuilder {
    */
   public KeyBuilder(DatastoreService service, String kind) {
     this.service = checkNotNull(service);
-    delegate = new PartialKey.Builder(service.getOptions().getDataset(), kind);
-    delegate.namespace(service.getOptions().getDefaultNamespace());
+    delegate = new PartialKey.Builder(service.getOptions().dataset(), kind);
+    delegate.namespace(service.getOptions().defaultNamespace());
   }
 
   public KeyBuilder addToPath(String kind, String name) {

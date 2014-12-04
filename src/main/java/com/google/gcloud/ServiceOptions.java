@@ -4,6 +4,7 @@ package com.google.gcloud;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
+import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 
@@ -63,7 +64,7 @@ public abstract class ServiceOptions {
     return System.getProperty("com.google.appengine.application.id");
   }
 
-  protected abstract static class Builder {
+  protected abstract static class Builder<B extends Builder<B>> {
 
     private String host;
     private HttpTransport httpTransport;
@@ -79,33 +80,37 @@ public abstract class ServiceOptions {
 
     protected abstract ServiceOptions build();
 
-    public Builder host(String host) {
+    public B host(String host) {
       this.host = host;
-      return this;
+      return (B) this;
     }
 
-    public Builder httpTransport(HttpTransport httpTransport) {
+    public B httpTransport(HttpTransport httpTransport) {
       this.httpTransport = httpTransport;
-      return this;
+      return (B) this;
     }
 
-    public Builder authConfig(AuthConfig authConfig) {
+    public B authConfig(AuthConfig authConfig) {
       this.authConfig = authConfig;
-      return this;
+      return (B) this;
     }
   }
 
-  protected abstract Set<String> getScopes();
+  protected abstract Set<String> scopes();
 
-  public String getHost() {
+  public String host() {
     return host;
   }
 
-  public HttpTransport getHttpTransport() {
+  public HttpTransport httpTransport() {
     return httpTransport;
   }
 
-  public AuthConfig getAuthConfig() {
+  public AuthConfig authConfig() {
     return authConfig;
+  }
+
+  protected HttpRequestInitializer httpRequestInitializer() {
+    return authConfig().httpRequestInitializer(httpTransport, scopes());
   }
 }

@@ -19,7 +19,7 @@ public abstract class AuthConfig {
   private static class AppEngineAuthConfig extends AuthConfig {
 
     @Override
-    protected HttpRequestInitializer getHttpRequestInitializer(
+    protected HttpRequestInitializer httpRequestInitializer(
         HttpTransport transport, Set<String> scopes) {
       return new AppIdentityCredential(scopes);
     }
@@ -36,7 +36,7 @@ public abstract class AuthConfig {
     }
 
     @Override
-    protected HttpRequestInitializer getHttpRequestInitializer(
+    protected HttpRequestInitializer httpRequestInitializer(
         HttpTransport transport, Set<String> scopes) {
       return new GoogleCredential.Builder()
         .setTransport(transport)
@@ -48,7 +48,7 @@ public abstract class AuthConfig {
     }
   }
 
-  protected abstract HttpRequestInitializer getHttpRequestInitializer(
+  protected abstract HttpRequestInitializer httpRequestInitializer(
       HttpTransport transport, Set<String> scopes);
 
 
@@ -60,7 +60,7 @@ public abstract class AuthConfig {
     final ComputeCredential cred = getComputeCredential();
     return new AuthConfig() {
       @Override
-      protected HttpRequestInitializer getHttpRequestInitializer(HttpTransport ts, Set<String> sc) {
+      protected HttpRequestInitializer httpRequestInitializer(HttpTransport ts, Set<String> sc) {
         return cred;
       }
     };

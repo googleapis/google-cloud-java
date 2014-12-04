@@ -7,6 +7,10 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.services.datastore.client.LocalDevelopmentDatastore;
+import com.google.api.services.datastore.client.LocalDevelopmentDatastoreException;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -37,11 +41,22 @@ public class DatastoreServiceTest {
 
   private DatastoreServiceOptions options;
   private DatastoreService datastore;
+  private LocalDevelopmentDatastore localDatastore;
 
   @Before
-  public void setUp() {
-    options = new DatastoreServiceOptions.Builder().dataset(DATASET).build();
-    datastore = DatastoreServiceFactory.getDatastoreService(options);
+  public void setUp() throws LocalDevelopmentDatastoreException {
+    options = new DatastoreServiceOptions.Builder()
+        .dataset(DATASET)
+        .host("http://localhost:8080/")
+        .build();
+    datastore = DatastoreServiceFactory.Mode.TESTING.get(options);
+    localDatastore = (LocalDevelopmentDatastore) ((DatastoreServiceImpl) datastore).datastore();
+    localDatastore.start("/usr/local/gcd-sdk", DATASET);
+  }
+
+  @After
+  public void tearDown() throws LocalDevelopmentDatastoreException {
+    localDatastore.stop();
   }
 
   @Test
