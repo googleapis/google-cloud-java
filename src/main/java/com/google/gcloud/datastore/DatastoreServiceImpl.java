@@ -30,20 +30,19 @@ final class DatastoreServiceImpl implements DatastoreService {
 
   @Override
   public Key allocateId(PartialKey key) {
-    // TODO Auto-generated method stub
-    return null;
+    return allocateIds(key).next();
   }
 
   @Override
   public Iterator<Key> allocateIds(PartialKey... key) {
     // TODO Auto-generated method stub
+    // Will need to populate "force" after b/18594027 is fixed.
     return null;
   }
 
   @Override
   public Entity get(Key key) {
-    // TODO Auto-generated method stub
-    return null;
+    return get(new Key[]{key}).next();
   }
 
   @Override

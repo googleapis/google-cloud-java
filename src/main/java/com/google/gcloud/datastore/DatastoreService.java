@@ -3,7 +3,7 @@ package com.google.gcloud.datastore;
 import java.util.Iterator;
 
 /**
- * An interface for Google Cloud Datastore.
+ * An interface for Google Cloud Datastore dataset.
  */
 public interface DatastoreService extends DatastoreReader, DatastoreWriter {
 

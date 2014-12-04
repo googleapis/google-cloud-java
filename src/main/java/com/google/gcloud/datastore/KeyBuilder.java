@@ -3,7 +3,7 @@ package com.google.gcloud.datastore;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
- * An helper for creating keys for a {@link DatastoreService}.
+ * An helper for creating keys for a specific {@link DatastoreService}/dataset.
  */
 public final class KeyBuilder {
 
@@ -16,7 +16,7 @@ public final class KeyBuilder {
   public KeyBuilder(DatastoreService service, String kind) {
     this.service = checkNotNull(service);
     delegate = new PartialKey.Builder(service.getOptions().getDataset(), kind);
-    delegate.setNamespace(service.getOptions().getDefaultNamespace());
+    delegate.namespace(service.getOptions().getDefaultNamespace());
   }
 
   public KeyBuilder addToPath(String kind, String name) {
@@ -29,8 +29,8 @@ public final class KeyBuilder {
     return this;
   }
 
-  public KeyBuilder setNamespace(String namespace) {
-    delegate.setNamespace(namespace);
+  public KeyBuilder namespace(String namespace) {
+    delegate.namespace(namespace);
     return this;
   }
 

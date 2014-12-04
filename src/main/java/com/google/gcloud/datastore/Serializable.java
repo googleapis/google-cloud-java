@@ -15,6 +15,23 @@ abstract class Serializable<M extends GeneratedMessage> implements java.io.Seria
 
   private transient byte[] bytesPb; // only for deserialization
 
+
+  @Override
+  public int hashCode() {
+    return toPb().hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (!getClass().isInstance(obj)) {
+      return false;
+    }
+    return toPb().equals(((Serializable<?>) obj).toPb());
+  }
+
   @Override
   public String toString() {
     return toPb().toString();

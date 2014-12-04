@@ -1,47 +1,55 @@
 package com.google.gcloud.datastore;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.protobuf.InvalidProtocolBufferException;
 
+/**
+ * An entity is the Google Cloud Datastore persistent data object.
+ * An entity holds one or more properties, represented by a name (as {@link String})
+ * and a value (as {@link Value}), and is associated with a {@link Key}.
+ * For a list of possible values see {@link Value.Type}.
+ * This class is immutable. To edit (a copy) use {@link #builder()}.
+ *
+ * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
+ */
 public final class Entity extends PartialEntity {
 
   private static final long serialVersionUID = 432961565733066915L;
 
-  public static final class Builder {
-
-    private PartialEntity.Builder delegate;
+  public static final class Builder extends PartialEntity.Builder {
 
     public Builder(Key key) {
-      delegate = new PartialEntity.Builder();
-      delegate.setKey(checkNotNull(key));
+      super(key);
     }
 
     public Builder(Entity entity) {
-      delegate = new PartialEntity.Builder(entity);
+      super(entity);
     }
 
+    @Override
     public Builder clearProperties() {
-      delegate.clearProperties();
+      super.clearProperties();
       return this;
     }
 
+    @Override
     public Builder removeProperty(String name) {
-      delegate.removeProperty(name);
+      super.removeProperty(name);
       return this;
     }
 
+    @Override
     public Builder setProperty(String name, Value<?, ?, ?> value) {
-      delegate.setProperty(name, value);
+      super.setProperty(name, value);
       return this;
     }
 
+    @Override
     public Entity build() {
-      PartialEntity entity = delegate.build();
-      return new Entity((Key) entity.getKey(), entity.getProperties());
+      PartialEntity entity = super.build();
+      return new Entity((Key) entity.key(), entity.properties());
     }
   }
 
@@ -53,8 +61,13 @@ public final class Entity extends PartialEntity {
    * Returns the entity's key (never null).
    */
   @Override
-  public Key getKey() {
-    return (Key) super.getKey();
+  public Key key() {
+    return (Key) super.key();
+  }
+
+  @Override
+  public Builder builder() {
+    return new Builder(this);
   }
 
   @Override

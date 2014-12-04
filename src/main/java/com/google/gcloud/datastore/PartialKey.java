@@ -15,6 +15,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * A partial key (without a name or id).
+ * Could be used as metadata for {@link PartialEntity}.
+ * This class is immutable. To edit (a copy) use {@link #builder()}.
+ */
 public class PartialKey extends Serializable<DatastoreV1.Key> {
 
   private static final long serialVersionUID = -75301206578793347L;
@@ -38,16 +43,16 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
     public PathElement(String kind, long id) {
       this.kind = kind;
       this.id = id;
-      this.name = null;
+      name = null;
     }
 
     public PathElement(String kind, String name) {
       this.kind = kind;
       this.name = name;
-      this.id = null;
+      id = null;
     }
 
-    public String getKind() {
+    public String kind() {
       return kind;
     }
 
@@ -55,7 +60,7 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
       return id != null;
     }
 
-    public long getId() {
+    public long id() {
       return id == null ? 0 : id;
     }
 
@@ -63,11 +68,11 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
       return name != null;
     }
 
-    public String getName() {
+    public String name() {
       return name == null ? "" : name;
     }
 
-    public Object getNameOrId() {
+    public Object nameOrId() {
       return id == null ? name : id;
     }
 
@@ -115,12 +120,12 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
     }
   }
 
-  public static final class Builder {
+  public static class Builder {
 
     private String dataset;
     private String namespace = DEFAULT_NAMESPACE;
     private String kind;
-    private List<PathElement> path = new LinkedList<>();
+    private final List<PathElement> path = new LinkedList<>();
 
     private static final String DEFAULT_NAMESPACE = "";
     private static final int MAX_PATH = 100;
@@ -133,8 +138,8 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
     public Builder(PartialKey key) {
       dataset = key.dataset;
       namespace = key.namespace;
-      kind = key.getKind();
-      path.addAll(key.getAncestorPath());
+      kind = key.kind();
+      path.addAll(key.ancestorPath());
     }
 
     public Builder addToPath(String kind, long id) {
@@ -148,13 +153,13 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
       return addToPath(new PathElement(kind, name));
     }
 
-    public Builder addToPath(PathElement pathEntry) {
+    public Builder addToPath(PathElement pathElement) {
       Preconditions.checkState(path.size() < MAX_PATH, "path can have at most 100 elements");
-      path.add(pathEntry);
+      path.add(pathElement);
       return this;
     }
 
-    public Builder setKind(String kind) {
+    public Builder kind(String kind) {
       this.kind = validateKind(kind);
       return this;
     }
@@ -170,12 +175,12 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
       return this;
     }
 
-    public Builder setDataset(String dataset) {
+    public Builder dataset(String dataset) {
       this.dataset = validateDataset(dataset);
       return this;
     }
 
-    public Builder setNamespace(String namespace) {
+    public Builder namespace(String namespace) {
       this.namespace = checkNotNull(namespace);
       return this;
     }
@@ -195,20 +200,36 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
     this.path = path;
   }
 
-  public String getDataset() {
+  /**
+   * Returns the key's dataset.
+   */
+  public String dataset() {
     return dataset;
   }
 
-  public String getNamespace() {
+  /**
+   * Returns the key's namespace.
+   */
+  public String namespace() {
     return namespace;
   }
 
-  public List<PathElement> getAncestorPath() {
+  /**
+   * Returns the key's parent's path.
+   */
+  public List<PathElement> ancestorPath() {
     return path.subList(0, path.size() - 1);
   }
 
-  public String getKind() {
-    return getLeaf().getKind();
+  /**
+   * Returns the key's kind.
+   */
+  public String kind() {
+    return getLeaf().kind();
+  }
+
+  public Builder builder() {
+    return new Builder(this);
   }
 
   @Override
@@ -217,14 +238,14 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
   }
 
   @Override
-  public boolean equals(Object other) {
-    if (!(other instanceof PartialKey)) {
+  public boolean equals(Object obj) {
+    if (!(obj instanceof PartialKey)) {
       return false;
     }
-    PartialKey otherKey = (PartialKey) other;
-    return Objects.equals(dataset, otherKey.dataset)
-        && Objects.equals(namespace, otherKey.namespace)
-        && Objects.equals(path, otherKey.path);
+    PartialKey other = (PartialKey) obj;
+    return Objects.equals(dataset, other.dataset)
+        && Objects.equals(namespace, other.namespace)
+        && Objects.equals(path, other.path);
   }
 
   @Override

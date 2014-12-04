@@ -42,15 +42,15 @@ public final class StringValue extends Value<String, StringValue, StringValue.Bu
 
     @Override
     public StringValue build() {
-      if (getIndexed()) {
+      if (Boolean.TRUE.equals(getIndexed())) {
         checkArgument(get().length() <= 500, "Indexed string is limited to 500 characters");
       }
       return new StringValue(this);
     }
   }
 
-  public StringValue(String content) {
-    this(new Builder(content));
+  public StringValue(String value) {
+    this(new Builder(value));
   }
 
   StringValue(Builder builder) {

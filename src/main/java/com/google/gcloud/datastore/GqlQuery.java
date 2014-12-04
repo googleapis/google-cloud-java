@@ -3,7 +3,7 @@ package com.google.gcloud.datastore;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.protobuf.InvalidProtocolBufferException;
 
-public class GqlQuery extends Query<DatastoreV1.GqlQuery> {
+public class GqlQuery extends Serializable<DatastoreV1.GqlQuery> implements Query {
 
   private static final long serialVersionUID = 5988280590929540569L;
 

@@ -37,6 +37,11 @@
       <scope>test</scope>
       <version>RELEASE</version>
     </dependency>
+    <dependency>
+    	<groupId>joda-time</groupId>
+    	<artifactId>joda-time</artifactId>
+    	<version>RELEASE</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

@@ -1,6 +1,6 @@
 package com.google.gcloud.datastore;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -65,5 +65,4 @@ public class DatastoreServiceTest {
   public void testNewKeyBuilder() {
     fail("Not yet implemented");
   }
-
 }

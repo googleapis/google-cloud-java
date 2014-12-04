@@ -5,7 +5,7 @@ import static com.google.api.services.datastore.DatastoreV1.Value.ENTITY_VALUE_F
 import com.google.api.services.datastore.DatastoreV1;
 
 public class PartialEntityValue extends
-    Value<PartialEntity, PartialEntityValue, PartialEntityValue.Builder> {
+Value<PartialEntity, PartialEntityValue, PartialEntityValue.Builder> {
 
   private static final long serialVersionUID = -5461475706792576395L;
 
@@ -34,7 +34,7 @@ public class PartialEntityValue extends
   };
 
   public static final class Builder extends
-      Value.BaseBuilder<PartialEntity, PartialEntityValue, Builder> {
+  Value.BaseBuilder<PartialEntity, PartialEntityValue, Builder> {
 
     public Builder(PartialEntity entity) {
       super(Type.PARTIAL_ENTITY);

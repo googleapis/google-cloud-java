@@ -34,9 +34,9 @@ public final class KeyValue extends Value<Key, KeyValue, KeyValue.Builder> {
 
   public static final class Builder extends Value.BaseBuilder<Key, KeyValue, Builder> {
 
-    public Builder(Key value) {
+    public Builder(Key key) {
       super(Type.KEY);
-      set(value);
+      set(key);
     }
 
     @Override

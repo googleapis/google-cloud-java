@@ -55,7 +55,7 @@ public final class ListValue extends
     }
 
     public Builder addValue(Value<?, ?, ?> value) {
-      Preconditions.checkArgument(value.getType() != Type.LIST, "Cannot contain another list");
+      Preconditions.checkArgument(value.type() != Type.LIST, "Cannot contain another list");
       listBuilder.add(value);
       return this;
     }
@@ -68,6 +68,11 @@ public final class ListValue extends
       return this;
     }
 
+    /**
+     * Copy the list of values.
+     *
+     * @see com.google.gcloud.datastore.Value.BaseBuilder#set(java.lang.Object)
+     */
     @Override
     public Builder set(List<Value<?, ?, ?>> properties) {
       listBuilder = ImmutableList.<Value<?, ?, ?>>builder();

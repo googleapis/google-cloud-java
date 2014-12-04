@@ -9,6 +9,13 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * A partial entity holds one or more properties, represented by a name (as {@link String})
+ * and a value (as {@link Value}).
+ * For a list of possible values see {@link Value.Type}.
+ * A partial entity also can be associated with a key (partial or full).
+ * This class is immutable. To edit (a copy) use {@link #builder()}.
+ */
 public class PartialEntity extends Serializable<DatastoreV1.Entity> {
 
   private static final long serialVersionUID = 6492561268709192891L;
@@ -16,23 +23,22 @@ public class PartialEntity extends Serializable<DatastoreV1.Entity> {
   private final transient PartialKey key;
   private final transient ImmutableSortedMap<String, Value<?, ?, ?>> properties;
 
-  public static final class Builder {
+  public static class Builder {
 
-    private PartialKey key;
-    private Map<String, Value<?, ?, ?>> properties;
+    private final PartialKey key;
+    private final Map<String, Value<?, ?, ?>> properties;
 
-    public Builder() {
+    /**
+     * Construct a builder with a partial key (could be null).
+     */
+    public Builder(PartialKey key) {
+      this.key = key;
       properties = new HashMap<>();
     }
 
     public Builder(PartialEntity entity) {
-      this.key = entity.getKey();
-      this.properties = new HashMap<>(entity.getProperties());
-    }
-
-    public Builder setKey(PartialKey key) {
-      this.key = key;
-      return this;
+      key = entity.key();
+      properties = new HashMap<>(entity.properties());
     }
 
     public Builder clearProperties() {
@@ -61,9 +67,9 @@ public class PartialEntity extends Serializable<DatastoreV1.Entity> {
   }
 
   /**
-   * Returns the key or null if not provided.
+   * Returns the key for this entity or {@code null} if it does not have one.
    */
-  public PartialKey getKey() {
+  public PartialKey key() {
     return key;
   }
 
@@ -71,15 +77,24 @@ public class PartialEntity extends Serializable<DatastoreV1.Entity> {
     return properties.containsKey(name);
   }
 
-  public Value<?, ?, ?> getProperty(String name) {
-    return properties.get(name);
+  @SuppressWarnings("unchecked")
+  public <V, P extends Value<V, P, B>, B extends Value.Builder<V, P, B>> Value<V, P, B> property(
+      String name) {
+    return (Value<V, P, B>) properties.get(name);
   }
 
-  public Set<String> getPropertyNames() {
+  public Set<String> propertyNames() {
     return properties.keySet();
   }
 
-  ImmutableSortedMap<String, Value<?, ?, ?>> getProperties() {
+  /**
+   * Returns a new builder for this entity (values are copied).
+   */
+  public Builder builder() {
+    return new Builder(this);
+  }
+
+  ImmutableSortedMap<String, Value<?, ?, ?>> properties() {
     return properties;
   }
 
@@ -119,10 +134,8 @@ public class PartialEntity extends Serializable<DatastoreV1.Entity> {
   }
 
   static PartialEntity fromPb(DatastoreV1.Entity entityPb) {
-    Builder builder = new Builder();
-    if (entityPb.hasKey()) {
-      builder.setKey(PartialKey.fromPb(entityPb.getKey()));
-    }
+    PartialKey key = entityPb.hasKey() ? PartialKey.fromPb(entityPb.getKey()) : null;
+    Builder builder = new Builder(key);
     for (DatastoreV1.Property property : entityPb.getPropertyList()) {
       builder.setProperty(property.getName(), Value.fromPb(property.getValue()));
     }
