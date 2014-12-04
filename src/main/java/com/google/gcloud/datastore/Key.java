@@ -37,40 +37,37 @@ public final class Key extends PartialKey {
       this.id = id;
     }
 
-    public Builder(PartialKey key, String name) {
-      super(key);
+    public Builder(Key parent, String kind, String name) {
+      super(parent, kind);
       this.name = name;
     }
 
-    public Builder(PartialKey key, long id) {
-      super(key);
+    public Builder(Key parent, String kind, long id) {
+      super(parent, kind);
       this.id = id;
     }
 
-    public Builder(Key key) {
-      super(key);
-      if (key.id() == null) {
-        name = key.name();
-      } else {
-        id = key.id();
-      }
-    }
-
     @Override
-    public Builder addToPath(String kind, long id) {
-      super.addToPath(kind, id);
+    public Builder addAncestor(String kind, long id) {
+      super.addAncestor(kind, id);
       return this;
     }
 
     @Override
-    public Builder addToPath(String kind, String name) {
-      super.addToPath(kind, name);
+    public Builder addAncestor(String kind, String name) {
+      super.addAncestor(kind, name);
       return this;
     }
 
     @Override
-    public Builder addToPath(PathElement pathElement) {
-      super.addToPath(pathElement);
+    public Builder addAncestor(PathElement... ancestor) {
+      super.addAncestor(ancestor);
+      return this;
+    }
+
+    @Override
+    public Builder addAncestors(Iterable<PathElement> ancestors) {
+      super.addAncestors(ancestors);
       return this;
     }
 
@@ -127,7 +124,13 @@ public final class Key extends PartialKey {
 
   @Override
   public Builder builder() {
-    return new Builder(this);
+    Builder builder =
+        hasId() ? new Builder(dataset(), kind(), id()) : new Builder(dataset(), kind(), name());
+    return builder.namespace(namespace()).addAncestors(ancestors());
+  }
+
+  public boolean hasId() {
+    return id() != null;
   }
 
   /**
@@ -135,6 +138,10 @@ public final class Key extends PartialKey {
    */
   public Long id() {
     return getLeaf().id();
+  }
+
+  public boolean hasName() {
+    return name() != null;
   }
 
   /**
@@ -210,14 +217,14 @@ public final class Key extends PartialKey {
 
   private static ImmutableList<PathElement> newPath(PartialKey key, String name) {
     ImmutableList.Builder<PathElement> path = ImmutableList.builder();
-    path.addAll(key.ancestorPath());
+    path.addAll(key.ancestors());
     path.add(new PathElement(key.kind(), name));
     return path.build();
   }
 
   private static ImmutableList<PathElement> newPath(PartialKey key, long id) {
     ImmutableList.Builder<PathElement> path = ImmutableList.builder();
-    path.addAll(key.ancestorPath());
+    path.addAll(key.ancestors());
     path.add(new PathElement(key.kind(), id));
     return path.build();
   }

@@ -17,10 +17,12 @@ import java.io.ObjectOutputStream;
 
 public class SerializationTest {
 
-  private static final PartialKey INCOMPLETE_KEY =
-      new PartialKey.Builder("ds", "k").addToPath("p", 1).build();
+  private static final PartialKey INCOMPLETE_KEY1 =
+      new PartialKey.Builder("ds", "k").addAncestor("p", 1).build();
   private static final Key KEY1 = new Key.Builder("ds", "k", "n").build();
-  private static final Key KEY2 = new Key.Builder(INCOMPLETE_KEY, 2).build();
+  private static final PartialKey INCOMPLETE_KEY2 =
+      new PartialKey.Builder(KEY1, "v").addAncestor("p", 1).build();
+  private static final Key KEY2 = new Key.Builder(KEY1, "v", 2).build();
   private static final KeyValue KEY_VALUE = new KeyValue(KEY1);
   private static final NullValue NULL_VALUE =
       new NullValue.Builder().indexed(true).build();
@@ -46,7 +48,7 @@ public class SerializationTest {
   private static final PartialEntity EMBEDDED_ENTITY1 = ENTITY1;
   private static final PartialEntity EMBEDDED_ENTITY2 = ENTITY2;
   private static final PartialEntity EMBEDDED_ENTITY3 =
-      new PartialEntity.Builder(INCOMPLETE_KEY)
+      new PartialEntity.Builder(INCOMPLETE_KEY1)
           .setProperty("p1", STRING_VALUE)
           .setProperty("p2", new LongValue.Builder(100).indexed(false).meaning(100).build())
           .build();
@@ -95,8 +97,8 @@ public class SerializationTest {
 
   @Test
   public void testTypes() throws Exception {
-    Object[] types = { KEY1, KEY2, INCOMPLETE_KEY, ENTITY1, ENTITY2, ENTITY3,
-        EMBEDDED_ENTITY1, EMBEDDED_ENTITY2, EMBEDDED_ENTITY3};
+    Object[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
+        ENTITY3, EMBEDDED_ENTITY1, EMBEDDED_ENTITY2, EMBEDDED_ENTITY3};
     for (Object obj : types) {
       Object copy = serialiazeAndDeserialize(obj);
       assertEquals(obj, obj);

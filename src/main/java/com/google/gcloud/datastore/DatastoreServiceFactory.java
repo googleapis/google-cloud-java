@@ -3,7 +3,7 @@ package com.google.gcloud.datastore;
 
 public class DatastoreServiceFactory {
 
-  public DatastoreService getDatastoreService(DatastoreServiceOptions options) {
+  public static DatastoreService getDatastoreService(DatastoreServiceOptions options) {
     return new DatastoreServiceImpl(options);
   }
 }

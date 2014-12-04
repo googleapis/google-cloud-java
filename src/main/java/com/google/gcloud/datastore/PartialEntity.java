@@ -41,6 +41,11 @@ public class PartialEntity extends Serializable<DatastoreV1.Entity> {
       properties = new HashMap<>(entity.properties());
     }
 
+    public Builder(PartialKey key, PartialEntity entity) {
+      this.key = key;
+      properties = new HashMap<>(entity.properties());
+    }
+
     public Builder clearProperties() {
       properties.clear();
       return this;
@@ -78,9 +83,8 @@ public class PartialEntity extends Serializable<DatastoreV1.Entity> {
   }
 
   @SuppressWarnings("unchecked")
-  public <V, P extends Value<V, P, B>, B extends Value.Builder<V, P, B>> Value<V, P, B> property(
-      String name) {
-    return (Value<V, P, B>) properties.get(name);
+  public <V extends Value<?, ?, ?>> V property(String name) {
+    return (V) properties.get(name);
   }
 
   public Set<String> propertyNames() {

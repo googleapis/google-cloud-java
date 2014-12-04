@@ -135,27 +135,38 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
       this.kind = validateKind(kind);
     }
 
-    public Builder(PartialKey key) {
-      dataset = key.dataset;
-      namespace = key.namespace;
-      kind = key.kind();
-      path.addAll(key.ancestorPath());
+    public Builder(Key parent, String kind) {
+      dataset = parent.dataset();
+      namespace = parent.namespace();
+      path.addAll(parent.ancestors());
+      path.add(parent.getLeaf());
+      this.kind = kind;
     }
 
-    public Builder addToPath(String kind, long id) {
+    public Builder addAncestor(String kind, long id) {
       checkArgument(id != 0, "id must not be equal to zero");
-      return addToPath(new PathElement(kind, id));
+      return addAncestor(new PathElement(kind, id));
     }
 
-    public Builder addToPath(String kind, String name) {
+    public Builder addAncestor(String kind, String name) {
       checkArgument(Strings.isNullOrEmpty(name) , "name must not be empty or null");
       checkArgument(name.length() <= 500, "name must not exceed 500 characters");
-      return addToPath(new PathElement(kind, name));
+      return addAncestor(new PathElement(kind, name));
     }
 
-    public Builder addToPath(PathElement pathElement) {
-      Preconditions.checkState(path.size() < MAX_PATH, "path can have at most 100 elements");
-      path.add(pathElement);
+    public Builder addAncestor(PathElement... ancestor) {
+      Preconditions.checkState(path.size() + ancestor.length <= MAX_PATH,
+          "path can have at most 100 elements");
+      for (PathElement pathElement : ancestor) {
+        path.add(pathElement);
+      }
+      return this;
+    }
+
+    public Builder addAncestors(Iterable<PathElement> ancestors) {
+      for (PathElement pathElement : ancestors) {
+        addAncestor(pathElement);
+      }
       return this;
     }
 
@@ -215,9 +226,9 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
   }
 
   /**
-   * Returns the key's parent's path.
+   * Returns an immutable list with the key's ancestors.
    */
-  public List<PathElement> ancestorPath() {
+  public List<PathElement> ancestors() {
     return path.subList(0, path.size() - 1);
   }
 
@@ -229,7 +240,21 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
   }
 
   public Builder builder() {
-    return new Builder(this);
+    return new Builder(dataset(), kind()).namespace(namespace()).addAncestors(ancestors());
+  }
+
+  public Key toKey(String name) {
+    return new Key.Builder(dataset(), kind(), name)
+        .namespace(namespace())
+        .addAncestors(ancestors())
+        .build();
+  }
+
+  public Key toKey(long id) {
+    return new Key.Builder(dataset(), kind(), id)
+        .namespace(namespace())
+        .addAncestors(ancestors())
+        .build();
   }
 
   @Override

@@ -20,12 +20,12 @@ public final class KeyBuilder {
   }
 
   public KeyBuilder addToPath(String kind, String name) {
-    delegate.addToPath(kind, name);
+    delegate.addAncestor(kind, name);
     return this;
   }
 
   public KeyBuilder addToPath(String kind, long id) {
-    delegate.addToPath(kind, id);
+    delegate.addAncestor(kind, id);
     return this;
   }
 
@@ -43,11 +43,19 @@ public final class KeyBuilder {
   }
 
   public Key build(String name) {
-    return new Key.Builder(build(), name).build();
+    PartialKey key = build();
+    return new Key.Builder(key.dataset(), key.kind(), name)
+        .namespace(key.namespace())
+        .addAncestors(key.ancestors())
+        .build();
   }
 
   public Key build(long id) {
-    return new Key.Builder(build(), id).build();
+    PartialKey key = build();
+    return new Key.Builder(key.dataset(), key.kind(), id)
+        .namespace(key.namespace())
+        .addAncestors(key.ancestors())
+        .build();
   }
 
   public PartialKey build() {

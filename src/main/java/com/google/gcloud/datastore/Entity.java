@@ -28,6 +28,13 @@ public final class Entity extends PartialEntity {
       super(entity);
     }
 
+    /**
+     * Create a Builder for the given key and with the properties from the given entity.
+     */
+    public Builder(Key key, PartialEntity entity) {
+      super(key, entity);
+    }
+
     @Override
     public Builder clearProperties() {
       super.clearProperties();
