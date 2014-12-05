@@ -26,7 +26,7 @@ public class DatastoreServiceTest {
       new BooleanValue.Builder(false).indexed(false).build();
   private static final PartialKey PARTIAL_KEY1 = new PartialKey.Builder(DATASET, KIND1).build();
   private static final PartialKey PARTIAL_KEY2 = new PartialKey.Builder(DATASET, KIND2).build();
-  private static final Key KEY1 = PARTIAL_KEY1.toKey("name");
+  private static final Key KEY1 = PARTIAL_KEY1.newKey("name");
   private static final Key KEY2 = new Key.Builder(KEY1, KIND2, 1).build();
   private static final Key KEY3 = KEY2.builder().name("bla").build();
   private static final PartialEntity PARTIAL_ENTITY1 = new PartialEntity.Builder(PARTIAL_KEY2)
@@ -74,14 +74,58 @@ public class DatastoreServiceTest {
   }
 
   @Test
-  public void testNewTransaction() {
+  public void testNewTransactionCommit() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testNewTransactionRollback() {
     fail("Not yet implemented");
   }
 
   @Test
   public void testNewBatchWriter() {
+    BatchWriter batchWriter = datastore.newBatchWriter();
+    Entity entity1 = ENTITY1.builder().clearProperties().build();
+    Entity entity2 = ENTITY2.builder()
+        .clearProperties()
+        .setProperty("bla", new NullValue())
+        .build();
+    Entity entity4 = new Entity.Builder(KEY2.newKey("newName1"))
+        .setProperty("value", new StringValue("value"))
+        .build();
+    Entity entity5 = new Entity.Builder(KEY2.newKey("newName2"))
+        .setProperty("value", new StringValue("value"))
+        .build();
+    batchWriter.add(entity4, entity5);
+    batchWriter.put(ENTITY3, entity1, entity2);
+    batchWriter.submit();
+    Iterator<Entity> entities = datastore.get(KEY1, KEY2, KEY3, entity4.key(), entity5.key());
+    assertEquals(entity1, entities.next());
+    assertEquals(entity2, entities.next());
+    assertEquals(ENTITY3, entities.next());
+    assertEquals(entity4, entities.next());
+    assertEquals(entity5, entities.next());
+    assertFalse(entities.hasNext());
 
-    fail("Not yet implemented");
+    try {
+      batchWriter.submit();
+    } catch (DatastoreServiceException ex) {
+      // expected to fail
+    }
+    batchWriter = datastore.newBatchWriter();
+    batchWriter.delete(entity4.key(), entity5.key());
+    batchWriter.update(ENTITY1, ENTITY2, ENTITY3);
+    batchWriter.submit();
+    entities = datastore.get(KEY1, KEY2, KEY3, entity4.key(), entity5.key());
+    assertEquals(ENTITY1, entities.next());
+    assertEquals(ENTITY2, entities.next());
+    assertEquals(ENTITY3, entities.next());
+    assertNull(entities.next());
+    assertNull(entities.next());
+    assertFalse(entities.hasNext());
+
+    // TODO need to cover more edge cases (ds failures, re-use of same entities,..)
   }
 
   @Test
@@ -100,15 +144,15 @@ public class DatastoreServiceTest {
     assertEquals(key1.kind(), pk1.kind());
     assertTrue(key1.hasId());
     assertFalse(key1.hasName());
-    assertEquals(pk1.toKey(key1.id()), key1);
+    assertEquals(pk1.newKey(key1.id()), key1);
 
     Key key2 = datastore.allocateId(pk1);
     assertNotEquals(key1, key2);
-    assertEquals(pk1.toKey(key2.id()), key2);
+    assertEquals(pk1.newKey(key2.id()), key2);
 
     Key key3 = datastore.allocateId(key1);
     assertNotEquals(key1, key3);
-    assertEquals(pk1.toKey(key3.id()), key3);
+    assertEquals(pk1.newKey(key3.id()), key3);
   }
 
   @Test
@@ -125,9 +169,9 @@ public class DatastoreServiceTest {
       map.put(++count, result.next());
     }
     assertEquals(6, map.size());
-    assertEquals(pKey1.toKey(map.get(1).id()), map.get(1));
-    assertEquals(pKey1.toKey(map.get(5).id()), map.get(5));
-    assertEquals(pKey2.toKey(map.get(2).id()), map.get(2));
+    assertEquals(pKey1.newKey(map.get(1).id()), map.get(1));
+    assertEquals(pKey1.newKey(map.get(5).id()), map.get(5));
+    assertEquals(pKey2.newKey(map.get(2).id()), map.get(2));
     assertEquals(key3.builder().id(map.get(3).id()).build(), map.get(3));
     assertEquals(key3.builder().id(map.get(6).id()).build(), map.get(6));
     assertEquals(key4.builder().id(map.get(4).id()).build(), map.get(4));
