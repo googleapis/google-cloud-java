@@ -242,14 +242,14 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
     return new Builder(dataset(), kind()).namespace(namespace()).addAncestors(ancestors());
   }
 
-  public Key toKey(String name) {
+  public Key newKey(String name) {
     return new Key.Builder(dataset(), kind(), name)
         .namespace(namespace())
         .addAncestors(ancestors())
         .build();
   }
 
-  public Key toKey(long id) {
+  public Key newKey(long id) {
     return new Key.Builder(dataset(), kind(), id)
         .namespace(namespace())
         .addAncestors(ancestors())
