@@ -8,6 +8,7 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
+import com.google.api.client.repackaged.com.google.common.base.Preconditions;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -33,18 +34,23 @@ public abstract class AuthConfig {
     public ServiceAccountAuthConfig(String account, PrivateKey privateKey) {
       this.account = account;
       this.privateKey = privateKey;
+      if (privateKey != null) {
+        Preconditions.checkArgument(account != null);
+      }
     }
 
     @Override
     protected HttpRequestInitializer httpRequestInitializer(
         HttpTransport transport, Set<String> scopes) {
-      return new GoogleCredential.Builder()
-        .setTransport(transport)
-        .setJsonFactory(new JacksonFactory())
-        .setServiceAccountId(account)
-        .setServiceAccountScopes(scopes)
-        .setServiceAccountPrivateKey(privateKey)
-        .build();
+      GoogleCredential.Builder builder = new GoogleCredential.Builder()
+          .setTransport(transport)
+          .setJsonFactory(new JacksonFactory())
+          .setServiceAccountId(account)
+          .setServiceAccountPrivateKey(privateKey);
+      if (privateKey != null) {
+        builder.setServiceAccountScopes(scopes);
+      }
+      return builder.build();
     }
   }
 

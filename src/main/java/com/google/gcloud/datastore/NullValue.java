@@ -51,7 +51,7 @@ public final class NullValue extends Value<Void, NullValue, NullValue.Builder> {
   }
 
   public NullValue() {
-    this(new Builder().indexed(true));
+    this(new Builder());
   }
 
   NullValue(Builder builder) {

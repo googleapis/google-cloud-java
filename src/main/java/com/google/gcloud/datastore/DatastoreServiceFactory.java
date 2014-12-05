@@ -3,27 +3,11 @@ package com.google.gcloud.datastore;
 import com.google.api.services.datastore.client.Datastore;
 import com.google.api.services.datastore.client.DatastoreFactory;
 import com.google.api.services.datastore.client.DatastoreOptions;
-import com.google.api.services.datastore.client.LocalDevelopmentDatastoreFactory;
 
 
-public interface DatastoreServiceFactory {
+public abstract class DatastoreServiceFactory {
 
-  enum Mode implements DatastoreServiceFactory {
-
-    TESTING {
-
-      @Override
-      public DatastoreService get(DatastoreServiceOptions options) {
-        DatastoreOptions dsOptions = new DatastoreOptions.Builder()
-            .dataset(options.dataset())
-            .host(options.host())
-            .build();
-        Datastore datastore = LocalDevelopmentDatastoreFactory.get().create(dsOptions);
-        return new DatastoreServiceImpl(options, datastore);
-      }
-    },
-
-    PROD {
+  private static final DatastoreServiceFactory INSTANCE = new DatastoreServiceFactory() {
       @Override
       public DatastoreService get(DatastoreServiceOptions options) {
         DatastoreOptions dsOptions = options.toDatastoreOptions();
@@ -31,7 +15,10 @@ public interface DatastoreServiceFactory {
         return new DatastoreServiceImpl(options, datastore);
       }
     };
+
+  public static DatastoreService getDefault(DatastoreServiceOptions options) {
+    return INSTANCE.get(options);
   }
 
-  DatastoreService get(DatastoreServiceOptions options);
+  public abstract DatastoreService get(DatastoreServiceOptions options);
 }

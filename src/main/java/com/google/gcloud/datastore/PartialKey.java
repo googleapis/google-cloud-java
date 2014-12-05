@@ -1,9 +1,9 @@
 package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 import static com.google.gcloud.datastore.DatastoreServiceOptions.validateDataset;
+import static com.google.gcloud.datastore.DatastoreServiceOptions.validateNamespace;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
@@ -26,9 +26,9 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
 
   private final transient String dataset;
   private final transient String namespace;
-  private final transient ImmutableList<PathElement> path;
+  private final transient ImmutableList<Ancestor> ancestors;
 
-  public static final class PathElement extends Serializable<DatastoreV1.Key.PathElement> {
+  public static final class Ancestor extends Serializable<DatastoreV1.Key.PathElement> {
 
     private static final long serialVersionUID = -7968078857690784595L;
 
@@ -36,17 +36,17 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
     private final transient Long id;
     private final transient String name;
 
-    private PathElement(String kind) {
+    private Ancestor(String kind) {
       this(kind, null);
     }
 
-    public PathElement(String kind, long id) {
+    public Ancestor(String kind, long id) {
       this.kind = kind;
       this.id = id;
       name = null;
     }
 
-    public PathElement(String kind, String name) {
+    public Ancestor(String kind, String name) {
       this.kind = kind;
       this.name = name;
       id = null;
@@ -60,8 +60,8 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
       return id != null;
     }
 
-    public long id() {
-      return id == null ? 0 : id;
+    public Long id() {
+      return id;
     }
 
     public boolean hasName() {
@@ -69,7 +69,7 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
     }
 
     public String name() {
-      return name == null ? "" : name;
+      return name;
     }
 
     public Object nameOrId() {
@@ -83,10 +83,10 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
 
     @Override
     public boolean equals(Object obj) {
-      if (!(obj instanceof PathElement)) {
+      if (!(obj instanceof Ancestor)) {
         return false;
       }
-      PathElement other = (PathElement) obj;
+      Ancestor other = (Ancestor) obj;
       return Objects.equals(kind, other.kind)
           && Objects.equals(id, other.id)
           && Objects.equals(name, other.name);
@@ -109,25 +109,24 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
       return fromPb(DatastoreV1.Key.PathElement.parseFrom(bytesPb));
     }
 
-    static PathElement fromPb(DatastoreV1.Key.PathElement pathElementPb) {
+    static Ancestor fromPb(DatastoreV1.Key.PathElement pathElementPb) {
       String kind = pathElementPb.getKind();
       if (pathElementPb.hasId()) {
-        return new PathElement(kind, pathElementPb.getId());
+        return new Ancestor(kind, pathElementPb.getId());
       } else if (pathElementPb.hasName()) {
-        return new PathElement(kind, pathElementPb.getName());
+        return new Ancestor(kind, pathElementPb.getName());
       }
-      return new PathElement(kind);
+      return new Ancestor(kind);
     }
   }
 
   public static class Builder {
 
     private String dataset;
-    private String namespace = DEFAULT_NAMESPACE;
+    private String namespace;
     private String kind;
-    private final List<PathElement> path = new LinkedList<>();
+    private final List<Ancestor> ancestors = new LinkedList<>();
 
-    private static final String DEFAULT_NAMESPACE = "";
     private static final int MAX_PATH = 100;
 
     public Builder(String dataset, String kind) {
@@ -138,33 +137,33 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
     public Builder(Key parent, String kind) {
       dataset = parent.dataset();
       namespace = parent.namespace();
-      path.addAll(parent.ancestors());
-      path.add(parent.getLeaf());
+      ancestors.addAll(parent.ancestors());
+      ancestors.add(parent.getLeaf());
       this.kind = kind;
     }
 
     public Builder addAncestor(String kind, long id) {
       checkArgument(id != 0, "id must not be equal to zero");
-      return addAncestor(new PathElement(kind, id));
+      return addAncestor(new Ancestor(kind, id));
     }
 
     public Builder addAncestor(String kind, String name) {
       checkArgument(Strings.isNullOrEmpty(name) , "name must not be empty or null");
       checkArgument(name.length() <= 500, "name must not exceed 500 characters");
-      return addAncestor(new PathElement(kind, name));
+      return addAncestor(new Ancestor(kind, name));
     }
 
-    public Builder addAncestor(PathElement... ancestor) {
-      Preconditions.checkState(path.size() + ancestor.length <= MAX_PATH,
+    public Builder addAncestor(Ancestor... ancestor) {
+      Preconditions.checkState(ancestors.size() + ancestor.length <= MAX_PATH,
           "path can have at most 100 elements");
-      for (PathElement pathElement : ancestor) {
-        path.add(pathElement);
+      for (Ancestor pathElement : ancestor) {
+        ancestors.add(pathElement);
       }
       return this;
     }
 
-    public Builder addAncestors(Iterable<PathElement> ancestors) {
-      for (PathElement pathElement : ancestors) {
+    public Builder addAncestors(Iterable<Ancestor> ancestors) {
+      for (Ancestor pathElement : ancestors) {
         addAncestor(pathElement);
       }
       return this;
@@ -182,7 +181,7 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
     }
 
     public Builder clearPath() {
-      path.clear();
+      ancestors.clear();
       return this;
     }
 
@@ -192,23 +191,23 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
     }
 
     public Builder namespace(String namespace) {
-      this.namespace = checkNotNull(namespace);
+      this.namespace = validateNamespace(namespace);
       return this;
     }
 
     public PartialKey build() {
-      PathElement leaf = new PathElement(kind);
-      ImmutableList<PathElement> pathList =
-          ImmutableList.<PathElement>builder().addAll(path).add(leaf).build();
+      Ancestor leaf = new Ancestor(kind);
+      ImmutableList<Ancestor> pathList =
+          ImmutableList.<Ancestor>builder().addAll(ancestors).add(leaf).build();
       return new PartialKey(dataset, namespace, pathList);
     }
   }
 
-  PartialKey(String dataset, String namespace, ImmutableList<PathElement> path) {
+  PartialKey(String dataset, String namespace, ImmutableList<Ancestor> path) {
     checkState(!path.isEmpty(), "path must not be empty");
     this.dataset = dataset;
     this.namespace = namespace;
-    this.path = path;
+    this.ancestors = path;
   }
 
   /**
@@ -219,7 +218,7 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
   }
 
   /**
-   * Returns the key's namespace.
+   * Returns the key's namespace or {@code null} if not provided.
    */
   public String namespace() {
     return namespace;
@@ -228,8 +227,8 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
   /**
    * Returns an immutable list with the key's ancestors.
    */
-  public List<PathElement> ancestors() {
-    return path.subList(0, path.size() - 1);
+  public List<Ancestor> ancestors() {
+    return ancestors.subList(0, ancestors.size() - 1);
   }
 
   /**
@@ -259,7 +258,7 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dataset, namespace, path);
+    return Objects.hash(dataset, namespace, ancestors);
   }
 
   @Override
@@ -270,26 +269,30 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
     PartialKey other = (PartialKey) obj;
     return Objects.equals(dataset, other.dataset)
         && Objects.equals(namespace, other.namespace)
-        && Objects.equals(path, other.path);
+        && Objects.equals(ancestors, other.ancestors);
   }
 
   @Override
   protected DatastoreV1.Key toPb() {
+    return toPb(this).build();
+  }
+
+  static DatastoreV1.Key.Builder toPb(PartialKey key) {
     DatastoreV1.Key.Builder keyPb = DatastoreV1.Key.newBuilder();
     DatastoreV1.PartitionId.Builder partitionIdPb = DatastoreV1.PartitionId.newBuilder();
-    if (dataset != null) {
-      partitionIdPb.setDatasetId(dataset);
+    if (key.dataset != null) {
+      partitionIdPb.setDatasetId(key.dataset);
     }
-    if (namespace != null) {
-      partitionIdPb.setNamespace(namespace);
+    if (key.namespace != null) {
+      partitionIdPb.setNamespace(key.namespace);
     }
     if (partitionIdPb.hasDatasetId() || partitionIdPb.hasNamespace()) {
       keyPb.setPartitionId(partitionIdPb.build());
     }
-    for (PathElement pathEntry : path) {
+    for (Ancestor pathEntry : key.ancestors) {
       keyPb.addPathElement(pathEntry.toPb());
     }
-    return keyPb.build();
+    return keyPb;
   }
 
   @Override
@@ -309,14 +312,14 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
         namespace = partitionIdPb.getNamespace();
       }
     }
-    ImmutableList.Builder<PathElement> pathBuilder = ImmutableList.builder();
+    ImmutableList.Builder<Ancestor> pathBuilder = ImmutableList.builder();
     for (DatastoreV1.Key.PathElement pathElementPb : keyPb.getPathElementList()) {
-      pathBuilder.add(PathElement.fromPb(pathElementPb));
+      pathBuilder.add(Ancestor.fromPb(pathElementPb));
     }
     return new PartialKey(dataset, namespace, pathBuilder.build());
   }
 
-  PathElement getLeaf() {
-    return path.get(path.size() - 1);
+  Ancestor getLeaf() {
+    return ancestors.get(ancestors.size() - 1);
   }
 }

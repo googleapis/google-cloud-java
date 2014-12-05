@@ -60,13 +60,13 @@ public final class Key extends PartialKey {
     }
 
     @Override
-    public Builder addAncestor(PathElement... ancestor) {
+    public Builder addAncestor(Ancestor... ancestor) {
       super.addAncestor(ancestor);
       return this;
     }
 
     @Override
-    public Builder addAncestors(Iterable<PathElement> ancestors) {
+    public Builder addAncestors(Iterable<Ancestor> ancestors) {
       super.addAncestors(ancestors);
       return this;
     }
@@ -155,7 +155,7 @@ public final class Key extends PartialKey {
    * Returns the key's id (as {@link #Long}) or name (as {@link String}).
    */
   public Object nameOrId() {
-    PathElement leaf = getLeaf();
+    Ancestor leaf = getLeaf();
     return leaf.hasId() ? leaf.id() : leaf.name();
   }
 
@@ -197,7 +197,7 @@ public final class Key extends PartialKey {
     if (key instanceof Key) {
       return (Key) key;
     }
-    PathElement leaf = key.getLeaf();
+    Ancestor leaf = key.getLeaf();
     if (leaf.hasId()) {
       return new Key(key, leaf.id());
     } else if (leaf.hasName()) {
@@ -215,17 +215,17 @@ public final class Key extends PartialKey {
     return fromIncompleteKey(PartialKey.fromPb(keyPb));
   }
 
-  private static ImmutableList<PathElement> newPath(PartialKey key, String name) {
-    ImmutableList.Builder<PathElement> path = ImmutableList.builder();
+  private static ImmutableList<Ancestor> newPath(PartialKey key, String name) {
+    ImmutableList.Builder<Ancestor> path = ImmutableList.builder();
     path.addAll(key.ancestors());
-    path.add(new PathElement(key.kind(), name));
+    path.add(new Ancestor(key.kind(), name));
     return path.build();
   }
 
-  private static ImmutableList<PathElement> newPath(PartialKey key, long id) {
-    ImmutableList.Builder<PathElement> path = ImmutableList.builder();
+  private static ImmutableList<Ancestor> newPath(PartialKey key, long id) {
+    ImmutableList.Builder<Ancestor> path = ImmutableList.builder();
     path.addAll(key.ancestors());
-    path.add(new PathElement(key.kind(), id));
+    path.add(new Ancestor(key.kind(), id));
     return path.build();
   }
 }

@@ -46,6 +46,13 @@ final class DatastoreServiceImpl implements DatastoreService {
   public Iterator<Key> allocateIds(PartialKey... key) {
     DatastoreV1.AllocateIdsRequest.Builder requestPb = DatastoreV1.AllocateIdsRequest.newBuilder();
     for (PartialKey k : key) {
+      if (k.getLeaf().nameOrId() != null) {
+        // if key is full remove the id or name part
+        k = new PartialKey.Builder(k.dataset(), k.kind())
+            .namespace(k.namespace())
+            .addAncestors(k.ancestors())
+            .build();
+      }
       requestPb.addKey(k.toPb());
     }
     // TODO(ozarov): will need to populate "force" after b/18594027 is fixed.

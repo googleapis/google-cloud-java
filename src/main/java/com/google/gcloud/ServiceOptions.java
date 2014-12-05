@@ -18,15 +18,15 @@ public abstract class ServiceOptions {
   private final HttpTransport httpTransport;
   private final AuthConfig authConfig;
 
-  protected ServiceOptions(Builder builder) {
+  protected ServiceOptions(Builder<?> builder) {
     host = firstNonNull(builder.host, DEFAULT_HOST);
-    httpTransport = firstNonNull(builder.httpTransport, getDefaultHttpTransport());
-    authConfig = firstNonNull(builder.authConfig, getDefaultAuthConfig());
+    httpTransport = firstNonNull(builder.httpTransport, defaultHttpTransport());
+    authConfig = firstNonNull(builder.authConfig, defaultAuthConfig());
   }
 
-  private static HttpTransport getDefaultHttpTransport() {
+  private static HttpTransport defaultHttpTransport() {
     // Consider App Engine
-    if (getAppEngineAppId() != null) {
+    if (appEngineAppId() != null) {
       try {
         return new UrlFetchTransport();
       } catch (Exception ignore) {
@@ -42,9 +42,9 @@ public abstract class ServiceOptions {
     return new NetHttpTransport();
   }
 
-  private static AuthConfig getDefaultAuthConfig() {
+  private static AuthConfig defaultAuthConfig() {
     // Consider App Engine
-    if (getAppEngineAppId() != null) {
+    if (appEngineAppId() != null) {
       try {
         return AuthConfig.createForAppEngine();
       } catch (Exception ignore) {
@@ -60,7 +60,7 @@ public abstract class ServiceOptions {
     return AuthConfig.createForAccount(null, null);
   }
 
-  protected static String getAppEngineAppId() {
+  protected static String appEngineAppId() {
     return System.getProperty("com.google.appengine.application.id");
   }
 
@@ -80,16 +80,19 @@ public abstract class ServiceOptions {
 
     protected abstract ServiceOptions build();
 
+    @SuppressWarnings("unchecked")
     public B host(String host) {
       this.host = host;
       return (B) this;
     }
 
+    @SuppressWarnings("unchecked")
     public B httpTransport(HttpTransport httpTransport) {
       this.httpTransport = httpTransport;
       return (B) this;
     }
 
+    @SuppressWarnings("unchecked")
     public B authConfig(AuthConfig authConfig) {
       this.authConfig = authConfig;
       return (B) this;

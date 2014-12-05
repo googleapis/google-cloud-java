@@ -2,44 +2,59 @@ package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-/**
- * An helper for creating keys for a specific {@link DatastoreService}/dataset.
- */
-public final class KeyBuilder {
+import com.google.gcloud.datastore.PartialKey.Ancestor;
 
-  private final PartialKey.Builder delegate;
+/**
+ * An helper for creating keys for a specific {@link DatastoreService},
+ * using its associated dataset and namespace.
+ */
+public final class KeyBuilder extends PartialKey.Builder {
+
   private final DatastoreService service;
 
   /**
    * Constructing a KeyBuilder.
    */
   public KeyBuilder(DatastoreService service, String kind) {
-    this.service = checkNotNull(service);
-    delegate = new PartialKey.Builder(service.getOptions().dataset(), kind);
-    delegate.namespace(service.getOptions().defaultNamespace());
+    super(checkNotNull(service).getOptions().dataset(), kind);
+    this.service = service;
+    namespace(service.getOptions().namespace());
   }
 
-  public KeyBuilder addToPath(String kind, String name) {
-    delegate.addAncestor(kind, name);
+  @Override
+  public KeyBuilder kind(String kind) {
+    super.kind(kind);
     return this;
   }
 
-  public KeyBuilder addToPath(String kind, long id) {
-    delegate.addAncestor(kind, id);
+  @Override
+  public KeyBuilder addAncestor(String kind, String name) {
+    super.addAncestor(kind, name);
     return this;
   }
 
+  @Override
+  public KeyBuilder addAncestor(String kind, long id) {
+    super.addAncestor(kind, id);
+    return this;
+  }
+
+  @Override
   public KeyBuilder namespace(String namespace) {
-    delegate.namespace(namespace);
+    super.namespace(namespace);
     return this;
   }
 
-  /**
-   * Builds a key with a newly allocated id.
-   * @throws DatastoreServiceException if allocation failed.
-   */
-  public Key allocateIdAndBuild() {
-    return service.allocateId(build());
+  @Override
+  public KeyBuilder addAncestor(Ancestor... ancestor) {
+    super.addAncestor(ancestor);
+    return this;
+  }
+
+  @Override
+  public KeyBuilder addAncestors(Iterable<Ancestor> ancestors) {
+    super.addAncestors(ancestors);
+    return this;
   }
 
   public Key build(String name) {
@@ -58,7 +73,11 @@ public final class KeyBuilder {
         .build();
   }
 
-  public PartialKey build() {
-    return delegate.build();
+  /**
+   * Builds a key with a newly allocated id.
+   * @throws DatastoreServiceException if allocation failed.
+   */
+  public Key allocateIdAndBuild() {
+    return service.allocateId(build());
   }
 }

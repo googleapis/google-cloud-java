@@ -32,7 +32,9 @@ public interface DatastoreService extends DatastoreReader, DatastoreWriter {
   BatchWriter newBatchWriter(BatchWriteOption... batchWriteOption);
 
   /**
-   * Returns a key with a newly allocated id.
+   * Allocate a unique id for the given key.
+   * The returned key will have the same information (dataset, kind, namespace and ancestors)
+   * as the given key and will have a newly assigned id.
    *
    * @throws DatastoreServiceExcepiton upon failure
    */
@@ -41,6 +43,7 @@ public interface DatastoreService extends DatastoreReader, DatastoreWriter {
   /**
    * Returns a list of keys using the allocated ids ordered by the input.
    *
+   * @see #allocateId(PartialKey)
    * @throws DatastoreServiceExcepiton upon failure
    */
   Iterator<Key> allocateIds(PartialKey... key);

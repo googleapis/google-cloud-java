@@ -2,15 +2,12 @@ package com.google.gcloud.datastore;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.api.services.datastore.client.LocalDevelopmentDatastore;
-import com.google.api.services.datastore.client.LocalDevelopmentDatastoreException;
-
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,33 +27,43 @@ public class DatastoreServiceTest {
   private static final Key KEY1 = PARTIAL_KEY1.toKey("name");
   private static final Key KEY2 = new Key.Builder(KEY1, KIND2, 1).build();
   private static final Key KEY3 = KEY2.builder().name("bla").build();
+  private static final PartialEntity PARTIAL_ENTITY1 = new PartialEntity.Builder(PARTIAL_KEY2)
+      .setProperty("str", STR_VALUE)
+      .setProperty("bool", BOOL_VALUE)
+      .build();
   private static final Entity ENTITY1 = new Entity.Builder(KEY1)
       .setProperty("str", STR_VALUE)
       .setProperty("bool", BOOL_VALUE)
+      .setProperty("partial1", new PartialEntityValue(PARTIAL_ENTITY1))
       .build();
   private static final Entity ENTITY2 = new Entity.Builder(KEY2, ENTITY1)
       .removeProperty("str")
       .setProperty("null", NULL_VALUE)
       .build();
+  private static final Entity ENTITY3 = new Entity.Builder(KEY3, ENTITY1)
+      .removeProperty("str")
+      .setProperty("null", NULL_VALUE)
+      .setProperty("partial2", new PartialEntityValue(ENTITY1))
+      .build();
 
   private DatastoreServiceOptions options;
   private DatastoreService datastore;
-  private LocalDevelopmentDatastore localDatastore;
 
   @Before
-  public void setUp() throws LocalDevelopmentDatastoreException {
+  public void setUp() {
+    // TODO(ozarov): document that this test depends on a local gcd running.
+    // gcd.sh start dataset1
+    // reference: https://cloud.google.com/datastore/docs/tools/devserver
+    // Or even better, using a "GCE_HOME" param/env initiate and destroy the server
+    // before and after tests via ant or maven
     options = new DatastoreServiceOptions.Builder()
         .dataset(DATASET)
-        .host("http://localhost:8080/")
+        .host("http://localhost:8080")
         .build();
-    datastore = DatastoreServiceFactory.Mode.TESTING.get(options);
-    localDatastore = (LocalDevelopmentDatastore) ((DatastoreServiceImpl) datastore).datastore();
-    localDatastore.start("/usr/local/gcd-sdk", DATASET);
-  }
-
-  @After
-  public void tearDown() throws LocalDevelopmentDatastoreException {
-    localDatastore.stop();
+    datastore = DatastoreServiceFactory.getDefault(options);
+    // Prepare data for testing
+    datastore.delete(KEY1, KEY2, KEY3);
+    datastore.add(ENTITY1, ENTITY2);
   }
 
   @Test
@@ -76,70 +83,139 @@ public class DatastoreServiceTest {
 
   @Test
   public void testAllocateId() {
-    fail("Not yet implemented");
+    KeyBuilder keyBuilder = datastore.newKeyBuilder(KIND1);
+    PartialKey pk1 = keyBuilder.build();
+    Key key1 = keyBuilder.allocateIdAndBuild();
+    assertEquals(key1.dataset(), pk1.dataset());
+    assertEquals(key1.namespace(), pk1.namespace());
+    assertEquals(key1.ancestors(), pk1.ancestors());
+    assertEquals(key1.kind(), pk1.kind());
+    assertTrue(key1.hasId());
+    assertFalse(key1.hasName());
+    assertEquals(pk1.toKey(key1.id()), key1);
+
+    Key key2 = datastore.allocateId(pk1);
+    assertNotEquals(key1, key2);
+    assertEquals(pk1.toKey(key2.id()), key2);
+
+    Key key3 = datastore.allocateId(key1);
+    assertNotEquals(key1, key3);
+    assertEquals(pk1.toKey(key3.id()), key3);
   }
 
   @Test
   public void testAllocateIds() {
-    fail("Not yet implemented");
+    KeyBuilder keyBuilder = datastore.newKeyBuilder(KIND1);
+    PartialKey key1 = keyBuilder.build();
+    PartialKey key2 = keyBuilder.kind(KIND2).addAncestor(KIND1, 10).build();
+    Iterator<Key> result = datastore.allocateIds(key1, key2);
+    Key key = result.next();
+    assertEquals(key1.toKey(key.id()), key);
+    key = result.next();
+    assertEquals(key2.toKey(key.id()), key);
+    assertFalse(result.hasNext());
   }
 
   @Test
-  public void testAddAndGet() {
-    Entity entity = datastore.get(KEY1);
+  public void testGet() {
+    Entity entity = datastore.get(KEY3);
     assertNull(entity);
-
-    datastore.add(ENTITY1);
 
     entity = datastore.get(KEY1);
     StringValue value1 = entity.property("str");
     BooleanValue value2 = entity.property("bool");
+    PartialEntityValue value3 = entity.property("partial1");
     assertEquals(value1, STR_VALUE);
     assertEquals(value2, BOOL_VALUE);
-    assertEquals(2, entity.propertyNames().size());
+    assertEquals(value3, new PartialEntityValue(PARTIAL_ENTITY1));
+    assertEquals(3, entity.propertyNames().size());
     assertTrue(entity.propertyNames().contains("str"));
     assertTrue(entity.propertyNames().contains("bool"));
     assertFalse(entity.hasProperty("bla"));
   }
 
   @Test
-  public void testAddAndGetArray() {
-    Iterator<Entity> result = datastore.get(KEY1, KEY2);
-    assertNull(result.next());
-    assertNull(result.next());
-    assertFalse(result.hasNext());
-
-    populateDatastore();
-
-    result = datastore.get(KEY1, KEY1.builder().name("bla").build(), KEY2);
+  public void testGetArray() {
+    Iterator<Entity> result = datastore.get(KEY1, KEY1.builder().name("bla").build(), KEY2);
     assertEquals(ENTITY1, result.next());
     assertNull(result.next());
     assertEquals(ENTITY2, result.next());
     assertFalse(result.hasNext());
   }
 
-  private void populateDatastore() {
-    datastore.add(ENTITY1, ENTITY2);
-  }
-
   @Test
   public void testAdd() {
-    fail("Not yet implemented");
+    Iterator<Entity> keys = datastore.get(ENTITY1.key(), ENTITY3.key());
+    assertEquals(ENTITY1, keys.next());
+    assertNull(keys.next());
+    assertFalse(keys.hasNext());
+
+    try {
+      datastore.add(ENTITY1);
+    } catch (DatastoreServiceException expected) {
+      // expected;
+    }
+    datastore.add(ENTITY3);
+    assertEquals(ENTITY3, datastore.get(ENTITY3.key()));
   }
 
   @Test
   public void testUpdate() {
-    fail("Not yet implemented");
+    Iterator<Entity> keys = datastore.get(ENTITY1.key(), ENTITY3.key());
+    assertEquals(ENTITY1, keys.next());
+    assertNull(keys.next());
+    assertFalse(keys.hasNext());
+
+    try {
+      datastore.update(ENTITY3);
+    } catch (DatastoreServiceException expected) {
+      // expected;
+    }
+    datastore.add(ENTITY3);
+    assertEquals(ENTITY3, datastore.get(ENTITY3.key()));
+    Entity entity3 = ENTITY3.builder()
+        .clearProperties()
+        .setProperty("bla", new NullValue())
+        .build();
+    assertNotEquals(ENTITY3, entity3);
+    datastore.update(entity3);
+    assertEquals(entity3, datastore.get(ENTITY3.key()));
   }
 
   @Test
   public void testPut() {
-    fail("Not yet implemented");
+    Iterator<Entity> keys = datastore.get(ENTITY1.key(), ENTITY2.key(), ENTITY3.key());
+    assertEquals(ENTITY1, keys.next());
+    assertEquals(ENTITY2, keys.next());
+    assertNull(keys.next());
+    assertFalse(keys.hasNext());
+
+    Entity entity2 = ENTITY2.builder()
+        .clearProperties()
+        .setProperty("bla", new NullValue())
+        .build();
+    assertNotEquals(ENTITY2, entity2);
+    datastore.put(ENTITY3, ENTITY1, entity2);
+    keys = datastore.get(ENTITY1.key(), ENTITY2.key(), ENTITY3.key());
+    assertEquals(ENTITY1, keys.next());
+    assertEquals(entity2, keys.next());
+    assertEquals(ENTITY3, keys.next());
+    assertFalse(keys.hasNext());
   }
 
   @Test
   public void testDelete() {
-    fail("Not yet implemented");
+    Iterator<Entity> keys = datastore.get(ENTITY1.key(), ENTITY2.key(), ENTITY3.key());
+    assertEquals(ENTITY1, keys.next());
+    assertEquals(ENTITY2, keys.next());
+    assertNull(keys.next());
+    assertFalse(keys.hasNext());
+    datastore.delete(ENTITY1.key(), ENTITY2.key(), ENTITY3.key());
+    keys = datastore.get(ENTITY1.key(), ENTITY2.key(), ENTITY3.key());
+    assertNull(keys.next());
+    assertNull(keys.next());
+    assertNull(keys.next());
+    assertFalse(keys.hasNext());
   }
 
   @Test
