@@ -11,7 +11,9 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class DatastoreServiceTest {
 
@@ -78,6 +80,12 @@ public class DatastoreServiceTest {
 
   @Test
   public void testNewBatchWriter() {
+
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testRunQuery() {
     fail("Not yet implemented");
   }
 
@@ -104,16 +112,25 @@ public class DatastoreServiceTest {
   }
 
   @Test
-  public void testAllocateIds() {
+  public void testAllocateIdArray() {
     KeyBuilder keyBuilder = datastore.newKeyBuilder(KIND1);
-    PartialKey key1 = keyBuilder.build();
-    PartialKey key2 = keyBuilder.kind(KIND2).addAncestor(KIND1, 10).build();
-    Iterator<Key> result = datastore.allocateIds(key1, key2);
-    Key key = result.next();
-    assertEquals(key1.toKey(key.id()), key);
-    key = result.next();
-    assertEquals(key2.toKey(key.id()), key);
-    assertFalse(result.hasNext());
+    PartialKey pKey1 = keyBuilder.build();
+    PartialKey pKey2 = keyBuilder.kind(KIND2).addAncestor(KIND1, 10).build();
+    Key key3 = keyBuilder.build("name");
+    Key key4 = keyBuilder.build(1);
+    Iterator<Key> result = datastore.allocateId(pKey1, pKey2, key3, key4, pKey1, key3);
+    Map<Integer, Key> map = new HashMap<>();
+    int count = 0;
+    while (result.hasNext()) {
+      map.put(++count, result.next());
+    }
+    assertEquals(6, map.size());
+    assertEquals(pKey1.toKey(map.get(1).id()), map.get(1));
+    assertEquals(pKey1.toKey(map.get(5).id()), map.get(5));
+    assertEquals(pKey2.toKey(map.get(2).id()), map.get(2));
+    assertEquals(key3.builder().id(map.get(3).id()).build(), map.get(3));
+    assertEquals(key3.builder().id(map.get(6).id()).build(), map.get(6));
+    assertEquals(key4.builder().id(map.get(4).id()).build(), map.get(4));
   }
 
   @Test

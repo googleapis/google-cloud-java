@@ -1,11 +1,13 @@
 package com.google.gcloud.datastore;
 
-import static com.google.gcloud.datastore.DatastoreServiceException.Code.FAILED_PRECONDITION;
+import static com.google.gcloud.datastore.DatastoreServiceException.throwInvalidRequest;
 
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.gcloud.datastore.BatchWriteOption.ForceWrites;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.Map;
 
 class BatchWriterImpl implements BatchWriter {
 
@@ -13,42 +15,30 @@ class BatchWriterImpl implements BatchWriter {
   private final LinkedHashMap<Key, Entity> toUpdate = new LinkedHashMap<>();
   private final LinkedHashMap<Key, Entity> toPut = new LinkedHashMap<>();
   private final LinkedHashSet<Key> toDelete = new LinkedHashSet<>();
-  private final DatastoreServiceImpl datastore;
+  private final boolean force;
+  protected final DatastoreServiceImpl datastore;
 
-  private boolean force;
-  protected boolean isValid = true;
+  private boolean wasSubmitted = false;
 
   BatchWriterImpl(DatastoreServiceImpl datastore, BatchWriteOption... options) {
     this.datastore = datastore;
-    force = datastore.getOptions().force();
-    for (BatchWriteOption option : options) {
-      option.apply(this);
+    Map<Class<? extends BatchWriteOption>, BatchWriteOption> optionsMap =
+        BatchWriteOption.asImmutableMap(options);
+    if (optionsMap.containsKey(ForceWrites.class)) {
+      force = ((ForceWrites) optionsMap.get(ForceWrites.class)).force();
+    } else {
+      force = datastore.getOptions().force();
     }
-  }
-
-  // Apply all valid options
-
-  void apply(BatchWriteOption.ForceWrites forceOptions) {
-    this.force = forceOptions.force();
-  }
-
-  void apply(BatchWriteOption other) {
-    // dont care
-  }
-
-  ////////////////////
-
-  DatastoreServiceException newBatchFailure(Entity entity, String msg) {
-    isValid = false;
-    return new DatastoreServiceException(FAILED_PRECONDITION,
-        new RuntimeException("Entity with the key " + entity.key() + " " + msg));
   }
 
   protected void checkValid() {
-    if (!isValid) {
-      throw new DatastoreServiceException(FAILED_PRECONDITION,
-          new RuntimeException("BatchWriter is in an invalid state"));
+    if (wasSubmitted) {
+      throwInvalidRequest(getName() + " was already submitted");
     }
+  }
+
+  protected String getName() {
+    return "batch";
   }
 
   @Override
@@ -57,7 +47,8 @@ class BatchWriterImpl implements BatchWriter {
     for (Entity entity : entities) {
       Key key = entity.key();
       if (toAdd.containsKey(key) || toUpdate.containsKey(key) || toPut.containsKey(key)) {
-        throw newBatchFailure(entity, "was already added or updated in this batch");
+        throw throwInvalidRequest("Entity with the key %s was already added or updated in this "
+            + getName(), entity.key());
       }
       if (toDelete.remove(key)) {
         toPut.put(key, entity);
@@ -73,7 +64,8 @@ class BatchWriterImpl implements BatchWriter {
     for (Entity entity : entities) {
       Key key = entity.key();
       if (toDelete.contains(key)) {
-        throw newBatchFailure(entity, "was alredy deleted in this batch");
+        throw throwInvalidRequest(
+            "Entity with the key %s was already deleted in this " + getName(), entity.key());
       }
       if (toAdd.remove(key) != null || toPut.containsKey(key)) {
         toPut.put(key, entity);
@@ -128,7 +120,7 @@ class BatchWriterImpl implements BatchWriter {
     DatastoreV1.CommitRequest.Builder requestPb = newCommitRequest();
     requestPb.setMutation(mutationPb);
     datastore.comitMutation(requestPb);
-    isValid = false;
+    wasSubmitted = true;
   }
 
   protected DatastoreV1.CommitRequest.Builder newCommitRequest() {

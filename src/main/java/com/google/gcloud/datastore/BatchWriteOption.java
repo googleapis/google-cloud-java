@@ -1,6 +1,9 @@
 package com.google.gcloud.datastore;
 
+import com.google.common.collect.ImmutableMap;
+
 import java.io.Serializable;
+import java.util.Map;
 
 public abstract class BatchWriteOption implements Serializable {
 
@@ -19,20 +22,23 @@ public abstract class BatchWriteOption implements Serializable {
     public boolean force() {
       return force;
     }
-
-    @Override
-    void apply(BatchWriterImpl batchWriter) {
-      batchWriter.apply(this);
-    }
   }
 
   BatchWriteOption() {
     // package protected
   }
 
-  abstract void apply(BatchWriterImpl batchWriter);
-
   public static ForceWrites forceWrites() {
     return new ForceWrites(true);
+  }
+
+  static Map<Class<? extends BatchWriteOption>, BatchWriteOption> asImmutableMap(
+      BatchWriteOption... options) {
+    ImmutableMap.Builder<Class<? extends BatchWriteOption>, BatchWriteOption> builder =
+        ImmutableMap.builder();
+    for (BatchWriteOption option : options) {
+      builder.put(option.getClass(), option);
+    }
+    return builder.build();
   }
 }

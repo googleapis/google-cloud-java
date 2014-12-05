@@ -7,12 +7,18 @@ import com.google.api.services.datastore.client.DatastoreException;
 import com.google.common.collect.AbstractIterator;
 import com.google.protobuf.ByteString;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 
 
 final class DatastoreServiceImpl implements DatastoreService {
+
+  static final Key[] EMPTY_KEY_ARRAY = {};
+  static final PartialKey[] EMPTY_PARTIAL_KEY_ARRAY = {};
 
   private final DatastoreServiceOptions options;
   private final Datastore datastore;
@@ -28,17 +34,8 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   @Override
-  public Transaction newTransaction(TransactionOption... transactionOption) {
-    return new TransactionImpl(this, transactionOption);
-  }
-
-  ByteString requestTransactionId(DatastoreV1.BeginTransactionRequest.Builder requestPb) {
-    try {
-      BeginTransactionResponse responsePb = datastore.beginTransaction(requestPb.build());
-      return responsePb.getTransaction();
-    } catch (DatastoreException e) {
-      throw DatastoreServiceException.translateAndPropagate(e);
-    }
+  public KeyBuilder newKeyBuilder(String kind) {
+    return new KeyBuilder(this, kind);
   }
 
   @Override
@@ -47,22 +44,28 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   @Override
-  public Key allocateId(PartialKey key) {
-    return allocateIds(key).next();
+  public Transaction newTransaction(TransactionOption... transactionOption) {
+    return new TransactionImpl(this, transactionOption);
   }
 
   @Override
-  public Iterator<Key> allocateIds(PartialKey... key) {
+  public QueryResult<PartialEntity> runQuery(Query query) {
+    // TODO To implement
+    throw new RuntimeException("Not implemented yet");
+  }
+
+
+  @Override
+  public Key allocateId(PartialKey key) {
+    return allocateId(key, EMPTY_PARTIAL_KEY_ARRAY).next();
+  }
+
+  @Override
+  public Iterator<Key> allocateId(PartialKey key, PartialKey... others) {
     DatastoreV1.AllocateIdsRequest.Builder requestPb = DatastoreV1.AllocateIdsRequest.newBuilder();
-    for (PartialKey k : key) {
-      if (k.getLeaf().nameOrId() != null) {
-        // if key is full remove the id or name part
-        k = new PartialKey.Builder(k.dataset(), k.kind())
-            .namespace(k.namespace())
-            .addAncestors(k.ancestors())
-            .build();
-      }
-      requestPb.addKey(k.toPb());
+    requestPb.addKey(trimNameOrId(key).toPb());
+    for (PartialKey other : others) {
+      requestPb.addKey(trimNameOrId(other).toPb());
     }
     // TODO(ozarov): will need to populate "force" after b/18594027 is fixed.
     try {
@@ -79,19 +82,39 @@ final class DatastoreServiceImpl implements DatastoreService {
         }
       };
     } catch (DatastoreException e) {
-      throw DatastoreServiceException.translateAndPropagate(e);
+      throw DatastoreServiceException.translateAndThrow(e);
     }
+  }
+
+  private PartialKey trimNameOrId(PartialKey key) {
+    if (key.getLeaf().nameOrId() == null) {
+      return key;
+    }
+    return new PartialKey.Builder(key.dataset(), key.kind())
+        .namespace(key.namespace())
+        .addAncestors(key.ancestors())
+        .build();
   }
 
   @Override
   public Entity get(Key key) {
-    return get(new Key[]{key}).next();
+    return get(key, EMPTY_KEY_ARRAY).next();
   }
 
   @Override
-  public Iterator<Entity> get(final Key... key) {
+  public Iterator<Entity> get(Key key, Key... others) {
+    return get(null, key, others);
+  }
+
+  Iterator<Entity> get(DatastoreV1.ReadOptions readOptionsPb, final Key key, final Key... others) {
     DatastoreV1.LookupRequest.Builder requestPb = DatastoreV1.LookupRequest.newBuilder();
-    for (Key k : key) {
+    if (readOptionsPb != null) {
+      requestPb.setReadOptions(readOptionsPb);
+    }
+    LinkedHashSet<Key> dedupKeys = new LinkedHashSet<>();
+    dedupKeys.add(key);
+    dedupKeys.addAll(Arrays.asList(others));
+    for (Key k : dedupKeys) {
       requestPb.addKey(k.toPb());
     }
     try {
@@ -102,26 +125,71 @@ final class DatastoreServiceImpl implements DatastoreService {
         result.put(entity.key(), entity);
       }
       return new AbstractIterator<Entity>() {
-        int index;
+        int index = -2;
 
         @Override
         protected Entity computeNext() {
-          if (index < key.length) {
-            return result.get(key[index++]);
+          ++index;
+          if (index < 0) {
+            return result.get(key);
+          }
+          if (index < others.length) {
+            return result.get(others[index]);
           }
           return endOfData();
         }
       };
     } catch (DatastoreException e) {
-      throw DatastoreServiceException.translateAndPropagate(e);
+      throw DatastoreServiceException.translateAndThrow(e);
     }
   }
 
   @Override
-  public void add(Entity... entity) {
+  public void add(Entity... entities) {
     DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
-    for (Entity e : entity) {
-      mutationPb.addInsert(e.toPb());
+    LinkedHashSet<Key> keys = new LinkedHashSet<>();
+    for (Entity entity : entities) {
+      if (!keys.add(entity.key())) {
+        throw DatastoreServiceException.throwInvalidRequest(
+            "Duplicate entity with the key %s", entity.key());
+      }
+      mutationPb.addInsert(entity.toPb());
+    }
+    comitMutation(mutationPb);
+  }
+
+  @Override
+  public void update(Entity... entities) {
+    DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
+    LinkedHashMap<Key, Entity> dedupEntities = new LinkedHashMap<>();
+    for (Entity entity : entities) {
+      dedupEntities.put(entity.key(), entity);
+    }
+    for (Entity entity : dedupEntities.values()) {
+      mutationPb.addUpdate(entity.toPb());
+    }
+    comitMutation(mutationPb);
+  }
+
+  @Override
+  public void put(Entity... entities) {
+    DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
+    LinkedHashMap<Key, Entity> dedupEntities = new LinkedHashMap<>();
+    for (Entity entity : entities) {
+      dedupEntities.put(entity.key(), entity);
+    }
+    for (Entity e : dedupEntities.values()) {
+      mutationPb.addUpsert(e.toPb());
+    }
+    comitMutation(mutationPb);
+  }
+
+  @Override
+  public void delete(Key... keys) {
+    DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
+    LinkedHashSet<Key> dedupKeys = new LinkedHashSet<>(Arrays.asList(keys));
+    for (Key key : dedupKeys) {
+      mutationPb.addDelete(key.toPb());
     }
     comitMutation(mutationPb);
   }
@@ -133,55 +201,33 @@ final class DatastoreServiceImpl implements DatastoreService {
     DatastoreV1.CommitRequest.Builder requestPb = DatastoreV1.CommitRequest.newBuilder();
     requestPb.setMode(DatastoreV1.CommitRequest.Mode.NON_TRANSACTIONAL);
     requestPb.setMutation(mutationPb);
+    comitMutation(requestPb);
   }
 
   void comitMutation(DatastoreV1.CommitRequest.Builder requestPb) {
     try {
       datastore.commit(requestPb.build());
     } catch (DatastoreException e) {
-      throw DatastoreServiceException.translateAndPropagate(e);
+      throw DatastoreServiceException.translateAndThrow(e);
     }
   }
 
-  @Override
-  public void update(Entity... entity) {
-    DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
-    for (Entity e : entity) {
-      mutationPb.addUpdate(e.toPb());
+  ByteString requestTransactionId(DatastoreV1.BeginTransactionRequest.Builder requestPb) {
+    try {
+      BeginTransactionResponse responsePb = datastore.beginTransaction(requestPb.build());
+      return responsePb.getTransaction();
+    } catch (DatastoreException e) {
+      throw DatastoreServiceException.translateAndThrow(e);
     }
-    comitMutation(mutationPb);
   }
 
-  @Override
-  public void put(Entity... entity) {
-    DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
-    for (Entity e : entity) {
-      mutationPb.addUpsert(e.toPb());
+  void rollbackTransaction(ByteString transaction) {
+    DatastoreV1.RollbackRequest.Builder requestPb = DatastoreV1.RollbackRequest.newBuilder();
+    requestPb.setTransaction(transaction);
+    try {
+      datastore.rollback(requestPb.build());
+    } catch (DatastoreException e) {
+      throw DatastoreServiceException.translateAndThrow(e);
     }
-    comitMutation(mutationPb);
-  }
-
-  @Override
-  public void delete(Key... key) {
-    DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
-    for (Key k : key) {
-      mutationPb.addDelete(k.toPb());
-    }
-    comitMutation(mutationPb);
-  }
-
-  @Override
-  public KeyBuilder newKeyBuilder(String kind) {
-    return new KeyBuilder(this, kind);
-  }
-
-  @Override
-  public QueryResult<PartialEntity> runQuery(Query query) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
-  Datastore datastore() {
-    return datastore;
   }
 }

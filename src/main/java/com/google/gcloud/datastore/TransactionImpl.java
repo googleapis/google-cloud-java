@@ -1,47 +1,50 @@
 package com.google.gcloud.datastore;
 
+import static com.google.gcloud.datastore.DatastoreServiceException.throwInvalidRequest;
+
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.gcloud.datastore.TransactionOption.IsolationLevel;
 import com.google.protobuf.ByteString;
 
 import java.util.Iterator;
+import java.util.Map;
 
 public final class TransactionImpl extends BatchWriterImpl implements Transaction {
 
   private final ByteString transaction;
-  private IsolationLevel isolationLevel;
+  private boolean wasRolledback;
 
   TransactionImpl(DatastoreServiceImpl datastore, TransactionOption... options) {
     super(datastore, options);
     DatastoreV1.BeginTransactionRequest.Builder requestPb =
         DatastoreV1.BeginTransactionRequest.newBuilder();
+    Map<Class<? extends BatchWriteOption>, BatchWriteOption> optionsMap =
+        BatchWriteOption.asImmutableMap(options);
+    IsolationLevel isolationLevel = (IsolationLevel) optionsMap.get(IsolationLevel.class);
     if (isolationLevel != null) {
       requestPb.setIsolationLevel(isolationLevel.level().toPb());
     }
     transaction = datastore.requestTransactionId(requestPb);
   }
 
-  void apply(IsolationLevel isolationLevel) {
-    // TODO(ozarov): validate that this concept actually works!!!
-    this.isolationLevel = isolationLevel;
-  }
-
   @Override
   public Entity get(Key key) {
-    // TODO Auto-generated method stub
-    return null;
+    return get(key, DatastoreServiceImpl.EMPTY_KEY_ARRAY).next();
   }
 
   @Override
-  public Iterator<Entity> get(Key... key) {
-    // TODO Auto-generated method stub
-    return null;
+  public Iterator<Entity> get(Key key, Key... others) {
+    checkValid();
+    DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
+    readOptionsPb.setTransaction(transaction);
+    return datastore.get(readOptionsPb.build(), key, others);
   }
 
   @Override
   public QueryResult<PartialEntity> runQuery(Query query) {
-    // TODO Auto-generated method stub
-    return null;
+    checkValid();
+    // TODO To implement
+    throw new RuntimeException("Not implemented yet");
   }
 
   @Override
@@ -51,7 +54,22 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
 
   @Override
   public void rollback() {
-    isValid = false;
+    super.checkValid();
+    datastore.rollbackTransaction(transaction);
+    wasRolledback = true;
+  }
+
+  @Override
+  protected String getName() {
+    return "transaction";
+  }
+
+  @Override
+  protected void checkValid() {
+    super.checkValid();
+    if (wasRolledback) {
+      throwInvalidRequest(getName() + " was already rolledback");
+    }
   }
 
   @Override

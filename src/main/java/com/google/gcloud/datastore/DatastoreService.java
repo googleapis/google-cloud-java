@@ -46,7 +46,7 @@ public interface DatastoreService extends DatastoreReader, DatastoreWriter {
    * @see #allocateId(PartialKey)
    * @throws DatastoreServiceExcepiton upon failure
    */
-  Iterator<Key> allocateIds(PartialKey... key);
+  Iterator<Key> allocateId(PartialKey key, PartialKey... others);
 
   /**
    * {@inheritDoc}

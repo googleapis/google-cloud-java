@@ -37,11 +37,6 @@ public abstract class TransactionOption extends BatchWriteOption {
     public Level level() {
       return level;
     }
-
-    @Override
-    void apply(BatchWriterImpl batchWriter) {
-      batchWriter.apply(this);
-    }
   }
 
   TransactionOption() {

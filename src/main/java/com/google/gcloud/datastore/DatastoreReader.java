@@ -20,7 +20,7 @@ public interface DatastoreReader {
    *
    * @throws DatastoreServiceException upon failure.
    */
-  Iterator<Entity> get(Key... key);
+  Iterator<Entity> get(Key key, Key... others);
 
   /**
    * Submit a {@link Query} and returns its result.

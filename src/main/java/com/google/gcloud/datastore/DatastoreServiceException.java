@@ -69,9 +69,22 @@ public class DatastoreServiceException extends RuntimeException {
    * Translate DatastoreException to DatastoreServiceException based on their
    * HTTP error codes. This method will always throw a new DatastoreServiceException.
    *
-   * @throws DatastoreServiceException for every given DatastoreException
+   * @throws DatastoreServiceException every time
    */
-  static DatastoreServiceException translateAndPropagate(DatastoreException exception) {
+  static DatastoreServiceException translateAndThrow(DatastoreException exception) {
     throw firstNonNull(HTTP_TO_CODE.get(exception.getCode()), Code.UNKNOWN).translate(exception);
+  }
+
+  /**
+   * Throw a DatastoreServiceException with {@code FAILED_PRECONDITION} code and the {@code msg}
+   * in a nested exception.
+   *
+   * @throws DatastoreServiceException every time
+   */
+  static DatastoreServiceException throwInvalidRequest(String msg, Object... params) {
+    if (params.length > 0) {
+      msg = String.format(msg, params);
+    }
+    throw new DatastoreServiceException(Code.FAILED_PRECONDITION, new RuntimeException(msg));
   }
 }
