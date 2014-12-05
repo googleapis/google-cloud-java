@@ -1,15 +1,11 @@
 package com.google.gcloud.datastore;
 
-import java.io.Serializable;
+import com.google.api.services.datastore.DatastoreV1;
 
-public abstract class TransactionOption implements Serializable {
+
+public abstract class TransactionOption extends BatchWriteOption {
 
   private static final long serialVersionUID = -1862234444015690375L;
-
-
-  TransactionOption() {
-    // package protected
-  }
 
   public static final class IsolationLevel extends TransactionOption {
 
@@ -18,31 +14,38 @@ public abstract class TransactionOption implements Serializable {
     private final Level level;
 
     public enum Level {
-      SERIALIZABLE, SNAPSHOT;
+
+      SERIALIZABLE(DatastoreV1.BeginTransactionRequest.IsolationLevel.SERIALIZABLE),
+      SNAPSHOT(DatastoreV1.BeginTransactionRequest.IsolationLevel.SNAPSHOT);
+
+      private final DatastoreV1.BeginTransactionRequest.IsolationLevel levelPb;
+
+      Level(DatastoreV1.BeginTransactionRequest.IsolationLevel levelPb) {
+        this.levelPb = levelPb;
+      }
+
+      DatastoreV1.BeginTransactionRequest.IsolationLevel toPb() {
+        return levelPb;
+      }
     }
 
     public IsolationLevel(Level level) {
       this.level = level;
     }
 
-    public Level getLevel() {
+
+    public Level level() {
       return level;
+    }
+
+    @Override
+    void apply(BatchWriterImpl batchWriter) {
+      batchWriter.apply(this);
     }
   }
 
-  public static final class ForceWrites extends TransactionOption {
-
-    private static final long serialVersionUID = 7448106703678852594L;
-
-    private final boolean force;
-
-    public ForceWrites(boolean force) {
-      this.force = force;
-    }
-
-    public boolean isForce() {
-      return force;
-    }
+  TransactionOption() {
+    // package protected
   }
 
   public static IsolationLevel serializable() {
@@ -51,9 +54,5 @@ public abstract class TransactionOption implements Serializable {
 
   public static IsolationLevel snapshot() {
     return new IsolationLevel(IsolationLevel.Level.SNAPSHOT);
-  }
-
-  public static ForceWrites forceWrites() {
-    return new ForceWrites(true);
   }
 }

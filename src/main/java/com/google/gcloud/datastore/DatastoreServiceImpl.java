@@ -1,9 +1,11 @@
 package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.api.services.datastore.DatastoreV1.BeginTransactionResponse;
 import com.google.api.services.datastore.client.Datastore;
 import com.google.api.services.datastore.client.DatastoreException;
 import com.google.common.collect.AbstractIterator;
+import com.google.protobuf.ByteString;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -27,14 +29,21 @@ final class DatastoreServiceImpl implements DatastoreService {
 
   @Override
   public Transaction newTransaction(TransactionOption... transactionOption) {
-    // TODO Auto-generated method stub
-    return null;
+    return new TransactionImpl(this, transactionOption);
+  }
+
+  ByteString requestTransactionId(DatastoreV1.BeginTransactionRequest.Builder requestPb) {
+    try {
+      BeginTransactionResponse responsePb = datastore.beginTransaction(requestPb.build());
+      return responsePb.getTransaction();
+    } catch (DatastoreException e) {
+      throw DatastoreServiceException.translateAndPropagate(e);
+    }
   }
 
   @Override
   public BatchWriter newBatchWriter(BatchWriteOption... batchWriteOption) {
-    // TODO Auto-generated method stub
-    return null;
+    return new BatchWriterImpl(this, batchWriteOption);
   }
 
   @Override
@@ -123,7 +132,10 @@ final class DatastoreServiceImpl implements DatastoreService {
     }
     DatastoreV1.CommitRequest.Builder requestPb = DatastoreV1.CommitRequest.newBuilder();
     requestPb.setMode(DatastoreV1.CommitRequest.Mode.NON_TRANSACTIONAL);
-    requestPb.setMutation(mutationPb.build());
+    requestPb.setMutation(mutationPb);
+  }
+
+  void comitMutation(DatastoreV1.CommitRequest.Builder requestPb) {
     try {
       datastore.commit(requestPb.build());
     } catch (DatastoreException e) {

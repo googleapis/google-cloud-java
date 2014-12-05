@@ -49,28 +49,28 @@ public interface DatastoreService extends DatastoreReader, DatastoreWriter {
   Iterator<Key> allocateIds(PartialKey... key);
 
   /**
-   * @see DatastoreWriter#add(Entity...)
+   * {@inheritDoc}
    * @throws DatastoreServiceExcepiton upon failure
    */
   @Override
   void add(Entity... entity);
 
   /**
-   * @see DatastoreWriter#update(Entity...)
+   * {@inheritDoc}
    * @throws DatastoreServiceExcepiton upon failure
    */
   @Override
   void update(Entity... entity);
 
   /**
-   * @see DatastoreWriter#put(Entity...)
+   * {@inheritDoc}
    * @throws DatastoreServiceExcepiton upon failure
    */
   @Override
   void put(Entity... entity);
 
   /**
-   * @see DatastoreWriter#delete(Key...)
+   * {@inheritDoc}
    * @throws DatastoreServiceExcepiton upon failure
    */
   @Override

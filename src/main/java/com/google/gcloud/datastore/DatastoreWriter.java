@@ -7,13 +7,13 @@ public interface DatastoreWriter {
 
   /**
    * A Datastore add operation.
-   * The operation will fail if an entity already exists.
+   * The operation will fail if an entity with the same key already exists.
    */
   void add(Entity... entity);
 
   /**
    * A Datastore update operation.
-   * The operation will fail if an entity does not already exist.
+   * The operation will fail if an entity with the same key does not already exist.
    */
   void update(Entity... entity);
 
