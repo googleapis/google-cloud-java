@@ -2,10 +2,17 @@ package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableSortedMap;
+import com.google.gcloud.datastore.Value.Type;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+
+// TODO: make entity and Partial entity extends it and to tests + documentaion the option
+// of list and direct value set/get.
 
 /**
  * A container of properties (name and Value pairs).
@@ -31,6 +38,7 @@ abstract class PropertyContainer
       properties = new HashMap<>(entity.properties());
     }
 
+    @SuppressWarnings("unchecked")
     protected B self() {
       return (B) this;
     }
@@ -50,18 +58,60 @@ abstract class PropertyContainer
       return self();
     }
 
-    setNullProperty(String name);
-  longValue
-  booleanValue
-  doubleValue
-  dateTimeValue
-  PartialEntityValue
-  KeyValue
-  ListValue
-  blobValue
-  rawValue // should work for all....
+    public B setNullProperty(String name) {
+      properties.put(name, new NullValue());
+      return self();
+    }
 
+    public B setStringProperty(String name, String value) {
+      properties.put(name, new StringValue(value));
+      return self();
+    }
 
+    public B setLongProperty(String name, long value) {
+      properties.put(name, new LongValue(value));
+      return self();
+    }
+
+    public B setDoubleProperty(String name, double value) {
+      properties.put(name, new DoubleValue(value));
+      return self();
+    }
+
+    public B setBooleanProperty(String name, boolean value) {
+      properties.put(name, new BooleanValue(value));
+      return self();
+    }
+
+    public B setDateAndTimeProperty(String name, DateAndTime value) {
+      properties.put(name, new DateAndTimeValue(value));
+      return self();
+    }
+
+    public B setKeyProperty(String name, Key value) {
+      properties.put(name, new KeyValue(value));
+      return self();
+    }
+
+    public B setPartialEntityProperty(String name, PartialEntity value) {
+      properties.put(name, new PartialEntityValue(value));
+      return self();
+    }
+
+    public B setListProperty(String name, List<Value<?, ?, ?>> values) {
+      properties.put(name, new ListValue(values));
+      return self();
+    }
+
+    public B setListProperty(String name, Value<?, ?, ?>... value) {
+      properties.put(name, new ListValue(Arrays.asList(value)));
+      return self();
+    }
+
+    public B setBlobProperty(String name, Blob value) {
+      properties.put(name, new BlobValue(value));
+      return self();
+    }
 
     public E build() {
       return build(ImmutableSortedMap.copyOf(properties));
@@ -74,32 +124,81 @@ abstract class PropertyContainer
     this.properties = properties;
   }
 
+  /**
+   * Returns {@code true} if there is such property with the given {@code name}.
+   */
   public boolean hasProperty(String name) {
     return properties.containsKey(name);
   }
 
-  @SuppressWarnings("unchecked")
+  /**
+   * Returns the {@link Value} of property with the given {@code name}.
+   *
+   * @throws DatastoreServiceException if not such property.
+   */
   public <V extends Value<?, ?, ?>> V property(String name) {
-    return (V) properties.get(name);
+    @SuppressWarnings("unchecked")
+    V property = (V) properties.get(name);
+    if (property == null) {
+      throw DatastoreServiceException.throwInvalidRequest("No such property %s", name);
+    }
+    return property;
   }
 
-  public boolean isNull(String name) {
-    return  properties.get(name) instanceof NullValue;
+  public Type propertyType(String name) {
+    return property(name).type();
+  }
+
+  public boolean isNullProperty(String name) {
+    return property(name) instanceof NullValue;
   }
 
   public String stringProperty(String name) {
     return ((StringValue) property(name)).get();
   }
 
-  longProperty
-  booleanValue
-  doubleValue
-  dateTimeValue
-  PartialEntityValue
-  KeyValue
-  ListValue
-  blobValue
-  rawValue // should work for all....
+  public long longProperty(String name) {
+    return ((LongValue) property(name)).get();
+  }
+
+  public double doubleProperty(String name) {
+    return ((DoubleValue) property(name)).get();
+  }
+
+  public boolean booleanProperty(String name) {
+    return ((BooleanValue) property(name)).get();
+  }
+
+  public DateAndTime dateAndTimeProperty(String name) {
+    return ((DateAndTimeValue) property(name)).get();
+  }
+
+  public Key keyProperty(String name) {
+    return ((KeyValue) property(name)).get();
+  }
+
+  public PartialEntity partialEntityProperty(String name) {
+    return ((PartialEntityValue) property(name)).get();
+  }
+
+  public List<? extends Value<?, ?, ?>> listProperty(String name) {
+    return ((ListValue) property(name)).get();
+  }
+
+  public Blob blobProperty(String name) {
+    return ((BlobValue) property(name)).get();
+  }
+
+  /**
+   * Returns the property's value as {@code RawValue}.
+   */
+  public RawValue rawValueProperty(String name) {
+    Value<?, ?, ?> value = property(name);
+    if (value instanceof RawValue) {
+      return (RawValue) value;
+    }
+    return new RawValue(value.toPb());
+  }
 
   public Set<String> propertyNames() {
     return properties.keySet();

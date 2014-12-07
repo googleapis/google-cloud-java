@@ -75,6 +75,7 @@ public class DatastoreServiceTest {
 
   @Test
   public void testNewTransactionCommit() {
+    // TODO (also try list value with different types)
     fail("Not yet implemented");
   }
 
