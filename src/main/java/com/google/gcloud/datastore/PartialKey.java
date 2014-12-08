@@ -18,7 +18,7 @@ import java.util.Objects;
 /**
  * A partial key (without a name or id).
  * Could be used as metadata for {@link PartialEntity}.
- * This class is immutable. To edit (a copy) use {@link #builder()}.
+ * This class is immutable.
  */
 public class PartialKey extends Serializable<DatastoreV1.Key> {
 
@@ -142,6 +142,13 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
       this.kind = kind;
     }
 
+    public Builder(PartialKey from) {
+      dataset = from.dataset();
+      namespace = from.namespace();
+      kind = from.kind();
+      ancestors.addAll(from.ancestors());
+    }
+
     public Builder addAncestor(String kind, long id) {
       checkArgument(id != 0, "id must not be equal to zero");
       return addAncestor(new Ancestor(kind, id));
@@ -236,10 +243,6 @@ public class PartialKey extends Serializable<DatastoreV1.Key> {
    */
   public String kind() {
     return getLeaf().kind();
-  }
-
-  public Builder builder() {
-    return new Builder(dataset(), kind()).namespace(namespace()).addAncestors(ancestors());
   }
 
   public Key newKey(String name) {

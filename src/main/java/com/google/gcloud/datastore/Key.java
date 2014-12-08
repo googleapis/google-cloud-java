@@ -14,7 +14,7 @@ import java.net.URLEncoder;
 /**
  * A key that is guaranteed to be complete and could be used to reference a
  * Google Cloud Datastore {@link Entity}.
- * This class is immutable. To edit (a copy) use {@link #builder()}.
+ * This class is immutable.
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
  */
@@ -45,6 +45,15 @@ public final class Key extends PartialKey {
     public Builder(Key parent, String kind, long id) {
       super(parent, kind);
       this.id = id;
+    }
+
+    public Builder(Key from) {
+      super(from);
+      if (from.hasId()) {
+        id = from.id();
+      } else {
+        name = from.name();
+      }
     }
 
     @Override
@@ -120,13 +129,6 @@ public final class Key extends PartialKey {
 
   private Key(PartialKey key, long id) {
     super(key.dataset(), key.namespace(), newPath(key, id));
-  }
-
-  @Override
-  public Builder builder() {
-    Builder builder =
-        hasId() ? new Builder(dataset(), kind(), id()) : new Builder(dataset(), kind(), name());
-    return builder.namespace(namespace()).addAncestors(ancestors());
   }
 
   public boolean hasId() {
