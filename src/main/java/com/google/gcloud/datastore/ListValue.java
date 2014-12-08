@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class ListValue extends
-    Value<List<Value<?, ?, ?>>, ListValue, ListValue.Builder> {
+    Value<List<? extends Value<?, ?, ?>>, ListValue, ListValue.Builder> {
 
   private static final long serialVersionUID = -5461475706792576395L;
 
-  static final BaseMarshaller<List<Value<?, ?, ?>>, ListValue, Builder> MARSHALLER =
-      new BaseMarshaller<List<Value<?, ?, ?>>, ListValue, Builder>() {
+  static final BaseMarshaller<List<? extends Value<?, ?, ?>>, ListValue, Builder> MARSHALLER =
+      new BaseMarshaller<List<? extends Value<?, ?, ?>>, ListValue, Builder>() {
 
     @Override
     public int getProtoFieldId() {
@@ -23,7 +23,7 @@ public final class ListValue extends
     }
 
     @Override
-    public Builder newBuilder(List<Value<?, ?, ?>> values) {
+    public Builder newBuilder(List<? extends Value<?, ?, ?>> values) {
       return new Builder().set(values);
     }
 
@@ -45,7 +45,7 @@ public final class ListValue extends
   };
 
   public static final class Builder extends
-      Value.BaseBuilder<List<Value<?, ?, ?>>, ListValue, Builder> {
+      Value.BaseBuilder<List<? extends Value<?, ?, ?>>, ListValue, Builder> {
 
     private ImmutableList.Builder<Value<?, ?, ?>> listBuilder = ImmutableList.builder();
 
@@ -74,7 +74,7 @@ public final class ListValue extends
      * @see com.google.gcloud.datastore.Value.BaseBuilder#set(java.lang.Object)
      */
     @Override
-    public Builder set(List<Value<?, ?, ?>> properties) {
+    public Builder set(List<? extends Value<?, ?, ?>> properties) {
       listBuilder = ImmutableList.<Value<?, ?, ?>>builder();
       for (Value<?, ?, ?> property : properties) {
         addValue(property);
@@ -83,7 +83,7 @@ public final class ListValue extends
     }
 
     @Override
-    public List<Value<?, ?, ?>> get() {
+    public List<? extends Value<?, ?, ?>> get() {
       return listBuilder.build();
     }
 
@@ -94,7 +94,7 @@ public final class ListValue extends
     }
   }
 
-  public ListValue(List<Value<?, ?, ?>> properties) {
+  public ListValue(List<? extends Value<?, ?, ?>> properties) {
     this(new Builder().set(properties));
   }
 

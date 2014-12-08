@@ -10,23 +10,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-
-// TODO: make entity and Partial entity extends it and to tests + documentaion the option
-// of list and direct value set/get.
-
 /**
  * A container of properties (name and Value pairs).
  */
-abstract class PropertyContainer
-    <E extends PropertyContainer<E, B>, B extends PropertyContainer.Builder<E, B>>
-    extends Serializable<DatastoreV1.Entity> {
+abstract class PropertyContainer extends Serializable<DatastoreV1.Entity> {
 
   private static final long serialVersionUID = 8175618724683792766L;
 
   private final transient ImmutableSortedMap<String, Value<?, ?, ?>> properties;
 
-  protected abstract static class Builder
-      <E extends PropertyContainer<E, B>, B extends Builder<E, B>> {
+  protected abstract static class Builder<E extends PropertyContainer, B extends Builder<E, B>> {
 
     private final Map<String, Value<?, ?, ?>> properties;
 
@@ -34,7 +27,7 @@ abstract class PropertyContainer
       properties = new HashMap<>();
     }
 
-    public Builder(PropertyContainer<E, B> entity) {
+    public Builder(PropertyContainer entity) {
       properties = new HashMap<>(entity.properties());
     }
 
@@ -83,8 +76,8 @@ abstract class PropertyContainer
       return self();
     }
 
-    public B setDateAndTimeProperty(String name, DateAndTime value) {
-      properties.put(name, new DateAndTimeValue(value));
+    public B setDateAndTimeProperty(String name, DateTime value) {
+      properties.put(name, new DateTimeValue(value));
       return self();
     }
 
@@ -169,8 +162,8 @@ abstract class PropertyContainer
     return ((BooleanValue) property(name)).get();
   }
 
-  public DateAndTime dateAndTimeProperty(String name) {
-    return ((DateAndTimeValue) property(name)).get();
+  public DateTime dateAndTimeProperty(String name) {
+    return ((DateTimeValue) property(name)).get();
   }
 
   public Key keyProperty(String name) {
@@ -204,11 +197,6 @@ abstract class PropertyContainer
     return properties.keySet();
   }
 
-  /**
-   * Returns a new builder for this entity (values are copied).
-   */
-  public abstract B builder();
-
   ImmutableSortedMap<String, Value<?, ?, ?>> properties() {
     return properties;
   }
@@ -223,7 +211,7 @@ abstract class PropertyContainer
     if (!(obj instanceof PropertyContainer)) {
       return false;
     }
-    return properties.equals(((PropertyContainer<?, ?>) obj).properties);
+    return properties.equals(((PropertyContainer) obj).properties);
   }
 
   @Override
@@ -239,5 +227,5 @@ abstract class PropertyContainer
     return entityPb.build();
   }
 
-  protected abstract void populateEntityBuilder(DatastoreV1.Entity.Builder entity);
+  protected abstract void populateEntityBuilder(DatastoreV1.Entity.Builder entityPb);
 }

@@ -9,18 +9,21 @@
  * Entity entity = datastore.get(key);
  * if (entity == null) {
  *   entity = new Entity.Builder(key)
- *       .setProperty("name", new StringValue("John Do"))
+ *       .setStringProperty("name", "John Do")
  *       .setProperty("age", new LongValue.Builder(100).indexed(false).build())
- *       .setProperty("updated", new BooleanValue(false))
+ *       .setBooleanProperty("updated", false)
  *       .build();
  *   datastore.put(entity);
  * } else {
- *   BooleanValue updated = entity.property("updated");
- *   if (!updated.get()) {
+ *   boolean updated = entity.booleanProperty("updated");
+ *   if (!updated.get) {
+ *     String[] name = entity.stringProperty("name").split(" ");
  *     entity = entity.builder()
- *         .setProperty("updated", new BooleanValue(true))
+ *         .setStringProperty("name", name[0])
+ *         .setProperty("last_name", new StringProperty.Builder(name[1]).indexed(false).build())
+ *         .setBooleanProperty("updated", true)
  *         .removeProperty("old_property")
- *         .setProperty("new_property", new DoubleValue(1.1))
+ *         .setDoubleProperty("new_property", 1.1)
  *         .build();
  *     datastore.update(entity);
  *   }

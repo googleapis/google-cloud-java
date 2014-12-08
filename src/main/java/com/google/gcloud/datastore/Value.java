@@ -83,9 +83,9 @@ public abstract class
     BOOLEAN(BooleanValue.MARSHALLER, BooleanValue.MARSHALLER),
 
     /**
-     * Represents a {@link DateAndTime} value.
+     * Represents a {@link DateTime} value.
      */
-    DATE_AND_TIME(DateAndTimeValue.MARSHALLER, DateAndTimeValue.MARSHALLER),
+    DATE_TIME(DateTimeValue.MARSHALLER, DateTimeValue.MARSHALLER),
 
     /**
      * Represents a {@link Blob} value.

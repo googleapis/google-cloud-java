@@ -30,8 +30,8 @@ public class SerializationTest {
   private static final LongValue LONG_VALUE = new LongValue(123);
   private static final DoubleValue DOUBLE_VALUE = new DoubleValue(12.34);
   private static final BooleanValue BOOLEAN_VALUE = new BooleanValue(true);
-  private static final DateAndTimeValue DATE_AND_TIME_VALUE =
-      new DateAndTimeValue(DateAndTime.now());
+  private static final DateTimeValue DATE_AND_TIME_VALUE =
+      new DateTimeValue(DateTime.now());
   private static final BlobValue BLOB_VALUE =
       new BlobValue(Blob.copyFrom(new byte[] {10, 0, -2}));
   private static final RawValue RAW_VALUE = new RawValue(
@@ -76,7 +76,7 @@ public class SerializationTest {
       .put(Type.LONG, LONG_VALUE)
       .put(Type.DOUBLE, DOUBLE_VALUE)
       .put(Type.BOOLEAN, BOOLEAN_VALUE)
-      .put(Type.DATE_AND_TIME, DATE_AND_TIME_VALUE)
+      .put(Type.DATE_TIME, DATE_AND_TIME_VALUE)
       .put(Type.BLOB, BLOB_VALUE)
       .put(Type.RAW_VALUE, RAW_VALUE)
       .build();
