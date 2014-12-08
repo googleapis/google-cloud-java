@@ -1,5 +1,7 @@
 package com.google.gcloud.datastore;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSortedMap;
@@ -10,7 +12,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
  * An entity holds one or more properties, represented by a name (as {@link String})
  * and a value (as {@link Value}), and is associated with a {@link Key}.
  * For a list of possible values see {@link Value.Type}.
- * This class is immutable. To edit (a copy) use {@link #builder()}.
+ * This class is immutable.
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
  */
@@ -18,45 +20,35 @@ public final class Entity extends PartialEntity {
 
   private static final long serialVersionUID = 432961565733066915L;
 
-  public static final class Builder extends PartialEntity.Builder {
+  public static final class Builder extends PropertyContainer.Builder<Entity, Builder> {
+
+    private Key key;
 
     public Builder(Key key) {
-      super(key);
+      this.key = checkNotNull(key);
     }
 
     public Builder(Entity entity) {
       super(entity);
+      key = entity.key();
     }
 
     /**
      * Create a Builder for the given key and with the properties from the given entity.
      */
     public Builder(Key key, PartialEntity entity) {
-      super(key, entity);
+      super(entity);
+      this.key = key;
     }
 
-    @Override
-    public Builder clearProperties() {
-      super.clearProperties();
+    public Builder key(Key key) {
+      this.key = checkNotNull(key);
       return this;
     }
 
     @Override
-    public Builder removeProperty(String name) {
-      super.removeProperty(name);
-      return this;
-    }
-
-    @Override
-    public Builder setProperty(String name, Value<?, ?, ?> value) {
-      super.setProperty(name, value);
-      return this;
-    }
-
-    @Override
-    public Entity build() {
-      PartialEntity entity = super.build();
-      return new Entity((Key) entity.key(), entity.properties());
+    protected Entity build(ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
+      return new Entity(key, properties);
     }
   }
 
@@ -70,11 +62,6 @@ public final class Entity extends PartialEntity {
   @Override
   public Key key() {
     return (Key) super.key();
-  }
-
-  @Override
-  public Builder builder() {
-    return new Builder(this);
   }
 
   @Override

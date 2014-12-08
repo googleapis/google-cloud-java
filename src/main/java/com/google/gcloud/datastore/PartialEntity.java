@@ -4,71 +4,59 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.protobuf.InvalidProtocolBufferException;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * A partial entity holds one or more properties, represented by a name (as {@link String})
  * and a value (as {@link Value}).
  * For a list of possible values see {@link Value.Type}.
  * A partial entity also can be associated with a key (partial or full).
- * This class is immutable. To edit (a copy) use {@link #builder()}.
+ * This class is immutable.
  */
-public class PartialEntity extends Serializable<DatastoreV1.Entity> {
+public class PartialEntity extends PropertyContainer {
 
   private static final long serialVersionUID = 6492561268709192891L;
 
   private final transient PartialKey key;
-  private final transient ImmutableSortedMap<String, Value<?, ?, ?>> properties;
 
-  public static class Builder {
+  public static class Builder extends PropertyContainer.Builder<PartialEntity, Builder> {
 
-    private final PartialKey key;
-    private final Map<String, Value<?, ?, ?>> properties;
+    private PartialKey key;
+
+    public Builder() {
+    }
 
     /**
      * Construct a builder with a partial key (could be null).
      */
     public Builder(PartialKey key) {
       this.key = key;
-      properties = new HashMap<>();
     }
 
     public Builder(PartialEntity entity) {
+      super(entity);
       key = entity.key();
-      properties = new HashMap<>(entity.properties());
     }
 
     public Builder(PartialKey key, PartialEntity entity) {
+      super(entity);
       this.key = key;
-      properties = new HashMap<>(entity.properties());
     }
 
-    public Builder clearProperties() {
-      properties.clear();
+    public Builder key(PartialKey key) {
+      this.key = key;
       return this;
     }
 
-    public Builder removeProperty(String name) {
-      properties.remove(name);
-      return this;
-    }
-
-    public Builder setProperty(String name, Value<?, ?, ?> value) {
-      properties.put(name, value);
-      return this;
-    }
-
-    public PartialEntity build() {
-      return new PartialEntity(key, ImmutableSortedMap.copyOf(properties));
+    @Override
+    protected PartialEntity build(ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
+      return new PartialEntity(key, properties);
     }
   }
 
   protected PartialEntity(PartialKey key, ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
+    super(properties);
     this.key = key;
-    this.properties = properties;
   }
 
   /**
@@ -78,33 +66,9 @@ public class PartialEntity extends Serializable<DatastoreV1.Entity> {
     return key;
   }
 
-  public boolean hasProperty(String name) {
-    return properties.containsKey(name);
-  }
-
-  @SuppressWarnings("unchecked")
-  public <V extends Value<?, ?, ?>> V property(String name) {
-    return (V) properties.get(name);
-  }
-
-  public Set<String> propertyNames() {
-    return properties.keySet();
-  }
-
-  /**
-   * Returns a new builder for this entity (values are copied).
-   */
-  public Builder builder() {
-    return new Builder(this);
-  }
-
-  ImmutableSortedMap<String, Value<?, ?, ?>> properties() {
-    return properties;
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(key, properties);
+    return Objects.hash(key, properties());
   }
 
   @Override
@@ -114,22 +78,14 @@ public class PartialEntity extends Serializable<DatastoreV1.Entity> {
     }
     PartialEntity other = (PartialEntity) obj;
     return Objects.equals(key, other.key)
-        && Objects.equals(properties, other.properties);
+        && super.equals(obj);
   }
 
   @Override
-  protected DatastoreV1.Entity toPb() {
-    DatastoreV1.Entity.Builder entityPb = DatastoreV1.Entity.newBuilder();
+  protected void populateEntityBuilder(DatastoreV1.Entity.Builder entityPb) {
     if (key != null) {
       entityPb.setKey(key.toPb());
     }
-    for (Map.Entry<String, Value<?, ?, ?>> entry : properties.entrySet()) {
-      DatastoreV1.Property.Builder propertyPb = DatastoreV1.Property.newBuilder();
-      propertyPb.setName(entry.getKey());
-      propertyPb.setValue(entry.getValue().toPb());
-      entityPb.addProperty(propertyPb.build());
-    }
-    return entityPb.build();
   }
 
   @Override

@@ -96,16 +96,16 @@ public class DatastoreServiceTest {
   @Test
   public void testNewBatchWriter() {
     BatchWriter batchWriter = datastore.newBatchWriter();
-    Entity entity1 = ENTITY1.builder().clearProperties().build();
-    Entity entity2 = ENTITY2.builder()
+    Entity entity1 = new Entity.Builder(ENTITY1).clearProperties().build();
+    Entity entity2 = new Entity.Builder(ENTITY2)
         .clearProperties()
-        .setProperty("bla", new NullValue())
+        .setNullProperty("bla")
         .build();
     Entity entity4 = new Entity.Builder(KEY2.newKey("newName1"))
         .setProperty("value", new StringValue("value"))
         .build();
     Entity entity5 = new Entity.Builder(KEY2.newKey("newName2"))
-        .setProperty("value", new StringValue("value"))
+        .setStringProperty("value", "value")
         .build();
     batchWriter.add(entity4, entity5);
     batchWriter.put(ENTITY3, entity1, entity2);
@@ -244,7 +244,7 @@ public class DatastoreServiceTest {
     }
     datastore.add(ENTITY3);
     assertEquals(ENTITY3, datastore.get(ENTITY3.key()));
-    Entity entity3 = ENTITY3.builder()
+    Entity entity3 = new Entity.Builder(ENTITY3)
         .clearProperties()
         .setProperty("bla", new NullValue())
         .build();
@@ -261,7 +261,7 @@ public class DatastoreServiceTest {
     assertNull(keys.next());
     assertFalse(keys.hasNext());
 
-    Entity entity2 = ENTITY2.builder()
+    Entity entity2 = new Entity.Builder(ENTITY2)
         .clearProperties()
         .setProperty("bla", new NullValue())
         .build();

@@ -13,13 +13,13 @@ import java.util.Date;
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
  */
-public final class DateAndTime implements java.io.Serializable {
+public final class DateTime implements java.io.Serializable {
 
   private static final long serialVersionUID = 7343324797621228378L;
 
   private final long timestampMicroseconds;
 
-  DateAndTime(long timestampMicroseconds) {
+  DateTime(long timestampMicroseconds) {
     this.timestampMicroseconds = timestampMicroseconds;
   }
 
@@ -35,10 +35,10 @@ public final class DateAndTime implements java.io.Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof DateAndTime)) {
+    if (!(obj instanceof DateTime)) {
       return false;
     }
-    return timestampMicroseconds == ((DateAndTime) obj).timestampMicroseconds;
+    return timestampMicroseconds == ((DateTime) obj).timestampMicroseconds;
   }
 
   public long timestampMicroseconds() {
@@ -59,15 +59,15 @@ public final class DateAndTime implements java.io.Serializable {
     return cal;
   }
 
-  public static DateAndTime now() {
-    return new DateAndTime(System.nanoTime() / 1000L);
+  public static DateTime now() {
+    return new DateTime(System.nanoTime() / 1000L);
   }
 
-  public static DateAndTime copyFrom(Date date) {
-    return new DateAndTime(checkNotNull(date).getTime() * 1000L);
+  public static DateTime copyFrom(Date date) {
+    return new DateTime(checkNotNull(date).getTime() * 1000L);
   }
 
-  public static DateAndTime copyFrom(Calendar calendar) {
+  public static DateTime copyFrom(Calendar calendar) {
     return copyFrom(calendar.getTime());
   }
 }
