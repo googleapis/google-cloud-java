@@ -11,6 +11,7 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -29,14 +30,22 @@ public class DatastoreServiceTest {
   private static final Key KEY1 = PARTIAL_KEY1.newKey("name");
   private static final Key KEY2 = new Key.Builder(KEY1, KIND2, 1).build();
   private static final Key KEY3 = KEY2.builder().name("bla").build();
+  private static final KeyValue KEY_VALUE = new KeyValue(KEY1);
+  private static final ListValue LIST_VALUE1 = new ListValue.Builder()
+      .addValue(NULL_VALUE)
+      .addValue(STR_VALUE, BOOL_VALUE)
+      .build();
+  private static final ListValue LIST_VALUE2 = new ListValue(Collections.singletonList(KEY_VALUE));
   private static final PartialEntity PARTIAL_ENTITY1 = new PartialEntity.Builder(PARTIAL_KEY2)
       .setProperty("str", STR_VALUE)
       .setProperty("bool", BOOL_VALUE)
+      .setProperty("list", LIST_VALUE1)
       .build();
   private static final Entity ENTITY1 = new Entity.Builder(KEY1)
       .setProperty("str", STR_VALUE)
       .setProperty("bool", BOOL_VALUE)
       .setProperty("partial1", new PartialEntityValue(PARTIAL_ENTITY1))
+      .setProperty("list", LIST_VALUE2)
       .build();
   private static final Entity ENTITY2 = new Entity.Builder(KEY2, ENTITY1)
       .removeProperty("str")

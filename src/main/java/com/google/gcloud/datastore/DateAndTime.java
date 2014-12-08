@@ -8,8 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * A Google Cloud Datastore timestamp.
- * A Datastore timestamp is represented in micro-seconds.
+ * A Google Cloud Datastore timestamp (represented in micro-seconds).
  * This class is immutable.
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>

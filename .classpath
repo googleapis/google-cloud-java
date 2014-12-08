@@ -23,15 +23,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="var" path="ECLIPSE_HOME"/>
-	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
