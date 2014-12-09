@@ -18,7 +18,7 @@ public final class KeyValue extends Value<Key, KeyValue, KeyValue.Builder> {
 
     @Override
     public Builder newBuilder(Key key) {
-      return new Builder(key);
+      return builder(key);
     }
 
     @Override
@@ -34,9 +34,8 @@ public final class KeyValue extends Value<Key, KeyValue, KeyValue.Builder> {
 
   public static final class Builder extends Value.BaseBuilder<Key, KeyValue, Builder> {
 
-    public Builder(Key key) {
+    public Builder() {
       super(Type.KEY);
-      set(key);
     }
 
     @Override
@@ -46,10 +45,14 @@ public final class KeyValue extends Value<Key, KeyValue, KeyValue.Builder> {
   }
 
   public KeyValue(Key key) {
-    this(new Builder(key));
+    this(builder(key));
   }
 
-  KeyValue(Builder builder) {
+  private KeyValue(Builder builder) {
     super(builder);
+  }
+
+  public static Builder builder(Key key) {
+    return new Builder().set(key);
   }
 }

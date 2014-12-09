@@ -19,7 +19,7 @@ public final class StringValue extends Value<String, StringValue, StringValue.Bu
 
     @Override
     public Builder newBuilder(String value) {
-      return new Builder(value);
+      return builder(value);
     }
 
     @Override
@@ -35,9 +35,8 @@ public final class StringValue extends Value<String, StringValue, StringValue.Bu
 
   public static final class Builder extends Value.BaseBuilder<String, StringValue, Builder> {
 
-    public Builder(String value) {
+    private Builder() {
       super(Type.STRING);
-      set(value);
     }
 
     @Override
@@ -50,10 +49,14 @@ public final class StringValue extends Value<String, StringValue, StringValue.Bu
   }
 
   public StringValue(String value) {
-    this(new Builder(value));
+    this(builder(value));
   }
 
-  StringValue(Builder builder) {
+  private StringValue(Builder builder) {
     super(builder);
+  }
+
+  public static Builder builder(String value) {
+    return new Builder().set(value);
   }
 }

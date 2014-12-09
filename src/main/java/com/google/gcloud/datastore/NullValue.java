@@ -13,7 +13,7 @@ public final class NullValue extends Value<Void, NullValue, NullValue.Builder> {
 
     @Override
     public Builder newBuilder(Void value) {
-      return new Builder();
+      return builder();
     }
 
     @Override
@@ -34,7 +34,7 @@ public final class NullValue extends Value<Void, NullValue, NullValue.Builder> {
 
   public static final class Builder extends Value.BaseBuilder<Void, NullValue, Builder> {
 
-    public Builder() {
+    private Builder() {
       super(Type.NULL);
     }
 
@@ -51,10 +51,14 @@ public final class NullValue extends Value<Void, NullValue, NullValue.Builder> {
   }
 
   public NullValue() {
-    this(new Builder());
+    this(builder());
   }
 
-  NullValue(Builder builder) {
+  private NullValue(Builder builder) {
     super(builder);
+  }
+
+  public static Builder builder() {
+    return new Builder();
   }
 }

@@ -87,13 +87,10 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   private PartialKey trimNameOrId(PartialKey key) {
-    if (key.getLeaf().nameOrId() == null) {
-      return key;
+    if (key instanceof Key) {
+      return PartialKey.builder(key).build();
     }
-    return new PartialKey.Builder(key.dataset(), key.kind())
-        .namespace(key.namespace())
-        .addAncestors(key.ancestors())
-        .build();
+    return key;
   }
 
   @Override

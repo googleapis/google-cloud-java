@@ -16,7 +16,7 @@ import java.util.Objects;
 /**
  * Base class for all Google Cloud Datastore value types.
  * All values must be associated with a non-null content (except {@link NullValue}).
- * All values are immutable (including their content). To edit (a copy) use {@link #builder()}.
+ * All values are immutable (including their content). To edit (a copy) use {@link #toBuilder()}.
  * Unsupported value (deprecated or unrecognized) would be represented by {@link RawValue}.
  *
  * @param <V> the type of the content for this value
@@ -298,7 +298,7 @@ public abstract class
   }
 
   @SuppressWarnings("unchecked")
-  public final B builder() {
+  public final B toBuilder() {
     BuilderFactory<V, P, B> builderFactory = type().getBuilderFactory();
     B builder = builderFactory.newBuilder(get());
     return builder.mergeFrom((P) this);

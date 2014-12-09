@@ -18,7 +18,7 @@ public final class BlobValue extends Value<Blob, BlobValue, BlobValue.Builder> {
 
     @Override
     public Builder newBuilder(Blob value) {
-      return new Builder(value);
+      return builder(value);
     }
 
     @Override
@@ -34,9 +34,8 @@ public final class BlobValue extends Value<Blob, BlobValue, BlobValue.Builder> {
 
   public static final class Builder extends Value.BaseBuilder<Blob, BlobValue, Builder> {
 
-    public Builder(Blob blob) {
+    private Builder() {
       super(Type.BLOB);
-      set(blob);
     }
 
     @Override
@@ -46,10 +45,14 @@ public final class BlobValue extends Value<Blob, BlobValue, BlobValue.Builder> {
   }
 
   public BlobValue(Blob blob) {
-    this(new Builder(blob));
+    this(builder(blob));
   }
 
-  BlobValue(Builder builder) {
+  private BlobValue(Builder builder) {
     super(builder);
+  }
+
+  public static Builder builder(Blob blob) {
+    return new Builder().set(blob);
   }
 }

@@ -2,13 +2,13 @@ package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.gcloud.datastore.PartialKey.Ancestor;
+import com.google.common.collect.ImmutableList;
 
 /**
  * An helper for creating keys for a specific {@link DatastoreService},
  * using its associated dataset and namespace.
  */
-public final class KeyBuilder extends PartialKey.Builder {
+public final class KeyBuilder extends BaseKey.Builder<PartialKey, KeyBuilder> {
 
   private final DatastoreService service;
 
@@ -22,55 +22,17 @@ public final class KeyBuilder extends PartialKey.Builder {
   }
 
   @Override
-  public KeyBuilder kind(String kind) {
-    super.kind(kind);
-    return this;
-  }
-
-  @Override
-  public KeyBuilder addAncestor(String kind, String name) {
-    super.addAncestor(kind, name);
-    return this;
-  }
-
-  @Override
-  public KeyBuilder addAncestor(String kind, long id) {
-    super.addAncestor(kind, id);
-    return this;
-  }
-
-  @Override
-  public KeyBuilder namespace(String namespace) {
-    super.namespace(namespace);
-    return this;
-  }
-
-  @Override
-  public KeyBuilder addAncestor(Ancestor... ancestor) {
-    super.addAncestor(ancestor);
-    return this;
-  }
-
-  @Override
-  public KeyBuilder addAncestors(Iterable<Ancestor> ancestors) {
-    super.addAncestors(ancestors);
-    return this;
+  protected PartialKey build(String dataset, String namespace,
+      ImmutableList<KeyPathElement> ancestors, String kind) {
+    return new PartialKey(dataset, namespace, ancestors, kind);
   }
 
   public Key build(String name) {
-    PartialKey key = build();
-    return new Key.Builder(key.dataset(), key.kind(), name)
-        .namespace(key.namespace())
-        .addAncestors(key.ancestors())
-        .build();
+    return build().newKey(name);
   }
 
   public Key build(long id) {
-    PartialKey key = build();
-    return new Key.Builder(key.dataset(), key.kind(), id)
-        .namespace(key.namespace())
-        .addAncestors(key.ancestors())
-        .build();
+    return build().newKey(id);
   }
 
   /**

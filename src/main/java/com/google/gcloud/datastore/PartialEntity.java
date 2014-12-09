@@ -13,34 +13,22 @@ import java.util.Objects;
  * A partial entity also can be associated with a key (partial or full).
  * This class is immutable.
  */
-public class PartialEntity extends PropertyContainer {
+public class PartialEntity extends BaseEntity {
 
   private static final long serialVersionUID = 6492561268709192891L;
 
   private final transient PartialKey key;
 
-  public static class Builder extends PropertyContainer.Builder<PartialEntity, Builder> {
+  public static class Builder extends BaseEntity.Builder<PartialEntity, Builder> {
 
     private PartialKey key;
 
-    public Builder() {
+    private Builder() {
     }
 
-    /**
-     * Construct a builder with a partial key (could be null).
-     */
-    public Builder(PartialKey key) {
-      this.key = key;
-    }
-
-    public Builder(PartialEntity entity) {
+    private Builder(PartialEntity entity) {
       super(entity);
       key = entity.key();
-    }
-
-    public Builder(PartialKey key, PartialEntity entity) {
-      super(entity);
-      this.key = key;
     }
 
     public Builder key(PartialKey key) {
@@ -57,6 +45,10 @@ public class PartialEntity extends PropertyContainer {
   protected PartialEntity(PartialKey key, ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
     super(properties);
     this.key = key;
+  }
+
+  public Entity newEntity(Key key) {
+    return new Entity(key, ImmutableSortedMap.<String, Value<?, ?, ?>>copyOf(properties()));
   }
 
   /**
@@ -94,11 +86,30 @@ public class PartialEntity extends PropertyContainer {
   }
 
   static PartialEntity fromPb(DatastoreV1.Entity entityPb) {
-    PartialKey key = entityPb.hasKey() ? PartialKey.fromPb(entityPb.getKey()) : null;
-    Builder builder = new Builder(key);
+    ImmutableSortedMap.Builder<String, Value<?, ?, ?>> properties =
+        ImmutableSortedMap.naturalOrder();
     for (DatastoreV1.Property property : entityPb.getPropertyList()) {
-      builder.setProperty(property.getName(), Value.fromPb(property.getValue()));
+      properties.put(property.getName(), Value.fromPb(property.getValue()));
     }
-    return builder.build();
+    PartialKey partialKey = null;
+    if (entityPb.hasKey()) {
+      partialKey = PartialKey.fromPb(entityPb.getKey());
+      if (partialKey instanceof Key) {
+        return new Entity((Key) partialKey, properties.build());
+      }
+    }
+    return new PartialEntity(partialKey, properties.build());
+  }
+
+  public static Builder builder() {
+    return new Builder();
+  }
+
+  public static Builder builder(PartialKey key) {
+    return new Builder().key(key);
+  }
+
+  public static Builder builder(PartialEntity copyFrom) {
+    return new Builder(copyFrom);
   }
 }

@@ -23,35 +23,36 @@ public class DatastoreServiceTest {
   private static final String KIND2 = "kind2";
   private static final NullValue NULL_VALUE = new NullValue();
   private static final StringValue STR_VALUE = new StringValue("str");
-  private static final BooleanValue BOOL_VALUE =
-      new BooleanValue.Builder(false).indexed(false).build();
-  private static final PartialKey PARTIAL_KEY1 = new PartialKey.Builder(DATASET, KIND1).build();
-  private static final PartialKey PARTIAL_KEY2 = new PartialKey.Builder(DATASET, KIND2).build();
+  private static final BooleanValue BOOL_VALUE = BooleanValue.builder(false).indexed(false).build();
+  private static final PartialKey PARTIAL_KEY1 = PartialKey.builder(DATASET, KIND1).build();
+  private static final PartialKey PARTIAL_KEY2 = PartialKey.builder(DATASET, KIND2).build();
   private static final Key KEY1 = PARTIAL_KEY1.newKey("name");
-  private static final Key KEY2 = new Key.Builder(KEY1, KIND2, 1).build();
-  private static final Key KEY3 = KEY2.builder().name("bla").build();
+  private static final Key KEY2 = Key.builder(KEY1, KIND2, 1).build();
+  private static final Key KEY3 = Key.builder(KEY2).name("bla").build();
   private static final KeyValue KEY_VALUE = new KeyValue(KEY1);
-  private static final ListValue LIST_VALUE1 = new ListValue.Builder()
+  private static final ListValue LIST_VALUE1 = ListValue.builder()
       .addValue(NULL_VALUE)
       .addValue(STR_VALUE, BOOL_VALUE)
       .build();
   private static final ListValue LIST_VALUE2 = new ListValue(Collections.singletonList(KEY_VALUE));
-  private static final PartialEntity PARTIAL_ENTITY1 = new PartialEntity.Builder(PARTIAL_KEY2)
+  private static final PartialEntity PARTIAL_ENTITY1 = PartialEntity.builder(PARTIAL_KEY2)
       .setProperty("str", STR_VALUE)
       .setProperty("bool", BOOL_VALUE)
       .setProperty("list", LIST_VALUE1)
       .build();
-  private static final Entity ENTITY1 = new Entity.Builder(KEY1)
+  private static final Entity ENTITY1 = Entity.builder(KEY1)
       .setProperty("str", STR_VALUE)
       .setProperty("bool", BOOL_VALUE)
       .setProperty("partial1", new PartialEntityValue(PARTIAL_ENTITY1))
       .setProperty("list", LIST_VALUE2)
       .build();
-  private static final Entity ENTITY2 = new Entity.Builder(KEY2, ENTITY1)
+  private static final Entity ENTITY2 = Entity.builder(ENTITY1)
+      .key(KEY2)
       .removeProperty("str")
       .setProperty("null", NULL_VALUE)
       .build();
-  private static final Entity ENTITY3 = new Entity.Builder(KEY3, ENTITY1)
+  private static final Entity ENTITY3 = Entity.builder(ENTITY1)
+      .key(KEY3)
       .removeProperty("str")
       .setProperty("null", NULL_VALUE)
       .setProperty("partial2", new PartialEntityValue(ENTITY1))
@@ -67,7 +68,7 @@ public class DatastoreServiceTest {
     // reference: https://cloud.google.com/datastore/docs/tools/devserver
     // Or even better, using a "GCE_HOME" param/env initiate and destroy the server
     // before and after tests via ant or maven
-    options = new DatastoreServiceOptions.Builder()
+    options = DatastoreServiceOptions.builder()
         .dataset(DATASET)
         .host("http://localhost:8080")
         .build();
@@ -96,15 +97,15 @@ public class DatastoreServiceTest {
   @Test
   public void testNewBatchWriter() {
     BatchWriter batchWriter = datastore.newBatchWriter();
-    Entity entity1 = new Entity.Builder(ENTITY1).clearProperties().build();
-    Entity entity2 = new Entity.Builder(ENTITY2)
+    Entity entity1 = Entity.builder(ENTITY1).clearProperties().build();
+    Entity entity2 = Entity.builder(ENTITY2)
         .clearProperties()
         .setNullProperty("bla")
         .build();
-    Entity entity4 = new Entity.Builder(KEY2.newKey("newName1"))
+    Entity entity4 = Entity.builder(KEY2.newKey("newName1"))
         .setProperty("value", new StringValue("value"))
         .build();
-    Entity entity5 = new Entity.Builder(KEY2.newKey("newName2"))
+    Entity entity5 = Entity.builder(KEY2.newKey("newName2"))
         .setStringProperty("value", "value")
         .build();
     batchWriter.add(entity4, entity5);
@@ -244,7 +245,7 @@ public class DatastoreServiceTest {
     }
     datastore.add(ENTITY3);
     assertEquals(ENTITY3, datastore.get(ENTITY3.key()));
-    Entity entity3 = new Entity.Builder(ENTITY3)
+    Entity entity3 = Entity.builder(ENTITY3)
         .clearProperties()
         .setProperty("bla", new NullValue())
         .build();
@@ -261,7 +262,7 @@ public class DatastoreServiceTest {
     assertNull(keys.next());
     assertFalse(keys.hasNext());
 
-    Entity entity2 = new Entity.Builder(ENTITY2)
+    Entity entity2 = Entity.builder(ENTITY2)
         .clearProperties()
         .setProperty("bla", new NullValue())
         .build();
@@ -293,7 +294,7 @@ public class DatastoreServiceTest {
   public void testNewKeyBuilder() {
     KeyBuilder keyBuilder = datastore.newKeyBuilder(KIND1);
     assertEquals(PARTIAL_KEY1, keyBuilder.build());
-    assertEquals(PARTIAL_KEY1.builder().kind(KIND2).build(),
+    assertEquals(PartialKey.builder(PARTIAL_KEY1).kind(KIND2).build(),
         datastore.newKeyBuilder(KIND2).build());
     assertEquals(KEY1, keyBuilder.build("name"));
     assertEquals(KEY1.builder().id(2).build(), keyBuilder.build(2));

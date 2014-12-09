@@ -20,25 +20,17 @@ public final class Entity extends PartialEntity {
 
   private static final long serialVersionUID = 432961565733066915L;
 
-  public static final class Builder extends PropertyContainer.Builder<Entity, Builder> {
+  public static final class Builder extends BaseEntity.Builder<Entity, Builder> {
 
     private Key key;
 
-    public Builder(Key key) {
+    private Builder(Key key) {
       this.key = checkNotNull(key);
     }
 
-    public Builder(Entity entity) {
+    private Builder(Entity entity) {
       super(entity);
       key = entity.key();
-    }
-
-    /**
-     * Create a Builder for the given key and with the properties from the given entity.
-     */
-    public Builder(Key key, PartialEntity entity) {
-      super(entity);
-      this.key = key;
     }
 
     public Builder key(Key key) {
@@ -52,7 +44,7 @@ public final class Entity extends PartialEntity {
     }
   }
 
-  private Entity(Key key, ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
+  Entity(Key key, ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
     super(key, properties);
   }
 
@@ -70,11 +62,16 @@ public final class Entity extends PartialEntity {
   }
 
   static Entity fromPb(DatastoreV1.Entity entityPb) {
-    Preconditions.checkArgument(entityPb.hasKey());
-    Builder builder = new Builder(Key.fromPb(entityPb.getKey()));
-    for (DatastoreV1.Property property : entityPb.getPropertyList()) {
-      builder.setProperty(property.getName(), Value.fromPb(property.getValue()));
-    }
-    return builder.build();
+    PartialEntity entity = PartialEntity.fromPb(entityPb);
+    Preconditions.checkState(entity instanceof Entity, "Entity is not complete");
+    return (Entity) entity;
+  }
+
+  public static Builder builder(Key key) {
+    return new Builder(key);
+  }
+
+  public static Builder builder(Entity copyFrom) {
+    return new Builder(copyFrom);
   }
 }

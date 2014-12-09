@@ -70,7 +70,7 @@ public abstract class ServiceOptions {
     private HttpTransport httpTransport;
     private AuthConfig authConfig;
 
-    public Builder() {}
+    protected Builder() {}
 
     protected Builder(ServiceOptions options) {
       host = options.host;

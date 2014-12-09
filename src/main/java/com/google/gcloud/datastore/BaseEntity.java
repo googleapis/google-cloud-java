@@ -11,23 +11,23 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * A container of properties (name and Value pairs).
+ * A base class for entities.
  */
-abstract class PropertyContainer extends Serializable<DatastoreV1.Entity> {
+abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
 
   private static final long serialVersionUID = 8175618724683792766L;
 
   private final transient ImmutableSortedMap<String, Value<?, ?, ?>> properties;
 
-  protected abstract static class Builder<E extends PropertyContainer, B extends Builder<E, B>> {
+  protected abstract static class Builder<E extends BaseEntity, B extends Builder<E, B>> {
 
     private final Map<String, Value<?, ?, ?>> properties;
 
-    public Builder() {
+    protected Builder() {
       properties = new HashMap<>();
     }
 
-    public Builder(PropertyContainer entity) {
+    protected Builder(BaseEntity entity) {
       properties = new HashMap<>(entity.properties());
     }
 
@@ -91,7 +91,7 @@ abstract class PropertyContainer extends Serializable<DatastoreV1.Entity> {
       return self();
     }
 
-    public B setListProperty(String name, List<Value<?, ?, ?>> values) {
+    public B setListProperty(String name, List<? extends Value<?, ?, ?>> values) {
       properties.put(name, new ListValue(values));
       return self();
     }
@@ -113,7 +113,7 @@ abstract class PropertyContainer extends Serializable<DatastoreV1.Entity> {
     protected abstract E build(ImmutableSortedMap<String, Value<?, ?, ?>> properties);
   }
 
-  protected PropertyContainer(ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
+  protected BaseEntity(ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
     this.properties = properties;
   }
 
@@ -208,10 +208,10 @@ abstract class PropertyContainer extends Serializable<DatastoreV1.Entity> {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof PropertyContainer)) {
+    if (!(obj instanceof BaseEntity)) {
       return false;
     }
-    return properties.equals(((PropertyContainer) obj).properties);
+    return properties.equals(((BaseEntity) obj).properties);
   }
 
   @Override

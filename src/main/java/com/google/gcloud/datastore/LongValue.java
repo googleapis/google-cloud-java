@@ -18,7 +18,7 @@ public final class LongValue extends Value<Long, LongValue, LongValue.Builder> {
 
     @Override
     public Builder newBuilder(Long value) {
-      return new Builder(value);
+      return builder(value);
     }
 
     @Override
@@ -34,9 +34,8 @@ public final class LongValue extends Value<Long, LongValue, LongValue.Builder> {
 
   public static final class Builder extends Value.BaseBuilder<Long, LongValue, Builder> {
 
-    public Builder(long value) {
+    private Builder() {
       super(Type.LONG);
-      set(value);
     }
 
     @Override
@@ -46,10 +45,14 @@ public final class LongValue extends Value<Long, LongValue, LongValue.Builder> {
   }
 
   public LongValue(long value) {
-    this(new Builder(value));
+    this(builder(value));
   }
 
-  LongValue(Builder builder) {
+  private LongValue(Builder builder) {
     super(builder);
+  }
+
+  public static Builder builder(long value) {
+    return new Builder().set(value);
   }
 }

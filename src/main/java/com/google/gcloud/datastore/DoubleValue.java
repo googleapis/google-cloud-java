@@ -18,7 +18,7 @@ public final class DoubleValue extends Value<Double, DoubleValue, DoubleValue.Bu
 
     @Override
     public Builder newBuilder(Double value) {
-      return new Builder(value);
+      return builder(value);
     }
 
     @Override
@@ -34,9 +34,8 @@ public final class DoubleValue extends Value<Double, DoubleValue, DoubleValue.Bu
 
   public static final class Builder extends Value.BaseBuilder<Double, DoubleValue, Builder> {
 
-    public Builder(double value) {
+    public Builder() {
       super(Type.DOUBLE);
-      set(value);
     }
 
     @Override
@@ -46,10 +45,14 @@ public final class DoubleValue extends Value<Double, DoubleValue, DoubleValue.Bu
   }
 
   public DoubleValue(double value) {
-    this(new Builder(value));
+    this(builder(value));
   }
 
-  DoubleValue(Builder builder) {
+  private DoubleValue(Builder builder) {
     super(builder);
+  }
+
+  public static Builder builder(double value) {
+    return new Builder().set(value);
   }
 }

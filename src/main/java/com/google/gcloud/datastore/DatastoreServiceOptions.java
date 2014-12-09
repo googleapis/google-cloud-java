@@ -41,9 +41,10 @@ public class DatastoreServiceOptions extends ServiceOptions {
     private String namespace;
     private boolean force = false;
 
-    public Builder() {}
+    private Builder() {
+    }
 
-    public Builder(DatastoreServiceOptions options) {
+    private Builder(DatastoreServiceOptions options) {
       super(options);
       dataset = options.dataset;
       force = options.force;
@@ -124,5 +125,13 @@ public class DatastoreServiceOptions extends ServiceOptions {
         .host(host())
         .initializer(httpRequestInitializer())
         .build();
+  }
+
+  public static Builder builder() {
+    return new Builder();
+  }
+
+  public static Builder builder(DatastoreServiceOptions options) {
+    return new Builder(options);
   }
 }

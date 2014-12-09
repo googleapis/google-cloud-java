@@ -24,7 +24,7 @@ public final class ListValue extends
 
     @Override
     public Builder newBuilder(List<? extends Value<?, ?, ?>> values) {
-      return new Builder().set(values);
+      return builder().set(values);
     }
 
     @Override
@@ -49,9 +49,8 @@ public final class ListValue extends
 
     private ImmutableList.Builder<Value<?, ?, ?>> listBuilder = ImmutableList.builder();
 
-    public Builder() {
+    private Builder() {
       super(Type.LIST);
-      indexed(false);
     }
 
     public Builder addValue(Value<?, ?, ?> value) {
@@ -95,14 +94,18 @@ public final class ListValue extends
   }
 
   public ListValue(List<? extends Value<?, ?, ?>> properties) {
-    this(new Builder().set(properties));
+    this(builder().set(properties));
   }
 
   public ListValue(Value<?, ?, ?> first, Value<?, ?, ?>... other) {
     this(new Builder().addValue(first, other));
   }
 
-  ListValue(Builder builder) {
+  private ListValue(Builder builder) {
     super(builder);
+  }
+
+  public static Builder builder() {
+    return new Builder().indexed(false);
   }
 }

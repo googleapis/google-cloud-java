@@ -3,6 +3,7 @@ package com.google.gcloud.datastore;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -22,86 +23,31 @@ public final class Key extends PartialKey {
 
   private static final long serialVersionUID = 3160994559785491356L;
 
-  public static final class Builder extends PartialKey.Builder {
+  private final transient String name;
+  private final transient Long id;
+
+  public static final class Builder extends BaseKey.Builder<Key, Builder> {
 
     private String name;
     private Long id;
 
-    public Builder(String dataset, String kind, String name) {
+    private Builder(String dataset, String kind, String name) {
       super(dataset, kind);
       this.name = name;
     }
 
-    public Builder(String dataset, String kind, long id) {
+    private Builder(String dataset, String kind, long id) {
       super(dataset, kind);
       this.id = id;
     }
 
-    public Builder(Key parent, String kind, String name) {
-      super(parent, kind);
-      this.name = name;
-    }
-
-    public Builder(Key parent, String kind, long id) {
-      super(parent, kind);
-      this.id = id;
-    }
-
-    public Builder(Key from) {
-      super(from);
-      if (from.hasId()) {
-        id = from.id();
+    private Builder(Key copyFrom) {
+      super(copyFrom);
+      if (copyFrom.hasId()) {
+        id = copyFrom.id();
       } else {
-        name = from.name();
+        name = copyFrom.name();
       }
-    }
-
-    @Override
-    public Builder addAncestor(String kind, long id) {
-      super.addAncestor(kind, id);
-      return this;
-    }
-
-    @Override
-    public Builder addAncestor(String kind, String name) {
-      super.addAncestor(kind, name);
-      return this;
-    }
-
-    @Override
-    public Builder addAncestor(Ancestor... ancestor) {
-      super.addAncestor(ancestor);
-      return this;
-    }
-
-    @Override
-    public Builder addAncestors(Iterable<Ancestor> ancestors) {
-      super.addAncestors(ancestors);
-      return this;
-    }
-
-    @Override
-    public Builder kind(String kind) {
-      super.kind(kind);
-      return this;
-    }
-
-    @Override
-    public Builder clearPath() {
-      super.clearPath();
-      return this;
-    }
-
-    @Override
-    public Builder dataset(String dataset) {
-      super.dataset(dataset);
-      return this;
-    }
-
-    @Override
-    public Builder namespace(String namespace) {
-      super.namespace(namespace);
-      return this;
     }
 
     public Builder name(String name) {
@@ -117,48 +63,56 @@ public final class Key extends PartialKey {
     }
 
     @Override
-    public Key build() {
-      PartialKey key = super.build();
-      return id == null ? new Key(key, name) : new Key(key, id);
+    protected Key build(String dataset, String namespace, ImmutableList<KeyPathElement> ancestors,
+        String kind) {
+      if (id == null) {
+        return new Key(dataset, namespace, ancestors, kind, name);
+      }
+      return new Key(dataset, namespace, ancestors, kind, id);
     }
   }
 
-  private Key(PartialKey key, String name) {
-    super(key.dataset(), key.namespace(), newPath(key, name));
+  Key(String dataset, String namespace,  ImmutableList<KeyPathElement> ancestors,
+      String kind, String name) {
+    super(dataset, namespace, ancestors, kind);
+    this.name = name;
+    this.id = null;
   }
 
-  private Key(PartialKey key, long id) {
-    super(key.dataset(), key.namespace(), newPath(key, id));
+  Key(String dataset, String namespace,  ImmutableList<KeyPathElement> ancestors,
+      String kind, long id) {
+    super(dataset, namespace, ancestors, kind);
+    this.id = id;
+    this.name = null;
   }
 
   public boolean hasId() {
-    return id() != null;
+    return id != null;
   }
 
   /**
    * Returns the key's id or {@code null} if it has a name instead.
    */
   public Long id() {
-    return getLeaf().id();
+    return id;
   }
 
   public boolean hasName() {
-    return name() != null;
+    return name != null;
   }
 
   /**
    * Returns the key's name or {@code null} if it has an id instead.
    */
   public String name() {
-    return getLeaf().name();
+    return name;
   }
 
   /**
    * Returns the key's id (as {@link #Long}) or name (as {@link String}).
    */
   public Object nameOrId() {
-    Ancestor leaf = getLeaf();
-    return leaf.hasId() ? leaf.id() : leaf.name();
+    return hasId() ? id : name;
   }
 
   /**
@@ -181,31 +135,12 @@ public final class Key extends PartialKey {
     try {
       String utf8Str = URLDecoder.decode(urlSafe, UTF_8.name());
       DatastoreV1.Key keyPb = DatastoreV1.Key.parseFrom(ByteString.copyFromUtf8(utf8Str));
-      return Key.fromPb(keyPb);
+      return fromPb(keyPb);
     } catch (UnsupportedEncodingException e) {
       throw new RuntimeException("Unxpeced decoding exception", e);
     } catch (InvalidProtocolBufferException e) {
       throw new RuntimeException("Could not parse key", e);
     }
-  }
-
-  /**
-   * Convert an {@code IncompleteKey} to a {@code Key} provided that the key has
-   * either name or id (complete).
-
-   * @throws IllegalArgumentException if provided key is not complete.
-   */
-  public static Key fromIncompleteKey(PartialKey key) {
-    if (key instanceof Key) {
-      return (Key) key;
-    }
-    Ancestor leaf = key.getLeaf();
-    if (leaf.hasId()) {
-      return new Key(key, leaf.id());
-    } else if (leaf.hasName()) {
-      return new Key(key, leaf.name());
-    }
-    throw new IllegalArgumentException("Key is missing name or id");
   }
 
   @Override
@@ -214,20 +149,42 @@ public final class Key extends PartialKey {
   }
 
   static Key fromPb(DatastoreV1.Key keyPb) {
-    return fromIncompleteKey(PartialKey.fromPb(keyPb));
+    PartialKey key = PartialKey.fromPb(keyPb);
+    Preconditions.checkState(key instanceof Key, "Key is not complete");
+    return (Key) key;
   }
 
-  private static ImmutableList<Ancestor> newPath(PartialKey key, String name) {
-    ImmutableList.Builder<Ancestor> path = ImmutableList.builder();
-    path.addAll(key.ancestors());
-    path.add(new Ancestor(key.kind(), name));
-    return path.build();
+  public static Builder builder(String dataset, String kind, String name) {
+    return new Builder(dataset, kind, name);
   }
 
-  private static ImmutableList<Ancestor> newPath(PartialKey key, long id) {
-    ImmutableList.Builder<Ancestor> path = ImmutableList.builder();
-    path.addAll(key.ancestors());
-    path.add(new Ancestor(key.kind(), id));
-    return path.build();
+  public static Builder builder(String dataset, String kind, long id) {
+    return new Builder(dataset, kind, id);
+  }
+
+  public static Builder builder(Key copyFrom) {
+    return new Builder(copyFrom);
+  }
+
+  public static Builder builder(Key parent, String kind, String name) {
+    Builder builder = builder(parent.dataset(), kind, name);
+    addParentToBuilder(parent, builder);
+    return builder;
+  }
+
+  public static Builder builder(Key parent, String kind, long id) {
+    Builder builder = builder(parent.dataset(), kind, id);
+    addParentToBuilder(parent, builder);
+    return builder;
+  }
+
+  private static void addParentToBuilder(Key parent, Builder builder) {
+    builder.namespace(parent.namespace());
+    builder.addAncestors(parent.ancestors());
+    if (parent.hasId()) {
+      builder.addAncestor(new KeyPathElement(parent.kind(), parent.id()));
+    } else {
+      builder.addAncestor(new KeyPathElement(parent.kind(), parent.name()));
+    }
   }
 }

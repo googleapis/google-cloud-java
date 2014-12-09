@@ -19,7 +19,7 @@ public final class DateTimeValue
 
     @Override
     public Builder newBuilder(DateTime value) {
-      return new Builder(value);
+      return builder(value);
     }
 
     @Override
@@ -36,9 +36,8 @@ public final class DateTimeValue
   public static final class Builder
       extends Value.BaseBuilder<DateTime, DateTimeValue, Builder> {
 
-    public Builder(DateTime dateTime) {
+    private Builder() {
       super(Type.DATE_TIME);
-      set(dateTime);
     }
 
     @Override
@@ -48,10 +47,14 @@ public final class DateTimeValue
   }
 
   public DateTimeValue(DateTime dateTime) {
-    this(new Builder(dateTime));
+    this(builder(dateTime));
   }
 
-  DateTimeValue(Builder builder) {
+  private DateTimeValue(Builder builder) {
     super(builder);
+  }
+
+  public static Builder builder(DateTime dateTime) {
+    return new Builder().set(dateTime);
   }
 }

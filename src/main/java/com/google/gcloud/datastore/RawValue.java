@@ -11,7 +11,7 @@ public final class RawValue extends Value<DatastoreV1.Value, RawValue, RawValue.
 
     @Override
     public Builder newBuilder(DatastoreV1.Value value) {
-      return new Builder(value);
+      return builder(value);
     }
 
     @Override
@@ -32,15 +32,8 @@ public final class RawValue extends Value<DatastoreV1.Value, RawValue, RawValue.
 
   static final class Builder extends Value.BaseBuilder<DatastoreV1.Value, RawValue, Builder> {
 
-    Builder(DatastoreV1.Value valuePb) {
+    private Builder() {
       super(Type.RAW_VALUE);
-      if (valuePb.hasIndexed()) {
-        indexed(valuePb.getIndexed());
-      }
-      if (valuePb.hasMeaning()) {
-        meaning(valuePb.getMeaning());
-      }
-      set(valuePb);
     }
 
     @Override
@@ -49,11 +42,23 @@ public final class RawValue extends Value<DatastoreV1.Value, RawValue, RawValue.
     }
   }
 
-  RawValue(Builder builder) {
+  private RawValue(Builder builder) {
     super(builder);
   }
 
   RawValue(DatastoreV1.Value valuePb) {
-    this(new Builder(valuePb));
+    this(builder(valuePb));
+  }
+
+  static Builder builder(DatastoreV1.Value valuePb) {
+    Builder builder = new Builder();
+    if (valuePb.hasIndexed()) {
+      builder.indexed(valuePb.getIndexed());
+    }
+    if (valuePb.hasMeaning()) {
+      builder.meaning(valuePb.getMeaning());
+    }
+    builder.set(valuePb);
+    return builder;
   }
 }
