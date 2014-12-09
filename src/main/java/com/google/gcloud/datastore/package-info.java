@@ -16,11 +16,11 @@
  *   datastore.put(entity);
  * } else {
  *   boolean updated = entity.booleanProperty("updated");
- *   if (!updated.get) {
+ *   if (!updated) {
  *     String[] name = entity.stringProperty("name").split(" ");
- *     entity = entity.builder()
+ *     entity = Entity.builder(entity)
  *         .setStringProperty("name", name[0])
- *         .setProperty("last_name", StringProperty.builder(name[1]).indexed(false).build())
+ *         .setProperty("last_name", StringValue.builder(name[1]).indexed(false).build())
  *         .setBooleanProperty("updated", true)
  *         .removeProperty("old_property")
  *         .setDoubleProperty("new_property", 1.1)
