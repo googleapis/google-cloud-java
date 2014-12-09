@@ -67,6 +67,12 @@ public final class ListValue extends
       return this;
     }
 
+    @Override
+    public Builder indexed(boolean indexed) {
+      DatastoreServiceException.throwInvalidRequest("ListValue can't specify index");
+      return this;
+    }
+
     /**
      * Copy the list of values.
      *
@@ -106,6 +112,6 @@ public final class ListValue extends
   }
 
   public static Builder builder() {
-    return new Builder().indexed(false);
+    return new Builder();
   }
 }

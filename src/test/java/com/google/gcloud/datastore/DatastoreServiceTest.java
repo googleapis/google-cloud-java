@@ -40,6 +40,11 @@ public class DatastoreServiceTest {
       .setProperty("bool", BOOL_VALUE)
       .setProperty("list", LIST_VALUE1)
       .build();
+  private static final PartialEntity PARTIAL_ENTITY2 = PartialEntity.builder(PARTIAL_ENTITY1)
+      .removeProperty("str")
+      .setBooleanProperty("bool", true)
+      .setListProperty("list", LIST_VALUE1.get())
+      .build();
   private static final Entity ENTITY1 = Entity.builder(KEY1)
       .setProperty("str", STR_VALUE)
       .setProperty("bool", BOOL_VALUE)
@@ -49,13 +54,14 @@ public class DatastoreServiceTest {
   private static final Entity ENTITY2 = Entity.builder(ENTITY1)
       .key(KEY2)
       .removeProperty("str")
-      .setProperty("null", NULL_VALUE)
+      .setNullProperty("null")
       .build();
   private static final Entity ENTITY3 = Entity.builder(ENTITY1)
       .key(KEY3)
       .removeProperty("str")
       .setProperty("null", NULL_VALUE)
-      .setProperty("partial2", new PartialEntityValue(ENTITY1))
+      .setPartialEntityProperty("partial1", PARTIAL_ENTITY2)
+      .setPartialEntityProperty("partial2", ENTITY2)
       .build();
 
   private DatastoreServiceOptions options;
@@ -169,23 +175,24 @@ public class DatastoreServiceTest {
   @Test
   public void testAllocateIdArray() {
     KeyBuilder keyBuilder = datastore.newKeyBuilder(KIND1);
-    PartialKey pKey1 = keyBuilder.build();
-    PartialKey pKey2 = keyBuilder.kind(KIND2).addAncestor(KIND1, 10).build();
+    PartialKey partialKey1 = keyBuilder.build();
+    PartialKey partialKey2 = keyBuilder.kind(KIND2).addAncestor(KIND1, 10).build();
     Key key3 = keyBuilder.build("name");
     Key key4 = keyBuilder.build(1);
-    Iterator<Key> result = datastore.allocateId(pKey1, pKey2, key3, key4, pKey1, key3);
+    Iterator<Key> result =
+        datastore.allocateId(partialKey1, partialKey2, key3, key4, partialKey1, key3);
     Map<Integer, Key> map = new HashMap<>();
     int count = 0;
     while (result.hasNext()) {
       map.put(++count, result.next());
     }
     assertEquals(6, map.size());
-    assertEquals(pKey1.newKey(map.get(1).id()), map.get(1));
-    assertEquals(pKey1.newKey(map.get(5).id()), map.get(5));
-    assertEquals(pKey2.newKey(map.get(2).id()), map.get(2));
-    assertEquals(key3.builder().id(map.get(3).id()).build(), map.get(3));
-    assertEquals(key3.builder().id(map.get(6).id()).build(), map.get(6));
-    assertEquals(key4.builder().id(map.get(4).id()).build(), map.get(4));
+    assertEquals(partialKey1.newKey(map.get(1).id()), map.get(1));
+    assertEquals(partialKey1.newKey(map.get(5).id()), map.get(5));
+    assertEquals(partialKey2.newKey(map.get(2).id()), map.get(2));
+    assertEquals(Key.builder(key3).id(map.get(3).id()).build(), map.get(3));
+    assertEquals(Key.builder(key3).id(map.get(6).id()).build(), map.get(6));
+    assertEquals(Key.builder(key4).id(map.get(4).id()).build(), map.get(4));
   }
 
   @Test
@@ -194,24 +201,43 @@ public class DatastoreServiceTest {
     assertNull(entity);
 
     entity = datastore.get(KEY1);
+    assertEquals(ENTITY1, entity);
     StringValue value1 = entity.property("str");
     BooleanValue value2 = entity.property("bool");
-    PartialEntityValue value3 = entity.property("partial1");
+    ListValue value3 = entity.property("list");
     assertEquals(value1, STR_VALUE);
     assertEquals(value2, BOOL_VALUE);
-    assertEquals(value3, new PartialEntityValue(PARTIAL_ENTITY1));
-    assertEquals(3, entity.propertyNames().size());
-    assertTrue(entity.propertyNames().contains("str"));
-    assertTrue(entity.propertyNames().contains("bool"));
+    assertEquals(value3, LIST_VALUE2);
+    assertEquals(PARTIAL_ENTITY1, entity.partialEntityProperty("partial1"));
+    assertEquals(4, entity.propertyNames().size());
     assertFalse(entity.hasProperty("bla"));
   }
 
   @Test
   public void testGetArray() {
-    Iterator<Entity> result = datastore.get(KEY1, KEY1.builder().name("bla").build(), KEY2);
+    datastore.put(ENTITY3);
+    Iterator<Entity> result =
+        datastore.get(KEY1, Key.builder(KEY1).name("bla").build(), KEY2, KEY3);
     assertEquals(ENTITY1, result.next());
     assertNull(result.next());
     assertEquals(ENTITY2, result.next());
+    Entity entity3 = result.next();
+    assertEquals(ENTITY3, entity3);
+    assertTrue(entity3.isNullProperty("null"));
+    assertEquals(false, entity3.booleanProperty("bool"));
+    assertEquals(LIST_VALUE2.get(), entity3.listProperty("list"));
+    PartialEntity partial1 = entity3.partialEntityProperty("partial1");
+    Entity partial2 = (Entity) entity3.partialEntityProperty("partial2");
+    assertEquals(partial1, PARTIAL_ENTITY2);
+    assertEquals(partial2, ENTITY2);
+    assertEquals(Value.Type.BOOLEAN, entity3.propertyType("bool"));
+    assertEquals(5, entity3.propertyNames().size());
+    assertFalse(entity3.hasProperty("bla"));
+    try {
+      entity3.stringProperty("str");
+    } catch (DatastoreServiceException expected) {
+      // expected - no such property
+    }
     assertFalse(result.hasNext());
   }
 
@@ -297,6 +323,6 @@ public class DatastoreServiceTest {
     assertEquals(PartialKey.builder(PARTIAL_KEY1).kind(KIND2).build(),
         datastore.newKeyBuilder(KIND2).build());
     assertEquals(KEY1, keyBuilder.build("name"));
-    assertEquals(KEY1.builder().id(2).build(), keyBuilder.build(2));
+    assertEquals(Key.builder(KEY1).id(2).build(), keyBuilder.build(2));
   }
 }

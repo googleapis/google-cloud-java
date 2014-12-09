@@ -11,6 +11,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.util.Objects;
 
 /**
  * A key that is guaranteed to be complete and could be used to reference a
@@ -76,14 +77,14 @@ public final class Key extends PartialKey {
       String kind, String name) {
     super(dataset, namespace, ancestors, kind);
     this.name = name;
-    this.id = null;
+    id = null;
   }
 
   Key(String dataset, String namespace,  ImmutableList<KeyPathElement> ancestors,
       String kind, long id) {
     super(dataset, namespace, ancestors, kind);
     this.id = id;
-    this.name = null;
+    name = null;
   }
 
   public boolean hasId() {
@@ -141,6 +142,29 @@ public final class Key extends PartialKey {
     } catch (InvalidProtocolBufferException e) {
       throw new RuntimeException("Could not parse key", e);
     }
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), name, id);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof Key)) {
+      return false;
+    }
+    Key other = (Key) obj;
+    return Objects.equals(name, other.name)
+        && Objects.equals(id, other.id)
+        && super.equals(obj);
+  }
+
+  @Override
+  protected void addLeaf(DatastoreV1.Key.Builder keyPb) {
+    KeyPathElement leaf =
+        hasId() ? new KeyPathElement(kind(), id) : new KeyPathElement(kind(), name);
+    keyPb.addPathElement(leaf.toPb());
   }
 
   @Override
