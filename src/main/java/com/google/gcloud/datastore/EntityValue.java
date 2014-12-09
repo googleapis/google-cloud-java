@@ -3,8 +3,9 @@ package com.google.gcloud.datastore;
 import static com.google.api.services.datastore.DatastoreV1.Value.ENTITY_VALUE_FIELD_NUMBER;
 
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.base.Preconditions;
 
-public class EntityValue extends Value<PartialEntity, EntityValue, EntityValue.Builder> {
+public class EntityValue extends Value<PartialEntity> {
 
   private static final long serialVersionUID = -5461475706792576395L;
 
@@ -41,8 +42,8 @@ public class EntityValue extends Value<PartialEntity, EntityValue, EntityValue.B
 
     @Override
     public Builder indexed(boolean indexed) {
-      DatastoreServiceException.throwInvalidRequest("EntityValue can't specify index");
-      return this;
+      Preconditions.checkArgument(!indexed, "EntityValue can't be indexed");
+      return super.indexed(indexed);
     }
 
     @Override
@@ -59,7 +60,12 @@ public class EntityValue extends Value<PartialEntity, EntityValue, EntityValue.B
     super(builder);
   }
 
+  @Override
+  public Builder toBuilder() {
+    return new Builder().mergeFrom(this);
+  }
+
   public static Builder builder(PartialEntity entity) {
-    return new Builder().set(entity);
+    return new Builder().set(entity).indexed(false);
   }
 }

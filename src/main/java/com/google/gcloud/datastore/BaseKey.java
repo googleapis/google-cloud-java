@@ -21,7 +21,7 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
 
   private final transient String dataset;
   private final transient String namespace;
-  private final transient ImmutableList<KeyPathElement> ancestors;
+  private final transient ImmutableList<PathElement> ancestors;
   private final transient String kind;
 
   abstract static class Builder<K extends PartialKey, B extends Builder<K, B>> {
@@ -29,7 +29,7 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
     private String dataset;
     private String namespace;
     private String kind;
-    private final List<KeyPathElement> ancestors;
+    private final List<PathElement> ancestors;
 
     private static final int MAX_PATH = 100;
 
@@ -53,26 +53,26 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
 
     public B addAncestor(String kind, long id) {
       checkArgument(id != 0, "id must not be equal to zero");
-      return addAncestor(new KeyPathElement(kind, id));
+      return addAncestor(new PathElement(kind, id));
     }
 
     public B addAncestor(String kind, String name) {
       checkArgument(Strings.isNullOrEmpty(name) , "name must not be empty or null");
       checkArgument(name.length() <= 500, "name must not exceed 500 characters");
-      return addAncestor(new KeyPathElement(kind, name));
+      return addAncestor(new PathElement(kind, name));
     }
 
-    public B addAncestor(KeyPathElement... ancestor) {
+    public B addAncestor(PathElement... ancestor) {
       Preconditions.checkState(ancestors.size() + ancestor.length <= MAX_PATH,
           "path can have at most 100 elements");
-      for (KeyPathElement pathElement : ancestor) {
+      for (PathElement pathElement : ancestor) {
         ancestors.add(pathElement);
       }
       return self();
     }
 
-    public B addAncestors(Iterable<KeyPathElement> ancestors) {
-      for (KeyPathElement pathElement : ancestors) {
+    public B addAncestors(Iterable<PathElement> ancestors) {
+      for (PathElement pathElement : ancestors) {
         addAncestor(pathElement);
       }
       return self();
@@ -109,10 +109,10 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
     }
 
     protected abstract K build(
-        String dataset, String namespace, ImmutableList<KeyPathElement> ancestors, String kind);
+        String dataset, String namespace, ImmutableList<PathElement> ancestors, String kind);
   }
 
-  BaseKey(String dataset, String namespace, ImmutableList<KeyPathElement> ancestors, String kind) {
+  BaseKey(String dataset, String namespace, ImmutableList<PathElement> ancestors, String kind) {
     this.dataset = dataset;
     this.namespace = namespace;
     this.ancestors = ancestors;
@@ -136,7 +136,7 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
   /**
    * Returns an immutable list with the key's ancestors.
    */
-  public List<KeyPathElement> ancestors() {
+  public List<PathElement> ancestors() {
     return ancestors;
   }
 
@@ -160,16 +160,12 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
     if (partitionIdPb.hasDatasetId() || partitionIdPb.hasNamespace()) {
       keyPb.setPartitionId(partitionIdPb.build());
     }
-    for (KeyPathElement pathEntry : ancestors) {
+    for (PathElement pathEntry : ancestors) {
       keyPb.addPathElement(pathEntry.toPb());
     }
     addLeaf(keyPb);
     return keyPb.build();
   }
 
-  protected void addLeaf(DatastoreV1.Key.Builder keyPb) {
-    if (kind != null) {
-      keyPb.addPathElement(new KeyPathElement(kind).toPb());
-    }
-  }
+  protected abstract void addLeaf(DatastoreV1.Key.Builder keyPb);
 }

@@ -9,13 +9,12 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class ListValue extends
-    Value<List<? extends Value<?, ?, ?>>, ListValue, ListValue.Builder> {
+public final class ListValue extends Value<List<? extends Value<?>>> {
 
   private static final long serialVersionUID = -5461475706792576395L;
 
-  static final BaseMarshaller<List<? extends Value<?, ?, ?>>, ListValue, Builder> MARSHALLER =
-      new BaseMarshaller<List<? extends Value<?, ?, ?>>, ListValue, Builder>() {
+  static final BaseMarshaller<List<? extends Value<?>>, ListValue, Builder> MARSHALLER =
+      new BaseMarshaller<List<? extends Value<?>>, ListValue, Builder>() {
 
     @Override
     public int getProtoFieldId() {
@@ -23,13 +22,13 @@ public final class ListValue extends
     }
 
     @Override
-    public Builder newBuilder(List<? extends Value<?, ?, ?>> values) {
+    public Builder newBuilder(List<? extends Value<?>> values) {
       return builder().set(values);
     }
 
     @Override
-    protected List<Value<?, ?, ?>> getValue(DatastoreV1.Value from) {
-      List<Value<?, ?, ?>> properties = new ArrayList<>(from.getListValueCount());
+    protected List<Value<?>> getValue(DatastoreV1.Value from) {
+      List<Value<?>> properties = new ArrayList<>(from.getListValueCount());
       for (DatastoreV1.Value valuePb : from.getListValueList()) {
         properties.add(Value.fromPb(valuePb));
       }
@@ -38,30 +37,30 @@ public final class ListValue extends
 
     @Override
     protected void setValue(ListValue from, DatastoreV1.Value.Builder to) {
-      for (Value<?, ?, ?> property : from.get()) {
+      for (Value<?> property : from.get()) {
         to.addListValue(property.toPb());
       }
     }
   };
 
   public static final class Builder extends
-      Value.BaseBuilder<List<? extends Value<?, ?, ?>>, ListValue, Builder> {
+      Value.BaseBuilder<List<? extends Value<?>>, ListValue, Builder> {
 
-    private ImmutableList.Builder<Value<?, ?, ?>> listBuilder = ImmutableList.builder();
+    private ImmutableList.Builder<Value<?>> listBuilder = ImmutableList.builder();
 
     private Builder() {
       super(Type.LIST);
     }
 
-    public Builder addValue(Value<?, ?, ?> value) {
+    public Builder addValue(Value<?> value) {
       Preconditions.checkArgument(value.type() != Type.LIST, "Cannot contain another list");
       listBuilder.add(value);
       return this;
     }
 
-    public Builder addValue(Value<?, ?, ?> first, Value<?, ?, ?>... other) {
+    public Builder addValue(Value<?> first, Value<?>... other) {
       addValue(first);
-      for (Value<?, ?, ?> value : other) {
+      for (Value<?> value : other) {
         addValue(value);
       }
       return this;
@@ -79,16 +78,16 @@ public final class ListValue extends
      * @see com.google.gcloud.datastore.Value.BaseBuilder#set(java.lang.Object)
      */
     @Override
-    public Builder set(List<? extends Value<?, ?, ?>> properties) {
-      listBuilder = ImmutableList.<Value<?, ?, ?>>builder();
-      for (Value<?, ?, ?> property : properties) {
+    public Builder set(List<? extends Value<?>> properties) {
+      listBuilder = ImmutableList.<Value<?>>builder();
+      for (Value<?> property : properties) {
         addValue(property);
       }
       return this;
     }
 
     @Override
-    public List<? extends Value<?, ?, ?>> get() {
+    public List<? extends Value<?>> get() {
       return listBuilder.build();
     }
 
@@ -99,16 +98,21 @@ public final class ListValue extends
     }
   }
 
-  public ListValue(List<? extends Value<?, ?, ?>> properties) {
+  public ListValue(List<? extends Value<?>> properties) {
     this(builder().set(properties));
   }
 
-  public ListValue(Value<?, ?, ?> first, Value<?, ?, ?>... other) {
+  public ListValue(Value<?> first, Value<?>... other) {
     this(new Builder().addValue(first, other));
   }
 
   private ListValue(Builder builder) {
     super(builder);
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder().mergeFrom(this);
   }
 
   public static Builder builder() {

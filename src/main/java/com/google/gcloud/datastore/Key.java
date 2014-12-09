@@ -24,8 +24,7 @@ public final class Key extends PartialKey {
 
   private static final long serialVersionUID = 3160994559785491356L;
 
-  private final transient String name;
-  private final transient Long id;
+  private final transient PathElement leaf;
 
   public static final class Builder extends BaseKey.Builder<Key, Builder> {
 
@@ -64,7 +63,7 @@ public final class Key extends PartialKey {
     }
 
     @Override
-    protected Key build(String dataset, String namespace, ImmutableList<KeyPathElement> ancestors,
+    protected Key build(String dataset, String namespace, ImmutableList<PathElement> ancestors,
         String kind) {
       if (id == null) {
         return new Key(dataset, namespace, ancestors, kind, name);
@@ -73,47 +72,45 @@ public final class Key extends PartialKey {
     }
   }
 
-  Key(String dataset, String namespace,  ImmutableList<KeyPathElement> ancestors,
+  Key(String dataset, String namespace,  ImmutableList<PathElement> ancestors,
       String kind, String name) {
     super(dataset, namespace, ancestors, kind);
-    this.name = name;
-    id = null;
+    leaf = new PathElement(kind, name);
   }
 
-  Key(String dataset, String namespace,  ImmutableList<KeyPathElement> ancestors,
+  Key(String dataset, String namespace,  ImmutableList<PathElement> ancestors,
       String kind, long id) {
     super(dataset, namespace, ancestors, kind);
-    this.id = id;
-    name = null;
+    leaf = new PathElement(kind, id);
   }
 
   public boolean hasId() {
-    return id != null;
+    return leaf.hasId();
   }
 
   /**
    * Returns the key's id or {@code null} if it has a name instead.
    */
   public Long id() {
-    return id;
+    return leaf.id();
   }
 
   public boolean hasName() {
-    return name != null;
+    return leaf.hasName();
   }
 
   /**
    * Returns the key's name or {@code null} if it has an id instead.
    */
   public String name() {
-    return name;
+    return leaf.name();
   }
 
   /**
    * Returns the key's id (as {@link #Long}) or name (as {@link String}).
    */
   public Object nameOrId() {
-    return hasId() ? id : name;
+    return leaf.nameOrId();
   }
 
   /**
@@ -146,7 +143,7 @@ public final class Key extends PartialKey {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dataset(), namespace(), ancestors(), kind(), name, id);
+    return Objects.hash(dataset(), namespace(), ancestors(), kind(), leaf);
   }
 
   @Override
@@ -159,14 +156,11 @@ public final class Key extends PartialKey {
         && Objects.equals(namespace(), other.namespace())
         && Objects.equals(ancestors(), other.ancestors())
         && Objects.equals(kind(), other.kind())
-        && Objects.equals(name, other.name)
-        && Objects.equals(id, other.id);
+        && Objects.equals(leaf, other.leaf);
   }
 
   @Override
   protected void addLeaf(DatastoreV1.Key.Builder keyPb) {
-    KeyPathElement leaf =
-        hasId() ? new KeyPathElement(kind(), id) : new KeyPathElement(kind(), name);
     keyPb.addPathElement(leaf.toPb());
   }
 
@@ -209,9 +203,9 @@ public final class Key extends PartialKey {
     builder.namespace(parent.namespace());
     builder.addAncestors(parent.ancestors());
     if (parent.hasId()) {
-      builder.addAncestor(new KeyPathElement(parent.kind(), parent.id()));
+      builder.addAncestor(new PathElement(parent.kind(), parent.id()));
     } else {
-      builder.addAncestor(new KeyPathElement(parent.kind(), parent.name()));
+      builder.addAncestor(new PathElement(parent.kind(), parent.name()));
     }
   }
 }

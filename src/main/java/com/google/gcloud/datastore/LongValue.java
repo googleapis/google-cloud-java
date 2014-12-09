@@ -4,7 +4,7 @@ import static com.google.api.services.datastore.DatastoreV1.Value.INTEGER_VALUE_
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class LongValue extends Value<Long, LongValue, LongValue.Builder> {
+public final class LongValue extends Value<Long> {
 
   private static final long serialVersionUID = -8552854340400546861L;
 
@@ -50,6 +50,11 @@ public final class LongValue extends Value<Long, LongValue, LongValue.Builder> {
 
   private LongValue(Builder builder) {
     super(builder);
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder().mergeFrom(this);
   }
 
   public static Builder builder(long value) {

@@ -4,7 +4,7 @@ import static com.google.api.services.datastore.DatastoreV1.Value.BLOB_VALUE_FIE
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class BlobValue extends Value<Blob, BlobValue, BlobValue.Builder> {
+public final class BlobValue extends Value<Blob> {
 
   private static final long serialVersionUID = -5096238337676649540L;
 
@@ -50,6 +50,11 @@ public final class BlobValue extends Value<Blob, BlobValue, BlobValue.Builder> {
 
   private BlobValue(Builder builder) {
     super(builder);
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder().mergeFrom(this);
   }
 
   public static Builder builder(Blob blob) {

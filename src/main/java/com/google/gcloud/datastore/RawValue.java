@@ -2,7 +2,7 @@ package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class RawValue extends Value<DatastoreV1.Value, RawValue, RawValue.Builder> {
+public final class RawValue extends Value<DatastoreV1.Value> {
 
   private static final long serialVersionUID = -3359604598651897941L;
 
@@ -48,6 +48,11 @@ public final class RawValue extends Value<DatastoreV1.Value, RawValue, RawValue.
 
   RawValue(DatastoreV1.Value valuePb) {
     this(builder(valuePb));
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder().mergeFrom(this);
   }
 
   static Builder builder(DatastoreV1.Value valuePb) {

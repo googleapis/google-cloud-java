@@ -4,7 +4,7 @@ import static com.google.api.services.datastore.DatastoreV1.Value.BOOLEAN_VALUE_
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class BooleanValue extends Value<Boolean, BooleanValue, BooleanValue.Builder> {
+public final class BooleanValue extends Value<Boolean> {
 
   private static final long serialVersionUID = -542649497897250340L;
 
@@ -50,6 +50,11 @@ public final class BooleanValue extends Value<Boolean, BooleanValue, BooleanValu
 
   private BooleanValue(Builder builder) {
     super(builder);
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder().mergeFrom(this);
   }
 
   public static Builder builder(boolean value) {

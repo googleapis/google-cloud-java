@@ -4,7 +4,7 @@ import static com.google.api.services.datastore.DatastoreV1.Value.DOUBLE_VALUE_F
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class DoubleValue extends Value<Double, DoubleValue, DoubleValue.Builder> {
+public final class DoubleValue extends Value<Double> {
 
   private static final long serialVersionUID = -5096238337676649540L;
 
@@ -50,6 +50,11 @@ public final class DoubleValue extends Value<Double, DoubleValue, DoubleValue.Bu
 
   private DoubleValue(Builder builder) {
     super(builder);
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder().mergeFrom(this);
   }
 
   public static Builder builder(double value) {

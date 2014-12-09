@@ -4,7 +4,7 @@ import static com.google.api.services.datastore.DatastoreV1.Value.KEY_VALUE_FIEL
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class KeyValue extends Value<Key, KeyValue, KeyValue.Builder> {
+public final class KeyValue extends Value<Key> {
 
   private static final long serialVersionUID = -1318353707326704821L;
 
@@ -50,6 +50,11 @@ public final class KeyValue extends Value<Key, KeyValue, KeyValue.Builder> {
 
   private KeyValue(Builder builder) {
     super(builder);
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder().mergeFrom(this);
   }
 
   public static Builder builder(Key key) {

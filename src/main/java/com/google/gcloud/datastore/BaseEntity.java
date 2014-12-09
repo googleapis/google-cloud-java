@@ -17,11 +17,11 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
 
   private static final long serialVersionUID = 8175618724683792766L;
 
-  private final transient ImmutableSortedMap<String, Value<?, ?, ?>> properties;
+  private final transient ImmutableSortedMap<String, Value<?>> properties;
 
   protected abstract static class Builder<E extends BaseEntity, B extends Builder<E, B>> {
 
-    private final Map<String, Value<?, ?, ?>> properties;
+    private final Map<String, Value<?>> properties;
 
     protected Builder() {
       properties = new HashMap<>();
@@ -46,7 +46,7 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       return self();
     }
 
-    public B setProperty(String name, Value<?, ?, ?> value) {
+    public B setProperty(String name, Value<?> value) {
       properties.put(name, value);
       return self();
     }
@@ -91,12 +91,12 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       return self();
     }
 
-    public B setListProperty(String name, List<? extends Value<?, ?, ?>> values) {
+    public B setListProperty(String name, List<? extends Value<?>> values) {
       properties.put(name, new ListValue(values));
       return self();
     }
 
-    public B setListProperty(String name, Value<?, ?, ?>... value) {
+    public B setListProperty(String name, Value<?>... value) {
       properties.put(name, new ListValue(Arrays.asList(value)));
       return self();
     }
@@ -110,10 +110,10 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       return build(ImmutableSortedMap.copyOf(properties));
     }
 
-    protected abstract E build(ImmutableSortedMap<String, Value<?, ?, ?>> properties);
+    protected abstract E build(ImmutableSortedMap<String, Value<?>> properties);
   }
 
-  protected BaseEntity(ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
+  protected BaseEntity(ImmutableSortedMap<String, Value<?>> properties) {
     this.properties = properties;
   }
 
@@ -129,7 +129,7 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
    *
    * @throws DatastoreServiceException if not such property.
    */
-  public <V extends Value<?, ?, ?>> V property(String name) {
+  public <V extends Value<?>> V property(String name) {
     @SuppressWarnings("unchecked")
     V property = (V) properties.get(name);
     if (property == null) {
@@ -175,7 +175,7 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
     return (T) ((EntityValue) property(name)).get();
   }
 
-  public List<? extends Value<?, ?, ?>> listProperty(String name) {
+  public List<? extends Value<?>> listProperty(String name) {
     return ((ListValue) property(name)).get();
   }
 
@@ -187,7 +187,7 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
    * Returns the property's value as a {@link RawValue}.
    */
   public RawValue asRawValueProperty(String name) {
-    Value<?, ?, ?> value = property(name);
+    Value<?> value = property(name);
     if (value instanceof RawValue) {
       return (RawValue) value;
     }
@@ -198,14 +198,14 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
     return properties.keySet();
   }
 
-  ImmutableSortedMap<String, Value<?, ?, ?>> properties() {
+  ImmutableSortedMap<String, Value<?>> properties() {
     return properties;
   }
 
   @Override
   protected final DatastoreV1.Entity toPb() {
     DatastoreV1.Entity.Builder entityPb = DatastoreV1.Entity.newBuilder();
-    for (Map.Entry<String, Value<?, ?, ?>> entry : properties.entrySet()) {
+    for (Map.Entry<String, Value<?>> entry : properties.entrySet()) {
       DatastoreV1.Property.Builder propertyPb = DatastoreV1.Property.newBuilder();
       propertyPb.setName(entry.getKey());
       propertyPb.setValue(entry.getValue().toPb());

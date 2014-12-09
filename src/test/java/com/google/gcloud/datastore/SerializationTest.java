@@ -80,8 +80,8 @@ public class SerializationTest {
   @Test
   public void testValues() throws Exception {
     for (Type type : Type.values()) {
-      for (Value<?, ?, ?> value : typeToValues.get(type)) {
-        Value<?, ?, ?> copy = serialiazeAndDeserialize(value);
+      for (Value<?> value : typeToValues.get(type)) {
+        Value<?> copy = serialiazeAndDeserialize(value);
         assertEquals(value, value);
         assertEquals(value, copy);
         assertNotSame(value, copy);
@@ -96,7 +96,6 @@ public class SerializationTest {
     Object[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
         ENTITY3, EMBEDDED_ENTITY1, EMBEDDED_ENTITY2, EMBEDDED_ENTITY3};
     for (Object obj : types) {
-      System.out.println("koko->" + obj);
       Object copy = serialiazeAndDeserialize(obj);
       assertEquals(obj, obj);
       assertEquals(obj, copy);

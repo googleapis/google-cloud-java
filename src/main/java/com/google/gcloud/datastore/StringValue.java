@@ -5,7 +5,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class StringValue extends Value<String, StringValue, StringValue.Builder> {
+public final class StringValue extends Value<String> {
 
   private static final long serialVersionUID = -3105699707394545523L;
 
@@ -54,6 +54,11 @@ public final class StringValue extends Value<String, StringValue, StringValue.Bu
 
   private StringValue(Builder builder) {
     super(builder);
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder().mergeFrom(this);
   }
 
   public static Builder builder(String value) {

@@ -37,18 +37,18 @@ public class PartialEntity extends BaseEntity {
     }
 
     @Override
-    protected PartialEntity build(ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
+    protected PartialEntity build(ImmutableSortedMap<String, Value<?>> properties) {
       return new PartialEntity(key, properties);
     }
   }
 
-  protected PartialEntity(PartialKey key, ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
+  protected PartialEntity(PartialKey key, ImmutableSortedMap<String, Value<?>> properties) {
     super(properties);
     this.key = key;
   }
 
   public Entity newEntity(Key key) {
-    return new Entity(key, ImmutableSortedMap.<String, Value<?, ?, ?>>copyOf(properties()));
+    return new Entity(key, ImmutableSortedMap.<String, Value<?>>copyOf(properties()));
   }
 
   /**
@@ -86,7 +86,7 @@ public class PartialEntity extends BaseEntity {
   }
 
   static PartialEntity fromPb(DatastoreV1.Entity entityPb) {
-    ImmutableSortedMap.Builder<String, Value<?, ?, ?>> properties =
+    ImmutableSortedMap.Builder<String, Value<?>> properties =
         ImmutableSortedMap.naturalOrder();
     for (DatastoreV1.Property property : entityPb.getPropertyList()) {
       properties.put(property.getName(), Value.fromPb(property.getValue()));

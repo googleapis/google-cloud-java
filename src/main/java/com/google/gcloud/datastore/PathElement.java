@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * Represents a single element in a key's path.
  */
-public final class KeyPathElement extends Serializable<DatastoreV1.Key.PathElement> {
+public final class PathElement extends Serializable<DatastoreV1.Key.PathElement> {
 
   private static final long serialVersionUID = -7968078857690784595L;
 
@@ -16,17 +16,17 @@ public final class KeyPathElement extends Serializable<DatastoreV1.Key.PathEleme
   private final transient Long id;
   private final transient String name;
 
-  KeyPathElement(String kind) {
+  PathElement(String kind) {
     this(kind, null);
   }
 
-  public KeyPathElement(String kind, long id) {
+  public PathElement(String kind, long id) {
     this.kind = kind;
     this.id = id;
     name = null;
   }
 
-  public KeyPathElement(String kind, String name) {
+  public PathElement(String kind, String name) {
     this.kind = kind;
     this.name = name;
     id = null;
@@ -63,10 +63,10 @@ public final class KeyPathElement extends Serializable<DatastoreV1.Key.PathEleme
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof KeyPathElement)) {
+    if (!(obj instanceof PathElement)) {
       return false;
     }
-    KeyPathElement other = (KeyPathElement) obj;
+    PathElement other = (PathElement) obj;
     return Objects.equals(kind, other.kind)
         && Objects.equals(id, other.id)
         && Objects.equals(name, other.name);
@@ -89,13 +89,13 @@ public final class KeyPathElement extends Serializable<DatastoreV1.Key.PathEleme
     return fromPb(DatastoreV1.Key.PathElement.parseFrom(bytesPb));
   }
 
-  static KeyPathElement fromPb(DatastoreV1.Key.PathElement pathElementPb) {
+  static PathElement fromPb(DatastoreV1.Key.PathElement pathElementPb) {
     String kind = pathElementPb.getKind();
     if (pathElementPb.hasId()) {
-      return new KeyPathElement(kind, pathElementPb.getId());
+      return new PathElement(kind, pathElementPb.getId());
     } else if (pathElementPb.hasName()) {
-      return new KeyPathElement(kind, pathElementPb.getName());
+      return new PathElement(kind, pathElementPb.getName());
     }
-    return new KeyPathElement(kind);
+    return new PathElement(kind);
   }
 }

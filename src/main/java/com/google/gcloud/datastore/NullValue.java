@@ -4,7 +4,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class NullValue extends Value<Void, NullValue, NullValue.Builder> {
+public final class NullValue extends Value<Void> {
 
   private static final long serialVersionUID = 8497300779013002270L;
 
@@ -56,6 +56,11 @@ public final class NullValue extends Value<Void, NullValue, NullValue.Builder> {
 
   private NullValue(Builder builder) {
     super(builder);
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder().mergeFrom(this);
   }
 
   public static Builder builder() {

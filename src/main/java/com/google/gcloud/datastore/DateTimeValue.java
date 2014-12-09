@@ -4,8 +4,7 @@ import static com.google.api.services.datastore.DatastoreV1.Value.TIMESTAMP_MICR
 
 import com.google.api.services.datastore.DatastoreV1;
 
-public final class DateTimeValue
-    extends Value<DateTime, DateTimeValue, DateTimeValue.Builder> {
+public final class DateTimeValue extends Value<DateTime> {
 
   private static final long serialVersionUID = -5096238337676649540L;
 
@@ -52,6 +51,11 @@ public final class DateTimeValue
 
   private DateTimeValue(Builder builder) {
     super(builder);
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder().mergeFrom(this);
   }
 
   public static Builder builder(DateTime dateTime) {

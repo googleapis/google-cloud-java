@@ -39,12 +39,12 @@ public final class Entity extends PartialEntity {
     }
 
     @Override
-    protected Entity build(ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
+    protected Entity build(ImmutableSortedMap<String, Value<?>> properties) {
       return new Entity(key, properties);
     }
   }
 
-  Entity(Key key, ImmutableSortedMap<String, Value<?, ?, ?>> properties) {
+  Entity(Key key, ImmutableSortedMap<String, Value<?>> properties) {
     super(key, properties);
   }
 

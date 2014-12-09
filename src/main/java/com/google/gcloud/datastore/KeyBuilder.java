@@ -23,7 +23,7 @@ public final class KeyBuilder extends BaseKey.Builder<PartialKey, KeyBuilder> {
 
   @Override
   protected PartialKey build(String dataset, String namespace,
-      ImmutableList<KeyPathElement> ancestors, String kind) {
+      ImmutableList<PathElement> ancestors, String kind) {
     return new PartialKey(dataset, namespace, ancestors, kind);
   }
 

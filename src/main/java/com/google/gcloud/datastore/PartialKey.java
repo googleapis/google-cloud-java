@@ -1,11 +1,11 @@
 package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
-import com.google.api.services.datastore.DatastoreV1.Key.PathElement;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A partial key (without a name or id).
@@ -28,13 +28,12 @@ public class PartialKey extends BaseKey {
 
     @Override
     protected PartialKey build(String dataset, String namespace,
-        ImmutableList<KeyPathElement> ancestors, String kind) {
+        ImmutableList<PathElement> ancestors, String kind) {
       return new PartialKey(dataset, namespace, ancestors, kind);
     }
   }
 
-  PartialKey(String dataset, String namespace, ImmutableList<KeyPathElement> ancestors,
-      String kind) {
+  PartialKey(String dataset, String namespace, ImmutableList<PathElement> ancestors, String kind) {
     super(dataset, namespace, ancestors, kind);
   }
 
@@ -44,6 +43,29 @@ public class PartialKey extends BaseKey {
 
   public Key newKey(long id) {
     return new Key(dataset(), namespace(), ImmutableList.copyOf(ancestors()), kind(), id);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(dataset(), namespace(), ancestors(), kind());
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof PartialKey) || !PartialKey.class.equals(obj.getClass())) {
+      return false;
+    }
+
+    PartialKey other = (PartialKey) obj;
+    return Objects.equals(dataset(), other.dataset())
+        && Objects.equals(namespace(), other.namespace())
+        && Objects.equals(ancestors(), other.ancestors())
+        && Objects.equals(kind(), other.kind());
+  }
+
+  @Override
+  protected void addLeaf(DatastoreV1.Key.Builder keyPb) {
+    keyPb.addPathElement(new PathElement(kind()).toPb());
   }
 
   @Override
@@ -63,15 +85,15 @@ public class PartialKey extends BaseKey {
         namespace = partitionIdPb.getNamespace();
       }
     }
-    List<PathElement> pathElementsPb = keyPb.getPathElementList();
+    List<DatastoreV1.Key.PathElement> pathElementsPb = keyPb.getPathElementList();
     if (pathElementsPb.isEmpty()) {
-      return new PartialKey(dataset, namespace, ImmutableList.<KeyPathElement>of(), null);
+      return new PartialKey(dataset, namespace, ImmutableList.<PathElement>of(), null);
     }
-    ImmutableList.Builder<KeyPathElement> pathBuilder = ImmutableList.builder();
+    ImmutableList.Builder<PathElement> pathBuilder = ImmutableList.builder();
     for (int i = 0; i < pathElementsPb.size() - 1; i++) {
-      pathBuilder.add(KeyPathElement.fromPb(pathElementsPb.get(i)));
+      pathBuilder.add(PathElement.fromPb(pathElementsPb.get(i)));
     }
-    PathElement leaf = pathElementsPb.get(pathElementsPb.size() - 1);
+    DatastoreV1.Key.PathElement leaf = pathElementsPb.get(pathElementsPb.size() - 1);
     String kind = leaf.getKind();
     if (leaf.hasId()) {
       return new Key(dataset, namespace, pathBuilder.build(), kind, leaf.getId());
@@ -94,9 +116,9 @@ public class PartialKey extends BaseKey {
         .namespace(parent.namespace())
         .addAncestors(parent.ancestors());
     if (parent.hasId()) {
-      builder.addAncestor(new KeyPathElement(parent.kind(), parent.id()));
+      builder.addAncestor(new PathElement(parent.kind(), parent.id()));
     } else {
-      builder.addAncestor(new KeyPathElement(parent.kind(), parent.name()));
+      builder.addAncestor(new PathElement(parent.kind(), parent.name()));
     }
     return builder;
   }

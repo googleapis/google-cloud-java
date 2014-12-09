@@ -4,7 +4,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.datastore.DatastoreV1;
-import com.google.common.base.MoreObjects;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -23,9 +22,7 @@ import java.util.Objects;
  * @param <P> the type of this value
  * @param <B> the type of this value's builder
  */
-public abstract class
-    Value<V, P extends Value<V, P, B>, B extends Value.Builder<V, P, B>>
-    extends Serializable<DatastoreV1.Value> {
+public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 
   private static final long serialVersionUID = -1899638277588872742L;
   private static final Map<Integer, Type> DESCRIPTOR_TO_TYPE_MAP = new HashMap<>();
@@ -53,9 +50,9 @@ public abstract class
     STRING(StringValue.MARSHALLER, StringValue.MARSHALLER),
 
     /**
-     * Represents an {@link PartialEntity} value.
+     * Represents an entity ({@link PartialEntity} or {@link Entity}) value.
      */
-    PARTIAL_ENTITY(PartialEntityValue.MARSHALLER, PartialEntityValue.MARSHALLER),
+    ENTITY(EntityValue.MARSHALLER, EntityValue.MARSHALLER),
 
     /**
      * Represents a {@code list} of {@link Value}s.
@@ -101,8 +98,8 @@ public abstract class
     @SuppressWarnings("rawtypes") private final BuilderFactory builderFactory;
     @SuppressWarnings("rawtypes") private final Marshaller marshaller;
 
-    <V, P extends Value<V, P, B>, B extends Builder<V, P, B>>
-        Type(Marshaller<V, P, B> marshaller, BuilderFactory<V, P, B> builderFactory) {
+    <V, P extends Value<V>, B extends Builder<V, P, B>> Type(Marshaller<V, P, B> marshaller,
+        BuilderFactory<V, P, B> builderFactory) {
       this.marshaller = marshaller;
       this.builderFactory = builderFactory;
       int fieldId = marshaller.getProtoFieldId();
@@ -111,23 +108,22 @@ public abstract class
       }
     }
 
-    <V, P extends Value<V, P, B>, B extends Builder<V, P, B>> Marshaller<V, P, B>
-        getMarshaller() {
+    <V, P extends Value<V>, B extends Builder<V, P, B>> Marshaller<V, P, B> getMarshaller() {
       return marshaller;
     }
 
-    <V, P extends Value<V, P, B>, B extends Builder<V, P, B>> BuilderFactory<V, P, B>
+    <V, P extends Value<V>, B extends Builder<V, P, B>> BuilderFactory<V, P, B>
         getBuilderFactory() {
       return builderFactory;
     }
   }
 
-  interface BuilderFactory<V, P extends Value<V, P, B>, B extends Builder<V, P, B>> {
+  interface BuilderFactory<V, P extends Value<V>, B extends Builder<V, P, B>> {
 
     B newBuilder(V value);
   }
 
-  interface Builder<V, P extends Value<V, P, B>, B extends Builder<V, P, B>> {
+  interface Builder<V, P extends Value<V>, B extends Builder<V, P, B>> {
 
     Type getType();
 
@@ -148,7 +144,7 @@ public abstract class
     P build();
   }
 
-  interface Marshaller<V, P extends Value<V, P, B>, B extends Builder<V, P, B>> {
+  interface Marshaller<V, P extends Value<V>, B extends Builder<V, P, B>> {
 
     B fromProto(DatastoreV1.Value proto);
 
@@ -157,7 +153,7 @@ public abstract class
     int getProtoFieldId();
   }
 
-  abstract static class BaseMarshaller<V, P extends Value<V, P, B>, B extends Builder<V, P, B>>
+  abstract static class BaseMarshaller<V, P extends Value<V>, B extends Builder<V, P, B>>
       implements Marshaller<V, P, B>, BuilderFactory<V, P, B> {
 
     @Override
@@ -190,7 +186,7 @@ public abstract class
     protected abstract void setValue(P from, DatastoreV1.Value.Builder to);
   }
 
-  abstract static class BaseBuilder<V, P extends Value<V, P, B>, B extends BaseBuilder<V, P, B>>
+  abstract static class BaseBuilder<V, P extends Value<V>, B extends BaseBuilder<V, P, B>>
       implements Builder<V, P, B> {
 
     private final Type type;
@@ -257,7 +253,7 @@ public abstract class
     public abstract P build();
   }
 
-  Value(Builder<V, P, B> builder) {
+  <P extends Value<V>, B extends BaseBuilder<V, P, B>> Value(Builder<V, P, B> builder) {
     type = builder.getType();
     indexed = builder.getIndexed();
     meaning = builder.getMeaning();
@@ -280,9 +276,8 @@ public abstract class
     return indexed != null;
   }
 
-  public final boolean indexed() {
-    // default indexed value is true
-    return MoreObjects.firstNonNull(indexed, Boolean.TRUE);
+  public final Boolean indexed() {
+    return indexed;
   }
 
   public final boolean hasMeaning() {
@@ -297,20 +292,15 @@ public abstract class
     return value;
   }
 
-  @SuppressWarnings("unchecked")
-  public final B toBuilder() {
-    BuilderFactory<V, P, B> builderFactory = type().getBuilderFactory();
-    B builder = builderFactory.newBuilder(get());
-    return builder.mergeFrom((P) this);
-  }
+  public abstract Builder<?, ?, ?> toBuilder();
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, indexed, meaning);
+    return Objects.hash(type, indexed, meaning, value);
   }
 
-  @SuppressWarnings("unchecked")
   @Override
+  @SuppressWarnings("unchecked")
   public boolean equals(Object obj) {
     if (obj == this) {
       return true;
@@ -318,7 +308,7 @@ public abstract class
     if (!getClass().isInstance(obj)) {
       return false;
     }
-    Value<V, P, B> other = (Value<V, P, B>) obj;
+    Value<V> other = (Value<V>) obj;
     return Objects.equals(type, other.type)
         && Objects.equals(indexed, other.indexed)
         && Objects.equals(meaning, other.meaning)
@@ -326,13 +316,12 @@ public abstract class
   }
 
   @Override
-  @SuppressWarnings("unchecked")
+  @SuppressWarnings({"unchecked", "rawtypes"})
   protected DatastoreV1.Value toPb() {
-    Marshaller<V, P, B> marshaller = type().getMarshaller();
-    return marshaller.toProto((P) this);
+    return type().getMarshaller().toProto((Value) this);
   }
 
-  static Value<?, ?, ?> fromPb(DatastoreV1.Value proto) {
+  static Value<?> fromPb(DatastoreV1.Value proto) {
     for (Entry<FieldDescriptor, Object> entry : proto.getAllFields().entrySet()) {
       FieldDescriptor descriptor = entry.getKey();
       if (descriptor.getName().endsWith("_value")) {
