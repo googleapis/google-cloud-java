@@ -70,7 +70,7 @@ public class PartialEntity extends BaseEntity {
     }
     PartialEntity other = (PartialEntity) obj;
     return Objects.equals(key, other.key)
-        && super.equals(obj);
+        && Objects.equals(properties(), other.properties());
   }
 
   @Override

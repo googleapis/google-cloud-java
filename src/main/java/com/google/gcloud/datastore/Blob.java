@@ -1,8 +1,10 @@
 package com.google.gcloud.datastore;
 
-import static com.google.api.client.util.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.protobuf.ByteString;
 
 import java.io.BufferedInputStream;
@@ -10,7 +12,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.util.Objects;
 
 /**
  * A Google Cloud Datastore Blob.
@@ -29,13 +30,21 @@ public final class Blob implements java.io.Serializable {
   Blob(ByteString byteString, boolean enforceLimits) {
     this.byteString = checkNotNull(byteString);
     if (enforceLimits) {
-      checkArgument(byteString.size() <= MAX_LENGTH, "May be a maximum of 1,000,000 bytes");
+      checkArgument(byteString.size() <= MAX_LENGTH, "May be a maximum of %,d bytes", MAX_LENGTH);
     }
   }
 
   @Override
   public String toString() {
-    return byteString.toString();
+    ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
+    StringBuilder stBuilder = new StringBuilder();
+    for (int i = 0; i < Math.min(256, byteString.size()); i++) {
+      stBuilder.append(String.format("%02x", byteString.byteAt(i)));
+    }
+    if (byteString.size() > 256) {
+      stBuilder.append("...");
+    }
+    return toStringHelper.add("bytes", stBuilder.toString()).toString();
   }
 
   @Override
@@ -48,7 +57,7 @@ public final class Blob implements java.io.Serializable {
     if (!(obj instanceof Blob)) {
       return false;
     }
-    return Objects.equals(byteString, ((Blob) obj).byteString);
+    return byteString.equals(((Blob) obj).byteString);
   }
 
   /**

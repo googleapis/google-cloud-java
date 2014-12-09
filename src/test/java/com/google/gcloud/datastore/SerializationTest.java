@@ -49,12 +49,12 @@ public class SerializationTest {
       .setProperty("p1", STRING_VALUE)
       .setProperty("p2", LongValue.builder(100).indexed(false).meaning(100).build())
       .build();
-  private static final PartialEntityValue EMBEDDED_ENTITY_VALUE1 =
-      new PartialEntityValue(EMBEDDED_ENTITY1);
-  private static final PartialEntityValue EMBEDDED_ENTITY_VALUE2 =
-      new PartialEntityValue(EMBEDDED_ENTITY2);
-  private static final PartialEntityValue EMBEDDED_ENTITY_VALUE3 =
-      new PartialEntityValue(EMBEDDED_ENTITY3);
+  private static final EntityValue EMBEDDED_ENTITY_VALUE1 =
+      new EntityValue(EMBEDDED_ENTITY1);
+  private static final EntityValue EMBEDDED_ENTITY_VALUE2 =
+      new EntityValue(EMBEDDED_ENTITY2);
+  private static final EntityValue EMBEDDED_ENTITY_VALUE3 =
+      new EntityValue(EMBEDDED_ENTITY3);
   private static final ListValue LIST_VALUE = ListValue.builder()
       .addValue(NULL_VALUE)
       .addValue(STRING_VALUE)
@@ -66,7 +66,7 @@ public class SerializationTest {
       .put(Type.NULL, NULL_VALUE)
       .put(Type.KEY, KEY_VALUE)
       .put(Type.STRING, STRING_VALUE)
-      .putAll(Type.PARTIAL_ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
+      .putAll(Type.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
           EMBEDDED_ENTITY_VALUE3)
       .put(Type.LIST, LIST_VALUE)
       .put(Type.LONG, LONG_VALUE)

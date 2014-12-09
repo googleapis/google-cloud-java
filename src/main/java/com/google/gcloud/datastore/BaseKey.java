@@ -11,7 +11,6 @@ import com.google.common.collect.ImmutableList;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Base class for keys.
@@ -146,23 +145,6 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
    */
   public String kind() {
     return kind;
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(dataset, namespace, ancestors, kind);
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof BaseKey)) {
-      return false;
-    }
-    BaseKey other = (BaseKey) obj;
-    return Objects.equals(dataset, other.dataset)
-        && Objects.equals(namespace, other.namespace)
-        && Objects.equals(ancestors, other.ancestors)
-        && Objects.equals(kind, other.kind);
   }
 
   @Override

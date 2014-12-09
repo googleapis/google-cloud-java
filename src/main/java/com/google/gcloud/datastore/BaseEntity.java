@@ -76,7 +76,7 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       return self();
     }
 
-    public B setDateAndTimeProperty(String name, DateTime value) {
+    public B setDateTimeProperty(String name, DateTime value) {
       properties.put(name, new DateTimeValue(value));
       return self();
     }
@@ -86,8 +86,8 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       return self();
     }
 
-    public B setPartialEntityProperty(String name, PartialEntity value) {
-      properties.put(name, new PartialEntityValue(value));
+    public B setEntityProperty(String name, PartialEntity value) {
+      properties.put(name, new EntityValue(value));
       return self();
     }
 
@@ -162,7 +162,7 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
     return ((BooleanValue) property(name)).get();
   }
 
-  public DateTime dateAndTimeProperty(String name) {
+  public DateTime dateTimeProperty(String name) {
     return ((DateTimeValue) property(name)).get();
   }
 
@@ -170,8 +170,9 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
     return ((KeyValue) property(name)).get();
   }
 
-  public PartialEntity partialEntityProperty(String name) {
-    return ((PartialEntityValue) property(name)).get();
+  @SuppressWarnings("unchecked")
+  public <T extends PartialEntity> T entityProperty(String name) {
+    return (T) ((EntityValue) property(name)).get();
   }
 
   public List<? extends Value<?, ?, ?>> listProperty(String name) {
@@ -183,9 +184,9 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
   }
 
   /**
-   * Returns the property's value as {@code RawValue}.
+   * Returns the property's value as a {@link RawValue}.
    */
-  public RawValue rawValueProperty(String name) {
+  public RawValue asRawValueProperty(String name) {
     Value<?, ?, ?> value = property(name);
     if (value instanceof RawValue) {
       return (RawValue) value;
@@ -199,19 +200,6 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
 
   ImmutableSortedMap<String, Value<?, ?, ?>> properties() {
     return properties;
-  }
-
-  @Override
-  public int hashCode() {
-    return properties.hashCode();
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof BaseEntity)) {
-      return false;
-    }
-    return properties.equals(((BaseEntity) obj).properties);
   }
 
   @Override

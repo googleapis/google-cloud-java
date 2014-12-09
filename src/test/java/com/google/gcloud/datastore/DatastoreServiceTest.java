@@ -48,7 +48,7 @@ public class DatastoreServiceTest {
   private static final Entity ENTITY1 = Entity.builder(KEY1)
       .setProperty("str", STR_VALUE)
       .setProperty("bool", BOOL_VALUE)
-      .setProperty("partial1", new PartialEntityValue(PARTIAL_ENTITY1))
+      .setProperty("partial1", new EntityValue(PARTIAL_ENTITY1))
       .setProperty("list", LIST_VALUE2)
       .build();
   private static final Entity ENTITY2 = Entity.builder(ENTITY1)
@@ -60,8 +60,8 @@ public class DatastoreServiceTest {
       .key(KEY3)
       .removeProperty("str")
       .setProperty("null", NULL_VALUE)
-      .setPartialEntityProperty("partial1", PARTIAL_ENTITY2)
-      .setPartialEntityProperty("partial2", ENTITY2)
+      .setEntityProperty("partial1", PARTIAL_ENTITY2)
+      .setEntityProperty("partial2", ENTITY2)
       .build();
 
   private DatastoreServiceOptions options;
@@ -208,7 +208,7 @@ public class DatastoreServiceTest {
     assertEquals(value1, STR_VALUE);
     assertEquals(value2, BOOL_VALUE);
     assertEquals(value3, LIST_VALUE2);
-    assertEquals(PARTIAL_ENTITY1, entity.partialEntityProperty("partial1"));
+    assertEquals(PARTIAL_ENTITY1, entity.entityProperty("partial1"));
     assertEquals(4, entity.propertyNames().size());
     assertFalse(entity.hasProperty("bla"));
   }
@@ -226,8 +226,8 @@ public class DatastoreServiceTest {
     assertTrue(entity3.isNullProperty("null"));
     assertEquals(false, entity3.booleanProperty("bool"));
     assertEquals(LIST_VALUE2.get(), entity3.listProperty("list"));
-    PartialEntity partial1 = entity3.partialEntityProperty("partial1");
-    Entity partial2 = (Entity) entity3.partialEntityProperty("partial2");
+    PartialEntity partial1 = entity3.entityProperty("partial1");
+    Entity partial2 = (Entity) entity3.entityProperty("partial2");
     assertEquals(partial1, PARTIAL_ENTITY2);
     assertEquals(partial2, ENTITY2);
     assertEquals(Value.Type.BOOLEAN, entity3.propertyType("bool"));

@@ -47,14 +47,6 @@ public class PartialKey extends BaseKey {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof PartialKey)) {
-      return false;
-    }
-    return super.equals(obj);
-  }
-
-  @Override
   protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(DatastoreV1.Key.parseFrom(bytesPb));
   }

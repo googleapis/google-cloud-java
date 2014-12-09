@@ -146,7 +146,7 @@ public final class Key extends PartialKey {
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), name, id);
+    return Objects.hash(dataset(), namespace(), ancestors(), kind(), name, id);
   }
 
   @Override
@@ -155,9 +155,12 @@ public final class Key extends PartialKey {
       return false;
     }
     Key other = (Key) obj;
-    return Objects.equals(name, other.name)
-        && Objects.equals(id, other.id)
-        && super.equals(obj);
+    return Objects.equals(dataset(), other.dataset())
+        && Objects.equals(namespace(), other.namespace())
+        && Objects.equals(ancestors(), other.ancestors())
+        && Objects.equals(kind(), other.kind())
+        && Objects.equals(name, other.name)
+        && Objects.equals(id, other.id);
   }
 
   @Override

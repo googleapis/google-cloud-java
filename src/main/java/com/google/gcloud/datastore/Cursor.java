@@ -1,8 +1,10 @@
 package com.google.gcloud.datastore;
 
-import static com.google.api.client.repackaged.com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.protobuf.ByteString;
 
 import java.io.Serializable;
@@ -41,7 +43,12 @@ public final class Cursor implements Serializable {
 
   @Override
   public String toString() {
-    return toPb().toString();
+    ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
+    StringBuilder stBuilder = new StringBuilder();
+    for (byte b : bytes) {
+      stBuilder.append(String.format("%02x", b));
+    }
+    return toStringHelper.add("bytes", stBuilder.toString()).toString();
   }
 
   /**

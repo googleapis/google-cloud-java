@@ -21,6 +21,9 @@
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
+		<accessrules>
+			<accessrule kind="nonaccessible" pattern="**/repackaged/**"/>
+		</accessrules>
 	</classpathentry>
 	<classpathentry kind="var" path="ECLIPSE_HOME"/>
 	<classpathentry kind="output" path="target/classes"/>

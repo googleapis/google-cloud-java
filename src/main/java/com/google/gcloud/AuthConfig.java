@@ -8,7 +8,7 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
-import com.google.api.client.repackaged.com.google.common.base.Preconditions;
+import com.google.common.base.Preconditions;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
