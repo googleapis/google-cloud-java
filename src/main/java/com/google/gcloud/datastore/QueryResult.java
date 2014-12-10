@@ -1,5 +1,7 @@
 package com.google.gcloud.datastore;
 
+import com.google.api.services.datastore.DatastoreV1;
+
 import java.util.Iterator;
 
 /**
@@ -19,9 +21,23 @@ public interface QueryResult<V extends Object> extends Iterator<V> {
    */
   enum Type {
 
-    FULL(Entity.class),
-    PROJECTION(PartialEntity.class),
-    KEY_ONLY(Key.class);
+    FULL(Entity.class) {
+      @Override Object convert(DatastoreV1.Entity value) {
+        return Entity.fromPb(value);
+      }
+    },
+
+    PROJECTION(PartialEntity.class) {
+      @Override Object convert(DatastoreV1.Entity value) {
+        return PartialEntity.fromPb(value);
+      }
+    },
+
+    KEY_ONLY(Key.class) {
+      @Override Object convert(DatastoreV1.Entity value) {
+        return Key.fromPb(value.getKey());
+      }
+    };
 
     private final Class<?> resultClass;
 
@@ -29,9 +45,11 @@ public interface QueryResult<V extends Object> extends Iterator<V> {
       this.resultClass = resultClass;
     }
 
-    Class<?> getResultClass() {
+    public Class<?> getResultClass() {
       return resultClass;
     }
+
+    abstract Object convert(DatastoreV1.Entity value);
   }
 
   /**
