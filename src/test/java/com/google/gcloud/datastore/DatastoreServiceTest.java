@@ -29,6 +29,8 @@ public class DatastoreServiceTest {
   private static final Key KEY1 = PARTIAL_KEY1.newKey("name");
   private static final Key KEY2 = Key.builder(KEY1, KIND2, 1).build();
   private static final Key KEY3 = Key.builder(KEY2).name("bla").build();
+  private static final Key KEY4 = KEY2.newKey("newName1");
+  private static final Key KEY5 = KEY2.newKey("newName2");
   private static final KeyValue KEY_VALUE = new KeyValue(KEY1);
   private static final ListValue LIST_VALUE1 = ListValue.builder()
       .addValue(NULL_VALUE)
@@ -80,7 +82,7 @@ public class DatastoreServiceTest {
         .build();
     datastore = DatastoreServiceFactory.getDefault(options);
     // Prepare data for testing
-    datastore.delete(KEY1, KEY2, KEY3);
+    datastore.delete(KEY1, KEY2, KEY3, KEY4, KEY5);
     datastore.add(ENTITY1, ENTITY2);
   }
 
@@ -91,13 +93,119 @@ public class DatastoreServiceTest {
 
   @Test
   public void testNewTransactionCommit() {
-    // TODO (also try list value with different types)
-    fail("Not yet implemented");
+    Transaction transaction = datastore.newTransaction();
+    transaction.add(ENTITY3);
+    Entity entity2 = Entity.builder(ENTITY2)
+        .clearProperties()
+        .setNullProperty("bla")
+        .build();
+    transaction.update(entity2);
+    transaction.delete(KEY1);
+    transaction.commit();
+
+    Iterator<Entity> iter = datastore.get(KEY1, KEY2, KEY3);
+    assertNull(iter.next());
+    assertEquals(entity2, iter.next());
+    assertEquals(ENTITY3, iter.next());
+    assertFalse(iter.hasNext());
+
+    try {
+      transaction.commit();
+      fail("Expecting a failure");
+    } catch (DatastoreServiceException ex) {
+      // expected to fail
+    }
+
+    try {
+      transaction.rollback();
+      fail("Expecting a failure");
+    } catch (DatastoreServiceException ex) {
+      // expected to fail
+    }
+
+    verifyNotUsable(transaction);
+  }
+
+  @Test
+  public void testTransactionWithRead() {
+    Transaction transaction = datastore.newTransaction();
+    assertNull(transaction.get(KEY3));
+    transaction.add(ENTITY3);
+    transaction.commit();
+    assertEquals(ENTITY3, datastore.get(KEY3));
+
+    transaction = datastore.newTransaction();
+    assertEquals(ENTITY3, transaction.get(KEY3));
+    // update entity3 during the transaction
+    datastore.put(Entity.builder(ENTITY3).clearProperties().build());
+    transaction.update(ENTITY2);
+    try {
+      transaction.commit();
+      fail("Expecting a failure");
+    } catch (DatastoreServiceException expected) {
+      expected.printStackTrace();
+      assertEquals(DatastoreServiceException.Code.ABORTED, expected.code());
+    }
   }
 
   @Test
   public void testNewTransactionRollback() {
-    fail("Not yet implemented");
+    Transaction transaction = datastore.newTransaction();
+    transaction.add(ENTITY3);
+    Entity entity2 = Entity.builder(ENTITY2)
+        .clearProperties()
+        .setNullProperty("bla")
+        .setListProperty("list3", new StringValue("bla"), StringValue.builder("bla").build())
+        .build();
+    transaction.update(entity2);
+    transaction.delete(KEY1);
+    transaction.rollback();
+    transaction.rollback(); // should be safe to repeat rollback calls
+
+    try {
+      transaction.commit();
+      fail("Expecting a failure");
+    } catch (DatastoreServiceException ex) {
+      // expected to fail
+    }
+
+    verifyNotUsable(transaction);
+
+    Iterator<Entity> iter = datastore.get(KEY1, KEY2, KEY3);
+    assertEquals(ENTITY1, iter.next());
+    assertEquals(ENTITY2, iter.next());
+    assertNull(iter.next());
+    assertFalse(iter.hasNext());
+  }
+
+  private void verifyNotUsable(DatastoreWriter writer) {
+    try {
+      writer.add(ENTITY3);
+      fail("Expecting a failure");
+    } catch (DatastoreServiceException ex) {
+      // expected to fail
+    }
+
+    try {
+      writer.put(ENTITY3);
+      fail("Expecting a failure");
+    } catch (DatastoreServiceException ex) {
+      // expected to fail
+    }
+
+    try {
+      writer.update(ENTITY3);
+      fail("Expecting a failure");
+    } catch (DatastoreServiceException ex) {
+      // expected to fail
+    }
+
+    try {
+      writer.delete(ENTITY3.key());
+      fail("Expecting a failure");
+    } catch (DatastoreServiceException ex) {
+      // expected to fail
+    }
   }
 
   @Test
@@ -108,10 +216,10 @@ public class DatastoreServiceTest {
         .clearProperties()
         .setNullProperty("bla")
         .build();
-    Entity entity4 = Entity.builder(KEY2.newKey("newName1"))
+    Entity entity4 = Entity.builder(KEY4)
         .setProperty("value", new StringValue("value"))
         .build();
-    Entity entity5 = Entity.builder(KEY2.newKey("newName2"))
+    Entity entity5 = Entity.builder(KEY5)
         .setStringProperty("value", "value")
         .build();
     batchWriter.add(entity4, entity5);
@@ -127,9 +235,12 @@ public class DatastoreServiceTest {
 
     try {
       batchWriter.submit();
+      fail("Expecting a failure");
     } catch (DatastoreServiceException ex) {
       // expected to fail
     }
+    verifyNotUsable(batchWriter);
+
     batchWriter = datastore.newBatchWriter();
     batchWriter.delete(entity4.key(), entity5.key());
     batchWriter.update(ENTITY1, ENTITY2, ENTITY3);
@@ -142,7 +253,11 @@ public class DatastoreServiceTest {
     assertNull(entities.next());
     assertFalse(entities.hasNext());
 
-    // TODO need to cover more edge cases (ds failures, re-use of same entities,..)
+    // TODO need to cover the cases of:
+    // delete after put/add/update
+    // put after delete/add/update
+    // update after delete/add/put
+    // add after delete/update/put
   }
 
   @Test
@@ -235,6 +350,7 @@ public class DatastoreServiceTest {
     assertFalse(entity3.hasProperty("bla"));
     try {
       entity3.stringProperty("str");
+      fail("Expecting a failure");
     } catch (DatastoreServiceException expected) {
       // expected - no such property
     }
@@ -250,6 +366,7 @@ public class DatastoreServiceTest {
 
     try {
       datastore.add(ENTITY1);
+      fail("Expecting a failure");
     } catch (DatastoreServiceException expected) {
       // expected;
     }
@@ -266,6 +383,7 @@ public class DatastoreServiceTest {
 
     try {
       datastore.update(ENTITY3);
+      fail("Expecting a failure");
     } catch (DatastoreServiceException expected) {
       // expected;
     }

@@ -55,7 +55,9 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
   @Override
   public void rollback() {
     super.checkValid();
-    datastore.rollbackTransaction(transaction);
+    if (!wasRolledback) {
+      datastore.rollbackTransaction(transaction);
+    }
     wasRolledback = true;
   }
 

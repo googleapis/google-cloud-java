@@ -1,16 +1,17 @@
 package com.google.gcloud.datastore;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
-
 import com.google.api.services.datastore.client.DatastoreException;
+import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableMap;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
 public class DatastoreServiceException extends RuntimeException {
 
   private static final long serialVersionUID = 8170357898917041899L;
-  private static final Map<Integer, Code> HTTP_TO_CODE = new HashMap<>();
+  private static final ImmutableMap<String, Code> REASON_TO_CODE;
 
   private final Code code;
 
@@ -21,23 +22,22 @@ public class DatastoreServiceException extends RuntimeException {
    */
   public enum Code {
 
-    ABORTED(409, true, "Request aborted"),
-    DEADLINE_EXCEEDED(403, true, "Deadline exceeded"),
-    UNAVAILABLE(503, true, "Could not reach service"),
-    FAILED_PRECONDITION(412, false, "Invalid request"),
-    INVALID_ARGUMENT(400, false, "Request parameter has an invalid value"),
-    PERMISSION_DENIED(403, false, "Unauthorized request"),
-    RESOURCE_EXHAUSTED(402, false, "Quota exceeded"),
-    INTERNAL(500, false, "Server returned an error"),
-    UNKNOWN(0, false, "Unknown failure");
+    ABORTED(true, "Request aborted"),
+    DEADLINE_EXCEEDED(true, "Deadline exceeded"),
+    UNAVAILABLE(true, "Could not reach service"),
+    FAILED_PRECONDITION(false, "Invalid request"),
+    INVALID_ARGUMENT(false, "Request parameter has an invalid value"),
+    PERMISSION_DENIED(false, "Unauthorized request"),
+    RESOURCE_EXHAUSTED(false, "Quota exceeded"),
+    INTERNAL(false, "Server returned an error"),
+    UNKNOWN(false, "Unknown failure");
 
     private final boolean isTransient;
-    private final String msg;
+    private final String defaultMessage;
 
-    Code(int httpStatus, boolean isTransient, String msg) {
+    Code(boolean isTransient, String msg) {
       this.isTransient = isTransient;
-      this.msg = msg;
-      HTTP_TO_CODE.put(httpStatus, this);
+      this.defaultMessage = msg;
     }
 
     /**
@@ -48,14 +48,26 @@ public class DatastoreServiceException extends RuntimeException {
       return isTransient;
     }
 
-    DatastoreServiceException translate(DatastoreException exception) {
-      return new DatastoreServiceException(this, exception);
+    DatastoreServiceException translate(DatastoreException exception, String msg) {
+      return new DatastoreServiceException(this, msg, exception);
     }
   }
 
-  public DatastoreServiceException(Code code, Exception cause) {
-    super(code.msg, cause);
+  static {
+    ImmutableMap.Builder<String, Code> builder = ImmutableMap.builder();
+    for (Code code : Code.values()) {
+      builder.put(code.name(), code);
+    }
+    REASON_TO_CODE = builder.build();
+  }
+
+  public DatastoreServiceException(Code code, String msg, Exception cause) {
+    super(MoreObjects.firstNonNull(msg, code.defaultMessage), cause);
     this.code = code;
+  }
+
+  public DatastoreServiceException(Code code, String msg) {
+    this(code, msg, null);
   }
 
   /**
@@ -72,8 +84,22 @@ public class DatastoreServiceException extends RuntimeException {
    * @throws DatastoreServiceException every time
    */
   static DatastoreServiceException translateAndThrow(DatastoreException exception) {
-    throw firstNonNull(HTTP_TO_CODE.get(exception.getCode()), Code.UNKNOWN).translate(exception);
+    String message = exception.getMessage();
+    String reason = "";
+    if (message != null) {
+      try {
+        JSONObject json = new JSONObject(new JSONTokener(exception.getMessage()));
+        JSONObject error = json.getJSONObject("error").getJSONArray("errors").getJSONObject(0);
+        reason = error.getString("reason");
+        message = error.getString("message");
+      } catch (JSONException ex) {
+        // ignore - will be converted to unknown
+      }
+    }
+    Code code = MoreObjects.firstNonNull(REASON_TO_CODE.get(reason), Code.UNKNOWN);
+    throw code.translate(exception, message);
   }
+
 
   /**
    * Throw a DatastoreServiceException with {@code FAILED_PRECONDITION} code and the {@code msg}
@@ -82,9 +108,6 @@ public class DatastoreServiceException extends RuntimeException {
    * @throws DatastoreServiceException every time
    */
   static DatastoreServiceException throwInvalidRequest(String msg, Object... params) {
-    if (params.length > 0) {
-      msg = String.format(msg, params);
-    }
-    throw new DatastoreServiceException(Code.FAILED_PRECONDITION, new RuntimeException(msg));
+    throw new DatastoreServiceException(Code.FAILED_PRECONDITION, String.format(msg, params));
   }
 }
