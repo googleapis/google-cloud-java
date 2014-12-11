@@ -1,7 +1,6 @@
 package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
-import com.google.api.services.datastore.DatastoreV1.BeginTransactionResponse;
 import com.google.api.services.datastore.client.Datastore;
 import com.google.api.services.datastore.client.DatastoreException;
 import com.google.common.collect.AbstractIterator;
@@ -49,11 +48,27 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   @Override
-  public QueryResult<PartialEntity> runQuery(Query query) {
-    // TODO To implement
-    throw new RuntimeException("Not implemented yet");
+  public <T> QueryResult<T> runQuery(Query<T> query) {
+    DatastoreV1.RunQueryRequest.Builder requestPbBuilder = DatastoreV1.RunQueryRequest.newBuilder();
+    DatastoreV1.PartitionId.Builder partitionId = DatastoreV1.PartitionId.newBuilder();
+    partitionId.setDatasetId(options.dataset());
+    String namespace = query.namespace() != null ? query.namespace() : options.namespace();
+    if (namespace != null) {
+      partitionId.setNamespace(namespace);
+    }
+    requestPbBuilder.setPartitionId(partitionId.build());
+    query.populatePb(requestPbBuilder, 0, null);
+    DatastoreV1.RunQueryRequest requestPb = requestPbBuilder.build();
+    return new QueryResultImpl<>(this, query, requestPb, runQuery(requestPb).getBatch());
   }
 
+  DatastoreV1.RunQueryResponse runQuery(DatastoreV1.RunQueryRequest requestPb) {
+    try {
+      return datastore.runQuery(requestPb);
+    } catch (DatastoreException e) {
+      throw DatastoreServiceException.translateAndThrow(e);
+    }
+  }
 
   @Override
   public Key allocateId(PartialKey key) {
@@ -211,7 +226,8 @@ final class DatastoreServiceImpl implements DatastoreService {
 
   ByteString requestTransactionId(DatastoreV1.BeginTransactionRequest.Builder requestPb) {
     try {
-      BeginTransactionResponse responsePb = datastore.beginTransaction(requestPb.build());
+      DatastoreV1.BeginTransactionResponse responsePb =
+          datastore.beginTransaction(requestPb.build());
       return responsePb.getTransaction();
     } catch (DatastoreException e) {
       throw DatastoreServiceException.translateAndThrow(e);

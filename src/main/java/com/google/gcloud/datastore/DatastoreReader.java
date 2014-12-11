@@ -27,5 +27,5 @@ public interface DatastoreReader {
    *
    * @throws DatastoreServiceException upon failure.
    */
-  QueryResult<PartialEntity> runQuery(Query query);
+  <T> QueryResult<T> runQuery(Query<T> query);
 }

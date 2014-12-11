@@ -3,9 +3,12 @@ package com.google.gcloud.datastore;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.datastore.DatastoreV1;
+import com.google.api.services.datastore.DatastoreV1.Value;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
@@ -20,12 +23,12 @@ import java.nio.ByteBuffer;
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
  */
-public final class Blob implements java.io.Serializable {
+public final class Blob extends Serializable<DatastoreV1.Value> {
 
   private static final long serialVersionUID = 3835421019618247721L;
   private static final int MAX_LENGTH = 1_000_000;
 
-  private final ByteString byteString;
+  private final transient ByteString byteString;
 
   Blob(ByteString byteString, boolean enforceLimits) {
     this.byteString = checkNotNull(byteString);
@@ -54,6 +57,9 @@ public final class Blob implements java.io.Serializable {
 
   @Override
   public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
     if (!(obj instanceof Blob)) {
       return false;
     }
@@ -133,5 +139,15 @@ public final class Blob implements java.io.Serializable {
       bytes.write(value);
     }
     return copyFrom(bytes.toByteArray());
+  }
+
+  @Override
+  protected Value toPb() {
+    return DatastoreV1.Value.newBuilder().setBlobValue(byteString).build();
+  }
+
+  @Override
+  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+    return new Blob(DatastoreV1.Value.parseFrom(bytesPb).getBlobValue(), false);
   }
 }

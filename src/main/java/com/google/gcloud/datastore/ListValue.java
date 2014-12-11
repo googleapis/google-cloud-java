@@ -68,6 +68,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
 
     @Override
     public Builder indexed(boolean indexed) {
+      // see b/18704917
       DatastoreServiceException.throwInvalidRequest("ListValue can't specify index");
       return this;
     }
@@ -78,10 +79,10 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
      * @see com.google.gcloud.datastore.Value.BaseBuilder#set(java.lang.Object)
      */
     @Override
-    public Builder set(List<? extends Value<?>> properties) {
+    public Builder set(List<? extends Value<?>> values) {
       listBuilder = ImmutableList.<Value<?>>builder();
-      for (Value<?> property : properties) {
-        addValue(property);
+      for (Value<?> value : values) {
+        addValue(value);
       }
       return this;
     }
@@ -98,8 +99,8 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
     }
   }
 
-  public ListValue(List<? extends Value<?>> properties) {
-    this(builder().set(properties));
+  public ListValue(List<? extends Value<?>> values) {
+    this(builder().set(values));
   }
 
   public ListValue(Value<?> first, Value<?>... other) {

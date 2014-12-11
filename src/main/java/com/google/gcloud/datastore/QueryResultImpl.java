@@ -1,19 +1,23 @@
 package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
-import com.google.api.services.datastore.DatastoreV1.EntityResult;
 import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.ByteString;
 
 import java.util.Iterator;
 
-public class QueryResultImpl<V extends Object> implements QueryResult<V> {
+class QueryResultImpl<T> implements QueryResult<T> {
 
   private static final ImmutableMap<DatastoreV1.EntityResult.ResultType, QueryResult.Type>
       RESULT_TYPE_CONVERTER;
 
+  private final DatastoreServiceImpl datastore;
+  private final Query<T> query;
   private final QueryResult.Type type;
-  private Iterator<EntityResult> entityResultPbIter;
-  private boolean moreResult;
+  private DatastoreV1.RunQueryRequest requestPb;
+  private Iterator<DatastoreV1.EntityResult> entityResultPbIter;
+  private ByteString endCursor;
+  private int count;
 
   static {
     ImmutableMap.Builder<DatastoreV1.EntityResult.ResultType, QueryResult.Type> builder =
@@ -24,26 +28,39 @@ public class QueryResultImpl<V extends Object> implements QueryResult<V> {
     RESULT_TYPE_CONVERTER = builder.build();
   }
 
-  QueryResultImpl(DatastoreV1.Query DatastoreV1.QueryResultBatch resultBatch) {
-    type = RESULT_TYPE_CONVERTER.get(resultBatch.getEntityResultType());
-    entityResultPbIter = resultBatch.getEntityResultList().iterator();
-    moreResult =
-        DatastoreV1.QueryResultBatch.MoreResultsType.NOT_FINISHED == resultBatch.getMoreResults();
+  QueryResultImpl(DatastoreServiceImpl datastore, Query<T> query,
+      DatastoreV1.RunQueryRequest requestPb, DatastoreV1.QueryResultBatch resultPb) {
+    this.datastore = datastore;
+    this.query = query;
+    this.requestPb = requestPb;
+    type = RESULT_TYPE_CONVERTER.get(resultPb.getEntityResultType());
+  }
+
+  void setQueryResultBatch(DatastoreV1.QueryResultBatch resultPb) {
+    entityResultPbIter = resultPb.getEntityResultList().iterator();
+    if (DatastoreV1.QueryResultBatch.MoreResultsType.NOT_FINISHED == resultPb.getMoreResults()) {
+      endCursor = resultPb.getEndCursor();
+    }
   }
 
   @Override
   public boolean hasNext() {
-    if (entityResultPbIter.hasNext()) {
-      return true;
-    } else if (moreResult) {
-      // need to fetch more and update results (and more results)
-    }
-    return false;
+    return entityResultPbIter.hasNext()  || endCursor != null;
   }
 
   @Override
-  public V next() {
-    return (V) type.convert(entityResultPbIter.next());
+  public T next() {
+    if (!hasNext() && endCursor != null) {
+      DatastoreV1.RunQueryRequest.Builder requestPbBuilder = requestPb.toBuilder();
+      query.populatePb(requestPbBuilder, count, endCursor);
+      DatastoreV1.RunQueryRequest newRequestPb = requestPbBuilder.build();
+      DatastoreV1.RunQueryResponse responsePb = datastore.runQuery(newRequestPb);
+      requestPb = newRequestPb;
+      setQueryResultBatch(responsePb.getBatch());
+    }
+    DatastoreV1.Entity entity = entityResultPbIter.next().getEntity();
+    count++;
+    return type.convert(entity);
   }
 
   @Override

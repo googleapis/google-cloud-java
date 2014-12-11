@@ -1,5 +1,10 @@
 package com.google.gcloud.datastore;
 
+/**
+ * An interface to represent a batch of write operations.
+ * Any write operation that is applied on a batch will only be sent
+ * to the Datastore upon {@link #submit} and with as few RPC calls as possible.
+ */
 public interface BatchWriter extends DatastoreWriter {
 
   /**

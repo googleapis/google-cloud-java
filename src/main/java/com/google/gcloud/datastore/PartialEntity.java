@@ -65,6 +65,9 @@ public class PartialEntity extends BaseEntity {
 
   @Override
   public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
     if (!(obj instanceof PartialEntity)) {
       return false;
     }

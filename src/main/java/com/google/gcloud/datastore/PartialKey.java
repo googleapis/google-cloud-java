@@ -52,6 +52,9 @@ public class PartialKey extends BaseKey {
 
   @Override
   public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
     if (!(obj instanceof PartialKey) || !PartialKey.class.equals(obj.getClass())) {
       return false;
     }

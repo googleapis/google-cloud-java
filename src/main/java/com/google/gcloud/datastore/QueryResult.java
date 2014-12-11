@@ -11,7 +11,7 @@ import java.util.Iterator;
  *
  * @param V the type of values the result holds.
  */
-public interface QueryResult<V extends Object> extends Iterator<V> {
+public interface QueryResult<T extends Object> extends Iterator<T> {
 
   /**
    * The result's type.
@@ -22,19 +22,22 @@ public interface QueryResult<V extends Object> extends Iterator<V> {
   enum Type {
 
     FULL(Entity.class) {
-      @Override Object convert(DatastoreV1.Entity value) {
+      @SuppressWarnings("unchecked")
+      @Override Entity convert(DatastoreV1.Entity value) {
         return Entity.fromPb(value);
       }
     },
 
     PROJECTION(PartialEntity.class) {
-      @Override Object convert(DatastoreV1.Entity value) {
+      @SuppressWarnings("unchecked")
+      @Override PartialEntity convert(DatastoreV1.Entity value) {
         return PartialEntity.fromPb(value);
       }
     },
 
     KEY_ONLY(Key.class) {
-      @Override Object convert(DatastoreV1.Entity value) {
+      @SuppressWarnings("unchecked")
+      @Override Key convert(DatastoreV1.Entity value) {
         return Key.fromPb(value.getKey());
       }
     };
@@ -49,7 +52,7 @@ public interface QueryResult<V extends Object> extends Iterator<V> {
       return resultClass;
     }
 
-    abstract Object convert(DatastoreV1.Entity value);
+    abstract <T> T convert(DatastoreV1.Entity value);
   }
 
   /**

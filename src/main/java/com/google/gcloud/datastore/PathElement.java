@@ -63,6 +63,9 @@ public final class PathElement extends Serializable<DatastoreV1.Key.PathElement>
 
   @Override
   public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
     if (!(obj instanceof PathElement)) {
       return false;
     }

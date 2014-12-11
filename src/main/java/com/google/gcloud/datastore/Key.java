@@ -148,6 +148,9 @@ public final class Key extends PartialKey {
 
   @Override
   public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
     if (!(obj instanceof Key)) {
       return false;
     }

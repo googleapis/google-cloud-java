@@ -41,7 +41,7 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
   }
 
   @Override
-  public QueryResult<PartialEntity> runQuery(Query query) {
+  public <T> QueryResult<T> runQuery(Query<T> query) {
     checkValid();
     // TODO To implement
     throw new RuntimeException("Not implemented yet");
