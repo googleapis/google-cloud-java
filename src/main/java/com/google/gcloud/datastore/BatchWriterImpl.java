@@ -18,7 +18,7 @@ class BatchWriterImpl implements BatchWriter {
   private final boolean force;
   protected final DatastoreServiceImpl datastore;
 
-  private boolean wasSubmitted = false;
+  private boolean active = true;
 
   BatchWriterImpl(DatastoreServiceImpl datastore, BatchWriteOption... options) {
     this.datastore = datastore;
@@ -31,9 +31,9 @@ class BatchWriterImpl implements BatchWriter {
     }
   }
 
-  protected void checkValid() {
-    if (wasSubmitted) {
-      throwInvalidRequest(getName() + " was already submitted");
+  protected void checkActive() {
+    if (!active) {
+      throwInvalidRequest(getName() + " is no longer active");
     }
   }
 
@@ -43,7 +43,7 @@ class BatchWriterImpl implements BatchWriter {
 
   @Override
   public void add(Entity... entities) {
-    checkValid();
+    checkActive();
     for (Entity entity : entities) {
       Key key = entity.key();
       if (toAdd.containsKey(key) || toUpdate.containsKey(key) || toPut.containsKey(key)) {
@@ -60,7 +60,7 @@ class BatchWriterImpl implements BatchWriter {
 
   @Override
   public void update(Entity... entities) {
-    checkValid();
+    checkActive();
     for (Entity entity : entities) {
       Key key = entity.key();
       if (toDelete.contains(key)) {
@@ -77,7 +77,7 @@ class BatchWriterImpl implements BatchWriter {
 
   @Override
   public void put(Entity... entities) {
-    checkValid();
+    checkActive();
     for (Entity entity : entities) {
       Key key = entity.key();
       toAdd.remove(key);
@@ -89,7 +89,7 @@ class BatchWriterImpl implements BatchWriter {
 
   @Override
   public void delete(Key... keys) {
-    checkValid();
+    checkActive();
     for (Key key : keys) {
       toAdd.remove(key);
       toUpdate.remove(key);
@@ -100,7 +100,7 @@ class BatchWriterImpl implements BatchWriter {
 
   @Override
   public void submit() {
-    checkValid();
+    checkActive();
     DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
     for (Entity entity : toAdd.values()) {
       mutationPb.addInsert(entity.toPb());
@@ -120,7 +120,12 @@ class BatchWriterImpl implements BatchWriter {
     DatastoreV1.CommitRequest.Builder requestPb = newCommitRequest();
     requestPb.setMutation(mutationPb);
     datastore.comitMutation(requestPb);
-    wasSubmitted = true;
+    active = false;
+  }
+
+  @Override
+  public boolean active() {
+    return active;
   }
 
   protected DatastoreV1.CommitRequest.Builder newCommitRequest() {

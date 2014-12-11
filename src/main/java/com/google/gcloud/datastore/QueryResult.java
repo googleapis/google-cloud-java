@@ -6,57 +6,53 @@ import java.util.Iterator;
 
 /**
  * The result of a Google Cloud Datastore query submission.
- * Typically the result's type would be casted to its expected type (The {@link #getResultType()}
- * method could be used when the type is not known).
+ * When the result is not typed it is possible to cast it to its appropriate type according to
+ * the {@link #getType} value.
  *
  * @param V the type of values the result holds.
  */
-public interface QueryResult<T extends Object> extends Iterator<T> {
+public interface QueryResult<T> extends Iterator<T> {
 
   /**
-   * The result's type.
-   *    FULL: A complete {@link Entity}.
-   *    PROJECTION: A partial entity, represented by {@link PartialEntity}.
-   *    KEY_ONLY: An entity's {@link Key}.
+   * Possible results types are:
+   *   FULL: A complete {@link Entity}.
+   *   PROJECTION: A partial entity, represented by {@link PartialEntity}.
+   *   KEY_ONLY: An entity's {@link Key}.
    */
   enum Type {
 
-    FULL(Entity.class) {
+    FULL {
+      @Override
       @SuppressWarnings("unchecked")
-      @Override Entity convert(DatastoreV1.Entity value) {
+      Entity convert(DatastoreV1.Entity value) {
         return Entity.fromPb(value);
       }
     },
 
-    PROJECTION(PartialEntity.class) {
+    PROJECTION  {
+
+      @Override
       @SuppressWarnings("unchecked")
-      @Override PartialEntity convert(DatastoreV1.Entity value) {
+      PartialEntity convert(DatastoreV1.Entity value) {
         return PartialEntity.fromPb(value);
       }
     },
 
-    KEY_ONLY(Key.class) {
+    KEY_ONLY {
+
+      @Override
       @SuppressWarnings("unchecked")
-      @Override Key convert(DatastoreV1.Entity value) {
+      Key convert(DatastoreV1.Entity value) {
         return Key.fromPb(value.getKey());
       }
     };
-
-    private final Class<?> resultClass;
-
-    Type(Class<?> resultClass) {
-      this.resultClass = resultClass;
-    }
-
-    public Class<?> getResultClass() {
-      return resultClass;
-    }
 
     abstract <T> T convert(DatastoreV1.Entity value);
   }
 
   /**
-   * This method can be used to verify the result type and to cast its value type accordingly.
+   * Returns the actual type of the result's values.
+   * When needed the result could be casted accordingly:
    * <pre> {@code
    * Type.FULL -> (QueryResult<Entity>)
    * Type.PROJECTION -> (QueryResult<PartialEntity>)

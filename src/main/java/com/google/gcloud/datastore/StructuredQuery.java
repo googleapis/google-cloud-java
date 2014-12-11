@@ -1,21 +1,74 @@
 package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
-import com.google.gcloud.datastore.DatastoreServiceException.Code;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 
-public final class StructuredQuery<T> extends Query<T> {
+final class StructuredQuery<T> extends Query<T> {
 
   private static final long serialVersionUID = 546838955624019594L;
 
 
-  static class BaseBuilder<T> {
-    // TODO: impelement and have sub-classes for keys-only, entity and projection
+  static class BaseBuilder<T, B extends BaseBuilder<T, B>> {
+
+    private String kind;
+    private String namespace;
+    private Cursor startCursor;
+    private Cursor endCursor;
+    private Integer offset;
+    private Integer limit;
+
+
+    protected B self() {
+      return (B) this;
+    }
+
+    public B kind(String kind) {
+      this.kind = kind;
+      return self();
+    }
+
+    public B namespace(String namespace) {
+      this.namespace = namespace;
+      return self();
+    }
+
+    public B startCursor(Cursor startCursor) {
+      this.startCursor = startCursor;
+      return self();
+    }
+
+    public B encCursor(Cursor endCursor) {
+      this.endCursor = endCursor;
+      return self();
+    }
+
+    public B offset(int offset) {
+      this.offset = offset;
+      return self();
+    }
+
+    public B limit(int limit) {
+      this.limit = limit;
+      return self();
+    }
   }
 
-  private StructuredQuery(String namespace) {
-    super(namespace);
+  public static final class FullBuilder extends BaseBuilder<Entity, FullBuilder> {
+
+  }
+
+  public static final class KeyOnlyBuilder extends BaseBuilder<Key, KeyOnlyBuilder> {
+
+  }
+
+  public static final class ProjectionBuilder
+      extends BaseBuilder<PartialEntity, ProjectionBuilder> {
+
+  }
+
+  private StructuredQuery(ResultType<T> resultType, String namespace) {
+    super(resultType, namespace);
   }
 
   @Override
@@ -44,8 +97,9 @@ public final class StructuredQuery<T> extends Query<T> {
   }
 
   @Override
-  protected Object fromPb(String namespace, byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(namespace, DatastoreV1.Query.parseFrom(bytesPb));
+  protected Object fromPb(ResultType<T> resultType, String namespace, byte[] bytesPb)
+      throws InvalidProtocolBufferException {
+    return fromPb(resultType, namespace, DatastoreV1.Query.parseFrom(bytesPb));
   }
 
   @Override
@@ -54,12 +108,8 @@ public final class StructuredQuery<T> extends Query<T> {
     return null;
   }
 
-  static StructuredQuery<?> fromPb(String namespace, DatastoreV1.Query queryPb) {
+  static <T> StructuredQuery<T> fromPb(ResultType<T> resultType, String namespace,
+      DatastoreV1.Query queryPb) {
     return null;
-  }
-
-  static DatastoreV1.Query nextQuery(DatastoreV1.Query query, ByteString cursor) {
-    // see b/18705483
-    throw new DatastoreServiceException(Code.INTERNAL, "paging for gql results is not implemented");
   }
 }

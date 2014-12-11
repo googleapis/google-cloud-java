@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * A base class for entities.
+ * A base class for entities to hold the properties.
  */
 abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
 
@@ -36,72 +36,78 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       return (B) this;
     }
 
-    public B clearProperties() {
+    /**
+     * Clears all the properties.
+     */
+    public B clear() {
       properties.clear();
       return self();
     }
 
-    public B removeProperty(String name) {
+    /**
+     * Removes a property with the given {@code name}.
+     */
+    public B remove(String name) {
       properties.remove(name);
       return self();
     }
 
-    public B setProperty(String name, Value<?> value) {
+    public B set(String name, Value<?> value) {
       properties.put(name, value);
       return self();
     }
 
-    public B setNullProperty(String name) {
+    public B setNull(String name) {
       properties.put(name, new NullValue());
       return self();
     }
 
-    public B setStringProperty(String name, String value) {
+    public B set(String name, String value) {
       properties.put(name, new StringValue(value));
       return self();
     }
 
-    public B setLongProperty(String name, long value) {
+    public B set(String name, long value) {
       properties.put(name, new LongValue(value));
       return self();
     }
 
-    public B setDoubleProperty(String name, double value) {
+    public B set(String name, double value) {
       properties.put(name, new DoubleValue(value));
       return self();
     }
 
-    public B setBooleanProperty(String name, boolean value) {
+    public B set(String name, boolean value) {
       properties.put(name, new BooleanValue(value));
       return self();
     }
 
-    public B setDateTimeProperty(String name, DateTime value) {
+    public B set(String name, DateTime value) {
       properties.put(name, new DateTimeValue(value));
       return self();
     }
 
-    public B setKeyProperty(String name, Key value) {
+    public B set(String name, Key value) {
       properties.put(name, new KeyValue(value));
       return self();
     }
 
-    public B setEntityProperty(String name, PartialEntity value) {
+    public B set(String name, PartialEntity value) {
       properties.put(name, new EntityValue(value));
       return self();
     }
 
-    public B setListProperty(String name, List<? extends Value<?>> values) {
+    public B set(String name, List<? extends Value<?>> values) {
       properties.put(name, new ListValue(values));
       return self();
     }
 
-    public B setListProperty(String name, Value<?>... value) {
+    public B set(String name, Value<?>... value) {
       properties.put(name, new ListValue(Arrays.asList(value)));
       return self();
     }
 
-    public B setBlobProperty(String name, Blob value) {
+    public B set(String name, Blob value) {
       properties.put(name, new BlobValue(value));
       return self();
     }
@@ -118,18 +124,18 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
   }
 
   /**
-   * Returns {@code true} if there is such property with the given {@code name}.
+   * Returns {@code true} if the entity contains a property with the given {@code name}.
    */
-  public boolean hasProperty(String name) {
+  public boolean contains(String name) {
     return properties.containsKey(name);
   }
 
   /**
-   * Returns the {@link Value} of property with the given {@code name}.
+   * Returns the {@link Value} for the given property {@code name}.
    *
    * @throws DatastoreServiceException if not such property.
    */
-  public <V extends Value<?>> V property(String name) {
+  public <V extends Value<?>> V getValue(String name) {
     @SuppressWarnings("unchecked")
     V property = (V) properties.get(name);
     if (property == null) {
@@ -138,63 +144,66 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
     return property;
   }
 
-  public Type propertyType(String name) {
-    return property(name).type();
+  public Type type(String name) {
+    return getValue(name).type();
   }
 
-  public boolean isNullProperty(String name) {
-    return property(name) instanceof NullValue;
+  public boolean isNull(String name) {
+    return getValue(name) instanceof NullValue;
   }
 
-  public String stringProperty(String name) {
-    return ((StringValue) property(name)).get();
+  public String getString(String name) {
+    return ((StringValue) getValue(name)).get();
   }
 
-  public long longProperty(String name) {
-    return ((LongValue) property(name)).get();
+  public long getLong(String name) {
+    return ((LongValue) getValue(name)).get();
   }
 
-  public double doubleProperty(String name) {
-    return ((DoubleValue) property(name)).get();
+  public double getDouble(String name) {
+    return ((DoubleValue) getValue(name)).get();
   }
 
-  public boolean booleanProperty(String name) {
-    return ((BooleanValue) property(name)).get();
+  public boolean getBoolean(String name) {
+    return ((BooleanValue) getValue(name)).get();
   }
 
-  public DateTime dateTimeProperty(String name) {
-    return ((DateTimeValue) property(name)).get();
+  public DateTime getDateTime(String name) {
+    return ((DateTimeValue) getValue(name)).get();
   }
 
-  public Key keyProperty(String name) {
-    return ((KeyValue) property(name)).get();
+  public Key getKey(String name) {
+    return ((KeyValue) getValue(name)).get();
   }
 
   @SuppressWarnings("unchecked")
-  public <T extends PartialEntity> T entityProperty(String name) {
-    return (T) ((EntityValue) property(name)).get();
+  public <T extends PartialEntity> T getEntity(String name) {
+    return (T) ((EntityValue) getValue(name)).get();
   }
 
-  public List<? extends Value<?>> listProperty(String name) {
-    return ((ListValue) property(name)).get();
+  public List<? extends Value<?>> getList(String name) {
+    return ((ListValue) getValue(name)).get();
   }
 
-  public Blob blobProperty(String name) {
-    return ((BlobValue) property(name)).get();
+  public Blob getBlob(String name) {
+    return ((BlobValue) getValue(name)).get();
   }
 
   /**
    * Returns the property's value as a {@link RawValue}.
    */
-  public RawValue asRawValueProperty(String name) {
-    Value<?> value = property(name);
+  public RawValue asRawValue(String name) {
+    Value<?> value = getValue(name);
     if (value instanceof RawValue) {
       return (RawValue) value;
     }
     return new RawValue(value.toPb());
   }
 
-  public Set<String> propertyNames() {
+  /**
+   * Returns the properties name.
+   */
+  public Set<String> names() {
     return properties.keySet();
   }
 

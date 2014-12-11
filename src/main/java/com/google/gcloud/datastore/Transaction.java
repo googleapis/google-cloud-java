@@ -11,8 +11,27 @@ import java.util.Iterator;
  * was modified outside of the transaction after it was read. Write operation on this
  * transaction will not be reflected by read operation (as the changes are only sent to
  * the Datastore upon {@code commit}.
+ * A usage example:
+ * <pre> {@code
+ *   Transaction transaction = datastore.newTransaction();
+ *   try {
+ *     Entity entity = transaction.get(key);
+ *     if (!entity.contains("last_name") || entity.isNull("last_name")) {
+ *       String[] name = entity.getString("name").split(" ");
+ *       entity = Entity.builder(entity).remove("name").set("first_name", name[0])
+ *           .set("last_name", name[1]).build();
+ *       transaction.update(entity);
+ *       transaction.commit();
+ *     }
+ *   } finally {
+ *     if (transaction.active()) {
+ *       transaction.rollback();
+ *     }
+ *   }
+ * } </pre>
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/transactions">Google Cloud Datastore transactions</a>
+ *
  */
 public interface Transaction extends DatastoreReader, DatastoreWriter {
 
@@ -61,4 +80,9 @@ public interface Transaction extends DatastoreReader, DatastoreWriter {
    * Rollback the transaction.
    */
   void rollback();
+
+  /**
+   * Returns {@code true} if the transaction is still active (was not committed or rolledback).
+   */
+  boolean active();
 }

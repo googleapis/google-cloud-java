@@ -26,7 +26,7 @@ import java.nio.ByteBuffer;
 public final class Blob extends Serializable<DatastoreV1.Value> {
 
   private static final long serialVersionUID = 3835421019618247721L;
-  private static final int MAX_LENGTH = 1_000_000;
+  public static final int MAX_LENGTH = 1_000_000;
 
   private final transient ByteString byteString;
 

@@ -34,7 +34,7 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
 
   @Override
   public Iterator<Entity> get(Key key, Key... others) {
-    checkValid();
+    checkActive();
     DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);
     return datastore.get(readOptionsPb.build(), key, others);
@@ -42,9 +42,10 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
 
   @Override
   public <T> QueryResult<T> runQuery(Query<T> query) {
-    checkValid();
-    // TODO To implement
-    throw new RuntimeException("Not implemented yet");
+    checkActive();
+    DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
+    readOptionsPb.setTransaction(transaction);
+    return datastore.runQuery(readOptionsPb.build(), query);
   }
 
   @Override
@@ -54,11 +55,16 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
 
   @Override
   public void rollback() {
-    super.checkValid();
+    super.checkActive();
     if (!wasRolledback) {
       datastore.rollbackTransaction(transaction);
     }
     wasRolledback = true;
+  }
+
+  @Override
+  public boolean active() {
+    return super.active() && !wasRolledback;
   }
 
   @Override
@@ -67,10 +73,10 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
   }
 
   @Override
-  protected void checkValid() {
-    super.checkValid();
+  protected void checkActive() {
+    super.checkActive();
     if (wasRolledback) {
-      throwInvalidRequest(getName() + " was already rolledback");
+      throwInvalidRequest(getName() + " is not active (was rolledback)");
     }
   }
 

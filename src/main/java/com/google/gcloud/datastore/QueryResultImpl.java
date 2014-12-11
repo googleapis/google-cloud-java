@@ -1,5 +1,6 @@
 package com.google.gcloud.datastore;
 
+import com.google.api.client.repackaged.com.google.common.base.Preconditions;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
@@ -34,6 +35,8 @@ class QueryResultImpl<T> implements QueryResult<T> {
     this.query = query;
     this.requestPb = requestPb;
     type = RESULT_TYPE_CONVERTER.get(resultPb.getEntityResultType());
+    Preconditions.checkState(query.resultType().getType() == null
+        || query.resultType().getType() == type, "Unexpected result type");
   }
 
   void setQueryResultBatch(DatastoreV1.QueryResultBatch resultPb) {

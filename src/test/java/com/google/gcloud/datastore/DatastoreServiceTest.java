@@ -38,33 +38,16 @@ public class DatastoreServiceTest {
       .build();
   private static final ListValue LIST_VALUE2 = new ListValue(Collections.singletonList(KEY_VALUE));
   private static final PartialEntity PARTIAL_ENTITY1 = PartialEntity.builder(PARTIAL_KEY2)
-      .setProperty("str", STR_VALUE)
-      .setProperty("bool", BOOL_VALUE)
-      .setProperty("list", LIST_VALUE1)
-      .build();
+      .set("str", STR_VALUE).set("bool", BOOL_VALUE).set("list", LIST_VALUE1).build();
   private static final PartialEntity PARTIAL_ENTITY2 = PartialEntity.builder(PARTIAL_ENTITY1)
-      .removeProperty("str")
-      .setBooleanProperty("bool", true)
-      .setListProperty("list", LIST_VALUE1.get())
-      .build();
-  private static final Entity ENTITY1 = Entity.builder(KEY1)
-      .setProperty("str", STR_VALUE)
-      .setProperty("bool", BOOL_VALUE)
-      .setProperty("partial1", new EntityValue(PARTIAL_ENTITY1))
-      .setProperty("list", LIST_VALUE2)
-      .build();
-  private static final Entity ENTITY2 = Entity.builder(ENTITY1)
-      .key(KEY2)
-      .removeProperty("str")
-      .setNullProperty("null")
-      .build();
-  private static final Entity ENTITY3 = Entity.builder(ENTITY1)
-      .key(KEY3)
-      .removeProperty("str")
-      .setProperty("null", NULL_VALUE)
-      .setEntityProperty("partial1", PARTIAL_ENTITY2)
-      .setEntityProperty("partial2", ENTITY2)
-      .build();
+      .remove("str").set("bool", true).set("list", LIST_VALUE1.get()).build();
+  private static final Entity ENTITY1 = Entity.builder(KEY1).set("str", STR_VALUE)
+      .set("bool", BOOL_VALUE).set("partial1", new EntityValue(PARTIAL_ENTITY1))
+      .set("list", LIST_VALUE2).build();
+  private static final Entity ENTITY2 = Entity.builder(ENTITY1).key(KEY2).remove("str")
+      .setNull("null").build();
+  private static final Entity ENTITY3 = Entity.builder(ENTITY1).key(KEY3).remove("str")
+      .set("null", NULL_VALUE).set("partial1", PARTIAL_ENTITY2).set("partial2", ENTITY2).build();
 
   private DatastoreServiceOptions options;
   private DatastoreService datastore;
@@ -72,10 +55,12 @@ public class DatastoreServiceTest {
   @Before
   public void setUp() {
     // TODO(ozarov): document that this test depends on a local gcd running.
-    // gcd.sh start dataset1
-    // reference: https://cloud.google.com/datastore/docs/tools/devserver
-    // Or even better, using a "GCE_HOME" param/env initiate and destroy the server
-    // before and after tests via ant or maven
+    // Unfortunately, the gcd tool is not bundled with the cloud SDK and need
+    // to be downloaded independently from
+    // https://cloud.google.com/datastore/docs/tools/devserver (b/16372095).
+    // To start the gcd run:
+    // gcd.sh create dataset1; gcd.sh start dataset1
+    // We should have an option to start the gcd from maven/ant.
     options = DatastoreServiceOptions.builder()
         .dataset(DATASET)
         .host("http://localhost:8080")
@@ -96,8 +81,8 @@ public class DatastoreServiceTest {
     Transaction transaction = datastore.newTransaction();
     transaction.add(ENTITY3);
     Entity entity2 = Entity.builder(ENTITY2)
-        .clearProperties()
-        .setNullProperty("bla")
+        .clear()
+        .setNull("bla")
         .build();
     transaction.update(entity2);
     transaction.delete(KEY1);
@@ -137,7 +122,7 @@ public class DatastoreServiceTest {
     transaction = datastore.newTransaction();
     assertEquals(ENTITY3, transaction.get(KEY3));
     // update entity3 during the transaction
-    datastore.put(Entity.builder(ENTITY3).clearProperties().build());
+    datastore.put(Entity.builder(ENTITY3).clear().build());
     transaction.update(ENTITY2);
     try {
       transaction.commit();
@@ -149,14 +134,16 @@ public class DatastoreServiceTest {
   }
 
   @Test
+  public void testTransactionWithQuery() {
+    fail("not implemented");
+  }
+
+  @Test
   public void testNewTransactionRollback() {
     Transaction transaction = datastore.newTransaction();
     transaction.add(ENTITY3);
-    Entity entity2 = Entity.builder(ENTITY2)
-        .clearProperties()
-        .setNullProperty("bla")
-        .setListProperty("list3", new StringValue("bla"), StringValue.builder("bla").build())
-        .build();
+    Entity entity2 = Entity.builder(ENTITY2).clear().setNull("bla")
+        .set("list3", new StringValue("bla"), StringValue.builder("bla").build()).build();
     transaction.update(entity2);
     transaction.delete(KEY1);
     transaction.rollback();
@@ -211,17 +198,10 @@ public class DatastoreServiceTest {
   @Test
   public void testNewBatchWriter() {
     BatchWriter batchWriter = datastore.newBatchWriter();
-    Entity entity1 = Entity.builder(ENTITY1).clearProperties().build();
-    Entity entity2 = Entity.builder(ENTITY2)
-        .clearProperties()
-        .setNullProperty("bla")
-        .build();
-    Entity entity4 = Entity.builder(KEY4)
-        .setProperty("value", new StringValue("value"))
-        .build();
-    Entity entity5 = Entity.builder(KEY5)
-        .setStringProperty("value", "value")
-        .build();
+    Entity entity1 = Entity.builder(ENTITY1).clear().build();
+    Entity entity2 = Entity.builder(ENTITY2).clear().setNull("bla").build();
+    Entity entity4 = Entity.builder(KEY4).set("value", new StringValue("value")).build();
+    Entity entity5 = Entity.builder(KEY5).set("value", "value").build();
     batchWriter.add(entity4, entity5);
     batchWriter.put(ENTITY3, entity1, entity2);
     batchWriter.submit();
@@ -261,7 +241,12 @@ public class DatastoreServiceTest {
   }
 
   @Test
-  public void testRunQuery() {
+  public void testRunGqlQuery() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testRunStructuredQuery() {
     fail("Not yet implemented");
   }
 
@@ -317,15 +302,15 @@ public class DatastoreServiceTest {
 
     entity = datastore.get(KEY1);
     assertEquals(ENTITY1, entity);
-    StringValue value1 = entity.property("str");
-    BooleanValue value2 = entity.property("bool");
-    ListValue value3 = entity.property("list");
+    StringValue value1 = entity.getValue("str");
+    BooleanValue value2 = entity.getValue("bool");
+    ListValue value3 = entity.getValue("list");
     assertEquals(value1, STR_VALUE);
     assertEquals(value2, BOOL_VALUE);
     assertEquals(value3, LIST_VALUE2);
-    assertEquals(PARTIAL_ENTITY1, entity.entityProperty("partial1"));
-    assertEquals(4, entity.propertyNames().size());
-    assertFalse(entity.hasProperty("bla"));
+    assertEquals(PARTIAL_ENTITY1, entity.getEntity("partial1"));
+    assertEquals(4, entity.names().size());
+    assertFalse(entity.contains("bla"));
   }
 
   @Test
@@ -338,18 +323,18 @@ public class DatastoreServiceTest {
     assertEquals(ENTITY2, result.next());
     Entity entity3 = result.next();
     assertEquals(ENTITY3, entity3);
-    assertTrue(entity3.isNullProperty("null"));
-    assertEquals(false, entity3.booleanProperty("bool"));
-    assertEquals(LIST_VALUE2.get(), entity3.listProperty("list"));
-    PartialEntity partial1 = entity3.entityProperty("partial1");
-    Entity partial2 = (Entity) entity3.entityProperty("partial2");
+    assertTrue(entity3.isNull("null"));
+    assertEquals(false, entity3.getBoolean("bool"));
+    assertEquals(LIST_VALUE2.get(), entity3.getList("list"));
+    PartialEntity partial1 = entity3.getEntity("partial1");
+    Entity partial2 = (Entity) entity3.getEntity("partial2");
     assertEquals(partial1, PARTIAL_ENTITY2);
     assertEquals(partial2, ENTITY2);
-    assertEquals(Value.Type.BOOLEAN, entity3.propertyType("bool"));
-    assertEquals(5, entity3.propertyNames().size());
-    assertFalse(entity3.hasProperty("bla"));
+    assertEquals(Value.Type.BOOLEAN, entity3.type("bool"));
+    assertEquals(5, entity3.names().size());
+    assertFalse(entity3.contains("bla"));
     try {
-      entity3.stringProperty("str");
+      entity3.getString("str");
       fail("Expecting a failure");
     } catch (DatastoreServiceException expected) {
       // expected - no such property
@@ -389,10 +374,7 @@ public class DatastoreServiceTest {
     }
     datastore.add(ENTITY3);
     assertEquals(ENTITY3, datastore.get(ENTITY3.key()));
-    Entity entity3 = Entity.builder(ENTITY3)
-        .clearProperties()
-        .setProperty("bla", new NullValue())
-        .build();
+    Entity entity3 = Entity.builder(ENTITY3).clear().set("bla", new NullValue()).build();
     assertNotEquals(ENTITY3, entity3);
     datastore.update(entity3);
     assertEquals(entity3, datastore.get(ENTITY3.key()));
@@ -406,10 +388,7 @@ public class DatastoreServiceTest {
     assertNull(keys.next());
     assertFalse(keys.hasNext());
 
-    Entity entity2 = Entity.builder(ENTITY2)
-        .clearProperties()
-        .setProperty("bla", new NullValue())
-        .build();
+    Entity entity2 = Entity.builder(ENTITY2).clear().set("bla", new NullValue()).build();
     assertNotEquals(ENTITY2, entity2);
     datastore.put(ENTITY3, ENTITY1, entity2);
     keys = datastore.get(ENTITY1.key(), ENTITY2.key(), ENTITY3.key());

@@ -107,7 +107,7 @@ public final class Key extends PartialKey {
   }
 
   /**
-   * Returns the key's id (as {@link #Long}) or name (as {@link String}).
+   * Returns the key's id (as {@link Long}) or name (as {@link String}).
    */
   public Object nameOrId() {
     return leaf.nameOrId();

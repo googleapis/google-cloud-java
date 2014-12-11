@@ -19,8 +19,6 @@ import java.util.Objects;
  * Unsupported value (deprecated or unrecognized) would be represented by {@link RawValue}.
  *
  * @param <V> the type of the content for this value
- * @param <P> the type of this value
- * @param <B> the type of this value's builder
  */
 public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 

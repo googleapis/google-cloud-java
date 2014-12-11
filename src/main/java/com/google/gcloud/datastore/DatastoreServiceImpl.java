@@ -49,14 +49,21 @@ final class DatastoreServiceImpl implements DatastoreService {
 
   @Override
   public <T> QueryResult<T> runQuery(Query<T> query) {
+    return runQuery(null, query);
+  }
+
+  <T> QueryResult<T> runQuery(DatastoreV1.ReadOptions readOptionsPb, Query<T> query) {
     DatastoreV1.RunQueryRequest.Builder requestPbBuilder = DatastoreV1.RunQueryRequest.newBuilder();
-    DatastoreV1.PartitionId.Builder partitionId = DatastoreV1.PartitionId.newBuilder();
-    partitionId.setDatasetId(options.dataset());
+    if (readOptionsPb != null) {
+      requestPbBuilder.setReadOptions(readOptionsPb);
+    }
+    DatastoreV1.PartitionId.Builder partitionIdPb = DatastoreV1.PartitionId.newBuilder();
+    partitionIdPb.setDatasetId(options.dataset());
     String namespace = query.namespace() != null ? query.namespace() : options.namespace();
     if (namespace != null) {
-      partitionId.setNamespace(namespace);
+      partitionIdPb.setNamespace(namespace);
     }
-    requestPbBuilder.setPartitionId(partitionId.build());
+    requestPbBuilder.setPartitionId(partitionIdPb.build());
     query.populatePb(requestPbBuilder, 0, null);
     DatastoreV1.RunQueryRequest requestPb = requestPbBuilder.build();
     return new QueryResultImpl<>(this, query, requestPb, runQuery(requestPb).getBatch());

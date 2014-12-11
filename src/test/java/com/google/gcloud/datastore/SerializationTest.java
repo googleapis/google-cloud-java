@@ -7,6 +7,7 @@ import static org.junit.Assert.assertNotSame;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.Value.Type;
 
 import org.junit.Test;
@@ -27,8 +28,14 @@ public class SerializationTest {
   private static final DateTime DATE_TIME1 = DateTime.now();
   private static final Blob BLOB1 = Blob.copyFrom(UTF_8.encode("hello world"));
   private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1,2});
-  private static final GqlQuery GQL1 =
-      GqlQuery.builder("select * from kind1 where name = @name and age > @1")
+  private static final Query<?> GQL1 =
+      Query.builder("select * from kind1 where name = @name and age > @1")
+      .setArgument("name", "name1")
+      .addArgument(20)
+      .namespace("ns1")
+      .build();
+  private static final Query<Entity> GQL2 =
+      Query.builder(ResultType.full(), "select * from kind1 where name = @name and age > @1")
       .setArgument("name", "name1")
       .addArgument(20)
       .namespace("ns1")
@@ -46,18 +53,18 @@ public class SerializationTest {
       DatastoreV1.Value.newBuilder().setBlobKeyValue("blob-key").setMeaning(18).build());
   private static final Entity ENTITY1 = Entity.builder(KEY1).build();
   private static final Entity ENTITY2 =
-      Entity.builder(KEY2).setProperty("null", new NullValue()).build();
+      Entity.builder(KEY2).set("null", new NullValue()).build();
   private static final Entity ENTITY3 = Entity.builder(KEY2)
-      .setProperty("p1", StringValue.builder("hi1").meaning(10).build())
-      .setProperty("p2", StringValue.builder("hi2").meaning(11).indexed(false).build())
-      .setProperty("p3", LongValue.builder(100).indexed(false).meaning(100).build())
-      .setBlobProperty("blob", BLOB1)
+      .set("p1", StringValue.builder("hi1").meaning(10).build())
+      .set("p2", StringValue.builder("hi2").meaning(11).indexed(false).build())
+      .set("p3", LongValue.builder(100).indexed(false).meaning(100).build())
+      .set("blob", BLOB1)
       .build();
   private static final PartialEntity EMBEDDED_ENTITY1 = ENTITY1;
   private static final PartialEntity EMBEDDED_ENTITY2 = ENTITY2;
   private static final PartialEntity EMBEDDED_ENTITY3 = PartialEntity.builder(INCOMPLETE_KEY1)
-      .setProperty("p1", STRING_VALUE)
-      .setProperty("p2", LongValue.builder(100).indexed(false).meaning(100).build())
+      .set("p1", STRING_VALUE)
+      .set("p2", LongValue.builder(100).indexed(false).meaning(100).build())
       .build();
   private static final EntityValue EMBEDDED_ENTITY_VALUE1 =
       new EntityValue(EMBEDDED_ENTITY1);
@@ -105,9 +112,8 @@ public class SerializationTest {
   public void testTypes() throws Exception {
     Object[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
         ENTITY3, EMBEDDED_ENTITY1, EMBEDDED_ENTITY2, EMBEDDED_ENTITY3, DATE_TIME1,
-        BLOB1, CURSOR1, GQL1};
+        BLOB1, CURSOR1, GQL1, GQL2};
     for (Object obj : types) {
-      System.out.println("KOKO: " + obj);
       Object copy = serialiazeAndDeserialize(obj);
       assertEquals(obj, obj);
       assertEquals(obj, copy);

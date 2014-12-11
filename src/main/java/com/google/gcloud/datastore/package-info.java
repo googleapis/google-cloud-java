@@ -1,6 +1,6 @@
 /**
  * A client to the Google Cloud Datastore.
- * Typical usage would be:
+ * A simple usage example:
  * <pre> {@code
  * DatastoreServiceOptions options = DatastoreServiceOptions.builder().dataset(DATASET).build();
  * DatastoreService datastore = DatastoreServiceFactory.getDefault(options);
@@ -9,21 +9,21 @@
  * Entity entity = datastore.get(key);
  * if (entity == null) {
  *   entity = Entity.builder(key)
- *       .setStringProperty("name", "John Do")
- *       .setProperty("age", LongValue.builder(100).indexed(false).build())
- *       .setBooleanProperty("updated", false)
+ *       .set("name", "John Do")
+ *       .set("age", LongValue.builder(100).indexed(false).build())
+ *       .set("updated", false)
  *       .build();
  *   datastore.put(entity);
  * } else {
- *   boolean updated = entity.booleanProperty("updated");
+ *   boolean updated = entity.getBoolean("updated");
  *   if (!updated) {
- *     String[] name = entity.stringProperty("name").split(" ");
+ *     String[] name = entity.getString("name").split(" ");
  *     entity = Entity.builder(entity)
- *         .setStringProperty("name", name[0])
- *         .setProperty("last_name", StringValue.builder(name[1]).indexed(false).build())
- *         .setBooleanProperty("updated", true)
- *         .removeProperty("old_property")
- *         .setDoubleProperty("new_property", 1.1)
+ *         .set("name", name[0])
+ *         .set("last_name", StringValue.builder(name[1]).indexed(false).build())
+ *         .set("updated", true)
+ *         .remove("old_property")
+ *         .set("new_property", 1.1)
  *         .build();
  *     datastore.update(entity);
  *   }
