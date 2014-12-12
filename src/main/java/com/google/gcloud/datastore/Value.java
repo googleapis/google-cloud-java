@@ -40,85 +40,72 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     /**
      * Represents a {@code null} value.
      */
-    NULL(NullValue.MARSHALLER, NullValue.MARSHALLER),
+    NULL(NullValue.MARSHALLER),
 
     /**
      * Represents a {@code string} value.
      */
-    STRING(StringValue.MARSHALLER, StringValue.MARSHALLER),
+    STRING(StringValue.MARSHALLER),
 
     /**
      * Represents an entity ({@link PartialEntity} or {@link Entity}) value.
      */
-    ENTITY(EntityValue.MARSHALLER, EntityValue.MARSHALLER),
+    ENTITY(EntityValue.MARSHALLER),
 
     /**
      * Represents a {@code list} of {@link Value}s.
      */
-    LIST(ListValue.MARSHALLER, ListValue.MARSHALLER),
+    LIST(ListValue.MARSHALLER),
 
     /**
      * Represents a {@code key} as a value.
      */
-    KEY(KeyValue.MARSHALLER, KeyValue.MARSHALLER),
+    KEY(KeyValue.MARSHALLER),
 
     /**
      * Represents a {@code long} value.
      */
-    LONG(LongValue.MARSHALLER, LongValue.MARSHALLER),
+    LONG(LongValue.MARSHALLER),
 
     /**
      * Represents a {@code double} value.
      */
-    DOUBLE(DoubleValue.MARSHALLER, DoubleValue.MARSHALLER),
+    DOUBLE(DoubleValue.MARSHALLER),
 
     /**
      * Represents a {@code boolean} value.
      */
-    BOOLEAN(BooleanValue.MARSHALLER, BooleanValue.MARSHALLER),
+    BOOLEAN(BooleanValue.MARSHALLER),
 
     /**
      * Represents a {@link DateTime} value.
      */
-    DATE_TIME(DateTimeValue.MARSHALLER, DateTimeValue.MARSHALLER),
+    DATE_TIME(DateTimeValue.MARSHALLER),
 
     /**
      * Represents a {@link Blob} value.
      */
-    BLOB(BlobValue.MARSHALLER, BlobValue.MARSHALLER),
+    BLOB(BlobValue.MARSHALLER),
 
     /**
      * Represents a raw/unparsed value.
      */
-    RAW_VALUE(RawValue.MARSHALLER, RawValue.MARSHALLER);
+    RAW_VALUE(RawValue.MARSHALLER);
 
 
-    @SuppressWarnings("rawtypes") private final BuilderFactory builderFactory;
     @SuppressWarnings("rawtypes") private final Marshaller marshaller;
 
-    <V, P extends Value<V>, B extends Builder<V, P, B>> Type(Marshaller<V, P, B> marshaller,
-        BuilderFactory<V, P, B> builderFactory) {
+    <V, P extends Value<V>, B extends Builder<V, P, B>> Type(Marshaller<V, P, B> marshaller) {
       this.marshaller = marshaller;
-      this.builderFactory = builderFactory;
       int fieldId = marshaller.getProtoFieldId();
       if (fieldId > 0) {
         DESCRIPTOR_TO_TYPE_MAP.put(fieldId, this);
       }
     }
 
-    <V, P extends Value<V>, B extends Builder<V, P, B>> Marshaller<V, P, B> getMarshaller() {
+    Marshaller getMarshaller() {
       return marshaller;
     }
-
-    <V, P extends Value<V>, B extends Builder<V, P, B>> BuilderFactory<V, P, B>
-        getBuilderFactory() {
-      return builderFactory;
-    }
-  }
-
-  interface BuilderFactory<V, P extends Value<V>, B extends Builder<V, P, B>> {
-
-    B newBuilder(V value);
   }
 
   interface Builder<V, P extends Value<V>, B extends Builder<V, P, B>> {
@@ -140,6 +127,10 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     B set(V value);
 
     P build();
+  }
+
+  interface BuilderFactory<V, P extends Value<V>, B extends Builder<V, P, B>> {
+    B newBuilder(V value);
   }
 
   interface Marshaller<V, P extends Value<V>, B extends Builder<V, P, B>> {
@@ -314,9 +305,9 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
   }
 
   @Override
-  @SuppressWarnings({"unchecked", "rawtypes"})
+  @SuppressWarnings("unchecked")
   protected DatastoreV1.Value toPb() {
-    return type().getMarshaller().toProto((Value) this);
+    return type().getMarshaller().toProto(this);
   }
 
   static Value<?> fromPb(DatastoreV1.Value proto) {
