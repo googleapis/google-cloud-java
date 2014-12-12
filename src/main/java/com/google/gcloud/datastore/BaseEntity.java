@@ -1,5 +1,16 @@
 package com.google.gcloud.datastore;
 
+import static com.google.gcloud.datastore.BlobValue.of;
+import static com.google.gcloud.datastore.BooleanValue.of;
+import static com.google.gcloud.datastore.DateTimeValue.of;
+import static com.google.gcloud.datastore.DoubleValue.of;
+import static com.google.gcloud.datastore.EntityValue.of;
+import static com.google.gcloud.datastore.KeyValue.of;
+import static com.google.gcloud.datastore.ListValue.of;
+import static com.google.gcloud.datastore.LongValue.of;
+import static com.google.gcloud.datastore.NullValue.of;
+import static com.google.gcloud.datastore.StringValue.of;
+
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.gcloud.datastore.Value.Type;
@@ -58,57 +69,57 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
     }
 
     public B setNull(String name) {
-      properties.put(name, new NullValue());
+      properties.put(name, of());
       return self();
     }
 
     public B set(String name, String value) {
-      properties.put(name, new StringValue(value));
+      properties.put(name, of(value));
       return self();
     }
 
     public B set(String name, long value) {
-      properties.put(name, new LongValue(value));
+      properties.put(name, of(value));
       return self();
     }
 
     public B set(String name, double value) {
-      properties.put(name, new DoubleValue(value));
+      properties.put(name, of(value));
       return self();
     }
 
     public B set(String name, boolean value) {
-      properties.put(name, new BooleanValue(value));
+      properties.put(name, of(value));
       return self();
     }
 
     public B set(String name, DateTime value) {
-      properties.put(name, new DateTimeValue(value));
+      properties.put(name, of(value));
       return self();
     }
 
     public B set(String name, Key value) {
-      properties.put(name, new KeyValue(value));
+      properties.put(name, of(value));
       return self();
     }
 
     public B set(String name, PartialEntity value) {
-      properties.put(name, new EntityValue(value));
+      properties.put(name, of(value));
       return self();
     }
 
     public B set(String name, List<? extends Value<?>> values) {
-      properties.put(name, new ListValue(values));
+      properties.put(name, of(values));
       return self();
     }
 
     public B set(String name, Value<?>... value) {
-      properties.put(name, new ListValue(Arrays.asList(value)));
+      properties.put(name, of(Arrays.asList(value)));
       return self();
     }
 
     public B set(String name, Blob value) {
-      properties.put(name, new BlobValue(value));
+      properties.put(name, of(value));
       return self();
     }
 

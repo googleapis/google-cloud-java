@@ -58,6 +58,10 @@ public final class DateTimeValue extends Value<DateTime> {
     return new Builder().mergeFrom(this);
   }
 
+  public static DateTimeValue of(DateTime dateTime) {
+    return new DateTimeValue(dateTime);
+  }
+
   public static Builder builder(DateTime dateTime) {
     return new Builder().set(dateTime);
   }

@@ -61,6 +61,10 @@ public final class StringValue extends Value<String> {
     return new Builder().mergeFrom(this);
   }
 
+  public static StringValue of(String value) {
+    return new StringValue(value);
+  }
+
   public static Builder builder(String value) {
     return new Builder().set(value);
   }

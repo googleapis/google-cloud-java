@@ -66,6 +66,10 @@ public class EntityValue extends Value<PartialEntity> {
     return new Builder().mergeFrom(this);
   }
 
+  public static EntityValue of(PartialEntity entity) {
+    return new EntityValue(entity);
+  }
+
   public static Builder builder(PartialEntity entity) {
     return new Builder().set(entity).indexed(false);
   }

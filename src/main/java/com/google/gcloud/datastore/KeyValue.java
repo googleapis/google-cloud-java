@@ -57,6 +57,10 @@ public final class KeyValue extends Value<Key> {
     return new Builder().mergeFrom(this);
   }
 
+  public static KeyValue of(Key key) {
+    return new KeyValue(key);
+  }
+
   public static Builder builder(Key key) {
     return new Builder().set(key);
   }

@@ -21,8 +21,8 @@ public class DatastoreServiceTest {
   private static final String DATASET = "dataset1";
   private static final String KIND1 = "kind1";
   private static final String KIND2 = "kind2";
-  private static final NullValue NULL_VALUE = new NullValue();
-  private static final StringValue STR_VALUE = new StringValue("str");
+  private static final NullValue NULL_VALUE = NullValue.of();
+  private static final StringValue STR_VALUE = StringValue.of("str");
   private static final BooleanValue BOOL_VALUE = BooleanValue.builder(false).indexed(false).build();
   private static final PartialKey PARTIAL_KEY1 = PartialKey.builder(DATASET, KIND1).build();
   private static final PartialKey PARTIAL_KEY2 = PartialKey.builder(DATASET, KIND2).build();
@@ -31,18 +31,18 @@ public class DatastoreServiceTest {
   private static final Key KEY3 = Key.builder(KEY2).name("bla").build();
   private static final Key KEY4 = KEY2.newKey("newName1");
   private static final Key KEY5 = KEY2.newKey("newName2");
-  private static final KeyValue KEY_VALUE = new KeyValue(KEY1);
+  private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
   private static final ListValue LIST_VALUE1 = ListValue.builder()
       .addValue(NULL_VALUE)
       .addValue(STR_VALUE, BOOL_VALUE)
       .build();
-  private static final ListValue LIST_VALUE2 = new ListValue(Collections.singletonList(KEY_VALUE));
+  private static final ListValue LIST_VALUE2 = ListValue.of(Collections.singletonList(KEY_VALUE));
   private static final PartialEntity PARTIAL_ENTITY1 = PartialEntity.builder(PARTIAL_KEY2)
       .set("str", STR_VALUE).set("bool", BOOL_VALUE).set("list", LIST_VALUE1).build();
   private static final PartialEntity PARTIAL_ENTITY2 = PartialEntity.builder(PARTIAL_ENTITY1)
       .remove("str").set("bool", true).set("list", LIST_VALUE1.get()).build();
   private static final Entity ENTITY1 = Entity.builder(KEY1).set("str", STR_VALUE)
-      .set("bool", BOOL_VALUE).set("partial1", new EntityValue(PARTIAL_ENTITY1))
+      .set("bool", BOOL_VALUE).set("partial1", EntityValue.of(PARTIAL_ENTITY1))
       .set("list", LIST_VALUE2).build();
   private static final Entity ENTITY2 = Entity.builder(ENTITY1).key(KEY2).remove("str")
       .setNull("null").build();
@@ -143,7 +143,7 @@ public class DatastoreServiceTest {
     Transaction transaction = datastore.newTransaction();
     transaction.add(ENTITY3);
     Entity entity2 = Entity.builder(ENTITY2).clear().setNull("bla")
-        .set("list3", new StringValue("bla"), StringValue.builder("bla").build()).build();
+        .set("list3", StringValue.of("bla"), StringValue.builder("bla").build()).build();
     transaction.update(entity2);
     transaction.delete(KEY1);
     transaction.rollback();
@@ -200,7 +200,7 @@ public class DatastoreServiceTest {
     BatchWriter batchWriter = datastore.newBatchWriter();
     Entity entity1 = Entity.builder(ENTITY1).clear().build();
     Entity entity2 = Entity.builder(ENTITY2).clear().setNull("bla").build();
-    Entity entity4 = Entity.builder(KEY4).set("value", new StringValue("value")).build();
+    Entity entity4 = Entity.builder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.builder(KEY5).set("value", "value").build();
     batchWriter.add(entity4, entity5);
     batchWriter.put(ENTITY3, entity1, entity2);

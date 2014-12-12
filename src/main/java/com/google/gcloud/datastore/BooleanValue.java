@@ -57,6 +57,10 @@ public final class BooleanValue extends Value<Boolean> {
     return new Builder().mergeFrom(this);
   }
 
+  public static BooleanValue of(boolean value) {
+    return new BooleanValue(value);
+  }
+
   public static Builder builder(boolean value) {
     return new Builder().set(value);
   }

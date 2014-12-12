@@ -116,6 +116,14 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
     return new Builder().mergeFrom(this);
   }
 
+  public static ListValue of(List<? extends Value<?>> values) {
+    return new ListValue(values);
+  }
+
+  public static ListValue of(Value<?> first, Value<?>... other) {
+    return new ListValue(first, other);
+  }
+
   public static Builder builder() {
     return new Builder();
   }

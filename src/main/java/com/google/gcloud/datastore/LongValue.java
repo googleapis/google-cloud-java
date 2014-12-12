@@ -57,6 +57,10 @@ public final class LongValue extends Value<Long> {
     return new Builder().mergeFrom(this);
   }
 
+  public static LongValue of(long value) {
+    return new LongValue(value);
+  }
+
   public static Builder builder(long value) {
     return new Builder().set(value);
   }

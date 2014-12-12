@@ -40,20 +40,19 @@ public class SerializationTest {
       .addArgument(20)
       .namespace("ns1")
       .build();
-  private static final KeyValue KEY_VALUE = new KeyValue(KEY1);
+  private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
   private static final NullValue NULL_VALUE = NullValue.builder().indexed(true).build();
-  private static final StringValue STRING_VALUE = new StringValue("hello");
-  private static final LongValue LONG_VALUE = new LongValue(123);
-  private static final DoubleValue DOUBLE_VALUE = new DoubleValue(12.34);
-  private static final BooleanValue BOOLEAN_VALUE = new BooleanValue(true);
-  private static final DateTimeValue DATE_AND_TIME_VALUE =
-      new DateTimeValue(DateTime.now());
-  private static final BlobValue BLOB_VALUE = new BlobValue(BLOB1);
-  private static final RawValue RAW_VALUE = new RawValue(
+  private static final StringValue STRING_VALUE = StringValue.of("hello");
+  private static final LongValue LONG_VALUE = LongValue.of(123);
+  private static final DoubleValue DOUBLE_VALUE = DoubleValue.of(12.34);
+  private static final BooleanValue BOOLEAN_VALUE = BooleanValue.of(true);
+  private static final DateTimeValue DATE_AND_TIME_VALUE = DateTimeValue.of(DateTime.now());
+  private static final BlobValue BLOB_VALUE = BlobValue.of(BLOB1);
+  private static final RawValue RAW_VALUE = RawValue.of(
       DatastoreV1.Value.newBuilder().setBlobKeyValue("blob-key").setMeaning(18).build());
   private static final Entity ENTITY1 = Entity.builder(KEY1).build();
   private static final Entity ENTITY2 =
-      Entity.builder(KEY2).set("null", new NullValue()).build();
+      Entity.builder(KEY2).set("null", NullValue.of()).build();
   private static final Entity ENTITY3 = Entity.builder(KEY2)
       .set("p1", StringValue.builder("hi1").meaning(10).build())
       .set("p2", StringValue.builder("hi2").meaning(11).indexed(false).build())
@@ -66,12 +65,9 @@ public class SerializationTest {
       .set("p1", STRING_VALUE)
       .set("p2", LongValue.builder(100).indexed(false).meaning(100).build())
       .build();
-  private static final EntityValue EMBEDDED_ENTITY_VALUE1 =
-      new EntityValue(EMBEDDED_ENTITY1);
-  private static final EntityValue EMBEDDED_ENTITY_VALUE2 =
-      new EntityValue(EMBEDDED_ENTITY2);
-  private static final EntityValue EMBEDDED_ENTITY_VALUE3 =
-      new EntityValue(EMBEDDED_ENTITY3);
+  private static final EntityValue EMBEDDED_ENTITY_VALUE1 = EntityValue.of(EMBEDDED_ENTITY1);
+  private static final EntityValue EMBEDDED_ENTITY_VALUE2 = EntityValue.of(EMBEDDED_ENTITY2);
+  private static final EntityValue EMBEDDED_ENTITY_VALUE3 = EntityValue.of(EMBEDDED_ENTITY3);
   private static final ListValue LIST_VALUE = ListValue.builder()
       .addValue(NULL_VALUE)
       .addValue(STRING_VALUE)

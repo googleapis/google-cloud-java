@@ -55,6 +55,10 @@ public final class RawValue extends Value<DatastoreV1.Value> {
     return new Builder().mergeFrom(this);
   }
 
+  static RawValue of(DatastoreV1.Value valuePb) {
+    return new RawValue(valuePb);
+  }
+
   static Builder builder(DatastoreV1.Value valuePb) {
     Builder builder = new Builder();
     if (valuePb.hasIndexed()) {

@@ -63,6 +63,10 @@ public final class NullValue extends Value<Void> {
     return new Builder().mergeFrom(this);
   }
 
+  public static NullValue of() {
+    return new NullValue();
+  }
+
   public static Builder builder() {
     return new Builder();
   }

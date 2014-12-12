@@ -57,6 +57,10 @@ public final class BlobValue extends Value<Blob> {
     return new Builder().mergeFrom(this);
   }
 
+  public static BlobValue of(Blob blob) {
+    return new BlobValue(blob);
+  }
+
   public static Builder builder(Blob blob) {
     return new Builder().set(blob);
   }

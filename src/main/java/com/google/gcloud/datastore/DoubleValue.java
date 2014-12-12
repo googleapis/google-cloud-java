@@ -57,6 +57,10 @@ public final class DoubleValue extends Value<Double> {
     return new Builder().mergeFrom(this);
   }
 
+  public static DoubleValue of(double value) {
+    return new DoubleValue(value);
+  }
+
   public static Builder builder(double value) {
     return new Builder().set(value);
   }

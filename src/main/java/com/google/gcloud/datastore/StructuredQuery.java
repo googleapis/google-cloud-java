@@ -1,6 +1,13 @@
 package com.google.gcloud.datastore;
 
 import static com.google.api.client.util.Preconditions.checkNotNull;
+import static com.google.gcloud.datastore.BlobValue.of;
+import static com.google.gcloud.datastore.BooleanValue.of;
+import static com.google.gcloud.datastore.DateTimeValue.of;
+import static com.google.gcloud.datastore.DoubleValue.of;
+import static com.google.gcloud.datastore.KeyValue.of;
+import static com.google.gcloud.datastore.LongValue.of;
+import static com.google.gcloud.datastore.StringValue.of;
 
 import com.google.api.client.util.Preconditions;
 import com.google.api.services.datastore.DatastoreV1;
@@ -51,6 +58,7 @@ public final class StructuredQuery<T> extends Query<T> {
       GREATER_THAN_OR_EQUAL,
       EQUAL,
       HAS_ANCESTOR,
+      IS_NULL,
       AND
     }
 
@@ -85,6 +93,34 @@ public final class StructuredQuery<T> extends Query<T> {
       return new Filter(property, Operator.LESS_THAN, value, null);
     }
 
+    public static Filter le(String property, String value) {
+      return new Filter(property, Operator.LESS_THAN, of(value), null);
+    }
+
+    public static Filter le(String property, long value) {
+      return new Filter(property, Operator.LESS_THAN, of(value), null);
+    }
+
+    public static Filter le(String property, double value) {
+      return new Filter(property, Operator.LESS_THAN, of(value), null);
+    }
+
+    public static Filter le(String property, boolean value) {
+      return new Filter(property, Operator.LESS_THAN, of(value), null);
+    }
+
+    public static Filter le(String property, DateTime value) {
+      return new Filter(property, Operator.LESS_THAN, of(value), null);
+    }
+
+    public static Filter le(String property, Key value) {
+      return new Filter(property, Operator.LESS_THAN, of(value), null);
+    }
+
+    public static Filter le(String property, Blob value) {
+      return new Filter(property, Operator.LESS_THAN, of(value), null);
+    }
+
     public static Filter lte(String property, Value<?> value) {
       return new Filter(property, Operator.LESS_THAN_OR_EQUAL, value, null);
     }
@@ -103,6 +139,10 @@ public final class StructuredQuery<T> extends Query<T> {
 
     public static Filter hasAncestor(String property) {
       return new Filter(property, Operator.HAS_ANCESTOR, null, null);
+    }
+
+    public static Filter isNull(String property) {
+      return new Filter(property, Operator.IS_NULL, null, null);
     }
 
     public static Filter and(Filter first, Filter... other) {
