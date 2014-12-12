@@ -11,6 +11,7 @@ import com.google.common.collect.ImmutableList;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Base class for keys.
@@ -148,6 +149,26 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
   }
 
   @Override
+  public int hashCode() {
+    return Objects.hash(dataset(), namespace(), ancestors(), leaf());
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof BaseKey)) {
+      return false;
+    }
+    PartialKey other = (PartialKey) obj;
+    return Objects.equals(dataset(), other.dataset())
+        && Objects.equals(namespace(), other.namespace())
+        && Objects.equals(ancestors(), other.ancestors())
+        && Objects.equals(leaf(), other.leaf());
+  }
+
+  @Override
   protected DatastoreV1.Key toPb() {
     DatastoreV1.Key.Builder keyPb = DatastoreV1.Key.newBuilder();
     DatastoreV1.PartitionId.Builder partitionIdPb = DatastoreV1.PartitionId.newBuilder();
@@ -163,9 +184,10 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
     for (PathElement pathEntry : ancestors) {
       keyPb.addPathElement(pathEntry.toPb());
     }
-    addLeaf(keyPb);
+    PathElement leaf = leaf();
+    keyPb.addPathElement(leaf.toPb());
     return keyPb.build();
   }
 
-  protected abstract void addLeaf(DatastoreV1.Key.Builder keyPb);
+  protected abstract PathElement leaf();
 }

@@ -5,7 +5,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * A partial key (without a name or id).
@@ -46,29 +45,8 @@ public class PartialKey extends BaseKey {
   }
 
   @Override
-  public int hashCode() {
-    return Objects.hash(dataset(), namespace(), ancestors(), kind());
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (obj == this) {
-      return true;
-    }
-    if (!(obj instanceof PartialKey) || !PartialKey.class.equals(obj.getClass())) {
-      return false;
-    }
-
-    PartialKey other = (PartialKey) obj;
-    return Objects.equals(dataset(), other.dataset())
-        && Objects.equals(namespace(), other.namespace())
-        && Objects.equals(ancestors(), other.ancestors())
-        && Objects.equals(kind(), other.kind());
-  }
-
-  @Override
-  protected void addLeaf(DatastoreV1.Key.Builder keyPb) {
-    keyPb.addPathElement(new PathElement(kind()).toPb());
+  protected PathElement leaf() {
+    return new PathElement(kind());
   }
 
   @Override

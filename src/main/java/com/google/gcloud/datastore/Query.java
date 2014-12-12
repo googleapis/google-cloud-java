@@ -99,24 +99,6 @@ public abstract class Query<T> extends Serializable<GeneratedMessage> {
       ByteString batchCursor);
 
   /**
-   * Returns a new GQL query builder.
-   *
-   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
-   */
-  public static GqlQuery.Builder<?> builder(String gql) {
-    return builder(ResultType.unknown(), gql);
-  }
-
-  /**
-   * Returns a new GQL query builder.
-   *
-   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
-   */
-  public static <T> GqlQuery.Builder<T> builder(ResultType<T> resultType, String gql) {
-    return new GqlQuery.Builder<>(resultType, gql);
-  }
-
-  /**
    * Returns a new structured query builder.
    */
   public static StructuredQuery.Builder builder() {
