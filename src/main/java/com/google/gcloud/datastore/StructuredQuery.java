@@ -1,80 +1,108 @@
 package com.google.gcloud.datastore;
 
+import com.google.api.client.util.Preconditions;
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 
-final class StructuredQuery<T> extends Query<T> {
+import java.util.Objects;
+
+public final class StructuredQuery<T> extends Query<T> {
 
   private static final long serialVersionUID = 546838955624019594L;
 
+  private final transient boolean keysOnly;
+  private final transient String kind;
+  private final transient ImmutableSet<String> projections;
+  private final transient Cursor startCursor;
+  private final transient Cursor endCursor;
+  private final transient Integer offset;
+  private final transient Integer limit;
 
-  static class BaseBuilder<T, B extends BaseBuilder<T, B>> {
 
-    private String kind;
+  static class Builder {
+
     private String namespace;
+    private String kind;
     private Cursor startCursor;
     private Cursor endCursor;
     private Integer offset;
     private Integer limit;
 
-
-    protected B self() {
-      return (B) this;
-    }
-
-    public B kind(String kind) {
-      this.kind = kind;
-      return self();
-    }
-
-    public B namespace(String namespace) {
+    public Builder namespace(String namespace) {
       this.namespace = namespace;
-      return self();
+      return this;
     }
 
-    public B startCursor(Cursor startCursor) {
+    public Builder kind(String kind) {
+      this.kind = kind;
+      return this;
+    }
+
+    public Builder startCursor(Cursor startCursor) {
       this.startCursor = startCursor;
-      return self();
+      return this;
     }
 
-    public B encCursor(Cursor endCursor) {
+    public Builder encCursor(Cursor endCursor) {
       this.endCursor = endCursor;
-      return self();
+      return this;
     }
 
-    public B offset(int offset) {
+    public Builder offset(Integer offset) {
+      Preconditions.checkArgument(offset == null || offset >= 0, "offset must not be negative");
       this.offset = offset;
-      return self();
+      return this;
     }
 
-    public B limit(int limit) {
+    public Builder limit(Integer limit) {
+      Preconditions.checkArgument(limit == null || offset > 0, "limit must be positive");
       this.limit = limit;
-      return self();
+      return this;
+    }
+
+    public StructuredQuery<Entity> full() {
+      return new StructuredQuery<>(ResultType.full(), this, false);
+    }
+
+    public StructuredQuery<PartialEntity> projection(String projection, String... other) {
+      ImmutableSet<String> projections =
+          ImmutableSet.<String>builder().add(projection).add(other).build();
+      return new StructuredQuery<>(ResultType.projection(), this, projections);
+    }
+
+    public StructuredQuery<Key> keyOnly() {
+      return new StructuredQuery<>(ResultType.keyOnly(), this, true);
     }
   }
 
-  public static final class FullBuilder extends BaseBuilder<Entity, FullBuilder> {
-
+  private StructuredQuery(ResultType<T> resultType, Builder builder,
+      ImmutableSet<String> projections) {
+    super(resultType, builder.namespace);
+    kind = builder.kind;
+    startCursor = builder.startCursor;
+    endCursor = builder.endCursor;
+    offset = builder.offset;
+    limit = builder.limit;
+    this.projections = projections;
+    keysOnly = false;
   }
 
-  public static final class KeyOnlyBuilder extends BaseBuilder<Key, KeyOnlyBuilder> {
-
-  }
-
-  public static final class ProjectionBuilder
-      extends BaseBuilder<PartialEntity, ProjectionBuilder> {
-
-  }
-
-  private StructuredQuery(ResultType<T> resultType, String namespace) {
-    super(resultType, namespace);
+  private StructuredQuery(ResultType<T> resultType, Builder builder, boolean keysOnly) {
+    super(resultType, builder.namespace);
+    kind = builder.kind;
+    startCursor = builder.startCursor;
+    endCursor = builder.endCursor;
+    offset = builder.offset;
+    limit = builder.limit;
+    this.keysOnly = keysOnly;
+    projections = ImmutableSet.of();
   }
 
   @Override
   public int hashCode() {
-    // implement
-    return 0;
+    return Objects.hash(namespace(), kind, startCursor, endCursor, offset, limit);
   }
 
   @Override
@@ -82,8 +110,16 @@ final class StructuredQuery<T> extends Query<T> {
     if (obj == this) {
       return true;
     }
-    // implement
-    return false;
+    if (!(obj instanceof StructuredQuery)) {
+      return false;
+    }
+    StructuredQuery<?> other = (StructuredQuery<?>) obj;
+    return Objects.equals(namespace(), other.namespace())
+        && Objects.equals(kind, other.kind)
+        && Objects.equals(startCursor, other.startCursor)
+        && Objects.equals(endCursor, other.endCursor)
+        && Objects.equals(offset, other.offset)
+        && Objects.equals(limit, other.limit);
   }
 
   @Override
@@ -104,8 +140,23 @@ final class StructuredQuery<T> extends Query<T> {
 
   @Override
   protected DatastoreV1.Query toPb() {
-    // TODO Auto-generated method stub
-    return null;
+    DatastoreV1.Query.Builder queryPb = DatastoreV1.Query.newBuilder();
+    if (kind != null) {
+      queryPb.addKindBuilder().setName(kind);
+    }
+    if (startCursor != null) {
+      queryPb.setStartCursor(startCursor.byteString());
+    }
+    if (endCursor != null) {
+      queryPb.setEndCursor(endCursor.byteString());
+    }
+    if (offset != null) {
+      queryPb.setOffset(offset);
+    }
+    if (limit != null) {
+      queryPb.setLimit(limit);
+    }
+    return queryPb.build();
   }
 
   static <T> StructuredQuery<T> fromPb(ResultType<T> resultType, String namespace,

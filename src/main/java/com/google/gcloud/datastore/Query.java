@@ -119,7 +119,7 @@ public abstract class Query<T> extends Serializable<GeneratedMessage> {
   /**
    * Returns a new structured query builder.
    */
-  public static StructuredQuery.FullBuilder builder() {
-    return new StructuredQuery.FullBuilder();
+  public static StructuredQuery.Builder builder() {
+    return new StructuredQuery.Builder();
   }
 }

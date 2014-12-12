@@ -3,7 +3,10 @@ package com.google.gcloud.datastore;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;
@@ -23,7 +26,7 @@ import java.util.TreeMap;
  *
  * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
  */
-final class GqlQuery<T> extends Query<T> {
+public final class GqlQuery<T> extends Query<T> {
 
   private static final long serialVersionUID = 5988280590929540569L;
 
@@ -32,7 +35,7 @@ final class GqlQuery<T> extends Query<T> {
   private final transient ImmutableList<Argument> nameArgs;
   private final transient ImmutableList<Argument> numberArgs;
 
-  private static final class Argument extends Serializable<DatastoreV1.GqlQueryArg> {
+  static final class Argument extends Serializable<DatastoreV1.GqlQueryArg> {
 
     private static final long serialVersionUID = 1976895435257636275L;
 
@@ -42,14 +45,18 @@ final class GqlQuery<T> extends Query<T> {
 
     Argument(String name, Cursor cursor) {
       this.name = name;
-      this.cursor = cursor;
+      this.cursor = checkNotNull(cursor);
       value = null;
     }
 
     Argument(String name, Value<?> value) {
       this.name = name;
-      this.value = value;
+      this.value = checkNotNull(value);
       cursor = null;
+    }
+
+    Object cursorOrValue() {
+      return MoreObjects.firstNonNull(cursor, value);
     }
 
     String name() {
@@ -266,6 +273,36 @@ final class GqlQuery<T> extends Query<T> {
     allowLiteral = builder.allowLiteral;
     nameArgs = ImmutableList.copyOf(builder.nameArgs.values());
     numberArgs = ImmutableList.copyOf(builder.numberArgs);
+  }
+
+  public String queryString() {
+    return queryString;
+  }
+
+  public boolean allowLiteral() {
+    return allowLiteral;
+  }
+
+  /**
+   * Returns an immutable map of named arguments.
+   */
+  public Map<String, Object> nameArgs() {
+    ImmutableMap.Builder<String, Object> builder = ImmutableSortedMap.naturalOrder();
+    for (Argument argument : nameArgs) {
+      builder.put(argument.name(), argument.cursorOrValue());
+    }
+    return builder.build();
+  }
+
+  /**
+   * Returns an immutable list of numbered arguments (using original order).
+   */
+  public List<Object> numberArgs() {
+    ImmutableList.Builder<Object> builder = ImmutableList.builder();
+    for (Argument argument : numberArgs) {
+      builder.add(argument.cursorOrValue());
+    }
+    return builder.build();
   }
 
   @Override

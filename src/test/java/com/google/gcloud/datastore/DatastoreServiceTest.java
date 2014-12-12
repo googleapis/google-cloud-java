@@ -241,12 +241,27 @@ public class DatastoreServiceTest {
   }
 
   @Test
-  public void testRunGqlQuery() {
+  public void testRunGqlQueryNoCasting() {
     fail("Not yet implemented");
   }
 
   @Test
-  public void testRunStructuredQuery() {
+  public void testRunGqlQueryWithCasting() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testRunStructuredQueryFull() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testRunStructuredQueryProjection() {
+    fail("Not yet implemented");
+  }
+
+  @Test
+  public void testRunStructuredQueryKeysOnly() {
     fail("Not yet implemented");
   }
 
