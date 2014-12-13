@@ -1,10 +1,11 @@
 package com.google.gcloud.datastore;
 
+import static com.google.api.client.util.Preconditions.checkNotNull;
+
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.gcloud.datastore.QueryResult.Type;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -67,7 +68,7 @@ public abstract class Query<T> extends Serializable<GeneratedMessage> {
   }
 
   Query(ResultType<T> resultType, String namespace) {
-    this.resultType = resultType;
+    this.resultType = checkNotNull(resultType);
     this.namespace = namespace;
   }
 
@@ -95,13 +96,7 @@ public abstract class Query<T> extends Serializable<GeneratedMessage> {
   protected abstract Object fromPb(ResultType<T> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException;
 
-  protected abstract void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb, int totalRead,
-      ByteString batchCursor);
+  protected abstract void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb);
 
-  /**
-   * Returns a new structured query builder.
-   */
-  public static StructuredQuery.Builder builder() {
-    return new StructuredQuery.Builder();
-  }
+  protected abstract Query<T> nextQuery(DatastoreV1.QueryResultBatch responsePb);
 }

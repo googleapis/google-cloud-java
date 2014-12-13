@@ -12,29 +12,26 @@ import static com.google.gcloud.datastore.StringValue.of;
 import com.google.api.client.util.Preconditions;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.io.Serializable;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public final class StructuredQuery<T> extends Query<T> {
+public class StructuredQuery<T> extends Query<T> {
 
   private static final long serialVersionUID = 546838955624019594L;
 
   private final transient boolean keysOnly;
   private final transient String kind;
-  private final transient ImmutableList<String> projection;
   private final transient Filter filter;
-  private final transient ImmutableList<String> groupBy;
   private final transient ImmutableList<OrderBy> orderBy;
   private final transient Cursor startCursor;
   private final transient Cursor endCursor;
@@ -42,7 +39,33 @@ public final class StructuredQuery<T> extends Query<T> {
   private final transient Integer limit;
 
 
-  public static final class Filter implements Serializable {
+  public static class Expression implements Serializable {
+
+    private static final long serialVersionUID = -6443285436239990860L;
+
+    private final Operator operator = null;
+    private final List<Expression> values = null;
+
+    enum Operator {
+      AND,
+      OR
+    }
+
+    /*
+    Expression(Operator operator, Expression first, Expression... other) {
+      this.operator = operator;
+      ImmutableList.builder().
+      this.
+    }
+    */
+  }
+
+/*
+  public static final class And extends Expression {
+
+  }
+*/
+  public static final class Filter extends Expression {
 
     private static final long serialVersionUID = -4514695915258598597L;
 
@@ -51,7 +74,7 @@ public final class StructuredQuery<T> extends Query<T> {
     private final Value<?> value;
     private final Filter next;
 
-    public enum Operator {
+    enum Operator {
       LESS_THAN,
       LESS_THAN_OR_EQUAL,
       GREATER_THAN,
@@ -62,10 +85,24 @@ public final class StructuredQuery<T> extends Query<T> {
       AND
     }
 
-    private Filter(String property, Operator operator, Value<?> value, Filter next) {
+    private Filter(String property, Operator operator, Value<?> value) {
       this.property = checkNotNull(property);
       this.operator = checkNotNull(operator);
-      this.value = value;
+      this.value = checkNotNull(value);
+      this.next = null;
+    }
+
+    private Filter(String property, Operator operator) {
+      this.property = checkNotNull(property);
+      this.operator = checkNotNull(operator);
+      this.value = null;
+      this.next = null;
+    }
+
+    private Filter(Filter from, Filter next) {
+      this.property = from.property;
+      this.operator = from.operator;
+      this.value = from.value;
       this.next = next;
     }
 
@@ -90,66 +127,178 @@ public final class StructuredQuery<T> extends Query<T> {
     }
 
     public static Filter le(String property, Value<?> value) {
-      return new Filter(property, Operator.LESS_THAN, value, null);
+      return new Filter(property, Operator.LESS_THAN, value);
     }
 
     public static Filter le(String property, String value) {
-      return new Filter(property, Operator.LESS_THAN, of(value), null);
+      return new Filter(property, Operator.LESS_THAN, of(value));
     }
 
     public static Filter le(String property, long value) {
-      return new Filter(property, Operator.LESS_THAN, of(value), null);
+      return new Filter(property, Operator.LESS_THAN, of(value));
     }
 
     public static Filter le(String property, double value) {
-      return new Filter(property, Operator.LESS_THAN, of(value), null);
+      return new Filter(property, Operator.LESS_THAN, of(value));
     }
 
     public static Filter le(String property, boolean value) {
-      return new Filter(property, Operator.LESS_THAN, of(value), null);
+      return new Filter(property, Operator.LESS_THAN, of(value));
     }
 
     public static Filter le(String property, DateTime value) {
-      return new Filter(property, Operator.LESS_THAN, of(value), null);
+      return new Filter(property, Operator.LESS_THAN, of(value));
     }
 
     public static Filter le(String property, Key value) {
-      return new Filter(property, Operator.LESS_THAN, of(value), null);
+      return new Filter(property, Operator.LESS_THAN, of(value));
     }
 
     public static Filter le(String property, Blob value) {
-      return new Filter(property, Operator.LESS_THAN, of(value), null);
+      return new Filter(property, Operator.LESS_THAN, of(value));
     }
 
     public static Filter lte(String property, Value<?> value) {
-      return new Filter(property, Operator.LESS_THAN_OR_EQUAL, value, null);
+      return new Filter(property, Operator.LESS_THAN_OR_EQUAL, value);
+    }
+
+    public static Filter lte(String property, String value) {
+      return new Filter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter lte(String property, long value) {
+      return new Filter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter lte(String property, double value) {
+      return new Filter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter lte(String property, boolean value) {
+      return new Filter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter lte(String property, DateTime value) {
+      return new Filter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter lte(String property, Key value) {
+      return new Filter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter lte(String property, Blob value) {
+      return new Filter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
     public static Filter gt(String property, Value<?> value) {
-      return new Filter(property, Operator.GREATER_THAN, value, null);
+      return new Filter(property, Operator.GREATER_THAN, value);
+    }
+
+    public static Filter gt(String property, String value) {
+      return new Filter(property, Operator.GREATER_THAN, of(value));
+    }
+
+    public static Filter gt(String property, long value) {
+      return new Filter(property, Operator.GREATER_THAN, of(value));
+    }
+
+    public static Filter gt(String property, double value) {
+      return new Filter(property, Operator.GREATER_THAN, of(value));
+    }
+
+    public static Filter gt(String property, boolean value) {
+      return new Filter(property, Operator.GREATER_THAN, of(value));
+    }
+
+    public static Filter gt(String property, DateTime value) {
+      return new Filter(property, Operator.GREATER_THAN, of(value));
+    }
+
+    public static Filter gt(String property, Key value) {
+      return new Filter(property, Operator.GREATER_THAN, of(value));
+    }
+
+    public static Filter gt(String property, Blob value) {
+      return new Filter(property, Operator.GREATER_THAN, of(value));
     }
 
     public static Filter gte(String property, Value<?> value) {
-      return new Filter(property, Operator.GREATER_THAN_OR_EQUAL, value, null);
+      return new Filter(property, Operator.GREATER_THAN_OR_EQUAL, value);
+    }
+
+    public static Filter gte(String property, String value) {
+      return new Filter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter gte(String property, long value) {
+      return new Filter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter gte(String property, double value) {
+      return new Filter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter gte(String property, boolean value) {
+      return new Filter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter gte(String property, DateTime value) {
+      return new Filter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter gte(String property, Key value) {
+      return new Filter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
+    }
+
+    public static Filter gte(String property, Blob value) {
+      return new Filter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
     public static Filter eq(String property, Value<?> value) {
-      return new Filter(property, Operator.EQUAL, value, null);
+      return new Filter(property, Operator.EQUAL, value);
+    }
+
+    public static Filter eq(String property, String value) {
+      return new Filter(property, Operator.EQUAL, of(value));
+    }
+
+    public static Filter eq(String property, long value) {
+      return new Filter(property, Operator.EQUAL, of(value));
+    }
+
+    public static Filter eq(String property, double value) {
+      return new Filter(property, Operator.EQUAL, of(value));
+    }
+
+    public static Filter eq(String property, boolean value) {
+      return new Filter(property, Operator.EQUAL, of(value));
+    }
+
+    public static Filter eq(String property, DateTime value) {
+      return new Filter(property, Operator.EQUAL, of(value));
+    }
+
+    public static Filter eq(String property, Key value) {
+      return new Filter(property, Operator.EQUAL, of(value));
+    }
+
+    public static Filter eq(String property, Blob value) {
+      return new Filter(property, Operator.EQUAL, of(value));
     }
 
     public static Filter hasAncestor(String property) {
-      return new Filter(property, Operator.HAS_ANCESTOR, null, null);
+      return new Filter(property, Operator.HAS_ANCESTOR);
     }
 
     public static Filter isNull(String property) {
-      return new Filter(property, Operator.IS_NULL, null, null);
+      return new Filter(property, Operator.IS_NULL);
     }
 
     public static Filter and(Filter first, Filter... other) {
       Set<Filter> combined = new LinkedHashSet<>();
       for (Filter f : Iterables.concat(Collections.singleton(first), Arrays.asList(other))) {
         while (f != null) {
-          combined.add(new Filter(f.property, f.operator, f.value, null));
+          combined.add(new Filter(f, null));
           f = f.next;
         }
       }
@@ -158,12 +307,12 @@ public final class StructuredQuery<T> extends Query<T> {
         stack.push(f);
       }
       while (true) {
-        Filter f1 = stack.pop();
+        Filter top = stack.pop();
         if (stack.isEmpty()) {
-          return f1;
+          return top;
         }
-        Filter f2 = stack.pop();
-        stack.push(new Filter(f2.property, f2.operator, f2.value, f1));
+        Filter beforeTop = stack.pop();
+        stack.push(new Filter(beforeTop, top));
       }
     }
   }
@@ -219,7 +368,7 @@ public final class StructuredQuery<T> extends Query<T> {
     }
   }
 
-  static class Builder {
+  static class Builder<B extends Builder<B>> {
 
     private String namespace;
     private String kind;
@@ -227,62 +376,68 @@ public final class StructuredQuery<T> extends Query<T> {
     private Cursor endCursor;
     private Integer offset;
     private Integer limit;
+    private Filter filter;
+    private List<OrderBy> orderBy = new LinkedList<>();
 
-    public Builder namespace(String namespace) {
+    @SuppressWarnings("unchecked")
+    protected B self() {
+      return (B) this;
+    }
+
+    public B namespace(String namespace) {
       this.namespace = namespace;
-      return this;
+      return self();
     }
 
-    public Builder kind(String kind) {
+    public B kind(String kind) {
       this.kind = kind;
-      return this;
+      return self();
     }
 
-    public Builder startCursor(Cursor startCursor) {
+    public B startCursor(Cursor startCursor) {
       this.startCursor = startCursor;
-      return this;
+      return self();
     }
 
-    public Builder encCursor(Cursor endCursor) {
+    public B encCursor(Cursor endCursor) {
       this.endCursor = endCursor;
-      return this;
+      return self();
     }
 
-    public Builder offset(Integer offset) {
+    public B offset(Integer offset) {
       Preconditions.checkArgument(offset == null || offset >= 0, "offset must not be negative");
       this.offset = offset;
-      return this;
+      return self();
     }
 
-    public Builder limit(Integer limit) {
+    public B limit(Integer limit) {
       Preconditions.checkArgument(limit == null || offset > 0, "limit must be positive");
       this.limit = limit;
-      return this;
+      return self();
     }
 
-    /*
-    public StructuredQuery<Entity> full() {
-      return new StructuredQuery<>(ResultType.full(), this, false);
+    public B filter(Filter filter) {
+      this.filter = filter;
+      return self();
     }
 
-    public StructuredQuery<PartialEntity> projection(String projection, String... other) {
-      ImmutableSet<String> projections =
-          ImmutableSet.<String>builder().add(projection).add(other).build();
-      return new StructuredQuery<>(ResultType.projection(), this, projections);
+    public B clearOrderBy() {
+      orderBy.clear();
+      return self();
     }
 
-    public StructuredQuery<Key> keyOnly() {
-      return new StructuredQuery<>(ResultType.keyOnly(), this, true);
+    public B addOrderBy(OrderBy orderBy, OrderBy... others) {
+      this.orderBy.add(orderBy);
+      for (OrderBy other : others) {
+        this.orderBy.add(other);
+      }
+      return self();
     }
-    */
   }
-
-
 
   private StructuredQuery(ResultType<T> resultType, boolean keysOnly, String namespace, String kind,
       Cursor startCursor, Cursor endCursor, Integer offset, Integer limit,
-      ImmutableList<String> projection, Filter filter, ImmutableList<String> groupBy,
-      ImmutableList<OrderBy> orderBy) {
+      Filter filter, ImmutableList<OrderBy> orderBy) {
     super(resultType, namespace);
     this.keysOnly = keysOnly;
     this.kind = kind;
@@ -290,17 +445,14 @@ public final class StructuredQuery<T> extends Query<T> {
     this.endCursor = endCursor;
     this.offset = offset;
     this.limit = limit;
-    this.projection = projection;
     this.filter = filter;
-    this.groupBy = groupBy;
     this.orderBy = orderBy;
-    Preconditions.checkState(keysOnly == false || projection.isEmpty() && groupBy.isEmpty(),
-        "projection or group by are not applicable for keys-only queries");
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(namespace(), keysOnly, kind, startCursor, endCursor, offset, limit, projection, filter, groupBy, orderBy);
+    return Objects.hash(
+        namespace(), keysOnly, kind, startCursor, endCursor, offset, limit, filter, orderBy);
   }
 
   @Override
@@ -318,19 +470,18 @@ public final class StructuredQuery<T> extends Query<T> {
         && Objects.equals(endCursor, other.endCursor)
         && Objects.equals(offset, other.offset)
         && Objects.equals(limit, other.limit)
-        && Objects.equals(projection, other.projection)
         && Objects.equals(filter, other.filter)
-        && Objects.equals(groupBy, other.groupBy)
         && Objects.equals(orderBy, other.orderBy);
   }
 
   @Override
-  protected void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb, int totalRead,
-      ByteString batchCursor) {
-    if (batchCursor == null) {
-      requestPb.setQuery(toPb());
-      return;
-    }
+  protected void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb) {
+    requestPb.setQuery(toPb());
+  }
+
+  @Override
+  protected GqlQuery<T> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
+    // TODO: implment
     throw new UnsupportedOperationException("paging not implemented yet");
   }
 
@@ -357,6 +508,12 @@ public final class StructuredQuery<T> extends Query<T> {
     }
     if (limit != null) {
       queryPb.setLimit(limit);
+    }
+    if (filter != null) {
+      DatastoreV1.Filter.Builder filterPb = queryPb.getFilterBuilder();
+      if (filter.next == null) {
+        // TODO
+      }
     }
     // TODO: projection, filter, groupBy, orderBy (or keys-only)
     return queryPb.build();

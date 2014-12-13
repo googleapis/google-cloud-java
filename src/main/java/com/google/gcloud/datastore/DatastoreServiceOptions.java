@@ -2,27 +2,21 @@ package com.google.gcloud.datastore;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.gcloud.datastore.Validator.validateDataset;
+import static com.google.gcloud.datastore.Validator.validateNamespace;
 
 import com.google.api.services.datastore.client.DatastoreOptions;
-import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
 
 import java.lang.reflect.Method;
 import java.util.Set;
-import java.util.regex.Pattern;
 
 public class DatastoreServiceOptions extends ServiceOptions {
 
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final String USERINFO_SCOPE = "https://www.googleapis.com/auth/userinfo.email";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE, USERINFO_SCOPE);
-  private static final Pattern DATASET_PATTERN = Pattern.compile(
-      "([a-z\\d\\-]{1,100}~)?([a-z\\d][a-z\\d\\-\\.]{0,99}\\:)?([a-z\\d][a-z\\d\\-]{0,99})");
-  private static final int MAX_NAMESPACE_LENGTH = 100;
-  private static final Pattern NAMESPACE_PATTERN =
-      Pattern.compile(String.format("[0-9A-Za-z\\._\\-]{0,%d}", MAX_NAMESPACE_LENGTH));
-
   private final String dataset;
   private final String namespace;
   private final boolean force;
@@ -76,24 +70,6 @@ public class DatastoreServiceOptions extends ServiceOptions {
   }
 
   public String namespace() {
-    return namespace;
-  }
-
-  static String validateDataset(String dataset) {
-    checkArgument(!Strings.isNullOrEmpty(dataset), "dataset can't be empty or null");
-    checkArgument(DATASET_PATTERN.matcher(dataset).matches(),
-          "dataset must match the following pattern: " + DATASET_PATTERN.pattern());
-    return dataset;
-  }
-
-  static String validateNamespace(String namespace) {
-    if (namespace != null) {
-      checkArgument(!namespace.isEmpty(), "namespace must not be an empty string");
-      checkArgument(namespace.length() <= 100,
-          "namespace must not contain more than 100 characters");
-      checkArgument(NAMESPACE_PATTERN.matcher(namespace).matches(),
-          "namespace must the following pattern: " + NAMESPACE_PATTERN.pattern());
-    }
     return namespace;
   }
 

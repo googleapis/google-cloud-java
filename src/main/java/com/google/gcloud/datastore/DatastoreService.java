@@ -10,7 +10,7 @@ public interface DatastoreService extends DatastoreReader, DatastoreWriter {
   /**
    * Returns the {@code DatastoreServiceOptions} for this service.
    */
-  DatastoreServiceOptions getOptions();
+  DatastoreServiceOptions options();
 
   /**
    * Returns a key builder for the requested {@code kind}.

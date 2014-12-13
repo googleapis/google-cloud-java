@@ -1,8 +1,9 @@
 package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.gcloud.datastore.DatastoreServiceOptions.validateDataset;
-import static com.google.gcloud.datastore.DatastoreServiceOptions.validateNamespace;
+import static com.google.gcloud.datastore.Validator.validateDataset;
+import static com.google.gcloud.datastore.Validator.validateKind;
+import static com.google.gcloud.datastore.Validator.validateNamespace;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
@@ -82,12 +83,6 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
     public B kind(String kind) {
       this.kind = validateKind(kind);
       return self();
-    }
-
-    private String validateKind(String kind) {
-      checkArgument(!Strings.isNullOrEmpty(kind), "kind must not be empty or null");
-      checkArgument(kind.length() <= 500, "kind must not contain more than 500 characters");
-      return kind;
     }
 
     public B clearPath() {

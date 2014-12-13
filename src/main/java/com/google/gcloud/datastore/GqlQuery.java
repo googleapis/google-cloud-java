@@ -1,6 +1,7 @@
 package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.gcloud.datastore.Validator.validateNamespace;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.MoreObjects;
@@ -10,7 +11,6 @@ import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.util.ArrayList;
@@ -134,7 +134,7 @@ public final class GqlQuery<T> extends Query<T> {
     }
 
     public Builder<T> namespace(String namespace) {
-      this.namespace = namespace;
+      this.namespace = validateNamespace(namespace);
       return this;
     }
 
@@ -239,13 +239,13 @@ public final class GqlQuery<T> extends Query<T> {
       return this;
     }
 
+    public GqlQuery<T> build() {
+      return new GqlQuery<>(this);
+    }
+
     @SuppressWarnings("rawtypes")
     private static Argument toArgument(Value.BuilderFactory builderFactory, List<?> values) {
       return toArgument(null, builderFactory, values);
-    }
-
-    public GqlQuery<T> build() {
-      return new GqlQuery<>(this);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
@@ -341,14 +341,29 @@ public final class GqlQuery<T> extends Query<T> {
   }
 
   @Override
-  protected void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb, int totalRead,
-      ByteString batchCursor) {
-    if (batchCursor == null) {
-      requestPb.setGqlQuery(toPb());
-      return;
-    }
-    // see b/18705483
+  protected void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb) {
+    requestPb.setGqlQuery(toPb());
+  }
+
+  @Override
+  protected GqlQuery<T> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
     throw new UnsupportedOperationException("paging not implemented yet");
+    /*
+    // TODO: THIS IS A MAJOR HACK, remove when possible. see b/18705483
+    String PREFIX_GROUP = "\\s*(?<prefix>SELECT .*?)";
+    String OFFSET_GROUP =
+        "(\\s+OFFSET\\s+(?<offset1>[^\\s]+)(\\s+\\+\\s+(?<offset2>[^\\s]+))?)?";
+    String LIMIT_GROUP =
+        "(\\s+LIMIT\\s+((?<limit1>[^\\s]+)|FIRST \\((?<limit2>[^,]+,[^\\)]+)\\)))?\\s*";
+    Pattern pattern =
+        Pattern.compile(PREFIX_GROUP + OFFSET_GROUP + LIMIT_GROUP, Pattern.CASE_INSENSITIVE);
+
+    Matcher matcher = pattern.matcher(queryString);
+
+    if (!matcher.matches()) {
+      throw new UnsupportedOperationException("paging for this query is not implemented yet");
+    }
+    */
   }
 
   @Override

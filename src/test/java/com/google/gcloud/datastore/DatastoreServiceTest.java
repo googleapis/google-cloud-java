@@ -73,7 +73,7 @@ public class DatastoreServiceTest {
 
   @Test
   public void testGetOptions() {
-    assertSame(options, datastore.getOptions());
+    assertSame(options, datastore.options());
   }
 
   @Test

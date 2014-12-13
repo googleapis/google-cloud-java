@@ -27,7 +27,7 @@ class BatchWriterImpl implements BatchWriter {
     if (optionsMap.containsKey(ForceWrites.class)) {
       force = ((ForceWrites) optionsMap.get(ForceWrites.class)).force();
     } else {
-      force = datastore.getOptions().force();
+      force = datastore.options().force();
     }
   }
 

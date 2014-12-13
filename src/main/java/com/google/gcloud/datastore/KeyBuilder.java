@@ -16,9 +16,9 @@ public final class KeyBuilder extends BaseKey.Builder<PartialKey, KeyBuilder> {
    * Constructing a KeyBuilder.
    */
   public KeyBuilder(DatastoreService service, String kind) {
-    super(checkNotNull(service).getOptions().dataset(), kind);
+    super(checkNotNull(service).options().dataset(), kind);
     this.service = service;
-    namespace(service.getOptions().namespace());
+    namespace(service.options().namespace());
   }
 
   @Override

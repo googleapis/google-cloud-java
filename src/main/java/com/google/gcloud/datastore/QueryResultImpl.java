@@ -13,9 +13,10 @@ class QueryResultImpl<T> implements QueryResult<T> {
       RESULT_TYPE_CONVERTER;
 
   private final DatastoreServiceImpl datastore;
-  private final Query<T> query;
+  private final DatastoreV1.ReadOptions readOptionsPb;
   private final QueryResult.Type type;
-  private DatastoreV1.RunQueryRequest requestPb;
+  private Query<T> query;
+  private DatastoreV1.QueryResultBatch resultPb;
   private Iterator<DatastoreV1.EntityResult> entityResultPbIter;
   private ByteString endCursor;
   private int count;
@@ -29,37 +30,52 @@ class QueryResultImpl<T> implements QueryResult<T> {
     RESULT_TYPE_CONVERTER = builder.build();
   }
 
-  QueryResultImpl(DatastoreServiceImpl datastore, Query<T> query,
-      DatastoreV1.RunQueryRequest requestPb, DatastoreV1.QueryResultBatch resultPb) {
+  QueryResultImpl(DatastoreServiceImpl datastore, DatastoreV1.ReadOptions readOptionsPb,
+      Query<T> query) {
     this.datastore = datastore;
+    this.readOptionsPb = readOptionsPb;
     this.query = query;
-    this.requestPb = requestPb;
+    sendRequest();
     type = RESULT_TYPE_CONVERTER.get(resultPb.getEntityResultType());
     Preconditions.checkState(query.resultType().getType() == null
         || query.resultType().getType() == type, "Unexpected result type");
   }
 
-  void setQueryResultBatch(DatastoreV1.QueryResultBatch resultPb) {
+  private DatastoreV1.QueryResultBatch sendRequest() {
+    DatastoreV1.RunQueryRequest.Builder requestPb = DatastoreV1.RunQueryRequest.newBuilder();
+    if (readOptionsPb != null) {
+      requestPb.setReadOptions(readOptionsPb);
+    }
+    DatastoreV1.PartitionId.Builder partitionIdPb = DatastoreV1.PartitionId.newBuilder();
+    partitionIdPb.setDatasetId(datastore.options().dataset());
+    String namespace = query.namespace() != null
+        ? query.namespace()
+        : datastore.options().namespace();
+    if (namespace != null) {
+      partitionIdPb.setNamespace(namespace);
+    }
+    requestPb.setPartitionId(partitionIdPb.build());
+    query.populatePb(requestPb);
+    resultPb = datastore.runQuery(requestPb.build()).getBatch();
     entityResultPbIter = resultPb.getEntityResultList().iterator();
     if (DatastoreV1.QueryResultBatch.MoreResultsType.NOT_FINISHED == resultPb.getMoreResults()) {
       endCursor = resultPb.getEndCursor();
+    } else {
+      endCursor = null;
     }
+    return resultPb;
   }
 
   @Override
   public boolean hasNext() {
-    return entityResultPbIter.hasNext()  || endCursor != null;
+    return entityResultPbIter.hasNext() || endCursor != null;
   }
 
   @Override
   public T next() {
     if (!hasNext() && endCursor != null) {
-      DatastoreV1.RunQueryRequest.Builder requestPbBuilder = requestPb.toBuilder();
-      query.populatePb(requestPbBuilder, count, endCursor);
-      DatastoreV1.RunQueryRequest newRequestPb = requestPbBuilder.build();
-      DatastoreV1.RunQueryResponse responsePb = datastore.runQuery(newRequestPb);
-      requestPb = newRequestPb;
-      setQueryResultBatch(responsePb.getBatch());
+      query = query.nextQuery(resultPb);
+      sendRequest();
     }
     DatastoreV1.Entity entity = entityResultPbIter.next().getEntity();
     count++;
