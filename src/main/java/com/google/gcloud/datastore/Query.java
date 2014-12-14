@@ -1,11 +1,10 @@
 package com.google.gcloud.datastore;
 
-import static com.google.api.client.util.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
-import com.google.gcloud.datastore.QueryResult.Type;
 import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -21,59 +20,134 @@ public abstract class Query<T> extends Serializable<GeneratedMessage> {
 
   private static final long serialVersionUID = -2748141759901313101L;
 
-  private final ResultType<T> resultType;
+  private final ResultClass<T> resultClass;
   private final String namespace;
 
-  public static class ResultType<T> implements java.io.Serializable {
+  public static class ResultClass<T> implements java.io.Serializable {
 
     private static final long serialVersionUID = 2104157695425806623L;
-    private static final ResultType<?> UNKNOWN = new ResultType<>(null, null);
-    private static final ResultType<Entity> FULL = new ResultType<>(Entity.class, Type.FULL);
-    private static final ResultType<Key> KEY_ONLY = new ResultType<>(Key.class, Type.KEY_ONLY);
-    private static final ResultType<PartialEntity> PROJECTION =
-        new ResultType<>(PartialEntity.class, Type.PROJECTION);
+    private static final ResultClass<?> UNKNOWN = new ResultClass<>(Object.class);
+    private static final ResultClass<Entity> FULL = new ResultClass<>(Entity.class);
+    private static final ResultClass<Key> KEY_ONLY = new ResultClass<>(Key.class);
+    private static final ResultClass<PartialEntity> PROJECTION =
+        new ResultClass<>(PartialEntity.class);
 
+    private final Class<T> value;
 
-    private final Class<T> clazz;
-    private final Type type;
-
-    private ResultType(Class<T> clazz, Type type) {
-      this.clazz = clazz;
-      this.type = type;
+    private ResultClass(Class<T> value) {
+      this.value = checkNotNull(value);
     }
 
-    public Type getType() {
-      return type;
+    public Class<T> value() {
+      return value;
     }
 
-    public Class<T> getResultClass() {
-      return clazz;
+    @Override
+    public int hashCode() {
+      return value.hashCode();
     }
 
-    public static ResultType<?> unknown() {
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof ResultClass)) {
+        return false;
+      }
+      ResultClass<?> other = (ResultClass<?>) obj;
+      return value.equals(other.value);
+    }
+
+    @Override
+    public String toString() {
+      ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
+      toStringHelper.add("value", value);
+      return toStringHelper.toString();
+    }
+
+    boolean isAssignableFrom(ResultClass<?> resultClass) {
+      return value.isAssignableFrom(resultClass.value);
+    }
+
+    static ResultClass<?> unknown() {
       return UNKNOWN;
     }
 
-    public static ResultType<Entity> full() {
+    public static ResultClass<Entity> full() {
       return FULL;
     }
 
-    public static ResultType<PartialEntity> projection() {
+    public static ResultClass<PartialEntity> projection() {
       return PROJECTION;
     }
 
-    public static ResultType<Key> keyOnly() {
+    public static ResultClass<Key> keyOnly() {
       return KEY_ONLY;
     }
   }
 
-  Query(ResultType<T> resultType, String namespace) {
-    this.resultType = checkNotNull(resultType);
+  /**
+   * Possible results types are:
+   *   FULL: A complete {@link Entity}.
+   *   PROJECTION: A partial entity, represented by {@link PartialEntity}.
+   *   KEY_ONLY: An entity's {@link Key}.
+   */
+  public static enum Type {
+
+    FULL {
+      @Override
+      @SuppressWarnings("unchecked")
+      Entity convert(DatastoreV1.Entity value) {
+        return Entity.fromPb(value);
+      }
+
+      @Override
+      ResultClass<Entity> resultClass() {
+        return ResultClass.full();
+      }
+    },
+
+    PROJECTION  {
+
+      @Override
+      @SuppressWarnings("unchecked")
+      PartialEntity convert(DatastoreV1.Entity value) {
+        return PartialEntity.fromPb(value);
+      }
+
+      @Override
+      ResultClass<PartialEntity> resultClass() {
+        return ResultClass.projection();
+      }
+    },
+
+    KEY_ONLY {
+
+      @Override
+      @SuppressWarnings("unchecked")
+      Key convert(DatastoreV1.Entity value) {
+        return Key.fromPb(value.getKey());
+      }
+
+      @Override
+      ResultClass<PartialEntity> resultClass() {
+        return ResultClass.projection();
+      }
+    };
+
+    abstract <T> T convert(DatastoreV1.Entity value);
+
+    abstract ResultClass<?> resultClass();
+  }
+
+  Query(ResultClass<T> resultClass, String namespace) {
+    this.resultClass = checkNotNull(resultClass);
     this.namespace = namespace;
   }
 
-  public ResultType<T> resultType() {
-    return resultType;
+  ResultClass<T> getResultClass() {
+    return resultClass;
   }
 
   public String namespace() {
@@ -90,10 +164,10 @@ public abstract class Query<T> extends Serializable<GeneratedMessage> {
 
   @Override
   protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(resultType, namespace, bytesPb);
+    return fromPb(resultClass, namespace, bytesPb);
   }
 
-  protected abstract Object fromPb(ResultType<T> resultType, String namespace, byte[] bytesPb)
+  protected abstract Object fromPb(ResultClass<T> resultClass, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException;
 
   protected abstract void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb);

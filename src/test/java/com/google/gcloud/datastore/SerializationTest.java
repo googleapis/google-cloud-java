@@ -7,7 +7,7 @@ import static org.junit.Assert.assertNotSame;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import com.google.gcloud.datastore.Query.ResultType;
+import com.google.gcloud.datastore.Query.ResultClass;
 import com.google.gcloud.datastore.Value.Type;
 
 import org.junit.Test;
@@ -35,11 +35,16 @@ public class SerializationTest {
       .namespace("ns1")
       .build();
   private static final Query<Entity> GQL2 =
-      GqlQuery.builder(ResultType.full(), "select * from kind1 where name = @name and age > @1")
+      GqlQuery.builder(ResultClass.full(), "select * from kind1 where name = @name and age > @1")
       .setArgument("name", "name1")
       .addArgument(20)
       .namespace("ns1")
       .build();
+  private static final Query<Entity> QUERY1 = StructuredQuery.builder().kind("kind1").build();
+  private static final Query<Key> QUERY2 = StructuredQuery.keyOnlyBuilder().kind("k").filter(
+      StructuredQuery.PropertyFilter.eq("p1", "hello")).build();
+  private static final Query<PartialEntity> QUERY3 =
+      StructuredQuery.projectionBuilder().kind("k").projection("p").build();
   private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
   private static final NullValue NULL_VALUE = NullValue.builder().indexed(true).build();
   private static final StringValue STRING_VALUE = StringValue.of("hello");
@@ -108,7 +113,7 @@ public class SerializationTest {
   public void testTypes() throws Exception {
     Object[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
         ENTITY3, EMBEDDED_ENTITY1, EMBEDDED_ENTITY2, EMBEDDED_ENTITY3, DATE_TIME1,
-        BLOB1, CURSOR1, GQL1, GQL2};
+        BLOB1, CURSOR1, GQL1, GQL2, QUERY1, QUERY2, QUERY3};
     for (Object obj : types) {
       Object copy = serialiazeAndDeserialize(obj);
       assertEquals(obj, obj);

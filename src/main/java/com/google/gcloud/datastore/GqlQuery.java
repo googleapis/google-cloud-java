@@ -116,15 +116,15 @@ public final class GqlQuery<T> extends Query<T> {
    */
   public static final class Builder<T> {
 
-    private final ResultType<T> resultType;
+    private final ResultClass<T> resultClass;
     private String namespace;
     private String queryString;
     private boolean allowLiteral;
     private Map<String, Argument> nameArgs = new TreeMap<>();
     private List<Argument> numberArgs = new LinkedList<>();
 
-    Builder(ResultType<T> resultType, String query) {
-      this.resultType = resultType;
+    Builder(ResultClass<T> resultClass, String query) {
+      this.resultClass = checkNotNull(resultClass);
       queryString = checkNotNull(query);
     }
 
@@ -268,7 +268,7 @@ public final class GqlQuery<T> extends Query<T> {
   }
 
   private GqlQuery(Builder<T> builder) {
-    super(builder.resultType, builder.namespace);
+    super(builder.resultClass, builder.namespace);
     queryString = builder.queryString;
     allowLiteral = builder.allowLiteral;
     nameArgs = ImmutableList.copyOf(builder.nameArgs.values());
@@ -367,12 +367,12 @@ public final class GqlQuery<T> extends Query<T> {
   }
 
   @Override
-  protected Object fromPb(ResultType<T> resultType, String namespace, byte[] bytesPb)
+  protected Object fromPb(ResultClass<T> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
     return fromPb(resultType, namespace, DatastoreV1.GqlQuery.parseFrom(bytesPb));
   }
 
-  static <T> GqlQuery<T> fromPb(ResultType<T> resultType, String namespace,
+  static <T> GqlQuery<T> fromPb(ResultClass<T> resultType, String namespace,
       DatastoreV1.GqlQuery queryPb) {
     Builder<T> builder = new Builder<>(resultType, queryPb.getQueryString());
     builder.namespace(namespace);
@@ -396,7 +396,7 @@ public final class GqlQuery<T> extends Query<T> {
    * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
    */
   public static GqlQuery.Builder<?> builder(String gql) {
-    return builder(ResultType.unknown(), gql);
+    return builder(ResultClass.unknown(), gql);
   }
 
   /**
@@ -404,7 +404,7 @@ public final class GqlQuery<T> extends Query<T> {
    *
    * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
    */
-  public static <T> GqlQuery.Builder<T> builder(ResultType<T> resultType, String gql) {
-    return new GqlQuery.Builder<>(resultType, gql);
+  public static <T> GqlQuery.Builder<T> builder(ResultClass<T> resultClass, String gql) {
+    return new GqlQuery.Builder<>(resultClass, gql);
   }
 }

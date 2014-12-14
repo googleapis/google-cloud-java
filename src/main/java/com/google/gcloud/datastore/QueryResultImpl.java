@@ -9,23 +9,24 @@ import java.util.Iterator;
 
 class QueryResultImpl<T> implements QueryResult<T> {
 
-  private static final ImmutableMap<DatastoreV1.EntityResult.ResultType, QueryResult.Type>
+  private static final ImmutableMap<DatastoreV1.EntityResult.ResultType, Query.Type>
       RESULT_TYPE_CONVERTER;
 
   private final DatastoreServiceImpl datastore;
   private final DatastoreV1.ReadOptions readOptionsPb;
-  private final QueryResult.Type type;
+  private final Query.ResultClass<T> resultClass;
   private Query<T> query;
+  private Query.Type type;
   private DatastoreV1.QueryResultBatch resultPb;
   private Iterator<DatastoreV1.EntityResult> entityResultPbIter;
   private ByteString endCursor;
   private int count;
 
   static {
-    ImmutableMap.Builder<DatastoreV1.EntityResult.ResultType, QueryResult.Type> builder =
+    ImmutableMap.Builder<DatastoreV1.EntityResult.ResultType, Query.Type> builder =
         ImmutableMap.builder();
     for (DatastoreV1.EntityResult.ResultType type : DatastoreV1.EntityResult.ResultType.values()) {
-      builder.put(type, QueryResult.Type.valueOf(type.name()));
+      builder.put(type, Query.Type.valueOf(type.name()));
     }
     RESULT_TYPE_CONVERTER = builder.build();
   }
@@ -35,10 +36,8 @@ class QueryResultImpl<T> implements QueryResult<T> {
     this.datastore = datastore;
     this.readOptionsPb = readOptionsPb;
     this.query = query;
+    this.resultClass = query.getResultClass();
     sendRequest();
-    type = RESULT_TYPE_CONVERTER.get(resultPb.getEntityResultType());
-    Preconditions.checkState(query.resultType().getType() == null
-        || query.resultType().getType() == type, "Unexpected result type");
   }
 
   private DatastoreV1.QueryResultBatch sendRequest() {
@@ -63,6 +62,9 @@ class QueryResultImpl<T> implements QueryResult<T> {
     } else {
       endCursor = null;
     }
+    type = RESULT_TYPE_CONVERTER.get(resultPb.getEntityResultType());
+    Preconditions.checkState(resultClass.isAssignableFrom(type.resultClass()),
+        "Unexpected result type");
     return resultPb;
   }
 
@@ -88,7 +90,7 @@ class QueryResultImpl<T> implements QueryResult<T> {
   }
 
   @Override
-  public QueryResult.Type getType() {
+  public Query.Type getType() {
     return type;
   }
 
