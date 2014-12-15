@@ -9,8 +9,10 @@ import static com.google.gcloud.datastore.KeyValue.of;
 import static com.google.gcloud.datastore.LongValue.of;
 import static com.google.gcloud.datastore.StringValue.of;
 
-import com.google.api.client.util.Preconditions;
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -23,9 +25,10 @@ import java.util.Objects;
 public abstract class StructuredQuery<T> extends Query<T> {
 
   private static final long serialVersionUID = 546838955624019594L;
+  private static final String KEY_PROPERTY_NAME = "__key__";
 
   private final transient String kind;
-  private final ImmutableList<String> projection;
+  private final ImmutableList<Projection> projection;
   private final transient Filter filter;
   private final ImmutableList<String> groupBy;
   private final transient ImmutableList<OrderBy> orderBy;
@@ -33,7 +36,6 @@ public abstract class StructuredQuery<T> extends Query<T> {
   private final transient Cursor endCursor;
   private final transient Integer offset;
   private final transient Integer limit;
-
 
   public abstract static class Filter implements Serializable {
 
@@ -43,6 +45,13 @@ public abstract class StructuredQuery<T> extends Query<T> {
     }
 
     protected abstract DatastoreV1.Filter toPb();
+
+    static Filter fromPb(DatastoreV1.Filter filterPb) {
+      if (filterPb.hasCompositeFilter()) {
+        return CompositeFilter.fromPb(filterPb.getCompositeFilter());
+      }
+      return PropertyFilter.fromPb(filterPb.getPropertyFilter());
+    }
   }
 
   public static final class CompositeFilter extends Filter {
@@ -57,12 +66,31 @@ public abstract class StructuredQuery<T> extends Query<T> {
       DatastoreV1.CompositeFilter.Operator toPb() {
         return DatastoreV1.CompositeFilter.Operator.valueOf(name());
       }
+
+      static Operator fromPb(DatastoreV1.CompositeFilter.Operator operatorPb) {
+        return valueOf(operatorPb.name());
+      }
     }
 
     private CompositeFilter(Operator operator, Filter first, Filter... other) {
       this.operator = operator;
       this.filters =
           ImmutableList.<Filter>builder().add(first).addAll(Arrays.asList(other)).build();
+    }
+
+    private CompositeFilter(Operator operator, ImmutableList<Filter> filters) {
+      this.operator = operator;
+      this.filters = filters;
+      Preconditions.checkArgument(!filters.isEmpty(), "filters list must not be empty");
+    }
+
+    static CompositeFilter fromPb(DatastoreV1.CompositeFilter compositeFilterPb) {
+      Operator operator = Operator.fromPb(compositeFilterPb.getOperator());
+      ImmutableList.Builder<Filter> filters = ImmutableList.builder();
+      for (DatastoreV1.Filter filterPb : compositeFilterPb.getFilterList()) {
+        filters.add(Filter.fromPb(filterPb));
+      }
+      return new CompositeFilter(operator, filters.build());
     }
 
     public static CompositeFilter and(Filter first, Filter... other) {
@@ -95,16 +123,14 @@ public abstract class StructuredQuery<T> extends Query<T> {
       GREATER_THAN,
       GREATER_THAN_OR_EQUAL,
       EQUAL,
-      HAS_ANCESTOR,
-      IS_NULL {
-        @Override
-        public DatastoreV1.PropertyFilter.Operator toPb() {
-          return DatastoreV1.PropertyFilter.Operator.valueOf(EQUAL.name());
-        }
-      };
+      HAS_ANCESTOR;
 
-      public DatastoreV1.PropertyFilter.Operator toPb() {
+      DatastoreV1.PropertyFilter.Operator toPb() {
         return DatastoreV1.PropertyFilter.Operator.valueOf(name());
+      }
+
+      static Operator fromPb(DatastoreV1.PropertyFilter.Operator operatorPb) {
+        return valueOf(operatorPb.name());
       }
     }
 
@@ -114,10 +140,11 @@ public abstract class StructuredQuery<T> extends Query<T> {
       this.value = checkNotNull(value);
     }
 
-    private PropertyFilter(String property, Operator operator) {
-      this.property = checkNotNull(property);
-      this.operator = checkNotNull(operator);
-      this.value = null;
+    public static PropertyFilter fromPb(DatastoreV1.PropertyFilter propertyFilterPb) {
+      String property = propertyFilterPb.getProperty().getName();
+      Operator operator = Operator.fromPb(propertyFilterPb.getOperator());
+      Value<?> value = Value.fromPb(propertyFilterPb.getValue());
+      return new PropertyFilter(property, operator, value);
     }
 
     @Override
@@ -299,12 +326,12 @@ public abstract class StructuredQuery<T> extends Query<T> {
       return new PropertyFilter(property, Operator.EQUAL, of(value));
     }
 
-    public static PropertyFilter hasAncestor(String property) {
-      return new PropertyFilter(property, Operator.HAS_ANCESTOR);
+    public static PropertyFilter hasAncestor(String property, Key key) {
+      return new PropertyFilter(property, Operator.HAS_ANCESTOR, of(key));
     }
 
     public static PropertyFilter isNull(String property) {
-      return new PropertyFilter(property, Operator.IS_NULL, NullValue.of());
+      return new PropertyFilter(property, Operator.EQUAL, NullValue.of());
     }
 
     @Override
@@ -328,7 +355,16 @@ public abstract class StructuredQuery<T> extends Query<T> {
     private final Direction direction;
 
     public enum Direction {
-      ASC, DESC
+
+      ASCENDING, DESCENDING;
+
+      DatastoreV1.PropertyOrder.Direction toPb() {
+        return DatastoreV1.PropertyOrder.Direction.valueOf(name());
+      }
+
+      static Direction fromPb(DatastoreV1.PropertyOrder.Direction directionPb) {
+        return valueOf(directionPb.name());
+      }
     }
 
     public OrderBy(String property, Direction direction) {
@@ -362,21 +398,120 @@ public abstract class StructuredQuery<T> extends Query<T> {
       return direction;
     }
 
+    DatastoreV1.PropertyOrder toPb() {
+      return DatastoreV1.PropertyOrder.newBuilder()
+          .setDirection(direction.toPb())
+          .setProperty(DatastoreV1.PropertyReference.newBuilder().setName(property).build())
+          .build();
+    }
+
     public static OrderBy asc(String property) {
-      return new OrderBy(property, OrderBy.Direction.ASC);
+      return new OrderBy(property, OrderBy.Direction.ASCENDING);
     }
 
     public static OrderBy desc(String property) {
-      return new OrderBy(property, OrderBy.Direction.DESC);
+      return new OrderBy(property, OrderBy.Direction.DESCENDING);
+    }
+
+    static OrderBy fromPb(DatastoreV1.PropertyOrder propertyOrderPb) {
+      String property = propertyOrderPb.getProperty().getName();
+      Direction direction = Direction.fromPb(propertyOrderPb.getDirection());
+      return new OrderBy(property, direction);
     }
   }
 
-  abstract static class BaseBuilder<T, B extends BaseBuilder<T, B>> {
+  public static final class Projection implements Serializable {
+
+    private static final long serialVersionUID = 3083707957256279470L;
+
+    private final Aggregate aggregate;
+    private final String property;
+
+    public enum Aggregate {
+
+      FIRST;
+
+      DatastoreV1.PropertyExpression.AggregationFunction toPb() {
+        return DatastoreV1.PropertyExpression.AggregationFunction.valueOf(name());
+      }
+
+      static Aggregate fromPb(DatastoreV1.PropertyExpression.AggregationFunction aggregatePb) {
+        return valueOf(aggregatePb.name());
+      }
+    }
+
+    private Projection(Aggregate aggregate, String property) {
+      this.aggregate = aggregate;
+      this.property = property;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(property, aggregate);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof Projection)) {
+        return false;
+      }
+      Projection other = (Projection) obj;
+      return Objects.equals(property, other.property)
+          && Objects.equals(aggregate, other.aggregate);
+    }
+
+    @Override
+    public String toString() {
+      ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
+      toStringHelper.add("property", property);
+      if (aggregate != null) {
+        toStringHelper.add("aggregate", aggregate);
+      }
+      return toStringHelper.toString();
+    }
+
+    DatastoreV1.PropertyExpression toPb() {
+      DatastoreV1.PropertyExpression.Builder expressionPb =
+          DatastoreV1.PropertyExpression.newBuilder();
+      if (aggregate != null) {
+        expressionPb.setAggregationFunction(aggregate.toPb());
+      }
+      expressionPb.setProperty(
+          DatastoreV1.PropertyReference.newBuilder().setName(property).build());
+      return expressionPb.build();
+    }
+
+    public static Projection fromPb(DatastoreV1.PropertyExpression propertyExpressionPb) {
+      String property = propertyExpressionPb.getProperty().getName();
+      Aggregate aggregate = null;
+      if (propertyExpressionPb.hasAggregationFunction()) {
+        aggregate = Aggregate.fromPb(propertyExpressionPb.getAggregationFunction());
+      }
+      return new Projection(aggregate, property);
+    }
+
+    public static Projection property(String property) {
+      return new Projection(null, property);
+    }
+
+    public static Projection aggregate(Aggregate aggregate, String property) {
+      return new Projection(aggregate, property);
+    }
+
+    public static Projection first(String property) {
+      return new Projection(Aggregate.FIRST, property);
+    }
+  }
+
+  static abstract class BaseBuilder<T, B extends BaseBuilder<T, B>> {
 
     private ResultClass<T> resultClass;
     private String namespace;
     private String kind;
-    private List<String> projection = new LinkedList<>();
+    private List<Projection> projection = new LinkedList<>();
     private Filter filter;
     private List<String> groupBy = new LinkedList<>();
     private List<OrderBy> orderBy = new LinkedList<>();
@@ -409,7 +544,7 @@ public abstract class StructuredQuery<T> extends Query<T> {
       return self();
     }
 
-    public B encCursor(Cursor endCursor) {
+    public B endCursor(Cursor endCursor) {
       this.endCursor = endCursor;
       return self();
     }
@@ -455,15 +590,15 @@ public abstract class StructuredQuery<T> extends Query<T> {
       return self();
     }
 
-    protected B projection(String property, String... others) {
+    protected B projection(Projection projection, Projection... others) {
       clearProjection();
-      addProjection(property, others);
+      addProjection(projection, others);
       return self();
     }
 
-    protected B addProjection(String property, String... others) {
-      this.projection.add(property);
-      for (String other : others) {
+    protected B addProjection(Projection projection, Projection... others) {
+      this.projection.add(projection);
+      for (Projection other : others) {
         this.projection.add(other);
       }
       return self();
@@ -488,6 +623,37 @@ public abstract class StructuredQuery<T> extends Query<T> {
       return self();
     }
 
+    protected B mergeFrom(DatastoreV1.Query queryPb) {
+      if (queryPb.getKindCount() > 0) {
+        kind(queryPb.getKind(0).getName());
+      }
+      if (queryPb.hasStartCursor()) {
+        startCursor(new Cursor(queryPb.getStartCursor()));
+      }
+      if (queryPb.hasEndCursor()) {
+        endCursor(new Cursor(queryPb.getEndCursor()));
+      }
+      if (queryPb.hasOffset()) {
+        offset(queryPb.getOffset());
+      }
+      if (queryPb.hasLimit()) {
+        limit(queryPb.getLimit());
+      }
+      if (queryPb.hasFilter()) {
+        filter(Filter.fromPb(queryPb.getFilter()));
+      }
+      for (DatastoreV1.PropertyOrder orderByPb : queryPb.getOrderList()) {
+        addOrderBy(OrderBy.fromPb(orderByPb));
+      }
+      for (DatastoreV1.PropertyExpression projectionPb : queryPb.getProjectionList()) {
+        addProjection(Projection.fromPb(projectionPb));
+      }
+      for (DatastoreV1.PropertyReference groupByPb : queryPb.getGroupByList()) {
+        addGroupBy(groupByPb.getName());
+      }
+      return self();
+    }
+
     public abstract StructuredQuery<T> build();
   }
 
@@ -499,6 +665,8 @@ public abstract class StructuredQuery<T> extends Query<T> {
 
     @Override
     public FullQuery build() {
+      clearProjection();
+      clearGroupBy();
       return new FullQuery(this);
     }
   }
@@ -507,11 +675,12 @@ public abstract class StructuredQuery<T> extends Query<T> {
 
     public KeyOnlyQueryBuilder() {
       super(ResultClass.keyOnly());
-      projection("__key__");
     }
 
     @Override
     public KeyOnlyQuery build() {
+      projection(Projection.property(KEY_PROPERTY_NAME));
+      clearGroupBy();
       return new KeyOnlyQuery(this);
     }
   }
@@ -534,13 +703,13 @@ public abstract class StructuredQuery<T> extends Query<T> {
     }
 
     @Override
-    public ProjectionQueryBuilder projection(String property, String... others) {
-      return super.projection(property, others);
+    public ProjectionQueryBuilder projection(Projection projection, Projection... others) {
+      return super.projection(projection, others);
     }
 
     @Override
-    public ProjectionQueryBuilder addProjection(String property, String... others) {
-      return super.addProjection(property, others);
+    public ProjectionQueryBuilder addProjection(Projection projection, Projection... others) {
+      return super.addProjection(projection, others);
     }
 
     @Override
@@ -588,7 +757,7 @@ public abstract class StructuredQuery<T> extends Query<T> {
     }
 
     @Override
-    public List<String> projection() {
+    public List<Projection> projection() {
       return super.projection();
     }
 
@@ -644,10 +813,10 @@ public abstract class StructuredQuery<T> extends Query<T> {
   }
 
   protected boolean keyOnly() {
-    return projection.size() == 1 && projection.get(0).equals("__key__");
+    return projection.size() == 1 && projection.get(0).property.equals(KEY_PROPERTY_NAME);
   }
 
-  protected List<String> projection() {
+  protected List<Projection> projection() {
     return projection;
   }
 
@@ -663,7 +832,7 @@ public abstract class StructuredQuery<T> extends Query<T> {
     return orderBy;
   }
 
-  public Cursor etartCursor() {
+  public Cursor startCursor() {
     return startCursor;
   }
 
@@ -685,7 +854,7 @@ public abstract class StructuredQuery<T> extends Query<T> {
   }
 
   @Override
-  protected GqlQuery<T> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
+  protected StructuredQuery<T> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
     // TODO: implment
     throw new UnsupportedOperationException("paging not implemented yet");
   }
@@ -717,14 +886,29 @@ public abstract class StructuredQuery<T> extends Query<T> {
     if (filter != null) {
       queryPb.setFilter(filter.toPb());
     }
-    // TODO: projection, groupBy, orderBy (or keys-only)
+    for (OrderBy value : orderBy) {
+      queryPb.addOrder(value.toPb());
+    }
+    for (String value : groupBy) {
+      queryPb.addGroupBy(DatastoreV1.PropertyReference.newBuilder().setName(value).build());
+    }
+    for (Projection value : projection) {
+      queryPb.addProjection(value.toPb());
+    }
     return queryPb.build();
   }
 
-  static <T> StructuredQuery<T> fromPb(ResultClass<T> resultType, String namespace,
+  static StructuredQuery<?> fromPb(ResultClass<?> resultClass, String namespace,
       DatastoreV1.Query queryPb) {
-    // TODO: implement
-    return null;
+    BaseBuilder<?, ?> builder;
+    if (resultClass.equals(ResultClass.full())) {
+      builder = new FullQueryBuilder();
+    } else if (resultClass.equals(ResultClass.keyOnly())) {
+      builder = new KeyOnlyQueryBuilder();
+    } else {
+      builder = new ProjectionQueryBuilder();
+    }
+    return builder.namespace(namespace).mergeFrom(queryPb).build();
   }
 
   public static FullQueryBuilder builder() {

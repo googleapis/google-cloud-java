@@ -4,26 +4,20 @@ import java.util.Iterator;
 
 /**
  * The result of a Google Cloud Datastore query submission.
- * When the result is not typed it is possible to cast it to its appropriate type according to
- * the {@link #getType} result.
+ * When result is not typed it is possible to cast it to its appropriate type according to
+ * the {@link #resultClass} value.
  *
- * @param V the type of values the result holds.
+ * @param V the type of the results value.
  */
 public interface QueryResult<T> extends Iterator<T> {
 
   /**
-   * Returns the actual type of the result's values.
-   * When needed the result could be casted accordingly:
-   * <pre> {@code
-   * Type.FULL -> (QueryResult<Entity>)
-   * Type.PROJECTION -> (QueryResult<PartialEntity>)
-   * Type.KEY_ONLY -> (QueryResult<Key>)
-   * } </pre>
+   * Returns the actual class of the result's values.
    */
-  Query.Type getType();
+  Class<?> resultClass();
 
   /**
-   * Return the Cursor for the next result. Not currently implemented (depends on v1beta3).
+   * Returns the Cursor for the next result. Not currently implemented (depends on v1beta3).
    */
-  Cursor getCursor();
+  Cursor cursor();
 }

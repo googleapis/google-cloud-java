@@ -8,6 +8,7 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.gcloud.datastore.Query.ResultClass;
+import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.Value.Type;
 
 import org.junit.Test;
@@ -44,7 +45,7 @@ public class SerializationTest {
   private static final Query<Key> QUERY2 = StructuredQuery.keyOnlyBuilder().kind("k").filter(
       StructuredQuery.PropertyFilter.eq("p1", "hello")).build();
   private static final Query<PartialEntity> QUERY3 =
-      StructuredQuery.projectionBuilder().kind("k").projection("p").build();
+      StructuredQuery.projectionBuilder().kind("k").projection(Projection.property("p")).build();
   private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
   private static final NullValue NULL_VALUE = NullValue.builder().indexed(true).build();
   private static final StringValue STRING_VALUE = StringValue.of("hello");

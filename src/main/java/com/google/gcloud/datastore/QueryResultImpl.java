@@ -2,12 +2,12 @@ package com.google.gcloud.datastore;
 
 import com.google.api.client.repackaged.com.google.common.base.Preconditions;
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableMap;
-import com.google.protobuf.ByteString;
 
 import java.util.Iterator;
 
-class QueryResultImpl<T> implements QueryResult<T> {
+class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
 
   private static final ImmutableMap<DatastoreV1.EntityResult.ResultType, Query.Type>
       RESULT_TYPE_CONVERTER;
@@ -19,8 +19,6 @@ class QueryResultImpl<T> implements QueryResult<T> {
   private Query.Type type;
   private DatastoreV1.QueryResultBatch resultPb;
   private Iterator<DatastoreV1.EntityResult> entityResultPbIter;
-  private ByteString endCursor;
-  private int count;
 
   static {
     ImmutableMap.Builder<DatastoreV1.EntityResult.ResultType, Query.Type> builder =
@@ -57,11 +55,6 @@ class QueryResultImpl<T> implements QueryResult<T> {
     query.populatePb(requestPb);
     resultPb = datastore.runQuery(requestPb.build()).getBatch();
     entityResultPbIter = resultPb.getEntityResultList().iterator();
-    if (DatastoreV1.QueryResultBatch.MoreResultsType.NOT_FINISHED == resultPb.getMoreResults()) {
-      endCursor = resultPb.getEndCursor();
-    } else {
-      endCursor = null;
-    }
     type = RESULT_TYPE_CONVERTER.get(resultPb.getEntityResultType());
     Preconditions.checkState(resultClass.isAssignableFrom(type.resultClass()),
         "Unexpected result type");
@@ -69,33 +62,24 @@ class QueryResultImpl<T> implements QueryResult<T> {
   }
 
   @Override
-  public boolean hasNext() {
-    return entityResultPbIter.hasNext() || endCursor != null;
-  }
-
-  @Override
-  public T next() {
-    if (!hasNext() && endCursor != null) {
+  protected T computeNext() {
+    while (!entityResultPbIter.hasNext()
+        && resultPb.getMoreResults() == DatastoreV1.QueryResultBatch.MoreResultsType.NOT_FINISHED) {
       query = query.nextQuery(resultPb);
       sendRequest();
     }
-    DatastoreV1.Entity entity = entityResultPbIter.next().getEntity();
-    count++;
-    return type.convert(entity);
+    return entityResultPbIter.hasNext()
+        ? type.<T>convert(entityResultPbIter.next().getEntity())
+        : endOfData();
   }
 
   @Override
-  public void remove() {
-    throw new UnsupportedOperationException("QueryResult is read-only");
+  public Class<?> resultClass() {
+    return type.resultClass().value();
   }
 
   @Override
-  public Query.Type getType() {
-    return type;
-  }
-
-  @Override
-  public Cursor getCursor() {
+  public Cursor cursor() {
     // TODO(ozarov): implement when v1beta3 is available
     return null;
   }
