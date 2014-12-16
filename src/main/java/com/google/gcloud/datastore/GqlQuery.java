@@ -26,7 +26,7 @@ import java.util.TreeMap;
  *
  * <h3>A usage example:</h3>
  *
- * When the type of the results is known the preferred usage would be:
+ * <p>When the type of the results is known the preferred usage would be:
  * <pre> {@code
  *   Query<Entity> query = GqlQuery.builder(ResultClass.full(), "select * from kind").build();
  *   QueryResult<Entity> results = datastore.runQuery(query);
@@ -36,7 +36,7 @@ import java.util.TreeMap;
  *   }
  * } </pre>
  *
- * When the type of the results is unknown you can use this approach:
+ * <p>When the type of the results is unknown you can use this approach:
  * <pre> {@code
  *   Query<?> query = GqlQuery.builder("select __key__ from kind").build();
  *   QueryResult<?> results = datastore.runQuery(query);
@@ -48,6 +48,8 @@ import java.util.TreeMap;
  *     }
  *   }
  * } </pre>
+ *
+ * @param <V> the type of the result values this query will produce
  * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
  */
 public final class GqlQuery<V> extends Query<V> {

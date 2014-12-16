@@ -68,11 +68,6 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       return self();
     }
 
-    public B setNull(String name) {
-      properties.put(name, of());
-      return self();
-    }
-
     public B set(String name, String value) {
       properties.put(name, of(value));
       return self();
@@ -120,6 +115,11 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
 
     public B set(String name, Blob value) {
       properties.put(name, of(value));
+      return self();
+    }
+
+    public B setNull(String name) {
+      properties.put(name, of());
       return self();
     }
 

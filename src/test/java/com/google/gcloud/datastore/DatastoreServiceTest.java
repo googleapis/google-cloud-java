@@ -10,6 +10,8 @@ import static org.junit.Assert.fail;
 
 import com.google.gcloud.datastore.Query.ResultClass;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
+import com.google.gcloud.datastore.StructuredQuery.Projection;
+import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -48,7 +50,7 @@ public class DatastoreServiceTest {
       .set("bool", BOOL_VALUE).set("partial1", EntityValue.of(PARTIAL_ENTITY1))
       .set("list", LIST_VALUE2).build();
   private static final Entity ENTITY2 = Entity.builder(ENTITY1).key(KEY2).remove("str")
-      .setNull("null").build();
+      .set("name", "koko").setNull("null").set("age", 20).build();
   private static final Entity ENTITY3 = Entity.builder(ENTITY1).key(KEY3).remove("str")
       .set("null", NULL_VALUE).set("partial1", PARTIAL_ENTITY2).set("partial2", ENTITY2).build();
 
@@ -138,7 +140,29 @@ public class DatastoreServiceTest {
 
   @Test
   public void testTransactionWithQuery() {
-    fail("not implemented");
+    Query<Entity> query =
+        StructuredQuery.builder().kind(KIND2).filter(PropertyFilter.hasAncestor(KEY2)).build();
+    Transaction transaction = datastore.newTransaction();
+    QueryResult<Entity> results = transaction.runQuery(query);
+    assertEquals(ENTITY2, results.next());
+    assertFalse(results.hasNext());
+    transaction.add(ENTITY3);
+    transaction.commit();
+    assertEquals(ENTITY3, datastore.get(KEY3));
+
+    transaction = datastore.newTransaction();
+    results = transaction.runQuery(query);
+    assertEquals(ENTITY2, results.next());
+    transaction.delete(ENTITY3.key());
+    // update entity2 during the transaction
+    datastore.put(Entity.builder(ENTITY2).clear().build());
+    try {
+      transaction.commit();
+      fail("Expecting a failure");
+    } catch (DatastoreServiceException expected) {
+      expected.printStackTrace();
+      assertEquals(DatastoreServiceException.Code.ABORTED, expected.code());
+    }
   }
 
   @Test
@@ -311,19 +335,30 @@ public class DatastoreServiceTest {
     assertFalse(results1.hasNext());
 
     StructuredQuery<Key> keyOnlyQuery =  StructuredQuery.keyOnlyBuilder().kind(KIND1).build();
+    QueryResult<Key> results2 = datastore.runQuery(keyOnlyQuery);
+    assertTrue(results2.hasNext());
+    assertEquals(ENTITY1.key(), results2.next());
+    assertFalse(results2.hasNext());
 
+    StructuredQuery<PartialEntity> projectionQuery = StructuredQuery.projectionBuilder()
+        .kind(KIND2)
+        .projection(Projection.property("age"), Projection.first("name"))
+        .filter(PropertyFilter.gt("age", 18))
+        .groupBy("age")
+        .orderBy(OrderBy.asc("age"))
+        .limit(10)
+        .build();
 
-    // todo(ozarov): construct a test to very nextQuery/pagination
-  }
+    QueryResult<PartialEntity> results3 = datastore.runQuery(projectionQuery);
+    assertTrue(results3.hasNext());
+    PartialEntity entity = results3.next();
+    assertEquals(ENTITY2.key(), entity.key());
+    assertEquals(20, entity.getLong("age"));
+    assertEquals("koko", entity.getString("name"));
+    assertEquals(2, entity.properties().size());
+    assertFalse(results3.hasNext());
 
-  @Test
-  public void testRunStructuredQueryProjection() {
-    fail("Not yet implemented");
-  }
-
-  @Test
-  public void testRunStructuredQueryKeysOnly() {
-    fail("Not yet implemented");
+    // TODO(ozarov): construct a test to very nextQuery/pagination
   }
 
   @Test

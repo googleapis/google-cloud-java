@@ -22,6 +22,40 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * An implementation of a Google Cloud Datastore Query that can be constructed by providing
+ * all the specific query elements.
+ *
+ * <h3>A usage example:</h3>
+ *
+ * <p>A simple query that returns all entities for a specific kind
+ * <pre> {@code
+ *   StructuredQuery<Entity> query = StructuredQuery.builder().kind(kind).build();
+ *   QueryResult<Entity> results = datastore.runQuery(query);
+ *   while (results.hasNext()) {
+ *     Entity entity = results.next();
+ *     ...
+ *   }
+ * } </pre>
+ *
+ * <p>A less trivial example of a projection query that returns the first 10 results
+ * of "age" and "name" properties (sorted and grouped by "age") with an age greater than 18
+ * <pre> {@code
+ *   StructuredQuery<PartialEntity> query = StructuredQuery.projectionBuilder()
+ *       .kind(kind)
+ *       .projection(Projection.property("age"), Projection.first("name"))
+ *       .filter(PropertyFilter.gt("age", 18))
+ *       .groupBy("age")
+ *       .orderBy(OrderBy.asc("age"))
+ *       .limit(10)
+ *       .build();
+ *   QueryResult<PartialEntity> results = datastore.runQuery(query);
+ *   ...
+ * } </pre>
+ *
+ * @param <V> the type of the result values this query will produce
+ * @see <a href="https://cloud.google.com/appengine/docs/java/datastore/queries">Datastore queries</a>
+ */
 public class StructuredQuery<V> extends Query<V> {
 
   private static final long serialVersionUID = 546838955624019594L;
@@ -361,8 +395,8 @@ public class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.EQUAL, of(value));
     }
 
-    public static PropertyFilter hasAncestor(String property, Key key) {
-      return new PropertyFilter(property, Operator.HAS_ANCESTOR, of(key));
+    public static PropertyFilter hasAncestor(Key key) {
+      return new PropertyFilter(KEY_PROPERTY_NAME, Operator.HAS_ANCESTOR, of(key));
     }
 
     public static PropertyFilter isNull(String property) {
@@ -898,12 +932,6 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   @Override
-  protected Object fromPb(ResultClass<V> resultClass, String namespace, byte[] bytesPb)
-      throws InvalidProtocolBufferException {
-    return fromPb(resultClass, namespace, DatastoreV1.Query.parseFrom(bytesPb));
-  }
-
-  @Override
   protected DatastoreV1.Query toPb() {
     DatastoreV1.Query.Builder queryPb = DatastoreV1.Query.newBuilder();
     if (kind != null) {
@@ -934,6 +962,12 @@ public class StructuredQuery<V> extends Query<V> {
       queryPb.addProjection(value.toPb());
     }
     return queryPb.build();
+  }
+
+  @Override
+  protected Object fromPb(ResultClass<V> resultClass, String namespace, byte[] bytesPb)
+      throws InvalidProtocolBufferException {
+    return fromPb(resultClass, namespace, DatastoreV1.Query.parseFrom(bytesPb));
   }
 
   static StructuredQuery<?> fromPb(ResultClass<?> resultClass, String namespace,
