@@ -260,7 +260,7 @@ public class DatastoreServiceTest {
     assertNull(entities.next());
     assertFalse(entities.hasNext());
 
-    // TODO need to cover the cases of:
+    // TODO need to cover the following use-cases:
     // delete after put/add/update
     // put after delete/add/update
     // update after delete/add/put
@@ -358,7 +358,7 @@ public class DatastoreServiceTest {
     assertEquals(2, entity.properties().size());
     assertFalse(results3.hasNext());
 
-    // TODO(ozarov): construct a test to very nextQuery/pagination
+    // TODO(ozarov): construct a test to verify nextQuery/pagination
   }
 
   @Test
