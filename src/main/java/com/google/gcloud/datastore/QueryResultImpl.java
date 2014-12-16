@@ -14,11 +14,13 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
 
   private final DatastoreServiceImpl datastore;
   private final DatastoreV1.ReadOptions readOptionsPb;
+  private final DatastoreV1.PartitionId partitionIdPb;
   private final Query.ResultClass<T> resultClass;
   private Query<T> query;
   private Query.Type type;
   private DatastoreV1.QueryResultBatch resultPb;
   private Iterator<DatastoreV1.EntityResult> entityResultPbIter;
+  //private ByteString cursor; // only available in v1beta3
 
   static {
     ImmutableMap.Builder<DatastoreV1.EntityResult.ResultType, Query.Type> builder =
@@ -34,7 +36,15 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
     this.datastore = datastore;
     this.readOptionsPb = readOptionsPb;
     this.query = query;
-    this.resultClass = query.getResultClass();
+    resultClass = query.resultClass();
+    DatastoreV1.PartitionId.Builder pbBuilder = DatastoreV1.PartitionId.newBuilder();
+    pbBuilder.setDatasetId(datastore.options().dataset());
+    if (query.namespace() != null) {
+      pbBuilder.setNamespace(query.namespace());
+    } else if (datastore.options().namespace() != null) {
+      pbBuilder.setNamespace(datastore.options().namespace());
+    }
+    partitionIdPb = pbBuilder.build();
     sendRequest();
   }
 
@@ -43,18 +53,11 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
     if (readOptionsPb != null) {
       requestPb.setReadOptions(readOptionsPb);
     }
-    DatastoreV1.PartitionId.Builder partitionIdPb = DatastoreV1.PartitionId.newBuilder();
-    partitionIdPb.setDatasetId(datastore.options().dataset());
-    String namespace = query.namespace() != null
-        ? query.namespace()
-        : datastore.options().namespace();
-    if (namespace != null) {
-      partitionIdPb.setNamespace(namespace);
-    }
-    requestPb.setPartitionId(partitionIdPb.build());
+    requestPb.setPartitionId(partitionIdPb);
     query.populatePb(requestPb);
     resultPb = datastore.runQuery(requestPb.build()).getBatch();
     entityResultPbIter = resultPb.getEntityResultList().iterator();
+    // cursor = resultPb.getSkippedCursor(); // only available in v1beta3
     type = RESULT_TYPE_CONVERTER.get(resultPb.getEntityResultType());
     Preconditions.checkState(resultClass.isAssignableFrom(type.resultClass()),
         "Unexpected result type");
@@ -68,9 +71,12 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
       query = query.nextQuery(resultPb);
       sendRequest();
     }
-    return entityResultPbIter.hasNext()
-        ? type.<T>convert(entityResultPbIter.next().getEntity())
-        : endOfData();
+    if (!entityResultPbIter.hasNext()) {
+      return endOfData();
+    }
+    DatastoreV1.EntityResult entityResultPb = entityResultPbIter.next();
+    //cursor = entityResultPb.getCursor(); // only available in v1beta3
+    return type.convert(entityResultPb.getEntity());
   }
 
   @Override
@@ -80,7 +86,7 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
 
   @Override
   public Cursor cursor() {
-    // TODO(ozarov): implement when v1beta3 is available
+    //return new Cursor(cursor); // only available in v1beta3
     return null;
   }
 }

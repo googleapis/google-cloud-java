@@ -9,21 +9,21 @@ import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 
-// TODO(ozarov): add a usage examples (gql and regular)
 /**
  * A Google Cloud Datastore query.
+ * For usage examples see {@link GqlQuery} and {@link StructuredQuery}.
  *
- * @param <T> the type of the values returned by this query.
+ * @param <V> the type of the values returned by this query.
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/queries">Datastore Queries</a>
  */
-public abstract class Query<T> extends Serializable<GeneratedMessage> {
+public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
   private static final long serialVersionUID = -2748141759901313101L;
 
-  private final ResultClass<T> resultClass;
+  private final ResultClass<V> resultClass;
   private final String namespace;
 
-  public static class ResultClass<T> implements java.io.Serializable {
+  public static class ResultClass<V> implements java.io.Serializable {
 
     private static final long serialVersionUID = 2104157695425806623L;
     private static final ResultClass<?> UNKNOWN = new ResultClass<>(Object.class);
@@ -32,13 +32,13 @@ public abstract class Query<T> extends Serializable<GeneratedMessage> {
     private static final ResultClass<PartialEntity> PROJECTION =
         new ResultClass<>(PartialEntity.class);
 
-    private final Class<T> value;
+    private final Class<V> value;
 
-    private ResultClass(Class<T> value) {
+    private ResultClass(Class<V> value) {
       this.value = checkNotNull(value);
     }
 
-    public Class<T> value() {
+    public Class<V> value() {
       return value;
     }
 
@@ -131,22 +131,22 @@ public abstract class Query<T> extends Serializable<GeneratedMessage> {
       }
 
       @Override
-      ResultClass<PartialEntity> resultClass() {
-        return ResultClass.projection();
+      ResultClass<Key> resultClass() {
+        return ResultClass.keyOnly();
       }
     };
 
-    abstract <T> T convert(DatastoreV1.Entity value);
+    abstract <V> V convert(DatastoreV1.Entity value);
 
     abstract ResultClass<?> resultClass();
   }
 
-  Query(ResultClass<T> resultClass, String namespace) {
+  Query(ResultClass<V> resultClass, String namespace) {
     this.resultClass = checkNotNull(resultClass);
     this.namespace = namespace;
   }
 
-  ResultClass<T> getResultClass() {
+  ResultClass<V> resultClass() {
     return resultClass;
   }
 
@@ -167,10 +167,10 @@ public abstract class Query<T> extends Serializable<GeneratedMessage> {
     return fromPb(resultClass, namespace, bytesPb);
   }
 
-  protected abstract Object fromPb(ResultClass<T> resultClass, String namespace, byte[] bytesPb)
+  protected abstract Object fromPb(ResultClass<V> resultClass, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException;
 
   protected abstract void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb);
 
-  protected abstract Query<T> nextQuery(DatastoreV1.QueryResultBatch responsePb);
+  protected abstract Query<V> nextQuery(DatastoreV1.QueryResultBatch responsePb);
 }

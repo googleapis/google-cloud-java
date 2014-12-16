@@ -22,7 +22,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class StructuredQuery<T> extends Query<T> {
+public class StructuredQuery<V> extends Query<V> {
 
   private static final long serialVersionUID = 546838955624019594L;
   private static final String KEY_PROPERTY_NAME = "__key__";
@@ -34,7 +34,7 @@ public abstract class StructuredQuery<T> extends Query<T> {
   private final transient ImmutableList<OrderBy> orderBy;
   private final transient Cursor startCursor;
   private final transient Cursor endCursor;
-  private final transient Integer offset;
+  private final transient int offset;
   private final transient Integer limit;
 
   public abstract static class Filter implements Serializable {
@@ -82,6 +82,32 @@ public abstract class StructuredQuery<T> extends Query<T> {
       this.operator = operator;
       this.filters = filters;
       Preconditions.checkArgument(!filters.isEmpty(), "filters list must not be empty");
+    }
+
+    @Override
+    public String toString() {
+      ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
+      toStringHelper.add("operator", operator);
+      toStringHelper.add("filters", filters);
+      return toStringHelper.toString();
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(operator, filters);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof CompositeFilter)) {
+        return false;
+      }
+      CompositeFilter other = (CompositeFilter) obj;
+      return operator.equals(other.operator)
+          && filters.equals(other.filters);
     }
 
     static CompositeFilter fromPb(DatastoreV1.CompositeFilter compositeFilterPb) {
@@ -145,6 +171,15 @@ public abstract class StructuredQuery<T> extends Query<T> {
       Operator operator = Operator.fromPb(propertyFilterPb.getOperator());
       Value<?> value = Value.fromPb(propertyFilterPb.getValue());
       return new PropertyFilter(property, operator, value);
+    }
+
+    @Override
+    public String toString() {
+      ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
+      toStringHelper.add("property", property);
+      toStringHelper.add("operator", operator);
+      toStringHelper.add("value", value);
+      return toStringHelper.toString();
     }
 
     @Override
@@ -506,9 +541,9 @@ public abstract class StructuredQuery<T> extends Query<T> {
     }
   }
 
-  static abstract class BaseBuilder<T, B extends BaseBuilder<T, B>> {
+  static class BaseBuilder<V, B extends BaseBuilder<V, B>> {
 
-    private ResultClass<T> resultClass;
+    private ResultClass<V> resultClass;
     private String namespace;
     private String kind;
     private List<Projection> projection = new LinkedList<>();
@@ -517,10 +552,10 @@ public abstract class StructuredQuery<T> extends Query<T> {
     private List<OrderBy> orderBy = new LinkedList<>();
     private Cursor startCursor;
     private Cursor endCursor;
-    private Integer offset;
+    private int offset;
     private Integer limit;
 
-    BaseBuilder(ResultClass<T> resultClass) {
+    BaseBuilder(ResultClass<V> resultClass) {
       this.resultClass = resultClass;
     }
 
@@ -549,14 +584,14 @@ public abstract class StructuredQuery<T> extends Query<T> {
       return self();
     }
 
-    public B offset(Integer offset) {
-      Preconditions.checkArgument(offset == null || offset >= 0, "offset must not be negative");
+    public B offset(int offset) {
+      Preconditions.checkArgument(offset >= 0, "offset must not be negative");
       this.offset = offset;
       return self();
     }
 
     public B limit(Integer limit) {
-      Preconditions.checkArgument(limit == null || offset > 0, "limit must be positive");
+      Preconditions.checkArgument(limit == null || limit > 0, "limit must be positive");
       this.limit = limit;
       return self();
     }
@@ -654,41 +689,43 @@ public abstract class StructuredQuery<T> extends Query<T> {
       return self();
     }
 
-    public abstract StructuredQuery<T> build();
+    public StructuredQuery<V> build() {
+      return new StructuredQuery<>(this);
+    }
   }
 
-  public static final class FullQueryBuilder extends BaseBuilder<Entity, FullQueryBuilder> {
+  public static final class Builder<V> extends BaseBuilder<V, Builder<V>> {
 
-    FullQueryBuilder() {
-      super(ResultClass.full());
+    public Builder(ResultClass<V> resultClass) {
+      super(resultClass);
+    }
+  }
+
+  public static final class KeyOnlyBuilder extends BaseBuilder<Key, KeyOnlyBuilder> {
+
+    public KeyOnlyBuilder() {
+      super(ResultClass.keyOnly());
+      projection(Projection.property(KEY_PROPERTY_NAME));
     }
 
     @Override
-    public FullQuery build() {
-      clearProjection();
+    protected KeyOnlyBuilder mergeFrom(DatastoreV1.Query queryPb) {
+      super.mergeFrom(queryPb);
+      projection(Projection.property(KEY_PROPERTY_NAME));
       clearGroupBy();
-      return new FullQuery(this);
-    }
-  }
-
-  public static final class KeyOnlyQueryBuilder extends BaseBuilder<Key, KeyOnlyQueryBuilder> {
-
-    public KeyOnlyQueryBuilder() {
-      super(ResultClass.keyOnly());
+      return this;
     }
 
     @Override
     public KeyOnlyQuery build() {
-      projection(Projection.property(KEY_PROPERTY_NAME));
-      clearGroupBy();
       return new KeyOnlyQuery(this);
     }
   }
 
-  public static final class ProjectionQueryBuilder
-      extends BaseBuilder<PartialEntity, ProjectionQueryBuilder> {
+  public static final class ProjectionBuilder
+      extends BaseBuilder<PartialEntity, ProjectionBuilder> {
 
-    public ProjectionQueryBuilder() {
+    public ProjectionBuilder() {
       super(ResultClass.projection());
     }
 
@@ -698,42 +735,33 @@ public abstract class StructuredQuery<T> extends Query<T> {
     }
 
     @Override
-    public ProjectionQueryBuilder clearProjection() {
+    public ProjectionBuilder clearProjection() {
       return super.clearProjection();
     }
 
     @Override
-    public ProjectionQueryBuilder projection(Projection projection, Projection... others) {
+    public ProjectionBuilder projection(Projection projection, Projection... others) {
       return super.projection(projection, others);
     }
 
     @Override
-    public ProjectionQueryBuilder addProjection(Projection projection, Projection... others) {
+    public ProjectionBuilder addProjection(Projection projection, Projection... others) {
       return super.addProjection(projection, others);
     }
 
     @Override
-    public ProjectionQueryBuilder clearGroupBy() {
+    public ProjectionBuilder clearGroupBy() {
       return super.clearGroupBy();
     }
 
     @Override
-    public ProjectionQueryBuilder groupBy(String property, String... others) {
+    public ProjectionBuilder groupBy(String property, String... others) {
       return super.groupBy(property, others);
     }
 
     @Override
-    public ProjectionQueryBuilder addGroupBy(String property, String... others) {
+    public ProjectionBuilder addGroupBy(String property, String... others) {
       return super.addGroupBy(property, others);
-    }
-  }
-
-  public static final class FullQuery extends StructuredQuery<Entity> {
-
-    private static final long serialVersionUID = -84461800292593840L;
-
-    FullQuery(FullQueryBuilder builder) {
-      super(builder);
     }
   }
 
@@ -741,7 +769,7 @@ public abstract class StructuredQuery<T> extends Query<T> {
 
     private static final long serialVersionUID = -7502917784216095473L;
 
-    KeyOnlyQuery(KeyOnlyQueryBuilder builder) {
+    KeyOnlyQuery(KeyOnlyBuilder builder) {
       super(builder);
     }
   }
@@ -750,7 +778,7 @@ public abstract class StructuredQuery<T> extends Query<T> {
 
     private static final long serialVersionUID = -3333183044486150649L;
 
-    ProjectionQuery(ProjectionQueryBuilder builder) {
+    ProjectionQuery(ProjectionBuilder builder) {
       super(builder);
       Preconditions.checkState(!keyOnly(),
           "Projection query can't project only '__key__', use KeyOnlyQuery instead.");
@@ -767,7 +795,7 @@ public abstract class StructuredQuery<T> extends Query<T> {
     }
   }
 
-  StructuredQuery(BaseBuilder<T, ?> builder) {
+  StructuredQuery(BaseBuilder<V, ?> builder) {
     super(builder.resultClass, builder.namespace);
     kind = builder.kind;
     projection = ImmutableList.copyOf(builder.projection);
@@ -840,7 +868,7 @@ public abstract class StructuredQuery<T> extends Query<T> {
     return endCursor;
   }
 
-  public Integer offset() {
+  public int offset() {
     return offset;
   }
 
@@ -854,13 +882,23 @@ public abstract class StructuredQuery<T> extends Query<T> {
   }
 
   @Override
-  protected StructuredQuery<T> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
-    // TODO: implment
-    throw new UnsupportedOperationException("paging not implemented yet");
+  protected StructuredQuery<V> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
+    Builder<V> builder = new Builder<>(resultClass());
+    builder.mergeFrom(toPb());
+    builder.startCursor(new Cursor(responsePb.getEndCursor()));
+    if (offset > 0 && responsePb.getSkippedResults() < offset) {
+      builder.offset(offset - responsePb.getSkippedResults());
+    } else {
+      builder.offset(0);
+      if (limit != null) {
+        builder.limit(limit - responsePb.getEntityResultCount());
+      }
+    }
+    return builder.build();
   }
 
   @Override
-  protected Object fromPb(ResultClass<T> resultClass, String namespace, byte[] bytesPb)
+  protected Object fromPb(ResultClass<V> resultClass, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
     return fromPb(resultClass, namespace, DatastoreV1.Query.parseFrom(bytesPb));
   }
@@ -877,7 +915,7 @@ public abstract class StructuredQuery<T> extends Query<T> {
     if (endCursor != null) {
       queryPb.setEndCursor(endCursor.byteString());
     }
-    if (offset != null) {
+    if (offset > 0) {
       queryPb.setOffset(offset);
     }
     if (limit != null) {
@@ -902,24 +940,24 @@ public abstract class StructuredQuery<T> extends Query<T> {
       DatastoreV1.Query queryPb) {
     BaseBuilder<?, ?> builder;
     if (resultClass.equals(ResultClass.full())) {
-      builder = new FullQueryBuilder();
+      builder = builder();
     } else if (resultClass.equals(ResultClass.keyOnly())) {
-      builder = new KeyOnlyQueryBuilder();
+      builder = keyOnlyBuilder();
     } else {
-      builder = new ProjectionQueryBuilder();
+      builder = projectionBuilder();
     }
     return builder.namespace(namespace).mergeFrom(queryPb).build();
   }
 
-  public static FullQueryBuilder builder() {
-    return new FullQueryBuilder();
+  public static Builder<Entity> builder() {
+    return new Builder<>(ResultClass.full());
   }
 
-  public static KeyOnlyQueryBuilder keyOnlyBuilder() {
-    return new KeyOnlyQueryBuilder();
+  public static KeyOnlyBuilder keyOnlyBuilder() {
+    return new KeyOnlyBuilder();
   }
 
-  public static ProjectionQueryBuilder projectionBuilder() {
-    return new ProjectionQueryBuilder();
+  public static ProjectionBuilder projectionBuilder() {
+    return new ProjectionBuilder();
   }
 }

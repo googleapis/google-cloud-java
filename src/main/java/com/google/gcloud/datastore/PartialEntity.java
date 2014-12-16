@@ -47,7 +47,11 @@ public class PartialEntity extends BaseEntity {
     this.key = key;
   }
 
-  public Entity newEntity(Key key) {
+  /**
+   * Returns a new {@link #Entity} with the same properties as this one and
+   * with the given {@code key}.
+   */
+  public Entity toEntity(Key key) {
     return new Entity(key, ImmutableSortedMap.<String, Value<?>>copyOf(properties()));
   }
 

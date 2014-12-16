@@ -8,6 +8,9 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.gcloud.datastore.Query.ResultClass;
+import com.google.gcloud.datastore.StructuredQuery.OrderBy;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -242,17 +245,75 @@ public class DatastoreServiceTest {
 
   @Test
   public void testRunGqlQueryNoCasting() {
-    fail("Not yet implemented");
+    Query<Entity> query1 = GqlQuery.builder(ResultClass.full(), "select * from " + KIND1).build();
+    QueryResult<Entity> results1 = datastore.runQuery(query1);
+    assertTrue(results1.hasNext());
+    assertEquals(ENTITY1, results1.next());
+    assertFalse(results1.hasNext());
+
+    datastore.put(ENTITY3);
+    Query<? extends PartialEntity> query2 =  GqlQuery.builder(
+        ResultClass.full(), "select * from " + KIND2 + " order by __key__").build();
+    QueryResult<? extends PartialEntity> results2 = datastore.runQuery(query2);
+    assertTrue(results2.hasNext());
+    assertEquals(ENTITY2, results2.next());
+    assertTrue(results2.hasNext());
+    assertEquals(ENTITY3, results2.next());
+    assertFalse(results2.hasNext());
+
+    query1 = GqlQuery.builder(ResultClass.full(), "select * from bla").build();
+    results1 = datastore.runQuery(query1);
+    assertFalse(results1.hasNext());
+
+    Query<Key> keyOnlyQuery =
+        GqlQuery.builder(ResultClass.keyOnly(), "select __key__ from " + KIND1).build();
+    QueryResult<Key> keyOnlyResults = datastore.runQuery(keyOnlyQuery);
+    assertTrue(keyOnlyResults.hasNext());
+    assertEquals(KEY1, keyOnlyResults.next());
+    assertFalse(keyOnlyResults.hasNext());
+
+    Query<PartialEntity> projectionQuery = GqlQuery.builder(
+        ResultClass.projection(), "select str from " + KIND1).build();
+    QueryResult<PartialEntity> projectionResult = datastore.runQuery(projectionQuery);
+    assertTrue(projectionResult.hasNext());
+    PartialEntity partialEntity = projectionResult.next();
+    assertEquals("str", partialEntity.getString("str"));
+    assertEquals(1, partialEntity.names().size());
+    assertFalse(projectionResult.hasNext());
   }
 
   @Test
   public void testRunGqlQueryWithCasting() {
-    fail("Not yet implemented");
+    @SuppressWarnings("unchecked")
+    Query<Entity> query1 = (Query<Entity>) GqlQuery.builder("select * from " + KIND1).build();
+    QueryResult<Entity> results1 = datastore.runQuery(query1);
+    assertTrue(results1.hasNext());
+    assertEquals(ENTITY1, results1.next());
+    assertFalse(results1.hasNext());
+
+    Query<?> query2 = GqlQuery.builder("select * from " + KIND1).build();
+    QueryResult<?> results2 = datastore.runQuery(query2);
+    assertEquals(Entity.class, results2.resultClass());
+    @SuppressWarnings("unchecked")
+    QueryResult<Entity> results3 = (QueryResult<Entity>) results2;
+    assertTrue(results3.hasNext());
+    assertEquals(ENTITY1, results3.next());
+    assertFalse(results3.hasNext());
   }
 
   @Test
-  public void testRunStructuredQueryFull() {
-    fail("Not yet implemented");
+  public void testRunStructuredQuery() {
+    StructuredQuery<Entity> query =
+        StructuredQuery.builder().kind(KIND1).orderBy(OrderBy.asc("__key__")).build();
+    QueryResult<Entity> results1 = datastore.runQuery(query);
+    assertTrue(results1.hasNext());
+    assertEquals(ENTITY1, results1.next());
+    assertFalse(results1.hasNext());
+
+    StructuredQuery<Key> keyOnlyQuery =  StructuredQuery.keyOnlyBuilder().kind(KIND1).build();
+
+
+    // todo(ozarov): construct a test to very nextQuery/pagination
   }
 
   @Test

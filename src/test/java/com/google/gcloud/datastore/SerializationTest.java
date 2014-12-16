@@ -8,7 +8,10 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.gcloud.datastore.Query.ResultClass;
+import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
+import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
+import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.datastore.Value.Type;
 
 import org.junit.Test;
@@ -29,6 +32,7 @@ public class SerializationTest {
   private static final DateTime DATE_TIME1 = DateTime.now();
   private static final Blob BLOB1 = Blob.copyFrom(UTF_8.encode("hello world"));
   private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1,2});
+  private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[] {10});
   private static final Query<?> GQL1 =
       GqlQuery.builder("select * from kind1 where name = @name and age > @1")
       .setArgument("name", "name1")
@@ -42,10 +46,22 @@ public class SerializationTest {
       .namespace("ns1")
       .build();
   private static final Query<Entity> QUERY1 = StructuredQuery.builder().kind("kind1").build();
-  private static final Query<Key> QUERY2 = StructuredQuery.keyOnlyBuilder().kind("k").filter(
-      StructuredQuery.PropertyFilter.eq("p1", "hello")).build();
-  private static final Query<PartialEntity> QUERY3 =
-      StructuredQuery.projectionBuilder().kind("k").projection(Projection.property("p")).build();
+  private static final Query<Key> QUERY2 = StructuredQuery.keyOnlyBuilder()
+      .kind("k")
+      .filter(PropertyFilter.eq("p1", "hello"))
+      .build();
+  private static final Query<PartialEntity> QUERY3 = StructuredQuery.projectionBuilder()
+      .kind("k")
+      .namespace("ns1")
+      .projection(Projection.property("p"))
+      .limit(100)
+      .offset(5)
+      .startCursor(CURSOR1)
+      .endCursor(CURSOR2)
+      .filter(CompositeFilter.and(PropertyFilter.gt("p1", 10), PropertyFilter.eq("a", "v")))
+      .addGroupBy("p")
+      .addOrderBy(OrderBy.asc("p"))
+      .build();
   private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
   private static final NullValue NULL_VALUE = NullValue.builder().indexed(true).build();
   private static final StringValue STRING_VALUE = StringValue.of("hello");

@@ -24,9 +24,33 @@ import java.util.TreeMap;
 /**
  * A Google Cloud Datastore GQL.
  *
+ * <h3>A usage example:</h3>
+ *
+ * When the type of the results is known the preferred usage would be:
+ * <pre> {@code
+ *   Query<Entity> query = GqlQuery.builder(ResultClass.full(), "select * from kind").build();
+ *   QueryResult<Entity> results = datastore.runQuery(query);
+ *   while (results.hasNext()) {
+ *     Entity entity = results.next();
+ *     ...
+ *   }
+ * } </pre>
+ *
+ * When the type of the results is unknown you can use this approach:
+ * <pre> {@code
+ *   Query<?> query = GqlQuery.builder("select __key__ from kind").build();
+ *   QueryResult<?> results = datastore.runQuery(query);
+ *   if (Key.class.isAssignableFrom(results.resultClass())) {
+ *     QueryResult<Key> keys = (QueryResult<Key>) results;
+ *     while (keys.hasNext()) {
+ *       Key key = keys.next();
+ *       ...
+ *     }
+ *   }
+ * } </pre>
  * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
  */
-public final class GqlQuery<T> extends Query<T> {
+public final class GqlQuery<V> extends Query<V> {
 
   private static final long serialVersionUID = 5988280590929540569L;
 
@@ -114,132 +138,132 @@ public final class GqlQuery<T> extends Query<T> {
   /**
    * A GQL query builder.
    */
-  public static final class Builder<T> {
+  public static final class Builder<V> {
 
-    private final ResultClass<T> resultClass;
+    private final ResultClass<V> resultClass;
     private String namespace;
     private String queryString;
     private boolean allowLiteral;
     private Map<String, Argument> nameArgs = new TreeMap<>();
     private List<Argument> numberArgs = new LinkedList<>();
 
-    Builder(ResultClass<T> resultClass, String query) {
+    Builder(ResultClass<V> resultClass, String query) {
       this.resultClass = checkNotNull(resultClass);
       queryString = checkNotNull(query);
     }
 
-    public Builder<T> query(String query) {
+    public Builder<V> query(String query) {
       queryString = checkNotNull(query);
       return this;
     }
 
-    public Builder<T> namespace(String namespace) {
+    public Builder<V> namespace(String namespace) {
       this.namespace = validateNamespace(namespace);
       return this;
     }
 
-    public Builder<T> allowLiteral(boolean allowLiteral) {
+    public Builder<V> allowLiteral(boolean allowLiteral) {
       this.allowLiteral = allowLiteral;
       return this;
     }
 
-    public Builder<T> clearArguments() {
+    public Builder<V> clearArguments() {
       nameArgs.clear();
       numberArgs.clear();
       return this;
     }
 
-    public Builder<T> setArgument(String name, Cursor cursor) {
+    public Builder<V> setArgument(String name, Cursor cursor) {
       nameArgs.put(name, new Argument(name, cursor));
       return this;
     }
 
-    public Builder<T> setArgument(String name, String... value) {
+    public Builder<V> setArgument(String name, String... value) {
       nameArgs.put(name, toArgument(name, StringValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<T> setArgument(String name, long... value) {
+    public Builder<V> setArgument(String name, long... value) {
       nameArgs.put(name, toArgument(name, LongValue.MARSHALLER, Longs.asList(value)));
       return this;
     }
 
-    public Builder<T> setArgument(String name, double... value) {
+    public Builder<V> setArgument(String name, double... value) {
       nameArgs.put(name, toArgument(name, DoubleValue.MARSHALLER, Doubles.asList(value)));
       return this;
     }
 
-    public Builder<T> setArgument(String name, boolean... value) {
+    public Builder<V> setArgument(String name, boolean... value) {
       nameArgs.put(name, toArgument(name, BooleanValue.MARSHALLER, Booleans.asList(value)));
       return this;
     }
 
-    public Builder<T> setArgument(String name, DateTime... value) {
+    public Builder<V> setArgument(String name, DateTime... value) {
       nameArgs.put(name, toArgument(name, DateTimeValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<T> setArgument(String name, Key... value) {
+    public Builder<V> setArgument(String name, Key... value) {
       nameArgs.put(name, toArgument(name, KeyValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<T> setArgument(String name, PartialEntity... value) {
+    public Builder<V> setArgument(String name, PartialEntity... value) {
       nameArgs.put(name, toArgument(name, EntityValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<T> setArgument(String name, Blob... value) {
+    public Builder<V> setArgument(String name, Blob... value) {
       nameArgs.put(name, toArgument(name, BlobValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<T> addArgument(Cursor cursor) {
+    public Builder<V> addArgument(Cursor cursor) {
       numberArgs.add(new Argument(null, cursor));
       return this;
     }
 
-    public Builder<T> addArgument(String... value) {
+    public Builder<V> addArgument(String... value) {
       numberArgs.add(toArgument(StringValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<T> addArgument(long... value) {
+    public Builder<V> addArgument(long... value) {
       numberArgs.add(toArgument(LongValue.MARSHALLER, Longs.asList(value)));
       return this;
     }
 
-    public Builder<T> addArgument(double... value) {
+    public Builder<V> addArgument(double... value) {
       numberArgs.add(toArgument(DoubleValue.MARSHALLER, Doubles.asList(value)));
       return this;
     }
 
-    public Builder<T> addArgument(boolean... value) {
+    public Builder<V> addArgument(boolean... value) {
       numberArgs.add(toArgument(BooleanValue.MARSHALLER, Booleans.asList(value)));
       return this;
     }
 
-    public Builder<T> addArgument(DateTime... value) {
+    public Builder<V> addArgument(DateTime... value) {
       numberArgs.add(toArgument(DateTimeValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<T> addArgument(Key... value) {
+    public Builder<V> addArgument(Key... value) {
       numberArgs.add(toArgument(KeyValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<T> addArgument(PartialEntity... value) {
+    public Builder<V> addArgument(PartialEntity... value) {
       numberArgs.add(toArgument(EntityValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<T> addArgument(Blob... value) {
+    public Builder<V> addArgument(Blob... value) {
       numberArgs.add(toArgument(BlobValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public GqlQuery<T> build() {
+    public GqlQuery<V> build() {
       return new GqlQuery<>(this);
     }
 
@@ -267,7 +291,7 @@ public final class GqlQuery<T> extends Query<T> {
     }
   }
 
-  private GqlQuery(Builder<T> builder) {
+  private GqlQuery(Builder<V> builder) {
     super(builder.resultClass, builder.namespace);
     queryString = builder.queryString;
     allowLiteral = builder.allowLiteral;
@@ -346,35 +370,20 @@ public final class GqlQuery<T> extends Query<T> {
   }
 
   @Override
-  protected GqlQuery<T> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
-    throw new UnsupportedOperationException("paging not implemented yet");
-    /*
-    // TODO: THIS IS A MAJOR HACK, remove when possible. see b/18705483
-    String PREFIX_GROUP = "\\s*(?<prefix>SELECT .*?)";
-    String OFFSET_GROUP =
-        "(\\s+OFFSET\\s+(?<offset1>[^\\s]+)(\\s+\\+\\s+(?<offset2>[^\\s]+))?)?";
-    String LIMIT_GROUP =
-        "(\\s+LIMIT\\s+((?<limit1>[^\\s]+)|FIRST \\((?<limit2>[^,]+,[^\\)]+)\\)))?\\s*";
-    Pattern pattern =
-        Pattern.compile(PREFIX_GROUP + OFFSET_GROUP + LIMIT_GROUP, Pattern.CASE_INSENSITIVE);
-
-    Matcher matcher = pattern.matcher(queryString);
-
-    if (!matcher.matches()) {
-      throw new UnsupportedOperationException("paging for this query is not implemented yet");
-    }
-    */
+  protected GqlQuery<V> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
+    // See b/18705483
+    throw new UnsupportedOperationException("paging for this query is not implemented yet");
   }
 
   @Override
-  protected Object fromPb(ResultClass<T> resultType, String namespace, byte[] bytesPb)
+  protected Object fromPb(ResultClass<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
     return fromPb(resultType, namespace, DatastoreV1.GqlQuery.parseFrom(bytesPb));
   }
 
-  static <T> GqlQuery<T> fromPb(ResultClass<T> resultType, String namespace,
+  static <V> GqlQuery<V> fromPb(ResultClass<V> resultType, String namespace,
       DatastoreV1.GqlQuery queryPb) {
-    Builder<T> builder = new Builder<>(resultType, queryPb.getQueryString());
+    Builder<V> builder = new Builder<>(resultType, queryPb.getQueryString());
     builder.namespace(namespace);
     if (queryPb.hasAllowLiteral()) {
       builder.allowLiteral = queryPb.getAllowLiteral();
@@ -404,7 +413,7 @@ public final class GqlQuery<T> extends Query<T> {
    *
    * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
    */
-  public static <T> GqlQuery.Builder<T> builder(ResultClass<T> resultClass, String gql) {
+  public static <V> GqlQuery.Builder<V> builder(ResultClass<V> resultClass, String gql) {
     return new GqlQuery.Builder<>(resultClass, gql);
   }
 }

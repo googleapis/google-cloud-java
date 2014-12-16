@@ -9,7 +9,7 @@ import java.util.Iterator;
  *
  * @param V the type of the results value.
  */
-public interface QueryResult<T> extends Iterator<T> {
+public interface QueryResult<V> extends Iterator<V> {
 
   /**
    * Returns the actual class of the result's values.
