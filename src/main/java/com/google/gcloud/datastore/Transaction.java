@@ -33,7 +33,7 @@ import java.util.Iterator;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/transactions">Google Cloud Datastore transactions</a>
  *
  */
-public interface Transaction extends DatastoreReader, DatastoreWriter {
+public interface Transaction extends DatastoreReaderWriter {
 
   /**
    * {@inheritDoc}
@@ -78,6 +78,8 @@ public interface Transaction extends DatastoreReader, DatastoreWriter {
 
   /**
    * Rollback the transaction.
+   *
+   * @throws DatastoreServiceException if transaction was already committed
    */
   void rollback();
 

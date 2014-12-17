@@ -4,6 +4,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 
@@ -22,25 +23,65 @@ public final class ExceptionHandler implements Serializable {
   private static final ExceptionHandler DEFAULT_INSTANCE =
       builder().retryOn(Exception.class).abortOn(RuntimeException.class).build();
 
+  private final ImmutableList<Interceptor> interceptors;
   private final ImmutableSet<Class<? extends Exception>> retriableExceptions;
   private final ImmutableSet<Class<? extends Exception>> nonRetriableExceptions;
   private final Set<RetryInfo> retryInfos = Sets.newHashSet();
+
+  public interface Interceptor extends Serializable {
+
+    /**
+     * This method is called before evaluating if the exception should be propagated
+     * and could short-circuit the evaluation process.
+     *
+     * @param exception the exception that is being evaluated
+     * @return {@code Boolean.TRUE} if exception should be ignored, {@code Boolean.FALSE}
+     *      if exception should be propagated or {@code null} if evaluation should proceed.
+     */
+    Boolean shouldRetry(Exception exception);
+
+    /**
+     * This method is called after the evaluation but could alter the result if desired.
+     *
+     * @param exception the exception that is being evaluated
+     * @param shouldRetry the result of the evaluation
+     * @return {@code true} if exception should be ignored or {@code false}
+     *      if exception should be propagated.
+     */
+    boolean shouldRetry(Exception exception, boolean shouldRetry);
+  }
 
   /**
    * ExceptionHandler builder.
    */
   public static class Builder {
 
+    private final ImmutableList.Builder<Interceptor> interceptors = ImmutableList.builder();
     private final ImmutableSet.Builder<Class<? extends Exception>> retriableExceptions =
-        new ImmutableSet.Builder<>();
+        ImmutableSet.builder();
     private final ImmutableSet.Builder<Class<? extends Exception>> nonRetriableExceptions =
-        new ImmutableSet.Builder<>();
+        ImmutableSet.builder();
 
     private Builder() {
     }
 
+
     /**
-     * Specify on what exceptions to continue.
+     * Adds the exception handler interceptors.
+     * Call order will be maintained.
+
+     * @param interceptors the interceptors for this exception handler
+     * @return the Builder for chaining
+     */
+    public Builder interceptor(Interceptor... interceptors) {
+      for (Interceptor interceptor : interceptors) {
+        this.interceptors.add(interceptor);
+      }
+      return this;
+    }
+
+    /**
+     * Add the exceptions to ignore/retry-on.
      *
      * @param exceptions retry should continue when such exceptions are thrown
      * @return the Builder for chaining
@@ -54,7 +95,7 @@ public final class ExceptionHandler implements Serializable {
     }
 
     /**
-     * Specify on what exceptions to abort.
+     * Adds the exceptions to abort on.
      *
      * @param exceptions retry should abort when such exceptions are thrown
      * @return the Builder for chaining
@@ -107,6 +148,7 @@ public final class ExceptionHandler implements Serializable {
   }
 
   private ExceptionHandler(Builder builder) {
+    interceptors = builder.interceptors.build();
     retriableExceptions = builder.retriableExceptions.build();
     nonRetriableExceptions = builder.nonRetriableExceptions.build();
     Preconditions.checkArgument(
@@ -171,17 +213,27 @@ public final class ExceptionHandler implements Serializable {
     }
   }
 
-  public ImmutableSet<Class<? extends Exception>> getRetriableExceptions() {
+  public Set<Class<? extends Exception>> getRetriableExceptions() {
     return retriableExceptions;
   }
 
-  public ImmutableSet<Class<? extends Exception>> getNonRetriableExceptions() {
+  public Set<Class<? extends Exception>> getNonRetriableExceptions() {
     return nonRetriableExceptions;
   }
 
   boolean shouldRetry(Exception ex) {
+    for (Interceptor interceptor : interceptors) {
+      Boolean shouldRetry = interceptor.shouldRetry(ex);
+      if (shouldRetry != null) {
+        return shouldRetry.booleanValue();
+      }
+    }
     RetryInfo retryInfo = findMostSpecificRetryInfo(retryInfos, ex.getClass());
-    return retryInfo == null ? false : retryInfo.retry;
+    boolean shouldRetry = retryInfo == null ? false : retryInfo.retry;
+    for (Interceptor interceptor : interceptors) {
+      shouldRetry = interceptor.shouldRetry(ex, shouldRetry);
+    }
+    return shouldRetry;
   }
 
   /**

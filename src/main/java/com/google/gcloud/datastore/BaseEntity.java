@@ -30,9 +30,9 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
 
   private final transient ImmutableSortedMap<String, Value<?>> properties;
 
-  protected abstract static class Builder<E extends BaseEntity, B extends Builder<E, B>> {
+  protected abstract static class Builder<B extends Builder<B>> {
 
-    private final Map<String, Value<?>> properties;
+    protected final Map<String, Value<?>> properties;
 
     protected Builder() {
       properties = new HashMap<>();
@@ -123,11 +123,7 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       return self();
     }
 
-    public E build() {
-      return build(ImmutableSortedMap.copyOf(properties));
-    }
-
-    protected abstract E build(ImmutableSortedMap<String, Value<?>> properties);
+    public abstract BaseEntity build();
   }
 
   protected BaseEntity(ImmutableSortedMap<String, Value<?>> properties) {

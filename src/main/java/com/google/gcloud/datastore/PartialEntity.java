@@ -19,7 +19,7 @@ public class PartialEntity extends BaseEntity {
 
   private final transient PartialKey key;
 
-  public static class Builder extends BaseEntity.Builder<PartialEntity, Builder> {
+  public static class Builder extends BaseEntity.Builder<Builder> {
 
     private PartialKey key;
 
@@ -37,8 +37,8 @@ public class PartialEntity extends BaseEntity {
     }
 
     @Override
-    protected PartialEntity build(ImmutableSortedMap<String, Value<?>> properties) {
-      return new PartialEntity(key, properties);
+    public PartialEntity build() {
+      return new PartialEntity(key, ImmutableSortedMap.copyOf(properties));
     }
   }
 

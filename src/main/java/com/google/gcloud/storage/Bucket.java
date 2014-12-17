@@ -28,6 +28,7 @@ public interface Bucket {
   // that object can return its own meta-data, update its own meta-data, replace its content
   // via a stream or byteBuffer, read its content (via stream or ByteBuffer),...
   //void copy(String source, String bucket, String dest);
+  // Also consider read with an offset (and limit).
 
   void put(String name, ByteBuffer bytes);
 

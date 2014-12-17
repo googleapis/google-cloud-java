@@ -363,9 +363,9 @@ public class DatastoreServiceTest {
 
   @Test
   public void testAllocateId() {
-    KeyBuilder keyBuilder = datastore.newKeyBuilder(KIND1);
-    PartialKey pk1 = keyBuilder.build();
-    Key key1 = keyBuilder.allocateIdAndBuild();
+    KeyFactory keyFactory = new KeyFactory(datastore, KIND1);
+    PartialKey pk1 = keyFactory.newKey();
+    Key key1 = keyFactory.allocateId();
     assertEquals(key1.dataset(), pk1.dataset());
     assertEquals(key1.namespace(), pk1.namespace());
     assertEquals(key1.ancestors(), pk1.ancestors());
@@ -385,11 +385,11 @@ public class DatastoreServiceTest {
 
   @Test
   public void testAllocateIdArray() {
-    KeyBuilder keyBuilder = datastore.newKeyBuilder(KIND1);
-    PartialKey partialKey1 = keyBuilder.build();
-    PartialKey partialKey2 = keyBuilder.kind(KIND2).addAncestor(KIND1, 10).build();
-    Key key3 = keyBuilder.build("name");
-    Key key4 = keyBuilder.build(1);
+    KeyFactory keyFactory = new KeyFactory(datastore, KIND1);
+    PartialKey partialKey1 = keyFactory.newKey();
+    PartialKey partialKey2 = keyFactory.kind(KIND2).addAncestor(KIND1, 10).newKey();
+    Key key3 = keyFactory.newKey("name");
+    Key key4 = keyFactory.newKey(1);
     Iterator<Key> result =
         datastore.allocateId(partialKey1, partialKey2, key3, key4, partialKey1, key3);
     Map<Integer, Key> map = new HashMap<>();
@@ -525,12 +525,12 @@ public class DatastoreServiceTest {
   }
 
   @Test
-  public void testNewKeyBuilder() {
-    KeyBuilder keyBuilder = datastore.newKeyBuilder(KIND1);
-    assertEquals(PARTIAL_KEY1, keyBuilder.build());
+  public void testKeyFactory() {
+    KeyFactory keyFactory = new KeyFactory(datastore, KIND1);
+    assertEquals(PARTIAL_KEY1, keyFactory.newKey());
     assertEquals(PartialKey.builder(PARTIAL_KEY1).kind(KIND2).build(),
-        datastore.newKeyBuilder(KIND2).build());
-    assertEquals(KEY1, keyBuilder.build("name"));
-    assertEquals(Key.builder(KEY1).id(2).build(), keyBuilder.build(2));
+        new KeyFactory(datastore, KIND2).newKey());
+    assertEquals(KEY1, keyFactory.newKey("name"));
+    assertEquals(Key.builder(KEY1).id(2).build(), keyFactory.newKey(2));
   }
 }

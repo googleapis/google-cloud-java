@@ -5,7 +5,7 @@
  * <pre> {@code
  * DatastoreServiceOptions options = DatastoreServiceOptions.builder().dataset(DATASET).build();
  * DatastoreService datastore = DatastoreServiceFactory.getDefault(options);
- * KeyBuilder keyBuilder = datastore.newKeyBuilder(kind);
+ * KeyFactory keyBuilder = datastore.newKeyBuilder(kind);
  * Key key = keyBuilder.build(keyName);
  * Entity entity = datastore.get(key);
  * if (entity == null) {

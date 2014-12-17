@@ -20,7 +20,7 @@ public final class Entity extends PartialEntity {
 
   private static final long serialVersionUID = 432961565733066915L;
 
-  public static final class Builder extends BaseEntity.Builder<Entity, Builder> {
+  public static final class Builder extends BaseEntity.Builder<Builder> {
 
     private Key key;
 
@@ -39,8 +39,8 @@ public final class Entity extends PartialEntity {
     }
 
     @Override
-    protected Entity build(ImmutableSortedMap<String, Value<?>> properties) {
-      return new Entity(key, properties);
+    public Entity build() {
+      return new Entity(key, ImmutableSortedMap.copyOf(properties));
     }
   }
 

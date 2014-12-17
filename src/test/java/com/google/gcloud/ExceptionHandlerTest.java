@@ -4,19 +4,20 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.gcloud.ExceptionHandler.Interceptor;
+
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.channels.ClosedByInterruptException;
 import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Tests for {@link ExceptionHandler}.
  */
-@RunWith(JUnit4.class)
 public class ExceptionHandlerTest {
 
   @Test
@@ -92,6 +93,7 @@ public class ExceptionHandlerTest {
     }
   }
 
+  @SuppressWarnings("serial")
   @Test
   public void testShouldTry() {
     ExceptionHandler handler = ExceptionHandler.builder().retryOn(IOException.class).build();
@@ -99,15 +101,52 @@ public class ExceptionHandlerTest {
     assertTrue(handler.shouldRetry(new ClosedByInterruptException()));
     assertFalse(handler.shouldRetry(new RuntimeException()));
 
-    handler = ExceptionHandler.builder()
+    ExceptionHandler.Builder builder = ExceptionHandler.builder()
         .retryOn(IOException.class, NullPointerException.class)
         .abortOn(RuntimeException.class, ClosedByInterruptException.class,
-            InterruptedException.class)
-        .build();
+            InterruptedException.class);
+
+    handler = builder.build();
     assertTrue(handler.shouldRetry(new IOException()));
     assertFalse(handler.shouldRetry(new ClosedByInterruptException()));
     assertFalse(handler.shouldRetry(new InterruptedException()));
     assertFalse(handler.shouldRetry(new RuntimeException()));
     assertTrue(handler.shouldRetry(new NullPointerException()));
+
+    final AtomicReference<Boolean> before = new AtomicReference<>(false);
+
+    Interceptor interceptor = new Interceptor() {
+      @Override
+      public boolean shouldRetry(Exception exception, boolean shouldRetry) {
+        return !shouldRetry;
+      }
+
+      @Override
+      public Boolean shouldRetry(Exception exception) {
+        return before.get();
+      }
+    };
+
+    builder.interceptor(interceptor);
+    handler = builder.build();
+    assertFalse(handler.shouldRetry(new IOException()));
+    assertFalse(handler.shouldRetry(new ClosedByInterruptException()));
+    assertFalse(handler.shouldRetry(new InterruptedException()));
+    assertFalse(handler.shouldRetry(new RuntimeException()));
+    assertFalse(handler.shouldRetry(new NullPointerException()));
+
+    before.set(true);
+    assertTrue(handler.shouldRetry(new IOException()));
+    assertTrue(handler.shouldRetry(new ClosedByInterruptException()));
+    assertTrue(handler.shouldRetry(new InterruptedException()));
+    assertTrue(handler.shouldRetry(new RuntimeException()));
+    assertTrue(handler.shouldRetry(new NullPointerException()));
+
+    before.set(null);
+    assertFalse(handler.shouldRetry(new IOException()));
+    assertTrue(handler.shouldRetry(new ClosedByInterruptException()));
+    assertTrue(handler.shouldRetry(new InterruptedException()));
+    assertTrue(handler.shouldRetry(new RuntimeException()));
+    assertFalse(handler.shouldRetry(new NullPointerException()));
   }
 }

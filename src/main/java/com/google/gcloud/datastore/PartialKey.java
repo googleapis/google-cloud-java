@@ -15,7 +15,7 @@ public class PartialKey extends BaseKey {
 
   private static final long serialVersionUID = -75301206578793347L;
 
-  public static class Builder extends BaseKey.Builder<PartialKey, Builder> {
+  public static class Builder extends BaseKey.Builder<Builder> {
 
     private Builder(String dataset, String kind) {
       super(dataset, kind);
@@ -26,9 +26,8 @@ public class PartialKey extends BaseKey {
     }
 
     @Override
-    protected PartialKey build(String dataset, String namespace,
-        ImmutableList<PathElement> ancestors, String kind) {
-      return new PartialKey(dataset, namespace, ancestors, kind);
+    public PartialKey build() {
+      return new PartialKey(dataset, namespace, ImmutableList.copyOf(ancestors), kind);
     }
   }
 

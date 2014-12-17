@@ -26,12 +26,12 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
   private final transient ImmutableList<PathElement> ancestors;
   private final transient String kind;
 
-  abstract static class Builder<K extends PartialKey, B extends Builder<K, B>> {
+  abstract static class Builder<B extends Builder<B>> {
 
-    private String dataset;
-    private String namespace;
-    private String kind;
-    private final List<PathElement> ancestors;
+    protected String dataset;
+    protected String namespace;
+    protected String kind;
+    protected final List<PathElement> ancestors;
 
     private static final int MAX_PATH = 100;
 
@@ -100,12 +100,7 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
       return self();
     }
 
-    public K build() {
-      return build(dataset, namespace, ImmutableList.copyOf(ancestors), kind);
-    }
-
-    protected abstract K build(
-        String dataset, String namespace, ImmutableList<PathElement> ancestors, String kind);
+    protected abstract BaseKey build();
   }
 
   BaseKey(String dataset, String namespace, ImmutableList<PathElement> ancestors, String kind) {

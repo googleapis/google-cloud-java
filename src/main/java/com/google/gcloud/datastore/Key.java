@@ -25,7 +25,7 @@ public final class Key extends PartialKey {
 
   private final transient PathElement leaf;
 
-  public static final class Builder extends BaseKey.Builder<Key, Builder> {
+  public static final class Builder extends BaseKey.Builder<Builder> {
 
     private String name;
     private Long id;
@@ -62,12 +62,11 @@ public final class Key extends PartialKey {
     }
 
     @Override
-    protected Key build(String dataset, String namespace, ImmutableList<PathElement> ancestors,
-        String kind) {
+    public Key build() {
       if (id == null) {
-        return new Key(dataset, namespace, ancestors, kind, name);
+        return new Key(dataset, namespace, ImmutableList.copyOf(ancestors), kind, name);
       }
-      return new Key(dataset, namespace, ancestors, kind, id);
+      return new Key(dataset, namespace, ImmutableList.copyOf(ancestors), kind, id);
     }
   }
 

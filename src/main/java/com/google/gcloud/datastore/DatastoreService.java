@@ -5,18 +5,12 @@ import java.util.Iterator;
 /**
  * An interface for Google Cloud Datastore dataset.
  */
-public interface DatastoreService extends DatastoreReader, DatastoreWriter {
+public interface DatastoreService extends DatastoreReaderWriter {
 
   /**
    * Returns the {@code DatastoreServiceOptions} for this service.
    */
   DatastoreServiceOptions options();
-
-  /**
-   * Returns a key builder for the requested {@code kind}.
-   * The key would be initialized with the this service dataset and default namespace.
-   */
-  KeyBuilder newKeyBuilder(String kind);
 
   /**
    * Returns a new Datastore transaction.

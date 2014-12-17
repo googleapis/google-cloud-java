@@ -33,11 +33,6 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   @Override
-  public KeyBuilder newKeyBuilder(String kind) {
-    return new KeyBuilder(this, kind);
-  }
-
-  @Override
   public BatchWriter newBatchWriter(BatchWriteOption... batchWriteOption) {
     return new BatchWriterImpl(this, batchWriteOption);
   }
