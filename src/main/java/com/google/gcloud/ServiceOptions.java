@@ -116,4 +116,6 @@ public abstract class ServiceOptions {
   protected HttpRequestInitializer httpRequestInitializer() {
     return authConfig().httpRequestInitializer(httpTransport, scopes());
   }
+
+  public abstract Builder<?> toBuilder();
 }

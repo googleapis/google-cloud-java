@@ -1,6 +1,7 @@
 /**
  * A client to the Google Cloud Datastore.
- * A simple usage example:
+ *
+ * <p>A simple usage example:
  * <pre> {@code
  * DatastoreServiceOptions options = DatastoreServiceOptions.builder().dataset(DATASET).build();
  * DatastoreService datastore = DatastoreServiceFactory.getDefault(options);
@@ -29,5 +30,7 @@
  *   }
  * }
  * } </pre>
+ *
+ * @see <a href="https://cloud.google.com/datastore/">Google Cloud Datastore</a>
  */
 package com.google.gcloud.datastore;

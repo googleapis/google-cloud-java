@@ -95,6 +95,11 @@ public class DatastoreServiceOptions extends ServiceOptions {
     return SCOPES;
   }
 
+  @Override
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
   DatastoreOptions toDatastoreOptions() {
     return new DatastoreOptions.Builder()
         .dataset(dataset())
@@ -105,9 +110,5 @@ public class DatastoreServiceOptions extends ServiceOptions {
 
   public static Builder builder() {
     return new Builder();
-  }
-
-  public static Builder builder(DatastoreServiceOptions options) {
-    return new Builder(options);
   }
 }
