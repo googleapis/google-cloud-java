@@ -161,7 +161,7 @@ final class DatastoreServiceImpl implements DatastoreService {
       }
       mutationPb.addInsert(entity.toPb());
     }
-    comitMutation(mutationPb);
+    commitMutation(mutationPb);
   }
 
   @Override
@@ -174,7 +174,7 @@ final class DatastoreServiceImpl implements DatastoreService {
     for (Entity entity : dedupEntities.values()) {
       mutationPb.addUpdate(entity.toPb());
     }
-    comitMutation(mutationPb);
+    commitMutation(mutationPb);
   }
 
   @Override
@@ -187,7 +187,7 @@ final class DatastoreServiceImpl implements DatastoreService {
     for (Entity e : dedupEntities.values()) {
       mutationPb.addUpsert(e.toPb());
     }
-    comitMutation(mutationPb);
+    commitMutation(mutationPb);
   }
 
   @Override
@@ -197,20 +197,20 @@ final class DatastoreServiceImpl implements DatastoreService {
     for (Key key : dedupKeys) {
       mutationPb.addDelete(key.toPb());
     }
-    comitMutation(mutationPb);
+    commitMutation(mutationPb);
   }
 
-  private void comitMutation(DatastoreV1.Mutation.Builder mutationPb) {
+  private void commitMutation(DatastoreV1.Mutation.Builder mutationPb) {
     if (options.force()) {
       mutationPb.setForce(true);
     }
     DatastoreV1.CommitRequest.Builder requestPb = DatastoreV1.CommitRequest.newBuilder();
     requestPb.setMode(DatastoreV1.CommitRequest.Mode.NON_TRANSACTIONAL);
     requestPb.setMutation(mutationPb);
-    comitMutation(requestPb);
+    commitMutation(requestPb);
   }
 
-  void comitMutation(DatastoreV1.CommitRequest.Builder requestPb) {
+  void commitMutation(DatastoreV1.CommitRequest.Builder requestPb) {
     try {
       datastore.commit(requestPb.build());
     } catch (DatastoreException e) {
