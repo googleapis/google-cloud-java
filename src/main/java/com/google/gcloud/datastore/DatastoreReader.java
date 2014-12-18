@@ -15,8 +15,11 @@ public interface DatastoreReader {
   Entity get(Key key);
 
   /**
-   * Returns an {@link Entity} for each given {@link Key} or {@code null} if does not exists
-   * ordered by input.
+   * Returns an {@link Entity} for each given {@link Key} that exists in the Datastore.
+   * The order of the result is unspecified.
+   * Results are loaded lazily therefore it is possible to get a DatastoreServiceException
+   * from the returned {@code Iterator} {@link Iterator#hasNext hasNext} or
+   * {@link Iterator#next next} calls.
    *
    * @throws DatastoreServiceException upon failure.
    */
@@ -27,5 +30,5 @@ public interface DatastoreReader {
    *
    * @throws DatastoreServiceException upon failure.
    */
-  <T> QueryResult<T> runQuery(Query<T> query);
+  <T> QueryResult<T> run(Query<T> query);
 }

@@ -108,8 +108,8 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       return self();
     }
 
-    public B set(String name, Value<?>... value) {
-      properties.put(name, of(Arrays.asList(value)));
+    public B set(String name, Value<?> value, Value<?>... other) {
+      properties.put(name, of(value, other));
       return self();
     }
 

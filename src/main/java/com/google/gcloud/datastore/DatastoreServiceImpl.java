@@ -7,11 +7,9 @@ import com.google.common.collect.AbstractIterator;
 import com.google.protobuf.ByteString;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
-import java.util.Map;
 
 
 final class DatastoreServiceImpl implements DatastoreService {
@@ -43,15 +41,15 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   @Override
-  public <T> QueryResult<T> runQuery(Query<T> query) {
-    return runQuery(null, query);
+  public <T> QueryResult<T> run(Query<T> query) {
+    return run(null, query);
   }
 
-  <T> QueryResult<T> runQuery(DatastoreV1.ReadOptions readOptionsPb, Query<T> query) {
+  <T> QueryResult<T> run(DatastoreV1.ReadOptions readOptionsPb, Query<T> query) {
     return new QueryResultImpl<>(this, readOptionsPb, query);
   }
 
-  DatastoreV1.RunQueryResponse runQuery(DatastoreV1.RunQueryRequest requestPb) {
+  DatastoreV1.RunQueryResponse run(DatastoreV1.RunQueryRequest requestPb) {
     try {
       return datastore.runQuery(requestPb);
     } catch (DatastoreException e) {
@@ -99,7 +97,8 @@ final class DatastoreServiceImpl implements DatastoreService {
 
   @Override
   public Entity get(Key key) {
-    return get(key, EMPTY_KEY_ARRAY).next();
+    Iterator<Entity> iter = get(key, EMPTY_KEY_ARRAY);
+    return iter.hasNext() ? iter.next() : null;
   }
 
   @Override
@@ -108,7 +107,7 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   Iterator<Entity> get(DatastoreV1.ReadOptions readOptionsPb, final Key key, final Key... others) {
-    DatastoreV1.LookupRequest.Builder requestPb = DatastoreV1.LookupRequest.newBuilder();
+    final DatastoreV1.LookupRequest.Builder requestPb = DatastoreV1.LookupRequest.newBuilder();
     if (readOptionsPb != null) {
       requestPb.setReadOptions(readOptionsPb);
     }
@@ -118,30 +117,44 @@ final class DatastoreServiceImpl implements DatastoreService {
     for (Key k : dedupKeys) {
       requestPb.addKey(k.toPb());
     }
-    try {
-      DatastoreV1.LookupResponse responsePb = datastore.lookup(requestPb.build());
-      final Map<Key, Entity> result = new HashMap<>();
-      for (DatastoreV1.EntityResult entityResultPb : responsePb.getFoundList()) {
-        Entity entity = Entity.fromPb(entityResultPb.getEntity());
-        result.put(entity.key(), entity);
-      }
-      return new AbstractIterator<Entity>() {
-        int index = -2;
+    return new ResultsIterator(requestPb);
+  }
 
-        @Override
-        protected Entity computeNext() {
-          ++index;
-          if (index < 0) {
-            return result.get(key);
-          }
-          if (index < others.length) {
-            return result.get(others[index]);
-          }
+  final class ResultsIterator extends AbstractIterator<Entity> {
+
+    private final DatastoreV1.LookupRequest.Builder requestPb;
+    Iterator<DatastoreV1.EntityResult> iter;
+
+    ResultsIterator(DatastoreV1.LookupRequest.Builder requestPb) {
+      this.requestPb = requestPb;
+      loadResults();
+    }
+
+    private void loadResults() {
+      try {
+        DatastoreV1.LookupResponse responsePb = datastore.lookup(requestPb.build());
+        iter = responsePb.getFoundList().iterator();
+        requestPb.clearKey();
+        if (responsePb.getDeferredCount() > 0) {
+          requestPb.addAllKey(responsePb.getDeferredList());
+        }
+      } catch (DatastoreException e) {
+        throw DatastoreServiceException.translateAndThrow(e);
+      }
+    }
+
+    @Override
+    protected Entity computeNext() {
+      if (iter.hasNext()) {
+        return Entity.fromPb(iter.next().getEntity());
+      }
+      while (!iter.hasNext()) {
+        if (requestPb.getKeyCount() == 0) {
           return endOfData();
         }
-      };
-    } catch (DatastoreException e) {
-      throw DatastoreServiceException.translateAndThrow(e);
+        loadResults();
+      }
+      return Entity.fromPb(iter.next().getEntity());
     }
   }
 

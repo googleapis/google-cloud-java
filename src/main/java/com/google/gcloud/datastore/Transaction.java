@@ -41,7 +41,7 @@ public interface Transaction extends DatastoreReaderWriter {
    * to fail if entity was changed by others after it was seen by this transaction) but any
    * write changes in this transaction will not be reflected by the returned entity.
    *
-   * @throws DatastoreServiceException upon failure.
+   * @throws DatastoreServiceException upon failure or if no longer active
    */
   @Override
   Entity get(Key key);
@@ -52,7 +52,7 @@ public interface Transaction extends DatastoreReaderWriter {
    * to fail if any of the entities was changed by others after they were seen by this transaction)
    * but any write changes in this transaction will not be reflected by the returned entities.
    *
-   * @throws DatastoreServiceException upon failure.
+   * @throws DatastoreServiceException upon failure or if no longer active
    */
   @Override
   Iterator<Entity> get(Key key, Key... others);
@@ -64,15 +64,15 @@ public interface Transaction extends DatastoreReaderWriter {
    * query was performed) but any write changes in this transaction will not be reflected by
    * the result.
    *
-   * @throws DatastoreServiceException upon failure.
+   * @throws DatastoreServiceException upon failure or if no longer active
    */
   @Override
-  <T> QueryResult<T> runQuery(Query<T> query);
+  <T> QueryResult<T> run(Query<T> query);
 
   /**
    * Commit the transaction.
    *
-   * @throws DatastoreServiceException if could not commit the transaction
+   * @throws DatastoreServiceException if could not commit the transaction or if no longer active
    */
   void commit();
 

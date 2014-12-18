@@ -20,22 +20,45 @@ public interface BatchWriter extends DatastoreWriter {
 
   /**
    * {@inheritDoc}
-   * @throws DatastoreServiceException if a given entity already added to this batch
+   * This operation will be converted to {@link #put} operation for entities that were already
+   *     marked for deletion in this batch.
+   * @throws DatastoreServiceException if a given entity already added to this batch or if batch
+   *     is no longer active
    */
   @Override
   void add(Entity... entity);
 
   /**
    * {@inheritDoc}
-   * @throws DatastoreServiceException if an entity is marked for deletion in this batch
+   * This operation will be converted to {@link #put} operation for entities that were already
+   *     added or put in this batch.
+   * @throws DatastoreServiceException if an entity is marked for deletion in this batch or if
+   *     batch is no longer active
    */
   @Override
   void update(Entity... entity);
 
   /**
+   * {@inheritDoc}
+   * This operation will also remove from this batch any prior writes for entities with the same
+   *     keys.
+   * @throws DatastoreServiceException if batch is no longer active
+   */
+  @Override
+  public void delete(Key... key);
+
+  /**
+   * {@inheritDoc}
+   * This operation will also remove from this batch any prior writes for the same entities.
+   * @throws DatastoreServiceException if batch is no longer active
+   */
+  @Override
+  public void put(Entity... entity);
+
+  /**
    * Submit the batch to the Datastore.
    *
-   * @throws DatastoreServiceException if there was any failure.
+   * @throws DatastoreServiceException if there was any failure or if batch is not longer active
    */
   void submit();
 

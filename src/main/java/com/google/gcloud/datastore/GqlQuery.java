@@ -29,7 +29,7 @@ import java.util.TreeMap;
  * <p>When the type of the results is known the preferred usage would be:
  * <pre> {@code
  *   Query<Entity> query = GqlQuery.builder(ResultClass.full(), "select * from kind").build();
- *   QueryResult<Entity> results = datastore.runQuery(query);
+ *   QueryResult<Entity> results = datastore.run(query);
  *   while (results.hasNext()) {
  *     Entity entity = results.next();
  *     ...
@@ -39,7 +39,7 @@ import java.util.TreeMap;
  * <p>When the type of the results is unknown you can use this approach:
  * <pre> {@code
  *   Query<?> query = GqlQuery.builder("select __key__ from kind").build();
- *   QueryResult<?> results = datastore.runQuery(query);
+ *   QueryResult<?> results = datastore.run(query);
  *   if (Key.class.isAssignableFrom(results.resultClass())) {
  *     QueryResult<Key> keys = (QueryResult<Key>) results;
  *     while (keys.hasNext()) {

@@ -29,7 +29,8 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
 
   @Override
   public Entity get(Key key) {
-    return get(key, DatastoreServiceImpl.EMPTY_KEY_ARRAY).next();
+    Iterator<Entity> iter = get(key, DatastoreServiceImpl.EMPTY_KEY_ARRAY);
+    return iter.hasNext() ? iter.next() : null;
   }
 
   @Override
@@ -41,11 +42,11 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
   }
 
   @Override
-  public <T> QueryResult<T> runQuery(Query<T> query) {
+  public <T> QueryResult<T> run(Query<T> query) {
     checkActive();
     DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);
-    return datastore.runQuery(readOptionsPb.build(), query);
+    return datastore.run(readOptionsPb.build(), query);
   }
 
   @Override
