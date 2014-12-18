@@ -107,7 +107,7 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   Iterator<Entity> get(DatastoreV1.ReadOptions readOptionsPb, final Key key, final Key... others) {
-    final DatastoreV1.LookupRequest.Builder requestPb = DatastoreV1.LookupRequest.newBuilder();
+    DatastoreV1.LookupRequest.Builder requestPb = DatastoreV1.LookupRequest.newBuilder();
     if (readOptionsPb != null) {
       requestPb.setReadOptions(readOptionsPb);
     }

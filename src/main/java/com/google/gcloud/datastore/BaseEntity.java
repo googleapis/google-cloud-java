@@ -15,7 +15,6 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.gcloud.datastore.Value.Type;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
