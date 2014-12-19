@@ -8,12 +8,16 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.services.datastore.DatastoreV1;
+import com.google.api.services.datastore.client.Datastore;
+import com.google.api.services.datastore.client.DatastoreException;
 import com.google.common.collect.Maps;
 import com.google.gcloud.datastore.Query.Type;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 
+import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -276,7 +280,7 @@ public class DatastoreServiceTest {
   }
 
   @Test
-  public void testRunGqlQueryNoCasting() {
+  public void testRunGqlQueryNoCasting() throws DatastoreException {
     Query<Entity> query1 = GqlQuery.builder(Type.FULL, "select * from " + KIND1).build();
     QueryResult<Entity> results1 = datastore.run(query1);
     assertTrue(results1.hasNext());
@@ -304,18 +308,35 @@ public class DatastoreServiceTest {
     assertEquals(KEY1, keyOnlyResults.next());
     assertFalse(keyOnlyResults.hasNext());
 
-    // broken because of b/18806697
-    Query<ProjectionEntity> projectionQuery = GqlQuery.builder(
+    GqlQuery<ProjectionEntity> projectionQuery = GqlQuery.builder(
         Type.PROJECTION, "select str, date from " + KIND1).build();
+
+    // this hack is needed because of b/18806697
+    DatastoreV1.RunQueryRequest.Builder requestPb = DatastoreV1.RunQueryRequest.newBuilder();
+    requestPb.setGqlQuery(projectionQuery.toPb());
+    requestPb.setPartitionId(DatastoreV1.PartitionId.newBuilder().setDatasetId(DATASET).build());
+    DatastoreV1.RunQueryResponse responsePb =
+        ((DatastoreServiceImpl) datastore).run(requestPb.build());
+    DatastoreV1.RunQueryResponse.Builder responsePbBuilder = responsePb.toBuilder();
+    responsePbBuilder.getBatchBuilder()
+        .setEntityResultType(DatastoreV1.EntityResult.ResultType.PROJECTION).build();
+    Datastore mockDatastore = EasyMock.createMock(Datastore.class);
+    EasyMock.expect(mockDatastore.runQuery(requestPb.build())).andReturn(responsePbBuilder.build());
+    EasyMock.replay(mockDatastore);
+    datastore = DatastoreServiceFactory.getDefault(
+        datastore.options().toBuilder().datastore(mockDatastore).build());
+    // end of hack
+
     QueryResult<ProjectionEntity> projectionResult = datastore.run(projectionQuery);
     assertTrue(projectionResult.hasNext());
     ProjectionEntity projectionEntity = projectionResult.next();
     assertEquals("str", projectionEntity.getString("str"));
-    assertEquals(DATE_TIME_VALUE, projectionEntity.getDateTime("date"));
+    assertEquals(DATE_TIME_VALUE.get(), projectionEntity.getDateTime("date"));
     assertEquals(DATE_TIME_VALUE.get().timestampMicroseconds(),
         projectionEntity.getLong("date"));
     assertEquals(2, projectionEntity.names().size());
     assertFalse(projectionResult.hasNext());
+    EasyMock.verify(mockDatastore);
   }
 
   @Test
@@ -338,7 +359,7 @@ public class DatastoreServiceTest {
   }
 
   @Test
-  public void testRunStructuredQuery() {
+  public void testRunStructuredQuery() throws DatastoreException {
     StructuredQuery<Entity> query =
         StructuredQuery.builder().kind(KIND1).orderBy(OrderBy.asc("__key__")).build();
     QueryResult<Entity> results1 = datastore.run(query);
@@ -361,7 +382,22 @@ public class DatastoreServiceTest {
         .limit(10)
         .build();
 
-    // broken because of b/18806697
+    // this hack is needed because of b/18806697
+    DatastoreV1.RunQueryRequest.Builder requestPb = DatastoreV1.RunQueryRequest.newBuilder();
+    requestPb.setQuery(projectionQuery.toPb());
+    requestPb.setPartitionId(DatastoreV1.PartitionId.newBuilder().setDatasetId(DATASET).build());
+    DatastoreV1.RunQueryResponse responsePb =
+        ((DatastoreServiceImpl) datastore).run(requestPb.build());
+    DatastoreV1.RunQueryResponse.Builder responsePbBuilder = responsePb.toBuilder();
+    responsePbBuilder.getBatchBuilder()
+        .setEntityResultType(DatastoreV1.EntityResult.ResultType.PROJECTION).build();
+    Datastore mockDatastore = EasyMock.createMock(Datastore.class);
+    EasyMock.expect(mockDatastore.runQuery(requestPb.build())).andReturn(responsePbBuilder.build());
+    EasyMock.replay(mockDatastore);
+    datastore = DatastoreServiceFactory.getDefault(
+        datastore.options().toBuilder().datastore(mockDatastore).build());
+    // end of hack
+
     QueryResult<ProjectionEntity> results3 = datastore.run(projectionQuery);
     assertTrue(results3.hasNext());
     ProjectionEntity entity = results3.next();
@@ -370,6 +406,7 @@ public class DatastoreServiceTest {
     assertEquals("koko", entity.getString("name"));
     assertEquals(2, entity.properties().size());
     assertFalse(results3.hasNext());
+    EasyMock.verify(mockDatastore);
 
     // TODO(ozarov): construct a test to verify nextQuery/pagination
   }
@@ -467,6 +504,7 @@ public class DatastoreServiceTest {
       // expected - no such property
     }
     assertFalse(result.hasNext());
+    // TODO(ozarov): construct a test to verify more results
   }
 
   public List<Entity> fetch(Key key, Key... others) {

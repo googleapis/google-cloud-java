@@ -65,6 +65,12 @@
       <artifactId>google-api-services-datastore</artifactId>
       <version>v1beta2-rev23-1.19.0</version>
     </dependency>
+    <dependency>
+    	<groupId>org.easymock</groupId>
+    	<artifactId>easymock</artifactId>
+    	<version>3.3</version>
+    	<scope>test</scope>
+    </dependency>
   </dependencies>
   <repositories>
     <repository>

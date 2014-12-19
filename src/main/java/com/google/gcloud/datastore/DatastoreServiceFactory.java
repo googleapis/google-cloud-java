@@ -1,8 +1,5 @@
 package com.google.gcloud.datastore;
 
-import com.google.api.services.datastore.client.Datastore;
-import com.google.api.services.datastore.client.DatastoreFactory;
-import com.google.api.services.datastore.client.DatastoreOptions;
 
 
 public abstract class DatastoreServiceFactory {
@@ -10,9 +7,7 @@ public abstract class DatastoreServiceFactory {
   private static final DatastoreServiceFactory INSTANCE = new DatastoreServiceFactory() {
       @Override
       public DatastoreService get(DatastoreServiceOptions options) {
-        DatastoreOptions dsOptions = options.toDatastoreOptions();
-        Datastore datastore = DatastoreFactory.get().create(dsOptions);
-        return new DatastoreServiceImpl(options, datastore);
+        return new DatastoreServiceImpl(options, options.datastore());
       }
     };
 

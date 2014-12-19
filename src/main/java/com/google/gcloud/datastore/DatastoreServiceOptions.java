@@ -5,6 +5,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.gcloud.datastore.Validator.validateDataset;
 import static com.google.gcloud.datastore.Validator.validateNamespace;
 
+import com.google.api.services.datastore.client.Datastore;
+import com.google.api.services.datastore.client.DatastoreFactory;
 import com.google.api.services.datastore.client.DatastoreOptions;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
@@ -20,6 +22,7 @@ public class DatastoreServiceOptions extends ServiceOptions {
   private final String dataset;
   private final String namespace;
   private final boolean force;
+  private final Datastore datastore;
 
   DatastoreServiceOptions(Builder builder) {
     super(builder);
@@ -27,6 +30,7 @@ public class DatastoreServiceOptions extends ServiceOptions {
     checkArgument(dataset != null, "missing dataset");
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
     force = builder.force;
+    datastore = builder.datastore;
   }
 
   public static class Builder extends ServiceOptions.Builder<Builder> {
@@ -34,6 +38,7 @@ public class DatastoreServiceOptions extends ServiceOptions {
     private String dataset;
     private String namespace;
     private boolean force = false;
+    private Datastore datastore;
 
     private Builder() {
     }
@@ -47,6 +52,11 @@ public class DatastoreServiceOptions extends ServiceOptions {
     @Override
     public DatastoreServiceOptions build() {
       return new DatastoreServiceOptions(this);
+    }
+
+    Builder datastore(Datastore datastore) {
+      this.datastore = datastore;
+      return this;
     }
 
     public Builder dataset(String dataset) {
@@ -100,12 +110,16 @@ public class DatastoreServiceOptions extends ServiceOptions {
     return new Builder(this);
   }
 
-  DatastoreOptions toDatastoreOptions() {
+  private DatastoreOptions toDatastoreOptions() {
     return new DatastoreOptions.Builder()
         .dataset(dataset())
         .host(host())
         .initializer(httpRequestInitializer())
         .build();
+  }
+
+  Datastore datastore() {
+    return datastore != null ? datastore : DatastoreFactory.get().create(toDatastoreOptions());
   }
 
   public static Builder builder() {
