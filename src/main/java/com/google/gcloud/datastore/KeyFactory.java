@@ -18,21 +18,22 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
     namespace(service.options().namespace());
   }
 
-  @Override
-  protected PartialKey build() {
-    return new PartialKey(dataset, namespace, ImmutableList.copyOf(ancestors), kind);
-  }
-
   public PartialKey newKey() {
-    return build();
+    ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
+        .addAll(ancestors).add(PathElement.of(kind)).build();
+    return new PartialKey(dataset, namespace, path);
   }
 
   public Key newKey(String name) {
-    return new Key(dataset, namespace, ImmutableList.copyOf(ancestors), kind, name);
+    ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
+        .addAll(ancestors).add(PathElement.of(kind, name)).build();
+    return new Key(dataset, namespace, path);
   }
 
   public Key newKey(long id) {
-    return new Key(dataset, namespace, ImmutableList.copyOf(ancestors), kind, id);
+    ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
+        .addAll(ancestors).add(PathElement.of(kind, id)).build();
+    return new Key(dataset, namespace, path);
   }
 
   /**
@@ -40,6 +41,11 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
    * @throws DatastoreServiceException if allocation failed.
    */
   public Key allocateId() {
-    return service.allocateId(build());
+    return service.allocateId(newKey());
+  }
+
+  @Override
+  protected PartialKey build() {
+    return newKey();
   }
 }

@@ -13,7 +13,6 @@ import static com.google.gcloud.datastore.StringValue.of;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableSortedMap;
-import com.google.gcloud.datastore.Value.Type;
 
 import java.util.HashMap;
 import java.util.List;
@@ -150,10 +149,6 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
     return property;
   }
 
-  public Type type(String name) {
-    return getValue(name).type();
-  }
-
   public boolean isNull(String name) {
     return getValue(name) instanceof NullValue;
   }
@@ -193,17 +188,6 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
 
   public Blob getBlob(String name) {
     return ((BlobValue) getValue(name)).get();
-  }
-
-  /**
-   * Returns the property's value as a {@link RawValue}.
-   */
-  public RawValue asRawValue(String name) {
-    Value<?> value = getValue(name);
-    if (value instanceof RawValue) {
-      return (RawValue) value;
-    }
-    return new RawValue(value.toPb());
   }
 
   /**

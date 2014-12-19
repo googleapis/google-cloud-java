@@ -241,6 +241,7 @@ public class DatastoreServiceTest {
     Entity entity2 = Entity.builder(ENTITY2).clear().setNull("bla").build();
     Entity entity4 = Entity.builder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.builder(KEY5).set("value", "value").build();
+
     batchWriter.add(entity4, entity5);
     batchWriter.put(ENTITY3, entity1, entity2);
     batchWriter.submit();
@@ -312,9 +313,9 @@ public class DatastoreServiceTest {
         Type.PROJECTION, "select __key__ from " + KIND1).build();
     QueryResult<ProjectionEntity> keyProjectionResult = datastore.run(keyProjectionQuery);
     assertTrue(keyProjectionResult.hasNext());
-    ProjectionEntity p = keyProjectionResult.next();
-    assertEquals(KEY1, p.key());
-    assertTrue(p.properties().isEmpty());
+    ProjectionEntity projectionEntity = keyProjectionResult.next();
+    assertEquals(KEY1, projectionEntity.key());
+    assertTrue(projectionEntity.properties().isEmpty());
     assertFalse(keyProjectionResult.hasNext());
 
     GqlQuery<ProjectionEntity> projectionQuery = GqlQuery.builder(
@@ -338,7 +339,7 @@ public class DatastoreServiceTest {
 
     QueryResult<ProjectionEntity> projectionResult = datastore.run(projectionQuery);
     assertTrue(projectionResult.hasNext());
-    ProjectionEntity projectionEntity = projectionResult.next();
+    projectionEntity = projectionResult.next();
     assertEquals("str", projectionEntity.getString("str"));
     assertEquals(DATE_TIME_VALUE.get(), projectionEntity.getDateTime("date"));
     assertEquals(DATE_TIME_VALUE.get().timestampMicroseconds(),
@@ -454,7 +455,7 @@ public class DatastoreServiceTest {
   public void testAllocateIdArray() {
     KeyFactory keyFactory = new KeyFactory(datastore, KIND1);
     PartialKey partialKey1 = keyFactory.newKey();
-    PartialKey partialKey2 = keyFactory.kind(KIND2).addAncestor(KIND1, 10).newKey();
+    PartialKey partialKey2 = keyFactory.kind(KIND2).ancestors(PathElement.of(KIND1, 10)).newKey();
     Key key3 = keyFactory.newKey("name");
     Key key4 = keyFactory.newKey(1);
     Iterator<Key> result =
@@ -481,14 +482,14 @@ public class DatastoreServiceTest {
     entity = datastore.get(KEY1);
     assertEquals(ENTITY1, entity);
     StringValue value1 = entity.getValue("str");
-    BooleanValue value2 = entity.getValue("bool");
-    ListValue value3 = entity.getValue("list");
-    DateTimeValue value4 = entity.getValue("date");
-    PartialEntity value5 = entity.getEntity("partial1");
     assertEquals(STR_VALUE, value1);
+    BooleanValue value2 = entity.getValue("bool");
     assertEquals(BOOL_VALUE, value2);
+    ListValue value3 = entity.getValue("list");
     assertEquals(LIST_VALUE2, value3);
+    DateTimeValue value4 = entity.getValue("date");
     assertEquals(DATE_TIME_VALUE, value4);
+    PartialEntity value5 = entity.getEntity("partial1");
     assertEquals(PARTIAL_ENTITY1, value5);
     assertEquals(5, entity.names().size());
     assertFalse(entity.contains("bla"));
@@ -511,7 +512,7 @@ public class DatastoreServiceTest {
     Entity partial2 = (Entity) entity3.getEntity("partial2");
     assertEquals(partial1, PARTIAL_ENTITY2);
     assertEquals(partial2, ENTITY2);
-    assertEquals(Value.Type.BOOLEAN, entity3.type("bool"));
+    assertEquals(Value.Type.BOOLEAN, entity3.getValue("bool").type());
     assertEquals(6, entity3.names().size());
     assertFalse(entity3.contains("bla"));
     try {

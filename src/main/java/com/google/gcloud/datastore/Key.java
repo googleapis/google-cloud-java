@@ -23,8 +23,6 @@ public final class Key extends PartialKey {
 
   private static final long serialVersionUID = 3160994559785491356L;
 
-  private final transient PathElement leaf;
-
   public static final class Builder extends BaseKey.Builder<Builder> {
 
     private String name;
@@ -63,52 +61,50 @@ public final class Key extends PartialKey {
 
     @Override
     public Key build() {
+      ImmutableList.Builder<PathElement> pathBuilder =
+          ImmutableList.<PathElement>builder().addAll(ancestors);
       if (id == null) {
-        return new Key(dataset, namespace, ImmutableList.copyOf(ancestors), kind, name);
+        pathBuilder.add(PathElement.of(kind, name));
+      } else {
+        pathBuilder.add(PathElement.of(kind, id));
       }
-      return new Key(dataset, namespace, ImmutableList.copyOf(ancestors), kind, id);
+      return new Key(dataset, namespace, pathBuilder.build());
     }
   }
 
-  Key(String dataset, String namespace,  ImmutableList<PathElement> ancestors,
-      String kind, String name) {
-    super(dataset, namespace, ancestors, kind);
-    leaf = new PathElement(kind, name);
-  }
-
-  Key(String dataset, String namespace,  ImmutableList<PathElement> ancestors,
-      String kind, long id) {
-    super(dataset, namespace, ancestors, kind);
-    leaf = new PathElement(kind, id);
+  Key(String dataset, String namespace, ImmutableList<PathElement> path) {
+    super(dataset, namespace, path);
+    Preconditions.checkArgument(nameOrId() != null);
   }
 
   public boolean hasId() {
-    return leaf.hasId();
+    return leaf().hasId();
   }
 
   /**
    * Returns the key's id or {@code null} if it has a name instead.
    */
   public Long id() {
-    return leaf.id();
+    return leaf().id();
   }
 
   public boolean hasName() {
-    return leaf.hasName();
+    return leaf().hasName();
   }
 
   /**
    * Returns the key's name or {@code null} if it has an id instead.
    */
   public String name() {
-    return leaf.name();
+    return leaf().name();
   }
 
   /**
    * Returns the key's id (as {@link Long}) or name (as {@link String}).
+   * Never {@code null}.
    */
   public Object nameOrId() {
-    return leaf.nameOrId();
+    return leaf().nameOrId();
   }
 
   /**
@@ -137,11 +133,6 @@ public final class Key extends PartialKey {
     } catch (InvalidProtocolBufferException e) {
       throw new RuntimeException("Could not parse key", e);
     }
-  }
-
-  @Override
-  protected PathElement leaf() {
-    return leaf;
   }
 
   @Override
@@ -181,11 +172,11 @@ public final class Key extends PartialKey {
 
   private static void addParentToBuilder(Key parent, Builder builder) {
     builder.namespace(parent.namespace());
-    builder.addAncestors(parent.ancestors());
+    builder.ancestors(parent.ancestors());
     if (parent.hasId()) {
-      builder.addAncestor(new PathElement(parent.kind(), parent.id()));
+      builder.ancestors(PathElement.of(parent.kind(), parent.id()));
     } else {
-      builder.addAncestor(new PathElement(parent.kind(), parent.name()));
+      builder.ancestors(PathElement.of(parent.kind(), parent.name()));
     }
   }
 }

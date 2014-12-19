@@ -23,10 +23,10 @@ import java.io.ObjectOutputStream;
 public class SerializationTest {
 
   private static final PartialKey INCOMPLETE_KEY1 =
-      PartialKey.builder("ds", "k").addAncestor("p", 1).build();
+      PartialKey.builder("ds", "k").ancestors(PathElement.of("p", 1)).build();
   private static final Key KEY1 = Key.builder("ds", "k", "n").build();
   private static final PartialKey INCOMPLETE_KEY2 =
-      PartialKey.builder(KEY1, "v").addAncestor("p", 1).build();
+      PartialKey.builder(KEY1, "v").ancestors(PathElement.of("p", 1)).build();
   private static final Key KEY2 = Key.builder(KEY1, "v", 2).build();
   private static final DateTime DATE_TIME1 = DateTime.now();
   private static final Blob BLOB1 = Blob.copyFrom(UTF_8.encode("hello world"));

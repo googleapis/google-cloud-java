@@ -1,6 +1,10 @@
 package com.google.gcloud.datastore;
 
+import static com.google.api.client.repackaged.com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.base.Strings;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.util.Objects;
@@ -16,20 +20,10 @@ public final class PathElement extends Serializable<DatastoreV1.Key.PathElement>
   private final transient Long id;
   private final transient String name;
 
-  PathElement(String kind) {
-    this(kind, null);
-  }
-
-  public PathElement(String kind, long id) {
-    this.kind = kind;
-    this.id = id;
-    name = null;
-  }
-
-  public PathElement(String kind, String name) {
-    this.kind = kind;
+  private PathElement(String kind, String name, Long id) {
+    this.kind = checkNotNull(kind);
     this.name = name;
-    id = null;
+    this.id = id;
   }
 
   public String kind() {
@@ -95,10 +89,25 @@ public final class PathElement extends Serializable<DatastoreV1.Key.PathElement>
   static PathElement fromPb(DatastoreV1.Key.PathElement pathElementPb) {
     String kind = pathElementPb.getKind();
     if (pathElementPb.hasId()) {
-      return new PathElement(kind, pathElementPb.getId());
+      return PathElement.of(kind, pathElementPb.getId());
     } else if (pathElementPb.hasName()) {
-      return new PathElement(kind, pathElementPb.getName());
+      return PathElement.of(kind, pathElementPb.getName());
     }
-    return new PathElement(kind);
+    return PathElement.of(kind);
+  }
+
+  static PathElement of(String kind) {
+    return new PathElement(kind, null, null);
+  }
+
+  public static PathElement of(String kind, String name) {
+    checkArgument(!Strings.isNullOrEmpty(name) , "name must not be empty or null");
+    checkArgument(name.length() <= 500, "name must not exceed 500 characters");
+    return new PathElement(kind, name, null);
+  }
+
+  public static PathElement of(String kind, long id) {
+    checkArgument(id != 0, "id must not be equal to zero");
+    return new PathElement(kind, null, id);
   }
 }
