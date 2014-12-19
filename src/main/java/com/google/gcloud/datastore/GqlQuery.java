@@ -28,7 +28,7 @@ import java.util.TreeMap;
  *
  * <p>When the type of the results is known the preferred usage would be:
  * <pre> {@code
- *   Query<Entity> query = GqlQuery.builder(ResultClass.full(), "select * from kind").build();
+ *   Query<Entity> query = GqlQuery.builder(Query.Type.FULL, "select * from kind").build();
  *   QueryResult<Entity> results = datastore.run(query);
  *   while (results.hasNext()) {
  *     Entity entity = results.next();
@@ -142,15 +142,15 @@ public final class GqlQuery<V> extends Query<V> {
    */
   public static final class Builder<V> {
 
-    private final ResultClass<V> resultClass;
+    private final Type<V> type;
     private String namespace;
     private String queryString;
     private boolean allowLiteral;
     private Map<String, Argument> nameArgs = new TreeMap<>();
     private List<Argument> numberArgs = new LinkedList<>();
 
-    Builder(ResultClass<V> resultClass, String query) {
-      this.resultClass = checkNotNull(resultClass);
+    Builder(Type<V> type, String query) {
+      this.type = checkNotNull(type);
       queryString = checkNotNull(query);
     }
 
@@ -294,7 +294,7 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   private GqlQuery(Builder<V> builder) {
-    super(builder.resultClass, builder.namespace);
+    super(builder.type, builder.namespace);
     queryString = builder.queryString;
     allowLiteral = builder.allowLiteral;
     nameArgs = ImmutableList.copyOf(builder.nameArgs.values());
@@ -378,12 +378,12 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   @Override
-  protected Object fromPb(ResultClass<V> resultType, String namespace, byte[] bytesPb)
+  protected Object fromPb(Type<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
     return fromPb(resultType, namespace, DatastoreV1.GqlQuery.parseFrom(bytesPb));
   }
 
-  static <V> GqlQuery<V> fromPb(ResultClass<V> resultType, String namespace,
+  static <V> GqlQuery<V> fromPb(Type<V> resultType, String namespace,
       DatastoreV1.GqlQuery queryPb) {
     Builder<V> builder = new Builder<>(resultType, queryPb.getQueryString());
     builder.namespace(namespace);
@@ -407,7 +407,7 @@ public final class GqlQuery<V> extends Query<V> {
    * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
    */
   public static GqlQuery.Builder<?> builder(String gql) {
-    return builder(ResultClass.unknown(), gql);
+    return builder(Type.UNKNOWN, gql);
   }
 
   /**
@@ -415,7 +415,7 @@ public final class GqlQuery<V> extends Query<V> {
    *
    * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
    */
-  public static <V> GqlQuery.Builder<V> builder(ResultClass<V> resultClass, String gql) {
-    return new GqlQuery.Builder<>(resultClass, gql);
+  public static <V> GqlQuery.Builder<V> builder(Type<V> type, String gql) {
+    return new GqlQuery.Builder<>(type, gql);
   }
 }

@@ -1,11 +1,35 @@
 package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.collect.ImmutableMap;
+
+import java.io.Serializable;
+import java.util.Map;
 
 
-public abstract class TransactionOption extends BatchWriteOption {
+public abstract class TransactionOption implements Serializable {
 
   private static final long serialVersionUID = -1862234444015690375L;
+
+  public static final class ForceWrites extends TransactionOption {
+
+    private static final long serialVersionUID = -6873967516988380886L;
+
+    private final boolean force;
+
+    public ForceWrites(boolean force) {
+      this.force = force;
+    }
+
+    public boolean force() {
+      return force;
+    }
+
+    @Override
+    BatchWriteOption toBatchWriteOption() {
+      return new BatchWriteOption.ForceWrites(force);
+    }
+  }
 
   public static final class IsolationLevel extends TransactionOption {
 
@@ -43,11 +67,29 @@ public abstract class TransactionOption extends BatchWriteOption {
     // package protected
   }
 
+  public static ForceWrites forceWrites() {
+    return new ForceWrites(true);
+  }
+
   public static IsolationLevel serializable() {
     return new IsolationLevel(IsolationLevel.Level.SERIALIZABLE);
   }
 
   public static IsolationLevel snapshot() {
     return new IsolationLevel(IsolationLevel.Level.SNAPSHOT);
+  }
+
+  static Map<Class<? extends TransactionOption>, TransactionOption> asImmutableMap(
+      TransactionOption... options) {
+    ImmutableMap.Builder<Class<? extends TransactionOption>, TransactionOption> builder =
+        ImmutableMap.builder();
+    for (TransactionOption option : options) {
+      builder.put(option.getClass(), option);
+    }
+    return builder.build();
+  }
+
+  BatchWriteOption toBatchWriteOption() {
+    return null;
   }
 }

@@ -7,7 +7,6 @@ import static org.junit.Assert.assertNotSame;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import com.google.gcloud.datastore.Query.ResultClass;
 import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
@@ -40,7 +39,7 @@ public class SerializationTest {
       .namespace("ns1")
       .build();
   private static final Query<Entity> GQL2 =
-      GqlQuery.builder(ResultClass.full(), "select * from kind1 where name = @name and age > @1")
+      GqlQuery.builder(Query.Type.FULL, "select * from kind1 where name = @name and age > @1")
       .setArgument("name", "name1")
       .addArgument(20)
       .namespace("ns1")
@@ -50,7 +49,7 @@ public class SerializationTest {
       .kind("k")
       .filter(PropertyFilter.eq("p1", "hello"))
       .build();
-  private static final Query<PartialEntity> QUERY3 = StructuredQuery.projectionBuilder()
+  private static final Query<ProjectionEntity> QUERY3 = StructuredQuery.projectionBuilder()
       .kind("k")
       .namespace("ns1")
       .projection(Projection.property("p"))
@@ -95,6 +94,7 @@ public class SerializationTest {
       .addValue(STRING_VALUE)
       .addValue(new NullValue())
       .build();
+  private static final ProjectionEntity PROJECTION_ENTITY = ProjectionEntity.fromPb(ENTITY1.toPb());
 
   @SuppressWarnings("rawtypes")
   private Multimap<Type, Value> typeToValues = ImmutableMultimap.<Type, Value>builder()
@@ -129,8 +129,8 @@ public class SerializationTest {
   @Test
   public void testTypes() throws Exception {
     Object[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
-        ENTITY3, EMBEDDED_ENTITY1, EMBEDDED_ENTITY2, EMBEDDED_ENTITY3, DATE_TIME1,
-        BLOB1, CURSOR1, GQL1, GQL2, QUERY1, QUERY2, QUERY3};
+        ENTITY3, EMBEDDED_ENTITY1, EMBEDDED_ENTITY2, EMBEDDED_ENTITY3, PROJECTION_ENTITY,
+        DATE_TIME1, BLOB1, CURSOR1, GQL1, GQL2, QUERY1, QUERY2, QUERY3};
     for (Object obj : types) {
       Object copy = serialiazeAndDeserialize(obj);
       assertEquals(obj, obj);

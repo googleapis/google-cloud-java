@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.Maps;
-import com.google.gcloud.datastore.Query.ResultClass;
+import com.google.gcloud.datastore.Query.Type;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
@@ -45,13 +45,18 @@ public class DatastoreServiceTest {
       .addValue(STR_VALUE, BOOL_VALUE)
       .build();
   private static final ListValue LIST_VALUE2 = ListValue.of(Collections.singletonList(KEY_VALUE));
+  private static final DateTimeValue DATE_TIME_VALUE = new DateTimeValue(DateTime.now());
   private static final PartialEntity PARTIAL_ENTITY1 = PartialEntity.builder(PARTIAL_KEY2)
       .set("str", STR_VALUE).set("bool", BOOL_VALUE).set("list", LIST_VALUE1).build();
   private static final PartialEntity PARTIAL_ENTITY2 = PartialEntity.builder(PARTIAL_ENTITY1)
       .remove("str").set("bool", true).set("list", LIST_VALUE1.get()).build();
-  private static final Entity ENTITY1 = Entity.builder(KEY1).set("str", STR_VALUE)
-      .set("bool", BOOL_VALUE).set("partial1", EntityValue.of(PARTIAL_ENTITY1))
-      .set("list", LIST_VALUE2).build();
+  private static final Entity ENTITY1 = Entity.builder(KEY1)
+      .set("str", STR_VALUE)
+      .set("date", DATE_TIME_VALUE)
+      .set("bool", BOOL_VALUE)
+      .set("partial1", EntityValue.of(PARTIAL_ENTITY1))
+      .set("list", LIST_VALUE2)
+      .build();
   private static final Entity ENTITY2 = Entity.builder(ENTITY1).key(KEY2).remove("str")
       .set("name", "koko").setNull("null").set("age", 20).build();
   private static final Entity ENTITY3 = Entity.builder(ENTITY1).key(KEY3).remove("str")
@@ -272,7 +277,7 @@ public class DatastoreServiceTest {
 
   @Test
   public void testRunGqlQueryNoCasting() {
-    Query<Entity> query1 = GqlQuery.builder(ResultClass.full(), "select * from " + KIND1).build();
+    Query<Entity> query1 = GqlQuery.builder(Type.FULL, "select * from " + KIND1).build();
     QueryResult<Entity> results1 = datastore.run(query1);
     assertTrue(results1.hasNext());
     assertEquals(ENTITY1, results1.next());
@@ -280,7 +285,7 @@ public class DatastoreServiceTest {
 
     datastore.put(ENTITY3);
     Query<? extends PartialEntity> query2 =  GqlQuery.builder(
-        ResultClass.full(), "select * from " + KIND2 + " order by __key__").build();
+        Type.FULL, "select * from " + KIND2 + " order by __key__").build();
     QueryResult<? extends PartialEntity> results2 = datastore.run(query2);
     assertTrue(results2.hasNext());
     assertEquals(ENTITY2, results2.next());
@@ -288,24 +293,28 @@ public class DatastoreServiceTest {
     assertEquals(ENTITY3, results2.next());
     assertFalse(results2.hasNext());
 
-    query1 = GqlQuery.builder(ResultClass.full(), "select * from bla").build();
+    query1 = GqlQuery.builder(Type.FULL, "select * from bla").build();
     results1 = datastore.run(query1);
     assertFalse(results1.hasNext());
 
     Query<Key> keyOnlyQuery =
-        GqlQuery.builder(ResultClass.keyOnly(), "select __key__ from " + KIND1).build();
+        GqlQuery.builder(Type.KEY_ONLY, "select __key__ from " + KIND1).build();
     QueryResult<Key> keyOnlyResults = datastore.run(keyOnlyQuery);
     assertTrue(keyOnlyResults.hasNext());
     assertEquals(KEY1, keyOnlyResults.next());
     assertFalse(keyOnlyResults.hasNext());
 
-    Query<PartialEntity> projectionQuery = GqlQuery.builder(
-        ResultClass.projection(), "select str from " + KIND1).build();
-    QueryResult<PartialEntity> projectionResult = datastore.run(projectionQuery);
+    // broken because of b/18806697
+    Query<ProjectionEntity> projectionQuery = GqlQuery.builder(
+        Type.PROJECTION, "select str, date from " + KIND1).build();
+    QueryResult<ProjectionEntity> projectionResult = datastore.run(projectionQuery);
     assertTrue(projectionResult.hasNext());
-    PartialEntity partialEntity = projectionResult.next();
-    assertEquals("str", partialEntity.getString("str"));
-    assertEquals(1, partialEntity.names().size());
+    ProjectionEntity projectionEntity = projectionResult.next();
+    assertEquals("str", projectionEntity.getString("str"));
+    assertEquals(DATE_TIME_VALUE, projectionEntity.getDateTime("date"));
+    assertEquals(DATE_TIME_VALUE.get().timestampMicroseconds(),
+        projectionEntity.getLong("date"));
+    assertEquals(2, projectionEntity.names().size());
     assertFalse(projectionResult.hasNext());
   }
 
@@ -343,7 +352,7 @@ public class DatastoreServiceTest {
     assertEquals(ENTITY1.key(), results2.next());
     assertFalse(results2.hasNext());
 
-    StructuredQuery<PartialEntity> projectionQuery = StructuredQuery.projectionBuilder()
+    StructuredQuery<ProjectionEntity> projectionQuery = StructuredQuery.projectionBuilder()
         .kind(KIND2)
         .projection(Projection.property("age"), Projection.first("name"))
         .filter(PropertyFilter.gt("age", 18))
@@ -352,9 +361,10 @@ public class DatastoreServiceTest {
         .limit(10)
         .build();
 
-    QueryResult<PartialEntity> results3 = datastore.run(projectionQuery);
+    // broken because of b/18806697
+    QueryResult<ProjectionEntity> results3 = datastore.run(projectionQuery);
     assertTrue(results3.hasNext());
-    PartialEntity entity = results3.next();
+    ProjectionEntity entity = results3.next();
     assertEquals(ENTITY2.key(), entity.key());
     assertEquals(20, entity.getLong("age"));
     assertEquals("koko", entity.getString("name"));
@@ -419,11 +429,14 @@ public class DatastoreServiceTest {
     StringValue value1 = entity.getValue("str");
     BooleanValue value2 = entity.getValue("bool");
     ListValue value3 = entity.getValue("list");
-    assertEquals(value1, STR_VALUE);
-    assertEquals(value2, BOOL_VALUE);
-    assertEquals(value3, LIST_VALUE2);
-    assertEquals(PARTIAL_ENTITY1, entity.getEntity("partial1"));
-    assertEquals(4, entity.names().size());
+    DateTimeValue value4 = entity.getValue("date");
+    PartialEntity value5 = entity.getEntity("partial1");
+    assertEquals(STR_VALUE, value1);
+    assertEquals(BOOL_VALUE, value2);
+    assertEquals(LIST_VALUE2, value3);
+    assertEquals(DATE_TIME_VALUE, value4);
+    assertEquals(PARTIAL_ENTITY1, value5);
+    assertEquals(5, entity.names().size());
     assertFalse(entity.contains("bla"));
   }
 
@@ -445,7 +458,7 @@ public class DatastoreServiceTest {
     assertEquals(partial1, PARTIAL_ENTITY2);
     assertEquals(partial2, ENTITY2);
     assertEquals(Value.Type.BOOLEAN, entity3.type("bool"));
-    assertEquals(5, entity3.names().size());
+    assertEquals(6, entity3.names().size());
     assertFalse(entity3.contains("bla"));
     try {
       entity3.getString("str");

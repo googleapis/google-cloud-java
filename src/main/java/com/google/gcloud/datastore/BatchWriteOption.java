@@ -2,10 +2,9 @@ package com.google.gcloud.datastore;
 
 import com.google.common.collect.ImmutableMap;
 
-import java.io.Serializable;
 import java.util.Map;
 
-public abstract class BatchWriteOption implements Serializable {
+public abstract class BatchWriteOption implements java.io.Serializable {
 
   private static final long serialVersionUID = -3932758377282659839L;
 

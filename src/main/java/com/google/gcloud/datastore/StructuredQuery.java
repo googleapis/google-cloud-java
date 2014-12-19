@@ -41,7 +41,7 @@ import java.util.Objects;
  * <p>A less trivial example of a projection query that returns the first 10 results
  * of "age" and "name" properties (sorted and grouped by "age") with an age greater than 18
  * <pre> {@code
- *   StructuredQuery<PartialEntity> query = StructuredQuery.projectionBuilder()
+ *   StructuredQuery<ProjectionEntity> query = StructuredQuery.projectionBuilder()
  *       .kind(kind)
  *       .projection(Projection.property("age"), Projection.first("name"))
  *       .filter(PropertyFilter.gt("age", 18))
@@ -49,7 +49,7 @@ import java.util.Objects;
  *       .orderBy(OrderBy.asc("age"))
  *       .limit(10)
  *       .build();
- *   QueryResult<PartialEntity> results = datastore.run(query);
+ *   QueryResult<ProjectionEntity> results = datastore.run(query);
  *   ...
  * } </pre>
  *
@@ -577,7 +577,7 @@ public class StructuredQuery<V> extends Query<V> {
 
   static class BaseBuilder<V, B extends BaseBuilder<V, B>> {
 
-    private ResultClass<V> resultClass;
+    private Type<V> type;
     private String namespace;
     private String kind;
     private List<Projection> projection = new LinkedList<>();
@@ -589,8 +589,8 @@ public class StructuredQuery<V> extends Query<V> {
     private int offset;
     private Integer limit;
 
-    BaseBuilder(ResultClass<V> resultClass) {
-      this.resultClass = resultClass;
+    BaseBuilder(Type<V> type) {
+      this.type = type;
     }
 
     @SuppressWarnings("unchecked")
@@ -730,15 +730,15 @@ public class StructuredQuery<V> extends Query<V> {
 
   public static final class Builder<V> extends BaseBuilder<V, Builder<V>> {
 
-    public Builder(ResultClass<V> resultClass) {
-      super(resultClass);
+    public Builder(Type<V> type) {
+      super(type);
     }
   }
 
   public static final class KeyOnlyBuilder extends BaseBuilder<Key, KeyOnlyBuilder> {
 
     public KeyOnlyBuilder() {
-      super(ResultClass.keyOnly());
+      super(Type.KEY_ONLY);
       projection(Projection.property(KEY_PROPERTY_NAME));
     }
 
@@ -757,10 +757,10 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   public static final class ProjectionBuilder
-      extends BaseBuilder<PartialEntity, ProjectionBuilder> {
+      extends BaseBuilder<ProjectionEntity, ProjectionBuilder> {
 
     public ProjectionBuilder() {
-      super(ResultClass.projection());
+      super(Type.PROJECTION);
     }
 
     @Override
@@ -808,7 +808,7 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
-  public static final class ProjectionQuery extends StructuredQuery<PartialEntity> {
+  public static final class ProjectionQuery extends StructuredQuery<ProjectionEntity> {
 
     private static final long serialVersionUID = -3333183044486150649L;
 
@@ -830,7 +830,7 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   StructuredQuery(BaseBuilder<V, ?> builder) {
-    super(builder.resultClass, builder.namespace);
+    super(builder.type, builder.namespace);
     kind = builder.kind;
     projection = ImmutableList.copyOf(builder.projection);
     filter = builder.filter;
@@ -917,7 +917,7 @@ public class StructuredQuery<V> extends Query<V> {
 
   @Override
   protected StructuredQuery<V> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
-    Builder<V> builder = new Builder<>(resultClass());
+    Builder<V> builder = new Builder<>(type());
     builder.mergeFrom(toPb());
     builder.startCursor(new Cursor(responsePb.getEndCursor()));
     if (offset > 0 && responsePb.getSkippedResults() < offset) {
@@ -965,17 +965,16 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   @Override
-  protected Object fromPb(ResultClass<V> resultClass, String namespace, byte[] bytesPb)
+  protected Object fromPb(Type<V> type, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
-    return fromPb(resultClass, namespace, DatastoreV1.Query.parseFrom(bytesPb));
+    return fromPb(type, namespace, DatastoreV1.Query.parseFrom(bytesPb));
   }
 
-  static StructuredQuery<?> fromPb(ResultClass<?> resultClass, String namespace,
-      DatastoreV1.Query queryPb) {
+  static StructuredQuery<?> fromPb(Type<?> type, String namespace, DatastoreV1.Query queryPb) {
     BaseBuilder<?, ?> builder;
-    if (resultClass.equals(ResultClass.full())) {
+    if (type.equals(Type.FULL)) {
       builder = builder();
-    } else if (resultClass.equals(ResultClass.keyOnly())) {
+    } else if (type.equals(Type.KEY_ONLY)) {
       builder = keyOnlyBuilder();
     } else {
       builder = projectionBuilder();
@@ -984,7 +983,7 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   public static Builder<Entity> builder() {
-    return new Builder<>(ResultClass.full());
+    return new Builder<>(Type.FULL);
   }
 
   public static KeyOnlyBuilder keyOnlyBuilder() {

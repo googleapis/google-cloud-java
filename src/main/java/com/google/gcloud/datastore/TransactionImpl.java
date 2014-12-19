@@ -6,7 +6,9 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.gcloud.datastore.TransactionOption.IsolationLevel;
 import com.google.protobuf.ByteString;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public final class TransactionImpl extends BatchWriterImpl implements Transaction {
@@ -15,16 +17,27 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
   private boolean wasRolledback;
 
   TransactionImpl(DatastoreServiceImpl datastore, TransactionOption... options) {
-    super(datastore, options);
+    super(datastore, getBatchOptions(options));
     DatastoreV1.BeginTransactionRequest.Builder requestPb =
         DatastoreV1.BeginTransactionRequest.newBuilder();
-    Map<Class<? extends BatchWriteOption>, BatchWriteOption> optionsMap =
-        BatchWriteOption.asImmutableMap(options);
+    Map<Class<? extends TransactionOption>, TransactionOption> optionsMap =
+        TransactionOption.asImmutableMap(options);
     IsolationLevel isolationLevel = (IsolationLevel) optionsMap.get(IsolationLevel.class);
     if (isolationLevel != null) {
       requestPb.setIsolationLevel(isolationLevel.level().toPb());
     }
     transaction = datastore.requestTransactionId(requestPb);
+  }
+
+  private static BatchWriteOption[] getBatchOptions(TransactionOption... options) {
+    List<BatchWriteOption> batchOptions = new ArrayList<>(options.length);
+    for (TransactionOption option : options) {
+      BatchWriteOption batchOption = option.toBatchWriteOption();
+      if (batchOption != null) {
+        batchOptions.add(batchOption);
+      }
+    }
+    return batchOptions.toArray(new BatchWriteOption[batchOptions.size()]);
   }
 
   @Override

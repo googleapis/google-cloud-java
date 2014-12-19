@@ -48,7 +48,7 @@ public class PartialEntity extends BaseEntity {
   }
 
   /**
-   * Returns a new {@link #Entity} with the same properties as this one and
+   * Returns a new {@link Entity} with the same properties as this one and
    * with the given {@code key}.
    */
   public Entity toEntity(Key key) {
