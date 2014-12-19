@@ -34,14 +34,14 @@ public class SerializationTest {
   private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[] {10});
   private static final Query<?> GQL1 =
       GqlQuery.builder("select * from kind1 where name = @name and age > @1")
-      .setArgument("name", "name1")
-      .addArgument(20)
+      .setBinding("name", "name1")
+      .addBinding(20)
       .namespace("ns1")
       .build();
   private static final Query<Entity> GQL2 =
       GqlQuery.builder(Query.Type.FULL, "select * from kind1 where name = @name and age > @1")
-      .setArgument("name", "name1")
-      .addArgument(20)
+      .setBinding("name", "name1")
+      .addBinding(20)
       .namespace("ns1")
       .build();
   private static final Query<Entity> QUERY1 = StructuredQuery.builder().kind("kind1").build();

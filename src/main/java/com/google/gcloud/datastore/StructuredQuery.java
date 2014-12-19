@@ -814,8 +814,6 @@ public class StructuredQuery<V> extends Query<V> {
 
     ProjectionQuery(ProjectionBuilder builder) {
       super(builder);
-      Preconditions.checkState(!keyOnly(),
-          "Projection query can't project only '__key__', use KeyOnlyQuery instead.");
     }
 
     @Override

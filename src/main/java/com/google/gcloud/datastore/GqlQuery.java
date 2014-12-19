@@ -58,10 +58,10 @@ public final class GqlQuery<V> extends Query<V> {
 
   private final transient String queryString;
   private final transient boolean allowLiteral;
-  private final transient ImmutableList<Argument> nameArgs;
-  private final transient ImmutableList<Argument> numberArgs;
+  private final transient ImmutableList<Binding> namedBindings;
+  private final transient ImmutableList<Binding> positionalBindings;
 
-  static final class Argument extends Serializable<DatastoreV1.GqlQueryArg> {
+  static final class Binding extends Serializable<DatastoreV1.GqlQueryArg> {
 
     private static final long serialVersionUID = 1976895435257636275L;
 
@@ -69,13 +69,13 @@ public final class GqlQuery<V> extends Query<V> {
     private final transient Cursor cursor;
     private final transient Value<?> value;
 
-    Argument(String name, Cursor cursor) {
+    Binding(String name, Cursor cursor) {
       this.name = name;
       this.cursor = checkNotNull(cursor);
       value = null;
     }
 
-    Argument(String name, Value<?> value) {
+    Binding(String name, Value<?> value) {
       this.name = name;
       this.value = checkNotNull(value);
       cursor = null;
@@ -99,10 +99,10 @@ public final class GqlQuery<V> extends Query<V> {
       if (obj == this) {
         return true;
       }
-      if (!(obj instanceof Argument)) {
+      if (!(obj instanceof Binding)) {
         return false;
       }
-      Argument other = (Argument) obj;
+      Binding other = (Binding) obj;
       return Objects.equals(name, other.name)
         && Objects.equals(cursor, other.cursor)
         && Objects.equals(value, other.value);
@@ -128,12 +128,12 @@ public final class GqlQuery<V> extends Query<V> {
       return fromPb(DatastoreV1.GqlQueryArg.parseFrom(bytesPb));
     }
 
-    static Argument fromPb(DatastoreV1.GqlQueryArg argPb) {
+    static Binding fromPb(DatastoreV1.GqlQueryArg argPb) {
       String name = argPb.hasName() ? argPb.getName() : null;
       if (argPb.hasCursor()) {
-        return new Argument(name, new Cursor(argPb.getCursor()));
+        return new Binding(name, new Cursor(argPb.getCursor()));
       }
-      return new Argument(name, Value.fromPb(argPb.getValue()));
+      return new Binding(name, Value.fromPb(argPb.getValue()));
     }
   }
 
@@ -146,8 +146,8 @@ public final class GqlQuery<V> extends Query<V> {
     private String namespace;
     private String queryString;
     private boolean allowLiteral;
-    private Map<String, Argument> nameArgs = new TreeMap<>();
-    private List<Argument> numberArgs = new LinkedList<>();
+    private Map<String, Binding> namedBindings = new TreeMap<>();
+    private List<Binding> positionalBindings = new LinkedList<>();
 
     Builder(Type<V> type, String query) {
       this.type = checkNotNull(type);
@@ -169,99 +169,99 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
-    public Builder<V> clearArguments() {
-      nameArgs.clear();
-      numberArgs.clear();
+    public Builder<V> clearBindings() {
+      namedBindings.clear();
+      positionalBindings.clear();
       return this;
     }
 
-    public Builder<V> setArgument(String name, Cursor cursor) {
-      nameArgs.put(name, new Argument(name, cursor));
+    public Builder<V> setBinding(String name, Cursor cursor) {
+      namedBindings.put(name, new Binding(name, cursor));
       return this;
     }
 
-    public Builder<V> setArgument(String name, String... value) {
-      nameArgs.put(name, toArgument(name, StringValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> setBinding(String name, String... value) {
+      namedBindings.put(name, toBinding(name, StringValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<V> setArgument(String name, long... value) {
-      nameArgs.put(name, toArgument(name, LongValue.MARSHALLER, Longs.asList(value)));
+    public Builder<V> setBinding(String name, long... value) {
+      namedBindings.put(name, toBinding(name, LongValue.MARSHALLER, Longs.asList(value)));
       return this;
     }
 
-    public Builder<V> setArgument(String name, double... value) {
-      nameArgs.put(name, toArgument(name, DoubleValue.MARSHALLER, Doubles.asList(value)));
+    public Builder<V> setBinding(String name, double... value) {
+      namedBindings.put(name, toBinding(name, DoubleValue.MARSHALLER, Doubles.asList(value)));
       return this;
     }
 
-    public Builder<V> setArgument(String name, boolean... value) {
-      nameArgs.put(name, toArgument(name, BooleanValue.MARSHALLER, Booleans.asList(value)));
+    public Builder<V> setBinding(String name, boolean... value) {
+      namedBindings.put(name, toBinding(name, BooleanValue.MARSHALLER, Booleans.asList(value)));
       return this;
     }
 
-    public Builder<V> setArgument(String name, DateTime... value) {
-      nameArgs.put(name, toArgument(name, DateTimeValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> setBinding(String name, DateTime... value) {
+      namedBindings.put(name, toBinding(name, DateTimeValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<V> setArgument(String name, Key... value) {
-      nameArgs.put(name, toArgument(name, KeyValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> setBinding(String name, Key... value) {
+      namedBindings.put(name, toBinding(name, KeyValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<V> setArgument(String name, PartialEntity... value) {
-      nameArgs.put(name, toArgument(name, EntityValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> setBinding(String name, PartialEntity... value) {
+      namedBindings.put(name, toBinding(name, EntityValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<V> setArgument(String name, Blob... value) {
-      nameArgs.put(name, toArgument(name, BlobValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> setBinding(String name, Blob... value) {
+      namedBindings.put(name, toBinding(name, BlobValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<V> addArgument(Cursor cursor) {
-      numberArgs.add(new Argument(null, cursor));
+    public Builder<V> addBinding(Cursor cursor) {
+      positionalBindings.add(new Binding(null, cursor));
       return this;
     }
 
-    public Builder<V> addArgument(String... value) {
-      numberArgs.add(toArgument(StringValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> addBinding(String... value) {
+      positionalBindings.add(toBinding(StringValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<V> addArgument(long... value) {
-      numberArgs.add(toArgument(LongValue.MARSHALLER, Longs.asList(value)));
+    public Builder<V> addBinding(long... value) {
+      positionalBindings.add(toBinding(LongValue.MARSHALLER, Longs.asList(value)));
       return this;
     }
 
-    public Builder<V> addArgument(double... value) {
-      numberArgs.add(toArgument(DoubleValue.MARSHALLER, Doubles.asList(value)));
+    public Builder<V> addBinding(double... value) {
+      positionalBindings.add(toBinding(DoubleValue.MARSHALLER, Doubles.asList(value)));
       return this;
     }
 
-    public Builder<V> addArgument(boolean... value) {
-      numberArgs.add(toArgument(BooleanValue.MARSHALLER, Booleans.asList(value)));
+    public Builder<V> addBinding(boolean... value) {
+      positionalBindings.add(toBinding(BooleanValue.MARSHALLER, Booleans.asList(value)));
       return this;
     }
 
-    public Builder<V> addArgument(DateTime... value) {
-      numberArgs.add(toArgument(DateTimeValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> addBinding(DateTime... value) {
+      positionalBindings.add(toBinding(DateTimeValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<V> addArgument(Key... value) {
-      numberArgs.add(toArgument(KeyValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> addBinding(Key... value) {
+      positionalBindings.add(toBinding(KeyValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<V> addArgument(PartialEntity... value) {
-      numberArgs.add(toArgument(EntityValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> addBinding(PartialEntity... value) {
+      positionalBindings.add(toBinding(EntityValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
-    public Builder<V> addArgument(Blob... value) {
-      numberArgs.add(toArgument(BlobValue.MARSHALLER, Arrays.asList(value)));
+    public Builder<V> addBinding(Blob... value) {
+      positionalBindings.add(toBinding(BlobValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 
@@ -270,12 +270,12 @@ public final class GqlQuery<V> extends Query<V> {
     }
 
     @SuppressWarnings("rawtypes")
-    private static Argument toArgument(Value.BuilderFactory builderFactory, List<?> values) {
-      return toArgument(null, builderFactory, values);
+    private static Binding toBinding(Value.BuilderFactory builderFactory, List<?> values) {
+      return toBinding(null, builderFactory, values);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
-    private static Argument toArgument(String name, Value.BuilderFactory builderFactory,
+    private static Binding toBinding(String name, Value.BuilderFactory builderFactory,
         List<?> values) {
       List<Value<?>> list = new ArrayList<>(values.size());
       for (Object object : values) {
@@ -289,7 +289,7 @@ public final class GqlQuery<V> extends Query<V> {
       } else {
         value = new ListValue(list);
       }
-      return new Argument(name, value);
+      return new Binding(name, value);
     }
   }
 
@@ -297,8 +297,8 @@ public final class GqlQuery<V> extends Query<V> {
     super(builder.type, builder.namespace);
     queryString = builder.queryString;
     allowLiteral = builder.allowLiteral;
-    nameArgs = ImmutableList.copyOf(builder.nameArgs.values());
-    numberArgs = ImmutableList.copyOf(builder.numberArgs);
+    namedBindings = ImmutableList.copyOf(builder.namedBindings.values());
+    positionalBindings = ImmutableList.copyOf(builder.positionalBindings);
   }
 
   public String queryString() {
@@ -310,30 +310,30 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   /**
-   * Returns an immutable map of named arguments.
+   * Returns an immutable map of named bindings.
    */
-  public Map<String, Object> nameArgs() {
+  public Map<String, Object> namedBindings() {
     ImmutableMap.Builder<String, Object> builder = ImmutableSortedMap.naturalOrder();
-    for (Argument argument : nameArgs) {
-      builder.put(argument.name(), argument.cursorOrValue());
+    for (Binding binding : namedBindings) {
+      builder.put(binding.name(), binding.cursorOrValue());
     }
     return builder.build();
   }
 
   /**
-   * Returns an immutable list of numbered arguments (using original order).
+   * Returns an immutable list of positional bindings (using original order).
    */
   public List<Object> numberArgs() {
     ImmutableList.Builder<Object> builder = ImmutableList.builder();
-    for (Argument argument : numberArgs) {
-      builder.add(argument.cursorOrValue());
+    for (Binding binding : positionalBindings) {
+      builder.add(binding.cursorOrValue());
     }
     return builder.build();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(namespace(), queryString, allowLiteral, nameArgs, numberArgs);
+    return Objects.hash(namespace(), queryString, allowLiteral, namedBindings, positionalBindings);
   }
 
   @Override
@@ -348,8 +348,8 @@ public final class GqlQuery<V> extends Query<V> {
     return Objects.equals(namespace(), other.namespace())
         && Objects.equals(queryString, other.queryString)
         && allowLiteral == other.allowLiteral
-        && Objects.equals(nameArgs,  other.nameArgs)
-        && Objects.equals(numberArgs,  other.numberArgs);
+        && Objects.equals(namedBindings,  other.namedBindings)
+        && Objects.equals(positionalBindings,  other.positionalBindings);
   }
 
   @Override
@@ -357,10 +357,10 @@ public final class GqlQuery<V> extends Query<V> {
     DatastoreV1.GqlQuery.Builder queryPb = DatastoreV1.GqlQuery.newBuilder();
     queryPb.setQueryString(queryString);
     queryPb.setAllowLiteral(allowLiteral);
-    for (Argument argument : nameArgs) {
+    for (Binding argument : namedBindings) {
       queryPb.addNameArg(argument.toPb());
     }
-    for (Argument argument : numberArgs) {
+    for (Binding argument : positionalBindings) {
       queryPb.addNumberArg(argument.toPb());
     }
     return queryPb.build();
@@ -391,12 +391,12 @@ public final class GqlQuery<V> extends Query<V> {
       builder.allowLiteral = queryPb.getAllowLiteral();
     }
     for (DatastoreV1.GqlQueryArg nameArg : queryPb.getNameArgList()) {
-      Argument argument = Argument.fromPb(nameArg);
-      builder.nameArgs.put(argument.name(), argument);
+      Binding argument = Binding.fromPb(nameArg);
+      builder.namedBindings.put(argument.name(), argument);
     }
     for (DatastoreV1.GqlQueryArg numberArg : queryPb.getNumberArgList()) {
-      Argument argument = Argument.fromPb(numberArg);
-      builder.numberArgs.add(argument);
+      Binding argument = Binding.fromPb(numberArg);
+      builder.positionalBindings.add(argument);
     }
     return builder.build();
   }

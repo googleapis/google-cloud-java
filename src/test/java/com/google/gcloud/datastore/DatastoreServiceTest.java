@@ -308,6 +308,15 @@ public class DatastoreServiceTest {
     assertEquals(KEY1, keyOnlyResults.next());
     assertFalse(keyOnlyResults.hasNext());
 
+    GqlQuery<ProjectionEntity> keyProjectionQuery = GqlQuery.builder(
+        Type.PROJECTION, "select __key__ from " + KIND1).build();
+    QueryResult<ProjectionEntity> keyProjectionResult = datastore.run(keyProjectionQuery);
+    assertTrue(keyProjectionResult.hasNext());
+    ProjectionEntity p = keyProjectionResult.next();
+    assertEquals(KEY1, p.key());
+    assertTrue(p.properties().isEmpty());
+    assertFalse(keyProjectionResult.hasNext());
+
     GqlQuery<ProjectionEntity> projectionQuery = GqlQuery.builder(
         Type.PROJECTION, "select str, date from " + KIND1).build();
 
@@ -373,6 +382,15 @@ public class DatastoreServiceTest {
     assertEquals(ENTITY1.key(), results2.next());
     assertFalse(results2.hasNext());
 
+    StructuredQuery<ProjectionEntity> keyOnlyProjectionQuery = StructuredQuery.projectionBuilder()
+        .kind(KIND1).projection(Projection.property("__key__")).build();
+    QueryResult<ProjectionEntity> results3 = datastore.run(keyOnlyProjectionQuery);
+    assertTrue(results3.hasNext());
+    ProjectionEntity projectionEntity = results3.next();
+    assertEquals(ENTITY1.key(), projectionEntity.key());
+    assertTrue(projectionEntity.names().isEmpty());
+    assertFalse(results2.hasNext());
+
     StructuredQuery<ProjectionEntity> projectionQuery = StructuredQuery.projectionBuilder()
         .kind(KIND2)
         .projection(Projection.property("age"), Projection.first("name"))
@@ -381,7 +399,6 @@ public class DatastoreServiceTest {
         .orderBy(OrderBy.asc("age"))
         .limit(10)
         .build();
-
     // this hack is needed because of b/18806697
     DatastoreV1.RunQueryRequest.Builder requestPb = DatastoreV1.RunQueryRequest.newBuilder();
     requestPb.setQuery(projectionQuery.toPb());
@@ -398,14 +415,14 @@ public class DatastoreServiceTest {
         datastore.options().toBuilder().datastore(mockDatastore).build());
     // end of hack
 
-    QueryResult<ProjectionEntity> results3 = datastore.run(projectionQuery);
-    assertTrue(results3.hasNext());
-    ProjectionEntity entity = results3.next();
+    QueryResult<ProjectionEntity> results4 = datastore.run(projectionQuery);
+    assertTrue(results4.hasNext());
+    ProjectionEntity entity = results4.next();
     assertEquals(ENTITY2.key(), entity.key());
     assertEquals(20, entity.getLong("age"));
     assertEquals("koko", entity.getString("name"));
     assertEquals(2, entity.properties().size());
-    assertFalse(results3.hasNext());
+    assertFalse(results4.hasNext());
     EasyMock.verify(mockDatastore);
 
     // TODO(ozarov): construct a test to verify nextQuery/pagination

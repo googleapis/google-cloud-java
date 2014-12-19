@@ -48,6 +48,10 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
     entityResultPbIter = resultPb.getEntityResultList().iterator();
     // cursor = resultPb.getSkippedCursor(); // only available in v1beta3
     actualType = Type.fromPb(resultPb.getEntityResultType());
+    if (queryType == Type.PROJECTION) {
+      // projection entity can represent all type of results
+      actualType = Type.PROJECTION;
+    }
     Preconditions.checkState(queryType.isAssignableFrom(actualType),
         "Unexpected result type " + actualType + " vs " + queryType);
     return resultPb;
