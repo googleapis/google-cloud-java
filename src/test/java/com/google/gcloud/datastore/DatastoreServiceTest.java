@@ -11,7 +11,6 @@ import static org.junit.Assert.fail;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.api.services.datastore.client.Datastore;
 import com.google.api.services.datastore.client.DatastoreException;
-import com.google.common.collect.Maps;
 import com.google.gcloud.datastore.Query.Type;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
@@ -21,7 +20,6 @@ import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -68,6 +66,7 @@ public class DatastoreServiceTest {
 
   private DatastoreServiceOptions options;
   private DatastoreService datastore;
+  private DatastoreHelper helper;
 
   @Before
   public void setUp() {
@@ -83,6 +82,7 @@ public class DatastoreServiceTest {
         .host("http://localhost:8080")
         .build();
     datastore = DatastoreServiceFactory.getDefault(options);
+    helper = DatastoreHelper.createFor(datastore);
     // Prepare data for testing
     datastore.delete(KEY1, KEY2, KEY3, KEY4, KEY5);
     datastore.add(ENTITY1, ENTITY2);
@@ -105,7 +105,7 @@ public class DatastoreServiceTest {
     transaction.delete(KEY1);
     transaction.commit();
 
-    List<Entity> list = fetch(KEY1, KEY2, KEY3);
+    List<Entity> list = helper.fetch(KEY1, KEY2, KEY3);
     assertNull(list.get(0));
     assertEquals(entity2, list.get(1));
     assertEquals(ENTITY3, list.get(2));
@@ -197,7 +197,7 @@ public class DatastoreServiceTest {
 
     verifyNotUsable(transaction);
 
-    List<Entity> list = fetch(KEY1, KEY2, KEY3);
+    List<Entity> list = helper.fetch(KEY1, KEY2, KEY3);
     assertEquals(ENTITY1, list.get(0));
     assertEquals(ENTITY2, list.get(1));
     assertNull(list.get(2));
@@ -245,7 +245,8 @@ public class DatastoreServiceTest {
     batchWriter.add(entity4, entity5);
     batchWriter.put(ENTITY3, entity1, entity2);
     batchWriter.submit();
-    Iterator<Entity> entities = fetch(KEY1, KEY2, KEY3, entity4.key(), entity5.key()).iterator();
+    Iterator<Entity> entities =
+        helper.fetch(KEY1, KEY2, KEY3, entity4.key(), entity5.key()).iterator();
     assertEquals(entity1, entities.next());
     assertEquals(entity2, entities.next());
     assertEquals(ENTITY3, entities.next());
@@ -265,7 +266,7 @@ public class DatastoreServiceTest {
     batchWriter.delete(entity4.key(), entity5.key());
     batchWriter.update(ENTITY1, ENTITY2, ENTITY3);
     batchWriter.submit();
-    entities = fetch(KEY1, KEY2, KEY3, entity4.key(), entity5.key()).iterator();
+    entities = helper.fetch(KEY1, KEY2, KEY3, entity4.key(), entity5.key()).iterator();
     assertEquals(ENTITY1, entities.next());
     assertEquals(ENTITY2, entities.next());
     assertEquals(ENTITY3, entities.next());
@@ -431,7 +432,7 @@ public class DatastoreServiceTest {
 
   @Test
   public void testAllocateId() {
-    KeyFactory keyFactory = new KeyFactory(datastore, KIND1);
+    KeyFactory keyFactory = helper.newKeyFactory().kind(KIND1);
     PartialKey pk1 = keyFactory.newKey();
     Key key1 = keyFactory.allocateId();
     assertEquals(key1.dataset(), pk1.dataset());
@@ -453,7 +454,7 @@ public class DatastoreServiceTest {
 
   @Test
   public void testAllocateIdArray() {
-    KeyFactory keyFactory = new KeyFactory(datastore, KIND1);
+    KeyFactory keyFactory = helper.newKeyFactory().kind(KIND1);
     PartialKey partialKey1 = keyFactory.newKey();
     PartialKey partialKey2 = keyFactory.kind(KIND2).ancestors(PathElement.of(KIND1, 10)).newKey();
     Key key3 = keyFactory.newKey("name");
@@ -499,7 +500,7 @@ public class DatastoreServiceTest {
   public void testGetArray() {
     datastore.put(ENTITY3);
     Iterator<Entity> result =
-        fetch(KEY1, Key.builder(KEY1).name("bla").build(), KEY2, KEY3).iterator();
+        helper.fetch(KEY1, Key.builder(KEY1).name("bla").build(), KEY2, KEY3).iterator();
     assertEquals(ENTITY1, result.next());
     assertNull(result.next());
     assertEquals(ENTITY2, result.next());
@@ -525,24 +526,9 @@ public class DatastoreServiceTest {
     // TODO(ozarov): construct a test to verify more results
   }
 
-  public List<Entity> fetch(Key key, Key... others) {
-    Iterator<Entity> entities = datastore.get(key, others);
-    Map<Key, Entity> map = Maps.newHashMapWithExpectedSize(1 + others.length);
-    while (entities.hasNext()) {
-      Entity entity = entities.next();
-      map.put(entity.key(), entity);
-    }
-    List<Entity> list = new ArrayList<>(1 + others.length);
-    list.add(map.get(key));
-    for (Key other : others) {
-      list.add(map.get(other));
-    }
-    return list;
-  }
-
   @Test
   public void testAdd() {
-    List<Entity> keys = fetch(ENTITY1.key(), ENTITY3.key());
+    List<Entity> keys = helper.fetch(ENTITY1.key(), ENTITY3.key());
     assertEquals(ENTITY1, keys.get(0));
     assertNull(keys.get(1));
     assertEquals(2, keys.size());
@@ -559,7 +545,7 @@ public class DatastoreServiceTest {
 
   @Test
   public void testUpdate() {
-    List<Entity> keys = fetch(ENTITY1.key(), ENTITY3.key());
+    List<Entity> keys = helper.fetch(ENTITY1.key(), ENTITY3.key());
     assertEquals(ENTITY1, keys.get(0));
     assertNull(keys.get(1));
     assertEquals(2, keys.size());
@@ -580,7 +566,7 @@ public class DatastoreServiceTest {
 
   @Test
   public void testPut() {
-    Iterator<Entity> keys = fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
+    Iterator<Entity> keys = helper.fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
     assertEquals(ENTITY1, keys.next());
     assertEquals(ENTITY2, keys.next());
     assertNull(keys.next());
@@ -589,7 +575,7 @@ public class DatastoreServiceTest {
     Entity entity2 = Entity.builder(ENTITY2).clear().set("bla", new NullValue()).build();
     assertNotEquals(ENTITY2, entity2);
     datastore.put(ENTITY3, ENTITY1, entity2);
-    keys = fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
+    keys = helper.fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
     assertEquals(ENTITY1, keys.next());
     assertEquals(entity2, keys.next());
     assertEquals(ENTITY3, keys.next());
@@ -598,13 +584,13 @@ public class DatastoreServiceTest {
 
   @Test
   public void testDelete() {
-    Iterator<Entity> keys = fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
+    Iterator<Entity> keys = helper.fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
     assertEquals(ENTITY1, keys.next());
     assertEquals(ENTITY2, keys.next());
     assertNull(keys.next());
     assertFalse(keys.hasNext());
     datastore.delete(ENTITY1.key(), ENTITY2.key(), ENTITY3.key());
-    keys = fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
+    keys = helper.fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
     assertNull(keys.next());
     assertNull(keys.next());
     assertNull(keys.next());
@@ -613,10 +599,10 @@ public class DatastoreServiceTest {
 
   @Test
   public void testKeyFactory() {
-    KeyFactory keyFactory = new KeyFactory(datastore, KIND1);
+    KeyFactory keyFactory = new KeyFactory(datastore).kind(KIND1);
     assertEquals(PARTIAL_KEY1, keyFactory.newKey());
     assertEquals(PartialKey.builder(PARTIAL_KEY1).kind(KIND2).build(),
-        new KeyFactory(datastore, KIND2).newKey());
+        new KeyFactory(datastore).kind(KIND2).newKey());
     assertEquals(KEY1, keyFactory.newKey("name"));
     assertEquals(Key.builder(KEY1).id(2).build(), keyFactory.newKey(2));
   }

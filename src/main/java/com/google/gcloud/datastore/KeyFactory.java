@@ -12,8 +12,8 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
 
   private final DatastoreService service;
 
-  public KeyFactory(DatastoreService service, String kind) {
-    super(checkNotNull(service).options().dataset(), kind);
+  public KeyFactory(DatastoreService service) {
+    super(checkNotNull(service).options().dataset());
     this.service = service;
     namespace(service.options().namespace());
   }

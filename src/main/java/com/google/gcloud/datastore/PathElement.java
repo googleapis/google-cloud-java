@@ -21,7 +21,7 @@ public final class PathElement extends Serializable<DatastoreV1.Key.PathElement>
   private final transient String name;
 
   private PathElement(String kind, String name, Long id) {
-    this.kind = checkNotNull(kind);
+    this.kind = checkNotNull(kind, "kind must not be null");
     this.name = name;
     this.id = id;
   }

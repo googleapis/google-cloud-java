@@ -17,13 +17,13 @@ public interface DatastoreService extends DatastoreReaderWriter {
    *
    * @throws DatastoreServiceExcepiton upon failure
    */
-  Transaction newTransaction(TransactionOption... transactionOption);
+  Transaction newTransaction(TransactionOption... options);
 
   /**
    * Returns a new Batch writer for processing multiple write operations
    * in one request.
    */
-  BatchWriter newBatchWriter(BatchWriteOption... batchWriteOption);
+  BatchWriter newBatchWriter(BatchWriteOption... options);
 
   /**
    * Allocate a unique id for the given key.

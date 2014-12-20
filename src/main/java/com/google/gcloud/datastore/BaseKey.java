@@ -32,9 +32,13 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
 
     private static final int MAX_PATH = 100;
 
-    public Builder(String dataset, String kind) {
+    public Builder(String dataset) {
       this.dataset = validateDataset(dataset);
       ancestors = new LinkedList<>();
+    }
+
+    public Builder(String dataset, String kind) {
+      this(dataset);
       this.kind = validateKind(kind);
     }
 
