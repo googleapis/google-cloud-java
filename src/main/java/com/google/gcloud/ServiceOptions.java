@@ -17,11 +17,13 @@ public abstract class ServiceOptions {
   private final String host;
   private final HttpTransport httpTransport;
   private final AuthConfig authConfig;
+  private final RetryParams retryParams;
 
   protected ServiceOptions(Builder<?> builder) {
     host = firstNonNull(builder.host, DEFAULT_HOST);
     httpTransport = firstNonNull(builder.httpTransport, defaultHttpTransport());
     authConfig = firstNonNull(builder.authConfig, defaultAuthConfig());
+    retryParams = builder.retryParams;
   }
 
   private static HttpTransport defaultHttpTransport() {
@@ -69,6 +71,7 @@ public abstract class ServiceOptions {
     private String host;
     private HttpTransport httpTransport;
     private AuthConfig authConfig;
+    private RetryParams retryParams;
 
     protected Builder() {}
 
@@ -76,26 +79,34 @@ public abstract class ServiceOptions {
       host = options.host;
       httpTransport = options.httpTransport;
       authConfig = options.authConfig;
+      retryParams = options.retryParams;
     }
 
     protected abstract ServiceOptions build();
 
     @SuppressWarnings("unchecked")
+    protected B self() {
+      return (B) this;
+    }
+
     public B host(String host) {
       this.host = host;
-      return (B) this;
+      return self();
     }
 
-    @SuppressWarnings("unchecked")
     public B httpTransport(HttpTransport httpTransport) {
       this.httpTransport = httpTransport;
-      return (B) this;
+      return self();
     }
 
-    @SuppressWarnings("unchecked")
     public B authConfig(AuthConfig authConfig) {
       this.authConfig = authConfig;
-      return (B) this;
+      return self();
+    }
+
+    public B retryParams(RetryParams retryParams) {
+      this.retryParams = retryParams;
+      return self();
     }
   }
 
@@ -111,6 +122,10 @@ public abstract class ServiceOptions {
 
   public AuthConfig authConfig() {
     return authConfig;
+  }
+
+  public RetryParams retryParams() {
+    return retryParams;
   }
 
   protected HttpRequestInitializer httpRequestInitializer() {

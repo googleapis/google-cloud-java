@@ -327,7 +327,7 @@ public class DatastoreServiceTest {
     requestPb.setGqlQuery(projectionQuery.toPb());
     requestPb.setPartitionId(DatastoreV1.PartitionId.newBuilder().setDatasetId(DATASET).build());
     DatastoreV1.RunQueryResponse responsePb =
-        ((DatastoreServiceImpl) datastore).run(requestPb.build());
+        ((DatastoreServiceImpl) datastore).runQuery(requestPb.build());
     DatastoreV1.RunQueryResponse.Builder responsePbBuilder = responsePb.toBuilder();
     responsePbBuilder.getBatchBuilder()
         .setEntityResultType(DatastoreV1.EntityResult.ResultType.PROJECTION).build();
@@ -406,7 +406,7 @@ public class DatastoreServiceTest {
     requestPb.setQuery(projectionQuery.toPb());
     requestPb.setPartitionId(DatastoreV1.PartitionId.newBuilder().setDatasetId(DATASET).build());
     DatastoreV1.RunQueryResponse responsePb =
-        ((DatastoreServiceImpl) datastore).run(requestPb.build());
+        ((DatastoreServiceImpl) datastore).runQuery(requestPb.build());
     DatastoreV1.RunQueryResponse.Builder responsePbBuilder = responsePb.toBuilder();
     responsePbBuilder.getBatchBuilder()
         .setEntityResultType(DatastoreV1.EntityResult.ResultType.PROJECTION).build();

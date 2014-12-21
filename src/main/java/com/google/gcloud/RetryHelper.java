@@ -1,6 +1,7 @@
 package com.google.gcloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
+import static java.lang.Math.max;
 import static java.lang.Math.min;
 import static java.lang.Math.pow;
 import static java.lang.Math.random;
@@ -68,7 +69,7 @@ public class RetryHelper<V> {
     /**
      * Sets the caller thread interrupt flag and throws {@code RetryInteruptedException}.
      */
-    static void propagate() throws RetryInterruptedException {
+    public static void propagate() throws RetryInterruptedException {
       Thread.currentThread().interrupt();
       throw new RetryInterruptedException();
     }
@@ -200,7 +201,7 @@ public class RetryHelper<V> {
 
   private static long getExponentialValue(long initialDelay, double backoffFactor, long maxDelay,
       int attemptsSoFar) {
-    return (long) min(maxDelay, pow(backoffFactor, min(1, attemptsSoFar) - 1) * initialDelay);
+    return (long) min(maxDelay, pow(backoffFactor, max(1, attemptsSoFar) - 1) * initialDelay);
   }
 
   public static <V> V runWithRetries(Callable<V> callable) throws RetryHelperException {

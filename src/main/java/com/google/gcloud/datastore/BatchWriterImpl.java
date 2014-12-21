@@ -119,7 +119,7 @@ class BatchWriterImpl implements BatchWriter {
     }
     DatastoreV1.CommitRequest.Builder requestPb = newCommitRequest();
     requestPb.setMutation(mutationPb);
-    datastore.commitMutation(requestPb);
+    datastore.commit(requestPb.build());
     active = false;
   }
 

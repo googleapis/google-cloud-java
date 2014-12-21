@@ -47,36 +47,9 @@ public final class RetryParams implements Serializable {
   private final long totalRetryPeriodMillis;
 
   private static final RetryParams DEFAULT_INSTANCE = new RetryParams(new Builder());
+  private static final RetryParams NO_RETRIES =
+      builder().retryMaxAttempts(1).retryMinAttempts(1).build();
 
-
-  /**
-   * Create a new RetryParams with the parameters from a {@link RetryParams.Builder}
-   *
-   * @param builder the parameters to use to construct the RetryParams object
-   */
-  private RetryParams(Builder builder) {
-    retryMinAttempts = builder.retryMinAttempts;
-    retryMaxAttempts = builder.retryMaxAttempts;
-    initialRetryDelayMillis = builder.initialRetryDelayMillis;
-    maxRetryDelayMillis = builder.maxRetryDelayMillis;
-    retryDelayBackoffFactor = builder.retryDelayBackoffFactor;
-    totalRetryPeriodMillis = builder.totalRetryPeriodMillis;
-    checkArgument(retryMinAttempts >= 0, "retryMinAttempts must not be negative");
-    checkArgument(retryMaxAttempts >= retryMinAttempts,
-        "retryMaxAttempts must not be smaller than retryMinAttempts");
-    checkArgument(initialRetryDelayMillis >= 0, "initialRetryDelayMillis must not be negative");
-    checkArgument(maxRetryDelayMillis >= initialRetryDelayMillis,
-        "maxRetryDelayMillis must not be smaller than initialRetryDelayMillis");
-    checkArgument(retryDelayBackoffFactor >= 0, "retryDelayBackoffFactor must not be negative");
-    checkArgument(totalRetryPeriodMillis >= 0, "totalRetryPeriodMillis must not be negative");
-  }
-
-  /**
-   * Returns an instance with the default parameters.
-   */
-  public static RetryParams getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
 
   /**
    * RetryParams builder.
@@ -189,6 +162,39 @@ public final class RetryParams implements Serializable {
   }
 
   /**
+   * Create a new RetryParams with the parameters from a {@link RetryParams.Builder}
+   *
+   * @param builder the parameters to use to construct the RetryParams object
+   */
+  private RetryParams(Builder builder) {
+    retryMinAttempts = builder.retryMinAttempts;
+    retryMaxAttempts = builder.retryMaxAttempts;
+    initialRetryDelayMillis = builder.initialRetryDelayMillis;
+    maxRetryDelayMillis = builder.maxRetryDelayMillis;
+    retryDelayBackoffFactor = builder.retryDelayBackoffFactor;
+    totalRetryPeriodMillis = builder.totalRetryPeriodMillis;
+    checkArgument(retryMinAttempts >= 0, "retryMinAttempts must not be negative");
+    checkArgument(retryMaxAttempts >= retryMinAttempts,
+        "retryMaxAttempts must not be smaller than retryMinAttempts");
+    checkArgument(initialRetryDelayMillis >= 0, "initialRetryDelayMillis must not be negative");
+    checkArgument(maxRetryDelayMillis >= initialRetryDelayMillis,
+        "maxRetryDelayMillis must not be smaller than initialRetryDelayMillis");
+    checkArgument(retryDelayBackoffFactor >= 0, "retryDelayBackoffFactor must not be negative");
+    checkArgument(totalRetryPeriodMillis >= 0, "totalRetryPeriodMillis must not be negative");
+  }
+
+  /**
+   * Returns an instance with the default parameters.
+   */
+  public static RetryParams getDefaultInstance() {
+    return DEFAULT_INSTANCE;
+  }
+
+  public static RetryParams noRetries() {
+    return NO_RETRIES;
+  }
+
+  /**
    * Returns the retryMinAttempts.
    */
   public int getRetryMinAttempts() {
@@ -229,8 +235,6 @@ public final class RetryParams implements Serializable {
   public long getTotalRetryPeriodMillis() {
     return totalRetryPeriodMillis;
   }
-
-
 
   @Override
   public int hashCode() {

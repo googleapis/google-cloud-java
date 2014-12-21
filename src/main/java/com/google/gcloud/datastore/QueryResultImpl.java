@@ -1,6 +1,7 @@
 package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.api.services.datastore.DatastoreV1.QueryResultBatch.MoreResultsType;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
 import com.google.gcloud.datastore.Query.Type;
@@ -15,7 +16,8 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
   private final Query.Type<T> queryType;
   private Query<T> query;
   private Query.Type<?> actualType;
-  private DatastoreV1.QueryResultBatch resultPb;
+  private DatastoreV1.QueryResultBatch queryResultBatchPb;
+  private boolean lastBatch;
   private Iterator<DatastoreV1.EntityResult> entityResultPbIter;
   //private ByteString cursor; // only available in v1beta3
 
@@ -37,32 +39,31 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
     sendRequest();
   }
 
-  private DatastoreV1.QueryResultBatch sendRequest() {
+  private void sendRequest() {
     DatastoreV1.RunQueryRequest.Builder requestPb = DatastoreV1.RunQueryRequest.newBuilder();
     if (readOptionsPb != null) {
       requestPb.setReadOptions(readOptionsPb);
     }
     requestPb.setPartitionId(partitionIdPb);
     query.populatePb(requestPb);
-    resultPb = datastore.run(requestPb.build()).getBatch();
-    entityResultPbIter = resultPb.getEntityResultList().iterator();
+    queryResultBatchPb = datastore.runQuery(requestPb.build()).getBatch();
+    lastBatch = queryResultBatchPb.getMoreResults() != MoreResultsType.NOT_FINISHED;
+    entityResultPbIter = queryResultBatchPb.getEntityResultList().iterator();
     // cursor = resultPb.getSkippedCursor(); // only available in v1beta3
-    actualType = Type.fromPb(resultPb.getEntityResultType());
+    actualType = Type.fromPb(queryResultBatchPb.getEntityResultType());
     if (queryType == Type.PROJECTION) {
       // projection entity can represent all type of results
       actualType = Type.PROJECTION;
     }
     Preconditions.checkState(queryType.isAssignableFrom(actualType),
         "Unexpected result type " + actualType + " vs " + queryType);
-    return resultPb;
   }
 
   @SuppressWarnings("unchecked")
   @Override
   protected T computeNext() {
-    while (!entityResultPbIter.hasNext()
-        && resultPb.getMoreResults() == DatastoreV1.QueryResultBatch.MoreResultsType.NOT_FINISHED) {
-      query = query.nextQuery(resultPb);
+    while (!entityResultPbIter.hasNext() && !lastBatch) {
+      query = query.nextQuery(queryResultBatchPb);
       sendRequest();
     }
     if (!entityResultPbIter.hasNext()) {

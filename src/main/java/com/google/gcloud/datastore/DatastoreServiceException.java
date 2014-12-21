@@ -3,6 +3,8 @@ package com.google.gcloud.datastore;
 import com.google.api.services.datastore.client.DatastoreException;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.RetryHelper;
+import com.google.gcloud.RetryHelper.RetryHelperException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,7 +39,7 @@ public class DatastoreServiceException extends RuntimeException {
 
     Code(boolean isTransient, String msg) {
       this.isTransient = isTransient;
-      this.defaultMessage = msg;
+      defaultMessage = msg;
     }
 
     /**
@@ -75,6 +77,16 @@ public class DatastoreServiceException extends RuntimeException {
    */
   public Code code() {
     return code;
+  }
+
+  static DatastoreServiceException translateAndThrow(RetryHelperException ex) {
+    if (ex.getCause() instanceof DatastoreException) {
+      return translateAndThrow((DatastoreException) ex.getCause());
+    }
+    if (ex instanceof RetryHelper.RetryInterruptedException) {
+      RetryHelper.RetryInterruptedException.propagate();
+    }
+    throw new DatastoreServiceException(Code.UNKNOWN, ex.getMessage(), ex);
   }
 
   /**
