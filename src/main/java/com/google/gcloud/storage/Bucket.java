@@ -14,11 +14,11 @@ public interface Bucket {
 
   void updateDefaultObjectAcl();
 
-  Acl acl(String objectName);
 
-  void updateAcl(String objectName, Acl acl);
 
-  void delete(String... objectName);
+
+
+  void delete(Key... objectKey);
 
   void compose(Iterable<String> source, String dest);
 

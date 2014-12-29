@@ -63,7 +63,13 @@ public abstract class ServiceOptions {
   }
 
   protected static String appEngineAppId() {
-    return System.getProperty("com.google.appengine.application.id");
+    try {
+      Class<?> apiProxy = Class.forName("com.google.apphosting.api.ApiProxy");
+      Object currentEnv = apiProxy.getMethod("getCurrentEnvironment").invoke(null);
+      return (String) currentEnv.getClass().getMethod("getAppId").invoke(currentEnv);
+    } catch (Exception ex) {
+      return System.getProperty("com.google.appengine.application.id");
+    }
   }
 
   protected abstract static class Builder<B extends Builder<B>> {

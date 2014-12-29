@@ -9,7 +9,7 @@ final class StorageServiceImpl implements StorageService {
 
   StorageServiceImpl(StorageServiceOptions options) {
     this.options = options;
-    this.storage = options.getStorage();
+    storage = options.getStorage();
   }
 
   @Override
