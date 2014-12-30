@@ -1,5 +1,7 @@
 package com.google.gcloud;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.compute.ComputeCredential;
 import com.google.api.client.googleapis.extensions.appengine.auth.oauth2.AppIdentityCredential;
@@ -8,7 +10,6 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
-import com.google.common.base.Preconditions;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -31,12 +32,14 @@ public abstract class AuthConfig {
     private final String account;
     private final PrivateKey privateKey;
 
-    public ServiceAccountAuthConfig(String account, PrivateKey privateKey) {
-      this.account = account;
-      this.privateKey = privateKey;
-      if (privateKey != null) {
-        Preconditions.checkArgument(account != null);
-      }
+    ServiceAccountAuthConfig(String account, PrivateKey privateKey) {
+      this.account = checkNotNull(account);
+      this.privateKey = checkNotNull(privateKey);
+    }
+
+    ServiceAccountAuthConfig() {
+      account = null;
+      privateKey = null;
     }
 
     @Override
@@ -44,10 +47,10 @@ public abstract class AuthConfig {
         HttpTransport transport, Set<String> scopes) {
       GoogleCredential.Builder builder = new GoogleCredential.Builder()
           .setTransport(transport)
-          .setJsonFactory(new JacksonFactory())
-          .setServiceAccountId(account)
-          .setServiceAccountPrivateKey(privateKey);
+          .setJsonFactory(new JacksonFactory());
       if (privateKey != null) {
+        builder.setServiceAccountPrivateKey(privateKey);
+        builder.setServiceAccountId(account);
         builder.setServiceAccountScopes(scopes);
       }
       return builder.build();
@@ -72,8 +75,12 @@ public abstract class AuthConfig {
     };
   }
 
-  public static AuthConfig createForAccount(String account, PrivateKey privateKey) {
+  public static AuthConfig createFor(String account, PrivateKey privateKey) {
     return new ServiceAccountAuthConfig(account, privateKey);
+  }
+
+  public static AuthConfig noCredentials() {
+    return new ServiceAccountAuthConfig();
   }
 
   static ComputeCredential getComputeCredential() throws IOException, GeneralSecurityException {

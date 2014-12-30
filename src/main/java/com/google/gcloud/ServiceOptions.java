@@ -59,7 +59,7 @@ public abstract class ServiceOptions {
     } catch (Exception ignore) {
       // Maybe not on GCE
     }
-    return AuthConfig.createForAccount(null, null);
+    return AuthConfig.noCredentials();
   }
 
   protected static String appEngineAppId() {

@@ -10,10 +10,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DatastoreServiceException extends RuntimeException {
 
   private static final long serialVersionUID = 8170357898917041899L;
   private static final ImmutableMap<String, Code> REASON_TO_CODE;
+  private static final ImmutableMap<Integer, Code> HTTP_TO_CODE;
 
   private final Code code;
 
@@ -24,22 +28,29 @@ public class DatastoreServiceException extends RuntimeException {
    */
   public enum Code {
 
-    ABORTED(true, "Request aborted"),
-    DEADLINE_EXCEEDED(true, "Deadline exceeded"),
-    UNAVAILABLE(true, "Could not reach service"),
-    FAILED_PRECONDITION(false, "Invalid request"),
-    INVALID_ARGUMENT(false, "Request parameter has an invalid value"),
-    PERMISSION_DENIED(false, "Unauthorized request"),
-    RESOURCE_EXHAUSTED(false, "Quota exceeded"),
-    INTERNAL(false, "Server returned an error"),
-    UNKNOWN(false, "Unknown failure");
+    ABORTED(true, "Request aborted", 409),
+    DEADLINE_EXCEEDED(true, "Deadline exceeded", 403),
+    UNAVAILABLE(true, "Could not reach service", 503),
+    FAILED_PRECONDITION(false, "Invalid request", 412),
+    INVALID_ARGUMENT(false, "Request parameter has an invalid value", 400),
+    PERMISSION_DENIED(false, "Unauthorized request", 403),
+    UNAUTHORIZED(false, "Unauthorized", 401),
+    RESOURCE_EXHAUSTED(false, "Quota exceeded", 402),
+    INTERNAL(false, "Server returned an error", 500),
+    UNKNOWN(false, "Unknown failure", -1);
 
     private final boolean isTransient;
     private final String defaultMessage;
+    private final int httpCode;
 
-    Code(boolean isTransient, String msg) {
+    Code(boolean isTransient, String msg, int httpCode) {
       this.isTransient = isTransient;
       defaultMessage = msg;
+      this.httpCode = httpCode;
+    }
+
+    public Integer httpCode() {
+      return httpCode;
     }
 
     /**
@@ -57,10 +68,13 @@ public class DatastoreServiceException extends RuntimeException {
 
   static {
     ImmutableMap.Builder<String, Code> builder = ImmutableMap.builder();
+    Map<Integer, Code> httpCodes = new HashMap<>();
     for (Code code : Code.values()) {
       builder.put(code.name(), code);
+      httpCodes.put(code.httpCode(), code);
     }
     REASON_TO_CODE = builder.build();
+    HTTP_TO_CODE = ImmutableMap.copyOf(httpCodes);
   }
 
   public DatastoreServiceException(Code code, String msg, Exception cause) {
@@ -108,7 +122,10 @@ public class DatastoreServiceException extends RuntimeException {
         // ignore - will be converted to unknown
       }
     }
-    Code code = MoreObjects.firstNonNull(REASON_TO_CODE.get(reason), Code.UNKNOWN);
+    Code code = REASON_TO_CODE.get(reason);
+    if (code == null) {
+      code = MoreObjects.firstNonNull(HTTP_TO_CODE.get(exception.getCode()), Code.UNKNOWN);
+    }
     throw code.translate(exception, message);
   }
 

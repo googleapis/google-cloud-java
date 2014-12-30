@@ -1,7 +1,7 @@
 package com.google.gcloud.datastore;
 
-import com.google.api.client.repackaged.com.google.common.base.Preconditions;
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.InvalidProtocolBufferException;
 
