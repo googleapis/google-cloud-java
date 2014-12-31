@@ -335,6 +335,10 @@ public class DatastoreServiceTest {
     responsePbBuilder.getBatchBuilder()
         .setEntityResultType(DatastoreV1.EntityResult.ResultType.PROJECTION).build();
     Datastore mockDatastore = EasyMock.createMock(Datastore.class);
+    DatastoreV1.EntityResult found =
+        DatastoreV1.EntityResult.newBuilder().setEntity(ENTITY1.toPb()).build();
+    EasyMock.expect(mockDatastore.lookup(EasyMock.<DatastoreV1.LookupRequest>anyObject()))
+        .andReturn(DatastoreV1.LookupResponse.newBuilder().addFound(found).build());
     EasyMock.expect(mockDatastore.runQuery(requestPb.build())).andReturn(responsePbBuilder.build());
     EasyMock.replay(mockDatastore);
     datastore = DatastoreServiceFactory.getDefault(
@@ -414,6 +418,10 @@ public class DatastoreServiceTest {
     responsePbBuilder.getBatchBuilder()
         .setEntityResultType(DatastoreV1.EntityResult.ResultType.PROJECTION).build();
     Datastore mockDatastore = EasyMock.createMock(Datastore.class);
+    DatastoreV1.EntityResult missing =
+        DatastoreV1.EntityResult.newBuilder().setEntity(ENTITY1.toPb()).build();
+    EasyMock.expect(mockDatastore.lookup(EasyMock.<DatastoreV1.LookupRequest>anyObject()))
+        .andReturn(DatastoreV1.LookupResponse.newBuilder().addMissing(missing).build());
     EasyMock.expect(mockDatastore.runQuery(requestPb.build())).andReturn(responsePbBuilder.build());
     EasyMock.replay(mockDatastore);
     datastore = DatastoreServiceFactory.getDefault(

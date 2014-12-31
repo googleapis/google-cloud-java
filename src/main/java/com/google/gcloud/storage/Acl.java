@@ -3,11 +3,11 @@ package com.google.gcloud.storage;
 public interface Acl {
 
   public class ProjectTeam {
-    	// ProjectNumber: The project number.
-	//ProjectNumber string `json:"projectNumber,omitempty"`
+      // ProjectNumber: The project number.
+  //ProjectNumber string `json:"projectNumber,omitempty"`
 
-	// Team: The team. Can be owners, editors, or viewers.
-	//Team string `json:"team,omitempty"`
+  // Team: The team. Can be owners, editors, or viewers.
+  //Team string `json:"team,omitempty"`
   }
 
   enum Entity {

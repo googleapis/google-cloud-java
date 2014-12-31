@@ -8,6 +8,11 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Set;
 
 public abstract class ServiceOptions {
@@ -18,6 +23,50 @@ public abstract class ServiceOptions {
   private final HttpTransport httpTransport;
   private final AuthConfig authConfig;
   private final RetryParams retryParams;
+
+  protected abstract static class Builder<B extends Builder<B>> {
+
+    private String host;
+    private HttpTransport httpTransport;
+    private AuthConfig authConfig;
+    private RetryParams retryParams;
+
+    protected Builder() {}
+
+    protected Builder(ServiceOptions options) {
+      host = options.host;
+      httpTransport = options.httpTransport;
+      authConfig = options.authConfig;
+      retryParams = options.retryParams;
+    }
+
+    protected abstract ServiceOptions build();
+
+    @SuppressWarnings("unchecked")
+    protected B self() {
+      return (B) this;
+    }
+
+    public B host(String host) {
+      this.host = host;
+      return self();
+    }
+
+    public B httpTransport(HttpTransport httpTransport) {
+      this.httpTransport = httpTransport;
+      return self();
+    }
+
+    public B authConfig(AuthConfig authConfig) {
+      this.authConfig = authConfig;
+      return self();
+    }
+
+    public B retryParams(RetryParams retryParams) {
+      this.retryParams = retryParams;
+      return self();
+    }
+  }
 
   protected ServiceOptions(Builder<?> builder) {
     host = firstNonNull(builder.host, DEFAULT_HOST);
@@ -63,56 +112,20 @@ public abstract class ServiceOptions {
   }
 
   protected static String appEngineAppId() {
-    try {
-      Class<?> apiProxy = Class.forName("com.google.apphosting.api.ApiProxy");
-      Object currentEnv = apiProxy.getMethod("getCurrentEnvironment").invoke(null);
-      return (String) currentEnv.getClass().getMethod("getAppId").invoke(currentEnv);
-    } catch (Exception ex) {
-      return System.getProperty("com.google.appengine.application.id");
-    }
+    return System.getProperty("com.google.appengine.application.id");
   }
 
-  protected abstract static class Builder<B extends Builder<B>> {
-
-    private String host;
-    private HttpTransport httpTransport;
-    private AuthConfig authConfig;
-    private RetryParams retryParams;
-
-    protected Builder() {}
-
-    protected Builder(ServiceOptions options) {
-      host = options.host;
-      httpTransport = options.httpTransport;
-      authConfig = options.authConfig;
-      retryParams = options.retryParams;
-    }
-
-    protected abstract ServiceOptions build();
-
-    @SuppressWarnings("unchecked")
-    protected B self() {
-      return (B) this;
-    }
-
-    public B host(String host) {
-      this.host = host;
-      return self();
-    }
-
-    public B httpTransport(HttpTransport httpTransport) {
-      this.httpTransport = httpTransport;
-      return self();
-    }
-
-    public B authConfig(AuthConfig authConfig) {
-      this.authConfig = authConfig;
-      return self();
-    }
-
-    public B retryParams(RetryParams retryParams) {
-      this.retryParams = retryParams;
-      return self();
+  protected static String googleCloudProjectId() {
+    try {
+      URL url = new URL("http://metadata/computeMetadata/v1/project/project-id");
+      URLConnection connection = url.openConnection();
+      connection.setRequestProperty("X-Google-Metadata-Request", "True");
+      try (BufferedReader reader =
+          new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+        return reader.readLine();
+      }
+    } catch (IOException e) {
+      return null;
     }
   }
 

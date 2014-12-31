@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.gcloud.ExceptionHandler.Interceptor;
+import com.google.gcloud.ExceptionHandler.Interceptor.RetryResult;
 
 import org.junit.Test;
 
@@ -112,16 +113,15 @@ public class ExceptionHandlerTest {
     assertFalse(handler.shouldRetry(new RuntimeException()));
     assertTrue(handler.shouldRetry(new NullPointerException()));
 
-    final AtomicReference<Boolean> before = new AtomicReference<>(false);
-
+    final AtomicReference<RetryResult> before = new AtomicReference<>(RetryResult.ABORT);
     Interceptor interceptor = new Interceptor() {
       @Override
-      public boolean shouldRetry(Exception exception, boolean shouldRetry) {
-        return !shouldRetry;
+      public RetryResult shouldRetry(Exception exception, RetryResult retryResult) {
+        return retryResult == RetryResult.ABORT ? RetryResult.RETRY : RetryResult.ABORT;
       }
 
       @Override
-      public Boolean shouldRetry(Exception exception) {
+      public RetryResult shouldRetry(Exception exception) {
         return before.get();
       }
     };
@@ -134,7 +134,7 @@ public class ExceptionHandlerTest {
     assertFalse(handler.shouldRetry(new RuntimeException()));
     assertFalse(handler.shouldRetry(new NullPointerException()));
 
-    before.set(true);
+    before.set(RetryResult.RETRY);
     assertTrue(handler.shouldRetry(new IOException()));
     assertTrue(handler.shouldRetry(new ClosedByInterruptException()));
     assertTrue(handler.shouldRetry(new InterruptedException()));

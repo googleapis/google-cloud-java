@@ -68,10 +68,17 @@ public class RetryHelperTest {
     }
     assertNull(RetryHelper.getContext());
 
-    @SuppressWarnings("serial") class E1 extends Exception {}
-    @SuppressWarnings("serial") class E2 extends E1 {}
-    @SuppressWarnings("serial") class E3 extends E1 {}
-    @SuppressWarnings("serial") class E4 extends E2 {}
+    @SuppressWarnings("serial")
+    class E1 extends Exception {}
+
+    @SuppressWarnings("serial")
+    class E2 extends E1 {}
+
+    @SuppressWarnings("serial")
+    class E3 extends E1 {}
+
+    @SuppressWarnings("serial")
+    class E4 extends E2 {}
 
     params = RetryParams.builder().initialRetryDelayMillis(0).retryMaxAttempts(5).build();
     handler = ExceptionHandler.builder().retryOn(E1.class, E4.class).abortOn(E3.class).build();

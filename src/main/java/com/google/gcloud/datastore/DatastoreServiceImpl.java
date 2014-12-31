@@ -28,14 +28,17 @@ final class DatastoreServiceImpl implements DatastoreService {
         private static final long serialVersionUID = 6911242958397733203L;
 
         @Override
-        public boolean shouldRetry(Exception exception, boolean shouldRetry) {
-          return shouldRetry;
+        public RetryResult shouldRetry(Exception exception, RetryResult retryResult) {
+          return null;
         }
 
         @Override
-        public Boolean shouldRetry(Exception exception) {
+        public RetryResult shouldRetry(Exception exception) {
           if (exception instanceof DatastoreServiceException) {
-            return ((DatastoreServiceException) exception).code().isTransient();
+            boolean isTransient = ((DatastoreServiceException) exception).code().isTransient();
+            return isTransient
+                ? ExceptionHandler.Interceptor.RetryResult.RETRY
+                : ExceptionHandler.Interceptor.RetryResult.ABORT;
           }
           return null;
         }
