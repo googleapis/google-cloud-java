@@ -87,6 +87,10 @@
       <url>http://repo.maven.apache.org/maven2</url>
     </repository>
   </repositories>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
   <pluginRepositories>
     <pluginRepository>
       <releases>
