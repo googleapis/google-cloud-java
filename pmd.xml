@@ -80,7 +80,6 @@
    <rule ref="rulesets/java/basic.xml/CollapsibleIfStatements"/>
    <rule ref="rulesets/vm/basic.xml/CollapsibleIfStatements"/>
    <rule ref="rulesets/java/comments.xml/CommentContent"/>
-   <rule ref="rulesets/java/comments.xml/CommentRequired"/>
    <rule ref="rulesets/java/comments.xml/CommentSize"/>
    <rule ref="rulesets/java/design.xml/CompareObjectsWithEquals"/>
    <rule ref="rulesets/java/design.xml/ConfusingTernary"/>
@@ -183,7 +182,6 @@
    <rule ref="rulesets/java/coupling.xml/LawOfDemeter"/>
    <rule ref="rulesets/java/j2ee.xml/LocalHomeNamingConvention"/>
    <rule ref="rulesets/java/j2ee.xml/LocalInterfaceSessionNamingConvention"/>
-   <rule ref="rulesets/java/optimizations.xml/LocalVariableCouldBeFinal"/>
    <rule ref="rulesets/java/logging-java.xml/LoggerIsNotStaticFinal"/>
    <rule ref="rulesets/java/design.xml/LogicInversion"/>
    <rule ref="rulesets/java/migrating.xml/LongInstantiation"/>
