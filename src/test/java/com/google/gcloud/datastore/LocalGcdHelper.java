@@ -111,14 +111,14 @@ public class LocalGcdHelper {
         .redirectErrorStream(true)
         .directory(new File(gcdFolder, GCD))
         .redirectOutput(new File("/dev/null"))
-        .command("sh", "gcd.sh", "create", "-d", dataset, dataset)
+        .command("bash", "gcd.sh", "create", "-d", dataset, dataset)
         .start();
     temp.waitFor();
 
     temp = new ProcessBuilder()
         .directory(new File(gcdFolder, GCD))
         .redirectErrorStream(true)
-        .command("sh", "gcd.sh", "start", "--testing", "--allow_remote_shutdown", dataset)
+        .command("bash", "gcd.sh", "start", "--testing", "--allow_remote_shutdown", dataset)
         .start();
     processReader = ProcessStreamReader.start(temp, "Dev App Server is now running");
   }
