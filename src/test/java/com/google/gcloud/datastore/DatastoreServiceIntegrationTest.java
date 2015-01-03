@@ -17,11 +17,13 @@ import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 
 import org.easymock.EasyMock;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -29,9 +31,9 @@ import java.util.List;
 import java.util.Map;
 
 @RunWith(JUnit4.class)
-public class DatastoreServiceTest {
+public class DatastoreServiceIntegrationTest {
 
-  private static final String DATASET = "dataset1";
+  private static final String DATASET = LocalGcdHelper.DEFAULT_DATASET;
   private static final String KIND1 = "kind1";
   private static final String KIND2 = "kind2";
   private static final NullValue NULL_VALUE = NullValue.of();
@@ -70,25 +72,29 @@ public class DatastoreServiceTest {
   private DatastoreServiceOptions options;
   private DatastoreService datastore;
   private DatastoreHelper helper;
+  private LocalGcdHelper gcdHelper;
 
   @Before
-  public void setUp() {
-    // TODO(ozarov): document that this test depends on a local gcd running.
-    // Unfortunately, the gcd tool is not bundled with the cloud SDK and need
-    // to be downloaded independently from
-    // https://cloud.google.com/datastore/docs/tools/devserver (b/16372095).
-    // To start the gcd run:
-    // gcd.sh create dataset1; gcd.sh start dataset1
-    // We should have an option to start the gcd from maven/ant.
+  public void setUp() throws IOException, InterruptedException {
+    if (!LocalGcdHelper.isActive(DATASET)) {
+      gcdHelper = LocalGcdHelper.start(DATASET);
+    }
     options = DatastoreServiceOptions.builder()
         .dataset(DATASET)
-        .host("http://localhost:8080")
+        .host("http://localhost:" + LocalGcdHelper.PORT)
         .build();
     datastore = DatastoreServiceFactory.getDefault(options);
     helper = DatastoreHelper.createFor(datastore);
     // Prepare data for testing
     datastore.delete(KEY1, KEY2, KEY3, KEY4, KEY5);
     datastore.add(ENTITY1, ENTITY2);
+  }
+
+  @After
+  public void tearDown() throws IOException, InterruptedException {
+    if (gcdHelper != null) {
+      gcdHelper.stop();
+    }
   }
 
   @Test
