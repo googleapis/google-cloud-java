@@ -8,7 +8,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-import com.google.gcloud.ExceptionHandler.Interceptor.RetryResult;
 
 import java.io.Serializable;
 import java.lang.reflect.Method;
@@ -140,10 +139,10 @@ public final class ExceptionHandler implements Serializable {
 
     private static final long serialVersionUID = -4264634837841455974L;
     private final Class<? extends Exception> exception;
-    private final RetryResult retry;
+    private final Interceptor.RetryResult retry;
     private final Set<RetryInfo> children = Sets.newHashSet();
 
-    RetryInfo(Class<? extends Exception> exception, RetryResult retry) {
+    RetryInfo(Class<? extends Exception> exception, Interceptor.RetryResult retry) {
       this.exception = checkNotNull(exception);
       this.retry = retry;
     }
@@ -174,10 +173,10 @@ public final class ExceptionHandler implements Serializable {
         Sets.intersection(retriableExceptions, nonRetriableExceptions).isEmpty(),
         "Same exception was found in both retriable and non-retriable sets");
     for (Class<? extends Exception> exception : retriableExceptions) {
-      addToRetryInfos(retryInfos, new RetryInfo(exception, RetryResult.RETRY));
+      addToRetryInfos(retryInfos, new RetryInfo(exception, Interceptor.RetryResult.RETRY));
     }
     for (Class<? extends Exception> exception : nonRetriableExceptions) {
-      addToRetryInfos(retryInfos,  new RetryInfo(exception, RetryResult.ABORT));
+      addToRetryInfos(retryInfos,  new RetryInfo(exception, Interceptor.RetryResult.ABORT));
     }
   }
 
@@ -242,13 +241,14 @@ public final class ExceptionHandler implements Serializable {
 
   boolean shouldRetry(Exception ex) {
     for (Interceptor interceptor : interceptors) {
-      RetryResult retryResult = interceptor.shouldRetry(ex);
+      Interceptor.RetryResult retryResult = interceptor.shouldRetry(ex);
       if (retryResult != null) {
         return retryResult.booleanValue();
       }
     }
     RetryInfo retryInfo = findMostSpecificRetryInfo(retryInfos, ex.getClass());
-    RetryResult retryResult = retryInfo == null ? RetryResult.ABORT : retryInfo.retry;
+    Interceptor.RetryResult retryResult =
+        retryInfo == null ? Interceptor.RetryResult.ABORT : retryInfo.retry;
     for (Interceptor interceptor : interceptors) {
       retryResult = firstNonNull(interceptor.shouldRetry(ex, retryResult), retryResult);
     }
