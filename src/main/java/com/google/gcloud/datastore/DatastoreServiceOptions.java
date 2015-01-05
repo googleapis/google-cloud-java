@@ -35,7 +35,7 @@ public class DatastoreServiceOptions extends ServiceOptions {
 
     private String dataset;
     private String namespace;
-    private boolean force = false;
+    private boolean force;
     private Datastore datastore;
 
     private Builder() {

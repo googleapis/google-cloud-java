@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 /**
  * Utility to validate Datastore type/values.
  */
-class Validator {
+final class Validator {
 
   private static final Pattern DATASET_PATTERN = Pattern.compile(
       "([a-z\\d\\-]{1,100}~)?([a-z\\d][a-z\\d\\-\\.]{0,99}\\:)?([a-z\\d][a-z\\d\\-]{0,99})");
@@ -17,6 +17,9 @@ class Validator {
   private static final Pattern NAMESPACE_PATTERN =
       Pattern.compile(String.format("[0-9A-Za-z\\._\\-]{0,%d}", MAX_NAMESPACE_LENGTH));
 
+  private Validator() {
+    // utility class
+  }
 
   static String validateDataset(String dataset) {
     checkArgument(!Strings.isNullOrEmpty(dataset), "dataset can't be empty or null");

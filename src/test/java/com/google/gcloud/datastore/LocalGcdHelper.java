@@ -106,7 +106,7 @@ public class LocalGcdHelper {
     File datasetFolder = new File(gcdFolder, GCD + "/" + dataset);
     datasetFolder.delete();
 
-    // TODO: When System.getProperty("os.name").startsWith("Windows") use cmd.exe /c and gcd.cmd
+    // TODO: if System.getProperty("os.name").startsWith("Windows") use cmd.exe /c and gcd.cmd
     Process temp = new ProcessBuilder()
         .redirectErrorStream(true)
         .directory(new File(gcdFolder, GCD))
@@ -159,7 +159,6 @@ public class LocalGcdHelper {
     }
     if (gcdPath != null) {
       deleteRecurse(gcdPath);
-      gcdPath = null;
     }
   }
 
