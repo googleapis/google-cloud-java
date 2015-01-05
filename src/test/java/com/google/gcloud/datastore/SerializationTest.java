@@ -17,6 +17,7 @@ import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
@@ -97,7 +98,8 @@ public class SerializationTest {
   private static final ProjectionEntity PROJECTION_ENTITY = ProjectionEntity.fromPb(ENTITY1.toPb());
 
   @SuppressWarnings("rawtypes")
-  private Multimap<Type, Value> typeToValues = ImmutableMultimap.<Type, Value>builder()
+  private static final Multimap<Type, Value> TYPE_TO_VALUES =
+      ImmutableMultimap.<Type, Value>builder()
       .put(Type.NULL, NULL_VALUE)
       .put(Type.KEY, KEY_VALUE)
       .put(Type.STRING, STRING_VALUE)
@@ -115,7 +117,7 @@ public class SerializationTest {
   @Test
   public void testValues() throws Exception {
     for (Type type : Type.values()) {
-      for (Value<?> value : typeToValues.get(type)) {
+      for (Value<?> value : TYPE_TO_VALUES.get(type)) {
         Value<?> copy = serialiazeAndDeserialize(value);
         assertEquals(value, value);
         assertEquals(value, copy);
@@ -141,15 +143,14 @@ public class SerializationTest {
   }
 
   @SuppressWarnings("unchecked")
-  private <T> T serialiazeAndDeserialize(T obj) throws Exception {
-    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-    try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream)) {
-      objectOutputStream.writeObject(obj);
+  private <T> T serialiazeAndDeserialize(T obj) throws IOException, ClassNotFoundException {
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
+      output.writeObject(obj);
     }
-    byte[] bytes = byteArrayOutputStream.toByteArray();
-    ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
-    try (ObjectInputStream in = new ObjectInputStream(byteArrayInputStream)) {
-      return (T) in.readObject();
+    try (ObjectInputStream input =
+        new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
+      return (T) input.readObject();
     }
   }
 }

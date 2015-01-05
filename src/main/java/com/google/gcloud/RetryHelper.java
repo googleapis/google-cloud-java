@@ -18,9 +18,9 @@ import java.util.concurrent.Callable;
 import java.util.logging.Logger;
 
 /**
- * Utility class for retrying operations. For more details about the parameters, see
- * {@link RetryParams}. If the request is never successful, a {@link RetriesExhaustedException} will
- * be thrown.
+ * Utility class for retrying operations.
+ * For more details about the parameters, see {@link RetryParams}.
+ * If the request is never successful, a {@link RetriesExhaustedException} will be thrown.
  *
  * @param <V> return value of the closure that is being run with retries
  */
@@ -99,8 +99,8 @@ public class RetryHelper<V> {
 
     private static final long serialVersionUID = -2331878521983499652L;
 
-    NonRetriableException(Throwable ex) {
-      super(ex);
+    NonRetriableException(Throwable throwable) {
+      super(throwable);
     }
   }
 
@@ -164,12 +164,13 @@ public class RetryHelper<V> {
           log.fine(this + ": attempt #" + attemptNumber + " succeeded");
         }
         return value;
+      } catch (InterruptedException | InterruptedIOException | ClosedByInterruptException e) {
+        if (!exceptionHandler.shouldRetry(e)) {
+          RetryInterruptedException.propagate();
+        }
+        exception = e;
       } catch (Exception e) {
         if (!exceptionHandler.shouldRetry(e)) {
-          if (e instanceof InterruptedException || e instanceof InterruptedIOException
-              || e instanceof ClosedByInterruptException) {
-            RetryInterruptedException.propagate();
-          }
           throw new NonRetriableException(e);
         }
         exception = e;
