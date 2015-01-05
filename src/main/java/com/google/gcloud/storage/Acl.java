@@ -2,7 +2,7 @@ package com.google.gcloud.storage;
 
 public interface Acl {
 
-  public class ProjectTeam {
+  class ProjectTeam {
       // ProjectNumber: The project number.
   //ProjectNumber string `json:"projectNumber,omitempty"`
 

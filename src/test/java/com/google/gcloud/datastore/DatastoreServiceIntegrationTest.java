@@ -154,7 +154,6 @@ public class DatastoreServiceIntegrationTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreServiceException expected) {
-      expected.printStackTrace();
       assertEquals(DatastoreServiceException.Code.ABORTED, expected.code());
     }
   }
@@ -181,7 +180,6 @@ public class DatastoreServiceIntegrationTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreServiceException expected) {
-      expected.printStackTrace();
       assertEquals(DatastoreServiceException.Code.ABORTED, expected.code());
     }
   }

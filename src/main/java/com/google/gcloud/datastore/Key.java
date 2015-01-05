@@ -114,14 +114,14 @@ public final class Key extends PartialKey {
     try {
       return URLEncoder.encode(toString(), UTF_8.name());
     } catch (UnsupportedEncodingException e) {
-      throw new RuntimeException("Unxpeced encoding exception", e);
+      throw new IllegalStateException("Unxpeced encoding exception", e);
     }
   }
 
   /**
    * Create a {@code Key} given its URL safe encoded form.
    *
-   * @throws RuntimeException when decoding fails
+   * @throws IllegalArgumentException when decoding fails
    */
   public static Key fromUrlSafe(String urlSafe) {
     try {
@@ -129,9 +129,9 @@ public final class Key extends PartialKey {
       DatastoreV1.Key keyPb = DatastoreV1.Key.parseFrom(ByteString.copyFromUtf8(utf8Str));
       return fromPb(keyPb);
     } catch (UnsupportedEncodingException e) {
-      throw new RuntimeException("Unxpeced decoding exception", e);
+      throw new IllegalStateException("Unxpeced decoding exception", e);
     } catch (InvalidProtocolBufferException e) {
-      throw new RuntimeException("Could not parse key", e);
+      throw new IllegalArgumentException("Could not parse key", e);
     }
   }
 

@@ -20,14 +20,14 @@ abstract class Serializable<M extends GeneratedMessage> implements java.io.Seria
     return toPb().toString();
   }
 
-  private void writeObject(ObjectOutputStream out) throws IOException {
-    out.defaultWriteObject();
-    out.writeObject(toPb().toByteArray());
+  private void writeObject(ObjectOutputStream output) throws IOException {
+    output.defaultWriteObject();
+    output.writeObject(toPb().toByteArray());
   }
 
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
-    bytesPb = (byte[]) in.readObject();
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    bytesPb = (byte[]) input.readObject();
   }
 
   protected Object readResolve() throws ObjectStreamException {

@@ -65,7 +65,7 @@ public class PartialKey extends BaseKey {
       }
     }
     List<DatastoreV1.Key.PathElement> pathElementsPb = keyPb.getPathElementList();
-    Preconditions.checkArgument(pathElementsPb.size() > 0, "Path must not be empty");
+    Preconditions.checkArgument(!pathElementsPb.isEmpty(), "Path must not be empty");
     ImmutableList.Builder<PathElement> pathBuilder = ImmutableList.builder();
     for (DatastoreV1.Key.PathElement pathElementPb : pathElementsPb) {
       pathBuilder.add(PathElement.fromPb(pathElementPb));
