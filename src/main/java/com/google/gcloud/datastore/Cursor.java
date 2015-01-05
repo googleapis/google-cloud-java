@@ -65,7 +65,7 @@ public final class Cursor extends Serializable<DatastoreV1.Value> {
     try {
       return URLEncoder.encode(toPb().toString(), UTF_8.name());
     } catch (UnsupportedEncodingException e) {
-      throw new RuntimeException("Unxpeced encoding exception", e);
+      throw new IllegalStateException("Unxpeced encoding exception", e);
     }
   }
 
@@ -77,7 +77,7 @@ public final class Cursor extends Serializable<DatastoreV1.Value> {
       String utf8Str = URLDecoder.decode(urlSafe, UTF_8.name());
       return fromPb(DatastoreV1.Value.parseFrom(utf8Str.getBytes()));
     } catch (UnsupportedEncodingException | InvalidProtocolBufferException e) {
-      throw new RuntimeException("Unxpeced decoding exception", e);
+      throw new IllegalStateException("Unxpeced decoding exception", e);
     }
   }
 

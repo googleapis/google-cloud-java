@@ -61,6 +61,11 @@ public abstract class TransactionOption implements Serializable {
     public Level level() {
       return level;
     }
+
+    @Override
+    BatchWriteOption toBatchWriteOption() {
+      return null;
+    }
   }
 
   TransactionOption() {
@@ -89,7 +94,5 @@ public abstract class TransactionOption implements Serializable {
     return builder.build();
   }
 
-  BatchWriteOption toBatchWriteOption() {
-    return null;
-  }
+  abstract BatchWriteOption toBatchWriteOption();
 }

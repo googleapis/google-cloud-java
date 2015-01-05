@@ -6,22 +6,16 @@
    <description>PMD Plugin preferences rule set</description>
    <rule ref="rulesets/java/design.xml/AbstractClassWithoutAbstractMethod"/>
    <rule ref="rulesets/java/design.xml/AbstractClassWithoutAnyMethod"/>
-   <rule ref="rulesets/java/naming.xml/AbstractNaming"/>
-   <rule ref="rulesets/java/design.xml/AccessorClassGeneration"/>
    <rule ref="rulesets/java/optimizations.xml/AddEmptyString"/>
    <rule ref="rulesets/java/strings.xml/AppendCharacterWithChar"/>
    <rule ref="rulesets/java/sunsecure.xml/ArrayIsStoredDirectly"/>
-   <rule ref="rulesets/ecmascript/basic.xml/AssignmentInOperand"/>
-   <rule ref="rulesets/java/controversial.xml/AssignmentInOperand"/>
    <rule ref="rulesets/java/design.xml/AssignmentToNonFinalStatic"/>
-   <rule ref="rulesets/java/controversial.xml/AtLeastOneConstructor"/>
    <rule ref="rulesets/java/controversial.xml/AvoidAccessibilityAlteration"/>
    <rule ref="rulesets/java/optimizations.xml/AvoidArrayLoops"/>
    <rule ref="rulesets/java/migrating.xml/AvoidAssertAsIdentifier"/>
    <rule ref="rulesets/xsl/xpath.xml/AvoidAxisNavigation"/>
    <rule ref="rulesets/java/basic.xml/AvoidBranchingStatementAsLastInLoop"/>
    <rule ref="rulesets/java/finalizers.xml/AvoidCallingFinalize"/>
-   <rule ref="rulesets/java/strictexception.xml/AvoidCatchingGenericException"/>
    <rule ref="rulesets/java/strictexception.xml/AvoidCatchingNPE"/>
    <rule ref="rulesets/java/strictexception.xml/AvoidCatchingThrowable"/>
    <rule ref="rulesets/java/design.xml/AvoidConstantsInterface"/>
@@ -31,12 +25,9 @@
    <rule ref="rulesets/java/naming.xml/AvoidDollarSigns"/>
    <rule ref="rulesets/java/strings.xml/AvoidDuplicateLiterals"/>
    <rule ref="rulesets/java/migrating.xml/AvoidEnumAsIdentifier"/>
-   <rule ref="rulesets/java/naming.xml/AvoidFieldNameMatchingMethodName"/>
-   <rule ref="rulesets/java/naming.xml/AvoidFieldNameMatchingTypeName"/>
    <rule ref="rulesets/java/controversial.xml/AvoidFinalLocalVariable"/>
    <rule ref="rulesets/java/design.xml/AvoidInstanceofChecksInCatchClause"/>
    <rule ref="rulesets/java/optimizations.xml/AvoidInstantiatingObjectsInLoops"/>
-   <rule ref="rulesets/java/controversial.xml/AvoidLiteralsInIfCondition"/>
    <rule ref="rulesets/java/strictexception.xml/AvoidLosingExceptionInformation"/>
    <rule ref="rulesets/java/basic.xml/AvoidMultipleUnaryOperators"/>
    <rule ref="rulesets/java/controversial.xml/AvoidPrefixingMethodParameters"/>
@@ -59,7 +50,6 @@
    <rule ref="rulesets/java/controversial.xml/AvoidUsingShortType"/>
    <rule ref="rulesets/java/controversial.xml/AvoidUsingVolatile"/>
    <rule ref="rulesets/java/design.xml/BadComparison"/>
-   <rule ref="rulesets/java/javabeans.xml/BeanMembersShouldSerialize"/>
    <rule ref="rulesets/java/basic.xml/BigIntegerInstantiation"/>
    <rule ref="rulesets/java/naming.xml/BooleanGetMethodName"/>
    <rule ref="rulesets/java/basic.xml/BooleanInstantiation"/>
@@ -67,7 +57,6 @@
    <rule ref="rulesets/java/basic.xml/BrokenNullCheck"/>
    <rule ref="rulesets/java/migrating.xml/ByteInstantiation"/>
    <rule ref="rulesets/java/android.xml/CallSuperFirst"/>
-   <rule ref="rulesets/java/controversial.xml/CallSuperInConstructor"/>
    <rule ref="rulesets/java/android.xml/CallSuperLast"/>
    <rule ref="rulesets/java/basic.xml/CheckResultSet"/>
    <rule ref="rulesets/java/basic.xml/CheckSkipResult"/>
@@ -80,19 +69,24 @@
    <rule ref="rulesets/java/basic.xml/CollapsibleIfStatements"/>
    <rule ref="rulesets/vm/basic.xml/CollapsibleIfStatements"/>
    <rule ref="rulesets/java/comments.xml/CommentContent"/>
-   <rule ref="rulesets/java/comments.xml/CommentSize"/>
+   <rule ref="rulesets/java/comments.xml/CommentSize">
+	   <properties>
+		   <property name="maxLineLength" value="100"/>
+	   </properties>
+   </rule>
    <rule ref="rulesets/java/design.xml/CompareObjectsWithEquals"/>
-   <rule ref="rulesets/java/design.xml/ConfusingTernary"/>
    <rule ref="rulesets/java/strings.xml/ConsecutiveAppendsShouldReuse"/>
    <rule ref="rulesets/java/strings.xml/ConsecutiveLiteralAppends"/>
    <rule ref="rulesets/ecmascript/basic.xml/ConsistentReturn"/>
    <rule ref="rulesets/java/design.xml/ConstructorCallsOverridableMethod"/>
    <rule ref="rulesets/java/coupling.xml/CouplingBetweenObjects"/>
-   <rule ref="rulesets/plsql/codesize.xml/CyclomaticComplexity"/>
+   <rule ref="rulesets/plsql/codesize.xml/CyclomaticComplexity">
+	   <properties>
+		   <property name="reportLevel" value="14"/>
+	   </properties>
+   </rule>
    <rule ref="rulesets/java/codesize.xml/CyclomaticComplexity"/>
-   <rule ref="rulesets/java/controversial.xml/DataflowAnomalyAnalysis"/>
    <rule ref="rulesets/java/design.xml/DefaultLabelNotLastInSwitchStmt"/>
-   <rule ref="rulesets/java/controversial.xml/DefaultPackage"/>
    <rule ref="rulesets/java/controversial.xml/DoNotCallGarbageCollectionExplicitly"/>
    <rule ref="rulesets/java/j2ee.xml/DoNotCallSystemExit"/>
    <rule ref="rulesets/java/strictexception.xml/DoNotExtendJavaLangError"/>
@@ -107,7 +101,6 @@
    <rule ref="rulesets/java/basic.xml/DoubleCheckedLocking"/>
    <rule ref="rulesets/java/imports.xml/DuplicateImports"/>
    <rule ref="rulesets/jsp/basic.xml/DuplicateJspImports"/>
-   <rule ref="rulesets/java/empty.xml/EmptyCatchBlock"/>
    <rule ref="rulesets/java/finalizers.xml/EmptyFinalizer"/>
    <rule ref="rulesets/java/empty.xml/EmptyFinallyBlock"/>
    <rule ref="rulesets/vm/basic.xml/EmptyForeachStmt"/>
@@ -149,10 +142,8 @@
    <rule ref="rulesets/ecmascript/braces.xml/ForLoopsMustUseBraces"/>
    <rule ref="rulesets/java/naming.xml/GenericsNaming"/>
    <rule ref="rulesets/ecmascript/basic.xml/GlobalVariable"/>
-   <rule ref="rulesets/java/design.xml/GodClass"/>
    <rule ref="rulesets/java/logging-jakarta-commons.xml/GuardDebugLogging"/>
    <rule ref="rulesets/java/logging-jakarta-commons.xml/GuardLogStatement"/>
-   <rule ref="rulesets/java/logging-java.xml/GuardLogStatementJavaUtil"/>
    <rule ref="rulesets/java/design.xml/IdempotentOperations"/>
    <rule ref="rulesets/java/braces.xml/IfElseStmtsMustUseBraces"/>
    <rule ref="rulesets/ecmascript/braces.xml/IfElseStmtsMustUseBraces"/>
@@ -171,25 +162,20 @@
    <rule ref="rulesets/java/migrating.xml/JUnit4TestShouldUseAfterAnnotation"/>
    <rule ref="rulesets/java/migrating.xml/JUnit4TestShouldUseBeforeAnnotation"/>
    <rule ref="rulesets/java/migrating.xml/JUnit4TestShouldUseTestAnnotation"/>
-   <rule ref="rulesets/java/junit.xml/JUnitAssertionsShouldIncludeMessage"/>
    <rule ref="rulesets/java/junit.xml/JUnitSpelling"/>
    <rule ref="rulesets/java/junit.xml/JUnitStaticSuite"/>
-   <rule ref="rulesets/java/junit.xml/JUnitTestContainsTooManyAsserts"/>
    <rule ref="rulesets/java/junit.xml/JUnitTestsShouldIncludeAssert"/>
    <rule ref="rulesets/java/migrating.xml/JUnitUseExpected"/>
    <rule ref="rulesets/jsp/basic.xml/JspEncoding"/>
    <rule ref="rulesets/java/basic.xml/JumbledIncrementer"/>
-   <rule ref="rulesets/java/coupling.xml/LawOfDemeter"/>
    <rule ref="rulesets/java/j2ee.xml/LocalHomeNamingConvention"/>
    <rule ref="rulesets/java/j2ee.xml/LocalInterfaceSessionNamingConvention"/>
    <rule ref="rulesets/java/logging-java.xml/LoggerIsNotStaticFinal"/>
    <rule ref="rulesets/java/design.xml/LogicInversion"/>
    <rule ref="rulesets/java/migrating.xml/LongInstantiation"/>
-   <rule ref="rulesets/java/naming.xml/LongVariable"/>
    <rule ref="rulesets/java/coupling.xml/LooseCoupling"/>
    <rule ref="rulesets/java/coupling.xml/LoosePackageCoupling"/>
    <rule ref="rulesets/java/j2ee.xml/MDBAndSessionBeanNamingConvention"/>
-   <rule ref="rulesets/java/optimizations.xml/MethodArgumentCouldBeFinal"/>
    <rule ref="rulesets/java/naming.xml/MethodNamingConventions"/>
    <rule ref="rulesets/java/sunsecure.xml/MethodReturnsInternalArray"/>
    <rule ref="rulesets/java/naming.xml/MethodWithSameNameAsEnclosingClass"/>
@@ -222,9 +208,7 @@
    <rule ref="rulesets/java/design.xml/NonCaseLabelInSwitchStatement"/>
    <rule ref="rulesets/java/design.xml/NonStaticInitializer"/>
    <rule ref="rulesets/java/design.xml/NonThreadSafeSingleton"/>
-   <rule ref="rulesets/java/controversial.xml/NullAssignment"/>
    <rule ref="rulesets/java/controversial.xml/OneDeclarationPerLine"/>
-   <rule ref="rulesets/java/controversial.xml/OnlyOneReturn"/>
    <rule ref="rulesets/java/design.xml/OptimizableToArrayCall"/>
    <rule ref="rulesets/java/basic.xml/OverrideBothEqualsAndHashcode"/>
    <rule ref="rulesets/java/naming.xml/PackageCase"/>
@@ -243,10 +227,13 @@
    <rule ref="rulesets/java/design.xml/ReturnEmptyArrayRatherThanNull"/>
    <rule ref="rulesets/java/basic.xml/ReturnFromFinallyBlock"/>
    <rule ref="rulesets/ecmascript/basic.xml/ScopeForInVariable"/>
-   <rule ref="rulesets/java/naming.xml/ShortClassName"/>
+   <rule ref="rulesets/java/naming.xml/ShortClassName">
+	   <properties>
+		   <property name="minimum" value="3"/>
+	   </properties>
+   </rule>
    <rule ref="rulesets/java/migrating.xml/ShortInstantiation"/>
    <rule ref="rulesets/java/naming.xml/ShortMethodName"/>
-   <rule ref="rulesets/java/naming.xml/ShortVariable"/>
    <rule ref="rulesets/java/strictexception.xml/SignatureDeclareThrowsException"/>
    <rule ref="rulesets/java/design.xml/SimpleDateFormatNeedsLocale"/>
    <rule ref="rulesets/java/junit.xml/SimplifyBooleanAssertion"/>
@@ -276,9 +263,6 @@
    <rule ref="rulesets/plsql/codesize.xml/TooManyFields"/>
    <rule ref="rulesets/java/codesize.xml/TooManyFields"/>
    <rule ref="rulesets/plsql/codesize.xml/TooManyMethods"/>
-   <rule ref="rulesets/java/codesize.xml/TooManyMethods"/>
-   <rule ref="rulesets/java/imports.xml/TooManyStaticImports"/>
-   <rule ref="rulesets/java/design.xml/UncommentedEmptyConstructor"/>
    <rule ref="rulesets/java/design.xml/UncommentedEmptyMethod"/>
    <rule ref="rulesets/java/basic.xml/UnconditionalIfStatement"/>
    <rule ref="rulesets/ecmascript/unnecessary.xml/UnnecessaryBlock"/>
@@ -312,7 +296,6 @@
    <rule ref="rulesets/ecmascript/basic.xml/UseBaseWithParseInt"/>
    <rule ref="rulesets/java/design.xml/UseCollectionIsEmpty"/>
    <rule ref="rulesets/xsl/xpath.xml/UseConcatOnce"/>
-   <rule ref="rulesets/java/controversial.xml/UseConcurrentHashMap"/>
    <rule ref="rulesets/java/logging-jakarta-commons.xml/UseCorrectExceptionLogging"/>
    <rule ref="rulesets/java/strings.xml/UseEqualsToCompareStrings"/>
    <rule ref="rulesets/java/strings.xml/UseIndexOfChar"/>
@@ -328,7 +311,6 @@
    <rule ref="rulesets/java/basic.xml/UselessOverridingMethod"/>
    <rule ref="rulesets/java/basic.xml/UselessParentheses"/>
    <rule ref="rulesets/java/strings.xml/UselessStringValueOf"/>
-   <rule ref="rulesets/java/naming.xml/VariableNamingConventions"/>
    <rule ref="rulesets/java/braces.xml/WhileLoopsMustUseBraces"/>
    <rule ref="rulesets/ecmascript/braces.xml/WhileLoopsMustUseBraces"/>
 </ruleset>
