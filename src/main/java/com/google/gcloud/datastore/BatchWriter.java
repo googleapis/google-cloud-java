@@ -45,7 +45,7 @@ public interface BatchWriter extends DatastoreWriter {
    * @throws DatastoreServiceException if batch is no longer active
    */
   @Override
-  public void delete(Key... key);
+  void delete(Key... key);
 
   /**
    * {@inheritDoc}
@@ -53,7 +53,7 @@ public interface BatchWriter extends DatastoreWriter {
    * @throws DatastoreServiceException if batch is no longer active
    */
   @Override
-  public void put(Entity... entity);
+  void put(Entity... entity);
 
   /**
    * Submit the batch to the Datastore.

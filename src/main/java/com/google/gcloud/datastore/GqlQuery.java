@@ -146,8 +146,8 @@ public final class GqlQuery<V> extends Query<V> {
     private String namespace;
     private String queryString;
     private boolean allowLiteral;
-    private Map<String, Binding> namedBindings = new TreeMap<>();
-    private List<Binding> positionalBindings = new LinkedList<>();
+    private final Map<String, Binding> namedBindings = new TreeMap<>();
+    private final List<Binding> positionalBindings = new LinkedList<>();
 
     Builder(Type<V> type, String query) {
       this.type = checkNotNull(type);

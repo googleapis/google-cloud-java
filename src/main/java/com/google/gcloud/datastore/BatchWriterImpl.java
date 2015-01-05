@@ -8,13 +8,14 @@ import com.google.gcloud.datastore.BatchWriteOption.ForceWrites;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 
 class BatchWriterImpl implements BatchWriter {
 
-  private final LinkedHashMap<Key, Entity> toAdd = new LinkedHashMap<>();
-  private final LinkedHashMap<Key, Entity> toUpdate = new LinkedHashMap<>();
-  private final LinkedHashMap<Key, Entity> toPut = new LinkedHashMap<>();
-  private final LinkedHashSet<Key> toDelete = new LinkedHashSet<>();
+  private final Map<Key, Entity> toAdd = new LinkedHashMap<>();
+  private final Map<Key, Entity> toUpdate = new LinkedHashMap<>();
+  private final Map<Key, Entity> toPut = new LinkedHashMap<>();
+  private final Set<Key> toDelete = new LinkedHashSet<>();
   private final boolean force;
   protected final DatastoreServiceImpl datastore;
 
