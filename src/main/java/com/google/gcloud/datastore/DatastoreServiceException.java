@@ -118,7 +118,7 @@ public class DatastoreServiceException extends RuntimeException {
         JSONObject error = json.getJSONObject("error").getJSONArray("errors").getJSONObject(0);
         reason = error.getString("reason");
         message = error.getString("message");
-      } catch (JSONException ex) {
+      } catch (JSONException ignore) {
         // ignore - will be converted to unknown
       }
     }

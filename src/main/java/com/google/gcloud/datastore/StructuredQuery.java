@@ -577,13 +577,13 @@ public class StructuredQuery<V> extends Query<V> {
 
   static class BaseBuilder<V, B extends BaseBuilder<V, B>> {
 
-    private Type<V> type;
+    private final Type<V> type;
     private String namespace;
     private String kind;
-    private List<Projection> projection = new LinkedList<>();
+    private final List<Projection> projection = new LinkedList<>();
     private Filter filter;
-    private List<String> groupBy = new LinkedList<>();
-    private List<OrderBy> orderBy = new LinkedList<>();
+    private final List<String> groupBy = new LinkedList<>();
+    private final List<OrderBy> orderBy = new LinkedList<>();
     private Cursor startCursor;
     private Cursor endCursor;
     private int offset;

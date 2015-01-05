@@ -215,7 +215,7 @@ public final class ExceptionHandler implements Serializable {
       return getCallableMethod(clazz.getSuperclass());
     } catch (SecurityException e) {
       // This should never happen
-      throw new RuntimeException("Unexpected exception", e);
+      throw new IllegalStateException("Unexpected exception", e);
     }
   }
 

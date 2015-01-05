@@ -3,7 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          name="pmd"
          xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
-   <description>PMD Plugin preferences rule set</description>
+	 <description>PMD Plugin preferences rule set</description>
+	 <exclude-pattern>.*/test/.*</exclude-pattern>
    <rule ref="rulesets/java/design.xml/AbstractClassWithoutAbstractMethod"/>
    <rule ref="rulesets/java/design.xml/AbstractClassWithoutAnyMethod"/>
    <rule ref="rulesets/java/optimizations.xml/AddEmptyString"/>
@@ -27,7 +28,6 @@
    <rule ref="rulesets/java/migrating.xml/AvoidEnumAsIdentifier"/>
    <rule ref="rulesets/java/controversial.xml/AvoidFinalLocalVariable"/>
    <rule ref="rulesets/java/design.xml/AvoidInstanceofChecksInCatchClause"/>
-   <rule ref="rulesets/java/optimizations.xml/AvoidInstantiatingObjectsInLoops"/>
    <rule ref="rulesets/java/strictexception.xml/AvoidLosingExceptionInformation"/>
    <rule ref="rulesets/java/basic.xml/AvoidMultipleUnaryOperators"/>
    <rule ref="rulesets/java/controversial.xml/AvoidPrefixingMethodParameters"/>
@@ -69,23 +69,11 @@
    <rule ref="rulesets/java/basic.xml/CollapsibleIfStatements"/>
    <rule ref="rulesets/vm/basic.xml/CollapsibleIfStatements"/>
    <rule ref="rulesets/java/comments.xml/CommentContent"/>
-   <rule ref="rulesets/java/comments.xml/CommentSize">
-	   <properties>
-		   <property name="maxLineLength" value="100"/>
-	   </properties>
-   </rule>
    <rule ref="rulesets/java/design.xml/CompareObjectsWithEquals"/>
    <rule ref="rulesets/java/strings.xml/ConsecutiveAppendsShouldReuse"/>
    <rule ref="rulesets/java/strings.xml/ConsecutiveLiteralAppends"/>
    <rule ref="rulesets/ecmascript/basic.xml/ConsistentReturn"/>
    <rule ref="rulesets/java/design.xml/ConstructorCallsOverridableMethod"/>
-   <rule ref="rulesets/java/coupling.xml/CouplingBetweenObjects"/>
-   <rule ref="rulesets/plsql/codesize.xml/CyclomaticComplexity">
-	   <properties>
-		   <property name="reportLevel" value="14"/>
-	   </properties>
-   </rule>
-   <rule ref="rulesets/java/codesize.xml/CyclomaticComplexity"/>
    <rule ref="rulesets/java/design.xml/DefaultLabelNotLastInSwitchStmt"/>
    <rule ref="rulesets/java/controversial.xml/DoNotCallGarbageCollectionExplicitly"/>
    <rule ref="rulesets/java/j2ee.xml/DoNotCallSystemExit"/>
@@ -103,6 +91,11 @@
    <rule ref="rulesets/jsp/basic.xml/DuplicateJspImports"/>
    <rule ref="rulesets/java/finalizers.xml/EmptyFinalizer"/>
    <rule ref="rulesets/java/empty.xml/EmptyFinallyBlock"/>
+   <rule ref="rulesets/java/empty.xml/EmptyCatchBlock">
+	   <properties>
+		   <property name="allowCommentedBlocks" value="true"/>
+	   </properties>
+   </rule>
    <rule ref="rulesets/vm/basic.xml/EmptyForeachStmt"/>
    <rule ref="rulesets/java/empty.xml/EmptyIfStmt"/>
    <rule ref="rulesets/vm/basic.xml/EmptyIfStmt"/>
@@ -127,7 +120,6 @@
    <rule ref="rulesets/plsql/codesize.xml/ExcessivePackageSpecificationLength"/>
    <rule ref="rulesets/plsql/codesize.xml/ExcessiveParameterList"/>
    <rule ref="rulesets/java/codesize.xml/ExcessiveParameterList"/>
-   <rule ref="rulesets/java/codesize.xml/ExcessivePublicCount"/>
    <rule ref="rulesets/vm/basic.xml/ExcessiveTemplateLength"/>
    <rule ref="rulesets/plsql/codesize.xml/ExcessiveTypeLength"/>
    <rule ref="rulesets/java/basic.xml/ExtendsObject"/>
@@ -165,7 +157,6 @@
    <rule ref="rulesets/java/junit.xml/JUnitSpelling"/>
    <rule ref="rulesets/java/junit.xml/JUnitStaticSuite"/>
    <rule ref="rulesets/java/junit.xml/JUnitTestsShouldIncludeAssert"/>
-   <rule ref="rulesets/java/migrating.xml/JUnitUseExpected"/>
    <rule ref="rulesets/jsp/basic.xml/JspEncoding"/>
    <rule ref="rulesets/java/basic.xml/JumbledIncrementer"/>
    <rule ref="rulesets/java/j2ee.xml/LocalHomeNamingConvention"/>
@@ -185,10 +176,7 @@
    <rule ref="rulesets/java/javabeans.xml/MissingSerialVersionUID"/>
    <rule ref="rulesets/java/design.xml/MissingStaticMethodInNonInstantiatableClass"/>
    <rule ref="rulesets/xml/basic.xml/MistypedCDATASection"/>
-   <rule ref="rulesets/java/codesize.xml/ModifiedCyclomaticComplexity"/>
    <rule ref="rulesets/java/logging-java.xml/MoreThanOneLogger"/>
-   <rule ref="rulesets/plsql/codesize.xml/NPathComplexity"/>
-   <rule ref="rulesets/java/codesize.xml/NPathComplexity"/>
    <rule ref="rulesets/java/codesize.xml/NcssConstructorCount"/>
    <rule ref="rulesets/plsql/codesize.xml/NcssMethodCount"/>
    <rule ref="rulesets/java/codesize.xml/NcssMethodCount"/>
@@ -233,7 +221,6 @@
 	   </properties>
    </rule>
    <rule ref="rulesets/java/migrating.xml/ShortInstantiation"/>
-   <rule ref="rulesets/java/naming.xml/ShortMethodName"/>
    <rule ref="rulesets/java/strictexception.xml/SignatureDeclareThrowsException"/>
    <rule ref="rulesets/java/design.xml/SimpleDateFormatNeedsLocale"/>
    <rule ref="rulesets/java/junit.xml/SimplifyBooleanAssertion"/>
@@ -243,7 +230,6 @@
    <rule ref="rulesets/java/optimizations.xml/SimplifyStartsWith"/>
    <rule ref="rulesets/java/design.xml/SingularField"/>
    <rule ref="rulesets/java/j2ee.xml/StaticEJBFieldShouldBeFinal"/>
-   <rule ref="rulesets/java/codesize.xml/StdCyclomaticComplexity"/>
    <rule ref="rulesets/java/strings.xml/StringBufferInstantiationWithChar"/>
    <rule ref="rulesets/java/strings.xml/StringInstantiation"/>
    <rule ref="rulesets/java/strings.xml/StringToString"/>
@@ -306,9 +292,7 @@
    <rule ref="rulesets/java/optimizations.xml/UseStringBufferForStringAppends"/>
    <rule ref="rulesets/java/strings.xml/UseStringBufferLength"/>
    <rule ref="rulesets/java/design.xml/UseUtilityClass"/>
-   <rule ref="rulesets/java/design.xml/UseVarargs"/>
    <rule ref="rulesets/java/basic.xml/UselessOperationOnImmutable"/>
-   <rule ref="rulesets/java/basic.xml/UselessOverridingMethod"/>
    <rule ref="rulesets/java/basic.xml/UselessParentheses"/>
    <rule ref="rulesets/java/strings.xml/UselessStringValueOf"/>
    <rule ref="rulesets/java/braces.xml/WhileLoopsMustUseBraces"/>
