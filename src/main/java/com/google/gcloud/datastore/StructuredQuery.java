@@ -17,10 +17,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * An implementation of a Google Cloud Datastore Query that can be constructed by providing
@@ -648,9 +645,7 @@ public class StructuredQuery<V> extends Query<V> {
 
     public B addOrderBy(OrderBy orderBy, OrderBy... others) {
       this.orderBy.add(orderBy);
-      for (OrderBy other : others) {
-        this.orderBy.add(other);
-      }
+      Collections.addAll(this.orderBy, others);
       return self();
     }
 
@@ -686,9 +681,7 @@ public class StructuredQuery<V> extends Query<V> {
 
     protected B addGroupBy(String property, String... others) {
       this.groupBy.add(property);
-      for (String other : others) {
-        this.groupBy.add(other);
-      }
+      Collections.addAll(this.groupBy, others);
       return self();
     }
 
