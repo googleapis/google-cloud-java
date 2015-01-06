@@ -114,7 +114,7 @@ public final class Key extends PartialKey {
     try {
       return URLEncoder.encode(toString(), UTF_8.name());
     } catch (UnsupportedEncodingException e) {
-      throw new IllegalStateException("Unxpeced encoding exception", e);
+      throw new IllegalStateException("Unexpected encoding exception", e);
     }
   }
 
@@ -129,7 +129,7 @@ public final class Key extends PartialKey {
       DatastoreV1.Key keyPb = DatastoreV1.Key.parseFrom(ByteString.copyFromUtf8(utf8Str));
       return fromPb(keyPb);
     } catch (UnsupportedEncodingException e) {
-      throw new IllegalStateException("Unxpeced decoding exception", e);
+      throw new IllegalStateException("Unexpected decoding exception", e);
     } catch (InvalidProtocolBufferException e) {
       throw new IllegalArgumentException("Could not parse key", e);
     }

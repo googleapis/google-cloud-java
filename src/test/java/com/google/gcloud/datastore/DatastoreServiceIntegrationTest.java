@@ -525,7 +525,7 @@ public class DatastoreServiceIntegrationTest {
     assertEquals(false, entity3.getBoolean("bool"));
     assertEquals(LIST_VALUE2.get(), entity3.getList("list"));
     PartialEntity partial1 = entity3.getEntity("partial1");
-    Entity partial2 = (Entity) entity3.getEntity("partial2");
+    Entity partial2 = entity3.getEntity("partial2");
     assertEquals(partial1, PARTIAL_ENTITY2);
     assertEquals(partial2, ENTITY2);
     assertEquals(Value.Type.BOOLEAN, entity3.getValue("bool").type());

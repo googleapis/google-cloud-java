@@ -42,10 +42,7 @@ public final class DateTime extends Serializable<DatastoreV1.Value> {
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof DateTime)) {
-      return false;
-    }
-    return timestampMicroseconds == ((DateTime) obj).timestampMicroseconds;
+    return obj instanceof DateTime && timestampMicroseconds == ((DateTime) obj).timestampMicroseconds;
   }
 
   public long timestampMicroseconds() {

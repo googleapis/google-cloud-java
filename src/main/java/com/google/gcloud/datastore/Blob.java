@@ -60,10 +60,7 @@ public final class Blob extends Serializable<DatastoreV1.Value> {
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof Blob)) {
-      return false;
-    }
-    return byteString.equals(((Blob) obj).byteString);
+    return obj instanceof Blob && byteString.equals(((Blob) obj).byteString);
   }
 
   /**
@@ -113,7 +110,7 @@ public final class Blob extends Serializable<DatastoreV1.Value> {
   /**
    * Copies bytes into a buffer.
    *
-   * @throws java.io.IndexOutOfBoundsException if an offset or size is negative or too large
+   * @throws IndexOutOfBoundsException if an offset or size is negative or too large
    */
   public void copyTo(byte[] target) {
     byteString.copyTo(target, 0, 0, length());

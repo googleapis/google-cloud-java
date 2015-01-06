@@ -38,10 +38,7 @@ public final class Cursor extends Serializable<DatastoreV1.Value> {
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof Cursor)) {
-      return false;
-    }
-    return byteString.equals(((Cursor) obj).byteString);
+    return obj instanceof Cursor && byteString.equals(((Cursor) obj).byteString);
   }
 
   @Override
@@ -65,7 +62,7 @@ public final class Cursor extends Serializable<DatastoreV1.Value> {
     try {
       return URLEncoder.encode(toPb().toString(), UTF_8.name());
     } catch (UnsupportedEncodingException e) {
-      throw new IllegalStateException("Unxpeced encoding exception", e);
+      throw new IllegalStateException("Unexpected encoding exception", e);
     }
   }
 
@@ -77,7 +74,7 @@ public final class Cursor extends Serializable<DatastoreV1.Value> {
       String utf8Str = URLDecoder.decode(urlSafe, UTF_8.name());
       return fromPb(DatastoreV1.Value.parseFrom(utf8Str.getBytes()));
     } catch (UnsupportedEncodingException | InvalidProtocolBufferException e) {
-      throw new IllegalStateException("Unxpeced decoding exception", e);
+      throw new IllegalStateException("Unexpected decoding exception", e);
     }
   }
 

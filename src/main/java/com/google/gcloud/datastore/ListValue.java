@@ -69,8 +69,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
     @Override
     public Builder indexed(boolean indexed) {
       // see b/18704917
-      DatastoreServiceException.throwInvalidRequest("ListValue can't specify index");
-      return this;
+      throw DatastoreServiceException.throwInvalidRequest("ListValue can't specify index");
     }
 
     /**
@@ -80,7 +79,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
      */
     @Override
     public Builder set(List<? extends Value<?>> values) {
-      listBuilder = ImmutableList.<Value<?>>builder();
+      listBuilder = ImmutableList.builder();
       for (Value<?> value : values) {
         addValue(value);
       }

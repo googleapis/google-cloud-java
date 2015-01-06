@@ -90,7 +90,7 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
   protected void checkActive() {
     super.checkActive();
     if (wasRolledback) {
-      throwInvalidRequest(getName() + " is not active (was rolledback)");
+      throw throwInvalidRequest(getName() + " is not active (was rolledback)");
     }
   }
 

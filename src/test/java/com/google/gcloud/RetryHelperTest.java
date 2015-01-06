@@ -87,8 +87,7 @@ public class RetryHelperTest {
     try {
       RetryHelper.runWithRetries(new Callable<Void>() {
         @Override public Void call() throws E1 {
-          E1 exception = exceptions.next();
-          throw exception;
+          throw exceptions.next();
         }
       }, params, handler);
       fail("Exception should have been thrown");
