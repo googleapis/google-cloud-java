@@ -15,7 +15,7 @@ public interface DatastoreService extends DatastoreReaderWriter {
   /**
    * Returns a new Datastore transaction.
    *
-   * @throws DatastoreServiceExcepiton upon failure
+   * @throws DatastoreServiceException upon failure
    */
   Transaction newTransaction(TransactionOption... options);
 
@@ -30,7 +30,7 @@ public interface DatastoreService extends DatastoreReaderWriter {
    * The returned key will have the same information (dataset, kind, namespace and ancestors)
    * as the given key and will have a newly assigned id.
    *
-   * @throws DatastoreServiceExcepiton upon failure
+   * @throws DatastoreServiceException upon failure
    */
   Key allocateId(PartialKey key);
 
@@ -38,34 +38,34 @@ public interface DatastoreService extends DatastoreReaderWriter {
    * Returns a list of keys using the allocated ids ordered by the input.
    *
    * @see #allocateId(PartialKey)
-   * @throws DatastoreServiceExcepiton upon failure
+   * @throws DatastoreServiceException upon failure
    */
   Iterator<Key> allocateId(PartialKey key, PartialKey... others);
 
   /**
    * {@inheritDoc}
-   * @throws DatastoreServiceExcepiton upon failure
+   * @throws DatastoreServiceException upon failure
    */
   @Override
   void add(Entity... entity);
 
   /**
    * {@inheritDoc}
-   * @throws DatastoreServiceExcepiton upon failure
+   * @throws DatastoreServiceException upon failure
    */
   @Override
   void update(Entity... entity);
 
   /**
    * {@inheritDoc}
-   * @throws DatastoreServiceExcepiton upon failure
+   * @throws DatastoreServiceException upon failure
    */
   @Override
   void put(Entity... entity);
 
   /**
    * {@inheritDoc}
-   * @throws DatastoreServiceExcepiton upon failure
+   * @throws DatastoreServiceException upon failure
    */
   @Override
   void delete(Key... key);

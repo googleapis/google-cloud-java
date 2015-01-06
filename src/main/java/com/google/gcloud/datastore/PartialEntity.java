@@ -52,7 +52,7 @@ public class PartialEntity extends BaseEntity {
    * with the given {@code key}.
    */
   public Entity toEntity(Key key) {
-    return new Entity(key, ImmutableSortedMap.<String, Value<?>>copyOf(properties()));
+    return new Entity(key, ImmutableSortedMap.copyOf(properties()));
   }
 
   /**

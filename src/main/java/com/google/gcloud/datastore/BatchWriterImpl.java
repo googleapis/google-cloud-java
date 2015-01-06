@@ -34,7 +34,7 @@ class BatchWriterImpl implements BatchWriter {
 
   protected void checkActive() {
     if (!active) {
-      throwInvalidRequest(getName() + " is no longer active");
+      throw throwInvalidRequest(getName() + " is no longer active");
     }
   }
 

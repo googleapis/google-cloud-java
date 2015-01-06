@@ -9,7 +9,7 @@ import java.util.Iterator;
  * Results are loaded lazily therefore it is possible to get a {@code DatastoreServiceException}
  * upon {@link Iterator#hasNext hasNext} or {@link Iterator#next next} calls.
  *
- * @param V the type of the results value.
+ * @param <V> the type of the results value.
  */
 public interface QueryResult<V> extends Iterator<V> {
 

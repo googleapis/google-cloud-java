@@ -126,7 +126,7 @@ public class LocalGcdHelper {
   private static void extractFile(ZipInputStream zipIn, File filePath) throws IOException {
     try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath))) {
       byte[] bytesIn = new byte[1024];
-      int read = 0;
+      int read;
       while ((read = zipIn.read(bytesIn)) != -1) {
         bos.write(bytesIn, 0, read);
       }
@@ -214,9 +214,10 @@ public class LocalGcdHelper {
           break;
       }
     }
-    throw new RuntimeException("expeting only START | STOP");
+    throw new RuntimeException("expecting only START | STOP");
   }
 
+  @SuppressWarnings("BooleanMethodIsAlwaysInverted")
   public static boolean isActive(String dataset) {
     try {
       String path = "/datastore/v1beta2/datasets/" + dataset + "/lookup";

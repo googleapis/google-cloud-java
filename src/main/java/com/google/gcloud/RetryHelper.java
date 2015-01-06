@@ -122,7 +122,7 @@ public class RetryHelper<V> {
   }
 
   @VisibleForTesting
-  static final void setContext(Context ctx) {
+  static void setContext(Context ctx) {
     if (ctx == null) {
       context.remove();
     } else {
@@ -130,7 +130,7 @@ public class RetryHelper<V> {
     }
   }
 
-  static final Context getContext() {
+  static Context getContext() {
     return context.get();
   }
 
