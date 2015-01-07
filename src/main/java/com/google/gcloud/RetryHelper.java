@@ -1,5 +1,9 @@
 package com.google.gcloud;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+import static java.lang.Math.*;
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
@@ -9,10 +13,6 @@ import java.io.InterruptedIOException;
 import java.nio.channels.ClosedByInterruptException;
 import java.util.concurrent.Callable;
 import java.util.logging.Logger;
-
-import static com.google.common.base.Preconditions.checkNotNull;
-import static java.lang.Math.*;
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 /**
  * Utility class for retrying operations.
@@ -157,7 +157,7 @@ public class RetryHelper<V> {
       Exception exception;
       try {
         V value = callable.call();
-        if (attemptNumber > 1) {
+      if (attemptNumber > 1) {
           log.fine(this + ": attempt #" + attemptNumber + " succeeded");
         }
         return value;
