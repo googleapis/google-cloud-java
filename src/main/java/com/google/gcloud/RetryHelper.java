@@ -1,7 +1,10 @@
 package com.google.gcloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static java.lang.Math.*;
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+import static java.lang.Math.pow;
+import static java.lang.Math.random;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 import com.google.common.annotations.VisibleForTesting;
