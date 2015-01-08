@@ -68,31 +68,35 @@ public class RetryHelperTest {
     }
     assertNull(RetryHelper.getContext());
 
-    @SuppressWarnings("serial")
-    class E1 extends Exception {}
+    class E1Exception extends Exception {
+      private static final long serialVersionUID = 3874933713392137001L;
+    }
 
-    @SuppressWarnings("serial")
-    class E2 extends E1 {}
+    class E2Exception extends E1Exception {
+      private static final long serialVersionUID = -8710227162480133598L;
+    }
 
-    @SuppressWarnings("serial")
-    class E3 extends E1 {}
+    class E3Exception extends E1Exception {
+      private static final long serialVersionUID = -7794256022024001666L;
+    }
 
-    @SuppressWarnings("serial")
-    class E4 extends E2 {}
+    class E4Exception extends E2Exception {
+      private static final long serialVersionUID = -5508018234693709156L;
+    }
 
     params = RetryParams.builder().initialRetryDelayMillis(0).retryMaxAttempts(5).build();
-    handler = ExceptionHandler.builder().retryOn(E1.class, E4.class).abortOn(E3.class).build();
-    final Iterator<? extends E1> exceptions =
-        Arrays.asList(new E1(), new E2(), new E4(), new E3()).iterator();
+    handler = ExceptionHandler.builder().retryOn(E1Exception.class, E4Exception.class).abortOn(E3Exception.class).build();
+    final Iterator<? extends E1Exception> exceptions =
+        Arrays.asList(new E1Exception(), new E2Exception(), new E4Exception(), new E3Exception()).iterator();
     try {
       RetryHelper.runWithRetries(new Callable<Void>() {
-        @Override public Void call() throws E1 {
+        @Override public Void call() throws E1Exception {
           throw exceptions.next();
         }
       }, params, handler);
       fail("Exception should have been thrown");
     } catch (NonRetriableException ex) {
-      assertTrue(ex.getCause() instanceof E3);
+      assertTrue(ex.getCause() instanceof E3Exception);
     }
     assertNull(RetryHelper.getContext());
   }
@@ -108,7 +112,7 @@ public class RetryHelperTest {
     final int timesToFail = 7;
     assertNull(RetryHelper.getContext());
     int attempted = RetryHelper.runWithRetries(new Callable<Integer>() {
-      int timesCalled = 0;
+      int timesCalled;
       @Override public Integer call() throws IOException {
         timesCalled++;
         assertEquals(timesCalled, RetryHelper.getContext().getAttemptNumber());
@@ -151,7 +155,7 @@ public class RetryHelperTest {
     }
   }
 
-  private class FakeTicker extends Ticker {
+  private static class FakeTicker extends Ticker {
     private final AtomicLong nanos = new AtomicLong();
 
     // Advances the ticker value by {@code time} in {@code timeUnit}.
@@ -196,7 +200,8 @@ public class RetryHelperTest {
         }
       }), params, handler, stopwatch);
       fail();
-    } catch (RetriesExhaustedException e) {
+    } catch (RetriesExhaustedException expected) {
+      // verify timesCalled
       assertEquals(sleepOnAttempt, timesCalled.get());
     }
   }
@@ -213,29 +218,29 @@ public class RetryHelperTest {
         .retryMaxAttempts(100)
         .build();
     long sleepDuration = RetryHelper.getSleepDuration(params, 1);
-    assertTrue("" + sleepDuration, sleepDuration < 13 && sleepDuration >= 7);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 13 && sleepDuration >= 7);
     sleepDuration = RetryHelper.getSleepDuration(params, 2);
-    assertTrue("" + sleepDuration, sleepDuration < 25 && sleepDuration >= 15);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 25 && sleepDuration >= 15);
     sleepDuration = RetryHelper.getSleepDuration(params, 3);
-    assertTrue("" + sleepDuration, sleepDuration < 50 && sleepDuration >= 30);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 50 && sleepDuration >= 30);
     sleepDuration = RetryHelper.getSleepDuration(params, 4);
-    assertTrue("" + sleepDuration, sleepDuration < 100 && sleepDuration >= 60);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 100 && sleepDuration >= 60);
     sleepDuration = RetryHelper.getSleepDuration(params, 5);
-    assertTrue("" + sleepDuration, sleepDuration < 200 && sleepDuration >= 120);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 200 && sleepDuration >= 120);
     sleepDuration = RetryHelper.getSleepDuration(params, 6);
-    assertTrue("" + sleepDuration, sleepDuration < 400 && sleepDuration >= 240);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 400 && sleepDuration >= 240);
     sleepDuration = RetryHelper.getSleepDuration(params, 7);
-    assertTrue("" + sleepDuration, sleepDuration < 800 && sleepDuration >= 480);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 800 && sleepDuration >= 480);
     sleepDuration = RetryHelper.getSleepDuration(params, 8);
-    assertTrue("" + sleepDuration, sleepDuration < 1600 && sleepDuration >= 960);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 1600 && sleepDuration >= 960);
     sleepDuration = RetryHelper.getSleepDuration(params, 9);
-    assertTrue("" + sleepDuration, sleepDuration < 3200 && sleepDuration >= 1920);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 3200 && sleepDuration >= 1920);
     sleepDuration = RetryHelper.getSleepDuration(params, 10);
-    assertTrue("" + sleepDuration, sleepDuration < 6400 && sleepDuration >= 3840);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 6400 && sleepDuration >= 3840);
     sleepDuration = RetryHelper.getSleepDuration(params, 11);
-    assertTrue("" + sleepDuration, sleepDuration < 12800 && sleepDuration >= 7680);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 12800 && sleepDuration >= 7680);
     sleepDuration = RetryHelper.getSleepDuration(params, 12);
-    assertTrue("" + sleepDuration, sleepDuration < 25600 && sleepDuration >= 15360);
+    assertTrue(String.valueOf(sleepDuration), sleepDuration < 25600 && sleepDuration >= 15360);
   }
 
   @Test

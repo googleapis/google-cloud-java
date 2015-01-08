@@ -1,3 +1,4 @@
 /target/
 .settings
 .idea
+.DS_Store

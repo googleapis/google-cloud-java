@@ -15,6 +15,7 @@ import com.google.common.base.Stopwatch;
 import java.io.InterruptedIOException;
 import java.nio.channels.ClosedByInterruptException;
 import java.util.concurrent.Callable;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -67,7 +68,7 @@ public class RetryHelper<V> {
     RetryInterruptedException() {}
 
     /**
-     * Sets the caller thread interrupt flag and throws {@code RetryInteruptedException}.
+     * Sets the caller thread interrupt flag and throws {@code RetryInterruptedException}.
      */
     public static void propagate() throws RetryInterruptedException {
       Thread.currentThread().interrupt();
@@ -147,9 +148,11 @@ public class RetryHelper<V> {
   @Override
   public String toString() {
     ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
+    toStringHelper.add("params", params);
     toStringHelper.add("stopwatch", stopwatch);
-    toStringHelper.add("attempNumber", attemptNumber);
+    toStringHelper.add("attemptNumber", attemptNumber);
     toStringHelper.add("callable", callable);
+    toStringHelper.add("exceptionHandler", exceptionHandler);
     return toStringHelper.toString();
   }
 
@@ -160,7 +163,7 @@ public class RetryHelper<V> {
       Exception exception;
       try {
         V value = callable.call();
-        if (attemptNumber > 1) {
+        if (attemptNumber > 1 && log.isLoggable(Level.FINE)) {
           log.fine(this + ": attempt #" + attemptNumber + " succeeded");
         }
         return value;
@@ -181,11 +184,14 @@ public class RetryHelper<V> {
         throw new RetriesExhaustedException(this + ": Too many failures, giving up", exception);
       }
       long sleepDurationMillis = getSleepDuration(params, attemptNumber);
-      log.fine(this + ": Attempt #" + attemptNumber + " failed [" + exception + "], sleeping for "
-          + sleepDurationMillis + " ms");
+      if (log.isLoggable(Level.FINE)) {
+        log.fine(this + ": Attempt #" + attemptNumber + " failed [" + exception + "], sleeping for "
+            + sleepDurationMillis + " ms");
+      }
       try {
         Thread.sleep(sleepDurationMillis);
       } catch (InterruptedException e) {
+        // propagate as RetryInterruptedException
         RetryInterruptedException.propagate();
       }
     }

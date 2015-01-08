@@ -28,20 +28,20 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
 
   private final transient ImmutableSortedMap<String, Value<?>> properties;
 
-  protected abstract static class Builder<B extends Builder<B>> {
+  abstract static class Builder<B extends Builder<B>> {
 
-    protected final Map<String, Value<?>> properties;
+    final Map<String, Value<?>> properties;
 
-    protected Builder() {
+    Builder() {
       properties = new HashMap<>();
     }
 
-    protected Builder(BaseEntity entity) {
+    Builder(BaseEntity entity) {
       properties = new HashMap<>(entity.properties());
     }
 
     @SuppressWarnings("unchecked")
-    protected B self() {
+    B self() {
       return (B) this;
     }
 
@@ -124,7 +124,7 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
     public abstract BaseEntity build();
   }
 
-  protected BaseEntity(ImmutableSortedMap<String, Value<?>> properties) {
+  BaseEntity(ImmutableSortedMap<String, Value<?>> properties) {
     this.properties = properties;
   }
 
@@ -153,41 +153,49 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
     return getValue(name) instanceof NullValue;
   }
 
+  @SuppressWarnings("unchecked")
   public String getString(String name) {
-    return ((StringValue) getValue(name)).get();
+    return ((Value<String>) getValue(name)).get();
   }
 
+  @SuppressWarnings("unchecked")
   public long getLong(String name) {
-    return ((LongValue) getValue(name)).get();
+    return ((Value<Long>) getValue(name)).get();
   }
 
+  @SuppressWarnings("unchecked")
   public double getDouble(String name) {
-    return ((DoubleValue) getValue(name)).get();
+    return ((Value<Double>) getValue(name)).get();
   }
 
+  @SuppressWarnings("unchecked")
   public boolean getBoolean(String name) {
-    return ((BooleanValue) getValue(name)).get();
+    return ((Value<Boolean>) getValue(name)).get();
   }
 
+  @SuppressWarnings("unchecked")
   public DateTime getDateTime(String name) {
-    return ((DateTimeValue) getValue(name)).get();
+    return ((Value<DateTime>) getValue(name)).get();
   }
 
+  @SuppressWarnings("unchecked")
   public Key getKey(String name) {
-    return ((KeyValue) getValue(name)).get();
+    return ((Value<Key>) getValue(name)).get();
   }
 
   @SuppressWarnings("unchecked")
   public <T extends PartialEntity> T getEntity(String name) {
-    return (T) ((EntityValue) getValue(name)).get();
+    return (T) ((Value<PartialEntity>) getValue(name)).get();
   }
 
+  @SuppressWarnings("unchecked")
   public List<? extends Value<?>> getList(String name) {
-    return ((ListValue) getValue(name)).get();
+    return ((Value<List<? extends Value<?>>>) getValue(name)).get();
   }
 
+  @SuppressWarnings("unchecked")
   public Blob getBlob(String name) {
-    return ((BlobValue) getValue(name)).get();
+    return ((Value<Blob>) getValue(name)).get();
   }
 
   /**

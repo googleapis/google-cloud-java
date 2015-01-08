@@ -7,6 +7,7 @@ import com.google.common.collect.AbstractIterator;
 import com.google.gcloud.datastore.Query.Type;
 
 import java.util.Iterator;
+import java.util.Objects;
 
 class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
 
@@ -51,7 +52,7 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
     entityResultPbIter = queryResultBatchPb.getEntityResultList().iterator();
     // cursor = resultPb.getSkippedCursor(); // only available in v1beta3
     actualType = Type.fromPb(queryResultBatchPb.getEntityResultType());
-    if (queryType == Type.PROJECTION) {
+    if (Objects.equals(queryType, Type.PROJECTION)) {
       // projection entity can represent all type of results
       actualType = Type.PROJECTION;
     }

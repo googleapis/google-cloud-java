@@ -23,8 +23,8 @@ final class Validator {
 
   static String validateDataset(String dataset) {
     checkArgument(!Strings.isNullOrEmpty(dataset), "dataset can't be empty or null");
-    checkArgument(Validator.DATASET_PATTERN.matcher(dataset).matches(),
-          "dataset must match the following pattern: " + Validator.DATASET_PATTERN.pattern());
+    checkArgument(DATASET_PATTERN.matcher(dataset).matches(),
+        "dataset must match the following pattern: " + DATASET_PATTERN.pattern());
     return dataset;
   }
 
@@ -33,8 +33,8 @@ final class Validator {
       checkArgument(!namespace.isEmpty(), "namespace must not be an empty string");
       checkArgument(namespace.length() <= 100,
           "namespace must not contain more than 100 characters");
-      checkArgument(Validator.NAMESPACE_PATTERN.matcher(namespace).matches(),
-          "namespace must the following pattern: " + Validator.NAMESPACE_PATTERN.pattern());
+      checkArgument(NAMESPACE_PATTERN.matcher(namespace).matches(),
+          "namespace must the following pattern: " + NAMESPACE_PATTERN.pattern());
     }
     return namespace;
   }

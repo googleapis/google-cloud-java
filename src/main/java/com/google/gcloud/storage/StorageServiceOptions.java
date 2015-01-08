@@ -7,7 +7,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
 
-import java.lang.reflect.Method;
 import java.util.Set;
 
 public class StorageServiceOptions extends ServiceOptions {
@@ -19,28 +18,11 @@ public class StorageServiceOptions extends ServiceOptions {
   private final String project;
   private final String pathDelimiter;
 
-  StorageServiceOptions(Builder builder) {
+  private StorageServiceOptions(Builder builder) {
     super(builder);
     pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
-    project = builder.project != null ? builder.project :  getAppEngineProject();
+    project = builder.project != null ? builder.project :  getAppEngineProjectId();
     Preconditions.checkArgument(project != null, "Missing required project id");
-  }
-
-  private static String getAppEngineProject() {
-    // TODO(ozarov): An alternative to reflection would be to depend on AE api jar:
-    // http://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk/1.2.0
-    try {
-      Class<?> factoryClass =
-          Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
-      Method method = factoryClass.getMethod("getAppIdentityService");
-      Object appIdentityService = method.invoke(null);
-      method = appIdentityService.getClass().getMethod("getServiceAccountName");
-      String serviceAccountName = (String) method.invoke(appIdentityService);
-      int indexOfAtSign = serviceAccountName.indexOf('@');
-      return serviceAccountName.substring(0, indexOfAtSign);
-    } catch (Exception ex) {
-      return null;
-    }
   }
 
   public static class Builder extends ServiceOptions.Builder<Builder> {
