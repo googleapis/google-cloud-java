@@ -89,11 +89,12 @@ public final class PathElement extends Serializable<DatastoreV1.Key.PathElement>
   static PathElement fromPb(DatastoreV1.Key.PathElement pathElementPb) {
     String kind = pathElementPb.getKind();
     if (pathElementPb.hasId()) {
-      return PathElement.of(kind, pathElementPb.getId());
-    } else if (pathElementPb.hasName()) {
-      return PathElement.of(kind, pathElementPb.getName());
+      return of(kind, pathElementPb.getId());
     }
-    return PathElement.of(kind);
+    if (pathElementPb.hasName()) {
+      return of(kind, pathElementPb.getName());
+    }
+    return of(kind);
   }
 
   static PathElement of(String kind) {

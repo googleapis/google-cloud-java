@@ -1,5 +1,7 @@
 package com.google.gcloud.datastore;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.api.client.util.Strings;
 
 import java.io.BufferedOutputStream;
@@ -35,7 +37,7 @@ public class LocalGcdHelper {
   public static final String DEFAULT_DATASET = "dataset1";
   public static final int PORT = 8080;
   private static final String GCD = "gcd-v1beta2-rev1-2.1.1";
-  private static final String GCD_LOC = "/" + GCD + ".zip";
+  private static final String GCD_LOC = '/' + GCD + ".zip";
 
   private static class ProcessStreamReader extends Thread {
 
@@ -103,7 +105,7 @@ public class LocalGcdHelper {
       }
     }
 
-    File datasetFolder = new File(gcdFolder, GCD + "/" + dataset);
+    File datasetFolder = new File(gcdFolder, GCD + '/' + dataset);
     datasetFolder.delete();
 
     // TODO: if System.getProperty("os.name").startsWith("Windows") use cmd.exe /c and gcd.cmd
@@ -193,7 +195,7 @@ public class LocalGcdHelper {
       switch (args[0]) {
         case "START":
           if (!isActive(DEFAULT_DATASET)) {
-            LocalGcdHelper helper = LocalGcdHelper.start(DEFAULT_DATASET);
+            LocalGcdHelper helper = start(DEFAULT_DATASET);
             try (FileWriter writer = new FileWriter(".local_gcd_helper")) {
               writer.write(helper.gcdPath.toAbsolutePath().toString());
             }
@@ -207,8 +209,8 @@ public class LocalGcdHelper {
               String path = reader.readLine();
               deleteRecurse(Paths.get(path));
             }
-          }
           file.delete();
+          }
           return;
         default:
           break;
@@ -217,15 +219,16 @@ public class LocalGcdHelper {
     throw new RuntimeException("expecting only START | STOP");
   }
 
-  @SuppressWarnings("BooleanMethodIsAlwaysInverted")
   public static boolean isActive(String dataset) {
     try {
       String path = "/datastore/v1beta2/datasets/" + dataset + "/lookup";
       URL url = new URL("http://localhost:" + PORT + path);
-      try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()))) {
+      try (BufferedReader reader =
+               new BufferedReader(new InputStreamReader(url.openStream(), UTF_8))) {
         return "Valid RPC".equals(reader.readLine());
       }
-    } catch (IOException ex) {
+    } catch (IOException ignore) {
+      // assume not active
       return false;
     }
   }

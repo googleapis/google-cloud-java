@@ -78,22 +78,24 @@ public final class ProjectionEntity extends BaseEntity {
     return key;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public DateTime getDateTime(String name) {
     Value<?> value = getValue(name);
     if (value.hasMeaning() && value.meaning() == 18 && value instanceof LongValue) {
       return new DateTime(getLong(name));
     }
-    return ((DateTimeValue) value).get();
+    return ((Value<DateTime>) value).get();
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public Blob getBlob(String name) {
     Value<?> value = getValue(name);
     if (value.hasMeaning() && value.meaning() == 18 && value instanceof StringValue) {
       return new Blob(ByteString.copyFromUtf8(getString(name)), false);
     }
-    return ((BlobValue) value).get();
+    return ((Value<Blob>) value).get();
   }
 
   @Override

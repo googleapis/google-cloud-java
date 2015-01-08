@@ -65,7 +65,7 @@ public class DatastoreServiceIntegrationTest {
       .set("list", LIST_VALUE2)
       .build();
   private static final Entity ENTITY2 = Entity.builder(ENTITY1).key(KEY2).remove("str")
-      .set("name", "koko").setNull("null").set("age", 20).build();
+      .set("name", "Dan").setNull("null").set("age", 20).build();
   private static final Entity ENTITY3 = Entity.builder(ENTITY1).key(KEY3).remove("str")
       .set("null", NULL_VALUE).set("partial1", PARTIAL_ENTITY2).set("partial2", ENTITY2).build();
 
@@ -372,7 +372,7 @@ public class DatastoreServiceIntegrationTest {
 
     Query<?> query2 = GqlQuery.builder("select * from " + KIND1).build();
     QueryResult<?> results2 = datastore.run(query2);
-    assertEquals(Entity.class, results2.resultClass());
+    assertSame(Entity.class, results2.resultClass());
     @SuppressWarnings("unchecked")
     QueryResult<Entity> results3 = (QueryResult<Entity>) results2;
     assertTrue(results3.hasNext());
@@ -437,7 +437,7 @@ public class DatastoreServiceIntegrationTest {
     ProjectionEntity entity = results4.next();
     assertEquals(ENTITY2.key(), entity.key());
     assertEquals(20, entity.getLong("age"));
-    assertEquals("koko", entity.getString("name"));
+    assertEquals("Dan", entity.getString("name"));
     assertEquals(2, entity.properties().size());
     assertFalse(results4.hasNext());
     EasyMock.verify(mockDatastore);
@@ -522,12 +522,12 @@ public class DatastoreServiceIntegrationTest {
     Entity entity3 = result.next();
     assertEquals(ENTITY3, entity3);
     assertTrue(entity3.isNull("null"));
-    assertEquals(false, entity3.getBoolean("bool"));
+    assertFalse(entity3.getBoolean("bool"));
     assertEquals(LIST_VALUE2.get(), entity3.getList("list"));
     PartialEntity partial1 = entity3.getEntity("partial1");
     Entity partial2 = entity3.getEntity("partial2");
-    assertEquals(partial1, PARTIAL_ENTITY2);
-    assertEquals(partial2, ENTITY2);
+    assertEquals(PARTIAL_ENTITY2, partial1);
+    assertEquals(ENTITY2, partial2);
     assertEquals(Value.Type.BOOLEAN, entity3.getValue("bool").type());
     assertEquals(6, entity3.names().size());
     assertFalse(entity3.contains("bla"));

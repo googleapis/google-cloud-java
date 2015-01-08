@@ -57,9 +57,8 @@ public abstract class AuthConfig {
     }
   }
 
-  protected abstract HttpRequestInitializer httpRequestInitializer(
-      HttpTransport transport, Set<String> scopes);
-
+  protected abstract HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
+      Set<String> scopes);
 
   public static AuthConfig createForAppEngine() {
     return new AppEngineAuthConfig();
@@ -69,7 +68,8 @@ public abstract class AuthConfig {
     final ComputeCredential cred = getComputeCredential();
     return new AuthConfig() {
       @Override
-      protected HttpRequestInitializer httpRequestInitializer(HttpTransport ts, Set<String> sc) {
+      protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
+          Set<String> scopes) {
         return cred;
       }
     };

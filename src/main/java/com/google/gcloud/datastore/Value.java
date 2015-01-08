@@ -183,7 +183,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     private Integer meaning;
     private V value;
 
-    protected BaseBuilder(Type type) {
+    BaseBuilder(Type type) {
       this.type = type;
     }
 

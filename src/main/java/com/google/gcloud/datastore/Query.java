@@ -9,7 +9,7 @@ import com.google.common.collect.Maps;
 import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.InvalidProtocolBufferException;
 
-import java.util.EnumMap;
+import java.util.Map;
 
 
 /**
@@ -35,7 +35,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   public abstract static class Type<V> implements java.io.Serializable {
 
     private static final long serialVersionUID = 2104157695425806623L;
-    private static final EnumMap<DatastoreV1.EntityResult.ResultType, Type<?>>
+    private static final Map<DatastoreV1.EntityResult.ResultType, Type<?>>
         PB_TO_INSTANCE = Maps.newEnumMap(DatastoreV1.EntityResult.ResultType.class);
 
     static final Type<?> UNKNOWN = new Type<Object>(null, Object.class) {
@@ -127,7 +127,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       return resultClass.isAssignableFrom(otherType.resultClass);
     }
 
-    protected abstract V convert(DatastoreV1.Entity value);
+    protected abstract V convert(DatastoreV1.Entity entityPb);
 
     static Type<?> fromPb(DatastoreV1.EntityResult.ResultType typePb) {
       return MoreObjects.firstNonNull(PB_TO_INSTANCE.get(typePb), UNKNOWN);
@@ -150,6 +150,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   @Override
   public String toString() {
     ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
+    toStringHelper.add("type", type);
     toStringHelper.add("namespace", namespace);
     toStringHelper.add("queryPb", super.toString());
     return toStringHelper.toString();

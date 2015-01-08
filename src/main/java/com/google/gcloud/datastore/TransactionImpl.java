@@ -48,7 +48,7 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
 
   @Override
   public Iterator<Entity> get(Key key, Key... others) {
-    checkActive();
+    validateActive();
     DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);
     return datastore.get(readOptionsPb.build(), key, others);
@@ -56,7 +56,7 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
 
   @Override
   public <T> QueryResult<T> run(Query<T> query) {
-    checkActive();
+    validateActive();
     DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);
     return datastore.run(readOptionsPb.build(), query);
@@ -69,7 +69,7 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
 
   @Override
   public void rollback() {
-    super.checkActive();
+    super.validateActive();
     if (!wasRolledback) {
       datastore.rollbackTransaction(transaction);
     }
@@ -87,8 +87,8 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
   }
 
   @Override
-  protected void checkActive() {
-    super.checkActive();
+  protected void validateActive() {
+    super.validateActive();
     if (wasRolledback) {
       throw throwInvalidRequest(getName() + " is not active (was rolledback)");
     }

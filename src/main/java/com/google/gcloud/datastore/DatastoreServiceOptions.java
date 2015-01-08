@@ -73,7 +73,7 @@ public class DatastoreServiceOptions extends ServiceOptions {
     }
   }
 
-  DatastoreServiceOptions(Builder builder) {
+  private DatastoreServiceOptions(Builder builder) {
     super(builder);
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
     force = builder.force;
@@ -140,8 +140,9 @@ public class DatastoreServiceOptions extends ServiceOptions {
       Class<?> clazz = Class.forName("com.google.appengine.api.NamespaceManager");
       Method method = clazz.getMethod("get");
       String namespace = (String) method.invoke(null);
-      return "".equals(namespace) ? null : namespace;
-    } catch (Exception ex) {
+      return namespace == null || namespace.isEmpty() ? null : namespace;
+    } catch (Exception ignore) {
+      // return null (Datastore default namespace) if could not automatically determine
       return null;
     }
   }
