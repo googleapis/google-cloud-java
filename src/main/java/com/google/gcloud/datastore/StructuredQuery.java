@@ -17,7 +17,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * An implementation of a Google Cloud Datastore Query that can be constructed by providing
@@ -137,7 +141,7 @@ public class StructuredQuery<V> extends Query<V> {
         return false;
       }
       CompositeFilter other = (CompositeFilter) obj;
-      return operator.equals(other.operator)
+      return operator == other.operator
           && filters.equals(other.filters);
     }
 
@@ -228,7 +232,7 @@ public class StructuredQuery<V> extends Query<V> {
       }
       PropertyFilter other = (PropertyFilter) obj;
       return property.equals(other.property)
-          && operator.equals(other.operator)
+          && operator == other.operator
           && Objects.equals(value, other.value);
     }
 
@@ -453,7 +457,7 @@ public class StructuredQuery<V> extends Query<V> {
       }
       OrderBy other = (OrderBy) obj;
       return property.equals(other.property)
-          && direction.equals(other.direction);
+          && direction == other.direction;
     }
 
     public String property() {
@@ -591,7 +595,7 @@ public class StructuredQuery<V> extends Query<V> {
     }
 
     @SuppressWarnings("unchecked")
-    protected B self() {
+    B self() {
       return (B) this;
     }
 
@@ -649,43 +653,41 @@ public class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    protected B clearProjection() {
+    B clearProjection() {
       projection.clear();
       return self();
     }
 
-    protected B projection(Projection projection, Projection... others) {
+    B projection(Projection projection, Projection... others) {
       clearProjection();
       addProjection(projection, others);
       return self();
     }
 
-    protected B addProjection(Projection projection, Projection... others) {
+    B addProjection(Projection projection, Projection... others) {
       this.projection.add(projection);
-      for (Projection other : others) {
-        this.projection.add(other);
-      }
+      Collections.addAll(this.projection, others);
       return self();
     }
 
-    protected B clearGroupBy() {
+    B clearGroupBy() {
       groupBy.clear();
       return self();
     }
 
-    protected B groupBy(String property, String... others) {
+    B groupBy(String property, String... others) {
       clearGroupBy();
       addGroupBy(property, others);
       return self();
     }
 
-    protected B addGroupBy(String property, String... others) {
+    B addGroupBy(String property, String... others) {
       this.groupBy.add(property);
       Collections.addAll(this.groupBy, others);
       return self();
     }
 
-    protected B mergeFrom(DatastoreV1.Query queryPb) {
+    B mergeFrom(DatastoreV1.Query queryPb) {
       if (queryPb.getKindCount() > 0) {
         kind(queryPb.getKind(0).getName());
       }
@@ -869,7 +871,7 @@ public class StructuredQuery<V> extends Query<V> {
     return projection.size() == 1 && projection.get(0).property.equals(KEY_PROPERTY_NAME);
   }
 
-  protected List<Projection> projection() {
+  List<Projection> projection() {
     return projection;
   }
 
@@ -877,7 +879,7 @@ public class StructuredQuery<V> extends Query<V> {
     return filter;
   }
 
-  protected List<String> groupBy() {
+  List<String> groupBy() {
     return groupBy;
   }
 
@@ -961,7 +963,7 @@ public class StructuredQuery<V> extends Query<V> {
     return fromPb(type, namespace, DatastoreV1.Query.parseFrom(bytesPb));
   }
 
-  static StructuredQuery<?> fromPb(Type<?> type, String namespace, DatastoreV1.Query queryPb) {
+  private static StructuredQuery<?> fromPb(Type<?> type, String namespace, DatastoreV1.Query queryPb) {
     BaseBuilder<?, ?> builder;
     if (type.equals(Type.FULL)) {
       builder = builder();

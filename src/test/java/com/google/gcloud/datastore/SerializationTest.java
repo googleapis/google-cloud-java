@@ -118,7 +118,7 @@ public class SerializationTest {
   public void testValues() throws Exception {
     for (Type type : Type.values()) {
       for (Value<?> value : TYPE_TO_VALUES.get(type)) {
-        Value<?> copy = serialiazeAndDeserialize(value);
+        Value<?> copy = serializeAndDeserialize(value);
         assertEquals(value, value);
         assertEquals(value, copy);
         assertNotSame(value, copy);
@@ -130,11 +130,11 @@ public class SerializationTest {
 
   @Test
   public void testTypes() throws Exception {
-    Object[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
+    Serializable[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
         ENTITY3, EMBEDDED_ENTITY1, EMBEDDED_ENTITY2, EMBEDDED_ENTITY3, PROJECTION_ENTITY,
         DATE_TIME1, BLOB1, CURSOR1, GQL1, GQL2, QUERY1, QUERY2, QUERY3};
-    for (Object obj : types) {
-      Object copy = serialiazeAndDeserialize(obj);
+    for (Serializable obj : types) {
+      Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
       assertEquals(obj, copy);
       assertNotSame(obj, copy);
@@ -143,7 +143,7 @@ public class SerializationTest {
   }
 
   @SuppressWarnings("unchecked")
-  private <T> T serialiazeAndDeserialize(T obj) throws IOException, ClassNotFoundException {
+  private <T extends Serializable> T serializeAndDeserialize(T obj) throws IOException, ClassNotFoundException {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
     try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
       output.writeObject(obj);

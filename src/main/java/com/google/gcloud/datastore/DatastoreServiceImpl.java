@@ -15,6 +15,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Callable;
 
 
@@ -28,12 +30,12 @@ final class DatastoreServiceImpl implements DatastoreService {
         private static final long serialVersionUID = 6911242958397733203L;
 
         @Override
-        public RetryResult shouldRetry(Exception exception, RetryResult retryResult) {
+        public RetryResult afterEval(Exception exception, RetryResult retryResult) {
           return null;
         }
 
         @Override
-        public RetryResult shouldRetry(Exception exception) {
+        public RetryResult beforeEval(Exception exception) {
           if (exception instanceof DatastoreServiceException) {
             boolean isTransient = ((DatastoreServiceException) exception).code().isTransient();
             return isTransient
@@ -63,13 +65,13 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   @Override
-  public BatchWriter newBatchWriter(BatchWriteOption... batchWriteOption) {
-    return new BatchWriterImpl(this, batchWriteOption);
+  public BatchWriter newBatchWriter(BatchWriteOption... options) {
+    return new BatchWriterImpl(this, options);
   }
 
   @Override
-  public Transaction newTransaction(TransactionOption... transactionOption) {
-    return new TransactionImpl(this, transactionOption);
+  public Transaction newTransaction(TransactionOption... options) {
+    return new TransactionImpl(this, options);
   }
 
   @Override
@@ -209,9 +211,9 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   @Override
-  public void add(Entity... entities) {
+    public void add(Entity... entities) {
     DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
-    LinkedHashSet<Key> keys = new LinkedHashSet<>();
+    Set<Key> keys = new LinkedHashSet<>();
     for (Entity entity : entities) {
       if (!keys.add(entity.key())) {
         throw DatastoreServiceException.throwInvalidRequest(
@@ -225,7 +227,7 @@ final class DatastoreServiceImpl implements DatastoreService {
   @Override
   public void update(Entity... entities) {
     DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
-    LinkedHashMap<Key, Entity> dedupEntities = new LinkedHashMap<>();
+    Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
     for (Entity entity : entities) {
       dedupEntities.put(entity.key(), entity);
     }
@@ -238,7 +240,7 @@ final class DatastoreServiceImpl implements DatastoreService {
   @Override
   public void put(Entity... entities) {
     DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
-    LinkedHashMap<Key, Entity> dedupEntities = new LinkedHashMap<>();
+    Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
     for (Entity entity : entities) {
       dedupEntities.put(entity.key(), entity);
     }
@@ -251,7 +253,7 @@ final class DatastoreServiceImpl implements DatastoreService {
   @Override
   public void delete(Key... keys) {
     DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
-    LinkedHashSet<Key> dedupKeys = new LinkedHashSet<>(Arrays.asList(keys));
+    Set<Key> dedupKeys = new LinkedHashSet<>(Arrays.asList(keys));
     for (Key key : dedupKeys) {
       mutationPb.addDelete(key.toPb());
     }

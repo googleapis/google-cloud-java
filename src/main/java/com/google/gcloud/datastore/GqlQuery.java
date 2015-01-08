@@ -378,15 +378,14 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   @Override
-  protected Object fromPb(Type<V> resultType, String namespace, byte[] bytesPb)
+  protected Object fromPb(Type<V> type, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
-    return fromPb(resultType, namespace, DatastoreV1.GqlQuery.parseFrom(bytesPb));
+    return fromPb(type, namespace, DatastoreV1.GqlQuery.parseFrom(bytesPb));
   }
 
-  static <V> GqlQuery<V> fromPb(Type<V> resultType, String namespace,
-      DatastoreV1.GqlQuery queryPb) {
-    Builder<V> builder = new Builder<>(resultType, queryPb.getQueryString());
-    builder.namespace(namespace);
+  private static <V> GqlQuery<V> fromPb(Type<V> type, String ns, DatastoreV1.GqlQuery queryPb) {
+    Builder<V> builder = new Builder<>(type, queryPb.getQueryString());
+    builder.namespace(ns);
     if (queryPb.hasAllowLiteral()) {
       builder.allowLiteral = queryPb.getAllowLiteral();
     }

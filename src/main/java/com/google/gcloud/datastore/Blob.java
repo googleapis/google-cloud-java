@@ -57,10 +57,7 @@ public final class Blob extends Serializable<DatastoreV1.Value> {
 
   @Override
   public boolean equals(Object obj) {
-    if (obj == this) {
-      return true;
-    }
-    return obj instanceof Blob && byteString.equals(((Blob) obj).byteString);
+    return obj == this || obj instanceof Blob && byteString.equals(((Blob) obj).byteString);
   }
 
   /**
@@ -90,7 +87,7 @@ public final class Blob extends Serializable<DatastoreV1.Value> {
   public InputStream asInputStream() {
     final ByteBuffer byteBuffer = asReadOnlyByteBuffer();
     return new InputStream() {
-      @Override public int read() throws IOException {
+      @Override public int read() {
         return !byteBuffer.hasRemaining() ? -1 : byteBuffer.get() & 0xFF;
       }
     };

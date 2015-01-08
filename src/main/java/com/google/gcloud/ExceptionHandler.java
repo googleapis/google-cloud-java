@@ -27,7 +27,7 @@ public final class ExceptionHandler implements Serializable {
   private final ImmutableList<Interceptor> interceptors;
   private final ImmutableSet<Class<? extends Exception>> retriableExceptions;
   private final ImmutableSet<Class<? extends Exception>> nonRetriableExceptions;
-  private final Set<RetryInfo> retryInfos = Sets.newHashSet();
+  private final Set<RetryInfo> retryInfo = Sets.newHashSet();
 
   public interface Interceptor extends Serializable {
 
@@ -38,7 +38,7 @@ public final class ExceptionHandler implements Serializable {
 
       private final boolean booleanValue;
 
-      private RetryResult(boolean booleanValue) {
+      RetryResult(boolean booleanValue) {
         this.booleanValue = booleanValue;
       }
 
@@ -55,7 +55,7 @@ public final class ExceptionHandler implements Serializable {
      *     ({@link RetryResult#RETRY}), propagated ({@link RetryResult#ABORT}),
      *     or evaluation should proceed ({@code null}).
      */
-    RetryResult shouldRetry(Exception exception);
+    RetryResult beforeEval(Exception exception);
 
     /**
      * This method is called after the evaluation and could alter its result.
@@ -66,7 +66,7 @@ public final class ExceptionHandler implements Serializable {
      *     ({@link RetryResult#RETRY}), propagated ({@link RetryResult#ABORT}),
      *     or evaluation should proceed ({@code null}).
      */
-    RetryResult shouldRetry(Exception exception, RetryResult retryResult);
+    RetryResult afterEval(Exception exception, RetryResult retryResult);
   }
 
   /**
@@ -173,31 +173,30 @@ public final class ExceptionHandler implements Serializable {
         Sets.intersection(retriableExceptions, nonRetriableExceptions).isEmpty(),
         "Same exception was found in both retriable and non-retriable sets");
     for (Class<? extends Exception> exception : retriableExceptions) {
-      addToRetryInfos(retryInfos, new RetryInfo(exception, Interceptor.RetryResult.RETRY));
+      addRetryInfo(new RetryInfo(exception, Interceptor.RetryResult.RETRY), retryInfo);
     }
     for (Class<? extends Exception> exception : nonRetriableExceptions) {
-      addToRetryInfos(retryInfos,  new RetryInfo(exception, Interceptor.RetryResult.ABORT));
+      addRetryInfo(new RetryInfo(exception, Interceptor.RetryResult.ABORT), retryInfo);
     }
   }
 
-  private static void addToRetryInfos(Set<RetryInfo> retryInfos, RetryInfo retryInfo) {
-    for (RetryInfo current : retryInfos) {
+  private static void addRetryInfo(RetryInfo retryInfo, Set<RetryInfo> dest) {
+    for (RetryInfo current : dest) {
       if (current.exception.isAssignableFrom(retryInfo.exception)) {
-        addToRetryInfos(current.children, retryInfo);
+        addRetryInfo(retryInfo, current.children);
         return;
       }
       if (retryInfo.exception.isAssignableFrom(current.exception)) {
         retryInfo.children.add(current);
       }
     }
-    retryInfos.removeAll(retryInfo.children);
-    retryInfos.add(retryInfo);
+    dest.removeAll(retryInfo.children);
+    dest.add(retryInfo);
   }
 
-
-  private static RetryInfo findMostSpecificRetryInfo(Set<RetryInfo> retryInfos,
+  private static RetryInfo findMostSpecificRetryInfo(Set<RetryInfo> retryInfo,
       Class<? extends Exception> exception) {
-    for (RetryInfo current : retryInfos) {
+    for (RetryInfo current : retryInfo) {
       if (current.exception.isAssignableFrom(exception)) {
         RetryInfo  match = findMostSpecificRetryInfo(current.children, exception);
         return match == null ? current : match;
@@ -223,10 +222,10 @@ public final class ExceptionHandler implements Serializable {
     Method callMethod = getCallableMethod(callable.getClass());
     for (Class<?> exceptionOrError : callMethod.getExceptionTypes()) {
       Preconditions.checkArgument(Exception.class.isAssignableFrom(exceptionOrError),
-          "Callable method exceptions must be dervied from Exception");
+          "Callable method exceptions must be derived from Exception");
       @SuppressWarnings("unchecked") Class<? extends Exception> exception =
           (Class<? extends Exception>) exceptionOrError;
-      Preconditions.checkArgument(findMostSpecificRetryInfo(retryInfos, exception) != null,
+      Preconditions.checkArgument(findMostSpecificRetryInfo(retryInfo, exception) != null,
           "Declared exception '" + exception + "' is not covered by exception handler");
     }
   }
@@ -241,16 +240,16 @@ public final class ExceptionHandler implements Serializable {
 
   boolean shouldRetry(Exception ex) {
     for (Interceptor interceptor : interceptors) {
-      Interceptor.RetryResult retryResult = interceptor.shouldRetry(ex);
+      Interceptor.RetryResult retryResult = interceptor.beforeEval(ex);
       if (retryResult != null) {
         return retryResult.booleanValue();
       }
     }
-    RetryInfo retryInfo = findMostSpecificRetryInfo(retryInfos, ex.getClass());
+    RetryInfo retryInfo = findMostSpecificRetryInfo(this.retryInfo, ex.getClass());
     Interceptor.RetryResult retryResult =
         retryInfo == null ? Interceptor.RetryResult.ABORT : retryInfo.retry;
     for (Interceptor interceptor : interceptors) {
-      retryResult = firstNonNull(interceptor.shouldRetry(ex, retryResult), retryResult);
+      retryResult = firstNonNull(interceptor.afterEval(ex, retryResult), retryResult);
     }
     return retryResult.booleanValue();
   }

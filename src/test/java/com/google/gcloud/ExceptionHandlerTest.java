@@ -35,28 +35,28 @@ public class ExceptionHandlerTest {
     class C extends A {
       @Override
       public Object call() throws FileNotFoundException {
-        return null;
+        return "c";
       }
     }
 
     class D extends C {
       @Override
       public Object call() throws IllegalArgumentException {
-        return null;
+        return "d";
       }
     }
 
     class E extends A {
       @Override
       public String call() throws NullPointerException {
-        return null;
+        return "e";
       }
     }
 
     class F extends A {
       @Override
       public Object call() throws Error {
-        return null;
+        return "f";
       }
     }
 
@@ -93,7 +93,6 @@ public class ExceptionHandlerTest {
     }
   }
 
-  @SuppressWarnings("serial")
   @Test
   public void testShouldTry() {
     ExceptionHandler handler = ExceptionHandler.builder().retryOn(IOException.class).build();
@@ -115,13 +114,16 @@ public class ExceptionHandlerTest {
 
     final AtomicReference<RetryResult> before = new AtomicReference<>(RetryResult.ABORT);
     Interceptor interceptor = new Interceptor() {
+
+      private static final long serialVersionUID = 1;
+
       @Override
-      public RetryResult shouldRetry(Exception exception, RetryResult retryResult) {
+      public RetryResult afterEval(Exception exception, RetryResult retryResult) {
         return retryResult == RetryResult.ABORT ? RetryResult.RETRY : RetryResult.ABORT;
       }
 
       @Override
-      public RetryResult shouldRetry(Exception exception) {
+      public RetryResult beforeEval(Exception exception) {
         return before.get();
       }
     };

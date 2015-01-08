@@ -2,6 +2,7 @@ package com.google.gcloud;
 
 
 import static com.google.common.base.MoreObjects.firstNonNull;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -11,6 +12,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Set;
@@ -121,10 +123,29 @@ public abstract class ServiceOptions {
       URLConnection connection = url.openConnection();
       connection.setRequestProperty("X-Google-Metadata-Request", "True");
       try (BufferedReader reader =
-          new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+               new BufferedReader(new InputStreamReader(connection.getInputStream(), UTF_8))) {
         return reader.readLine();
       }
-    } catch (IOException e) {
+    } catch (IOException ignore) {
+      // return null if can't determine
+      return null;
+    }
+  }
+
+  protected static String getAppEngineProjectId() {
+    // TODO(ozarov): An alternative to reflection would be to depend on AE api jar:
+    // http://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk/1.2.0
+    try {
+      Class<?> factoryClass =
+          Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
+      Method method = factoryClass.getMethod("getAppIdentityService");
+      Object appIdentityService = method.invoke(null);
+      method = appIdentityService.getClass().getMethod("getServiceAccountName");
+      String serviceAccountName = (String) method.invoke(appIdentityService);
+      int indexOfAtSign = serviceAccountName.indexOf('@');
+      return serviceAccountName.substring(0, indexOfAtSign);
+    } catch (Exception ignore) {
+      // return null if can't determine
       return null;
     }
   }

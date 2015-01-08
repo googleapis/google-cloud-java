@@ -25,24 +25,24 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
 
   abstract static class Builder<B extends Builder<B>> {
 
-    protected String dataset;
-    protected String namespace;
-    protected String kind;
-    protected final List<PathElement> ancestors;
+    String dataset;
+    String namespace;
+    String kind;
+    final List<PathElement> ancestors;
 
     private static final int MAX_PATH = 100;
 
-    public Builder(String dataset) {
+    Builder(String dataset) {
       this.dataset = validateDataset(dataset);
       ancestors = new LinkedList<>();
     }
 
-    public Builder(String dataset, String kind) {
+    Builder(String dataset, String kind) {
       this(dataset);
       this.kind = validateKind(kind);
     }
 
-    public Builder(BaseKey copyFrom) {
+    Builder(BaseKey copyFrom) {
       dataset = copyFrom.dataset();
       namespace = copyFrom.namespace();
       ancestors = new LinkedList<>(copyFrom.ancestors());
@@ -50,7 +50,7 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
     }
 
     @SuppressWarnings("unchecked")
-    protected B self() {
+    B self() {
       return (B) this;
     }
 
@@ -120,11 +120,11 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
   /**
    * Returns an immutable list of the key's path (ancestors + self).
    */
-  public List<PathElement> path() {
+  List<PathElement> path() {
     return path;
   }
 
-  protected PathElement leaf() {
+  PathElement leaf() {
     return path().get(path().size() - 1);
   }
 
