@@ -37,8 +37,8 @@ final class DatastoreServiceImpl implements DatastoreService {
         @Override
         public RetryResult beforeEval(Exception exception) {
           if (exception instanceof DatastoreServiceException) {
-            boolean isTransient = ((DatastoreServiceException) exception).code().isTransient();
-            return isTransient
+            boolean isRetriable = ((DatastoreServiceException) exception).code().isRetriable();
+            return isRetriable
                 ? ExceptionHandler.Interceptor.RetryResult.RETRY
                 : ExceptionHandler.Interceptor.RetryResult.ABORT;
           }

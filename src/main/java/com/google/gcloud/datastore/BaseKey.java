@@ -148,7 +148,7 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
     if (!(obj instanceof BaseKey)) {
       return false;
     }
-    PartialKey other = (PartialKey) obj;
+    BaseKey other = (BaseKey) obj;
     return Objects.equals(dataset(), other.dataset())
         && Objects.equals(namespace(), other.namespace())
         && Objects.equals(path(), other.path());
