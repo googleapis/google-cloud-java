@@ -39,13 +39,13 @@ public class DatastoreServiceException extends RuntimeException {
     INTERNAL(false, "Server returned an error", 500),
     UNKNOWN(false, "Unknown failure", -1);
 
-    private final boolean isTransient;
-    private final String defaultMessage;
+    private final boolean retriable;
+    private final String message;
     private final int httpCode;
 
-    Code(boolean isTransient, String msg, int httpCode) {
-      this.isTransient = isTransient;
-      defaultMessage = msg;
+    Code(boolean retriable, String message, int httpCode) {
+      this.retriable = retriable;
+      this.message = message;
       this.httpCode = httpCode;
     }
 
@@ -57,12 +57,12 @@ public class DatastoreServiceException extends RuntimeException {
      * Returns {@code true} if this exception is transient and the same request could be retried.
      * For any retry it is highly recommended to apply an exponential backoff.
      */
-    public boolean isTransient() {
-      return isTransient;
+    public boolean isRetriable() {
+      return retriable;
     }
 
-    DatastoreServiceException translate(DatastoreException exception, String msg) {
-      return new DatastoreServiceException(this, msg, exception);
+    DatastoreServiceException translate(DatastoreException exception, String message) {
+      return new DatastoreServiceException(this, message, exception);
     }
   }
 
@@ -77,13 +77,13 @@ public class DatastoreServiceException extends RuntimeException {
     HTTP_TO_CODE = ImmutableMap.copyOf(httpCodes);
   }
 
-  public DatastoreServiceException(Code code, String msg, Exception cause) {
-    super(MoreObjects.firstNonNull(msg, code.defaultMessage), cause);
+  public DatastoreServiceException(Code code, String message, Exception cause) {
+    super(MoreObjects.firstNonNull(message, code.message), cause);
     this.code = code;
   }
 
-  public DatastoreServiceException(Code code, String msg) {
-    this(code, msg, null);
+  public DatastoreServiceException(Code code, String message) {
+    this(code, message, null);
   }
 
   /**
@@ -131,12 +131,12 @@ public class DatastoreServiceException extends RuntimeException {
 
 
   /**
-   * Throw a DatastoreServiceException with {@code FAILED_PRECONDITION} code and the {@code msg}
+   * Throw a DatastoreServiceException with {@code FAILED_PRECONDITION} code and the {@code message}
    * in a nested exception.
    *
    * @throws DatastoreServiceException every time
    */
-  static DatastoreServiceException throwInvalidRequest(String msg, Object... params) {
-    throw new DatastoreServiceException(Code.FAILED_PRECONDITION, String.format(msg, params));
+  static DatastoreServiceException throwInvalidRequest(String massage, Object... params) {
+    throw new DatastoreServiceException(Code.FAILED_PRECONDITION, String.format(massage, params));
   }
 }

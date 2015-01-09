@@ -62,24 +62,24 @@ public class RetryParamsTest {
   public void testBadSettings() {
     RetryParams.Builder builder = RetryParams.builder();
     builder.initialRetryDelayMillis(-1);
-    builder = verifyFailure(builder);
+    builder = assertFailure(builder);
     builder.maxRetryDelayMillis(RetryParams.getDefaultInstance().getInitialRetryDelayMillis() - 1);
-    builder = verifyFailure(builder);
+    builder = assertFailure(builder);
     builder.retryDelayBackoffFactor(-1);
-    builder = verifyFailure(builder);
+    builder = assertFailure(builder);
     builder.retryMinAttempts(-1);
-    builder = verifyFailure(builder);
+    builder = assertFailure(builder);
     builder.retryMaxAttempts(RetryParams.getDefaultInstance().getRetryMinAttempts() - 1);
-    builder = verifyFailure(builder);
+    builder = assertFailure(builder);
     builder.totalRetryPeriodMillis(-1);
-    builder = verifyFailure(builder);
+    builder = assertFailure(builder);
     // verify that it is OK for min and max to be equal
     builder.retryMaxAttempts(RetryParams.getDefaultInstance().getRetryMinAttempts());
     builder.maxRetryDelayMillis(RetryParams.getDefaultInstance().getInitialRetryDelayMillis());
     builder.build();
   }
 
-  private static Builder verifyFailure(Builder builder) {
+  private static Builder assertFailure(Builder builder) {
     try {
       builder.build();
       fail("Expected IllegalArgumentException");
