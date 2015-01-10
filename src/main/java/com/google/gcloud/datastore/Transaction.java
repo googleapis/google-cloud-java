@@ -55,7 +55,7 @@ public interface Transaction extends DatastoreReaderWriter {
    * @throws DatastoreServiceException upon failure or if no longer active
    */
   @Override
-  Iterator<Entity> get(Key key, Key... others);
+  Iterator<Entity> get(Key... key);
 
   /**
    * {@inheritDoc}

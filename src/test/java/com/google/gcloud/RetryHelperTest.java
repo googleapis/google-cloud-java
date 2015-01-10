@@ -85,9 +85,11 @@ public class RetryHelperTest {
     }
 
     params = RetryParams.builder().initialRetryDelayMillis(0).retryMaxAttempts(5).build();
-    handler = ExceptionHandler.builder().retryOn(E1Exception.class, E4Exception.class).abortOn(E3Exception.class).build();
-    final Iterator<? extends E1Exception> exceptions =
-        Arrays.asList(new E1Exception(), new E2Exception(), new E4Exception(), new E3Exception()).iterator();
+    handler = ExceptionHandler.builder()
+        .retryOn(E1Exception.class, E4Exception.class)
+        .abortOn(E3Exception.class).build();
+    final Iterator<? extends E1Exception> exceptions = Arrays.asList(
+        new E1Exception(), new E2Exception(), new E4Exception(), new E3Exception()).iterator();
     try {
       RetryHelper.runWithRetries(new Callable<Void>() {
         @Override public Void call() throws E1Exception {

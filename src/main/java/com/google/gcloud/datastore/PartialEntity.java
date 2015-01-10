@@ -55,6 +55,10 @@ public class PartialEntity extends BaseEntity {
     return new Entity(key, ImmutableSortedMap.copyOf(properties()));
   }
 
+  public boolean hasKey() {
+    return key != null;
+  }
+
   /**
    * Returns the key for this entity or {@code null} if it does not have one.
    */

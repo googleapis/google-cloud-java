@@ -3,6 +3,7 @@ package com.google.gcloud.datastore;
 import static com.google.gcloud.datastore.DatastoreServiceException.throwInvalidRequest;
 
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.collect.Iterators;
 import com.google.gcloud.datastore.TransactionOption.IsolationLevel;
 import com.google.protobuf.ByteString;
 
@@ -11,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-public final class TransactionImpl extends BatchWriterImpl implements Transaction {
+final class TransactionImpl extends BatchWriterImpl implements Transaction {
 
   private final ByteString transaction;
   private boolean wasRolledback;
@@ -42,16 +43,15 @@ public final class TransactionImpl extends BatchWriterImpl implements Transactio
 
   @Override
   public Entity get(Key key) {
-    Iterator<Entity> iter = get(key, DatastoreServiceImpl.EMPTY_KEY_ARRAY);
-    return iter.hasNext() ? iter.next() : null;
+    return Iterators.getNext(get(new Key[] {key}), null);
   }
 
   @Override
-  public Iterator<Entity> get(Key key, Key... others) {
+  public Iterator<Entity> get(Key... keys) {
     validateActive();
     DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);
-    return datastore.get(readOptionsPb.build(), key, others);
+    return datastore.get(readOptionsPb.build(), keys);
   }
 
   @Override

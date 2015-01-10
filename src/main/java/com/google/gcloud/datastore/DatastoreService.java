@@ -1,6 +1,6 @@
 package com.google.gcloud.datastore;
 
-import java.util.Iterator;
+import java.util.List;
 
 /**
  * An interface for Google Cloud Datastore dataset.
@@ -37,10 +37,34 @@ public interface DatastoreService extends DatastoreReaderWriter {
   /**
    * Returns a list of keys using the allocated ids ordered by the input.
    *
-   * @see #allocateId(PartialKey)
    * @throws DatastoreServiceException upon failure
+   * @see #allocateId(PartialKey)
    */
-  Iterator<Key> allocateId(PartialKey key, PartialKey... others);
+  List<Key> allocateId(PartialKey... key);
+
+  /**
+   * Datastore add operation.
+   * This method will automatically allocate an id if necessary.
+   *
+   * @param entity the entity to add
+   * @return an {@code Entity} with the same properties and a key that is either newly allocated
+   *     or the same one if was already complete
+   * @throws DatastoreServiceException upon failure
+   * @throws IllegalArgumentException if the given entity is missing a key
+   */
+  Entity add(PartialEntity entity);
+
+  /**
+   * Datastore add operation.
+   * This method will automatically allocate id for any entity with incomplete key.
+   *
+   * @return a list of {@code Entity} ordered by input with the same properties and a key that is
+   *     either newly allocated or the same one if was already complete
+   * @throws DatastoreServiceException upon failure
+   * @throws IllegalArgumentException if any of the given entities is missing a key
+   * @see #add(PartialKey)
+   */
+  List<Entity> add(PartialEntity... entity);
 
   /**
    * {@inheritDoc}

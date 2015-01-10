@@ -29,9 +29,19 @@ public interface BatchWriter extends DatastoreWriter {
   void add(Entity... entity);
 
   /**
+   * Datastore add operation.
+   * This method will automatically allocate id for any entity with incomplete key.
+   *
+   * @throws IllegalArgumentException if any of the given entities is missing a key
+   * @throws DatastoreServiceException if a given entity with a complete key was already added to
+   *     this batch or if batch is no longer active
+   */
+  void add(PartialEntity... entity);
+
+  /**
    * {@inheritDoc}
    * This operation will be converted to {@link #put} operation for entities that were already
-   *     added or put in this batch.
+   *     added or put in this batch
    * @throws DatastoreServiceException if an entity is marked for deletion in this batch or if
    *     batch is no longer active
    */
@@ -41,7 +51,7 @@ public interface BatchWriter extends DatastoreWriter {
   /**
    * {@inheritDoc}
    * This operation will also remove from this batch any prior writes for entities with the same
-   *     keys.
+   *     keys
    * @throws DatastoreServiceException if batch is no longer active
    */
   @Override
