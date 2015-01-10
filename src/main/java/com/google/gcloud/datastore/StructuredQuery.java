@@ -868,7 +868,7 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   protected boolean keyOnly() {
-    return projection.size() == 1 && projection.get(0).property.equals(KEY_PROPERTY_NAME);
+    return projection.size() == 1 && KEY_PROPERTY_NAME.equals(projection.get(0).property);
   }
 
   List<Projection> projection() {
@@ -963,7 +963,8 @@ public class StructuredQuery<V> extends Query<V> {
     return fromPb(type, namespace, DatastoreV1.Query.parseFrom(bytesPb));
   }
 
-  private static StructuredQuery<?> fromPb(Type<?> type, String namespace, DatastoreV1.Query queryPb) {
+  private static StructuredQuery<?> fromPb(Type<?> type, String namespace,
+      DatastoreV1.Query queryPb) {
     BaseBuilder<?, ?> builder;
     if (type.equals(Type.FULL)) {
       builder = builder();

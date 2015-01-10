@@ -143,7 +143,8 @@ public class SerializationTest {
   }
 
   @SuppressWarnings("unchecked")
-  private <T extends Serializable> T serializeAndDeserialize(T obj) throws IOException, ClassNotFoundException {
+  private <T extends Serializable> T serializeAndDeserialize(T obj)
+      throws IOException, ClassNotFoundException {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
     try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
       output.writeObject(obj);

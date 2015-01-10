@@ -7,12 +7,15 @@ import com.google.gcloud.datastore.BatchWriteOption.ForceWrites;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 class BatchWriterImpl implements BatchWriter {
 
   private final Map<Key, Entity> toAdd = new LinkedHashMap<>();
+  private final List<PartialEntity> toAddAutoId = new LinkedList<>();
   private final Map<Key, Entity> toUpdate = new LinkedHashMap<>();
   private final Map<Key, Entity> toPut = new LinkedHashMap<>();
   private final Set<Key> toDelete = new LinkedHashSet<>();
@@ -55,6 +58,18 @@ class BatchWriterImpl implements BatchWriter {
         toPut.put(key, entity);
       } else {
         toAdd.put(key, entity);
+      }
+    }
+  }
+
+  @Override
+  public void add(PartialEntity... entities) {
+    validateActive();
+    for (PartialEntity entity : entities) {
+      if (entity instanceof Entity) {
+        add((Entity) entity);
+      } else {
+        toAddAutoId.add(entity);
       }
     }
   }
@@ -103,6 +118,9 @@ class BatchWriterImpl implements BatchWriter {
   public void submit() {
     validateActive();
     DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
+    for (PartialEntity entity : toAddAutoId) {
+      mutationPb.addInsertAutoId(entity.toPb());
+    }
     for (Entity entity : toAdd.values()) {
       mutationPb.addInsert(entity.toPb());
     }
