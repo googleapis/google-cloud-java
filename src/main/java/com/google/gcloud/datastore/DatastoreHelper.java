@@ -10,7 +10,6 @@ import java.util.Map;
 /**
  * Adds some functionality to DatastoreService that should
  * be provided statically to the interface (Java 8).
- *
  */
 public class DatastoreHelper implements DatastoreService {
 
@@ -26,8 +25,8 @@ public class DatastoreHelper implements DatastoreService {
   }
 
   @Override
-  public Iterator<Entity> get(Key key, Key... others) {
-    return delegate.get(key, others);
+  public Iterator<Entity> get(Key... key) {
+    return delegate.get(key);
   }
 
   @Override
@@ -56,8 +55,18 @@ public class DatastoreHelper implements DatastoreService {
   }
 
   @Override
-  public Iterator<Key> allocateId(PartialKey key, PartialKey... others) {
-    return delegate.allocateId(key, others);
+  public List<Key> allocateId(PartialKey... key) {
+    return delegate.allocateId(key);
+  }
+
+  @Override
+  public Entity add(PartialEntity entity) {
+    return delegate.add(entity);
+  }
+
+  @Override
+  public List<Entity> add(PartialEntity... entity) {
+    return delegate.add(entity);
   }
 
   @Override
@@ -91,17 +100,17 @@ public class DatastoreHelper implements DatastoreService {
    * Returns a list with a value for each given key (ordered by input).
    * A {@code null} would be returned for non-existing keys.
    */
-  public List<Entity> fetch(Key key, Key... others) {
-    Iterator<Entity> entities = delegate.get(key, others);
-    Map<Key, Entity> map = Maps.newHashMapWithExpectedSize(1 + others.length);
+  public List<Entity> fetch(Key... keys) {
+    Iterator<Entity> entities = delegate.get(keys);
+    Map<Key, Entity> map = Maps.newHashMapWithExpectedSize(keys.length);
     while (entities.hasNext()) {
       Entity entity = entities.next();
       map.put(entity.key(), entity);
     }
-    List<Entity> list = new ArrayList<>(1 + others.length);
-    list.add(map.get(key));
-    for (Key other : others) {
-      list.add(map.get(other));
+    List<Entity> list = new ArrayList<>(keys.length);
+    for (Key key : keys) {
+      // this will include nulls for non-existing keys
+      list.add(map.get(key));
     }
     return list;
   }

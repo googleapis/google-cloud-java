@@ -15,7 +15,6 @@ import com.google.gcloud.datastore.Query.Type;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
-
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
@@ -25,10 +24,8 @@ import org.junit.runners.JUnit4;
 
 import java.io.IOException;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 @RunWith(JUnit4.class)
 public class DatastoreServiceIntegrationTest {
@@ -250,7 +247,10 @@ public class DatastoreServiceIntegrationTest {
     Entity entity5 = Entity.builder(KEY5).set("value", "value").build();
 
     batchWriter.add(entity4, entity5);
+    batchWriter.add(PARTIAL_ENTITY1);
     batchWriter.put(ENTITY3, entity1, entity2);
+    // TODO(OZAROV): CHANGE SUBMIT TO RETURN A BATCH RESPONSE WITH GENERATED KEYS
+    // AND USE THE KEY TO VALIDATE THE WRITE
     batchWriter.submit();
     Iterator<Entity> entities =
         helper.fetch(KEY1, KEY2, KEY3, entity4.key(), entity5.key()).iterator();
@@ -474,20 +474,15 @@ public class DatastoreServiceIntegrationTest {
     PartialKey partialKey2 = keyFactory.kind(KIND2).ancestors(PathElement.of(KIND1, 10)).newKey();
     Key key3 = keyFactory.newKey("name");
     Key key4 = keyFactory.newKey(1);
-    Iterator<Key> result =
+    List<Key> result =
         datastore.allocateId(partialKey1, partialKey2, key3, key4, partialKey1, key3);
-    Map<Integer, Key> map = new HashMap<>();
-    int count = 0;
-    while (result.hasNext()) {
-      map.put(++count, result.next());
-    }
-    assertEquals(6, map.size());
-    assertEquals(partialKey1.newKey(map.get(1).id()), map.get(1));
-    assertEquals(partialKey1.newKey(map.get(5).id()), map.get(5));
-    assertEquals(partialKey2.newKey(map.get(2).id()), map.get(2));
-    assertEquals(Key.builder(key3).id(map.get(3).id()).build(), map.get(3));
-    assertEquals(Key.builder(key3).id(map.get(6).id()).build(), map.get(6));
-    assertEquals(Key.builder(key4).id(map.get(4).id()).build(), map.get(4));
+    assertEquals(6, result.size());
+    assertEquals(partialKey1.newKey(result.get(0).id()), result.get(0));
+    assertEquals(partialKey1.newKey(result.get(4).id()), result.get(4));
+    assertEquals(partialKey2.newKey(result.get(1).id()), result.get(1));
+    assertEquals(Key.builder(key3).id(result.get(2).id()).build(), result.get(2));
+    assertEquals(Key.builder(key3).id(result.get(5).id()).build(), result.get(5));
+    assertEquals(Key.builder(key4).id(result.get(3).id()).build(), result.get(3));
   }
 
   @Test
@@ -542,7 +537,7 @@ public class DatastoreServiceIntegrationTest {
   }
 
   @Test
-  public void testAdd() {
+  public void testAddEntity() {
     List<Entity> keys = helper.fetch(ENTITY1.key(), ENTITY3.key());
     assertEquals(ENTITY1, keys.get(0));
     assertNull(keys.get(1));
@@ -556,6 +551,40 @@ public class DatastoreServiceIntegrationTest {
     }
     datastore.add(ENTITY3);
     assertEquals(ENTITY3, datastore.get(ENTITY3.key()));
+  }
+
+  @Test
+  public void testAddPartialEntity() {
+    List<Entity> keys = helper.fetch(ENTITY1.key(), ENTITY3.key());
+    assertEquals(ENTITY1, keys.get(0));
+    assertNull(keys.get(1));
+    assertEquals(2, keys.size());
+
+    try {
+      datastore.add(ENTITY1);
+      fail("Expecting a failure");
+    } catch (DatastoreServiceException expected) {
+      // expected;
+    }
+
+    PartialEntity pe = PartialEntity.builder(PARTIAL_ENTITY2).key(KEY5).build();
+    List<Entity> response =
+        datastore.add(PARTIAL_ENTITY1, PARTIAL_ENTITY2, ENTITY3, PARTIAL_ENTITY1, pe);
+    assertEquals(5, response.size());
+    assertEquals(PARTIAL_ENTITY1.properties(), response.get(0).properties());
+    assertEquals(PARTIAL_ENTITY1.properties(), datastore.get(response.get(0).key()).properties());
+    assertEquals(PARTIAL_ENTITY2.properties(), response.get(1).properties());
+    assertEquals(PARTIAL_ENTITY2.properties(), datastore.get(response.get(1).key()).properties());
+    assertSame(ENTITY3, response.get(2));
+    assertEquals(ENTITY3, datastore.get(response.get(2).key()));
+    assertEquals(PARTIAL_ENTITY1.properties(), response.get(3).properties());
+    assertEquals(PARTIAL_ENTITY1.properties(), datastore.get(response.get(3).key()).properties());
+    assertEquals(pe.properties(), response.get(4).properties());
+    assertEquals(pe.key(), response.get(4).key());
+    assertEquals(pe.properties(), datastore.get(response.get(4).key()).properties());
+    assertEquals(pe.key(), datastore.get(response.get(4).key()).key());
+    assertEquals(pe, response.get(4));
+    assertEquals(datastore.get(response.get(4).key()), response.get(4));
   }
 
   @Test

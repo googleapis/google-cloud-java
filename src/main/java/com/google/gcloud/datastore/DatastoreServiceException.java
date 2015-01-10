@@ -114,7 +114,7 @@ public class DatastoreServiceException extends RuntimeException {
     String reason = "";
     if (message != null) {
       try {
-        JSONObject json = new JSONObject(new JSONTokener(exception.getMessage()));
+        JSONObject json = new JSONObject(new JSONTokener(message));
         JSONObject error = json.getJSONObject("error").getJSONArray("errors").getJSONObject(0);
         reason = error.getString("reason");
         message = error.getString("message");
