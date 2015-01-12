@@ -26,8 +26,8 @@ public abstract class TransactionOption implements Serializable {
     }
 
     @Override
-    BatchWriteOption toBatchWriteOption() {
-      return new BatchWriteOption.ForceWrites(force);
+    BatchOption toBatchWriteOption() {
+      return new BatchOption.ForceWrites(force);
     }
   }
 
@@ -63,7 +63,7 @@ public abstract class TransactionOption implements Serializable {
     }
 
     @Override
-    BatchWriteOption toBatchWriteOption() {
+    BatchOption toBatchWriteOption() {
       return null;
     }
   }
@@ -94,5 +94,5 @@ public abstract class TransactionOption implements Serializable {
     return builder.build();
   }
 
-  abstract BatchWriteOption toBatchWriteOption();
+  abstract BatchOption toBatchWriteOption();
 }
