@@ -20,10 +20,9 @@ public interface DatastoreService extends DatastoreReaderWriter {
   Transaction newTransaction(TransactionOption... options);
 
   /**
-   * Returns a new Batch writer for processing multiple write operations
-   * in one request.
+   * Returns a new Batch for processing multiple write operations in one request.
    */
-  BatchWriter newBatchWriter(BatchWriteOption... options);
+  Batch newBatch(BatchOption... options);
 
   /**
    * Allocate a unique id for the given key.

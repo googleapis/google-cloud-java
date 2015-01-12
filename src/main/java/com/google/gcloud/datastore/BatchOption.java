@@ -4,11 +4,11 @@ import com.google.common.collect.ImmutableMap;
 
 import java.util.Map;
 
-public abstract class BatchWriteOption implements java.io.Serializable {
+public abstract class BatchOption implements java.io.Serializable {
 
   private static final long serialVersionUID = -3932758377282659839L;
 
-  public static final class ForceWrites extends BatchWriteOption {
+  public static final class ForceWrites extends BatchOption {
 
     private static final long serialVersionUID = 2555054296046232799L;
 
@@ -23,7 +23,7 @@ public abstract class BatchWriteOption implements java.io.Serializable {
     }
   }
 
-  BatchWriteOption() {
+  BatchOption() {
     // package protected
   }
 
@@ -31,11 +31,10 @@ public abstract class BatchWriteOption implements java.io.Serializable {
     return new ForceWrites(true);
   }
 
-  static Map<Class<? extends BatchWriteOption>, BatchWriteOption> asImmutableMap(
-      BatchWriteOption... options) {
-    ImmutableMap.Builder<Class<? extends BatchWriteOption>, BatchWriteOption> builder =
+  static Map<Class<? extends BatchOption>, BatchOption> asImmutableMap(BatchOption... options) {
+    ImmutableMap.Builder<Class<? extends BatchOption>, BatchOption> builder =
         ImmutableMap.builder();
-    for (BatchWriteOption option : options) {
+    for (BatchOption option : options) {
       builder.put(option.getClass(), option);
     }
     return builder.build();

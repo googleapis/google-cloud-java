@@ -45,8 +45,8 @@ public class DatastoreHelper implements DatastoreService {
   }
 
   @Override
-  public BatchWriter newBatchWriter(BatchWriteOption... options) {
-    return delegate.newBatchWriter(options);
+  public Batch newBatch(BatchOption... options) {
+    return delegate.newBatch(options);
   }
 
   @Override
