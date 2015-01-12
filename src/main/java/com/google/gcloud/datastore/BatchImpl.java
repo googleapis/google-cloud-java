@@ -3,7 +3,9 @@ package com.google.gcloud.datastore;
 import static com.google.gcloud.datastore.DatastoreServiceException.throwInvalidRequest;
 
 import com.google.api.services.datastore.DatastoreV1;
-import com.google.gcloud.datastore.BatchWriteOption.ForceWrites;
+import com.google.common.base.Function;
+import com.google.common.collect.Lists;
+import com.google.gcloud.datastore.BatchOption.ForceWrites;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -12,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-class BatchWriterImpl implements BatchWriter {
+class BatchImpl implements Batch {
 
   private final Map<Key, Entity> toAdd = new LinkedHashMap<>();
   private final List<PartialEntity> toAddAutoId = new LinkedList<>();
@@ -24,10 +26,30 @@ class BatchWriterImpl implements BatchWriter {
 
   private boolean active = true;
 
-  BatchWriterImpl(DatastoreServiceImpl datastore, BatchWriteOption... options) {
+
+  class ResponseImpl implements Response {
+
+    private final DatastoreV1.CommitResponse response;
+
+    public ResponseImpl(DatastoreV1.CommitResponse response) {
+      this.response = response;
+    }
+
+    @Override
+    public List<Key> generatedKeys() {
+      return Lists.transform(response.getMutationResult().getInsertAutoIdKeyList(),
+          new Function<DatastoreV1.Key, Key>() {
+            @Override public Key apply(DatastoreV1.Key keyPb) {
+              return Key.fromPb(keyPb);
+            }
+          });
+    }
+  }
+
+  BatchImpl(DatastoreServiceImpl datastore, BatchOption... options) {
     this.datastore = datastore;
-    Map<Class<? extends BatchWriteOption>, BatchWriteOption> optionsMap =
-        BatchWriteOption.asImmutableMap(options);
+    Map<Class<? extends BatchOption>, BatchOption> optionsMap =
+        BatchOption.asImmutableMap(options);
     if (optionsMap.containsKey(ForceWrites.class)) {
       force = ((ForceWrites) optionsMap.get(ForceWrites.class)).force();
     } else {
@@ -115,7 +137,11 @@ class BatchWriterImpl implements BatchWriter {
   }
 
   @Override
-  public void submit() {
+  public Response submit() {
+    return new ResponseImpl(commitRequest());
+  }
+
+  DatastoreV1.CommitResponse commitRequest() {
     validateActive();
     DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
     for (PartialEntity entity : toAddAutoId) {
@@ -138,8 +164,9 @@ class BatchWriterImpl implements BatchWriter {
     }
     DatastoreV1.CommitRequest.Builder requestPb = newCommitRequest();
     requestPb.setMutation(mutationPb);
-    datastore.commit(requestPb.build());
+    DatastoreV1.CommitResponse response = datastore.commit(requestPb.build());
     active = false;
+    return response;
   }
 
   @Override

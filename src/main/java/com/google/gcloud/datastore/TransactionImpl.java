@@ -12,10 +12,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-final class TransactionImpl extends BatchWriterImpl implements Transaction {
+final class TransactionImpl extends BatchImpl implements Transaction {
 
   private final ByteString transaction;
   private boolean wasRolledback;
+
+  class ResponseImpl extends BatchImpl.ResponseImpl implements Transaction.Response {
+
+    public ResponseImpl(DatastoreV1.CommitResponse response) {
+      super(response);
+    }
+  }
 
   TransactionImpl(DatastoreServiceImpl datastore, TransactionOption... options) {
     super(datastore, getBatchOptions(options));
@@ -30,15 +37,15 @@ final class TransactionImpl extends BatchWriterImpl implements Transaction {
     transaction = datastore.requestTransactionId(requestPb);
   }
 
-  private static BatchWriteOption[] getBatchOptions(TransactionOption... options) {
-    List<BatchWriteOption> batchOptions = new ArrayList<>(options.length);
+  private static BatchOption[] getBatchOptions(TransactionOption... options) {
+    List<BatchOption> batchOptions = new ArrayList<>(options.length);
     for (TransactionOption option : options) {
-      BatchWriteOption batchOption = option.toBatchWriteOption();
+      BatchOption batchOption = option.toBatchWriteOption();
       if (batchOption != null) {
         batchOptions.add(batchOption);
       }
     }
-    return batchOptions.toArray(new BatchWriteOption[batchOptions.size()]);
+    return batchOptions.toArray(new BatchOption[batchOptions.size()]);
   }
 
   @Override
@@ -63,8 +70,8 @@ final class TransactionImpl extends BatchWriterImpl implements Transaction {
   }
 
   @Override
-  public void commit() {
-    submit();
+  public Transaction.Response commit() {
+    return new ResponseImpl(commitRequest());
   }
 
   @Override

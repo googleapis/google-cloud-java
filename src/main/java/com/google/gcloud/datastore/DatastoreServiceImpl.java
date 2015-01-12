@@ -70,8 +70,8 @@ final class DatastoreServiceImpl implements DatastoreService {
   }
 
   @Override
-  public BatchWriter newBatchWriter(BatchWriteOption... options) {
-    return new BatchWriterImpl(this, options);
+  public Batch newBatch(BatchOption... options) {
+    return new BatchImpl(this, options);
   }
 
   @Override

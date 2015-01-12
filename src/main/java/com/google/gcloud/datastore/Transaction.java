@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 /**
  * A Google cloud datastore transaction.
- * Any write operation that is applied on a transaction will only be sent
+ * Similar to {@link Batch} any write operation that is applied on a transaction will only be sent
  * to the Datastore upon {@link #commit}. A call to {@link #rollback} will invalidate
  * the transaction and discard the changes. Any read operation that is done by a transaction
  * will be part of it and therefore a {@code commit} is guaranteed to fail if an entity
@@ -33,7 +33,10 @@ import java.util.Iterator;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/transactions">Google Cloud Datastore transactions</a>
  *
  */
-public interface Transaction extends DatastoreReaderWriter {
+public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter {
+
+  interface Response extends DatastoreBatchWriter.Response {
+  }
 
   /**
    * {@inheritDoc}
@@ -74,7 +77,7 @@ public interface Transaction extends DatastoreReaderWriter {
    *
    * @throws DatastoreServiceException if could not commit the transaction or if no longer active
    */
-  void commit();
+  Response commit();
 
   /**
    * Rollback the transaction.
@@ -86,5 +89,6 @@ public interface Transaction extends DatastoreReaderWriter {
   /**
    * Returns {@code true} if the transaction is still active (was not committed or rolledback).
    */
+  @Override
   boolean active();
 }

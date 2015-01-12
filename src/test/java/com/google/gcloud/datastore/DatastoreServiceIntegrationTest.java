@@ -239,19 +239,18 @@ public class DatastoreServiceIntegrationTest {
   }
 
   @Test
-  public void testNewBatchWriter() {
-    BatchWriter batchWriter = datastore.newBatchWriter();
+  public void testNewBatch() {
+    Batch batch = datastore.newBatch();
     Entity entity1 = Entity.builder(ENTITY1).clear().build();
     Entity entity2 = Entity.builder(ENTITY2).clear().setNull("bla").build();
     Entity entity4 = Entity.builder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.builder(KEY5).set("value", "value").build();
 
-    batchWriter.add(entity4, entity5);
-    batchWriter.add(PARTIAL_ENTITY1);
-    batchWriter.put(ENTITY3, entity1, entity2);
-    // TODO(OZAROV): CHANGE SUBMIT TO RETURN A BATCH RESPONSE WITH GENERATED KEYS
-    // AND USE THE KEY TO VALIDATE THE WRITE
-    batchWriter.submit();
+    batch.add(entity4, entity5);
+    batch.add(PARTIAL_ENTITY1);
+    batch.put(ENTITY3, entity1, entity2);
+
+    Batch.Response response = batch.submit();
     Iterator<Entity> entities =
         helper.fetch(KEY1, KEY2, KEY3, entity4.key(), entity5.key()).iterator();
     assertEquals(entity1, entities.next());
@@ -260,19 +259,23 @@ public class DatastoreServiceIntegrationTest {
     assertEquals(entity4, entities.next());
     assertEquals(entity5, entities.next());
     assertFalse(entities.hasNext());
+    List<Key> generatedKeys = response.generatedKeys();
+    assertEquals(1, generatedKeys.size());
+    // todo(ozarov): uncomment after local datastore fix their bug with returned keys
+    // assertEquals(PARTIAL_ENTITY1.properties(), datastore.get(generatedKeys.get(0)).properties());
 
     try {
-      batchWriter.submit();
+      batch.submit();
       fail("Expecting a failure");
     } catch (DatastoreServiceException ex) {
       // expected to fail
     }
-    verifyNotUsable(batchWriter);
+    verifyNotUsable(batch);
 
-    batchWriter = datastore.newBatchWriter();
-    batchWriter.delete(entity4.key(), entity5.key());
-    batchWriter.update(ENTITY1, ENTITY2, ENTITY3);
-    batchWriter.submit();
+    batch = datastore.newBatch();
+    batch.delete(entity4.key(), entity5.key());
+    batch.update(ENTITY1, ENTITY2, ENTITY3);
+    batch.submit();
     entities = helper.fetch(KEY1, KEY2, KEY3, entity4.key(), entity5.key()).iterator();
     assertEquals(ENTITY1, entities.next());
     assertEquals(ENTITY2, entities.next());
