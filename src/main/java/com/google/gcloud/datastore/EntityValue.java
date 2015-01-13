@@ -12,29 +12,30 @@ public class EntityValue extends Value<PartialEntity> {
   static final BaseMarshaller<PartialEntity, EntityValue, Builder> MARSHALLER =
       new BaseMarshaller<PartialEntity, EntityValue, Builder>() {
 
-    @Override
-    public int getProtoFieldId() {
-      return ENTITY_VALUE_FIELD_NUMBER;
-    }
+        private static final long serialVersionUID = 2355075086076070931L;
 
-    @Override
-    public Builder newBuilder(PartialEntity value) {
-      return builder(value);
-    }
+        @Override
+        public int getProtoFieldId() {
+          return ENTITY_VALUE_FIELD_NUMBER;
+        }
 
-    @Override
-    protected PartialEntity getValue(DatastoreV1.Value from) {
-      return PartialEntity.fromPb(from.getEntityValue());
-    }
+        @Override
+        public Builder newBuilder(PartialEntity value) {
+          return builder(value);
+        }
 
-    @Override
-    protected void setValue(EntityValue from, DatastoreV1.Value.Builder to) {
-      to.setEntityValue(from.get().toPb());
-    }
-  };
+        @Override
+        protected PartialEntity getValue(DatastoreV1.Value from) {
+          return PartialEntity.fromPb(from.getEntityValue());
+        }
 
-  public static final class Builder extends
-      Value.BaseBuilder<PartialEntity, EntityValue, Builder> {
+        @Override
+        protected void setValue(EntityValue from, DatastoreV1.Value.Builder to) {
+          to.setEntityValue(from.get().toPb());
+        }
+      };
+
+  public static final class Builder extends Value.BaseBuilder<PartialEntity, EntityValue, Builder> {
 
     private Builder() {
       super(Type.ENTITY);

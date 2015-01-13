@@ -33,16 +33,17 @@ public class DatastoreServiceIntegrationTest {
   private static final String DATASET = LocalGcdHelper.DEFAULT_DATASET;
   private static final String KIND1 = "kind1";
   private static final String KIND2 = "kind2";
+  private static final String KIND3 = "kind3";
   private static final NullValue NULL_VALUE = NullValue.of();
   private static final StringValue STR_VALUE = StringValue.of("str");
   private static final BooleanValue BOOL_VALUE = BooleanValue.builder(false).indexed(false).build();
   private static final PartialKey PARTIAL_KEY1 = PartialKey.builder(DATASET, KIND1).build();
   private static final PartialKey PARTIAL_KEY2 = PartialKey.builder(DATASET, KIND2).build();
-  private static final Key KEY1 = PARTIAL_KEY1.newKey("name");
+  private static final Key KEY1 = Key.builder(PARTIAL_KEY1, "name").build();
   private static final Key KEY2 = Key.builder(KEY1, KIND2, 1).build();
   private static final Key KEY3 = Key.builder(KEY2).name("bla").build();
-  private static final Key KEY4 = KEY2.newKey("newName1");
-  private static final Key KEY5 = KEY2.newKey("newName2");
+  private static final Key KEY4 = Key.builder(KEY2).name("newName1").build();
+  private static final Key KEY5 = Key.builder(KEY2).name("newName2").build();
   private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
   private static final ListValue LIST_VALUE1 = ListValue.builder()
       .addValue(NULL_VALUE)
@@ -54,6 +55,8 @@ public class DatastoreServiceIntegrationTest {
       .set("str", STR_VALUE).set("bool", BOOL_VALUE).set("list", LIST_VALUE1).build();
   private static final PartialEntity PARTIAL_ENTITY2 = PartialEntity.builder(PARTIAL_ENTITY1)
       .remove("str").set("bool", true).set("list", LIST_VALUE1.get()).build();
+  private static final PartialEntity PARTIAL_ENTITY3 = PartialEntity.builder(PARTIAL_ENTITY1)
+      .key(PartialKey.builder(DATASET, KIND3).build()).build();
   private static final Entity ENTITY1 = Entity.builder(KEY1)
       .set("str", STR_VALUE)
       .set("date", DATE_TIME_VALUE)
@@ -247,7 +250,7 @@ public class DatastoreServiceIntegrationTest {
     Entity entity5 = Entity.builder(KEY5).set("value", "value").build();
 
     batch.add(entity4, entity5);
-    batch.add(PARTIAL_ENTITY1);
+    batch.add(PARTIAL_ENTITY3);
     batch.put(ENTITY3, entity1, entity2);
 
     Batch.Response response = batch.submit();
@@ -459,15 +462,15 @@ public class DatastoreServiceIntegrationTest {
     assertEquals(key1.kind(), pk1.kind());
     assertTrue(key1.hasId());
     assertFalse(key1.hasName());
-    assertEquals(pk1.newKey(key1.id()), key1);
+    assertEquals(Key.builder(pk1, key1.id()).build(), key1);
 
     Key key2 = datastore.allocateId(pk1);
     assertNotEquals(key1, key2);
-    assertEquals(pk1.newKey(key2.id()), key2);
+    assertEquals(Key.builder(pk1, key2.id()).build(), key2);
 
     Key key3 = datastore.allocateId(key1);
     assertNotEquals(key1, key3);
-    assertEquals(pk1.newKey(key3.id()), key3);
+    assertEquals(Key.builder(pk1, key3.id()).build(), key3);
   }
 
   @Test
@@ -480,9 +483,9 @@ public class DatastoreServiceIntegrationTest {
     List<Key> result =
         datastore.allocateId(partialKey1, partialKey2, key3, key4, partialKey1, key3);
     assertEquals(6, result.size());
-    assertEquals(partialKey1.newKey(result.get(0).id()), result.get(0));
-    assertEquals(partialKey1.newKey(result.get(4).id()), result.get(4));
-    assertEquals(partialKey2.newKey(result.get(1).id()), result.get(1));
+    assertEquals(Key.builder(partialKey1, result.get(0).id()).build(), result.get(0));
+    assertEquals(Key.builder(partialKey1, result.get(4).id()).build(), result.get(4));
+    assertEquals(Key.builder(partialKey2, result.get(1).id()).build(), result.get(1));
     assertEquals(Key.builder(key3).id(result.get(2).id()).build(), result.get(2));
     assertEquals(Key.builder(key3).id(result.get(5).id()).build(), result.get(5));
     assertEquals(Key.builder(key4).id(result.get(3).id()).build(), result.get(3));
@@ -571,23 +574,20 @@ public class DatastoreServiceIntegrationTest {
     }
 
     PartialEntity pe = PartialEntity.builder(PARTIAL_ENTITY2).key(KEY5).build();
-    List<Entity> response =
-        datastore.add(PARTIAL_ENTITY1, PARTIAL_ENTITY2, ENTITY3, PARTIAL_ENTITY1, pe);
-    assertEquals(5, response.size());
-    assertEquals(PARTIAL_ENTITY1.properties(), response.get(0).properties());
-    assertEquals(PARTIAL_ENTITY1.properties(), datastore.get(response.get(0).key()).properties());
-    assertEquals(PARTIAL_ENTITY2.properties(), response.get(1).properties());
-    assertEquals(PARTIAL_ENTITY2.properties(), datastore.get(response.get(1).key()).properties());
-    assertSame(ENTITY3, response.get(2));
-    assertEquals(ENTITY3, datastore.get(response.get(2).key()));
-    assertEquals(PARTIAL_ENTITY1.properties(), response.get(3).properties());
-    assertEquals(PARTIAL_ENTITY1.properties(), datastore.get(response.get(3).key()).properties());
-    assertEquals(pe.properties(), response.get(4).properties());
-    assertEquals(pe.key(), response.get(4).key());
-    assertEquals(pe.properties(), datastore.get(response.get(4).key()).properties());
-    assertEquals(pe.key(), datastore.get(response.get(4).key()).key());
-    assertEquals(pe, response.get(4));
-    assertEquals(datastore.get(response.get(4).key()), response.get(4));
+    List<Entity> response = datastore.add(PARTIAL_ENTITY3, ENTITY3, PARTIAL_ENTITY3, pe);
+    assertEquals(4, response.size());
+    assertEquals(PARTIAL_ENTITY3.properties(), response.get(0).properties());
+    assertEquals(PARTIAL_ENTITY3.properties(), datastore.get(response.get(0).key()).properties());
+    assertSame(ENTITY3, response.get(1));
+    assertEquals(ENTITY3, datastore.get(response.get(1).key()));
+    assertEquals(PARTIAL_ENTITY3.properties(), response.get(2).properties());
+    assertEquals(PARTIAL_ENTITY3.properties(), datastore.get(response.get(2).key()).properties());
+    assertEquals(pe.properties(), response.get(3).properties());
+    assertEquals(pe.key(), response.get(3).key());
+    assertEquals(pe.properties(), datastore.get(response.get(3).key()).properties());
+    assertEquals(pe.key(), datastore.get(response.get(3).key()).key());
+    assertEquals(pe, response.get(3));
+    assertEquals(datastore.get(response.get(3).key()), response.get(3));
   }
 
   @Test

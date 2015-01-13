@@ -38,6 +38,16 @@ public final class Key extends PartialKey {
       this.id = id;
     }
 
+    private Builder(PartialKey copyFrom, String name) {
+      super(copyFrom);
+      this.name = name;
+    }
+
+    private Builder(PartialKey copyFrom, long id) {
+      super(copyFrom);
+      this.id = id;
+    }
+
     private Builder(Key copyFrom) {
       super(copyFrom);
       if (copyFrom.hasId()) {
@@ -156,6 +166,14 @@ public final class Key extends PartialKey {
 
   public static Builder builder(Key copyFrom) {
     return new Builder(copyFrom);
+  }
+
+  public static Builder builder(PartialKey copyFrom, String name) {
+    return new Builder(copyFrom, name);
+  }
+
+  public static Builder builder(PartialKey copyFrom, long id) {
+    return new Builder(copyFrom, id);
   }
 
   public static Builder builder(Key parent, String kind, String name) {

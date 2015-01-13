@@ -11,26 +11,28 @@ public final class NullValue extends Value<Void> {
   static final BaseMarshaller<Void, NullValue, Builder> MARSHALLER =
       new BaseMarshaller<Void, NullValue, Builder>() {
 
-    @Override
-    public Builder newBuilder(Void value) {
-      return builder();
-    }
+        private static final long serialVersionUID = 2785573597627128832L;
 
-    @Override
-    public int getProtoFieldId() {
-      return 0;
-    }
+        @Override
+        public Builder newBuilder(Void value) {
+          return builder();
+        }
 
-    @Override
-    protected Void getValue(DatastoreV1.Value from) {
-      return null;
-    }
+        @Override
+        public int getProtoFieldId() {
+          return 0;
+        }
 
-    @Override
-    protected void setValue(NullValue from, DatastoreV1.Value.Builder to) {
-      // nothing to set
-    }
-  };
+        @Override
+        protected Void getValue(DatastoreV1.Value from) {
+          return null;
+        }
+
+        @Override
+        protected void setValue(NullValue from, DatastoreV1.Value.Builder to) {
+          // nothing to set
+        }
+      };
 
   public static final class Builder extends Value.BaseBuilder<Void, NullValue, Builder> {
 

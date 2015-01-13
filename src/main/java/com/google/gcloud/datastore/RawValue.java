@@ -9,26 +9,28 @@ public final class RawValue extends Value<DatastoreV1.Value> {
   static final BaseMarshaller<DatastoreV1.Value, RawValue, Builder> MARSHALLER =
       new BaseMarshaller<DatastoreV1.Value, RawValue, Builder>() {
 
-    @Override
-    public Builder newBuilder(DatastoreV1.Value value) {
-      return builder(value);
-    }
+        private static final long serialVersionUID = 5320642719486106244L;
 
-    @Override
-    public int getProtoFieldId() {
-      return 0;
-    }
+        @Override
+        public Builder newBuilder(DatastoreV1.Value value) {
+          return builder(value);
+        }
 
-    @Override
-    protected DatastoreV1.Value getValue(DatastoreV1.Value from) {
-      return from;
-    }
+        @Override
+        public int getProtoFieldId() {
+          return 0;
+        }
 
-    @Override
-    protected void setValue(RawValue from, DatastoreV1.Value.Builder to) {
-      to.mergeFrom(from.get());
-    }
-  };
+        @Override
+        protected DatastoreV1.Value getValue(DatastoreV1.Value from) {
+          return from;
+        }
+
+        @Override
+        protected void setValue(RawValue from, DatastoreV1.Value.Builder to) {
+          to.mergeFrom(from.get());
+        }
+      };
 
   static final class Builder extends Value.BaseBuilder<DatastoreV1.Value, RawValue, Builder> {
 

@@ -12,26 +12,28 @@ public final class StringValue extends Value<String> {
   static final BaseMarshaller<String, StringValue, Builder> MARSHALLER =
       new BaseMarshaller<String, StringValue, Builder>() {
 
-    @Override
-    public int getProtoFieldId() {
-      return STRING_VALUE_FIELD_NUMBER;
-    }
+        private static final long serialVersionUID = -359610204134164436L;
 
-    @Override
-    public Builder newBuilder(String value) {
-      return builder(value);
-    }
+        @Override
+        public int getProtoFieldId() {
+          return STRING_VALUE_FIELD_NUMBER;
+        }
 
-    @Override
-    protected String getValue(DatastoreV1.Value from) {
-      return from.getStringValue();
-    }
+        @Override
+        public Builder newBuilder(String value) {
+          return builder(value);
+        }
 
-    @Override
-    protected void setValue(StringValue from, DatastoreV1.Value.Builder to) {
-      to.setStringValue(from.get());
-    }
-  };
+        @Override
+        protected String getValue(DatastoreV1.Value from) {
+          return from.getStringValue();
+        }
+
+        @Override
+        protected void setValue(StringValue from, DatastoreV1.Value.Builder to) {
+          to.setStringValue(from.get());
+        }
+      };
 
   public static final class Builder extends Value.BaseBuilder<String, StringValue, Builder> {
 

@@ -11,29 +11,30 @@ public final class DateTimeValue extends Value<DateTime> {
   static final BaseMarshaller<DateTime, DateTimeValue, Builder> MARSHALLER =
       new BaseMarshaller<DateTime, DateTimeValue, Builder>() {
 
-    @Override
-    public int getProtoFieldId() {
-      return TIMESTAMP_MICROSECONDS_VALUE_FIELD_NUMBER;
-    }
+        private static final long serialVersionUID = -5695812592049332840L;
 
-    @Override
-    public Builder newBuilder(DateTime value) {
-      return builder(value);
-    }
+        @Override
+        public int getProtoFieldId() {
+          return TIMESTAMP_MICROSECONDS_VALUE_FIELD_NUMBER;
+        }
 
-    @Override
-    protected DateTime getValue(DatastoreV1.Value from) {
-      return new DateTime(from.getTimestampMicrosecondsValue());
-    }
+        @Override
+        public Builder newBuilder(DateTime value) {
+          return builder(value);
+        }
 
-    @Override
-    protected void setValue(DateTimeValue from, DatastoreV1.Value.Builder to) {
-      to.setTimestampMicrosecondsValue(from.get().timestampMicroseconds());
-    }
-  };
+        @Override
+        protected DateTime getValue(DatastoreV1.Value from) {
+          return new DateTime(from.getTimestampMicrosecondsValue());
+        }
 
-  public static final class Builder
-      extends Value.BaseBuilder<DateTime, DateTimeValue, Builder> {
+        @Override
+        protected void setValue(DateTimeValue from, DatastoreV1.Value.Builder to) {
+          to.setTimestampMicrosecondsValue(from.get().timestampMicroseconds());
+        }
+      };
+
+  public static final class Builder extends Value.BaseBuilder<DateTime, DateTimeValue, Builder> {
 
     private Builder() {
       super(Type.DATE_TIME);

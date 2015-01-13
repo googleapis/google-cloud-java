@@ -129,11 +129,13 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     P build();
   }
 
-  interface BuilderFactory<V, P extends Value<V>, B extends Builder<V, P, B>> {
+  interface BuilderFactory<V, P extends Value<V>, B extends Builder<V, P, B>>
+      extends java.io.Serializable {
     B newBuilder(V value);
   }
 
-  interface Marshaller<V, P extends Value<V>, B extends Builder<V, P, B>> {
+  interface Marshaller<V, P extends Value<V>, B extends Builder<V, P, B>>
+      extends java.io.Serializable {
 
     B fromProto(DatastoreV1.Value proto);
 
@@ -144,6 +146,8 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 
   abstract static class BaseMarshaller<V, P extends Value<V>, B extends Builder<V, P, B>>
       implements Marshaller<V, P, B>, BuilderFactory<V, P, B> {
+
+    private static final long serialVersionUID = 2880767488942992985L;
 
     @Override
     public final B fromProto(DatastoreV1.Value proto) {

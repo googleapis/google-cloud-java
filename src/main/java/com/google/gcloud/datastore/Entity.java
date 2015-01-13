@@ -33,6 +33,11 @@ public final class Entity extends PartialEntity {
       key = entity.key();
     }
 
+    private Builder(Key key, BaseEntity entity) {
+      super(entity);
+      this.key = key;
+    }
+
     public Builder key(Key key) {
       this.key = checkNotNull(key);
       return this;
@@ -73,5 +78,9 @@ public final class Entity extends PartialEntity {
 
   public static Builder builder(Entity copyFrom) {
     return new Builder(copyFrom);
+  }
+
+  public static Builder builder(Key key, PartialEntity copyFrom) {
+    return new Builder(key, copyFrom);
   }
 }

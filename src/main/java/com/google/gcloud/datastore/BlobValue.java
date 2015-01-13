@@ -11,26 +11,28 @@ public final class BlobValue extends Value<Blob> {
   static final BaseMarshaller<Blob, BlobValue, Builder> MARSHALLER =
       new BaseMarshaller<Blob, BlobValue, Builder>() {
 
-    @Override
-    public int getProtoFieldId() {
-      return BLOB_VALUE_FIELD_NUMBER;
-    }
+        private static final long serialVersionUID = -823515687083612387L;
 
-    @Override
-    public Builder newBuilder(Blob value) {
-      return builder(value);
-    }
+        @Override
+        public int getProtoFieldId() {
+          return BLOB_VALUE_FIELD_NUMBER;
+        }
 
-    @Override
-    protected Blob getValue(DatastoreV1.Value from) {
-      return new Blob(from.getBlobValue(), false);
-    }
+        @Override
+        public Builder newBuilder(Blob value) {
+          return builder(value);
+        }
 
-    @Override
-    protected void setValue(BlobValue from, DatastoreV1.Value.Builder to) {
-      to.setBlobValue(from.get().byteString());
-    }
-  };
+        @Override
+        protected Blob getValue(DatastoreV1.Value from) {
+          return new Blob(from.getBlobValue(), false);
+        }
+
+        @Override
+        protected void setValue(BlobValue from, DatastoreV1.Value.Builder to) {
+          to.setBlobValue(from.get().byteString());
+        }
+      };
 
   public static final class Builder extends Value.BaseBuilder<Blob, BlobValue, Builder> {
 
