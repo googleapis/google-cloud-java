@@ -106,7 +106,7 @@ public class LocalGcdHelper {
     }
 
     File datasetFolder = new File(gcdFolder, GCD + '/' + dataset);
-    datasetFolder.delete();
+    deleteRecurse(datasetFolder.toPath());
 
     // TODO: if System.getProperty("os.name").startsWith("Windows") use cmd.exe /c and gcd.cmd
     Process temp = new ProcessBuilder()
@@ -209,7 +209,7 @@ public class LocalGcdHelper {
               String path = reader.readLine();
               deleteRecurse(Paths.get(path));
             }
-          file.delete();
+            file.delete();
           }
           return;
         default:
@@ -221,8 +221,9 @@ public class LocalGcdHelper {
 
   public static boolean isActive(String dataset) {
     try {
-      String path = "/datastore/v1beta2/datasets/" + dataset + "/lookup";
-      URL url = new URL("http://localhost:" + PORT + path);
+      StringBuilder urlBuilder = new StringBuilder("http://localhost:").append(PORT);
+      urlBuilder.append("/datastore/v1beta2/datasets/").append(dataset).append("/lookup");
+      URL url = new URL(urlBuilder.toString());
       try (BufferedReader reader =
                new BufferedReader(new InputStreamReader(url.openStream(), UTF_8))) {
         return "Valid RPC".equals(reader.readLine());

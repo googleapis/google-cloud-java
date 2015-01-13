@@ -11,26 +11,28 @@ public final class DoubleValue extends Value<Double> {
   static final BaseMarshaller<Double, DoubleValue, Builder> MARSHALLER =
       new BaseMarshaller<Double, DoubleValue, Builder>() {
 
-    @Override
-    public int getProtoFieldId() {
-      return DOUBLE_VALUE_FIELD_NUMBER;
-    }
+        private static final long serialVersionUID = 3935522813529400538L;
 
-    @Override
-    public Builder newBuilder(Double value) {
-      return builder(value);
-    }
+        @Override
+        public int getProtoFieldId() {
+          return DOUBLE_VALUE_FIELD_NUMBER;
+        }
 
-    @Override
-    protected Double getValue(DatastoreV1.Value from) {
-      return from.getDoubleValue();
-    }
+        @Override
+        public Builder newBuilder(Double value) {
+          return builder(value);
+        }
 
-    @Override
-    protected void setValue(DoubleValue from, DatastoreV1.Value.Builder to) {
-      to.setDoubleValue(from.get());
-    }
-  };
+        @Override
+        protected Double getValue(DatastoreV1.Value from) {
+          return from.getDoubleValue();
+        }
+
+        @Override
+        protected void setValue(DoubleValue from, DatastoreV1.Value.Builder to) {
+          to.setDoubleValue(from.get());
+        }
+      };
 
   public static final class Builder extends Value.BaseBuilder<Double, DoubleValue, Builder> {
 

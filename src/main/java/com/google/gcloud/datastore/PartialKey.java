@@ -38,15 +38,6 @@ public class PartialKey extends BaseKey {
     super(dataset, namespace, path);
   }
 
-  public Key newKey(String name) {
-    return Key.builder(dataset(), kind(), name)
-        .namespace(namespace()).ancestors(ancestors()).build();
-  }
-
-  public Key newKey(long id) {
-    return Key.builder(dataset(), kind(), id).namespace(namespace()).ancestors(ancestors()).build();
-  }
-
   @Override
   protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(DatastoreV1.Key.parseFrom(bytesPb));

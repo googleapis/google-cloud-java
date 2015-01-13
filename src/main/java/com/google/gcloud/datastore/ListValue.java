@@ -16,32 +16,34 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
   static final BaseMarshaller<List<? extends Value<?>>, ListValue, Builder> MARSHALLER =
       new BaseMarshaller<List<? extends Value<?>>, ListValue, Builder>() {
 
-    @Override
-    public int getProtoFieldId() {
-      return LIST_VALUE_FIELD_NUMBER;
-    }
+        private static final long serialVersionUID = -3193794036327640106L;
 
-    @Override
-    public Builder newBuilder(List<? extends Value<?>> values) {
-      return builder().set(values);
-    }
+        @Override
+        public int getProtoFieldId() {
+          return LIST_VALUE_FIELD_NUMBER;
+        }
 
-    @Override
-    protected List<Value<?>> getValue(DatastoreV1.Value from) {
-      List<Value<?>> properties = new ArrayList<>(from.getListValueCount());
-      for (DatastoreV1.Value valuePb : from.getListValueList()) {
-        properties.add(Value.fromPb(valuePb));
-      }
-      return properties;
-    }
+        @Override
+        public Builder newBuilder(List<? extends Value<?>> values) {
+          return builder().set(values);
+        }
 
-    @Override
-    protected void setValue(ListValue from, DatastoreV1.Value.Builder to) {
-      for (Value<?> property : from.get()) {
-        to.addListValue(property.toPb());
-      }
-    }
-  };
+        @Override
+        protected List<Value<?>> getValue(DatastoreV1.Value from) {
+          List<Value<?>> properties = new ArrayList<>(from.getListValueCount());
+          for (DatastoreV1.Value valuePb : from.getListValueList()) {
+            properties.add(Value.fromPb(valuePb));
+          }
+          return properties;
+        }
+
+        @Override
+        protected void setValue(ListValue from, DatastoreV1.Value.Builder to) {
+          for (Value<?> property : from.get()) {
+            to.addListValue(property.toPb());
+          }
+        }
+      };
 
   public static final class Builder extends
       Value.BaseBuilder<List<? extends Value<?>>, ListValue, Builder> {
