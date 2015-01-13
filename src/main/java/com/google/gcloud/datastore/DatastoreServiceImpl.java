@@ -163,7 +163,7 @@ final class DatastoreServiceImpl implements DatastoreService {
       if (entity instanceof  Entity) {
         completeEntity = (Entity) entity;
       } else if (entity.key() instanceof Key) {
-        completeEntity = entity.toEntity((Key) entity.key());
+        completeEntity = Entity.builder((Key) entity.key(), entity).build();
       }
       if (completeEntity != null) {
         if (completeEntities.put(completeEntity.key(), completeEntity) != null) {
@@ -186,7 +186,7 @@ final class DatastoreServiceImpl implements DatastoreService {
       if (completeEntity != null) {
         responseBuilder.add(completeEntity);
       } else {
-        responseBuilder.add(entity.toEntity(Key.fromPb(allocatedKeys.next())));
+        responseBuilder.add(Entity.builder(Key.fromPb(allocatedKeys.next()), entity).build());
       }
     }
     return responseBuilder.build();
@@ -366,11 +366,12 @@ final class DatastoreServiceImpl implements DatastoreService {
     rollback(requestPb.build());
   }
 
-  DatastoreV1.RollbackResponse rollback(final DatastoreV1.RollbackRequest requestPb) {
+  void rollback(final DatastoreV1.RollbackRequest requestPb) {
     try {
-      return RetryHelper.runWithRetries(new Callable<DatastoreV1.RollbackResponse>() {
-        @Override public DatastoreV1.RollbackResponse call() throws DatastoreException {
-          return datastore.rollback(requestPb);
+      RetryHelper.runWithRetries(new Callable<Void>() {
+        @Override public Void call() throws DatastoreException {
+          datastore.rollback(requestPb);
+          return null;
         }
       }, retryParams, EXCEPTION_HANDLER);
     } catch (RetryHelperException e) {

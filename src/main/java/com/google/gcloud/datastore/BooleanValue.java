@@ -11,26 +11,28 @@ public final class BooleanValue extends Value<Boolean> {
   static final BaseMarshaller<Boolean, BooleanValue, Builder> MARSHALLER =
       new BaseMarshaller<Boolean, BooleanValue, Builder>() {
 
-    @Override
-    public int getProtoFieldId() {
-      return BOOLEAN_VALUE_FIELD_NUMBER;
-    }
+        private static final long serialVersionUID = 7080467411349092522L;
 
-    @Override
-    public Builder newBuilder(Boolean value) {
-      return builder(value);
-    }
+        @Override
+        public int getProtoFieldId() {
+          return BOOLEAN_VALUE_FIELD_NUMBER;
+        }
 
-    @Override
-    protected Boolean getValue(DatastoreV1.Value from) {
-      return from.getBooleanValue();
-    }
+        @Override
+        public Builder newBuilder(Boolean value) {
+          return builder(value);
+        }
 
-    @Override
-    protected void setValue(BooleanValue from, DatastoreV1.Value.Builder to) {
-      to.setBooleanValue(from.get());
-    }
-  };
+        @Override
+        protected Boolean getValue(DatastoreV1.Value from) {
+          return from.getBooleanValue();
+        }
+
+        @Override
+        protected void setValue(BooleanValue from, DatastoreV1.Value.Builder to) {
+          to.setBooleanValue(from.get());
+        }
+      };
 
   public static final class Builder extends Value.BaseBuilder<Boolean, BooleanValue, Builder> {
 

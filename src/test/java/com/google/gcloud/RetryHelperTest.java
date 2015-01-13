@@ -42,6 +42,22 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class RetryHelperTest {
 
+  static class E1Exception extends Exception {
+    private static final long serialVersionUID = 3874933713392137001L;
+  }
+
+  static class E2Exception extends E1Exception {
+    private static final long serialVersionUID = -8710227162480133598L;
+  }
+
+  static class E3Exception extends E1Exception {
+    private static final long serialVersionUID = -7794256022024001666L;
+  }
+
+  static class E4Exception extends E2Exception {
+    private static final long serialVersionUID = -5508018234693709156L;
+  }
+
   @Test
   public void testTriesWithExceptionHandling() {
     assertNull(RetryHelper.getContext());
@@ -67,22 +83,6 @@ public class RetryHelperTest {
       assertEquals(1, count.intValue());
     }
     assertNull(RetryHelper.getContext());
-
-    class E1Exception extends Exception {
-      private static final long serialVersionUID = 3874933713392137001L;
-    }
-
-    class E2Exception extends E1Exception {
-      private static final long serialVersionUID = -8710227162480133598L;
-    }
-
-    class E3Exception extends E1Exception {
-      private static final long serialVersionUID = -7794256022024001666L;
-    }
-
-    class E4Exception extends E2Exception {
-      private static final long serialVersionUID = -5508018234693709156L;
-    }
 
     params = RetryParams.builder().initialRetryDelayMillis(0).retryMaxAttempts(5).build();
     handler = ExceptionHandler.builder()
@@ -161,14 +161,8 @@ public class RetryHelperTest {
     private final AtomicLong nanos = new AtomicLong();
 
     // Advances the ticker value by {@code time} in {@code timeUnit}.
-    FakeTicker advance(long time, TimeUnit timeUnit) {
-      return advance(timeUnit.toNanos(time));
-    }
-
-    // Advances the ticker value by {@code nanoseconds}.
-    FakeTicker advance(long nanoseconds) {
-      nanos.addAndGet(nanoseconds);
-      return this;
+    void advance(long time, TimeUnit timeUnit) {
+      nanos.addAndGet(timeUnit.toNanos(time));
     }
 
     @Override

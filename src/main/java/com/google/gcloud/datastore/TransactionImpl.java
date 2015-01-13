@@ -15,9 +15,9 @@ import java.util.Map;
 final class TransactionImpl extends BatchImpl implements Transaction {
 
   private final ByteString transaction;
-  private boolean wasRolledback;
+  private boolean rolledback;
 
-  class ResponseImpl extends BatchImpl.ResponseImpl implements Transaction.Response {
+  static class ResponseImpl extends BatchImpl.ResponseImpl implements Transaction.Response {
 
     public ResponseImpl(DatastoreV1.CommitResponse response) {
       super(response);
@@ -77,15 +77,15 @@ final class TransactionImpl extends BatchImpl implements Transaction {
   @Override
   public void rollback() {
     super.validateActive();
-    if (!wasRolledback) {
+    if (!rolledback) {
       datastore.rollbackTransaction(transaction);
     }
-    wasRolledback = true;
+    rolledback = true;
   }
 
   @Override
   public boolean active() {
-    return super.active() && !wasRolledback;
+    return super.active() && !rolledback;
   }
 
   @Override
@@ -96,7 +96,7 @@ final class TransactionImpl extends BatchImpl implements Transaction {
   @Override
   protected void validateActive() {
     super.validateActive();
-    if (wasRolledback) {
+    if (rolledback) {
       throw throwInvalidRequest(getName() + " is not active (was rolledback)");
     }
   }

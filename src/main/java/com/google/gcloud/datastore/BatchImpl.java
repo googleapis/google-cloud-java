@@ -23,11 +23,9 @@ class BatchImpl implements Batch {
   private final Set<Key> toDelete = new LinkedHashSet<>();
   private final boolean force;
   final DatastoreServiceImpl datastore;
-
   private boolean active = true;
 
-
-  class ResponseImpl implements Response {
+  static class ResponseImpl implements Response {
 
     private final DatastoreV1.CommitResponse response;
 

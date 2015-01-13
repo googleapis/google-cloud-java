@@ -11,26 +11,28 @@ public final class KeyValue extends Value<Key> {
   static final BaseMarshaller<Key, KeyValue, Builder> MARSHALLER =
       new BaseMarshaller<Key, KeyValue, Builder>() {
 
-    @Override
-    public int getProtoFieldId() {
-      return KEY_VALUE_FIELD_NUMBER;
-    }
+        private static final long serialVersionUID = 5449133205064700403L;
 
-    @Override
-    public Builder newBuilder(Key key) {
-      return builder(key);
-    }
+        @Override
+        public int getProtoFieldId() {
+          return KEY_VALUE_FIELD_NUMBER;
+        }
 
-    @Override
-    protected Key getValue(DatastoreV1.Value from) {
-      return Key.fromPb(from.getKeyValue());
-    }
+        @Override
+        public Builder newBuilder(Key key) {
+          return builder(key);
+        }
 
-    @Override
-    protected void setValue(KeyValue from, DatastoreV1.Value.Builder to) {
-      to.setKeyValue(from.get().toPb());
-    }
-  };
+        @Override
+        protected Key getValue(DatastoreV1.Value from) {
+          return Key.fromPb(from.getKeyValue());
+        }
+
+        @Override
+        protected void setValue(KeyValue from, DatastoreV1.Value.Builder to) {
+          to.setKeyValue(from.get().toPb());
+        }
+      };
 
   public static final class Builder extends Value.BaseBuilder<Key, KeyValue, Builder> {
 

@@ -61,7 +61,7 @@ public interface DatastoreService extends DatastoreReaderWriter {
    *     either newly allocated or the same one if was already complete
    * @throws DatastoreServiceException upon failure
    * @throws IllegalArgumentException if any of the given entities is missing a key
-   * @see #add(PartialKey)
+   * @see #add(PartialEntity)
    */
   List<Entity> add(PartialEntity... entity);
 

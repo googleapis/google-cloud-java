@@ -11,26 +11,28 @@ public final class LongValue extends Value<Long> {
   static final BaseMarshaller<Long, LongValue, Builder> MARSHALLER =
       new BaseMarshaller<Long, LongValue, Builder>() {
 
-    @Override
-    public int getProtoFieldId() {
-      return INTEGER_VALUE_FIELD_NUMBER;
-    }
+        private static final long serialVersionUID = 2137414214660959845L;
 
-    @Override
-    public Builder newBuilder(Long value) {
-      return builder(value);
-    }
+        @Override
+        public int getProtoFieldId() {
+          return INTEGER_VALUE_FIELD_NUMBER;
+        }
 
-    @Override
-    protected Long getValue(DatastoreV1.Value from) {
-      return from.getIntegerValue();
-    }
+        @Override
+        public Builder newBuilder(Long value) {
+          return builder(value);
+        }
 
-    @Override
-    protected void setValue(LongValue from, DatastoreV1.Value.Builder to) {
-      to.setIntegerValue(from.get());
-    }
-  };
+        @Override
+        protected Long getValue(DatastoreV1.Value from) {
+          return from.getIntegerValue();
+        }
+
+        @Override
+        protected void setValue(LongValue from, DatastoreV1.Value.Builder to) {
+          to.setIntegerValue(from.get());
+        }
+      };
 
   public static final class Builder extends Value.BaseBuilder<Long, LongValue, Builder> {
 
