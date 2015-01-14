@@ -4,15 +4,19 @@ import java.nio.ByteBuffer;
 
 public interface Bucket {
 
+  String id();
+
   String name();
 
   Acl acl();
 
-  void updateAcl(Acl acl);
-
   Acl defaultObjectAcl();
 
+  Cors cors();
+
   void updateDefaultObjectAcl();
+  void updateAcl(Acl acl);
+
 
 
 
