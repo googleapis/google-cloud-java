@@ -36,7 +36,7 @@ public class LocalGcdHelper {
 
   public static final String DEFAULT_DATASET = "dataset1";
   public static final int PORT = 8080;
-  private static final String GCD = "gcd-v1beta2-rev1-2.1.1";
+  private static final String GCD = "gcd-head";
   private static final String GCD_LOC = '/' + GCD + ".zip";
 
   private static class ProcessStreamReader extends Thread {
