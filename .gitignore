@@ -1,29 +1,12 @@
 .gitignore
 
-*.py[cod]
-*.sw[op]
-
-# C extensions
-*.so
-
 # Packages
-*.egg
-*.egg-info
 dist
 build
-eggs
-parts
 bin
 var
 sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
-__pycache__
-
-# Installer logs
-pip-log.txt
+target
 
 # Unit test / coverage reports
 .coverage
@@ -41,20 +24,10 @@ nosetests.xml
 .idea
 .settings
 .DS_Store
-target
 
 # Built documentation
-docs/_build
+docs/
 
-# Virtual environment
-env/
-coverage.xml
-
-# Regression test environment variables.
-regression/local_test_setup
-
-# Make sure a generated file isn't accidentally committed.
-pylintrc_reduced
 
 # Wheel directory used in Travis builds.
-gcloud-python-wheels/
+gcloud-java-wheels/
