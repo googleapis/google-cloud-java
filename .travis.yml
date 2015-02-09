@@ -1,7 +1,22 @@
 language: java
 jdk:
-  - oraclejdk8
-  - oraclejdk7
-  - openjdk7
+- oraclejdk8
+- oraclejdk7
+- openjdk7
+before_install:
+- mvn clean
+- git clone -b travis `git config --get remote.origin.url` target/travis
+- cp target/travis/settings.xml ~/.m2/settings.xml
 install: mvn install -DskipTests=true
 script: mvn verify
+branches:
+  only:
+  - master
+after_success:
+- mvn cobertura:cobertura coveralls:report
+- mvn site --settings target/travis/settings.xml
+env:
+  global:
+  - secure: Jjjcy3kHNMRWFBS5ePAnslbyqtoNdByOGyW4TD8wsuotQ/2lg0Yg8WulwoZATu0taTinhMDuMR/WR2S6t53hDvK776EonNjj6/yGOG3tuCIn5Nas4Py3OBt6Mv8hxe6DBOdWqYLZzNSJXlaWN+XFd1CtDE8pKGmIZveGgH84ZwI=
+  - secure: pOh4A3AxXcmWhBXlXauKhIlozzmnTqOF6VPGxLNIsevVbC4X3GfN3Ek6Zb8+mc7tUydtGiINbpBNuXQ7rgmU+7jOjvoMky/YmsF011H9uwiSkX0nVboSZdla5zRD8R4mUzn88hySq9twjn+Ppya489urVkjzAYRA0S6fDvEjbDQ=
+  - secure: aDkeYt8EXbS8W7QgQtXQj74t/qhxlxS0IlOZeYbCSo3P0ekRHa2OD06RenSDcm74ea91rLMU/XzHyp0iUCoJCHboOhQ0OK5e/ZmKN67h/gjuJg5cEm6SFq58X0ftRX7bg8bKKv8u6iKZZ6YlapMMeRK470ublWWbArZV9BJ7qe0=
