@@ -29,9 +29,9 @@ import com.google.gcloud.datastore.Query.Type;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
-
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -42,7 +42,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @RunWith(JUnit4.class)
-public class DatastoreServiceIntegrationTest {
+public class DatastoreServiceTest {
 
   private static final String DATASET = LocalGcdHelper.DEFAULT_DATASET;
   private static final String KIND1 = "kind1";
@@ -86,13 +86,18 @@ public class DatastoreServiceIntegrationTest {
   private DatastoreServiceOptions options;
   private DatastoreService datastore;
   private DatastoreHelper helper;
-  private LocalGcdHelper gcdHelper;
 
-  @Before
-  public void setUp() throws IOException, InterruptedException {
+  private static LocalGcdHelper gcdHelper;
+
+  @BeforeClass
+  public static void beforeClass() throws IOException, InterruptedException {
     if (!LocalGcdHelper.isActive(DATASET)) {
       gcdHelper = LocalGcdHelper.start(DATASET);
     }
+  }
+
+  @Before
+  public void setUp() throws IOException, InterruptedException {
     options = DatastoreServiceOptions.builder()
         .dataset(DATASET)
         .host("http://localhost:" + LocalGcdHelper.PORT)
@@ -104,8 +109,8 @@ public class DatastoreServiceIntegrationTest {
     datastore.add(ENTITY1, ENTITY2);
   }
 
-  @After
-  public void tearDown() throws IOException, InterruptedException {
+  @AfterClass
+  public static void afterClass() throws IOException, InterruptedException {
     if (gcdHelper != null) {
       gcdHelper.stop();
     }

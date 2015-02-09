@@ -16,27 +16,22 @@
 
 package com.google.gcloud.storage;
 
-public class Key {
+import java.io.Closeable;
+import java.io.Serializable;
+import java.nio.channels.ReadableByteChannel;
 
-  // TODO: add builder, factory method, toURL, from URL, equals,hashCode, toString
-  private final String bucket;
-  private final String name;
+/**
+ * A readable byte channel for reading data from Google Cloud Storage.
+ *
+ *  Implementations of this class may buffer data internally to reduce remote calls.
+ *
+ *  This class is @{link Serializable}, which allows incremental reads.
+ */
+public interface InputChannel extends ReadableByteChannel, Serializable, Closeable {
 
-  /*
-  Builder() {
+  StorageObject.Key key();
 
-  }*/
+  int size();
 
-  Key(String bucket, String name) {
-    this.bucket = bucket;
-    this.name = name;
-  }
-
-  public String bucket() {
-    return bucket;
-  }
-
-  public String name() {
-    return name;
-  }
+  void seek(int position);
 }
