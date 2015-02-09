@@ -16,6 +16,8 @@
 
 package com.google.gcloud.datastore;
 
+import java.util.List;
+
 /**
  * An interface to represent a batch of write operations.
  * Any write operation that is applied on a batch will only be sent
@@ -34,7 +36,8 @@ package com.google.gcloud.datastore;
  */
 public interface Batch extends DatastoreBatchWriter {
 
-  interface Response extends DatastoreBatchWriter.Response {
+  interface Response {
+    List<Key> generatedKeys();
   }
 
   /**

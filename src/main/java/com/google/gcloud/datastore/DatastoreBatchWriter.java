@@ -16,17 +16,11 @@
 
 package com.google.gcloud.datastore;
 
-import java.util.List;
-
 /**
  * An interface to represent a batch of write operations.
  * All write operation for a batch writer will be applied to the Datastore in one RPC call.
  */
 interface DatastoreBatchWriter extends DatastoreWriter {
-
-  interface Response {
-    List<Key> generatedKeys();
-  }
 
   /**
    * {@inheritDoc}

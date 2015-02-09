@@ -16,7 +16,7 @@
 
 package com.google.gcloud.storage;
 
-import java.nio.ByteBuffer;
+import java.util.Iterator;
 
 public interface Bucket {
 
@@ -24,25 +24,24 @@ public interface Bucket {
 
   String name();
 
+  Cors cors();
+
   Acl acl();
 
   Acl defaultObjectAcl();
 
-  Cors cors();
+  void updateCors(Cors cors);
 
-  void updateDefaultObjectAcl();
   void updateAcl(Acl acl);
 
+  void updateDefaultObjectAcl();
 
+  void delete(String... objectName);
 
+  void compose(Iterable<String> sourceObjectNames, String destObjectName);
 
+  void copy(String sourceObjectName, StorageObject.Key destObjectKey);
 
-
-  void delete(Key... objectKey);
-
-  void compose(Iterable<String> source, String dest);
-
-  void copy(String source, String dest);
 
   // TODO (ozarov): consider replace with Object that has a reference to bucket and name
   // that object can return its own meta-data, update its own meta-data, replace its content
@@ -50,7 +49,14 @@ public interface Bucket {
   //void copy(String source, String bucket, String dest);
   // Also consider read with an offset (and limit).
 
-  void put(String name, ByteBuffer bytes);
+  // returns null if not exists
+  StorageObject get(String objectName);
+
+  Iterator<StorageObject> get(String... objectName);
+
+  InputChannel getInputChannel(String ObjectName);
+
+  OutputChannel getOutputChannel(String ObjectName);
 
   // TODO: add listing
 }

@@ -16,9 +16,18 @@
 
 package com.google.gcloud.storage;
 
-public interface StorageService {
+import java.io.Closeable;
+import java.io.Serializable;
+import java.nio.channels.WritableByteChannel;
 
-  Iterable<Bucket> listBuckets();
+/**
+ * A writable byte channel for writing data to Google Cloud Storage.
+ *
+ * Implementations of this class may further buffer data internally to reduce remote calls.
+ * Written data will only be visible after calling {@link #close()}.
+ * This class is serializable, to allow incremental writes.
+ */
+public interface OutputChannel extends WritableByteChannel, Serializable, Closeable {
 
-  Bucket getBucket(String bucketName);
+  StorageObject.Key key();
 }
