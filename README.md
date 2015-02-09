@@ -2,6 +2,7 @@ Google Cloud for Java
 =====================
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java)
 
 Java idiomatic client for Google Cloud Platform services. Supported APIs include:
 
@@ -11,7 +12,7 @@ Java idiomatic client for Google Cloud Platform services. Supported APIs include
 > Note: This package is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
 
-Documentation and examples are available [here](https://github.com/GoogleCloudePlatform/gcloud-java/gh-pages/apidocs).
+Documentation and examples are available [here](https://googlecloudeplatform.github.com/gcloud-java/apidocs).
 
 ## Google Cloud Datastore
 

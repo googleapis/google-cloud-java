@@ -16,32 +16,47 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.gcloud.datastore.DatastoreServiceException.throwInvalidRequest;
-
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.base.Function;
 import com.google.common.collect.Iterators;
+import com.google.common.collect.Lists;
+import com.google.gcloud.datastore.TransactionOption.ForceWrites;
 import com.google.gcloud.datastore.TransactionOption.IsolationLevel;
 import com.google.protobuf.ByteString;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-final class TransactionImpl extends BatchImpl implements Transaction {
+final class TransactionImpl extends BaseDatastoreBatchWriter implements Transaction {
 
+  private final DatastoreServiceImpl datastore;
   private final ByteString transaction;
+  private final boolean force;
   private boolean rolledback;
 
-  static class ResponseImpl extends BatchImpl.ResponseImpl implements Transaction.Response {
+  static class ResponseImpl implements Transaction.Response {
+
+    private final DatastoreV1.CommitResponse response;
 
     public ResponseImpl(DatastoreV1.CommitResponse response) {
-      super(response);
+      this.response = response;
+    }
+
+    @Override
+    public List<Key> generatedKeys() {
+      return Lists.transform(response.getMutationResult().getInsertAutoIdKeyList(),
+          new Function<DatastoreV1.Key, Key>() {
+            @Override public Key apply(DatastoreV1.Key keyPb) {
+              return Key.fromPb(keyPb);
+            }
+          });
     }
   }
 
   TransactionImpl(DatastoreServiceImpl datastore, TransactionOption... options) {
-    super(datastore, getBatchOptions(options));
+    super("transaction");
+    this.datastore = datastore;
     DatastoreV1.BeginTransactionRequest.Builder requestPb =
         DatastoreV1.BeginTransactionRequest.newBuilder();
     Map<Class<? extends TransactionOption>, TransactionOption> optionsMap =
@@ -50,18 +65,9 @@ final class TransactionImpl extends BatchImpl implements Transaction {
     if (isolationLevel != null) {
       requestPb.setIsolationLevel(isolationLevel.level().toPb());
     }
+    ForceWrites forceWrites = (ForceWrites) optionsMap.get(TransactionOption.ForceWrites.class);
+    force = forceWrites == null ? false : forceWrites.force();
     transaction = datastore.requestTransactionId(requestPb);
-  }
-
-  private static BatchOption[] getBatchOptions(TransactionOption... options) {
-    List<BatchOption> batchOptions = new ArrayList<>(options.length);
-    for (TransactionOption option : options) {
-      BatchOption batchOption = option.toBatchWriteOption();
-      if (batchOption != null) {
-        batchOptions.add(batchOption);
-      }
-    }
-    return batchOptions.toArray(new BatchOption[batchOptions.size()]);
   }
 
   @Override
@@ -87,41 +93,28 @@ final class TransactionImpl extends BatchImpl implements Transaction {
 
   @Override
   public Transaction.Response commit() {
-    return new ResponseImpl(commitRequest());
+    validateActive();
+    DatastoreV1.Mutation.Builder mutationPb = toMutationPb();
+    if (force) {
+      mutationPb.setForce(force);
+    }
+    DatastoreV1.CommitRequest.Builder requestPb = DatastoreV1.CommitRequest.newBuilder();
+    requestPb.setMode(DatastoreV1.CommitRequest.Mode.TRANSACTIONAL);
+    requestPb.setTransaction(transaction);
+    requestPb.setMutation(mutationPb);
+    DatastoreV1.CommitResponse responsePb = datastore.commit(requestPb.build());
+    deactivate();
+    return new ResponseImpl(responsePb);
   }
 
   @Override
   public void rollback() {
-    super.validateActive();
-    if (!rolledback) {
-      datastore.rollbackTransaction(transaction);
-    }
-    rolledback = true;
-  }
-
-  @Override
-  public boolean active() {
-    return super.active() && !rolledback;
-  }
-
-  @Override
-  protected String getName() {
-    return "transaction";
-  }
-
-  @Override
-  protected void validateActive() {
-    super.validateActive();
     if (rolledback) {
-      throw throwInvalidRequest(getName() + " is not active (was rolledback)");
+      return;
     }
-  }
-
-  @Override
-  protected DatastoreV1.CommitRequest.Builder newCommitRequest() {
-    DatastoreV1.CommitRequest.Builder requestPb = DatastoreV1.CommitRequest.newBuilder();
-    requestPb.setMode(DatastoreV1.CommitRequest.Mode.TRANSACTIONAL);
-    requestPb.setTransaction(transaction);
-    return requestPb;
+    validateActive();
+    datastore.rollbackTransaction(transaction);
+    deactivate();
+    rolledback = true;
   }
 }

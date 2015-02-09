@@ -17,6 +17,7 @@
 package com.google.gcloud.datastore;
 
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * A Google cloud datastore transaction.
@@ -51,7 +52,8 @@ import java.util.Iterator;
  */
 public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter {
 
-  interface Response extends DatastoreBatchWriter.Response {
+  interface Response {
+    List<Key> generatedKeys();
   }
 
   /**

@@ -1,0 +1,23 @@
+GCloud Java: Idiomatic Java Client for Google Cloud Platform services. 
+
+ This is a Java Client for accessing Google Cloud Platorm services such as Datastore, Storage, PubSub and others.
+ This library is in a early stage of its development and may occasionally make backwards-incompatible changes,
+ but it is already usable.
+ 
+* Features
+ 
+	* {{{https://cloud.google.com/datastore/}Google Cloud Datastore}}
+ 	
+* Links
+  
+   	* {{{https://github.com/aozarov/git-demo}GitHub repository}}
+   	
+   	* {{{http://aozarov.github.io/git-demo/apidocs/index.html}Javadocs}}
+   	
+   	* {{{http://aozarov.github.io/git-demo/dependencies.html}Dependencies}}
+   	
+   	* {{{https://travis-ci.org/aozarov/git-demo} Continous Integration System (Travis-CI)}}
+   	
+   	* {{{https://github.com/aozarov/git-demo/issues?page=1&state=open}Issues}}
+
+   	* {{{https://coveralls.io/r/aozarov/git-demo?branch=master}Coverage}}
