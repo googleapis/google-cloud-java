@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.7433056325023084" branch-rate="0.6324786324786325" lines-covered="1610" lines-valid="2166" branches-covered="444" branches-valid="702" complexity="1.4479495268138802" version="2.0.3" timestamp="1423527691192">
+<coverage line-rate="0.7433056325023084" branch-rate="0.6324786324786325" lines-covered="1610" lines-valid="2166" branches-covered="444" branches-valid="702" complexity="1.4479495268138802" version="2.0.3" timestamp="1423527863810">
 	<sources>
 		<source>/home/travis/build/GoogleCloudPlatform/gcloud-java/src/main/java</source>
 		<source>--source</source>
@@ -201,7 +201,7 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="216" hits="240" branch="true" condition-coverage="100% (2/2)">
+								<line number="216" hits="354" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
@@ -212,7 +212,7 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="220" hits="52" branch="false"/>
+								<line number="220" hits="166" branch="false"/>
 								<line number="221" hits="184" branch="false"/>
 							</lines>
 						</method>
@@ -331,7 +331,7 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="216" hits="240" branch="true" condition-coverage="100% (2/2)">
+						<line number="216" hits="354" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
@@ -342,7 +342,7 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="220" hits="52" branch="false"/>
+						<line number="220" hits="166" branch="false"/>
 						<line number="221" hits="184" branch="false"/>
 						<line number="227" hits="134" branch="false"/>
 						<line number="228" hits="2" branch="false"/>
@@ -555,7 +555,7 @@
 						</method>
 						<method name="access$600" signature="(Lcom/google/gcloud/ExceptionHandler$RetryInfo;)Lcom/google/gcloud/ExceptionHandler$Interceptor$RetryResult;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="154" hits="577" branch="false"/>
+								<line number="154" hits="691" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.0" branch-rate="0.0">
@@ -582,7 +582,7 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="154" hits="577" branch="false"/>
+						<line number="154" hits="691" branch="false"/>
 						<line number="159" hits="24" branch="false"/>
 						<line number="161" hits="24" branch="false"/>
 						<line number="162" hits="24" branch="false"/>
