@@ -117,4 +117,9 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     deactivate();
     rolledback = true;
   }
+
+  @Override
+  public DatastoreService datastore() {
+    return datastore;
+  }
 }

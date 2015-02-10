@@ -109,4 +109,9 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    */
   @Override
   boolean active();
+
+  /**
+   * Returns the transaction associated {@link DatastoreService}.
+   */
+  DatastoreService datastore();
 }

@@ -72,4 +72,9 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
     deactivate();
     return new ResponseImpl(responsePb);
   }
+
+  @Override
+  public DatastoreService datastore() {
+    return datastore;
+  }
 }
