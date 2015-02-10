@@ -20,4 +20,4 @@ GCloud Java: Idiomatic Java Client for Google Cloud Platform services.
    	
    	* {{{https://github.com/GoogleCloudPlatform/gcloud-java/issues?page=1&state=open}Issues}}
 
-   	* {{{https://coveralls.io/r/GoogleCloudPlatform/gcloud-java/issues?branch=master}Coverage}}
+   	* {{{https://coveralls.io/r/GoogleCloudPlatform/gcloud-java/}Coverage}}
