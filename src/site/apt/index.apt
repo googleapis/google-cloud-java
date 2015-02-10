@@ -10,14 +10,14 @@ GCloud Java: Idiomatic Java Client for Google Cloud Platform services.
  	
 * Links
   
-   	* {{{https://github.com/aozarov/git-demo}GitHub repository}}
+   	* {{{https://github.com/GoogleCloudPlatform/gcloud-java}GitHub repository}}
    	
-   	* {{{http://aozarov.github.io/git-demo/apidocs/index.html}Javadocs}}
+   	* {{{http://GoogleCloudPlatform.github.io/gcloud-java/apidocs/index.html}Javadocs}}
    	
-   	* {{{http://aozarov.github.io/git-demo/dependencies.html}Dependencies}}
+   	* {{{http://GoogleCloudPlatform.github.io/gcloud-java/dependencies.html}Dependencies}}
    	
-   	* {{{https://travis-ci.org/aozarov/git-demo} Continous Integration System (Travis-CI)}}
+   	* {{{https://travis-ci.org/GoogleCloudPlatform/gcloud-java} Continous Integration System (Travis-CI)}}
    	
-   	* {{{https://github.com/aozarov/git-demo/issues?page=1&state=open}Issues}}
+   	* {{{https://github.com/GoogleCloudPlatform/gcloud-java/issues?page=1&state=open}Issues}}
 
-   	* {{{https://coveralls.io/r/aozarov/git-demo?branch=master}Coverage}}
+   	* {{{https://coveralls.io/r/GoogleCloudPlatform/gcloud-java/issues?branch=master}Coverage}}
