@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.747876620473849" branch-rate="0.6324786324786325" lines-covered="1673" lines-valid="2237" branches-covered="444" branches-valid="702" complexity="1.4479495268138802" version="2.0.3" timestamp="1423529815900">
+<coverage line-rate="0.7510058113544926" branch-rate="0.6339031339031339" lines-covered="1680" lines-valid="2237" branches-covered="445" branches-valid="702" complexity="1.4479495268138802" version="2.0.3" timestamp="1423674502191">
 	<sources>
 		<source>/home/travis/build/GoogleCloudPlatform/gcloud-java/src/main/java</source>
 		<source>--source</source>
@@ -176,20 +176,20 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="201" hits="21" branch="true" condition-coverage="100% (2/2)">
+								<line number="201" hits="19" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="202" hits="5" branch="false"/>
 								<line number="203" hits="5" branch="false"/>
-								<line number="205" hits="16" branch="true" condition-coverage="100% (2/2)">
+								<line number="205" hits="14" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="206" hits="2" branch="false"/>
-								<line number="208" hits="16" branch="false"/>
+								<line number="208" hits="14" branch="false"/>
 								<line number="209" hits="24" branch="false"/>
 								<line number="210" hits="24" branch="false"/>
 								<line number="211" hits="24" branch="false"/>
@@ -207,7 +207,7 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="216" hits="358" branch="true" condition-coverage="100% (2/2)">
+								<line number="216" hits="238" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
@@ -218,7 +218,7 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="220" hits="170" branch="false"/>
+								<line number="220" hits="50" branch="false"/>
 								<line number="221" hits="184" branch="false"/>
 							</lines>
 						</method>
@@ -318,20 +318,20 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="201" hits="21" branch="true" condition-coverage="100% (2/2)">
+						<line number="201" hits="19" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="202" hits="5" branch="false"/>
 						<line number="203" hits="5" branch="false"/>
-						<line number="205" hits="16" branch="true" condition-coverage="100% (2/2)">
+						<line number="205" hits="14" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="206" hits="2" branch="false"/>
-						<line number="208" hits="16" branch="false"/>
+						<line number="208" hits="14" branch="false"/>
 						<line number="209" hits="24" branch="false"/>
 						<line number="210" hits="24" branch="false"/>
 						<line number="211" hits="24" branch="false"/>
@@ -340,7 +340,7 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="216" hits="358" branch="true" condition-coverage="100% (2/2)">
+						<line number="216" hits="238" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
@@ -351,7 +351,7 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="220" hits="170" branch="false"/>
+						<line number="220" hits="50" branch="false"/>
 						<line number="221" hits="184" branch="false"/>
 						<line number="227" hits="134" branch="false"/>
 						<line number="228" hits="2" branch="false"/>
@@ -569,7 +569,7 @@
 						</method>
 						<method name="access$600" signature="(Lcom/google/gcloud/ExceptionHandler$RetryInfo;)Lcom/google/gcloud/ExceptionHandler$Interceptor$RetryResult;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="154" hits="703" branch="false"/>
+								<line number="154" hits="575" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.0" branch-rate="0.0">
@@ -596,7 +596,7 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="154" hits="703" branch="false"/>
+						<line number="154" hits="575" branch="false"/>
 						<line number="159" hits="24" branch="false"/>
 						<line number="161" hits="24" branch="false"/>
 						<line number="162" hits="24" branch="false"/>
@@ -1526,7 +1526,7 @@
 				</class>
 			</classes>
 		</package>
-		<package name="com.google.gcloud.datastore" line-rate="0.7765726681127982" branch-rate="0.6359060402684564" complexity="1.4540750323415266">
+		<package name="com.google.gcloud.datastore" line-rate="0.7803687635574837" branch-rate="0.6375838926174496" complexity="1.4540750323415266">
 			<classes>
 				<class name="com.google.gcloud.datastore.BaseDatastoreBatchWriter" filename="com/google/gcloud/datastore/BaseDatastoreBatchWriter.java" line-rate="0.8875" branch-rate="0.7894736842105263" complexity="2.2941176470588234">
 					<methods>
@@ -4840,25 +4840,25 @@
 					<lines>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.datastore.DateTime" filename="com/google/gcloud/datastore/DateTime.java" line-rate="0.42857142857142855" branch-rate="0.6666666666666666" complexity="1.1538461538461537">
+				<class name="com.google.gcloud.datastore.DateTime" filename="com/google/gcloud/datastore/DateTime.java" line-rate="0.9285714285714286" branch-rate="0.8333333333333334" complexity="1.1538461538461537">
 					<methods>
-						<method name="copyFrom" signature="(Ljava/util/Calendar;)Lcom/google/gcloud/datastore/DateTime;" line-rate="0.0" branch-rate="1.0">
+						<method name="copyFrom" signature="(Ljava/util/Calendar;)Lcom/google/gcloud/datastore/DateTime;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="89" hits="0" branch="false"/>
+								<line number="89" hits="5" branch="false"/>
 							</lines>
 						</method>
-						<method name="copyFrom" signature="(Ljava/util/Date;)Lcom/google/gcloud/datastore/DateTime;" line-rate="0.0" branch-rate="1.0">
+						<method name="copyFrom" signature="(Ljava/util/Date;)Lcom/google/gcloud/datastore/DateTime;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="85" hits="0" branch="false"/>
+								<line number="85" hits="11" branch="false"/>
 							</lines>
 						</method>
-						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="0.6666666666666666">
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="0.8333333333333334">
 							<lines>
-								<line number="58" hits="54" branch="true" condition-coverage="66% (4/6)">
+								<line number="58" hits="56" branch="true" condition-coverage="83% (5/6)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 										<condition number="1" type="jump" coverage="50%"/>
-										<condition number="2" type="jump" coverage="50%"/>
+										<condition number="2" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 							</lines>
@@ -4870,29 +4870,29 @@
 						</method>
 						<method name="now" signature="()Lcom/google/gcloud/datastore/DateTime;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="81" hits="3" branch="false"/>
+								<line number="81" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="timestampMicroseconds" signature="()J" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="63" hits="70" branch="false"/>
+								<line number="63" hits="71" branch="false"/>
 							</lines>
 						</method>
-						<method name="timestampMillis" signature="()J" line-rate="0.0" branch-rate="1.0">
+						<method name="timestampMillis" signature="()J" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="67" hits="0" branch="false"/>
+								<line number="67" hits="5" branch="false"/>
 							</lines>
 						</method>
-						<method name="toCalendar" signature="()Ljava/util/Calendar;" line-rate="0.0" branch-rate="1.0">
+						<method name="toCalendar" signature="()Ljava/util/Calendar;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="75" hits="0" branch="false"/>
-								<line number="76" hits="0" branch="false"/>
-								<line number="77" hits="0" branch="false"/>
+								<line number="75" hits="1" branch="false"/>
+								<line number="76" hits="1" branch="false"/>
+								<line number="77" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="toDate" signature="()Ljava/util/Date;" line-rate="0.0" branch-rate="1.0">
+						<method name="toDate" signature="()Ljava/util/Date;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="71" hits="0" branch="false"/>
+								<line number="71" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="toPb" signature="()Lcom/google/api/services/datastore/DatastoreV1$Value;" line-rate="1.0" branch-rate="1.0">
@@ -4914,22 +4914,22 @@
 					<lines>
 						<line number="36" hits="1" branch="false"/>
 						<line number="48" hits="0" branch="false"/>
-						<line number="58" hits="54" branch="true" condition-coverage="66% (4/6)">
+						<line number="58" hits="56" branch="true" condition-coverage="83% (5/6)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 								<condition number="1" type="jump" coverage="50%"/>
-								<condition number="2" type="jump" coverage="50%"/>
+								<condition number="2" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="63" hits="70" branch="false"/>
-						<line number="67" hits="0" branch="false"/>
-						<line number="71" hits="0" branch="false"/>
-						<line number="75" hits="0" branch="false"/>
-						<line number="76" hits="0" branch="false"/>
-						<line number="77" hits="0" branch="false"/>
-						<line number="81" hits="3" branch="false"/>
-						<line number="85" hits="0" branch="false"/>
-						<line number="89" hits="0" branch="false"/>
+						<line number="63" hits="71" branch="false"/>
+						<line number="67" hits="5" branch="false"/>
+						<line number="71" hits="1" branch="false"/>
+						<line number="75" hits="1" branch="false"/>
+						<line number="76" hits="1" branch="false"/>
+						<line number="77" hits="1" branch="false"/>
+						<line number="81" hits="4" branch="false"/>
+						<line number="85" hits="11" branch="false"/>
+						<line number="89" hits="5" branch="false"/>
 						<line number="94" hits="1" branch="false"/>
 						<line number="99" hits="1" branch="false"/>
 					</lines>
