@@ -78,7 +78,7 @@ public final class DateTime extends Serializable<DatastoreV1.Value> {
   }
 
   public static DateTime now() {
-    return new DateTime(System.nanoTime() / 1000L);
+    return copyFrom(new Date());
   }
 
   public static DateTime copyFrom(Date date) {
