@@ -23,8 +23,11 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.api.services.datastore.DatastoreV1.Value;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.TextFormat;
+import com.google.protobuf.TextFormat.ParseException;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -41,6 +44,7 @@ public final class Cursor extends Serializable<DatastoreV1.Value> {
   private final transient ByteString byteString;
 
   Cursor(ByteString byteString) {
+    Preconditions.checkArgument(byteString.isValidUtf8(), "content is not a valid UTF-8");
     this.byteString = byteString;
   }
 
@@ -73,7 +77,7 @@ public final class Cursor extends Serializable<DatastoreV1.Value> {
    */
   public String toUrlSafe() {
     try {
-      return URLEncoder.encode(toPb().toString(), UTF_8.name());
+      return URLEncoder.encode(TextFormat.printToString(toPb()), UTF_8.name());
     } catch (UnsupportedEncodingException e) {
       throw new IllegalStateException("Unexpected encoding exception", e);
     }
@@ -85,8 +89,10 @@ public final class Cursor extends Serializable<DatastoreV1.Value> {
   public static Cursor fromUrlSafe(String urlSafe) {
     try {
       String utf8Str = URLDecoder.decode(urlSafe, UTF_8.name());
-      return fromPb(DatastoreV1.Value.parseFrom(ByteString.copyFromUtf8(utf8Str)));
-    } catch (UnsupportedEncodingException | InvalidProtocolBufferException e) {
+      DatastoreV1.Value.Builder builder = DatastoreV1.Value.newBuilder();
+      TextFormat.merge(utf8Str, builder);
+      return fromPb(builder.build());
+    } catch (UnsupportedEncodingException | ParseException e) {
       throw new IllegalStateException("Unexpected decoding exception", e);
     }
   }
