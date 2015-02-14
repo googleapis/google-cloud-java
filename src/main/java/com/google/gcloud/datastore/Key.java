@@ -21,8 +21,8 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.TextFormat;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -138,7 +138,7 @@ public final class Key extends PartialKey {
    */
   public String toUrlSafe() {
     try {
-      return URLEncoder.encode(toString(), UTF_8.name());
+      return URLEncoder.encode(TextFormat.printToString(toPb()), UTF_8.name());
     } catch (UnsupportedEncodingException e) {
       throw new IllegalStateException("Unexpected encoding exception", e);
     }
@@ -152,11 +152,12 @@ public final class Key extends PartialKey {
   public static Key fromUrlSafe(String urlSafe) {
     try {
       String utf8Str = URLDecoder.decode(urlSafe, UTF_8.name());
-      DatastoreV1.Key keyPb = DatastoreV1.Key.parseFrom(ByteString.copyFromUtf8(utf8Str));
-      return fromPb(keyPb);
+      DatastoreV1.Key.Builder builder = DatastoreV1.Key.newBuilder();
+      TextFormat.merge(utf8Str, builder);
+      return fromPb(builder.build());
     } catch (UnsupportedEncodingException e) {
       throw new IllegalStateException("Unexpected decoding exception", e);
-    } catch (InvalidProtocolBufferException e) {
+    } catch (TextFormat.ParseException e) {
       throw new IllegalArgumentException("Could not parse key", e);
     }
   }
