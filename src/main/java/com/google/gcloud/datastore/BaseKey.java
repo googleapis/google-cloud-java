@@ -107,6 +107,7 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
   }
 
   BaseKey(String dataset, String namespace, ImmutableList<PathElement> path) {
+    Preconditions.checkArgument(!path.isEmpty(), "Path must not be empty");
     this.dataset = dataset;
     this.namespace = namespace;
     this.path = path;
