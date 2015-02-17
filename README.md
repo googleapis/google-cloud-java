@@ -26,26 +26,28 @@ consistency for all other queries.
 Follow the [activation instructions][cloud-datastore-activation] to use the Google
 Cloud Datastore API with your project.
 
-    import com.google.gcloud.datastore.DatastoreService;
-    import com.google.gcloud.datastore.DatastoreServiceFactory;
-    import com.google.gcloud.datastore.DatastoreServiceOptions;
-    import com.google.gcloud.datastore.Entity;
-    import com.google.gcloud.datastore.Key;
-    import com.google.gcloud.datastore.KeyFactory;
+```java
+import com.google.gcloud.datastore.DatastoreService;
+import com.google.gcloud.datastore.DatastoreServiceFactory;
+import com.google.gcloud.datastore.DatastoreServiceOptions;
+import com.google.gcloud.datastore.Entity;
+import com.google.gcloud.datastore.Key;
+import com.google.gcloud.datastore.KeyFactory;
 
-    DatastoreServiceOptions options = DatastoreServiceOptions.builder().dataset("...").build();
-    DatastoreService datastore = DatastoreServiceFactory.getDefault(options);
-    KeyFactory keyFactory = new KeyFactory(datastore).kind("...");
-    Key key = keyFactory.newKey(keyName);
-    Entity entity = datastore.get(key);
-    if (entity == null) {
-      entity = Entity.builder(key)
-          .set("name", "John Do")
-          .set("age", 30)
-          .set("updated", false)
-          .build();
-      datastore.put(entity);
-    }
+DatastoreServiceOptions options = DatastoreServiceOptions.builder().dataset("...").build();
+DatastoreService datastore = DatastoreServiceFactory.getDefault(options);
+KeyFactory keyFactory = new KeyFactory(datastore).kind("...");
+Key key = keyFactory.newKey(keyName);
+Entity entity = datastore.get(key);
+if (entity == null) {
+  entity = Entity.builder(key)
+      .set("name", "John Do")
+      .set("age", 30)
+      .set("updated", false)
+      .build();
+  datastore.put(entity);
+}
+```
 
 ## Contributing
 
