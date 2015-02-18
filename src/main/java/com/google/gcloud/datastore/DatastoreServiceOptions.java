@@ -46,6 +46,7 @@ public class DatastoreServiceOptions extends ServiceOptions {
   private final String namespace;
   private final boolean force;
   private final Datastore datastore;
+  private final boolean normalizeDataset;
 
   public static class Builder extends ServiceOptions.Builder<Builder> {
 
@@ -53,6 +54,7 @@ public class DatastoreServiceOptions extends ServiceOptions {
     private String namespace;
     private boolean force;
     private Datastore datastore;
+    private boolean normalizeDataset = true;
 
     private Builder() {
     }
@@ -61,6 +63,9 @@ public class DatastoreServiceOptions extends ServiceOptions {
       super(options);
       dataset = options.dataset;
       force = options.force;
+      namespace = options.namespace;
+      datastore = options.datastore;
+      normalizeDataset = options.normalizeDataset;
     }
 
     @Override
@@ -87,10 +92,16 @@ public class DatastoreServiceOptions extends ServiceOptions {
       this.force = force;
       return this;
     }
+
+    Builder normalizeDataset(boolean normalizeDataset) {
+      this.normalizeDataset = normalizeDataset;
+      return this;
+    }
   }
 
   private DatastoreServiceOptions(Builder builder) {
     super(builder);
+    normalizeDataset = builder.normalizeDataset;
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
     force = builder.force;
 
@@ -98,28 +109,33 @@ public class DatastoreServiceOptions extends ServiceOptions {
     String tempDataset = firstNonNull(builder.dataset, defaultDataset());
     Datastore tempDatastore = firstNonNull(builder.datastore,
         defaultDatastore(tempDataset, host(), httpRequestInitializer()));
-    DatastoreV1.LookupRequest.Builder requestPb = DatastoreV1.LookupRequest.newBuilder();
-    DatastoreV1.Key key = DatastoreV1.Key.newBuilder()
-        .addPathElement(DatastoreV1.Key.PathElement.newBuilder().setKind("__foo__").setName("bar"))
-        .build();
-    requestPb.addKey(key);
-    try {
-      LookupResponse responsePb = tempDatastore.lookup(requestPb.build());
-      if (responsePb.getDeferredCount() > 0) {
-        key = responsePb.getDeferred(0);
-      } else {
-        Iterator<EntityResult> combinedIter =
-            Iterables.concat(responsePb.getMissingList(), responsePb.getFoundList()).iterator();
-        key = combinedIter.next().getEntity().getKey();
+    if (builder.normalizeDataset) {
+      DatastoreV1.LookupRequest.Builder requestPb = DatastoreV1.LookupRequest.newBuilder();
+      DatastoreV1.Key key = DatastoreV1.Key.newBuilder()
+          .addPathElement(DatastoreV1.Key.PathElement.newBuilder().setKind("__foo__").setName("bar"))
+          .build();
+      requestPb.addKey(key);
+      try {
+        LookupResponse responsePb = tempDatastore.lookup(requestPb.build());
+        if (responsePb.getDeferredCount() > 0) {
+          key = responsePb.getDeferred(0);
+        } else {
+          Iterator<EntityResult> combinedIter =
+              Iterables.concat(responsePb.getMissingList(), responsePb.getFoundList()).iterator();
+          key = combinedIter.next().getEntity().getKey();
+        }
+        dataset = key.getPartitionId().getDatasetId();
+        if (builder.datastore == null && !dataset.equals(tempDataset)) {
+          datastore = defaultDatastore(dataset, host(), httpRequestInitializer());
+        } else {
+          datastore = tempDatastore;
+        }
+      } catch (DatastoreException e) {
+        throw DatastoreServiceException.translateAndThrow(e);
       }
-      dataset = key.getPartitionId().getDatasetId();
-      if (builder.datastore == null && !dataset.equals(tempDataset)) {
-        datastore = defaultDatastore(dataset, host(), httpRequestInitializer());
-      } else {
-        datastore = tempDatastore;
-      }
-    } catch (DatastoreException e) {
-      throw DatastoreServiceException.translateAndThrow(e);
+    } else {
+      dataset = tempDataset;
+      datastore = tempDatastore;
     }
   }
 

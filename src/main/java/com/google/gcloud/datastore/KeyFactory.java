@@ -64,4 +64,8 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
   protected PartialKey build() {
     return newKey();
   }
+
+  DatastoreService datastore() {
+    return service;
+  }
 }

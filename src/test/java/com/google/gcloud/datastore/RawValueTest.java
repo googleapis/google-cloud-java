@@ -16,41 +16,35 @@
 
 package com.google.gcloud.datastore;
 
+import com.google.api.services.datastore.DatastoreV1;
+import org.junit.Test;
+
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
+public class RawValueTest {
 
-public class EntityValueTest {
-
-  private static final Key KEY = Key.builder("ds", "kind", 1).build();
-  private static final Entity CONTENT = Entity.builder(KEY).set("FOO", "BAR").build();
+  private static final DatastoreV1.Value CONTENT = StringValue.of("hello").toPb();
 
   @Test
   public void testToBuilder() throws Exception {
-    EntityValue value = EntityValue.of(CONTENT);
+    RawValue value = RawValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
   public void testOf() throws Exception {
-    EntityValue value = EntityValue.of(CONTENT);
+    RawValue value = RawValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
-    assertTrue(value.hasIndexed());
-    assertFalse(value.indexed());
+    assertFalse(value.hasIndexed());
     assertFalse(value.hasMeaning());
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testIndexedNotAllowed() {
-    EntityValue.builder(CONTENT).indexed(true);
   }
 
   @Test
   public void testBuilder() throws Exception {
-    EntityValue.Builder builder = EntityValue.builder(CONTENT);
-    EntityValue value = builder.meaning(1).indexed(false).build();
+    RawValue.Builder builder = RawValue.builder(CONTENT);
+    RawValue value = builder.meaning(1).indexed(false).build();
     assertEquals(CONTENT, value.get());
     assertTrue(value.hasMeaning());
     assertEquals(Integer.valueOf(1), value.meaning());
