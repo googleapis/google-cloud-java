@@ -16,45 +16,51 @@
 
 package com.google.gcloud.datastore;
 
+import com.google.common.collect.ImmutableList;
+import org.junit.Test;
+
+import java.util.List;
+
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
+public class ListValueTest {
 
-public class EntityValueTest {
-
-  private static final Key KEY = Key.builder("ds", "kind", 1).build();
-  private static final Entity CONTENT = Entity.builder(KEY).set("FOO", "BAR").build();
+  private static final List<Value<?>> CONTENT = ImmutableList.of(NullValue.of(), StringValue.of("foo"));
 
   @Test
   public void testToBuilder() throws Exception {
-    EntityValue value = EntityValue.of(CONTENT);
+    ListValue value = ListValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
   public void testOf() throws Exception {
-    EntityValue value = EntityValue.of(CONTENT);
+    ListValue value = ListValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
-    assertTrue(value.hasIndexed());
-    assertFalse(value.indexed());
+    assertFalse(value.hasIndexed());
     assertFalse(value.hasMeaning());
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testIndexedNotAllowed() {
-    EntityValue.builder(CONTENT).indexed(true);
+  @Test(expected = DatastoreServiceException.class)
+  public void testIndexedCannotBeSpecified() {
+    ListValue.builder().indexed(false);
   }
 
   @Test
   public void testBuilder() throws Exception {
-    EntityValue.Builder builder = EntityValue.builder(CONTENT);
-    EntityValue value = builder.meaning(1).indexed(false).build();
+    ListValue.Builder builder = ListValue.builder().set(CONTENT);
+    ListValue value = builder.meaning(1).build();
     assertEquals(CONTENT, value.get());
     assertTrue(value.hasMeaning());
     assertEquals(Integer.valueOf(1), value.meaning());
-    assertTrue(value.hasIndexed());
-    assertFalse(value.indexed());
+    assertFalse(value.hasIndexed());
+
+    builder = ListValue.builder();
+    for (Value<?> v : CONTENT) {
+      builder.addValue(v);
+    }
+    assertEquals(CONTENT, builder.build().get());
   }
 }
