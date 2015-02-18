@@ -41,7 +41,7 @@ public final class ProjectionEntity extends BaseEntity {
 
     private Key key;
 
-    private Builder() {
+    Builder() {
     }
 
     private Builder(ProjectionEntity entity) {
