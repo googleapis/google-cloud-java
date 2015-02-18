@@ -29,7 +29,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.lang.reflect.Method;
+import java.util.Collections;
 import java.util.Map;
+import java.util.Set;
 
 public class ValueTest {
 
@@ -56,6 +58,23 @@ public class ValueTest {
       .build();
 
   private ImmutableMap<Type, Value<?>> typeToValue;
+
+  private class TestBuilder extends Value.BaseBuilder<Set, Value<Set>, TestBuilder> {
+    TestBuilder() {
+      super(Type.LIST);
+    }
+
+    @Override
+    public Value<Set> build() {
+      return new Value(this) {
+
+        @Override
+        public TestBuilder toBuilder() {
+          return new TestBuilder().mergeFrom(this);
+        }
+      };
+    }
+  }
 
   @Before
   public void setUp() throws Exception {
@@ -109,6 +128,11 @@ public class ValueTest {
           break;
       }
     }
+
+    TestBuilder builder = new TestBuilder();
+    assertFalse(builder.build().hasIndexed());
+    assertTrue(builder.indexed(false).build().hasIndexed());
+    assertTrue(builder.indexed(true).build().hasIndexed());
   }
 
   @Test
@@ -125,25 +149,58 @@ public class ValueTest {
           break;
       }
     }
+
+    TestBuilder builder = new TestBuilder();
+    assertNull(builder.build().indexed());
+    assertFalse(builder.indexed(false).build().indexed());
+    assertTrue(builder.indexed(true).build().indexed());
   }
 
   @Test
   public void testHasMeaning() throws Exception {
+    for (Value<?> value: typeToValue.values()) {
+      assertFalse(value.hasMeaning());
+    }
 
+    TestBuilder builder = new TestBuilder();
+    assertTrue(builder.meaning(10).build().hasMeaning());
   }
 
   @Test
   public void testMeaning() throws Exception {
+    for (Value<?> value: typeToValue.values()) {
+      assertNull(value.meaning());
+    }
 
+    TestBuilder builder = new TestBuilder();
+    assertEquals(Integer.valueOf(10), builder.meaning(10).build().meaning());
   }
 
   @Test
   public void testGet() throws Exception {
+    for (Map.Entry<Type, Value<?>> entry : typeToValue.entrySet()) {
+      Type type = entry.getKey();
+      Value<?> value = entry.getValue();
+      assertEquals(TYPES.get(type)[1], value.get());
+    }
 
+    TestBuilder builder = new TestBuilder();
+    Set<String> value = Collections.singleton("bla");
+    assertEquals(value, builder.set(value).build().get());
   }
 
   @Test
   public void testToBuilder() throws Exception {
-
+    Set<String> content = Collections.singleton("bla");
+    Value.Builder builder = new TestBuilder();
+    builder.meaning(1).set(content).indexed(true);
+    Value<?> value = builder.build();
+    builder = value.toBuilder();
+    assertEquals(Integer.valueOf(1), value.meaning());
+    assertTrue(value.hasIndexed());
+    assertTrue(value.indexed());
+    assertEquals(Type.LIST, value.type());
+    assertEquals(content, value.get());
+    assertEquals(value, builder.build());
   }
 }
