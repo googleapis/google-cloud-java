@@ -156,7 +156,7 @@
 <tr class="b">
 <td>65</td>
 <td>0</td>
-<td>34</td>
+<td>35</td>
 <td>0</td></tr></table></div>
 <div class="section">
 <h2><a name="Files"></a>Files</h2>
@@ -199,7 +199,7 @@
 <tr class="b">
 <td><a href="#com.google.gcloud.datastore.DatastoreServiceOptions.java">com/google/gcloud/datastore/DatastoreServiceOptions.java</a></td>
 <td>0</td>
-<td>1</td>
+<td>2</td>
 <td>0</td></tr>
 <tr class="a">
 <td><a href="#com.google.gcloud.datastore.DateTime.java">com/google/gcloud/datastore/DateTime.java</a></td>
@@ -273,23 +273,23 @@
 <td>imports</td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_imports.html#CustomImportOrder">CustomImportOrder</a>
 <ul>
-<li>sortImportsInGroupAlphabetically: <tt>&quot;true&quot;</tt></li>
-<li>customImportOrderRules: <tt>&quot;STATIC###SPECIAL_IMPORTS###THIRD_PARTY_PACKAGE###STANDARD_JAVA_PACKAGE&quot;</tt></li>
 <li>thirdPartyPackageRegExp: <tt>&quot;.*&quot;</tt></li>
-<li>specialImportsRegExp: <tt>&quot;com.google&quot;</tt></li></ul></td>
+<li>sortImportsInGroupAlphabetically: <tt>&quot;true&quot;</tt></li>
+<li>specialImportsRegExp: <tt>&quot;com.google&quot;</tt></li>
+<li>customImportOrderRules: <tt>&quot;STATIC###SPECIAL_IMPORTS###THIRD_PARTY_PACKAGE###STANDARD_JAVA_PACKAGE&quot;</tt></li></ul></td>
 <td>3</td>
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr>
 <tr class="a">
 <td>javadoc</td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_javadoc.html#JavadocMethod">JavadocMethod</a>
 <ul>
-<li>allowMissingParamTags: <tt>&quot;true&quot;</tt></li>
-<li>allowedAnnotations: <tt>&quot;Override, Test&quot;</tt></li>
-<li>allowThrowsTagsForSubclasses: <tt>&quot;true&quot;</tt></li>
 <li>scope: <tt>&quot;public&quot;</tt></li>
+<li>allowMissingThrowsTags: <tt>&quot;true&quot;</tt></li>
+<li>allowThrowsTagsForSubclasses: <tt>&quot;true&quot;</tt></li>
 <li>allowMissingReturnTag: <tt>&quot;true&quot;</tt></li>
+<li>allowMissingParamTags: <tt>&quot;true&quot;</tt></li>
 <li>minLineCount: <tt>&quot;2&quot;</tt></li>
-<li>allowMissingThrowsTags: <tt>&quot;true&quot;</tt></li></ul></td>
+<li>allowedAnnotations: <tt>&quot;Override, Test&quot;</tt></li></ul></td>
 <td>20</td>
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr>
 <tr class="b">
@@ -303,19 +303,27 @@
 <ul>
 <li>format: <tt>&quot;^[a-z][a-z0-9][a-zA-Z0-9]*$&quot;</tt></li></ul></td>
 <td>2</td>
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr>
+<tr class="b">
+<td>sizes</td>
+<td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_sizes.html#LineLength">LineLength</a>
+<ul>
+<li>max: <tt>&quot;100&quot;</tt></li>
+<li>ignorePattern: <tt>&quot;^package.*|^import.*|a href|href|http://|https://|ftp://&quot;</tt></li></ul></td>
+<td>1</td>
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr></table></div>
 <div class="section">
 <h2><a name="Details"></a>Details</h2>
 <div class="section">
 <h3 id="com.google.gcloud.AuthConfig.java">com/google/gcloud/AuthConfig.java</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
@@ -324,13 +332,13 @@
 <div class="section">
 <h3 id="com.google.gcloud.ServiceOptions.java">com/google/gcloud/ServiceOptions.java</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>imports</td>
 <td>CustomImportOrder</td>
@@ -339,19 +347,19 @@
 <div class="section">
 <h3 id="com.google.gcloud.datastore.Blob.java">com/google/gcloud/datastore/Blob.java</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>imports</td>
 <td>CustomImportOrder</td>
 <td>Wrong lexicographical order for 'java.io.InputStream' import.</td>
 <td>32</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
@@ -360,25 +368,25 @@
 <div class="section">
 <h3 id="com.google.gcloud.datastore.DatastoreHelper.java">com/google/gcloud/datastore/DatastoreHelper.java</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>SummaryJavadoc</td>
 <td>First sentence should be present.</td>
 <td>108</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Missing a Javadoc comment.</td>
 <td>138</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
@@ -387,31 +395,31 @@
 <div class="section">
 <h3 id="com.google.gcloud.datastore.DatastoreService.java">com/google/gcloud/datastore/DatastoreService.java</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>SummaryJavadoc</td>
 <td>First sentence should be present.</td>
 <td>84</td></tr>
-<tr class="a">
-<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
-<td>javadoc</td>
-<td>SummaryJavadoc</td>
-<td>First sentence should be present.</td>
-<td>91</td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>SummaryJavadoc</td>
 <td>First sentence should be present.</td>
-<td>98</td></tr>
+<td>91</td></tr>
 <tr class="a">
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>SummaryJavadoc</td>
+<td>First sentence should be present.</td>
+<td>98</td></tr>
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>SummaryJavadoc</td>
@@ -420,13 +428,13 @@
 <div class="section">
 <h3 id="com.google.gcloud.datastore.DatastoreServiceImpl.java">com/google/gcloud/datastore/DatastoreServiceImpl.java</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>coding</td>
 <td>OverloadMethodsDeclarationOrder</td>
@@ -435,18 +443,24 @@
 <div class="section">
 <h3 id="com.google.gcloud.datastore.DatastoreServiceOptions.java">com/google/gcloud/datastore/DatastoreServiceOptions.java</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>imports</td>
 <td>CustomImportOrder</td>
 <td>Wrong lexicographical order for 'com.google.api.services.datastore.client.Datastore' import.</td>
-<td>27</td></tr></table></div>
+<td>27</td></tr>
+<tr class="a">
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>sizes</td>
+<td>LineLength</td>
+<td>Line is longer than 100 characters (found 101).</td>
+<td>115</td></tr></table></div>
 <div class="section">
 <h3 id="com.google.gcloud.datastore.DateTime.java">com/google/gcloud/datastore/DateTime.java</h3>
 <table border="0" class="table table-striped">
