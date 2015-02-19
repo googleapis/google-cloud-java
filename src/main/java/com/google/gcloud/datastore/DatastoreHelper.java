@@ -109,7 +109,7 @@ public class DatastoreHelper implements DatastoreService {
    * Returns a new KeyFactory for this service
    */
   public KeyFactory newKeyFactory() {
-    return new KeyFactory(this);
+    return new KeyFactory(delegate);
   }
 
   /**
