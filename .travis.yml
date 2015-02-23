@@ -7,8 +7,8 @@ before_install:
 - mvn clean
 - git clone -b travis `git config --get remote.origin.url` target/travis
 - cp target/travis/settings.xml ~/.m2/settings.xml
-install: mvn install -DskipTests=true
-script: mvn verify
+install: mvn install -Dgpg.skip=true
+script: mvn verify -Dgpg.skip=true
 branches:
   only:
   - master
