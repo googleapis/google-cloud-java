@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.8000912825193975" branch-rate="0.6827195467422096" lines-covered="1753" lines-valid="2191" branches-covered="482" branches-valid="706" complexity="1.4480587618048268" version="2.0.3" timestamp="1424717451446">
+<coverage line-rate="0.8000912825193975" branch-rate="0.6827195467422096" lines-covered="1753" lines-valid="2191" branches-covered="482" branches-valid="706" complexity="1.4480587618048268" version="2.0.3" timestamp="1424717939430">
 	<sources>
 		<source>/home/travis/build/GoogleCloudPlatform/gcloud-java/src/main/java</source>
 		<source>--source</source>
