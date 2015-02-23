@@ -4,12 +4,26 @@
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>GCloud Java</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
+  <developers>
+    <developer>
+      <id>ozarov</id>
+      <name>Arie Ozarov</name>
+      <email>ozarov@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>Google</name>
+  </organization>
   <scm>
     <connection>scm:git:git@github.com:GoogleCloudPlatform/gcloud-java.git</connection>
     <developerConnection>scm:git:git@github.com:GoogleCloudPlatform/gcloud-java.git</developerConnection>
@@ -24,6 +38,16 @@
     <url>https://github.com/GoogleCloudPlatform/gcloud-java/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
   <dependencies>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -157,6 +181,57 @@
           <target>1.7</target>
           <encoding>UTF-8</encoding>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.1</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.5</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+	<artifactId>nexus-staging-maven-plugin</artifactId>
+	<version>1.6.3</version>
+	<extensions>true</extensions>
+	<configuration>
+	  <serverId>sonatype-nexus-staging</serverId>
+	  <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+	  <autoReleaseAfterClose>true</autoReleaseAfterClose>
+	</configuration>
       </plugin>
       <plugin>
         <groupId>org.eluder.coveralls</groupId>
