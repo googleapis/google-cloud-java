@@ -172,6 +172,22 @@
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.5</version>
+        <configuration>
+          <archive>
+            <addMavenDescriptor>true</addMavenDescriptor>
+            <index>true</index>
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+              <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+            </manifest>
+            <manifestEntries>
+              <artifactId>${project.artifactId}</artifactId>
+              <groupId>${project.groupId}</groupId>
+              <version>${project.version}</version>
+              <buildNumber>${buildNumber}</buildNumber>
+            </manifestEntries>
+          </archive>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -295,6 +311,8 @@
 		    <report>issue-tracking</report>
 		    <report>license</report>
 		    <report>scm</report>
+		    <report>distribution-management</report>
+		    <report>summary</report>
                   </reports>
                 </reportSet>
               </reportSets>
