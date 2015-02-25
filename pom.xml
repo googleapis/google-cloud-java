@@ -133,7 +133,7 @@
   <licenses>
     <license>
       <name>GCloud Java Software License</name>
-      <url>https://raw.github.com/GoogleCloudPlatform/gcloud-java/master/LICENSE.md</url>
+      <url>https://raw.githubusercontent.com/GoogleCloudPlatform/gcloud-java/master/LICENSE</url>
     </license>
   </licenses>
   <properties>
