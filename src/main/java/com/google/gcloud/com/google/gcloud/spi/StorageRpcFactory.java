@@ -1,0 +1,1 @@
+package com.google.gcloud.com.google.gcloud.spi;import com.google.gcloud.storage.StorageServiceOptions;public interface StorageRpcFactory extends    ServiceRpcFactory<StorageRpc, StorageServiceOptions> {}

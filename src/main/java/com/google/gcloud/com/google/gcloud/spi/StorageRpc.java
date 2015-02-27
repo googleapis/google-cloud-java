@@ -1,0 +1,1 @@
+package com.google.gcloud.com.google.gcloud.spi;import com.google.api.services.storage.model.Bucket;import java.io.IOException;import java.util.List;public interface StorageRpc {  List<Bucket> buckets() throws IOException;  Bucket bucket(String name) throws IOException;}

@@ -1,0 +1,1 @@
+package com.google.gcloud;public interface Service<O extends ServiceOptions> {  O options();}

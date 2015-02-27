@@ -1,0 +1,1 @@
+package com.google.gcloud.com.google.gcloud.spi;import com.google.gcloud.ServiceOptions;public interface ServiceRpcFactory<S, O extends ServiceOptions> {  S create(O options);}

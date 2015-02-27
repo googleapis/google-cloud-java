@@ -24,11 +24,11 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.api.services.datastore.client.DatastoreException;
 import com.google.gcloud.datastore.Query.Type;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
+
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -313,7 +313,7 @@ public class DatastoreServiceTest {
   }
 
   @Test
-  public void testRunGqlQueryNoCasting() throws DatastoreException {
+  public void testRunGqlQueryNoCasting() {
     Query<Entity> query1 = GqlQuery.builder(Type.FULL, "select * from " + KIND1).build();
     QueryResult<Entity> results1 = datastore.run(query1);
     assertTrue(results1.hasNext());
@@ -384,7 +384,7 @@ public class DatastoreServiceTest {
   }
 
   @Test
-  public void testRunStructuredQuery() throws DatastoreException {
+  public void testRunStructuredQuery() {
     StructuredQuery<Entity> query =
         StructuredQuery.builder().kind(KIND1).orderBy(OrderBy.asc("__key__")).build();
     QueryResult<Entity> results1 = datastore.run(query);

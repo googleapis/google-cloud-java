@@ -20,17 +20,15 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.gcloud.datastore.Validator.validateDataset;
 import static com.google.gcloud.datastore.Validator.validateNamespace;
 
-import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.api.services.datastore.DatastoreV1.EntityResult;
 import com.google.api.services.datastore.DatastoreV1.LookupResponse;
-import com.google.api.services.datastore.client.Datastore;
-import com.google.api.services.datastore.client.DatastoreException;
-import com.google.api.services.datastore.client.DatastoreFactory;
-import com.google.api.services.datastore.client.DatastoreOptions;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.ServiceOptions;
+import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc;
+import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
+import com.google.gcloud.com.google.gcloud.spi.ServiceRpcProvider;
 
 import java.lang.reflect.Method;
 import java.util.Iterator;
@@ -45,15 +43,16 @@ public class DatastoreServiceOptions extends ServiceOptions {
   private final String dataset;
   private final String namespace;
   private final boolean force;
-  private final Datastore datastore;
+  private final DatastoreRpc datastoreRpc;
   private final boolean normalizeDataset;
+  private final boolean defaultDatastoreRpc;
 
   public static class Builder extends ServiceOptions.Builder<Builder> {
 
     private String dataset;
     private String namespace;
     private boolean force;
-    private Datastore datastore;
+    private DatastoreRpc datastoreRpc;
     private boolean normalizeDataset = true;
 
     private Builder() {
@@ -64,17 +63,18 @@ public class DatastoreServiceOptions extends ServiceOptions {
       dataset = options.dataset;
       force = options.force;
       namespace = options.namespace;
-      datastore = options.datastore;
+      datastoreRpc = options.datastoreRpc;
       normalizeDataset = options.normalizeDataset;
     }
 
     @Override
     public DatastoreServiceOptions build() {
-      return new DatastoreServiceOptions(this);
+      DatastoreServiceOptions options = new DatastoreServiceOptions(this);
+      return normalizeDataset ? options.normalize() : options;
     }
 
-    public Builder datastore(Datastore datastore) {
-      this.datastore = datastore;
+    public Builder datastoreRpc(DatastoreRpc datastoreRpc) {
+      this.datastoreRpc = datastoreRpc;
       return this;
     }
 
@@ -104,49 +104,41 @@ public class DatastoreServiceOptions extends ServiceOptions {
     normalizeDataset = builder.normalizeDataset;
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
     force = builder.force;
-
-    // Replace provided dataset with full dataset (s~xxx, e~xxx,...)
-    String tempDataset = firstNonNull(builder.dataset, defaultDataset());
-    Datastore tempDatastore = firstNonNull(builder.datastore,
-        defaultDatastore(tempDataset, host(), httpRequestInitializer()));
-    if (builder.normalizeDataset) {
-      DatastoreV1.LookupRequest.Builder requestPb = DatastoreV1.LookupRequest.newBuilder();
-      DatastoreV1.Key key = DatastoreV1.Key.newBuilder()
-          .addPathElement(DatastoreV1.Key.PathElement.newBuilder().setKind("__foo__").setName("bar"))
-          .build();
-      requestPb.addKey(key);
-      try {
-        LookupResponse responsePb = tempDatastore.lookup(requestPb.build());
-        if (responsePb.getDeferredCount() > 0) {
-          key = responsePb.getDeferred(0);
-        } else {
-          Iterator<EntityResult> combinedIter =
-              Iterables.concat(responsePb.getMissingList(), responsePb.getFoundList()).iterator();
-          key = combinedIter.next().getEntity().getKey();
-        }
-        dataset = key.getPartitionId().getDatasetId();
-        if (builder.datastore == null && !dataset.equals(tempDataset)) {
-          datastore = defaultDatastore(dataset, host(), httpRequestInitializer());
-        } else {
-          datastore = tempDatastore;
-        }
-      } catch (DatastoreException e) {
-        throw DatastoreServiceException.translateAndThrow(e);
-      }
-    } else {
-      dataset = tempDataset;
-      datastore = tempDatastore;
-    }
+    dataset = firstNonNull(builder.dataset, defaultDataset());
+    datastoreRpc = firstNonNull(builder.datastoreRpc, ServiceRpcProvider.datastore(this));
+    defaultDatastoreRpc = builder.datastoreRpc == null;
   }
 
-  private static Datastore defaultDatastore(
-      String dataset, String host, HttpRequestInitializer initializer) {
-    DatastoreOptions options = new DatastoreOptions.Builder()
-        .dataset(dataset)
-        .host(host)
-        .initializer(initializer)
+  private DatastoreServiceOptions normalize() {
+    if (!normalizeDataset) {
+      return this;
+    }
+
+    Builder builder = toBuilder();
+    builder.normalizeDataset(false);
+    // Replace provided dataset with full dataset (s~xxx, e~xxx,...)
+    DatastoreV1.LookupRequest.Builder requestPb = DatastoreV1.LookupRequest.newBuilder();
+    DatastoreV1.Key key = DatastoreV1.Key.newBuilder()
+        .addPathElement(DatastoreV1.Key.PathElement.newBuilder().setKind("__foo__").setName("bar"))
         .build();
-    return DatastoreFactory.get().create(options);
+    requestPb.addKey(key);
+    try {
+      LookupResponse responsePb = datastoreRpc.lookup(requestPb.build());
+      if (responsePb.getDeferredCount() > 0) {
+        key = responsePb.getDeferred(0);
+      } else {
+        Iterator<EntityResult> combinedIter =
+            Iterables.concat(responsePb.getMissingList(), responsePb.getFoundList()).iterator();
+        key = combinedIter.next().getEntity().getKey();
+      }
+      builder.dataset(key.getPartitionId().getDatasetId());
+      if (defaultDatastoreRpc && !dataset.equals(builder.dataset)) {
+        builder.datastoreRpc(ServiceRpcProvider.datastore(builder.build()));
+      }
+      return new DatastoreServiceOptions(builder);
+    } catch (DatastoreRpcException e) {
+      throw DatastoreServiceException.translateAndThrow(e);
+    }
   }
 
   private static String defaultDataset() {
@@ -193,8 +185,8 @@ public class DatastoreServiceOptions extends ServiceOptions {
     return new Builder(this);
   }
 
-  public Datastore datastore() {
-    return datastore;
+  public DatastoreRpc datastoreRpc() {
+    return datastoreRpc;
   }
 
   public static Builder builder() {

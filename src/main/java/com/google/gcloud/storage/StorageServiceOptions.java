@@ -16,12 +16,12 @@
 
 package com.google.gcloud.storage;
 
-import com.google.api.client.json.jackson.JacksonFactory;
-import com.google.api.services.storage.Storage;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
+import com.google.gcloud.com.google.gcloud.spi.ServiceRpcProvider;
+import com.google.gcloud.com.google.gcloud.spi.StorageRpc;
 
 import java.util.Set;
 
@@ -31,20 +31,15 @@ public class StorageServiceOptions extends ServiceOptions {
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
   private static final String DEFAULT_PATH_DELIMITER = "/";
 
+  private final StorageRpc storageRpc;
   private final String project;
   private final String pathDelimiter;
-
-  private StorageServiceOptions(Builder builder) {
-    super(builder);
-    pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
-    project = builder.project != null ? builder.project :  getAppEngineProjectId();
-    Preconditions.checkArgument(project != null, "Missing required project id");
-  }
 
   public static class Builder extends ServiceOptions.Builder<Builder> {
 
     private String project;
     private String pathDelimiter;
+    private StorageRpc storageRpc;
 
     private Builder() {
     }
@@ -63,10 +58,23 @@ public class StorageServiceOptions extends ServiceOptions {
       return this;
     }
 
+    public Builder storageRpc(StorageRpc storageRpc) {
+      this.storageRpc = storageRpc;
+      return this;
+    }
+
     @Override
     public StorageServiceOptions build() {
       return new StorageServiceOptions(this);
     }
+  }
+
+  private StorageServiceOptions(Builder builder) {
+    super(builder);
+    pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
+    project = builder.project != null ? builder.project :  getAppEngineProjectId();
+    Preconditions.checkArgument(project != null, "Missing required project id");
+    storageRpc = MoreObjects.firstNonNull(builder.storageRpc, ServiceRpcProvider.storage(this));
   }
 
   @Override
@@ -74,9 +82,12 @@ public class StorageServiceOptions extends ServiceOptions {
     return SCOPES;
   }
 
-  Storage getStorage() {
-    return new Storage.Builder(httpTransport(), new JacksonFactory(), httpRequestInitializer())
-        .build();
+  public StorageRpc storageRpc() {
+    return storageRpc;
+  }
+
+  public String project() {
+    return project;
   }
 
   public String pathDelimiter() {
@@ -90,9 +101,5 @@ public class StorageServiceOptions extends ServiceOptions {
 
   public static Builder builder() {
     return new Builder();
-  }
-
-  public static Builder builder(StorageServiceOptions options) {
-    return new Builder(options);
   }
 }

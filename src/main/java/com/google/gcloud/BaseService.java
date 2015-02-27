@@ -1,0 +1,1 @@
+package com.google.gcloud;public abstract class BaseService<O extends ServiceOptions> implements Service<O> {  private final O options;  protected BaseService(O options) {    this.options = options;  }  @Override  public O options() {    return options;  }}

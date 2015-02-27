@@ -16,7 +16,9 @@
 
 package com.google.gcloud.storage;
 
-public interface StorageService {
+import com.google.gcloud.Service;
+
+public interface StorageService extends Service<StorageServiceOptions> {
 
   Iterable<Bucket> listBuckets();
 
