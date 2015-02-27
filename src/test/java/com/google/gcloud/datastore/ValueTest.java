@@ -25,6 +25,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.primitives.Primitives;
 import com.google.gcloud.datastore.Value.Type;
+
 import org.junit.Before;
 import org.junit.Test;
 

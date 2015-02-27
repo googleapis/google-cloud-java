@@ -16,12 +16,13 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.api.services.datastore.DatastoreV1;
-import org.junit.Test;
-
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import com.google.api.services.datastore.DatastoreV1;
+
+import org.junit.Test;
 
 public class RawValueTest {
 

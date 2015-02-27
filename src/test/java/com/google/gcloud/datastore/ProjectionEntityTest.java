@@ -1,10 +1,12 @@
 package com.google.gcloud.datastore;
 
-import org.junit.Test;
-
-import static junit.framework.TestCase.*;
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertFalse;
+import static junit.framework.TestCase.assertNull;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 
 public class ProjectionEntityTest {
 
