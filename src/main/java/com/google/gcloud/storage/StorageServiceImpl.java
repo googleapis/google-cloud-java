@@ -16,29 +16,42 @@
 
 package com.google.gcloud.storage;
 
-import com.google.api.services.storage.Storage;
+import com.google.common.base.Function;
+import com.google.common.collect.Iterables;
+import com.google.gcloud.BaseService;
+import com.google.gcloud.com.google.gcloud.spi.StorageRpc;
 
-final class StorageServiceImpl implements StorageService {
+import java.io.IOException;
 
-  private final StorageServiceOptions options;
-  private final Storage storage;
+final class StorageServiceImpl extends BaseService<StorageServiceOptions> implements StorageService {
+
+  private final StorageRpc storageRpc;
 
   StorageServiceImpl(StorageServiceOptions options) {
-    this.options = options;
-    storage = options.getStorage();
+    super(options);
+    storageRpc = options.storageRpc();
   }
 
   @Override
   public Iterable<Bucket> listBuckets() {
-    // TODO Auto-generated method stub
-    return null;
+    try {
+      return Iterables.transform(storageRpc.buckets(),
+          new Function<com.google.api.services.storage.model.Bucket, Bucket>() {
+            @Override public Bucket apply(com.google.api.services.storage.model.Bucket model) {
+              return new BucketImpl(StorageServiceImpl.this, model);
+            }
+          });
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
   }
 
   @Override
   public Bucket getBucket(String bucket) {
-    // TODO Auto-generated method stub
-    return null;
+    try {
+      return new BucketImpl(this, storageRpc.bucket(bucket));
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
   }
-
-
 }

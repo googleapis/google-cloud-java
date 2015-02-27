@@ -23,7 +23,7 @@ public abstract class DatastoreServiceFactory {
   private static final DatastoreServiceFactory INSTANCE = new DatastoreServiceFactory() {
       @Override
       public DatastoreService get(DatastoreServiceOptions options) {
-        return new DatastoreServiceImpl(options, options.datastore());
+        return new DatastoreServiceImpl(options);
       }
     };
 

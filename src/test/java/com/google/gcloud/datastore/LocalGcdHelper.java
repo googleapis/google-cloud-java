@@ -18,7 +18,7 @@ package com.google.gcloud.datastore;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.api.client.util.Strings;
+import com.google.common.base.Strings;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;

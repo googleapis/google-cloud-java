@@ -1,0 +1,1 @@
+package com.google.gcloud.storage;import java.io.IOException;public class StorageServiceException extends RuntimeException {  StorageServiceException(IOException ex) {    super(ex);  }}

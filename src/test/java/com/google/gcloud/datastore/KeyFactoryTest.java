@@ -3,7 +3,8 @@ package com.google.gcloud.datastore;
 import static junit.framework.TestCase.assertEquals;
 
 import com.google.api.services.datastore.DatastoreV1;
-import com.google.api.services.datastore.client.Datastore;
+import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc;
+
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,13 +16,13 @@ public class KeyFactoryTest {
   private static final String DATASET = "dataset";
 
   private KeyFactory keyFactory;
-  private Datastore mock;
+  private DatastoreRpc mock;
 
   @Before
   public void setUp() {
-    mock = EasyMock.createMock(Datastore.class);
-    DatastoreServiceOptions options =
-        DatastoreServiceOptions.builder().normalizeDataset(false).datastore(mock).dataset(DATASET).build();
+    mock = EasyMock.createMock(DatastoreRpc.class);
+    DatastoreServiceOptions options = DatastoreServiceOptions.builder().normalizeDataset(false)
+        .datastoreRpc(mock).dataset(DATASET).build();
     DatastoreService datastore = DatastoreServiceFactory.getDefault(options);
     keyFactory = new KeyFactory(datastore).kind("k");
   }
