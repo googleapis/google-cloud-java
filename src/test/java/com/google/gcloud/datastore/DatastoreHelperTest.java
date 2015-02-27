@@ -26,9 +26,9 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 
-import com.google.api.services.datastore.client.Datastore;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
+import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc;
 
 import org.junit.Test;
 
@@ -108,16 +108,16 @@ public class DatastoreHelperTest {
   @Test
   public void testNewKeyFactory() throws Exception {
     DatastoreService datastoreService = createStrictMock(DatastoreService.class);
-    Datastore datastore = createStrictMock(Datastore.class);
+    DatastoreRpc datastoreRpc = createStrictMock(DatastoreRpc.class);
     DatastoreServiceOptions options =
-        DatastoreServiceOptions.builder().normalizeDataset(false).datastore(datastore)
+        DatastoreServiceOptions.builder().normalizeDataset(false).datastoreRpc(datastoreRpc)
             .dataset("ds").build();
     expect(datastoreService.options()).andReturn(options).atLeastOnce();
-    replay(datastore, datastoreService);
+    replay(datastoreRpc, datastoreService);
     DatastoreHelper helper = DatastoreHelper.createFor(datastoreService);
     KeyFactory keyFactory = helper.newKeyFactory();
     assertSame(datastoreService, keyFactory.datastore());
-    verify(datastore, datastoreService);
+    verify(datastoreRpc, datastoreService);
   }
 
   @Test
