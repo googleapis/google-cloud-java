@@ -308,23 +308,23 @@
 <td>imports</td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_imports.html#CustomImportOrder">CustomImportOrder</a>
 <ul>
-<li>sortImportsInGroupAlphabetically: <tt>&quot;true&quot;</tt></li>
-<li>customImportOrderRules: <tt>&quot;STATIC###SPECIAL_IMPORTS###THIRD_PARTY_PACKAGE###STANDARD_JAVA_PACKAGE&quot;</tt></li>
 <li>thirdPartyPackageRegExp: <tt>&quot;.*&quot;</tt></li>
-<li>specialImportsRegExp: <tt>&quot;com.google&quot;</tt></li></ul></td>
+<li>sortImportsInGroupAlphabetically: <tt>&quot;true&quot;</tt></li>
+<li>specialImportsRegExp: <tt>&quot;com.google&quot;</tt></li>
+<li>customImportOrderRules: <tt>&quot;STATIC###SPECIAL_IMPORTS###THIRD_PARTY_PACKAGE###STANDARD_JAVA_PACKAGE&quot;</tt></li></ul></td>
 <td>4</td>
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr>
 <tr class="b">
 <td>javadoc</td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_javadoc.html#JavadocMethod">JavadocMethod</a>
 <ul>
-<li>allowMissingParamTags: <tt>&quot;true&quot;</tt></li>
-<li>allowedAnnotations: <tt>&quot;Override, Test&quot;</tt></li>
-<li>allowThrowsTagsForSubclasses: <tt>&quot;true&quot;</tt></li>
 <li>scope: <tt>&quot;public&quot;</tt></li>
+<li>allowMissingThrowsTags: <tt>&quot;true&quot;</tt></li>
+<li>allowThrowsTagsForSubclasses: <tt>&quot;true&quot;</tt></li>
 <li>allowMissingReturnTag: <tt>&quot;true&quot;</tt></li>
+<li>allowMissingParamTags: <tt>&quot;true&quot;</tt></li>
 <li>minLineCount: <tt>&quot;2&quot;</tt></li>
-<li>allowMissingThrowsTags: <tt>&quot;true&quot;</tt></li></ul></td>
+<li>allowedAnnotations: <tt>&quot;Override, Test&quot;</tt></li></ul></td>
 <td>24</td>
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr>
 <tr class="a">
@@ -421,7 +421,7 @@
 <td>imports</td>
 <td>CustomImportOrder</td>
 <td>Wrong lexicographical order for 'com.google.api.services.datastore.client.Datastore' import.</td>
-<td>15</td></tr></table></div>
+<td>31</td></tr></table></div>
 <div class="section">
 <h3 id="com.google.gcloud.com.google.gcloud.spi.DefaultStorageRpc.java">com/google/gcloud/com/google/gcloud/spi/DefaultStorageRpc.java</h3>
 <table border="0" class="table table-striped">
@@ -436,7 +436,7 @@
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Missing a Javadoc comment.</td>
-<td>19</td></tr></table></div>
+<td>35</td></tr></table></div>
 <div class="section">
 <h3 id="com.google.gcloud.com.google.gcloud.spi.ServiceRpcProvider.java">com/google/gcloud/com/google/gcloud/spi/ServiceRpcProvider.java</h3>
 <table border="0" class="table table-striped">
@@ -451,13 +451,13 @@
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Missing a Javadoc comment.</td>
-<td>11</td></tr>
+<td>27</td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Missing a Javadoc comment.</td>
-<td>17</td></tr></table></div>
+<td>33</td></tr></table></div>
 <div class="section">
 <h3 id="com.google.gcloud.com.google.gcloud.spi.StorageRpc.java">com/google/gcloud/com/google/gcloud/spi/StorageRpc.java</h3>
 <table border="0" class="table table-striped">
@@ -472,7 +472,7 @@
 <td>whitespace</td>
 <td>EmptyLineSeparator</td>
 <td>'METHOD_DEF' should be separated from previous statement.</td>
-<td>10</td></tr></table></div>
+<td>26</td></tr></table></div>
 <div class="section">
 <h3 id="com.google.gcloud.datastore.Blob.java">com/google/gcloud/datastore/Blob.java</h3>
 <table border="0" class="table table-striped">
@@ -772,19 +772,19 @@
 <td>sizes</td>
 <td>LineLength</td>
 <td>Line is longer than 100 characters (found 101).</td>
-<td>12</td></tr>
+<td>28</td></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>naming</td>
 <td>ParameterName</td>
 <td>Parameter name 'ObjectName' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.</td>
-<td>83</td></tr>
+<td>99</td></tr>
 <tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>naming</td>
 <td>ParameterName</td>
 <td>Parameter name 'ObjectName' must match pattern '^[a-z][a-z0-9][a-zA-Z0-9]*$'.</td>
-<td>88</td></tr></table></div>
+<td>104</td></tr></table></div>
 <div class="section">
 <h3 id="com.google.gcloud.storage.Cors.java">com/google/gcloud/storage/Cors.java</h3>
 <table border="0" class="table table-striped">
