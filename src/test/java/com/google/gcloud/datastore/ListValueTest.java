@@ -16,14 +16,15 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.common.collect.ImmutableList;
-import org.junit.Test;
-
-import java.util.List;
-
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import com.google.common.collect.ImmutableList;
+
+import org.junit.Test;
+
+import java.util.List;
 
 public class ListValueTest {
 
