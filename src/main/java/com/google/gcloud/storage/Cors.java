@@ -22,7 +22,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
-public class Cors {
+public final class Cors {
 
   private final Integer maxAgeSeconds;
   private final ImmutableList<Method> methods;
@@ -73,13 +73,28 @@ public class Cors {
       return this;
     }
 
+    public Builder methods(List<Method> methods) {
+      this.methods = ImmutableList.copyOf(methods);
+      return this;
+    }
+
     public Builder methods(Method... methods) {
       this.methods = ImmutableList.copyOf(methods);
       return this;
     }
 
+    public Builder origins(List<Origin> origins) {
+      this.origins = ImmutableList.copyOf(origins);
+      return this;
+    }
+
     public Builder origins(Origin... origins) {
       this.origins = ImmutableList.copyOf(origins);
+      return this;
+    }
+
+    public Builder responseHeaders(List<String> headers) {
+      this.responseHeaders = ImmutableList.copyOf(headers);
       return this;
     }
 
@@ -114,6 +129,14 @@ public class Cors {
 
   public List<String> responseHeaders() {
     return responseHeaders;
+  }
+
+  public Builder toBuilder() {
+    return builder()
+        .maxAgeSeconds(maxAgeSeconds)
+        .methods(methods)
+        .origins(origins)
+        .responseHeaders(responseHeaders);
   }
 
   public static Builder builder() {
