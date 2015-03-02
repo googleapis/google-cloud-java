@@ -18,9 +18,40 @@ package com.google.gcloud.storage;
 
 import com.google.gcloud.Service;
 
+import java.util.Iterator;
+
 public interface StorageService extends Service<StorageServiceOptions> {
 
-  Iterable<Bucket> listBuckets();
+  Iterable<BucketInfo> list();
 
-  Bucket getBucket(String bucketName);
+  Iterable<ObjectInfo> list(ListSettings settings);
+
+  BucketInfo get(String bucket);
+
+  Iterator<BucketInfo> get(String... bucket);
+
+  ObjectInfo get(String bucket, String object);
+
+  Iterator<ObjectInfo> get(String bucket, String... object);
+
+  void update(BucketInfo bucketInfo);
+
+  void update(ObjectInfo objectInfo);
+
+  void delete(String bucket, String... object);
+
+  void compose(String bucket, Iterable<String> sourceObjects, String destObject);
+
+  void copy(String fromBucket, String fromObject, String destBucket, String destObject);
+
+
+  ObjectReadChannel getInputChannel(String bucket, String ObjectName);
+
+  ObjectWriteChannel write(String ObjectName);
+
+  // TODO: add listing
+
+  ObjectReadChannel getInputChannel();
+
+  ObjectWriteChannel getOutputChannel();
 }

@@ -21,15 +21,17 @@ import java.io.Serializable;
 import java.nio.channels.ReadableByteChannel;
 
 /**
- * A readable byte channel for reading data from Google Cloud Storage.
+ * A channel for reading data from a Google Cloud Storage object.
  *
  *  Implementations of this class may buffer data internally to reduce remote calls.
  *
  *  This class is @{link Serializable}, which allows incremental reads.
  */
-public interface InputChannel extends ReadableByteChannel, Serializable, Closeable {
+public interface ObjectReadChannel extends ReadableByteChannel, Serializable, Closeable {
 
-  StorageObject.Key key();
+  String bucket();
+
+  String object();
 
   int size();
 
