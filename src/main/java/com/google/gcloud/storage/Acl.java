@@ -16,71 +16,68 @@
 
 package com.google.gcloud.storage;
 
-public final class Acl {
+import java.io.Serializable;
 
-  private final String domain;
-  private final Entity entity;
-  private final String entityId;
+public abstract class Acl implements Serializable {
 
-  String email();
+  private static final long serialVersionUID = 6435575339887912222L;
 
-  String etag();
+  private final Type type;
+  private final Role role;
 
-  String generation();
-
-
-  ProjectTeam projectTeam();
-
-  String role();
-
-  class ProjectTeam {
-      // ProjectNumber: The project number.
-  //ProjectNumber string `json:"projectNumber,omitempty"`
-
-  // Team: The team. Can be owners, editors, or viewers.
-  //Team string `json:"team,omitempty"`
+  public enum Role {
+    OWNER,
+    READER,
+    WRITER
   }
 
-  public static abstract class Entity {
+  public enum Type {
+    DOMAIN,
+    GROUP,
+    USER,
+    PROJECT
+  }
 
-    private final Type type;
+  public static class User extends Acl {
 
-    public static final Entity ALL_USERS = new Entity(Type.ALL_USERS);
+    private static final long serialVersionUID = 3076518036392737008L;
 
-    public enum Type {
-      USER_ID("user-userId"),
-      USER_EMAIL("user-emailAddress"),
-      GROUP_ID("group-groupId"),
-      GROUP_EMAIL("group-emailAddress"),
-      ALL_USERS("allUsers"),
-      ALL_AUTHENTICATED_USERS("allAuthenticatedUsers");
+    private String email;
 
-      private final String value;
-
-      Type(String value) {
-        this.value = value;
-      }
+    User(Role role, String email) {
+      super(Type.USER, role);
+      this.email = email;
     }
 
-    Entity(EntityType type) {
-      this.type = type;
+    String email() {
+      return email;
+    }
+
+    public static User forEmail(Role role, String email) {
+      return new User(role, email);
+    }
+
+    public static User allUsers(Role role) {
+      return forEmail(role, "allUsers");
+    }
+
+    public static User allAuthenticatedUsers(Role role) {
+      return forEmail(role, "allAuthenticatedUsers");
     }
   }
 
-  String domain();
-
-  Entity entity();
-
-  String entityId();
-
-  String email();
-
-  String etag();
-
-  String generation();
+  
+  Acl(Type type, Role role) {
+    this.type = type;
+    this.role = role;
+  }
 
 
-  ProjectTeam projectTeam();
+  public Type type() {
+    return type;
+  }
 
-  String role();
+  public Role role() {
+    return role;
+  }
 }
