@@ -45,7 +45,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   /**
    * This class represents the expected type of the result.
    *   FULL: A complete {@link Entity}.
-   *   PROJECTION: A partial entity, represented by {@link PartialEntity}.
+   *   PROJECTION: A projection entity, represented by {@link ProjectionEntity}.
    *   KEY_ONLY: An entity's {@link Key}.
    */
   public abstract static class Type<V> implements java.io.Serializable {
