@@ -32,6 +32,22 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
    */
   Transaction newTransaction(TransactionOption... options);
 
+  interface RunInTransaction {
+    void run(DatastoreReaderWriter readerWriter);
+  }
+
+
+  /**
+   * Invokes the callback's {@link RunInTransaction#run} method with a
+   * {@link DatastoreReaderWriter} that is associated with a new transaction.
+   * The transaction will be committed upon successful invocation or rollback
+   * otherwise.
+   *
+   * @param runFor the functor to call with the transactional readerWriter
+   * @param options the options for the created transaction
+   */
+  void runInTransaction(RunInTransaction runFor, TransactionOption... options);
+
   /**
    * Returns a new Batch for processing multiple write operations in one request.
    */
@@ -105,4 +121,9 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
    */
   @Override
   void delete(Key... key);
+
+  /**
+   * Returns a new KeyFactory for this service
+   */
+  KeyFactory newKeyFactory();
 }
