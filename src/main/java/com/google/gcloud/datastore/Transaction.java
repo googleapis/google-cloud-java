@@ -80,6 +80,16 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
 
   /**
    * {@inheritDoc}
+   * The requested entities will be part of this Datastore transaction (so a commit is guaranteed
+   * to fail if any of the entities was changed by others after they were seen by this transaction)
+   * but any write changes in this transaction will not be reflected by the returned entities.
+   *
+   * @throws DatastoreServiceException upon failure or if no longer active
+   */
+  List<Entity> fetch(Key... keys);
+
+  /**
+   * {@inheritDoc}
    * The entities returned by the result of this query will be part of this Datastore transaction
    * (so a commit is guaranteed to fail if any of the entities was changed by others after the
    * query was performed) but any write changes in this transaction will not be reflected by
