@@ -84,6 +84,12 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   @Override
+  public List<Entity> fetch(Key... keys) {
+    validateActive();
+    return DatastoreHelper.fetch(this, keys);
+  }
+
+  @Override
   public <T> QueryResult<T> run(Query<T> query) {
     validateActive();
     DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();

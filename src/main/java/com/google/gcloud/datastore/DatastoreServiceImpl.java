@@ -90,6 +90,10 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
     return new TransactionImpl(this, options);
   }
 
+  public void runInTransaction(RunInTransaction runFor, TransactionOption... options) {
+    DatastoreHelper.runInTransaction(this, runFor, options);
+  }
+
   @Override
   public <T> QueryResult<T> run(Query<T> query) {
     return run(null, query);
@@ -213,6 +217,11 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
     return get(null, keys);
   }
 
+  @Override
+  public List<Entity> fetch(Key... keys) {
+    return DatastoreHelper.fetch(this, keys);
+  }
+
   Iterator<Entity> get(DatastoreV1.ReadOptions readOptionsPb, final Key... keys) {
     if (keys.length == 0) {
       return Collections.emptyIterator();
@@ -329,6 +338,11 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
       }
       commitMutation(mutationPb);
     }
+  }
+
+  @Override
+  public KeyFactory newKeyFactory() {
+    return new KeyFactory(this);
   }
 
   private DatastoreV1.CommitResponse commitMutation(DatastoreV1.Mutation.Builder mutationPb) {

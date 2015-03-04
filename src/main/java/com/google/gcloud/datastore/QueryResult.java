@@ -35,7 +35,8 @@ public interface QueryResult<V> extends Iterator<V> {
   Class<?> resultClass();
 
   /**
-   * Returns the Cursor for the next result. Not currently implemented (depends on v1beta3).
+   * Returns the Cursor for the {@link #next} result.
+   * Not currently implemented (depends on v1beta3).
    */
   Cursor cursor();
 }
