@@ -38,11 +38,33 @@ public abstract class Acl implements Serializable {
     PROJECT
   }
 
+  public static class Builder {
+    private Builder() {
+
+    }
+
+    Acl build()
+  }
+
+  public static class Domain extends Acl {
+
+    private final String domain;
+
+    Domain(Role role, String domain) {
+      super(Type.USER, role);
+      this.email = email;
+    }
+
+    public static User domain(Role role, String domain) {
+      return new User(role, email);
+    }
+  }
+
   public static class User extends Acl {
 
     private static final long serialVersionUID = 3076518036392737008L;
 
-    private String email;
+    private final String email;
 
     User(Role role, String email) {
       super(Type.USER, role);
@@ -53,20 +75,20 @@ public abstract class Acl implements Serializable {
       return email;
     }
 
-    public static User forEmail(Role role, String email) {
+    public static User email(Role role, String email) {
       return new User(role, email);
     }
 
     public static User allUsers(Role role) {
-      return forEmail(role, "allUsers");
+      return email(role, "allUsers");
     }
 
     public static User allAuthenticatedUsers(Role role) {
-      return forEmail(role, "allAuthenticatedUsers");
+      return email(role, "allAuthenticatedUsers");
     }
   }
 
-  
+
   Acl(Type type, Role role) {
     this.type = type;
     this.role = role;
@@ -79,5 +101,13 @@ public abstract class Acl implements Serializable {
 
   public Role role() {
     return role;
+  }
+
+  public Builder toBuilder() {
+
+  }
+
+  public static Builder builder() {
+    return new Builder();
   }
 }
