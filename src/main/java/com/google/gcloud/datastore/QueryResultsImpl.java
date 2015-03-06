@@ -25,7 +25,7 @@ import com.google.gcloud.datastore.Query.Type;
 import java.util.Iterator;
 import java.util.Objects;
 
-class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
+class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T> {
 
   private final DatastoreServiceImpl datastore;
   private final DatastoreV1.ReadOptions readOptionsPb;
@@ -39,8 +39,8 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
   //private ByteString cursor; // only available in v1beta3
 
 
-  QueryResultImpl(DatastoreServiceImpl datastore, DatastoreV1.ReadOptions readOptionsPb,
-      Query<T> query) {
+  QueryResultsImpl(DatastoreServiceImpl datastore, DatastoreV1.ReadOptions readOptionsPb,
+                   Query<T> query) {
     this.datastore = datastore;
     this.readOptionsPb = readOptionsPb;
     this.query = query;
@@ -66,7 +66,7 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
     queryResultBatchPb = datastore.runQuery(requestPb.build()).getBatch();
     lastBatch = queryResultBatchPb.getMoreResults() != MoreResultsType.NOT_FINISHED;
     entityResultPbIter = queryResultBatchPb.getEntityResultList().iterator();
-    // cursor = resultPb.getSkippedCursor(); // only available in v1beta3
+    // cursor = resultPb.getSkippedCursor(); // available in v1beta3, use startCursor if not skipped
     actualType = Type.fromPb(queryResultBatchPb.getEntityResultType());
     if (Objects.equals(queryType, Type.PROJECTION)) {
       // projection entity can represent all type of results
@@ -97,7 +97,7 @@ class QueryResultImpl<T> extends AbstractIterator<T> implements QueryResult<T> {
   }
 
   @Override
-  public Cursor cursor() {
+  public Cursor cursorAfter() {
     //return new Cursor(cursor); // only available in v1beta3
     return null;
   }

@@ -32,21 +32,32 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
    */
   Transaction newTransaction(TransactionOption... options);
 
-  interface RunInTransaction {
-    void run(DatastoreReaderWriter readerWriter);
+
+  /**
+   * An Callback for running with a Transactional
+   * {@link com.google.gcloud.datastore.DatastoreReaderWriter}.
+   * The associated transaction will be committed after a successful return from the {@code run}
+   * method. Any propagated exception will cause the transaction to be rolled-back.
+   *
+   * @param <T> the type of the return value
+   */
+  interface TransactionCallable<T> {
+    T run(DatastoreReaderWriter readerWriter) throws Exception;
   }
 
 
   /**
-   * Invokes the callback's {@link RunInTransaction#run} method with a
+   * Invokes the callback's {@link DatastoreService.TransactionCallable#run} method with a
    * {@link DatastoreReaderWriter} that is associated with a new transaction.
-   * The transaction will be committed upon successful invocation or rollback
-   * otherwise.
+   * The transaction will be committed upon successful invocation.
+   * Any thrown exception will cause the transaction to rollback and will be propagated
+   * as a {@link DatastoreServiceException} with the original exception as its root cause.
    *
-   * @param runFor the functor to call with the transactional readerWriter
+   * @param callable the callback to call with a newly created transactional readerWriter
    * @param options the options for the created transaction
+   * @throws DatastoreServiceException upon failure
    */
-  void runInTransaction(RunInTransaction runFor, TransactionOption... options);
+  <T> T runInTransaction(TransactionCallable<T> callable, TransactionOption... options);
 
   /**
    * Returns a new Batch for processing multiple write operations in one request.

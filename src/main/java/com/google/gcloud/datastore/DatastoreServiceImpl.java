@@ -90,17 +90,18 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
     return new TransactionImpl(this, options);
   }
 
-  public void runInTransaction(RunInTransaction runFor, TransactionOption... options) {
-    DatastoreHelper.runInTransaction(this, runFor, options);
+  @Override
+  public <T> T runInTransaction(TransactionCallable<T> callable, TransactionOption... options) {
+    return DatastoreHelper.runInTransaction(this, callable, options);
   }
 
   @Override
-  public <T> QueryResult<T> run(Query<T> query) {
+  public <T> QueryResults<T> run(Query<T> query) {
     return run(null, query);
   }
 
-  <T> QueryResult<T> run(DatastoreV1.ReadOptions readOptionsPb, Query<T> query) {
-    return new QueryResultImpl<>(this, readOptionsPb, query);
+  <T> QueryResults<T> run(DatastoreV1.ReadOptions readOptionsPb, Query<T> query) {
+    return new QueryResultsImpl<>(this, readOptionsPb, query);
   }
 
   DatastoreV1.RunQueryResponse runQuery(final DatastoreV1.RunQueryRequest requestPb) {
@@ -129,10 +130,9 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
     for (PartialKey key : keys) {
       requestPb.addKey(trimNameOrId(key).toPb());
     }
-    // TODO(ozarov): will need to populate "force" after b/18594027 is fixed.
     DatastoreV1.AllocateIdsResponse responsePb = allocateIds(requestPb.build());
     Iterator<DatastoreV1.Key> keyIterator = responsePb.getKeyList().iterator();
-    ImmutableList.Builder builder = ImmutableList.builder().addAll(
+    ImmutableList.Builder<Key> builder = ImmutableList.<Key>builder().addAll(
         Iterators.transform(keyIterator, new Function<DatastoreV1.Key, Key>() {
           @Override
           public Key apply(DatastoreV1.Key keyPb) {

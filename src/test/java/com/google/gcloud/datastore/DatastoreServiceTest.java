@@ -180,7 +180,7 @@ public class DatastoreServiceTest {
     Query<Entity> query =
         StructuredQuery.builder().kind(KIND2).filter(PropertyFilter.hasAncestor(KEY2)).build();
     Transaction transaction = datastore.newTransaction();
-    QueryResult<Entity> results = transaction.run(query);
+    QueryResults<Entity> results = transaction.run(query);
     assertEquals(ENTITY2, results.next());
     assertFalse(results.hasNext());
     transaction.add(ENTITY3);
@@ -313,7 +313,7 @@ public class DatastoreServiceTest {
   @Test
   public void testRunGqlQueryNoCasting() {
     Query<Entity> query1 = GqlQuery.builder(Type.FULL, "select * from " + KIND1).build();
-    QueryResult<Entity> results1 = datastore.run(query1);
+    QueryResults<Entity> results1 = datastore.run(query1);
     assertTrue(results1.hasNext());
     assertEquals(ENTITY1, results1.next());
     assertFalse(results1.hasNext());
@@ -321,7 +321,7 @@ public class DatastoreServiceTest {
     datastore.put(ENTITY3);
     Query<? extends PartialEntity> query2 =  GqlQuery.builder(
         Type.FULL, "select * from " + KIND2 + " order by __key__").build();
-    QueryResult<? extends PartialEntity> results2 = datastore.run(query2);
+    QueryResults<? extends PartialEntity> results2 = datastore.run(query2);
     assertTrue(results2.hasNext());
     assertEquals(ENTITY2, results2.next());
     assertTrue(results2.hasNext());
@@ -334,14 +334,14 @@ public class DatastoreServiceTest {
 
     Query<Key> keyOnlyQuery =
         GqlQuery.builder(Type.KEY_ONLY, "select __key__ from " + KIND1).build();
-    QueryResult<Key> keyOnlyResults = datastore.run(keyOnlyQuery);
+    QueryResults<Key> keyOnlyResults = datastore.run(keyOnlyQuery);
     assertTrue(keyOnlyResults.hasNext());
     assertEquals(KEY1, keyOnlyResults.next());
     assertFalse(keyOnlyResults.hasNext());
 
     GqlQuery<ProjectionEntity> keyProjectionQuery = GqlQuery.builder(
         Type.PROJECTION, "select __key__ from " + KIND1).build();
-    QueryResult<ProjectionEntity> keyProjectionResult = datastore.run(keyProjectionQuery);
+    QueryResults<ProjectionEntity> keyProjectionResult = datastore.run(keyProjectionQuery);
     assertTrue(keyProjectionResult.hasNext());
     ProjectionEntity projectionEntity = keyProjectionResult.next();
     assertEquals(KEY1, projectionEntity.key());
@@ -351,7 +351,7 @@ public class DatastoreServiceTest {
     GqlQuery<ProjectionEntity> projectionQuery = GqlQuery.builder(
         Type.PROJECTION, "select str, date from " + KIND1).build();
 
-    QueryResult<ProjectionEntity> projectionResult = datastore.run(projectionQuery);
+    QueryResults<ProjectionEntity> projectionResult = datastore.run(projectionQuery);
     assertTrue(projectionResult.hasNext());
     projectionEntity = projectionResult.next();
     assertEquals("str", projectionEntity.getString("str"));
@@ -366,16 +366,16 @@ public class DatastoreServiceTest {
   public void testRunGqlQueryWithCasting() {
     @SuppressWarnings("unchecked")
     Query<Entity> query1 = (Query<Entity>) GqlQuery.builder("select * from " + KIND1).build();
-    QueryResult<Entity> results1 = datastore.run(query1);
+    QueryResults<Entity> results1 = datastore.run(query1);
     assertTrue(results1.hasNext());
     assertEquals(ENTITY1, results1.next());
     assertFalse(results1.hasNext());
 
     Query<?> query2 = GqlQuery.builder("select * from " + KIND1).build();
-    QueryResult<?> results2 = datastore.run(query2);
+    QueryResults<?> results2 = datastore.run(query2);
     assertSame(Entity.class, results2.resultClass());
     @SuppressWarnings("unchecked")
-    QueryResult<Entity> results3 = (QueryResult<Entity>) results2;
+    QueryResults<Entity> results3 = (QueryResults<Entity>) results2;
     assertTrue(results3.hasNext());
     assertEquals(ENTITY1, results3.next());
     assertFalse(results3.hasNext());
@@ -385,20 +385,20 @@ public class DatastoreServiceTest {
   public void testRunStructuredQuery() {
     StructuredQuery<Entity> query =
         StructuredQuery.builder().kind(KIND1).orderBy(OrderBy.asc("__key__")).build();
-    QueryResult<Entity> results1 = datastore.run(query);
+    QueryResults<Entity> results1 = datastore.run(query);
     assertTrue(results1.hasNext());
     assertEquals(ENTITY1, results1.next());
     assertFalse(results1.hasNext());
 
     StructuredQuery<Key> keyOnlyQuery =  StructuredQuery.keyOnlyBuilder().kind(KIND1).build();
-    QueryResult<Key> results2 = datastore.run(keyOnlyQuery);
+    QueryResults<Key> results2 = datastore.run(keyOnlyQuery);
     assertTrue(results2.hasNext());
     assertEquals(ENTITY1.key(), results2.next());
     assertFalse(results2.hasNext());
 
     StructuredQuery<ProjectionEntity> keyOnlyProjectionQuery = StructuredQuery.projectionBuilder()
         .kind(KIND1).projection(Projection.property("__key__")).build();
-    QueryResult<ProjectionEntity> results3 = datastore.run(keyOnlyProjectionQuery);
+    QueryResults<ProjectionEntity> results3 = datastore.run(keyOnlyProjectionQuery);
     assertTrue(results3.hasNext());
     ProjectionEntity projectionEntity = results3.next();
     assertEquals(ENTITY1.key(), projectionEntity.key());
@@ -414,7 +414,7 @@ public class DatastoreServiceTest {
         .limit(10)
         .build();
 
-    QueryResult<ProjectionEntity> results4 = datastore.run(projectionQuery);
+    QueryResults<ProjectionEntity> results4 = datastore.run(projectionQuery);
     assertTrue(results4.hasNext());
     ProjectionEntity entity = results4.next();
     assertEquals(ENTITY2.key(), entity.key());

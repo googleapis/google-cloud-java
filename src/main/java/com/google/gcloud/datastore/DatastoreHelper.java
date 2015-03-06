@@ -51,12 +51,16 @@ class DatastoreHelper {
     return list;
   }
 
-  static void runInTransaction(DatastoreService datastoreService,
-      DatastoreService.RunInTransaction runFor, TransactionOption... options) {
+  static <T> T runInTransaction(DatastoreService datastoreService,
+      DatastoreService.TransactionCallable<T> callable, TransactionOption... options) {
     Transaction transaction = datastoreService.newTransaction(options);
     try {
-      runFor.run(transaction);
+      T value = callable.run(transaction);
       transaction.commit();
+      return value;
+    } catch (Exception ex) {
+      transaction.rollback();
+      throw DatastoreServiceException.propagateUserException(ex);
     } finally {
       if (transaction.active()) {
         transaction.rollback();
