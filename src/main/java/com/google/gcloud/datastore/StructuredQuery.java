@@ -48,7 +48,7 @@ import java.util.Objects;
  * <p>A simple query that returns all entities for a specific kind
  * <pre> {@code
  *   StructuredQuery<Entity> query = StructuredQuery.builder().kind(kind).build();
- *   QueryResult<Entity> results = datastore.run(query);
+ *   QueryResults<Entity> results = datastore.run(query);
  *   while (results.hasNext()) {
  *     Entity entity = results.next();
  *     ...
@@ -66,7 +66,7 @@ import java.util.Objects;
  *       .orderBy(OrderBy.asc("age"))
  *       .limit(10)
  *       .build();
- *   QueryResult<ProjectionEntity> results = datastore.run(query);
+ *   QueryResults<ProjectionEntity> results = datastore.run(query);
  *   ...
  * } </pre>
  *

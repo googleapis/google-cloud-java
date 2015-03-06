@@ -55,5 +55,5 @@ public interface DatastoreReader {
    *
    * @throws DatastoreServiceException upon failure.
    */
-  <T> QueryResult<T> run(Query<T> query);
+  <T> QueryResults<T> run(Query<T> query);
 }

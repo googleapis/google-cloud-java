@@ -16,7 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.datastore.DatastoreV1;
@@ -136,6 +135,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 
     Integer getMeaning();
 
+    @Deprecated
     B meaning(Integer meaning);
 
     V get();
@@ -266,14 +266,6 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     type = builder.getType();
     indexed = builder.getIndexed();
     meaning = builder.getMeaning();
-    // some validations:
-    if (meaning != null && indexed != null) {
-      // TODO: consider supplying Ranges for allowed meaning and validating it here
-      // more specific validation could be done on the specific types themselves
-      // upon construction [e.g. integer with a meaning 13 should be in the range [0,100]]
-      checkArgument(!indexed || meaning != 15 && meaning != 22,
-          "Indexed values should not have meaning with 15 or 22");
-    }
     value = builder.get();
   }
 
@@ -289,10 +281,12 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     return indexed;
   }
 
+  @Deprecated
   public final boolean hasMeaning() {
     return meaning != null;
   }
 
+  @Deprecated
   public final Integer meaning() {
     return meaning;
   }

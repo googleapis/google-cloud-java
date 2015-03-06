@@ -148,4 +148,8 @@ public class DatastoreServiceException extends RuntimeException {
   static DatastoreServiceException throwInvalidRequest(String massage, Object... params) {
     throw new DatastoreServiceException(Code.FAILED_PRECONDITION, String.format(massage, params));
   }
+
+  static DatastoreServiceException propagateUserException(Exception ex) {
+    throw new DatastoreServiceException(Code.UNKNOWN, ex.getMessage(), ex);
+  }
 }

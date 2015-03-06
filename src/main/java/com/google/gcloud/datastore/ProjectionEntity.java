@@ -94,7 +94,7 @@ public final class ProjectionEntity extends BaseEntity {
     return key;
   }
 
-  @SuppressWarnings("unchecked")
+  @SuppressWarnings({"unchecked", "deprecation"})
   @Override
   public DateTime getDateTime(String name) {
     Value<?> value = getValue(name);
@@ -104,12 +104,12 @@ public final class ProjectionEntity extends BaseEntity {
     return ((Value<DateTime>) value).get();
   }
 
-  @SuppressWarnings("unchecked")
+  @SuppressWarnings({"unchecked", "deprecation"})
   @Override
   public Blob getBlob(String name) {
     Value<?> value = getValue(name);
     if (value.hasMeaning() && value.meaning() == 18 && value instanceof StringValue) {
-      return new Blob(ByteString.copyFromUtf8(getString(name)), false);
+      return new Blob(ByteString.copyFromUtf8(getString(name)));
     }
     return ((Value<Blob>) value).get();
   }

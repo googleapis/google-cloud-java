@@ -45,7 +45,7 @@ import java.util.TreeMap;
  * <p>When the type of the results is known the preferred usage would be:
  * <pre>{@code
  *   Query&lt;Entity&gt; query = GqlQuery.builder(Query.Type.FULL, "select * from kind").build();
- *   QueryResult&lt;Entity&gt; results = datastore.run(query);
+ *   QueryResults&lt;Entity&gt; results = datastore.run(query);
  *   while (results.hasNext()) {
  *     Entity entity = results.next();
  *     ...
@@ -55,9 +55,9 @@ import java.util.TreeMap;
  * <p>When the type of the results is unknown you can use this approach:
  * <pre>{@code
  *   Query&lt;?&gt; query = GqlQuery.builder("select __key__ from kind").build();
- *   QueryResult&lt;?&gt; results = datastore.run(query);
+ *   QueryResults&lt;?&gt; results = datastore.run(query);
  *   if (Key.class.isAssignableFrom(results.resultClass())) {
- *     QueryResult&lt;Key&gt; keys = (QueryResult&lt;Key&gt;) results;
+ *     QueryResults&lt;Key&gt; keys = (QueryResults&lt;Key&gt;) results;
  *     while (keys.hasNext()) {
  *       Key key = keys.next();
  *       ...
@@ -389,7 +389,7 @@ public final class GqlQuery<V> extends Query<V> {
 
   @Override
   protected GqlQuery<V> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
-    // See b/18705483
+    // See issue #17
     throw new UnsupportedOperationException("paging for this query is not implemented yet");
   }
 

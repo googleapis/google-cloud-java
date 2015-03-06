@@ -17,15 +17,14 @@
 package com.google.gcloud.datastore;
 
 import static junit.framework.TestCase.assertTrue;
-import static org.easymock.EasyMock.createStrictMock;
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
+import static junit.framework.TestCase.fail;
+import static org.easymock.EasyMock.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 
 import com.google.common.collect.Iterators;
-
+import com.google.gcloud.datastore.DatastoreService.TransactionCallable;
+import org.easymock.EasyMock;
 import org.junit.Test;
 
 import java.util.List;
@@ -58,13 +57,42 @@ public class DatastoreHelperTest {
     expect(transaction.commit()).andReturn(null).once();
     expect(transaction.active()).andReturn(false).once();
     replay(datastoreService, transaction);
-    DatastoreHelper.runInTransaction(datastoreService, new DatastoreService.RunInTransaction() {
-      @Override
-      public void run(DatastoreReaderWriter readerWriter) {
-        assertTrue(transaction.active());
-        assertSame(transaction, readerWriter);
-      }
-    });
+    String value = DatastoreHelper.runInTransaction(datastoreService,
+        new TransactionCallable<String>() {
+          @Override
+          public String run(DatastoreReaderWriter readerWriter) {
+            assertTrue(transaction.active());
+            assertSame(transaction, readerWriter);
+            return "done";
+          }
+        });
+    verify(datastoreService, transaction);
+    assertEquals("done", value);
+  }
+
+  @Test
+  public void testRunInTransactionWithException() throws Exception {
+    final DatastoreService datastoreService = createStrictMock(DatastoreService.class);
+    final Transaction transaction = createStrictMock(Transaction.class);
+    expect(datastoreService.newTransaction()).andReturn(transaction).once();
+    expect(transaction.active()).andReturn(true).once();
+    transaction.rollback();
+    EasyMock.expectLastCall().once();
+    expect(transaction.active()).andReturn(false).once();
+    replay(datastoreService, transaction);
+    try {
+      DatastoreHelper.runInTransaction(datastoreService, new TransactionCallable<Void>() {
+        @Override
+        public Void run(DatastoreReaderWriter readerWriter) throws Exception {
+          assertTrue(transaction.active());
+          assertSame(transaction, readerWriter);
+          throw new Exception("Bla");
+        }
+      });
+      fail("DatastoreServiceException was expected");
+    } catch (DatastoreServiceException ex) {
+      assertEquals("Bla", ex.getCause().getMessage());
+    }
     verify(datastoreService, transaction);
   }
 }

@@ -59,7 +59,7 @@ public class EntityValue extends Value<PartialEntity> {
 
     @Override
     public Builder indexed(boolean indexed) {
-      // see b/8730533
+      // see issue #25
       Preconditions.checkArgument(!indexed, "EntityValue can't be indexed");
       return super.indexed(indexed);
     }
