@@ -71,15 +71,15 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
    *
    * @throws DatastoreServiceException upon failure
    */
-  Key allocateId(PartialKey key);
+  Key allocateId(IncompleteKey key);
 
   /**
    * Returns a list of keys using the allocated ids ordered by the input.
    *
    * @throws DatastoreServiceException upon failure
-   * @see #allocateId(PartialKey)
+   * @see #allocateId(IncompleteKey)
    */
-  List<Key> allocateId(PartialKey... key);
+  List<Key> allocateId(IncompleteKey... key);
 
   /**
    * Datastore add operation.

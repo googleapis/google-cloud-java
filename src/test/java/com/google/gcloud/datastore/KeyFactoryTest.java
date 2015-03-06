@@ -56,13 +56,13 @@ public class KeyFactoryTest {
   }
 
   @Test
-  public void testNewPartialKey() throws Exception {
-    PartialKey key = keyFactory.newKey();
-    verifyPartialKey(key, null);
+  public void testNewIncompletelKey() throws Exception {
+    IncompleteKey key = keyFactory.newKey();
+    verifyIncompleteKey(key, null);
     PathElement p1 = PathElement.of("k1", "n");
     PathElement p2 = PathElement.of("k2", 10);
     key = keyFactory.namespace("ns").ancestors(p1, p2).newKey();
-    verifyPartialKey(key, "ns", p1, p2);
+    verifyIncompleteKey(key, "ns", p1, p2);
   }
 
   @Test(expected = NullPointerException.class)
@@ -72,15 +72,15 @@ public class KeyFactoryTest {
 
   private void verifyKey(Key key, String name, String namespace, PathElement... ancestors) {
     assertEquals(name, key.name());
-    verifyPartialKey(key, namespace, ancestors);
+    verifyIncompleteKey(key, namespace, ancestors);
   }
 
   private void verifyKey(Key key, Long id, String namespace, PathElement... ancestors) {
     assertEquals(id, key.id());
-    verifyPartialKey(key, namespace, ancestors);
+    verifyIncompleteKey(key, namespace, ancestors);
   }
 
-  private void verifyPartialKey(PartialKey key, String namespace, PathElement... ancestors) {
+  private void verifyIncompleteKey(IncompleteKey key, String namespace, PathElement... ancestors) {
     assertEquals("k", key.kind());
     assertEquals(DATASET, key.dataset());
     assertEquals(namespace, key.namespace());
@@ -93,7 +93,7 @@ public class KeyFactoryTest {
 
   @Test
   public void testAllocateId() throws Exception {
-    PartialKey pk = keyFactory.newKey();
+    IncompleteKey pk = keyFactory.newKey();
     Key key = keyFactory.newKey(1);
     DatastoreV1.AllocateIdsRequest.Builder requestPb = DatastoreV1.AllocateIdsRequest.newBuilder();
     requestPb.addKey(pk.toPb());
