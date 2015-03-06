@@ -28,7 +28,7 @@ import java.util.List;
  * Could be used as metadata for {@link PartialEntity}.
  * This class is immutable.
  */
-public class PartialKey extends BaseKey {
+public class IncompleteKey extends BaseKey {
 
   private static final long serialVersionUID = -75301206578793347L;
 
@@ -38,19 +38,19 @@ public class PartialKey extends BaseKey {
       super(dataset, kind);
     }
 
-    private Builder(PartialKey copyFrom) {
+    private Builder(IncompleteKey copyFrom) {
       super(copyFrom);
     }
 
     @Override
-    public PartialKey build() {
+    public IncompleteKey build() {
       ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
           .addAll(ancestors).add(PathElement.of(kind)).build();
-      return new PartialKey(dataset, namespace, path);
+      return new IncompleteKey(dataset, namespace, path);
     }
   }
 
-  PartialKey(String dataset, String namespace, ImmutableList<PathElement> path) {
+  IncompleteKey(String dataset, String namespace, ImmutableList<PathElement> path) {
     super(dataset, namespace, path);
   }
 
@@ -59,7 +59,7 @@ public class PartialKey extends BaseKey {
     return fromPb(DatastoreV1.Key.parseFrom(bytesPb));
   }
 
-  static PartialKey fromPb(DatastoreV1.Key keyPb) {
+  static IncompleteKey fromPb(DatastoreV1.Key keyPb) {
     String dataset = null;
     String namespace = null;
     if (keyPb.hasPartitionId()) {
@@ -82,14 +82,14 @@ public class PartialKey extends BaseKey {
     if (leaf.nameOrId() != null) {
       return new Key(dataset, namespace, path);
     }
-    return new PartialKey(dataset, namespace, path);
+    return new IncompleteKey(dataset, namespace, path);
   }
 
   public static Builder builder(String dataset, String kind) {
     return new Builder(dataset, kind);
   }
 
-  public static Builder builder(PartialKey copyFrom) {
+  public static Builder builder(IncompleteKey copyFrom) {
     return new Builder(copyFrom);
   }
 

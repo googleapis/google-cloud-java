@@ -34,7 +34,7 @@ public class DatastoreHelperTest {
   @Test
   public void testFetch() throws Exception {
     DatastoreService datastoreService = createStrictMock(DatastoreService.class);
-    PartialKey pKey1 = PartialKey.builder("ds", "k").build();
+    IncompleteKey pKey1 = IncompleteKey.builder("ds", "k").build();
     Key key1 = Key.builder(pKey1, 1).build();
     Key key2 = Key.builder(pKey1, "a").build();
     Entity entity1 = Entity.builder(key1).build();

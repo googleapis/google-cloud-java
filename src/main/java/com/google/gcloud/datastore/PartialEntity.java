@@ -33,11 +33,11 @@ public class PartialEntity extends BaseEntity {
 
   private static final long serialVersionUID = 6492561268709192891L;
 
-  private final transient PartialKey key;
+  private final transient IncompleteKey key;
 
   public static class Builder extends BaseEntity.Builder<Builder> {
 
-    private PartialKey key;
+    private IncompleteKey key;
 
     private Builder() {
     }
@@ -47,7 +47,7 @@ public class PartialEntity extends BaseEntity {
       key = entity.key();
     }
 
-    public Builder key(PartialKey key) {
+    public Builder key(IncompleteKey key) {
       this.key = key;
       return this;
     }
@@ -58,7 +58,7 @@ public class PartialEntity extends BaseEntity {
     }
   }
 
-  protected PartialEntity(PartialKey key, ImmutableSortedMap<String, Value<?>> properties) {
+  protected PartialEntity(IncompleteKey key, ImmutableSortedMap<String, Value<?>> properties) {
     super(properties);
     this.key = key;
   }
@@ -70,7 +70,7 @@ public class PartialEntity extends BaseEntity {
   /**
    * Returns the key for this entity or {@code null} if it does not have one.
    */
-  public PartialKey key() {
+  public IncompleteKey key() {
     return key;
   }
 
@@ -110,21 +110,21 @@ public class PartialEntity extends BaseEntity {
     for (DatastoreV1.Property property : entityPb.getPropertyList()) {
       properties.put(property.getName(), Value.fromPb(property.getValue()));
     }
-    PartialKey partialKey = null;
+    IncompleteKey incompleteKey = null;
     if (entityPb.hasKey()) {
-      partialKey = PartialKey.fromPb(entityPb.getKey());
-      if (partialKey instanceof Key) {
-        return new Entity((Key) partialKey, properties.build());
+      incompleteKey = IncompleteKey.fromPb(entityPb.getKey());
+      if (incompleteKey instanceof Key) {
+        return new Entity((Key) incompleteKey, properties.build());
       }
     }
-    return new PartialEntity(partialKey, properties.build());
+    return new PartialEntity(incompleteKey, properties.build());
   }
 
   public static Builder builder() {
     return new Builder();
   }
 
-  public static Builder builder(PartialKey key) {
+  public static Builder builder(IncompleteKey key) {
     return new Builder().key(key);
   }
 

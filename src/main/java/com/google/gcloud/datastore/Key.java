@@ -35,7 +35,7 @@ import java.net.URLEncoder;
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
  */
-public final class Key extends PartialKey {
+public final class Key extends IncompleteKey {
 
   private static final long serialVersionUID = 3160994559785491356L;
 
@@ -54,12 +54,12 @@ public final class Key extends PartialKey {
       this.id = id;
     }
 
-    private Builder(PartialKey copyFrom, String name) {
+    private Builder(IncompleteKey copyFrom, String name) {
       super(copyFrom);
       this.name = name;
     }
 
-    private Builder(PartialKey copyFrom, long id) {
+    private Builder(IncompleteKey copyFrom, long id) {
       super(copyFrom);
       this.id = id;
     }
@@ -168,7 +168,7 @@ public final class Key extends PartialKey {
   }
 
   static Key fromPb(DatastoreV1.Key keyPb) {
-    PartialKey key = PartialKey.fromPb(keyPb);
+    IncompleteKey key = IncompleteKey.fromPb(keyPb);
     Preconditions.checkState(key instanceof Key, "Key is not complete");
     return (Key) key;
   }
@@ -185,11 +185,11 @@ public final class Key extends PartialKey {
     return new Builder(copyFrom);
   }
 
-  public static Builder builder(PartialKey copyFrom, String name) {
+  public static Builder builder(IncompleteKey copyFrom, String name) {
     return new Builder(copyFrom, name);
   }
 
-  public static Builder builder(PartialKey copyFrom, long id) {
+  public static Builder builder(IncompleteKey copyFrom, long id) {
     return new Builder(copyFrom, id);
   }
 
