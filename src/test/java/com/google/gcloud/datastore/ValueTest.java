@@ -157,6 +157,7 @@ public class ValueTest {
     assertTrue(builder.indexed(true).build().indexed());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testHasMeaning() throws Exception {
     for (Value<?> value: typeToValue.values()) {
@@ -167,6 +168,7 @@ public class ValueTest {
     assertTrue(builder.meaning(10).build().hasMeaning());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testMeaning() throws Exception {
     for (Value<?> value: typeToValue.values()) {
@@ -190,6 +192,7 @@ public class ValueTest {
     assertEquals(value, builder.set(value).build().get());
   }
 
+  @SuppressWarnings({"unchecked", "deprecation"})
   @Test
   public void testToBuilder() throws Exception {
     Set<String> content = Collections.singleton("bla");

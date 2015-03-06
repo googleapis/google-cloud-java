@@ -17,7 +17,6 @@
 package com.google.gcloud.datastore;
 
 import static com.google.api.services.datastore.DatastoreV1.Value.STRING_VALUE_FIELD_NUMBER;
-import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.services.datastore.DatastoreV1;
 
@@ -59,9 +58,6 @@ public final class StringValue extends Value<String> {
 
     @Override
     public StringValue build() {
-      if (Boolean.TRUE.equals(getIndexed())) {
-        checkArgument(get().length() <= 500, "Indexed string is limited to 500 characters");
-      }
       return new StringValue(this);
     }
   }

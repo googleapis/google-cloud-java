@@ -66,7 +66,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
       requestPb.setIsolationLevel(isolationLevel.level().toPb());
     }
     ForceWrites forceWrites = (ForceWrites) optionsMap.get(TransactionOption.ForceWrites.class);
-    force = forceWrites == null ? false : forceWrites.force();
+    force = forceWrites != null && forceWrites.force();
     transaction = datastore.requestTransactionId(requestPb);
   }
 
@@ -90,7 +90,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   @Override
-  public <T> QueryResult<T> run(Query<T> query) {
+  public <T> QueryResults<T> run(Query<T> query) {
     validateActive();
     DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);

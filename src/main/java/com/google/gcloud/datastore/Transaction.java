@@ -98,7 +98,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * @throws DatastoreServiceException upon failure or if no longer active
    */
   @Override
-  <T> QueryResult<T> run(Query<T> query);
+  <T> QueryResults<T> run(Query<T> query);
 
   /**
    * Commit the transaction.
