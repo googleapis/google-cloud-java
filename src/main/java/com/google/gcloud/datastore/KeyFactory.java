@@ -34,10 +34,10 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
     namespace(service.options().namespace());
   }
 
-  public PartialKey newKey() {
+  public IncompleteKey newKey() {
     ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
         .addAll(ancestors).add(PathElement.of(kind)).build();
-    return new PartialKey(dataset, namespace, path);
+    return new IncompleteKey(dataset, namespace, path);
   }
 
   public Key newKey(String name) {
@@ -61,7 +61,7 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
   }
 
   @Override
-  protected PartialKey build() {
+  protected IncompleteKey build() {
     return newKey();
   }
 

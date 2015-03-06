@@ -117,17 +117,17 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
   }
 
   @Override
-  public Key allocateId(PartialKey key) {
-    return allocateId(new PartialKey[]{key}).get(0);
+  public Key allocateId(IncompleteKey key) {
+    return allocateId(new IncompleteKey[]{key}).get(0);
   }
 
   @Override
-  public List<Key> allocateId(PartialKey... keys) {
+  public List<Key> allocateId(IncompleteKey... keys) {
     if (keys.length == 0) {
       return Collections.emptyList();
     }
     DatastoreV1.AllocateIdsRequest.Builder requestPb = DatastoreV1.AllocateIdsRequest.newBuilder();
-    for (PartialKey key : keys) {
+    for (IncompleteKey key : keys) {
       requestPb.addKey(trimNameOrId(key).toPb());
     }
     DatastoreV1.AllocateIdsResponse responsePb = allocateIds(requestPb.build());
@@ -154,9 +154,9 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
     }
   }
 
-  private PartialKey trimNameOrId(PartialKey key) {
+  private IncompleteKey trimNameOrId(IncompleteKey key) {
     if (key instanceof Key) {
-      return PartialKey.builder(key).build();
+      return IncompleteKey.builder(key).build();
     }
     return key;
   }
@@ -196,7 +196,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
         commitResponse.getMutationResult().getInsertAutoIdKeyList().iterator();
     ImmutableList.Builder<Entity> responseBuilder = ImmutableList.builder();
     for (PartialEntity entity : entities) {
-      PartialKey key = entity.key();
+      IncompleteKey key = entity.key();
       Entity completeEntity = completeEntities.get(key);
       if (completeEntity != null) {
         responseBuilder.add(completeEntity);

@@ -25,7 +25,7 @@ public class EntityTest {
 
   private static final Key KEY1 = Key.builder("ds1", "k1", "n1").build();
   private static final Key KEY2 = Key.builder("ds1", "k2", 1).build();
-  private static final PartialKey PARTIAL_KEY = PartialKey.builder("ds1", "k2").build();
+  private static final IncompleteKey PARTIAL_KEY = IncompleteKey.builder("ds1", "k2").build();
   private static final Entity ENTITY = Entity.builder(KEY1).set("foo", "bar").build();
   private static final PartialEntity PARTIAL_ENTITY =
       PartialEntity.builder(PARTIAL_KEY).set("a", "b").build();

@@ -51,8 +51,8 @@ public class DatastoreServiceTest {
   private static final NullValue NULL_VALUE = NullValue.of();
   private static final StringValue STR_VALUE = StringValue.of("str");
   private static final BooleanValue BOOL_VALUE = BooleanValue.builder(false).indexed(false).build();
-  private static final PartialKey PARTIAL_KEY1 = PartialKey.builder(DATASET, KIND1).build();
-  private static final PartialKey PARTIAL_KEY2 = PartialKey.builder(DATASET, KIND2).build();
+  private static final IncompleteKey PARTIAL_KEY1 = IncompleteKey.builder(DATASET, KIND1).build();
+  private static final IncompleteKey PARTIAL_KEY2 = IncompleteKey.builder(DATASET, KIND2).build();
   private static final Key KEY1 = Key.builder(PARTIAL_KEY1, "name").build();
   private static final Key KEY2 = Key.builder(KEY1, KIND2, 1).build();
   private static final Key KEY3 = Key.builder(KEY2).name("bla").build();
@@ -70,7 +70,7 @@ public class DatastoreServiceTest {
   private static final PartialEntity PARTIAL_ENTITY2 = PartialEntity.builder(PARTIAL_ENTITY1)
       .remove("str").set("bool", true).set("list", LIST_VALUE1.get()).build();
   private static final PartialEntity PARTIAL_ENTITY3 = PartialEntity.builder(PARTIAL_ENTITY1)
-      .key(PartialKey.builder(DATASET, KIND3).build()).build();
+      .key(IncompleteKey.builder(DATASET, KIND3).build()).build();
   private static final Entity ENTITY1 = Entity.builder(KEY1)
       .set("str", STR_VALUE)
       .set("date", DATE_TIME_VALUE)
@@ -428,7 +428,7 @@ public class DatastoreServiceTest {
   @Test
   public void testAllocateId() {
     KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND1);
-    PartialKey pk1 = keyFactory.newKey();
+    IncompleteKey pk1 = keyFactory.newKey();
     Key key1 = keyFactory.allocateId();
     assertEquals(key1.dataset(), pk1.dataset());
     assertEquals(key1.namespace(), pk1.namespace());
@@ -450,16 +450,16 @@ public class DatastoreServiceTest {
   @Test
   public void testAllocateIdArray() {
     KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND1);
-    PartialKey partialKey1 = keyFactory.newKey();
-    PartialKey partialKey2 = keyFactory.kind(KIND2).ancestors(PathElement.of(KIND1, 10)).newKey();
+    IncompleteKey incompleteKey1 = keyFactory.newKey();
+    IncompleteKey incompleteKey2 = keyFactory.kind(KIND2).ancestors(PathElement.of(KIND1, 10)).newKey();
     Key key3 = keyFactory.newKey("name");
     Key key4 = keyFactory.newKey(1);
     List<Key> result =
-        datastore.allocateId(partialKey1, partialKey2, key3, key4, partialKey1, key3);
+        datastore.allocateId(incompleteKey1, incompleteKey2, key3, key4, incompleteKey1, key3);
     assertEquals(6, result.size());
-    assertEquals(Key.builder(partialKey1, result.get(0).id()).build(), result.get(0));
-    assertEquals(Key.builder(partialKey1, result.get(4).id()).build(), result.get(4));
-    assertEquals(Key.builder(partialKey2, result.get(1).id()).build(), result.get(1));
+    assertEquals(Key.builder(incompleteKey1, result.get(0).id()).build(), result.get(0));
+    assertEquals(Key.builder(incompleteKey1, result.get(4).id()).build(), result.get(4));
+    assertEquals(Key.builder(incompleteKey2, result.get(1).id()).build(), result.get(1));
     assertEquals(Key.builder(key3).id(result.get(2).id()).build(), result.get(2));
     assertEquals(Key.builder(key3).id(result.get(5).id()).build(), result.get(5));
     assertEquals(Key.builder(key4).id(result.get(3).id()).build(), result.get(3));
@@ -622,7 +622,7 @@ public class DatastoreServiceTest {
   public void testKeyFactory() {
     KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND1);
     assertEquals(PARTIAL_KEY1, keyFactory.newKey());
-    assertEquals(PartialKey.builder(PARTIAL_KEY1).kind(KIND2).build(),
+    assertEquals(IncompleteKey.builder(PARTIAL_KEY1).kind(KIND2).build(),
         new KeyFactory(datastore).kind(KIND2).newKey());
     assertEquals(KEY1, keyFactory.newKey("name"));
     assertEquals(Key.builder(KEY1).id(2).build(), keyFactory.newKey(2));
