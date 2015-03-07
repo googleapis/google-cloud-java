@@ -74,20 +74,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.storage.InputChannel.java">com/google/gcloud/storage/InputChannel.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  2
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.BlobValue.java">com/google/gcloud/datastore/BlobValue.java</a>
                 </td>
                 <td>
@@ -95,6 +81,20 @@ under the License.
                 </td>
                 <td>
                   0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.storage.InputChannel.java">com/google/gcloud/storage/InputChannel.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
                 </td>
                 <td>
                   0
@@ -130,7 +130,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.ProjectionEntity.java">com/google/gcloud/datastore/ProjectionEntity.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.DatastoreBatchWriter.java">com/google/gcloud/datastore/DatastoreBatchWriter.java</a>
                 </td>
                 <td>
                   0
@@ -144,7 +144,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.DatastoreBatchWriter.java">com/google/gcloud/datastore/DatastoreBatchWriter.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.ProjectionEntity.java">com/google/gcloud/datastore/ProjectionEntity.java</a>
                 </td>
                 <td>
                   0
@@ -214,7 +214,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.PartialKey.java">com/google/gcloud/datastore/PartialKey.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.IncompleteKey.java">com/google/gcloud/datastore/IncompleteKey.java</a>
                 </td>
                 <td>
                   0
@@ -326,7 +326,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.DatastoreReaderWriter.java">com/google/gcloud/datastore/DatastoreReaderWriter.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.Batch.java">com/google/gcloud/datastore/Batch.java</a>
                 </td>
                 <td>
                   0
@@ -340,7 +340,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.Batch.java">com/google/gcloud/datastore/Batch.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.DatastoreReaderWriter.java">com/google/gcloud/datastore/DatastoreReaderWriter.java</a>
                 </td>
                 <td>
                   0
@@ -382,7 +382,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.Validator.java">com/google/gcloud/datastore/Validator.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.DatastoreReader.java">com/google/gcloud/datastore/DatastoreReader.java</a>
                 </td>
                 <td>
                   0
@@ -396,7 +396,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.DatastoreReader.java">com/google/gcloud/datastore/DatastoreReader.java</a>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.Validator.java">com/google/gcloud/datastore/Validator.java</a>
                 </td>
                 <td>
                   0
@@ -522,20 +522,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.EntityValue.java">com/google/gcloud/datastore/EntityValue.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.Service.java">com/google/gcloud/Service.java</a>
                 </td>
                 <td>
@@ -551,6 +537,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.BatchImpl.java">com/google/gcloud/datastore/BatchImpl.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.EntityValue.java">com/google/gcloud/datastore/EntityValue.java</a>
                 </td>
                 <td>
                   0
@@ -634,20 +634,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.QueryResults.java">com/google/gcloud/datastore/QueryResults.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.storage.Bucket.java">com/google/gcloud/storage/Bucket.java</a>
                 </td>
                 <td>
@@ -655,6 +641,20 @@ under the License.
                 </td>
                 <td>
                   2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.QueryResults.java">com/google/gcloud/datastore/QueryResults.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
                 </td>
                 <td>
                   0
@@ -802,20 +802,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.com.google.gcloud.spi.DefaultStorageRpc.java">com/google/gcloud/com/google/gcloud/spi/DefaultStorageRpc.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.RetryParams.java">com/google/gcloud/RetryParams.java</a>
                 </td>
                 <td>
@@ -823,6 +809,20 @@ under the License.
                 </td>
                 <td>
                   0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.com.google.gcloud.spi.DefaultStorageRpc.java">com/google/gcloud/com/google/gcloud/spi/DefaultStorageRpc.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
                 </td>
                 <td>
                   0
@@ -886,20 +886,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.storage.OutputChannel.java">com/google/gcloud/storage/OutputChannel.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.datastore.QueryResultsImpl.java">com/google/gcloud/datastore/QueryResultsImpl.java</a>
                 </td>
                 <td>
@@ -907,6 +893,20 @@ under the License.
                 </td>
                 <td>
                   0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html#com.google.gcloud.storage.OutputChannel.java">com/google/gcloud/storage/OutputChannel.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
                 </td>
                 <td>
                   0

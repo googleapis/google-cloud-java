@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.7827433628318584" branch-rate="0.6790830945558739" lines-covered="1769" lines-valid="2260" branches-covered="474" branches-valid="698" complexity="1.4544544544544544" version="2.0.3" timestamp="1425608839651">
+<coverage line-rate="0.7827433628318584" branch-rate="0.6790830945558739" lines-covered="1769" lines-valid="2260" branches-covered="474" branches-valid="698" complexity="1.4544544544544544" version="2.0.3" timestamp="1425691964310">
 	<sources>
 		<source>/home/travis/build/GoogleCloudPlatform/gcloud-java/src/main/java</source>
 		<source>--source</source>
@@ -182,20 +182,20 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="201" hits="19" branch="true" condition-coverage="100% (2/2)">
+								<line number="201" hits="21" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="202" hits="5" branch="false"/>
 								<line number="203" hits="5" branch="false"/>
-								<line number="205" hits="14" branch="true" condition-coverage="100% (2/2)">
+								<line number="205" hits="16" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="206" hits="2" branch="false"/>
-								<line number="208" hits="14" branch="false"/>
+								<line number="208" hits="16" branch="false"/>
 								<line number="209" hits="24" branch="false"/>
 								<line number="210" hits="24" branch="false"/>
 								<line number="211" hits="24" branch="false"/>
@@ -321,20 +321,20 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="201" hits="19" branch="true" condition-coverage="100% (2/2)">
+						<line number="201" hits="21" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="202" hits="5" branch="false"/>
 						<line number="203" hits="5" branch="false"/>
-						<line number="205" hits="14" branch="true" condition-coverage="100% (2/2)">
+						<line number="205" hits="16" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="206" hits="2" branch="false"/>
-						<line number="208" hits="14" branch="false"/>
+						<line number="208" hits="16" branch="false"/>
 						<line number="209" hits="24" branch="false"/>
 						<line number="210" hits="24" branch="false"/>
 						<line number="211" hits="24" branch="false"/>
@@ -567,7 +567,7 @@
 						</method>
 						<method name="access$600" signature="(Lcom/google/gcloud/ExceptionHandler$RetryInfo;)Lcom/google/gcloud/ExceptionHandler$Interceptor$RetryResult;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="154" hits="579" branch="false"/>
+								<line number="154" hits="587" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.0" branch-rate="0.0">
@@ -594,7 +594,7 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="154" hits="579" branch="false"/>
+						<line number="154" hits="587" branch="false"/>
 						<line number="159" hits="24" branch="false"/>
 						<line number="161" hits="24" branch="false"/>
 						<line number="162" hits="24" branch="false"/>
@@ -3995,12 +3995,12 @@
 								<line number="207" hits="3" branch="false"/>
 							</lines>
 						</method>
-						<method name="allocateId" signature="(Lcom/google/gcloud/datastore/PartialKey;)Lcom/google/gcloud/datastore/Key;" line-rate="1.0" branch-rate="1.0">
+						<method name="allocateId" signature="(Lcom/google/gcloud/datastore/IncompleteKey;)Lcom/google/gcloud/datastore/Key;" line-rate="1.0" branch-rate="1.0">
 							<lines>
 								<line number="121" hits="4" branch="false"/>
 							</lines>
 						</method>
-						<method name="allocateId" signature="([Lcom/google/gcloud/datastore/PartialKey;)Ljava/util/List;" line-rate="0.8888888888888888" branch-rate="0.75">
+						<method name="allocateId" signature="([Lcom/google/gcloud/datastore/IncompleteKey;)Ljava/util/List;" line-rate="0.8888888888888888" branch-rate="0.75">
 							<lines>
 								<line number="126" hits="5" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
@@ -4208,7 +4208,7 @@
 								<line number="115" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="trimNameOrId" signature="(Lcom/google/gcloud/datastore/PartialKey;)Lcom/google/gcloud/datastore/PartialKey;" line-rate="1.0" branch-rate="1.0">
+						<method name="trimNameOrId" signature="(Lcom/google/gcloud/datastore/IncompleteKey;)Lcom/google/gcloud/datastore/IncompleteKey;" line-rate="1.0" branch-rate="1.0">
 							<lines>
 								<line number="158" hits="10" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
@@ -5495,14 +5495,14 @@
 								<line number="82" hits="5" branch="false"/>
 							</lines>
 						</method>
+						<method name="key" signature="()Lcom/google/gcloud/datastore/IncompleteKey;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="35" hits="3" branch="false"/>
+							</lines>
+						</method>
 						<method name="key" signature="()Lcom/google/gcloud/datastore/Key;" line-rate="1.0" branch-rate="1.0">
 							<lines>
 								<line number="77" hits="202" branch="false"/>
-							</lines>
-						</method>
-						<method name="key" signature="()Lcom/google/gcloud/datastore/PartialKey;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="35" hits="3" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -6490,6 +6490,190 @@
 						<line number="308" hits="4" branch="false"/>
 					</lines>
 				</class>
+				<class name="com.google.gcloud.datastore.IncompleteKey" filename="com/google/gcloud/datastore/IncompleteKey.java" line-rate="0.9583333333333334" branch-rate="0.6666666666666666" complexity="1.6666666666666667">
+					<methods>
+						<method name="ancestors" signature="()Ljava/util/List;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+							</lines>
+						</method>
+						<method name="builder" signature="(Lcom/google/gcloud/datastore/IncompleteKey;)Lcom/google/gcloud/datastore/IncompleteKey$Builder;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="93" hits="7" branch="false"/>
+							</lines>
+						</method>
+						<method name="builder" signature="(Lcom/google/gcloud/datastore/Key;Ljava/lang/String;)Lcom/google/gcloud/datastore/IncompleteKey$Builder;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="97" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="builder" signature="(Ljava/lang/String;Ljava/lang/String;)Lcom/google/gcloud/datastore/IncompleteKey$Builder;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="89" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="dataset" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+							</lines>
+						</method>
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+							</lines>
+						</method>
+						<method name="fromPb" signature="(Lcom/google/api/services/datastore/DatastoreV1$Key;)Lcom/google/gcloud/datastore/IncompleteKey;" line-rate="0.9473684210526315" branch-rate="0.6666666666666666">
+							<lines>
+								<line number="63" hits="188" branch="false"/>
+								<line number="64" hits="188" branch="false"/>
+								<line number="65" hits="188" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="66" hits="188" branch="false"/>
+								<line number="67" hits="188" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="68" hits="188" branch="false"/>
+								<line number="70" hits="188" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="71" hits="0" branch="false"/>
+								<line number="74" hits="188" branch="false"/>
+								<line number="75" hits="188" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="76" hits="188" branch="false"/>
+								<line number="77" hits="188" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="78" hits="244" branch="false"/>
+								<line number="79" hits="244" branch="false"/>
+								<line number="80" hits="188" branch="false"/>
+								<line number="81" hits="188" branch="false"/>
+								<line number="82" hits="188" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="83" hits="138" branch="false"/>
+								<line number="85" hits="50" branch="false"/>
+							</lines>
+						</method>
+						<method name="fromPb" signature="([B)Ljava/lang/Object;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="59" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="hashCode" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+							</lines>
+						</method>
+						<method name="kind" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+							</lines>
+						</method>
+						<method name="namespace" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="31" hits="2390" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="31" hits="2390" branch="false"/>
+						<line number="59" hits="2" branch="false"/>
+						<line number="63" hits="188" branch="false"/>
+						<line number="64" hits="188" branch="false"/>
+						<line number="65" hits="188" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="66" hits="188" branch="false"/>
+						<line number="67" hits="188" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="68" hits="188" branch="false"/>
+						<line number="70" hits="188" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="71" hits="0" branch="false"/>
+						<line number="74" hits="188" branch="false"/>
+						<line number="75" hits="188" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="76" hits="188" branch="false"/>
+						<line number="77" hits="188" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="78" hits="244" branch="false"/>
+						<line number="79" hits="244" branch="false"/>
+						<line number="80" hits="188" branch="false"/>
+						<line number="81" hits="188" branch="false"/>
+						<line number="82" hits="188" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="83" hits="138" branch="false"/>
+						<line number="85" hits="50" branch="false"/>
+						<line number="89" hits="12" branch="false"/>
+						<line number="93" hits="7" branch="false"/>
+						<line number="97" hits="2" branch="false"/>
+					</lines>
+				</class>
+				<class name="com.google.gcloud.datastore.IncompleteKey$1" filename="com/google/gcloud/datastore/IncompleteKey.java" line-rate="1.0" branch-rate="1.0" complexity="1.6666666666666667">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="com.google.gcloud.datastore.IncompleteKey$Builder" filename="com/google/gcloud/datastore/IncompleteKey.java" line-rate="1.0" branch-rate="1.0" complexity="1.6666666666666667">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/datastore/IncompleteKey;Lcom/google/gcloud/datastore/IncompleteKey$1;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="35" hits="19" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;Lcom/google/gcloud/datastore/IncompleteKey$1;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+							</lines>
+						</method>
+						<method name="build" signature="()Lcom/google/gcloud/datastore/BaseKey;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+							</lines>
+						</method>
+						<method name="build" signature="()Lcom/google/gcloud/datastore/IncompleteKey;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="47" hits="19" branch="false"/>
+								<line number="49" hits="19" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="35" hits="19" branch="false"/>
+						<line number="47" hits="19" branch="false"/>
+						<line number="49" hits="19" branch="false"/>
+					</lines>
+				</class>
 				<class name="com.google.gcloud.datastore.Key" filename="com/google/gcloud/datastore/Key.java" line-rate="0.75" branch-rate="0.5" complexity="1.4230769230769231">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;Lcom/google/common/collect/ImmutableList;)V" line-rate="1.0" branch-rate="0.5">
@@ -6517,6 +6701,16 @@
 								<line number="216" hits="2" branch="false"/>
 							</lines>
 						</method>
+						<method name="builder" signature="(Lcom/google/gcloud/datastore/IncompleteKey;J)Lcom/google/gcloud/datastore/Key$Builder;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="193" hits="7" branch="false"/>
+							</lines>
+						</method>
+						<method name="builder" signature="(Lcom/google/gcloud/datastore/IncompleteKey;Ljava/lang/String;)Lcom/google/gcloud/datastore/Key$Builder;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="189" hits="2" branch="false"/>
+							</lines>
+						</method>
 						<method name="builder" signature="(Lcom/google/gcloud/datastore/Key;)Lcom/google/gcloud/datastore/Key$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
 								<line number="185" hits="9" branch="false"/>
@@ -6534,16 +6728,6 @@
 								<line number="197" hits="0" branch="false"/>
 								<line number="198" hits="0" branch="false"/>
 								<line number="199" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="builder" signature="(Lcom/google/gcloud/datastore/PartialKey;J)Lcom/google/gcloud/datastore/Key$Builder;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="193" hits="7" branch="false"/>
-							</lines>
-						</method>
-						<method name="builder" signature="(Lcom/google/gcloud/datastore/PartialKey;Ljava/lang/String;)Lcom/google/gcloud/datastore/Key$Builder;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="189" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="builder" signature="(Ljava/lang/String;Ljava/lang/String;J)Lcom/google/gcloud/datastore/Key$Builder;" line-rate="1.0" branch-rate="1.0">
@@ -6672,6 +6856,22 @@
 				</class>
 				<class name="com.google.gcloud.datastore.Key$Builder" filename="com/google/gcloud/datastore/Key.java" line-rate="1.0" branch-rate="1.0" complexity="1.4230769230769231">
 					<methods>
+						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/datastore/IncompleteKey;J)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="63" hits="7" branch="false"/>
+								<line number="64" hits="7" branch="false"/>
+								<line number="65" hits="7" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/datastore/IncompleteKey;JLcom/google/gcloud/datastore/Key$1;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="42" hits="39" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/datastore/IncompleteKey;Ljava/lang/String;Lcom/google/gcloud/datastore/Key$1;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+							</lines>
+						</method>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/datastore/Key;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
 								<line number="68" hits="9" branch="false"/>
@@ -6686,22 +6886,6 @@
 							</lines>
 						</method>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/datastore/Key;Lcom/google/gcloud/datastore/Key$1;)V" line-rate="1.0" branch-rate="1.0">
-							<lines>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/datastore/PartialKey;J)V" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="63" hits="7" branch="false"/>
-								<line number="64" hits="7" branch="false"/>
-								<line number="65" hits="7" branch="false"/>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/datastore/PartialKey;JLcom/google/gcloud/datastore/Key$1;)V" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="42" hits="39" branch="false"/>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/datastore/PartialKey;Ljava/lang/String;Lcom/google/gcloud/datastore/Key$1;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
 							</lines>
 						</method>
@@ -6806,7 +6990,7 @@
 								<line number="27" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="build" signature="()Lcom/google/gcloud/datastore/PartialKey;" line-rate="1.0" branch-rate="1.0">
+						<method name="build" signature="()Lcom/google/gcloud/datastore/IncompleteKey;" line-rate="1.0" branch-rate="1.0">
 							<lines>
 								<line number="65" hits="1" branch="false"/>
 							</lines>
@@ -6816,7 +7000,7 @@
 								<line number="69" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="newKey" signature="()Lcom/google/gcloud/datastore/PartialKey;" line-rate="1.0" branch-rate="1.0">
+						<method name="newKey" signature="()Lcom/google/gcloud/datastore/IncompleteKey;" line-rate="1.0" branch-rate="1.0">
 							<lines>
 								<line number="38" hits="11" branch="false"/>
 								<line number="40" hits="10" branch="false"/>
@@ -7549,14 +7733,14 @@
 								<line number="124" hits="1" branch="false"/>
 							</lines>
 						</method>
+						<method name="builder" signature="(Lcom/google/gcloud/datastore/IncompleteKey;)Lcom/google/gcloud/datastore/PartialEntity$Builder;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="128" hits="7" branch="false"/>
+							</lines>
+						</method>
 						<method name="builder" signature="(Lcom/google/gcloud/datastore/PartialEntity;)Lcom/google/gcloud/datastore/PartialEntity$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
 								<line number="132" hits="5" branch="false"/>
-							</lines>
-						</method>
-						<method name="builder" signature="(Lcom/google/gcloud/datastore/PartialKey;)Lcom/google/gcloud/datastore/PartialEntity$Builder;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="128" hits="7" branch="false"/>
 							</lines>
 						</method>
 						<method name="contains" signature="(Ljava/lang/String;)Z" line-rate="1.0" branch-rate="1.0">
@@ -7675,7 +7859,7 @@
 							<lines>
 							</lines>
 						</method>
-						<method name="key" signature="()Lcom/google/gcloud/datastore/PartialKey;" line-rate="1.0" branch-rate="1.0">
+						<method name="key" signature="()Lcom/google/gcloud/datastore/IncompleteKey;" line-rate="1.0" branch-rate="1.0">
 							<lines>
 								<line number="74" hits="221" branch="false"/>
 							</lines>
@@ -7797,7 +7981,7 @@
 								<line number="57" hits="13" branch="false"/>
 							</lines>
 						</method>
-						<method name="key" signature="(Lcom/google/gcloud/datastore/PartialKey;)Lcom/google/gcloud/datastore/PartialEntity$Builder;" line-rate="1.0" branch-rate="1.0">
+						<method name="key" signature="(Lcom/google/gcloud/datastore/IncompleteKey;)Lcom/google/gcloud/datastore/PartialEntity$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
 								<line number="51" hits="10" branch="false"/>
 								<line number="52" hits="10" branch="false"/>
@@ -7812,190 +7996,6 @@
 						<line number="51" hits="10" branch="false"/>
 						<line number="52" hits="10" branch="false"/>
 						<line number="57" hits="13" branch="false"/>
-					</lines>
-				</class>
-				<class name="com.google.gcloud.datastore.PartialKey" filename="com/google/gcloud/datastore/PartialKey.java" line-rate="0.9583333333333334" branch-rate="0.6666666666666666" complexity="1.6666666666666667">
-					<methods>
-						<method name="ancestors" signature="()Ljava/util/List;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-							</lines>
-						</method>
-						<method name="builder" signature="(Lcom/google/gcloud/datastore/Key;Ljava/lang/String;)Lcom/google/gcloud/datastore/PartialKey$Builder;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="97" hits="2" branch="false"/>
-							</lines>
-						</method>
-						<method name="builder" signature="(Lcom/google/gcloud/datastore/PartialKey;)Lcom/google/gcloud/datastore/PartialKey$Builder;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="93" hits="7" branch="false"/>
-							</lines>
-						</method>
-						<method name="builder" signature="(Ljava/lang/String;Ljava/lang/String;)Lcom/google/gcloud/datastore/PartialKey$Builder;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="89" hits="12" branch="false"/>
-							</lines>
-						</method>
-						<method name="dataset" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-							</lines>
-						</method>
-						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0">
-							<lines>
-							</lines>
-						</method>
-						<method name="fromPb" signature="(Lcom/google/api/services/datastore/DatastoreV1$Key;)Lcom/google/gcloud/datastore/PartialKey;" line-rate="0.9473684210526315" branch-rate="0.6666666666666666">
-							<lines>
-								<line number="63" hits="188" branch="false"/>
-								<line number="64" hits="188" branch="false"/>
-								<line number="65" hits="188" branch="true" condition-coverage="50% (1/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="50%"/>
-									</conditions>
-								</line>
-								<line number="66" hits="188" branch="false"/>
-								<line number="67" hits="188" branch="true" condition-coverage="50% (1/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="50%"/>
-									</conditions>
-								</line>
-								<line number="68" hits="188" branch="false"/>
-								<line number="70" hits="188" branch="true" condition-coverage="50% (1/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="50%"/>
-									</conditions>
-								</line>
-								<line number="71" hits="0" branch="false"/>
-								<line number="74" hits="188" branch="false"/>
-								<line number="75" hits="188" branch="true" condition-coverage="50% (1/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="50%"/>
-									</conditions>
-								</line>
-								<line number="76" hits="188" branch="false"/>
-								<line number="77" hits="188" branch="true" condition-coverage="100% (2/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="100%"/>
-									</conditions>
-								</line>
-								<line number="78" hits="244" branch="false"/>
-								<line number="79" hits="244" branch="false"/>
-								<line number="80" hits="188" branch="false"/>
-								<line number="81" hits="188" branch="false"/>
-								<line number="82" hits="188" branch="true" condition-coverage="100% (2/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="100%"/>
-									</conditions>
-								</line>
-								<line number="83" hits="138" branch="false"/>
-								<line number="85" hits="50" branch="false"/>
-							</lines>
-						</method>
-						<method name="fromPb" signature="([B)Ljava/lang/Object;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="59" hits="2" branch="false"/>
-							</lines>
-						</method>
-						<method name="hashCode" signature="()I" line-rate="1.0" branch-rate="1.0">
-							<lines>
-							</lines>
-						</method>
-						<method name="kind" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-							</lines>
-						</method>
-						<method name="namespace" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-							</lines>
-						</method>
-						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="31" hits="2390" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="31" hits="2390" branch="false"/>
-						<line number="59" hits="2" branch="false"/>
-						<line number="63" hits="188" branch="false"/>
-						<line number="64" hits="188" branch="false"/>
-						<line number="65" hits="188" branch="true" condition-coverage="50% (1/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="50%"/>
-							</conditions>
-						</line>
-						<line number="66" hits="188" branch="false"/>
-						<line number="67" hits="188" branch="true" condition-coverage="50% (1/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="50%"/>
-							</conditions>
-						</line>
-						<line number="68" hits="188" branch="false"/>
-						<line number="70" hits="188" branch="true" condition-coverage="50% (1/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="50%"/>
-							</conditions>
-						</line>
-						<line number="71" hits="0" branch="false"/>
-						<line number="74" hits="188" branch="false"/>
-						<line number="75" hits="188" branch="true" condition-coverage="50% (1/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="50%"/>
-							</conditions>
-						</line>
-						<line number="76" hits="188" branch="false"/>
-						<line number="77" hits="188" branch="true" condition-coverage="100% (2/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="100%"/>
-							</conditions>
-						</line>
-						<line number="78" hits="244" branch="false"/>
-						<line number="79" hits="244" branch="false"/>
-						<line number="80" hits="188" branch="false"/>
-						<line number="81" hits="188" branch="false"/>
-						<line number="82" hits="188" branch="true" condition-coverage="100% (2/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="100%"/>
-							</conditions>
-						</line>
-						<line number="83" hits="138" branch="false"/>
-						<line number="85" hits="50" branch="false"/>
-						<line number="89" hits="12" branch="false"/>
-						<line number="93" hits="7" branch="false"/>
-						<line number="97" hits="2" branch="false"/>
-					</lines>
-				</class>
-				<class name="com.google.gcloud.datastore.PartialKey$1" filename="com/google/gcloud/datastore/PartialKey.java" line-rate="1.0" branch-rate="1.0" complexity="1.6666666666666667">
-					<methods>
-					</methods>
-					<lines>
-					</lines>
-				</class>
-				<class name="com.google.gcloud.datastore.PartialKey$Builder" filename="com/google/gcloud/datastore/PartialKey.java" line-rate="1.0" branch-rate="1.0" complexity="1.6666666666666667">
-					<methods>
-						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/datastore/PartialKey;Lcom/google/gcloud/datastore/PartialKey$1;)V" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="35" hits="19" branch="false"/>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/String;Lcom/google/gcloud/datastore/PartialKey$1;)V" line-rate="1.0" branch-rate="1.0">
-							<lines>
-							</lines>
-						</method>
-						<method name="build" signature="()Lcom/google/gcloud/datastore/BaseKey;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-							</lines>
-						</method>
-						<method name="build" signature="()Lcom/google/gcloud/datastore/PartialKey;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="47" hits="19" branch="false"/>
-								<line number="49" hits="19" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="35" hits="19" branch="false"/>
-						<line number="47" hits="19" branch="false"/>
-						<line number="49" hits="19" branch="false"/>
 					</lines>
 				</class>
 				<class name="com.google.gcloud.datastore.PathElement" filename="com/google/gcloud/datastore/PathElement.java" line-rate="0.9230769230769231" branch-rate="0.8333333333333334" complexity="1.8666666666666667">
