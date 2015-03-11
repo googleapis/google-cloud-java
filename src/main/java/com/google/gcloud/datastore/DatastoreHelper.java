@@ -16,6 +16,7 @@
 
 package com.google.gcloud.datastore;
 
+import com.google.common.collect.Iterators;
 import com.google.common.collect.Maps;
 
 import java.util.ArrayList;
@@ -32,18 +33,31 @@ class DatastoreHelper {
   private DatastoreHelper() {
   }
 
+
+  static Key allocateId(DatastoreService service, IncompleteKey key) {
+    return service.allocateId(new IncompleteKey[]{key}).get(0);
+  }
+
+  static Entity<Key> get(DatastoreReader reader, Key key) {
+    return Iterators.getNext(reader.get(new Key[]{key}), null);
+  }
+
+  static Entity<Key> add(DatastoreWriter writer, Entity<?> entity) {
+    return writer.add(new Entity<?>[] {entity}).get(0);
+  }
+
   /**
    * Returns a list with a value for each given key (ordered by input).
    * A {@code null} would be returned for non-existing keys.
    */
-  static List<Entity> fetch(DatastoreReader reader, Key... keys) {
-    Iterator<Entity> entities = reader.get(keys);
-    Map<Key, Entity> map = Maps.newHashMapWithExpectedSize(keys.length);
+  static List<Entity<Key>> fetch(DatastoreReader reader, Key... keys) {
+    Iterator<Entity<Key>> entities = reader.get(keys);
+    Map<Key, Entity<Key>> map = Maps.newHashMapWithExpectedSize(keys.length);
     while (entities.hasNext()) {
-      Entity entity = entities.next();
+      Entity<Key> entity = entities.next();
       map.put(entity.key(), entity);
     }
-    List<Entity> list = new ArrayList<>(keys.length);
+    List<Entity<Key>> list = new ArrayList<>(keys.length);
     for (Key key : keys) {
       // this will include nulls for non-existing keys
       list.add(map.get(key));

@@ -55,13 +55,13 @@ public class SerializationTest {
       .addBinding(20)
       .namespace("ns1")
       .build();
-  private static final Query<Entity> GQL2 =
+  private static final Query<Entity<Key>> GQL2 =
       GqlQuery.builder(Query.Type.FULL, "select * from kind1 where name = @name and age > @1")
       .setBinding("name", "name1")
       .addBinding(20)
       .namespace("ns1")
       .build();
-  private static final Query<Entity> QUERY1 = StructuredQuery.builder().kind("kind1").build();
+  private static final Query<Entity<Key>> QUERY1 = StructuredQuery.builder().kind("kind1").build();
   private static final Query<Key> QUERY2 = StructuredQuery.keyOnlyBuilder()
       .kind("k")
       .filter(PropertyFilter.eq("p1", "hello"))
@@ -88,8 +88,8 @@ public class SerializationTest {
   private static final BlobValue BLOB_VALUE = BlobValue.of(BLOB1);
   private static final RawValue RAW_VALUE = RawValue.of(
       DatastoreV1.Value.newBuilder().setBlobKeyValue("blob-key").setMeaning(18).build());
-  private static final Entity ENTITY1 = Entity.builder(KEY1).build();
-  private static final Entity ENTITY2 =
+  private static final Entity<? extends IncompleteKey> ENTITY1 = Entity.builder(KEY1).build();
+  private static final Entity<? extends IncompleteKey> ENTITY2 =
       Entity.builder(KEY2).set("null", NullValue.of()).build();
   private static final Entity ENTITY3 = Entity.builder(KEY2)
       .set("p1", StringValue.builder("hi1").meaning(10).build())
@@ -97,9 +97,9 @@ public class SerializationTest {
       .set("p3", LongValue.builder(100).indexed(false).meaning(100).build())
       .set("blob", BLOB1)
       .build();
-  private static final PartialEntity EMBEDDED_ENTITY1 = ENTITY1;
-  private static final PartialEntity EMBEDDED_ENTITY2 = ENTITY2;
-  private static final PartialEntity EMBEDDED_ENTITY3 = PartialEntity.builder(INCOMPLETE_KEY1)
+  private static final Entity<IncompleteKey> EMBEDDED_ENTITY1 = (Entity<IncompleteKey>) ENTITY1;
+  private static final Entity<IncompleteKey> EMBEDDED_ENTITY2 = (Entity<IncompleteKey>) ENTITY2;
+  private static final Entity<IncompleteKey> EMBEDDED_ENTITY3 = Entity.builder(INCOMPLETE_KEY1)
       .set("p1", STRING_VALUE)
       .set("p2", LongValue.builder(100).indexed(false).meaning(100).build())
       .build();

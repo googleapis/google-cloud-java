@@ -16,28 +16,48 @@
 
 package com.google.gcloud.datastore;
 
+import java.util.List;
+
 /**
  * An interface to represent Google Cloud Datastore write operations.
  */
 public interface DatastoreWriter {
 
   /**
-   * A Datastore add operation.
-   * The operation will fail if an entity with the same key already exists.
+   * Datastore add operation.
+   * This method will automatically allocate an id if necessary.
+   *
+   * @param entity the entity to add
+   * @return an {@code Entity} with the same properties and a key that is either newly allocated
+   *     or the same one if key is already complete
+   * @throws DatastoreServiceException upon failure
+   * @throws IllegalArgumentException if the given entity is missing a key
    */
-  void add(Entity... entity);
+  Entity<Key> add(Entity entity);
+
+  /**
+   * Datastore add operation.
+   * This method will automatically allocate id for any entity with an incomplete key.
+   *
+   * @return a list of {@code Entity<Key>} ordered by input with the same properties and a key that
+   *     is either newly allocated or the same one if was already complete
+   * @throws DatastoreServiceException upon failure
+   * @throws IllegalArgumentException if any of the given entities is missing a key
+   * @see #add(Entity)
+   */
+  List<Entity<Key>> add(Entity... entity);
 
   /**
    * A Datastore update operation.
    * The operation will fail if an entity with the same key does not already exist.
    */
-  void update(Entity... entity);
+  void update(Entity<Key>... entity);
 
   /**
    * A Datastore put (a.k.a upsert) operation.
    * The operation will add or modify the entities.
    */
-  void put(Entity... entity);
+  void put(Entity<Key>... entity);
 
   /**
    * A datastore delete operation.

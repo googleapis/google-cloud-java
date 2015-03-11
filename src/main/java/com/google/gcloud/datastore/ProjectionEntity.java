@@ -137,6 +137,10 @@ public final class ProjectionEntity extends BaseEntity {
     return new Builder(copyFrom);
   }
 
+  static Builder builder() {
+    return new Builder();
+  }
+
   @Override
   protected void populateEntityBuilder(DatastoreV1.Entity.Builder entityPb) {
     if (key != null) {

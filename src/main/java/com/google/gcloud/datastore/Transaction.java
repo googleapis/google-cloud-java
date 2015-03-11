@@ -65,7 +65,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * @throws DatastoreServiceException upon failure or if no longer active
    */
   @Override
-  Entity get(Key key);
+  Entity<Key> get(Key key);
 
   /**
    * {@inheritDoc}
@@ -76,7 +76,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * @throws DatastoreServiceException upon failure or if no longer active
    */
   @Override
-  Iterator<Entity> get(Key... key);
+  Iterator<Entity<Key>> get(Key... key);
 
   /**
    * {@inheritDoc}
@@ -86,7 +86,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    *
    * @throws DatastoreServiceException upon failure or if no longer active
    */
-  List<Entity> fetch(Key... keys);
+  List<Entity<Key>> fetch(Key... keys);
 
   /**
    * {@inheritDoc}

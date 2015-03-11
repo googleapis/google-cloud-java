@@ -31,6 +31,7 @@ public class NullValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     NullValue value = NullValue.of();
@@ -39,6 +40,7 @@ public class NullValueTest {
     assertFalse(value.hasMeaning());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     NullValue.Builder builder = NullValue.builder();

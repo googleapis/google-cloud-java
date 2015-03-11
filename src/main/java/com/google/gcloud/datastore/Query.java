@@ -38,6 +38,10 @@ import java.util.Map;
 public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
   private static final long serialVersionUID = -2748141759901313101L;
+  private static final Object OBJECT_INSTANCE = new Object();
+  private static final Key KEY_INSTANCE = Key.builder("dummy", "dummy", "dummy").build();
+  private static final Entity<Key> ENTITY_INSTANCE = Entity.builder(KEY_INSTANCE).build();
+  private static final ProjectionEntity PROJECTION_ENTITY = ProjectionEntity.builder().build();
 
   private final Type<V> type;
   private final String namespace;
@@ -54,7 +58,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
     private static final Map<DatastoreV1.EntityResult.ResultType, Type<?>>
         PB_TO_INSTANCE = Maps.newEnumMap(DatastoreV1.EntityResult.ResultType.class);
 
-    static final Type<?> UNKNOWN = new Type<Object>(null, Object.class) {
+    static final Type<?> UNKNOWN = new Type<Object>(null, OBJECT_INSTANCE) {
 
       private static final long serialVersionUID = 1602329532153860907L;
 
@@ -69,18 +73,20 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       }
     };
 
-    public static final Type<Entity> FULL =
-        new Type<Entity>(DatastoreV1.EntityResult.ResultType.FULL, Entity.class) {
+    public static final Type<Entity<Key>> FULL =
+        new Type<Entity<Key>>(DatastoreV1.EntityResult.ResultType.FULL, ENTITY_INSTANCE) {
 
       private static final long serialVersionUID = 7712959777507168274L;
 
-      @Override protected Entity convert(DatastoreV1.Entity entityPb) {
+      @SuppressWarnings("unchecked")
+      @Override
+      protected Entity<Key> convert(DatastoreV1.Entity entityPb) {
         return Entity.fromPb(entityPb);
       }
     };
 
     public static final Type<Key> KEY_ONLY =
-        new Type<Key>(DatastoreV1.EntityResult.ResultType.KEY_ONLY, Key.class) {
+        new Type<Key>(DatastoreV1.EntityResult.ResultType.KEY_ONLY, KEY_INSTANCE) {
 
       private static final long serialVersionUID = -8514289244104446252L;
 
@@ -90,7 +96,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
     };
 
     public static final Type<ProjectionEntity> PROJECTION = new Type<ProjectionEntity>(
-        DatastoreV1.EntityResult.ResultType.PROJECTION, ProjectionEntity.class) {
+        DatastoreV1.EntityResult.ResultType.PROJECTION, PROJECTION_ENTITY) {
 
           private static final long serialVersionUID = -7591409419690650246L;
 
@@ -102,15 +108,16 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
     private final Class<V> resultClass;
     private final DatastoreV1.EntityResult.ResultType resultType;
 
-    private Type(DatastoreV1.EntityResult.ResultType typePb, Class<V> resultClass) {
-      this.resultType = typePb;
-      this.resultClass = checkNotNull(resultClass);
-      if (typePb != null) {
-        PB_TO_INSTANCE.put(typePb, this);
+    @SuppressWarnings("unchecked")
+    private Type(DatastoreV1.EntityResult.ResultType resultType, V resultObject) {
+      this.resultType = resultType;
+      this.resultClass = (Class<V>) checkNotNull(resultObject).getClass();
+      if (resultType != null) {
+        PB_TO_INSTANCE.put(resultType, this);
       }
     }
 
-    public Class<V> resultClass() {
+    public Class<?> resultClass() {
       return resultClass;
     }
 

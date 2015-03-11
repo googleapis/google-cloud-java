@@ -32,6 +32,7 @@ public class KeyValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     KeyValue value = KeyValue.of(CONTENT);
@@ -40,6 +41,7 @@ public class KeyValueTest {
     assertFalse(value.hasMeaning());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     KeyValue.Builder builder = KeyValue.builder(CONTENT);
