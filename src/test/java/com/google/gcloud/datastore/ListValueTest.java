@@ -36,6 +36,7 @@ public class ListValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     ListValue value = ListValue.of(CONTENT);
@@ -49,6 +50,7 @@ public class ListValueTest {
     ListValue.builder().indexed(false);
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     ListValue.Builder builder = ListValue.builder().set(CONTENT);

@@ -112,7 +112,7 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       return self();
     }
 
-    public B set(String name, PartialEntity value) {
+    public B set(String name, Entity<? extends IncompleteKey> value) {
       properties.put(name, of(value));
       return self();
     }
@@ -200,8 +200,8 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
   }
 
   @SuppressWarnings("unchecked")
-  public <T extends PartialEntity> T getEntity(String name) {
-    return (T) ((Value<PartialEntity>) getValue(name)).get();
+  public <K extends IncompleteKey> Entity<K> getEntity(String name) {
+    return ((Value<Entity<K>>) getValue(name)).get();
   }
 
   @SuppressWarnings("unchecked")

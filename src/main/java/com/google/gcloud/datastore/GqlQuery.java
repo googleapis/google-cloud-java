@@ -226,7 +226,7 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
-    public Builder<V> setBinding(String name, PartialEntity... value) {
+    public Builder<V> setBinding(String name, Entity<?>... value) {
       namedBindings.put(name, toBinding(name, EntityValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
@@ -271,7 +271,7 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
-    public Builder<V> addBinding(PartialEntity... value) {
+    public Builder<V> addBinding(Entity<?>... value) {
       positionalBindings.add(toBinding(EntityValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }

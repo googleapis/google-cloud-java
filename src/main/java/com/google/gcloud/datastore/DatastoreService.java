@@ -82,49 +82,18 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
   List<Key> allocateId(IncompleteKey... key);
 
   /**
-   * Datastore add operation.
-   * This method will automatically allocate an id if necessary.
-   *
-   * @param entity the entity to add
-   * @return an {@code Entity} with the same properties and a key that is either newly allocated
-   *     or the same one if was already complete
+   * {@inheritDoc}
    * @throws DatastoreServiceException upon failure
-   * @throws IllegalArgumentException if the given entity is missing a key
    */
-  Entity add(PartialEntity entity);
-
-  /**
-   * Datastore add operation.
-   * This method will automatically allocate id for any entity with incomplete key.
-   *
-   * @return a list of {@code Entity} ordered by input with the same properties and a key that is
-   *     either newly allocated or the same one if was already complete
-   * @throws DatastoreServiceException upon failure
-   * @throws IllegalArgumentException if any of the given entities is missing a key
-   * @see #add(PartialEntity)
-   */
-  List<Entity> add(PartialEntity... entity);
+  @Override
+  void update(Entity<Key>... entity);
 
   /**
    * {@inheritDoc}
    * @throws DatastoreServiceException upon failure
    */
   @Override
-  void add(Entity... entity);
-
-  /**
-   * {@inheritDoc}
-   * @throws DatastoreServiceException upon failure
-   */
-  @Override
-  void update(Entity... entity);
-
-  /**
-   * {@inheritDoc}
-   * @throws DatastoreServiceException upon failure
-   */
-  @Override
-  void put(Entity... entity);
+  void put(Entity<Key>... entity);
 
   /**
    * {@inheritDoc}

@@ -32,6 +32,7 @@ public class LongValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     LongValue value = LongValue.of(CONTENT);
@@ -40,6 +41,7 @@ public class LongValueTest {
     assertFalse(value.hasMeaning());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     LongValue.Builder builder = LongValue.builder(CONTENT);

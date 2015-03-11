@@ -32,6 +32,7 @@ public class DateTimeValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     DateTimeValue value = DateTimeValue.of(CONTENT);
@@ -40,6 +41,7 @@ public class DateTimeValueTest {
     assertFalse(value.hasMeaning());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     DateTimeValue.Builder builder = DateTimeValue.builder(CONTENT);

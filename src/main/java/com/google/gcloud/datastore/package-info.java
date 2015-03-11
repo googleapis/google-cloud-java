@@ -23,7 +23,7 @@
  * DatastoreService datastore = DatastoreServiceFactory.getDefault(options);
  * KeyFactory keyFactory = new KeyFactory(datastore).kind(kind);
  * Key key = keyFactory.newKey(keyName);
- * Entity entity = datastore.get(key);
+ * Entity&lt;Key&gt; entity = datastore.get(key);
  * if (entity == null) {
  *   entity = Entity.builder(key)
  *       .set("name", "John Do")

@@ -63,7 +63,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     STRING(StringValue.MARSHALLER),
 
     /**
-     * Represents an entity ({@link PartialEntity} or {@link Entity}) value.
+     * Represents an entity value.
      */
     ENTITY(EntityValue.MARSHALLER),
 
@@ -165,6 +165,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 
     private static final long serialVersionUID = 2880767488942992985L;
 
+    @SuppressWarnings("deprecation")
     @Override
     public final B fromProto(DatastoreV1.Value proto) {
       B builder = newBuilder(getValue(proto));
@@ -177,6 +178,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
       return builder;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public final DatastoreV1.Value toProto(P value) {
       DatastoreV1.Value.Builder builder = DatastoreV1.Value.newBuilder();
@@ -212,6 +214,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
       return type;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public B mergeFrom(P other) {
       indexed = other.indexed();
