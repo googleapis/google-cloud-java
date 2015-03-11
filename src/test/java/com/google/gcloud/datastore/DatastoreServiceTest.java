@@ -16,6 +16,7 @@
 
 package com.google.gcloud.datastore;
 
+import static junit.framework.TestCase.assertNotNull;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -24,6 +25,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.common.collect.Iterators;
 import com.google.gcloud.datastore.Query.Type;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
@@ -51,9 +53,9 @@ public class DatastoreServiceTest {
   private static final NullValue NULL_VALUE = NullValue.of();
   private static final StringValue STR_VALUE = StringValue.of("str");
   private static final BooleanValue BOOL_VALUE = BooleanValue.builder(false).indexed(false).build();
-  private static final IncompleteKey PARTIAL_KEY1 = IncompleteKey.builder(DATASET, KIND1).build();
-  private static final IncompleteKey PARTIAL_KEY2 = IncompleteKey.builder(DATASET, KIND2).build();
-  private static final Key KEY1 = Key.builder(PARTIAL_KEY1, "name").build();
+  private static final IncompleteKey INCOMPLETE_KEY1 = IncompleteKey.builder(DATASET, KIND1).build();
+  private static final IncompleteKey INCOMPLETE_KEY2 = IncompleteKey.builder(DATASET, KIND2).build();
+  private static final Key KEY1 = Key.builder(INCOMPLETE_KEY1, "name").build();
   private static final Key KEY2 = Key.builder(KEY1, KIND2, 1).build();
   private static final Key KEY3 = Key.builder(KEY2).name("bla").build();
   private static final Key KEY4 = Key.builder(KEY2).name("newName1").build();
@@ -65,22 +67,22 @@ public class DatastoreServiceTest {
       .build();
   private static final ListValue LIST_VALUE2 = ListValue.of(Collections.singletonList(KEY_VALUE));
   private static final DateTimeValue DATE_TIME_VALUE = new DateTimeValue(DateTime.now());
-  private static final PartialEntity PARTIAL_ENTITY1 = PartialEntity.builder(PARTIAL_KEY2)
+  private static final Entity<IncompleteKey> PARTIAL_ENTITY1 = Entity.builder(INCOMPLETE_KEY2)
       .set("str", STR_VALUE).set("bool", BOOL_VALUE).set("list", LIST_VALUE1).build();
-  private static final PartialEntity PARTIAL_ENTITY2 = PartialEntity.builder(PARTIAL_ENTITY1)
+  private static final Entity<IncompleteKey> PARTIAL_ENTITY2 = Entity.builder(PARTIAL_ENTITY1)
       .remove("str").set("bool", true).set("list", LIST_VALUE1.get()).build();
-  private static final PartialEntity PARTIAL_ENTITY3 = PartialEntity.builder(PARTIAL_ENTITY1)
+  private static final Entity<IncompleteKey> PARTIAL_ENTITY3 = Entity.builder(PARTIAL_ENTITY1)
       .key(IncompleteKey.builder(DATASET, KIND3).build()).build();
-  private static final Entity ENTITY1 = Entity.builder(KEY1)
+  private static final Entity<Key> ENTITY1 = Entity.builder(KEY1)
       .set("str", STR_VALUE)
       .set("date", DATE_TIME_VALUE)
       .set("bool", BOOL_VALUE)
       .set("partial1", EntityValue.of(PARTIAL_ENTITY1))
       .set("list", LIST_VALUE2)
       .build();
-  private static final Entity ENTITY2 = Entity.builder(ENTITY1).key(KEY2).remove("str")
+  private static final Entity<Key> ENTITY2 = Entity.builder(ENTITY1).key(KEY2).remove("str")
       .set("name", "Dan").setNull("null").set("age", 20).build();
-  private static final Entity ENTITY3 = Entity.builder(ENTITY1).key(KEY3).remove("str")
+  private static final Entity<Key> ENTITY3 = Entity.builder(ENTITY1).key(KEY3).remove("str")
       .set("null", NULL_VALUE).set("partial1", PARTIAL_ENTITY2).set("partial2", ENTITY2).build();
 
   private DatastoreServiceOptions options;
@@ -102,8 +104,9 @@ public class DatastoreServiceTest {
         .host("http://localhost:" + LocalGcdHelper.PORT)
         .build();
     datastore = DatastoreServiceFactory.getDefault(options);
-    // Prepare data for testing
-    datastore.delete(KEY1, KEY2, KEY3, KEY4, KEY5);
+    StructuredQuery<Key> query = StructuredQuery.keyOnlyBuilder().build();
+    QueryResults<Key> result = datastore.run(query);
+    datastore.delete(Iterators.toArray(result, Key.class));
     datastore.add(ENTITY1, ENTITY2);
   }
 
@@ -131,7 +134,7 @@ public class DatastoreServiceTest {
     transaction.delete(KEY1);
     transaction.commit();
 
-    List<Entity> list = datastore.fetch(KEY1, KEY2, KEY3);
+    List<Entity<Key>> list = datastore.fetch(KEY1, KEY2, KEY3);
     assertNull(list.get(0));
     assertEquals(entity2, list.get(1));
     assertEquals(ENTITY3, list.get(2));
@@ -177,10 +180,10 @@ public class DatastoreServiceTest {
 
   @Test
   public void testTransactionWithQuery() {
-    Query<Entity> query =
+    Query<Entity<Key>> query =
         StructuredQuery.builder().kind(KIND2).filter(PropertyFilter.hasAncestor(KEY2)).build();
     Transaction transaction = datastore.newTransaction();
-    QueryResults<Entity> results = transaction.run(query);
+    QueryResults<Entity<Key>> results = transaction.run(query);
     assertEquals(ENTITY2, results.next());
     assertFalse(results.hasNext());
     transaction.add(ENTITY3);
@@ -221,7 +224,7 @@ public class DatastoreServiceTest {
 
     verifyNotUsable(transaction);
 
-    List<Entity> list = datastore.fetch(KEY1, KEY2, KEY3);
+    List<Entity<Key>> list = datastore.fetch(KEY1, KEY2, KEY3);
     assertEquals(ENTITY1, list.get(0));
     assertEquals(ENTITY2, list.get(1));
     assertNull(list.get(2));
@@ -261,27 +264,39 @@ public class DatastoreServiceTest {
   @Test
   public void testNewBatch() {
     Batch batch = datastore.newBatch();
-    Entity entity1 = Entity.builder(ENTITY1).clear().build();
-    Entity entity2 = Entity.builder(ENTITY2).clear().setNull("bla").build();
-    Entity entity4 = Entity.builder(KEY4).set("value", StringValue.of("value")).build();
-    Entity entity5 = Entity.builder(KEY5).set("value", "value").build();
+    Entity<Key> entity1 = Entity.builder(ENTITY1).clear().build();
+    Entity<Key> entity2 = Entity.builder(ENTITY2).clear().setNull("bla").build();
+    Entity<Key> entity4 = Entity.builder(KEY4).set("value", StringValue.of("value")).build();
+    Entity<Key> entity5 = Entity.builder(KEY5).set("value", "value").build();
 
-    batch.add(entity4, entity5);
-    batch.add(PARTIAL_ENTITY3);
+    List<Entity<Key>> entities = batch.add(entity4, PARTIAL_ENTITY2, entity5);
+    Entity<Key> entity6 = entities.get(1);
+    assertSame(entity4, entities.get(0));
+    assertEquals(PARTIAL_ENTITY2.properties(), entity6.properties());
+    assertEquals(PARTIAL_ENTITY2.key().dataset(), entity6.key().dataset());
+    assertEquals(PARTIAL_ENTITY2.key().namespace(), entity6.key().namespace());
+    assertEquals(PARTIAL_ENTITY2.key().ancestors(), entity6.key().ancestors());
+    assertEquals(PARTIAL_ENTITY2.key().kind(), entity6.key().kind());
+    assertEquals(PARTIAL_ENTITY2.key(), IncompleteKey.builder(entity6.key()).build());
+    assertNotEquals(PARTIAL_ENTITY2.key().path(), entity6.key().path());
+    assertNotEquals(PARTIAL_ENTITY2.key(), entity6.key());
+    assertSame(entity5, entities.get(2));
+    batch.addWithDeferredIdAllocation(PARTIAL_ENTITY3);
     batch.put(ENTITY3, entity1, entity2);
 
     Batch.Response response = batch.submit();
-    Iterator<Entity> entities =
-        datastore.fetch(KEY1, KEY2, KEY3, entity4.key(), entity5.key()).iterator();
-    assertEquals(entity1, entities.next());
-    assertEquals(entity2, entities.next());
-    assertEquals(ENTITY3, entities.next());
-    assertEquals(entity4, entities.next());
-    assertEquals(entity5, entities.next());
-    assertFalse(entities.hasNext());
+    entities = datastore.fetch(KEY1, KEY2, KEY3, entity4.key(), entity5.key(), entity6.key());
+    assertEquals(entity1, entities.get(0));
+    assertEquals(entity2, entities.get(1));
+    assertEquals(ENTITY3, entities.get(2));
+    assertEquals(entity4, entities.get(3));
+    assertEquals(entity5, entities.get(4));
+    assertEquals(entity6, entities.get(5));
+    assertEquals(6, entities.size());
     List<Key> generatedKeys = response.generatedKeys();
     assertEquals(1, generatedKeys.size());
-    assertEquals(PARTIAL_ENTITY1.properties(), datastore.get(generatedKeys.get(0)).properties());
+    assertEquals(PARTIAL_ENTITY3.properties(), datastore.get(generatedKeys.get(0)).properties());
+    assertEquals(PARTIAL_ENTITY3.key(), IncompleteKey.builder(generatedKeys.get(0)).build());
 
     try {
       batch.submit();
@@ -295,33 +310,27 @@ public class DatastoreServiceTest {
     batch.delete(entity4.key(), entity5.key());
     batch.update(ENTITY1, ENTITY2, ENTITY3);
     batch.submit();
-    entities = datastore.fetch(KEY1, KEY2, KEY3, entity4.key(), entity5.key()).iterator();
-    assertEquals(ENTITY1, entities.next());
-    assertEquals(ENTITY2, entities.next());
-    assertEquals(ENTITY3, entities.next());
-    assertNull(entities.next());
-    assertNull(entities.next());
-    assertFalse(entities.hasNext());
-
-    // TODO need to cover the following use-cases:
-    // delete after put/add/update
-    // put after delete/add/update
-    // update after delete/add/put
-    // add after delete/update/put
+    entities = datastore.fetch(KEY1, KEY2, KEY3, entity4.key(), entity5.key());
+    assertEquals(ENTITY1, entities.get(0));
+    assertEquals(ENTITY2, entities.get(1));
+    assertEquals(ENTITY3, entities.get(2));
+    assertNull(entities.get(3));
+    assertNull(entities.get(4));
+    assertEquals(5, entities.size());
   }
 
   @Test
   public void testRunGqlQueryNoCasting() {
-    Query<Entity> query1 = GqlQuery.builder(Type.FULL, "select * from " + KIND1).build();
-    QueryResults<Entity> results1 = datastore.run(query1);
+    Query<Entity<Key>> query1 = GqlQuery.builder(Type.FULL, "select * from " + KIND1).build();
+    QueryResults<Entity<Key>> results1 = datastore.run(query1);
     assertTrue(results1.hasNext());
     assertEquals(ENTITY1, results1.next());
     assertFalse(results1.hasNext());
 
     datastore.put(ENTITY3);
-    Query<? extends PartialEntity> query2 =  GqlQuery.builder(
+    Query<? extends Entity> query2 =  GqlQuery.builder(
         Type.FULL, "select * from " + KIND2 + " order by __key__").build();
-    QueryResults<? extends PartialEntity> results2 = datastore.run(query2);
+    QueryResults<? extends Entity> results2 = datastore.run(query2);
     assertTrue(results2.hasNext());
     assertEquals(ENTITY2, results2.next());
     assertTrue(results2.hasNext());
@@ -383,9 +392,9 @@ public class DatastoreServiceTest {
 
   @Test
   public void testRunStructuredQuery() {
-    StructuredQuery<Entity> query =
+    StructuredQuery<Entity<Key>> query =
         StructuredQuery.builder().kind(KIND1).orderBy(OrderBy.asc("__key__")).build();
-    QueryResults<Entity> results1 = datastore.run(query);
+    QueryResults<Entity<Key>> results1 = datastore.run(query);
     assertTrue(results1.hasNext());
     assertEquals(ENTITY1, results1.next());
     assertFalse(results1.hasNext());
@@ -480,7 +489,7 @@ public class DatastoreServiceTest {
     assertEquals(LIST_VALUE2, value3);
     DateTimeValue value4 = entity.getValue("date");
     assertEquals(DATE_TIME_VALUE, value4);
-    PartialEntity value5 = entity.getEntity("partial1");
+    Entity<IncompleteKey> value5 = entity.getEntity("partial1");
     assertEquals(PARTIAL_ENTITY1, value5);
     assertEquals(5, entity.names().size());
     assertFalse(entity.contains("bla"));
@@ -489,7 +498,7 @@ public class DatastoreServiceTest {
   @Test
   public void testGetArray() {
     datastore.put(ENTITY3);
-    Iterator<Entity> result =
+    Iterator<Entity<Key>> result =
         datastore.fetch(KEY1, Key.builder(KEY1).name("bla").build(), KEY2, KEY3).iterator();
     assertEquals(ENTITY1, result.next());
     assertNull(result.next());
@@ -499,7 +508,7 @@ public class DatastoreServiceTest {
     assertTrue(entity3.isNull("null"));
     assertFalse(entity3.getBoolean("bool"));
     assertEquals(LIST_VALUE2.get(), entity3.getList("list"));
-    PartialEntity partial1 = entity3.getEntity("partial1");
+    Entity<IncompleteKey> partial1 = entity3.getEntity("partial1");
     Entity partial2 = entity3.getEntity("partial2");
     assertEquals(PARTIAL_ENTITY2, partial1);
     assertEquals(ENTITY2, partial2);
@@ -518,7 +527,7 @@ public class DatastoreServiceTest {
 
   @Test
   public void testAddEntity() {
-    List<Entity> keys = datastore.fetch(ENTITY1.key(), ENTITY3.key());
+    List<Entity<Key>> keys = datastore.fetch(ENTITY1.key(), ENTITY3.key());
     assertEquals(ENTITY1, keys.get(0));
     assertNull(keys.get(1));
     assertEquals(2, keys.size());
@@ -529,44 +538,22 @@ public class DatastoreServiceTest {
     } catch (DatastoreServiceException expected) {
       // expected;
     }
-    datastore.add(ENTITY3);
+
+    List<Entity<Key>> entities = datastore.add(ENTITY3, PARTIAL_ENTITY1, PARTIAL_ENTITY2);
     assertEquals(ENTITY3, datastore.get(ENTITY3.key()));
+    assertEquals(ENTITY3, entities.get(0));
+    assertEquals(PARTIAL_ENTITY1.properties(), entities.get(1).properties());
+    assertEquals(PARTIAL_ENTITY1.key().ancestors(), entities.get(1).key().ancestors());
+    assertNotNull(datastore.get(entities.get(1).key()));
+    assertEquals(PARTIAL_ENTITY2.properties(), entities.get(2).properties());
+    assertEquals(PARTIAL_ENTITY2.key().ancestors(), entities.get(2).key().ancestors());
+    assertNotNull(datastore.get(entities.get(2).key()));
   }
 
-  @Test
-  public void testAddPartialEntity() {
-    List<Entity> keys = datastore.fetch(ENTITY1.key(), ENTITY3.key());
-    assertEquals(ENTITY1, keys.get(0));
-    assertNull(keys.get(1));
-    assertEquals(2, keys.size());
-
-    try {
-      datastore.add(ENTITY1);
-      fail("Expecting a failure");
-    } catch (DatastoreServiceException expected) {
-      // expected;
-    }
-
-    PartialEntity pe = PartialEntity.builder(PARTIAL_ENTITY2).key(KEY5).build();
-    List<Entity> response = datastore.add(PARTIAL_ENTITY3, ENTITY3, PARTIAL_ENTITY3, pe);
-    assertEquals(4, response.size());
-    assertEquals(PARTIAL_ENTITY3.properties(), response.get(0).properties());
-    assertEquals(PARTIAL_ENTITY3.properties(), datastore.get(response.get(0).key()).properties());
-    assertSame(ENTITY3, response.get(1));
-    assertEquals(ENTITY3, datastore.get(response.get(1).key()));
-    assertEquals(PARTIAL_ENTITY3.properties(), response.get(2).properties());
-    assertEquals(PARTIAL_ENTITY3.properties(), datastore.get(response.get(2).key()).properties());
-    assertEquals(pe.properties(), response.get(3).properties());
-    assertEquals(pe.key(), response.get(3).key());
-    assertEquals(pe.properties(), datastore.get(response.get(3).key()).properties());
-    assertEquals(pe.key(), datastore.get(response.get(3).key()).key());
-    assertEquals(pe, response.get(3));
-    assertEquals(datastore.get(response.get(3).key()), response.get(3));
-  }
 
   @Test
   public void testUpdate() {
-    List<Entity> keys = datastore.fetch(ENTITY1.key(), ENTITY3.key());
+    List<Entity<Key>> keys = datastore.fetch(ENTITY1.key(), ENTITY3.key());
     assertEquals(ENTITY1, keys.get(0));
     assertNull(keys.get(1));
     assertEquals(2, keys.size());
@@ -587,7 +574,7 @@ public class DatastoreServiceTest {
 
   @Test
   public void testPut() {
-    Iterator<Entity> keys = datastore.fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
+    Iterator<Entity<Key>> keys = datastore.fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
     assertEquals(ENTITY1, keys.next());
     assertEquals(ENTITY2, keys.next());
     assertNull(keys.next());
@@ -605,7 +592,7 @@ public class DatastoreServiceTest {
 
   @Test
   public void testDelete() {
-    Iterator<Entity> keys = datastore.fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
+    Iterator<Entity<Key>> keys = datastore.fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
     assertEquals(ENTITY1, keys.next());
     assertEquals(ENTITY2, keys.next());
     assertNull(keys.next());
@@ -621,8 +608,8 @@ public class DatastoreServiceTest {
   @Test
   public void testKeyFactory() {
     KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND1);
-    assertEquals(PARTIAL_KEY1, keyFactory.newKey());
-    assertEquals(IncompleteKey.builder(PARTIAL_KEY1).kind(KIND2).build(),
+    assertEquals(INCOMPLETE_KEY1, keyFactory.newKey());
+    assertEquals(IncompleteKey.builder(INCOMPLETE_KEY1).kind(KIND2).build(),
         new KeyFactory(datastore).kind(KIND2).newKey());
     assertEquals(KEY1, keyFactory.newKey("name"));
     assertEquals(Key.builder(KEY1).id(2).build(), keyFactory.newKey(2));

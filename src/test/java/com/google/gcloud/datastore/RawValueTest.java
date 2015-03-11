@@ -34,6 +34,7 @@ public class RawValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     RawValue value = RawValue.of(CONTENT);
@@ -42,6 +43,7 @@ public class RawValueTest {
     assertFalse(value.hasMeaning());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     RawValue.Builder builder = RawValue.builder(CONTENT);

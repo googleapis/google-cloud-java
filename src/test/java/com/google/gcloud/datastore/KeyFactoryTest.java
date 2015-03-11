@@ -56,7 +56,7 @@ public class KeyFactoryTest {
   }
 
   @Test
-  public void testNewIncompletelKey() throws Exception {
+  public void testNewIncompleteKey() throws Exception {
     IncompleteKey key = keyFactory.newKey();
     verifyIncompleteKey(key, null);
     PathElement p1 = PathElement.of("k1", "n");
@@ -66,7 +66,7 @@ public class KeyFactoryTest {
   }
 
   @Test(expected = NullPointerException.class)
-  public void testNewPartialWithNoKind() {
+  public void testNewIncompleteWithNoKind() {
     new KeyFactory(keyFactory.datastore()).build();
   }
 

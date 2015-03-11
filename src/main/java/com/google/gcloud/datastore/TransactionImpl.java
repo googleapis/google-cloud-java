@@ -18,7 +18,6 @@ package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Function;
-import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.gcloud.datastore.TransactionOption.ForceWrites;
 import com.google.gcloud.datastore.TransactionOption.IsolationLevel;
@@ -71,12 +70,12 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   @Override
-  public Entity get(Key key) {
-    return Iterators.getNext(get(new Key[] {key}), null);
+  public Entity<Key> get(Key key) {
+    return DatastoreHelper.get(this, key);
   }
 
   @Override
-  public Iterator<Entity> get(Key... keys) {
+  public Iterator<Entity<Key>> get(Key... keys) {
     validateActive();
     DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);
@@ -84,7 +83,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   @Override
-  public List<Entity> fetch(Key... keys) {
+  public List<Entity<Key>> fetch(Key... keys) {
     validateActive();
     return DatastoreHelper.fetch(this, keys);
   }

@@ -992,7 +992,7 @@ public class StructuredQuery<V> extends Query<V> {
     return builder.namespace(namespace).mergeFrom(queryPb).build();
   }
 
-  public static Builder<Entity> builder() {
+  public static Builder<Entity<Key>> builder() {
     return new Builder<>(Type.FULL);
   }
 

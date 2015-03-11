@@ -24,8 +24,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import java.util.List;
 
 /**
- * A partial key (without a name or id).
- * Could be used as metadata for {@link PartialEntity}.
+ * An incomplete key (without a name or id).
  * This class is immutable.
  */
 public class IncompleteKey extends BaseKey {

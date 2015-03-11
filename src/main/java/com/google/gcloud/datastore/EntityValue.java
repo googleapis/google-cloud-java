@@ -21,12 +21,12 @@ import static com.google.api.services.datastore.DatastoreV1.Value.ENTITY_VALUE_F
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 
-public class EntityValue extends Value<PartialEntity> {
+public class EntityValue extends Value<Entity<?>> {
 
   private static final long serialVersionUID = -5461475706792576395L;
 
-  static final BaseMarshaller<PartialEntity, EntityValue, Builder> MARSHALLER =
-      new BaseMarshaller<PartialEntity, EntityValue, Builder>() {
+  static final BaseMarshaller<Entity<?>, EntityValue, Builder> MARSHALLER =
+      new BaseMarshaller<Entity<?>, EntityValue, Builder>() {
 
         private static final long serialVersionUID = 2355075086076070931L;
 
@@ -36,13 +36,13 @@ public class EntityValue extends Value<PartialEntity> {
         }
 
         @Override
-        public Builder newBuilder(PartialEntity value) {
+        public Builder newBuilder(Entity value) {
           return builder(value);
         }
 
         @Override
-        protected PartialEntity getValue(DatastoreV1.Value from) {
-          return PartialEntity.fromPb(from.getEntityValue());
+        protected Entity getValue(DatastoreV1.Value from) {
+          return Entity.fromPb(from.getEntityValue());
         }
 
         @Override
@@ -51,7 +51,7 @@ public class EntityValue extends Value<PartialEntity> {
         }
       };
 
-  public static final class Builder extends Value.BaseBuilder<PartialEntity, EntityValue, Builder> {
+  public static final class Builder extends Value.BaseBuilder<Entity<?>, EntityValue, Builder> {
 
     private Builder() {
       super(Type.ENTITY);
@@ -70,7 +70,7 @@ public class EntityValue extends Value<PartialEntity> {
     }
   }
 
-  public EntityValue(PartialEntity entity) {
+  public EntityValue(Entity entity) {
     this(builder(entity));
   }
 
@@ -83,11 +83,11 @@ public class EntityValue extends Value<PartialEntity> {
     return new Builder().mergeFrom(this);
   }
 
-  public static EntityValue of(PartialEntity entity) {
+  public static EntityValue of(Entity entity) {
     return new EntityValue(entity);
   }
 
-  public static Builder builder(PartialEntity entity) {
+  public static Builder builder(Entity entity) {
     return new Builder().set(entity).indexed(false);
   }
 }
