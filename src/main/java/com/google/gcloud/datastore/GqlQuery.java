@@ -44,7 +44,8 @@ import java.util.TreeMap;
  *
  * <p>When the type of the results is known the preferred usage would be:
  * <pre>{@code
- *   Query&lt;Entity&gt; query = GqlQuery.builder(Query.Type.FULL, "select * from kind").build();
+ *   Query&lt;Entity&gt; query =
+ *       Query.gqlQueryBuilder(Query.Type.FULL, "select * from kind").build();
  *   QueryResults&lt;Entity&gt; results = datastore.run(query);
  *   while (results.hasNext()) {
  *     Entity entity = results.next();
@@ -54,7 +55,7 @@ import java.util.TreeMap;
  *
  * <p>When the type of the results is unknown you can use this approach:
  * <pre>{@code
- *   Query&lt;?&gt; query = GqlQuery.builder("select __key__ from kind").build();
+ *   Query&lt;?&gt; query = Query.gqlQueryBuilder("select __key__ from kind").build();
  *   QueryResults&lt;?&gt; results = datastore.run(query);
  *   if (Key.class.isAssignableFrom(results.resultClass())) {
  *     QueryResults&lt;Key&gt; keys = (QueryResults&lt;Key&gt;) results;
@@ -416,21 +417,4 @@ public final class GqlQuery<V> extends Query<V> {
     return builder.build();
   }
 
-  /**
-   * Returns a new GQL query builder.
-   *
-   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
-   */
-  public static GqlQuery.Builder<?> builder(String gql) {
-    return builder(Type.UNKNOWN, gql);
-  }
-
-  /**
-   * Returns a new GQL query builder.
-   *
-   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
-   */
-  public static <V> GqlQuery.Builder<V> builder(Type<V> type, String gql) {
-    return new GqlQuery.Builder<>(type, gql);
-  }
 }
