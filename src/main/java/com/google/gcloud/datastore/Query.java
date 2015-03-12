@@ -22,6 +22,9 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Maps;
+import com.google.gcloud.datastore.StructuredQuery.FullQueryBuilder;
+import com.google.gcloud.datastore.StructuredQuery.KeyOnlyQueryBuilder;
+import com.google.gcloud.datastore.StructuredQuery.ProjectionQueryBuilder;
 import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -190,4 +193,43 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   protected abstract void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb);
 
   protected abstract Query<V> nextQuery(DatastoreV1.QueryResultBatch responsePb);
+
+  /**
+   * Returns a new {@link GqlQuery} builder.
+   *
+   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
+   */
+  public static GqlQuery.Builder<?> gqlQueryBuilder(String gql) {
+    return gqlQueryBuilder(Type.UNKNOWN, gql);
+  }
+
+  /**
+   * Returns a new {@link GqlQuery} builder.
+   *
+   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
+   */
+  public static <V> GqlQuery.Builder<V> gqlQueryBuilder(Type<V> type, String gql) {
+    return new GqlQuery.Builder<>(type, gql);
+  }
+
+  /**
+   * Returns a new {@link StructuredQuery} builder for full queries.
+   */
+  public static FullQueryBuilder fullQueryBuilder() {
+    return new FullQueryBuilder();
+  }
+
+  /**
+   * Returns a new {@link StructuredQuery} builder for key-only queries.
+   */
+  public static KeyOnlyQueryBuilder keyOnlyQueryBuilder() {
+    return new KeyOnlyQueryBuilder();
+  }
+
+  /**
+   * Returns a new {@link StructuredQuery} builder for projection queries.
+   */
+  public static ProjectionQueryBuilder projectionQueryBuilder() {
+    return new ProjectionQueryBuilder();
+  }
 }

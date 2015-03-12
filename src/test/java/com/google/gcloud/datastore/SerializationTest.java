@@ -50,23 +50,24 @@ public class SerializationTest {
   private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1,2});
   private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[] {10});
   private static final Query<?> GQL1 =
-      GqlQuery.builder("select * from kind1 where name = @name and age > @1")
+      Query.gqlQueryBuilder("select * from kind1 where name = @name and age > @1")
       .setBinding("name", "name1")
       .addBinding(20)
       .namespace("ns1")
       .build();
   private static final Query<Entity<Key>> GQL2 =
-      GqlQuery.builder(Query.Type.FULL, "select * from kind1 where name = @name and age > @1")
+      Query.gqlQueryBuilder(Query.Type.FULL, "select * from kind1 where name = @name and age > @1")
       .setBinding("name", "name1")
       .addBinding(20)
       .namespace("ns1")
       .build();
-  private static final Query<Entity<Key>> QUERY1 = StructuredQuery.builder().kind("kind1").build();
-  private static final Query<Key> QUERY2 = StructuredQuery.keyOnlyBuilder()
+  private static final Query<Entity<Key>> QUERY1 =
+      Query.fullQueryBuilder().kind("kind1").build();
+  private static final Query<Key> QUERY2 = Query.keyOnlyQueryBuilder()
       .kind("k")
       .filter(PropertyFilter.eq("p1", "hello"))
       .build();
-  private static final Query<ProjectionEntity> QUERY3 = StructuredQuery.projectionBuilder()
+  private static final Query<ProjectionEntity> QUERY3 = Query.projectionQueryBuilder()
       .kind("k")
       .namespace("ns1")
       .projection(Projection.property("p"))
