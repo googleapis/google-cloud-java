@@ -29,7 +29,7 @@ public interface DatastoreReader {
    *
    * @throws DatastoreServiceException upon failure.
    */
-  Entity<Key> get(Key key);
+  Entity get(Key key);
 
   /**
    * Returns an {@link Entity} for each given {@link Key} that exists in the Datastore.
@@ -41,14 +41,14 @@ public interface DatastoreReader {
    * @throws DatastoreServiceException upon failure.
    * @see #get(Key)
    */
-  Iterator<Entity<Key>> get(Key... key);
+  Iterator<Entity> get(Key... key);
 
   /**
    * Returns a list with a value for each given key (ordered by input).
    * A {@code null} would be returned for non-existing keys.
    * When possible prefer using {@link #get(Key...)} which does not eagerly loads the results.
    */
-  List<Entity<Key>> fetch(Key... keys);
+  List<Entity> fetch(Key... keys);
 
   /**
    * Submit a {@link Query} and returns its result.

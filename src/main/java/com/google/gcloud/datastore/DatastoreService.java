@@ -86,14 +86,14 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
    * @throws DatastoreServiceException upon failure
    */
   @Override
-  void update(Entity<Key>... entity);
+  void update(Entity... entity);
 
   /**
    * {@inheritDoc}
    * @throws DatastoreServiceException upon failure
    */
   @Override
-  void put(Entity<Key>... entity);
+  void put(Entity... entity);
 
   /**
    * {@inheritDoc}

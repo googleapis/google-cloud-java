@@ -48,9 +48,9 @@ import java.util.Objects;
  * <p>A simple query that returns all entities for a specific kind
  * <pre>{@code
  *   FullQuery query = Query.fullQueryBuilder().kind(kind).build();
- *   QueryResults<Entity<Key>> results = datastore.run(query);
+ *   QueryResults<Entity> results = datastore.run(query);
  *   while (results.hasNext()) {
- *     Entity<Key> entity = results.next();
+ *     Entity entity = results.next();
  *     ...
  *   }
  * } </pre>
@@ -753,7 +753,7 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
-  public static final class FullQueryBuilder extends BaseBuilder<Entity<Key>, FullQueryBuilder> {
+  public static final class FullQueryBuilder extends BaseBuilder<Entity, FullQueryBuilder> {
 
     FullQueryBuilder() {
       super(Type.FULL);
@@ -829,9 +829,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
-  public static final class FullQuery extends StructuredQuery<Entity<Key>> {
+  public static final class FullQuery extends StructuredQuery<Entity> {
 
-    FullQuery(BaseBuilder<Entity<Key>, ?> builder) {
+    FullQuery(BaseBuilder<Entity, ?> builder) {
       super(builder);
     }
   }

@@ -70,12 +70,12 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   @Override
-  public Entity<Key> get(Key key) {
+  public Entity get(Key key) {
     return DatastoreHelper.get(this, key);
   }
 
   @Override
-  public Iterator<Entity<Key>> get(Key... keys) {
+  public Iterator<Entity> get(Key... keys) {
     validateActive();
     DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);
@@ -83,7 +83,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   @Override
-  public List<Entity<Key>> fetch(Key... keys) {
+  public List<Entity> fetch(Key... keys) {
     validateActive();
     return DatastoreHelper.fetch(this, keys);
   }

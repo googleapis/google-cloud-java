@@ -27,14 +27,14 @@ interface DatastoreBatchWriter extends DatastoreWriter {
   /**
    * Datastore add operation.
    * This method will also allocate id for any entity with an incomplete key.
-   * As oppose to {@link #add(Entity)}, this method will defer any necessary id allocation
+   * As oppose to {@link #add(FullEntity)}, this method will defer any necessary id allocation
    * to submit time.
    *
    * @throws IllegalArgumentException if any of the given entities is missing a key
    * @throws com.google.gcloud.datastore.DatastoreServiceException if a given entity with a
    *     complete key was already added to this writer or if not active
    */
-  void addWithDeferredIdAllocation(Entity... entity);
+  void addWithDeferredIdAllocation(FullEntity<?>... entity);
 
   /**
    * {@inheritDoc}
@@ -45,7 +45,7 @@ interface DatastoreBatchWriter extends DatastoreWriter {
    *     if id allocation for an entity with an incomplete key failed.
    */
   @Override
-  List<Entity<Key>> add(Entity... entity);
+  List<Entity> add(FullEntity<?>... entity);
 
   /**
    * {@inheritDoc}
@@ -55,7 +55,7 @@ interface DatastoreBatchWriter extends DatastoreWriter {
    *     deletion in this writer or if not active
    */
   @Override
-  void update(Entity<Key>... entity);
+  void update(Entity... entity);
 
   /**
    * {@inheritDoc}
@@ -72,7 +72,7 @@ interface DatastoreBatchWriter extends DatastoreWriter {
    * @throws com.google.gcloud.datastore.DatastoreServiceException if not active
    */
   @Override
-  void put(Entity<Key>... entity);
+  void put(Entity... entity);
 
   /**
    * Returns {@code true} if still active (write operations were not sent to the Datastore).
