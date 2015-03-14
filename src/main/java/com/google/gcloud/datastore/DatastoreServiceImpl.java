@@ -162,22 +162,22 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
   }
 
   @Override
-  public Entity<Key> add(Entity entity) {
+  public Entity add(FullEntity<?> entity) {
     return DatastoreHelper.add(this, entity);
   }
 
   @SuppressWarnings("unchecked")
   @Override
-  public List<Entity<Key>> add(Entity... entities) {
+  public List<Entity> add(FullEntity<?>... entities) {
     if (entities.length == 0) {
       return Collections.emptyList();
     }
     DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
     Map<Key, Entity> completeEntities = new LinkedHashMap<>();
-    for (Entity<?> entity : entities) {
-      Entity<Key> completeEntity = null;
+    for (FullEntity<?> entity : entities) {
+      Entity completeEntity = null;
       if (entity.key() instanceof Key) {
-        completeEntity = (Entity<Key>) entity;
+        completeEntity = Entity.convert((FullEntity<Key>) entity);
       }
       if (completeEntity != null) {
         if (completeEntities.put(completeEntity.key(), completeEntity) != null) {
@@ -193,10 +193,9 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
     DatastoreV1.CommitResponse commitResponse = commitMutation(mutationPb);
     Iterator<DatastoreV1.Key> allocatedKeys =
         commitResponse.getMutationResult().getInsertAutoIdKeyList().iterator();
-    ImmutableList.Builder<Entity<Key>> responseBuilder = ImmutableList.builder();
-    for (Entity<?> entity : entities) {
-      IncompleteKey key = entity.key();
-      Entity<Key> completeEntity = completeEntities.get(key);
+    ImmutableList.Builder<Entity> responseBuilder = ImmutableList.builder();
+    for (FullEntity<?> entity : entities) {
+      Entity completeEntity = completeEntities.get(entity.key());
       if (completeEntity != null) {
         responseBuilder.add(completeEntity);
       } else {
@@ -207,21 +206,21 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
   }
 
   @Override
-  public Entity<Key> get(Key key) {
+  public Entity get(Key key) {
     return DatastoreHelper.get(this, key);
   }
 
   @Override
-  public Iterator<Entity<Key>> get(Key... keys) {
+  public Iterator<Entity> get(Key... keys) {
     return get(null, keys);
   }
 
   @Override
-  public List<Entity<Key>> fetch(Key... keys) {
+  public List<Entity> fetch(Key... keys) {
     return DatastoreHelper.fetch(this, keys);
   }
 
-  Iterator<Entity<Key>> get(DatastoreV1.ReadOptions readOptionsPb, final Key... keys) {
+  Iterator<Entity> get(DatastoreV1.ReadOptions readOptionsPb, final Key... keys) {
     if (keys.length == 0) {
       return Collections.emptyIterator();
     }
@@ -235,7 +234,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
     return new ResultsIterator(requestPb);
   }
 
-  final class ResultsIterator extends AbstractIterator<Entity<Key>> {
+  final class ResultsIterator extends AbstractIterator<Entity> {
 
     private final DatastoreV1.LookupRequest.Builder requestPb;
     Iterator<DatastoreV1.EntityResult> iter;
@@ -256,7 +255,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
 
     @SuppressWarnings("unchecked")
     @Override
-    protected Entity<Key> computeNext() {
+    protected Entity computeNext() {
       if (iter.hasNext()) {
         return Entity.fromPb(iter.next().getEntity());
       }
@@ -284,11 +283,11 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
 
   @SafeVarargs
   @Override
-  public final void update(Entity<Key>... entities) {
+  public final void update(Entity... entities) {
     if (entities.length > 0) {
       DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
-      Map<Key, Entity<Key>> dedupEntities = new LinkedHashMap<>();
-      for (Entity<Key> entity : entities) {
+      Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
+      for (Entity entity : entities) {
         dedupEntities.put(entity.key(), entity);
       }
       for (Entity entity : dedupEntities.values()) {
@@ -300,11 +299,11 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
 
   @SafeVarargs
   @Override
-  public final void put(Entity<Key>... entities) {
+  public final void put(Entity... entities) {
     if (entities.length > 0) {
       DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
-      Map<Key, Entity<Key>> dedupEntities = new LinkedHashMap<>();
-      for (Entity<Key> entity : entities) {
+      Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
+      for (Entity entity : entities) {
         dedupEntities.put(entity.key(), entity);
       }
       for (Entity e : dedupEntities.values()) {

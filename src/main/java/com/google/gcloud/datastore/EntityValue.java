@@ -21,12 +21,12 @@ import static com.google.api.services.datastore.DatastoreV1.Value.ENTITY_VALUE_F
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 
-public class EntityValue extends Value<Entity<?>> {
+public class EntityValue extends Value<FullEntity> {
 
   private static final long serialVersionUID = -5461475706792576395L;
 
-  static final BaseMarshaller<Entity<?>, EntityValue, Builder> MARSHALLER =
-      new BaseMarshaller<Entity<?>, EntityValue, Builder>() {
+  static final BaseMarshaller<FullEntity, EntityValue, Builder> MARSHALLER =
+      new BaseMarshaller<FullEntity, EntityValue, Builder>() {
 
         private static final long serialVersionUID = 2355075086076070931L;
 
@@ -36,13 +36,13 @@ public class EntityValue extends Value<Entity<?>> {
         }
 
         @Override
-        public Builder newBuilder(Entity value) {
+        public Builder newBuilder(FullEntity value) {
           return builder(value);
         }
 
         @Override
-        protected Entity getValue(DatastoreV1.Value from) {
-          return Entity.fromPb(from.getEntityValue());
+        protected FullEntity getValue(DatastoreV1.Value from) {
+          return FullEntity.fromPb(from.getEntityValue());
         }
 
         @Override
@@ -51,7 +51,7 @@ public class EntityValue extends Value<Entity<?>> {
         }
       };
 
-  public static final class Builder extends Value.BaseBuilder<Entity<?>, EntityValue, Builder> {
+  public static final class Builder extends Value.BaseBuilder<FullEntity, EntityValue, Builder> {
 
     private Builder() {
       super(Type.ENTITY);
@@ -70,7 +70,7 @@ public class EntityValue extends Value<Entity<?>> {
     }
   }
 
-  public EntityValue(Entity entity) {
+  public EntityValue(FullEntity entity) {
     this(builder(entity));
   }
 
@@ -83,11 +83,11 @@ public class EntityValue extends Value<Entity<?>> {
     return new Builder().mergeFrom(this);
   }
 
-  public static EntityValue of(Entity entity) {
+  public static EntityValue of(FullEntity entity) {
     return new EntityValue(entity);
   }
 
-  public static Builder builder(Entity entity) {
+  public static Builder builder(FullEntity entity) {
     return new Builder().set(entity).indexed(false);
   }
 }

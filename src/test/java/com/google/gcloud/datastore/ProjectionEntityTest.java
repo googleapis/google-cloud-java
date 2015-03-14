@@ -32,7 +32,8 @@ public class ProjectionEntityTest {
   private static final DateTimeValue DATE_TIME_VALUE = DateTimeValue.of(DateTime.now());
   private static final LongValue LONG_INDEX_VALUE =
       LongValue.builder(DATE_TIME_VALUE.get().timestampMicroseconds()).meaning(18).build();
-  private static final ProjectionEntity ENTITY1 = new ProjectionEntity.Builder().key(KEY).set("a", "b").build();
+  private static final ProjectionEntity ENTITY1 =
+      new ProjectionEntity.Builder().key(KEY).set("a", "b").build();
   private static final ProjectionEntity ENTITY2 = new ProjectionEntity.Builder()
       .set("a", STRING_INDEX_VALUE)
       .set("b", BLOB_VALUE)
