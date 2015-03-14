@@ -48,12 +48,12 @@ public class DatastoreHelperTest {
     DatastoreService datastoreService = createStrictMock(DatastoreService.class);
     IncompleteKey pKey1 = IncompleteKey.builder("ds", "k").build();
     Key key1 = Key.builder(pKey1, 1).build();
-    Entity<Key> entity1 = Entity.builder(key1).build();
+    Entity entity1 = Entity.builder(key1).build();
     Key key2 = Key.builder(pKey1, 2).build();
     expect(datastoreService.get(new Key[]{key1}))
         .andReturn(Collections.singletonList(entity1).iterator());
     expect(datastoreService.get(new Key[]{key2}))
-        .andReturn(Collections.<Entity<Key>>emptyIterator());
+        .andReturn(Collections.<Entity>emptyIterator());
     replay(datastoreService);
     assertEquals(entity1, DatastoreHelper.get(datastoreService, key1));
     assertNull(DatastoreHelper.get(datastoreService, key2));
@@ -65,7 +65,7 @@ public class DatastoreHelperTest {
     DatastoreService datastoreService = createStrictMock(DatastoreService.class);
     IncompleteKey pKey = IncompleteKey.builder("ds", "k").build();
     Key key = Key.builder(pKey, 1).build();
-    Entity<Key> entity = Entity.builder(key).build();
+    Entity entity = Entity.builder(key).build();
     expect(datastoreService.add(new Entity[]{entity}))
         .andReturn(Collections.singletonList(entity));
     replay(datastoreService);
@@ -79,11 +79,11 @@ public class DatastoreHelperTest {
     IncompleteKey pKey1 = IncompleteKey.builder("ds", "k").build();
     Key key1 = Key.builder(pKey1, 1).build();
     Key key2 = Key.builder(pKey1, "a").build();
-    Entity<Key> entity1 = Entity.builder(key1).build();
-    Entity<Key> entity2 = Entity.builder(key2).build();
+    Entity entity1 = Entity.builder(key1).build();
+    Entity entity2 = Entity.builder(key2).build();
     expect(datastoreService.get(key1, key2)).andReturn(Iterators.forArray(entity1, entity2)).once();
     replay(datastoreService);
-    List<Entity<Key>> values = DatastoreHelper.fetch(datastoreService, key1, key2);
+    List<Entity> values = DatastoreHelper.fetch(datastoreService, key1, key2);
     assertEquals(2, values.size());
     assertEquals(entity1, values.get(0));
     assertEquals(entity2, values.get(1));

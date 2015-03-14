@@ -29,36 +29,85 @@ import static com.google.gcloud.datastore.StringValue.of;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableSortedMap;
+import com.google.common.collect.Maps;
+import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
 /**
- * A base class for entities to hold the properties.
+ * A base class for entities (key and properties).
+ * An entity is Google Cloud Datastore persistent data object.
+ * An entity holds one or more properties, represented by a name (as {@link String})
+ * and a value (as {@link com.google.gcloud.datastore.Value}), and may be associated with a
+ * key. For a list of possible values see {@link com.google.gcloud.datastore.Value.Type}.
+ *
+ * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
  */
-abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
+public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<DatastoreV1.Entity> {
 
   private static final long serialVersionUID = 8175618724683792766L;
 
   private final transient ImmutableSortedMap<String, Value<?>> properties;
+  private final K key;
 
-  abstract static class Builder<B extends Builder<B>> {
+  abstract static class Builder<K extends IncompleteKey, B extends Builder<K, B>> {
 
-    final Map<String, Value<?>> properties;
+    private K key;
+    private final Map<String, Value<?>> properties = new HashMap<>();
 
     Builder() {
-      properties = new HashMap<>();
     }
 
-    Builder(BaseEntity entity) {
-      properties = new HashMap<>(entity.properties());
+    Builder(K key) {
+      key(key);
+    }
+
+    Builder(BaseEntity<K> entity) {
+      this(entity.key, entity);
+    }
+
+    Builder(K key, BaseEntity<?> entity) {
+      key(key);
+      properties(entity.properties);
+    }
+
+    protected K key() {
+      return key;
+    }
+
+    protected Map<String, Value<?>> properties() {
+      return properties;
     }
 
     @SuppressWarnings("unchecked")
-    B self() {
+    private B self() {
       return (B) this;
+    }
+
+    protected B fill(DatastoreV1.Entity entityPb) {
+      Map<String, Value<?>> copiedProperties = Maps.newHashMap();
+      for (DatastoreV1.Property property : entityPb.getPropertyList()) {
+        copiedProperties.put(property.getName(), Value.fromPb(property.getValue()));
+      }
+      properties(copiedProperties);
+      if (entityPb.hasKey()) {
+        key((K) IncompleteKey.fromPb(entityPb.getKey()));
+      }
+      return self();
+    }
+
+    protected B properties(Map<String, Value<?>> properties) {
+      this.properties.putAll(properties);
+      return self();
+    }
+
+    public B key(K key) {
+      this.key = key;
+      return self();
     }
 
     /**
@@ -112,7 +161,7 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       return self();
     }
 
-    public B set(String name, Entity<? extends IncompleteKey> value) {
+    public B set(String name, FullEntity<?> value) {
       properties.put(name, of(value));
       return self();
     }
@@ -140,8 +189,46 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
     public abstract BaseEntity build();
   }
 
-  BaseEntity(ImmutableSortedMap<String, Value<?>> properties) {
-    this.properties = properties;
+  BaseEntity(Builder<K, ?> builder) {
+    this.key = builder.key;
+    this.properties = ImmutableSortedMap.copyOf(builder.properties);
+  }
+
+  BaseEntity(BaseEntity<K> from) {
+    this.key = from.key();
+    this.properties = from.properties;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(key, properties);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof BaseEntity)) {
+      return false;
+    }
+    BaseEntity other = (BaseEntity) obj;
+    return Objects.equals(key, other.key)
+        && Objects.equals(properties, other.properties);
+  }
+
+  /**
+   * Returns true if entity has a non-null key.
+   */
+  public boolean hasKey() {
+    return key != null;
+  }
+
+  /**
+   * Returns the associated key or null if it does not have one.
+   */
+  public K key() {
+    return key;
   }
 
   /**
@@ -165,50 +252,110 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
     return property;
   }
 
+  /**
+   * Returns true if property is instanceof NullValue.
+   *
+   * @throws DatastoreServiceException if not such property.
+   */
   public boolean isNull(String name) {
     return getValue(name) instanceof NullValue;
   }
 
+
+  /**
+   * Returns the property value as a string.
+   *
+   * @throws DatastoreServiceException if not such property.
+   * @throws ClassCastException if value is not a string.
+   */
   @SuppressWarnings("unchecked")
   public String getString(String name) {
     return ((Value<String>) getValue(name)).get();
   }
 
+  /**
+   * Returns the property value as long.
+   *
+   * @throws DatastoreServiceException if not such property.
+   * @throws ClassCastException if value is not a long.
+   */
   @SuppressWarnings("unchecked")
   public long getLong(String name) {
     return ((Value<Long>) getValue(name)).get();
   }
 
+  /**
+   * Returns the property value as a double.
+   *
+   * @throws DatastoreServiceException if not such property.
+   * @throws ClassCastException if value is not a double.
+   */
   @SuppressWarnings("unchecked")
   public double getDouble(String name) {
     return ((Value<Double>) getValue(name)).get();
   }
 
+  /**
+   * Returns the property value as a boolean.
+   *
+   * @throws DatastoreServiceException if not such property.
+   * @throws ClassCastException if value is not a boolean.
+   */
   @SuppressWarnings("unchecked")
   public boolean getBoolean(String name) {
     return ((Value<Boolean>) getValue(name)).get();
   }
 
+  /**
+   * Returns the property value as a DateTime.
+   *
+   * @throws DatastoreServiceException if not such property.
+   * @throws ClassCastException if value is not a DateTime.
+   */
   @SuppressWarnings("unchecked")
   public DateTime getDateTime(String name) {
     return ((Value<DateTime>) getValue(name)).get();
   }
 
+  /**
+   * Returns the property value as a Key.
+   *
+   * @throws DatastoreServiceException if not such property.
+   * @throws ClassCastException if value is not a Key.
+   */
   @SuppressWarnings("unchecked")
   public Key getKey(String name) {
     return ((Value<Key>) getValue(name)).get();
   }
 
+  /**
+   * Returns the property value as an entity.
+   *
+   * @throws DatastoreServiceException if not such property.
+   * @throws ClassCastException if value is not an entity.
+   */
   @SuppressWarnings("unchecked")
-  public <K extends IncompleteKey> Entity<K> getEntity(String name) {
-    return ((Value<Entity<K>>) getValue(name)).get();
+  public <K extends IncompleteKey> FullEntity<K> getEntity(String name) {
+    return ((Value<FullEntity<K>>) getValue(name)).get();
   }
 
+  /**
+   * Returns the property value as a list of values.
+   *
+   * @throws DatastoreServiceException if not such property.
+   * @throws ClassCastException if value is not a list of values.
+   */
   @SuppressWarnings("unchecked")
   public List<? extends Value<?>> getList(String name) {
     return ((Value<List<? extends Value<?>>>) getValue(name)).get();
   }
 
+  /**
+   * Returns the property value as a blob.
+   *
+   * @throws DatastoreServiceException if not such property.
+   * @throws ClassCastException if value is not a blob.
+   */
   @SuppressWarnings("unchecked")
   public Blob getBlob(String name) {
     return ((Value<Blob>) getValue(name)).get();
@@ -226,6 +373,15 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
   }
 
   @Override
+  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+    Builder builder = emptyBuilder();
+    builder.fill(DatastoreV1.Entity.parseFrom(bytesPb));
+    return builder.build();
+  }
+
+  protected abstract Builder emptyBuilder();
+
+  @Override
   protected final DatastoreV1.Entity toPb() {
     DatastoreV1.Entity.Builder entityPb = DatastoreV1.Entity.newBuilder();
     for (Map.Entry<String, Value<?>> entry : properties.entrySet()) {
@@ -234,9 +390,9 @@ abstract class BaseEntity extends Serializable<DatastoreV1.Entity> {
       propertyPb.setValue(entry.getValue().toPb());
       entityPb.addProperty(propertyPb.build());
     }
-    populateEntityBuilder(entityPb);
+    if (key != null) {
+      entityPb.setKey(key.toPb());
+    }
     return entityPb.build();
   }
-
-  protected abstract void populateEntityBuilder(DatastoreV1.Entity.Builder entityPb);
 }
