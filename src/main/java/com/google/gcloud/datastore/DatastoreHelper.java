@@ -46,6 +46,10 @@ class DatastoreHelper {
     return writer.add(new FullEntity<?>[] {entity}).get(0);
   }
 
+  static KeyFactory newKeyFactory(DatastoreServiceOptions options) {
+    return new KeyFactory(options.dataset()).namespace(options.namespace());
+  }
+
   /**
    * Returns a list with a value for each given key (ordered by input).
    * A {@code null} would be returned for non-existing keys.

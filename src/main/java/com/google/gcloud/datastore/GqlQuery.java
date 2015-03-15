@@ -45,7 +45,7 @@ import java.util.TreeMap;
  * <p>When the type of the results is known the preferred usage would be:
  * <pre>{@code
  *   Query&lt;Entity&gt; query =
- *       Query.gqlQueryBuilder(Query.Type.FULL, "select * from kind").build();
+ *       Query.gqlQueryBuilder(Query.ResultType.ENTITY, "select * from kind").build();
  *   QueryResults&lt;Entity&gt; results = datastore.run(query);
  *   while (results.hasNext()) {
  *     Entity entity = results.next();
@@ -159,15 +159,15 @@ public final class GqlQuery<V> extends Query<V> {
    */
   public static final class Builder<V> {
 
-    private final Type<V> type;
+    private final ResultType<V> resultType;
     private String namespace;
     private String queryString;
     private boolean allowLiteral;
     private final Map<String, Binding> namedBindings = new TreeMap<>();
     private final List<Binding> positionalBindings = new LinkedList<>();
 
-    Builder(Type<V> type, String query) {
-      this.type = checkNotNull(type);
+    Builder(ResultType<V> resultType, String query) {
+      this.resultType = checkNotNull(resultType);
       queryString = checkNotNull(query);
     }
 
@@ -311,7 +311,7 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   private GqlQuery(Builder<V> builder) {
-    super(builder.type, builder.namespace);
+    super(builder.resultType, builder.namespace);
     queryString = builder.queryString;
     allowLiteral = builder.allowLiteral;
     namedBindings = ImmutableList.copyOf(builder.namedBindings.values());
@@ -395,13 +395,13 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   @Override
-  protected Object fromPb(Type<V> type, String namespace, byte[] bytesPb)
+  protected Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
-    return fromPb(type, namespace, DatastoreV1.GqlQuery.parseFrom(bytesPb));
+    return fromPb(resultType, namespace, DatastoreV1.GqlQuery.parseFrom(bytesPb));
   }
 
-  private static <V> GqlQuery<V> fromPb(Type<V> type, String ns, DatastoreV1.GqlQuery queryPb) {
-    Builder<V> builder = new Builder<>(type, queryPb.getQueryString());
+  private static <V> GqlQuery<V> fromPb(ResultType<V> resultType, String ns, DatastoreV1.GqlQuery queryPb) {
+    Builder<V> builder = new Builder<>(resultType, queryPb.getQueryString());
     builder.namespace(ns);
     if (queryPb.hasAllowLiteral()) {
       builder.allowLiteral = queryPb.getAllowLiteral();
