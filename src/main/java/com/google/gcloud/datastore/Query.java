@@ -22,9 +22,9 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Maps;
-import com.google.gcloud.datastore.StructuredQuery.FullQueryBuilder;
-import com.google.gcloud.datastore.StructuredQuery.KeyOnlyQueryBuilder;
-import com.google.gcloud.datastore.StructuredQuery.ProjectionQueryBuilder;
+import com.google.gcloud.datastore.StructuredQuery.EntityQueryBuilder;
+import com.google.gcloud.datastore.StructuredQuery.KeyQueryBuilder;
+import com.google.gcloud.datastore.StructuredQuery.ProjectionEntityQueryBuilder;
 import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -42,22 +42,22 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
   private static final long serialVersionUID = -2748141759901313101L;
 
-  private final Type<V> type;
+  private final ResultType<V> resultType;
   private final String namespace;
 
   /**
    * This class represents the expected type of the result.
-   *   FULL: A full entity represented by {@link Entity}.
-   *   PROJECTION: A projection entity, represented by {@link ProjectionEntity}.
-   *   KEY_ONLY: An entity's {@link Key}.
+   *   ENTITY: A full entity represented by {@link Entity}.
+   *   PROJECTION_ENTITY: A projection entity, represented by {@link ProjectionEntity}.
+   *   KEY: An entity's {@link Key}.
    */
-  public abstract static class Type<V> implements java.io.Serializable {
+  public abstract static class ResultType<V> implements java.io.Serializable {
 
     private static final long serialVersionUID = 2104157695425806623L;
-    private static final Map<DatastoreV1.EntityResult.ResultType, Type<?>>
+    private static final Map<DatastoreV1.EntityResult.ResultType, ResultType<?>>
         PB_TO_INSTANCE = Maps.newEnumMap(DatastoreV1.EntityResult.ResultType.class);
 
-    static final Type<?> UNKNOWN = new Type<Object>(null, Object.class) {
+    static final ResultType<?> UNKNOWN = new ResultType<Object>(null, Object.class) {
 
       private static final long serialVersionUID = 1602329532153860907L;
 
@@ -72,8 +72,8 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       }
     };
 
-    public static final Type<Entity> FULL =
-        new Type<Entity>(DatastoreV1.EntityResult.ResultType.FULL, Entity.class) {
+    public static final ResultType<Entity> ENTITY =
+        new ResultType<Entity>(DatastoreV1.EntityResult.ResultType.FULL, Entity.class) {
 
       private static final long serialVersionUID = 7712959777507168274L;
 
@@ -82,8 +82,8 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       }
     };
 
-    public static final Type<Key> KEY_ONLY =
-        new Type<Key>(DatastoreV1.EntityResult.ResultType.KEY_ONLY, Key.class) {
+    public static final ResultType<Key> KEY =
+        new ResultType<Key>(DatastoreV1.EntityResult.ResultType.KEY_ONLY, Key.class) {
 
       private static final long serialVersionUID = -8514289244104446252L;
 
@@ -92,8 +92,9 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       }
     };
 
-    public static final Type<ProjectionEntity> PROJECTION = new Type<ProjectionEntity>(
-        DatastoreV1.EntityResult.ResultType.PROJECTION, ProjectionEntity.class) {
+    public static final ResultType<ProjectionEntity> PROJECTION_ENTITY =
+        new ResultType<ProjectionEntity>(DatastoreV1.EntityResult.ResultType.PROJECTION,
+            ProjectionEntity.class) {
 
           private static final long serialVersionUID = -7591409419690650246L;
 
@@ -103,14 +104,14 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
     };
 
     private final Class<V> resultClass;
-    private final DatastoreV1.EntityResult.ResultType resultType;
+    private final DatastoreV1.EntityResult.ResultType queryType;
 
     @SuppressWarnings("unchecked")
-    private Type(DatastoreV1.EntityResult.ResultType resultType, Class resultClass) {
-      this.resultType = resultType;
+    private ResultType(DatastoreV1.EntityResult.ResultType queryType, Class resultClass) {
+      this.queryType = queryType;
       this.resultClass = resultClass;
-      if (resultType != null) {
-        PB_TO_INSTANCE.put(resultType, this);
+      if (queryType != null) {
+        PB_TO_INSTANCE.put(queryType, this);
       }
     }
 
@@ -128,39 +129,39 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       if (obj == this) {
         return true;
       }
-      if (!(obj instanceof Type)) {
+      if (!(obj instanceof ResultType)) {
         return false;
       }
-      Type<?> other = (Type<?>) obj;
+      ResultType<?> other = (ResultType<?>) obj;
       return resultClass.equals(other.resultClass);
     }
 
     @Override
     public String toString() {
       ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
-      toStringHelper.add("resultType", resultType);
+      toStringHelper.add("queryType", queryType);
       toStringHelper.add("resultClass", resultClass);
       return toStringHelper.toString();
     }
 
-    boolean isAssignableFrom(Type<?> otherType) {
-      return resultClass.isAssignableFrom(otherType.resultClass);
+    boolean isAssignableFrom(ResultType<?> otherResultType) {
+      return resultClass.isAssignableFrom(otherResultType.resultClass);
     }
 
     protected abstract V convert(DatastoreV1.Entity entityPb);
 
-    static Type<?> fromPb(DatastoreV1.EntityResult.ResultType typePb) {
+    static ResultType<?> fromPb(DatastoreV1.EntityResult.ResultType typePb) {
       return MoreObjects.firstNonNull(PB_TO_INSTANCE.get(typePb), UNKNOWN);
     }
   }
 
-  Query(Type<V> type, String namespace) {
-    this.type = checkNotNull(type);
+  Query(ResultType<V> resultType, String namespace) {
+    this.resultType = checkNotNull(resultType);
     this.namespace = namespace;
   }
 
-  Type<V> type() {
-    return type;
+  ResultType<V> type() {
+    return resultType;
   }
 
   public String namespace() {
@@ -170,7 +171,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   @Override
   public String toString() {
     ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
-    toStringHelper.add("type", type);
+    toStringHelper.add("type", resultType);
     toStringHelper.add("namespace", namespace);
     toStringHelper.add("queryPb", super.toString());
     return toStringHelper.toString();
@@ -178,10 +179,10 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
   @Override
   protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(type, namespace, bytesPb);
+    return fromPb(resultType, namespace, bytesPb);
   }
 
-  protected abstract Object fromPb(Type<V> type, String namespace, byte[] bytesPb)
+  protected abstract Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException;
 
   protected abstract void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb);
@@ -194,7 +195,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
    * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
    */
   public static GqlQuery.Builder<?> gqlQueryBuilder(String gql) {
-    return gqlQueryBuilder(Type.UNKNOWN, gql);
+    return gqlQueryBuilder(ResultType.UNKNOWN, gql);
   }
 
   /**
@@ -202,28 +203,28 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
    *
    * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
    */
-  public static <V> GqlQuery.Builder<V> gqlQueryBuilder(Type<V> type, String gql) {
-    return new GqlQuery.Builder<>(type, gql);
+  public static <V> GqlQuery.Builder<V> gqlQueryBuilder(ResultType<V> resultType, String gql) {
+    return new GqlQuery.Builder<>(resultType, gql);
   }
 
   /**
-   * Returns a new {@link StructuredQuery} builder for full queries.
+   * Returns a new {@link StructuredQuery} builder for full (complete entities) queries.
    */
-  public static FullQueryBuilder fullQueryBuilder() {
-    return new FullQueryBuilder();
+  public static EntityQueryBuilder entityQueryBuilder() {
+    return new EntityQueryBuilder();
   }
 
   /**
-   * Returns a new {@link StructuredQuery} builder for key-only queries.
+   * Returns a new {@link StructuredQuery} builder for key only queries.
    */
-  public static KeyOnlyQueryBuilder keyOnlyQueryBuilder() {
-    return new KeyOnlyQueryBuilder();
+  public static KeyQueryBuilder keyQueryBuilder() {
+    return new KeyQueryBuilder();
   }
 
   /**
    * Returns a new {@link StructuredQuery} builder for projection queries.
    */
-  public static ProjectionQueryBuilder projectionQueryBuilder() {
-    return new ProjectionQueryBuilder();
+  public static ProjectionEntityQueryBuilder projectionQueryBuilder() {
+    return new ProjectionEntityQueryBuilder();
   }
 }

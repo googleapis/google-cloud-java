@@ -32,6 +32,21 @@ import java.util.List;
 public class DatastoreHelperTest {
 
   @Test
+  public void testNewKeyFactory() {
+    DatastoreServiceOptions options = createMock(DatastoreServiceOptions.class);
+    expect(options.dataset()).andReturn("ds1").once();
+    expect(options.namespace()).andReturn("ns1").once();
+    replay(options);
+    KeyFactory keyFactory = DatastoreHelper.newKeyFactory(options);
+    Key key = keyFactory.kind("k").newKey("bla");
+    assertEquals("ds1", key.dataset());
+    assertEquals("ns1", key.namespace());
+    assertEquals("k", key.kind());
+    assertEquals("bla", key.name());
+    verify(options);
+  }
+
+  @Test
   public void testAllocateId() throws Exception {
     DatastoreService datastoreService = createStrictMock(DatastoreService.class);
     IncompleteKey pKey1 = IncompleteKey.builder("ds", "k").build();

@@ -56,14 +56,14 @@ public class SerializationTest {
       .namespace("ns1")
       .build();
   private static final Query<Entity> GQL2 =
-      Query.gqlQueryBuilder(Query.Type.FULL, "select * from kind1 where name = @name and age > @1")
+      Query.gqlQueryBuilder(Query.ResultType.ENTITY, "select * from kind1 where name = @name and age > @1")
       .setBinding("name", "name1")
       .addBinding(20)
       .namespace("ns1")
       .build();
   private static final Query<Entity> QUERY1 =
-      Query.fullQueryBuilder().kind("kind1").build();
-  private static final Query<Key> QUERY2 = Query.keyOnlyQueryBuilder()
+      Query.entityQueryBuilder().kind("kind1").build();
+  private static final Query<Key> QUERY2 = Query.keyQueryBuilder()
       .kind("k")
       .filter(PropertyFilter.eq("p1", "hello"))
       .build();
