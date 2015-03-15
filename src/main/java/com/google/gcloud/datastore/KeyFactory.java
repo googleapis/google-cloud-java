@@ -16,8 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.common.collect.ImmutableList;
 
 /**
@@ -26,12 +24,8 @@ import com.google.common.collect.ImmutableList;
  */
 public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
 
-  private final DatastoreService service;
-
-  public KeyFactory(DatastoreService service) {
-    super(checkNotNull(service).options().dataset());
-    this.service = service;
-    namespace(service.options().namespace());
+  public KeyFactory(String dataset) {
+    super(dataset);
   }
 
   public IncompleteKey newKey() {
@@ -52,20 +46,8 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
     return new Key(dataset, namespace, path);
   }
 
-  /**
-   * Return a key with a newly allocated id.
-   * @throws DatastoreServiceException if allocation failed.
-   */
-  public Key allocateId() {
-    return service.allocateId(newKey());
-  }
-
   @Override
   protected IncompleteKey build() {
     return newKey();
-  }
-
-  DatastoreService datastore() {
-    return service;
   }
 }

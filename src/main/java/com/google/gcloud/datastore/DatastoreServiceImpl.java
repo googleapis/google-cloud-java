@@ -327,7 +327,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
 
   @Override
   public KeyFactory newKeyFactory() {
-    return new KeyFactory(this);
+    return DatastoreHelper.newKeyFactory(options());
   }
 
   private DatastoreV1.CommitResponse commitMutation(DatastoreV1.Mutation.Builder mutationPb) {

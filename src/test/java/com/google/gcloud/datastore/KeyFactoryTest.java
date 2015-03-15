@@ -18,10 +18,6 @@ package com.google.gcloud.datastore;
 
 import static junit.framework.TestCase.assertEquals;
 
-import com.google.api.services.datastore.DatastoreV1;
-import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc;
-
-import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,15 +28,10 @@ public class KeyFactoryTest {
   private static final String DATASET = "dataset";
 
   private KeyFactory keyFactory;
-  private DatastoreRpc mock;
 
   @Before
   public void setUp() {
-    mock = EasyMock.createMock(DatastoreRpc.class);
-    DatastoreServiceOptions options = DatastoreServiceOptions.builder().normalizeDataset(false)
-        .datastoreRpc(mock).dataset(DATASET).build();
-    DatastoreService datastore = DatastoreServiceFactory.getDefault(options);
-    keyFactory = new KeyFactory(datastore).kind("k");
+    keyFactory = new KeyFactory(DATASET).kind("k");
   }
 
   @Test
@@ -67,7 +58,7 @@ public class KeyFactoryTest {
 
   @Test(expected = NullPointerException.class)
   public void testNewIncompleteWithNoKind() {
-    new KeyFactory(keyFactory.datastore()).build();
+    new KeyFactory(DATASET).build();
   }
 
   private void verifyKey(Key key, String name, String namespace, PathElement... ancestors) {
@@ -89,19 +80,5 @@ public class KeyFactoryTest {
     for (PathElement ancestor : ancestors) {
       assertEquals(ancestor, iter.next());
     }
-  }
-
-  @Test
-  public void testAllocateId() throws Exception {
-    IncompleteKey pk = keyFactory.newKey();
-    Key key = keyFactory.newKey(1);
-    DatastoreV1.AllocateIdsRequest.Builder requestPb = DatastoreV1.AllocateIdsRequest.newBuilder();
-    requestPb.addKey(pk.toPb());
-    DatastoreV1.AllocateIdsResponse.Builder responsePb = DatastoreV1.AllocateIdsResponse.newBuilder();
-    responsePb.addKey(key.toPb());
-    EasyMock.expect(mock.allocateIds(requestPb.build())).andReturn(responsePb.build());
-    EasyMock.replay(mock);
-    assertEquals(key, keyFactory.allocateId());
-    EasyMock.verify(mock);
   }
 }
