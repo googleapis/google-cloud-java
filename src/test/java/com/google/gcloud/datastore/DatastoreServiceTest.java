@@ -412,7 +412,7 @@ public class DatastoreServiceTest {
     assertFalse(results2.hasNext());
 
     StructuredQuery<ProjectionEntity> keyOnlyProjectionQuery =
-        Query.projectionQueryBuilder()
+        Query.projectionEntityQueryBuilder()
         .kind(KIND1).projection(Projection.property("__key__")).build();
     QueryResults<ProjectionEntity> results3 = datastore.run(keyOnlyProjectionQuery);
     assertTrue(results3.hasNext());
@@ -421,7 +421,7 @@ public class DatastoreServiceTest {
     assertTrue(projectionEntity.names().isEmpty());
     assertFalse(results2.hasNext());
 
-    StructuredQuery<ProjectionEntity> projectionQuery = Query.projectionQueryBuilder()
+    StructuredQuery<ProjectionEntity> projectionQuery = Query.projectionEntityQueryBuilder()
         .kind(KIND2)
         .projection(Projection.property("age"), Projection.first("name"))
         .filter(PropertyFilter.gt("age", 18))

@@ -224,7 +224,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   /**
    * Returns a new {@link StructuredQuery} builder for projection queries.
    */
-  public static ProjectionEntityQueryBuilder projectionQueryBuilder() {
+  public static ProjectionEntityQueryBuilder projectionEntityQueryBuilder() {
     return new ProjectionEntityQueryBuilder();
   }
 }
