@@ -67,7 +67,7 @@ public class SerializationTest {
       .kind("k")
       .filter(PropertyFilter.eq("p1", "hello"))
       .build();
-  private static final Query<ProjectionEntity> QUERY3 = Query.projectionQueryBuilder()
+  private static final Query<ProjectionEntity> QUERY3 = Query.projectionEntityQueryBuilder()
       .kind("k")
       .namespace("ns1")
       .projection(Projection.property("p"))
