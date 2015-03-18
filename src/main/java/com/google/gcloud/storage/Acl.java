@@ -38,62 +38,108 @@ public abstract class Acl implements Serializable {
     PROJECT
   }
 
-  public static class Builder {
-    private Builder() {
-
-    }
-
-    Acl build()
-  }
-
   public static class Domain extends Acl {
 
+    private static final long serialVersionUID = -3033025857280447253L;
     private final String domain;
 
-    Domain(Role role, String domain) {
-      super(Type.USER, role);
+    Domain(String domain, Role role) {
+      super(Type.DOMAIN, role);
+      this.domain = domain;
+    }
+
+    public String domain() {
+      return domain;
+    }
+
+    public static Domain of(String domain, Role role) {
+      return new Domain(domain, role);
+    }
+  }
+
+  public static class Group extends Acl {
+
+    private static final long serialVersionUID = -1660987136294408826L;
+    private final String email;
+
+    Group(String email, Role role) {
+      super(Type.GROUP, role);
       this.email = email;
     }
 
-    public static User domain(Role role, String domain) {
-      return new User(role, email);
+    public String email() {
+      return email;
+    }
+
+    public static Group of(String email, Role role) {
+      return new Group(email, role);
     }
   }
 
   public static class User extends Acl {
 
     private static final long serialVersionUID = 3076518036392737008L;
+    private static final String ALL_USERS = "allUsers";
+    private static final String ALL_AUTHENTICATED_USERS = "allAuthenticatedUsers";
 
     private final String email;
 
-    User(Role role, String email) {
+    User(String email, Role role) {
       super(Type.USER, role);
       this.email = email;
     }
 
-    String email() {
+    public String email() {
       return email;
     }
 
-    public static User email(Role role, String email) {
-      return new User(role, email);
+    public static User of(String email, Role role) {
+      return new User(email, role);
     }
 
-    public static User allUsers(Role role) {
-      return email(role, "allUsers");
+    public static User ofAllUsers(Role role) {
+      return of(ALL_USERS, role);
     }
 
-    public static User allAuthenticatedUsers(Role role) {
-      return email(role, "allAuthenticatedUsers");
+    public static User ofAllAuthenticatedUsers(Role role) {
+      return of(ALL_AUTHENTICATED_USERS, role);
     }
   }
 
+  public static class Project extends Acl {
+
+    private final String projectId;
+    private final ProjectRole pRole;
+
+    enum ProjectRole {
+      OWNERS,
+      EDITORS,
+      VIEWERS
+    }
+
+    Project(ProjectRole pRole, String projectId, Role role) {
+      super(Type.PROJECT, role);
+      this.pRole = pRole;
+      this.projectId = projectId;
+    }
+
+    public ProjectRole projectRole() {
+      return pRole;
+    }
+
+    public String projectId() {
+      return projectId;
+    }
+
+    public static Project of(ProjectRole pRole, String projectId, Role role) {
+      return new Project(pRole, projectId, role);
+    }
+  }
 
   Acl(Type type, Role role) {
     this.type = type;
     this.role = role;
   }
-
 
   public Type type() {
     return type;
@@ -101,13 +147,5 @@ public abstract class Acl implements Serializable {
 
   public Role role() {
     return role;
-  }
-
-  public Builder toBuilder() {
-
-  }
-
-  public static Builder builder() {
-    return new Builder();
   }
 }
