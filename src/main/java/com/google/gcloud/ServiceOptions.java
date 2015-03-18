@@ -75,7 +75,7 @@ public abstract class ServiceOptions {
       return self();
     }
 
-    public B authConfig(AuthCredentials authCredentials) {
+    public B authCredentials(AuthCredentials authCredentials) {
       this.authCredentials = authCredentials;
       return self();
     }
@@ -89,7 +89,7 @@ public abstract class ServiceOptions {
   protected ServiceOptions(Builder<?> builder) {
     host = firstNonNull(builder.host, DEFAULT_HOST);
     httpTransport = firstNonNull(builder.httpTransport, defaultHttpTransport());
-    authCredentials = firstNonNull(builder.authCredentials, defaultAuthConfig());
+    authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
     retryParams = builder.retryParams;
   }
 
@@ -111,7 +111,7 @@ public abstract class ServiceOptions {
     return new NetHttpTransport();
   }
 
-  public static AuthCredentials defaultAuthConfig() {
+  private static AuthCredentials defaultAuthCredentials() {
     // Consider App Engine. This will not be needed once issue #21 is fixed.
     if (appEngineAppId() != null) {
       try {
@@ -183,7 +183,7 @@ public abstract class ServiceOptions {
     return httpTransport;
   }
 
-  public AuthCredentials authConfig() {
+  public AuthCredentials authCredentials() {
     return authCredentials;
   }
 
@@ -192,7 +192,7 @@ public abstract class ServiceOptions {
   }
 
   public HttpRequestInitializer httpRequestInitializer() {
-    return authConfig().httpRequestInitializer(httpTransport, scopes());
+    return authCredentials().httpRequestInitializer(httpTransport, scopes());
   }
 
   public abstract Builder<?> toBuilder();
