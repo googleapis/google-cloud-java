@@ -22,7 +22,7 @@ import static junit.framework.TestCase.assertNull;
 import static junit.framework.TestCase.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc;
+import com.google.gcloud.spi.DatastoreRpc;
 
 import org.easymock.EasyMock;
 import org.junit.Before;
