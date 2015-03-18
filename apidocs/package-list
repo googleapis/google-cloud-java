@@ -1,4 +1,4 @@
 com.google.gcloud
-com.google.gcloud.com.google.gcloud.spi
 com.google.gcloud.datastore
+com.google.gcloud.spi
 com.google.gcloud.storage
