@@ -20,8 +20,8 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
-import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
-import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
+import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
+import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 
 import java.util.HashMap;
 import java.util.Map;

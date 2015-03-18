@@ -34,7 +34,7 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
       super(key);
     }
 
-    Builder(FullEntity entity) {
+    Builder(FullEntity<K> entity) {
       super(entity);
     }
 
