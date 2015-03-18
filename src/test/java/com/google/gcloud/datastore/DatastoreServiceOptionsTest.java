@@ -82,6 +82,6 @@ public class DatastoreServiceOptionsTest {
     assertEquals(original.host(), copy.host());
     assertEquals(original.force(), copy.force());
     assertEquals(original.retryParams(), copy.retryParams());
-    assertEquals(original.authConfig(), copy.authConfig());
+    assertEquals(original.authCredentials(), copy.authCredentials());
   }
 }

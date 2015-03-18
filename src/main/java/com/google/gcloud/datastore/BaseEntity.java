@@ -127,7 +127,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
       return self();
     }
 
-    public B set(String name, Value<?> value) {
+    public B set(String name, Value value) {
       properties.put(name, value);
       return self();
     }
