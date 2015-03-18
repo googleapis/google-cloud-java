@@ -24,7 +24,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
   Iterable<BucketInfo> list();
 
-  Iterable<ObjectInfo> list(ListSettings settings);
+  Iterable<ObjectInfo> list(ListOptions settings);
 
   BucketInfo get(String bucket);
 
