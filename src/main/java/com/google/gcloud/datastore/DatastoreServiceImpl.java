@@ -30,8 +30,8 @@ import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.RetryParams;
-import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc;
-import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
+import com.google.gcloud.spi.DatastoreRpc;
+import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
 import com.google.protobuf.ByteString;
 
 import java.util.Arrays;

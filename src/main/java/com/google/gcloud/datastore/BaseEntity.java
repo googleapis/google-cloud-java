@@ -88,6 +88,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
       return (B) this;
     }
 
+    @SuppressWarnings("unchecked")
     protected B fill(DatastoreV1.Entity entityPb) {
       Map<String, Value<?>> copiedProperties = Maps.newHashMap();
       for (DatastoreV1.Property property : entityPb.getPropertyList()) {

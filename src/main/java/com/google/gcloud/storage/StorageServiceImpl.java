@@ -19,7 +19,7 @@ package com.google.gcloud.storage;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.BaseService;
-import com.google.gcloud.com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.StorageRpc;
 
 import java.io.IOException;
 
