@@ -16,6 +16,7 @@
 
 package com.google.gcloud.storage;
 
+import com.google.api.services.storage.model.Bucket;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.BaseService;
@@ -33,7 +34,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Iterable<Bucket> listBuckets() {
+  public Iterable<BucketInfo> listBuckets() {
     try {
       return Iterables.transform(storageRpc.buckets(),
           new Function<com.google.api.services.storage.model.Bucket, Bucket>() {
@@ -47,7 +48,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Bucket getBucket(String bucket) {
+  public BucketInfo getBucket(String bucket) {
     try {
       return new BucketImpl(this, storageRpc.bucket(bucket));
     } catch (IOException ex) {
