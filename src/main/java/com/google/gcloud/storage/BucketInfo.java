@@ -16,50 +16,89 @@
 
 package com.google.gcloud.storage;
 
+import com.google.api.services.storage.model.Bucket;
+import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
+
+import java.util.List;
+
 public final class BucketInfo {
 
   private final String id;
   private final String name;
+  private final String etag;
   private final long createTime;
   private final long metageneration;
   private final Cors cors;
-  private final Acl acl;
-  private final Acl defaultAcl;
+  private final ImmutableList<Acl> acl;
+  private final ImmutableList<Acl> defaultAcl;
+  private final Location location;
+  private final StorageClass storageClass;
 
   public enum StorageClass {
     DURABLE_REDUCED_AVAILABILITY,
     STANDARD
   }
 
+  public enum Location {
+    US, EU, ASIA
+  }
+
   public final static class Builder {
 
     private final String id;
     private final String name;
-    private final long createTime;
-    private final long metageneration;
+    private StorageClass storageClass;
+    private Location location;
+    private String etag;
+    private Long createTime;
+    private Long metageneration;
     private Cors cors;
-    private Acl acl;
-    private Acl defaultAcl;
+    private Iterable<Acl> acl;
+    private Iterable<Acl> defaultAcl;
 
-    Builder(String id, String name, long createTime, long metageneration) {
+    Builder(String id, String name) {
       this.id = id;
       this.name = name;
-      this.createTime = createTime;
-      this.metageneration = metageneration;
     }
 
-    public Builder cors(Cors cors) {
+    public Builder storageClass(StorageClass storageClass) {
+      this.storageClass = storageClass;
+      return this;
+    }
+
+    public Builder location(Location location) {
+      this.location = location;
+      return this;
+    }
+
+    Builder etag(String etag) {
+      this.etag = etag;
+      return this;
+    }
+
+    Builder createTime(Long createTime) {
+      this.createTime = createTime;
+      return this;
+    }
+
+    Builder metageneration(Long metageneration) {
+      this.metageneration = metageneration;
+      return this;
+    }
+
+    Builder cors(Cors cors) {
       this.cors = cors;
       return this;
     }
 
-    public Builder acl(Acl acl) {
-      this.acl = acl;
+    public Builder acl(Iterable<Acl> acl) {
+      this.acl = ImmutableList.copyOf(acl);
       return this;
     }
 
-    public Builder defaultAcl(Acl defaultAcl) {
-      this.defaultAcl = defaultAcl;
+    public Builder defaultAcl(Iterable<Acl> acl) {
+      this.defaultAcl = ImmutableList.copyOf(acl);
       return this;
     }
 
@@ -71,11 +110,14 @@ public final class BucketInfo {
   private BucketInfo(Builder builder) {
     id = builder.id;
     name = builder.name;
-    createTime = builder.createTime;
-    metageneration = builder.metageneration;
+    etag = builder.etag;
+    createTime = MoreObjects.firstNonNull(builder.createTime, 0L);
+    metageneration = MoreObjects.firstNonNull(builder.metageneration, 0L);
+    location = builder.location;
+    storageClass = builder.storageClass;
     cors = builder.cors;
-    acl = builder.acl;
-    defaultAcl = builder.defaultAcl;
+    acl = ImmutableList.copyOf(builder.acl);
+    defaultAcl = ImmutableList.copyOf(builder.defaultAcl);
   }
 
   public String id() {
@@ -90,19 +132,31 @@ public final class BucketInfo {
     return cors;
   }
 
-  public Acl acl() {
+  public List<Acl> acl() {
     return acl;
   }
 
-  public Acl defaultObjectAcl() {
+  public List<Acl> defaultObjectAcl() {
     return defaultAcl;
   }
 
   public Builder toBuilder() {
-    return builder(id, name, createTime, metageneration).cors(cors).acl(acl).defaultAcl(defaultAcl);
+    return new Builder(id, name)
+        .createTime(createTime)
+        .etag(etag)
+        .metageneration(metageneration)
+        .cors(cors)
+        .acl(acl)
+        .defaultAcl(defaultAcl)
+        .location(location)
+        .storageClass(storageClass);
   }
 
-  public static Builder builder(String id, String name, long createTime, long metageneration) {
-    return new Builder(id, name, createTime, metageneration);
+  void fromPb(Bucket bucket) {
+
+  }
+
+  Bucket toPb() {
+    return n
   }
 }
