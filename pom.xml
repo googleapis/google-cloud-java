@@ -300,6 +300,9 @@
             <includes>
               <include>com/google/gcloud/**/*.class</include>
             </includes>
+            <excludes>
+              <exclude>com/google/gcloud/example/**/*.class</exclude>
+            </excludes>
           </instrumentation>
           <check />
           <maxmem>256m</maxmem>
