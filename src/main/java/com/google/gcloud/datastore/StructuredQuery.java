@@ -65,7 +65,7 @@ import java.util.Objects;
  * <p>A less trivial example of a projection query that returns the first 10 results
  * of "age" and "name" properties (sorted and grouped by "age") with an age greater than 18
  * <pre>{@code
- *   Query<ProjectionEntity>; query = Query.projectionEntityQueryBuilder()
+ *   Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
  *       .kind(kind)
  *       .projection(Projection.property("age"), Projection.first("name"))
  *       .filter(PropertyFilter.gt("age", 18))
