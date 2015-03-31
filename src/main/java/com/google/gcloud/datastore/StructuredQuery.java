@@ -47,8 +47,8 @@ import java.util.Objects;
  *
  * <p>A simple query that returns all entities for a specific kind
  * <pre>{@code
- *   Query&lt;Entity&gt; query = Query.entityQueryBuilder().kind(kind).build();
- *   QueryResults&lt;Entity&gt; results = datastore.run(query);
+ *   Query<Entity> query = Query.entityQueryBuilder().kind(kind).build();
+ *   QueryResults<Entity> results = datastore.run(query);
  *   while (results.hasNext()) {
  *     Entity entity = results.next();
  *     ...
@@ -57,15 +57,15 @@ import java.util.Objects;
  *
  * <p>A simple key-only query of all entities for a specific kind
  * <pre>{@code
- *   Query&lt;Key&gt; keyOnlyQuery =  Query.keyQueryBuilder().kind(KIND1).build();
- *   QueryResults&lt;Key&gt; results = datastore.run(keyOnlyQuery);
+ *   Query<Key> keyOnlyQuery =  Query.keyQueryBuilder().kind(KIND1).build();
+ *   QueryResults<Key> results = datastore.run(keyOnlyQuery);
  *   ...
  * } </pre>
  *
  * <p>A less trivial example of a projection query that returns the first 10 results
  * of "age" and "name" properties (sorted and grouped by "age") with an age greater than 18
  * <pre>{@code
- *   Query&lt;ProjectionEntity&gt; query = Query.projectionEntityQueryBuilder()
+ *   Query<ProjectionEntity>; query = Query.projectionEntityQueryBuilder()
  *       .kind(kind)
  *       .projection(Projection.property("age"), Projection.first("name"))
  *       .filter(PropertyFilter.gt("age", 18))
