@@ -20,9 +20,12 @@ import com.google.api.services.storage.model.Bucket;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 
+import java.io.Serializable;
 import java.util.List;
 
-public final class BucketInfo {
+public final class BucketInfo implements Serializable {
+
+  private static final long serialVersionUID = -3946094202176916586L;
 
   private final String id;
   private final String name;
@@ -32,12 +35,41 @@ public final class BucketInfo {
   private final Cors cors;
   private final ImmutableList<Acl> acl;
   private final ImmutableList<Acl> defaultAcl;
-  private final Location location;
-  private final StorageClass storageClass;
+  private final String location;
+  private final String storageClass;
 
-  public enum StorageClass {
-    DURABLE_REDUCED_AVAILABILITY,
-    STANDARD
+
+  public static final class StorageClass implements Serializable {
+
+    private static final long serialVersionUID = 374002156285326563L;
+
+    private final String value;
+
+    public enum Type {
+      DURABLE_REDUCED_AVAILABILITY,
+      STANDARD,
+      OTHER
+    }
+
+    private StorageClass(Type type) {
+      value = type.name();
+    }
+
+    private StorageClass(String value) {
+      this.value = value;
+    }
+
+    public static StorageClass standard() {
+      return new StorageClass(Type.STANDARD);
+    }
+
+    public static StorageClass durableReducedAvailability() {
+      return new StorageClass(Type.DURABLE_REDUCED_AVAILABILITY);
+    }
+
+    public static StorageClass other(String other) {
+      return new StorageClass(other);
+    }
   }
 
   public enum Location {
@@ -48,8 +80,8 @@ public final class BucketInfo {
 
     private final String id;
     private final String name;
-    private StorageClass storageClass;
-    private Location location;
+    private String storageClass;
+    private String location;
     private String etag;
     private Long createTime;
     private Long metageneration;
@@ -63,11 +95,19 @@ public final class BucketInfo {
     }
 
     public Builder storageClass(StorageClass storageClass) {
+      return storageClass(storageClass.name());
+    }
+
+    Builder storageClass(String storageClass) {
       this.storageClass = storageClass;
       return this;
     }
 
     public Builder location(Location location) {
+      return location(location.name());
+    }
+
+    Builder location(String location) {
       this.location = location;
       return this;
     }
@@ -128,6 +168,26 @@ public final class BucketInfo {
     return name;
   }
 
+  public String etag() {
+    return etag;
+  }
+
+  public long createTime() {
+    return createTime;
+  }
+
+  public long metageneration() {
+    return metageneration;
+  }
+
+  public String lLocation() {
+    return location;
+  }
+
+  public String storageClass() {
+    return storageClass;
+  }
+
   public Cors cors() {
     return cors;
   }
@@ -153,10 +213,30 @@ public final class BucketInfo {
   }
 
   void fromPb(Bucket bucket) {
+    Builder builder = new Builder(bucket.getId(), bucket.getName())
+        .createTime(bucket.getTimeCreated().getValue())
+        .etag(bucket.getEtag())
+        .metageneration(bucket.getMetageneration())
+        .location(bucket.getLocation())
+        .storageClass(bucket.getStorageClass());
+
+    cors = builder.cors;
+    acl = ImmutableList.copyOf(builder.acl);
+    defaultAcl = ImmutableList.copyOf(builder.defaultAcl);
+
 
   }
 
   Bucket toPb() {
-    return n
+    id = builder.id;
+    name = builder.name;
+    etag = builder.etag;
+    createTime = MoreObjects.firstNonNull(builder.createTime, 0L);
+    metageneration = MoreObjects.firstNonNull(builder.metageneration, 0L);
+    location = builder.location;
+    storageClass = builder.storageClass;
+    cors = builder.cors;
+    acl = ImmutableList.copyOf(builder.acl);
+    defaultAcl = ImmutableList.copyOf(builder.defaultAcl);
   }
 }
