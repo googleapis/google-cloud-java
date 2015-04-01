@@ -1,30 +1,58 @@
-Google Cloud for Java
-=====================
+Google Cloud Java Client
+==========================
+
+Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
 
-Java idiomatic client for Google Cloud Platform services. Supported APIs include:
+-  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs)
+-  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
 
- * Google Cloud Datastore
+This client supports the following Google Cloud Platform services:
 
+-  [Google Cloud Datastore] (https://cloud.google.com/datastore/)
+<!---
+-  [Google Cloud Storage] (https://cloud.google.com/storage/)
+--->
 
-> Note: This package is a work-in-progress, and may occasionally
+> Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
 
+Quickstart
+----------
+Add this to your pom.xml file
+```xml
+<dependency>
+  <groupId>com.google.gcloud</groupId>
+	<artifactId>gcloud-java</artifactId>
+	<version>LATEST</version>
+</dependency>
+```
 
-Documentation and examples are available [here](http://googlecloudplatform.github.io/gcloud-java/apidocs).
+<!---
+Example Applications
+--------------------
 
-## Google Cloud Datastore
+-  `java-datastore-sample`_ - A sample using Cloud Datastore
+.. _java-datastore-sample: https://github.com/GoogleCloudPlatform/java-datastore-sample
+--->
 
-[Google Cloud Datastore][cloud-datastore] ([docs][cloud-datastore-docs]) is a fully
-managed, schemaless database for storing non-relational data. Cloud Datastore
-automatically scales with your users and supports ACID transactions, high availability
-of reads and writes, strong consistency for reads and ancestor queries, and eventual
+Google Cloud Datastore
+----------------------
+
+Google [Cloud Datastore][cloud-datastore] is a fully managed, schemaless database for
+storing non-relational data. Cloud Datastore automatically scales with
+your users and supports ACID transactions, high availability of reads and
+writes, strong consistency for reads and ancestor queries, and eventual
 consistency for all other queries.
 
-Follow the [activation instructions][cloud-datastore-activation] to use the Google
-Cloud Datastore API with your project.
+See the [Google Cloud Datastore docs][cloud-datastore-activation] for more details on how to activate
+Cloud Datastore for your project.
+
+See the ``gcloud-java`` API [datastore documentation][datastore-api] to learn how to interact
+with the Cloud Datastore using this Client Library.
 
 ```java
 import com.google.gcloud.datastore.DatastoreService;
@@ -49,15 +77,40 @@ if (entity == null) {
 }
 ```
 
-## Contributing
+Contributing
+------------
 
-Contributions are welcome. Please, see the
-[CONTRIBUTING](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md)
-document for details.
+Contributions to this library are always welcome and highly encouraged.
 
-[cloud-datastore]: https://cloud.google.com/datastore/
+See [CONTRIBUTING] for more information on how to get started.
+
+Java Versions
+-------------
+
+Java 7+is required for using this client.
+
+Versioning
+----------
+
+This library follows [Semantic Versioning] (http://semver.org/).
+
+It is currently in major version zero (``0.y.z``), which means that anything
+may change at any time and the public API should not be considered
+stable.
+
+License
+-------
+
+Apache 2.0 - See [LICENSE] for more information.
+
+
+[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
+[LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
+[cloud-platform]: https://cloud.google.com/
+[cloud-datastore]: https://cloud.google.com/datastore/docs
 [cloud-datastore-docs]: https://cloud.google.com/datastore/docs
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
+[datastore-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html
 
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs
