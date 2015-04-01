@@ -13,6 +13,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 This client supports the following Google Cloud Platform services:
 
 -  [Google Cloud Datastore] (https://cloud.google.com/datastore/)
+
 <!---
 -  [Google Cloud Storage] (https://cloud.google.com/storage/)
 --->
@@ -87,7 +88,7 @@ See [CONTRIBUTING] for more information on how to get started.
 Java Versions
 -------------
 
-Java 7+is required for using this client.
+Java 7 or above is required for using this client.
 
 Versioning
 ----------
