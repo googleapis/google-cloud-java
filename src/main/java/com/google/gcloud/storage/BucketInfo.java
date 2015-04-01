@@ -16,6 +16,8 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.api.client.repackaged.com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.services.storage.model.Bucket;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
@@ -35,8 +37,8 @@ public final class BucketInfo implements Serializable {
   private final Cors cors;
   private final ImmutableList<Acl> acl;
   private final ImmutableList<Acl> defaultAcl;
-  private final String location;
-  private final String storageClass;
+  private final Location location;
+  private final StorageClass storageClass;
 
 
   public static final class StorageClass implements Serializable {
@@ -45,43 +47,84 @@ public final class BucketInfo implements Serializable {
 
     private final String value;
 
-    public enum Type {
+    public enum Options {
       DURABLE_REDUCED_AVAILABILITY,
-      STANDARD,
-      OTHER
-    }
+      STANDARD;
 
-    private StorageClass(Type type) {
-      value = type.name();
+      private final StorageClass storageClass;
+
+      Options() {
+        storageClass = new StorageClass(name());
+      }
     }
 
     private StorageClass(String value) {
-      this.value = value;
+      this.value = checkNotNull(value);
     }
 
     public static StorageClass standard() {
-      return new StorageClass(Type.STANDARD);
+      return Options.STANDARD.storageClass;
     }
 
     public static StorageClass durableReducedAvailability() {
-      return new StorageClass(Type.DURABLE_REDUCED_AVAILABILITY);
+      return Options.DURABLE_REDUCED_AVAILABILITY.storageClass;
     }
 
     public static StorageClass other(String other) {
       return new StorageClass(other);
     }
+
+    public String value() {
+      return value;
+    }
   }
 
-  public enum Location {
-    US, EU, ASIA
+  public static final class Location implements Serializable {
+
+    private static final long serialVersionUID = 9073107666838637662L;
+    private final String value;
+
+    public enum Options {
+      US, EU, ASIA;
+
+      private final Location location;
+
+      Options() {
+        location = new Location(name());
+      }
+    }
+
+    private Location(String value) {
+      this.value = checkNotNull(value);
+    }
+
+    public static Location us() {
+      return Options.US.location;
+    }
+
+    public static Location eu() {
+      return Options.EU.location;
+    }
+
+    public static Location asia() {
+      return Options.ASIA.location;
+    }
+
+    public static Location other(String other) {
+      return new Location(other);
+    }
+
+    public String value() {
+      return value;
+    }
   }
 
   public final static class Builder {
 
     private final String id;
     private final String name;
-    private String storageClass;
-    private String location;
+    private StorageClass storageClass;
+    private Location location;
     private String etag;
     private Long createTime;
     private Long metageneration;
@@ -95,19 +138,11 @@ public final class BucketInfo implements Serializable {
     }
 
     public Builder storageClass(StorageClass storageClass) {
-      return storageClass(storageClass.name());
-    }
-
-    Builder storageClass(String storageClass) {
       this.storageClass = storageClass;
       return this;
     }
 
     public Builder location(Location location) {
-      return location(location.name());
-    }
-
-    Builder location(String location) {
       this.location = location;
       return this;
     }
@@ -180,11 +215,11 @@ public final class BucketInfo implements Serializable {
     return metageneration;
   }
 
-  public String lLocation() {
+  public Location location() {
     return location;
   }
 
-  public String storageClass() {
+  public StorageClass storageClass() {
     return storageClass;
   }
 
@@ -216,17 +251,19 @@ public final class BucketInfo implements Serializable {
     Builder builder = new Builder(bucket.getId(), bucket.getName())
         .createTime(bucket.getTimeCreated().getValue())
         .etag(bucket.getEtag())
-        .metageneration(bucket.getMetageneration())
-        .location(bucket.getLocation())
-        .storageClass(bucket.getStorageClass());
+        .metageneration(bucket.getMetageneration());
+        //.location(bucket.getLocation())
+        //.storageClass(bucket.getStorageClass());
 
+    /*
     cors = builder.cors;
     acl = ImmutableList.copyOf(builder.acl);
     defaultAcl = ImmutableList.copyOf(builder.defaultAcl);
-
+*/
 
   }
 
+  /*
   Bucket toPb() {
     id = builder.id;
     name = builder.name;
@@ -238,5 +275,5 @@ public final class BucketInfo implements Serializable {
     cors = builder.cors;
     acl = ImmutableList.copyOf(builder.acl);
     defaultAcl = ImmutableList.copyOf(builder.defaultAcl);
-  }
+  }*/
 }
