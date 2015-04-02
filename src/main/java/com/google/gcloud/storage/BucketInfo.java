@@ -21,6 +21,7 @@ import static com.google.api.client.repackaged.com.google.common.base.Preconditi
 import com.google.api.services.storage.model.Bucket;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import java.io.Serializable;
 import java.util.List;
@@ -44,18 +45,26 @@ public final class BucketInfo implements Serializable {
   public static final class StorageClass implements Serializable {
 
     private static final long serialVersionUID = 374002156285326563L;
-
+    private static final ImmutableMap<String, Option> STRING_TO_OPTION;
     private final String value;
 
-    public enum Options {
+    public enum Option {
       DURABLE_REDUCED_AVAILABILITY,
       STANDARD;
 
       private final StorageClass storageClass;
 
-      Options() {
+      Option() {
         storageClass = new StorageClass(name());
       }
+    }
+
+    static {
+      ImmutableMap.Builder<String, Option> map = ImmutableMap.builder();
+      for (Option option : Option.values()) {
+        map.put(option.name(), option);
+      }
+      STRING_TO_OPTION = map.build();
     }
 
     private StorageClass(String value) {
@@ -63,15 +72,16 @@ public final class BucketInfo implements Serializable {
     }
 
     public static StorageClass standard() {
-      return Options.STANDARD.storageClass;
+      return Option.STANDARD.storageClass;
     }
 
     public static StorageClass durableReducedAvailability() {
-      return Options.DURABLE_REDUCED_AVAILABILITY.storageClass;
+      return Option.DURABLE_REDUCED_AVAILABILITY.storageClass;
     }
 
-    public static StorageClass other(String other) {
-      return new StorageClass(other);
+    public static StorageClass of(String value) {
+      Option option = STRING_TO_OPTION.get(value.toUpperCase());
+      return option == null ? new StorageClass(value) : option.storageClass;
     }
 
     public String value() {
@@ -82,16 +92,25 @@ public final class BucketInfo implements Serializable {
   public static final class Location implements Serializable {
 
     private static final long serialVersionUID = 9073107666838637662L;
+    private static final ImmutableMap<String, Option> STRING_TO_OPTION;
     private final String value;
 
-    public enum Options {
+    public enum Option {
       US, EU, ASIA;
 
       private final Location location;
 
-      Options() {
+      Option() {
         location = new Location(name());
       }
+    }
+
+    static {
+      ImmutableMap.Builder<String, Option> map = ImmutableMap.builder();
+      for (Option option : Option.values()) {
+        map.put(option.name(), option);
+      }
+      STRING_TO_OPTION = map.build();
     }
 
     private Location(String value) {
@@ -99,19 +118,20 @@ public final class BucketInfo implements Serializable {
     }
 
     public static Location us() {
-      return Options.US.location;
+      return Option.US.location;
     }
 
     public static Location eu() {
-      return Options.EU.location;
+      return Option.EU.location;
     }
 
     public static Location asia() {
-      return Options.ASIA.location;
+      return Option.ASIA.location;
     }
 
-    public static Location other(String other) {
-      return new Location(other);
+    public static Location of(String value) {
+      Option option = STRING_TO_OPTION.get(value.toUpperCase());
+      return option == null ? new Location(value) : option.location;
     }
 
     public String value() {
@@ -251,9 +271,9 @@ public final class BucketInfo implements Serializable {
     Builder builder = new Builder(bucket.getId(), bucket.getName())
         .createTime(bucket.getTimeCreated().getValue())
         .etag(bucket.getEtag())
-        .metageneration(bucket.getMetageneration());
-        //.location(bucket.getLocation())
-        //.storageClass(bucket.getStorageClass());
+        .metageneration(bucket.getMetageneration())
+        .location(Location.of(bucket.getLocation()))
+        .storageClass(StorageClass.of(bucket.getStorageClass()));
 
     /*
     cors = builder.cors;

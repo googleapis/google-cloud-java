@@ -16,8 +16,12 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.services.storage.model.Bucket;
+import com.google.common.base.Function;
 import com.google.common.base.Functions;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 
@@ -25,6 +29,8 @@ import java.io.Serializable;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 public final class Cors implements Serializable {
 
@@ -42,34 +48,44 @@ public final class Cors implements Serializable {
   public static class Origin implements Serializable {
 
     private static final long serialVersionUID = -4447958124895577993L;
+    private static final String ANY_URI = "*";
+    private final String value;
 
-    private final URI uri;
+    private static final Origin ANY = new Origin(ANY_URI);
 
-    public static final Origin ANY = new Origin();
-
-    private Origin() {
-      uri = null;
+    private Origin(String value) {
+      this.value = checkNotNull(value);
     }
 
-    public Origin(String scheme, String host, int port) {
+    public static Origin any() {
+      return ANY;
+    }
+
+    public static Origin of(String scheme, String host, int port) {
       try {
-        this.uri = new URI(scheme, null, host, port, null, null, null);
+        of(new URI(scheme, null, host, port, null, null, null).toString());
       } catch (URISyntaxException e) {
         throw new IllegalArgumentException(e);
       }
     }
 
-    @Override
-    public String toString() {
-      return uri == null ? "*" : uri.toString();
+    public static Origin of(String value) {
+      if (ANY_URI.equals(value)) {
+        return any();
+      }
+      return new Origin(value);
+    }
+
+    public String value() {
+      return value;
     }
   }
 
   public static final class Builder {
 
     private Integer maxAgeSeconds;
-    private ImmutableList<String> methods;
-    private ImmutableList<String> origins;
+    private ImmutableList<Method> methods;
+    private ImmutableList<Origin> origins;
     private ImmutableList<String> responseHeaders;
 
     private Builder() {
@@ -81,30 +97,17 @@ public final class Cors implements Serializable {
     }
 
     public Builder methods(Iterable<Method> methods) {
-      return methods(Iterables.transform(methods, Functions.toStringFunction()));
-    }
-
-    public Builder methods(Iterable<String> methods) {
       this.methods = ImmutableList.copyOf(methods);
       return this;
     }
 
     public Builder origins(Iterable<Origin> origins) {
-      return origins(Iterables.transform(origins, Functions.toStringFunction()));
-    }
-
-    public Builder origins(Iterable<String> origins) {
       this.origins = ImmutableList.copyOf(origins);
       return this;
     }
 
-    public Builder responseHeaders(List<String> headers) {
+    public Builder responseHeaders(Iterable<String> headers) {
       this.responseHeaders = ImmutableList.copyOf(headers);
-      return this;
-    }
-
-    public Builder responseHeaders(String... responseHeaders) {
-      this.responseHeaders = ImmutableList.copyOf(responseHeaders);
       return this;
     }
 
@@ -148,9 +151,13 @@ public final class Cors implements Serializable {
     return new Builder();
   }
 
-  void fromPb(Bucket.Cors cors) {
+  Cors fromPb(Bucket.Cors cors) {
     Builder builder = builder().maxAgeSeconds(cors.getMaxAgeSeconds());
-    cors.getMethod()
-
+    builder.methods(Iterables.transform(cors.getMethod(), new Function<String, Method>() {
+          @Override public Method apply(String name) {
+            return Method.valueOf(name);
+          }
+        }));
+    builder
   }
 }
