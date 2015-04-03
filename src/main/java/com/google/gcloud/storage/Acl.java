@@ -16,6 +16,10 @@
 
 package com.google.gcloud.storage;
 
+import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.ObjectAccessControl;
+import com.google.gcloud.storage.Acl.Project.ProjectRole;
+
 import java.io.Serializable;
 
 public abstract class Acl implements Serializable {
@@ -147,5 +151,37 @@ public abstract class Acl implements Serializable {
 
   public Role role() {
     return role;
+  }
+
+  public static Acl fromPb(ObjectAccessControl objectAccessControl) {
+    Role role = Role.valueOf(objectAccessControl.getRole());
+    return forEntity(objectAccessControl.getEntity(), role);
+  }
+
+  private static Acl forEntity(String entity, Role role) {
+    if (entity.startsWith("user-")) {
+      return User.of(entity.substring(5), role);
+    }
+    if (entity.equals(User.ALL_USERS)) {
+      return User.ofAllUsers(role);
+    }
+    if (entity.equals(User.ALL_AUTHENTICATED_USERS)) {
+      return User.ofAllAuthenticatedUsers(role);
+    }
+    if (entity.startsWith("group-")) {
+      return Group.of(entity.substring(6), role);
+    }
+    if (entity.startsWith("project-")) {
+      int idx = entity.indexOf('-', 9);
+      String team = entity.substring(9, idx);
+      String projectId = entity.substring(idx + 1);
+      return Project.of(ProjectRole.valueOf(team.toUpperCase()), projectId, role);
+    }
+    return null;
+  }
+
+  public static Acl fromPb(BucketAccessControl bucketAccessControl) {
+    Role role = Role.valueOf(bucketAccessControl.getRole());
+    return forEntity(bucketAccessControl.getEntity(), role);
   }
 }

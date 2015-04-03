@@ -17,11 +17,18 @@
 package com.google.gcloud.storage;
 
 import static com.google.api.client.repackaged.com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.collect.Iterables.transform;
+import static com.google.common.collect.Lists.newArrayList;
 
+import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.Bucket;
+import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.ObjectAccessControl;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
 
 import java.io.Serializable;
 import java.util.List;
@@ -35,7 +42,7 @@ public final class BucketInfo implements Serializable {
   private final String etag;
   private final long createTime;
   private final long metageneration;
-  private final Cors cors;
+  private final ImmutableList<Cors> cors;
   private final ImmutableList<Acl> acl;
   private final ImmutableList<Acl> defaultAcl;
   private final Location location;
@@ -82,6 +89,11 @@ public final class BucketInfo implements Serializable {
     public static StorageClass of(String value) {
       Option option = STRING_TO_OPTION.get(value.toUpperCase());
       return option == null ? new StorageClass(value) : option.storageClass;
+    }
+
+    @Override
+    public String toString() {
+      return value();
     }
 
     public String value() {
@@ -134,6 +146,11 @@ public final class BucketInfo implements Serializable {
       return option == null ? new Location(value) : option.location;
     }
 
+    @Override
+    public String toString() {
+      return value();
+    }
+
     public String value() {
       return value;
     }
@@ -148,9 +165,9 @@ public final class BucketInfo implements Serializable {
     private String etag;
     private Long createTime;
     private Long metageneration;
-    private Cors cors;
-    private Iterable<Acl> acl;
-    private Iterable<Acl> defaultAcl;
+    private Iterable<Cors> cors = ImmutableList.of();
+    private Iterable<Acl> acl = ImmutableList.of();
+    private Iterable<Acl> defaultAcl = ImmutableList.of();
 
     Builder(String id, String name) {
       this.id = id;
@@ -182,7 +199,7 @@ public final class BucketInfo implements Serializable {
       return this;
     }
 
-    Builder cors(Cors cors) {
+    Builder cors(Iterable<Cors> cors) {
       this.cors = cors;
       return this;
     }
@@ -210,7 +227,7 @@ public final class BucketInfo implements Serializable {
     metageneration = MoreObjects.firstNonNull(builder.metageneration, 0L);
     location = builder.location;
     storageClass = builder.storageClass;
-    cors = builder.cors;
+    cors = ImmutableList.copyOf(builder.cors);
     acl = ImmutableList.copyOf(builder.acl);
     defaultAcl = ImmutableList.copyOf(builder.defaultAcl);
   }
@@ -243,7 +260,7 @@ public final class BucketInfo implements Serializable {
     return storageClass;
   }
 
-  public Cors cors() {
+  public List<Cors> cors() {
     return cors;
   }
 
@@ -251,7 +268,7 @@ public final class BucketInfo implements Serializable {
     return acl;
   }
 
-  public List<Acl> defaultObjectAcl() {
+  public List<Acl> defaultAcl() {
     return defaultAcl;
   }
 
@@ -267,33 +284,64 @@ public final class BucketInfo implements Serializable {
         .storageClass(storageClass);
   }
 
-  void fromPb(Bucket bucket) {
+  BucketInfo fromPb(Bucket bucket) {
     Builder builder = new Builder(bucket.getId(), bucket.getName())
         .createTime(bucket.getTimeCreated().getValue())
         .etag(bucket.getEtag())
         .metageneration(bucket.getMetageneration())
         .location(Location.of(bucket.getLocation()))
-        .storageClass(StorageClass.of(bucket.getStorageClass()));
-
-    /*
-    cors = builder.cors;
-    acl = ImmutableList.copyOf(builder.acl);
-    defaultAcl = ImmutableList.copyOf(builder.defaultAcl);
-*/
-
+        .storageClass(StorageClass.of(bucket.getStorageClass()))
+        .cors(transform(bucket.getCors(), new Function<Bucket.Cors, Cors>() {
+          @Override public Cors apply(Bucket.Cors cors) {
+            return Cors.fromPb(cors);
+          }
+        }))
+        .acl(transform(bucket.getAcl(), new Function<BucketAccessControl, Acl>() {
+          @Override public Acl apply(BucketAccessControl bucketAccessControl) {
+            return Acl.fromPb(bucketAccessControl);
+          }
+        }))
+        .defaultAcl(transform(bucket.getDefaultObjectAcl(), new Function<ObjectAccessControl, Acl>() {
+          @Override public Acl apply(ObjectAccessControl objectAccessControl) {
+            return Acl.fromPb(objectAccessControl);
+          }
+        }));
+    return builder.build();
   }
 
-  /*
   Bucket toPb() {
-    id = builder.id;
-    name = builder.name;
-    etag = builder.etag;
-    createTime = MoreObjects.firstNonNull(builder.createTime, 0L);
-    metageneration = MoreObjects.firstNonNull(builder.metageneration, 0L);
-    location = builder.location;
-    storageClass = builder.storageClass;
-    cors = builder.cors;
-    acl = ImmutableList.copyOf(builder.acl);
-    defaultAcl = ImmutableList.copyOf(builder.defaultAcl);
-  }*/
+    Bucket bucket = new Bucket();
+    bucket.setId(id);
+    bucket.setName(name);
+    bucket.setEtag(etag);
+    if (createTime > 0) {
+      bucket.setTimeCreated(new DateTime(createTime));
+    }
+    if (metageneration > 0) {
+      bucket.setMetageneration(metageneration);
+    }
+    if (location != null) {
+      bucket.setLocation(location.value());
+    }
+    if (storageClass != null) {
+      bucket.setStorageClass(storageClass.value());
+    }
+    bucket.setCors(newArrayList(Iterables.transform(cors, new Function<Cors, Bucket.Cors>() {
+      @Override public Bucket.Cors apply(Cors cors) {
+        return cors.toPb();
+      }
+    })));
+    bucket.setAcl(newArrayList(Iterables.transform(acl, new Function<Acl, BucketAccessControl>() {
+      @Override public BucketAccessControl apply(Acl acl) {
+        return new BucketAccessControl().setEntity(acl.toEntity());
+      }
+    })));
+    bucket.setDefaultObjectAcl(
+        newArrayList(Iterables.transform(defaultAcl, new Function<Acl, ObjectAccessControl>() {
+          @Override public ObjectAccessControl apply(Acl acl) {
+            return new ObjectAccessControl().setEntity(acl.toEntity());
+          }
+        })));
+    return bucket;
+  }
 }
