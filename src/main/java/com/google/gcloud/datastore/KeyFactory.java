@@ -24,8 +24,18 @@ import com.google.common.collect.ImmutableList;
  */
 public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
 
+  private final String ds;
+  private final String ns;
+
   public KeyFactory(String dataset) {
+    this(dataset, null);
+  }
+
+  public KeyFactory(String dataset, String namespace) {
     super(dataset);
+    namespace(namespace);
+    this.ds = dataset;
+    this.ns = namespace;
   }
 
   public IncompleteKey newKey() {
@@ -44,6 +54,18 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
     ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
         .addAll(ancestors).add(PathElement.of(kind, id)).build();
     return new Key(dataset, namespace, path);
+  }
+
+  /**
+   * Resets the KeyFactory to its initial state.
+   * @return {@code this} for chaining.
+   */
+  public KeyFactory reset() {
+    dataset(ds);
+    namespace(ns);
+    kind = null;
+    ancestors.clear();
+    return this;
   }
 
   @Override
