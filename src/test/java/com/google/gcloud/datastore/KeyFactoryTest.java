@@ -17,6 +17,8 @@
 package com.google.gcloud.datastore;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -32,6 +34,42 @@ public class KeyFactoryTest {
   @Before
   public void setUp() {
     keyFactory = new KeyFactory(DATASET).kind("k");
+  }
+
+  @Test
+  public void testReset() {
+    IncompleteKey key =
+        keyFactory.dataset("ds1").namespace("ns1").ancestors(PathElement.of("p", 1)).build();
+    assertEquals("k", key.kind());
+    assertEquals("ds1", key.dataset());
+    assertEquals("ns1", key.namespace());
+    assertEquals(1, key.ancestors().size());
+
+    keyFactory.reset();
+    try {
+      keyFactory.newKey(1);
+    } catch (NullPointerException ex) {
+      assertEquals("kind must not be null", ex.getMessage());
+    }
+    keyFactory.kind("k1");
+    key = keyFactory.newKey();
+    assertEquals("k1", key.kind());
+    assertEquals(DATASET, key.dataset());
+    assertNull(key.namespace());
+    assertTrue(key.ancestors().isEmpty());
+
+    keyFactory = new KeyFactory(DATASET, "ns1").kind("k");
+    key = keyFactory.newKey();
+    assertEquals(DATASET, key.dataset());
+    assertEquals("ns1", key.namespace());
+    key = keyFactory.dataset("bla1").namespace("bla2").build();
+    assertEquals("bla1", key.dataset());
+    assertEquals("bla2", key.namespace());
+    keyFactory.reset().kind("kind");
+    key = keyFactory.newKey();
+    assertEquals(DATASET, key.dataset());
+    assertEquals("ns1", key.namespace());
+    assertEquals("kind", key.kind());
   }
 
   @Test
