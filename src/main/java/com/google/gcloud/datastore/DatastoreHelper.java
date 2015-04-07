@@ -47,7 +47,7 @@ class DatastoreHelper {
   }
 
   static KeyFactory newKeyFactory(DatastoreServiceOptions options) {
-    return new KeyFactory(options.dataset()).namespace(options.namespace());
+    return new KeyFactory(options.dataset(), options.namespace());
   }
 
   /**

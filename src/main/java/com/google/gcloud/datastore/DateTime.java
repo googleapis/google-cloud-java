@@ -33,7 +33,8 @@ import java.util.Date;
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
  */
-public final class DateTime extends Serializable<DatastoreV1.Value> {
+public final class DateTime extends Serializable<DatastoreV1.Value>
+    implements Comparable<DateTime> {
 
   private static final long serialVersionUID = 7343324797621228378L;
 
@@ -51,6 +52,11 @@ public final class DateTime extends Serializable<DatastoreV1.Value> {
   @Override
   public int hashCode() {
     return (int) timestampMicroseconds;
+  }
+
+  @Override
+  public int compareTo(DateTime other) {
+    return toDate().compareTo(other.toDate());
   }
 
   @Override
