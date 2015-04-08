@@ -4,7 +4,7 @@
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
   <name>GCloud Java</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
   <description>
