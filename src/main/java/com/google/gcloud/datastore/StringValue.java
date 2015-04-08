@@ -53,7 +53,7 @@ public final class StringValue extends Value<String> {
   public static final class Builder extends Value.BaseBuilder<String, StringValue, Builder> {
 
     private Builder() {
-      super(Type.STRING);
+      super(ValueType.STRING);
     }
 
     @Override

@@ -520,7 +520,7 @@ public class DatastoreServiceTest {
     FullEntity<IncompleteKey> partial2 = entity3.getEntity("partial2");
     assertEquals(PARTIAL_ENTITY2, partial1);
     assertEquals(ENTITY2, partial2);
-    assertEquals(Value.Type.BOOLEAN, entity3.getValue("bool").type());
+    assertEquals(ValueType.BOOLEAN, entity3.getValue("bool").type());
     assertEquals(6, entity3.names().size());
     assertFalse(entity3.contains("bla"));
     try {

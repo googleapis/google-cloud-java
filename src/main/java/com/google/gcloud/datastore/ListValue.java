@@ -67,12 +67,12 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
     private ImmutableList.Builder<Value<?>> listBuilder = ImmutableList.builder();
 
     private Builder() {
-      super(Type.LIST);
+      super(ValueType.LIST);
     }
 
     public Builder addValue(Value<?> value) {
       // see datastore_v1.proto definition for list_value
-      Preconditions.checkArgument(value.type() != Type.LIST, "Cannot contain another list");
+      Preconditions.checkArgument(value.type() != ValueType.LIST, "Cannot contain another list");
       listBuilder.add(value);
       return this;
     }

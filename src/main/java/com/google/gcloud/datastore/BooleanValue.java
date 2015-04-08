@@ -53,7 +53,7 @@ public final class BooleanValue extends Value<Boolean> {
   public static final class Builder extends Value.BaseBuilder<Boolean, BooleanValue, Builder> {
 
     private Builder() {
-      super(Type.BOOLEAN);
+      super(ValueType.BOOLEAN);
     }
 
     @Override
