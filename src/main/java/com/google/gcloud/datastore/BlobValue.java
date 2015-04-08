@@ -53,7 +53,7 @@ public final class BlobValue extends Value<Blob> {
   public static final class Builder extends Value.BaseBuilder<Blob, BlobValue, Builder> {
 
     private Builder() {
-      super(Type.BLOB);
+      super(ValueType.BLOB);
     }
 
     @Override

@@ -27,7 +27,6 @@ import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
-import com.google.gcloud.datastore.Value.Type;
 
 import org.junit.Test;
 
@@ -113,26 +112,26 @@ public class SerializationTest {
   private static final ProjectionEntity PROJECTION_ENTITY = ProjectionEntity.fromPb(ENTITY1.toPb());
 
   @SuppressWarnings("rawtypes")
-  private static final Multimap<Type, Value> TYPE_TO_VALUES =
-      ImmutableMultimap.<Type, Value>builder()
-      .put(Type.NULL, NULL_VALUE)
-      .put(Type.KEY, KEY_VALUE)
-      .put(Type.STRING, STRING_VALUE)
-      .putAll(Type.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
+  private static final Multimap<ValueType, Value> TYPE_TO_VALUES =
+      ImmutableMultimap.<ValueType, Value>builder()
+      .put(ValueType.NULL, NULL_VALUE)
+      .put(ValueType.KEY, KEY_VALUE)
+      .put(ValueType.STRING, STRING_VALUE)
+      .putAll(ValueType.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
           EMBEDDED_ENTITY_VALUE3)
-      .put(Type.LIST, LIST_VALUE)
-      .put(Type.LONG, LONG_VALUE)
-      .put(Type.DOUBLE, DOUBLE_VALUE)
-      .put(Type.BOOLEAN, BOOLEAN_VALUE)
-      .put(Type.DATE_TIME, DATE_AND_TIME_VALUE)
-      .put(Type.BLOB, BLOB_VALUE)
-      .put(Type.RAW_VALUE, RAW_VALUE)
+      .put(ValueType.LIST, LIST_VALUE)
+      .put(ValueType.LONG, LONG_VALUE)
+      .put(ValueType.DOUBLE, DOUBLE_VALUE)
+      .put(ValueType.BOOLEAN, BOOLEAN_VALUE)
+      .put(ValueType.DATE_TIME, DATE_AND_TIME_VALUE)
+      .put(ValueType.BLOB, BLOB_VALUE)
+      .put(ValueType.RAW_VALUE, RAW_VALUE)
       .build();
 
   @Test
   public void testValues() throws Exception {
-    for (Type type : Type.values()) {
-      for (Value<?> value : TYPE_TO_VALUES.get(type)) {
+    for (ValueType valueType : ValueType.values()) {
+      for (Value<?> value : TYPE_TO_VALUES.get(valueType)) {
         Value<?> copy = serializeAndDeserialize(value);
         assertEquals(value, value);
         assertEquals(value, copy);

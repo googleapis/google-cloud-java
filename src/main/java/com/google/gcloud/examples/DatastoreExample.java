@@ -51,11 +51,11 @@ import java.util.TreeMap;
  */
 public class DatastoreExample {
 
-  private final static String USER_KIND = "_DS_EXAMPLE_USER";
-  private final static String COMMENT_KIND = "_DS_EXAMPLE_COMMENT";
-  private final static String NAMESPACE = "gcloud_java_example";
-  private final static String DEFAULT_ACTION = "display";
-  private final static Map<String, DatastoreAction> ACTIONS = new HashMap<>();
+  private static final String USER_KIND = "_DS_EXAMPLE_USER";
+  private static final String COMMENT_KIND = "_DS_EXAMPLE_COMMENT";
+  private static final String NAMESPACE = "gcloud_java_example";
+  private static final String DEFAULT_ACTION = "display";
+  private static final Map<String, DatastoreAction> ACTIONS = new HashMap<>();
 
   private interface DatastoreAction {
     void run(Transaction tx, Key userKey, String... args);
@@ -82,7 +82,7 @@ public class DatastoreExample {
         count++;
       }
       tx.delete(userKey);
-      System.out.printf("Deleting user '%s' and %d comments.\n", userKey.name(), count);
+      System.out.printf("Deleting user '%s' and %d comment[s].%n", userKey.name(), count);
     }
 
     @Override
@@ -99,7 +99,7 @@ public class DatastoreExample {
         System.out.println("No comments for '" + userKey.name() + "'.");
         return;
       }
-      System.out.println("User: " + userKey.name());
+      System.out.printf("User '%s' has %d comment[s].%n", userKey.name(), user.getLong("count"));
       // ORDER BY timestamp";
       String gql = "SELECT * FROM " + COMMENT_KIND + " WHERE __key__ HAS ANCESTOR @1";
       Query<Entity> query = Query.gqlQueryBuilder(ResultType.ENTITY, gql)
@@ -116,7 +116,7 @@ public class DatastoreExample {
         sortedComments.put(result.getDateTime("timestamp"), result.getString("content"));
       }
       for (Map.Entry<DateTime, String> entry : sortedComments.entrySet()) {
-        System.out.printf("\t%s: %s\n", entry.getKey(), entry.getValue());
+        System.out.printf("\t%s: %s%n", entry.getKey(), entry.getValue());
       }
     }
 
@@ -136,6 +136,9 @@ public class DatastoreExample {
             .set("count", 1L)
             .build();
         tx.add(user);
+      } else {
+        user = Entity.builder(user).set("count", user.getLong("count") + 1L).build();
+        tx.update(user);
       }
       String content = "No comment.";
       if (args.length > 0) {
@@ -174,11 +177,11 @@ public class DatastoreExample {
     if (args.length > 0) {
       String dataset = args[0];
       // If you want to access a local Datastore running via the gcd sdk, do
-      //    DatastoreServiceOptions options = DatastoreServiceOptions.builder()
-      //        .dataset(dataset)
-      //        .namespace(NAMESPACE)
-      //        .host("http://localhost:8080")
-      //        .build();
+//          DatastoreServiceOptions options = DatastoreServiceOptions.builder()
+//              .dataset(dataset)
+//              .namespace(NAMESPACE)
+//              .host("http://localhost:8080")
+//              .build();
       DatastoreServiceOptions options = DatastoreServiceOptions.builder()
           .dataset(dataset)
           .namespace(NAMESPACE)
@@ -201,7 +204,7 @@ public class DatastoreExample {
         actionAndParams.append('|');
       }
       actionAndParams.setLength(actionAndParams.length() - 1);
-      System.out.printf("Usage: %s dataset [user] [%s]\n",
+      System.out.printf("Usage: %s dataset [user] [%s]%n",
           DatastoreExample.class.getSimpleName(), actionAndParams);
       return;
     }

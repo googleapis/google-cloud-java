@@ -43,7 +43,7 @@ import java.util.Set;
  * An entity is Google Cloud Datastore persistent data object.
  * An entity holds one or more properties, represented by a name (as {@link String})
  * and a value (as {@link com.google.gcloud.datastore.Value}), and may be associated with a
- * key. For a list of possible values see {@link com.google.gcloud.datastore.Value.Type}.
+ * key. For a list of possible values see {@link ValueType}.
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
  */

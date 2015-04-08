@@ -53,7 +53,7 @@ public final class LongValue extends Value<Long> {
   public static final class Builder extends Value.BaseBuilder<Long, LongValue, Builder> {
 
     private Builder() {
-      super(Type.LONG);
+      super(ValueType.LONG);
     }
 
     @Override
