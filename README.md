@@ -59,22 +59,29 @@ with the Cloud Datastore using this Client Library.
 import com.google.gcloud.datastore.DatastoreService;
 import com.google.gcloud.datastore.DatastoreServiceFactory;
 import com.google.gcloud.datastore.DatastoreServiceOptions;
+import com.google.gcloud.datastore.DateTime;
 import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-DatastoreServiceOptions options = DatastoreServiceOptions.builder().dataset("...").build();
+DatastoreServiceOptions options = DatastoreServiceOptions.builder().dataset(DATASET).build();
 DatastoreService datastore = DatastoreServiceFactory.getDefault(options);
-KeyFactory keyFactory = new KeyFactory(datastore).kind("...");
+KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
 if (entity == null) {
   entity = Entity.builder(key)
       .set("name", "John Do")
       .set("age", 30)
-      .set("updated", false)
+      .set("access_time", DateTime.now())
       .build();
   datastore.put(entity);
+} else {
+  System.out.println("Updating access_time for " + entity.getString("name"));
+  entity = Entity.builder(entity)
+      .set("access_time", DateTime.now())
+      .build();
+  datastore.update(entity);
 }
 ```
 
