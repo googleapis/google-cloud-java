@@ -53,7 +53,7 @@ public final class KeyValue extends Value<Key> {
   public static final class Builder extends Value.BaseBuilder<Key, KeyValue, Builder> {
 
     public Builder() {
-      super(Type.KEY);
+      super(ValueType.KEY);
     }
 
     @Override

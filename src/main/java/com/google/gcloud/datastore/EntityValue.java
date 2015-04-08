@@ -54,7 +54,7 @@ public class EntityValue extends Value<FullEntity> {
   public static final class Builder extends Value.BaseBuilder<FullEntity, EntityValue, Builder> {
 
     private Builder() {
-      super(Type.ENTITY);
+      super(ValueType.ENTITY);
     }
 
     @Override

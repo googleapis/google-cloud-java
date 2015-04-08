@@ -53,7 +53,7 @@ public final class DateTimeValue extends Value<DateTime> {
   public static final class Builder extends Value.BaseBuilder<DateTime, DateTimeValue, Builder> {
 
     private Builder() {
-      super(Type.DATE_TIME);
+      super(ValueType.DATE_TIME);
     }
 
     @Override
