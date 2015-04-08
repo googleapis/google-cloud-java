@@ -301,7 +301,7 @@
               <include>com/google/gcloud/**/*.class</include>
             </includes>
             <excludes>
-              <exclude>com/google/gcloud/example/**/*.class</exclude>
+              <exclude>com/google/gcloud/examples/**/*.class</exclude>
             </excludes>
           </instrumentation>
           <check />
