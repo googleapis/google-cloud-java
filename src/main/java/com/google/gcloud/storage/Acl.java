@@ -56,6 +56,10 @@ public abstract class Acl implements Serializable {
       return domain;
     }
 
+    String entity() {
+      return "domain-" + domain;
+    }
+
     public static Domain of(String domain, Role role) {
       return new Domain(domain, role);
     }
@@ -73,6 +77,10 @@ public abstract class Acl implements Serializable {
 
     public String email() {
       return email;
+    }
+
+    String entity() {
+      return "group-" + email;
     }
 
     public static Group of(String email, Role role) {
@@ -96,6 +104,18 @@ public abstract class Acl implements Serializable {
     public String email() {
       return email;
     }
+
+    String entity() {
+      switch (email) {
+        case ALL_AUTHENTICATED_USERS:
+          return ALL_AUTHENTICATED_USERS;
+        case ALL_USERS:
+          return ALL_USERS;
+        default:
+          return "user-" + email;
+      }
+    }
+
 
     public static User of(String email, Role role) {
       return new User(email, role);
@@ -135,6 +155,10 @@ public abstract class Acl implements Serializable {
       return projectId;
     }
 
+    String entity() {
+      return "project-" + pRole.name().toLowerCase() + "-" + projectId;
+    }
+
     public static Project of(ProjectRole pRole, String projectId, Role role) {
       return new Project(pRole, projectId, role);
     }
@@ -153,9 +177,30 @@ public abstract class Acl implements Serializable {
     return role;
   }
 
-  public static Acl fromPb(ObjectAccessControl objectAccessControl) {
+  BucketAccessControl toBucketPb() {
+    BucketAccessControl bucketPb = new BucketAccessControl();
+    bucketPb.setRole(role().toString());
+    bucketPb.setEntity(entity());
+    return bucketPb;
+  }
+
+  ObjectAccessControl toObjectPb() {
+    ObjectAccessControl objectPb = new ObjectAccessControl();
+    objectPb.setRole(role().toString());
+    objectPb.setEntity(entity());
+    return objectPb;
+  }
+
+  abstract String entity();
+
+  static Acl fromPb(ObjectAccessControl objectAccessControl) {
     Role role = Role.valueOf(objectAccessControl.getRole());
     return forEntity(objectAccessControl.getEntity(), role);
+  }
+
+  static Acl fromPb(BucketAccessControl bucketAccessControl) {
+    Role role = Role.valueOf(bucketAccessControl.getRole());
+    return forEntity(bucketAccessControl.getEntity(), role);
   }
 
   private static Acl forEntity(String entity, Role role) {
@@ -178,10 +223,5 @@ public abstract class Acl implements Serializable {
       return Project.of(ProjectRole.valueOf(team.toUpperCase()), projectId, role);
     }
     return null;
-  }
-
-  public static Acl fromPb(BucketAccessControl bucketAccessControl) {
-    Role role = Role.valueOf(bucketAccessControl.getRole());
-    return forEntity(bucketAccessControl.getEntity(), role);
   }
 }

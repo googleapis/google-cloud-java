@@ -333,13 +333,13 @@ public final class BucketInfo implements Serializable {
     })));
     bucket.setAcl(newArrayList(Iterables.transform(acl, new Function<Acl, BucketAccessControl>() {
       @Override public BucketAccessControl apply(Acl acl) {
-        return new BucketAccessControl().setEntity(acl.toEntity());
+        return acl.toBucketPb();
       }
     })));
     bucket.setDefaultObjectAcl(
         newArrayList(Iterables.transform(defaultAcl, new Function<Acl, ObjectAccessControl>() {
           @Override public ObjectAccessControl apply(Acl acl) {
-            return new ObjectAccessControl().setEntity(acl.toEntity());
+            return acl.toObjectPb();
           }
         })));
     return bucket;
