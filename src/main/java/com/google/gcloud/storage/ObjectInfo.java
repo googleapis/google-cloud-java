@@ -16,12 +16,16 @@
 
 package com.google.gcloud.storage;
 
+import com.google.api.client.util.DateTime;
+import com.google.api.services.storage.model.ObjectAccessControl;
+import com.google.api.services.storage.model.StorageObject;
+import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.hash.HashCode;
-import com.google.common.hash.Hashing;
+import com.google.common.collect.Lists;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
@@ -37,15 +41,14 @@ public class ObjectInfo implements Serializable {
   private final String owner;
   private final long size;
   private final String contentEncoding;
-  private final HashCode md5;
-  private final long crc32;
+  private final String md5;
+  private final String crc32c;
   private final String mediaLink;
   private final ImmutableMap<String, String> metadata;
   private final long generation;
   private final long metageneration;
   private final long deleteTime;
   private final long updateTime;
-
 
   public static final class Builder {
 
@@ -57,8 +60,8 @@ public class ObjectInfo implements Serializable {
     private String owner;
     private long size;
     private String contentEncoding;
-    private HashCode md5;
-    private long crc32;
+    private String md5;
+    private String crc32c;
     private String mediaLink;
     private ImmutableMap<String, String> metadata;
     private long generation;
@@ -109,18 +112,13 @@ public class ObjectInfo implements Serializable {
       return this;
     }
 
-    Builder md5(HashCode md5) {
+    Builder md5(String md5) {
       this.md5 = md5;
       return this;
     }
 
-    public Builder md5(byte[] bytes) {
-      this.md5 = bytes == null ? null : Hashing.md5().hashBytes(bytes);
-      return this;
-    }
-
-    public Builder crc32(long crc32) {
-      this.crc32 = crc32;
+    public Builder crc32c(String crc32c) {
+      this.crc32c = crc32c;
       return this;
     }
 
@@ -169,7 +167,7 @@ public class ObjectInfo implements Serializable {
     size = builder.size;
     contentEncoding = builder.contentEncoding;
     md5 = builder.md5;
-    crc32 = builder.crc32;
+    crc32c = builder.crc32c;
     mediaLink = builder.mediaLink;
     metadata = builder.metadata;
     generation = builder.generation;
@@ -210,12 +208,12 @@ public class ObjectInfo implements Serializable {
     return contentEncoding;
   }
 
-  public byte[] md5() {
-    return md5 == null ? null : md5.asBytes();
+  public String md5() {
+    return md5;
   }
 
-  public long crc32() {
-    return crc32;
+  public String crc32c() {
+    return crc32c;
   }
 
   public String mediaLink() {
@@ -248,7 +246,7 @@ public class ObjectInfo implements Serializable {
         .bucket(bucket)
         .cacheControl(cacheControl)
         .contentEncoding(contentEncoding)
-        .crc32(crc32)
+        .crc32c(crc32c)
         .contentType(contentType)
         .deleteTime(deleteTime)
         .generation(generation)
@@ -265,5 +263,72 @@ public class ObjectInfo implements Serializable {
 
   public static Builder builder() {
     return new Builder();
+  }
+
+  StorageObject toPb() {
+    StorageObject storageObject = new StorageObject();
+    storageObject.setAcl(Lists.transform(acl,
+        new Function<Acl, ObjectAccessControl>() {
+          @Override
+          public ObjectAccessControl apply(Acl acl) {
+            return acl.toObjectPb();
+          }
+        }));
+    storageObject.setBucket(bucket);
+    storageObject.setCacheControl(cacheControl);
+    storageObject.setContentEncoding(contentEncoding);
+    storageObject.setCrc32c(crc32c);
+    storageObject.setContentType(contentType);
+    storageObject.setTimeDeleted(new DateTime(deleteTime));
+    storageObject.setGeneration(generation);
+    storageObject.setMd5Hash(md5);
+    storageObject.setMediaLink(mediaLink);
+    storageObject.setMetadata(metadata);
+    storageObject.setMetageneration(metageneration);
+    storageObject.setName(name);
+    storageObject.setOwner(owner);
+    storageObject.setUpdated(new DateTime(updateTime));
+    storageObject.setSize(BigInteger.valueOf(size));
+    storageObject.setContentDisposition();
+    storageObject.setComponentCount();
+    storageObject.setContentLanguage();
+    storageObject.setEtag();
+    storageObject.setId();
+    storageObject.setSelfLink();
+    storageObject.setStorageClass();
+    return storageObject;
+  }
+
+  static ObjectInfo fromPb(StorageObject storageObject) {
+    return builder()
+        .acl(Lists.transform(storageObject.getAcl(),
+            new Function<ObjectAccessControl, Acl>() {
+              @Override public Acl apply(ObjectAccessControl objectAccessControl) {
+                return Acl.fromPb(objectAccessControl);
+              }
+            }))
+        .bucket(storageObject.getBucket())
+        .cacheControl(storageObject.getCacheControl())
+        .contentEncoding(storageObject.getContentEncoding())
+        .crc32c(storageObject.getCrc32c())
+        .contentType(storageObject.getContentType())
+        .deleteTime(storageObject.getTimeDeleted().getValue())
+        .generation(storageObject.getGeneration())
+        .md5(storageObject.getMd5Hash())
+        .mediaLink(storageObject.getMediaLink())
+        .metadata(storageObject.getMetadata())
+        .metageneration(storageObject.getMetageneration())
+        .name(storageObject.getName())
+        .owner(storageObject.getName())
+        .updateTime(storageObject.getUpdated().getValue())
+        .size(storageObject.getSize().longValue())
+        .build();
+    storageObject.setContentDisposition();
+    storageObject.setComponentCount();
+    storageObject.setContentLanguage();
+    storageObject.setEtag();
+    storageObject.setId();
+    storageObject.setSelfLink();
+    storageObject.setStorageClass();
   }
 }
