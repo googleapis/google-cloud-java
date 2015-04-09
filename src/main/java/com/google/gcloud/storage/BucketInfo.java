@@ -22,6 +22,7 @@ import static com.google.common.collect.Lists.newArrayList;
 
 import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.Bucket;
+import com.google.api.services.storage.model.Bucket.Lifecycle;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.common.base.Function;
@@ -39,6 +40,9 @@ public final class BucketInfo implements Serializable {
 
   private final String id;
   private final String name;
+  private final String owner;
+  private final String selfLink;
+  private final boolean versioningEnabled;
   private final String etag;
   private final long createTime;
   private final long metageneration;
@@ -48,6 +52,15 @@ public final class BucketInfo implements Serializable {
   private final Location location;
   private final StorageClass storageClass;
 
+
+  public static abstract class AutoDeleteRule implements Serializable {
+
+    public enum Option {
+      AGE, CREATE_BEFORE, VERSION_LIMIT, NOT_LIVE
+    }
+
+
+  }
 
   public static final class StorageClass implements Serializable {
 
@@ -306,6 +319,12 @@ public final class BucketInfo implements Serializable {
             return Acl.fromPb(objectAccessControl);
           }
         }));
+    bucket.setOwner();
+    bucket.setSelfLink();
+    bucket.setWebsite();
+    bucket.setVersioning();
+    bucket.setLifecycle(new Lifecycle.Rule().
+
     return builder.build();
   }
 
