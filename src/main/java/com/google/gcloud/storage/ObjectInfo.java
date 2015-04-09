@@ -21,10 +21,13 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-public class ObjectInfo {
+public class ObjectInfo implements Serializable {
+
+  private static final long serialVersionUID = 2228487739943277159L;
 
   private final String bucket;
   private final String name;
