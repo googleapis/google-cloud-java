@@ -16,8 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.common.collect.ImmutableList;
 
 /**
@@ -26,18 +24,24 @@ import com.google.common.collect.ImmutableList;
  */
 public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
 
-  private final DatastoreService service;
+  private final String ds;
+  private final String ns;
 
-  public KeyFactory(DatastoreService service) {
-    super(checkNotNull(service).options().dataset());
-    this.service = service;
-    namespace(service.options().namespace());
+  public KeyFactory(String dataset) {
+    this(dataset, null);
   }
 
-  public PartialKey newKey() {
+  public KeyFactory(String dataset, String namespace) {
+    super(dataset);
+    namespace(namespace);
+    this.ds = dataset;
+    this.ns = namespace;
+  }
+
+  public IncompleteKey newKey() {
     ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
         .addAll(ancestors).add(PathElement.of(kind)).build();
-    return new PartialKey(dataset, namespace, path);
+    return new IncompleteKey(dataset, namespace, path);
   }
 
   public Key newKey(String name) {
@@ -53,19 +57,19 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
   }
 
   /**
-   * Return a key with a newly allocated id.
-   * @throws DatastoreServiceException if allocation failed.
+   * Resets the KeyFactory to its initial state.
+   * @return {@code this} for chaining.
    */
-  public Key allocateId() {
-    return service.allocateId(newKey());
+  public KeyFactory reset() {
+    dataset(ds);
+    namespace(ns);
+    kind = null;
+    ancestors.clear();
+    return this;
   }
 
   @Override
-  protected PartialKey build() {
+  protected IncompleteKey build() {
     return newKey();
-  }
-
-  DatastoreService datastore() {
-    return service;
   }
 }

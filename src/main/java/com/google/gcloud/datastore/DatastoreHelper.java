@@ -16,6 +16,7 @@
 
 package com.google.gcloud.datastore;
 
+import com.google.common.collect.Iterators;
 import com.google.common.collect.Maps;
 
 import java.util.ArrayList;
@@ -24,100 +25,37 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Adds some functionality to DatastoreService that should
- * be provided statically to the interface (Java 8).
+ * Provide functionality that should be added to the appropriate interfaces
+ * via Java 8 default methods.
  */
-public class DatastoreHelper implements DatastoreService {
+class DatastoreHelper {
 
-  private final DatastoreService delegate;
-
-  private DatastoreHelper(DatastoreService delegate) {
-    this.delegate = delegate;
+  private DatastoreHelper() {
   }
 
-  @Override
-  public Entity get(Key key) {
-    return delegate.get(key);
+
+  static Key allocateId(DatastoreService service, IncompleteKey key) {
+    return service.allocateId(new IncompleteKey[]{key}).get(0);
   }
 
-  @Override
-  public Iterator<Entity> get(Key... key) {
-    return delegate.get(key);
+  static Entity get(DatastoreReader reader, Key key) {
+    return Iterators.getNext(reader.get(new Key[]{key}), null);
   }
 
-  @Override
-  public <T> QueryResult<T> run(Query<T> query) {
-    return delegate.run(query);
+  static Entity add(DatastoreWriter writer, FullEntity<?> entity) {
+    return writer.add(new FullEntity<?>[] {entity}).get(0);
   }
 
-  @Override
-  public DatastoreServiceOptions options() {
-    return delegate.options();
-  }
-
-  @Override
-  public Transaction newTransaction(TransactionOption... options) {
-    return delegate.newTransaction(options);
-  }
-
-  @Override
-  public Batch newBatch(BatchOption... options) {
-    return delegate.newBatch(options);
-  }
-
-  @Override
-  public Key allocateId(PartialKey key) {
-    return delegate.allocateId(key);
-  }
-
-  @Override
-  public List<Key> allocateId(PartialKey... key) {
-    return delegate.allocateId(key);
-  }
-
-  @Override
-  public Entity add(PartialEntity entity) {
-    return delegate.add(entity);
-  }
-
-  @Override
-  public List<Entity> add(PartialEntity... entity) {
-    return delegate.add(entity);
-  }
-
-  @Override
-  public void add(Entity... entity) {
-    delegate.add(entity);
-  }
-
-  @Override
-  public void update(Entity... entity) {
-    delegate.update(entity);
-  }
-
-  @Override
-  public void put(Entity... entity) {
-    delegate.put(entity);
-  }
-
-  @Override
-  public void delete(Key... key) {
-    delegate.delete(key);
-  }
-
-  /**
-   * Returns a new KeyFactory for this service
-   */
-  public KeyFactory newKeyFactory() {
-    return new KeyFactory(delegate);
+  static KeyFactory newKeyFactory(DatastoreServiceOptions options) {
+    return new KeyFactory(options.dataset(), options.namespace());
   }
 
   /**
    * Returns a list with a value for each given key (ordered by input).
    * A {@code null} would be returned for non-existing keys.
    */
-  public List<Entity> fetch(Key... keys) {
-    Iterator<Entity> entities = delegate.get(keys);
+  static List<Entity> fetch(DatastoreReader reader, Key... keys) {
+    Iterator<Entity> entities = reader.get(keys);
     Map<Key, Entity> map = Maps.newHashMapWithExpectedSize(keys.length);
     while (entities.hasNext()) {
       Entity entity = entities.next();
@@ -131,26 +69,20 @@ public class DatastoreHelper implements DatastoreService {
     return list;
   }
 
-  public interface RunInTransaction {
-    void run(DatastoreReaderWriter readerWriter);
-  }
-
-  public void runInTransaction(RunInTransaction runFor, TransactionOption... options) {
-    Transaction transaction = newTransaction(options);
+  static <T> T runInTransaction(DatastoreService datastoreService,
+      DatastoreService.TransactionCallable<T> callable, TransactionOption... options) {
+    Transaction transaction = datastoreService.newTransaction(options);
     try {
-      runFor.run(transaction);
+      T value = callable.run(transaction);
       transaction.commit();
+      return value;
+    } catch (Exception ex) {
+      transaction.rollback();
+      throw DatastoreServiceException.propagateUserException(ex);
     } finally {
       if (transaction.active()) {
         transaction.rollback();
       }
     }
-  }
-
-  public static DatastoreHelper createFor(DatastoreService datastoreService) {
-    if (datastoreService instanceof DatastoreHelper) {
-      return (DatastoreHelper) datastoreService;
-    }
-    return new DatastoreHelper(datastoreService);
   }
 }

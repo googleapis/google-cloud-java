@@ -17,121 +17,88 @@
 package com.google.gcloud.datastore;
 
 import static junit.framework.TestCase.assertTrue;
-import static org.easymock.EasyMock.createMock;
-import static org.easymock.EasyMock.createStrictMock;
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
+import static junit.framework.TestCase.fail;
+import static org.easymock.EasyMock.*;
+import static org.junit.Assert.*;
 
 import com.google.common.collect.Iterators;
-import com.google.common.collect.Sets;
-import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc;
-
+import com.google.gcloud.datastore.DatastoreService.TransactionCallable;
+import org.easymock.EasyMock;
 import org.junit.Test;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class DatastoreHelperTest {
 
   @Test
-  public void testDelegate() throws Exception {
-    final Set<Method> methods = Sets.newHashSet(DatastoreService.class.getMethods());
-    final Map<String, Object[]> params = new HashMap<>();
-    InvocationHandler handler = new InvocationHandler() {
-      @Override
-      public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
-        String methodName = Thread.currentThread().getStackTrace()[3].getMethodName();
-        if (method.getParameterTypes().length > 0) {
-          Class paramClass = method.getParameterTypes()[0];
-          methodName += paramClass.getSimpleName();
-          if (method.isVarArgs()) {
-            objects = (Object[]) objects[0];
-          }
-          assertArrayEquals(objects, params.get(methodName));
-        }
-        assertTrue(methods.remove(method));
-        return null;
-      }
-    };
-    PartialKey pKey1 = PartialKey.builder("ds", "k").build();
-    PartialKey pKey2 = PartialKey.builder("ds", "k").build();
-    PartialEntity pEntity1 = PartialEntity.builder(pKey1).build();
-    PartialEntity pEntity2 = PartialEntity.builder(pKey2).build();
-    Key key1 = Key.builder(pKey1, 1).build();
-    Key key2 = Key.builder(pKey1, "a").build();
-    Entity entity1 = Entity.builder(key1).build();
-    Entity entity2 = Entity.builder(key2).build();
-    ClassLoader cl = DatastoreService.class.getClassLoader();
-    Class<?>[] interfaces = DatastoreHelper.class.getInterfaces();
-    DatastoreService delegate = (DatastoreService) Proxy.newProxyInstance(cl, interfaces, handler);
-    DatastoreHelper helper = DatastoreHelper.createFor(delegate);
-    params.put("getKey", new Object[] {key1});
-    helper.get(key1);
-    params.put("getKey[]", new Object[] {key1, key2});
-    helper.get(key1, key2);
-    params.put("addEntity[]", new Object[] {entity1, entity2});
-    helper.add(entity1, entity2);
-    params.put("updateEntity[]", new Object[] {entity1});
-    helper.update(entity1);
-    params.put("addPartialEntity", new Object[] {pEntity1});
-    helper.add(pEntity1);
-    params.put("addPartialEntity[]", new Object[] {pEntity2, entity1});
-    helper.add(pEntity2, entity1);
-    params.put("allocateIdPartialKey", new Object[] {pKey1});
-    helper.allocateId(pKey1);
-    params.put("allocateIdPartialKey[]", new Object[] {pKey1, pKey2});
-    helper.allocateId(pKey1, pKey2);
-    params.put("deleteKey[]", new Object[] {key1});
-    helper.delete(key1);
-    params.put("putEntity[]", new Object[] {entity1});
-    helper.put(entity1);
-    helper.options();
-    params.put("newBatchBatchOption[]", new Object[] {});
-    helper.newBatch();
-    params.put("newTransactionTransactionOption[]", new Object[] {});
-    helper.newTransaction();
-    Query query = createMock(Query.class);
-    params.put("runQuery", new Object[] {query});
-    helper.run(query);
-    assertTrue(methods.isEmpty());
+  public void testNewKeyFactory() {
+    DatastoreServiceOptions options = createMock(DatastoreServiceOptions.class);
+    expect(options.dataset()).andReturn("ds1").once();
+    expect(options.namespace()).andReturn("ns1").once();
+    replay(options);
+    KeyFactory keyFactory = DatastoreHelper.newKeyFactory(options);
+    Key key = keyFactory.kind("k").newKey("bla");
+    assertEquals("ds1", key.dataset());
+    assertEquals("ns1", key.namespace());
+    assertEquals("k", key.kind());
+    assertEquals("bla", key.name());
+    verify(options);
   }
 
   @Test
-  public void testNewKeyFactory() throws Exception {
+  public void testAllocateId() throws Exception {
     DatastoreService datastoreService = createStrictMock(DatastoreService.class);
-    DatastoreRpc datastoreRpc = createStrictMock(DatastoreRpc.class);
-    DatastoreServiceOptions options =
-        DatastoreServiceOptions.builder().normalizeDataset(false).datastoreRpc(datastoreRpc)
-            .dataset("ds").build();
-    expect(datastoreService.options()).andReturn(options).atLeastOnce();
-    replay(datastoreRpc, datastoreService);
-    DatastoreHelper helper = DatastoreHelper.createFor(datastoreService);
-    KeyFactory keyFactory = helper.newKeyFactory();
-    assertSame(datastoreService, keyFactory.datastore());
-    verify(datastoreRpc, datastoreService);
+    IncompleteKey pKey1 = IncompleteKey.builder("ds", "k").build();
+    Key key1 = Key.builder(pKey1, 1).build();
+    expect(datastoreService.allocateId(new IncompleteKey[] {pKey1}))
+        .andReturn(Collections.singletonList(key1));
+    replay(datastoreService);
+    assertEquals(key1, DatastoreHelper.allocateId(datastoreService, pKey1));
+    verify(datastoreService);
+  }
+
+  @Test
+  public void testGet() throws Exception {
+    DatastoreService datastoreService = createStrictMock(DatastoreService.class);
+    IncompleteKey pKey1 = IncompleteKey.builder("ds", "k").build();
+    Key key1 = Key.builder(pKey1, 1).build();
+    Entity entity1 = Entity.builder(key1).build();
+    Key key2 = Key.builder(pKey1, 2).build();
+    expect(datastoreService.get(new Key[]{key1}))
+        .andReturn(Collections.singletonList(entity1).iterator());
+    expect(datastoreService.get(new Key[]{key2}))
+        .andReturn(Collections.<Entity>emptyIterator());
+    replay(datastoreService);
+    assertEquals(entity1, DatastoreHelper.get(datastoreService, key1));
+    assertNull(DatastoreHelper.get(datastoreService, key2));
+    verify(datastoreService);
+  }
+
+  @Test
+  public void testAdd() throws Exception {
+    DatastoreService datastoreService = createStrictMock(DatastoreService.class);
+    IncompleteKey pKey = IncompleteKey.builder("ds", "k").build();
+    Key key = Key.builder(pKey, 1).build();
+    Entity entity = Entity.builder(key).build();
+    expect(datastoreService.add(new Entity[]{entity}))
+        .andReturn(Collections.singletonList(entity));
+    replay(datastoreService);
+    assertEquals(entity, DatastoreHelper.add(datastoreService, entity));
+    verify(datastoreService);
   }
 
   @Test
   public void testFetch() throws Exception {
     DatastoreService datastoreService = createStrictMock(DatastoreService.class);
-    PartialKey pKey1 = PartialKey.builder("ds", "k").build();
+    IncompleteKey pKey1 = IncompleteKey.builder("ds", "k").build();
     Key key1 = Key.builder(pKey1, 1).build();
     Key key2 = Key.builder(pKey1, "a").build();
     Entity entity1 = Entity.builder(key1).build();
     Entity entity2 = Entity.builder(key2).build();
     expect(datastoreService.get(key1, key2)).andReturn(Iterators.forArray(entity1, entity2)).once();
     replay(datastoreService);
-    DatastoreHelper helper = DatastoreHelper.createFor(datastoreService);
-    List<Entity> values = helper.fetch(key1, key2);
+    List<Entity> values = DatastoreHelper.fetch(datastoreService, key1, key2);
     assertEquals(2, values.size());
     assertEquals(entity1, values.get(0));
     assertEquals(entity2, values.get(1));
@@ -147,14 +114,42 @@ public class DatastoreHelperTest {
     expect(transaction.commit()).andReturn(null).once();
     expect(transaction.active()).andReturn(false).once();
     replay(datastoreService, transaction);
-    DatastoreHelper helper = DatastoreHelper.createFor(datastoreService);
-    helper.runInTransaction(new DatastoreHelper.RunInTransaction() {
-      @Override
-      public void run(DatastoreReaderWriter readerWriter) {
-        assertTrue(transaction.active());
-        assertSame(transaction, readerWriter);
-      }
-    });
+    String value = DatastoreHelper.runInTransaction(datastoreService,
+        new TransactionCallable<String>() {
+          @Override
+          public String run(DatastoreReaderWriter readerWriter) {
+            assertTrue(transaction.active());
+            assertSame(transaction, readerWriter);
+            return "done";
+          }
+        });
+    verify(datastoreService, transaction);
+    assertEquals("done", value);
+  }
+
+  @Test
+  public void testRunInTransactionWithException() throws Exception {
+    final DatastoreService datastoreService = createStrictMock(DatastoreService.class);
+    final Transaction transaction = createStrictMock(Transaction.class);
+    expect(datastoreService.newTransaction()).andReturn(transaction).once();
+    expect(transaction.active()).andReturn(true).once();
+    transaction.rollback();
+    EasyMock.expectLastCall().once();
+    expect(transaction.active()).andReturn(false).once();
+    replay(datastoreService, transaction);
+    try {
+      DatastoreHelper.runInTransaction(datastoreService, new TransactionCallable<Void>() {
+        @Override
+        public Void run(DatastoreReaderWriter readerWriter) throws Exception {
+          assertTrue(transaction.active());
+          assertSame(transaction, readerWriter);
+          throw new Exception("Bla");
+        }
+      });
+      fail("DatastoreServiceException was expected");
+    } catch (DatastoreServiceException ex) {
+      assertEquals("Bla", ex.getCause().getMessage());
+    }
     verify(datastoreService, transaction);
   }
 }

@@ -17,6 +17,7 @@
 package com.google.gcloud.datastore;
 
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * An interface to represent Google Cloud Datastore read operations.
@@ -43,9 +44,16 @@ public interface DatastoreReader {
   Iterator<Entity> get(Key... key);
 
   /**
+   * Returns a list with a value for each given key (ordered by input).
+   * A {@code null} would be returned for non-existing keys.
+   * When possible prefer using {@link #get(Key...)} which does not eagerly loads the results.
+   */
+  List<Entity> fetch(Key... keys);
+
+  /**
    * Submit a {@link Query} and returns its result.
    *
    * @throws DatastoreServiceException upon failure.
    */
-  <T> QueryResult<T> run(Query<T> query);
+  <T> QueryResults<T> run(Query<T> query);
 }

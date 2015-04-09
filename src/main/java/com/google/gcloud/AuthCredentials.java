@@ -26,15 +26,20 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
+import com.google.auth.http.HttpCredentialsAdapter;
+import com.google.auth.oauth2.GoogleCredentials;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.PrivateKey;
 import java.util.Set;
 
-public abstract class AuthConfig {
+/**
+ * Credentials for accessing Google Cloud services.
+ */
+public abstract class AuthCredentials {
 
-  private static class AppEngineAuthConfig extends AuthConfig {
+  private static class AppEngineAuthCredentials extends AuthCredentials {
 
     @Override
     protected HttpRequestInitializer httpRequestInitializer(
@@ -43,17 +48,17 @@ public abstract class AuthConfig {
     }
   }
 
-  private static class ServiceAccountAuthConfig extends AuthConfig {
+  private static class ServiceAccountAuthCredentials extends AuthCredentials {
 
     private final String account;
     private final PrivateKey privateKey;
 
-    ServiceAccountAuthConfig(String account, PrivateKey privateKey) {
+    ServiceAccountAuthCredentials(String account, PrivateKey privateKey) {
       this.account = checkNotNull(account);
       this.privateKey = checkNotNull(privateKey);
     }
 
-    ServiceAccountAuthConfig() {
+    ServiceAccountAuthCredentials() {
       account = null;
       privateKey = null;
     }
@@ -76,13 +81,14 @@ public abstract class AuthConfig {
   protected abstract HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
       Set<String> scopes);
 
-  public static AuthConfig createForAppEngine() {
-    return new AppEngineAuthConfig();
+  public static AuthCredentials createForAppEngine() {
+    return new AppEngineAuthCredentials();
   }
 
-  public static AuthConfig createForComputeEngine() throws IOException, GeneralSecurityException {
+  public static AuthCredentials createForComputeEngine()
+      throws IOException, GeneralSecurityException {
     final ComputeCredential cred = getComputeCredential();
-    return new AuthConfig() {
+    return new AuthCredentials() {
       @Override
       protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
           Set<String> scopes) {
@@ -91,12 +97,34 @@ public abstract class AuthConfig {
     };
   }
 
-  public static AuthConfig createFor(String account, PrivateKey privateKey) {
-    return new ServiceAccountAuthConfig(account, privateKey);
+  /**
+   * Returns the Application Default Credentials.
+   *
+   * <p>Returns the Application Default Credentials which are credentials that identify and
+   * authorize the whole application. This is the built-in service account if running on Google
+   * Compute Engine or the credentials file from the path in the environment variable
+   * GOOGLE_APPLICATION_CREDENTIALS.</p>
+   *
+   * @return the credentials instance.
+   * @throws IOException if the credentials cannot be created in the current environment.
+   */
+  public static AuthCredentials createApplicationDefaults() throws IOException {
+    final GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
+    return new AuthCredentials() {
+      @Override
+      protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
+          Set<String> scopes) {
+        return new HttpCredentialsAdapter(credentials);
+      }
+    };
   }
 
-  public static AuthConfig noCredentials() {
-    return new ServiceAccountAuthConfig();
+  public static AuthCredentials createFor(String account, PrivateKey privateKey) {
+    return new ServiceAccountAuthCredentials(account, privateKey);
+  }
+
+  public static AuthCredentials noCredentials() {
+    return new ServiceAccountAuthCredentials();
   }
 
   static ComputeCredential getComputeCredential() throws IOException, GeneralSecurityException {

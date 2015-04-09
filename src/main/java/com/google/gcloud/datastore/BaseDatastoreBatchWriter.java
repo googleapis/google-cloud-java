@@ -17,7 +17,12 @@
 package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -31,10 +36,10 @@ import java.util.Set;
 public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
 
   private final String name;
-  private final Map<Key, Entity> toAdd = new LinkedHashMap<>();
-  private final List<PartialEntity> toAddAutoId = new LinkedList<>();
-  private final Map<Key, Entity> toUpdate = new LinkedHashMap<>();
-  private final Map<Key, Entity> toPut = new LinkedHashMap<>();
+  private final Map<Key, FullEntity<Key>> toAdd = new LinkedHashMap<>();
+  private final List<FullEntity<IncompleteKey>> toAddAutoId = new LinkedList<>();
+  private final Map<Key, FullEntity<Key>> toUpdate = new LinkedHashMap<>();
+  private final Map<Key, FullEntity<Key>> toPut = new LinkedHashMap<>();
   private final Set<Key> toDelete = new LinkedHashSet<>();
   private boolean active = true;
 
@@ -42,37 +47,76 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     this.name = name;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
-  public void add(Entity... entities) {
+  public final void addWithDeferredIdAllocation(FullEntity<?>... entities) {
     validateActive();
-    for (Entity entity : entities) {
-      Key key = entity.key();
-      if (toAdd.containsKey(key) || toUpdate.containsKey(key) || toPut.containsKey(key)) {
-        throw newInvalidRequest("Entity with the key %s was already added or updated in this %s",
-            entity.key(), name);
-      }
-      if (toDelete.remove(key)) {
-        toPut.put(key, entity);
+    for (FullEntity<?> entity : entities) {
+      IncompleteKey key = entity.key();
+      Preconditions.checkArgument(key != null, "Entity must have a key");
+      if (key instanceof Key) {
+        addInternal((FullEntity<Key>) entity);
       } else {
-        toAdd.put(key, entity);
+        toAddAutoId.add((FullEntity<IncompleteKey>) entity);
       }
     }
   }
 
-  @Override
-  public void add(PartialEntity... entities) {
-    validateActive();
-    for (PartialEntity entity : entities) {
-      if (entity instanceof Entity) {
-        add((Entity) entity);
-      } else {
-        toAddAutoId.add(entity);
-      }
+  private void addInternal(FullEntity<Key> entity) {
+    Key key = entity.key();
+    if (toAdd.containsKey(key) || toUpdate.containsKey(key) || toPut.containsKey(key)) {
+      throw newInvalidRequest("Entity with the key %s was already added or updated in this %s",
+          entity.key(), name);
+    }
+    if (toDelete.remove(key)) {
+      toPut.put(key, entity);
+    } else {
+      toAdd.put(key, entity);
     }
   }
 
   @Override
-  public void update(Entity... entities) {
+  public final Entity add(FullEntity<?> entity) {
+    return DatastoreHelper.add(this, entity);
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  public final List<Entity> add(FullEntity<?>... entities) {
+    validateActive();
+    List<IncompleteKey> incompleteKeys = Lists.newArrayListWithExpectedSize(entities.length);
+    for (FullEntity<?> entity : entities) {
+      IncompleteKey key = entity.key();
+      Preconditions.checkArgument(key != null, "Entity must have a key");
+      if (key instanceof Key) {
+        addInternal((FullEntity<Key>) entity);
+      } else {
+        incompleteKeys.add(key);
+      }
+    }
+    Iterator<Key> allocated;
+    if (!incompleteKeys.isEmpty()) {
+      IncompleteKey[] toAllocate = Iterables.toArray(incompleteKeys, IncompleteKey.class);
+      allocated = datastore().allocateId(toAllocate).iterator();
+    } else {
+      allocated = Collections.emptyIterator();
+    }
+    List<Entity> answer = Lists.newArrayListWithExpectedSize(entities.length);
+    for (FullEntity<?> entity : entities) {
+      if (entity.key() instanceof Key) {
+        answer.add(Entity.convert((FullEntity<Key>) entity));
+      } else {
+        Entity entityWithAllocatedId = Entity.builder(allocated.next(), entity).build();
+        addInternal(entityWithAllocatedId);
+        answer.add(entityWithAllocatedId);
+      }
+    }
+    return answer;
+  }
+
+  @SafeVarargs
+  @Override
+  public final void update(Entity... entities) {
     validateActive();
     for (Entity entity : entities) {
       Key key = entity.key();
@@ -88,8 +132,9 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     }
   }
 
+  @SafeVarargs
   @Override
-  public void put(Entity... entities) {
+  public final void put(Entity... entities) {
     validateActive();
     for (Entity entity : entities) {
       Key key = entity.key();
@@ -101,7 +146,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   }
 
   @Override
-  public void delete(Key... keys) {
+  public final void delete(Key... keys) {
     validateActive();
     for (Key key : keys) {
       toAdd.remove(key);
@@ -120,19 +165,19 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     return name;
   }
 
-  protected Map<Key, Entity> toAdd() {
+  protected Map<Key, FullEntity<Key>> toAdd() {
     return toAdd;
   }
 
-  protected List<PartialEntity> toAddAutoId() {
+  protected List<FullEntity<IncompleteKey>> toAddAutoId() {
     return toAddAutoId;
   }
 
-  protected Map<Key, Entity> toUpdate() {
+  protected Map<Key, FullEntity<Key>> toUpdate() {
     return toUpdate;
   }
 
-  protected Map<Key, Entity> toPut() {
+  protected Map<Key, FullEntity<Key>> toPut() {
     return toPut;
   }
 
@@ -156,16 +201,16 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
 
   protected DatastoreV1.Mutation.Builder toMutationPb() {
     DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
-    for (PartialEntity entity : toAddAutoId()) {
+    for (FullEntity<IncompleteKey> entity : toAddAutoId()) {
       mutationPb.addInsertAutoId(entity.toPb());
     }
-    for (Entity entity : toAdd().values()) {
+    for (FullEntity<Key> entity : toAdd().values()) {
       mutationPb.addInsert(entity.toPb());
     }
-    for (Entity entity : toUpdate().values()) {
+    for (FullEntity<Key> entity : toUpdate().values()) {
       mutationPb.addUpdate(entity.toPb());
     }
-    for (Entity entity : toPut().values()) {
+    for (FullEntity<Key> entity : toPut().values()) {
       mutationPb.addUpsert(entity.toPb());
     }
     for (Key key : toDelete()) {
@@ -173,4 +218,6 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     }
     return mutationPb;
   }
+
+  protected abstract DatastoreService datastore();
 }

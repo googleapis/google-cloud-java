@@ -46,19 +46,26 @@ import java.util.Objects;
  * <h3>A usage example:</h3>
  *
  * <p>A simple query that returns all entities for a specific kind
- * <pre> {@code
- *   StructuredQuery<Entity> query = StructuredQuery.builder().kind(kind).build();
- *   QueryResult<Entity> results = datastore.run(query);
+ * <pre>{@code
+ *   Query<Entity> query = Query.entityQueryBuilder().kind(kind).build();
+ *   QueryResults<Entity> results = datastore.run(query);
  *   while (results.hasNext()) {
  *     Entity entity = results.next();
  *     ...
  *   }
  * } </pre>
  *
+ * <p>A simple key-only query of all entities for a specific kind
+ * <pre>{@code
+ *   Query<Key> keyOnlyQuery =  Query.keyQueryBuilder().kind(KIND1).build();
+ *   QueryResults<Key> results = datastore.run(keyOnlyQuery);
+ *   ...
+ * } </pre>
+ *
  * <p>A less trivial example of a projection query that returns the first 10 results
  * of "age" and "name" properties (sorted and grouped by "age") with an age greater than 18
- * <pre> {@code
- *   StructuredQuery<ProjectionEntity> query = StructuredQuery.projectionBuilder()
+ * <pre>{@code
+ *   Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
  *       .kind(kind)
  *       .projection(Projection.property("age"), Projection.first("name"))
  *       .filter(PropertyFilter.gt("age", 18))
@@ -66,7 +73,7 @@ import java.util.Objects;
  *       .orderBy(OrderBy.asc("age"))
  *       .limit(10)
  *       .build();
- *   QueryResult<ProjectionEntity> results = datastore.run(query);
+ *   QueryResults<ProjectionEntity> results = datastore.run(query);
  *   ...
  * } </pre>
  *
@@ -594,7 +601,7 @@ public class StructuredQuery<V> extends Query<V> {
 
   static class BaseBuilder<V, B extends BaseBuilder<V, B>> {
 
-    private final Type<V> type;
+    private final ResultType<V> resultType;
     private String namespace;
     private String kind;
     private final List<Projection> projection = new LinkedList<>();
@@ -606,8 +613,8 @@ public class StructuredQuery<V> extends Query<V> {
     private int offset;
     private Integer limit;
 
-    BaseBuilder(Type<V> type) {
-      this.type = type;
+    BaseBuilder(ResultType<V> resultType) {
+      this.resultType = resultType;
     }
 
     @SuppressWarnings("unchecked")
@@ -739,22 +746,34 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
-  public static final class Builder<V> extends BaseBuilder<V, Builder<V>> {
+  static final class Builder<V> extends BaseBuilder<V, Builder<V>> {
 
-    public Builder(Type<V> type) {
-      super(type);
+    Builder(ResultType<V> resultType) {
+      super(resultType);
     }
   }
 
-  public static final class KeyOnlyBuilder extends BaseBuilder<Key, KeyOnlyBuilder> {
+  public static final class EntityQueryBuilder extends BaseBuilder<Entity, EntityQueryBuilder> {
 
-    public KeyOnlyBuilder() {
-      super(Type.KEY_ONLY);
+    EntityQueryBuilder() {
+      super(ResultType.ENTITY);
+    }
+
+    @Override
+    public StructuredQuery<Entity> build() {
+      return new StructuredQuery<>(this);
+    }
+  }
+
+  public static final class KeyQueryBuilder extends BaseBuilder<Key, KeyQueryBuilder> {
+
+    KeyQueryBuilder() {
+      super(ResultType.KEY);
       projection(Projection.property(KEY_PROPERTY_NAME));
     }
 
     @Override
-    protected KeyOnlyBuilder mergeFrom(DatastoreV1.Query queryPb) {
+    protected KeyQueryBuilder mergeFrom(DatastoreV1.Query queryPb) {
       super.mergeFrom(queryPb);
       projection(Projection.property(KEY_PROPERTY_NAME));
       clearGroupBy();
@@ -762,84 +781,56 @@ public class StructuredQuery<V> extends Query<V> {
     }
 
     @Override
-    public KeyOnlyQuery build() {
-      return new KeyOnlyQuery(this);
+    public StructuredQuery<Key> build() {
+      return new StructuredQuery<>(this);
     }
   }
 
-  public static final class ProjectionBuilder
-      extends BaseBuilder<ProjectionEntity, ProjectionBuilder> {
+  public static final class ProjectionEntityQueryBuilder
+      extends BaseBuilder<ProjectionEntity, ProjectionEntityQueryBuilder> {
 
-    public ProjectionBuilder() {
-      super(Type.PROJECTION);
+    ProjectionEntityQueryBuilder() {
+      super(ResultType.PROJECTION_ENTITY);
     }
 
     @Override
-    public ProjectionQuery build() {
-      return new ProjectionQuery(this);
+    public StructuredQuery<ProjectionEntity> build() {
+      return new StructuredQuery<>(this);
     }
 
     @Override
-    public ProjectionBuilder clearProjection() {
+    public ProjectionEntityQueryBuilder clearProjection() {
       return super.clearProjection();
     }
 
     @Override
-    public ProjectionBuilder projection(Projection projection, Projection... others) {
+    public ProjectionEntityQueryBuilder projection(Projection projection, Projection... others) {
       return super.projection(projection, others);
     }
 
     @Override
-    public ProjectionBuilder addProjection(Projection projection, Projection... others) {
+    public ProjectionEntityQueryBuilder addProjection(Projection projection, Projection... others) {
       return super.addProjection(projection, others);
     }
 
     @Override
-    public ProjectionBuilder clearGroupBy() {
+    public ProjectionEntityQueryBuilder clearGroupBy() {
       return super.clearGroupBy();
     }
 
     @Override
-    public ProjectionBuilder groupBy(String property, String... others) {
+    public ProjectionEntityQueryBuilder groupBy(String property, String... others) {
       return super.groupBy(property, others);
     }
 
     @Override
-    public ProjectionBuilder addGroupBy(String property, String... others) {
+    public ProjectionEntityQueryBuilder addGroupBy(String property, String... others) {
       return super.addGroupBy(property, others);
     }
   }
 
-  public static final class KeyOnlyQuery extends StructuredQuery<Key> {
-
-    private static final long serialVersionUID = -7502917784216095473L;
-
-    KeyOnlyQuery(KeyOnlyBuilder builder) {
-      super(builder);
-    }
-  }
-
-  public static final class ProjectionQuery extends StructuredQuery<ProjectionEntity> {
-
-    private static final long serialVersionUID = -3333183044486150649L;
-
-    ProjectionQuery(ProjectionBuilder builder) {
-      super(builder);
-    }
-
-    @Override
-    public List<Projection> projection() {
-      return super.projection();
-    }
-
-    @Override
-    public List<String> groupBy() {
-      return super.groupBy();
-    }
-  }
-
   StructuredQuery(BaseBuilder<V, ?> builder) {
-    super(builder.type, builder.namespace);
+    super(builder.resultType, builder.namespace);
     kind = builder.kind;
     projection = ImmutableList.copyOf(builder.projection);
     filter = builder.filter;
@@ -883,11 +874,11 @@ public class StructuredQuery<V> extends Query<V> {
     return kind;
   }
 
-  protected boolean keyOnly() {
+  boolean keyOnly() {
     return projection.size() == 1 && KEY_PROPERTY_NAME.equals(projection.get(0).property);
   }
 
-  List<Projection> projection() {
+  public List<Projection> projection() {
     return projection;
   }
 
@@ -895,7 +886,7 @@ public class StructuredQuery<V> extends Query<V> {
     return filter;
   }
 
-  List<String> groupBy() {
+  public List<String> groupBy() {
     return groupBy;
   }
 
@@ -974,33 +965,21 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   @Override
-  protected Object fromPb(Type<V> type, String namespace, byte[] bytesPb)
+  protected Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
-    return fromPb(type, namespace, DatastoreV1.Query.parseFrom(bytesPb));
+    return fromPb(resultType, namespace, DatastoreV1.Query.parseFrom(bytesPb));
   }
 
-  private static StructuredQuery<?> fromPb(Type<?> type, String namespace,
+  private static StructuredQuery<?> fromPb(ResultType<?> resultType, String namespace,
       DatastoreV1.Query queryPb) {
     BaseBuilder<?, ?> builder;
-    if (type.equals(Type.FULL)) {
-      builder = builder();
-    } else if (type.equals(Type.KEY_ONLY)) {
-      builder = keyOnlyBuilder();
+    if (resultType.equals(ResultType.ENTITY)) {
+      builder = new EntityQueryBuilder();
+    } else if (resultType.equals(ResultType.KEY)) {
+      builder = new KeyQueryBuilder();
     } else {
-      builder = projectionBuilder();
+      builder = new ProjectionEntityQueryBuilder();
     }
     return builder.namespace(namespace).mergeFrom(queryPb).build();
-  }
-
-  public static Builder<Entity> builder() {
-    return new Builder<>(Type.FULL);
-  }
-
-  public static KeyOnlyBuilder keyOnlyBuilder() {
-    return new KeyOnlyBuilder();
-  }
-
-  public static ProjectionBuilder projectionBuilder() {
-    return new ProjectionBuilder();
   }
 }

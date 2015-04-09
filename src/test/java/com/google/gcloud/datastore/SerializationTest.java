@@ -27,7 +27,6 @@ import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
-import com.google.gcloud.datastore.Value.Type;
 
 import org.junit.Test;
 
@@ -39,34 +38,35 @@ import java.io.ObjectOutputStream;
 
 public class SerializationTest {
 
-  private static final PartialKey INCOMPLETE_KEY1 =
-      PartialKey.builder("ds", "k").ancestors(PathElement.of("p", 1)).build();
+  private static final IncompleteKey INCOMPLETE_KEY1 =
+      IncompleteKey.builder("ds", "k").ancestors(PathElement.of("p", 1)).build();
   private static final Key KEY1 = Key.builder("ds", "k", "n").build();
-  private static final PartialKey INCOMPLETE_KEY2 =
-      PartialKey.builder(KEY1, "v").ancestors(PathElement.of("p", 1)).build();
+  private static final IncompleteKey INCOMPLETE_KEY2 =
+      IncompleteKey.builder(KEY1, "v").ancestors(PathElement.of("p", 1)).build();
   private static final Key KEY2 = Key.builder(KEY1, "v", 2).build();
   private static final DateTime DATE_TIME1 = DateTime.now();
   private static final Blob BLOB1 = Blob.copyFrom(UTF_8.encode("hello world"));
   private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1,2});
   private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[] {10});
   private static final Query<?> GQL1 =
-      GqlQuery.builder("select * from kind1 where name = @name and age > @1")
+      Query.gqlQueryBuilder("select * from kind1 where name = @name and age > @1")
       .setBinding("name", "name1")
       .addBinding(20)
       .namespace("ns1")
       .build();
   private static final Query<Entity> GQL2 =
-      GqlQuery.builder(Query.Type.FULL, "select * from kind1 where name = @name and age > @1")
+      Query.gqlQueryBuilder(Query.ResultType.ENTITY, "select * from kind1 where name = @name and age > @1")
       .setBinding("name", "name1")
       .addBinding(20)
       .namespace("ns1")
       .build();
-  private static final Query<Entity> QUERY1 = StructuredQuery.builder().kind("kind1").build();
-  private static final Query<Key> QUERY2 = StructuredQuery.keyOnlyBuilder()
+  private static final Query<Entity> QUERY1 =
+      Query.entityQueryBuilder().kind("kind1").build();
+  private static final Query<Key> QUERY2 = Query.keyQueryBuilder()
       .kind("k")
       .filter(PropertyFilter.eq("p1", "hello"))
       .build();
-  private static final Query<ProjectionEntity> QUERY3 = StructuredQuery.projectionBuilder()
+  private static final Query<ProjectionEntity> QUERY3 = Query.projectionEntityQueryBuilder()
       .kind("k")
       .namespace("ns1")
       .projection(Projection.property("p"))
@@ -97,15 +97,13 @@ public class SerializationTest {
       .set("p3", LongValue.builder(100).indexed(false).meaning(100).build())
       .set("blob", BLOB1)
       .build();
-  private static final PartialEntity EMBEDDED_ENTITY1 = ENTITY1;
-  private static final PartialEntity EMBEDDED_ENTITY2 = ENTITY2;
-  private static final PartialEntity EMBEDDED_ENTITY3 = PartialEntity.builder(INCOMPLETE_KEY1)
+  private static final FullEntity<IncompleteKey> EMBEDDED_ENTITY = Entity.builder(INCOMPLETE_KEY1)
       .set("p1", STRING_VALUE)
       .set("p2", LongValue.builder(100).indexed(false).meaning(100).build())
       .build();
-  private static final EntityValue EMBEDDED_ENTITY_VALUE1 = EntityValue.of(EMBEDDED_ENTITY1);
-  private static final EntityValue EMBEDDED_ENTITY_VALUE2 = EntityValue.of(EMBEDDED_ENTITY2);
-  private static final EntityValue EMBEDDED_ENTITY_VALUE3 = EntityValue.of(EMBEDDED_ENTITY3);
+  private static final EntityValue EMBEDDED_ENTITY_VALUE1 = EntityValue.of(ENTITY1);
+  private static final EntityValue EMBEDDED_ENTITY_VALUE2 = EntityValue.of(ENTITY2);
+  private static final EntityValue EMBEDDED_ENTITY_VALUE3 = EntityValue.of(EMBEDDED_ENTITY);
   private static final ListValue LIST_VALUE = ListValue.builder()
       .addValue(NULL_VALUE)
       .addValue(STRING_VALUE)
@@ -114,26 +112,26 @@ public class SerializationTest {
   private static final ProjectionEntity PROJECTION_ENTITY = ProjectionEntity.fromPb(ENTITY1.toPb());
 
   @SuppressWarnings("rawtypes")
-  private static final Multimap<Type, Value> TYPE_TO_VALUES =
-      ImmutableMultimap.<Type, Value>builder()
-      .put(Type.NULL, NULL_VALUE)
-      .put(Type.KEY, KEY_VALUE)
-      .put(Type.STRING, STRING_VALUE)
-      .putAll(Type.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
+  private static final Multimap<ValueType, Value> TYPE_TO_VALUES =
+      ImmutableMultimap.<ValueType, Value>builder()
+      .put(ValueType.NULL, NULL_VALUE)
+      .put(ValueType.KEY, KEY_VALUE)
+      .put(ValueType.STRING, STRING_VALUE)
+      .putAll(ValueType.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
           EMBEDDED_ENTITY_VALUE3)
-      .put(Type.LIST, LIST_VALUE)
-      .put(Type.LONG, LONG_VALUE)
-      .put(Type.DOUBLE, DOUBLE_VALUE)
-      .put(Type.BOOLEAN, BOOLEAN_VALUE)
-      .put(Type.DATE_TIME, DATE_AND_TIME_VALUE)
-      .put(Type.BLOB, BLOB_VALUE)
-      .put(Type.RAW_VALUE, RAW_VALUE)
+      .put(ValueType.LIST, LIST_VALUE)
+      .put(ValueType.LONG, LONG_VALUE)
+      .put(ValueType.DOUBLE, DOUBLE_VALUE)
+      .put(ValueType.BOOLEAN, BOOLEAN_VALUE)
+      .put(ValueType.DATE_TIME, DATE_AND_TIME_VALUE)
+      .put(ValueType.BLOB, BLOB_VALUE)
+      .put(ValueType.RAW_VALUE, RAW_VALUE)
       .build();
 
   @Test
   public void testValues() throws Exception {
-    for (Type type : Type.values()) {
-      for (Value<?> value : TYPE_TO_VALUES.get(type)) {
+    for (ValueType valueType : ValueType.values()) {
+      for (Value<?> value : TYPE_TO_VALUES.get(valueType)) {
         Value<?> copy = serializeAndDeserialize(value);
         assertEquals(value, value);
         assertEquals(value, copy);
@@ -147,8 +145,8 @@ public class SerializationTest {
   @Test
   public void testTypes() throws Exception {
     Serializable[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
-        ENTITY3, EMBEDDED_ENTITY1, EMBEDDED_ENTITY2, EMBEDDED_ENTITY3, PROJECTION_ENTITY,
-        DATE_TIME1, BLOB1, CURSOR1, GQL1, GQL2, QUERY1, QUERY2, QUERY3};
+        ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, CURSOR1, GQL1, GQL2,
+        QUERY1, QUERY2, QUERY3};
     for (Serializable obj : types) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

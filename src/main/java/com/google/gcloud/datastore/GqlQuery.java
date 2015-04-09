@@ -44,8 +44,9 @@ import java.util.TreeMap;
  *
  * <p>When the type of the results is known the preferred usage would be:
  * <pre>{@code
- *   Query&lt;Entity&gt; query = GqlQuery.builder(Query.Type.FULL, "select * from kind").build();
- *   QueryResult&lt;Entity&gt; results = datastore.run(query);
+ *   Query<Entity> query =
+ *       Query.gqlQueryBuilder(Query.ResultType.ENTITY, "select * from kind").build();
+ *   QueryResults<Entity> results = datastore.run(query);
  *   while (results.hasNext()) {
  *     Entity entity = results.next();
  *     ...
@@ -54,10 +55,10 @@ import java.util.TreeMap;
  *
  * <p>When the type of the results is unknown you can use this approach:
  * <pre>{@code
- *   Query&lt;?&gt; query = GqlQuery.builder("select __key__ from kind").build();
- *   QueryResult&lt;?&gt; results = datastore.run(query);
+ *   Query<?> query = Query.gqlQueryBuilder("select __key__ from kind").build();
+ *   QueryResults<?> results = datastore.run(query);
  *   if (Key.class.isAssignableFrom(results.resultClass())) {
- *     QueryResult&lt;Key&gt; keys = (QueryResult&lt;Key&gt;) results;
+ *     QueryResults<Key> keys = (QueryResults<Key>) results;
  *     while (keys.hasNext()) {
  *       Key key = keys.next();
  *       ...
@@ -158,15 +159,15 @@ public final class GqlQuery<V> extends Query<V> {
    */
   public static final class Builder<V> {
 
-    private final Type<V> type;
+    private final ResultType<V> resultType;
     private String namespace;
     private String queryString;
     private boolean allowLiteral;
     private final Map<String, Binding> namedBindings = new TreeMap<>();
     private final List<Binding> positionalBindings = new LinkedList<>();
 
-    Builder(Type<V> type, String query) {
-      this.type = checkNotNull(type);
+    Builder(ResultType<V> resultType, String query) {
+      this.resultType = checkNotNull(resultType);
       queryString = checkNotNull(query);
     }
 
@@ -226,7 +227,7 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
-    public Builder<V> setBinding(String name, PartialEntity... value) {
+    public Builder<V> setBinding(String name, FullEntity<?>... value) {
       namedBindings.put(name, toBinding(name, EntityValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
@@ -271,7 +272,7 @@ public final class GqlQuery<V> extends Query<V> {
       return this;
     }
 
-    public Builder<V> addBinding(PartialEntity... value) {
+    public Builder<V> addBinding(FullEntity<?>... value) {
       positionalBindings.add(toBinding(EntityValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
@@ -310,7 +311,7 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   private GqlQuery(Builder<V> builder) {
-    super(builder.type, builder.namespace);
+    super(builder.resultType, builder.namespace);
     queryString = builder.queryString;
     allowLiteral = builder.allowLiteral;
     namedBindings = ImmutableList.copyOf(builder.namedBindings.values());
@@ -389,18 +390,18 @@ public final class GqlQuery<V> extends Query<V> {
 
   @Override
   protected GqlQuery<V> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
-    // See b/18705483
+    // See issue #17
     throw new UnsupportedOperationException("paging for this query is not implemented yet");
   }
 
   @Override
-  protected Object fromPb(Type<V> type, String namespace, byte[] bytesPb)
+  protected Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
-    return fromPb(type, namespace, DatastoreV1.GqlQuery.parseFrom(bytesPb));
+    return fromPb(resultType, namespace, DatastoreV1.GqlQuery.parseFrom(bytesPb));
   }
 
-  private static <V> GqlQuery<V> fromPb(Type<V> type, String ns, DatastoreV1.GqlQuery queryPb) {
-    Builder<V> builder = new Builder<>(type, queryPb.getQueryString());
+  private static <V> GqlQuery<V> fromPb(ResultType<V> resultType, String ns, DatastoreV1.GqlQuery queryPb) {
+    Builder<V> builder = new Builder<>(resultType, queryPb.getQueryString());
     builder.namespace(ns);
     if (queryPb.hasAllowLiteral()) {
       builder.allowLiteral = queryPb.getAllowLiteral();
@@ -416,21 +417,4 @@ public final class GqlQuery<V> extends Query<V> {
     return builder.build();
   }
 
-  /**
-   * Returns a new GQL query builder.
-   *
-   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
-   */
-  public static GqlQuery.Builder<?> builder(String gql) {
-    return builder(Type.UNKNOWN, gql);
-  }
-
-  /**
-   * Returns a new GQL query builder.
-   *
-   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
-   */
-  public static <V> GqlQuery.Builder<V> builder(Type<V> type, String gql) {
-    return new GqlQuery.Builder<>(type, gql);
-  }
 }

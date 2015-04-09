@@ -16,15 +16,12 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.InvalidProtocolBufferException;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
 
@@ -39,132 +36,24 @@ import java.util.Objects;
 public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 
   private static final long serialVersionUID = -1899638277588872742L;
-  private static final Map<Integer, Type> DESCRIPTOR_TO_TYPE_MAP = new HashMap<>();
 
-  private final transient Type type;
+
+  private final transient ValueType valueType;
   private final transient Boolean indexed;
   private final transient Integer meaning;
   private final transient V value;
 
-  /**
-   * The type of a property.
-   *
-   * @see <a href="http://cloud.google.com/datastore/docs/concepts/entities#Datastore_Properties_and_value_types">Google Cloud Datastore types</a>
-   */
-  public enum Type {
-
-    /**
-     * Represents a {@code null} value.
-     */
-    NULL(NullValue.MARSHALLER),
-
-    /**
-     * Represents a {@code string} value.
-     */
-    STRING(StringValue.MARSHALLER),
-
-    /**
-     * Represents an entity ({@link PartialEntity} or {@link Entity}) value.
-     */
-    ENTITY(EntityValue.MARSHALLER),
-
-    /**
-     * Represents a {@code list} of {@link Value}s.
-     */
-    LIST(ListValue.MARSHALLER),
-
-    /**
-     * Represents a {@code key} as a value.
-     */
-    KEY(KeyValue.MARSHALLER),
-
-    /**
-     * Represents a {@code long} value.
-     */
-    LONG(LongValue.MARSHALLER),
-
-    /**
-     * Represents a {@code double} value.
-     */
-    DOUBLE(DoubleValue.MARSHALLER),
-
-    /**
-     * Represents a {@code boolean} value.
-     */
-    BOOLEAN(BooleanValue.MARSHALLER),
-
-    /**
-     * Represents a {@link DateTime} value.
-     */
-    DATE_TIME(DateTimeValue.MARSHALLER),
-
-    /**
-     * Represents a {@link Blob} value.
-     */
-    BLOB(BlobValue.MARSHALLER),
-
-    /**
-     * Represents a raw/unparsed value.
-     */
-    RAW_VALUE(RawValue.MARSHALLER);
-
-
-    @SuppressWarnings("rawtypes") private final Marshaller marshaller;
-
-    <V, P extends Value<V>, B extends Builder<V, P, B>> Type(Marshaller<V, P, B> marshaller) {
-      this.marshaller = marshaller;
-      int fieldId = marshaller.getProtoFieldId();
-      if (fieldId > 0) {
-        DESCRIPTOR_TO_TYPE_MAP.put(fieldId, this);
-      }
-    }
-
-    Marshaller getMarshaller() {
-      return marshaller;
-    }
-  }
-
-  interface Builder<V, P extends Value<V>, B extends Builder<V, P, B>> {
-
-    Type getType();
-
-    B mergeFrom(P other);
-
-    Boolean getIndexed();
-
-    B indexed(boolean indexed);
-
-    Integer getMeaning();
-
-    B meaning(Integer meaning);
-
-    V get();
-
-    B set(V value);
-
-    P build();
-  }
-
-  interface BuilderFactory<V, P extends Value<V>, B extends Builder<V, P, B>>
+  interface BuilderFactory<V, P extends Value<V>, B extends ValueBuilder<V, P, B>>
       extends java.io.Serializable {
     B newBuilder(V value);
   }
 
-  interface Marshaller<V, P extends Value<V>, B extends Builder<V, P, B>>
-      extends java.io.Serializable {
-
-    B fromProto(DatastoreV1.Value proto);
-
-    DatastoreV1.Value toProto(P value);
-
-    int getProtoFieldId();
-  }
-
-  abstract static class BaseMarshaller<V, P extends Value<V>, B extends Builder<V, P, B>>
-      implements Marshaller<V, P, B>, BuilderFactory<V, P, B> {
+  abstract static class BaseMarshaller<V, P extends Value<V>, B extends ValueBuilder<V, P, B>>
+      implements ValueMarshaller<V, P, B>, BuilderFactory<V, P, B> {
 
     private static final long serialVersionUID = 2880767488942992985L;
 
+    @SuppressWarnings("deprecation")
     @Override
     public final B fromProto(DatastoreV1.Value proto) {
       B builder = newBuilder(getValue(proto));
@@ -177,6 +66,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
       return builder;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public final DatastoreV1.Value toProto(P value) {
       DatastoreV1.Value.Builder builder = DatastoreV1.Value.newBuilder();
@@ -196,22 +86,23 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
   }
 
   abstract static class BaseBuilder<V, P extends Value<V>, B extends BaseBuilder<V, P, B>>
-      implements Builder<V, P, B> {
+      implements ValueBuilder<V, P, B> {
 
-    private final Type type;
+    private final ValueType valueType;
     private Boolean indexed;
     private Integer meaning;
     private V value;
 
-    BaseBuilder(Type type) {
-      this.type = type;
+    BaseBuilder(ValueType valueType) {
+      this.valueType = valueType;
     }
 
     @Override
-    public Type getType() {
-      return type;
+    public ValueType getValueType() {
+      return valueType;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public B mergeFrom(P other) {
       indexed = other.indexed();
@@ -262,23 +153,15 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     public abstract P build();
   }
 
-  <P extends Value<V>, B extends BaseBuilder<V, P, B>> Value(Builder<V, P, B> builder) {
-    type = builder.getType();
+  <P extends Value<V>, B extends BaseBuilder<V, P, B>> Value(ValueBuilder<V, P, B> builder) {
+    valueType = builder.getValueType();
     indexed = builder.getIndexed();
     meaning = builder.getMeaning();
-    // some validations:
-    if (meaning != null && indexed != null) {
-      // TODO: consider supplying Ranges for allowed meaning and validating it here
-      // more specific validation could be done on the specific types themselves
-      // upon construction [e.g. integer with a meaning 13 should be in the range [0,100]]
-      checkArgument(!indexed || meaning != 15 && meaning != 22,
-          "Indexed values should not have meaning with 15 or 22");
-    }
     value = builder.get();
   }
 
-  public final Type type() {
-    return type;
+  public final ValueType type() {
+    return valueType;
   }
 
   public final boolean hasIndexed() {
@@ -289,10 +172,12 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     return indexed;
   }
 
+  @Deprecated
   public final boolean hasMeaning() {
     return meaning != null;
   }
 
+  @Deprecated
   public final Integer meaning() {
     return meaning;
   }
@@ -301,11 +186,11 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     return value;
   }
 
-  public abstract Builder<?, ?, ?> toBuilder();
+  public abstract ValueBuilder<?, ?, ?> toBuilder();
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, indexed, meaning, value);
+    return Objects.hash(valueType, indexed, meaning, value);
   }
 
   @Override
@@ -318,7 +203,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
       return false;
     }
     Value<V> other = (Value<V>) obj;
-    return Objects.equals(type, other.type)
+    return Objects.equals(valueType, other.valueType)
         && Objects.equals(indexed, other.indexed)
         && Objects.equals(meaning, other.meaning)
         && Objects.equals(value, other.value);
@@ -334,12 +219,12 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     for (Entry<FieldDescriptor, Object> entry : proto.getAllFields().entrySet()) {
       FieldDescriptor descriptor = entry.getKey();
       if (descriptor.getName().endsWith("_value")) {
-        Type type = DESCRIPTOR_TO_TYPE_MAP.get(descriptor.getNumber());
-        if (type == null) {
+        ValueType valueType = ValueType.getByDescriptorId(descriptor.getNumber());
+        if (valueType == null) {
           // unsupported type
           return RawValue.MARSHALLER.fromProto(proto).build();
         }
-        return type.getMarshaller().fromProto(proto).build();
+        return valueType.getMarshaller().fromProto(proto).build();
       }
     }
     return NullValue.MARSHALLER.fromProto(proto).build();

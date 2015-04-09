@@ -32,6 +32,7 @@ public class BlobValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     BlobValue value = BlobValue.of(CONTENT);
@@ -40,6 +41,7 @@ public class BlobValueTest {
     assertFalse(value.hasMeaning());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     BlobValue.Builder builder = BlobValue.builder(CONTENT);
