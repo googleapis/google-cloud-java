@@ -21,23 +21,23 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class PartialKeyTest {
+public class IncompleteKeyTest {
 
   @Test
   public void testBuilders() throws Exception {
-    PartialKey pk1 = PartialKey.builder("ds", "kind1").build();
+    IncompleteKey pk1 = IncompleteKey.builder("ds", "kind1").build();
     assertEquals("ds", pk1.dataset());
     assertEquals("kind1", pk1.kind());
     assertTrue(pk1.ancestors().isEmpty());
 
     Key parent = Key.builder("ds", "kind2", 10).build();
-    PartialKey pk2 = PartialKey.builder(parent, "kind3").build();
+    IncompleteKey pk2 = IncompleteKey.builder(parent, "kind3").build();
     assertEquals("ds", pk2.dataset());
     assertEquals("kind3", pk2.kind());
     assertEquals(parent.path(), pk2.ancestors());
 
-    assertEquals(pk2, PartialKey.builder(pk2).build());
-    PartialKey pk3 = PartialKey.builder(pk2).kind("kind4").build();
+    assertEquals(pk2, IncompleteKey.builder(pk2).build());
+    IncompleteKey pk3 = IncompleteKey.builder(pk2).kind("kind4").build();
     assertEquals("ds", pk3.dataset());
     assertEquals("kind4", pk3.kind());
     assertEquals(parent.path(), pk3.ancestors());

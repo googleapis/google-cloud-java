@@ -26,9 +26,9 @@ import com.google.api.services.datastore.DatastoreV1.LookupResponse;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc;
-import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
-import com.google.gcloud.com.google.gcloud.spi.ServiceRpcProvider;
+import com.google.gcloud.spi.DatastoreRpc;
+import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
+import com.google.gcloud.spi.ServiceRpcProvider;
 
 import java.lang.reflect.Method;
 import java.util.Iterator;

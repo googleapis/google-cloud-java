@@ -16,7 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.datastore.DatastoreV1;
@@ -34,7 +33,6 @@ import java.nio.ByteBuffer;
 
 /**
  * A Google Cloud Datastore Blob.
- * A Datastore blob is limited to {@value #MAX_LENGTH} bytes.
  * This class is immutable.
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
@@ -42,15 +40,11 @@ import java.nio.ByteBuffer;
 public final class Blob extends Serializable<DatastoreV1.Value> {
 
   private static final long serialVersionUID = 3835421019618247721L;
-  public static final int MAX_LENGTH = 1_000_000;
 
   private final transient ByteString byteString;
 
-  Blob(ByteString byteString, boolean enforceLimits) {
+  Blob(ByteString byteString) {
     this.byteString = checkNotNull(byteString);
-    if (enforceLimits) {
-      checkArgument(byteString.size() <= MAX_LENGTH, "May be a maximum of %,d bytes", MAX_LENGTH);
-    }
   }
 
   @Override
@@ -134,11 +128,11 @@ public final class Blob extends Serializable<DatastoreV1.Value> {
   }
 
   public static Blob copyFrom(byte[] bytes) {
-    return new Blob(ByteString.copyFrom(bytes), true);
+    return new Blob(ByteString.copyFrom(bytes));
   }
 
   public static Blob copyFrom(ByteBuffer bytes) {
-    return new Blob(ByteString.copyFrom(bytes), true);
+    return new Blob(ByteString.copyFrom(bytes));
   }
 
   public static Blob copyFrom(InputStream input) throws IOException {
@@ -158,6 +152,6 @@ public final class Blob extends Serializable<DatastoreV1.Value> {
 
   @Override
   protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return new Blob(DatastoreV1.Value.parseFrom(bytesPb).getBlobValue(), false);
+    return new Blob(DatastoreV1.Value.parseFrom(bytesPb).getBlobValue());
   }
 }

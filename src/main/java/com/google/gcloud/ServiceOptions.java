@@ -39,14 +39,14 @@ public abstract class ServiceOptions {
 
   private final String host;
   private final HttpTransport httpTransport;
-  private final AuthConfig authConfig;
+  private final AuthCredentials authCredentials;
   private final RetryParams retryParams;
 
   protected abstract static class Builder<B extends Builder<B>> {
 
     private String host;
     private HttpTransport httpTransport;
-    private AuthConfig authConfig;
+    private AuthCredentials authCredentials;
     private RetryParams retryParams;
 
     protected Builder() {}
@@ -54,7 +54,7 @@ public abstract class ServiceOptions {
     protected Builder(ServiceOptions options) {
       host = options.host;
       httpTransport = options.httpTransport;
-      authConfig = options.authConfig;
+      authCredentials = options.authCredentials;
       retryParams = options.retryParams;
     }
 
@@ -75,8 +75,8 @@ public abstract class ServiceOptions {
       return self();
     }
 
-    public B authConfig(AuthConfig authConfig) {
-      this.authConfig = authConfig;
+    public B authCredentials(AuthCredentials authCredentials) {
+      this.authCredentials = authCredentials;
       return self();
     }
 
@@ -89,7 +89,7 @@ public abstract class ServiceOptions {
   protected ServiceOptions(Builder<?> builder) {
     host = firstNonNull(builder.host, DEFAULT_HOST);
     httpTransport = firstNonNull(builder.httpTransport, defaultHttpTransport());
-    authConfig = firstNonNull(builder.authConfig, defaultAuthConfig());
+    authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
     retryParams = builder.retryParams;
   }
 
@@ -104,29 +104,36 @@ public abstract class ServiceOptions {
     }
     // Consider Compute
     try {
-      return AuthConfig.getComputeCredential().getTransport();
+      return AuthCredentials.getComputeCredential().getTransport();
     } catch (Exception e) {
       // Maybe not on GCE
     }
     return new NetHttpTransport();
   }
 
-  private static AuthConfig defaultAuthConfig() {
-    // Consider App Engine
+  private static AuthCredentials defaultAuthCredentials() {
+    // Consider App Engine. This will not be needed once issue #21 is fixed.
     if (appEngineAppId() != null) {
       try {
-        return AuthConfig.createForAppEngine();
+        return AuthCredentials.createForAppEngine();
       } catch (Exception ignore) {
         // Maybe not on App Engine
       }
     }
-    // Consider Compute
+
     try {
-      return AuthConfig.createForComputeEngine();
+      return AuthCredentials.createApplicationDefaults();
+    } catch (Exception ex) {
+      // fallback to old-style
+    }
+
+    // Consider old-style Compute. This will not be needed once issue #21 is fixed.
+    try {
+      return AuthCredentials.createForComputeEngine();
     } catch (Exception ignore) {
       // Maybe not on GCE
     }
-    return AuthConfig.noCredentials();
+    return AuthCredentials.noCredentials();
   }
 
   protected static String appEngineAppId() {
@@ -176,16 +183,16 @@ public abstract class ServiceOptions {
     return httpTransport;
   }
 
-  public AuthConfig authConfig() {
-    return authConfig;
+  public AuthCredentials authCredentials() {
+    return authCredentials;
   }
 
   public RetryParams retryParams() {
     return retryParams;
   }
 
-  protected HttpRequestInitializer httpRequestInitializer() {
-    return authConfig().httpRequestInitializer(httpTransport, scopes());
+  public HttpRequestInitializer httpRequestInitializer() {
+    return authCredentials().httpRequestInitializer(httpTransport, scopes());
   }
 
   public abstract Builder<?> toBuilder();

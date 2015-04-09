@@ -53,7 +53,7 @@ public final class DoubleValue extends Value<Double> {
   public static final class Builder extends Value.BaseBuilder<Double, DoubleValue, Builder> {
 
     public Builder() {
-      super(Type.DOUBLE);
+      super(ValueType.DOUBLE);
     }
 
     @Override

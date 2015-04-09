@@ -20,72 +20,65 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableSortedMap;
-import com.google.protobuf.InvalidProtocolBufferException;
 
 /**
- * An entity is the Google Cloud Datastore persistent data object.
- * An entity holds one or more properties, represented by a name (as {@link String})
- * and a value (as {@link Value}), and is associated with a {@link Key}.
- * For a list of possible values see {@link Value.Type}.
- * This class is immutable.
- *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
+ * An entity is the Google Cloud Datastore persistent data object for a specific key.
+ * An entity will always have a complete {@link Key}.
  */
-public final class Entity extends PartialEntity {
+public final class Entity extends FullEntity<Key> {
 
   private static final long serialVersionUID = 432961565733066915L;
 
-  public static final class Builder extends BaseEntity.Builder<Builder> {
+  public static final class Builder extends BaseEntity.Builder<Key, Builder> {
 
-    private Key key;
+    private Builder() {
+    }
 
     private Builder(Key key) {
-      this.key = checkNotNull(key);
+      super(checkNotNull(key));
     }
 
     private Builder(Entity entity) {
       super(entity);
-      key = entity.key();
     }
 
-    private Builder(Key key, BaseEntity entity) {
-      super(entity);
-      this.key = key;
+    private Builder(Key key, FullEntity<?> entity) {
+      properties(entity.properties());
+      key(key);
     }
 
+    @Override
     public Builder key(Key key) {
-      this.key = checkNotNull(key);
+      super.key(checkNotNull(key));
       return this;
     }
 
     @Override
     public Entity build() {
-      return new Entity(key, ImmutableSortedMap.copyOf(properties));
+      Preconditions.checkState(key() != null);
+      return new Entity(this);
     }
   }
 
-  Entity(Key key, ImmutableSortedMap<String, Value<?>> properties) {
-    super(key, properties);
+  Entity(Builder builder) {
+    super(builder);
   }
 
-  /**
-   * Returns the entity's key (never null).
-   */
-  @Override
-  public Key key() {
-    return (Key) super.key();
+  Entity(FullEntity<Key> from) {
+    super(from);
+    Preconditions.checkArgument(from.key() != null);
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(DatastoreV1.Entity.parseFrom(bytesPb));
+  protected BaseEntity.Builder emptyBuilder() {
+    return new Builder();
   }
 
-  static Entity fromPb(DatastoreV1.Entity entityPb) {
-    PartialEntity entity = PartialEntity.fromPb(entityPb);
-    Preconditions.checkState(entity instanceof Entity, "Entity is not complete");
-    return (Entity) entity;
+  static Entity convert(FullEntity<Key> from) {
+    if (from instanceof Entity) {
+      return (Entity) from;
+    }
+    return new Entity(from);
   }
 
   public static Builder builder(Key key) {
@@ -96,7 +89,11 @@ public final class Entity extends PartialEntity {
     return new Builder(copyFrom);
   }
 
-  public static Builder builder(Key key, PartialEntity copyFrom) {
+  public static Builder builder(Key key, FullEntity<?> copyFrom) {
     return new Builder(key, copyFrom);
+  }
+
+  static Entity fromPb(DatastoreV1.Entity entityPb) {
+    return new Builder().fill(entityPb).build();
   }
 }

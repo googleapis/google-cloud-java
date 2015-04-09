@@ -67,11 +67,12 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
     private ImmutableList.Builder<Value<?>> listBuilder = ImmutableList.builder();
 
     private Builder() {
-      super(Type.LIST);
+      super(ValueType.LIST);
     }
 
     public Builder addValue(Value<?> value) {
-      Preconditions.checkArgument(value.type() != Type.LIST, "Cannot contain another list");
+      // see datastore_v1.proto definition for list_value
+      Preconditions.checkArgument(value.type() != ValueType.LIST, "Cannot contain another list");
       listBuilder.add(value);
       return this;
     }
@@ -86,7 +87,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
 
     @Override
     public Builder indexed(boolean indexed) {
-      // see b/18704917
+      // see issue #26
       throw DatastoreServiceException.throwInvalidRequest("ListValue can't specify index");
     }
 

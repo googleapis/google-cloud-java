@@ -17,11 +17,9 @@
 package com.google.gcloud.datastore;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertNull;
+import static org.junit.Assert.assertTrue;
 
-import com.google.api.services.datastore.DatastoreV1;
-import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc;
-
-import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,15 +30,46 @@ public class KeyFactoryTest {
   private static final String DATASET = "dataset";
 
   private KeyFactory keyFactory;
-  private DatastoreRpc mock;
 
   @Before
   public void setUp() {
-    mock = EasyMock.createMock(DatastoreRpc.class);
-    DatastoreServiceOptions options = DatastoreServiceOptions.builder().normalizeDataset(false)
-        .datastoreRpc(mock).dataset(DATASET).build();
-    DatastoreService datastore = DatastoreServiceFactory.getDefault(options);
-    keyFactory = new KeyFactory(datastore).kind("k");
+    keyFactory = new KeyFactory(DATASET).kind("k");
+  }
+
+  @Test
+  public void testReset() {
+    IncompleteKey key =
+        keyFactory.dataset("ds1").namespace("ns1").ancestors(PathElement.of("p", 1)).build();
+    assertEquals("k", key.kind());
+    assertEquals("ds1", key.dataset());
+    assertEquals("ns1", key.namespace());
+    assertEquals(1, key.ancestors().size());
+
+    keyFactory.reset();
+    try {
+      keyFactory.newKey(1);
+    } catch (NullPointerException ex) {
+      assertEquals("kind must not be null", ex.getMessage());
+    }
+    keyFactory.kind("k1");
+    key = keyFactory.newKey();
+    assertEquals("k1", key.kind());
+    assertEquals(DATASET, key.dataset());
+    assertNull(key.namespace());
+    assertTrue(key.ancestors().isEmpty());
+
+    keyFactory = new KeyFactory(DATASET, "ns1").kind("k");
+    key = keyFactory.newKey();
+    assertEquals(DATASET, key.dataset());
+    assertEquals("ns1", key.namespace());
+    key = keyFactory.dataset("bla1").namespace("bla2").build();
+    assertEquals("bla1", key.dataset());
+    assertEquals("bla2", key.namespace());
+    keyFactory.reset().kind("kind");
+    key = keyFactory.newKey();
+    assertEquals(DATASET, key.dataset());
+    assertEquals("ns1", key.namespace());
+    assertEquals("kind", key.kind());
   }
 
   @Test
@@ -56,31 +85,31 @@ public class KeyFactoryTest {
   }
 
   @Test
-  public void testNewPartialKey() throws Exception {
-    PartialKey key = keyFactory.newKey();
-    verifyPartialKey(key, null);
+  public void testNewIncompleteKey() throws Exception {
+    IncompleteKey key = keyFactory.newKey();
+    verifyIncompleteKey(key, null);
     PathElement p1 = PathElement.of("k1", "n");
     PathElement p2 = PathElement.of("k2", 10);
     key = keyFactory.namespace("ns").ancestors(p1, p2).newKey();
-    verifyPartialKey(key, "ns", p1, p2);
+    verifyIncompleteKey(key, "ns", p1, p2);
   }
 
   @Test(expected = NullPointerException.class)
-  public void testNewPartialWithNoKind() {
-    new KeyFactory(keyFactory.datastore()).build();
+  public void testNewIncompleteWithNoKind() {
+    new KeyFactory(DATASET).build();
   }
 
   private void verifyKey(Key key, String name, String namespace, PathElement... ancestors) {
     assertEquals(name, key.name());
-    verifyPartialKey(key, namespace, ancestors);
+    verifyIncompleteKey(key, namespace, ancestors);
   }
 
   private void verifyKey(Key key, Long id, String namespace, PathElement... ancestors) {
     assertEquals(id, key.id());
-    verifyPartialKey(key, namespace, ancestors);
+    verifyIncompleteKey(key, namespace, ancestors);
   }
 
-  private void verifyPartialKey(PartialKey key, String namespace, PathElement... ancestors) {
+  private void verifyIncompleteKey(IncompleteKey key, String namespace, PathElement... ancestors) {
     assertEquals("k", key.kind());
     assertEquals(DATASET, key.dataset());
     assertEquals(namespace, key.namespace());
@@ -89,19 +118,5 @@ public class KeyFactoryTest {
     for (PathElement ancestor : ancestors) {
       assertEquals(ancestor, iter.next());
     }
-  }
-
-  @Test
-  public void testAllocateId() throws Exception {
-    PartialKey pk = keyFactory.newKey();
-    Key key = keyFactory.newKey(1);
-    DatastoreV1.AllocateIdsRequest.Builder requestPb = DatastoreV1.AllocateIdsRequest.newBuilder();
-    requestPb.addKey(pk.toPb());
-    DatastoreV1.AllocateIdsResponse.Builder responsePb = DatastoreV1.AllocateIdsResponse.newBuilder();
-    responsePb.addKey(key.toPb());
-    EasyMock.expect(mock.allocateIds(requestPb.build())).andReturn(responsePb.build());
-    EasyMock.replay(mock);
-    assertEquals(key, keyFactory.allocateId());
-    EasyMock.verify(mock);
   }
 }

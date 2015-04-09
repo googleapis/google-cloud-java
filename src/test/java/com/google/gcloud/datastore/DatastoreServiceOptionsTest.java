@@ -22,7 +22,7 @@ import static junit.framework.TestCase.assertNull;
 import static junit.framework.TestCase.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.gcloud.com.google.gcloud.spi.DatastoreRpc;
+import com.google.gcloud.spi.DatastoreRpc;
 
 import org.easymock.EasyMock;
 import org.junit.Before;
@@ -82,6 +82,6 @@ public class DatastoreServiceOptionsTest {
     assertEquals(original.host(), copy.host());
     assertEquals(original.force(), copy.force());
     assertEquals(original.retryParams(), copy.retryParams());
-    assertEquals(original.authConfig(), copy.authConfig());
+    assertEquals(original.authCredentials(), copy.authCredentials());
   }
 }

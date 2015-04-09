@@ -32,6 +32,7 @@ public class DoubleValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     DoubleValue value = DoubleValue.of(CONTENT);
@@ -40,6 +41,7 @@ public class DoubleValueTest {
     assertFalse(value.hasMeaning());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     DoubleValue.Builder builder = DoubleValue.builder(CONTENT);
