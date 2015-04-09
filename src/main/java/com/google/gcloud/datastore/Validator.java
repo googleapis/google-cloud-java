@@ -47,7 +47,7 @@ final class Validator {
   static String validateNamespace(String namespace) {
     if (namespace != null) {
       checkArgument(!namespace.isEmpty(), "namespace must not be an empty string");
-      checkArgument(namespace.length() <= 100,
+      checkArgument(namespace.length() <= MAX_NAMESPACE_LENGTH,
           "namespace must not contain more than 100 characters");
       checkArgument(NAMESPACE_PATTERN.matcher(namespace).matches(),
           "namespace must the following pattern: " + NAMESPACE_PATTERN.pattern());
@@ -57,7 +57,8 @@ final class Validator {
 
   static String validateKind(String kind) {
     checkArgument(!Strings.isNullOrEmpty(kind), "kind must not be empty or null");
-    checkArgument(kind.length() <= 500, "kind must not contain more than 500 characters");
     return kind;
   }
+
+
 }

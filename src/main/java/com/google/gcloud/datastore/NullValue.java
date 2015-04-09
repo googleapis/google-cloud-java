@@ -53,7 +53,7 @@ public final class NullValue extends Value<Void> {
   public static final class Builder extends Value.BaseBuilder<Void, NullValue, Builder> {
 
     private Builder() {
-      super(Type.NULL);
+      super(ValueType.NULL);
     }
 
     @Override

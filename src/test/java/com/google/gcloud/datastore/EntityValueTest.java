@@ -33,6 +33,7 @@ public class EntityValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     EntityValue value = EntityValue.of(CONTENT);
@@ -47,6 +48,7 @@ public class EntityValueTest {
     EntityValue.builder(CONTENT).indexed(true);
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     EntityValue.Builder builder = EntityValue.builder(CONTENT);

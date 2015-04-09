@@ -32,6 +32,7 @@ public class StringValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     StringValue value = StringValue.of(CONTENT);
@@ -40,6 +41,7 @@ public class StringValueTest {
     assertFalse(value.hasMeaning());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     StringValue.Builder builder = StringValue.builder(CONTENT);

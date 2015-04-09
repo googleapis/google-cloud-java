@@ -41,7 +41,7 @@ public final class BlobValue extends Value<Blob> {
 
         @Override
         protected Blob getValue(DatastoreV1.Value from) {
-          return new Blob(from.getBlobValue(), false);
+          return new Blob(from.getBlobValue());
         }
 
         @Override
@@ -53,7 +53,7 @@ public final class BlobValue extends Value<Blob> {
   public static final class Builder extends Value.BaseBuilder<Blob, BlobValue, Builder> {
 
     private Builder() {
-      super(Type.BLOB);
+      super(ValueType.BLOB);
     }
 
     @Override

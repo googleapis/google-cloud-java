@@ -16,6 +16,8 @@
 
 package com.google.gcloud.datastore;
 
+import java.util.List;
+
 /**
  * An interface to represent a batch of write operations.
  * All write operation for a batch writer will be applied to the Datastore in one RPC call.
@@ -23,24 +25,27 @@ package com.google.gcloud.datastore;
 interface DatastoreBatchWriter extends DatastoreWriter {
 
   /**
-   * {@inheritDoc}
-   * This operation will be converted to {@link #put} operation for entities that were already
-   *     marked for deletion in this writer.
-   * @throws com.google.gcloud.datastore.DatastoreServiceException if a given entity already added
-   *     to this writer or if not active
-   */
-  @Override
-  void add(Entity... entity);
-
-  /**
    * Datastore add operation.
-   * This method will automatically allocate id for any entity with an incomplete key.
+   * This method will also allocate id for any entity with an incomplete key.
+   * As oppose to {@link #add(FullEntity)}, this method will defer any necessary id allocation
+   * to submit time.
    *
    * @throws IllegalArgumentException if any of the given entities is missing a key
    * @throws com.google.gcloud.datastore.DatastoreServiceException if a given entity with a
    *     complete key was already added to this writer or if not active
    */
-  void add(PartialEntity... entity);
+  void addWithDeferredIdAllocation(FullEntity<?>... entity);
+
+  /**
+   * {@inheritDoc}
+   * For entities with complete keys that were marked for deletion in this writer the operation
+   * will be changed to {@link #put}.
+   * @throws com.google.gcloud.datastore.DatastoreServiceException if a given entity with the
+   *     same complete key was already added to this writer, if writer is not active or
+   *     if id allocation for an entity with an incomplete key failed.
+   */
+  @Override
+  List<Entity> add(FullEntity<?>... entity);
 
   /**
    * {@inheritDoc}

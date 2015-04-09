@@ -20,7 +20,7 @@ import com.google.api.services.storage.model.Bucket;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.BaseService;
-import com.google.gcloud.com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.StorageRpc;
 
 import java.io.IOException;
 

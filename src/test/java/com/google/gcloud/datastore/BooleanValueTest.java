@@ -30,6 +30,7 @@ public class BooleanValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     BooleanValue value = BooleanValue.of(false);
@@ -38,6 +39,7 @@ public class BooleanValueTest {
     assertFalse(value.hasMeaning());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     BooleanValue.Builder builder = BooleanValue.builder(true);

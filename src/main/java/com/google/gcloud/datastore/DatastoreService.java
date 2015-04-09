@@ -32,6 +32,33 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
    */
   Transaction newTransaction(TransactionOption... options);
 
+
+  /**
+   * An Callback for running with a Transactional
+   * {@link com.google.gcloud.datastore.DatastoreReaderWriter}.
+   * The associated transaction will be committed after a successful return from the {@code run}
+   * method. Any propagated exception will cause the transaction to be rolled-back.
+   *
+   * @param <T> the type of the return value
+   */
+  interface TransactionCallable<T> {
+    T run(DatastoreReaderWriter readerWriter) throws Exception;
+  }
+
+
+  /**
+   * Invokes the callback's {@link DatastoreService.TransactionCallable#run} method with a
+   * {@link DatastoreReaderWriter} that is associated with a new transaction.
+   * The transaction will be committed upon successful invocation.
+   * Any thrown exception will cause the transaction to rollback and will be propagated
+   * as a {@link DatastoreServiceException} with the original exception as its root cause.
+   *
+   * @param callable the callback to call with a newly created transactional readerWriter
+   * @param options the options for the created transaction
+   * @throws DatastoreServiceException upon failure
+   */
+  <T> T runInTransaction(TransactionCallable<T> callable, TransactionOption... options);
+
   /**
    * Returns a new Batch for processing multiple write operations in one request.
    */
@@ -44,46 +71,15 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
    *
    * @throws DatastoreServiceException upon failure
    */
-  Key allocateId(PartialKey key);
+  Key allocateId(IncompleteKey key);
 
   /**
    * Returns a list of keys using the allocated ids ordered by the input.
    *
    * @throws DatastoreServiceException upon failure
-   * @see #allocateId(PartialKey)
+   * @see #allocateId(IncompleteKey)
    */
-  List<Key> allocateId(PartialKey... key);
-
-  /**
-   * Datastore add operation.
-   * This method will automatically allocate an id if necessary.
-   *
-   * @param entity the entity to add
-   * @return an {@code Entity} with the same properties and a key that is either newly allocated
-   *     or the same one if was already complete
-   * @throws DatastoreServiceException upon failure
-   * @throws IllegalArgumentException if the given entity is missing a key
-   */
-  Entity add(PartialEntity entity);
-
-  /**
-   * Datastore add operation.
-   * This method will automatically allocate id for any entity with incomplete key.
-   *
-   * @return a list of {@code Entity} ordered by input with the same properties and a key that is
-   *     either newly allocated or the same one if was already complete
-   * @throws DatastoreServiceException upon failure
-   * @throws IllegalArgumentException if any of the given entities is missing a key
-   * @see #add(PartialEntity)
-   */
-  List<Entity> add(PartialEntity... entity);
-
-  /**
-   * {@inheritDoc}
-   * @throws DatastoreServiceException upon failure
-   */
-  @Override
-  void add(Entity... entity);
+  List<Key> allocateId(IncompleteKey... key);
 
   /**
    * {@inheritDoc}
@@ -105,4 +101,9 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
    */
   @Override
   void delete(Key... key);
+
+  /**
+   * Returns a new KeyFactory for this service
+   */
+  KeyFactory newKeyFactory();
 }

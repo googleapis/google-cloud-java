@@ -27,7 +27,7 @@ import java.util.Iterator;
  *
  * @param <V> the type of the results value.
  */
-public interface QueryResult<V> extends Iterator<V> {
+public interface QueryResults<V> extends Iterator<V> {
 
   /**
    * Returns the actual class of the result's values.
@@ -35,7 +35,8 @@ public interface QueryResult<V> extends Iterator<V> {
   Class<?> resultClass();
 
   /**
-   * Returns the Cursor for the next result. Not currently implemented (depends on v1beta3).
+   * Returns the Cursor for point after the value returned in the last {@link #next} call.
+   * Not currently implemented (depends on v1beta3).
    */
-  Cursor cursor();
+  Cursor cursorAfter();
 }

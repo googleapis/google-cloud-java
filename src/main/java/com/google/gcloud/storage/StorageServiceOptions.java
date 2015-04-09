@@ -20,8 +20,8 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.com.google.gcloud.spi.ServiceRpcProvider;
-import com.google.gcloud.com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.ServiceRpcProvider;
+import com.google.gcloud.spi.StorageRpc;
 
 import java.util.Set;
 

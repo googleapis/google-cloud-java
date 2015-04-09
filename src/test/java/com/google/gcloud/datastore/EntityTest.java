@@ -16,8 +16,7 @@
 
 package com.google.gcloud.datastore;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -25,13 +24,14 @@ public class EntityTest {
 
   private static final Key KEY1 = Key.builder("ds1", "k1", "n1").build();
   private static final Key KEY2 = Key.builder("ds1", "k2", 1).build();
-  private static final PartialKey PARTIAL_KEY = PartialKey.builder("ds1", "k2").build();
+  private static final IncompleteKey INCOMPLETE_KEY = IncompleteKey.builder("ds1", "k2").build();
   private static final Entity ENTITY = Entity.builder(KEY1).set("foo", "bar").build();
-  private static final PartialEntity PARTIAL_ENTITY =
-      PartialEntity.builder(PARTIAL_KEY).set("a", "b").build();
+  private static final FullEntity<IncompleteKey> INCOMPLETE_ENTITY =
+      Entity.builder(INCOMPLETE_KEY).set("a", "b").build();
 
   @Test
-  public void testGetKey() throws Exception {
+  public void testEntity() throws Exception {
+    assertTrue(ENTITY.hasKey());
     assertEquals(KEY1, ENTITY.key());
     assertEquals("bar", ENTITY.getString("foo"));
   }
@@ -47,10 +47,10 @@ public class EntityTest {
   }
 
   @Test
-  public void testCopyFromPartialEntity() throws Exception {
-    Entity.Builder builder = Entity.builder(KEY2, PARTIAL_ENTITY);
+  public void testCopyFromIncompleteEntity() throws Exception {
+    Entity.Builder builder = Entity.builder(KEY2, INCOMPLETE_ENTITY);
     Entity entity = builder.build();
-    assertNotEquals(PARTIAL_ENTITY, entity);
-    assertEquals(PARTIAL_ENTITY.properties(), entity.properties());
+    assertNotEquals(INCOMPLETE_ENTITY, entity);
+    assertEquals(INCOMPLETE_ENTITY.properties(), entity.properties());
   }
 }
