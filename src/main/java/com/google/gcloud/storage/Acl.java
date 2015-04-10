@@ -34,25 +34,26 @@ public final class Acl implements Serializable {
     WRITER
   }
 
-  public enum EntityType {
-    DOMAIN,
-    GROUP,
-    USER,
-    PROJECT
-  }
-
   public static abstract class Entity implements Serializable {
 
     private static final long serialVersionUID = -2707407252771255840L;
-    private final EntityType type;
+    private final Type type;
     private final String value;
 
-    Entity(EntityType type, String value) {
+    public enum Type {
+      DOMAIN,
+      GROUP,
+      USER,
+      PROJECT,
+      UNKNOWN
+    }
+
+    Entity(Type type, String value) {
       this.type = type;
       this.value = value;
     }
 
-    public EntityType type() {
+    public Type type() {
       return type;
     }
 
@@ -62,6 +63,10 @@ public final class Acl implements Serializable {
 
     @Override
     public String toString() {
+      return toPb();
+    }
+
+    String toPb() {
       return type.name().toLowerCase() + "-" + value();
     }
 
@@ -84,7 +89,7 @@ public final class Acl implements Serializable {
         String projectId = entity.substring(idx + 1);
         return new Project(Project.ProjectRole.valueOf(team.toUpperCase()), projectId);
       }
-      return null;
+      return new RawEntity(entity);
     }
   }
 
@@ -93,7 +98,7 @@ public final class Acl implements Serializable {
     private static final long serialVersionUID = -3033025857280447253L;
 
     public Domain(String domain) {
-      super(EntityType.DOMAIN, domain);
+      super(Type.DOMAIN, domain);
 
     }
 
@@ -107,7 +112,7 @@ public final class Acl implements Serializable {
     private static final long serialVersionUID = -1660987136294408826L;
 
     public Group(String email) {
-      super(EntityType.GROUP, email);
+      super(Type.GROUP, email);
     }
 
     public String email() {
@@ -122,7 +127,7 @@ public final class Acl implements Serializable {
     private static final String ALL_AUTHENTICATED_USERS = "allAuthenticatedUsers";
 
     public User(String email) {
-      super(EntityType.USER, email);
+      super(Type.USER, email);
     }
 
     public String email() {
@@ -130,7 +135,7 @@ public final class Acl implements Serializable {
     }
 
     @Override
-    public String toString() {
+    String toPb() {
       switch (value()) {
         case ALL_AUTHENTICATED_USERS:
           return ALL_AUTHENTICATED_USERS;
@@ -139,9 +144,8 @@ public final class Acl implements Serializable {
         default:
           break;
       }
-      return super.toString();
+      return super.toPb();
     }
-
 
     public static User ofAllUsers() {
       return new User(ALL_USERS);
@@ -164,7 +168,7 @@ public final class Acl implements Serializable {
     }
 
     Project(ProjectRole pRole, String projectId) {
-      super(EntityType.PROJECT, pRole.name().toLowerCase() + "-" + projectId);
+      super(Type.PROJECT, pRole.name().toLowerCase() + "-" + projectId);
       this.pRole = pRole;
       this.projectId = projectId;
     }
@@ -175,6 +179,18 @@ public final class Acl implements Serializable {
 
     public String projectId() {
       return projectId;
+    }
+  }
+
+  public static class RawEntity extends Entity {
+
+    RawEntity(String entity) {
+      super(Type.UNKNOWN, entity);
+    }
+
+    @Override
+    String toPb() {
+      return value();
     }
   }
 
@@ -200,8 +216,8 @@ public final class Acl implements Serializable {
 
   ObjectAccessControl toObjectPb() {
     ObjectAccessControl objectPb = new ObjectAccessControl();
-    objectPb.setRole(role().toString());
-    objectPb.setEntity(entity().toString());
+    objectPb.setRole(role().name());
+    objectPb.setEntity(entity().toPb());
     return objectPb;
   }
 
