@@ -40,7 +40,7 @@ public final class BucketInfo implements Serializable {
 
   private final String id;
   private final String name;
-  private final String owner;
+  private final Acl.Entity owner;
   private final String selfLink;
   private final boolean versioningEnabled;
   private final String etag;
