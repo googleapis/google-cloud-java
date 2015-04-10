@@ -18,18 +18,19 @@ package com.google.gcloud.storage;
 
 import static com.google.api.client.repackaged.com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.Iterables.transform;
-import static com.google.common.collect.Lists.newArrayList;
 
 import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.Bucket;
-import com.google.api.services.storage.model.Bucket.Lifecycle;
+import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
+import com.google.api.services.storage.model.Bucket.Versioning;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
+import com.google.gcloud.storage.Acl.Entity;
 
 import java.io.Serializable;
 import java.util.List;
@@ -43,6 +44,9 @@ public final class BucketInfo implements Serializable {
   private final Acl.Entity owner;
   private final String selfLink;
   private final boolean versioningEnabled;
+  private final String indexPage;
+  private final String notFoundPage;
+  private final ImmutableList<DeleteRule> deleteRules;
   private final String etag;
   private final long createTime;
   private final long metageneration;
@@ -53,13 +57,151 @@ public final class BucketInfo implements Serializable {
   private final StorageClass storageClass;
 
 
-  public static abstract class AutoDeleteRule implements Serializable {
+  public static abstract class DeleteRule implements Serializable {
 
-    public enum Option {
-      AGE, CREATE_BEFORE, VERSION_LIMIT, NOT_LIVE
+    private static final long serialVersionUID = 3137971668395933033L;
+    private final Type type;
+    private static final String SUPPORTED_ACTION = "Delete";
+
+    public enum Type {
+      AGE, CREATE_BEFORE, NUM_NEWER_VERSIONS, IS_LIVE, UNKNOWN
     }
 
+    DeleteRule(Type type) {
+      this.type = type;
+    }
 
+    public Type type() {
+      return type;
+    }
+
+    Rule toPb() {
+      Rule rule = new Rule();
+      rule.setAction(new Rule.Action().setType(SUPPORTED_ACTION));
+      Rule.Condition condition = new Rule.Condition();
+      populateCondition(condition);
+      rule.setCondition(condition);
+      return rule;
+    }
+
+    abstract void populateCondition(Rule.Condition condition);
+
+    static DeleteRule fromPb(Rule rule) {
+      if (rule.getAction() != null && SUPPORTED_ACTION.endsWith(rule.getAction().getType())) {
+        Rule.Condition condition = rule.getCondition();
+        Integer age = condition.getAge();
+        if (age != null) {
+          return new AgeDeleteRule(age);
+        }
+        DateTime dateTime = condition.getCreatedBefore();
+        if (dateTime != null) {
+          return new CreatedBeforeDeleteRule(dateTime.getValue());
+        }
+        Integer numNewerVersions = condition.getNumNewerVersions();
+        if (numNewerVersions != null) {
+          return new NumNewerVersionsDeleteRule(numNewerVersions);
+        }
+        Boolean isLive = condition.getIsLive();
+        if (isLive != null) {
+          return new IsLiveDeleteRule(isLive);
+        }
+      }
+      return new RawDeleteRule(rule);
+    }
+  }
+
+  public static class AgeDeleteRule extends DeleteRule {
+
+    private static final long serialVersionUID = 5697166940712116380L;
+    private final int daysToLive;
+
+    public AgeDeleteRule(int daysToLive) {
+      super(Type.AGE);
+      this.daysToLive = daysToLive;
+    }
+
+    public int daysToLive() {
+      return daysToLive;
+    }
+
+    void populateCondition(Rule.Condition condition) {
+      condition.setAge(daysToLive);
+    }
+  }
+
+  static class RawDeleteRule extends DeleteRule {
+
+    private final Rule rule;
+
+    RawDeleteRule(Rule rule) {
+      super(Type.UNKNOWN);
+      this.rule = rule;
+    }
+
+    void populateCondition(Rule.Condition condition) {
+      throw new UnsupportedOperationException();
+    }
+
+    Rule toPb() {
+      return rule;
+    }
+  }
+
+  public static class CreatedBeforeDeleteRule extends DeleteRule {
+
+    private static final long serialVersionUID = 881692650279195867L;
+    private final long timeMillis;
+
+    public CreatedBeforeDeleteRule(long timeMillis) {
+      super(Type.CREATE_BEFORE);
+      this.timeMillis = timeMillis;
+    }
+
+    public long timeMillis() {
+      return timeMillis;
+    }
+
+    void populateCondition(Rule.Condition condition) {
+      condition.setCreatedBefore(new DateTime(timeMillis));
+    }
+  }
+
+  public static class NumNewerVersionsDeleteRule extends DeleteRule {
+
+    private static final long serialVersionUID = -1955554976528303894L;
+    private final int numNewerVersions;
+
+    public NumNewerVersionsDeleteRule(int numNewerVersions) {
+      super(Type.NUM_NEWER_VERSIONS);
+      this.numNewerVersions = numNewerVersions;
+    }
+
+    public int numNewerVersions() {
+      return numNewerVersions;
+    }
+
+    void populateCondition(Rule.Condition condition) {
+      condition.setNumNewerVersions(numNewerVersions);
+    }
+  }
+
+  public static class IsLiveDeleteRule extends DeleteRule {
+
+    private static final long serialVersionUID = -3502994563121313364L;
+    private final boolean isLive;
+
+    public IsLiveDeleteRule(boolean isLive) {
+      super(Type.IS_LIVE);
+      this.isLive = isLive;
+    }
+
+    public boolean isLive() {
+      return isLive;
+    }
+
+    void populateCondition(Rule.Condition condition) {
+      condition.setIsLive(isLive);
+    }
   }
 
   public static final class StorageClass implements Serializable {
@@ -173,6 +315,12 @@ public final class BucketInfo implements Serializable {
 
     private final String id;
     private final String name;
+    private Acl.Entity owner;
+    private String selfLink;
+    private boolean versioningEnabled;
+    private String indexPage;
+    private String notFoundPage;
+    private ImmutableList<DeleteRule> deleteRules = ImmutableList.of();
     private StorageClass storageClass;
     private Location location;
     private String etag;
@@ -185,6 +333,36 @@ public final class BucketInfo implements Serializable {
     Builder(String id, String name) {
       this.id = id;
       this.name = name;
+    }
+
+    Builder owner(Acl.Entity owner) {
+      this.owner = owner;
+      return this;
+    }
+
+    Builder selfLink(String selfLink) {
+      this.selfLink = selfLink;
+      return this;
+    }
+
+    public Builder versioningEnabled(boolean enable) {
+      this.versioningEnabled = enable;
+      return this;
+    }
+
+    public Builder indexPage(String indexPage) {
+      this.indexPage = indexPage;
+      return this;
+    }
+
+    public Builder notFoundPage(String notFoundPage) {
+      this.notFoundPage = notFoundPage;
+      return this;
+    }
+
+    public Builder deleteRules(Iterable<DeleteRule> rules) {
+      this.deleteRules = ImmutableList.copyOf(rules);
+      return this;
     }
 
     public Builder storageClass(StorageClass storageClass) {
@@ -243,6 +421,12 @@ public final class BucketInfo implements Serializable {
     cors = ImmutableList.copyOf(builder.cors);
     acl = ImmutableList.copyOf(builder.acl);
     defaultAcl = ImmutableList.copyOf(builder.defaultAcl);
+    owner = builder.owner;
+    selfLink = builder.selfLink;
+    versioningEnabled = builder.versioningEnabled;
+    indexPage = builder.indexPage;
+    notFoundPage = builder.notFoundPage;
+    deleteRules = ImmutableList.copyOf(builder.deleteRules);
   }
 
   public String id() {
@@ -251,6 +435,30 @@ public final class BucketInfo implements Serializable {
 
   public String name() {
     return name;
+  }
+
+  public Entity Owner() {
+    return owner;
+  }
+
+  public String selfLink() {
+    return selfLink;
+  }
+
+  public boolean versioningEnabled() {
+    return versioningEnabled;
+  }
+
+  public String indexPage() {
+    return indexPage;
+  }
+
+  public String notFoundPage() {
+    return notFoundPage;
+  }
+
+  public ImmutableList<DeleteRule> deleteRules() {
+    return deleteRules;
   }
 
   public String etag() {
@@ -294,7 +502,13 @@ public final class BucketInfo implements Serializable {
         .acl(acl)
         .defaultAcl(defaultAcl)
         .location(location)
-        .storageClass(storageClass);
+        .storageClass(storageClass)
+        .owner(owner)
+        .selfLink(selfLink)
+        .versioningEnabled(versioningEnabled)
+        .indexPage(indexPage)
+        .notFoundPage(notFoundPage)
+        .deleteRules(deleteRules);
   }
 
   BucketInfo fromPb(Bucket bucket) {
@@ -318,13 +532,27 @@ public final class BucketInfo implements Serializable {
           @Override public Acl apply(ObjectAccessControl objectAccessControl) {
             return Acl.fromPb(objectAccessControl);
           }
-        }));
-    bucket.setOwner();
-    bucket.setSelfLink();
-    bucket.setWebsite();
-    bucket.setVersioning();
-    bucket.setLifecycle(new Lifecycle.Rule().
-
+        }))
+        .owner(Entity.fromPb(bucket.getOwner().getEntity()))
+        .selfLink(bucket.getSelfLink());
+    Bucket.Versioning versioning = bucket.getVersioning();
+    if (versioning != null) {
+      builder.versioningEnabled(MoreObjects.firstNonNull(versioning.getEnabled(), Boolean.FALSE));
+    }
+    Bucket.Website website = bucket.getWebsite();
+    if (website != null) {
+      builder.indexPage(website.getMainPageSuffix());
+      builder.notFoundPage(website.getNotFoundPage());
+    }
+    Bucket.Lifecycle lifecycle = bucket.getLifecycle();
+    if (lifecycle != null) {
+      builder.deleteRules(transform(lifecycle.getRule(),
+          new Function<Rule, DeleteRule>() {
+            @Override public DeleteRule apply(Rule rule) {
+              return DeleteRule.fromPb(rule);
+            }
+          }));
+    }
     return builder.build();
   }
 
@@ -345,22 +573,38 @@ public final class BucketInfo implements Serializable {
     if (storageClass != null) {
       bucket.setStorageClass(storageClass.value());
     }
-    bucket.setCors(newArrayList(Iterables.transform(cors, new Function<Cors, Bucket.Cors>() {
-      @Override public Bucket.Cors apply(Cors cors) {
+    bucket.setCors(Lists.transform(cors, new Function<Cors, Bucket.Cors>() {
+      @Override
+      public Bucket.Cors apply(Cors cors) {
         return cors.toPb();
       }
-    })));
-    bucket.setAcl(newArrayList(Iterables.transform(acl, new Function<Acl, BucketAccessControl>() {
-      @Override public BucketAccessControl apply(Acl acl) {
+    }));
+    bucket.setAcl(Lists.transform(acl, new Function<Acl, BucketAccessControl>() {
+      @Override
+      public BucketAccessControl apply(Acl acl) {
         return acl.toBucketPb();
       }
-    })));
+    }));
     bucket.setDefaultObjectAcl(
-        newArrayList(Iterables.transform(defaultAcl, new Function<Acl, ObjectAccessControl>() {
-          @Override public ObjectAccessControl apply(Acl acl) {
+        Lists.transform(defaultAcl, new Function<Acl, ObjectAccessControl>() {
+          @Override
+          public ObjectAccessControl apply(Acl acl) {
             return acl.toObjectPb();
           }
-        })));
+        }));
+    bucket.setOwner(new Bucket.Owner().setEntity(owner.toPb()));
+    bucket.setSelfLink(selfLink);
+    bucket.setVersioning(new Versioning().setEnabled(versioningEnabled));
+    Bucket.Website website = new Bucket.Website();
+    website.setMainPageSuffix(indexPage);
+    website.setNotFoundPage(notFoundPage);
+    bucket.setWebsite(website);
+    Bucket.Lifecycle lifecycle = new Bucket.Lifecycle();
+    lifecycle.setRule(Lists.transform(deleteRules, new Function<DeleteRule, Rule>() {
+      @Override public Rule apply(DeleteRule deleteRule) {
+        return deleteRule.toPb();
+      }
+    }));
     return bucket;
   }
 }
