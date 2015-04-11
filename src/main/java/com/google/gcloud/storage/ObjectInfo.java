@@ -34,13 +34,14 @@ public class ObjectInfo implements Serializable {
   private static final long serialVersionUID = 2228487739943277159L;
 
   private final String bucket;
+  private final String id;
   private final String name;
-  private final String contentType;
+  private final String selfLink;
   private final String cacheControl;
   private final ImmutableList<Acl> acl;
-  private final String owner;
+  private final Acl.Entity owner;
   private final long size;
-  private final String contentEncoding;
+  private final String etag;
   private final String md5;
   private final String crc32c;
   private final String mediaLink;
@@ -49,17 +50,28 @@ public class ObjectInfo implements Serializable {
   private final long metageneration;
   private final long deleteTime;
   private final long updateTime;
+  private final String contentType;
+  private final String contentEncoding;
+  private final String contentDisposition;
+  private final String contentLanguage;
+  private final int componentCount;
 
   public static final class Builder {
 
     private String bucket;
+    private String id;
     private String name;
     private String contentType;
+    private String contentEncoding;
+    private String contentDisposition;
+    private  String contentLanguage;
+    private int componentCount;
     private String cacheControl;
     private ImmutableList<Acl> acl;
-    private String owner;
+    private Acl.Entity owner;
     private long size;
-    private String contentEncoding;
+    private String etag;
+    private String selfLink;
     private String md5;
     private String crc32c;
     private String mediaLink;
@@ -77,6 +89,11 @@ public class ObjectInfo implements Serializable {
       return this;
     }
 
+    Builder id(String id) {
+      this.id = id;
+      return this;
+    }
+
     public Builder name(String name) {
       this.name = name;
       return this;
@@ -84,6 +101,26 @@ public class ObjectInfo implements Serializable {
 
     public Builder contentType(String contentType) {
       this.contentType = contentType;
+      return this;
+    }
+
+    Builder contentDisposition(String contentDisposition) {
+      this.contentDisposition = contentDisposition;
+      return this;
+    }
+
+    Builder contentLanguage(String contentLanguage) {
+      this.contentLanguage = contentLanguage;
+      return this;
+    }
+
+    public Builder contentEncoding(String contentEncoding) {
+      this.contentEncoding = contentEncoding;
+      return this;
+    }
+
+    Builder componentCount(int componentCount) {
+      this.componentCount = componentCount;
       return this;
     }
 
@@ -97,7 +134,7 @@ public class ObjectInfo implements Serializable {
       return this;
     }
 
-    public Builder owner(String owner) {
+    public Builder owner(Acl.Entity owner) {
       this.owner = owner;
       return this;
     }
@@ -107,8 +144,13 @@ public class ObjectInfo implements Serializable {
       return this;
     }
 
-    public Builder contentEncoding(String contentEncoding) {
-      this.contentEncoding = contentEncoding;
+    Builder etag(String etag) {
+      this.etag = etag;
+      return this;
+    }
+
+    Builder selfLink(String selfLink) {
+      this.selfLink = selfLink;
       return this;
     }
 
@@ -159,13 +201,19 @@ public class ObjectInfo implements Serializable {
 
   private ObjectInfo(Builder builder) {
     bucket = builder.bucket;
+    id = builder.id;
     name = builder.name;
-    contentType = builder.contentType;
     cacheControl = builder.cacheControl;
+    contentEncoding = builder.contentEncoding;
+    contentType = builder.contentType;
+    contentDisposition = builder.contentDisposition;
+    contentLanguage = builder.contentLanguage;
+    componentCount = builder.componentCount;
     acl = builder.acl;
     owner = builder.owner;
     size = builder.size;
-    contentEncoding = builder.contentEncoding;
+    etag = builder.etag;
+    selfLink = builder.selfLink;
     md5 = builder.md5;
     crc32c = builder.crc32c;
     mediaLink = builder.mediaLink;
@@ -180,12 +228,12 @@ public class ObjectInfo implements Serializable {
     return bucket;
   }
 
-  public String name() {
-    return name;
+  public String id() {
+    return id;
   }
 
-  public String contentType() {
-    return contentType;
+  public String name() {
+    return name;
   }
 
   public String cacheControl() {
@@ -196,7 +244,7 @@ public class ObjectInfo implements Serializable {
     return acl;
   }
 
-  public String owner() {
+  public Acl.Entity owner() {
     return owner;
   }
 
@@ -204,8 +252,32 @@ public class ObjectInfo implements Serializable {
     return size;
   }
 
+  public String contentType() {
+    return contentType;
+  }
+
   public String contentEncoding() {
     return contentEncoding;
+  }
+
+  public String contentDisposition() {
+    return contentDisposition;
+  }
+
+  public String contentLanguage() {
+    return contentEncoding;
+  }
+
+  public int componentCount() {
+    return componentCount;
+  }
+
+  public String etag() {
+    return etag;
+  }
+
+  public String selfLink() {
+    return selfLink;
   }
 
   public String md5() {
@@ -257,8 +329,13 @@ public class ObjectInfo implements Serializable {
         .name(name)
         .owner(owner)
         .updateTime(updateTime)
-        .size(size);
-
+        .size(size)
+        .contentDisposition(contentDisposition)
+        .componentCount(componentCount)
+        .contentLanguage(contentLanguage)
+        .etag(etag)
+        .id(id)
+        .selfLink(selfLink);
   }
 
   public static Builder builder() {
@@ -286,16 +363,15 @@ public class ObjectInfo implements Serializable {
     storageObject.setMetadata(metadata);
     storageObject.setMetageneration(metageneration);
     storageObject.setName(name);
-    storageObject.setOwner(owner);
+    storageObject.setOwner(new StorageObject.Owner().setEntity(owner.toPb()));
     storageObject.setUpdated(new DateTime(updateTime));
     storageObject.setSize(BigInteger.valueOf(size));
-    storageObject.setContentDisposition();
-    storageObject.setComponentCount();
-    storageObject.setContentLanguage();
-    storageObject.setEtag();
-    storageObject.setId();
-    storageObject.setSelfLink();
-    storageObject.setStorageClass();
+    storageObject.setContentDisposition(contentDisposition);
+    storageObject.setComponentCount(componentCount);
+    storageObject.setContentLanguage(contentLanguage);
+    storageObject.setEtag(etag);
+    storageObject.setId(id);
+    storageObject.setSelfLink(selfLink);
     return storageObject;
   }
 
@@ -319,16 +395,15 @@ public class ObjectInfo implements Serializable {
         .metadata(storageObject.getMetadata())
         .metageneration(storageObject.getMetageneration())
         .name(storageObject.getName())
-        .owner(storageObject.getName())
+        .owner(Acl.Entity.fromPb(storageObject.getOwner().getEntity()))
         .updateTime(storageObject.getUpdated().getValue())
         .size(storageObject.getSize().longValue())
+        .contentDisposition(storageObject.getContentDisposition())
+        .componentCount(storageObject.getComponentCount())
+        .contentLanguage(storageObject.getContentLanguage())
+        .etag(storageObject.getEtag())
+        .id(storageObject.getId())
+        .selfLink(storageObject.getSelfLink())
         .build();
-    storageObject.setContentDisposition();
-    storageObject.setComponentCount();
-    storageObject.setContentLanguage();
-    storageObject.setEtag();
-    storageObject.setId();
-    storageObject.setSelfLink();
-    storageObject.setStorageClass();
   }
 }
