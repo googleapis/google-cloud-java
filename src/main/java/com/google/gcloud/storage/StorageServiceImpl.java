@@ -16,10 +16,13 @@
 
 package com.google.gcloud.storage;
 
+import com.google.common.collect.Iterators;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.Iterator;
 
 final class StorageServiceImpl extends BaseService<StorageServiceOptions> implements StorageService {
 
@@ -32,61 +35,132 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
 
   @Override
-  public Bucket get(String bucket) {
+  public Bucket create(Bucket bucket) {
     try {
-      return Bucket.fromPb(storageRpc.get(bucket));
+      return Bucket.fromPb(storageRpc.create(bucket.toPb()));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
   }
 
   @Override
-  public Blob get(String bucket, String object) {
+  public Blob create(Blob blob, ByteBuffer content) {
     try {
-      return Blob.fromPb(storageRpc.get(bucket, object));
+      return Blob.fromPb(storageRpc.create(blob.toPb(), content));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
   }
 
   @Override
-  public Iterable<Blob> list(ListOptions settings) {
-    return null;
+  public Bucket get(Bucket bucket) {
+    try {
+      return Bucket.fromPb(storageRpc.get(bucket.toPb()));
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
+  }
+
+  @Override
+  public Blob get(Blob blob) {
+    try {
+      return Blob.fromPb(storageRpc.get(blob.toPb()));
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
+  }
+
+  @Override
+  public Iterator<Bucket> list() {
+    try {
+      return Iterators.transform(storageRpc.list(), Bucket.FROM_PB_FUNCTION);
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
+  }
+
+  @Override
+  public Iterator<Blob> list(Bucket bucket, ListOptions settings) {
+    try {
+      String delimiter = settings.recursive() ? options().pathDelimiter() : null;
+      return Iterators.transform(
+          storageRpc.list(bucket.name(), settings.prefix(), delimiter, settings.cursor(),
+              settings.includeOlderVersions(), settings.maxResults()),
+          Blob.FROM_PB_FUNCTION);
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
   }
 
   @Override
   public Bucket update(Bucket bucket) {
-    return null;
+    try {
+      return Bucket.fromPb(storageRpc.patch(bucket.toPb()));
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
   }
 
   @Override
   public Blob update(Blob blob) {
-    return null;
+    try {
+      return Blob.fromPb(storageRpc.patch(blob.toPb()));
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
   }
 
   @Override
-  public void delete(String bucket, String object) {
-
+  public void delete(Bucket bucket) {
+    try {
+      storageRpc.delete(bucket.toPb());
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
   }
 
   @Override
-  public Blob compose(String bucket, Iterable<String> sourceObjects, String destObject) {
-    return null;
+  public void delete(Blob blob) {
+    try {
+      storageRpc.delete(blob.toPb());
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
   }
 
   @Override
-  public Blob copy(String fromBucket, String fromObject, String destBucket,
-      String destObject) {
-    return null;
+  public Blob compose(Bucket bucket, Iterable<String> src, Blob dest) {
+    try {
+      return Blob.fromPb(storageRpc.compose(bucket.name(), src, dest.toPb()));
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
   }
 
   @Override
-  public ObjectReadChannel newReader(String bucket, String ObjectName) {
-    return null;
+  public Blob copy(Blob src, Blob dest) {
+    try {
+      return Blob.fromPb(storageRpc.copy(src.toPb(), dest.toPb()));
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
   }
 
   @Override
-  public ObjectWriteChannel newWriter(Blob blob) {
-    return null;
+  public BlobReadChannel readFrom(Blob blob) {
+    try {
+      return storageRpc.reader(blob.toPb());
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
+  }
+
+  @Override
+  public ObjectWriteChannel writeTo(Blob blob) {
+    try {
+      return storageRpc.writer(blob.toPb());
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
   }
 }

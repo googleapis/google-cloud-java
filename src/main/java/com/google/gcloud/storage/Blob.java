@@ -16,6 +16,8 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
@@ -33,6 +35,19 @@ import java.util.Map;
 public class Blob implements Serializable {
 
   private static final long serialVersionUID = 2228487739943277159L;
+
+  static final Function<StorageObject, Blob> FROM_PB_FUNCTION =
+      new Function<StorageObject, Blob>() {
+        @Override public Blob apply(StorageObject pb) {
+          return Blob.fromPb(pb);
+        }
+      };
+
+  static final Function<Blob, StorageObject> TO_PB_FUNCTION = new Function<Blob, StorageObject>() {
+        @Override public StorageObject apply(Blob blob) {
+          return blob.toPb();
+        }
+      };
 
   private final String bucket;
   private final String id;
@@ -86,7 +101,7 @@ public class Blob implements Serializable {
     }
 
     public Builder bucket(String bucket) {
-      this.bucket = bucket;
+      this.bucket = checkNotNull(bucket);
       return this;
     }
 
@@ -96,7 +111,7 @@ public class Blob implements Serializable {
     }
 
     public Builder name(String name) {
-      this.name = name;
+      this.name = checkNotNull(name);
       return this;
     }
 
@@ -201,9 +216,9 @@ public class Blob implements Serializable {
   }
 
   private Blob(Builder builder) {
-    bucket = builder.bucket;
+    bucket = checkNotNull(builder.bucket);
+    name = checkNotNull(builder.name);
     id = builder.id;
-    name = builder.name;
     cacheControl = builder.cacheControl;
     contentEncoding = builder.contentEncoding;
     contentType = builder.contentType;
@@ -314,33 +329,37 @@ public class Blob implements Serializable {
   }
 
   public Builder toBuilder() {
-    return builder()
-        .acl(acl)
+    return new Builder()
         .bucket(bucket)
+        .name(name)
+        .id(id)
+        .generation(generation)
         .cacheControl(cacheControl)
         .contentEncoding(contentEncoding)
-        .crc32c(crc32c)
         .contentType(contentType)
-        .deleteTime(deleteTime)
-        .generation(generation)
+        .contentDisposition(contentDisposition)
+        .contentLanguage(contentLanguage)
+        .componentCount(componentCount)
+        .crc32c(crc32c)
         .md5(md5)
+        .deleteTime(deleteTime)
+        .updateTime(updateTime)
         .mediaLink(mediaLink)
         .metadata(metadata)
         .metageneration(metageneration)
-        .name(name)
+        .acl(acl)
         .owner(owner)
-        .updateTime(updateTime)
         .size(size)
-        .contentDisposition(contentDisposition)
-        .componentCount(componentCount)
-        .contentLanguage(contentLanguage)
         .etag(etag)
-        .id(id)
         .selfLink(selfLink);
   }
 
-  public static Builder builder() {
-    return new Builder();
+  public static Builder builder(Bucket bucket, String name) {
+    return builder(bucket.name(), name);
+  }
+
+  public static Builder builder(String bucket, String name) {
+    return new Builder().bucket(bucket).name(name);
   }
 
   StorageObject toPb() {
@@ -376,7 +395,7 @@ public class Blob implements Serializable {
   }
 
   static Blob fromPb(StorageObject storageObject) {
-    return builder()
+    return new Builder()
         .acl(Lists.transform(storageObject.getAcl(),
             new Function<ObjectAccessControl, Acl>() {
               @Override public Acl apply(ObjectAccessControl objectAccessControl) {
