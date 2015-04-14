@@ -58,6 +58,20 @@ public final class Bucket implements Serializable {
   private final StorageClass storageClass;
 
 
+  static final Function<com.google.api.services.storage.model.Bucket, Bucket> FROM_PB_FUNCTION =
+      new Function<com.google.api.services.storage.model.Bucket, Bucket>() {
+        @Override public Bucket apply(com.google.api.services.storage.model.Bucket pb) {
+          return Bucket.fromPb(pb);
+        }
+      };
+
+  static final Function<Bucket, com.google.api.services.storage.model.Bucket> TO_PB_FUNCTION =
+      new Function<Bucket, com.google.api.services.storage.model.Bucket>() {
+        @Override public com.google.api.services.storage.model.Bucket apply(Bucket bucket) {
+          return bucket.toPb();
+        }
+      };
+
   public static abstract class DeleteRule implements Serializable {
 
     private static final long serialVersionUID = 3137971668395933033L;
@@ -87,7 +101,7 @@ public final class Bucket implements Serializable {
 
     abstract void populateCondition(Rule.Condition condition);
 
-    static DeleteRule fromPb(Rule rule) {
+    private static DeleteRule fromPb(Rule rule) {
       if (rule.getAction() != null && SUPPORTED_ACTION.endsWith(rule.getAction().getType())) {
         Rule.Condition condition = rule.getCondition();
         Integer age = condition.getAge();
@@ -314,8 +328,8 @@ public final class Bucket implements Serializable {
 
   public final static class Builder {
 
-    private final String id;
-    private final String name;
+    private String id;
+    private String name;
     private Acl.Entity owner;
     private String selfLink;
     private boolean versioningEnabled;
@@ -331,9 +345,17 @@ public final class Bucket implements Serializable {
     private Iterable<Acl> acl = ImmutableList.of();
     private Iterable<Acl> defaultAcl = ImmutableList.of();
 
-    Builder(String id, String name) {
+    private Builder() {
+    }
+
+    public Builder name(String name) {
+      this.name = checkNotNull(name);
+      return this;
+    }
+
+    Builder id(String id) {
       this.id = id;
-      this.name = name;
+      return this;
     }
 
     Builder owner(Acl.Entity owner) {
@@ -413,7 +435,7 @@ public final class Bucket implements Serializable {
 
   private Bucket(Builder builder) {
     id = builder.id;
-    name = builder.name;
+    name = checkNotNull(builder.name);
     etag = builder.etag;
     createTime = MoreObjects.firstNonNull(builder.createTime, 0L);
     metageneration = MoreObjects.firstNonNull(builder.metageneration, 0L);
@@ -495,7 +517,9 @@ public final class Bucket implements Serializable {
   }
 
   public Builder toBuilder() {
-    return new Builder(id, name)
+    return new Builder()
+        .name(name)
+        .id(id)
         .createTime(createTime)
         .etag(etag)
         .metageneration(metageneration)
@@ -510,6 +534,10 @@ public final class Bucket implements Serializable {
         .indexPage(indexPage)
         .notFoundPage(notFoundPage)
         .deleteRules(deleteRules);
+  }
+
+  public static Builder builder(String name) {
+    return new Builder().name(name);
   }
 
   com.google.api.services.storage.model.Bucket toPb() {
@@ -530,12 +558,7 @@ public final class Bucket implements Serializable {
     if (storageClass != null) {
       bucketPb.setStorageClass(storageClass.value());
     }
-    bucketPb.setCors(
-        transform(cors, new Function<Cors, com.google.api.services.storage.model.Bucket.Cors>() {
-          @Override public com.google.api.services.storage.model.Bucket.Cors apply(Cors cors) {
-            return cors.toPb();
-          }
-        }));
+    bucketPb.setCors(transform(cors, Cors.TO_PB_FUNCTION));
     bucketPb.setAcl(transform(acl, new Function<Acl, BucketAccessControl>() {
       @Override public BucketAccessControl apply(Acl acl) {
         return acl.toBucketPb();
@@ -564,18 +587,15 @@ public final class Bucket implements Serializable {
   }
 
   static Bucket fromPb(com.google.api.services.storage.model.Bucket bucketPb) {
-    Builder builder = new Builder(bucketPb.getId(), bucketPb.getName())
+    Builder builder = new Builder()
+        .name(bucketPb.getName())
+        .id(bucketPb.getId())
         .createTime(bucketPb.getTimeCreated().getValue())
         .etag(bucketPb.getEtag())
         .metageneration(bucketPb.getMetageneration())
         .location(Location.of(bucketPb.getLocation()))
         .storageClass(StorageClass.of(bucketPb.getStorageClass()))
-        .cors(transform(bucketPb.getCors(),
-            new Function<com.google.api.services.storage.model.Bucket.Cors, Cors>() {
-              @Override public Cors apply(com.google.api.services.storage.model.Bucket.Cors cors) {
-                return Cors.fromPb(cors);
-              }
-            }))
+        .cors(transform(bucketPb.getCors(), Cors.FROM_PB_FUNCTION))
         .acl(transform(bucketPb.getAcl(),
             new Function<BucketAccessControl, Acl>() {
               @Override public Acl apply(BucketAccessControl bucketAccessControl) {
