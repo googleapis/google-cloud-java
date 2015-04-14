@@ -24,22 +24,25 @@ import java.util.Iterator;
 public interface StorageService extends Service<StorageServiceOptions> {
 
   // todo: consider what to do with predefinedAcl
+
   // todo: consider supplying create/update/delete options (varargs) for
   // ifGenerationMatch, ifGenerationNotMatch, ifMetagenerationMatch,
   // ifMetagenerationNotMatch, ifSourceGenerationMatch, ifSourceGenerationNotMatch
   // ifSourceMetagenerationMatch and ifSourceMetagenerationNotMatch
 
+  // todo: provide way for construct signed URLs - https://cloud.google.com/storage/docs/access-control#Signed-URLs
+
   Bucket create(Bucket bucket);
 
   Blob create(Blob blob, ByteBuffer content);
 
-  Bucket get(Bucket bucket);
+  Bucket get(String bucket);
 
-  Blob get(Blob blob);
+  Blob get(String bucket, String blob);
 
   Iterator<Bucket> list();
 
-  Iterator<Blob> list(Bucket bucket, ListOptions settings);
+  Iterator<Blob> list(String bucket, ListOptions settings);
 
   Bucket update(Bucket bucket);
 

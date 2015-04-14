@@ -53,18 +53,18 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Bucket get(Bucket bucket) {
+  public Bucket get(String bucket) {
     try {
-      return Bucket.fromPb(storageRpc.get(bucket.toPb()));
+      return Bucket.fromPb(storageRpc.get(bucket));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
   }
 
   @Override
-  public Blob get(Blob blob) {
+  public Blob get(String bucket, String blob) {
     try {
-      return Blob.fromPb(storageRpc.get(blob.toPb()));
+      return Blob.fromPb(storageRpc.get(bucket, blob));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
@@ -80,11 +80,11 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Iterator<Blob> list(Bucket bucket, ListOptions settings) {
+  public Iterator<Blob> list(String bucket, ListOptions settings) {
     try {
       String delimiter = settings.recursive() ? options().pathDelimiter() : null;
       return Iterators.transform(
-          storageRpc.list(bucket.name(), settings.prefix(), delimiter, settings.cursor(),
+          storageRpc.list(bucket, settings.prefix(), delimiter, settings.cursor(),
               settings.includeOlderVersions(), settings.maxResults()),
           Blob.FROM_PB_FUNCTION);
     } catch (IOException ex) {
