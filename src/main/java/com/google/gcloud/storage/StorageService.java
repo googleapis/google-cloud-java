@@ -18,28 +18,42 @@ package com.google.gcloud.storage;
 
 import com.google.gcloud.Service;
 
+import java.nio.ByteBuffer;
+import java.util.Iterator;
+
 public interface StorageService extends Service<StorageServiceOptions> {
 
-  //todo: implement add/delete bucket
-  //todo: consider what to do with predefinedAcl
+  // todo: consider what to do with predefinedAcl
+  // todo: consider supplying create/update/delete options (varargs) for
+  // ifGenerationMatch, ifGenerationNotMatch, ifMetagenerationMatch,
+  // ifMetagenerationNotMatch, ifSourceGenerationMatch, ifSourceGenerationNotMatch
+  // ifSourceMetagenerationMatch and ifSourceMetagenerationNotMatch
 
-  Bucket get(String bucket);
+  Bucket create(Bucket bucket);
 
-  Blob get(String bucket, String blob);
+  Blob create(Blob blob, ByteBuffer content);
 
-  Iterable<Blob> list(ListOptions settings);
+  Bucket get(Bucket bucket);
+
+  Blob get(Blob blob);
+
+  Iterator<Bucket> list();
+
+  Iterator<Blob> list(Bucket bucket, ListOptions settings);
 
   Bucket update(Bucket bucket);
 
   Blob update(Blob blob);
 
-  void delete(String bucket, String blob);
+  void delete(Bucket bucket);
 
-  Blob compose(String bucket, Iterable<String> srcBlobs, String destBlob);
+  void delete(Blob blob);
 
-  Blob copy(String srcBucket, String srcBlob, String destBucket, String destBlob);
+  Blob compose(Bucket bucket, Iterable<String> src, Blob dest);
 
-  ObjectReadChannel newReader(String bucket, String blob);
+  Blob copy(Blob src, Blob dest);
 
-  ObjectWriteChannel newWriter(Blob blob);
+  BlobReadChannel readFrom(Blob blob); // todo: consider returning Blob
+
+  ObjectWriteChannel writeTo(Blob blob); // todo: consider returning Blob
 }

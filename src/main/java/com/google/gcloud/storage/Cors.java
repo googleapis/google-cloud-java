@@ -34,6 +34,18 @@ public final class Cors implements Serializable {
 
   private static final long serialVersionUID = -8637770919343335655L;
 
+  static final Function<Bucket.Cors, Cors> FROM_PB_FUNCTION = new Function<Bucket.Cors, Cors>() {
+    @Override public Cors apply(Bucket.Cors pb) {
+      return Cors.fromPb(pb);
+    }
+  };
+
+  static final Function<Cors, Bucket.Cors> TO_PB_FUNCTION = new Function<Cors, Bucket.Cors>() {
+    @Override public Bucket.Cors apply(Cors cors) {
+      return cors.toPb();
+    }
+  };
+
   private final Integer maxAgeSeconds;
   private final ImmutableList<Method> methods;
   private final ImmutableList<Origin> origins;

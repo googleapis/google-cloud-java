@@ -29,9 +29,4 @@ import java.nio.channels.WritableByteChannel;
  */
 public interface ObjectWriteChannel extends WritableByteChannel, Serializable, Closeable {
 
-  String bucket();
-
-  String object();
-
-  // todo: return ObjectInfo? upon close?
 }

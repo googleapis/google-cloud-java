@@ -27,13 +27,15 @@ import java.nio.channels.ReadableByteChannel;
  *
  *  This class is @{link Serializable}, which allows incremental reads.
  */
-public interface ObjectReadChannel extends ReadableByteChannel, Serializable, Closeable {
+public interface BlobReadChannel extends ReadableByteChannel, Serializable, Closeable {
 
-  String bucket();
-
-  String object();
-
-  int size();
+  /**
+   * Overridden to remove IOException.
+   *
+   * @see java.nio.channels.Channel#close()
+   */
+  @Override
+  void close();
 
   void seek(int position);
 }
