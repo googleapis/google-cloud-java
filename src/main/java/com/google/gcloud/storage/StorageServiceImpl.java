@@ -16,9 +16,6 @@
 
 package com.google.gcloud.storage;
 
-import com.google.api.services.storage.model.Bucket;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.spi.StorageRpc;
 
@@ -33,26 +30,63 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     storageRpc = options.storageRpc();
   }
 
+
   @Override
-  public Iterable<BucketInfo> listBuckets() {
+  public Bucket get(String bucket) {
     try {
-      return Iterables.transform(storageRpc.buckets(),
-          new Function<com.google.api.services.storage.model.Bucket, Bucket>() {
-            @Override public Bucket apply(com.google.api.services.storage.model.Bucket model) {
-              return new BucketImpl(StorageServiceImpl.this, model);
-            }
-          });
+      return Bucket.fromPb(storageRpc.get(bucket));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
   }
 
   @Override
-  public BucketInfo getBucket(String bucket) {
+  public Blob get(String bucket, String object) {
     try {
-      return new BucketImpl(this, storageRpc.bucket(bucket));
+      return Blob.fromPb(storageRpc.get(bucket, object));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
+  }
+
+  @Override
+  public Iterable<Blob> list(ListOptions settings) {
+    return null;
+  }
+
+  @Override
+  public Bucket update(Bucket bucket) {
+    return null;
+  }
+
+  @Override
+  public Blob update(Blob blob) {
+    return null;
+  }
+
+  @Override
+  public void delete(String bucket, String object) {
+
+  }
+
+  @Override
+  public Blob compose(String bucket, Iterable<String> sourceObjects, String destObject) {
+    return null;
+  }
+
+  @Override
+  public Blob copy(String fromBucket, String fromObject, String destBucket,
+      String destObject) {
+    return null;
+  }
+
+  @Override
+  public ObjectReadChannel newReader(String bucket, String ObjectName) {
+    return null;
+  }
+
+  @Override
+  public ObjectWriteChannel newWriter(Blob blob) {
+    return null;
   }
 }

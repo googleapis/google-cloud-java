@@ -19,6 +19,7 @@ package com.google.gcloud.storage;
 import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.api.services.storage.model.StorageObject.Owner;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -29,7 +30,7 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
-public class ObjectInfo implements Serializable {
+public class Blob implements Serializable {
 
   private static final long serialVersionUID = 2228487739943277159L;
 
@@ -194,12 +195,12 @@ public class ObjectInfo implements Serializable {
       return this;
     }
 
-    public ObjectInfo build() {
-      return new ObjectInfo(this);
+    public Blob build() {
+      return new Blob(this);
     }
   }
 
-  private ObjectInfo(Builder builder) {
+  private Blob(Builder builder) {
     bucket = builder.bucket;
     id = builder.id;
     name = builder.name;
@@ -346,8 +347,7 @@ public class ObjectInfo implements Serializable {
     StorageObject storageObject = new StorageObject();
     storageObject.setAcl(Lists.transform(acl,
         new Function<Acl, ObjectAccessControl>() {
-          @Override
-          public ObjectAccessControl apply(Acl acl) {
+          @Override public ObjectAccessControl apply(Acl acl) {
             return acl.toObjectPb();
           }
         }));
@@ -363,7 +363,7 @@ public class ObjectInfo implements Serializable {
     storageObject.setMetadata(metadata);
     storageObject.setMetageneration(metageneration);
     storageObject.setName(name);
-    storageObject.setOwner(new StorageObject.Owner().setEntity(owner.toPb()));
+    storageObject.setOwner(new Owner().setEntity(owner.toPb()));
     storageObject.setUpdated(new DateTime(updateTime));
     storageObject.setSize(BigInteger.valueOf(size));
     storageObject.setContentDisposition(contentDisposition);
@@ -375,7 +375,7 @@ public class ObjectInfo implements Serializable {
     return storageObject;
   }
 
-  static ObjectInfo fromPb(StorageObject storageObject) {
+  static Blob fromPb(StorageObject storageObject) {
     return builder()
         .acl(Lists.transform(storageObject.getAcl(),
             new Function<ObjectAccessControl, Acl>() {
