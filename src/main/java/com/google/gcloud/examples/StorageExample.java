@@ -16,8 +16,7 @@
 
 package com.google.gcloud.examples;
 
-import com.google.api.services.storage.Storage;
-import com.google.gcloud.storage.BucketInfo;
+import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.StorageService;
 import com.google.gcloud.storage.StorageServiceFactory;
 import com.google.gcloud.storage.StorageServiceOptions;
@@ -47,7 +46,7 @@ public class StorageExample {
 
   private static abstract class StorageAction {
 
-    abstract void run(StorageService storage, BucketInfo bucket, String folder, String... args);
+    abstract void run(StorageService storage, Bucket bucket, String folder, String... args);
 
     protected String getRequiredParams() {
       return "";
@@ -65,7 +64,7 @@ public class StorageExample {
 
   private static class DeleteAction extends StorageAction {
     @Override
-    public void run(StorageService storage, BucketInfo bucket, String folder, String... args) {
+    public void run(StorageService storage, Bucket bucket, String folder, String... args) {
       for (String file : args) {
         storage.delete(bucket.name(), fullPath(folder, file));
       }
@@ -84,10 +83,10 @@ public class StorageExample {
   public static void main(String... args) {
     StorageAction action = null;
     StorageService storage = null;
-    BucketInfo bucketInfo = null;
+    Bucket bucket = null;
     String folder = DEFAULT_FOLDER;
     if (args.length > 0) {
-      String bucket = args[0];
+      String bucketName = args[0];
       String actionName = DEFAULT_ACTION;
       if (args.length > 1) {
         folder = args[1];
@@ -95,7 +94,7 @@ public class StorageExample {
           actionName = args[2].toLowerCase();
         }
         storage = StorageServiceFactory.getDefault(StorageServiceOptions.builder().build());
-        bucketInfo = storage.get(bucket);
+        bucket = storage.get(bucketName);
       }
       action = ACTIONS.get(actionName);
     }
@@ -117,7 +116,6 @@ public class StorageExample {
     }
 
     args = args.length > 2 ? Arrays.copyOfRange(args, 2, args.length): new String []{};
-    action.run(bucketInfo, folder, args);
-    }
+    action.run(storage, bucket, folder, args);
   }
 }

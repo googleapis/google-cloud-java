@@ -20,23 +20,26 @@ import com.google.gcloud.Service;
 
 public interface StorageService extends Service<StorageServiceOptions> {
 
-  BucketInfo get(String bucket);
+  //todo: implement add/delete bucket
+  //todo: consider what to do with predefinedAcl
 
-  ObjectInfo get(String bucket, String object);
+  Bucket get(String bucket);
 
-  Iterable<ObjectInfo> list(ListOptions settings);
+  Blob get(String bucket, String blob);
 
-  void update(BucketInfo bucketInfo);
+  Iterable<Blob> list(ListOptions settings);
 
-  void update(ObjectInfo objectInfo);
+  Bucket update(Bucket bucket);
 
-  void delete(String bucket, String object);
+  Blob update(Blob blob);
 
-  void compose(String bucket, Iterable<String> sourceObjects, String destObject);
+  void delete(String bucket, String blob);
 
-  void copy(String fromBucket, String fromObject, String destBucket, String destObject);
+  Blob compose(String bucket, Iterable<String> srcBlobs, String destBlob);
 
-  ObjectReadChannel newReader(String bucket, String ObjectName);
+  Blob copy(String srcBucket, String srcBlob, String destBucket, String destBlob);
 
-  ObjectWriteChannel newWriter(String ObjectName);
+  ObjectReadChannel newReader(String bucket, String blob);
+
+  ObjectWriteChannel newWriter(Blob blob);
 }

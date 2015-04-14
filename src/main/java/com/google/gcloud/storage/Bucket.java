@@ -17,25 +17,26 @@
 package com.google.gcloud.storage;
 
 import static com.google.api.client.repackaged.com.google.common.base.Preconditions.checkNotNull;
-import static com.google.common.collect.Iterables.transform;
+import static com.google.common.collect.Lists.transform;
 
 import com.google.api.client.util.DateTime;
-import com.google.api.services.storage.model.Bucket;
+import com.google.api.services.storage.model.Bucket.Lifecycle;
 import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
+import com.google.api.services.storage.model.Bucket.Owner;
 import com.google.api.services.storage.model.Bucket.Versioning;
+import com.google.api.services.storage.model.Bucket.Website;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Lists;
 import com.google.gcloud.storage.Acl.Entity;
 
 import java.io.Serializable;
 import java.util.List;
 
-public final class BucketInfo implements Serializable {
+public final class Bucket implements Serializable {
 
   private static final long serialVersionUID = -3946094202176916586L;
 
@@ -390,7 +391,7 @@ public final class BucketInfo implements Serializable {
       return this;
     }
 
-    Builder cors(Iterable<Cors> cors) {
+    public Builder cors(Iterable<Cors> cors) {
       this.cors = cors;
       return this;
     }
@@ -405,12 +406,12 @@ public final class BucketInfo implements Serializable {
       return this;
     }
 
-    public BucketInfo build() {
-      return new BucketInfo(this);
+    public Bucket build() {
+      return new Bucket(this);
     }
   }
 
-  private BucketInfo(Builder builder) {
+  private Bucket(Builder builder) {
     id = builder.id;
     name = builder.name;
     etag = builder.etag;
@@ -511,40 +512,94 @@ public final class BucketInfo implements Serializable {
         .deleteRules(deleteRules);
   }
 
-  BucketInfo fromPb(Bucket bucket) {
-    Builder builder = new Builder(bucket.getId(), bucket.getName())
-        .createTime(bucket.getTimeCreated().getValue())
-        .etag(bucket.getEtag())
-        .metageneration(bucket.getMetageneration())
-        .location(Location.of(bucket.getLocation()))
-        .storageClass(StorageClass.of(bucket.getStorageClass()))
-        .cors(transform(bucket.getCors(), new Function<Bucket.Cors, Cors>() {
-          @Override public Cors apply(Bucket.Cors cors) {
-            return Cors.fromPb(cors);
+  com.google.api.services.storage.model.Bucket toPb() {
+    com.google.api.services.storage.model.Bucket bucketPb =
+        new com.google.api.services.storage.model.Bucket();
+    bucketPb.setId(id);
+    bucketPb.setName(name);
+    bucketPb.setEtag(etag);
+    if (createTime > 0) {
+      bucketPb.setTimeCreated(new DateTime(createTime));
+    }
+    if (metageneration > 0) {
+      bucketPb.setMetageneration(metageneration);
+    }
+    if (location != null) {
+      bucketPb.setLocation(location.value());
+    }
+    if (storageClass != null) {
+      bucketPb.setStorageClass(storageClass.value());
+    }
+    bucketPb.setCors(
+        transform(cors, new Function<Cors, com.google.api.services.storage.model.Bucket.Cors>() {
+          @Override public com.google.api.services.storage.model.Bucket.Cors apply(Cors cors) {
+            return cors.toPb();
           }
-        }))
-        .acl(transform(bucket.getAcl(), new Function<BucketAccessControl, Acl>() {
-          @Override public Acl apply(BucketAccessControl bucketAccessControl) {
-            return Acl.fromPb(bucketAccessControl);
+        }));
+    bucketPb.setAcl(transform(acl, new Function<Acl, BucketAccessControl>() {
+      @Override public BucketAccessControl apply(Acl acl) {
+        return acl.toBucketPb();
+      }
+    }));
+    bucketPb.setDefaultObjectAcl(transform(defaultAcl,
+        new Function<Acl, ObjectAccessControl>() {
+          @Override public ObjectAccessControl apply(Acl acl) {
+            return acl.toObjectPb();
           }
-        }))
-        .defaultAcl(transform(bucket.getDefaultObjectAcl(), new Function<ObjectAccessControl, Acl>() {
-          @Override public Acl apply(ObjectAccessControl objectAccessControl) {
-            return Acl.fromPb(objectAccessControl);
-          }
-        }))
-        .owner(Entity.fromPb(bucket.getOwner().getEntity()))
-        .selfLink(bucket.getSelfLink());
-    Bucket.Versioning versioning = bucket.getVersioning();
+        }));
+    bucketPb.setOwner(new Owner().setEntity(owner.toPb()));
+    bucketPb.setSelfLink(selfLink);
+    bucketPb.setVersioning(new Versioning().setEnabled(versioningEnabled));
+    Website website = new Website();
+    website.setMainPageSuffix(indexPage);
+    website.setNotFoundPage(notFoundPage);
+    bucketPb.setWebsite(website);
+    Lifecycle lifecycle = new Lifecycle();
+    lifecycle.setRule(transform(deleteRules, new Function<DeleteRule, Rule>() {
+      @Override public Rule apply(DeleteRule deleteRule) {
+        return deleteRule.toPb();
+      }
+    }));
+    return bucketPb;
+  }
+
+  static Bucket fromPb(com.google.api.services.storage.model.Bucket bucketPb) {
+    Builder builder = new Builder(bucketPb.getId(), bucketPb.getName())
+        .createTime(bucketPb.getTimeCreated().getValue())
+        .etag(bucketPb.getEtag())
+        .metageneration(bucketPb.getMetageneration())
+        .location(Location.of(bucketPb.getLocation()))
+        .storageClass(StorageClass.of(bucketPb.getStorageClass()))
+        .cors(transform(bucketPb.getCors(),
+            new Function<com.google.api.services.storage.model.Bucket.Cors, Cors>() {
+              @Override public Cors apply(com.google.api.services.storage.model.Bucket.Cors cors) {
+                return Cors.fromPb(cors);
+              }
+            }))
+        .acl(transform(bucketPb.getAcl(),
+            new Function<BucketAccessControl, Acl>() {
+              @Override public Acl apply(BucketAccessControl bucketAccessControl) {
+                return Acl.fromPb(bucketAccessControl);
+              }
+            }))
+        .defaultAcl(transform(bucketPb.getDefaultObjectAcl(),
+            new Function<ObjectAccessControl, Acl>() {
+              @Override public Acl apply(ObjectAccessControl objectAccessControl) {
+                return Acl.fromPb(objectAccessControl);
+              }
+            }))
+        .owner(Entity.fromPb(bucketPb.getOwner().getEntity()))
+        .selfLink(bucketPb.getSelfLink());
+    Versioning versioning = bucketPb.getVersioning();
     if (versioning != null) {
       builder.versioningEnabled(MoreObjects.firstNonNull(versioning.getEnabled(), Boolean.FALSE));
     }
-    Bucket.Website website = bucket.getWebsite();
+    Website website = bucketPb.getWebsite();
     if (website != null) {
       builder.indexPage(website.getMainPageSuffix());
       builder.notFoundPage(website.getNotFoundPage());
     }
-    Bucket.Lifecycle lifecycle = bucket.getLifecycle();
+    Lifecycle lifecycle = bucketPb.getLifecycle();
     if (lifecycle != null) {
       builder.deleteRules(transform(lifecycle.getRule(),
           new Function<Rule, DeleteRule>() {
@@ -554,57 +609,5 @@ public final class BucketInfo implements Serializable {
           }));
     }
     return builder.build();
-  }
-
-  Bucket toPb() {
-    Bucket bucket = new Bucket();
-    bucket.setId(id);
-    bucket.setName(name);
-    bucket.setEtag(etag);
-    if (createTime > 0) {
-      bucket.setTimeCreated(new DateTime(createTime));
-    }
-    if (metageneration > 0) {
-      bucket.setMetageneration(metageneration);
-    }
-    if (location != null) {
-      bucket.setLocation(location.value());
-    }
-    if (storageClass != null) {
-      bucket.setStorageClass(storageClass.value());
-    }
-    bucket.setCors(Lists.transform(cors, new Function<Cors, Bucket.Cors>() {
-      @Override
-      public Bucket.Cors apply(Cors cors) {
-        return cors.toPb();
-      }
-    }));
-    bucket.setAcl(Lists.transform(acl, new Function<Acl, BucketAccessControl>() {
-      @Override
-      public BucketAccessControl apply(Acl acl) {
-        return acl.toBucketPb();
-      }
-    }));
-    bucket.setDefaultObjectAcl(
-        Lists.transform(defaultAcl, new Function<Acl, ObjectAccessControl>() {
-          @Override
-          public ObjectAccessControl apply(Acl acl) {
-            return acl.toObjectPb();
-          }
-        }));
-    bucket.setOwner(new Bucket.Owner().setEntity(owner.toPb()));
-    bucket.setSelfLink(selfLink);
-    bucket.setVersioning(new Versioning().setEnabled(versioningEnabled));
-    Bucket.Website website = new Bucket.Website();
-    website.setMainPageSuffix(indexPage);
-    website.setNotFoundPage(notFoundPage);
-    bucket.setWebsite(website);
-    Bucket.Lifecycle lifecycle = new Bucket.Lifecycle();
-    lifecycle.setRule(Lists.transform(deleteRules, new Function<DeleteRule, Rule>() {
-      @Override public Rule apply(DeleteRule deleteRule) {
-        return deleteRule.toPb();
-      }
-    }));
-    return bucket;
   }
 }

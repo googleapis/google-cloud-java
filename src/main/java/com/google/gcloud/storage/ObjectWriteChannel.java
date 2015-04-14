@@ -32,4 +32,6 @@ public interface ObjectWriteChannel extends WritableByteChannel, Serializable, C
   String bucket();
 
   String object();
+
+  // todo: return ObjectInfo? upon close?
 }
