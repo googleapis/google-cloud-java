@@ -55,5 +55,5 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
   BlobReadChannel readFrom(Blob blob); // todo: consider returning Blob
 
-  ObjectWriteChannel writeTo(Blob blob); // todo: consider returning Blob
+  BlobWriteChannel writeTo(Blob blob); // todo: consider returning Blob
 }

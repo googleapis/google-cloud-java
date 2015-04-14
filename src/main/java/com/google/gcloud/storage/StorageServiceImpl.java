@@ -156,7 +156,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public ObjectWriteChannel writeTo(Blob blob) {
+  public BlobWriteChannel writeTo(Blob blob) {
     try {
       return storageRpc.writer(blob.toPb());
     } catch (IOException ex) {

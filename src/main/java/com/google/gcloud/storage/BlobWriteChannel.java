@@ -27,6 +27,6 @@ import java.nio.channels.WritableByteChannel;
  * Written data will only be visible after calling {@link #close()}.
  * This class is serializable, to allow incremental writes.
  */
-public interface ObjectWriteChannel extends WritableByteChannel, Serializable, Closeable {
+public interface BlobWriteChannel extends WritableByteChannel, Serializable, Closeable {
 
 }
