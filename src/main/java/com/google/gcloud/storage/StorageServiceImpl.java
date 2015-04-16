@@ -31,11 +31,17 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   StorageServiceImpl(StorageServiceOptions options) {
     super(options);
     storageRpc = options.storageRpc();
+
+    // todo: like Datastore distinct exception to retriable and non-retriable
+    //       https://cloud.google.com/storage/docs/json_api/v1/status-codes
+    // todo: Use retry helper on retriable failures
+
+    // todo: consider options
+    // todo: replace nulls with Value.asNull (per toPb)
   }
 
-
   @Override
-  public Bucket create(Bucket bucket) {
+  public Bucket create(Bucket bucket, BucketTargetOption... options) {
     try {
       return Bucket.fromPb(storageRpc.create(bucket.toPb()));
     } catch (IOException ex) {
@@ -44,7 +50,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Blob create(Blob blob, ByteBuffer content) {
+  public Blob create(Blob blob, ByteBuffer content, BlobTargetOption... options) {
     try {
       return Blob.fromPb(storageRpc.create(blob.toPb(), content));
     } catch (IOException ex) {
@@ -53,7 +59,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Bucket get(String bucket) {
+  public Bucket get(String bucket, BucketSourceOption... options) {
     try {
       return Bucket.fromPb(storageRpc.get(bucket));
     } catch (IOException ex) {
@@ -62,7 +68,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Blob get(String bucket, String blob) {
+  public Blob get(String bucket, String blob, BlobSourceOption... options) {
     try {
       return Blob.fromPb(storageRpc.get(bucket, blob));
     } catch (IOException ex) {
@@ -93,7 +99,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Bucket update(Bucket bucket) {
+  public Bucket update(Bucket bucket, BucketTargetOption... options) {
     try {
       return Bucket.fromPb(storageRpc.patch(bucket.toPb()));
     } catch (IOException ex) {
@@ -102,7 +108,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Blob update(Blob blob) {
+  public Blob update(Blob blob, BlobTargetOption... options) {
     try {
       return Blob.fromPb(storageRpc.patch(blob.toPb()));
     } catch (IOException ex) {
@@ -111,7 +117,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public void delete(Bucket bucket) {
+  public void delete(Bucket bucket, BucketSourceOption... options) {
     try {
       storageRpc.delete(bucket.toPb());
     } catch (IOException ex) {
@@ -120,7 +126,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public void delete(Blob blob) {
+  public void delete(Blob blob, BlobSourceOption... options) {
     try {
       storageRpc.delete(blob.toPb());
     } catch (IOException ex) {
@@ -129,25 +135,30 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Blob compose(Bucket bucket, Iterable<String> src, Blob dest) {
+  public Blob compose(ComposeRequest composeRequest) {
+    // todo: implement (consider having XXXRequest/XXXResponse for all SPI/Rpc requests
+// try {
+
+//
+//      return Blob.fromPb(storageRpc.compose(composeRequest.sourceBucket(),
+//          composeRequest.sourceBlobs(), composeRequest.target()));
+//    } catch (IOException ex) {
+//      throw new StorageServiceException(ex);
+//    }
+    throw new UnsupportedOperationException("bla");
+  }
+
+  @Override
+  public Blob copy(CopyRequest copyRequest) {
     try {
-      return Blob.fromPb(storageRpc.compose(bucket.name(), src, dest.toPb()));
+      return Blob.fromPb(storageRpc.copy(copyRequest.source().toPb(), copyRequest.target().toPb()));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
   }
 
   @Override
-  public Blob copy(Blob src, Blob dest) {
-    try {
-      return Blob.fromPb(storageRpc.copy(src.toPb(), dest.toPb()));
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
-  }
-
-  @Override
-  public BlobReadChannel readFrom(Blob blob) {
+  public BlobReadChannel readFrom(Blob blob, BlobSourceOption... options) {
     try {
       return storageRpc.reader(blob.toPb());
     } catch (IOException ex) {
@@ -156,7 +167,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public BlobWriteChannel writeTo(Blob blob) {
+  public BlobWriteChannel writeTo(Blob blob, BlobTargetOption... options) {
     try {
       return storageRpc.writer(blob.toPb());
     } catch (IOException ex) {
