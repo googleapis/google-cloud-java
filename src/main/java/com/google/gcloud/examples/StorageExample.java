@@ -16,6 +16,7 @@
 
 package com.google.gcloud.examples;
 
+import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.StorageService;
 import com.google.gcloud.storage.StorageServiceFactory;
@@ -61,12 +62,11 @@ public class StorageExample {
     }
   }
 
-
   private static class DeleteAction extends StorageAction {
     @Override
     public void run(StorageService storage, Bucket bucket, String folder, String... args) {
       for (String file : args) {
-        storage.delete(bucket.name(), fullPath(folder, file));
+        storage.delete(Blob.builder(bucket, fullPath(folder, file)).build());
       }
     }
 
@@ -78,6 +78,7 @@ public class StorageExample {
 
   static {
     ACTIONS.put("delete", new DeleteAction());
+    // todo: implement list, get and put
   }
 
   public static void main(String... args) {
