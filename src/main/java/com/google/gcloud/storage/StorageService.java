@@ -17,6 +17,7 @@
 package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.gcloud.storage.Validator.checkBlobOptions;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Service;
@@ -29,7 +30,6 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
 public interface StorageService extends Service<StorageServiceOptions> {
@@ -54,42 +54,6 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     String entry() {
       return entry;
-    }
-  }
-
-  class Option implements Serializable {
-
-    private static final long serialVersionUID = -73199088766477208L;
-
-    private final String name;
-    private final Object value;
-
-    Option(String name, Object value) {
-      this.name = checkNotNull(name);
-      this.value = value;
-    }
-
-    String name() {
-      return name;
-    }
-
-    Object value() {
-      return value;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      if (!(obj instanceof Option)) {
-        return false;
-      }
-      Option other = (Option) obj;
-      return Objects.equals(name, other.name)
-          && Objects.equals(value, other.value);
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(name, value);
     }
   }
 
@@ -140,7 +104,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
     }
 
     public static BlobTargetOption generationMath(boolean match) {
-      return new BlobTargetOption("ifMetagenerationMatch", match);
+      return new BlobTargetOption("ifGenerationMatch", match);
     }
 
     public static BlobTargetOption metagenerationMatch(boolean match) {
@@ -174,18 +138,18 @@ public interface StorageService extends Service<StorageServiceOptions> {
     private final Blob target;
     private final List<BlobTargetOption> targetOptions;
 
-    private static class SourceBlob implements Serializable {
+    static class SourceBlob implements Serializable {
 
       private static final long serialVersionUID = 4094962795951990439L;
 
       final String blob;
-      final String generation;
+      final Long generation;
 
       SourceBlob(String blob) {
         this(blob, null);
       }
 
-      SourceBlob(String blob, String generation) {
+      SourceBlob(String blob, Long generation) {
         this.blob = blob;
         this.generation = generation;
       }
@@ -214,8 +178,8 @@ public interface StorageService extends Service<StorageServiceOptions> {
         return addSource(Arrays.asList(blobs));
       }
 
-      public Builder addSource(String blob, String generation) {
-        sourceBlobs.add(new SourceBlob(blob, generation));
+      public Builder addSource(String blob, long matchGeneration) {
+        sourceBlobs.add(new SourceBlob(blob, matchGeneration));
         return this;
       }
 
@@ -230,14 +194,17 @@ public interface StorageService extends Service<StorageServiceOptions> {
       }
 
       public ComposeRequest build() {
+        checkNotNull(bucket);
+        checkNotNull(target);
+        checkBlobOptions("Target", target, targetOptions);
         return new ComposeRequest(this);
       }
     }
 
     private ComposeRequest(Builder builder) {
-      sourceBucket = checkNotNull(builder.bucket);
+      sourceBucket = builder.bucket;
       sourceBlobs = ImmutableList.copyOf(builder.sourceBlobs);
-      target = checkNotNull(builder.target);
+      target = builder.target;
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
     }
 
@@ -298,6 +265,10 @@ public interface StorageService extends Service<StorageServiceOptions> {
       }
 
       public CopyRequest build() {
+        checkNotNull(source);
+        checkNotNull(target);
+        checkBlobOptions("Source", source, sourceOptions);
+        checkBlobOptions("Target", target, targetOptions);
         return new CopyRequest(this);
       }
     }

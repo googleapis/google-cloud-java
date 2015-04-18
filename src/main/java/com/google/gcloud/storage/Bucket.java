@@ -28,7 +28,6 @@ import com.google.api.services.storage.model.Bucket.Website;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.storage.Acl.Entity;
@@ -44,16 +43,16 @@ public final class Bucket implements Serializable {
   private final String name;
   private final Acl.Entity owner;
   private final String selfLink;
-  private final boolean versioningEnabled;
+  private final Boolean versioningEnabled;
   private final String indexPage;
   private final String notFoundPage;
-  private final ImmutableList<DeleteRule> deleteRules;
+  private final List<DeleteRule> deleteRules;
   private final String etag;
-  private final long createTime;
-  private final long metageneration;
-  private final ImmutableList<Cors> cors;
-  private final ImmutableList<Acl> acl;
-  private final ImmutableList<Acl> defaultAcl;
+  private final Long createTime;
+  private final Long metageneration;
+  private final List<Cors> cors;
+  private final List<Acl> acl;
+  private final List<Acl> defaultAcl;
   private final Location location;
   private final StorageClass storageClass;
 
@@ -332,18 +331,18 @@ public final class Bucket implements Serializable {
     private String name;
     private Acl.Entity owner;
     private String selfLink;
-    private boolean versioningEnabled;
+    private Boolean versioningEnabled;
     private String indexPage;
     private String notFoundPage;
-    private ImmutableList<DeleteRule> deleteRules = ImmutableList.of();
+    private ImmutableList<DeleteRule> deleteRules;
     private StorageClass storageClass;
     private Location location;
     private String etag;
     private Long createTime;
     private Long metageneration;
-    private Iterable<Cors> cors = ImmutableList.of();
-    private Iterable<Acl> acl = ImmutableList.of();
-    private Iterable<Acl> defaultAcl = ImmutableList.of();
+    private ImmutableList<Cors> cors;
+    private ImmutableList<Acl> acl;
+    private ImmutableList<Acl> defaultAcl;
 
     private Builder() {
     }
@@ -368,7 +367,7 @@ public final class Bucket implements Serializable {
       return this;
     }
 
-    public Builder versioningEnabled(boolean enable) {
+    public Builder versioningEnabled(Boolean enable) {
       this.versioningEnabled = enable;
       return this;
     }
@@ -414,7 +413,7 @@ public final class Bucket implements Serializable {
     }
 
     public Builder cors(Iterable<Cors> cors) {
-      this.cors = cors;
+      this.cors = ImmutableList.copyOf(cors);
       return this;
     }
 
@@ -429,27 +428,28 @@ public final class Bucket implements Serializable {
     }
 
     public Bucket build() {
+      checkNotNull(name);
       return new Bucket(this);
     }
   }
 
   private Bucket(Builder builder) {
     id = builder.id;
-    name = checkNotNull(builder.name);
+    name = builder.name;
     etag = builder.etag;
-    createTime = MoreObjects.firstNonNull(builder.createTime, 0L);
-    metageneration = MoreObjects.firstNonNull(builder.metageneration, 0L);
+    createTime = builder.createTime;
+    metageneration = builder.metageneration;
     location = builder.location;
     storageClass = builder.storageClass;
-    cors = ImmutableList.copyOf(builder.cors);
-    acl = ImmutableList.copyOf(builder.acl);
-    defaultAcl = ImmutableList.copyOf(builder.defaultAcl);
+    cors = builder.cors;
+    acl = builder.acl;
+    defaultAcl = builder.defaultAcl;
     owner = builder.owner;
     selfLink = builder.selfLink;
     versioningEnabled = builder.versioningEnabled;
     indexPage = builder.indexPage;
     notFoundPage = builder.notFoundPage;
-    deleteRules = ImmutableList.copyOf(builder.deleteRules);
+    deleteRules = builder.deleteRules;
   }
 
   public String id() {
@@ -468,7 +468,7 @@ public final class Bucket implements Serializable {
     return selfLink;
   }
 
-  public boolean versioningEnabled() {
+  public Boolean versioningEnabled() {
     return versioningEnabled;
   }
 
@@ -480,7 +480,7 @@ public final class Bucket implements Serializable {
     return notFoundPage;
   }
 
-  public ImmutableList<DeleteRule> deleteRules() {
+  public List<DeleteRule> deleteRules() {
     return deleteRules;
   }
 
@@ -488,11 +488,11 @@ public final class Bucket implements Serializable {
     return etag;
   }
 
-  public long createTime() {
+  public Long createTime() {
     return createTime;
   }
 
-  public long metageneration() {
+  public Long metageneration() {
     return metageneration;
   }
 
@@ -546,10 +546,10 @@ public final class Bucket implements Serializable {
     bucketPb.setId(id);
     bucketPb.setName(name);
     bucketPb.setEtag(etag);
-    if (createTime > 0) {
+    if (createTime != null) {
       bucketPb.setTimeCreated(new DateTime(createTime));
     }
-    if (metageneration > 0) {
+    if (metageneration != null) {
       bucketPb.setMetageneration(metageneration);
     }
     if (location != null) {
@@ -558,31 +558,44 @@ public final class Bucket implements Serializable {
     if (storageClass != null) {
       bucketPb.setStorageClass(storageClass.value());
     }
-    bucketPb.setCors(transform(cors, Cors.TO_PB_FUNCTION));
-    bucketPb.setAcl(transform(acl, new Function<Acl, BucketAccessControl>() {
-      @Override public BucketAccessControl apply(Acl acl) {
-        return acl.toBucketPb();
-      }
-    }));
-    bucketPb.setDefaultObjectAcl(transform(defaultAcl,
-        new Function<Acl, ObjectAccessControl>() {
-          @Override public ObjectAccessControl apply(Acl acl) {
-            return acl.toObjectPb();
-          }
-        }));
-    bucketPb.setOwner(new Owner().setEntity(owner.toPb()));
+    if (cors != null) {
+      bucketPb.setCors(transform(cors, Cors.TO_PB_FUNCTION));
+    }
+    if (acl != null) {
+      bucketPb.setAcl(transform(acl, new Function<Acl, BucketAccessControl>() {
+        @Override public BucketAccessControl apply(Acl acl) {
+          return acl.toBucketPb();
+        }
+      }));
+    }
+    if (defaultAcl != null) {
+      bucketPb.setDefaultObjectAcl(transform(defaultAcl, new Function<Acl, ObjectAccessControl>() {
+        @Override public ObjectAccessControl apply(Acl acl) {
+          return acl.toObjectPb();
+        }
+      }));
+    }
+    if (owner != null) {
+      bucketPb.setOwner(new Owner().setEntity(owner.toPb()));
+    }
     bucketPb.setSelfLink(selfLink);
-    bucketPb.setVersioning(new Versioning().setEnabled(versioningEnabled));
-    Website website = new Website();
-    website.setMainPageSuffix(indexPage);
-    website.setNotFoundPage(notFoundPage);
-    bucketPb.setWebsite(website);
-    Lifecycle lifecycle = new Lifecycle();
-    lifecycle.setRule(transform(deleteRules, new Function<DeleteRule, Rule>() {
-      @Override public Rule apply(DeleteRule deleteRule) {
-        return deleteRule.toPb();
-      }
-    }));
+    if (versioningEnabled != null) {
+      bucketPb.setVersioning(new Versioning().setEnabled(versioningEnabled));
+    }
+    if (indexPage != null || notFoundPage != null) {
+      Website website = new Website();
+      website.setMainPageSuffix(indexPage);
+      website.setNotFoundPage(notFoundPage);
+      bucketPb.setWebsite(website);
+    }
+    if (deleteRules != null) {
+      Lifecycle lifecycle = new Lifecycle();
+      lifecycle.setRule(transform(deleteRules, new Function<DeleteRule, Rule>() {
+        @Override public Rule apply(DeleteRule deleteRule) {
+          return deleteRule.toPb();
+        }
+      }));
+    }
     return bucketPb;
   }
 
@@ -590,38 +603,46 @@ public final class Bucket implements Serializable {
     Builder builder = new Builder()
         .name(bucketPb.getName())
         .id(bucketPb.getId())
-        .createTime(bucketPb.getTimeCreated().getValue())
         .etag(bucketPb.getEtag())
         .metageneration(bucketPb.getMetageneration())
+        .createTime(bucketPb.getTimeCreated().getValue())
         .location(Location.of(bucketPb.getLocation()))
-        .storageClass(StorageClass.of(bucketPb.getStorageClass()))
-        .cors(transform(bucketPb.getCors(), Cors.FROM_PB_FUNCTION))
-        .acl(transform(bucketPb.getAcl(),
-            new Function<BucketAccessControl, Acl>() {
-              @Override public Acl apply(BucketAccessControl bucketAccessControl) {
-                return Acl.fromPb(bucketAccessControl);
-              }
-            }))
-        .defaultAcl(transform(bucketPb.getDefaultObjectAcl(),
-            new Function<ObjectAccessControl, Acl>() {
-              @Override public Acl apply(ObjectAccessControl objectAccessControl) {
-                return Acl.fromPb(objectAccessControl);
-              }
-            }))
-        .owner(Entity.fromPb(bucketPb.getOwner().getEntity()))
         .selfLink(bucketPb.getSelfLink());
-    Versioning versioning = bucketPb.getVersioning();
-    if (versioning != null) {
-      builder.versioningEnabled(MoreObjects.firstNonNull(versioning.getEnabled(), Boolean.FALSE));
+    if (bucketPb.getStorageClass() != null) {
+      builder.storageClass(StorageClass.of(bucketPb.getStorageClass()));
+    }
+    if (bucketPb.getCors() != null) {
+      builder.cors(transform(bucketPb.getCors(), Cors.FROM_PB_FUNCTION));
+    }
+    if (bucketPb.getAcl() != null) {
+      builder.acl(transform(bucketPb.getAcl(), new Function<BucketAccessControl, Acl>() {
+        @Override public Acl apply(BucketAccessControl bucketAccessControl) {
+          return Acl.fromPb(bucketAccessControl);
+        }
+      }));
+    }
+    if (bucketPb.getDefaultObjectAcl() != null) {
+      builder.defaultAcl(transform(bucketPb.getDefaultObjectAcl(),
+          new Function<ObjectAccessControl, Acl>() {
+            @Override
+            public Acl apply(ObjectAccessControl objectAccessControl) {
+              return Acl.fromPb(objectAccessControl);
+            }
+          }));
+    }
+    if (bucketPb.getOwner() != null) {
+      builder.owner(Entity.fromPb(bucketPb.getOwner().getEntity()));
+    }
+    if (bucketPb.getVersioning() != null) {
+      builder.versioningEnabled(bucketPb.getVersioning().getEnabled());
     }
     Website website = bucketPb.getWebsite();
     if (website != null) {
       builder.indexPage(website.getMainPageSuffix());
       builder.notFoundPage(website.getNotFoundPage());
     }
-    Lifecycle lifecycle = bucketPb.getLifecycle();
-    if (lifecycle != null) {
-      builder.deleteRules(transform(lifecycle.getRule(),
+    if (bucketPb.getLifecycle() != null && bucketPb.getLifecycle().getRule() != null) {
+      builder.deleteRules(transform(bucketPb.getLifecycle().getRule(),
           new Function<Rule, DeleteRule>() {
             @Override public DeleteRule apply(Rule rule) {
               return DeleteRule.fromPb(rule);

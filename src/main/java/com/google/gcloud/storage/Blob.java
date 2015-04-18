@@ -54,23 +54,23 @@ public class Blob implements Serializable {
   private final String name;
   private final String selfLink;
   private final String cacheControl;
-  private final ImmutableList<Acl> acl;
+  private final List<Acl> acl;
   private final Acl.Entity owner;
-  private final long size;
+  private final Long size;
   private final String etag;
   private final String md5;
   private final String crc32c;
   private final String mediaLink;
-  private final ImmutableMap<String, String> metadata;
-  private final long generation;
-  private final long metageneration;
-  private final long deleteTime;
-  private final long updateTime;
+  private final Map<String, String> metadata;
+  private final Long generation;
+  private final Long metageneration;
+  private final Long deleteTime;
+  private final Long updateTime;
   private final String contentType;
   private final String contentEncoding;
   private final String contentDisposition;
   private final String contentLanguage;
-  private final int componentCount;
+  private final Integer componentCount;
 
   public static final class Builder {
 
@@ -80,22 +80,22 @@ public class Blob implements Serializable {
     private String contentType;
     private String contentEncoding;
     private String contentDisposition;
-    private  String contentLanguage;
-    private int componentCount;
+    private String contentLanguage;
+    private Integer componentCount;
     private String cacheControl;
     private ImmutableList<Acl> acl;
     private Acl.Entity owner;
-    private long size;
+    private Long size;
     private String etag;
     private String selfLink;
     private String md5;
     private String crc32c;
     private String mediaLink;
     private ImmutableMap<String, String> metadata;
-    private long generation;
-    private long metageneration;
-    private long deleteTime;
-    private long updateTime;
+    private Long generation;
+    private Long metageneration;
+    private Long deleteTime;
+    private Long updateTime;
 
     private Builder() {
     }
@@ -135,7 +135,7 @@ public class Blob implements Serializable {
       return this;
     }
 
-    Builder componentCount(int componentCount) {
+    Builder componentCount(Integer componentCount) {
       this.componentCount = componentCount;
       return this;
     }
@@ -155,7 +155,7 @@ public class Blob implements Serializable {
       return this;
     }
 
-    public Builder size(long size) {
+    public Builder size(Long size) {
       this.size = size;
       return this;
     }
@@ -190,34 +190,36 @@ public class Blob implements Serializable {
       return this;
     }
 
-    public Builder generation(long generation) {
+    public Builder generation(Long generation) {
       this.generation = generation;
       return this;
     }
 
-    public Builder metageneration(long metageneration) {
+    public Builder metageneration(Long metageneration) {
       this.metageneration = metageneration;
       return this;
     }
 
-    public Builder deleteTime(long deleteTime) {
+    public Builder deleteTime(Long deleteTime) {
       this.deleteTime = deleteTime;
       return this;
     }
 
-    public Builder updateTime(long updateTime) {
+    public Builder updateTime(Long updateTime) {
       this.updateTime = updateTime;
       return this;
     }
 
     public Blob build() {
+      checkNotNull(bucket);
+      checkNotNull(name);
       return new Blob(this);
     }
   }
 
   private Blob(Builder builder) {
-    bucket = checkNotNull(builder.bucket);
-    name = checkNotNull(builder.name);
+    bucket = builder.bucket;
+    name = builder.name;
     id = builder.id;
     cacheControl = builder.cacheControl;
     contentEncoding = builder.contentEncoding;
@@ -264,7 +266,7 @@ public class Blob implements Serializable {
     return owner;
   }
 
-  public long size() {
+  public Long size() {
     return size;
   }
 
@@ -284,7 +286,7 @@ public class Blob implements Serializable {
     return contentEncoding;
   }
 
-  public int componentCount() {
+  public Integer componentCount() {
     return componentCount;
   }
 
@@ -312,19 +314,19 @@ public class Blob implements Serializable {
     return metadata;
   }
 
-  public long generation() {
+  public Long generation() {
     return generation;
   }
 
-  public long metageneration() {
+  public Long metageneration() {
     return metageneration;
   }
 
-  public long deleteTime() {
+  public Long deleteTime() {
     return deleteTime;
   }
 
-  public long updateTime() {
+  public Long updateTime() {
     return updateTime;
   }
 
@@ -364,27 +366,36 @@ public class Blob implements Serializable {
 
   StorageObject toPb() {
     StorageObject storageObject = new StorageObject();
-    storageObject.setAcl(Lists.transform(acl,
-        new Function<Acl, ObjectAccessControl>() {
-          @Override public ObjectAccessControl apply(Acl acl) {
-            return acl.toObjectPb();
-          }
-        }));
+    if (acl != null) {
+      storageObject.setAcl(Lists.transform(acl, new Function<Acl, ObjectAccessControl>() {
+        @Override public ObjectAccessControl apply(Acl acl) {
+          return acl.toObjectPb();
+        }
+      }));
+    }
+    if (deleteTime != null) {
+      storageObject.setTimeDeleted(new DateTime(deleteTime));
+    }
+    if (updateTime != null) {
+      storageObject.setUpdated(new DateTime(updateTime));
+    }
+    if (size != null) {
+      storageObject.setSize(BigInteger.valueOf(size));
+    }
+    if (owner != null) {
+      storageObject.setOwner(new Owner().setEntity(owner.toPb()));
+    }
     storageObject.setBucket(bucket);
     storageObject.setCacheControl(cacheControl);
     storageObject.setContentEncoding(contentEncoding);
     storageObject.setCrc32c(crc32c);
     storageObject.setContentType(contentType);
-    storageObject.setTimeDeleted(new DateTime(deleteTime));
     storageObject.setGeneration(generation);
     storageObject.setMd5Hash(md5);
     storageObject.setMediaLink(mediaLink);
     storageObject.setMetadata(metadata);
     storageObject.setMetageneration(metageneration);
     storageObject.setName(name);
-    storageObject.setOwner(new Owner().setEntity(owner.toPb()));
-    storageObject.setUpdated(new DateTime(updateTime));
-    storageObject.setSize(BigInteger.valueOf(size));
     storageObject.setContentDisposition(contentDisposition);
     storageObject.setComponentCount(componentCount);
     storageObject.setContentLanguage(contentLanguage);
@@ -395,34 +406,44 @@ public class Blob implements Serializable {
   }
 
   static Blob fromPb(StorageObject storageObject) {
-    return new Builder()
-        .acl(Lists.transform(storageObject.getAcl(),
-            new Function<ObjectAccessControl, Acl>() {
-              @Override public Acl apply(ObjectAccessControl objectAccessControl) {
-                return Acl.fromPb(objectAccessControl);
-              }
-            }))
+    Builder builder = new Builder()
         .bucket(storageObject.getBucket())
         .cacheControl(storageObject.getCacheControl())
         .contentEncoding(storageObject.getContentEncoding())
         .crc32c(storageObject.getCrc32c())
         .contentType(storageObject.getContentType())
-        .deleteTime(storageObject.getTimeDeleted().getValue())
         .generation(storageObject.getGeneration())
         .md5(storageObject.getMd5Hash())
         .mediaLink(storageObject.getMediaLink())
         .metadata(storageObject.getMetadata())
         .metageneration(storageObject.getMetageneration())
         .name(storageObject.getName())
-        .owner(Acl.Entity.fromPb(storageObject.getOwner().getEntity()))
-        .updateTime(storageObject.getUpdated().getValue())
-        .size(storageObject.getSize().longValue())
         .contentDisposition(storageObject.getContentDisposition())
         .componentCount(storageObject.getComponentCount())
         .contentLanguage(storageObject.getContentLanguage())
         .etag(storageObject.getEtag())
         .id(storageObject.getId())
-        .selfLink(storageObject.getSelfLink())
-        .build();
+        .selfLink(storageObject.getSelfLink());
+    if (storageObject.getTimeDeleted() != null) {
+      builder.deleteTime(storageObject.getTimeDeleted().getValue());
+    }
+    if (storageObject.getUpdated() != null) {
+      builder.updateTime(storageObject.getUpdated().getValue());
+    }
+    if (storageObject.getSize() != null) {
+      builder.size(storageObject.getSize().longValue());
+    }
+    if (storageObject.getOwner() != null) {
+      builder.owner(Acl.Entity.fromPb(storageObject.getOwner().getEntity()));
+    }
+    if (storageObject.getAcl() != null) {
+      builder.acl(Lists.transform(storageObject.getAcl(), new Function<ObjectAccessControl, Acl>() {
+        @Override
+        public Acl apply(ObjectAccessControl objectAccessControl) {
+          return Acl.fromPb(objectAccessControl);
+        }
+      }));
+    }
+    return builder.build();
   }
 }
