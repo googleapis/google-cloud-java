@@ -30,6 +30,7 @@ public class StorageServiceOptions extends ServiceOptions {
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
   private static final String DEFAULT_PATH_DELIMITER = "/";
+  private static final String PROJECT_ENV_NAME = "default_project_id";
 
   private final StorageRpc storageRpc;
   private final String project;
@@ -72,7 +73,7 @@ public class StorageServiceOptions extends ServiceOptions {
   private StorageServiceOptions(Builder builder) {
     super(builder);
     pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
-    project = builder.project != null ? builder.project :  getAppEngineProjectId();
+    project = builder.project != null ? builder.project : defaultProject();
     Preconditions.checkArgument(project != null, "Missing required project id");
     storageRpc = MoreObjects.firstNonNull(builder.storageRpc, ServiceRpcProvider.storage(this));
   }
@@ -97,6 +98,14 @@ public class StorageServiceOptions extends ServiceOptions {
   @Override
   public Builder toBuilder() {
     return new Builder(this);
+  }
+
+  private static String defaultProject() {
+    String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
+    if (projectId == null) {
+      projectId = getAppEngineProjectId();
+    }
+    return projectId != null ? projectId : googleCloudProjectId();
   }
 
   public static Builder builder() {
