@@ -16,13 +16,16 @@
 
 package com.google.gcloud.storage;
 
+import com.google.api.services.storage.model.StorageObject;
 import com.google.common.collect.Iterators;
+import com.google.common.collect.Lists;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
+import java.util.List;
 
 final class StorageServiceImpl extends BaseService<StorageServiceOptions> implements StorageService {
 
@@ -43,7 +46,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   @Override
   public Bucket create(Bucket bucket, BucketTargetOption... options) {
     try {
-      return Bucket.fromPb(storageRpc.create(bucket.toPb()));
+      return Bucket.fromPb(storageRpc.create(bucket.toPb(), options));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
@@ -52,7 +55,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   @Override
   public Blob create(Blob blob, ByteBuffer content, BlobTargetOption... options) {
     try {
-      return Blob.fromPb(storageRpc.create(blob.toPb(), content));
+      return Blob.fromPb(storageRpc.create(blob.toPb(), content, options));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
@@ -61,7 +64,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   @Override
   public Bucket get(String bucket, BucketSourceOption... options) {
     try {
-      return Bucket.fromPb(storageRpc.get(bucket));
+      return Bucket.fromPb(storageRpc.get(bucket, options));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
@@ -70,7 +73,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   @Override
   public Blob get(String bucket, String blob, BlobSourceOption... options) {
     try {
-      return Blob.fromPb(storageRpc.get(bucket, blob));
+      return Blob.fromPb(storageRpc.get(bucket, blob, options));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
@@ -101,7 +104,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   @Override
   public Bucket update(Bucket bucket, BucketTargetOption... options) {
     try {
-      return Bucket.fromPb(storageRpc.patch(bucket.toPb()));
+      return Bucket.fromPb(storageRpc.patch(bucket.toPb(), options));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
@@ -110,7 +113,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   @Override
   public Blob update(Blob blob, BlobTargetOption... options) {
     try {
-      return Blob.fromPb(storageRpc.patch(blob.toPb()));
+      return Blob.fromPb(storageRpc.patch(blob.toPb(), options));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
@@ -119,7 +122,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   @Override
   public void delete(Bucket bucket, BucketSourceOption... options) {
     try {
-      storageRpc.delete(bucket.toPb());
+      storageRpc.delete(bucket.toPb(), options);
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
@@ -128,7 +131,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   @Override
   public void delete(Blob blob, BlobSourceOption... options) {
     try {
-      storageRpc.delete(blob.toPb());
+      storageRpc.delete(blob.toPb(), options);
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
@@ -136,22 +139,26 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public Blob compose(ComposeRequest composeRequest) {
-    // todo: implement (consider having XXXRequest/XXXResponse for all SPI/Rpc requests
-// try {
-
-//
-//      return Blob.fromPb(storageRpc.compose(composeRequest.sourceBucket(),
-//          composeRequest.sourceBlobs(), composeRequest.target()));
-//    } catch (IOException ex) {
-//      throw new StorageServiceException(ex);
-//    }
-    throw new UnsupportedOperationException("bla");
+    List<StorageObject> sources = Lists.newArrayListWithCapacity(composeRequest.sourceBlobs().size());
+    for (ComposeRequest.SourceBlob sourceBlob : composeRequest.sourceBlobs()) {
+      sources.add(Blob.builder(composeRequest.sourceBucket(), sourceBlob.blob)
+          .generation(sourceBlob.generation)
+          .build()
+          .toPb());
+    }
+    try {
+      return Blob.fromPb(storageRpc.compose(sources, composeRequest.target().toPb(),
+          composeRequest.targetOptions()));
+    } catch (IOException ex) {
+      throw new StorageServiceException(ex);
+    }
   }
 
   @Override
   public Blob copy(CopyRequest copyRequest) {
     try {
-      return Blob.fromPb(storageRpc.copy(copyRequest.source().toPb(), copyRequest.target().toPb()));
+      return Blob.fromPb(storageRpc.copy(copyRequest.source().toPb(), copyRequest.sourceOptions(),
+          copyRequest.target().toPb(), copyRequest.targetOptions()));
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
@@ -160,7 +167,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   @Override
   public BlobReadChannel readFrom(Blob blob, BlobSourceOption... options) {
     try {
-      return storageRpc.reader(blob.toPb());
+      return storageRpc.reader(blob.toPb(), options);
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
@@ -169,7 +176,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   @Override
   public BlobWriteChannel writeTo(Blob blob, BlobTargetOption... options) {
     try {
-      return storageRpc.writer(blob.toPb());
+      return storageRpc.writer(blob.toPb(), options);
     } catch (IOException ex) {
       throw new StorageServiceException(ex);
     }
