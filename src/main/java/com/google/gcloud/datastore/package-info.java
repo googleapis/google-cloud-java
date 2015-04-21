@@ -20,7 +20,7 @@
  * <p>A simple usage example:
  * <pre> {@code
  * DatastoreServiceOptions options = DatastoreServiceOptions.builder().dataset(DATASET).build();
- * DatastoreService datastore = DatastoreServiceFactory.getDefault(options);
+ * DatastoreService datastore = DatastoreServiceFactory.instance().get(options);
  * KeyFactory keyFactory = datastore.newKeyFactory().kind(kind);
  * Key key = keyFactory.newKey(keyName);
  * Entity entity = datastore.get(key);
