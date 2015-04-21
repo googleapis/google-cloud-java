@@ -187,7 +187,7 @@ public final class ExceptionHandler implements Serializable {
     nonRetriableExceptions = builder.nonRetriableExceptions.build();
     Preconditions.checkArgument(
         Sets.intersection(retriableExceptions, nonRetriableExceptions).isEmpty(),
-        "Same exception was found in both retriable and non-retriable sets");
+        "Same exception was found in both retryable and non-retryable sets");
     for (Class<? extends Exception> exception : retriableExceptions) {
       addRetryInfo(new RetryInfo(exception, Interceptor.RetryResult.RETRY), retryInfo);
     }
