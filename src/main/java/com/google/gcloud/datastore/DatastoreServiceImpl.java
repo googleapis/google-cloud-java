@@ -60,8 +60,8 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
 
         @Override
         public RetryResult beforeEval(Exception exception) {
-          if (exception instanceof DatastoreServiceException) {
-            boolean retriable = ((DatastoreServiceException) exception).code().retriable();
+          if (exception instanceof DatastoreRpcException) {
+            boolean retriable = ((DatastoreRpcException) exception).retryable();
             return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.ABORT;
           }
           return null;
