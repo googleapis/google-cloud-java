@@ -23,7 +23,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Service;
 
 import java.io.Serializable;
-import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
@@ -301,31 +300,73 @@ public interface StorageService extends Service<StorageServiceOptions> {
     }
   }
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   Bucket create(Bucket bucket, BucketTargetOption... option);
 
-  Blob create(Blob blob, ByteBuffer content, BlobTargetOption... option);
+  /**
+   * @throws StorageServiceException upon failure
+   */
+  Blob create(Blob blob, byte[] content, BlobTargetOption... option);
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   Bucket get(String bucket, BucketSourceOption... options);
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   Blob get(String bucket, String blob, BlobSourceOption... options);
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   Iterator<Bucket> list();
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   Iterator<Blob> list(String bucket, ListOptions settings);
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   Bucket update(Bucket bucket, BucketTargetOption... option);
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   Blob update(Blob blob, BlobTargetOption... option);
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   void delete(Bucket bucket, BucketSourceOption... option);
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   void delete(Blob blob, BlobSourceOption... option);
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   Blob compose(ComposeRequest composeRequest);
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   Blob copy(CopyRequest copyRequest);
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   BlobReadChannel readFrom(Blob blob, BlobSourceOption... option);
 
+  /**
+   * @throws StorageServiceException upon failure
+   */
   BlobWriteChannel writeTo(Blob blob, BlobTargetOption... option);
 }
