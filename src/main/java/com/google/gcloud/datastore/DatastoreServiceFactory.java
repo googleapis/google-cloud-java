@@ -27,9 +27,15 @@ public abstract class DatastoreServiceFactory {
       }
     };
 
-  public static DatastoreService getDefault(DatastoreServiceOptions options) {
-    return INSTANCE.get(options);
+  /**
+   * Returns the default factory instance.
+   */
+  public static DatastoreServiceFactory instance() {
+    return INSTANCE;
   }
 
+  /**
+   * Returns a {@code DatastoreService} for the given options.
+   */
   public abstract DatastoreService get(DatastoreServiceOptions options);
 }

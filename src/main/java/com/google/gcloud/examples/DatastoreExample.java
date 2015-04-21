@@ -187,7 +187,7 @@ public class DatastoreExample {
           .namespace(NAMESPACE)
           .build();
       String name = args.length > 1 ? args[1] : System.getProperty("user.name");
-      datastore = DatastoreServiceFactory.getDefault(options);
+      datastore = DatastoreServiceFactory.instance().get(options);
       KeyFactory keyFactory = datastore.newKeyFactory().kind(USER_KIND);
       key = keyFactory.newKey(name);
       String actionName = args.length > 2 ? args[2].toLowerCase() : DEFAULT_ACTION;
