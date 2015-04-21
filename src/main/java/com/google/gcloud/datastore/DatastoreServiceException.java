@@ -52,7 +52,7 @@ public class DatastoreServiceException extends RuntimeException {
     RESOURCE_EXHAUSTED(Reason.RESOURCE_EXHAUSTED),
     UNKNOWN(false, "Unknown failure", -1);
 
-    private final boolean retriable;
+    private final boolean retryable;
     private final String description;
     private final int httpStatus;
 
@@ -60,8 +60,8 @@ public class DatastoreServiceException extends RuntimeException {
       this(reason.retryable(), reason.description(), reason.httpStatus());
     }
 
-    Code(boolean retriable, String description, int httpStatus) {
-      this.retriable = retriable;
+    Code(boolean retryable, String description, int httpStatus) {
+      this.retryable = retryable;
       this.description = description;
       this.httpStatus = httpStatus;
     }
@@ -78,8 +78,8 @@ public class DatastoreServiceException extends RuntimeException {
      * Returns {@code true} if this exception is transient and the same request could be retried.
      * For any retry it is highly recommended to apply an exponential backoff.
      */
-    public boolean retriable() {
-      return retriable;
+    public boolean retryable() {
+      return retryable;
     }
 
     DatastoreServiceException translate(DatastoreRpcException exception, String message) {
