@@ -16,169 +16,200 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.gcloud.RetryHelper.runWithRetries;
+
 import com.google.api.services.storage.model.StorageObject;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.gcloud.BaseService;
+import com.google.gcloud.ExceptionHandler;
+import com.google.gcloud.ExceptionHandler.Interceptor;
+import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.Callable;
 
 final class StorageServiceImpl extends BaseService<StorageServiceOptions> implements StorageService {
 
+  private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR =
+      new Interceptor() {
+
+        private static final long serialVersionUID = -7758580330857881124L;
+
+        @Override
+        public RetryResult afterEval(Exception exception, RetryResult retryResult) {
+          return null;
+        }
+
+        @Override
+        public RetryResult beforeEval(Exception exception) {
+          if (exception instanceof StorageServiceException) {
+            boolean retriable = ((StorageServiceException) exception).retryable();
+            return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.ABORT;
+          }
+          return null;
+        }
+      };
+  private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
+      .abortOn(RuntimeException.class)
+      .interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
+
   private final StorageRpc storageRpc;
+  private final RetryParams retryParams;
 
   StorageServiceImpl(StorageServiceOptions options) {
     super(options);
     storageRpc = options.storageRpc();
-
-    // todo: like Datastore distinct exception to retriable and non-retriable
-    //       https://cloud.google.com/storage/docs/json_api/v1/status-codes
-    // todo: Use retry helper on retriable failures
-
-    // todo: consider options
+    retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
     // todo: replace nulls with Value.asNull (per toPb)
   }
 
   @Override
-  public Bucket create(Bucket bucket, BucketTargetOption... options) {
-    try {
-      return Bucket.fromPb(storageRpc.create(bucket.toPb(), options));
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+  public Bucket create(Bucket bucket, final BucketTargetOption... options) {
+    final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
+    return Bucket.fromPb(runWithRetries(
+        new Callable<com.google.api.services.storage.model.Bucket>() {
+          @Override public com.google.api.services.storage.model.Bucket call() {
+            return storageRpc.create(bucketPb, options);
+          }
+        }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public Blob create(Blob blob, ByteBuffer content, BlobTargetOption... options) {
-    try {
-      return Blob.fromPb(storageRpc.create(blob.toPb(), content, options));
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+  public Blob create(Blob blob, final byte[] content, final BlobTargetOption... options) {
+    final StorageObject blobPb = blob.toPb();
+    return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
+          @Override public StorageObject call() {
+            return storageRpc.create(blobPb, content, options);
+          }
+        }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public Bucket get(String bucket, BucketSourceOption... options) {
-    try {
-      return Bucket.fromPb(storageRpc.get(bucket, options));
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+  public Bucket get(final String bucket, final BucketSourceOption... options) {
+    return Bucket.fromPb(runWithRetries(
+        new Callable<com.google.api.services.storage.model.Bucket>() {
+          @Override public com.google.api.services.storage.model.Bucket call() {
+            return storageRpc.get(bucket, options);
+          }
+        }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public Blob get(String bucket, String blob, BlobSourceOption... options) {
-    try {
-      return Blob.fromPb(storageRpc.get(bucket, blob, options));
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+  public Blob get(final String bucket, final String blob, final BlobSourceOption... options) {
+    return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
+      @Override public StorageObject call() {
+        return storageRpc.get(bucket, blob, options);
+      }
+    }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
   public Iterator<Bucket> list() {
-    try {
-      return Iterators.transform(storageRpc.list(), Bucket.FROM_PB_FUNCTION);
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+    return Iterators.transform(runWithRetries(
+        new Callable<Iterator<com.google.api.services.storage.model.Bucket>>() {
+          @Override public Iterator<com.google.api.services.storage.model.Bucket> call() {
+            return storageRpc.list();
+          }
+        }, retryParams, EXCEPTION_HANDLER),
+        Bucket.FROM_PB_FUNCTION);
   }
 
   @Override
   public Iterator<Blob> list(String bucket, ListOptions settings) {
-    try {
-      String delimiter = settings.recursive() ? options().pathDelimiter() : null;
-      return Iterators.transform(
-          storageRpc.list(bucket, settings.prefix(), delimiter, settings.cursor(),
-              settings.includeOlderVersions(), settings.maxResults()),
-          Blob.FROM_PB_FUNCTION);
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+    // todo implement paging (with retries) with if limit is not given or > X
+    String delimiter = settings.recursive() ? options().pathDelimiter() : null;
+    return Iterators.transform(
+        storageRpc.list(bucket, settings.prefix(), delimiter, settings.cursor(),
+            settings.includeOlderVersions(), settings.maxResults()),
+        Blob.FROM_PB_FUNCTION);
   }
 
   @Override
-  public Bucket update(Bucket bucket, BucketTargetOption... options) {
-    try {
-      return Bucket.fromPb(storageRpc.patch(bucket.toPb(), options));
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+  public Bucket update(Bucket bucket, final BucketTargetOption... options) {
+    final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
+    return Bucket.fromPb(runWithRetries(
+        new Callable<com.google.api.services.storage.model.Bucket>() {
+          @Override public com.google.api.services.storage.model.Bucket call() {
+            return storageRpc.patch(bucketPb, options);
+          }
+        }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public Blob update(Blob blob, BlobTargetOption... options) {
-    try {
-      return Blob.fromPb(storageRpc.patch(blob.toPb(), options));
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+  public Blob update(Blob blob, final BlobTargetOption... options) {
+    final StorageObject storageObject = blob.toPb();
+    return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
+      @Override public StorageObject call() {
+        return storageRpc.patch(storageObject, options);
+      }
+    }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public void delete(Bucket bucket, BucketSourceOption... options) {
-    try {
-      storageRpc.delete(bucket.toPb(), options);
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+  public void delete(Bucket bucket, final BucketSourceOption... options) {
+    final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
+    runWithRetries(new Callable<Void>() {
+      @Override public Void call() {
+        storageRpc.delete(bucketPb, options);
+        return null;
+      }
+    }, retryParams, EXCEPTION_HANDLER);
   }
 
   @Override
-  public void delete(Blob blob, BlobSourceOption... options) {
-    try {
-      storageRpc.delete(blob.toPb(), options);
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+  public void delete(Blob blob, final BlobSourceOption... options) {
+    final StorageObject storageObject = blob.toPb();
+    runWithRetries(new Callable<Void>() {
+      @Override public Void call() {
+        storageRpc.delete(storageObject, options);
+        return null;
+      }
+    }, retryParams, EXCEPTION_HANDLER);
   }
 
   @Override
-  public Blob compose(ComposeRequest composeRequest) {
-    List<StorageObject> sources = Lists.newArrayListWithCapacity(composeRequest.sourceBlobs().size());
+  public Blob compose(final ComposeRequest composeRequest) {
+    final List<StorageObject> sources =
+        Lists.newArrayListWithCapacity(composeRequest.sourceBlobs().size());
     for (ComposeRequest.SourceBlob sourceBlob : composeRequest.sourceBlobs()) {
       sources.add(Blob.builder(composeRequest.sourceBucket(), sourceBlob.blob)
           .generation(sourceBlob.generation)
           .build()
           .toPb());
     }
-    try {
-      return Blob.fromPb(storageRpc.compose(sources, composeRequest.target().toPb(),
-          composeRequest.targetOptions()));
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+    final StorageObject target = composeRequest.target().toPb();
+    return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
+      @Override public StorageObject call() {
+        return storageRpc.compose(sources, target, composeRequest.targetOptions());
+      }
+    }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public Blob copy(CopyRequest copyRequest) {
-    try {
-      return Blob.fromPb(storageRpc.copy(copyRequest.source().toPb(), copyRequest.sourceOptions(),
-          copyRequest.target().toPb(), copyRequest.targetOptions()));
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+  public Blob copy(final CopyRequest copyRequest) {
+    final StorageObject source = copyRequest.source().toPb();
+    final StorageObject target = copyRequest.target().toPb();
+    return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
+      @Override public StorageObject call() {
+        return storageRpc.copy(source, copyRequest.sourceOptions(), target,
+            copyRequest.targetOptions());
+      }
+    }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
   public BlobReadChannel readFrom(Blob blob, BlobSourceOption... options) {
-    try {
-      return storageRpc.reader(blob.toPb(), options);
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+    // todo: Use retry helper on retriable failures
+    return storageRpc.reader(blob.toPb(), options);
   }
 
   @Override
   public BlobWriteChannel writeTo(Blob blob, BlobTargetOption... options) {
-    try {
-      return storageRpc.writer(blob.toPb(), options);
-    } catch (IOException ex) {
-      throw new StorageServiceException(ex);
-    }
+    // todo: Use retry helper on retriable failures
+    return storageRpc.writer(blob.toPb(), options);
   }
 }
