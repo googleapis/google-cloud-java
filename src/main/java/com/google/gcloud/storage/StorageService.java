@@ -313,12 +313,12 @@ public interface StorageService extends Service<StorageServiceOptions> {
   /**
    * @throws StorageServiceException upon failure
    */
-  Bucket get(String bucket, BucketSourceOption... options);
+  Bucket get(Bucket bucket, BucketSourceOption... options);
 
   /**
    * @throws StorageServiceException upon failure
    */
-  Blob get(String bucket, String blob, BlobSourceOption... options);
+  Blob get(Blob blob, BlobSourceOption... options);
 
   /**
    * @throws StorageServiceException upon failure
