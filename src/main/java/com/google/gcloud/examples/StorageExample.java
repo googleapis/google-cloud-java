@@ -16,13 +16,11 @@
 
 package com.google.gcloud.examples;
 
-import com.google.gcloud.storage.Blob;
-import com.google.gcloud.storage.Bucket;
-import com.google.gcloud.storage.ListOptions;
-import com.google.gcloud.storage.StorageService;
-import com.google.gcloud.storage.StorageServiceFactory;
-import com.google.gcloud.storage.StorageServiceOptions;
+import com.google.gcloud.storage.*;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -38,7 +36,7 @@ import java.util.Map;
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven - {@code mvn exec:java
  * -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
- * -Dexec.args="list [<bucket>]|info [<bucket> [<file>]]|get <bucket> <path>|upload <local_file> <bucket> [<path>]|delete <bucket> <path>"}</li>
+ * -Dexec.args="project_id list [<bucket>]|info [<bucket> [<file>]]|get <bucket> <path>|upload <local_file> <bucket> [<path>]|delete <bucket> <path>"}</li>
  * </ol>
  */
 public class StorageExample {
@@ -47,14 +45,38 @@ public class StorageExample {
 
   private static abstract class StorageAction<T> {
 
-    abstract void run(StorageService storage, T request);
+    abstract void run(StorageService storage, T request) throws Exception;
 
-    abstract T parse(String... args);
+    abstract T parse(String... args) throws IllegalArgumentException;
 
     protected String params() {
       return "";
     }
   }
+
+  private static class Tuple<X, Y> {
+
+    private final X x;
+    private final Y y;
+
+    private Tuple(X x, Y y) {
+      this.x = x;
+      this.y = y;
+    }
+
+    static <X, Y> Tuple<X, Y> of(X x, Y y) {
+      return new Tuple<>(x, y);
+    }
+
+    X first() {
+      return x;
+    }
+
+    Y second() {
+      return y;
+    }
+  }
+
 
   private static abstract class BlobAction extends StorageAction<Blob> {
 
@@ -142,11 +164,39 @@ public class StorageExample {
     }
   }
 
+  private static class UploadAction extends StorageAction<Tuple<Path, Blob>> {
+    @Override
+    public void run(StorageService storage, Tuple<Path, Blob> tuple) throws Exception {
+      if (Files.size(tuple.first()) > 1_000_000) {
+        // todo upload via streaming API
+        throw new IllegalArgumentException("file is too big");
+      } else {
+        byte[] bytes = Files.readAllBytes(tuple.first());
+        System.out.println(storage.create(tuple.second(), bytes));
+      }
+    }
+
+    @Override
+    Tuple<Path, Blob> parse(String... args) {
+      if (args.length < 2 || args.length > 3) {
+        throw new IllegalArgumentException();
+      }
+      Path path = Paths.get(args[0]);
+      String blob = args.length < 3 ? path.getFileName().toString() : args[2];
+      return Tuple.of(path, Blob.of(args[1], blob));
+    }
+
+    @Override
+    public String params() {
+      return "<local_file> <bucket> [<path>]";
+    }
+  }
+
   static {
     ACTIONS.put("info", new InfoAction());
     ACTIONS.put("delete", new DeleteAction());
     ACTIONS.put("list", new ListAction());
-    //ACTIONS.put("upload", new UploadAction());
+    ACTIONS.put("upload", new UploadAction());
     // todo: implement get
   }
 
@@ -165,26 +215,29 @@ public class StorageExample {
     System.out.printf("Usage: %s [%s]%n",
         StorageExample.class.getSimpleName(), actionAndParams);
   }
-  public static void main(String... args) {
-    if (args.length == 0) {
-      System.out.println("Missing required action");
+
+  @SuppressWarnings("unchecked")
+  public static void main(String... args) throws Exception {
+    if (args.length < 2) {
+      System.out.println("Missing required project id and action");
       printUsage();
       return;
     }
-    StorageAction action = ACTIONS.get(args[0]);
+    String projectId = args[0];
+    StorageAction action = ACTIONS.get(args[1]);
     if (action == null) {
-      System.out.println("Unrecognized action '" + args[0] + "'");
+      System.out.println("Unrecognized action '" + args[1] + "'");
       printUsage();
       return;
     }
-    StorageService storage =
-        StorageServiceFactory.instance().get(StorageServiceOptions.builder().build());
-    args = args.length > 1 ? Arrays.copyOfRange(args, 1, args.length): new String []{};
+    StorageServiceOptions options = StorageServiceOptions.builder().project(args[0]).build();
+    StorageService storage = StorageServiceFactory.instance().get(options);
+    args = args.length > 2 ? Arrays.copyOfRange(args, 2, args.length): new String []{};
     Object request;
     try {
       request = action.parse(args);
     } catch (Exception ex) {
-      System.out.println("Invalid input for action '" + args[0] + "'");
+      System.out.println("Invalid input for action '" + args[1] + "'");
       System.out.println("Expected: " + action.params());
       return;
     }
