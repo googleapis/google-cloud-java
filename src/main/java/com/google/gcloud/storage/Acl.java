@@ -84,8 +84,8 @@ public final class Acl implements Serializable {
         return new Group(entity.substring(6));
       }
       if (entity.startsWith("project-")) {
-        int idx = entity.indexOf('-', 9);
-        String team = entity.substring(9, idx);
+        int idx = entity.indexOf('-', 8);
+        String team = entity.substring(8, idx);
         String projectId = entity.substring(idx + 1);
         return new Project(Project.ProjectRole.valueOf(team.toUpperCase()), projectId);
       }

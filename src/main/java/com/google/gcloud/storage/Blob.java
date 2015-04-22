@@ -23,6 +23,7 @@ import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.StorageObject.Owner;
 import com.google.common.base.Function;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -354,6 +355,11 @@ public class Blob implements Serializable {
         .size(size)
         .etag(etag)
         .selfLink(selfLink);
+  }
+
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this).add("bucket", bucket).add("name", name).toString();
   }
 
   public static Blob of(String bucket, String name) {

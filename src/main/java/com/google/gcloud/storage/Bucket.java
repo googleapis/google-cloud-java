@@ -28,6 +28,7 @@ import com.google.api.services.storage.model.Bucket.Website;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.common.base.Function;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.storage.Acl.Entity;
@@ -534,6 +535,11 @@ public final class Bucket implements Serializable {
         .indexPage(indexPage)
         .notFoundPage(notFoundPage)
         .deleteRules(deleteRules);
+  }
+
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this).add("name", name).toString();
   }
 
   public static Bucket of(String name) {
