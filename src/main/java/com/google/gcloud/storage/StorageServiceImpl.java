@@ -89,20 +89,22 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Bucket get(final String bucket, final BucketSourceOption... options) {
+  public Bucket get(Bucket bucket, final BucketSourceOption... options) {
+    final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
     return Bucket.fromPb(runWithRetries(
         new Callable<com.google.api.services.storage.model.Bucket>() {
           @Override public com.google.api.services.storage.model.Bucket call() {
-            return storageRpc.get(bucket, options);
+            return storageRpc.get(bucketPb, options);
           }
         }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public Blob get(final String bucket, final String blob, final BlobSourceOption... options) {
+  public Blob get(Blob blob, final BlobSourceOption... options) {
+    final StorageObject storedObject = blob.toPb();
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
       @Override public StorageObject call() {
-        return storageRpc.get(bucket, blob, options);
+        return storageRpc.get(storedObject, options);
       }
     }, retryParams, EXCEPTION_HANDLER));
   }
