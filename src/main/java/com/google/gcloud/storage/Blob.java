@@ -356,7 +356,11 @@ public class Blob implements Serializable {
         .selfLink(selfLink);
   }
 
-  public static Builder builder(Bucket bucket, String name) {
+  public static Blob of(String bucket, String name) {
+    return builder(bucket, name).build();
+  }
+
+    public static Builder builder(Bucket bucket, String name) {
     return builder(bucket.name(), name);
   }
 

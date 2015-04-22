@@ -536,6 +536,10 @@ public final class Bucket implements Serializable {
         .deleteRules(deleteRules);
   }
 
+  public static Bucket of(String name) {
+    return builder(name).build();
+  }
+
   public static Builder builder(String name) {
     return new Builder().name(name);
   }
