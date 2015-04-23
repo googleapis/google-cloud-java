@@ -39,16 +39,18 @@ public class Blob implements Serializable {
 
   static final Function<StorageObject, Blob> FROM_PB_FUNCTION =
       new Function<StorageObject, Blob>() {
-        @Override public Blob apply(StorageObject pb) {
+        @Override
+        public Blob apply(StorageObject pb) {
           return Blob.fromPb(pb);
         }
       };
 
   static final Function<Blob, StorageObject> TO_PB_FUNCTION = new Function<Blob, StorageObject>() {
-        @Override public StorageObject apply(Blob blob) {
-          return blob.toPb();
-        }
-      };
+    @Override
+    public StorageObject apply(Blob blob) {
+      return blob.toPb();
+    }
+  };
 
   private final String bucket;
   private final String id;
@@ -98,8 +100,7 @@ public class Blob implements Serializable {
     private Long deleteTime;
     private Long updateTime;
 
-    private Builder() {
-    }
+    private Builder() {}
 
     public Builder bucket(String bucket) {
       this.bucket = checkNotNull(bucket);
@@ -366,7 +367,7 @@ public class Blob implements Serializable {
     return builder(bucket, name).build();
   }
 
-    public static Builder builder(Bucket bucket, String name) {
+  public static Builder builder(Bucket bucket, String name) {
     return builder(bucket.name(), name);
   }
 
@@ -378,7 +379,8 @@ public class Blob implements Serializable {
     StorageObject storageObject = new StorageObject();
     if (acl != null) {
       storageObject.setAcl(Lists.transform(acl, new Function<Acl, ObjectAccessControl>() {
-        @Override public ObjectAccessControl apply(Acl acl) {
+        @Override
+        public ObjectAccessControl apply(Acl acl) {
           return acl.toObjectPb();
         }
       }));
@@ -425,7 +427,6 @@ public class Blob implements Serializable {
         .generation(storageObject.getGeneration())
         .md5(storageObject.getMd5Hash())
         .mediaLink(storageObject.getMediaLink())
-        .metadata(storageObject.getMetadata())
         .metageneration(storageObject.getMetageneration())
         .name(storageObject.getName())
         .contentDisposition(storageObject.getContentDisposition())
@@ -434,6 +435,9 @@ public class Blob implements Serializable {
         .etag(storageObject.getEtag())
         .id(storageObject.getId())
         .selfLink(storageObject.getSelfLink());
+    if (storageObject.getMetadata() != null) {
+      builder.metadata(storageObject.getMetadata());
+    }
     if (storageObject.getTimeDeleted() != null) {
       builder.deleteTime(storageObject.getTimeDeleted().getValue());
     }

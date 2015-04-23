@@ -35,13 +35,15 @@ public final class Cors implements Serializable {
   private static final long serialVersionUID = -8637770919343335655L;
 
   static final Function<Bucket.Cors, Cors> FROM_PB_FUNCTION = new Function<Bucket.Cors, Cors>() {
-    @Override public Cors apply(Bucket.Cors pb) {
+    @Override
+    public Cors apply(Bucket.Cors pb) {
       return Cors.fromPb(pb);
     }
   };
 
   static final Function<Cors, Bucket.Cors> TO_PB_FUNCTION = new Function<Cors, Bucket.Cors>() {
-    @Override public Bucket.Cors apply(Cors cors) {
+    @Override
+    public Bucket.Cors apply(Cors cors) {
       return cors.toPb();
     }
   };
@@ -103,8 +105,7 @@ public final class Cors implements Serializable {
     private ImmutableList<Origin> origins;
     private ImmutableList<String> responseHeaders;
 
-    private Builder() {
-    }
+    private Builder() {}
 
     public Builder maxAgeSeconds(Integer maxAgeSeconds) {
       this.maxAgeSeconds = maxAgeSeconds;
@@ -178,12 +179,14 @@ public final class Cors implements Serializable {
   static Cors fromPb(Bucket.Cors cors) {
     Builder builder = builder().maxAgeSeconds(cors.getMaxAgeSeconds());
     builder.methods(transform(cors.getMethod(), new Function<String, Method>() {
-      @Override public Method apply(String name) {
+      @Override
+      public Method apply(String name) {
         return Method.valueOf(name.toUpperCase());
       }
     }));
     builder.origins(transform(cors.getOrigin(), new Function<String, Origin>() {
-      @Override public Origin apply(String value) {
+      @Override
+      public Origin apply(String value) {
         return Origin.of(value);
       }
     }));

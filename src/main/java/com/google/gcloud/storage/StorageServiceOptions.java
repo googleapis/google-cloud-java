@@ -42,8 +42,7 @@ public class StorageServiceOptions extends ServiceOptions {
     private String pathDelimiter;
     private StorageRpc storageRpc;
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(StorageServiceOptions options) {
       super(options);

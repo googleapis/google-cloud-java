@@ -21,10 +21,11 @@ package com.google.gcloud.storage;
 public abstract class StorageServiceFactory {
 
   private static final StorageServiceFactory INSTANCE = new StorageServiceFactory() {
-      @Override public StorageService get(StorageServiceOptions options) {
-        return new StorageServiceImpl(options);
-      }
-    };
+    @Override
+    public StorageService get(StorageServiceOptions options) {
+      return new StorageServiceImpl(options);
+    }
+  };
 
   public static StorageServiceFactory instance() {
     return INSTANCE;

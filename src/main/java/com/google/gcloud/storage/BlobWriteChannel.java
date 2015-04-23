@@ -23,9 +23,9 @@ import java.nio.channels.WritableByteChannel;
 /**
  * A channel for writing data to a Google Cloud Storage object.
  *
- * Implementations of this class may further buffer data internally to reduce remote calls.
- * Written data will only be visible after calling {@link #close()}.
- * This class is serializable, to allow incremental writes.
+ * Implementations of this class may further buffer data internally to reduce remote calls. Written
+ * data will only be visible after calling {@link #close()}. This class is serializable, to allow
+ * incremental writes.
  */
 public interface BlobWriteChannel extends WritableByteChannel, Serializable, Closeable {
 

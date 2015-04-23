@@ -21,6 +21,7 @@ import static com.google.gcloud.storage.Validator.checkBlobOptions;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Service;
+import com.google.gcloud.spi.StorageRpc;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -33,7 +34,8 @@ import java.util.Set;
 
 public interface StorageService extends Service<StorageServiceOptions> {
 
-  // todo: provide way for construct signed URLs - https://cloud.google.com/storage/docs/access-control#Signed-URLs
+  // todo: provide way for construct signed URLs -
+  // https://cloud.google.com/storage/docs/access-control#Signed-URLs
 
   enum PredefinedAcl {
     AUTHENTICATED_READ("authenticatedRead"),
@@ -60,20 +62,20 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     private static final long serialVersionUID = -5880204616982900975L;
 
-    private BucketTargetOption(String name, Object value) {
-      super(name, value);
+    private BucketTargetOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
     }
 
     public static BucketTargetOption predefinedAcl(PredefinedAcl acl) {
-      return new BucketTargetOption("predefinedAcl", acl.entry());
+      return new BucketTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.entry());
     }
 
     public static BucketTargetOption predefinedDefaultObjectAcl(PredefinedAcl acl) {
-      return new BucketTargetOption("predefinedDefaultObjectAcl", acl.entry());
+      return new BucketTargetOption(StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL, acl.entry());
     }
 
     public static BucketTargetOption metagenerationMatch(boolean match) {
-      return new BucketTargetOption("ifMetagenerationMatch", match);
+      return new BucketTargetOption(StorageRpc.Option.IF_METAGENERATION_MATCH, match);
     }
   }
 
@@ -81,12 +83,12 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     private static final long serialVersionUID = 5185657617120212117L;
 
-    private BucketSourceOption(String name, Object value) {
-      super(name, value);
+    private BucketSourceOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
     }
 
     public static BucketSourceOption metagenerationMatch(boolean match) {
-      return new BucketSourceOption("ifMetagenerationMatch", match);
+      return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH, match);
     }
   }
 
@@ -94,20 +96,20 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     private static final long serialVersionUID = 214616862061934846L;
 
-    private BlobTargetOption(String name, Object value) {
-      super(name, value);
+    private BlobTargetOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
     }
 
     public static BlobTargetOption predefinedAcl(PredefinedAcl acl) {
-      return new BlobTargetOption("predefinedAcl", acl.entry());
+      return new BlobTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.entry());
     }
 
     public static BlobTargetOption generationMath(boolean match) {
-      return new BlobTargetOption("ifGenerationMatch", match);
+      return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_MATCH, match);
     }
 
     public static BlobTargetOption metagenerationMatch(boolean match) {
-      return new BlobTargetOption("ifMetagenerationMatch", match);
+      return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_MATCH, match);
     }
   }
 
@@ -115,16 +117,16 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     private static final long serialVersionUID = -3712768261070182991L;
 
-    private BlobSourceOption(String name, Object value) {
-      super(name, value);
+    private BlobSourceOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
     }
 
     public static BlobSourceOption generationMath(boolean match) {
-      return new BlobSourceOption("ifGenerationMatch", match);
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, match);
     }
 
     public static BlobSourceOption metagenerationMatch(boolean match) {
-      return new BlobSourceOption("ifMetagenerationMatch", match);
+      return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH, match);
     }
   }
 
@@ -303,12 +305,12 @@ public interface StorageService extends Service<StorageServiceOptions> {
   /**
    * @throws StorageServiceException upon failure
    */
-  Bucket create(Bucket bucket, BucketTargetOption... option);
+  Bucket create(Bucket bucket, BucketTargetOption... options);
 
   /**
    * @throws StorageServiceException upon failure
    */
-  Blob create(Blob blob, byte[] content, BlobTargetOption... option);
+  Blob create(Blob blob, byte[] content, BlobTargetOption... options);
 
   /**
    * @throws StorageServiceException upon failure
@@ -333,22 +335,22 @@ public interface StorageService extends Service<StorageServiceOptions> {
   /**
    * @throws StorageServiceException upon failure
    */
-  Bucket update(Bucket bucket, BucketTargetOption... option);
+  Bucket update(Bucket bucket, BucketTargetOption... options);
 
   /**
    * @throws StorageServiceException upon failure
    */
-  Blob update(Blob blob, BlobTargetOption... option);
+  Blob update(Blob blob, BlobTargetOption... options);
 
   /**
    * @throws StorageServiceException upon failure
    */
-  void delete(Bucket bucket, BucketSourceOption... option);
+  void delete(Bucket bucket, BucketSourceOption... options);
 
   /**
    * @throws StorageServiceException upon failure
    */
-  void delete(Blob blob, BlobSourceOption... option);
+  void delete(Blob blob, BlobSourceOption... options);
 
   /**
    * @throws StorageServiceException upon failure
@@ -360,13 +362,19 @@ public interface StorageService extends Service<StorageServiceOptions> {
    */
   Blob copy(CopyRequest copyRequest);
 
-  /**
-   * @throws StorageServiceException upon failure
-   */
-  BlobReadChannel readFrom(Blob blob, BlobSourceOption... option);
 
   /**
    * @throws StorageServiceException upon failure
    */
-  BlobWriteChannel writeTo(Blob blob, BlobTargetOption... option);
+  byte[] load(Blob blob, BlobSourceOption... options);
+
+  /**
+   * @throws StorageServiceException upon failure
+   */
+  BlobReadChannel reader(Blob blob, BlobSourceOption... options);
+
+  /**
+   * @throws StorageServiceException upon failure
+   */
+  BlobWriteChannel writer(Blob blob, BlobTargetOption... options);
 }

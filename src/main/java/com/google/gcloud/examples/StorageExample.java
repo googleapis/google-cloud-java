@@ -18,6 +18,7 @@ package com.google.gcloud.examples;
 
 import com.google.gcloud.storage.*;
 
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -31,12 +32,14 @@ import java.util.Map;
  * <p>
  * This example demonstrates a simple/typical usage.
  * <p>
- * Steps needed for running the example:<ol>
+ * Steps needed for running the example:
+ * <ol>
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
- * <li>run using maven - {@code mvn exec:java
- * -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
- * -Dexec.args="project_id list [<bucket>]|info [<bucket> [<file>]]|get <bucket> <path>|upload <local_file> <bucket> [<path>]|delete <bucket> <path>"}</li>
+ * <li>run using maven -
+ * {@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
+ * -Dexec.args="project_id list [<bucket>]|info [<bucket> [<file>]]|get <bucket> <path>|upload <local_file> <bucket> [<path>]|delete <bucket> <path>"}
+ * </li>
  * </ol>
  */
 public class StorageExample {
@@ -123,11 +126,6 @@ public class StorageExample {
     public void run(StorageService storage, Blob blob) {
       storage.delete(blob);
     }
-
-    @Override
-    public String params() {
-      return "<bucket> <file>";
-    }
   }
 
   private static class ListAction extends StorageAction<String> {
@@ -168,7 +166,7 @@ public class StorageExample {
     @Override
     public void run(StorageService storage, Tuple<Path, Blob> tuple) throws Exception {
       if (Files.size(tuple.first()) > 1_000_000) {
-        // todo upload via streaming API
+        // todo: upload via streaming API
         throw new IllegalArgumentException("file is too big");
       } else {
         byte[] bytes = Files.readAllBytes(tuple.first());
@@ -192,12 +190,28 @@ public class StorageExample {
     }
   }
 
+  private static class GetAction extends BlobAction {
+    @Override
+    public void run(StorageService storage, Blob blob) {
+      blob = storage.get(blob);
+      if (blob == null) {
+        System.out.println("No such object");
+      }
+      if (blob.size() < 1_000_000) {
+        System.out.println(new String(storage.load(blob), StandardCharsets.UTF_8));
+      } else {
+        // todo: download via streaming API
+        throw new IllegalArgumentException("file is too big");
+      }
+    }
+  }
+
   static {
     ACTIONS.put("info", new InfoAction());
     ACTIONS.put("delete", new DeleteAction());
     ACTIONS.put("list", new ListAction());
     ACTIONS.put("upload", new UploadAction());
-    // todo: implement get
+    ACTIONS.put("get", new GetAction());
   }
 
   public static void printUsage() {
@@ -212,8 +226,7 @@ public class StorageExample {
       actionAndParams.append('|');
     }
     actionAndParams.setLength(actionAndParams.length() - 1);
-    System.out.printf("Usage: %s [%s]%n",
-        StorageExample.class.getSimpleName(), actionAndParams);
+    System.out.printf("Usage: %s [%s]%n", StorageExample.class.getSimpleName(), actionAndParams);
   }
 
   @SuppressWarnings("unchecked")
@@ -232,7 +245,7 @@ public class StorageExample {
     }
     StorageServiceOptions options = StorageServiceOptions.builder().project(args[0]).build();
     StorageService storage = StorageServiceFactory.instance().get(options);
-    args = args.length > 2 ? Arrays.copyOfRange(args, 2, args.length): new String []{};
+    args = args.length > 2 ? Arrays.copyOfRange(args, 2, args.length) : new String[] {};
     Object request;
     try {
       request = action.parse(args);

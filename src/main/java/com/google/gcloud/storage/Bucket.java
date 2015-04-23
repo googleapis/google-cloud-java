@@ -60,14 +60,16 @@ public final class Bucket implements Serializable {
 
   static final Function<com.google.api.services.storage.model.Bucket, Bucket> FROM_PB_FUNCTION =
       new Function<com.google.api.services.storage.model.Bucket, Bucket>() {
-        @Override public Bucket apply(com.google.api.services.storage.model.Bucket pb) {
+        @Override
+        public Bucket apply(com.google.api.services.storage.model.Bucket pb) {
           return Bucket.fromPb(pb);
         }
       };
 
   static final Function<Bucket, com.google.api.services.storage.model.Bucket> TO_PB_FUNCTION =
       new Function<Bucket, com.google.api.services.storage.model.Bucket>() {
-        @Override public com.google.api.services.storage.model.Bucket apply(Bucket bucket) {
+        @Override
+        public com.google.api.services.storage.model.Bucket apply(Bucket bucket) {
           return bucket.toPb();
         }
       };
@@ -226,8 +228,7 @@ public final class Bucket implements Serializable {
     private final String value;
 
     public enum Option {
-      DURABLE_REDUCED_AVAILABILITY,
-      STANDARD;
+      DURABLE_REDUCED_AVAILABILITY, STANDARD;
 
       private final StorageClass storageClass;
 
@@ -345,8 +346,7 @@ public final class Bucket implements Serializable {
     private ImmutableList<Acl> acl;
     private ImmutableList<Acl> defaultAcl;
 
-    private Builder() {
-    }
+    private Builder() {}
 
     public Builder name(String name) {
       this.name = checkNotNull(name);
@@ -573,14 +573,16 @@ public final class Bucket implements Serializable {
     }
     if (acl != null) {
       bucketPb.setAcl(transform(acl, new Function<Acl, BucketAccessControl>() {
-        @Override public BucketAccessControl apply(Acl acl) {
+        @Override
+        public BucketAccessControl apply(Acl acl) {
           return acl.toBucketPb();
         }
       }));
     }
     if (defaultAcl != null) {
       bucketPb.setDefaultObjectAcl(transform(defaultAcl, new Function<Acl, ObjectAccessControl>() {
-        @Override public ObjectAccessControl apply(Acl acl) {
+        @Override
+        public ObjectAccessControl apply(Acl acl) {
           return acl.toObjectPb();
         }
       }));
@@ -601,7 +603,8 @@ public final class Bucket implements Serializable {
     if (deleteRules != null) {
       Lifecycle lifecycle = new Lifecycle();
       lifecycle.setRule(transform(deleteRules, new Function<DeleteRule, Rule>() {
-        @Override public Rule apply(DeleteRule deleteRule) {
+        @Override
+        public Rule apply(DeleteRule deleteRule) {
           return deleteRule.toPb();
         }
       }));
@@ -626,7 +629,8 @@ public final class Bucket implements Serializable {
     }
     if (bucketPb.getAcl() != null) {
       builder.acl(transform(bucketPb.getAcl(), new Function<BucketAccessControl, Acl>() {
-        @Override public Acl apply(BucketAccessControl bucketAccessControl) {
+        @Override
+        public Acl apply(BucketAccessControl bucketAccessControl) {
           return Acl.fromPb(bucketAccessControl);
         }
       }));
@@ -654,7 +658,8 @@ public final class Bucket implements Serializable {
     if (bucketPb.getLifecycle() != null && bucketPb.getLifecycle().getRule() != null) {
       builder.deleteRules(transform(bucketPb.getLifecycle().getRule(),
           new Function<Rule, DeleteRule>() {
-            @Override public DeleteRule apply(Rule rule) {
+            @Override
+            public DeleteRule apply(Rule rule) {
               return DeleteRule.fromPb(rule);
             }
           }));
