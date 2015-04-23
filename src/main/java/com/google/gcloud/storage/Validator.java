@@ -18,19 +18,35 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+import java.util.Arrays;
+
 /**
  * Utility to validate Storage type/values.
  */
 public class Validator {
 
+  static void checkBlobOptions(Blob blob, Option... options) {
+    checkBlobOptions("requested", blob, Arrays.asList(options));
+  }
+
   static void checkBlobOptions(String name, Blob blob, Iterable<? extends Option> options) {
     for (Option option : options) {
-      switch (option.name()) {
-        case "ifGenerationMatch":
+      switch (option.rpcOption()) {
+        case IF_GENERATION_MATCH:
           checkArgument(blob.generation() != 0, "%s blob is missing generation", name);
           break;
-        case "ifMetagenerationMatch":
+        case IF_METAGENERATION_MATCH:
           checkArgument(blob.metageneration() != 0, "%s blob is missing metageneration", name);
+          break;
+      }
+    }
+  }
+
+  static void checkBucketOptions(Bucket bucket, Option... options) {
+    for (Option option : options) {
+      switch (option.rpcOption()) {
+        case IF_METAGENERATION_MATCH:
+          checkArgument(bucket.metageneration() != 0, "bucket is missing metageneration");
           break;
       }
     }

@@ -146,7 +146,7 @@ public abstract class ServiceOptions {
       URLConnection connection = url.openConnection();
       connection.setRequestProperty("X-Google-Metadata-Request", "True");
       try (BufferedReader reader =
-               new BufferedReader(new InputStreamReader(connection.getInputStream(), UTF_8))) {
+          new BufferedReader(new InputStreamReader(connection.getInputStream(), UTF_8))) {
         return reader.readLine();
       }
     } catch (IOException ignore) {

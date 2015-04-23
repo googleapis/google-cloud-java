@@ -29,9 +29,7 @@ public final class Acl implements Serializable {
   private final Role role;
 
   public enum Role {
-    OWNER,
-    READER,
-    WRITER
+    OWNER, READER, WRITER
   }
 
   public static abstract class Entity implements Serializable {
@@ -41,11 +39,7 @@ public final class Acl implements Serializable {
     private final String value;
 
     public enum Type {
-      DOMAIN,
-      GROUP,
-      USER,
-      PROJECT,
-      UNKNOWN
+      DOMAIN, GROUP, USER, PROJECT, UNKNOWN
     }
 
     Entity(Type type, String value) {
@@ -162,9 +156,7 @@ public final class Acl implements Serializable {
     private final String projectId;
 
     enum ProjectRole {
-      OWNERS,
-      EDITORS,
-      VIEWERS
+      OWNERS, EDITORS, VIEWERS
     }
 
     Project(ProjectRole pRole, String projectId) {

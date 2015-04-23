@@ -129,7 +129,8 @@ public class ExceptionHandlerTest {
     assertTrue(handler.shouldRetry(new NullPointerException()));
 
     final AtomicReference<RetryResult> before = new AtomicReference<>(RetryResult.ABORT);
-    @SuppressWarnings("serial") Interceptor interceptor = new Interceptor() {
+    @SuppressWarnings("serial")
+    Interceptor interceptor = new Interceptor() {
 
       @Override
       public RetryResult afterEval(Exception exception, RetryResult retryResult) {

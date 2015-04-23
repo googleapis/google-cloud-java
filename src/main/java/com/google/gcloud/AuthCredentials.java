@@ -42,8 +42,8 @@ public abstract class AuthCredentials {
   private static class AppEngineAuthCredentials extends AuthCredentials {
 
     @Override
-    protected HttpRequestInitializer httpRequestInitializer(
-        HttpTransport transport, Set<String> scopes) {
+    protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
+        Set<String> scopes) {
       return new AppIdentityCredential(scopes);
     }
   }
@@ -85,8 +85,8 @@ public abstract class AuthCredentials {
     return new AppEngineAuthCredentials();
   }
 
-  public static AuthCredentials createForComputeEngine()
-      throws IOException, GeneralSecurityException {
+  public static AuthCredentials createForComputeEngine() throws IOException,
+      GeneralSecurityException {
     final ComputeCredential cred = getComputeCredential();
     return new AuthCredentials() {
       @Override
@@ -100,10 +100,12 @@ public abstract class AuthCredentials {
   /**
    * Returns the Application Default Credentials.
    *
-   * <p>Returns the Application Default Credentials which are credentials that identify and
-   * authorize the whole application. This is the built-in service account if running on Google
-   * Compute Engine or the credentials file from the path in the environment variable
-   * GOOGLE_APPLICATION_CREDENTIALS.</p>
+   * <p>
+   * Returns the Application Default Credentials which are credentials that identify and authorize
+   * the whole application. This is the built-in service account if running on Google Compute Engine
+   * or the credentials file from the path in the environment variable
+   * GOOGLE_APPLICATION_CREDENTIALS.
+   * </p>
    *
    * @return the credentials instance.
    * @throws IOException if the credentials cannot be created in the current environment.
