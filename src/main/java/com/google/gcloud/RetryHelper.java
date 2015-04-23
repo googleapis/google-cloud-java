@@ -35,9 +35,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Utility class for retrying operations.
- * For more details about the parameters, see {@link RetryParams}.
- * If the request is never successful, a {@link RetriesExhaustedException} will be thrown.
+ * Utility class for retrying operations. For more details about the parameters, see
+ * {@link RetryParams}. If the request is never successful, a {@link RetriesExhaustedException} will
+ * be thrown.
  *
  * @param <V> return value of the closure that is being run with retries
  */
@@ -201,8 +201,8 @@ public class RetryHelper<V> {
       }
       long sleepDurationMillis = getSleepDuration(params, attemptNumber);
       if (log.isLoggable(Level.FINE)) {
-        log.fine(this + ": Attempt #" + attemptNumber + " failed [" + exception + "], sleeping for "
-            + sleepDurationMillis + " ms");
+        log.fine(this + ": Attempt #" + attemptNumber + " failed [" + exception
+            + "], sleeping for " + sleepDurationMillis + " ms");
       }
       try {
         Thread.sleep(sleepDurationMillis);

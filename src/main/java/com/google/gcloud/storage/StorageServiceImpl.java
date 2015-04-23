@@ -20,6 +20,7 @@ import static com.google.gcloud.RetryHelper.runWithRetries;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.gcloud.BaseService;
@@ -28,34 +29,34 @@ import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Callable;
 
 final class StorageServiceImpl extends BaseService<StorageServiceOptions> implements StorageService {
 
-  private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR =
-      new Interceptor() {
+  private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
 
-        private static final long serialVersionUID = -7758580330857881124L;
+    private static final long serialVersionUID = -7758580330857881124L;
 
-        @Override
-        public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-          return null;
-        }
+    @Override
+    public RetryResult afterEval(Exception exception, RetryResult retryResult) {
+      return null;
+    }
 
-        @Override
-        public RetryResult beforeEval(Exception exception) {
-          if (exception instanceof StorageServiceException) {
-            boolean retriable = ((StorageServiceException) exception).retryable();
-            return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.ABORT;
-          }
-          return null;
-        }
-      };
+    @Override
+    public RetryResult beforeEval(Exception exception) {
+      if (exception instanceof StorageServiceException) {
+        boolean retriable = ((StorageServiceException) exception).retryable();
+        return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.ABORT;
+      }
+      return null;
+    }
+  };
   private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
-      .abortOn(RuntimeException.class)
-      .interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
+      .abortOn(RuntimeException.class).interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
 
   private final StorageRpc storageRpc;
   private final RetryParams retryParams;
@@ -68,56 +69,68 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Bucket create(Bucket bucket, final BucketTargetOption... options) {
+  public Bucket create(Bucket bucket, BucketTargetOption... options) {
+    Validator.checkBucketOptions(bucket, options);
     final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     return Bucket.fromPb(runWithRetries(
         new Callable<com.google.api.services.storage.model.Bucket>() {
-          @Override public com.google.api.services.storage.model.Bucket call() {
-            return storageRpc.create(bucketPb, options);
+          @Override
+          public com.google.api.services.storage.model.Bucket call() {
+            return storageRpc.create(bucketPb, optionsMap);
           }
         }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public Blob create(Blob blob, final byte[] content, final BlobTargetOption... options) {
+  public Blob create(Blob blob, final byte[] content, BlobTargetOption... options) {
+    Validator.checkBlobOptions(blob, options);
     final StorageObject blobPb = blob.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
-          @Override public StorageObject call() {
-            return storageRpc.create(blobPb, content, options);
-          }
-        }, retryParams, EXCEPTION_HANDLER));
+      @Override
+      public StorageObject call() {
+        return storageRpc.create(blobPb, content, optionsMap);
+      }
+    }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public Bucket get(Bucket bucket, final BucketSourceOption... options) {
+  public Bucket get(Bucket bucket, BucketSourceOption... options) {
+    Validator.checkBucketOptions(bucket, options);
     final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     return Bucket.fromPb(runWithRetries(
         new Callable<com.google.api.services.storage.model.Bucket>() {
-          @Override public com.google.api.services.storage.model.Bucket call() {
-            return storageRpc.get(bucketPb, options);
+          @Override
+          public com.google.api.services.storage.model.Bucket call() {
+            return storageRpc.get(bucketPb, optionsMap);
           }
         }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public Blob get(Blob blob, final BlobSourceOption... options) {
+  public Blob get(Blob blob, BlobSourceOption... options) {
+    Validator.checkBlobOptions(blob, options);
     final StorageObject storedObject = blob.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
-      @Override public StorageObject call() {
-        return storageRpc.get(storedObject, options);
+      @Override
+      public StorageObject call() {
+        return storageRpc.get(storedObject, optionsMap);
       }
     }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
   public Iterator<Bucket> list() {
-    return Iterators.transform(runWithRetries(
-        new Callable<Iterator<com.google.api.services.storage.model.Bucket>>() {
-          @Override public Iterator<com.google.api.services.storage.model.Bucket> call() {
+    return Iterators.transform(
+        runWithRetries(new Callable<Iterator<com.google.api.services.storage.model.Bucket>>() {
+          @Override
+          public Iterator<com.google.api.services.storage.model.Bucket> call() {
             return storageRpc.list();
           }
-        }, retryParams, EXCEPTION_HANDLER),
-        Bucket.FROM_PB_FUNCTION);
+        }, retryParams, EXCEPTION_HANDLER), Bucket.FROM_PB_FUNCTION);
   }
 
   @Override
@@ -126,48 +139,59 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     String delimiter = settings.recursive() ? options().pathDelimiter() : null;
     return Iterators.transform(
         storageRpc.list(bucket, settings.prefix(), delimiter, settings.cursor(),
-            settings.includeOlderVersions(), settings.maxResults()),
-        Blob.FROM_PB_FUNCTION);
+            settings.includeOlderVersions(), settings.maxResults()), Blob.FROM_PB_FUNCTION);
   }
 
   @Override
-  public Bucket update(Bucket bucket, final BucketTargetOption... options) {
+  public Bucket update(Bucket bucket, BucketTargetOption... options) {
+    Validator.checkBucketOptions(bucket, options);
     final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     return Bucket.fromPb(runWithRetries(
         new Callable<com.google.api.services.storage.model.Bucket>() {
-          @Override public com.google.api.services.storage.model.Bucket call() {
-            return storageRpc.patch(bucketPb, options);
+          @Override
+          public com.google.api.services.storage.model.Bucket call() {
+            return storageRpc.patch(bucketPb, optionsMap);
           }
         }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public Blob update(Blob blob, final BlobTargetOption... options) {
+  public Blob update(Blob blob, BlobTargetOption... options) {
+    Validator.checkBlobOptions(blob, options);
     final StorageObject storageObject = blob.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
-      @Override public StorageObject call() {
-        return storageRpc.patch(storageObject, options);
+      @Override
+      public StorageObject call() {
+        return storageRpc.patch(storageObject, optionsMap);
       }
     }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public void delete(Bucket bucket, final BucketSourceOption... options) {
+  public void delete(Bucket bucket, BucketSourceOption... options) {
+    Validator.checkBucketOptions(bucket, options);
     final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     runWithRetries(new Callable<Void>() {
-      @Override public Void call() {
-        storageRpc.delete(bucketPb, options);
+      @Override
+      public Void call() {
+        storageRpc.delete(bucketPb, optionsMap);
         return null;
       }
     }, retryParams, EXCEPTION_HANDLER);
   }
 
   @Override
-  public void delete(Blob blob, final BlobSourceOption... options) {
+  public void delete(Blob blob, BlobSourceOption... options) {
+    Validator.checkBlobOptions(blob, options);
     final StorageObject storageObject = blob.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     runWithRetries(new Callable<Void>() {
-      @Override public Void call() {
-        storageRpc.delete(storageObject, options);
+      @Override
+      public Void call() {
+        storageRpc.delete(storageObject, optionsMap);
         return null;
       }
     }, retryParams, EXCEPTION_HANDLER);
@@ -179,39 +203,70 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
         Lists.newArrayListWithCapacity(composeRequest.sourceBlobs().size());
     for (ComposeRequest.SourceBlob sourceBlob : composeRequest.sourceBlobs()) {
       sources.add(Blob.builder(composeRequest.sourceBucket(), sourceBlob.blob)
-          .generation(sourceBlob.generation)
-          .build()
-          .toPb());
+          .generation(sourceBlob.generation).build().toPb());
     }
     final StorageObject target = composeRequest.target().toPb();
+    final Map<StorageRpc.Option, ?> targetOptions = optionMap(composeRequest.targetOptions());
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
-      @Override public StorageObject call() {
-        return storageRpc.compose(sources, target, composeRequest.targetOptions());
+      @Override
+      public StorageObject call() {
+        return storageRpc.compose(sources, target, targetOptions);
       }
     }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public Blob copy(final CopyRequest copyRequest) {
+  public Blob copy(CopyRequest copyRequest) {
     final StorageObject source = copyRequest.source().toPb();
+    final Map<StorageRpc.Option, ?> sourceOptions = optionMap(copyRequest.sourceOptions());
     final StorageObject target = copyRequest.target().toPb();
+    final Map<StorageRpc.Option, ?> targetOptions = optionMap(copyRequest.targetOptions());
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
-      @Override public StorageObject call() {
-        return storageRpc.copy(source, copyRequest.sourceOptions(), target,
-            copyRequest.targetOptions());
+      @Override
+      public StorageObject call() {
+        return storageRpc.copy(source, sourceOptions, target, targetOptions);
       }
     }, retryParams, EXCEPTION_HANDLER));
   }
 
   @Override
-  public BlobReadChannel readFrom(Blob blob, BlobSourceOption... options) {
-    // todo: Use retry helper on retriable failures
-    return storageRpc.reader(blob.toPb(), options);
+  public byte[] load(Blob blob, BlobSourceOption... options) {
+    Validator.checkBlobOptions(blob, options);
+    final StorageObject storageObject = blob.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    return runWithRetries(new Callable<byte[]>() {
+      @Override
+      public byte[] call() {
+        return storageRpc.load(storageObject, optionsMap);
+      }
+    }, retryParams, EXCEPTION_HANDLER);
   }
 
   @Override
-  public BlobWriteChannel writeTo(Blob blob, BlobTargetOption... options) {
+  public BlobReadChannel reader(Blob blob, BlobSourceOption... options) {
+    Validator.checkBlobOptions(blob, options);
     // todo: Use retry helper on retriable failures
-    return storageRpc.writer(blob.toPb(), options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    return storageRpc.reader(blob.toPb(), optionsMap);
+  }
+
+  @Override
+  public BlobWriteChannel writer(Blob blob, BlobTargetOption... options) {
+    Validator.checkBlobOptions(blob, options);
+    // todo: Use retry helper on retriable failures
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    return storageRpc.writer(blob.toPb(), optionsMap);
+  }
+
+  private static Map<StorageRpc.Option, ?> optionMap(Iterable<? extends Option> options) {
+    ImmutableMap.Builder<StorageRpc.Option, Object> mapBuider = ImmutableMap.builder();
+    for (Option option : options) {
+      mapBuider.put(option.rpcOption(), option.value());
+    }
+    return mapBuider.build();
+  }
+
+  private static Map<StorageRpc.Option, ?> optionMap(Option... options) {
+    return optionMap(Arrays.asList(options));
   }
 }

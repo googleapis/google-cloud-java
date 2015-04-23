@@ -23,9 +23,9 @@ import java.nio.channels.ReadableByteChannel;
 /**
  * A channel for reading data from a Google Cloud Storage object.
  *
- *  Implementations of this class may buffer data internally to reduce remote calls.
+ * Implementations of this class may buffer data internally to reduce remote calls.
  *
- *  This class is @{link Serializable}, which allows incremental reads.
+ * This class is @{link Serializable}, which allows incremental reads.
  */
 public interface BlobReadChannel extends ReadableByteChannel, Serializable, Closeable {
 

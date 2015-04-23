@@ -18,29 +18,32 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.MoreObjects;
+import com.google.gcloud.spi.StorageRpc;
+
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Base class for Storage operation option
  */
-public class Option implements Serializable {
+class Option implements Serializable {
 
   private static final long serialVersionUID = -73199088766477208L;
 
-  private final String name;
+  private final StorageRpc.Option rpcOption;
   private final Object value;
 
-  Option(String name, Object value) {
-    this.name = checkNotNull(name);
-    this.value = value;
+  Option(StorageRpc.Option rpcOption, Object value) {
+    this.rpcOption = checkNotNull(rpcOption);
+    this.value = checkNotNull(value);
   }
 
-  public String name() {
-    return name;
+  StorageRpc.Option rpcOption() {
+    return rpcOption;
   }
 
-  public Object value() {
+  Object value() {
     return value;
   }
 
@@ -50,12 +53,20 @@ public class Option implements Serializable {
       return false;
     }
     Option other = (Option) obj;
-    return Objects.equals(name, other.name)
+    return Objects.equals(rpcOption, other.rpcOption)
         && Objects.equals(value, other.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, value);
+    return Objects.hash(rpcOption, value);
+  }
+
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("name", rpcOption.value())
+        .add("value", value)
+        .toString();
   }
 }
