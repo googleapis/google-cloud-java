@@ -24,6 +24,7 @@ import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.gcloud.spi.ServiceRpcFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -34,7 +35,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Set;
 
-public abstract class ServiceOptions implements Serializable {
+public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final long serialVersionUID = 1203687993961393350L;
@@ -43,6 +44,7 @@ public abstract class ServiceOptions implements Serializable {
   private final HttpTransportFactory httpTransportFactory;
   private final AuthCredentials authCredentials;
   private final RetryParams retryParams;
+  private final ServiceRpcFactory<R, O> serviceRpcFactory;
 
   public interface HttpTransportFactory extends Serializable {
     HttpTransport create();
@@ -72,12 +74,14 @@ public abstract class ServiceOptions implements Serializable {
     }
   }
 
-  protected abstract static class Builder<B extends Builder<B>> {
+  protected abstract static class Builder<R, O extends ServiceOptions<R, O>,
+      B extends Builder<R, O, B>> {
 
     private String host;
     private HttpTransportFactory httpTransportFactory;
     private AuthCredentials authCredentials;
     private RetryParams retryParams;
+    private ServiceRpcFactory<R, O> serviceRpcFactory;
 
     protected Builder() {}
 
@@ -86,6 +90,7 @@ public abstract class ServiceOptions implements Serializable {
       httpTransportFactory = options.httpTransportFactory;
       authCredentials = options.authCredentials;
       retryParams = options.retryParams;
+      serviceRpcFactory = options.serviceRpcFactory;
     }
 
     protected abstract ServiceOptions build();
@@ -114,14 +119,20 @@ public abstract class ServiceOptions implements Serializable {
       this.retryParams = retryParams;
       return self();
     }
+
+    public B serviceRpcFactory(ServiceRpcFactory<R, O> serviceRpcFactory) {
+      this.serviceRpcFactory = serviceRpcFactory;
+      return self();
+    }
   }
 
-  protected ServiceOptions(Builder<?> builder) {
+  protected ServiceOptions(Builder<R, O, ?> builder) {
     host = firstNonNull(builder.host, DEFAULT_HOST);
     httpTransportFactory =
         firstNonNull(builder.httpTransportFactory, new DefaultHttpTransportFactory());
     authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
     retryParams = builder.retryParams;
+    serviceRpcFactory = builder.serviceRpcFactory;
   }
 
   private static AuthCredentials defaultAuthCredentials() {
@@ -204,10 +215,14 @@ public abstract class ServiceOptions implements Serializable {
     return retryParams;
   }
 
+  public ServiceRpcFactory<R, O> serviceRpcFactory() {
+    return serviceRpcFactory;
+  }
+
   public HttpRequestInitializer httpRequestInitializer() {
     HttpTransport httpTransport = httpTransportFactory.create();
     return authCredentials().httpRequestInitializer(httpTransport, scopes());
   }
 
-  public abstract Builder<?> toBuilder();
+  public abstract Builder<R, O, ?> toBuilder();
 }
