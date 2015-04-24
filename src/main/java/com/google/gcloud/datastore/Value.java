@@ -85,6 +85,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     protected abstract void setValue(P from, DatastoreV1.Value.Builder to);
   }
 
+  @SuppressWarnings("deprecation")
   abstract static class BaseBuilder<V, P extends Value<V>, B extends BaseBuilder<V, P, B>>
       implements ValueBuilder<V, P, B> {
 
@@ -102,7 +103,6 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
       return valueType;
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public B mergeFrom(P other) {
       indexed = other.indexed();
