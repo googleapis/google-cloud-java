@@ -25,22 +25,22 @@ import com.google.gcloud.spi.StorageRpc;
 
 import java.util.Set;
 
-public class StorageServiceOptions extends ServiceOptions {
+public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageServiceOptions> {
 
+  private static final long serialVersionUID = -7804860602287801084L;
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
   private static final String DEFAULT_PATH_DELIMITER = "/";
   private static final String PROJECT_ENV_NAME = "default_project_id";
 
-  private final StorageRpc storageRpc;
   private final String project;
   private final String pathDelimiter;
 
-  public static class Builder extends ServiceOptions.Builder<Builder> {
+  public static class Builder extends
+      ServiceOptions.Builder<StorageRpc, StorageServiceOptions, Builder> {
 
     private String project;
     private String pathDelimiter;
-    private StorageRpc storageRpc;
 
     private Builder() {}
 
@@ -58,11 +58,6 @@ public class StorageServiceOptions extends ServiceOptions {
       return this;
     }
 
-    public Builder storageRpc(StorageRpc storageRpc) {
-      this.storageRpc = storageRpc;
-      return this;
-    }
-
     @Override
     public StorageServiceOptions build() {
       return new StorageServiceOptions(this);
@@ -74,7 +69,6 @@ public class StorageServiceOptions extends ServiceOptions {
     pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
     project = builder.project != null ? builder.project : defaultProject();
     Preconditions.checkArgument(project != null, "Missing required project id");
-    storageRpc = MoreObjects.firstNonNull(builder.storageRpc, ServiceRpcProvider.storage(this));
   }
 
   @Override
@@ -82,8 +76,11 @@ public class StorageServiceOptions extends ServiceOptions {
     return SCOPES;
   }
 
-  public StorageRpc storageRpc() {
-    return storageRpc;
+  StorageRpc storageRpc() {
+    if (serviceRpcFactory() != null) {
+      return serviceRpcFactory().create(this);
+    }
+    return ServiceRpcProvider.storage(this);
   }
 
   public String project() {
