@@ -33,6 +33,7 @@ import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Objects;
 import java.util.Set;
 
 public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implements Serializable {
@@ -50,9 +51,9 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
     HttpTransport create();
   }
 
-  private static class DefaultHttpTransportFactory implements HttpTransportFactory {
+  private enum DefaultHttpTransportFactory implements HttpTransportFactory {
 
-    private static final long serialVersionUID = 2684907202489506911L;
+    INSTANCE;
 
     @Override
     public HttpTransport create() {
@@ -85,7 +86,7 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
 
     protected Builder() {}
 
-    protected Builder(ServiceOptions options) {
+    protected Builder(ServiceOptions<R, O> options) {
       host = options.host;
       httpTransportFactory = options.httpTransportFactory;
       authCredentials = options.authCredentials;
@@ -129,7 +130,7 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
   protected ServiceOptions(Builder<R, O, ?> builder) {
     host = firstNonNull(builder.host, DEFAULT_HOST);
     httpTransportFactory =
-        firstNonNull(builder.httpTransportFactory, new DefaultHttpTransportFactory());
+        firstNonNull(builder.httpTransportFactory, DefaultHttpTransportFactory.INSTANCE);
     authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
     retryParams = builder.retryParams;
     serviceRpcFactory = builder.serviceRpcFactory;
@@ -222,6 +223,20 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
   public HttpRequestInitializer httpRequestInitializer() {
     HttpTransport httpTransport = httpTransportFactory.create();
     return authCredentials().httpRequestInitializer(httpTransport, scopes());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(host, httpTransportFactory, authCredentials, retryParams,
+        serviceRpcFactory);
+  }
+
+  protected boolean isEquals(ServiceOptions other) {
+    return Objects.equals(host, other.host)
+        && Objects.equals(httpTransportFactory, other.httpTransportFactory)
+        && Objects.equals(authCredentials, other.authCredentials)
+        && Objects.equals(retryParams, other.retryParams)
+        && Objects.equals(serviceRpcFactory, other.serviceRpcFactory);
   }
 
   public abstract Builder<R, O, ?> toBuilder();

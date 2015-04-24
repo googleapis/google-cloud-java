@@ -32,6 +32,7 @@ import com.google.gcloud.spi.ServiceRpcProvider;
 
 import java.lang.reflect.Method;
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.Set;
 
 public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, DatastoreServiceOptions> {
@@ -172,6 +173,23 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
   @Override
   public Builder toBuilder() {
     return new Builder(this);
+  }
+
+  @Override
+  public int hashCode() {
+    return super.hashCode() ^ Objects.hash(dataset, namespace, force, normalizeDataset);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof DatastoreServiceOptions)) {
+      return false;
+    }
+    DatastoreServiceOptions other = (DatastoreServiceOptions) obj;
+    return isEquals(other) && Objects.equals(dataset, other.dataset)
+        && Objects.equals(namespace, other.namespace)
+        && Objects.equals(force, other.force)
+        && Objects.equals(normalizeDataset, other.normalizeDataset);
   }
 
   DatastoreRpc datastoreRpc() {
