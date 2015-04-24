@@ -114,7 +114,7 @@ public abstract class AuthCredentials implements Serializable {
   private static class ApplicationDefaultAuthCredentials extends AuthCredentials {
 
     private static final long serialVersionUID = -8306873864136099893L;
-    
+
     private transient GoogleCredentials googleCredentials;
 
     ApplicationDefaultAuthCredentials() throws IOException {

@@ -28,24 +28,54 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Set;
 
-public abstract class ServiceOptions {
+public abstract class ServiceOptions implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
+  private static final long serialVersionUID = 1203687993961393350L;
 
   private final String host;
-  private final HttpTransport httpTransport;
+  private final HttpTransportFactory httpTransportFactory;
   private final AuthCredentials authCredentials;
   private final RetryParams retryParams;
+
+  public interface HttpTransportFactory extends Serializable {
+    HttpTransport create();
+  }
+
+  private static class DefaultHttpTransportFactory implements HttpTransportFactory {
+
+    private static final long serialVersionUID = 2684907202489506911L;
+
+    @Override
+    public HttpTransport create() {
+      // Consider App Engine
+      if (appEngineAppId() != null) {
+        try {
+          return new UrlFetchTransport();
+        } catch (Exception ignore) {
+          // Maybe not on App Engine
+        }
+      }
+      // Consider Compute
+      try {
+        return AuthCredentials.getComputeCredential().getTransport();
+      } catch (Exception e) {
+        // Maybe not on GCE
+      }
+      return new NetHttpTransport();
+    }
+  }
 
   protected abstract static class Builder<B extends Builder<B>> {
 
     private String host;
-    private HttpTransport httpTransport;
+    private HttpTransportFactory httpTransportFactory;
     private AuthCredentials authCredentials;
     private RetryParams retryParams;
 
@@ -53,7 +83,7 @@ public abstract class ServiceOptions {
 
     protected Builder(ServiceOptions options) {
       host = options.host;
-      httpTransport = options.httpTransport;
+      httpTransportFactory = options.httpTransportFactory;
       authCredentials = options.authCredentials;
       retryParams = options.retryParams;
     }
@@ -70,8 +100,8 @@ public abstract class ServiceOptions {
       return self();
     }
 
-    public B httpTransport(HttpTransport httpTransport) {
-      this.httpTransport = httpTransport;
+    public B httpTransportFactory(HttpTransportFactory httpTransportFactory) {
+      this.httpTransportFactory = httpTransportFactory;
       return self();
     }
 
@@ -88,27 +118,10 @@ public abstract class ServiceOptions {
 
   protected ServiceOptions(Builder<?> builder) {
     host = firstNonNull(builder.host, DEFAULT_HOST);
-    httpTransport = firstNonNull(builder.httpTransport, defaultHttpTransport());
+    httpTransportFactory =
+        firstNonNull(builder.httpTransportFactory, new DefaultHttpTransportFactory());
     authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
     retryParams = builder.retryParams;
-  }
-
-  private static HttpTransport defaultHttpTransport() {
-    // Consider App Engine
-    if (appEngineAppId() != null) {
-      try {
-        return new UrlFetchTransport();
-      } catch (Exception ignore) {
-        // Maybe not on App Engine
-      }
-    }
-    // Consider Compute
-    try {
-      return AuthCredentials.getComputeCredential().getTransport();
-    } catch (Exception e) {
-      // Maybe not on GCE
-    }
-    return new NetHttpTransport();
   }
 
   private static AuthCredentials defaultAuthCredentials() {
@@ -179,8 +192,8 @@ public abstract class ServiceOptions {
     return host;
   }
 
-  public HttpTransport httpTransport() {
-    return httpTransport;
+  public HttpTransportFactory httpTransportFactory() {
+    return httpTransportFactory;
   }
 
   public AuthCredentials authCredentials() {
@@ -192,6 +205,7 @@ public abstract class ServiceOptions {
   }
 
   public HttpRequestInitializer httpRequestInitializer() {
+    HttpTransport httpTransport = httpTransportFactory.create();
     return authCredentials().httpRequestInitializer(httpTransport, scopes());
   }
 
