@@ -34,25 +34,25 @@ import java.lang.reflect.Method;
 import java.util.Iterator;
 import java.util.Set;
 
-public class DatastoreServiceOptions extends ServiceOptions {
+public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, DatastoreServiceOptions> {
 
+  private static final long serialVersionUID = -8636602944160689193L;
   private static final String DATASET_ENV_NAME = "DATASTORE_DATASET";
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final String USERINFO_SCOPE = "https://www.googleapis.com/auth/userinfo.email";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE, USERINFO_SCOPE);
+
   private final String dataset;
   private final String namespace;
   private final boolean force;
-  private final DatastoreRpc datastoreRpc;
   private final boolean normalizeDataset;
-  private final boolean defaultDatastoreRpc;
 
-  public static class Builder extends ServiceOptions.Builder<Builder> {
+  public static class Builder extends
+      ServiceOptions.Builder<DatastoreRpc, DatastoreServiceOptions, Builder> {
 
     private String dataset;
     private String namespace;
     private boolean force;
-    private DatastoreRpc datastoreRpc;
     private boolean normalizeDataset = true;
 
     private Builder() {
@@ -63,7 +63,6 @@ public class DatastoreServiceOptions extends ServiceOptions {
       dataset = options.dataset;
       force = options.force;
       namespace = options.namespace;
-      datastoreRpc = options.datastoreRpc;
       normalizeDataset = options.normalizeDataset;
     }
 
@@ -71,11 +70,6 @@ public class DatastoreServiceOptions extends ServiceOptions {
     public DatastoreServiceOptions build() {
       DatastoreServiceOptions options = new DatastoreServiceOptions(this);
       return normalizeDataset ? options.normalize() : options;
-    }
-
-    public Builder datastoreRpc(DatastoreRpc datastoreRpc) {
-      this.datastoreRpc = datastoreRpc;
-      return this;
     }
 
     public Builder dataset(String dataset) {
@@ -105,8 +99,6 @@ public class DatastoreServiceOptions extends ServiceOptions {
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
     force = builder.force;
     dataset = firstNonNull(builder.dataset, defaultDataset());
-    datastoreRpc = firstNonNull(builder.datastoreRpc, ServiceRpcProvider.datastore(this));
-    defaultDatastoreRpc = builder.datastoreRpc == null;
   }
 
   private DatastoreServiceOptions normalize() {
@@ -123,7 +115,7 @@ public class DatastoreServiceOptions extends ServiceOptions {
         .build();
     requestPb.addKey(key);
     try {
-      LookupResponse responsePb = datastoreRpc.lookup(requestPb.build());
+      LookupResponse responsePb = datastoreRpc().lookup(requestPb.build());
       if (responsePb.getDeferredCount() > 0) {
         key = responsePb.getDeferred(0);
       } else {
@@ -132,9 +124,6 @@ public class DatastoreServiceOptions extends ServiceOptions {
         key = combinedIter.next().getEntity().getKey();
       }
       builder.dataset(key.getPartitionId().getDatasetId());
-      if (defaultDatastoreRpc && !dataset.equals(builder.dataset)) {
-        builder.datastoreRpc(ServiceRpcProvider.datastore(builder.build()));
-      }
       return new DatastoreServiceOptions(builder);
     } catch (DatastoreRpcException e) {
       throw DatastoreServiceException.translateAndThrow(e);
@@ -185,8 +174,11 @@ public class DatastoreServiceOptions extends ServiceOptions {
     return new Builder(this);
   }
 
-  public DatastoreRpc datastoreRpc() {
-    return datastoreRpc;
+  DatastoreRpc datastoreRpc() {
+    if (serviceRpcFactory() != null) {
+      return serviceRpcFactory().create(this);
+    }
+    return ServiceRpcProvider.datastore(this);
   }
 
   public static Builder builder() {

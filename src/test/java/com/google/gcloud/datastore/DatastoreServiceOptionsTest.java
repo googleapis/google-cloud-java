@@ -23,6 +23,7 @@ import static junit.framework.TestCase.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.gcloud.spi.DatastoreRpc;
+import com.google.gcloud.spi.DatastoreRpcFactory;
 
 import org.easymock.EasyMock;
 import org.junit.Before;
@@ -33,17 +34,23 @@ import java.io.IOException;
 public class DatastoreServiceOptionsTest {
 
   private static final String DATASET = "dataset";
+  private DatastoreRpcFactory datastoreRpcFactory;
   private DatastoreRpc datastoreRpc;
   private DatastoreServiceOptions.Builder options;
 
   @Before
   public void setUp() throws IOException, InterruptedException {
+    datastoreRpcFactory = EasyMock.createMock(DatastoreRpcFactory.class);
     datastoreRpc = EasyMock.createMock(DatastoreRpc.class);
     options = DatastoreServiceOptions.builder()
         .normalizeDataset(false)
-        .datastoreRpc(datastoreRpc)
+        .serviceRpcFactory(datastoreRpcFactory)
         .dataset(DATASET)
         .host("http://localhost:" + LocalGcdHelper.PORT);
+    EasyMock.expect(datastoreRpcFactory.create(EasyMock.anyObject(DatastoreServiceOptions.class)))
+        .andReturn(datastoreRpc)
+        .anyTimes();
+    EasyMock.replay(datastoreRpcFactory, datastoreRpc);
   }
 
   @Test
@@ -70,6 +77,7 @@ public class DatastoreServiceOptionsTest {
 
   @Test
   public void testDatastore() throws Exception {
+    assertSame(datastoreRpcFactory, options.build().serviceRpcFactory());
     assertSame(datastoreRpc, options.build().datastoreRpc());
   }
 
