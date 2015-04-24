@@ -30,6 +30,8 @@ import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.security.GeneralSecurityException;
 import java.security.PrivateKey;
 import java.util.Set;
@@ -37,9 +39,13 @@ import java.util.Set;
 /**
  * Credentials for accessing Google Cloud services.
  */
-public abstract class AuthCredentials {
+public abstract class AuthCredentials implements Serializable {
+
+  private static final long serialVersionUID = 236297804453464604L;
 
   private static class AppEngineAuthCredentials extends AuthCredentials {
+
+    private static final long serialVersionUID = 7931300552744202954L;
 
     @Override
     protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
@@ -50,6 +56,7 @@ public abstract class AuthCredentials {
 
   private static class ServiceAccountAuthCredentials extends AuthCredentials {
 
+    private static final long serialVersionUID = 8007708734318445901L;
     private final String account;
     private final PrivateKey privateKey;
 
@@ -78,6 +85,54 @@ public abstract class AuthCredentials {
     }
   }
 
+  private static class ComputeEngineAuthCredentials extends AuthCredentials {
+
+    private static final long serialVersionUID = -5217355402127260144L;
+
+    private transient ComputeCredential computeCredential;
+
+    ComputeEngineAuthCredentials() throws IOException, GeneralSecurityException {
+      computeCredential = getComputeCredential();
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+      in.defaultReadObject();
+      try {
+        computeCredential = getComputeCredential();
+      } catch (GeneralSecurityException e) {
+       throw new IOException(e);
+      }
+    }
+
+    @Override
+    protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
+        Set<String> scopes) {
+      return computeCredential;
+    }
+  }
+
+  private static class ApplicationDefaultAuthCredentials extends AuthCredentials {
+
+    private static final long serialVersionUID = -8306873864136099893L;
+    
+    private transient GoogleCredentials googleCredentials;
+
+    ApplicationDefaultAuthCredentials() throws IOException {
+      googleCredentials = GoogleCredentials.getApplicationDefault();
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+      in.defaultReadObject();
+      googleCredentials =  GoogleCredentials.getApplicationDefault();
+    }
+
+    @Override
+    protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
+        Set<String> scopes) {
+      return new HttpCredentialsAdapter(googleCredentials);
+    }
+  }
+
   protected abstract HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
       Set<String> scopes);
 
@@ -85,16 +140,9 @@ public abstract class AuthCredentials {
     return new AppEngineAuthCredentials();
   }
 
-  public static AuthCredentials createForComputeEngine() throws IOException,
-      GeneralSecurityException {
-    final ComputeCredential cred = getComputeCredential();
-    return new AuthCredentials() {
-      @Override
-      protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
-          Set<String> scopes) {
-        return cred;
-      }
-    };
+  public static AuthCredentials createForComputeEngine()
+      throws IOException, GeneralSecurityException {
+    return new ComputeEngineAuthCredentials();
   }
 
   /**
@@ -111,14 +159,7 @@ public abstract class AuthCredentials {
    * @throws IOException if the credentials cannot be created in the current environment.
    */
   public static AuthCredentials createApplicationDefaults() throws IOException {
-    final GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
-    return new AuthCredentials() {
-      @Override
-      protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
-          Set<String> scopes) {
-        return new HttpCredentialsAdapter(credentials);
-      }
-    };
+    return new ApplicationDefaultAuthCredentials();
   }
 
   public static AuthCredentials createFor(String account, PrivateKey privateKey) {
