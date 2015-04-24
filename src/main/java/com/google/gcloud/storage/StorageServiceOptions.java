@@ -23,6 +23,7 @@ import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.spi.ServiceRpcProvider;
 import com.google.gcloud.spi.StorageRpc;
 
+import java.util.Objects;
 import java.util.Set;
 
 public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageServiceOptions> {
@@ -94,6 +95,21 @@ public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageSer
   @Override
   public Builder toBuilder() {
     return new Builder(this);
+  }
+
+  @Override
+  public int hashCode() {
+    return super.hashCode() ^ Objects.hash(project, pathDelimiter);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof StorageServiceOptions)) {
+      return false;
+    }
+    StorageServiceOptions other = (StorageServiceOptions) obj;
+    return isEquals(other) && Objects.equals(project, other.project)
+        && Objects.equals(pathDelimiter, other.pathDelimiter);
   }
 
   private static String defaultProject() {

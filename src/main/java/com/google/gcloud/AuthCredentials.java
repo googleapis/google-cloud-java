@@ -31,9 +31,11 @@ import com.google.auth.oauth2.GoogleCredentials;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.security.GeneralSecurityException;
 import java.security.PrivateKey;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -47,10 +49,16 @@ public abstract class AuthCredentials implements Serializable {
 
     private static final long serialVersionUID = 7931300552744202954L;
 
+    private static final AuthCredentials INSTANCE = new AppEngineAuthCredentials();
+
     @Override
     protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
         Set<String> scopes) {
       return new AppIdentityCredential(scopes);
+    }
+
+    private Object readResolve() throws ObjectStreamException {
+      return INSTANCE;
     }
   }
 
@@ -59,6 +67,8 @@ public abstract class AuthCredentials implements Serializable {
     private static final long serialVersionUID = 8007708734318445901L;
     private final String account;
     private final PrivateKey privateKey;
+
+    private static final AuthCredentials NO_CREDENTIALS = new ServiceAccountAuthCredentials();
 
     ServiceAccountAuthCredentials(String account, PrivateKey privateKey) {
       this.account = checkNotNull(account);
@@ -82,6 +92,21 @@ public abstract class AuthCredentials implements Serializable {
         builder.setServiceAccountScopes(scopes);
       }
       return builder.build();
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(account, privateKey);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof ServiceAccountAuthCredentials)) {
+        return false;
+      }
+      ServiceAccountAuthCredentials other = (ServiceAccountAuthCredentials) obj;
+      return Objects.equals(account, other.account)
+          && Objects.equals(privateKey, other.privateKey);
     }
   }
 
@@ -137,7 +162,7 @@ public abstract class AuthCredentials implements Serializable {
       Set<String> scopes);
 
   public static AuthCredentials createForAppEngine() {
-    return new AppEngineAuthCredentials();
+    return AppEngineAuthCredentials.INSTANCE;
   }
 
   public static AuthCredentials createForComputeEngine()
@@ -167,7 +192,7 @@ public abstract class AuthCredentials implements Serializable {
   }
 
   public static AuthCredentials noCredentials() {
-    return new ServiceAccountAuthCredentials();
+    return ServiceAccountAuthCredentials.NO_CREDENTIALS;
   }
 
   static ComputeCredential getComputeCredential() throws IOException, GeneralSecurityException {
