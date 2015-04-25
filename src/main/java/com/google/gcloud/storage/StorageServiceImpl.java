@@ -134,7 +134,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Iterator<Blob> list(String bucket, ListOptions settings) {
+  public Iterator<Blob> list(String bucket, BlobIterOptions settings) {
     // todo implement paging (with retries) with if limit is not given or > X
     String delimiter = settings.recursive() ? options().pathDelimiter() : null;
     return Iterators.transform(
