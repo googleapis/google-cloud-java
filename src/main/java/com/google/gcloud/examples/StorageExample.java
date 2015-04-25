@@ -149,7 +149,7 @@ public class StorageExample {
           System.out.println(buckets.next());
         }
       } else {
-        Iterator<Blob> blobs = storage.list(bucket, ListOptions.of());
+        Iterator<Blob> blobs = storage.list(bucket, BlobIterOptions.of());
         while (blobs.hasNext()) {
           System.out.println(blobs.next());
         }

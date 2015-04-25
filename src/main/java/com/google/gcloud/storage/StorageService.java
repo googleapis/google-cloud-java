@@ -325,12 +325,15 @@ public interface StorageService extends Service<StorageServiceOptions> {
   /**
    * @throws StorageServiceException upon failure
    */
-  Iterator<Bucket> list();
+  Iterator<Bucket> buckets();
 
   /**
    * @throws StorageServiceException upon failure
    */
-  Iterator<Blob> list(String bucket, ListOptions settings);
+  Iterator<Blob> blobs(String bucket, BlobIterOptions settings);
+
+
+  BlobList blobs(String bucket, BlobListOptions settings);
 
   /**
    * @throws StorageServiceException upon failure
