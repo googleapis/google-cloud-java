@@ -16,21 +16,24 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.gcloud.RetryHelper.runWithRetries;
 
 import com.google.api.services.storage.model.StorageObject;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterators;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.StorageRpc.Tuple;
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -70,9 +73,8 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public Bucket create(Bucket bucket, BucketTargetOption... options) {
-    Validator.checkBucketOptions(bucket, options);
     final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(bucket, options);
     return Bucket.fromPb(runWithRetries(
         new Callable<com.google.api.services.storage.model.Bucket>() {
           @Override
@@ -84,9 +86,8 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public Blob create(Blob blob, final byte[] content, BlobTargetOption... options) {
-    Validator.checkBlobOptions(blob, options);
     final StorageObject blobPb = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
       @Override
       public StorageObject call() {
@@ -97,9 +98,8 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public Bucket get(Bucket bucket, BucketSourceOption... options) {
-    Validator.checkBucketOptions(bucket, options);
     final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(bucket, options);
     return Bucket.fromPb(runWithRetries(
         new Callable<com.google.api.services.storage.model.Bucket>() {
           @Override
@@ -111,9 +111,8 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public Blob get(Blob blob, BlobSourceOption... options) {
-    Validator.checkBlobOptions(blob, options);
     final StorageObject storedObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
       @Override
       public StorageObject call() {
@@ -123,30 +122,47 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public Iterator<Bucket> list() {
-    return Iterators.transform(
-        runWithRetries(new Callable<Iterator<com.google.api.services.storage.model.Bucket>>() {
+  public ListResult<Bucket> list(BucketListOption... options) {
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(null, null, options);
+    Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result = runWithRetries(
+        new Callable<Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>>>() {
           @Override
-          public Iterator<com.google.api.services.storage.model.Bucket> call() {
-            return storageRpc.list();
+          public Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> call() {
+            return storageRpc.list(optionsMap);
           }
-        }, retryParams, EXCEPTION_HANDLER), Bucket.FROM_PB_FUNCTION);
+        }, retryParams, EXCEPTION_HANDLER);
+    return new ListResult<>(result.x(), Iterables.transform(result.y(),
+        new Function<com.google.api.services.storage.model.Bucket, Bucket>() {
+          @Override
+          public Bucket apply(com.google.api.services.storage.model.Bucket bucketPb) {
+            return Bucket.fromPb(bucketPb);
+          }
+        }));
   }
 
   @Override
-  public Iterator<Blob> list(String bucket, BlobIterOptions settings) {
-    // todo implement paging (with retries) with if limit is not given or > X
-    String delimiter = settings.recursive() ? options().pathDelimiter() : null;
-    return Iterators.transform(
-        storageRpc.list(bucket, settings.prefix(), delimiter, settings.cursor(),
-            settings.includeOlderVersions(), settings.maxResults()), Blob.FROM_PB_FUNCTION);
+  public ListResult<Blob> list(final String bucket, BlobListOption... options) {
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(null, null, options);
+    Tuple<String, Iterable<StorageObject>> result = runWithRetries(
+        new Callable<Tuple<String, Iterable<StorageObject>>>() {
+          @Override
+          public Tuple<String, Iterable<StorageObject>> call() {
+            return storageRpc.list(bucket, optionsMap);
+          }
+        }, retryParams, EXCEPTION_HANDLER);
+    return new ListResult<>(result.x(), Iterables.transform(result.y(),
+        new Function<StorageObject, Blob>() {
+          @Override
+          public Blob apply(StorageObject storageObject) {
+            return Blob.fromPb(storageObject);
+          }
+        }));
   }
 
   @Override
   public Bucket update(Bucket bucket, BucketTargetOption... options) {
-    Validator.checkBucketOptions(bucket, options);
     final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(bucket, options);
     return Bucket.fromPb(runWithRetries(
         new Callable<com.google.api.services.storage.model.Bucket>() {
           @Override
@@ -158,9 +174,8 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public Blob update(Blob blob, BlobTargetOption... options) {
-    Validator.checkBlobOptions(blob, options);
     final StorageObject storageObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
       @Override
       public StorageObject call() {
@@ -171,9 +186,8 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public void delete(Bucket bucket, BucketSourceOption... options) {
-    Validator.checkBucketOptions(bucket, options);
     final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(bucket, options);
     runWithRetries(new Callable<Void>() {
       @Override
       public Void call() {
@@ -185,9 +199,8 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public void delete(Blob blob, BlobSourceOption... options) {
-    Validator.checkBlobOptions(blob, options);
     final StorageObject storageObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     runWithRetries(new Callable<Void>() {
       @Override
       public Void call() {
@@ -202,11 +215,12 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     final List<StorageObject> sources =
         Lists.newArrayListWithCapacity(composeRequest.sourceBlobs().size());
     for (ComposeRequest.SourceBlob sourceBlob : composeRequest.sourceBlobs()) {
-      sources.add(Blob.builder(composeRequest.sourceBucket(), sourceBlob.blob)
-          .generation(sourceBlob.generation).build().toPb());
+      sources.add(Blob.builder(composeRequest.target().bucket(), sourceBlob.name())
+          .generation(sourceBlob.generation()).build().toPb());
     }
     final StorageObject target = composeRequest.target().toPb();
-    final Map<StorageRpc.Option, ?> targetOptions = optionMap(composeRequest.targetOptions());
+    final Map<StorageRpc.Option, ?> targetOptions = optionMap(composeRequest.target().generation(),
+        composeRequest.target().metageneration(), composeRequest.targetOptions());
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
       @Override
       public StorageObject call() {
@@ -218,9 +232,12 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   @Override
   public Blob copy(CopyRequest copyRequest) {
     final StorageObject source = copyRequest.source().toPb();
-    final Map<StorageRpc.Option, ?> sourceOptions = optionMap(copyRequest.sourceOptions());
+    copyRequest.sourceOptions();
+    final Map<StorageRpc.Option, ?> sourceOptions = optionMap(copyRequest.source().generation(),
+        copyRequest.source().metageneration(), copyRequest.sourceOptions(), true);
     final StorageObject target = copyRequest.target().toPb();
-    final Map<StorageRpc.Option, ?> targetOptions = optionMap(copyRequest.targetOptions());
+    final Map<StorageRpc.Option, ?> targetOptions = optionMap(copyRequest.target().generation(),
+        copyRequest.target().metageneration(), copyRequest.targetOptions());
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
       @Override
       public StorageObject call() {
@@ -231,9 +248,8 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public byte[] load(Blob blob, BlobSourceOption... options) {
-    Validator.checkBlobOptions(blob, options);
     final StorageObject storageObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     return runWithRetries(new Callable<byte[]>() {
       @Override
       public byte[] call() {
@@ -244,29 +260,71 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public BlobReadChannel reader(Blob blob, BlobSourceOption... options) {
-    Validator.checkBlobOptions(blob, options);
     // todo: Use retry helper on retriable failures
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    // todo: consider changing lower level api to handle segments
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     return storageRpc.reader(blob.toPb(), optionsMap);
   }
 
   @Override
   public BlobWriteChannel writer(Blob blob, BlobTargetOption... options) {
-    Validator.checkBlobOptions(blob, options);
     // todo: Use retry helper on retriable failures
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    // todo: consider changing lower level api to handle segments
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     return storageRpc.writer(blob.toPb(), optionsMap);
   }
 
-  private static Map<StorageRpc.Option, ?> optionMap(Iterable<? extends Option> options) {
-    ImmutableMap.Builder<StorageRpc.Option, Object> mapBuider = ImmutableMap.builder();
-    for (Option option : options) {
-      mapBuider.put(option.rpcOption(), option.value());
-    }
-    return mapBuider.build();
+  private Map<StorageRpc.Option, ?> optionMap(Long generation, Long metaGeneration,
+      Iterable<? extends Option> options) {
+    return optionMap(generation, metaGeneration, options, false);
   }
 
-  private static Map<StorageRpc.Option, ?> optionMap(Option... options) {
-    return optionMap(Arrays.asList(options));
+  private Map<StorageRpc.Option, ?> optionMap(Long generation, Long metaGeneration,
+      Iterable<? extends Option> options, boolean useAsSource) {
+    Map<StorageRpc.Option, Object> temp = Maps.newEnumMap(StorageRpc.Option.class);
+    for (Option option : options) {
+      Object prev = temp.put(option.rpcOption(), option.value());
+      checkArgument(prev == null, "Duplicate option %s", option);
+    }
+    Boolean value = (Boolean) temp.remove(StorageRpc.Option.DELIMITER);
+    if (Boolean.TRUE.equals(value)) {
+      temp.put(StorageRpc.Option.DELIMITER, options().pathDelimiter());
+    }
+    value = (Boolean) temp.remove(StorageRpc.Option.IF_GENERATION_MATCH);
+    if (value != null) {
+      checkArgument(generation != null, "missing generation value");
+      if (value) {
+        temp.put(useAsSource ? StorageRpc.Option.IF_SOURCE_GENERATION_MATCH
+            : StorageRpc.Option.IF_GENERATION_MATCH, generation);
+      } else {
+        temp.put(useAsSource ? StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH
+            : StorageRpc.Option.IF_GENERATION_NOT_MATCH, generation);
+      }
+    }
+    value = (Boolean) temp.remove(StorageRpc.Option.IF_METAGENERATION_MATCH);
+    if (value != null) {
+      checkArgument(metaGeneration != null, "missing metaGeneration value");
+      if (value) {
+        temp.put(useAsSource ? StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH
+            : StorageRpc.Option.IF_METAGENERATION_MATCH, metaGeneration);
+      } else {
+        temp.put(useAsSource ? StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH
+            : StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metaGeneration);
+      }
+    }
+    return ImmutableMap.copyOf(temp);
+  }
+
+  private Map<StorageRpc.Option, ?> optionMap(Long generation, Long metaGeneration,
+      Option... options) {
+    return optionMap(generation, metaGeneration, Arrays.asList(options));
+  }
+
+  private Map<StorageRpc.Option, ?> optionMap(Bucket bucket, Option... options) {
+    return optionMap(null, bucket.metageneration(), options);
+  }
+
+  private Map<StorageRpc.Option, ?> optionMap(Blob blob, Option... options) {
+    return optionMap(blob.generation(), blob.metageneration(), options);
   }
 }
