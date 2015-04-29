@@ -35,6 +35,7 @@ public final class Acl implements Serializable {
   public static abstract class Entity implements Serializable {
 
     private static final long serialVersionUID = -2707407252771255840L;
+
     private final Type type;
     private final String value;
 
@@ -152,6 +153,8 @@ public final class Acl implements Serializable {
 
   public static class Project extends Entity {
 
+    private static final long serialVersionUID = 7933776866530023027L;
+
     private final ProjectRole pRole;
     private final String projectId;
 
@@ -175,6 +178,8 @@ public final class Acl implements Serializable {
   }
 
   public static class RawEntity extends Entity {
+
+    private static final long serialVersionUID = 3966205614223053950L;
 
     RawEntity(String entity) {
       super(Type.UNKNOWN, entity);

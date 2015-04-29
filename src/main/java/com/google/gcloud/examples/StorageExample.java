@@ -16,7 +16,14 @@
 
 package com.google.gcloud.examples;
 
-import com.google.gcloud.storage.*;
+import com.google.gcloud.spi.StorageRpc.Tuple;
+import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.Bucket;
+import com.google.gcloud.storage.StorageService;
+import com.google.gcloud.storage.StorageService.CopyRequest;
+import com.google.gcloud.storage.StorageService.ComposeRequest;
+import com.google.gcloud.storage.StorageServiceFactory;
+import com.google.gcloud.storage.StorageServiceOptions;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -24,7 +31,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -38,7 +44,9 @@ import java.util.Map;
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven -
  * {@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
- * -Dexec.args="project_id list [<bucket>]|info [<bucket> [<file>]]|get <bucket> <path>|upload <local_file> <bucket> [<path>]|delete <bucket> <path>"}
+ * -Dexec.args="project_id list [<bucket>]| info [<bucket> [<file>]]| get <bucket> <path>|
+ *  upload <local_file> <bucket> [<path>]| delete <bucket> <path>|
+ *  cp <from_bucket> <from_path> <to_bucket> <to_path>| compose <bucket> <from_path>+ <to_path>"}
  * </li>
  * </ol>
  */
@@ -56,30 +64,6 @@ public class StorageExample {
       return "";
     }
   }
-
-  private static class Tuple<X, Y> {
-
-    private final X x;
-    private final Y y;
-
-    private Tuple(X x, Y y) {
-      this.x = x;
-      this.y = y;
-    }
-
-    static <X, Y> Tuple<X, Y> of(X x, Y y) {
-      return new Tuple<>(x, y);
-    }
-
-    X first() {
-      return x;
-    }
-
-    Y second() {
-      return y;
-    }
-  }
-
 
   private static abstract class BlobAction extends StorageAction<Blob> {
 
@@ -144,14 +128,12 @@ public class StorageExample {
     @Override
     public void run(StorageService storage, String bucket) {
       if (bucket == null) {
-        Iterator<Bucket> buckets = storage.list();
-        while (buckets.hasNext()) {
-          System.out.println(buckets.next());
+        for (Bucket b : storage.list()) {
+          System.out.println(b);
         }
       } else {
-        Iterator<Blob> blobs = storage.list(bucket, BlobIterOptions.of());
-        while (blobs.hasNext()) {
-          System.out.println(blobs.next());
+        for (Blob b : storage.list(bucket)) {
+          System.out.println(b);
         }
       }
     }
@@ -165,12 +147,12 @@ public class StorageExample {
   private static class UploadAction extends StorageAction<Tuple<Path, Blob>> {
     @Override
     public void run(StorageService storage, Tuple<Path, Blob> tuple) throws Exception {
-      if (Files.size(tuple.first()) > 1_000_000) {
+      if (Files.size(tuple.x()) > 1_000_000) {
         // todo: upload via streaming API
         throw new IllegalArgumentException("file is too big");
       } else {
-        byte[] bytes = Files.readAllBytes(tuple.first());
-        System.out.println(storage.create(tuple.second(), bytes));
+        byte[] bytes = Files.readAllBytes(tuple.x());
+        System.out.println(storage.create(tuple.y(), bytes));
       }
     }
 
@@ -196,6 +178,7 @@ public class StorageExample {
       blob = storage.get(blob);
       if (blob == null) {
         System.out.println("No such object");
+        return;
       }
       if (blob.size() < 1_000_000) {
         System.out.println(new String(storage.load(blob), StandardCharsets.UTF_8));
@@ -206,27 +189,73 @@ public class StorageExample {
     }
   }
 
+  private static class CopyAction extends StorageAction<CopyRequest> {
+    @Override
+    public void run(StorageService storage, CopyRequest request) {
+      System.out.println(storage.copy(request));
+    }
+
+    @Override
+    CopyRequest parse(String... args) {
+      if (args.length != 4) {
+        throw new IllegalArgumentException();
+      }
+      return CopyRequest.of(Blob.of(args[0], args[1]), Blob.of(args[2], args[3]));
+    }
+
+    @Override
+    public String params() {
+      return "<from_bucket> <from_path> <to_bucket> <to_path>";
+    }
+  }
+
+  private static class ComposeAction extends StorageAction<ComposeRequest> {
+    @Override
+    public void run(StorageService storage, ComposeRequest request) {
+      System.out.println(storage.compose(request));
+    }
+
+    @Override
+    ComposeRequest parse(String... args) {
+      if (args.length < 3) {
+        throw new IllegalArgumentException();
+      }
+      ComposeRequest.Builder request = ComposeRequest.builder();
+      request.target(Blob.of(args[0], args[args.length - 1]));
+      for (int i = 1; i < args.length - 1; i++) {
+        request.addSource(args[i]);
+      }
+      return request.build();
+    }
+
+    @Override
+    public String params() {
+      return "<bucket> <from_path>+ <to_path>";
+    }
+  }
+
   static {
     ACTIONS.put("info", new InfoAction());
     ACTIONS.put("delete", new DeleteAction());
     ACTIONS.put("list", new ListAction());
     ACTIONS.put("upload", new UploadAction());
     ACTIONS.put("get", new GetAction());
+    ACTIONS.put("cp", new CopyAction());
+    ACTIONS.put("compose", new ComposeAction());
   }
 
   public static void printUsage() {
-    StringBuilder actionAndParams = new StringBuilder();
+    StringBuilder actionAndParams = new StringBuilder("");
     for (Map.Entry<String, StorageAction> entry : ACTIONS.entrySet()) {
-      actionAndParams.append(entry.getKey());
+      actionAndParams.append("\n\t").append(entry.getKey());
 
       String param = entry.getValue().params();
       if (param != null && !param.isEmpty()) {
         actionAndParams.append(' ').append(param);
       }
-      actionAndParams.append('|');
     }
-    actionAndParams.setLength(actionAndParams.length() - 1);
-    System.out.printf("Usage: %s [%s]%n", StorageExample.class.getSimpleName(), actionAndParams);
+    System.out.printf("Usage: %s <project_id> <operation> <args>*%s%n",
+        StorageExample.class.getSimpleName(), actionAndParams);
   }
 
   @SuppressWarnings("unchecked")
@@ -236,7 +265,6 @@ public class StorageExample {
       printUsage();
       return;
     }
-    String projectId = args[0];
     StorageAction action = ACTIONS.get(args[1]);
     if (action == null) {
       System.out.println("Unrecognized action '" + args[1] + "'");
@@ -249,9 +277,13 @@ public class StorageExample {
     Object request;
     try {
       request = action.parse(args);
-    } catch (Exception ex) {
+    } catch (IllegalArgumentException ex) {
       System.out.println("Invalid input for action '" + args[1] + "'");
       System.out.println("Expected: " + action.params());
+      return;
+    } catch (Exception ex) {
+      System.out.println("Failed to parse request.");
+      ex.printStackTrace();
       return;
     }
     action.run(storage, request);

@@ -19,6 +19,7 @@ package com.google.gcloud.storage;
 import static com.google.api.client.repackaged.com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.Lists.transform;
 
+import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.Bucket.Lifecycle;
 import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
@@ -33,6 +34,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.storage.Acl.Entity;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
 
@@ -148,7 +152,9 @@ public final class Bucket implements Serializable {
 
   static class RawDeleteRule extends DeleteRule {
 
-    private final Rule rule;
+    private static final long serialVersionUID = -7166938278642301933L;
+
+    private transient Rule rule;
 
     RawDeleteRule(Rule rule) {
       super(Type.UNKNOWN);
@@ -157,6 +163,17 @@ public final class Bucket implements Serializable {
 
     void populateCondition(Rule.Condition condition) {
       throw new UnsupportedOperationException();
+    }
+
+    private void writeObject(ObjectOutputStream out) throws IOException {
+      out.defaultWriteObject();
+      out.writeUTF(rule.toString());
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException,
+        ClassNotFoundException {
+      in.defaultReadObject();
+      rule = new JacksonFactory().fromString(in.readUTF(), Rule.class);
     }
 
     Rule toPb() {
