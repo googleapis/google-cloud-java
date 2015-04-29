@@ -17,7 +17,6 @@
 package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.gcloud.storage.Validator.checkBlobOptions;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Service;
@@ -26,7 +25,6 @@ import com.google.gcloud.spi.StorageRpc;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -130,43 +128,90 @@ public interface StorageService extends Service<StorageServiceOptions> {
     }
   }
 
+  class BucketListOption extends Option {
+
+    private static final long serialVersionUID = 8754017079673290353L;
+
+    private BucketListOption(StorageRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    public static BucketListOption maxResults(long maxResults) {
+      return new BucketListOption(StorageRpc.Option.MAX_RESULTS, maxResults);
+    }
+
+    public static BucketListOption startPageToken(String pageToken) {
+      return new BucketListOption(StorageRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    public static BucketListOption prefix(String prefix) {
+      return new BucketListOption(StorageRpc.Option.PREFIX, prefix);
+    }
+  }
+
+  class BlobListOption extends Option {
+
+    private static final long serialVersionUID = 9083383524788661294L;
+
+    private BlobListOption(StorageRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    public static BlobListOption maxResults(long maxResults) {
+      return new BlobListOption(StorageRpc.Option.MAX_RESULTS, maxResults);
+    }
+
+    public static BlobListOption startPageToken(String pageToken) {
+      return new BlobListOption(StorageRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    public static BlobListOption prefix(String prefix) {
+      return new BlobListOption(StorageRpc.Option.PREFIX, prefix);
+    }
+
+    public static BlobListOption recursive(boolean recursive) {
+      return new BlobListOption(StorageRpc.Option.DELIMITER, recursive);
+    }
+  }
+
   class ComposeRequest implements Serializable {
 
     private static final long serialVersionUID = -7385681353748590911L;
 
-    private final String sourceBucket;
     private final List<SourceBlob> sourceBlobs;
     private final Blob target;
     private final List<BlobTargetOption> targetOptions;
 
-    static class SourceBlob implements Serializable {
+    public static class SourceBlob implements Serializable {
 
       private static final long serialVersionUID = 4094962795951990439L;
 
-      final String blob;
+      final String name;
       final Long generation;
 
-      SourceBlob(String blob) {
-        this(blob, null);
+      SourceBlob(String name) {
+        this(name, null);
       }
 
-      SourceBlob(String blob, Long generation) {
-        this.blob = blob;
+      SourceBlob(String name, Long generation) {
+        this.name = name;
         this.generation = generation;
+      }
+
+      public String name() {
+        return name;
+      }
+
+      public Long generation() {
+        return generation;
       }
     }
 
     public static class Builder {
 
-      private String bucket;
-      private List<SourceBlob> sourceBlobs = new LinkedList<>();
+      private final List<SourceBlob> sourceBlobs = new LinkedList<>();
       private Blob target;
-      private Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
-
-      public Builder sourceBucket(String bucket) {
-        this.bucket = bucket;
-        return this;
-      }
+      private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
 
       public Builder addSource(Iterable<String> blobs) {
         for (String blob : blobs) {
@@ -195,34 +240,31 @@ public interface StorageService extends Service<StorageServiceOptions> {
       }
 
       public ComposeRequest build() {
-        checkNotNull(bucket);
         checkNotNull(target);
-        checkBlobOptions("Target", target, targetOptions);
         return new ComposeRequest(this);
       }
     }
 
     private ComposeRequest(Builder builder) {
-      sourceBucket = builder.bucket;
       sourceBlobs = ImmutableList.copyOf(builder.sourceBlobs);
       target = builder.target;
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
     }
 
-    String sourceBucket() {
-      return sourceBucket;
-    }
-
-    List<SourceBlob> sourceBlobs() {
+    public List<SourceBlob> sourceBlobs() {
       return sourceBlobs;
     }
 
-    Blob target() {
+    public Blob target() {
       return target;
     }
 
-    List<BlobTargetOption> targetOptions() {
+    public List<BlobTargetOption> targetOptions() {
       return targetOptions;
+    }
+
+    public static ComposeRequest of(Iterable<String> sources, Blob target) {
+      return builder().target(target).addSource(sources).build();
     }
 
     public static Builder builder() {
@@ -242,12 +284,13 @@ public interface StorageService extends Service<StorageServiceOptions> {
     public static class Builder {
 
       private Blob source;
-      private Set<BlobSourceOption> sourceOptions;
+      private final Set<BlobSourceOption> sourceOptions = new LinkedHashSet<>();
       private Blob target;
-      private Set<BlobTargetOption> targetOptions;
+      private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
 
-      public void source(Blob source) {
+      public Builder source(Blob source) {
         this.source = source;
+        return this;
       }
 
       public Builder sourceOptions(BlobSourceOption... options) {
@@ -268,8 +311,6 @@ public interface StorageService extends Service<StorageServiceOptions> {
       public CopyRequest build() {
         checkNotNull(source);
         checkNotNull(target);
-        checkBlobOptions("Source", source, sourceOptions);
-        checkBlobOptions("Target", target, targetOptions);
         return new CopyRequest(this);
       }
     }
@@ -281,7 +322,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
     }
 
-    Blob source() {
+    public Blob source() {
       return source;
     }
 
@@ -289,12 +330,16 @@ public interface StorageService extends Service<StorageServiceOptions> {
       return sourceOptions;
     }
 
-    Blob target() {
+    public Blob target() {
       return target;
     }
 
-    List<BlobTargetOption> targetOptions() {
+    public List<BlobTargetOption> targetOptions() {
       return targetOptions;
+    }
+
+    public static CopyRequest of(Blob source, Blob target) {
+      return builder().source(source).target(target).build();
     }
 
     public static Builder builder() {
@@ -325,15 +370,13 @@ public interface StorageService extends Service<StorageServiceOptions> {
   /**
    * @throws StorageServiceException upon failure
    */
-  Iterator<Bucket> buckets();
+  ListResult<Bucket> list(BucketListOption... options);
 
   /**
+   * Lists blobs for a bucket.
    * @throws StorageServiceException upon failure
    */
-  Iterator<Blob> blobs(String bucket, BlobIterOptions settings);
-
-
-  BlobList blobs(String bucket, BlobListOptions settings);
+  ListResult<Blob> list(String bucket, BlobListOption... options);
 
   /**
    * @throws StorageServiceException upon failure

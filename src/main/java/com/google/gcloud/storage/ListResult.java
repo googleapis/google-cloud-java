@@ -16,22 +16,30 @@
 
 package com.google.gcloud.storage;
 
+import java.io.Serializable;
+import java.util.Iterator;
+
 /**
- * Created by ozarov on 4/24/15.
+ * Google Cloud storage list result.
  */
-public class BlobListOptions extends BlobIterOptions {
+public class ListResult<T extends Serializable> implements Iterable<T>, Serializable {
+
+  private static final long serialVersionUID = -6937287874908527950L;
 
   private final String cursor;
+  private final Iterable<T> results;
 
-  public Builder extends BlobIterOptions.Builder {
-
+  ListResult(String cursor, Iterable<T> results) {
+    this.cursor = cursor;
+    this.results = results;
   }
 
-  private BlobListOptions(Builder builder) {
-    super(builder);
-  }
-
-  public String cursor() {
+  public String nextPageCursor() {
     return cursor;
+  }
+
+  @Override
+  public Iterator<T> iterator() {
+    return results.iterator();
   }
 }
