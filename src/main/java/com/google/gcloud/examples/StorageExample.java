@@ -17,6 +17,7 @@
 package com.google.gcloud.examples;
 
 import com.google.gcloud.spi.StorageRpc.Tuple;
+import com.google.gcloud.storage.BatchRequest;
 import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.StorageService;
@@ -45,7 +46,7 @@ import java.util.Map;
  * <li>run using maven -
  * {@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
  * -Dexec.args="project_id list [<bucket>]| info [<bucket> [<file>]]| get <bucket> <path>|
- *  upload <local_file> <bucket> [<path>]| delete <bucket> <path>|
+ *  upload <local_file> <bucket> [<path>]| delete <bucket> <path>+|
  *  cp <from_bucket> <from_path> <to_bucket> <to_path>| compose <bucket> <from_path>+ <to_path>"}
  * </li>
  * </ol>
@@ -81,6 +82,26 @@ public class StorageExample {
     }
   }
 
+  private static abstract class BlobsAction extends StorageAction<Blob[]> {
+
+    @Override
+    Blob[] parse(String... args) {
+      if (args.length < 2) {
+        throw new IllegalArgumentException();
+      }
+      Blob[] blobs = new Blob[args.length - 1];
+      for (int i = 1; i < args.length; i++) {
+        blobs[i - 1] = Blob.of(args[0], args[i]);
+      }
+      return blobs;
+    }
+
+    @Override
+    public String params() {
+      return "<bucket> <path>+";
+    }
+  }
+
   private static class InfoAction extends BlobAction {
     @Override
     public void run(StorageService storage, Blob blob) {
@@ -105,10 +126,20 @@ public class StorageExample {
     }
   }
 
-  private static class DeleteAction extends BlobAction {
+  private static class DeleteAction extends BlobsAction {
     @Override
-    public void run(StorageService storage, Blob blob) {
-      storage.delete(blob);
+    public void run(StorageService storage, Blob... blobs) {
+      if (blobs.length == 1) {
+        System.out.println("Calling delete");
+        System.out.println(storage.delete(blobs[0]));
+      } else {
+        BatchRequest batch = new BatchRequest();
+        for (Blob blob : blobs) {
+          batch.delete(blob);
+        }
+        System.out.println("Calling batch.delete");
+        storage.apply(batch);
+      }
     }
   }
 
