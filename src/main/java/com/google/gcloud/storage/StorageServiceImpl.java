@@ -185,27 +185,25 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public void delete(Bucket bucket, BucketSourceOption... options) {
+  public boolean delete(Bucket bucket, BucketSourceOption... options) {
     final com.google.api.services.storage.model.Bucket bucketPb = bucket.toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(bucket, options);
-    runWithRetries(new Callable<Void>() {
+    return runWithRetries(new Callable<Boolean>() {
       @Override
-      public Void call() {
-        storageRpc.delete(bucketPb, optionsMap);
-        return null;
+      public Boolean call() {
+        return storageRpc.delete(bucketPb, optionsMap);
       }
     }, retryParams, EXCEPTION_HANDLER);
   }
 
   @Override
-  public void delete(Blob blob, BlobSourceOption... options) {
+  public boolean delete(Blob blob, BlobSourceOption... options) {
     final StorageObject storageObject = blob.toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
-    runWithRetries(new Callable<Void>() {
+    return runWithRetries(new Callable<Boolean>() {
       @Override
-      public Void call() {
-        storageRpc.delete(storageObject, optionsMap);
-        return null;
+      public Boolean call() {
+        return storageRpc.delete(storageObject, optionsMap);
       }
     }, retryParams, EXCEPTION_HANDLER);
   }
@@ -256,6 +254,20 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
         return storageRpc.load(storageObject, optionsMap);
       }
     }, retryParams, EXCEPTION_HANDLER);
+  }
+
+  @Override
+  public BatchResponse apply(BatchRequest batchRequest) {
+    BatchResponse response = new BatchResponse();
+    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request =
+        Lists.newArrayListWithCapacity(batchRequest.toDelete.size());
+    for (Map.Entry<Blob, BlobSourceOption[]> entry : batchRequest.toDelete.entrySet()) {
+      Blob blob = entry.getKey();
+      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
+      request.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
+    }
+    storageRpc.batch(request);
+    return response;
   }
 
   @Override

@@ -391,12 +391,13 @@ public interface StorageService extends Service<StorageServiceOptions> {
   /**
    * @throws StorageServiceException upon failure
    */
-  void delete(Bucket bucket, BucketSourceOption... options);
+  boolean delete(Bucket bucket, BucketSourceOption... options);
 
   /**
    * @throws StorageServiceException upon failure
    */
-  void delete(Blob blob, BlobSourceOption... options);
+  boolean delete(Blob blob, BlobSourceOption... options);
+
 
   /**
    * @throws StorageServiceException upon failure
@@ -413,6 +414,9 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * @throws StorageServiceException upon failure
    */
   byte[] load(Blob blob, BlobSourceOption... options);
+
+
+  BatchResponse apply(BatchRequest batchRequest);
 
   /**
    * @throws StorageServiceException upon failure
