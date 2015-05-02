@@ -259,19 +259,44 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public BatchResponse apply(BatchRequest batchRequest) {
-    List<BatchResponse.Result<Boolean>> deletes = new LinkedList<>();
-    List<BatchResponse.Result<Blob>> updates = new LinkedList<>();
-    List<BatchResponse.Result<Blob>> gets = new LinkedList<>();
-    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request =
+    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toDelete =
         Lists.newArrayListWithCapacity(batchRequest.toDelete().size());
     for (Map.Entry<Blob, BlobSourceOption[]> entry : batchRequest.toDelete().entrySet()) {
       Blob blob = entry.getKey();
       Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
-      request.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
+      toDelete.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
+    }
+    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toUpdate =
+        Lists.newArrayListWithCapacity(batchRequest.toUpdate().size());
+    for (Map.Entry<Blob, BlobTargetOption[]> entry : batchRequest.toUpdate().entrySet()) {
+      Blob blob = entry.getKey();
+      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
+      toUpdate.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
+    }
+    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toGet =
+        Lists.newArrayListWithCapacity(batchRequest.toGet().size());
+    for (Map.Entry<Blob, BlobSourceOption[]> entry : batchRequest.toGet().entrySet()) {
+      Blob blob = entry.getKey();
+      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
+      toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
     }
     // todo: populate deletes, updates and gets (the latter 2 needs to be sent to RPC)
     // todo: change example to use multi-update and multi-get
-    storageRpc.batch(request);
+    StorageRpc.BatchResponse response =
+        storageRpc.batch(new StorageRpc.BatchRequest(toDelete, toUpdate, toGet));
+    List<BatchResponse.Result<Boolean>> deletes = new LinkedList<>();
+    for (Blob blob : batchRequest.toDelete().keySet()) {
+      Tuple<Boolean, StorageServiceException> result = response.deletes.get(blob);
+      if (result.x() != null) {
+        deletes.add(new BatchResponse.Result<>(false));
+      } else {
+        deletes.add(new BatchResponse.Result<Boolean>(result.y()));
+      }
+    }
+
+    List<BatchResponse.Result<Blob>> updates = new LinkedList<>();
+    List<BatchResponse.Result<Blob>> gets = new LinkedList<>();
+
     return new BatchResponse(deletes, updates, gets);
   }
 
