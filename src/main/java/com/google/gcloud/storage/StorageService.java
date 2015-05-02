@@ -398,7 +398,6 @@ public interface StorageService extends Service<StorageServiceOptions> {
    */
   boolean delete(Blob blob, BlobSourceOption... options);
 
-
   /**
    * @throws StorageServiceException upon failure
    */
@@ -408,7 +407,6 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * @throws StorageServiceException upon failure
    */
   Blob copy(CopyRequest copyRequest);
-
 
   /**
    * @throws StorageServiceException upon failure

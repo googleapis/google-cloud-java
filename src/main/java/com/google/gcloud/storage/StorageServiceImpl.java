@@ -34,6 +34,7 @@ import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -258,16 +259,20 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public BatchResponse apply(BatchRequest batchRequest) {
-    BatchResponse response = new BatchResponse();
+    List<BatchResponse.Result<Boolean>> deletes = new LinkedList<>();
+    List<BatchResponse.Result<Blob>> updates = new LinkedList<>();
+    List<BatchResponse.Result<Blob>> gets = new LinkedList<>();
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request =
-        Lists.newArrayListWithCapacity(batchRequest.toDelete.size());
-    for (Map.Entry<Blob, BlobSourceOption[]> entry : batchRequest.toDelete.entrySet()) {
+        Lists.newArrayListWithCapacity(batchRequest.toDelete().size());
+    for (Map.Entry<Blob, BlobSourceOption[]> entry : batchRequest.toDelete().entrySet()) {
       Blob blob = entry.getKey();
       Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
       request.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
     }
+    // todo: populate deletes, updates and gets (the latter 2 needs to be sent to RPC)
+    // todo: change example to use multi-update and multi-get
     storageRpc.batch(request);
-    return response;
+    return new BatchResponse(deletes, updates, gets);
   }
 
   @Override
