@@ -133,12 +133,12 @@ public class StorageExample {
         System.out.println("Calling delete");
         System.out.println(storage.delete(blobs[0]));
       } else {
-        BatchRequest batch = new BatchRequest();
+        BatchRequest.Builder batch = BatchRequest.builder();
         for (Blob blob : blobs) {
           batch.delete(blob);
         }
         System.out.println("Calling batch.delete");
-        storage.apply(batch);
+        storage.apply(batch.build());
       }
     }
   }

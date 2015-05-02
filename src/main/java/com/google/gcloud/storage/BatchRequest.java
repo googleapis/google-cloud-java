@@ -16,19 +16,68 @@
 
 package com.google.gcloud.storage;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.storage.StorageService.BlobSourceOption;
+import com.google.gcloud.storage.StorageService.BlobTargetOption;
 
+import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Created by ozarov on 4/30/15.
+ * Google storage batch request.
  */
-public class BatchRequest {
+public class BatchRequest implements Serializable {
 
-  Map<Blob, BlobSourceOption[]> toDelete = new LinkedHashMap<>();
+  private static final long serialVersionUID = -1527992265939800345L;
 
-  public void delete(Blob blob, BlobSourceOption... options) {
-    toDelete.put(blob, options);
+  private Map<Blob, BlobSourceOption[]> toDelete;
+  private Map<Blob, BlobTargetOption[]> toUpdate;
+  private Map<Blob, BlobSourceOption[]> toGet;
+
+  public static class Builder {
+
+    private Map<Blob, BlobSourceOption[]> toDelete = new LinkedHashMap<>();
+    private Map<Blob, BlobTargetOption[]> toUpdate = new LinkedHashMap<>();
+    private Map<Blob, BlobSourceOption[]> toGet = new LinkedHashMap<>();
+
+    private Builder() {}
+
+    public void delete(Blob blob, BlobSourceOption... options) {
+      toDelete.put(blob, options);
+    }
+
+    public void update(Blob blob, BlobTargetOption... options) {
+      toUpdate.put(blob, options);
+    }
+
+    public void get(Blob blob, BlobSourceOption... options) {
+      toGet.put(blob, options);
+    }
+
+    public BatchRequest build() {
+      return new BatchRequest(this);
+    }
+  }
+
+  private BatchRequest(Builder builder) {
+    toDelete = ImmutableMap.copyOf(builder.toDelete);
+    toUpdate = ImmutableMap.copyOf(builder.toUpdate);
+  }
+
+  public Map<Blob, BlobSourceOption[]> toDelete() {
+    return toDelete;
+  }
+
+  public Map<Blob, BlobTargetOption[]> toUpdate() {
+    return toUpdate;
+  }
+
+  public Map<Blob, BlobSourceOption[]> toGet() {
+    return toGet;
+  }
+
+  public static Builder builder() {
+    return new Builder();
   }
 }
