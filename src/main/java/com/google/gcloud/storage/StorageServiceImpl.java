@@ -34,7 +34,11 @@ import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -308,12 +312,111 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     return response;
   }
 
+  private static class BlobReadChannelImpl implements BlobReadChannel {
+
+    private final StorageServiceOptions serviceOptions;
+    private final Blob blob;
+    private final Map<StorageRpc.Option, ?> requestOptions;
+    private int position;
+    private boolean isOpen;
+    private boolean endOfStream;
+
+    private transient StorageRpc storageRpc;
+    private transient RetryParams retryParams;
+    private transient StorageObject storageObject;
+    private transient int bufferPos;
+    private transient byte[] buffer;
+
+    BlobReadChannelImpl(StorageServiceOptions serviceOptions, Blob blob,
+        Map<StorageRpc.Option, ?> requestOptions) {
+      this.serviceOptions = serviceOptions;
+      this.blob = blob;
+      this.requestOptions = requestOptions;
+      isOpen = true;
+      initTransients();
+    }
+
+    private void writeObject(ObjectOutputStream out) throws IOException {
+      if (buffer != null) {
+        position += bufferPos;
+        buffer = null;
+        bufferPos = 0;
+        endOfStream = false;
+      }
+      out.defaultWriteObject();
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+      in.defaultReadObject();
+      initTransients();
+    }
+
+    private void initTransients() {
+      storageRpc = serviceOptions.storageRpc();
+      retryParams = MoreObjects.firstNonNull(serviceOptions.retryParams(), RetryParams.noRetries());
+      storageObject = blob.toPb();
+    }
+
+    @Override
+    public boolean isOpen() {
+      return isOpen;
+    }
+
+    @Override
+    public void close() {
+      if (isOpen) {
+        buffer = null;
+        isOpen = false;
+      }
+    }
+
+    private void validateOpen() throws IOException {
+      if (!isOpen) {
+        throw new IOException("stream is closed");
+      }
+    }
+
+    @Override
+    public void seek(int position) throws IOException {
+      validateOpen();
+      throw new UnsupportedOperationException("not supported yet");
+      // todo: implement
+    }
+
+    @Override
+    public int read(ByteBuffer byteBuffer) throws IOException {
+      validateOpen();
+      if (buffer == null) {
+        if (endOfStream) {
+          return -1;
+        }
+        final int toRead = Math.max(byteBuffer.remaining(), 256 * 1024);
+        buffer = runWithRetries(new Callable<byte[]>() {
+          @Override
+          public byte[] call() {
+            return storageRpc.read(storageObject, requestOptions, position, toRead);
+          }
+        }, retryParams, EXCEPTION_HANDLER);
+        if (toRead > buffer.length) {
+          endOfStream = true;
+        }
+      }
+      int toWrite = Math.min(buffer.length - bufferPos, byteBuffer.remaining());
+      byteBuffer.put(buffer, bufferPos, toWrite);
+      bufferPos += toWrite;
+      if (bufferPos >= buffer.length) {
+        position += buffer.length;
+        buffer = null;
+        bufferPos = 0;
+      }
+      return toWrite;
+    }
+  }
+
   @Override
   public BlobReadChannel reader(Blob blob, BlobSourceOption... options) {
-    // todo: Use retry helper on retriable failures
-    // todo: consider changing lower level api to handle segments
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
-    return storageRpc.reader(blob.toPb(), optionsMap);
+    Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
+    return new BlobReadChannelImpl(options(), blob, optionsMap);
   }
 
   @Override

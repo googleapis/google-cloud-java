@@ -17,6 +17,7 @@
 package com.google.gcloud.storage;
 
 import java.io.Closeable;
+import java.io.IOException;
 import java.io.Serializable;
 import java.nio.channels.ReadableByteChannel;
 
@@ -37,5 +38,5 @@ public interface BlobReadChannel extends ReadableByteChannel, Serializable, Clos
   @Override
   void close();
 
-  void seek(int position);
+  void seek(int position) throws IOException;
 }
