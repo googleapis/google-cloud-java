@@ -46,7 +46,7 @@ import java.util.Map;
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven -
  * {@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
- * -Dexec.args="project_id list [<bucket>]| info [<bucket> [<file>]]| get <bucket> <path>|
+ * -Dexec.args="[<project_id>] list [<bucket>]| info [<bucket> [<file>]]| get <bucket> <path>|
  *  upload <local_file> <bucket> [<path>]| delete <bucket> <path>+|
  *  cp <from_bucket> <from_path> <to_bucket> <to_path>| compose <bucket> <from_path>+ <to_path>"}
  * </li>
@@ -300,20 +300,27 @@ public class StorageExample {
 
   @SuppressWarnings("unchecked")
   public static void main(String... args) throws Exception {
-    if (args.length < 2) {
+    if (args.length < 1) {
       System.out.println("Missing required project id and action");
       printUsage();
       return;
     }
-    StorageAction action = ACTIONS.get(args[1]);
+    StorageServiceOptions.Builder optionsBuilder = StorageServiceOptions.builder();
+    StorageAction action;
+    if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
+      optionsBuilder.project(args[0]);
+      action = ACTIONS.get(args[1]);
+      args = Arrays.copyOfRange(args, 2, args.length);
+    } else {
+      action = ACTIONS.get(args[0]);
+      args = Arrays.copyOfRange(args, 1, args.length);
+    }
     if (action == null) {
       System.out.println("Unrecognized action '" + args[1] + "'");
       printUsage();
       return;
     }
-    StorageServiceOptions options = StorageServiceOptions.builder().project(args[0]).build();
-    StorageService storage = StorageServiceFactory.instance().get(options);
-    args = args.length > 2 ? Arrays.copyOfRange(args, 2, args.length) : new String[] {};
+    StorageService storage = StorageServiceFactory.instance().get(optionsBuilder.build());
     Object request;
     try {
       request = action.parse(args);
