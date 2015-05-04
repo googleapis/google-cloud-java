@@ -70,6 +70,7 @@ public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageSer
     pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
     project = builder.project != null ? builder.project : defaultProject();
     Preconditions.checkArgument(project != null, "Missing required project id");
+    // todo: consider providing read-timeout
   }
 
   @Override

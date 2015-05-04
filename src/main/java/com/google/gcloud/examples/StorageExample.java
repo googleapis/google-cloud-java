@@ -16,10 +16,13 @@
 
 package com.google.gcloud.examples;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.BatchRequest;
 import com.google.gcloud.storage.BatchResponse;
 import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.BlobReadChannel;
 import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.StorageService;
 import com.google.gcloud.storage.StorageService.ComposeRequest;
@@ -27,7 +30,8 @@ import com.google.gcloud.storage.StorageService.CopyRequest;
 import com.google.gcloud.storage.StorageServiceFactory;
 import com.google.gcloud.storage.StorageServiceOptions;
 
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
+import java.nio.ByteBuffer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -214,17 +218,23 @@ public class StorageExample {
 
   private static class GetAction extends BlobAction {
     @Override
-    public void run(StorageService storage, Blob blob) {
+    public void run(StorageService storage, Blob blob) throws IOException {
       blob = storage.get(blob);
       if (blob == null) {
         System.out.println("No such object");
         return;
       }
-      if (blob.size() < 1_000_000) {
-        System.out.println(new String(storage.load(blob), StandardCharsets.UTF_8));
+      if (blob.size() < 1024) {
+        System.out.println(new String(storage.load(blob), UTF_8));
       } else {
-        // todo: download via streaming API
-        throw new IllegalArgumentException("file is too big");
+        try (BlobReadChannel reader = storage.reader(blob)) {
+          ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
+          while (reader.read(bytes) > 0) {
+            bytes.flip();
+            System.out.print(UTF_8.decode(bytes));
+            bytes.clear();
+          }
+        }
       }
     }
   }
@@ -294,7 +304,7 @@ public class StorageExample {
         actionAndParams.append(' ').append(param);
       }
     }
-    System.out.printf("Usage: %s <project_id> <operation> <args>*%s%n",
+    System.out.printf("Usage: %s [<project_id>] operation <args>*%s%n",
         StorageExample.class.getSimpleName(), actionAndParams);
   }
 
