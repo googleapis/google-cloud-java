@@ -31,9 +31,9 @@ public class BatchRequest implements Serializable {
 
   private static final long serialVersionUID = -1527992265939800345L;
 
-  private Map<Blob, BlobSourceOption[]> toDelete;
-  private Map<Blob, BlobTargetOption[]> toUpdate;
-  private Map<Blob, BlobSourceOption[]> toGet;
+  private final Map<Blob, BlobSourceOption[]> toDelete;
+  private final Map<Blob, BlobTargetOption[]> toUpdate;
+  private final Map<Blob, BlobSourceOption[]> toGet;
 
   public static class Builder {
 
@@ -63,6 +63,7 @@ public class BatchRequest implements Serializable {
   private BatchRequest(Builder builder) {
     toDelete = ImmutableMap.copyOf(builder.toDelete);
     toUpdate = ImmutableMap.copyOf(builder.toUpdate);
+    toGet = ImmutableMap.copyOf(builder.toGet);
   }
 
   public Map<Blob, BlobSourceOption[]> toDelete() {

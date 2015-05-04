@@ -18,11 +18,12 @@ package com.google.gcloud.examples;
 
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.BatchRequest;
+import com.google.gcloud.storage.BatchResponse;
 import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.StorageService;
-import com.google.gcloud.storage.StorageService.CopyRequest;
 import com.google.gcloud.storage.StorageService.ComposeRequest;
+import com.google.gcloud.storage.StorageService.CopyRequest;
 import com.google.gcloud.storage.StorageServiceFactory;
 import com.google.gcloud.storage.StorageServiceOptions;
 
@@ -102,27 +103,36 @@ public class StorageExample {
     }
   }
 
-  private static class InfoAction extends BlobAction {
+  private static class InfoAction extends BlobsAction {
     @Override
-    public void run(StorageService storage, Blob blob) {
-      if (blob.name().isEmpty()) {
-        System.out.println(storage.get(Bucket.of(blob.bucket())));
+    public void run(StorageService storage, Blob... blobs) {
+      if (blobs.length == 1) {
+        if (blobs[0].name().isEmpty()) {
+          System.out.println(storage.get(Bucket.of(blobs[0].bucket())));
+        } else {
+          System.out.println(storage.get(blobs[0]));
+        }
       } else {
-        System.out.println(storage.get(blob));
+        BatchRequest.Builder batch = BatchRequest.builder();
+        for (Blob blob : blobs) {
+          batch.get(blob);
+        }
+        BatchResponse response = storage.apply(batch.build());
+        System.out.println(response.gets());
       }
     }
 
     @Override
-    Blob parse(String... args) {
+    Blob[] parse(String... args) {
       if (args.length < 2) {
-        return Blob.of(args[0], "");
+        return new Blob[] {Blob.of(args[0], "")};
       }
       return super.parse(args);
     }
 
     @Override
     public String params() {
-      return "<bucket> [<path>]";
+      return "<bucket> [<path>+]";
     }
   }
 
@@ -130,15 +140,14 @@ public class StorageExample {
     @Override
     public void run(StorageService storage, Blob... blobs) {
       if (blobs.length == 1) {
-        System.out.println("Calling delete");
         System.out.println(storage.delete(blobs[0]));
       } else {
         BatchRequest.Builder batch = BatchRequest.builder();
         for (Blob blob : blobs) {
           batch.delete(blob);
         }
-        System.out.println("Calling batch.delete");
-        storage.apply(batch.build());
+        BatchResponse response = storage.apply(batch.build());
+        System.out.println(response.deletes());
       }
     }
   }
