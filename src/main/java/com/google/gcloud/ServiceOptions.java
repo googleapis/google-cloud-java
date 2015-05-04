@@ -191,11 +191,22 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
     try (BufferedReader reader =
         new BufferedReader(new FileReader(new File(configDir, "properties")))) {
       String line;
-      Pattern pattern = Pattern.compile("^\\s*project\\s*=\\s*(.*?)\\s*$");
+      String section = null;
+      Pattern projectPattern = Pattern.compile("^project\\s*=\\s*(.*)$");
+      Pattern sectionPattern = Pattern.compile("^\\[(.*)\\]$");
       while((line = reader.readLine()) != null) {
-        Matcher matcher = pattern.matcher(line);
+        if (line.isEmpty() || line.startsWith(";")) {
+          continue;
+        }
+        line = line.trim();
+        Matcher matcher = sectionPattern.matcher(line);
         if (matcher.matches()) {
-          return matcher.group(1);
+          section = matcher.group(1);
+        } else if (section == null || section.equals("core")) {
+          matcher = projectPattern.matcher(line);
+          if (matcher.matches()) {
+            return matcher.group(1);
+          }
         }
       }
     } catch (IOException ex) {
