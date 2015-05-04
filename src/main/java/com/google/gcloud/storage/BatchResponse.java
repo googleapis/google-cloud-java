@@ -16,6 +16,7 @@
 
 package com.google.gcloud.storage;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 
 import java.io.Serializable;
@@ -69,6 +70,11 @@ public class BatchResponse implements Serializable {
      */
     public boolean failed() {
       return exception != null;
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.firstNonNull(value, exception).toString();
     }
   }
 
