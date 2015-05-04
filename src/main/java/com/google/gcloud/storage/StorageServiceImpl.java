@@ -21,6 +21,7 @@ import static com.google.gcloud.RetryHelper.runWithRetries;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.Function;
+import com.google.common.base.Functions;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
@@ -33,8 +34,8 @@ import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
+import java.io.Serializable;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -264,7 +265,8 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     for (Map.Entry<Blob, BlobSourceOption[]> entry : batchRequest.toDelete().entrySet()) {
       Blob blob = entry.getKey();
       Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
-      toDelete.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
+      StorageObject storageObject = blob.toPb();
+      toDelete.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(storageObject, optionsMap));
     }
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toUpdate =
         Lists.newArrayListWithCapacity(batchRequest.toUpdate().size());
@@ -280,24 +282,30 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
       toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
     }
-    // todo: populate deletes, updates and gets (the latter 2 needs to be sent to RPC)
-    // todo: change example to use multi-update and multi-get
     StorageRpc.BatchResponse response =
         storageRpc.batch(new StorageRpc.BatchRequest(toDelete, toUpdate, toGet));
-    List<BatchResponse.Result<Boolean>> deletes = new LinkedList<>();
-    for (Blob blob : batchRequest.toDelete().keySet()) {
-      Tuple<Boolean, StorageServiceException> result = response.deletes.get(blob);
+    List<BatchResponse.Result<Boolean>> deletes = transformBatchResult(
+        toDelete, response.deletes, Functions.<Boolean>identity());
+    List<BatchResponse.Result<Blob>> updates = transformBatchResult(
+        toUpdate, response.updates, Blob.FROM_PB_FUNCTION);
+    List<BatchResponse.Result<Blob>> gets = transformBatchResult(
+        toGet, response.gets, Blob.FROM_PB_FUNCTION);
+    return new BatchResponse(deletes, updates, gets);
+  }
+
+  private <I, O extends Serializable> List<BatchResponse.Result<O>> transformBatchResult(
+      Iterable<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request,
+      Map<StorageObject, Tuple<I, StorageServiceException>> results, Function<I, O> transform) {
+    List<BatchResponse.Result<O>> response = Lists.newArrayListWithCapacity(results.size());
+    for (Tuple<StorageObject, ?> tuple : request) {
+      Tuple<I, StorageServiceException> result = results.get(tuple.x());
       if (result.x() != null) {
-        deletes.add(new BatchResponse.Result<>(false));
+        response.add(new BatchResponse.Result<>(transform.apply(result.x())));
       } else {
-        deletes.add(new BatchResponse.Result<Boolean>(result.y()));
+        response.add(new BatchResponse.Result<O>(result.y()));
       }
     }
-
-    List<BatchResponse.Result<Blob>> updates = new LinkedList<>();
-    List<BatchResponse.Result<Blob>> gets = new LinkedList<>();
-
-    return new BatchResponse(deletes, updates, gets);
+    return response;
   }
 
   @Override
