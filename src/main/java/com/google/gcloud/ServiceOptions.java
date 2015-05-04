@@ -27,14 +27,19 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.gcloud.spi.ServiceRpcFactory;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.lang.reflect.Method;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.Objects;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implements Serializable {
 
@@ -168,16 +173,36 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
   protected static String googleCloudProjectId() {
     try {
       URL url = new URL("http://metadata/computeMetadata/v1/project/project-id");
-      URLConnection connection = url.openConnection();
+      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
       connection.setRequestProperty("X-Google-Metadata-Request", "True");
-      try (BufferedReader reader =
-          new BufferedReader(new InputStreamReader(connection.getInputStream(), UTF_8))) {
-        return reader.readLine();
+      InputStream input = connection.getInputStream();
+      if (connection.getResponseCode() == 200) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(input, UTF_8))) {
+          return reader.readLine();
+        }
       }
     } catch (IOException ignore) {
-      // return null if can't determine
-      return null;
+      // ignore
     }
+    String configDir = System.getenv("CLOUDSDK_CONFIG");
+    if (configDir == null) {
+      configDir = new File(System.getProperty("user.home"), "/.config/gcloud/").getPath();
+    }
+    try (BufferedReader reader =
+        new BufferedReader(new FileReader(new File(configDir, "properties")))) {
+      String line;
+      Pattern pattern = Pattern.compile("^\\s*project\\s*=\\s*(.*?)\\s*$");
+      while((line = reader.readLine()) != null) {
+        Matcher matcher = pattern.matcher(line);
+        if (matcher.matches()) {
+          return matcher.group(1);
+        }
+      }
+    } catch (IOException ex) {
+      // ignore
+    }
+    // return null if can't determine
+    return null;
   }
 
   protected static String getAppEngineProjectId() {
