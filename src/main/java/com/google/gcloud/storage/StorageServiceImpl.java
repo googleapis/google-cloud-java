@@ -75,6 +75,10 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     storageRpc = options.storageRpc();
     retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
     // todo: replace nulls with Value.asNull (per toPb)
+    // todo: configure timeouts - https://developers.google.com/api-client-library/java/google-api-java-client/errors
+    // todo: provide rewrite - https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite
+    // todo: provide signed urls - https://cloud.google.com/storage/docs/access-control#Signed-URLs
+    // todo: check if we need to expose https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls/insert vs using bucket update/patch
   }
 
   @Override
@@ -379,8 +383,10 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     @Override
     public void seek(int position) throws IOException {
       validateOpen();
-      throw new UnsupportedOperationException("not supported yet");
-      // todo: implement
+      this.position = position;
+      buffer = null;
+      bufferPos = 0;
+      endOfStream = false;
     }
 
     @Override
@@ -419,12 +425,40 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     return new BlobReadChannelImpl(options(), blob, optionsMap);
   }
 
+  private static class BlobWriterChannelImpl implements BlobWriteChannel {
+
+    private final StorageServiceOptions options;
+    private final Blob blob;
+    private final Map<StorageRpc.Option, ?> optionsMap;
+
+    public BlobWriterChannelImpl(StorageServiceOptions options, Blob blob,
+        Map<StorageRpc.Option, ?> optionsMap) {
+      this.options = options;
+      this.blob = blob;
+      this.optionsMap = optionsMap;
+    }
+
+    @Override
+    public int write(ByteBuffer byteBuffer) throws IOException {
+      // todo: Use retry helper on retriable failures
+      return 0;
+    }
+
+    @Override
+    public boolean isOpen() {
+      return false;
+    }
+
+    @Override
+    public void close() throws IOException {
+
+    }
+  }
+
   @Override
   public BlobWriteChannel writer(Blob blob, BlobTargetOption... options) {
-    // todo: Use retry helper on retriable failures
-    // todo: consider changing lower level api to handle segments
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
-    return storageRpc.writer(blob.toPb(), optionsMap);
+    return new BlobWriterChannelImpl(options(), blob, optionsMap);
   }
 
   private Map<StorageRpc.Option, ?> optionMap(Long generation, Long metaGeneration,
