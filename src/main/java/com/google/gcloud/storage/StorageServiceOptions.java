@@ -121,6 +121,10 @@ public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageSer
     return projectId != null ? projectId : googleCloudProjectId();
   }
 
+  public static StorageServiceOptions defaultInstnace() {
+    return builder().build();
+  }
+
   public static Builder builder() {
     return new Builder();
   }
