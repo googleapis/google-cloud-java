@@ -430,18 +430,28 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     private final StorageServiceOptions options;
     private final Blob blob;
     private final Map<StorageRpc.Option, ?> optionsMap;
+    private final String uploadId;
+    private int position;
 
     public BlobWriterChannelImpl(StorageServiceOptions options, Blob blob,
         Map<StorageRpc.Option, ?> optionsMap) {
       this.options = options;
       this.blob = blob;
       this.optionsMap = optionsMap;
+      System.out.println("Koko. BlobWriterChannelImpl.init");
+      uploadId = options.storageRpc().open(blob.toPb(), optionsMap);
     }
 
     @Override
     public int write(ByteBuffer byteBuffer) throws IOException {
+      int size = Math.min(byteBuffer.remaining(), 1024 * 1024);
+      byte[] bytes = new byte[size];
+      byteBuffer.get(bytes);
       // todo: Use retry helper on retriable failures
-      return 0;
+      System.out.println("Koko. BlobWriterChannelImpl.write");
+      options.storageRpc().write(bytes, blob.toPb(), uploadId, position, false);
+      position += size;
+      return size;
     }
 
     @Override

@@ -23,6 +23,7 @@ import com.google.gcloud.storage.BatchRequest;
 import com.google.gcloud.storage.BatchResponse;
 import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobReadChannel;
+import com.google.gcloud.storage.BlobWriteChannel;
 import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.StorageService;
 import com.google.gcloud.storage.StorageService.ComposeRequest;
@@ -311,6 +312,15 @@ public class StorageExample {
   @SuppressWarnings("unchecked")
   public static void main(String... args) throws Exception {
     if (args.length < 1) {
+
+      System.out.println("KOKO.start -------------------------------");
+      StorageService storage =
+          StorageServiceFactory.instance().get(StorageServiceOptions.defaultInstnace());
+      BlobWriteChannel writer = storage
+          .writer(Blob.of("ozarov-javamrsample.appspot.com", "bla"));
+      writer.write(ByteBuffer.wrap("hello world".getBytes()));
+      writer.close();
+      System.out.println("KOKO.end -------------------------------");
       System.out.println("Missing required project id and action");
       printUsage();
       return;
