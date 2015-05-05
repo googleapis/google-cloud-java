@@ -56,12 +56,12 @@ import java.util.concurrent.TimeUnit;
  *
  *   {@literal @}Before
  *   public void setUp() throws LocalDevelopmentDatastoreException {
- *     datastore.clearDatastore();
+ *     datastore.clear();
  *   }
  *
  *   {@literal @}AfterClass
  *   public static void stopLocalDatastore() throws LocalDevelopmentDatastoreException {
- *     datastore.stopDatastore();
+ *     datastore.stop();
  *   }
  *
  *   {@literal @}Test
