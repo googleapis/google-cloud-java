@@ -50,14 +50,14 @@
   </distributionManagement>
   <dependencies>
     <dependency>
-        <groupId>com.google.auth</groupId>
-        <artifactId>google-auth-library-credentials</artifactId>
-        <version>0.1.0</version>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-credentials</artifactId>
+      <version>0.1.0</version>
     </dependency>
     <dependency>
-        <groupId>com.google.auth</groupId>
-        <artifactId>google-auth-library-oauth2-http</artifactId>
-        <version>0.1.0</version>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-oauth2-http</artifactId>
+      <version>0.1.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -178,7 +178,7 @@
           </execution>
         </executions>
         <configuration>
-        <!--
+          <!--
         to get rid of the warning: [WARNING] Warning: killAfter is now deprecated. Do you need it ?
         Please comment on MEXEC-6. see: method execute() in
         https://github.com/ispringer/exec-maven-plugin/blob/master/src/main/java/org/codehaus/mojo/exec/ExecJavaMojo.java
@@ -271,14 +271,14 @@
       </plugin>
       <plugin>
         <groupId>org.sonatype.plugins</groupId>
-	<artifactId>nexus-staging-maven-plugin</artifactId>
-	<version>1.6.3</version>
-	<extensions>true</extensions>
-	<configuration>
-	  <serverId>sonatype-nexus-staging</serverId>
-	  <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-	  <autoReleaseAfterClose>true</autoReleaseAfterClose>
-	</configuration>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.3</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>sonatype-nexus-staging</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.eluder.coveralls</groupId>
@@ -304,7 +304,7 @@
               <exclude>com/google/gcloud/examples/**/*.class</exclude>
             </excludes>
           </instrumentation>
-          <check />
+          <check/>
           <maxmem>256m</maxmem>
         </configuration>
       </plugin>
@@ -327,7 +327,7 @@
         <configuration>
           <reportPlugins>
             <plugin>
-	      <groupId>org.apache.maven.plugins</groupId>
+              <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-changelog-plugin</artifactId>
               <version>2.3</version>
             </plugin>
@@ -336,21 +336,21 @@
               <artifactId>maven-project-info-reports-plugin</artifactId>
               <version>2.8</version>
               <reportSets>
-	        <reportSet>
-		  <reports>
-		    <report>dependencies</report>
-		    <report>project-team</report>
-		    <report>mailing-list</report>
-              	    <report>cim</report>
-		    <report>issue-tracking</report>
-		    <report>license</report>
-		    <report>scm</report>
-		    <report>distribution-management</report>
-		    <report>summary</report>
+                <reportSet>
+                  <reports>
+                    <report>dependencies</report>
+                    <report>project-team</report>
+                    <report>mailing-list</report>
+                    <report>cim</report>
+                    <report>issue-tracking</report>
+                    <report>license</report>
+                    <report>scm</report>
+                    <report>distribution-management</report>
+                    <report>summary</report>
                   </reports>
                 </reportSet>
               </reportSets>
-	      <configuration>
+              <configuration>
                 <quiet>true</quiet>
                 <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
                 <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
@@ -409,6 +409,27 @@
               <goal>site</goal>
             </goals>
             <phase>site</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.4.1</version>
+        <configuration>
+          <!-- get all project dependencies -->
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <!-- bind to the packaging phase -->
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
