@@ -440,6 +440,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       this.optionsMap = optionsMap;
       System.out.println("Koko. BlobWriterChannelImpl.init");
       uploadId = options.storageRpc().open(blob.toPb(), optionsMap);
+      System.out.println("Koko. BlobWriterChannelImpl.init.uploadId: " + uploadId);
     }
 
     @Override
