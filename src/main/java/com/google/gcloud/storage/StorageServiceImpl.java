@@ -18,6 +18,7 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.gcloud.RetryHelper.runWithRetries;
+import static java.util.concurrent.Executors.callable;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.Function;
@@ -428,14 +429,14 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   private static class BlobWriterChannelImpl implements BlobWriteChannel {
 
     private static final int CHUNK_SIZE = 256 * 1024;
-    private static final int MIN_BUFFER_SIZE = CHUNK_SIZE * 4;
+    private static final int COMPACT_THRESHOLD = (int) Math.round(CHUNK_SIZE * 0.8);
 
     private final StorageServiceOptions options;
     private final Blob blob;
     private final String uploadId;
     private int position;
-    private byte[] buffer = new byte[MIN_BUFFER_SIZE];
-    private int bufferLimit;
+    private byte[] buffer = new byte[CHUNK_SIZE];
+    private int limit;
     private boolean isOpen;
 
     private transient StorageRpc storageRpc;
@@ -451,12 +452,45 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     }
 
     private void writeObject(ObjectOutputStream out) throws IOException {
+      if (!isOpen) {
+        out.defaultWriteObject();
+        return;
+      }
+      flush();
+      byte[] temp = buffer;
+      if (limit < COMPACT_THRESHOLD) {
+        buffer = Arrays.copyOf(buffer, limit);
+      }
       out.defaultWriteObject();
+      buffer = temp;
+    }
+
+    private void flush() {
+      if (limit >= CHUNK_SIZE) {
+        final int length = limit - limit % CHUNK_SIZE;
+        runWithRetries(callable(new Runnable() {
+          @Override
+          public void run() {
+            System.out.println("Going to flush-> " + length + " bytes");
+            storageRpc.write(buffer, 0, length, storageObject, uploadId, position, false);
+          }
+        }));
+        position += length;
+        limit -= length;
+        byte[] temp = new byte[CHUNK_SIZE];
+        System.arraycopy(buffer, length, temp, 0, limit);
+        buffer = temp;
+      }
     }
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
       in.defaultReadObject();
-      initTransients();
+      if (isOpen) {
+        if (buffer.length < CHUNK_SIZE) {
+          buffer = Arrays.copyOf(buffer, CHUNK_SIZE);
+        }
+        initTransients();
+      }
     }
 
     private void initTransients() {
@@ -473,20 +507,18 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     @Override
     public int write(ByteBuffer byteBuffer) throws IOException {
+      System.out.println("Going to write-> " + byteBuffer.remaining() + " bytes");
       validateOpen();
-      if (byteBuffer.remaining() < (buffer.length - bufferLimit)) {
-        byteBuffer.get(buffer, bufferLimit, byteBuffer.remaining());
-        // write buffer if full
+      int toWrite = byteBuffer.remaining();
+      if (buffer.length - limit >= toWrite) {
+        byteBuffer.get(buffer, limit, toWrite);
+      } else {
+        buffer = Arrays.copyOf(buffer, buffer.length + toWrite);
+        byteBuffer.get(buffer, limit, toWrite);
       }
-      int toWrite = buffer.length + byteBuffer.remaining() /
-      int size = Math.min(b, 1024 * 1024);
-      byte[] bytes = new byte[size];
-      byteBuffer.get(bytes);
-      // todo: Use retry helper on retriable failures
-      System.out.println("Koko. BlobWriterChannelImpl.write");
-      options.storageRpc().write(bytes, blob.toPb(), uploadId, position, false);
-      position += size;
-      return size;
+      limit += toWrite;
+      flush();
+      return toWrite;
     }
 
     @Override
@@ -497,9 +529,16 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     @Override
     public void close() throws IOException {
       if (isOpen) {
-        storageRpc.write(buffer, storageObject, uploadId, position, true);
+        runWithRetries(callable(new Runnable() {
+          @Override
+          public void run() {
+            System.out.println("Going to close-> " + limit + " bytes");
+            storageRpc.write(buffer, 0, limit, storageObject, uploadId, position, true);
+          }
+        }));
         position += buffer.length;
         isOpen = false;
+        buffer = null;
       }
     }
   }
