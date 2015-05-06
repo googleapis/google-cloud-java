@@ -427,25 +427,59 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   private static class BlobWriterChannelImpl implements BlobWriteChannel {
 
+    private static final int CHUNK_SIZE = 256 * 1024;
+    private static final int MIN_BUFFER_SIZE = CHUNK_SIZE * 4;
+
     private final StorageServiceOptions options;
     private final Blob blob;
-    private final Map<StorageRpc.Option, ?> optionsMap;
     private final String uploadId;
     private int position;
+    private byte[] buffer = new byte[MIN_BUFFER_SIZE];
+    private int bufferLimit;
+    private boolean isOpen;
+
+    private transient StorageRpc storageRpc;
+    private transient RetryParams retryParams;
+    private transient StorageObject storageObject;
 
     public BlobWriterChannelImpl(StorageServiceOptions options, Blob blob,
         Map<StorageRpc.Option, ?> optionsMap) {
       this.options = options;
       this.blob = blob;
-      this.optionsMap = optionsMap;
-      System.out.println("Koko. BlobWriterChannelImpl.init");
-      uploadId = options.storageRpc().open(blob.toPb(), optionsMap);
-      System.out.println("Koko. BlobWriterChannelImpl.init.uploadId: " + uploadId);
+      initTransients();
+      uploadId = options.storageRpc().open(storageObject, optionsMap);
+    }
+
+    private void writeObject(ObjectOutputStream out) throws IOException {
+      out.defaultWriteObject();
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+      in.defaultReadObject();
+      initTransients();
+    }
+
+    private void initTransients() {
+      storageRpc = options.storageRpc();
+      retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
+      storageObject = blob.toPb();
+    }
+
+    private void validateOpen() throws IOException {
+      if (!isOpen) {
+        throw new IOException("stream is closed");
+      }
     }
 
     @Override
     public int write(ByteBuffer byteBuffer) throws IOException {
-      int size = Math.min(byteBuffer.remaining(), 1024 * 1024);
+      validateOpen();
+      if (byteBuffer.remaining() < (buffer.length - bufferLimit)) {
+        byteBuffer.get(buffer, bufferLimit, byteBuffer.remaining());
+        // write buffer if full
+      }
+      int toWrite = buffer.length + byteBuffer.remaining() /
+      int size = Math.min(b, 1024 * 1024);
       byte[] bytes = new byte[size];
       byteBuffer.get(bytes);
       // todo: Use retry helper on retriable failures
@@ -457,12 +491,16 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     @Override
     public boolean isOpen() {
-      return false;
+      return isOpen;
     }
 
     @Override
     public void close() throws IOException {
-
+      if (isOpen) {
+        storageRpc.write(buffer, storageObject, uploadId, position, true);
+        position += buffer.length;
+        isOpen = false;
+      }
     }
   }
 
