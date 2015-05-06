@@ -32,6 +32,7 @@ import com.google.gcloud.storage.StorageServiceFactory;
 import com.google.gcloud.storage.StorageServiceOptions;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -192,9 +193,16 @@ public class StorageExample {
   private static class UploadAction extends StorageAction<Tuple<Path, Blob>> {
     @Override
     public void run(StorageService storage, Tuple<Path, Blob> tuple) throws Exception {
-      if (Files.size(tuple.x()) > 1_000_000) {
-        // todo: upload via streaming API
-        throw new IllegalArgumentException("file is too big");
+      if (Files.size(tuple.x()) > 1024) {
+        try (BlobWriteChannel writer = storage.writer(tuple.y())) {
+          byte[] buffer = new byte[1024];
+          try (InputStream input = Files.newInputStream(tuple.x())) {
+            int limit;
+            while ((limit = input.read(buffer)) >= 0) {
+              writer.write(ByteBuffer.wrap(buffer, 0, limit));
+            }
+          }
+        }
       } else {
         byte[] bytes = Files.readAllBytes(tuple.x());
         System.out.println(storage.create(tuple.y(), bytes));
@@ -312,15 +320,6 @@ public class StorageExample {
   @SuppressWarnings("unchecked")
   public static void main(String... args) throws Exception {
     if (args.length < 1) {
-
-      System.out.println("KOKO.start -------------------------------");
-      StorageService storage =
-          StorageServiceFactory.instance().get(StorageServiceOptions.defaultInstnace());
-      BlobWriteChannel writer = storage
-          .writer(Blob.of("ozarov-javamrsample.appspot.com", "bla"));
-      writer.write(ByteBuffer.wrap("hello world".getBytes()));
-      writer.close();
-      System.out.println("KOKO.end -------------------------------");
       System.out.println("Missing required project id and action");
       printUsage();
       return;

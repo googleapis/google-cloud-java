@@ -199,7 +199,7 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
     return ServiceRpcProvider.datastore(this);
   }
 
-  public static DatastoreServiceOptions defaultIntance() {
+  public static DatastoreServiceOptions defaultInstance() {
     return builder().build();
   }
 

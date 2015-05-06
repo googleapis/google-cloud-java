@@ -36,6 +36,7 @@ import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -184,9 +185,13 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
     } catch (IOException ignore) {
       // ignore
     }
-    String configDir = System.getenv("CLOUDSDK_CONFIG");
-    if (configDir == null) {
-      configDir = new File(System.getProperty("user.home"), "/.config/gcloud/").getPath();
+   File configDir;
+    if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
+      configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
+    } else if (isWindows() &&  System.getenv().containsKey("APPDATA")) {
+      configDir = new File(System.getenv("APPDATA"), "gcloud");
+    } else {
+      configDir = new File(System.getProperty("user.home"), ".config/gcloud");
     }
     try (BufferedReader reader =
         new BufferedReader(new FileReader(new File(configDir, "properties")))) {
@@ -214,6 +219,10 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
     }
     // return null if can't determine
     return null;
+  }
+
+  private static boolean isWindows() {
+    return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).indexOf("windows") > -1;
   }
 
   protected static String getAppEngineProjectId() {
