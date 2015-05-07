@@ -40,6 +40,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * An example of using the Google Cloud Storage.
@@ -194,12 +195,17 @@ public class StorageExample {
     @Override
     public void run(StorageService storage, Tuple<Path, Blob> tuple) throws Exception {
       if (Files.size(tuple.x()) > 1024) {
+        Random rnd = new Random();
         try (BlobWriteChannel writer = storage.writer(tuple.y())) {
           byte[] buffer = new byte[1024];
           try (InputStream input = Files.newInputStream(tuple.x())) {
             int limit;
             while ((limit = input.read(buffer)) >= 0) {
-              writer.write(ByteBuffer.wrap(buffer, 0, limit));
+              try {
+                writer.write(ByteBuffer.wrap(buffer, 0, limit));
+              } catch (Exception ex) {
+                ex.printStackTrace();
+              }
             }
           }
         }

@@ -437,7 +437,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     private int position;
     private byte[] buffer = new byte[CHUNK_SIZE];
     private int limit;
-    private boolean isOpen;
+    private boolean isOpen = true;
 
     private transient StorageRpc storageRpc;
     private transient RetryParams retryParams;
@@ -471,8 +471,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
         runWithRetries(callable(new Runnable() {
           @Override
           public void run() {
-            System.out.println("Going to flush-> " + length + " bytes");
-            storageRpc.write(buffer, 0, length, storageObject, uploadId, position, false);
+            storageRpc.write(uploadId, buffer, 0, storageObject, position, length, false);
           }
         }));
         position += length;
@@ -507,13 +506,13 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     @Override
     public int write(ByteBuffer byteBuffer) throws IOException {
-      System.out.println("Going to write-> " + byteBuffer.remaining() + " bytes");
       validateOpen();
       int toWrite = byteBuffer.remaining();
-      if (buffer.length - limit >= toWrite) {
+      int spaceInBuffer = buffer.length - limit;
+      if (spaceInBuffer >= toWrite) {
         byteBuffer.get(buffer, limit, toWrite);
       } else {
-        buffer = Arrays.copyOf(buffer, buffer.length + toWrite);
+        buffer = Arrays.copyOf(buffer, buffer.length + toWrite - spaceInBuffer);
         byteBuffer.get(buffer, limit, toWrite);
       }
       limit += toWrite;
@@ -532,8 +531,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
         runWithRetries(callable(new Runnable() {
           @Override
           public void run() {
-            System.out.println("Going to close-> " + limit + " bytes");
-            storageRpc.write(buffer, 0, limit, storageObject, uploadId, position, true);
+            storageRpc.write(uploadId, buffer, 0, storageObject, position, limit, true);
           }
         }));
         position += buffer.length;
