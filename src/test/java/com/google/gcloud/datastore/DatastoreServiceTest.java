@@ -35,6 +35,7 @@ import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.spi.DatastoreRpc;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
+import com.google.gcloud.spi.DatastoreRpcFactory;
 
 import org.easymock.EasyMock;
 import org.junit.AfterClass;
@@ -637,18 +638,21 @@ public class DatastoreServiceTest {
         DatastoreV1.LookupRequest.newBuilder().addKey(KEY1.toPb()).build();
     DatastoreV1.LookupResponse responsePb = DatastoreV1.LookupResponse.newBuilder()
         .addFound(EntityResult.newBuilder().setEntity(ENTITY1.toPb())).build();
-    DatastoreRpc mock = EasyMock.createStrictMock(DatastoreRpc.class);
-    EasyMock.expect(mock.lookup(requestPb))
+    DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
+    DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreServiceOptions.class)))
+        .andReturn(rpcMock);
+    EasyMock.expect(rpcMock.lookup(requestPb))
         .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.UNAVAILABLE))
         .andReturn(responsePb);
-    EasyMock.replay(mock);
+    EasyMock.replay(rpcFactoryMock, rpcMock);
     DatastoreServiceOptions options = this.options.toBuilder()
         .retryParams(RetryParams.getDefaultInstance())
-        .datastoreRpc(mock)
+        .serviceRpcFactory(rpcFactoryMock)
         .build();
     DatastoreService datastore = DatastoreServiceFactory.instance().get(options);
     Entity entity = datastore.get(KEY1);
     assertEquals(ENTITY1, entity);
-    EasyMock.verify(mock);
+    EasyMock.verify(rpcFactoryMock, rpcMock);
   }
 }
