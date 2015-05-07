@@ -25,10 +25,10 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Parameters for configuring retries with an exponential backoff.
- * Initial request is executed immediately. If the request fails but passes the
- * {@link ExceptionHandler} criteria the calling thread sleeps for {@code initialRetryDelayMillis}.
- * Each subsequent failure the sleep interval is calculated as:
+ * Parameters for configuring retries with an exponential backoff. Initial request is executed
+ * immediately. If the request fails but passes the {@link ExceptionHandler} criteria the calling
+ * thread sleeps for {@code initialRetryDelayMillis}. Each subsequent failure the sleep interval is
+ * calculated as:
  * <p>
  * {@code retryDelayBackoffFactor ^ attempts * initialRetryDelayMillis} but would be upper-bounded
  * to {@code maxRetryDelayMillis}

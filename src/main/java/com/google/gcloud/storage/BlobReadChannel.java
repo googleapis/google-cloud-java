@@ -16,20 +16,27 @@
 
 package com.google.gcloud.storage;
 
+import java.io.Closeable;
+import java.io.IOException;
+import java.io.Serializable;
+import java.nio.channels.ReadableByteChannel;
 
+/**
+ * A channel for reading data from a Google Cloud Storage object.
+ *
+ * Implementations of this class may buffer data internally to reduce remote calls.
+ *
+ * This class is @{link Serializable}, which allows incremental reads.
+ */
+public interface BlobReadChannel extends ReadableByteChannel, Serializable, Closeable {
 
-public abstract class StorageServiceFactory {
+  /**
+   * Overridden to remove IOException.
+   *
+   * @see java.nio.channels.Channel#close()
+   */
+  @Override
+  void close();
 
-  private static final StorageServiceFactory INSTANCE = new StorageServiceFactory() {
-    @Override
-    public StorageService get(StorageServiceOptions options) {
-      return new StorageServiceImpl(options);
-    }
-  };
-
-  public static StorageServiceFactory instance() {
-    return INSTANCE;
-  }
-
-  public abstract StorageService get(StorageServiceOptions options);
+  void seek(int position) throws IOException;
 }

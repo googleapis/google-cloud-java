@@ -16,13 +16,37 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.collect.Iterables.transform;
+import static com.google.common.collect.Lists.newArrayList;
+
+import com.google.api.services.storage.model.Bucket;
+import com.google.common.base.Function;
+import com.google.common.base.Functions;
 import com.google.common.collect.ImmutableList;
 
+import java.io.Serializable;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
-public class Cors {
+public final class Cors implements Serializable {
+
+  private static final long serialVersionUID = -8637770919343335655L;
+
+  static final Function<Bucket.Cors, Cors> FROM_PB_FUNCTION = new Function<Bucket.Cors, Cors>() {
+    @Override
+    public Cors apply(Bucket.Cors pb) {
+      return Cors.fromPb(pb);
+    }
+  };
+
+  static final Function<Cors, Bucket.Cors> TO_PB_FUNCTION = new Function<Cors, Bucket.Cors>() {
+    @Override
+    public Bucket.Cors apply(Cors cors) {
+      return cors.toPb();
+    }
+  };
 
   private final Integer maxAgeSeconds;
   private final ImmutableList<Method> methods;
@@ -33,28 +57,44 @@ public class Cors {
     ANY, GET, HEAD, PUT, POST, DELETE
   }
 
-  public static class Origin {
+  public static class Origin implements Serializable {
 
-    private final URI uri;
+    private static final long serialVersionUID = -4447958124895577993L;
+    private static final String ANY_URI = "*";
+    private final String value;
 
-    public static final Origin ANY = new Origin();
+    private static final Origin ANY = new Origin(ANY_URI);
 
-    private Origin() {
-      uri = null;
+    private Origin(String value) {
+      this.value = checkNotNull(value);
     }
 
-    public Origin(String scheme, String host, int port) {
+    public static Origin any() {
+      return ANY;
+    }
+
+    public static Origin of(String scheme, String host, int port) {
       try {
-        this.uri = new URI(scheme, null, host, port, null, null, null);
+        return of(new URI(scheme, null, host, port, null, null, null).toString());
       } catch (URISyntaxException e) {
         throw new IllegalArgumentException(e);
       }
+    }
 
+    public static Origin of(String value) {
+      if (ANY_URI.equals(value)) {
+        return any();
+      }
+      return new Origin(value);
     }
 
     @Override
     public String toString() {
-      return uri == null ? "*" : uri.toString();
+      return value();
+    }
+
+    public String value() {
+      return value;
     }
   }
 
@@ -65,26 +105,25 @@ public class Cors {
     private ImmutableList<Origin> origins;
     private ImmutableList<String> responseHeaders;
 
-    private Builder() {
-    }
+    private Builder() {}
 
     public Builder maxAgeSeconds(Integer maxAgeSeconds) {
       this.maxAgeSeconds = maxAgeSeconds;
       return this;
     }
 
-    public Builder methods(Method... methods) {
+    public Builder methods(Iterable<Method> methods) {
       this.methods = ImmutableList.copyOf(methods);
       return this;
     }
 
-    public Builder origins(Origin... origins) {
+    public Builder origins(Iterable<Origin> origins) {
       this.origins = ImmutableList.copyOf(origins);
       return this;
     }
 
-    public Builder responseHeaders(String... responseHeaders) {
-      this.responseHeaders = ImmutableList.copyOf(responseHeaders);
+    public Builder responseHeaders(Iterable<String> headers) {
+      this.responseHeaders = ImmutableList.copyOf(headers);
       return this;
     }
 
@@ -116,7 +155,42 @@ public class Cors {
     return responseHeaders;
   }
 
+  public Builder toBuilder() {
+    return builder()
+        .maxAgeSeconds(maxAgeSeconds)
+        .methods(methods)
+        .origins(origins)
+        .responseHeaders(responseHeaders);
+  }
+
   public static Builder builder() {
     return new Builder();
+  }
+
+  Bucket.Cors toPb() {
+    Bucket.Cors pb = new Bucket.Cors();
+    pb.setMaxAgeSeconds(maxAgeSeconds);
+    pb.setResponseHeader(responseHeaders);
+    pb.setMethod(newArrayList(transform(methods(), Functions.toStringFunction())));
+    pb.setOrigin(newArrayList(transform(origins(), Functions.toStringFunction())));
+    return pb;
+  }
+
+  static Cors fromPb(Bucket.Cors cors) {
+    Builder builder = builder().maxAgeSeconds(cors.getMaxAgeSeconds());
+    builder.methods(transform(cors.getMethod(), new Function<String, Method>() {
+      @Override
+      public Method apply(String name) {
+        return Method.valueOf(name.toUpperCase());
+      }
+    }));
+    builder.origins(transform(cors.getOrigin(), new Function<String, Origin>() {
+      @Override
+      public Origin apply(String value) {
+        return Origin.of(value);
+      }
+    }));
+    builder.responseHeaders(cors.getResponseHeader());
+    return builder.build();
   }
 }

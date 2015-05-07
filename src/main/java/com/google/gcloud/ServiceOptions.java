@@ -24,38 +24,80 @@ import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.gcloud.spi.ServiceRpcFactory;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.lang.reflect.Method;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
+import java.util.Locale;
+import java.util.Objects;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public abstract class ServiceOptions {
+public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
+  private static final long serialVersionUID = 1203687993961393350L;
 
   private final String host;
-  private final HttpTransport httpTransport;
+  private final HttpTransportFactory httpTransportFactory;
   private final AuthCredentials authCredentials;
   private final RetryParams retryParams;
+  private final ServiceRpcFactory<R, O> serviceRpcFactory;
 
-  protected abstract static class Builder<B extends Builder<B>> {
+  public interface HttpTransportFactory extends Serializable {
+    HttpTransport create();
+  }
+
+  private enum DefaultHttpTransportFactory implements HttpTransportFactory {
+
+    INSTANCE;
+
+    @Override
+    public HttpTransport create() {
+      // Consider App Engine
+      if (appEngineAppId() != null) {
+        try {
+          return new UrlFetchTransport();
+        } catch (Exception ignore) {
+          // Maybe not on App Engine
+        }
+      }
+      // Consider Compute
+      try {
+        return AuthCredentials.getComputeCredential().getTransport();
+      } catch (Exception e) {
+        // Maybe not on GCE
+      }
+      return new NetHttpTransport();
+    }
+  }
+
+  protected abstract static class Builder<R, O extends ServiceOptions<R, O>,
+      B extends Builder<R, O, B>> {
 
     private String host;
-    private HttpTransport httpTransport;
+    private HttpTransportFactory httpTransportFactory;
     private AuthCredentials authCredentials;
     private RetryParams retryParams;
+    private ServiceRpcFactory<R, O> serviceRpcFactory;
 
     protected Builder() {}
 
-    protected Builder(ServiceOptions options) {
+    protected Builder(ServiceOptions<R, O> options) {
       host = options.host;
-      httpTransport = options.httpTransport;
+      httpTransportFactory = options.httpTransportFactory;
       authCredentials = options.authCredentials;
       retryParams = options.retryParams;
+      serviceRpcFactory = options.serviceRpcFactory;
     }
 
     protected abstract ServiceOptions build();
@@ -70,8 +112,8 @@ public abstract class ServiceOptions {
       return self();
     }
 
-    public B httpTransport(HttpTransport httpTransport) {
-      this.httpTransport = httpTransport;
+    public B httpTransportFactory(HttpTransportFactory httpTransportFactory) {
+      this.httpTransportFactory = httpTransportFactory;
       return self();
     }
 
@@ -84,31 +126,20 @@ public abstract class ServiceOptions {
       this.retryParams = retryParams;
       return self();
     }
+
+    public B serviceRpcFactory(ServiceRpcFactory<R, O> serviceRpcFactory) {
+      this.serviceRpcFactory = serviceRpcFactory;
+      return self();
+    }
   }
 
-  protected ServiceOptions(Builder<?> builder) {
+  protected ServiceOptions(Builder<R, O, ?> builder) {
     host = firstNonNull(builder.host, DEFAULT_HOST);
-    httpTransport = firstNonNull(builder.httpTransport, defaultHttpTransport());
+    httpTransportFactory =
+        firstNonNull(builder.httpTransportFactory, DefaultHttpTransportFactory.INSTANCE);
     authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
     retryParams = builder.retryParams;
-  }
-
-  private static HttpTransport defaultHttpTransport() {
-    // Consider App Engine
-    if (appEngineAppId() != null) {
-      try {
-        return new UrlFetchTransport();
-      } catch (Exception ignore) {
-        // Maybe not on App Engine
-      }
-    }
-    // Consider Compute
-    try {
-      return AuthCredentials.getComputeCredential().getTransport();
-    } catch (Exception e) {
-      // Maybe not on GCE
-    }
-    return new NetHttpTransport();
+    serviceRpcFactory = builder.serviceRpcFactory;
   }
 
   private static AuthCredentials defaultAuthCredentials() {
@@ -143,16 +174,55 @@ public abstract class ServiceOptions {
   protected static String googleCloudProjectId() {
     try {
       URL url = new URL("http://metadata/computeMetadata/v1/project/project-id");
-      URLConnection connection = url.openConnection();
+      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
       connection.setRequestProperty("X-Google-Metadata-Request", "True");
-      try (BufferedReader reader =
-               new BufferedReader(new InputStreamReader(connection.getInputStream(), UTF_8))) {
-        return reader.readLine();
+      InputStream input = connection.getInputStream();
+      if (connection.getResponseCode() == 200) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(input, UTF_8))) {
+          return reader.readLine();
+        }
       }
     } catch (IOException ignore) {
-      // return null if can't determine
-      return null;
+      // ignore
     }
+   File configDir;
+    if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
+      configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
+    } else if (isWindows() &&  System.getenv().containsKey("APPDATA")) {
+      configDir = new File(System.getenv("APPDATA"), "gcloud");
+    } else {
+      configDir = new File(System.getProperty("user.home"), ".config/gcloud");
+    }
+    try (BufferedReader reader =
+        new BufferedReader(new FileReader(new File(configDir, "properties")))) {
+      String line;
+      String section = null;
+      Pattern projectPattern = Pattern.compile("^project\\s*=\\s*(.*)$");
+      Pattern sectionPattern = Pattern.compile("^\\[(.*)\\]$");
+      while((line = reader.readLine()) != null) {
+        if (line.isEmpty() || line.startsWith(";")) {
+          continue;
+        }
+        line = line.trim();
+        Matcher matcher = sectionPattern.matcher(line);
+        if (matcher.matches()) {
+          section = matcher.group(1);
+        } else if (section == null || section.equals("core")) {
+          matcher = projectPattern.matcher(line);
+          if (matcher.matches()) {
+            return matcher.group(1);
+          }
+        }
+      }
+    } catch (IOException ex) {
+      // ignore
+    }
+    // return null if can't determine
+    return null;
+  }
+
+  private static boolean isWindows() {
+    return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).indexOf("windows") > -1;
   }
 
   protected static String getAppEngineProjectId() {
@@ -179,8 +249,8 @@ public abstract class ServiceOptions {
     return host;
   }
 
-  public HttpTransport httpTransport() {
-    return httpTransport;
+  public HttpTransportFactory httpTransportFactory() {
+    return httpTransportFactory;
   }
 
   public AuthCredentials authCredentials() {
@@ -191,9 +261,28 @@ public abstract class ServiceOptions {
     return retryParams;
   }
 
+  public ServiceRpcFactory<R, O> serviceRpcFactory() {
+    return serviceRpcFactory;
+  }
+
   public HttpRequestInitializer httpRequestInitializer() {
+    HttpTransport httpTransport = httpTransportFactory.create();
     return authCredentials().httpRequestInitializer(httpTransport, scopes());
   }
 
-  public abstract Builder<?> toBuilder();
+  @Override
+  public int hashCode() {
+    return Objects.hash(host, httpTransportFactory, authCredentials, retryParams,
+        serviceRpcFactory);
+  }
+
+  protected boolean isEquals(ServiceOptions other) {
+    return Objects.equals(host, other.host)
+        && Objects.equals(httpTransportFactory, other.httpTransportFactory)
+        && Objects.equals(authCredentials, other.authCredentials)
+        && Objects.equals(retryParams, other.retryParams)
+        && Objects.equals(serviceRpcFactory, other.serviceRpcFactory);
+  }
+
+  public abstract Builder<R, O, ?> toBuilder();
 }
