@@ -16,8 +16,6 @@
 
 package com.google.gcloud.examples;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.BatchRequest;
 import com.google.gcloud.storage.BatchResponse;
@@ -31,9 +29,13 @@ import com.google.gcloud.storage.StorageService.CopyRequest;
 import com.google.gcloud.storage.StorageServiceFactory;
 import com.google.gcloud.storage.StorageServiceOptions;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintStream;
 import java.nio.ByteBuffer;
+import java.nio.channels.Channels;
+import java.nio.channels.WritableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -52,9 +54,10 @@ import java.util.Map;
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven -
  * {@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
- * -Dexec.args="[<project_id>] list [<bucket>]| info [<bucket> [<file>]]| get <bucket> <path>|
- *  upload <local_file> <bucket> [<path>]| delete <bucket> <path>+|
- *  cp <from_bucket> <from_path> <to_bucket> <to_path>| compose <bucket> <from_path>+ <to_path>"}
+ * -Dexec.args="[<project_id>] list [<bucket>]| info [<bucket> [<file>]]|
+ *  download <bucket> <path> [local_file]| upload <local_file> <bucket> [<path>]|
+ *  delete <bucket> <path>+| cp <from_bucket> <from_path> <to_bucket> <to_path>|
+ *  compose <bucket> <from_path>+ <to_path>"}
  * </li>
  * </ol>
  */
@@ -229,26 +232,58 @@ public class StorageExample {
     }
   }
 
-  private static class GetAction extends BlobAction {
+  private static class DownloadAction extends StorageAction<Tuple<Blob, Path>> {
+
     @Override
-    public void run(StorageService storage, Blob blob) throws IOException {
-      blob = storage.get(blob);
+    public void run(StorageService storage, Tuple<Blob, Path> tuple) throws IOException {
+      Blob blob = storage.get(tuple.x());
       if (blob == null) {
         System.out.println("No such object");
         return;
       }
+      PrintStream writeTo = System.out;
+      if (tuple.y() != null) {
+        writeTo = new PrintStream(new FileOutputStream(tuple.y().toFile()));
+      }
       if (blob.size() < 1024) {
-        System.out.println(new String(storage.load(blob), UTF_8));
+        writeTo.write(storage.load(blob));
       } else {
         try (BlobReadChannel reader = storage.reader(blob)) {
+          WritableByteChannel channel = Channels.newChannel(writeTo);
           ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
           while (reader.read(bytes) > 0) {
             bytes.flip();
-            System.out.print(UTF_8.decode(bytes));
+            channel.write(bytes);
             bytes.clear();
           }
         }
       }
+      if (tuple.y() == null) {
+        writeTo.println();
+      } else {
+        writeTo.close();
+      }
+    }
+
+    @Override
+    Tuple<Blob, Path> parse(String... args) {
+      if (args.length < 2 || args.length > 3) {
+        throw new IllegalArgumentException();
+      }
+      Path path = null;
+      if (args.length > 2) {
+        path = Paths.get(args[2]);
+        if (Files.isDirectory(path)) {
+          path = path.resolve(Paths.get(args[1]).getFileName());
+        }
+      }
+      String blob = args.length < 3 ? path.getFileName().toString() : args[2];
+      return Tuple.of(Blob.of(args[0], args[1]), path);
+    }
+
+    @Override
+    public String params() {
+      return "<bucket> <path> [local_file]";
     }
   }
 
@@ -302,7 +337,7 @@ public class StorageExample {
     ACTIONS.put("delete", new DeleteAction());
     ACTIONS.put("list", new ListAction());
     ACTIONS.put("upload", new UploadAction());
-    ACTIONS.put("get", new GetAction());
+    ACTIONS.put("download", new DownloadAction());
     ACTIONS.put("cp", new CopyAction());
     ACTIONS.put("compose", new ComposeAction());
   }
