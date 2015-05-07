@@ -16,22 +16,30 @@
 
 package com.google.gcloud.storage;
 
-import java.io.Closeable;
 import java.io.Serializable;
-import java.nio.channels.ReadableByteChannel;
+import java.util.Iterator;
 
 /**
- * A readable byte channel for reading data from Google Cloud Storage.
- *
- *  Implementations of this class may buffer data internally to reduce remote calls.
- *
- *  This class is @{link Serializable}, which allows incremental reads.
+ * Google Cloud storage list result.
  */
-public interface InputChannel extends ReadableByteChannel, Serializable, Closeable {
+public class ListResult<T extends Serializable> implements Iterable<T>, Serializable {
 
-  StorageObject.Key key();
+  private static final long serialVersionUID = -6937287874908527950L;
 
-  int size();
+  private final String cursor;
+  private final Iterable<T> results;
 
-  void seek(int position);
+  ListResult(String cursor, Iterable<T> results) {
+    this.cursor = cursor;
+    this.results = results;
+  }
+
+  public String nextPageCursor() {
+    return cursor;
+  }
+
+  @Override
+  public Iterator<T> iterator() {
+    return results.iterator();
+  }
 }

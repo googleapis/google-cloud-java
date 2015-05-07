@@ -16,45 +16,215 @@
 
 package com.google.gcloud.storage;
 
-public interface Acl {
+import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.ObjectAccessControl;
 
-  class ProjectTeam {
-      // ProjectNumber: The project number.
-  //ProjectNumber string `json:"projectNumber,omitempty"`
+import java.io.Serializable;
 
-  // Team: The team. Can be owners, editors, or viewers.
-  //Team string `json:"team,omitempty"`
+public final class Acl implements Serializable {
+
+  private static final long serialVersionUID = 6435575339887912222L;
+
+  private final Entity entity;
+  private final Role role;
+
+  public enum Role {
+    OWNER, READER, WRITER
   }
 
-  enum Entity {
-    USER_ID("user-userId"),
-    USER_EMAIL("user-emailAddress"),
-    GROUP_ID("group-groupId"),
-    GROUP_EMAIL("group-emailAddress"),
-    ALL_USERS("allUsers"),
-    ALL_AUTHENTICATED_USERS("allAuthenticatedUsers");
+  public static abstract class Entity implements Serializable {
 
+    private static final long serialVersionUID = -2707407252771255840L;
+
+    private final Type type;
     private final String value;
 
-    Entity(String value) {
+    public enum Type {
+      DOMAIN, GROUP, USER, PROJECT, UNKNOWN
+    }
+
+    Entity(Type type, String value) {
+      this.type = type;
       this.value = value;
+    }
+
+    public Type type() {
+      return type;
+    }
+
+    protected String value() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return toPb();
+    }
+
+    String toPb() {
+      return type.name().toLowerCase() + "-" + value();
+    }
+
+    static Entity fromPb(String entity) {
+      if (entity.startsWith("user-")) {
+        return new User(entity.substring(5));
+      }
+      if (entity.equals(User.ALL_USERS)) {
+        return User.ofAllUsers();
+      }
+      if (entity.equals(User.ALL_AUTHENTICATED_USERS)) {
+        return User.ofAllAuthenticatedUsers();
+      }
+      if (entity.startsWith("group-")) {
+        return new Group(entity.substring(6));
+      }
+      if (entity.startsWith("project-")) {
+        int idx = entity.indexOf('-', 8);
+        String team = entity.substring(8, idx);
+        String projectId = entity.substring(idx + 1);
+        return new Project(Project.ProjectRole.valueOf(team.toUpperCase()), projectId);
+      }
+      return new RawEntity(entity);
     }
   }
 
-  String domain();
+  public static class Domain extends Entity {
 
-  Entity entity();
+    private static final long serialVersionUID = -3033025857280447253L;
 
-  String entityId();
+    public Domain(String domain) {
+      super(Type.DOMAIN, domain);
 
-  String email();
+    }
 
-  String etag();
+    public String domain() {
+      return value();
+    }
+  }
 
-  String generation();
+  public static class Group extends Entity {
 
+    private static final long serialVersionUID = -1660987136294408826L;
 
-  ProjectTeam projectTeam();
+    public Group(String email) {
+      super(Type.GROUP, email);
+    }
 
-  String role();
+    public String email() {
+      return value();
+    }
+  }
+
+  public static class User extends Entity {
+
+    private static final long serialVersionUID = 3076518036392737008L;
+    private static final String ALL_USERS = "allUsers";
+    private static final String ALL_AUTHENTICATED_USERS = "allAuthenticatedUsers";
+
+    public User(String email) {
+      super(Type.USER, email);
+    }
+
+    public String email() {
+      return value();
+    }
+
+    @Override
+    String toPb() {
+      switch (value()) {
+        case ALL_AUTHENTICATED_USERS:
+          return ALL_AUTHENTICATED_USERS;
+        case ALL_USERS:
+          return ALL_USERS;
+        default:
+          break;
+      }
+      return super.toPb();
+    }
+
+    public static User ofAllUsers() {
+      return new User(ALL_USERS);
+    }
+
+    public static User ofAllAuthenticatedUsers() {
+      return new User(ALL_AUTHENTICATED_USERS);
+    }
+  }
+
+  public static class Project extends Entity {
+
+    private static final long serialVersionUID = 7933776866530023027L;
+
+    private final ProjectRole pRole;
+    private final String projectId;
+
+    enum ProjectRole {
+      OWNERS, EDITORS, VIEWERS
+    }
+
+    Project(ProjectRole pRole, String projectId) {
+      super(Type.PROJECT, pRole.name().toLowerCase() + "-" + projectId);
+      this.pRole = pRole;
+      this.projectId = projectId;
+    }
+
+    public ProjectRole projectRole() {
+      return pRole;
+    }
+
+    public String projectId() {
+      return projectId;
+    }
+  }
+
+  public static class RawEntity extends Entity {
+
+    private static final long serialVersionUID = 3966205614223053950L;
+
+    RawEntity(String entity) {
+      super(Type.UNKNOWN, entity);
+    }
+
+    @Override
+    String toPb() {
+      return value();
+    }
+  }
+
+  public Acl(Entity entity, Role role) {
+    this.entity = entity;
+    this.role = role;
+  }
+
+  public Entity entity() {
+    return entity;
+  }
+
+  public Role role() {
+    return role;
+  }
+
+  BucketAccessControl toBucketPb() {
+    BucketAccessControl bucketPb = new BucketAccessControl();
+    bucketPb.setRole(role().toString());
+    bucketPb.setEntity(entity().toString());
+    return bucketPb;
+  }
+
+  ObjectAccessControl toObjectPb() {
+    ObjectAccessControl objectPb = new ObjectAccessControl();
+    objectPb.setRole(role().name());
+    objectPb.setEntity(entity().toPb());
+    return objectPb;
+  }
+
+  static Acl fromPb(ObjectAccessControl objectAccessControl) {
+    Role role = Role.valueOf(objectAccessControl.getRole());
+    return new Acl(Entity.fromPb(objectAccessControl.getEntity()), role);
+  }
+
+  static Acl fromPb(BucketAccessControl bucketAccessControl) {
+    Role role = Role.valueOf(bucketAccessControl.getRole());
+    return new Acl(Entity.fromPb(bucketAccessControl.getEntity()), role);
+  }
 }

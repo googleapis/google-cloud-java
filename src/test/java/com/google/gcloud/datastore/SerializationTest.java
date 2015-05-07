@@ -23,6 +23,8 @@ import static org.junit.Assert.assertNotSame;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
@@ -47,7 +49,7 @@ public class SerializationTest {
   private static final DateTime DATE_TIME1 = DateTime.now();
   private static final Blob BLOB1 = Blob.copyFrom(UTF_8.encode("hello world"));
   private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1,2});
-  private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[] {10});
+  private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[]{10});
   private static final Query<?> GQL1 =
       Query.gqlQueryBuilder("select * from kind1 where name = @name and age > @1")
       .setBinding("name", "name1")
@@ -129,6 +131,26 @@ public class SerializationTest {
       .build();
 
   @Test
+  public void testServiceOptions() throws Exception {
+    DatastoreServiceOptions options = DatastoreServiceOptions.builder()
+        .authCredentials(AuthCredentials.createForAppEngine())
+        .normalizeDataset(false)
+        .dataset("ds1")
+        .build();
+    DatastoreServiceOptions serializedCopy = serializeAndDeserialize(options);
+    assertEquals(options, serializedCopy);
+
+    options = options.toBuilder()
+        .namespace("ns1")
+        .retryParams(RetryParams.getDefaultInstance())
+        .authCredentials(AuthCredentials.noCredentials())
+        .force(true)
+        .build();
+    serializedCopy = serializeAndDeserialize(options);
+    assertEquals(options, serializedCopy);
+  }
+
+  @Test
   public void testValues() throws Exception {
     for (ValueType valueType : ValueType.values()) {
       for (Value<?> value : TYPE_TO_VALUES.get(valueType)) {
@@ -157,7 +179,7 @@ public class SerializationTest {
   }
 
   @SuppressWarnings("unchecked")
-  private <T extends Serializable> T serializeAndDeserialize(T obj)
+  private <T extends java.io.Serializable> T serializeAndDeserialize(T obj)
       throws IOException, ClassNotFoundException {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
     try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
