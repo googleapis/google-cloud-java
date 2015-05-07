@@ -49,8 +49,7 @@ public final class ExceptionHandler implements Serializable {
 
     enum RetryResult {
 
-      RETRY(true),
-      ABORT(false);
+      RETRY(true), ABORT(false);
 
       private final boolean booleanValue;
 
@@ -67,9 +66,9 @@ public final class ExceptionHandler implements Serializable {
      * This method is called before exception evaluation and could short-circuit the process.
      *
      * @param exception the exception that is being evaluated
-     * @return {@link RetryResult} to indicate if the exception should be ignored
-     *     ({@link RetryResult#RETRY}), propagated ({@link RetryResult#ABORT}),
-     *     or evaluation should proceed ({@code null}).
+     * @return {@link RetryResult} to indicate if the exception should be ignored (
+     *         {@link RetryResult#RETRY}), propagated ({@link RetryResult#ABORT}), or evaluation
+     *         should proceed ({@code null}).
      */
     RetryResult beforeEval(Exception exception);
 
@@ -78,9 +77,9 @@ public final class ExceptionHandler implements Serializable {
      *
      * @param exception the exception that is being evaluated
      * @param retryResult the result of the evaluation so far.
-     * @return {@link RetryResult} to indicate if the exception should be ignored
-     *     ({@link RetryResult#RETRY}), propagated ({@link RetryResult#ABORT}),
-     *     or evaluation should proceed ({@code null}).
+     * @return {@link RetryResult} to indicate if the exception should be ignored (
+     *         {@link RetryResult#RETRY}), propagated ({@link RetryResult#ABORT}), or evaluation
+     *         should proceed ({@code null}).
      */
     RetryResult afterEval(Exception exception, RetryResult retryResult);
   }
@@ -96,14 +95,12 @@ public final class ExceptionHandler implements Serializable {
     private final ImmutableSet.Builder<Class<? extends Exception>> nonRetriableExceptions =
         ImmutableSet.builder();
 
-    private Builder() {
-    }
+    private Builder() {}
 
 
     /**
-     * Adds the exception handler interceptors.
-     * Call order will be maintained.
-
+     * Adds the exception handler interceptors. Call order will be maintained.
+     *
      * @param interceptors the interceptors for this exception handler
      * @return the Builder for chaining
      */
@@ -214,7 +211,7 @@ public final class ExceptionHandler implements Serializable {
       Class<? extends Exception> exception) {
     for (RetryInfo current : retryInfo) {
       if (current.exception.isAssignableFrom(exception)) {
-        RetryInfo  match = findMostSpecificRetryInfo(current.children, exception);
+        RetryInfo match = findMostSpecificRetryInfo(current.children, exception);
         return match == null ? current : match;
       }
     }
@@ -239,8 +236,8 @@ public final class ExceptionHandler implements Serializable {
     for (Class<?> exceptionOrError : callMethod.getExceptionTypes()) {
       Preconditions.checkArgument(Exception.class.isAssignableFrom(exceptionOrError),
           "Callable method exceptions must be derived from Exception");
-      @SuppressWarnings("unchecked") Class<? extends Exception> exception =
-          (Class<? extends Exception>) exceptionOrError;
+      @SuppressWarnings("unchecked")
+      Class<? extends Exception> exception = (Class<? extends Exception>) exceptionOrError;
       Preconditions.checkArgument(findMostSpecificRetryInfo(retryInfo, exception) != null,
           "Declared exception '" + exception + "' is not covered by exception handler");
     }

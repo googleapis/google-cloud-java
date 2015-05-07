@@ -23,26 +23,27 @@ import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.spi.ServiceRpcProvider;
 import com.google.gcloud.spi.StorageRpc;
 
+import java.util.Objects;
 import java.util.Set;
 
-public class StorageServiceOptions extends ServiceOptions {
+public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageServiceOptions> {
 
+  private static final long serialVersionUID = -7804860602287801084L;
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
   private static final String DEFAULT_PATH_DELIMITER = "/";
+  private static final String PROJECT_ENV_NAME = "default_project_id";
 
-  private final StorageRpc storageRpc;
   private final String project;
   private final String pathDelimiter;
 
-  public static class Builder extends ServiceOptions.Builder<Builder> {
+  public static class Builder extends
+      ServiceOptions.Builder<StorageRpc, StorageServiceOptions, Builder> {
 
     private String project;
     private String pathDelimiter;
-    private StorageRpc storageRpc;
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(StorageServiceOptions options) {
       super(options);
@@ -58,11 +59,6 @@ public class StorageServiceOptions extends ServiceOptions {
       return this;
     }
 
-    public Builder storageRpc(StorageRpc storageRpc) {
-      this.storageRpc = storageRpc;
-      return this;
-    }
-
     @Override
     public StorageServiceOptions build() {
       return new StorageServiceOptions(this);
@@ -72,9 +68,9 @@ public class StorageServiceOptions extends ServiceOptions {
   private StorageServiceOptions(Builder builder) {
     super(builder);
     pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
-    project = builder.project != null ? builder.project :  getAppEngineProjectId();
+    project = builder.project != null ? builder.project : defaultProject();
     Preconditions.checkArgument(project != null, "Missing required project id");
-    storageRpc = MoreObjects.firstNonNull(builder.storageRpc, ServiceRpcProvider.storage(this));
+    // todo: consider providing read-timeout
   }
 
   @Override
@@ -82,8 +78,11 @@ public class StorageServiceOptions extends ServiceOptions {
     return SCOPES;
   }
 
-  public StorageRpc storageRpc() {
-    return storageRpc;
+  StorageRpc storageRpc() {
+    if (serviceRpcFactory() != null) {
+      return serviceRpcFactory().create(this);
+    }
+    return ServiceRpcProvider.storage(this);
   }
 
   public String project() {
@@ -97,6 +96,33 @@ public class StorageServiceOptions extends ServiceOptions {
   @Override
   public Builder toBuilder() {
     return new Builder(this);
+  }
+
+  @Override
+  public int hashCode() {
+    return super.hashCode() ^ Objects.hash(project, pathDelimiter);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof StorageServiceOptions)) {
+      return false;
+    }
+    StorageServiceOptions other = (StorageServiceOptions) obj;
+    return isEquals(other) && Objects.equals(project, other.project)
+        && Objects.equals(pathDelimiter, other.pathDelimiter);
+  }
+
+  private static String defaultProject() {
+    String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
+    if (projectId == null) {
+      projectId = getAppEngineProjectId();
+    }
+    return projectId != null ? projectId : googleCloudProjectId();
+  }
+
+  public static StorageServiceOptions defaultInstance() {
+    return builder().build();
   }
 
   public static Builder builder() {
