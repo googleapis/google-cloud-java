@@ -46,7 +46,7 @@ import java.util.TreeMap;
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven - {@code mvn exec:java
  * -Dexec.mainClass="com.google.gcloud.examples.DatastoreExample"
- * -Dexec.args="projectId [user] [delete|display|add comment]"}</li>
+ * -Dexec.args="[projectId] [user] [delete|display|add comment]"}</li>
  * </ol>
  */
 public class DatastoreExample {
@@ -174,25 +174,23 @@ public class DatastoreExample {
     DatastoreAction action = null;
     DatastoreService datastore = null;
     Key key = null;
-    if (args.length > 0) {
-      String projectId = args[0];
-      // If you want to access a local Datastore running via the gcd sdk, do
-//          DatastoreServiceOptions options = DatastoreServiceOptions.builder()
-//              .projectId(projectId)
-//              .namespace(NAMESPACE)
-//              .host("http://localhost:8080")
-//              .build();
-      DatastoreServiceOptions options = DatastoreServiceOptions.builder()
-          .projectId(projectId)
-          .namespace(NAMESPACE)
-          .build();
-      String name = args.length > 1 ? args[1] : System.getProperty("user.name");
-      datastore = DatastoreServiceFactory.instance().get(options);
-      KeyFactory keyFactory = datastore.newKeyFactory().kind(USER_KIND);
-      key = keyFactory.newKey(name);
-      String actionName = args.length > 2 ? args[2].toLowerCase() : DEFAULT_ACTION;
-      action = ACTIONS.get(actionName);
-    }
+    String projectId = args.length > 0 ? args[0] : null;
+    // If you want to access a local Datastore running via the gcd sdk, do
+    //   DatastoreServiceOptions options = DatastoreServiceOptions.builder()
+    //       .projectId(projectId)
+    //       .namespace(NAMESPACE)
+    //       .host("http://localhost:8080")
+    //       .build();
+    DatastoreServiceOptions options = DatastoreServiceOptions.builder()
+        .projectId(projectId)
+        .namespace(NAMESPACE)
+        .build();
+    String name = args.length > 1 ? args[1] : System.getProperty("user.name");
+    datastore = DatastoreServiceFactory.instance().get(options);
+    KeyFactory keyFactory = datastore.newKeyFactory().kind(USER_KIND);
+    key = keyFactory.newKey(name);
+    String actionName = args.length > 2 ? args[2].toLowerCase() : DEFAULT_ACTION;
+    action = ACTIONS.get(actionName);
     if (action == null) {
       StringBuilder actionAndParams = new StringBuilder();
       for (Map.Entry<String, DatastoreAction> entry : ACTIONS.entrySet()) {
@@ -204,7 +202,7 @@ public class DatastoreExample {
         actionAndParams.append('|');
       }
       actionAndParams.setLength(actionAndParams.length() - 1);
-      System.out.printf("Usage: %s projectId [user] [%s]%n",
+      System.out.printf("Usage: %s [projectId] [user] [%s]%n",
           DatastoreExample.class.getSimpleName(), actionAndParams);
       return;
     }
