@@ -30,6 +30,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
+/**
+ * Cross-Origin Resource Sharing (CORS) configuration for a bucket.
+ */
 public final class Cors implements Serializable {
 
   private static final long serialVersionUID = -8637770919343335655L;
