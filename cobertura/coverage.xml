@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.5368514150943396" branch-rate="0.503061224489796" lines-covered="1821" lines-valid="3392" branches-covered="493" branches-valid="980" complexity="1.4815905743740796" version="2.0.3" timestamp="1431056702695">
+<coverage line-rate="0.5368514150943396" branch-rate="0.503061224489796" lines-covered="1821" lines-valid="3392" branches-covered="493" branches-valid="980" complexity="1.4815905743740796" version="2.0.3" timestamp="1431056828051">
 	<sources>
 		<source>/home/travis/build/GoogleCloudPlatform/gcloud-java/src/main/java</source>
 		<source>--source</source>
@@ -304,20 +304,20 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="198" hits="19" branch="true" condition-coverage="100% (2/2)">
+								<line number="198" hits="21" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="199" hits="5" branch="false"/>
 								<line number="200" hits="5" branch="false"/>
-								<line number="202" hits="14" branch="true" condition-coverage="100% (2/2)">
+								<line number="202" hits="16" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="203" hits="2" branch="false"/>
-								<line number="205" hits="14" branch="false"/>
+								<line number="205" hits="16" branch="false"/>
 								<line number="206" hits="24" branch="false"/>
 								<line number="207" hits="24" branch="false"/>
 								<line number="208" hits="24" branch="false"/>
@@ -335,7 +335,7 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="213" hits="245" branch="true" condition-coverage="100% (2/2)">
+								<line number="213" hits="370" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
@@ -346,7 +346,7 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="217" hits="50" branch="false"/>
+								<line number="217" hits="175" branch="false"/>
 								<line number="218" hits="191" branch="false"/>
 							</lines>
 						</method>
@@ -443,20 +443,20 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="198" hits="19" branch="true" condition-coverage="100% (2/2)">
+						<line number="198" hits="21" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="199" hits="5" branch="false"/>
 						<line number="200" hits="5" branch="false"/>
-						<line number="202" hits="14" branch="true" condition-coverage="100% (2/2)">
+						<line number="202" hits="16" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="203" hits="2" branch="false"/>
-						<line number="205" hits="14" branch="false"/>
+						<line number="205" hits="16" branch="false"/>
 						<line number="206" hits="24" branch="false"/>
 						<line number="207" hits="24" branch="false"/>
 						<line number="208" hits="24" branch="false"/>
@@ -465,7 +465,7 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="213" hits="245" branch="true" condition-coverage="100% (2/2)">
+						<line number="213" hits="370" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
@@ -476,7 +476,7 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="217" hits="50" branch="false"/>
+						<line number="217" hits="175" branch="false"/>
 						<line number="218" hits="191" branch="false"/>
 						<line number="224" hits="146" branch="false"/>
 						<line number="225" hits="2" branch="false"/>
@@ -685,7 +685,7 @@
 						</method>
 						<method name="access$600" signature="(Lcom/google/gcloud/ExceptionHandler$RetryInfo;)Lcom/google/gcloud/ExceptionHandler$Interceptor$RetryResult;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="151" hits="584" branch="false"/>
+								<line number="151" hits="717" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.0" branch-rate="0.0">
@@ -712,7 +712,7 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="151" hits="584" branch="false"/>
+						<line number="151" hits="717" branch="false"/>
 						<line number="156" hits="24" branch="false"/>
 						<line number="158" hits="24" branch="false"/>
 						<line number="159" hits="24" branch="false"/>
