@@ -40,6 +40,11 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * A Google Storage bucket.
+ *
+ * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and Terminology</a>
+ */
 public final class Bucket implements Serializable {
 
   private static final long serialVersionUID = -3946094202176916586L;
