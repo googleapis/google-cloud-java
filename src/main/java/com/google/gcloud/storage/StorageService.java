@@ -30,10 +30,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * An interface for Google Cloud Storage.
+ *
+ * @see <a href="https://cloud.google.com/storage/docs">Google Cloud Storage</a>
+ */
 public interface StorageService extends Service<StorageServiceOptions> {
-
-  // todo: provide way for construct signed URLs -
-  // https://cloud.google.com/storage/docs/access-control#Signed-URLs
 
   enum PredefinedAcl {
     AUTHENTICATED_READ("authenticatedRead"),
@@ -347,17 +349,26 @@ public interface StorageService extends Service<StorageServiceOptions> {
     }
   }
 
+
   /**
+   * Create a new bucket.
+   *
+   * @return a complete bucket information.
    * @throws StorageServiceException upon failure
    */
   Bucket create(Bucket bucket, BucketTargetOption... options);
 
   /**
+   * Create a new blob.
+   *
+   * @return a complete blob information.
    * @throws StorageServiceException upon failure
    */
   Blob create(Blob blob, byte[] content, BlobTargetOption... options);
 
   /**
+   * Returns a complete bucket information.
+   *
    * @throws StorageServiceException upon failure
    */
   Bucket get(Bucket bucket, BucketSourceOption... options);
@@ -425,6 +436,5 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * @throws StorageServiceException upon failure
    */
   BlobWriteChannel writer(Blob blob, BlobTargetOption... options);
-
 
 }

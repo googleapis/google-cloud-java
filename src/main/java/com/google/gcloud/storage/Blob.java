@@ -33,6 +33,11 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * A Google Storage object.
+ *
+ * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and Terminology</a>
+ */
 public class Blob implements Serializable {
 
   private static final long serialVersionUID = 2228487739943277159L;

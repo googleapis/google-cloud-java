@@ -17,7 +17,9 @@
 package com.google.gcloud.datastore;
 
 
-
+/**
+ * A base class for DatasoreService factories.
+ */
 public abstract class DatastoreServiceFactory {
 
   private static final DatastoreServiceFactory INSTANCE = new DatastoreServiceFactory() {
