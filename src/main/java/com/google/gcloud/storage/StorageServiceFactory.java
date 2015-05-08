@@ -17,7 +17,9 @@
 package com.google.gcloud.storage;
 
 
-
+/**
+ * A base class for StorageService factories.
+ */
 public abstract class StorageServiceFactory {
 
   private static final StorageServiceFactory INSTANCE = new StorageServiceFactory() {
@@ -27,9 +29,15 @@ public abstract class StorageServiceFactory {
     }
   };
 
+  /**
+   * Returns the default factory instance.
+   */
   public static StorageServiceFactory instance() {
     return INSTANCE;
   }
 
+  /**
+   * Returns a {@code StorageService} for the given options.
+   */
   public abstract StorageService get(StorageServiceOptions options);
 }

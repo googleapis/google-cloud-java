@@ -21,6 +21,9 @@ import com.google.api.services.storage.model.ObjectAccessControl;
 
 import java.io.Serializable;
 
+/**
+ *  Access Control List on for buckets or blobs.
+ */
 public final class Acl implements Serializable {
 
   private static final long serialVersionUID = 6435575339887912222L;

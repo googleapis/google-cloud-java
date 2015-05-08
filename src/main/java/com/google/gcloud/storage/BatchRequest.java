@@ -43,14 +43,23 @@ public class BatchRequest implements Serializable {
 
     private Builder() {}
 
+    /**
+     * Delete the given blob.
+     */
     public void delete(Blob blob, BlobSourceOption... options) {
       toDelete.put(blob, options);
     }
 
+    /**
+     * Update the given blob.
+     */
     public void update(Blob blob, BlobTargetOption... options) {
       toUpdate.put(blob, options);
     }
 
+    /**
+     * Retrieve metadata for the given blob.
+     */
     public void get(Blob blob, BlobSourceOption... options) {
       toGet.put(blob, options);
     }
@@ -66,15 +75,15 @@ public class BatchRequest implements Serializable {
     toGet = ImmutableMap.copyOf(builder.toGet);
   }
 
-  public Map<Blob, BlobSourceOption[]> toDelete() {
+  Map<Blob, BlobSourceOption[]> toDelete() {
     return toDelete;
   }
 
-  public Map<Blob, BlobTargetOption[]> toUpdate() {
+  Map<Blob, BlobTargetOption[]> toUpdate() {
     return toUpdate;
   }
 
-  public Map<Blob, BlobSourceOption[]> toGet() {
+  Map<Blob, BlobSourceOption[]> toGet() {
     return toGet;
   }
 

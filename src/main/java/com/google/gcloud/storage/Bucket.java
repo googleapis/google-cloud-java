@@ -40,6 +40,11 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * A Google Storage bucket.
+ *
+ * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and Terminology</a>
+ */
 public final class Bucket implements Serializable {
 
   private static final long serialVersionUID = -3946094202176916586L;
@@ -431,17 +436,17 @@ public final class Bucket implements Serializable {
     }
 
     public Builder cors(Iterable<Cors> cors) {
-      this.cors = ImmutableList.copyOf(cors);
+      this.cors = cors != null ? ImmutableList.copyOf(cors) : null;
       return this;
     }
 
     public Builder acl(Iterable<Acl> acl) {
-      this.acl = ImmutableList.copyOf(acl);
+      this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
     public Builder defaultAcl(Iterable<Acl> acl) {
-      this.defaultAcl = ImmutableList.copyOf(acl);
+      this.defaultAcl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
