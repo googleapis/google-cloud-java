@@ -270,14 +270,15 @@ public class StorageExample {
       if (args.length < 2 || args.length > 3) {
         throw new IllegalArgumentException();
       }
-      Path path = null;
+      Path path;
       if (args.length > 2) {
         path = Paths.get(args[2]);
         if (Files.isDirectory(path)) {
           path = path.resolve(Paths.get(args[1]).getFileName());
         }
+      } else {
+        path = null;
       }
-      String blob = args.length < 3 ? path.getFileName().toString() : args[2];
       return Tuple.of(Blob.of(args[0], args[1]), path);
     }
 
