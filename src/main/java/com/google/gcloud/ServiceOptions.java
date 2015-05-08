@@ -18,6 +18,7 @@ package com.google.gcloud;
 
 
 import static com.google.common.base.MoreObjects.firstNonNull;
+import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
@@ -46,7 +47,9 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final long serialVersionUID = 1203687993961393350L;
+  private static final String PROJECT_ENV_NAME = "default_project_id";
 
+  private final String projectId;
   private final String host;
   private final HttpTransportFactory httpTransportFactory;
   private final AuthCredentials authCredentials;
@@ -81,9 +84,12 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
     }
   }
 
+
+
   protected abstract static class Builder<R, O extends ServiceOptions<R, O>,
       B extends Builder<R, O, B>> {
 
+    private String projectId;
     private String host;
     private HttpTransportFactory httpTransportFactory;
     private AuthCredentials authCredentials;
@@ -93,6 +99,7 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
     protected Builder() {}
 
     protected Builder(ServiceOptions<R, O> options) {
+      projectId = options.projectId;
       host = options.host;
       httpTransportFactory = options.httpTransportFactory;
       authCredentials = options.authCredentials;
@@ -105,6 +112,11 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
     @SuppressWarnings("unchecked")
     protected B self() {
       return (B) this;
+    }
+
+    public B projectId(String projectId) {
+      this.projectId = projectId;
+      return self();
     }
 
     public B host(String host) {
@@ -134,6 +146,7 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
   }
 
   protected ServiceOptions(Builder<R, O, ?> builder) {
+    projectId = checkNotNull(builder.projectId != null ? builder.projectId : defaultProject());
     host = firstNonNull(builder.host, DEFAULT_HOST);
     httpTransportFactory =
         firstNonNull(builder.httpTransportFactory, DefaultHttpTransportFactory.INSTANCE);
@@ -169,6 +182,14 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
 
   protected static String appEngineAppId() {
     return System.getProperty("com.google.appengine.application.id");
+  }
+
+  protected String defaultProject() {
+    String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
+    if (projectId == null) {
+      projectId = getAppEngineProjectId();
+    }
+    return projectId != null ? projectId : googleCloudProjectId();
   }
 
   protected static String googleCloudProjectId() {
@@ -245,6 +266,10 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
 
   protected abstract Set<String> scopes();
 
+  public String projectId() {
+    return projectId;
+  }
+
   public String host() {
     return host;
   }
@@ -272,12 +297,13 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
 
   @Override
   public int hashCode() {
-    return Objects.hash(host, httpTransportFactory, authCredentials, retryParams,
+    return Objects.hash(projectId, host, httpTransportFactory, authCredentials, retryParams,
         serviceRpcFactory);
   }
 
   protected boolean isEquals(ServiceOptions other) {
-    return Objects.equals(host, other.host)
+    return Objects.equals(projectId, other.projectId)
+        && Objects.equals(host, other.host)
         && Objects.equals(httpTransportFactory, other.httpTransportFactory)
         && Objects.equals(authCredentials, other.authCredentials)
         && Objects.equals(retryParams, other.retryParams)

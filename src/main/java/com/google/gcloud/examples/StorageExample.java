@@ -366,7 +366,7 @@ public class StorageExample {
     StorageServiceOptions.Builder optionsBuilder = StorageServiceOptions.builder();
     StorageAction action;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
-      optionsBuilder.project(args[0]);
+      optionsBuilder.projectId(args[0]);
       action = ACTIONS.get(args[1]);
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {

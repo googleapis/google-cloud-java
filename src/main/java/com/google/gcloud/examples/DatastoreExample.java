@@ -46,7 +46,7 @@ import java.util.TreeMap;
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven - {@code mvn exec:java
  * -Dexec.mainClass="com.google.gcloud.examples.DatastoreExample"
- * -Dexec.args="dataset [user] [delete|display|add comment]"}</li>
+ * -Dexec.args="projectId [user] [delete|display|add comment]"}</li>
  * </ol>
  */
 public class DatastoreExample {
@@ -175,15 +175,15 @@ public class DatastoreExample {
     DatastoreService datastore = null;
     Key key = null;
     if (args.length > 0) {
-      String dataset = args[0];
+      String projectId = args[0];
       // If you want to access a local Datastore running via the gcd sdk, do
 //          DatastoreServiceOptions options = DatastoreServiceOptions.builder()
-//              .dataset(dataset)
+//              .projectId(projectId)
 //              .namespace(NAMESPACE)
 //              .host("http://localhost:8080")
 //              .build();
       DatastoreServiceOptions options = DatastoreServiceOptions.builder()
-          .dataset(dataset)
+          .projectId(projectId)
           .namespace(NAMESPACE)
           .build();
       String name = args.length > 1 ? args[1] : System.getProperty("user.name");
@@ -204,7 +204,7 @@ public class DatastoreExample {
         actionAndParams.append('|');
       }
       actionAndParams.setLength(actionAndParams.length() - 1);
-      System.out.printf("Usage: %s dataset [user] [%s]%n",
+      System.out.printf("Usage: %s projectId [user] [%s]%n",
           DatastoreExample.class.getSimpleName(), actionAndParams);
       return;
     }

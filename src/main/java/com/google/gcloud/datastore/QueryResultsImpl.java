@@ -46,7 +46,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     this.query = query;
     queryResultType = query.type();
     DatastoreV1.PartitionId.Builder pbBuilder = DatastoreV1.PartitionId.newBuilder();
-    pbBuilder.setDatasetId(datastore.options().dataset());
+    pbBuilder.setDatasetId(datastore.options().projectId());
     if (query.namespace() != null) {
       pbBuilder.setNamespace(query.namespace());
     } else if (datastore.options().namespace() != null) {

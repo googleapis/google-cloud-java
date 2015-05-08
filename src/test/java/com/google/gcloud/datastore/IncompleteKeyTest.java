@@ -26,19 +26,19 @@ public class IncompleteKeyTest {
   @Test
   public void testBuilders() throws Exception {
     IncompleteKey pk1 = IncompleteKey.builder("ds", "kind1").build();
-    assertEquals("ds", pk1.dataset());
+    assertEquals("ds", pk1.projectId());
     assertEquals("kind1", pk1.kind());
     assertTrue(pk1.ancestors().isEmpty());
 
     Key parent = Key.builder("ds", "kind2", 10).build();
     IncompleteKey pk2 = IncompleteKey.builder(parent, "kind3").build();
-    assertEquals("ds", pk2.dataset());
+    assertEquals("ds", pk2.projectId());
     assertEquals("kind3", pk2.kind());
     assertEquals(parent.path(), pk2.ancestors());
 
     assertEquals(pk2, IncompleteKey.builder(pk2).build());
     IncompleteKey pk3 = IncompleteKey.builder(pk2).kind("kind4").build();
-    assertEquals("ds", pk3.dataset());
+    assertEquals("ds", pk3.projectId());
     assertEquals("kind4", pk3.kind());
     assertEquals(parent.path(), pk3.ancestors());
   }
