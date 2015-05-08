@@ -44,13 +44,13 @@ public final class Key extends IncompleteKey {
     private String name;
     private Long id;
 
-    private Builder(String dataset, String kind, String name) {
-      super(dataset, kind);
+    private Builder(String projectId, String kind, String name) {
+      super(projectId, kind);
       this.name = name;
     }
 
-    private Builder(String dataset, String kind, long id) {
-      super(dataset, kind);
+    private Builder(String projectId, String kind, long id) {
+      super(projectId, kind);
       this.id = id;
     }
 
@@ -94,12 +94,12 @@ public final class Key extends IncompleteKey {
       } else {
         pathBuilder.add(PathElement.of(kind, id));
       }
-      return new Key(dataset, namespace, pathBuilder.build());
+      return new Key(projectId, namespace, pathBuilder.build());
     }
   }
 
-  Key(String dataset, String namespace, ImmutableList<PathElement> path) {
-    super(dataset, namespace, path);
+  Key(String projectId, String namespace, ImmutableList<PathElement> path) {
+    super(projectId, namespace, path);
     Preconditions.checkArgument(nameOrId() != null);
   }
 
@@ -173,12 +173,12 @@ public final class Key extends IncompleteKey {
     return (Key) key;
   }
 
-  public static Builder builder(String dataset, String kind, String name) {
-    return new Builder(dataset, kind, name);
+  public static Builder builder(String projectId, String kind, String name) {
+    return new Builder(projectId, kind, name);
   }
 
-  public static Builder builder(String dataset, String kind, long id) {
-    return new Builder(dataset, kind, id);
+  public static Builder builder(String projectId, String kind, long id) {
+    return new Builder(projectId, kind, id);
   }
 
   public static Builder builder(Key copyFrom) {
@@ -194,13 +194,13 @@ public final class Key extends IncompleteKey {
   }
 
   public static Builder builder(Key parent, String kind, String name) {
-    Builder builder = builder(parent.dataset(), kind, name);
+    Builder builder = builder(parent.projectId(), kind, name);
     addParentToBuilder(parent, builder);
     return builder;
   }
 
   public static Builder builder(Key parent, String kind, long id) {
-    Builder builder = builder(parent.dataset(), kind, id);
+    Builder builder = builder(parent.projectId(), kind, id);
     addParentToBuilder(parent, builder);
     return builder;
   }

@@ -27,21 +27,21 @@ import java.util.Iterator;
 
 public class KeyFactoryTest {
 
-  private static final String DATASET = "dataset";
+  private static final String PROJECT_ID = "projectid";
 
   private KeyFactory keyFactory;
 
   @Before
   public void setUp() {
-    keyFactory = new KeyFactory(DATASET).kind("k");
+    keyFactory = new KeyFactory(PROJECT_ID).kind("k");
   }
 
   @Test
   public void testReset() {
     IncompleteKey key =
-        keyFactory.dataset("ds1").namespace("ns1").ancestors(PathElement.of("p", 1)).build();
+        keyFactory.projectId("ds1").namespace("ns1").ancestors(PathElement.of("p", 1)).build();
     assertEquals("k", key.kind());
-    assertEquals("ds1", key.dataset());
+    assertEquals("ds1", key.projectId());
     assertEquals("ns1", key.namespace());
     assertEquals(1, key.ancestors().size());
 
@@ -54,20 +54,20 @@ public class KeyFactoryTest {
     keyFactory.kind("k1");
     key = keyFactory.newKey();
     assertEquals("k1", key.kind());
-    assertEquals(DATASET, key.dataset());
+    assertEquals(PROJECT_ID, key.projectId());
     assertNull(key.namespace());
     assertTrue(key.ancestors().isEmpty());
 
-    keyFactory = new KeyFactory(DATASET, "ns1").kind("k");
+    keyFactory = new KeyFactory(PROJECT_ID, "ns1").kind("k");
     key = keyFactory.newKey();
-    assertEquals(DATASET, key.dataset());
+    assertEquals(PROJECT_ID, key.projectId());
     assertEquals("ns1", key.namespace());
-    key = keyFactory.dataset("bla1").namespace("bla2").build();
-    assertEquals("bla1", key.dataset());
+    key = keyFactory.projectId("bla1").namespace("bla2").build();
+    assertEquals("bla1", key.projectId());
     assertEquals("bla2", key.namespace());
     keyFactory.reset().kind("kind");
     key = keyFactory.newKey();
-    assertEquals(DATASET, key.dataset());
+    assertEquals(PROJECT_ID, key.projectId());
     assertEquals("ns1", key.namespace());
     assertEquals("kind", key.kind());
   }
@@ -96,7 +96,7 @@ public class KeyFactoryTest {
 
   @Test(expected = NullPointerException.class)
   public void testNewIncompleteWithNoKind() {
-    new KeyFactory(DATASET).build();
+    new KeyFactory(PROJECT_ID).build();
   }
 
   private void verifyKey(Key key, String name, String namespace, PathElement... ancestors) {
@@ -111,7 +111,7 @@ public class KeyFactoryTest {
 
   private void verifyIncompleteKey(IncompleteKey key, String namespace, PathElement... ancestors) {
     assertEquals("k", key.kind());
-    assertEquals(DATASET, key.dataset());
+    assertEquals(PROJECT_ID, key.projectId());
     assertEquals(namespace, key.namespace());
     assertEquals(ancestors.length, key.ancestors().size());
     Iterator<PathElement> iter = key.ancestors().iterator();

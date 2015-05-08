@@ -53,15 +53,17 @@ import java.util.List;
 @RunWith(JUnit4.class)
 public class DatastoreServiceTest {
 
-  private static final String DATASET = LocalGcdHelper.DEFAULT_DATASET;
+  private static final String PROJECT_ID = LocalGcdHelper.DEFAULT_PROJECT_ID;
   private static final String KIND1 = "kind1";
   private static final String KIND2 = "kind2";
   private static final String KIND3 = "kind3";
   private static final NullValue NULL_VALUE = NullValue.of();
   private static final StringValue STR_VALUE = StringValue.of("str");
   private static final BooleanValue BOOL_VALUE = BooleanValue.builder(false).indexed(false).build();
-  private static final IncompleteKey INCOMPLETE_KEY1 = IncompleteKey.builder(DATASET, KIND1).build();
-  private static final IncompleteKey INCOMPLETE_KEY2 = IncompleteKey.builder(DATASET, KIND2).build();
+  private static final IncompleteKey INCOMPLETE_KEY1 =
+      IncompleteKey.builder(PROJECT_ID, KIND1).build();
+  private static final IncompleteKey INCOMPLETE_KEY2 =
+      IncompleteKey.builder(PROJECT_ID, KIND2).build();
   private static final Key KEY1 = Key.builder(INCOMPLETE_KEY1, "name").build();
   private static final Key KEY2 = Key.builder(KEY1, KIND2, 1).build();
   private static final Key KEY3 = Key.builder(KEY2).name("bla").build();
@@ -81,7 +83,7 @@ public class DatastoreServiceTest {
       FullEntity.builder(PARTIAL_ENTITY1).remove("str").set("bool", true).
           set("list", LIST_VALUE1.get()).build();
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY3 =
-      FullEntity.builder(PARTIAL_ENTITY1).key(IncompleteKey.builder(DATASET, KIND3).build())
+      FullEntity.builder(PARTIAL_ENTITY1).key(IncompleteKey.builder(PROJECT_ID, KIND3).build())
           .build();
   private static final Entity ENTITY1 = Entity.builder(KEY1)
       .set("str", STR_VALUE)
@@ -102,15 +104,15 @@ public class DatastoreServiceTest {
 
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
-    if (!LocalGcdHelper.isActive(DATASET)) {
-      gcdHelper = LocalGcdHelper.start(DATASET);
+    if (!LocalGcdHelper.isActive(PROJECT_ID)) {
+      gcdHelper = LocalGcdHelper.start(PROJECT_ID);
     }
   }
 
   @Before
   public void setUp() throws IOException, InterruptedException {
     options = DatastoreServiceOptions.builder()
-        .dataset(DATASET)
+        .projectId(PROJECT_ID)
         .host("http://localhost:" + LocalGcdHelper.PORT)
         .build();
     datastore = DatastoreServiceFactory.instance().get(options);
@@ -285,7 +287,7 @@ public class DatastoreServiceTest {
     Entity entity6 = entities.get(1);
     assertSame(entity4, entities.get(0));
     assertEquals(PARTIAL_ENTITY2.properties(), entity6.properties());
-    assertEquals(PARTIAL_ENTITY2.key().dataset(), entity6.key().dataset());
+    assertEquals(PARTIAL_ENTITY2.key().projectId(), entity6.key().projectId());
     assertEquals(PARTIAL_ENTITY2.key().namespace(), entity6.key().namespace());
     assertEquals(PARTIAL_ENTITY2.key().ancestors(), entity6.key().ancestors());
     assertEquals(PARTIAL_ENTITY2.key().kind(), entity6.key().kind());
@@ -453,7 +455,7 @@ public class DatastoreServiceTest {
     KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND1);
     IncompleteKey pk1 = keyFactory.newKey();
     Key key1 = datastore.allocateId(pk1);
-    assertEquals(key1.dataset(), pk1.dataset());
+    assertEquals(key1.projectId(), pk1.projectId());
     assertEquals(key1.namespace(), pk1.namespace());
     assertEquals(key1.ancestors(), pk1.ancestors());
     assertEquals(key1.kind(), pk1.kind());

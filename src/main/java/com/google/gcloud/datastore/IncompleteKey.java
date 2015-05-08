@@ -33,8 +33,8 @@ public class IncompleteKey extends BaseKey {
 
   public static class Builder extends BaseKey.Builder<Builder> {
 
-    private Builder(String dataset, String kind) {
-      super(dataset, kind);
+    private Builder(String projectId, String kind) {
+      super(projectId, kind);
     }
 
     private Builder(IncompleteKey copyFrom) {
@@ -45,12 +45,12 @@ public class IncompleteKey extends BaseKey {
     public IncompleteKey build() {
       ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
           .addAll(ancestors).add(PathElement.of(kind)).build();
-      return new IncompleteKey(dataset, namespace, path);
+      return new IncompleteKey(projectId, namespace, path);
     }
   }
 
-  IncompleteKey(String dataset, String namespace, ImmutableList<PathElement> path) {
-    super(dataset, namespace, path);
+  IncompleteKey(String projectId, String namespace, ImmutableList<PathElement> path) {
+    super(projectId, namespace, path);
   }
 
   @Override
@@ -59,12 +59,12 @@ public class IncompleteKey extends BaseKey {
   }
 
   static IncompleteKey fromPb(DatastoreV1.Key keyPb) {
-    String dataset = null;
+    String projectId = null;
     String namespace = null;
     if (keyPb.hasPartitionId()) {
       DatastoreV1.PartitionId partitionIdPb = keyPb.getPartitionId();
       if (partitionIdPb.hasDatasetId()) {
-        dataset = partitionIdPb.getDatasetId();
+        projectId = partitionIdPb.getDatasetId();
       }
       if (partitionIdPb.hasNamespace()) {
         namespace = partitionIdPb.getNamespace();
@@ -79,13 +79,13 @@ public class IncompleteKey extends BaseKey {
     ImmutableList<PathElement> path = pathBuilder.build();
     PathElement leaf = path.get(path.size() - 1);
     if (leaf.nameOrId() != null) {
-      return new Key(dataset, namespace, path);
+      return new Key(projectId, namespace, path);
     }
-    return new IncompleteKey(dataset, namespace, path);
+    return new IncompleteKey(projectId, namespace, path);
   }
 
-  public static Builder builder(String dataset, String kind) {
-    return new Builder(dataset, kind);
+  public static Builder builder(String projectId, String kind) {
+    return new Builder(projectId, kind);
   }
 
   public static Builder builder(IncompleteKey copyFrom) {
@@ -93,6 +93,6 @@ public class IncompleteKey extends BaseKey {
   }
 
   public static Builder builder(Key parent, String kind) {
-    return builder(parent.dataset(), kind).namespace(parent.namespace()).ancestors(parent.path());
+    return builder(parent.projectId(), kind).namespace(parent.namespace()).ancestors(parent.path());
   }
 }

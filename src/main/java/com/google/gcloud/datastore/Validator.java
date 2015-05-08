@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
  */
 final class Validator {
 
-  private static final Pattern DATASET_PATTERN = Pattern.compile(
+  private static final Pattern PROJECT_ID_PATTERN = Pattern.compile(
       "([a-z\\d\\-]{1,100}~)?([a-z\\d][a-z\\d\\-\\.]{0,99}:)?([a-z\\d][a-z\\d\\-]{0,99})");
   private static final int MAX_NAMESPACE_LENGTH = 100;
   private static final Pattern NAMESPACE_PATTERN =
@@ -37,11 +37,11 @@ final class Validator {
     // utility class
   }
 
-  static String validateDataset(String dataset) {
-    checkArgument(!Strings.isNullOrEmpty(dataset), "dataset can't be empty or null");
-    checkArgument(DATASET_PATTERN.matcher(dataset).matches(),
-        "dataset must match the following pattern: " + DATASET_PATTERN.pattern());
-    return dataset;
+  static String validateDatabase(String projectId) {
+    checkArgument(!Strings.isNullOrEmpty(projectId), "projectId can't be empty or null");
+    checkArgument(PROJECT_ID_PATTERN.matcher(projectId).matches(),
+        "projectId must match the following pattern: " + PROJECT_ID_PATTERN.pattern());
+    return projectId;
   }
 
   static String validateNamespace(String namespace) {

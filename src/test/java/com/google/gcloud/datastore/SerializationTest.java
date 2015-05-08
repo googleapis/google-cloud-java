@@ -135,7 +135,7 @@ public class SerializationTest {
     DatastoreServiceOptions options = DatastoreServiceOptions.builder()
         .authCredentials(AuthCredentials.createForAppEngine())
         .normalizeDataset(false)
-        .dataset("ds1")
+        .projectId("ds1")
         .build();
     DatastoreServiceOptions serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);

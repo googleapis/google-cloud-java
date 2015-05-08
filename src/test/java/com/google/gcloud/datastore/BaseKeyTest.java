@@ -32,12 +32,12 @@ public class BaseKeyTest {
 
   private class Builder extends BaseKey.Builder<Builder> {
 
-    Builder(String dataset) {
-      super(dataset);
+    Builder(String projectId) {
+      super(projectId);
     }
 
-    Builder(String dataset, String kind) {
-      super(dataset, kind);
+    Builder(String projectId, String kind) {
+      super(projectId, kind);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class BaseKeyTest {
       ImmutableList.Builder<PathElement> path = ImmutableList.builder();
       path.addAll(ancestors);
       path.add(PathElement.of(kind));
-      return new BaseKey(dataset, namespace, path.build()) {
+      return new BaseKey(projectId, namespace, path.build()) {
         @Override
         protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
           return null;
@@ -58,9 +58,9 @@ public class BaseKeyTest {
   public void testDataset() throws Exception {
     Builder builder = new Builder("ds1", "k");
     BaseKey key = builder.build();
-    assertEquals("ds1", key.dataset());
-    key = builder.dataset("ds2").build();
-    assertEquals("ds2", key.dataset());
+    assertEquals("ds1", key.projectId());
+    key = builder.projectId("ds2").build();
+    assertEquals("ds2", key.projectId());
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -71,7 +71,7 @@ public class BaseKeyTest {
   @Test(expected = IllegalArgumentException.class)
   public void testBadDatasetInSetter() throws Exception {
     Builder builder = new Builder("d", "k");
-    builder.dataset(" ");
+    builder.projectId(" ");
   }
 
   @Test
