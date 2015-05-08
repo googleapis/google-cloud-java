@@ -153,7 +153,7 @@ public class Blob implements Serializable {
     }
 
     public Builder acl(List<Acl> acl) {
-      this.acl = ImmutableList.copyOf(acl);
+      this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
@@ -193,7 +193,7 @@ public class Blob implements Serializable {
     }
 
     public Builder metadata(Map<String, String> metadata) {
-      this.metadata = ImmutableMap.copyOf(metadata);
+      this.metadata = metadata != null ? ImmutableMap.copyOf(metadata) : null;
       return this;
     }
 

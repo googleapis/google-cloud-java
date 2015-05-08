@@ -436,17 +436,17 @@ public final class Bucket implements Serializable {
     }
 
     public Builder cors(Iterable<Cors> cors) {
-      this.cors = ImmutableList.copyOf(cors);
+      this.cors = cors != null ? ImmutableList.copyOf(cors) : null;
       return this;
     }
 
     public Builder acl(Iterable<Acl> acl) {
-      this.acl = ImmutableList.copyOf(acl);
+      this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
     public Builder defaultAcl(Iterable<Acl> acl) {
-      this.defaultAcl = ImmutableList.copyOf(acl);
+      this.defaultAcl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
