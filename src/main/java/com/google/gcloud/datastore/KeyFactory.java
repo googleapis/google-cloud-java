@@ -20,40 +20,40 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * An helper for creating keys for a specific {@link DatastoreService},
- * using its associated dataset and namespace.
+ * using its associated projectId and namespace.
  */
 public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
 
-  private final String ds;
+  private final String pi;
   private final String ns;
 
-  public KeyFactory(String dataset) {
-    this(dataset, null);
+  public KeyFactory(String projectId) {
+    this(projectId, null);
   }
 
-  public KeyFactory(String dataset, String namespace) {
-    super(dataset);
+  public KeyFactory(String projectId, String namespace) {
+    super(projectId);
     namespace(namespace);
-    this.ds = dataset;
+    this.pi = projectId;
     this.ns = namespace;
   }
 
   public IncompleteKey newKey() {
     ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
         .addAll(ancestors).add(PathElement.of(kind)).build();
-    return new IncompleteKey(dataset, namespace, path);
+    return new IncompleteKey(projectId, namespace, path);
   }
 
   public Key newKey(String name) {
     ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
         .addAll(ancestors).add(PathElement.of(kind, name)).build();
-    return new Key(dataset, namespace, path);
+    return new Key(projectId, namespace, path);
   }
 
   public Key newKey(long id) {
     ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
         .addAll(ancestors).add(PathElement.of(kind, id)).build();
-    return new Key(dataset, namespace, path);
+    return new Key(projectId, namespace, path);
   }
 
   /**
@@ -61,7 +61,7 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
    * @return {@code this} for chaining.
    */
   public KeyFactory reset() {
-    dataset(ds);
+    projectId(pi);
     namespace(ns);
     kind = null;
     ancestors.clear();

@@ -19,7 +19,8 @@
  *
  * <p>A simple usage example:
  * <pre> {@code
- * DatastoreServiceOptions options = DatastoreServiceOptions.builder().dataset(DATASET).build();
+ * DatastoreServiceOptions options =
+ *     DatastoreServiceOptions.builder().projectId(PROJECT_ID).build();
  * DatastoreService datastore = DatastoreServiceFactory.instance().get(options);
  * KeyFactory keyFactory = datastore.newKeyFactory().kind(kind);
  * Key key = keyFactory.newKey(keyName);

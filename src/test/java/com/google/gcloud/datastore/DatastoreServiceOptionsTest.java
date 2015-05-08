@@ -33,7 +33,7 @@ import java.io.IOException;
 
 public class DatastoreServiceOptionsTest {
 
-  private static final String DATASET = "dataset";
+  private static final String PROJECT_ID = "project_id";
   private DatastoreRpcFactory datastoreRpcFactory;
   private DatastoreRpc datastoreRpc;
   private DatastoreServiceOptions.Builder options;
@@ -45,7 +45,7 @@ public class DatastoreServiceOptionsTest {
     options = DatastoreServiceOptions.builder()
         .normalizeDataset(false)
         .serviceRpcFactory(datastoreRpcFactory)
-        .dataset(DATASET)
+        .projectId(PROJECT_ID)
         .host("http://localhost:" + LocalGcdHelper.PORT);
     EasyMock.expect(datastoreRpcFactory.create(EasyMock.anyObject(DatastoreServiceOptions.class)))
         .andReturn(datastoreRpc)
@@ -54,8 +54,8 @@ public class DatastoreServiceOptionsTest {
   }
 
   @Test
-  public void testDataset() throws Exception {
-    assertEquals(DATASET, options.build().dataset());
+  public void testProjectId() throws Exception {
+    assertEquals(PROJECT_ID, options.build().projectId());
   }
 
   @Test
@@ -85,7 +85,7 @@ public class DatastoreServiceOptionsTest {
   public void testToBuilder() throws Exception {
     DatastoreServiceOptions original = options.namespace("ns1").force(true).build();
     DatastoreServiceOptions copy = original.toBuilder().build();
-    assertEquals(original.dataset(), copy.dataset());
+    assertEquals(original.projectId(), copy.projectId());
     assertEquals(original.namespace(), copy.namespace());
     assertEquals(original.host(), copy.host());
     assertEquals(original.force(), copy.force());

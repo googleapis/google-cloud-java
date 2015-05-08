@@ -21,7 +21,7 @@ import com.google.gcloud.Service;
 import java.util.List;
 
 /**
- * An interface for Google Cloud Datastore dataset.
+ * An interface for Google Cloud Datastore.
  */
 public interface DatastoreService extends Service<DatastoreServiceOptions>, DatastoreReaderWriter {
 
@@ -66,7 +66,7 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
 
   /**
    * Allocate a unique id for the given key.
-   * The returned key will have the same information (dataset, kind, namespace and ancestors)
+   * The returned key will have the same information (projectId, kind, namespace and ancestors)
    * as the given key and will have a newly assigned id.
    *
    * @throws DatastoreServiceException upon failure

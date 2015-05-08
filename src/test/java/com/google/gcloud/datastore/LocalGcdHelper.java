@@ -46,11 +46,11 @@ import java.util.zip.ZipInputStream;
  */
 public class LocalGcdHelper {
 
-  private final String dataset;
+  private final String projectId;
   private Path gcdPath;
   private ProcessStreamReader processReader;
 
-  public static final String DEFAULT_DATASET = "dataset1";
+  public static final String DEFAULT_PROJECT_ID = "projectid1";
   public static final int PORT = 8080;
   private static final String GCD = "gcd-head";
   private static final String GCD_LOC = '/' + GCD + ".zip";
@@ -97,8 +97,8 @@ public class LocalGcdHelper {
     }
   }
 
-  public LocalGcdHelper(String dataset) {
-    this.dataset = dataset;
+  public LocalGcdHelper(String projectId) {
+    this.projectId = projectId;
   }
 
   public void start() throws IOException, InterruptedException {
@@ -121,7 +121,7 @@ public class LocalGcdHelper {
       }
     }
 
-    File datasetFolder = new File(gcdFolder, GCD + '/' + dataset);
+    File datasetFolder = new File(gcdFolder, GCD + '/' + projectId);
     deleteRecurse(datasetFolder.toPath());
 
     // TODO: if System.getProperty("os.name").startsWith("Windows") use cmd.exe /c and gcd.cmd
@@ -129,14 +129,14 @@ public class LocalGcdHelper {
         .redirectErrorStream(true)
         .directory(new File(gcdFolder, GCD))
         .redirectOutput(new File("/dev/null"))
-        .command("bash", "gcd.sh", "create", "-d", dataset, dataset)
+        .command("bash", "gcd.sh", "create", "-d", projectId, projectId)
         .start();
     temp.waitFor();
 
     temp = new ProcessBuilder()
         .directory(new File(gcdFolder, GCD))
         .redirectErrorStream(true)
-        .command("bash", "gcd.sh", "start", "--testing", "--allow_remote_shutdown", dataset)
+        .command("bash", "gcd.sh", "start", "--testing", "--allow_remote_shutdown", projectId)
         .start();
     processReader = ProcessStreamReader.start(temp, "Dev App Server is now running");
   }
@@ -200,8 +200,8 @@ public class LocalGcdHelper {
     });
   }
 
-  public static LocalGcdHelper start(String dataset) throws IOException, InterruptedException {
-    LocalGcdHelper helper = new LocalGcdHelper(dataset);
+  public static LocalGcdHelper start(String projectId) throws IOException, InterruptedException {
+    LocalGcdHelper helper = new LocalGcdHelper(projectId);
     helper.start();
     return helper;
   }
@@ -210,8 +210,8 @@ public class LocalGcdHelper {
     if (args.length == 1) {
       switch (args[0]) {
         case "START":
-          if (!isActive(DEFAULT_DATASET)) {
-            LocalGcdHelper helper = start(DEFAULT_DATASET);
+          if (!isActive(DEFAULT_PROJECT_ID)) {
+            LocalGcdHelper helper = start(DEFAULT_PROJECT_ID);
             try (FileWriter writer = new FileWriter(".local_gcd_helper")) {
               writer.write(helper.gcdPath.toAbsolutePath().toString());
             }
@@ -235,10 +235,10 @@ public class LocalGcdHelper {
     throw new RuntimeException("expecting only START | STOP");
   }
 
-  public static boolean isActive(String dataset) {
+  public static boolean isActive(String projectId) {
     try {
       StringBuilder urlBuilder = new StringBuilder("http://localhost:").append(PORT);
-      urlBuilder.append("/datastore/v1beta2/datasets/").append(dataset).append("/lookup");
+      urlBuilder.append("/datastore/v1beta2/datasets/").append(projectId).append("/lookup");
       URL url = new URL(urlBuilder.toString());
       try (BufferedReader reader =
                new BufferedReader(new InputStreamReader(url.openStream(), UTF_8))) {

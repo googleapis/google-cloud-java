@@ -16,7 +16,7 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.gcloud.datastore.Validator.validateDataset;
+import static com.google.gcloud.datastore.Validator.validateDatabase;
 import static com.google.gcloud.datastore.Validator.validateKind;
 import static com.google.gcloud.datastore.Validator.validateNamespace;
 
@@ -35,31 +35,31 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
 
   private static final long serialVersionUID = -4671243265877410635L;
 
-  private final transient String dataset;
+  private final transient String projectId;
   private final transient String namespace;
   private final transient ImmutableList<PathElement> path;
 
   abstract static class Builder<B extends Builder<B>> {
 
-    String dataset;
+    String projectId;
     String namespace;
     String kind;
     final List<PathElement> ancestors;
 
     private static final int MAX_PATH = 100;
 
-    Builder(String dataset) {
-      this.dataset = validateDataset(dataset);
+    Builder(String projectId) {
+      this.projectId = validateDatabase(projectId);
       ancestors = new LinkedList<>();
     }
 
-    Builder(String dataset, String kind) {
-      this(dataset);
+    Builder(String projectId, String kind) {
+      this(projectId);
       this.kind = validateKind(kind);
     }
 
     Builder(BaseKey copyFrom) {
-      dataset = copyFrom.dataset();
+      projectId = copyFrom.projectId();
       namespace = copyFrom.namespace();
       ancestors = new LinkedList<>(copyFrom.ancestors());
       kind = copyFrom.kind();
@@ -93,8 +93,8 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
       return self();
     }
 
-    public B dataset(String dataset) {
-      this.dataset = validateDataset(dataset);
+    public B projectId(String projectId) {
+      this.projectId = validateDatabase(projectId);
       return self();
     }
 
@@ -106,18 +106,18 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
     protected abstract BaseKey build();
   }
 
-  BaseKey(String dataset, String namespace, ImmutableList<PathElement> path) {
+  BaseKey(String projectId, String namespace, ImmutableList<PathElement> path) {
     Preconditions.checkArgument(!path.isEmpty(), "Path must not be empty");
-    this.dataset = dataset;
+    this.projectId = projectId;
     this.namespace = namespace;
     this.path = path;
   }
 
   /**
-   * Returns the key's dataset.
+   * Returns the key's projectId.
    */
-  public String dataset() {
-    return dataset;
+  public String projectId() {
+    return projectId;
   }
 
   /**
@@ -154,7 +154,7 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dataset(), namespace(), path());
+    return Objects.hash(projectId(), namespace(), path());
   }
 
   @Override
@@ -166,7 +166,7 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
       return false;
     }
     BaseKey other = (BaseKey) obj;
-    return Objects.equals(dataset(), other.dataset())
+    return Objects.equals(projectId(), other.projectId())
         && Objects.equals(namespace(), other.namespace())
         && Objects.equals(path(), other.path());
   }
@@ -175,8 +175,8 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
   protected DatastoreV1.Key toPb() {
     DatastoreV1.Key.Builder keyPb = DatastoreV1.Key.newBuilder();
     DatastoreV1.PartitionId.Builder partitionIdPb = DatastoreV1.PartitionId.newBuilder();
-    if (dataset != null) {
-      partitionIdPb.setDatasetId(dataset);
+    if (projectId != null) {
+      partitionIdPb.setDatasetId(projectId);
     }
     if (namespace != null) {
       partitionIdPb.setNamespace(namespace);

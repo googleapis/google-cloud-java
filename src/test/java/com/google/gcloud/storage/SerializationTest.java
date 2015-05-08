@@ -35,14 +35,14 @@ public class SerializationTest {
   @Test
   public void testServiceOptions() throws Exception {
     StorageServiceOptions options = StorageServiceOptions.builder()
-        .project("p1")
+        .projectId("p1")
         .authCredentials(AuthCredentials.createForAppEngine())
         .build();
     StorageServiceOptions serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);
 
     options = options.toBuilder()
-        .project("p2")
+        .projectId("p2")
         .retryParams(RetryParams.getDefaultInstance())
         .authCredentials(AuthCredentials.noCredentials())
         .pathDelimiter(":")
