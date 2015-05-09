@@ -27,9 +27,11 @@ import java.util.List;
  */
 public class BatchResponse implements Serializable {
 
-  private List<Result<Boolean>> deleteResult;
-  private List<Result<Blob>> updateResult;
-  private List<Result<Blob>> getResult;
+  private static final long serialVersionUID = 1057416839397037706L;
+
+  private final List<Result<Boolean>> deleteResult;
+  private final List<Result<Blob>> updateResult;
+  private final List<Result<Blob>> getResult;
 
   public static class Result<T extends Serializable> implements Serializable {
 
