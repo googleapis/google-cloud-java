@@ -16,6 +16,7 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
@@ -66,6 +67,10 @@ public interface StorageService extends Service<StorageServiceOptions> {
       super(rpcOption, value);
     }
 
+    private BucketTargetOption(StorageRpc.Option rpcOption) {
+      this(rpcOption, null);
+    }
+
     public static BucketTargetOption predefinedAcl(PredefinedAcl acl) {
       return new BucketTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.entry());
     }
@@ -74,8 +79,12 @@ public interface StorageService extends Service<StorageServiceOptions> {
       return new BucketTargetOption(StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL, acl.entry());
     }
 
-    public static BucketTargetOption metagenerationMatch(boolean match) {
-      return new BucketTargetOption(StorageRpc.Option.IF_METAGENERATION_MATCH, match);
+    public static BucketTargetOption metagenerationMatch() {
+      return new BucketTargetOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
+    }
+
+    public static BucketTargetOption metagenerationNotMatch() {
+      return new BucketTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
   }
 
@@ -83,12 +92,16 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     private static final long serialVersionUID = 5185657617120212117L;
 
-    private BucketSourceOption(StorageRpc.Option rpcOption, Object value) {
-      super(rpcOption, value);
+    private BucketSourceOption(StorageRpc.Option rpcOption, long metageneration) {
+      super(rpcOption, metageneration);
     }
 
-    public static BucketSourceOption metagenerationMatch(boolean match) {
-      return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH, match);
+    public static BucketSourceOption metagenerationMatch(long metageneration) {
+      return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH, metageneration);
+    }
+
+    public static BucketSourceOption metagenerationNotMatch(long metageneration) {
+      return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
     }
   }
 
@@ -100,16 +113,28 @@ public interface StorageService extends Service<StorageServiceOptions> {
       super(rpcOption, value);
     }
 
+    private BlobTargetOption(StorageRpc.Option rpcOption) {
+      this(rpcOption, null);
+    }
+
     public static BlobTargetOption predefinedAcl(PredefinedAcl acl) {
       return new BlobTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.entry());
     }
 
-    public static BlobTargetOption generationMath(boolean match) {
-      return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_MATCH, match);
+    public static BlobTargetOption generationMatch() {
+      return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_MATCH);
     }
 
-    public static BlobTargetOption metagenerationMatch(boolean match) {
-      return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_MATCH, match);
+    public static BlobTargetOption generationNotMatch() {
+      return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH);
+    }
+
+    public static BlobTargetOption metagenerationMatch() {
+      return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
+    }
+
+    public static BlobTargetOption metagenerationNotMatch() {
+      return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
   }
 
@@ -117,16 +142,24 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     private static final long serialVersionUID = -3712768261070182991L;
 
-    private BlobSourceOption(StorageRpc.Option rpcOption, Object value) {
+    private BlobSourceOption(StorageRpc.Option rpcOption, long value) {
       super(rpcOption, value);
     }
 
-    public static BlobSourceOption generationMath(boolean match) {
-      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, match);
+    public static BlobSourceOption generationMatch(long generation) {
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
     }
 
-    public static BlobSourceOption metagenerationMatch(boolean match) {
-      return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH, match);
+    public static BlobSourceOption generationNotMatch(long generation) {
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, generation);
+    }
+
+    public static BlobSourceOption metagenerationMatch(long metageneration) {
+      return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH, metageneration);
+    }
+
+    public static BlobSourceOption metagenerationNotMatch(long metageneration) {
+      return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
     }
   }
 
@@ -226,8 +259,11 @@ public interface StorageService extends Service<StorageServiceOptions> {
         return addSource(Arrays.asList(blobs));
       }
 
-      public Builder addSource(String blob, long matchGeneration) {
-        sourceBlobs.add(new SourceBlob(blob, matchGeneration));
+      /**
+       * Add a source with a specific generation to match.
+       */
+      public Builder addSource(String blob, long generation) {
+        sourceBlobs.add(new SourceBlob(blob, generation));
         return this;
       }
 
@@ -242,6 +278,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
       }
 
       public ComposeRequest build() {
+        checkArgument(!sourceBlobs.isEmpty());
         checkNotNull(target);
         return new ComposeRequest(this);
       }
@@ -278,20 +315,23 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     private static final long serialVersionUID = -2606508373751748775L;
 
-    private final Blob source;
+    private final String sourceBucket;
+    private final String sourceBlob;
     private final List<BlobSourceOption> sourceOptions;
     private final Blob target;
     private final List<BlobTargetOption> targetOptions;
 
     public static class Builder {
 
-      private Blob source;
+      private String sourceBucket;
+      private String sourceBlob;
       private final Set<BlobSourceOption> sourceOptions = new LinkedHashSet<>();
       private Blob target;
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
 
-      public Builder source(Blob source) {
-        this.source = source;
+      public Builder source(String bucket, String blob) {
+        this.sourceBucket = bucket;
+        this.sourceBlob = blob;
         return this;
       }
 
@@ -311,21 +351,27 @@ public interface StorageService extends Service<StorageServiceOptions> {
       }
 
       public CopyRequest build() {
-        checkNotNull(source);
+        checkNotNull(sourceBucket);
+        checkNotNull(sourceBlob);
         checkNotNull(target);
         return new CopyRequest(this);
       }
     }
 
     private CopyRequest(Builder builder) {
-      source = checkNotNull(builder.source);
+      sourceBucket = checkNotNull(builder.sourceBucket);
+      sourceBlob = checkNotNull(builder.sourceBlob);
       sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
       target = checkNotNull(builder.target);
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
     }
 
-    public Blob source() {
-      return source;
+    public String sourceBucket() {
+      return sourceBucket;
+    }
+
+    public String sourceBlob() {
+      return sourceBlob;
     }
 
     public List<BlobSourceOption> sourceOptions() {
@@ -340,15 +386,14 @@ public interface StorageService extends Service<StorageServiceOptions> {
       return targetOptions;
     }
 
-    public static CopyRequest of(Blob source, Blob target) {
-      return builder().source(source).target(target).build();
+    public static CopyRequest of(String sourceBucket, String sourceBlob, Blob target) {
+      return builder().source(sourceBucket, sourceBlob).target(target).build();
     }
 
     public static Builder builder() {
       return new Builder();
     }
   }
-
 
   /**
    * Create a new bucket.
@@ -367,72 +412,107 @@ public interface StorageService extends Service<StorageServiceOptions> {
   Blob create(Blob blob, byte[] content, BlobTargetOption... options);
 
   /**
-   * Returns a complete bucket information.
+   * Return the requested bucket.
    *
    * @throws StorageServiceException upon failure
    */
-  Bucket get(Bucket bucket, BucketSourceOption... options);
+  Bucket get(String bucket, BucketSourceOption... options);
 
   /**
+   * Return the requested blob.
+   *
    * @throws StorageServiceException upon failure
    */
-  Blob get(Blob blob, BlobSourceOption... options);
+  Blob get(String bucket, String blob, BlobSourceOption... options);
 
   /**
+   * List the project's buckets.
+   *
    * @throws StorageServiceException upon failure
    */
   ListResult<Bucket> list(BucketListOption... options);
 
   /**
-   * Lists blobs for a bucket.
+   * List the bucket's blobs.
+   *
    * @throws StorageServiceException upon failure
    */
   ListResult<Blob> list(String bucket, BlobListOption... options);
 
   /**
+   * Update bucket information.
+   *
+   * @return the updated bucket
    * @throws StorageServiceException upon failure
    */
   Bucket update(Bucket bucket, BucketTargetOption... options);
 
   /**
+   * Update blob information.
+   *
+   * @return the updated blob
    * @throws StorageServiceException upon failure
    */
   Blob update(Blob blob, BlobTargetOption... options);
 
   /**
+   * Delete the requested bucket.
+   *
+   * @return true if bucket was deleted
    * @throws StorageServiceException upon failure
    */
-  boolean delete(Bucket bucket, BucketSourceOption... options);
+  boolean delete(String bucket, BucketSourceOption... options);
 
   /**
+   * Delete the requested blob.
+   *
+   * @return true if blob was deleted
    * @throws StorageServiceException upon failure
    */
-  boolean delete(Blob blob, BlobSourceOption... options);
+  boolean delete(String bucket, String blob, BlobSourceOption... options);
 
   /**
+   * Send a compose request.
+   *
+   * @return the composed blob.
    * @throws StorageServiceException upon failure
    */
   Blob compose(ComposeRequest composeRequest);
 
   /**
+   * Send a copy request.
+   *
+   * @return the copied blob.
    * @throws StorageServiceException upon failure
    */
   Blob copy(CopyRequest copyRequest);
 
   /**
+   * Load the content of the given blob.
+   *
+   * @return the blob's content.
    * @throws StorageServiceException upon failure
    */
-  byte[] load(Blob blob, BlobSourceOption... options);
+  byte[] load(String bucket, String blob, BlobSourceOption... options);
 
-
+  /**
+   * Send a batch request.
+   *
+   * @return the batch response
+   * @throws StorageServiceException upon failure
+   */
   BatchResponse apply(BatchRequest batchRequest);
 
   /**
+   * Return a channel for reading the blob's content.
+   *
    * @throws StorageServiceException upon failure
    */
-  BlobReadChannel reader(Blob blob, BlobSourceOption... options);
+  BlobReadChannel reader(String bucket, String blob, BlobSourceOption... options);
 
   /**
+   * Create a blob and return a channel for writing its content.
+   *
    * @throws StorageServiceException upon failure
    */
   BlobWriteChannel writer(Blob blob, BlobTargetOption... options);

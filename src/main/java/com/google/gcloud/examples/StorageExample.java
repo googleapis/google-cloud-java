@@ -117,14 +117,14 @@ public class StorageExample {
     public void run(StorageService storage, Blob... blobs) {
       if (blobs.length == 1) {
         if (blobs[0].name().isEmpty()) {
-          System.out.println(storage.get(Bucket.of(blobs[0].bucket())));
+          System.out.println(storage.get(blobs[0].bucket()));
         } else {
-          System.out.println(storage.get(blobs[0]));
+          System.out.println(storage.get(blobs[0].bucket(), blobs[0].name()));
         }
       } else {
         BatchRequest.Builder batch = BatchRequest.builder();
         for (Blob blob : blobs) {
-          batch.get(blob);
+          batch.get(blob.bucket(), blob.name());
         }
         BatchResponse response = storage.apply(batch.build());
         System.out.println(response.gets());
@@ -149,11 +149,11 @@ public class StorageExample {
     @Override
     public void run(StorageService storage, Blob... blobs) {
       if (blobs.length == 1) {
-        System.out.println(storage.delete(blobs[0]));
+        System.out.println(storage.delete(blobs[0].bucket(), blobs[0].name()));
       } else {
         BatchRequest.Builder batch = BatchRequest.builder();
         for (Blob blob : blobs) {
-          batch.delete(blob);
+          batch.delete(blob.bucket(), blob.name());
         }
         BatchResponse response = storage.apply(batch.build());
         System.out.println(response.deletes());
@@ -236,7 +236,7 @@ public class StorageExample {
 
     @Override
     public void run(StorageService storage, Tuple<Blob, Path> tuple) throws IOException {
-      Blob blob = storage.get(tuple.x());
+      Blob blob = storage.get(tuple.x().bucket(), tuple.x().name());
       if (blob == null) {
         System.out.println("No such object");
         return;
@@ -246,9 +246,9 @@ public class StorageExample {
         writeTo = new PrintStream(new FileOutputStream(tuple.y().toFile()));
       }
       if (blob.size() < 1024) {
-        writeTo.write(storage.load(blob));
+        writeTo.write(storage.load(blob.bucket(), blob.name()));
       } else {
-        try (BlobReadChannel reader = storage.reader(blob)) {
+        try (BlobReadChannel reader = storage.reader(blob.bucket(), blob.name())) {
           WritableByteChannel channel = Channels.newChannel(writeTo);
           ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
           while (reader.read(bytes) > 0) {
@@ -299,7 +299,7 @@ public class StorageExample {
       if (args.length != 4) {
         throw new IllegalArgumentException();
       }
-      return CopyRequest.of(Blob.of(args[0], args[1]), Blob.of(args[2], args[3]));
+      return CopyRequest.of(args[0], args[1], Blob.of(args[2], args[3]));
     }
 
     @Override
