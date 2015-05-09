@@ -27,7 +27,7 @@ under the License.
     <item>
       <title>File: 85,
              Errors: 0,
-             Warnings: 95,
+             Warnings: 92,
              Infos: 0
       </title>
             <link>https://github.com/GoogleCloudPlatform/gcloud-java/checkstyle.html</link>
@@ -864,7 +864,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  14
+                  11
                 </td>
                 <td>
                   0
