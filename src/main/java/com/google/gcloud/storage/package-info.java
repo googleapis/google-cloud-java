@@ -17,7 +17,15 @@
 /**
  * A client to Google Cloud Storage.
  *
- * @see <a href="https://cloud.google.com/storage/">Google Cloud Storageg</a>
+ * <p>A simple usage example:
+ * <pre>{@code
+ * StorageServiceOptions options = StorageServiceOptions.builder().projectId("project").build();
+ * StorageService storage = StorageServiceFactory.instance().get(options);
+ * byte[] content = readContent();
+ * Blob blob = storage.create(Blob.of("bucket", "blob_name"), content);
+ * } </pre>
+ *
+ * @see <a href="https://cloud.google.com/storage/">Google Cloud Storage</a>
  */
 package com.google.gcloud.storage;
 

@@ -36,7 +36,7 @@ class Option implements Serializable {
 
   Option(StorageRpc.Option rpcOption, Object value) {
     this.rpcOption = checkNotNull(rpcOption);
-    this.value = checkNotNull(value);
+    this.value = value;
   }
 
   StorageRpc.Option rpcOption() {
