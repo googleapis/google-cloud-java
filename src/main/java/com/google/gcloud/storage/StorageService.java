@@ -412,14 +412,14 @@ public interface StorageService extends Service<StorageServiceOptions> {
   Blob create(Blob blob, byte[] content, BlobTargetOption... options);
 
   /**
-   * Return the requested bucket.
+   * Return the requested bucket or {@code null} if not found.
    *
    * @throws StorageServiceException upon failure
    */
   Bucket get(String bucket, BucketSourceOption... options);
 
   /**
-   * Return the requested blob.
+   * Return the requested blob or {@code null} if not found.
    *
    * @throws StorageServiceException upon failure
    */
@@ -516,5 +516,4 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * @throws StorageServiceException upon failure
    */
   BlobWriteChannel writer(Blob blob, BlobTargetOption... options);
-
 }

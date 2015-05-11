@@ -16,6 +16,7 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.gcloud.RetryHelper.runWithRetries;
 import static com.google.gcloud.spi.StorageRpc.Option.DELIMITER;
@@ -32,7 +33,6 @@ import static java.util.concurrent.Executors.callable;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.Function;
 import com.google.common.base.Functions;
-import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -76,6 +76,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   };
   private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
       .abortOn(RuntimeException.class).interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
+  private static final byte[] EMPTY_BYTE_ARRAY = {};
 
   private final StorageRpc storageRpc;
   private final RetryParams retryParams;
@@ -83,7 +84,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   StorageServiceImpl(StorageServiceOptions options) {
     super(options);
     storageRpc = options.storageRpc();
-    retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
+    retryParams = firstNonNull(options.retryParams(), RetryParams.noRetries());
     // todo: replace nulls with Value.asNull (per toPb)
     // todo: configure timeouts - https://developers.google.com/api-client-library/java/google-api-java-client/errors
     // todo: provide rewrite - https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite
@@ -111,7 +112,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
       @Override
       public StorageObject call() {
-        return storageRpc.create(blobPb, content, optionsMap);
+        return storageRpc.create(blobPb, firstNonNull(content, EMPTY_BYTE_ARRAY), optionsMap);
       }
     }, retryParams, EXCEPTION_HANDLER));
   }
@@ -120,25 +121,41 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   public Bucket get(String bucket, BucketSourceOption... options) {
     final com.google.api.services.storage.model.Bucket bucketPb = Bucket.of(bucket).toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
-    return Bucket.fromPb(runWithRetries(
+    com.google.api.services.storage.model.Bucket answer = runWithRetries(
         new Callable<com.google.api.services.storage.model.Bucket>() {
           @Override
           public com.google.api.services.storage.model.Bucket call() {
-            return storageRpc.get(bucketPb, optionsMap);
+            try {
+              return storageRpc.get(bucketPb, optionsMap);
+            } catch (StorageServiceException ex) {
+              if (ex.code() == 404) {
+                return null;
+              }
+              throw ex;
+            }
           }
-        }, retryParams, EXCEPTION_HANDLER));
+        }, retryParams, EXCEPTION_HANDLER);
+    return answer == null ? null : Bucket.fromPb(answer);
   }
 
   @Override
   public Blob get(String bucket, String blob, BlobSourceOption... options) {
     final StorageObject storedObject = Blob.of(bucket, blob).toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
-    return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
+    StorageObject storageObject = runWithRetries(new Callable<StorageObject>() {
       @Override
       public StorageObject call() {
-        return storageRpc.get(storedObject, optionsMap);
+        try {
+          return storageRpc.get(storedObject, optionsMap);
+        } catch (StorageServiceException ex) {
+          if (ex.code() == 404) {
+            return null;
+          }
+          throw ex;
+        }
       }
-    }, retryParams, EXCEPTION_HANDLER));
+    }, retryParams, EXCEPTION_HANDLER);
+    return storageObject == null ? null : Blob.fromPb(storageObject);
   }
 
   @Override
@@ -368,7 +385,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     private void initTransients() {
       storageRpc = serviceOptions.storageRpc();
-      retryParams = MoreObjects.firstNonNull(serviceOptions.retryParams(), RetryParams.noRetries());
+      retryParams = firstNonNull(serviceOptions.retryParams(), RetryParams.noRetries());
       storageObject = blob.toPb();
     }
 
@@ -504,7 +521,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     private void initTransients() {
       storageRpc = options.storageRpc();
-      retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
+      retryParams = firstNonNull(options.retryParams(), RetryParams.noRetries());
       storageObject = blob.toPb();
     }
 
@@ -600,7 +617,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       T value = (T) map.remove(getOption);
       checkArgument(value != null || defaultValue != null,
           "Option " + getOption.value() + " is missing a value");
-      value = MoreObjects.firstNonNull(value, defaultValue);
+      value = firstNonNull(value, defaultValue);
       map.put(putOption, value);
     }
   }
