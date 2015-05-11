@@ -306,6 +306,10 @@ public interface StorageService extends Service<StorageServiceOptions> {
       return builder().target(target).addSource(sources).build();
     }
 
+    public static ComposeRequest of(String bucket, Iterable<String> sources, String target) {
+      return of(sources, Blob.of(bucket, target));
+    }
+
     public static Builder builder() {
       return new Builder();
     }
