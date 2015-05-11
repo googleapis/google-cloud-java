@@ -390,6 +390,10 @@ public interface StorageService extends Service<StorageServiceOptions> {
       return builder().source(sourceBucket, sourceBlob).target(target).build();
     }
 
+    public static CopyRequest of(String sourceBucket, String sourceBlob, String targetBlob) {
+      return of(sourceBucket, sourceBlob, Blob.of(sourceBucket, targetBlob));
+    }
+
     public static Builder builder() {
       return new Builder();
     }
