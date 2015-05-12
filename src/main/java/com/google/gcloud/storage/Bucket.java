@@ -561,7 +561,9 @@ public final class Bucket implements Serializable {
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this).add("name", name).toString();
+    return MoreObjects.toStringHelper(this)
+        .add("name", name)
+        .toString();
   }
 
   public static Bucket of(String name) {

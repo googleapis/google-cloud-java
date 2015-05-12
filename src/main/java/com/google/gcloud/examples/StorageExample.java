@@ -57,7 +57,7 @@ import java.util.Map;
  * -Dexec.args="[<project_id>] list [<bucket>]| info [<bucket> [<file>]]|
  *  download <bucket> <path> [local_file]| upload <local_file> <bucket> [<path>]|
  *  delete <bucket> <path>+| cp <from_bucket> <from_path> <to_bucket> <to_path>|
- *  compose <bucket> <from_path>+ <to_path>"}
+ *  compose <bucket> <from_path>+ <to_path>| update_metadata <bucket> <file> [key=value]*"}
  * </li>
  * </ol>
  */
@@ -336,6 +336,45 @@ public class StorageExample {
     }
   }
 
+  private static class UpdateMetadata extends StorageAction<Tuple<Blob, Map<String, String>>> {
+
+    @Override
+    public void run(StorageService storage, Tuple<Blob, Map<String, String>> tuple)
+        throws IOException {
+      Blob blob = storage.get(tuple.x().bucket(), tuple.x().name());
+      if (blob == null) {
+        System.out.println("No such object");
+        return;
+      }
+      blob = blob.toBuilder().metadata(tuple.y()).build();
+      System.out.println("before: " + blob);
+      System.out.println(storage.update(blob));
+    }
+
+    @Override
+    Tuple<Blob, Map<String, String>> parse(String... args) {
+      if (args.length < 2) {
+        throw new IllegalArgumentException();
+      }
+      Blob blob = Blob.of(args[0], args[1]);
+      Map<String ,String> metadata = new HashMap<>();
+      for (int i = 2; i < args.length; i++) {
+        int idx = args[i].indexOf('=');
+        if (idx < 0) {
+          metadata.put(args[i], "");
+        } else {
+          metadata.put(args[i].substring(0, idx), args[i].substring(idx + 1));
+        }
+      }
+      return Tuple.of(blob, metadata);
+    }
+
+    @Override
+    public String params() {
+      return "<bucket> <path> [local_file]";
+    }
+  }
+
   static {
     ACTIONS.put("info", new InfoAction());
     ACTIONS.put("delete", new DeleteAction());
@@ -344,6 +383,7 @@ public class StorageExample {
     ACTIONS.put("download", new DownloadAction());
     ACTIONS.put("cp", new CopyAction());
     ACTIONS.put("compose", new ComposeAction());
+    ACTIONS.put("update_metadata", new UpdateMetadata());
   }
 
   public static void printUsage() {
@@ -378,7 +418,7 @@ public class StorageExample {
       args = Arrays.copyOfRange(args, 1, args.length);
     }
     if (action == null) {
-      System.out.println("Unrecognized action '" + args[1] + "'");
+      System.out.println("Unrecognized action.");
       printUsage();
       return;
     }
