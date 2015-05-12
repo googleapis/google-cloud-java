@@ -36,9 +36,11 @@ public class BatchResponse implements Serializable {
   public static class Result<T extends Serializable> implements Serializable {
 
     private static final long serialVersionUID = -1946539570170529094L;
+    private static final Result EMPTY = new BatchResponse.Result(null);
 
     private final T value;
     private final StorageServiceException exception;
+
 
     Result(T value) {
       this.value = value;
@@ -50,13 +52,15 @@ public class BatchResponse implements Serializable {
       this.value = null;
     }
 
-
     /**
      * Returns the result.
      *
      * @throws StorageServiceException if failed
      */
     public T result() throws StorageServiceException {
+      if (failed()) {
+        throw failure();
+      }
       return value;
     }
 
@@ -76,7 +80,15 @@ public class BatchResponse implements Serializable {
 
     @Override
     public String toString() {
-      return MoreObjects.firstNonNull(value, exception).toString();
+      return MoreObjects.toStringHelper(this)
+          .add("value", value)
+          .add("exception", exception)
+          .toString();
+    }
+
+    @SuppressWarnings("unchecked")
+    static <T extends Serializable> Result<T> empty() {
+      return EMPTY;
     }
   }
 

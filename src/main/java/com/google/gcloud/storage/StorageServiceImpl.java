@@ -16,6 +16,7 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.gcloud.RetryHelper.runWithRetries;
 import static com.google.gcloud.spi.StorageRpc.Option.DELIMITER;
@@ -32,11 +33,12 @@ import static java.util.concurrent.Executors.callable;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.Function;
 import com.google.common.base.Functions;
-import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
+import com.google.common.primitives.Ints;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
@@ -52,6 +54,7 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Callable;
 
 final class StorageServiceImpl extends BaseService<StorageServiceOptions> implements StorageService {
@@ -76,6 +79,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   };
   private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
       .abortOn(RuntimeException.class).interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
+  private static final byte[] EMPTY_BYTE_ARRAY = {};
 
   private final StorageRpc storageRpc;
   private final RetryParams retryParams;
@@ -83,7 +87,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   StorageServiceImpl(StorageServiceOptions options) {
     super(options);
     storageRpc = options.storageRpc();
-    retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
+    retryParams = firstNonNull(options.retryParams(), RetryParams.noRetries());
     // todo: replace nulls with Value.asNull (per toPb)
     // todo: configure timeouts - https://developers.google.com/api-client-library/java/google-api-java-client/errors
     // todo: provide rewrite - https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite
@@ -111,7 +115,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
       @Override
       public StorageObject call() {
-        return storageRpc.create(blobPb, content, optionsMap);
+        return storageRpc.create(blobPb, firstNonNull(content, EMPTY_BYTE_ARRAY), optionsMap);
       }
     }, retryParams, EXCEPTION_HANDLER));
   }
@@ -120,25 +124,41 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   public Bucket get(String bucket, BucketSourceOption... options) {
     final com.google.api.services.storage.model.Bucket bucketPb = Bucket.of(bucket).toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
-    return Bucket.fromPb(runWithRetries(
+    com.google.api.services.storage.model.Bucket answer = runWithRetries(
         new Callable<com.google.api.services.storage.model.Bucket>() {
           @Override
           public com.google.api.services.storage.model.Bucket call() {
-            return storageRpc.get(bucketPb, optionsMap);
+            try {
+              return storageRpc.get(bucketPb, optionsMap);
+            } catch (StorageServiceException ex) {
+              if (ex.code() == 404) {
+                return null;
+              }
+              throw ex;
+            }
           }
-        }, retryParams, EXCEPTION_HANDLER));
+        }, retryParams, EXCEPTION_HANDLER);
+    return answer == null ? null : Bucket.fromPb(answer);
   }
 
   @Override
   public Blob get(String bucket, String blob, BlobSourceOption... options) {
     final StorageObject storedObject = Blob.of(bucket, blob).toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
-    return Blob.fromPb(runWithRetries(new Callable<StorageObject>() {
+    StorageObject storageObject = runWithRetries(new Callable<StorageObject>() {
       @Override
       public StorageObject call() {
-        return storageRpc.get(storedObject, optionsMap);
+        try {
+          return storageRpc.get(storedObject, optionsMap);
+        } catch (StorageServiceException ex) {
+          if (ex.code() == 404) {
+            return null;
+          }
+          throw ex;
+        }
       }
-    }, retryParams, EXCEPTION_HANDLER));
+    }, retryParams, EXCEPTION_HANDLER);
+    return storageObject == null ? null : Blob.fromPb(storageObject);
   }
 
   @Override
@@ -308,20 +328,28 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     List<BatchResponse.Result<Blob>> updates = transformBatchResult(
         toUpdate, response.updates, Blob.FROM_PB_FUNCTION);
     List<BatchResponse.Result<Blob>> gets = transformBatchResult(
-        toGet, response.gets, Blob.FROM_PB_FUNCTION);
+        toGet, response.gets, Blob.FROM_PB_FUNCTION, 404);
     return new BatchResponse(deletes, updates, gets);
   }
 
   private <I, O extends Serializable> List<BatchResponse.Result<O>> transformBatchResult(
       Iterable<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request,
-      Map<StorageObject, Tuple<I, StorageServiceException>> results, Function<I, O> transform) {
+      Map<StorageObject, Tuple<I, StorageServiceException>> results, Function<I, O> transform,
+      int... nullOnErrorCodes) {
+    Set nullOnErrorCodesSet = Sets.newHashSet(Ints.asList(nullOnErrorCodes));
     List<BatchResponse.Result<O>> response = Lists.newArrayListWithCapacity(results.size());
     for (Tuple<StorageObject, ?> tuple : request) {
       Tuple<I, StorageServiceException> result = results.get(tuple.x());
       if (result.x() != null) {
         response.add(new BatchResponse.Result<>(transform.apply(result.x())));
       } else {
-        response.add(new BatchResponse.Result<O>(result.y()));
+        StorageServiceException exception = result.y();
+        if (nullOnErrorCodesSet.contains(exception.code())) {
+          //noinspection unchecked
+          response.add(BatchResponse.Result.<O>empty());
+        } else {
+          response.add(new BatchResponse.Result<O>(result.y()));
+        }
       }
     }
     return response;
@@ -368,7 +396,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     private void initTransients() {
       storageRpc = serviceOptions.storageRpc();
-      retryParams = MoreObjects.firstNonNull(serviceOptions.retryParams(), RetryParams.noRetries());
+      retryParams = firstNonNull(serviceOptions.retryParams(), RetryParams.noRetries());
       storageObject = blob.toPb();
     }
 
@@ -504,7 +532,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     private void initTransients() {
       storageRpc = options.storageRpc();
-      retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
+      retryParams = firstNonNull(options.retryParams(), RetryParams.noRetries());
       storageObject = blob.toPb();
     }
 
@@ -600,7 +628,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       T value = (T) map.remove(getOption);
       checkArgument(value != null || defaultValue != null,
           "Option " + getOption.value() + " is missing a value");
-      value = MoreObjects.firstNonNull(value, defaultValue);
+      value = firstNonNull(value, defaultValue);
       map.put(putOption, value);
     }
   }
