@@ -22,8 +22,16 @@
  * StorageServiceOptions options = StorageServiceOptions.builder().projectId("project").build();
  * StorageService storage = StorageServiceFactory.instance().get(options);
  * byte[] content = readContent();
- * Blob blob = storage.create(Blob.of("bucket", "blob_name"), content);
- * } </pre>
+ * Blob blob = storage.get("bucket", "blob_name");
+ * if (blob == null) {
+ *   storage.create(Blob.of("bucket", "blob_name"), content);
+ * } else {
+ *   byte[] prevContent = storage.load("bucket", "blob_name");
+ *   content = mergeContent(prevContent, content);
+ *   WritableByteChannel channel = storage.writer(blob);
+ *   channel.write(ByteBuffer.wrap(content));
+ *   channel.close();
+ * }}</pre>
  *
  * @see <a href="https://cloud.google.com/storage/">Google Cloud Storage</a>
  */
