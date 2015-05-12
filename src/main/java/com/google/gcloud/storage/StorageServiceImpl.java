@@ -37,6 +37,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
+import com.google.common.primitives.Ints;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
@@ -52,6 +54,7 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Callable;
 
 final class StorageServiceImpl extends BaseService<StorageServiceOptions> implements StorageService {
@@ -325,20 +328,28 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     List<BatchResponse.Result<Blob>> updates = transformBatchResult(
         toUpdate, response.updates, Blob.FROM_PB_FUNCTION);
     List<BatchResponse.Result<Blob>> gets = transformBatchResult(
-        toGet, response.gets, Blob.FROM_PB_FUNCTION);
+        toGet, response.gets, Blob.FROM_PB_FUNCTION, 404);
     return new BatchResponse(deletes, updates, gets);
   }
 
   private <I, O extends Serializable> List<BatchResponse.Result<O>> transformBatchResult(
       Iterable<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request,
-      Map<StorageObject, Tuple<I, StorageServiceException>> results, Function<I, O> transform) {
+      Map<StorageObject, Tuple<I, StorageServiceException>> results, Function<I, O> transform,
+      int... nullOnErrorCodes) {
+    Set nullOnErrorCodesSet = Sets.newHashSet(Ints.asList(nullOnErrorCodes));
     List<BatchResponse.Result<O>> response = Lists.newArrayListWithCapacity(results.size());
     for (Tuple<StorageObject, ?> tuple : request) {
       Tuple<I, StorageServiceException> result = results.get(tuple.x());
       if (result.x() != null) {
         response.add(new BatchResponse.Result<>(transform.apply(result.x())));
       } else {
-        response.add(new BatchResponse.Result<O>(result.y()));
+        StorageServiceException exception = result.y();
+        if (nullOnErrorCodesSet.contains(exception.code())) {
+          //noinspection unchecked
+          response.add(BatchResponse.Result.<O>empty());
+        } else {
+          response.add(new BatchResponse.Result<O>(result.y()));
+        }
       }
     }
     return response;
