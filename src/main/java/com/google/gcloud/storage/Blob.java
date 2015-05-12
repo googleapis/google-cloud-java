@@ -127,12 +127,12 @@ public class Blob implements Serializable {
       return this;
     }
 
-    Builder contentDisposition(String contentDisposition) {
+    public Builder contentDisposition(String contentDisposition) {
       this.contentDisposition = contentDisposition;
       return this;
     }
 
-    Builder contentLanguage(String contentLanguage) {
+    public Builder contentLanguage(String contentLanguage) {
       this.contentLanguage = contentLanguage;
       return this;
     }
@@ -157,12 +157,12 @@ public class Blob implements Serializable {
       return this;
     }
 
-    public Builder owner(Acl.Entity owner) {
+    Builder owner(Acl.Entity owner) {
       this.owner = owner;
       return this;
     }
 
-    public Builder size(Long size) {
+    Builder size(Long size) {
       this.size = size;
       return this;
     }
@@ -177,7 +177,7 @@ public class Blob implements Serializable {
       return this;
     }
 
-    Builder md5(String md5) {
+    public Builder md5(String md5) {
       this.md5 = md5;
       return this;
     }
@@ -187,7 +187,7 @@ public class Blob implements Serializable {
       return this;
     }
 
-    public Builder mediaLink(String mediaLink) {
+    Builder mediaLink(String mediaLink) {
       this.mediaLink = mediaLink;
       return this;
     }
@@ -197,22 +197,22 @@ public class Blob implements Serializable {
       return this;
     }
 
-    public Builder generation(Long generation) {
+    Builder generation(Long generation) {
       this.generation = generation;
       return this;
     }
 
-    public Builder metageneration(Long metageneration) {
+    Builder metageneration(Long metageneration) {
       this.metageneration = metageneration;
       return this;
     }
 
-    public Builder deleteTime(Long deleteTime) {
+    Builder deleteTime(Long deleteTime) {
       this.deleteTime = deleteTime;
       return this;
     }
 
-    public Builder updateTime(Long updateTime) {
+    Builder updateTime(Long updateTime) {
       this.updateTime = updateTime;
       return this;
     }
@@ -365,7 +365,13 @@ public class Blob implements Serializable {
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this).add("bucket", bucket).add("name", name).toString();
+    return MoreObjects.toStringHelper(this)
+        .add("bucket", bucket)
+        .add("name", name)
+        .add("size", size)
+        .add("content-type", contentType)
+        .add("metadata", metadata)
+        .toString();
   }
 
   public static Blob of(String bucket, String name) {

@@ -28,6 +28,7 @@ import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
+import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static java.util.concurrent.Executors.callable;
 
 import com.google.api.services.storage.model.StorageObject;
@@ -131,7 +132,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
             try {
               return storageRpc.get(bucketPb, optionsMap);
             } catch (StorageServiceException ex) {
-              if (ex.code() == 404) {
+              if (ex.code() == HTTP_NOT_FOUND) {
                 return null;
               }
               throw ex;
@@ -151,7 +152,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
         try {
           return storageRpc.get(storedObject, optionsMap);
         } catch (StorageServiceException ex) {
-          if (ex.code() == 404) {
+          if (ex.code() == HTTP_NOT_FOUND) {
             return null;
           }
           throw ex;
@@ -328,7 +329,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     List<BatchResponse.Result<Blob>> updates = transformBatchResult(
         toUpdate, response.updates, Blob.FROM_PB_FUNCTION);
     List<BatchResponse.Result<Blob>> gets = transformBatchResult(
-        toGet, response.gets, Blob.FROM_PB_FUNCTION, 404);
+        toGet, response.gets, Blob.FROM_PB_FUNCTION, HTTP_NOT_FOUND);
     return new BatchResponse(deletes, updates, gets);
   }
 
