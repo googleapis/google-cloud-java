@@ -69,7 +69,7 @@ public class StorageExample {
 
     abstract void run(StorageService storage, T request) throws Exception;
 
-    abstract T parse(String... args) throws IllegalArgumentException;
+    abstract T parse(String... args) throws IllegalArgumentException, IOException;
 
     protected String params() {
       return "";
@@ -115,6 +115,8 @@ public class StorageExample {
   private static class InfoAction extends BlobsAction {
     @Override
     public void run(StorageService storage, Blob... blobs) {
+
+
       if (blobs.length == 1) {
         if (blobs[0].name().isEmpty()) {
           System.out.println(storage.get(blobs[0].bucket()));
@@ -217,13 +219,14 @@ public class StorageExample {
     }
 
     @Override
-    Tuple<Path, Blob> parse(String... args) {
+    Tuple<Path, Blob> parse(String... args) throws IOException {
       if (args.length < 2 || args.length > 3) {
         throw new IllegalArgumentException();
       }
       Path path = Paths.get(args[0]);
+      String contentType = Files.probeContentType(path);
       String blob = args.length < 3 ? path.getFileName().toString() : args[2];
-      return Tuple.of(path, Blob.of(args[1], blob));
+      return Tuple.of(path, Blob.builder(args[1], blob).contentType(contentType).build());
     }
 
     @Override
