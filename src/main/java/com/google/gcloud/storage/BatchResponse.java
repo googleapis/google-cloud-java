@@ -21,11 +21,12 @@ import com.google.common.collect.ImmutableList;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Google Storage batch response.
  */
-public class BatchResponse implements Serializable {
+public final class BatchResponse implements Serializable {
 
   private static final long serialVersionUID = 1057416839397037706L;
 
@@ -79,6 +80,21 @@ public class BatchResponse implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+      return Objects.hash(value, exception);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof Result)) {
+        return false;
+      }
+      Result<?> other = (Result<?>) obj;
+      return Objects.equals(value, other.value)
+          && Objects.equals(exception, other.exception);
+    }
+
+    @Override
     public String toString() {
       return MoreObjects.toStringHelper(this)
           .add("value", value)
@@ -97,6 +113,22 @@ public class BatchResponse implements Serializable {
     this.deleteResult = ImmutableList.copyOf(deleteResult);
     this.updateResult = ImmutableList.copyOf(updateResult);
     this.getResult = ImmutableList.copyOf(getResult);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(deleteResult, updateResult, getResult);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof BatchResponse)) {
+      return false;
+    }
+    BatchResponse other = (BatchResponse) obj;
+    return Objects.equals(deleteResult, other.deleteResult)
+        && Objects.equals(updateResult, other.updateResult)
+        && Objects.equals(updateResult, other.updateResult);
   }
 
   /**

@@ -39,6 +39,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A Google Storage bucket.
@@ -557,6 +558,19 @@ public final class Bucket implements Serializable {
         .indexPage(indexPage)
         .notFoundPage(notFoundPage)
         .deleteRules(deleteRules);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(name);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof Bucket)) {
+      return  false;
+    }
+    return Objects.equals(toPb(), ((Bucket) obj).toPb());
   }
 
   @Override
