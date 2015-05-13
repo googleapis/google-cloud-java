@@ -302,24 +302,27 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   public BatchResponse apply(BatchRequest batchRequest) {
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toDelete =
         Lists.newArrayListWithCapacity(batchRequest.toDelete().size());
-    for (Map.Entry<Blob, BlobSourceOption[]> entry : batchRequest.toDelete().entrySet()) {
+    for (Map.Entry<Blob, Iterable<BlobSourceOption>> entry : batchRequest.toDelete().entrySet()) {
       Blob blob = entry.getKey();
-      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
+      Map<StorageRpc.Option, ?> optionsMap =
+          optionMap(blob.generation(), blob.metageneration(), entry.getValue());
       StorageObject storageObject = blob.toPb();
       toDelete.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(storageObject, optionsMap));
     }
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toUpdate =
         Lists.newArrayListWithCapacity(batchRequest.toUpdate().size());
-    for (Map.Entry<Blob, BlobTargetOption[]> entry : batchRequest.toUpdate().entrySet()) {
+    for (Map.Entry<Blob, Iterable<BlobTargetOption>> entry : batchRequest.toUpdate().entrySet()) {
       Blob blob = entry.getKey();
-      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
+      Map<StorageRpc.Option, ?> optionsMap =
+          optionMap(blob.generation(), blob.metageneration(), entry.getValue());
       toUpdate.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
     }
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toGet =
         Lists.newArrayListWithCapacity(batchRequest.toGet().size());
-    for (Map.Entry<Blob, BlobSourceOption[]> entry : batchRequest.toGet().entrySet()) {
+    for (Map.Entry<Blob, Iterable<BlobSourceOption>> entry : batchRequest.toGet().entrySet()) {
       Blob blob = entry.getKey();
-      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
+      Map<StorageRpc.Option, ?> optionsMap =
+          optionMap(blob.generation(), blob.metageneration(), entry.getValue());
       toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
     }
     StorageRpc.BatchResponse response =
