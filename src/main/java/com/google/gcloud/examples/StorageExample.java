@@ -46,7 +46,7 @@ import java.util.Map;
 /**
  * An example of using the Google Cloud Storage.
  * <p>
- * This example demonstrates a simple/typical usage.
+ * This example demonstrates a simple/typical storage usage.
  * <p>
  * Steps needed for running the example:
  * <ol>
@@ -60,6 +60,11 @@ import java.util.Map;
  *  compose <bucket> <from_path>+ <to_path>| update_metadata <bucket> <file> [key=value]*"}
  * </li>
  * </ol>
+ *
+ * The first parameter is an optional project_id (logged-in project will be used if not supplied).
+ * Second parameter is a Storage operation (list, delete, compose,...) to demonstrate the its
+ * usage. Any other arguments are specific to the operation.
+ * See each action's run method for the specific Storage interaction.
  */
 public class StorageExample {
 
@@ -112,24 +117,34 @@ public class StorageExample {
     }
   }
 
+  /**
+   * This class demonstrates how to retrieve Bucket or Blob metadata.
+   * If more than one blob is supplied a Batch operation would be used to get all blobs metadata
+   * in a single RPC.
+   */
   private static class InfoAction extends BlobsAction {
     @Override
     public void run(StorageService storage, Blob... blobs) {
-
-
       if (blobs.length == 1) {
         if (blobs[0].name().isEmpty()) {
-          System.out.println(storage.get(blobs[0].bucket()));
+          // get Bucket
+          Bucket bucket = storage.get(blobs[0].bucket());
+          System.out.println("Bucket info: " + bucket);
         } else {
-          System.out.println(storage.get(blobs[0].bucket(), blobs[0].name()));
+          // get Blob
+          Blob blob = storage.get(blobs[0].bucket(), blobs[0].name());
+          System.out.println("Blob info: " + blob);
         }
       } else {
+        // use batch to get multiple blobs.
         BatchRequest.Builder batch = BatchRequest.builder();
         for (Blob blob : blobs) {
           batch.get(blob.bucket(), blob.name());
         }
         BatchResponse response = storage.apply(batch.build());
-        System.out.println(response.gets());
+        for (BatchResponse.Result<Blob> result : response.gets()) {
+          System.out.println(result.get());
+        }
       }
     }
 
@@ -147,22 +162,41 @@ public class StorageExample {
     }
   }
 
+  /**
+   * This class demonstrates how to delete a blob.
+   * If more than one blob is supplied a Batch operation would be used to delete all requested
+   * blobs in a single RPC.
+   */
   private static class DeleteAction extends BlobsAction {
     @Override
     public void run(StorageService storage, Blob... blobs) {
       if (blobs.length == 1) {
-        System.out.println(storage.delete(blobs[0].bucket(), blobs[0].name()));
+        boolean wasDeleted = storage.delete(blobs[0].bucket(), blobs[0].name());
+        if (wasDeleted) {
+          System.out.println("Blob " + blobs[0] + " was deleted");
+        }
       } else {
+        // use batch operation
         BatchRequest.Builder batch = BatchRequest.builder();
         for (Blob blob : blobs) {
           batch.delete(blob.bucket(), blob.name());
         }
+        int index = 0;
         BatchResponse response = storage.apply(batch.build());
-        System.out.println(response.deletes());
+        for (BatchResponse.Result<Boolean> result : response.deletes()) {
+          if (result.get()) {
+            // request order is maintained
+            System.out.println("Blob " + blobs[index] + " was deleted");
+          }
+          index++;
+        }
       }
     }
   }
 
+  /**
+   * This class demonstrates how to list buckets or a bucket's blobs.
+   */
   private static class ListAction extends StorageAction<String> {
 
     @Override
@@ -179,10 +213,12 @@ public class StorageExample {
     @Override
     public void run(StorageService storage, String bucket) {
       if (bucket == null) {
+        // list buckets
         for (Bucket b : storage.list()) {
           System.out.println(b);
         }
       } else {
+        // list a bucket's blobs
         for (Blob b : storage.list(bucket)) {
           System.out.println(b);
         }
@@ -195,13 +231,22 @@ public class StorageExample {
     }
   }
 
+  /**
+   * This class demonstrates how to create a new Blob or to update its content.
+   */
   private static class UploadAction extends StorageAction<Tuple<Path, Blob>> {
     @Override
     public void run(StorageService storage, Tuple<Path, Blob> tuple) throws Exception {
-      if (Files.size(tuple.x()) > 1024) {
-        try (BlobWriteChannel writer = storage.writer(tuple.y())) {
+      run(storage, tuple.x(), tuple.y());
+    }
+
+    private void run(StorageService storage, Path uploadFrom, Blob blob) throws IOException {
+      if (Files.size(uploadFrom) > 1_000_000) {
+        // When content is not available or large (1MB or more) it is recommended
+        // to write it in chunks via the blob's channel writer.
+        try (BlobWriteChannel writer = storage.writer(blob)) {
           byte[] buffer = new byte[1024];
-          try (InputStream input = Files.newInputStream(tuple.x())) {
+          try (InputStream input = Files.newInputStream(uploadFrom)) {
             int limit;
             while ((limit = input.read(buffer)) >= 0) {
               try {
@@ -213,9 +258,11 @@ public class StorageExample {
           }
         }
       } else {
-        byte[] bytes = Files.readAllBytes(tuple.x());
-        System.out.println(storage.create(tuple.y(), bytes));
+        byte[] bytes = Files.readAllBytes(uploadFrom);
+        // create the blob in one request.
+        storage.create(blob, bytes);
       }
+      System.out.println("Blob was created");
     }
 
     @Override
@@ -235,22 +282,35 @@ public class StorageExample {
     }
   }
 
+  /**
+   * This class demonstrates how read a blob's content.
+   * The example will dump the content to a local file if one was given or write
+   * it to stdout otherwise.
+   */
   private static class DownloadAction extends StorageAction<Tuple<Blob, Path>> {
 
     @Override
     public void run(StorageService storage, Tuple<Blob, Path> tuple) throws IOException {
-      Blob blob = storage.get(tuple.x().bucket(), tuple.x().name());
+      run(storage, tuple.x().bucket(), tuple.x().name(), tuple.y());
+    }
+
+    private void run(StorageService storage, String bucket, String blobName, Path downloadTo)
+        throws IOException {
+      Blob blob = storage.get(bucket, blobName);
       if (blob == null) {
         System.out.println("No such object");
         return;
       }
       PrintStream writeTo = System.out;
-      if (tuple.y() != null) {
-        writeTo = new PrintStream(new FileOutputStream(tuple.y().toFile()));
+      if (downloadTo != null) {
+        writeTo = new PrintStream(new FileOutputStream(downloadTo.toFile()));
       }
-      if (blob.size() < 1024) {
-        writeTo.write(storage.load(blob.bucket(), blob.name()));
+      if (blob.size() < 1_000_000) {
+        // Blob is small read all its content in one request
+        byte[] content = storage.load(blob.bucket(), blob.name());
+        writeTo.write(content);
       } else {
+        // When Blob size is big or unknown use the blob's channel reader.
         try (BlobReadChannel reader = storage.reader(blob.bucket(), blob.name())) {
           WritableByteChannel channel = Channels.newChannel(writeTo);
           ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
@@ -261,7 +321,7 @@ public class StorageExample {
           }
         }
       }
-      if (tuple.y() == null) {
+      if (downloadTo == null) {
         writeTo.println();
       } else {
         writeTo.close();
@@ -291,10 +351,16 @@ public class StorageExample {
     }
   }
 
+  /**
+   * This class demonstrates how to use the copy command.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/copy">Object copy</a>
+   */
   private static class CopyAction extends StorageAction<CopyRequest> {
     @Override
     public void run(StorageService storage, CopyRequest request) {
-      System.out.println(storage.copy(request));
+      Blob copiedBlob = storage.copy(request);
+      System.out.println("Copied " + copiedBlob);
     }
 
     @Override
@@ -311,10 +377,16 @@ public class StorageExample {
     }
   }
 
+  /**
+   * This class demonstrates how to use the compose command.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/compose">Object compose</a>
+   */
   private static class ComposeAction extends StorageAction<ComposeRequest> {
     @Override
     public void run(StorageService storage, ComposeRequest request) {
-      System.out.println(storage.compose(request));
+      Blob composedBlob = storage.compose(request);
+      System.out.println("Composed " + composedBlob);
     }
 
     @Override
@@ -336,19 +408,28 @@ public class StorageExample {
     }
   }
 
+  /**
+   * This class demonstrates how to update a blob's metadata.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/compose">Object compose</a>
+   */
   private static class UpdateMetadata extends StorageAction<Tuple<Blob, Map<String, String>>> {
 
     @Override
     public void run(StorageService storage, Tuple<Blob, Map<String, String>> tuple)
         throws IOException {
-      Blob blob = storage.get(tuple.x().bucket(), tuple.x().name());
+      run(storage, tuple.x().bucket(), tuple.x().name(), tuple.y());
+    }
+
+    private void run(StorageService storage, String bucket, String blobName,
+        Map<String, String> metadata) {
+      Blob blob = storage.get(bucket, blobName);
       if (blob == null) {
         System.out.println("No such object");
         return;
       }
-      blob = blob.toBuilder().metadata(tuple.y()).build();
-      System.out.println("before: " + blob);
-      System.out.println(storage.update(blob));
+      blob = storage.update(blob.toBuilder().metadata(metadata).build());
+      System.out.println("Updated " + blob);
     }
 
     @Override
@@ -357,7 +438,7 @@ public class StorageExample {
         throw new IllegalArgumentException();
       }
       Blob blob = Blob.of(args[0], args[1]);
-      Map<String ,String> metadata = new HashMap<>();
+      Map<String, String> metadata = new HashMap<>();
       for (int i = 2; i < args.length; i++) {
         int idx = args[i].indexOf('=');
         if (idx < 0) {

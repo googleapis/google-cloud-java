@@ -58,7 +58,7 @@ public final class BatchResponse implements Serializable {
      *
      * @throws StorageServiceException if failed
      */
-    public T result() throws StorageServiceException {
+    public T get() throws StorageServiceException {
       if (failed()) {
         throw failure();
       }
