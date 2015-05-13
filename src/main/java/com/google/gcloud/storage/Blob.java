@@ -16,8 +16,10 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.client.util.Data;
 import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
@@ -124,22 +126,22 @@ public final class Blob implements Serializable {
     }
 
     public Builder contentType(String contentType) {
-      this.contentType = contentType;
+      this.contentType = firstNonNull(contentType, Data.<String>nullOf(String.class));
       return this;
     }
 
     public Builder contentDisposition(String contentDisposition) {
-      this.contentDisposition = contentDisposition;
+      this.contentDisposition = firstNonNull(contentDisposition, Data.<String>nullOf(String.class));
       return this;
     }
 
     public Builder contentLanguage(String contentLanguage) {
-      this.contentLanguage = contentLanguage;
+      this.contentLanguage = firstNonNull(contentLanguage, Data.<String>nullOf(String.class));
       return this;
     }
 
     public Builder contentEncoding(String contentEncoding) {
-      this.contentEncoding = contentEncoding;
+      this.contentEncoding = firstNonNull(contentEncoding, Data.<String>nullOf(String.class));
       return this;
     }
 
@@ -149,7 +151,7 @@ public final class Blob implements Serializable {
     }
 
     public Builder cacheControl(String cacheControl) {
-      this.cacheControl = cacheControl;
+      this.cacheControl = firstNonNull(cacheControl, Data.<String>nullOf(String.class));
       return this;
     }
 
@@ -179,12 +181,12 @@ public final class Blob implements Serializable {
     }
 
     public Builder md5(String md5) {
-      this.md5 = md5;
+      this.md5 = firstNonNull(md5, Data.<String>nullOf(String.class));
       return this;
     }
 
     public Builder crc32c(String crc32c) {
-      this.crc32c = crc32c;
+      this.crc32c = firstNonNull(crc32c, Data.<String>nullOf(String.class));
       return this;
     }
 
@@ -263,7 +265,7 @@ public final class Blob implements Serializable {
   }
 
   public String cacheControl() {
-    return cacheControl;
+    return Data.isNull(cacheControl) ? null : cacheControl;
   }
 
   public List<Acl> acl() {
@@ -279,19 +281,19 @@ public final class Blob implements Serializable {
   }
 
   public String contentType() {
-    return contentType;
+    return Data.isNull(contentType) ? null : contentType;
   }
 
   public String contentEncoding() {
-    return contentEncoding;
+    return Data.isNull(contentEncoding) ? null : contentEncoding;
   }
 
   public String contentDisposition() {
-    return contentDisposition;
+    return Data.isNull(contentDisposition) ? null : contentDisposition;
   }
 
   public String contentLanguage() {
-    return contentEncoding;
+    return Data.isNull(contentLanguage) ? null : contentLanguage;
   }
 
   public Integer componentCount() {
@@ -307,11 +309,11 @@ public final class Blob implements Serializable {
   }
 
   public String md5() {
-    return md5;
+    return Data.isNull(md5) ? null : md5;
   }
 
   public String crc32c() {
-    return crc32c;
+    return Data.isNull(crc32c) ? null : crc32c;
   }
 
   public String mediaLink() {
@@ -367,11 +369,11 @@ public final class Blob implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("bucket", bucket)
-        .add("name", name)
-        .add("size", size)
-        .add("content-type", contentType)
-        .add("metadata", metadata)
+        .add("bucket", bucket())
+        .add("name", name())
+        .add("size", size())
+        .add("content-type", contentType())
+        .add("metadata", metadata())
         .toString();
   }
 
@@ -397,7 +399,7 @@ public final class Blob implements Serializable {
     if (!(obj instanceof Blob)) {
       return  false;
     }
-    return Objects.equals(toPb(), ((Blob)obj).toPb());
+    return Objects.equals(toPb(), ((Blob) obj).toPb());
   }
 
   StorageObject toPb() {
