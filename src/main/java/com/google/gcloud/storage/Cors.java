@@ -29,6 +29,7 @@ import java.io.Serializable;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Cross-Origin Resource Sharing (CORS) configuration for a bucket.
@@ -60,7 +61,7 @@ public final class Cors implements Serializable {
     ANY, GET, HEAD, PUT, POST, DELETE
   }
 
-  public static class Origin implements Serializable {
+  public static final class Origin implements Serializable {
 
     private static final long serialVersionUID = -4447958124895577993L;
     private static final String ANY_URI = "*";
@@ -89,6 +90,19 @@ public final class Cors implements Serializable {
         return any();
       }
       return new Origin(value);
+    }
+
+    @Override
+    public int hashCode() {
+      return value.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof Origin)) {
+        return false;
+      }
+      return value.equals(((Origin)obj).value);
     }
 
     @Override
@@ -164,6 +178,23 @@ public final class Cors implements Serializable {
         .methods(methods)
         .origins(origins)
         .responseHeaders(responseHeaders);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(maxAgeSeconds, methods, origins, responseHeaders);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof Cors)) {
+      return false;
+    }
+    Cors other = (Cors) obj;
+    return Objects.equals(maxAgeSeconds, other.maxAgeSeconds)
+        && Objects.equals(methods, other.methods)
+        && Objects.equals(origins, other.origins)
+        && Objects.equals(responseHeaders, other.responseHeaders);
   }
 
   public static Builder builder() {
