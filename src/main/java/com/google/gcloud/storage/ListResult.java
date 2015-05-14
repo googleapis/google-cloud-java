@@ -18,11 +18,12 @@ package com.google.gcloud.storage;
 
 import java.io.Serializable;
 import java.util.Iterator;
+import java.util.Objects;
 
 /**
  * Google Cloud storage list result.
  */
-public class ListResult<T extends Serializable> implements Iterable<T>, Serializable {
+public final class ListResult<T extends Serializable> implements Iterable<T>, Serializable {
 
   private static final long serialVersionUID = -6937287874908527950L;
 
@@ -41,5 +42,20 @@ public class ListResult<T extends Serializable> implements Iterable<T>, Serializ
   @Override
   public Iterator<T> iterator() {
     return results.iterator();
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(cursor, results);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof ListResult)) {
+      return false;
+    }
+    ListResult<?> other = (ListResult<?>) obj;
+    return Objects.equals(cursor, other.cursor)
+        && Objects.equals(results, other.results);
   }
 }

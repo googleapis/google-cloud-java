@@ -17,9 +17,11 @@
 package com.google.gcloud.storage;
 
 import static com.google.api.client.repackaged.com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.collect.Lists.transform;
 
 import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.util.Data;
 import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.Bucket.Lifecycle;
 import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
@@ -39,6 +41,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A Google Storage bucket.
@@ -65,7 +68,6 @@ public final class Bucket implements Serializable {
   private final List<Acl> defaultAcl;
   private final Location location;
   private final StorageClass storageClass;
-
 
   static final Function<com.google.api.services.storage.model.Bucket, Bucket> FROM_PB_FUNCTION =
       new Function<com.google.api.services.storage.model.Bucket, Bucket>() {
@@ -247,6 +249,9 @@ public final class Bucket implements Serializable {
 
     private static final long serialVersionUID = 374002156285326563L;
     private static final ImmutableMap<String, Option> STRING_TO_OPTION;
+    private static final StorageClass NULL_VALUE =
+        new StorageClass(Data.<String>nullOf(String.class));
+
     private final String value;
 
     public enum Option {
@@ -298,6 +303,8 @@ public final class Bucket implements Serializable {
 
     private static final long serialVersionUID = 9073107666838637662L;
     private static final ImmutableMap<String, Option> STRING_TO_OPTION;
+    private static final Location NULL_VALUE = new Location(Data.<String>nullOf(String.class));
+
     private final String value;
 
     public enum Option {
@@ -391,7 +398,7 @@ public final class Bucket implements Serializable {
     }
 
     public Builder versioningEnabled(Boolean enable) {
-      this.versioningEnabled = enable;
+      this.versioningEnabled = firstNonNull(enable, Data.<Boolean>nullOf(Boolean.class));
       return this;
     }
 
@@ -411,12 +418,12 @@ public final class Bucket implements Serializable {
     }
 
     public Builder storageClass(StorageClass storageClass) {
-      this.storageClass = storageClass;
+      this.storageClass = firstNonNull(storageClass, StorageClass.NULL_VALUE);
       return this;
     }
 
     public Builder location(Location location) {
-      this.location = location;
+      this.location = firstNonNull(location, Location.NULL_VALUE);
       return this;
     }
 
@@ -492,7 +499,7 @@ public final class Bucket implements Serializable {
   }
 
   public Boolean versioningEnabled() {
-    return versioningEnabled;
+    return Data.isNull(versioningEnabled) ? null : versioningEnabled;
   }
 
   public String indexPage() {
@@ -520,11 +527,11 @@ public final class Bucket implements Serializable {
   }
 
   public Location location() {
-    return location;
+    return location == null || Data.isNull(location.value) ? null : location;
   }
 
   public StorageClass storageClass() {
-    return storageClass;
+    return storageClass == null || Data.isNull(storageClass.value) ? null : storageClass;
   }
 
   public List<Cors> cors() {
@@ -560,8 +567,23 @@ public final class Bucket implements Serializable {
   }
 
   @Override
+  public int hashCode() {
+    return Objects.hash(name);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof Bucket)) {
+      return  false;
+    }
+    return Objects.equals(toPb(), ((Bucket) obj).toPb());
+  }
+
+  @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this).add("name", name).toString();
+    return MoreObjects.toStringHelper(this)
+        .add("name", name())
+        .toString();
   }
 
   public static Bucket of(String name) {

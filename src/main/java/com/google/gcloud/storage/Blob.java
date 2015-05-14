@@ -16,8 +16,10 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.client.util.Data;
 import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
@@ -32,13 +34,14 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * A Google Storage object.
  *
  * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and Terminology</a>
  */
-public class Blob implements Serializable {
+public final class Blob implements Serializable {
 
   private static final long serialVersionUID = 2228487739943277159L;
 
@@ -123,22 +126,22 @@ public class Blob implements Serializable {
     }
 
     public Builder contentType(String contentType) {
-      this.contentType = contentType;
+      this.contentType = firstNonNull(contentType, Data.<String>nullOf(String.class));
       return this;
     }
 
-    Builder contentDisposition(String contentDisposition) {
-      this.contentDisposition = contentDisposition;
+    public Builder contentDisposition(String contentDisposition) {
+      this.contentDisposition = firstNonNull(contentDisposition, Data.<String>nullOf(String.class));
       return this;
     }
 
-    Builder contentLanguage(String contentLanguage) {
-      this.contentLanguage = contentLanguage;
+    public Builder contentLanguage(String contentLanguage) {
+      this.contentLanguage = firstNonNull(contentLanguage, Data.<String>nullOf(String.class));
       return this;
     }
 
     public Builder contentEncoding(String contentEncoding) {
-      this.contentEncoding = contentEncoding;
+      this.contentEncoding = firstNonNull(contentEncoding, Data.<String>nullOf(String.class));
       return this;
     }
 
@@ -148,7 +151,7 @@ public class Blob implements Serializable {
     }
 
     public Builder cacheControl(String cacheControl) {
-      this.cacheControl = cacheControl;
+      this.cacheControl = firstNonNull(cacheControl, Data.<String>nullOf(String.class));
       return this;
     }
 
@@ -157,12 +160,12 @@ public class Blob implements Serializable {
       return this;
     }
 
-    public Builder owner(Acl.Entity owner) {
+    Builder owner(Acl.Entity owner) {
       this.owner = owner;
       return this;
     }
 
-    public Builder size(Long size) {
+    Builder size(Long size) {
       this.size = size;
       return this;
     }
@@ -177,17 +180,17 @@ public class Blob implements Serializable {
       return this;
     }
 
-    Builder md5(String md5) {
-      this.md5 = md5;
+    public Builder md5(String md5) {
+      this.md5 = firstNonNull(md5, Data.<String>nullOf(String.class));
       return this;
     }
 
     public Builder crc32c(String crc32c) {
-      this.crc32c = crc32c;
+      this.crc32c = firstNonNull(crc32c, Data.<String>nullOf(String.class));
       return this;
     }
 
-    public Builder mediaLink(String mediaLink) {
+    Builder mediaLink(String mediaLink) {
       this.mediaLink = mediaLink;
       return this;
     }
@@ -197,22 +200,22 @@ public class Blob implements Serializable {
       return this;
     }
 
-    public Builder generation(Long generation) {
+    Builder generation(Long generation) {
       this.generation = generation;
       return this;
     }
 
-    public Builder metageneration(Long metageneration) {
+    Builder metageneration(Long metageneration) {
       this.metageneration = metageneration;
       return this;
     }
 
-    public Builder deleteTime(Long deleteTime) {
+    Builder deleteTime(Long deleteTime) {
       this.deleteTime = deleteTime;
       return this;
     }
 
-    public Builder updateTime(Long updateTime) {
+    Builder updateTime(Long updateTime) {
       this.updateTime = updateTime;
       return this;
     }
@@ -262,7 +265,7 @@ public class Blob implements Serializable {
   }
 
   public String cacheControl() {
-    return cacheControl;
+    return Data.isNull(cacheControl) ? null : cacheControl;
   }
 
   public List<Acl> acl() {
@@ -278,19 +281,19 @@ public class Blob implements Serializable {
   }
 
   public String contentType() {
-    return contentType;
+    return Data.isNull(contentType) ? null : contentType;
   }
 
   public String contentEncoding() {
-    return contentEncoding;
+    return Data.isNull(contentEncoding) ? null : contentEncoding;
   }
 
   public String contentDisposition() {
-    return contentDisposition;
+    return Data.isNull(contentDisposition) ? null : contentDisposition;
   }
 
   public String contentLanguage() {
-    return contentEncoding;
+    return Data.isNull(contentLanguage) ? null : contentLanguage;
   }
 
   public Integer componentCount() {
@@ -306,11 +309,11 @@ public class Blob implements Serializable {
   }
 
   public String md5() {
-    return md5;
+    return Data.isNull(md5) ? null : md5;
   }
 
   public String crc32c() {
-    return crc32c;
+    return Data.isNull(crc32c) ? null : crc32c;
   }
 
   public String mediaLink() {
@@ -365,7 +368,13 @@ public class Blob implements Serializable {
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this).add("bucket", bucket).add("name", name).toString();
+    return MoreObjects.toStringHelper(this)
+        .add("bucket", bucket())
+        .add("name", name())
+        .add("size", size())
+        .add("content-type", contentType())
+        .add("metadata", metadata())
+        .toString();
   }
 
   public static Blob of(String bucket, String name) {
@@ -378,6 +387,19 @@ public class Blob implements Serializable {
 
   public static Builder builder(String bucket, String name) {
     return new Builder().bucket(bucket).name(name);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(bucket, name);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof Blob)) {
+      return  false;
+    }
+    return Objects.equals(toPb(), ((Blob) obj).toPb());
   }
 
   StorageObject toPb() {
