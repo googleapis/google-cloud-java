@@ -20,6 +20,7 @@ import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *  Access Control List on for buckets or blobs.
@@ -60,6 +61,19 @@ public final class Acl implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+      return Objects.hash(type, value);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == null || !getClass().isAssignableFrom(obj.getClass())) {
+        return false;
+      }
+      return Objects.equals(toPb(), ((Entity)obj).toPb());
+    }
+
+    @Override
     public String toString() {
       return toPb();
     }
@@ -91,13 +105,12 @@ public final class Acl implements Serializable {
     }
   }
 
-  public static class Domain extends Entity {
+  public static final class Domain extends Entity {
 
     private static final long serialVersionUID = -3033025857280447253L;
 
     public Domain(String domain) {
       super(Type.DOMAIN, domain);
-
     }
 
     public String domain() {
@@ -105,7 +118,7 @@ public final class Acl implements Serializable {
     }
   }
 
-  public static class Group extends Entity {
+  public static final class Group extends Entity {
 
     private static final long serialVersionUID = -1660987136294408826L;
 
@@ -118,7 +131,7 @@ public final class Acl implements Serializable {
     }
   }
 
-  public static class User extends Entity {
+  public static final class User extends Entity {
 
     private static final long serialVersionUID = 3076518036392737008L;
     private static final String ALL_USERS = "allUsers";
@@ -154,7 +167,7 @@ public final class Acl implements Serializable {
     }
   }
 
-  public static class Project extends Entity {
+  public static final class Project extends Entity {
 
     private static final long serialVersionUID = 7933776866530023027L;
 
@@ -180,7 +193,7 @@ public final class Acl implements Serializable {
     }
   }
 
-  public static class RawEntity extends Entity {
+  public static final class RawEntity extends Entity {
 
     private static final long serialVersionUID = 3966205614223053950L;
 
