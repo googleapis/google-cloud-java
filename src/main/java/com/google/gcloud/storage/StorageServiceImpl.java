@@ -28,6 +28,7 @@ import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
+import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static java.util.concurrent.Executors.callable;
 
 import com.google.api.services.storage.model.StorageObject;
@@ -131,7 +132,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
             try {
               return storageRpc.get(bucketPb, optionsMap);
             } catch (StorageServiceException ex) {
-              if (ex.code() == 404) {
+              if (ex.code() == HTTP_NOT_FOUND) {
                 return null;
               }
               throw ex;
@@ -151,7 +152,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
         try {
           return storageRpc.get(storedObject, optionsMap);
         } catch (StorageServiceException ex) {
-          if (ex.code() == 404) {
+          if (ex.code() == HTTP_NOT_FOUND) {
             return null;
           }
           throw ex;
@@ -301,24 +302,27 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   public BatchResponse apply(BatchRequest batchRequest) {
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toDelete =
         Lists.newArrayListWithCapacity(batchRequest.toDelete().size());
-    for (Map.Entry<Blob, BlobSourceOption[]> entry : batchRequest.toDelete().entrySet()) {
+    for (Map.Entry<Blob, Iterable<BlobSourceOption>> entry : batchRequest.toDelete().entrySet()) {
       Blob blob = entry.getKey();
-      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
+      Map<StorageRpc.Option, ?> optionsMap =
+          optionMap(blob.generation(), blob.metageneration(), entry.getValue());
       StorageObject storageObject = blob.toPb();
       toDelete.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(storageObject, optionsMap));
     }
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toUpdate =
         Lists.newArrayListWithCapacity(batchRequest.toUpdate().size());
-    for (Map.Entry<Blob, BlobTargetOption[]> entry : batchRequest.toUpdate().entrySet()) {
+    for (Map.Entry<Blob, Iterable<BlobTargetOption>> entry : batchRequest.toUpdate().entrySet()) {
       Blob blob = entry.getKey();
-      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
+      Map<StorageRpc.Option, ?> optionsMap =
+          optionMap(blob.generation(), blob.metageneration(), entry.getValue());
       toUpdate.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
     }
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toGet =
         Lists.newArrayListWithCapacity(batchRequest.toGet().size());
-    for (Map.Entry<Blob, BlobSourceOption[]> entry : batchRequest.toGet().entrySet()) {
+    for (Map.Entry<Blob, Iterable<BlobSourceOption>> entry : batchRequest.toGet().entrySet()) {
       Blob blob = entry.getKey();
-      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, entry.getValue());
+      Map<StorageRpc.Option, ?> optionsMap =
+          optionMap(blob.generation(), blob.metageneration(), entry.getValue());
       toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
     }
     StorageRpc.BatchResponse response =
@@ -328,7 +332,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     List<BatchResponse.Result<Blob>> updates = transformBatchResult(
         toUpdate, response.updates, Blob.FROM_PB_FUNCTION);
     List<BatchResponse.Result<Blob>> gets = transformBatchResult(
-        toGet, response.gets, Blob.FROM_PB_FUNCTION, 404);
+        toGet, response.gets, Blob.FROM_PB_FUNCTION, HTTP_NOT_FOUND);
     return new BatchResponse(deletes, updates, gets);
   }
 
