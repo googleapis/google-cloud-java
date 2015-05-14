@@ -121,6 +121,8 @@ public class StorageExample {
    * This class demonstrates how to retrieve Bucket or Blob metadata.
    * If more than one blob is supplied a Batch operation would be used to get all blobs metadata
    * in a single RPC.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/get">Objects: get</a>
    */
   private static class InfoAction extends BlobsAction {
     @Override
@@ -166,6 +168,8 @@ public class StorageExample {
    * This class demonstrates how to delete a blob.
    * If more than one blob is supplied a Batch operation would be used to delete all requested
    * blobs in a single RPC.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/delete">Objects: delete</a>
    */
   private static class DeleteAction extends BlobsAction {
     @Override
@@ -196,6 +200,8 @@ public class StorageExample {
 
   /**
    * This class demonstrates how to list buckets or a bucket's blobs.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/list">Objects: list</a>
    */
   private static class ListAction extends StorageAction<String> {
 
@@ -233,6 +239,8 @@ public class StorageExample {
 
   /**
    * This class demonstrates how to create a new Blob or to update its content.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/insert">Objects: insert</a>
    */
   private static class UploadAction extends StorageAction<Tuple<Path, Blob>> {
     @Override
@@ -286,6 +294,8 @@ public class StorageExample {
    * This class demonstrates how read a blob's content.
    * The example will dump the content to a local file if one was given or write
    * it to stdout otherwise.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/get">Objects: get</a>
    */
   private static class DownloadAction extends StorageAction<Tuple<Blob, Path>> {
 
@@ -354,7 +364,7 @@ public class StorageExample {
   /**
    * This class demonstrates how to use the copy command.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/copy">Object copy</a>
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/copy">Objects: copy</a>
    */
   private static class CopyAction extends StorageAction<CopyRequest> {
     @Override
@@ -380,7 +390,7 @@ public class StorageExample {
   /**
    * This class demonstrates how to use the compose command.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/compose">Object compose</a>
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/compose">Objects: compose</a>
    */
   private static class ComposeAction extends StorageAction<ComposeRequest> {
     @Override
@@ -411,7 +421,7 @@ public class StorageExample {
   /**
    * This class demonstrates how to update a blob's metadata.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/compose">Object compose</a>
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/update">Objects: update</a>
    */
   private static class UpdateMetadata extends StorageAction<Tuple<Blob, Map<String, String>>> {
 
