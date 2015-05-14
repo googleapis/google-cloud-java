@@ -17,51 +17,56 @@
 package com.google.gcloud.storage;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
 import com.google.gcloud.storage.StorageService.BlobSourceOption;
 import com.google.gcloud.storage.StorageService.BlobTargetOption;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Google storage batch request.
  */
-public class BatchRequest implements Serializable {
+public final class BatchRequest implements Serializable {
 
   private static final long serialVersionUID = -1527992265939800345L;
 
-  private final Map<Blob, BlobSourceOption[]> toDelete;
-  private final Map<Blob, BlobTargetOption[]> toUpdate;
-  private final Map<Blob, BlobSourceOption[]> toGet;
+  private final Map<Blob, Iterable<BlobSourceOption>> toDelete;
+  private final Map<Blob, Iterable<BlobTargetOption>> toUpdate;
+  private final Map<Blob, Iterable<BlobSourceOption>> toGet;
 
   public static class Builder {
 
-    private Map<Blob, BlobSourceOption[]> toDelete = new LinkedHashMap<>();
-    private Map<Blob, BlobTargetOption[]> toUpdate = new LinkedHashMap<>();
-    private Map<Blob, BlobSourceOption[]> toGet = new LinkedHashMap<>();
+    private Map<Blob, Iterable<BlobSourceOption>> toDelete = new LinkedHashMap<>();
+    private Map<Blob, Iterable<BlobTargetOption>> toUpdate = new LinkedHashMap<>();
+    private Map<Blob, Iterable<BlobSourceOption>> toGet = new LinkedHashMap<>();
 
     private Builder() {}
 
     /**
      * Delete the given blob.
      */
-    public void delete(String bucket, String blob, BlobSourceOption... options) {
-      toDelete.put(Blob.of(bucket, blob), options);
+    public Builder delete(String bucket, String blob, BlobSourceOption... options) {
+      toDelete.put(Blob.of(bucket, blob), Lists.newArrayList(options));
+      return this;
     }
 
     /**
      * Update the given blob.
      */
-    public void update(Blob blob, BlobTargetOption... options) {
-      toUpdate.put(blob, options);
+    public Builder update(Blob blob, BlobTargetOption... options) {
+      toUpdate.put(blob, Lists.newArrayList(options));
+      return this;
     }
 
     /**
      * Retrieve metadata for the given blob.
      */
-    public void get(String bucket, String blob, BlobSourceOption... options) {
-      toGet.put(Blob.of(bucket, blob), options);
+    public Builder get(String bucket, String blob, BlobSourceOption... options) {
+      toGet.put(Blob.of(bucket, blob), Lists.newArrayList(options));
+      return this;
     }
 
     public BatchRequest build() {
@@ -75,15 +80,31 @@ public class BatchRequest implements Serializable {
     toGet = ImmutableMap.copyOf(builder.toGet);
   }
 
-  Map<Blob, BlobSourceOption[]> toDelete() {
+  @Override
+  public int hashCode() {
+    return Objects.hash(toDelete, toUpdate, toGet);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof BatchRequest)) {
+      return false;
+    }
+    BatchRequest other = (BatchRequest) obj;
+    return Objects.equals(toDelete, other.toDelete)
+        && Objects.equals(toUpdate, other.toUpdate)
+        && Objects.equals(toGet, other.toGet);
+  }
+
+  Map<Blob, Iterable<BlobSourceOption>> toDelete() {
     return toDelete;
   }
 
-  Map<Blob, BlobTargetOption[]> toUpdate() {
+  Map<Blob, Iterable<BlobTargetOption>> toUpdate() {
     return toUpdate;
   }
 
-  Map<Blob, BlobSourceOption[]> toGet() {
+  Map<Blob, Iterable<BlobSourceOption>> toGet() {
     return toGet;
   }
 
