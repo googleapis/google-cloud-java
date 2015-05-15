@@ -33,7 +33,7 @@ import java.util.Map.Entry;
 public class BatchRequestTest {
 
   @Test
-  public void testRequest() throws Exception {
+  public void testBatchRequest() {
     BatchRequest request = BatchRequest.builder()
         .delete("b1", "o1")
         .delete("b1", "o2", BlobSourceOption.generationMatch(1),
@@ -55,15 +55,31 @@ public class BatchRequestTest {
     assertEquals(2, Iterables.size(delete.getValue()));
     assertFalse(deletes.hasNext());
 
-    Iterator<Entry<Blob, Iterable<BlobSourceOption>>> updates = request
-        .toDelete().entrySet().iterator();
-    Entry<Blob, Iterable<BlobSourceOption>> update = updates.next();
-    assertEquals(Blob.of("b1", "o1"), update.getKey());
-    assertTrue(Iterables.isEmpty(update.getValue()));
+    Iterator<Entry<Blob, Iterable<BlobTargetOption>>> updates = request
+        .toUpdate().entrySet().iterator();
+    Entry<Blob, Iterable<BlobTargetOption>> update = updates.next();
+    assertEquals(Blob.of("b2", "o1"), update.getKey());
+    assertEquals(1, Iterables.size(update.getValue()));
+    assertEquals(BlobTargetOption.predefinedAcl(PUBLIC_READ),
+        Iterables.getFirst(update.getValue(), null));
     update = updates.next();
-    assertEquals(Blob.of("b1", "o2"), update.getKey());
-    assertEquals(2, Iterables.size(update.getValue()));
+    assertEquals(Blob.of("b2", "o2"), update.getKey());
+    assertTrue(Iterables.isEmpty(update.getValue()));
     assertFalse(updates.hasNext());
 
+    Iterator<Entry<Blob, Iterable<BlobSourceOption>>> gets = request
+        .toGet().entrySet().iterator();
+    Entry<Blob, Iterable<BlobSourceOption>> get = gets.next();
+    assertEquals(Blob.of("b3", "o1"), get.getKey());
+    assertTrue(Iterables.isEmpty(get.getValue()));
+    get = gets.next();
+    assertEquals(Blob.of("b3", "o2"), get.getKey());
+    assertEquals(1, Iterables.size(get.getValue()));
+    assertEquals(BlobSourceOption.generationMatch(1),
+        Iterables.getFirst(get.getValue(), null));
+    get = gets.next();
+    assertEquals(Blob.of("b3", "o3"), get.getKey());
+    assertTrue(Iterables.isEmpty(get.getValue()));
+    assertFalse(gets.hasNext());
   }
 }
