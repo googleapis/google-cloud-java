@@ -16,7 +16,7 @@
 
 package com.google.gcloud.storage;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import com.google.gcloud.spi.StorageRpc;
 

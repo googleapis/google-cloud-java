@@ -17,8 +17,8 @@
 package com.google.gcloud.storage;
 
 import static com.google.gcloud.storage.StorageService.PredefinedAcl.PUBLIC_READ;
-import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.Iterables;
