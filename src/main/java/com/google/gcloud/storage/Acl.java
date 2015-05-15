@@ -186,7 +186,7 @@ public final class Acl implements Serializable {
       OWNERS, EDITORS, VIEWERS
     }
 
-    Project(ProjectRole pRole, String projectId) {
+    public Project(ProjectRole pRole, String projectId) {
       super(Type.PROJECT, pRole.name().toLowerCase() + "-" + projectId);
       this.pRole = pRole;
       this.projectId = projectId;
