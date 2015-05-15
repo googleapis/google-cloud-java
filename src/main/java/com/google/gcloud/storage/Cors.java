@@ -130,17 +130,17 @@ public final class Cors implements Serializable {
     }
 
     public Builder methods(Iterable<Method> methods) {
-      this.methods = ImmutableList.copyOf(methods);
+      this.methods = methods != null ? ImmutableList.copyOf(methods) : null;
       return this;
     }
 
     public Builder origins(Iterable<Origin> origins) {
-      this.origins = ImmutableList.copyOf(origins);
+      this.origins = origins != null ? ImmutableList.copyOf(origins) : null;
       return this;
     }
 
     public Builder responseHeaders(Iterable<String> headers) {
-      this.responseHeaders = ImmutableList.copyOf(headers);
+      this.responseHeaders = headers != null ? ImmutableList.copyOf(headers) : null;
       return this;
     }
 
@@ -205,25 +205,33 @@ public final class Cors implements Serializable {
     Bucket.Cors pb = new Bucket.Cors();
     pb.setMaxAgeSeconds(maxAgeSeconds);
     pb.setResponseHeader(responseHeaders);
-    pb.setMethod(newArrayList(transform(methods(), Functions.toStringFunction())));
-    pb.setOrigin(newArrayList(transform(origins(), Functions.toStringFunction())));
+    if (methods != null) {
+      pb.setMethod(newArrayList(transform(methods, Functions.toStringFunction())));
+    }
+    if (origins != null) {
+      pb.setOrigin(newArrayList(transform(origins, Functions.toStringFunction())));
+    }
     return pb;
   }
 
   static Cors fromPb(Bucket.Cors cors) {
     Builder builder = builder().maxAgeSeconds(cors.getMaxAgeSeconds());
-    builder.methods(transform(cors.getMethod(), new Function<String, Method>() {
-      @Override
-      public Method apply(String name) {
-        return Method.valueOf(name.toUpperCase());
-      }
-    }));
-    builder.origins(transform(cors.getOrigin(), new Function<String, Origin>() {
-      @Override
-      public Origin apply(String value) {
-        return Origin.of(value);
-      }
-    }));
+    if (cors.getMethod() != null) {
+      builder.methods(transform(cors.getMethod(), new Function<String, Method>() {
+        @Override
+        public Method apply(String name) {
+          return Method.valueOf(name.toUpperCase());
+        }
+      }));
+    }
+    if (cors.getOrigin() != null) {
+      builder.origins(transform(cors.getOrigin(), new Function<String, Origin>() {
+        @Override
+        public Origin apply(String value) {
+          return Origin.of(value);
+        }
+      }));
+    }
     builder.responseHeaders(cors.getResponseHeader());
     return builder.build();
   }
