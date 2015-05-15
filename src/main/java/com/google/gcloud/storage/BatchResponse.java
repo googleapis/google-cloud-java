@@ -53,6 +53,10 @@ public final class BatchResponse implements Serializable {
       this.value = null;
     }
 
+    static <T extends Serializable> Result<T> of(T value) {
+      return new Result<>(value);
+    }
+
     /**
      * Returns the result.
      *
