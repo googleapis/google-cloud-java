@@ -29,14 +29,27 @@ public final class ListResult<T extends Serializable> implements Iterable<T>, Se
 
   private final String cursor;
   private final Iterable<T> results;
+  private final NextPageFetcher<T> pageFetcher;
 
-  ListResult(String cursor, Iterable<T> results) {
+  interface NextPageFetcher<T extends Serializable> extends Serializable {
+    ListResult<T> nextPage();
+  }
+
+  public ListResult(NextPageFetcher<T> pageFetcher, String cursor, Iterable<T> results) {
+    this.pageFetcher = pageFetcher;
     this.cursor = cursor;
     this.results = results;
   }
 
   public String nextPageCursor() {
     return cursor;
+  }
+
+  public ListResult<T> nextPage() {
+    if (cursor == null || pageFetcher == null) {
+      return null;
+    }
+    return pageFetcher.nextPage();
   }
 
   @Override
