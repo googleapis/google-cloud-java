@@ -41,10 +41,16 @@ public final class ListResult<T extends Serializable> implements Iterable<T>, Se
     this.results = results;
   }
 
+  /**
+   * Returns the cursor for the nextPage or {@code null} if no more results.
+   */
   public String nextPageCursor() {
     return cursor;
   }
 
+  /**
+   * Returns the results of the nextPage or {@code null} if no more result.
+   */
   public ListResult<T> nextPage() {
     if (cursor == null || pageFetcher == null) {
       return null;
