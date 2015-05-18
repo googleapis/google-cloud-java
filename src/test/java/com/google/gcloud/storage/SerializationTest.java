@@ -47,7 +47,7 @@ public class SerializationTest {
       Cors.builder().maxAgeSeconds(1).origins(Collections.singleton(ORIGIN)).build();
   private static final BatchRequest BATCH_REQUEST = BatchRequest.builder().delete("B", "N").build();
   private static final BatchResponse BATCH_RESPONSE = new BatchResponse(
-      Collections.singletonList(new BatchResponse.Result<>(true)),
+      Collections.singletonList(BatchResponse.Result.of(true)),
       Collections.<BatchResponse.Result<Blob>>emptyList(),
       Collections.<BatchResponse.Result<Blob>>emptyList());
   private static final ListResult<Blob> LIST_RESULT =
