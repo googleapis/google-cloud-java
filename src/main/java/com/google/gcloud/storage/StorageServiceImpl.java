@@ -47,11 +47,7 @@ import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -78,7 +74,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       return null;
     }
   };
-  private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
+  static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
       .abortOn(RuntimeException.class).interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
   private static final byte[] EMPTY_BYTE_ARRAY = {};
 
@@ -359,228 +355,10 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     return response;
   }
 
-  private static class BlobReadChannelImpl implements BlobReadChannel {
-
-    private final StorageServiceOptions serviceOptions;
-    private final Blob blob;
-    private final Map<StorageRpc.Option, ?> requestOptions;
-    private int position;
-    private boolean isOpen;
-    private boolean endOfStream;
-
-    private transient StorageRpc storageRpc;
-    private transient RetryParams retryParams;
-    private transient StorageObject storageObject;
-    private transient int bufferPos;
-    private transient byte[] buffer;
-
-    BlobReadChannelImpl(StorageServiceOptions serviceOptions, Blob blob,
-        Map<StorageRpc.Option, ?> requestOptions) {
-      this.serviceOptions = serviceOptions;
-      this.blob = blob;
-      this.requestOptions = requestOptions;
-      isOpen = true;
-      initTransients();
-    }
-
-    private void writeObject(ObjectOutputStream out) throws IOException {
-      if (buffer != null) {
-        position += bufferPos;
-        buffer = null;
-        bufferPos = 0;
-        endOfStream = false;
-      }
-      out.defaultWriteObject();
-    }
-
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-      in.defaultReadObject();
-      initTransients();
-    }
-
-    private void initTransients() {
-      storageRpc = serviceOptions.storageRpc();
-      retryParams = firstNonNull(serviceOptions.retryParams(), RetryParams.noRetries());
-      storageObject = blob.toPb();
-    }
-
-    @Override
-    public boolean isOpen() {
-      return isOpen;
-    }
-
-    @Override
-    public void close() {
-      if (isOpen) {
-        buffer = null;
-        isOpen = false;
-      }
-    }
-
-    private void validateOpen() throws IOException {
-      if (!isOpen) {
-        throw new IOException("stream is closed");
-      }
-    }
-
-    @Override
-    public void seek(int position) throws IOException {
-      validateOpen();
-      this.position = position;
-      buffer = null;
-      bufferPos = 0;
-      endOfStream = false;
-    }
-
-    @Override
-    public int read(ByteBuffer byteBuffer) throws IOException {
-      validateOpen();
-      if (buffer == null) {
-        if (endOfStream) {
-          return -1;
-        }
-        final int toRead = Math.max(byteBuffer.remaining(), 256 * 1024);
-        buffer = runWithRetries(new Callable<byte[]>() {
-          @Override
-          public byte[] call() {
-            return storageRpc.read(storageObject, requestOptions, position, toRead);
-          }
-        }, retryParams, EXCEPTION_HANDLER);
-        if (toRead > buffer.length) {
-          endOfStream = true;
-        }
-      }
-      int toWrite = Math.min(buffer.length - bufferPos, byteBuffer.remaining());
-      byteBuffer.put(buffer, bufferPos, toWrite);
-      bufferPos += toWrite;
-      if (bufferPos >= buffer.length) {
-        position += buffer.length;
-        buffer = null;
-        bufferPos = 0;
-      }
-      return toWrite;
-    }
-  }
-
   @Override
   public BlobReadChannel reader(String bucket, String blob, BlobSourceOption... options) {
     Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     return new BlobReadChannelImpl(options(), Blob.of(bucket, blob), optionsMap);
-  }
-
-  private static class BlobWriterChannelImpl implements BlobWriteChannel {
-
-    private static final int CHUNK_SIZE = 256 * 1024;
-    private static final int COMPACT_THRESHOLD = (int) Math.round(CHUNK_SIZE * 0.8);
-
-    private final StorageServiceOptions options;
-    private final Blob blob;
-    private final String uploadId;
-    private int position;
-    private byte[] buffer = new byte[CHUNK_SIZE];
-    private int limit;
-    private boolean isOpen = true;
-
-    private transient StorageRpc storageRpc;
-    private transient RetryParams retryParams;
-    private transient StorageObject storageObject;
-
-    public BlobWriterChannelImpl(StorageServiceOptions options, Blob blob,
-        Map<StorageRpc.Option, ?> optionsMap) {
-      this.options = options;
-      this.blob = blob;
-      initTransients();
-      uploadId = options.storageRpc().open(storageObject, optionsMap);
-    }
-
-    private void writeObject(ObjectOutputStream out) throws IOException {
-      if (!isOpen) {
-        out.defaultWriteObject();
-        return;
-      }
-      flush();
-      byte[] temp = buffer;
-      if (limit < COMPACT_THRESHOLD) {
-        buffer = Arrays.copyOf(buffer, limit);
-      }
-      out.defaultWriteObject();
-      buffer = temp;
-    }
-
-    private void flush() {
-      if (limit >= CHUNK_SIZE) {
-        final int length = limit - limit % CHUNK_SIZE;
-        runWithRetries(callable(new Runnable() {
-          @Override
-          public void run() {
-            storageRpc.write(uploadId, buffer, 0, storageObject, position, length, false);
-          }
-        }));
-        position += length;
-        limit -= length;
-        byte[] temp = new byte[CHUNK_SIZE];
-        System.arraycopy(buffer, length, temp, 0, limit);
-        buffer = temp;
-      }
-    }
-
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-      in.defaultReadObject();
-      if (isOpen) {
-        if (buffer.length < CHUNK_SIZE) {
-          buffer = Arrays.copyOf(buffer, CHUNK_SIZE);
-        }
-        initTransients();
-      }
-    }
-
-    private void initTransients() {
-      storageRpc = options.storageRpc();
-      retryParams = firstNonNull(options.retryParams(), RetryParams.noRetries());
-      storageObject = blob.toPb();
-    }
-
-    private void validateOpen() throws IOException {
-      if (!isOpen) {
-        throw new IOException("stream is closed");
-      }
-    }
-
-    @Override
-    public int write(ByteBuffer byteBuffer) throws IOException {
-      validateOpen();
-      int toWrite = byteBuffer.remaining();
-      int spaceInBuffer = buffer.length - limit;
-      if (spaceInBuffer >= toWrite) {
-        byteBuffer.get(buffer, limit, toWrite);
-      } else {
-        buffer = Arrays.copyOf(buffer, buffer.length + toWrite - spaceInBuffer);
-        byteBuffer.get(buffer, limit, toWrite);
-      }
-      limit += toWrite;
-      flush();
-      return toWrite;
-    }
-
-    @Override
-    public boolean isOpen() {
-      return isOpen;
-    }
-
-    @Override
-    public void close() throws IOException {
-      if (isOpen) {
-        runWithRetries(callable(new Runnable() {
-          @Override
-          public void run() {
-            storageRpc.write(uploadId, buffer, 0, storageObject, position, limit, true);
-          }
-        }));
-        position += buffer.length;
-        isOpen = false;
-        buffer = null;
-      }
-    }
   }
 
   @Override
