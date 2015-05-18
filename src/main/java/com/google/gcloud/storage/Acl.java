@@ -61,16 +61,21 @@ public final class Acl implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-      return Objects.hash(type, value);
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      Entity entity = (Entity) o;
+      return Objects.equals(type, entity.type) &&
+          Objects.equals(value, entity.value);
     }
 
     @Override
-    public boolean equals(Object obj) {
-      if (obj == null || !getClass().isAssignableFrom(obj.getClass())) {
-        return false;
-      }
-      return Objects.equals(toPb(), ((Entity)obj).toPb());
+    public int hashCode() {
+      return Objects.hash(type, value);
     }
 
     @Override
@@ -94,6 +99,9 @@ public final class Acl implements Serializable {
       }
       if (entity.startsWith("group-")) {
         return new Group(entity.substring(6));
+      }
+      if (entity.startsWith("domain-")) {
+        return new Domain(entity.substring(7));
       }
       if (entity.startsWith("project-")) {
         int idx = entity.indexOf('-', 8);
@@ -178,7 +186,7 @@ public final class Acl implements Serializable {
       OWNERS, EDITORS, VIEWERS
     }
 
-    Project(ProjectRole pRole, String projectId) {
+    public Project(ProjectRole pRole, String projectId) {
       super(Type.PROJECT, pRole.name().toLowerCase() + "-" + projectId);
       this.pRole = pRole;
       this.projectId = projectId;
@@ -218,6 +226,24 @@ public final class Acl implements Serializable {
 
   public Role role() {
     return role;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(entity, role);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+      return false;
+    }
+    final Acl other = (Acl) obj;
+    return Objects.equals(this.entity, other.entity)
+        && Objects.equals(this.role, other.role);
   }
 
   BucketAccessControl toBucketPb() {
