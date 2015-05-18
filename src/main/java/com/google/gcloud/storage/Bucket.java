@@ -103,6 +103,23 @@ public final class Bucket implements Serializable {
       return type;
     }
 
+    @Override
+    public int hashCode() {
+      return Objects.hash(type);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (this == obj) {
+        return true;
+      }
+      if (obj == null || getClass() != obj.getClass()) {
+        return false;
+      }
+      final DeleteRule other = (DeleteRule) obj;
+      return Objects.equals(toPb(), other.toPb());
+    }
+
     Rule toPb() {
       Rule rule = new Rule();
       rule.setAction(new Rule.Action().setType(SUPPORTED_ACTION));
@@ -114,7 +131,7 @@ public final class Bucket implements Serializable {
 
     abstract void populateCondition(Rule.Condition condition);
 
-    private static DeleteRule fromPb(Rule rule) {
+    static DeleteRule fromPb(Rule rule) {
       if (rule.getAction() != null && SUPPORTED_ACTION.endsWith(rule.getAction().getType())) {
         Rule.Condition condition = rule.getCondition();
         Integer age = condition.getAge();
@@ -347,6 +364,23 @@ public final class Bucket implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+      return Objects.hash(value);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (this == obj) {
+        return true;
+      }
+      if (obj == null || getClass() != obj.getClass()) {
+        return false;
+      }
+      final Location other = (Location) obj;
+      return Objects.equals(this.value, other.value);
+    }
+
+    @Override
     public String toString() {
       return value();
     }
@@ -412,7 +446,7 @@ public final class Bucket implements Serializable {
       return this;
     }
 
-    public Builder deleteRules(Iterable<DeleteRule> rules) {
+    public Builder deleteRules(Iterable<? extends DeleteRule> rules) {
       this.deleteRules = ImmutableList.copyOf(rules);
       return this;
     }
@@ -490,7 +524,7 @@ public final class Bucket implements Serializable {
     return name;
   }
 
-  public Entity Owner() {
+  public Entity owner() {
     return owner;
   }
 
@@ -510,7 +544,7 @@ public final class Bucket implements Serializable {
     return notFoundPage;
   }
 
-  public List<DeleteRule> deleteRules() {
+  public List<? extends DeleteRule> deleteRules() {
     return deleteRules;
   }
 
@@ -652,6 +686,7 @@ public final class Bucket implements Serializable {
           return deleteRule.toPb();
         }
       }));
+      bucketPb.setLifecycle(lifecycle);
     }
     return bucketPb;
   }
