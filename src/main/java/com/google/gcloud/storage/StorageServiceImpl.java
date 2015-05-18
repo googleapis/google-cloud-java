@@ -345,14 +345,14 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     for (Tuple<StorageObject, ?> tuple : request) {
       Tuple<I, StorageServiceException> result = results.get(tuple.x());
       if (result.x() != null) {
-        response.add(new BatchResponse.Result<>(transform.apply(result.x())));
+        response.add(BatchResponse.Result.of(transform.apply(result.x())));
       } else {
         StorageServiceException exception = result.y();
         if (nullOnErrorCodesSet.contains(exception.code())) {
           //noinspection unchecked
           response.add(BatchResponse.Result.<O>empty());
         } else {
-          response.add(new BatchResponse.Result<O>(result.y()));
+          response.add(new BatchResponse.Result<O>(exception));
         }
       }
     }
