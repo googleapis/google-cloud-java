@@ -16,7 +16,9 @@
 
 package com.google.gcloud.storage;
 
+
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -60,7 +62,7 @@ public final class ListResult<T extends Serializable> implements Iterable<T>, Se
 
   @Override
   public Iterator<T> iterator() {
-    return results.iterator();
+    return results == null ? Collections.<T>emptyIterator() : results.iterator();
   }
 
   @Override
