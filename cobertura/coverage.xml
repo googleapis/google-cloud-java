@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.5679766330323951" branch-rate="0.506578947368421" lines-covered="2139" lines-valid="3766" branches-covered="539" branches-valid="1064" complexity="1.5104391648668107" version="2.0.3" timestamp="1431580659591">
+<coverage line-rate="0.5897910605659878" branch-rate="0.5212177121771218" lines-covered="2230" lines-valid="3781" branches-covered="565" branches-valid="1084" complexity="1.5179597701149425" version="2.0.3" timestamp="1431971677405">
 	<sources>
 		<source>/home/travis/build/GoogleCloudPlatform/gcloud-java/src/main/java</source>
 		<source>--source</source>
@@ -318,20 +318,20 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="198" hits="19" branch="true" condition-coverage="100% (2/2)">
+								<line number="198" hits="21" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="199" hits="5" branch="false"/>
 								<line number="200" hits="5" branch="false"/>
-								<line number="202" hits="14" branch="true" condition-coverage="100% (2/2)">
+								<line number="202" hits="16" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="203" hits="2" branch="false"/>
-								<line number="205" hits="14" branch="false"/>
+								<line number="205" hits="16" branch="false"/>
 								<line number="206" hits="24" branch="false"/>
 								<line number="207" hits="24" branch="false"/>
 								<line number="208" hits="24" branch="false"/>
@@ -349,7 +349,7 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="213" hits="249" branch="true" condition-coverage="100% (2/2)">
+								<line number="213" hits="368" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
@@ -360,7 +360,7 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="217" hits="54" branch="false"/>
+								<line number="217" hits="173" branch="false"/>
 								<line number="218" hits="191" branch="false"/>
 							</lines>
 						</method>
@@ -460,20 +460,20 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="198" hits="19" branch="true" condition-coverage="100% (2/2)">
+						<line number="198" hits="21" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="199" hits="5" branch="false"/>
 						<line number="200" hits="5" branch="false"/>
-						<line number="202" hits="14" branch="true" condition-coverage="100% (2/2)">
+						<line number="202" hits="16" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="203" hits="2" branch="false"/>
-						<line number="205" hits="14" branch="false"/>
+						<line number="205" hits="16" branch="false"/>
 						<line number="206" hits="24" branch="false"/>
 						<line number="207" hits="24" branch="false"/>
 						<line number="208" hits="24" branch="false"/>
@@ -482,7 +482,7 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="213" hits="249" branch="true" condition-coverage="100% (2/2)">
+						<line number="213" hits="368" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
@@ -493,7 +493,7 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="217" hits="54" branch="false"/>
+						<line number="217" hits="173" branch="false"/>
 						<line number="218" hits="191" branch="false"/>
 						<line number="224" hits="146" branch="false"/>
 						<line number="225" hits="2" branch="false"/>
@@ -707,7 +707,7 @@
 						</method>
 						<method name="access$600" signature="(Lcom/google/gcloud/ExceptionHandler$RetryInfo;)Lcom/google/gcloud/ExceptionHandler$Interceptor$RetryResult;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="151" hits="588" branch="false"/>
+								<line number="151" hits="715" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.0" branch-rate="0.0">
@@ -734,7 +734,7 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="151" hits="588" branch="false"/>
+						<line number="151" hits="715" branch="false"/>
 						<line number="156" hits="24" branch="false"/>
 						<line number="158" hits="24" branch="false"/>
 						<line number="159" hits="24" branch="false"/>
@@ -13666,215 +13666,317 @@
 				</class>
 			</classes>
 		</package>
-		<package name="com.google.gcloud.storage" line-rate="0.21347331583552057" branch-rate="0.17753623188405798" complexity="1.4058679706601467">
+		<package name="com.google.gcloud.storage" line-rate="0.28929188255613125" branch-rate="0.2533783783783784" complexity="1.4320388349514563">
 			<classes>
-				<class name="com.google.gcloud.storage.Acl" filename="com/google/gcloud/storage/Acl.java" line-rate="0.0" branch-rate="1.0" complexity="1.5862068965517242">
+				<class name="com.google.gcloud.storage.Acl" filename="com/google/gcloud/storage/Acl.java" line-rate="0.8636363636363636" branch-rate="0.5" complexity="1.903225806451613">
 					<methods>
-						<method name="entity" signature="()Lcom/google/gcloud/storage/Acl$Entity;" line-rate="0.0" branch-rate="1.0">
+						<method name="entity" signature="()Lcom/google/gcloud/storage/Acl$Entity;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="216" hits="0" branch="false"/>
+								<line number="224" hits="3" branch="false"/>
 							</lines>
 						</method>
-						<method name="fromPb" signature="(Lcom/google/api/services/storage/model/BucketAccessControl;)Lcom/google/gcloud/storage/Acl;" line-rate="0.0" branch-rate="1.0">
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.7142857142857143" branch-rate="0.5">
 							<lines>
-								<line number="243" hits="0" branch="false"/>
-								<line number="244" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="fromPb" signature="(Lcom/google/api/services/storage/model/ObjectAccessControl;)Lcom/google/gcloud/storage/Acl;" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="238" hits="0" branch="false"/>
+								<line number="238" hits="2" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
 								<line number="239" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="role" signature="()Lcom/google/gcloud/storage/Acl$Role;" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="220" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="toBucketPb" signature="()Lcom/google/api/services/storage/model/BucketAccessControl;" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="224" hits="0" branch="false"/>
-								<line number="225" hits="0" branch="false"/>
-								<line number="226" hits="0" branch="false"/>
-								<line number="227" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="toObjectPb" signature="()Lcom/google/api/services/storage/model/ObjectAccessControl;" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="231" hits="0" branch="false"/>
-								<line number="232" hits="0" branch="false"/>
-								<line number="233" hits="0" branch="false"/>
-								<line number="234" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="216" hits="0" branch="false"/>
-						<line number="220" hits="0" branch="false"/>
-						<line number="224" hits="0" branch="false"/>
-						<line number="225" hits="0" branch="false"/>
-						<line number="226" hits="0" branch="false"/>
-						<line number="227" hits="0" branch="false"/>
-						<line number="231" hits="0" branch="false"/>
-						<line number="232" hits="0" branch="false"/>
-						<line number="233" hits="0" branch="false"/>
-						<line number="234" hits="0" branch="false"/>
-						<line number="238" hits="0" branch="false"/>
-						<line number="239" hits="0" branch="false"/>
-						<line number="243" hits="0" branch="false"/>
-						<line number="244" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="com.google.gcloud.storage.Acl$Domain" filename="com/google/gcloud/storage/Acl.java" line-rate="0.6666666666666666" branch-rate="1.0" complexity="1.5862068965517242">
-					<methods>
-						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="113" hits="1" branch="false"/>
-								<line number="114" hits="1" branch="false"/>
-							</lines>
-						</method>
-						<method name="domain" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="117" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="113" hits="1" branch="false"/>
-						<line number="114" hits="1" branch="false"/>
-						<line number="117" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="com.google.gcloud.storage.Acl$Entity" filename="com/google/gcloud/storage/Acl.java" line-rate="0.18181818181818182" branch-rate="0.14285714285714285" complexity="1.5862068965517242">
-					<methods>
-						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.6666666666666666" branch-rate="0.5">
-							<lines>
-								<line number="70" hits="15" branch="true" condition-coverage="50% (2/4)">
+								<line number="241" hits="2" branch="true" condition-coverage="50% (2/4)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 										<condition number="1" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="71" hits="0" branch="false"/>
-								<line number="73" hits="15" branch="false"/>
+								<line number="242" hits="0" branch="false"/>
+								<line number="244" hits="2" branch="false"/>
+								<line number="245" hits="2" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="246" hits="2" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
 							</lines>
 						</method>
-						<method name="fromPb" signature="(Ljava/lang/String;)Lcom/google/gcloud/storage/Acl$Entity;" line-rate="0.0" branch-rate="0.0">
+						<method name="fromPb" signature="(Lcom/google/api/services/storage/model/BucketAccessControl;)Lcom/google/gcloud/storage/Acl;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="86" hits="0" branch="true" condition-coverage="0% (0/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="87" hits="0" branch="false"/>
-								<line number="89" hits="0" branch="true" condition-coverage="0% (0/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="90" hits="0" branch="false"/>
-								<line number="92" hits="0" branch="true" condition-coverage="0% (0/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="93" hits="0" branch="false"/>
-								<line number="95" hits="0" branch="true" condition-coverage="0% (0/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="96" hits="0" branch="false"/>
-								<line number="98" hits="0" branch="true" condition-coverage="0% (0/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="99" hits="0" branch="false"/>
-								<line number="100" hits="0" branch="false"/>
-								<line number="101" hits="0" branch="false"/>
-								<line number="102" hits="0" branch="false"/>
-								<line number="104" hits="0" branch="false"/>
+								<line number="269" hits="1" branch="false"/>
+								<line number="270" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="fromPb" signature="(Lcom/google/api/services/storage/model/ObjectAccessControl;)Lcom/google/gcloud/storage/Acl;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="264" hits="1" branch="false"/>
+								<line number="265" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="hashCode" signature="()I" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="65" hits="0" branch="false"/>
+								<line number="233" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="toPb" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+						<method name="role" signature="()Lcom/google/gcloud/storage/Acl$Role;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="82" hits="24" branch="false"/>
+								<line number="228" hits="3" branch="false"/>
 							</lines>
 						</method>
-						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+						<method name="toBucketPb" signature="()Lcom/google/api/services/storage/model/BucketAccessControl;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="78" hits="0" branch="false"/>
+								<line number="250" hits="1" branch="false"/>
+								<line number="251" hits="1" branch="false"/>
+								<line number="252" hits="1" branch="false"/>
+								<line number="253" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="type" signature="()Lcom/google/gcloud/storage/Acl$Entity$Type;" line-rate="0.0" branch-rate="1.0">
+						<method name="toObjectPb" signature="()Lcom/google/api/services/storage/model/ObjectAccessControl;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="56" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="value" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="60" hits="36" branch="false"/>
+								<line number="257" hits="1" branch="false"/>
+								<line number="258" hits="1" branch="false"/>
+								<line number="259" hits="1" branch="false"/>
+								<line number="260" hits="1" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="56" hits="0" branch="false"/>
-						<line number="60" hits="36" branch="false"/>
-						<line number="65" hits="0" branch="false"/>
-						<line number="70" hits="15" branch="true" condition-coverage="50% (2/4)">
+						<line number="224" hits="3" branch="false"/>
+						<line number="228" hits="3" branch="false"/>
+						<line number="233" hits="0" branch="false"/>
+						<line number="238" hits="2" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="239" hits="0" branch="false"/>
+						<line number="241" hits="2" branch="true" condition-coverage="50% (2/4)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 								<condition number="1" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="71" hits="0" branch="false"/>
-						<line number="73" hits="15" branch="false"/>
-						<line number="78" hits="0" branch="false"/>
-						<line number="82" hits="24" branch="false"/>
-						<line number="86" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="242" hits="0" branch="false"/>
+						<line number="244" hits="2" branch="false"/>
+						<line number="245" hits="2" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="87" hits="0" branch="false"/>
-						<line number="89" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="246" hits="2" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="90" hits="0" branch="false"/>
-						<line number="92" hits="0" branch="true" condition-coverage="0% (0/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="93" hits="0" branch="false"/>
-						<line number="95" hits="0" branch="true" condition-coverage="0% (0/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="96" hits="0" branch="false"/>
-						<line number="98" hits="0" branch="true" condition-coverage="0% (0/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="99" hits="0" branch="false"/>
-						<line number="100" hits="0" branch="false"/>
-						<line number="101" hits="0" branch="false"/>
-						<line number="102" hits="0" branch="false"/>
-						<line number="104" hits="0" branch="false"/>
+						<line number="250" hits="1" branch="false"/>
+						<line number="251" hits="1" branch="false"/>
+						<line number="252" hits="1" branch="false"/>
+						<line number="253" hits="1" branch="false"/>
+						<line number="257" hits="1" branch="false"/>
+						<line number="258" hits="1" branch="false"/>
+						<line number="259" hits="1" branch="false"/>
+						<line number="260" hits="1" branch="false"/>
+						<line number="264" hits="1" branch="false"/>
+						<line number="265" hits="1" branch="false"/>
+						<line number="269" hits="1" branch="false"/>
+						<line number="270" hits="1" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Acl$Entity$Type" filename="com/google/gcloud/storage/Acl.java" line-rate="1.0" branch-rate="1.0" complexity="1.5862068965517242">
+				<class name="com.google.gcloud.storage.Acl$Domain" filename="com/google/gcloud/storage/Acl.java" line-rate="1.0" branch-rate="1.0" complexity="1.903225806451613">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="121" hits="3" branch="false"/>
+								<line number="122" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="domain" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="125" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="121" hits="3" branch="false"/>
+						<line number="122" hits="3" branch="false"/>
+						<line number="125" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="com.google.gcloud.storage.Acl$Entity" filename="com/google/gcloud/storage/Acl.java" line-rate="0.8928571428571429" branch-rate="0.7727272727272727" complexity="1.903225806451613">
+					<methods>
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.8571428571428571" branch-rate="0.6">
+							<lines>
+								<line number="65" hits="23" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="66" hits="10" branch="false"/>
+								<line number="68" hits="13" branch="true" condition-coverage="50% (2/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="69" hits="0" branch="false"/>
+								<line number="71" hits="13" branch="false"/>
+								<line number="72" hits="13" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="73" hits="13" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="fromPb" signature="(Ljava/lang/String;)Lcom/google/gcloud/storage/Acl$Entity;" line-rate="0.9375" branch-rate="0.9166666666666666">
+							<lines>
+								<line number="91" hits="7" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="92" hits="1" branch="false"/>
+								<line number="94" hits="6" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="95" hits="2" branch="false"/>
+								<line number="97" hits="4" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="98" hits="0" branch="false"/>
+								<line number="100" hits="4" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="101" hits="1" branch="false"/>
+								<line number="103" hits="3" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="104" hits="1" branch="false"/>
+								<line number="106" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="107" hits="1" branch="false"/>
+								<line number="108" hits="1" branch="false"/>
+								<line number="109" hits="1" branch="false"/>
+								<line number="110" hits="1" branch="false"/>
+								<line number="112" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="hashCode" signature="()I" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="78" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toPb" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="87" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="83" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="type" signature="()Lcom/google/gcloud/storage/Acl$Entity$Type;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="56" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="value" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="60" hits="12" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="56" hits="5" branch="false"/>
+						<line number="60" hits="12" branch="false"/>
+						<line number="65" hits="23" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="66" hits="10" branch="false"/>
+						<line number="68" hits="13" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="69" hits="0" branch="false"/>
+						<line number="71" hits="13" branch="false"/>
+						<line number="72" hits="13" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="73" hits="13" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="78" hits="0" branch="false"/>
+						<line number="83" hits="1" branch="false"/>
+						<line number="87" hits="4" branch="false"/>
+						<line number="91" hits="7" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="92" hits="1" branch="false"/>
+						<line number="94" hits="6" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="95" hits="2" branch="false"/>
+						<line number="97" hits="4" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="98" hits="0" branch="false"/>
+						<line number="100" hits="4" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="101" hits="1" branch="false"/>
+						<line number="103" hits="3" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="104" hits="1" branch="false"/>
+						<line number="106" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="107" hits="1" branch="false"/>
+						<line number="108" hits="1" branch="false"/>
+						<line number="109" hits="1" branch="false"/>
+						<line number="110" hits="1" branch="false"/>
+						<line number="112" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="com.google.gcloud.storage.Acl$Entity$Type" filename="com/google/gcloud/storage/Acl.java" line-rate="1.0" branch-rate="1.0" complexity="1.903225806451613">
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
@@ -13896,62 +13998,62 @@
 						<line number="47" hits="1" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Acl$Group" filename="com/google/gcloud/storage/Acl.java" line-rate="0.6666666666666666" branch-rate="1.0" complexity="1.5862068965517242">
+				<class name="com.google.gcloud.storage.Acl$Group" filename="com/google/gcloud/storage/Acl.java" line-rate="1.0" branch-rate="1.0" complexity="1.903225806451613">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="126" hits="1" branch="false"/>
-								<line number="127" hits="1" branch="false"/>
+								<line number="134" hits="3" branch="false"/>
+								<line number="135" hits="3" branch="false"/>
 							</lines>
 						</method>
-						<method name="email" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+						<method name="email" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="130" hits="0" branch="false"/>
+								<line number="138" hits="1" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="126" hits="1" branch="false"/>
-						<line number="127" hits="1" branch="false"/>
-						<line number="130" hits="0" branch="false"/>
+						<line number="134" hits="3" branch="false"/>
+						<line number="135" hits="3" branch="false"/>
+						<line number="138" hits="1" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Acl$Project" filename="com/google/gcloud/storage/Acl.java" line-rate="0.6666666666666666" branch-rate="1.0" complexity="1.5862068965517242">
+				<class name="com.google.gcloud.storage.Acl$Project" filename="com/google/gcloud/storage/Acl.java" line-rate="1.0" branch-rate="1.0" complexity="1.903225806451613">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/storage/Acl$Project$ProjectRole;Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="182" hits="1" branch="false"/>
-								<line number="183" hits="1" branch="false"/>
-								<line number="184" hits="1" branch="false"/>
-								<line number="185" hits="1" branch="false"/>
+								<line number="190" hits="3" branch="false"/>
+								<line number="191" hits="3" branch="false"/>
+								<line number="192" hits="3" branch="false"/>
+								<line number="193" hits="3" branch="false"/>
 							</lines>
 						</method>
-						<method name="projectId" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+						<method name="projectId" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="192" hits="0" branch="false"/>
+								<line number="200" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="projectRole" signature="()Lcom/google/gcloud/storage/Acl$Project$ProjectRole;" line-rate="0.0" branch-rate="1.0">
+						<method name="projectRole" signature="()Lcom/google/gcloud/storage/Acl$Project$ProjectRole;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="188" hits="0" branch="false"/>
+								<line number="196" hits="1" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="182" hits="1" branch="false"/>
-						<line number="183" hits="1" branch="false"/>
-						<line number="184" hits="1" branch="false"/>
-						<line number="185" hits="1" branch="false"/>
-						<line number="188" hits="0" branch="false"/>
-						<line number="192" hits="0" branch="false"/>
+						<line number="190" hits="3" branch="false"/>
+						<line number="191" hits="3" branch="false"/>
+						<line number="192" hits="3" branch="false"/>
+						<line number="193" hits="3" branch="false"/>
+						<line number="196" hits="1" branch="false"/>
+						<line number="200" hits="1" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Acl$Project$ProjectRole" filename="com/google/gcloud/storage/Acl.java" line-rate="1.0" branch-rate="1.0" complexity="1.5862068965517242">
+				<class name="com.google.gcloud.storage.Acl$Project$ProjectRole" filename="com/google/gcloud/storage/Acl.java" line-rate="1.0" branch-rate="1.0" complexity="1.903225806451613">
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="177" hits="2" branch="false"/>
-								<line number="178" hits="1" branch="false"/>
+								<line number="185" hits="3" branch="false"/>
+								<line number="186" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="valueOf" signature="(Ljava/lang/String;)Lcom/google/gcloud/storage/Acl$Project$ProjectRole;" line-rate="1.0" branch-rate="1.0">
@@ -13964,36 +14066,36 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="177" hits="2" branch="false"/>
-						<line number="178" hits="1" branch="false"/>
+						<line number="185" hits="3" branch="false"/>
+						<line number="186" hits="1" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Acl$RawEntity" filename="com/google/gcloud/storage/Acl.java" line-rate="1.0" branch-rate="1.0" complexity="1.5862068965517242">
+				<class name="com.google.gcloud.storage.Acl$RawEntity" filename="com/google/gcloud/storage/Acl.java" line-rate="1.0" branch-rate="1.0" complexity="1.903225806451613">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="201" hits="1" branch="false"/>
-								<line number="202" hits="1" branch="false"/>
+								<line number="209" hits="3" branch="false"/>
+								<line number="210" hits="3" branch="false"/>
 							</lines>
 						</method>
 						<method name="toPb" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="206" hits="6" branch="false"/>
+								<line number="214" hits="1" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="201" hits="1" branch="false"/>
-						<line number="202" hits="1" branch="false"/>
-						<line number="206" hits="6" branch="false"/>
+						<line number="209" hits="3" branch="false"/>
+						<line number="210" hits="3" branch="false"/>
+						<line number="214" hits="1" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Acl$Role" filename="com/google/gcloud/storage/Acl.java" line-rate="0.0" branch-rate="1.0" complexity="1.5862068965517242">
+				<class name="com.google.gcloud.storage.Acl$Role" filename="com/google/gcloud/storage/Acl.java" line-rate="1.0" branch-rate="1.0" complexity="1.903225806451613">
 					<methods>
-						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="35" hits="0" branch="false"/>
-								<line number="36" hits="0" branch="false"/>
+								<line number="35" hits="4" branch="false"/>
+								<line number="36" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="valueOf" signature="(Ljava/lang/String;)Lcom/google/gcloud/storage/Acl$Role;" line-rate="1.0" branch-rate="1.0">
@@ -14006,87 +14108,87 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="35" hits="0" branch="false"/>
-						<line number="36" hits="0" branch="false"/>
+						<line number="35" hits="4" branch="false"/>
+						<line number="36" hits="1" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Acl$User" filename="com/google/gcloud/storage/Acl.java" line-rate="0.4444444444444444" branch-rate="0.2" complexity="1.5862068965517242">
+				<class name="com.google.gcloud.storage.Acl$User" filename="com/google/gcloud/storage/Acl.java" line-rate="0.7777777777777778" branch-rate="0.5" complexity="1.903225806451613">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="141" hits="1" branch="false"/>
-								<line number="142" hits="1" branch="false"/>
+								<line number="149" hits="7" branch="false"/>
+								<line number="150" hits="7" branch="false"/>
 							</lines>
 						</method>
-						<method name="email" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+						<method name="email" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="145" hits="0" branch="false"/>
+								<line number="153" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="ofAllAuthenticatedUsers" signature="()Lcom/google/gcloud/storage/Acl$User;" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="166" hits="0" branch="false"/>
+								<line number="174" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="ofAllUsers" signature="()Lcom/google/gcloud/storage/Acl$User;" line-rate="0.0" branch-rate="1.0">
+						<method name="ofAllUsers" signature="()Lcom/google/gcloud/storage/Acl$User;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="162" hits="0" branch="false"/>
+								<line number="170" hits="4" branch="false"/>
 							</lines>
 						</method>
-						<method name="toPb" signature="()Ljava/lang/String;" line-rate="0.5" branch-rate="0.2">
+						<method name="toPb" signature="()Ljava/lang/String;" line-rate="0.75" branch-rate="0.5">
 							<lines>
-								<line number="150" hits="6" branch="true" condition-coverage="20% (2/10)">
+								<line number="158" hits="3" branch="true" condition-coverage="50% (5/10)">
 									<conditions>
 										<condition number="0" type="jump" coverage="0%"/>
-										<condition number="1" type="jump" coverage="0%"/>
-										<condition number="0" type="switch" coverage="33%"/>
-										<condition number="1" type="switch" coverage="33%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+										<condition number="0" type="switch" coverage="66%"/>
+										<condition number="1" type="switch" coverage="66%"/>
 									</conditions>
 								</line>
-								<line number="152" hits="0" branch="false"/>
-								<line number="154" hits="0" branch="false"/>
-								<line number="158" hits="6" branch="false"/>
+								<line number="160" hits="0" branch="false"/>
+								<line number="162" hits="2" branch="false"/>
+								<line number="166" hits="1" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="141" hits="1" branch="false"/>
-						<line number="142" hits="1" branch="false"/>
-						<line number="145" hits="0" branch="false"/>
-						<line number="150" hits="6" branch="true" condition-coverage="20% (2/10)">
+						<line number="149" hits="7" branch="false"/>
+						<line number="150" hits="7" branch="false"/>
+						<line number="153" hits="1" branch="false"/>
+						<line number="158" hits="3" branch="true" condition-coverage="50% (5/10)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
-								<condition number="1" type="jump" coverage="0%"/>
-								<condition number="0" type="switch" coverage="33%"/>
-								<condition number="1" type="switch" coverage="33%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+								<condition number="0" type="switch" coverage="66%"/>
+								<condition number="1" type="switch" coverage="66%"/>
 							</conditions>
 						</line>
-						<line number="152" hits="0" branch="false"/>
-						<line number="154" hits="0" branch="false"/>
-						<line number="158" hits="6" branch="false"/>
-						<line number="162" hits="0" branch="false"/>
-						<line number="166" hits="0" branch="false"/>
+						<line number="160" hits="0" branch="false"/>
+						<line number="162" hits="2" branch="false"/>
+						<line number="166" hits="1" branch="false"/>
+						<line number="170" hits="4" branch="false"/>
+						<line number="174" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.BatchRequest" filename="com/google/gcloud/storage/BatchRequest.java" line-rate="0.7058823529411765" branch-rate="0.5" complexity="1.3333333333333333">
+				<class name="com.google.gcloud.storage.BatchRequest" filename="com/google/gcloud/storage/BatchRequest.java" line-rate="0.8823529411764706" branch-rate="0.5" complexity="1.3333333333333333">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/storage/BatchRequest$Builder;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="77" hits="1" branch="false"/>
-								<line number="78" hits="1" branch="false"/>
-								<line number="79" hits="1" branch="false"/>
-								<line number="80" hits="1" branch="false"/>
-								<line number="81" hits="1" branch="false"/>
+								<line number="77" hits="2" branch="false"/>
+								<line number="78" hits="2" branch="false"/>
+								<line number="79" hits="2" branch="false"/>
+								<line number="80" hits="2" branch="false"/>
+								<line number="81" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/storage/BatchRequest$Builder;Lcom/google/gcloud/storage/BatchRequest$1;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="32" hits="1" branch="false"/>
+								<line number="32" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="builder" signature="()Lcom/google/gcloud/storage/BatchRequest$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="112" hits="1" branch="false"/>
+								<line number="112" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.8333333333333334" branch-rate="0.5">
@@ -14120,29 +14222,29 @@
 								<line number="85" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="toDelete" signature="()Ljava/util/Map;" line-rate="0.0" branch-rate="1.0">
+						<method name="toDelete" signature="()Ljava/util/Map;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="100" hits="0" branch="false"/>
+								<line number="100" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="toGet" signature="()Ljava/util/Map;" line-rate="0.0" branch-rate="1.0">
+						<method name="toGet" signature="()Ljava/util/Map;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="108" hits="0" branch="false"/>
+								<line number="108" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="toUpdate" signature="()Ljava/util/Map;" line-rate="0.0" branch-rate="1.0">
+						<method name="toUpdate" signature="()Ljava/util/Map;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="104" hits="0" branch="false"/>
+								<line number="104" hits="1" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="32" hits="1" branch="false"/>
-						<line number="77" hits="1" branch="false"/>
-						<line number="78" hits="1" branch="false"/>
-						<line number="79" hits="1" branch="false"/>
-						<line number="80" hits="1" branch="false"/>
-						<line number="81" hits="1" branch="false"/>
+						<line number="32" hits="2" branch="false"/>
+						<line number="77" hits="2" branch="false"/>
+						<line number="78" hits="2" branch="false"/>
+						<line number="79" hits="2" branch="false"/>
+						<line number="80" hits="2" branch="false"/>
+						<line number="81" hits="2" branch="false"/>
 						<line number="85" hits="0" branch="false"/>
 						<line number="90" hits="3" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
@@ -14166,10 +14268,10 @@
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="100" hits="0" branch="false"/>
-						<line number="104" hits="0" branch="false"/>
-						<line number="108" hits="0" branch="false"/>
-						<line number="112" hits="1" branch="false"/>
+						<line number="100" hits="1" branch="false"/>
+						<line number="104" hits="1" branch="false"/>
+						<line number="108" hits="1" branch="false"/>
+						<line number="112" hits="2" branch="false"/>
 					</lines>
 				</class>
 				<class name="com.google.gcloud.storage.BatchRequest$1" filename="com/google/gcloud/storage/BatchRequest.java" line-rate="1.0" branch-rate="1.0" complexity="1.3333333333333333">
@@ -14178,19 +14280,19 @@
 					<lines>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.BatchRequest$Builder" filename="com/google/gcloud/storage/BatchRequest.java" line-rate="0.6666666666666666" branch-rate="1.0" complexity="1.3333333333333333">
+				<class name="com.google.gcloud.storage.BatchRequest$Builder" filename="com/google/gcloud/storage/BatchRequest.java" line-rate="1.0" branch-rate="1.0" complexity="1.3333333333333333">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="42" hits="1" branch="false"/>
-								<line number="43" hits="1" branch="false"/>
-								<line number="44" hits="1" branch="false"/>
-								<line number="46" hits="2" branch="false"/>
+								<line number="42" hits="2" branch="false"/>
+								<line number="43" hits="2" branch="false"/>
+								<line number="44" hits="2" branch="false"/>
+								<line number="46" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/storage/BatchRequest$1;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="40" hits="4" branch="false"/>
+								<line number="40" hits="8" branch="false"/>
 							</lines>
 						</method>
 						<method name="access$100" signature="(Lcom/google/gcloud/storage/BatchRequest$Builder;)Ljava/util/Map;" line-rate="1.0" branch-rate="1.0">
@@ -14207,79 +14309,79 @@
 						</method>
 						<method name="build" signature="()Lcom/google/gcloud/storage/BatchRequest;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="73" hits="1" branch="false"/>
+								<line number="73" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="delete" signature="(Ljava/lang/String;Ljava/lang/String;[Lcom/google/gcloud/storage/StorageService$BlobSourceOption;)Lcom/google/gcloud/storage/BatchRequest$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="52" hits="1" branch="false"/>
-								<line number="53" hits="1" branch="false"/>
+								<line number="52" hits="3" branch="false"/>
+								<line number="53" hits="3" branch="false"/>
 							</lines>
 						</method>
-						<method name="get" signature="(Ljava/lang/String;Ljava/lang/String;[Lcom/google/gcloud/storage/StorageService$BlobSourceOption;)Lcom/google/gcloud/storage/BatchRequest$Builder;" line-rate="0.0" branch-rate="1.0">
+						<method name="get" signature="(Ljava/lang/String;Ljava/lang/String;[Lcom/google/gcloud/storage/StorageService$BlobSourceOption;)Lcom/google/gcloud/storage/BatchRequest$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="68" hits="0" branch="false"/>
-								<line number="69" hits="0" branch="false"/>
+								<line number="68" hits="3" branch="false"/>
+								<line number="69" hits="3" branch="false"/>
 							</lines>
 						</method>
-						<method name="update" signature="(Lcom/google/gcloud/storage/Blob;[Lcom/google/gcloud/storage/StorageService$BlobTargetOption;)Lcom/google/gcloud/storage/BatchRequest$Builder;" line-rate="0.0" branch-rate="1.0">
+						<method name="update" signature="(Lcom/google/gcloud/storage/Blob;[Lcom/google/gcloud/storage/StorageService$BlobTargetOption;)Lcom/google/gcloud/storage/BatchRequest$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="60" hits="0" branch="false"/>
-								<line number="61" hits="0" branch="false"/>
+								<line number="60" hits="2" branch="false"/>
+								<line number="61" hits="2" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="40" hits="4" branch="false"/>
-						<line number="42" hits="1" branch="false"/>
-						<line number="43" hits="1" branch="false"/>
-						<line number="44" hits="1" branch="false"/>
-						<line number="46" hits="2" branch="false"/>
-						<line number="52" hits="1" branch="false"/>
-						<line number="53" hits="1" branch="false"/>
-						<line number="60" hits="0" branch="false"/>
-						<line number="61" hits="0" branch="false"/>
-						<line number="68" hits="0" branch="false"/>
-						<line number="69" hits="0" branch="false"/>
-						<line number="73" hits="1" branch="false"/>
+						<line number="40" hits="8" branch="false"/>
+						<line number="42" hits="2" branch="false"/>
+						<line number="43" hits="2" branch="false"/>
+						<line number="44" hits="2" branch="false"/>
+						<line number="46" hits="4" branch="false"/>
+						<line number="52" hits="3" branch="false"/>
+						<line number="53" hits="3" branch="false"/>
+						<line number="60" hits="2" branch="false"/>
+						<line number="61" hits="2" branch="false"/>
+						<line number="68" hits="3" branch="false"/>
+						<line number="69" hits="3" branch="false"/>
+						<line number="73" hits="2" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.BatchResponse" filename="com/google/gcloud/storage/BatchResponse.java" line-rate="0.7142857142857143" branch-rate="0.5" complexity="1.6">
+				<class name="com.google.gcloud.storage.BatchResponse" filename="com/google/gcloud/storage/BatchResponse.java" line-rate="0.8571428571428571" branch-rate="0.5" complexity="1.5625">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="112" hits="1" branch="false"/>
-								<line number="113" hits="1" branch="false"/>
-								<line number="114" hits="1" branch="false"/>
-								<line number="115" hits="1" branch="false"/>
-								<line number="116" hits="1" branch="false"/>
+								<line number="116" hits="2" branch="false"/>
+								<line number="117" hits="2" branch="false"/>
+								<line number="118" hits="2" branch="false"/>
+								<line number="119" hits="2" branch="false"/>
+								<line number="120" hits="2" branch="false"/>
 							</lines>
 						</method>
-						<method name="deletes" signature="()Ljava/util/List;" line-rate="0.0" branch-rate="1.0">
+						<method name="deletes" signature="()Ljava/util/List;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="138" hits="0" branch="false"/>
+								<line number="142" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.8333333333333334" branch-rate="0.5">
 							<lines>
-								<line number="125" hits="3" branch="true" condition-coverage="50% (1/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="50%"/>
-									</conditions>
-								</line>
-								<line number="126" hits="0" branch="false"/>
-								<line number="128" hits="3" branch="false"/>
 								<line number="129" hits="3" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="130" hits="3" branch="true" condition-coverage="50% (1/2)">
+								<line number="130" hits="0" branch="false"/>
+								<line number="132" hits="3" branch="false"/>
+								<line number="133" hits="3" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="131" hits="3" branch="true" condition-coverage="50% (1/2)">
+								<line number="134" hits="3" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="135" hits="3" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
@@ -14288,49 +14390,49 @@
 						</method>
 						<method name="hashCode" signature="()I" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="120" hits="0" branch="false"/>
+								<line number="124" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="updates" signature="()Ljava/util/List;" line-rate="0.0" branch-rate="1.0">
+						<method name="updates" signature="()Ljava/util/List;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="145" hits="0" branch="false"/>
+								<line number="149" hits="1" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="112" hits="1" branch="false"/>
-						<line number="113" hits="1" branch="false"/>
-						<line number="114" hits="1" branch="false"/>
-						<line number="115" hits="1" branch="false"/>
-						<line number="116" hits="1" branch="false"/>
-						<line number="120" hits="0" branch="false"/>
-						<line number="125" hits="3" branch="true" condition-coverage="50% (1/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="50%"/>
-							</conditions>
-						</line>
-						<line number="126" hits="0" branch="false"/>
-						<line number="128" hits="3" branch="false"/>
+						<line number="116" hits="2" branch="false"/>
+						<line number="117" hits="2" branch="false"/>
+						<line number="118" hits="2" branch="false"/>
+						<line number="119" hits="2" branch="false"/>
+						<line number="120" hits="2" branch="false"/>
+						<line number="124" hits="0" branch="false"/>
 						<line number="129" hits="3" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="130" hits="3" branch="true" condition-coverage="50% (1/2)">
+						<line number="130" hits="0" branch="false"/>
+						<line number="132" hits="3" branch="false"/>
+						<line number="133" hits="3" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="131" hits="3" branch="true" condition-coverage="50% (1/2)">
+						<line number="134" hits="3" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="138" hits="0" branch="false"/>
-						<line number="145" hits="0" branch="false"/>
+						<line number="135" hits="3" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="142" hits="1" branch="false"/>
+						<line number="149" hits="1" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.BatchResponse$Result" filename="com/google/gcloud/storage/BatchResponse.java" line-rate="0.29411764705882354" branch-rate="0.3" complexity="1.6">
+				<class name="com.google.gcloud.storage.BatchResponse$Result" filename="com/google/gcloud/storage/BatchResponse.java" line-rate="0.3333333333333333" branch-rate="0.3" complexity="1.5625">
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
@@ -14339,24 +14441,24 @@
 						</method>
 						<method name="empty" signature="()Lcom/google/gcloud/storage/BatchResponse$Result;" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="107" hits="0" branch="false"/>
+								<line number="111" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.8" branch-rate="0.5">
 							<lines>
-								<line number="89" hits="1" branch="true" condition-coverage="50% (1/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="50%"/>
-									</conditions>
-								</line>
-								<line number="90" hits="0" branch="false"/>
-								<line number="92" hits="1" branch="false"/>
 								<line number="93" hits="1" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="94" hits="1" branch="true" condition-coverage="50% (1/2)">
+								<line number="94" hits="0" branch="false"/>
+								<line number="96" hits="1" branch="false"/>
+								<line number="97" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="98" hits="1" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
@@ -14365,7 +14467,7 @@
 						</method>
 						<method name="failed" signature="()Z" line-rate="0.0" branch-rate="0.0">
 							<lines>
-								<line number="79" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="83" hits="0" branch="true" condition-coverage="0% (0/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="0%"/>
 									</conditions>
@@ -14374,72 +14476,78 @@
 						</method>
 						<method name="failure" signature="()Lcom/google/gcloud/storage/StorageServiceException;" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="72" hits="0" branch="false"/>
+								<line number="76" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="get" signature="()Ljava/io/Serializable;" line-rate="0.0" branch-rate="0.0">
 							<lines>
-								<line number="62" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="66" hits="0" branch="true" condition-coverage="0% (0/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="0%"/>
 									</conditions>
 								</line>
-								<line number="63" hits="0" branch="false"/>
-								<line number="65" hits="0" branch="false"/>
+								<line number="67" hits="0" branch="false"/>
+								<line number="69" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="hashCode" signature="()I" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="84" hits="0" branch="false"/>
+								<line number="88" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="of" signature="(Ljava/io/Serializable;)Lcom/google/gcloud/storage/BatchResponse$Result;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="57" hits="7" branch="false"/>
 							</lines>
 						</method>
 						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="99" hits="0" branch="false"/>
-								<line number="100" hits="0" branch="false"/>
-								<line number="101" hits="0" branch="false"/>
-								<line number="102" hits="0" branch="false"/>
+								<line number="103" hits="0" branch="false"/>
+								<line number="104" hits="0" branch="false"/>
+								<line number="105" hits="0" branch="false"/>
+								<line number="106" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
 						<line number="40" hits="1" branch="false"/>
-						<line number="62" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="57" hits="7" branch="false"/>
+						<line number="66" hits="0" branch="true" condition-coverage="0% (0/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
 							</conditions>
 						</line>
-						<line number="63" hits="0" branch="false"/>
-						<line number="65" hits="0" branch="false"/>
-						<line number="72" hits="0" branch="false"/>
-						<line number="79" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="67" hits="0" branch="false"/>
+						<line number="69" hits="0" branch="false"/>
+						<line number="76" hits="0" branch="false"/>
+						<line number="83" hits="0" branch="true" condition-coverage="0% (0/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
 							</conditions>
 						</line>
-						<line number="84" hits="0" branch="false"/>
-						<line number="89" hits="1" branch="true" condition-coverage="50% (1/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="50%"/>
-							</conditions>
-						</line>
-						<line number="90" hits="0" branch="false"/>
-						<line number="92" hits="1" branch="false"/>
+						<line number="88" hits="0" branch="false"/>
 						<line number="93" hits="1" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="94" hits="1" branch="true" condition-coverage="50% (1/2)">
+						<line number="94" hits="0" branch="false"/>
+						<line number="96" hits="1" branch="false"/>
+						<line number="97" hits="1" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="99" hits="0" branch="false"/>
-						<line number="100" hits="0" branch="false"/>
-						<line number="101" hits="0" branch="false"/>
-						<line number="102" hits="0" branch="false"/>
-						<line number="107" hits="0" branch="false"/>
+						<line number="98" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="103" hits="0" branch="false"/>
+						<line number="104" hits="0" branch="false"/>
+						<line number="105" hits="0" branch="false"/>
+						<line number="106" hits="0" branch="false"/>
+						<line number="111" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="com.google.gcloud.storage.Blob" filename="com/google/gcloud/storage/Blob.java" line-rate="0.38620689655172413" branch-rate="0.15789473684210525" complexity="1.3666666666666667">
@@ -14452,35 +14560,35 @@
 						</method>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/storage/Blob$Builder;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="230" hits="3" branch="false"/>
-								<line number="231" hits="3" branch="false"/>
-								<line number="232" hits="3" branch="false"/>
-								<line number="233" hits="3" branch="false"/>
-								<line number="234" hits="3" branch="false"/>
-								<line number="235" hits="3" branch="false"/>
-								<line number="236" hits="3" branch="false"/>
-								<line number="237" hits="3" branch="false"/>
-								<line number="238" hits="3" branch="false"/>
-								<line number="239" hits="3" branch="false"/>
-								<line number="240" hits="3" branch="false"/>
-								<line number="241" hits="3" branch="false"/>
-								<line number="242" hits="3" branch="false"/>
-								<line number="243" hits="3" branch="false"/>
-								<line number="244" hits="3" branch="false"/>
-								<line number="245" hits="3" branch="false"/>
-								<line number="246" hits="3" branch="false"/>
-								<line number="247" hits="3" branch="false"/>
-								<line number="248" hits="3" branch="false"/>
-								<line number="249" hits="3" branch="false"/>
-								<line number="250" hits="3" branch="false"/>
-								<line number="251" hits="3" branch="false"/>
-								<line number="252" hits="3" branch="false"/>
-								<line number="253" hits="3" branch="false"/>
+								<line number="230" hits="20" branch="false"/>
+								<line number="231" hits="20" branch="false"/>
+								<line number="232" hits="20" branch="false"/>
+								<line number="233" hits="20" branch="false"/>
+								<line number="234" hits="20" branch="false"/>
+								<line number="235" hits="20" branch="false"/>
+								<line number="236" hits="20" branch="false"/>
+								<line number="237" hits="20" branch="false"/>
+								<line number="238" hits="20" branch="false"/>
+								<line number="239" hits="20" branch="false"/>
+								<line number="240" hits="20" branch="false"/>
+								<line number="241" hits="20" branch="false"/>
+								<line number="242" hits="20" branch="false"/>
+								<line number="243" hits="20" branch="false"/>
+								<line number="244" hits="20" branch="false"/>
+								<line number="245" hits="20" branch="false"/>
+								<line number="246" hits="20" branch="false"/>
+								<line number="247" hits="20" branch="false"/>
+								<line number="248" hits="20" branch="false"/>
+								<line number="249" hits="20" branch="false"/>
+								<line number="250" hits="20" branch="false"/>
+								<line number="251" hits="20" branch="false"/>
+								<line number="252" hits="20" branch="false"/>
+								<line number="253" hits="20" branch="false"/>
 							</lines>
 						</method>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/storage/Blob$Builder;Lcom/google/gcloud/storage/Blob$1;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="44" hits="3" branch="false"/>
+								<line number="44" hits="20" branch="false"/>
 							</lines>
 						</method>
 						<method name="acl" signature="()Ljava/util/List;" line-rate="0.0" branch-rate="1.0">
@@ -14500,7 +14608,7 @@
 						</method>
 						<method name="builder" signature="(Ljava/lang/String;Ljava/lang/String;)Lcom/google/gcloud/storage/Blob$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="389" hits="3" branch="false"/>
+								<line number="389" hits="20" branch="false"/>
 							</lines>
 						</method>
 						<method name="cacheControl" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="0.0">
@@ -14569,13 +14677,13 @@
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.6666666666666666" branch-rate="0.5">
 							<lines>
-								<line number="399" hits="5" branch="true" condition-coverage="50% (1/2)">
+								<line number="399" hits="13" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
 								<line number="400" hits="0" branch="false"/>
-								<line number="402" hits="5" branch="false"/>
+								<line number="402" hits="13" branch="false"/>
 							</lines>
 						</method>
 						<method name="etag" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
@@ -14648,7 +14756,7 @@
 						</method>
 						<method name="hashCode" signature="()I" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="394" hits="1" branch="false"/>
+								<line number="394" hits="15" branch="false"/>
 							</lines>
 						</method>
 						<method name="id" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
@@ -14687,7 +14795,7 @@
 						</method>
 						<method name="of" signature="(Ljava/lang/String;Ljava/lang/String;)Lcom/google/gcloud/storage/Blob;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="381" hits="3" branch="false"/>
+								<line number="381" hits="20" branch="false"/>
 							</lines>
 						</method>
 						<method name="owner" signature="()Lcom/google/gcloud/storage/Acl$Entity;" line-rate="0.0" branch-rate="1.0">
@@ -14734,55 +14842,55 @@
 						</method>
 						<method name="toPb" signature="()Lcom/google/api/services/storage/model/StorageObject;" line-rate="0.8275862068965517" branch-rate="0.5">
 							<lines>
-								<line number="406" hits="10" branch="false"/>
-								<line number="407" hits="10" branch="true" condition-coverage="50% (1/2)">
+								<line number="406" hits="26" branch="false"/>
+								<line number="407" hits="26" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
 								<line number="408" hits="0" branch="false"/>
-								<line number="415" hits="10" branch="true" condition-coverage="50% (1/2)">
+								<line number="415" hits="26" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
 								<line number="416" hits="0" branch="false"/>
-								<line number="418" hits="10" branch="true" condition-coverage="50% (1/2)">
+								<line number="418" hits="26" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
 								<line number="419" hits="0" branch="false"/>
-								<line number="421" hits="10" branch="true" condition-coverage="50% (1/2)">
+								<line number="421" hits="26" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
 								<line number="422" hits="0" branch="false"/>
-								<line number="424" hits="10" branch="true" condition-coverage="50% (1/2)">
+								<line number="424" hits="26" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
 								<line number="425" hits="0" branch="false"/>
-								<line number="427" hits="10" branch="false"/>
-								<line number="428" hits="10" branch="false"/>
-								<line number="429" hits="10" branch="false"/>
-								<line number="430" hits="10" branch="false"/>
-								<line number="431" hits="10" branch="false"/>
-								<line number="432" hits="10" branch="false"/>
-								<line number="433" hits="10" branch="false"/>
-								<line number="434" hits="10" branch="false"/>
-								<line number="435" hits="10" branch="false"/>
-								<line number="436" hits="10" branch="false"/>
-								<line number="437" hits="10" branch="false"/>
-								<line number="438" hits="10" branch="false"/>
-								<line number="439" hits="10" branch="false"/>
-								<line number="440" hits="10" branch="false"/>
-								<line number="441" hits="10" branch="false"/>
-								<line number="442" hits="10" branch="false"/>
-								<line number="443" hits="10" branch="false"/>
-								<line number="444" hits="10" branch="false"/>
+								<line number="427" hits="26" branch="false"/>
+								<line number="428" hits="26" branch="false"/>
+								<line number="429" hits="26" branch="false"/>
+								<line number="430" hits="26" branch="false"/>
+								<line number="431" hits="26" branch="false"/>
+								<line number="432" hits="26" branch="false"/>
+								<line number="433" hits="26" branch="false"/>
+								<line number="434" hits="26" branch="false"/>
+								<line number="435" hits="26" branch="false"/>
+								<line number="436" hits="26" branch="false"/>
+								<line number="437" hits="26" branch="false"/>
+								<line number="438" hits="26" branch="false"/>
+								<line number="439" hits="26" branch="false"/>
+								<line number="440" hits="26" branch="false"/>
+								<line number="441" hits="26" branch="false"/>
+								<line number="442" hits="26" branch="false"/>
+								<line number="443" hits="26" branch="false"/>
+								<line number="444" hits="26" branch="false"/>
 							</lines>
 						</method>
 						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
@@ -14803,33 +14911,33 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="44" hits="3" branch="false"/>
+						<line number="44" hits="20" branch="false"/>
 						<line number="48" hits="1" branch="false"/>
 						<line number="56" hits="1" branch="false"/>
-						<line number="230" hits="3" branch="false"/>
-						<line number="231" hits="3" branch="false"/>
-						<line number="232" hits="3" branch="false"/>
-						<line number="233" hits="3" branch="false"/>
-						<line number="234" hits="3" branch="false"/>
-						<line number="235" hits="3" branch="false"/>
-						<line number="236" hits="3" branch="false"/>
-						<line number="237" hits="3" branch="false"/>
-						<line number="238" hits="3" branch="false"/>
-						<line number="239" hits="3" branch="false"/>
-						<line number="240" hits="3" branch="false"/>
-						<line number="241" hits="3" branch="false"/>
-						<line number="242" hits="3" branch="false"/>
-						<line number="243" hits="3" branch="false"/>
-						<line number="244" hits="3" branch="false"/>
-						<line number="245" hits="3" branch="false"/>
-						<line number="246" hits="3" branch="false"/>
-						<line number="247" hits="3" branch="false"/>
-						<line number="248" hits="3" branch="false"/>
-						<line number="249" hits="3" branch="false"/>
-						<line number="250" hits="3" branch="false"/>
-						<line number="251" hits="3" branch="false"/>
-						<line number="252" hits="3" branch="false"/>
-						<line number="253" hits="3" branch="false"/>
+						<line number="230" hits="20" branch="false"/>
+						<line number="231" hits="20" branch="false"/>
+						<line number="232" hits="20" branch="false"/>
+						<line number="233" hits="20" branch="false"/>
+						<line number="234" hits="20" branch="false"/>
+						<line number="235" hits="20" branch="false"/>
+						<line number="236" hits="20" branch="false"/>
+						<line number="237" hits="20" branch="false"/>
+						<line number="238" hits="20" branch="false"/>
+						<line number="239" hits="20" branch="false"/>
+						<line number="240" hits="20" branch="false"/>
+						<line number="241" hits="20" branch="false"/>
+						<line number="242" hits="20" branch="false"/>
+						<line number="243" hits="20" branch="false"/>
+						<line number="244" hits="20" branch="false"/>
+						<line number="245" hits="20" branch="false"/>
+						<line number="246" hits="20" branch="false"/>
+						<line number="247" hits="20" branch="false"/>
+						<line number="248" hits="20" branch="false"/>
+						<line number="249" hits="20" branch="false"/>
+						<line number="250" hits="20" branch="false"/>
+						<line number="251" hits="20" branch="false"/>
+						<line number="252" hits="20" branch="false"/>
+						<line number="253" hits="20" branch="false"/>
 						<line number="256" hits="0" branch="false"/>
 						<line number="260" hits="0" branch="false"/>
 						<line number="264" hits="0" branch="false"/>
@@ -14910,66 +15018,66 @@
 						<line number="375" hits="0" branch="false"/>
 						<line number="376" hits="0" branch="false"/>
 						<line number="377" hits="0" branch="false"/>
-						<line number="381" hits="3" branch="false"/>
+						<line number="381" hits="20" branch="false"/>
 						<line number="385" hits="0" branch="false"/>
-						<line number="389" hits="3" branch="false"/>
-						<line number="394" hits="1" branch="false"/>
-						<line number="399" hits="5" branch="true" condition-coverage="50% (1/2)">
+						<line number="389" hits="20" branch="false"/>
+						<line number="394" hits="15" branch="false"/>
+						<line number="399" hits="13" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
 						<line number="400" hits="0" branch="false"/>
-						<line number="402" hits="5" branch="false"/>
-						<line number="406" hits="10" branch="false"/>
-						<line number="407" hits="10" branch="true" condition-coverage="50% (1/2)">
+						<line number="402" hits="13" branch="false"/>
+						<line number="406" hits="26" branch="false"/>
+						<line number="407" hits="26" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
 						<line number="408" hits="0" branch="false"/>
-						<line number="415" hits="10" branch="true" condition-coverage="50% (1/2)">
+						<line number="415" hits="26" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
 						<line number="416" hits="0" branch="false"/>
-						<line number="418" hits="10" branch="true" condition-coverage="50% (1/2)">
+						<line number="418" hits="26" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
 						<line number="419" hits="0" branch="false"/>
-						<line number="421" hits="10" branch="true" condition-coverage="50% (1/2)">
+						<line number="421" hits="26" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
 						<line number="422" hits="0" branch="false"/>
-						<line number="424" hits="10" branch="true" condition-coverage="50% (1/2)">
+						<line number="424" hits="26" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
 						<line number="425" hits="0" branch="false"/>
-						<line number="427" hits="10" branch="false"/>
-						<line number="428" hits="10" branch="false"/>
-						<line number="429" hits="10" branch="false"/>
-						<line number="430" hits="10" branch="false"/>
-						<line number="431" hits="10" branch="false"/>
-						<line number="432" hits="10" branch="false"/>
-						<line number="433" hits="10" branch="false"/>
-						<line number="434" hits="10" branch="false"/>
-						<line number="435" hits="10" branch="false"/>
-						<line number="436" hits="10" branch="false"/>
-						<line number="437" hits="10" branch="false"/>
-						<line number="438" hits="10" branch="false"/>
-						<line number="439" hits="10" branch="false"/>
-						<line number="440" hits="10" branch="false"/>
-						<line number="441" hits="10" branch="false"/>
-						<line number="442" hits="10" branch="false"/>
-						<line number="443" hits="10" branch="false"/>
-						<line number="444" hits="10" branch="false"/>
+						<line number="427" hits="26" branch="false"/>
+						<line number="428" hits="26" branch="false"/>
+						<line number="429" hits="26" branch="false"/>
+						<line number="430" hits="26" branch="false"/>
+						<line number="431" hits="26" branch="false"/>
+						<line number="432" hits="26" branch="false"/>
+						<line number="433" hits="26" branch="false"/>
+						<line number="434" hits="26" branch="false"/>
+						<line number="435" hits="26" branch="false"/>
+						<line number="436" hits="26" branch="false"/>
+						<line number="437" hits="26" branch="false"/>
+						<line number="438" hits="26" branch="false"/>
+						<line number="439" hits="26" branch="false"/>
+						<line number="440" hits="26" branch="false"/>
+						<line number="441" hits="26" branch="false"/>
+						<line number="442" hits="26" branch="false"/>
+						<line number="443" hits="26" branch="false"/>
+						<line number="444" hits="26" branch="false"/>
 						<line number="448" hits="0" branch="false"/>
 						<line number="449" hits="0" branch="false"/>
 						<line number="450" hits="0" branch="false"/>
@@ -15102,7 +15210,7 @@
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/storage/Blob$1;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="86" hits="69" branch="false"/>
+								<line number="86" hits="460" branch="false"/>
 							</lines>
 						</method>
 						<method name="access$100" signature="(Lcom/google/gcloud/storage/Blob$Builder;)Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
@@ -15205,15 +15313,15 @@
 						</method>
 						<method name="bucket" signature="(Ljava/lang/String;)Lcom/google/gcloud/storage/Blob$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="114" hits="3" branch="false"/>
-								<line number="115" hits="3" branch="false"/>
+								<line number="114" hits="20" branch="false"/>
+								<line number="115" hits="20" branch="false"/>
 							</lines>
 						</method>
 						<method name="build" signature="()Lcom/google/gcloud/storage/Blob;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="224" hits="3" branch="false"/>
-								<line number="225" hits="3" branch="false"/>
-								<line number="226" hits="3" branch="false"/>
+								<line number="224" hits="20" branch="false"/>
+								<line number="225" hits="20" branch="false"/>
+								<line number="226" hits="20" branch="false"/>
 							</lines>
 						</method>
 						<method name="cacheControl" signature="(Ljava/lang/String;)Lcom/google/gcloud/storage/Blob$Builder;" line-rate="0.0" branch-rate="1.0">
@@ -15312,8 +15420,8 @@
 						</method>
 						<method name="name" signature="(Ljava/lang/String;)Lcom/google/gcloud/storage/Blob$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="124" hits="3" branch="false"/>
-								<line number="125" hits="3" branch="false"/>
+								<line number="124" hits="20" branch="false"/>
+								<line number="125" hits="20" branch="false"/>
 							</lines>
 						</method>
 						<method name="owner" signature="(Lcom/google/gcloud/storage/Acl$Entity;)Lcom/google/gcloud/storage/Blob$Builder;" line-rate="0.0" branch-rate="1.0">
@@ -15342,13 +15450,13 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="86" hits="69" branch="false"/>
-						<line number="114" hits="3" branch="false"/>
-						<line number="115" hits="3" branch="false"/>
+						<line number="86" hits="460" branch="false"/>
+						<line number="114" hits="20" branch="false"/>
+						<line number="115" hits="20" branch="false"/>
 						<line number="119" hits="0" branch="false"/>
 						<line number="120" hits="0" branch="false"/>
-						<line number="124" hits="3" branch="false"/>
-						<line number="125" hits="3" branch="false"/>
+						<line number="124" hits="20" branch="false"/>
+						<line number="125" hits="20" branch="false"/>
 						<line number="129" hits="0" branch="false"/>
 						<line number="130" hits="0" branch="false"/>
 						<line number="134" hits="0" branch="false"/>
@@ -15395,9 +15503,9 @@
 						<line number="215" hits="0" branch="false"/>
 						<line number="219" hits="0" branch="false"/>
 						<line number="220" hits="0" branch="false"/>
-						<line number="224" hits="3" branch="false"/>
-						<line number="225" hits="3" branch="false"/>
-						<line number="226" hits="3" branch="false"/>
+						<line number="224" hits="20" branch="false"/>
+						<line number="225" hits="20" branch="false"/>
+						<line number="226" hits="20" branch="false"/>
 					</lines>
 				</class>
 				<class name="com.google.gcloud.storage.BlobReadChannel" filename="com/google/gcloud/storage/BlobReadChannel.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
@@ -16888,7 +16996,7 @@
 						<line number="264" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Cors" filename="com/google/gcloud/storage/Cors.java" line-rate="0.42105263157894735" branch-rate="0.5" complexity="1.4137931034482758">
+				<class name="com.google.gcloud.storage.Cors" filename="com/google/gcloud/storage/Cors.java" line-rate="0.5263157894736842" branch-rate="0.5" complexity="1.4137931034482758">
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
@@ -16898,22 +17006,22 @@
 						</method>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/storage/Cors$Builder;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="152" hits="1" branch="false"/>
-								<line number="153" hits="1" branch="false"/>
-								<line number="154" hits="1" branch="false"/>
-								<line number="155" hits="1" branch="false"/>
-								<line number="156" hits="1" branch="false"/>
-								<line number="157" hits="1" branch="false"/>
+								<line number="152" hits="2" branch="false"/>
+								<line number="153" hits="2" branch="false"/>
+								<line number="154" hits="2" branch="false"/>
+								<line number="155" hits="2" branch="false"/>
+								<line number="156" hits="2" branch="false"/>
+								<line number="157" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/storage/Cors$Builder;Lcom/google/gcloud/storage/Cors$1;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="37" hits="1" branch="false"/>
+								<line number="37" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="builder" signature="()Lcom/google/gcloud/storage/Cors$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="201" hits="1" branch="false"/>
+								<line number="201" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.8571428571428571" branch-rate="0.5">
@@ -16961,24 +17069,24 @@
 								<line number="185" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="maxAgeSeconds" signature="()Ljava/lang/Integer;" line-rate="0.0" branch-rate="1.0">
+						<method name="maxAgeSeconds" signature="()Ljava/lang/Integer;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="160" hits="0" branch="false"/>
+								<line number="160" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="methods" signature="()Ljava/util/List;" line-rate="0.0" branch-rate="1.0">
+						<method name="methods" signature="()Ljava/util/List;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="164" hits="0" branch="false"/>
+								<line number="164" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="origins" signature="()Ljava/util/List;" line-rate="0.0" branch-rate="1.0">
+						<method name="origins" signature="()Ljava/util/List;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="168" hits="0" branch="false"/>
+								<line number="168" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="responseHeaders" signature="()Ljava/util/List;" line-rate="0.0" branch-rate="1.0">
+						<method name="responseHeaders" signature="()Ljava/util/List;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="172" hits="0" branch="false"/>
+								<line number="172" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="toBuilder" signature="()Lcom/google/gcloud/storage/Cors$Builder;" line-rate="0.0" branch-rate="1.0">
@@ -17002,19 +17110,19 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="37" hits="1" branch="false"/>
+						<line number="37" hits="2" branch="false"/>
 						<line number="41" hits="1" branch="false"/>
 						<line number="48" hits="1" branch="false"/>
-						<line number="152" hits="1" branch="false"/>
-						<line number="153" hits="1" branch="false"/>
-						<line number="154" hits="1" branch="false"/>
-						<line number="155" hits="1" branch="false"/>
-						<line number="156" hits="1" branch="false"/>
-						<line number="157" hits="1" branch="false"/>
-						<line number="160" hits="0" branch="false"/>
-						<line number="164" hits="0" branch="false"/>
-						<line number="168" hits="0" branch="false"/>
-						<line number="172" hits="0" branch="false"/>
+						<line number="152" hits="2" branch="false"/>
+						<line number="153" hits="2" branch="false"/>
+						<line number="154" hits="2" branch="false"/>
+						<line number="155" hits="2" branch="false"/>
+						<line number="156" hits="2" branch="false"/>
+						<line number="157" hits="2" branch="false"/>
+						<line number="160" hits="1" branch="false"/>
+						<line number="164" hits="1" branch="false"/>
+						<line number="168" hits="1" branch="false"/>
+						<line number="172" hits="1" branch="false"/>
 						<line number="176" hits="0" branch="false"/>
 						<line number="177" hits="0" branch="false"/>
 						<line number="178" hits="0" branch="false"/>
@@ -17048,7 +17156,7 @@
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="201" hits="1" branch="false"/>
+						<line number="201" hits="2" branch="false"/>
 						<line number="205" hits="0" branch="false"/>
 						<line number="206" hits="0" branch="false"/>
 						<line number="207" hits="0" branch="false"/>
@@ -17134,11 +17242,11 @@
 						<line number="224" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Cors$Builder" filename="com/google/gcloud/storage/Cors.java" line-rate="0.6" branch-rate="1.0" complexity="1.4137931034482758">
+				<class name="com.google.gcloud.storage.Cors$Builder" filename="com/google/gcloud/storage/Cors.java" line-rate="1.0" branch-rate="1.0" complexity="1.4137931034482758">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/storage/Cors$1;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="118" hits="5" branch="false"/>
+								<line number="118" hits="10" branch="false"/>
 							</lines>
 						</method>
 						<method name="access$100" signature="(Lcom/google/gcloud/storage/Cors$Builder;)Ljava/lang/Integer;" line-rate="1.0" branch-rate="1.0">
@@ -17159,53 +17267,53 @@
 						</method>
 						<method name="build" signature="()Lcom/google/gcloud/storage/Cors;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="148" hits="1" branch="false"/>
+								<line number="148" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="maxAgeSeconds" signature="(Ljava/lang/Integer;)Lcom/google/gcloud/storage/Cors$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="128" hits="1" branch="false"/>
-								<line number="129" hits="1" branch="false"/>
+								<line number="128" hits="2" branch="false"/>
+								<line number="129" hits="2" branch="false"/>
 							</lines>
 						</method>
-						<method name="methods" signature="(Ljava/lang/Iterable;)Lcom/google/gcloud/storage/Cors$Builder;" line-rate="0.0" branch-rate="1.0">
+						<method name="methods" signature="(Ljava/lang/Iterable;)Lcom/google/gcloud/storage/Cors$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="133" hits="0" branch="false"/>
-								<line number="134" hits="0" branch="false"/>
+								<line number="133" hits="1" branch="false"/>
+								<line number="134" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="origins" signature="(Ljava/lang/Iterable;)Lcom/google/gcloud/storage/Cors$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="138" hits="1" branch="false"/>
-								<line number="139" hits="1" branch="false"/>
+								<line number="138" hits="2" branch="false"/>
+								<line number="139" hits="2" branch="false"/>
 							</lines>
 						</method>
-						<method name="responseHeaders" signature="(Ljava/lang/Iterable;)Lcom/google/gcloud/storage/Cors$Builder;" line-rate="0.0" branch-rate="1.0">
+						<method name="responseHeaders" signature="(Ljava/lang/Iterable;)Lcom/google/gcloud/storage/Cors$Builder;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="143" hits="0" branch="false"/>
-								<line number="144" hits="0" branch="false"/>
+								<line number="143" hits="1" branch="false"/>
+								<line number="144" hits="1" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="118" hits="5" branch="false"/>
-						<line number="128" hits="1" branch="false"/>
-						<line number="129" hits="1" branch="false"/>
-						<line number="133" hits="0" branch="false"/>
-						<line number="134" hits="0" branch="false"/>
-						<line number="138" hits="1" branch="false"/>
-						<line number="139" hits="1" branch="false"/>
-						<line number="143" hits="0" branch="false"/>
-						<line number="144" hits="0" branch="false"/>
-						<line number="148" hits="1" branch="false"/>
+						<line number="118" hits="10" branch="false"/>
+						<line number="128" hits="2" branch="false"/>
+						<line number="129" hits="2" branch="false"/>
+						<line number="133" hits="1" branch="false"/>
+						<line number="134" hits="1" branch="false"/>
+						<line number="138" hits="2" branch="false"/>
+						<line number="139" hits="2" branch="false"/>
+						<line number="143" hits="1" branch="false"/>
+						<line number="144" hits="1" branch="false"/>
+						<line number="148" hits="2" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Cors$Method" filename="com/google/gcloud/storage/Cors.java" line-rate="0.0" branch-rate="1.0" complexity="1.4137931034482758">
+				<class name="com.google.gcloud.storage.Cors$Method" filename="com/google/gcloud/storage/Cors.java" line-rate="1.0" branch-rate="1.0" complexity="1.4137931034482758">
 					<methods>
-						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="60" hits="0" branch="false"/>
-								<line number="61" hits="0" branch="false"/>
+								<line number="60" hits="1" branch="false"/>
+								<line number="61" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="valueOf" signature="(Ljava/lang/String;)Lcom/google/gcloud/storage/Cors$Method;" line-rate="1.0" branch-rate="1.0">
@@ -17218,11 +17326,11 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="60" hits="0" branch="false"/>
-						<line number="61" hits="0" branch="false"/>
+						<line number="60" hits="1" branch="false"/>
+						<line number="61" hits="1" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Cors$Origin" filename="com/google/gcloud/storage/Cors.java" line-rate="0.4117647058823529" branch-rate="0.25" complexity="1.4137931034482758">
+				<class name="com.google.gcloud.storage.Cors$Origin" filename="com/google/gcloud/storage/Cors.java" line-rate="0.7647058823529411" branch-rate="0.75" complexity="1.4137931034482758">
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
@@ -17231,25 +17339,25 @@
 						</method>
 						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="72" hits="1" branch="false"/>
-								<line number="73" hits="1" branch="false"/>
-								<line number="74" hits="1" branch="false"/>
+								<line number="72" hits="4" branch="false"/>
+								<line number="73" hits="4" branch="false"/>
+								<line number="74" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="any" signature="()Lcom/google/gcloud/storage/Cors$Origin;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="77" hits="1" branch="false"/>
+								<line number="77" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.6666666666666666" branch-rate="0.5">
 							<lines>
-								<line number="102" hits="4" branch="true" condition-coverage="50% (1/2)">
+								<line number="102" hits="5" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
 								<line number="103" hits="0" branch="false"/>
-								<line number="105" hits="4" branch="false"/>
+								<line number="105" hits="5" branch="false"/>
 							</lines>
 						</method>
 						<method name="hashCode" signature="()I" line-rate="0.0" branch-rate="1.0">
@@ -17257,80 +17365,80 @@
 								<line number="97" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="of" signature="(Ljava/lang/String;)Lcom/google/gcloud/storage/Cors$Origin;" line-rate="0.0" branch-rate="0.0">
+						<method name="of" signature="(Ljava/lang/String;)Lcom/google/gcloud/storage/Cors$Origin;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="89" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="89" hits="4" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="90" hits="0" branch="false"/>
-								<line number="92" hits="0" branch="false"/>
+								<line number="90" hits="1" branch="false"/>
+								<line number="92" hits="3" branch="false"/>
 							</lines>
 						</method>
-						<method name="of" signature="(Ljava/lang/String;Ljava/lang/String;I)Lcom/google/gcloud/storage/Cors$Origin;" line-rate="0.0" branch-rate="1.0">
+						<method name="of" signature="(Ljava/lang/String;Ljava/lang/String;I)Lcom/google/gcloud/storage/Cors$Origin;" line-rate="0.3333333333333333" branch-rate="1.0">
 							<lines>
-								<line number="82" hits="0" branch="false"/>
+								<line number="82" hits="1" branch="false"/>
 								<line number="83" hits="0" branch="false"/>
 								<line number="84" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="110" hits="0" branch="false"/>
+								<line number="110" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="value" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+						<method name="value" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="114" hits="0" branch="false"/>
+								<line number="114" hits="2" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
 						<line number="70" hits="1" branch="false"/>
-						<line number="72" hits="1" branch="false"/>
-						<line number="73" hits="1" branch="false"/>
-						<line number="74" hits="1" branch="false"/>
-						<line number="77" hits="1" branch="false"/>
-						<line number="82" hits="0" branch="false"/>
+						<line number="72" hits="4" branch="false"/>
+						<line number="73" hits="4" branch="false"/>
+						<line number="74" hits="4" branch="false"/>
+						<line number="77" hits="4" branch="false"/>
+						<line number="82" hits="1" branch="false"/>
 						<line number="83" hits="0" branch="false"/>
 						<line number="84" hits="0" branch="false"/>
-						<line number="89" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="89" hits="4" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="90" hits="0" branch="false"/>
-						<line number="92" hits="0" branch="false"/>
+						<line number="90" hits="1" branch="false"/>
+						<line number="92" hits="3" branch="false"/>
 						<line number="97" hits="0" branch="false"/>
-						<line number="102" hits="4" branch="true" condition-coverage="50% (1/2)">
+						<line number="102" hits="5" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
 						<line number="103" hits="0" branch="false"/>
-						<line number="105" hits="4" branch="false"/>
-						<line number="110" hits="0" branch="false"/>
-						<line number="114" hits="0" branch="false"/>
+						<line number="105" hits="5" branch="false"/>
+						<line number="110" hits="1" branch="false"/>
+						<line number="114" hits="2" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.ListResult" filename="com/google/gcloud/storage/ListResult.java" line-rate="0.5" branch-rate="0.5" complexity="1.6">
+				<class name="com.google.gcloud.storage.ListResult" filename="com/google/gcloud/storage/ListResult.java" line-rate="0.75" branch-rate="0.5" complexity="1.8">
 					<methods>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.8" branch-rate="0.5">
 							<lines>
-								<line number="54" hits="3" branch="true" condition-coverage="50% (1/2)">
+								<line number="56" hits="3" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="55" hits="0" branch="false"/>
-								<line number="57" hits="3" branch="false"/>
-								<line number="58" hits="3" branch="true" condition-coverage="50% (1/2)">
+								<line number="57" hits="0" branch="false"/>
+								<line number="59" hits="3" branch="false"/>
+								<line number="60" hits="3" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="59" hits="3" branch="true" condition-coverage="50% (1/2)">
+								<line number="61" hits="3" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
@@ -17339,68 +17447,76 @@
 						</method>
 						<method name="hashCode" signature="()I" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="49" hits="0" branch="false"/>
+								<line number="51" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="iterator" signature="()Ljava/util/Iterator;" line-rate="0.0" branch-rate="1.0">
+						<method name="iterator" signature="()Ljava/util/Iterator;" line-rate="1.0" branch-rate="0.5">
 							<lines>
-								<line number="44" hits="0" branch="false"/>
+								<line number="46" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
 							</lines>
 						</method>
-						<method name="nextPageCursor" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+						<method name="nextPageCursor" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="39" hits="0" branch="false"/>
+								<line number="41" hits="1" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="39" hits="0" branch="false"/>
-						<line number="44" hits="0" branch="false"/>
-						<line number="49" hits="0" branch="false"/>
-						<line number="54" hits="3" branch="true" condition-coverage="50% (1/2)">
+						<line number="41" hits="1" branch="false"/>
+						<line number="46" hits="1" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="55" hits="0" branch="false"/>
-						<line number="57" hits="3" branch="false"/>
-						<line number="58" hits="3" branch="true" condition-coverage="50% (1/2)">
+						<line number="51" hits="0" branch="false"/>
+						<line number="56" hits="3" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="59" hits="3" branch="true" condition-coverage="50% (1/2)">
+						<line number="57" hits="0" branch="false"/>
+						<line number="59" hits="3" branch="false"/>
+						<line number="60" hits="3" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="61" hits="3" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.Option" filename="com/google/gcloud/storage/Option.java" line-rate="0.5" branch-rate="0.5" complexity="1.5">
+				<class name="com.google.gcloud.storage.Option" filename="com/google/gcloud/storage/Option.java" line-rate="0.625" branch-rate="0.5" complexity="1.5">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/spi/StorageRpc$Option;Ljava/lang/Object;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="37" hits="6" branch="false"/>
-								<line number="38" hits="6" branch="false"/>
-								<line number="39" hits="6" branch="false"/>
-								<line number="40" hits="6" branch="false"/>
+								<line number="37" hits="14" branch="false"/>
+								<line number="38" hits="14" branch="false"/>
+								<line number="39" hits="13" branch="false"/>
+								<line number="40" hits="13" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.8" branch-rate="0.5">
 							<lines>
-								<line number="52" hits="18" branch="true" condition-coverage="50% (1/2)">
+								<line number="52" hits="20" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
 								<line number="53" hits="0" branch="false"/>
-								<line number="55" hits="18" branch="false"/>
-								<line number="56" hits="18" branch="true" condition-coverage="50% (1/2)">
+								<line number="55" hits="20" branch="false"/>
+								<line number="56" hits="20" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="57" hits="18" branch="true" condition-coverage="50% (1/2)">
+								<line number="57" hits="20" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
 									</conditions>
@@ -17412,9 +17528,9 @@
 								<line number="62" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="rpcOption" signature="()Lcom/google/gcloud/spi/StorageRpc$Option;" line-rate="0.0" branch-rate="1.0">
+						<method name="rpcOption" signature="()Lcom/google/gcloud/spi/StorageRpc$Option;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="43" hits="0" branch="false"/>
+								<line number="43" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
@@ -17425,32 +17541,32 @@
 								<line number="70" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="value" signature="()Ljava/lang/Object;" line-rate="0.0" branch-rate="1.0">
+						<method name="value" signature="()Ljava/lang/Object;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="47" hits="0" branch="false"/>
+								<line number="47" hits="1" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="37" hits="6" branch="false"/>
-						<line number="38" hits="6" branch="false"/>
-						<line number="39" hits="6" branch="false"/>
-						<line number="40" hits="6" branch="false"/>
-						<line number="43" hits="0" branch="false"/>
-						<line number="47" hits="0" branch="false"/>
-						<line number="52" hits="18" branch="true" condition-coverage="50% (1/2)">
+						<line number="37" hits="14" branch="false"/>
+						<line number="38" hits="14" branch="false"/>
+						<line number="39" hits="13" branch="false"/>
+						<line number="40" hits="13" branch="false"/>
+						<line number="43" hits="1" branch="false"/>
+						<line number="47" hits="1" branch="false"/>
+						<line number="52" hits="20" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
 						<line number="53" hits="0" branch="false"/>
-						<line number="55" hits="18" branch="false"/>
-						<line number="56" hits="18" branch="true" condition-coverage="50% (1/2)">
+						<line number="55" hits="20" branch="false"/>
+						<line number="56" hits="20" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="57" hits="18" branch="true" condition-coverage="50% (1/2)">
+						<line number="57" hits="20" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
 							</conditions>
@@ -17518,22 +17634,22 @@
 						<line number="212" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.StorageService$BlobSourceOption" filename="com/google/gcloud/storage/StorageService.java" line-rate="0.5714285714285714" branch-rate="1.0" complexity="1.0125">
+				<class name="com.google.gcloud.storage.StorageService$BlobSourceOption" filename="com/google/gcloud/storage/StorageService.java" line-rate="0.7142857142857143" branch-rate="1.0" complexity="1.0125">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/spi/StorageRpc$Option;J)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="150" hits="1" branch="false"/>
-								<line number="151" hits="1" branch="false"/>
+								<line number="150" hits="5" branch="false"/>
+								<line number="151" hits="5" branch="false"/>
 							</lines>
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="145" hits="3" branch="false"/>
+								<line number="145" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="generationMatch" signature="(J)Lcom/google/gcloud/storage/StorageService$BlobSourceOption;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="154" hits="1" branch="false"/>
+								<line number="154" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="generationNotMatch" signature="(J)Lcom/google/gcloud/storage/StorageService$BlobSourceOption;" line-rate="0.0" branch-rate="1.0">
@@ -17545,9 +17661,9 @@
 							<lines>
 							</lines>
 						</method>
-						<method name="metagenerationMatch" signature="(J)Lcom/google/gcloud/storage/StorageService$BlobSourceOption;" line-rate="0.0" branch-rate="1.0">
+						<method name="metagenerationMatch" signature="(J)Lcom/google/gcloud/storage/StorageService$BlobSourceOption;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="162" hits="0" branch="false"/>
+								<line number="162" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="metagenerationNotMatch" signature="(J)Lcom/google/gcloud/storage/StorageService$BlobSourceOption;" line-rate="0.0" branch-rate="1.0">
@@ -17561,16 +17677,16 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="145" hits="3" branch="false"/>
-						<line number="150" hits="1" branch="false"/>
-						<line number="151" hits="1" branch="false"/>
-						<line number="154" hits="1" branch="false"/>
+						<line number="145" hits="4" branch="false"/>
+						<line number="150" hits="5" branch="false"/>
+						<line number="151" hits="5" branch="false"/>
+						<line number="154" hits="4" branch="false"/>
 						<line number="158" hits="0" branch="false"/>
-						<line number="162" hits="0" branch="false"/>
+						<line number="162" hits="1" branch="false"/>
 						<line number="166" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.StorageService$BlobTargetOption" filename="com/google/gcloud/storage/StorageService.java" line-rate="0.4444444444444444" branch-rate="1.0" complexity="1.0125">
+				<class name="com.google.gcloud.storage.StorageService$BlobTargetOption" filename="com/google/gcloud/storage/StorageService.java" line-rate="0.5555555555555556" branch-rate="1.0" complexity="1.0125">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lcom/google/gcloud/spi/StorageRpc$Option;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
@@ -17585,7 +17701,7 @@
 						</method>
 						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="108" hits="3" branch="false"/>
+								<line number="108" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="generationMatch" signature="()Lcom/google/gcloud/storage/StorageService$BlobTargetOption;" line-rate="1.0" branch-rate="1.0">
@@ -17612,9 +17728,9 @@
 								<line number="141" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="predefinedAcl" signature="(Lcom/google/gcloud/storage/StorageService$PredefinedAcl;)Lcom/google/gcloud/storage/StorageService$BlobTargetOption;" line-rate="0.0" branch-rate="1.0">
+						<method name="predefinedAcl" signature="(Lcom/google/gcloud/storage/StorageService$PredefinedAcl;)Lcom/google/gcloud/storage/StorageService$BlobTargetOption;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="121" hits="0" branch="false"/>
+								<line number="121" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
@@ -17623,10 +17739,10 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="108" hits="3" branch="false"/>
+						<line number="108" hits="4" branch="false"/>
 						<line number="117" hits="1" branch="false"/>
 						<line number="118" hits="1" branch="false"/>
-						<line number="121" hits="0" branch="false"/>
+						<line number="121" hits="2" branch="false"/>
 						<line number="125" hits="0" branch="false"/>
 						<line number="129" hits="1" branch="false"/>
 						<line number="133" hits="0" branch="false"/>
@@ -18108,24 +18224,24 @@
 						<line number="365" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="com.google.gcloud.storage.StorageService$PredefinedAcl" filename="com/google/gcloud/storage/StorageService.java" line-rate="0.0" branch-rate="1.0" complexity="1.0125">
+				<class name="com.google.gcloud.storage.StorageService$PredefinedAcl" filename="com/google/gcloud/storage/StorageService.java" line-rate="1.0" branch-rate="1.0" complexity="1.0125">
 					<methods>
-						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="41" hits="0" branch="false"/>
-								<line number="42" hits="0" branch="false"/>
-								<line number="43" hits="0" branch="false"/>
-								<line number="44" hits="0" branch="false"/>
-								<line number="45" hits="0" branch="false"/>
-								<line number="46" hits="0" branch="false"/>
-								<line number="47" hits="0" branch="false"/>
-								<line number="48" hits="0" branch="false"/>
-								<line number="49" hits="0" branch="false"/>
+								<line number="41" hits="1" branch="false"/>
+								<line number="42" hits="1" branch="false"/>
+								<line number="43" hits="1" branch="false"/>
+								<line number="44" hits="1" branch="false"/>
+								<line number="45" hits="1" branch="false"/>
+								<line number="46" hits="1" branch="false"/>
+								<line number="47" hits="1" branch="false"/>
+								<line number="48" hits="1" branch="false"/>
+								<line number="49" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="entry" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+						<method name="entry" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="58" hits="0" branch="false"/>
+								<line number="58" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="valueOf" signature="(Ljava/lang/String;)Lcom/google/gcloud/storage/StorageService$PredefinedAcl;" line-rate="1.0" branch-rate="1.0">
@@ -18138,16 +18254,16 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="41" hits="0" branch="false"/>
-						<line number="42" hits="0" branch="false"/>
-						<line number="43" hits="0" branch="false"/>
-						<line number="44" hits="0" branch="false"/>
-						<line number="45" hits="0" branch="false"/>
-						<line number="46" hits="0" branch="false"/>
-						<line number="47" hits="0" branch="false"/>
-						<line number="48" hits="0" branch="false"/>
-						<line number="49" hits="0" branch="false"/>
-						<line number="58" hits="0" branch="false"/>
+						<line number="41" hits="1" branch="false"/>
+						<line number="42" hits="1" branch="false"/>
+						<line number="43" hits="1" branch="false"/>
+						<line number="44" hits="1" branch="false"/>
+						<line number="45" hits="1" branch="false"/>
+						<line number="46" hits="1" branch="false"/>
+						<line number="47" hits="1" branch="false"/>
+						<line number="48" hits="1" branch="false"/>
+						<line number="49" hits="1" branch="false"/>
+						<line number="58" hits="2" branch="false"/>
 					</lines>
 				</class>
 				<class name="com.google.gcloud.storage.StorageServiceException" filename="com/google/gcloud/storage/StorageServiceException.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
