@@ -91,28 +91,28 @@
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;37</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;  <span class="keyword">static</span> Key allocateId(DatastoreService service, IncompleteKey key) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;38</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">return</span> service.allocateId(<span class="keyword">new</span> IncompleteKey[]{key}).get(0);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;38</td>  <td class="nbHitsCovered">&nbsp;8</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">return</span> service.allocateId(<span class="keyword">new</span> IncompleteKey[]{key}).get(0);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;39</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;  }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;40</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;41</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;  <span class="keyword">static</span> Entity get(DatastoreReader reader, Key key) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;42</td>  <td class="nbHitsCovered">&nbsp;15</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">return</span> Iterators.getNext(reader.get(<span class="keyword">new</span> Key[]{key}), <span class="keyword">null</span>);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;42</td>  <td class="nbHitsCovered">&nbsp;30</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">return</span> Iterators.getNext(reader.get(<span class="keyword">new</span> Key[]{key}), <span class="keyword">null</span>);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;43</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;  }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;44</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;45</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;  <span class="keyword">static</span> Entity add(DatastoreWriter writer, FullEntity&lt;?&gt; entity) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;46</td>  <td class="nbHitsCovered">&nbsp;19</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">return</span> writer.add(<span class="keyword">new</span> FullEntity&lt;?&gt;[] {entity}).get(0);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;46</td>  <td class="nbHitsCovered">&nbsp;38</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">return</span> writer.add(<span class="keyword">new</span> FullEntity&lt;?&gt;[] {entity}).get(0);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;47</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;  }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;48</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;49</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;  <span class="keyword">static</span> KeyFactory newKeyFactory(DatastoreServiceOptions options) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;50</td>  <td class="nbHitsCovered">&nbsp;5</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">return</span> <span class="keyword">new</span> KeyFactory(options.projectId(), options.namespace());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;50</td>  <td class="nbHitsCovered">&nbsp;10</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">return</span> <span class="keyword">new</span> KeyFactory(options.projectId(), options.namespace());</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;51</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;  }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;52</td>  <td class="nbHits">&nbsp;</td>
@@ -127,20 +127,20 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">   */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;57</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;  <span class="keyword">static</span> List&lt;Entity&gt; fetch(DatastoreReader reader, Key... keys) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;58</td>  <td class="nbHitsCovered">&nbsp;12</td>  <td class="src"><pre class="src">&nbsp;    Iterator&lt;Entity&gt; entities = reader.get(keys);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;59</td>  <td class="nbHitsCovered">&nbsp;12</td>  <td class="src"><pre class="src">&nbsp;    Map&lt;Key, Entity&gt; map = Maps.newHashMapWithExpectedSize(keys.length);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;60</td>  <td class="nbHitsCovered"><a title="Line 60: Conditional coverage 100% (2/2).">&nbsp;39</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 60: Conditional coverage 100% (2/2).">    <span class="keyword">while</span> (entities.hasNext()) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;61</td>  <td class="nbHitsCovered">&nbsp;27</td>  <td class="src"><pre class="src">&nbsp;      Entity entity = entities.next();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;62</td>  <td class="nbHitsCovered">&nbsp;27</td>  <td class="src"><pre class="src">&nbsp;      map.put(entity.key(), entity);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;63</td>  <td class="nbHitsCovered">&nbsp;27</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;64</td>  <td class="nbHitsCovered">&nbsp;12</td>  <td class="src"><pre class="src">&nbsp;    List&lt;Entity&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;(keys.length);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;65</td>  <td class="nbHitsCovered"><a title="Line 65: Conditional coverage 100% (2/2).">&nbsp;51</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 65: Conditional coverage 100% (2/2).">    <span class="keyword">for</span> (Key key : keys) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;58</td>  <td class="nbHitsCovered">&nbsp;24</td>  <td class="src"><pre class="src">&nbsp;    Iterator&lt;Entity&gt; entities = reader.get(keys);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;59</td>  <td class="nbHitsCovered">&nbsp;24</td>  <td class="src"><pre class="src">&nbsp;    Map&lt;Key, Entity&gt; map = Maps.newHashMapWithExpectedSize(keys.length);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;60</td>  <td class="nbHitsCovered"><a title="Line 60: Conditional coverage 100% (2/2).">&nbsp;78</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 60: Conditional coverage 100% (2/2).">    <span class="keyword">while</span> (entities.hasNext()) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;61</td>  <td class="nbHitsCovered">&nbsp;54</td>  <td class="src"><pre class="src">&nbsp;      Entity entity = entities.next();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;62</td>  <td class="nbHitsCovered">&nbsp;54</td>  <td class="src"><pre class="src">&nbsp;      map.put(entity.key(), entity);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;63</td>  <td class="nbHitsCovered">&nbsp;54</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;64</td>  <td class="nbHitsCovered">&nbsp;24</td>  <td class="src"><pre class="src">&nbsp;    List&lt;Entity&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;(keys.length);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;65</td>  <td class="nbHitsCovered"><a title="Line 65: Conditional coverage 100% (2/2).">&nbsp;102</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 65: Conditional coverage 100% (2/2).">    <span class="keyword">for</span> (Key key : keys) {</a></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;66</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;      <span class="comment">// this will include nulls for non-existing keys</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;67</td>  <td class="nbHitsCovered">&nbsp;39</td>  <td class="src"><pre class="src">&nbsp;      list.add(map.get(key));</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;67</td>  <td class="nbHitsCovered">&nbsp;78</td>  <td class="src"><pre class="src">&nbsp;      list.add(map.get(key));</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;68</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;69</td>  <td class="nbHitsCovered">&nbsp;12</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">return</span> list;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;69</td>  <td class="nbHitsCovered">&nbsp;24</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">return</span> list;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;70</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;  }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;71</td>  <td class="nbHits">&nbsp;</td>
@@ -149,18 +149,18 @@
   <td class="src"><pre class="src">&nbsp;  <span class="keyword">static</span> &lt;T&gt; T runInTransaction(DatastoreService datastoreService,</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;73</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;      DatastoreService.TransactionCallable&lt;T&gt; callable, TransactionOption... options) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;74</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;    Transaction transaction = datastoreService.newTransaction(options);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;74</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;    Transaction transaction = datastoreService.newTransaction(options);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;75</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;76</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;      T value = callable.run(transaction);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;77</td>  <td class="nbHitsCovered">&nbsp;1</td>  <td class="src"><pre class="src">&nbsp;      transaction.commit();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;78</td>  <td class="nbHitsCovered">&nbsp;1</td>  <td class="src"><pre class="src">&nbsp;      <span class="keyword">return</span> value;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;79</td>  <td class="nbHitsCovered">&nbsp;1</td>  <td class="src"><pre class="src">&nbsp;    } <span class="keyword">catch</span> (Exception ex) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;80</td>  <td class="nbHitsCovered">&nbsp;1</td>  <td class="src"><pre class="src">&nbsp;      transaction.rollback();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;81</td>  <td class="nbHitsCovered">&nbsp;1</td>  <td class="src"><pre class="src">&nbsp;      <span class="keyword">throw</span> DatastoreServiceException.propagateUserException(ex);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;76</td>  <td class="nbHitsCovered">&nbsp;4</td>  <td class="src"><pre class="src">&nbsp;      T value = callable.run(transaction);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;77</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;      transaction.commit();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;78</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;      <span class="keyword">return</span> value;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;79</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;    } <span class="keyword">catch</span> (Exception ex) {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;80</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;      transaction.rollback();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;81</td>  <td class="nbHitsCovered">&nbsp;2</td>  <td class="src"><pre class="src">&nbsp;      <span class="keyword">throw</span> DatastoreServiceException.propagateUserException(ex);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;82</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    } <span class="keyword">finally</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;83</td>  <td class="nbHitsUncovered"><a title="Line 83: Conditional coverage 50% (2/4) [each condition: 50%, 50%].">&nbsp;2</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 83: Conditional coverage 50% (2/4) [each condition: 50%, 50%].">      <span class="keyword">if</span> (transaction.active()) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;83</td>  <td class="nbHitsUncovered"><a title="Line 83: Conditional coverage 50% (2/4) [each condition: 50%, 50%].">&nbsp;4</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 83: Conditional coverage 50% (2/4) [each condition: 50%, 50%].">      <span class="keyword">if</span> (transaction.active()) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;84</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        transaction.rollback();</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;85</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;      }</pre></td></tr>
@@ -172,6 +172,6 @@
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.0.3 on 5/18/15 5:14 PM.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 2.0.3 on 5/19/15 12:35 AM.</div>
 </body>
 </html>
