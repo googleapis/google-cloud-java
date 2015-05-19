@@ -16,6 +16,7 @@
 
 package com.google.gcloud.examples;
 
+import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.BatchRequest;
 import com.google.gcloud.storage.BatchResponse;
@@ -498,7 +499,8 @@ public class StorageExample {
       printUsage();
       return;
     }
-    StorageServiceOptions.Builder optionsBuilder = StorageServiceOptions.builder();
+    StorageServiceOptions.Builder optionsBuilder =
+        StorageServiceOptions.builder().retryParams(RetryParams.getDefaultInstance());
     StorageAction action;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
       optionsBuilder.projectId(args[0]);
