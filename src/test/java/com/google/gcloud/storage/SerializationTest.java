@@ -51,7 +51,7 @@ public class SerializationTest {
       Collections.<BatchResponse.Result<Blob>>emptyList(),
       Collections.<BatchResponse.Result<Blob>>emptyList());
   private static final ListResult<Blob> LIST_RESULT =
-      new ListResult<>("c", Collections.singletonList(Blob.of("b", "n")));
+      new ListResult<>(null, "c", Collections.singletonList(Blob.of("b", "n")));
   private static StorageService.BlobListOption BLOB_LIST_OPTIONS =
       StorageService.BlobListOption.maxResults(100);
   private static StorageService.BlobSourceOption BLOB_SOURCE_OPTIONS =
