@@ -283,7 +283,7 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
   }
 
   public RetryParams retryParams() {
-    return retryParams;
+    return retryParams != null ? retryParams : RetryParams.noRetries();
   }
 
   public ServiceRpcFactory<R, O> serviceRpcFactory() {

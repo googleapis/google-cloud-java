@@ -22,13 +22,26 @@ import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 
+import java.util.Collections;
+
 public class ListResultTest {
 
   @Test
   public void testListResult() throws Exception {
     ImmutableList<String> values = ImmutableList.of("1", "2");
-    ListResult<String> result = new ListResult("c", values);
+    final ListResult<String> nextResult =
+        new ListResult<>(null, "c", Collections.<String>emptyList());
+    ListResult.NextPageFetcher fetcher = new ListResult.NextPageFetcher<String>() {
+
+      @Override
+      public ListResult nextPage() {
+        return nextResult;
+      }
+    };
+    ListResult<String> result = new ListResult(fetcher, "c", values);
+    assertEquals(nextResult, result.nextPage());
     assertEquals("c", result.nextPageCursor());
     assertEquals(values, ImmutableList.copyOf(result.iterator()));
+
   }
 }

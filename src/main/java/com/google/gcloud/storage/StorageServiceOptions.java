@@ -33,6 +33,7 @@ public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageSer
   private static final String DEFAULT_PATH_DELIMITER = "/";
 
   private final String pathDelimiter;
+  private transient StorageRpc storageRpc;
 
   public static class Builder extends
       ServiceOptions.Builder<StorageRpc, StorageServiceOptions, Builder> {
@@ -68,10 +69,15 @@ public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageSer
   }
 
   StorageRpc storageRpc() {
-    if (serviceRpcFactory() != null) {
-      return serviceRpcFactory().create(this);
+    if (storageRpc != null) {
+      return storageRpc;
     }
-    return ServiceRpcProvider.storage(this);
+    if (serviceRpcFactory() != null) {
+      storageRpc = serviceRpcFactory().create(this);
+    } else {
+      storageRpc = ServiceRpcProvider.storage(this);
+    }
+    return storageRpc;
   }
 
   public String pathDelimiter() {

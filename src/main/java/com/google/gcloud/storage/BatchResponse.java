@@ -43,12 +43,12 @@ public final class BatchResponse implements Serializable {
     private final StorageServiceException exception;
 
 
-    Result(T value) {
+    public Result(T value) {
       this.value = value;
       this.exception = null;
     }
 
-    Result(StorageServiceException exception) {
+    public Result(StorageServiceException exception) {
       this.exception = exception;
       this.value = null;
     }
@@ -112,7 +112,7 @@ public final class BatchResponse implements Serializable {
     }
   }
 
-  BatchResponse(List<Result<Boolean>> deleteResult, List<Result<Blob>> updateResult,
+  public BatchResponse(List<Result<Boolean>> deleteResult, List<Result<Blob>> updateResult,
       List<Result<Blob>> getResult) {
     this.deleteResult = ImmutableList.copyOf(deleteResult);
     this.updateResult = ImmutableList.copyOf(updateResult);

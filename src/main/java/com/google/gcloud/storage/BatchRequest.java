@@ -96,15 +96,15 @@ public final class BatchRequest implements Serializable {
         && Objects.equals(toGet, other.toGet);
   }
 
-  Map<Blob, Iterable<BlobSourceOption>> toDelete() {
+  public Map<Blob, Iterable<BlobSourceOption>> toDelete() {
     return toDelete;
   }
 
-  Map<Blob, Iterable<BlobTargetOption>> toUpdate() {
+  public Map<Blob, Iterable<BlobTargetOption>> toUpdate() {
     return toUpdate;
   }
 
-  Map<Blob, Iterable<BlobSourceOption>> toGet() {
+  public Map<Blob, Iterable<BlobSourceOption>> toGet() {
     return toGet;
   }
 
