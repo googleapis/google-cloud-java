@@ -43,7 +43,6 @@ import com.google.common.primitives.Ints;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
-import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
@@ -79,12 +78,10 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   private static final byte[] EMPTY_BYTE_ARRAY = {};
 
   private final StorageRpc storageRpc;
-  private final RetryParams retryParams;
 
   StorageServiceImpl(StorageServiceOptions options) {
     super(options);
     storageRpc = options.storageRpc();
-    retryParams = firstNonNull(options.retryParams(), RetryParams.noRetries());
     // todo: replace nulls with Value.asNull (per toPb)
     // todo: configure timeouts - https://developers.google.com/api-client-library/java/google-api-java-client/errors
     // todo: provide rewrite - https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite
@@ -102,7 +99,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
           public com.google.api.services.storage.model.Bucket call() {
             return storageRpc.create(bucketPb, optionsMap);
           }
-        }, retryParams, EXCEPTION_HANDLER));
+        }, options().retryParams(), EXCEPTION_HANDLER));
   }
 
   @Override
@@ -114,7 +111,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       public StorageObject call() {
         return storageRpc.create(blobPb, firstNonNull(content, EMPTY_BYTE_ARRAY), optionsMap);
       }
-    }, retryParams, EXCEPTION_HANDLER));
+    }, options().retryParams(), EXCEPTION_HANDLER));
   }
 
   @Override
@@ -134,7 +131,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
               throw ex;
             }
           }
-        }, retryParams, EXCEPTION_HANDLER);
+        }, options().retryParams(), EXCEPTION_HANDLER);
     return answer == null ? null : Bucket.fromPb(answer);
   }
 
@@ -154,46 +151,111 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
           throw ex;
         }
       }
-    }, retryParams, EXCEPTION_HANDLER);
+    }, options().retryParams(), EXCEPTION_HANDLER);
     return storageObject == null ? null : Blob.fromPb(storageObject);
+  }
+
+  private static abstract class BasePageFetcher<T extends Serializable>
+      implements ListResult.NextPageFetcher<T> {
+
+    private static final long serialVersionUID = 8236329004030295223L;
+    protected final Map<StorageRpc.Option, ?> requestOptions;
+    protected final StorageServiceOptions serviceOptions;
+
+    BasePageFetcher(StorageServiceOptions serviceOptions, String cursor,
+        Map<StorageRpc.Option, ?> optionMap) {
+      this.serviceOptions = serviceOptions;
+      ImmutableMap.Builder<StorageRpc.Option, Object> builder = ImmutableMap.builder();
+      builder.put(StorageRpc.Option.PAGE_TOKEN, cursor);
+      for (Map.Entry<StorageRpc.Option, ?> option : optionMap.entrySet()) {
+        if (option.getKey() != StorageRpc.Option.PAGE_TOKEN) {
+          builder.put(option.getKey(), option.getValue());
+        }
+      }
+      this.requestOptions = builder.build();
+    }
+  }
+
+  private static class BucketPageFetcher extends BasePageFetcher<Bucket> {
+
+    private static final long serialVersionUID = -5490616010200159174L;
+
+    BucketPageFetcher(StorageServiceOptions serviceOptions, String cursor,
+        Map<StorageRpc.Option, ?> optionMap) {
+      super(serviceOptions, cursor, optionMap);
+    }
+
+    @Override
+    public ListResult<Bucket> nextPage() {
+      return listBuckets(serviceOptions, requestOptions);
+    }
+  }
+
+  private static class BlobPageFetcher extends BasePageFetcher<Blob> {
+
+    private static final long serialVersionUID = -5490616010200159174L;
+    private final String bucket;
+
+    BlobPageFetcher(String bucket, StorageServiceOptions serviceOptions, String cursor,
+        Map<StorageRpc.Option, ?> optionMap) {
+      super(serviceOptions, cursor, optionMap);
+      this.bucket = bucket;
+    }
+
+    @Override
+    public ListResult<Blob> nextPage() {
+      return listBlobs(bucket, serviceOptions, requestOptions);
+    }
   }
 
   @Override
   public ListResult<Bucket> list(BucketListOption... options) {
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    return listBuckets(options(), optionMap(options));
+  }
+
+  private static ListResult<Bucket> listBuckets(final StorageServiceOptions serviceOptions,
+      final Map<StorageRpc.Option, ?> optionsMap) {
     Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result = runWithRetries(
         new Callable<Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>>>() {
           @Override
           public Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> call() {
-            return storageRpc.list(optionsMap);
+            return serviceOptions.storageRpc().list(optionsMap);
           }
-        }, retryParams, EXCEPTION_HANDLER);
-    return new ListResult<>(result.x(), Iterables.transform(result.y(),
-        new Function<com.google.api.services.storage.model.Bucket, Bucket>() {
-          @Override
-          public Bucket apply(com.google.api.services.storage.model.Bucket bucketPb) {
-            return Bucket.fromPb(bucketPb);
-          }
-        }));
+        }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+    String cursor = result.x();
+    return new ListResult<>(new BucketPageFetcher(serviceOptions, cursor, optionsMap), cursor,
+        Iterables.transform(result.y(),
+            new Function<com.google.api.services.storage.model.Bucket, Bucket>() {
+              @Override
+              public Bucket apply(com.google.api.services.storage.model.Bucket bucketPb) {
+                return Bucket.fromPb(bucketPb);
+              }
+            }));
   }
 
   @Override
   public ListResult<Blob> list(final String bucket, BlobListOption... options) {
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    return listBlobs(bucket, options(), optionMap(options));
+  }
+
+  private static ListResult<Blob> listBlobs(final String bucket,
+      final StorageServiceOptions serviceOptions, final Map<StorageRpc.Option, ?> optionsMap) {
     Tuple<String, Iterable<StorageObject>> result = runWithRetries(
         new Callable<Tuple<String, Iterable<StorageObject>>>() {
           @Override
           public Tuple<String, Iterable<StorageObject>> call() {
-            return storageRpc.list(bucket, optionsMap);
+            return serviceOptions.storageRpc().list(bucket, optionsMap);
           }
-        }, retryParams, EXCEPTION_HANDLER);
-    return new ListResult<>(result.x(), Iterables.transform(result.y(),
-        new Function<StorageObject, Blob>() {
-          @Override
-          public Blob apply(StorageObject storageObject) {
-            return Blob.fromPb(storageObject);
-          }
-        }));
+        }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+    String cursor = result.x();
+    return new ListResult<>(new BlobPageFetcher(bucket, serviceOptions, cursor, optionsMap), cursor,
+        Iterables.transform(result.y(),
+            new Function<StorageObject, Blob>() {
+              @Override
+              public Blob apply(StorageObject storageObject) {
+                return Blob.fromPb(storageObject);
+              }
+            }));
   }
 
   @Override
@@ -206,7 +268,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
           public com.google.api.services.storage.model.Bucket call() {
             return storageRpc.patch(bucketPb, optionsMap);
           }
-        }, retryParams, EXCEPTION_HANDLER));
+        }, options().retryParams(), EXCEPTION_HANDLER));
   }
 
   @Override
@@ -218,7 +280,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       public StorageObject call() {
         return storageRpc.patch(storageObject, optionsMap);
       }
-    }, retryParams, EXCEPTION_HANDLER));
+    }, options().retryParams(), EXCEPTION_HANDLER));
   }
 
   @Override
@@ -230,7 +292,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       public Boolean call() {
         return storageRpc.delete(bucketPb, optionsMap);
       }
-    }, retryParams, EXCEPTION_HANDLER);
+    }, options().retryParams(), EXCEPTION_HANDLER);
   }
 
   @Override
@@ -242,7 +304,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       public Boolean call() {
         return storageRpc.delete(storageObject, optionsMap);
       }
-    }, retryParams, EXCEPTION_HANDLER);
+    }, options().retryParams(), EXCEPTION_HANDLER);
   }
 
   @Override
@@ -261,7 +323,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       public StorageObject call() {
         return storageRpc.compose(sources, target, targetOptions);
       }
-    }, retryParams, EXCEPTION_HANDLER));
+    }, options().retryParams(), EXCEPTION_HANDLER));
   }
 
   @Override
@@ -279,7 +341,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       public StorageObject call() {
         return storageRpc.copy(source, sourceOptions, target, targetOptions);
       }
-    }, retryParams, EXCEPTION_HANDLER));
+    }, options().retryParams(), EXCEPTION_HANDLER));
   }
 
   @Override
@@ -291,7 +353,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       public byte[] call() {
         return storageRpc.load(storageObject, optionsMap);
       }
-    }, retryParams, EXCEPTION_HANDLER);
+    }, options().retryParams(), EXCEPTION_HANDLER);
   }
 
   @Override
@@ -361,7 +423,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     return new BlobReadChannelImpl(options(), Blob.of(bucket, blob), optionsMap);
   }
 
-  @Override
+ @Override
   public BlobWriteChannel writer(Blob blob, BlobTargetOption... options) {
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     return new BlobWriterChannelImpl(options(), blob, optionsMap);
