@@ -44,6 +44,7 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
   private final String namespace;
   private final boolean force;
   private final boolean normalizeDataset;
+  private transient DatastoreRpc datastoreRpc;
 
   public static class Builder extends
       ServiceOptions.Builder<DatastoreRpc, DatastoreServiceOptions, Builder> {
@@ -178,10 +179,15 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
   }
 
   DatastoreRpc datastoreRpc() {
-    if (serviceRpcFactory() != null) {
-      return serviceRpcFactory().create(this);
+    if (datastoreRpc != null) {
+      return datastoreRpc;
     }
-    return ServiceRpcProvider.datastore(this);
+    if (serviceRpcFactory() != null) {
+      datastoreRpc = serviceRpcFactory().create(this);
+    } else {
+      datastoreRpc = ServiceRpcProvider.datastore(this);
+    }
+    return datastoreRpc;
   }
 
   public static DatastoreServiceOptions defaultInstance() {
