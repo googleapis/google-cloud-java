@@ -29,4 +29,9 @@ import java.nio.channels.WritableByteChannel;
  */
 public interface BlobWriteChannel extends WritableByteChannel, Serializable, Closeable {
 
+  /**
+   * Sets the minimum size that will be written by a single RPC.
+   * Written data will be buffered and only flushed upon reaching this size or closing the channel.
+   */
+  void chunkSize(int chunkSize);
 }
