@@ -29,7 +29,6 @@ import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_M
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
-import static java.util.concurrent.Executors.callable;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.Function;
@@ -47,6 +46,7 @@ import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
 import java.io.Serializable;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -427,6 +427,12 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   public BlobWriteChannel writer(Blob blob, BlobTargetOption... options) {
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     return new BlobWriterChannelImpl(options(), blob, optionsMap);
+  }
+
+  @Override
+  public URL signUrl(SignUrlRequest request) {
+    // todo: implement and add test
+    return null;
   }
 
   private Map<StorageRpc.Option, ?> optionMap(Long generation, Long metaGeneration,
