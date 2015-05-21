@@ -16,14 +16,19 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.StorageRpc;
 
+import org.joda.time.DateTime;
+
 import java.io.Serializable;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -408,6 +413,139 @@ public interface StorageService extends Service<StorageServiceOptions> {
   }
 
   /**
+   * A request for signing a URL.
+   */
+  class SignUrlRequest implements Serializable {
+
+    private final Blob blob;
+    private final HttpMethod httpMethod;
+    private final Long expiration;
+    private final boolean includeContentType;
+    private final boolean includeMd5;
+    private final String headers;
+    private final ServiceAccountAuthCredentials authCredentials;
+
+    public static class Builder {
+
+      private Blob blob;
+      private HttpMethod httpMethod;
+      private long expiration;
+      private boolean includeContentType;
+      private boolean includeMd5;
+      private String headers;
+      private ServiceAccountAuthCredentials authCredentials;
+
+      private Builder() {}
+
+      public Builder blob(Blob blob) {
+        this.blob = blob;
+        return this;
+      }
+
+      /**
+       * The HTTP method to be used with the signed URL.
+       */
+      public Builder httpMethod(HttpMethod httpMethod) {
+        this.httpMethod = httpMethod;
+        return this;
+      }
+
+      /**
+       * Sets expiration time for the URL.
+       * Defaults to one day.
+       */
+      public Builder expiration(long expiration) {
+        this.expiration = expiration;
+        return this;
+      }
+
+      /**
+       * Indicate if signature should include the blob's content-type.
+       * If {@code true} users of the signed URL should include
+       * the same content-type with their request.
+       */
+      public Builder includeContentType(boolean includeContentType) {
+        this.includeContentType = includeContentType;
+        return this;
+      }
+
+      /**
+       * Indicate if signature should include the blob's md5.
+       * If {@code true} users of the signed URL should include it with their requests.
+       */
+      public Builder includeMd5(boolean includeMd5) {
+        this.includeMd5 = includeMd5;
+        return this;
+      }
+
+      /**
+       *  If headers are provided, the server will check to make sure that the client
+       *  provides matching values.
+       *  For information about how to create canonical headers for signing,
+       *  see <a href="https://cloud.google.com/storage/docs/access-control#About-CanonicalExtensionHeaders">About Canonical Extension Headers</a>.
+       */
+      public Builder canonicalizedExtensionHeaders(String headers) {
+        this.headers = headers;
+        return this;
+      }
+
+      /**
+       * The service account credentials for signing the URL.
+       */
+      public Builder serviceAccountAuthCredentials(ServiceAccountAuthCredentials authCredentials) {
+        this.authCredentials = authCredentials;
+        return this;
+      }
+
+      public SignUrlRequest build() {
+        return new SignUrlRequest(this);
+      }
+    }
+
+    private SignUrlRequest(Builder builder) {
+      blob = checkNotNull(builder.blob);
+      httpMethod = builder.httpMethod;
+      expiration = firstNonNull(builder.expiration, new DateTime().plusDays(1).getMillis());
+      includeContentType = builder.includeContentType; // verify blob has content-type
+      includeMd5 = builder.includeMd5; // verify blob  has md5
+      authCredentials = builder.authCredentials; // default if null
+      headers = builder.headers;
+    }
+
+    public Blob blob() {
+      return blob;
+    }
+
+    public HttpMethod httpMethod() {
+      return httpMethod;
+    }
+
+    public String canonicalizedExtensionHeaders() {
+      return headers;
+    }
+
+    public long expiration() {
+      return expiration;
+    }
+
+    public ServiceAccountAuthCredentials authCredentials() {
+      return authCredentials;
+    }
+
+    public boolean includeContentType() {
+      return includeContentType;
+    }
+
+    public boolean includeMd5() {
+      return includeMd5;
+    }
+
+    public static Builder builder() {
+      return new Builder();
+    }
+  }
+
+  /**
    * Create a new bucket.
    *
    * @return a complete bucket information.
@@ -528,4 +666,14 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * @throws StorageServiceException upon failure
    */
   BlobWriteChannel writer(Blob blob, BlobTargetOption... options);
+
+  /**
+   * Generates a signed URL for a blob.
+   * If you have a blob that you want to allow access to for a set
+   * amount of time, you can use this method to generate a URL that
+   * is only valid within a certain time period.
+   * This is particularly useful if you don't want publicly
+   * accessible blobs, but don't want to require users to explicitly log in.
+   */
+  URL signUrl(SignUrlRequest request);
 }
