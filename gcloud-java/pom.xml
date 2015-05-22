@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.gcloud</groupId>
+  <artifactId>gcloud-java</artifactId>
+  <packaging>jar</packaging>
+  <name>GCloud Java assembly</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
+  <description>
+    Java idiomatic client for Google Cloud Platform services.
+  </description>
+  <parent>
+    <groupId>com.google.gcloud</groupId>
+    <artifactId>gcloud-java-pom</artifactId>
+    <version>0.0.5</version>
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-core</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-datastore</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-storage</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <skip>true</skip>
+          <skipDeploy>true</skipDeploy>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
