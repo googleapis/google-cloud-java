@@ -24,6 +24,8 @@
   </skin>
   <version/>
   <body>
-    <menu ref="reports"/>
+    <menu ref="parent" inherit="top" />
+    <menu ref="modules" inherit="top" />
+    <menu ref="reports" inherit="top" />
   </body>
 </project>
