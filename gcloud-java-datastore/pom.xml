@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.gcloud</groupId>
+  <artifactId>gcloud-java-datastore</artifactId>
+  <packaging>jar</packaging>
+  <name>GCloud Java datastore</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
+  <parent>
+    <groupId>com.google.gcloud</groupId>
+    <artifactId>gcloud-java-pom</artifactId>
+    <version>0.0.5</version>
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-core</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.apis</groupId>
+      <artifactId>google-api-services-datastore-protobuf</artifactId>
+      <version>v1beta2-rev1-2.1.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.apis</groupId>
+      <artifactId>google-api-services-datastore</artifactId>
+      <version>v1beta2-rev23-1.19.0</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.easymock</groupId>
+      <artifactId>easymock</artifactId>
+      <version>3.3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
