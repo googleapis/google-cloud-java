@@ -460,7 +460,7 @@ public class DatastoreHelper {
     } else if (value.hasBlobValue()) {
       return value.getBlobValue();
     }
-    throw new IllegalArgumentException("Value does not contain a bob.");
+    throw new IllegalArgumentException("Value does not contain a blob.");
   }
 
   /**
@@ -473,7 +473,7 @@ public class DatastoreHelper {
     } else if (value.hasBlobKeyValue()) {
       return value.getBlobKeyValue();
     }
-    throw new IllegalArgumentException("Value does not contain a bob key.");
+    throw new IllegalArgumentException("Value does not contain a blob key.");
   }
 
   /**
