@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs)
 -  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
 
-This moudle provides common functionality and is required by the other service specific modules.
+This module provides common functionality and is required by the other service specific modules.
 
 Quickstart
 ----------
