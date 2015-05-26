@@ -12,9 +12,7 @@ GCloud Java: Idiomatic Java Client for Google Cloud Platform services.
   
    	* {{{https://github.com/GoogleCloudPlatform/gcloud-java}GitHub repository}}
    	
-   	* {{{http://GoogleCloudPlatform.github.io/gcloud-java/apidocs/index.html}Javadocs}}
-   	
-   	* {{{http://GoogleCloudPlatform.github.io/gcloud-java/dependencies.html}Dependencies}}
+   	* {{{./apidocs/index.html}Javadocs}}
    	
    	* {{{https://travis-ci.org/GoogleCloudPlatform/gcloud-java} Continous Integration System (Travis-CI)}}
    	
