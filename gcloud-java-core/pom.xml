@@ -7,7 +7,7 @@
   <name>GCloud Java core</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
   <description>
-    Java idiomatic client for Google Cloud Platform services.
+    Core module for the gcloud-java.
   </description>
   <parent>
     <groupId>com.google.gcloud</groupId>
