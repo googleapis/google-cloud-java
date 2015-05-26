@@ -25,6 +25,7 @@ import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.common.collect.Iterables;
 import com.google.gcloud.spi.ServiceRpcFactory;
 
 import java.io.BufferedReader;
@@ -39,6 +40,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.ServiceLoader;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -311,4 +313,13 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
   }
 
   public abstract Builder<R, O, ?> toBuilder();
+
+  /**
+   * Creates a service RPC using a factory loaded by {@link ServiceLoader}.
+   */
+  protected static <R, O extends ServiceOptions<R, O>> R createRpc(O options,
+      Class<? extends ServiceRpcFactory<R, O>> factoryClass) {
+    ServiceRpcFactory<R, O> factory = Iterables.getFirst(ServiceLoader.load(factoryClass), null);
+    return factory == null ? null : factory.create(options);
+  }
 }
