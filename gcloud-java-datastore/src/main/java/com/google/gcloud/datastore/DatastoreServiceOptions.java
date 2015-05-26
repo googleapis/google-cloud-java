@@ -28,7 +28,6 @@ import com.google.gcloud.spi.DatastoreRpc;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
 import com.google.gcloud.spi.DatastoreRpcFactory;
 import com.google.gcloud.spi.DefaultDatastoreRpc;
-import com.google.gcloud.spi.ServiceRpcProvider;
 
 import java.lang.reflect.Method;
 import java.util.Iterator;
@@ -187,7 +186,7 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
     if (serviceRpcFactory() != null) {
       datastoreRpc = serviceRpcFactory().create(this);
     } else {
-      datastoreRpc = ServiceRpcProvider.get(this, DatastoreRpcFactory.class);
+      datastoreRpc = createRpc(this, DatastoreRpcFactory.class);
       if (datastoreRpc == null) {
         datastoreRpc = new DefaultDatastoreRpc(this);
       }
