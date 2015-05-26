@@ -20,7 +20,6 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.spi.DefaultStorageRpc;
-import com.google.gcloud.spi.ServiceRpcProvider;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpcFactory;
 
@@ -77,7 +76,7 @@ public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageSer
     if (serviceRpcFactory() != null) {
       storageRpc = serviceRpcFactory().create(this);
     } else {
-      storageRpc = ServiceRpcProvider.get(this, StorageRpcFactory.class);
+      storageRpc = createRpc(this, StorageRpcFactory.class);
       if (storageRpc == null) {
         storageRpc = new DefaultStorageRpc(this);
       }
