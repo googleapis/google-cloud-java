@@ -39,4 +39,11 @@ public interface BlobReadChannel extends ReadableByteChannel, Serializable, Clos
   void close();
 
   void seek(int position) throws IOException;
+
+  /**
+   * Sets the minimum size that will be read by a single RPC.
+   * Read data will be locally buffered until consumed.
+   */
+  void chunkSize(int chunkSize);
+
 }
