@@ -23,6 +23,7 @@ import com.google.common.base.Strings;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -31,7 +32,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -52,8 +56,18 @@ public class LocalGcdHelper {
 
   public static final String DEFAULT_PROJECT_ID = "projectid1";
   public static final int PORT = 8080;
-  private static final String GCD = "gcd-head";
-  private static final String GCD_LOC = '/' + GCD + ".zip";
+  private static final String GCD_VERSION = "gcd-v1beta2-rev1-2.1.2b";
+  private static final String GCD_FILENAME = GCD_VERSION + ".zip";
+  private static final URL GCD_URL;
+
+  static {
+    try {
+      GCD_URL = new URL("http://storage.googleapis.com/gcd/tools/" + GCD_FILENAME);
+    } catch (MalformedURLException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
 
   private static class ProcessStreamReader extends Thread {
 
@@ -103,11 +117,17 @@ public class LocalGcdHelper {
 
   public void start() throws IOException, InterruptedException {
     sendQuitRequest();
-    gcdPath = Files.createTempDirectory("gcd");
+    gcdPath = Files.createTempDirectory(GCD_VERSION);
     File gcdFolder = gcdPath.toFile();
     gcdFolder.deleteOnExit();
 
-    try (ZipInputStream zipIn = new ZipInputStream(getClass().getResourceAsStream(GCD_LOC))) {
+    File gcdZipFile = new File(System.getProperty("java.io.tmpdir"), GCD_FILENAME);
+    if (!gcdZipFile.exists()) {
+      ReadableByteChannel rbc = Channels.newChannel(GCD_URL.openStream());
+      FileOutputStream fos = new FileOutputStream(gcdZipFile);
+      fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+    }
+    try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(gcdZipFile))) {
       ZipEntry entry = zipIn.getNextEntry();
       while (entry != null) {
         File filePath = new File(gcdFolder, entry.getName());
@@ -121,20 +141,20 @@ public class LocalGcdHelper {
       }
     }
 
-    File datasetFolder = new File(gcdFolder, GCD + '/' + projectId);
+    File datasetFolder = new File(gcdFolder, GCD_VERSION + '/' + projectId);
     deleteRecurse(datasetFolder.toPath());
 
     // TODO: if System.getProperty("os.name").startsWith("Windows") use cmd.exe /c and gcd.cmd
     Process temp = new ProcessBuilder()
         .redirectErrorStream(true)
-        .directory(new File(gcdFolder, GCD))
+        .directory(new File(gcdFolder, GCD_VERSION))
         .redirectOutput(new File("/dev/null"))
         .command("bash", "gcd.sh", "create", "-d", projectId, projectId)
         .start();
     temp.waitFor();
 
     temp = new ProcessBuilder()
-        .directory(new File(gcdFolder, GCD))
+        .directory(new File(gcdFolder, GCD_VERSION))
         .redirectErrorStream(true)
         .command("bash", "gcd.sh", "start", "--testing", "--allow_remote_shutdown", projectId)
         .start();
