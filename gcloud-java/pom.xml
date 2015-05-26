@@ -4,7 +4,7 @@
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
   <packaging>jar</packaging>
-  <name>GCloud Java assembly</name>
+  <name>GCloud Java</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -31,17 +31,4 @@
       <version>${project.version}</version>
     </dependency>
   </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <skip>true</skip>
-          <skipDeploy>true</skipDeploy>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>

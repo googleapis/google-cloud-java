@@ -6,6 +6,9 @@
   <packaging>jar</packaging>
   <name>GCloud Java datastore</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
+  <description>
+    Java idiomatic client for Google Cloud Datastore.
+  </description>
   <parent>
     <groupId>com.google.gcloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
