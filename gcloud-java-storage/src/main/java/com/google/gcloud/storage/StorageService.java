@@ -121,8 +121,8 @@ public interface StorageService extends Service<StorageServiceOptions> {
       return new BlobTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.entry());
     }
 
-    public static BlobTargetOption doesNotExists() {
-      return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_MATCH, 0);
+    public static BlobTargetOption doesNotExist() {
+      return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_MATCH, 0L);
     }
 
     public static BlobTargetOption generationMatch() {

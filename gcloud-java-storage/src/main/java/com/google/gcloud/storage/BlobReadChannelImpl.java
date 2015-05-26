@@ -33,7 +33,7 @@ import java.util.concurrent.Callable;
  */
 class BlobReadChannelImpl implements BlobReadChannel {
 
-  private static final int MIN_BUFFER_SIZE = 2 * 1024 * 1024;
+  private static final int DEFAULT_CHUNK_SIZE = 2 * 1024 * 1024;
   private static final long serialVersionUID = 4821762590742862669L;
 
   private final StorageServiceOptions serviceOptions;
@@ -42,6 +42,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
   private int position;
   private boolean isOpen;
   private boolean endOfStream;
+  private int chunkSize = DEFAULT_CHUNK_SIZE;
 
   private transient StorageRpc storageRpc;
   private transient StorageObject storageObject;
@@ -106,13 +107,18 @@ class BlobReadChannelImpl implements BlobReadChannel {
   }
 
   @Override
+  public void chunkSize(int chunkSize) {
+    this.chunkSize = chunkSize <= 0 ? DEFAULT_CHUNK_SIZE : chunkSize;
+  }
+
+  @Override
   public int read(ByteBuffer byteBuffer) throws IOException {
     validateOpen();
     if (buffer == null) {
       if (endOfStream) {
         return -1;
       }
-      final int toRead = Math.max(byteBuffer.remaining(), MIN_BUFFER_SIZE);
+      final int toRead = Math.max(byteBuffer.remaining(), chunkSize);
       buffer = runWithRetries(new Callable<byte[]>() {
         @Override
         public byte[] call() {
