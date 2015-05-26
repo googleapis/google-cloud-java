@@ -479,7 +479,7 @@ public class StorageExample {
   }
 
   public static void printUsage() {
-    StringBuilder actionAndParams = new StringBuilder("");
+    StringBuilder actionAndParams = new StringBuilder();
     for (Map.Entry<String, StorageAction> entry : ACTIONS.entrySet()) {
       actionAndParams.append("\n\t").append(entry.getKey());
 
