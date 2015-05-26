@@ -35,8 +35,8 @@ import java.util.Map;
 class BlobWriterChannelImpl implements BlobWriteChannel {
 
   private static final long serialVersionUID = 8675286882724938737L;
-  private static final int CHUNK_SIZE = 256 * 1024;
-  private static final int MIN_BUFFER_SIZE = 8 * CHUNK_SIZE;
+  private static final int MIN_CHUNK_SIZE = 256 * 1024;
+  private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
 
   private final StorageServiceOptions options;
   private final Blob blob;
@@ -45,6 +45,7 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
   private byte[] buffer = new byte[0];
   private int limit;
   private boolean isOpen = true;
+  private int chunkSize = DEFAULT_CHUNK_SIZE;
 
   private transient StorageRpc storageRpc;
   private transient StorageObject storageObject;
@@ -65,8 +66,8 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
   }
 
   private void flush(boolean compact) {
-    if (limit >= MIN_BUFFER_SIZE || compact && limit >= CHUNK_SIZE) {
-      final int length = limit - limit % CHUNK_SIZE;
+    if (limit >= chunkSize || compact && limit >= MIN_CHUNK_SIZE) {
+      final int length = limit - limit % MIN_CHUNK_SIZE;
       runWithRetries(callable(new Runnable() {
         @Override
         public void run() {
@@ -75,7 +76,7 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
       }), options.retryParams(), StorageServiceImpl.EXCEPTION_HANDLER);
       position += length;
       limit -= length;
-      byte[] temp = new byte[compact ? limit : MIN_BUFFER_SIZE];
+      byte[] temp = new byte[compact ? limit : chunkSize];
       System.arraycopy(buffer, length, temp, 0, limit);
       buffer = temp;
     }
@@ -107,8 +108,7 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
     if (spaceInBuffer >= toWrite) {
       byteBuffer.get(buffer, limit, toWrite);
     } else {
-      buffer = Arrays.copyOf(buffer,
-          Math.max(MIN_BUFFER_SIZE, buffer.length + toWrite - spaceInBuffer));
+      buffer = Arrays.copyOf(buffer, Math.max(chunkSize, buffer.length + toWrite - spaceInBuffer));
       byteBuffer.get(buffer, limit, toWrite);
     }
     limit += toWrite;
@@ -134,5 +134,11 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
       isOpen = false;
       buffer = null;
     }
+  }
+
+  @Override
+  public void chunkSize(int chunkSize) {
+    chunkSize = (chunkSize / MIN_CHUNK_SIZE) * MIN_CHUNK_SIZE;
+    this.chunkSize = Math.max(MIN_CHUNK_SIZE, chunkSize);
   }
 }
