@@ -42,6 +42,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -117,7 +118,7 @@ public class LocalGcdHelper {
 
   public void start() throws IOException, InterruptedException {
     sendQuitRequest();
-    gcdPath = Files.createTempDirectory(GCD_VERSION);
+    gcdPath = Files.createTempDirectory("gcd");
     File gcdFolder = gcdPath.toFile();
     gcdFolder.deleteOnExit();
 
@@ -126,6 +127,7 @@ public class LocalGcdHelper {
       ReadableByteChannel rbc = Channels.newChannel(GCD_URL.openStream());
       FileOutputStream fos = new FileOutputStream(gcdZipFile);
       fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+      fos.close();
     }
     try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(gcdZipFile))) {
       ZipEntry entry = zipIn.getNextEntry();
@@ -140,25 +142,39 @@ public class LocalGcdHelper {
         entry = zipIn.getNextEntry();
       }
     }
-
     File datasetFolder = new File(gcdFolder, GCD_VERSION + '/' + projectId);
     deleteRecurse(datasetFolder.toPath());
 
-    // TODO: if System.getProperty("os.name").startsWith("Windows") use cmd.exe /c and gcd.cmd
-    Process temp = new ProcessBuilder()
+    ProcessBuilder processBuilder = new ProcessBuilder()
         .redirectErrorStream(true)
-        .directory(new File(gcdFolder, GCD_VERSION))
-        .redirectOutput(new File("/dev/null"))
-        .command("bash", "gcd.sh", "create", "-d", projectId, projectId)
-        .start();
+        .directory(new File(gcdFolder, GCD_VERSION));
+    if (isWindows()) {
+      processBuilder.command("cmd", "/C", "gcd.cmd", "create", "-p", projectId, projectId);
+      processBuilder.redirectOutput(new File("NULL:"));
+    } else {
+      processBuilder.redirectOutput(new File("/dev/null"));
+      processBuilder.command("bash", "gcd.sh", "create", "-p", projectId, projectId);
+    }
+
+    Process temp = processBuilder.start();
     temp.waitFor();
 
-    temp = new ProcessBuilder()
+    processBuilder = new ProcessBuilder()
         .directory(new File(gcdFolder, GCD_VERSION))
-        .redirectErrorStream(true)
-        .command("bash", "gcd.sh", "start", "--testing", "--allow_remote_shutdown", projectId)
-        .start();
+        .redirectErrorStream(true);
+    if (isWindows()) {
+      processBuilder.command("cmd", "/C", "gcd.cmd", "start", "--testing",
+          "--allow_remote_shutdown", projectId);
+    } else {
+      processBuilder.command("bash", "gcd.sh", "start", "--testing", "--allow_remote_shutdown",
+          projectId);
+    }
+    temp = processBuilder.start();
     processReader = ProcessStreamReader.start(temp, "Dev App Server is now running");
+  }
+
+  private static boolean isWindows() {
+    return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).indexOf("windows") > -1;
   }
 
   private static void extractFile(ZipInputStream zipIn, File filePath) throws IOException {
