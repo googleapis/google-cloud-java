@@ -20,6 +20,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.base.Strings;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -31,6 +32,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.math.BigInteger;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -42,6 +44,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -59,6 +63,7 @@ public class LocalGcdHelper {
   public static final int PORT = 8080;
   private static final String GCD = "gcd-v1beta2-rev1-2.1.2b";
   private static final String GCD_FILENAME = GCD + ".zip";
+  private static final String MD5_CHECKSUM = "d84384cdfa8658e1204f4f8be51300e8";
   private static final URL GCD_URL;
 
   static {
@@ -68,7 +73,6 @@ public class LocalGcdHelper {
       throw new RuntimeException(e);
     }
   }
-
 
   private static class ProcessStreamReader extends Thread {
 
@@ -134,7 +138,7 @@ public class LocalGcdHelper {
 
     // check if we already have a local copy of the gcd utility and download it if not.
     File gcdZipFile = new File(System.getProperty("java.io.tmpdir"), GCD_FILENAME);
-    if (!gcdZipFile.exists()) {
+    if (!gcdZipFile.exists() || !MD5_CHECKSUM.equals(md5(gcdZipFile))) {
       ReadableByteChannel rbc = Channels.newChannel(GCD_URL.openStream());
       FileOutputStream fos = new FileOutputStream(gcdZipFile);
       fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
@@ -186,6 +190,22 @@ public class LocalGcdHelper {
     }
     temp = processBuilder.start();
     processReader = ProcessStreamReader.start(temp, "Dev App Server is now running");
+  }
+
+  private static String md5(File gcdZipFile) throws IOException {
+    try {
+      MessageDigest md5 = MessageDigest.getInstance("MD5");
+      try (InputStream is = new BufferedInputStream(new FileInputStream(gcdZipFile))) {
+        byte[] bytes = new byte[4 * 1024 * 1024];
+        int len;
+        while ((len = is.read(bytes)) >= 0) {
+          md5.update(bytes, 0, len);
+        }
+      }
+      return String.format("%032x",new BigInteger(1, md5.digest()));
+    } catch (NoSuchAlgorithmException e) {
+      throw new IOException(e);
+    }
   }
 
   private static boolean isWindows() {
