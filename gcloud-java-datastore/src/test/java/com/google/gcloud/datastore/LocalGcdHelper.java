@@ -116,12 +116,23 @@ public class LocalGcdHelper {
     this.projectId = projectId;
   }
 
+  /**
+   * Starts the local datastore for the specific project.
+   *
+   * This will unzip the gcd tool, create the project and start it.
+   * All content is written to a temporary directory that will be deleted when
+   * {@link #stop()} is called or when the program terminates) to make sure that no left-over
+   * data from prior runs is used.
+   */
   public void start() throws IOException, InterruptedException {
+    // send a quick request in case we have a hanging process from a previous run
     sendQuitRequest();
+    // Each run is associated with its own folder that is deleted once test completes.
     gcdPath = Files.createTempDirectory("gcd");
     File gcdFolder = gcdPath.toFile();
     gcdFolder.deleteOnExit();
 
+    // check if we already have a local copy of the gcd utility and download it if not.
     File gcdZipFile = new File(System.getProperty("java.io.tmpdir"), GCD_FILENAME);
     if (!gcdZipFile.exists()) {
       ReadableByteChannel rbc = Channels.newChannel(GCD_URL.openStream());
@@ -129,6 +140,7 @@ public class LocalGcdHelper {
       fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
       fos.close();
     }
+    // unzip the gcd
     try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(gcdZipFile))) {
       ZipEntry entry = zipIn.getNextEntry();
       while (entry != null) {
@@ -142,9 +154,11 @@ public class LocalGcdHelper {
         entry = zipIn.getNextEntry();
       }
     }
+    // cleanup any possible data for the same project
     File datasetFolder = new File(gcdFolder, GCD_VERSION + '/' + projectId);
     deleteRecurse(datasetFolder.toPath());
 
+    // create the datastore for the project
     ProcessBuilder processBuilder = new ProcessBuilder()
         .redirectErrorStream(true)
         .directory(new File(gcdFolder, GCD_VERSION));
@@ -159,6 +173,7 @@ public class LocalGcdHelper {
     Process temp = processBuilder.start();
     temp.waitFor();
 
+    // start the datastore for the project
     processBuilder = new ProcessBuilder()
         .directory(new File(gcdFolder, GCD_VERSION))
         .redirectErrorStream(true);
