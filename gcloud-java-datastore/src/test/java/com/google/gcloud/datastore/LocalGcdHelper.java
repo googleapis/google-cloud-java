@@ -160,7 +160,7 @@ public class LocalGcdHelper {
 
     // create the datastore for the project
     ProcessBuilder processBuilder = new ProcessBuilder()
-        .redirectErrorStream(true)
+        .redirectError(ProcessBuilder.Redirect.INHERIT)
         .directory(new File(gcdFolder, GCD_VERSION));
     if (isWindows()) {
       processBuilder.command("cmd", "/C", "gcd.cmd", "create", "-p", projectId, projectId);
