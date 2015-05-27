@@ -57,8 +57,8 @@ public class LocalGcdHelper {
 
   public static final String DEFAULT_PROJECT_ID = "projectid1";
   public static final int PORT = 8080;
-  private static final String GCD_VERSION = "gcd-v1beta2-rev1-2.1.2b";
-  private static final String GCD_FILENAME = GCD_VERSION + ".zip";
+  private static final String GCD = "gcd-v1beta2-rev1-2.1.2b";
+  private static final String GCD_FILENAME = GCD + ".zip";
   private static final URL GCD_URL;
 
   static {
@@ -155,13 +155,13 @@ public class LocalGcdHelper {
       }
     }
     // cleanup any possible data for the same project
-    File datasetFolder = new File(gcdFolder, GCD_VERSION + '/' + projectId);
+    File datasetFolder = new File(gcdFolder, GCD + '/' + projectId);
     deleteRecurse(datasetFolder.toPath());
 
     // create the datastore for the project
     ProcessBuilder processBuilder = new ProcessBuilder()
         .redirectError(ProcessBuilder.Redirect.INHERIT)
-        .directory(new File(gcdFolder, GCD_VERSION));
+        .directory(new File(gcdFolder, GCD));
     if (isWindows()) {
       processBuilder.command("cmd", "/C", "gcd.cmd", "create", "-p", projectId, projectId);
       processBuilder.redirectOutput(new File("NULL:"));
@@ -175,7 +175,7 @@ public class LocalGcdHelper {
 
     // start the datastore for the project
     processBuilder = new ProcessBuilder()
-        .directory(new File(gcdFolder, GCD_VERSION))
+        .directory(new File(gcdFolder, GCD))
         .redirectErrorStream(true);
     if (isWindows()) {
       processBuilder.command("cmd", "/C", "gcd.cmd", "start", "--testing",
