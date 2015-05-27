@@ -20,9 +20,11 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.base.Strings;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -30,14 +32,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.math.BigInteger;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -52,8 +61,18 @@ public class LocalGcdHelper {
 
   public static final String DEFAULT_PROJECT_ID = "projectid1";
   public static final int PORT = 8080;
-  private static final String GCD = "gcd-head";
-  private static final String GCD_LOC = '/' + GCD + ".zip";
+  private static final String GCD = "gcd-v1beta2-rev1-2.1.2b";
+  private static final String GCD_FILENAME = GCD + ".zip";
+  private static final String MD5_CHECKSUM = "d84384cdfa8658e1204f4f8be51300e8";
+  private static final URL GCD_URL;
+
+  static {
+    try {
+      GCD_URL = new URL("http://storage.googleapis.com/gcd/tools/" + GCD_FILENAME);
+    } catch (MalformedURLException e) {
+      throw new RuntimeException(e);
+    }
+  }
 
   private static class ProcessStreamReader extends Thread {
 
@@ -101,13 +120,32 @@ public class LocalGcdHelper {
     this.projectId = projectId;
   }
 
+  /**
+   * Starts the local datastore for the specific project.
+   *
+   * This will unzip the gcd tool, create the project and start it.
+   * All content is written to a temporary directory that will be deleted when
+   * {@link #stop()} is called or when the program terminates) to make sure that no left-over
+   * data from prior runs is used.
+   */
   public void start() throws IOException, InterruptedException {
+    // send a quick request in case we have a hanging process from a previous run
     sendQuitRequest();
+    // Each run is associated with its own folder that is deleted once test completes.
     gcdPath = Files.createTempDirectory("gcd");
     File gcdFolder = gcdPath.toFile();
     gcdFolder.deleteOnExit();
 
-    try (ZipInputStream zipIn = new ZipInputStream(getClass().getResourceAsStream(GCD_LOC))) {
+    // check if we already have a local copy of the gcd utility and download it if not.
+    File gcdZipFile = new File(System.getProperty("java.io.tmpdir"), GCD_FILENAME);
+    if (!gcdZipFile.exists() || !MD5_CHECKSUM.equals(md5(gcdZipFile))) {
+      ReadableByteChannel rbc = Channels.newChannel(GCD_URL.openStream());
+      FileOutputStream fos = new FileOutputStream(gcdZipFile);
+      fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+      fos.close();
+    }
+    // unzip the gcd
+    try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(gcdZipFile))) {
       ZipEntry entry = zipIn.getNextEntry();
       while (entry != null) {
         File filePath = new File(gcdFolder, entry.getName());
@@ -120,25 +158,58 @@ public class LocalGcdHelper {
         entry = zipIn.getNextEntry();
       }
     }
-
+    // cleanup any possible data for the same project
     File datasetFolder = new File(gcdFolder, GCD + '/' + projectId);
     deleteRecurse(datasetFolder.toPath());
 
-    // TODO: if System.getProperty("os.name").startsWith("Windows") use cmd.exe /c and gcd.cmd
-    Process temp = new ProcessBuilder()
-        .redirectErrorStream(true)
-        .directory(new File(gcdFolder, GCD))
-        .redirectOutput(new File("/dev/null"))
-        .command("bash", "gcd.sh", "create", "-d", projectId, projectId)
-        .start();
+    // create the datastore for the project
+    ProcessBuilder processBuilder = new ProcessBuilder()
+        .redirectError(ProcessBuilder.Redirect.INHERIT)
+        .directory(new File(gcdFolder, GCD));
+    if (isWindows()) {
+      processBuilder.command("cmd", "/C", "gcd.cmd", "create", "-p", projectId, projectId);
+      processBuilder.redirectOutput(new File("NULL:"));
+    } else {
+      processBuilder.redirectOutput(new File("/dev/null"));
+      processBuilder.command("bash", "gcd.sh", "create", "-p", projectId, projectId);
+    }
+
+    Process temp = processBuilder.start();
     temp.waitFor();
 
-    temp = new ProcessBuilder()
+    // start the datastore for the project
+    processBuilder = new ProcessBuilder()
         .directory(new File(gcdFolder, GCD))
-        .redirectErrorStream(true)
-        .command("bash", "gcd.sh", "start", "--testing", "--allow_remote_shutdown", projectId)
-        .start();
+        .redirectErrorStream(true);
+    if (isWindows()) {
+      processBuilder.command("cmd", "/C", "gcd.cmd", "start", "--testing",
+          "--allow_remote_shutdown", projectId);
+    } else {
+      processBuilder.command("bash", "gcd.sh", "start", "--testing", "--allow_remote_shutdown",
+          projectId);
+    }
+    temp = processBuilder.start();
     processReader = ProcessStreamReader.start(temp, "Dev App Server is now running");
+  }
+
+  private static String md5(File gcdZipFile) throws IOException {
+    try {
+      MessageDigest md5 = MessageDigest.getInstance("MD5");
+      try (InputStream is = new BufferedInputStream(new FileInputStream(gcdZipFile))) {
+        byte[] bytes = new byte[4 * 1024 * 1024];
+        int len;
+        while ((len = is.read(bytes)) >= 0) {
+          md5.update(bytes, 0, len);
+        }
+      }
+      return String.format("%032x",new BigInteger(1, md5.digest()));
+    } catch (NoSuchAlgorithmException e) {
+      throw new IOException(e);
+    }
+  }
+
+  private static boolean isWindows() {
+    return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).indexOf("windows") > -1;
   }
 
   private static void extractFile(ZipInputStream zipIn, File filePath) throws IOException {
