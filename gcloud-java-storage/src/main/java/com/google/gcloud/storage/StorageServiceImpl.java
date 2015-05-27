@@ -430,7 +430,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   @Override
-  public URL signUrl(SignUrlRequest request) {
+  public URL signUrl(Blob blob, long expiration, SignUrlOption... options) {
     // todo: implement and add test
     return null;
   }
