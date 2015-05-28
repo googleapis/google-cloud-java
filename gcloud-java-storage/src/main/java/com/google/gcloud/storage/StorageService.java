@@ -20,12 +20,12 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.Serializable;
 import java.net.URL;
-import java.security.PrivateKey;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -219,20 +219,20 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     private static final long serialVersionUID = 7850569877451099267L;
 
-    private final String name;
+    private final Option option;
     private final Object value;
 
-    enum OPTIONS {
-
+    enum Option {
+      HTTP_METHOD, CONTENT_TYPE, MD5, SERVICE_ACCOUNT_CRED;
     }
-    
-    private SignUrlOption(String name, Object value) {
-      this.name = name;
+
+    private SignUrlOption(Option option, Object value) {
+      this.option = option;
       this.value = value;
     }
 
-    String name() {
-      return name;
+    Option option() {
+      return option;
     }
 
     Object value() {
@@ -243,7 +243,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
      * The HTTP method to be used with the signed URL.
      */
     public static SignUrlOption httpMethod(HttpMethod httpMethod) {
-      return new SignUrlOption("HTTP_METHOD", httpMethod.name());
+      return new SignUrlOption(Option.HTTP_METHOD, httpMethod.name());
     }
 
     /**
@@ -251,7 +251,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
      * When used, users of the signed URL should include the blob's content-type with their request.
      */
     public static SignUrlOption withContentType() {
-      return new SignUrlOption("CONTENT_TYPE", true);
+      return new SignUrlOption(Option.CONTENT_TYPE, true);
     }
 
     /**
@@ -259,16 +259,17 @@ public interface StorageService extends Service<StorageServiceOptions> {
      * When used, users of the signed URL should include the blob's md5 with their request.
      */
     public static SignUrlOption withMd5() {
-      return new SignUrlOption("MD5", true);
+      return new SignUrlOption(Option.MD5, true);
     }
 
     /**
-     * The private key to use for signing the URL.
-     * A private key is required for signing. If not provided an attempt will be made to get
-     * it from the service credentials.
+     * Service account credentials which are used for signing the URL.
+     * If not provided an attempt will be made to get it from the environment.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/authentication#service_accounts">Service account</a>
      */
-    public static SignUrlOption signWith(PrivateKey privateKey) {
-      return new SignUrlOption("PRIVATE_KEY", privateKey);
+    public static SignUrlOption serviceAccount(ServiceAccountAuthCredentials credentials) {
+      return new SignUrlOption(Option.SERVICE_ACCOUNT_CRED, credentials);
     }
   }
 
@@ -278,7 +279,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     private final List<SourceBlob> sourceBlobs;
     private final Blob target;
-    private final List<BlobTargetOption> targetOptions;
+    private final List<StorageService.BlobTargetOption> targetOptions;
 
     public static class SourceBlob implements Serializable {
 
@@ -597,7 +598,8 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * accessible blobs, but don't want to require users to explicitly log in.
    *
    * @param blob the blob associated with the signed url
-   * @param  expirationTimeMillis the signed URL expiration (epoch time in milliseconds)
+   * @param  expirationTimeInSeconds the signed URL expiration (using epoch time)
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
    */
-  URL signUrl(Blob blob, long expirationTimeMillis, SignUrlOption... options);
+  URL signUrl(Blob blob, long expirationTimeInSeconds, SignUrlOption... options);
 }
