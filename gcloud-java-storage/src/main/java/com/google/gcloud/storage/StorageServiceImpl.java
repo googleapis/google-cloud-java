@@ -29,6 +29,7 @@ import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_M
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.Function;
@@ -51,6 +52,7 @@ import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.Signature;
@@ -467,7 +469,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       stBuilder.append(blob.contentType());
     }
     stBuilder.append('\n');
-    stBuilder.append(expiration).append('\n').append('\n');
+    stBuilder.append(expiration).append('\n');
     StringBuilder path = new StringBuilder();
     if (!blob.bucket().startsWith("/")) {
       path.append('/');
@@ -484,9 +486,9 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     try {
       Signature signer = Signature.getInstance("SHA256withRSA");
       signer.initSign(cred.privateKey());
-      signer.update(stBuilder.toString().getBytes("UTF-8"));
-      String signature = BaseEncoding.base64Url().encode(signer.sign());
-      // todo - use options().host() - after default is correct and value is past to RPC
+      signer.update(stBuilder.toString().getBytes(UTF_8));
+      String signature =
+          URLEncoder.encode(BaseEncoding.base64().encode(signer.sign()), UTF_8.name());
       stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
       stBuilder.append("?GoogleAccessId=").append(cred.account());
       stBuilder.append("&Expires=").append(expiration);
