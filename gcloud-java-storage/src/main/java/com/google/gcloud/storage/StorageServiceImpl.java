@@ -47,6 +47,7 @@ import com.google.gcloud.spi.StorageRpc.Tuple;
 
 import java.io.Serializable;
 import java.net.URL;
+import java.security.PrivateKey;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -431,7 +432,11 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   @Override
   public URL signUrl(Blob blob, long expiration, SignUrlOption... options) {
-    // todo: implement and add test
+    Map<String, Object> optionMap = Maps.newHashMapWithExpectedSize(options.length);
+    for (SignUrlOption option : options) {
+      optionMap.put(option.name(), option.value());
+    }
+    PrivateKey key = (PrivateKey) optionMap.get("");
     return null;
   }
 

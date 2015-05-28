@@ -222,9 +222,21 @@ public interface StorageService extends Service<StorageServiceOptions> {
     private final String name;
     private final Object value;
 
+    enum OPTIONS {
+
+    }
+    
     private SignUrlOption(String name, Object value) {
       this.name = name;
       this.value = value;
+    }
+
+    String name() {
+      return name;
+    }
+
+    Object value() {
+      return value;
     }
 
     /**
@@ -585,7 +597,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * accessible blobs, but don't want to require users to explicitly log in.
    *
    * @param blob the blob associated with the signed url
-   * @param  expiration the signed URL expiration (epoch time in milliseconds)
+   * @param  expirationTimeMillis the signed URL expiration (epoch time in milliseconds)
    */
-  URL signUrl(Blob blob, long expiration, SignUrlOption... options);
+  URL signUrl(Blob blob, long expirationTimeMillis, SignUrlOption... options);
 }
