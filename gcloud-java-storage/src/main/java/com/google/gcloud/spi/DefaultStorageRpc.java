@@ -82,9 +82,9 @@ public class DefaultStorageRpc implements StorageRpc {
     HttpRequestInitializer initializer = options.httpRequestInitializer();
     this.options = options;
     storage = new Storage.Builder(transport, new JacksonFactory(), initializer)
+        .setRootUrl(options.host())
         .setApplicationName("gcloud-java")
         .build();
-    // Todo: make sure nulls are being used as Data.asNull()
   }
 
   private static StorageServiceException translate(IOException exception) {
