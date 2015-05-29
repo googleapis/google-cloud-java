@@ -22,9 +22,9 @@
  * StorageOptions options = StorageOptions.builder().projectId("project").build();
  * Storage storage = StorageFactory.instance().get(options);
  * byte[] content = readContent();
- * Blob blob = storage.get("bucket", "blob_name");
- * if (blob == null) {
- *   storage.create(Blob.of("bucket", "blob_name"), content);
+ * BlobInfo blobInfo = storage.get("bucket", "blob_name");
+ * if (blobInfo == null) {
+ *   storage.create(BlobInfo.of("bucket", "blob_name"), content);
  * } else {
  *   byte[] prevContent = storage.load("bucket", "blob_name");
  *   content = mergeContent(prevContent, content);

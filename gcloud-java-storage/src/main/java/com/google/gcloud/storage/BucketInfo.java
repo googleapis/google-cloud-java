@@ -48,7 +48,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and Terminology</a>
  */
-public final class Bucket implements Serializable {
+public final class BucketInfo implements Serializable {
 
   private static final long serialVersionUID = -3946094202176916586L;
 
@@ -69,19 +69,19 @@ public final class Bucket implements Serializable {
   private final Location location;
   private final StorageClass storageClass;
 
-  static final Function<com.google.api.services.storage.model.Bucket, Bucket> FROM_PB_FUNCTION =
-      new Function<com.google.api.services.storage.model.Bucket, Bucket>() {
+  static final Function<com.google.api.services.storage.model.Bucket, BucketInfo> FROM_PB_FUNCTION =
+      new Function<com.google.api.services.storage.model.Bucket, BucketInfo>() {
         @Override
-        public Bucket apply(com.google.api.services.storage.model.Bucket pb) {
-          return Bucket.fromPb(pb);
+        public BucketInfo apply(com.google.api.services.storage.model.Bucket pb) {
+          return BucketInfo.fromPb(pb);
         }
       };
 
-  static final Function<Bucket, com.google.api.services.storage.model.Bucket> TO_PB_FUNCTION =
-      new Function<Bucket, com.google.api.services.storage.model.Bucket>() {
+  static final Function<BucketInfo, com.google.api.services.storage.model.Bucket> TO_PB_FUNCTION =
+      new Function<BucketInfo, com.google.api.services.storage.model.Bucket>() {
         @Override
-        public com.google.api.services.storage.model.Bucket apply(Bucket bucket) {
-          return bucket.toPb();
+        public com.google.api.services.storage.model.Bucket apply(BucketInfo bucketInfo) {
+          return bucketInfo.toPb();
         }
       };
 
@@ -491,13 +491,13 @@ public final class Bucket implements Serializable {
       return this;
     }
 
-    public Bucket build() {
+    public BucketInfo build() {
       checkNotNull(name);
-      return new Bucket(this);
+      return new BucketInfo(this);
     }
   }
 
-  private Bucket(Builder builder) {
+  private BucketInfo(Builder builder) {
     id = builder.id;
     name = builder.name;
     etag = builder.etag;
@@ -607,10 +607,10 @@ public final class Bucket implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof Bucket)) {
+    if (!(obj instanceof BucketInfo)) {
       return  false;
     }
-    return Objects.equals(toPb(), ((Bucket) obj).toPb());
+    return Objects.equals(toPb(), ((BucketInfo) obj).toPb());
   }
 
   @Override
@@ -620,7 +620,7 @@ public final class Bucket implements Serializable {
         .toString();
   }
 
-  public static Bucket of(String name) {
+  public static BucketInfo of(String name) {
     return builder(name).build();
   }
 
@@ -691,7 +691,7 @@ public final class Bucket implements Serializable {
     return bucketPb;
   }
 
-  static Bucket fromPb(com.google.api.services.storage.model.Bucket bucketPb) {
+  static BucketInfo fromPb(com.google.api.services.storage.model.Bucket bucketPb) {
     Builder builder = new Builder()
         .name(bucketPb.getName())
         .id(bucketPb.getId())
