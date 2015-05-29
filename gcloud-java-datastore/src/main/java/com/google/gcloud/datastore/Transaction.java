@@ -62,7 +62,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * to fail if entity was changed by others after it was seen by this transaction) but any
    * write changes in this transaction will not be reflected by the returned entity.
    *
-   * @throws DatastoreServiceException upon failure or if no longer active
+   * @throws DatastoreException upon failure or if no longer active
    */
   @Override
   Entity get(Key key);
@@ -73,7 +73,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * to fail if any of the entities was changed by others after they were seen by this transaction)
    * but any write changes in this transaction will not be reflected by the returned entities.
    *
-   * @throws DatastoreServiceException upon failure or if no longer active
+   * @throws DatastoreException upon failure or if no longer active
    */
   @Override
   Iterator<Entity> get(Key... key);
@@ -84,7 +84,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * to fail if any of the entities was changed by others after they were seen by this transaction)
    * but any write changes in this transaction will not be reflected by the returned entities.
    *
-   * @throws DatastoreServiceException upon failure or if no longer active
+   * @throws DatastoreException upon failure or if no longer active
    */
   @Override
   List<Entity> fetch(Key... keys);
@@ -96,7 +96,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * query was performed) but any write changes in this transaction will not be reflected by
    * the result.
    *
-   * @throws DatastoreServiceException upon failure or if no longer active
+   * @throws DatastoreException upon failure or if no longer active
    */
   @Override
   <T> QueryResults<T> run(Query<T> query);
@@ -104,14 +104,14 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
   /**
    * Commit the transaction.
    *
-   * @throws DatastoreServiceException if could not commit the transaction or if no longer active
+   * @throws DatastoreException if could not commit the transaction or if no longer active
    */
   Response commit();
 
   /**
    * Rollback the transaction.
    *
-   * @throws DatastoreServiceException if transaction was already committed
+   * @throws DatastoreException if transaction was already committed
    */
   void rollback();
 
@@ -122,7 +122,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
   boolean active();
 
   /**
-   * Returns the transaction associated {@link DatastoreService}.
+   * Returns the transaction associated {@link Datastore}.
    */
-  DatastoreService datastore();
+  Datastore datastore();
 }

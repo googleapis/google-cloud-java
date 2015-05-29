@@ -34,7 +34,7 @@ class DatastoreHelper {
   }
 
 
-  static Key allocateId(DatastoreService service, IncompleteKey key) {
+  static Key allocateId(Datastore service, IncompleteKey key) {
     return service.allocateId(new IncompleteKey[]{key}).get(0);
   }
 
@@ -46,7 +46,7 @@ class DatastoreHelper {
     return writer.add(new FullEntity<?>[] {entity}).get(0);
   }
 
-  static KeyFactory newKeyFactory(DatastoreServiceOptions options) {
+  static KeyFactory newKeyFactory(DatastoreOptions options) {
     return new KeyFactory(options.projectId(), options.namespace());
   }
 
@@ -69,16 +69,16 @@ class DatastoreHelper {
     return list;
   }
 
-  static <T> T runInTransaction(DatastoreService datastoreService,
-      DatastoreService.TransactionCallable<T> callable, TransactionOption... options) {
-    Transaction transaction = datastoreService.newTransaction(options);
+  static <T> T runInTransaction(Datastore datastore,
+      Datastore.TransactionCallable<T> callable, TransactionOption... options) {
+    Transaction transaction = datastore.newTransaction(options);
     try {
       T value = callable.run(transaction);
       transaction.commit();
       return value;
     } catch (Exception ex) {
       transaction.rollback();
-      throw DatastoreServiceException.propagateUserException(ex);
+      throw DatastoreException.propagateUserException(ex);
     } finally {
       if (transaction.active()) {
         transaction.rollback();

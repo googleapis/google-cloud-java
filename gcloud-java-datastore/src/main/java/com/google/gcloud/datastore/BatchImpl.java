@@ -27,7 +27,7 @@ import java.util.Map;
 
 class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
 
-  private final DatastoreServiceImpl datastore;
+  private final DatastoreImpl datastore;
   private final boolean force;
 
   static class ResponseImpl implements Batch.Response {
@@ -49,7 +49,7 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
     }
   }
 
-  BatchImpl(DatastoreServiceImpl datastore, BatchOption... options) {
+  BatchImpl(DatastoreImpl datastore, BatchOption... options) {
     super("batch");
     this.datastore = datastore;
     Map<Class<? extends BatchOption>, BatchOption> optionsMap = BatchOption.asImmutableMap(options);
@@ -76,7 +76,7 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
   }
 
   @Override
-  public DatastoreService datastore() {
+  public Datastore datastore() {
     return datastore;
   }
 }
