@@ -45,8 +45,8 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 
 
-final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
-    implements DatastoreService {
+final class DatastoreImpl extends BaseService<DatastoreOptions>
+    implements Datastore {
 
   private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR =
       new Interceptor() {
@@ -74,7 +74,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
   private final DatastoreRpc datastoreRpc;
   private final RetryParams retryParams;
 
-  DatastoreServiceImpl(DatastoreServiceOptions options) {
+  DatastoreImpl(DatastoreOptions options) {
     super(options);
     this.datastoreRpc = options.datastoreRpc();
     retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
@@ -112,7 +112,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
         }
       }, retryParams, EXCEPTION_HANDLER);
     } catch (RetryHelperException e) {
-      throw DatastoreServiceException.translateAndThrow(e);
+      throw DatastoreException.translateAndThrow(e);
     }
   }
 
@@ -150,7 +150,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
         }
       }, retryParams, EXCEPTION_HANDLER);
     } catch (RetryHelperException e) {
-      throw DatastoreServiceException.translateAndThrow(e);
+      throw DatastoreException.translateAndThrow(e);
     }
   }
 
@@ -181,7 +181,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
       }
       if (completeEntity != null) {
         if (completeEntities.put(completeEntity.key(), completeEntity) != null) {
-          throw DatastoreServiceException.throwInvalidRequest(
+          throw DatastoreException.throwInvalidRequest(
               "Duplicate entity with the key %s", entity.key());
         }
         mutationPb.addInsert(completeEntity.toPb());
@@ -277,7 +277,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
         }
       }, retryParams, EXCEPTION_HANDLER);
     } catch (RetryHelperException e) {
-      throw DatastoreServiceException.translateAndThrow(e);
+      throw DatastoreException.translateAndThrow(e);
     }
   }
 
@@ -348,7 +348,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
         }
       }, retryParams, EXCEPTION_HANDLER);
     } catch (RetryHelperException e) {
-      throw DatastoreServiceException.translateAndThrow(e);
+      throw DatastoreException.translateAndThrow(e);
     }
   }
 
@@ -366,7 +366,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
         }
       }, retryParams, EXCEPTION_HANDLER);
     } catch (RetryHelperException e) {
-      throw DatastoreServiceException.translateAndThrow(e);
+      throw DatastoreException.translateAndThrow(e);
     }
   }
 
@@ -385,7 +385,7 @@ final class DatastoreServiceImpl extends BaseService<DatastoreServiceOptions>
         }
       }, retryParams, EXCEPTION_HANDLER);
     } catch (RetryHelperException e) {
-      throw DatastoreServiceException.translateAndThrow(e);
+      throw DatastoreException.translateAndThrow(e);
     }
   }
 }

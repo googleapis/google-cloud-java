@@ -40,7 +40,7 @@ public final class BatchResponse implements Serializable {
     private static final Result EMPTY = new BatchResponse.Result(null);
 
     private final T value;
-    private final StorageServiceException exception;
+    private final StorageException exception;
 
 
     public Result(T value) {
@@ -48,7 +48,7 @@ public final class BatchResponse implements Serializable {
       this.exception = null;
     }
 
-    public Result(StorageServiceException exception) {
+    public Result(StorageException exception) {
       this.exception = exception;
       this.value = null;
     }
@@ -60,9 +60,9 @@ public final class BatchResponse implements Serializable {
     /**
      * Returns the result.
      *
-     * @throws StorageServiceException if failed
+     * @throws StorageException if failed
      */
-    public T get() throws StorageServiceException {
+    public T get() throws StorageException {
       if (failed()) {
         throw failure();
       }
@@ -72,7 +72,7 @@ public final class BatchResponse implements Serializable {
     /**
      * Returns the failure or {@code null} if was successful.
      */
-    public StorageServiceException failure() {
+    public StorageException failure() {
       return exception;
     }
 

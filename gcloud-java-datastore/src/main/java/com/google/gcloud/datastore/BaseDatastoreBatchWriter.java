@@ -195,8 +195,8 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     }
   }
 
-  protected DatastoreServiceException newInvalidRequest(String msg, Object... params) {
-    return DatastoreServiceException.throwInvalidRequest(String.format(msg, params));
+  protected DatastoreException newInvalidRequest(String msg, Object... params) {
+    return DatastoreException.throwInvalidRequest(String.format(msg, params));
   }
 
   protected DatastoreV1.Mutation.Builder toMutationPb() {
@@ -219,5 +219,5 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     return mutationPb;
   }
 
-  protected abstract DatastoreService datastore();
+  protected abstract Datastore datastore();
 }

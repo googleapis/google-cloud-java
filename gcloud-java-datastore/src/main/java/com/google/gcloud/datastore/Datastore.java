@@ -23,12 +23,12 @@ import java.util.List;
 /**
  * An interface for Google Cloud Datastore.
  */
-public interface DatastoreService extends Service<DatastoreServiceOptions>, DatastoreReaderWriter {
+public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWriter {
 
   /**
    * Returns a new Datastore transaction.
    *
-   * @throws DatastoreServiceException upon failure
+   * @throws DatastoreException upon failure
    */
   Transaction newTransaction(TransactionOption... options);
 
@@ -47,15 +47,15 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
 
 
   /**
-   * Invokes the callback's {@link DatastoreService.TransactionCallable#run} method with a
+   * Invokes the callback's {@link Datastore.TransactionCallable#run} method with a
    * {@link DatastoreReaderWriter} that is associated with a new transaction.
    * The transaction will be committed upon successful invocation.
    * Any thrown exception will cause the transaction to rollback and will be propagated
-   * as a {@link DatastoreServiceException} with the original exception as its root cause.
+   * as a {@link DatastoreException} with the original exception as its root cause.
    *
    * @param callable the callback to call with a newly created transactional readerWriter
    * @param options the options for the created transaction
-   * @throws DatastoreServiceException upon failure
+   * @throws DatastoreException upon failure
    */
   <T> T runInTransaction(TransactionCallable<T> callable, TransactionOption... options);
 
@@ -69,35 +69,35 @@ public interface DatastoreService extends Service<DatastoreServiceOptions>, Data
    * The returned key will have the same information (projectId, kind, namespace and ancestors)
    * as the given key and will have a newly assigned id.
    *
-   * @throws DatastoreServiceException upon failure
+   * @throws DatastoreException upon failure
    */
   Key allocateId(IncompleteKey key);
 
   /**
    * Returns a list of keys using the allocated ids ordered by the input.
    *
-   * @throws DatastoreServiceException upon failure
+   * @throws DatastoreException upon failure
    * @see #allocateId(IncompleteKey)
    */
   List<Key> allocateId(IncompleteKey... key);
 
   /**
    * {@inheritDoc}
-   * @throws DatastoreServiceException upon failure
+   * @throws DatastoreException upon failure
    */
   @Override
   void update(Entity... entity);
 
   /**
    * {@inheritDoc}
-   * @throws DatastoreServiceException upon failure
+   * @throws DatastoreException upon failure
    */
   @Override
   void put(Entity... entity);
 
   /**
    * {@inheritDoc}
-   * @throws DatastoreServiceException upon failure
+   * @throws DatastoreException upon failure
    */
   @Override
   void delete(Key... key);

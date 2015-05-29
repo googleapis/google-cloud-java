@@ -29,7 +29,7 @@ import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_M
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
-import static java.util.concurrent.Executors.callable;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.Function;
@@ -39,7 +39,9 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
+import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
@@ -47,13 +49,22 @@ import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.Signature;
+import java.security.SignatureException;
 import java.util.Arrays;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
 
-final class StorageServiceImpl extends BaseService<StorageServiceOptions> implements StorageService {
+final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
 
@@ -66,8 +77,8 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     @Override
     public RetryResult beforeEval(Exception exception) {
-      if (exception instanceof StorageServiceException) {
-        boolean retriable = ((StorageServiceException) exception).retryable();
+      if (exception instanceof StorageException) {
+        boolean retriable = ((StorageException) exception).retryable();
         return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.ABORT;
       }
       return null;
@@ -79,13 +90,11 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   private final StorageRpc storageRpc;
 
-  StorageServiceImpl(StorageServiceOptions options) {
+  StorageImpl(StorageOptions options) {
     super(options);
     storageRpc = options.storageRpc();
-    // todo: replace nulls with Value.asNull (per toPb)
     // todo: configure timeouts - https://developers.google.com/api-client-library/java/google-api-java-client/errors
     // todo: provide rewrite - https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite
-    // todo: provide signed urls - https://cloud.google.com/storage/docs/access-control#Signed-URLs
     // todo: check if we need to expose https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls/insert vs using bucket update/patch
   }
 
@@ -124,7 +133,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
           public com.google.api.services.storage.model.Bucket call() {
             try {
               return storageRpc.get(bucketPb, optionsMap);
-            } catch (StorageServiceException ex) {
+            } catch (StorageException ex) {
               if (ex.code() == HTTP_NOT_FOUND) {
                 return null;
               }
@@ -144,7 +153,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       public StorageObject call() {
         try {
           return storageRpc.get(storedObject, optionsMap);
-        } catch (StorageServiceException ex) {
+        } catch (StorageException ex) {
           if (ex.code() == HTTP_NOT_FOUND) {
             return null;
           }
@@ -160,9 +169,9 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     private static final long serialVersionUID = 8236329004030295223L;
     protected final Map<StorageRpc.Option, ?> requestOptions;
-    protected final StorageServiceOptions serviceOptions;
+    protected final StorageOptions serviceOptions;
 
-    BasePageFetcher(StorageServiceOptions serviceOptions, String cursor,
+    BasePageFetcher(StorageOptions serviceOptions, String cursor,
         Map<StorageRpc.Option, ?> optionMap) {
       this.serviceOptions = serviceOptions;
       ImmutableMap.Builder<StorageRpc.Option, Object> builder = ImmutableMap.builder();
@@ -180,7 +189,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     private static final long serialVersionUID = -5490616010200159174L;
 
-    BucketPageFetcher(StorageServiceOptions serviceOptions, String cursor,
+    BucketPageFetcher(StorageOptions serviceOptions, String cursor,
         Map<StorageRpc.Option, ?> optionMap) {
       super(serviceOptions, cursor, optionMap);
     }
@@ -196,7 +205,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     private static final long serialVersionUID = -5490616010200159174L;
     private final String bucket;
 
-    BlobPageFetcher(String bucket, StorageServiceOptions serviceOptions, String cursor,
+    BlobPageFetcher(String bucket, StorageOptions serviceOptions, String cursor,
         Map<StorageRpc.Option, ?> optionMap) {
       super(serviceOptions, cursor, optionMap);
       this.bucket = bucket;
@@ -213,7 +222,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     return listBuckets(options(), optionMap(options));
   }
 
-  private static ListResult<Bucket> listBuckets(final StorageServiceOptions serviceOptions,
+  private static ListResult<Bucket> listBuckets(final StorageOptions serviceOptions,
       final Map<StorageRpc.Option, ?> optionsMap) {
     Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result = runWithRetries(
         new Callable<Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>>>() {
@@ -239,7 +248,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   private static ListResult<Blob> listBlobs(final String bucket,
-      final StorageServiceOptions serviceOptions, final Map<StorageRpc.Option, ?> optionsMap) {
+      final StorageOptions serviceOptions, final Map<StorageRpc.Option, ?> optionsMap) {
     Tuple<String, Iterable<StorageObject>> result = runWithRetries(
         new Callable<Tuple<String, Iterable<StorageObject>>>() {
           @Override
@@ -396,16 +405,16 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   private <I, O extends Serializable> List<BatchResponse.Result<O>> transformBatchResult(
       Iterable<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request,
-      Map<StorageObject, Tuple<I, StorageServiceException>> results, Function<I, O> transform,
+      Map<StorageObject, Tuple<I, StorageException>> results, Function<I, O> transform,
       int... nullOnErrorCodes) {
     Set nullOnErrorCodesSet = Sets.newHashSet(Ints.asList(nullOnErrorCodes));
     List<BatchResponse.Result<O>> response = Lists.newArrayListWithCapacity(results.size());
     for (Tuple<StorageObject, ?> tuple : request) {
-      Tuple<I, StorageServiceException> result = results.get(tuple.x());
+      Tuple<I, StorageException> result = results.get(tuple.x());
       if (result.x() != null) {
         response.add(BatchResponse.Result.of(transform.apply(result.x())));
       } else {
-        StorageServiceException exception = result.y();
+        StorageException exception = result.y();
         if (nullOnErrorCodesSet.contains(exception.code())) {
           //noinspection unchecked
           response.add(BatchResponse.Result.<O>empty());
@@ -427,6 +436,69 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   public BlobWriteChannel writer(Blob blob, BlobTargetOption... options) {
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     return new BlobWriterChannelImpl(options(), blob, optionsMap);
+  }
+
+  @Override
+  public URL signUrl(Blob blob, long expiration, SignUrlOption... options) {
+    EnumMap<SignUrlOption.Option, Object> optionMap = Maps.newEnumMap(SignUrlOption.Option.class);
+    for (SignUrlOption option : options) {
+      optionMap.put(option.option(), option.value());
+    }
+    ServiceAccountAuthCredentials cred =
+        (ServiceAccountAuthCredentials) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
+    if (cred == null) {
+      checkArgument(options().authCredentials() instanceof ServiceAccountAuthCredentials,
+          "Signing key was not provided and could not be derived");
+      cred = (ServiceAccountAuthCredentials) this.options().authCredentials();
+    }
+    // construct signature data - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
+    StringBuilder stBuilder = new StringBuilder();
+    if (optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD)) {
+      stBuilder.append(optionMap.get(SignUrlOption.Option.HTTP_METHOD));
+    } else {
+      stBuilder.append(HttpMethod.GET);
+    }
+    stBuilder.append('\n');
+    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5) , false)) {
+      checkArgument(blob.md5() != null, "Blob is missing a value for md5");
+      stBuilder.append(blob.md5());
+    }
+    stBuilder.append('\n');
+    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE) , false)) {
+      checkArgument(blob.contentType() != null, "Blob is missing a value for content-type");
+      stBuilder.append(blob.contentType());
+    }
+    stBuilder.append('\n');
+    stBuilder.append(expiration).append('\n');
+    StringBuilder path = new StringBuilder();
+    if (!blob.bucket().startsWith("/")) {
+      path.append('/');
+    }
+    path.append(blob.bucket());
+    if (!blob.bucket().endsWith("/")) {
+      path.append('/');
+    }
+    if (blob.name().startsWith("/")) {
+      path.setLength(stBuilder.length() - 1);
+    }
+    path.append(blob.name());
+    stBuilder.append(path);
+    try {
+      Signature signer = Signature.getInstance("SHA256withRSA");
+      signer.initSign(cred.privateKey());
+      signer.update(stBuilder.toString().getBytes(UTF_8));
+      String signature =
+          URLEncoder.encode(BaseEncoding.base64().encode(signer.sign()), UTF_8.name());
+      stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
+      stBuilder.append("?GoogleAccessId=").append(cred.account());
+      stBuilder.append("&Expires=").append(expiration);
+      stBuilder.append("&Signature=").append(signature);
+      return new URL(stBuilder.toString());
+    } catch (MalformedURLException | NoSuchAlgorithmException | UnsupportedEncodingException e) {
+      throw new IllegalStateException(e);
+    } catch (SignatureException | InvalidKeyException e) {
+      throw new IllegalArgumentException("Invalid service account private key");
+    }
   }
 
   private Map<StorageRpc.Option, ?> optionMap(Long generation, Long metaGeneration,

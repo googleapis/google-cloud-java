@@ -20,10 +20,12 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.Serializable;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -36,7 +38,7 @@ import java.util.Set;
  *
  * @see <a href="https://cloud.google.com/storage/docs">Google Cloud Storage</a>
  */
-public interface StorageService extends Service<StorageServiceOptions> {
+public interface Storage extends Service<StorageOptions> {
 
   enum PredefinedAcl {
     AUTHENTICATED_READ("authenticatedRead"),
@@ -210,6 +212,64 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     public static BlobListOption recursive(boolean recursive) {
       return new BlobListOption(StorageRpc.Option.DELIMITER, recursive);
+    }
+  }
+
+  class SignUrlOption implements Serializable {
+
+    private static final long serialVersionUID = 7850569877451099267L;
+
+    private final Option option;
+    private final Object value;
+
+    enum Option {
+      HTTP_METHOD, CONTENT_TYPE, MD5, SERVICE_ACCOUNT_CRED;
+    }
+
+    private SignUrlOption(Option option, Object value) {
+      this.option = option;
+      this.value = value;
+    }
+
+    Option option() {
+      return option;
+    }
+
+    Object value() {
+      return value;
+    }
+
+    /**
+     * The HTTP method to be used with the signed URL.
+     */
+    public static SignUrlOption httpMethod(HttpMethod httpMethod) {
+      return new SignUrlOption(Option.HTTP_METHOD, httpMethod.name());
+    }
+
+    /**
+     * Use it if signature should include the blob's content-type.
+     * When used, users of the signed URL should include the blob's content-type with their request.
+     */
+    public static SignUrlOption withContentType() {
+      return new SignUrlOption(Option.CONTENT_TYPE, true);
+    }
+
+    /**
+     * Use it if signature should include the blob's md5.
+     * When used, users of the signed URL should include the blob's md5 with their request.
+     */
+    public static SignUrlOption withMd5() {
+      return new SignUrlOption(Option.MD5, true);
+    }
+
+    /**
+     * Service account credentials which are used for signing the URL.
+     * If not provided an attempt will be made to get it from the environment.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/authentication#service_accounts">Service account</a>
+     */
+    public static SignUrlOption serviceAccount(ServiceAccountAuthCredentials credentials) {
+      return new SignUrlOption(Option.SERVICE_ACCOUNT_CRED, credentials);
     }
   }
 
@@ -411,7 +471,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Create a new bucket.
    *
    * @return a complete bucket information.
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Bucket create(Bucket bucket, BucketTargetOption... options);
 
@@ -419,35 +479,35 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Create a new blob.
    *
    * @return a complete blob information.
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Blob create(Blob blob, byte[] content, BlobTargetOption... options);
 
   /**
    * Return the requested bucket or {@code null} if not found.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Bucket get(String bucket, BucketSourceOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Blob get(String bucket, String blob, BlobSourceOption... options);
 
   /**
    * List the project's buckets.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   ListResult<Bucket> list(BucketListOption... options);
 
   /**
    * List the bucket's blobs.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   ListResult<Blob> list(String bucket, BlobListOption... options);
 
@@ -455,7 +515,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Update bucket information.
    *
    * @return the updated bucket
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Bucket update(Bucket bucket, BucketTargetOption... options);
 
@@ -463,7 +523,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Update blob information.
    *
    * @return the updated blob
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Blob update(Blob blob, BlobTargetOption... options);
 
@@ -471,7 +531,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Delete the requested bucket.
    *
    * @return true if bucket was deleted
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   boolean delete(String bucket, BucketSourceOption... options);
 
@@ -479,7 +539,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Delete the requested blob.
    *
    * @return true if blob was deleted
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   boolean delete(String bucket, String blob, BlobSourceOption... options);
 
@@ -487,7 +547,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Send a compose request.
    *
    * @return the composed blob.
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Blob compose(ComposeRequest composeRequest);
 
@@ -495,7 +555,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Send a copy request.
    *
    * @return the copied blob.
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Blob copy(CopyRequest copyRequest);
 
@@ -503,7 +563,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Load the content of the given blob.
    *
    * @return the blob's content.
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   byte[] load(String bucket, String blob, BlobSourceOption... options);
 
@@ -511,21 +571,35 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Send a batch request.
    *
    * @return the batch response
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   BatchResponse apply(BatchRequest batchRequest);
 
   /**
    * Return a channel for reading the blob's content.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   BlobReadChannel reader(String bucket, String blob, BlobSourceOption... options);
 
   /**
    * Create a blob and return a channel for writing its content.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   BlobWriteChannel writer(Blob blob, BlobTargetOption... options);
+
+  /**
+   * Generates a signed URL for a blob.
+   * If you have a blob that you want to allow access to for a fixed
+   * amount of time, you can use this method to generate a URL that
+   * is only valid within a certain time period.
+   * This is particularly useful if you don't want publicly
+   * accessible blobs, but don't want to require users to explicitly log in.
+   *
+   * @param blob the blob associated with the signed url
+   * @param  expirationTimeInSeconds the signed URL expiration (using epoch time)
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
+   */
+  URL signUrl(Blob blob, long expirationTimeInSeconds, SignUrlOption... options);
 }

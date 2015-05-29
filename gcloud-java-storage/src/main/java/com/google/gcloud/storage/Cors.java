@@ -53,13 +53,9 @@ public final class Cors implements Serializable {
   };
 
   private final Integer maxAgeSeconds;
-  private final ImmutableList<Method> methods;
+  private final ImmutableList<HttpMethod> methods;
   private final ImmutableList<Origin> origins;
   private final ImmutableList<String> responseHeaders;
-
-  public enum Method {
-    ANY, GET, HEAD, PUT, POST, DELETE
-  }
 
   public static final class Origin implements Serializable {
 
@@ -118,7 +114,7 @@ public final class Cors implements Serializable {
   public static final class Builder {
 
     private Integer maxAgeSeconds;
-    private ImmutableList<Method> methods;
+    private ImmutableList<HttpMethod> methods;
     private ImmutableList<Origin> origins;
     private ImmutableList<String> responseHeaders;
 
@@ -129,7 +125,7 @@ public final class Cors implements Serializable {
       return this;
     }
 
-    public Builder methods(Iterable<Method> methods) {
+    public Builder methods(Iterable<HttpMethod> methods) {
       this.methods = methods != null ? ImmutableList.copyOf(methods) : null;
       return this;
     }
@@ -160,7 +156,7 @@ public final class Cors implements Serializable {
     return maxAgeSeconds;
   }
 
-  public List<Method> methods() {
+  public List<HttpMethod> methods() {
     return methods;
   }
 
@@ -217,10 +213,10 @@ public final class Cors implements Serializable {
   static Cors fromPb(Bucket.Cors cors) {
     Builder builder = builder().maxAgeSeconds(cors.getMaxAgeSeconds());
     if (cors.getMethod() != null) {
-      builder.methods(transform(cors.getMethod(), new Function<String, Method>() {
+      builder.methods(transform(cors.getMethod(), new Function<String, HttpMethod>() {
         @Override
-        public Method apply(String name) {
-          return Method.valueOf(name.toUpperCase());
+        public HttpMethod apply(String name) {
+          return HttpMethod.valueOf(name.toUpperCase());
         }
       }));
     }

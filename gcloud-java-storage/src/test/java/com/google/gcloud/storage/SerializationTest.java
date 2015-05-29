@@ -52,26 +52,26 @@ public class SerializationTest {
       Collections.<BatchResponse.Result<Blob>>emptyList());
   private static final ListResult<Blob> LIST_RESULT =
       new ListResult<>(null, "c", Collections.singletonList(Blob.of("b", "n")));
-  private static StorageService.BlobListOption BLOB_LIST_OPTIONS =
-      StorageService.BlobListOption.maxResults(100);
-  private static StorageService.BlobSourceOption BLOB_SOURCE_OPTIONS =
-      StorageService.BlobSourceOption.generationMatch(1);
-  private static StorageService.BlobTargetOption BLOB_TARGET_OPTIONS =
-      StorageService.BlobTargetOption.generationMatch();
-  private static StorageService.BucketListOption BUCKET_LIST_OPTIONS =
-      StorageService.BucketListOption.prefix("bla");
-  private static StorageService.BucketSourceOption BUCKET_SOURCE_OPTIONS =
-      StorageService.BucketSourceOption.metagenerationMatch(1);
-  private static StorageService.BucketTargetOption BUCKET_TARGET_OPTIONS =
-      StorageService.BucketTargetOption.metagenerationNotMatch();
+  private static Storage.BlobListOption BLOB_LIST_OPTIONS =
+      Storage.BlobListOption.maxResults(100);
+  private static Storage.BlobSourceOption BLOB_SOURCE_OPTIONS =
+      Storage.BlobSourceOption.generationMatch(1);
+  private static Storage.BlobTargetOption BLOB_TARGET_OPTIONS =
+      Storage.BlobTargetOption.generationMatch();
+  private static Storage.BucketListOption BUCKET_LIST_OPTIONS =
+      Storage.BucketListOption.prefix("bla");
+  private static Storage.BucketSourceOption BUCKET_SOURCE_OPTIONS =
+      Storage.BucketSourceOption.metagenerationMatch(1);
+  private static Storage.BucketTargetOption BUCKET_TARGET_OPTIONS =
+      Storage.BucketTargetOption.metagenerationNotMatch();
 
   @Test
   public void testServiceOptions() throws Exception {
-    StorageServiceOptions options = StorageServiceOptions.builder()
+    StorageOptions options = StorageOptions.builder()
         .projectId("p1")
         .authCredentials(AuthCredentials.createForAppEngine())
         .build();
-    StorageServiceOptions serializedCopy = serializeAndDeserialize(options);
+    StorageOptions serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);
 
     options = options.toBuilder()

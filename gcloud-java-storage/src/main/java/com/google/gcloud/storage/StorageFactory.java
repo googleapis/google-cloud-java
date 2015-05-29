@@ -14,15 +14,30 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.storage;
 
-import com.google.gcloud.datastore.DatastoreOptions;
 
 /**
- * An interface for Datastore RPC factory.
- * Implementation will be loaded via {@link java.util.ServiceLoader}.
+ * A base class for Storage factories.
  */
-public interface DatastoreRpcFactory extends
-    ServiceRpcFactory<DatastoreRpc, DatastoreOptions> {
-}
+public abstract class StorageFactory {
 
+  private static final StorageFactory INSTANCE = new StorageFactory() {
+    @Override
+    public Storage get(StorageOptions options) {
+      return new StorageImpl(options);
+    }
+  };
+
+  /**
+   * Returns the default factory instance.
+   */
+  public static StorageFactory instance() {
+    return INSTANCE;
+  }
+
+  /**
+   * Returns a {@code Storage} service for the given options.
+   */
+  public abstract Storage get(StorageOptions options);
+}
