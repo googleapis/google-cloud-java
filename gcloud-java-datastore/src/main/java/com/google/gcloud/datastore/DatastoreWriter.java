@@ -30,7 +30,7 @@ public interface DatastoreWriter {
    * @param entity the entity to add
    * @return an {@code Entity} with the same properties and a key that is either newly allocated
    *     or the same one if key is already complete
-   * @throws DatastoreServiceException upon failure
+   * @throws DatastoreException upon failure
    * @throws IllegalArgumentException if the given entity is missing a key
    */
   Entity add(FullEntity<?> entity);
@@ -41,7 +41,7 @@ public interface DatastoreWriter {
    *
    * @return a list of {@code Entity} ordered by input with the same properties and a key that
    *     is either newly allocated or the same one if was already complete
-   * @throws DatastoreServiceException upon failure
+   * @throws DatastoreException upon failure
    * @throws IllegalArgumentException if any of the given entities is missing a key
    * @see #add(FullEntity)
    */

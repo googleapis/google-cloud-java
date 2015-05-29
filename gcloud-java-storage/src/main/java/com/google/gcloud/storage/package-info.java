@@ -19,8 +19,8 @@
  *
  * <p>A simple usage example:
  * <pre>{@code
- * StorageServiceOptions options = StorageServiceOptions.builder().projectId("project").build();
- * StorageService storage = StorageServiceFactory.instance().get(options);
+ * StorageOptions options = StorageOptions.builder().projectId("project").build();
+ * Storage storage = StorageFactory.instance().get(options);
  * byte[] content = readContent();
  * Blob blob = storage.get("bucket", "blob_name");
  * if (blob == null) {

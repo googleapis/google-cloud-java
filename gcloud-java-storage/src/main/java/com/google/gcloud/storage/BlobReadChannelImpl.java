@@ -36,7 +36,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
   private static final int DEFAULT_CHUNK_SIZE = 2 * 1024 * 1024;
   private static final long serialVersionUID = 4821762590742862669L;
 
-  private final StorageServiceOptions serviceOptions;
+  private final StorageOptions serviceOptions;
   private final Blob blob;
   private final Map<StorageRpc.Option, ?> requestOptions;
   private int position;
@@ -49,7 +49,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
   private transient int bufferPos;
   private transient byte[] buffer;
 
-  BlobReadChannelImpl(StorageServiceOptions serviceOptions, Blob blob,
+  BlobReadChannelImpl(StorageOptions serviceOptions, Blob blob,
       Map<StorageRpc.Option, ?> requestOptions) {
     this.serviceOptions = serviceOptions;
     this.blob = blob;
@@ -124,7 +124,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
         public byte[] call() {
           return storageRpc.read(storageObject, requestOptions, position, toRead);
         }
-      }, serviceOptions.retryParams(), StorageServiceImpl.EXCEPTION_HANDLER);
+      }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER);
       if (toRead > buffer.length) {
         endOfStream = true;
         if (buffer.length == 0) {

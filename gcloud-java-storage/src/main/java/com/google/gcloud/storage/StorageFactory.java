@@ -14,30 +14,30 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.datastore;
+package com.google.gcloud.storage;
 
 
 /**
- * A base class for DatasoreService factories.
+ * A base class for Storage factories.
  */
-public abstract class DatastoreServiceFactory {
+public abstract class StorageFactory {
 
-  private static final DatastoreServiceFactory INSTANCE = new DatastoreServiceFactory() {
-      @Override
-      public DatastoreService get(DatastoreServiceOptions options) {
-        return new DatastoreServiceImpl(options);
-      }
-    };
+  private static final StorageFactory INSTANCE = new StorageFactory() {
+    @Override
+    public Storage get(StorageOptions options) {
+      return new StorageImpl(options);
+    }
+  };
 
   /**
    * Returns the default factory instance.
    */
-  public static DatastoreServiceFactory instance() {
+  public static StorageFactory instance() {
     return INSTANCE;
   }
 
   /**
-   * Returns a {@code DatastoreService} for the given options.
+   * Returns a {@code Storage} service for the given options.
    */
-  public abstract DatastoreService get(DatastoreServiceOptions options);
+  public abstract Storage get(StorageOptions options);
 }

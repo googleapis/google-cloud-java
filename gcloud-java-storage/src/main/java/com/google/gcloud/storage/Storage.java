@@ -38,7 +38,7 @@ import java.util.Set;
  *
  * @see <a href="https://cloud.google.com/storage/docs">Google Cloud Storage</a>
  */
-public interface StorageService extends Service<StorageServiceOptions> {
+public interface Storage extends Service<StorageOptions> {
 
   enum PredefinedAcl {
     AUTHENTICATED_READ("authenticatedRead"),
@@ -279,7 +279,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
 
     private final List<SourceBlob> sourceBlobs;
     private final Blob target;
-    private final List<StorageService.BlobTargetOption> targetOptions;
+    private final List<BlobTargetOption> targetOptions;
 
     public static class SourceBlob implements Serializable {
 
@@ -471,7 +471,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Create a new bucket.
    *
    * @return a complete bucket information.
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Bucket create(Bucket bucket, BucketTargetOption... options);
 
@@ -479,35 +479,35 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Create a new blob.
    *
    * @return a complete blob information.
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Blob create(Blob blob, byte[] content, BlobTargetOption... options);
 
   /**
    * Return the requested bucket or {@code null} if not found.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Bucket get(String bucket, BucketSourceOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Blob get(String bucket, String blob, BlobSourceOption... options);
 
   /**
    * List the project's buckets.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   ListResult<Bucket> list(BucketListOption... options);
 
   /**
    * List the bucket's blobs.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   ListResult<Blob> list(String bucket, BlobListOption... options);
 
@@ -515,7 +515,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Update bucket information.
    *
    * @return the updated bucket
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Bucket update(Bucket bucket, BucketTargetOption... options);
 
@@ -523,7 +523,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Update blob information.
    *
    * @return the updated blob
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Blob update(Blob blob, BlobTargetOption... options);
 
@@ -531,7 +531,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Delete the requested bucket.
    *
    * @return true if bucket was deleted
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   boolean delete(String bucket, BucketSourceOption... options);
 
@@ -539,7 +539,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Delete the requested blob.
    *
    * @return true if blob was deleted
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   boolean delete(String bucket, String blob, BlobSourceOption... options);
 
@@ -547,7 +547,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Send a compose request.
    *
    * @return the composed blob.
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Blob compose(ComposeRequest composeRequest);
 
@@ -555,7 +555,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Send a copy request.
    *
    * @return the copied blob.
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   Blob copy(CopyRequest copyRequest);
 
@@ -563,7 +563,7 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Load the content of the given blob.
    *
    * @return the blob's content.
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   byte[] load(String bucket, String blob, BlobSourceOption... options);
 
@@ -571,21 +571,21 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * Send a batch request.
    *
    * @return the batch response
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   BatchResponse apply(BatchRequest batchRequest);
 
   /**
    * Return a channel for reading the blob's content.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   BlobReadChannel reader(String bucket, String blob, BlobSourceOption... options);
 
   /**
    * Create a blob and return a channel for writing its content.
    *
-   * @throws StorageServiceException upon failure
+   * @throws StorageException upon failure
    */
   BlobWriteChannel writer(Blob blob, BlobTargetOption... options);
 

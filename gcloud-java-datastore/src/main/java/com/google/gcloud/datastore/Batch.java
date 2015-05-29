@@ -43,12 +43,12 @@ public interface Batch extends DatastoreBatchWriter {
   /**
    * Submit the batch to the Datastore.
    *
-   * @throws DatastoreServiceException if there was any failure or if batch is not longer active
+   * @throws DatastoreException if there was any failure or if batch is not longer active
    */
   Response submit();
 
   /**
-   * Returns the batch associated {@link DatastoreService}.
+   * Returns the batch associated {@link Datastore}.
    */
-  DatastoreService datastore();
+  Datastore datastore();
 }
