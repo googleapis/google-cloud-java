@@ -16,28 +16,9 @@
 
 package com.google.gcloud.storage;
 
-
 /**
- * A base class for StorageService factories.
+ * Http method supported by Storage service.
  */
-public abstract class StorageServiceFactory {
-
-  private static final StorageServiceFactory INSTANCE = new StorageServiceFactory() {
-    @Override
-    public StorageService get(StorageServiceOptions options) {
-      return new StorageServiceImpl(options);
-    }
-  };
-
-  /**
-   * Returns the default factory instance.
-   */
-  public static StorageServiceFactory instance() {
-    return INSTANCE;
-  }
-
-  /**
-   * Returns a {@code StorageService} for the given options.
-   */
-  public abstract StorageService get(StorageServiceOptions options);
+public enum HttpMethod {
+  GET, HEAD, PUT, POST, DELETE
 }

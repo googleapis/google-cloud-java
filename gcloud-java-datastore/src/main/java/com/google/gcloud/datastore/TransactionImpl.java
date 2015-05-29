@@ -29,7 +29,7 @@ import java.util.Map;
 
 final class TransactionImpl extends BaseDatastoreBatchWriter implements Transaction {
 
-  private final DatastoreServiceImpl datastore;
+  private final DatastoreImpl datastore;
   private final ByteString transaction;
   private final boolean force;
   private boolean rolledback;
@@ -53,7 +53,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     }
   }
 
-  TransactionImpl(DatastoreServiceImpl datastore, TransactionOption... options) {
+  TransactionImpl(DatastoreImpl datastore, TransactionOption... options) {
     super("transaction");
     this.datastore = datastore;
     DatastoreV1.BeginTransactionRequest.Builder requestPb =
@@ -124,7 +124,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   @Override
-  public DatastoreService datastore() {
+  public Datastore datastore() {
     return datastore;
   }
 }

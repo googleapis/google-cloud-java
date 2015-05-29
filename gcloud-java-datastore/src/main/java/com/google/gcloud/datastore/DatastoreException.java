@@ -26,7 +26,7 @@ import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DatastoreServiceException extends RuntimeException {
+public class DatastoreException extends RuntimeException {
 
   private static final long serialVersionUID = 8170357898917041899L;
   private static final ImmutableMap<String, Code> REASON_TO_CODE;
@@ -82,8 +82,8 @@ public class DatastoreServiceException extends RuntimeException {
       return retryable;
     }
 
-    DatastoreServiceException translate(DatastoreRpcException exception, String message) {
-      return new DatastoreServiceException(this, message, exception);
+    DatastoreException translate(DatastoreRpcException exception, String message) {
+      return new DatastoreException(this, message, exception);
     }
   }
 
@@ -98,12 +98,12 @@ public class DatastoreServiceException extends RuntimeException {
     HTTP_TO_CODE = ImmutableMap.copyOf(httpCodes);
   }
 
-  public DatastoreServiceException(Code code, String message, Exception cause) {
+  public DatastoreException(Code code, String message, Exception cause) {
     super(MoreObjects.firstNonNull(message, code.description), cause);
     this.code = code;
   }
 
-  public DatastoreServiceException(Code code, String message) {
+  public DatastoreException(Code code, String message) {
     this(code, message, null);
   }
 
@@ -114,23 +114,23 @@ public class DatastoreServiceException extends RuntimeException {
     return code;
   }
 
-  static DatastoreServiceException translateAndThrow(RetryHelperException ex) {
+  static DatastoreException translateAndThrow(RetryHelperException ex) {
     if (ex.getCause() instanceof DatastoreRpcException) {
       return translateAndThrow((DatastoreRpcException) ex.getCause());
     }
     if (ex instanceof RetryHelper.RetryInterruptedException) {
       RetryHelper.RetryInterruptedException.propagate();
     }
-    throw new DatastoreServiceException(Code.UNKNOWN, ex.getMessage(), ex);
+    throw new DatastoreException(Code.UNKNOWN, ex.getMessage(), ex);
   }
 
   /**
-   * Translate DatastoreException to DatastoreServiceException based on their
-   * HTTP error codes. This method will always throw a new DatastoreServiceException.
+   * Translate DatastoreException to DatastoreException based on their
+   * HTTP error codes. This method will always throw a new DatastoreException.
    *
-   * @throws DatastoreServiceException every time
+   * @throws DatastoreException every time
    */
-  static DatastoreServiceException translateAndThrow(DatastoreRpcException exception) {
+  static DatastoreException translateAndThrow(DatastoreRpcException exception) {
     String message = exception.getMessage();
     Code code = REASON_TO_CODE.get(exception.reason());
     if (code == null) {
@@ -140,16 +140,16 @@ public class DatastoreServiceException extends RuntimeException {
   }
 
   /**
-   * Throw a DatastoreServiceException with {@code FAILED_PRECONDITION} code and the {@code message}
+   * Throw a DatastoreException with {@code FAILED_PRECONDITION} code and the {@code message}
    * in a nested exception.
    *
-   * @throws DatastoreServiceException every time
+   * @throws DatastoreException every time
    */
-  static DatastoreServiceException throwInvalidRequest(String massage, Object... params) {
-    throw new DatastoreServiceException(Code.FAILED_PRECONDITION, String.format(massage, params));
+  static DatastoreException throwInvalidRequest(String massage, Object... params) {
+    throw new DatastoreException(Code.FAILED_PRECONDITION, String.format(massage, params));
   }
 
-  static DatastoreServiceException propagateUserException(Exception ex) {
-    throw new DatastoreServiceException(Code.UNKNOWN, ex.getMessage(), ex);
+  static DatastoreException propagateUserException(Exception ex) {
+    throw new DatastoreException(Code.UNKNOWN, ex.getMessage(), ex);
   }
 }

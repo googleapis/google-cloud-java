@@ -242,13 +242,13 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the {@link Value} for the given property {@code name}.
    *
-   * @throws DatastoreServiceException if not such property.
+   * @throws DatastoreException if not such property.
    */
   public <V extends Value<?>> V getValue(String name) {
     @SuppressWarnings("unchecked")
     V property = (V) properties.get(name);
     if (property == null) {
-      throw DatastoreServiceException.throwInvalidRequest("No such property %s", name);
+      throw DatastoreException.throwInvalidRequest("No such property %s", name);
     }
     return property;
   }
@@ -256,7 +256,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns true if property is instanceof NullValue.
    *
-   * @throws DatastoreServiceException if not such property.
+   * @throws DatastoreException if not such property.
    */
   public boolean isNull(String name) {
     return getValue(name) instanceof NullValue;
@@ -266,7 +266,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a string.
    *
-   * @throws DatastoreServiceException if not such property.
+   * @throws DatastoreException if not such property.
    * @throws ClassCastException if value is not a string.
    */
   @SuppressWarnings("unchecked")
@@ -277,7 +277,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as long.
    *
-   * @throws DatastoreServiceException if not such property.
+   * @throws DatastoreException if not such property.
    * @throws ClassCastException if value is not a long.
    */
   @SuppressWarnings("unchecked")
@@ -288,7 +288,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a double.
    *
-   * @throws DatastoreServiceException if not such property.
+   * @throws DatastoreException if not such property.
    * @throws ClassCastException if value is not a double.
    */
   @SuppressWarnings("unchecked")
@@ -299,7 +299,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a boolean.
    *
-   * @throws DatastoreServiceException if not such property.
+   * @throws DatastoreException if not such property.
    * @throws ClassCastException if value is not a boolean.
    */
   @SuppressWarnings("unchecked")
@@ -310,7 +310,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a DateTime.
    *
-   * @throws DatastoreServiceException if not such property.
+   * @throws DatastoreException if not such property.
    * @throws ClassCastException if value is not a DateTime.
    */
   @SuppressWarnings("unchecked")
@@ -321,7 +321,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a Key.
    *
-   * @throws DatastoreServiceException if not such property.
+   * @throws DatastoreException if not such property.
    * @throws ClassCastException if value is not a Key.
    */
   @SuppressWarnings("unchecked")
@@ -332,7 +332,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as an entity.
    *
-   * @throws DatastoreServiceException if not such property.
+   * @throws DatastoreException if not such property.
    * @throws ClassCastException if value is not an entity.
    */
   @SuppressWarnings("unchecked")
@@ -343,7 +343,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a list of values.
    *
-   * @throws DatastoreServiceException if not such property.
+   * @throws DatastoreException if not such property.
    * @throws ClassCastException if value is not a list of values.
    */
   @SuppressWarnings("unchecked")
@@ -354,7 +354,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a blob.
    *
-   * @throws DatastoreServiceException if not such property.
+   * @throws DatastoreException if not such property.
    * @throws ClassCastException if value is not a blob.
    */
   @SuppressWarnings("unchecked")

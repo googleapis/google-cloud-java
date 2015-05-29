@@ -88,7 +88,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
     @Override
     public Builder indexed(boolean indexed) {
       // see issue #26
-      throw DatastoreServiceException.throwInvalidRequest("ListValue can't specify index");
+      throw DatastoreException.throwInvalidRequest("ListValue can't specify index");
     }
 
     /**

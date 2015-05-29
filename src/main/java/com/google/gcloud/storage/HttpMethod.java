@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
-
-import com.google.gcloud.datastore.DatastoreOptions;
+package com.google.gcloud.storage;
 
 /**
- * An interface for Datastore RPC factory.
- * Implementation will be loaded via {@link java.util.ServiceLoader}.
+ *
  */
-public interface DatastoreRpcFactory extends
-    ServiceRpcFactory<DatastoreRpc, DatastoreOptions> {
+public enum HttpMethod {
+  GET, HEAD, PUT, POST, DELETE
 }
-
