@@ -26,22 +26,22 @@ import com.google.common.collect.ImmutableList;
 import com.google.gcloud.storage.Acl.Project;
 import com.google.gcloud.storage.Acl.Role;
 import com.google.gcloud.storage.Acl.User;
-import com.google.gcloud.storage.Bucket.AgeDeleteRule;
-import com.google.gcloud.storage.Bucket.CreatedBeforeDeleteRule;
-import com.google.gcloud.storage.Bucket.DeleteRule;
-import com.google.gcloud.storage.Bucket.DeleteRule.Type;
-import com.google.gcloud.storage.Bucket.IsLiveDeleteRule;
-import com.google.gcloud.storage.Bucket.Location;
-import com.google.gcloud.storage.Bucket.NumNewerVersionsDeleteRule;
-import com.google.gcloud.storage.Bucket.RawDeleteRule;
-import com.google.gcloud.storage.Bucket.StorageClass;
+import com.google.gcloud.storage.BucketInfo.AgeDeleteRule;
+import com.google.gcloud.storage.BucketInfo.CreatedBeforeDeleteRule;
+import com.google.gcloud.storage.BucketInfo.DeleteRule;
+import com.google.gcloud.storage.BucketInfo.DeleteRule.Type;
+import com.google.gcloud.storage.BucketInfo.IsLiveDeleteRule;
+import com.google.gcloud.storage.BucketInfo.Location;
+import com.google.gcloud.storage.BucketInfo.NumNewerVersionsDeleteRule;
+import com.google.gcloud.storage.BucketInfo.RawDeleteRule;
+import com.google.gcloud.storage.BucketInfo.StorageClass;
 
 import org.junit.Test;
 
 import java.util.Collections;
 import java.util.List;
 
-public class BucketTest {
+public class BucketInfoTest {
 
   private static final List<Acl> ACL = ImmutableList.of(
       new Acl(User.ofAllAuthenticatedUsers(), Role.READER),
@@ -62,7 +62,7 @@ public class BucketTest {
   private static final Location LOCATION = Location.asia();
   private static final StorageClass STORAGE_CLASS = StorageClass.standard();
   private static final Boolean VERSIONING_ENABLED = true;
-  private static final Bucket BUCKET = Bucket.builder("b")
+  private static final BucketInfo BUCKET_INFO = BucketInfo.builder("b")
       .acl(ACL)
       .etag(ETAG)
       .id(ID)
@@ -82,46 +82,46 @@ public class BucketTest {
 
   @Test
   public void testToBuilder() {
-    compareBuckets(BUCKET, BUCKET.toBuilder().build());
-    Bucket bucket = BUCKET.toBuilder().name("B").id("id").build();
-    assertEquals("B", bucket.name());
-    assertEquals("id", bucket.id());
-    bucket = bucket.toBuilder().name("b").id(ID).build();
-    compareBuckets(BUCKET, bucket);
+    compareBuckets(BUCKET_INFO, BUCKET_INFO.toBuilder().build());
+    BucketInfo bucketInfo = BUCKET_INFO.toBuilder().name("B").id("id").build();
+    assertEquals("B", bucketInfo.name());
+    assertEquals("id", bucketInfo.id());
+    bucketInfo = bucketInfo.toBuilder().name("b").id(ID).build();
+    compareBuckets(BUCKET_INFO, bucketInfo);
   }
 
   @Test
   public void testOf() {
-    Bucket bucket = Bucket.of("bucket");
-    assertEquals("bucket", bucket.name());
+    BucketInfo bucketInfo = BucketInfo.of("bucket");
+    assertEquals("bucket", bucketInfo.name());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals("b", BUCKET.name());
-    assertEquals(ACL, BUCKET.acl());
-    assertEquals(ETAG, BUCKET.etag());
-    assertEquals(ID, BUCKET.id());
-    assertEquals(META_GENERATION, BUCKET.metageneration());
-    assertEquals(OWNER, BUCKET.owner());
-    assertEquals(SELF_LINK, BUCKET.selfLink());
-    assertEquals(CREATE_TIME, BUCKET.createTime());
-    assertEquals(CORS, BUCKET.cors());
-    assertEquals(DEFAULT_ACL, BUCKET.defaultAcl());
-    assertEquals(DELETE_RULES, BUCKET.deleteRules());
-    assertEquals(INDEX_PAGE, BUCKET.indexPage());
-    assertEquals(NOT_FOUND_PAGE, BUCKET.notFoundPage());
-    assertEquals(LOCATION, BUCKET.location());
-    assertEquals(STORAGE_CLASS, BUCKET.storageClass());
-    assertEquals(VERSIONING_ENABLED, BUCKET.versioningEnabled());
+    assertEquals("b", BUCKET_INFO.name());
+    assertEquals(ACL, BUCKET_INFO.acl());
+    assertEquals(ETAG, BUCKET_INFO.etag());
+    assertEquals(ID, BUCKET_INFO.id());
+    assertEquals(META_GENERATION, BUCKET_INFO.metageneration());
+    assertEquals(OWNER, BUCKET_INFO.owner());
+    assertEquals(SELF_LINK, BUCKET_INFO.selfLink());
+    assertEquals(CREATE_TIME, BUCKET_INFO.createTime());
+    assertEquals(CORS, BUCKET_INFO.cors());
+    assertEquals(DEFAULT_ACL, BUCKET_INFO.defaultAcl());
+    assertEquals(DELETE_RULES, BUCKET_INFO.deleteRules());
+    assertEquals(INDEX_PAGE, BUCKET_INFO.indexPage());
+    assertEquals(NOT_FOUND_PAGE, BUCKET_INFO.notFoundPage());
+    assertEquals(LOCATION, BUCKET_INFO.location());
+    assertEquals(STORAGE_CLASS, BUCKET_INFO.storageClass());
+    assertEquals(VERSIONING_ENABLED, BUCKET_INFO.versioningEnabled());
   }
 
   @Test
   public void testToPbAndFromPb() {
-    compareBuckets(BUCKET, Bucket.fromPb(BUCKET.toPb()));
+    compareBuckets(BUCKET_INFO, BucketInfo.fromPb(BUCKET_INFO.toPb()));
   }
 
-  private void compareBuckets(Bucket expected, Bucket value) {
+  private void compareBuckets(BucketInfo expected, BucketInfo value) {
     assertEquals(expected, value);
     assertEquals(expected.name(), value.name());
     assertEquals(expected.acl(), value.acl());
