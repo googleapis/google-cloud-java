@@ -27,15 +27,15 @@ import java.util.List;
 
 public class BatchResponseTest {
 
-  private static final Blob BLOB1 = Blob.of("b", "o1");
-  private static final Blob BLOB2 = Blob.of("b", "o2");
-  private static final Blob BLOB3 = Blob.of("b", "o3");
+  private static final BlobInfo BLOB_INFO_1 = BlobInfo.of("b", "o1");
+  private static final BlobInfo BLOB_INFO_2 = BlobInfo.of("b", "o2");
+  private static final BlobInfo BLOB_INFO_3 = BlobInfo.of("b", "o3");
 
   @Test
   public void testBatchResponse() {
     List<Result<Boolean>> deletes = ImmutableList.of(Result.of(true), Result.of(false));
-    List<Result<Blob>> updates = ImmutableList.of(Result.of(BLOB1), Result.of(BLOB2));
-    List<Result<Blob>> gets = ImmutableList.of(Result.of(BLOB2), Result.of(BLOB3));
+    List<Result<BlobInfo>> updates = ImmutableList.of(Result.of(BLOB_INFO_1), Result.of(BLOB_INFO_2));
+    List<Result<BlobInfo>> gets = ImmutableList.of(Result.of(BLOB_INFO_2), Result.of(BLOB_INFO_3));
     BatchResponse response = new BatchResponse(deletes, updates, gets);
 
     assertEquals(deletes, response.deletes());
