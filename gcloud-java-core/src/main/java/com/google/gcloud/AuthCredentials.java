@@ -62,7 +62,7 @@ public abstract class AuthCredentials implements Serializable {
     }
   }
 
-  private static class ServiceAccountAuthCredentials extends AuthCredentials {
+  public static class ServiceAccountAuthCredentials extends AuthCredentials {
 
     private static final long serialVersionUID = 8007708734318445901L;
     private final String account;
@@ -92,6 +92,14 @@ public abstract class AuthCredentials implements Serializable {
         builder.setServiceAccountScopes(scopes);
       }
       return builder.build();
+    }
+
+    public String account() {
+      return account;
+    }
+
+    public PrivateKey privateKey() {
+      return privateKey;
     }
 
     @Override
@@ -187,7 +195,7 @@ public abstract class AuthCredentials implements Serializable {
     return new ApplicationDefaultAuthCredentials();
   }
 
-  public static AuthCredentials createFor(String account, PrivateKey privateKey) {
+  public static ServiceAccountAuthCredentials createFor(String account, PrivateKey privateKey) {
     return new ServiceAccountAuthCredentials(account, privateKey);
   }
 

@@ -16,6 +16,8 @@
 
 package com.google.gcloud.examples;
 
+import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.BatchRequest;
@@ -27,6 +29,7 @@ import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.ComposeRequest;
 import com.google.gcloud.storage.Storage.CopyRequest;
+import com.google.gcloud.storage.Storage.SignUrlOption;
 import com.google.gcloud.storage.StorageFactory;
 import com.google.gcloud.storage.StorageOptions;
 
@@ -40,7 +43,14 @@ import java.nio.channels.WritableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,7 +68,8 @@ import java.util.Map;
  * -Dexec.args="[<project_id>] list [<bucket>]| info [<bucket> [<file>]]|
  *  download <bucket> <path> [local_file]| upload <local_file> <bucket> [<path>]|
  *  delete <bucket> <path>+| cp <from_bucket> <from_path> <to_bucket> <to_path>|
- *  compose <bucket> <from_path>+ <to_path>| update_metadata <bucket> <file> [key=value]*"}
+ *  compose <bucket> <from_path>+ <to_path>| update_metadata <bucket> <file> [key=value]*|
+ *  sign_url <service_account_private_key_file> <service_account_email> <bucket> <path>"}
  * </li>
  * </ol>
  *
@@ -395,7 +406,7 @@ public class StorageExample {
    */
   private static class ComposeAction extends StorageAction<ComposeRequest> {
     @Override
-    public void run(Storage storage, ComposeRequest request) {
+    public void run(StorageService storage, ComposeRequest request) {
       Blob composedBlob = storage.compose(request);
       System.out.println("Composed " + composedBlob);
     }
@@ -424,7 +435,7 @@ public class StorageExample {
    *
    * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/update">Objects: update</a>
    */
-  private static class UpdateMetadata extends StorageAction<Tuple<Blob, Map<String, String>>> {
+  private static class UpdateMetadataAction extends StorageAction<Tuple<Blob, Map<String, String>>> {
 
     @Override
     public void run(Storage storage, Tuple<Blob, Map<String, String>> tuple)
@@ -467,6 +478,52 @@ public class StorageExample {
     }
   }
 
+  /**
+   * This class demonstrates how to sign a url.
+   * URL will be valid for 1 day.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed URLs</a>
+   */
+  private static class SignUrlAction extends
+      StorageAction<Tuple<ServiceAccountAuthCredentials, Blob>> {
+
+    private static final char[] PASSWORD =  "notasecret".toCharArray();
+
+    @Override
+    public void run(StorageService storage, Tuple<ServiceAccountAuthCredentials, Blob> tuple)
+        throws Exception {
+      run(storage, tuple.x(), tuple.y());
+    }
+
+    private void run(StorageService storage, ServiceAccountAuthCredentials cred, Blob blob)
+        throws IOException {
+      Calendar cal = Calendar.getInstance();
+      cal.add(Calendar.DATE, 1);
+      long expiration = cal.getTimeInMillis() / 1000;
+      System.out.println("Signed URL: " +
+          storage.signUrl(blob, expiration, SignUrlOption.serviceAccount(cred)));
+    }
+
+    @Override
+    Tuple<ServiceAccountAuthCredentials, Blob> parse(String... args)
+        throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException,
+        UnrecoverableKeyException {
+      if (args.length != 4) {
+        throw new IllegalArgumentException();
+      }
+      KeyStore keystore = KeyStore.getInstance("PKCS12");
+      keystore.load(Files.newInputStream(Paths.get(args[0])), PASSWORD);
+      PrivateKey privateKey = (PrivateKey) keystore.getKey("privatekey", PASSWORD);
+      ServiceAccountAuthCredentials cred = AuthCredentials.createFor(args[1], privateKey);
+      return Tuple.of(cred, Blob.of(args[2], args[3]));
+    }
+
+    @Override
+    public String params() {
+      return "<service_account_private_key_file> <service_account_email> <bucket> <path>";
+    }
+  }
+
   static {
     ACTIONS.put("info", new InfoAction());
     ACTIONS.put("delete", new DeleteAction());
@@ -475,7 +532,8 @@ public class StorageExample {
     ACTIONS.put("download", new DownloadAction());
     ACTIONS.put("cp", new CopyAction());
     ACTIONS.put("compose", new ComposeAction());
-    ACTIONS.put("update_metadata", new UpdateMetadata());
+    ACTIONS.put("update_metadata", new UpdateMetadataAction());
+    ACTIONS.put("sign_url", new SignUrlAction());
   }
 
   public static void printUsage() {
