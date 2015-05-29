@@ -41,24 +41,25 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and Terminology</a>
  */
-public final class Blob implements Serializable {
+public final class BlobInfo implements Serializable {
 
   private static final long serialVersionUID = 2228487739943277159L;
 
-  static final Function<StorageObject, Blob> FROM_PB_FUNCTION =
-      new Function<StorageObject, Blob>() {
+  static final Function<StorageObject, BlobInfo> FROM_PB_FUNCTION =
+      new Function<StorageObject, BlobInfo>() {
         @Override
-        public Blob apply(StorageObject pb) {
-          return Blob.fromPb(pb);
+        public BlobInfo apply(StorageObject pb) {
+          return BlobInfo.fromPb(pb);
         }
       };
 
-  static final Function<Blob, StorageObject> TO_PB_FUNCTION = new Function<Blob, StorageObject>() {
-    @Override
-    public StorageObject apply(Blob blob) {
-      return blob.toPb();
-    }
-  };
+  static final Function<BlobInfo, StorageObject> TO_PB_FUNCTION =
+      new Function<BlobInfo, StorageObject>() {
+        @Override
+        public StorageObject apply(BlobInfo blobInfo) {
+          return blobInfo.toPb();
+        }
+      };
 
   private final String bucket;
   private final String id;
@@ -220,14 +221,14 @@ public final class Blob implements Serializable {
       return this;
     }
 
-    public Blob build() {
+    public BlobInfo build() {
       checkNotNull(bucket);
       checkNotNull(name);
-      return new Blob(this);
+      return new BlobInfo(this);
     }
   }
 
-  private Blob(Builder builder) {
+  private BlobInfo(Builder builder) {
     bucket = builder.bucket;
     name = builder.name;
     id = builder.id;
@@ -377,12 +378,12 @@ public final class Blob implements Serializable {
         .toString();
   }
 
-  public static Blob of(String bucket, String name) {
+  public static BlobInfo of(String bucket, String name) {
     return builder(bucket, name).build();
   }
 
-  public static Builder builder(Bucket bucket, String name) {
-    return builder(bucket.name(), name);
+  public static Builder builder(BucketInfo bucketInfo, String name) {
+    return builder(bucketInfo.name(), name);
   }
 
   public static Builder builder(String bucket, String name) {
@@ -396,10 +397,10 @@ public final class Blob implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof Blob)) {
+    if (!(obj instanceof BlobInfo)) {
       return  false;
     }
-    return Objects.equals(toPb(), ((Blob) obj).toPb());
+    return Objects.equals(toPb(), ((BlobInfo) obj).toPb());
   }
 
   StorageObject toPb() {
@@ -444,7 +445,7 @@ public final class Blob implements Serializable {
     return storageObject;
   }
 
-  static Blob fromPb(StorageObject storageObject) {
+  static BlobInfo fromPb(StorageObject storageObject) {
     Builder builder = new Builder()
         .bucket(storageObject.getBucket())
         .cacheControl(storageObject.getCacheControl())

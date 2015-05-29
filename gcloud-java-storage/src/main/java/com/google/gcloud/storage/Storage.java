@@ -278,7 +278,7 @@ public interface Storage extends Service<StorageOptions> {
     private static final long serialVersionUID = -7385681353748590911L;
 
     private final List<SourceBlob> sourceBlobs;
-    private final Blob target;
+    private final BlobInfo target;
     private final List<BlobTargetOption> targetOptions;
 
     public static class SourceBlob implements Serializable {
@@ -309,7 +309,7 @@ public interface Storage extends Service<StorageOptions> {
     public static class Builder {
 
       private final List<SourceBlob> sourceBlobs = new LinkedList<>();
-      private Blob target;
+      private BlobInfo target;
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
 
       public Builder addSource(Iterable<String> blobs) {
@@ -331,7 +331,7 @@ public interface Storage extends Service<StorageOptions> {
         return this;
       }
 
-      public Builder target(Blob target) {
+      public Builder target(BlobInfo target) {
         this.target = target;
         return this;
       }
@@ -358,7 +358,7 @@ public interface Storage extends Service<StorageOptions> {
       return sourceBlobs;
     }
 
-    public Blob target() {
+    public BlobInfo target() {
       return target;
     }
 
@@ -366,12 +366,12 @@ public interface Storage extends Service<StorageOptions> {
       return targetOptions;
     }
 
-    public static ComposeRequest of(Iterable<String> sources, Blob target) {
+    public static ComposeRequest of(Iterable<String> sources, BlobInfo target) {
       return builder().target(target).addSource(sources).build();
     }
 
     public static ComposeRequest of(String bucket, Iterable<String> sources, String target) {
-      return of(sources, Blob.of(bucket, target));
+      return of(sources, BlobInfo.of(bucket, target));
     }
 
     public static Builder builder() {
@@ -386,7 +386,7 @@ public interface Storage extends Service<StorageOptions> {
     private final String sourceBucket;
     private final String sourceBlob;
     private final List<BlobSourceOption> sourceOptions;
-    private final Blob target;
+    private final BlobInfo target;
     private final List<BlobTargetOption> targetOptions;
 
     public static class Builder {
@@ -394,7 +394,7 @@ public interface Storage extends Service<StorageOptions> {
       private String sourceBucket;
       private String sourceBlob;
       private final Set<BlobSourceOption> sourceOptions = new LinkedHashSet<>();
-      private Blob target;
+      private BlobInfo target;
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
 
       public Builder source(String bucket, String blob) {
@@ -408,7 +408,7 @@ public interface Storage extends Service<StorageOptions> {
         return this;
       }
 
-      public Builder target(Blob target) {
+      public Builder target(BlobInfo target) {
         this.target = target;
         return this;
       }
@@ -446,7 +446,7 @@ public interface Storage extends Service<StorageOptions> {
       return sourceOptions;
     }
 
-    public Blob target() {
+    public BlobInfo target() {
       return target;
     }
 
@@ -454,12 +454,12 @@ public interface Storage extends Service<StorageOptions> {
       return targetOptions;
     }
 
-    public static CopyRequest of(String sourceBucket, String sourceBlob, Blob target) {
+    public static CopyRequest of(String sourceBucket, String sourceBlob, BlobInfo target) {
       return builder().source(sourceBucket, sourceBlob).target(target).build();
     }
 
     public static CopyRequest of(String sourceBucket, String sourceBlob, String targetBlob) {
-      return of(sourceBucket, sourceBlob, Blob.of(sourceBucket, targetBlob));
+      return of(sourceBucket, sourceBlob, BlobInfo.of(sourceBucket, targetBlob));
     }
 
     public static Builder builder() {
@@ -473,7 +473,7 @@ public interface Storage extends Service<StorageOptions> {
    * @return a complete bucket information.
    * @throws StorageException upon failure
    */
-  Bucket create(Bucket bucket, BucketTargetOption... options);
+  BucketInfo create(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
    * Create a new blob.
@@ -481,35 +481,35 @@ public interface Storage extends Service<StorageOptions> {
    * @return a complete blob information.
    * @throws StorageException upon failure
    */
-  Blob create(Blob blob, byte[] content, BlobTargetOption... options);
+  BlobInfo create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options);
 
   /**
    * Return the requested bucket or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  Bucket get(String bucket, BucketSourceOption... options);
+  BucketInfo get(String bucket, BucketSourceOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  Blob get(String bucket, String blob, BlobSourceOption... options);
+  BlobInfo get(String bucket, String blob, BlobSourceOption... options);
 
   /**
    * List the project's buckets.
    *
    * @throws StorageException upon failure
    */
-  ListResult<Bucket> list(BucketListOption... options);
+  ListResult<BucketInfo> list(BucketListOption... options);
 
   /**
    * List the bucket's blobs.
    *
    * @throws StorageException upon failure
    */
-  ListResult<Blob> list(String bucket, BlobListOption... options);
+  ListResult<BlobInfo> list(String bucket, BlobListOption... options);
 
   /**
    * Update bucket information.
@@ -517,7 +517,7 @@ public interface Storage extends Service<StorageOptions> {
    * @return the updated bucket
    * @throws StorageException upon failure
    */
-  Bucket update(Bucket bucket, BucketTargetOption... options);
+  BucketInfo update(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
    * Update blob information.
@@ -525,7 +525,7 @@ public interface Storage extends Service<StorageOptions> {
    * @return the updated blob
    * @throws StorageException upon failure
    */
-  Blob update(Blob blob, BlobTargetOption... options);
+  BlobInfo update(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
    * Delete the requested bucket.
@@ -549,7 +549,7 @@ public interface Storage extends Service<StorageOptions> {
    * @return the composed blob.
    * @throws StorageException upon failure
    */
-  Blob compose(ComposeRequest composeRequest);
+  BlobInfo compose(ComposeRequest composeRequest);
 
   /**
    * Send a copy request.
@@ -557,7 +557,7 @@ public interface Storage extends Service<StorageOptions> {
    * @return the copied blob.
    * @throws StorageException upon failure
    */
-  Blob copy(CopyRequest copyRequest);
+  BlobInfo copy(CopyRequest copyRequest);
 
   /**
    * Load the content of the given blob.
@@ -587,7 +587,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  BlobWriteChannel writer(Blob blob, BlobTargetOption... options);
+  BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
    * Generates a signed URL for a blob.
@@ -597,9 +597,9 @@ public interface Storage extends Service<StorageOptions> {
    * This is particularly useful if you don't want publicly
    * accessible blobs, but don't want to require users to explicitly log in.
    *
-   * @param blob the blob associated with the signed url
+   * @param blobInfo the blob associated with the signed url
    * @param  expirationTimeInSeconds the signed URL expiration (using epoch time)
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
    */
-  URL signUrl(Blob blob, long expirationTimeInSeconds, SignUrlOption... options);
+  URL signUrl(BlobInfo blobInfo, long expirationTimeInSeconds, SignUrlOption... options);
 }
