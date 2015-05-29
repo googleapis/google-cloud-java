@@ -31,7 +31,7 @@ import org.junit.Test;
 import java.util.List;
 import java.util.Map;
 
-public class BlobTest {
+public class BlobInfoTest {
 
   private static final List<Acl> ACL = ImmutableList.of(
       new Acl(User.ofAllAuthenticatedUsers(), READER),
@@ -55,7 +55,7 @@ public class BlobTest {
   private static final String SELF_LINK = "http://storage/b/n";
   private static final Long SIZE = 1024L;
   private static final Long UPDATE_TIME = DELETE_TIME - 1L;
-  private static final Blob BLOB = Blob.builder("b", "n")
+  private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n")
       .acl(ACL)
       .componentCount(COMPONENT_COUNT)
       .contentType(CONTENT_TYPE)
@@ -80,49 +80,49 @@ public class BlobTest {
 
   @Test
   public void testToBuilder() {
-    compareBlobs(BLOB, BLOB.toBuilder().build());
-    Blob blob = BLOB.toBuilder().name("n2").bucket("b2").size(200L).build();
-    assertEquals("n2", blob.name());
-    assertEquals("b2", blob.bucket());
-    assertEquals(Long.valueOf(200), blob.size());
-    blob = blob.toBuilder().name("n").bucket("b").size(SIZE).build();
-    compareBlobs(BLOB, blob);
+    compareBlobs(BLOB_INFO, BLOB_INFO.toBuilder().build());
+    BlobInfo blobInfo = BLOB_INFO.toBuilder().name("n2").bucket("b2").size(200L).build();
+    assertEquals("n2", blobInfo.name());
+    assertEquals("b2", blobInfo.bucket());
+    assertEquals(Long.valueOf(200), blobInfo.size());
+    blobInfo = blobInfo.toBuilder().name("n").bucket("b").size(SIZE).build();
+    compareBlobs(BLOB_INFO, blobInfo);
   }
 
   @Test
   public void testOf() {
-    Blob blob = Blob.of("b", "n");
-    assertEquals("b", blob.bucket());
-    assertEquals("n", blob.name());
+    BlobInfo blobInfo = BlobInfo.of("b", "n");
+    assertEquals("b", blobInfo.bucket());
+    assertEquals("n", blobInfo.name());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals("b", BLOB.bucket());
-    assertEquals("n", BLOB.name());
-    assertEquals(ACL, BLOB.acl());
-    assertEquals(COMPONENT_COUNT, BLOB.componentCount());
-    assertEquals(CONTENT_TYPE, BLOB.contentType());
-    assertEquals(CACHE_CONTROL, BLOB.cacheControl() );
-    assertEquals(CONTENT_DISPOSITION, BLOB.contentDisposition());
-    assertEquals(CONTENT_ENCODING, BLOB.contentEncoding());
-    assertEquals(CONTENT_LANGUAGE, BLOB.contentLanguage());
-    assertEquals(CRC32, BLOB.crc32c());
-    assertEquals(DELETE_TIME, BLOB.deleteTime());
-    assertEquals(ETAG, BLOB.etag());
-    assertEquals(GENERATION, BLOB.generation());
-    assertEquals(ID, BLOB.id());
-    assertEquals(MD5, BLOB.md5());
-    assertEquals(MEDIA_LINK, BLOB.mediaLink());
-    assertEquals(METADATA, BLOB.metadata());
-    assertEquals(META_GENERATION, BLOB.metageneration());
-    assertEquals(OWNER, BLOB.owner());
-    assertEquals(SELF_LINK, BLOB.selfLink());
-    assertEquals(SIZE, BLOB.size());
-    assertEquals(UPDATE_TIME, BLOB.updateTime());
+    assertEquals("b", BLOB_INFO.bucket());
+    assertEquals("n", BLOB_INFO.name());
+    assertEquals(ACL, BLOB_INFO.acl());
+    assertEquals(COMPONENT_COUNT, BLOB_INFO.componentCount());
+    assertEquals(CONTENT_TYPE, BLOB_INFO.contentType());
+    assertEquals(CACHE_CONTROL, BLOB_INFO.cacheControl() );
+    assertEquals(CONTENT_DISPOSITION, BLOB_INFO.contentDisposition());
+    assertEquals(CONTENT_ENCODING, BLOB_INFO.contentEncoding());
+    assertEquals(CONTENT_LANGUAGE, BLOB_INFO.contentLanguage());
+    assertEquals(CRC32, BLOB_INFO.crc32c());
+    assertEquals(DELETE_TIME, BLOB_INFO.deleteTime());
+    assertEquals(ETAG, BLOB_INFO.etag());
+    assertEquals(GENERATION, BLOB_INFO.generation());
+    assertEquals(ID, BLOB_INFO.id());
+    assertEquals(MD5, BLOB_INFO.md5());
+    assertEquals(MEDIA_LINK, BLOB_INFO.mediaLink());
+    assertEquals(METADATA, BLOB_INFO.metadata());
+    assertEquals(META_GENERATION, BLOB_INFO.metageneration());
+    assertEquals(OWNER, BLOB_INFO.owner());
+    assertEquals(SELF_LINK, BLOB_INFO.selfLink());
+    assertEquals(SIZE, BLOB_INFO.size());
+    assertEquals(UPDATE_TIME, BLOB_INFO.updateTime());
   }
 
-  private void compareBlobs(Blob expected, Blob value) {
+  private void compareBlobs(BlobInfo expected, BlobInfo value) {
     assertEquals(expected, value);
     assertEquals(expected.bucket(), value.bucket());
     assertEquals(expected.name(), value.name());
@@ -150,6 +150,6 @@ public class BlobTest {
 
   @Test
   public void testToPbAndFromPb() {
-    compareBlobs(BLOB, Blob.fromPb(BLOB.toPb()));
+    compareBlobs(BLOB_INFO, BlobInfo.fromPb(BLOB_INFO.toPb()));
   }
 }
