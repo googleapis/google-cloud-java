@@ -40,18 +40,18 @@ public class SerializationTest {
   private static final Acl.Project ACL_PROJECT_ = new Acl.Project(ProjectRole.VIEWERS, "pid");
   private static final Acl.User ACL_USER = new Acl.User("user");
   private static final Acl.RawEntity ACL_RAW = new Acl.RawEntity("raw");
-  private static final Blob BLOB = Blob.of("b", "n");
-  private static final Bucket BUCKET = Bucket.of("b");
+  private static final BlobInfo BLOB_INFO = BlobInfo.of("b", "n");
+  private static final BucketInfo BUCKET_INFO = BucketInfo.of("b");
   private static final Cors.Origin ORIGIN = Cors.Origin.any();
   private static final Cors CORS =
       Cors.builder().maxAgeSeconds(1).origins(Collections.singleton(ORIGIN)).build();
   private static final BatchRequest BATCH_REQUEST = BatchRequest.builder().delete("B", "N").build();
   private static final BatchResponse BATCH_RESPONSE = new BatchResponse(
       Collections.singletonList(BatchResponse.Result.of(true)),
-      Collections.<BatchResponse.Result<Blob>>emptyList(),
-      Collections.<BatchResponse.Result<Blob>>emptyList());
-  private static final ListResult<Blob> LIST_RESULT =
-      new ListResult<>(null, "c", Collections.singletonList(Blob.of("b", "n")));
+      Collections.<BatchResponse.Result<BlobInfo>>emptyList(),
+      Collections.<BatchResponse.Result<BlobInfo>>emptyList());
+  private static final ListResult<BlobInfo> LIST_RESULT =
+      new ListResult<>(null, "c", Collections.singletonList(BlobInfo.of("b", "n")));
   private static Storage.BlobListOption BLOB_LIST_OPTIONS =
       Storage.BlobListOption.maxResults(100);
   private static Storage.BlobSourceOption BLOB_SOURCE_OPTIONS =
@@ -86,7 +86,8 @@ public class SerializationTest {
 
   @Test
   public void testModelAndRequests() throws Exception {
-    Serializable[] objects = {ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, BLOB, BUCKET,
+    Serializable[] objects = {ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, BLOB_INFO,
+        BUCKET_INFO,
       ORIGIN, CORS, BATCH_REQUEST,BATCH_RESPONSE, LIST_RESULT, BLOB_LIST_OPTIONS,
         BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS, BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS,
         BUCKET_TARGET_OPTIONS};

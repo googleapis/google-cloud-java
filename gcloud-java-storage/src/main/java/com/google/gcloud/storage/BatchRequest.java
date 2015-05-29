@@ -33,15 +33,15 @@ public final class BatchRequest implements Serializable {
 
   private static final long serialVersionUID = -1527992265939800345L;
 
-  private final Map<Blob, Iterable<BlobSourceOption>> toDelete;
-  private final Map<Blob, Iterable<BlobTargetOption>> toUpdate;
-  private final Map<Blob, Iterable<BlobSourceOption>> toGet;
+  private final Map<BlobInfo, Iterable<BlobSourceOption>> toDelete;
+  private final Map<BlobInfo, Iterable<BlobTargetOption>> toUpdate;
+  private final Map<BlobInfo, Iterable<BlobSourceOption>> toGet;
 
   public static class Builder {
 
-    private Map<Blob, Iterable<BlobSourceOption>> toDelete = new LinkedHashMap<>();
-    private Map<Blob, Iterable<BlobTargetOption>> toUpdate = new LinkedHashMap<>();
-    private Map<Blob, Iterable<BlobSourceOption>> toGet = new LinkedHashMap<>();
+    private Map<BlobInfo, Iterable<BlobSourceOption>> toDelete = new LinkedHashMap<>();
+    private Map<BlobInfo, Iterable<BlobTargetOption>> toUpdate = new LinkedHashMap<>();
+    private Map<BlobInfo, Iterable<BlobSourceOption>> toGet = new LinkedHashMap<>();
 
     private Builder() {}
 
@@ -49,15 +49,15 @@ public final class BatchRequest implements Serializable {
      * Delete the given blob.
      */
     public Builder delete(String bucket, String blob, BlobSourceOption... options) {
-      toDelete.put(Blob.of(bucket, blob), Lists.newArrayList(options));
+      toDelete.put(BlobInfo.of(bucket, blob), Lists.newArrayList(options));
       return this;
     }
 
     /**
      * Update the given blob.
      */
-    public Builder update(Blob blob, BlobTargetOption... options) {
-      toUpdate.put(blob, Lists.newArrayList(options));
+    public Builder update(BlobInfo blobInfo, BlobTargetOption... options) {
+      toUpdate.put(blobInfo, Lists.newArrayList(options));
       return this;
     }
 
@@ -65,7 +65,7 @@ public final class BatchRequest implements Serializable {
      * Retrieve metadata for the given blob.
      */
     public Builder get(String bucket, String blob, BlobSourceOption... options) {
-      toGet.put(Blob.of(bucket, blob), Lists.newArrayList(options));
+      toGet.put(BlobInfo.of(bucket, blob), Lists.newArrayList(options));
       return this;
     }
 
@@ -96,15 +96,15 @@ public final class BatchRequest implements Serializable {
         && Objects.equals(toGet, other.toGet);
   }
 
-  public Map<Blob, Iterable<BlobSourceOption>> toDelete() {
+  public Map<BlobInfo, Iterable<BlobSourceOption>> toDelete() {
     return toDelete;
   }
 
-  public Map<Blob, Iterable<BlobTargetOption>> toUpdate() {
+  public Map<BlobInfo, Iterable<BlobTargetOption>> toUpdate() {
     return toUpdate;
   }
 
-  public Map<Blob, Iterable<BlobSourceOption>> toGet() {
+  public Map<BlobInfo, Iterable<BlobSourceOption>> toGet() {
     return toGet;
   }
 

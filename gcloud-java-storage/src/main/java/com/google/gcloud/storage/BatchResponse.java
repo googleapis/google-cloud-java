@@ -31,8 +31,8 @@ public final class BatchResponse implements Serializable {
   private static final long serialVersionUID = 1057416839397037706L;
 
   private final List<Result<Boolean>> deleteResult;
-  private final List<Result<Blob>> updateResult;
-  private final List<Result<Blob>> getResult;
+  private final List<Result<BlobInfo>> updateResult;
+  private final List<Result<BlobInfo>> getResult;
 
   public static class Result<T extends Serializable> implements Serializable {
 
@@ -112,8 +112,8 @@ public final class BatchResponse implements Serializable {
     }
   }
 
-  public BatchResponse(List<Result<Boolean>> deleteResult, List<Result<Blob>> updateResult,
-      List<Result<Blob>> getResult) {
+  public BatchResponse(List<Result<Boolean>> deleteResult, List<Result<BlobInfo>> updateResult,
+      List<Result<BlobInfo>> getResult) {
     this.deleteResult = ImmutableList.copyOf(deleteResult);
     this.updateResult = ImmutableList.copyOf(updateResult);
     this.getResult = ImmutableList.copyOf(getResult);
@@ -145,14 +145,14 @@ public final class BatchResponse implements Serializable {
   /**
    * Returns the results for the update operations using the request order.
    */
-  public List<Result<Blob>> updates() {
+  public List<Result<BlobInfo>> updates() {
     return updateResult;
   }
 
   /**
    * Returns the results for the get operations using the request order.
    */
-  public List<Result<Blob>> gets() {
+  public List<Result<BlobInfo>> gets() {
     return getResult;
   }
 }
