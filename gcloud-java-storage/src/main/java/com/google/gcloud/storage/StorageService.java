@@ -20,10 +20,12 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.Serializable;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -213,13 +215,71 @@ public interface StorageService extends Service<StorageServiceOptions> {
     }
   }
 
+  class SignUrlOption implements Serializable {
+
+    private static final long serialVersionUID = 7850569877451099267L;
+
+    private final Option option;
+    private final Object value;
+
+    enum Option {
+      HTTP_METHOD, CONTENT_TYPE, MD5, SERVICE_ACCOUNT_CRED;
+    }
+
+    private SignUrlOption(Option option, Object value) {
+      this.option = option;
+      this.value = value;
+    }
+
+    Option option() {
+      return option;
+    }
+
+    Object value() {
+      return value;
+    }
+
+    /**
+     * The HTTP method to be used with the signed URL.
+     */
+    public static SignUrlOption httpMethod(HttpMethod httpMethod) {
+      return new SignUrlOption(Option.HTTP_METHOD, httpMethod.name());
+    }
+
+    /**
+     * Use it if signature should include the blob's content-type.
+     * When used, users of the signed URL should include the blob's content-type with their request.
+     */
+    public static SignUrlOption withContentType() {
+      return new SignUrlOption(Option.CONTENT_TYPE, true);
+    }
+
+    /**
+     * Use it if signature should include the blob's md5.
+     * When used, users of the signed URL should include the blob's md5 with their request.
+     */
+    public static SignUrlOption withMd5() {
+      return new SignUrlOption(Option.MD5, true);
+    }
+
+    /**
+     * Service account credentials which are used for signing the URL.
+     * If not provided an attempt will be made to get it from the environment.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/authentication#service_accounts">Service account</a>
+     */
+    public static SignUrlOption serviceAccount(ServiceAccountAuthCredentials credentials) {
+      return new SignUrlOption(Option.SERVICE_ACCOUNT_CRED, credentials);
+    }
+  }
+
   class ComposeRequest implements Serializable {
 
     private static final long serialVersionUID = -7385681353748590911L;
 
     private final List<SourceBlob> sourceBlobs;
     private final Blob target;
-    private final List<BlobTargetOption> targetOptions;
+    private final List<StorageService.BlobTargetOption> targetOptions;
 
     public static class SourceBlob implements Serializable {
 
@@ -528,4 +588,18 @@ public interface StorageService extends Service<StorageServiceOptions> {
    * @throws StorageServiceException upon failure
    */
   BlobWriteChannel writer(Blob blob, BlobTargetOption... options);
+
+  /**
+   * Generates a signed URL for a blob.
+   * If you have a blob that you want to allow access to for a fixed
+   * amount of time, you can use this method to generate a URL that
+   * is only valid within a certain time period.
+   * This is particularly useful if you don't want publicly
+   * accessible blobs, but don't want to require users to explicitly log in.
+   *
+   * @param blob the blob associated with the signed url
+   * @param  expirationTimeInSeconds the signed URL expiration (using epoch time)
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
+   */
+  URL signUrl(Blob blob, long expirationTimeInSeconds, SignUrlOption... options);
 }
