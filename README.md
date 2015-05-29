@@ -56,16 +56,16 @@ See the ``gcloud-java`` API [datastore documentation][datastore-api] to learn ho
 with the Cloud Datastore using this Client Library.
 
 ```java
-import com.google.gcloud.datastore.DatastoreService;
-import com.google.gcloud.datastore.DatastoreServiceFactory;
-import com.google.gcloud.datastore.DatastoreServiceOptions;
+import com.google.gcloud.datastore.Datastore;
+import com.google.gcloud.datastore.DatastoreFactory;
+import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.datastore.DateTime;
 import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-DatastoreServiceOptions options = DatastoreServiceOptions.builder().projectId(PROJECT_ID).build();
-DatastoreService datastore = DatastoreServiceFactory.instance().get(options);
+DatastoreOptions options = DatastoreOptions.builder().projectId(PROJECT_ID).build();
+Datastore datastore = DatastoreFactory.instance().get(options);
 KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);

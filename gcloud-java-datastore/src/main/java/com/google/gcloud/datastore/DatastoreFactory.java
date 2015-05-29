@@ -18,26 +18,26 @@ package com.google.gcloud.datastore;
 
 
 /**
- * A base class for DatasoreService factories.
+ * A base class for Datastore factories.
  */
-public abstract class DatastoreServiceFactory {
+public abstract class DatastoreFactory {
 
-  private static final DatastoreServiceFactory INSTANCE = new DatastoreServiceFactory() {
+  private static final DatastoreFactory INSTANCE = new DatastoreFactory() {
       @Override
-      public DatastoreService get(DatastoreServiceOptions options) {
-        return new DatastoreServiceImpl(options);
+      public Datastore get(DatastoreOptions options) {
+        return new DatastoreImpl(options);
       }
     };
 
   /**
    * Returns the default factory instance.
    */
-  public static DatastoreServiceFactory instance() {
+  public static DatastoreFactory instance() {
     return INSTANCE;
   }
 
   /**
-   * Returns a {@code DatastoreService} for the given options.
+   * Returns a {@code Datastore} service for the given options.
    */
-  public abstract DatastoreService get(DatastoreServiceOptions options);
+  public abstract Datastore get(DatastoreOptions options);
 }

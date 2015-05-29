@@ -38,7 +38,7 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
   private static final int MIN_CHUNK_SIZE = 256 * 1024;
   private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
 
-  private final StorageServiceOptions options;
+  private final StorageOptions options;
   private final Blob blob;
   private final String uploadId;
   private int position;
@@ -50,7 +50,7 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
   private transient StorageRpc storageRpc;
   private transient StorageObject storageObject;
 
-  public BlobWriterChannelImpl(StorageServiceOptions options, Blob blob,
+  public BlobWriterChannelImpl(StorageOptions options, Blob blob,
       Map<StorageRpc.Option, ?> optionsMap) {
     this.options = options;
     this.blob = blob;
@@ -73,7 +73,7 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
         public void run() {
           storageRpc.write(uploadId, buffer, 0, storageObject, position, length, false);
         }
-      }), options.retryParams(), StorageServiceImpl.EXCEPTION_HANDLER);
+      }), options.retryParams(), StorageImpl.EXCEPTION_HANDLER);
       position += length;
       limit -= length;
       byte[] temp = new byte[compact ? limit : chunkSize];
@@ -129,7 +129,7 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
         public void run() {
           storageRpc.write(uploadId, buffer, 0, storageObject, position, limit, true);
         }
-      }), options.retryParams(), StorageServiceImpl.EXCEPTION_HANDLER);
+      }), options.retryParams(), StorageImpl.EXCEPTION_HANDLER);
       position += buffer.length;
       isOpen = false;
       buffer = null;
