@@ -19,7 +19,6 @@ package com.google.gcloud.storage;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gcloud.storage.Cors.Method;
 import com.google.gcloud.storage.Cors.Origin;
 
 import org.junit.Test;
@@ -39,7 +38,7 @@ public class CorsTest {
   public void corsTest() {
     List<Origin> origins = ImmutableList.of(Origin.any(), Origin.of("o"));
     List<String> headers = ImmutableList.of("h1", "h2");
-    List<Method> methods = ImmutableList.of(Method.ANY);
+    List<HttpMethod> methods = ImmutableList.of(HttpMethod.GET);
     Cors cors = Cors.builder()
         .maxAgeSeconds(100)
         .origins(origins)
