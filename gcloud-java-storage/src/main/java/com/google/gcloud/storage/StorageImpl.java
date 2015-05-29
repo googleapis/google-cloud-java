@@ -53,7 +53,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
 
-final class StorageServiceImpl extends BaseService<StorageServiceOptions> implements StorageService {
+final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
 
@@ -66,8 +66,8 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     @Override
     public RetryResult beforeEval(Exception exception) {
-      if (exception instanceof StorageServiceException) {
-        boolean retriable = ((StorageServiceException) exception).retryable();
+      if (exception instanceof StorageException) {
+        boolean retriable = ((StorageException) exception).retryable();
         return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.ABORT;
       }
       return null;
@@ -79,7 +79,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   private final StorageRpc storageRpc;
 
-  StorageServiceImpl(StorageServiceOptions options) {
+  StorageImpl(StorageOptions options) {
     super(options);
     storageRpc = options.storageRpc();
     // todo: replace nulls with Value.asNull (per toPb)
@@ -124,7 +124,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
           public com.google.api.services.storage.model.Bucket call() {
             try {
               return storageRpc.get(bucketPb, optionsMap);
-            } catch (StorageServiceException ex) {
+            } catch (StorageException ex) {
               if (ex.code() == HTTP_NOT_FOUND) {
                 return null;
               }
@@ -144,7 +144,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
       public StorageObject call() {
         try {
           return storageRpc.get(storedObject, optionsMap);
-        } catch (StorageServiceException ex) {
+        } catch (StorageException ex) {
           if (ex.code() == HTTP_NOT_FOUND) {
             return null;
           }
@@ -160,9 +160,9 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     private static final long serialVersionUID = 8236329004030295223L;
     protected final Map<StorageRpc.Option, ?> requestOptions;
-    protected final StorageServiceOptions serviceOptions;
+    protected final StorageOptions serviceOptions;
 
-    BasePageFetcher(StorageServiceOptions serviceOptions, String cursor,
+    BasePageFetcher(StorageOptions serviceOptions, String cursor,
         Map<StorageRpc.Option, ?> optionMap) {
       this.serviceOptions = serviceOptions;
       ImmutableMap.Builder<StorageRpc.Option, Object> builder = ImmutableMap.builder();
@@ -180,7 +180,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
     private static final long serialVersionUID = -5490616010200159174L;
 
-    BucketPageFetcher(StorageServiceOptions serviceOptions, String cursor,
+    BucketPageFetcher(StorageOptions serviceOptions, String cursor,
         Map<StorageRpc.Option, ?> optionMap) {
       super(serviceOptions, cursor, optionMap);
     }
@@ -196,7 +196,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     private static final long serialVersionUID = -5490616010200159174L;
     private final String bucket;
 
-    BlobPageFetcher(String bucket, StorageServiceOptions serviceOptions, String cursor,
+    BlobPageFetcher(String bucket, StorageOptions serviceOptions, String cursor,
         Map<StorageRpc.Option, ?> optionMap) {
       super(serviceOptions, cursor, optionMap);
       this.bucket = bucket;
@@ -213,7 +213,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
     return listBuckets(options(), optionMap(options));
   }
 
-  private static ListResult<Bucket> listBuckets(final StorageServiceOptions serviceOptions,
+  private static ListResult<Bucket> listBuckets(final StorageOptions serviceOptions,
       final Map<StorageRpc.Option, ?> optionsMap) {
     Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result = runWithRetries(
         new Callable<Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>>>() {
@@ -239,7 +239,7 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
   }
 
   private static ListResult<Blob> listBlobs(final String bucket,
-      final StorageServiceOptions serviceOptions, final Map<StorageRpc.Option, ?> optionsMap) {
+      final StorageOptions serviceOptions, final Map<StorageRpc.Option, ?> optionsMap) {
     Tuple<String, Iterable<StorageObject>> result = runWithRetries(
         new Callable<Tuple<String, Iterable<StorageObject>>>() {
           @Override
@@ -396,16 +396,16 @@ final class StorageServiceImpl extends BaseService<StorageServiceOptions> implem
 
   private <I, O extends Serializable> List<BatchResponse.Result<O>> transformBatchResult(
       Iterable<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request,
-      Map<StorageObject, Tuple<I, StorageServiceException>> results, Function<I, O> transform,
+      Map<StorageObject, Tuple<I, StorageException>> results, Function<I, O> transform,
       int... nullOnErrorCodes) {
     Set nullOnErrorCodesSet = Sets.newHashSet(Ints.asList(nullOnErrorCodes));
     List<BatchResponse.Result<O>> response = Lists.newArrayListWithCapacity(results.size());
     for (Tuple<StorageObject, ?> tuple : request) {
-      Tuple<I, StorageServiceException> result = results.get(tuple.x());
+      Tuple<I, StorageException> result = results.get(tuple.x());
       if (result.x() != null) {
         response.add(BatchResponse.Result.of(transform.apply(result.x())));
       } else {
-        StorageServiceException exception = result.y();
+        StorageException exception = result.y();
         if (nullOnErrorCodesSet.contains(exception.code())) {
           //noinspection unchecked
           response.add(BatchResponse.Result.<O>empty());

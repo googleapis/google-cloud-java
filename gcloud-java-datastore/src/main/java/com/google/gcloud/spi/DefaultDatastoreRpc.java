@@ -33,7 +33,7 @@ import com.google.api.services.datastore.client.DatastoreException;
 import com.google.api.services.datastore.client.DatastoreFactory;
 import com.google.api.services.datastore.client.DatastoreOptions.Builder;
 import com.google.common.collect.ImmutableMap;
-import com.google.gcloud.datastore.DatastoreServiceOptions;
+import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 
 import org.json.JSONException;
@@ -61,7 +61,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     HTTP_STATUS_TO_REASON = ImmutableMap.copyOf(httpCodes);
   }
 
-  public DefaultDatastoreRpc(DatastoreServiceOptions options) {
+  public DefaultDatastoreRpc(DatastoreOptions options) {
     client = DatastoreFactory.get().create(
         new Builder()
             .dataset(options.projectId())

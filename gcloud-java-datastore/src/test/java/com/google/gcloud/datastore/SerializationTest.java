@@ -132,12 +132,12 @@ public class SerializationTest {
 
   @Test
   public void testServiceOptions() throws Exception {
-    DatastoreServiceOptions options = DatastoreServiceOptions.builder()
+    DatastoreOptions options = DatastoreOptions.builder()
         .authCredentials(AuthCredentials.createForAppEngine())
         .normalizeDataset(false)
         .projectId("ds1")
         .build();
-    DatastoreServiceOptions serializedCopy = serializeAndDeserialize(options);
+    DatastoreOptions serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);
 
     options = options.toBuilder()

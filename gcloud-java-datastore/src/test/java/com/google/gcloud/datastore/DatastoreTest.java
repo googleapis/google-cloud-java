@@ -51,7 +51,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @RunWith(JUnit4.class)
-public class DatastoreServiceTest {
+public class DatastoreTest {
 
   private static final String PROJECT_ID = LocalGcdHelper.DEFAULT_PROJECT_ID;
   private static final String KIND1 = "kind1";
@@ -97,8 +97,8 @@ public class DatastoreServiceTest {
   private static final Entity ENTITY3 = Entity.builder(ENTITY1).key(KEY3).remove("str")
       .set("null", NULL_VALUE).set("partial1", PARTIAL_ENTITY2).set("partial2", ENTITY2).build();
 
-  private DatastoreServiceOptions options;
-  private DatastoreService datastore;
+  private DatastoreOptions options;
+  private Datastore datastore;
 
   private static LocalGcdHelper gcdHelper;
 
@@ -111,11 +111,11 @@ public class DatastoreServiceTest {
 
   @Before
   public void setUp() throws IOException, InterruptedException {
-    options = DatastoreServiceOptions.builder()
+    options = DatastoreOptions.builder()
         .projectId(PROJECT_ID)
         .host("http://localhost:" + LocalGcdHelper.PORT)
         .build();
-    datastore = DatastoreServiceFactory.instance().get(options);
+    datastore = DatastoreFactory.instance().get(options);
     StructuredQuery<Key> query = Query.keyQueryBuilder().build();
     QueryResults<Key> result = datastore.run(query);
     datastore.delete(Iterators.toArray(result, Key.class));
@@ -155,14 +155,14 @@ public class DatastoreServiceTest {
     try {
       transaction.commit();
       fail("Expecting a failure");
-    } catch (DatastoreServiceException ex) {
+    } catch (DatastoreException ex) {
       // expected to fail
     }
 
     try {
       transaction.rollback();
       fail("Expecting a failure");
-    } catch (DatastoreServiceException ex) {
+    } catch (DatastoreException ex) {
       // expected to fail
     }
 
@@ -185,8 +185,8 @@ public class DatastoreServiceTest {
     try {
       transaction.commit();
       fail("Expecting a failure");
-    } catch (DatastoreServiceException expected) {
-      assertEquals(DatastoreServiceException.Code.ABORTED, expected.code());
+    } catch (DatastoreException expected) {
+      assertEquals(DatastoreException.Code.ABORTED, expected.code());
     }
   }
 
@@ -213,8 +213,8 @@ public class DatastoreServiceTest {
     try {
       transaction.commit();
       fail("Expecting a failure");
-    } catch (DatastoreServiceException expected) {
-      assertEquals(DatastoreServiceException.Code.ABORTED, expected.code());
+    } catch (DatastoreException expected) {
+      assertEquals(DatastoreException.Code.ABORTED, expected.code());
     }
   }
 
@@ -232,7 +232,7 @@ public class DatastoreServiceTest {
     try {
       transaction.commit();
       fail("Expecting a failure");
-    } catch (DatastoreServiceException ex) {
+    } catch (DatastoreException ex) {
       // expected to fail
     }
 
@@ -249,28 +249,28 @@ public class DatastoreServiceTest {
     try {
       writer.add(ENTITY3);
       fail("Expecting a failure");
-    } catch (DatastoreServiceException ex) {
+    } catch (DatastoreException ex) {
       // expected to fail
     }
 
     try {
       writer.put(ENTITY3);
       fail("Expecting a failure");
-    } catch (DatastoreServiceException ex) {
+    } catch (DatastoreException ex) {
       // expected to fail
     }
 
     try {
       writer.update(ENTITY3);
       fail("Expecting a failure");
-    } catch (DatastoreServiceException ex) {
+    } catch (DatastoreException ex) {
       // expected to fail
     }
 
     try {
       writer.delete(ENTITY3.key());
       fail("Expecting a failure");
-    } catch (DatastoreServiceException ex) {
+    } catch (DatastoreException ex) {
       // expected to fail
     }
   }
@@ -315,7 +315,7 @@ public class DatastoreServiceTest {
     try {
       batch.submit();
       fail("Expecting a failure");
-    } catch (DatastoreServiceException ex) {
+    } catch (DatastoreException ex) {
       // expected to fail
     }
     verifyNotUsable(batch);
@@ -535,7 +535,7 @@ public class DatastoreServiceTest {
     try {
       entity3.getString("str");
       fail("Expecting a failure");
-    } catch (DatastoreServiceException expected) {
+    } catch (DatastoreException expected) {
       // expected - no such property
     }
     assertFalse(result.hasNext());
@@ -552,7 +552,7 @@ public class DatastoreServiceTest {
     try {
       datastore.add(ENTITY1);
       fail("Expecting a failure");
-    } catch (DatastoreServiceException expected) {
+    } catch (DatastoreException expected) {
       // expected;
     }
 
@@ -578,7 +578,7 @@ public class DatastoreServiceTest {
     try {
       datastore.update(ENTITY3);
       fail("Expecting a failure");
-    } catch (DatastoreServiceException expected) {
+    } catch (DatastoreException expected) {
       // expected;
     }
     datastore.add(ENTITY3);
@@ -642,17 +642,17 @@ public class DatastoreServiceTest {
         .addFound(EntityResult.newBuilder().setEntity(ENTITY1.toPb())).build();
     DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
     DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
-    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreServiceOptions.class)))
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(rpcMock);
     EasyMock.expect(rpcMock.lookup(requestPb))
         .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.UNAVAILABLE))
         .andReturn(responsePb);
     EasyMock.replay(rpcFactoryMock, rpcMock);
-    DatastoreServiceOptions options = this.options.toBuilder()
+    DatastoreOptions options = this.options.toBuilder()
         .retryParams(RetryParams.getDefaultInstance())
         .serviceRpcFactory(rpcFactoryMock)
         .build();
-    DatastoreService datastore = DatastoreServiceFactory.instance().get(options);
+    Datastore datastore = DatastoreFactory.instance().get(options);
     Entity entity = datastore.get(KEY1);
     assertEquals(ENTITY1, entity);
     EasyMock.verify(rpcFactoryMock, rpcMock);
