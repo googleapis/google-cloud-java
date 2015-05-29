@@ -279,7 +279,7 @@ public interface Storage extends Service<StorageOptions> {
 
     private final List<SourceBlob> sourceBlobs;
     private final Blob target;
-    private final List<StorageService.BlobTargetOption> targetOptions;
+    private final List<BlobTargetOption> targetOptions;
 
     public static class SourceBlob implements Serializable {
 

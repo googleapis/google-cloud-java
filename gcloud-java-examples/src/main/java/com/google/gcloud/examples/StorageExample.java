@@ -86,7 +86,7 @@ public class StorageExample {
 
     abstract void run(Storage storage, T request) throws Exception;
 
-    abstract T parse(String... args) throws IllegalArgumentException, IOException;
+    abstract T parse(String... args) throws Exception; 
 
     protected String params() {
       return "";
@@ -406,7 +406,7 @@ public class StorageExample {
    */
   private static class ComposeAction extends StorageAction<ComposeRequest> {
     @Override
-    public void run(StorageService storage, ComposeRequest request) {
+    public void run(Storage storage, ComposeRequest request) {
       Blob composedBlob = storage.compose(request);
       System.out.println("Composed " + composedBlob);
     }
@@ -490,12 +490,12 @@ public class StorageExample {
     private static final char[] PASSWORD =  "notasecret".toCharArray();
 
     @Override
-    public void run(StorageService storage, Tuple<ServiceAccountAuthCredentials, Blob> tuple)
+    public void run(Storage storage, Tuple<ServiceAccountAuthCredentials, Blob> tuple)
         throws Exception {
       run(storage, tuple.x(), tuple.y());
     }
 
-    private void run(StorageService storage, ServiceAccountAuthCredentials cred, Blob blob)
+    private void run(Storage storage, ServiceAccountAuthCredentials cred, Blob blob)
         throws IOException {
       Calendar cal = Calendar.getInstance();
       cal.add(Calendar.DATE, 1);
