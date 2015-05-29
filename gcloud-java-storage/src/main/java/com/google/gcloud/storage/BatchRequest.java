@@ -18,8 +18,8 @@ package com.google.gcloud.storage;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
-import com.google.gcloud.storage.StorageService.BlobSourceOption;
-import com.google.gcloud.storage.StorageService.BlobTargetOption;
+import com.google.gcloud.storage.Storage.BlobSourceOption;
+import com.google.gcloud.storage.Storage.BlobTargetOption;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;

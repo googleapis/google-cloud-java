@@ -34,7 +34,7 @@ import java.util.Iterator;
 import java.util.Objects;
 import java.util.Set;
 
-public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, DatastoreServiceOptions> {
+public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOptions> {
 
   private static final long serialVersionUID = -8636602944160689193L;
   private static final String DATASET_ENV_NAME = "DATASTORE_DATASET";
@@ -48,7 +48,7 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
   private transient DatastoreRpc datastoreRpc;
 
   public static class Builder extends
-      ServiceOptions.Builder<DatastoreRpc, DatastoreServiceOptions, Builder> {
+      ServiceOptions.Builder<DatastoreRpc, DatastoreOptions, Builder> {
 
     private String namespace;
     private boolean force;
@@ -57,7 +57,7 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
     private Builder() {
     }
 
-    private Builder(DatastoreServiceOptions options) {
+    private Builder(DatastoreOptions options) {
       super(options);
       force = options.force;
       namespace = options.namespace;
@@ -65,8 +65,8 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
     }
 
     @Override
-    public DatastoreServiceOptions build() {
-      DatastoreServiceOptions options = new DatastoreServiceOptions(this);
+    public DatastoreOptions build() {
+      DatastoreOptions options = new DatastoreOptions(this);
       return normalizeDataset ? options.normalize() : options;
     }
 
@@ -86,14 +86,14 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
     }
   }
 
-  private DatastoreServiceOptions(Builder builder) {
+  private DatastoreOptions(Builder builder) {
     super(builder);
     normalizeDataset = builder.normalizeDataset;
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
     force = builder.force;
   }
 
-  private DatastoreServiceOptions normalize() {
+  private DatastoreOptions normalize() {
     if (!normalizeDataset) {
       return this;
     }
@@ -116,9 +116,9 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
         key = combinedIter.next().getEntity().getKey();
       }
       builder.projectId(key.getPartitionId().getDatasetId());
-      return new DatastoreServiceOptions(builder);
+      return new DatastoreOptions(builder);
     } catch (DatastoreRpcException e) {
-      throw DatastoreServiceException.translateAndThrow(e);
+      throw DatastoreException.translateAndThrow(e);
     }
   }
 
@@ -170,10 +170,10 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof DatastoreServiceOptions)) {
+    if (!(obj instanceof DatastoreOptions)) {
       return false;
     }
-    DatastoreServiceOptions other = (DatastoreServiceOptions) obj;
+    DatastoreOptions other = (DatastoreOptions) obj;
     return isEquals(other) && Objects.equals(namespace, other.namespace)
         && Objects.equals(force, other.force)
         && Objects.equals(normalizeDataset, other.normalizeDataset);
@@ -194,7 +194,7 @@ public class DatastoreServiceOptions extends ServiceOptions<DatastoreRpc, Datast
     return datastoreRpc;
   }
 
-  public static DatastoreServiceOptions defaultInstance() {
+  public static DatastoreOptions defaultInstance() {
     return builder().build();
   }
 
