@@ -16,14 +16,14 @@
 
 package com.google.gcloud.storage;
 
-import static com.google.gcloud.storage.StorageService.PredefinedAcl.PUBLIC_READ;
+import static com.google.gcloud.storage.Storage.PredefinedAcl.PUBLIC_READ;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.Iterables;
-import com.google.gcloud.storage.StorageService.BlobSourceOption;
-import com.google.gcloud.storage.StorageService.BlobTargetOption;
+import com.google.gcloud.storage.Storage.BlobSourceOption;
+import com.google.gcloud.storage.Storage.BlobTargetOption;
 
 import org.junit.Test;
 
