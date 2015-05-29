@@ -24,11 +24,11 @@ import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobReadChannel;
 import com.google.gcloud.storage.BlobWriteChannel;
 import com.google.gcloud.storage.Bucket;
-import com.google.gcloud.storage.StorageService;
-import com.google.gcloud.storage.StorageService.ComposeRequest;
-import com.google.gcloud.storage.StorageService.CopyRequest;
-import com.google.gcloud.storage.StorageServiceFactory;
-import com.google.gcloud.storage.StorageServiceOptions;
+import com.google.gcloud.storage.Storage;
+import com.google.gcloud.storage.Storage.ComposeRequest;
+import com.google.gcloud.storage.Storage.CopyRequest;
+import com.google.gcloud.storage.StorageFactory;
+import com.google.gcloud.storage.StorageOptions;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -73,7 +73,7 @@ public class StorageExample {
 
   private static abstract class StorageAction<T> {
 
-    abstract void run(StorageService storage, T request) throws Exception;
+    abstract void run(Storage storage, T request) throws Exception;
 
     abstract T parse(String... args) throws IllegalArgumentException, IOException;
 
@@ -127,7 +127,7 @@ public class StorageExample {
    */
   private static class InfoAction extends BlobsAction {
     @Override
-    public void run(StorageService storage, Blob... blobs) {
+    public void run(Storage storage, Blob... blobs) {
       if (blobs.length == 1) {
         if (blobs[0].name().isEmpty()) {
           // get Bucket
@@ -174,7 +174,7 @@ public class StorageExample {
    */
   private static class DeleteAction extends BlobsAction {
     @Override
-    public void run(StorageService storage, Blob... blobs) {
+    public void run(Storage storage, Blob... blobs) {
       if (blobs.length == 1) {
         boolean wasDeleted = storage.delete(blobs[0].bucket(), blobs[0].name());
         if (wasDeleted) {
@@ -218,7 +218,7 @@ public class StorageExample {
     }
 
     @Override
-    public void run(StorageService storage, String bucket) {
+    public void run(Storage storage, String bucket) {
       if (bucket == null) {
         // list buckets
         for (Bucket b : storage.list()) {
@@ -245,11 +245,11 @@ public class StorageExample {
    */
   private static class UploadAction extends StorageAction<Tuple<Path, Blob>> {
     @Override
-    public void run(StorageService storage, Tuple<Path, Blob> tuple) throws Exception {
+    public void run(Storage storage, Tuple<Path, Blob> tuple) throws Exception {
       run(storage, tuple.x(), tuple.y());
     }
 
-    private void run(StorageService storage, Path uploadFrom, Blob blob) throws IOException {
+    private void run(Storage storage, Path uploadFrom, Blob blob) throws IOException {
       if (Files.size(uploadFrom) > 1_000_000) {
         // When content is not available or large (1MB or more) it is recommended
         // to write it in chunks via the blob's channel writer.
@@ -301,11 +301,11 @@ public class StorageExample {
   private static class DownloadAction extends StorageAction<Tuple<Blob, Path>> {
 
     @Override
-    public void run(StorageService storage, Tuple<Blob, Path> tuple) throws IOException {
+    public void run(Storage storage, Tuple<Blob, Path> tuple) throws IOException {
       run(storage, tuple.x().bucket(), tuple.x().name(), tuple.y());
     }
 
-    private void run(StorageService storage, String bucket, String blobName, Path downloadTo)
+    private void run(Storage storage, String bucket, String blobName, Path downloadTo)
         throws IOException {
       Blob blob = storage.get(bucket, blobName);
       if (blob == null) {
@@ -369,7 +369,7 @@ public class StorageExample {
    */
   private static class CopyAction extends StorageAction<CopyRequest> {
     @Override
-    public void run(StorageService storage, CopyRequest request) {
+    public void run(Storage storage, CopyRequest request) {
       Blob copiedBlob = storage.copy(request);
       System.out.println("Copied " + copiedBlob);
     }
@@ -395,7 +395,7 @@ public class StorageExample {
    */
   private static class ComposeAction extends StorageAction<ComposeRequest> {
     @Override
-    public void run(StorageService storage, ComposeRequest request) {
+    public void run(Storage storage, ComposeRequest request) {
       Blob composedBlob = storage.compose(request);
       System.out.println("Composed " + composedBlob);
     }
@@ -427,12 +427,12 @@ public class StorageExample {
   private static class UpdateMetadata extends StorageAction<Tuple<Blob, Map<String, String>>> {
 
     @Override
-    public void run(StorageService storage, Tuple<Blob, Map<String, String>> tuple)
+    public void run(Storage storage, Tuple<Blob, Map<String, String>> tuple)
         throws IOException {
       run(storage, tuple.x().bucket(), tuple.x().name(), tuple.y());
     }
 
-    private void run(StorageService storage, String bucket, String blobName,
+    private void run(Storage storage, String bucket, String blobName,
         Map<String, String> metadata) {
       Blob blob = storage.get(bucket, blobName);
       if (blob == null) {
@@ -499,8 +499,8 @@ public class StorageExample {
       printUsage();
       return;
     }
-    StorageServiceOptions.Builder optionsBuilder =
-        StorageServiceOptions.builder().retryParams(RetryParams.getDefaultInstance());
+    StorageOptions.Builder optionsBuilder =
+        StorageOptions.builder().retryParams(RetryParams.getDefaultInstance());
     StorageAction action;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
       optionsBuilder.projectId(args[0]);
@@ -515,7 +515,7 @@ public class StorageExample {
       printUsage();
       return;
     }
-    StorageService storage = StorageServiceFactory.instance().get(optionsBuilder.build());
+    Storage storage = StorageFactory.instance().get(optionsBuilder.build());
     Object request;
     try {
       request = action.parse(args);

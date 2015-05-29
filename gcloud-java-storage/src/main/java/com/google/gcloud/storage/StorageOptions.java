@@ -26,7 +26,7 @@ import com.google.gcloud.spi.StorageRpcFactory;
 import java.util.Objects;
 import java.util.Set;
 
-public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageServiceOptions> {
+public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
 
   private static final long serialVersionUID = -7804860602287801084L;
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
@@ -37,13 +37,13 @@ public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageSer
   private transient StorageRpc storageRpc;
 
   public static class Builder extends
-      ServiceOptions.Builder<StorageRpc, StorageServiceOptions, Builder> {
+      ServiceOptions.Builder<StorageRpc, StorageOptions, Builder> {
 
     private String pathDelimiter;
 
     private Builder() {}
 
-    private Builder(StorageServiceOptions options) {
+    private Builder(StorageOptions options) {
       super(options);
     }
 
@@ -53,12 +53,12 @@ public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageSer
     }
 
     @Override
-    public StorageServiceOptions build() {
-      return new StorageServiceOptions(this);
+    public StorageOptions build() {
+      return new StorageOptions(this);
     }
   }
 
-  private StorageServiceOptions(Builder builder) {
+  private StorageOptions(Builder builder) {
     super(builder);
     pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
     // todo: consider providing read-timeout
@@ -100,14 +100,14 @@ public class StorageServiceOptions extends ServiceOptions<StorageRpc, StorageSer
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof StorageServiceOptions)) {
+    if (!(obj instanceof StorageOptions)) {
       return false;
     }
-    StorageServiceOptions other = (StorageServiceOptions) obj;
+    StorageOptions other = (StorageOptions) obj;
     return isEquals(other) && Objects.equals(pathDelimiter, other.pathDelimiter);
   }
 
-  public static StorageServiceOptions defaultInstance() {
+  public static StorageOptions defaultInstance() {
     return builder().build();
   }
 

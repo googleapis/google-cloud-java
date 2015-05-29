@@ -31,7 +31,7 @@ interface DatastoreBatchWriter extends DatastoreWriter {
    * to submit time.
    *
    * @throws IllegalArgumentException if any of the given entities is missing a key
-   * @throws com.google.gcloud.datastore.DatastoreServiceException if a given entity with a
+   * @throws DatastoreException if a given entity with a
    *     complete key was already added to this writer or if not active
    */
   void addWithDeferredIdAllocation(FullEntity<?>... entity);
@@ -40,7 +40,7 @@ interface DatastoreBatchWriter extends DatastoreWriter {
    * {@inheritDoc}
    * For entities with complete keys that were marked for deletion in this writer the operation
    * will be changed to {@link #put}.
-   * @throws com.google.gcloud.datastore.DatastoreServiceException if a given entity with the
+   * @throws DatastoreException if a given entity with the
    *     same complete key was already added to this writer, if writer is not active or
    *     if id allocation for an entity with an incomplete key failed.
    */
@@ -51,7 +51,7 @@ interface DatastoreBatchWriter extends DatastoreWriter {
    * {@inheritDoc}
    * This operation will be converted to {@link #put} operation for entities that were already
    *     added or put in this writer
-   * @throws com.google.gcloud.datastore.DatastoreServiceException if an entity is marked for
+   * @throws DatastoreException if an entity is marked for
    *     deletion in this writer or if not active
    */
   @Override
@@ -61,7 +61,7 @@ interface DatastoreBatchWriter extends DatastoreWriter {
    * {@inheritDoc}
    * This operation will also remove from this batch any prior writes for entities with the same
    *     keys
-   * @throws com.google.gcloud.datastore.DatastoreServiceException if not active
+   * @throws DatastoreException if not active
    */
   @Override
   void delete(Key... key);
@@ -69,7 +69,7 @@ interface DatastoreBatchWriter extends DatastoreWriter {
   /**
    * {@inheritDoc}
    * This operation will also remove from this writer any prior writes for the same entities.
-   * @throws com.google.gcloud.datastore.DatastoreServiceException if not active
+   * @throws DatastoreException if not active
    */
   @Override
   void put(Entity... entity);

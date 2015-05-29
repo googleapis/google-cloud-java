@@ -31,23 +31,23 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class DatastoreServiceOptionsTest {
+public class DatastoreOptionsTest {
 
   private static final String PROJECT_ID = "project_id";
   private DatastoreRpcFactory datastoreRpcFactory;
   private DatastoreRpc datastoreRpc;
-  private DatastoreServiceOptions.Builder options;
+  private DatastoreOptions.Builder options;
 
   @Before
   public void setUp() throws IOException, InterruptedException {
     datastoreRpcFactory = EasyMock.createMock(DatastoreRpcFactory.class);
     datastoreRpc = EasyMock.createMock(DatastoreRpc.class);
-    options = DatastoreServiceOptions.builder()
+    options = DatastoreOptions.builder()
         .normalizeDataset(false)
         .serviceRpcFactory(datastoreRpcFactory)
         .projectId(PROJECT_ID)
         .host("http://localhost:" + LocalGcdHelper.PORT);
-    EasyMock.expect(datastoreRpcFactory.create(EasyMock.anyObject(DatastoreServiceOptions.class)))
+    EasyMock.expect(datastoreRpcFactory.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(datastoreRpc)
         .anyTimes();
     EasyMock.replay(datastoreRpcFactory, datastoreRpc);
@@ -83,8 +83,8 @@ public class DatastoreServiceOptionsTest {
 
   @Test
   public void testToBuilder() throws Exception {
-    DatastoreServiceOptions original = options.namespace("ns1").force(true).build();
-    DatastoreServiceOptions copy = original.toBuilder().build();
+    DatastoreOptions original = options.namespace("ns1").force(true).build();
+    DatastoreOptions copy = original.toBuilder().build();
     assertEquals(original.projectId(), copy.projectId());
     assertEquals(original.namespace(), copy.namespace());
     assertEquals(original.host(), copy.host());

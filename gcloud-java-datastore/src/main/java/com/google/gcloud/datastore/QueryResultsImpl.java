@@ -27,7 +27,7 @@ import java.util.Objects;
 
 class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T> {
 
-  private final DatastoreServiceImpl datastore;
+  private final DatastoreImpl datastore;
   private final DatastoreV1.ReadOptions readOptionsPb;
   private final DatastoreV1.PartitionId partitionIdPb;
   private final ResultType<T> queryResultType;
@@ -39,7 +39,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   //private ByteString cursor; // only available in v1beta3
 
 
-  QueryResultsImpl(DatastoreServiceImpl datastore, DatastoreV1.ReadOptions readOptionsPb,
+  QueryResultsImpl(DatastoreImpl datastore, DatastoreV1.ReadOptions readOptionsPb,
                    Query<T> query) {
     this.datastore = datastore;
     this.readOptionsPb = readOptionsPb;
