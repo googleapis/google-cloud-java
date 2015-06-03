@@ -354,7 +354,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public byte[] load(String bucket, String blob, BlobSourceOption... options) {
+  public byte[] readAllBytes(String bucket, String blob, BlobSourceOption... options) {
     final StorageObject storageObject = BlobInfo.of(bucket, blob).toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     return runWithRetries(new Callable<byte[]>() {

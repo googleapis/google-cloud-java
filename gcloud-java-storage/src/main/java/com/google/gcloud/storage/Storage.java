@@ -560,12 +560,12 @@ public interface Storage extends Service<StorageOptions> {
   BlobInfo copy(CopyRequest copyRequest);
 
   /**
-   * Load the content of the given blob.
+   * Reads all the bytes from a blob.
    *
    * @return the blob's content.
    * @throws StorageException upon failure
    */
-  byte[] load(String bucket, String blob, BlobSourceOption... options);
+  byte[] readAllBytes(String bucket, String blob, BlobSourceOption... options);
 
   /**
    * Send a batch request.
