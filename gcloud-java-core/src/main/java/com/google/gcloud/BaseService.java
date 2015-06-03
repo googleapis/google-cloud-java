@@ -24,7 +24,6 @@ public abstract class BaseService<O extends ServiceOptions> implements Service<O
     this.options = options;
   }
 
-  @Override
   public O options() {
     return options;
   }
