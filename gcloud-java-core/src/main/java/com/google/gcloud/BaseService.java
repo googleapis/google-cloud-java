@@ -16,7 +16,7 @@
 
 package com.google.gcloud;
 
-public abstract class BaseService<O extends ServiceOptions> implements Service<O> {
+public abstract class BaseService<O extends ServiceOptions> {
 
   private final O options;
 

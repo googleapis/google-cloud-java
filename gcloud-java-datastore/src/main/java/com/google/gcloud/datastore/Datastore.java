@@ -16,14 +16,12 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.gcloud.Service;
-
 import java.util.List;
 
 /**
  * An interface for Google Cloud Datastore.
  */
-public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWriter {
+public interface Datastore extends DatastoreReaderWriter {
 
   /**
    * Returns a new Datastore transaction.
