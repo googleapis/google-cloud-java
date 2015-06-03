@@ -329,7 +329,7 @@ public class StorageExample {
       }
       if (blobInfo.size() < 1_000_000) {
         // Blob is small read all its content in one request
-        byte[] content = storage.load(blobInfo.bucket(), blobInfo.name());
+        byte[] content = storage.readAllBytes(blobInfo.bucket(), blobInfo.name());
         writeTo.write(content);
       } else {
         // When Blob size is big or unknown use the blob's channel reader.
