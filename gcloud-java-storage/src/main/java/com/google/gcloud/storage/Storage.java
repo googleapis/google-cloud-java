@@ -25,7 +25,7 @@ import com.google.gcloud.Service;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.Serializable;
-import java.net.URL;
+import java.net.URI;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -601,5 +601,5 @@ public interface Storage extends Service<StorageOptions> {
    * @param  expirationTimeInSeconds the signed URL expiration (using epoch time)
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
    */
-  URL signUrl(BlobInfo blobInfo, long expirationTimeInSeconds, SignUrlOption... options);
+  URI signUrl(BlobInfo blobInfo, long expirationTimeInSeconds, SignUrlOption... options);
 }

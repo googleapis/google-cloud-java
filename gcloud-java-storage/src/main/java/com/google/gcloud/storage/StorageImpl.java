@@ -51,6 +51,8 @@ import com.google.gcloud.spi.StorageRpc.Tuple;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.security.InvalidKeyException;
@@ -439,7 +441,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public URL signUrl(BlobInfo blobInfo, long expiration, SignUrlOption... options) {
+  public URI signUrl(BlobInfo blobInfo, long expiration, SignUrlOption... options) {
     EnumMap<SignUrlOption.Option, Object> optionMap = Maps.newEnumMap(SignUrlOption.Option.class);
     for (SignUrlOption option : options) {
       optionMap.put(option.option(), option.value());
@@ -493,8 +495,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       stBuilder.append("?GoogleAccessId=").append(cred.account());
       stBuilder.append("&Expires=").append(expiration);
       stBuilder.append("&Signature=").append(signature);
-      return new URL(stBuilder.toString());
-    } catch (MalformedURLException | NoSuchAlgorithmException | UnsupportedEncodingException e) {
+      return new URI(stBuilder.toString());
+    } catch (URISyntaxException | NoSuchAlgorithmException | UnsupportedEncodingException e) {
       throw new IllegalStateException(e);
     } catch (SignatureException | InvalidKeyException e) {
       throw new IllegalArgumentException("Invalid service account private key");
