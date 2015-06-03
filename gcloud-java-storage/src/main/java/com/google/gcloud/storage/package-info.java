@@ -26,7 +26,7 @@
  * if (blobInfo == null) {
  *   storage.create(BlobInfo.of("bucket", "blob_name"), content);
  * } else {
- *   byte[] prevContent = storage.load("bucket", "blob_name");
+ *   byte[] prevContent = storage.readAllBytes("bucket", "blob_name");
  *   content = mergeContent(prevContent, content);
  *   WritableByteChannel channel = storage.writer(blob);
  *   channel.write(ByteBuffer.wrap(content));
