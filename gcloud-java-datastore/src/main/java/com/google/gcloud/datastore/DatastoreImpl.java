@@ -24,7 +24,6 @@ import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
-import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.RetryHelper;
@@ -45,8 +44,7 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 
 
-final class DatastoreImpl extends BaseService<DatastoreOptions>
-    implements Datastore {
+final class DatastoreImpl implements Datastore {
 
   private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR =
       new Interceptor() {
@@ -71,13 +69,18 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       .abortOn(RuntimeException.class, DatastoreRpcException.class)
       .interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
 
+  private final DatastoreOptions options;
   private final DatastoreRpc datastoreRpc;
   private final RetryParams retryParams;
 
   DatastoreImpl(DatastoreOptions options) {
-    super(options);
+    this.options = options;
     this.datastoreRpc = options.datastoreRpc();
     retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
+  }
+
+  DatastoreOptions options() {
+    return options;
   }
 
   @Override

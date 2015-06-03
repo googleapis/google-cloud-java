@@ -42,7 +42,6 @@ import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
-import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.spi.StorageRpc;
@@ -64,7 +63,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
 
-final class StorageImpl extends BaseService<StorageOptions> implements Storage {
+final class StorageImpl implements Storage {
 
   private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
 
@@ -88,14 +87,19 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       .abortOn(RuntimeException.class).interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
   private static final byte[] EMPTY_BYTE_ARRAY = {};
 
+  private final StorageOptions options;
   private final StorageRpc storageRpc;
 
   StorageImpl(StorageOptions options) {
-    super(options);
+    this.options = options;
     storageRpc = options.storageRpc();
     // todo: configure timeouts - https://developers.google.com/api-client-library/java/google-api-java-client/errors
     // todo: provide rewrite - https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite
     // todo: check if we need to expose https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls/insert vs using bucket update/patch
+  }
+
+  StorageOptions options() {
+    return options;
   }
 
   @Override
