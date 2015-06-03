@@ -36,6 +36,6 @@ public class Blob {
   }
 
   public byte[] content(Storage.BlobSourceOption... options) {
-    return storage.load(info.bucket(), info.name(), options);
+    return storage.readAllBytes(info.bucket(), info.name(), options);
   }
 }
