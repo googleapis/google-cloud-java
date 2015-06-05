@@ -130,11 +130,6 @@ public class DatastoreTest {
   }
 
   @Test
-  public void testGetOptions() {
-    assertSame(options, datastore.options());
-  }
-
-  @Test
   public void testNewTransactionCommit() {
     Transaction transaction = datastore.newTransaction();
     transaction.add(ENTITY3);

@@ -21,7 +21,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
-import com.google.gcloud.Service;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.Serializable;
@@ -38,7 +37,7 @@ import java.util.Set;
  *
  * @see <a href="https://cloud.google.com/storage/docs">Google Cloud Storage</a>
  */
-public interface Storage extends Service<StorageOptions> {
+public interface Storage {
 
   enum PredefinedAcl {
     AUTHENTICATED_READ("authenticatedRead"),
