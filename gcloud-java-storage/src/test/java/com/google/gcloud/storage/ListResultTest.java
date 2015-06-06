@@ -31,14 +31,14 @@ public class ListResultTest {
     ImmutableList<String> values = ImmutableList.of("1", "2");
     final ListResult<String> nextResult =
         new ListResult<>(null, "c", Collections.<String>emptyList());
-    ListResult.NextPageFetcher fetcher = new ListResult.NextPageFetcher<String>() {
+    ListResult.NextPageFetcher<String> fetcher = new ListResult.NextPageFetcher<String>() {
 
       @Override
-      public ListResult nextPage() {
+      public ListResult<String> nextPage() {
         return nextResult;
       }
     };
-    ListResult<String> result = new ListResult(fetcher, "c", values);
+    ListResult<String> result = new ListResult<>(fetcher, "c", values);
     assertEquals(nextResult, result.nextPage());
     assertEquals("c", result.nextPageCursor());
     assertEquals(values, ImmutableList.copyOf(result.iterator()));

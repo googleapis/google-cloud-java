@@ -266,7 +266,8 @@ public interface Storage extends Service<StorageOptions> {
      * Service account credentials which are used for signing the URL.
      * If not provided an attempt will be made to get it from the environment.
      *
-     * @see <a href="https://cloud.google.com/storage/docs/authentication#service_accounts">Service account</a>
+     * @see <a href="https://cloud.google.com/storage/docs/authentication#service_accounts">Service
+     *     account</a>
      */
     public static SignUrlOption serviceAccount(ServiceAccountAuthCredentials credentials) {
       return new SignUrlOption(Option.SERVICE_ACCOUNT_CRED, credentials);

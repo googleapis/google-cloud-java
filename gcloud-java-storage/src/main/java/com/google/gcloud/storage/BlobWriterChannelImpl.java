@@ -50,7 +50,7 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
   private transient StorageRpc storageRpc;
   private transient StorageObject storageObject;
 
-  public BlobWriterChannelImpl(StorageOptions options, BlobInfo blobInfo,
+  BlobWriterChannelImpl(StorageOptions options, BlobInfo blobInfo,
       Map<StorageRpc.Option, ?> optionsMap) {
     this.options = options;
     this.blobInfo = blobInfo;
