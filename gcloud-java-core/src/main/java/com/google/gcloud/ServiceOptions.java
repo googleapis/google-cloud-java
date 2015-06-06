@@ -45,7 +45,10 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implements Serializable {
+public abstract class ServiceOptions<
+        ServiceRpcT,
+        OptionsT extends ServiceOptions<ServiceRpcT, OptionsT>>
+    implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final long serialVersionUID = 1203687993961393350L;
@@ -56,7 +59,7 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
   private final HttpTransportFactory httpTransportFactory;
   private final AuthCredentials authCredentials;
   private final RetryParams retryParams;
-  private final ServiceRpcFactory<R, O> serviceRpcFactory;
+  private final ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
 
   public interface HttpTransportFactory extends Serializable {
     HttpTransport create();
@@ -88,19 +91,21 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
 
 
 
-  protected abstract static class Builder<R, O extends ServiceOptions<R, O>,
-      B extends Builder<R, O, B>> {
+  protected abstract static class Builder<
+      ServiceRpcT,
+      OptionsT extends ServiceOptions<ServiceRpcT, OptionsT>,
+      B extends Builder<ServiceRpcT, OptionsT, B>> {
 
     private String projectId;
     private String host;
     private HttpTransportFactory httpTransportFactory;
     private AuthCredentials authCredentials;
     private RetryParams retryParams;
-    private ServiceRpcFactory<R, O> serviceRpcFactory;
+    private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
 
     protected Builder() {}
 
-    protected Builder(ServiceOptions<R, O> options) {
+    protected Builder(ServiceOptions<ServiceRpcT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
       httpTransportFactory = options.httpTransportFactory;
@@ -109,7 +114,7 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
       serviceRpcFactory = options.serviceRpcFactory;
     }
 
-    protected abstract ServiceOptions build();
+    protected abstract ServiceOptions<ServiceRpcT, OptionsT> build();
 
     @SuppressWarnings("unchecked")
     protected B self() {
@@ -141,13 +146,13 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
       return self();
     }
 
-    public B serviceRpcFactory(ServiceRpcFactory<R, O> serviceRpcFactory) {
+    public B serviceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
       this.serviceRpcFactory = serviceRpcFactory;
       return self();
     }
   }
 
-  protected ServiceOptions(Builder<R, O, ?> builder) {
+  protected ServiceOptions(Builder<ServiceRpcT, OptionsT, ?> builder) {
     projectId = checkNotNull(builder.projectId != null ? builder.projectId : defaultProject());
     host = firstNonNull(builder.host, DEFAULT_HOST);
     httpTransportFactory =
@@ -222,7 +227,7 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
       String section = null;
       Pattern projectPattern = Pattern.compile("^project\\s*=\\s*(.*)$");
       Pattern sectionPattern = Pattern.compile("^\\[(.*)\\]$");
-      while((line = reader.readLine()) != null) {
+      while ((line = reader.readLine()) != null) {
         if (line.isEmpty() || line.startsWith(";")) {
           continue;
         }
@@ -245,7 +250,7 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
   }
 
   private static boolean isWindows() {
-    return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).indexOf("windows") > -1;
+    return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).contains("windows");
   }
 
   protected static String getAppEngineProjectId() {
@@ -288,7 +293,7 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
     return retryParams != null ? retryParams : RetryParams.noRetries();
   }
 
-  public ServiceRpcFactory<R, O> serviceRpcFactory() {
+  public ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory() {
     return serviceRpcFactory;
   }
 
@@ -297,13 +302,12 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
     return authCredentials().httpRequestInitializer(httpTransport, scopes());
   }
 
-  @Override
-  public int hashCode() {
+  protected int baseHashCode() {
     return Objects.hash(projectId, host, httpTransportFactory, authCredentials, retryParams,
         serviceRpcFactory);
   }
 
-  protected boolean isEquals(ServiceOptions other) {
+  protected boolean baseEquals(ServiceOptions<?, ?> other) {
     return Objects.equals(projectId, other.projectId)
         && Objects.equals(host, other.host)
         && Objects.equals(httpTransportFactory, other.httpTransportFactory)
@@ -312,14 +316,17 @@ public abstract class ServiceOptions<R, O extends ServiceOptions<R, O>> implemen
         && Objects.equals(serviceRpcFactory, other.serviceRpcFactory);
   }
 
-  public abstract Builder<R, O, ?> toBuilder();
+  public abstract Builder<ServiceRpcT, OptionsT, ?> toBuilder();
 
   /**
    * Creates a service RPC using a factory loaded by {@link ServiceLoader}.
    */
-  protected static <R, O extends ServiceOptions<R, O>> R createRpc(O options,
-      Class<? extends ServiceRpcFactory<R, O>> factoryClass) {
-    ServiceRpcFactory<R, O> factory = Iterables.getFirst(ServiceLoader.load(factoryClass), null);
+  protected static
+      <ServiceRpcT, OptionsT extends ServiceOptions<ServiceRpcT, OptionsT>>
+      ServiceRpcT createRpc(OptionsT options,
+          Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> factoryClass) {
+    ServiceRpcFactory<ServiceRpcT, OptionsT> factory =
+        Iterables.getFirst(ServiceLoader.load(factoryClass), null);
     return factory == null ? null : factory.create(options);
   }
 }

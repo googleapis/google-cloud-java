@@ -34,7 +34,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
 
 
   /**
-   * An Callback for running with a Transactional
+   * A callback for running with a transactional
    * {@link com.google.gcloud.datastore.DatastoreReaderWriter}.
    * The associated transaction will be committed after a successful return from the {@code run}
    * method. Any propagated exception will cause the transaction to be rolled-back.

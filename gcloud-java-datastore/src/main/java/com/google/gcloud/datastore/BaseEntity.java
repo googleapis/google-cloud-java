@@ -40,12 +40,13 @@ import java.util.Set;
 
 /**
  * A base class for entities (key and properties).
- * An entity is Google Cloud Datastore persistent data object.
+ * An entity is a Google Cloud Datastore persistent data object.
  * An entity holds one or more properties, represented by a name (as {@link String})
  * and a value (as {@link com.google.gcloud.datastore.Value}), and may be associated with a
  * key. For a list of possible values see {@link ValueType}.
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
+ * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
+ *     Entities, Properties, and Keys</a>
  */
 public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<DatastoreV1.Entity> {
 
@@ -54,7 +55,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   private final transient ImmutableSortedMap<String, Value<?>> properties;
   private final K key;
 
-  abstract static class Builder<K extends IncompleteKey, B extends Builder<K, B>> {
+  public abstract static class Builder<K extends IncompleteKey, B extends Builder<K, B>> {
 
     private K key;
     private final Map<String, Value<?>> properties = new HashMap<>();
@@ -127,7 +128,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
       return self();
     }
 
-    public B set(String name, Value value) {
+    public B set(String name, Value<?> value) {
       properties.put(name, value);
       return self();
     }
@@ -187,7 +188,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
       return self();
     }
 
-    public abstract BaseEntity build();
+    public abstract BaseEntity<K> build();
   }
 
   BaseEntity(Builder<K, ?> builder) {
@@ -213,7 +214,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
     if (!(obj instanceof BaseEntity)) {
       return false;
     }
-    BaseEntity other = (BaseEntity) obj;
+    BaseEntity<?> other = (BaseEntity<?>) obj;
     return Objects.equals(key, other.key)
         && Objects.equals(properties, other.properties);
   }
@@ -254,7 +255,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   }
 
   /**
-   * Returns true if property is instanceof NullValue.
+   * Returns true if property is an instance of NullValue.
    *
    * @throws DatastoreException if not such property.
    */
@@ -375,12 +376,12 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
 
   @Override
   protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    Builder builder = emptyBuilder();
+    Builder<?, ?> builder = emptyBuilder();
     builder.fill(DatastoreV1.Entity.parseFrom(bytesPb));
     return builder.build();
   }
 
-  protected abstract Builder emptyBuilder();
+  protected abstract Builder<?, ?> emptyBuilder();
 
   @Override
   protected final DatastoreV1.Entity toPb() {

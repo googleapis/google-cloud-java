@@ -27,7 +27,8 @@ import org.junit.Test;
 public class ProjectionEntityTest {
 
   private static final Key KEY = Key.builder("ds1", "k1", "n1").build();
-  private static final StringValue STRING_INDEX_VALUE = StringValue.builder("foo").meaning(18).build();
+  private static final StringValue STRING_INDEX_VALUE =
+      StringValue.builder("foo").meaning(18).build();
   private static final BlobValue BLOB_VALUE = BlobValue.of(Blob.copyFrom(new byte[]{1}));
   private static final DateTimeValue DATE_TIME_VALUE = DateTimeValue.of(DateTime.now());
   private static final LongValue LONG_INDEX_VALUE =

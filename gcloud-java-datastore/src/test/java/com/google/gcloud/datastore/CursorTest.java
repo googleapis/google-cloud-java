@@ -26,8 +26,8 @@ import org.junit.Test;
 
 public class CursorTest {
 
-  private byte[] bytes1 = {1, 2, 3, '%', '<', '+'};
-  private byte[] bytes2 = {10, 20, 30};
+  private static final byte[] bytes1 = {1, 2, 3, '%', '<', '+'};
+  private static final byte[] bytes2 = {10, 20, 30};
   private Cursor cursor1;
   private Cursor cursor2;
 

@@ -171,9 +171,6 @@ public class DatastoreExample {
   }
 
   public static void main(String... args) {
-    DatastoreAction action = null;
-    Datastore datastore = null;
-    Key key = null;
     String projectId = args.length > 0 ? args[0] : null;
     // If you want to access a local Datastore running via the gcd sdk, do
     //   DatastoreOptions options = DatastoreOptions.builder()
@@ -186,11 +183,11 @@ public class DatastoreExample {
         .namespace(NAMESPACE)
         .build();
     String name = args.length > 1 ? args[1] : System.getProperty("user.name");
-    datastore = DatastoreFactory.instance().get(options);
+    Datastore datastore = DatastoreFactory.instance().get(options);
     KeyFactory keyFactory = datastore.newKeyFactory().kind(USER_KIND);
-    key = keyFactory.newKey(name);
+    Key key = keyFactory.newKey(name);
     String actionName = args.length > 2 ? args[2].toLowerCase() : DEFAULT_ACTION;
-    action = ACTIONS.get(actionName);
+    DatastoreAction action = ACTIONS.get(actionName);
     if (action == null) {
       StringBuilder actionAndParams = new StringBuilder();
       for (Map.Entry<String, DatastoreAction> entry : ACTIONS.entrySet()) {

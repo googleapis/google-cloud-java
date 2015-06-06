@@ -33,7 +33,8 @@ import java.net.URLEncoder;
  * Google Cloud Datastore {@link Entity}.
  * This class is immutable.
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
+ * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
+ *    Entities, Properties, and Keys</a>
  */
 public final class Key extends IncompleteKey {
 
