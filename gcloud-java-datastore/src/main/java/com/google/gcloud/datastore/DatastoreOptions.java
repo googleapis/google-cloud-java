@@ -165,7 +165,7 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
 
   @Override
   public int hashCode() {
-    return super.hashCode() ^ Objects.hash(namespace, force, normalizeDataset);
+    return baseHashCode() ^ Objects.hash(namespace, force, normalizeDataset);
   }
 
   @Override
@@ -174,7 +174,7 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
       return false;
     }
     DatastoreOptions other = (DatastoreOptions) obj;
-    return isEquals(other) && Objects.equals(namespace, other.namespace)
+    return baseEquals(other) && Objects.equals(namespace, other.namespace)
         && Objects.equals(force, other.force)
         && Objects.equals(normalizeDataset, other.normalizeDataset);
   }

@@ -24,7 +24,10 @@ import java.io.Serializable;
  * A base interface for all service RPC factories.
  * Loading of a factory implementation is done via {@link java.util.ServiceLoader}.
  */
-public interface ServiceRpcFactory<S, O extends ServiceOptions> extends Serializable {
+public interface ServiceRpcFactory<
+        ServiceRpcT,
+        OptionsT extends ServiceOptions<ServiceRpcT, OptionsT>>
+    extends Serializable {
 
-  S create(O options);
+  ServiceRpcT create(OptionsT options);
 }

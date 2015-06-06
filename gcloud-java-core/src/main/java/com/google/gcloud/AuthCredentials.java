@@ -181,10 +181,9 @@ public abstract class AuthCredentials implements Serializable {
   /**
    * Returns the Application Default Credentials.
    *
-   * <p>
-   * Returns the Application Default Credentials which are credentials that identify and authorize
-   * the whole application. This is the built-in service account if running on Google Compute Engine
-   * or the credentials file from the path in the environment variable
+   * <p>Returns the Application Default Credentials which are credentials that identify and
+   * authorize the whole application. This is the built-in service account if running on
+   * Google Compute Engine or the credentials file from the path in the environment variable
    * GOOGLE_APPLICATION_CREDENTIALS.
    * </p>
    *

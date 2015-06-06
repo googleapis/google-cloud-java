@@ -17,12 +17,10 @@
 package com.google.gcloud.datastore;
 
 import com.google.api.services.datastore.DatastoreV1;
-import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
@@ -131,15 +129,11 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       requestPb.addKey(trimNameOrId(key).toPb());
     }
     DatastoreV1.AllocateIdsResponse responsePb = allocateIds(requestPb.build());
-    Iterator<DatastoreV1.Key> keyIterator = responsePb.getKeyList().iterator();
-    ImmutableList.Builder<Key> builder = ImmutableList.<Key>builder().addAll(
-        Iterators.transform(keyIterator, new Function<DatastoreV1.Key, Key>() {
-          @Override
-          public Key apply(DatastoreV1.Key keyPb) {
-            return Key.fromPb(keyPb);
-          }
-        }));
-    return builder.build();
+    ImmutableList.Builder<Key> keyList = ImmutableList.builder();
+    for (DatastoreV1.Key keyPb : responsePb.getKeyList()) {
+      keyList.add(Key.fromPb(keyPb));
+    }
+    return keyList.build();
   }
 
   DatastoreV1.AllocateIdsResponse allocateIds(final DatastoreV1.AllocateIdsRequest requestPb) {
@@ -256,9 +250,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
     @SuppressWarnings("unchecked")
     @Override
     protected Entity computeNext() {
-      if (iter.hasNext()) {
-        return Entity.fromPb(iter.next().getEntity());
-      }
       while (!iter.hasNext()) {
         if (requestPb.getKeyCount() == 0) {
           return endOfData();

@@ -38,7 +38,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
     private final DatastoreV1.CommitResponse response;
 
-    public ResponseImpl(DatastoreV1.CommitResponse response) {
+    ResponseImpl(DatastoreV1.CommitResponse response) {
       this.response = response;
     }
 
