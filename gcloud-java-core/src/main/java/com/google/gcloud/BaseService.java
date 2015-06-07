@@ -16,16 +16,17 @@
 
 package com.google.gcloud;
 
-public abstract class BaseService<O extends ServiceOptions> implements Service<O> {
+public abstract class BaseService<OptionsT extends ServiceOptions<?, OptionsT>>
+    implements Service<OptionsT> {
 
-  private final O options;
+  private final OptionsT options;
 
-  protected BaseService(O options) {
+  protected BaseService(OptionsT options) {
     this.options = options;
   }
 
   @Override
-  public O options() {
+  public OptionsT options() {
     return options;
   }
 }
