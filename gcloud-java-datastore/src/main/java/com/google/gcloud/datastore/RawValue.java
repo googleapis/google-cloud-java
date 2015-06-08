@@ -48,7 +48,8 @@ public final class RawValue extends Value<DatastoreV1.Value> {
         }
       };
 
-  static final class Builder extends Value.BaseBuilder<DatastoreV1.Value, RawValue, Builder> {
+  public static final class Builder
+      extends Value.BaseBuilder<DatastoreV1.Value, RawValue, Builder> {
 
     private Builder() {
       super(ValueType.RAW_VALUE);

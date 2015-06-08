@@ -20,9 +20,9 @@ import java.util.Iterator;
 
 /**
  * The result of a Google Cloud Datastore query submission.
- * When result is not typed it is possible to cast it to its appropriate type according to
+ * When the result is not typed it is possible to cast it to its appropriate type according to
  * the {@link #resultClass} value.
- * Results are loaded lazily therefore it is possible to get a {@code DatastoreException}
+ * Results are loaded lazily; therefore it is possible to get a {@code DatastoreException}
  * upon {@link Iterator#hasNext hasNext} or {@link Iterator#next next} calls.
  *
  * @param <V> the type of the results value.

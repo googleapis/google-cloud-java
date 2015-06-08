@@ -38,7 +38,8 @@ public interface DatastoreRpc {
     /**
      * The reason for the exception.
      *
-     * @see <a href="https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes">Google Cloud Datastore error codes</a>
+     * @see <a href="https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes">Google
+     *     Cloud Datastore error codes</a>
      */
     public enum Reason {
 
