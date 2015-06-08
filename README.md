@@ -12,7 +12,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 This client supports the following Google Cloud Platform services:
 
--  [Google Cloud Datastore] (https://cloud.google.com/datastore/)
+-  [Google Cloud Datastore] (#google-cloud-datastore)
 
 <!---
 -  [Google Cloud Storage] (https://cloud.google.com/storage/)
