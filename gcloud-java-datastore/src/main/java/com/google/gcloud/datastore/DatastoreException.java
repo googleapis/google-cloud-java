@@ -37,7 +37,8 @@ public class DatastoreException extends RuntimeException {
   /**
    * An error code to represent the failure.
    *
-   * @see <a href="https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes">Google Cloud Datastore error codes</a>
+   * @see <a href="https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes">Google Cloud
+   *     Datastore error codes</a>
    */
   public enum Code {
 

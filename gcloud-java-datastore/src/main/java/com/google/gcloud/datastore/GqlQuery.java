@@ -38,7 +38,7 @@ import java.util.Objects;
 import java.util.TreeMap;
 
 /**
- * A Google Cloud Datastore GQL.
+ * A Google Cloud Datastore GQL query.
  *
  * <h3>A usage example:</h3>
  *
@@ -121,8 +121,8 @@ public final class GqlQuery<V> extends Query<V> {
       }
       Binding other = (Binding) obj;
       return Objects.equals(name, other.name)
-        && Objects.equals(cursor, other.cursor)
-        && Objects.equals(value, other.value);
+          && Objects.equals(cursor, other.cursor)
+          && Objects.equals(value, other.value);
     }
 
     @Override
@@ -286,17 +286,17 @@ public final class GqlQuery<V> extends Query<V> {
       return new GqlQuery<>(this);
     }
 
-    @SuppressWarnings("rawtypes")
-    private static Binding toBinding(Value.BuilderFactory builderFactory, List<?> values) {
+    private static Binding toBinding(Value.BuilderFactory<?, ?, ?> builderFactory, List<?> values) {
       return toBinding(null, builderFactory, values);
     }
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    private static Binding toBinding(String name, Value.BuilderFactory builderFactory,
+    private static <V> Binding toBinding(String name, Value.BuilderFactory<V, ?, ?> builderFactory,
         List<?> values) {
-      List<Value<?>> list = new ArrayList<>(values.size());
+      List<Value<V>> list = new ArrayList<>(values.size());
       for (Object object : values) {
-        list.add(builderFactory.newBuilder(object).build());
+        @SuppressWarnings("unchecked")
+        V v = (V) object;
+        list.add(builderFactory.newBuilder(v).build());
       }
       Value<?> value;
       if (list.isEmpty()) {
@@ -400,7 +400,8 @@ public final class GqlQuery<V> extends Query<V> {
     return fromPb(resultType, namespace, DatastoreV1.GqlQuery.parseFrom(bytesPb));
   }
 
-  private static <V> GqlQuery<V> fromPb(ResultType<V> resultType, String ns, DatastoreV1.GqlQuery queryPb) {
+  private static <V> GqlQuery<V> fromPb(
+      ResultType<V> resultType, String ns, DatastoreV1.GqlQuery queryPb) {
     Builder<V> builder = new Builder<>(resultType, queryPb.getQueryString());
     builder.namespace(ns);
     if (queryPb.hasAllowLiteral()) {

@@ -53,8 +53,8 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
   }
 
   @Override
-  protected BaseEntity.Builder emptyBuilder() {
-    return new Builder();
+  protected BaseEntity.Builder<K, ?> emptyBuilder() {
+    return new Builder<K>();
   }
 
   public static Builder<IncompleteKey> builder() {
@@ -70,7 +70,7 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
   }
 
 
-  static FullEntity fromPb(DatastoreV1.Entity entityPb) {
+  static FullEntity<?> fromPb(DatastoreV1.Entity entityPb) {
     return new Builder<>().fill(entityPb).build();
   }
 }

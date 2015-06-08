@@ -78,7 +78,8 @@ import java.util.Objects;
  * } </pre>
  *
  * @param <V> the type of the result values this query will produce
- * @see <a href="https://cloud.google.com/appengine/docs/java/datastore/queries">Datastore queries</a>
+ * @see <a href="https://cloud.google.com/appengine/docs/java/datastore/queries">Datastore
+ *     queries</a>
  */
 public class StructuredQuery<V> extends Query<V> {
 

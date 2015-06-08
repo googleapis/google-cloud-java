@@ -182,7 +182,7 @@ public final class Acl implements Serializable {
     private final ProjectRole pRole;
     private final String projectId;
 
-    enum ProjectRole {
+    public enum ProjectRole {
       OWNERS, EDITORS, VIEWERS
     }
 

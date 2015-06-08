@@ -104,7 +104,7 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
       return false;
     }
     StorageOptions other = (StorageOptions) obj;
-    return isEquals(other) && Objects.equals(pathDelimiter, other.pathDelimiter);
+    return baseEquals(other) && Objects.equals(pathDelimiter, other.pathDelimiter);
   }
 
   public static StorageOptions defaultInstance() {

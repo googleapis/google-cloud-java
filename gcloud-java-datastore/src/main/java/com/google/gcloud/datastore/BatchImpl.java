@@ -34,7 +34,7 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
 
     private final DatastoreV1.CommitResponse response;
 
-    public ResponseImpl(DatastoreV1.CommitResponse response) {
+    ResponseImpl(DatastoreV1.CommitResponse response) {
       this.response = response;
     }
 

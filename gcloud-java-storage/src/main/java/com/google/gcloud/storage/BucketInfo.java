@@ -46,7 +46,8 @@ import java.util.Objects;
 /**
  * Google Storage bucket metadata;
  *
- * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and Terminology</a>
+ * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and
+ *     Terminology</a>
  */
 public final class BucketInfo implements Serializable {
 
@@ -169,6 +170,7 @@ public final class BucketInfo implements Serializable {
       return daysToLive;
     }
 
+    @Override
     void populateCondition(Rule.Condition condition) {
       condition.setAge(daysToLive);
     }
@@ -185,6 +187,7 @@ public final class BucketInfo implements Serializable {
       this.rule = rule;
     }
 
+    @Override
     void populateCondition(Rule.Condition condition) {
       throw new UnsupportedOperationException();
     }
@@ -219,6 +222,7 @@ public final class BucketInfo implements Serializable {
       return timeMillis;
     }
 
+    @Override
     void populateCondition(Rule.Condition condition) {
       condition.setCreatedBefore(new DateTime(timeMillis));
     }
@@ -238,6 +242,7 @@ public final class BucketInfo implements Serializable {
       return numNewerVersions;
     }
 
+    @Override
     void populateCondition(Rule.Condition condition) {
       condition.setNumNewerVersions(numNewerVersions);
     }
@@ -257,6 +262,7 @@ public final class BucketInfo implements Serializable {
       return isLive;
     }
 
+    @Override
     void populateCondition(Rule.Condition condition) {
       condition.setIsLive(isLive);
     }

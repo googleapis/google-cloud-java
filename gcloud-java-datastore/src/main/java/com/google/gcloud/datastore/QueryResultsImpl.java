@@ -76,7 +76,6 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
         "Unexpected result type " + actualResultType + " vs " + queryResultType);
   }
 
-  @SuppressWarnings("unchecked")
   @Override
   protected T computeNext() {
     while (!entityResultPbIter.hasNext() && !lastBatch) {
@@ -88,7 +87,9 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     }
     DatastoreV1.EntityResult entityResultPb = entityResultPbIter.next();
     //cursor = entityResultPb.getCursor(); // only available in v1beta3
-    return (T) actualResultType.convert(entityResultPb.getEntity());
+    @SuppressWarnings("unchecked")
+    T result = (T) actualResultType.convert(entityResultPb.getEntity());
+    return result;
   }
 
   @Override

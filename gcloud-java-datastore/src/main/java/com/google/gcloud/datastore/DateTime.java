@@ -31,7 +31,8 @@ import java.util.Date;
  * A Google Cloud Datastore timestamp (represented in micro-seconds).
  * This class is immutable.
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
+ * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
+ *     Entities, Properties, and Keys</a>
  */
 public final class DateTime extends Serializable<DatastoreV1.Value>
     implements Comparable<DateTime> {
@@ -61,8 +62,9 @@ public final class DateTime extends Serializable<DatastoreV1.Value>
 
   @Override
   public boolean equals(Object obj) {
-    return obj == this || obj instanceof DateTime
-        && timestampMicroseconds == ((DateTime) obj).timestampMicroseconds;
+    return obj == this
+        || (obj instanceof DateTime
+            && timestampMicroseconds == ((DateTime) obj).timestampMicroseconds);
   }
 
   public long timestampMicroseconds() {
