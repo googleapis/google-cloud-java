@@ -57,7 +57,8 @@ public class SerializationTest {
       .namespace("ns1")
       .build();
   private static final Query<Entity> GQL2 =
-      Query.gqlQueryBuilder(Query.ResultType.ENTITY, "select * from kind1 where name = @name and age > @1")
+      Query.gqlQueryBuilder(
+          Query.ResultType.ENTITY, "select * from kind1 where name = @name and age > @1")
       .setBinding("name", "name1")
       .addBinding(20)
       .namespace("ns1")
@@ -166,10 +167,10 @@ public class SerializationTest {
 
   @Test
   public void testTypes() throws Exception {
-    Serializable[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
+    Serializable<?>[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
         ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, CURSOR1, GQL1, GQL2,
         QUERY1, QUERY2, QUERY3};
-    for (Serializable obj : types) {
+    for (Serializable<?> obj : types) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
       assertEquals(obj, copy);
@@ -178,7 +179,6 @@ public class SerializationTest {
     }
   }
 
-  @SuppressWarnings("unchecked")
   private <T extends java.io.Serializable> T serializeAndDeserialize(T obj)
       throws IOException, ClassNotFoundException {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
@@ -187,7 +187,9 @@ public class SerializationTest {
     }
     try (ObjectInputStream input =
         new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
-      return (T) input.readObject();
+      @SuppressWarnings("unchecked")
+      T result = (T) input.readObject();
+      return result;
     }
   }
 }

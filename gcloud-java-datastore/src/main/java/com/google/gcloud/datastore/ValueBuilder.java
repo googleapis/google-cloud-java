@@ -19,7 +19,7 @@ package com.google.gcloud.datastore;
 /**
  * A common interface for Value builders.
  */
-interface ValueBuilder<V, P extends Value<V>, B extends ValueBuilder<V, P, B>> {
+public interface ValueBuilder<V, P extends Value<V>, B extends ValueBuilder<V, P, B>> {
 
   ValueType getValueType();
 

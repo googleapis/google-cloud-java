@@ -140,9 +140,9 @@ public class LocalGcdHelper {
     File gcdZipFile = new File(System.getProperty("java.io.tmpdir"), GCD_FILENAME);
     if (!gcdZipFile.exists() || !MD5_CHECKSUM.equals(md5(gcdZipFile))) {
       ReadableByteChannel rbc = Channels.newChannel(GCD_URL.openStream());
-      FileOutputStream fos = new FileOutputStream(gcdZipFile);
-      fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
-      fos.close();
+      try (FileOutputStream fos = new FileOutputStream(gcdZipFile)) {
+        fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+      }
     }
     // unzip the gcd
     try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(gcdZipFile))) {
@@ -209,7 +209,7 @@ public class LocalGcdHelper {
   }
 
   private static boolean isWindows() {
-    return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).indexOf("windows") > -1;
+    return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).contains("windows");
   }
 
   private static void extractFile(ZipInputStream zipIn, File filePath) throws IOException {

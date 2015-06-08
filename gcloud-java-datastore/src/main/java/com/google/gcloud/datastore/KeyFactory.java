@@ -19,7 +19,7 @@ package com.google.gcloud.datastore;
 import com.google.common.collect.ImmutableList;
 
 /**
- * An helper for creating keys for a specific {@link Datastore},
+ * A helper for creating keys for a specific {@link Datastore},
  * using its associated projectId and namespace.
  */
 public final class KeyFactory extends BaseKey.Builder<KeyFactory> {

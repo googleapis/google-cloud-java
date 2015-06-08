@@ -31,8 +31,8 @@ import java.util.Random;
 
 public class BlobTest {
 
-  private byte[] bytes1 = new byte[10];
-  private byte[] bytes2 = new byte[11];
+  private static final byte[] bytes1 = new byte[10];
+  private static final byte[] bytes2 = new byte[11];
   private Blob blob1;
   private Blob blob2;
 
