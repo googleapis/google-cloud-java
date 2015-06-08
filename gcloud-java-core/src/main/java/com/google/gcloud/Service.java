@@ -16,6 +16,6 @@
 
 package com.google.gcloud;
 
-public interface Service<O extends ServiceOptions> {
-  O options();
+public interface Service<OptionsT extends ServiceOptions<?, OptionsT>> {
+  OptionsT options();
 }

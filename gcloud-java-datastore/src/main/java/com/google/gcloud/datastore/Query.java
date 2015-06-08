@@ -106,8 +106,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
     private final Class<V> resultClass;
     private final DatastoreV1.EntityResult.ResultType queryType;
 
-    @SuppressWarnings("unchecked")
-    private ResultType(DatastoreV1.EntityResult.ResultType queryType, Class resultClass) {
+    private ResultType(DatastoreV1.EntityResult.ResultType queryType, Class<V> resultClass) {
       this.queryType = queryType;
       this.resultClass = resultClass;
       if (queryType != null) {
@@ -115,7 +114,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       }
     }
 
-    public Class<?> resultClass() {
+    public Class<V> resultClass() {
       return resultClass;
     }
 

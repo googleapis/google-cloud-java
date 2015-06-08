@@ -43,14 +43,14 @@ public class BaseEntityTest {
 
   private Builder builder;
 
-  private class Builder extends BaseEntity.Builder {
+  private class Builder extends BaseEntity.Builder<Key, Builder> {
 
-    @Override public BaseEntity build() {
+    @Override public BaseEntity<Key> build() {
 
-      return new BaseEntity(this) {
+      return new BaseEntity<Key>(this) {
 
         @Override
-        protected Builder emptyBuilder() {
+        protected BaseEntityTest.Builder emptyBuilder() {
           return new BaseEntityTest.Builder();
         }
       };
@@ -71,7 +71,7 @@ public class BaseEntityTest {
 
   @Test
   public void testContains() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertTrue(entity.contains("list1"));
     assertFalse(entity.contains("bla"));
     entity = builder.clear().build();
@@ -80,19 +80,19 @@ public class BaseEntityTest {
 
   @Test
   public void testGetValue() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertEquals(BlobValue.of(BLOB), entity.getValue("blob"));
   }
 
   @Test(expected = DatastoreException.class)
   public void testGetValueNotFound() throws Exception {
-    BaseEntity entity = builder.clear().build();
+    BaseEntity<Key> entity = builder.clear().build();
     entity.getValue("blob");
   }
 
   @Test
   public void testIsNull() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertTrue(entity.isNull("null"));
     assertFalse(entity.isNull("blob"));
     entity = builder.setNull("blob").build();
@@ -101,13 +101,13 @@ public class BaseEntityTest {
 
   @Test(expected = DatastoreException.class)
   public void testIsNullNotFound() throws Exception {
-    BaseEntity entity = builder.clear().build();
+    BaseEntity<Key> entity = builder.clear().build();
     entity.isNull("null");
   }
 
   @Test
   public void testGetString() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertEquals("hello world", entity.getString("string"));
     assertEquals("bla", entity.getString("stringValue"));
     entity = builder.set("string", "foo").build();
@@ -116,7 +116,7 @@ public class BaseEntityTest {
 
   @Test
   public void testGetLong() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertEquals(125, entity.getLong("long"));
     entity = builder.set("long", LongValue.of(10)).build();
     assertEquals(10, entity.getLong("long"));
@@ -124,7 +124,7 @@ public class BaseEntityTest {
 
   @Test
   public void testGetDouble() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertEquals(1.25, entity.getDouble("double"), 0);
     entity = builder.set("double", DoubleValue.of(10)).build();
     assertEquals(10, entity.getDouble("double"), 0);
@@ -132,7 +132,7 @@ public class BaseEntityTest {
 
   @Test
   public void testGetBoolean() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertTrue(entity.getBoolean("boolean"));
     entity = builder.set("boolean", BooleanValue.of(false)).build();
     assertFalse(entity.getBoolean("boolean"));
@@ -140,7 +140,7 @@ public class BaseEntityTest {
 
   @Test
   public void testGetDateTime() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertEquals(DATE_TIME, entity.getDateTime("dateTime"));
     Calendar cal = Calendar.getInstance();
     cal.add(Calendar.DATE, -1);
@@ -151,7 +151,7 @@ public class BaseEntityTest {
 
   @Test
   public void testGetKey() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertEquals(KEY, entity.getKey("key"));
     Key key = Key.builder(KEY).name("BLA").build();
     entity = builder.set("key", key).build();
@@ -160,7 +160,7 @@ public class BaseEntityTest {
 
   @Test
   public void testGetEntity() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertEquals(ENTITY, entity.getEntity("entity"));
     assertEquals(PARTIAL_ENTITY, entity.getEntity("partialEntity"));
     entity = builder.set("entity", EntityValue.of(PARTIAL_ENTITY)).build();
@@ -169,7 +169,7 @@ public class BaseEntityTest {
 
   @Test
   public void testGetList() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     List<? extends Value<?>> list = entity.getList("list1");
     assertEquals(2, list.size());
     assertEquals(NullValue.of(), list.get(0));
@@ -187,7 +187,7 @@ public class BaseEntityTest {
 
   @Test
   public void testGetBlob() throws Exception {
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertEquals(BLOB, entity.getBlob("blob"));
     Blob blob = Blob.copyFrom(new byte[] {});
     entity = builder.set("blob", BlobValue.of(blob)).build();
@@ -200,7 +200,7 @@ public class BaseEntityTest {
         .add("string", "stringValue", "boolean", "double", "long", "list1", "list2", "list3")
         .add("entity", "partialEntity", "null", "dateTime", "blob", "key")
         .build();
-    BaseEntity entity = builder.build();
+    BaseEntity<Key> entity = builder.build();
     assertEquals(names, entity.names());
   }
 }

@@ -81,6 +81,7 @@ public class ValueTest {
     ImmutableMap.Builder<ValueType, Value<?>> builder = ImmutableMap.builder();
     for (ValueType valueType : ValueType.values()) {
       Object[] values = TYPES.get(valueType);
+      @SuppressWarnings("unchecked")
       Class<Value<?>> valueClass = (Class<Value<?>>) values[0];
       Object value = values[1];
       if (value == null) {

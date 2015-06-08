@@ -52,17 +52,17 @@ public class SerializationTest {
       Collections.<BatchResponse.Result<BlobInfo>>emptyList());
   private static final ListResult<BlobInfo> LIST_RESULT =
       new ListResult<>(null, "c", Collections.singletonList(BlobInfo.of("b", "n")));
-  private static Storage.BlobListOption BLOB_LIST_OPTIONS =
+  private static final Storage.BlobListOption BLOB_LIST_OPTIONS =
       Storage.BlobListOption.maxResults(100);
-  private static Storage.BlobSourceOption BLOB_SOURCE_OPTIONS =
+  private static final Storage.BlobSourceOption BLOB_SOURCE_OPTIONS =
       Storage.BlobSourceOption.generationMatch(1);
-  private static Storage.BlobTargetOption BLOB_TARGET_OPTIONS =
+  private static final Storage.BlobTargetOption BLOB_TARGET_OPTIONS =
       Storage.BlobTargetOption.generationMatch();
-  private static Storage.BucketListOption BUCKET_LIST_OPTIONS =
+  private static final Storage.BucketListOption BUCKET_LIST_OPTIONS =
       Storage.BucketListOption.prefix("bla");
-  private static Storage.BucketSourceOption BUCKET_SOURCE_OPTIONS =
+  private static final Storage.BucketSourceOption BUCKET_SOURCE_OPTIONS =
       Storage.BucketSourceOption.metagenerationMatch(1);
-  private static Storage.BucketTargetOption BUCKET_TARGET_OPTIONS =
+  private static final Storage.BucketTargetOption BUCKET_TARGET_OPTIONS =
       Storage.BucketTargetOption.metagenerationNotMatch();
 
   @Test

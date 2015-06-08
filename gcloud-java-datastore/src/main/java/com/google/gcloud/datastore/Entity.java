@@ -70,7 +70,7 @@ public final class Entity extends FullEntity<Key> {
   }
 
   @Override
-  protected BaseEntity.Builder emptyBuilder() {
+  protected BaseEntity.Builder<Key, Builder> emptyBuilder() {
     return new Builder();
   }
 

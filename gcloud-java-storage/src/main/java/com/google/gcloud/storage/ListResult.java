@@ -33,7 +33,7 @@ public final class ListResult<T extends Serializable> implements Iterable<T>, Se
   private final Iterable<T> results;
   private final NextPageFetcher<T> pageFetcher;
 
-  interface NextPageFetcher<T extends Serializable> extends Serializable {
+  public interface NextPageFetcher<T extends Serializable> extends Serializable {
     ListResult<T> nextPage();
   }
 

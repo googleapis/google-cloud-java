@@ -97,7 +97,8 @@ public enum ValueType {
   }
 
 
-  <V, P extends Value<V>, B extends ValueBuilder<V, P, B>> ValueType(ValueMarshaller<V, P, B> marshaller) {
+  <V, P extends Value<V>, B extends ValueBuilder<V, P, B>>
+      ValueType(ValueMarshaller<V, P, B> marshaller) {
     this.marshaller = marshaller;
   }
 
