@@ -29,7 +29,7 @@ import com.google.gcloud.storage.BucketInfo;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.ComposeRequest;
 import com.google.gcloud.storage.Storage.CopyRequest;
-import com.google.gcloud.storage.Storage.SignUrlOption;
+import com.google.gcloud.storage.Storage.SigningOption;
 import com.google.gcloud.storage.StorageFactory;
 import com.google.gcloud.storage.StorageOptions;
 
@@ -501,7 +501,7 @@ public class StorageExample {
       cal.add(Calendar.DATE, 1);
       long expiration = cal.getTimeInMillis() / 1000;
       System.out.println("Signed URL: " +
-          storage.signUrl(blobInfo, expiration, SignUrlOption.serviceAccount(cred)));
+          storage.authenticatedReference(blobInfo, expiration, SigningOption.serviceAccount(cred)));
     }
 
     @Override
