@@ -25,7 +25,7 @@ import com.google.gcloud.Service;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.Serializable;
-import java.net.URL;
+import java.net.URI;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -215,7 +215,10 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
-  class SignUrlOption implements Serializable {
+  /**
+   * Options that can be used when generating a pre-signed reference to an object.
+   */
+  class SigningOption implements Serializable {
 
     private static final long serialVersionUID = 7850569877451099267L;
 
@@ -226,7 +229,7 @@ public interface Storage extends Service<StorageOptions> {
       HTTP_METHOD, CONTENT_TYPE, MD5, SERVICE_ACCOUNT_CRED;
     }
 
-    private SignUrlOption(Option option, Object value) {
+    private SigningOption(Option option, Object value) {
       this.option = option;
       this.value = value;
     }
@@ -242,24 +245,24 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * The HTTP method to be used with the signed URL.
      */
-    public static SignUrlOption httpMethod(HttpMethod httpMethod) {
-      return new SignUrlOption(Option.HTTP_METHOD, httpMethod.name());
+    public static SigningOption httpMethod(HttpMethod httpMethod) {
+      return new SigningOption(Option.HTTP_METHOD, httpMethod.name());
     }
 
     /**
      * Use it if signature should include the blob's content-type.
      * When used, users of the signed URL should include the blob's content-type with their request.
      */
-    public static SignUrlOption withContentType() {
-      return new SignUrlOption(Option.CONTENT_TYPE, true);
+    public static SigningOption withContentType() {
+      return new SigningOption(Option.CONTENT_TYPE, true);
     }
 
     /**
      * Use it if signature should include the blob's md5.
      * When used, users of the signed URL should include the blob's md5 with their request.
      */
-    public static SignUrlOption withMd5() {
-      return new SignUrlOption(Option.MD5, true);
+    public static SigningOption withMd5() {
+      return new SigningOption(Option.MD5, true);
     }
 
     /**
@@ -269,8 +272,8 @@ public interface Storage extends Service<StorageOptions> {
      * @see <a href="https://cloud.google.com/storage/docs/authentication#service_accounts">Service
      *     account</a>
      */
-    public static SignUrlOption serviceAccount(ServiceAccountAuthCredentials credentials) {
-      return new SignUrlOption(Option.SERVICE_ACCOUNT_CRED, credentials);
+    public static SigningOption serviceAccount(ServiceAccountAuthCredentials credentials) {
+      return new SigningOption(Option.SERVICE_ACCOUNT_CRED, credentials);
     }
   }
 
@@ -591,16 +594,14 @@ public interface Storage extends Service<StorageOptions> {
   BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
-   * Generates a signed URL for a blob.
-   * If you have a blob that you want to allow access to for a fixed
-   * amount of time, you can use this method to generate a URL that
-   * is only valid within a certain time period.
-   * This is particularly useful if you don't want publicly
-   * accessible blobs, but don't want to require users to explicitly log in.
+   * Generates an identifier that can provide access to an object without needing to be signed in.
    *
-   * @param blobInfo the blob associated with the signed url
-   * @param  expirationTimeInSeconds the signed URL expiration (using epoch time)
-   * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
+   * @param blobInfo the blob that can be accessed
+   * @param expirationTimeInSeconds the time this identifier should expire, in seconds since
+   * midnight, January 1, 1970 UTC
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">
+   *   Cloud Storage Documentation on Signed-URLs</a>
    */
-  URL signUrl(BlobInfo blobInfo, long expirationTimeInSeconds, SignUrlOption... options);
+  URI authenticatedReference(BlobInfo blobInfo, long expirationTimeInSeconds,
+      SigningOption... options);
 }

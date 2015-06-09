@@ -50,8 +50,8 @@ import com.google.gcloud.spi.StorageRpc.Tuple;
 
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URLEncoder;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -439,13 +439,13 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public URL signUrl(BlobInfo blobInfo, long expiration, SignUrlOption... options) {
-    EnumMap<SignUrlOption.Option, Object> optionMap = Maps.newEnumMap(SignUrlOption.Option.class);
-    for (SignUrlOption option : options) {
+  public URI authenticatedReference(BlobInfo blobInfo, long expiration, SigningOption... options) {
+    EnumMap<SigningOption.Option, Object> optionMap = Maps.newEnumMap(SigningOption.Option.class);
+    for (SigningOption option : options) {
       optionMap.put(option.option(), option.value());
     }
     ServiceAccountAuthCredentials cred =
-        (ServiceAccountAuthCredentials) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
+        (ServiceAccountAuthCredentials) optionMap.get(SigningOption.Option.SERVICE_ACCOUNT_CRED);
     if (cred == null) {
       checkArgument(options().authCredentials() instanceof ServiceAccountAuthCredentials,
           "Signing key was not provided and could not be derived");
@@ -453,18 +453,18 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
     // construct signature data - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
     StringBuilder stBuilder = new StringBuilder();
-    if (optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD)) {
-      stBuilder.append(optionMap.get(SignUrlOption.Option.HTTP_METHOD));
+    if (optionMap.containsKey(SigningOption.Option.HTTP_METHOD)) {
+      stBuilder.append(optionMap.get(SigningOption.Option.HTTP_METHOD));
     } else {
       stBuilder.append(HttpMethod.GET);
     }
     stBuilder.append('\n');
-    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5) , false)) {
+    if (firstNonNull((Boolean) optionMap.get(SigningOption.Option.MD5) , false)) {
       checkArgument(blobInfo.md5() != null, "Blob is missing a value for md5");
       stBuilder.append(blobInfo.md5());
     }
     stBuilder.append('\n');
-    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE) , false)) {
+    if (firstNonNull((Boolean) optionMap.get(SigningOption.Option.CONTENT_TYPE) , false)) {
       checkArgument(blobInfo.contentType() != null, "Blob is missing a value for content-type");
       stBuilder.append(blobInfo.contentType());
     }
@@ -493,8 +493,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       stBuilder.append("?GoogleAccessId=").append(cred.account());
       stBuilder.append("&Expires=").append(expiration);
       stBuilder.append("&Signature=").append(signature);
-      return new URL(stBuilder.toString());
-    } catch (MalformedURLException | NoSuchAlgorithmException | UnsupportedEncodingException e) {
+      return new URI(stBuilder.toString());
+    } catch (URISyntaxException | NoSuchAlgorithmException | UnsupportedEncodingException e) {
       throw new IllegalStateException(e);
     } catch (SignatureException | InvalidKeyException e) {
       throw new IllegalArgumentException("Invalid service account private key");
