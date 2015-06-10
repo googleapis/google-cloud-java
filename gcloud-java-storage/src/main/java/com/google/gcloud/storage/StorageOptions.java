@@ -95,7 +95,7 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
 
   @Override
   public int hashCode() {
-    return super.hashCode() ^ Objects.hash(pathDelimiter);
+    return baseHashCode() ^ Objects.hash(pathDelimiter);
   }
 
   @Override
