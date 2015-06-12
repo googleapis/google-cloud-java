@@ -16,29 +16,79 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+
+import com.google.gcloud.storage.Storage.BlobSourceOption;
+import com.google.gcloud.storage.Storage.BucketSourceOption;
+import com.google.gcloud.storage.Storage.BucketTargetOption;
 
 import java.util.List;
 
 /**
  * A Google cloud storage bucket.
  */
-public class Bucket {
+public final class Bucket {
 
   private final Storage storage;
-  private final BucketInfo info;
+  private BucketInfo info;
 
-  Bucket(Storage storage, BucketInfo info) {
+  public Bucket(Storage storage, BucketInfo info) {
     this.storage = checkNotNull(storage);
     this.info = checkNotNull(info);
+  }
+
+  /**
+   * Returns true if this bucket exists.
+   *
+   * @throws StorageException upon failure
+   */
+  public boolean exists() {
+    return storage.get(info.name()) != null;
+  }
+
+  /**
+   * Update the bucket's information.
+   * Bucket's name cannot be changed.
+   *
+   * @throws StorageException upon failure
+   */
+  public void update(BucketInfo bucketInfo, BucketTargetOption... options) {
+    checkArgument(bucketInfo.name() == info.name(), "Bucket name must match");
+    info = storage.update(bucketInfo, options);
+  }
+
+  /**
+   * Delete this bucket.
+   *
+   * @return true if bucket was deleted
+   * @throws StorageException upon failure
+   */
+  public boolean delete(BucketSourceOption... options) {
+    return storage.delete(info.name(), options);
   }
 
   public ListResult<BlobInfo> list(Storage.BlobListOption... options) {
     return storage.list(info.name(), options);
   }
 
+  public BlobInfo get(String blob, BlobSourceOption... options) {
+    return null;
+  }
+
   public List<Blob> get(String... blob) {
     // todo
     return null;
+  }
+
+  /*
+  BlobInfo create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options) {
+
+  }
+*/
+
+
+  public Storage storage() {
+    return storage;
   }
 }

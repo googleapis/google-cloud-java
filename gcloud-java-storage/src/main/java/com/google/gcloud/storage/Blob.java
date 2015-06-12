@@ -16,10 +16,13 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.gcloud.storage.Blob.BlobSourceOption.convert;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gcloud.storage.Storage.BlobSourceOption;
+import com.google.common.collect.Iterables;
+import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.CopyRequest;
 import com.google.gcloud.storage.Storage.SignUrlOption;
@@ -29,12 +32,61 @@ import java.net.URL;
 /**
  * A Google cloud storage object.
  */
-public class Blob {
+public final class Blob {
 
   private final Storage storage;
   private BlobInfo info;
 
-  Blob(Storage storage, BlobInfo info) {
+  public static class BlobSourceOption extends Option {
+
+    private static final long serialVersionUID = 214616862061934846L;
+
+    private BlobSourceOption(StorageRpc.Option rpcOption) {
+      super(rpcOption, null);
+    }
+
+    public static BlobSourceOption generationMatch() {
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH);
+    }
+
+    public static BlobSourceOption generationNotMatch() {
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH);
+    }
+
+    public static BlobSourceOption metagenerationMatch() {
+      return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
+    }
+
+    public static BlobSourceOption metagenerationNotMatch() {
+      return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
+    }
+
+    private Storage.BlobSourceOption convert(BlobInfo blobInfo) {
+      switch (rpcOption()) {
+        case IF_GENERATION_MATCH:
+          return Storage.BlobSourceOption.generationMatch(blobInfo.generation());
+        case IF_GENERATION_NOT_MATCH:
+          return Storage.BlobSourceOption.generationNotMatch(blobInfo.generation());
+        case IF_METAGENERATION_MATCH:
+          return Storage.BlobSourceOption.metagenerationMatch(blobInfo.metageneration());
+        case IF_METAGENERATION_NOT_MATCH:
+          return Storage.BlobSourceOption.metagenerationNotMatch(blobInfo.metageneration());
+        default:
+          throw new AssertionError("Unexpected enum value");
+      }
+    }
+
+    static Storage.BlobSourceOption[] convert(BlobInfo blobInfo, BlobSourceOption... options) {
+      Storage.BlobSourceOption[] convertedOptions = new Storage.BlobSourceOption[options.length];
+      int index = 0;
+      for (BlobSourceOption option : options) {
+        convertedOptions[index++] = option.convert(blobInfo);
+      }
+      return convertedOptions;
+    }
+  }
+
+  public Blob(Storage storage, BlobInfo info) {
     this.storage = checkNotNull(storage);
     this.info = checkNotNull(info);
   }
@@ -48,8 +100,8 @@ public class Blob {
    *
    * @throws StorageException upon failure
    */
-  public boolean exists(BlobSourceOption... options) {
-    return storage.get(info.bucket(), info.name(), options) != null;
+  public boolean exists() {
+    return storage.get(info.bucket(), info.name()) != null;
   }
 
   /**
@@ -61,13 +113,17 @@ public class Blob {
     return storage.readAllBytes(info.bucket(), info.name(), options);
   }
 
-
   /**
    * Updates the blob's information.
+   * Bucket or blob's name cannot be changed by this method.
+   * If you want to rename the blob or move it to a different bucket use the
+   * {@link #copyTo} and {@link #delete} operations.
    *
    * @throws StorageException upon failure
    */
   public void update(BlobInfo blobInfo, BlobTargetOption... options) {
+    checkArgument(blobInfo.bucket() == info.bucket(), "Bucket name must match");
+    checkArgument(blobInfo.name() == info.name(), "Blob name must match");
     info = storage.update(blobInfo, options);
   }
 
@@ -78,7 +134,7 @@ public class Blob {
    * @throws StorageException upon failure
    */
   public boolean delete(BlobSourceOption... options) {
-    return storage.delete(info.bucket(), info.name(), options);
+    return storage.delete(info.bucket(), info.name(), convert(info, options));
   }
 
   /**
@@ -101,7 +157,7 @@ public class Blob {
       Iterable<BlobTargetOption> targetOptions) {
     CopyRequest copyRequest = CopyRequest.builder()
         .source(info.bucket(), info.name())
-        .sourceOptions(sourceOptions)
+        .sourceOptions(convert(info, Iterables.toArray(sourceOptions, BlobSourceOption.class)))
         .target(target)
         .targetOptions(targetOptions)
         .build();
@@ -114,7 +170,7 @@ public class Blob {
    * @throws StorageException upon failure
    */
   public BlobReadChannel reader(BlobSourceOption... options) {
-    return storage.reader(info.bucket(), info.name(), options);
+    return storage.reader(info.bucket(), info.name(), convert(info, options));
   }
 
   /**
