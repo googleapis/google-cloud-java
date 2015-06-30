@@ -19,7 +19,7 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-core</artifactId>
-  <version>LATEST</version>
+  <version>0.0.6</version>
 </dependency>
 ```
 
