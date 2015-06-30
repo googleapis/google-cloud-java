@@ -7,7 +7,7 @@ before_install:
 - mvn clean
 - git clone -b travis `git config --get remote.origin.url` target/travis
 - cp target/travis/settings.xml ~/.m2/settings.xml
-install: mvn install
+install: mvn install -DskipTests=true -Dgpg.skip=true
 script: mvn verify
 branches:
   only:
@@ -15,7 +15,10 @@ branches:
 after_success:
 - mvn cobertura:cobertura coveralls:report
 - mvn site --settings target/travis/settings.xml
+- mvn deploy -DskipTests=true -Dgpg.skip=true
 env:
   global:
   - secure: bjyc4GJSP9850m6KSO2LiGKMJI/iFJ6dIDNrrZJHiokWUv8ID5+X7O04YtAFF+WrYyVDJ8Zs+uduAJaQ5NFesnhFjMMNTOaliYIBjpBgdZU0vgmsU0NzO35bu6wA5DAdI8AGUNCVwSZpOAMnj/80dbYbyFwBn2DWBZ3QwpV6J/I=
   - secure: CUM2l73KFm7U4eDsUKkh1WyEUzF3v94Ltvs7MnKU9olE1dNp3YmRBL9Lqhx3hSDqm/xv0ETQsPy29Fs2+VFkhQQxSley6iS/4trr2fioTB680txfXo/zDdmGSP1q1/U40fv1S+jvuBRAhDV5W+8dhWOGtzMH0tJp/TszeDGlmCY=
+  - secure: Eev2NyFdgYxOSlaUkl4VKdyHw6OgG0HZZxCb5V/ApRh4PTuoX74vkNMzkpG8/7L1YY/ZbtpOQHIvADzKxUVBRJAZ7W2o0IR4vIAynBLvpMaA0jci9FdBfMupUEHWfzV8JG7gju91ZZfiKdnR8/5K5rnHEId3LcDG0/v7GGXJt60=
+  - secure: KHDay1BpfjKWBi5U1k12Zwd0WqzKeh8NVz2Rlxc7v2UeblNqltZxk8fFSpg5Bt55ZhEZkVtybR+GyloQHaeVmDm1HQANooTRBV2d3+VuehbY8eJ2QU1RfYI27b0AwCC+ETFjPWpVVUjtg9WwBDSbz/OMJEWlOlXnYQ5qj6HOsgM=
