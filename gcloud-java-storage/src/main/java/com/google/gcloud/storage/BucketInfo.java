@@ -44,7 +44,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * A Google Storage bucket.
+ * Google Storage bucket metadata;
  *
  * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and
  *     Terminology</a>

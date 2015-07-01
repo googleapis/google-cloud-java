@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.StorageRpc;
@@ -342,6 +343,11 @@ public interface Storage extends Service<StorageOptions> {
         return this;
       }
 
+      public Builder targetOptions(Iterable<BlobTargetOption> options) {
+        Iterables.addAll(targetOptions, options);
+        return this;
+      }
+
       public ComposeRequest build() {
         checkArgument(!sourceBlobs.isEmpty());
         checkNotNull(target);
@@ -409,6 +415,11 @@ public interface Storage extends Service<StorageOptions> {
         return this;
       }
 
+      public Builder sourceOptions(Iterable<BlobSourceOption> options) {
+        Iterables.addAll(sourceOptions, options);
+        return this;
+      }
+
       public Builder target(BlobInfo target) {
         this.target = target;
         return this;
@@ -416,6 +427,11 @@ public interface Storage extends Service<StorageOptions> {
 
       public Builder targetOptions(BlobTargetOption... options) {
         Collections.addAll(targetOptions, options);
+        return this;
+      }
+
+      public Builder targetOptions(Iterable<BlobTargetOption> options) {
+        Iterables.addAll(targetOptions, options);
         return this;
       }
 

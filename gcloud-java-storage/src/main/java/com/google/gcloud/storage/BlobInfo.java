@@ -37,7 +37,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * A Google Storage object.
+ * Google Storage object metadata.
  *
  * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and Terminology</a>
  */
