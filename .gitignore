@@ -31,3 +31,5 @@ docs/
 
 # Wheel directory used in Travis builds.
 gcloud-java-wheels/
+src/test/resources/gcd-head.zip
+src/test/resources/gcd-v1beta2-rev1-2.1.1.zip
