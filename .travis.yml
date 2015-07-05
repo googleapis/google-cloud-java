@@ -14,7 +14,7 @@ branches:
   - master
 after_success:
 - mvn cobertura:cobertura coveralls:report
-- mvn site --settings target/travis/settings.xml
+- mvn site-deploy -DskipTests=true --settings=target/travis/settings.xml
 - mvn deploy -DskipTests=true -Dgpg.skip=true --settings target/travis/settings.xml
 env:
   global:
