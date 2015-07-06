@@ -5,6 +5,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java.svg)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs)
