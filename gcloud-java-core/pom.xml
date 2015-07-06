@@ -5,7 +5,6 @@
   <artifactId>gcloud-java-core</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java core</name>
-  <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
   <description>
     Core module for the gcloud-java.
   </description>
