@@ -50,7 +50,7 @@
     <site>
       <id>github-pages-site</id>
       <name>Deployment through GitHub's site deployment plugin</name>
-      <url>http://googlecloudplatform.github.io/gcloud-java/</url>
+      <url>site/${project.version}/</url>
     </site>
   </distributionManagement>
   <licenses>
