@@ -5,7 +5,6 @@
   <artifactId>gcloud-java-examples</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java examples</name>
-  <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
   <description>
     Examples for gcloud-java.
   </description>
