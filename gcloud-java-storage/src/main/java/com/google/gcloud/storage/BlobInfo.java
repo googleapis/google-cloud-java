@@ -1,17 +1,12 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *       http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * * Copyright 2015 Google Inc. All Rights Reserved. * * Licensed under the Apache License, Version
+ * 2.0 (the "License"); * you may not use this file except in compliance with the License. * You may
+ * obtain a copy of the License at * * http://www.apache.org/licenses/LICENSE-2.0 * * Unless
+ * required by applicable law or agreed to in writing, software * distributed under the License is
+ * distributed on an "AS IS" BASIS, * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. * See the License for the specific language governing permissions and * limitations
+ * under the License.
  */
 
 package com.google.gcloud.storage;
@@ -37,13 +32,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * A Google Storage object.
+ * Google Storage object metadata.
  *
- * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and Terminology</a>
+ * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and
+ *      Terminology</a>
  */
 public final class BlobInfo implements Serializable {
-
-  private static final long serialVersionUID = 2228487739943277159L;
 
   static final Function<StorageObject, BlobInfo> FROM_PB_FUNCTION =
       new Function<StorageObject, BlobInfo>() {
@@ -52,7 +46,6 @@ public final class BlobInfo implements Serializable {
           return BlobInfo.fromPb(pb);
         }
       };
-
   static final Function<BlobInfo, StorageObject> TO_PB_FUNCTION =
       new Function<BlobInfo, StorageObject>() {
         @Override
@@ -60,7 +53,7 @@ public final class BlobInfo implements Serializable {
           return blobInfo.toPb();
         }
       };
-
+  private static final long serialVersionUID = 2228487739943277159L;
   private final String bucket;
   private final String id;
   private final String name;
@@ -378,18 +371,6 @@ public final class BlobInfo implements Serializable {
         .toString();
   }
 
-  public static BlobInfo of(String bucket, String name) {
-    return builder(bucket, name).build();
-  }
-
-  public static Builder builder(BucketInfo bucketInfo, String name) {
-    return builder(bucketInfo.name(), name);
-  }
-
-  public static Builder builder(String bucket, String name) {
-    return new Builder().bucket(bucket).name(name);
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(bucket, name);
@@ -397,10 +378,7 @@ public final class BlobInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof BlobInfo)) {
-      return  false;
-    }
-    return Objects.equals(toPb(), ((BlobInfo) obj).toPb());
+    return obj instanceof BlobInfo && Objects.equals(toPb(), ((BlobInfo) obj).toPb());
   }
 
   StorageObject toPb() {
@@ -443,6 +421,18 @@ public final class BlobInfo implements Serializable {
     storageObject.setId(id);
     storageObject.setSelfLink(selfLink);
     return storageObject;
+  }
+
+  public static BlobInfo of(String bucket, String name) {
+    return builder(bucket, name).build();
+  }
+
+  public static Builder builder(BucketInfo bucketInfo, String name) {
+    return builder(bucketInfo.name(), name);
+  }
+
+  public static Builder builder(String bucket, String name) {
+    return new Builder().bucket(bucket).name(name);
   }
 
   static BlobInfo fromPb(StorageObject storageObject) {
