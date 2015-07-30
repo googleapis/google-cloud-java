@@ -52,7 +52,7 @@ public abstract class ServiceOptions<
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final long serialVersionUID = 1203687993961393350L;
-  private static final String PROJECT_ENV_NAME = "default_project_id";
+  private static final String PROJECT_ENV_NAME = "GCLOUD_PROJECT";
 
   private final String projectId;
   private final String host;

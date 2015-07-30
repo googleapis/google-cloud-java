@@ -175,7 +175,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         Map<StorageRpc.Option, ?> optionMap) {
       this.serviceOptions = serviceOptions;
       ImmutableMap.Builder<StorageRpc.Option, Object> builder = ImmutableMap.builder();
-      builder.put(StorageRpc.Option.PAGE_TOKEN, cursor);
+      if (cursor != null) {
+        builder.put(StorageRpc.Option.PAGE_TOKEN, cursor);
+      }
       for (Map.Entry<StorageRpc.Option, ?> option : optionMap.entrySet()) {
         if (option.getKey() != StorageRpc.Option.PAGE_TOKEN) {
           builder.put(option.getKey(), option.getValue());
