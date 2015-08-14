@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<changelog>
+  
+<changeset datePattern="yyyyMMdd HH:mm:ss z" start="20150715 10:19:31 PDT" end="20150815 10:19:31 PDT">
+	<changelog-entry>
+		<date pattern="yyyy-MM-dd">2015-08-14</date>
+		<time pattern="HH:mm:ss">10:06:59</time>
+		<author><![CDATA[Ajay Kannan <ajaykannan@google.com>]]></author>
+		<file>
+			<action>deleted</action>
+			<name>src/resources/index.html~</name>
+			<revision>3b4c7406fa2daf8fbf18ee50f83f531517b0e831</revision>
+		</file>
+		<msg><![CDATA[removing backup file]]></msg>
+	</changelog-entry>
+	<changelog-entry>
+		<date pattern="yyyy-MM-dd">2015-08-14</date>
+		<time pattern="HH:mm:ss">10:06:20</time>
+		<author><![CDATA[Ajay Kannan <ajaykannan@google.com>]]></author>
+		<file>
+			<action>added</action>
+			<name>src/resources/css/github.min.css</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/css/normalize.css</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/css/site.css</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-arrow-bullet.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-dropdown-faq.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-dropdown.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-lang-java.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-lang-nodejs.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-lang-python.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-lang-ruby.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-link-github.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-link-package-manager.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-link-stackoverflow.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-menu.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/icon-table-check.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/lang-bg.png</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/logo-full.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/img/logo.svg</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/index.html</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/index.html~</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/js/main.js</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/js/plugins.js</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/js/vendor/jquery-1.10.2.min.js</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/js/vendor/modernizr-2.6.2.min.js</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<file>
+			<action>added</action>
+			<name>src/resources/js/vendor/prettify.js</name>
+			<revision>f5d4b4ee1201b62ce798e1364f28232687c129d8</revision>
+		</file>
+		<msg><![CDATA[creating a landing page, as per issue 66]]></msg>
+	</changelog-entry>
+	<changelog-entry>
+		<date pattern="yyyy-MM-dd">2015-07-30</date>
+		<time pattern="HH:mm:ss">15:18:41</time>
+		<author><![CDATA[aozarov <aozarov@gmail.com>]]></author>
+		<file>
+			<action>modified</action>
+			<name>gcloud-java-core/src/main/java/com/google/gcloud/ServiceOptions.java</name>
+			<revision>cbd1b26de2010578a833ab9c54180c5b437b211b</revision>
+		</file>
+		<file>
+			<action>modified</action>
+			<name>gcloud-java-storage/src/main/java/com/google/gcloud/storage/StorageImpl.java</name>
+			<revision>cbd1b26de2010578a833ab9c54180c5b437b211b</revision>
+		</file>
+		<file>
+			<action>modified</action>
+			<name>pom.xml</name>
+			<revision>cbd1b26de2010578a833ab9c54180c5b437b211b</revision>
+		</file>
+		<msg><![CDATA[1. Fix issue #121 and replace default_project_id environment name with GCLOUD_PROJECT
+ 2. Fix a null pointer bug with listing
+ 3. Update maven dependencies]]></msg>
+	</changelog-entry>
+</changeset>
+
+</changelog>
