@@ -24,6 +24,12 @@
       <artifactId>google-api-services-storage</artifactId>
       <version>v1-rev33-1.20.0</version>
       <scope>compile</scope>
+      <exclusions>
+	<exclusion>
+	  <groupId>com.google.guava</groupId>
+	  <artifactId>guava-jdk5</artifactId>
+	</exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
