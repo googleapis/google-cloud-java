@@ -27,7 +27,7 @@ under the License.
     <item>
       <title>File: 8,
              Errors: 0,
-             Warnings: 4,
+             Warnings: 3,
              Infos: 0
       </title>
             <link>https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-core/checkstyle.html</link>
@@ -44,6 +44,48 @@ under the License.
             </tr>
           </thead>
           <tbody>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-core/checkstyle.html#com.google.gcloud.BaseService.java">com/google/gcloud/BaseService.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-core/checkstyle.html#com.google.gcloud.spi.ServiceRpcFactory.java">com/google/gcloud/spi/ServiceRpcFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-core/checkstyle.html#com.google.gcloud.AuthCredentials.java">com/google/gcloud/AuthCredentials.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-core/checkstyle.html#com.google.gcloud.ExceptionHandler.java">com/google/gcloud/ExceptionHandler.java</a>
@@ -66,21 +108,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  3
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-core/checkstyle.html#com.google.gcloud.BaseService.java">com/google/gcloud/BaseService.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
+                  2
                 </td>
                 <td>
                   0
@@ -89,20 +117,6 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-core/checkstyle.html#com.google.gcloud.RetryParams.java">com/google/gcloud/RetryParams.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-core/checkstyle.html#com.google.gcloud.spi.ServiceRpcFactory.java">com/google/gcloud/spi/ServiceRpcFactory.java</a>
                 </td>
                 <td>
                   0
@@ -137,20 +151,6 @@ under the License.
                 </td>
                 <td>
                   0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-core/checkstyle.html#com.google.gcloud.AuthCredentials.java">com/google/gcloud/AuthCredentials.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
                 </td>
                 <td>
                   0
