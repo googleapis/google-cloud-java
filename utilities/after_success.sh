@@ -21,7 +21,6 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -
         git clone --branch gh-pages --single-branch https://github.com/GoogleCloudPlatform/gcloud-java/ tmp_gh-pages
         cd tmp_gh-pages
         mkdir -p site/latest/
-        touch site/latest/index.html
         echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='http://GoogleCloudPlatform.github.io/gcloud-java/site/${SITE_VERSION}/index.html'\" /></head><body></body></html>" > site/latest/index.html
         git add site/latest/index.html
 
@@ -29,7 +28,7 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -
         sed -i "s/{{SITE_VERSION}}/$SITE_VERSION/g" site/${SITE_VERSION}/index.html
         git add site/${SITE_VERSION}/index.html
 
-        git commit -m "Updating to reflect latest website version"
+        git commit -m "Update the redirect in 'latest/index.html' and the version in the 'Quickstart with Maven' landing page box to $SITE_VERSION"
         git config --global push.default simple
         git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/GoogleCloudPlatform/gcloud-java.git" > /dev/null 2>&1
     fi
