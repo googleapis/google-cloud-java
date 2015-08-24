@@ -8,17 +8,18 @@ echo "Travis pull request: " ${TRAVIS_PULL_REQUEST}
 echo "Travis JDK version:  " ${TRAVIS_JDK_VERSION}
 if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -a "${TRAVIS_PULL_REQUEST}" == "false" ]; then
     mvn cobertura:cobertura coveralls:report
-    mvn site-deploy -DskipTests=true --settings=target/travis/settings.xml
     mvn deploy -DskipTests=true -Dgpg.skip=true --settings target/travis/settings.xml
 
-    # Update "site/latest/index.html" to redirect to the newly generated website (if not a SNAPSHOT)
-    git config --global user.name "travis-ci"
-    git config --global user.email "travis@travis-ci.org"
-    git clone https://github.com/GoogleCloudPlatform/gcloud-java.git tmp_gh-pages
-    cd tmp_gh-pages
+    # Deploy site if not a SNAPSHOT
     SITE_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|Download\w+:)')
     if [ "${SITE_VERSION##*-}" != "SNAPSHOT" ]; then
-        git checkout gh-pages
+        mvn site-deploy -DskipTests=true --settings=target/travis/settings.xml
+
+        # Update "latest" webpage
+        git config --global user.name "travis-ci"
+        git config --global user.email "travis@travis-ci.org"
+        git clone --branch gh-pages --single-branch https://github.com/GoogleCloudPlatform/gcloud-java/ tmp_gh-pages
+        cd tmp_gh-pages
         mkdir -p site/latest/
         touch site/latest/index.html
         echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='http://GoogleCloudPlatform.github.io/gcloud-java/site/${SITE_VERSION}/index.html'\" /></head><body></body></html>" > site/latest/index.html
