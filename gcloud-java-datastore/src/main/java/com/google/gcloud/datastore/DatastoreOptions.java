@@ -38,6 +38,7 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
 
   private static final long serialVersionUID = -8636602944160689193L;
   private static final String DATASET_ENV_NAME = "DATASTORE_DATASET";
+  private static final String HOST_ENV_NAME = "DATASTORE_HOST";
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final String USERINFO_SCOPE = "https://www.googleapis.com/auth/userinfo.email";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE, USERINFO_SCOPE);
@@ -120,6 +121,12 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     } catch (DatastoreRpcException e) {
       throw DatastoreException.translateAndThrow(e);
     }
+  }
+
+  @Override
+  protected String defaultHost() {
+    String host = System.getProperty(HOST_ENV_NAME, System.getenv(HOST_ENV_NAME));
+    return host != null ? host : super.defaultHost();
   }
 
   @Override
