@@ -154,7 +154,7 @@ public abstract class ServiceOptions<
 
   protected ServiceOptions(Builder<ServiceRpcT, OptionsT, ?> builder) {
     projectId = checkNotNull(builder.projectId != null ? builder.projectId : defaultProject());
-    host = firstNonNull(builder.host, DEFAULT_HOST);
+    host = firstNonNull(builder.host, defaultHost());
     httpTransportFactory =
         firstNonNull(builder.httpTransportFactory, DefaultHttpTransportFactory.INSTANCE);
     authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
@@ -189,6 +189,10 @@ public abstract class ServiceOptions<
 
   protected static String appEngineAppId() {
     return System.getProperty("com.google.appengine.application.id");
+  }
+
+  protected String defaultHost() {
+    return DEFAULT_HOST;
   }
 
   protected String defaultProject() {
