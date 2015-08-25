@@ -92,6 +92,7 @@ Contributing
 Contributions to this library are always welcome and highly encouraged.
 
 See [CONTRIBUTING] for more information on how to get started.
+Contributors must adhere to our [CODE_OF_CONDUCT].
 
 Java Versions
 -------------
@@ -114,6 +115,7 @@ Apache 2.0 - See [LICENSE] for more information.
 
 
 [CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
+[CODE_OF_CONDUCT]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md
 [LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-datastore]: https://cloud.google.com/datastore/docs
