@@ -93,6 +93,8 @@ Contributions to this library are always welcome and highly encouraged.
 
 See [CONTRIBUTING] for more information on how to get started.
 
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
+
 Java Versions
 -------------
 
@@ -114,6 +116,7 @@ Apache 2.0 - See [LICENSE] for more information.
 
 
 [CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md
 [LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-datastore]: https://cloud.google.com/datastore/docs
