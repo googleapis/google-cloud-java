@@ -8,7 +8,6 @@ echo "Travis pull request: " ${TRAVIS_PULL_REQUEST}
 echo "Travis JDK version:  " ${TRAVIS_JDK_VERSION}
 if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -a "${TRAVIS_PULL_REQUEST}" == "false" ]; then
     mvn cobertura:cobertura coveralls:report
-    mvn deploy -DskipTests=true -Dgpg.skip=true --settings target/travis/settings.xml
 
     # Deploy site if not a SNAPSHOT
     SITE_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|\w+:)')
@@ -31,6 +30,8 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -
         git commit -m "Update the redirect in 'latest/index.html' and the version in the 'Quickstart with Maven' landing page box to $SITE_VERSION"
         git config --global push.default simple
         git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/GoogleCloudPlatform/gcloud-java.git" > /dev/null 2>&1
+    else
+        mvn deploy -DskipTests=true -Dgpg.skip=true --settings target/travis/settings.xml
     fi
 else
     echo "Not deploying artifacts. This is only done with non-pull-request commits to master branch with Oracle Java 7 builds."
