@@ -50,7 +50,7 @@
     <site>
       <id>github-pages-site</id>
       <name>Deployment through GitHub's site deployment plugin</name>
-      <url>site/${project.version}/</url>
+      <url>${project.version}/</url>
     </site>
   </distributionManagement>
   <licenses>
@@ -371,25 +371,6 @@
             </plugin>
           </reportPlugins>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>com.github.github</groupId>
-        <artifactId>site-maven-plugin</artifactId>
-        <version>0.12</version>
-        <configuration>
-          <message>Creating site for ${project.artifactId} ${project.version}</message>
-          <path>${project.distributionManagement.site.url}</path>
-          <merge>true</merge>
-        </configuration>
-        <executions>
-          <execution>
-            <id>github-site</id>
-            <goals>
-              <goal>site</goal>
-            </goals>
-            <phase>site-deploy</phase>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
