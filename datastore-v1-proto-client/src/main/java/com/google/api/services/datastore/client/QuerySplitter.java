@@ -15,6 +15,7 @@
  */
 package com.google.api.services.datastore.client;
 
+import com.google.api.services.datastore.DatastoreV1.PartitionId;
 import com.google.api.services.datastore.DatastoreV1.Query;
 
 import java.util.List;
@@ -38,7 +39,27 @@ public interface QuerySplitter {
    * @param datastore the datastore to run on.
    * @throws DatastoreException if there was a datastore error while generating query splits.
    * @throws IllegalArgumentException if the given query or numSplits was invalid.
+   * @deprecated Use {@link getSplits(Query, PartitionId, int, Datastore)} instead, which provides
+   *     the ability to supply a namespace.
    */
-  List<Query> getSplits(Query query, int numSplits, Datastore datastore)
+  @Deprecated
+  List<Query> getSplits(Query query, int numSplits, Datastore datastore) throws DatastoreException;
+
+  /**
+   * Returns a list of sharded {@link Query}s for the given query.
+   *
+   * <p>This will create up to the desired number of splits, however it may return less splits if
+   * the desired number of splits is unavailable. This will happen if the number of split points
+   * provided by the underlying Datastore is less than the desired number, which will occur if the
+   * number of results for the query is too small.
+   *
+   * @param query the query to split.
+   * @param partition the partition to run in.
+   * @param numSplits the desired number of splits.
+   * @param datastore the datastore to run on.
+   * @throws DatastoreException if there was a datastore error while generating query splits.
+   * @throws IllegalArgumentException if the given query or numSplits was invalid.
+   */
+  List<Query> getSplits(Query query, PartitionId partition, int numSplits, Datastore datastore)
       throws DatastoreException;
 }

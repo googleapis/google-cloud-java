@@ -39,7 +39,9 @@ import com.google.protobuf.ByteString;
 import java.io.File;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.security.PrivateKey;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -53,7 +55,7 @@ import java.util.logging.Logger;
  * Helper methods for {@link Datastore}.
  *
  */
-public class DatastoreHelper {
+public final class DatastoreHelper {
   private static final Logger logger = Logger.getLogger(DatastoreHelper.class.getName());
 
   /** The property used in the Datastore to give us a random distribution. **/
@@ -139,53 +141,93 @@ public class DatastoreHelper {
    */
   public static Credential getServiceAccountCredential(String account, String privateKeyFile)
       throws GeneralSecurityException, IOException {
+    return getServiceAccountCredential(account, privateKeyFile, DatastoreOptions.SCOPES);
+  }
+
+  /**
+   * Constructs credentials for the given account and key file.
+   *
+   * @param account the account to use.
+   * @param privateKeyFile the file name from which to get the private key.
+   * @param serviceAccountScopes Collection of OAuth scopes to use with the the service
+   *        account flow or {@code null} if not.
+   * @return valid credentials or {@code null}
+   */
+  public static Credential getServiceAccountCredential(String account, String privateKeyFile,
+      Collection<String> serviceAccountScopes) throws GeneralSecurityException, IOException {
+    return getCredentialBuilderWithoutPrivateKey(account, serviceAccountScopes)
+        .setServiceAccountPrivateKeyFromP12File(new File(privateKeyFile))
+        .build();
+  }
+
+  /**
+   * Constructs credentials for the given account and key.
+   *
+   * @param account the account to use.
+   * @param privateKey the private key for the given account.
+   * @param serviceAccountScopes Collection of OAuth scopes to use with the the service
+   *        account flow or {@code null} if not.
+   * @return valid credentials or {@code null}
+   */
+  public static Credential getServiceAccountCredential(String account, PrivateKey privateKey,
+      Collection<String> serviceAccountScopes) throws GeneralSecurityException, IOException {
+    return getCredentialBuilderWithoutPrivateKey(account, serviceAccountScopes)
+        .setServiceAccountPrivateKey(privateKey)
+        .build();
+  }
+
+  private static GoogleCredential.Builder getCredentialBuilderWithoutPrivateKey(
+      String account, Collection<String> scopes) throws GeneralSecurityException, IOException {
     NetHttpTransport transport = GoogleNetHttpTransport.newTrustedTransport();
     JacksonFactory jsonFactory = new JacksonFactory();
     return new GoogleCredential.Builder()
         .setTransport(transport)
         .setJsonFactory(jsonFactory)
         .setServiceAccountId(account)
-        .setServiceAccountScopes(DatastoreOptions.SCOPES)
-        .setServiceAccountPrivateKeyFromP12File(new File(privateKeyFile))
-        .build();
+        .setServiceAccountScopes(scopes);
   }
 
   /**
-   * Uses the following enviorment variables to construct a {@link Datastore}:
+   * Uses the following environment variables to construct a {@link Datastore}:
    *  DATASTORE_DATASET - the datastore dataset id
    *  DATASTORE_HOST - the host to use to access the datastore
-   *    e.g: https://www.googleapis.com/datastore/v1/datasets/{dataset}
+   *    e.g: https://www.googleapis.com
    *  DATASTORE_SERVICE_ACCOUNT - (optional) service account name
    *  DATASTORE_PRIVATE_KEY_FILE - (optional) service account private key file
    *
    * Preference of credentials is:
-   *  - ComputeEngine
    *  - Service Account (specified by DATASTORE_SERVICE_ACCOUNT and DATASTORE_PRIVATE_KEY_FILE)
+   *  - ComputeEngine
    *  - no-credentials (for local development environment)
    */
-  public static DatastoreOptions.Builder getOptionsfromEnv()
+  public static DatastoreOptions.Builder getOptionsFromEnv()
       throws GeneralSecurityException, IOException {
     DatastoreOptions.Builder options = new DatastoreOptions.Builder();
     options.dataset(System.getenv("DATASTORE_DATASET"));
     options.host(System.getenv("DATASTORE_HOST"));
-    Credential credential = getComputeEngineCredential();
-    if (credential != null) {
-      logger.info("Using Compute Engine credential.");
-    } else if (System.getenv("DATASTORE_SERVICE_ACCOUNT") != null &&
-        System.getenv("DATASTORE_PRIVATE_KEY_FILE") != null) {
+    Credential credential;
+    if (System.getenv("DATASTORE_SERVICE_ACCOUNT") != null
+        && System.getenv("DATASTORE_PRIVATE_KEY_FILE") != null) {
       credential = getServiceAccountCredential(System.getenv("DATASTORE_SERVICE_ACCOUNT"),
           System.getenv("DATASTORE_PRIVATE_KEY_FILE"));
       logger.info("Using JWT Service Account credential.");
+    } else {
+      credential = getComputeEngineCredential();
+      if (credential != null) {
+        logger.info("Using Compute Engine credential.");
+      } else {
+        logger.info("Using no credential.");
+      }
     }
     options.credential(credential);
     return options;
   }
 
   /**
-   * @see #getOptionsfromEnv()
+   * @see #getOptionsFromEnv()
    */
   public static Datastore getDatastoreFromEnv() throws GeneralSecurityException, IOException {
-    return DatastoreFactory.get().create(getOptionsfromEnv().build());
+    return DatastoreFactory.get().create(getOptionsFromEnv().build());
   }
 
   /**
@@ -328,7 +370,7 @@ public class DatastoreHelper {
   }
 
   /**
-   * Make a floating point value.
+   * Make a boolean value.
    */
   public static Value.Builder makeValue(boolean value) {
     return Value.newBuilder().setBooleanValue(value);
@@ -342,7 +384,7 @@ public class DatastoreHelper {
   }
 
   /**
-   * Make a key value.
+   * Make an entity value.
    */
   public static Value.Builder makeValue(Entity entity) {
     return Value.newBuilder().setEntityValue(entity);
@@ -356,7 +398,7 @@ public class DatastoreHelper {
   }
 
   /**
-   * Make a entity value.
+   * Make a ByteString value.
    */
   public static Value.Builder makeValue(ByteString blob) {
     return Value.newBuilder().setBlobValue(blob);

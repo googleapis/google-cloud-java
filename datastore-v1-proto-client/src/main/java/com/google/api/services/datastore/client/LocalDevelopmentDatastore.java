@@ -15,17 +15,21 @@
  */
 package com.google.api.services.datastore.client;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkState;
+
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.UrlEncodedContent;
-import com.google.api.client.util.Preconditions;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -51,7 +55,7 @@ import java.util.concurrent.TimeUnit;
  *         .dataset("myapp")
  *         .build();
  *     datastore = LocalDevelopmentDatastoreFactory.get().create(opts);
- *     datastore.start("/usr/local/gcdsdk", "myapp");
+ *     datastore.start("/usr/local/gcd-sdk", "myapp");
  *   }
  *
  *   {@literal @}Before
@@ -75,18 +79,23 @@ import java.util.concurrent.TimeUnit;
  *
  */
 public class LocalDevelopmentDatastore extends Datastore {
-  private static final int STARTUP_TIMEOUT_SECS = 5;
+  private static final int STARTUP_TIMEOUT_SECS = 30;
 
   private final String host;
+  private LocalDevelopmentDatastoreOptions localDevelopmentOptions;
 
   /** Internal state lifecycle management. */
   enum State {NEW, STARTED, STOPPED}
 
-  private State state = State.NEW;
+  private volatile State state = State.NEW;
 
-  LocalDevelopmentDatastore(RemoteRpc rpc, String host) {
+  private File datasetDirectory;
+
+  LocalDevelopmentDatastore(RemoteRpc rpc, String host,
+      LocalDevelopmentDatastoreOptions localDevelopmentOptions) {
     super(rpc);
     this.host = host;
+    this.localDevelopmentOptions = localDevelopmentOptions;
   }
 
   /**
@@ -125,9 +134,9 @@ public class LocalDevelopmentDatastore extends Datastore {
    */
   public synchronized void start(String sdkPath, String dataset, String... cmdLineOptions)
       throws LocalDevelopmentDatastoreException {
-    Preconditions.checkNotNull(sdkPath, "sdkPath cannot be null");
-    Preconditions.checkNotNull(dataset, "dataset cannot be null");
-    Preconditions.checkState(state == State.NEW, "Cannot call start() more than once.");
+    checkNotNull(sdkPath, "sdkPath cannot be null");
+    checkNotNull(dataset, "dataset cannot be null");
+    checkState(state == State.NEW, "Cannot call start() more than once.");
     try {
       startDatastoreInternal(sdkPath, dataset, cmdLineOptions);
       state = State.STARTED;
@@ -142,23 +151,29 @@ public class LocalDevelopmentDatastore extends Datastore {
 
   void startDatastoreInternal(String sdkPath, String dataset, String... cmdLineOptions)
       throws LocalDevelopmentDatastoreException {
-    List<String> cmd = Arrays.asList("./gcd.sh", "start", dataset, "--allow_remote_shutdown",
-        "--property=datastore.no_storage");
+    File datasetDirectory = createDatastore(sdkPath, dataset);
+    List<String> cmd = new ArrayList<String>(
+        Arrays.asList("./gcd.sh", "start", "--allow_remote_shutdown", "--store_on_disk=false"));
     cmd.addAll(Arrays.asList(cmdLineOptions));
-    ProcessBuilder builder = new ProcessBuilder(cmd);
-    builder.directory(new File(sdkPath));
-    builder.redirectErrorStream(true);
-    Process devDatastoreServerProcess;
+    cmd.add(datasetDirectory.getPath());
+    final Process gcdStartProcess;
     try {
-      devDatastoreServerProcess = builder.start();
+      gcdStartProcess = newGcdProcess(sdkPath, cmd).start();
     } catch (IOException e) {
       throw new LocalDevelopmentDatastoreException("Could not start dev server", e);
     }
-    StartupMonitor monitor = new StartupMonitor(devDatastoreServerProcess.getInputStream());
+    // Ensure we don't leak the stub instance if tests end prematurely.
+    Runtime.getRuntime().addShutdownHook(new Thread() {
+      @Override
+      public void run() {
+        gcdStartProcess.destroy();
+    }
+    });
+    StartupMonitor monitor = new StartupMonitor(gcdStartProcess.getInputStream());
     try {
       monitor.start();
       if (!monitor.startupCompleteLatch.await(STARTUP_TIMEOUT_SECS, TimeUnit.SECONDS)) {
-        throw new LocalDevelopmentDatastoreException("Dev server did not start within 5 seconds");
+        throw new LocalDevelopmentDatastoreException("Dev server did not start within 30 seconds");
       }
       if (!monitor.success) {
         throw new LocalDevelopmentDatastoreException("Server did not start normally");
@@ -167,6 +182,42 @@ public class LocalDevelopmentDatastore extends Datastore {
       // not sure why this would happen
       throw new LocalDevelopmentDatastoreException("Received an interrupt", e);
     }
+  }
+
+  private File createDatastore(String sdkPath, String dataset)
+      throws LocalDevelopmentDatastoreException {
+    try {
+      datasetDirectory = Files.createTempDirectory("local-development-datastore").toFile();
+    } catch (IOException e) {
+      throw new LocalDevelopmentDatastoreException("Could not create dataset tmp directory", e);
+    }
+    List<String> cmd = Arrays.asList("./gcd.sh", "create", "--project_id=" + dataset,
+        datasetDirectory.getPath());
+    try {
+      int retCode = newGcdProcess(sdkPath, cmd).start().waitFor();
+      if (retCode != 0) {
+        throw new LocalDevelopmentDatastoreException(
+            String.format("Could not create dataset (retcode=%d)", retCode));
+      }
+    } catch (IOException e) {
+      throw new LocalDevelopmentDatastoreException("Could not create dataset", e);
+    } catch (InterruptedException e) {
+      throw new LocalDevelopmentDatastoreException("Received an interrupt", e);
+    }
+    return datasetDirectory;
+  }
+
+  private ProcessBuilder newGcdProcess(String sdkPath, List<String> cmd) {
+    ProcessBuilder builder = new ProcessBuilder(cmd);
+    builder.directory(new File(sdkPath));
+    builder.redirectErrorStream(true);
+    builder.environment().putAll(localDevelopmentOptions.getEnvVars());
+    return builder;
+  }
+
+  public File getDatasetDirectory() {
+    checkState(state == State.STARTED);
+    return datasetDirectory;
   }
 
   /**
@@ -178,7 +229,20 @@ public class LocalDevelopmentDatastore extends Datastore {
     // We intentionally don't check the internal state. If people want to try and stop the server
     // multiple times that's fine.
     stopDatastoreInternal();
-    state = State.STOPPED;
+    if (state != State.STOPPED) {
+      state = State.STOPPED;
+      if (datasetDirectory != null) {
+        try {
+          Process process =
+              new ProcessBuilder("rm", "-r", datasetDirectory.getAbsolutePath()).start();
+          if (process.waitFor() != 0) {
+            throw new IOException("Temp directory delete exited with " + process.exitValue());
+          }
+        } catch (IOException | InterruptedException e) {
+          throw new IllegalStateException("Dataset directory wipe failed.", e);
+        }
+      }
+    }
   }
 
   void stopDatastoreInternal() throws LocalDevelopmentDatastoreException {
@@ -191,8 +255,8 @@ public class LocalDevelopmentDatastore extends Datastore {
       HttpResponse httpResponse = client.buildPostRequest(url, content).execute();
       if (!httpResponse.isSuccessStatusCode()) {
         throw new LocalDevelopmentDatastoreException(
-            "Request to shutdown local datastore returned http error code " +
-                httpResponse.getStatusCode());
+            "Request to shutdown local datastore returned http error code "
+            + httpResponse.getStatusCode());
       }
     } catch (IOException e) {
       throw new LocalDevelopmentDatastoreException(

@@ -17,19 +17,21 @@ package com.google.api.services.datastore.client;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.client.http.HttpTransport;
 
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * A mutable object containing settings for the datastore.
+ * An immutable object containing settings for the datastore.
  *
  * <p>Example for connecting to a datastore:</p>
  *
  * <pre>
- * DatastoreOptions options = new DatastoreOptions()
- *     .dataset("my-dataset-id"),
- *     .credential(DatastoreHelper.getGceCredential());
+ * DatastoreOptions options = new DatastoreOptions.Builder()
+ *     .dataset("my-dataset-id")
+ *     .credential(DatastoreHelper.getComputeEngineCredential())
+ *     .build();
  * DatastoreFactory.get().create(options);
  * </pre>
  *
@@ -46,16 +48,17 @@ public class DatastoreOptions {
   private final HttpRequestInitializer initializer;
 
   private final Credential credential;
+  private final HttpTransport transport;
   public static final List<String> SCOPES = Arrays.asList(
       "https://www.googleapis.com/auth/datastore",
       "https://www.googleapis.com/auth/userinfo.email");
 
-  DatastoreOptions(String dataset, String host, HttpRequestInitializer initializer,
-      Credential credential) {
-    this.dataset = dataset;
-    this.host = host != null ? host : DEFAULT_HOST;
-    this.initializer = initializer;
-    this.credential = credential;
+  DatastoreOptions(Builder b) {
+    this.dataset = b.dataset;
+    this.host = b.host != null ? b.host : DEFAULT_HOST;
+    this.initializer = b.initializer;
+    this.credential = b.credential;
+    this.transport = b.transport;
   }
 
   /**
@@ -66,6 +69,7 @@ public class DatastoreOptions {
     private String host;
     private HttpRequestInitializer initializer;
     private Credential credential;
+    private HttpTransport transport;
 
     public Builder() { }
 
@@ -74,10 +78,11 @@ public class DatastoreOptions {
       this.host = options.host;
       this.initializer = options.initializer;
       this.credential = options.credential;
+      this.transport = options.transport;
     }
 
     public DatastoreOptions build() {
-      return new DatastoreOptions(dataset, host, initializer, credential);
+      return new DatastoreOptions(this);
     }
 
     /**
@@ -111,6 +116,14 @@ public class DatastoreOptions {
       credential = newCredential;
       return this;
     }
+    
+    /**
+     * Sets the transport used to access the API.
+     */
+    public Builder transport(HttpTransport transport) {
+      this.transport = transport;
+      return this;
+    }
   }
 
   // === getters ===
@@ -129,5 +142,9 @@ public class DatastoreOptions {
 
   public Credential getCredential() {
     return credential;
+  }
+  
+  public HttpTransport getTransport() {
+    return transport;
   }
 }

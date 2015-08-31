@@ -20,6 +20,7 @@ import static com.google.api.services.datastore.client.DatastoreHelper.makeFilte
 import com.google.api.services.datastore.DatastoreV1.EntityResult;
 import com.google.api.services.datastore.DatastoreV1.Filter;
 import com.google.api.services.datastore.DatastoreV1.Key;
+import com.google.api.services.datastore.DatastoreV1.PartitionId;
 import com.google.api.services.datastore.DatastoreV1.PropertyExpression;
 import com.google.api.services.datastore.DatastoreV1.PropertyFilter;
 import com.google.api.services.datastore.DatastoreV1.PropertyFilter.Operator;
@@ -57,14 +58,21 @@ final class QuerySplitterImpl implements QuerySplitter {
   }
 
   @Override
+  @Deprecated
   public List<Query> getSplits(Query query, int numSplits, Datastore datastore)
       throws DatastoreException, IllegalArgumentException {
+    return getSplits(query, PartitionId.newBuilder().build(), numSplits, datastore);
+  }
 
+  @Override
+  public List<Query> getSplits(
+      Query query, PartitionId partition, int numSplits, Datastore datastore)
+      throws DatastoreException, IllegalArgumentException {
     validateQuery(query);
     validateSplitSize(numSplits);
 
     List<Query> splits = new ArrayList<Query>(numSplits);
-    List<Key> scatterKeys = getScatterKeys(numSplits, query, datastore);
+    List<Key> scatterKeys = getScatterKeys(numSplits, query, partition, datastore);
     Key lastKey = null;
     for (Key nextKey : getSplitKey(scatterKeys, numSplits)) {
       splits.add(createSplit(lastKey, nextKey, query));
@@ -157,10 +165,12 @@ final class QuerySplitterImpl implements QuerySplitter {
    *
    * @param numSplits the number of desired splits.
    * @param query the user query.
+   * @param partition the partition to run the query in.
    * @param datastore the datastore containing the data.
    * @throws DatastoreException if there was an error when executing the datastore query.
    */
-  private List<Key> getScatterKeys(int numSplits, Query query, Datastore datastore)
+  private List<Key> getScatterKeys(
+      int numSplits, Query query, PartitionId partition, Datastore datastore)
       throws DatastoreException {
     Query.Builder scatterPointQuery = createScatterQuery(query, numSplits);
 
@@ -168,8 +178,11 @@ final class QuerySplitterImpl implements QuerySplitter {
 
     QueryResultBatch batch;
     do {
-      RunQueryRequest scatterRequest = RunQueryRequest.newBuilder()
-          .setQuery(scatterPointQuery).build();
+      RunQueryRequest scatterRequest =
+          RunQueryRequest.newBuilder()
+              .setPartitionId(partition)
+              .setQuery(scatterPointQuery)
+              .build();
       batch = datastore.runQuery(scatterRequest).getBatch();
       for (EntityResult result : batch.getEntityResultList()) {
         keySplits.add(result.getEntity().getKey());

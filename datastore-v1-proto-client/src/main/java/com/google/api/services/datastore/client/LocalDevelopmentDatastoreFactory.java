@@ -35,7 +35,13 @@ public class LocalDevelopmentDatastoreFactory extends DatastoreFactory {
   @Override
   public LocalDevelopmentDatastore create(DatastoreOptions options)
       throws IllegalArgumentException {
+    return create(options, new LocalDevelopmentDatastoreOptions.Builder().build());
+  }
+
+  public LocalDevelopmentDatastore create(DatastoreOptions options,
+      LocalDevelopmentDatastoreOptions localDevelopmentOptions) {
     RemoteRpc rpc = newRemoteRpc(options);
-    return new LocalDevelopmentDatastore(rpc, options.getHost());
+    return new LocalDevelopmentDatastore(rpc, options.getHost(),
+        localDevelopmentOptions);
   }
 }

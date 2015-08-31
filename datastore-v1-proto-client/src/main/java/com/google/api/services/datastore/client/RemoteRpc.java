@@ -27,6 +27,7 @@ import com.google.protobuf.MessageLite;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
 /**
@@ -39,7 +40,7 @@ class RemoteRpc {
   private final HttpRequestFactory client;
   private final HttpRequestInitializer initializer;
   private final String url;
-  private int rpcCount = 0;
+  private final AtomicInteger rpcCount = new AtomicInteger(0);
 
   RemoteRpc(HttpRequestFactory client, HttpRequestInitializer initializer, String url) {
     this.client = client;
@@ -61,14 +62,14 @@ class RemoteRpc {
    *
    * @throws DatastoreException if the RPC fails.
    */
-  InputStream call(String methodName, MessageLite request) throws DatastoreException {
+  public InputStream call(String methodName, MessageLite request) throws DatastoreException {
     logger.fine("remote datastore call " + methodName);
 
     long startTime = System.currentTimeMillis();
     try {
       HttpResponse httpResponse;
       try {
-        rpcCount++;
+        rpcCount.incrementAndGet();
         ProtoHttpContent payload = new ProtoHttpContent(request);
         HttpRequest httpRequest = client.buildPostRequest(resolveURL(methodName), payload);
         if (initializer != null) {
@@ -89,14 +90,14 @@ class RemoteRpc {
   }
 
   void resetRpcCount() {
-    rpcCount = 0;
+    rpcCount.set(0);
   }
 
   int getRpcCount() {
-    return rpcCount;
+    return rpcCount.get();
   }
 
-  String getUrl() {
+  public String getUrl() {
     return url;
   }
 
@@ -108,7 +109,7 @@ class RemoteRpc {
     return client;
   }
 
-  static DatastoreException makeException(
+  public static DatastoreException makeException(
       String url, String methodName, int code, String message, Throwable cause) {
     logger.fine("remote datastore call " + methodName + " against " + url  + " failed: " + message);
     return new DatastoreException(methodName, code, message, cause);
