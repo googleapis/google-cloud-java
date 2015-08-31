@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>gcloud</title>
+        <meta name="description" content="Java idiomatic client for Google Cloud services">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/github.min.css">
+        <link rel="stylesheet" href="../css/site.css">
+        <script src="../js/vendor/modernizr-2.6.2.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Roboto:300,400,700,700italic,400italic|Open+Sans:300' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <header class="page-header" role="banner">
+            <h1 class="logo"><img src="../img/logo-full.svg" alt="Google Cloud Platform" /></h1>
+            <nav class="main-nav">
+                <div class="nav-current">Java</div>
+                <ul class="menu">
+		    <li>
+                        <a href="#" title="Java docs page">
+                            <img src="../img/icon-lang-java-duke-white.svg" alt="Java icon" class="menu-icon" width="24" height="24" />
+                            Java
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://googlecloudplatform.github.io/gcloud-node/" title="Node.js docs page">
+                            <img src="../img/icon-lang-nodejs.svg" alt="Node.js icon" class="menu-icon" />
+                            Node.js
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://googlecloudplatform.github.io/gcloud-python/" title="Python docs page">
+                            <img src="../img/icon-lang-python.svg" alt="Python icon" class="menu-icon" />
+                            Python
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://googlecloudplatform.github.io/gcloud-ruby/" title="Ruby docs page">
+                            <img src="../img/icon-lang-ruby.svg" alt="Ruby icon" class="menu-icon" />
+                            Ruby
+                        </a>
+                    </li>
+                </ul>
+            </nav><!-- end of .main-nav -->
+        </header><!-- end of .page-header -->
+
+
+        <article class="main" role="main">
+            <section class="hero-banner">
+                <div class="container clearfix">
+                    <div class="col col-left">
+                        <h1>gcloud</h1>
+                        <p>Google Cloud Client Library for Java - an idiomatic, intuitive, and natural way for Java developers to integrate with Google Cloud Platform services, like Cloud Datastore and Cloud Storage.</p>
+                    </div><!-- end of .col.col-left -->
+                    <div class="col col-right">
+                        <h2>Quickstart with Maven: Add gcloud to your pom.xml</h2>
+                        <pre>&lt;dependency&gt;
+  &lt;groupId&gt;com.google.gcloud&lt;/groupId&gt;
+  &lt;artifactId&gt;gcloud-java&lt;/artifactId&gt;
+  &lt;version&gt;0.0.7&lt;/version&gt;
+&lt;/dependency&gt;</pre>
+                    </div><!-- end of .col.col-right -->
+                </div><!-- end of .container -->
+            </section><!-- end of .hero-banner -->
+
+            <section class="block featuring">
+                <div class="container">
+                    <ul class="featuring-links">
+                        <li>
+                            <a href="./apidocs/index.html" title="gcloud-java docs" class="btn btn-docs">
+                                <img src="../img/icon-lang-java-duke.svg" alt="Java icon" class="menu-icon" />
+                                Read the Docs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/GoogleCloudPlatform/gcloud-java" title="gcloud-java on Github" class="ext-link">
+                                <img src="../img/icon-link-github.svg" alt="Github icon" />
+                                Github
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/GoogleCloudPlatform/gcloud-java/issues" title="gcloud-java issues on Github" class="ext-link">
+                                <img src="../img/icon-link-github.svg" alt="Github icon" />
+                                Issues
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://stackoverflow.com/questions/tagged/gcloud-java" title="gcloud on StackOverflow" class="ext-link">
+                                <img src="../img/icon-link-stackoverflow.svg" alt="StackOverflow icon" />
+				StackOverflow
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./project-info.html" title="Java package manager" class="ext-link">
+                                 <img src="../img/icon-link-package-manager.svg" alt="Package Manager icon" />
+                                Package Information
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- end of .container -->
+            </section><!-- end of .featuring -->
+
+            <section class="block about">
+                <div class="container clearfix">
+                  <h3 class="block-title">What is it?</h3>
+
+                  <p><code>gcloud</code> is a client library for accessing Google
+		    Cloud Platform services that significantly reduces the boilerplate
+		    code you have to write. The library provides high-level API
+		    abstractions so they're easier to understand. It embraces
+		    idioms of Java, works well with the standard library, and
+		    integrates better with your codebase.
+		    All this means you spend more time creating code that matters
+		    to you.</p>
+		  
+		  <p><code>gcloud</code> is configured to access Google Cloud Platform
+		    services and authorize (OAuth 2.0) automatically on your behalf.
+		    Add the <code>gcloud</code> dependency to your project and get a private key to be
+		    up and ready to go. Better yet, if you are running on a Google
+		    Compute Engine instance, the private key is automatically detected.
+		  
+                  <h4>Example: Retrieve Datastore Entries</h4>
+		  
+                  <div hljs="" language="js">
+		    <pre><code class="hljs java"><span class="hljs-keyword">import</span> com.google.gcloud.datastore.Datastore;
+<span class="hljs-keyword">import</span> com.google.gcloud.datastore.DatastoreFactory;
+<span class="hljs-keyword">import</span> com.google.gcloud.datastore.DatastoreOptions;
+<span class="hljs-keyword">import</span> com.google.gcloud.datastore.Entity;
+<span class="hljs-keyword">import</span> com.google.gcloud.datastore.Key;
+<span class="hljs-keyword">import</span> com.google.gcloud.datastore.KeyFactory;
+
+DatastoreOptions options = DatastoreOptions.builder().projectId(<span class="hljs-string">PROJECT_ID</span>).build();
+Datastore datastore = DatastoreFactory.instance().get(options);
+KeyFactory keyFactory = datastore.newKeyFactory().kind(<span class="hljs-string">KIND</span>);
+Key key = keyFactory.newKey(keyName);
+Entity entity = datastore.get(key);</code></pre></div>
+                </div><!-- end of .container -->
+            </section><!-- end of .featuring -->
+
+            <section class="block faq">
+                <div class="container">
+                    <h3 class="block-title">FAQ</h3>
+		    <h4>What is the relationship between the gcloud-java library and the gcloud command-line tool?</h4>
+		    <p>Both the gcloud command-line tool and gcloud-java library are a part of the Google Cloud SDK: a collection of tools and libraries that enable you to easily create and manage resources on the Google Cloud Platform. The gcloud command-line tool can be used to manage both your development workflow and your Google Cloud Platform resources while the gcloud-java library is the Google Cloud Client Library for Java.</p>
+
+		    <h4>What is the relationship between gcloud and the Google APIs Java Client?</h4>
+		    <p>The <a href="https://github.com/google/google-api-java-client">Google APIs Java Client</a> is a client library for using the broad set of Google APIs. gcloud is built specifically for the Google Cloud Platform and is the recommended way to integrate Google Cloud APIs into your Java applications. If your application requires both Google Cloud Platform and other Google APIs, the 2 libraries may be used by your application.</p>
+                </div><!-- end of .container -->
+            </section><!-- end of .faq -->
+        </article><!-- end of .main -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="../js/plugins.js"></script>
+        <script src="../js/main.js"></script>
+    </body>
+</html>
