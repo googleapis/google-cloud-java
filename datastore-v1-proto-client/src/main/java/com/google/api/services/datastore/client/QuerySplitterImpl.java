@@ -137,6 +137,9 @@ final class QuerySplitterImpl implements QuerySplitter {
    * @param query the desired query.
    */
   private Query createSplit(Key lastKey, Key nextKey, Query query) {
+    if (lastKey == null && nextKey == null) {
+      return query;
+    }
     List<Filter> keyFilters = new ArrayList<Filter>();
     if (query.hasFilter()) {
       keyFilters.add(query.getFilter());
