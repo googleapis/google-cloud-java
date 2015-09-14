@@ -126,13 +126,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
     }
     DatastoreV1.AllocateIdsRequest.Builder requestPb = DatastoreV1.AllocateIdsRequest.newBuilder();
     for (IncompleteKey key : keys) {
-      // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+      // TODO(ajaykannan): fix me!
       //requestPb.addKey(trimNameOrId(key).toPb());
     }
     DatastoreV1.AllocateIdsResponse responsePb = allocateIds(requestPb.build());
     ImmutableList.Builder<Key> keyList = ImmutableList.builder();
     for (DatastoreV1.Key keyPb : responsePb.getKeyList()) {
-      // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+      // TODO(ajaykannan): fix me!
       // keyList.add(Key.fromPb(keyPb));
     }
     return keyList.build();
@@ -195,7 +195,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       if (completeEntity != null) {
         responseBuilder.add(completeEntity);
       } else {
-        // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+        // TODO(ajaykannan): fix me!
         //responseBuilder.add(Entity.builder(Key.fromPb(allocatedKeys.next()), entity).build());
       }
     }
@@ -226,7 +226,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       requestPb.setReadOptions(readOptionsPb);
     }
     for (Key k : Sets.newLinkedHashSet(Arrays.asList(keys))) {
-      // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+      // TODO(ajaykannan): fix me!
       //requestPb.addKey(k.toPb());
     }
     return new ResultsIterator(requestPb);
@@ -314,7 +314,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
       Set<Key> dedupKeys = new LinkedHashSet<>(Arrays.asList(keys));
       for (Key key : dedupKeys) {
-        // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+        // TODO(ajaykannan): fix me!
         //mutationPb.addDelete(key.toPb());
       }
       commitMutation(mutationPb);

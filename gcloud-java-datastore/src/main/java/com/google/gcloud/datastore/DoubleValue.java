@@ -18,8 +18,6 @@ package com.google.gcloud.datastore;
 
 import static com.google.datastore.v1beta3.Value.DOUBLE_VALUE_FIELD_NUMBER;
 
-import com.google.api.services.datastore.DatastoreV1;
-
 public final class DoubleValue extends Value<Double> {
 
   private static final long serialVersionUID = -5096238337676649540L;
@@ -43,7 +41,7 @@ public final class DoubleValue extends Value<Double> {
         protected Double getValue(com.google.datastore.v1beta3.Value from) {
           return from.getDoubleValue();
         }
-        
+
         @Override
         protected void setValue(DoubleValue from, com.google.datastore.v1beta3.Value.Builder to) {
           to.setDoubleValue(from.get());

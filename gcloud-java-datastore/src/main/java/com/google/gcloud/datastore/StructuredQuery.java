@@ -228,10 +228,10 @@ public class StructuredQuery<V> extends Query<V> {
     public static PropertyFilter fromPb(DatastoreV1.PropertyFilter propertyFilterPb) {
       String property = propertyFilterPb.getProperty().getName();
       Operator operator = Operator.fromPb(propertyFilterPb.getOperator());
-      // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+      // TODO(ajaykannan): fix me!
       //Value<?> value = Value.fromPb(propertyFilterPb.getValue());
       //return new PropertyFilter(property, operator, value);
-      return new PropertyFilter(property, operator, null); // TODO(ajaykannan): remove this line when possible
+      return new PropertyFilter(property, operator, null); // TODO(ajaykannan): fix me!
     }
 
     @Override
@@ -437,7 +437,7 @@ public class StructuredQuery<V> extends Query<V> {
       propertyFilterPb.getPropertyBuilder().setName(property);
       propertyFilterPb.setOperator(operator.toPb());
       if (value != null) {
-        // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+        // TODO(ajaykannan): fix me!
         //propertyFilterPb.setValue(value.toPb());
       }
       return filterPb.build();

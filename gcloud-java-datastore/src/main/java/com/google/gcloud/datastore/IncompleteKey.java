@@ -58,18 +58,12 @@ public class IncompleteKey extends BaseKey {
   }
 
   static IncompleteKey fromPb(com.google.datastore.v1beta3.Key keyPb) {
-    String projectId = null;
-    String namespace = null;
+    String projectId = "";
+    String namespace = "";
     if (keyPb.hasPartitionId()) {
       com.google.datastore.v1beta3.PartitionId partitionIdPb = keyPb.getPartitionId();
       projectId = partitionIdPb.getProjectId();
-      if (projectId.isEmpty()) {
-        projectId = null;
-      }
       namespace = partitionIdPb.getNamespaceId();
-      if (namespace.isEmpty()) {
-        namespace = null;
-      }
     }
     List<com.google.datastore.v1beta3.Key.PathElement> pathElementsPb = keyPb.getPathList();
     Preconditions.checkArgument(!pathElementsPb.isEmpty(), "Path must not be empty");

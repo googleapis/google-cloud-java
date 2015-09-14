@@ -36,7 +36,8 @@ public final class RawValue extends Value<com.google.datastore.v1beta3.Value> {
         }
 
         @Override
-        protected com.google.datastore.v1beta3.Value getValue(com.google.datastore.v1beta3.Value from) {
+        protected com.google.datastore.v1beta3.Value getValue(
+            com.google.datastore.v1beta3.Value from) {
           return from;
         }
 

@@ -32,7 +32,7 @@ import java.util.Date;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
  *     Entities, Properties, and Keys</a>
  */
-public final class DateTime extends Serializable<com.google.datastore.v1beta3.Value>
+public final class DateTime extends Serializable<com.google.protobuf.Timestamp>
     implements Comparable<DateTime> {
 
   private static final long serialVersionUID = 7343324797621228378L;
@@ -96,24 +96,23 @@ public final class DateTime extends Serializable<com.google.datastore.v1beta3.Va
   }
 
   @Override
-  protected com.google.datastore.v1beta3.Value toPb() {
-    return com.google.datastore.v1beta3.Value.newBuilder()
-        .setTimestampValue(microsecondsToTimestampPb(timestampMicroseconds)).build();
+  protected com.google.protobuf.Timestamp toPb() {
+    return microsecondsToTimestampPb(timestampMicroseconds);
   }
 
   @Override
   protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return new DateTime(timestampPbToMicroseconds(com.google.datastore.v1beta3.Value
-        .parseFrom(bytesPb).getTimestampValue()));
+    return new DateTime(timestampPbToMicroseconds(
+        com.google.protobuf.Timestamp.parseFrom(bytesPb)));
   }
   
   protected static long timestampPbToMicroseconds(com.google.protobuf.Timestamp timestampPb) {
-    return timestampPb.getSeconds() * 10^6 + timestampPb.getNanos() / 10^3;
+    return timestampPb.getSeconds() * 1000000 + timestampPb.getNanos() / 1000;
   }
   
   protected static com.google.protobuf.Timestamp microsecondsToTimestampPb(long microseconds) {
-    long seconds = microseconds / 10^6;
-    int nanos = (int) (microseconds % 10^6) * 10^3;
+    long seconds = microseconds / 1000000;
+    int nanos = (int) (microseconds % 1000000) * 1000;
     return com.google.protobuf.Timestamp.newBuilder().setSeconds(seconds).setNanos(nanos).build();
   }
 }
