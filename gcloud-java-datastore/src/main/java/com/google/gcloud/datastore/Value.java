@@ -18,10 +18,9 @@ package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.protobuf.Descriptors.FieldDescriptor;
+import com.google.datastore.v1beta3.Value.ValueTypeCase;
 import com.google.protobuf.InvalidProtocolBufferException;
 
-import java.util.Map.Entry;
 import java.util.Objects;
 
 /**
@@ -64,7 +63,8 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
     @SuppressWarnings("deprecation")
     @Override
     public final com.google.datastore.v1beta3.Value toProto(P value) {
-      com.google.datastore.v1beta3.Value.Builder builder = com.google.datastore.v1beta3.Value.newBuilder();
+      com.google.datastore.v1beta3.Value.Builder builder = 
+          com.google.datastore.v1beta3.Value.newBuilder();
       builder.setExcludeFromIndexes(value.excludeFromIndexes());
       builder.setMeaning(value.meaning());
       setValue(value, builder);
@@ -160,7 +160,7 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
   }
 
   @Deprecated
-  public final int meaning() {
+  final int meaning() {
     return meaning;
   }
 
@@ -198,18 +198,10 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
   }
 
   static Value<?> fromPb(com.google.datastore.v1beta3.Value proto) {
-    for (Entry<FieldDescriptor, Object> entry : proto.getAllFields().entrySet()) {
-      FieldDescriptor descriptor = entry.getKey();
-      if (descriptor.getName().endsWith("_value")) {
-        ValueType valueType = ValueType.getByDescriptorId(descriptor.getNumber());
-        if (valueType == null) {
-          // unsupported type
-          return RawValue.MARSHALLER.fromProto(proto).build();
-        }
-        return valueType.getMarshaller().fromProto(proto).build();
-      }
-    }
-    return NullValue.MARSHALLER.fromProto(proto).build();
+    ValueTypeCase descriptorId = proto.getValueTypeCase();
+    ValueType valueType = ValueType.getByDescriptorId(descriptorId.getNumber());
+    return valueType == null ? RawValue.MARSHALLER.fromProto(proto).build() 
+        : valueType.getMarshaller().fromProto(proto).build();
   }
 
   @Override

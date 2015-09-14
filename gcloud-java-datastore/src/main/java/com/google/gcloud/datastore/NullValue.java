@@ -18,6 +18,8 @@ package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+import static com.google.datastore.v1beta3.Value.NULL_VALUE_FIELD_NUMBER;
+
 public final class NullValue extends Value<Void> {
 
   private static final long serialVersionUID = 8497300779013002270L;
@@ -34,7 +36,7 @@ public final class NullValue extends Value<Void> {
 
         @Override
         public int getProtoFieldId() {
-          return 0;
+          return NULL_VALUE_FIELD_NUMBER;
         }
 
         @Override
@@ -44,11 +46,12 @@ public final class NullValue extends Value<Void> {
 
         @Override
         protected void setValue(NullValue from, com.google.datastore.v1beta3.Value.Builder to) {
-          // nothing to set
+          to.setNullValue(com.google.protobuf.NullValue.NULL_VALUE);
         }
       };
 
-  public static final class Builder extends Value.BaseBuilder<Void, NullValue, Builder> {
+  public static final class Builder 
+      extends Value.BaseBuilder<Void, NullValue, Builder> {
 
     private Builder() {
       super(ValueType.NULL);

@@ -21,7 +21,6 @@ import static com.google.gcloud.datastore.Validator.validateKind;
 import static com.google.gcloud.datastore.Validator.validateNamespace;
 
 import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 
 import java.util.LinkedList;
@@ -41,8 +40,8 @@ abstract class BaseKey extends Serializable<com.google.datastore.v1beta3.Key> {
 
   abstract static class Builder<B extends Builder<B>> {
 
-    String projectId;
-    String namespace;
+    String projectId = "";
+    String namespace = "";
     String kind;
     final List<PathElement> ancestors;
 
@@ -176,15 +175,9 @@ abstract class BaseKey extends Serializable<com.google.datastore.v1beta3.Key> {
     com.google.datastore.v1beta3.Key.Builder keyPb = com.google.datastore.v1beta3.Key.newBuilder();
     com.google.datastore.v1beta3.PartitionId.Builder partitionIdPb = 
         com.google.datastore.v1beta3.PartitionId.newBuilder();
-    if (!Strings.isNullOrEmpty(projectId)) {
-      partitionIdPb.setProjectId(projectId);
-    }
-    if (!Strings.isNullOrEmpty(namespace)) {
-      partitionIdPb.setNamespaceId(namespace);
-    }
-    if (!partitionIdPb.getProjectId().isEmpty() || !partitionIdPb.getNamespaceId().isEmpty()) {
-      keyPb.setPartitionId(partitionIdPb.build());
-    }
+    partitionIdPb.setProjectId(projectId);
+    partitionIdPb.setNamespaceId(namespace);
+    keyPb.setPartitionId(partitionIdPb.build());
     for (PathElement pathEntry : path) {
       keyPb.addPath(pathEntry.toPb());
     }

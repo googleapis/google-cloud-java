@@ -66,7 +66,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
           if (!entityPb.hasKey()) {
             return null;
           }
-          //TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+          //TODO(ajaykannan): fix me!
           //return Key.fromPb(entityPb.getKey());
         }
         return ProjectionEntity.fromPb(entityPb);
@@ -89,9 +89,9 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       private static final long serialVersionUID = -8514289244104446252L;
 
       @Override protected Key convert(DatastoreV1.Entity entityPb) {
-        //TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+        //TODO(ajaykannan): fix me!
         //return Key.fromPb(entityPb.getKey());
-        return Key.builder(null).build(); // TODO(ajaykannan): remove this line when possible
+        return Key.builder(null).build(); // TODO(ajaykannan): fix me!
       }
     };
 

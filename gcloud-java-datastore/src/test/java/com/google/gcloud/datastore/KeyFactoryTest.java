@@ -55,7 +55,7 @@ public class KeyFactoryTest {
     key = keyFactory.newKey();
     assertEquals("k1", key.kind());
     assertEquals(PROJECT_ID, key.projectId());
-    assertNull(key.namespace());
+    assertTrue(key.namespace().isEmpty());
     assertTrue(key.ancestors().isEmpty());
 
     keyFactory = new KeyFactory(PROJECT_ID, "ns1").kind("k");
@@ -75,9 +75,9 @@ public class KeyFactoryTest {
   @Test
   public void testNewKey() throws Exception {
     Key key = keyFactory.newKey(1);
-    verifyKey(key, 1L, null);
+    verifyKey(key, 1L, "");
     key = keyFactory.newKey("n");
-    verifyKey(key, "n", null);
+    verifyKey(key, "n", "");
     PathElement p1 = PathElement.of("k1", "n");
     PathElement p2 = PathElement.of("k2", 10);
     key = keyFactory.namespace("ns").ancestors(p1, p2).newKey("k3");
@@ -87,7 +87,7 @@ public class KeyFactoryTest {
   @Test
   public void testNewIncompleteKey() throws Exception {
     IncompleteKey key = keyFactory.newKey();
-    verifyIncompleteKey(key, null);
+    verifyIncompleteKey(key, "");
     PathElement p1 = PathElement.of("k1", "n");
     PathElement p2 = PathElement.of("k2", 10);
     key = keyFactory.namespace("ns").ancestors(p1, p2).newKey();
