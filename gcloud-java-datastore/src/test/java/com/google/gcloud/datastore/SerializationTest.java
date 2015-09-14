@@ -20,7 +20,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
-import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.google.gcloud.AuthCredentials;
@@ -82,27 +81,27 @@ public class SerializationTest {
       .addOrderBy(OrderBy.asc("p"))
       .build();
   private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
-  private static final NullValue NULL_VALUE = NullValue.builder().indexed(true).build();
+  private static final NullValue NULL_VALUE = NullValue.builder().excludeFromIndexes(true).build();
   private static final StringValue STRING_VALUE = StringValue.of("hello");
   private static final LongValue LONG_VALUE = LongValue.of(123);
   private static final DoubleValue DOUBLE_VALUE = DoubleValue.of(12.34);
   private static final BooleanValue BOOLEAN_VALUE = BooleanValue.of(true);
   private static final DateTimeValue DATE_AND_TIME_VALUE = DateTimeValue.of(DateTime.now());
   private static final BlobValue BLOB_VALUE = BlobValue.of(BLOB1);
-  private static final RawValue RAW_VALUE = RawValue.of(
-      DatastoreV1.Value.newBuilder().setBlobKeyValue("blob-key").setMeaning(18).build());
+  private static final RawValue RAW_VALUE = RawValue.of(com.google.datastore.v1beta3.Value
+      .newBuilder().setStringValue("blob-key").setMeaning(18).build());
   private static final Entity ENTITY1 = Entity.builder(KEY1).build();
   private static final Entity ENTITY2 =
       Entity.builder(KEY2).set("null", NullValue.of()).build();
   private static final Entity ENTITY3 = Entity.builder(KEY2)
       .set("p1", StringValue.builder("hi1").meaning(10).build())
-      .set("p2", StringValue.builder("hi2").meaning(11).indexed(false).build())
-      .set("p3", LongValue.builder(100).indexed(false).meaning(100).build())
+      .set("p2", StringValue.builder("hi2").meaning(11).excludeFromIndexes(true).build())
+      .set("p3", LongValue.builder(100).excludeFromIndexes(true).meaning(100).build())
       .set("blob", BLOB1)
       .build();
   private static final FullEntity<IncompleteKey> EMBEDDED_ENTITY = Entity.builder(INCOMPLETE_KEY1)
       .set("p1", STRING_VALUE)
-      .set("p2", LongValue.builder(100).indexed(false).meaning(100).build())
+      .set("p2", LongValue.builder(100).excludeFromIndexes(true).meaning(100).build())
       .build();
   private static final EntityValue EMBEDDED_ENTITY_VALUE1 = EntityValue.of(ENTITY1);
   private static final EntityValue EMBEDDED_ENTITY_VALUE2 = EntityValue.of(ENTITY2);

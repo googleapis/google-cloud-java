@@ -214,7 +214,8 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
       mutationPb.addUpsert(entity.toPb());
     }
     for (Key key : toDelete()) {
-      mutationPb.addDelete(key.toPb());
+      // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+      //mutationPb.addDelete(key.toPb());
     }
     return mutationPb;
   }

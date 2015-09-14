@@ -27,7 +27,7 @@
  * if (entity == null) {
  *   entity = Entity.builder(key)
  *       .set("name", "John Do")
- *       .set("age", LongValue.builder(100).indexed(false).build())
+ *       .set("age", LongValue.builder(100).excludeFromIndexes(true).build())
  *       .set("updated", false)
  *       .build();
  *   datastore.put(entity);
@@ -37,7 +37,7 @@
  *     String[] name = entity.getString("name").split(" ");
  *     entity = Entity.builder(entity)
  *         .set("name", name[0])
- *         .set("last_name", StringValue.builder(name[1]).indexed(false).build())
+ *         .set("last_name", StringValue.builder(name[1]).excludeFromIndexes(true).build())
  *         .set("updated", true)
  *         .remove("old_property")
  *         .set("new_property", 1.1)

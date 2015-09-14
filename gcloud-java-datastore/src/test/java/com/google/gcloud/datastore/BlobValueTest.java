@@ -37,19 +37,16 @@ public class BlobValueTest {
   public void testOf() throws Exception {
     BlobValue value = BlobValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
-    assertFalse(value.hasIndexed());
-    assertFalse(value.hasMeaning());
+    assertFalse(value.excludeFromIndexes());
   }
 
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     BlobValue.Builder builder = BlobValue.builder(CONTENT);
-    BlobValue value = builder.meaning(1).indexed(false).build();
+    BlobValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());
-    assertTrue(value.hasMeaning());
-    assertEquals(Integer.valueOf(1), value.meaning());
-    assertTrue(value.hasIndexed());
-    assertFalse(value.indexed());
+    assertEquals(1, value.meaning());
+    assertTrue(value.excludeFromIndexes());
   }
 }

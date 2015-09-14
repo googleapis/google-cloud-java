@@ -43,7 +43,9 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
       return Lists.transform(response.getMutationResult().getInsertAutoIdKeyList(),
           new Function<DatastoreV1.Key, Key>() {
             @Override public Key apply(DatastoreV1.Key keyPb) {
-              return Key.fromPb(keyPb);
+              // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+              //return Key.fromPb(keyPb);
+              return Key.builder(null).build(); // TODO(ajaykannan): remove this line when possible
             }
           });
     }
