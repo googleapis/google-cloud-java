@@ -18,7 +18,6 @@ package com.google.gcloud.datastore;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
@@ -116,67 +115,22 @@ public class ValueTest {
   }
 
   @Test
-  public void testHasIndexed() throws Exception {
+  public void testExcludeFromIndexes() throws Exception {
     for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
-      ValueType valueType = entry.getKey();
-      Boolean indexed = entry.getValue().hasIndexed();
-      switch (valueType) {
-        case ENTITY:
-          assertTrue(indexed);
-          break;
-        default:
-          assertFalse(indexed);
-          break;
-      }
+      assertFalse(entry.getValue().excludeFromIndexes());
     }
 
     TestBuilder builder = new TestBuilder();
-    assertFalse(builder.build().hasIndexed());
-    assertTrue(builder.indexed(false).build().hasIndexed());
-    assertTrue(builder.indexed(true).build().hasIndexed());
-  }
-
-  @Test
-  public void testIndexed() throws Exception {
-    for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
-      ValueType valueType = entry.getKey();
-      Boolean indexed = entry.getValue().indexed();
-      switch (valueType) {
-        case ENTITY:
-          assertFalse(indexed);
-          break;
-        default:
-          assertNull(indexed);
-          break;
-      }
-    }
-
-    TestBuilder builder = new TestBuilder();
-    assertNull(builder.build().indexed());
-    assertFalse(builder.indexed(false).build().indexed());
-    assertTrue(builder.indexed(true).build().indexed());
-  }
-
-  @SuppressWarnings("deprecation")
-  @Test
-  public void testHasMeaning() throws Exception {
-    for (Value<?> value: typeToValue.values()) {
-      assertFalse(value.hasMeaning());
-    }
-
-    TestBuilder builder = new TestBuilder();
-    assertTrue(builder.meaning(10).build().hasMeaning());
+    assertFalse(builder.build().excludeFromIndexes());
+    assertTrue(builder.excludeFromIndexes(true).build().excludeFromIndexes());
+    assertFalse(builder.excludeFromIndexes(false).build().excludeFromIndexes());
   }
 
   @SuppressWarnings("deprecation")
   @Test
   public void testMeaning() throws Exception {
-    for (Value<?> value: typeToValue.values()) {
-      assertNull(value.meaning());
-    }
-
     TestBuilder builder = new TestBuilder();
-    assertEquals(Integer.valueOf(10), builder.meaning(10).build().meaning());
+    assertEquals(10, builder.meaning(10).build().meaning());
   }
 
   @Test
@@ -197,12 +151,11 @@ public class ValueTest {
   public void testToBuilder() throws Exception {
     Set<String> content = Collections.singleton("bla");
     ValueBuilder builder = new TestBuilder();
-    builder.meaning(1).set(content).indexed(true);
+    builder.meaning(1).set(content).excludeFromIndexes(true);
     Value<?> value = builder.build();
     builder = value.toBuilder();
-    assertEquals(Integer.valueOf(1), value.meaning());
-    assertTrue(value.hasIndexed());
-    assertTrue(value.indexed());
+    assertEquals(1, value.meaning());
+    assertTrue(value.excludeFromIndexes());
     assertEquals(ValueType.LIST, value.type());
     assertEquals(content, value.get());
     assertEquals(value, builder.build());

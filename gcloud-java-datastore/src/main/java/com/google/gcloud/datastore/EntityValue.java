@@ -16,10 +16,7 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.api.services.datastore.DatastoreV1.Value.ENTITY_VALUE_FIELD_NUMBER;
-
-import com.google.api.services.datastore.DatastoreV1;
-import com.google.common.base.Preconditions;
+import static com.google.datastore.v1beta3.Value.ENTITY_VALUE_FIELD_NUMBER;
 
 public class EntityValue extends Value<FullEntity<?>> {
 
@@ -41,13 +38,16 @@ public class EntityValue extends Value<FullEntity<?>> {
         }
 
         @Override
-        protected FullEntity<?> getValue(DatastoreV1.Value from) {
-          return FullEntity.fromPb(from.getEntityValue());
+        protected FullEntity<?> getValue(com.google.datastore.v1beta3.Value from) {
+          // TODO(ajaykannan): uncomment this line when possible in datastore v1beta3 transition
+          //return FullEntity.fromPb(from.getEntityValue());
+          return null; // TODO(ajaykannan): remove this line when possible
         }
 
         @Override
-        protected void setValue(EntityValue from, DatastoreV1.Value.Builder to) {
-          to.setEntityValue(from.get().toPb());
+        protected void setValue(EntityValue from, com.google.datastore.v1beta3.Value.Builder to) {
+          // TODO(ajaykannan): uncomment this line when possible in datastore v1beta3 transition
+          //to.setEntityValue(from.get().toPb());
         }
       };
 
@@ -55,13 +55,6 @@ public class EntityValue extends Value<FullEntity<?>> {
 
     private Builder() {
       super(ValueType.ENTITY);
-    }
-
-    @Override
-    public Builder indexed(boolean indexed) {
-      // see issue #25
-      Preconditions.checkArgument(!indexed, "EntityValue can't be indexed");
-      return super.indexed(indexed);
     }
 
     @Override
@@ -88,6 +81,6 @@ public class EntityValue extends Value<FullEntity<?>> {
   }
 
   public static Builder builder(FullEntity<?> entity) {
-    return new Builder().set(entity).indexed(false);
+    return new Builder().set(entity);
   }
 }

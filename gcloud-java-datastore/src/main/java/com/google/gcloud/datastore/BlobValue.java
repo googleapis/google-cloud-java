@@ -16,9 +16,7 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.api.services.datastore.DatastoreV1.Value.BLOB_VALUE_FIELD_NUMBER;
-
-import com.google.api.services.datastore.DatastoreV1;
+import static com.google.datastore.v1beta3.Value.BLOB_VALUE_FIELD_NUMBER;
 
 public final class BlobValue extends Value<Blob> {
 
@@ -40,12 +38,12 @@ public final class BlobValue extends Value<Blob> {
         }
 
         @Override
-        protected Blob getValue(DatastoreV1.Value from) {
+        protected Blob getValue(com.google.datastore.v1beta3.Value from) {
           return new Blob(from.getBlobValue());
         }
 
         @Override
-        protected void setValue(BlobValue from, DatastoreV1.Value.Builder to) {
+        protected void setValue(BlobValue from, com.google.datastore.v1beta3.Value.Builder to) {
           to.setBlobValue(from.get().byteString());
         }
       };

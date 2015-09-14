@@ -135,7 +135,8 @@ public final class GqlQuery<V> extends Query<V> {
         argPb.setCursor(cursor.byteString());
       }
       if (value != null) {
-        argPb.setValue(value.toPb());
+        // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+        //argPb.setValue(value.toPb());
       }
       return argPb.build();
     }
@@ -150,7 +151,9 @@ public final class GqlQuery<V> extends Query<V> {
       if (argPb.hasCursor()) {
         return new Binding(name, new Cursor(argPb.getCursor()));
       }
-      return new Binding(name, Value.fromPb(argPb.getValue()));
+      // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+      //return new Binding(name, Value.fromPb(argPb.getValue()));
+      return new Binding(name, new Cursor(null)); // TODO(ajaykannan): remove this line when possible
     }
   }
 

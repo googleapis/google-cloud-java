@@ -16,9 +16,7 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.api.services.datastore.DatastoreV1.Value.BOOLEAN_VALUE_FIELD_NUMBER;
-
-import com.google.api.services.datastore.DatastoreV1;
+import static com.google.datastore.v1beta3.Value.BOOLEAN_VALUE_FIELD_NUMBER;
 
 public final class BooleanValue extends Value<Boolean> {
 
@@ -40,12 +38,12 @@ public final class BooleanValue extends Value<Boolean> {
         }
 
         @Override
-        protected Boolean getValue(DatastoreV1.Value from) {
+        protected Boolean getValue(com.google.datastore.v1beta3.Value from) {
           return from.getBooleanValue();
         }
 
         @Override
-        protected void setValue(BooleanValue from, DatastoreV1.Value.Builder to) {
+        protected void setValue(BooleanValue from, com.google.datastore.v1beta3.Value.Builder to) {
           to.setBooleanValue(from.get());
         }
       };
