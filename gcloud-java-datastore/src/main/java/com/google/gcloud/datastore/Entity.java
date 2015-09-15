@@ -18,7 +18,6 @@ package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 
 /**
@@ -93,7 +92,7 @@ public final class Entity extends FullEntity<Key> {
     return new Builder(key, copyFrom);
   }
 
-  static Entity fromPb(DatastoreV1.Entity entityPb) {
+  static Entity fromPb(com.google.datastore.v1beta3.Entity entityPb) {
     return new Builder().fill(entityPb).build();
   }
 }

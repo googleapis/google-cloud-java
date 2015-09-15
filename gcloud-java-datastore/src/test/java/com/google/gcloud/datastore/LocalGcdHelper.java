@@ -71,11 +71,11 @@ public class LocalGcdHelper {
 
   public static final String DEFAULT_PROJECT_ID = "projectid1";
   public static final int PORT = 8080;
-  private static final String GCD_VERSION = "v1beta2";
-  private static final String GCD_BUILD = "rev1-2.1.2b";
+  private static final String GCD_VERSION = "v1beta3";
+  private static final String GCD_BUILD = "0.0.1";
   private static final String GCD_BASENAME = "gcd-" + GCD_VERSION + "-" + GCD_BUILD;
   private static final String GCD_FILENAME = GCD_BASENAME + ".zip";
-  private static final String MD5_CHECKSUM = "d84384cdfa8658e1204f4f8be51300e8";
+  private static final String MD5_CHECKSUM = "496b16f32473d0de0c7a974bd0ee1461";
   private static final URL GCD_URL;
   private static final String GCLOUD = "gcloud";
   private static final Path INSTALLED_GCD_PATH;
@@ -307,7 +307,11 @@ public class LocalGcdHelper {
     // If cloud is available we use it, otherwise we download and start gcd
     if (INSTALLED_GCD_PATH == null) {
       downloadGcd();
-      gcdExecutablePath = gcdPath.resolve(GCD_BASENAME);
+      if (!GCD_VERSION.equals("v1beta3")) {
+        gcdExecutablePath = gcdPath.resolve(GCD_BASENAME);
+      } else {
+        gcdExecutablePath = gcdPath.resolve("gcd");
+      }
     } else {
       gcdExecutablePath = INSTALLED_GCD_PATH;
     }
@@ -351,7 +355,12 @@ public class LocalGcdHelper {
 
   private void startGcd(Path executablePath) throws IOException, InterruptedException {
     // cleanup any possible data for the same project
-    File datasetFolder = new File(gcdPath.toFile(), projectId);
+    File datasetFolder;
+    if (!GCD_VERSION.equals("v1beta3")) {
+      datasetFolder = new File(gcdPath.toFile(), projectId);
+    } else {
+      datasetFolder = new File(gcdPath.toFile() + "gcd/", projectId);
+    }
     deleteRecurse(datasetFolder.toPath());
 
     // Get path to cmd executable
@@ -506,7 +515,11 @@ public class LocalGcdHelper {
   public static boolean isActive(String projectId) {
     try {
       StringBuilder urlBuilder = new StringBuilder("http://localhost:").append(PORT);
-      urlBuilder.append("/datastore/v1beta2/datasets/").append(projectId).append("/lookup");
+      if (!GCD_VERSION.equals("v1beta3")) {
+        urlBuilder.append("/datastore/v1beta2/datasets/").append(projectId).append("/lookup");
+      } else {
+        urlBuilder.append("/datastore/v1beta3/datasets/").append(projectId).append(":lookup");
+      }
       URL url = new URL(urlBuilder.toString());
       try (BufferedReader reader =
           new BufferedReader(new InputStreamReader(url.openStream(), UTF_8))) {
