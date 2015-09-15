@@ -21,7 +21,6 @@ import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 
-import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableList;
 
 import org.easymock.EasyMock;
@@ -272,11 +271,10 @@ public class BaseDatastoreBatchWriterTest {
 
   @Test
   public void testDelete() throws Exception {
-    // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
     DatastoreV1.Mutation pb = DatastoreV1.Mutation.newBuilder()
-        //.addDelete(KEY1.toPb())
-        //.addDelete(KEY2.toPb())
-        //.addDelete(KEY3.toPb())
+        .addDelete(KEY1.toPb())
+        .addDelete(KEY2.toPb())
+        .addDelete(KEY3.toPb())
         .build();
     batchWriter.delete(KEY1, KEY2);
     batchWriter.delete(KEY3);
@@ -285,10 +283,9 @@ public class BaseDatastoreBatchWriterTest {
 
   @Test
   public void testDeleteAfterAdd() throws Exception {
-    // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
     DatastoreV1.Mutation pb = DatastoreV1.Mutation.newBuilder()
         .addInsertAutoId(INCOMPLETE_ENTITY_1.toPb())
-        //.addDelete(KEY1.toPb())
+        .addDelete(KEY1.toPb())
         .build();
     batchWriter.add(ENTITY1);
     batchWriter.addWithDeferredIdAllocation(INCOMPLETE_ENTITY_1);
@@ -298,9 +295,8 @@ public class BaseDatastoreBatchWriterTest {
 
   @Test
   public void testDeleteAfterUpdate() throws Exception {
-    // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
     DatastoreV1.Mutation pb = DatastoreV1.Mutation.newBuilder()
-        //.addDelete(KEY1.toPb())
+        .addDelete(KEY1.toPb())
         .build();
     batchWriter.update(ENTITY1);
     batchWriter.delete(KEY1);
@@ -309,9 +305,8 @@ public class BaseDatastoreBatchWriterTest {
 
   @Test
   public void testDeleteAfterPut() throws Exception {
-    // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
     DatastoreV1.Mutation pb = DatastoreV1.Mutation.newBuilder()
-        //.addDelete(KEY1.toPb())
+        .addDelete(KEY1.toPb())
         .build();
     batchWriter.put(ENTITY1);
     batchWriter.delete(KEY1);

@@ -16,7 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.api.services.datastore.DatastoreV1;
 import com.google.protobuf.ByteString;
 
 /**
@@ -72,7 +71,7 @@ public final class ProjectionEntity extends BaseEntity<Key> {
     return ((Value<Blob>) value).get();
   }
 
-  static ProjectionEntity fromPb(DatastoreV1.Entity entityPb) {
+  static ProjectionEntity fromPb(com.google.datastore.v1beta3.Entity entityPb) {
     return new Builder().fill(entityPb).build();
   }
 

@@ -69,7 +69,9 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
           //TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
           //return Key.fromPb(entityPb.getKey());
         }
-        return ProjectionEntity.fromPb(entityPb);
+        // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+        //return ProjectionEntity.fromPb(entityPb);
+        return ProjectionEntity.fromPb((com.google.datastore.v1beta3.Entity) null); // remove this line when possible
       }
     };
 
@@ -79,7 +81,9 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       private static final long serialVersionUID = 7712959777507168274L;
 
       @Override protected Entity convert(DatastoreV1.Entity entityPb) {
-        return Entity.fromPb(entityPb);
+        // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+        //return Entity.fromPb(entityPb);
+        return Entity.fromPb((com.google.datastore.v1beta3.Entity) null); // remove this line when possible 
       }
     };
 
@@ -102,7 +106,9 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
           private static final long serialVersionUID = -7591409419690650246L;
 
           @Override protected ProjectionEntity convert(DatastoreV1.Entity entityPb) {
-            return ProjectionEntity.fromPb(entityPb);
+            // TODO(ajaykannan): uncomment when possible in datastore v1beta3 transition
+            //return ProjectionEntity.fromPb(entityPb);
+            return ProjectionEntity.fromPb((com.google.datastore.v1beta3.Entity) null); // remove this line when possible
           }
     };
 
