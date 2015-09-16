@@ -20,10 +20,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,6 +45,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     if (options.host().contains("localhost")) {
       client = com.google.datastore.v1beta3.client.DatastoreFactory.get().create(
           new com.google.datastore.v1beta3.client.DatastoreOptions.Builder()
+              .projectId(options.projectId())
               .localHost(options.host())
               .initializer(options.httpRequestInitializer())
               .build());      
@@ -61,18 +58,11 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     }
   }
 
-  private static DatastoreRpcException translate(com.google.datastore.v1beta3.client.DatastoreException exception) {
-    String message = exception.getMessage();
+  private static DatastoreRpcException translate(
+      com.google.datastore.v1beta3.client.DatastoreException exception) {
     String reasonStr = "";
-    if (message != null) {
-      try {
-        JSONObject json = new JSONObject(new JSONTokener(message));
-        JSONObject error = json.getJSONObject("error").getJSONArray("errors").getJSONObject(0);
-        reasonStr = error.getString("reason");
-        message = error.getString("message");
-      } catch (JSONException ignore) {
-        // ignore - will be converted to unknown
-      }
+    if (exception.getCode() != null) {
+      reasonStr = exception.getCode().name();
     }
     Reason reason = STR_TO_REASON.get(reasonStr);
     if (reason == null) {
@@ -80,7 +70,10 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     }
     return reason != null
         ? new DatastoreRpcException(reason)
-        : new DatastoreRpcException("Unknown", exception.getCode().ordinal(), false, message);
+        : new DatastoreRpcException("Unknown", 
+            exception.getCode().ordinal(), 
+            false, 
+            exception.getMessage());
   }
 
   @Override

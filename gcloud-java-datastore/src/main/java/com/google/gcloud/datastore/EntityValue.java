@@ -39,15 +39,12 @@ public class EntityValue extends Value<FullEntity<?>> {
 
         @Override
         protected FullEntity<?> getValue(com.google.datastore.v1beta3.Value from) {
-          // TODO(ajaykannan): uncomment this line when possible in datastore v1beta3 transition
-          //return FullEntity.fromPb(from.getEntityValue());
-          return null; // TODO(ajaykannan): remove this line when possible
+          return FullEntity.fromPb(from.getEntityValue());
         }
 
         @Override
         protected void setValue(EntityValue from, com.google.datastore.v1beta3.Value.Builder to) {
-          // TODO(ajaykannan): uncomment this line when possible in datastore v1beta3 transition
-          //to.setEntityValue(from.get().toPb());
+          to.setEntityValue(from.get().toPb());
         }
       };
 

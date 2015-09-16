@@ -30,7 +30,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    *
    * @throws DatastoreException upon failure
    */
-  Transaction newTransaction(TransactionOption... options);
+  Transaction newTransaction();
 
 
   /**
@@ -57,12 +57,12 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @param options the options for the created transaction
    * @throws DatastoreException upon failure
    */
-  <T> T runInTransaction(TransactionCallable<T> callable, TransactionOption... options);
+  <T> T runInTransaction(TransactionCallable<T> callable);
 
   /**
    * Returns a new Batch for processing multiple write operations in one request.
    */
-  Batch newBatch(BatchOption... options);
+  Batch newBatch();
 
   /**
    * Allocate a unique id for the given key.

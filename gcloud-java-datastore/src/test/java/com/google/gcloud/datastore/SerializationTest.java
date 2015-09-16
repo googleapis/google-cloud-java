@@ -88,8 +88,11 @@ public class SerializationTest {
   private static final BooleanValue BOOLEAN_VALUE = BooleanValue.of(true);
   private static final DateTimeValue DATE_AND_TIME_VALUE = DateTimeValue.of(DateTime.now());
   private static final BlobValue BLOB_VALUE = BlobValue.of(BLOB1);
-  private static final RawValue RAW_VALUE = RawValue.of(com.google.datastore.v1beta3.Value
-      .newBuilder().setStringValue("blob-key").setMeaning(18).build());
+  private static final RawValue RAW_VALUE = 
+      RawValue.of(com.google.datastore.v1beta3.Value.newBuilder()
+          .setGeoPointValue(com.google.type.LatLng.newBuilder()
+              .setLatitude(0.0).setLongitude(0.0).build())
+          .setMeaning(18).build());
   private static final Entity ENTITY1 = Entity.builder(KEY1).build();
   private static final Entity ENTITY2 =
       Entity.builder(KEY2).set("null", NullValue.of()).build();

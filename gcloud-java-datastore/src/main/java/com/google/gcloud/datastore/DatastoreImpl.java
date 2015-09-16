@@ -79,18 +79,18 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   }
 
   @Override
-  public Batch newBatch(BatchOption... options) {
-    return new BatchImpl(this, options);
+  public Batch newBatch() {
+    return new BatchImpl(this);
   }
 
   @Override
-  public Transaction newTransaction(TransactionOption... options) {
-    return new TransactionImpl(this, options);
+  public Transaction newTransaction() {
+    return new TransactionImpl(this);
   }
 
   @Override
-  public <T> T runInTransaction(TransactionCallable<T> callable, TransactionOption... options) {
-    return DatastoreHelper.runInTransaction(this, callable, options);
+  public <T> T runInTransaction(TransactionCallable<T> callable) {
+    return DatastoreHelper.runInTransaction(this, callable);
   }
 
   @Override
@@ -99,9 +99,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   }
 
   <T> QueryResults<T> run(com.google.datastore.v1beta3.ReadOptions readOptionsPb, Query<T> query) {
-    // TODO(ajaykannan): uncomment this line when possible in datastore v1beta3 transition
+    // TODO(ajaykannan): fix me!
     //return new QueryResultsImpl<>(this, readOptionsPb, query);
-    return null; // TODO(ajaykannan): remove this line when possible
+    return null; // TODO(ajaykannan): fix me!
   }
 
   com.google.datastore.v1beta3.RunQueryResponse runQuery(

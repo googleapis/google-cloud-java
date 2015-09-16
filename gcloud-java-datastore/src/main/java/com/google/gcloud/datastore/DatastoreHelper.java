@@ -70,8 +70,8 @@ class DatastoreHelper {
   }
 
   static <T> T runInTransaction(Datastore datastore,
-      Datastore.TransactionCallable<T> callable, TransactionOption... options) {
-    Transaction transaction = datastore.newTransaction(options);
+      Datastore.TransactionCallable<T> callable) {
+    Transaction transaction = datastore.newTransaction();
     try {
       T value = callable.run(transaction);
       transaction.commit();

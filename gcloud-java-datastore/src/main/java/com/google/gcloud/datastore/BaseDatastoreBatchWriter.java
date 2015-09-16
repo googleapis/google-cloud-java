@@ -138,7 +138,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     for (Entity entity : entities) {
       Key key = entity.key();
       toAdd.remove(key);
-      toUpdate.remove(key);      
+      toUpdate.remove(key);
       toDelete.remove(key);
       toPut.put(key, entity);
     }
@@ -183,6 +183,10 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   protected Set<Key> toDelete() {
     return toDelete;
   }
+  
+  protected int numAutoAllocatedIds() {
+    return toAddAutoId.size();
+  }
 
   protected void deactivate() {
     active = false;
@@ -198,7 +202,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     return DatastoreException.throwInvalidRequest(String.format(msg, params));
   }
 
-  protected List<com.google.datastore.v1beta3.Mutation> toMutationPb() {
+  protected List<com.google.datastore.v1beta3.Mutation> toMutationPbList() {
     List<com.google.datastore.v1beta3.Mutation> mutationsPb = 
         new ArrayList<>();
     for (FullEntity<IncompleteKey> entity : toAddAutoId()) {
