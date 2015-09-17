@@ -55,11 +55,16 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Utility to start and stop local Google Cloud Datastore process.
  */
 public class LocalGcdHelper {
   
+  private static final Logger log = Logger.getLogger(LocalGcdHelper.class.getName());
+
   private final String projectId;
   private Path gcdPath;
   private ProcessStreamReader processReader;
@@ -99,14 +104,27 @@ public class LocalGcdHelper {
     Path gcloudPath = executablePath(gcloudExecutableName);
     gcloudPath = (gcloudPath == null) ? null : gcloudPath.getParent();
     if (gcloudPath == null) {
+      if (log.isLoggable(Level.FINE)) {
+        log.fine("SDK not found");
+      }
       return null;
+    }
+    if (log.isLoggable(Level.FINE)) {
+      log.fine("SDK found, looking for datastore emulator");
     }
     Path installedGcdPath = gcloudPath.resolve("platform").resolve("gcd");
     if (Files.exists(installedGcdPath)) {
       try {
         String installedVersion = installedGcdVersion();
         if (installedVersion != null && installedVersion.startsWith(GCD_VERSION)) {
+          if (log.isLoggable(Level.FINE)) {
+            log.fine("SDK datastore emulator found");
+          }
           return installedGcdPath;
+        } else {
+          if (log.isLoggable(Level.FINE)) {
+            log.fine("SDK datastore emulator found but version mismatch");
+          }
         }
       } catch (IOException | InterruptedException ignore) {
         // ignore
@@ -308,14 +326,23 @@ public class LocalGcdHelper {
     // check if we already have a local copy of the gcd utility and download it if not.
     File gcdZipFile = new File(System.getProperty("java.io.tmpdir"), GCD_FILENAME);
     if (!gcdZipFile.exists() || !MD5_CHECKSUM.equals(md5(gcdZipFile))) {
+      if (log.isLoggable(Level.FINE)) {
+        log.fine("Fetching datastore emulator");
+      }
       ReadableByteChannel rbc = Channels.newChannel(GCD_URL.openStream());
       try (FileOutputStream fos = new FileOutputStream(gcdZipFile)) {
         fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
       }
+    } else {
+      if (log.isLoggable(Level.FINE)) {
+        log.fine("Using cached datastore emulator");
+      }      
     }
-    
     // unzip the gcd
     try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(gcdZipFile))) {
+      if (log.isLoggable(Level.FINE)) {
+        log.fine("Unzipping datastore emulator");
+      }
       ZipEntry entry = zipIn.getNextEntry();
       while (entry != null) {
         File filePath = new File(gcdPath.toFile(), entry.getName());
@@ -350,6 +377,9 @@ public class LocalGcdHelper {
     }
 
     // create the datastore for the project
+    if (log.isLoggable(Level.FINE)) {
+      log.log(Level.FINE, "Creating datastore for the project: {0}", projectId);
+    }
     Process temp = gcdCreateCommand.command(gcdAbsolutePath.toString(), "create", "-p", projectId,
             projectId)
             .redirectErrorInherit()
@@ -359,6 +389,9 @@ public class LocalGcdHelper {
     temp.waitFor();
 
     // start the datastore for the project
+    if (log.isLoggable(Level.FINE)) {
+      log.log(Level.FINE, "Starting datastore emulator for the project: {0}", projectId);
+    }
     temp = gcdStartCommand.command(gcdAbsolutePath.toString(), "start", "--testing",
             "--allow_remote_shutdown", projectId)
             .directory(gcdPath)
