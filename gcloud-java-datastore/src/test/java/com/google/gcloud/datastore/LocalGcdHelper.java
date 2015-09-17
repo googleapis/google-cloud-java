@@ -47,6 +47,9 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
@@ -56,20 +59,22 @@ import java.util.zip.ZipInputStream;
  * Utility to start and stop local Google Cloud Datastore process.
  */
 public class LocalGcdHelper {
-
+  
   private final String projectId;
   private Path gcdPath;
   private ProcessStreamReader processReader;
 
   public static final String DEFAULT_PROJECT_ID = "projectid1";
   public static final int PORT = 8080;
-  private static final String GCD = "gcd-v1beta2-rev1-2.1.2b";
   private static final String GCD_VERSION = "v1beta2";
-  private static final String GCD_FILENAME = GCD + ".zip";
+  private static final String GCD_BUILD = "rev1-2.1.2b";
+  private static final String GCD_BASENAME = "gcd-" + GCD_VERSION + "-" + GCD_BUILD;
+  private static final String GCD_FILENAME = GCD_BASENAME + ".zip";
   private static final String MD5_CHECKSUM = "d84384cdfa8658e1204f4f8be51300e8";
   private static final URL GCD_URL;
   private static final String GCLOUD = "gcloud";
   private static final Path INSTALLED_GCD_PATH;
+  private static final String GCD_VERSION_PREFIX = "gcd-emulator ";
 
   static {
     INSTALLED_GCD_PATH = installedGcdPath();
@@ -85,7 +90,13 @@ public class LocalGcdHelper {
   }
   
   private static Path installedGcdPath() {
-    Path gcloudPath = executablePath(GCLOUD);
+    String gcloudExecutableName;
+    if (isWindows()) {
+      gcloudExecutableName = GCLOUD + ".cmd";
+    } else {
+      gcloudExecutableName = GCLOUD;
+    }
+    Path gcloudPath = executablePath(gcloudExecutableName);
     gcloudPath = (gcloudPath == null) ? null : gcloudPath.getParent();
     if (gcloudPath == null) {
       return null;
@@ -105,19 +116,18 @@ public class LocalGcdHelper {
   }
   
   private static String installedGcdVersion() throws IOException, InterruptedException {
-    ProcessBuilder processBuilder = new ProcessBuilder()
-      .redirectErrorStream(true);
+    CommandWrapper gcloudCommand;
     if (isWindows()) {
-      processBuilder.command("cmd", "/C", "gcloud", "version");
+      gcloudCommand = CommandWrapper.cmd();
     } else {
-      processBuilder.command("bash", "gcloud", "version");
+      gcloudCommand = CommandWrapper.bash();
     }
-    Process process = processBuilder.start();
+    Process process = gcloudCommand.command("gcloud", "version").redirectErrorStream().start();
     process.waitFor();
     try (BufferedReader reader = 
             new BufferedReader(new InputStreamReader(process.getInputStream()))) {
       for (String line = reader.readLine(); line != null; line = reader.readLine()) {
-        if (line.startsWith("gcd-emulator")) {
+        if (line.startsWith(GCD_VERSION_PREFIX)) {
           String[] lineComponents = line.split(" ");
           if (lineComponents.length > 1) {
             return lineComponents[1];
@@ -126,7 +136,6 @@ public class LocalGcdHelper {
       }
       return null;
     }
-
   }
   
   private static Path executablePath(String cmd) {
@@ -185,6 +194,84 @@ public class LocalGcdHelper {
       return thread;
     }
   }
+  
+  private static class CommandWrapper {
+    
+    private final List<String> prefix;
+    private List<String> command;
+    private String nullFilename;
+    private boolean redirectOutputToNull;
+    private boolean redirectErrorStream;
+    private boolean redirectErrorInherit;
+    private Path directory;
+    
+    private CommandWrapper() {
+      this.prefix = new ArrayList<>();
+    }
+    
+    public CommandWrapper command(String... command) {
+      this.command = new ArrayList<>(command.length + this.prefix.size());
+      this.command.addAll(prefix);
+      this.command.addAll(Arrays.asList(command));
+      return this;
+    }
+    
+    public CommandWrapper redirectOutputToNull() {
+      this.redirectOutputToNull = true;
+      return this;
+    }
+    
+    public CommandWrapper redirectErrorStream() {
+      this.redirectErrorStream = true;
+      return this;
+    }
+    
+    public CommandWrapper redirectErrorInherit() {
+      this.redirectErrorInherit = true;
+      return this;
+    }
+    
+    public CommandWrapper directory(Path directory) {
+      this.directory = directory;
+      return this;
+    }
+    
+    public ProcessBuilder builder() {
+      ProcessBuilder builder = new ProcessBuilder(command);
+      if (redirectOutputToNull) {
+        builder.redirectOutput(new File(nullFilename));
+      }
+      if (directory != null) {
+        builder.directory(directory.toFile());
+      }
+      if (redirectErrorStream) {
+        builder.redirectErrorStream(true);
+      }
+      if (redirectErrorInherit) {
+        builder.redirectError(ProcessBuilder.Redirect.INHERIT);
+      }
+      return builder;
+    }
+    
+    public Process start() throws IOException {
+      return builder().start();
+    }
+    
+    public static CommandWrapper cmd() {
+      CommandWrapper wrapper = new CommandWrapper();
+      wrapper.prefix.add("cmd");
+      wrapper.prefix.add("/C");
+      wrapper.nullFilename = "NUL:";
+      return wrapper;
+    }
+    
+    public static CommandWrapper bash() {
+      CommandWrapper wrapper = new CommandWrapper();
+      wrapper.prefix.add("bash");
+      wrapper.nullFilename = "/dev/null";
+      return wrapper;
+    }
+  }
 
   public LocalGcdHelper(String projectId) {
     this.projectId = projectId;
@@ -210,7 +297,7 @@ public class LocalGcdHelper {
     // If cloud is available we use it, otherwise we download and start gcd
     if (INSTALLED_GCD_PATH == null) {
       downloadGcd();
-      gcdExecutablePath = gcdPath.resolve(GCD);
+      gcdExecutablePath = gcdPath.resolve(GCD_BASENAME);
     } else {
       gcdExecutablePath = INSTALLED_GCD_PATH;
     }
@@ -226,6 +313,7 @@ public class LocalGcdHelper {
         fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
       }
     }
+    
     // unzip the gcd
     try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(gcdZipFile))) {
       ZipEntry entry = zipIn.getNextEntry();
@@ -246,38 +334,36 @@ public class LocalGcdHelper {
     // cleanup any possible data for the same project
     File datasetFolder = new File(gcdPath.toFile(), projectId);
     deleteRecurse(datasetFolder.toPath());
-
-    // create the datastore for the project
-    ProcessBuilder processBuilder = new ProcessBuilder()
-        .redirectError(ProcessBuilder.Redirect.INHERIT)
-        .directory(gcdPath.toFile());
+    
+    // create command wrappers
+    CommandWrapper gcdCreateCommand;
+    CommandWrapper gcdStartCommand;
+    Path gcdAbsolutePath;
     if (isWindows()) {
-      Path gcdAbsolutePath = executablePath.toAbsolutePath().resolve("gcd.cmd");
-      processBuilder.command("cmd", "/C", gcdAbsolutePath.toString(), "create",
-          "-p", projectId, projectId);
+      gcdCreateCommand = CommandWrapper.cmd();
+      gcdStartCommand = CommandWrapper.cmd();
+      gcdAbsolutePath = executablePath.toAbsolutePath().resolve("gcd.cmd");
     } else {
-      Path gcdAbsolutePath = executablePath.toAbsolutePath().resolve("gcd.sh");
-      processBuilder.command("bash", gcdAbsolutePath.toString(), "create",
-          "-p", projectId, projectId);
+      gcdCreateCommand = CommandWrapper.bash();
+      gcdStartCommand = CommandWrapper.bash();
+      gcdAbsolutePath = executablePath.toAbsolutePath().resolve("gcd.sh");
     }
 
-    Process temp = processBuilder.start();
+    // create the datastore for the project
+    Process temp = gcdCreateCommand.command(gcdAbsolutePath.toString(), "create", "-p", projectId,
+            projectId)
+            .redirectErrorInherit()
+            .directory(gcdPath)
+            .redirectOutputToNull()
+            .start();
     temp.waitFor();
 
     // start the datastore for the project
-    processBuilder = new ProcessBuilder()
-        .directory(gcdPath.toFile())
-        .redirectErrorStream(true);
-    if (isWindows()) {
-      Path gcdAbsolutePath = executablePath.toAbsolutePath().resolve("gcd.cmd");
-      processBuilder.command("cmd", "/C", gcdAbsolutePath.toString(), "start", "--testing",
-          "--allow_remote_shutdown", projectId);
-    } else {
-      Path gcdAbsolutePath = executablePath.toAbsolutePath().resolve("gcd.sh");
-      processBuilder.command("bash", gcdAbsolutePath.toString(), "start", "--testing",
-          "--allow_remote_shutdown", projectId);
-    }
-    temp = processBuilder.start();
+    temp = gcdStartCommand.command(gcdAbsolutePath.toString(), "start", "--testing",
+            "--allow_remote_shutdown", projectId)
+            .directory(gcdPath)
+            .redirectErrorStream()
+            .start();
     processReader = ProcessStreamReader.start(temp, "Dev App Server is now running");
   }
 
