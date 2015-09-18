@@ -91,6 +91,12 @@ public class BucketInfoTest {
   }
 
   @Test
+  public void testToBuilderIncomplete() {
+    BucketInfo incompleteBucketInfo = BucketInfo.builder("b").build();
+    assertEquals(incompleteBucketInfo.name(), incompleteBucketInfo.toBuilder().build().name());
+  }
+
+  @Test
   public void testOf() {
     BucketInfo bucketInfo = BucketInfo.of("bucket");
     assertEquals("bucket", bucketInfo.name());
