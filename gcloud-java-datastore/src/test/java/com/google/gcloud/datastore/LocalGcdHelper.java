@@ -62,7 +62,7 @@ import java.util.logging.Logger;
  * Utility to start and stop local Google Cloud Datastore process.
  */
 public class LocalGcdHelper {
-  
+
   private static final Logger log = Logger.getLogger(LocalGcdHelper.class.getName());
 
   private final String projectId;
@@ -93,7 +93,7 @@ public class LocalGcdHelper {
       }
     }
   }
-  
+
   private static Path installedGcdPath() {
     String gcloudExecutableName;
     if (isWindows()) {
@@ -132,7 +132,7 @@ public class LocalGcdHelper {
     }
     return null;
   }
-  
+
   private static String installedGcdVersion() throws IOException, InterruptedException {
     CommandWrapper gcloudCommand;
     if (isWindows()) {
@@ -142,8 +142,8 @@ public class LocalGcdHelper {
     }
     Process process = gcloudCommand.command("gcloud", "version").redirectErrorStream().start();
     process.waitFor();
-    try (BufferedReader reader = 
-            new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+    try (BufferedReader reader =
+        new BufferedReader(new InputStreamReader(process.getInputStream()))) {
       for (String line = reader.readLine(); line != null; line = reader.readLine()) {
         if (line.startsWith(GCD_VERSION_PREFIX)) {
           String[] lineComponents = line.split(" ");
@@ -155,7 +155,7 @@ public class LocalGcdHelper {
       return null;
     }
   }
-  
+
   private static Path executablePath(String cmd) {
     String[] paths = System.getenv("PATH").split(Pattern.quote(File.pathSeparator));
     for (String pathString : paths) {
@@ -180,7 +180,7 @@ public class LocalGcdHelper {
       super("Local GCD InputStream reader");
       setDaemon(true);
       this.process = process;
-      reader =  new BufferedReader(new InputStreamReader(process.getInputStream()));
+      reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
       if (!Strings.isNullOrEmpty(blockUntil)) {
         String line;
         do {
@@ -212,9 +212,9 @@ public class LocalGcdHelper {
       return thread;
     }
   }
-  
+
   private static class CommandWrapper {
-    
+
     private final List<String> prefix;
     private List<String> command;
     private String nullFilename;
@@ -222,38 +222,38 @@ public class LocalGcdHelper {
     private boolean redirectErrorStream;
     private boolean redirectErrorInherit;
     private Path directory;
-    
+
     private CommandWrapper() {
       this.prefix = new ArrayList<>();
     }
-    
+
     public CommandWrapper command(String... command) {
       this.command = new ArrayList<>(command.length + this.prefix.size());
       this.command.addAll(prefix);
       this.command.addAll(Arrays.asList(command));
       return this;
     }
-    
+
     public CommandWrapper redirectOutputToNull() {
       this.redirectOutputToNull = true;
       return this;
     }
-    
+
     public CommandWrapper redirectErrorStream() {
       this.redirectErrorStream = true;
       return this;
     }
-    
+
     public CommandWrapper redirectErrorInherit() {
       this.redirectErrorInherit = true;
       return this;
     }
-    
+
     public CommandWrapper directory(Path directory) {
       this.directory = directory;
       return this;
     }
-    
+
     public ProcessBuilder builder() {
       ProcessBuilder builder = new ProcessBuilder(command);
       if (redirectOutputToNull) {
@@ -270,11 +270,11 @@ public class LocalGcdHelper {
       }
       return builder;
     }
-    
+
     public Process start() throws IOException {
       return builder().start();
     }
-    
+
     public static CommandWrapper cmd() {
       CommandWrapper wrapper = new CommandWrapper();
       wrapper.prefix.add("cmd");
@@ -282,7 +282,7 @@ public class LocalGcdHelper {
       wrapper.nullFilename = "NUL:";
       return wrapper;
     }
-    
+
     public static CommandWrapper bash() {
       CommandWrapper wrapper = new CommandWrapper();
       wrapper.prefix.add("bash");
@@ -321,7 +321,7 @@ public class LocalGcdHelper {
     }
     startGcd(gcdExecutablePath);
   }
-  
+
   private void downloadGcd() throws IOException {
     // check if we already have a local copy of the gcd utility and download it if not.
     File gcdZipFile = new File(System.getProperty("java.io.tmpdir"), GCD_FILENAME);
@@ -336,7 +336,7 @@ public class LocalGcdHelper {
     } else {
       if (log.isLoggable(Level.FINE)) {
         log.fine("Using cached datastore emulator");
-      }      
+      }
     }
     // unzip the gcd
     try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(gcdZipFile))) {
@@ -354,14 +354,14 @@ public class LocalGcdHelper {
         zipIn.closeEntry();
         entry = zipIn.getNextEntry();
       }
-    }   
+    }
   }
-  
+
   private void startGcd(Path executablePath) throws IOException, InterruptedException {
     // cleanup any possible data for the same project
     File datasetFolder = new File(gcdPath.toFile(), projectId);
     deleteRecurse(datasetFolder.toPath());
-    
+
     // create command wrappers
     CommandWrapper gcdCreateCommand;
     CommandWrapper gcdStartCommand;
@@ -380,24 +380,26 @@ public class LocalGcdHelper {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, "Creating datastore for the project: {0}", projectId);
     }
-    Process temp = gcdCreateCommand.command(gcdAbsolutePath.toString(), "create", "-p", projectId,
-            projectId)
+    Process createProcess =
+        gcdCreateCommand.command(gcdAbsolutePath.toString(), "create", "-p", projectId, projectId)
             .redirectErrorInherit()
             .directory(gcdPath)
             .redirectOutputToNull()
             .start();
-    temp.waitFor();
+    createProcess.waitFor();
 
     // start the datastore for the project
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, "Starting datastore emulator for the project: {0}", projectId);
     }
-    temp = gcdStartCommand.command(gcdAbsolutePath.toString(), "start", "--testing",
-            "--allow_remote_shutdown", projectId)
+    Process startProcess =
+        gcdStartCommand
+            .command(gcdAbsolutePath.toString(), "start", "--testing", "--allow_remote_shutdown",
+                projectId)
             .directory(gcdPath)
             .redirectErrorStream()
             .start();
-    processReader = ProcessStreamReader.start(temp, "Dev App Server is now running");
+    processReader = ProcessStreamReader.start(startProcess, "Dev App Server is now running");
   }
 
   private static String md5(File gcdZipFile) throws IOException {
@@ -410,7 +412,7 @@ public class LocalGcdHelper {
           md5.update(bytes, 0, len);
         }
       }
-      return String.format("%032x",new BigInteger(1, md5.digest()));
+      return String.format("%032x", new BigInteger(1, md5.digest()));
     } catch (NoSuchAlgorithmException e) {
       throw new IOException(e);
     }
@@ -520,7 +522,7 @@ public class LocalGcdHelper {
       urlBuilder.append("/datastore/v1beta2/datasets/").append(projectId).append("/lookup");
       URL url = new URL(urlBuilder.toString());
       try (BufferedReader reader =
-               new BufferedReader(new InputStreamReader(url.openStream(), UTF_8))) {
+          new BufferedReader(new InputStreamReader(url.openStream(), UTF_8))) {
         return "Valid RPC".equals(reader.readLine());
       }
     } catch (IOException ignore) {
