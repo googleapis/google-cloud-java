@@ -93,11 +93,13 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
     protected B fill(DatastoreV1.Entity entityPb) {
       Map<String, Value<?>> copiedProperties = Maps.newHashMap();
       for (DatastoreV1.Property property : entityPb.getPropertyList()) {
-        copiedProperties.put(property.getName(), Value.fromPb(property.getValue()));
+        // TODO(ajaykannan): fix me!
+        //copiedProperties.put(property.getName(), Value.fromPb(property.getValue()));
       }
       properties(copiedProperties);
       if (entityPb.hasKey()) {
-        key((K) IncompleteKey.fromPb(entityPb.getKey()));
+        // TODO(ajaykannan): fix me!
+        //key((K) IncompleteKey.fromPb(entityPb.getKey()));
       }
       return self();
     }
@@ -389,11 +391,13 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
     for (Map.Entry<String, Value<?>> entry : properties.entrySet()) {
       DatastoreV1.Property.Builder propertyPb = DatastoreV1.Property.newBuilder();
       propertyPb.setName(entry.getKey());
-      propertyPb.setValue(entry.getValue().toPb());
+      // TODO(ajaykannan): fix me!
+      //propertyPb.setValue(entry.getValue().toPb());
       entityPb.addProperty(propertyPb.build());
     }
     if (key != null) {
-      entityPb.setKey(key.toPb());
+      // TODO(ajaykannan): fix me!
+      //entityPb.setKey(key.toPb());
     }
     return entityPb.build();
   }

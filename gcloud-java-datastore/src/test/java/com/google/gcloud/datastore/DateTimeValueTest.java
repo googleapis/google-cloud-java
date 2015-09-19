@@ -37,19 +37,16 @@ public class DateTimeValueTest {
   public void testOf() throws Exception {
     DateTimeValue value = DateTimeValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
-    assertFalse(value.hasIndexed());
-    assertFalse(value.hasMeaning());
+    assertFalse(value.excludeFromIndexes());
   }
 
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     DateTimeValue.Builder builder = DateTimeValue.builder(CONTENT);
-    DateTimeValue value = builder.meaning(1).indexed(false).build();
+    DateTimeValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());
-    assertTrue(value.hasMeaning());
-    assertEquals(Integer.valueOf(1), value.meaning());
-    assertTrue(value.hasIndexed());
-    assertFalse(value.indexed());
+    assertEquals(1, value.meaning());
+    assertTrue(value.excludeFromIndexes());
   }
 }

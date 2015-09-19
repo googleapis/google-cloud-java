@@ -31,24 +31,20 @@ public class NullValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
-  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     NullValue value = NullValue.of();
     assertNull(value.get());
-    assertFalse(value.hasIndexed());
-    assertFalse(value.hasMeaning());
+    assertFalse(value.excludeFromIndexes());
   }
 
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     NullValue.Builder builder = NullValue.builder();
-    NullValue value = builder.meaning(1).indexed(false).build();
+    NullValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertNull(value.get());
-    assertTrue(value.hasMeaning());
-    assertEquals(Integer.valueOf(1), value.meaning());
-    assertTrue(value.hasIndexed());
-    assertFalse(value.indexed());
+    assertEquals(1, value.meaning());
+    assertTrue(value.excludeFromIndexes());
   }
 }
