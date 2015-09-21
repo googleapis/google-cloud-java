@@ -38,7 +38,7 @@ import java.util.Set;
  *
  * @see <a href="https://cloud.google.com/storage/docs">Google Cloud Storage</a>
  */
-public interface Storage extends Service<StorageOptions> {
+public interface Storage extends Service<StorageOptions, StorageFactory> {
 
   enum PredefinedAcl {
     AUTHENTICATED_READ("authenticatedRead"),

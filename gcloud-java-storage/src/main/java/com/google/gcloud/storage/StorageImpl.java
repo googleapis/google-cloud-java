@@ -64,7 +64,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
 
-final class StorageImpl extends BaseService<StorageOptions> implements Storage {
+final class StorageImpl extends BaseService<StorageOptions, StorageFactory> implements Storage {
 
   private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
 
@@ -90,8 +90,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   private final StorageRpc storageRpc;
 
-  StorageImpl(StorageOptions options) {
-    super(options);
+  StorageImpl(StorageOptions options, StorageFactory factory) {
+    super(options, factory);
     storageRpc = options.storageRpc();
     // todo: configure timeouts - https://developers.google.com/api-client-library/java/google-api-java-client/errors
     // todo: provide rewrite - https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite

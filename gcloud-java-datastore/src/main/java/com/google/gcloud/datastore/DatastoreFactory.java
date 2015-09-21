@@ -16,16 +16,17 @@
 
 package com.google.gcloud.datastore;
 
+import com.google.gcloud.ServiceFactory;
 
 /**
  * A base class for Datastore factories.
  */
-public abstract class DatastoreFactory {
+public abstract class DatastoreFactory implements ServiceFactory<Datastore, DatastoreOptions> {
 
   private static final DatastoreFactory INSTANCE = new DatastoreFactory() {
       @Override
       public Datastore get(DatastoreOptions options) {
-        return new DatastoreImpl(options);
+        return new DatastoreImpl(options, this);
       }
     };
 
@@ -39,5 +40,6 @@ public abstract class DatastoreFactory {
   /**
    * Returns a {@code Datastore} service for the given options.
    */
+  @Override
   public abstract Datastore get(DatastoreOptions options);
 }

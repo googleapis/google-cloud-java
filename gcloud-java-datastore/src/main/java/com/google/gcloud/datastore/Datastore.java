@@ -23,7 +23,8 @@ import java.util.List;
 /**
  * An interface for Google Cloud Datastore.
  */
-public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWriter {
+public interface Datastore extends Service<DatastoreOptions, DatastoreFactory>,
+    DatastoreReaderWriter {
 
   /**
    * Returns a new Datastore transaction.

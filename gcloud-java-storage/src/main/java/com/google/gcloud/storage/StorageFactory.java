@@ -16,16 +16,17 @@
 
 package com.google.gcloud.storage;
 
+import com.google.gcloud.ServiceFactory;
 
 /**
  * A base class for Storage factories.
  */
-public abstract class StorageFactory {
+public abstract class StorageFactory implements ServiceFactory<Storage, StorageOptions> {
 
   private static final StorageFactory INSTANCE = new StorageFactory() {
     @Override
     public Storage get(StorageOptions options) {
-      return new StorageImpl(options);
+      return new StorageImpl(options, this);
     }
   };
 
@@ -39,5 +40,6 @@ public abstract class StorageFactory {
   /**
    * Returns a {@code Storage} service for the given options.
    */
+  @Override
   public abstract Storage get(StorageOptions options);
 }
