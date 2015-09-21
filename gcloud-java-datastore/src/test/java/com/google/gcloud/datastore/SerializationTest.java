@@ -40,6 +40,7 @@ import java.io.ObjectOutputStream;
 
 public class SerializationTest {
 
+  private static final DatastoreFactory DATASTORE_FACTORY = DatastoreFactory.instance();
   private static final IncompleteKey INCOMPLETE_KEY1 =
       IncompleteKey.builder("ds", "k").ancestors(PathElement.of("p", 1)).build();
   private static final Key KEY1 = Key.builder("ds", "k", "n").build();
@@ -130,6 +131,12 @@ public class SerializationTest {
       .put(ValueType.BLOB, BLOB_VALUE)
       .put(ValueType.RAW_VALUE, RAW_VALUE)
       .build();
+
+  @Test
+  public void testStorageFactory() throws Exception {
+    DatastoreFactory serializedCopy = serializeAndDeserialize(DATASTORE_FACTORY);
+    assertNotSame(DATASTORE_FACTORY, serializedCopy);
+  }
 
   @Test
   public void testServiceOptions() throws Exception {

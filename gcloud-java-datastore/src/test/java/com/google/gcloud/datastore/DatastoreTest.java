@@ -135,6 +135,11 @@ public class DatastoreTest {
   }
 
   @Test
+  public void testGetFactory() {
+    assertSame(DatastoreFactory.instance(), datastore.factory());
+  }
+
+  @Test
   public void testNewTransactionCommit() {
     Transaction transaction = datastore.newTransaction();
     transaction.add(ENTITY3);
