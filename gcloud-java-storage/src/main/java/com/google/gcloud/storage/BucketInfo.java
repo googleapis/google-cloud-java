@@ -453,7 +453,7 @@ public final class BucketInfo implements Serializable {
     }
 
     public Builder deleteRules(Iterable<? extends DeleteRule> rules) {
-      this.deleteRules = ImmutableList.copyOf(rules);
+      this.deleteRules = rules != null ? ImmutableList.copyOf(rules) : null;
       return this;
     }
 
