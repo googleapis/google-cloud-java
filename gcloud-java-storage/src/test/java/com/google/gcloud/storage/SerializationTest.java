@@ -69,7 +69,8 @@ public class SerializationTest {
   @Test
   public void testStorageFactory() throws Exception {
     StorageFactory serializedCopy = serializeAndDeserialize(STORAGE_FACTORY);
-    assertNotSame(STORAGE_FACTORY, serializedCopy);
+    assertEquals(STORAGE_FACTORY, serializedCopy);
+    assertEquals(STORAGE_FACTORY.hashCode(), serializedCopy.hashCode());
   }
 
   @Test

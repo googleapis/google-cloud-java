@@ -135,7 +135,8 @@ public class SerializationTest {
   @Test
   public void testStorageFactory() throws Exception {
     DatastoreFactory serializedCopy = serializeAndDeserialize(DATASTORE_FACTORY);
-    assertNotSame(DATASTORE_FACTORY, serializedCopy);
+    assertEquals(DATASTORE_FACTORY, serializedCopy);
+    assertEquals(DATASTORE_FACTORY.hashCode(), serializedCopy.hashCode());
   }
 
   @Test
