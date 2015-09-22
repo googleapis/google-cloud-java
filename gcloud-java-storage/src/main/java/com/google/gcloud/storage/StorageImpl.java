@@ -165,7 +165,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   private static abstract class BasePageFetcher<T extends Serializable>
-      implements ListResult.NextPageFetcher<T> {
+      implements BaseListResult.NextPageFetcher<T> {
 
     private static final long serialVersionUID = 8236329004030295223L;
     protected final Map<StorageRpc.Option, ?> requestOptions;
@@ -234,7 +234,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           }
         }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
     String cursor = result.x();
-    return new ListResult<>(new BucketPageFetcher(serviceOptions, cursor, optionsMap), cursor,
+    return new BaseListResult<>(new BucketPageFetcher(serviceOptions, cursor, optionsMap), cursor,
         Iterables.transform(result.y(),
             new Function<com.google.api.services.storage.model.Bucket, BucketInfo>() {
               @Override
@@ -259,7 +259,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           }
         }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
     String cursor = result.x();
-    return new ListResult<>(new BlobPageFetcher(bucket, serviceOptions, cursor, optionsMap), cursor,
+    return new BaseListResult<>(new BlobPageFetcher(bucket, serviceOptions, cursor, optionsMap), cursor,
         Iterables.transform(result.y(),
             new Function<StorageObject, BlobInfo>() {
               @Override
