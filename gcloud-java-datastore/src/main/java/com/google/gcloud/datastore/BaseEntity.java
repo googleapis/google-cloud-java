@@ -27,7 +27,6 @@ import static com.google.gcloud.datastore.LongValue.of;
 import static com.google.gcloud.datastore.NullValue.of;
 import static com.google.gcloud.datastore.StringValue.of;
 
-import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Maps;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -48,7 +47,8 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
  *     Entities, Properties, and Keys</a>
  */
-public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<DatastoreV1.Entity> {
+public abstract class BaseEntity<K extends IncompleteKey> 
+    extends Serializable<com.google.datastore.v1beta3.Entity> {
 
   private static final long serialVersionUID = 8175618724683792766L;
 
@@ -90,16 +90,15 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
     }
 
     @SuppressWarnings("unchecked")
-    protected B fill(DatastoreV1.Entity entityPb) {
+    protected B fill(com.google.datastore.v1beta3.Entity entityPb) {
       Map<String, Value<?>> copiedProperties = Maps.newHashMap();
-      for (DatastoreV1.Property property : entityPb.getPropertyList()) {
-        // TODO(ajaykannan): fix me!
-        //copiedProperties.put(property.getName(), Value.fromPb(property.getValue()));
+      for (Map.Entry<String, com.google.datastore.v1beta3.Value> entry : 
+           entityPb.getProperties().entrySet()) {
+        copiedProperties.put(entry.getKey(), Value.fromPb(entry.getValue()));
       }
       properties(copiedProperties);
       if (entityPb.hasKey()) {
-        // TODO(ajaykannan): fix me!
-        //key((K) IncompleteKey.fromPb(entityPb.getKey()));
+        key((K) IncompleteKey.fromPb(entityPb.getKey()));
       }
       return self();
     }
@@ -379,25 +378,21 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   @Override
   protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     Builder<?, ?> builder = emptyBuilder();
-    builder.fill(DatastoreV1.Entity.parseFrom(bytesPb));
+    builder.fill(com.google.datastore.v1beta3.Entity.parseFrom(bytesPb));
     return builder.build();
   }
 
   protected abstract Builder<?, ?> emptyBuilder();
 
   @Override
-  protected final DatastoreV1.Entity toPb() {
-    DatastoreV1.Entity.Builder entityPb = DatastoreV1.Entity.newBuilder();
+  protected final com.google.datastore.v1beta3.Entity toPb() {
+    com.google.datastore.v1beta3.Entity.Builder entityPb = com.google.datastore.v1beta3.Entity.newBuilder();
+    Map<String, com.google.datastore.v1beta3.Value> propertiesPb = entityPb.getMutableProperties();
     for (Map.Entry<String, Value<?>> entry : properties.entrySet()) {
-      DatastoreV1.Property.Builder propertyPb = DatastoreV1.Property.newBuilder();
-      propertyPb.setName(entry.getKey());
-      // TODO(ajaykannan): fix me!
-      //propertyPb.setValue(entry.getValue().toPb());
-      entityPb.addProperty(propertyPb.build());
+      propertiesPb.put(entry.getKey(), entry.getValue().toPb());
     }
     if (key != null) {
-      // TODO(ajaykannan): fix me!
-      //entityPb.setKey(key.toPb());
+      entityPb.setKey(key.toPb());
     }
     return entityPb.build();
   }

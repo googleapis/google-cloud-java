@@ -65,7 +65,7 @@ public class DatastoreOptionsTest {
 
   @Test
   public void testNamespace() throws Exception {
-    assertNull(options.build().namespace());
+    assertTrue(options.build().namespace().isEmpty());
     assertEquals("ns1", options.namespace("ns1").build().namespace());
   }
 
