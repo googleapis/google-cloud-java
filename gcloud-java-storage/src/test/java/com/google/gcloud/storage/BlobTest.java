@@ -41,7 +41,7 @@ public class BlobTest {
 
   private Storage storage;
   private Blob blob;
-  private BlobInfo blobInfo = BlobInfo.of("b", "n");
+  private final BlobInfo blobInfo = BlobInfo.of("b", "n");
 
   @Before
   public void setUp() throws Exception {
@@ -107,6 +107,9 @@ public class BlobTest {
     replay(storage);
     Blob targetBlob = blob.copyTo(target);
     assertEquals(target, targetBlob.info());
+    assertEquals(capturedCopyRequest.getValue().sourceBlob(), blob.info().name());
+    assertEquals(capturedCopyRequest.getValue().sourceBucket(), blob.info().bucket());
+    assertEquals(capturedCopyRequest.getValue().target(), target);
     assertSame(storage, targetBlob.storage());
   }
 

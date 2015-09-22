@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -30,7 +29,6 @@ import com.google.gcloud.storage.Storage.SignUrlOption;
 
 import java.net.URL;
 import java.util.Objects;
-
 
 /**
  * A Google cloud storage object.
@@ -89,18 +87,44 @@ public final class Blob {
     }
   }
 
+  /**
+   * Construct a {@code Blob} object for the provided {@code BlobInfo}. The storage service is used
+   * to issue requests.
+   * 
+   * @param storage the storage service used for issuing requests
+   * @param info blob's info
+   */
   public Blob(Storage storage, BlobInfo info) {
     this.storage = checkNotNull(storage);
     this.info = checkNotNull(info);
   }
 
+  /**
+   * Construct a {@code Blob} object for the provided bucket and blob names. The storage service is
+   * used to issue requests.
+   * 
+   * @param storage the storage service used for issuing requests
+   * @param bucket bucket's name
+   * @param blob blob's name
+   */
+  public Blob(Storage storage, String bucket, String blob) {
+    this.storage = checkNotNull(storage);
+    this.info = BlobInfo.of(bucket, blob);
+  }
+
+  /**
+   * Get the blobs's information.
+   * 
+   * @return a {@code BlobInfo} object for this blob
+   */
   public BlobInfo info() {
     return info;
   }
 
   /**
-   * Returns true if this blob exists.
+   * Check if this blob exists.
    *
+   * @return true if this blob exists, false otherwise
    * @throws StorageException upon failure
    */
   public boolean exists() {
@@ -108,8 +132,10 @@ public final class Blob {
   }
 
   /**
-   * Returns the blob's content.
+   * Return this blob's content.
    *
+   * @param options blob read options
+   * @return the blob's content
    * @throws StorageException upon failure
    */
   public byte[] content(Storage.BlobSourceOption... options) {
@@ -117,10 +143,12 @@ public final class Blob {
   }
 
   /**
-   * Updates the blob's information. Bucket or blob's name cannot be changed by this method. If you
+   * Update the blob's information. Bucket or blob's name cannot be changed by this method. If you
    * want to rename the blob or move it to a different bucket use the {@link #copyTo} and
    * {@link #delete} operations.
    *
+   * @param blobInfo new blob's information. Bucket and blob names must match the current ones
+   * @param options update options
    * @throws StorageException upon failure
    */
   public void update(BlobInfo blobInfo, BlobTargetOption... options) {
@@ -130,9 +158,10 @@ public final class Blob {
   }
 
   /**
-   * Deletes this blob.
+   * Delete this blob.
    *
-   * @return true if bucket was deleted
+   * @param options blob delete options
+   * @return true if blob was deleted
    * @throws StorageException upon failure
    */
   public boolean delete(BlobSourceOption... options) {
@@ -140,9 +169,11 @@ public final class Blob {
   }
 
   /**
-   * Send a copy request.
+   * Copy this blob.
    *
-   * @return the copied blob.
+   * @param target target blob
+   * @param options source blob options
+   * @return the copied blob
    * @throws StorageException upon failure
    */
   public Blob copyTo(BlobInfo target, BlobSourceOption... options) {
@@ -150,9 +181,12 @@ public final class Blob {
   }
 
   /**
-   * Send a copy request.
+   * Copy this blob.
    *
-   * @return the copied blob.
+   * @param target target blob
+   * @param sourceOptions source blob options
+   * @param targetOptions target blob options
+   * @return the copied blob
    * @throws StorageException upon failure
    */
   public Blob copyTo(BlobInfo target, Iterable<BlobSourceOption> sourceOptions,
@@ -165,8 +199,10 @@ public final class Blob {
   }
 
   /**
-   * Returns a channel for reading this blob's content.
+   * Return a channel for reading this blob's content.
    *
+   * @param options blob read options
+   * @return a {@code BlobReadChannel} object to read this blob
    * @throws StorageException upon failure
    */
   public BlobReadChannel reader(BlobSourceOption... options) {
@@ -174,8 +210,10 @@ public final class Blob {
   }
 
   /**
-   * Returns a channel for writing to this blob.
+   * Return a channel for writing to this blob.
    *
+   * @param options target blob options
+   * @return a {@code BlobWriteChannel} object for writing to this blob
    * @throws StorageException upon failure
    */
   public BlobWriteChannel writer(BlobTargetOption... options) {
@@ -183,18 +221,25 @@ public final class Blob {
   }
 
   /**
-   * Generates a signed URL for this blob. If you want to allow access to for a fixed amount of time
+   * Generate a signed URL for this blob. If you want to allow access to for a fixed amount of time
    * for this blob, you can use this method to generate a URL that is only valid within a certain
    * time period. This is particularly useful if you don't want publicly accessible blobs, but don't
    * want to require users to explicitly log in.
    *
    * @param expirationTimeInSeconds the signed URL expiration (using epoch time)
+   * @param options signed url options
+   * @return a signed URL for this bucket and the specified options
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
    */
   public URL signUrl(long expirationTimeInSeconds, SignUrlOption... options) {
     return storage.signUrl(info, expirationTimeInSeconds, options);
   }
 
+  /**
+   * Get this blobs's {@code Storage} object.
+   * 
+   * @return the storage service used by this blob to issue requests
+   */
   public Storage storage() {
     return storage;
   }
