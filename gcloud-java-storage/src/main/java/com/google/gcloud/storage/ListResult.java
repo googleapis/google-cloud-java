@@ -16,28 +16,19 @@
 
 package com.google.gcloud.storage;
 
-import java.util.Iterator;
-
 /**
  * Interface for Google Cloud storage list result.
  */
 public interface ListResult<T> extends Iterable<T> {
 
   /**
-   * Returns the cursor for the nextPage or {@code null} if no more results.
-   * 
-   * @return the string cursor for next page
+   * Return the cursor for the nextPage or {@code null} if no more results.
    */
-  public String nextPageCursor();
+  String nextPageCursor();
 
   /**
-   * Returns the results of the nextPage or {@code null} if no more result.
-   * 
-   * @return the {@code ListResult} object for the next page
+   * Return the results of the nextPage or {@code null} if no more result.
    */
-  public ListResult<T> nextPage();
-
-  @Override
-  public Iterator<T> iterator();
+  ListResult<T> nextPage();
 
 }
