@@ -61,9 +61,9 @@ public class LocalGcdHelper {
 
   public static final String DEFAULT_PROJECT_ID = "projectid1";
   public static final int PORT = 8080;
-  private static final String GCD = "gcd-v1beta2-rev1-2.1.2b";
+  private static final String GCD = "gcd-v1beta3-0.0.1";
   private static final String GCD_FILENAME = GCD + ".zip";
-  private static final String MD5_CHECKSUM = "d84384cdfa8658e1204f4f8be51300e8";
+  private static final String MD5_CHECKSUM = "496b16f32473d0de0c7a974bd0ee1461";
   private static final URL GCD_URL;
 
   static {
@@ -159,13 +159,13 @@ public class LocalGcdHelper {
       }
     }
     // cleanup any possible data for the same project
-    File datasetFolder = new File(gcdFolder, GCD + '/' + projectId);
+    File datasetFolder = new File(gcdFolder, "gcd/" + projectId);
     deleteRecurse(datasetFolder.toPath());
 
     // create the datastore for the project
     ProcessBuilder processBuilder = new ProcessBuilder()
         .redirectError(ProcessBuilder.Redirect.INHERIT)
-        .directory(new File(gcdFolder, GCD));
+        .directory(new File(gcdFolder, "gcd"));
     if (isWindows()) {
       processBuilder.command("cmd", "/C", "gcd.cmd", "create", "-p", projectId, projectId);
       processBuilder.redirectOutput(new File("NULL:"));
@@ -179,7 +179,7 @@ public class LocalGcdHelper {
 
     // start the datastore for the project
     processBuilder = new ProcessBuilder()
-        .directory(new File(gcdFolder, GCD))
+        .directory(new File(gcdFolder, "gcd"))
         .redirectErrorStream(true);
     if (isWindows()) {
       processBuilder.command("cmd", "/C", "gcd.cmd", "start", "--testing",
@@ -309,7 +309,7 @@ public class LocalGcdHelper {
   public static boolean isActive(String projectId) {
     try {
       StringBuilder urlBuilder = new StringBuilder("http://localhost:").append(PORT);
-      urlBuilder.append("/datastore/v1beta2/datasets/").append(projectId).append("/lookup");
+      urlBuilder.append("/datastore/v1beta3/datasets/").append(projectId).append(":lookup");
       URL url = new URL(urlBuilder.toString());
       try (BufferedReader reader =
                new BufferedReader(new InputStreamReader(url.openStream(), UTF_8))) {

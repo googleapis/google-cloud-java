@@ -18,9 +18,7 @@ package com.google.gcloud.datastore;
 
 import static com.google.gcloud.datastore.Validator.validateNamespace;
 
-import com.google.api.services.datastore.DatastoreV1;
-import com.google.api.services.datastore.DatastoreV1.EntityResult;
-import com.google.api.services.datastore.DatastoreV1.LookupResponse;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.ServiceOptions;
@@ -102,21 +100,23 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     Builder builder = toBuilder();
     builder.normalizeDataset(false);
     // Replace provided project-id with full project-id (s~xxx, e~xxx,...)
-    DatastoreV1.LookupRequest.Builder requestPb = DatastoreV1.LookupRequest.newBuilder();
-    DatastoreV1.Key key = DatastoreV1.Key.newBuilder()
-        .addPathElement(DatastoreV1.Key.PathElement.newBuilder().setKind("__foo__").setName("bar"))
+    com.google.datastore.v1beta3.LookupRequest.Builder requestPb = 
+        com.google.datastore.v1beta3.LookupRequest.newBuilder();
+    com.google.datastore.v1beta3.Key key = com.google.datastore.v1beta3.Key.newBuilder()
+        .addPath(com.google.datastore.v1beta3.Key.PathElement.newBuilder()
+            .setKind("__foo__").setName("bar"))
         .build();
-    requestPb.addKey(key);
+    requestPb.addKeys(key);
     try {
-      LookupResponse responsePb = datastoreRpc().lookup(requestPb.build());
+      com.google.datastore.v1beta3.LookupResponse responsePb = datastoreRpc().lookup(requestPb.build());
       if (responsePb.getDeferredCount() > 0) {
         key = responsePb.getDeferred(0);
       } else {
-        Iterator<EntityResult> combinedIter =
+        Iterator<com.google.datastore.v1beta3.EntityResult> combinedIter =
             Iterables.concat(responsePb.getMissingList(), responsePb.getFoundList()).iterator();
         key = combinedIter.next().getEntity().getKey();
       }
-      builder.projectId(key.getPartitionId().getDatasetId());
+      builder.projectId(key.getPartitionId().getProjectId());
       return new DatastoreOptions(builder);
     } catch (DatastoreRpcException e) {
       throw DatastoreException.translateAndThrow(e);
@@ -149,10 +149,10 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
       Class<?> clazz = Class.forName("com.google.appengine.api.NamespaceManager");
       Method method = clazz.getMethod("get");
       String namespace = (String) method.invoke(null);
-      return namespace == null || namespace.isEmpty() ? null : namespace;
+      return MoreObjects.firstNonNull(namespace, "");
     } catch (Exception ignore) {
-      // return null (Datastore default namespace) if could not automatically determine
-      return null;
+      // return empty string (Datastore default namespace) if could not automatically determine
+      return "";
     }
   }
 
