@@ -191,7 +191,7 @@ public class LocalDevelopmentDatastore extends Datastore {
     } catch (IOException e) {
       throw new LocalDevelopmentDatastoreException("Could not create dataset tmp directory", e);
     }
-    List<String> cmd = Arrays.asList("./gcd.sh", "create", "--project_id=" + dataset,
+    List<String> cmd = Arrays.asList("./gcd.sh", "create", "--dataset_id=" + dataset,
         datasetDirectory.getPath());
     try {
       int retCode = newGcdProcess(sdkPath, cmd).start().waitFor();
