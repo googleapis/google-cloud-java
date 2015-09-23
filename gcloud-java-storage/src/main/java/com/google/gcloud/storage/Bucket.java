@@ -57,13 +57,11 @@ public final class Bucket {
    */
   public Bucket(Storage storage, String bucket) {
     this.storage = checkNotNull(storage);
-    this.info = BucketInfo.of(bucket);
+    this.info = BucketInfo.of(checkNotNull(bucket));
   }
 
   /**
-   * Get the bucket's information.
-   * 
-   * @return a {@code BucketInfo} object for this bucket
+   * Return the bucket's information.
    */
   public BucketInfo info() {
     return info;
@@ -103,10 +101,9 @@ public final class Bucket {
   }
 
   /**
-   * List blobs in this bucket.
+   * Return the paginated list of {@code Blob} in this bucket.
    * 
    * @param options options for listing blobs
-   * @return the paginated list of {@code Blob} objects in this bucket
    * @throws StorageException upon failure
    */
   public ListResult<Blob> list(Storage.BlobListOption... options) {
@@ -118,7 +115,6 @@ public final class Bucket {
    * 
    * @param blob name of the requested blob
    * @param options blob search options
-   * @return the requested blob in this bucket or {@code null} if not found
    * @throws StorageException upon failure
    */
   public Blob get(String blob, BlobSourceOption... options) {
@@ -129,7 +125,6 @@ public final class Bucket {
    * Return a list of requested blobs in this bucket. Blobs that do not exist are null.
    * 
    * @param blobNames names of the requested blobs
-   * @return a list containing the requested blobs in this bucket
    * @throws StorageException upon failure
    */
   public List<Blob> getAll(String... blobNames) {
@@ -161,9 +156,7 @@ public final class Bucket {
   }
 
   /**
-   * Get this bucket's {@code Storage} object.
-   * 
-   * @return the storage service used by this bucket to issue requests
+   * Return the bucket's {@code Storage} object used to issue requests.
    */
   public Storage storage() {
     return storage;

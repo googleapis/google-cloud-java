@@ -109,13 +109,11 @@ public final class Blob {
    */
   public Blob(Storage storage, String bucket, String blob) {
     this.storage = checkNotNull(storage);
-    this.info = BlobInfo.of(bucket, blob);
+    this.info = BlobInfo.of(checkNotNull(bucket), checkNotNull(blob));
   }
 
   /**
-   * Get the blobs's information.
-   * 
-   * @return a {@code BlobInfo} object for this blob
+   * Return the blob's information.
    */
   public BlobInfo info() {
     return info;
@@ -135,7 +133,6 @@ public final class Blob {
    * Return this blob's content.
    *
    * @param options blob read options
-   * @return the blob's content
    * @throws StorageException upon failure
    */
   public byte[] content(Storage.BlobSourceOption... options) {
@@ -199,10 +196,9 @@ public final class Blob {
   }
 
   /**
-   * Return a channel for reading this blob's content.
+   * Return a {@code BlobReadChannel} object for reading this blob's content.
    *
    * @param options blob read options
-   * @return a {@code BlobReadChannel} object to read this blob
    * @throws StorageException upon failure
    */
   public BlobReadChannel reader(BlobSourceOption... options) {
@@ -210,10 +206,9 @@ public final class Blob {
   }
 
   /**
-   * Return a channel for writing to this blob.
+   * Return a {@code BlobWriteChannel} object for writing to this blob.
    *
    * @param options target blob options
-   * @return a {@code BlobWriteChannel} object for writing to this blob
    * @throws StorageException upon failure
    */
   public BlobWriteChannel writer(BlobTargetOption... options) {
@@ -236,9 +231,7 @@ public final class Blob {
   }
 
   /**
-   * Get this blobs's {@code Storage} object.
-   * 
-   * @return the storage service used by this blob to issue requests
+   * Return the blob's {@code Storage} object used to issue requests.
    */
   public Storage storage() {
     return storage;
