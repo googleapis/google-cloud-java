@@ -29,24 +29,23 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.gcloud.storage.Storage.CopyRequest;
-
 import org.easymock.Capture;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.net.URL;
 
 public class BlobTest {
 
+  private static final BlobInfo BLOB_INFO = BlobInfo.of("b", "n");
+
   private Storage storage;
   private Blob blob;
-  private final BlobInfo blobInfo = BlobInfo.of("b", "n");
 
   @Before
   public void setUp() throws Exception {
     storage = createStrictMock(Storage.class);
-    blob = new Blob(storage, blobInfo);
+    blob = new Blob(storage, BLOB_INFO);
   }
 
   @After
@@ -56,20 +55,20 @@ public class BlobTest {
 
   @Test
   public void testInfo() throws Exception {
-    assertEquals(blobInfo, blob.info());
+    assertEquals(BLOB_INFO, blob.info());
     replay(storage);
   }
 
   @Test
   public void testExists_True() throws Exception {
-    expect(storage.get(blobInfo.bucket(), blobInfo.name())).andReturn(blobInfo);
+    expect(storage.get(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(BLOB_INFO);
     replay(storage);
     assertTrue(blob.exists());
   }
 
   @Test
   public void testExists_False() throws Exception {
-    expect(storage.get(blobInfo.bucket(), blobInfo.name())).andReturn(null);
+    expect(storage.get(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(null);
     replay(storage);
     assertFalse(blob.exists());
   }
@@ -77,14 +76,14 @@ public class BlobTest {
   @Test
   public void testContent() throws Exception {
     byte[] content = {1, 2};
-    expect(storage.readAllBytes(blobInfo.bucket(), blobInfo.name())).andReturn(content);
+    expect(storage.readAllBytes(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(content);
     replay(storage);
     assertArrayEquals(content, blob.content());
   }
 
   @Test
   public void testUpdate() throws Exception {
-    BlobInfo updatedInfo = blobInfo.toBuilder().cacheControl("c").build();
+    BlobInfo updatedInfo = BLOB_INFO.toBuilder().cacheControl("c").build();
     expect(storage.update(updatedInfo)).andReturn(updatedInfo);
     replay(storage);
     blob.update(updatedInfo);
@@ -94,18 +93,32 @@ public class BlobTest {
 
   @Test
   public void testDelete() throws Exception {
-    expect(storage.delete(blobInfo.bucket(), blobInfo.name())).andReturn(true);
+    expect(storage.delete(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(true);
     replay(storage);
     assertTrue(blob.delete());
   }
 
   @Test
-  public void testCopyTo() throws Exception {
-    BlobInfo target = BlobInfo.of("bt", "nt");
+  public void testCopyToBucket() throws Exception {
+    BlobInfo target = BLOB_INFO.toBuilder().bucket("bt").build();
     Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
     expect(storage.copy(capture(capturedCopyRequest))).andReturn(target);
     replay(storage);
-    Blob targetBlob = blob.copyTo(target);
+    Blob targetBlob = blob.copyTo("bt");
+    assertEquals(target, targetBlob.info());
+    assertEquals(capturedCopyRequest.getValue().sourceBlob(), blob.info().name());
+    assertEquals(capturedCopyRequest.getValue().sourceBucket(), blob.info().bucket());
+    assertEquals(capturedCopyRequest.getValue().target(), target);
+    assertSame(storage, targetBlob.storage());
+  }
+
+  @Test
+  public void testCopyTo() throws Exception {
+    BlobInfo target = BLOB_INFO.toBuilder().bucket("bt").name("nt").build();
+    Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
+    expect(storage.copy(capture(capturedCopyRequest))).andReturn(target);
+    replay(storage);
+    Blob targetBlob = blob.copyTo("bt", "nt");
     assertEquals(target, targetBlob.info());
     assertEquals(capturedCopyRequest.getValue().sourceBlob(), blob.info().name());
     assertEquals(capturedCopyRequest.getValue().sourceBucket(), blob.info().bucket());
@@ -116,7 +129,7 @@ public class BlobTest {
   @Test
   public void testReader() throws Exception {
     BlobReadChannel channel = createMock(BlobReadChannel.class);
-    expect(storage.reader(blobInfo.bucket(), blobInfo.name())).andReturn(channel);
+    expect(storage.reader(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(channel);
     replay(storage);
     assertSame(channel, blob.reader());
   }
@@ -124,7 +137,7 @@ public class BlobTest {
   @Test
   public void testWriter() throws Exception {
     BlobWriteChannel channel = createMock(BlobWriteChannel.class);
-    expect(storage.writer(blobInfo)).andReturn(channel);
+    expect(storage.writer(BLOB_INFO)).andReturn(channel);
     replay(storage);
     assertSame(channel, blob.writer());
   }
@@ -132,7 +145,7 @@ public class BlobTest {
   @Test
   public void testSignUrl() throws Exception {
     URL url = new URL("http://localhost:123/bla");
-    expect(storage.signUrl(blobInfo, 100)).andReturn(url);
+    expect(storage.signUrl(BLOB_INFO, 100)).andReturn(url);
     replay(storage);
     assertEquals(url, blob.signUrl(100));
   }

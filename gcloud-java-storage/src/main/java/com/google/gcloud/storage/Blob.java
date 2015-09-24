@@ -20,8 +20,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.gcloud.storage.Blob.BlobSourceOption.convert;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterables;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.CopyRequest;
@@ -166,32 +164,31 @@ public final class Blob {
   }
 
   /**
-   * Copy this blob.
+   * Copy this blob to the target bucket, preserving its name. Possibly update metadata.
    *
-   * @param target target blob
+   * @param targetBucket target bucket's name
    * @param options source blob options
    * @return the copied blob
    * @throws StorageException upon failure
    */
-  public Blob copyTo(BlobInfo target, BlobSourceOption... options) {
-    return copyTo(target, ImmutableList.copyOf(options), ImmutableList.<BlobTargetOption>of());
+  public Blob copyTo(String targetBucket, BlobSourceOption... options) {
+    return copyTo(targetBucket, info.name(), options);
   }
 
   /**
-   * Copy this blob.
+   * Copy this blob to the target bucket with a new name. Possibly update metadata.
    *
-   * @param target target blob
-   * @param sourceOptions source blob options
-   * @param targetOptions target blob options
+   * @param targetBucket target bucket's name
+   * @param targetBlob target blob's name
+   * @param options source blob options
    * @return the copied blob
    * @throws StorageException upon failure
    */
-  public Blob copyTo(BlobInfo target, Iterable<BlobSourceOption> sourceOptions,
-      Iterable<BlobTargetOption> targetOptions) {
+  public Blob copyTo(String targetBucket, String targetBlob, BlobSourceOption... options) {
+    BlobInfo updatedInfo = info.toBuilder().bucket(targetBucket).name(targetBlob).build();
     CopyRequest copyRequest =
         CopyRequest.builder().source(info.bucket(), info.name())
-            .sourceOptions(convert(info, Iterables.toArray(sourceOptions, BlobSourceOption.class)))
-            .target(target).targetOptions(targetOptions).build();
+            .sourceOptions(convert(info, options)).target(updatedInfo).build();
     return new Blob(storage, storage.copy(copyRequest));
   }
 
