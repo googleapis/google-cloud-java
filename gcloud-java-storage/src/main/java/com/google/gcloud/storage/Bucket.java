@@ -23,8 +23,8 @@ import com.google.gcloud.storage.Storage.BlobSourceOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.BucketSourceOption;
 import com.google.gcloud.storage.Storage.BucketTargetOption;
-import java.util.LinkedList;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 

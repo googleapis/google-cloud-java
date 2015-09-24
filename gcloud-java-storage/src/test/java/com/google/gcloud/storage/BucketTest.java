@@ -40,6 +40,7 @@ import org.junit.Test;
 
 public class BucketTest {
 
+  private static final BucketInfo BUCKET_INFO = BucketInfo.of("b");
   private static final Iterable<BlobInfo> BLOB_INFO_RESULTS = ImmutableList.of(
       BlobInfo.of("b", "n1"),
       BlobInfo.of("b", "n2"),
@@ -47,12 +48,11 @@ public class BucketTest {
 
   private Storage storage;
   private Bucket bucket;
-  private final BucketInfo bucketInfo = BucketInfo.of("b");
 
   @Before
   public void setUp() throws Exception {
     storage = createStrictMock(Storage.class);
-    bucket = new Bucket(storage, bucketInfo);
+    bucket = new Bucket(storage, BUCKET_INFO);
   }
 
   @After
@@ -62,27 +62,27 @@ public class BucketTest {
 
   @Test
   public void testInfo() throws Exception {
-    assertEquals(bucketInfo, bucket.info());
+    assertEquals(BUCKET_INFO, bucket.info());
     replay(storage);
   }
 
   @Test
   public void testExists_True() throws Exception {
-    expect(storage.get(bucketInfo.name())).andReturn(bucketInfo);
+    expect(storage.get(BUCKET_INFO.name())).andReturn(BUCKET_INFO);
     replay(storage);
     assertTrue(bucket.exists());
   }
 
   @Test
   public void testExists_False() throws Exception {
-    expect(storage.get(bucketInfo.name())).andReturn(null);
+    expect(storage.get(BUCKET_INFO.name())).andReturn(null);
     replay(storage);
     assertFalse(bucket.exists());
   }
 
   @Test
   public void testUpdate() throws Exception {
-    BucketInfo updatedInfo = bucketInfo.toBuilder().notFoundPage("p").build();
+    BucketInfo updatedInfo = BUCKET_INFO.toBuilder().notFoundPage("p").build();
     expect(storage.update(updatedInfo)).andReturn(updatedInfo);
     replay(storage);
     bucket.update(updatedInfo);
@@ -92,7 +92,7 @@ public class BucketTest {
 
   @Test
   public void testDelete() throws Exception {
-    expect(storage.delete(bucketInfo.name())).andReturn(true);
+    expect(storage.delete(BUCKET_INFO.name())).andReturn(true);
     replay(storage);
     assertTrue(bucket.delete());
   }
@@ -100,7 +100,7 @@ public class BucketTest {
   @Test
   public void testList() throws Exception {
     BaseListResult<BlobInfo> blobInfoResult = new BaseListResult<>(null, "c", BLOB_INFO_RESULTS);
-    expect(storage.list(bucketInfo.name())).andReturn(blobInfoResult);
+    expect(storage.list(BUCKET_INFO.name())).andReturn(blobInfoResult);
     replay(storage);
     ListResult<Blob> blobResult = bucket.list();
     Iterator<BlobInfo> blobInfoIterator = blobInfoResult.iterator();
@@ -116,7 +116,7 @@ public class BucketTest {
   @Test
   public void testGet() throws Exception {
     BlobInfo info = BlobInfo.of("b", "n");
-    expect(storage.get(bucketInfo.name(), "n")).andReturn(info);
+    expect(storage.get(BUCKET_INFO.name(), "n")).andReturn(info);
     replay(storage);
     Blob blob = bucket.get("n");
     assertEquals(info, blob.info());
