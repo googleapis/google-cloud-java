@@ -81,13 +81,23 @@ public class BucketTest {
   }
 
   @Test
+  public void testReload() throws Exception {
+    BucketInfo updatedInfo = BUCKET_INFO.toBuilder().notFoundPage("p").build();
+    expect(storage.get(updatedInfo.name())).andReturn(updatedInfo);
+    replay(storage);
+    Bucket updatedBucket = bucket.reload();
+    assertSame(storage, bucket.storage());
+    assertEquals(updatedInfo, updatedBucket.info());
+  }
+
+  @Test
   public void testUpdate() throws Exception {
     BucketInfo updatedInfo = BUCKET_INFO.toBuilder().notFoundPage("p").build();
     expect(storage.update(updatedInfo)).andReturn(updatedInfo);
     replay(storage);
-    bucket.update(updatedInfo);
+    Bucket updatedBucket = bucket.update(updatedInfo);
     assertSame(storage, bucket.storage());
-    assertEquals(updatedInfo, bucket.info());
+    assertEquals(updatedInfo, updatedBucket.info());
   }
 
   @Test

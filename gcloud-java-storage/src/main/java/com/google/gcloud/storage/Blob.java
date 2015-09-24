@@ -34,7 +34,7 @@ import java.util.Objects;
 public final class Blob {
 
   private final Storage storage;
-  private BlobInfo info;
+  private final BlobInfo info;
 
   public static class BlobSourceOption extends Option {
 
@@ -138,18 +138,30 @@ public final class Blob {
   }
 
   /**
+   * Fetches current blob's latest information.
+   *
+   * @param options blob read options
+   * @return a {@code Blob} object with latest information
+   * @throws StorageException upon failure
+   */
+  public Blob reload(BlobSourceOption... options) {
+    return new Blob(storage, storage.get(info.bucket(), info.name(), convert(info, options)));
+  }
+
+  /**
    * Update the blob's information. Bucket or blob's name cannot be changed by this method. If you
    * want to rename the blob or move it to a different bucket use the {@link #copyTo} and
-   * {@link #delete} operations.
+   * {@link #delete} operations. A new {@code Blob} object is returned.
    *
    * @param blobInfo new blob's information. Bucket and blob names must match the current ones
    * @param options update options
+   * @return a {@code Blob} object with updated information
    * @throws StorageException upon failure
    */
-  public void update(BlobInfo blobInfo, BlobTargetOption... options) {
+  public Blob update(BlobInfo blobInfo, BlobTargetOption... options) {
     checkArgument(Objects.equals(blobInfo.bucket(), info.bucket()), "Bucket name must match");
     checkArgument(Objects.equals(blobInfo.name(), info.name()), "Blob name must match");
-    info = storage.update(blobInfo, options);
+    return new Blob(storage, storage.update(blobInfo, options));
   }
 
   /**

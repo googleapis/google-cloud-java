@@ -82,13 +82,23 @@ public class BlobTest {
   }
 
   @Test
+  public void testReload() throws Exception {
+    BlobInfo updatedInfo = BLOB_INFO.toBuilder().cacheControl("c").build();
+    expect(storage.get(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(updatedInfo);
+    replay(storage);
+    Blob updatedBlob = blob.reload();
+    assertSame(storage, blob.storage());
+    assertEquals(updatedInfo, updatedBlob.info());
+  }
+
+  @Test
   public void testUpdate() throws Exception {
     BlobInfo updatedInfo = BLOB_INFO.toBuilder().cacheControl("c").build();
     expect(storage.update(updatedInfo)).andReturn(updatedInfo);
     replay(storage);
-    blob.update(updatedInfo);
+    Blob updatedBlob = blob.update(updatedInfo);
     assertSame(storage, blob.storage());
-    assertEquals(updatedInfo, blob.info());
+    assertEquals(updatedInfo, updatedBlob.info());
   }
 
   @Test

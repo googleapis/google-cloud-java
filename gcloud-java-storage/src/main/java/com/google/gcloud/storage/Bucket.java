@@ -18,6 +18,7 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.gcloud.storage.Blob.BlobSourceOption.convert;
 
 import com.google.gcloud.storage.Storage.BlobSourceOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
@@ -34,7 +35,7 @@ import java.util.Objects;
 public final class Bucket {
 
   private final Storage storage;
-  private BucketInfo info;
+  private final BucketInfo info;
 
   /**
    * Construct a {@code Bucket} object for the provided {@code BucketInfo}. The storage service is
@@ -78,15 +79,28 @@ public final class Bucket {
   }
 
   /**
-   * Update the bucket's information. Bucket's name cannot be changed.
+   * Fetches current bucket's latest information.
+   *
+   * @param options bucket read options
+   * @return a {@code Bucket} object with latest information
+   * @throws StorageException upon failure
+   */
+  public Bucket reload(BucketSourceOption... options) {
+    return new Bucket(storage, storage.get(info.name(), options));
+  }
+
+  /**
+   * Update the bucket's information. Bucket's name cannot be changed. A new {@code Bucket} object
+   * is returned.
    *
    * @param bucketInfo new bucket's information. Name must match the one of the current bucket
    * @param options update options
+   * @return a {@code Bucket} object with updated information
    * @throws StorageException upon failure
    */
-  public void update(BucketInfo bucketInfo, BucketTargetOption... options) {
+  public Bucket update(BucketInfo bucketInfo, BucketTargetOption... options) {
     checkArgument(Objects.equals(bucketInfo.name(), info.name()), "Bucket name must match");
-    info = storage.update(bucketInfo, options);
+    return new Bucket(storage, storage.update(bucketInfo, options));
   }
 
   /**
