@@ -282,7 +282,6 @@ public class DefaultStorageRpc implements StorageRpc {
         .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
         .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
         .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
-        .setIfGenerationMatch(100L)
         .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
   }
 
