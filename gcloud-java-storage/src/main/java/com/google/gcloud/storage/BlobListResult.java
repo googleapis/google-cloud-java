@@ -18,6 +18,9 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.Function;
+import com.google.common.collect.Iterators;
+
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -28,30 +31,6 @@ public class BlobListResult implements ListResult<Blob> {
 
   private final ListResult<BlobInfo> infoList;
   private final Storage storage;
-
-  private class BlobListIterator implements Iterator<Blob> {
-
-    private final Iterator<BlobInfo> blobInfoIterator;
-
-    public BlobListIterator() {
-      this.blobInfoIterator = infoList.iterator();
-    }
-
-    @Override
-    public boolean hasNext() {
-      return blobInfoIterator.hasNext();
-    }
-
-    @Override
-    public Blob next() {
-      return new Blob(storage, blobInfoIterator.next());
-    }
-
-    @Override
-    public void remove() {
-      blobInfoIterator.remove();
-    }
-  }
 
   public BlobListResult(Storage storage, ListResult<BlobInfo> infoList) {
     this.storage = checkNotNull(storage);
@@ -74,7 +53,12 @@ public class BlobListResult implements ListResult<Blob> {
 
   @Override
   public Iterator<Blob> iterator() {
-    return new BlobListIterator();
+    return Iterators.transform(infoList.iterator(), new Function<BlobInfo, Blob>() {
+      @Override
+      public Blob apply(BlobInfo info) {
+        return new Blob(storage, info);
+      }
+    });
   }
 
   @Override
