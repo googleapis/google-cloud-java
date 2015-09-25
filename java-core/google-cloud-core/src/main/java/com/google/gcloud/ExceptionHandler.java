@@ -47,7 +47,7 @@ public final class ExceptionHandler implements Serializable {
   public interface Interceptor extends Serializable {
 
     enum RetryResult {
-      ABORT, RETRY, PROCEED;
+      NO_RETRY, RETRY, CONTINUE_EVALUATION;
     }
 
     /**
@@ -55,8 +55,8 @@ public final class ExceptionHandler implements Serializable {
      *
      * @param exception the exception that is being evaluated
      * @return {@link RetryResult} to indicate if the exception should be ignored (
-     *         {@link RetryResult#RETRY}), propagated ({@link RetryResult#ABORT}), or evaluation
-     *         should proceed ({@link RetryResult#PROCEED}).
+     *         {@link RetryResult#RETRY}), propagated ({@link RetryResult#NO_RETRY}), or evaluation
+     *         should proceed ({@link RetryResult#CONTINUE_EVALUATION}).
      */
     RetryResult beforeEval(Exception exception);
 
@@ -66,8 +66,8 @@ public final class ExceptionHandler implements Serializable {
      * @param exception the exception that is being evaluated
      * @param retryResult the result of the evaluation so far.
      * @return {@link RetryResult} to indicate if the exception should be ignored (
-     *         {@link RetryResult#RETRY}), propagated ({@link RetryResult#ABORT}), or evaluation
-     *         should proceed ({@link RetryResult#PROCEED}).
+     *         {@link RetryResult#RETRY}), propagated ({@link RetryResult#NO_RETRY}), or evaluation
+     *         should proceed ({@link RetryResult#CONTINUE_EVALUATION}).
      */
     RetryResult afterEval(Exception exception, RetryResult retryResult);
   }
@@ -177,7 +177,7 @@ public final class ExceptionHandler implements Serializable {
       addRetryInfo(new RetryInfo(exception, Interceptor.RetryResult.RETRY), retryInfo);
     }
     for (Class<? extends Exception> exception : nonRetriableExceptions) {
-      addRetryInfo(new RetryInfo(exception, Interceptor.RetryResult.ABORT), retryInfo);
+      addRetryInfo(new RetryInfo(exception, Interceptor.RetryResult.NO_RETRY), retryInfo);
     }
   }
 
@@ -242,17 +242,17 @@ public final class ExceptionHandler implements Serializable {
   boolean shouldRetry(Exception ex) {
     for (Interceptor interceptor : interceptors) {
       Interceptor.RetryResult retryResult = checkNotNull(interceptor.beforeEval(ex));
-      if (retryResult != Interceptor.RetryResult.PROCEED) {
-        return interceptor.beforeEval(ex) == Interceptor.RetryResult.RETRY;
+      if (retryResult != Interceptor.RetryResult.CONTINUE_EVALUATION) {
+        return retryResult == Interceptor.RetryResult.RETRY;
       }
     }
     RetryInfo retryInfo = findMostSpecificRetryInfo(this.retryInfo, ex.getClass());
     Interceptor.RetryResult retryResult =
-        retryInfo == null ? Interceptor.RetryResult.ABORT : retryInfo.retry;
+        retryInfo == null ? Interceptor.RetryResult.NO_RETRY : retryInfo.retry;
     for (Interceptor interceptor : interceptors) {
       Interceptor.RetryResult interceptorRetry = 
           checkNotNull(interceptor.afterEval(ex, retryResult));
-      if (interceptorRetry != Interceptor.RetryResult.PROCEED) {
+      if (interceptorRetry != Interceptor.RetryResult.CONTINUE_EVALUATION) {
         retryResult = interceptorRetry;
       }
     }
