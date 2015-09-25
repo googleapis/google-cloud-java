@@ -108,7 +108,8 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
         .build();
     requestPb.addKeys(key);
     try {
-      com.google.datastore.v1beta3.LookupResponse responsePb = datastoreRpc().lookup(requestPb.build());
+      com.google.datastore.v1beta3.LookupResponse responsePb = 
+          datastoreRpc().lookup(requestPb.build());
       if (responsePb.getDeferredCount() > 0) {
         key = responsePb.getDeferred(0);
       } else {

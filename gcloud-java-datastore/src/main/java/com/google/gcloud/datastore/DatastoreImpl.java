@@ -176,33 +176,32 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       return Collections.emptyList();
     }
     List<com.google.datastore.v1beta3.Mutation> mutationsPb = new ArrayList<>();
-    Map<Key, Entity> completeEntities = new LinkedHashMap<>();
+    Set<Entity> completeEntities = new LinkedHashSet<>();
     for (FullEntity<?> entity : entities) {
       Entity completeEntity = null;
       if (entity.key() instanceof Key) {
         completeEntity = Entity.convert((FullEntity<Key>) entity);
       }
       if (completeEntity != null) {
-        if (completeEntities.put(completeEntity.key(), completeEntity) != null) {
+        if (completeEntities.contains(completeEntity)) {
           throw DatastoreException.throwInvalidRequest(
               "Duplicate entity with the key %s", entity.key());
         }
-        mutationsPb.add(com.google.datastore.v1beta3.Mutation.newBuilder()
-            .setInsert(completeEntity.toPb()).build());
+        completeEntities.add(completeEntity);
       } else {
         Preconditions.checkArgument(entity.hasKey(), "entity %s is missing a key", entity);
-        mutationsPb.add(com.google.datastore.v1beta3.Mutation.newBuilder()
-            .setInsert(entity.toPb()).build());
       }
+      mutationsPb.add(com.google.datastore.v1beta3.Mutation.newBuilder()
+          .setInsert(entity.toPb()).build());
     }
     com.google.datastore.v1beta3.CommitResponse commitResponse = commitMutation(mutationsPb);
     Iterator<com.google.datastore.v1beta3.MutationResult> mutationResults =
         commitResponse.getMutationResultsList().iterator();
+    Iterator<Entity> completeEntitiesIt = completeEntities.iterator();
     ImmutableList.Builder<Entity> responseBuilder = ImmutableList.builder();
     for (FullEntity<?> entity : entities) {
-      Entity completeEntity = completeEntities.get(entity.key());
-      if (completeEntity != null) {
-        responseBuilder.add(completeEntity);
+      if (completeEntities.contains(entity)) {
+        responseBuilder.add(completeEntitiesIt.next());
         mutationResults.next();
       } else {
         responseBuilder.add(

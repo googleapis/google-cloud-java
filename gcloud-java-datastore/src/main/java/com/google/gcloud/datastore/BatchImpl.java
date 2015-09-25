@@ -16,8 +16,8 @@
 
 package com.google.gcloud.datastore;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 
@@ -39,7 +39,7 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
     public List<Key> generatedKeys() {
       Iterator<com.google.datastore.v1beta3.MutationResult> results = 
           response.getMutationResultsList().iterator();
-      List<Key> generated = new LinkedList<Key>();
+      List<Key> generated = new ArrayList<>(numAutoAllocatedIds);
       for (int i = 0; i < numAutoAllocatedIds; i++) {
         generated.add(Key.fromPb(results.next().getKey()));
       }
@@ -62,7 +62,7 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
     requestPb.addAllMutations(mutationsPb);
     com.google.datastore.v1beta3.CommitResponse responsePb = datastore.commit(requestPb.build());
     deactivate();
-    return new ResponseImpl(responsePb, numAutoAllocatedIds());
+    return new ResponseImpl(responsePb, toAddAutoId().size());
   }
 
   @Override

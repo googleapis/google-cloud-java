@@ -184,10 +184,6 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     return toDelete;
   }
 
-  protected int numAutoAllocatedIds() {
-    return toAddAutoId.size();
-  }
-
   protected void deactivate() {
     active = false;
   }

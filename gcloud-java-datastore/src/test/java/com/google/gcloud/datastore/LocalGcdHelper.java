@@ -309,7 +309,7 @@ public class LocalGcdHelper {
   public static boolean isActive(String projectId) {
     try {
       StringBuilder urlBuilder = new StringBuilder("http://localhost:").append(PORT);
-      urlBuilder.append("/datastore/v1beta3/datasets/").append(projectId).append(":lookup");
+      urlBuilder.append("/datastore/v1beta3/projects/").append(projectId).append(":lookup");
       URL url = new URL(urlBuilder.toString());
       try (BufferedReader reader =
                new BufferedReader(new InputStreamReader(url.openStream(), UTF_8))) {

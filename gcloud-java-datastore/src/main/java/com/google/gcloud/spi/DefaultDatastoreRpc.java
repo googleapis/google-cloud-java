@@ -20,6 +20,10 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 
+import java.net.InetAddress;
+import java.net.MalformedURLException;
+import java.net.UnknownHostException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,20 +46,26 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   }
 
   public DefaultDatastoreRpc(DatastoreOptions options) {
-    if (options.host().contains("localhost")) {
-      client = com.google.datastore.v1beta3.client.DatastoreFactory.get().create(
-          new com.google.datastore.v1beta3.client.DatastoreOptions.Builder()
-              .projectId(options.projectId())
-              .localHost(options.host())
-              .initializer(options.httpRequestInitializer())
-              .build());      
-    } else {
-      client = com.google.datastore.v1beta3.client.DatastoreFactory.get().create(
-          new com.google.datastore.v1beta3.client.DatastoreOptions.Builder()
-              .projectId(options.projectId())
-              .initializer(options.httpRequestInitializer())
-              .build()); 
+    com.google.datastore.v1beta3.client.DatastoreOptions.Builder clientBuilder = 
+        new com.google.datastore.v1beta3.client.DatastoreOptions.Builder()
+            .projectId(options.projectId())
+            .initializer(options.httpRequestInitializer());
+    if (options.host() != null) {
+      try {
+        String normalizedHost = options.host();
+        if (!normalizedHost.startsWith("http")) {
+          normalizedHost = "http://" + normalizedHost;
+        }
+        InetAddress hostAddr = InetAddress.getByName(new URL(normalizedHost).getHost());
+        if (hostAddr.isAnyLocalAddress() || hostAddr.isLoopbackAddress()) {
+          clientBuilder = clientBuilder.localHost(options.host());
+        }
+      } catch (UnknownHostException | MalformedURLException e) {
+        // ignore
+      }
     }
+    client = com.google.datastore.v1beta3.client.DatastoreFactory.get()
+        .create(clientBuilder.build());
   }
 
   private static DatastoreRpcException translate(
