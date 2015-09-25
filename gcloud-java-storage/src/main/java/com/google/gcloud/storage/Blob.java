@@ -30,6 +30,12 @@ import java.util.Objects;
 
 /**
  * A Google cloud storage object.
+ *
+ * <p>
+ * Objects of this class are immutable. Operations that modify the blob like {@link #update} and
+ * {@link #copyTo} return a new object. To get a {@code Blob} object with the most recent
+ * information use {@link #reload}.
+ * </p>
  */
 public final class Blob {
 
@@ -151,7 +157,10 @@ public final class Blob {
   /**
    * Update the blob's information. Bucket or blob's name cannot be changed by this method. If you
    * want to rename the blob or move it to a different bucket use the {@link #copyTo} and
-   * {@link #delete} operations. A new {@code Blob} object is returned.
+   * {@link #delete} operations. A new {@code Blob} object is returned. By default no checks are
+   * made on the metadata generation of the current blob. If you want to update the information only
+   * if the current blob metadata are at their latest version use the {@code metagenerationMatch}
+   * option: {@code blob.update(newInfo, BlobTargetOption.metagenerationMatch()}.
    *
    * @param blobInfo new blob's information. Bucket and blob names must match the current ones
    * @param options update options

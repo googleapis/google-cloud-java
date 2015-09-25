@@ -31,6 +31,12 @@ import java.util.Objects;
 
 /**
  * A Google cloud storage bucket.
+ *
+ * <p>
+ * Objects of this class are immutable. Operations that modify the bucket like {@link #update}
+ * return a new object. To get a {@code Bucket} object with the most recent information use
+ * {@link #reload}.
+ * </p>
  */
 public final class Bucket {
 
@@ -91,7 +97,10 @@ public final class Bucket {
 
   /**
    * Update the bucket's information. Bucket's name cannot be changed. A new {@code Bucket} object
-   * is returned.
+   * is returned. By default no checks are made on the metadata generation of the current bucket.
+   * If you want to update the information only if the current bucket metadata are at their latest
+   * version use the {@code metagenerationMatch} option:
+   * {@code bucket.update(newInfo, BucketTargetOption.metagenerationMatch());}
    *
    * @param bucketInfo new bucket's information. Name must match the one of the current bucket
    * @param options update options
