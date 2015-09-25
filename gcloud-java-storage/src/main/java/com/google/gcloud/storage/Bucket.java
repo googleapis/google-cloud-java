@@ -18,14 +18,13 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.gcloud.storage.Blob.BlobSourceOption.convert;
 
 import com.google.gcloud.storage.Storage.BlobSourceOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.BucketSourceOption;
 import com.google.gcloud.storage.Storage.BucketTargetOption;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -44,7 +43,7 @@ public final class Bucket {
   private final BucketInfo info;
 
   /**
-   * Construct a {@code Bucket} object for the provided {@code BucketInfo}. The storage service is
+   * Constructs a {@code Bucket} object for the provided {@code BucketInfo}. The storage service is
    * used to issue requests.
    * 
    * @param storage the storage service used for issuing requests
@@ -56,7 +55,7 @@ public final class Bucket {
   }
 
   /**
-   * Construct a {@code Bucket} object for the provided name. The storage service is used to issue
+   * Constructs a {@code Bucket} object for the provided name. The storage service is used to issue
    * requests.
    * 
    * @param storage the storage service used for issuing requests
@@ -68,14 +67,14 @@ public final class Bucket {
   }
 
   /**
-   * Return the bucket's information.
+   * Returns the bucket's information.
    */
   public BucketInfo info() {
     return info;
   }
 
   /**
-   * Check if this bucket exists.
+   * Checks if this bucket exists.
    *
    * @return true if this bucket exists, false otherwise
    * @throws StorageException upon failure
@@ -96,11 +95,11 @@ public final class Bucket {
   }
 
   /**
-   * Update the bucket's information. Bucket's name cannot be changed. A new {@code Bucket} object
+   * Updates the bucket's information. Bucket's name cannot be changed. A new {@code Bucket} object
    * is returned. By default no checks are made on the metadata generation of the current bucket.
    * If you want to update the information only if the current bucket metadata are at their latest
    * version use the {@code metagenerationMatch} option:
-   * {@code bucket.update(newInfo, BucketTargetOption.metagenerationMatch());}
+   * {@code bucket.update(newInfo, BucketTargetOption.metagenerationMatch())}
    *
    * @param bucketInfo new bucket's information. Name must match the one of the current bucket
    * @param options update options
@@ -113,7 +112,7 @@ public final class Bucket {
   }
 
   /**
-   * Delete this bucket.
+   * Deletes this bucket.
    *
    * @param options bucket delete options
    * @return true if bucket was deleted
@@ -124,7 +123,7 @@ public final class Bucket {
   }
 
   /**
-   * Return the paginated list of {@code Blob} in this bucket.
+   * Returns the paginated list of {@code Blob} in this bucket.
    * 
    * @param options options for listing blobs
    * @throws StorageException upon failure
@@ -134,7 +133,7 @@ public final class Bucket {
   }
 
   /**
-   * Return the requested blob in this bucket or {@code null} if not found.
+   * Returns the requested blob in this bucket or {@code null} if not found.
    * 
    * @param blob name of the requested blob
    * @param options blob search options
@@ -145,7 +144,7 @@ public final class Bucket {
   }
 
   /**
-   * Return a list of requested blobs in this bucket. Blobs that do not exist are null.
+   * Returns a list of requested blobs in this bucket. Blobs that do not exist are null.
    * 
    * @param blobNames names of the requested blobs
    * @throws StorageException upon failure
@@ -155,7 +154,7 @@ public final class Bucket {
     for (String blobName : blobNames) {
       batch.get(info.name(), blobName);
     }
-    List<Blob> blobs = new LinkedList<>();
+    List<Blob> blobs = new ArrayList<>(blobNames.length);
     BatchResponse response = storage.apply(batch.build());
     for (BatchResponse.Result<BlobInfo> result : response.gets()) {
       BlobInfo blobInfo = result.get();
@@ -165,7 +164,7 @@ public final class Bucket {
   }
 
   /**
-   * Create a new blob in this bucket.
+   * Creates a new blob in this bucket.
    * 
    * @param blob a blob name
    * @param content the blob content
@@ -179,7 +178,7 @@ public final class Bucket {
   }
 
   /**
-   * Return the bucket's {@code Storage} object used to issue requests.
+   * Returns the bucket's {@code Storage} object used to issue requests.
    */
   public Storage storage() {
     return storage;

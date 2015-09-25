@@ -22,12 +22,12 @@ package com.google.gcloud.storage;
 public interface ListResult<T> extends Iterable<T> {
 
   /**
-   * Return the cursor for the nextPage or {@code null} if no more results.
+   * Returns the cursor for the nextPage or {@code null} if no more results.
    */
   String nextPageCursor();
 
   /**
-   * Return the results of the nextPage or {@code null} if no more result.
+   * Returns the results of the nextPage or {@code null} if no more result.
    */
   ListResult<T> nextPage();
 

@@ -92,7 +92,7 @@ public final class Blob {
   }
 
   /**
-   * Construct a {@code Blob} object for the provided {@code BlobInfo}. The storage service is used
+   * Constructs a {@code Blob} object for the provided {@code BlobInfo}. The storage service is used
    * to issue requests.
    * 
    * @param storage the storage service used for issuing requests
@@ -104,7 +104,7 @@ public final class Blob {
   }
 
   /**
-   * Construct a {@code Blob} object for the provided bucket and blob names. The storage service is
+   * Constructs a {@code Blob} object for the provided bucket and blob names. The storage service is
    * used to issue requests.
    * 
    * @param storage the storage service used for issuing requests
@@ -117,14 +117,14 @@ public final class Blob {
   }
 
   /**
-   * Return the blob's information.
+   * Returns the blob's information.
    */
   public BlobInfo info() {
     return info;
   }
 
   /**
-   * Check if this blob exists.
+   * Checks if this blob exists.
    *
    * @return true if this blob exists, false otherwise
    * @throws StorageException upon failure
@@ -134,7 +134,7 @@ public final class Blob {
   }
 
   /**
-   * Return this blob's content.
+   * Returns this blob's content.
    *
    * @param options blob read options
    * @throws StorageException upon failure
@@ -155,12 +155,12 @@ public final class Blob {
   }
 
   /**
-   * Update the blob's information. Bucket or blob's name cannot be changed by this method. If you
+   * Updates the blob's information. Bucket or blob's name cannot be changed by this method. If you
    * want to rename the blob or move it to a different bucket use the {@link #copyTo} and
    * {@link #delete} operations. A new {@code Blob} object is returned. By default no checks are
    * made on the metadata generation of the current blob. If you want to update the information only
    * if the current blob metadata are at their latest version use the {@code metagenerationMatch}
-   * option: {@code blob.update(newInfo, BlobTargetOption.metagenerationMatch()}.
+   * option: {@code blob.update(newInfo, BlobTargetOption.metagenerationMatch())}.
    *
    * @param blobInfo new blob's information. Bucket and blob names must match the current ones
    * @param options update options
@@ -174,7 +174,7 @@ public final class Blob {
   }
 
   /**
-   * Delete this blob.
+   * Deletes this blob.
    *
    * @param options blob delete options
    * @return true if blob was deleted
@@ -185,7 +185,8 @@ public final class Blob {
   }
 
   /**
-   * Copy this blob to the target bucket, preserving its name. Possibly update metadata.
+   * Copies this blob to the target bucket, preserving its name. Possibly copying also some of the
+   * metadata (e.g. content-type).
    *
    * @param targetBucket target bucket's name
    * @param options source blob options
@@ -197,7 +198,8 @@ public final class Blob {
   }
 
   /**
-   * Copy this blob to the target bucket with a new name. Possibly update metadata.
+   * Copies this blob to the target bucket with a new name. Possibly copying also some of the
+   * metadata (e.g. content-type).
    *
    * @param targetBucket target bucket's name
    * @param targetBlob target blob's name
@@ -214,7 +216,7 @@ public final class Blob {
   }
 
   /**
-   * Return a {@code BlobReadChannel} object for reading this blob's content.
+   * Returns a {@code BlobReadChannel} object for reading this blob's content.
    *
    * @param options blob read options
    * @throws StorageException upon failure
@@ -224,7 +226,7 @@ public final class Blob {
   }
 
   /**
-   * Return a {@code BlobWriteChannel} object for writing to this blob.
+   * Returns a {@code BlobWriteChannel} object for writing to this blob.
    *
    * @param options target blob options
    * @throws StorageException upon failure
@@ -234,7 +236,7 @@ public final class Blob {
   }
 
   /**
-   * Generate a signed URL for this blob. If you want to allow access to for a fixed amount of time
+   * Generates a signed URL for this blob. If you want to allow access to for a fixed amount of time
    * for this blob, you can use this method to generate a URL that is only valid within a certain
    * time period. This is particularly useful if you don't want publicly accessible blobs, but don't
    * want to require users to explicitly log in.
@@ -249,7 +251,7 @@ public final class Blob {
   }
 
   /**
-   * Return the blob's {@code Storage} object used to issue requests.
+   * Returns the blob's {@code Storage} object used to issue requests.
    */
   public Storage storage() {
     return storage;
