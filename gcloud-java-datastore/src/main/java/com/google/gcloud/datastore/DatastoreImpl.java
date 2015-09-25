@@ -53,16 +53,16 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
 
         @Override
         public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-          return Interceptor.RetryResult.PROCEED;
+          return Interceptor.RetryResult.CONTINUE_EVALUATION;
         }
 
         @Override
         public RetryResult beforeEval(Exception exception) {
           if (exception instanceof DatastoreRpcException) {
             boolean retryable = ((DatastoreRpcException) exception).retryable();
-            return retryable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.ABORT;
+            return retryable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
           }
-          return Interceptor.RetryResult.PROCEED;
+          return Interceptor.RetryResult.CONTINUE_EVALUATION;
         }
       };
   private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
