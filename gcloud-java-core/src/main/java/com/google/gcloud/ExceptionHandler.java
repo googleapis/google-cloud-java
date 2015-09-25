@@ -16,7 +16,6 @@
 
 package com.google.gcloud;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.annotations.VisibleForTesting;
@@ -48,18 +47,7 @@ public final class ExceptionHandler implements Serializable {
   public interface Interceptor extends Serializable {
 
     enum RetryResult {
-
-      RETRY(true), ABORT(false);
-
-      private final boolean booleanValue;
-
-      RetryResult(boolean booleanValue) {
-        this.booleanValue = booleanValue;
-      }
-
-      boolean booleanValue() {
-        return booleanValue;
-      }
+      ABORT, RETRY, PROCEED;
     }
 
     /**
@@ -68,7 +56,7 @@ public final class ExceptionHandler implements Serializable {
      * @param exception the exception that is being evaluated
      * @return {@link RetryResult} to indicate if the exception should be ignored (
      *         {@link RetryResult#RETRY}), propagated ({@link RetryResult#ABORT}), or evaluation
-     *         should proceed ({@code null}).
+     *         should proceed ({@link RetryResult#PROCEED}).
      */
     RetryResult beforeEval(Exception exception);
 
@@ -79,7 +67,7 @@ public final class ExceptionHandler implements Serializable {
      * @param retryResult the result of the evaluation so far.
      * @return {@link RetryResult} to indicate if the exception should be ignored (
      *         {@link RetryResult#RETRY}), propagated ({@link RetryResult#ABORT}), or evaluation
-     *         should proceed ({@code null}).
+     *         should proceed ({@link RetryResult#PROCEED}).
      */
     RetryResult afterEval(Exception exception, RetryResult retryResult);
   }
@@ -157,7 +145,7 @@ public final class ExceptionHandler implements Serializable {
 
     RetryInfo(Class<? extends Exception> exception, Interceptor.RetryResult retry) {
       this.exception = checkNotNull(exception);
-      this.retry = retry;
+      this.retry = checkNotNull(retry);
     }
 
     @Override
@@ -253,18 +241,22 @@ public final class ExceptionHandler implements Serializable {
 
   boolean shouldRetry(Exception ex) {
     for (Interceptor interceptor : interceptors) {
-      Interceptor.RetryResult retryResult = interceptor.beforeEval(ex);
-      if (retryResult != null) {
-        return retryResult.booleanValue();
+      Interceptor.RetryResult retryResult = checkNotNull(interceptor.beforeEval(ex));
+      if (retryResult != Interceptor.RetryResult.PROCEED) {
+        return interceptor.beforeEval(ex) == Interceptor.RetryResult.RETRY;
       }
     }
     RetryInfo retryInfo = findMostSpecificRetryInfo(this.retryInfo, ex.getClass());
     Interceptor.RetryResult retryResult =
         retryInfo == null ? Interceptor.RetryResult.ABORT : retryInfo.retry;
     for (Interceptor interceptor : interceptors) {
-      retryResult = firstNonNull(interceptor.afterEval(ex, retryResult), retryResult);
+      Interceptor.RetryResult interceptorRetry = 
+          checkNotNull(interceptor.afterEval(ex, retryResult));
+      if (interceptorRetry != Interceptor.RetryResult.PROCEED) {
+        retryResult = interceptorRetry;
+      }
     }
-    return retryResult.booleanValue();
+    return retryResult == Interceptor.RetryResult.RETRY;
   }
 
   /**

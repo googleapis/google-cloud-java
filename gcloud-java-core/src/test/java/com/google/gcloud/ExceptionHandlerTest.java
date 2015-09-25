@@ -158,11 +158,60 @@ public class ExceptionHandlerTest {
     assertTrue(handler.shouldRetry(new RuntimeException()));
     assertTrue(handler.shouldRetry(new NullPointerException()));
 
-    before.set(null);
+    before.set(RetryResult.PROCEED);
     assertFalse(handler.shouldRetry(new IOException()));
     assertTrue(handler.shouldRetry(new ClosedByInterruptException()));
     assertTrue(handler.shouldRetry(new InterruptedException()));
     assertTrue(handler.shouldRetry(new RuntimeException()));
     assertFalse(handler.shouldRetry(new NullPointerException()));
+  }
+
+  @Test
+  public void testNullRetryResult() {
+    @SuppressWarnings("serial")
+    Interceptor interceptor1 = new Interceptor() {
+
+      @Override
+      public RetryResult beforeEval(Exception exception) {
+        return null;
+      }
+
+      @Override
+      public RetryResult afterEval(Exception exception, RetryResult retryResult) {
+        return RetryResult.PROCEED;
+      }
+
+    };
+
+    @SuppressWarnings("serial")
+    Interceptor interceptor2 = new Interceptor() {
+
+      @Override
+      public RetryResult beforeEval(Exception exception) {
+        return RetryResult.PROCEED;
+      }
+
+      @Override
+      public RetryResult afterEval(Exception exception, RetryResult retryResult) {
+        return null;
+      }
+
+    };
+
+    ExceptionHandler handler1 = ExceptionHandler.builder().interceptor(interceptor1).build();
+    try {
+      handler1.shouldRetry(new Exception());
+      fail("Expected null pointer exception due to null RetryResult from beforeEval");
+    } catch (NullPointerException e) {
+      // expected
+    }
+
+    ExceptionHandler handler2 = ExceptionHandler.builder().interceptor(interceptor2).build();
+    try {
+      handler2.shouldRetry(new Exception());
+      fail("Expected null pointer exception due to null RetryResult from afterEval");
+    } catch (NullPointerException e) {
+      // expected
+    }
   }
 }
