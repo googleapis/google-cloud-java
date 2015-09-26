@@ -23,6 +23,8 @@ import static org.junit.Assert.fail;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.ExceptionHandler.Interceptor.RetryResult;
 
+import org.junit.rules.ExpectedException;
+import org.junit.Rule;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
@@ -35,6 +37,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * Tests for {@link ExceptionHandler}.
  */
 public class ExceptionHandlerTest {
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testVerifyCaller() {
@@ -128,13 +133,13 @@ public class ExceptionHandlerTest {
     assertFalse(handler.shouldRetry(new RuntimeException()));
     assertTrue(handler.shouldRetry(new NullPointerException()));
 
-    final AtomicReference<RetryResult> before = new AtomicReference<>(RetryResult.ABORT);
+    final AtomicReference<RetryResult> before = new AtomicReference<>(RetryResult.NO_RETRY);
     @SuppressWarnings("serial")
     Interceptor interceptor = new Interceptor() {
 
       @Override
       public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-        return retryResult == RetryResult.ABORT ? RetryResult.RETRY : RetryResult.ABORT;
+        return retryResult == RetryResult.NO_RETRY ? RetryResult.RETRY : RetryResult.NO_RETRY;
       }
 
       @Override
@@ -158,11 +163,55 @@ public class ExceptionHandlerTest {
     assertTrue(handler.shouldRetry(new RuntimeException()));
     assertTrue(handler.shouldRetry(new NullPointerException()));
 
-    before.set(null);
+    before.set(RetryResult.CONTINUE_EVALUATION);
     assertFalse(handler.shouldRetry(new IOException()));
     assertTrue(handler.shouldRetry(new ClosedByInterruptException()));
     assertTrue(handler.shouldRetry(new InterruptedException()));
     assertTrue(handler.shouldRetry(new RuntimeException()));
     assertFalse(handler.shouldRetry(new NullPointerException()));
+  }
+
+  @Test
+  public void testNullRetryResultFromBeforeEval() {
+    @SuppressWarnings("serial")
+    Interceptor interceptor = new Interceptor() {
+
+      @Override
+      public RetryResult beforeEval(Exception exception) {
+        return null;
+      }
+
+      @Override
+      public RetryResult afterEval(Exception exception, RetryResult retryResult) {
+        return RetryResult.CONTINUE_EVALUATION;
+      }
+
+    };
+
+    ExceptionHandler handler = ExceptionHandler.builder().interceptor(interceptor).build();
+    thrown.expect(NullPointerException.class);
+    handler.shouldRetry(new Exception());
+  }
+
+  @Test
+  public void testNullRetryResultFromAfterEval() {
+    @SuppressWarnings("serial")
+    Interceptor interceptor = new Interceptor() {
+
+      @Override
+      public RetryResult beforeEval(Exception exception) {
+        return RetryResult.CONTINUE_EVALUATION;
+      }
+
+      @Override
+      public RetryResult afterEval(Exception exception, RetryResult retryResult) {
+        return null;
+      }
+
+    };
+
+    ExceptionHandler handler = ExceptionHandler.builder().interceptor(interceptor).build();
+    thrown.expect(NullPointerException.class);
+    handler.shouldRetry(new Exception());
   }
 }

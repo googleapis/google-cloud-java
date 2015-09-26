@@ -72,16 +72,16 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
     @Override
     public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-      return null;
+      return Interceptor.RetryResult.CONTINUE_EVALUATION;
     }
 
     @Override
     public RetryResult beforeEval(Exception exception) {
       if (exception instanceof StorageException) {
         boolean retriable = ((StorageException) exception).retryable();
-        return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.ABORT;
+        return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
       }
-      return null;
+      return Interceptor.RetryResult.CONTINUE_EVALUATION;
     }
   };
   static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
