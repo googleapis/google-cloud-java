@@ -125,6 +125,8 @@ public class BucketInfoTest {
   @Test
   public void testToPbAndFromPb() {
     compareBuckets(BUCKET_INFO, BucketInfo.fromPb(BUCKET_INFO.toPb()));
+    BucketInfo bucketInfo = BucketInfo.of("b");
+    compareBuckets(bucketInfo, BucketInfo.fromPb(bucketInfo.toPb()));
   }
 
   private void compareBuckets(BucketInfo expected, BucketInfo value) {
@@ -147,21 +149,23 @@ public class BucketInfoTest {
     assertEquals(expected.versioningEnabled(), value.versioningEnabled());
   }
 
+  @Test
   public void testLocation() {
     assertEquals("ASIA", Location.asia().value());
-    assertEquals("EN", Location.eu().value());
+    assertEquals("EU", Location.eu().value());
     assertEquals("US", Location.us().value());
     assertSame(Location.asia(), Location.of("asia"));
-    assertSame(Location.asia(), Location.of("EU"));
-    assertSame(Location.asia(), Location.of("uS"));
+    assertSame(Location.eu(), Location.of("EU"));
+    assertSame(Location.us(), Location.of("uS"));
   }
 
+  @Test
   public void testDeleteRules() {
     AgeDeleteRule ageRule = new AgeDeleteRule(10);
     assertEquals(10, ageRule.daysToLive());
     assertEquals(Type.AGE, ageRule.type());
     CreatedBeforeDeleteRule createBeforeRule = new CreatedBeforeDeleteRule(1);
-    assertEquals(10, createBeforeRule.timeMillis());
+    assertEquals(1, createBeforeRule.timeMillis());
     assertEquals(Type.CREATE_BEFORE, createBeforeRule.type());
     NumNewerVersionsDeleteRule versionsRule = new NumNewerVersionsDeleteRule(2);
     assertEquals(2, versionsRule.numNewerVersions());
@@ -171,7 +175,7 @@ public class BucketInfoTest {
     assertEquals(Type.IS_LIVE, isLiveRule.type());
     Rule rule = new Rule().set("a", "b");
     RawDeleteRule rawRule = new RawDeleteRule(rule);
-    assertEquals(Type.UNKNOWN, isLiveRule.type());
+    assertEquals(Type.UNKNOWN, rawRule.type());
     ImmutableList<DeleteRule> rules = ImmutableList
         .of(ageRule, createBeforeRule, versionsRule, isLiveRule, rawRule);
     for (DeleteRule delRule : rules) {

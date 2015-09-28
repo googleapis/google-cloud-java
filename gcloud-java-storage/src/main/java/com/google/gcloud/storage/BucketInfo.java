@@ -692,14 +692,25 @@ public final class BucketInfo implements Serializable {
   }
 
   static BucketInfo fromPb(com.google.api.services.storage.model.Bucket bucketPb) {
-    Builder builder = new Builder()
-        .name(bucketPb.getName())
-        .id(bucketPb.getId())
-        .etag(bucketPb.getEtag())
-        .metageneration(bucketPb.getMetageneration())
-        .createTime(bucketPb.getTimeCreated().getValue())
-        .location(Location.of(bucketPb.getLocation()))
-        .selfLink(bucketPb.getSelfLink());
+    Builder builder = new Builder().name(bucketPb.getName());
+    if (bucketPb.getId() != null) {
+      builder.id(bucketPb.getId());
+    }
+    if (bucketPb.getEtag() != null) {
+      builder.etag(bucketPb.getEtag());
+    }
+    if (bucketPb.getMetageneration() != null) {
+      builder.metageneration(bucketPb.getMetageneration());
+    }
+    if (bucketPb.getSelfLink() != null) {
+      builder.selfLink(bucketPb.getSelfLink());
+    }
+    if (bucketPb.getTimeCreated() != null) {
+      builder.createTime(bucketPb.getTimeCreated().getValue());
+    }
+    if (bucketPb.getLocation() != null) {
+      builder.location(Location.of(bucketPb.getLocation()));
+    }
     if (bucketPb.getStorageClass() != null) {
       builder.storageClass(StorageClass.of(bucketPb.getStorageClass()));
     }

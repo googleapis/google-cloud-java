@@ -151,5 +151,7 @@ public class BlobInfoTest {
   @Test
   public void testToPbAndFromPb() {
     compareBlobs(BLOB_INFO, BlobInfo.fromPb(BLOB_INFO.toPb()));
+    BlobInfo blobInfo = BlobInfo.of("b", "n");
+    compareBlobs(blobInfo, BlobInfo.fromPb(blobInfo.toPb()));
   }
 }

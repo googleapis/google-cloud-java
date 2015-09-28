@@ -441,23 +441,49 @@ public final class BlobInfo implements Serializable {
   }
 
   static BlobInfo fromPb(StorageObject storageObject) {
-    Builder builder = new Builder()
-        .bucket(storageObject.getBucket())
-        .cacheControl(storageObject.getCacheControl())
-        .contentEncoding(storageObject.getContentEncoding())
-        .crc32c(storageObject.getCrc32c())
-        .contentType(storageObject.getContentType())
-        .generation(storageObject.getGeneration())
-        .md5(storageObject.getMd5Hash())
-        .mediaLink(storageObject.getMediaLink())
-        .metageneration(storageObject.getMetageneration())
-        .name(storageObject.getName())
-        .contentDisposition(storageObject.getContentDisposition())
-        .componentCount(storageObject.getComponentCount())
-        .contentLanguage(storageObject.getContentLanguage())
-        .etag(storageObject.getEtag())
-        .id(storageObject.getId())
-        .selfLink(storageObject.getSelfLink());
+    Builder builder = new Builder().bucket(storageObject.getBucket()).name(storageObject.getName());
+    if (storageObject.getCacheControl() != null) {
+      builder.cacheControl(storageObject.getCacheControl());
+    }
+    if (storageObject.getContentEncoding() != null) {
+      builder.contentEncoding(storageObject.getContentEncoding());
+    }
+    if (storageObject.getCrc32c() != null) {
+      builder.crc32c(storageObject.getCrc32c());
+    }
+    if (storageObject.getContentType() != null) {
+      builder.contentType(storageObject.getContentType());
+    }
+    if (storageObject.getGeneration() != null) {
+      builder.generation(storageObject.getGeneration());
+    }
+    if (storageObject.getMd5Hash() != null) {
+      builder.md5(storageObject.getMd5Hash());
+    }
+    if (storageObject.getMediaLink() != null) {
+      builder.mediaLink(storageObject.getMediaLink());
+    }
+    if (storageObject.getMetageneration() != null) {
+      builder.metageneration(storageObject.getMetageneration());
+    }
+    if (storageObject.getContentDisposition() != null) {
+      builder.contentDisposition(storageObject.getContentDisposition());
+    }
+    if (storageObject.getComponentCount() != null) {
+      builder.componentCount(storageObject.getComponentCount());
+    }
+    if (storageObject.getContentLanguage() != null) {
+      builder.contentLanguage(storageObject.getContentLanguage());
+    }
+    if (storageObject.getEtag() != null) {
+      builder.etag(storageObject.getEtag());
+    }
+    if (storageObject.getId() != null) {
+      builder.id(storageObject.getId());
+    }
+    if (storageObject.getSelfLink() != null) {
+      builder.selfLink(storageObject.getSelfLink());
+    }
     if (storageObject.getMetadata() != null) {
       builder.metadata(storageObject.getMetadata());
     }
