@@ -49,6 +49,8 @@ import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
@@ -114,12 +116,20 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public BlobInfo create(BlobInfo blobInfo, final byte[] content, BlobTargetOption... options) {
+    return createFromStream(blobInfo,
+        new ByteArrayInputStream(firstNonNull(content, EMPTY_BYTE_ARRAY)), options);
+  }
+
+  @Override
+  public BlobInfo createFromStream(BlobInfo blobInfo, final InputStream content,
+      BlobTargetOption... options) {
     final StorageObject blobPb = blobInfo.toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
     return BlobInfo.fromPb(runWithRetries(new Callable<StorageObject>() {
       @Override
       public StorageObject call() {
-        return storageRpc.create(blobPb, firstNonNull(content, EMPTY_BYTE_ARRAY), optionsMap);
+        return storageRpc.create(blobPb,
+            firstNonNull(content, new ByteArrayInputStream(EMPTY_BYTE_ARRAY)), optionsMap);
       }
     }, options().retryParams(), EXCEPTION_HANDLER));
   }

@@ -43,6 +43,7 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.InputStreamContent;
 import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson.JacksonFactory;
@@ -63,6 +64,7 @@ import com.google.gcloud.storage.StorageOptions;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -119,13 +121,14 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public StorageObject create(StorageObject storageObject, final byte[] content,
+  public StorageObject create(StorageObject storageObject, final InputStream content,
       Map<Option, ?> options) throws StorageException {
     try {
-      return storage.objects()
+      Storage.Objects.Insert insert = storage.objects()
           .insert(storageObject.getBucket(), storageObject,
-              new ByteArrayContent(storageObject.getContentType(), content))
-          .setProjection(DEFAULT_PROJECTION)
+              new InputStreamContent(storageObject.getContentType(), content));
+      insert.getMediaHttpUploader().setDirectUploadEnabled(true);
+      return insert.setProjection(DEFAULT_PROJECTION)
           .setPredefinedAcl(PREDEFINED_ACL.getString(options))
           .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
@@ -521,4 +524,3 @@ public class DefaultStorageRpc implements StorageRpc {
     }
   }
 }
-

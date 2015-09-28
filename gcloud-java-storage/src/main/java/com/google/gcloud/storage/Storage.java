@@ -25,6 +25,7 @@ import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.StorageRpc;
 
+import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.Arrays;
@@ -499,6 +500,14 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   BlobInfo create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options);
+
+  /**
+   * Create a new blob.
+   *
+   * @return a complete blob information.
+   * @throws StorageException upon failure
+   */
+  BlobInfo createFromStream(BlobInfo blobInfo, InputStream content, BlobTargetOption... options);
 
   /**
    * Return the requested bucket or {@code null} if not found.
