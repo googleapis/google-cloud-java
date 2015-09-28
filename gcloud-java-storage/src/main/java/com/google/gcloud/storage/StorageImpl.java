@@ -34,6 +34,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.Function;
 import com.google.common.base.Functions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -234,14 +235,16 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           }
         }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
     String cursor = result.x();
-    return new BaseListResult<>(new BucketPageFetcher(serviceOptions, cursor, optionsMap), cursor,
-        Iterables.transform(result.y(),
+    Iterable<BucketInfo> buckets =
+        result.y() == null ? ImmutableList.<BucketInfo>of() : Iterables.transform(result.y(),
             new Function<com.google.api.services.storage.model.Bucket, BucketInfo>() {
               @Override
               public BucketInfo apply(com.google.api.services.storage.model.Bucket bucketPb) {
                 return BucketInfo.fromPb(bucketPb);
               }
-            }));
+            });
+    return new BaseListResult<>(new BucketPageFetcher(serviceOptions, cursor, optionsMap), cursor,
+        buckets);
   }
 
   @Override
@@ -259,14 +262,17 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           }
         }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
     String cursor = result.x();
-    return new BaseListResult<>(new BlobPageFetcher(bucket, serviceOptions, cursor, optionsMap), cursor,
-        Iterables.transform(result.y(),
+    Iterable<BlobInfo> blobs =
+        result.y() == null ? ImmutableList.<BlobInfo>of() : Iterables.transform(result.y(),
             new Function<StorageObject, BlobInfo>() {
               @Override
               public BlobInfo apply(StorageObject storageObject) {
                 return BlobInfo.fromPb(storageObject);
               }
-            }));
+            });
+    return new BaseListResult<>(new BlobPageFetcher(bucket, serviceOptions, cursor, optionsMap),
+        cursor,
+        blobs);
   }
 
   @Override
@@ -434,7 +440,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     return new BlobReadChannelImpl(options(), BlobInfo.of(bucket, blob), optionsMap);
   }
 
- @Override
+  @Override
   public BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options) {
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
     return new BlobWriterChannelImpl(options(), blobInfo, optionsMap);
@@ -461,12 +467,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       stBuilder.append(HttpMethod.GET);
     }
     stBuilder.append('\n');
-    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5) , false)) {
+    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.MD5), false)) {
       checkArgument(blobInfo.md5() != null, "Blob is missing a value for md5");
       stBuilder.append(blobInfo.md5());
     }
     stBuilder.append('\n');
-    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE) , false)) {
+    if (firstNonNull((Boolean) optionMap.get(SignUrlOption.Option.CONTENT_TYPE), false)) {
       checkArgument(blobInfo.contentType() != null, "Blob is missing a value for content-type");
       stBuilder.append(blobInfo.contentType());
     }
