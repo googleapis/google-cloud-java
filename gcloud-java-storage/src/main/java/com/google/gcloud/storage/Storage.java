@@ -494,7 +494,8 @@ public interface Storage extends Service<StorageOptions> {
   BucketInfo create(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
-   * Create a new blob.
+   * Create a new blob. Direct upload is used to upload {@code content}. For large content,
+   * {@link #writer} is recommended as it uses resumable upload.
    *
    * @return a complete blob information.
    * @throws StorageException upon failure
@@ -502,7 +503,8 @@ public interface Storage extends Service<StorageOptions> {
   BlobInfo create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options);
 
   /**
-   * Create a new blob.
+   * Create a new blob. Direct upload is used to upload {@code content}. For large content,
+   * {@link #writer} is recommended as it uses resumable upload.
    *
    * @return a complete blob information.
    * @throws StorageException upon failure
