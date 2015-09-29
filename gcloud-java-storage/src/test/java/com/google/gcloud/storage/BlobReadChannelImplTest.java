@@ -16,6 +16,7 @@
 
 package com.google.gcloud.storage;
 
+import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
@@ -34,10 +35,9 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Random;
-import static org.easymock.EasyMock.verify;
 import org.junit.After;
 
-public class BlobReadChannelTest {
+public class BlobReadChannelImplTest {
 
   private static final String BUCKET_NAME = "b";
   private static final String BLOB_NAME = "n";

@@ -16,6 +16,7 @@
 
 package com.google.gcloud.storage;
 
+import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
@@ -35,10 +36,9 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Random;
-import static org.easymock.EasyMock.verify;
 import org.junit.After;
 
-public class BlobWriterChannelTest {
+public class BlobWriteChannelImplTest {
 
   private static final String BUCKET_NAME = "b";
   private static final String BLOB_NAME = "n";
@@ -52,7 +52,7 @@ public class BlobWriterChannelTest {
 
   private StorageOptions optionsMock;
   private StorageRpc storageRpcMock;
-  private BlobWriterChannelImpl writer;
+  private BlobWriteChannelImpl writer;
 
   @Before
   public void setUp() throws IOException, InterruptedException {
@@ -72,7 +72,7 @@ public class BlobWriterChannelTest {
     EasyMock.replay(optionsMock);
     EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
     EasyMock.replay(storageRpcMock);
-    writer = new BlobWriterChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    writer = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
     assertTrue(writer.isOpen());
   }
 
@@ -82,7 +82,7 @@ public class BlobWriterChannelTest {
     EasyMock.replay(optionsMock);
     EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
     EasyMock.replay(storageRpcMock);
-    writer = new BlobWriterChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    writer = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
     assertEquals(MIN_CHUNK_SIZE, writer.write(ByteBuffer.allocate(MIN_CHUNK_SIZE)));
   }
 
@@ -98,7 +98,7 @@ public class BlobWriterChannelTest {
         EasyMock.eq(false));
     EasyMock.expectLastCall();
     EasyMock.replay(storageRpcMock);
-    writer = new BlobWriterChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    writer = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
     writer.chunkSize(CUSTOM_CHUNK_SIZE);
     ByteBuffer buffer = randomBuffer(CUSTOM_CHUNK_SIZE);
     assertEquals(CUSTOM_CHUNK_SIZE, writer.write(buffer));
@@ -117,7 +117,7 @@ public class BlobWriterChannelTest {
         EasyMock.eq(false));
     EasyMock.expectLastCall();
     EasyMock.replay(storageRpcMock);
-    writer = new BlobWriterChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    writer = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
     ByteBuffer[] buffers = new ByteBuffer[DEFAULT_CHUNK_SIZE / MIN_CHUNK_SIZE];
     for (int i = 0; i < buffers.length; i++) {
       buffers[i] = randomBuffer(MIN_CHUNK_SIZE);
@@ -142,7 +142,7 @@ public class BlobWriterChannelTest {
         EasyMock.eq(BLOB_INFO.toPb()), EasyMock.eq(0L), EasyMock.eq(0), EasyMock.eq(true));
     EasyMock.expectLastCall();
     EasyMock.replay(storageRpcMock);
-    writer = new BlobWriterChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    writer = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
     assertTrue(writer.isOpen());
     writer.close();
     assertArrayEquals(new byte[0], capturedBuffer.getValue());
@@ -162,7 +162,7 @@ public class BlobWriterChannelTest {
         EasyMock.eq(true));
     EasyMock.expectLastCall();
     EasyMock.replay(storageRpcMock);
-    writer = new BlobWriterChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    writer = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
     assertTrue(writer.isOpen());
     writer.write(buffer);
     writer.close();
@@ -182,7 +182,7 @@ public class BlobWriterChannelTest {
         EasyMock.eq(BLOB_INFO.toPb()), EasyMock.eq(0L), EasyMock.eq(0), EasyMock.eq(true));
     EasyMock.expectLastCall();
     EasyMock.replay(storageRpcMock);
-    writer = new BlobWriterChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    writer = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
     writer.close();
     try {
       writer.write(ByteBuffer.allocate(MIN_CHUNK_SIZE));

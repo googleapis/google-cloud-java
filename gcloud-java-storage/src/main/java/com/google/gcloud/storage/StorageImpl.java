@@ -443,7 +443,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options) {
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
-    return new BlobWriterChannelImpl(options(), blobInfo, optionsMap);
+    return new BlobWriteChannelImpl(options(), blobInfo, optionsMap);
   }
 
   @Override
