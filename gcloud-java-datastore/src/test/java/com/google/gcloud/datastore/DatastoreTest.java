@@ -41,7 +41,9 @@ import org.easymock.EasyMock;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -101,6 +103,9 @@ public class DatastoreTest {
   private Datastore datastore;
 
   private static LocalGcdHelper gcdHelper;
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
@@ -635,7 +640,7 @@ public class DatastoreTest {
   }
 
   @Test
-  public void testRetires() throws Exception {
+  public void testRetries() throws Exception {
     DatastoreV1.LookupRequest requestPb =
         DatastoreV1.LookupRequest.newBuilder().addKey(KEY1.toPb()).build();
     DatastoreV1.LookupResponse responsePb = DatastoreV1.LookupResponse.newBuilder()
@@ -655,6 +660,29 @@ public class DatastoreTest {
     Datastore datastore = DatastoreFactory.instance().get(options);
     Entity entity = datastore.get(KEY1);
     assertEquals(ENTITY1, entity);
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  @Test
+  public void testRuntimeExceptionHandling() throws Exception {
+    DatastoreV1.LookupRequest requestPb =
+        DatastoreV1.LookupRequest.newBuilder().addKey(KEY1.toPb()).build();
+    DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
+    DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
+        .andReturn(rpcMock);
+    String exceptionMessage = "Artificial runtime exception";
+    EasyMock.expect(rpcMock.lookup(requestPb))
+        .andThrow(new RuntimeException(exceptionMessage));
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    DatastoreOptions options = this.options.toBuilder()
+        .retryParams(RetryParams.getDefaultInstance())
+        .serviceRpcFactory(rpcFactoryMock)
+        .build();
+    Datastore datastore = DatastoreFactory.instance().get(options);
+    thrown.expect(DatastoreException.class);
+    thrown.expectMessage(exceptionMessage);
+    datastore.get(KEY1);
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
 }
