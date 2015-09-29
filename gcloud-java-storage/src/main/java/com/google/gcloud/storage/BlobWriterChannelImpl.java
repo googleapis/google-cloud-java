@@ -55,7 +55,7 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
     this.options = options;
     this.blobInfo = blobInfo;
     initTransients();
-    uploadId = options.storageRpc().open(storageObject, optionsMap);
+    uploadId = storageRpc.open(storageObject, optionsMap);
   }
 
   private void writeObject(ObjectOutputStream out) throws IOException {
