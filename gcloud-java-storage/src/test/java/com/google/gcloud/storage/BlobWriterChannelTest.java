@@ -35,6 +35,8 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Random;
+import static org.easymock.EasyMock.verify;
+import org.junit.After;
 
 public class BlobWriterChannelTest {
 
@@ -56,6 +58,12 @@ public class BlobWriterChannelTest {
   public void setUp() throws IOException, InterruptedException {
     optionsMock = EasyMock.createMock(StorageOptions.class);
     storageRpcMock = EasyMock.createMock(StorageRpc.class);
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    verify(optionsMock);
+    verify(storageRpcMock);
   }
 
   @Test
@@ -95,6 +103,32 @@ public class BlobWriterChannelTest {
     ByteBuffer buffer = randomBuffer(CUSTOM_CHUNK_SIZE);
     assertEquals(CUSTOM_CHUNK_SIZE, writer.write(buffer));
     assertArrayEquals(buffer.array(), capturedBuffer.getValue());
+  }
+
+  @Test
+  public void testWritesAndFlush() throws IOException {
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
+    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
+    EasyMock.replay(optionsMock);
+    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    Capture<byte[]> capturedBuffer = Capture.newInstance();
+    storageRpcMock.write(EasyMock.eq(UPLOAD_ID), EasyMock.capture(capturedBuffer), EasyMock.eq(0),
+        EasyMock.eq(BLOB_INFO.toPb()), EasyMock.eq(0L), EasyMock.eq(DEFAULT_CHUNK_SIZE),
+        EasyMock.eq(false));
+    EasyMock.expectLastCall();
+    EasyMock.replay(storageRpcMock);
+    writer = new BlobWriterChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    ByteBuffer[] buffers = new ByteBuffer[DEFAULT_CHUNK_SIZE / MIN_CHUNK_SIZE];
+    for (int i = 0; i < buffers.length; i++) {
+      buffers[i] = randomBuffer(MIN_CHUNK_SIZE);
+      assertEquals(MIN_CHUNK_SIZE, writer.write(buffers[i]));
+    }
+    for (int i = 0; i < buffers.length; i++) {
+      assertArrayEquals(
+          buffers[i].array(),
+          Arrays.copyOfRange(
+              capturedBuffer.getValue(), MIN_CHUNK_SIZE * i, MIN_CHUNK_SIZE * (i + 1)));
+    }
   }
 
   @Test
