@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * Default implementation for BlobWriteChannel.
  */
-class BlobWriterChannelImpl implements BlobWriteChannel {
+class BlobWriteChannelImpl implements BlobWriteChannel {
 
   private static final long serialVersionUID = 8675286882724938737L;
   private static final int MIN_CHUNK_SIZE = 256 * 1024;
@@ -50,12 +50,12 @@ class BlobWriterChannelImpl implements BlobWriteChannel {
   private transient StorageRpc storageRpc;
   private transient StorageObject storageObject;
 
-  BlobWriterChannelImpl(StorageOptions options, BlobInfo blobInfo,
+  BlobWriteChannelImpl(StorageOptions options, BlobInfo blobInfo,
       Map<StorageRpc.Option, ?> optionsMap) {
     this.options = options;
     this.blobInfo = blobInfo;
     initTransients();
-    uploadId = options.storageRpc().open(storageObject, optionsMap);
+    uploadId = storageRpc.open(storageObject, optionsMap);
   }
 
   private void writeObject(ObjectOutputStream out) throws IOException {
