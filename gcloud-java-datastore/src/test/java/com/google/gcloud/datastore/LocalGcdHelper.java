@@ -50,8 +50,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -478,39 +480,65 @@ public class LocalGcdHelper {
     });
   }
 
-  public static LocalGcdHelper start(String projectId, int port) throws IOException, InterruptedException {
+  public static LocalGcdHelper start(String projectId, int port) 
+      throws IOException, InterruptedException {
     LocalGcdHelper helper = new LocalGcdHelper(projectId, port);
     helper.start();
     return helper;
   }
 
   public static void main(String... args) throws IOException, InterruptedException {
-    if (args.length == 1) {
-      switch (args[0]) {
-        case "START":
-          if (!isActive(DEFAULT_PROJECT_ID, findAvailablePort(DEFAULT_PORT))) {
-            LocalGcdHelper helper = start(DEFAULT_PROJECT_ID, findAvailablePort(DEFAULT_PORT));
-            try (FileWriter writer = new FileWriter(".local_gcd_helper")) {
-              writer.write(helper.gcdPath.toAbsolutePath().toString());
-            }
+    Map<String, String> parsedArgs = parseArgs(args);
+    String action = parsedArgs.get("action");
+    int port = (parsedArgs.get("port") == null) ? DEFAULT_PORT
+        : Integer.parseInt(parsedArgs.get("port"));
+    switch (action) {
+      case "START":
+        if (!isActive(DEFAULT_PROJECT_ID, port)) {
+          LocalGcdHelper helper = start(DEFAULT_PROJECT_ID, port);
+          try (FileWriter writer = new FileWriter(".local_gcd_helper")) {
+            writer.write(
+                helper.gcdPath.toAbsolutePath().toString() + System.lineSeparator());
+            writer.write(Integer.toString(port));
           }
-          return;
-        case "STOP":
-          sendQuitRequest(DEFAULT_PORT);
-          File file = new File(".local_gcd_helper");
-          if (file.exists()) {
-            try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-              String path = reader.readLine();
-              deleteRecurse(Paths.get(path));
-            }
-            file.delete();
+        }
+        return;
+      case "STOP":
+        File file = new File(".local_gcd_helper");
+        String path = null;
+        boolean fileExists = file.exists();
+        if (fileExists) {
+          try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            path = reader.readLine();
+            port = Integer.parseInt(reader.readLine());
           }
-          return;
-        default:
-          break;
+        }
+        sendQuitRequest(port);
+        if (fileExists) {
+          deleteRecurse(Paths.get(path));
+          file.delete();
+        }
+        return;
+      default:
+        break;
+    }
+  }
+
+  private static Map<String, String> parseArgs(String[] args) {
+    Map<String, String> parsedArgs = new HashMap<String, String>();
+    for (String arg : args) {
+      if (arg.startsWith("--port=")) {
+        parsedArgs.put("port", arg.substring("--port=".length()));
+      } else if (arg.equals("START") || arg.equals("STOP")) {
+        parsedArgs.put("action", arg);
+      } else {
+        throw new RuntimeException("Only accepts START, STOP, and --port=<port #> as arguments");
       }
     }
-    throw new RuntimeException("expecting only START | STOP");
+    if (parsedArgs.get("action") == null) {
+      throw new RuntimeException("EXPECTING START | STOP");
+    }
+    return parsedArgs;
   }
 
   public static boolean isActive(String projectId, int port) {
