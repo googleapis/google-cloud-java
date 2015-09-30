@@ -142,15 +142,14 @@ import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-
 // Authentication is automatic inside Google Compute Engine
 // and Google App Engine.
 DatastoreOptions options = DatastoreOptions.builder().build();
-
 Datastore datastore = DatastoreFactory.instance().get(options);
 KeyFactory keyFactory = datastore.newKeyFactory().kind(<span class="hljs-string">KIND</span>);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
+
 
 </code></pre></div>
 
@@ -167,7 +166,6 @@ DatastoreOptions options = DatastoreOptions.builder()
   .projectId(<span class="hljs-string">PROJECT_ID</span>)
   .authCredentials(AuthCredentials.createForJson(
     new FileInputStream(<span class="hljs-string">PATH_TO_JSON_KEY</span>))).build();
-
 Datastore datastore = DatastoreFactory.instance().get(options);
 KeyFactory keyFactory = datastore.newKeyFactory().kind(<span class="hljs-string">KIND</span>);
 Key key = keyFactory.newKey(keyName);
