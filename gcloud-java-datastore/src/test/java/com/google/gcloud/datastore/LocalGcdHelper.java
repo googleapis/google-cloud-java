@@ -72,7 +72,7 @@ public class LocalGcdHelper {
   private final int port;
 
   public static final String DEFAULT_PROJECT_ID = "projectid1";
-  private static final int DEFAULT_PORT = 8080;
+  public static final int DEFAULT_PORT = 8080;
   private static final String GCD_VERSION = "v1beta2";
   private static final String GCD_BUILD = "rev1-2.1.2b";
   private static final String GCD_BASENAME = "gcd-" + GCD_VERSION + "-" + GCD_BUILD;
@@ -96,15 +96,12 @@ public class LocalGcdHelper {
     }
   }
 
-  public static int findOpenPort() {
-    int port;
-    try (ServerSocket temp_socket = new ServerSocket(0)) {
-      port = temp_socket.getLocalPort();
-      temp_socket.close();
+  public static int findAvailablePort(int defaultPort) {
+    try (ServerSocket tempSocket = new ServerSocket(0)) {
+      return tempSocket.getLocalPort();
     } catch (IOException e) {
-      port = DEFAULT_PORT;
+      return defaultPort;
     }
-    return port;
   }
 
   private static Path installedGcdPath() {
@@ -491,8 +488,8 @@ public class LocalGcdHelper {
     if (args.length == 1) {
       switch (args[0]) {
         case "START":
-          if (!isActive(DEFAULT_PROJECT_ID, DEFAULT_PORT)) {
-            LocalGcdHelper helper = start(DEFAULT_PROJECT_ID, DEFAULT_PORT);
+          if (!isActive(DEFAULT_PROJECT_ID, findAvailablePort(DEFAULT_PORT))) {
+            LocalGcdHelper helper = start(DEFAULT_PROJECT_ID, findAvailablePort(DEFAULT_PORT));
             try (FileWriter writer = new FileWriter(".local_gcd_helper")) {
               writer.write(helper.gcdPath.toAbsolutePath().toString());
             }

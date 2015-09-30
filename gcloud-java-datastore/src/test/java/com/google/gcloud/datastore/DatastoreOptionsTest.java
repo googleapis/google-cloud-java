@@ -34,7 +34,7 @@ import java.io.IOException;
 public class DatastoreOptionsTest {
 
   private static final String PROJECT_ID = "project_id";
-  private static final int PORT = LocalGcdHelper.findOpenPort();
+  private static final int PORT = LocalGcdHelper.findAvailablePort(LocalGcdHelper.DEFAULT_PORT);
   private DatastoreRpcFactory datastoreRpcFactory;
   private DatastoreRpc datastoreRpc;
   private DatastoreOptions.Builder options;

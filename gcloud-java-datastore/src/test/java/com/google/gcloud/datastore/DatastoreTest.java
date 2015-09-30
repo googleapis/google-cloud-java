@@ -101,7 +101,7 @@ public class DatastoreTest {
   private Datastore datastore;
 
   private static LocalGcdHelper gcdHelper;
-  private static final int PORT = LocalGcdHelper.findOpenPort();
+  private static final int PORT = LocalGcdHelper.findAvailablePort(LocalGcdHelper.DEFAULT_PORT);
 
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
