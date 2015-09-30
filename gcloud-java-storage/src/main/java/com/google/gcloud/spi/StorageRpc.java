@@ -22,6 +22,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.storage.StorageException;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -128,7 +129,7 @@ public interface StorageRpc {
 
   Bucket create(Bucket bucket, Map<Option, ?> options) throws StorageException;
 
-  StorageObject create(StorageObject object, byte[] content, Map<Option, ?> options)
+  StorageObject create(StorageObject object, InputStream content, Map<Option, ?> options)
       throws StorageException;
 
   Tuple<String, Iterable<Bucket>> list(Map<Option, ?> options) throws StorageException;
