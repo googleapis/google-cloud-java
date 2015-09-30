@@ -34,6 +34,7 @@ import java.io.IOException;
 public class DatastoreOptionsTest {
 
   private static final String PROJECT_ID = "project_id";
+  private static final int PORT = LocalGcdHelper.findAvailablePort(LocalGcdHelper.DEFAULT_PORT);
   private DatastoreRpcFactory datastoreRpcFactory;
   private DatastoreRpc datastoreRpc;
   private DatastoreOptions.Builder options;
@@ -46,7 +47,7 @@ public class DatastoreOptionsTest {
         .normalizeDataset(false)
         .serviceRpcFactory(datastoreRpcFactory)
         .projectId(PROJECT_ID)
-        .host("http://localhost:" + LocalGcdHelper.PORT);
+        .host("http://localhost:" + PORT);
     EasyMock.expect(datastoreRpcFactory.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(datastoreRpc)
         .anyTimes();
@@ -60,7 +61,7 @@ public class DatastoreOptionsTest {
 
   @Test
   public void testHost() throws Exception {
-    assertEquals("http://localhost:" + LocalGcdHelper.PORT, options.build().host());
+    assertEquals("http://localhost:" + PORT, options.build().host());
   }
 
   @Test

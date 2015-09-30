@@ -103,14 +103,15 @@ public class DatastoreTest {
   private Datastore datastore;
 
   private static LocalGcdHelper gcdHelper;
+  private static final int PORT = LocalGcdHelper.findAvailablePort(LocalGcdHelper.DEFAULT_PORT);
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
-    if (!LocalGcdHelper.isActive(PROJECT_ID)) {
-      gcdHelper = LocalGcdHelper.start(PROJECT_ID);
+    if (!LocalGcdHelper.isActive(PROJECT_ID, PORT)) {
+      gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT);
     }
   }
 
@@ -118,7 +119,7 @@ public class DatastoreTest {
   public void setUp() throws IOException, InterruptedException {
     options = DatastoreOptions.builder()
         .projectId(PROJECT_ID)
-        .host("http://localhost:" + LocalGcdHelper.PORT)
+        .host("http://localhost:" + PORT)
         .build();
     datastore = DatastoreFactory.instance().get(options);
     StructuredQuery<Key> query = Query.keyQueryBuilder().build();

@@ -35,6 +35,7 @@ import java.io.OutputStream;
 import java.math.BigInteger;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.ServerSocket;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
@@ -49,8 +50,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -68,9 +71,10 @@ public class LocalGcdHelper {
   private final String projectId;
   private Path gcdPath;
   private ProcessStreamReader processReader;
+  private final int port;
 
   public static final String DEFAULT_PROJECT_ID = "projectid1";
-  public static final int PORT = 8080;
+  public static final int DEFAULT_PORT = 8080;
   private static final String GCD_VERSION = "v1beta2";
   private static final String GCD_BUILD = "rev1-2.1.2b";
   private static final String GCD_BASENAME = "gcd-" + GCD_VERSION + "-" + GCD_BUILD;
@@ -91,6 +95,14 @@ public class LocalGcdHelper {
       } catch (MalformedURLException e) {
         throw new RuntimeException(e);
       }
+    }
+  }
+
+  public static int findAvailablePort(int defaultPort) {
+    try (ServerSocket tempSocket = new ServerSocket(0)) {
+      return tempSocket.getLocalPort();
+    } catch (IOException e) {
+      return defaultPort;
     }
   }
 
@@ -283,8 +295,9 @@ public class LocalGcdHelper {
     }
   }
 
-  public LocalGcdHelper(String projectId) {
+  public LocalGcdHelper(String projectId, int port) {
     this.projectId = projectId;
+    this.port = port;
   }
 
   /**
@@ -297,7 +310,7 @@ public class LocalGcdHelper {
    */
   public void start() throws IOException, InterruptedException {
     // send a quick request in case we have a hanging process from a previous run
-    sendQuitRequest();
+    sendQuitRequest(port);
     // Each run is associated with its own folder that is deleted once test completes.
     gcdPath = Files.createTempDirectory("gcd");
     File gcdFolder = gcdPath.toFile();
@@ -379,13 +392,12 @@ public class LocalGcdHelper {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, "Starting datastore emulator for the project: {0}", projectId);
     }
-    Process startProcess =
-        CommandWrapper.create()
-            .command(gcdAbsolutePath.toString(), "start", "--testing", "--allow_remote_shutdown",
-                projectId)
-            .directory(gcdPath)
-            .redirectErrorStream()
-            .start();
+    Process startProcess = CommandWrapper.create()
+        .command(gcdAbsolutePath.toString(), "start", "--testing", "--allow_remote_shutdown",
+            "--port=" + Integer.toString(port), projectId)
+        .directory(gcdPath)
+        .redirectErrorStream()
+        .start();
     processReader = ProcessStreamReader.start(startProcess, "Dev App Server is now running");
   }
 
@@ -419,9 +431,9 @@ public class LocalGcdHelper {
     }
   }
 
-  public static void sendQuitRequest() {
+  public static void sendQuitRequest(int port) {
     try {
-      URL url = new URL("http", "localhost", PORT, "/_ah/admin/quit");
+      URL url = new URL("http", "localhost", port, "/_ah/admin/quit");
       HttpURLConnection con = (HttpURLConnection) url.openConnection();
       con.setRequestMethod("POST");
       con.setDoOutput(true);
@@ -439,7 +451,7 @@ public class LocalGcdHelper {
   }
 
   public void stop() throws IOException, InterruptedException {
-    sendQuitRequest();
+    sendQuitRequest(port);
     if (processReader != null) {
       processReader.terminate();
     }
@@ -468,44 +480,70 @@ public class LocalGcdHelper {
     });
   }
 
-  public static LocalGcdHelper start(String projectId) throws IOException, InterruptedException {
-    LocalGcdHelper helper = new LocalGcdHelper(projectId);
+  public static LocalGcdHelper start(String projectId, int port) 
+      throws IOException, InterruptedException {
+    LocalGcdHelper helper = new LocalGcdHelper(projectId, port);
     helper.start();
     return helper;
   }
 
   public static void main(String... args) throws IOException, InterruptedException {
-    if (args.length == 1) {
-      switch (args[0]) {
-        case "START":
-          if (!isActive(DEFAULT_PROJECT_ID)) {
-            LocalGcdHelper helper = start(DEFAULT_PROJECT_ID);
-            try (FileWriter writer = new FileWriter(".local_gcd_helper")) {
-              writer.write(helper.gcdPath.toAbsolutePath().toString());
-            }
+    Map<String, String> parsedArgs = parseArgs(args);
+    String action = parsedArgs.get("action");
+    int port = (parsedArgs.get("port") == null) ? DEFAULT_PORT
+        : Integer.parseInt(parsedArgs.get("port"));
+    switch (action) {
+      case "START":
+        if (!isActive(DEFAULT_PROJECT_ID, port)) {
+          LocalGcdHelper helper = start(DEFAULT_PROJECT_ID, port);
+          try (FileWriter writer = new FileWriter(".local_gcd_helper")) {
+            writer.write(
+                helper.gcdPath.toAbsolutePath().toString() + System.lineSeparator());
+            writer.write(Integer.toString(port));
           }
-          return;
-        case "STOP":
-          sendQuitRequest();
-          File file = new File(".local_gcd_helper");
-          if (file.exists()) {
-            try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-              String path = reader.readLine();
-              deleteRecurse(Paths.get(path));
-            }
-            file.delete();
+        }
+        return;
+      case "STOP":
+        File file = new File(".local_gcd_helper");
+        String path = null;
+        boolean fileExists = file.exists();
+        if (fileExists) {
+          try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            path = reader.readLine();
+            port = Integer.parseInt(reader.readLine());
           }
-          return;
-        default:
-          break;
-      }
+        }
+        sendQuitRequest(port);
+        if (fileExists) {
+          deleteRecurse(Paths.get(path));
+          file.delete();
+        }
+        return;
+      default:
+        break;
     }
-    throw new RuntimeException("expecting only START | STOP");
   }
 
-  public static boolean isActive(String projectId) {
+  private static Map<String, String> parseArgs(String[] args) {
+    Map<String, String> parsedArgs = new HashMap<String, String>();
+    for (String arg : args) {
+      if (arg.startsWith("--port=")) {
+        parsedArgs.put("port", arg.substring("--port=".length()));
+      } else if (arg.equals("START") || arg.equals("STOP")) {
+        parsedArgs.put("action", arg);
+      } else {
+        throw new RuntimeException("Only accepts START, STOP, and --port=<port #> as arguments");
+      }
+    }
+    if (parsedArgs.get("action") == null) {
+      throw new RuntimeException("EXPECTING START | STOP");
+    }
+    return parsedArgs;
+  }
+
+  public static boolean isActive(String projectId, int port) {
     try {
-      StringBuilder urlBuilder = new StringBuilder("http://localhost:").append(PORT);
+      StringBuilder urlBuilder = new StringBuilder("http://localhost:").append(port);
       urlBuilder.append("/datastore/v1beta2/datasets/").append(projectId).append("/lookup");
       URL url = new URL(urlBuilder.toString());
       try (BufferedReader reader =
