@@ -640,7 +640,7 @@ public class DatastoreTest {
   }
 
   @Test
-  public void testRetries() throws Exception {
+  public void testRetryableException() throws Exception {
     DatastoreV1.LookupRequest requestPb =
         DatastoreV1.LookupRequest.newBuilder().addKey(KEY1.toPb()).build();
     DatastoreV1.LookupResponse responsePb = DatastoreV1.LookupResponse.newBuilder()
@@ -664,7 +664,31 @@ public class DatastoreTest {
   }
 
   @Test
-  public void testRuntimeExceptionHandling() throws Exception {
+  public void testNonRetryableException() throws Exception {
+    DatastoreV1.LookupRequest requestPb =
+        DatastoreV1.LookupRequest.newBuilder().addKey(KEY1.toPb()).build();
+    DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
+    DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
+        .andReturn(rpcMock);
+    EasyMock.expect(rpcMock.lookup(requestPb))
+        .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.PERMISSION_DENIED))
+        .times(1);
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    RetryParams retryParams = RetryParams.builder().retryMinAttempts(2).build();
+    DatastoreOptions options = this.options.toBuilder()
+        .retryParams(retryParams)
+        .serviceRpcFactory(rpcFactoryMock)
+        .build();
+    Datastore datastore = DatastoreFactory.instance().get(options);
+    thrown.expect(DatastoreException.class);
+    thrown.expectMessage(Reason.PERMISSION_DENIED.description());
+    datastore.get(KEY1);
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  @Test
+  public void testRuntimeException() throws Exception {
     DatastoreV1.LookupRequest requestPb =
         DatastoreV1.LookupRequest.newBuilder().addKey(KEY1.toPb()).build();
     DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
