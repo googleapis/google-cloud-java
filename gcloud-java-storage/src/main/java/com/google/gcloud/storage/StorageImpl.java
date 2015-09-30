@@ -115,13 +115,18 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
+  public BlobInfo create(BlobInfo blobInfo, BlobTargetOption... options) {
+    return create(blobInfo, new ByteArrayInputStream(EMPTY_BYTE_ARRAY), options);
+  }
+
+  @Override
   public BlobInfo create(BlobInfo blobInfo, final byte[] content, BlobTargetOption... options) {
-    return createFromStream(blobInfo,
+    return create(blobInfo,
         new ByteArrayInputStream(firstNonNull(content, EMPTY_BYTE_ARRAY)), options);
   }
 
   @Override
-  public BlobInfo createFromStream(BlobInfo blobInfo, final InputStream content,
+  public BlobInfo create(BlobInfo blobInfo, final InputStream content,
       BlobTargetOption... options) {
     final StorageObject blobPb = blobInfo.toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
