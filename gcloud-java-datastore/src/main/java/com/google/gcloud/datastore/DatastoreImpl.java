@@ -176,18 +176,17 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       return Collections.emptyList();
     }
     List<com.google.datastore.v1beta3.Mutation> mutationsPb = new ArrayList<>();
-    Set<Entity> completeEntities = new LinkedHashSet<>();
+    Map<Key, Entity> completeEntities = new LinkedHashMap<>();
     for (FullEntity<?> entity : entities) {
       Entity completeEntity = null;
       if (entity.key() instanceof Key) {
         completeEntity = Entity.convert((FullEntity<Key>) entity);
       }
       if (completeEntity != null) {
-        if (completeEntities.contains(completeEntity)) {
+        if (completeEntities.put(completeEntity.key(), completeEntity) != null) {
           throw DatastoreException.throwInvalidRequest(
               "Duplicate entity with the key %s", entity.key());
         }
-        completeEntities.add(completeEntity);
       } else {
         Preconditions.checkArgument(entity.hasKey(), "entity %s is missing a key", entity);
       }
@@ -197,11 +196,11 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
     com.google.datastore.v1beta3.CommitResponse commitResponse = commitMutation(mutationsPb);
     Iterator<com.google.datastore.v1beta3.MutationResult> mutationResults =
         commitResponse.getMutationResultsList().iterator();
-    Iterator<Entity> completeEntitiesIt = completeEntities.iterator();
     ImmutableList.Builder<Entity> responseBuilder = ImmutableList.builder();
     for (FullEntity<?> entity : entities) {
-      if (completeEntities.contains(entity)) {
-        responseBuilder.add(completeEntitiesIt.next());
+      Entity completeEntity = completeEntities.get(entity.key());
+      if (completeEntity != null) {
+        responseBuilder.add(completeEntity);
         mutationResults.next();
       } else {
         responseBuilder.add(

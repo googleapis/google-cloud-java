@@ -50,22 +50,41 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
         new com.google.datastore.v1beta3.client.DatastoreOptions.Builder()
             .projectId(options.projectId())
             .initializer(options.httpRequestInitializer());
-    if (options.host() != null) {
+    if (isLocalHost(options.host())) {
+      clientBuilder = clientBuilder.localHost(options.host());
+    } else if (!options.host()
+        .equals(com.google.datastore.v1beta3.client.DatastoreFactory.DEFAULT_HOST)) {
+      String fullURL = options.host();
+      if (fullURL.charAt(fullURL.length() - 1) != '/') {
+        fullURL = fullURL + '/';
+      }
+      fullURL = fullURL + "datastore/v1beta3/projects/" + options.projectId();
+      clientBuilder = clientBuilder.projectId(null).projectEndpoint(fullURL);
+    }
+    client = com.google.datastore.v1beta3.client.DatastoreFactory.get()
+        .create(clientBuilder.build());
+  }
+
+  private static boolean isLocalHost(String host) {
+    if (host != null) {
       try {
-        String normalizedHost = options.host();
-        if (!normalizedHost.startsWith("http")) {
+        String normalizedHost = host;
+        if (!includesScheme(normalizedHost)) {
           normalizedHost = "http://" + normalizedHost;
         }
         InetAddress hostAddr = InetAddress.getByName(new URL(normalizedHost).getHost());
         if (hostAddr.isAnyLocalAddress() || hostAddr.isLoopbackAddress()) {
-          clientBuilder = clientBuilder.localHost(options.host());
+          return true;
         }
       } catch (UnknownHostException | MalformedURLException e) {
         // ignore
       }
     }
-    client = com.google.datastore.v1beta3.client.DatastoreFactory.get()
-        .create(clientBuilder.build());
+    return false;
+  }
+
+  private static boolean includesScheme(String url) {
+    return url.startsWith("http://") || url.startsWith("https://");
   }
 
   private static DatastoreRpcException translate(

@@ -69,12 +69,6 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testForce() throws Exception {
-    assertFalse(options.build().force());
-    assertTrue(options.force(true).build().force());
-  }
-
-  @Test
   public void testDatastore() throws Exception {
     assertSame(datastoreRpcFactory, options.build().serviceRpcFactory());
     assertSame(datastoreRpc, options.build().datastoreRpc());
@@ -82,12 +76,11 @@ public class DatastoreOptionsTest {
 
   @Test
   public void testToBuilder() throws Exception {
-    DatastoreOptions original = options.namespace("ns1").force(true).build();
+    DatastoreOptions original = options.namespace("ns1").build();
     DatastoreOptions copy = original.toBuilder().build();
     assertEquals(original.projectId(), copy.projectId());
     assertEquals(original.namespace(), copy.namespace());
     assertEquals(original.host(), copy.host());
-    assertEquals(original.force(), copy.force());
     assertEquals(original.retryParams(), copy.retryParams());
     assertEquals(original.authCredentials(), copy.authCredentials());
   }

@@ -35,14 +35,11 @@ import java.util.Set;
 public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOptions> {
 
   private static final long serialVersionUID = -8636602944160689193L;
-  private static final String DATASET_ENV_NAME = "DATASTORE_DATASET";
-  private static final String HOST_ENV_NAME = "DATASTORE_HOST";
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final String USERINFO_SCOPE = "https://www.googleapis.com/auth/userinfo.email";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE, USERINFO_SCOPE);
 
   private final String namespace;
-  private final boolean force;
   private final boolean normalizeDataset;
   private transient DatastoreRpc datastoreRpc;
 
@@ -50,7 +47,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
       ServiceOptions.Builder<DatastoreRpc, DatastoreOptions, Builder> {
 
     private String namespace;
-    private boolean force;
     private boolean normalizeDataset = true;
 
     private Builder() {
@@ -58,7 +54,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
 
     private Builder(DatastoreOptions options) {
       super(options);
-      force = options.force;
       namespace = options.namespace;
       normalizeDataset = options.normalizeDataset;
     }
@@ -74,11 +69,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
       return this;
     }
 
-    public Builder force(boolean force) {
-      this.force = force;
-      return this;
-    }
-
     Builder normalizeDataset(boolean normalizeDataset) {
       this.normalizeDataset = normalizeDataset;
       return this;
@@ -89,7 +79,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     super(builder);
     normalizeDataset = builder.normalizeDataset;
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
-    force = builder.force;
   }
 
   private DatastoreOptions normalize() {
@@ -126,13 +115,17 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
 
   @Override
   protected String defaultHost() {
-    String host = System.getProperty(HOST_ENV_NAME, System.getenv(HOST_ENV_NAME));
+    String host = System.getProperty(
+        com.google.datastore.v1beta3.client.DatastoreHelper.LOCAL_HOST_ENV_VAR, 
+        System.getenv(com.google.datastore.v1beta3.client.DatastoreHelper.LOCAL_HOST_ENV_VAR));
     return host != null ? host : super.defaultHost();
   }
 
   @Override
   protected String defaultProject() {
-    String projectId = System.getProperty(DATASET_ENV_NAME, System.getenv(DATASET_ENV_NAME));
+    String projectId = System.getProperty(
+        com.google.datastore.v1beta3.client.DatastoreHelper.PROJECT_ID_ENV_VAR,
+        System.getenv(com.google.datastore.v1beta3.client.DatastoreHelper.PROJECT_ID_ENV_VAR));
     if (projectId == null) {
       projectId = appEngineAppId();
     }
@@ -157,10 +150,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     }
   }
 
-  public boolean force() {
-    return force;
-  }
-
   @Override
   protected Set<String> scopes() {
     return SCOPES;
@@ -173,7 +162,7 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
 
   @Override
   public int hashCode() {
-    return baseHashCode() ^ Objects.hash(namespace, force, normalizeDataset);
+    return baseHashCode() ^ Objects.hash(namespace, normalizeDataset);
   }
 
   @Override
@@ -183,7 +172,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     }
     DatastoreOptions other = (DatastoreOptions) obj;
     return baseEquals(other) && Objects.equals(namespace, other.namespace)
-        && Objects.equals(force, other.force)
         && Objects.equals(normalizeDataset, other.normalizeDataset);
   }
 
