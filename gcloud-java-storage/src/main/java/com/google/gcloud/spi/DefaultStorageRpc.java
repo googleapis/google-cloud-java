@@ -331,10 +331,11 @@ public class DefaultStorageRpc implements StorageRpc {
           .copy(source.getBucket(), source.getName(), target.getBucket(), target.getName(),
               target.getContentType() != null ? target : null)
           .setProjection(DEFAULT_PROJECTION)
-          .setIfMetagenerationMatch(IF_SOURCE_METAGENERATION_MATCH.getLong(sourceOptions))
-          .setIfMetagenerationNotMatch(IF_SOURCE_METAGENERATION_NOT_MATCH.getLong(sourceOptions))
-          .setIfGenerationMatch(IF_SOURCE_GENERATION_MATCH.getLong(sourceOptions))
-          .setIfGenerationNotMatch(IF_SOURCE_GENERATION_NOT_MATCH.getLong(sourceOptions))
+          .setIfSourceMetagenerationMatch(IF_SOURCE_METAGENERATION_MATCH.getLong(sourceOptions))
+          .setIfSourceMetagenerationNotMatch(
+              IF_SOURCE_METAGENERATION_NOT_MATCH.getLong(sourceOptions))
+          .setIfSourceGenerationMatch(IF_SOURCE_GENERATION_MATCH.getLong(sourceOptions))
+          .setIfSourceGenerationNotMatch(IF_SOURCE_GENERATION_NOT_MATCH.getLong(sourceOptions))
           .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(targetOptions))
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(targetOptions))
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(targetOptions))
