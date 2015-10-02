@@ -6,6 +6,10 @@ jdk:
 before_install:
 - mvn clean
 - git clone -b travis `git config --get remote.origin.url` target/travis
+- openssl aes-256-cbc -K $encrypted_631490ecae8f_key -iv $encrypted_631490ecae8f_iv -in target/travis/signing-tools.tar.enc -out target/travis/signing-tools.tar -d
+- mkdir target/travis/signing-tools
+- chmod 700 target/travis/signing-tools
+- tar xvf target/travis/signing-tools.tar -C target/travis/signing-tools
 - cp target/travis/settings.xml ~/.m2/settings.xml
 install: mvn install -DskipTests=true -Dgpg.skip=true
 script: mvn verify
@@ -20,3 +24,5 @@ env:
   - secure: "CUM2l73KFm7U4eDsUKkh1WyEUzF3v94Ltvs7MnKU9olE1dNp3YmRBL9Lqhx3hSDqm/xv0ETQsPy29Fs2+VFkhQQxSley6iS/4trr2fioTB680txfXo/zDdmGSP1q1/U40fv1S+jvuBRAhDV5W+8dhWOGtzMH0tJp/TszeDGlmCY="
   - secure: "YBbdzseg5yDFpQIiMoc3P2BTmqef4o+KAvrLMEbobXjIkiglUQ7UHCoRWClX74fTKAwuC7JvK7o5xJGLnaY43jJADXrGtE8/d44HNJaieE67mNosDYtOiA0iI2uIRFCAnXJCZ8f/iHx2xVMHMNWlwyoil4IUcjj+D7FRcsT5alE="
   - secure: "Od7BwllgFXVfzFe8ooTNm05TR+Xd5QjHW0oqhU8vclaQs2oX4e0eNIsebXQfLi3xDgd1pz5uUQC/Z4S0NqACwyUuUvPdGYYmRPTR7Dh8HgGJ4ojSdN3RwaHsxUqG7Ajts9rIHOtRpY28xOChVRNX0Z7eAPlvxYU4Ed2ZEo356r0="
+  - secure: "PZ7dnp9Gp5HY1Iu5Z5n/wjkArWExJ958hC60nzE/r7uh9iRIEbIfbWW5KTkqlmxTsTVUR5JH2hjqu9C/0A3PU+ctfbO+fO3MegRgQbWJPfoOeLzw23xvnpdvkVPajHYudoVrVyS9KaAqRZoCaIpZiH6sQpZ7jrPaOOA/IPTnqYSpRDyVsXiiFE/Gyu48e93AxDn8D1BirX/DQRSZSTTwJfwbmz6ZDCFhI3MEZuCnvN4eGydk/bGPLZFpjB9TRxvAtN5TDTifgt8JaWE1t3hIi+EwZCyqYRiVI1ps5nyVdpKisX6E133n918kVO8lXVCMGPlEJ8qq8uFA/Pvz/7iKDmE/8wa3vnM4AkZTMi45TViEPk8z7e+zOJA1XpV2tQ8FBzk7kBEkKYZJ6aYXJruKQTKMW0YwrA5856xLnCiGaqsXnuXroOWrhifTI9gjjoi6kwcOTtwqZysdf1P7dgpq4qRgxpO34oGeSR3+ely300xSPwibX+Uga1Rw/oy47wbxWfWiEd3c5CTwz+Zge7X23Yy6Fud/1yuia6N8Bas+xYBaBRQxDo/CD2qjOyz+aH5LNTncw97M3jRCcH2BQVZom0AIiiCWLdKYH/yMXZCMxhOB+Shp1XtmFL5yX6GM7ufZPRZSHRdM/GsYxC9OG2DyUIXrg6dRfrfHNlVDnNqbMXc="
+  - secure: "QXBoSPtLHACEtzUm/KbfkmXE8yHoKjl+cSlCZmByGpIOnE0XvbbuvS3VAI7fOpWsny5r0kqpNO1+3efjoR48pXj/OTf0BFuaj62kdDkaU1MsxUe//QdUbkD6eibmxvO1/RsZYhH3ZYg9TeVRW3/fc0v4Cv+1/ZbA6iVCTWijYqeSNCWDAm685R3Twm0HcXodjUfanF+u8NLltjMeg3E3O9QskRBxo72zTP4sh30yap/ngkifTNI6AP5+S6dKgHc1Uinzm9o9p1LOIWn1xDhk5o17B5Uy5cw2B1wOlPFc8ZlrOzJAsC3KQEh1rq5sNXLkm2kevQQLsw1yjUagxjRSJBizh3OYaP5EFFr9iC80W7Is/OEvkAicFz8jswUpFKuKdnLdglOu5ZiQYQ2d4FQR2dq0GraOfUk0UVxw1RIW75eoUh8vfSPInWZkQ+kfa4OJEwhSR5jwURd76kYHaFyXwU7zgG3/JTePTSXGCfdWAbaKG43nEf6Kmz6my1VCQmwhWdrCNna/VD8YN49TKKlNj9b2A88mHmEqnHHL6xtvR7JqUF1I6WKmQqb9z1VCV9hHgVfPJro+PAer5Qrb6mFkSdg1JNv+aIIz3fEXX0SLbQyrRsWbnAR8kfO6wN4uT7RcGn/5q/vphxcUdU1klJ4bs/GQVFxWt12DfMmcMrqcf/M="
