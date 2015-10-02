@@ -26,6 +26,18 @@
   </servers>
   <mirrors/>
   <proxies/>
-  <profiles/>
+  <profiles>
+    <profile>
+      <id>sign-deploy</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <gpg.homedir>${TRAVIS_BUILD_DIR}/target/travis/signing-tools</gpg.homedir>
+        <gpg.keyname>${env.KEYNAME}</gpg.keyname>
+        <gpg.passphrase>${env.SIGN_PASSPHRASE}</gpg.passphrase>
+      </properties>
+    </profile>
+  </profiles>
   <activeProfiles/>
 </settings>
