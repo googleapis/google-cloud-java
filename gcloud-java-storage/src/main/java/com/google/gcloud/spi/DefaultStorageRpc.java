@@ -451,7 +451,7 @@ public class DefaultStorageRpc implements StorageRpc {
       long destOffset, int length, boolean last) throws StorageException {
     try {
       GenericUrl url = new GenericUrl(uploadId);
-      HttpRequest httpRequest = storage.getRequestFactory().buildPostRequest(url,
+      HttpRequest httpRequest = storage.getRequestFactory().buildPutRequest(url,
           new ByteArrayContent(null, toWrite, toWriteOffset, length));
       long limit = destOffset + length;
       StringBuilder range = new StringBuilder("bytes ");
