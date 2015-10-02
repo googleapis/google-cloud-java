@@ -20,6 +20,7 @@ import static com.google.gcloud.RetryHelper.runWithRetries;
 import static java.util.concurrent.Executors.callable;
 
 import com.google.api.services.storage.model.StorageObject;
+import com.google.gcloud.RetryHelper;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.IOException;
@@ -68,12 +69,16 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
   private void flush(boolean compact) {
     if (limit >= chunkSize || compact && limit >= MIN_CHUNK_SIZE) {
       final int length = limit - limit % MIN_CHUNK_SIZE;
-      runWithRetries(callable(new Runnable() {
-        @Override
-        public void run() {
-          storageRpc.write(uploadId, buffer, 0, storageObject, position, length, false);
-        }
-      }), options.retryParams(), StorageImpl.EXCEPTION_HANDLER);
+      try {
+        runWithRetries(callable(new Runnable() {
+          @Override
+          public void run() {
+            storageRpc.write(uploadId, buffer, 0, storageObject, position, length, false);
+          }
+        }), options.retryParams(), StorageImpl.EXCEPTION_HANDLER);
+      } catch (RetryHelper.RetryHelperException e) {
+        throw StorageException.translateAndThrow(e);
+      }
       position += length;
       limit -= length;
       byte[] temp = new byte[compact ? limit : chunkSize];
@@ -124,12 +129,16 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
   @Override
   public void close() throws IOException {
     if (isOpen) {
-      runWithRetries(callable(new Runnable() {
-        @Override
-        public void run() {
-          storageRpc.write(uploadId, buffer, 0, storageObject, position, limit, true);
-        }
-      }), options.retryParams(), StorageImpl.EXCEPTION_HANDLER);
+      try {
+        runWithRetries(callable(new Runnable() {
+          @Override
+          public void run() {
+            storageRpc.write(uploadId, buffer, 0, storageObject, position, limit, true);
+          }
+        }), options.retryParams(), StorageImpl.EXCEPTION_HANDLER);
+      } catch (RetryHelper.RetryHelperException e) {
+        throw StorageException.translateAndThrow(e);
+      }
       position += buffer.length;
       isOpen = false;
       buffer = null;

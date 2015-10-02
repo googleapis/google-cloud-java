@@ -19,6 +19,7 @@ package com.google.gcloud.storage;
 import static com.google.gcloud.RetryHelper.runWithRetries;
 
 import com.google.api.services.storage.model.StorageObject;
+import com.google.gcloud.RetryHelper;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.IOException;
@@ -119,12 +120,16 @@ class BlobReadChannelImpl implements BlobReadChannel {
         return -1;
       }
       final int toRead = Math.max(byteBuffer.remaining(), chunkSize);
-      buffer = runWithRetries(new Callable<byte[]>() {
-        @Override
-        public byte[] call() {
-          return storageRpc.read(storageObject, requestOptions, position, toRead);
-        }
-      }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER);
+      try {
+        buffer = runWithRetries(new Callable<byte[]>() {
+          @Override
+          public byte[] call() {
+            return storageRpc.read(storageObject, requestOptions, position, toRead);
+          }
+        }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER);
+      } catch (RetryHelper.RetryHelperException e) {
+        throw StorageException.translateAndThrow(e);
+      }
       if (toRead > buffer.length) {
         endOfStream = true;
         if (buffer.length == 0) {

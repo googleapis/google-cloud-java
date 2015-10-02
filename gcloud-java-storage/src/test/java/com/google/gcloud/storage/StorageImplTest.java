@@ -42,6 +42,8 @@ import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -175,6 +177,9 @@ public class StorageImplTest {
   private StorageOptions optionsMock;
   private StorageRpc storageRpcMock;
   private Storage storage;
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -850,5 +855,49 @@ public class StorageImplTest {
     assertTrue(signer.verify(BaseEncoding.base64().decode(
         URLDecoder.decode(signature, UTF_8.name()))));
     EasyMock.verify(credentialsMock);
+  }
+
+  @Test
+  public void testRetryableException() {
+    BlobInfo blob = BlobInfo.of(BUCKET_NAME1, BLOB_NAME1);
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
+    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.getDefaultInstance());
+    EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
+        .andThrow(new StorageException(500, "InternalError", true))
+        .andReturn(BLOB_INFO1.toPb());
+    EasyMock.replay(optionsMock, storageRpcMock);
+    storage = StorageFactory.instance().get(optionsMock);
+    BlobInfo readBlob = storage.get(blob.bucket(), blob.name());
+    assertEquals(BLOB_INFO1, readBlob);
+  }
+
+  @Test
+  public void testNonRetryableException() {
+    BlobInfo blob = BlobInfo.of(BUCKET_NAME1, BLOB_NAME1);
+    String exceptionMessage = "Not Implemented";
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
+    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.getDefaultInstance());
+    EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
+        .andThrow(new StorageException(501, exceptionMessage, false));
+    EasyMock.replay(optionsMock, storageRpcMock);
+    storage = StorageFactory.instance().get(optionsMock);
+    thrown.expect(StorageException.class);
+    thrown.expectMessage(exceptionMessage);
+    storage.get(blob.bucket(), blob.name());
+  }
+
+  @Test
+  public void testRuntimeException() {
+    BlobInfo blob = BlobInfo.of(BUCKET_NAME1, BLOB_NAME1);
+    String exceptionMessage = "Artificial runtime exception";
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
+    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.getDefaultInstance());
+    EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
+        .andThrow(new RuntimeException(exceptionMessage));
+    EasyMock.replay(optionsMock, storageRpcMock);
+    storage = StorageFactory.instance().get(optionsMock);
+    thrown.expect(StorageException.class);
+    thrown.expectMessage(exceptionMessage);
+    storage.get(blob.bucket(), blob.name());
   }
 }
