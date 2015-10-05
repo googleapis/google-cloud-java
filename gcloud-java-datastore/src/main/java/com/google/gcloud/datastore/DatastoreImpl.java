@@ -99,9 +99,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   }
 
   <T> QueryResults<T> run(com.google.datastore.v1beta3.ReadOptions readOptionsPb, Query<T> query) {
-    // TODO(ajaykannan): fix me!
-    //return new QueryResultsImpl<>(this, readOptionsPb, query);
-    return null; // TODO(ajaykannan): fix me!
+    return new QueryResultsImpl<>(this, readOptionsPb, query);
   }
 
   com.google.datastore.v1beta3.RunQueryResponse runQuery(

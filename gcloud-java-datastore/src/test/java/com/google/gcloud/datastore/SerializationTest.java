@@ -122,9 +122,8 @@ public class SerializationTest {
       .put(ValueType.NULL, NULL_VALUE)
       .put(ValueType.KEY, KEY_VALUE)
       .put(ValueType.STRING, STRING_VALUE)
-      // TODO(ajaykannan): fix me!
-      //.putAll(ValueType.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
-      //    EMBEDDED_ENTITY_VALUE3)
+      .putAll(ValueType.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
+          EMBEDDED_ENTITY_VALUE3)
       .put(ValueType.LIST, LIST_VALUE)
       .put(ValueType.LONG, LONG_VALUE)
       .put(ValueType.DOUBLE, DOUBLE_VALUE)
@@ -169,10 +168,9 @@ public class SerializationTest {
 
   @Test
   public void testTypes() throws Exception {
-    // TODO(ajaykannan): fix me!
-    Serializable<?>[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, /*ENTITY1, ENTITY2,
-        ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY,*/ DATE_TIME1, BLOB1/*, CURSOR1, GQL1, GQL2,
-        QUERY1, QUERY2, QUERY3*/};
+    Serializable<?>[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
+        ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, CURSOR1, GQL1, GQL2,
+        QUERY1, QUERY2, QUERY3};
     for (Serializable<?> obj : types) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
