@@ -89,10 +89,12 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   }
 
   private static String removeScheme(String url) {
-    if (url.startsWith("https://")) {
-      return url.substring("https://".length());
-    } else if (url.startsWith("http://")) {
-      return url.substring("http://".length());
+    if (url != null) {
+      if (url.startsWith("https://")) {
+        return url.substring("https://".length());
+      } else if (url.startsWith("http://")) {
+        return url.substring("http://".length());
+      }
     }
     return url;
   }
