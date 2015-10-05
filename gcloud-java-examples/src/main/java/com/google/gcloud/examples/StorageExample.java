@@ -22,9 +22,11 @@ import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.BatchRequest;
 import com.google.gcloud.storage.BatchResponse;
+import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.BlobReadChannel;
 import com.google.gcloud.storage.BlobWriteChannel;
+import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.BucketInfo;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.ComposeRequest;
@@ -142,12 +144,12 @@ public class StorageExample {
       if (blobInfos.length == 1) {
         if (blobInfos[0].name().isEmpty()) {
           // get Bucket
-          BucketInfo bucketInfo = storage.get(blobInfos[0].bucket());
-          System.out.println("Bucket info: " + bucketInfo);
+          Bucket bucket = new Bucket(storage, blobInfos[0].bucket());
+          System.out.println("Bucket info: " + bucket.reload().info());
         } else {
           // get Blob
-          BlobInfo blobInfo = storage.get(blobInfos[0].bucket(), blobInfos[0].name());
-          System.out.println("Blob info: " + blobInfo);
+          Blob blob = new Blob(storage, blobInfos[0]);
+          System.out.println("Blob info: " + blob.reload().info());
         }
       } else {
         // use batch to get multiple blobs.
@@ -187,7 +189,7 @@ public class StorageExample {
     @Override
     public void run(Storage storage, BlobInfo... blobInfos) {
       if (blobInfos.length == 1) {
-        boolean wasDeleted = storage.delete(blobInfos[0].bucket(), blobInfos[0].name());
+        boolean wasDeleted = new Blob(storage, blobInfos[0]).delete();
         if (wasDeleted) {
           System.out.println("Blob " + blobInfos[0] + " was deleted");
         }
@@ -237,8 +239,9 @@ public class StorageExample {
         }
       } else {
         // list a bucket's blobs
-        for (BlobInfo b : storage.list(bucket)) {
-          System.out.println(b);
+        Bucket functionalBucket = new Bucket(storage, bucket);
+        for (Blob b : functionalBucket.list()) {
+          System.out.println(b.info());
         }
       }
     }
@@ -264,7 +267,8 @@ public class StorageExample {
       if (Files.size(uploadFrom) > 1_000_000) {
         // When content is not available or large (1MB or more) it is recommended
         // to write it in chunks via the blob's channel writer.
-        try (BlobWriteChannel writer = storage.writer(blobInfo)) {
+        Blob blob = new Blob(storage, blobInfo);
+        try (BlobWriteChannel writer = blob.writer()) {
           byte[] buffer = new byte[1024];
           try (InputStream input = Files.newInputStream(uploadFrom)) {
             int limit;
@@ -318,8 +322,9 @@ public class StorageExample {
 
     private void run(Storage storage, String bucket, String blobName, Path downloadTo)
         throws IOException {
+      Blob blob = new Blob(storage, bucket, blobName);
       BlobInfo blobInfo = storage.get(bucket, blobName);
-      if (blobInfo == null) {
+      if (!blob.exists()) {
         System.out.println("No such object");
         return;
       }
@@ -329,11 +334,11 @@ public class StorageExample {
       }
       if (blobInfo.size() < 1_000_000) {
         // Blob is small read all its content in one request
-        byte[] content = storage.readAllBytes(blobInfo.bucket(), blobInfo.name());
+        byte[] content = blob.content();
         writeTo.write(content);
       } else {
         // When Blob size is big or unknown use the blob's channel reader.
-        try (BlobReadChannel reader = storage.reader(blobInfo.bucket(), blobInfo.name())) {
+        try (BlobReadChannel reader = blob.reader()) {
           WritableByteChannel channel = Channels.newChannel(writeTo);
           ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
           while (reader.read(bytes) > 0) {
@@ -435,7 +440,8 @@ public class StorageExample {
    *
    * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/update">Objects: update</a>
    */
-  private static class UpdateMetadataAction extends StorageAction<Tuple<BlobInfo, Map<String, String>>> {
+  private static class UpdateMetadataAction extends
+      StorageAction<Tuple<BlobInfo, Map<String, String>>> {
 
     @Override
     public void run(Storage storage, Tuple<BlobInfo, Map<String, String>> tuple)
@@ -445,13 +451,13 @@ public class StorageExample {
 
     private void run(Storage storage, String bucket, String blobName,
         Map<String, String> metadata) {
-      BlobInfo blobInfo = storage.get(bucket, blobName);
-      if (blobInfo == null) {
+      Blob blob = new Blob(storage, bucket, blobName).reload();
+      if (!blob.exists()) {
         System.out.println("No such object");
         return;
       }
-      blobInfo = storage.update(blobInfo.toBuilder().metadata(metadata).build());
-      System.out.println("Updated " + blobInfo);
+      Blob updateBlob = blob.update(blob.info().toBuilder().metadata(metadata).build());
+      System.out.println("Updated " + updateBlob.info());
     }
 
     @Override
@@ -487,7 +493,7 @@ public class StorageExample {
   private static class SignUrlAction extends
       StorageAction<Tuple<ServiceAccountAuthCredentials, BlobInfo>> {
 
-    private static final char[] PASSWORD =  "notasecret".toCharArray();
+    private static final char[] PASSWORD = "notasecret".toCharArray();
 
     @Override
     public void run(Storage storage, Tuple<ServiceAccountAuthCredentials, BlobInfo> tuple)
@@ -501,7 +507,7 @@ public class StorageExample {
       cal.add(Calendar.DATE, 1);
       long expiration = cal.getTimeInMillis() / 1000;
       System.out.println("Signed URL: " +
-          storage.signUrl(blobInfo, expiration, SignUrlOption.serviceAccount(cred)));
+          new Blob(storage, blobInfo).signUrl(expiration, SignUrlOption.serviceAccount(cred)));
     }
 
     @Override

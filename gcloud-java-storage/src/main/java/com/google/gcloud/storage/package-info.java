@@ -22,13 +22,13 @@
  * StorageOptions options = StorageOptions.builder().projectId("project").build();
  * Storage storage = StorageFactory.instance().get(options);
  * byte[] content = readContent();
- * BlobInfo blobInfo = storage.get("bucket", "blob_name");
- * if (blobInfo == null) {
- *   storage.create(BlobInfo.of("bucket", "blob_name"), content);
+ * Blob blob = new Blob(storage, "bucket", "blob_name");
+ * if (!blob.exists()) {
+ *   storage.create(blob.info(), content);
  * } else {
- *   byte[] prevContent = storage.readAllBytes("bucket", "blob_name");
+ *   byte[] prevContent = blob.content();
  *   content = mergeContent(prevContent, content);
- *   WritableByteChannel channel = storage.writer(blob);
+ *   WritableByteChannel channel = blob.writer();
  *   channel.write(ByteBuffer.wrap(content));
  *   channel.close();
  * }}</pre>

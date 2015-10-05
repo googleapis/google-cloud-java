@@ -14,6 +14,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 This client supports the following Google Cloud Platform services:
 
 -  [Google Cloud Datastore] (#google-cloud-datastore)
+-  [Google Cloud Storage] (#google-cloud-storage)
 
 <!---
 -  [Google Cloud Storage] (https://cloud.google.com/storage/)
@@ -86,6 +87,45 @@ if (entity == null) {
 }
 ```
 
+Google Cloud Storage
+----------------------
+
+Google [Cloud Storage][cloud-storage] is a durable and highly available
+object storage service. Google Cloud Storage is almost infinitely scalable
+and guarantees consistency: when a write succeeds, the latest copy of the
+object will be returned to any GET, globally.
+
+See the [Google Cloud Storage docs][cloud-storage-activation] for more details on how to activate
+Cloud Storage for your project.
+
+See the ``gcloud-java`` API [storage documentation][storage-api] to learn how to interact
+with the Cloud Storage using this Client Library.
+
+```java
+import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.Storage;
+import com.google.gcloud.storage.StorageFactory;
+import com.google.gcloud.storage.StorageOptions;
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
+
+StorageOptions options = StorageOptions.builder().projectId(PROJECT_ID).build();
+Storage storage = StorageFactory.instance().get(options);
+byte[] content = readContent();
+Blob blob = new Blob(storage, "bucket", "blob_name");
+if (!blob.exists()) {
+  storage.create(blob.info(), content);
+} else {
+  System.out.println("Updating content for " + blob.info().name());
+  byte[] prevContent = blob.content();
+  content = mergeContent(prevContent, content);
+  WritableByteChannel channel = blob.writer();
+  channel.write(ByteBuffer.wrap(content));
+  channel.close();
+  }
+}
+```
+
 Contributing
 ------------
 
@@ -130,3 +170,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage]: https://cloud.google.com/storage/
 [cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
+[cloud-storage-activation]: https://cloud.google.com/storage/docs/signup
+[storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/storage/package-summary.html
