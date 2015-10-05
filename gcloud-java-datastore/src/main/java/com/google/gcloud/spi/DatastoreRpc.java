@@ -15,19 +15,6 @@
  */
 package com.google.gcloud.spi;
 
-import com.google.api.services.datastore.DatastoreV1.AllocateIdsRequest;
-import com.google.api.services.datastore.DatastoreV1.AllocateIdsResponse;
-import com.google.api.services.datastore.DatastoreV1.BeginTransactionRequest;
-import com.google.api.services.datastore.DatastoreV1.BeginTransactionResponse;
-import com.google.api.services.datastore.DatastoreV1.CommitRequest;
-import com.google.api.services.datastore.DatastoreV1.CommitResponse;
-import com.google.api.services.datastore.DatastoreV1.LookupRequest;
-import com.google.api.services.datastore.DatastoreV1.LookupResponse;
-import com.google.api.services.datastore.DatastoreV1.RollbackRequest;
-import com.google.api.services.datastore.DatastoreV1.RollbackResponse;
-import com.google.api.services.datastore.DatastoreV1.RunQueryRequest;
-import com.google.api.services.datastore.DatastoreV1.RunQueryResponse;
-
 /**
  * Provides access to the remote Datastore service.
  */
@@ -103,16 +90,22 @@ public interface DatastoreRpc {
     }
   }
 
-  AllocateIdsResponse allocateIds(AllocateIdsRequest request) throws DatastoreRpcException;
+  com.google.datastore.v1beta3.AllocateIdsResponse allocateIds(
+      com.google.datastore.v1beta3.AllocateIdsRequest request) throws DatastoreRpcException;
 
-  BeginTransactionResponse beginTransaction(BeginTransactionRequest request)
+  com.google.datastore.v1beta3.BeginTransactionResponse beginTransaction(
+      com.google.datastore.v1beta3.BeginTransactionRequest request)
       throws DatastoreRpcException;
 
-  CommitResponse commit(CommitRequest request) throws DatastoreRpcException;
+  com.google.datastore.v1beta3.CommitResponse commit(
+      com.google.datastore.v1beta3.CommitRequest request) throws DatastoreRpcException;
 
-  LookupResponse lookup(LookupRequest request) throws DatastoreRpcException;
+  com.google.datastore.v1beta3.LookupResponse lookup(
+      com.google.datastore.v1beta3.LookupRequest request) throws DatastoreRpcException;
 
-  RollbackResponse rollback(RollbackRequest request) throws DatastoreRpcException;
+  com.google.datastore.v1beta3.RollbackResponse rollback(
+      com.google.datastore.v1beta3.RollbackRequest request) throws DatastoreRpcException;
 
-  RunQueryResponse runQuery(RunQueryRequest request) throws DatastoreRpcException;
+  com.google.datastore.v1beta3.RunQueryResponse runQuery(
+      com.google.datastore.v1beta3.RunQueryRequest request) throws DatastoreRpcException;
 }

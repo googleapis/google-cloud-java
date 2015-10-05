@@ -18,9 +18,7 @@ package com.google.gcloud.datastore;
 
 import static com.google.gcloud.datastore.Validator.validateNamespace;
 
-import com.google.api.services.datastore.DatastoreV1;
-import com.google.api.services.datastore.DatastoreV1.EntityResult;
-import com.google.api.services.datastore.DatastoreV1.LookupResponse;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.ServiceOptions;
@@ -37,14 +35,11 @@ import java.util.Set;
 public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOptions> {
 
   private static final long serialVersionUID = -8636602944160689193L;
-  private static final String DATASET_ENV_NAME = "DATASTORE_DATASET";
-  private static final String HOST_ENV_NAME = "DATASTORE_HOST";
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final String USERINFO_SCOPE = "https://www.googleapis.com/auth/userinfo.email";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE, USERINFO_SCOPE);
 
   private final String namespace;
-  private final boolean force;
   private final boolean normalizeDataset;
   private transient DatastoreRpc datastoreRpc;
 
@@ -52,7 +47,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
       ServiceOptions.Builder<DatastoreRpc, DatastoreOptions, Builder> {
 
     private String namespace;
-    private boolean force;
     private boolean normalizeDataset = true;
 
     private Builder() {
@@ -60,7 +54,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
 
     private Builder(DatastoreOptions options) {
       super(options);
-      force = options.force;
       namespace = options.namespace;
       normalizeDataset = options.normalizeDataset;
     }
@@ -76,11 +69,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
       return this;
     }
 
-    public Builder force(boolean force) {
-      this.force = force;
-      return this;
-    }
-
     Builder normalizeDataset(boolean normalizeDataset) {
       this.normalizeDataset = normalizeDataset;
       return this;
@@ -91,7 +79,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     super(builder);
     normalizeDataset = builder.normalizeDataset;
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
-    force = builder.force;
   }
 
   private DatastoreOptions normalize() {
@@ -102,21 +89,24 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     Builder builder = toBuilder();
     builder.normalizeDataset(false);
     // Replace provided project-id with full project-id (s~xxx, e~xxx,...)
-    DatastoreV1.LookupRequest.Builder requestPb = DatastoreV1.LookupRequest.newBuilder();
-    DatastoreV1.Key key = DatastoreV1.Key.newBuilder()
-        .addPathElement(DatastoreV1.Key.PathElement.newBuilder().setKind("__foo__").setName("bar"))
+    com.google.datastore.v1beta3.LookupRequest.Builder requestPb = 
+        com.google.datastore.v1beta3.LookupRequest.newBuilder();
+    com.google.datastore.v1beta3.Key key = com.google.datastore.v1beta3.Key.newBuilder()
+        .addPath(com.google.datastore.v1beta3.Key.PathElement.newBuilder()
+            .setKind("__foo__").setName("bar"))
         .build();
-    requestPb.addKey(key);
+    requestPb.addKeys(key);
     try {
-      LookupResponse responsePb = datastoreRpc().lookup(requestPb.build());
+      com.google.datastore.v1beta3.LookupResponse responsePb = 
+          datastoreRpc().lookup(requestPb.build());
       if (responsePb.getDeferredCount() > 0) {
         key = responsePb.getDeferred(0);
       } else {
-        Iterator<EntityResult> combinedIter =
+        Iterator<com.google.datastore.v1beta3.EntityResult> combinedIter =
             Iterables.concat(responsePb.getMissingList(), responsePb.getFoundList()).iterator();
         key = combinedIter.next().getEntity().getKey();
       }
-      builder.projectId(key.getPartitionId().getDatasetId());
+      builder.projectId(key.getPartitionId().getProjectId());
       return new DatastoreOptions(builder);
     } catch (DatastoreRpcException e) {
       throw DatastoreException.translateAndThrow(e);
@@ -125,13 +115,17 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
 
   @Override
   protected String defaultHost() {
-    String host = System.getProperty(HOST_ENV_NAME, System.getenv(HOST_ENV_NAME));
+    String host = System.getProperty(
+        com.google.datastore.v1beta3.client.DatastoreHelper.LOCAL_HOST_ENV_VAR, 
+        System.getenv(com.google.datastore.v1beta3.client.DatastoreHelper.LOCAL_HOST_ENV_VAR));
     return host != null ? host : super.defaultHost();
   }
 
   @Override
   protected String defaultProject() {
-    String projectId = System.getProperty(DATASET_ENV_NAME, System.getenv(DATASET_ENV_NAME));
+    String projectId = System.getProperty(
+        com.google.datastore.v1beta3.client.DatastoreHelper.PROJECT_ID_ENV_VAR,
+        System.getenv(com.google.datastore.v1beta3.client.DatastoreHelper.PROJECT_ID_ENV_VAR));
     if (projectId == null) {
       projectId = appEngineAppId();
     }
@@ -149,15 +143,11 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
       Class<?> clazz = Class.forName("com.google.appengine.api.NamespaceManager");
       Method method = clazz.getMethod("get");
       String namespace = (String) method.invoke(null);
-      return namespace == null || namespace.isEmpty() ? null : namespace;
+      return MoreObjects.firstNonNull(namespace, "");
     } catch (Exception ignore) {
-      // return null (Datastore default namespace) if could not automatically determine
-      return null;
+      // return empty string (Datastore default namespace) if could not automatically determine
+      return "";
     }
-  }
-
-  public boolean force() {
-    return force;
   }
 
   @Override
@@ -172,7 +162,7 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
 
   @Override
   public int hashCode() {
-    return baseHashCode() ^ Objects.hash(namespace, force, normalizeDataset);
+    return baseHashCode() ^ Objects.hash(namespace, normalizeDataset);
   }
 
   @Override
@@ -182,7 +172,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     }
     DatastoreOptions other = (DatastoreOptions) obj;
     return baseEquals(other) && Objects.equals(namespace, other.namespace)
-        && Objects.equals(force, other.force)
         && Objects.equals(normalizeDataset, other.normalizeDataset);
   }
 
