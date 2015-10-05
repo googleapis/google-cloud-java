@@ -45,7 +45,7 @@ Example Applications
 Google Cloud Datastore
 ----------------------
 
-Google [Cloud Datastore][cloud-datastore] is a fully managed, schemaless database for
+[Google Cloud Datastore][cloud-datastore] is a fully managed, schemaless database for
 storing non-relational data. Cloud Datastore automatically scales with
 your users and supports ACID transactions, high availability of reads and
 writes, strong consistency for reads and ancestor queries, and eventual
@@ -90,7 +90,7 @@ if (entity == null) {
 Google Cloud Storage
 ----------------------
 
-Google [Cloud Storage][cloud-storage] is a durable and highly available
+[Google Cloud Storage][cloud-storage] is a durable and highly available
 object storage service. Google Cloud Storage is almost infinitely scalable
 and guarantees consistency: when a write succeeds, the latest copy of the
 object will be returned to any GET, globally.
