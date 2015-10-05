@@ -6,10 +6,6 @@ jdk:
 before_install:
 - mvn clean
 - git clone -b travis `git config --get remote.origin.url` target/travis
-- openssl aes-256-cbc -K $encrypted_631490ecae8f_key -iv $encrypted_631490ecae8f_iv -in target/travis/signing-tools.tar.enc -out target/travis/signing-tools.tar -d
-- mkdir target/travis/signing-tools
-- chmod 700 target/travis/signing-tools
-- tar xvf target/travis/signing-tools.tar -C target/travis/signing-tools
 - cp target/travis/settings.xml ~/.m2/settings.xml
 install: mvn install -DskipTests=true -Dgpg.skip=true
 script: mvn verify
