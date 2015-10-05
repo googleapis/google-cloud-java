@@ -16,6 +16,7 @@
 
 package com.google.gcloud.spi;
 
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
@@ -51,14 +52,16 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
             .projectId(options.projectId())
             .initializer(options.httpRequestInitializer());
     if (isLocalHost(options.host())) {
-      clientBuilder = clientBuilder.localHost(options.host());
-    } else if (!options.host()
-        .equals(com.google.datastore.v1beta3.client.DatastoreFactory.DEFAULT_HOST)) {
+      clientBuilder = clientBuilder.localHost(removeScheme(options.host()));
+    } else if (!com.google.datastore.v1beta3.client.DatastoreFactory.DEFAULT_HOST
+        .equals(options.host()) && !Strings.isNullOrEmpty(options.host())) {
       String fullURL = options.host();
       if (fullURL.charAt(fullURL.length() - 1) != '/') {
         fullURL = fullURL + '/';
       }
-      fullURL = fullURL + "datastore/v1beta3/projects/" + options.projectId();
+      fullURL = fullURL + "datastore/"
+          + com.google.datastore.v1beta3.client.DatastoreFactory.VERSION + "/projects/"
+          + options.projectId();
       clientBuilder = clientBuilder.projectId(null).projectEndpoint(fullURL);
     }
     client = com.google.datastore.v1beta3.client.DatastoreFactory.get()
@@ -73,9 +76,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
           normalizedHost = "http://" + normalizedHost;
         }
         InetAddress hostAddr = InetAddress.getByName(new URL(normalizedHost).getHost());
-        if (hostAddr.isAnyLocalAddress() || hostAddr.isLoopbackAddress()) {
-          return true;
-        }
+        return hostAddr.isAnyLocalAddress() || hostAddr.isLoopbackAddress();
       } catch (UnknownHostException | MalformedURLException e) {
         // ignore
       }
@@ -85,6 +86,15 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
 
   private static boolean includesScheme(String url) {
     return url.startsWith("http://") || url.startsWith("https://");
+  }
+
+  private static String removeScheme(String url) {
+    if (url.startsWith("https://")) {
+      return url.substring("https://".length());
+    } else if (url.startsWith("http://")) {
+      return url.substring("http://".length());
+    }
+    return url;
   }
 
   private static DatastoreRpcException translate(
