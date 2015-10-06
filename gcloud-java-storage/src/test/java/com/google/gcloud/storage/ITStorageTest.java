@@ -34,46 +34,44 @@ import java.net.URLConnection;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Iterator;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class ITStorageTest {
 
-  private static StorageOptions options;
   private static Storage storage;
   private static RemoteGcsHelper gcsHelper;
-  private static String bucket;
 
+  private static final String bucket = RemoteGcsHelper.generateBucketName();
   private static final String CONTENT_TYPE = "text/plain";
   private static final byte[] BLOB_BYTE_CONTENT = {0xD, 0xE, 0xA, 0xD};
   private static final String BLOB_STRING_CONTENT = "Hello Google Cloud Storage!";
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
-
   @BeforeClass
   public static void beforeClass() {
-    gcsHelper = RemoteGcsHelper.create();
-    if (gcsHelper != null) {
-      options = gcsHelper.options();
-      storage = StorageFactory.instance().get(options);
-      bucket = gcsHelper.bucket();
+    try {
+      gcsHelper = RemoteGcsHelper.create();
+      storage = StorageFactory.instance().get(gcsHelper.options());
       storage.create(BucketInfo.of(bucket));
+    } catch (RemoteGcsHelper.GcsHelperException e) {
+      // ignore
     }
   }
 
   @AfterClass
-  public static void afterClass() {
+  public static void afterClass()
+      throws ExecutionException, TimeoutException, InterruptedException {
     if (storage != null) {
-      for (BlobInfo info : storage.list(bucket)) {
-        storage.delete(bucket, info.name());
+      if (!RemoteGcsHelper.deleteBucketRecursively(storage, bucket, 5, TimeUnit.SECONDS)) {
+        throw new RuntimeException("Bucket deletion timed out. Could not delete non-empty bucket");
       }
-      storage.delete(bucket);
     }
   }
 
@@ -82,11 +80,16 @@ public class ITStorageTest {
     org.junit.Assume.assumeNotNull(storage);
   }
 
-  @Test
-  public void testListBuckets() {
-    ListResult<BucketInfo> bucketList = storage.list(Storage.BucketListOption.prefix(bucket));
-    for (BucketInfo bucketInfo : bucketList) {
-      assertTrue(bucketInfo.name().startsWith(bucket));
+  @Test(timeout = 5000)
+  public void testListBuckets() throws InterruptedException {
+    Iterator<BucketInfo> bucketIterator =
+        storage.list(Storage.BucketListOption.prefix(bucket)).iterator();
+    while (!bucketIterator.hasNext()) {
+      Thread.sleep(500);
+      bucketIterator = storage.list(Storage.BucketListOption.prefix(bucket)).iterator();
+    }
+    while (bucketIterator.hasNext()) {
+      assertTrue(bucketIterator.next().name().startsWith(bucket));
     }
   }
 
@@ -137,7 +140,7 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.of(bucket, blobName);
     assertNotNull(storage.create(blob));
     try {
-      storage.create(blob.toBuilder().generation(42L).build(), BLOB_BYTE_CONTENT,
+      storage.create(blob.toBuilder().generation(-1L).build(), BLOB_BYTE_CONTENT,
           Storage.BlobTargetOption.generationMatch());
       fail("StorageException was expected");
     } catch (StorageException ex) {
@@ -165,7 +168,7 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.of(bucket, blobName);
     assertNotNull(storage.create(blob));
     try {
-      storage.update(blob.toBuilder().contentType(CONTENT_TYPE).generation(42L).build(),
+      storage.update(blob.toBuilder().contentType(CONTENT_TYPE).generation(-1L).build(),
           Storage.BlobTargetOption.generationMatch());
       fail("StorageException was expected");
     } catch (StorageException ex) {
@@ -187,7 +190,7 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.of(bucket, blobName);
     assertNotNull(storage.create(blob));
     try {
-      storage.delete(bucket, blob.name(), Storage.BlobSourceOption.generationMatch(42L));
+      storage.delete(bucket, blob.name(), Storage.BlobSourceOption.generationMatch(-1L));
       fail("StorageException was expected");
     } catch (StorageException ex) {
       // expected
@@ -232,8 +235,8 @@ public class ITStorageTest {
     String targetBlobName = "test-compose-blob-fail-target";
     BlobInfo targetBlob = BlobInfo.of(bucket, targetBlobName);
     Storage.ComposeRequest req = Storage.ComposeRequest.builder()
-        .addSource(sourceBlobName1, 42L)
-        .addSource(sourceBlobName2, 42L)
+        .addSource(sourceBlobName1, -1L)
+        .addSource(sourceBlobName2, -1L)
         .target(targetBlob)
         .build();
     try {
@@ -290,7 +293,7 @@ public class ITStorageTest {
     Storage.CopyRequest req = new Storage.CopyRequest.Builder()
         .source(bucket, sourceBlobName)
         .target(BlobInfo.builder(bucket, targetBlobName).build())
-        .sourceOptions(Storage.BlobSourceOption.metagenerationMatch(42L))
+        .sourceOptions(Storage.BlobSourceOption.metagenerationMatch(-1L))
         .build();
     try {
       storage.copy(req);
@@ -362,11 +365,11 @@ public class ITStorageTest {
     String blobName = "test-batch-request-blob-fail";
     BlobInfo blob = BlobInfo.of(bucket, blobName);
     assertNotNull(storage.create(blob));
-    BlobInfo updatedBlob = blob.toBuilder().generation(42L).build();
+    BlobInfo updatedBlob = blob.toBuilder().generation(-1L).build();
     BatchRequest batchRequest = BatchRequest.builder()
         .update(updatedBlob, Storage.BlobTargetOption.generationMatch())
-        .delete(bucket, blobName, Storage.BlobSourceOption.generationMatch(42L))
-        .get(bucket, blobName, Storage.BlobSourceOption.generationMatch(42L))
+        .delete(bucket, blobName, Storage.BlobSourceOption.generationMatch(-1L))
+        .get(bucket, blobName, Storage.BlobSourceOption.generationMatch(-1L))
         .build();
     BatchResponse updateResponse = storage.apply(batchRequest);
     assertEquals(1, updateResponse.updates().size());
@@ -407,7 +410,7 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.of(bucket, blobName);
     assertNotNull(storage.create(blob));
     try (BlobReadChannel reader =
-        storage.reader(bucket, blobName, Storage.BlobSourceOption.metagenerationMatch(42L))) {
+        storage.reader(bucket, blobName, Storage.BlobSourceOption.metagenerationMatch(-1L))) {
       reader.read(ByteBuffer.allocate(42));
       fail("StorageException was expected");
     } catch (StorageException ex) {
@@ -419,7 +422,7 @@ public class ITStorageTest {
   @Test
   public void testWriteChannelFail() throws UnsupportedEncodingException, IOException {
     String blobName = "test-write-channel-blob-fail";
-    BlobInfo blob = BlobInfo.builder(bucket, blobName).generation(42L).build();
+    BlobInfo blob = BlobInfo.builder(bucket, blobName).generation(-1L).build();
     try {
       try (BlobWriteChannel writer =
           storage.writer(blob, Storage.BlobTargetOption.generationMatch())) {
