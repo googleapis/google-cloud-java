@@ -102,27 +102,28 @@ See the ``gcloud-java`` API [storage documentation][storage-api] to learn how to
 with the Cloud Storage using this Client Library.
 
 ```java
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageFactory;
 import com.google.gcloud.storage.StorageOptions;
+
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
 StorageOptions options = StorageOptions.builder().projectId(PROJECT_ID).build();
 Storage storage = StorageFactory.instance().get(options);
-byte[] content = readContent();
 Blob blob = new Blob(storage, "bucket", "blob_name");
 if (!blob.exists()) {
-  storage.create(blob.info(), content);
+  storage2.create(blob.info(), "Hello, Cloud Storage!".getBytes(UTF_8));
 } else {
   System.out.println("Updating content for " + blob.info().name());
   byte[] prevContent = blob.content();
-  content = mergeContent(prevContent, content);
+  System.out.println(new String(prevContent, UTF_8));
   WritableByteChannel channel = blob.writer();
-  channel.write(ByteBuffer.wrap(content));
+  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
   channel.close();
-  }
 }
 ```
 
