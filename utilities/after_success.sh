@@ -11,12 +11,6 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -
 
     SITE_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|\w+:)')
     if [ "${SITE_VERSION##*-}" != "SNAPSHOT" ]; then
-        # Get signing tools
-        openssl aes-256-cbc -K $encrypted_631490ecae8f_key -iv $encrypted_631490ecae8f_iv -in target/travis/signing-tools.tar.enc -out target/travis/signing-tools.tar -d
-        mkdir target/travis/signing-tools
-        chmod 700 target/travis/signing-tools
-        tar xvf target/travis/signing-tools.tar -C target/travis/signing-tools
-
         # Deploy site if not a SNAPSHOT
         git config --global user.name "travis-ci"
         git config --global user.email "travis@travis-ci.org"
