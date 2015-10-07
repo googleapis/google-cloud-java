@@ -14,11 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud.storage.testing;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
-import com.google.gcloud.storage.RemoteGcsHelper.Option.KeyFromClasspath;
+import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.storage.Storage;
+import com.google.gcloud.storage.StorageException;
+import com.google.gcloud.storage.StorageOptions;
+import com.google.gcloud.storage.testing.RemoteGcsHelper.Option.KeyFromClasspath;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -96,7 +100,7 @@ public class RemoteGcsHelper {
    *
    * @param options creation options
    * @return A {@code RemoteGcsHelper} object for the provided options.
-   * @throws com.google.gcloud.storage.RemoteGcsHelper.GcsHelperException if environment variables
+   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if environment variables
    * {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY} are not set or if the file
    * pointed by {@code GCLOUD_TESTS_KEY} does not exist
    */
