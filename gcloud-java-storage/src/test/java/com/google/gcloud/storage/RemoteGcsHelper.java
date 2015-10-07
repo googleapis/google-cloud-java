@@ -60,8 +60,8 @@ public class RemoteGcsHelper {
   }
 
   /**
-   * Delete a bucket recursively. Objects in the bucket are listed and deleted until bucket deletion
-   * succeeds or {@code timeout} expires.
+   * Deletes a bucket, even if non-empty. Objects in the bucket are listed and deleted until bucket
+   * deletion succeeds or {@code timeout} expires.
    *
    * @param storage the storage service to be used to issue requests
    * @param bucket the bucket to be deleted
@@ -71,14 +71,16 @@ public class RemoteGcsHelper {
    * @throws InterruptedException if the thread deleting the bucket is interrupted while waiting
    * @throws ExecutionException if an exception was thrown while deleting bucket or bucket objects
    */
-  public static Boolean deleteBucketRecursively(Storage storage, String bucket, long timeout,
-      TimeUnit unit) throws InterruptedException, ExecutionException {
+  public static Boolean forceDelete(Storage storage, String bucket, long timeout, TimeUnit unit)
+      throws InterruptedException, ExecutionException {
     ExecutorService executor = Executors.newSingleThreadExecutor();
     Future<Boolean> future = executor.submit(new DeleteBucketTask(storage, bucket));
     try {
       return future.get(timeout, unit);
     } catch (TimeoutException ex) {
       return false;
+    } finally {
+      executor.shutdown();
     }
   }
 
@@ -95,8 +97,8 @@ public class RemoteGcsHelper {
    * @param options creation options
    * @return A {@code RemoteGcsHelper} object for the provided options.
    * @throws com.google.gcloud.storage.RemoteGcsHelper.GcsHelperException if environment variables
-   * {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY_PATH} are not set or if the file
-   * pointed by {@code GCLOUD_TESTS_KEY_PATH} does not exist
+   * {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY} are not set or if the file
+   * pointed by {@code GCLOUD_TESTS_KEY} does not exist
    */
   public static RemoteGcsHelper create(Option... options) throws GcsHelperException {
     boolean keyFromClassPath = false;

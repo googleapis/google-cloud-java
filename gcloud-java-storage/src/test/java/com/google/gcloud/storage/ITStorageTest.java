@@ -38,9 +38,10 @@ import java.util.Iterator;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -49,6 +50,7 @@ public class ITStorageTest {
   private static Storage storage;
   private static RemoteGcsHelper gcsHelper;
 
+  private static final Logger log = Logger.getLogger(ITStorageTest.class.getName());
   private static final String bucket = RemoteGcsHelper.generateBucketName();
   private static final String CONTENT_TYPE = "text/plain";
   private static final byte[] BLOB_BYTE_CONTENT = {0xD, 0xE, 0xA, 0xD};
@@ -56,28 +58,19 @@ public class ITStorageTest {
 
   @BeforeClass
   public static void beforeClass() {
-    try {
-      gcsHelper = RemoteGcsHelper.create();
-      storage = StorageFactory.instance().get(gcsHelper.options());
-      storage.create(BucketInfo.of(bucket));
-    } catch (RemoteGcsHelper.GcsHelperException e) {
-      // ignore
-    }
+    gcsHelper = RemoteGcsHelper.create();
+    storage = StorageFactory.instance().get(gcsHelper.options());
+    storage.create(BucketInfo.of(bucket));
   }
 
   @AfterClass
   public static void afterClass()
       throws ExecutionException, TimeoutException, InterruptedException {
-    if (storage != null) {
-      if (!RemoteGcsHelper.deleteBucketRecursively(storage, bucket, 5, TimeUnit.SECONDS)) {
-        throw new RuntimeException("Bucket deletion timed out. Could not delete non-empty bucket");
+    if (!RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS)) {
+      if (log.isLoggable(Level.WARNING)) {
+        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", bucket);
       }
     }
-  }
-
-  @Before
-  public void beforeMethod() {
-    org.junit.Assume.assumeNotNull(storage);
   }
 
   @Test(timeout = 5000)
