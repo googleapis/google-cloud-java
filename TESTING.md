@@ -38,26 +38,32 @@ You can test against a remote datastore emulator as well.  To do this, set the `
   Datastore localDatastore = DatastoreFactory.instance().get(options);
   ```
 
-Note that the remote datastore must be running before your tests are run.  Also note that the `host` argument must start with "http://" or "https://".
+Note that the remote datastore must be running before your tests are run.  Also note that the `host` argument must start with "http://" or "https://" if you are testing with a remote machine.
 
 
 ### Testing interactions with Storage
 
 There currently isn't an emulator for Google Cloud Storage, so an alternative is to create a test project.  `RemoteGcsHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
 
-1. Create a test Google App Engine project.
+1. Create a test Google Cloud project.
 
-2. Create and download a JSON key by going to the Google Developer's Console and clicking API's & Auth > Credentials > Add Credentials > Service Credentials.  Choose "JSON", download the file, and note its location.
+2. Create and download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication]. 
 
-3. Set environment variables `GCLOUD_TESTS_PROJECT_ID` and `GCLOUD_TESTS_KEY_PATH` according to your test project's ID and the location of the newly-downloaded JSON key file.
+3. Set environment variables `GCLOUD_TESTS_PROJECT_ID` and `GCLOUD_TESTS_KEY` according to your test project's ID and the location of the newly-downloaded JSON key file.  On linux and mac, for example,
+  ```
+  export GCLOUD_TESTS_PROJECT_ID=<project id>
+  export GCLOUD_TESTS_KEY=/path/to/JSON/key.json
+  ```
 
 4. Create and and use a `RemoteGcsHelper` object.
-Here is an example that uses the RemoteGcsHelper to create a bucket and clear the bucket at the end of the test.
+Here is an example that uses the `RemoteGcsHelper` to create a bucket and clear the bucket at the end of the test.
 ```java
 RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
 Storage storage = StorageFactory.instance().get(gcsHelper.options());
 String bucket = RemoteGcsHelper.generateBucketName();
 storage.create(BucketInfo.of(bucket));
 // Do tests using Storage
-RemoteGcsHelper.deleteBucketRecursively(storage, bucket, 5, TimeUnit.SECONDS);
+RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
 ```
+
+[cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
