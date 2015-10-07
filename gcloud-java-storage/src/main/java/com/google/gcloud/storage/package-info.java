@@ -21,15 +21,15 @@
  * <pre>{@code
  * StorageOptions options = StorageOptions.builder().projectId("project").build();
  * Storage storage = StorageFactory.instance().get(options);
- * byte[] content = readContent();
- * BlobInfo blobInfo = storage.get("bucket", "blob_name");
- * if (blobInfo == null) {
- *   storage.create(BlobInfo.of("bucket", "blob_name"), content);
+ * Blob blob = new Blob(storage, "bucket", "blob_name");
+ * if (!blob.exists()) {
+ *   storage.create(blob.info(), "Hello, Cloud Storage!".getBytes(UTF_8));
  * } else {
- *   byte[] prevContent = storage.readAllBytes("bucket", "blob_name");
- *   content = mergeContent(prevContent, content);
- *   WritableByteChannel channel = storage.writer(blob);
- *   channel.write(ByteBuffer.wrap(content));
+ *   System.out.println("Updating content for " + blob.info().name());
+ *   byte[] prevContent = blob.content();
+ *   System.out.println(new String(prevContent, UTF_8));
+ *   WritableByteChannel channel = blob.writer();
+ *   channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
  *   channel.close();
  * }}</pre>
  *

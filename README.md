@@ -14,6 +14,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 This client supports the following Google Cloud Platform services:
 
 -  [Google Cloud Datastore] (#google-cloud-datastore)
+-  [Google Cloud Storage] (#google-cloud-storage)
 
 <!---
 -  [Google Cloud Storage] (https://cloud.google.com/storage/)
@@ -44,7 +45,7 @@ Example Applications
 Google Cloud Datastore
 ----------------------
 
-Google [Cloud Datastore][cloud-datastore] is a fully managed, schemaless database for
+[Google Cloud Datastore][cloud-datastore] is a fully managed, schemaless database for
 storing non-relational data. Cloud Datastore automatically scales with
 your users and supports ACID transactions, high availability of reads and
 writes, strong consistency for reads and ancestor queries, and eventual
@@ -83,6 +84,46 @@ if (entity == null) {
       .set("access_time", DateTime.now())
       .build();
   datastore.update(entity);
+}
+```
+
+Google Cloud Storage
+----------------------
+
+[Google Cloud Storage][cloud-storage] is a durable and highly available
+object storage service. Google Cloud Storage is almost infinitely scalable
+and guarantees consistency: when a write succeeds, the latest copy of the
+object will be returned to any GET, globally.
+
+See the [Google Cloud Storage docs][cloud-storage-activation] for more details on how to activate
+Cloud Storage for your project.
+
+See the ``gcloud-java`` API [storage documentation][storage-api] to learn how to interact
+with the Cloud Storage using this Client Library.
+
+```java
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.Storage;
+import com.google.gcloud.storage.StorageFactory;
+import com.google.gcloud.storage.StorageOptions;
+
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
+
+StorageOptions options = StorageOptions.builder().projectId(PROJECT_ID).build();
+Storage storage = StorageFactory.instance().get(options);
+Blob blob = new Blob(storage, "bucket", "blob_name");
+if (!blob.exists()) {
+  storage2.create(blob.info(), "Hello, Cloud Storage!".getBytes(UTF_8));
+} else {
+  System.out.println("Updating content for " + blob.info().name());
+  byte[] prevContent = blob.content();
+  System.out.println(new String(prevContent, UTF_8));
+  WritableByteChannel channel = blob.writer();
+  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
+  channel.close();
 }
 ```
 
@@ -130,3 +171,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage]: https://cloud.google.com/storage/
 [cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
+[cloud-storage-activation]: https://cloud.google.com/storage/docs/signup
+[storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/storage/package-summary.html
