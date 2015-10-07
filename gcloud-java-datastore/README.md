@@ -69,6 +69,13 @@ if (entity == null) {
 }
 ```
 
+Testing
+-------
+
+This library makes testing interactions with Cloud Datastore easier by using a local datastore emulator.
+
+See [TESTING] to read more about testing locally.
+
 Contributing
 ------------
 
@@ -98,6 +105,7 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
 [LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md
 [cloud-platform]: https://cloud.google.com/
 [cloud-datastore]: https://cloud.google.com/datastore/docs
 [cloud-datastore-docs]: https://cloud.google.com/datastore/docs

@@ -26,6 +26,12 @@ Add this to your pom.xml file
 </dependency>
 ```
 
+Testing
+-------
+
+This library makes testing interactions with Cloud Storage more convenient.
+
+See [TESTING] to read more about testing.
 
 Contributing
 ------------
@@ -56,6 +62,7 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
 [LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-storage]: https://cloud.google.com/storage/
