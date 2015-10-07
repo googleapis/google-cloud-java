@@ -57,7 +57,7 @@ public class RemoteGcsHelper {
   }
 
   /**
-   * Returns a {@StorageOptions} object to be used for testing.
+   * Returns a {@link StorageOptions} object to be used for testing.
    */
   public StorageOptions options() {
     return options;
