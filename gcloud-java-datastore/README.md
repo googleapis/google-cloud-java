@@ -69,6 +69,13 @@ if (entity == null) {
 }
 ```
 
+Testing
+-------
+
+This library has tools to help write tests for code that uses the Datastore.
+
+See [TESTING] to read more about testing.
+
 Contributing
 ------------
 
@@ -98,6 +105,7 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
 [LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-datastore
 [cloud-platform]: https://cloud.google.com/
 [cloud-datastore]: https://cloud.google.com/datastore/docs
 [cloud-datastore-docs]: https://cloud.google.com/datastore/docs
