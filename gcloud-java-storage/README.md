@@ -20,7 +20,7 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-storage</artifactId>
-  <version>0.0.7</version>
+  <version>0.0.9</version>
 </dependency>
 ```
 
@@ -64,6 +64,13 @@ if (!blob.exists()) {
 }
 ```
 
+Testing
+-------
+
+This library has tools to help make tests for code using Cloud Storage.
+
+See [TESTING] to read more about testing.
+
 Contributing
 ------------
 
@@ -93,6 +100,7 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
 [LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-storage
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-storage]: https://cloud.google.com/storage/
