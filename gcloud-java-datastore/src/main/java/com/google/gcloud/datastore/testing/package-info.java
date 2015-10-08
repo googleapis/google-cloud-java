@@ -18,6 +18,7 @@
  * A testing helper for Google Cloud Datastore.
  *
  * <p>A simple usage example:
+ * <p>Before the test:
  * <pre> {@code
  * LocalGcdHelper gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT_NUMBER);
  * DatastoreOptions options = DatastoreOptions.builder()
@@ -25,13 +26,14 @@
  *     .host("localhost:8080")
  *     .build();
  * Datastore localDatastore = DatastoreFactory.instance().get(options);
+ * } </pre>
  * 
- * // Do tests
- * 
+ * <p>After the test:
+ * <pre> {@code
  * gcdHelper.stop();
  * } </pre>
  *
- * @see <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md">
+ * @see <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-datastore">
  *     gcloud-java tools for testing</a>
  */
 package com.google.gcloud.datastore.testing;

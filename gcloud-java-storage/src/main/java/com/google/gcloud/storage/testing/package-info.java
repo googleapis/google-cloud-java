@@ -17,19 +17,21 @@
 /**
  * A testing helper for Google Cloud Storage.
  *
- * <p>A simple usage example, after setting the required environment variables (see the link below):
+ * <p>A simple usage example:
+ * <p>Before the test:
  * <pre> {@code
- * RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
+ * RemoteGcsHelper gcsHelper = RemoteGcsHelper.create(PROJECT_ID, "/path/to/JSON/key.json");
  * Storage storage = StorageFactory.instance().get(gcsHelper.options());
  * String bucket = RemoteGcsHelper.generateBucketName();
  * storage.create(BucketInfo.of(bucket));
- * 
- * // Do tests
- * 
+ * } </pre>
+ *
+ * <p>After the test:
+ * <pre> {@code
  * RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
  * } </pre>
  *
- * @see <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md">
+ * @see <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-storage">
  *     gcloud-java tools for testing</a>
  */
 package com.google.gcloud.storage.testing;
