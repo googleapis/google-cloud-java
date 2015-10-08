@@ -40,7 +40,6 @@ You can test against a remote datastore emulator as well.  To do this, set the `
 
 Note that the remote datastore must be running before your tests are run.
 
-
 ### Testing code that uses Storage
 
 Currently, there isn't an emulator for Google Cloud Storage, so an alternative is to create a test project.  `RemoteGcsHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
@@ -49,15 +48,22 @@ Currently, there isn't an emulator for Google Cloud Storage, so an alternative i
 
 2. Download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication]. 
 
-3. Create and use a `RemoteGcsHelper` object using your project ID and JSON key.
-Here is an example that uses the `RemoteGcsHelper` to create a bucket and clear the bucket at the end of the test.
+3. Create a `RemoteGcsHelper` object using your project ID and JSON key.
+Here is an example that uses the `RemoteGcsHelper` to create a bucket.
   ```java
   RemoteGcsHelper gcsHelper = RemoteGcsHelper.create(PROJECT_ID, "/path/to/my/JSON/key.json");
   Storage storage = StorageFactory.instance().get(gcsHelper.options());
   String bucket = RemoteGcsHelper.generateBucketName();
   storage.create(BucketInfo.of(bucket));
-  // Do tests using Storage
+  ```
+
+4. Run your tests.
+
+5. Clean up the test project by using `forceDelete` to clear any buckets used.
+Here is an example that clears the bucket created in Step 3 with a timeout of 5 seconds.
+  ```java
   RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
   ```
+
 
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
