@@ -32,6 +32,7 @@ import com.google.api.services.datastore.client.Datastore;
 import com.google.api.services.datastore.client.DatastoreException;
 import com.google.api.services.datastore.client.DatastoreFactory;
 import com.google.api.services.datastore.client.DatastoreOptions.Builder;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
@@ -78,12 +79,9 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   private static String normalizeHost(String host) {
     host = host.toLowerCase();
     if (includesScheme(host)) {
-      if (host.startsWith("https://") && isLocalHost(host)) {
-        throw new IllegalArgumentException(
-            "\"https\" is not supported for localhost.  Use \"http\" instead.");
-      } else {
-        return host;
-      }
+      Preconditions.checkArgument(!(host.startsWith("https://") && isLocalHost(host)), 
+          "\"https\" is not supported for localhost.  Use \"http\" instead.");
+      return host;
     }
     return "http://" + host;
   }
