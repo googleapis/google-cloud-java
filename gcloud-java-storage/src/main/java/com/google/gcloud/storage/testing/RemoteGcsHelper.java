@@ -19,6 +19,7 @@ package com.google.gcloud.storage.testing;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.RetryParams;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.StorageOptions;
@@ -96,50 +97,37 @@ public class RemoteGcsHelper {
   }
 
   /**
-   * Creates a {@code RemoteGcsHelper} object.
+   * Creates a {@code RemoteGcsHelper} object for the given project id and JSON key path.
    *
+   * @param projectId id of the project to be used for running the tests
+   * @param keyPath path to the JSON key to be used for running the tests
    * @param options creation options
    * @return A {@code RemoteGcsHelper} object for the provided options.
-   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if environment variables
-   * {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY} are not set or if the file
-   * pointed by {@code GCLOUD_TESTS_KEY} does not exist
+   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if the file pointed by 
+   * {@code keyPath} does not exist
    */
-  public static RemoteGcsHelper create(Option... options) throws GcsHelperException {
+  public static RemoteGcsHelper create(String projectId, String keyPath, Option... options)
+      throws GcsHelperException {
     boolean keyFromClassPath = false;
     Map<Class<? extends Option>, Option> optionsMap = Option.asImmutableMap(options);
     if (optionsMap.containsKey(KeyFromClasspath.class)) {
       keyFromClassPath =
           ((KeyFromClasspath) optionsMap.get(KeyFromClasspath.class)).keyFromClasspath();
     }
-    String projectId = System.getenv(PROJECT_ID_ENV_VAR);
-    String stringKeyPath = System.getenv(PRIVATE_KEY_ENV_VAR);
-    if (projectId == null) {
-      String message = "Environment variable " + PROJECT_ID_ENV_VAR + " not set";
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, message);
-      }
-      throw new GcsHelperException(message);
-    }
-    if (stringKeyPath == null) {
-      String message = "Environment variable " + PRIVATE_KEY_ENV_VAR + " not set";
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, message);
-      }
-      throw new GcsHelperException(message);
-    }
     try {
       InputStream keyFileStream;
       if (keyFromClassPath) {
-        keyFileStream = RemoteGcsHelper.class.getResourceAsStream(stringKeyPath);
+        keyFileStream = RemoteGcsHelper.class.getResourceAsStream(keyPath);
         if (keyFileStream == null) {
-          throw new FileNotFoundException(stringKeyPath + " not found in classpath");
+          throw new FileNotFoundException(keyPath + " not found in classpath");
         }
       } else {
-        keyFileStream = new FileInputStream(stringKeyPath);
+        keyFileStream = new FileInputStream(keyPath);
       }
       StorageOptions storageOptions = StorageOptions.builder()
           .authCredentials(AuthCredentials.createForJson(keyFileStream))
           .projectId(projectId)
+          .retryParams(RetryParams.getDefaultInstance())
           .build();
       return new RemoteGcsHelper(storageOptions);
     } catch (FileNotFoundException ex) {
@@ -153,6 +141,36 @@ public class RemoteGcsHelper {
       }
       throw GcsHelperException.translate(ex);
     }
+  }
+
+  /**
+   * Creates a {@code RemoteGcsHelper} object. Project id and path to JSON key are read from two
+   * environment variables: {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY}.
+   *
+   * @param options creation options
+   * @return A {@code RemoteGcsHelper} object for the provided options.
+   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if environment variables
+   * {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY} are not set or if the file
+   * pointed by {@code GCLOUD_TESTS_KEY} does not exist
+   */
+  public static RemoteGcsHelper create(Option... options) throws GcsHelperException {
+    String projectId = System.getenv(PROJECT_ID_ENV_VAR);
+    String keyPath = System.getenv(PRIVATE_KEY_ENV_VAR);
+    if (projectId == null) {
+      String message = "Environment variable " + PROJECT_ID_ENV_VAR + " not set";
+      if (log.isLoggable(Level.WARNING)) {
+        log.log(Level.WARNING, message);
+      }
+      throw new GcsHelperException(message);
+    }
+    if (keyPath == null) {
+      String message = "Environment variable " + PRIVATE_KEY_ENV_VAR + " not set";
+      if (log.isLoggable(Level.WARNING)) {
+        log.log(Level.WARNING, message);
+      }
+      throw new GcsHelperException(message);
+    }
+    return create(projectId, keyPath, options);
   }
 
   private static class DeleteBucketTask implements Callable<Boolean> {

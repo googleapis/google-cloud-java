@@ -67,7 +67,7 @@ public class ITStorageTest {
   @AfterClass
   public static void afterClass()
       throws ExecutionException, TimeoutException, InterruptedException {
-    if (!RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS)) {
+    if (storage != null && !RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS)) {
       if (log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", bucket);
       }
