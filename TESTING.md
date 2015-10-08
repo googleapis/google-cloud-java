@@ -1,8 +1,8 @@
 ## gcloud-java tools for testing
 
-gcloud-java provides tools to make testing your application easier.
+This library provides tools to help write tests for code that uses gcloud-java services.
 
-### Testing interactions with Datastore
+### Testing code that uses Datastore
 
 #### On your machine
 
@@ -16,7 +16,7 @@ You can test against a temporary local datastore by following these steps:
   ```java
   DatastoreOptions options = DatastoreOptions.builder()
       .projectId(PROJECT_ID)
-      .host("localhost:8080")
+      .host("http://localhost:8080")
       .build();
   Datastore localDatastore = DatastoreFactory.instance().get(options);
   ```
@@ -33,37 +33,31 @@ You can test against a remote datastore emulator as well.  To do this, set the `
   ```java
   DatastoreOptions options = DatastoreOptions.builder()
       .projectId(PROJECT_ID)
-      .host("http://<hostname of machine>")
+      .host("http://<hostname of machine>:<port>")
       .build();
   Datastore localDatastore = DatastoreFactory.instance().get(options);
   ```
 
-Note that the remote datastore must be running before your tests are run.  Also note that the `host` argument must start with "http://" or "https://" if you are testing with a remote machine.
+Note that the remote datastore must be running before your tests are run.
 
 
-### Testing interactions with Storage
+### Testing code that uses Storage
 
-There currently isn't an emulator for Google Cloud Storage, so an alternative is to create a test project.  `RemoteGcsHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
+Currently, there isn't an emulator for Google Cloud Storage, so an alternative is to create a test project.  `RemoteGcsHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
 
 1. Create a test Google Cloud project.
 
-2. Create and download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication]. 
+2. Download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication]. 
 
-3. Set environment variables `GCLOUD_TESTS_PROJECT_ID` and `GCLOUD_TESTS_KEY` according to your test project's ID and the location of the newly-downloaded JSON key file.  On linux and mac, for example,
-  ```
-  export GCLOUD_TESTS_PROJECT_ID=<project id>
-  export GCLOUD_TESTS_KEY=/path/to/JSON/key.json
-  ```
-
-4. Create and and use a `RemoteGcsHelper` object.
+3. Create and use a `RemoteGcsHelper` object using your project ID and JSON key.
 Here is an example that uses the `RemoteGcsHelper` to create a bucket and clear the bucket at the end of the test.
-```java
-RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
-Storage storage = StorageFactory.instance().get(gcsHelper.options());
-String bucket = RemoteGcsHelper.generateBucketName();
-storage.create(BucketInfo.of(bucket));
-// Do tests using Storage
-RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
-```
+  ```java
+  RemoteGcsHelper gcsHelper = RemoteGcsHelper.create(PROJECT_ID, "/path/to/my/JSON/key.json");
+  Storage storage = StorageFactory.instance().get(gcsHelper.options());
+  String bucket = RemoteGcsHelper.generateBucketName();
+  storage.create(BucketInfo.of(bucket));
+  // Do tests using Storage
+  RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
+  ```
 
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
