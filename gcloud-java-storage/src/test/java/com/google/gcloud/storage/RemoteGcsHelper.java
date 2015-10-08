@@ -18,6 +18,7 @@ package com.google.gcloud.storage;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.RetryParams;
 import com.google.gcloud.storage.RemoteGcsHelper.Option.KeyFromClasspath;
 
 import java.io.FileInputStream;
@@ -122,6 +123,7 @@ public class RemoteGcsHelper {
       StorageOptions storageOptions = StorageOptions.builder()
           .authCredentials(AuthCredentials.createForJson(keyFileStream))
           .projectId(projectId)
+          .retryParams(RetryParams.getDefaultInstance())
           .build();
       return new RemoteGcsHelper(storageOptions);
     } catch (FileNotFoundException ex) {
