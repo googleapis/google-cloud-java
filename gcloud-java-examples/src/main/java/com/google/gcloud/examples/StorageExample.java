@@ -22,9 +22,11 @@ import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.BatchRequest;
 import com.google.gcloud.storage.BatchResponse;
+import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.BlobReadChannel;
 import com.google.gcloud.storage.BlobWriteChannel;
+import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.BucketInfo;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.ComposeRequest;
@@ -86,21 +88,21 @@ public class StorageExample {
 
     abstract void run(Storage storage, T request) throws Exception;
 
-    abstract T parse(String... args) throws Exception;
+    abstract T parse(Storage storage, String... args) throws Exception;
 
     protected String params() {
       return "";
     }
   }
 
-  private static abstract class BlobAction extends StorageAction<BlobInfo> {
+  private static abstract class BlobAction extends StorageAction<Blob> {
 
     @Override
-    BlobInfo parse(String... args) {
+    Blob parse(Storage storage, String... args) {
       if (args.length != 2) {
         throw new IllegalArgumentException();
       }
-      return BlobInfo.of(args[0], args[1]);
+      return new Blob(storage, args[0], args[1]);
     }
 
     @Override
@@ -109,18 +111,18 @@ public class StorageExample {
     }
   }
 
-  private static abstract class BlobsAction extends StorageAction<BlobInfo[]> {
+  private static abstract class BlobsAction extends StorageAction<Blob[]> {
 
     @Override
-    BlobInfo[] parse(String... args) {
+    Blob[] parse(Storage storage, String... args) {
       if (args.length < 2) {
         throw new IllegalArgumentException();
       }
-      BlobInfo[] blobInfos = new BlobInfo[args.length - 1];
+      Blob[] blobs = new Blob[args.length - 1];
       for (int i = 1; i < args.length; i++) {
-        blobInfos[i - 1] = BlobInfo.of(args[0], args[i]);
+        blobs[i - 1] = new Blob(storage, args[0], args[i]);
       }
-      return blobInfos;
+      return blobs;
     }
 
     @Override
@@ -138,22 +140,21 @@ public class StorageExample {
    */
   private static class InfoAction extends BlobsAction {
     @Override
-    public void run(Storage storage, BlobInfo... blobInfos) {
-      if (blobInfos.length == 1) {
-        if (blobInfos[0].name().isEmpty()) {
+    public void run(Storage storage, Blob... blobs) {
+      if (blobs.length == 1) {
+        if (blobs[0].info().name().isEmpty()) {
           // get Bucket
-          BucketInfo bucketInfo = storage.get(blobInfos[0].bucket());
-          System.out.println("Bucket info: " + bucketInfo);
+          Bucket bucket = new Bucket(storage, blobs[0].info().bucket());
+          System.out.println("Bucket info: " + bucket.reload().info());
         } else {
           // get Blob
-          BlobInfo blobInfo = storage.get(blobInfos[0].bucket(), blobInfos[0].name());
-          System.out.println("Blob info: " + blobInfo);
+          System.out.println("Blob info: " + blobs[0].reload().info());
         }
       } else {
         // use batch to get multiple blobs.
         BatchRequest.Builder batch = BatchRequest.builder();
-        for (BlobInfo blobInfo : blobInfos) {
-          batch.get(blobInfo.bucket(), blobInfo.name());
+        for (Blob blob : blobs) {
+          batch.get(blob.info().bucket(), blob.info().name());
         }
         BatchResponse response = storage.apply(batch.build());
         for (BatchResponse.Result<BlobInfo> result : response.gets()) {
@@ -163,11 +164,11 @@ public class StorageExample {
     }
 
     @Override
-    BlobInfo[] parse(String... args) {
+    Blob[] parse(Storage storage, String... args) {
       if (args.length < 2) {
-        return new BlobInfo[] {BlobInfo.of(args[0], "")};
+        return new Blob[] {new Blob(storage, args[0], "")};
       }
-      return super.parse(args);
+      return super.parse(storage, args);
     }
 
     @Override
@@ -185,24 +186,24 @@ public class StorageExample {
    */
   private static class DeleteAction extends BlobsAction {
     @Override
-    public void run(Storage storage, BlobInfo... blobInfos) {
-      if (blobInfos.length == 1) {
-        boolean wasDeleted = storage.delete(blobInfos[0].bucket(), blobInfos[0].name());
+    public void run(Storage storage, Blob... blobs) {
+      if (blobs.length == 1) {
+        boolean wasDeleted = blobs[0].delete();
         if (wasDeleted) {
-          System.out.println("Blob " + blobInfos[0] + " was deleted");
+          System.out.println("Blob " + blobs[0].info() + " was deleted");
         }
       } else {
         // use batch operation
         BatchRequest.Builder batch = BatchRequest.builder();
-        for (BlobInfo blobInfo : blobInfos) {
-          batch.delete(blobInfo.bucket(), blobInfo.name());
+        for (Blob blob : blobs) {
+          batch.delete(blob.info().bucket(), blob.info().name());
         }
         int index = 0;
         BatchResponse response = storage.apply(batch.build());
         for (BatchResponse.Result<Boolean> result : response.deletes()) {
           if (result.get()) {
             // request order is maintained
-            System.out.println("Blob " + blobInfos[index] + " was deleted");
+            System.out.println("Blob " + blobs[index].info() + " was deleted");
           }
           index++;
         }
@@ -218,7 +219,7 @@ public class StorageExample {
   private static class ListAction extends StorageAction<String> {
 
     @Override
-    String parse(String... args) {
+    String parse(Storage storage, String... args) {
       if (args.length == 0) {
         return null;
       }
@@ -229,16 +230,17 @@ public class StorageExample {
     }
 
     @Override
-    public void run(Storage storage, String bucket) {
-      if (bucket == null) {
+    public void run(Storage storage, String bucketName) {
+      if (bucketName == null) {
         // list buckets
         for (BucketInfo b : storage.list()) {
           System.out.println(b);
         }
       } else {
         // list a bucket's blobs
-        for (BlobInfo b : storage.list(bucket)) {
-          System.out.println(b);
+        Bucket bucket = new Bucket(storage, bucketName);
+        for (Blob b : bucket.list()) {
+          System.out.println(b.info());
         }
       }
     }
@@ -254,17 +256,17 @@ public class StorageExample {
    *
    * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/insert">Objects: insert</a>
    */
-  private static class UploadAction extends StorageAction<Tuple<Path, BlobInfo>> {
+  private static class UploadAction extends StorageAction<Tuple<Path, Blob>> {
     @Override
-    public void run(Storage storage, Tuple<Path, BlobInfo> tuple) throws Exception {
+    public void run(Storage storage, Tuple<Path, Blob> tuple) throws Exception {
       run(storage, tuple.x(), tuple.y());
     }
 
-    private void run(Storage storage, Path uploadFrom, BlobInfo blobInfo) throws IOException {
+    private void run(Storage storage, Path uploadFrom, Blob blob) throws IOException {
       if (Files.size(uploadFrom) > 1_000_000) {
         // When content is not available or large (1MB or more) it is recommended
         // to write it in chunks via the blob's channel writer.
-        try (BlobWriteChannel writer = storage.writer(blobInfo)) {
+        try (BlobWriteChannel writer = blob.writer()) {
           byte[] buffer = new byte[1024];
           try (InputStream input = Files.newInputStream(uploadFrom)) {
             int limit;
@@ -280,20 +282,21 @@ public class StorageExample {
       } else {
         byte[] bytes = Files.readAllBytes(uploadFrom);
         // create the blob in one request.
-        storage.create(blobInfo, bytes);
+        storage.create(blob.info(), bytes);
       }
       System.out.println("Blob was created");
     }
 
     @Override
-    Tuple<Path, BlobInfo> parse(String... args) throws IOException {
+    Tuple<Path, Blob> parse(Storage storage, String... args) throws IOException {
       if (args.length < 2 || args.length > 3) {
         throw new IllegalArgumentException();
       }
       Path path = Paths.get(args[0]);
       String contentType = Files.probeContentType(path);
       String blob = args.length < 3 ? path.getFileName().toString() : args[2];
-      return Tuple.of(path, BlobInfo.builder(args[1], blob).contentType(contentType).build());
+      BlobInfo info = BlobInfo.builder(args[1], blob).contentType(contentType).build();
+      return Tuple.of(path, new Blob(storage, info));
     }
 
     @Override
@@ -309,17 +312,16 @@ public class StorageExample {
    *
    * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/get">Objects: get</a>
    */
-  private static class DownloadAction extends StorageAction<Tuple<BlobInfo, Path>> {
+  private static class DownloadAction extends StorageAction<Tuple<Blob, Path>> {
 
     @Override
-    public void run(Storage storage, Tuple<BlobInfo, Path> tuple) throws IOException {
-      run(storage, tuple.x().bucket(), tuple.x().name(), tuple.y());
+    public void run(Storage storage, Tuple<Blob, Path> tuple) throws IOException {
+      run(storage, tuple.x(), tuple.y());
     }
 
-    private void run(Storage storage, String bucket, String blobName, Path downloadTo)
-        throws IOException {
-      BlobInfo blobInfo = storage.get(bucket, blobName);
-      if (blobInfo == null) {
+    private void run(Storage storage, Blob blob, Path downloadTo) throws IOException {
+      blob = blob.reload();
+      if (!blob.exists()) {
         System.out.println("No such object");
         return;
       }
@@ -327,13 +329,13 @@ public class StorageExample {
       if (downloadTo != null) {
         writeTo = new PrintStream(new FileOutputStream(downloadTo.toFile()));
       }
-      if (blobInfo.size() < 1_000_000) {
+      if (blob.info().size() < 1_000_000) {
         // Blob is small read all its content in one request
-        byte[] content = storage.readAllBytes(blobInfo.bucket(), blobInfo.name());
+        byte[] content = blob.content();
         writeTo.write(content);
       } else {
         // When Blob size is big or unknown use the blob's channel reader.
-        try (BlobReadChannel reader = storage.reader(blobInfo.bucket(), blobInfo.name())) {
+        try (BlobReadChannel reader = blob.reader()) {
           WritableByteChannel channel = Channels.newChannel(writeTo);
           ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
           while (reader.read(bytes) > 0) {
@@ -351,7 +353,7 @@ public class StorageExample {
     }
 
     @Override
-    Tuple<BlobInfo, Path> parse(String... args) {
+    Tuple<Blob, Path> parse(Storage storage, String... args) {
       if (args.length < 2 || args.length > 3) {
         throw new IllegalArgumentException();
       }
@@ -364,7 +366,7 @@ public class StorageExample {
       } else {
         path = null;
       }
-      return Tuple.of(BlobInfo.of(args[0], args[1]), path);
+      return Tuple.of(new Blob(storage, args[0], args[1]), path);
     }
 
     @Override
@@ -386,7 +388,7 @@ public class StorageExample {
     }
 
     @Override
-    CopyRequest parse(String... args) {
+    CopyRequest parse(Storage storage, String... args) {
       if (args.length != 4) {
         throw new IllegalArgumentException();
       }
@@ -412,7 +414,7 @@ public class StorageExample {
     }
 
     @Override
-    ComposeRequest parse(String... args) {
+    ComposeRequest parse(Storage storage, String... args) {
       if (args.length < 3) {
         throw new IllegalArgumentException();
       }
@@ -435,31 +437,31 @@ public class StorageExample {
    *
    * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/update">Objects: update</a>
    */
-  private static class UpdateMetadataAction extends StorageAction<Tuple<BlobInfo, Map<String, String>>> {
+  private static class UpdateMetadataAction extends
+      StorageAction<Tuple<Blob, Map<String, String>>> {
 
     @Override
-    public void run(Storage storage, Tuple<BlobInfo, Map<String, String>> tuple)
+    public void run(Storage storage, Tuple<Blob, Map<String, String>> tuple)
         throws IOException {
-      run(storage, tuple.x().bucket(), tuple.x().name(), tuple.y());
+      run(storage, tuple.x(), tuple.y());
     }
 
-    private void run(Storage storage, String bucket, String blobName,
-        Map<String, String> metadata) {
-      BlobInfo blobInfo = storage.get(bucket, blobName);
-      if (blobInfo == null) {
+    private void run(Storage storage, Blob blob, Map<String, String> metadata) {
+      blob = blob.reload();
+      if (!blob.exists()) {
         System.out.println("No such object");
         return;
       }
-      blobInfo = storage.update(blobInfo.toBuilder().metadata(metadata).build());
-      System.out.println("Updated " + blobInfo);
+      Blob updateBlob = blob.update(blob.info().toBuilder().metadata(metadata).build());
+      System.out.println("Updated " + updateBlob.info());
     }
 
     @Override
-    Tuple<BlobInfo, Map<String, String>> parse(String... args) {
+    Tuple<Blob, Map<String, String>> parse(Storage storage, String... args) {
       if (args.length < 2) {
         throw new IllegalArgumentException();
       }
-      BlobInfo blobInfo = BlobInfo.of(args[0], args[1]);
+      Blob blob = new Blob(storage, args[0], args[1]);
       Map<String, String> metadata = new HashMap<>();
       for (int i = 2; i < args.length; i++) {
         int idx = args[i].indexOf('=');
@@ -469,7 +471,7 @@ public class StorageExample {
           metadata.put(args[i].substring(0, idx), args[i].substring(idx + 1));
         }
       }
-      return Tuple.of(blobInfo, metadata);
+      return Tuple.of(blob, metadata);
     }
 
     @Override
@@ -485,27 +487,27 @@ public class StorageExample {
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed URLs</a>
    */
   private static class SignUrlAction extends
-      StorageAction<Tuple<ServiceAccountAuthCredentials, BlobInfo>> {
+      StorageAction<Tuple<ServiceAccountAuthCredentials, Blob>> {
 
-    private static final char[] PASSWORD =  "notasecret".toCharArray();
+    private static final char[] PASSWORD = "notasecret".toCharArray();
 
     @Override
-    public void run(Storage storage, Tuple<ServiceAccountAuthCredentials, BlobInfo> tuple)
+    public void run(Storage storage, Tuple<ServiceAccountAuthCredentials, Blob> tuple)
         throws Exception {
       run(storage, tuple.x(), tuple.y());
     }
 
-    private void run(Storage storage, ServiceAccountAuthCredentials cred, BlobInfo blobInfo)
+    private void run(Storage storage, ServiceAccountAuthCredentials cred, Blob blob)
         throws IOException {
       Calendar cal = Calendar.getInstance();
       cal.add(Calendar.DATE, 1);
       long expiration = cal.getTimeInMillis() / 1000;
       System.out.println("Signed URL: " +
-          storage.signUrl(blobInfo, expiration, SignUrlOption.serviceAccount(cred)));
+          blob.signUrl(expiration, SignUrlOption.serviceAccount(cred)));
     }
 
     @Override
-    Tuple<ServiceAccountAuthCredentials, BlobInfo> parse(String... args)
+    Tuple<ServiceAccountAuthCredentials, Blob> parse(Storage storage, String... args)
         throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException,
         UnrecoverableKeyException {
       if (args.length != 4) {
@@ -515,7 +517,7 @@ public class StorageExample {
       keystore.load(Files.newInputStream(Paths.get(args[0])), PASSWORD);
       PrivateKey privateKey = (PrivateKey) keystore.getKey("privatekey", PASSWORD);
       ServiceAccountAuthCredentials cred = AuthCredentials.createFor(args[1], privateKey);
-      return Tuple.of(cred, BlobInfo.of(args[2], args[3]));
+      return Tuple.of(cred, new Blob(storage, args[2], args[3]));
     }
 
     @Override
@@ -576,7 +578,7 @@ public class StorageExample {
     Storage storage = StorageFactory.instance().get(optionsBuilder.build());
     Object request;
     try {
-      request = action.parse(args);
+      request = action.parse(storage, args);
     } catch (IllegalArgumentException ex) {
       System.out.println("Invalid input for action '" + args[1] + "'");
       System.out.println("Expected: " + action.params());
