@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.datastore;
+package com.google.gcloud.datastore.testing;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 

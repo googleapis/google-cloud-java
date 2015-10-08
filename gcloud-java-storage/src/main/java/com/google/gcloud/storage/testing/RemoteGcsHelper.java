@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud.storage.testing;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.RetryParams;
-import com.google.gcloud.storage.RemoteGcsHelper.Option.KeyFromClasspath;
+import com.google.gcloud.storage.Storage;
+import com.google.gcloud.storage.StorageException;
+import com.google.gcloud.storage.StorageOptions;
+import com.google.gcloud.storage.testing.RemoteGcsHelper.Option.KeyFromClasspath;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -54,7 +58,7 @@ public class RemoteGcsHelper {
   }
 
   /**
-   * Returns a {@StorageOptions} object to be used for testing.
+   * Returns a {@link StorageOptions} object to be used for testing.
    */
   public StorageOptions options() {
     return options;
@@ -99,7 +103,7 @@ public class RemoteGcsHelper {
    * @param keyPath path to the JSON key to be used for running the tests
    * @param options creation options
    * @return A {@code RemoteGcsHelper} object for the provided options.
-   * @throws com.google.gcloud.storage.RemoteGcsHelper.GcsHelperException if the file pointed by 
+   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if the file pointed by 
    * {@code keyPath} does not exist
    */
   public static RemoteGcsHelper create(String projectId, String keyPath, Option... options)
@@ -145,7 +149,7 @@ public class RemoteGcsHelper {
    *
    * @param options creation options
    * @return A {@code RemoteGcsHelper} object for the provided options.
-   * @throws com.google.gcloud.storage.RemoteGcsHelper.GcsHelperException if environment variables
+   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if environment variables
    * {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY} are not set or if the file
    * pointed by {@code GCLOUD_TESTS_KEY} does not exist
    */

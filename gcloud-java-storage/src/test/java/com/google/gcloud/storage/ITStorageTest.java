@@ -24,6 +24,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
