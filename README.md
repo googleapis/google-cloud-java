@@ -130,7 +130,7 @@ if (!blob.exists()) {
 Testing
 -------
 
-This library provides tools to help write tests for code that use gcloud-java services.
+This library provides tools to help write tests for code that uses gcloud-java services.
 
 See [TESTING] to read more about using our testing helpers.
 
