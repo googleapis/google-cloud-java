@@ -50,7 +50,6 @@ public class RemoteGcsHelper {
   private static final String BUCKET_NAME_PREFIX = "gcloud-test-bucket-temp-";
   private static final String PROJECT_ID_ENV_VAR = "GCLOUD_TESTS_PROJECT_ID";
   private static final String PRIVATE_KEY_ENV_VAR = "GCLOUD_TESTS_KEY";
-
   private final StorageOptions options;
 
   private RemoteGcsHelper(StorageOptions options) {
@@ -127,7 +126,13 @@ public class RemoteGcsHelper {
       StorageOptions storageOptions = StorageOptions.builder()
           .authCredentials(AuthCredentials.createForJson(keyFileStream))
           .projectId(projectId)
-          .retryParams(RetryParams.getDefaultInstance())
+          .retryParams(RetryParams.builder()
+              .retryMaxAttempts(10)
+              .retryMinAttempts(6)
+              .maxRetryDelayMillis(30000)
+              .totalRetryPeriodMillis(120000)
+              .initialRetryDelayMillis(250)
+              .build())
           .build();
       return new RemoteGcsHelper(storageOptions);
     } catch (FileNotFoundException ex) {
