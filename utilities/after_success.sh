@@ -30,7 +30,7 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -
 
         cd ..
         utilities/update_docs_version.sh # Update version in READMEs
-        mvn deploy --settings target/travis/settings.xml -P sign-deploy
+        mvn deploy -DskipTests=true --settings target/travis/settings.xml -P sign-deploy
     else
         mvn deploy -DskipTests=true -Dgpg.skip=true --settings target/travis/settings.xml
     fi
