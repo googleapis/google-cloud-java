@@ -24,27 +24,29 @@ To run examples from your command line:
 
 1. Login using gcloud SDK (`gcloud auth login` in command line)
 
-2. Compile using Maven (`mvn compile` in command line from your base project directory)
+2. Set your current project using `gcloud config set project PROJECT_ID`
 
-3. Run an example using Maven from command line.
+3. Compile using Maven (`mvn compile` in command line from your base project directory)
+
+4. Run an example using Maven from command line.
 
   Here's an example run of `DatastoreExample`.
   
   Note that you have to enable the Google Cloud Datastore API on the [Google Developers Console][developers-console] before running the following commands.
   ```
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DatastoreExample" -Dexec.args="[<project_id>] [user] add my\ comment"
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DatastoreExample" -Dexec.args="[<project_id>] [user] display"
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DatastoreExample" -Dexec.args="[<project_id>] [user] delete"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DatastoreExample" -Dexec.args="my_name add my\ comment"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DatastoreExample" -Dexec.args="my_name display"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DatastoreExample" -Dexec.args="my_name delete"
   ```
 
   Here's an example run of `StorageExample`.
 
   Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket.  Also ensure that you have a test file (`test.txt` is chosen here) to upload to Cloud Storage stored locally on your machine.
   ```
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="<project_id> upload /path/to/test.txt <bucket_name>"
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="<project_id> list <bucket_name>"
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="<project_id> download <bucket_name> test.txt"
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="<project_id> delete <bucket_name> test.txt"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="upload /path/to/test.txt <bucket_name>"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="list <bucket_name>"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="download <bucket_name> test.txt"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="delete <bucket_name> test.txt"
 ```
 
 Contributing
