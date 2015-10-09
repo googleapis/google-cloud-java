@@ -577,6 +577,68 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
   }
 
+  @Override
+  public List<BlobInfo> get(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos) {
+    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toGet =
+        Lists.newArrayListWithCapacity(blobInfos.length + 2);
+    toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo1.toPb(), optionMap()));
+    toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo2.toPb(), optionMap()));
+    for (BlobInfo blobInfo : blobInfos) {
+      toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo.toPb(), optionMap()));
+    }
+    StorageRpc.BatchResponse response =
+        storageRpc.batch(new StorageRpc.BatchRequest(null, null, toGet));
+    return transformBatchResult(toGet, response.gets, BlobInfo.FROM_PB_FUNCTION, (BlobInfo) null);
+  }
+
+  @Override
+  public List<BlobInfo> update(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos) {
+    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toUpdate =
+        Lists.newArrayListWithCapacity(blobInfos.length + 2);
+    toUpdate.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo1.toPb(), optionMap()));
+    toUpdate.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo2.toPb(), optionMap()));
+    for (BlobInfo blobInfo : blobInfos) {
+      toUpdate
+          .add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo.toPb(), optionMap()));
+    }
+    StorageRpc.BatchResponse response =
+        storageRpc.batch(new StorageRpc.BatchRequest(null, toUpdate, null));
+    return transformBatchResult(toUpdate, response.updates, BlobInfo.FROM_PB_FUNCTION,
+        (BlobInfo) null);
+  }
+
+  @Override
+  public List<Boolean> delete(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos) {
+    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toDelete =
+        Lists.newArrayListWithCapacity(blobInfos.length + 2);
+    toDelete.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo1.toPb(), optionMap()));
+    toDelete.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo2.toPb(), optionMap()));
+    for (BlobInfo blobInfo : blobInfos) {
+      toDelete
+          .add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo.toPb(), optionMap()));
+    }
+    StorageRpc.BatchResponse response =
+        storageRpc.batch(new StorageRpc.BatchRequest(toDelete, null, null));
+    return transformBatchResult(toDelete, response.deletes, Functions.<Boolean>identity(),
+        Boolean.FALSE);
+  }
+
+  private <I, O extends Serializable> List<O> transformBatchResult(
+      Iterable<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request,
+      Map<StorageObject, Tuple<I, StorageException>> results, Function<I, O> transform,
+      O errorValue) {
+    List<O> response = Lists.newArrayListWithCapacity(results.size());
+    for (Tuple<StorageObject, ?> tuple : request) {
+      Tuple<I, StorageException> result = results.get(tuple.x());
+      if (result.x() != null) {
+        response.add(transform.apply(result.x()));
+      } else {
+        response.add(errorValue);
+      }
+    }
+    return response;
+  }
+
   private Map<StorageRpc.Option, ?> optionMap(Long generation, Long metaGeneration,
       Iterable<? extends Option> options) {
     return optionMap(generation, metaGeneration, options, false);

@@ -638,4 +638,37 @@ public interface Storage extends Service<StorageOptions> {
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
    */
   URL signUrl(BlobInfo blobInfo, long expirationTimeInSeconds, SignUrlOption... options);
+
+  /**
+   * Gets the requested blobs. A batch request is used to perform this call.
+   *
+   * @param blobInfo1 first blob to get
+   * @param blobInfo2 second blob to get
+   * @param blobInfos other blobs to get
+   * @return a list of {@code BlobInfo} objects. If a blob does not exist the corresponding item in
+   * the list is {@code null}.
+   */
+  List<BlobInfo> get(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos);
+
+  /**
+   * Updates the requested blobs. A batch request is used to perform this call.
+   *
+   * @param blobInfo1 first blob to update
+   * @param blobInfo2 second blob to update
+   * @param blobInfos other blobs to update
+   * @return a list of {@code BlobInfo} objects. If a blob does not exist the corresponding item in
+   * the list is {@code null}.
+   */
+  List<BlobInfo> update(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos);
+
+  /**
+   * Deletes the requested blobs. A batch request is used to perform this call.
+   *
+   * @param blobInfo1 first blob to delete
+   * @param blobInfo2 second blob to delete
+   * @param blobInfos other blobs to delete
+   * @return a list of booleans. If a blob has been deleted the corresponding item in the list is
+   * {@code true}. If deletion failed the item is {@code false}.
+   */
+  List<Boolean> delete(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos);
 }

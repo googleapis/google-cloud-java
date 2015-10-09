@@ -16,6 +16,8 @@
 
 package com.google.gcloud.spi;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
+
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.collect.ImmutableList;
@@ -106,9 +108,12 @@ public interface StorageRpc {
     public BatchRequest(Iterable<Tuple<StorageObject, Map<Option, ?>>> toDelete,
         Iterable<Tuple<StorageObject, Map<Option, ?>>> toUpdate,
         Iterable<Tuple<StorageObject, Map<Option, ?>>> toGet) {
-      this.toDelete = ImmutableList.copyOf(toDelete);
-      this.toUpdate = ImmutableList.copyOf(toUpdate);
-      this.toGet = ImmutableList.copyOf(toGet);
+      this.toDelete = ImmutableList.copyOf(
+          firstNonNull(toDelete, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
+      this.toUpdate = ImmutableList.copyOf(
+          firstNonNull(toUpdate, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
+      this.toGet = ImmutableList.copyOf(
+          firstNonNull(toGet, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
     }
   }
 
