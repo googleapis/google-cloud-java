@@ -24,6 +24,8 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -
         git add $SITE_VERSION
         echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='http://GoogleCloudPlatform.github.io/gcloud-java/${SITE_VERSION}/index.html'\" /></head><body></body></html>" > index.html
         git add index.html
+        echo "<html><head><script>window.location.replace('/gcloud-java/${SITE_VERSION}/apidocs' + location.search)</script></head><body></body></html>" > apidocs/index.html
+        git add apidocs/index.html
         git commit -m "Added a new site for version $SITE_VERSION and updated the root directory's redirect."
         git config --global push.default simple
         git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/GoogleCloudPlatform/gcloud-java.git" > /dev/null 2>&1
