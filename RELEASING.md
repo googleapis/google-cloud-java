@@ -11,7 +11,7 @@ This script takes an optional argument denoting the new version.  By default, if
 The PR should look something like [#225](https://github.com/GoogleCloudPlatform/gcloud-java/pull/225).  After this PR is merged into GoogleCloudPlatform/gcloud-java, Travis CI will push a new website to GoogleCloudPlatform/gh-pages, push a new artifact to the Maven Central Repository, and update versions in the README files.
 
 3. Create a release on Github manually.
-Go to the [releases page](https://github.com/GoogleCloudPlatform/gcloud-java/releases) and click "Draft a new release."
+Go to the [releases page](https://github.com/GoogleCloudPlatform/gcloud-java/releases) and click "Draft a new release."  Use `vX.Y.Z` as the "Tag Version" and `X.Y.Z` as the "Release Title", where `X.Y.Z` is the release version as listed in the `pom.xml` files.
 
 4. Run `utilities/update_pom_version.sh` again (to include "-SNAPSHOT" in the project version).
 As mentioned before, there is an optional version argument.  By default, the script will update the version from "X.Y.Z" to "X.Y.Z+1-SNAPSHOT".  Suppose a different version is desired, for example X+1.0.0-SNAPSHOT.  Then the appropriate command to run would be `utilities/update_pom_version.sh X+1.0.0-SNAPSHOT`.
