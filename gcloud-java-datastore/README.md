@@ -8,7 +8,7 @@ Java idiomatic client for [Google Cloud Datastore] (https://cloud.google.com/dat
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html)
--  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
+-  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.

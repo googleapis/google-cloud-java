@@ -8,7 +8,7 @@ Java idiomatic client for [Google Cloud Storage] (https://cloud.google.com/stora
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/storage/package-summary.html)
--  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
+-  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
