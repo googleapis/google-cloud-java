@@ -1,16 +1,14 @@
-Google Cloud Java Client
-==========================
+Google Cloud Java Client -- Core Services
+=========================================
 
-Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
+This module provides common functionality required by service-specific modules of this library.
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/package-summary.html)
 -  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
-
-This module provides common functionality and is required by the other service specific modules.
 
 Quickstart
 ----------
