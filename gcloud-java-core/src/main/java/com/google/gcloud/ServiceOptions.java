@@ -22,6 +22,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
+import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -60,6 +61,8 @@ public abstract class ServiceOptions<
   private final AuthCredentials authCredentials;
   private final RetryParams retryParams;
   private final ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+  private final int connectTimeout;
+  private final int readTimeout;
 
   public interface HttpTransportFactory extends Serializable {
     HttpTransport create();
@@ -102,6 +105,8 @@ public abstract class ServiceOptions<
     private AuthCredentials authCredentials;
     private RetryParams retryParams;
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+    private int connectTimeout = -1;
+    private int readTimeout = -1;
 
     protected Builder() {}
 
@@ -150,6 +155,16 @@ public abstract class ServiceOptions<
       this.serviceRpcFactory = serviceRpcFactory;
       return self();
     }
+
+    public B connectTimeout(int connectTimeout) {
+      this.connectTimeout = connectTimeout;
+      return self();
+    }
+
+    public B readTimeout(int readTimeout) {
+      this.readTimeout = readTimeout;
+      return self();
+    }
   }
 
   protected ServiceOptions(Builder<ServiceRpcT, OptionsT, ?> builder) {
@@ -160,6 +175,8 @@ public abstract class ServiceOptions<
     authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
     retryParams = builder.retryParams;
     serviceRpcFactory = builder.serviceRpcFactory;
+    connectTimeout = builder.connectTimeout;
+    readTimeout = builder.readTimeout;
   }
 
   private static AuthCredentials defaultAuthCredentials() {
@@ -303,7 +320,20 @@ public abstract class ServiceOptions<
 
   public HttpRequestInitializer httpRequestInitializer() {
     HttpTransport httpTransport = httpTransportFactory.create();
-    return authCredentials().httpRequestInitializer(httpTransport, scopes());
+    final HttpRequestInitializer baseRequestInitializer =
+        authCredentials().httpRequestInitializer(httpTransport, scopes());
+    return new HttpRequestInitializer() {
+      @Override
+      public void initialize(HttpRequest httpRequest) throws IOException {
+        baseRequestInitializer.initialize(httpRequest);
+        if (connectTimeout >= 0) {
+          httpRequest.setConnectTimeout(connectTimeout);
+        }
+        if (readTimeout >= 0) {
+          httpRequest.setReadTimeout(readTimeout);
+        }
+      }
+    };
   }
 
   protected int baseHashCode() {
