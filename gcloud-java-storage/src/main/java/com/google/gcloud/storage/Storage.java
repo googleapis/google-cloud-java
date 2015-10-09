@@ -632,9 +632,15 @@ public interface Storage extends Service<StorageOptions> {
    * is only valid within a certain time period.
    * This is particularly useful if you don't want publicly
    * accessible blobs, but don't want to require users to explicitly log in.
+   * <p>
+   * Example usage of creating a signed URL that is valid for 2 weeks:
+   * <pre>   {@code
+   *     service.signUrl(BlobInfo.of("bucket", "name"), TimeUnit.DAYS.toSeconds(14));
+   * }</pre>
    *
    * @param blobInfo the blob associated with the signed url
    * @param  expirationTimeInSeconds the signed URL expiration (using epoch time)
+   * @param options optional URL signing options
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
    */
   URL signUrl(BlobInfo blobInfo, long expirationTimeInSeconds, SignUrlOption... options);
