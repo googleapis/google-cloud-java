@@ -1,0 +1,16 @@
+GCloud Java Datastore: Idiomatic Java Client for Google Cloud Datastore. 
+
+ This is a Java Client for accessing Google Cloud Datastore.
+ This library is in a early stage of its development and may occasionally make backwards-incompatible changes,
+ but it is already usable.
+ 
+* Features
+ 
+	* {{{https://cloud.google.com/datastore/}Google Cloud Datastore}}
+ 	
+* Links
+  
+   	* {{{https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-datastore}GitHub repository}}
+   	
+   	* {{{./apidocs/index.html?com/google/gcloud/datastore/package-summary.html}Javadocs}}
+
