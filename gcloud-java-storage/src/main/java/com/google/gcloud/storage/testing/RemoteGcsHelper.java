@@ -133,6 +133,8 @@ public class RemoteGcsHelper {
               .totalRetryPeriodMillis(120000)
               .initialRetryDelayMillis(250)
               .build())
+          .connectTimeout(60000)
+          .readTimeout(60000)
           .build();
       return new RemoteGcsHelper(storageOptions);
     } catch (FileNotFoundException ex) {
