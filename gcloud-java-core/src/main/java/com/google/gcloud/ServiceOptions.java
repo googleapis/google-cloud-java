@@ -126,41 +126,85 @@ public abstract class ServiceOptions<
       return (B) this;
     }
 
+    /**
+     * Sets project id.
+     *
+     * @return the builder.
+     */
     public B projectId(String projectId) {
       this.projectId = projectId;
       return self();
     }
 
+    /**
+     * Sets service host.
+     *
+     * @return the builder.
+     */
     public B host(String host) {
       this.host = host;
       return self();
     }
 
+    /**
+     * Sets the transport factory.
+     *
+     * @return the builder.
+     */
     public B httpTransportFactory(HttpTransportFactory httpTransportFactory) {
       this.httpTransportFactory = httpTransportFactory;
       return self();
     }
 
+    /**
+     * Sets the service authentication credentials.
+     *
+     * @return the builder.
+     */
     public B authCredentials(AuthCredentials authCredentials) {
       this.authCredentials = authCredentials;
       return self();
     }
 
+    /**
+     * Sets configuration parameters for request retries.
+     *
+     * @return the builder.
+     */
     public B retryParams(RetryParams retryParams) {
       this.retryParams = retryParams;
       return self();
     }
 
+    /**
+     * Sets the factory for rpc services.
+     *
+     * @return the builder
+     */
     public B serviceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
       this.serviceRpcFactory = serviceRpcFactory;
       return self();
     }
 
+    /**
+     * Sets the timeout in milliseconds to establish a connection.
+     *
+     * @param connectTimeout connection timeout in milliseconds. 0 for an infinite timeout, a
+     * negative number for the default value (20000).
+     * @return the builder.
+     */
     public B connectTimeout(int connectTimeout) {
       this.connectTimeout = connectTimeout;
       return self();
     }
 
+    /**
+     * Sets the timeout in milliseconds to read data from an established connection.
+     *
+     * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a
+     * negative number for the default value (20000).
+     * @return the builder.
+     */
     public B readTimeout(int readTimeout) {
       this.readTimeout = readTimeout;
       return self();
