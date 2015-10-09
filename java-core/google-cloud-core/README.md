@@ -1,4 +1,4 @@
-Google Cloud Java Client -- Core Services
+Google Cloud Java Client -- Core
 =========================================
 
 This module provides common functionality required by service-specific modules of this library.
