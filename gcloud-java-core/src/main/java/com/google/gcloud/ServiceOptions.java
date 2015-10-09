@@ -338,30 +338,52 @@ public abstract class ServiceOptions<
 
   protected abstract Set<String> scopes();
 
+  /**
+   * Returns the project id. 
+   */
   public String projectId() {
     return projectId;
   }
 
+  /**
+   * Returns the service host.
+   */
   public String host() {
     return host;
   }
 
+  /**
+   * Returns the transport factory.
+   */
   public HttpTransportFactory httpTransportFactory() {
     return httpTransportFactory;
   }
 
+  /**
+   * Returns the authentication credentials.
+   */
   public AuthCredentials authCredentials() {
     return authCredentials;
   }
 
+  /**
+   * Returns configuration parameters for request retries.
+   */
   public RetryParams retryParams() {
     return retryParams != null ? retryParams : RetryParams.noRetries();
   }
 
+  /**
+   * Returns the factory for rpc services.
+   */
   public ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory() {
     return serviceRpcFactory;
   }
 
+  /**
+   * Returns a request initializer responsible for initializing requests according to service
+   * options.
+   */
   public HttpRequestInitializer httpRequestInitializer() {
     HttpTransport httpTransport = httpTransportFactory.create();
     final HttpRequestInitializer baseRequestInitializer =
@@ -378,6 +400,22 @@ public abstract class ServiceOptions<
         }
       }
     };
+  }
+
+  /**
+   * Returns the timeout in milliseconds to establish a connection. 0 is an infinite timeout, a
+   * negative number is the default value (20000).
+   */
+  public int connectTimeout() {
+    return connectTimeout;
+  }
+
+  /**
+   * Returns the timeout in milliseconds to read from an established connection. 0 is an infinite
+   * timeout, a negative number is the default value (20000).
+   */
+  public int readTimeout() {
+    return readTimeout;
   }
 
   protected int baseHashCode() {
