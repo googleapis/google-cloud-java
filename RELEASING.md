@@ -10,10 +10,13 @@ This script takes an optional argument denoting the new version.  By default, if
 2. Create a PR to update the pom.xml version.
 The PR should look something like [#225](https://github.com/GoogleCloudPlatform/gcloud-java/pull/225).  After this PR is merged into GoogleCloudPlatform/gcloud-java, Travis CI will push a new website to GoogleCloudPlatform/gh-pages, push a new artifact to the Maven Central Repository, and update versions in the README files.
 
-3. Run `utilities/update_pom_version.sh` again (to include "-SNAPSHOT" in the project version).
+3. Create a release on Github manually.
+Go to the [releases page](https://github.com/GoogleCloudPlatform/gcloud-java/releases) and click "Draft a new release."
+
+4. Run `utilities/update_pom_version.sh` again (to include "-SNAPSHOT" in the project version).
 As mentioned before, there is an optional version argument.  By default, the script will update the version from "X.Y.Z" to "X.Y.Z+1-SNAPSHOT".  Suppose a different version is desired, for example X+1.0.0-SNAPSHOT.  Then the appropriate command to run would be `utilities/update_pom_version.sh X+1.0.0-SNAPSHOT`.
 
-4. Create and merge in another PR to reflect the updated project version.  For an example of what this PR should look like, see [#227](https://github.com/GoogleCloudPlatform/gcloud-java/pull/227).
+5. Create and merge in another PR to reflect the updated project version.  For an example of what this PR should look like, see [#227](https://github.com/GoogleCloudPlatform/gcloud-java/pull/227).
 
 ### To push a snapshot version
 
@@ -21,4 +24,4 @@ Pushing a snapshot is completely automated.  If "-SNAPSHOT" is included in the v
 
 ### Improvements
 
-Tagging is not currently implemented, though it was discussed in #119.  If the version updates continue to be manual, a one-line git tag command can be added to `after_success.sh` to correctly tag releases.  However, if the release process becomes fully automated, tagging becomes a harder problem, as mentioned in that issue.
+Automatic tagging is not currently implemented, though it was discussed in #119.  If the version updates continue to be manual, a one-line git tag command can be added to `after_success.sh` to correctly tag releases.  However, automatically creating useful annotations for this tag will be difficult.  Also, if the release process becomes fully automated, tagging becomes a harder problem, as mentioned in that issue.
