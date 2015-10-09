@@ -77,7 +77,7 @@ public class DefaultStorageRpc implements StorageRpc {
   private final Storage storage;
 
   // see: https://cloud.google.com/storage/docs/concepts-techniques#practices
-  private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(504, 503, 502, 500, 408);
+  private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(504, 503, 502, 500, 429, 408);
 
   public DefaultStorageRpc(StorageOptions options) {
     HttpTransport transport = options.httpTransportFactory().create();
