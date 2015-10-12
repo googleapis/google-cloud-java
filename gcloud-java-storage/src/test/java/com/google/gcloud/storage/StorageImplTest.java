@@ -945,8 +945,8 @@ public class StorageImplTest {
 
   @Test
   public void testDeleteAll() {
-    BlobInfo blobInfo1 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME1).contentType("type").build();
-    BlobInfo blobInfo2 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME2).contentType("type").build();
+    BlobInfo blobInfo1 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME1).build();
+    BlobInfo blobInfo2 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME2).build();
     StorageObject storageObject1 = blobInfo1.toPb();
     StorageObject storageObject2 = blobInfo2.toPb();
     List<StorageObject> toUpdate = ImmutableList.of(storageObject1, storageObject2);

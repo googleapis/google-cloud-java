@@ -62,6 +62,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.Signature;
 import java.security.SignatureException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
@@ -579,64 +580,48 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public List<BlobInfo> get(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos) {
-    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toGet =
-        Lists.newArrayListWithCapacity(blobInfos.length + 2);
-    toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo1.toPb(), optionMap()));
-    toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo2.toPb(), optionMap()));
+    BatchRequest.Builder requestBuilder = BatchRequest.builder();
+    requestBuilder.get(blobInfo1.bucket(), blobInfo1.name());
+    requestBuilder.get(blobInfo2.bucket(), blobInfo2.name());
     for (BlobInfo blobInfo : blobInfos) {
-      toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo.toPb(), optionMap()));
+      requestBuilder.get(blobInfo.bucket(), blobInfo.name());
     }
-    StorageRpc.BatchResponse response =
-        storageRpc.batch(new StorageRpc.BatchRequest(null, null, toGet));
-    return transformBatchResult(toGet, response.gets, BlobInfo.FROM_PB_FUNCTION, (BlobInfo) null);
+    BatchResponse response = apply(requestBuilder.build());
+    return Collections.unmodifiableList(transformResultList(response.gets(), null));
   }
 
   @Override
   public List<BlobInfo> update(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos) {
-    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toUpdate =
-        Lists.newArrayListWithCapacity(blobInfos.length + 2);
-    toUpdate.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo1.toPb(), optionMap()));
-    toUpdate.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo2.toPb(), optionMap()));
+    BatchRequest.Builder requestBuilder = BatchRequest.builder();
+    requestBuilder.update(blobInfo1);
+    requestBuilder.update(blobInfo2);
     for (BlobInfo blobInfo : blobInfos) {
-      toUpdate
-          .add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo.toPb(), optionMap()));
+      requestBuilder.update(blobInfo);
     }
-    StorageRpc.BatchResponse response =
-        storageRpc.batch(new StorageRpc.BatchRequest(null, toUpdate, null));
-    return transformBatchResult(toUpdate, response.updates, BlobInfo.FROM_PB_FUNCTION,
-        (BlobInfo) null);
+    BatchResponse response = apply(requestBuilder.build());
+    return Collections.unmodifiableList(transformResultList(response.updates(), null));
   }
 
   @Override
   public List<Boolean> delete(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos) {
-    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toDelete =
-        Lists.newArrayListWithCapacity(blobInfos.length + 2);
-    toDelete.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo1.toPb(), optionMap()));
-    toDelete.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo2.toPb(), optionMap()));
+    BatchRequest.Builder requestBuilder = BatchRequest.builder();
+    requestBuilder.delete(blobInfo1.bucket(), blobInfo1.name());
+    requestBuilder.delete(blobInfo2.bucket(), blobInfo2.name());
     for (BlobInfo blobInfo : blobInfos) {
-      toDelete
-          .add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo.toPb(), optionMap()));
+      requestBuilder.delete(blobInfo.bucket(), blobInfo.name());
     }
-    StorageRpc.BatchResponse response =
-        storageRpc.batch(new StorageRpc.BatchRequest(toDelete, null, null));
-    return transformBatchResult(toDelete, response.deletes, Functions.<Boolean>identity(),
-        Boolean.FALSE);
+    BatchResponse response = apply(requestBuilder.build());
+    return Collections.unmodifiableList(transformResultList(response.deletes(), Boolean.FALSE));
   }
 
-  private <I, O extends Serializable> List<O> transformBatchResult(
-      Iterable<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request,
-      Map<StorageObject, Tuple<I, StorageException>> results, Function<I, O> transform,
-      O errorValue) {
-    List<O> response = Lists.newArrayListWithCapacity(results.size());
-    for (Tuple<StorageObject, ?> tuple : request) {
-      Tuple<I, StorageException> result = results.get(tuple.x());
-      if (result.x() != null) {
-        response.add(transform.apply(result.x()));
-      } else {
-        response.add(errorValue);
+  private static <T extends Serializable> List<T> transformResultList(
+      List<BatchResponse.Result<T>> results, final T errorValue) {
+    return Lists.transform(results, new Function<BatchResponse.Result<T>, T>() {
+      @Override
+      public T apply(BatchResponse.Result<T> f) {
+        return f.failed() ? errorValue : f.get();
       }
-    }
-    return response;
+    });
   }
 
   private Map<StorageRpc.Option, ?> optionMap(Long generation, Long metaGeneration,

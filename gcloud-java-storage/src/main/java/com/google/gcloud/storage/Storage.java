@@ -645,8 +645,8 @@ public interface Storage extends Service<StorageOptions> {
    * @param blobInfo1 first blob to get
    * @param blobInfo2 second blob to get
    * @param blobInfos other blobs to get
-   * @return a list of {@code BlobInfo} objects. If a blob does not exist the corresponding item in
-   * the list is {@code null}.
+   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
+   * has been denied the corresponding item in the list is {@code null}.
    */
   List<BlobInfo> get(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos);
 
@@ -656,8 +656,8 @@ public interface Storage extends Service<StorageOptions> {
    * @param blobInfo1 first blob to update
    * @param blobInfo2 second blob to update
    * @param blobInfos other blobs to update
-   * @return a list of {@code BlobInfo} objects. If a blob does not exist the corresponding item in
-   * the list is {@code null}.
+   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
+   * has been denied the corresponding item in the list is {@code null}.
    */
   List<BlobInfo> update(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos);
 
@@ -667,8 +667,9 @@ public interface Storage extends Service<StorageOptions> {
    * @param blobInfo1 first blob to delete
    * @param blobInfo2 second blob to delete
    * @param blobInfos other blobs to delete
-   * @return a list of booleans. If a blob has been deleted the corresponding item in the list is
-   * {@code true}. If deletion failed the item is {@code false}.
+   * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
+   * list is {@code true}. If deletion failed or access to the resource was denied the item is
+   * {@code false}.
    */
   List<Boolean> delete(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos);
 }

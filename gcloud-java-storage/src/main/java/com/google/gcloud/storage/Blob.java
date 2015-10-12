@@ -268,8 +268,8 @@ public final class Blob {
    *
    * @param storage the storage service used to issue the request
    * @param infos the blobs to get
-   * @return a list of {@code Blob} objects. If a blob does not exist the corresponding item in the
-   * list is {@code null}.
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
+   * been denied the corresponding item in the list is {@code null}.
    */
   public static List<Blob> get(final Storage storage, BlobInfo... infos) {
     checkNotNull(storage);
@@ -282,14 +282,14 @@ public final class Blob {
         return Collections.singletonList(
             new Blob(storage, storage.get(infos[0].bucket(), infos[0].name())));
       default:
-        return Lists.transform(
+        return Collections.unmodifiableList(Lists.transform(
             storage.get(infos[0], infos[1], Arrays.copyOfRange(infos, 2, length)),
             new Function<BlobInfo, Blob>() {
               @Override
               public Blob apply(BlobInfo f) {
                 return f != null ? new Blob(storage, f) : null;
               }
-            });
+            }));
     }
   }
 
@@ -299,8 +299,8 @@ public final class Blob {
    *
    * @param storage the storage service used to issue the request
    * @param infos the blobs to update
-   * @return a list of {@code Blob} objects. If a blob does not exist the corresponding item in the
-   * list is {@code null}.
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
+   * been denied the corresponding item in the list is {@code null}.
    */
   public static List<Blob> update(final Storage storage, BlobInfo... infos) {
     checkNotNull(storage);
@@ -312,14 +312,14 @@ public final class Blob {
       case 1:
         return Collections.singletonList(new Blob(storage, storage.update(infos[0])));
       default:
-        return Lists.transform(
+        return Collections.unmodifiableList(Lists.transform(
             storage.update(infos[0], infos[1], Arrays.copyOfRange(infos, 2, length)),
             new Function<BlobInfo, Blob>() {
               @Override
               public Blob apply(BlobInfo f) {
                 return f != null ? new Blob(storage, f) : null;
               }
-            });
+            }));
     }
   }
 
@@ -329,8 +329,9 @@ public final class Blob {
    *
    * @param storage the storage service used to issue the request
    * @param infos the blobs to delete
-   * @return a list of booleans. If a blob has been deleted the corresponding item in the list is 
-   * {@code true}. If deletion failed the item is {@code false}.
+   * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
+   * list is {@code true}. If deletion failed or access to the resource was denied the item is
+   * {@code false}.
    */
   public static List<Boolean> delete(Storage storage, BlobInfo... infos) {
     checkNotNull(storage);
@@ -342,7 +343,8 @@ public final class Blob {
       case 1:
         return Collections.singletonList(storage.delete(infos[0].bucket(), infos[0].name()));
       default:
-        return storage.delete(infos[0], infos[1], Arrays.copyOfRange(infos, 2, length));
+        return Collections.unmodifiableList(
+            storage.delete(infos[0], infos[1], Arrays.copyOfRange(infos, 2, length)));
     }
   }
 }
