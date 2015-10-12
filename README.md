@@ -9,16 +9,11 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs)
--  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
 
 This client supports the following Google Cloud Platform services:
 
 -  [Google Cloud Datastore] (#google-cloud-datastore)
 -  [Google Cloud Storage] (#google-cloud-storage)
-
-<!---
--  [Google Cloud Storage] (https://cloud.google.com/storage/)
---->
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -34,13 +29,23 @@ Add this to your pom.xml file
 </dependency>
 ```
 
-<!---
 Example Applications
 --------------------
 
--  `java-datastore-sample`_ - A sample using Cloud Datastore
-.. _java-datastore-sample: https://github.com/GoogleCloudPlatform/java-datastore-sample
---->
+- [`DatastoreExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/DatastoreExample.java) - A simple command line interface for the Cloud Datastore
+  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html).
+- [`StorageExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
+  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
+
+Authentication
+--------------
+
+There are multiple ways to authenticate to use Google Cloud services.
+
+1. When using `gcloud-java` libraries from within Compute/App Engine, no additional authentication steps are necessary.
+2. When using `gcloud-java` libraries elsewhere, there are two options:
+  * [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).  Supply a path to the downloaded JSON credentials file when building the options supplied to datastore/storage constructor.
+  * If running locally for development/testing, you can use use [Google Cloud SDK](https://cloud.google.com/sdk/?hl=en).  To use the SDK authentication, [download the SDK](https://cloud.google.com/sdk/?hl=en) if you haven't already.  Then login using the SDK (`gcloud auth login` in command line), and set your current project using `gcloud config set project PROJECT_ID`.
 
 Google Cloud Datastore
 ----------------------
@@ -56,6 +61,8 @@ Cloud Datastore for your project.
 
 See the ``gcloud-java`` API [datastore documentation][datastore-api] to learn how to interact
 with the Cloud Datastore using this Client Library.
+
+Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) if running this snippet elsewhere.
 
 ```java
 import com.google.gcloud.datastore.Datastore;
@@ -101,6 +108,8 @@ Cloud Storage for your project.
 See the ``gcloud-java`` API [storage documentation][storage-api] to learn how to interact
 with the Cloud Storage using this Client Library.
 
+Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) if running this snippet elsewhere.
+
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -127,26 +136,17 @@ if (!blob.exists()) {
 }
 ```
 
+Java Versions
+-------------
+
+Java 7 or above is required for using this client.
+
 Testing
 -------
 
 This library provides tools to help write tests for code that uses gcloud-java services.
 
 See [TESTING] to read more about using our testing helpers.
-
-Contributing
-------------
-
-Contributions to this library are always welcome and highly encouraged.
-
-See [CONTRIBUTING] for more information on how to get started.
-
-Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
-
-Java Versions
--------------
-
-Java 7 or above is required for using this client.
 
 Versioning
 ----------
@@ -156,6 +156,15 @@ This library follows [Semantic Versioning] (http://semver.org/).
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered
 stable.
+
+Contributing
+------------
+
+Contributions to this library are always welcome and highly encouraged.
+
+See [CONTRIBUTING] for more information on how to get started.
+
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
 License
 -------
