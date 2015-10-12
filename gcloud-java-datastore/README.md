@@ -31,7 +31,7 @@ Example Application
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) section in the main repository's README.
+See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) section in the base directory's README.
 
 About Google Cloud Datastore
 ----------------------------
@@ -48,7 +48,7 @@ Cloud Datastore for your project.
 See the ``gcloud-java`` API [datastore documentation][datastore-api] to learn how to interact
 with the Cloud Datastore using this Client Library.
 
-Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) if running this snippet elsewhere.
+Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) and a project ID if running this snippet elsewhere.
 
 ```java
 import com.google.gcloud.datastore.Datastore;
@@ -59,8 +59,7 @@ import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-DatastoreOptions options = DatastoreOptions.builder().projectId(PROJECT_ID).build();
-Datastore datastore = DatastoreFactory.instance().get(options);
+Datastore datastore = DatastoreFactory.instance().get(DatastoreOptions.getDefaultInstance());
 KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);

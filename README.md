@@ -68,8 +68,7 @@ import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-DatastoreOptions options = DatastoreOptions.builder().build();
-Datastore datastore = DatastoreFactory.instance().get(options);
+Datastore datastore = DatastoreFactory.instance().get(DatastoreOptions.getDefaultInstance());
 KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
@@ -112,8 +111,7 @@ import com.google.gcloud.storage.StorageOptions;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-StorageOptions options = StorageOptions.builder().build();
-Storage storage = StorageFactory.instance().get(options);
+Storage storage = StorageFactory.instance().get(StorageOptions.getDefaultInstance());
 Blob blob = new Blob(storage, "bucket", "blob_name");
 if (!blob.exists()) {
   storage2.create(blob.info(), "Hello, Cloud Storage!".getBytes(UTF_8));

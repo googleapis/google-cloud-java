@@ -32,7 +32,7 @@ Example Application
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) section in the main repository's README.
+See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) section in the base directory's README.
 
 About Google Cloud Storage
 --------------------------
@@ -48,7 +48,7 @@ Cloud Storage for your project.
 See the ``gcloud-java`` API [storage documentation][storage-api] to learn how to interact
 with the Cloud Storage using this Client Library.
 
-Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) if running this snippet elsewhere.
+Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) and a project ID if running this snippet elsewhere.
 
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -61,8 +61,7 @@ import com.google.gcloud.storage.StorageOptions;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-StorageOptions options = StorageOptions.builder().projectId(PROJECT_ID).build();
-Storage storage = StorageFactory.instance().get(options);
+Storage storage = StorageFactory.instance().get(StorageOptions.getDefaultInstance());
 Blob blob = new Blob(storage, "bucket", "blob_name");
 if (!blob.exists()) {
   storage2.create(blob.info(), "Hello, Cloud Storage!".getBytes(UTF_8));
