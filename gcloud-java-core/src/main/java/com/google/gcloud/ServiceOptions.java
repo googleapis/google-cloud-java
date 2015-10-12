@@ -16,7 +16,6 @@
 
 package com.google.gcloud;
 
-
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -167,7 +166,8 @@ public abstract class ServiceOptions<
     }
 
     /**
-     * Sets configuration parameters for request retries.
+     * Sets configuration parameters for request retries. If no configuration is set
+     * {@link RetryParams#noRetries()} is used.
      *
      * @return the builder.
      */
@@ -367,7 +367,8 @@ public abstract class ServiceOptions<
   }
 
   /**
-   * Returns configuration parameters for request retries.
+   * Returns configuration parameters for request retries. By default requests are not retried:
+   * {@link RetryParams#noRetries()} is used.
    */
   public RetryParams retryParams() {
     return retryParams != null ? retryParams : RetryParams.noRetries();
