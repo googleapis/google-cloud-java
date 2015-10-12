@@ -55,6 +55,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * An example of using the Google Cloud Storage.
@@ -499,11 +500,8 @@ public class StorageExample {
 
     private void run(Storage storage, ServiceAccountAuthCredentials cred, Blob blob)
         throws IOException {
-      Calendar cal = Calendar.getInstance();
-      cal.add(Calendar.DATE, 1);
-      long expiration = cal.getTimeInMillis() / 1000;
       System.out.println("Signed URL: " +
-          blob.signUrl(expiration, SignUrlOption.serviceAccount(cred)));
+          blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.serviceAccount(cred)));
     }
 
     @Override
