@@ -100,7 +100,7 @@ public class BlobTest {
   @Test
   public void testUpdate() throws Exception {
     BlobInfo updatedInfo = BLOB_INFO.toBuilder().cacheControl("c").build();
-    expect(storage.update(updatedInfo)).andReturn(updatedInfo);
+    expect(storage.update(updatedInfo, new Storage.BlobTargetOption[0])).andReturn(updatedInfo);
     replay(storage);
     Blob updatedBlob = blob.update(updatedInfo);
     assertSame(storage, blob.storage());
@@ -184,8 +184,7 @@ public class BlobTest {
   @Test
   public void testGetSome() throws Exception {
     List<BlobInfo> blobInfoList = Arrays.asList(BLOB_INFO_ARRAY);
-    expect(storage.get(BLOB_INFO_ARRAY[0], BLOB_INFO_ARRAY[1],
-        Arrays.copyOfRange(BLOB_INFO_ARRAY, 2, BLOB_INFO_ARRAY.length))).andReturn(blobInfoList);
+    expect(storage.get(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
     replay(storage);
     List<Blob> result = Blob.get(storage, BLOB_INFO_ARRAY);
     assertEquals(blobInfoList.size(), result.size());
@@ -197,8 +196,7 @@ public class BlobTest {
   @Test
   public void testGetSomeNull() throws Exception {
     List<BlobInfo> blobInfoList = Arrays.asList(BLOB_INFO_ARRAY[0], null, BLOB_INFO_ARRAY[2]);
-    expect(storage.get(BLOB_INFO_ARRAY[0], BLOB_INFO_ARRAY[1],
-        Arrays.copyOfRange(BLOB_INFO_ARRAY, 2, BLOB_INFO_ARRAY.length))).andReturn(blobInfoList);
+    expect(storage.get(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
     replay(storage);
     List<Blob> result = Blob.get(storage, BLOB_INFO_ARRAY);
     assertEquals(blobInfoList.size(), result.size());
@@ -233,8 +231,7 @@ public class BlobTest {
     for (BlobInfo info : BLOB_INFO_ARRAY) {
       blobInfoList.add(info.toBuilder().contentType("content").build());
     }
-    expect(storage.update(BLOB_INFO_ARRAY[0], BLOB_INFO_ARRAY[1],
-        Arrays.copyOfRange(BLOB_INFO_ARRAY, 2, BLOB_INFO_ARRAY.length))).andReturn(blobInfoList);
+    expect(storage.update(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
     replay(storage);
     List<Blob> result = Blob.update(storage, BLOB_INFO_ARRAY);
     assertEquals(blobInfoList.size(), result.size());
@@ -248,8 +245,7 @@ public class BlobTest {
     List<BlobInfo> blobInfoList = Arrays.asList(
         BLOB_INFO_ARRAY[0].toBuilder().contentType("content").build(), null,
         BLOB_INFO_ARRAY[2].toBuilder().contentType("content").build());
-    expect(storage.update(BLOB_INFO_ARRAY[0], BLOB_INFO_ARRAY[1],
-        Arrays.copyOfRange(BLOB_INFO_ARRAY, 2, BLOB_INFO_ARRAY.length))).andReturn(blobInfoList);
+    expect(storage.update(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
     replay(storage);
     List<Blob> result = Blob.update(storage, BLOB_INFO_ARRAY);
     assertEquals(blobInfoList.size(), result.size());
@@ -280,9 +276,7 @@ public class BlobTest {
   @Test
   public void testDeleteSome() throws Exception {
     List<Boolean> deleleResultList = Arrays.asList(true, true, true);
-    expect(storage.delete(BLOB_INFO_ARRAY[0], BLOB_INFO_ARRAY[1],
-        Arrays.copyOfRange(BLOB_INFO_ARRAY, 2, BLOB_INFO_ARRAY.length)))
-        .andReturn(deleleResultList);
+    expect(storage.delete(BLOB_INFO_ARRAY)).andReturn(deleleResultList);
     replay(storage);
     List<Boolean> result = Blob.delete(storage, BLOB_INFO_ARRAY);
     assertEquals(deleleResultList.size(), result.size());

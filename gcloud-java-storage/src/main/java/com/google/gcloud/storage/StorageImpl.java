@@ -350,6 +350,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
+  public BlobInfo update(BlobInfo blobInfo) {
+    return update(blobInfo, new BlobTargetOption[0]);
+  }
+
+  @Override
   public boolean delete(String bucket, BucketSourceOption... options) {
     final com.google.api.services.storage.model.Bucket bucketPb = BucketInfo.of(bucket).toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
@@ -579,10 +584,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public List<BlobInfo> get(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos) {
+  public List<BlobInfo> get(BlobInfo... blobInfos) {
     BatchRequest.Builder requestBuilder = BatchRequest.builder();
-    requestBuilder.get(blobInfo1.bucket(), blobInfo1.name());
-    requestBuilder.get(blobInfo2.bucket(), blobInfo2.name());
     for (BlobInfo blobInfo : blobInfos) {
       requestBuilder.get(blobInfo.bucket(), blobInfo.name());
     }
@@ -591,10 +594,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public List<BlobInfo> update(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos) {
+  public List<BlobInfo> update(BlobInfo... blobInfos) {
     BatchRequest.Builder requestBuilder = BatchRequest.builder();
-    requestBuilder.update(blobInfo1);
-    requestBuilder.update(blobInfo2);
     for (BlobInfo blobInfo : blobInfos) {
       requestBuilder.update(blobInfo);
     }
@@ -603,10 +604,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public List<Boolean> delete(BlobInfo blobInfo1, BlobInfo blobInfo2, BlobInfo... blobInfos) {
+  public List<Boolean> delete(BlobInfo... blobInfos) {
     BatchRequest.Builder requestBuilder = BatchRequest.builder();
-    requestBuilder.delete(blobInfo1.bucket(), blobInfo1.name());
-    requestBuilder.delete(blobInfo2.bucket(), blobInfo2.name());
     for (BlobInfo blobInfo : blobInfos) {
       requestBuilder.delete(blobInfo.bucket(), blobInfo.name());
     }

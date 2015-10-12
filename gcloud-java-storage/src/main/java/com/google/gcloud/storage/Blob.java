@@ -282,8 +282,7 @@ public final class Blob {
         return Collections.singletonList(
             new Blob(storage, storage.get(infos[0].bucket(), infos[0].name())));
       default:
-        return Collections.unmodifiableList(Lists.transform(
-            storage.get(infos[0], infos[1], Arrays.copyOfRange(infos, 2, length)),
+        return Collections.unmodifiableList(Lists.transform(storage.get(infos),
             new Function<BlobInfo, Blob>() {
               @Override
               public Blob apply(BlobInfo f) {
@@ -312,8 +311,7 @@ public final class Blob {
       case 1:
         return Collections.singletonList(new Blob(storage, storage.update(infos[0])));
       default:
-        return Collections.unmodifiableList(Lists.transform(
-            storage.update(infos[0], infos[1], Arrays.copyOfRange(infos, 2, length)),
+        return Collections.unmodifiableList(Lists.transform(storage.update(infos),
             new Function<BlobInfo, Blob>() {
               @Override
               public Blob apply(BlobInfo f) {
@@ -343,8 +341,7 @@ public final class Blob {
       case 1:
         return Collections.singletonList(storage.delete(infos[0].bucket(), infos[0].name()));
       default:
-        return Collections.unmodifiableList(
-            storage.delete(infos[0], infos[1], Arrays.copyOfRange(infos, 2, length)));
+        return Collections.unmodifiableList(storage.delete(infos));
     }
   }
 }
