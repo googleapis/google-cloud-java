@@ -248,7 +248,7 @@ public final class Blob {
    * want to require users to explicitly log in.
    *
    * @param duration time until the signed URL expires, expressed in {@code unit}. The finer
-   * granularity supported is 1 second
+   * granularity supported is 1 second, finer granularities will be truncated
    * @param unit time unit of the {@code duration} parameter
    * @param options optional URL signing options
    * @return a signed URL for this bucket and the specified options
