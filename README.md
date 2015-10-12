@@ -50,19 +50,14 @@ There are multiple ways to authenticate to use Google Cloud services.
 Google Cloud Datastore
 ----------------------
 
-[Google Cloud Datastore][cloud-datastore] is a fully managed, schemaless database for
-storing non-relational data. Cloud Datastore automatically scales with
-your users and supports ACID transactions, high availability of reads and
-writes, strong consistency for reads and ancestor queries, and eventual
-consistency for all other queries.
+- [API Documentation][datastore-api]
+- [Official Documentation][cloud-datastore-docs]
 
-See the [Google Cloud Datastore docs][cloud-datastore-activation] for more details on how to activate
-Cloud Datastore for your project.
+*Follow the [activation instructions][cloud-datastore-activation] to use the Google Cloud Datastore API with your project.*
 
-See the ``gcloud-java`` API [datastore documentation][datastore-api] to learn how to interact
-with the Cloud Datastore using this Client Library.
+#### Preview
 
-Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) if running this snippet elsewhere.
+Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 
 ```java
 import com.google.gcloud.datastore.Datastore;
@@ -73,7 +68,7 @@ import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-DatastoreOptions options = DatastoreOptions.builder().projectId(PROJECT_ID).build();
+DatastoreOptions options = DatastoreOptions.builder().build();
 Datastore datastore = DatastoreFactory.instance().get(options);
 KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
@@ -97,18 +92,14 @@ if (entity == null) {
 Google Cloud Storage
 ----------------------
 
-[Google Cloud Storage][cloud-storage] is a durable and highly available
-object storage service. Google Cloud Storage is almost infinitely scalable
-and guarantees consistency: when a write succeeds, the latest copy of the
-object will be returned to any GET, globally.
+- [API Documentation][storage-api]
+- [Official Documentation][cloud-storage-docs]
 
-See the [Google Cloud Storage docs][cloud-storage-activation] for more details on how to activate
-Cloud Storage for your project.
+*Follow the [activation instructions][cloud-storage-activation] to use the Google Cloud Storage API with your project.*
 
-See the ``gcloud-java`` API [storage documentation][storage-api] to learn how to interact
-with the Cloud Storage using this Client Library.
+#### Preview
 
-Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) if running this snippet elsewhere.
+Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -121,7 +112,7 @@ import com.google.gcloud.storage.StorageOptions;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-StorageOptions options = StorageOptions.builder().projectId(PROJECT_ID).build();
+StorageOptions options = StorageOptions.builder().build();
 Storage storage = StorageFactory.instance().get(options);
 Blob blob = new Blob(storage, "bucket", "blob_name");
 if (!blob.exists()) {
