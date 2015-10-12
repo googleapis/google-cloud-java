@@ -5,10 +5,10 @@ Java idiomatic client for [Google Cloud Datastore] (https://cloud.google.com/dat
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-datastore.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-datastore.svg)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html)
--  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -24,6 +24,18 @@ Add this to your pom.xml file
 </dependency>
 ```
 
+Example Application
+--------------------
+[`DatastoreExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html).
+
+Authentication
+--------------
+
+See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) section in the base directory's README.
+
+About Google Cloud Datastore
+----------------------------
+
 Google [Cloud Datastore][cloud-datastore] is a fully managed, schemaless database for
 storing non-relational data. Cloud Datastore automatically scales with
 your users and supports ACID transactions, high availability of reads and
@@ -36,6 +48,8 @@ Cloud Datastore for your project.
 See the ``gcloud-java`` API [datastore documentation][datastore-api] to learn how to interact
 with the Cloud Datastore using this Client Library.
 
+Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) and a project ID if running this snippet elsewhere.
+
 ```java
 import com.google.gcloud.datastore.Datastore;
 import com.google.gcloud.datastore.DatastoreFactory;
@@ -45,8 +59,7 @@ import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-DatastoreOptions options = DatastoreOptions.builder().projectId(PROJECT_ID).build();
-Datastore datastore = DatastoreFactory.instance().get(options);
+Datastore datastore = DatastoreFactory.instance().get(DatastoreOptions.getDefaultInstance());
 KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
@@ -66,24 +79,17 @@ if (entity == null) {
 }
 ```
 
+Java Versions
+-------------
+
+Java 7 or above is required for using this client.
+
 Testing
 -------
 
 This library has tools to help write tests for code that uses the Datastore.
 
 See [TESTING] to read more about testing.
-
-Contributing
-------------
-
-Contributions to this library are always welcome and highly encouraged.
-
-See [CONTRIBUTING] for more information on how to get started.
-
-Java Versions
--------------
-
-Java 7 or above is required for using this client.
 
 Versioning
 ----------
@@ -93,6 +99,13 @@ This library follows [Semantic Versioning] (http://semver.org/).
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered
 stable.
+
+Contributing
+------------
+
+Contributions to this library are always welcome and highly encouraged.
+
+See [CONTRIBUTING] for more information on how to get started.
 
 License
 -------

@@ -5,6 +5,7 @@ Examples for gcloud-java (Java idiomatic client for [Google Cloud Platform][clou
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-examples.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-examples.svg)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
@@ -49,13 +50,6 @@ To run examples from your command line:
   $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="delete <bucket_name> test.txt"
 ```
 
-Contributing
-------------
-
-Contributions to this library are always welcome and highly encouraged.
-
-See [CONTRIBUTING] for more information on how to get started.
-
 Java Versions
 -------------
 
@@ -69,6 +63,13 @@ This library follows [Semantic Versioning] (http://semver.org/).
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered
 stable.
+
+Contributing
+------------
+
+Contributions to this library are always welcome and highly encouraged.
+
+See [CONTRIBUTING] for more information on how to get started.
 
 License
 -------
