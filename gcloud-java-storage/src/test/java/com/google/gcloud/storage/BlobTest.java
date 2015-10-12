@@ -173,15 +173,6 @@ public class BlobTest {
   }
 
   @Test
-  public void testGetOne() throws Exception {
-    expect(storage.get(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(BLOB_INFO);
-    replay(storage);
-    List<Blob> result = Blob.get(storage, BLOB_INFO);
-    assertEquals(1, result.size());
-    assertEquals(BLOB_INFO, result.get(0).info());
-  }
-
-  @Test
   public void testGetSome() throws Exception {
     List<BlobInfo> blobInfoList = Arrays.asList(BLOB_INFO_ARRAY);
     expect(storage.get(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
@@ -213,16 +204,6 @@ public class BlobTest {
   public void testUpdateNone() throws Exception {
     replay(storage);
     assertTrue(Blob.update(storage).isEmpty());
-  }
-
-  @Test
-  public void testUpdateOne() throws Exception {
-    BlobInfo updatedBlob = BLOB_INFO.toBuilder().contentType("content").build();
-    expect(storage.update(BLOB_INFO)).andReturn(updatedBlob);
-    replay(storage);
-    List<Blob> result = Blob.update(storage, BLOB_INFO);
-    assertEquals(1, result.size());
-    assertEquals(updatedBlob, result.get(0).info());
   }
 
   @Test
@@ -262,15 +243,6 @@ public class BlobTest {
   public void testDeleteNone() throws Exception {
     replay(storage);
     assertTrue(Blob.delete(storage).isEmpty());
-  }
-
-  @Test
-  public void testDeleteOne() throws Exception {
-    expect(storage.delete(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(true);
-    replay(storage);
-    List<Boolean> result = Blob.delete(storage, BLOB_INFO);
-    assertEquals(1, result.size());
-    assertTrue(result.get(0));
   }
 
   @Test
