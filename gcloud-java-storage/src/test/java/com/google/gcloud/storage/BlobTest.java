@@ -38,6 +38,7 @@ import org.junit.Test;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BlobTest {
 
@@ -161,9 +162,9 @@ public class BlobTest {
   @Test
   public void testSignUrl() throws Exception {
     URL url = new URL("http://localhost:123/bla");
-    expect(storage.signUrl(BLOB_INFO, 100)).andReturn(url);
+    expect(storage.signUrl(BLOB_INFO, 100, TimeUnit.SECONDS)).andReturn(url);
     replay(storage);
-    assertEquals(url, blob.signUrl(100));
+    assertEquals(url, blob.signUrl(100, TimeUnit.SECONDS));
   }
 
   @Test

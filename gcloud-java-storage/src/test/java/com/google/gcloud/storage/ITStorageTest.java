@@ -435,10 +435,7 @@ public class ITStorageTest {
     String blobName = "test-get-signed-url-blob";
     BlobInfo blob = BlobInfo.of(bucket, blobName);
     assertNotNull(storage.create(BlobInfo.of(bucket, blobName), BLOB_BYTE_CONTENT));
-    Calendar calendar = Calendar.getInstance();
-    calendar.add(Calendar.HOUR, 1);
-    long expiration = calendar.getTimeInMillis() / 1000;
-    URL url = storage.signUrl(blob, expiration);
+    URL url = storage.signUrl(blob, 1, TimeUnit.HOURS);
     URLConnection connection = url.openConnection();
     byte[] readBytes = new byte[BLOB_BYTE_CONTENT.length];
     try (InputStream responseStream = connection.getInputStream()) {
@@ -453,10 +450,8 @@ public class ITStorageTest {
     String blobName = "test-post-signed-url-blob";
     BlobInfo blob = BlobInfo.of(bucket, blobName);
     assertNotNull(storage.create(BlobInfo.of(bucket, blobName)));
-    Calendar calendar = Calendar.getInstance();
-    calendar.add(Calendar.HOUR, 1);
-    long expiration = calendar.getTimeInMillis() / 1000;
-    URL url = storage.signUrl(blob, expiration, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
+    URL url =
+        storage.signUrl(blob, 1, TimeUnit.HOURS, Storage.SignUrlOption.httpMethod(HttpMethod.POST));
     URLConnection connection = url.openConnection();
     connection.setDoOutput(true);
     connection.connect();

@@ -68,6 +68,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
@@ -521,7 +522,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public URL signUrl(BlobInfo blobInfo, long expiration, SignUrlOption... options) {
+  public URL signUrl(BlobInfo blobInfo, long duration, TimeUnit unit, SignUrlOption... options) {
+    long expiration = TimeUnit.SECONDS.convert(
+        options().timeSource().millis() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
     EnumMap<SignUrlOption.Option, Object> optionMap = Maps.newEnumMap(SignUrlOption.Option.class);
     for (SignUrlOption option : options) {
       optionMap.put(option.option(), option.value());
