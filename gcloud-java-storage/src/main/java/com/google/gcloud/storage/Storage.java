@@ -564,6 +564,14 @@ public interface Storage extends Service<StorageOptions> {
   BlobInfo update(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
+   * Update blob information.
+   *
+   * @return the updated blob
+   * @throws StorageException upon failure
+   */
+  BlobInfo update(BlobInfo blobInfo);
+
+  /**
    * Delete the requested bucket.
    *
    * @return true if bucket was deleted
@@ -644,4 +652,35 @@ public interface Storage extends Service<StorageOptions> {
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
    */
   URL signUrl(BlobInfo blobInfo, long expirationTimeInSeconds, SignUrlOption... options);
+
+  /**
+   * Gets the requested blobs. A batch request is used to perform this call.
+   *
+   * @param blobInfos blobs to get
+   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
+   * has been denied the corresponding item in the list is {@code null}.
+   * @throws StorageException upon failure
+   */
+  List<BlobInfo> get(BlobInfo... blobInfos);
+
+  /**
+   * Updates the requested blobs. A batch request is used to perform this call.
+   *
+   * @param blobInfos blobs to update
+   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
+   * has been denied the corresponding item in the list is {@code null}.
+   * @throws StorageException upon failure
+   */
+  List<BlobInfo> update(BlobInfo... blobInfos);
+
+  /**
+   * Deletes the requested blobs. A batch request is used to perform this call.
+   *
+   * @param blobInfos blobs to delete
+   * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
+   * list is {@code true}. If deletion failed or access to the resource was denied the item is
+   * {@code false}.
+   * @throws StorageException upon failure
+   */
+  List<Boolean> delete(BlobInfo... blobInfos);
 }

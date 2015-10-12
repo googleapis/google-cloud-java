@@ -62,6 +62,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.Signature;
 import java.security.SignatureException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
@@ -349,6 +350,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
+  public BlobInfo update(BlobInfo blobInfo) {
+    return update(blobInfo, new BlobTargetOption[0]);
+  }
+
+  @Override
   public boolean delete(String bucket, BucketSourceOption... options) {
     final com.google.api.services.storage.model.Bucket bucketPb = BucketInfo.of(bucket).toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
@@ -575,6 +581,46 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     } catch (SignatureException | InvalidKeyException e) {
       throw new IllegalArgumentException("Invalid service account private key");
     }
+  }
+
+  @Override
+  public List<BlobInfo> get(BlobInfo... blobInfos) {
+    BatchRequest.Builder requestBuilder = BatchRequest.builder();
+    for (BlobInfo blobInfo : blobInfos) {
+      requestBuilder.get(blobInfo.bucket(), blobInfo.name());
+    }
+    BatchResponse response = apply(requestBuilder.build());
+    return Collections.unmodifiableList(transformResultList(response.gets(), null));
+  }
+
+  @Override
+  public List<BlobInfo> update(BlobInfo... blobInfos) {
+    BatchRequest.Builder requestBuilder = BatchRequest.builder();
+    for (BlobInfo blobInfo : blobInfos) {
+      requestBuilder.update(blobInfo);
+    }
+    BatchResponse response = apply(requestBuilder.build());
+    return Collections.unmodifiableList(transformResultList(response.updates(), null));
+  }
+
+  @Override
+  public List<Boolean> delete(BlobInfo... blobInfos) {
+    BatchRequest.Builder requestBuilder = BatchRequest.builder();
+    for (BlobInfo blobInfo : blobInfos) {
+      requestBuilder.delete(blobInfo.bucket(), blobInfo.name());
+    }
+    BatchResponse response = apply(requestBuilder.build());
+    return Collections.unmodifiableList(transformResultList(response.deletes(), Boolean.FALSE));
+  }
+
+  private static <T extends Serializable> List<T> transformResultList(
+      List<BatchResponse.Result<T>> results, final T errorValue) {
+    return Lists.transform(results, new Function<BatchResponse.Result<T>, T>() {
+      @Override
+      public T apply(BatchResponse.Result<T> f) {
+        return f.failed() ? errorValue : f.get();
+      }
+    });
   }
 
   private Map<StorageRpc.Option, ?> optionMap(Long generation, Long metaGeneration,

@@ -25,6 +25,7 @@ import com.google.gcloud.storage.Storage.BucketSourceOption;
 import com.google.gcloud.storage.Storage.BucketTargetOption;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -146,13 +147,18 @@ public final class Bucket {
   /**
    * Returns a list of requested blobs in this bucket. Blobs that do not exist are null.
    * 
-   * @param blobNames names of the requested blobs
+   * @param blobName1 first blob to get
+   * @param blobName2 second blob to get
+   * @param blobNames other blobs to get
+   * @return an immutable list of {@code Blob} objects.
    * @throws StorageException upon failure
    */
-  public List<Blob> getAll(String... blobNames) {
+  public List<Blob> get(String blobName1, String blobName2, String... blobNames) {
     BatchRequest.Builder batch = BatchRequest.builder();
-    for (String blobName : blobNames) {
-      batch.get(info.name(), blobName);
+    batch.get(info.name(), blobName1);
+    batch.get(info.name(), blobName2);
+    for (String name : blobNames) {
+      batch.get(info.name(), name);
     }
     List<Blob> blobs = new ArrayList<>(blobNames.length);
     BatchResponse response = storage.apply(batch.build());
@@ -160,7 +166,7 @@ public final class Bucket {
       BlobInfo blobInfo = result.get();
       blobs.add(blobInfo != null ? new Blob(storage, blobInfo) : null);
     }
-    return blobs;
+    return Collections.unmodifiableList(blobs);
   }
 
   /**

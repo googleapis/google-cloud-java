@@ -25,19 +25,25 @@ import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.util.Lists;
 import com.google.gcloud.storage.Storage.CopyRequest;
 import org.easymock.Capture;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 
 public class BlobTest {
 
   private static final BlobInfo BLOB_INFO = BlobInfo.of("b", "n");
+  private static final BlobInfo[] BLOB_INFO_ARRAY = {BlobInfo.of("b1", "n1"),
+      BlobInfo.of("b2", "n2"), BlobInfo.of("b3", "n3")};
 
   private Storage storage;
   private Blob blob;
@@ -94,7 +100,7 @@ public class BlobTest {
   @Test
   public void testUpdate() throws Exception {
     BlobInfo updatedInfo = BLOB_INFO.toBuilder().cacheControl("c").build();
-    expect(storage.update(updatedInfo)).andReturn(updatedInfo);
+    expect(storage.update(updatedInfo, new Storage.BlobTargetOption[0])).andReturn(updatedInfo);
     replay(storage);
     Blob updatedBlob = blob.update(updatedInfo);
     assertSame(storage, blob.storage());
@@ -158,5 +164,96 @@ public class BlobTest {
     expect(storage.signUrl(BLOB_INFO, 100)).andReturn(url);
     replay(storage);
     assertEquals(url, blob.signUrl(100));
+  }
+
+  @Test
+  public void testGetNone() throws Exception {
+    replay(storage);
+    assertTrue(Blob.get(storage).isEmpty());
+  }
+
+  @Test
+  public void testGetSome() throws Exception {
+    List<BlobInfo> blobInfoList = Arrays.asList(BLOB_INFO_ARRAY);
+    expect(storage.get(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
+    replay(storage);
+    List<Blob> result = Blob.get(storage, BLOB_INFO_ARRAY);
+    assertEquals(blobInfoList.size(), result.size());
+    for (int i = 0; i < blobInfoList.size(); i++) {
+      assertEquals(blobInfoList.get(i), result.get(i).info());
+    }
+  }
+
+  @Test
+  public void testGetSomeNull() throws Exception {
+    List<BlobInfo> blobInfoList = Arrays.asList(BLOB_INFO_ARRAY[0], null, BLOB_INFO_ARRAY[2]);
+    expect(storage.get(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
+    replay(storage);
+    List<Blob> result = Blob.get(storage, BLOB_INFO_ARRAY);
+    assertEquals(blobInfoList.size(), result.size());
+    for (int i = 0; i < blobInfoList.size(); i++) {
+      if (blobInfoList.get(i) != null) {
+        assertEquals(blobInfoList.get(i), result.get(i).info());
+      } else {
+        assertNull(result.get(i));
+      }
+    }
+  }
+
+  @Test
+  public void testUpdateNone() throws Exception {
+    replay(storage);
+    assertTrue(Blob.update(storage).isEmpty());
+  }
+
+  @Test
+  public void testUpdateSome() throws Exception {
+    List<BlobInfo> blobInfoList = Lists.newArrayListWithCapacity(BLOB_INFO_ARRAY.length);
+    for (BlobInfo info : BLOB_INFO_ARRAY) {
+      blobInfoList.add(info.toBuilder().contentType("content").build());
+    }
+    expect(storage.update(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
+    replay(storage);
+    List<Blob> result = Blob.update(storage, BLOB_INFO_ARRAY);
+    assertEquals(blobInfoList.size(), result.size());
+    for (int i = 0; i < blobInfoList.size(); i++) {
+      assertEquals(blobInfoList.get(i), result.get(i).info());
+    }
+  }
+
+  @Test
+  public void testUpdateSomeNull() throws Exception {
+    List<BlobInfo> blobInfoList = Arrays.asList(
+        BLOB_INFO_ARRAY[0].toBuilder().contentType("content").build(), null,
+        BLOB_INFO_ARRAY[2].toBuilder().contentType("content").build());
+    expect(storage.update(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
+    replay(storage);
+    List<Blob> result = Blob.update(storage, BLOB_INFO_ARRAY);
+    assertEquals(blobInfoList.size(), result.size());
+    for (int i = 0; i < blobInfoList.size(); i++) {
+      if (blobInfoList.get(i) != null) {
+        assertEquals(blobInfoList.get(i), result.get(i).info());
+      } else {
+        assertNull(result.get(i));
+      }
+    }
+  }
+
+  @Test
+  public void testDeleteNone() throws Exception {
+    replay(storage);
+    assertTrue(Blob.delete(storage).isEmpty());
+  }
+
+  @Test
+  public void testDeleteSome() throws Exception {
+    List<Boolean> deleleResultList = Arrays.asList(true, true, true);
+    expect(storage.delete(BLOB_INFO_ARRAY)).andReturn(deleleResultList);
+    replay(storage);
+    List<Boolean> result = Blob.delete(storage, BLOB_INFO_ARRAY);
+    assertEquals(deleleResultList.size(), result.size());
+    for (int i = 0; i < deleleResultList.size(); i++) {
+      assertEquals(deleleResultList.get(i), result.get(i));
+    }
   }
 }

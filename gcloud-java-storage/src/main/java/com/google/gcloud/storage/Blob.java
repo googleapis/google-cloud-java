@@ -20,12 +20,17 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.gcloud.storage.Blob.BlobSourceOption.convert;
 
+import com.google.common.base.Function;
+import com.google.common.collect.Lists;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.CopyRequest;
 import com.google.gcloud.storage.Storage.SignUrlOption;
 
 import java.net.URL;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -255,5 +260,75 @@ public final class Blob {
    */
   public Storage storage() {
     return storage;
+  }
+
+  /**
+   * Gets the requested blobs. If {@code infos.length == 0} an empty list is returned. If
+   * {@code infos.length > 1} a batch request is used to fetch blobs.
+   *
+   * @param storage the storage service used to issue the request
+   * @param infos the blobs to get
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
+   * been denied the corresponding item in the list is {@code null}.
+   * @throws StorageException upon failure
+   */
+  public static List<Blob> get(final Storage storage, BlobInfo... infos) {
+    checkNotNull(storage);
+    checkNotNull(infos);
+    if (infos.length == 0) {
+      return Collections.emptyList();
+    }
+    return Collections.unmodifiableList(Lists.transform(storage.get(infos),
+        new Function<BlobInfo, Blob>() {
+          @Override
+          public Blob apply(BlobInfo f) {
+            return f != null ? new Blob(storage, f) : null;
+          }
+        }));
+  }
+
+  /**
+   * Updates the requested blobs. If {@code infos.length == 0} an empty list is returned. If
+   * {@code infos.length > 1} a batch request is used to update blobs.
+   *
+   * @param storage the storage service used to issue the request
+   * @param infos the blobs to update
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
+   * been denied the corresponding item in the list is {@code null}.
+   * @throws StorageException upon failure
+   */
+  public static List<Blob> update(final Storage storage, BlobInfo... infos) {
+    checkNotNull(storage);
+    checkNotNull(infos);
+    if (infos.length == 0) {
+      return Collections.emptyList();
+    }
+    return Collections.unmodifiableList(Lists.transform(storage.update(infos),
+        new Function<BlobInfo, Blob>() {
+          @Override
+          public Blob apply(BlobInfo f) {
+            return f != null ? new Blob(storage, f) : null;
+          }
+        }));
+  }
+
+  /**
+   * Deletes the requested blobs. If {@code infos.length == 0} an empty list is returned. If
+   * {@code infos.length > 1} a batch request is used to delete blobs.
+   *
+   * @param storage the storage service used to issue the request
+   * @param infos the blobs to delete
+   * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
+   * list is {@code true}. If deletion failed or access to the resource was denied the item is
+   * {@code false}.
+   * @throws StorageException upon failure
+   */
+  public static List<Boolean> delete(Storage storage, BlobInfo... infos) {
+    checkNotNull(storage);
+    checkNotNull(infos);
+    if (infos.length == 0) {
+      return Collections.emptyList();
+    }
+    return storage.delete(infos);
   }
 }

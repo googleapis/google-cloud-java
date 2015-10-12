@@ -143,7 +143,7 @@ public class BucketTest {
         new BatchResponse(Collections.EMPTY_LIST, Collections.EMPTY_LIST, batchResultList);
     expect(storage.apply(capture(capturedBatchRequest))).andReturn(response);
     replay(storage);
-    List<Blob> blobs = bucket.getAll("n1", "n2", "n3");
+    List<Blob> blobs = bucket.get("n1", "n2", "n3");
     Set<BlobInfo> blobInfoSet = capturedBatchRequest.getValue().toGet().keySet();
     assertEquals(batchResultList.size(), blobInfoSet.size());
     for (BlobInfo info : BLOB_INFO_RESULTS) {

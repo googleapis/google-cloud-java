@@ -20,6 +20,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -36,6 +37,7 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Iterator;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -463,5 +465,102 @@ public class ITStorageTest {
     assertEquals(bucket, remoteBlob.bucket());
     assertEquals(blob.name(), remoteBlob.name());
     assertTrue(storage.delete(bucket, blobName));
+  }
+
+  @Test
+  public void testGetBlobs() {
+    String sourceBlobName1 = "test-get-blobs-1";
+    String sourceBlobName2 = "test-get-blobs-2";
+    BlobInfo sourceBlob1 = BlobInfo.of(bucket, sourceBlobName1);
+    BlobInfo sourceBlob2 = BlobInfo.of(bucket, sourceBlobName2);
+    assertNotNull(storage.create(sourceBlob1));
+    assertNotNull(storage.create(sourceBlob2));
+    List<BlobInfo> remoteInfos = storage.get(sourceBlob1, sourceBlob2);
+    assertEquals(sourceBlob1.bucket(), remoteInfos.get(0).bucket());
+    assertEquals(sourceBlob1.name(), remoteInfos.get(0).name());
+    assertEquals(sourceBlob2.bucket(), remoteInfos.get(1).bucket());
+    assertEquals(sourceBlob2.name(), remoteInfos.get(1).name());
+    assertTrue(storage.delete(bucket, sourceBlobName1));
+    assertTrue(storage.delete(bucket, sourceBlobName2));
+  }
+
+  @Test
+  public void testGetBlobsFail() {
+    String sourceBlobName1 = "test-get-blobs-fail-1";
+    String sourceBlobName2 = "test-get-blobs-fail-2";
+    BlobInfo sourceBlob1 = BlobInfo.of(bucket, sourceBlobName1);
+    BlobInfo sourceBlob2 = BlobInfo.of(bucket, sourceBlobName2);
+    assertNotNull(storage.create(sourceBlob1));
+    List<BlobInfo> remoteBlobs = storage.get(sourceBlob1, sourceBlob2);
+    assertEquals(sourceBlob1.bucket(), remoteBlobs.get(0).bucket());
+    assertEquals(sourceBlob1.name(), remoteBlobs.get(0).name());
+    assertNull(remoteBlobs.get(1));
+    assertTrue(storage.delete(bucket, sourceBlobName1));
+  }
+
+  @Test
+  public void testDeleteBlobs() {
+    String sourceBlobName1 = "test-delete-blobs-1";
+    String sourceBlobName2 = "test-delete-blobs-2";
+    BlobInfo sourceBlob1 = BlobInfo.of(bucket, sourceBlobName1);
+    BlobInfo sourceBlob2 = BlobInfo.of(bucket, sourceBlobName2);
+    assertNotNull(storage.create(sourceBlob1));
+    assertNotNull(storage.create(sourceBlob2));
+    List<Boolean> deleteStatus = storage.delete(sourceBlob1, sourceBlob2);
+    assertTrue(deleteStatus.get(0));
+    assertTrue(deleteStatus.get(1));
+  }
+
+  @Test
+  public void testDeleteBlobsFail() {
+    String sourceBlobName1 = "test-delete-blobs-fail-1";
+    String sourceBlobName2 = "test-delete-blobs-fail-2";
+    BlobInfo sourceBlob1 = BlobInfo.of(bucket, sourceBlobName1);
+    BlobInfo sourceBlob2 = BlobInfo.of(bucket, sourceBlobName2);
+    assertNotNull(storage.create(sourceBlob1));
+    List<Boolean> deleteStatus = storage.delete(sourceBlob1, sourceBlob2);
+    assertTrue(deleteStatus.get(0));
+    assertTrue(!deleteStatus.get(1));
+  }
+
+  @Test
+  public void testUpdateBlobs() {
+    String sourceBlobName1 = "test-update-blobs-1";
+    String sourceBlobName2 = "test-update-blobs-2";
+    BlobInfo sourceBlob1 = BlobInfo.of(bucket, sourceBlobName1);
+    BlobInfo sourceBlob2 = BlobInfo.of(bucket, sourceBlobName2);
+    BlobInfo remoteBlob1 = storage.create(sourceBlob1);
+    BlobInfo remoteBlob2 = storage.create(sourceBlob2);
+    assertNotNull(remoteBlob1);
+    assertNotNull(remoteBlob2);
+    List<BlobInfo> updatedBlobs = storage.update(
+        remoteBlob1.toBuilder().contentType(CONTENT_TYPE).build(),
+        remoteBlob2.toBuilder().contentType(CONTENT_TYPE).build());
+    assertEquals(sourceBlob1.bucket(), updatedBlobs.get(0).bucket());
+    assertEquals(sourceBlob1.name(), updatedBlobs.get(0).name());
+    assertEquals(CONTENT_TYPE, updatedBlobs.get(0).contentType());
+    assertEquals(sourceBlob2.bucket(), updatedBlobs.get(1).bucket());
+    assertEquals(sourceBlob2.name(), updatedBlobs.get(1).name());
+    assertEquals(CONTENT_TYPE, updatedBlobs.get(1).contentType());
+    assertTrue(storage.delete(bucket, sourceBlobName1));
+    assertTrue(storage.delete(bucket, sourceBlobName2));
+  }
+
+  @Test
+  public void testUpdateBlobsFail() {
+    String sourceBlobName1 = "test-update-blobs-fail-1";
+    String sourceBlobName2 = "test-update-blobs-fail-2";
+    BlobInfo sourceBlob1 = BlobInfo.of(bucket, sourceBlobName1);
+    BlobInfo sourceBlob2 = BlobInfo.of(bucket, sourceBlobName2);
+    BlobInfo remoteBlob1 = storage.create(sourceBlob1);
+    assertNotNull(remoteBlob1);
+    List<BlobInfo> updatedBlobs = storage.update(
+        remoteBlob1.toBuilder().contentType(CONTENT_TYPE).build(),
+        sourceBlob2.toBuilder().contentType(CONTENT_TYPE).build());
+    assertEquals(sourceBlob1.bucket(), updatedBlobs.get(0).bucket());
+    assertEquals(sourceBlob1.name(), updatedBlobs.get(0).name());
+    assertEquals(CONTENT_TYPE, updatedBlobs.get(0).contentType());
+    assertNull(updatedBlobs.get(1));
+    assertTrue(storage.delete(bucket, sourceBlobName1));
   }
 }
