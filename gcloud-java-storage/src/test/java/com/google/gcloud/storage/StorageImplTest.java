@@ -33,6 +33,7 @@ import com.google.common.collect.Maps;
 import com.google.common.io.BaseEncoding;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
@@ -172,7 +173,7 @@ public class StorageImplTest {
           + "EkPPhszldvQTY486uPxyD/D7HdfnGW/Nbw5JUhfvecAdudDEhNAQ3PNabyDMI+TpiHy4NTWOrgdcWrzj6VXcdc"
           + "+uuABnPwRCdcyJ1xl2kOrPksRnp1auNGMLOe4IpEBjGY7baX9UG8+A45MbG0aHmkR59Op/aR9XowIDAQAB";
 
-  private static final StorageOptions.TimeSource TIME_SOURCE = new StorageOptions.TimeSource() {
+  private static final ServiceOptions.Clock TIME_SOURCE = new ServiceOptions.Clock() {
     @Override
     public long millis() {
       return 42000L;
@@ -804,7 +805,7 @@ public class StorageImplTest {
         EasyMock.createMock(ServiceAccountAuthCredentials.class);
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     EasyMock.expect(optionsMock.authCredentials()).andReturn(credentialsMock).times(2);
-    EasyMock.expect(optionsMock.timeSource()).andReturn(TIME_SOURCE);
+    EasyMock.expect(optionsMock.clock()).andReturn(TIME_SOURCE);
     EasyMock.expect(credentialsMock.privateKey()).andReturn(privateKey);
     EasyMock.expect(credentialsMock.account()).andReturn(account);
     EasyMock.replay(optionsMock, storageRpcMock, credentialsMock);
@@ -839,7 +840,7 @@ public class StorageImplTest {
         EasyMock.createMock(ServiceAccountAuthCredentials.class);
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     EasyMock.expect(optionsMock.authCredentials()).andReturn(credentialsMock).times(2);
-    EasyMock.expect(optionsMock.timeSource()).andReturn(TIME_SOURCE);
+    EasyMock.expect(optionsMock.clock()).andReturn(TIME_SOURCE);
     EasyMock.expect(credentialsMock.privateKey()).andReturn(privateKey);
     EasyMock.expect(credentialsMock.account()).andReturn(account);
     EasyMock.replay(optionsMock, storageRpcMock, credentialsMock);

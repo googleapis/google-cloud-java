@@ -23,7 +23,6 @@ import com.google.gcloud.spi.DefaultStorageRpc;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpcFactory;
 
-import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
@@ -35,47 +34,12 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
   private static final String DEFAULT_PATH_DELIMITER = "/";
 
   private final String pathDelimiter;
-  private final TimeSource timeSource;
   private transient StorageRpc storageRpc;
-
-  /**
-   * A class providing access to the current time in milliseconds.
-   *
-   * Implementations should implement {@code Serializable} wherever possible and must document
-   * whether or not they do support serialization.
-   */
-  public static abstract class TimeSource {
-
-    private static TimeSource DEFAULT_TIME_SOURCE = new DefaultTimeSource();
-
-    /**
-     * Returns current time in milliseconds according to this time source.
-     */
-    public abstract long millis();
-
-    /**
-     * Returns the default time source.
-     */
-    public static TimeSource defaultTimeSource() {
-      return DEFAULT_TIME_SOURCE;
-    }
-
-    private static class DefaultTimeSource extends TimeSource implements Serializable {
-
-      private static final long serialVersionUID = -5077300394286703864L;
-
-      @Override
-      public long millis() {
-        return System.currentTimeMillis();
-      }
-    }
-  }
 
   public static class Builder extends
       ServiceOptions.Builder<StorageRpc, StorageOptions, Builder> {
 
     private String pathDelimiter;
-    private TimeSource timeSource;
 
     private Builder() {}
 
@@ -85,22 +49,12 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
 
     /**
      * Sets the path delimiter for the storage service.
+     *
      * @param pathDelimiter the path delimiter to set
      * @return the builder.
      */
     public Builder pathDelimiter(String pathDelimiter) {
       this.pathDelimiter = pathDelimiter;
-      return this;
-    }
-
-    /**
-     * Sets the time source for the storage service. The time source is used by `signUrl` to compute
-     * URL's expiry time. If no time source is set by default `System.getTimeMillis()` is used.
-     * @param source the time source to set
-     * @return the builder.
-     */
-    public Builder timeSource(TimeSource source) {
-      this.timeSource = source;
       return this;
     }
 
@@ -113,8 +67,6 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
   private StorageOptions(Builder builder) {
     super(builder);
     pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
-    timeSource = MoreObjects.firstNonNull(builder.timeSource, TimeSource.defaultTimeSource());
-    // todo: consider providing read-timeout
   }
 
   @Override
@@ -142,14 +94,6 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
    */
   public String pathDelimiter() {
     return pathDelimiter;
-  }
-
-  /**
-   * Returns the storage service's time source. Default time source uses `System.getTimeMillis()` to
-   * get current time. 
-   */
-  public TimeSource timeSource() {
-    return timeSource;
   }
 
   @Override

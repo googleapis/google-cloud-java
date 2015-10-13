@@ -524,7 +524,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public URL signUrl(BlobInfo blobInfo, long duration, TimeUnit unit, SignUrlOption... options) {
     long expiration = TimeUnit.SECONDS.convert(
-        options().timeSource().millis() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
+        options().clock().millis() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
     EnumMap<SignUrlOption.Option, Object> optionMap = Maps.newEnumMap(SignUrlOption.Option.class);
     for (SignUrlOption option : options) {
       optionMap.put(option.option(), option.value());
