@@ -214,24 +214,44 @@ public class LocalGcdHelper {
       try {
         boolean readerDone = false;
         boolean errorReaderDone = false;
+        String currentLog = null;
         while (!readerDone || !errorReaderDone) {
           if (!readerDone && reader.ready()) {
-            readerDone = reader.readLine() != null;
+            readerDone = reader.readLine() == null;
           }
           if (!errorReaderDone && errorReader.ready()) {
             String errorOutput = errorReader.readLine();
             if (errorOutput == null) {
               errorReaderDone = true;
             } else {
-              if (errorOutput.startsWith("SEVERE")) {
-                System.err.println(errorOutput);
-              }
+              currentLog = processLog(errorOutput, currentLog);
             }
           }
         }
       } catch (IOException e) {
         // ignore
       }
+    }
+
+    private static boolean isNewGcdLog(String line) {
+      return line.contains("com.google.apphosting.client.serviceapp.BaseApiServlet")
+          && !line.trim().startsWith("at ");
+    }
+
+    private static String processLog(String currentLine, String currentLog) {
+      if (isNewGcdLog(currentLine)) {
+        if (currentLog != null) {
+          log.info(currentLog.trim());
+        }
+        return "GCD ";
+      } else if (currentLine.startsWith("SEVERE: ")) {
+        return null; // Don't show duplicate error messages from gcd.sh
+      } else if (currentLog != null && currentLine.startsWith("INFO: ")) {
+        return currentLog + currentLine.substring("INFO: ".length()) + "\n";
+      } else if (currentLog != null && !currentLine.trim().startsWith("at ")) {
+        return currentLog + currentLine + "\n";
+      }
+      return currentLog;
     }
 
     public static ProcessStreamReader start(
