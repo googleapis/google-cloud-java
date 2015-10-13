@@ -32,12 +32,12 @@ import org.junit.Test;
 public class BlobListResultTest {
 
   private static final Iterable<BlobInfo> FIRST_PAGE_RESULTS = ImmutableList.of(
-      BlobInfo.of("b1", "n1"),
-      BlobInfo.of("b2", "n2"));
+      BlobInfo.builder("b1", "n1").build(),
+      BlobInfo.builder("b2", "n2").build());
 
   private static final Iterable<BlobInfo> SECOND_PAGE_RESULTS = ImmutableList.of(
-      BlobInfo.of("b1", "n1"),
-      BlobInfo.of("b2", "n2"));
+      BlobInfo.builder("b1", "n1").build(),
+      BlobInfo.builder("b2", "n2").build());
 
   private BaseListResult<BlobInfo> firstPage;
   private BaseListResult<BlobInfo> secondPage;

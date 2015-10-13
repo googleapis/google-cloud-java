@@ -141,7 +141,7 @@ public final class Bucket {
    * @throws StorageException upon failure
    */
   public Blob get(String blob, BlobSourceOption... options) {
-    return new Blob(storage, storage.get(info.name(), blob, options));
+    return new Blob(storage, storage.get(BlobId.of(info.name(), blob), options));
   }
 
   /**
@@ -179,8 +179,8 @@ public final class Bucket {
    * @throws StorageException upon failure
    */
   Blob create(String blob, byte[] content, BlobTargetOption... options) {
-    BlobInfo blobInfo = BlobInfo.of(info.name(), blob);
-    return new Blob(storage, storage.create(blobInfo, content, options));
+    BlobId blobId = BlobId.of(info.name(), blob);
+    return new Blob(storage, storage.create(BlobInfo.builder(blobId).build(), content, options));
   }
 
   /**

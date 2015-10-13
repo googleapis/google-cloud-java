@@ -59,9 +59,8 @@ public final class BlobInfo implements Serializable {
         }
       };
   private static final long serialVersionUID = 2228487739943277159L;
-  private final String bucket;
+  private final BlobId blobId;
   private final String id;
-  private final String name;
   private final String selfLink;
   private final String cacheControl;
   private final List<Acl> acl;
@@ -84,9 +83,8 @@ public final class BlobInfo implements Serializable {
 
   public static final class Builder {
 
-    private String bucket;
+    private BlobId blobId;
     private String id;
-    private String name;
     private String contentType;
     private String contentEncoding;
     private String contentDisposition;
@@ -109,18 +107,13 @@ public final class BlobInfo implements Serializable {
 
     private Builder() {}
 
-    public Builder bucket(String bucket) {
-      this.bucket = checkNotNull(bucket);
+    public Builder blobId(BlobId blobId) {
+      this.blobId = checkNotNull(blobId);
       return this;
     }
 
     Builder id(String id) {
       this.id = id;
-      return this;
-    }
-
-    public Builder name(String name) {
-      this.name = checkNotNull(name);
       return this;
     }
 
@@ -220,15 +213,13 @@ public final class BlobInfo implements Serializable {
     }
 
     public BlobInfo build() {
-      checkNotNull(bucket);
-      checkNotNull(name);
+      checkNotNull(blobId);
       return new BlobInfo(this);
     }
   }
 
   private BlobInfo(Builder builder) {
-    bucket = builder.bucket;
-    name = builder.name;
+    blobId = builder.blobId;
     id = builder.id;
     cacheControl = builder.cacheControl;
     contentEncoding = builder.contentEncoding;
@@ -251,8 +242,12 @@ public final class BlobInfo implements Serializable {
     updateTime = builder.updateTime;
   }
 
+  public BlobId blobId() {
+    return blobId;
+  }
+
   public String bucket() {
-    return bucket;
+    return blobId().bucket();
   }
 
   public String id() {
@@ -260,7 +255,7 @@ public final class BlobInfo implements Serializable {
   }
 
   public String name() {
-    return name;
+    return blobId().name();
   }
 
   public String cacheControl() {
@@ -341,8 +336,7 @@ public final class BlobInfo implements Serializable {
 
   public Builder toBuilder() {
     return new Builder()
-        .bucket(bucket)
-        .name(name)
+        .blobId(blobId)
         .id(id)
         .generation(generation)
         .cacheControl(cacheControl)
@@ -378,7 +372,7 @@ public final class BlobInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bucket, name);
+    return Objects.hash(blobId);
   }
 
   @Override
@@ -387,7 +381,7 @@ public final class BlobInfo implements Serializable {
   }
 
   StorageObject toPb() {
-    StorageObject storageObject = new StorageObject();
+    StorageObject storageObject = blobId.toPb();
     if (acl != null) {
       storageObject.setAcl(Lists.transform(acl, new Function<Acl, ObjectAccessControl>() {
         @Override
@@ -408,7 +402,6 @@ public final class BlobInfo implements Serializable {
     if (owner != null) {
       storageObject.setOwner(new Owner().setEntity(owner.toPb()));
     }
-    storageObject.setBucket(bucket);
     storageObject.setCacheControl(cacheControl);
     storageObject.setContentEncoding(contentEncoding);
     storageObject.setCrc32c(crc32c);
@@ -418,7 +411,6 @@ public final class BlobInfo implements Serializable {
     storageObject.setMediaLink(mediaLink);
     storageObject.setMetadata(metadata);
     storageObject.setMetageneration(metageneration);
-    storageObject.setName(name);
     storageObject.setContentDisposition(contentDisposition);
     storageObject.setComponentCount(componentCount);
     storageObject.setContentLanguage(contentLanguage);
@@ -428,20 +420,20 @@ public final class BlobInfo implements Serializable {
     return storageObject;
   }
 
-  public static BlobInfo of(String bucket, String name) {
-    return builder(bucket, name).build();
-  }
-
   public static Builder builder(BucketInfo bucketInfo, String name) {
     return builder(bucketInfo.name(), name);
   }
 
   public static Builder builder(String bucket, String name) {
-    return new Builder().bucket(bucket).name(name);
+    return new Builder().blobId(BlobId.of(bucket, name));
+  }
+
+  public static Builder builder(BlobId blobId) {
+    return new Builder().blobId(blobId);
   }
 
   static BlobInfo fromPb(StorageObject storageObject) {
-    Builder builder = new Builder().bucket(storageObject.getBucket()).name(storageObject.getName());
+    Builder builder = builder(BlobId.fromPb(storageObject));
     if (storageObject.getCacheControl() != null) {
       builder.cacheControl(storageObject.getCacheControl());
     }

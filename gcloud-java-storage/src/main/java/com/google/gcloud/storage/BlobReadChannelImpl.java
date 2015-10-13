@@ -38,7 +38,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
   private static final long serialVersionUID = 4821762590742862669L;
 
   private final StorageOptions serviceOptions;
-  private final BlobInfo blobInfo;
+  private final BlobId blob;
   private final Map<StorageRpc.Option, ?> requestOptions;
   private int position;
   private boolean isOpen;
@@ -50,10 +50,10 @@ class BlobReadChannelImpl implements BlobReadChannel {
   private transient int bufferPos;
   private transient byte[] buffer;
 
-  BlobReadChannelImpl(StorageOptions serviceOptions, BlobInfo blobInfo,
+  BlobReadChannelImpl(StorageOptions serviceOptions, BlobId blob,
       Map<StorageRpc.Option, ?> requestOptions) {
     this.serviceOptions = serviceOptions;
-    this.blobInfo = blobInfo;
+    this.blob = blob;
     this.requestOptions = requestOptions;
     isOpen = true;
     initTransients();
@@ -76,7 +76,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
 
   private void initTransients() {
     storageRpc = serviceOptions.storageRpc();
-    storageObject = blobInfo.toPb();
+    storageObject = blob.toPb();
   }
 
   @Override

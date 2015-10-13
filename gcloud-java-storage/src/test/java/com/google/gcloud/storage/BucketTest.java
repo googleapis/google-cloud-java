@@ -42,9 +42,9 @@ public class BucketTest {
 
   private static final BucketInfo BUCKET_INFO = BucketInfo.of("b");
   private static final Iterable<BlobInfo> BLOB_INFO_RESULTS = ImmutableList.of(
-      BlobInfo.of("b", "n1"),
-      BlobInfo.of("b", "n2"),
-      BlobInfo.of("b", "n3"));
+      BlobInfo.builder("b", "n1").build(),
+      BlobInfo.builder("b", "n2").build(),
+      BlobInfo.builder("b", "n3").build());
 
   private Storage storage;
   private Bucket bucket;
@@ -125,8 +125,9 @@ public class BucketTest {
 
   @Test
   public void testGet() throws Exception {
-    BlobInfo info = BlobInfo.of("b", "n");
-    expect(storage.get(BUCKET_INFO.name(), "n")).andReturn(info);
+    BlobInfo info = BlobInfo.builder("b", "n").build();
+    expect(storage.get(BlobId.of(bucket.info().name(), "n"), new Storage.BlobSourceOption[0]))
+        .andReturn(info);
     replay(storage);
     Blob blob = bucket.get("n");
     assertEquals(info, blob.info());
@@ -144,10 +145,10 @@ public class BucketTest {
     expect(storage.apply(capture(capturedBatchRequest))).andReturn(response);
     replay(storage);
     List<Blob> blobs = bucket.get("n1", "n2", "n3");
-    Set<BlobInfo> blobInfoSet = capturedBatchRequest.getValue().toGet().keySet();
+    Set<BlobId> blobInfoSet = capturedBatchRequest.getValue().toGet().keySet();
     assertEquals(batchResultList.size(), blobInfoSet.size());
     for (BlobInfo info : BLOB_INFO_RESULTS) {
-      assertTrue(blobInfoSet.contains(info));
+      assertTrue(blobInfoSet.contains(info.blobId()));
     }
     Iterator<Blob> blobIterator = blobs.iterator();
     Iterator<Result<BlobInfo>> batchResultIterator = response.gets().iterator();
@@ -160,7 +161,7 @@ public class BucketTest {
 
   @Test
   public void testCreate() throws Exception {
-    BlobInfo info = BlobInfo.of("b", "n");
+    BlobInfo info = BlobInfo.builder("b", "n").build();
     byte[] content = {0xD, 0xE, 0xA, 0xD};
     expect(storage.create(info, content)).andReturn(info);
     replay(storage);
