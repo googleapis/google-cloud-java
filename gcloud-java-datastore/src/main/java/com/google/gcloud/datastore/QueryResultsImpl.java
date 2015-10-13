@@ -70,6 +70,10 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     entityResultPbIter = queryResultBatchPb.getEntityResultsList().iterator();
     if (queryResultBatchPb.getSkippedResults() > 0) {
       cursor = queryResultBatchPb.getSkippedCursor();
+    } else if (entityResultPbIter.hasNext()) {
+      cursor = queryResultBatchPb.getEntityResults(0).getCursor();
+    } else {
+      cursor = queryResultBatchPb.getEndCursor();
     }
     actualResultType = ResultType.fromPb(queryResultBatchPb.getEntityResultType());
     if (Objects.equals(queryResultType, ResultType.PROJECTION_ENTITY)) {

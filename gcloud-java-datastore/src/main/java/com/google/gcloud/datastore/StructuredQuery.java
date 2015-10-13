@@ -68,7 +68,7 @@ import java.util.Objects;
  *       .kind(kind)
  *       .projection(Projection.property("age"), Projection.first("name"))
  *       .filter(PropertyFilter.gt("age", 18))
- *       .groupBy("age")
+ *       .distinct("age")
  *       .orderBy(OrderBy.asc("age"))
  *       .limit(10)
  *       .build();
@@ -86,9 +86,9 @@ public class StructuredQuery<V> extends Query<V> {
   private static final String KEY_PROPERTY_NAME = "__key__";
 
   private final transient String kind;
-  private final ImmutableList<Projection> projection;
+  private final ImmutableList<String> projection;
   private final transient Filter filter;
-  private final ImmutableList<String> groupBy;
+  private final ImmutableList<String> distinctOn;
   private final transient ImmutableList<OrderBy> orderBy;
   private final transient Cursor startCursor;
   private final transient Cursor endCursor;
@@ -108,10 +108,8 @@ public class StructuredQuery<V> extends Query<V> {
       switch (filterPb.getFilterTypeCase()) {
         case COMPOSITE_FILTER:
           return CompositeFilter.fromPb(filterPb.getCompositeFilter());
-        case PROPERTY_FILTER:
-          return PropertyFilter.fromPb(filterPb.getPropertyFilter());
         default:
-          return null;
+          return PropertyFilter.fromPb(filterPb.getPropertyFilter());
       }
     }
   }
@@ -525,65 +523,15 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
-  public static final class Projection implements Serializable {
-
-    private static final long serialVersionUID = 3083707957256279470L;
-
-    private final String property;
-
-    private Projection(String property) {
-      this.property = property;
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(property);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof Projection)) {
-        return false;
-      }
-      return Objects.equals(property, ((Projection) obj).property);
-    }
-
-    @Override
-    public String toString() {
-      ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
-      toStringHelper.add("property", property);
-      return toStringHelper.toString();
-    }
-
-    com.google.datastore.v1beta3.Projection toPb() {
-      com.google.datastore.v1beta3.Projection.Builder expressionPb =
-          com.google.datastore.v1beta3.Projection.newBuilder();
-      expressionPb.setProperty(
-          com.google.datastore.v1beta3.PropertyReference.newBuilder().setName(property).build());
-      return expressionPb.build();
-    }
-
-    public static Projection fromPb(
-        com.google.datastore.v1beta3.Projection projectionPb) {
-      return new Projection(projectionPb.getProperty().getName());
-    }
-
-    public static Projection property(String property) {
-      return new Projection(property);
-    }
-  }
-
   static class BaseBuilder<V, B extends BaseBuilder<V, B>> {
 
     private final ResultType<V> resultType;
     private String namespace;
     private String kind;
-    private final List<Projection> projection = new LinkedList<>();
+    private final List<String> projection = new LinkedList<>();
     private Filter filter;
-    private final List<String> groupBy = new LinkedList<>();
+    private boolean distinctOnAll = false;
+    private final List<String> distinctOn = new LinkedList<>();
     private final List<OrderBy> orderBy = new LinkedList<>();
     private Cursor startCursor;
     private Cursor endCursor;
@@ -658,32 +606,39 @@ public class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    B projection(Projection projection, Projection... others) {
+    B projection(String projection, String... others) {
       clearProjection();
       addProjection(projection, others);
       return self();
     }
 
-    B addProjection(Projection projection, Projection... others) {
+    B addProjection(String projection, String... others) {
       this.projection.add(projection);
       Collections.addAll(this.projection, others);
       return self();
     }
 
-    B clearGroupBy() {
-      groupBy.clear();
+    B clearDistinct() {
+      distinctOn.clear();
+      distinctOnAll = false;
       return self();
     }
 
-    B groupBy(String property, String... others) {
-      clearGroupBy();
-      addGroupBy(property, others);
+    B distinct(String... properties) {
+      clearDistinct();
+      if (properties.length == 0) {
+        this.distinctOnAll = true;
+      } else if (properties.length == 1) {
+        addDistinct(properties[0]);
+      } else {
+        addDistinct(properties[0], Arrays.copyOfRange(properties, 1, properties.length));
+      }
       return self();
     }
 
-    B addGroupBy(String property, String... others) {
-      this.groupBy.add(property);
-      Collections.addAll(this.groupBy, others);
+    B addDistinct(String property, String... others) {
+      this.distinctOn.add(property);
+      Collections.addAll(this.distinctOn, others);
       return self();
     }
 
@@ -712,15 +667,20 @@ public class StructuredQuery<V> extends Query<V> {
       }
       for (com.google.datastore.v1beta3.Projection projectionPb
            : queryPb.getProjectionList()) {
-        addProjection(Projection.fromPb(projectionPb));
+        addProjection(projectionPb.getProperty().getName());
       }
-      for (com.google.datastore.v1beta3.PropertyReference groupByPb : queryPb.getDistinctOnList()) {
-        addGroupBy(groupByPb.getName());
+      for (com.google.datastore.v1beta3.PropertyReference distinctOnPb : queryPb.getDistinctOnList()) {
+        addDistinct(distinctOnPb.getName());
       }
+      distinctOnAll = false;
       return self();
     }
 
     public StructuredQuery<V> build() {
+      if (distinctOnAll) {
+        clearDistinct();
+        this.distinctOn.addAll(this.projection);
+      }
       return new StructuredQuery<>(this);
     }
   }
@@ -748,14 +708,14 @@ public class StructuredQuery<V> extends Query<V> {
 
     KeyQueryBuilder() {
       super(ResultType.KEY);
-      projection(Projection.property(KEY_PROPERTY_NAME));
+      projection(KEY_PROPERTY_NAME);
     }
 
     @Override
     protected KeyQueryBuilder mergeFrom(com.google.datastore.v1beta3.Query queryPb) {
       super.mergeFrom(queryPb);
-      projection(Projection.property(KEY_PROPERTY_NAME));
-      clearGroupBy();
+      projection(KEY_PROPERTY_NAME);
+      clearDistinct();
       return this;
     }
 
@@ -783,28 +743,28 @@ public class StructuredQuery<V> extends Query<V> {
     }
 
     @Override
-    public ProjectionEntityQueryBuilder projection(Projection projection, Projection... others) {
+    public ProjectionEntityQueryBuilder projection(String projection, String... others) {
       return super.projection(projection, others);
     }
 
     @Override
-    public ProjectionEntityQueryBuilder addProjection(Projection projection, Projection... others) {
+    public ProjectionEntityQueryBuilder addProjection(String projection, String... others) {
       return super.addProjection(projection, others);
     }
 
     @Override
-    public ProjectionEntityQueryBuilder clearGroupBy() {
-      return super.clearGroupBy();
+    public ProjectionEntityQueryBuilder clearDistinct() {
+      return super.clearDistinct();
     }
 
     @Override
-    public ProjectionEntityQueryBuilder groupBy(String property, String... others) {
-      return super.groupBy(property, others);
+    public ProjectionEntityQueryBuilder distinct(String... properties) {
+      return super.distinct(properties);
     }
 
     @Override
-    public ProjectionEntityQueryBuilder addGroupBy(String property, String... others) {
-      return super.addGroupBy(property, others);
+    public ProjectionEntityQueryBuilder addDistinct(String property, String... others) {
+      return super.addDistinct(property, others);
     }
   }
 
@@ -813,7 +773,7 @@ public class StructuredQuery<V> extends Query<V> {
     kind = builder.kind;
     projection = ImmutableList.copyOf(builder.projection);
     filter = builder.filter;
-    groupBy = ImmutableList.copyOf(builder.groupBy);
+    distinctOn = ImmutableList.copyOf(builder.distinctOn);
     orderBy = ImmutableList.copyOf(builder.orderBy);
     startCursor = builder.startCursor;
     endCursor = builder.endCursor;
@@ -824,7 +784,7 @@ public class StructuredQuery<V> extends Query<V> {
   @Override
   public int hashCode() {
     return Objects.hash(namespace(), kind, startCursor, endCursor, offset, limit, filter, orderBy,
-        projection(), groupBy());
+        distinct());
   }
 
   @Override
@@ -845,7 +805,7 @@ public class StructuredQuery<V> extends Query<V> {
         && Objects.equals(filter, other.filter)
         && Objects.equals(orderBy, other.orderBy)
         && Objects.equals(projection, other.projection)
-        && Objects.equals(groupBy, other.groupBy);
+        && Objects.equals(distinctOn, other.distinctOn);
 
   }
 
@@ -854,10 +814,10 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   boolean keyOnly() {
-    return projection.size() == 1 && KEY_PROPERTY_NAME.equals(projection.get(0).property);
+    return projection.size() == 1 && KEY_PROPERTY_NAME.equals(projection.get(0));
   }
 
-  public List<Projection> projection() {
+  public List<String> projection() {
     return projection;
   }
 
@@ -865,8 +825,8 @@ public class StructuredQuery<V> extends Query<V> {
     return filter;
   }
 
-  public List<String> groupBy() {
-    return groupBy;
+  public List<String> distinct() {
+    return distinctOn;
   }
 
   public ImmutableList<OrderBy> orderBy() {
@@ -935,12 +895,16 @@ public class StructuredQuery<V> extends Query<V> {
     for (OrderBy value : orderBy) {
       queryPb.addOrder(value.toPb());
     }
-    for (String value : groupBy) {
+    for (String value : distinctOn) {
       queryPb.addDistinctOn(com.google.datastore.v1beta3.PropertyReference.newBuilder()
           .setName(value).build());
     }
-    for (Projection value : projection) {
-      queryPb.addProjection(value.toPb());
+    for (String value : projection) {
+      com.google.datastore.v1beta3.Projection.Builder expressionPb =
+          com.google.datastore.v1beta3.Projection.newBuilder();
+      expressionPb.setProperty(
+          com.google.datastore.v1beta3.PropertyReference.newBuilder().setName(value).build());
+      queryPb.addProjection(expressionPb.build());
     }
     return queryPb.build();
   }

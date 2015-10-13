@@ -29,7 +29,6 @@ import com.google.common.collect.Iterators;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
-import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.spi.DatastoreRpc;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
@@ -421,7 +420,7 @@ public class DatastoreTest {
 
     StructuredQuery<ProjectionEntity> keyOnlyProjectionQuery =
         Query.projectionEntityQueryBuilder()
-        .kind(KIND1).projection(Projection.property("__key__")).build();
+        .kind(KIND1).projection("__key__").build();
     QueryResults<ProjectionEntity> results3 = datastore.run(keyOnlyProjectionQuery);
     assertTrue(results3.hasNext());
     ProjectionEntity projectionEntity = results3.next();
@@ -431,9 +430,9 @@ public class DatastoreTest {
 
     StructuredQuery<ProjectionEntity> projectionQuery = Query.projectionEntityQueryBuilder()
         .kind(KIND2)
-        .projection(Projection.property("age"))
+        .projection("age")
         .filter(PropertyFilter.gt("age", 18))
-        .groupBy("age")
+        .distinct("age")
         .orderBy(OrderBy.asc("age"))
         .limit(10)
         .build();

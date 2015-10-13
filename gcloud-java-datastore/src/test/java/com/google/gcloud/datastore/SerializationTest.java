@@ -26,7 +26,6 @@ import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
-import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 
 import org.junit.Test;
@@ -71,13 +70,13 @@ public class SerializationTest {
   private static final Query<ProjectionEntity> QUERY3 = Query.projectionEntityQueryBuilder()
       .kind("k")
       .namespace("ns1")
-      .projection(Projection.property("p"))
+      .projection("p")
       .limit(100)
       .offset(5)
       .startCursor(CURSOR1)
       .endCursor(CURSOR2)
       .filter(CompositeFilter.and(PropertyFilter.gt("p1", 10), PropertyFilter.eq("a", "v")))
-      .addGroupBy("p")
+      .addDistinct("p")
       .addOrderBy(OrderBy.asc("p"))
       .build();
   private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
