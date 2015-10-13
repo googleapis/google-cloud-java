@@ -34,6 +34,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
@@ -123,6 +124,10 @@ public abstract class ServiceOptions<
       @Override
       public long millis() {
         return System.currentTimeMillis();
+      }
+
+      private Object readResolve() throws ObjectStreamException {
+        return DEFAULT_TIME_SOURCE;
       }
     }
   }
