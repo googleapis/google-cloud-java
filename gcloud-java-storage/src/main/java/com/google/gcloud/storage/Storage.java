@@ -649,7 +649,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @param blobInfo the blob associated with the signed URL
    * @param duration time until the signed URL expires, expressed in {@code unit}. The finer
-   * granularity supported is 1 second, finer granularities will be truncated
+   *     granularity supported is 1 second, finer granularities will be truncated
    * @param unit time unit of the {@code duration} parameter
    * @param options optional URL signing options
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
@@ -661,7 +661,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @param blobInfos blobs to get
    * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
-   * has been denied the corresponding item in the list is {@code null}.
+   *     has been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
   List<BlobInfo> get(BlobInfo... blobInfos);
@@ -671,7 +671,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @param blobInfos blobs to update
    * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
-   * has been denied the corresponding item in the list is {@code null}.
+   *     has been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
   List<BlobInfo> update(BlobInfo... blobInfos);
@@ -681,8 +681,8 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @param blobInfos blobs to delete
    * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
-   * list is {@code true}. If deletion failed or access to the resource was denied the item is
-   * {@code false}.
+   *     list is {@code true}. If deletion failed or access to the resource was denied the item is
+   *     {@code false}.
    * @throws StorageException upon failure
    */
   List<Boolean> delete(BlobInfo... blobInfos);
