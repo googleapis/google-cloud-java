@@ -182,16 +182,23 @@ public class LocalGcdHelper {
 
     private final Process process;
     private final BufferedReader reader;
+    private final BufferedReader errorReader;
 
-    ProcessStreamReader(Process process, String blockUntil) throws IOException {
+    ProcessStreamReader(
+        Process process, String blockUntil, boolean blockOnErrorStream) throws IOException {
       super("Local GCD InputStream reader");
       setDaemon(true);
       this.process = process;
       reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+      errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
       if (!Strings.isNullOrEmpty(blockUntil)) {
         String line;
         do {
-          line = reader.readLine();
+          if (blockOnErrorStream) {
+            line = errorReader.readLine();
+          } else {
+            line = reader.readLine();
+          }
         } while (line != null && !line.contains(blockUntil));
       }
     }
@@ -205,16 +212,31 @@ public class LocalGcdHelper {
     @Override
     public void run() {
       try {
-        while (reader.readLine() != null) {
-          // consume line
+        boolean readerDone = false;
+        boolean errorReaderDone = false;
+        while (!readerDone || !errorReaderDone) {
+          if (!readerDone && reader.ready()) {
+            readerDone = reader.readLine() != null;
+          }
+          if (!errorReaderDone && errorReader.ready()) {
+            String errorOutput = errorReader.readLine();
+            if (errorOutput == null) {
+              errorReaderDone = true;
+            } else {
+              if (errorOutput.startsWith("SEVERE")) {
+                System.err.println(errorOutput);
+              }
+            }
+          }
         }
       } catch (IOException e) {
         // ignore
       }
     }
 
-    public static ProcessStreamReader start(Process process, String blockUntil) throws IOException {
-      ProcessStreamReader thread = new ProcessStreamReader(process, blockUntil);
+    public static ProcessStreamReader start(
+        Process process, String blockUntil, boolean blockOnErrorStream) throws IOException {
+      ProcessStreamReader thread = new ProcessStreamReader(process, blockUntil, blockOnErrorStream);
       thread.start();
       return thread;
     }
@@ -396,9 +418,8 @@ public class LocalGcdHelper {
         .command(gcdAbsolutePath.toString(), "start", "--testing", "--allow_remote_shutdown",
             "--port=" + Integer.toString(port), projectId)
         .directory(gcdPath)
-        .redirectErrorStream()
         .start();
-    processReader = ProcessStreamReader.start(startProcess, "Dev App Server is now running");
+    processReader = ProcessStreamReader.start(startProcess, "Dev App Server is now running", true);
   }
 
   private static String md5(File gcdZipFile) throws IOException {
