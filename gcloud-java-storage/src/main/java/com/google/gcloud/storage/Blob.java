@@ -32,6 +32,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A Google cloud storage object.
@@ -246,13 +247,15 @@ public final class Blob {
    * time period. This is particularly useful if you don't want publicly accessible blobs, but don't
    * want to require users to explicitly log in.
    *
-   * @param expirationTimeInSeconds the signed URL expiration (using epoch time)
-   * @param options signed url options
+   * @param duration time until the signed URL expires, expressed in {@code unit}. The finer
+   *     granularity supported is 1 second, finer granularities will be truncated
+   * @param unit time unit of the {@code duration} parameter
+   * @param options optional URL signing options
    * @return a signed URL for this bucket and the specified options
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
    */
-  public URL signUrl(long expirationTimeInSeconds, SignUrlOption... options) {
-    return storage.signUrl(info, expirationTimeInSeconds, options);
+  public URL signUrl(long duration, TimeUnit unit, SignUrlOption... options) {
+    return storage.signUrl(info, duration, unit, options);
   }
 
   /**
@@ -269,7 +272,7 @@ public final class Blob {
    * @param storage the storage service used to issue the request
    * @param infos the blobs to get
    * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
-   * been denied the corresponding item in the list is {@code null}.
+   *     been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
   public static List<Blob> get(final Storage storage, BlobInfo... infos) {
@@ -294,7 +297,7 @@ public final class Blob {
    * @param storage the storage service used to issue the request
    * @param infos the blobs to update
    * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
-   * been denied the corresponding item in the list is {@code null}.
+   *     been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
   public static List<Blob> update(final Storage storage, BlobInfo... infos) {
@@ -319,8 +322,8 @@ public final class Blob {
    * @param storage the storage service used to issue the request
    * @param infos the blobs to delete
    * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
-   * list is {@code true}. If deletion failed or access to the resource was denied the item is
-   * {@code false}.
+   *     list is {@code true}. If deletion failed or access to the resource was denied the item is
+   *     {@code false}.
    * @throws StorageException upon failure
    */
   public static List<Boolean> delete(Storage storage, BlobInfo... infos) {

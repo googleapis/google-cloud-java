@@ -34,6 +34,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
@@ -62,6 +63,7 @@ public abstract class ServiceOptions<
   private final ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
   private final int connectTimeout;
   private final int readTimeout;
+  private final Clock clock;
 
   public interface HttpTransportFactory extends Serializable {
     HttpTransport create();
@@ -91,7 +93,44 @@ public abstract class ServiceOptions<
     }
   }
 
+  /**
+   * A class providing access to the current time in milliseconds. This class is mainly used for
+   * testing and will be replaced by Java8's {@code java.time.Clock}.
+   *
+   * Implementations should implement {@code Serializable} wherever possible and must document
+   * whether or not they do support serialization.
+   */
+  public static abstract class Clock {
 
+    private static ServiceOptions.Clock DEFAULT_TIME_SOURCE = new DefaultClock();
+
+    /**
+     * Returns current time in milliseconds according to this clock.
+     */
+    public abstract long millis();
+
+    /**
+     * Returns the default clock. Default clock uses {@link System#currentTimeMillis()} to get time
+     * in milliseconds.
+     */
+    public static ServiceOptions.Clock defaultClock() {
+      return DEFAULT_TIME_SOURCE;
+    }
+
+    private static class DefaultClock extends ServiceOptions.Clock implements Serializable {
+
+      private static final long serialVersionUID = -5077300394286703864L;
+
+      @Override
+      public long millis() {
+        return System.currentTimeMillis();
+      }
+
+      private Object readResolve() throws ObjectStreamException {
+        return DEFAULT_TIME_SOURCE;
+      }
+    }
+  }
 
   protected abstract static class Builder<
       ServiceRpcT,
@@ -106,6 +145,7 @@ public abstract class ServiceOptions<
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
     private int connectTimeout = -1;
     private int readTimeout = -1;
+    private Clock clock;
 
     protected Builder() {}
 
@@ -123,6 +163,18 @@ public abstract class ServiceOptions<
     @SuppressWarnings("unchecked")
     protected B self() {
       return (B) this;
+    }
+
+    /**
+     * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
+     * replaced by Java8's {@code java.time.Clock}.
+     *
+     * @param clock the clock to set
+     * @return the builder.
+     */
+    public B clock(Clock clock) {
+      this.clock = clock;
+      return self();
     }
 
     /**
@@ -221,6 +273,7 @@ public abstract class ServiceOptions<
     serviceRpcFactory = builder.serviceRpcFactory;
     connectTimeout = builder.connectTimeout;
     readTimeout = builder.readTimeout;
+    clock = firstNonNull(builder.clock, Clock.defaultClock());
   }
 
   private static AuthCredentials defaultAuthCredentials() {
@@ -419,9 +472,17 @@ public abstract class ServiceOptions<
     return readTimeout;
   }
 
+  /**
+   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to
+   * get current time. 
+   */
+  public Clock clock() {
+    return clock;
+  }
+
   protected int baseHashCode() {
     return Objects.hash(projectId, host, httpTransportFactory, authCredentials, retryParams,
-        serviceRpcFactory);
+        serviceRpcFactory, connectTimeout, readTimeout, clock);
   }
 
   protected boolean baseEquals(ServiceOptions<?, ?> other) {
@@ -430,7 +491,10 @@ public abstract class ServiceOptions<
         && Objects.equals(httpTransportFactory, other.httpTransportFactory)
         && Objects.equals(authCredentials, other.authCredentials)
         && Objects.equals(retryParams, other.retryParams)
-        && Objects.equals(serviceRpcFactory, other.serviceRpcFactory);
+        && Objects.equals(serviceRpcFactory, other.serviceRpcFactory)
+        && Objects.equals(connectTimeout, other.connectTimeout)
+        && Objects.equals(readTimeout, other.readTimeout)
+        && Objects.equals(clock, clock);
   }
 
   public abstract Builder<ServiceRpcT, OptionsT, ?> toBuilder();

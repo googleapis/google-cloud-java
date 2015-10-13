@@ -33,6 +33,7 @@ import com.google.common.collect.Maps;
 import com.google.common.io.BaseEncoding;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
@@ -65,6 +66,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class StorageImplTest {
 
@@ -170,6 +172,13 @@ public class StorageImplTest {
   private static final String PUBLIC_KEY_STRING = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9saJR9c6y"
           + "EkPPhszldvQTY486uPxyD/D7HdfnGW/Nbw5JUhfvecAdudDEhNAQ3PNabyDMI+TpiHy4NTWOrgdcWrzj6VXcdc"
           + "+uuABnPwRCdcyJ1xl2kOrPksRnp1auNGMLOe4IpEBjGY7baX9UG8+A45MbG0aHmkR59Op/aR9XowIDAQAB";
+
+  private static final ServiceOptions.Clock TIME_SOURCE = new ServiceOptions.Clock() {
+    @Override
+    public long millis() {
+      return 42000L;
+    }
+  };
 
   private static PrivateKey privateKey;
   private static PublicKey publicKey;
@@ -794,24 +803,26 @@ public class StorageImplTest {
     String account = "account";
     ServiceAccountAuthCredentials credentialsMock =
         EasyMock.createMock(ServiceAccountAuthCredentials.class);
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(1);
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     EasyMock.expect(optionsMock.authCredentials()).andReturn(credentialsMock).times(2);
+    EasyMock.expect(optionsMock.clock()).andReturn(TIME_SOURCE);
     EasyMock.expect(credentialsMock.privateKey()).andReturn(privateKey);
     EasyMock.expect(credentialsMock.account()).andReturn(account);
     EasyMock.replay(optionsMock, storageRpcMock, credentialsMock);
     storage = StorageFactory.instance().get(optionsMock);
-    URL url = storage.signUrl(BLOB_INFO1, 60);
+    URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS);
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1).append("/")
             .append(BLOB_NAME1).append("?GoogleAccessId=").append(account).append("&Expires=")
-            .append(60).append("&Signature=").toString();
+            .append(42L + 1209600).append("&Signature=").toString();
     assertTrue(stringUrl.startsWith(expectedUrl));
     String signature = stringUrl.substring(expectedUrl.length());
 
     StringBuilder signedMessageBuilder = new StringBuilder();
-    signedMessageBuilder.append(HttpMethod.GET).append('\n').append('\n').append('\n').append(60)
-        .append('\n').append("/").append(BUCKET_NAME1).append("/").append(BLOB_NAME1);
+    signedMessageBuilder.append(HttpMethod.GET).append('\n').append('\n').append('\n')
+        .append(42L + 1209600).append('\n').append("/").append(BUCKET_NAME1).append("/")
+        .append(BLOB_NAME1);
 
     Signature signer = Signature.getInstance("SHA256withRSA");
     signer.initVerify(publicKey);
@@ -827,27 +838,29 @@ public class StorageImplTest {
     String account = "account";
     ServiceAccountAuthCredentials credentialsMock =
         EasyMock.createMock(ServiceAccountAuthCredentials.class);
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(1);
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     EasyMock.expect(optionsMock.authCredentials()).andReturn(credentialsMock).times(2);
+    EasyMock.expect(optionsMock.clock()).andReturn(TIME_SOURCE);
     EasyMock.expect(credentialsMock.privateKey()).andReturn(privateKey);
     EasyMock.expect(credentialsMock.account()).andReturn(account);
     EasyMock.replay(optionsMock, storageRpcMock, credentialsMock);
     storage = StorageFactory.instance().get(optionsMock);
     URL url =
-        storage.signUrl(BLOB_INFO1, 60, Storage.SignUrlOption.httpMethod(HttpMethod.POST),
+        storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS,
+            Storage.SignUrlOption.httpMethod(HttpMethod.POST),
             Storage.SignUrlOption.withContentType(), Storage.SignUrlOption.withMd5());
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1).append("/")
             .append(BLOB_NAME1).append("?GoogleAccessId=").append(account).append("&Expires=")
-            .append(60).append("&Signature=").toString();
+            .append(42L + 1209600).append("&Signature=").toString();
     assertTrue(stringUrl.startsWith(expectedUrl));
     String signature = stringUrl.substring(expectedUrl.length());
 
     StringBuilder signedMessageBuilder = new StringBuilder();
     signedMessageBuilder.append(HttpMethod.POST).append('\n').append(BLOB_INFO1.md5()).append('\n')
-        .append(BLOB_INFO1.contentType()).append('\n').append(60).append('\n').append("/")
-        .append(BUCKET_NAME1).append("/").append(BLOB_NAME1);
+        .append(BLOB_INFO1.contentType()).append('\n').append(42L + 1209600).append('\n')
+        .append("/").append(BUCKET_NAME1).append("/").append(BLOB_NAME1);
 
     Signature signer = Signature.getInstance("SHA256withRSA");
     signer.initVerify(publicKey);
