@@ -28,7 +28,6 @@ import com.google.gcloud.storage.Storage.CopyRequest;
 import com.google.gcloud.storage.Storage.SignUrlOption;
 
 import java.net.URL;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -119,7 +118,19 @@ public final class Blob {
    */
   public Blob(Storage storage, String bucket, String blob) {
     this.storage = checkNotNull(storage);
-    this.info = BlobInfo.of(checkNotNull(bucket), checkNotNull(blob));
+    this.info = BlobInfo.builder(BlobId.of(bucket, blob)).build();
+  }
+
+  /**
+   * Constructs a {@code Blob} object for the provided {@code BlobId}. The storage service is used
+   * to issue requests.
+   * 
+   * @param storage the storage service used for issuing requests
+   * @param blobId blob's identifier
+   */
+  public Blob(Storage storage, BlobId blobId) {
+    this.storage = checkNotNull(storage);
+    this.info = BlobInfo.builder(blobId).build();
   }
 
   /**
@@ -130,13 +141,20 @@ public final class Blob {
   }
 
   /**
+   * Returns the blob's id.
+   */
+  public BlobId id() {
+    return info.blobId();
+  }
+
+  /**
    * Checks if this blob exists.
    *
    * @return true if this blob exists, false otherwise
    * @throws StorageException upon failure
    */
   public boolean exists() {
-    return storage.get(info.bucket(), info.name()) != null;
+    return storage.get(info.blobId()) != null;
   }
 
   /**
@@ -146,7 +164,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public byte[] content(Storage.BlobSourceOption... options) {
-    return storage.readAllBytes(info.bucket(), info.name(), options);
+    return storage.readAllBytes(info.blobId(), options);
   }
 
   /**
@@ -157,7 +175,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public Blob reload(BlobSourceOption... options) {
-    return new Blob(storage, storage.get(info.bucket(), info.name(), convert(info, options)));
+    return new Blob(storage, storage.get(info.blobId(), convert(info, options)));
   }
 
   /**
@@ -180,6 +198,23 @@ public final class Blob {
   }
 
   /**
+   * Copies this blob to the specified target. Possibly copying also some of the metadata
+   * (e.g. content-type).
+   *
+   * @param targetBlob target blob's id
+   * @param options source blob options
+   * @return the copied blob
+   * @throws StorageException upon failure
+   */
+  public Blob copyTo(BlobId targetBlob, BlobSourceOption... options) {
+    BlobInfo updatedInfo = info.toBuilder().blobId(targetBlob).build();
+    CopyRequest copyRequest =
+        CopyRequest.builder().source(info.bucket(), info.name())
+            .sourceOptions(convert(info, options)).target(updatedInfo).build();
+    return new Blob(storage, storage.copy(copyRequest));
+  }
+
+  /**
    * Deletes this blob.
    *
    * @param options blob delete options
@@ -187,7 +222,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public boolean delete(BlobSourceOption... options) {
-    return storage.delete(info.bucket(), info.name(), convert(info, options));
+    return storage.delete(info.blobId(), convert(info, options));
   }
 
   /**
@@ -214,7 +249,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public Blob copyTo(String targetBucket, String targetBlob, BlobSourceOption... options) {
-    BlobInfo updatedInfo = info.toBuilder().bucket(targetBucket).name(targetBlob).build();
+    BlobInfo updatedInfo = info.toBuilder().blobId(BlobId.of(targetBucket, targetBlob)).build();
     CopyRequest copyRequest =
         CopyRequest.builder().source(info.bucket(), info.name())
             .sourceOptions(convert(info, options)).target(updatedInfo).build();
@@ -228,7 +263,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public BlobReadChannel reader(BlobSourceOption... options) {
-    return storage.reader(info.bucket(), info.name(), convert(info, options));
+    return storage.reader(info.blobId(), convert(info, options));
   }
 
   /**
@@ -270,18 +305,18 @@ public final class Blob {
    * {@code infos.length > 1} a batch request is used to fetch blobs.
    *
    * @param storage the storage service used to issue the request
-   * @param infos the blobs to get
+   * @param blobs the blobs to get
    * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
    *     been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
-  public static List<Blob> get(final Storage storage, BlobInfo... infos) {
+  public static List<Blob> get(final Storage storage, BlobId... blobs) {
     checkNotNull(storage);
-    checkNotNull(infos);
-    if (infos.length == 0) {
+    checkNotNull(blobs);
+    if (blobs.length == 0) {
       return Collections.emptyList();
     }
-    return Collections.unmodifiableList(Lists.transform(storage.get(infos),
+    return Collections.unmodifiableList(Lists.transform(storage.get(blobs),
         new Function<BlobInfo, Blob>() {
           @Override
           public Blob apply(BlobInfo f) {
@@ -320,18 +355,18 @@ public final class Blob {
    * {@code infos.length > 1} a batch request is used to delete blobs.
    *
    * @param storage the storage service used to issue the request
-   * @param infos the blobs to delete
+   * @param blobs the blobs to delete
    * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
    *     list is {@code true}. If deletion failed or access to the resource was denied the item is
    *     {@code false}.
    * @throws StorageException upon failure
    */
-  public static List<Boolean> delete(Storage storage, BlobInfo... infos) {
+  public static List<Boolean> delete(Storage storage, BlobId... blobs) {
     checkNotNull(storage);
-    checkNotNull(infos);
-    if (infos.length == 0) {
+    checkNotNull(blobs);
+    if (blobs.length == 0) {
       return Collections.emptyList();
     }
-    return storage.delete(infos);
+    return storage.delete(blobs);
   }
 }

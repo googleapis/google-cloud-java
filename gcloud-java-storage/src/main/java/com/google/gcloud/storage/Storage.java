@@ -380,7 +380,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     public static ComposeRequest of(String bucket, Iterable<String> sources, String target) {
-      return of(sources, BlobInfo.of(bucket, target));
+      return of(sources, BlobInfo.builder(BlobId.of(bucket, target)).build());
     }
 
     public static Builder builder() {
@@ -392,8 +392,7 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = -2606508373751748775L;
 
-    private final String sourceBucket;
-    private final String sourceBlob;
+    private final BlobId source;
     private final List<BlobSourceOption> sourceOptions;
     private final BlobInfo target;
     private final List<BlobTargetOption> targetOptions;
@@ -402,13 +401,16 @@ public interface Storage extends Service<StorageOptions> {
 
       private final Set<BlobSourceOption> sourceOptions = new LinkedHashSet<>();
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
-      private String sourceBucket;
-      private String sourceBlob;
+      private BlobId source;
       private BlobInfo target;
 
       public Builder source(String bucket, String blob) {
-        this.sourceBucket = bucket;
-        this.sourceBlob = blob;
+        this.source = BlobId.of(bucket, blob);
+        return this;
+      }
+
+      public Builder source(BlobId source) {
+        this.source = source;
         return this;
       }
 
@@ -438,27 +440,21 @@ public interface Storage extends Service<StorageOptions> {
       }
 
       public CopyRequest build() {
-        checkNotNull(sourceBucket);
-        checkNotNull(sourceBlob);
+        checkNotNull(source);
         checkNotNull(target);
         return new CopyRequest(this);
       }
     }
 
     private CopyRequest(Builder builder) {
-      sourceBucket = checkNotNull(builder.sourceBucket);
-      sourceBlob = checkNotNull(builder.sourceBlob);
+      source = checkNotNull(builder.source);
       sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
       target = checkNotNull(builder.target);
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
     }
 
-    public String sourceBucket() {
-      return sourceBucket;
-    }
-
-    public String sourceBlob() {
-      return sourceBlob;
+    public BlobId source() {
+      return source;
     }
 
     public List<BlobSourceOption> sourceOptions() {
@@ -477,8 +473,18 @@ public interface Storage extends Service<StorageOptions> {
       return builder().source(sourceBucket, sourceBlob).target(target).build();
     }
 
+    public static CopyRequest of(BlobId sourceBlobId, BlobInfo target) {
+      return builder().source(sourceBlobId).target(target).build();
+    }
+
     public static CopyRequest of(String sourceBucket, String sourceBlob, String targetBlob) {
-      return of(sourceBucket, sourceBlob, BlobInfo.of(sourceBucket, targetBlob));
+      return of(sourceBucket, sourceBlob,
+          BlobInfo.builder(BlobId.of(sourceBucket, targetBlob)).build());
+    }
+
+    public static CopyRequest of(BlobId sourceBlobId, String targetBlob) {
+      return of(sourceBlobId,
+          BlobInfo.builder(BlobId.of(sourceBlobId.bucket(), targetBlob)).build());
     }
 
     public static Builder builder() {
@@ -535,6 +541,20 @@ public interface Storage extends Service<StorageOptions> {
   BlobInfo get(String bucket, String blob, BlobSourceOption... options);
 
   /**
+   * Return the requested blob or {@code null} if not found.
+   *
+   * @throws StorageException upon failure
+   */
+  BlobInfo get(BlobId blob, BlobSourceOption... options);
+
+  /**
+   * Return the requested blob or {@code null} if not found.
+   *
+   * @throws StorageException upon failure
+   */
+  BlobInfo get(BlobId blob);
+
+  /**
    * List the project's buckets.
    *
    * @throws StorageException upon failure
@@ -589,6 +609,22 @@ public interface Storage extends Service<StorageOptions> {
   boolean delete(String bucket, String blob, BlobSourceOption... options);
 
   /**
+   * Delete the requested blob.
+   *
+   * @return true if blob was deleted
+   * @throws StorageException upon failure
+   */
+  boolean delete(BlobId blob, BlobSourceOption... options);
+
+  /**
+   * Delete the requested blob.
+   *
+   * @return true if blob was deleted
+   * @throws StorageException upon failure
+   */
+  boolean delete(BlobId blob);
+
+  /**
    * Send a compose request.
    *
    * @return the composed blob.
@@ -613,6 +649,14 @@ public interface Storage extends Service<StorageOptions> {
   byte[] readAllBytes(String bucket, String blob, BlobSourceOption... options);
 
   /**
+   * Reads all the bytes from a blob.
+   *
+   * @return the blob's content.
+   * @throws StorageException upon failure
+   */
+  byte[] readAllBytes(BlobId blob, BlobSourceOption... options);
+
+  /**
    * Send a batch request.
    *
    * @return the batch response
@@ -626,6 +670,13 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   BlobReadChannel reader(String bucket, String blob, BlobSourceOption... options);
+
+  /**
+   * Return a channel for reading the blob's content.
+   *
+   * @throws StorageException upon failure
+   */
+  BlobReadChannel reader(BlobId blob, BlobSourceOption... options);
 
   /**
    * Create a blob and return a channel for writing its content.
@@ -659,12 +710,12 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Gets the requested blobs. A batch request is used to perform this call.
    *
-   * @param blobInfos blobs to get
+   * @param blobIds blobs to get
    * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
    *     has been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
-  List<BlobInfo> get(BlobInfo... blobInfos);
+  List<BlobInfo> get(BlobId... blobIds);
 
   /**
    * Updates the requested blobs. A batch request is used to perform this call.
@@ -679,11 +730,11 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Deletes the requested blobs. A batch request is used to perform this call.
    *
-   * @param blobInfos blobs to delete
+   * @param blobIds blobs to delete
    * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
    *     list is {@code true}. If deletion failed or access to the resource was denied the item is
    *     {@code false}.
    * @throws StorageException upon failure
    */
-  List<Boolean> delete(BlobInfo... blobInfos);
+  List<Boolean> delete(BlobId... blobIds);
 }

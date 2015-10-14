@@ -27,9 +27,9 @@ import java.util.List;
 
 public class BatchResponseTest {
 
-  private static final BlobInfo BLOB_INFO_1 = BlobInfo.of("b", "o1");
-  private static final BlobInfo BLOB_INFO_2 = BlobInfo.of("b", "o2");
-  private static final BlobInfo BLOB_INFO_3 = BlobInfo.of("b", "o3");
+  private static final BlobInfo BLOB_INFO_1 = BlobInfo.builder("b", "o1").build();
+  private static final BlobInfo BLOB_INFO_2 = BlobInfo.builder("b", "o2").build();
+  private static final BlobInfo BLOB_INFO_3 = BlobInfo.builder("b", "o3").build();
 
   @Test
   public void testBatchResponse() {

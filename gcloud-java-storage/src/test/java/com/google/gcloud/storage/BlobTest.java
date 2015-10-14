@@ -42,9 +42,11 @@ import java.util.concurrent.TimeUnit;
 
 public class BlobTest {
 
-  private static final BlobInfo BLOB_INFO = BlobInfo.of("b", "n");
-  private static final BlobInfo[] BLOB_INFO_ARRAY = {BlobInfo.of("b1", "n1"),
-      BlobInfo.of("b2", "n2"), BlobInfo.of("b3", "n3")};
+  private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").build();
+  private static final BlobId[] BLOB_ID_ARRAY = {BlobId.of("b1", "n1"),
+      BlobId.of("b2", "n2"), BlobId.of("b3", "n3")};
+  private static final BlobInfo[] BLOB_INFO_ARRAY = {BlobInfo.builder("b1", "n1").build(),
+      BlobInfo.builder("b2", "n2").build(), BlobInfo.builder("b3", "n3").build()};
 
   private Storage storage;
   private Blob blob;
@@ -68,14 +70,14 @@ public class BlobTest {
 
   @Test
   public void testExists_True() throws Exception {
-    expect(storage.get(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(BLOB_INFO);
+    expect(storage.get(BLOB_INFO.blobId())).andReturn(BLOB_INFO);
     replay(storage);
     assertTrue(blob.exists());
   }
 
   @Test
   public void testExists_False() throws Exception {
-    expect(storage.get(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(null);
+    expect(storage.get(BLOB_INFO.blobId())).andReturn(null);
     replay(storage);
     assertFalse(blob.exists());
   }
@@ -83,7 +85,7 @@ public class BlobTest {
   @Test
   public void testContent() throws Exception {
     byte[] content = {1, 2};
-    expect(storage.readAllBytes(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(content);
+    expect(storage.readAllBytes(BLOB_INFO.blobId())).andReturn(content);
     replay(storage);
     assertArrayEquals(content, blob.content());
   }
@@ -91,7 +93,7 @@ public class BlobTest {
   @Test
   public void testReload() throws Exception {
     BlobInfo updatedInfo = BLOB_INFO.toBuilder().cacheControl("c").build();
-    expect(storage.get(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(updatedInfo);
+    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobSourceOption[0])).andReturn(updatedInfo);
     replay(storage);
     Blob updatedBlob = blob.reload();
     assertSame(storage, blob.storage());
@@ -110,35 +112,47 @@ public class BlobTest {
 
   @Test
   public void testDelete() throws Exception {
-    expect(storage.delete(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(true);
+    expect(storage.delete(BLOB_INFO.blobId(), new Storage.BlobSourceOption[0])).andReturn(true);
     replay(storage);
     assertTrue(blob.delete());
   }
 
   @Test
   public void testCopyToBucket() throws Exception {
-    BlobInfo target = BLOB_INFO.toBuilder().bucket("bt").build();
+    BlobInfo target = BLOB_INFO.toBuilder().blobId(BlobId.of("bt", "n")).build();
     Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
     expect(storage.copy(capture(capturedCopyRequest))).andReturn(target);
     replay(storage);
     Blob targetBlob = blob.copyTo("bt");
     assertEquals(target, targetBlob.info());
-    assertEquals(capturedCopyRequest.getValue().sourceBlob(), blob.info().name());
-    assertEquals(capturedCopyRequest.getValue().sourceBucket(), blob.info().bucket());
+    assertEquals(capturedCopyRequest.getValue().source(), blob.id());
     assertEquals(capturedCopyRequest.getValue().target(), target);
     assertSame(storage, targetBlob.storage());
   }
 
   @Test
   public void testCopyTo() throws Exception {
-    BlobInfo target = BLOB_INFO.toBuilder().bucket("bt").name("nt").build();
+    BlobInfo target = BLOB_INFO.toBuilder().blobId(BlobId.of("bt", "nt")).build();
     Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
     expect(storage.copy(capture(capturedCopyRequest))).andReturn(target);
     replay(storage);
     Blob targetBlob = blob.copyTo("bt", "nt");
     assertEquals(target, targetBlob.info());
-    assertEquals(capturedCopyRequest.getValue().sourceBlob(), blob.info().name());
-    assertEquals(capturedCopyRequest.getValue().sourceBucket(), blob.info().bucket());
+    assertEquals(capturedCopyRequest.getValue().source(), blob.id());
+    assertEquals(capturedCopyRequest.getValue().target(), target);
+    assertSame(storage, targetBlob.storage());
+  }
+
+  @Test
+  public void testCopyToBlobId() throws Exception {
+    BlobId targetId = BlobId.of("bt", "nt");
+    BlobInfo target = BLOB_INFO.toBuilder().blobId(targetId).build();
+    Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
+    expect(storage.copy(capture(capturedCopyRequest))).andReturn(target);
+    replay(storage);
+    Blob targetBlob = blob.copyTo(targetId);
+    assertEquals(target, targetBlob.info());
+    assertEquals(capturedCopyRequest.getValue().source(), blob.id());
     assertEquals(capturedCopyRequest.getValue().target(), target);
     assertSame(storage, targetBlob.storage());
   }
@@ -146,7 +160,7 @@ public class BlobTest {
   @Test
   public void testReader() throws Exception {
     BlobReadChannel channel = createMock(BlobReadChannel.class);
-    expect(storage.reader(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(channel);
+    expect(storage.reader(BLOB_INFO.blobId())).andReturn(channel);
     replay(storage);
     assertSame(channel, blob.reader());
   }
@@ -176,9 +190,9 @@ public class BlobTest {
   @Test
   public void testGetSome() throws Exception {
     List<BlobInfo> blobInfoList = Arrays.asList(BLOB_INFO_ARRAY);
-    expect(storage.get(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
+    expect(storage.get(BLOB_ID_ARRAY)).andReturn(blobInfoList);
     replay(storage);
-    List<Blob> result = Blob.get(storage, BLOB_INFO_ARRAY);
+    List<Blob> result = Blob.get(storage, BLOB_ID_ARRAY);
     assertEquals(blobInfoList.size(), result.size());
     for (int i = 0; i < blobInfoList.size(); i++) {
       assertEquals(blobInfoList.get(i), result.get(i).info());
@@ -188,9 +202,9 @@ public class BlobTest {
   @Test
   public void testGetSomeNull() throws Exception {
     List<BlobInfo> blobInfoList = Arrays.asList(BLOB_INFO_ARRAY[0], null, BLOB_INFO_ARRAY[2]);
-    expect(storage.get(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
+    expect(storage.get(BLOB_ID_ARRAY)).andReturn(blobInfoList);
     replay(storage);
-    List<Blob> result = Blob.get(storage, BLOB_INFO_ARRAY);
+    List<Blob> result = Blob.get(storage, BLOB_ID_ARRAY);
     assertEquals(blobInfoList.size(), result.size());
     for (int i = 0; i < blobInfoList.size(); i++) {
       if (blobInfoList.get(i) != null) {
@@ -209,7 +223,7 @@ public class BlobTest {
 
   @Test
   public void testUpdateSome() throws Exception {
-    List<BlobInfo> blobInfoList = Lists.newArrayListWithCapacity(BLOB_INFO_ARRAY.length);
+    List<BlobInfo> blobInfoList = Lists.newArrayListWithCapacity(BLOB_ID_ARRAY.length);
     for (BlobInfo info : BLOB_INFO_ARRAY) {
       blobInfoList.add(info.toBuilder().contentType("content").build());
     }
@@ -249,9 +263,9 @@ public class BlobTest {
   @Test
   public void testDeleteSome() throws Exception {
     List<Boolean> deleleResultList = Arrays.asList(true, true, true);
-    expect(storage.delete(BLOB_INFO_ARRAY)).andReturn(deleleResultList);
+    expect(storage.delete(BLOB_ID_ARRAY)).andReturn(deleleResultList);
     replay(storage);
-    List<Boolean> result = Blob.delete(storage, BLOB_INFO_ARRAY);
+    List<Boolean> result = Blob.delete(storage, BLOB_ID_ARRAY);
     assertEquals(deleleResultList.size(), result.size());
     for (int i = 0; i < deleleResultList.size(); i++) {
       assertEquals(deleleResultList.get(i), result.get(i));

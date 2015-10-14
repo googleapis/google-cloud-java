@@ -81,19 +81,12 @@ public class BlobInfoTest {
   @Test
   public void testToBuilder() {
     compareBlobs(BLOB_INFO, BLOB_INFO.toBuilder().build());
-    BlobInfo blobInfo = BLOB_INFO.toBuilder().name("n2").bucket("b2").size(200L).build();
+    BlobInfo blobInfo = BLOB_INFO.toBuilder().blobId(BlobId.of("b2", "n2")).size(200L).build();
     assertEquals("n2", blobInfo.name());
     assertEquals("b2", blobInfo.bucket());
     assertEquals(Long.valueOf(200), blobInfo.size());
-    blobInfo = blobInfo.toBuilder().name("n").bucket("b").size(SIZE).build();
+    blobInfo = blobInfo.toBuilder().blobId(BlobId.of("b", "n")).size(SIZE).build();
     compareBlobs(BLOB_INFO, blobInfo);
-  }
-
-  @Test
-  public void testOf() {
-    BlobInfo blobInfo = BlobInfo.of("b", "n");
-    assertEquals("b", blobInfo.bucket());
-    assertEquals("n", blobInfo.name());
   }
 
   @Test
@@ -103,7 +96,7 @@ public class BlobInfoTest {
     assertEquals(ACL, BLOB_INFO.acl());
     assertEquals(COMPONENT_COUNT, BLOB_INFO.componentCount());
     assertEquals(CONTENT_TYPE, BLOB_INFO.contentType());
-    assertEquals(CACHE_CONTROL, BLOB_INFO.cacheControl() );
+    assertEquals(CACHE_CONTROL, BLOB_INFO.cacheControl());
     assertEquals(CONTENT_DISPOSITION, BLOB_INFO.contentDisposition());
     assertEquals(CONTENT_ENCODING, BLOB_INFO.contentEncoding());
     assertEquals(CONTENT_LANGUAGE, BLOB_INFO.contentLanguage());
@@ -129,7 +122,7 @@ public class BlobInfoTest {
     assertEquals(expected.acl(), value.acl());
     assertEquals(expected.componentCount(), value.componentCount());
     assertEquals(expected.contentType(), value.contentType());
-    assertEquals(expected.cacheControl(), value.cacheControl() );
+    assertEquals(expected.cacheControl(), value.cacheControl());
     assertEquals(expected.contentDisposition(), value.contentDisposition());
     assertEquals(expected.contentEncoding(), value.contentEncoding());
     assertEquals(expected.contentLanguage(), value.contentLanguage());
@@ -151,7 +144,12 @@ public class BlobInfoTest {
   @Test
   public void testToPbAndFromPb() {
     compareBlobs(BLOB_INFO, BlobInfo.fromPb(BLOB_INFO.toPb()));
-    BlobInfo blobInfo = BlobInfo.of("b", "n");
+    BlobInfo blobInfo = BlobInfo.builder(BlobId.of("b", "n")).build();
     compareBlobs(blobInfo, BlobInfo.fromPb(blobInfo.toPb()));
+  }
+
+  @Test
+  public void testBlobId() {
+    assertEquals(BlobId.of("b", "n"), BLOB_INFO.blobId());
   }
 }

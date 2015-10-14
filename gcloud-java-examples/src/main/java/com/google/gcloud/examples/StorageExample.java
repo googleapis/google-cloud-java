@@ -393,7 +393,7 @@ public class StorageExample {
       if (args.length != 4) {
         throw new IllegalArgumentException();
       }
-      return CopyRequest.of(args[0], args[1], BlobInfo.of(args[2], args[3]));
+      return CopyRequest.of(args[0], args[1], BlobInfo.builder(args[2], args[3]).build());
     }
 
     @Override
@@ -420,7 +420,7 @@ public class StorageExample {
         throw new IllegalArgumentException();
       }
       ComposeRequest.Builder request = ComposeRequest.builder();
-      request.target(BlobInfo.of(args[0], args[args.length - 1]));
+      request.target(BlobInfo.builder(args[0], args[args.length - 1]).build());
       for (int i = 1; i < args.length - 1; i++) {
         request.addSource(args[i]);
       }
