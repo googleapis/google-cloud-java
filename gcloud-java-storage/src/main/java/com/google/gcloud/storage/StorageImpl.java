@@ -403,6 +403,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
+  public boolean delete(BlobId blob) {
+    return delete(blob, new BlobSourceOption[0]);
+  }
+
+  @Override
   public BlobInfo compose(final ComposeRequest composeRequest) {
     final List<StorageObject> sources =
         Lists.newArrayListWithCapacity(composeRequest.sourceBlobs().size());

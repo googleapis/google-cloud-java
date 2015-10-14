@@ -617,6 +617,14 @@ public interface Storage extends Service<StorageOptions> {
   boolean delete(BlobId blob, BlobSourceOption... options);
 
   /**
+   * Delete the requested blob.
+   *
+   * @return true if blob was deleted
+   * @throws StorageException upon failure
+   */
+  boolean delete(BlobId blob);
+
+  /**
    * Send a compose request.
    *
    * @return the composed blob.
