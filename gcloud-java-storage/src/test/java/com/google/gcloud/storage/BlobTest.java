@@ -70,14 +70,14 @@ public class BlobTest {
 
   @Test
   public void testExists_True() throws Exception {
-    expect(storage.get(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(BLOB_INFO);
+    expect(storage.get(BLOB_INFO.blobId())).andReturn(BLOB_INFO);
     replay(storage);
     assertTrue(blob.exists());
   }
 
   @Test
   public void testExists_False() throws Exception {
-    expect(storage.get(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(null);
+    expect(storage.get(BLOB_INFO.blobId())).andReturn(null);
     replay(storage);
     assertFalse(blob.exists());
   }
@@ -85,7 +85,7 @@ public class BlobTest {
   @Test
   public void testContent() throws Exception {
     byte[] content = {1, 2};
-    expect(storage.readAllBytes(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(content);
+    expect(storage.readAllBytes(BLOB_INFO.blobId())).andReturn(content);
     replay(storage);
     assertArrayEquals(content, blob.content());
   }
@@ -93,7 +93,7 @@ public class BlobTest {
   @Test
   public void testReload() throws Exception {
     BlobInfo updatedInfo = BLOB_INFO.toBuilder().cacheControl("c").build();
-    expect(storage.get(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(updatedInfo);
+    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobSourceOption[0])).andReturn(updatedInfo);
     replay(storage);
     Blob updatedBlob = blob.reload();
     assertSame(storage, blob.storage());
@@ -112,7 +112,7 @@ public class BlobTest {
 
   @Test
   public void testDelete() throws Exception {
-    expect(storage.delete(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(true);
+    expect(storage.delete(BLOB_INFO.blobId(), new Storage.BlobSourceOption[0])).andReturn(true);
     replay(storage);
     assertTrue(blob.delete());
   }
@@ -146,7 +146,7 @@ public class BlobTest {
   @Test
   public void testReader() throws Exception {
     BlobReadChannel channel = createMock(BlobReadChannel.class);
-    expect(storage.reader(BLOB_INFO.bucket(), BLOB_INFO.name())).andReturn(channel);
+    expect(storage.reader(BLOB_INFO.blobId())).andReturn(channel);
     replay(storage);
     assertSame(channel, blob.reader());
   }

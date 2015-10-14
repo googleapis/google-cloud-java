@@ -154,7 +154,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public boolean exists() {
-    return storage.get(info.bucket(), info.name()) != null;
+    return storage.get(info.blobId()) != null;
   }
 
   /**
@@ -164,7 +164,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public byte[] content(Storage.BlobSourceOption... options) {
-    return storage.readAllBytes(info.bucket(), info.name(), options);
+    return storage.readAllBytes(info.blobId(), options);
   }
 
   /**
@@ -175,7 +175,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public Blob reload(BlobSourceOption... options) {
-    return new Blob(storage, storage.get(info.bucket(), info.name(), convert(info, options)));
+    return new Blob(storage, storage.get(info.blobId(), convert(info, options)));
   }
 
   /**
@@ -205,7 +205,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public boolean delete(BlobSourceOption... options) {
-    return storage.delete(info.bucket(), info.name(), convert(info, options));
+    return storage.delete(info.blobId(), convert(info, options));
   }
 
   /**
@@ -246,7 +246,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public BlobReadChannel reader(BlobSourceOption... options) {
-    return storage.reader(info.bucket(), info.name(), convert(info, options));
+    return storage.reader(info.blobId(), convert(info, options));
   }
 
   /**
