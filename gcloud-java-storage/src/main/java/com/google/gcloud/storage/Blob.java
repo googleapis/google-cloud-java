@@ -115,6 +115,8 @@ public final class Blob {
    * @param storage the storage service used for issuing requests
    * @param bucket bucket's name
    * @param blob blob's name
+   * @return the {@code Blob} object or {@code null} if not found.
+   * @throws StorageException upon failure
    */
   public static Blob load(Storage storage, String bucket, String blob) {
     return load(storage, BlobId.of(bucket, blob));
@@ -126,10 +128,12 @@ public final class Blob {
    * 
    * @param storage the storage service used for issuing requests
    * @param blobId blob's identifier
+   * @return the {@code Blob} object or {@code null} if not found.
+   * @throws StorageException upon failure
    */
   public static Blob load(Storage storage, BlobId blobId) {
     BlobInfo info = storage.get(blobId);
-    return new Blob(storage, info);
+    return info != null ? new Blob(storage, info) : null;
   }
 
   /**

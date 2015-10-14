@@ -61,10 +61,12 @@ public final class Bucket {
    * 
    * @param storage the storage service used for issuing requests
    * @param bucket bucket's name
+   * @return the {@code Bucket} object or {@code null} if not found.
+   * @throws StorageException upon failure
    */
   public static Bucket load(Storage storage, String bucket) {
     BucketInfo info = storage.get(bucket);
-    return new Bucket(storage, info);
+    return info != null ? new Bucket(storage, info) : null;
   }
 
   /**
