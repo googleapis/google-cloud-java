@@ -70,14 +70,14 @@ public class BlobTest {
 
   @Test
   public void testExists_True() throws Exception {
-    expect(storage.get(BLOB_INFO.blobId())).andReturn(BLOB_INFO);
+    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobSourceOption[0])).andReturn(BLOB_INFO);
     replay(storage);
     assertTrue(blob.exists());
   }
 
   @Test
   public void testExists_False() throws Exception {
-    expect(storage.get(BLOB_INFO.blobId())).andReturn(null);
+    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobSourceOption[0])).andReturn(null);
     replay(storage);
     assertFalse(blob.exists());
   }
