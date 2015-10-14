@@ -198,6 +198,23 @@ public final class Blob {
   }
 
   /**
+   * Copies this blob to the specified target. Possibly copying also some of the metadata
+   * (e.g. content-type).
+   *
+   * @param targetBlob target blob's id
+   * @param options source blob options
+   * @return the copied blob
+   * @throws StorageException upon failure
+   */
+  public Blob copyTo(BlobId targetBlob, BlobSourceOption... options) {
+    BlobInfo updatedInfo = info.toBuilder().blobId(targetBlob).build();
+    CopyRequest copyRequest =
+        CopyRequest.builder().source(info.bucket(), info.name())
+            .sourceOptions(convert(info, options)).target(updatedInfo).build();
+    return new Blob(storage, storage.copy(copyRequest));
+  }
+
+  /**
    * Deletes this blob.
    *
    * @param options blob delete options

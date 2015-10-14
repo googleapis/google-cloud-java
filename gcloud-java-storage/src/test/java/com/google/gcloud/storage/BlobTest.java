@@ -144,6 +144,20 @@ public class BlobTest {
   }
 
   @Test
+  public void testCopyToBlobId() throws Exception {
+    BlobId targetId = BlobId.of("bt", "nt");
+    BlobInfo target = BLOB_INFO.toBuilder().blobId(targetId).build();
+    Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
+    expect(storage.copy(capture(capturedCopyRequest))).andReturn(target);
+    replay(storage);
+    Blob targetBlob = blob.copyTo(targetId);
+    assertEquals(target, targetBlob.info());
+    assertEquals(capturedCopyRequest.getValue().source(), blob.id());
+    assertEquals(capturedCopyRequest.getValue().target(), target);
+    assertSame(storage, targetBlob.storage());
+  }
+
+  @Test
   public void testReader() throws Exception {
     BlobReadChannel channel = createMock(BlobReadChannel.class);
     expect(storage.reader(BLOB_INFO.blobId())).andReturn(channel);
