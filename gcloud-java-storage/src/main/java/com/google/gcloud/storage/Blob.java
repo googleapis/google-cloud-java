@@ -150,11 +150,12 @@ public final class Blob {
   /**
    * Checks if this blob exists.
    *
+   * @param options blob read options
    * @return true if this blob exists, false otherwise
    * @throws StorageException upon failure
    */
-  public boolean exists() {
-    return storage.get(info.blobId()) != null;
+  public boolean exists(BlobSourceOption... options) {
+    return storage.get(info.blobId(), convert(info, options)) != null;
   }
 
   /**
