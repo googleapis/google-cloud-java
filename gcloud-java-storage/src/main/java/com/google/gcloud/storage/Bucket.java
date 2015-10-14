@@ -56,15 +56,15 @@ public final class Bucket {
   }
 
   /**
-   * Constructs a {@code Bucket} object for the provided name. The storage service is used to issue
-   * requests.
+   * Creates a {@code Bucket} object for the provided bucket name. Performs an RPC call to get the
+   * latest bucket information.
    * 
    * @param storage the storage service used for issuing requests
    * @param bucket bucket's name
    */
-  public Bucket(Storage storage, String bucket) {
-    this.storage = checkNotNull(storage);
-    this.info = BucketInfo.of(checkNotNull(bucket));
+  public static Bucket load(Storage storage, String bucket) {
+    BucketInfo info = storage.get(bucket);
+    return new Bucket(storage, info);
   }
 
   /**

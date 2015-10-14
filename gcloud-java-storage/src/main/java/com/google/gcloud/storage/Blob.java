@@ -109,28 +109,27 @@ public final class Blob {
   }
 
   /**
-   * Constructs a {@code Blob} object for the provided bucket and blob names. The storage service is
-   * used to issue requests.
+   * Creates a {@code Blob} object for the provided bucket and blob names. Performs an RPC call to
+   * get the latest blob information.
    * 
    * @param storage the storage service used for issuing requests
    * @param bucket bucket's name
    * @param blob blob's name
    */
-  public Blob(Storage storage, String bucket, String blob) {
-    this.storage = checkNotNull(storage);
-    this.info = BlobInfo.builder(BlobId.of(bucket, blob)).build();
+  public static Blob load(Storage storage, String bucket, String blob) {
+    return load(storage, BlobId.of(bucket, blob));
   }
 
   /**
-   * Constructs a {@code Blob} object for the provided {@code BlobId}. The storage service is used
-   * to issue requests.
+   * Creates a {@code Blob} object for the provided {@code blobId}. Performs an RPC call to get the
+   * latest blob information.
    * 
    * @param storage the storage service used for issuing requests
    * @param blobId blob's identifier
    */
-  public Blob(Storage storage, BlobId blobId) {
-    this.storage = checkNotNull(storage);
-    this.info = BlobInfo.builder(blobId).build();
+  public static Blob load(Storage storage, BlobId blobId) {
+    BlobInfo info = storage.get(blobId);
+    return new Blob(storage, info);
   }
 
   /**
@@ -209,9 +208,8 @@ public final class Blob {
    */
   public Blob copyTo(BlobId targetBlob, BlobSourceOption... options) {
     BlobInfo updatedInfo = info.toBuilder().blobId(targetBlob).build();
-    CopyRequest copyRequest =
-        CopyRequest.builder().source(info.bucket(), info.name())
-            .sourceOptions(convert(info, options)).target(updatedInfo).build();
+    CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
+        .sourceOptions(convert(info, options)).target(updatedInfo).build();
     return new Blob(storage, storage.copy(copyRequest));
   }
 
@@ -251,9 +249,8 @@ public final class Blob {
    */
   public Blob copyTo(String targetBucket, String targetBlob, BlobSourceOption... options) {
     BlobInfo updatedInfo = info.toBuilder().blobId(BlobId.of(targetBucket, targetBlob)).build();
-    CopyRequest copyRequest =
-        CopyRequest.builder().source(info.bucket(), info.name())
-            .sourceOptions(convert(info, options)).target(updatedInfo).build();
+    CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
+        .sourceOptions(convert(info, options)).target(updatedInfo).build();
     return new Blob(storage, storage.copy(copyRequest));
   }
 

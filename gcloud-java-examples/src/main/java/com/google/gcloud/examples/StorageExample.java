@@ -52,7 +52,6 @@ import java.security.PrivateKey;
 import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -96,22 +95,6 @@ public class StorageExample {
     }
   }
 
-  private static abstract class BlobAction extends StorageAction<Blob> {
-
-    @Override
-    Blob parse(Storage storage, String... args) {
-      if (args.length != 2) {
-        throw new IllegalArgumentException();
-      }
-      return new Blob(storage, args[0], args[1]);
-    }
-
-    @Override
-    public String params() {
-      return "<bucket> <path>";
-    }
-  }
-
   private static abstract class BlobsAction extends StorageAction<Blob[]> {
 
     @Override
@@ -121,7 +104,7 @@ public class StorageExample {
       }
       Blob[] blobs = new Blob[args.length - 1];
       for (int i = 1; i < args.length; i++) {
-        blobs[i - 1] = new Blob(storage, args[0], args[i]);
+        blobs[i - 1] = Blob.load(storage, args[0], args[i]);
       }
       return blobs;
     }
@@ -145,11 +128,11 @@ public class StorageExample {
       if (blobs.length == 1) {
         if (blobs[0].info().name().isEmpty()) {
           // get Bucket
-          Bucket bucket = new Bucket(storage, blobs[0].info().bucket());
-          System.out.println("Bucket info: " + bucket.reload().info());
+          Bucket bucket = Bucket.load(storage, blobs[0].info().bucket());
+          System.out.println("Bucket info: " + bucket.info());
         } else {
           // get Blob
-          System.out.println("Blob info: " + blobs[0].reload().info());
+          System.out.println("Blob info: " + blobs[0].info());
         }
       } else {
         // use batch to get multiple blobs.
@@ -167,7 +150,7 @@ public class StorageExample {
     @Override
     Blob[] parse(Storage storage, String... args) {
       if (args.length < 2) {
-        return new Blob[] {new Blob(storage, args[0], "")};
+        return new Blob[] {new Blob(storage, BlobInfo.builder(args[0], "").build())};
       }
       return super.parse(storage, args);
     }
@@ -239,7 +222,7 @@ public class StorageExample {
         }
       } else {
         // list a bucket's blobs
-        Bucket bucket = new Bucket(storage, bucketName);
+        Bucket bucket = Bucket.load(storage, bucketName);
         for (Blob b : bucket.list()) {
           System.out.println(b.info());
         }
@@ -321,7 +304,6 @@ public class StorageExample {
     }
 
     private void run(Storage storage, Blob blob, Path downloadTo) throws IOException {
-      blob = blob.reload();
       if (!blob.exists()) {
         System.out.println("No such object");
         return;
@@ -367,7 +349,7 @@ public class StorageExample {
       } else {
         path = null;
       }
-      return Tuple.of(new Blob(storage, args[0], args[1]), path);
+      return Tuple.of(Blob.load(storage, args[0], args[1]), path);
     }
 
     @Override
@@ -448,7 +430,6 @@ public class StorageExample {
     }
 
     private void run(Storage storage, Blob blob, Map<String, String> metadata) {
-      blob = blob.reload();
       if (!blob.exists()) {
         System.out.println("No such object");
         return;
@@ -462,7 +443,7 @@ public class StorageExample {
       if (args.length < 2) {
         throw new IllegalArgumentException();
       }
-      Blob blob = new Blob(storage, args[0], args[1]);
+      Blob blob = Blob.load(storage, args[0], args[1]);
       Map<String, String> metadata = new HashMap<>();
       for (int i = 2; i < args.length; i++) {
         int idx = args[i].indexOf('=');
@@ -515,7 +496,7 @@ public class StorageExample {
       keystore.load(Files.newInputStream(Paths.get(args[0])), PASSWORD);
       PrivateKey privateKey = (PrivateKey) keystore.getKey("privatekey", PASSWORD);
       ServiceAccountAuthCredentials cred = AuthCredentials.createFor(args[1], privateKey);
-      return Tuple.of(cred, new Blob(storage, args[2], args[3]));
+      return Tuple.of(cred, Blob.load(storage, args[2], args[3]));
     }
 
     @Override
