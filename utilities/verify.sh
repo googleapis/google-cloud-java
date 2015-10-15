@@ -1,4 +1,5 @@
 #!/bin/bash
+source ./utilities/integration_test_env.sh
 
 # This script is used by Travis-CI to run tests.
 # This script is referenced in .travis.yml.
