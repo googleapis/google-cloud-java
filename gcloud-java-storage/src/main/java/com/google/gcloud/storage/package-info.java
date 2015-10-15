@@ -21,7 +21,8 @@
  * <pre>{@code
  * StorageOptions options = StorageOptions.builder().projectId("project").build();
  * Storage storage = StorageFactory.instance().get(options);
- * Blob blob = new Blob(storage, "bucket", "blob_name");
+ * Blob blob = new Blob(storage,
+ *     BlobInfo.builder("bucket", "blob_name").contentType("text/plain").build());
  * if (!blob.exists()) {
  *   storage.create(blob.info(), "Hello, Cloud Storage!".getBytes(UTF_8));
  * } else {

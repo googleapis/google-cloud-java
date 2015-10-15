@@ -112,7 +112,8 @@ import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
 Storage storage = StorageFactory.instance().get(StorageOptions.getDefaultInstance());
-Blob blob = new Blob(storage, "bucket", "blob_name");
+Blob blob = new Blob(storage, 
+    BlobInfo.builder("bucket", "blob_name").contentType("text/plain").build());
 if (!blob.exists()) {
   storage2.create(blob.info(), "Hello, Cloud Storage!".getBytes(UTF_8));
 } else {
