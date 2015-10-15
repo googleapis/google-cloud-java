@@ -1,4 +1,5 @@
 #!/bin/bash
+source ./utilities/integration_test_env.sh
 
 # This script is used by Travis-CI to publish artifacts (binary, sorce and javadoc jars) when releasing snapshots.
 # This script is referenced in .travis.yml.
