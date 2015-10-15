@@ -20,15 +20,16 @@ import static com.google.gcloud.RetryHelper.runWithRetries;
 import static java.util.concurrent.Executors.callable;
 
 import com.google.api.services.storage.model.StorageObject;
+import com.google.common.base.MoreObjects;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Default implementation for BlobWriteChannel.
@@ -48,8 +49,8 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
   private boolean isOpen = true;
   private int chunkSize = DEFAULT_CHUNK_SIZE;
 
-  private transient StorageRpc storageRpc;
-  private transient StorageObject storageObject;
+  private StorageRpc storageRpc;
+  private StorageObject storageObject;
 
   BlobWriteChannelImpl(StorageOptions options, BlobInfo blobInfo,
       Map<StorageRpc.Option, ?> optionsMap) {
@@ -59,11 +60,24 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
     uploadId = storageRpc.open(storageObject, optionsMap);
   }
 
-  private void writeObject(ObjectOutputStream out) throws IOException {
+  BlobWriteChannelImpl(StorageOptions options, BlobInfo blobInfo, String uploadId) {
+    this.options = options;
+    this.blobInfo = blobInfo;
+    this.uploadId = uploadId;
+    initTransients();
+  }
+
+  @Override
+  public State save() {
     if (isOpen) {
       flush(true);
     }
-    out.defaultWriteObject();
+    return StateImpl.builder(options, blobInfo, uploadId)
+        .position(position)
+        .buffer(buffer)
+        .limit(limit)
+        .isOpen(isOpen)
+        .chunkSize(chunkSize).build();
   }
 
   private void flush(boolean compact) {
@@ -84,13 +98,6 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
       byte[] temp = new byte[compact ? limit : chunkSize];
       System.arraycopy(buffer, length, temp, 0, limit);
       buffer = temp;
-    }
-  }
-
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
-    if (isOpen) {
-      initTransients();
     }
   }
 
@@ -149,5 +156,126 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
   public void chunkSize(int chunkSize) {
     chunkSize = (chunkSize / MIN_CHUNK_SIZE) * MIN_CHUNK_SIZE;
     this.chunkSize = Math.max(MIN_CHUNK_SIZE, chunkSize);
+  }
+
+  static class StateImpl implements State, Serializable {
+
+    private static final long serialVersionUID = 8541062465055125619L;
+
+    private final StorageOptions serviceOptions;
+    private final BlobInfo blobInfo;
+    private final String uploadId;
+    private final int position;
+    private final byte[] buffer;
+    private final int limit;
+    private final boolean isOpen;
+    private final int chunkSize;
+
+    StateImpl(Builder builder) {
+      this.serviceOptions = builder.serviceOptions;
+      this.blobInfo = builder.blobInfo;
+      this.uploadId = builder.uploadId;
+      this.position = builder.position;
+      this.buffer = builder.buffer;
+      this.limit = builder.limit;
+      this.isOpen = builder.isOpen;
+      this.chunkSize = builder.chunkSize;
+    }
+
+    public static class Builder {
+      private final StorageOptions serviceOptions;
+      private final BlobInfo blobInfo;
+      private final String uploadId;
+      private int position;
+      private byte[] buffer;
+      private int limit;
+      private boolean isOpen;
+      private int chunkSize;
+
+      private Builder(StorageOptions options, BlobInfo blobInfo, String uploadId) {
+        this.serviceOptions = options;
+        this.blobInfo = blobInfo;
+        this.uploadId = uploadId;
+      }
+
+      public Builder position(int position) {
+        this.position = position;
+        return this;
+      }
+
+      public Builder buffer(byte[] buffer) {
+        this.buffer = buffer.clone();
+        return this;
+      }
+
+      public Builder limit(int limit) {
+        this.limit = limit;
+        return this;
+      }
+
+      public Builder isOpen(boolean isOpen) {
+        this.isOpen = isOpen;
+        return this;
+      }
+
+      public Builder chunkSize(int chunkSize) {
+        this.chunkSize = chunkSize;
+        return this;
+      }
+
+      public State build() {
+        return new StateImpl(this);
+      }
+    }
+
+    public static Builder builder(StorageOptions options, BlobInfo blobInfo, String uploadId) {
+      return new Builder(options, blobInfo, uploadId);
+    }
+
+    @Override
+    public BlobWriteChannel restore() {
+      BlobWriteChannelImpl channel = new BlobWriteChannelImpl(serviceOptions, blobInfo, uploadId);
+      channel.position = position;
+      channel.buffer = buffer.clone();
+      channel.limit = limit;
+      channel.isOpen = isOpen;
+      channel.chunkSize = chunkSize;
+      return channel;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(serviceOptions, blobInfo, uploadId, position, limit, isOpen, chunkSize,
+          Arrays.hashCode(buffer));
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == null) {
+        return false;
+      }
+      if (!(obj instanceof StateImpl)) {
+        return false;
+      }
+      final StateImpl other = (StateImpl) obj;
+      return Objects.equals(this.serviceOptions, other.serviceOptions) &&
+          Objects.equals(this.blobInfo, other.blobInfo) &&
+          Objects.equals(this.uploadId, other.uploadId) &&
+          Objects.deepEquals(this.buffer, other.buffer) &&
+          this.position == other.position &&
+          this.limit == other.limit &&
+          this.isOpen == other.isOpen &&
+          this.chunkSize == other.chunkSize;
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this)
+          .add("blobInfo", blobInfo)
+          .add("uploadId", uploadId)
+          .add("position", position)
+          .add("isOpen", isOpen)
+          .toString();
+    }
   }
 }

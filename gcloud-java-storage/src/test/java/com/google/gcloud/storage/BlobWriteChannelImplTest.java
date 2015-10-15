@@ -27,7 +27,9 @@ import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 
 import org.easymock.Capture;
+import org.easymock.CaptureType;
 import org.easymock.EasyMock;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -36,7 +38,6 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Random;
-import org.junit.After;
 
 public class BlobWriteChannelImplTest {
 
@@ -190,6 +191,48 @@ public class BlobWriteChannelImplTest {
     } catch (IOException ex) {
       // expected
     }
+  }
+
+  @Test
+  public void testSaveAndRestore() throws IOException {
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(2);
+    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries()).times(2);
+    EasyMock.replay(optionsMock);
+    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    Capture<byte[]> capturedBuffer = Capture.newInstance(CaptureType.ALL);
+    Capture<Long> capturedPosition = Capture.newInstance(CaptureType.ALL);
+    storageRpcMock.write(EasyMock.eq(UPLOAD_ID), EasyMock.capture(capturedBuffer), EasyMock.eq(0),
+        EasyMock.eq(BLOB_INFO.toPb()), EasyMock.captureLong(capturedPosition),
+        EasyMock.eq(DEFAULT_CHUNK_SIZE), EasyMock.eq(false));
+    EasyMock.expectLastCall().times(2);
+    EasyMock.replay(storageRpcMock);
+    ByteBuffer buffer1 = randomBuffer(DEFAULT_CHUNK_SIZE);
+    ByteBuffer buffer2 = randomBuffer(DEFAULT_CHUNK_SIZE);
+    writer = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    assertEquals(DEFAULT_CHUNK_SIZE, writer.write(buffer1));
+    assertArrayEquals(buffer1.array(), capturedBuffer.getValues().get(0));
+    assertEquals(new Long(0L), capturedPosition.getValues().get(0));
+    BlobWriteChannel.State writerState = writer.save();
+    BlobWriteChannel restoredWriter = writerState.restore();
+    assertEquals(DEFAULT_CHUNK_SIZE, restoredWriter.write(buffer2));
+    assertArrayEquals(buffer2.array(), capturedBuffer.getValues().get(1));
+    assertEquals(new Long(DEFAULT_CHUNK_SIZE), capturedPosition.getValues().get(1));
+  }
+
+  @Test
+  public void testStateEquals() {
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(2);
+    EasyMock.replay(optionsMock);
+    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID)
+        .times(2);
+    EasyMock.replay(storageRpcMock);
+    writer = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    BlobWriteChannel writer2 = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    BlobWriteChannel.State state = writer.save();
+    BlobWriteChannel.State state2 = writer2.save();
+    assertEquals(state, state2);
+    assertEquals(state.hashCode(), state2.hashCode());
+    assertEquals(state.toString(), state2.toString());
   }
 
   private static ByteBuffer randomBuffer(int size) {

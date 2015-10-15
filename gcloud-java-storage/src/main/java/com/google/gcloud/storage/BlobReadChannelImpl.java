@@ -19,14 +19,15 @@ package com.google.gcloud.storage;
 import static com.google.gcloud.RetryHelper.runWithRetries;
 
 import com.google.api.services.storage.model.StorageObject;
+import com.google.common.base.MoreObjects;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.spi.StorageRpc;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.Callable;
 
 /**
@@ -35,7 +36,6 @@ import java.util.concurrent.Callable;
 class BlobReadChannelImpl implements BlobReadChannel {
 
   private static final int DEFAULT_CHUNK_SIZE = 2 * 1024 * 1024;
-  private static final long serialVersionUID = 4821762590742862669L;
 
   private final StorageOptions serviceOptions;
   private final BlobId blob;
@@ -45,10 +45,10 @@ class BlobReadChannelImpl implements BlobReadChannel {
   private boolean endOfStream;
   private int chunkSize = DEFAULT_CHUNK_SIZE;
 
-  private transient StorageRpc storageRpc;
-  private transient StorageObject storageObject;
-  private transient int bufferPos;
-  private transient byte[] buffer;
+  private StorageRpc storageRpc;
+  private StorageObject storageObject;
+  private int bufferPos;
+  private byte[] buffer;
 
   BlobReadChannelImpl(StorageOptions serviceOptions, BlobId blob,
       Map<StorageRpc.Option, ?> requestOptions) {
@@ -59,19 +59,18 @@ class BlobReadChannelImpl implements BlobReadChannel {
     initTransients();
   }
 
-  private void writeObject(ObjectOutputStream out) throws IOException {
+  @Override
+  public State save() {
+    StateImpl.Builder builder = StateImpl.builder(serviceOptions, blob, requestOptions)
+        .position(position)
+        .isOpen(isOpen)
+        .endOfStream(endOfStream)
+        .chunkSize(chunkSize);
     if (buffer != null) {
-      position += bufferPos;
-      buffer = null;
-      bufferPos = 0;
-      endOfStream = false;
+      builder.position(position + bufferPos);
+      builder.endOfStream(false);
     }
-    out.defaultWriteObject();
-  }
-
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
-    initTransients();
+    return builder.build();
   }
 
   private void initTransients() {
@@ -147,5 +146,117 @@ class BlobReadChannelImpl implements BlobReadChannel {
       bufferPos = 0;
     }
     return toWrite;
+  }
+
+  static class StateImpl implements BlobReadChannel.State, Serializable {
+
+    private static final long serialVersionUID = 3889420316004453706L;
+
+    private final StorageOptions serviceOptions;
+    private final BlobId blob;
+    private final Map<StorageRpc.Option, ?> requestOptions;
+    private final int position;
+    private final boolean isOpen;
+    private final boolean endOfStream;
+    private final int chunkSize;
+
+    StateImpl(Builder builder) {
+      this.serviceOptions = builder.serviceOptions;
+      this.blob = builder.blob;
+      this.requestOptions = builder.requestOptions;
+      this.position = builder.position;
+      this.isOpen = builder.isOpen;
+      this.endOfStream = builder.endOfStream;
+      this.chunkSize = builder.chunkSize;
+    }
+
+    public static class Builder {
+      private final StorageOptions serviceOptions;
+      private final BlobId blob;
+      private final Map<StorageRpc.Option, ?> requestOptions;
+      private int position;
+      private boolean isOpen;
+      private boolean endOfStream;
+      private int chunkSize;
+
+      private Builder(StorageOptions options, BlobId blob, Map<StorageRpc.Option, ?> reqOptions) {
+        this.serviceOptions = options;
+        this.blob = blob;
+        this.requestOptions = reqOptions;
+      }
+
+      public Builder position(int position) {
+        this.position = position;
+        return this;
+      }
+
+      public Builder isOpen(boolean isOpen) {
+        this.isOpen = isOpen;
+        return this;
+      }
+
+      public Builder endOfStream(boolean endOfStream) {
+        this.endOfStream = endOfStream;
+        return this;
+      }
+
+      public Builder chunkSize(int chunkSize) {
+        this.chunkSize = chunkSize;
+        return this;
+      }
+
+      public State build() {
+        return new StateImpl(this);
+      }
+    }
+
+    public static Builder builder(
+        StorageOptions options, BlobId blob, Map<StorageRpc.Option, ?> reqOptions) {
+      return new Builder(options, blob, reqOptions);
+    }
+
+    @Override
+    public BlobReadChannel restore() {
+      BlobReadChannelImpl channel = new BlobReadChannelImpl(serviceOptions, blob, requestOptions);
+      channel.position = position;
+      channel.isOpen = isOpen;
+      channel.endOfStream = endOfStream;
+      channel.chunkSize = chunkSize;
+      return channel;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(serviceOptions, blob, requestOptions, position, isOpen, endOfStream,
+          chunkSize);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == null) {
+        return false;
+      }
+      if (!(obj instanceof StateImpl)) {
+        return false;
+      }
+      final StateImpl other = (StateImpl) obj;
+      return Objects.equals(this.serviceOptions, other.serviceOptions) &&
+          Objects.equals(this.blob, other.blob) &&
+          Objects.equals(this.requestOptions, other.requestOptions) &&
+          this.position == other.position &&
+          this.isOpen == other.isOpen &&
+          this.endOfStream == other.endOfStream &&
+          this.chunkSize == other.chunkSize;
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this)
+          .add("blob", blob)
+          .add("position", position)
+          .add("isOpen", isOpen)
+          .add("endOfStream", endOfStream)
+          .toString();
+    }
   }
 }

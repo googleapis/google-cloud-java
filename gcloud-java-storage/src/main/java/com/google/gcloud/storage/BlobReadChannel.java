@@ -18,7 +18,6 @@ package com.google.gcloud.storage;
 
 import java.io.Closeable;
 import java.io.IOException;
-import java.io.Serializable;
 import java.nio.channels.ReadableByteChannel;
 
 /**
@@ -28,7 +27,7 @@ import java.nio.channels.ReadableByteChannel;
  *
  * This class is @{link Serializable}, which allows incremental reads.
  */
-public interface BlobReadChannel extends ReadableByteChannel, Serializable, Closeable {
+public interface BlobReadChannel extends ReadableByteChannel, Closeable {
 
   /**
    * Overridden to remove IOException.
@@ -46,4 +45,27 @@ public interface BlobReadChannel extends ReadableByteChannel, Serializable, Clos
    */
   void chunkSize(int chunkSize);
 
+  /**
+   * Saves the read channel state.
+   *
+   * @return an object that contains the read channel state and can restore it afterwards. State
+   *     object must implement {@link java.io.Serializable}.
+   */
+  public State save();
+
+  /**
+   * A common interface for all classes that implement the internal state of a
+   * {@code BlobReadChannel}.
+   *
+   * Implementations of this class must implement {@link java.io.Serializable} to ensure that the
+   * state of a channel can be correctly serialized.
+   */
+  public interface State {
+
+    /**
+     * Returns a {@code BlobReadChannel} whose internal state reflects the one saved in the
+     * invocation object.
+     */
+    public BlobReadChannel restore();
+  }
 }
