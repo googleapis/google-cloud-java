@@ -108,8 +108,10 @@ public class StructuredQuery<V> extends Query<V> {
       switch (filterPb.getFilterTypeCase()) {
         case COMPOSITE_FILTER:
           return CompositeFilter.fromPb(filterPb.getCompositeFilter());
-        default:
+        case PROPERTY_FILTER:
           return PropertyFilter.fromPb(filterPb.getPropertyFilter());
+        default:
+          throw new AssertionError("Unexpected enum value " + filterPb.getFilterTypeCase());
       }
     }
   }
@@ -530,7 +532,7 @@ public class StructuredQuery<V> extends Query<V> {
     private String kind;
     private final List<String> projection = new LinkedList<>();
     private Filter filter;
-    private boolean distinctOnAll = false;
+    private boolean distinct = false;
     private final List<String> distinctOn = new LinkedList<>();
     private final List<OrderBy> orderBy = new LinkedList<>();
     private Cursor startCursor;
@@ -620,14 +622,16 @@ public class StructuredQuery<V> extends Query<V> {
 
     B clearDistinct() {
       distinctOn.clear();
-      distinctOnAll = false;
+      distinct = false;
       return self();
     }
 
     B distinct(String... properties) {
       clearDistinct();
       if (properties.length == 0) {
-        this.distinctOnAll = true;
+        clearDistinct();
+        this.distinct = true;
+        this.distinctOn.addAll(this.projection);
       } else if (properties.length == 1) {
         addDistinct(properties[0]);
       } else {
@@ -637,6 +641,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
 
     B addDistinct(String property, String... others) {
+      if (this.distinct) {
+        throw new IllegalStateException("\"distinct()\" is currently set.");
+      }
       this.distinctOn.add(property);
       Collections.addAll(this.distinctOn, others);
       return self();
@@ -672,15 +679,10 @@ public class StructuredQuery<V> extends Query<V> {
       for (com.google.datastore.v1beta3.PropertyReference distinctOnPb : queryPb.getDistinctOnList()) {
         addDistinct(distinctOnPb.getName());
       }
-      distinctOnAll = false;
       return self();
     }
 
     public StructuredQuery<V> build() {
-      if (distinctOnAll) {
-        clearDistinct();
-        this.distinctOn.addAll(this.projection);
-      }
       return new StructuredQuery<>(this);
     }
   }

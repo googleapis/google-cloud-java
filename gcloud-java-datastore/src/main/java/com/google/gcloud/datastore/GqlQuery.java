@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.gcloud.datastore.Validator.validateNamespace;
 
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSortedMap;
@@ -138,8 +137,10 @@ public final class GqlQuery<V> extends Query<V> {
       switch (argPb.getParameterTypeCase()) {
         case CURSOR:
           return new Binding(new Cursor(argPb.getCursor()));
-        default:
+        case VALUE:
           return new Binding(Value.fromPb(argPb.getValue()));
+        default:
+          throw new AssertionError("Unexpected enum value " + argPb.getParameterTypeCase());
       }
     }
   }
@@ -397,13 +398,11 @@ public final class GqlQuery<V> extends Query<V> {
     for (Map.Entry<String, com.google.datastore.v1beta3.GqlQueryParameter> nameArg
          : queryPb.getNamedBindings().entrySet()) {
       Binding currBinding = Binding.fromPb(nameArg.getValue());
-      Preconditions.checkState(currBinding != null);
       builder.namedBindings.put(nameArg.getKey(), currBinding);
     }
     for (com.google.datastore.v1beta3.GqlQueryParameter numberArg
          : queryPb.getPositionalBindingsList()) {
       Binding currBinding = Binding.fromPb(numberArg);
-      Preconditions.checkState(currBinding != null);
       builder.positionalBindings.add(currBinding);
     }
     return builder.build();
