@@ -10,9 +10,6 @@ if [ "${TRAVIS_BRANCH}" == "master" -a "${TRAVIS_PULL_REQUEST}" == "false" ]; th
     mkdir $TRAVIS_BUILD_DIR/signing-tools
     chmod 700 $TRAVIS_BUILD_DIR/signing-tools
     tar xvf $TRAVIS_BUILD_DIR/signing-tools.tar -C $TRAVIS_BUILD_DIR/signing-tools
-    # Export test env variables
-    export GCLOUD_TESTS_PROJECT_ID="gcloud-devel"
-    export GCLOUD_TESTS_KEY=$TRAVIS_BUILD_DIR/signing-tools/gcloud-devel-travis.json
     # Run verify
     mvn verify
 else
