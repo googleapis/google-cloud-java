@@ -67,18 +67,19 @@ public class SerializationTest {
       .kind("k")
       .filter(PropertyFilter.eq("p1", "hello"))
       .build();
-  private static final Query<ProjectionEntity> QUERY3 = Query.projectionEntityQueryBuilder()
-      .kind("k")
-      .namespace("ns1")
-      .projection("p")
-      .limit(100)
-      .offset(5)
-      .startCursor(CURSOR1)
-      .endCursor(CURSOR2)
-      .filter(CompositeFilter.and(PropertyFilter.gt("p1", 10), PropertyFilter.eq("a", "v")))
-      .addDistinct("p")
-      .addOrderBy(OrderBy.asc("p"))
-      .build();
+  private static final Query<ProjectionEntity> QUERY3 =
+      Query.projectionEntityQueryBuilder()
+          .kind("k")
+          .namespace("ns1")
+          .projection("p")
+          .limit(100)
+          .offset(5)
+          .startCursor(CURSOR1)
+          .endCursor(CURSOR2)
+          .filter(CompositeFilter.and(PropertyFilter.gt("p1", 10), PropertyFilter.eq("a", "v")))
+          .addDistinctOn("p")
+          .addOrderBy(OrderBy.asc("p"))
+          .build();
   private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
   private static final NullValue NULL_VALUE = NullValue.builder().excludeFromIndexes(true).build();
   private static final StringValue STRING_VALUE = StringValue.of("hello");

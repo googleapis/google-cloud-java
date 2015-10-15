@@ -68,7 +68,7 @@ import java.util.Objects;
  *       .kind(kind)
  *       .projection(Projection.property("age"), Projection.first("name"))
  *       .filter(PropertyFilter.gt("age", 18))
- *       .distinct("age")
+ *       .distinctOn("age")
  *       .orderBy(OrderBy.asc("age"))
  *       .limit(10)
  *       .build();
@@ -532,7 +532,6 @@ public class StructuredQuery<V> extends Query<V> {
     private String kind;
     private final List<String> projection = new LinkedList<>();
     private Filter filter;
-    private boolean distinct = false;
     private final List<String> distinctOn = new LinkedList<>();
     private final List<OrderBy> orderBy = new LinkedList<>();
     private Cursor startCursor;
@@ -620,30 +619,18 @@ public class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    B clearDistinct() {
+    B clearDistinctOn() {
       distinctOn.clear();
-      distinct = false;
       return self();
     }
 
-    B distinct(String... properties) {
-      clearDistinct();
-      if (properties.length == 0) {
-        clearDistinct();
-        this.distinct = true;
-        this.distinctOn.addAll(this.projection);
-      } else if (properties.length == 1) {
-        addDistinct(properties[0]);
-      } else {
-        addDistinct(properties[0], Arrays.copyOfRange(properties, 1, properties.length));
-      }
+    B distinctOn(String property, String... others) {
+      clearDistinctOn();
+      addDistinctOn(property, others);
       return self();
     }
 
-    B addDistinct(String property, String... others) {
-      if (this.distinct) {
-        throw new IllegalStateException("\"distinct()\" is currently set.");
-      }
+    B addDistinctOn(String property, String... others) {
       this.distinctOn.add(property);
       Collections.addAll(this.distinctOn, others);
       return self();
@@ -677,7 +664,7 @@ public class StructuredQuery<V> extends Query<V> {
         addProjection(projectionPb.getProperty().getName());
       }
       for (com.google.datastore.v1beta3.PropertyReference distinctOnPb : queryPb.getDistinctOnList()) {
-        addDistinct(distinctOnPb.getName());
+        addDistinctOn(distinctOnPb.getName());
       }
       return self();
     }
@@ -717,7 +704,7 @@ public class StructuredQuery<V> extends Query<V> {
     protected KeyQueryBuilder mergeFrom(com.google.datastore.v1beta3.Query queryPb) {
       super.mergeFrom(queryPb);
       projection(KEY_PROPERTY_NAME);
-      clearDistinct();
+      clearDistinctOn();
       return this;
     }
 
@@ -755,18 +742,18 @@ public class StructuredQuery<V> extends Query<V> {
     }
 
     @Override
-    public ProjectionEntityQueryBuilder clearDistinct() {
-      return super.clearDistinct();
+    public ProjectionEntityQueryBuilder clearDistinctOn() {
+      return super.clearDistinctOn();
     }
 
     @Override
-    public ProjectionEntityQueryBuilder distinct(String... properties) {
-      return super.distinct(properties);
+    public ProjectionEntityQueryBuilder distinctOn(String property, String... others) {
+      return super.distinctOn(property, others);
     }
 
     @Override
-    public ProjectionEntityQueryBuilder addDistinct(String property, String... others) {
-      return super.addDistinct(property, others);
+    public ProjectionEntityQueryBuilder addDistinctOn(String property, String... others) {
+      return super.addDistinctOn(property, others);
     }
   }
 
@@ -786,7 +773,7 @@ public class StructuredQuery<V> extends Query<V> {
   @Override
   public int hashCode() {
     return Objects.hash(namespace(), kind, startCursor, endCursor, offset, limit, filter, orderBy,
-        distinct());
+distinctOn());
   }
 
   @Override
@@ -827,7 +814,7 @@ public class StructuredQuery<V> extends Query<V> {
     return filter;
   }
 
-  public List<String> distinct() {
+  public List<String> distinctOn() {
     return distinctOn;
   }
 
