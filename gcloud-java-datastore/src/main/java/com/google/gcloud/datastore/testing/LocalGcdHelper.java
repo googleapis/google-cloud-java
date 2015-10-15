@@ -54,23 +54,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Utility to start and stop local Google Cloud Datastore process.
  */
 public class LocalGcdHelper {
-
   private static final Logger log = Logger.getLogger(LocalGcdHelper.class.getName());
 
   private final String projectId;
   private Path gcdPath;
+  private Process startProcess;
   private ProcessStreamReader processReader;
+  private ProcessErrorStreamReader processErrorReader;
   private final int port;
 
   public static final String DEFAULT_PROJECT_ID = "projectid1";
@@ -179,54 +179,75 @@ public class LocalGcdHelper {
   }
 
   private static class ProcessStreamReader extends Thread {
-
-    private final Process process;
     private final BufferedReader reader;
-    private final BufferedReader errorReader;
 
-    ProcessStreamReader(
-        Process process, String blockUntil, boolean blockOnErrorStream) throws IOException {
+    ProcessStreamReader(InputStream inputStream) {
       super("Local GCD InputStream reader");
       setDaemon(true);
-      this.process = process;
-      reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-      errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
-      if (!Strings.isNullOrEmpty(blockUntil)) {
-        String line;
-        do {
-          if (blockOnErrorStream) {
-            line = errorReader.readLine();
-          } else {
-            line = reader.readLine();
-          }
-        } while (line != null && !line.contains(blockUntil));
-      }
+      reader = new BufferedReader(new InputStreamReader(inputStream));
     }
 
-    void terminate() throws InterruptedException, IOException {
-      process.destroy();
-      process.waitFor();
+    void terminate() throws IOException {
       reader.close();
     }
 
     @Override
     public void run() {
       try {
-        boolean readerDone = false;
+        while (!(reader.readLine() != null)) {
+          // consume line
+        }
+      } catch (IOException e) {
+        // ignore
+      }
+    }
+
+    public static ProcessStreamReader start(InputStream inputStream) {
+      ProcessStreamReader thread = new ProcessStreamReader(inputStream);
+      thread.start();
+      return thread;
+    }
+  }
+
+  private static class ProcessErrorStreamReader extends Thread {
+    private static final int LOG_LENGTH_LIMIT = 50000;
+    private static final String GCD_LOGGING_CLASS =
+        "com.google.apphosting.client.serviceapp.BaseApiServlet";
+
+    private final BufferedReader errorReader;
+    private String currentLog = null;
+    private Level currentLogLevel = null;
+
+    ProcessErrorStreamReader(InputStream errorStream, String blockUntil) throws IOException {
+      super("Local GCD ErrorStream reader");
+      setDaemon(true);
+      errorReader = new BufferedReader(new InputStreamReader(errorStream));
+      if (!Strings.isNullOrEmpty(blockUntil)) {
+        String line;
+        do {
+          line = errorReader.readLine();
+        } while (line != null && !line.contains(blockUntil));
+      }
+    }
+
+    void terminate() throws IOException {
+      writeLog(currentLogLevel, currentLog);
+      errorReader.close();
+    }
+
+    @Override
+    public void run() {
+      try {
         boolean errorReaderDone = false;
-        while (!readerDone || !errorReaderDone) {
-          if (!readerDone && reader.ready()) {
-            readerDone = reader.readLine() != null;
-          }
-          if (!errorReaderDone && errorReader.ready()) {
-            String errorOutput = errorReader.readLine();
-            if (errorOutput == null) {
-              errorReaderDone = true;
-            } else {
-              if (errorOutput.startsWith("SEVERE")) {
-                System.err.println(errorOutput);
-              }
-            }
+        String previousLine = "";
+        String currentLine = "";
+        while (!errorReaderDone) {
+          previousLine = currentLine;
+          currentLine = errorReader.readLine();
+          if (currentLine == null) {
+            errorReaderDone = true;
+          } else {
+            processLogLine(previousLine, currentLine);
           }
         }
       } catch (IOException e) {
@@ -234,16 +255,58 @@ public class LocalGcdHelper {
       }
     }
 
-    public static ProcessStreamReader start(
-        Process process, String blockUntil, boolean blockOnErrorStream) throws IOException {
-      ProcessStreamReader thread = new ProcessStreamReader(process, blockUntil, blockOnErrorStream);
+    private void processLogLine(String previousLine, String currentLine) {
+      // Each gcd log is two lines with the following format:
+      //     [Date] [Time] [GCD_LOGGING_CLASS] [method]
+      //     [LEVEL]: error message
+      // Exceptions and stack traces are included in gcd error stream, separated by a newline
+      Level nextLogLevel = getLevel(currentLine);
+      if (previousLine.contains(GCD_LOGGING_CLASS) && nextLogLevel != null) {
+        writeLog(currentLogLevel, currentLog);
+        if (currentLine.startsWith("SEVERE: ")) {
+          // don't show duplicate error messages from gcd.sh (see issue #258)
+          currentLog = null;
+          currentLogLevel = null;
+        } else {
+          currentLog = "GCD" + currentLine.split(":", 2)[1] + System.getProperty("line.separator");
+          currentLogLevel = nextLogLevel;
+        }
+      } else if (currentLog != null && currentLog.length() > LOG_LENGTH_LIMIT) {
+        // log processing may be off, so drop some logs before the string becomes too big
+        currentLog = null;
+        currentLogLevel = null;
+      } else if (currentLog != null && isUsefulLogInfo(currentLine)) {
+        currentLog += currentLine + System.getProperty("line.separator");
+      }
+    }
+
+    private static void writeLog(Level level, String msg) {
+      if (level != null && !Strings.isNullOrEmpty(msg)) {
+        log.log(level, msg.trim());
+      }
+    }
+
+    private static boolean isUsefulLogInfo(String line) {
+      return !line.trim().startsWith("at ") && !line.contains(GCD_LOGGING_CLASS);
+    }
+
+    private static Level getLevel(String line) {
+      try {
+        return Level.parse(line.split(":")[0]);
+      } catch (IllegalArgumentException e) {
+        return null; // level wasn't supplied in this log line
+      }
+    }
+
+    public static ProcessErrorStreamReader start(InputStream errorStream, String blockUntil)
+        throws IOException {
+      ProcessErrorStreamReader thread = new ProcessErrorStreamReader(errorStream, blockUntil);
       thread.start();
       return thread;
     }
   }
 
   private static class CommandWrapper {
-
     private final List<String> prefix;
     private List<String> command;
     private String nullFilename;
@@ -414,12 +477,15 @@ public class LocalGcdHelper {
     if (log.isLoggable(Level.FINE)) {
       log.log(Level.FINE, "Starting datastore emulator for the project: {0}", projectId);
     }
-    Process startProcess = CommandWrapper.create()
-        .command(gcdAbsolutePath.toString(), "start", "--testing", "--allow_remote_shutdown",
-            "--port=" + Integer.toString(port), projectId)
-        .directory(gcdPath)
-        .start();
-    processReader = ProcessStreamReader.start(startProcess, "Dev App Server is now running", true);
+    startProcess =
+        CommandWrapper.create()
+            .command(gcdAbsolutePath.toString(), "start", "--testing", "--allow_remote_shutdown",
+                "--port=" + Integer.toString(port), projectId)
+            .directory(gcdPath)
+            .start();
+    processReader = ProcessStreamReader.start(startProcess.getInputStream());
+    processErrorReader = ProcessErrorStreamReader.start(
+        startProcess.getErrorStream(), "Dev App Server is now running");
   }
 
   private static String md5(File gcdZipFile) throws IOException {
@@ -475,6 +541,9 @@ public class LocalGcdHelper {
     sendQuitRequest(port);
     if (processReader != null) {
       processReader.terminate();
+      processErrorReader.terminate();
+      startProcess.destroy();
+      startProcess.waitFor();
     }
     if (gcdPath != null) {
       deleteRecurse(gcdPath);
@@ -486,7 +555,6 @@ public class LocalGcdHelper {
       return;
     }
     Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
-
       @Override
       public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
         Files.delete(dir);
@@ -501,7 +569,7 @@ public class LocalGcdHelper {
     });
   }
 
-  public static LocalGcdHelper start(String projectId, int port) 
+  public static LocalGcdHelper start(String projectId, int port)
       throws IOException, InterruptedException {
     LocalGcdHelper helper = new LocalGcdHelper(projectId, port);
     helper.start();
@@ -511,15 +579,14 @@ public class LocalGcdHelper {
   public static void main(String... args) throws IOException, InterruptedException {
     Map<String, String> parsedArgs = parseArgs(args);
     String action = parsedArgs.get("action");
-    int port = (parsedArgs.get("port") == null) ? DEFAULT_PORT
-        : Integer.parseInt(parsedArgs.get("port"));
+    int port =
+        (parsedArgs.get("port") == null) ? DEFAULT_PORT : Integer.parseInt(parsedArgs.get("port"));
     switch (action) {
       case "START":
         if (!isActive(DEFAULT_PROJECT_ID, port)) {
           LocalGcdHelper helper = start(DEFAULT_PROJECT_ID, port);
           try (FileWriter writer = new FileWriter(".local_gcd_helper")) {
-            writer.write(
-                helper.gcdPath.toAbsolutePath().toString() + System.lineSeparator());
+            writer.write(helper.gcdPath.toAbsolutePath().toString() + System.lineSeparator());
             writer.write(Integer.toString(port));
           }
         }
