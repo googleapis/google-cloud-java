@@ -21,6 +21,7 @@ import static java.util.concurrent.Executors.callable;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
+import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.spi.StorageRpc;
 
@@ -49,14 +50,15 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
   private boolean isOpen = true;
   private int chunkSize = DEFAULT_CHUNK_SIZE;
 
-  private StorageRpc storageRpc;
-  private StorageObject storageObject;
+  private final StorageRpc storageRpc;
+  private final StorageObject storageObject;
 
   BlobWriteChannelImpl(StorageOptions options, BlobInfo blobInfo,
       Map<StorageRpc.Option, ?> optionsMap) {
     this.options = options;
     this.blobInfo = blobInfo;
-    initTransients();
+    storageRpc = options.storageRpc();
+    storageObject = blobInfo.toPb();
     uploadId = storageRpc.open(storageObject, optionsMap);
   }
 
@@ -64,11 +66,12 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
     this.options = options;
     this.blobInfo = blobInfo;
     this.uploadId = uploadId;
-    initTransients();
+    storageRpc = options.storageRpc();
+    storageObject = blobInfo.toPb();
   }
 
   @Override
-  public State save() {
+  public RestorableState<BlobWriteChannel> save() {
     if (isOpen) {
       flush(true);
     }
@@ -99,11 +102,6 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
       System.arraycopy(buffer, length, temp, 0, limit);
       buffer = temp;
     }
-  }
-
-  private void initTransients() {
-    storageRpc = options.storageRpc();
-    storageObject = blobInfo.toPb();
   }
 
   private void validateOpen() throws IOException {
@@ -158,7 +156,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
     this.chunkSize = Math.max(MIN_CHUNK_SIZE, chunkSize);
   }
 
-  static class StateImpl implements State, Serializable {
+  static class StateImpl implements RestorableState<BlobWriteChannel>, Serializable {
 
     private static final long serialVersionUID = 8541062465055125619L;
 
@@ -223,7 +221,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
         return this;
       }
 
-      public State build() {
+      public RestorableState<BlobWriteChannel> build() {
         return new StateImpl(this);
       }
     }

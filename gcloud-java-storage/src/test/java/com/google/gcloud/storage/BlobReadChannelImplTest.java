@@ -23,6 +23,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 
@@ -198,7 +199,7 @@ public class BlobReadChannelImplTest {
     EasyMock.replay(storageRpcMock);
     reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
     reader.read(firstReadBuffer);
-    BlobReadChannel.State readerState = reader.save();
+    RestorableState<BlobReadChannel> readerState = reader.save();
     BlobReadChannel restoredReader = readerState.restore();
     restoredReader.read(secondReadBuffer);
     assertArrayEquals(Arrays.copyOf(firstResult, firstReadBuffer.capacity()),
@@ -213,8 +214,8 @@ public class BlobReadChannelImplTest {
     EasyMock.replay(storageRpcMock);
     reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
     BlobReadChannel secondReader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
-    BlobReadChannel.State state = reader.save();
-    BlobReadChannel.State secondState = secondReader.save();
+    RestorableState<BlobReadChannel> state = reader.save();
+    RestorableState<BlobReadChannel> secondState = secondReader.save();
     assertEquals(state, secondState);
     assertEquals(state.hashCode(), secondState.hashCode());
     assertEquals(state.toString(), secondState.toString());

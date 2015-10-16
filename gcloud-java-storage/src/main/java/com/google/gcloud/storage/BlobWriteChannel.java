@@ -16,6 +16,8 @@
 
 package com.google.gcloud.storage;
 
+import com.google.gcloud.RestorableState;
+
 import java.io.Closeable;
 import java.nio.channels.WritableByteChannel;
 
@@ -35,29 +37,12 @@ public interface BlobWriteChannel extends WritableByteChannel, Closeable {
   void chunkSize(int chunkSize);
 
   /**
-   * Saves the write channel state.
+   * Saves the write channel state so that it can be restored afterwards. The original
+   * {@code BlobWriteChannel} and the restored one should not both be used. Closing one channel
+   * causes the other channel to close, subsequent writes will fail.
    *
-   * @return an object that contains the write channel state and can restore it afterwards. State
-   *     object must implement {@link java.io.Serializable}.
+   * @return a {@link RestorableState} object that contains the write channel state and can restore
+   *     it afterwards. State object must implement {@link java.io.Serializable}.
    */
-  public State save();
-
-  /**
-   * A common interface for all classes that implement the internal state of a
-   * {@code BlobWriteChannel}.
-   *
-   * Implementations of this class must implement {@link java.io.Serializable} to ensure that the
-   * state of a channel can be correctly serialized.
-   */
-  public interface State {
-
-    /**
-     * Returns a {@code BlobWriteChannel} whose internal state reflects the one saved in the
-     * invocation object.
-     *
-     * The original {@code BlobWriteChannel} and the restored one should not both be used. Closing
-     * one channel causes the other channel to close, subsequent writes will fail.
-     */
-    public BlobWriteChannel restore();
-  }
+  public RestorableState<BlobWriteChannel> save();
 }

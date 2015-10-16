@@ -20,6 +20,7 @@ import static com.google.gcloud.RetryHelper.runWithRetries;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
+import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.spi.StorageRpc;
 
@@ -45,8 +46,8 @@ class BlobReadChannelImpl implements BlobReadChannel {
   private boolean endOfStream;
   private int chunkSize = DEFAULT_CHUNK_SIZE;
 
-  private StorageRpc storageRpc;
-  private StorageObject storageObject;
+  private final StorageRpc storageRpc;
+  private final StorageObject storageObject;
   private int bufferPos;
   private byte[] buffer;
 
@@ -56,11 +57,12 @@ class BlobReadChannelImpl implements BlobReadChannel {
     this.blob = blob;
     this.requestOptions = requestOptions;
     isOpen = true;
-    initTransients();
+    storageRpc = serviceOptions.storageRpc();
+    storageObject = blob.toPb();
   }
 
   @Override
-  public State save() {
+  public RestorableState<BlobReadChannel> save() {
     StateImpl.Builder builder = StateImpl.builder(serviceOptions, blob, requestOptions)
         .position(position)
         .isOpen(isOpen)
@@ -71,11 +73,6 @@ class BlobReadChannelImpl implements BlobReadChannel {
       builder.endOfStream(false);
     }
     return builder.build();
-  }
-
-  private void initTransients() {
-    storageRpc = serviceOptions.storageRpc();
-    storageObject = blob.toPb();
   }
 
   @Override
@@ -148,7 +145,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
     return toWrite;
   }
 
-  static class StateImpl implements BlobReadChannel.State, Serializable {
+  static class StateImpl implements RestorableState<BlobReadChannel>, Serializable {
 
     private static final long serialVersionUID = 3889420316004453706L;
 
@@ -205,7 +202,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
         return this;
       }
 
-      public State build() {
+      public RestorableState<BlobReadChannel> build() {
         return new StateImpl(this);
       }
     }

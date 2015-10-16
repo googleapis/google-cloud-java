@@ -23,6 +23,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 
@@ -212,7 +213,7 @@ public class BlobWriteChannelImplTest {
     assertEquals(DEFAULT_CHUNK_SIZE, writer.write(buffer1));
     assertArrayEquals(buffer1.array(), capturedBuffer.getValues().get(0));
     assertEquals(new Long(0L), capturedPosition.getValues().get(0));
-    BlobWriteChannel.State writerState = writer.save();
+    RestorableState<BlobWriteChannel> writerState = writer.save();
     BlobWriteChannel restoredWriter = writerState.restore();
     assertEquals(DEFAULT_CHUNK_SIZE, restoredWriter.write(buffer2));
     assertArrayEquals(buffer2.array(), capturedBuffer.getValues().get(1));
@@ -228,8 +229,8 @@ public class BlobWriteChannelImplTest {
     EasyMock.replay(storageRpcMock);
     writer = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
     BlobWriteChannel writer2 = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
-    BlobWriteChannel.State state = writer.save();
-    BlobWriteChannel.State state2 = writer2.save();
+    RestorableState<BlobWriteChannel> state = writer.save();
+    RestorableState<BlobWriteChannel> state2 = writer2.save();
     assertEquals(state, state2);
     assertEquals(state.hashCode(), state2.hashCode());
     assertEquals(state.toString(), state2.toString());

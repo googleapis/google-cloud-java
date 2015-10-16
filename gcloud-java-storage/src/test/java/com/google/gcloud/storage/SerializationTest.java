@@ -21,6 +21,7 @@ import static org.junit.Assert.assertNotSame;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Acl.Project.ProjectRole;
@@ -113,8 +114,8 @@ public class SerializationTest {
         .build();
     BlobReadChannel reader =
         new BlobReadChannelImpl(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
-    BlobReadChannel.State state = reader.save();
-    BlobReadChannel.State deserializedState = serializeAndDeserialize(state);
+    RestorableState<BlobReadChannel> state = reader.save();
+    RestorableState<BlobReadChannel> deserializedState = serializeAndDeserialize(state);
     assertEquals(state, deserializedState);
     assertEquals(state.hashCode(), deserializedState.hashCode());
     assertEquals(state.toString(), deserializedState.toString());
@@ -129,8 +130,8 @@ public class SerializationTest {
         .build();
     BlobWriteChannelImpl writer = new BlobWriteChannelImpl(
         options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");
-    BlobWriteChannel.State state = writer.save();
-    BlobWriteChannel.State deserializedState = serializeAndDeserialize(state);
+    RestorableState<BlobWriteChannel> state = writer.save();
+    RestorableState<BlobWriteChannel> deserializedState = serializeAndDeserialize(state);
     assertEquals(state, deserializedState);
     assertEquals(state.hashCode(), deserializedState.hashCode());
     assertEquals(state.toString(), deserializedState.toString());
