@@ -179,8 +179,8 @@ public class LocalGcdHelper {
   }
 
   private static class ProcessStreamReader extends Thread {
-    private volatile BufferedReader reader;
-    private boolean terminated = false;
+    private final BufferedReader reader;
+    private volatile boolean terminated = false;
 
     ProcessStreamReader(InputStream inputStream) {
       super("Local GCD InputStream reader");
@@ -195,15 +195,15 @@ public class LocalGcdHelper {
 
     @Override
     public void run() {
-      try {
-        while (!terminated) {
+      while (!terminated) {
+        try {
           String line = reader.readLine();
           if (line == null) {
             terminated = true;
           }
+        } catch (IOException e) {
+          // ignore
         }
-      } catch (IOException e) {
-        // ignore
       }
     }
 
@@ -219,11 +219,11 @@ public class LocalGcdHelper {
     private static final String GCD_LOGGING_CLASS =
         "com.google.apphosting.client.serviceapp.BaseApiServlet";
 
-    private volatile BufferedReader errorReader;
+    private final BufferedReader errorReader;
     private String currentLog = null;
     private Level currentLogLevel = null;
     private boolean collectionMode = false;
-    private boolean terminated = false;
+    private volatile boolean terminated = false;
 
     ProcessErrorStreamReader(InputStream errorStream, String blockUntil) throws IOException {
       super("Local GCD ErrorStream reader");
@@ -245,10 +245,10 @@ public class LocalGcdHelper {
 
     @Override
     public void run() {
-      try {
-        String previousLine = "";
-        String nextLine = "";
-        while (!terminated) {
+      String previousLine = "";
+      String nextLine = "";
+      while (!terminated) {
+        try {
           previousLine = nextLine;
           nextLine = errorReader.readLine();
           if (nextLine == null) {
@@ -257,9 +257,9 @@ public class LocalGcdHelper {
           } else {
             processLogLine(previousLine, nextLine);
           }
+        } catch (IOException e) {
+          // ignore
         }
-      } catch (IOException e) {
-        // ignore
       }
     }
 
