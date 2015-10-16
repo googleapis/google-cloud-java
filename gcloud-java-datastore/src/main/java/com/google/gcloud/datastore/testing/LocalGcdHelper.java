@@ -180,7 +180,7 @@ public class LocalGcdHelper {
 
   private static class ProcessStreamReader extends Thread {
     private final BufferedReader reader;
-    private volatile boolean terminated = false;
+    private volatile boolean terminated;
 
     ProcessStreamReader(InputStream inputStream) {
       super("Local GCD InputStream reader");
@@ -220,10 +220,10 @@ public class LocalGcdHelper {
         "com.google.apphosting.client.serviceapp.BaseApiServlet";
 
     private final BufferedReader errorReader;
-    private String currentLog = null;
-    private Level currentLogLevel = null;
-    private boolean collectionMode = false;
-    private volatile boolean terminated = false;
+    private StringBuilder currentLog;
+    private Level currentLogLevel;
+    private boolean collectionMode;
+    private volatile boolean terminated;
 
     ProcessErrorStreamReader(InputStream errorStream, String blockUntil) throws IOException {
       super("Local GCD ErrorStream reader");
@@ -268,11 +268,13 @@ public class LocalGcdHelper {
       //     [LEVEL]: error message
       // Exceptions and stack traces are included in gcd error stream, separated by a newline
       Level nextLogLevel = getLevel(nextLine);
-      if (previousLine.contains(GCD_LOGGING_CLASS) && nextLogLevel != null) {
+      if (nextLogLevel != null) {
         writeLog(currentLogLevel, currentLog);
-        currentLog = "";
+        currentLog = new StringBuilder();
         currentLogLevel = nextLogLevel;
-        if (nextLine.startsWith("SEVERE: ")) {
+        if (!previousLine.contains(GCD_LOGGING_CLASS)) {
+          collectionMode = false;
+        } else if (nextLine.startsWith("SEVERE: ")) {
           collectionMode = false; // don't show duplicate messages (see issue #258)
         } else {
           collectionMode = true;
@@ -282,16 +284,17 @@ public class LocalGcdHelper {
       } else if (collectionMode) {
         if (currentLog.length() == 0) {
           // strip level out of the line
-          currentLog = "GCD" + previousLine.split(":", 2)[1] + System.getProperty("line.separator");
+          currentLog.append(
+              "GCD" + previousLine.split(":", 2)[1] + System.getProperty("line.separator"));
         } else {
-          currentLog += previousLine + System.getProperty("line.separator");
+          currentLog.append(previousLine + System.getProperty("line.separator"));
         }
       }
     }
 
-    private static void writeLog(Level level, String msg) {
-      if (level != null && !Strings.isNullOrEmpty(msg)) {
-        log.log(level, msg.trim());
+    private static void writeLog(Level level, StringBuilder msg) {
+      if (level != null && msg != null && msg.length() != 0) {
+        log.log(level, msg.toString().trim());
       }
     }
 
