@@ -25,6 +25,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.RestorableState;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import java.io.ByteArrayInputStream;
@@ -35,7 +36,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -394,6 +394,35 @@ public class ITStorageTest {
       reader.read(readBytes);
       reader.read(readStringBytes);
     }
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes.array());
+    assertEquals(BLOB_STRING_CONTENT, new String(readStringBytes.array(), UTF_8));
+    assertTrue(storage.delete(bucket, blobName));
+  }
+
+  @Test
+  public void testReadAndWriteSaveChannels() throws UnsupportedEncodingException, IOException {
+    String blobName = "test-read-and-write-save-channels-blob";
+    BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
+    byte[] stringBytes;
+    BlobWriteChannel writer = storage.writer(blob);
+    stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
+    writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
+    RestorableState<BlobWriteChannel> writerState = writer.save();
+    BlobWriteChannel secondWriter = writerState.restore();
+    secondWriter.write(ByteBuffer.wrap(stringBytes));
+    secondWriter.close();
+    ByteBuffer readBytes;
+    ByteBuffer readStringBytes;
+    BlobReadChannel reader = storage.reader(blob.blobId());
+    reader.chunkSize(BLOB_BYTE_CONTENT.length);
+    readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
+    reader.read(readBytes);
+    RestorableState<BlobReadChannel> readerState = reader.save();
+    BlobReadChannel secondReader = readerState.restore();
+    readStringBytes = ByteBuffer.allocate(stringBytes.length);
+    secondReader.read(readStringBytes);
+    reader.close();
+    secondReader.close();
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes.array());
     assertEquals(BLOB_STRING_CONTENT, new String(readStringBytes.array(), UTF_8));
     assertTrue(storage.delete(bucket, blobName));
