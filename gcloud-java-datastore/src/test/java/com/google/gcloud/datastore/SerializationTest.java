@@ -26,7 +26,6 @@ import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
-import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 
 import org.junit.Test;
@@ -68,18 +67,19 @@ public class SerializationTest {
       .kind("k")
       .filter(PropertyFilter.eq("p1", "hello"))
       .build();
-  private static final Query<ProjectionEntity> QUERY3 = Query.projectionEntityQueryBuilder()
-      .kind("k")
-      .namespace("ns1")
-      .projection(Projection.property("p"))
-      .limit(100)
-      .offset(5)
-      .startCursor(CURSOR1)
-      .endCursor(CURSOR2)
-      .filter(CompositeFilter.and(PropertyFilter.gt("p1", 10), PropertyFilter.eq("a", "v")))
-      .addGroupBy("p")
-      .addOrderBy(OrderBy.asc("p"))
-      .build();
+  private static final Query<ProjectionEntity> QUERY3 =
+      Query.projectionEntityQueryBuilder()
+          .kind("k")
+          .namespace("ns1")
+          .projection("p")
+          .limit(100)
+          .offset(5)
+          .startCursor(CURSOR1)
+          .endCursor(CURSOR2)
+          .filter(CompositeFilter.and(PropertyFilter.gt("p1", 10), PropertyFilter.eq("a", "v")))
+          .addDistinctOn("p")
+          .addOrderBy(OrderBy.asc("p"))
+          .build();
   private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
   private static final NullValue NULL_VALUE = NullValue.builder().excludeFromIndexes(true).build();
   private static final StringValue STRING_VALUE = StringValue.of("hello");
@@ -122,9 +122,8 @@ public class SerializationTest {
       .put(ValueType.NULL, NULL_VALUE)
       .put(ValueType.KEY, KEY_VALUE)
       .put(ValueType.STRING, STRING_VALUE)
-      // TODO(ajaykannan): fix me!
-      //.putAll(ValueType.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
-      //    EMBEDDED_ENTITY_VALUE3)
+      .putAll(ValueType.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
+          EMBEDDED_ENTITY_VALUE3)
       .put(ValueType.LIST, LIST_VALUE)
       .put(ValueType.LONG, LONG_VALUE)
       .put(ValueType.DOUBLE, DOUBLE_VALUE)
@@ -169,10 +168,9 @@ public class SerializationTest {
 
   @Test
   public void testTypes() throws Exception {
-    // TODO(ajaykannan): fix me!
-    Serializable<?>[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, /*ENTITY1, ENTITY2,
-        ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY,*/ DATE_TIME1, BLOB1/*, CURSOR1, GQL1, GQL2,
-        QUERY1, QUERY2, QUERY3*/};
+    Serializable<?>[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
+        ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, CURSOR1, GQL1, GQL2,
+        QUERY1, QUERY2, QUERY3};
     for (Serializable<?> obj : types) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

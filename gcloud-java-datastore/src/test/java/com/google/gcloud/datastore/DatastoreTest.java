@@ -29,7 +29,6 @@ import com.google.common.collect.Iterators;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
-import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.spi.DatastoreRpc;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
@@ -115,9 +114,9 @@ public class DatastoreTest {
         .host("localhost:" + LocalGcdHelper.PORT)
         .build();
     datastore = DatastoreFactory.instance().get(options);
-    //StructuredQuery<Key> query = Query.keyQueryBuilder().build();
-    //QueryResults<Key> result = datastore.run(query);
-    //datastore.delete(Iterators.toArray(result, Key.class));
+    StructuredQuery<Key> query = Query.keyQueryBuilder().build();
+    QueryResults<Key> result = datastore.run(query);
+    datastore.delete(Iterators.toArray(result, Key.class));
     datastore.add(ENTITY1, ENTITY2);
   }
 
@@ -188,7 +187,7 @@ public class DatastoreTest {
       assertEquals(DatastoreException.Code.ABORTED, expected.code());
     }
   }
-  /* TODO(ajaykannan): fix me!
+
   @Test
   public void testTransactionWithQuery() {
     Query<Entity> query = Query.entityQueryBuilder()
@@ -216,7 +215,7 @@ public class DatastoreTest {
       assertEquals(DatastoreException.Code.ABORTED, expected.code());
     }
   }
-  */
+
   @Test
   public void testNewTransactionRollback() {
     Transaction transaction = datastore.newTransaction();
@@ -331,7 +330,7 @@ public class DatastoreTest {
     assertNull(entities.get(4));
     assertEquals(5, entities.size());
   }
-  /* TODO(ajaykannan): fix me!
+
   @Test
   public void testRunGqlQueryNoCasting() {
     Query<Entity> query1 = Query.gqlQueryBuilder(ResultType.ENTITY, "select * from " + KIND1).build();
@@ -421,7 +420,7 @@ public class DatastoreTest {
 
     StructuredQuery<ProjectionEntity> keyOnlyProjectionQuery =
         Query.projectionEntityQueryBuilder()
-        .kind(KIND1).projection(Projection.property("__key__")).build();
+        .kind(KIND1).projection("__key__").build();
     QueryResults<ProjectionEntity> results3 = datastore.run(keyOnlyProjectionQuery);
     assertTrue(results3.hasNext());
     ProjectionEntity projectionEntity = results3.next();
@@ -429,26 +428,26 @@ public class DatastoreTest {
     assertTrue(projectionEntity.names().isEmpty());
     assertFalse(results2.hasNext());
 
-    StructuredQuery<ProjectionEntity> projectionQuery = Query.projectionEntityQueryBuilder()
-        .kind(KIND2)
-        .projection(Projection.property("age"), Projection.first("name"))
-        .filter(PropertyFilter.gt("age", 18))
-        .groupBy("age")
-        .orderBy(OrderBy.asc("age"))
-        .limit(10)
-        .build();
+    StructuredQuery<ProjectionEntity> projectionQuery =
+        Query.projectionEntityQueryBuilder()
+            .kind(KIND2)
+            .projection("age")
+            .filter(PropertyFilter.gt("age", 18))
+            .distinctOn("age")
+            .orderBy(OrderBy.asc("age"))
+            .limit(10)
+            .build();
 
     QueryResults<ProjectionEntity> results4 = datastore.run(projectionQuery);
     assertTrue(results4.hasNext());
     ProjectionEntity entity = results4.next();
     assertEquals(ENTITY2.key(), entity.key());
     assertEquals(20, entity.getLong("age"));
-    assertEquals("Dan", entity.getString("name"));
-    assertEquals(2, entity.properties().size());
+    assertEquals(1, entity.properties().size());
     assertFalse(results4.hasNext());
     // TODO(ozarov): construct a test to verify nextQuery/pagination
   }
-  */
+
   @Test
   public void testAllocateId() {
     KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND1);
