@@ -16,6 +16,7 @@
 
 package com.google.gcloud.datastore.testing;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.base.Strings;
@@ -259,6 +260,7 @@ public class LocalGcdHelper {
           // ignore
         }
       }
+      processLogLine(previousLine, firstNonNull(nextLine, ""));
       writeLog(currentLogLevel, currentLog);
     }
 
@@ -279,15 +281,17 @@ public class LocalGcdHelper {
         } else {
           collectionMode = true;
         }
-      } else if (collectionMode && currentLog.length() > LOG_LENGTH_LIMIT) {
-        collectionMode = false;
       } else if (collectionMode) {
-        if (currentLog.length() == 0) {
+        if (currentLog.length() > LOG_LENGTH_LIMIT) {
+          collectionMode = false;
+        } else if (currentLog.length() == 0) {
           // strip level out of the line
-          currentLog.append(
-              "GCD" + previousLine.split(":", 2)[1] + System.getProperty("line.separator"));
+          currentLog.append("GCD");
+          currentLog.append(previousLine.split(":", 2)[1]);
+          currentLog.append(System.getProperty("line.separator"));
         } else {
-          currentLog.append(previousLine + System.getProperty("line.separator"));
+          currentLog.append(previousLine);
+          currentLog.append(System.getProperty("line.separator"));
         }
       }
     }
