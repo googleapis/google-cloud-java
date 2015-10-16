@@ -45,9 +45,7 @@ final class Validator {
   }
 
   static String validateNamespace(String namespace) {
-    if (Strings.isNullOrEmpty(namespace)) {
-      return "";
-    }
+    checkArgument(namespace != null, "Namespace cannot be null. Leave unset for default.");
     checkArgument(namespace.length() <= MAX_NAMESPACE_LENGTH,
         "namespace must not contain more than 100 characters");
     checkArgument(NAMESPACE_PATTERN.matcher(namespace).matches(),

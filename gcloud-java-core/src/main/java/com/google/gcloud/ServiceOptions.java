@@ -122,7 +122,8 @@ public abstract class ServiceOptions<
     }
 
     public B projectId(String projectId) {
-      this.projectId = projectId;
+      this.projectId =
+          checkNotNull(projectId, "Project ID cannot be set to null. Leave unset for default.");
       return self();
     }
 

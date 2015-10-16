@@ -16,7 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 
 /**
@@ -29,14 +28,14 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
   private final String ns;
 
   public KeyFactory(String projectId) {
-    this(projectId, null);
+    this(projectId, "");
   }
 
   public KeyFactory(String projectId, String namespace) {
     super(projectId);
     namespace(namespace);
     this.pi = projectId;
-    this.ns = MoreObjects.firstNonNull(namespace,  "");
+    this.ns = namespace;
   }
 
   public IncompleteKey newKey() {
