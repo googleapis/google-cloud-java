@@ -34,6 +34,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   private Query<T> query;
   private ResultType<?> actualResultType;
   private com.google.datastore.v1beta3.QueryResultBatch queryResultBatchPb;
+  private com.google.datastore.v1beta3.Query mostRecentQueryPb;
   private boolean lastBatch;
   private Iterator<com.google.datastore.v1beta3.EntityResult> entityResultPbIter;
   private ByteString cursor;
@@ -58,7 +59,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     if (queryResultBatchPb.getSkippedResults() > 0) {
       cursor = queryResultBatchPb.getSkippedCursor();
     } else {
-      cursor = ByteString.EMPTY;
+      cursor = mostRecentQueryPb.getStartCursor();
     }
   }
 
@@ -70,7 +71,13 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     }
     requestPb.setPartitionId(partitionIdPb);
     query.populatePb(requestPb);
-    queryResultBatchPb = datastore.runQuery(requestPb.build()).getBatch();
+    com.google.datastore.v1beta3.RunQueryResponse runQueryResponsePb =
+        datastore.runQuery(requestPb.build());
+    queryResultBatchPb = runQueryResponsePb.getBatch();
+    mostRecentQueryPb = runQueryResponsePb.getQuery();
+    if (mostRecentQueryPb == null) {
+      mostRecentQueryPb = requestPb.getQuery();
+    }
     lastBatch = queryResultBatchPb.getMoreResults() != MoreResultsType.NOT_FINISHED;
     entityResultPbIter = queryResultBatchPb.getEntityResultsList().iterator();
     actualResultType = ResultType.fromPb(queryResultBatchPb.getEntityResultType());
