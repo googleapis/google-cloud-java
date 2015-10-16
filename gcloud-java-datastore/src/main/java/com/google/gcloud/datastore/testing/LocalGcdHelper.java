@@ -274,11 +274,7 @@ public class LocalGcdHelper {
         writeLog(currentLogLevel, currentLog);
         currentLog = new StringBuilder();
         currentLogLevel = nextLogLevel;
-        if (!previousLine.contains(GCD_LOGGING_CLASS)) {
-          collectionMode = false;
-        } else {
-          collectionMode = true;
-        }
+        collectionMode = previousLine.contains(GCD_LOGGING_CLASS);
       } else if (collectionMode) {
         if (currentLog.length() > LOG_LENGTH_LIMIT) {
           collectionMode = false;
