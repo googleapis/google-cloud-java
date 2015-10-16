@@ -276,8 +276,6 @@ public class LocalGcdHelper {
         currentLogLevel = nextLogLevel;
         if (!previousLine.contains(GCD_LOGGING_CLASS)) {
           collectionMode = false;
-        } else if (nextLine.startsWith("SEVERE: ")) {
-          collectionMode = false; // don't show duplicate messages (see issue #258)
         } else {
           collectionMode = true;
         }
