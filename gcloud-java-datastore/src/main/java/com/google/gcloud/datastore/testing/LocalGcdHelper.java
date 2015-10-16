@@ -239,7 +239,6 @@ public class LocalGcdHelper {
 
     void terminate() throws IOException {
       terminated = true;
-      writeLog(currentLogLevel, currentLog);
       errorReader.close();
     }
 
@@ -253,7 +252,6 @@ public class LocalGcdHelper {
           nextLine = errorReader.readLine();
           if (nextLine == null) {
             terminated = true;
-            writeLog(currentLogLevel, currentLog);
           } else {
             processLogLine(previousLine, nextLine);
           }
@@ -261,6 +259,7 @@ public class LocalGcdHelper {
           // ignore
         }
       }
+      writeLog(currentLogLevel, currentLog);
     }
 
     private void processLogLine(String previousLine, String nextLine) {
