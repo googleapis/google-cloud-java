@@ -179,7 +179,8 @@ public class LocalGcdHelper {
   }
 
   private static class ProcessStreamReader extends Thread {
-    private final BufferedReader reader;
+    private volatile BufferedReader reader;
+    private boolean terminated = false;
 
     ProcessStreamReader(InputStream inputStream) {
       super("Local GCD InputStream reader");
@@ -188,14 +189,18 @@ public class LocalGcdHelper {
     }
 
     void terminate() throws IOException {
+      terminated = true;
       reader.close();
     }
 
     @Override
     public void run() {
       try {
-        while (!(reader.readLine() != null)) {
-          // consume line
+        while (!terminated) {
+          String line = reader.readLine();
+          if (line == null) {
+            terminated = true;
+          }
         }
       } catch (IOException e) {
         // ignore
@@ -214,9 +219,11 @@ public class LocalGcdHelper {
     private static final String GCD_LOGGING_CLASS =
         "com.google.apphosting.client.serviceapp.BaseApiServlet";
 
-    private final BufferedReader errorReader;
+    private volatile BufferedReader errorReader;
     private String currentLog = null;
     private Level currentLogLevel = null;
+    private boolean collectionMode = false;
+    private boolean terminated = false;
 
     ProcessErrorStreamReader(InputStream errorStream, String blockUntil) throws IOException {
       super("Local GCD ErrorStream reader");
@@ -231,6 +238,7 @@ public class LocalGcdHelper {
     }
 
     void terminate() throws IOException {
+      terminated = true;
       writeLog(currentLogLevel, currentLog);
       errorReader.close();
     }
@@ -238,16 +246,16 @@ public class LocalGcdHelper {
     @Override
     public void run() {
       try {
-        boolean errorReaderDone = false;
         String previousLine = "";
-        String currentLine = "";
-        while (!errorReaderDone) {
-          previousLine = currentLine;
-          currentLine = errorReader.readLine();
-          if (currentLine == null) {
-            errorReaderDone = true;
+        String nextLine = "";
+        while (!terminated) {
+          previousLine = nextLine;
+          nextLine = errorReader.readLine();
+          if (nextLine == null) {
+            terminated = true;
+            writeLog(currentLogLevel, currentLog);
           } else {
-            processLogLine(previousLine, currentLine);
+            processLogLine(previousLine, nextLine);
           }
         }
       } catch (IOException e) {
@@ -255,28 +263,30 @@ public class LocalGcdHelper {
       }
     }
 
-    private void processLogLine(String previousLine, String currentLine) {
+    private void processLogLine(String previousLine, String nextLine) {
       // Each gcd log is two lines with the following format:
       //     [Date] [Time] [GCD_LOGGING_CLASS] [method]
       //     [LEVEL]: error message
       // Exceptions and stack traces are included in gcd error stream, separated by a newline
-      Level nextLogLevel = getLevel(currentLine);
+      Level nextLogLevel = getLevel(nextLine);
       if (previousLine.contains(GCD_LOGGING_CLASS) && nextLogLevel != null) {
         writeLog(currentLogLevel, currentLog);
-        if (currentLine.startsWith("SEVERE: ")) {
-          // don't show duplicate error messages from gcd.sh (see issue #258)
-          currentLog = null;
-          currentLogLevel = null;
+        currentLog = "";
+        currentLogLevel = nextLogLevel;
+        if (nextLine.startsWith("SEVERE: ")) {
+          collectionMode = false; // don't show duplicate messages (see issue #258)
         } else {
-          currentLog = "GCD" + currentLine.split(":", 2)[1] + System.getProperty("line.separator");
-          currentLogLevel = nextLogLevel;
+          collectionMode = true;
         }
-      } else if (currentLog != null && currentLog.length() > LOG_LENGTH_LIMIT) {
-        // log processing may be off, so drop some logs before the string becomes too big
-        currentLog = null;
-        currentLogLevel = null;
-      } else if (currentLog != null && isUsefulLogInfo(currentLine)) {
-        currentLog += currentLine + System.getProperty("line.separator");
+      } else if (collectionMode && currentLog.length() > LOG_LENGTH_LIMIT) {
+        collectionMode = false;
+      } else if (collectionMode) {
+        if (currentLog.length() == 0) {
+          // strip level out of the line
+          currentLog = "GCD" + previousLine.split(":", 2)[1] + System.getProperty("line.separator");
+        } else {
+          currentLog += previousLine + System.getProperty("line.separator");
+        }
       }
     }
 
@@ -284,10 +294,6 @@ public class LocalGcdHelper {
       if (level != null && !Strings.isNullOrEmpty(msg)) {
         log.log(level, msg.trim());
       }
-    }
-
-    private static boolean isUsefulLogInfo(String line) {
-      return !line.trim().startsWith("at ") && !line.contains(GCD_LOGGING_CLASS);
     }
 
     private static Level getLevel(String line) {
