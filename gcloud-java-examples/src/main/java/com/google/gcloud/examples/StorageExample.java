@@ -41,6 +41,7 @@ import java.io.PrintStream;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.WritableByteChannel;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -178,22 +179,15 @@ public class StorageExample {
   private static class DeleteAction extends BlobsAction {
     @Override
     public void run(Storage storage, BlobId... blobIds) {
-      if (blobIds.length == 1) {
-        Blob blob = Blob.load(storage, blobIds[0]);
-        if (blob != null && blob.delete()) {
-          System.out.println("Blob " + blob.info() + " was deleted");
+      // use batch operation
+      List<Boolean> deleteResults = Blob.delete(storage, blobIds);
+      int index = 0;
+      for (Boolean deleted : deleteResults) {
+        if (deleted) {
+          // request order is maintained
+          System.out.println("Blob " + blobIds[index] + " was deleted");
         }
-      } else {
-        // use batch operation
-        List<Boolean> deleteResults = Blob.delete(storage, blobIds);
-        int index = 0;
-        for (Boolean deleted : deleteResults) {
-          if (deleted) {
-            // request order is maintained
-            System.out.println("Blob " + blobIds[index] + " was deleted");
-          }
-          index++;
-        }
+        index++;
       }
     }
   }

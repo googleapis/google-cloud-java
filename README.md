@@ -104,6 +104,7 @@ Here is a code snippet showing a simple usage example from within Compute/App En
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageFactory;
 import com.google.gcloud.storage.StorageOptions;
@@ -111,13 +112,15 @@ import com.google.gcloud.storage.StorageOptions;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-Storage storage = StorageFactory.instance().get(StorageOptions.getDefaultInstance());
-Blob blob = new Blob(storage, 
-    BlobInfo.builder("bucket", "blob_name").contentType("text/plain").build());
-if (!blob.exists()) {
-  storage2.create(blob.info(), "Hello, Cloud Storage!".getBytes(UTF_8));
+StorageOptions options = StorageOptions.builder().projectId("project").build();
+Storage storage = StorageFactory.instance().get(options);
+BlobId blobId = BlobId.of("bucket", "blob_name");
+Blob blob = Blob.load(storage, blobId);
+if (blob == null) {
+  BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+  storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
 } else {
-  System.out.println("Updating content for " + blob.info().name());
+  System.out.println("Updating content for " + blobId.name());
   byte[] prevContent = blob.content();
   System.out.println(new String(prevContent, UTF_8));
   WritableByteChannel channel = blob.writer();
