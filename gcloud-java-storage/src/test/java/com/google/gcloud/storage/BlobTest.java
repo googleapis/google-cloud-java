@@ -271,4 +271,20 @@ public class BlobTest {
       assertEquals(deleleResultList.get(i), result.get(i));
     }
   }
+
+  @Test
+  public void testLoadFromString() throws Exception {
+    expect(storage.get(BLOB_INFO.blobId())).andReturn(BLOB_INFO);
+    replay(storage);
+    Blob loadedBlob = Blob.load(storage, BLOB_INFO.bucket(), BLOB_INFO.name());
+    assertEquals(BLOB_INFO, loadedBlob.info());
+  }
+
+  @Test
+  public void testLoadFromId() throws Exception {
+    expect(storage.get(BLOB_INFO.blobId())).andReturn(BLOB_INFO);
+    replay(storage);
+    Blob loadedBlob = Blob.load(storage, BLOB_INFO.blobId());
+    assertEquals(BLOB_INFO, loadedBlob.info());
+  }
 }

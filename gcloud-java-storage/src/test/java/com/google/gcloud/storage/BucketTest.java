@@ -168,4 +168,12 @@ public class BucketTest {
     Blob blob = bucket.create("n", content);
     assertEquals(info, blob.info());
   }
+
+  @Test
+  public void testLoad() throws Exception {
+    expect(storage.get(BUCKET_INFO.name())).andReturn(BUCKET_INFO);
+    replay(storage);
+    Bucket loadedBucket = Bucket.load(storage, BUCKET_INFO.name());
+    assertEquals(BUCKET_INFO, loadedBucket.info());
+  }
 }

@@ -695,7 +695,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>
    * Example usage of creating a signed URL that is valid for 2 weeks:
    * <pre>   {@code
-   *     service.signUrl(BlobInfo.of("bucket", "name"), 14, TimeUnit.DAYS);
+   *     service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS);
    * }</pre>
    *
    * @param blobInfo the blob associated with the signed URL
