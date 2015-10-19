@@ -167,7 +167,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
       this.chunkSize = builder.chunkSize;
     }
 
-    public static class Builder {
+    static class Builder {
       private final StorageOptions serviceOptions;
       private final BlobId blob;
       private final Map<StorageRpc.Option, ?> requestOptions;
@@ -182,32 +182,32 @@ class BlobReadChannelImpl implements BlobReadChannel {
         this.requestOptions = reqOptions;
       }
 
-      public Builder position(int position) {
+      Builder position(int position) {
         this.position = position;
         return this;
       }
 
-      public Builder isOpen(boolean isOpen) {
+      Builder isOpen(boolean isOpen) {
         this.isOpen = isOpen;
         return this;
       }
 
-      public Builder endOfStream(boolean endOfStream) {
+      Builder endOfStream(boolean endOfStream) {
         this.endOfStream = endOfStream;
         return this;
       }
 
-      public Builder chunkSize(int chunkSize) {
+      Builder chunkSize(int chunkSize) {
         this.chunkSize = chunkSize;
         return this;
       }
 
-      public RestorableState<BlobReadChannel> build() {
+      RestorableState<BlobReadChannel> build() {
         return new StateImpl(this);
       }
     }
 
-    public static Builder builder(
+    static Builder builder(
         StorageOptions options, BlobId blob, Map<StorageRpc.Option, ?> reqOptions) {
       return new Builder(options, blob, reqOptions);
     }

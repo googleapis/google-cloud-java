@@ -180,7 +180,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
       this.chunkSize = builder.chunkSize;
     }
 
-    public static class Builder {
+    static class Builder {
       private final StorageOptions serviceOptions;
       private final BlobInfo blobInfo;
       private final String uploadId;
@@ -196,37 +196,37 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
         this.uploadId = uploadId;
       }
 
-      public Builder position(int position) {
+      Builder position(int position) {
         this.position = position;
         return this;
       }
 
-      public Builder buffer(byte[] buffer) {
+      Builder buffer(byte[] buffer) {
         this.buffer = buffer.clone();
         return this;
       }
 
-      public Builder limit(int limit) {
+      Builder limit(int limit) {
         this.limit = limit;
         return this;
       }
 
-      public Builder isOpen(boolean isOpen) {
+      Builder isOpen(boolean isOpen) {
         this.isOpen = isOpen;
         return this;
       }
 
-      public Builder chunkSize(int chunkSize) {
+      Builder chunkSize(int chunkSize) {
         this.chunkSize = chunkSize;
         return this;
       }
 
-      public RestorableState<BlobWriteChannel> build() {
+      RestorableState<BlobWriteChannel> build() {
         return new StateImpl(this);
       }
     }
 
-    public static Builder builder(StorageOptions options, BlobInfo blobInfo, String uploadId) {
+    static Builder builder(StorageOptions options, BlobInfo blobInfo, String uploadId) {
       return new Builder(options, blobInfo, uploadId);
     }
 
