@@ -73,18 +73,17 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
   @Override
   public RestorableState<BlobWriteChannel> save() {
     if (isOpen) {
-      flush(true);
+      flush();
     }
     return StateImpl.builder(options, blobInfo, uploadId)
         .position(position)
-        .buffer(buffer)
-        .limit(limit)
+        .buffer(Arrays.copyOf(buffer, limit))
         .isOpen(isOpen)
         .chunkSize(chunkSize).build();
   }
 
-  private void flush(boolean compact) {
-    if (limit >= chunkSize || compact && limit >= MIN_CHUNK_SIZE) {
+  private void flush() {
+    if (limit >= chunkSize) {
       final int length = limit - limit % MIN_CHUNK_SIZE;
       try {
         runWithRetries(callable(new Runnable() {
@@ -98,7 +97,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
       }
       position += length;
       limit -= length;
-      byte[] temp = new byte[compact ? limit : chunkSize];
+      byte[] temp = new byte[chunkSize];
       System.arraycopy(buffer, length, temp, 0, limit);
       buffer = temp;
     }
@@ -122,7 +121,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
       byteBuffer.get(buffer, limit, toWrite);
     }
     limit += toWrite;
-    flush(false);
+    flush();
     return toWrite;
   }
 
@@ -175,7 +174,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
       this.uploadId = builder.uploadId;
       this.position = builder.position;
       this.buffer = builder.buffer;
-      this.limit = builder.limit;
+      this.limit = this.buffer.length;
       this.isOpen = builder.isOpen;
       this.chunkSize = builder.chunkSize;
     }
@@ -202,12 +201,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
       }
 
       Builder buffer(byte[] buffer) {
-        this.buffer = buffer.clone();
-        return this;
-      }
-
-      Builder limit(int limit) {
-        this.limit = limit;
+        this.buffer = buffer;
         return this;
       }
 
