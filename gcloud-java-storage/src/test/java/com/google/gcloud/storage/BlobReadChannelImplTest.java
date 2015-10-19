@@ -23,6 +23,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 
@@ -178,6 +179,46 @@ public class BlobReadChannelImplTest {
     } catch (IOException ex) {
       // expected
     }
+  }
+
+  @Test
+  public void testSaveAndRestore() throws IOException, ClassNotFoundException {
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(2);
+    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries()).times(2);
+    EasyMock.replay(optionsMock);
+    byte[] firstResult = randomByteArray(DEFAULT_CHUNK_SIZE);
+    byte[] secondResult = randomByteArray(DEFAULT_CHUNK_SIZE);
+    ByteBuffer firstReadBuffer = ByteBuffer.allocate(42);
+    ByteBuffer secondReadBuffer = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
+    EasyMock
+        .expect(storageRpcMock.read(BLOB_ID.toPb(), EMPTY_RPC_OPTIONS, 0, DEFAULT_CHUNK_SIZE))
+        .andReturn(firstResult);
+    EasyMock
+        .expect(storageRpcMock.read(BLOB_ID.toPb(), EMPTY_RPC_OPTIONS, 42, DEFAULT_CHUNK_SIZE))
+        .andReturn(secondResult);
+    EasyMock.replay(storageRpcMock);
+    reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader.read(firstReadBuffer);
+    RestorableState<BlobReadChannel> readerState = reader.save();
+    BlobReadChannel restoredReader = readerState.restore();
+    restoredReader.read(secondReadBuffer);
+    assertArrayEquals(Arrays.copyOf(firstResult, firstReadBuffer.capacity()),
+        firstReadBuffer.array());
+    assertArrayEquals(secondResult, secondReadBuffer.array());
+  }
+
+  @Test
+  public void testStateEquals() {
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(2);
+    EasyMock.replay(optionsMock);
+    EasyMock.replay(storageRpcMock);
+    reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
+    BlobReadChannel secondReader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
+    RestorableState<BlobReadChannel> state = reader.save();
+    RestorableState<BlobReadChannel> secondState = secondReader.save();
+    assertEquals(state, secondState);
+    assertEquals(state.hashCode(), secondState.hashCode());
+    assertEquals(state.toString(), secondState.toString());
   }
 
   private static byte[] randomByteArray(int size) {
