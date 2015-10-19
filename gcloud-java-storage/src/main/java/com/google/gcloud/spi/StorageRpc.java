@@ -42,6 +42,8 @@ public interface StorageRpc {
     IF_SOURCE_METAGENERATION_NOT_MATCH("ifSourceMetagenerationNotMatch"),
     IF_SOURCE_GENERATION_MATCH("ifSourceGenerationMatch"),
     IF_SOURCE_GENERATION_NOT_MATCH("ifSourceGenerationNotMatch"),
+    IF_MD5_MATCH("md5Hash"),
+    IF_CRC32C_MATCH("crc32c"),
     PREFIX("prefix"),
     MAX_RESULTS("maxResults"),
     PAGE_TOKEN("pageToken"),

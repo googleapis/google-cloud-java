@@ -24,6 +24,7 @@ import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
+import com.google.gcloud.storage.Storage.BlobWriteOption;
 import com.google.gcloud.storage.Storage.CopyRequest;
 import com.google.gcloud.storage.Storage.SignUrlOption;
 
@@ -274,7 +275,7 @@ public final class Blob {
    * @param options target blob options
    * @throws StorageException upon failure
    */
-  public BlobWriteChannel writer(BlobTargetOption... options) {
+  public BlobWriteChannel writer(BlobWriteOption... options) {
     return storage.writer(info, options);
   }
 

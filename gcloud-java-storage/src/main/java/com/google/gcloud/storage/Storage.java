@@ -145,6 +145,67 @@ public interface Storage extends Service<StorageOptions> {
     public static BlobTargetOption metagenerationNotMatch() {
       return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
+
+    static BlobWriteOption[] convert(BlobTargetOption[] options, BlobWriteOption... optionsToAdd) {
+      BlobWriteOption[] writeOptions = new BlobWriteOption[options.length + optionsToAdd.length];
+      int index = 0;
+      for (BlobTargetOption option : options) {
+        writeOptions[index++] = new BlobWriteOption(option);
+      }
+      for (BlobWriteOption option : optionsToAdd) {
+        writeOptions[index++] = option;
+      }
+      return writeOptions;
+    }
+  }
+
+  class BlobWriteOption extends Option {
+
+    private static final long serialVersionUID = -3880421670966224580L;
+
+    BlobWriteOption(BlobTargetOption option) {
+      super(option.rpcOption(), option.value());
+    }
+
+    private BlobWriteOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    private BlobWriteOption(StorageRpc.Option rpcOption) {
+      this(rpcOption, null);
+    }
+
+    public static BlobWriteOption predefinedAcl(PredefinedAcl acl) {
+      return new BlobWriteOption(StorageRpc.Option.PREDEFINED_ACL, acl.entry());
+    }
+
+    public static BlobWriteOption doesNotExist() {
+      return new BlobWriteOption(StorageRpc.Option.IF_GENERATION_MATCH, 0L);
+    }
+
+    public static BlobWriteOption generationMatch() {
+      return new BlobWriteOption(StorageRpc.Option.IF_GENERATION_MATCH);
+    }
+
+    public static BlobWriteOption generationNotMatch() {
+      return new BlobWriteOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH);
+    }
+
+    public static BlobWriteOption metagenerationMatch() {
+      return new BlobWriteOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
+    }
+
+    public static BlobWriteOption metagenerationNotMatch() {
+      return new BlobWriteOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
+    }
+
+    public static BlobWriteOption md5Match() {
+      return new BlobWriteOption(StorageRpc.Option.IF_MD5_MATCH, true);
+    }
+
+    public static BlobWriteOption crc32cMatch() {
+      return new BlobWriteOption(StorageRpc.Option.IF_CRC32C_MATCH, true);
+    }
   }
 
   class BlobSourceOption extends Option {
@@ -510,10 +571,12 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Create a new blob. Direct upload is used to upload {@code content}. For large content,
-   * {@link #writer} is recommended as it uses resumable upload.
+   * {@link #writer} is recommended as it uses resumable upload. MD5 and CRC32C hashes of
+   * {@code content} are computed and used for validating transferred data.
    *
    * @return a complete blob information.
    * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags">Hashes and ETags</a>
    */
   BlobInfo create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options);
 
@@ -524,7 +587,7 @@ public interface Storage extends Service<StorageOptions> {
    * @return a complete blob information.
    * @throws StorageException upon failure
    */
-  BlobInfo create(BlobInfo blobInfo, InputStream content, BlobTargetOption... options);
+  BlobInfo create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options);
 
   /**
    * Return the requested bucket or {@code null} if not found.
@@ -683,7 +746,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options);
+  BlobWriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options);
 
   /**
    * Generates a signed URL for a blob.
