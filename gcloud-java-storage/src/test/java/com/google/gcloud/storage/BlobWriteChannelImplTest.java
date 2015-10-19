@@ -221,6 +221,32 @@ public class BlobWriteChannelImplTest {
   }
 
   @Test
+  public void testSaveAndRestoreClosed() throws IOException {
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(2);
+    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
+    EasyMock.replay(optionsMock);
+    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    Capture<byte[]> capturedBuffer = Capture.newInstance();
+    storageRpcMock.write(EasyMock.eq(UPLOAD_ID), EasyMock.capture(capturedBuffer), EasyMock.eq(0),
+        EasyMock.eq(BLOB_INFO.toPb()), EasyMock.eq(0L), EasyMock.eq(0), EasyMock.eq(true));
+    EasyMock.expectLastCall();
+    EasyMock.replay(storageRpcMock);
+    writer = new BlobWriteChannelImpl(optionsMock, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    writer.close();
+    RestorableState<BlobWriteChannel> writerState = writer.save();
+    RestorableState<BlobWriteChannel> expectedWriterState =
+        BlobWriteChannelImpl.StateImpl.builder(optionsMock, BLOB_INFO, UPLOAD_ID)
+            .buffer(null)
+            .chunkSize(DEFAULT_CHUNK_SIZE)
+            .isOpen(false)
+            .position(0)
+            .build();
+    BlobWriteChannel restoredWriter = writerState.restore();
+    assertArrayEquals(new byte[0], capturedBuffer.getValue());
+    assertEquals(expectedWriterState, restoredWriter.save());
+  }
+
+  @Test
   public void testStateEquals() {
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(2);
     EasyMock.replay(optionsMock);

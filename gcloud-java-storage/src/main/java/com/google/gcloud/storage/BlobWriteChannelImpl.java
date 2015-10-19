@@ -227,9 +227,11 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
     @Override
     public BlobWriteChannel restore() {
       BlobWriteChannelImpl channel = new BlobWriteChannelImpl(serviceOptions, blobInfo, uploadId);
+      if (buffer != null) {
+        channel.buffer = buffer.clone();
+        channel.limit = buffer.length;
+      }
       channel.position = position;
-      channel.buffer = buffer.clone();
-      channel.limit = buffer.length;
       channel.isOpen = isOpen;
       channel.chunkSize = chunkSize;
       return channel;
