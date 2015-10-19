@@ -78,12 +78,12 @@ public enum ValueType {
   /**
    * Represents a raw/unparsed value.
    */
-  RAW_VALUE(RawValue.MARSHALLER);
+  RAW_VALUE(RawValue.MARSHALLER),
 
   /**
-   * TODO(ajaykannan): add GEO_POINT_VALUE
-   * Will represent a geolocation value in latitude/longitude 
+   * Represents a {@link GeoPoint} value
    */
+  GEO_POINT(GeoPointValue.MARSHALLER);
 
   private static final ImmutableMap<Integer, ValueType> DESCRIPTOR_TO_TYPE_MAP;
 

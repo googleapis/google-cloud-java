@@ -212,6 +212,11 @@ public final class GqlQuery<V> extends Query<V> {
       namedBindings.put(name, toBinding(DateTimeValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
+    
+    public Builder<V> setBinding(String name, GeoPoint... value) {
+      namedBindings.put(name, toBinding(GeoPointValue.MARSHALLER, Arrays.asList(value)));
+      return this;
+    }
 
     public Builder<V> setBinding(String name, Key... value) {
       namedBindings.put(name, toBinding(KeyValue.MARSHALLER, Arrays.asList(value)));
@@ -255,6 +260,11 @@ public final class GqlQuery<V> extends Query<V> {
 
     public Builder<V> addBinding(DateTime... value) {
       positionalBindings.add(toBinding(DateTimeValue.MARSHALLER, Arrays.asList(value)));
+      return this;
+    }
+
+    public Builder<V> addBinding(GeoPoint... value) {
+      positionalBindings.add(toBinding(GeoPointValue.MARSHALLER, Arrays.asList(value)));
       return this;
     }
 

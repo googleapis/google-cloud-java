@@ -21,6 +21,7 @@ import static com.google.gcloud.datastore.BlobValue.of;
 import static com.google.gcloud.datastore.BooleanValue.of;
 import static com.google.gcloud.datastore.DateTimeValue.of;
 import static com.google.gcloud.datastore.DoubleValue.of;
+import static com.google.gcloud.datastore.GeoPointValue.of;
 import static com.google.gcloud.datastore.KeyValue.of;
 import static com.google.gcloud.datastore.LongValue.of;
 import static com.google.gcloud.datastore.StringValue.of;
@@ -417,6 +418,10 @@ public class StructuredQuery<V> extends Query<V> {
     }
 
     public static PropertyFilter eq(String property, DateTime value) {
+      return new PropertyFilter(property, Operator.EQUAL, of(value));
+    }
+
+    public static PropertyFilter eq(String property, GeoPoint value) {
       return new PropertyFilter(property, Operator.EQUAL, of(value));
     }
 

@@ -41,6 +41,7 @@ public class ValueTest {
   private static final NullValue NULL_VALUE = NullValue.of();
   private static final StringValue STRING_VALUE = StringValue.of("hello");
   private static final RawValue RAW_VALUE = RawValue.of(STRING_VALUE.toPb());
+  private static final GeoPointValue GEO_POINT_VALUE = GeoPointValue.of(new GeoPoint(30.5, 40.5));
   private static final ImmutableMap<ValueType, Object[]> TYPES = ImmutableMap.<ValueType, Object[]>builder()
       .put(ValueType.NULL, new Object[] {NullValue.class, NULL_VALUE.get()})
       .put(ValueType.KEY, new Object[] {KeyValue.class, KEY})
@@ -53,6 +54,7 @@ public class ValueTest {
           new Object[] {ListValue.class, ImmutableList.of(NULL_VALUE, STRING_VALUE, RAW_VALUE)})
       .put(ValueType.LONG, new Object[] {LongValue.class, 123L})
       .put(ValueType.RAW_VALUE, new Object[] {RawValue.class, RAW_VALUE.get()})
+      .put(ValueType.GEO_POINT, new Object[] {GeoPointValue.class, GEO_POINT_VALUE.get()})
       .put(ValueType.STRING, new Object[] {StringValue.class, STRING_VALUE.get()})
       .build();
 
