@@ -72,14 +72,17 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
 
   @Override
   public RestorableState<BlobWriteChannel> save() {
+    byte[] bufferToSave = null;
     if (isOpen) {
       flush();
+      bufferToSave = Arrays.copyOf(buffer, limit);
     }
     return StateImpl.builder(options, blobInfo, uploadId)
         .position(position)
-        .buffer(Arrays.copyOf(buffer, limit))
+        .buffer(bufferToSave)
         .isOpen(isOpen)
-        .chunkSize(chunkSize).build();
+        .chunkSize(chunkSize)
+        .build();
   }
 
   private void flush() {
@@ -164,7 +167,6 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
     private final String uploadId;
     private final int position;
     private final byte[] buffer;
-    private final int limit;
     private final boolean isOpen;
     private final int chunkSize;
 
@@ -174,7 +176,6 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
       this.uploadId = builder.uploadId;
       this.position = builder.position;
       this.buffer = builder.buffer;
-      this.limit = this.buffer.length;
       this.isOpen = builder.isOpen;
       this.chunkSize = builder.chunkSize;
     }
@@ -185,7 +186,6 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
       private final String uploadId;
       private int position;
       private byte[] buffer;
-      private int limit;
       private boolean isOpen;
       private int chunkSize;
 
@@ -229,7 +229,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
       BlobWriteChannelImpl channel = new BlobWriteChannelImpl(serviceOptions, blobInfo, uploadId);
       channel.position = position;
       channel.buffer = buffer.clone();
-      channel.limit = limit;
+      channel.limit = buffer.length;
       channel.isOpen = isOpen;
       channel.chunkSize = chunkSize;
       return channel;
@@ -237,7 +237,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
 
     @Override
     public int hashCode() {
-      return Objects.hash(serviceOptions, blobInfo, uploadId, position, limit, isOpen, chunkSize,
+      return Objects.hash(serviceOptions, blobInfo, uploadId, position, isOpen, chunkSize,
           Arrays.hashCode(buffer));
     }
 
@@ -250,14 +250,13 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
         return false;
       }
       final StateImpl other = (StateImpl) obj;
-      return Objects.equals(this.serviceOptions, other.serviceOptions) &&
-          Objects.equals(this.blobInfo, other.blobInfo) &&
-          Objects.equals(this.uploadId, other.uploadId) &&
-          Objects.deepEquals(this.buffer, other.buffer) &&
-          this.position == other.position &&
-          this.limit == other.limit &&
-          this.isOpen == other.isOpen &&
-          this.chunkSize == other.chunkSize;
+      return Objects.equals(this.serviceOptions, other.serviceOptions)
+          && Objects.equals(this.blobInfo, other.blobInfo)
+          && Objects.equals(this.uploadId, other.uploadId)
+          && Objects.deepEquals(this.buffer, other.buffer)
+          && this.position == other.position
+          && this.isOpen == other.isOpen
+          && this.chunkSize == other.chunkSize;
     }
 
     @Override

@@ -237,13 +237,13 @@ class BlobReadChannelImpl implements BlobReadChannel {
         return false;
       }
       final StateImpl other = (StateImpl) obj;
-      return Objects.equals(this.serviceOptions, other.serviceOptions) &&
-          Objects.equals(this.blob, other.blob) &&
-          Objects.equals(this.requestOptions, other.requestOptions) &&
-          this.position == other.position &&
-          this.isOpen == other.isOpen &&
-          this.endOfStream == other.endOfStream &&
-          this.chunkSize == other.chunkSize;
+      return Objects.equals(this.serviceOptions, other.serviceOptions)
+          && Objects.equals(this.blob, other.blob)
+          && Objects.equals(this.requestOptions, other.requestOptions)
+          && this.position == other.position
+          && this.isOpen == other.isOpen
+          && this.endOfStream == other.endOfStream
+          && this.chunkSize == other.chunkSize;
     }
 
     @Override
