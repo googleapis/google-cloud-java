@@ -379,9 +379,11 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   @Override
-  protected GqlQuery<V> nextQuery(com.google.datastore.v1beta3.QueryResultBatch responsePb) {
-    // See issue #17
-    throw new UnsupportedOperationException("paging for this query is not implemented yet");
+  protected StructuredQuery<V> nextQuery(com.google.datastore.v1beta3.RunQueryResponse responsePb) {
+    return new StructuredQuery.Builder<>(type())
+        .mergeFrom(responsePb.getQuery())
+        .prepareNext(responsePb.getBatch())
+        .build();
   }
 
   @Override

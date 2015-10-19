@@ -33,7 +33,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   private final ResultType<T> queryResultType;
   private Query<T> query;
   private ResultType<?> actualResultType;
-  private com.google.datastore.v1beta3.QueryResultBatch queryResultBatchPb;
+  private com.google.datastore.v1beta3.RunQueryResponse runQueryResponsePb;
   private com.google.datastore.v1beta3.Query mostRecentQueryPb;
   private boolean lastBatch;
   private Iterator<com.google.datastore.v1beta3.EntityResult> entityResultPbIter;
@@ -56,8 +56,8 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     }
     partitionIdPb = pbBuilder.build();
     sendRequest();
-    if (queryResultBatchPb.getSkippedResults() > 0) {
-      cursor = queryResultBatchPb.getSkippedCursor();
+    if (runQueryResponsePb.getBatch().getSkippedResults() > 0) {
+      cursor = runQueryResponsePb.getBatch().getSkippedCursor();
     } else {
       cursor = mostRecentQueryPb.getStartCursor();
     }
@@ -71,16 +71,14 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     }
     requestPb.setPartitionId(partitionIdPb);
     query.populatePb(requestPb);
-    com.google.datastore.v1beta3.RunQueryResponse runQueryResponsePb =
-        datastore.runQuery(requestPb.build());
-    queryResultBatchPb = runQueryResponsePb.getBatch();
+    runQueryResponsePb = datastore.runQuery(requestPb.build());
     mostRecentQueryPb = runQueryResponsePb.getQuery();
     if (mostRecentQueryPb == null) {
       mostRecentQueryPb = requestPb.getQuery();
     }
-    lastBatch = queryResultBatchPb.getMoreResults() != MoreResultsType.NOT_FINISHED;
-    entityResultPbIter = queryResultBatchPb.getEntityResultsList().iterator();
-    actualResultType = ResultType.fromPb(queryResultBatchPb.getEntityResultType());
+    lastBatch = runQueryResponsePb.getBatch().getMoreResults() != MoreResultsType.NOT_FINISHED;
+    entityResultPbIter = runQueryResponsePb.getBatch().getEntityResultsList().iterator();
+    actualResultType = ResultType.fromPb(runQueryResponsePb.getBatch().getEntityResultType());
     if (Objects.equals(queryResultType, ResultType.PROJECTION_ENTITY)) {
       // projection entity can represent all type of results
       actualResultType = ResultType.PROJECTION_ENTITY;
@@ -92,7 +90,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   @Override
   protected T computeNext() {
     while (!entityResultPbIter.hasNext() && !lastBatch) {
-      query = query.nextQuery(queryResultBatchPb);
+      query = query.nextQuery(runQueryResponsePb);
       sendRequest();
     }
     if (!entityResultPbIter.hasNext()) {
