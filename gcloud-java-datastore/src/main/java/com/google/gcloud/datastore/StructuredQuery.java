@@ -113,6 +113,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /*
+   * A class representing a filter composed of a combination of other filters.
+   */
   public static final class CompositeFilter extends Filter {
 
     private static final long serialVersionUID = 3610352685739360009L;
@@ -194,6 +197,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /*
+   * A class representing a filter based on a single property or ancestor.
+   */
   public static final class PropertyFilter extends Filter {
 
     private static final long serialVersionUID = -4514695915258598597L;
@@ -514,6 +520,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /*
+   * A class representing a projection based on a property.
+   */
   public static final class Projection implements Serializable {
 
     private static final long serialVersionUID = 3083707957256279470L;
@@ -665,12 +674,18 @@ public class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
+    /*
+     * Clears all previously-specified OrderBy objects and orders by the given input instead.
+     */
     public B orderBy(OrderBy orderBy, OrderBy... others) {
       clearOrderBy();
       addOrderBy(orderBy, others);
       return self();
     }
 
+    /*
+     * Adds one or more OrderBy objects to the existing list of OrderBy objects.
+     */
     public B addOrderBy(OrderBy orderBy, OrderBy... others) {
       this.orderBy.add(orderBy);
       Collections.addAll(this.orderBy, others);
@@ -682,12 +697,19 @@ public class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
+    /*
+     * Clears all previously-specified Projections and sets the list of Projections to the given
+     * input instead.
+     */
     B projection(Projection projection, Projection... others) {
       clearProjection();
       addProjection(projection, others);
       return self();
     }
 
+    /*
+     * Adds one or more Projections to the existing list of Projections.
+     */
     B addProjection(Projection projection, Projection... others) {
       this.projection.add(projection);
       Collections.addAll(this.projection, others);
@@ -699,12 +721,19 @@ public class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
+    /*
+     * Clears all existing properties to group by and instead groups by the given the list of
+     * properties.
+     */
     B groupBy(String property, String... others) {
       clearGroupBy();
       addGroupBy(property, others);
       return self();
     }
 
+    /*
+     * Adds one or more properties to the existing list of "group by" properties.
+     */
     B addGroupBy(String property, String... others) {
       this.groupBy.add(property);
       Collections.addAll(this.groupBy, others);
@@ -754,6 +783,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /*
+   * A StructuredQuery builder for queries that return Entity results.
+   */
   public static final class EntityQueryBuilder extends BaseBuilder<Entity, EntityQueryBuilder> {
 
     EntityQueryBuilder() {
@@ -766,6 +798,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /*
+   * A StructuredQuery builder for queries that return Key results.
+   */
   public static final class KeyQueryBuilder extends BaseBuilder<Key, KeyQueryBuilder> {
 
     KeyQueryBuilder() {
@@ -787,6 +822,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /*
+   * A StructuredQuery builder for projection queries.
+   */
   public static final class ProjectionEntityQueryBuilder
       extends BaseBuilder<ProjectionEntity, ProjectionEntityQueryBuilder> {
 
