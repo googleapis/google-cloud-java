@@ -28,8 +28,8 @@ public class GeoPointTest {
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
-  private static GeoPoint gp1 = new GeoPoint(10.5, 20.5);
-  private static GeoPoint gp2 = new GeoPoint(10.5, 30.5);
+  private static GeoPoint gp1 = new GeoPoint(37.422035, -122.084124);
+  private static GeoPoint gp2 = new GeoPoint(0.0, 0.0);
 
   private static final String INVALID_LAT_MESSAGE =
       "latitude must be in the range [-90, 90] degrees";

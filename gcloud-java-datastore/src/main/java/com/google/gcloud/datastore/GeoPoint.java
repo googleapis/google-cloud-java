@@ -46,6 +46,14 @@ public final class GeoPoint extends Serializable<com.google.type.LatLng> {
     this.longitude = longitude;
   }
 
+  public double getLatitude() {
+    return latitude;
+  }
+
+  public double getLongitude() {
+    return longitude;
+  }
+
   @Override
   public String toString() {
     return Double.toString(latitude) + ", " + Double.toString(longitude);
@@ -58,9 +66,8 @@ public final class GeoPoint extends Serializable<com.google.type.LatLng> {
 
   @Override
   public boolean equals(Object obj) {
-    return obj == this
-        || (obj instanceof GeoPoint && new Double(this.latitude).equals(((GeoPoint) obj).latitude))
-           && new Double(this.longitude).equals(((GeoPoint) obj).longitude);
+    return obj == this || (obj instanceof GeoPoint && this.latitude == ((GeoPoint) obj).latitude
+               && this.longitude == ((GeoPoint) obj).longitude);
   }
 
   public static GeoPoint of(double latitude, double longitude) {

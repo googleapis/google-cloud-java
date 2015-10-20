@@ -35,7 +35,7 @@ public class BaseEntityTest {
 
   private static final Blob BLOB = Blob.copyFrom(new byte[]{1, 2});
   private static final DateTime DATE_TIME = DateTime.now();
-  private static final GeoPoint GEO_POINT = new GeoPoint(30.5, -40.5);
+  private static final GeoPoint GEO_POINT = new GeoPoint(37.422035, -122.084124);
   private static final Key KEY = Key.builder("ds1", "k1", "n1").build();
   private static final Entity ENTITY = Entity.builder(KEY).set("name", "foo").build();
   private static final IncompleteKey INCOMPLETE_KEY = IncompleteKey.builder("ds1", "k1").build();

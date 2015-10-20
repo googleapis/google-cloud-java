@@ -74,7 +74,8 @@ public class DatastoreTest {
       .build();
   private static final ListValue LIST_VALUE2 = ListValue.of(Collections.singletonList(KEY_VALUE));
   private static final DateTimeValue DATE_TIME_VALUE = new DateTimeValue(DateTime.now());
-  private static final GeoPointValue GEO_POINT_VALUE = new GeoPointValue(new GeoPoint(30.5, 40.5));
+  private static final GeoPointValue GEO_POINT_VALUE =
+      new GeoPointValue(new GeoPoint(37.422035, -122.084124));
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY1 =
       FullEntity.builder(INCOMPLETE_KEY2).set("str", STR_VALUE).set("bool", BOOL_VALUE)
           .set("list", LIST_VALUE1).build();

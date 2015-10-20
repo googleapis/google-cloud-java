@@ -45,7 +45,7 @@ public class SerializationTest {
       IncompleteKey.builder(KEY1, "v").ancestors(PathElement.of("p", 1)).build();
   private static final Key KEY2 = Key.builder(KEY1, "v", 2).build();
   private static final DateTime DATE_TIME1 = DateTime.now();
-  private static final GeoPoint GEO_POINT = new GeoPoint(30.5, 40.5);
+  private static final GeoPoint GEO_POINT = new GeoPoint(37.422035, -122.084124);
   private static final Blob BLOB1 = Blob.copyFrom(UTF_8.encode("hello world"));
   private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1,2});
   private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[]{10});
