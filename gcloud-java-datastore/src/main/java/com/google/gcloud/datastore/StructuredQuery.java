@@ -260,67 +260,67 @@ public class StructuredQuery<V> extends Query<V> {
           && Objects.equals(value, other.value);
     }
 
-    public static PropertyFilter le(String property, Value<?> value) {
+    public static PropertyFilter lt(String property, Value<?> value) {
       return new PropertyFilter(property, Operator.LESS_THAN, value);
     }
 
-    public static PropertyFilter le(String property, String value) {
+    public static PropertyFilter lt(String property, String value) {
       return new PropertyFilter(property, Operator.LESS_THAN, of(value));
     }
 
-    public static PropertyFilter le(String property, long value) {
+    public static PropertyFilter lt(String property, long value) {
       return new PropertyFilter(property, Operator.LESS_THAN, of(value));
     }
 
-    public static PropertyFilter le(String property, double value) {
+    public static PropertyFilter lt(String property, double value) {
       return new PropertyFilter(property, Operator.LESS_THAN, of(value));
     }
 
-    public static PropertyFilter le(String property, boolean value) {
+    public static PropertyFilter lt(String property, boolean value) {
       return new PropertyFilter(property, Operator.LESS_THAN, of(value));
     }
 
-    public static PropertyFilter le(String property, DateTime value) {
+    public static PropertyFilter lt(String property, DateTime value) {
       return new PropertyFilter(property, Operator.LESS_THAN, of(value));
     }
 
-    public static PropertyFilter le(String property, Key value) {
+    public static PropertyFilter lt(String property, Key value) {
       return new PropertyFilter(property, Operator.LESS_THAN, of(value));
     }
 
-    public static PropertyFilter le(String property, Blob value) {
+    public static PropertyFilter lt(String property, Blob value) {
       return new PropertyFilter(property, Operator.LESS_THAN, of(value));
     }
 
-    public static PropertyFilter lte(String property, Value<?> value) {
+    public static PropertyFilter le(String property, Value<?> value) {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, value);
     }
 
-    public static PropertyFilter lte(String property, String value) {
+    public static PropertyFilter le(String property, String value) {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter lte(String property, long value) {
+    public static PropertyFilter le(String property, long value) {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter lte(String property, double value) {
+    public static PropertyFilter le(String property, double value) {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter lte(String property, boolean value) {
+    public static PropertyFilter le(String property, boolean value) {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter lte(String property, DateTime value) {
+    public static PropertyFilter le(String property, DateTime value) {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter lte(String property, Key value) {
+    public static PropertyFilter le(String property, Key value) {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter lte(String property, Blob value) {
+    public static PropertyFilter le(String property, Blob value) {
       return new PropertyFilter(property, Operator.LESS_THAN_OR_EQUAL, of(value));
     }
 
@@ -356,35 +356,35 @@ public class StructuredQuery<V> extends Query<V> {
       return new PropertyFilter(property, Operator.GREATER_THAN, of(value));
     }
 
-    public static PropertyFilter gte(String property, Value<?> value) {
+    public static PropertyFilter ge(String property, Value<?> value) {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, value);
     }
 
-    public static PropertyFilter gte(String property, String value) {
+    public static PropertyFilter ge(String property, String value) {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter gte(String property, long value) {
+    public static PropertyFilter ge(String property, long value) {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter gte(String property, double value) {
+    public static PropertyFilter ge(String property, double value) {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter gte(String property, boolean value) {
+    public static PropertyFilter ge(String property, boolean value) {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter gte(String property, DateTime value) {
+    public static PropertyFilter ge(String property, DateTime value) {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter gte(String property, Key value) {
+    public static PropertyFilter ge(String property, Key value) {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
-    public static PropertyFilter gte(String property, Blob value) {
+    public static PropertyFilter ge(String property, Blob value) {
       return new PropertyFilter(property, Operator.GREATER_THAN_OR_EQUAL, of(value));
     }
 
