@@ -72,6 +72,8 @@ public class RemoteGcsHelperTest {
   private static final List<BlobInfo> BLOB_LIST = ImmutableList.of(
       BlobInfo.builder(BUCKET_NAME, "n1").build(),
       BlobInfo.builder(BUCKET_NAME, "n2").build());
+  private static final StorageException RETRYABLE_EXCEPTION = new StorageException(409, "", true);
+  private static final StorageException FATAL_EXCEPTION = new StorageException(500, "", false);
   private static final ListResult<BlobInfo> BLOB_LIST_RESULT = new ListResult<BlobInfo>() {
 
     @Override
@@ -117,13 +119,31 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteTimeout() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_LIST_RESULT).anyTimes();
+    for (BlobInfo info : BLOB_LIST) {
+      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true).anyTimes();
+    }
+    EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(RETRYABLE_EXCEPTION).anyTimes();
+    EasyMock.replay(storageMock);
+    assertTrue(!RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME, 50, TimeUnit.MICROSECONDS));
+    EasyMock.verify(storageMock);
+  }
+
+  @Test
+  public void testForceDeleteFail() throws InterruptedException, ExecutionException {
+    Storage storageMock = EasyMock.createMock(Storage.class);
     EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_LIST_RESULT);
     for (BlobInfo info : BLOB_LIST) {
       EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
     }
-    EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(false);
+    EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(FATAL_EXCEPTION);
     EasyMock.replay(storageMock);
-    assertTrue(!RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME, 50, TimeUnit.MICROSECONDS));
+    thrown.expect(ExecutionException.class);
+    try {
+      RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME, 5, TimeUnit.SECONDS);
+    } finally {
+      EasyMock.verify(storageMock);
+    }
   }
 
   @Test
