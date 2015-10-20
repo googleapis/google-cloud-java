@@ -40,6 +40,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
@@ -93,13 +94,14 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
       .abortOn(RuntimeException.class).interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
   private static final byte[] EMPTY_BYTE_ARRAY = {};
+  private static final String EMPTY_BYTE_ARRAY_MD5 = "1B2M2Y8AsgTpgAmY7PhCfg==";
+  private static final String EMPTY_BYTE_ARRAY_CRC32C = "AAAAAA==";
 
   private final StorageRpc storageRpc;
 
   StorageImpl(StorageOptions options) {
     super(options);
     storageRpc = options.storageRpc();
-    // todo: configure timeouts - https://developers.google.com/api-client-library/java/google-api-java-client/errors
     // todo: provide rewrite - https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite
     // todo: check if we need to expose https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls/insert vs using bucket update/patch
   }
@@ -123,20 +125,33 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public BlobInfo create(BlobInfo blobInfo, BlobTargetOption... options) {
-    return create(blobInfo, new ByteArrayInputStream(EMPTY_BYTE_ARRAY), options);
+    BlobInfo updatedInfo = blobInfo.toBuilder()
+        .md5(EMPTY_BYTE_ARRAY_MD5)
+        .crc32c(EMPTY_BYTE_ARRAY_CRC32C)
+        .build();
+    return create(updatedInfo, new ByteArrayInputStream(EMPTY_BYTE_ARRAY), options);
   }
 
   @Override
-  public BlobInfo create(BlobInfo blobInfo, final byte[] content, BlobTargetOption... options) {
-    return create(blobInfo,
-        new ByteArrayInputStream(firstNonNull(content, EMPTY_BYTE_ARRAY)), options);
+  public BlobInfo create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options) {
+    content = firstNonNull(content, EMPTY_BYTE_ARRAY);
+    BlobInfo updatedInfo = blobInfo.toBuilder()
+        .md5(BaseEncoding.base64().encode(Hashing.md5().hashBytes(content).asBytes()))
+        .crc32c(BaseEncoding.base64().encode(
+            Ints.toByteArray(Hashing.crc32c().hashBytes(content).asInt())))
+        .build();
+    return create(updatedInfo, new ByteArrayInputStream(content), options);
   }
 
   @Override
-  public BlobInfo create(BlobInfo blobInfo, final InputStream content,
-      BlobTargetOption... options) {
-    final StorageObject blobPb = blobInfo.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
+  public BlobInfo create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options) {
+    Tuple<BlobInfo, BlobTargetOption[]> targetOptions = BlobTargetOption.convert(blobInfo, options);
+    return create(targetOptions.x(), content, targetOptions.y());
+  }
+
+  private BlobInfo create(BlobInfo info, final InputStream content, BlobTargetOption... options) {
+    final StorageObject blobPb = info.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(info, options);
     try {
       return BlobInfo.fromPb(runWithRetries(new Callable<StorageObject>() {
         @Override
@@ -544,7 +559,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options) {
+  public BlobWriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options) {
+    Tuple<BlobInfo, BlobTargetOption[]> targetOptions = BlobTargetOption.convert(blobInfo, options);
+    return writer(targetOptions.x(), targetOptions.y());
+  }
+
+  private BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options) {
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
     return new BlobWriteChannelImpl(options(), blobInfo, optionsMap);
   }

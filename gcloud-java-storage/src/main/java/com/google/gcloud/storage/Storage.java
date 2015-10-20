@@ -21,9 +21,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.StorageRpc.Tuple;
 
 import java.io.InputStream;
 import java.io.Serializable;
@@ -33,6 +35,7 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -144,6 +147,105 @@ public interface Storage extends Service<StorageOptions> {
 
     public static BlobTargetOption metagenerationNotMatch() {
       return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
+    }
+
+    static Tuple<BlobInfo, BlobTargetOption[]> convert(BlobInfo info, BlobWriteOption... options) {
+      BlobInfo.Builder infoBuilder = info.toBuilder().crc32c(null).md5(null);
+      List<BlobTargetOption> targetOptions = Lists.newArrayListWithCapacity(options.length);
+      for (BlobWriteOption option : options) {
+        switch (option.option) {
+          case IF_CRC32C_MATCH:
+            infoBuilder.crc32c(info.crc32c());
+            break;
+          case IF_MD5_MATCH:
+            infoBuilder.md5(info.md5());
+            break;
+          default:
+            targetOptions.add(option.toTargetOption());
+            break;
+        }
+      }
+      return Tuple.of(infoBuilder.build(),
+          targetOptions.toArray(new BlobTargetOption[targetOptions.size()]));
+    }
+  }
+
+  class BlobWriteOption implements Serializable {
+
+    private static final long serialVersionUID = -3880421670966224580L;
+
+    private final Option option;
+    private final Object value;
+
+    enum Option {
+      PREDEFINED_ACL, IF_GENERATION_MATCH, IF_GENERATION_NOT_MATCH, IF_METAGENERATION_MATCH,
+      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH;
+
+      StorageRpc.Option toRpcOption() {
+        return StorageRpc.Option.valueOf(this.name());
+      }
+    }
+
+    BlobTargetOption toTargetOption() {
+      return new BlobTargetOption(this.option.toRpcOption(), this.value);
+    }
+
+    private BlobWriteOption(Option option, Object value) {
+      this.option = option;
+      this.value = value;
+    }
+
+    private BlobWriteOption(Option option) {
+      this(option, null);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(option, value);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == null) {
+        return false;
+      }
+      if (!(obj instanceof BlobWriteOption)) {
+        return false;
+      }
+      final BlobWriteOption other = (BlobWriteOption) obj;
+      return this.option == other.option && Objects.equals(this.value, other.value);
+    }
+
+    public static BlobWriteOption predefinedAcl(PredefinedAcl acl) {
+      return new BlobWriteOption(Option.PREDEFINED_ACL, acl.entry());
+    }
+
+    public static BlobWriteOption doesNotExist() {
+      return new BlobWriteOption(Option.IF_GENERATION_MATCH, 0L);
+    }
+
+    public static BlobWriteOption generationMatch() {
+      return new BlobWriteOption(Option.IF_GENERATION_MATCH);
+    }
+
+    public static BlobWriteOption generationNotMatch() {
+      return new BlobWriteOption(Option.IF_GENERATION_NOT_MATCH);
+    }
+
+    public static BlobWriteOption metagenerationMatch() {
+      return new BlobWriteOption(Option.IF_METAGENERATION_MATCH);
+    }
+
+    public static BlobWriteOption metagenerationNotMatch() {
+      return new BlobWriteOption(Option.IF_METAGENERATION_NOT_MATCH);
+    }
+
+    public static BlobWriteOption md5Match() {
+      return new BlobWriteOption(Option.IF_MD5_MATCH, true);
+    }
+
+    public static BlobWriteOption crc32cMatch() {
+      return new BlobWriteOption(Option.IF_CRC32C_MATCH, true);
     }
   }
 
@@ -510,21 +612,25 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Create a new blob. Direct upload is used to upload {@code content}. For large content,
-   * {@link #writer} is recommended as it uses resumable upload.
+   * {@link #writer} is recommended as it uses resumable upload. MD5 and CRC32C hashes of
+   * {@code content} are computed and used for validating transferred data.
    *
    * @return a complete blob information.
    * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags">Hashes and ETags</a>
    */
   BlobInfo create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options);
 
   /**
    * Create a new blob. Direct upload is used to upload {@code content}. For large content,
-   * {@link #writer} is recommended as it uses resumable upload.
+   * {@link #writer} is recommended as it uses resumable upload. By default any md5 and crc32c
+   * values in the given {@code blobInfo} are ignored unless requested via the
+   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
    *
    * @return a complete blob information.
    * @throws StorageException upon failure
    */
-  BlobInfo create(BlobInfo blobInfo, InputStream content, BlobTargetOption... options);
+  BlobInfo create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options);
 
   /**
    * Return the requested bucket or {@code null} if not found.
@@ -679,11 +785,13 @@ public interface Storage extends Service<StorageOptions> {
   BlobReadChannel reader(BlobId blob, BlobSourceOption... options);
 
   /**
-   * Create a blob and return a channel for writing its content.
+   * Create a blob and return a channel for writing its content. By default any md5 and crc32c
+   * values in the given {@code blobInfo} are ignored unless requested via the
+   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
    *
    * @throws StorageException upon failure
    */
-  BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options);
+  BlobWriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options);
 
   /**
    * Generates a signed URL for a blob.

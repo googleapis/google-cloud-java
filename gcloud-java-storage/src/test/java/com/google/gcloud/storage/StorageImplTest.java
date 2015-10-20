@@ -76,6 +76,8 @@ public class StorageImplTest {
   private static final String BLOB_NAME2 = "n2";
   private static final String BLOB_NAME3 = "n3";
   private static final byte[] BLOB_CONTENT = {0xD, 0xE, 0xA, 0xD};
+  private static final String CONTENT_MD5 = "O1R4G1HJSDUISJjoIYmVhQ==";
+  private static final String CONTENT_CRC32C = "9N3EPQ==";
   private static final int DEFAULT_CHUNK_SIZE = 2 * 1024 * 1024;
 
   // BucketInfo objects
@@ -120,6 +122,18 @@ public class StorageImplTest {
   private static final Map<StorageRpc.Option, ?> BLOB_TARGET_OPTIONS_COMPOSE = ImmutableMap.of(
       StorageRpc.Option.IF_GENERATION_MATCH, BLOB_INFO1.generation(),
       StorageRpc.Option.IF_METAGENERATION_MATCH, BLOB_INFO1.metageneration());
+
+  // Blob write options (create, writer)
+  private static final Storage.BlobWriteOption BLOB_WRITE_METAGENERATION =
+      Storage.BlobWriteOption.metagenerationMatch();
+  private static final Storage.BlobWriteOption BLOB_WRITE_NOT_EXIST =
+      Storage.BlobWriteOption.doesNotExist();
+  private static final Storage.BlobWriteOption BLOB_WRITE_PREDEFINED_ACL =
+      Storage.BlobWriteOption.predefinedAcl(Storage.PredefinedAcl.PRIVATE);
+  private static final Storage.BlobWriteOption BLOB_WRITE_MD5_HASH =
+      Storage.BlobWriteOption.md5Match();
+  private static final Storage.BlobWriteOption BLOB_WRITE_CRC2C =
+      Storage.BlobWriteOption.crc32cMatch();
 
   // Bucket source options
   private static final Storage.BucketSourceOption BUCKET_SOURCE_METAGENERATION =
@@ -250,10 +264,10 @@ public class StorageImplTest {
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
     Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
-    EasyMock
-        .expect(
-            storageRpcMock.create(EasyMock.eq(BLOB_INFO1.toPb()), EasyMock.capture(capturedStream),
-                EasyMock.eq(EMPTY_RPC_OPTIONS)))
+    EasyMock.expect(storageRpcMock.create(
+        EasyMock.eq(BLOB_INFO1.toBuilder().md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build().toPb()),
+        EasyMock.capture(capturedStream),
+        EasyMock.eq(EMPTY_RPC_OPTIONS)))
         .andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(optionsMock, storageRpcMock);
     storage = StorageFactory.instance().get(optionsMock);
@@ -271,10 +285,14 @@ public class StorageImplTest {
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
     Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
-    EasyMock
-        .expect(
-            storageRpcMock.create(EasyMock.eq(BLOB_INFO1.toPb()), EasyMock.capture(capturedStream),
-                EasyMock.eq(EMPTY_RPC_OPTIONS)))
+    EasyMock.expect(storageRpcMock.create(
+        EasyMock.eq(BLOB_INFO1.toBuilder()
+            .md5("1B2M2Y8AsgTpgAmY7PhCfg==")
+            .crc32c("AAAAAA==")
+            .build()
+            .toPb()),
+        EasyMock.capture(capturedStream),
+        EasyMock.eq(EMPTY_RPC_OPTIONS)))
         .andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(optionsMock, storageRpcMock);
     storage = StorageFactory.instance().get(optionsMock);
@@ -290,9 +308,14 @@ public class StorageImplTest {
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
     Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
-    EasyMock.expect(
-        storageRpcMock.create(EasyMock.eq(BLOB_INFO1.toPb()), EasyMock.capture(capturedStream),
-            EasyMock.eq(BLOB_TARGET_OPTIONS_CREATE)))
+    EasyMock.expect(storageRpcMock.create(
+        EasyMock.eq(BLOB_INFO1.toBuilder()
+            .md5(CONTENT_MD5)
+            .crc32c(CONTENT_CRC32C)
+            .build()
+            .toPb()),
+        EasyMock.capture(capturedStream),
+        EasyMock.eq(BLOB_TARGET_OPTIONS_CREATE)))
         .andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(optionsMock, storageRpcMock);
     storage = StorageFactory.instance().get(optionsMock);
@@ -312,11 +335,14 @@ public class StorageImplTest {
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
     ByteArrayInputStream fileStream = new ByteArrayInputStream(BLOB_CONTENT);
-    EasyMock.expect(storageRpcMock.create(BLOB_INFO1.toPb(), fileStream, EMPTY_RPC_OPTIONS))
+    BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
+    BlobInfo infoWithHashes = infoBuilder.md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build();
+    BlobInfo infoWithoutHashes = infoBuilder.md5(null).crc32c(null).build();
+    EasyMock.expect(storageRpcMock.create(infoWithoutHashes.toPb(), fileStream, EMPTY_RPC_OPTIONS))
         .andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(optionsMock, storageRpcMock);
     storage = StorageFactory.instance().get(optionsMock);
-    BlobInfo blob = storage.create(BLOB_INFO1, fileStream);
+    BlobInfo blob = storage.create(infoWithHashes, fileStream);
     assertEquals(BLOB_INFO1, blob);
   }
 
@@ -775,11 +801,14 @@ public class StorageImplTest {
   @Test
   public void testWriter() {
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(2);
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO1.toPb(), EMPTY_RPC_OPTIONS))
+    BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
+    BlobInfo infoWithHashes = infoBuilder.md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build();
+    BlobInfo infoWithoutHashes = infoBuilder.md5(null).crc32c(null).build();
+    EasyMock.expect(storageRpcMock.open(infoWithoutHashes.toPb(), EMPTY_RPC_OPTIONS))
         .andReturn("upload-id");
     EasyMock.replay(optionsMock, storageRpcMock);
     storage = StorageFactory.instance().get(optionsMock);
-    BlobWriteChannel channel = storage.writer(BLOB_INFO1);
+    BlobWriteChannel channel = storage.writer(infoWithHashes);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
   }
@@ -787,12 +816,13 @@ public class StorageImplTest {
   @Test
   public void testWriterWithOptions() {
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(2);
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO1.toPb(), BLOB_TARGET_OPTIONS_CREATE))
+    BlobInfo info = BLOB_INFO1.toBuilder().md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build();
+    EasyMock.expect(storageRpcMock.open(info.toPb(), BLOB_TARGET_OPTIONS_CREATE))
         .andReturn("upload-id");
     EasyMock.replay(optionsMock, storageRpcMock);
     storage = StorageFactory.instance().get(optionsMock);
-    BlobWriteChannel channel = storage.writer(BLOB_INFO1, BLOB_TARGET_METAGENERATION,
-        BLOB_TARGET_NOT_EXIST, BLOB_TARGET_PREDEFINED_ACL);
+    BlobWriteChannel channel = storage.writer(info, BLOB_WRITE_METAGENERATION, BLOB_WRITE_NOT_EXIST,
+        BLOB_WRITE_PREDEFINED_ACL, BLOB_WRITE_CRC2C, BLOB_WRITE_MD5_HASH);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
   }

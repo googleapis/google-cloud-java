@@ -24,6 +24,7 @@ import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
+import com.google.gcloud.storage.Storage.BlobWriteOption;
 import com.google.gcloud.storage.Storage.CopyRequest;
 import com.google.gcloud.storage.Storage.SignUrlOption;
 
@@ -269,12 +270,14 @@ public final class Blob {
   }
 
   /**
-   * Returns a {@code BlobWriteChannel} object for writing to this blob.
+   * Returns a {@code BlobWriteChannel} object for writing to this blob. By default any md5 and
+   * crc32c values in the current blob are ignored unless requested via the
+   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
    *
    * @param options target blob options
    * @throws StorageException upon failure
    */
-  public BlobWriteChannel writer(BlobTargetOption... options) {
+  public BlobWriteChannel writer(BlobWriteOption... options) {
     return storage.writer(info, options);
   }
 

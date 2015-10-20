@@ -146,6 +146,22 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testCreateBlobMd5Fail() throws UnsupportedEncodingException {
+    String blobName = "test-create-blob-md5-fail";
+    BlobInfo blob = BlobInfo.builder(bucket, blobName)
+        .contentType(CONTENT_TYPE)
+        .md5("O1R4G1HJSDUISJjoIYmVhQ==")
+        .build();
+    ByteArrayInputStream stream = new ByteArrayInputStream(BLOB_STRING_CONTENT.getBytes(UTF_8));
+    try {
+      storage.create(blob, stream, Storage.BlobWriteOption.md5Match());
+      fail("StorageException was expected");
+    } catch (StorageException ex) {
+      // expected
+    }
+  }
+
+  @Test
   public void testUpdateBlob() {
     String blobName = "test-update-blob";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
@@ -449,13 +465,27 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.builder(bucket, blobName).generation(-1L).build();
     try {
       try (BlobWriteChannel writer =
-          storage.writer(blob, Storage.BlobTargetOption.generationMatch())) {
+          storage.writer(blob, Storage.BlobWriteOption.generationMatch())) {
         writer.write(ByteBuffer.allocate(42));
       }
       fail("StorageException was expected");
     } catch (StorageException ex) {
       // expected
     }
+  }
+
+  @Test
+  public void testWriteChannelExistingBlob() throws UnsupportedEncodingException, IOException {
+    String blobName = "test-write-channel-existing-blob";
+    BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
+    BlobInfo remoteBlob = storage.create(blob);
+    byte[] stringBytes;
+    try (BlobWriteChannel writer = storage.writer(remoteBlob)) {
+      stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
+      writer.write(ByteBuffer.wrap(stringBytes));
+    }
+    assertArrayEquals(stringBytes, storage.readAllBytes(blob.blobId()));
+    assertTrue(storage.delete(bucket, blobName));
   }
 
   @Test
