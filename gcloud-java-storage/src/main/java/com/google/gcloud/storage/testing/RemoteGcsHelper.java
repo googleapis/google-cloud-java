@@ -96,14 +96,48 @@ public class RemoteGcsHelper {
   }
 
   /**
+   * Creates a {@code RemoteGcsHelper} object for the given project id and JSON key input stream.
+   *
+   * @param projectId id of the project to be used for running the tests
+   * @param keyStream input stream for a JSON key
+   * @return A {@code RemoteGcsHelper} object for the provided options.
+   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if
+   *     {@code keyStream} is not a valid JSON key stream
+   */
+  public static RemoteGcsHelper create(String projectId, InputStream keyStream)
+      throws GcsHelperException {
+    try {
+      StorageOptions storageOptions = StorageOptions.builder()
+          .authCredentials(AuthCredentials.createForJson(keyStream))
+          .projectId(projectId)
+          .retryParams(RetryParams.builder()
+              .retryMaxAttempts(10)
+              .retryMinAttempts(6)
+              .maxRetryDelayMillis(30000)
+              .totalRetryPeriodMillis(120000)
+              .initialRetryDelayMillis(250)
+              .build())
+          .connectTimeout(60000)
+          .readTimeout(60000)
+          .build();
+      return new RemoteGcsHelper(storageOptions);
+    } catch (IOException ex) {
+      if (log.isLoggable(Level.WARNING)) {
+        log.log(Level.WARNING, ex.getMessage());
+      }
+      throw GcsHelperException.translate(ex);
+    }
+  }
+
+  /**
    * Creates a {@code RemoteGcsHelper} object for the given project id and JSON key path.
    *
    * @param projectId id of the project to be used for running the tests
    * @param keyPath path to the JSON key to be used for running the tests
    * @param options creation options
    * @return A {@code RemoteGcsHelper} object for the provided options.
-   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if the file pointed by 
-   * {@code keyPath} does not exist
+   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if the file
+   *     pointed by {@code keyPath} does not exist
    */
   public static RemoteGcsHelper create(String projectId, String keyPath, Option... options)
       throws GcsHelperException {
@@ -123,20 +157,7 @@ public class RemoteGcsHelper {
       } else {
         keyFileStream = new FileInputStream(keyPath);
       }
-      StorageOptions storageOptions = StorageOptions.builder()
-          .authCredentials(AuthCredentials.createForJson(keyFileStream))
-          .projectId(projectId)
-          .retryParams(RetryParams.builder()
-              .retryMaxAttempts(10)
-              .retryMinAttempts(6)
-              .maxRetryDelayMillis(30000)
-              .totalRetryPeriodMillis(120000)
-              .initialRetryDelayMillis(250)
-              .build())
-          .connectTimeout(60000)
-          .readTimeout(60000)
-          .build();
-      return new RemoteGcsHelper(storageOptions);
+      return create(projectId, keyFileStream);
     } catch (FileNotFoundException ex) {
       if (log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, ex.getMessage());
@@ -156,9 +177,9 @@ public class RemoteGcsHelper {
    *
    * @param options creation options
    * @return A {@code RemoteGcsHelper} object for the provided options.
-   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if environment variables
-   * {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY} are not set or if the file
-   * pointed by {@code GCLOUD_TESTS_KEY} does not exist
+   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if environment
+   *     variables {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY} are not set or if
+   *     the file pointed by {@code GCLOUD_TESTS_KEY} does not exist
    */
   public static RemoteGcsHelper create(Option... options) throws GcsHelperException {
     String projectId = System.getenv(PROJECT_ID_ENV_VAR);
