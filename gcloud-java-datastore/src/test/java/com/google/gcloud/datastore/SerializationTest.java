@@ -45,7 +45,7 @@ public class SerializationTest {
       IncompleteKey.builder(KEY1, "v").ancestors(PathElement.of("p", 1)).build();
   private static final Key KEY2 = Key.builder(KEY1, "v", 2).build();
   private static final DateTime DATE_TIME1 = DateTime.now();
-  private static final GeoPoint GEO_POINT = new GeoPoint(37.422035, -122.084124);
+  private static final LatLng LAT_LNG = new LatLng(37.422035, -122.084124);
   private static final Blob BLOB1 = Blob.copyFrom(UTF_8.encode("hello world"));
   private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1,2});
   private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[]{10});
@@ -91,7 +91,7 @@ public class SerializationTest {
   private static final BlobValue BLOB_VALUE = BlobValue.of(BLOB1);
   private static final RawValue RAW_VALUE = 
       RawValue.of(com.google.datastore.v1beta3.Value.newBuilder().setMeaning(18).build());
-  private static final GeoPointValue GEO_POINT_VALUE = GeoPointValue.of(GEO_POINT);
+  private static final LatLngValue LAT_LNG_VALUE = LatLngValue.of(LAT_LNG);
   private static final Entity ENTITY1 = Entity.builder(KEY1).build();
   private static final Entity ENTITY2 =
       Entity.builder(KEY2).set("null", NullValue.of()).build();
@@ -130,7 +130,7 @@ public class SerializationTest {
           .put(ValueType.DATE_TIME, DATE_AND_TIME_VALUE)
           .put(ValueType.BLOB, BLOB_VALUE)
           .put(ValueType.RAW_VALUE, RAW_VALUE)
-          .put(ValueType.GEO_POINT, GEO_POINT_VALUE)
+          .put(ValueType.LAT_LNG, LAT_LNG_VALUE)
           .build();
 
   @Test
@@ -169,7 +169,7 @@ public class SerializationTest {
   @Test
   public void testTypes() throws Exception {
     Serializable<?>[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
-        ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, GEO_POINT, CURSOR1, GQL1,
+        ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, LAT_LNG, CURSOR1, GQL1,
         GQL2, QUERY1, QUERY2, QUERY3};
     for (Serializable<?> obj : types) {
       Object copy = serializeAndDeserialize(obj);

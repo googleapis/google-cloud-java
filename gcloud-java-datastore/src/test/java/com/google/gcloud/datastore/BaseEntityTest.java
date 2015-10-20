@@ -35,7 +35,7 @@ public class BaseEntityTest {
 
   private static final Blob BLOB = Blob.copyFrom(new byte[]{1, 2});
   private static final DateTime DATE_TIME = DateTime.now();
-  private static final GeoPoint GEO_POINT = new GeoPoint(37.422035, -122.084124);
+  private static final LatLng LAT_LNG = new LatLng(37.422035, -122.084124);
   private static final Key KEY = Key.builder("ds1", "k1", "n1").build();
   private static final Entity ENTITY = Entity.builder(KEY).set("name", "foo").build();
   private static final IncompleteKey INCOMPLETE_KEY = IncompleteKey.builder("ds1", "k1").build();
@@ -63,9 +63,9 @@ public class BaseEntityTest {
     builder = new Builder();
     builder.set("blob", BLOB).set("boolean", true).set("dateTime", DATE_TIME);
     builder.set("double", 1.25).set("key", KEY).set("string", "hello world");
-    builder.set("long", 125).setNull("null").set("entity", ENTITY).set("geoPoint", GEO_POINT);
+    builder.set("long", 125).setNull("null").set("entity", ENTITY).set("latLng", LAT_LNG);
     builder.set("partialEntity", PARTIAL_ENTITY).set("stringValue", StringValue.of("bla"));
-    builder.set("list1", NullValue.of(), StringValue.of("foo"), GeoPointValue.of(GEO_POINT));
+    builder.set("list1", NullValue.of(), StringValue.of("foo"), LatLngValue.of(LAT_LNG));
     builder.set("list2", ImmutableList.of(LongValue.of(10), DoubleValue.of(2)));
     builder.set("list3", Collections.singletonList(BooleanValue.of(true)));
   }
@@ -151,9 +151,9 @@ public class BaseEntityTest {
   }
 
   @Test
-  public void testGetGeoPoint() throws Exception {
+  public void testGetLatLng() throws Exception {
     BaseEntity<Key> entity = builder.build();
-    assertEquals(GEO_POINT, entity.getGeoPoint("geoPoint"));
+    assertEquals(LAT_LNG, entity.getLatLng("latLng"));
   }
 
   @Test
@@ -181,7 +181,7 @@ public class BaseEntityTest {
     assertEquals(3, list.size());
     assertEquals(NullValue.of(), list.get(0));
     assertEquals("foo", list.get(1).get());
-    assertEquals(GEO_POINT, list.get(2).get());
+    assertEquals(LAT_LNG, list.get(2).get());
     list = entity.getList("list2");
     assertEquals(2, list.size());
     assertEquals(Long.valueOf(10), list.get(0).get());
@@ -207,7 +207,7 @@ public class BaseEntityTest {
     Set<String> names =
         ImmutableSet.<String>builder()
             .add("string", "stringValue", "boolean", "double", "long", "list1", "list2", "list3")
-            .add("entity", "partialEntity", "null", "dateTime", "geoPoint", "blob", "key")
+            .add("entity", "partialEntity", "null", "dateTime", "latLng", "blob", "key")
         .build();
     BaseEntity<Key> entity = builder.build();
     assertEquals(names, entity.names());

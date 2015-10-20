@@ -23,20 +23,20 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import java.util.Objects;
 
 /**
- * A Google Cloud Datastore GeoPoint (represented by latitude and longitude in degrees).
+ * A Google Cloud Datastore LatLng (represented by latitude and longitude in degrees).
  * This class is immutable.
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
  *     Entities, Properties, and Keys</a>
  */
-public final class GeoPoint extends Serializable<com.google.type.LatLng> {
+public final class LatLng extends Serializable<com.google.type.LatLng> {
 
   private static final long serialVersionUID = 9077060962655752073L;
 
   private final transient double latitude;
   private final transient double longitude;
 
-  GeoPoint(double latitude, double longitude) {
+  LatLng(double latitude, double longitude) {
     checkArgument(
         latitude >= -90.0 && latitude <= 90.0, "latitude must be in the range [-90, 90] degrees");
     checkArgument(
@@ -66,12 +66,12 @@ public final class GeoPoint extends Serializable<com.google.type.LatLng> {
 
   @Override
   public boolean equals(Object obj) {
-    return obj == this || (obj instanceof GeoPoint && this.latitude == ((GeoPoint) obj).latitude
-               && this.longitude == ((GeoPoint) obj).longitude);
+    return obj == this || (obj instanceof LatLng && this.latitude == ((LatLng) obj).latitude
+               && this.longitude == ((LatLng) obj).longitude);
   }
 
-  public static GeoPoint of(double latitude, double longitude) {
-    return new GeoPoint(latitude, longitude);
+  public static LatLng of(double latitude, double longitude) {
+    return new LatLng(latitude, longitude);
   }
 
   @Override
@@ -85,6 +85,6 @@ public final class GeoPoint extends Serializable<com.google.type.LatLng> {
   @Override
   protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     com.google.type.LatLng parsedLatLng = com.google.type.LatLng.parseFrom(bytesPb);
-    return new GeoPoint(parsedLatLng.getLatitude(), parsedLatLng.getLongitude());
+    return new LatLng(parsedLatLng.getLatitude(), parsedLatLng.getLongitude());
   }
 }

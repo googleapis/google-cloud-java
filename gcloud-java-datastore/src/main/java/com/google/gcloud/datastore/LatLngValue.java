@@ -18,12 +18,12 @@ package com.google.gcloud.datastore;
 
 import static com.google.datastore.v1beta3.Value.GEO_POINT_VALUE_FIELD_NUMBER;
 
-public final class GeoPointValue extends Value<GeoPoint> {
+public final class LatLngValue extends Value<LatLng> {
 
   private static final long serialVersionUID = -5810614280642405898L;
 
-  static final BaseMarshaller<GeoPoint, GeoPointValue, Builder> MARSHALLER =
-      new BaseMarshaller<GeoPoint, GeoPointValue, Builder>() {
+  static final BaseMarshaller<LatLng, LatLngValue, Builder> MARSHALLER =
+      new BaseMarshaller<LatLng, LatLngValue, Builder>() {
 
         private static final long serialVersionUID = -3550567536035178649L;
 
@@ -33,39 +33,39 @@ public final class GeoPointValue extends Value<GeoPoint> {
         }
 
         @Override
-        public Builder newBuilder(GeoPoint value) {
+        public Builder newBuilder(LatLng value) {
           return builder(value);
         }
 
         @Override
-        protected GeoPoint getValue(com.google.datastore.v1beta3.Value from) {
-          return new GeoPoint(
+        protected LatLng getValue(com.google.datastore.v1beta3.Value from) {
+          return new LatLng(
               from.getGeoPointValue().getLatitude(), from.getGeoPointValue().getLongitude());
         }
 
         @Override
-        protected void setValue(GeoPointValue from, com.google.datastore.v1beta3.Value.Builder to) {
+        protected void setValue(LatLngValue from, com.google.datastore.v1beta3.Value.Builder to) {
           to.setGeoPointValue(from.get().toPb());
         }
       };
 
-  public static final class Builder extends Value.BaseBuilder<GeoPoint, GeoPointValue, Builder> {
+  public static final class Builder extends Value.BaseBuilder<LatLng, LatLngValue, Builder> {
 
     private Builder() {
-      super(ValueType.GEO_POINT);
+      super(ValueType.LAT_LNG);
     }
 
     @Override
-    public GeoPointValue build() {
-      return new GeoPointValue(this);
+    public LatLngValue build() {
+      return new LatLngValue(this);
     }
   }
 
-  public GeoPointValue(GeoPoint value) {
+  public LatLngValue(LatLng value) {
     this(builder(value));
   }
 
-  private GeoPointValue(Builder builder) {
+  private LatLngValue(Builder builder) {
     super(builder);
   }
 
@@ -74,11 +74,11 @@ public final class GeoPointValue extends Value<GeoPoint> {
     return new Builder().mergeFrom(this);
   }
 
-  public static GeoPointValue of(GeoPoint value) {
-    return new GeoPointValue(value);
+  public static LatLngValue of(LatLng value) {
+    return new LatLngValue(value);
   }
 
-  public static Builder builder(GeoPoint value) {
+  public static Builder builder(LatLng value) {
     return new Builder().set(value);
   }
 }

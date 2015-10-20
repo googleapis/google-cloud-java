@@ -21,7 +21,7 @@ import static com.google.gcloud.datastore.BooleanValue.of;
 import static com.google.gcloud.datastore.DateTimeValue.of;
 import static com.google.gcloud.datastore.DoubleValue.of;
 import static com.google.gcloud.datastore.EntityValue.of;
-import static com.google.gcloud.datastore.GeoPointValue.of;
+import static com.google.gcloud.datastore.LatLngValue.of;
 import static com.google.gcloud.datastore.KeyValue.of;
 import static com.google.gcloud.datastore.ListValue.of;
 import static com.google.gcloud.datastore.LongValue.of;
@@ -160,7 +160,7 @@ public abstract class BaseEntity<K extends IncompleteKey>
       return self();
     }
 
-    public B set(String name, GeoPoint value) {
+    public B set(String name, LatLng value) {
       properties.put(name, of(value));
       return self();
     }
@@ -327,14 +327,14 @@ public abstract class BaseEntity<K extends IncompleteKey>
   }
 
   /**
-   * Returns the property value as a GeoPoint.
+   * Returns the property value as a LatLng.
    *
    * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a GeoPoint.
+   * @throws ClassCastException if value is not a LatLng.
    */
   @SuppressWarnings("unchecked")
-  public GeoPoint getGeoPoint(String name) {
-    return ((Value<GeoPoint>) getValue(name)).get();
+  public LatLng getLatLng(String name) {
+    return ((Value<LatLng>) getValue(name)).get();
   }
 
   /**

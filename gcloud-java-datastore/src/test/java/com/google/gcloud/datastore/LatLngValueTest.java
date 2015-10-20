@@ -22,20 +22,20 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class GeoPointValueTest {
+public class LatLngValueTest {
 
-private static final GeoPoint CONTENT = new GeoPoint(37.4, -122.1);
+private static final LatLng CONTENT = new LatLng(37.4, -122.1);
 
   @Test
   public void testToBuilder() throws Exception {
-    GeoPointValue value = GeoPointValue.of(CONTENT);
+    LatLngValue value = LatLngValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
-    GeoPointValue value = GeoPointValue.of(CONTENT);
+    LatLngValue value = LatLngValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
   }
@@ -43,8 +43,8 @@ private static final GeoPoint CONTENT = new GeoPoint(37.4, -122.1);
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
-    GeoPointValue.Builder builder = GeoPointValue.builder(CONTENT);
-    GeoPointValue value = builder.meaning(1).excludeFromIndexes(true).build();
+    LatLngValue.Builder builder = LatLngValue.builder(CONTENT);
+    LatLngValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());
     assertEquals(1, value.meaning());
     assertTrue(value.excludeFromIndexes());

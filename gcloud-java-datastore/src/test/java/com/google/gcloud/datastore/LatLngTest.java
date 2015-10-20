@@ -23,13 +23,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-public class GeoPointTest {
+public class LatLngTest {
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
-  private static GeoPoint gp1 = new GeoPoint(37.422035, -122.084124);
-  private static GeoPoint gp2 = new GeoPoint(0.0, 0.0);
+  private static LatLng gp1 = new LatLng(37.422035, -122.084124);
+  private static LatLng gp2 = new LatLng(0.0, 0.0);
 
   private static final String INVALID_LAT_MESSAGE =
       "latitude must be in the range [-90, 90] degrees";
@@ -44,34 +44,34 @@ public class GeoPointTest {
 
   @Test
   public void testUpperLatRange() {
-    new GeoPoint(90, 0);
+    new LatLng(90, 0);
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage(INVALID_LAT_MESSAGE);
-    new GeoPoint(91, 0);
+    new LatLng(91, 0);
   }
 
   @Test
   public void testLowerLatRange() {
-    new GeoPoint(-90, 0);
+    new LatLng(-90, 0);
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage(INVALID_LAT_MESSAGE);
-    new GeoPoint(-91, 0);
+    new LatLng(-91, 0);
   }
 
   @Test
   public void testUpperLngRange() {
-    new GeoPoint(0, 180);
+    new LatLng(0, 180);
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage(INVALID_LNG_MESSAGE);
-    new GeoPoint(0, 181);
+    new LatLng(0, 181);
   }
 
   @Test
   public void testLowerLngRange() {
-    new GeoPoint(0, 180);
+    new LatLng(0, 180);
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage(INVALID_LNG_MESSAGE);
-    new GeoPoint(0, -181);
+    new LatLng(0, -181);
   }
 }
 

@@ -81,9 +81,9 @@ public enum ValueType {
   RAW_VALUE(RawValue.MARSHALLER),
 
   /**
-   * Represents a {@link GeoPoint} value
+   * Represents a {@link LatLng} value
    */
-  GEO_POINT(GeoPointValue.MARSHALLER);
+  LAT_LNG(LatLngValue.MARSHALLER);
 
   private static final ImmutableMap<Integer, ValueType> DESCRIPTOR_TO_TYPE_MAP;
 
