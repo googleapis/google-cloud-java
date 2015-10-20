@@ -74,6 +74,8 @@ public class DatastoreTest {
       .build();
   private static final ListValue LIST_VALUE2 = ListValue.of(Collections.singletonList(KEY_VALUE));
   private static final DateTimeValue DATE_TIME_VALUE = new DateTimeValue(DateTime.now());
+  private static final LatLngValue LAT_LNG_VALUE =
+      new LatLngValue(new LatLng(37.422035, -122.084124));
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY1 =
       FullEntity.builder(INCOMPLETE_KEY2).set("str", STR_VALUE).set("bool", BOOL_VALUE)
           .set("list", LIST_VALUE1).build();
@@ -83,13 +85,15 @@ public class DatastoreTest {
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY3 =
       FullEntity.builder(PARTIAL_ENTITY1).key(IncompleteKey.builder(PROJECT_ID, KIND3).build())
           .build();
-  private static final Entity ENTITY1 = Entity.builder(KEY1)
-      .set("str", STR_VALUE)
-      .set("date", DATE_TIME_VALUE)
-      .set("bool", BOOL_VALUE)
-      .set("partial1", EntityValue.of(PARTIAL_ENTITY1))
-      .set("list", LIST_VALUE2)
-      .build();
+  private static final Entity ENTITY1 =
+      Entity.builder(KEY1)
+          .set("str", STR_VALUE)
+          .set("date", DATE_TIME_VALUE)
+          .set("latLng", LAT_LNG_VALUE)
+          .set("bool", BOOL_VALUE)
+          .set("partial1", EntityValue.of(PARTIAL_ENTITY1))
+          .set("list", LIST_VALUE2)
+          .build();
   private static final Entity ENTITY2 = Entity.builder(ENTITY1).key(KEY2).remove("str")
       .set("name", "Dan").setNull("null").set("age", 20).build();
   private static final Entity ENTITY3 = Entity.builder(ENTITY1).key(KEY3).remove("str")
@@ -504,9 +508,11 @@ public class DatastoreTest {
     assertEquals(LIST_VALUE2, value3);
     DateTimeValue value4 = entity.getValue("date");
     assertEquals(DATE_TIME_VALUE, value4);
-    FullEntity<IncompleteKey> value5 = entity.getEntity("partial1");
-    assertEquals(PARTIAL_ENTITY1, value5);
-    assertEquals(5, entity.names().size());
+    LatLngValue value5 = entity.getValue("latLng");
+    assertEquals(LAT_LNG_VALUE, value5);
+    FullEntity<IncompleteKey> value6 = entity.getEntity("partial1");
+    assertEquals(PARTIAL_ENTITY1, value6);
+    assertEquals(6, entity.names().size());
     assertFalse(entity.contains("bla"));
   }
 
@@ -528,7 +534,8 @@ public class DatastoreTest {
     assertEquals(PARTIAL_ENTITY2, partial1);
     assertEquals(ENTITY2, partial2);
     assertEquals(ValueType.BOOLEAN, entity3.getValue("bool").type());
-    assertEquals(6, entity3.names().size());
+    assertEquals(LAT_LNG_VALUE, entity3.getValue("latLng"));
+    assertEquals(7, entity3.names().size());
     assertFalse(entity3.contains("bla"));
     try {
       entity3.getString("str");

@@ -45,6 +45,7 @@ public class SerializationTest {
       IncompleteKey.builder(KEY1, "v").ancestors(PathElement.of("p", 1)).build();
   private static final Key KEY2 = Key.builder(KEY1, "v", 2).build();
   private static final DateTime DATE_TIME1 = DateTime.now();
+  private static final LatLng LAT_LNG = new LatLng(37.422035, -122.084124);
   private static final Blob BLOB1 = Blob.copyFrom(UTF_8.encode("hello world"));
   private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1,2});
   private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[]{10});
@@ -89,10 +90,8 @@ public class SerializationTest {
   private static final DateTimeValue DATE_AND_TIME_VALUE = DateTimeValue.of(DateTime.now());
   private static final BlobValue BLOB_VALUE = BlobValue.of(BLOB1);
   private static final RawValue RAW_VALUE = 
-      RawValue.of(com.google.datastore.v1beta3.Value.newBuilder()
-          .setGeoPointValue(com.google.type.LatLng.newBuilder()
-              .setLatitude(0.0).setLongitude(0.0).build())
-          .setMeaning(18).build());
+      RawValue.of(com.google.datastore.v1beta3.Value.newBuilder().setMeaning(18).build());
+  private static final LatLngValue LAT_LNG_VALUE = LatLngValue.of(LAT_LNG);
   private static final Entity ENTITY1 = Entity.builder(KEY1).build();
   private static final Entity ENTITY2 =
       Entity.builder(KEY2).set("null", NullValue.of()).build();
@@ -119,19 +118,20 @@ public class SerializationTest {
   @SuppressWarnings("rawtypes")
   private static final Multimap<ValueType, Value> TYPE_TO_VALUES =
       ImmutableMultimap.<ValueType, Value>builder()
-      .put(ValueType.NULL, NULL_VALUE)
-      .put(ValueType.KEY, KEY_VALUE)
-      .put(ValueType.STRING, STRING_VALUE)
-      .putAll(ValueType.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
-          EMBEDDED_ENTITY_VALUE3)
-      .put(ValueType.LIST, LIST_VALUE)
-      .put(ValueType.LONG, LONG_VALUE)
-      .put(ValueType.DOUBLE, DOUBLE_VALUE)
-      .put(ValueType.BOOLEAN, BOOLEAN_VALUE)
-      .put(ValueType.DATE_TIME, DATE_AND_TIME_VALUE)
-      .put(ValueType.BLOB, BLOB_VALUE)
-      .put(ValueType.RAW_VALUE, RAW_VALUE)
-      .build();
+          .put(ValueType.NULL, NULL_VALUE)
+          .put(ValueType.KEY, KEY_VALUE)
+          .put(ValueType.STRING, STRING_VALUE)
+          .putAll(ValueType.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
+              EMBEDDED_ENTITY_VALUE3)
+          .put(ValueType.LIST, LIST_VALUE)
+          .put(ValueType.LONG, LONG_VALUE)
+          .put(ValueType.DOUBLE, DOUBLE_VALUE)
+          .put(ValueType.BOOLEAN, BOOLEAN_VALUE)
+          .put(ValueType.DATE_TIME, DATE_AND_TIME_VALUE)
+          .put(ValueType.BLOB, BLOB_VALUE)
+          .put(ValueType.RAW_VALUE, RAW_VALUE)
+          .put(ValueType.LAT_LNG, LAT_LNG_VALUE)
+          .build();
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -169,8 +169,8 @@ public class SerializationTest {
   @Test
   public void testTypes() throws Exception {
     Serializable<?>[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
-        ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, CURSOR1, GQL1, GQL2,
-        QUERY1, QUERY2, QUERY3};
+        ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, LAT_LNG, CURSOR1, GQL1,
+        GQL2, QUERY1, QUERY2, QUERY3};
     for (Serializable<?> obj : types) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
