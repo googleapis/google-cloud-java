@@ -129,9 +129,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         .md5(EMPTY_BYTE_ARRAY_MD5)
         .crc32c(EMPTY_BYTE_ARRAY_CRC32C)
         .build();
-    return create(updatedInfo, new ByteArrayInputStream(EMPTY_BYTE_ARRAY),
-        BlobTargetOption.convert(
-            options, BlobWriteOption.md5Match(), BlobWriteOption.crc32cMatch()));
+    return create(updatedInfo, new ByteArrayInputStream(EMPTY_BYTE_ARRAY), options);
   }
 
   @Override
@@ -142,14 +140,18 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         .crc32c(BaseEncoding.base64().encode(
             Ints.toByteArray(Hashing.crc32c().hashBytes(content).asInt())))
         .build();
-    return create(updatedInfo, new ByteArrayInputStream(content), BlobTargetOption.convert(
-        options, BlobWriteOption.md5Match(), BlobWriteOption.crc32cMatch()));
+    return create(updatedInfo, new ByteArrayInputStream(content), options);
   }
 
   @Override
   public BlobInfo create(BlobInfo blobInfo, final InputStream content, BlobWriteOption... options) {
-    final StorageObject blobPb = blobInfo.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
+    Tuple<BlobInfo, BlobTargetOption[]> targetOptions = BlobTargetOption.convert(blobInfo, options);
+    return create(targetOptions.x(), content, targetOptions.y());
+  }
+
+  private BlobInfo create(BlobInfo info, final InputStream content, BlobTargetOption... options) {
+    final StorageObject blobPb = info.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(info, options);
     try {
       return BlobInfo.fromPb(runWithRetries(new Callable<StorageObject>() {
         @Override
@@ -558,6 +560,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public BlobWriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options) {
+    Tuple<BlobInfo, BlobTargetOption[]> targetOptions = BlobTargetOption.convert(blobInfo, options);
+    return writer(targetOptions.x(), targetOptions.y());
+  }
+
+  private BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options) {
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
     return new BlobWriteChannelImpl(options(), blobInfo, optionsMap);
   }

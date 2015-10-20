@@ -270,7 +270,9 @@ public final class Blob {
   }
 
   /**
-   * Returns a {@code BlobWriteChannel} object for writing to this blob.
+   * Returns a {@code BlobWriteChannel} object for writing to this blob. By default any md5 and
+   * crc32c values in the current blob are ignored unless requested via the
+   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
    *
    * @param options target blob options
    * @throws StorageException upon failure

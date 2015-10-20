@@ -23,8 +23,6 @@ import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_MD5_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_CRC32C_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.MAX_RESULTS;
 import static com.google.gcloud.spi.StorageRpc.Option.PAGE_TOKEN;
 import static com.google.gcloud.spi.StorageRpc.Option.PREDEFINED_ACL;
@@ -108,15 +106,6 @@ public class DefaultStorageRpc implements StorageRpc {
     return new StorageException(exception.getCode(), exception.getMessage(), retryable);
   }
 
-  private static void applyOptions(StorageObject storageObject, Map<Option, ?> options) {
-    if (IF_MD5_MATCH.getBoolean(options) == null) {
-      storageObject.setMd5Hash(null);
-    }
-    if (IF_CRC32C_MATCH.getBoolean(options) == null) {
-      storageObject.setCrc32c(null);
-    }
-  }
-
   @Override
   public Bucket create(Bucket bucket, Map<Option, ?> options) throws StorageException {
     try {
@@ -134,7 +123,6 @@ public class DefaultStorageRpc implements StorageRpc {
   @Override
   public StorageObject create(StorageObject storageObject, final InputStream content,
       Map<Option, ?> options) throws StorageException {
-    applyOptions(storageObject, options);
     try {
       Storage.Objects.Insert insert = storage.objects()
           .insert(storageObject.getBucket(), storageObject,
@@ -503,7 +491,6 @@ public class DefaultStorageRpc implements StorageRpc {
   @Override
   public String open(StorageObject object, Map<Option, ?> options)
       throws StorageException {
-    applyOptions(object, options);
     try {
       Insert req = storage.objects().insert(object.getBucket(), object);
       GenericUrl url = req.buildHttpRequest().getUrl();
