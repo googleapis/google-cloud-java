@@ -144,7 +144,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BlobInfo create(BlobInfo blobInfo, final InputStream content, BlobWriteOption... options) {
+  public BlobInfo create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options) {
     Tuple<BlobInfo, BlobTargetOption[]> targetOptions = BlobTargetOption.convert(blobInfo, options);
     return create(targetOptions.x(), content, targetOptions.y());
   }
