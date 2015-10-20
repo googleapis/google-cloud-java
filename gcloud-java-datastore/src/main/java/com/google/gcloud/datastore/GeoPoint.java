@@ -46,11 +46,11 @@ public final class GeoPoint extends Serializable<com.google.type.LatLng> {
     this.longitude = longitude;
   }
 
-  public double getLatitude() {
+  public double latitude() {
     return latitude;
   }
 
-  public double getLongitude() {
+  public double longitude() {
     return longitude;
   }
 
