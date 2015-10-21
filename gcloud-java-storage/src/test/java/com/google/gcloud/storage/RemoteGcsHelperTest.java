@@ -166,11 +166,4 @@ public class RemoteGcsHelperTest {
     thrown.expectMessage(KEY_PATH + " (No such file or directory)");
     RemoteGcsHelper.create(PROJECT_ID, KEY_PATH);
   }
-
-  @Test
-  public void testCreateNoKeyWithOption() {
-    thrown.expect(RemoteGcsHelper.GcsHelperException.class);
-    thrown.expectMessage(KEY_PATH + " not found in classpath");
-    RemoteGcsHelper.create(PROJECT_ID, KEY_PATH, RemoteGcsHelper.Option.keyFromClassPath());
-  }
 }

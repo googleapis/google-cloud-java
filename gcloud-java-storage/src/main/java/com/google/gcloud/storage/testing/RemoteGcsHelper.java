@@ -16,20 +16,17 @@
 
 package com.google.gcloud.storage.testing;
 
-import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.StorageOptions;
-import com.google.gcloud.storage.testing.RemoteGcsHelper.Option.KeyFromClasspath;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.IOException;
-import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -134,29 +131,14 @@ public class RemoteGcsHelper {
    *
    * @param projectId id of the project to be used for running the tests
    * @param keyPath path to the JSON key to be used for running the tests
-   * @param options creation options
    * @return A {@code RemoteGcsHelper} object for the provided options.
    * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if the file
    *     pointed by {@code keyPath} does not exist
    */
-  public static RemoteGcsHelper create(String projectId, String keyPath, Option... options)
+  public static RemoteGcsHelper create(String projectId, String keyPath)
       throws GcsHelperException {
-    boolean keyFromClassPath = false;
-    Map<Class<? extends Option>, Option> optionsMap = Option.asImmutableMap(options);
-    if (optionsMap.containsKey(KeyFromClasspath.class)) {
-      keyFromClassPath =
-          ((KeyFromClasspath) optionsMap.get(KeyFromClasspath.class)).keyFromClasspath();
-    }
     try {
-      InputStream keyFileStream;
-      if (keyFromClassPath) {
-        keyFileStream = RemoteGcsHelper.class.getResourceAsStream(keyPath);
-        if (keyFileStream == null) {
-          throw new FileNotFoundException(keyPath + " not found in classpath");
-        }
-      } else {
-        keyFileStream = new FileInputStream(keyPath);
-      }
+      InputStream keyFileStream = new FileInputStream(keyPath);
       return create(projectId, keyFileStream);
     } catch (FileNotFoundException ex) {
       if (log.isLoggable(Level.WARNING)) {
@@ -175,13 +157,12 @@ public class RemoteGcsHelper {
    * Creates a {@code RemoteGcsHelper} object. Project id and path to JSON key are read from two
    * environment variables: {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY}.
    *
-   * @param options creation options
    * @return A {@code RemoteGcsHelper} object for the provided options.
    * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if environment
    *     variables {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY} are not set or if
    *     the file pointed by {@code GCLOUD_TESTS_KEY} does not exist
    */
-  public static RemoteGcsHelper create(Option... options) throws GcsHelperException {
+  public static RemoteGcsHelper create() throws GcsHelperException {
     String projectId = System.getenv(PROJECT_ID_ENV_VAR);
     String keyPath = System.getenv(PRIVATE_KEY_ENV_VAR);
     if (projectId == null) {
@@ -198,7 +179,7 @@ public class RemoteGcsHelper {
       }
       throw new GcsHelperException(message);
     }
-    return create(projectId, keyPath, options);
+    return create(projectId, keyPath);
   }
 
   private static class DeleteBucketTask implements Callable<Boolean> {
@@ -228,42 +209,6 @@ public class RemoteGcsHelper {
           }
         }
       }
-    }
-  }
-
-  public static abstract class Option implements java.io.Serializable {
-
-    private static final long serialVersionUID = 8849118657896662369L;
-
-    public static final class KeyFromClasspath extends Option {
-
-      private static final long serialVersionUID = -5506049413185246821L;
-
-      private final boolean keyFromClasspath;
-
-      public KeyFromClasspath(boolean keyFromClasspath) {
-        this.keyFromClasspath = keyFromClasspath;
-      }
-
-      public boolean keyFromClasspath() {
-        return keyFromClasspath;
-      }
-    }
-
-    Option() {
-      // package protected
-    }
-
-    public static KeyFromClasspath keyFromClassPath() {
-      return new KeyFromClasspath(true);
-    }
-
-    static Map<Class<? extends Option>, Option> asImmutableMap(Option... options) {
-      ImmutableMap.Builder<Class<? extends Option>, Option> builder = ImmutableMap.builder();
-      for (Option option : options) {
-        builder.put(option.getClass(), option);
-      }
-      return builder.build();
     }
   }
 
