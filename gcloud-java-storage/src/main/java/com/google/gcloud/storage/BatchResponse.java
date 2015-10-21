@@ -33,6 +33,7 @@ public final class BatchResponse implements Serializable {
   private final List<Result<Boolean>> deleteResult;
   private final List<Result<BlobInfo>> updateResult;
   private final List<Result<BlobInfo>> getResult;
+  private final List<Result<BlobInfo>> patchResult;
 
   public static class Result<T extends Serializable> implements Serializable {
 
@@ -114,15 +115,16 @@ public final class BatchResponse implements Serializable {
   }
 
   public BatchResponse(List<Result<Boolean>> deleteResult, List<Result<BlobInfo>> updateResult,
-      List<Result<BlobInfo>> getResult) {
+      List<Result<BlobInfo>> getResult, List<Result<BlobInfo>> patchResult) {
     this.deleteResult = ImmutableList.copyOf(deleteResult);
     this.updateResult = ImmutableList.copyOf(updateResult);
     this.getResult = ImmutableList.copyOf(getResult);
+    this.patchResult = ImmutableList.copyOf(patchResult);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(deleteResult, updateResult, getResult);
+    return Objects.hash(deleteResult, updateResult, getResult, patchResult);
   }
 
   @Override
@@ -133,7 +135,8 @@ public final class BatchResponse implements Serializable {
     BatchResponse other = (BatchResponse) obj;
     return Objects.equals(deleteResult, other.deleteResult)
         && Objects.equals(updateResult, other.updateResult)
-        && Objects.equals(updateResult, other.updateResult);
+        && Objects.equals(updateResult, other.updateResult)
+        && Objects.equals(patchResult, other.patchResult);
   }
 
   /**
@@ -155,5 +158,12 @@ public final class BatchResponse implements Serializable {
    */
   public List<Result<BlobInfo>> gets() {
     return getResult;
+  }
+
+  /**
+   * Returns the results for the patch operations using the request order.
+   */
+  public List<Result<BlobInfo>> patches() {
+    return patchResult;
   }
 }

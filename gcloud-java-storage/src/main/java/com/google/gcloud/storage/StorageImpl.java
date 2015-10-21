@@ -367,7 +367,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       return BlobInfo.fromPb(runWithRetries(new Callable<StorageObject>() {
         @Override
         public StorageObject call() {
-          return storageRpc.patch(storageObject, optionsMap);
+          return storageRpc.update(storageObject, optionsMap);
         }
       }, options().retryParams(), EXCEPTION_HANDLER));
     } catch (RetryHelperException e) {
@@ -378,6 +378,27 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public BlobInfo update(BlobInfo blobInfo) {
     return update(blobInfo, new BlobTargetOption[0]);
+  }
+
+  @Override
+  public BlobInfo patch(BlobInfo blobInfo, BlobTargetOption... options) {
+    final StorageObject storageObject = blobInfo.toPb();
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
+    try {
+      return BlobInfo.fromPb(runWithRetries(new Callable<StorageObject>() {
+        @Override
+        public StorageObject call() {
+          return storageRpc.patch(storageObject, optionsMap);
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public BlobInfo patch(BlobInfo blobInfo) {
+    return patch(blobInfo, new BlobTargetOption[0]);
   }
 
   @Override
@@ -512,15 +533,25 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       Map<StorageRpc.Option, ?> optionsMap = optionMap(null, null, entry.getValue());
       toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
     }
+    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toPatch =
+        Lists.newArrayListWithCapacity(batchRequest.toPatch().size());
+    for (Map.Entry<BlobInfo, Iterable<BlobTargetOption>> entry : batchRequest.toPatch().entrySet()) {
+      BlobInfo blobInfo = entry.getKey();
+      Map<StorageRpc.Option, ?> optionsMap =
+          optionMap(blobInfo.generation(), blobInfo.metageneration(), entry.getValue());
+      toPatch.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blobInfo.toPb(), optionsMap));
+    }
     StorageRpc.BatchResponse response =
-        storageRpc.batch(new StorageRpc.BatchRequest(toDelete, toUpdate, toGet));
+        storageRpc.batch(new StorageRpc.BatchRequest(toDelete, toUpdate, toGet, toPatch));
     List<BatchResponse.Result<Boolean>> deletes = transformBatchResult(
         toDelete, response.deletes, Functions.<Boolean>identity());
     List<BatchResponse.Result<BlobInfo>> updates = transformBatchResult(
         toUpdate, response.updates, BlobInfo.FROM_PB_FUNCTION);
     List<BatchResponse.Result<BlobInfo>> gets = transformBatchResult(
         toGet, response.gets, BlobInfo.FROM_PB_FUNCTION, HTTP_NOT_FOUND);
-    return new BatchResponse(deletes, updates, gets);
+    List<BatchResponse.Result<BlobInfo>> patches = transformBatchResult(
+        toPatch, response.patches, BlobInfo.FROM_PB_FUNCTION);
+    return new BatchResponse(deletes, updates, gets, patches);
   }
 
   private <I, O extends Serializable> List<BatchResponse.Result<O>> transformBatchResult(
@@ -662,6 +693,16 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
     BatchResponse response = apply(requestBuilder.build());
     return Collections.unmodifiableList(transformResultList(response.deletes(), Boolean.FALSE));
+  }
+
+  @Override
+  public List<BlobInfo> patch(BlobInfo... blobInfos) {
+    BatchRequest.Builder requestBuilder = BatchRequest.builder();
+    for (BlobInfo blobInfo : blobInfos) {
+      requestBuilder.patch(blobInfo);
+    }
+    BatchResponse response = apply(requestBuilder.build());
+    return Collections.unmodifiableList(transformResultList(response.patches(), null));
   }
 
   private static <T extends Serializable> List<T> transformResultList(

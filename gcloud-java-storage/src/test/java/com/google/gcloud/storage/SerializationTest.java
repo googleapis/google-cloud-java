@@ -53,7 +53,8 @@ public class SerializationTest {
   private static final BatchResponse BATCH_RESPONSE = new BatchResponse(
       Collections.singletonList(BatchResponse.Result.of(true)),
       Collections.<BatchResponse.Result<BlobInfo>>emptyList(),
-      Collections.<BatchResponse.Result<BlobInfo>>emptyList());
+      Collections.<BatchResponse.Result<BlobInfo>>emptyList(),
+      Collections.singletonList(BatchResponse.Result.of(BLOB_INFO)));
   private static final BaseListResult<BlobInfo> LIST_RESULT =
       new BaseListResult<>(null, "c", Collections.singletonList(BlobInfo.builder("b", "n").build()));
   private static final Storage.BlobListOption BLOB_LIST_OPTIONS =

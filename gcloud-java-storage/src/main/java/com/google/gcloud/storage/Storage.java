@@ -683,7 +683,8 @@ public interface Storage extends Service<StorageOptions> {
   BucketInfo update(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
-   * Update blob information.
+   * Update blob information. All the blob's metadata will be replaced using values from the given
+   * {@code blobInfo}. Update will fail if an incomplete {@code blobInfo} is provided.
    *
    * @return the updated blob
    * @throws StorageException upon failure
@@ -697,6 +698,30 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   BlobInfo update(BlobInfo blobInfo);
+
+  /**
+   * Update blob information according to the patch semantics. Original metadata are merged with
+   * metadata in the provided {@code blobInfo}. To replace metadata use
+   * {@link #update(com.google.gcloud.storage.BlobInfo)} instead.
+   *
+   * @return the patched blob
+   * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/how-tos/performance#patch">
+   *     Patch (partial update)</a>
+   */
+  BlobInfo patch(BlobInfo blobInfo, BlobTargetOption... options);
+
+  /**
+   * Update blob information according to the patch semantics. Original metadata are merged with
+   * metadata in the provided {@code blobInfo}. To replace metadata use
+   * {@link #update(com.google.gcloud.storage.BlobInfo)} instead.
+   *
+   * @return the patched blob
+   * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/how-tos/performance#patch">
+   *     Patch (partial update)</a>
+   */
+  BlobInfo patch(BlobInfo blobInfo);
 
   /**
    * Delete the requested bucket.
@@ -819,18 +844,20 @@ public interface Storage extends Service<StorageOptions> {
    * Gets the requested blobs. A batch request is used to perform this call.
    *
    * @param blobIds blobs to get
-   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
-   *     has been denied the corresponding item in the list is {@code null}.
+   * @return an immutable list of {@code BlobInfo} objects. If the blob does not exist or access to
+   *     it has been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
   List<BlobInfo> get(BlobId... blobIds);
 
   /**
-   * Updates the requested blobs. A batch request is used to perform this call.
+   * Updates the requested blobs. A batch request is used to perform this call. Blobs metadata will
+   * be replaced using values from the given {@code BlobInfo} objects.
    *
    * @param blobInfos blobs to update
-   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
-   *     has been denied the corresponding item in the list is {@code null}.
+   * @return an immutable list of {@code BlobInfo} objects. If an incomplete {@code blobInfo} is
+   *     provided, the blob does not exist or access to it has been denied the corresponding item in
+   *     the list is {@code null}.
    * @throws StorageException upon failure
    */
   List<BlobInfo> update(BlobInfo... blobInfos);
@@ -845,4 +872,19 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   List<Boolean> delete(BlobId... blobIds);
+
+  /**
+   * Updates the requested blobs according to the patch semantics. A batch request is used to
+   * perform this call. Original metadata are merged with metadata in the provided {@code BlobInfo}
+   * objects. To replace metadata use {@link #update(com.google.gcloud.storage.BlobInfo...)}
+   * instead.
+   *
+   * @param blobInfos blobs to patch
+   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
+   *     has been denied the corresponding item in the list is {@code null}.
+   * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/how-tos/performance#patch">
+   *     Patch (partial update)</a>
+   */
+  List<BlobInfo> patch(BlobInfo... blobInfos);
 }

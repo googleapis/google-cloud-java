@@ -40,6 +40,8 @@ public class BatchRequestTest {
             BlobSourceOption.metagenerationMatch(2))
         .update(BlobInfo.builder("b2", "o1").build(), BlobTargetOption.predefinedAcl(PUBLIC_READ))
         .update(BlobInfo.builder("b2", "o2").build())
+        .patch(BlobInfo.builder("b4", "o1").build(), BlobTargetOption.metagenerationMatch())
+        .patch(BlobInfo.builder("b4", "o2").build())
         .get("b3", "o1")
         .get("b3", "o2", BlobSourceOption.generationMatch(1))
         .get("b3", "o3")
@@ -81,5 +83,17 @@ public class BatchRequestTest {
     assertEquals(BlobId.of("b3", "o3"), get.getKey());
     assertTrue(Iterables.isEmpty(get.getValue()));
     assertFalse(gets.hasNext());
+
+    Iterator<Entry<BlobInfo, Iterable<BlobTargetOption>>> patches = request
+        .toPatch().entrySet().iterator();
+    Entry<BlobInfo, Iterable<BlobTargetOption>> patch = patches.next();
+    assertEquals(BlobInfo.builder("b4", "o1").build(), patch.getKey());
+    assertEquals(1, Iterables.size(patch.getValue()));
+    assertEquals(BlobTargetOption.metagenerationMatch(),
+        Iterables.getFirst(patch.getValue(), null));
+    patch = patches.next();
+    assertEquals(BlobInfo.builder("b4", "o2").build(), patch.getKey());
+    assertTrue(Iterables.isEmpty(patch.getValue()));
+    assertFalse(patches.hasNext());
   }
 }
