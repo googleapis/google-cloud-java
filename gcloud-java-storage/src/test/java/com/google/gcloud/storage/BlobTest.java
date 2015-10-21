@@ -111,6 +111,16 @@ public class BlobTest {
   }
 
   @Test
+  public void testPatch() throws Exception {
+    BlobInfo updatedInfo = BLOB_INFO.toBuilder().cacheControl("c").build();
+    expect(storage.patch(updatedInfo, new Storage.BlobTargetOption[0])).andReturn(updatedInfo);
+    replay(storage);
+    Blob updatedBlob = blob.patch(updatedInfo);
+    assertSame(storage, blob.storage());
+    assertEquals(updatedInfo, updatedBlob.info());
+  }
+
+  @Test
   public void testDelete() throws Exception {
     expect(storage.delete(BLOB_INFO.blobId(), new Storage.BlobSourceOption[0])).andReturn(true);
     replay(storage);
@@ -269,6 +279,45 @@ public class BlobTest {
     assertEquals(deleleResultList.size(), result.size());
     for (int i = 0; i < deleleResultList.size(); i++) {
       assertEquals(deleleResultList.get(i), result.get(i));
+    }
+  }
+
+  @Test
+  public void testPatchNone() throws Exception {
+    replay(storage);
+    assertTrue(Blob.patch(storage).isEmpty());
+  }
+
+  @Test
+  public void testPatchSome() throws Exception {
+    List<BlobInfo> blobInfoList = Lists.newArrayListWithCapacity(BLOB_ID_ARRAY.length);
+    for (BlobInfo info : BLOB_INFO_ARRAY) {
+      blobInfoList.add(info.toBuilder().contentType("content").build());
+    }
+    expect(storage.patch(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
+    replay(storage);
+    List<Blob> result = Blob.patch(storage, BLOB_INFO_ARRAY);
+    assertEquals(blobInfoList.size(), result.size());
+    for (int i = 0; i < blobInfoList.size(); i++) {
+      assertEquals(blobInfoList.get(i), result.get(i).info());
+    }
+  }
+
+  @Test
+  public void testPatchSomeNull() throws Exception {
+    List<BlobInfo> blobInfoList = Arrays.asList(
+        BLOB_INFO_ARRAY[0].toBuilder().contentType("content").build(), null,
+        BLOB_INFO_ARRAY[2].toBuilder().contentType("content").build());
+    expect(storage.patch(BLOB_INFO_ARRAY)).andReturn(blobInfoList);
+    replay(storage);
+    List<Blob> result = Blob.patch(storage, BLOB_INFO_ARRAY);
+    assertEquals(blobInfoList.size(), result.size());
+    for (int i = 0; i < blobInfoList.size(); i++) {
+      if (blobInfoList.get(i) != null) {
+        assertEquals(blobInfoList.get(i), result.get(i).info());
+      } else {
+        assertNull(result.get(i));
+      }
     }
   }
 
