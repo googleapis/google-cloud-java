@@ -669,23 +669,9 @@ public class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
-    B prepareNext(com.google.datastore.v1beta3.QueryResultBatch queryResultBatchPb) {
-      startCursor(new Cursor(queryResultBatchPb.getEndCursor()));
-      if (offset > 0 && queryResultBatchPb.getSkippedResults() < offset) {
-        offset(offset - queryResultBatchPb.getSkippedResults());
-      } else {
-        offset(0);
-        if (limit != null) {
-          limit(limit - queryResultBatchPb.getEntityResultsCount());
-        }
-      }
-      return self();
-    }
-
     public StructuredQuery<V> build() {
       return new StructuredQuery<>(this);
     }
-
   }
 
   static final class Builder<V> extends BaseBuilder<V, Builder<V>> {
@@ -858,8 +844,19 @@ distinctOn());
   }
 
   @Override
-  protected StructuredQuery<V> nextQuery(com.google.datastore.v1beta3.RunQueryResponse responsePb) {
-    return new Builder<>(type()).mergeFrom(toPb()).prepareNext(responsePb.getBatch()).build();
+  protected Query<V> nextQuery(com.google.datastore.v1beta3.RunQueryResponse responsePb) {
+    Builder<V> builder = new Builder<>(type());
+    builder.mergeFrom(toPb());
+    builder.startCursor(new Cursor(responsePb.getBatch().getEndCursor()));
+    if (offset > 0 && responsePb.getBatch().getSkippedResults() < offset) {
+      builder.offset(offset - responsePb.getBatch().getSkippedResults());
+    } else {
+      builder.offset(0);
+      if (limit != null) {
+        builder.limit(limit - responsePb.getBatch().getEntityResultsCount());
+      }
+    }
+    return builder.build();
   }
 
   @Override
@@ -907,7 +904,9 @@ distinctOn());
     return fromPb(resultType, namespace, com.google.datastore.v1beta3.Query.parseFrom(bytesPb));
   }
 
-  private static StructuredQuery<?> fromPb(ResultType<?> resultType, String namespace,
+  @SuppressWarnings("unchecked")
+  static <V> StructuredQuery<V> fromPb(
+      ResultType<?> resultType, String namespace,
       com.google.datastore.v1beta3.Query queryPb) {
     BaseBuilder<?, ?> builder;
     if (resultType.equals(ResultType.ENTITY)) {
@@ -917,6 +916,6 @@ distinctOn());
     } else {
       builder = new ProjectionEntityQueryBuilder();
     }
-    return builder.namespace(namespace).mergeFrom(queryPb).build();
+    return (StructuredQuery<V>) builder.namespace(namespace).mergeFrom(queryPb).build();
   }
 }

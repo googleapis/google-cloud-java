@@ -379,12 +379,9 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   @Override
-  protected StructuredQuery<V> nextQuery(com.google.datastore.v1beta3.RunQueryResponse responsePb) {
-    return new StructuredQuery.Builder<>(type())
-        .namespace(namespace())
-        .mergeFrom(responsePb.getQuery())
-        .prepareNext(responsePb.getBatch())
-        .build();
+  protected Query<V> nextQuery(com.google.datastore.v1beta3.RunQueryResponse responsePb) {
+    return StructuredQuery.<V>fromPb(type(), namespace(), responsePb.getQuery())
+        .nextQuery(responsePb);
   }
 
   @Override
