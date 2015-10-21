@@ -113,6 +113,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /**
+   * A class representing a filter composed of a combination of other filters.
+   */
   public static final class CompositeFilter extends Filter {
 
     private static final long serialVersionUID = 3610352685739360009L;
@@ -194,6 +197,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /**
+   * A class representing a filter based on a single property or ancestor.
+   */
   public static final class PropertyFilter extends Filter {
 
     private static final long serialVersionUID = -4514695915258598597L;
@@ -514,6 +520,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /**
+   * A class representing a projection based on a property.
+   */
   public static final class Projection implements Serializable {
 
     private static final long serialVersionUID = 3083707957256279470L;
@@ -665,12 +674,18 @@ public class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
+    /**
+     * Sets the query's order by clause (clearing any previously specified OrderBy settings).
+     */
     public B orderBy(OrderBy orderBy, OrderBy... others) {
       clearOrderBy();
       addOrderBy(orderBy, others);
       return self();
     }
 
+    /**
+     * Adds settings to the existing order by clause.
+     */
     public B addOrderBy(OrderBy orderBy, OrderBy... others) {
       this.orderBy.add(orderBy);
       Collections.addAll(this.orderBy, others);
@@ -754,6 +769,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /**
+   * A StructuredQuery builder for queries that return Entity results.
+   */
   public static final class EntityQueryBuilder extends BaseBuilder<Entity, EntityQueryBuilder> {
 
     EntityQueryBuilder() {
@@ -766,6 +784,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /**
+   * A StructuredQuery builder for queries that return Key results.
+   */
   public static final class KeyQueryBuilder extends BaseBuilder<Key, KeyQueryBuilder> {
 
     KeyQueryBuilder() {
@@ -787,6 +808,9 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
+  /**
+   * A StructuredQuery builder for projection queries.
+   */
   public static final class ProjectionEntityQueryBuilder
       extends BaseBuilder<ProjectionEntity, ProjectionEntityQueryBuilder> {
 
@@ -804,11 +828,17 @@ public class StructuredQuery<V> extends Query<V> {
       return super.clearProjection();
     }
 
+    /**
+     * Sets the query's projection clause (clearing any previously specified Projection settings).
+     */
     @Override
     public ProjectionEntityQueryBuilder projection(Projection projection, Projection... others) {
       return super.projection(projection, others);
     }
 
+    /**
+     * Adds one or more projections to the existing projection clause.
+     */
     @Override
     public ProjectionEntityQueryBuilder addProjection(Projection projection, Projection... others) {
       return super.addProjection(projection, others);
@@ -819,11 +849,17 @@ public class StructuredQuery<V> extends Query<V> {
       return super.clearGroupBy();
     }
 
+    /**
+     * Sets the query's group by clause (clearing any previously specified GroupBy settings).
+     */
     @Override
     public ProjectionEntityQueryBuilder groupBy(String property, String... others) {
       return super.groupBy(property, others);
     }
 
+    /**
+     * Adds one or more properties to the existing group by clause.
+     */
     @Override
     public ProjectionEntityQueryBuilder addGroupBy(String property, String... others) {
       return super.addGroupBy(property, others);
