@@ -30,6 +30,7 @@ import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
@@ -133,7 +134,7 @@ public abstract class AuthCredentials implements Serializable {
       try {
         computeCredential = getComputeCredential();
       } catch (GeneralSecurityException e) {
-       throw new IOException(e);
+        throw new IOException(e);
       }
     }
 
@@ -156,7 +157,7 @@ public abstract class AuthCredentials implements Serializable {
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
       in.defaultReadObject();
-      googleCredentials =  GoogleCredentials.getApplicationDefault();
+      googleCredentials = GoogleCredentials.getApplicationDefault();
     }
 
     @Override
@@ -183,8 +184,8 @@ public abstract class AuthCredentials implements Serializable {
    *
    * <p>Returns the Application Default Credentials which are credentials that identify and
    * authorize the whole application. This is the built-in service account if running on
-   * Google Compute Engine or the credentials file from the path in the environment variable
-   * GOOGLE_APPLICATION_CREDENTIALS.
+   * Google Compute Engine or the credentials file can be read from the path in the environment
+   * variable GOOGLE_APPLICATION_CREDENTIALS.
    * </p>
    *
    * @return the credentials instance.
@@ -194,8 +195,39 @@ public abstract class AuthCredentials implements Serializable {
     return new ApplicationDefaultAuthCredentials();
   }
 
+  /**
+   * Creates Service Account Credentials given an account id and a private key.
+   *
+   * <p>For details on how to obtain Service Account Credentials see
+   * <a href="https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts">Service
+   * Account Authentication</a>.
+   * </p>
+   *
+   * @param account id of the Service Account
+   * @param privateKey private key associated to the account
+   * @return the credentials instance.
+   */
   public static ServiceAccountAuthCredentials createFor(String account, PrivateKey privateKey) {
     return new ServiceAccountAuthCredentials(account, privateKey);
+  }
+
+  /**
+   * Creates Service Account Credentials given a stream for credentials in JSON format.
+   *
+   * <p>For details on how to obtain Service Account Credentials in JSON format see
+   * <a href="https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts">Service
+   * Account Authentication</a>.
+   * </p>
+   *
+   * @param jsonCredentialStream stream for Service Account Credentials in JSON format
+   * @return the credentials instance.
+   * @throws IOException if the credentials cannot be created from the stream.
+   */
+  public static ServiceAccountAuthCredentials createForJson(InputStream jsonCredentialStream)
+      throws IOException {
+    GoogleCredential tempCredentials = GoogleCredential.fromStream(jsonCredentialStream);
+    return new ServiceAccountAuthCredentials(tempCredentials.getServiceAccountId(),
+        tempCredentials.getServiceAccountPrivateKey());
   }
 
   public static AuthCredentials noCredentials() {
