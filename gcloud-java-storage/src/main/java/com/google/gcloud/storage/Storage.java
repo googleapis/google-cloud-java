@@ -683,7 +683,14 @@ public interface Storage extends Service<StorageOptions> {
   BucketInfo update(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
-   * Update blob information.
+   * Update blob information. Original metadata are merged with metadata in the provided
+   * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
+   * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
+   * <p>
+   * Example usage of replacing blob's metadata:
+   * <pre>    {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
+   *    {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
+   * </pre>
    *
    * @return the updated blob
    * @throws StorageException upon failure
@@ -691,7 +698,14 @@ public interface Storage extends Service<StorageOptions> {
   BlobInfo update(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
-   * Update blob information.
+   * Update blob information. Original metadata are merged with metadata in the provided
+   * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
+   * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
+   * <p>
+   * Example usage of replacing blob's metadata:
+   * <pre>    {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
+   *    {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
+   * </pre>
    *
    * @return the updated blob
    * @throws StorageException upon failure
@@ -826,7 +840,11 @@ public interface Storage extends Service<StorageOptions> {
   List<BlobInfo> get(BlobId... blobIds);
 
   /**
-   * Updates the requested blobs. A batch request is used to perform this call.
+   * Updates the requested blobs. A batch request is used to perform this call. Original metadata
+   * are merged with metadata in the provided {@code BlobInfo} objects. To replace metadata instead
+   * you first have to unset them. Unsetting metadata can be done by setting the provided
+   * {@code BlobInfo} objects metadata to {@code null}. See
+   * {@link #update(com.google.gcloud.storage.BlobInfo)} for a code example.
    *
    * @param blobInfos blobs to update
    * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it

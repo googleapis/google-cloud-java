@@ -190,6 +190,16 @@ public final class Blob {
    * made on the metadata generation of the current blob. If you want to update the information only
    * if the current blob metadata are at their latest version use the {@code metagenerationMatch}
    * option: {@code blob.update(newInfo, BlobTargetOption.metagenerationMatch())}.
+   * <p>
+   * Original metadata are merged with metadata in the provided {@code blobInfo}. To replace
+   * metadata instead you first have to unset them. Unsetting metadata can be done by setting the
+   * provided {@code blobInfo}'s metadata to {@code null}.
+   * </p>
+   * <p>
+   * Example usage of replacing blob's metadata:
+   * <pre>    {@code blob.update(blob.info().toBuilder().metadata(null).build());}
+   *    {@code blob.update(blob.info().toBuilder().metadata(newMetadata).build());}
+   * </pre>
    *
    * @param blobInfo new blob's information. Bucket and blob names must match the current ones
    * @param options update options
@@ -306,8 +316,7 @@ public final class Blob {
   }
 
   /**
-   * Gets the requested blobs. If {@code infos.length == 0} an empty list is returned. If
-   * {@code infos.length > 1} a batch request is used to fetch blobs.
+   * Gets the requested blobs. A batch request is used to fetch blobs.
    *
    * @param storage the storage service used to issue the request
    * @param blobs the blobs to get
@@ -331,8 +340,12 @@ public final class Blob {
   }
 
   /**
-   * Updates the requested blobs. If {@code infos.length == 0} an empty list is returned. If
-   * {@code infos.length > 1} a batch request is used to update blobs.
+   * Updates the requested blobs. A batch request is used to update blobs. Original metadata are
+   * merged with metadata in the provided {@code BlobInfo} objects. To replace metadata instead
+   * you first have to unset them. Unsetting metadata can be done by setting the provided
+   * {@code BlobInfo} objects metadata to {@code null}. See
+   * {@link #update(com.google.gcloud.storage.BlobInfo,
+   * com.google.gcloud.storage.Storage.BlobTargetOption...) } for a code example.
    *
    * @param storage the storage service used to issue the request
    * @param infos the blobs to update
@@ -356,8 +369,7 @@ public final class Blob {
   }
 
   /**
-   * Deletes the requested blobs. If {@code infos.length == 0} an empty list is returned. If
-   * {@code infos.length > 1} a batch request is used to delete blobs.
+   * Deletes the requested blobs. A batch request is used to delete blobs.
    *
    * @param storage the storage service used to issue the request
    * @param blobs the blobs to delete
