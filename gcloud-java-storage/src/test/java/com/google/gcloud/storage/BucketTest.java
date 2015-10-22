@@ -45,6 +45,7 @@ public class BucketTest {
       BlobInfo.builder("b", "n1").build(),
       BlobInfo.builder("b", "n2").build(),
       BlobInfo.builder("b", "n3").build());
+  private static final String CONTENT_TYPE = "text/plain";
 
   private Storage storage;
   private Bucket bucket;
@@ -161,11 +162,21 @@ public class BucketTest {
 
   @Test
   public void testCreate() throws Exception {
-    BlobInfo info = BlobInfo.builder("b", "n").build();
+    BlobInfo info = BlobInfo.builder("b", "n").contentType(CONTENT_TYPE).build();
     byte[] content = {0xD, 0xE, 0xA, 0xD};
     expect(storage.create(info, content)).andReturn(info);
     replay(storage);
-    Blob blob = bucket.create("n", content);
+    Blob blob = bucket.create("n", content, CONTENT_TYPE);
+    assertEquals(info, blob.info());
+  }
+
+  @Test
+  public void testCreateNullContentType() throws Exception {
+    BlobInfo info = BlobInfo.builder("b", "n").contentType(Storage.DEFAULT_CONTENT_TYPE).build();
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    expect(storage.create(info, content)).andReturn(info);
+    replay(storage);
+    Blob blob = bucket.create("n", content, null);
     assertEquals(info, blob.info());
   }
 
