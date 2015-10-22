@@ -16,12 +16,15 @@
 
 package com.google.gcloud.spi;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
+
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.storage.StorageException;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -33,8 +36,8 @@ public interface StorageRpc {
     PREDEFINED_DEFAULT_OBJECT_ACL("predefinedDefaultObjectAcl"),
     IF_METAGENERATION_MATCH("ifMetagenerationMatch"),
     IF_METAGENERATION_NOT_MATCH("ifMetagenerationNotMatch"),
-    IF_GENERATION_NOT_MATCH("ifGenerationMatch"),
-    IF_GENERATION_MATCH("ifGenerationNotMatch"),
+    IF_GENERATION_MATCH("ifGenerationMatch"),
+    IF_GENERATION_NOT_MATCH("ifGenerationNotMatch"),
     IF_SOURCE_METAGENERATION_MATCH("ifSourceMetagenerationMatch"),
     IF_SOURCE_METAGENERATION_NOT_MATCH("ifSourceMetagenerationNotMatch"),
     IF_SOURCE_GENERATION_MATCH("ifSourceGenerationMatch"),
@@ -105,9 +108,12 @@ public interface StorageRpc {
     public BatchRequest(Iterable<Tuple<StorageObject, Map<Option, ?>>> toDelete,
         Iterable<Tuple<StorageObject, Map<Option, ?>>> toUpdate,
         Iterable<Tuple<StorageObject, Map<Option, ?>>> toGet) {
-      this.toDelete = ImmutableList.copyOf(toDelete);
-      this.toUpdate = ImmutableList.copyOf(toUpdate);
-      this.toGet = ImmutableList.copyOf(toGet);
+      this.toDelete = ImmutableList.copyOf(
+          firstNonNull(toDelete, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
+      this.toUpdate = ImmutableList.copyOf(
+          firstNonNull(toUpdate, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
+      this.toGet = ImmutableList.copyOf(
+          firstNonNull(toGet, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
     }
   }
 
@@ -128,7 +134,7 @@ public interface StorageRpc {
 
   Bucket create(Bucket bucket, Map<Option, ?> options) throws StorageException;
 
-  StorageObject create(StorageObject object, byte[] content, Map<Option, ?> options)
+  StorageObject create(StorageObject object, InputStream content, Map<Option, ?> options)
       throws StorageException;
 
   Tuple<String, Iterable<Bucket>> list(Map<Option, ?> options) throws StorageException;

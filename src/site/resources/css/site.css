@@ -333,7 +333,50 @@ h1, h2, h3, h4, h5, h6 {
  What is it?
  */
 .about pre {
-  font-size: 110%;
+    padding: 8px;
+    background: #fff;
+    line-height: 1.6em;
+}
+
+pre, code {
+    font-family: Monaco, 'Droid Sans Mono', monospace !important;
+}
+
+.about .code-sample-tabs {
+    margin-top: 10px;
+    width: 450px;
+}
+
+.about .code-sample-tabs a.selected {
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.about .code-sample-tabs a {
+    display: inline-block;
+    padding: 2px 12px 0px 12px;
+    background-color: #f8f8f8;
+    margin-right: 8px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.about .hljs {
+    background-color: #fff;
+    font-size: .9em;
+    line-height: 1.6em;
+}
+
+.hljs {
+    display: block;
+    padding: .5em;
+    color: #333;
+    background: #f8f8f8;
+}
+
+[hljs] > pre {
+    margin: 0 !important;
 }
 
 /*
@@ -507,7 +550,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about h4 {
-    margin-bottom: 0;
+    margin: 0;
     font-size: 1.2em;
     font-weight: bold;
     color: #4285f4;
@@ -1112,6 +1155,16 @@ h1, h2, h3, h4, h5, h6 {
 
     .block-title {
         font-size: 2em;
+    }
+
+    .quote-box {
+        width: 40%;
+        float: left;
+    }
+
+    .quote-box--supplementary {
+        float: right;
+        width: 56%;
     }
 
     /*

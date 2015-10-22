@@ -1,4 +1,5 @@
 #!/bin/bash
+source ./utilities/integration_test_env.sh
 
 # This script is used by Travis-CI to publish artifacts (binary, sorce and javadoc jars) when releasing snapshots.
 # This script is referenced in .travis.yml.
@@ -24,15 +25,17 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" -a "${TRAVIS_BRANCH}" == "master" -
         git add $SITE_VERSION
         echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='http://GoogleCloudPlatform.github.io/gcloud-java/${SITE_VERSION}/index.html'\" /></head><body></body></html>" > index.html
         git add index.html
+        echo "<html><head><script>window.location.replace('/gcloud-java/${SITE_VERSION}/apidocs' + location.search)</script></head><body></body></html>" > apidocs/index.html
+        git add apidocs/index.html
         git commit -m "Added a new site for version $SITE_VERSION and updated the root directory's redirect."
         git config --global push.default simple
         git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/GoogleCloudPlatform/gcloud-java.git" > /dev/null 2>&1
 
-        # Update versions README and pom.xml in master branch
         cd ..
-        utilities/update_docs_version.sh
+        utilities/update_docs_version.sh # Update version in READMEs
+        mvn clean deploy --settings ~/.m2/settings.xml -P sign-deploy
     else
-        mvn deploy -DskipTests=true -Dgpg.skip=true --settings target/travis/settings.xml
+        mvn clean deploy -DskipTests=true -Dgpg.skip=true --settings ~/.m2/settings.xml
     fi
 else
     echo "Not deploying artifacts. This is only done with non-pull-request commits to master branch with Oracle Java 7 builds."

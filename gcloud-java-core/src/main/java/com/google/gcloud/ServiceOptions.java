@@ -16,12 +16,12 @@
 
 package com.google.gcloud;
 
-
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
+import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -34,6 +34,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
@@ -60,6 +61,9 @@ public abstract class ServiceOptions<
   private final AuthCredentials authCredentials;
   private final RetryParams retryParams;
   private final ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+  private final int connectTimeout;
+  private final int readTimeout;
+  private final Clock clock;
 
   public interface HttpTransportFactory extends Serializable {
     HttpTransport create();
@@ -89,7 +93,44 @@ public abstract class ServiceOptions<
     }
   }
 
+  /**
+   * A class providing access to the current time in milliseconds. This class is mainly used for
+   * testing and will be replaced by Java8's {@code java.time.Clock}.
+   *
+   * Implementations should implement {@code Serializable} wherever possible and must document
+   * whether or not they do support serialization.
+   */
+  public static abstract class Clock {
 
+    private static ServiceOptions.Clock DEFAULT_TIME_SOURCE = new DefaultClock();
+
+    /**
+     * Returns current time in milliseconds according to this clock.
+     */
+    public abstract long millis();
+
+    /**
+     * Returns the default clock. Default clock uses {@link System#currentTimeMillis()} to get time
+     * in milliseconds.
+     */
+    public static ServiceOptions.Clock defaultClock() {
+      return DEFAULT_TIME_SOURCE;
+    }
+
+    private static class DefaultClock extends ServiceOptions.Clock implements Serializable {
+
+      private static final long serialVersionUID = -5077300394286703864L;
+
+      @Override
+      public long millis() {
+        return System.currentTimeMillis();
+      }
+
+      private Object readResolve() throws ObjectStreamException {
+        return DEFAULT_TIME_SOURCE;
+      }
+    }
+  }
 
   protected abstract static class Builder<
       ServiceRpcT,
@@ -102,6 +143,9 @@ public abstract class ServiceOptions<
     private AuthCredentials authCredentials;
     private RetryParams retryParams;
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+    private int connectTimeout = -1;
+    private int readTimeout = -1;
+    private Clock clock;
 
     protected Builder() {}
 
@@ -121,34 +165,101 @@ public abstract class ServiceOptions<
       return (B) this;
     }
 
+    /**
+     * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
+     * replaced by Java8's {@code java.time.Clock}.
+     *
+     * @param clock the clock to set
+     * @return the builder.
+     */
+    public B clock(Clock clock) {
+      this.clock = clock;
+      return self();
+    }
+
+    /**
+     * Sets project id.
+     *
+     * @return the builder.
+     */
     public B projectId(String projectId) {
       this.projectId =
           checkNotNull(projectId, "Project ID cannot be set to null. Leave unset for default.");
       return self();
     }
 
+    /**
+     * Sets service host.
+     *
+     * @return the builder.
+     */
     public B host(String host) {
       this.host = host;
       return self();
     }
 
+    /**
+     * Sets the transport factory.
+     *
+     * @return the builder.
+     */
     public B httpTransportFactory(HttpTransportFactory httpTransportFactory) {
       this.httpTransportFactory = httpTransportFactory;
       return self();
     }
 
+    /**
+     * Sets the service authentication credentials.
+     *
+     * @return the builder.
+     */
     public B authCredentials(AuthCredentials authCredentials) {
       this.authCredentials = authCredentials;
       return self();
     }
 
+    /**
+     * Sets configuration parameters for request retries. If no configuration is set
+     * {@link RetryParams#noRetries()} is used.
+     *
+     * @return the builder.
+     */
     public B retryParams(RetryParams retryParams) {
       this.retryParams = retryParams;
       return self();
     }
 
+    /**
+     * Sets the factory for rpc services.
+     *
+     * @return the builder
+     */
     public B serviceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
       this.serviceRpcFactory = serviceRpcFactory;
+      return self();
+    }
+
+    /**
+     * Sets the timeout in milliseconds to establish a connection.
+     *
+     * @param connectTimeout connection timeout in milliseconds. 0 for an infinite timeout, a
+     * negative number for the default value (20000).
+     * @return the builder.
+     */
+    public B connectTimeout(int connectTimeout) {
+      this.connectTimeout = connectTimeout;
+      return self();
+    }
+
+    /**
+     * Sets the timeout in milliseconds to read data from an established connection.
+     *
+     * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a
+     * negative number for the default value (20000).
+     * @return the builder.
+     */
+    public B readTimeout(int readTimeout) {
+      this.readTimeout = readTimeout;
       return self();
     }
   }
@@ -161,6 +272,9 @@ public abstract class ServiceOptions<
     authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
     retryParams = builder.retryParams;
     serviceRpcFactory = builder.serviceRpcFactory;
+    connectTimeout = builder.connectTimeout;
+    readTimeout = builder.readTimeout;
+    clock = firstNonNull(builder.clock, Clock.defaultClock());
   }
 
   private static AuthCredentials defaultAuthCredentials() {
@@ -278,38 +392,98 @@ public abstract class ServiceOptions<
 
   protected abstract Set<String> scopes();
 
+  /**
+   * Returns the project id. 
+   */
   public String projectId() {
     return projectId;
   }
 
+  /**
+   * Returns the service host.
+   */
   public String host() {
     return host;
   }
 
+  /**
+   * Returns the transport factory.
+   */
   public HttpTransportFactory httpTransportFactory() {
     return httpTransportFactory;
   }
 
+  /**
+   * Returns the authentication credentials.
+   */
   public AuthCredentials authCredentials() {
     return authCredentials;
   }
 
+  /**
+   * Returns configuration parameters for request retries. By default requests are not retried:
+   * {@link RetryParams#noRetries()} is used.
+   */
   public RetryParams retryParams() {
     return retryParams != null ? retryParams : RetryParams.noRetries();
   }
 
+  /**
+   * Returns the factory for rpc services.
+   */
   public ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory() {
     return serviceRpcFactory;
   }
 
+  /**
+   * Returns a request initializer responsible for initializing requests according to service
+   * options.
+   */
   public HttpRequestInitializer httpRequestInitializer() {
     HttpTransport httpTransport = httpTransportFactory.create();
-    return authCredentials().httpRequestInitializer(httpTransport, scopes());
+    final HttpRequestInitializer baseRequestInitializer =
+        authCredentials().httpRequestInitializer(httpTransport, scopes());
+    return new HttpRequestInitializer() {
+      @Override
+      public void initialize(HttpRequest httpRequest) throws IOException {
+        baseRequestInitializer.initialize(httpRequest);
+        if (connectTimeout >= 0) {
+          httpRequest.setConnectTimeout(connectTimeout);
+        }
+        if (readTimeout >= 0) {
+          httpRequest.setReadTimeout(readTimeout);
+        }
+      }
+    };
+  }
+
+  /**
+   * Returns the timeout in milliseconds to establish a connection. 0 is an infinite timeout, a
+   * negative number is the default value (20000).
+   */
+  public int connectTimeout() {
+    return connectTimeout;
+  }
+
+  /**
+   * Returns the timeout in milliseconds to read from an established connection. 0 is an infinite
+   * timeout, a negative number is the default value (20000).
+   */
+  public int readTimeout() {
+    return readTimeout;
+  }
+
+  /**
+   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to
+   * get current time. 
+   */
+  public Clock clock() {
+    return clock;
   }
 
   protected int baseHashCode() {
     return Objects.hash(projectId, host, httpTransportFactory, authCredentials, retryParams,
-        serviceRpcFactory);
+        serviceRpcFactory, connectTimeout, readTimeout, clock);
   }
 
   protected boolean baseEquals(ServiceOptions<?, ?> other) {
@@ -318,7 +492,10 @@ public abstract class ServiceOptions<
         && Objects.equals(httpTransportFactory, other.httpTransportFactory)
         && Objects.equals(authCredentials, other.authCredentials)
         && Objects.equals(retryParams, other.retryParams)
-        && Objects.equals(serviceRpcFactory, other.serviceRpcFactory);
+        && Objects.equals(serviceRpcFactory, other.serviceRpcFactory)
+        && Objects.equals(connectTimeout, other.connectTimeout)
+        && Objects.equals(readTimeout, other.readTimeout)
+        && Objects.equals(clock, clock);
   }
 
   public abstract Builder<ServiceRpcT, OptionsT, ?> toBuilder();

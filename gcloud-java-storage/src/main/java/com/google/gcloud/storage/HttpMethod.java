@@ -20,5 +20,5 @@ package com.google.gcloud.storage;
  * Http method supported by Storage service.
  */
 public enum HttpMethod {
-  GET, HEAD, PUT, POST, DELETE
+  GET, HEAD, PUT, POST, DELETE, OPTIONS
 }

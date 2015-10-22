@@ -5,3 +5,8 @@ $('.nav-current').click(function(){
 $('.faq-btn').click(function(){
 	$(this).toggleClass('open');
 });
+
+(function() {
+  var myAppModule = angular.module('gcloud-java', []);
+  hljs.initHighlightingOnLoad();
+})();

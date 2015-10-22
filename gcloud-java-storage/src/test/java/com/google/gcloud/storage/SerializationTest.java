@@ -19,8 +19,11 @@ package com.google.gcloud.storage;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Acl.Project.ProjectRole;
 
 import org.junit.Test;
@@ -32,6 +35,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.Map;
 
 public class SerializationTest {
 
@@ -40,7 +44,7 @@ public class SerializationTest {
   private static final Acl.Project ACL_PROJECT_ = new Acl.Project(ProjectRole.VIEWERS, "pid");
   private static final Acl.User ACL_USER = new Acl.User("user");
   private static final Acl.RawEntity ACL_RAW = new Acl.RawEntity("raw");
-  private static final BlobInfo BLOB_INFO = BlobInfo.of("b", "n");
+  private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").build();
   private static final BucketInfo BUCKET_INFO = BucketInfo.of("b");
   private static final Cors.Origin ORIGIN = Cors.Origin.any();
   private static final Cors CORS =
@@ -50,8 +54,8 @@ public class SerializationTest {
       Collections.singletonList(BatchResponse.Result.of(true)),
       Collections.<BatchResponse.Result<BlobInfo>>emptyList(),
       Collections.<BatchResponse.Result<BlobInfo>>emptyList());
-  private static final ListResult<BlobInfo> LIST_RESULT =
-      new ListResult<>(null, "c", Collections.singletonList(BlobInfo.of("b", "n")));
+  private static final BaseListResult<BlobInfo> LIST_RESULT =
+      new BaseListResult<>(null, "c", Collections.singletonList(BlobInfo.builder("b", "n").build()));
   private static final Storage.BlobListOption BLOB_LIST_OPTIONS =
       Storage.BlobListOption.maxResults(100);
   private static final Storage.BlobSourceOption BLOB_SOURCE_OPTIONS =
@@ -64,6 +68,7 @@ public class SerializationTest {
       Storage.BucketSourceOption.metagenerationMatch(1);
   private static final Storage.BucketTargetOption BUCKET_TARGET_OPTIONS =
       Storage.BucketTargetOption.metagenerationNotMatch();
+  private static final Map<StorageRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -88,7 +93,7 @@ public class SerializationTest {
   public void testModelAndRequests() throws Exception {
     Serializable[] objects = {ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, BLOB_INFO,
         BUCKET_INFO,
-      ORIGIN, CORS, BATCH_REQUEST,BATCH_RESPONSE, LIST_RESULT, BLOB_LIST_OPTIONS,
+        ORIGIN, CORS, BATCH_REQUEST, BATCH_RESPONSE, LIST_RESULT, BLOB_LIST_OPTIONS,
         BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS, BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS,
         BUCKET_TARGET_OPTIONS};
     for (Serializable obj : objects) {
@@ -100,8 +105,40 @@ public class SerializationTest {
     }
   }
 
+  @Test
+  public void testReadChannelState() throws IOException, ClassNotFoundException {
+    StorageOptions options = StorageOptions.builder()
+        .projectId("p2")
+        .retryParams(RetryParams.getDefaultInstance())
+        .authCredentials(AuthCredentials.noCredentials())
+        .build();
+    BlobReadChannel reader =
+        new BlobReadChannelImpl(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
+    RestorableState<BlobReadChannel> state = reader.save();
+    RestorableState<BlobReadChannel> deserializedState = serializeAndDeserialize(state);
+    assertEquals(state, deserializedState);
+    assertEquals(state.hashCode(), deserializedState.hashCode());
+    assertEquals(state.toString(), deserializedState.toString());
+  }
+
+  @Test
+  public void testWriteChannelState() throws IOException, ClassNotFoundException {
+    StorageOptions options = StorageOptions.builder()
+        .projectId("p2")
+        .retryParams(RetryParams.getDefaultInstance())
+        .authCredentials(AuthCredentials.noCredentials())
+        .build();
+    BlobWriteChannelImpl writer = new BlobWriteChannelImpl(
+        options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");
+    RestorableState<BlobWriteChannel> state = writer.save();
+    RestorableState<BlobWriteChannel> deserializedState = serializeAndDeserialize(state);
+    assertEquals(state, deserializedState);
+    assertEquals(state.hashCode(), deserializedState.hashCode());
+    assertEquals(state.toString(), deserializedState.toString());
+  }
+
   @SuppressWarnings("unchecked")
-  private <T extends java.io.Serializable> T serializeAndDeserialize(T obj)
+  private <T> T serializeAndDeserialize(T obj)
       throws IOException, ClassNotFoundException {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
     try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
