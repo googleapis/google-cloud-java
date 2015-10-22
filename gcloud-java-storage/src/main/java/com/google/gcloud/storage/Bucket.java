@@ -182,7 +182,8 @@ public final class Bucket {
    * 
    * @param blob a blob name
    * @param content the blob content
-   * @param contentType the blob content type
+   * @param contentType the blob content type. If {@code null} then
+   *     {@value com.google.gcloud.storage.Storage#DEFAULT_CONTENT_TYPE} is used.
    * @param options options for blob creation
    * @return a complete blob information.
    * @throws StorageException upon failure
@@ -200,7 +201,8 @@ public final class Bucket {
    * 
    * @param blob a blob name
    * @param content the blob content as a stream
-   * @param contentType the blob content type
+   * @param contentType the blob content type. If {@code null} then
+   *     {@value com.google.gcloud.storage.Storage#DEFAULT_CONTENT_TYPE} is used.
    * @param options options for blob creation
    * @return a complete blob information.
    * @throws StorageException upon failure
