@@ -426,21 +426,6 @@ public class DefaultStorageRpc implements StorageRpc {
           }
         });
       }
-      for (final Tuple<StorageObject, Map<Option, ?>> tuple : request.toGet) {
-        getRequest(tuple.x(), tuple.y()).queue(batch, new JsonBatchCallback<StorageObject>() {
-          @Override
-          public void onSuccess(StorageObject storageObject, HttpHeaders responseHeaders) {
-            gets.put(tuple.x(),
-                Tuple.<StorageObject, StorageException>of(storageObject, null));
-          }
-
-          @Override
-          public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
-            gets.put(tuple.x(),
-                Tuple.<StorageObject, StorageException>of(null, translate(e)));
-          }
-        });
-      }
       for (final Tuple<StorageObject, Map<Option, ?>> tuple : request.toPatch) {
         patchRequest(tuple.x(), tuple.y()).queue(batch, new JsonBatchCallback<StorageObject>() {
           @Override
@@ -452,6 +437,21 @@ public class DefaultStorageRpc implements StorageRpc {
           @Override
           public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
             patches.put(tuple.x(),
+                Tuple.<StorageObject, StorageException>of(null, translate(e)));
+          }
+        });
+      }
+      for (final Tuple<StorageObject, Map<Option, ?>> tuple : request.toGet) {
+        getRequest(tuple.x(), tuple.y()).queue(batch, new JsonBatchCallback<StorageObject>() {
+          @Override
+          public void onSuccess(StorageObject storageObject, HttpHeaders responseHeaders) {
+            gets.put(tuple.x(),
+                Tuple.<StorageObject, StorageException>of(storageObject, null));
+          }
+
+          @Override
+          public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
+            gets.put(tuple.x(),
                 Tuple.<StorageObject, StorageException>of(null, translate(e)));
           }
         });
