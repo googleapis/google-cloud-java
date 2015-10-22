@@ -25,6 +25,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
@@ -171,6 +172,23 @@ public class ITStorageTest {
     assertEquals(blob.bucket(), updatedBlob.bucket());
     assertEquals(blob.name(), updatedBlob.name());
     assertEquals(CONTENT_TYPE, updatedBlob.contentType());
+    assertTrue(storage.delete(bucket, blobName));
+  }
+
+  @Test
+  public void testUpdateBlobReplaceMetadata() {
+    String blobName = "test-update-blob-replace-metadata";
+    BlobInfo blob = BlobInfo.builder(bucket, blobName)
+        .contentType(CONTENT_TYPE)
+        .metadata(ImmutableMap.of("k1", "a"))
+        .build();
+    assertNotNull(storage.create(blob));
+    BlobInfo updatedBlob = storage.update(blob.toBuilder().metadata(null).build());
+    assertNotNull(updatedBlob);
+    assertNull(updatedBlob.metadata());
+    updatedBlob = storage.update(blob.toBuilder().metadata(ImmutableMap.of("k2", "b")).build());
+    assertEquals(blob.blobId(), updatedBlob.blobId());
+    assertEquals(ImmutableMap.of("k2", "b"), updatedBlob.metadata());
     assertTrue(storage.delete(bucket, blobName));
   }
 
