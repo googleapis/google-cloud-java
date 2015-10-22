@@ -1,16 +1,14 @@
-Google Cloud Java Client
-==========================
+Google Cloud Java Client -- Core
+=========================================
 
-Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
+This module provides common functionality required by service-specific modules of this library.
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-core.svg)](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-core.svg)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs)
--  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
-
-This module provides common functionality and is required by the other service specific modules.
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/package-summary.html)
 
 Quickstart
 ----------
@@ -19,9 +17,14 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-core</artifactId>
-  <version>0.0.7</version>
+  <version>0.0.10</version>
 </dependency>
 ```
+
+Java Versions
+-------------
+
+Java 7 or above is required for using this client.
 
 Contributing
 ------------
@@ -29,11 +32,6 @@ Contributing
 Contributions to this library are always welcome and highly encouraged.
 
 See [CONTRIBUTING] for more information on how to get started.
-
-Java Versions
--------------
-
-Java 7 or above is required for using this client.
 
 Versioning
 ----------
