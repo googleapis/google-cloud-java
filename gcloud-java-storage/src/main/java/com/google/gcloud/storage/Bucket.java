@@ -194,6 +194,25 @@ public final class Bucket {
   }
 
   /**
+   * Creates a new blob in this bucket. Direct upload is used to upload {@code content}.
+   * For large content, {@link Blob#writer(com.google.gcloud.storage.Storage.BlobWriteOption...)}
+   * is recommended as it uses resumable upload.
+   * 
+   * @param blob a blob name
+   * @param content the blob content as a stream
+   * @param contentType the blob content type
+   * @param options options for blob creation
+   * @return a complete blob information.
+   * @throws StorageException upon failure
+   */
+  public Blob create(String blob, InputStream content, String contentType,
+      BlobWriteOption... options) {
+    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(info.name(), blob))
+        .contentType(MoreObjects.firstNonNull(contentType, Storage.DEFAULT_CONTENT_TYPE)).build();
+    return new Blob(storage, storage.create(blobInfo, content, options));
+  }
+
+  /**
    * Returns the bucket's {@code Storage} object used to issue requests.
    */
   public Storage storage() {

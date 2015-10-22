@@ -28,6 +28,8 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.storage.BatchResponse.Result;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -177,6 +179,28 @@ public class BucketTest {
     expect(storage.create(info, content)).andReturn(info);
     replay(storage);
     Blob blob = bucket.create("n", content, null);
+    assertEquals(info, blob.info());
+  }
+
+  @Test
+  public void testCreateFromStream() throws Exception {
+    BlobInfo info = BlobInfo.builder("b", "n").contentType(CONTENT_TYPE).build();
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    InputStream streamContent = new ByteArrayInputStream(content);
+    expect(storage.create(info, streamContent)).andReturn(info);
+    replay(storage);
+    Blob blob = bucket.create("n", streamContent, CONTENT_TYPE);
+    assertEquals(info, blob.info());
+  }
+
+  @Test
+  public void testCreateFromStreamNullContentType() throws Exception {
+    BlobInfo info = BlobInfo.builder("b", "n").contentType(Storage.DEFAULT_CONTENT_TYPE).build();
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    InputStream streamContent = new ByteArrayInputStream(content);
+    expect(storage.create(info, streamContent)).andReturn(info);
+    replay(storage);
+    Blob blob = bucket.create("n", streamContent, null);
     assertEquals(info, blob.info());
   }
 
