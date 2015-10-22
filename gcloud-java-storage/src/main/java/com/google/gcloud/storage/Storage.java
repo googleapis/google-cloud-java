@@ -20,10 +20,14 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.StorageRpc.Tuple;
 
+import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.Arrays;
@@ -31,7 +35,9 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * An interface for Google Cloud Storage.
@@ -142,6 +148,105 @@ public interface Storage extends Service<StorageOptions> {
     public static BlobTargetOption metagenerationNotMatch() {
       return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
+
+    static Tuple<BlobInfo, BlobTargetOption[]> convert(BlobInfo info, BlobWriteOption... options) {
+      BlobInfo.Builder infoBuilder = info.toBuilder().crc32c(null).md5(null);
+      List<BlobTargetOption> targetOptions = Lists.newArrayListWithCapacity(options.length);
+      for (BlobWriteOption option : options) {
+        switch (option.option) {
+          case IF_CRC32C_MATCH:
+            infoBuilder.crc32c(info.crc32c());
+            break;
+          case IF_MD5_MATCH:
+            infoBuilder.md5(info.md5());
+            break;
+          default:
+            targetOptions.add(option.toTargetOption());
+            break;
+        }
+      }
+      return Tuple.of(infoBuilder.build(),
+          targetOptions.toArray(new BlobTargetOption[targetOptions.size()]));
+    }
+  }
+
+  class BlobWriteOption implements Serializable {
+
+    private static final long serialVersionUID = -3880421670966224580L;
+
+    private final Option option;
+    private final Object value;
+
+    enum Option {
+      PREDEFINED_ACL, IF_GENERATION_MATCH, IF_GENERATION_NOT_MATCH, IF_METAGENERATION_MATCH,
+      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH;
+
+      StorageRpc.Option toRpcOption() {
+        return StorageRpc.Option.valueOf(this.name());
+      }
+    }
+
+    BlobTargetOption toTargetOption() {
+      return new BlobTargetOption(this.option.toRpcOption(), this.value);
+    }
+
+    private BlobWriteOption(Option option, Object value) {
+      this.option = option;
+      this.value = value;
+    }
+
+    private BlobWriteOption(Option option) {
+      this(option, null);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(option, value);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == null) {
+        return false;
+      }
+      if (!(obj instanceof BlobWriteOption)) {
+        return false;
+      }
+      final BlobWriteOption other = (BlobWriteOption) obj;
+      return this.option == other.option && Objects.equals(this.value, other.value);
+    }
+
+    public static BlobWriteOption predefinedAcl(PredefinedAcl acl) {
+      return new BlobWriteOption(Option.PREDEFINED_ACL, acl.entry());
+    }
+
+    public static BlobWriteOption doesNotExist() {
+      return new BlobWriteOption(Option.IF_GENERATION_MATCH, 0L);
+    }
+
+    public static BlobWriteOption generationMatch() {
+      return new BlobWriteOption(Option.IF_GENERATION_MATCH);
+    }
+
+    public static BlobWriteOption generationNotMatch() {
+      return new BlobWriteOption(Option.IF_GENERATION_NOT_MATCH);
+    }
+
+    public static BlobWriteOption metagenerationMatch() {
+      return new BlobWriteOption(Option.IF_METAGENERATION_MATCH);
+    }
+
+    public static BlobWriteOption metagenerationNotMatch() {
+      return new BlobWriteOption(Option.IF_METAGENERATION_NOT_MATCH);
+    }
+
+    public static BlobWriteOption md5Match() {
+      return new BlobWriteOption(Option.IF_MD5_MATCH, true);
+    }
+
+    public static BlobWriteOption crc32cMatch() {
+      return new BlobWriteOption(Option.IF_CRC32C_MATCH, true);
+    }
   }
 
   class BlobSourceOption extends Option {
@@ -223,7 +328,7 @@ public interface Storage extends Service<StorageOptions> {
     private final Object value;
 
     enum Option {
-      HTTP_METHOD, CONTENT_TYPE, MD5, SERVICE_ACCOUNT_CRED;
+      HTTP_METHOD, CONTENT_TYPE, MD5, SERVICE_ACCOUNT_CRED
     }
 
     private SignUrlOption(Option option, Object value) {
@@ -310,8 +415,8 @@ public interface Storage extends Service<StorageOptions> {
     public static class Builder {
 
       private final List<SourceBlob> sourceBlobs = new LinkedList<>();
-      private BlobInfo target;
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
+      private BlobInfo target;
 
       public Builder addSource(Iterable<String> blobs) {
         for (String blob : blobs) {
@@ -339,6 +444,11 @@ public interface Storage extends Service<StorageOptions> {
 
       public Builder targetOptions(BlobTargetOption... options) {
         Collections.addAll(targetOptions, options);
+        return this;
+      }
+
+      public Builder targetOptions(Iterable<BlobTargetOption> options) {
+        Iterables.addAll(targetOptions, options);
         return this;
       }
 
@@ -372,7 +482,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     public static ComposeRequest of(String bucket, Iterable<String> sources, String target) {
-      return of(sources, BlobInfo.of(bucket, target));
+      return of(sources, BlobInfo.builder(BlobId.of(bucket, target)).build());
     }
 
     public static Builder builder() {
@@ -384,28 +494,35 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = -2606508373751748775L;
 
-    private final String sourceBucket;
-    private final String sourceBlob;
+    private final BlobId source;
     private final List<BlobSourceOption> sourceOptions;
     private final BlobInfo target;
     private final List<BlobTargetOption> targetOptions;
 
     public static class Builder {
 
-      private String sourceBucket;
-      private String sourceBlob;
       private final Set<BlobSourceOption> sourceOptions = new LinkedHashSet<>();
-      private BlobInfo target;
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
+      private BlobId source;
+      private BlobInfo target;
 
       public Builder source(String bucket, String blob) {
-        this.sourceBucket = bucket;
-        this.sourceBlob = blob;
+        this.source = BlobId.of(bucket, blob);
+        return this;
+      }
+
+      public Builder source(BlobId source) {
+        this.source = source;
         return this;
       }
 
       public Builder sourceOptions(BlobSourceOption... options) {
         Collections.addAll(sourceOptions, options);
+        return this;
+      }
+
+      public Builder sourceOptions(Iterable<BlobSourceOption> options) {
+        Iterables.addAll(sourceOptions, options);
         return this;
       }
 
@@ -419,28 +536,27 @@ public interface Storage extends Service<StorageOptions> {
         return this;
       }
 
+      public Builder targetOptions(Iterable<BlobTargetOption> options) {
+        Iterables.addAll(targetOptions, options);
+        return this;
+      }
+
       public CopyRequest build() {
-        checkNotNull(sourceBucket);
-        checkNotNull(sourceBlob);
+        checkNotNull(source);
         checkNotNull(target);
         return new CopyRequest(this);
       }
     }
 
     private CopyRequest(Builder builder) {
-      sourceBucket = checkNotNull(builder.sourceBucket);
-      sourceBlob = checkNotNull(builder.sourceBlob);
+      source = checkNotNull(builder.source);
       sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
       target = checkNotNull(builder.target);
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
     }
 
-    public String sourceBucket() {
-      return sourceBucket;
-    }
-
-    public String sourceBlob() {
-      return sourceBlob;
+    public BlobId source() {
+      return source;
     }
 
     public List<BlobSourceOption> sourceOptions() {
@@ -459,8 +575,18 @@ public interface Storage extends Service<StorageOptions> {
       return builder().source(sourceBucket, sourceBlob).target(target).build();
     }
 
+    public static CopyRequest of(BlobId sourceBlobId, BlobInfo target) {
+      return builder().source(sourceBlobId).target(target).build();
+    }
+
     public static CopyRequest of(String sourceBucket, String sourceBlob, String targetBlob) {
-      return of(sourceBucket, sourceBlob, BlobInfo.of(sourceBucket, targetBlob));
+      return of(sourceBucket, sourceBlob,
+          BlobInfo.builder(BlobId.of(sourceBucket, targetBlob)).build());
+    }
+
+    public static CopyRequest of(BlobId sourceBlobId, String targetBlob) {
+      return of(sourceBlobId,
+          BlobInfo.builder(BlobId.of(sourceBlobId.bucket(), targetBlob)).build());
     }
 
     public static Builder builder() {
@@ -477,12 +603,34 @@ public interface Storage extends Service<StorageOptions> {
   BucketInfo create(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
-   * Create a new blob.
+   * Create a new blob with no content.
    *
    * @return a complete blob information.
    * @throws StorageException upon failure
    */
+  BlobInfo create(BlobInfo blobInfo, BlobTargetOption... options);
+
+  /**
+   * Create a new blob. Direct upload is used to upload {@code content}. For large content,
+   * {@link #writer} is recommended as it uses resumable upload. MD5 and CRC32C hashes of
+   * {@code content} are computed and used for validating transferred data.
+   *
+   * @return a complete blob information.
+   * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags">Hashes and ETags</a>
+   */
   BlobInfo create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options);
+
+  /**
+   * Create a new blob. Direct upload is used to upload {@code content}. For large content,
+   * {@link #writer} is recommended as it uses resumable upload. By default any md5 and crc32c
+   * values in the given {@code blobInfo} are ignored unless requested via the
+   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
+   *
+   * @return a complete blob information.
+   * @throws StorageException upon failure
+   */
+  BlobInfo create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options);
 
   /**
    * Return the requested bucket or {@code null} if not found.
@@ -497,6 +645,20 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   BlobInfo get(String bucket, String blob, BlobSourceOption... options);
+
+  /**
+   * Return the requested blob or {@code null} if not found.
+   *
+   * @throws StorageException upon failure
+   */
+  BlobInfo get(BlobId blob, BlobSourceOption... options);
+
+  /**
+   * Return the requested blob or {@code null} if not found.
+   *
+   * @throws StorageException upon failure
+   */
+  BlobInfo get(BlobId blob);
 
   /**
    * List the project's buckets.
@@ -529,6 +691,14 @@ public interface Storage extends Service<StorageOptions> {
   BlobInfo update(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
+   * Update blob information.
+   *
+   * @return the updated blob
+   * @throws StorageException upon failure
+   */
+  BlobInfo update(BlobInfo blobInfo);
+
+  /**
    * Delete the requested bucket.
    *
    * @return true if bucket was deleted
@@ -543,6 +713,22 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   boolean delete(String bucket, String blob, BlobSourceOption... options);
+
+  /**
+   * Delete the requested blob.
+   *
+   * @return true if blob was deleted
+   * @throws StorageException upon failure
+   */
+  boolean delete(BlobId blob, BlobSourceOption... options);
+
+  /**
+   * Delete the requested blob.
+   *
+   * @return true if blob was deleted
+   * @throws StorageException upon failure
+   */
+  boolean delete(BlobId blob);
 
   /**
    * Send a compose request.
@@ -569,6 +755,14 @@ public interface Storage extends Service<StorageOptions> {
   byte[] readAllBytes(String bucket, String blob, BlobSourceOption... options);
 
   /**
+   * Reads all the bytes from a blob.
+   *
+   * @return the blob's content.
+   * @throws StorageException upon failure
+   */
+  byte[] readAllBytes(BlobId blob, BlobSourceOption... options);
+
+  /**
    * Send a batch request.
    *
    * @return the batch response
@@ -584,11 +778,20 @@ public interface Storage extends Service<StorageOptions> {
   BlobReadChannel reader(String bucket, String blob, BlobSourceOption... options);
 
   /**
-   * Create a blob and return a channel for writing its content.
+   * Return a channel for reading the blob's content.
    *
    * @throws StorageException upon failure
    */
-  BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options);
+  BlobReadChannel reader(BlobId blob, BlobSourceOption... options);
+
+  /**
+   * Create a blob and return a channel for writing its content. By default any md5 and crc32c
+   * values in the given {@code blobInfo} are ignored unless requested via the
+   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
+   *
+   * @throws StorageException upon failure
+   */
+  BlobWriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options);
 
   /**
    * Generates a signed URL for a blob.
@@ -597,10 +800,49 @@ public interface Storage extends Service<StorageOptions> {
    * is only valid within a certain time period.
    * This is particularly useful if you don't want publicly
    * accessible blobs, but don't want to require users to explicitly log in.
+   * <p>
+   * Example usage of creating a signed URL that is valid for 2 weeks:
+   * <pre>   {@code
+   *     service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS);
+   * }</pre>
    *
-   * @param blobInfo the blob associated with the signed url
-   * @param  expirationTimeInSeconds the signed URL expiration (using epoch time)
+   * @param blobInfo the blob associated with the signed URL
+   * @param duration time until the signed URL expires, expressed in {@code unit}. The finer
+   *     granularity supported is 1 second, finer granularities will be truncated
+   * @param unit time unit of the {@code duration} parameter
+   * @param options optional URL signing options
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
    */
-  URL signUrl(BlobInfo blobInfo, long expirationTimeInSeconds, SignUrlOption... options);
+  URL signUrl(BlobInfo blobInfo, long duration, TimeUnit unit, SignUrlOption... options);
+
+  /**
+   * Gets the requested blobs. A batch request is used to perform this call.
+   *
+   * @param blobIds blobs to get
+   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
+   *     has been denied the corresponding item in the list is {@code null}.
+   * @throws StorageException upon failure
+   */
+  List<BlobInfo> get(BlobId... blobIds);
+
+  /**
+   * Updates the requested blobs. A batch request is used to perform this call.
+   *
+   * @param blobInfos blobs to update
+   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
+   *     has been denied the corresponding item in the list is {@code null}.
+   * @throws StorageException upon failure
+   */
+  List<BlobInfo> update(BlobInfo... blobInfos);
+
+  /**
+   * Deletes the requested blobs. A batch request is used to perform this call.
+   *
+   * @param blobIds blobs to delete
+   * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
+   *     list is {@code true}. If deletion failed or access to the resource was denied the item is
+   *     {@code false}.
+   * @throws StorageException upon failure
+   */
+  List<Boolean> delete(BlobId... blobIds);
 }

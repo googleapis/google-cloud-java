@@ -16,15 +16,14 @@
 
 package com.google.gcloud.spi;
 
-import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 
 import java.net.InetAddress;
 import java.net.MalformedURLException;
-import java.net.UnknownHostException;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,11 +50,13 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
         new com.google.datastore.v1beta3.client.DatastoreOptions.Builder()
             .projectId(options.projectId())
             .initializer(options.httpRequestInitializer());
-    if (isLocalHost(options.host())) {
-      clientBuilder = clientBuilder.localHost(removeScheme(options.host()));
-    } else if (!com.google.datastore.v1beta3.client.DatastoreFactory.DEFAULT_HOST
-        .equals(options.host()) && !Strings.isNullOrEmpty(options.host())) {
-      String fullURL = options.host();
+    String normalizedHost = options.host() != null ? options.host().toLowerCase() : "";
+    if (isLocalHost(normalizedHost)) {
+      clientBuilder = clientBuilder.localHost(removeScheme(normalizedHost));
+    } else if (!removeScheme(com.google.datastore.v1beta3.client.DatastoreFactory.DEFAULT_HOST)
+                    .equals(removeScheme(normalizedHost))
+        && !normalizedHost.isEmpty()) {
+      String fullURL = normalizedHost;
       if (fullURL.charAt(fullURL.length() - 1) != '/') {
         fullURL = fullURL + '/';
       }
@@ -69,12 +70,9 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   }
 
   private static boolean isLocalHost(String host) {
-    if (host != null) {
+    if (!host.isEmpty()) {
       try {
-        String normalizedHost = host;
-        if (!includesScheme(normalizedHost)) {
-          normalizedHost = "http://" + normalizedHost;
-        }
+        String normalizedHost = "http://" + removeScheme(host);
         InetAddress hostAddr = InetAddress.getByName(new URL(normalizedHost).getHost());
         return hostAddr.isAnyLocalAddress() || hostAddr.isLoopbackAddress();
       } catch (UnknownHostException | MalformedURLException e) {
@@ -82,10 +80,6 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
       }
     }
     return false;
-  }
-
-  private static boolean includesScheme(String url) {
-    return url.startsWith("http://") || url.startsWith("https://");
   }
 
   private static String removeScheme(String url) {

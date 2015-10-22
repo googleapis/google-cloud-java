@@ -30,6 +30,7 @@ import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
+import com.google.gcloud.datastore.testing.LocalGcdHelper;
 import com.google.gcloud.spi.DatastoreRpc;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
@@ -39,7 +40,9 @@ import org.easymock.EasyMock;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -105,11 +108,15 @@ public class DatastoreTest {
   private Datastore datastore;
 
   private static LocalGcdHelper gcdHelper;
+  private static final int PORT = LocalGcdHelper.findAvailablePort(LocalGcdHelper.DEFAULT_PORT);
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
-    if (!LocalGcdHelper.isActive(PROJECT_ID)) {
-      gcdHelper = LocalGcdHelper.start(PROJECT_ID);
+    if (!LocalGcdHelper.isActive(PROJECT_ID, PORT)) {
+      gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT);
     }
   }
 
@@ -117,7 +124,7 @@ public class DatastoreTest {
   public void setUp() throws IOException, InterruptedException {
     options = DatastoreOptions.builder()
         .projectId(PROJECT_ID)
-        .host("localhost:" + LocalGcdHelper.PORT)
+        .host("localhost:" + PORT)
         .build();
     datastore = DatastoreFactory.instance().get(options);
     StructuredQuery<Key> query = Query.keyQueryBuilder().build();
@@ -758,11 +765,14 @@ public class DatastoreTest {
   }
 
   @Test
-  public void testRetires() throws Exception {
+  public void testRetryableException() throws Exception {
     com.google.datastore.v1beta3.LookupRequest requestPb =
         com.google.datastore.v1beta3.LookupRequest.newBuilder().addKeys(KEY1.toPb()).build();
-    com.google.datastore.v1beta3.LookupResponse responsePb = com.google.datastore.v1beta3.LookupResponse.newBuilder()
-        .addFound(com.google.datastore.v1beta3.EntityResult.newBuilder().setEntity(ENTITY1.toPb())).build();
+    com.google.datastore.v1beta3.LookupResponse responsePb =
+        com.google.datastore.v1beta3.LookupResponse.newBuilder()
+            .addFound(
+                com.google.datastore.v1beta3.EntityResult.newBuilder().setEntity(ENTITY1.toPb()))
+            .build();
     DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
     DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
@@ -778,6 +788,53 @@ public class DatastoreTest {
     Datastore datastore = DatastoreFactory.instance().get(options);
     Entity entity = datastore.get(KEY1);
     assertEquals(ENTITY1, entity);
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  @Test
+  public void testNonRetryableException() throws Exception {
+    com.google.datastore.v1beta3.LookupRequest requestPb =
+        com.google.datastore.v1beta3.LookupRequest.newBuilder().addKeys(KEY1.toPb()).build();
+    DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
+    DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
+        .andReturn(rpcMock);
+    EasyMock.expect(rpcMock.lookup(requestPb))
+        .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.PERMISSION_DENIED))
+        .times(1);
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    RetryParams retryParams = RetryParams.builder().retryMinAttempts(2).build();
+    DatastoreOptions options = this.options.toBuilder()
+        .retryParams(retryParams)
+        .serviceRpcFactory(rpcFactoryMock)
+        .build();
+    Datastore datastore = DatastoreFactory.instance().get(options);
+    thrown.expect(DatastoreException.class);
+    thrown.expectMessage(Reason.PERMISSION_DENIED.description());
+    datastore.get(KEY1);
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  @Test
+  public void testRuntimeException() throws Exception {
+    com.google.datastore.v1beta3.LookupRequest requestPb =
+        com.google.datastore.v1beta3.LookupRequest.newBuilder().addKeys(KEY1.toPb()).build();
+    DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
+    DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
+        .andReturn(rpcMock);
+    String exceptionMessage = "Artificial runtime exception";
+    EasyMock.expect(rpcMock.lookup(requestPb))
+        .andThrow(new RuntimeException(exceptionMessage));
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    DatastoreOptions options = this.options.toBuilder()
+        .retryParams(RetryParams.getDefaultInstance())
+        .serviceRpcFactory(rpcFactoryMock)
+        .build();
+    Datastore datastore = DatastoreFactory.instance().get(options);
+    thrown.expect(DatastoreException.class);
+    thrown.expectMessage(exceptionMessage);
+    datastore.get(KEY1);
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
 }

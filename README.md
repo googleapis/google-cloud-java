@@ -9,15 +9,11 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs)
--  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
 
 This client supports the following Google Cloud Platform services:
 
 -  [Google Cloud Datastore] (#google-cloud-datastore)
-
-<!---
--  [Google Cloud Storage] (https://cloud.google.com/storage/)
---->
+-  [Google Cloud Storage] (#google-cloud-storage)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -29,32 +25,39 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.0.7</version>
+  <version>0.0.10</version>
 </dependency>
 ```
 
-<!---
 Example Applications
 --------------------
 
--  `java-datastore-sample`_ - A sample using Cloud Datastore
-.. _java-datastore-sample: https://github.com/GoogleCloudPlatform/java-datastore-sample
---->
+- [`DatastoreExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/DatastoreExample.java) - A simple command line interface for the Cloud Datastore
+  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html).
+- [`StorageExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
+  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
+
+Authentication
+--------------
+
+There are multiple ways to authenticate to use Google Cloud services.
+
+1. When using `gcloud-java` libraries from within Compute/App Engine, no additional authentication steps are necessary.
+2. When using `gcloud-java` libraries elsewhere, there are two options:
+  * [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).  Supply a path to the downloaded JSON credentials file when building the options supplied to datastore/storage constructor.
+  * If running locally for development/testing, you can use use [Google Cloud SDK](https://cloud.google.com/sdk/?hl=en).  To use the SDK authentication, [download the SDK](https://cloud.google.com/sdk/?hl=en) if you haven't already.  Then login using the SDK (`gcloud auth login` in command line), and set your current project using `gcloud config set project PROJECT_ID`.
 
 Google Cloud Datastore
 ----------------------
 
-Google [Cloud Datastore][cloud-datastore] is a fully managed, schemaless database for
-storing non-relational data. Cloud Datastore automatically scales with
-your users and supports ACID transactions, high availability of reads and
-writes, strong consistency for reads and ancestor queries, and eventual
-consistency for all other queries.
+- [API Documentation][datastore-api]
+- [Official Documentation][cloud-datastore-docs]
 
-See the [Google Cloud Datastore docs][cloud-datastore-activation] for more details on how to activate
-Cloud Datastore for your project.
+*Follow the [activation instructions][cloud-datastore-activation] to use the Google Cloud Datastore API with your project.*
 
-See the ``gcloud-java`` API [datastore documentation][datastore-api] to learn how to interact
-with the Cloud Datastore using this Client Library.
+#### Preview
+
+Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 
 ```java
 import com.google.gcloud.datastore.Datastore;
@@ -65,8 +68,7 @@ import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-DatastoreOptions options = DatastoreOptions.builder().projectId(PROJECT_ID).build();
-Datastore datastore = DatastoreFactory.instance().get(options);
+Datastore datastore = DatastoreFactory.instance().get(DatastoreOptions.getDefaultInstance());
 KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
@@ -86,19 +88,58 @@ if (entity == null) {
 }
 ```
 
-Contributing
-------------
+Google Cloud Storage
+----------------------
 
-Contributions to this library are always welcome and highly encouraged.
+- [API Documentation][storage-api]
+- [Official Documentation][cloud-storage-docs]
 
-See [CONTRIBUTING] for more information on how to get started.
+*Follow the [activation instructions][cloud-storage-activation] to use the Google Cloud Storage API with your project.*
 
-Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
+#### Preview
+
+Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+```java
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.BlobId;
+import com.google.gcloud.storage.Storage;
+import com.google.gcloud.storage.StorageFactory;
+import com.google.gcloud.storage.StorageOptions;
+
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
+
+StorageOptions options = StorageOptions.builder().projectId("project").build();
+Storage storage = StorageFactory.instance().get(options);
+BlobId blobId = BlobId.of("bucket", "blob_name");
+Blob blob = Blob.load(storage, blobId);
+if (blob == null) {
+  BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+  storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
+} else {
+  System.out.println("Updating content for " + blobId.name());
+  byte[] prevContent = blob.content();
+  System.out.println(new String(prevContent, UTF_8));
+  WritableByteChannel channel = blob.writer();
+  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
+  channel.close();
+}
+```
 
 Java Versions
 -------------
 
 Java 7 or above is required for using this client.
+
+Testing
+-------
+
+This library provides tools to help write tests for code that uses gcloud-java services.
+
+See [TESTING] to read more about using our testing helpers.
 
 Versioning
 ----------
@@ -109,6 +150,15 @@ It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered
 stable.
 
+Contributing
+------------
+
+Contributions to this library are always welcome and highly encouraged.
+
+See [CONTRIBUTING] for more information on how to get started.
+
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
+
 License
 -------
 
@@ -118,6 +168,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md
 [LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md
 [cloud-platform]: https://cloud.google.com/
 [cloud-datastore]: https://cloud.google.com/datastore/docs
 [cloud-datastore-docs]: https://cloud.google.com/datastore/docs
@@ -130,3 +181,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage]: https://cloud.google.com/storage/
 [cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
+[cloud-storage-activation]: https://cloud.google.com/storage/docs/signup
+[storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/storage/package-summary.html

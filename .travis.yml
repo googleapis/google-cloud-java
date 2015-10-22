@@ -8,7 +8,8 @@ before_install:
 - git clone -b travis `git config --get remote.origin.url` target/travis
 - cp target/travis/settings.xml ~/.m2/settings.xml
 install: mvn install -DskipTests=true -Dgpg.skip=true
-script: mvn verify
+script: 
+- utilities/verify.sh
 branches:
   only:
   - master
@@ -20,3 +21,5 @@ env:
   - secure: "CUM2l73KFm7U4eDsUKkh1WyEUzF3v94Ltvs7MnKU9olE1dNp3YmRBL9Lqhx3hSDqm/xv0ETQsPy29Fs2+VFkhQQxSley6iS/4trr2fioTB680txfXo/zDdmGSP1q1/U40fv1S+jvuBRAhDV5W+8dhWOGtzMH0tJp/TszeDGlmCY="
   - secure: "YBbdzseg5yDFpQIiMoc3P2BTmqef4o+KAvrLMEbobXjIkiglUQ7UHCoRWClX74fTKAwuC7JvK7o5xJGLnaY43jJADXrGtE8/d44HNJaieE67mNosDYtOiA0iI2uIRFCAnXJCZ8f/iHx2xVMHMNWlwyoil4IUcjj+D7FRcsT5alE="
   - secure: "Od7BwllgFXVfzFe8ooTNm05TR+Xd5QjHW0oqhU8vclaQs2oX4e0eNIsebXQfLi3xDgd1pz5uUQC/Z4S0NqACwyUuUvPdGYYmRPTR7Dh8HgGJ4ojSdN3RwaHsxUqG7Ajts9rIHOtRpY28xOChVRNX0Z7eAPlvxYU4Ed2ZEo356r0="
+  - secure: "ROxa8HHuba+Dfixljq6poW1+Uwv8EaZUtTTTB7KEtAHJRN8rwoNS4TC0U0PEHcYAL+ivxP3zIfWOCoWreJGoa+V8y9BtLSuamUj/SSsuoHRdJjq5BmcHI/77P11HAzCH6Ul/GxsRB52/IRHwJyfKkh8XUMVSsCl7AG4CKUgt63Y="
+  - secure: "MKZ3y6IYp3Z67T+BO4Brw+my8sRMSMdWWgvUcyBpwQZ64w7ccHJCce4W8WHCPNko/eczHHCJELPG28VNyPTWIV/Jt2ZJ6L9qLCjsQpDPOdJdDaAKc9Df4sm8fB0FBiPVDwMYPQF1/Sy2gK7FZf0YR3LOeoyzswRgmj5bQMdVEeU="

@@ -37,13 +37,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * A Google Storage object.
+ * Google Storage object metadata.
  *
- * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and Terminology</a>
+ * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and
+ *      Terminology</a>
  */
 public final class BlobInfo implements Serializable {
-
-  private static final long serialVersionUID = 2228487739943277159L;
 
   static final Function<StorageObject, BlobInfo> FROM_PB_FUNCTION =
       new Function<StorageObject, BlobInfo>() {
@@ -52,7 +51,6 @@ public final class BlobInfo implements Serializable {
           return BlobInfo.fromPb(pb);
         }
       };
-
   static final Function<BlobInfo, StorageObject> TO_PB_FUNCTION =
       new Function<BlobInfo, StorageObject>() {
         @Override
@@ -60,10 +58,9 @@ public final class BlobInfo implements Serializable {
           return blobInfo.toPb();
         }
       };
-
-  private final String bucket;
+  private static final long serialVersionUID = 2228487739943277159L;
+  private final BlobId blobId;
   private final String id;
-  private final String name;
   private final String selfLink;
   private final String cacheControl;
   private final List<Acl> acl;
@@ -86,9 +83,8 @@ public final class BlobInfo implements Serializable {
 
   public static final class Builder {
 
-    private String bucket;
+    private BlobId blobId;
     private String id;
-    private String name;
     private String contentType;
     private String contentEncoding;
     private String contentDisposition;
@@ -111,18 +107,13 @@ public final class BlobInfo implements Serializable {
 
     private Builder() {}
 
-    public Builder bucket(String bucket) {
-      this.bucket = checkNotNull(bucket);
+    public Builder blobId(BlobId blobId) {
+      this.blobId = checkNotNull(blobId);
       return this;
     }
 
     Builder id(String id) {
       this.id = id;
-      return this;
-    }
-
-    public Builder name(String name) {
-      this.name = checkNotNull(name);
       return this;
     }
 
@@ -222,15 +213,13 @@ public final class BlobInfo implements Serializable {
     }
 
     public BlobInfo build() {
-      checkNotNull(bucket);
-      checkNotNull(name);
+      checkNotNull(blobId);
       return new BlobInfo(this);
     }
   }
 
   private BlobInfo(Builder builder) {
-    bucket = builder.bucket;
-    name = builder.name;
+    blobId = builder.blobId;
     id = builder.id;
     cacheControl = builder.cacheControl;
     contentEncoding = builder.contentEncoding;
@@ -253,8 +242,12 @@ public final class BlobInfo implements Serializable {
     updateTime = builder.updateTime;
   }
 
+  public BlobId blobId() {
+    return blobId;
+  }
+
   public String bucket() {
-    return bucket;
+    return blobId().bucket();
   }
 
   public String id() {
@@ -262,7 +255,7 @@ public final class BlobInfo implements Serializable {
   }
 
   public String name() {
-    return name;
+    return blobId().name();
   }
 
   public String cacheControl() {
@@ -343,8 +336,7 @@ public final class BlobInfo implements Serializable {
 
   public Builder toBuilder() {
     return new Builder()
-        .bucket(bucket)
-        .name(name)
+        .blobId(blobId)
         .id(id)
         .generation(generation)
         .cacheControl(cacheControl)
@@ -378,33 +370,18 @@ public final class BlobInfo implements Serializable {
         .toString();
   }
 
-  public static BlobInfo of(String bucket, String name) {
-    return builder(bucket, name).build();
-  }
-
-  public static Builder builder(BucketInfo bucketInfo, String name) {
-    return builder(bucketInfo.name(), name);
-  }
-
-  public static Builder builder(String bucket, String name) {
-    return new Builder().bucket(bucket).name(name);
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(bucket, name);
+    return Objects.hash(blobId);
   }
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof BlobInfo)) {
-      return  false;
-    }
-    return Objects.equals(toPb(), ((BlobInfo) obj).toPb());
+    return obj instanceof BlobInfo && Objects.equals(toPb(), ((BlobInfo) obj).toPb());
   }
 
   StorageObject toPb() {
-    StorageObject storageObject = new StorageObject();
+    StorageObject storageObject = blobId.toPb();
     if (acl != null) {
       storageObject.setAcl(Lists.transform(acl, new Function<Acl, ObjectAccessControl>() {
         @Override
@@ -425,7 +402,6 @@ public final class BlobInfo implements Serializable {
     if (owner != null) {
       storageObject.setOwner(new Owner().setEntity(owner.toPb()));
     }
-    storageObject.setBucket(bucket);
     storageObject.setCacheControl(cacheControl);
     storageObject.setContentEncoding(contentEncoding);
     storageObject.setCrc32c(crc32c);
@@ -435,7 +411,6 @@ public final class BlobInfo implements Serializable {
     storageObject.setMediaLink(mediaLink);
     storageObject.setMetadata(metadata);
     storageObject.setMetageneration(metageneration);
-    storageObject.setName(name);
     storageObject.setContentDisposition(contentDisposition);
     storageObject.setComponentCount(componentCount);
     storageObject.setContentLanguage(contentLanguage);
@@ -445,24 +420,62 @@ public final class BlobInfo implements Serializable {
     return storageObject;
   }
 
+  public static Builder builder(BucketInfo bucketInfo, String name) {
+    return builder(bucketInfo.name(), name);
+  }
+
+  public static Builder builder(String bucket, String name) {
+    return new Builder().blobId(BlobId.of(bucket, name));
+  }
+
+  public static Builder builder(BlobId blobId) {
+    return new Builder().blobId(blobId);
+  }
+
   static BlobInfo fromPb(StorageObject storageObject) {
-    Builder builder = new Builder()
-        .bucket(storageObject.getBucket())
-        .cacheControl(storageObject.getCacheControl())
-        .contentEncoding(storageObject.getContentEncoding())
-        .crc32c(storageObject.getCrc32c())
-        .contentType(storageObject.getContentType())
-        .generation(storageObject.getGeneration())
-        .md5(storageObject.getMd5Hash())
-        .mediaLink(storageObject.getMediaLink())
-        .metageneration(storageObject.getMetageneration())
-        .name(storageObject.getName())
-        .contentDisposition(storageObject.getContentDisposition())
-        .componentCount(storageObject.getComponentCount())
-        .contentLanguage(storageObject.getContentLanguage())
-        .etag(storageObject.getEtag())
-        .id(storageObject.getId())
-        .selfLink(storageObject.getSelfLink());
+    Builder builder = builder(BlobId.fromPb(storageObject));
+    if (storageObject.getCacheControl() != null) {
+      builder.cacheControl(storageObject.getCacheControl());
+    }
+    if (storageObject.getContentEncoding() != null) {
+      builder.contentEncoding(storageObject.getContentEncoding());
+    }
+    if (storageObject.getCrc32c() != null) {
+      builder.crc32c(storageObject.getCrc32c());
+    }
+    if (storageObject.getContentType() != null) {
+      builder.contentType(storageObject.getContentType());
+    }
+    if (storageObject.getGeneration() != null) {
+      builder.generation(storageObject.getGeneration());
+    }
+    if (storageObject.getMd5Hash() != null) {
+      builder.md5(storageObject.getMd5Hash());
+    }
+    if (storageObject.getMediaLink() != null) {
+      builder.mediaLink(storageObject.getMediaLink());
+    }
+    if (storageObject.getMetageneration() != null) {
+      builder.metageneration(storageObject.getMetageneration());
+    }
+    if (storageObject.getContentDisposition() != null) {
+      builder.contentDisposition(storageObject.getContentDisposition());
+    }
+    if (storageObject.getComponentCount() != null) {
+      builder.componentCount(storageObject.getComponentCount());
+    }
+    if (storageObject.getContentLanguage() != null) {
+      builder.contentLanguage(storageObject.getContentLanguage());
+    }
+    if (storageObject.getEtag() != null) {
+      builder.etag(storageObject.getEtag());
+    }
+    if (storageObject.getId() != null) {
+      builder.id(storageObject.getId());
+    }
+    if (storageObject.getSelfLink() != null) {
+      builder.selfLink(storageObject.getSelfLink());
+    }
     if (storageObject.getMetadata() != null) {
       builder.metadata(storageObject.getMetadata());
     }

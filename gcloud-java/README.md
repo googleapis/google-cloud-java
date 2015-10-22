@@ -5,10 +5,10 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java.svg)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs)
--  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
 
 This client supports the following Google Cloud Platform services:
 
@@ -25,16 +25,9 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.0.7</version>
+  <version>0.0.10</version>
 </dependency>
 ```
-
-Contributing
-------------
-
-Contributions to this library are always welcome and highly encouraged.
-
-See [CONTRIBUTING] for more information on how to get started.
 
 Java Versions
 -------------
@@ -49,6 +42,13 @@ This library follows [Semantic Versioning] (http://semver.org/).
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered
 stable.
+
+Contributing
+------------
+
+Contributions to this library are always welcome and highly encouraged.
+
+See [CONTRIBUTING] for more information on how to get started.
 
 License
 -------

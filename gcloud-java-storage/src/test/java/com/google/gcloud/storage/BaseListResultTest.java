@@ -24,21 +24,21 @@ import org.junit.Test;
 
 import java.util.Collections;
 
-public class ListResultTest {
+public class BaseListResultTest {
 
   @Test
   public void testListResult() throws Exception {
     ImmutableList<String> values = ImmutableList.of("1", "2");
-    final ListResult<String> nextResult =
-        new ListResult<>(null, "c", Collections.<String>emptyList());
-    ListResult.NextPageFetcher<String> fetcher = new ListResult.NextPageFetcher<String>() {
+    final BaseListResult<String> nextResult =
+        new BaseListResult<>(null, "c", Collections.<String>emptyList());
+    BaseListResult.NextPageFetcher<String> fetcher = new BaseListResult.NextPageFetcher<String>() {
 
       @Override
-      public ListResult<String> nextPage() {
+      public BaseListResult<String> nextPage() {
         return nextResult;
       }
     };
-    ListResult<String> result = new ListResult<>(fetcher, "c", values);
+    BaseListResult<String> result = new BaseListResult<>(fetcher, "c", values);
     assertEquals(nextResult, result.nextPage());
     assertEquals("c", result.nextPageCursor());
     assertEquals(values, ImmutableList.copyOf(result.iterator()));

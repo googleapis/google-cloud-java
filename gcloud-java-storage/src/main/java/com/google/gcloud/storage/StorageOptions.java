@@ -47,6 +47,12 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
       super(options);
     }
 
+    /**
+     * Sets the path delimiter for the storage service.
+     *
+     * @param pathDelimiter the path delimiter to set
+     * @return the builder.
+     */
     public Builder pathDelimiter(String pathDelimiter) {
       this.pathDelimiter = pathDelimiter;
       return this;
@@ -61,7 +67,6 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
   private StorageOptions(Builder builder) {
     super(builder);
     pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
-    // todo: consider providing read-timeout
   }
 
   @Override
@@ -84,6 +89,9 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
     return storageRpc;
   }
 
+  /**
+   * Returns the storage service's path delimiter.
+   */
   public String pathDelimiter() {
     return pathDelimiter;
   }
