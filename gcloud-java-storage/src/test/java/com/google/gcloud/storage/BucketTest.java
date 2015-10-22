@@ -143,8 +143,8 @@ public class BucketTest {
     for (BlobInfo info : BLOB_INFO_RESULTS) {
       batchResultList.add(new Result<>(info));
     }
-    BatchResponse response =
-        new BatchResponse(Collections.EMPTY_LIST, Collections.EMPTY_LIST, batchResultList);
+    BatchResponse response = new BatchResponse(
+        Collections.EMPTY_LIST, Collections.EMPTY_LIST, batchResultList, Collections.EMPTY_LIST);
     expect(storage.apply(capture(capturedBatchRequest))).andReturn(response);
     replay(storage);
     List<Blob> blobs = bucket.get("n1", "n2", "n3");

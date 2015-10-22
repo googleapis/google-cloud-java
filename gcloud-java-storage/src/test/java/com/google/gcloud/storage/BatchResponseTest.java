@@ -30,16 +30,21 @@ public class BatchResponseTest {
   private static final BlobInfo BLOB_INFO_1 = BlobInfo.builder("b", "o1").build();
   private static final BlobInfo BLOB_INFO_2 = BlobInfo.builder("b", "o2").build();
   private static final BlobInfo BLOB_INFO_3 = BlobInfo.builder("b", "o3").build();
+  private static final BlobInfo BLOB_INFO_4 = BlobInfo.builder("b", "o4").build();
 
   @Test
   public void testBatchResponse() {
     List<Result<Boolean>> deletes = ImmutableList.of(Result.of(true), Result.of(false));
-    List<Result<BlobInfo>> updates = ImmutableList.of(Result.of(BLOB_INFO_1), Result.of(BLOB_INFO_2));
+    List<Result<BlobInfo>> updates =
+        ImmutableList.of(Result.of(BLOB_INFO_1), Result.of(BLOB_INFO_2));
     List<Result<BlobInfo>> gets = ImmutableList.of(Result.of(BLOB_INFO_2), Result.of(BLOB_INFO_3));
-    BatchResponse response = new BatchResponse(deletes, updates, gets);
+    List<Result<BlobInfo>> patches =
+        ImmutableList.of(Result.of(BLOB_INFO_3), Result.of(BLOB_INFO_4));
+    BatchResponse response = new BatchResponse(deletes, updates, gets, patches);
 
     assertEquals(deletes, response.deletes());
     assertEquals(updates, response.updates());
     assertEquals(gets, response.gets());
+    assertEquals(patches, response.patches());
   }
 }

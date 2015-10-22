@@ -226,6 +226,27 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
+  public StorageObject update(StorageObject storageObject, Map<Option, ?> options) {
+    try {
+      return updateRequest(storageObject, options).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  private Storage.Objects.Update updateRequest(StorageObject storageObject, Map<Option, ?> options)
+      throws IOException {
+    return storage.objects()
+        .update(storageObject.getBucket(), storageObject.getName(), storageObject)
+        .setProjection(DEFAULT_PROJECTION)
+        .setPredefinedAcl(PREDEFINED_ACL.getString(options))
+        .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
+        .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
+        .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
+        .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
+  }
+
+  @Override
   public StorageObject patch(StorageObject storageObject, Map<Option, ?> options) {
     try {
       return patchRequest(storageObject, options).execute();
@@ -374,6 +395,8 @@ public class DefaultStorageRpc implements StorageRpc {
         Maps.newConcurrentMap();
     final Map<StorageObject, Tuple<StorageObject, StorageException>> gets =
         Maps.newConcurrentMap();
+    final Map<StorageObject, Tuple<StorageObject, StorageException>> patches =
+        Maps.newConcurrentMap();
     try {
       for (final Tuple<StorageObject, Map<Option, ?>> tuple : request.toDelete) {
         deleteRequest(tuple.x(), tuple.y()).queue(batch, new JsonBatchCallback<Void>() {
@@ -389,7 +412,7 @@ public class DefaultStorageRpc implements StorageRpc {
         });
       }
       for (final Tuple<StorageObject, Map<Option, ?>> tuple : request.toUpdate) {
-        patchRequest(tuple.x(), tuple.y()).queue(batch, new JsonBatchCallback<StorageObject>() {
+        updateRequest(tuple.x(), tuple.y()).queue(batch, new JsonBatchCallback<StorageObject>() {
           @Override
           public void onSuccess(StorageObject storageObject, HttpHeaders responseHeaders) {
             updates.put(tuple.x(),
@@ -399,6 +422,21 @@ public class DefaultStorageRpc implements StorageRpc {
           @Override
           public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
             updates.put(tuple.x(),
+                Tuple.<StorageObject, StorageException>of(null, translate(e)));
+          }
+        });
+      }
+      for (final Tuple<StorageObject, Map<Option, ?>> tuple : request.toPatch) {
+        patchRequest(tuple.x(), tuple.y()).queue(batch, new JsonBatchCallback<StorageObject>() {
+          @Override
+          public void onSuccess(StorageObject storageObject, HttpHeaders responseHeaders) {
+            patches.put(tuple.x(),
+                Tuple.<StorageObject, StorageException>of(storageObject, null));
+          }
+
+          @Override
+          public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
+            patches.put(tuple.x(),
                 Tuple.<StorageObject, StorageException>of(null, translate(e)));
           }
         });
@@ -422,7 +460,7 @@ public class DefaultStorageRpc implements StorageRpc {
     } catch (IOException ex) {
       throw translate(ex);
     }
-    return new BatchResponse(deletes, updates, gets);
+    return new BatchResponse(deletes, updates, gets, patches);
   }
 
   @Override

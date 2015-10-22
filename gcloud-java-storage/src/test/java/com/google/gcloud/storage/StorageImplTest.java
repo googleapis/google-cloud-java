@@ -90,6 +90,7 @@ public class StorageImplTest {
       .metageneration(42L).generation(24L).contentType("application/json").md5("md5string").build();
   private static final BlobInfo BLOB_INFO2 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME2).build();
   private static final BlobInfo BLOB_INFO3 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME3).build();
+  private static final BlobInfo BLOB_INFO4 = BlobInfo.builder(BUCKET_NAME2, BLOB_NAME1).build();
 
   // Empty StorageRpc options
   private static final Map<StorageRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -526,7 +527,7 @@ public class StorageImplTest {
     BlobInfo updatedBlobInfo = BLOB_INFO1.toBuilder().contentType("some-content-type").build();
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
-    EasyMock.expect(storageRpcMock.patch(updatedBlobInfo.toPb(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(storageRpcMock.update(updatedBlobInfo.toPb(), EMPTY_RPC_OPTIONS))
         .andReturn(updatedBlobInfo.toPb());
     EasyMock.replay(optionsMock, storageRpcMock);
     storage = StorageFactory.instance().get(optionsMock);
@@ -539,12 +540,39 @@ public class StorageImplTest {
     BlobInfo updatedBlobInfo = BLOB_INFO1.toBuilder().contentType("some-content-type").build();
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
-    EasyMock.expect(storageRpcMock.patch(updatedBlobInfo.toPb(), BLOB_TARGET_OPTIONS_UPDATE))
+    EasyMock.expect(storageRpcMock.update(updatedBlobInfo.toPb(), BLOB_TARGET_OPTIONS_UPDATE))
         .andReturn(updatedBlobInfo.toPb());
     EasyMock.replay(optionsMock, storageRpcMock);
     storage = StorageFactory.instance().get(optionsMock);
     BlobInfo blob =
         storage.update(updatedBlobInfo, BLOB_TARGET_METAGENERATION, BLOB_TARGET_PREDEFINED_ACL);
+    assertEquals(updatedBlobInfo, blob);
+  }
+
+  @Test
+  public void testPatchBlob() {
+    BlobInfo updatedBlobInfo = BLOB_INFO1.toBuilder().contentType("some-content-type").build();
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
+    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
+    EasyMock.expect(storageRpcMock.patch(updatedBlobInfo.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(updatedBlobInfo.toPb());
+    EasyMock.replay(optionsMock, storageRpcMock);
+    storage = StorageFactory.instance().get(optionsMock);
+    BlobInfo blob = storage.patch(updatedBlobInfo);
+    assertEquals(updatedBlobInfo, blob);
+  }
+
+  @Test
+  public void testPatchBlobWithOptions() {
+    BlobInfo updatedBlobInfo = BLOB_INFO1.toBuilder().contentType("some-content-type").build();
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
+    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
+    EasyMock.expect(storageRpcMock.patch(updatedBlobInfo.toPb(), BLOB_TARGET_OPTIONS_UPDATE))
+        .andReturn(updatedBlobInfo.toPb());
+    EasyMock.replay(optionsMock, storageRpcMock);
+    storage = StorageFactory.instance().get(optionsMock);
+    BlobInfo blob =
+        storage.patch(updatedBlobInfo, BLOB_TARGET_METAGENERATION, BLOB_TARGET_PREDEFINED_ACL);
     assertEquals(updatedBlobInfo, blob);
   }
 
@@ -697,15 +725,19 @@ public class StorageImplTest {
         .delete(BUCKET_NAME1, BLOB_NAME1)
         .update(BLOB_INFO2)
         .get(BUCKET_NAME1, BLOB_NAME3)
+        .patch(BLOB_INFO4)
         .build();
     List<StorageObject> toDelete = ImmutableList.of(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb());
     List<StorageObject> toUpdate = ImmutableList.of(BlobId.of(BUCKET_NAME1, BLOB_NAME2).toPb());
     List<StorageObject> toGet = ImmutableList.of(BlobId.of(BUCKET_NAME1, BLOB_NAME3).toPb());
+    List<StorageObject> toPatch = ImmutableList.of(BlobId.of(BUCKET_NAME2, BLOB_NAME1).toPb());
     List<Map<StorageRpc.Option, ?>> deleteOptions =
         ImmutableList.<Map<StorageRpc.Option, ?>>of(EMPTY_RPC_OPTIONS);
     List<Map<StorageRpc.Option, ?>> updateOptions =
         ImmutableList.<Map<StorageRpc.Option, ?>>of(EMPTY_RPC_OPTIONS);
     List<Map<StorageRpc.Option, ?>> getOptions =
+        ImmutableList.<Map<StorageRpc.Option, ?>>of(EMPTY_RPC_OPTIONS);
+    List<Map<StorageRpc.Option, ?>> patchOptions =
         ImmutableList.<Map<StorageRpc.Option, ?>>of(EMPTY_RPC_OPTIONS);
 
     Map<StorageObject, Tuple<Boolean, StorageException>> deleteResult = Maps.toMap(toDelete,
@@ -729,8 +761,15 @@ public class StorageImplTest {
             return Tuple.of(f, null);
           }
         });
+    Map<StorageObject, Tuple<StorageObject, StorageException>> patchResult = Maps.toMap(toPatch,
+        new Function<StorageObject, Tuple<StorageObject, StorageException>>() {
+          @Override
+          public Tuple<StorageObject, StorageException> apply(StorageObject f) {
+            return Tuple.of(f, null);
+          }
+        });
     StorageRpc.BatchResponse res =
-        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult);
+        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult, patchResult);
 
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
@@ -746,6 +785,8 @@ public class StorageImplTest {
         capturedBatchRequest.getValue().toUpdate;
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToGet =
         capturedBatchRequest.getValue().toGet;
+    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToPatch =
+        capturedBatchRequest.getValue().toPatch;
     for (int i = 0; i < capturedToDelete.size(); i++) {
       assertEquals(toDelete.get(i), capturedToDelete.get(i).x());
       assertEquals(deleteOptions.get(i), capturedToDelete.get(i).y());
@@ -758,6 +799,10 @@ public class StorageImplTest {
       assertEquals(toGet.get(i), capturedToGet.get(i).x());
       assertEquals(getOptions.get(i), capturedToGet.get(i).y());
     }
+    for (int i = 0; i < capturedToPatch.size(); i++) {
+      assertEquals(toPatch.get(i), capturedToPatch.get(i).x());
+      assertEquals(patchOptions.get(i), capturedToPatch.get(i).y());
+    }
 
     // Verify BatchResponse
     for (BatchResponse.Result<Boolean> result : batchResponse.deletes()) {
@@ -768,6 +813,9 @@ public class StorageImplTest {
     }
     for (int i = 0; i < batchResponse.gets().size(); i++) {
       assertEquals(toGet.get(i), batchResponse.gets().get(i).get().toPb());
+    }
+    for (int i = 0; i < batchResponse.patches().size(); i++) {
+      assertEquals(toPatch.get(i), batchResponse.patches().get(i).get().toPb());
     }
   }
 
@@ -917,8 +965,9 @@ public class StorageImplTest {
             return Tuple.of(f, null);
           }
         });
+    Map<StorageObject, Tuple<StorageObject, StorageException>> patchResult = ImmutableMap.of();
     StorageRpc.BatchResponse res =
-        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult);
+        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult, patchResult);
 
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
@@ -932,6 +981,7 @@ public class StorageImplTest {
         capturedBatchRequest.getValue().toGet;
     assertTrue(capturedBatchRequest.getValue().toDelete.isEmpty());
     assertTrue(capturedBatchRequest.getValue().toUpdate.isEmpty());
+    assertTrue(capturedBatchRequest.getValue().toPatch.isEmpty());
     for (int i = 0; i < capturedToGet.size(); i++) {
       assertEquals(toGet.get(i), capturedToGet.get(i).x());
       assertTrue(capturedToGet.get(i).y().isEmpty());
@@ -960,8 +1010,9 @@ public class StorageImplTest {
             return Tuple.of(f, null);
           }
         });
+    Map<StorageObject, Tuple<StorageObject, StorageException>> patchResult = ImmutableMap.of();
     StorageRpc.BatchResponse res =
-        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult);
+        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult, patchResult);
 
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
@@ -975,6 +1026,7 @@ public class StorageImplTest {
         capturedBatchRequest.getValue().toUpdate;
     assertTrue(capturedBatchRequest.getValue().toDelete.isEmpty());
     assertTrue(capturedBatchRequest.getValue().toGet.isEmpty());
+    assertTrue(capturedBatchRequest.getValue().toPatch.isEmpty());
     for (int i = 0; i < capturedToUpdate.size(); i++) {
       assertEquals(toUpdate.get(i), capturedToUpdate.get(i).x());
       assertTrue(capturedToUpdate.get(i).y().isEmpty());
@@ -1003,8 +1055,9 @@ public class StorageImplTest {
             return Tuple.of(true, null);
           }
         });
+    Map<StorageObject, Tuple<StorageObject, StorageException>> patchResult = ImmutableMap.of();
     StorageRpc.BatchResponse res =
-        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult);
+        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult, patchResult);
 
     EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
     Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
@@ -1018,6 +1071,7 @@ public class StorageImplTest {
         capturedBatchRequest.getValue().toDelete;
     assertTrue(capturedBatchRequest.getValue().toUpdate.isEmpty());
     assertTrue(capturedBatchRequest.getValue().toGet.isEmpty());
+    assertTrue(capturedBatchRequest.getValue().toPatch.isEmpty());
     for (int i = 0; i < capturedToDelete.size(); i++) {
       assertEquals(toUpdate.get(i), capturedToDelete.get(i).x());
       assertTrue(capturedToDelete.get(i).y().isEmpty());
@@ -1026,6 +1080,51 @@ public class StorageImplTest {
     // Verify result
     for (Boolean deleteStatus : deleteResults) {
       assertTrue(deleteStatus);
+    }
+  }
+
+  @Test
+  public void testPatchAll() {
+    BlobInfo blobInfo1 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME1).contentType("type").build();
+    BlobInfo blobInfo2 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME2).contentType("type").build();
+    StorageObject storageObject1 = blobInfo1.toPb();
+    StorageObject storageObject2 = blobInfo2.toPb();
+    List<StorageObject> toPatch = ImmutableList.of(storageObject1, storageObject2);
+
+    Map<StorageObject, Tuple<Boolean, StorageException>> deleteResult = ImmutableMap.of();
+    Map<StorageObject, Tuple<StorageObject, StorageException>> getResult = ImmutableMap.of();
+    Map<StorageObject, Tuple<StorageObject, StorageException>> updateResult = ImmutableMap.of();
+    Map<StorageObject, Tuple<StorageObject, StorageException>> patchResult = Maps.toMap(toPatch,
+        new Function<StorageObject, Tuple<StorageObject, StorageException>>() {
+          @Override
+          public Tuple<StorageObject, StorageException> apply(StorageObject f) {
+            return Tuple.of(f, null);
+          }
+        });
+    StorageRpc.BatchResponse res =
+        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult, patchResult);
+
+    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
+    Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
+    EasyMock.expect(storageRpcMock.batch(EasyMock.capture(capturedBatchRequest))).andReturn(res);
+    EasyMock.replay(optionsMock, storageRpcMock);
+    storage = StorageFactory.instance().get(optionsMock);
+    List<BlobInfo> resultBlobs = storage.patch(blobInfo1, blobInfo2);
+
+    // Verify captured StorageRpc.BatchRequest
+    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToPatch =
+        capturedBatchRequest.getValue().toPatch;
+    assertTrue(capturedBatchRequest.getValue().toDelete.isEmpty());
+    assertTrue(capturedBatchRequest.getValue().toGet.isEmpty());
+    assertTrue(capturedBatchRequest.getValue().toUpdate.isEmpty());
+    for (int i = 0; i < capturedToPatch.size(); i++) {
+      assertEquals(toPatch.get(i), capturedToPatch.get(i).x());
+      assertTrue(capturedToPatch.get(i).y().isEmpty());
+    }
+
+    // Verify result
+    for (int i = 0; i < resultBlobs.size(); i++) {
+      assertEquals(toPatch.get(i), resultBlobs.get(i).toPb());
     }
   }
 

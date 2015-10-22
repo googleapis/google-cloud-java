@@ -36,12 +36,14 @@ public final class BatchRequest implements Serializable {
   private final Map<BlobId, Iterable<BlobSourceOption>> toDelete;
   private final Map<BlobInfo, Iterable<BlobTargetOption>> toUpdate;
   private final Map<BlobId, Iterable<BlobSourceOption>> toGet;
+  private final Map<BlobInfo, Iterable<BlobTargetOption>> toPatch;
 
   public static class Builder {
 
     private Map<BlobId, Iterable<BlobSourceOption>> toDelete = new LinkedHashMap<>();
     private Map<BlobInfo, Iterable<BlobTargetOption>> toUpdate = new LinkedHashMap<>();
     private Map<BlobId, Iterable<BlobSourceOption>> toGet = new LinkedHashMap<>();
+    private Map<BlobInfo, Iterable<BlobTargetOption>> toPatch = new LinkedHashMap<>();
 
     private Builder() {}
 
@@ -85,6 +87,14 @@ public final class BatchRequest implements Serializable {
       return this;
     }
 
+    /**
+     * Patch the given blob.
+     */
+    public Builder patch(BlobInfo blobInfo, BlobTargetOption... options) {
+      toPatch.put(blobInfo, Lists.newArrayList(options));
+      return this;
+    }
+
     public BatchRequest build() {
       return new BatchRequest(this);
     }
@@ -94,11 +104,12 @@ public final class BatchRequest implements Serializable {
     toDelete = ImmutableMap.copyOf(builder.toDelete);
     toUpdate = ImmutableMap.copyOf(builder.toUpdate);
     toGet = ImmutableMap.copyOf(builder.toGet);
+    toPatch = ImmutableMap.copyOf(builder.toPatch);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(toDelete, toUpdate, toGet);
+    return Objects.hash(toDelete, toUpdate, toGet, toPatch);
   }
 
   @Override
@@ -109,7 +120,8 @@ public final class BatchRequest implements Serializable {
     BatchRequest other = (BatchRequest) obj;
     return Objects.equals(toDelete, other.toDelete)
         && Objects.equals(toUpdate, other.toUpdate)
-        && Objects.equals(toGet, other.toGet);
+        && Objects.equals(toGet, other.toGet)
+        && Objects.equals(toPatch, other.toPatch);
   }
 
   public Map<BlobId, Iterable<BlobSourceOption>> toDelete() {
@@ -122,6 +134,10 @@ public final class BatchRequest implements Serializable {
 
   public Map<BlobId, Iterable<BlobSourceOption>> toGet() {
     return toGet;
+  }
+
+  public Map<BlobInfo, Iterable<BlobTargetOption>> toPatch() {
+    return toPatch;
   }
 
   public static Builder builder() {

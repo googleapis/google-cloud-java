@@ -104,16 +104,20 @@ public interface StorageRpc {
     public final List<Tuple<StorageObject, Map<Option, ?>>> toDelete;
     public final List<Tuple<StorageObject, Map<Option, ?>>> toUpdate;
     public final List<Tuple<StorageObject, Map<Option, ?>>> toGet;
+    public final List<Tuple<StorageObject, Map<Option, ?>>> toPatch;
 
     public BatchRequest(Iterable<Tuple<StorageObject, Map<Option, ?>>> toDelete,
         Iterable<Tuple<StorageObject, Map<Option, ?>>> toUpdate,
-        Iterable<Tuple<StorageObject, Map<Option, ?>>> toGet) {
+        Iterable<Tuple<StorageObject, Map<Option, ?>>> toGet,
+        Iterable<Tuple<StorageObject, Map<Option, ?>>> toPatch) {
       this.toDelete = ImmutableList.copyOf(
           firstNonNull(toDelete, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
       this.toUpdate = ImmutableList.copyOf(
           firstNonNull(toUpdate, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
       this.toGet = ImmutableList.copyOf(
           firstNonNull(toGet, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
+      this.toPatch = ImmutableList.copyOf(
+          firstNonNull(toPatch, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
     }
   }
 
@@ -122,13 +126,16 @@ public interface StorageRpc {
     public final Map<StorageObject, Tuple<Boolean, StorageException>> deletes;
     public final Map<StorageObject, Tuple<StorageObject, StorageException>> updates;
     public final Map<StorageObject, Tuple<StorageObject, StorageException>> gets;
+    public final Map<StorageObject, Tuple<StorageObject, StorageException>> patches;
 
     public BatchResponse(Map<StorageObject, Tuple<Boolean, StorageException>> deletes,
         Map<StorageObject, Tuple<StorageObject, StorageException>> updates,
-        Map<StorageObject, Tuple<StorageObject, StorageException>> gets) {
+        Map<StorageObject, Tuple<StorageObject, StorageException>> gets,
+        Map<StorageObject, Tuple<StorageObject, StorageException>> patches) {
       this.deletes = ImmutableMap.copyOf(deletes);
       this.updates = ImmutableMap.copyOf(updates);
       this.gets = ImmutableMap.copyOf(gets);
+      this.patches = ImmutableMap.copyOf(patches);
     }
   }
 
@@ -144,13 +151,13 @@ public interface StorageRpc {
 
   Bucket get(Bucket bucket, Map<Option, ?> options) throws StorageException;
 
-  StorageObject get(StorageObject object, Map<Option, ?> options)
-      throws StorageException;
+  StorageObject get(StorageObject object, Map<Option, ?> options) throws StorageException;
 
   Bucket patch(Bucket bucket, Map<Option, ?> options) throws StorageException;
 
-  StorageObject patch(StorageObject storageObject, Map<Option, ?> options)
-      throws StorageException;
+  StorageObject update(StorageObject storageObject, Map<Option, ?> options) throws StorageException;
+
+  StorageObject patch(StorageObject storageObject, Map<Option, ?> options) throws StorageException;
 
   boolean delete(Bucket bucket, Map<Option, ?> options) throws StorageException;
 

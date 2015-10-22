@@ -25,6 +25,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
@@ -164,13 +165,15 @@ public class ITStorageTest {
   @Test
   public void testUpdateBlob() {
     String blobName = "test-update-blob";
-    BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
-    assertNotNull(storage.create(blob));
-    BlobInfo updatedBlob = storage.update(blob.toBuilder().contentType(CONTENT_TYPE).build());
+    BlobInfo blob = BlobInfo.builder(bucket, blobName).metadata(ImmutableMap.of("k1", "v")).build();
+    BlobInfo remoteBlob = storage.create(blob);
+    assertNotNull(remoteBlob);
+    BlobInfo toUpdateBlob = remoteBlob.toBuilder().metadata(ImmutableMap.of("k2", "v")).build();
+    BlobInfo updatedBlob = storage.update(toUpdateBlob);
     assertNotNull(updatedBlob);
-    assertEquals(blob.bucket(), updatedBlob.bucket());
-    assertEquals(blob.name(), updatedBlob.name());
-    assertEquals(CONTENT_TYPE, updatedBlob.contentType());
+    assertEquals(toUpdateBlob.bucket(), updatedBlob.bucket());
+    assertEquals(toUpdateBlob.name(), updatedBlob.name());
+    assertEquals(toUpdateBlob.metadata(), updatedBlob.metadata());
     assertTrue(storage.delete(bucket, blobName));
   }
 
@@ -180,7 +183,38 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
     assertNotNull(storage.create(blob));
     try {
-      storage.update(blob.toBuilder().contentType(CONTENT_TYPE).generation(-1L).build(),
+      storage.update(blob.toBuilder().build());
+      fail("StorageException was expected");
+    } catch (StorageException ex) {
+      // expected
+    }
+    assertTrue(storage.delete(bucket, blobName));
+  }
+
+  @Test
+  public void testPatchBlob() {
+    String blobName = "test-patch-blob";
+    BlobInfo blob = BlobInfo.builder(bucket, blobName).metadata(ImmutableMap.of("k1", "v")).build();
+    assertNotNull(storage.create(blob));
+    BlobInfo toUpdateBlob = BlobInfo.builder(bucket, blobName)
+        .contentType(CONTENT_TYPE)
+        .metadata(ImmutableMap.of("k2", "v"))
+        .build();
+    BlobInfo updatedBlob = storage.patch(toUpdateBlob);
+    assertNotNull(updatedBlob);
+    assertEquals(toUpdateBlob.bucket(), updatedBlob.bucket());
+    assertEquals(toUpdateBlob.name(), updatedBlob.name());
+    assertEquals(ImmutableMap.of("k1", "v", "k2", "v"), updatedBlob.metadata());
+    assertTrue(storage.delete(bucket, blobName));
+  }
+
+  @Test
+  public void testPatchBlobFail() {
+    String blobName = "test-patch-blob-fail";
+    BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
+    assertNotNull(storage.create(blob));
+    try {
+      storage.patch(blob.toBuilder().contentType(CONTENT_TYPE).generation(-1L).build(),
           Storage.BlobTargetOption.generationMatch());
       fail("StorageException was expected");
     } catch (StorageException ex) {
@@ -319,14 +353,17 @@ public class ITStorageTest {
   public void testBatchRequest() {
     String sourceBlobName1 = "test-batch-request-blob-1";
     String sourceBlobName2 = "test-batch-request-blob-2";
-    BlobInfo sourceBlob1 = BlobInfo.builder(bucket, sourceBlobName1).build();
-    BlobInfo sourceBlob2 = BlobInfo.builder(bucket, sourceBlobName2).build();
-    assertNotNull(storage.create(sourceBlob1));
-    assertNotNull(storage.create(sourceBlob2));
+    BlobInfo sourceBlob1 = storage.create(BlobInfo.builder(bucket, sourceBlobName1).build());
+    BlobInfo sourceBlob2 = storage.create(BlobInfo.builder(bucket, sourceBlobName2).build());
+    assertNotNull(sourceBlob1);
+    assertNotNull(sourceBlob2);
 
     // Batch update request
-    BlobInfo updatedBlob1 = sourceBlob1.toBuilder().contentType(CONTENT_TYPE).build();
-    BlobInfo updatedBlob2 = sourceBlob2.toBuilder().contentType(CONTENT_TYPE).build();
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k1", "v1");
+    BlobInfo updatedBlob1 = sourceBlob1.toBuilder()
+        .contentType(CONTENT_TYPE).metadata(metadata).build();
+    BlobInfo updatedBlob2 = sourceBlob2.toBuilder().contentType(CONTENT_TYPE)
+        .contentType(CONTENT_TYPE).metadata(metadata).build();
     BatchRequest updateRequest = BatchRequest.builder()
         .update(updatedBlob1)
         .update(updatedBlob2)
@@ -335,14 +372,15 @@ public class ITStorageTest {
     assertEquals(2, updateResponse.updates().size());
     assertEquals(0, updateResponse.deletes().size());
     assertEquals(0, updateResponse.gets().size());
+    assertEquals(0, updateResponse.patches().size());
     BlobInfo remoteUpdatedBlob1 = updateResponse.updates().get(0).get();
     BlobInfo remoteUpdatedBlob2 = updateResponse.updates().get(1).get();
-    assertEquals(bucket, remoteUpdatedBlob1.bucket());
-    assertEquals(bucket, remoteUpdatedBlob2.bucket());
-    assertEquals(updatedBlob1.name(), remoteUpdatedBlob1.name());
-    assertEquals(updatedBlob2.name(), remoteUpdatedBlob2.name());
+    assertEquals(updatedBlob1.blobId(), remoteUpdatedBlob1.blobId());
+    assertEquals(updatedBlob2.blobId(), remoteUpdatedBlob2.blobId());
     assertEquals(updatedBlob1.contentType(), remoteUpdatedBlob1.contentType());
     assertEquals(updatedBlob2.contentType(), remoteUpdatedBlob2.contentType());
+    assertEquals(metadata, remoteUpdatedBlob1.metadata());
+    assertEquals(metadata, remoteUpdatedBlob2.metadata());
 
     // Batch get request
     BatchRequest getRequest = BatchRequest.builder()
@@ -353,10 +391,29 @@ public class ITStorageTest {
     assertEquals(2, getResponse.gets().size());
     assertEquals(0, getResponse.deletes().size());
     assertEquals(0, getResponse.updates().size());
+    assertEquals(0, getResponse.patches().size());
     BlobInfo remoteBlob1 = getResponse.gets().get(0).get();
     BlobInfo remoteBlob2 = getResponse.gets().get(1).get();
     assertEquals(remoteUpdatedBlob1, remoteBlob1);
     assertEquals(remoteUpdatedBlob2, remoteBlob2);
+
+    // Batch patch request
+    ImmutableMap<String, String> expectedMetadata = ImmutableMap.of("k1", "v1", "k2", "v2");
+    ImmutableMap<String, String> patchMetadata = ImmutableMap.of("k2", "v2");
+    BatchRequest patchRequest = BatchRequest.builder()
+        .patch(remoteBlob1.toBuilder().metadata(patchMetadata).build())
+        .patch(remoteBlob2.toBuilder().metadata(patchMetadata).build())
+        .build();
+    BatchResponse patchResponse = storage.apply(patchRequest);
+    assertEquals(0, patchResponse.gets().size());
+    assertEquals(0, patchResponse.deletes().size());
+    assertEquals(0, patchResponse.updates().size());
+    assertEquals(2, patchResponse.patches().size());
+    BlobInfo patchedBlob1 = patchResponse.patches().get(0).get();
+    BlobInfo patchedBlob2 = patchResponse.patches().get(1).get();
+    assertEquals(remoteBlob1.blobId(), patchedBlob1.blobId());
+    assertEquals(expectedMetadata, patchedBlob1.metadata());
+    assertEquals(expectedMetadata, patchedBlob2.metadata());
 
     // Batch delete request
     BatchRequest deleteRequest = BatchRequest.builder()
@@ -381,14 +438,17 @@ public class ITStorageTest {
         .update(updatedBlob, Storage.BlobTargetOption.generationMatch())
         .delete(bucket, blobName, Storage.BlobSourceOption.generationMatch(-1L))
         .get(bucket, blobName, Storage.BlobSourceOption.generationMatch(-1L))
+        .patch(updatedBlob, Storage.BlobTargetOption.generationMatch())
         .build();
-    BatchResponse updateResponse = storage.apply(batchRequest);
-    assertEquals(1, updateResponse.updates().size());
-    assertEquals(1, updateResponse.deletes().size());
-    assertEquals(1, updateResponse.gets().size());
-    assertTrue(updateResponse.updates().get(0).failed());
-    assertTrue(updateResponse.gets().get(0).failed());
-    assertTrue(updateResponse.deletes().get(0).failed());
+    BatchResponse batchResponse = storage.apply(batchRequest);
+    assertEquals(1, batchResponse.updates().size());
+    assertEquals(1, batchResponse.deletes().size());
+    assertEquals(1, batchResponse.gets().size());
+    assertEquals(1, batchResponse.patches().size());
+    assertTrue(batchResponse.updates().get(0).failed());
+    assertTrue(batchResponse.gets().get(0).failed());
+    assertTrue(batchResponse.deletes().get(0).failed());
+    assertTrue(batchResponse.patches().get(0).failed());
     assertTrue(storage.delete(bucket, blobName));
   }
 
@@ -529,10 +589,8 @@ public class ITStorageTest {
     assertNotNull(storage.create(sourceBlob1));
     assertNotNull(storage.create(sourceBlob2));
     List<BlobInfo> remoteInfos = storage.get(sourceBlob1.blobId(), sourceBlob2.blobId());
-    assertEquals(sourceBlob1.bucket(), remoteInfos.get(0).bucket());
-    assertEquals(sourceBlob1.name(), remoteInfos.get(0).name());
-    assertEquals(sourceBlob2.bucket(), remoteInfos.get(1).bucket());
-    assertEquals(sourceBlob2.name(), remoteInfos.get(1).name());
+    assertEquals(sourceBlob1.blobId(), remoteInfos.get(0).blobId());
+    assertEquals(sourceBlob2.blobId(), remoteInfos.get(1).blobId());
     assertTrue(storage.delete(bucket, sourceBlobName1));
     assertTrue(storage.delete(bucket, sourceBlobName2));
   }
@@ -545,8 +603,7 @@ public class ITStorageTest {
     BlobInfo sourceBlob2 = BlobInfo.builder(bucket, sourceBlobName2).build();
     assertNotNull(storage.create(sourceBlob1));
     List<BlobInfo> remoteBlobs = storage.get(sourceBlob1.blobId(), sourceBlob2.blobId());
-    assertEquals(sourceBlob1.bucket(), remoteBlobs.get(0).bucket());
-    assertEquals(sourceBlob1.name(), remoteBlobs.get(0).name());
+    assertEquals(sourceBlob1.blobId(), remoteBlobs.get(0).blobId());
     assertNull(remoteBlobs.get(1));
     assertTrue(storage.delete(bucket, sourceBlobName1));
   }
@@ -589,11 +646,9 @@ public class ITStorageTest {
     List<BlobInfo> updatedBlobs = storage.update(
         remoteBlob1.toBuilder().contentType(CONTENT_TYPE).build(),
         remoteBlob2.toBuilder().contentType(CONTENT_TYPE).build());
-    assertEquals(sourceBlob1.bucket(), updatedBlobs.get(0).bucket());
-    assertEquals(sourceBlob1.name(), updatedBlobs.get(0).name());
+    assertEquals(sourceBlob1.blobId(), updatedBlobs.get(0).blobId());
     assertEquals(CONTENT_TYPE, updatedBlobs.get(0).contentType());
-    assertEquals(sourceBlob2.bucket(), updatedBlobs.get(1).bucket());
-    assertEquals(sourceBlob2.name(), updatedBlobs.get(1).name());
+    assertEquals(sourceBlob2.blobId(), updatedBlobs.get(1).blobId());
     assertEquals(CONTENT_TYPE, updatedBlobs.get(1).contentType());
     assertTrue(storage.delete(bucket, sourceBlobName1));
     assertTrue(storage.delete(bucket, sourceBlobName2));
@@ -610,10 +665,53 @@ public class ITStorageTest {
     List<BlobInfo> updatedBlobs = storage.update(
         remoteBlob1.toBuilder().contentType(CONTENT_TYPE).build(),
         sourceBlob2.toBuilder().contentType(CONTENT_TYPE).build());
-    assertEquals(sourceBlob1.bucket(), updatedBlobs.get(0).bucket());
-    assertEquals(sourceBlob1.name(), updatedBlobs.get(0).name());
+    assertEquals(sourceBlob1.blobId(), updatedBlobs.get(0).blobId());
     assertEquals(CONTENT_TYPE, updatedBlobs.get(0).contentType());
     assertNull(updatedBlobs.get(1));
+    assertTrue(storage.delete(bucket, sourceBlobName1));
+  }
+
+  @Test
+  public void testPatchBlobs() {
+    String sourceBlobName1 = "test-patch-blobs-1";
+    String sourceBlobName2 = "test-patch-blobs-2";
+    ImmutableMap metadata = ImmutableMap.of("k1", "v1");
+    ImmutableMap patchMetadata = ImmutableMap.of("k2", "v2");
+    ImmutableMap expectedMetadata = ImmutableMap.of("k1", "v1", "k2", "v2");
+    BlobInfo sourceBlob1 = BlobInfo.builder(bucket, sourceBlobName1).metadata(metadata).build();
+    BlobInfo sourceBlob2 = BlobInfo.builder(bucket, sourceBlobName2).metadata(metadata).build();
+    assertNotNull(storage.create(sourceBlob1));
+    assertNotNull(storage.create(sourceBlob2));
+    List<BlobInfo> patchedBlobs = storage.patch(
+        sourceBlob1.toBuilder().contentType(CONTENT_TYPE).metadata(patchMetadata).build(),
+        sourceBlob2.toBuilder().contentType(CONTENT_TYPE).metadata(patchMetadata).build());
+    assertEquals(sourceBlob1.blobId(), patchedBlobs.get(0).blobId());
+    assertEquals(CONTENT_TYPE, patchedBlobs.get(0).contentType());
+    assertEquals(expectedMetadata, patchedBlobs.get(0).metadata());
+    assertEquals(sourceBlob2.blobId(), patchedBlobs.get(1).blobId());
+    assertEquals(CONTENT_TYPE, patchedBlobs.get(1).contentType());
+    assertEquals(expectedMetadata, patchedBlobs.get(1).metadata());
+    assertTrue(storage.delete(bucket, sourceBlobName1));
+    assertTrue(storage.delete(bucket, sourceBlobName2));
+  }
+
+  @Test
+  public void testPatchBlobsFail() {
+    String sourceBlobName1 = "test-patch-blobs-fail-1";
+    String sourceBlobName2 = "test-patch-blobs-fail-2";
+    ImmutableMap metadata = ImmutableMap.of("k1", "v1");
+    ImmutableMap patchMetadata = ImmutableMap.of("k2", "v2");
+    ImmutableMap expectedMetadata = ImmutableMap.of("k1", "v1", "k2", "v2");
+    BlobInfo sourceBlob1 = BlobInfo.builder(bucket, sourceBlobName1).metadata(metadata).build();
+    BlobInfo sourceBlob2 = BlobInfo.builder(bucket, sourceBlobName2).metadata(metadata).build();
+    assertNotNull(storage.create(sourceBlob1));
+    List<BlobInfo> patchedBlobs = storage.patch(
+        sourceBlob1.toBuilder().contentType(CONTENT_TYPE).metadata(patchMetadata).build(),
+        sourceBlob2.toBuilder().contentType(CONTENT_TYPE).metadata(patchMetadata).build());
+    assertEquals(sourceBlob1.blobId(), patchedBlobs.get(0).blobId());
+    assertEquals(CONTENT_TYPE, patchedBlobs.get(0).contentType());
+    assertEquals(expectedMetadata, patchedBlobs.get(0).metadata());
+    assertNull(patchedBlobs.get(1));
     assertTrue(storage.delete(bucket, sourceBlobName1));
   }
 }

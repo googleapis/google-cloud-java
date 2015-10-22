@@ -184,12 +184,14 @@ public final class Blob {
   }
 
   /**
-   * Updates the blob's information. Bucket or blob's name cannot be changed by this method. If you
-   * want to rename the blob or move it to a different bucket use the {@link #copyTo} and
-   * {@link #delete} operations. A new {@code Blob} object is returned. By default no checks are
-   * made on the metadata generation of the current blob. If you want to update the information only
-   * if the current blob metadata are at their latest version use the {@code metagenerationMatch}
-   * option: {@code blob.update(newInfo, BlobTargetOption.metagenerationMatch())}.
+   * Updates the blob's information, metadata are replaced. Bucket or blob's name cannot be changed
+   * by this method. If you want to rename the blob or move it to a different bucket use the
+   * {@link #copyTo} and {@link #delete} operations. A new {@code Blob} object is returned. By
+   * default no checks are made on the metadata generation of the current blob. If you want to
+   * update the information only if the current blob metadata are at their latest version use the
+   * {@code metagenerationMatch} option:
+   * {@code blob.update(newInfo, BlobTargetOption.metagenerationMatch())}.
+   * Update will fail if an incomplete {@code blobInfo} is provided.
    *
    * @param blobInfo new blob's information. Bucket and blob names must match the current ones
    * @param options update options
@@ -200,6 +202,32 @@ public final class Blob {
     checkArgument(Objects.equals(blobInfo.bucket(), info.bucket()), "Bucket name must match");
     checkArgument(Objects.equals(blobInfo.name(), info.name()), "Blob name must match");
     return new Blob(storage, storage.update(blobInfo, options));
+  }
+
+  /**
+   * Updates the blob's information according to patch semantics. Original metadata are merged with
+   * metadata in the provided {@code blobInfo}. To replace metadata use
+   * {@link #update(com.google.gcloud.storage.BlobInfo,
+   * com.google.gcloud.storage.Storage.BlobTargetOption...)} instead. Bucket or blob's name cannot
+   * be changed by this method. If you want to rename the blob or move it to a different bucket use
+   * the {@link #copyTo} and {@link #delete} operations. A new {@code Blob} object is returned.
+   * 
+   * By default no checks are made on the metadata generation of the current blob. If you want to
+   * update the information only if the current blob metadata are at their latest version use the
+   * {@code metagenerationMatch} option:
+   * {@code blob.patch(newInfo, BlobTargetOption.metagenerationMatch())}.
+   *
+   * @param blobInfo updated blob's information. Bucket and blob names must match the current ones
+   * @param options update options
+   * @return a {@code Blob} object with patched information
+   * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/how-tos/performance#patch">
+   *     Patch (partial update)</a>
+   */
+  public Blob patch(BlobInfo blobInfo, BlobTargetOption... options) {
+    checkArgument(Objects.equals(blobInfo.bucket(), info.bucket()), "Bucket name must match");
+    checkArgument(Objects.equals(blobInfo.name(), info.name()), "Blob name must match");
+    return new Blob(storage, storage.patch(blobInfo, options));
   }
 
   /**
@@ -306,8 +334,7 @@ public final class Blob {
   }
 
   /**
-   * Gets the requested blobs. If {@code infos.length == 0} an empty list is returned. If
-   * {@code infos.length > 1} a batch request is used to fetch blobs.
+   * Gets the requested blobs. A batch request is used to get blobs.
    *
    * @param storage the storage service used to issue the request
    * @param blobs the blobs to get
@@ -331,13 +358,14 @@ public final class Blob {
   }
 
   /**
-   * Updates the requested blobs. If {@code infos.length == 0} an empty list is returned. If
-   * {@code infos.length > 1} a batch request is used to update blobs.
+   * Updates the requested blobs using a batch request. Blobs metadata will be replaced using values
+   * from the given {@code BlobInfo} objects.
    *
    * @param storage the storage service used to issue the request
    * @param infos the blobs to update
-   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
-   *     been denied the corresponding item in the list is {@code null}.
+   * @return an immutable list of {@code Blob} objects. If an incomplete {@code blobInfo} is
+   *     provided, the blob does not exist or access to it has been denied the corresponding item in
+   *     the list is {@code null}.
    * @throws StorageException upon failure
    */
   public static List<Blob> update(final Storage storage, BlobInfo... infos) {
@@ -356,8 +384,7 @@ public final class Blob {
   }
 
   /**
-   * Deletes the requested blobs. If {@code infos.length == 0} an empty list is returned. If
-   * {@code infos.length > 1} a batch request is used to delete blobs.
+   * Deletes the requested blobs using a batch request.
    *
    * @param storage the storage service used to issue the request
    * @param blobs the blobs to delete
@@ -373,5 +400,34 @@ public final class Blob {
       return Collections.emptyList();
     }
     return storage.delete(blobs);
+  }
+
+  /**
+   * Updates the requested blobs according to the patch semantics. Original metadata are merged with
+   * metadata in the provided {@code BlobInfo} objects. To replace metadata use {@link
+   * #update(com.google.gcloud.storage.Storage, com.google.gcloud.storage.BlobInfo...)} instead.
+   * A batch request is used to perform this call.
+   *
+   * @param storage the storage service used to issue the request
+   * @param infos the blobs to update
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
+   *     been denied the corresponding item in the list is {@code null}.
+   * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/how-tos/performance#patch">
+   *     Patch (partial update)</a>
+   */
+  public static List<Blob> patch(final Storage storage, BlobInfo... infos) {
+    checkNotNull(storage);
+    checkNotNull(infos);
+    if (infos.length == 0) {
+      return Collections.emptyList();
+    }
+    return Collections.unmodifiableList(Lists.transform(storage.patch(infos),
+        new Function<BlobInfo, Blob>() {
+          @Override
+          public Blob apply(BlobInfo f) {
+            return f != null ? new Blob(storage, f) : null;
+          }
+        }));
   }
 }
