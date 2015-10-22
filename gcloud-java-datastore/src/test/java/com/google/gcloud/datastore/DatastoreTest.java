@@ -35,6 +35,7 @@ import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.datastore.testing.LocalGcdHelper;
 import com.google.gcloud.spi.DatastoreRpc;
+import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 import com.google.gcloud.spi.DatastoreRpcFactory;
 
@@ -49,9 +50,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 @RunWith(JUnit4.class)
 public class DatastoreTest {
@@ -520,7 +524,7 @@ public class DatastoreTest {
   }
 
   @Test
-  public void testGetArray() {
+  public void testGetArrayNoDeferredResults() {
     datastore.put(ENTITY3);
     Iterator<Entity> result =
         datastore.fetch(KEY1, Key.builder(KEY1).name("bla").build(), KEY2, KEY3).iterator();
@@ -546,7 +550,65 @@ public class DatastoreTest {
       // expected - no such property
     }
     assertFalse(result.hasNext());
-    // TODO(ozarov): construct a test to verify more results
+  }
+
+  public void testGetArrayDeferredResults() throws DatastoreRpcException {
+    List<DatastoreV1.Key> keysPb = new ArrayList<>();
+    keysPb.add(KEY1.toPb());
+    keysPb.add(KEY2.toPb());
+    keysPb.add(KEY3.toPb());
+    keysPb.add(KEY4.toPb());
+    keysPb.add(KEY5.toPb());
+    List<DatastoreV1.LookupRequest> lookupRequests = new ArrayList<>();
+    lookupRequests.add(DatastoreV1.LookupRequest.newBuilder().addAllKey(keysPb).build());
+    lookupRequests.add(
+        DatastoreV1.LookupRequest.newBuilder()
+            .addKey(keysPb.get(2))
+            .addKey(keysPb.get(3))
+            .addKey(keysPb.get(5))
+            .build());
+    lookupRequests.add(DatastoreV1.LookupRequest.newBuilder().addKey(keysPb.get(5)).build());
+    Entity entity4 = Entity.builder(KEY4).set("value", StringValue.of("value")).build();
+    Entity entity5 = Entity.builder(KEY5).set("value", "value").build();
+    List<DatastoreV1.LookupResponse> lookupResponses = new ArrayList<>();
+    lookupResponses.add(
+        DatastoreV1.LookupResponse.newBuilder()
+            .addFound(EntityResult.newBuilder().setEntity(ENTITY1.toPb()))
+            .addFound(EntityResult.newBuilder().setEntity(entity4.toPb()))
+            .addDeferred(KEY2.toPb())
+            .addDeferred(KEY3.toPb())
+            .addDeferred(KEY5.toPb())
+            .build());
+    lookupResponses.add(
+        DatastoreV1.LookupResponse.newBuilder()
+            .addFound(EntityResult.newBuilder().setEntity(ENTITY3.toPb()))
+            .addFound(EntityResult.newBuilder().setEntity(entity4.toPb()))
+            .addDeferred(KEY5.toPb())
+            .build());
+    lookupResponses.add(
+        DatastoreV1.LookupResponse.newBuilder()
+            .addFound(EntityResult.newBuilder().setEntity(entity5.toPb()))
+            .build());
+    DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
+    DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
+        .andReturn(rpcMock);
+    for (int i = 0; i < lookupRequests.size(); i++) {
+      EasyMock.expect(rpcMock.lookup(lookupRequests.get(i))).andReturn(lookupResponses.get(i));
+    }
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    DatastoreOptions options =
+        this.options.toBuilder()
+            .retryParams(RetryParams.getDefaultInstance())
+            .serviceRpcFactory(rpcFactoryMock)
+            .build();
+    Datastore datastore = DatastoreFactory.instance().get(options);
+    Iterator<Entity> iter = datastore.get(KEY1, KEY2, KEY3, KEY4, KEY5);
+    Set<Entity> foundEntities = new HashSet<>();
+    while (iter.hasNext()) {
+      foundEntities.add(iter.next());
+    }
+    assertEquals(foundEntities.size(), 5);
   }
 
   @Test
