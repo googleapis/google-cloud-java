@@ -192,7 +192,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   protected abstract void populatePb(
       com.google.datastore.v1beta3.RunQueryRequest.Builder requestPb);
 
-  protected abstract Query<V> nextQuery(com.google.datastore.v1beta3.QueryResultBatch responsePb);
+  protected abstract Query<V> nextQuery(com.google.datastore.v1beta3.RunQueryResponse responsePb);
 
   /**
    * Returns a new {@link GqlQuery} builder.

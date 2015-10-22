@@ -844,16 +844,16 @@ distinctOn());
   }
 
   @Override
-  protected StructuredQuery<V> nextQuery(com.google.datastore.v1beta3.QueryResultBatch responsePb) {
+  protected Query<V> nextQuery(com.google.datastore.v1beta3.RunQueryResponse responsePb) {
     Builder<V> builder = new Builder<>(type());
     builder.mergeFrom(toPb());
-    builder.startCursor(new Cursor(responsePb.getEndCursor()));
-    if (offset > 0 && responsePb.getSkippedResults() < offset) {
-      builder.offset(offset - responsePb.getSkippedResults());
+    builder.startCursor(new Cursor(responsePb.getBatch().getEndCursor()));
+    if (offset > 0 && responsePb.getBatch().getSkippedResults() < offset) {
+      builder.offset(offset - responsePb.getBatch().getSkippedResults());
     } else {
       builder.offset(0);
       if (limit != null) {
-        builder.limit(limit - responsePb.getEntityResultsCount());
+        builder.limit(limit - responsePb.getBatch().getEntityResultsCount());
       }
     }
     return builder.build();
@@ -904,7 +904,9 @@ distinctOn());
     return fromPb(resultType, namespace, com.google.datastore.v1beta3.Query.parseFrom(bytesPb));
   }
 
-  private static StructuredQuery<?> fromPb(ResultType<?> resultType, String namespace,
+  @SuppressWarnings("unchecked")
+  static <V> StructuredQuery<V> fromPb(
+      ResultType<?> resultType, String namespace,
       com.google.datastore.v1beta3.Query queryPb) {
     BaseBuilder<?, ?> builder;
     if (resultType.equals(ResultType.ENTITY)) {
@@ -914,6 +916,6 @@ distinctOn());
     } else {
       builder = new ProjectionEntityQueryBuilder();
     }
-    return builder.namespace(namespace).mergeFrom(queryPb).build();
+    return (StructuredQuery<V>) builder.namespace(namespace).mergeFrom(queryPb).build();
   }
 }
