@@ -28,13 +28,16 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.AbstractMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Google Storage object metadata.
@@ -81,6 +84,14 @@ public final class BlobInfo implements Serializable {
   private final String contentLanguage;
   private final Integer componentCount;
 
+  public static final class ImmutableEmptyMap<K, V> extends AbstractMap<K, V> {
+
+    @Override
+    public Set<Entry<K, V>> entrySet() {
+      return ImmutableSet.of();
+    }
+  }
+
   public static final class Builder {
 
     private BlobId blobId;
@@ -99,7 +110,7 @@ public final class BlobInfo implements Serializable {
     private String md5;
     private String crc32c;
     private String mediaLink;
-    private ImmutableMap<String, String> metadata;
+    private Map<String, String> metadata;
     private Long generation;
     private Long metageneration;
     private Long deleteTime;
@@ -188,7 +199,8 @@ public final class BlobInfo implements Serializable {
     }
 
     public Builder metadata(Map<String, String> metadata) {
-      this.metadata = metadata != null ? ImmutableMap.copyOf(metadata) : null;
+      this.metadata = metadata != null ?
+          ImmutableMap.copyOf(metadata) : Data.<Map>nullOf(ImmutableEmptyMap.class);
       return this;
     }
 
@@ -315,7 +327,7 @@ public final class BlobInfo implements Serializable {
   }
 
   public Map<String, String> metadata() {
-    return metadata;
+    return Data.isNull(metadata) ? null : metadata;
   }
 
   public Long generation() {
