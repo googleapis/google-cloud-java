@@ -50,9 +50,16 @@ public class LocalGcdHelperTest {
   @Test
   public void testSendQuitRequest() throws IOException, InterruptedException {
     LocalGcdHelper gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT);
-    assertTrue(LocalGcdHelper.sendQuitRequest(PORT).startsWith("Shutting down local server"));
+    assertTrue(LocalGcdHelper.sendQuitRequest(PORT));
+    long timeoutMillis = 30000;
+    long startTime = System.currentTimeMillis();
+    boolean datastoreActive = LocalGcdHelper.isActive(PROJECT_ID, PORT);
+    while (datastoreActive && System.currentTimeMillis() - startTime < timeoutMillis) {
+      datastoreActive = LocalGcdHelper.isActive(PROJECT_ID, PORT);
+    }
+    assertFalse(datastoreActive);
+    assertFalse(LocalGcdHelper.sendQuitRequest(PORT));
     gcdHelper.stop();
-    assertTrue(LocalGcdHelper.sendQuitRequest(PORT).isEmpty()); // shouldn't error
   }
 
   @Test

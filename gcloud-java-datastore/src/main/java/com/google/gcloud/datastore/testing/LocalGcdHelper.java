@@ -524,7 +524,7 @@ public class LocalGcdHelper {
     }
   }
 
-  public static String sendQuitRequest(int port) {
+  public static boolean sendQuitRequest(int port) {
     StringBuilder result = new StringBuilder();
     try {
       URL url = new URL("http", "localhost", port, "/_ah/admin/quit");
@@ -543,7 +543,7 @@ public class LocalGcdHelper {
     } catch (IOException ignore) {
       // ignore
     }
-    return result.toString();
+    return result.toString().startsWith("Shutting down local server");
   }
 
   public void stop() throws IOException, InterruptedException {
