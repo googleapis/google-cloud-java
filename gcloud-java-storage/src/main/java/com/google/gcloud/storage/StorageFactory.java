@@ -16,16 +16,27 @@
 
 package com.google.gcloud.storage;
 
+import com.google.gcloud.ServiceFactory;
+import java.io.ObjectStreamException;
 
 /**
  * A base class for Storage factories.
  */
-public abstract class StorageFactory {
+public abstract class StorageFactory implements ServiceFactory<Storage, StorageOptions> {
+
+  private static final long serialVersionUID = 1866883249985063753L;
 
   private static final StorageFactory INSTANCE = new StorageFactory() {
+
+    private static final long serialVersionUID = -7985210081064222485L;
+
     @Override
     public Storage get(StorageOptions options) {
-      return new StorageImpl(options);
+      return new StorageImpl(options, this);
+    }
+
+    private Object readResolve() throws ObjectStreamException {
+      return INSTANCE;
     }
   };
 
@@ -39,5 +50,6 @@ public abstract class StorageFactory {
   /**
    * Returns a {@code Storage} service for the given options.
    */
+  @Override
   public abstract Storage get(StorageOptions options);
 }

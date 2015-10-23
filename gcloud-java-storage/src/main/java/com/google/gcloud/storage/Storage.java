@@ -44,7 +44,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @see <a href="https://cloud.google.com/storage/docs">Google Cloud Storage</a>
  */
-public interface Storage extends Service<StorageOptions> {
+public interface Storage extends Service<StorageOptions, StorageFactory> {
 
   public static final String DEFAULT_CONTENT_TYPE = "application/octet-stream";
 

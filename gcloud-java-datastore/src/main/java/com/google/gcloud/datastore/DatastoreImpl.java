@@ -43,7 +43,7 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 
 
-final class DatastoreImpl extends BaseService<DatastoreOptions>
+final class DatastoreImpl extends BaseService<DatastoreOptions, DatastoreFactory>
     implements Datastore {
 
   private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR =
@@ -72,8 +72,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   private final DatastoreRpc datastoreRpc;
   private final RetryParams retryParams;
 
-  DatastoreImpl(DatastoreOptions options) {
-    super(options);
+  DatastoreImpl(DatastoreOptions options, DatastoreFactory factory) {
+    super(options, factory);
     this.datastoreRpc = options.datastoreRpc();
     retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
   }

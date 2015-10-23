@@ -16,26 +16,13 @@
 
 package com.google.gcloud;
 
-public abstract class BaseService<
-        OptionsT extends ServiceOptions<?, OptionsT>,
-        ServiceFactoryT extends ServiceFactory<?, OptionsT>>
-    implements Service<OptionsT, ServiceFactoryT> {
+import java.io.Serializable;
 
-  private final OptionsT options;
-  private final ServiceFactoryT factory;
+public interface ServiceFactory<
+        ServiceT extends Service, 
+        OptionsT extends ServiceOptions<?, OptionsT>>
+    extends Serializable {
 
-  protected BaseService(OptionsT options, ServiceFactoryT factory) {
-    this.options = options;
-    this.factory = factory;
-  }
+  public ServiceT get(OptionsT options);
 
-  @Override
-  public OptionsT options() {
-    return options;
-  }
-
-  @Override
-  public ServiceFactoryT factory() {
-    return factory;
-  }
 }

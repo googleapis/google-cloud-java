@@ -16,18 +16,29 @@
 
 package com.google.gcloud.datastore;
 
+import com.google.gcloud.ServiceFactory;
+import java.io.ObjectStreamException;
 
 /**
  * A base class for Datastore factories.
  */
-public abstract class DatastoreFactory {
+public abstract class DatastoreFactory implements ServiceFactory<Datastore, DatastoreOptions> {
+
+  private static final long serialVersionUID = 5037190305022535983L;
 
   private static final DatastoreFactory INSTANCE = new DatastoreFactory() {
-      @Override
-      public Datastore get(DatastoreOptions options) {
-        return new DatastoreImpl(options);
-      }
-    };
+
+    private static final long serialVersionUID = 5893914895344559491L;
+
+    @Override
+    public Datastore get(DatastoreOptions options) {
+      return new DatastoreImpl(options, this);
+    }
+
+    private Object readResolve() throws ObjectStreamException {
+      return INSTANCE;
+    }
+  };
 
   /**
    * Returns the default factory instance.
@@ -39,5 +50,6 @@ public abstract class DatastoreFactory {
   /**
    * Returns a {@code Datastore} service for the given options.
    */
+  @Override
   public abstract Datastore get(DatastoreOptions options);
 }

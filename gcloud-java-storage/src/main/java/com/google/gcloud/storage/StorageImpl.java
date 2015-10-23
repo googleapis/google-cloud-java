@@ -71,7 +71,7 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-final class StorageImpl extends BaseService<StorageOptions> implements Storage {
+final class StorageImpl extends BaseService<StorageOptions, StorageFactory> implements Storage {
 
   private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
 
@@ -99,8 +99,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   private final StorageRpc storageRpc;
 
-  StorageImpl(StorageOptions options) {
-    super(options);
+  StorageImpl(StorageOptions options, StorageFactory factory) {
+    super(options, factory);
     storageRpc = options.storageRpc();
     // todo: provide rewrite - https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite
     // todo: check if we need to expose https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls/insert vs using bucket update/patch

@@ -39,6 +39,7 @@ import java.util.Map;
 
 public class SerializationTest {
 
+  private static final StorageFactory STORAGE_FACTORY = StorageFactory.instance();
   private static final Acl.Domain ACL_DOMAIN = new Acl.Domain("domain");
   private static final Acl.Group ACL_GROUP = new Acl.Group("group");
   private static final Acl.Project ACL_PROJECT_ = new Acl.Project(ProjectRole.VIEWERS, "pid");
@@ -69,6 +70,13 @@ public class SerializationTest {
   private static final Storage.BucketTargetOption BUCKET_TARGET_OPTIONS =
       Storage.BucketTargetOption.metagenerationNotMatch();
   private static final Map<StorageRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
+
+  @Test
+  public void testStorageFactory() throws Exception {
+    StorageFactory serializedCopy = serializeAndDeserialize(STORAGE_FACTORY);
+    assertEquals(STORAGE_FACTORY, serializedCopy);
+    assertEquals(STORAGE_FACTORY.hashCode(), serializedCopy.hashCode());
+  }
 
   @Test
   public void testServiceOptions() throws Exception {
