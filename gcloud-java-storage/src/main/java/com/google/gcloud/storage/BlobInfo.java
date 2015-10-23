@@ -27,14 +27,19 @@ import com.google.api.services.storage.model.StorageObject.Owner;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.AbstractMap;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Google Storage object metadata.
@@ -81,6 +86,17 @@ public final class BlobInfo implements Serializable {
   private final String contentLanguage;
   private final Integer componentCount;
 
+  /**
+   * This class is meant for internal use only. Users are discouraged from using this class.
+   */
+  public static final class ImmutableEmptyMap<K, V> extends AbstractMap<K, V> {
+
+    @Override
+    public Set<Entry<K, V>> entrySet() {
+      return ImmutableSet.of();
+    }
+  }
+
   public static final class Builder {
 
     private BlobId blobId;
@@ -99,7 +115,7 @@ public final class BlobInfo implements Serializable {
     private String md5;
     private String crc32c;
     private String mediaLink;
-    private ImmutableMap<String, String> metadata;
+    private Map<String, String> metadata;
     private Long generation;
     private Long metageneration;
     private Long deleteTime;
@@ -188,7 +204,8 @@ public final class BlobInfo implements Serializable {
     }
 
     public Builder metadata(Map<String, String> metadata) {
-      this.metadata = metadata != null ? ImmutableMap.copyOf(metadata) : null;
+      this.metadata = metadata != null ?
+          new HashMap(metadata) : Data.<Map>nullOf(ImmutableEmptyMap.class);
       return this;
     }
 
@@ -315,7 +332,7 @@ public final class BlobInfo implements Serializable {
   }
 
   public Map<String, String> metadata() {
-    return metadata;
+    return metadata == null || Data.isNull(metadata) ? null : Collections.unmodifiableMap(metadata);
   }
 
   public Long generation() {
@@ -402,6 +419,14 @@ public final class BlobInfo implements Serializable {
     if (owner != null) {
       storageObject.setOwner(new Owner().setEntity(owner.toPb()));
     }
+    Map<String, String> pbMetadata = metadata;
+    if (metadata != null && !Data.isNull(metadata)) {
+      pbMetadata = Maps.newHashMapWithExpectedSize(metadata.size());
+      for (String key : metadata.keySet()) {
+        pbMetadata.put(key, firstNonNull(metadata.get(key), Data.<String>nullOf(String.class)));
+      }
+    }
+    storageObject.setMetadata(pbMetadata);
     storageObject.setCacheControl(cacheControl);
     storageObject.setContentEncoding(contentEncoding);
     storageObject.setCrc32c(crc32c);
@@ -409,7 +434,6 @@ public final class BlobInfo implements Serializable {
     storageObject.setGeneration(generation);
     storageObject.setMd5Hash(md5);
     storageObject.setMediaLink(mediaLink);
-    storageObject.setMetadata(metadata);
     storageObject.setMetageneration(metageneration);
     storageObject.setContentDisposition(contentDisposition);
     storageObject.setComponentCount(componentCount);
