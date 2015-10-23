@@ -553,6 +553,33 @@ public class DatastoreTest {
   }
 
   public void testGetArrayDeferredResults() throws DatastoreRpcException {
+    Set<Key> requestedKeys = new HashSet<Key>();
+    requestedKeys.add(KEY1);
+    requestedKeys.add(KEY2);
+    requestedKeys.add(KEY3);
+    requestedKeys.add(KEY4);
+    requestedKeys.add(KEY5);
+    Iterator<Entity> iter =
+        createMockDatastoreForDeferredLookup().get(KEY1, KEY2, KEY3, KEY4, KEY5);
+    Set<Key> keysOfFoundEntities = new HashSet<Key>();
+    while (iter.hasNext()) {
+      keysOfFoundEntities.add(iter.next().key());
+    }
+    assertEquals(requestedKeys, keysOfFoundEntities);
+  }
+
+  public void testFetchArrayDeferredResults() throws DatastoreRpcException {
+    List<Entity> foundEntities =
+        createMockDatastoreForDeferredLookup().fetch(KEY1, KEY2, KEY3, KEY4, KEY5);
+    assertEquals(foundEntities.get(0).key(), KEY1);
+    assertEquals(foundEntities.get(1).key(), KEY2);
+    assertEquals(foundEntities.get(2).key(), KEY3);
+    assertEquals(foundEntities.get(3).key(), KEY4);
+    assertEquals(foundEntities.get(4).key(), KEY5);
+    assertEquals(foundEntities.size(), 5);
+  }
+
+  private Datastore createMockDatastoreForDeferredLookup() throws DatastoreRpcException {
     List<DatastoreV1.Key> keysPb = new ArrayList<>();
     keysPb.add(KEY1.toPb());
     keysPb.add(KEY2.toPb());
@@ -575,15 +602,15 @@ public class DatastoreTest {
         DatastoreV1.LookupResponse.newBuilder()
             .addFound(EntityResult.newBuilder().setEntity(ENTITY1.toPb()))
             .addFound(EntityResult.newBuilder().setEntity(entity4.toPb()))
-            .addDeferred(KEY2.toPb())
-            .addDeferred(KEY3.toPb())
-            .addDeferred(KEY5.toPb())
+            .addDeferred(keysPb.get(2))
+            .addDeferred(keysPb.get(3))
+            .addDeferred(keysPb.get(5))
             .build());
     lookupResponses.add(
         DatastoreV1.LookupResponse.newBuilder()
             .addFound(EntityResult.newBuilder().setEntity(ENTITY3.toPb()))
             .addFound(EntityResult.newBuilder().setEntity(entity4.toPb()))
-            .addDeferred(KEY5.toPb())
+            .addDeferred(keysPb.get(5))
             .build());
     lookupResponses.add(
         DatastoreV1.LookupResponse.newBuilder()
@@ -602,13 +629,7 @@ public class DatastoreTest {
             .retryParams(RetryParams.getDefaultInstance())
             .serviceRpcFactory(rpcFactoryMock)
             .build();
-    Datastore datastore = DatastoreFactory.instance().get(options);
-    Iterator<Entity> iter = datastore.get(KEY1, KEY2, KEY3, KEY4, KEY5);
-    Set<Entity> foundEntities = new HashSet<>();
-    while (iter.hasNext()) {
-      foundEntities.add(iter.next());
-    }
-    assertEquals(foundEntities.size(), 5);
+    return DatastoreFactory.instance().get(options);
   }
 
   @Test
