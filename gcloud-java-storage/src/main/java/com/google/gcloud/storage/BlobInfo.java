@@ -29,6 +29,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -420,7 +421,7 @@ public final class BlobInfo implements Serializable {
     }
     Map<String, String> pbMetadata = metadata;
     if (metadata != null && !Data.isNull(metadata)) {
-      pbMetadata = new HashMap<>();
+      pbMetadata = Maps.newHashMapWithExpectedSize(metadata.size());
       for (String key : metadata.keySet()) {
         pbMetadata.put(key, firstNonNull(metadata.get(key), Data.<String>nullOf(String.class)));
       }
