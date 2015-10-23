@@ -37,8 +37,10 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -174,17 +176,57 @@ public class ITStorageTest {
   @Test
   public void testUpdateBlobReplaceMetadata() {
     String blobName = "test-update-blob-replace-metadata";
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k1", "a");
+    ImmutableMap<String, String> newMetadata = ImmutableMap.of("k2", "b");
     BlobInfo blob = BlobInfo.builder(bucket, blobName)
         .contentType(CONTENT_TYPE)
-        .metadata(ImmutableMap.of("k1", "a"))
+        .metadata(metadata)
         .build();
     assertNotNull(storage.create(blob));
     BlobInfo updatedBlob = storage.update(blob.toBuilder().metadata(null).build());
     assertNotNull(updatedBlob);
     assertNull(updatedBlob.metadata());
-    updatedBlob = storage.update(blob.toBuilder().metadata(ImmutableMap.of("k2", "b")).build());
+    updatedBlob = storage.update(blob.toBuilder().metadata(newMetadata).build());
     assertEquals(blob.blobId(), updatedBlob.blobId());
-    assertEquals(ImmutableMap.of("k2", "b"), updatedBlob.metadata());
+    assertEquals(newMetadata, updatedBlob.metadata());
+    assertTrue(storage.delete(bucket, blobName));
+  }
+
+  @Test
+  public void testUpdateBlobMergeMetadata() {
+    String blobName = "test-update-blob-merge-metadata";
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k1", "a");
+    ImmutableMap<String, String> newMetadata = ImmutableMap.of("k2", "b");
+    ImmutableMap<String, String> expectedMetadata = ImmutableMap.of("k1", "a", "k2", "b");
+    BlobInfo blob = BlobInfo.builder(bucket, blobName)
+        .contentType(CONTENT_TYPE)
+        .metadata(metadata)
+        .build();
+    assertNotNull(storage.create(blob));
+    BlobInfo updatedBlob = storage.update(blob.toBuilder().metadata(newMetadata).build());
+    assertNotNull(updatedBlob);
+    assertEquals(blob.blobId(), updatedBlob.blobId());
+    assertEquals(expectedMetadata, updatedBlob.metadata());
+    assertTrue(storage.delete(bucket, blobName));
+  }
+
+  @Test
+  public void testUpdateBlobUnsetMetadata() {
+    String blobName = "test-update-blob-unset-metadata";
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k1", "a", "k2", "b");
+    Map<String, String> newMetadata = new HashMap<>();
+    newMetadata.put("k1", "a");
+    newMetadata.put("k2", null);
+    ImmutableMap<String, String> expectedMetadata = ImmutableMap.of("k1", "a");
+    BlobInfo blob = BlobInfo.builder(bucket, blobName)
+        .contentType(CONTENT_TYPE)
+        .metadata(metadata)
+        .build();
+    assertNotNull(storage.create(blob));
+    BlobInfo updatedBlob = storage.update(blob.toBuilder().metadata(newMetadata).build());
+    assertNotNull(updatedBlob);
+    assertEquals(blob.blobId(), updatedBlob.blobId());
+    assertEquals(expectedMetadata, updatedBlob.metadata());
     assertTrue(storage.delete(bucket, blobName));
   }
 
