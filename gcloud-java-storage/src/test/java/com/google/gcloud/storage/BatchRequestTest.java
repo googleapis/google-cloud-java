@@ -19,6 +19,7 @@ package com.google.gcloud.storage;
 import static com.google.gcloud.storage.Storage.PredefinedAcl.PUBLIC_READ;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.Iterables;
@@ -81,5 +82,57 @@ public class BatchRequestTest {
     assertEquals(BlobId.of("b3", "o3"), get.getKey());
     assertTrue(Iterables.isEmpty(get.getValue()));
     assertFalse(gets.hasNext());
+  }
+
+  @Test
+  public void testEquals() {
+    BatchRequest request = BatchRequest.builder()
+        .delete("b1", "o1")
+        .delete("b1", "o2")
+        .update(BlobInfo.builder("b2", "o1").build())
+        .update(BlobInfo.builder("b2", "o2").build())
+        .get("b3", "o1")
+        .get("b3", "o2")
+        .build();
+    BatchRequest requestEquals = BatchRequest.builder()
+        .delete("b1", "o1")
+        .delete("b1", "o2")
+        .update(BlobInfo.builder("b2", "o1").build())
+        .update(BlobInfo.builder("b2", "o2").build())
+        .get("b3", "o1")
+        .get("b3", "o2")
+        .build();
+    BatchRequest requestNotEquals1 = BatchRequest.builder()
+        .delete("b1", "o1")
+        .delete("b1", "o3")
+        .update(BlobInfo.builder("b2", "o1").build())
+        .update(BlobInfo.builder("b2", "o2").build())
+        .get("b3", "o1")
+        .get("b3", "o2")
+        .build();
+    BatchRequest requestNotEquals2 = BatchRequest.builder()
+        .delete("b1", "o1")
+        .delete("b1", "o2")
+        .update(BlobInfo.builder("b2", "o1").build())
+        .update(BlobInfo.builder("b2", "o3").build())
+        .get("b3", "o1")
+        .get("b3", "o2")
+        .build();
+    BatchRequest requestNotEquals3 = BatchRequest.builder()
+        .delete("b1", "o1")
+        .delete("b1", "o2")
+        .update(BlobInfo.builder("b2", "o1").build())
+        .update(BlobInfo.builder("b2", "o2").build())
+        .get("b3", "o1")
+        .get("b3", "o3")
+        .build();
+    assertEquals(request, requestEquals);
+    assertEquals(request.hashCode(), requestEquals.hashCode());
+    assertNotEquals(request, requestNotEquals1);
+    assertNotEquals(request.hashCode(), requestNotEquals1.hashCode());
+    assertNotEquals(request, requestNotEquals2);
+    assertNotEquals(request.hashCode(), requestNotEquals2.hashCode());
+    assertNotEquals(request, requestNotEquals3);
+    assertNotEquals(request.hashCode(), requestNotEquals3.hashCode());
   }
 }

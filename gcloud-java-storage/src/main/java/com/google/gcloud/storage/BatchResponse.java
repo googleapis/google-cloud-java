@@ -133,7 +133,7 @@ public final class BatchResponse implements Serializable {
     BatchResponse other = (BatchResponse) obj;
     return Objects.equals(deleteResult, other.deleteResult)
         && Objects.equals(updateResult, other.updateResult)
-        && Objects.equals(updateResult, other.updateResult);
+        && Objects.equals(getResult, other.getResult);
   }
 
   /**
