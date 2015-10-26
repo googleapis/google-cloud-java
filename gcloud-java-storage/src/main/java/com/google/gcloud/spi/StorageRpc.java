@@ -19,6 +19,7 @@ package com.google.gcloud.spi;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.services.storage.model.Bucket;
+import com.google.api.services.storage.model.RewriteResponse;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -174,4 +175,8 @@ public interface StorageRpc {
 
   void write(String uploadId, byte[] toWrite, int toWriteOffset, StorageObject dest,
       long destOffset, int length, boolean last) throws StorageException;
+
+  RewriteResponse rewrite(StorageObject source, Map<Option, ?> sourceOptions,
+      StorageObject target, Map<Option, ?> targetOptions, String token, Long maxByteRewrittenPerCall)
+      throws StorageException;
 }

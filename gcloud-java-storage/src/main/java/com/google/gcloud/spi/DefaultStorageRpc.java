@@ -55,6 +55,7 @@ import com.google.api.services.storage.model.Buckets;
 import com.google.api.services.storage.model.ComposeRequest;
 import com.google.api.services.storage.model.ComposeRequest.SourceObjects.ObjectPreconditions;
 import com.google.api.services.storage.model.Objects;
+import com.google.api.services.storage.model.RewriteResponse;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
@@ -517,6 +518,33 @@ public class DefaultStorageRpc implements StorageRpc {
         throw translate(error);
       }
       return response.getHeaders().getLocation();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public RewriteResponse rewrite(StorageObject source, Map<Option, ?> sourceOptions,
+      StorageObject target, Map<Option, ?> targetOptions, String token, Long maxByteRewrittenPerCall)
+      throws StorageException {
+    try {
+      return storage
+          .objects()
+          .rewrite(source.getBucket(), source.getName(), target.getBucket(), target.getName(),
+              target)
+          .setRewriteToken(token)
+          .setMaxBytesRewrittenPerCall(maxByteRewrittenPerCall)
+          .setProjection(DEFAULT_PROJECTION)
+          .setIfSourceMetagenerationMatch(IF_SOURCE_METAGENERATION_MATCH.getLong(sourceOptions))
+          .setIfSourceMetagenerationNotMatch(
+              IF_SOURCE_METAGENERATION_NOT_MATCH.getLong(sourceOptions))
+          .setIfSourceGenerationMatch(IF_SOURCE_GENERATION_MATCH.getLong(sourceOptions))
+          .setIfSourceGenerationNotMatch(IF_SOURCE_GENERATION_NOT_MATCH.getLong(sourceOptions))
+          .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(targetOptions))
+          .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(targetOptions))
+          .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(targetOptions))
+          .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(targetOptions))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }

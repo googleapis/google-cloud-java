@@ -663,6 +663,17 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     return Collections.unmodifiableList(transformResultList(response.deletes(), Boolean.FALSE));
   }
 
+  @Override
+  public BlobRewriter rewriter(final RewriteRequest req) {
+    final Map<StorageRpc.Option, ?> sourceOpts = optionMap(null, null, req.sourceOptions(), true);
+    final Map<StorageRpc.Option, ?> targetOpts = optionMap(req.target().generation(),
+        req.target().metageneration(), req.targetOptions());
+    return BlobRewriter.builder(options(), req.source(), sourceOpts, req.target(), targetOpts)
+        .isDone(false)
+        .maxBytesRewrittenPerCall(req.maxBytesRewrittenPerCall())
+        .build();
+  }
+
   private static <T extends Serializable> List<T> transformResultList(
       List<BatchResponse.Result<T>> results, final T errorValue) {
     return Lists.transform(results, new Function<BatchResponse.Result<T>, T>() {

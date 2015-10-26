@@ -596,6 +596,157 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
+  class RewriteRequest implements Serializable {
+
+    private static final long serialVersionUID = -4498650529476219937L;
+
+    private final BlobId source;
+    private final List<BlobSourceOption> sourceOptions;
+    private final BlobInfo target;
+    private final List<BlobTargetOption> targetOptions;
+    private final Long maxBytesRewrittenPerCall;
+
+    public static class Builder {
+
+      private final Set<BlobSourceOption> sourceOptions = new LinkedHashSet<>();
+      private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
+      private BlobId source;
+      private BlobInfo target;
+      private Long maxBytesRewrittenPerCall;
+
+      /**
+       * Sets the blob to rewrite given bucket and blob name.
+       *
+       * @return the builder.
+       */
+      public Builder source(String bucket, String blob) {
+        this.source = BlobId.of(bucket, blob);
+        return this;
+      }
+
+      /**
+       * Sets the blob to rewrite given a {@link BlobId}.
+       *
+       * @return the builder.
+       */
+      public Builder source(BlobId source) {
+        this.source = source;
+        return this;
+      }
+
+      /**
+       * Sets blob's source options.
+       *
+       * @return the builder.
+       */
+      public Builder sourceOptions(BlobSourceOption... options) {
+        Collections.addAll(sourceOptions, options);
+        return this;
+      }
+
+      /**
+       * Sets blob's source options.
+       *
+       * @return the builder.
+       */
+      public Builder sourceOptions(Iterable<BlobSourceOption> options) {
+        Iterables.addAll(sourceOptions, options);
+        return this;
+      }
+
+      /**
+       * Sets the rewrite target.
+       *
+       * @return the builder.
+       */
+      public Builder target(BlobInfo target) {
+        this.target = target;
+        return this;
+      }
+
+      /**
+       * Sets blob's target options.
+       *
+       * @return the builder.
+       */
+      public Builder targetOptions(BlobTargetOption... options) {
+        Collections.addAll(targetOptions, options);
+        return this;
+      }
+
+      /**
+       * Sets blob's target options.
+       *
+       * @return the builder.
+       */
+      public Builder targetOptions(Iterable<BlobTargetOption> options) {
+        Iterables.addAll(targetOptions, options);
+        return this;
+      }
+
+      /**
+       * Sets the maximum number of bytes to copy for each RPC call. This parameter is ignored if
+       * source and target blob share the same location and storage class as rewrite is made with
+       * one single RPC.
+       *
+       * @return the builder.
+       */
+      public Builder maxBytesRewrittenPerCall(Long maxBytesRewrittenPerCall) {
+        this.maxBytesRewrittenPerCall = maxBytesRewrittenPerCall;
+        return this;
+      }
+
+      /**
+       * Creates a {@code RewriteRequest}.
+       */
+      public RewriteRequest build() {
+        checkNotNull(source);
+        checkNotNull(target);
+        return new RewriteRequest(this);
+      }
+    }
+
+    private RewriteRequest(Builder builder) {
+      source = checkNotNull(builder.source);
+      sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
+      target = checkNotNull(builder.target);
+      targetOptions = ImmutableList.copyOf(builder.targetOptions);
+      maxBytesRewrittenPerCall = builder.maxBytesRewrittenPerCall;
+    }
+
+    public BlobId source() {
+      return source;
+    }
+
+    public List<BlobSourceOption> sourceOptions() {
+      return sourceOptions;
+    }
+
+    public BlobInfo target() {
+      return target;
+    }
+
+    public List<BlobTargetOption> targetOptions() {
+      return targetOptions;
+    }
+
+    public Long maxBytesRewrittenPerCall() {
+      return maxBytesRewrittenPerCall;
+    }
+
+    public static RewriteRequest of(String sourceBucket, String sourceBlob, BlobInfo target) {
+      return builder().source(sourceBucket, sourceBlob).target(target).build();
+    }
+
+    public static RewriteRequest of(BlobId sourceBlobId, BlobInfo target) {
+      return builder().source(sourceBlobId).target(target).build();
+    }
+
+    public static Builder builder() {
+      return new Builder();
+    }
+  }
+
   /**
    * Create a new bucket.
    *
@@ -865,4 +1016,23 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   List<Boolean> delete(BlobId... blobIds);
+
+  /**
+   * Returns a {@link BlobRewriter} object for the provided {@code rewriteRequest}. If source and
+   * destination objects share the same location and storage class the source blob is copied with a
+   * single call of {@link BlobRewriter#copyChunk()}, regardless of the {@link
+   * RewriteRequest#maxBytesRewrittenPerCall} parameter. If source and destination have different
+   * location or storage class multiple RPC calls might be needed depending on blob's size.
+   * <p>
+   * Example usage of blob rewriter:
+   * <pre>    {@code BlobRewriter rewriter = service.rewriter(rewriteRequest);}
+   *    {@code while(!rewriter.isDone()) {
+   *       rewriter.copyChunk();
+   *   }}
+   * </pre>
+   *
+   * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite">Rewrite</a>
+   */
+  BlobRewriter rewriter(RewriteRequest rewriteRequest);
 }
