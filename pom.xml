@@ -332,6 +332,8 @@
                 <quiet>true</quiet>
                 <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
                 <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+                <artifactId>gcloud-java</artifactId>
+                <packaging>jar</packaging>
               </configuration>
             </plugin>
             <plugin>
