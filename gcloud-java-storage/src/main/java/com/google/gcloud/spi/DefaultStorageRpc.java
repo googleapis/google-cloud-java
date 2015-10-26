@@ -293,7 +293,6 @@ public class DefaultStorageRpc implements StorageRpc {
       Map<Option, ?> targetOptions) throws StorageException {
     ComposeRequest request = new ComposeRequest();
     if (target.getContentType() == null) {
-      // todo: remove once this is no longer requirement (b/20681287).
       target.setContentType("application/octet-stream");
     }
     request.setDestination(target);
@@ -311,7 +310,6 @@ public class DefaultStorageRpc implements StorageRpc {
     }
     request.setSourceObjects(sourceObjects);
     try {
-      // todo: missing setProjection (b/20659000)
       return storage.objects()
           .compose(target.getBucket(), target.getName(), request)
           .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(targetOptions))
@@ -435,7 +433,6 @@ public class DefaultStorageRpc implements StorageRpc {
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
       MediaHttpDownloader downloader = req.getMediaHttpDownloader();
-      // todo: Fix int casting (https://github.com/google/google-api-java-client/issues/937)
       downloader.setContentRange(position, (int) position + bytes);
       downloader.setDirectDownloadEnabled(true);
       ByteArrayOutputStream output = new ByteArrayOutputStream();
