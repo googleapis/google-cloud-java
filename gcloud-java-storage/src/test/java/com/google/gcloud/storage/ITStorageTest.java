@@ -29,6 +29,10 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,10 +51,6 @@ import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 public class ITStorageTest {
 
   private static Storage storage;
@@ -65,7 +65,7 @@ public class ITStorageTest {
   @BeforeClass
   public static void beforeClass() {
     gcsHelper = RemoteGcsHelper.create();
-    storage = StorageFactory.instance().get(gcsHelper.options());
+    storage = gcsHelper.options().service();
     storage.create(BucketInfo.of(bucket));
   }
 
@@ -469,13 +469,13 @@ public class ITStorageTest {
 
   @Test
   public void testReadAndWriteSaveChannels() throws UnsupportedEncodingException, IOException {
-    String blobName = "test-read-and-write-save-channels-blob";
+    String blobName = "test-read-and-write-capture-channels-blob";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
     byte[] stringBytes;
     BlobWriteChannel writer = storage.writer(blob);
     stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
     writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
-    RestorableState<BlobWriteChannel> writerState = writer.save();
+    RestorableState<BlobWriteChannel> writerState = writer.capture();
     BlobWriteChannel secondWriter = writerState.restore();
     secondWriter.write(ByteBuffer.wrap(stringBytes));
     secondWriter.close();
@@ -485,7 +485,7 @@ public class ITStorageTest {
     reader.chunkSize(BLOB_BYTE_CONTENT.length);
     readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
     reader.read(readBytes);
-    RestorableState<BlobReadChannel> readerState = reader.save();
+    RestorableState<BlobReadChannel> readerState = reader.capture();
     BlobReadChannel secondReader = readerState.restore();
     readStringBytes = ByteBuffer.allocate(stringBytes.length);
     secondReader.read(readStringBytes);

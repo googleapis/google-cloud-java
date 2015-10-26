@@ -21,7 +21,7 @@
  * <p>Before the test:
  * <pre> {@code
  * RemoteGcsHelper gcsHelper = RemoteGcsHelper.create(PROJECT_ID, "/path/to/JSON/key.json");
- * Storage storage = StorageFactory.instance().get(gcsHelper.options());
+ * Storage storage = gcsHelper.options().service();
  * String bucket = RemoteGcsHelper.generateBucketName();
  * storage.create(BucketInfo.of(bucket));
  * } </pre>

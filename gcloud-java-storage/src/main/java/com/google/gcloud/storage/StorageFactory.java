@@ -17,27 +17,10 @@
 package com.google.gcloud.storage;
 
 
+import com.google.gcloud.ServiceFactory;
+
 /**
- * A base class for Storage factories.
+ * An interface for Storage factories.
  */
-public abstract class StorageFactory {
-
-  private static final StorageFactory INSTANCE = new StorageFactory() {
-    @Override
-    public Storage get(StorageOptions options) {
-      return new StorageImpl(options);
-    }
-  };
-
-  /**
-   * Returns the default factory instance.
-   */
-  public static StorageFactory instance() {
-    return INSTANCE;
-  }
-
-  /**
-   * Returns a {@code Storage} service for the given options.
-   */
-  public abstract Storage get(StorageOptions options);
+public interface StorageFactory extends ServiceFactory<Storage, StorageOptions> {
 }

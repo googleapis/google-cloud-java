@@ -16,6 +16,7 @@
 
 package com.google.gcloud.storage;
 
+import com.google.gcloud.Restorable;
 import com.google.gcloud.RestorableState;
 
 import java.io.Closeable;
@@ -28,7 +29,8 @@ import java.nio.channels.WritableByteChannel;
  * data will only be visible after calling {@link #close()}. This class is serializable, to allow
  * incremental writes.
  */
-public interface BlobWriteChannel extends WritableByteChannel, Closeable {
+public interface BlobWriteChannel extends WritableByteChannel, Closeable,
+    Restorable<BlobWriteChannel> {
 
   /**
    * Sets the minimum size that will be written by a single RPC.
@@ -37,12 +39,13 @@ public interface BlobWriteChannel extends WritableByteChannel, Closeable {
   void chunkSize(int chunkSize);
 
   /**
-   * Saves the write channel state so that it can be restored afterwards. The original
+   * Capture the write channel state so that it can be saved and restored afterwards. The original
    * {@code BlobWriteChannel} and the restored one should not both be used. Closing one channel
    * causes the other channel to close, subsequent writes will fail.
    *
    * @return a {@link RestorableState} object that contains the write channel state and can restore
-   *     it afterwards. State object must implement {@link java.io.Serializable}.
+   *     it afterwards.
    */
-  public RestorableState<BlobWriteChannel> save();
+  @Override
+  RestorableState<BlobWriteChannel> capture();
 }

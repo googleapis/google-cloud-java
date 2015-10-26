@@ -31,7 +31,6 @@ import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.ComposeRequest;
 import com.google.gcloud.storage.Storage.CopyRequest;
 import com.google.gcloud.storage.Storage.SignUrlOption;
-import com.google.gcloud.storage.StorageFactory;
 import com.google.gcloud.storage.StorageOptions;
 
 import java.io.FileOutputStream;
@@ -41,7 +40,6 @@ import java.io.PrintStream;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.WritableByteChannel;
-import static java.nio.charset.StandardCharsets.UTF_8;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -558,7 +556,7 @@ public class StorageExample {
       printUsage();
       return;
     }
-    Storage storage = StorageFactory.instance().get(optionsBuilder.build());
+    Storage storage = optionsBuilder.build().service();
     Object request;
     try {
       request = action.parse(args);

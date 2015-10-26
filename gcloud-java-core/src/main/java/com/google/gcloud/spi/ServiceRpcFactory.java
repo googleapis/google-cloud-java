@@ -18,16 +18,13 @@ package com.google.gcloud.spi;
 
 import com.google.gcloud.ServiceOptions;
 
-import java.io.Serializable;
-
 /**
  * A base interface for all service RPC factories.
+ *
+ * Implementation must provide a public no-arg constructor.
  * Loading of a factory implementation is done via {@link java.util.ServiceLoader}.
  */
-public interface ServiceRpcFactory<
-        ServiceRpcT,
-        OptionsT extends ServiceOptions<ServiceRpcT, OptionsT>>
-    extends Serializable {
+public interface ServiceRpcFactory<ServiceRpcT, OptionsT extends ServiceOptions> {
 
   ServiceRpcT create(OptionsT options);
 }

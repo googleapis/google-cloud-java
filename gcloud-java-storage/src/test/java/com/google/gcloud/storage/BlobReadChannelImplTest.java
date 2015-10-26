@@ -18,25 +18,25 @@ package com.google.gcloud.storage;
 
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.RestorableState;
-import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.StorageRpcFactory;
 
 import org.easymock.EasyMock;
-import org.junit.Test;
+import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Random;
-import org.junit.After;
 
 public class BlobReadChannelImplTest {
 
@@ -48,37 +48,38 @@ public class BlobReadChannelImplTest {
   private static final int CUSTOM_CHUNK_SIZE = 2 * 1024 * 1024;
   private static final Random RANDOM = new Random();
 
-  private StorageOptions optionsMock;
+  private StorageOptions options;
   private StorageRpc storageRpcMock;
   private BlobReadChannelImpl reader;
 
   @Before
   public void setUp() throws IOException, InterruptedException {
-    optionsMock = EasyMock.createMock(StorageOptions.class);
+    StorageRpcFactory rpcFactoryMock = EasyMock.createNiceMock(StorageRpcFactory.class);
     storageRpcMock = EasyMock.createMock(StorageRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(StorageOptions.class)))
+        .andReturn(storageRpcMock);
+    EasyMock.replay(rpcFactoryMock);
+    options = StorageOptions.builder()
+        .projectId("projectId")
+        .serviceRpcFactory(rpcFactoryMock)
+        .build();
   }
 
   @After
   public void tearDown() throws Exception {
-    verify(optionsMock);
     verify(storageRpcMock);
   }
 
   @Test
   public void testCreate() {
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
-    EasyMock.replay(optionsMock);
     EasyMock.replay(storageRpcMock);
-    reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     assertTrue(reader.isOpen());
   }
 
   @Test
   public void testReadBuffered() throws IOException {
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
-    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
-    EasyMock.replay(optionsMock);
-    reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     byte[] result = randomByteArray(DEFAULT_CHUNK_SIZE);
     ByteBuffer firstReadBuffer = ByteBuffer.allocate(42);
     ByteBuffer secondReadBuffer = ByteBuffer.allocate(42);
@@ -97,10 +98,7 @@ public class BlobReadChannelImplTest {
 
   @Test
   public void testReadBig() throws IOException {
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
-    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries()).times(2);
-    EasyMock.replay(optionsMock);
-    reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     reader.chunkSize(CUSTOM_CHUNK_SIZE);
     byte[] firstResult = randomByteArray(DEFAULT_CHUNK_SIZE);
     byte[] secondResult = randomByteArray(DEFAULT_CHUNK_SIZE);
@@ -124,10 +122,7 @@ public class BlobReadChannelImplTest {
 
   @Test
   public void testReadFinish() throws IOException {
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
-    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
-    EasyMock.replay(optionsMock);
-    reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     byte[] result = {};
     ByteBuffer readBuffer = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
     EasyMock
@@ -139,10 +134,7 @@ public class BlobReadChannelImplTest {
 
   @Test
   public void testSeek() throws IOException {
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
-    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
-    EasyMock.replay(optionsMock);
-    reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     reader.seek(42);
     byte[] result = randomByteArray(DEFAULT_CHUNK_SIZE);
     ByteBuffer readBuffer = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
@@ -156,10 +148,8 @@ public class BlobReadChannelImplTest {
 
   @Test
   public void testClose() throws IOException {
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
-    EasyMock.replay(optionsMock);
     EasyMock.replay(storageRpcMock);
-    reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     assertTrue(reader.isOpen());
     reader.close();
     assertTrue(!reader.isOpen());
@@ -167,10 +157,8 @@ public class BlobReadChannelImplTest {
 
   @Test
   public void testReadClosed() {
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
-    EasyMock.replay(optionsMock);
     EasyMock.replay(storageRpcMock);
-    reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     reader.close();
     try {
       ByteBuffer readBuffer = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
@@ -183,9 +171,6 @@ public class BlobReadChannelImplTest {
 
   @Test
   public void testSaveAndRestore() throws IOException, ClassNotFoundException {
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(2);
-    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries()).times(2);
-    EasyMock.replay(optionsMock);
     byte[] firstResult = randomByteArray(DEFAULT_CHUNK_SIZE);
     byte[] secondResult = randomByteArray(DEFAULT_CHUNK_SIZE);
     ByteBuffer firstReadBuffer = ByteBuffer.allocate(42);
@@ -197,9 +182,9 @@ public class BlobReadChannelImplTest {
         .expect(storageRpcMock.read(BLOB_ID.toPb(), EMPTY_RPC_OPTIONS, 42, DEFAULT_CHUNK_SIZE))
         .andReturn(secondResult);
     EasyMock.replay(storageRpcMock);
-    reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     reader.read(firstReadBuffer);
-    RestorableState<BlobReadChannel> readerState = reader.save();
+    RestorableState<BlobReadChannel> readerState = reader.capture();
     BlobReadChannel restoredReader = readerState.restore();
     restoredReader.read(secondReadBuffer);
     assertArrayEquals(Arrays.copyOf(firstResult, firstReadBuffer.capacity()),
@@ -209,13 +194,11 @@ public class BlobReadChannelImplTest {
 
   @Test
   public void testStateEquals() {
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock).times(2);
-    EasyMock.replay(optionsMock);
     EasyMock.replay(storageRpcMock);
-    reader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
-    BlobReadChannel secondReader = new BlobReadChannelImpl(optionsMock, BLOB_ID, EMPTY_RPC_OPTIONS);
-    RestorableState<BlobReadChannel> state = reader.save();
-    RestorableState<BlobReadChannel> secondState = secondReader.save();
+    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    BlobReadChannel secondReader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    RestorableState<BlobReadChannel> state = reader.capture();
+    RestorableState<BlobReadChannel> secondState = secondReader.capture();
     assertEquals(state, secondState);
     assertEquals(state.hashCode(), secondState.hashCode());
     assertEquals(state.toString(), secondState.toString());

@@ -57,7 +57,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
       Map<StorageRpc.Option, ?> optionsMap) {
     this.options = options;
     this.blobInfo = blobInfo;
-    storageRpc = options.storageRpc();
+    storageRpc = options.rpc();
     storageObject = blobInfo.toPb();
     uploadId = storageRpc.open(storageObject, optionsMap);
   }
@@ -66,12 +66,12 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
     this.options = options;
     this.blobInfo = blobInfo;
     this.uploadId = uploadId;
-    storageRpc = options.storageRpc();
+    storageRpc = options.rpc();
     storageObject = blobInfo.toPb();
   }
 
   @Override
-  public RestorableState<BlobWriteChannel> save() {
+  public RestorableState<BlobWriteChannel> capture() {
     byte[] bufferToSave = null;
     if (isOpen) {
       flush();

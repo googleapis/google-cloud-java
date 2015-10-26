@@ -17,16 +17,12 @@
 package com.google.gcloud;
 
 /**
- * A common interface for restorable states. Implementations of {@code RestorableState} are capable
- * of saving the state of an object to restore it for later use.
+ * A base interface for all service factories.
  *
- * Implementations of this class must implement {@link java.io.Serializable} to ensure that the
- * state of a the object can be correctly serialized.
+ * Implementation must provide a public no-arg constructor.
+ * Loading of a factory implementation is done via {@link java.util.ServiceLoader}.
  */
-public interface RestorableState<T extends Restorable<T>> {
+public interface ServiceFactory<ServiceT extends Service, ServiceOptionsT extends ServiceOptions> {
 
-  /**
-   * Returns an object whose internal state reflects the one saved in the invocation object.
-   */
-  T restore();
+  ServiceT create(ServiceOptionsT serviceOptions);
 }
