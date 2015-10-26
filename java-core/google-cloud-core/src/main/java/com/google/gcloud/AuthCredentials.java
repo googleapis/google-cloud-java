@@ -31,8 +31,6 @@ import com.google.auth.oauth2.GoogleCredentials;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.security.GeneralSecurityException;
 import java.security.PrivateKey;
@@ -42,15 +40,34 @@ import java.util.Set;
 /**
  * Credentials for accessing Google Cloud services.
  */
-public abstract class AuthCredentials implements Serializable {
-
-  private static final long serialVersionUID = 236297804453464604L;
+public abstract class AuthCredentials implements Restorable<AuthCredentials> {
 
   private static class AppEngineAuthCredentials extends AuthCredentials {
 
-    private static final long serialVersionUID = 7931300552744202954L;
-
     private static final AuthCredentials INSTANCE = new AppEngineAuthCredentials();
+    private static final AppEngineAuthCredentialsState STATE =
+        new AppEngineAuthCredentialsState();
+
+    private static class AppEngineAuthCredentialsState
+        implements RestorableState<AuthCredentials>, Serializable {
+
+      private static final long serialVersionUID = 3558563960848658928L;
+
+      @Override
+      public AuthCredentials restore() {
+        return INSTANCE;
+      }
+
+      @Override
+      public int hashCode() {
+        return getClass().getName().hashCode();
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        return obj instanceof AppEngineAuthCredentialsState;
+      }
+    }
 
     @Override
     protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
@@ -58,18 +75,55 @@ public abstract class AuthCredentials implements Serializable {
       return new AppIdentityCredential(scopes);
     }
 
-    private Object readResolve() throws ObjectStreamException {
-      return INSTANCE;
+    @Override
+    public RestorableState<AuthCredentials> capture() {
+      return STATE;
     }
   }
 
   public static class ServiceAccountAuthCredentials extends AuthCredentials {
 
-    private static final long serialVersionUID = 8007708734318445901L;
     private final String account;
     private final PrivateKey privateKey;
 
     private static final AuthCredentials NO_CREDENTIALS = new ServiceAccountAuthCredentials();
+
+    private static class ServiceAccountAuthCredentialsState
+        implements RestorableState<AuthCredentials>, Serializable {
+
+      private static final long serialVersionUID = -7302180782414633639L;
+
+      private final String account;
+      private final PrivateKey privateKey;
+
+      private ServiceAccountAuthCredentialsState(String account, PrivateKey privateKey) {
+        this.account = account;
+        this.privateKey = privateKey;
+      }
+
+      @Override
+      public AuthCredentials restore() {
+        if (account == null && privateKey == null) {
+          return NO_CREDENTIALS;
+        }
+        return new ServiceAccountAuthCredentials(account, privateKey);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(account, privateKey);
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        if (!(obj instanceof ServiceAccountAuthCredentialsState)) {
+          return false;
+        }
+        ServiceAccountAuthCredentialsState other = (ServiceAccountAuthCredentialsState) obj;
+        return Objects.equals(account, other.account)
+            && Objects.equals(privateKey, other.privateKey);
+      }
+    }
 
     ServiceAccountAuthCredentials(String account, PrivateKey privateKey) {
       this.account = checkNotNull(account);
@@ -104,38 +158,46 @@ public abstract class AuthCredentials implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-      return Objects.hash(account, privateKey);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      if (!(obj instanceof ServiceAccountAuthCredentials)) {
-        return false;
-      }
-      ServiceAccountAuthCredentials other = (ServiceAccountAuthCredentials) obj;
-      return Objects.equals(account, other.account)
-          && Objects.equals(privateKey, other.privateKey);
+    public RestorableState<AuthCredentials> capture() {
+      return new ServiceAccountAuthCredentialsState(account, privateKey);
     }
   }
 
   private static class ComputeEngineAuthCredentials extends AuthCredentials {
 
-    private static final long serialVersionUID = -5217355402127260144L;
+    private ComputeCredential computeCredential;
 
-    private transient ComputeCredential computeCredential;
+    private static final ComputeEngineAuthCredentialsState STATE =
+        new ComputeEngineAuthCredentialsState();
+
+    private static class ComputeEngineAuthCredentialsState
+        implements RestorableState<AuthCredentials>, Serializable {
+
+      private static final long serialVersionUID = -6168594072854417404L;
+
+      @Override
+      public AuthCredentials restore() {
+        try {
+          return new ComputeEngineAuthCredentials();
+        } catch (IOException | GeneralSecurityException e) {
+          throw new IllegalStateException(
+              "Could not restore " + ComputeEngineAuthCredentials.class.getSimpleName(), e);
+        }
+      }
+
+      @Override
+      public int hashCode() {
+        return getClass().getName().hashCode();
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        return obj instanceof ComputeEngineAuthCredentialsState;
+      }
+    }
 
     ComputeEngineAuthCredentials() throws IOException, GeneralSecurityException {
       computeCredential = getComputeCredential();
-    }
-
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-      in.defaultReadObject();
-      try {
-        computeCredential = getComputeCredential();
-      } catch (GeneralSecurityException e) {
-        throw new IOException(e);
-      }
     }
 
     @Override
@@ -143,20 +205,47 @@ public abstract class AuthCredentials implements Serializable {
         Set<String> scopes) {
       return computeCredential;
     }
+
+    @Override
+    public RestorableState<AuthCredentials> capture() {
+      return STATE;
+    }
   }
 
   private static class ApplicationDefaultAuthCredentials extends AuthCredentials {
 
-    private static final long serialVersionUID = -8306873864136099893L;
+    private GoogleCredentials googleCredentials;
 
-    private transient GoogleCredentials googleCredentials;
+    private static final ApplicationDefaultAuthCredentialsState STATE =
+        new ApplicationDefaultAuthCredentialsState();
 
-    ApplicationDefaultAuthCredentials() throws IOException {
-      googleCredentials = GoogleCredentials.getApplicationDefault();
+    private static class ApplicationDefaultAuthCredentialsState
+        implements RestorableState<AuthCredentials>, Serializable {
+
+      private static final long serialVersionUID = -8839085552021212257L;
+
+      @Override
+      public AuthCredentials restore() {
+        try {
+          return new ApplicationDefaultAuthCredentials();
+        } catch (IOException e) {
+          throw new IllegalStateException(
+              "Could not restore " + ApplicationDefaultAuthCredentials.class.getSimpleName(), e);
+        }
+      }
+
+      @Override
+      public int hashCode() {
+        return getClass().getName().hashCode();
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        return obj instanceof ApplicationDefaultAuthCredentialsState;
+      }
     }
 
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-      in.defaultReadObject();
+    ApplicationDefaultAuthCredentials() throws IOException {
       googleCredentials = GoogleCredentials.getApplicationDefault();
     }
 
@@ -164,6 +253,11 @@ public abstract class AuthCredentials implements Serializable {
     protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
         Set<String> scopes) {
       return new HttpCredentialsAdapter(googleCredentials);
+    }
+
+    @Override
+    public RestorableState<AuthCredentials> capture() {
+      return STATE;
     }
   }
 
