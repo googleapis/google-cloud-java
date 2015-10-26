@@ -102,8 +102,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   StorageImpl(StorageOptions options) {
     super(options);
     storageRpc = options.storageRpc();
-    // todo: provide rewrite - https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite
-    // todo: check if we need to expose https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls/insert vs using bucket update/patch
   }
 
   @Override
