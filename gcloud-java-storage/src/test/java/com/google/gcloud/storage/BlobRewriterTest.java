@@ -16,23 +16,28 @@
 
 package com.google.gcloud.storage;
 
-import com.google.api.services.storage.model.RewriteResponse;
+import static org.easymock.EasyMock.anyObject;
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.ImmutableMap;
-import com.google.gcloud.RetryParams;
+import com.google.gcloud.RestorableState;
 import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.StorageRpc.RewriteRequest;
+import com.google.gcloud.spi.StorageRpc.RewriteResponse;
+import com.google.gcloud.spi.StorageRpcFactory;
 
 import org.easymock.EasyMock;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.Before;
 
 import java.io.IOException;
-import java.math.BigInteger;
 import java.util.Map;
-import org.junit.After;
 
 public class BlobRewriterTest {
 
@@ -43,107 +48,86 @@ public class BlobRewriterTest {
   private static final BlobId BLOB_ID = BlobId.of(SOURCE_BUCKET_NAME, SOURCE_BLOB_NAME);
   private static final BlobInfo BLOB_INFO =
       BlobInfo.builder(DESTINATION_BUCKET_NAME, DESTINATION_BLOB_NAME).build();
+  private static final BlobInfo RESULT =
+      BlobInfo.builder(DESTINATION_BUCKET_NAME, DESTINATION_BLOB_NAME).contentType("type").build();
   private static final Map<StorageRpc.Option, ?> EMPTY_OPTIONS = ImmutableMap.of();
+  private static final RewriteRequest REQUEST = new StorageRpc.RewriteRequest(BLOB_ID.toPb(),
+      EMPTY_OPTIONS, BLOB_INFO.toPb(), EMPTY_OPTIONS, null);
+  private static final RewriteResponse RESPONSE = new StorageRpc.RewriteResponse(REQUEST,
+      null, 42L, false, "token", 21L);
+  private static final RewriteResponse RESPONSE_DONE = new StorageRpc.RewriteResponse(REQUEST,
+      RESULT.toPb(), 42L, true, "token", 42L);
 
-  private StorageOptions optionsMock;
+  private StorageOptions options;
+  private StorageRpcFactory rpcFactoryMock;
   private StorageRpc storageRpcMock;
   private BlobRewriter rewriter;
 
   @Before
   public void setUp() throws IOException, InterruptedException {
-    optionsMock = EasyMock.createMock(StorageOptions.class);
-    storageRpcMock = EasyMock.createMock(StorageRpc.class);
+    rpcFactoryMock = createMock(StorageRpcFactory.class);
+    storageRpcMock = createMock(StorageRpc.class);
+    expect(rpcFactoryMock.create(anyObject(StorageOptions.class)))
+        .andReturn(storageRpcMock);
+    replay(rpcFactoryMock);
+    options = StorageOptions.builder()
+        .projectId("projectid")
+        .serviceRpcFactory(rpcFactoryMock)
+        .build();
   }
 
   @After
   public void tearDown() throws Exception {
-    verify(optionsMock, storageRpcMock);
+    verify(rpcFactoryMock, storageRpcMock);
   }
 
   @Test
   public void testRewrite() {
-    RewriteResponse response = new RewriteResponse()
-        .setDone(true)
-        .setResource(BLOB_INFO.toPb())
-        .setObjectSize(BigInteger.valueOf(42L))
-        .setTotalBytesRewritten(BigInteger.valueOf(42L));
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
-    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
-    EasyMock.expect(storageRpcMock.rewrite(
-        BLOB_ID.toPb(), EMPTY_OPTIONS, BLOB_INFO.toPb(), EMPTY_OPTIONS, null, null))
-        .andReturn(response);
-    EasyMock.replay(optionsMock, storageRpcMock);
-    rewriter = BlobRewriter.builder(optionsMock, BLOB_ID, EMPTY_OPTIONS, BLOB_INFO, EMPTY_OPTIONS)
-        .isDone(false)
-        .build();
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
+    EasyMock.replay(storageRpcMock);
+    rewriter = new BlobRewriter(options, RESPONSE);
     rewriter.copyChunk();
     assertTrue(rewriter.isDone());
-    assertEquals(BLOB_INFO, rewriter.target());
-    assertEquals(BLOB_ID, rewriter.source());
-    assertEquals(BigInteger.valueOf(42L), rewriter.totalBytesRewritten());
-    assertEquals(BigInteger.valueOf(42L), rewriter.blobSize());
-  }
-
-  @Test
-  public void testRewriteCustumSize() {
-    RewriteResponse response = new RewriteResponse()
-        .setDone(true)
-        .setResource(BLOB_INFO.toPb())
-        .setObjectSize(BigInteger.valueOf(42L))
-        .setTotalBytesRewritten(BigInteger.valueOf(42L));
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
-    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries());
-    EasyMock.expect(storageRpcMock.rewrite(
-        BLOB_ID.toPb(), EMPTY_OPTIONS, BLOB_INFO.toPb(), EMPTY_OPTIONS, null, 1048576L))
-        .andReturn(response);
-    EasyMock.replay(optionsMock, storageRpcMock);
-    rewriter = BlobRewriter.builder(optionsMock, BLOB_ID, EMPTY_OPTIONS, BLOB_INFO, EMPTY_OPTIONS)
-        .isDone(false)
-        .maxBytesRewrittenPerCall(1048576L)
-        .build();
-    rewriter.copyChunk();
-    assertTrue(rewriter.isDone());
-    assertEquals(BLOB_INFO, rewriter.target());
-    assertEquals(BLOB_ID, rewriter.source());
-    assertEquals(BigInteger.valueOf(42L), rewriter.totalBytesRewritten());
-    assertEquals(BigInteger.valueOf(42L), rewriter.blobSize());
+    assertEquals(RESULT, rewriter.result());
+    assertEquals(new Long(42L), rewriter.totalBytesRewritten());
+    assertEquals(new Long(42L), rewriter.blobSize());
   }
 
   @Test
   public void testRewriteMultipleRequests() {
-    RewriteResponse firstResponse = new RewriteResponse()
-        .setDone(false)
-        .setResource(BLOB_INFO.toPb())
-        .setObjectSize(BigInteger.valueOf(42L))
-        .setRewriteToken("token")
-        .setTotalBytesRewritten(BigInteger.valueOf(21L));
-    RewriteResponse secondResponse = new RewriteResponse()
-        .setDone(true)
-        .setResource(BLOB_INFO.toPb())
-        .setObjectSize(BigInteger.valueOf(42L))
-        .setTotalBytesRewritten(BigInteger.valueOf(42L));
-    EasyMock.expect(optionsMock.storageRpc()).andReturn(storageRpcMock);
-    EasyMock.expect(optionsMock.retryParams()).andReturn(RetryParams.noRetries()).times(2);
-    EasyMock.expect(storageRpcMock.rewrite(
-        BLOB_ID.toPb(), EMPTY_OPTIONS, BLOB_INFO.toPb(), EMPTY_OPTIONS, null, null))
-        .andReturn(firstResponse);
-    EasyMock.expect(storageRpcMock.rewrite(
-        BLOB_ID.toPb(), EMPTY_OPTIONS, BLOB_INFO.toPb(), EMPTY_OPTIONS, "token", null))
-        .andReturn(secondResponse);
-    EasyMock.replay(optionsMock, storageRpcMock);
-    rewriter = BlobRewriter.builder(optionsMock, BLOB_ID, EMPTY_OPTIONS, BLOB_INFO, EMPTY_OPTIONS)
-        .isDone(false)
-        .build();
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE);
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
+    EasyMock.replay(storageRpcMock);
+    rewriter = new BlobRewriter(options, RESPONSE);
     int loopCount = 0;
     while (!rewriter.isDone()) {
       rewriter.copyChunk();
       loopCount++;
     }
     assertTrue(rewriter.isDone());
-    assertEquals(BLOB_INFO, rewriter.target());
-    assertEquals(BLOB_ID, rewriter.source());
-    assertEquals(BigInteger.valueOf(42L), rewriter.totalBytesRewritten());
-    assertEquals(BigInteger.valueOf(42L), rewriter.blobSize());
+    assertEquals(RESULT, rewriter.result());
+    assertEquals(new Long(42L), rewriter.totalBytesRewritten());
+    assertEquals(new Long(42L), rewriter.blobSize());
     assertEquals(2, loopCount);
+  }
+
+  @Test
+  public void testSaveAndRestore() throws IOException {
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE);
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
+    EasyMock.replay(storageRpcMock);
+    rewriter = new BlobRewriter(options, RESPONSE);
+    rewriter.copyChunk();
+    assertTrue(!rewriter.isDone());
+    assertEquals(null, rewriter.result());
+    assertEquals(new Long(21L), rewriter.totalBytesRewritten());
+    assertEquals(new Long(42L), rewriter.blobSize());
+    RestorableState<BlobRewriter> rewriterState = rewriter.capture();
+    BlobRewriter restoredRewriter = rewriterState.restore();
+    restoredRewriter.copyChunk();
+    assertTrue(restoredRewriter.isDone());
+    assertEquals(RESULT, restoredRewriter.result());
+    assertEquals(new Long(42L), restoredRewriter.totalBytesRewritten());
+    assertEquals(new Long(42L), restoredRewriter.blobSize());
   }
 }

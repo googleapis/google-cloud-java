@@ -55,7 +55,6 @@ import com.google.api.services.storage.model.Buckets;
 import com.google.api.services.storage.model.ComposeRequest;
 import com.google.api.services.storage.model.ComposeRequest.SourceObjects.ObjectPreconditions;
 import com.google.api.services.storage.model.Objects;
-import com.google.api.services.storage.model.RewriteResponse;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
@@ -79,6 +78,7 @@ public class DefaultStorageRpc implements StorageRpc {
 
   // see: https://cloud.google.com/storage/docs/concepts-techniques#practices
   private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(504, 503, 502, 500, 429, 408);
+  private static final long MEGABYTE = 1024L * 1024L;
 
   public DefaultStorageRpc(StorageOptions options) {
     HttpTransport transport = options.httpTransportFactory().create();
@@ -524,27 +524,42 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public RewriteResponse rewrite(StorageObject source, Map<Option, ?> sourceOptions,
-      StorageObject target, Map<Option, ?> targetOptions, String token, Long maxByteRewrittenPerCall)
-      throws StorageException {
+  public RewriteResponse openRewrite(RewriteRequest rewriteRequest) throws StorageException {
+    return rewrite(rewriteRequest, null);
+  }
+
+  @Override
+  public RewriteResponse continueRewrite(RewriteResponse previousResponse) throws StorageException {
+    return rewrite(previousResponse.rewriteRequest, previousResponse.rewriteToken);
+  }
+
+  private RewriteResponse rewrite(RewriteRequest req, String token) throws StorageException {
     try {
-      return storage
-          .objects()
-          .rewrite(source.getBucket(), source.getName(), target.getBucket(), target.getName(),
-              target)
+      Long maxBytesRewrittenPerCall = req.megabytesRewrittenPerCall != null
+          ? req.megabytesRewrittenPerCall * MEGABYTE : null;
+      com.google.api.services.storage.model.RewriteResponse rewriteReponse = storage.objects()
+          .rewrite(req.source.getBucket(), req.source.getName(), req.target.getBucket(),
+              req.target.getName(), req.target)
           .setRewriteToken(token)
-          .setMaxBytesRewrittenPerCall(maxByteRewrittenPerCall)
+          .setMaxBytesRewrittenPerCall(maxBytesRewrittenPerCall)
           .setProjection(DEFAULT_PROJECTION)
-          .setIfSourceMetagenerationMatch(IF_SOURCE_METAGENERATION_MATCH.getLong(sourceOptions))
+          .setIfSourceMetagenerationMatch(IF_SOURCE_METAGENERATION_MATCH.getLong(req.sourceOptions))
           .setIfSourceMetagenerationNotMatch(
-              IF_SOURCE_METAGENERATION_NOT_MATCH.getLong(sourceOptions))
-          .setIfSourceGenerationMatch(IF_SOURCE_GENERATION_MATCH.getLong(sourceOptions))
-          .setIfSourceGenerationNotMatch(IF_SOURCE_GENERATION_NOT_MATCH.getLong(sourceOptions))
-          .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(targetOptions))
-          .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(targetOptions))
-          .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(targetOptions))
-          .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(targetOptions))
+              IF_SOURCE_METAGENERATION_NOT_MATCH.getLong(req.sourceOptions))
+          .setIfSourceGenerationMatch(IF_SOURCE_GENERATION_MATCH.getLong(req.sourceOptions))
+          .setIfSourceGenerationNotMatch(IF_SOURCE_GENERATION_NOT_MATCH.getLong(req.sourceOptions))
+          .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(req.targetOptions))
+          .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(req.targetOptions))
+          .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(req.targetOptions))
+          .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(req.targetOptions))
           .execute();
+      return new RewriteResponse(
+          req,
+          rewriteReponse.getResource(),
+          rewriteReponse.getObjectSize().longValue(),
+          rewriteReponse.getDone(),
+          rewriteReponse.getRewriteToken(),
+          rewriteReponse.getTotalBytesRewritten().longValue());
     } catch (IOException ex) {
       throw translate(ex);
     }

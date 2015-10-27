@@ -16,157 +16,63 @@
 
 package com.google.gcloud.storage;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.gcloud.RetryHelper.runWithRetries;
 
-import com.google.api.services.storage.model.RewriteResponse;
+import com.google.common.base.MoreObjects;
+import com.google.gcloud.Restorable;
+import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.StorageRpc.RewriteRequest;
+import com.google.gcloud.spi.StorageRpc.RewriteResponse;
 
-import java.math.BigInteger;
+import java.io.Serializable;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.Callable;
 
 /**
  * Google Storage blob rewriter.
  */
-public final class BlobRewriter {
+public final class BlobRewriter implements Restorable<BlobRewriter> {
 
   private final StorageOptions serviceOptions;
-  private final BlobId source;
-  private final Map<StorageRpc.Option, ?> sourceOptions;
-  private final Map<StorageRpc.Option, ?> targetOptions;
-  private final Long maxBytesRewrittenPerCall;
-  private BigInteger blobSize;
-  private BlobInfo target;
-  private Boolean isDone;
-  private String rewriteToken;
-  private BigInteger totalBytesRewritten;
-
   private final StorageRpc storageRpc;
+  private RewriteResponse rewriteResponse;
 
-  private BlobRewriter(Builder builder) {
-    this.serviceOptions = builder.serviceOptions;
-    this.source = builder.source;
-    this.sourceOptions = builder.sourceOptions;
-    this.target = builder.target;
-    this.targetOptions = builder.targetOptions;
-    this.blobSize = builder.blobSize;
-    this.isDone = builder.isDone;
-    this.rewriteToken = builder.rewriteToken;
-    this.totalBytesRewritten = firstNonNull(builder.totalBytesRewritten, BigInteger.ZERO);
-    this.maxBytesRewrittenPerCall = builder.maxBytesRewrittenPerCall;
-    this.storageRpc = serviceOptions.storageRpc();
-  }
-
-  static class Builder {
-
-    private final StorageOptions serviceOptions;
-    private final BlobId source;
-    private final Map<StorageRpc.Option, ?> sourceOptions;
-    private final BlobInfo target;
-    private final Map<StorageRpc.Option, ?> targetOptions;
-    private BigInteger blobSize;
-    private Boolean isDone;
-    private String rewriteToken;
-    private BigInteger totalBytesRewritten;
-    private Long maxBytesRewrittenPerCall;
-
-    Builder(StorageOptions serviceOptions, BlobId source, Map<StorageRpc.Option, ?> sourceOptions,
-        BlobInfo target, Map<StorageRpc.Option, ?> targetOptions) {
-      this.serviceOptions = serviceOptions;
-      this.source = source;
-      this.sourceOptions = sourceOptions;
-      this.target = target;
-      this.targetOptions = targetOptions;
-    }
-
-    Builder blobSize(BigInteger blobSize) {
-      this.blobSize = blobSize;
-      return this;
-    }
-
-    Builder isDone(Boolean isDone) {
-      this.isDone = isDone;
-      return this;
-    }
-
-    Builder rewriteToken(String rewriteToken) {
-      this.rewriteToken = rewriteToken;
-      return this;
-    }
-
-    Builder totalBytesRewritten(BigInteger totalBytesRewritten) {
-      this.totalBytesRewritten = totalBytesRewritten;
-      return this;
-    }
-
-    Builder maxBytesRewrittenPerCall(Long maxBytesRewrittenPerCall) {
-      this.maxBytesRewrittenPerCall = maxBytesRewrittenPerCall;
-      return this;
-    }
-
-    BlobRewriter build() {
-      return new BlobRewriter(this);
-    }
-  }
-
-  static Builder builder(StorageOptions options, BlobId source,
-      Map<StorageRpc.Option, ?> sourceOpt,
-      BlobInfo target, Map<StorageRpc.Option, ?> targetOpt) {
-    return new Builder(options, source, sourceOpt, target, targetOpt);
+  BlobRewriter(StorageOptions serviceOptions, RewriteResponse rewriteResponse) {
+    this.serviceOptions = serviceOptions;
+    this.rewriteResponse = rewriteResponse;
+    this.storageRpc = serviceOptions.rpc();
   }
 
   /**
-   * Returns the id of the source blob.
+   * Returns the updated information for the just written blob when {@link #isDone} is {@code true}.
+   * Returns {@code null} otherwise.
    */
-  public BlobId source() {
-    return source;
+  public BlobInfo result() {
+    return rewriteResponse.result != null ? BlobInfo.fromPb(rewriteResponse.result) : null;
   }
 
   /**
-   * Returns the info for the target blob. When {@link #isDone} is {@code true} this method returns
-   * the updated information for the just written blob.
+   * Size of the blob being copied.
    */
-  public BlobInfo target() {
-    return target;
-  }
-
-  /**
-   * Size of the blob being copied. Returns {@code null} until the first copy request returns.
-   */
-  public BigInteger blobSize() {
-    return blobSize;
+  public Long blobSize() {
+    return rewriteResponse.blobSize;
   }
 
   /**
    * Returns {@code true} of blob rewrite finished, {@code false} otherwise.
    */
   public Boolean isDone() {
-    return isDone;
-  }
-
-  /**
-   * Returns the token to be used to rewrite the next chunk of the blob.
-   */
-  public String rewriteToken() {
-    return rewriteToken;
+    return rewriteResponse.isDone;
   }
 
   /**
    * Returns the number of bytes written. 
    */
-  public BigInteger totalBytesRewritten() {
-    return totalBytesRewritten;
-  }
-
-  /**
-   * Returns the maximum number of bytes to be copied with each {@link #copyChunk()} call. This
-   * parameter is ignored if source and target blob share the same location and storage class as
-   * rewrite is made with one single RPC.
-   */
-  public Long maxBytesRewrittenPerCall() {
-    return maxBytesRewrittenPerCall;
+  public Long totalBytesRewritten() {
+    return rewriteResponse.totalBytesRewritten;
   }
 
   /**
@@ -176,28 +82,178 @@ public final class BlobRewriter {
    * @throws StorageException upon failure
    */
   public void copyChunk() {
-    if (!isDone) {
+    if (!isDone()) {
       try {
-        RewriteResponse response = runWithRetries(new Callable<RewriteResponse>() {
+        this.rewriteResponse = runWithRetries(new Callable<RewriteResponse>() {
           @Override
           public RewriteResponse call() {
-            return storageRpc.rewrite(
-                source.toPb(),
-                sourceOptions,
-                target.toPb(),
-                targetOptions,
-                rewriteToken,
-                maxBytesRewrittenPerCall);
+            return storageRpc.continueRewrite(rewriteResponse);
           }
         }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER);
-        rewriteToken = response.getRewriteToken();
-        isDone = response.getDone();
-        blobSize = response.getObjectSize();
-        totalBytesRewritten = response.getTotalBytesRewritten();
-        target = response.getResource() != null ? BlobInfo.fromPb(response.getResource()) : target;
       } catch (RetryHelper.RetryHelperException e) {
         throw StorageException.translateAndThrow(e);
       }
+    }
+  }
+
+  @Override
+  public RestorableState<BlobRewriter> capture() {
+    return StateImpl.builder(
+        serviceOptions,
+        BlobId.fromPb(rewriteResponse.rewriteRequest.source),
+        rewriteResponse.rewriteRequest.sourceOptions,
+        BlobInfo.fromPb(rewriteResponse.rewriteRequest.target),
+        rewriteResponse.rewriteRequest.targetOptions)
+        .blobSize(blobSize())
+        .isDone(isDone())
+        .megabytesRewrittenPerCall(rewriteResponse.rewriteRequest.megabytesRewrittenPerCall)
+        .rewriteToken(rewriteResponse.rewriteToken)
+        .totalBytesRewritten(totalBytesRewritten())
+        .build();
+  }
+
+  static class StateImpl implements RestorableState<BlobRewriter>, Serializable {
+
+    private static final long serialVersionUID = 8279287678903181701L;
+
+    private final StorageOptions serviceOptions;
+    private final BlobId source;
+    private final Map<StorageRpc.Option, ?> sourceOptions;
+    private final BlobInfo target;
+    private final Map<StorageRpc.Option, ?> targetOptions;
+    private final BlobInfo result;
+    private final Long blobSize;
+    private final Boolean isDone;
+    private final String rewriteToken;
+    private final Long totalBytesRewritten;
+    private final Long megabytesRewrittenPerCall;
+
+    StateImpl(Builder builder) {
+      this.serviceOptions = builder.serviceOptions;
+      this.source = builder.source;
+      this.sourceOptions = builder.sourceOptions;
+      this.target = builder.target;
+      this.targetOptions = builder.targetOptions;
+      this.result = builder.result;
+      this.blobSize = builder.blobSize;
+      this.isDone = builder.isDone;
+      this.rewriteToken = builder.rewriteToken;
+      this.totalBytesRewritten = builder.totalBytesRewritten;
+      this.megabytesRewrittenPerCall = builder.megabytesRewrittenPerCall;
+    }
+
+    static class Builder {
+
+      private final StorageOptions serviceOptions;
+      private final BlobId source;
+      private final Map<StorageRpc.Option, ?> sourceOptions;
+      private final BlobInfo target;
+      private final Map<StorageRpc.Option, ?> targetOptions;
+      private BlobInfo result;
+      private Long blobSize;
+      private Boolean isDone;
+      private String rewriteToken;
+      private Long totalBytesRewritten;
+      private Long megabytesRewrittenPerCall;
+
+      private Builder(StorageOptions options, BlobId source,
+          Map<StorageRpc.Option, ?> sourceOptions,
+          BlobInfo target, Map<StorageRpc.Option, ?> targetOptions) {
+        this.serviceOptions = options;
+        this.source = source;
+        this.sourceOptions = sourceOptions;
+        this.target = target;
+        this.targetOptions = targetOptions;
+      }
+
+      Builder result(BlobInfo result) {
+        this.result = result;
+        return this;
+      }
+
+      Builder blobSize(Long blobSize) {
+        this.blobSize = blobSize;
+        return this;
+      }
+
+      Builder isDone(Boolean isDone) {
+        this.isDone = isDone;
+        return this;
+      }
+
+      Builder rewriteToken(String rewriteToken) {
+        this.rewriteToken = rewriteToken;
+        return this;
+      }
+
+      Builder totalBytesRewritten(Long totalBytesRewritten) {
+        this.totalBytesRewritten = totalBytesRewritten;
+        return this;
+      }
+
+      Builder megabytesRewrittenPerCall(Long megabytesRewrittenPerCall) {
+        this.megabytesRewrittenPerCall = megabytesRewrittenPerCall;
+        return this;
+      }
+
+      RestorableState<BlobRewriter> build() {
+        return new StateImpl(this);
+      }
+    }
+
+    static Builder builder(StorageOptions options, BlobId source,
+        Map<StorageRpc.Option, ?> sourceOptions, BlobInfo target,
+        Map<StorageRpc.Option, ?> targetOptions) {
+      return new Builder(options, source, sourceOptions, target, targetOptions);
+    }
+
+    @Override
+    public BlobRewriter restore() {
+      RewriteRequest rewriteRequest = new RewriteRequest(
+          source.toPb(), sourceOptions, target.toPb(), targetOptions, megabytesRewrittenPerCall);
+      RewriteResponse rewriteResponse = new RewriteResponse(rewriteRequest,
+          result != null ? result.toPb() : null, blobSize, isDone, rewriteToken,
+          totalBytesRewritten);
+      return new BlobRewriter(serviceOptions, rewriteResponse);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(serviceOptions, source, sourceOptions, target, targetOptions, result,
+          blobSize, isDone, megabytesRewrittenPerCall, rewriteToken, totalBytesRewritten);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == null) {
+        return false;
+      }
+      if (!(obj instanceof StateImpl)) {
+        return false;
+      }
+      final StateImpl other = (StateImpl) obj;
+      return Objects.equals(this.serviceOptions, other.serviceOptions)
+          && Objects.equals(this.source, other.source)
+          && Objects.equals(this.sourceOptions, other.sourceOptions)
+          && Objects.equals(this.target, other.target)
+          && Objects.equals(this.targetOptions, other.targetOptions)
+          && Objects.equals(this.result, other.result)
+          && Objects.equals(this.rewriteToken, other.rewriteToken)
+          && Objects.equals(this.blobSize, other.blobSize)
+          && Objects.equals(this.isDone, other.isDone)
+          && Objects.equals(this.megabytesRewrittenPerCall, other.megabytesRewrittenPerCall)
+          && Objects.equals(this.totalBytesRewritten, other.totalBytesRewritten);
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this)
+          .add("source", source)
+          .add("target", target)
+          .add("isDone", isDone)
+          .add("totalBytesRewritten", totalBytesRewritten)
+          .add("blobSize", blobSize)
+          .toString();
     }
   }
 }

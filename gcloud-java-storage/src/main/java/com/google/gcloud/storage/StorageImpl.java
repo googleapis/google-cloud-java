@@ -49,6 +49,7 @@ import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.StorageRpc.RewriteResponse;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
 import java.io.ByteArrayInputStream;
@@ -664,14 +665,25 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BlobRewriter rewriter(final RewriteRequest req) {
-    final Map<StorageRpc.Option, ?> sourceOpts = optionMap(null, null, req.sourceOptions(), true);
-    final Map<StorageRpc.Option, ?> targetOpts = optionMap(req.target().generation(),
-        req.target().metageneration(), req.targetOptions());
-    return BlobRewriter.builder(options(), req.source(), sourceOpts, req.target(), targetOpts)
-        .isDone(false)
-        .maxBytesRewrittenPerCall(req.maxBytesRewrittenPerCall())
-        .build();
+  public BlobRewriter rewriter(final RewriteRequest rewriteRequest) {
+    final StorageObject source = rewriteRequest.source().toPb();
+    final Map<StorageRpc.Option, ?> sourceOptions =
+        optionMap(null, null, rewriteRequest.sourceOptions(), true);
+    final StorageObject target = rewriteRequest.target().toPb();
+    final Map<StorageRpc.Option, ?> targetOptions = optionMap(rewriteRequest.target().generation(),
+        rewriteRequest.target().metageneration(), rewriteRequest.targetOptions());
+    try {
+      RewriteResponse rewriteResponse = runWithRetries(new Callable<RewriteResponse>() {
+        @Override
+        public RewriteResponse call() {
+          return storageRpc.openRewrite(new StorageRpc.RewriteRequest(source, sourceOptions, target,
+              targetOptions, rewriteRequest.megabytesRewrittenPerCall()));
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER);
+      return new BlobRewriter(options(), rewriteResponse);
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
   }
 
   private static <T extends Serializable> List<T> transformResultList(

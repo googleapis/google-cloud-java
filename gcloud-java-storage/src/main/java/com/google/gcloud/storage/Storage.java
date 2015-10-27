@@ -604,7 +604,7 @@ public interface Storage extends Service<StorageOptions> {
     private final List<BlobSourceOption> sourceOptions;
     private final BlobInfo target;
     private final List<BlobTargetOption> targetOptions;
-    private final Long maxBytesRewrittenPerCall;
+    private final Long megabytesRewrittenPerCall;
 
     public static class Builder {
 
@@ -612,7 +612,7 @@ public interface Storage extends Service<StorageOptions> {
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
       private BlobId source;
       private BlobInfo target;
-      private Long maxBytesRewrittenPerCall;
+      private Long megabytesRewrittenPerCall;
 
       /**
        * Sets the blob to rewrite given bucket and blob name.
@@ -685,14 +685,14 @@ public interface Storage extends Service<StorageOptions> {
       }
 
       /**
-       * Sets the maximum number of bytes to copy for each RPC call. This parameter is ignored if
-       * source and target blob share the same location and storage class as rewrite is made with
+       * Sets the maximum number of megabytes to copy for each RPC call. This parameter is ignored
+       * if source and target blob share the same location and storage class as rewrite is made with
        * one single RPC.
        *
        * @return the builder.
        */
-      public Builder maxBytesRewrittenPerCall(Long maxBytesRewrittenPerCall) {
-        this.maxBytesRewrittenPerCall = maxBytesRewrittenPerCall;
+      public Builder megabytesRewrittenPerCall(Long megabytesRewrittenPerCall) {
+        this.megabytesRewrittenPerCall = megabytesRewrittenPerCall;
         return this;
       }
 
@@ -711,27 +711,44 @@ public interface Storage extends Service<StorageOptions> {
       sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
       target = checkNotNull(builder.target);
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
-      maxBytesRewrittenPerCall = builder.maxBytesRewrittenPerCall;
+      megabytesRewrittenPerCall = builder.megabytesRewrittenPerCall;
     }
 
+    /**
+     * Returns the blob to rewrite, as a {@link BlobId}.
+     */
     public BlobId source() {
       return source;
     }
 
+    /**
+     * Returns blob's source options.
+     */
     public List<BlobSourceOption> sourceOptions() {
       return sourceOptions;
     }
 
+    /**
+     * Returns the rewrite target.
+     */
     public BlobInfo target() {
       return target;
     }
 
+    /**
+     * Returns blob's target options.
+     */
     public List<BlobTargetOption> targetOptions() {
       return targetOptions;
     }
 
-    public Long maxBytesRewrittenPerCall() {
-      return maxBytesRewrittenPerCall;
+    /**
+     * Returns the maximum number of megabytes to copy for each RPC call. This parameter is ignored
+     * if source and target blob share the same location and storage class as rewrite is made with
+     * one single RPC.
+     */
+    public Long megabytesRewrittenPerCall() {
+      return megabytesRewrittenPerCall;
     }
 
     public static RewriteRequest of(String sourceBucket, String sourceBlob, BlobInfo target) {
@@ -1018,7 +1035,7 @@ public interface Storage extends Service<StorageOptions> {
   List<Boolean> delete(BlobId... blobIds);
 
   /**
-   * Returns a {@link BlobRewriter} object for the provided {@code rewriteRequest}. If source and
+   * Returns a {@link BlobRewriter} object for the provided {@code RewriteRequest}. If source and
    * destination objects share the same location and storage class the source blob is copied with a
    * single call of {@link BlobRewriter#copyChunk()}, regardless of the {@link
    * RewriteRequest#maxBytesRewrittenPerCall} parameter. If source and destination have different

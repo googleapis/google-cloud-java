@@ -664,38 +664,37 @@ public class ITStorageTest {
   @Test
   public void testRewriteBlob() {
     String sourceBlobName = "test-rewrite-blob-source";
-    BlobId source = BlobId.of(bucket, sourceBlobName);
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
     assertNotNull(storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT));
     String targetBlobName = "test-rewrite-blob-target";
-    BlobInfo target = BlobInfo.builder(bucket, targetBlobName).contentType(CONTENT_TYPE).build();
+    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName).contentType(CONTENT_TYPE).build();
     Storage.RewriteRequest req = Storage.RewriteRequest.of(source, target);
     BlobRewriter rewriter = storage.rewriter(req);
     rewriter.copyChunk();
     assertTrue(rewriter.isDone());
-    assertEquals(rewriter.target(), storage.get(bucket, targetBlobName));
-    assertTrue(storage.delete(bucket, sourceBlobName));
-    assertTrue(storage.delete(bucket, targetBlobName));
+    assertEquals(rewriter.result(), storage.get(BUCKET, targetBlobName));
+    assertTrue(storage.delete(BUCKET, sourceBlobName));
+    assertTrue(storage.delete(BUCKET, targetBlobName));
   }
 
   @Test
   public void testRewriteBlobFail() {
     String sourceBlobName = "test-rewrite-blob-source-fail";
-    BlobId source = BlobId.of(bucket, sourceBlobName);
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
     assertNotNull(storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT));
     String targetBlobName = "test-rewrite-blob-target-fail";
-    BlobInfo target = BlobInfo.builder(bucket, targetBlobName).contentType(CONTENT_TYPE).build();
+    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName).contentType(CONTENT_TYPE).build();
     Storage.RewriteRequest req = Storage.RewriteRequest.builder()
         .source(source)
         .sourceOptions(Storage.BlobSourceOption.generationMatch(-1L))
         .target(target)
         .build();
-    BlobRewriter rewriter = storage.rewriter(req);
     try {
-      rewriter.copyChunk();
+      storage.rewriter(req);
       fail("StorageException was expected");
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(storage.delete(bucket, sourceBlobName));
+    assertTrue(storage.delete(BUCKET, sourceBlobName));
   }
 }
