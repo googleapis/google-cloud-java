@@ -16,6 +16,14 @@
 
 package com.google.gcloud.storage;
 
+import static org.easymock.EasyMock.anyObject;
+import static org.easymock.EasyMock.capture;
+import static org.easymock.EasyMock.captureLong;
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.eq;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.expectLastCall;
+import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -29,7 +37,6 @@ import com.google.gcloud.spi.StorageRpcFactory;
 
 import org.easymock.Capture;
 import org.easymock.CaptureType;
-import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -53,16 +60,17 @@ public class BlobWriteChannelImplTest {
   private static final Random RANDOM = new Random();
 
   private StorageOptions options;
+  private StorageRpcFactory rpcFactoryMock;
   private StorageRpc storageRpcMock;
   private BlobWriteChannelImpl writer;
 
   @Before
   public void setUp() throws IOException, InterruptedException {
-    StorageRpcFactory rpcFactoryMock = EasyMock.createNiceMock(StorageRpcFactory.class);
-    storageRpcMock = EasyMock.createMock(StorageRpc.class);
-    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(StorageOptions.class)))
+    rpcFactoryMock = createMock(StorageRpcFactory.class);
+    storageRpcMock = createMock(StorageRpc.class);
+    expect(rpcFactoryMock.create(anyObject(StorageOptions.class)))
         .andReturn(storageRpcMock);
-    EasyMock.replay(rpcFactoryMock);
+    replay(rpcFactoryMock);
     options = StorageOptions.builder()
         .projectId("projectid")
         .serviceRpcFactory(rpcFactoryMock)
@@ -71,34 +79,32 @@ public class BlobWriteChannelImplTest {
 
   @After
   public void tearDown() throws Exception {
-    verify(storageRpcMock);
+    verify(rpcFactoryMock, storageRpcMock);
   }
 
   @Test
   public void testCreate() {
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
-    EasyMock.replay(storageRpcMock);
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    replay(storageRpcMock);
     writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     assertTrue(writer.isOpen());
   }
 
   @Test
   public void testWriteWithoutFlush() throws IOException {
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
-    EasyMock.replay(storageRpcMock);
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    replay(storageRpcMock);
     writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     assertEquals(MIN_CHUNK_SIZE, writer.write(ByteBuffer.allocate(MIN_CHUNK_SIZE)));
   }
 
   @Test
   public void testWriteWithFlush() throws IOException {
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    storageRpcMock.write(EasyMock.eq(UPLOAD_ID), EasyMock.capture(capturedBuffer), EasyMock.eq(0),
-        EasyMock.eq(BLOB_INFO.toPb()), EasyMock.eq(0L), EasyMock.eq(CUSTOM_CHUNK_SIZE),
-        EasyMock.eq(false));
-    EasyMock.expectLastCall();
-    EasyMock.replay(storageRpcMock);
+    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0),
+        eq(BLOB_INFO.toPb()), eq(0L), eq(CUSTOM_CHUNK_SIZE), eq(false));
+    replay(storageRpcMock);
     writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     writer.chunkSize(CUSTOM_CHUNK_SIZE);
     ByteBuffer buffer = randomBuffer(CUSTOM_CHUNK_SIZE);
@@ -108,13 +114,12 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testWritesAndFlush() throws IOException {
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    storageRpcMock.write(EasyMock.eq(UPLOAD_ID), EasyMock.capture(capturedBuffer), EasyMock.eq(0),
-        EasyMock.eq(BLOB_INFO.toPb()), EasyMock.eq(0L), EasyMock.eq(DEFAULT_CHUNK_SIZE),
-        EasyMock.eq(false));
-    EasyMock.expectLastCall();
-    EasyMock.replay(storageRpcMock);
+    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0),
+        eq(BLOB_INFO.toPb()), eq(0L), eq(DEFAULT_CHUNK_SIZE),
+        eq(false));
+    replay(storageRpcMock);
     writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     ByteBuffer[] buffers = new ByteBuffer[DEFAULT_CHUNK_SIZE / MIN_CHUNK_SIZE];
     for (int i = 0; i < buffers.length; i++) {
@@ -131,12 +136,11 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testCloseWithoutFlush() throws IOException {
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    storageRpcMock.write(EasyMock.eq(UPLOAD_ID), EasyMock.capture(capturedBuffer), EasyMock.eq(0),
-        EasyMock.eq(BLOB_INFO.toPb()), EasyMock.eq(0L), EasyMock.eq(0), EasyMock.eq(true));
-    EasyMock.expectLastCall();
-    EasyMock.replay(storageRpcMock);
+    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0),
+        eq(BLOB_INFO.toPb()), eq(0L), eq(0), eq(true));
+    replay(storageRpcMock);
     writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     assertTrue(writer.isOpen());
     writer.close();
@@ -146,14 +150,13 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testCloseWithFlush() throws IOException {
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
     ByteBuffer buffer = randomBuffer(MIN_CHUNK_SIZE);
-    storageRpcMock.write(EasyMock.eq(UPLOAD_ID), EasyMock.capture(capturedBuffer), EasyMock.eq(0),
-        EasyMock.eq(BLOB_INFO.toPb()), EasyMock.eq(0L), EasyMock.eq(MIN_CHUNK_SIZE),
-        EasyMock.eq(true));
-    EasyMock.expectLastCall();
-    EasyMock.replay(storageRpcMock);
+    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0),
+        eq(BLOB_INFO.toPb()), eq(0L), eq(MIN_CHUNK_SIZE),
+        eq(true));
+    replay(storageRpcMock);
     writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     assertTrue(writer.isOpen());
     writer.write(buffer);
@@ -165,12 +168,11 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testWriteClosed() throws IOException {
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    storageRpcMock.write(EasyMock.eq(UPLOAD_ID), EasyMock.capture(capturedBuffer), EasyMock.eq(0),
-        EasyMock.eq(BLOB_INFO.toPb()), EasyMock.eq(0L), EasyMock.eq(0), EasyMock.eq(true));
-    EasyMock.expectLastCall();
-    EasyMock.replay(storageRpcMock);
+    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0),
+        eq(BLOB_INFO.toPb()), eq(0L), eq(0), eq(true));
+    replay(storageRpcMock);
     writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     writer.close();
     try {
@@ -183,14 +185,14 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testSaveAndRestore() throws IOException {
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance(CaptureType.ALL);
     Capture<Long> capturedPosition = Capture.newInstance(CaptureType.ALL);
-    storageRpcMock.write(EasyMock.eq(UPLOAD_ID), EasyMock.capture(capturedBuffer), EasyMock.eq(0),
-        EasyMock.eq(BLOB_INFO.toPb()), EasyMock.captureLong(capturedPosition),
-        EasyMock.eq(DEFAULT_CHUNK_SIZE), EasyMock.eq(false));
-    EasyMock.expectLastCall().times(2);
-    EasyMock.replay(storageRpcMock);
+    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0),
+        eq(BLOB_INFO.toPb()), captureLong(capturedPosition),
+        eq(DEFAULT_CHUNK_SIZE), eq(false));
+    expectLastCall().times(2);
+    replay(storageRpcMock);
     ByteBuffer buffer1 = randomBuffer(DEFAULT_CHUNK_SIZE);
     ByteBuffer buffer2 = randomBuffer(DEFAULT_CHUNK_SIZE);
     writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
@@ -206,12 +208,11 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testSaveAndRestoreClosed() throws IOException {
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    storageRpcMock.write(EasyMock.eq(UPLOAD_ID), EasyMock.capture(capturedBuffer), EasyMock.eq(0),
-        EasyMock.eq(BLOB_INFO.toPb()), EasyMock.eq(0L), EasyMock.eq(0), EasyMock.eq(true));
-    EasyMock.expectLastCall();
-    EasyMock.replay(storageRpcMock);
+    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0),
+        eq(BLOB_INFO.toPb()), eq(0L), eq(0), eq(true));
+    replay(storageRpcMock);
     writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     writer.close();
     RestorableState<BlobWriteChannel> writerState = writer.capture();
@@ -229,9 +230,9 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testStateEquals() {
-    EasyMock.expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID)
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID)
         .times(2);
-    EasyMock.replay(storageRpcMock);
+    replay(storageRpcMock);
     writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     BlobWriteChannel writer2 = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     RestorableState<BlobWriteChannel> state = writer.capture();

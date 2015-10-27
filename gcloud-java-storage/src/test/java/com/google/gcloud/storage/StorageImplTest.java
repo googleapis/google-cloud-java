@@ -200,6 +200,7 @@ public class StorageImplTest {
   private static PublicKey publicKey;
 
   private StorageOptions options;
+  private StorageRpcFactory rpcFactoryMock;
   private StorageRpc storageRpcMock;
   private Storage storage;
 
@@ -219,7 +220,7 @@ public class StorageImplTest {
 
   @Before
   public void setUp() throws IOException, InterruptedException {
-    StorageRpcFactory rpcFactoryMock = EasyMock.createNiceMock(StorageRpcFactory.class);
+    rpcFactoryMock = EasyMock.createMock(StorageRpcFactory.class);
     storageRpcMock = EasyMock.createMock(StorageRpc.class);
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(StorageOptions.class)))
         .andReturn(storageRpcMock);
@@ -234,7 +235,7 @@ public class StorageImplTest {
 
   @After
   public void tearDown() throws Exception {
-    EasyMock.verify(storageRpcMock);
+    EasyMock.verify(rpcFactoryMock, storageRpcMock);
   }
 
   @Test

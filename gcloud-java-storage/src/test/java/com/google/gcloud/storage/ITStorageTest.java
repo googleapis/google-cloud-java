@@ -54,7 +54,6 @@ import java.util.logging.Logger;
 public class ITStorageTest {
 
   private static Storage storage;
-  private static RemoteGcsHelper gcsHelper;
 
   private static final Logger log = Logger.getLogger(ITStorageTest.class.getName());
   private static final String bucket = RemoteGcsHelper.generateBucketName();
@@ -64,7 +63,7 @@ public class ITStorageTest {
 
   @BeforeClass
   public static void beforeClass() {
-    gcsHelper = RemoteGcsHelper.create();
+    RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
     storage = gcsHelper.options().service();
     storage.create(BucketInfo.of(bucket));
   }
@@ -445,7 +444,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testReadAndWriteChannels() throws UnsupportedEncodingException, IOException {
+  public void testReadAndWriteChannels() throws IOException {
     String blobName = "test-read-and-write-channels-blob";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
     byte[] stringBytes;
@@ -468,7 +467,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testReadAndWriteSaveChannels() throws UnsupportedEncodingException, IOException {
+  public void testReadAndWriteCaptureChannels() throws IOException {
     String blobName = "test-read-and-write-capture-channels-blob";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
     byte[] stringBytes;
@@ -497,7 +496,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testReadChannelFail() throws UnsupportedEncodingException, IOException {
+  public void testReadChannelFail() throws IOException {
     String blobName = "test-read-channel-blob-fail";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
     assertNotNull(storage.create(blob));
@@ -512,7 +511,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testWriteChannelFail() throws UnsupportedEncodingException, IOException {
+  public void testWriteChannelFail() throws IOException {
     String blobName = "test-write-channel-blob-fail";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).generation(-1L).build();
     try {
@@ -527,7 +526,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testWriteChannelExistingBlob() throws UnsupportedEncodingException, IOException {
+  public void testWriteChannelExistingBlob() throws IOException {
     String blobName = "test-write-channel-existing-blob";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
     BlobInfo remoteBlob = storage.create(blob);

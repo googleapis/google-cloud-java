@@ -39,7 +39,7 @@ public interface BlobWriteChannel extends WritableByteChannel, Closeable,
   void chunkSize(int chunkSize);
 
   /**
-   * Capture the write channel state so that it can be saved and restored afterwards. The original
+   * Captures the write channel state so that it can be saved and restored afterwards. The original
    * {@code BlobWriteChannel} and the restored one should not both be used. Closing one channel
    * causes the other channel to close, subsequent writes will fail.
    *

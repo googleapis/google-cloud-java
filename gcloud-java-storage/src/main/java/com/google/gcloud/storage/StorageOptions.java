@@ -37,6 +37,8 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
 
   public static class DefaultStorageFactory implements StorageFactory {
 
+    private static final StorageFactory INSTANCE = new DefaultStorageFactory();
+
     @Override
     public Storage create(StorageOptions options) {
       return new StorageImpl(options);
@@ -44,6 +46,8 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
   }
 
   public static class DefaultStorageRpcFactory implements StorageRpcFactory {
+
+    private static final StorageRpcFactory INSTANCE = new DefaultStorageRpcFactory();
 
     @Override
     public StorageRpc create(StorageOptions options) {
@@ -87,12 +91,12 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
 
   @Override
   protected StorageFactory defaultServiceFactory() {
-    return new DefaultStorageFactory();
+    return DefaultStorageFactory.INSTANCE;
   }
 
   @Override
   protected StorageRpcFactory defaultRpcFactory() {
-    return new DefaultStorageRpcFactory();
+    return DefaultStorageRpcFactory.INSTANCE;
   }
 
   @Override

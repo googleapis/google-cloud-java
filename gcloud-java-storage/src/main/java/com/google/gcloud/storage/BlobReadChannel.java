@@ -50,7 +50,7 @@ public interface BlobReadChannel extends ReadableByteChannel, Closeable,
   void chunkSize(int chunkSize);
 
   /**
-   * Capture the read channel state so that it can be saved and restored afterwards.
+   * Captures the read channel state so that it can be saved and restored afterwards.
    *
    * @return a {@link RestorableState} object that contains the read channel state and can restore
    *     it afterwards.

@@ -49,6 +49,8 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
 
   public static class DefaultDatastoreFactory implements DatastoreFactory {
 
+    private static final DatastoreFactory INSTANCE = new DefaultDatastoreFactory();
+
     @Override
     public Datastore create(DatastoreOptions options) {
       return new DatastoreImpl(options);
@@ -56,6 +58,8 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
   }
 
   public static class DefaultDatastoreRpcFactory implements DatastoreRpcFactory {
+
+    private static final DatastoreRpcFactory INSTANCE = new DefaultDatastoreRpcFactory();
 
     @Override
     public DatastoreRpc create(DatastoreOptions options) {
@@ -155,12 +159,12 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
 
   @Override
   protected DatastoreFactory defaultServiceFactory() {
-    return new DefaultDatastoreFactory();
+    return DefaultDatastoreFactory.INSTANCE;
   }
 
   @Override
   protected DatastoreRpcFactory defaultRpcFactory() {
-    return new DefaultDatastoreRpcFactory();
+    return DefaultDatastoreRpcFactory.INSTANCE;
   }
 
   public String namespace() {
