@@ -17,7 +17,6 @@
 package com.google.gcloud.examples;
 
 import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreFactory;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.datastore.DateTime;
 import com.google.gcloud.datastore.Entity;
@@ -183,7 +182,7 @@ public class DatastoreExample {
         .namespace(NAMESPACE)
         .build();
     String name = args.length > 1 ? args[1] : System.getProperty("user.name");
-    Datastore datastore = DatastoreFactory.instance().get(options);
+    Datastore datastore = options.service();
     KeyFactory keyFactory = datastore.newKeyFactory().kind(USER_KIND);
     Key key = keyFactory.newKey(name);
     String actionName = args.length > 2 ? args[2].toLowerCase() : DEFAULT_ACTION;

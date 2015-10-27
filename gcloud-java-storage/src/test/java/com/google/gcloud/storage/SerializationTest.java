@@ -114,7 +114,7 @@ public class SerializationTest {
         .build();
     BlobReadChannel reader =
         new BlobReadChannelImpl(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
-    RestorableState<BlobReadChannel> state = reader.save();
+    RestorableState<BlobReadChannel> state = reader.capture();
     RestorableState<BlobReadChannel> deserializedState = serializeAndDeserialize(state);
     assertEquals(state, deserializedState);
     assertEquals(state.hashCode(), deserializedState.hashCode());
@@ -130,7 +130,7 @@ public class SerializationTest {
         .build();
     BlobWriteChannelImpl writer = new BlobWriteChannelImpl(
         options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");
-    RestorableState<BlobWriteChannel> state = writer.save();
+    RestorableState<BlobWriteChannel> state = writer.capture();
     RestorableState<BlobWriteChannel> deserializedState = serializeAndDeserialize(state);
     assertEquals(state, deserializedState);
     assertEquals(state.hashCode(), deserializedState.hashCode());

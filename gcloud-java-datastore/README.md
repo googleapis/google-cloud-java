@@ -52,14 +52,13 @@ Here is a code snippet showing a simple usage example from within Compute/App En
 
 ```java
 import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreFactory;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.datastore.DateTime;
 import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-Datastore datastore = DatastoreFactory.instance().get(DatastoreOptions.getDefaultInstance());
+Datastore datastore = DatastoreOptions.getDefaultInstance().service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);

@@ -20,7 +20,7 @@
  * <p>A simple usage example:
  * <pre> {@code
  * DatastoreOptions options = DatastoreOptions.builder().projectId(PROJECT_ID).build();
- * Datastore datastore = DatastoreFactory.instance().get(options);
+ * Datastore datastore = options.service();
  * KeyFactory keyFactory = datastore.newKeyFactory().kind(kind);
  * Key key = keyFactory.newKey(keyName);
  * Entity entity = datastore.get(key);

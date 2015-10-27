@@ -79,8 +79,7 @@ public class DatastoreOptionsTest {
 
   @Test
   public void testDatastore() throws Exception {
-    assertSame(datastoreRpcFactory, options.build().serviceRpcFactory());
-    assertSame(datastoreRpc, options.build().datastoreRpc());
+    assertSame(datastoreRpc, options.build().rpc());
   }
 
   @Test

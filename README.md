@@ -61,14 +61,13 @@ Here is a code snippet showing a simple usage example from within Compute/App En
 
 ```java
 import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreFactory;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.datastore.DateTime;
 import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-Datastore datastore = DatastoreFactory.instance().get(DatastoreOptions.getDefaultInstance());
+Datastore datastore = DatastoreOptions.getDefaultInstance().service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
@@ -106,14 +105,13 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.Storage;
-import com.google.gcloud.storage.StorageFactory;
 import com.google.gcloud.storage.StorageOptions;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
 StorageOptions options = StorageOptions.builder().projectId("project").build();
-Storage storage = StorageFactory.instance().get(options);
+Storage storage = options.service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
 Blob blob = Blob.load(storage, blobId);
 if (blob == null) {

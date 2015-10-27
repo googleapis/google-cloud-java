@@ -1,7 +1,7 @@
 Google Cloud Java Client for Storage
 ====================================
 
-Java idiomatic client for [Google Cloud Storage] (https://cloud.google.com/storage/). 
+Java idiomatic client for [Google Cloud Storage] (https://cloud.google.com/storage/).
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
@@ -55,13 +55,12 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.Storage;
-import com.google.gcloud.storage.StorageFactory;
 import com.google.gcloud.storage.StorageOptions;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-Storage storage = StorageFactory.instance().get(StorageOptions.getDefaultInstance());
+Storage storage = StorageOptions.getDefaultInstance().service();
 Blob blob = new Blob(storage, "bucket", "blob_name");
 if (!blob.exists()) {
   storage2.create(blob.info(), "Hello, Cloud Storage!".getBytes(UTF_8));

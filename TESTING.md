@@ -18,7 +18,7 @@ You can test against a temporary local datastore by following these steps:
       .projectId(PROJECT_ID)
       .host("http://localhost:8080")
       .build();
-  Datastore localDatastore = DatastoreFactory.instance().get(options);
+  Datastore localDatastore = options.service();
   ```
 3. Run your tests.
 
@@ -35,7 +35,7 @@ You can test against a remote datastore emulator as well.  To do this, set the `
       .projectId(PROJECT_ID)
       .host("http://<hostname of machine>:<port>")
       .build();
-  Datastore localDatastore = DatastoreFactory.instance().get(options);
+  Datastore localDatastore = options.service();
   ```
 
 Note that the remote datastore must be running before your tests are run.
@@ -52,7 +52,7 @@ Currently, there isn't an emulator for Google Cloud Storage, so an alternative i
 Here is an example that uses the `RemoteGcsHelper` to create a bucket.
   ```java
   RemoteGcsHelper gcsHelper = RemoteGcsHelper.create(PROJECT_ID, "/path/to/my/JSON/key.json");
-  Storage storage = StorageFactory.instance().get(gcsHelper.options());
+  Storage storage = gcsHelper.options().service();
   String bucket = RemoteGcsHelper.generateBucketName();
   storage.create(BucketInfo.of(bucket));
   ```

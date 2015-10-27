@@ -79,7 +79,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   private static String normalizeHost(String host) {
     host = host.toLowerCase();
     if (includesScheme(host)) {
-      Preconditions.checkArgument(!(host.startsWith("https://") && isLocalHost(host)), 
+      Preconditions.checkArgument(!(host.startsWith("https://") && isLocalHost(host)),
           "\"https\" is not supported for localhost.  Use \"http\" instead.");
       return host;
     }

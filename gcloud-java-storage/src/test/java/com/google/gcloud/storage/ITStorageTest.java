@@ -29,6 +29,10 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,14 +51,9 @@ import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 public class ITStorageTest {
 
   private static Storage storage;
-  private static RemoteGcsHelper gcsHelper;
 
   private static final Logger log = Logger.getLogger(ITStorageTest.class.getName());
   private static final String bucket = RemoteGcsHelper.generateBucketName();
@@ -64,8 +63,8 @@ public class ITStorageTest {
 
   @BeforeClass
   public static void beforeClass() {
-    gcsHelper = RemoteGcsHelper.create();
-    storage = StorageFactory.instance().get(gcsHelper.options());
+    RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
+    storage = gcsHelper.options().service();
     storage.create(BucketInfo.of(bucket));
   }
 
@@ -445,7 +444,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testReadAndWriteChannels() throws UnsupportedEncodingException, IOException {
+  public void testReadAndWriteChannels() throws IOException {
     String blobName = "test-read-and-write-channels-blob";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
     byte[] stringBytes;
@@ -468,14 +467,14 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testReadAndWriteSaveChannels() throws UnsupportedEncodingException, IOException {
-    String blobName = "test-read-and-write-save-channels-blob";
+  public void testReadAndWriteCaptureChannels() throws IOException {
+    String blobName = "test-read-and-write-capture-channels-blob";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
     byte[] stringBytes;
     BlobWriteChannel writer = storage.writer(blob);
     stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
     writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
-    RestorableState<BlobWriteChannel> writerState = writer.save();
+    RestorableState<BlobWriteChannel> writerState = writer.capture();
     BlobWriteChannel secondWriter = writerState.restore();
     secondWriter.write(ByteBuffer.wrap(stringBytes));
     secondWriter.close();
@@ -485,7 +484,7 @@ public class ITStorageTest {
     reader.chunkSize(BLOB_BYTE_CONTENT.length);
     readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
     reader.read(readBytes);
-    RestorableState<BlobReadChannel> readerState = reader.save();
+    RestorableState<BlobReadChannel> readerState = reader.capture();
     BlobReadChannel secondReader = readerState.restore();
     readStringBytes = ByteBuffer.allocate(stringBytes.length);
     secondReader.read(readStringBytes);
@@ -497,7 +496,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testReadChannelFail() throws UnsupportedEncodingException, IOException {
+  public void testReadChannelFail() throws IOException {
     String blobName = "test-read-channel-blob-fail";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
     assertNotNull(storage.create(blob));
@@ -512,7 +511,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testWriteChannelFail() throws UnsupportedEncodingException, IOException {
+  public void testWriteChannelFail() throws IOException {
     String blobName = "test-write-channel-blob-fail";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).generation(-1L).build();
     try {
@@ -527,7 +526,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testWriteChannelExistingBlob() throws UnsupportedEncodingException, IOException {
+  public void testWriteChannelExistingBlob() throws IOException {
     String blobName = "test-write-channel-existing-blob";
     BlobInfo blob = BlobInfo.builder(bucket, blobName).build();
     BlobInfo remoteBlob = storage.create(blob);

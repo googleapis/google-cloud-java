@@ -118,7 +118,7 @@
 		    integrates better with your codebase.
 		    All this means you spend more time creating code that matters
 		    to you.</p>
-		  
+
 		  <p><code>gcloud</code> is configured to access Google Cloud Platform
 		    services and authorize (OAuth 2.0) automatically on your behalf.
 		    Add the <code>gcloud</code> dependency to your project and get a private key to be
@@ -126,7 +126,7 @@
 		    Compute Engine instance, the private key is automatically detected.
                 </div>
 
-                <div class="quote-box--supplementary">		  
+                <div class="quote-box--supplementary">
                   <h4>Example: Retrieve Datastore Entries</h4>
 
                     <div class="code-sample-tabs" ng-init="selected = 'compute engine'">
@@ -136,7 +136,6 @@
 
                     <div hljs="" language="java" ng-show="selected == 'compute engine'" class=""><pre>
 <code class="hljs java">import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreFactory;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
@@ -145,7 +144,7 @@ import com.google.gcloud.datastore.KeyFactory;
 // Authentication is automatic inside Google Compute Engine
 // and Google App Engine.
 DatastoreOptions options = DatastoreOptions.builder().build();
-Datastore datastore = DatastoreFactory.instance().get(options);
+Datastore datastore = options.service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind(<span class="hljs-string">KIND</span>);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
@@ -156,7 +155,6 @@ Entity entity = datastore.get(key);
                     <div hljs="" language="java" ng-show="selected == 'elsewhere'" class=""><pre>
 <code class="hljs java">import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreFactory;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
@@ -166,7 +164,7 @@ DatastoreOptions options = DatastoreOptions.builder()
   .projectId(<span class="hljs-string">PROJECT_ID</span>)
   .authCredentials(AuthCredentials.createForJson(
     new FileInputStream(<span class="hljs-string">PATH_TO_JSON_KEY</span>))).build();
-Datastore datastore = DatastoreFactory.instance().get(options);
+Datastore datastore = options.service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind(<span class="hljs-string">KIND</span>);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);

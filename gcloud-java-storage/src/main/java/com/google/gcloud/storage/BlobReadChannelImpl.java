@@ -57,12 +57,12 @@ class BlobReadChannelImpl implements BlobReadChannel {
     this.blob = blob;
     this.requestOptions = requestOptions;
     isOpen = true;
-    storageRpc = serviceOptions.storageRpc();
+    storageRpc = serviceOptions.rpc();
     storageObject = blob.toPb();
   }
 
   @Override
-  public RestorableState<BlobReadChannel> save() {
+  public RestorableState<BlobReadChannel> capture() {
     StateImpl.Builder builder = StateImpl.builder(serviceOptions, blob, requestOptions)
         .position(position)
         .isOpen(isOpen)

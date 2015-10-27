@@ -20,7 +20,7 @@
  * <p>A simple usage example:
  * <pre>{@code
  * StorageOptions options = StorageOptions.builder().projectId("project").build();
- * Storage storage = StorageFactory.instance().get(options);
+ * Storage storage = options.service();
  * BlobId blobId = BlobId.of("bucket", "blob_name");
  * Blob blob = Blob.load(storage, blobId);
  * if (blob == null) {

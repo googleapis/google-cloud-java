@@ -26,7 +26,7 @@ import com.google.gcloud.spi.StorageRpcFactory;
 import java.util.Objects;
 import java.util.Set;
 
-public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
+public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageOptions> {
 
   private static final long serialVersionUID = -7804860602287801084L;
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
@@ -34,10 +34,29 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
   private static final String DEFAULT_PATH_DELIMITER = "/";
 
   private final String pathDelimiter;
-  private transient StorageRpc storageRpc;
+
+  public static class DefaultStorageFactory implements StorageFactory {
+
+    private static final StorageFactory INSTANCE = new DefaultStorageFactory();
+
+    @Override
+    public Storage create(StorageOptions options) {
+      return new StorageImpl(options);
+    }
+  }
+
+  public static class DefaultStorageRpcFactory implements StorageRpcFactory {
+
+    private static final StorageRpcFactory INSTANCE = new DefaultStorageRpcFactory();
+
+    @Override
+    public StorageRpc create(StorageOptions options) {
+      return new DefaultStorageRpc(options);
+    }
+  }
 
   public static class Builder extends
-      ServiceOptions.Builder<StorageRpc, StorageOptions, Builder> {
+      ServiceOptions.Builder<Storage, StorageRpc, StorageOptions, Builder> {
 
     private String pathDelimiter;
 
@@ -45,6 +64,7 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
 
     private Builder(StorageOptions options) {
       super(options);
+      pathDelimiter = options.pathDelimiter;
     }
 
     /**
@@ -65,28 +85,23 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
   }
 
   private StorageOptions(Builder builder) {
-    super(builder);
+    super(StorageFactory.class, StorageRpcFactory.class, builder);
     pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
+  }
+
+  @Override
+  protected StorageFactory defaultServiceFactory() {
+    return DefaultStorageFactory.INSTANCE;
+  }
+
+  @Override
+  protected StorageRpcFactory defaultRpcFactory() {
+    return DefaultStorageRpcFactory.INSTANCE;
   }
 
   @Override
   protected Set<String> scopes() {
     return SCOPES;
-  }
-
-  StorageRpc storageRpc() {
-    if (storageRpc != null) {
-      return storageRpc;
-    }
-    if (serviceRpcFactory() != null) {
-      storageRpc = serviceRpcFactory().create(this);
-    } else {
-      storageRpc = createRpc(this, StorageRpcFactory.class);
-      if (storageRpc == null) {
-        storageRpc = new DefaultStorageRpc(this);
-      }
-    }
-    return storageRpc;
   }
 
   /**
@@ -113,10 +128,6 @@ public class StorageOptions extends ServiceOptions<StorageRpc, StorageOptions> {
     }
     StorageOptions other = (StorageOptions) obj;
     return baseEquals(other) && Objects.equals(pathDelimiter, other.pathDelimiter);
-  }
-
-  public static StorageOptions defaultInstance() {
-    return builder().build();
   }
 
   public static Builder builder() {

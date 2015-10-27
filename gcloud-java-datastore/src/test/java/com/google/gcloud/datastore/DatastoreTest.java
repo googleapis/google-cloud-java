@@ -126,7 +126,7 @@ public class DatastoreTest {
         .projectId(PROJECT_ID)
         .host("http://localhost:" + PORT)
         .build();
-    datastore = DatastoreFactory.instance().get(options);
+    datastore = options.service();
     StructuredQuery<Key> query = Query.keyQueryBuilder().build();
     QueryResults<Key> result = datastore.run(query);
     datastore.delete(Iterators.toArray(result, Key.class));
@@ -628,7 +628,7 @@ public class DatastoreTest {
             .retryParams(RetryParams.getDefaultInstance())
             .serviceRpcFactory(rpcFactoryMock)
             .build();
-    return DatastoreFactory.instance().get(options);
+    return options.service();
   }
 
   @Test
@@ -741,7 +741,7 @@ public class DatastoreTest {
         .retryParams(RetryParams.getDefaultInstance())
         .serviceRpcFactory(rpcFactoryMock)
         .build();
-    Datastore datastore = DatastoreFactory.instance().get(options);
+    Datastore datastore = options.service();
     Entity entity = datastore.get(KEY1);
     assertEquals(ENTITY1, entity);
     EasyMock.verify(rpcFactoryMock, rpcMock);
@@ -764,7 +764,7 @@ public class DatastoreTest {
         .retryParams(retryParams)
         .serviceRpcFactory(rpcFactoryMock)
         .build();
-    Datastore datastore = DatastoreFactory.instance().get(options);
+    Datastore datastore = options.service();
     thrown.expect(DatastoreException.class);
     thrown.expectMessage(Reason.PERMISSION_DENIED.description());
     datastore.get(KEY1);
@@ -787,7 +787,7 @@ public class DatastoreTest {
         .retryParams(RetryParams.getDefaultInstance())
         .serviceRpcFactory(rpcFactoryMock)
         .build();
-    Datastore datastore = DatastoreFactory.instance().get(options);
+    Datastore datastore = options.service();
     thrown.expect(DatastoreException.class);
     thrown.expectMessage(exceptionMessage);
     datastore.get(KEY1);
