@@ -1,17 +1,15 @@
 /*
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
 
 package com.google.gcloud;
@@ -28,7 +26,15 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.spi.ServiceRpcFactory;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectStreamException;
+import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -70,8 +76,8 @@ public abstract class ServiceOptions<
   /**
    * A base interface for all {@link HttpTransport} factories.
    *
-   * Implementation must provide a public no-arg constructor.
-   * Loading of a factory implementation is done via {@link java.util.ServiceLoader}.
+   * Implementation must provide a public no-arg constructor. Loading of a factory implementation is
+   * done via {@link java.util.ServiceLoader}.
    */
   public interface HttpTransportFactory {
     HttpTransport create();
@@ -264,7 +270,7 @@ public abstract class ServiceOptions<
      * Sets the timeout in milliseconds to establish a connection.
      *
      * @param connectTimeout connection timeout in milliseconds. 0 for an infinite timeout, a
-     * negative number for the default value (20000).
+     *        negative number for the default value (20000).
      * @return the builder.
      */
     public B connectTimeout(int connectTimeout) {
@@ -275,8 +281,8 @@ public abstract class ServiceOptions<
     /**
      * Sets the timeout in milliseconds to read data from an established connection.
      *
-     * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a
-     * negative number for the default value (20000).
+     * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a negative number
+     *        for the default value (20000).
      * @return the builder.
      */
     public B readTimeout(int readTimeout) {
@@ -362,10 +368,10 @@ public abstract class ServiceOptions<
     } catch (IOException ignore) {
       // ignore
     }
-   File configDir;
+    File configDir;
     if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
       configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
-    } else if (isWindows() &&  System.getenv().containsKey("APPDATA")) {
+    } else if (isWindows() && System.getenv().containsKey("APPDATA")) {
       configDir = new File(System.getenv("APPDATA"), "gcloud");
     } else {
       configDir = new File(System.getProperty("user.home"), ".config/gcloud");
@@ -509,8 +515,8 @@ public abstract class ServiceOptions<
   }
 
   /**
-   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to
-   * get current time.
+   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
+   * current time.
    */
   public Clock clock() {
     return clock;
