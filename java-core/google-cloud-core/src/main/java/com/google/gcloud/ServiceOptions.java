@@ -34,6 +34,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.lang.reflect.Method;
@@ -47,8 +48,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class ServiceOptions<
+        ServiceT extends Service,
         ServiceRpcT,
-        OptionsT extends ServiceOptions<ServiceRpcT, OptionsT>>
+        OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>>
     implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
@@ -57,21 +59,35 @@ public abstract class ServiceOptions<
 
   private final String projectId;
   private final String host;
-  private final HttpTransportFactory httpTransportFactory;
-  private final AuthCredentials authCredentials;
+  private final String httpTransportFactoryClassName;
+  private final RestorableState<AuthCredentials> authCredentialsState;
   private final RetryParams retryParams;
-  private final ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+  private final String serviceRpcFactoryClassName;
+  private final String serviceFactoryClassName;
   private final int connectTimeout;
   private final int readTimeout;
   private final Clock clock;
 
-  public interface HttpTransportFactory extends Serializable {
+  private transient HttpTransportFactory httpTransportFactory;
+  private transient AuthCredentials authCredentials;
+  private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+  private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
+  private transient ServiceT service;
+  private transient ServiceRpcT rpc;
+
+  /**
+   * A base interface for all {@link HttpTransport} factories.
+   *
+   * Implementation must provide a public no-arg constructor. Loading of a factory implementation is
+   * done via {@link java.util.ServiceLoader}.
+   */
+  public interface HttpTransportFactory {
     HttpTransport create();
   }
 
-  private enum DefaultHttpTransportFactory implements HttpTransportFactory {
+  public static class DefaultHttpTransportFactory implements HttpTransportFactory {
 
-    INSTANCE;
+    private static final HttpTransportFactory INSTANCE = new DefaultHttpTransportFactory();
 
     @Override
     public HttpTransport create() {
@@ -133,15 +149,17 @@ public abstract class ServiceOptions<
   }
 
   protected abstract static class Builder<
+      ServiceT extends Service,
       ServiceRpcT,
-      OptionsT extends ServiceOptions<ServiceRpcT, OptionsT>,
-      B extends Builder<ServiceRpcT, OptionsT, B>> {
+      OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
+      B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {
 
     private String projectId;
     private String host;
     private HttpTransportFactory httpTransportFactory;
     private AuthCredentials authCredentials;
     private RetryParams retryParams;
+    private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
     private int connectTimeout = -1;
     private int readTimeout = -1;
@@ -149,20 +167,32 @@ public abstract class ServiceOptions<
 
     protected Builder() {}
 
-    protected Builder(ServiceOptions<ServiceRpcT, OptionsT> options) {
+    protected Builder(ServiceOptions<ServiceT, ServiceRpcT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
       httpTransportFactory = options.httpTransportFactory;
       authCredentials = options.authCredentials;
       retryParams = options.retryParams;
+      serviceFactory = options.serviceFactory;
       serviceRpcFactory = options.serviceRpcFactory;
+      connectTimeout = options.connectTimeout;
+      readTimeout = options.readTimeout;
+      clock = options.clock;
     }
 
-    protected abstract ServiceOptions<ServiceRpcT, OptionsT> build();
+    protected abstract ServiceOptions<ServiceT, ServiceRpcT, OptionsT> build();
 
     @SuppressWarnings("unchecked")
     protected B self() {
       return (B) this;
+    }
+
+    /**
+     * Sets the service factory.
+     */
+    public B serviceFactory(ServiceFactory<ServiceT, OptionsT> serviceFactory) {
+      this.serviceFactory = serviceFactory;
+      return self();
     }
 
     /**
@@ -242,7 +272,7 @@ public abstract class ServiceOptions<
      * Sets the timeout in milliseconds to establish a connection.
      *
      * @param connectTimeout connection timeout in milliseconds. 0 for an infinite timeout, a
-     * negative number for the default value (20000).
+     *        negative number for the default value (20000).
      * @return the builder.
      */
     public B connectTimeout(int connectTimeout) {
@@ -253,8 +283,8 @@ public abstract class ServiceOptions<
     /**
      * Sets the timeout in milliseconds to read data from an established connection.
      *
-     * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a
-     * negative number for the default value (20000).
+     * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a negative number
+     *        for the default value (20000).
      * @return the builder.
      */
     public B readTimeout(int readTimeout) {
@@ -263,14 +293,23 @@ public abstract class ServiceOptions<
     }
   }
 
-  protected ServiceOptions(Builder<ServiceRpcT, OptionsT, ?> builder) {
+  protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
+      Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
+      Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
     projectId = checkNotNull(builder.projectId != null ? builder.projectId : defaultProject());
     host = firstNonNull(builder.host, defaultHost());
-    httpTransportFactory =
-        firstNonNull(builder.httpTransportFactory, DefaultHttpTransportFactory.INSTANCE);
+    httpTransportFactory = firstNonNull(builder.httpTransportFactory,
+        getFromServiceLoader(HttpTransportFactory.class, DefaultHttpTransportFactory.INSTANCE));
+    httpTransportFactoryClassName = httpTransportFactory.getClass().getName();
     authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
+    authCredentialsState = authCredentials.capture();
     retryParams = builder.retryParams;
-    serviceRpcFactory = builder.serviceRpcFactory;
+    serviceFactory = firstNonNull(builder.serviceFactory,
+        getFromServiceLoader(serviceFactoryClass, defaultServiceFactory()));
+    serviceFactoryClassName = serviceFactory.getClass().getName();
+    serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
+        getFromServiceLoader(rpcFactoryClass, defaultRpcFactory()));
+    serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
     connectTimeout = builder.connectTimeout;
     readTimeout = builder.readTimeout;
     clock = firstNonNull(builder.clock, Clock.defaultClock());
@@ -331,10 +370,10 @@ public abstract class ServiceOptions<
     } catch (IOException ignore) {
       // ignore
     }
-   File configDir;
+    File configDir;
     if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
       configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
-    } else if (isWindows() &&  System.getenv().containsKey("APPDATA")) {
+    } else if (isWindows() && System.getenv().containsKey("APPDATA")) {
       configDir = new File(System.getenv("APPDATA"), "gcloud");
     } else {
       configDir = new File(System.getProperty("user.home"), ".config/gcloud");
@@ -389,10 +428,22 @@ public abstract class ServiceOptions<
     }
   }
 
-  protected abstract Set<String> scopes();
+  public ServiceT service() {
+    if (service == null) {
+      service = serviceFactory.create((OptionsT) this);
+    }
+    return service;
+  }
+
+  public ServiceRpcT rpc() {
+    if (rpc == null) {
+      rpc = serviceRpcFactory.create((OptionsT) this);
+    }
+    return rpc;
+  }
 
   /**
-   * Returns the project id. 
+   * Returns the project id.
    */
   public String projectId() {
     return projectId;
@@ -425,13 +476,6 @@ public abstract class ServiceOptions<
    */
   public RetryParams retryParams() {
     return retryParams != null ? retryParams : RetryParams.noRetries();
-  }
-
-  /**
-   * Returns the factory for rpc services.
-   */
-  public ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory() {
-    return serviceRpcFactory;
   }
 
   /**
@@ -473,41 +517,57 @@ public abstract class ServiceOptions<
   }
 
   /**
-   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to
-   * get current time. 
+   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
+   * current time.
    */
   public Clock clock() {
     return clock;
   }
 
   protected int baseHashCode() {
-    return Objects.hash(projectId, host, httpTransportFactory, authCredentials, retryParams,
-        serviceRpcFactory, connectTimeout, readTimeout, clock);
+    return Objects.hash(projectId, host, httpTransportFactoryClassName, authCredentialsState,
+        retryParams, serviceFactoryClassName, serviceRpcFactoryClassName, connectTimeout,
+        readTimeout, clock);
   }
 
-  protected boolean baseEquals(ServiceOptions<?, ?> other) {
+  protected boolean baseEquals(ServiceOptions<?, ?, ?> other) {
     return Objects.equals(projectId, other.projectId)
         && Objects.equals(host, other.host)
-        && Objects.equals(httpTransportFactory, other.httpTransportFactory)
-        && Objects.equals(authCredentials, other.authCredentials)
+        && Objects.equals(httpTransportFactoryClassName, other.httpTransportFactoryClassName)
+        && Objects.equals(authCredentialsState, other.authCredentialsState)
         && Objects.equals(retryParams, other.retryParams)
-        && Objects.equals(serviceRpcFactory, other.serviceRpcFactory)
+        && Objects.equals(serviceFactoryClassName, other.serviceFactoryClassName)
+        && Objects.equals(serviceRpcFactoryClassName, other.serviceRpcFactoryClassName)
         && Objects.equals(connectTimeout, other.connectTimeout)
         && Objects.equals(readTimeout, other.readTimeout)
         && Objects.equals(clock, clock);
   }
 
-  public abstract Builder<ServiceRpcT, OptionsT, ?> toBuilder();
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    httpTransportFactory = newInstance(httpTransportFactoryClassName);
+    serviceFactory = newInstance(serviceFactoryClassName);
+    serviceRpcFactory = newInstance(serviceRpcFactoryClassName);
+    authCredentials = authCredentialsState.restore();
+  }
 
-  /**
-   * Creates a service RPC using a factory loaded by {@link ServiceLoader}.
-   */
-  protected static
-      <ServiceRpcT, OptionsT extends ServiceOptions<ServiceRpcT, OptionsT>>
-      ServiceRpcT createRpc(OptionsT options,
-          Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> factoryClass) {
-    ServiceRpcFactory<ServiceRpcT, OptionsT> factory =
-        Iterables.getFirst(ServiceLoader.load(factoryClass), null);
-    return factory == null ? null : factory.create(options);
+  private static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
+    try {
+      return (T) Class.forName(className).newInstance();
+    } catch (InstantiationException | IllegalAccessException e) {
+      throw new IOException(e);
+    }
+  }
+
+  protected abstract <T extends ServiceFactory<ServiceT, OptionsT>> T defaultServiceFactory();
+
+  protected abstract <T extends ServiceRpcFactory<ServiceRpcT, OptionsT>> T defaultRpcFactory();
+
+  protected abstract Set<String> scopes();
+
+  public abstract <B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> B toBuilder();
+
+  private static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
+    return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
   }
 }
