@@ -32,15 +32,20 @@ import java.util.Objects;
 import java.util.concurrent.Callable;
 
 /**
- * Google Storage blob rewriter.
+ * Google Storage blob copy writer. This class holds the result of a copy request.
+ * If source and destination blobs do not share the same location or storage class more than one
+ * RPC request is needed to copy the blob. When this is the case {@link #copyChunk()} can be used
+ * to copy to destination other chunks of the source blob.
+ *
+ * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite">Rewrite</a>
  */
-public final class BlobRewriter implements Restorable<BlobRewriter> {
+public class CopyWriter implements Restorable<CopyWriter> {
 
   private final StorageOptions serviceOptions;
   private final StorageRpc storageRpc;
   private RewriteResponse rewriteResponse;
 
-  BlobRewriter(StorageOptions serviceOptions, RewriteResponse rewriteResponse) {
+  CopyWriter(StorageOptions serviceOptions, RewriteResponse rewriteResponse) {
     this.serviceOptions = serviceOptions;
     this.rewriteResponse = rewriteResponse;
     this.storageRpc = serviceOptions.rpc();
@@ -69,14 +74,14 @@ public final class BlobRewriter implements Restorable<BlobRewriter> {
   }
 
   /**
-   * Returns the number of bytes written. 
+   * Returns the number of bytes copied. 
    */
-  public Long totalBytesRewritten() {
+  public Long totalBytesCopied() {
     return rewriteResponse.totalBytesRewritten;
   }
 
   /**
-   * Rewrite the next chunk of the blob. An RPC is issued only if rewrite has not finished yet
+   * Copies the next chunk of the blob. An RPC is issued only if copy has not finished yet
    * ({@link #isDone} returns {@code false}).
    *
    * @throws StorageException upon failure
@@ -97,7 +102,7 @@ public final class BlobRewriter implements Restorable<BlobRewriter> {
   }
 
   @Override
-  public RestorableState<BlobRewriter> capture() {
+  public RestorableState<CopyWriter> capture() {
     return StateImpl.builder(
         serviceOptions,
         BlobId.fromPb(rewriteResponse.rewriteRequest.source),
@@ -108,11 +113,11 @@ public final class BlobRewriter implements Restorable<BlobRewriter> {
         .isDone(isDone())
         .megabytesRewrittenPerCall(rewriteResponse.rewriteRequest.megabytesRewrittenPerCall)
         .rewriteToken(rewriteResponse.rewriteToken)
-        .totalBytesRewritten(totalBytesRewritten())
+        .totalBytesRewritten(totalBytesCopied())
         .build();
   }
 
-  static class StateImpl implements RestorableState<BlobRewriter>, Serializable {
+  static class StateImpl implements RestorableState<CopyWriter>, Serializable {
 
     private static final long serialVersionUID = 8279287678903181701L;
 
@@ -125,7 +130,7 @@ public final class BlobRewriter implements Restorable<BlobRewriter> {
     private final Long blobSize;
     private final Boolean isDone;
     private final String rewriteToken;
-    private final Long totalBytesRewritten;
+    private final Long totalBytesCopied;
     private final Long megabytesRewrittenPerCall;
 
     StateImpl(Builder builder) {
@@ -138,7 +143,7 @@ public final class BlobRewriter implements Restorable<BlobRewriter> {
       this.blobSize = builder.blobSize;
       this.isDone = builder.isDone;
       this.rewriteToken = builder.rewriteToken;
-      this.totalBytesRewritten = builder.totalBytesRewritten;
+      this.totalBytesCopied = builder.totalBytesCopied;
       this.megabytesRewrittenPerCall = builder.megabytesRewrittenPerCall;
     }
 
@@ -153,7 +158,7 @@ public final class BlobRewriter implements Restorable<BlobRewriter> {
       private Long blobSize;
       private Boolean isDone;
       private String rewriteToken;
-      private Long totalBytesRewritten;
+      private Long totalBytesCopied;
       private Long megabytesRewrittenPerCall;
 
       private Builder(StorageOptions options, BlobId source,
@@ -187,7 +192,7 @@ public final class BlobRewriter implements Restorable<BlobRewriter> {
       }
 
       Builder totalBytesRewritten(Long totalBytesRewritten) {
-        this.totalBytesRewritten = totalBytesRewritten;
+        this.totalBytesCopied = totalBytesRewritten;
         return this;
       }
 
@@ -196,7 +201,7 @@ public final class BlobRewriter implements Restorable<BlobRewriter> {
         return this;
       }
 
-      RestorableState<BlobRewriter> build() {
+      RestorableState<CopyWriter> build() {
         return new StateImpl(this);
       }
     }
@@ -208,19 +213,19 @@ public final class BlobRewriter implements Restorable<BlobRewriter> {
     }
 
     @Override
-    public BlobRewriter restore() {
+    public CopyWriter restore() {
       RewriteRequest rewriteRequest = new RewriteRequest(
           source.toPb(), sourceOptions, target.toPb(), targetOptions, megabytesRewrittenPerCall);
       RewriteResponse rewriteResponse = new RewriteResponse(rewriteRequest,
           result != null ? result.toPb() : null, blobSize, isDone, rewriteToken,
-          totalBytesRewritten);
-      return new BlobRewriter(serviceOptions, rewriteResponse);
+          totalBytesCopied);
+      return new CopyWriter(serviceOptions, rewriteResponse);
     }
 
     @Override
     public int hashCode() {
       return Objects.hash(serviceOptions, source, sourceOptions, target, targetOptions, result,
-          blobSize, isDone, megabytesRewrittenPerCall, rewriteToken, totalBytesRewritten);
+          blobSize, isDone, megabytesRewrittenPerCall, rewriteToken, totalBytesCopied);
     }
 
     @Override
@@ -242,7 +247,7 @@ public final class BlobRewriter implements Restorable<BlobRewriter> {
           && Objects.equals(this.blobSize, other.blobSize)
           && Objects.equals(this.isDone, other.isDone)
           && Objects.equals(this.megabytesRewrittenPerCall, other.megabytesRewrittenPerCall)
-          && Objects.equals(this.totalBytesRewritten, other.totalBytesRewritten);
+          && Objects.equals(this.totalBytesCopied, other.totalBytesCopied);
     }
 
     @Override
@@ -251,7 +256,7 @@ public final class BlobRewriter implements Restorable<BlobRewriter> {
           .add("source", source)
           .add("target", target)
           .add("isDone", isDone)
-          .add("totalBytesRewritten", totalBytesRewritten)
+          .add("totalBytesRewritten", totalBytesCopied)
           .add("blobSize", blobSize)
           .toString();
     }

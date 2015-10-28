@@ -213,19 +213,20 @@ public final class Blob {
   }
 
   /**
-   * Copies this blob to the specified target. Possibly copying also some of the metadata
-   * (e.g. content-type).
+   * Sends a copy request for the current blob to the target blob. Possibly also some of the
+   * metadata are copied (e.g. content-type).
    *
    * @param targetBlob target blob's id
    * @param options source blob options
-   * @return the copied blob
+   * @return a {@link CopyWriter} object that can be used to get information on the newly created
+   *     blob or to complete the copy if more than one RPC request is needed
    * @throws StorageException upon failure
    */
-  public Blob copyTo(BlobId targetBlob, BlobSourceOption... options) {
+  public CopyWriter copyTo(BlobId targetBlob, BlobSourceOption... options) {
     BlobInfo updatedInfo = info.toBuilder().blobId(targetBlob).build();
     CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
         .sourceOptions(convert(info, options)).target(updatedInfo).build();
-    return new Blob(storage, storage.copy(copyRequest));
+    return storage.copy(copyRequest);
   }
 
   /**
@@ -240,33 +241,35 @@ public final class Blob {
   }
 
   /**
-   * Copies this blob to the target bucket, preserving its name. Possibly copying also some of the
-   * metadata (e.g. content-type).
+   * Sends a copy request for the current blob to the target bucket, preserving its name. Possibly
+   * copying also some of the metadata (e.g. content-type).
    *
    * @param targetBucket target bucket's name
    * @param options source blob options
-   * @return the copied blob
+   * @return a {@link CopyWriter} object that can be used to get information on the newly created
+   *     blob or to complete the copy if more than one RPC request is needed
    * @throws StorageException upon failure
    */
-  public Blob copyTo(String targetBucket, BlobSourceOption... options) {
+  public CopyWriter copyTo(String targetBucket, BlobSourceOption... options) {
     return copyTo(targetBucket, info.name(), options);
   }
 
   /**
-   * Copies this blob to the target bucket with a new name. Possibly copying also some of the
-   * metadata (e.g. content-type).
+   * Sends a copy request for the current blob to the target blob. Possibly also some of the
+   * metadata are copied (e.g. content-type).
    *
    * @param targetBucket target bucket's name
    * @param targetBlob target blob's name
    * @param options source blob options
-   * @return the copied blob
+   * @return a {@link CopyWriter} object that can be used to get information on the newly created
+   *     blob or to complete the copy if more than one RPC request is needed
    * @throws StorageException upon failure
    */
-  public Blob copyTo(String targetBucket, String targetBlob, BlobSourceOption... options) {
+  public CopyWriter copyTo(String targetBucket, String targetBlob, BlobSourceOption... options) {
     BlobInfo updatedInfo = info.toBuilder().blobId(BlobId.of(targetBucket, targetBlob)).build();
     CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
         .sourceOptions(convert(info, options)).target(updatedInfo).build();
-    return new Blob(storage, storage.copy(copyRequest));
+    return storage.copy(copyRequest);
   }
 
   /**

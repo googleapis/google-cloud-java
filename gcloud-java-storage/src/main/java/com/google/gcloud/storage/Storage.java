@@ -494,110 +494,6 @@ public interface Storage extends Service<StorageOptions> {
 
   class CopyRequest implements Serializable {
 
-    private static final long serialVersionUID = -2606508373751748775L;
-
-    private final BlobId source;
-    private final List<BlobSourceOption> sourceOptions;
-    private final BlobInfo target;
-    private final List<BlobTargetOption> targetOptions;
-
-    public static class Builder {
-
-      private final Set<BlobSourceOption> sourceOptions = new LinkedHashSet<>();
-      private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
-      private BlobId source;
-      private BlobInfo target;
-
-      public Builder source(String bucket, String blob) {
-        this.source = BlobId.of(bucket, blob);
-        return this;
-      }
-
-      public Builder source(BlobId source) {
-        this.source = source;
-        return this;
-      }
-
-      public Builder sourceOptions(BlobSourceOption... options) {
-        Collections.addAll(sourceOptions, options);
-        return this;
-      }
-
-      public Builder sourceOptions(Iterable<BlobSourceOption> options) {
-        Iterables.addAll(sourceOptions, options);
-        return this;
-      }
-
-      public Builder target(BlobInfo target) {
-        this.target = target;
-        return this;
-      }
-
-      public Builder targetOptions(BlobTargetOption... options) {
-        Collections.addAll(targetOptions, options);
-        return this;
-      }
-
-      public Builder targetOptions(Iterable<BlobTargetOption> options) {
-        Iterables.addAll(targetOptions, options);
-        return this;
-      }
-
-      public CopyRequest build() {
-        checkNotNull(source);
-        checkNotNull(target);
-        return new CopyRequest(this);
-      }
-    }
-
-    private CopyRequest(Builder builder) {
-      source = checkNotNull(builder.source);
-      sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
-      target = checkNotNull(builder.target);
-      targetOptions = ImmutableList.copyOf(builder.targetOptions);
-    }
-
-    public BlobId source() {
-      return source;
-    }
-
-    public List<BlobSourceOption> sourceOptions() {
-      return sourceOptions;
-    }
-
-    public BlobInfo target() {
-      return target;
-    }
-
-    public List<BlobTargetOption> targetOptions() {
-      return targetOptions;
-    }
-
-    public static CopyRequest of(String sourceBucket, String sourceBlob, BlobInfo target) {
-      return builder().source(sourceBucket, sourceBlob).target(target).build();
-    }
-
-    public static CopyRequest of(BlobId sourceBlobId, BlobInfo target) {
-      return builder().source(sourceBlobId).target(target).build();
-    }
-
-    public static CopyRequest of(String sourceBucket, String sourceBlob, String targetBlob) {
-      return of(sourceBucket, sourceBlob,
-          BlobInfo.builder(BlobId.of(sourceBucket, targetBlob)).build());
-    }
-
-    public static CopyRequest of(BlobId sourceBlobId, String targetBlob) {
-      return of(sourceBlobId,
-          BlobInfo.builder(BlobId.of(sourceBlobId.bucket(), targetBlob)).build());
-    }
-
-    public static Builder builder() {
-      return new Builder();
-    }
-  }
-
-  class RewriteRequest implements Serializable {
-
     private static final long serialVersionUID = -4498650529476219937L;
 
     private final BlobId source;
@@ -699,14 +595,14 @@ public interface Storage extends Service<StorageOptions> {
       /**
        * Creates a {@code RewriteRequest}.
        */
-      public RewriteRequest build() {
+      public CopyRequest build() {
         checkNotNull(source);
         checkNotNull(target);
-        return new RewriteRequest(this);
+        return new CopyRequest(this);
       }
     }
 
-    private RewriteRequest(Builder builder) {
+    private CopyRequest(Builder builder) {
       source = checkNotNull(builder.source);
       sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
       target = checkNotNull(builder.target);
@@ -751,11 +647,11 @@ public interface Storage extends Service<StorageOptions> {
       return megabytesRewrittenPerCall;
     }
 
-    public static RewriteRequest of(String sourceBucket, String sourceBlob, BlobInfo target) {
+    public static CopyRequest of(String sourceBucket, String sourceBlob, BlobInfo target) {
       return builder().source(sourceBucket, sourceBlob).target(target).build();
     }
 
-    public static RewriteRequest of(BlobId sourceBlobId, BlobInfo target) {
+    public static CopyRequest of(BlobId sourceBlobId, BlobInfo target) {
       return builder().source(sourceBlobId).target(target).build();
     }
 
@@ -923,12 +819,26 @@ public interface Storage extends Service<StorageOptions> {
   BlobInfo compose(ComposeRequest composeRequest);
 
   /**
-   * Send a copy request.
+   * Sends a copy request. Returns a {@link CopyWriter} object for the provided
+   * {@code CopyRequest}. If source and destination objects share the same location and storage
+   * class the source blob is copied and its information can be accessed with
+   * {@link CopyWriter#result()}, regardless of the {@link CopyRequest#megabytesRewrittenPerCall}
+   * parameter. If source and destination have different location or storage class multiple RPC
+   * calls might be needed depending on blob's size.
+   * <p>
+   * Example usage of copy:
+   * <pre>    {@code CopyWriter copyWriter = service.copy(copyRequest);}
+   *    {@code while(!copyWriter.isDone()) {
+   *       copyWriter.copyChunk();
+   *   }}
+   * </pre>
    *
-   * @return the copied blob.
+   * @return a {@link CopyWriter} object that can be used to get information on the newly created
+   *     blob or to complete the copy if more than one RPC request is needed
    * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite">Rewrite</a>
    */
-  BlobInfo copy(CopyRequest copyRequest);
+  CopyWriter copy(CopyRequest copyRequest);
 
   /**
    * Reads all the bytes from a blob.
@@ -1033,23 +943,4 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   List<Boolean> delete(BlobId... blobIds);
-
-  /**
-   * Returns a {@link BlobRewriter} object for the provided {@code RewriteRequest}. If source and
-   * destination objects share the same location and storage class the source blob is copied with a
-   * single call of {@link BlobRewriter#copyChunk()}, regardless of the {@link
-   * RewriteRequest#maxBytesRewrittenPerCall} parameter. If source and destination have different
-   * location or storage class multiple RPC calls might be needed depending on blob's size.
-   * <p>
-   * Example usage of blob rewriter:
-   * <pre>    {@code BlobRewriter rewriter = service.rewriter(rewriteRequest);}
-   *    {@code while(!rewriter.isDone()) {
-   *       rewriter.copyChunk();
-   *   }}
-   * </pre>
-   *
-   * @throws StorageException upon failure
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite">Rewrite</a>
-   */
-  BlobRewriter rewriter(RewriteRequest rewriteRequest);
 }

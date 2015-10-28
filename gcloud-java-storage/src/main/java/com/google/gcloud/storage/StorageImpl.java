@@ -445,21 +445,22 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BlobInfo copy(CopyRequest copyRequest) {
+  public CopyWriter copy(final CopyRequest copyRequest) {
     final StorageObject source = copyRequest.source().toPb();
-    copyRequest.sourceOptions();
     final Map<StorageRpc.Option, ?> sourceOptions =
         optionMap(null, null, copyRequest.sourceOptions(), true);
     final StorageObject target = copyRequest.target().toPb();
     final Map<StorageRpc.Option, ?> targetOptions = optionMap(copyRequest.target().generation(),
         copyRequest.target().metageneration(), copyRequest.targetOptions());
     try {
-      return BlobInfo.fromPb(runWithRetries(new Callable<StorageObject>() {
+      RewriteResponse rewriteResponse = runWithRetries(new Callable<RewriteResponse>() {
         @Override
-        public StorageObject call() {
-          return storageRpc.copy(source, sourceOptions, target, targetOptions);
+        public RewriteResponse call() {
+          return storageRpc.openRewrite(new StorageRpc.RewriteRequest(source, sourceOptions, target,
+              targetOptions, copyRequest.megabytesRewrittenPerCall()));
         }
-      }, options().retryParams(), EXCEPTION_HANDLER));
+      }, options().retryParams(), EXCEPTION_HANDLER);
+      return new CopyWriter(options(), rewriteResponse);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -662,28 +663,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
     BatchResponse response = apply(requestBuilder.build());
     return Collections.unmodifiableList(transformResultList(response.deletes(), Boolean.FALSE));
-  }
-
-  @Override
-  public BlobRewriter rewriter(final RewriteRequest rewriteRequest) {
-    final StorageObject source = rewriteRequest.source().toPb();
-    final Map<StorageRpc.Option, ?> sourceOptions =
-        optionMap(null, null, rewriteRequest.sourceOptions(), true);
-    final StorageObject target = rewriteRequest.target().toPb();
-    final Map<StorageRpc.Option, ?> targetOptions = optionMap(rewriteRequest.target().generation(),
-        rewriteRequest.target().metageneration(), rewriteRequest.targetOptions());
-    try {
-      RewriteResponse rewriteResponse = runWithRetries(new Callable<RewriteResponse>() {
-        @Override
-        public RewriteResponse call() {
-          return storageRpc.openRewrite(new StorageRpc.RewriteRequest(source, sourceOptions, target,
-              targetOptions, rewriteRequest.megabytesRewrittenPerCall()));
-        }
-      }, options().retryParams(), EXCEPTION_HANDLER);
-      return new BlobRewriter(options(), rewriteResponse);
-    } catch (RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
-    }
   }
 
   private static <T extends Serializable> List<T> transformResultList(

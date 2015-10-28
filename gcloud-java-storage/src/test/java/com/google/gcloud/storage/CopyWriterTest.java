@@ -39,7 +39,7 @@ import org.junit.Before;
 import java.io.IOException;
 import java.util.Map;
 
-public class BlobRewriterTest {
+public class CopyWriterTest {
 
   private static final String SOURCE_BUCKET_NAME = "b";
   private static final String SOURCE_BLOB_NAME = "n";
@@ -61,7 +61,7 @@ public class BlobRewriterTest {
   private StorageOptions options;
   private StorageRpcFactory rpcFactoryMock;
   private StorageRpc storageRpcMock;
-  private BlobRewriter rewriter;
+  private CopyWriter copyWriter;
 
   @Before
   public void setUp() throws IOException, InterruptedException {
@@ -85,12 +85,12 @@ public class BlobRewriterTest {
   public void testRewrite() {
     EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
     EasyMock.replay(storageRpcMock);
-    rewriter = new BlobRewriter(options, RESPONSE);
-    rewriter.copyChunk();
-    assertTrue(rewriter.isDone());
-    assertEquals(RESULT, rewriter.result());
-    assertEquals(new Long(42L), rewriter.totalBytesRewritten());
-    assertEquals(new Long(42L), rewriter.blobSize());
+    copyWriter = new CopyWriter(options, RESPONSE);
+    copyWriter.copyChunk();
+    assertTrue(copyWriter.isDone());
+    assertEquals(RESULT, copyWriter.result());
+    assertEquals(new Long(42L), copyWriter.totalBytesCopied());
+    assertEquals(new Long(42L), copyWriter.blobSize());
   }
 
   @Test
@@ -98,16 +98,16 @@ public class BlobRewriterTest {
     EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE);
     EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
     EasyMock.replay(storageRpcMock);
-    rewriter = new BlobRewriter(options, RESPONSE);
+    copyWriter = new CopyWriter(options, RESPONSE);
     int loopCount = 0;
-    while (!rewriter.isDone()) {
-      rewriter.copyChunk();
+    while (!copyWriter.isDone()) {
+      copyWriter.copyChunk();
       loopCount++;
     }
-    assertTrue(rewriter.isDone());
-    assertEquals(RESULT, rewriter.result());
-    assertEquals(new Long(42L), rewriter.totalBytesRewritten());
-    assertEquals(new Long(42L), rewriter.blobSize());
+    assertTrue(copyWriter.isDone());
+    assertEquals(RESULT, copyWriter.result());
+    assertEquals(new Long(42L), copyWriter.totalBytesCopied());
+    assertEquals(new Long(42L), copyWriter.blobSize());
     assertEquals(2, loopCount);
   }
 
@@ -116,18 +116,18 @@ public class BlobRewriterTest {
     EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE);
     EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
     EasyMock.replay(storageRpcMock);
-    rewriter = new BlobRewriter(options, RESPONSE);
-    rewriter.copyChunk();
-    assertTrue(!rewriter.isDone());
-    assertEquals(null, rewriter.result());
-    assertEquals(new Long(21L), rewriter.totalBytesRewritten());
-    assertEquals(new Long(42L), rewriter.blobSize());
-    RestorableState<BlobRewriter> rewriterState = rewriter.capture();
-    BlobRewriter restoredRewriter = rewriterState.restore();
+    copyWriter = new CopyWriter(options, RESPONSE);
+    copyWriter.copyChunk();
+    assertTrue(!copyWriter.isDone());
+    assertEquals(null, copyWriter.result());
+    assertEquals(new Long(21L), copyWriter.totalBytesCopied());
+    assertEquals(new Long(42L), copyWriter.blobSize());
+    RestorableState<CopyWriter> rewriterState = copyWriter.capture();
+    CopyWriter restoredRewriter = rewriterState.restore();
     restoredRewriter.copyChunk();
     assertTrue(restoredRewriter.isDone());
     assertEquals(RESULT, restoredRewriter.result());
-    assertEquals(new Long(42L), restoredRewriter.totalBytesRewritten());
+    assertEquals(new Long(42L), restoredRewriter.totalBytesCopied());
     assertEquals(new Long(42L), restoredRewriter.blobSize());
   }
 }

@@ -24,6 +24,7 @@ import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.BlobReadChannel;
+import com.google.gcloud.storage.CopyWriter;
 import com.google.gcloud.storage.BlobWriteChannel;
 import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.BucketInfo;
@@ -366,21 +367,25 @@ public class StorageExample {
   private static class CopyAction extends StorageAction<CopyRequest> {
     @Override
     public void run(Storage storage, CopyRequest request) {
-      BlobInfo copiedBlobInfo = storage.copy(request);
-      System.out.println("Copied " + copiedBlobInfo);
+      CopyWriter copyWriter = storage.copy(request);
+      while (!copyWriter.isDone()) {
+        copyWriter.copyChunk();
+      }
+      System.out.println("Copied " + copyWriter.result());
     }
 
     @Override
     CopyRequest parse(String... args) {
-      if (args.length != 4) {
+      if (args.length != 5) {
         throw new IllegalArgumentException();
       }
-      return CopyRequest.of(args[0], args[1], BlobInfo.builder(args[2], args[3]).build());
+      return CopyRequest.of(args[0], args[1],
+          BlobInfo.builder(args[2], args[3]).contentType(args[4]).build());
     }
 
     @Override
     public String params() {
-      return "<from_bucket> <from_path> <to_bucket> <to_path>";
+      return "<from_bucket> <from_path> <to_bucket> <to_path> <to_content_type>";
     }
   }
 

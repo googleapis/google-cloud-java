@@ -38,7 +38,7 @@ import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.spi.StorageRpcFactory;
-import com.google.gcloud.storage.Storage.RewriteRequest;
+import com.google.gcloud.storage.Storage.CopyRequest;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;
@@ -591,33 +591,66 @@ public class StorageImplTest {
 
   @Test
   public void testCopy() {
-    Storage.CopyRequest req = Storage.CopyRequest.builder()
-        .source(BUCKET_NAME1, BLOB_NAME2)
-        .target(BLOB_INFO1)
-        .build();
-    EasyMock.expect(storageRpcMock.copy(BLOB_INFO2.toPb(), EMPTY_RPC_OPTIONS, BLOB_INFO1.toPb(),
-        EMPTY_RPC_OPTIONS)).andReturn(BLOB_INFO1.toPb());
+    CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2);
+    StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
+        EMPTY_RPC_OPTIONS, request.target().toPb(), EMPTY_RPC_OPTIONS, null);
+    StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
+        false, "token", 21L);
+    EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    BlobInfo blob = storage.copy(req);
-    assertEquals(BLOB_INFO1, blob);
+    CopyWriter writer = storage.copy(request);
+    assertNull(writer.result());
+    assertEquals(new Long(42L), writer.blobSize());
+    assertEquals(new Long(21L), writer.totalBytesCopied());
+    assertTrue(!writer.isDone());
   }
 
   @Test
   public void testCopyWithOptions() {
-    Storage.CopyRequest req = Storage.CopyRequest.builder()
-        .source(BUCKET_NAME1, BLOB_NAME2)
+    CopyRequest request = Storage.CopyRequest.builder()
+        .source(BLOB_INFO2.blobId())
         .sourceOptions(BLOB_SOURCE_GENERATION, BLOB_SOURCE_METAGENERATION)
         .target(BLOB_INFO1)
         .targetOptions(BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
         .build();
-    EasyMock.expect(
-        storageRpcMock.copy(BLOB_INFO2.toPb(), BLOB_SOURCE_OPTIONS_COPY, BLOB_INFO1.toPb(),
-            BLOB_TARGET_OPTIONS_COMPOSE)).andReturn(BLOB_INFO1.toPb());
+    StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
+        BLOB_SOURCE_OPTIONS_COPY, request.target().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
+    StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
+        false, "token", 21L);
+    EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    BlobInfo blob = storage.copy(req);
-    assertEquals(BLOB_INFO1, blob);
+    CopyWriter writer = storage.copy(request);
+    assertNull(writer.result());
+    assertEquals(new Long(42L), writer.blobSize());
+    assertEquals(new Long(21L), writer.totalBytesCopied());
+    assertTrue(!writer.isDone());
+  }
+
+  @Test
+  public void testCopyMultipleRequests() {
+    CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2);
+    StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
+        EMPTY_RPC_OPTIONS, request.target().toPb(), EMPTY_RPC_OPTIONS, null);
+    StorageRpc.RewriteResponse rpcResponse1 = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
+        false, "token", 21L);
+    StorageRpc.RewriteResponse rpcResponse2 = new StorageRpc.RewriteResponse(rpcRequest,
+        BLOB_INFO1.toPb(), 42L, true, "token", 42L);
+    EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse1);
+    EasyMock.expect(storageRpcMock.continueRewrite(rpcResponse1)).andReturn(rpcResponse2);
+    EasyMock.replay(storageRpcMock);
+    storage = options.service();
+    CopyWriter writer = storage.copy(request);
+    assertNull(writer.result());
+    assertEquals(new Long(42L), writer.blobSize());
+    assertEquals(new Long(21L), writer.totalBytesCopied());
+    assertTrue(!writer.isDone());
+    writer.copyChunk();
+    assertTrue(writer.isDone());
+    assertEquals(BLOB_INFO1, writer.result());
+    assertEquals(new Long(42L), writer.totalBytesCopied());
+    assertEquals(new Long(42L), writer.blobSize());
   }
 
   @Test
@@ -959,70 +992,6 @@ public class StorageImplTest {
     for (Boolean deleteStatus : deleteResults) {
       assertTrue(deleteStatus);
     }
-  }
-
-  @Test
-  public void testRewriter() {
-    RewriteRequest request = Storage.RewriteRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2);
-    StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        EMPTY_RPC_OPTIONS, request.target().toPb(), EMPTY_RPC_OPTIONS, null);
-    StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
-        false, "token", 21L);
-    EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
-    EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobRewriter writer = storage.rewriter(request);
-    assertNull(writer.result());
-    assertEquals(new Long(42L), writer.blobSize());
-    assertEquals(new Long(21L), writer.totalBytesRewritten());
-    assertTrue(!writer.isDone());
-  }
-
-  @Test
-  public void testRewriterWithOptions() {
-    RewriteRequest request = Storage.RewriteRequest.builder()
-        .source(BLOB_INFO2.blobId())
-        .sourceOptions(BLOB_SOURCE_GENERATION, BLOB_SOURCE_METAGENERATION)
-        .target(BLOB_INFO1)
-        .targetOptions(BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
-        .build();
-    StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        BLOB_SOURCE_OPTIONS_COPY, request.target().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
-    StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
-        false, "token", 21L);
-    EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
-    EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobRewriter writer = storage.rewriter(request);
-    assertNull(writer.result());
-    assertEquals(new Long(42L), writer.blobSize());
-    assertEquals(new Long(21L), writer.totalBytesRewritten());
-    assertTrue(!writer.isDone());
-  }
-
-  @Test
-  public void testRewriterMultipleRequests() {
-    RewriteRequest request = Storage.RewriteRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2);
-    StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        EMPTY_RPC_OPTIONS, request.target().toPb(), EMPTY_RPC_OPTIONS, null);
-    StorageRpc.RewriteResponse rpcResponse1 = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
-        false, "token", 21L);
-    StorageRpc.RewriteResponse rpcResponse2 = new StorageRpc.RewriteResponse(rpcRequest,
-        BLOB_INFO1.toPb(), 42L, true, "token", 42L);
-    EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse1);
-    EasyMock.expect(storageRpcMock.continueRewrite(rpcResponse1)).andReturn(rpcResponse2);
-    EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobRewriter writer = storage.rewriter(request);
-    assertNull(writer.result());
-    assertEquals(new Long(42L), writer.blobSize());
-    assertEquals(new Long(21L), writer.totalBytesRewritten());
-    assertTrue(!writer.isDone());
-    writer.copyChunk();
-    assertTrue(writer.isDone());
-    assertEquals(BLOB_INFO1, writer.result());
-    assertEquals(new Long(42L), writer.totalBytesRewritten());
-    assertEquals(new Long(42L), writer.blobSize());
   }
 
   @Test

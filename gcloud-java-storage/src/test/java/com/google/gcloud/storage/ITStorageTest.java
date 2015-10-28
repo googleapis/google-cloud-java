@@ -317,16 +317,15 @@ public class ITStorageTest {
   @Test
   public void testCopyBlob() {
     String sourceBlobName = "test-copy-blob-source";
-    BlobInfo blob = BlobInfo.builder(BUCKET, sourceBlobName).build();
-    assertNotNull(storage.create(blob, BLOB_BYTE_CONTENT));
-    String targetBlobName = "test-copy-blob-target";
-    Storage.CopyRequest req = Storage.CopyRequest.of(blob.blobId(), targetBlobName);
-    BlobInfo remoteBlob = storage.copy(req);
-    assertNotNull(remoteBlob);
-    assertEquals(BUCKET, remoteBlob.bucket());
-    assertEquals(targetBlobName, remoteBlob.name());
-    byte[] readBytes = storage.readAllBytes(BUCKET, targetBlobName);
-    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    assertNotNull(storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT));
+    String targetBlobName = "test-rewrite-blob-target";
+    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName).contentType(CONTENT_TYPE).build();
+    Storage.CopyRequest req = Storage.CopyRequest.of(source, target);
+    CopyWriter rewriter = storage.copy(req);
+    rewriter.copyChunk();
+    assertTrue(rewriter.isDone());
+    assertEquals(rewriter.result(), storage.get(BUCKET, targetBlobName));
     assertTrue(storage.delete(BUCKET, sourceBlobName));
     assertTrue(storage.delete(BUCKET, targetBlobName));
   }
@@ -334,30 +333,33 @@ public class ITStorageTest {
   @Test
   public void testCopyBlobUpdateMetadata() {
     String sourceBlobName = "test-copy-blob-update-metadata-source";
-    BlobInfo sourceBlob = BlobInfo.builder(BUCKET, sourceBlobName).build();
-    assertNotNull(storage.create(sourceBlob));
-    String targetBlobName = "test-copy-blob-update-metadata-target";
-    BlobInfo targetBlob =
-        BlobInfo.builder(BUCKET, targetBlobName).contentType(CONTENT_TYPE).build();
-    Storage.CopyRequest req = Storage.CopyRequest.of(BUCKET, sourceBlobName, targetBlob);
-    BlobInfo remoteBlob = storage.copy(req);
-    assertNotNull(remoteBlob);
-    assertEquals(targetBlob.blobId(), remoteBlob.blobId());
-    assertEquals(CONTENT_TYPE, remoteBlob.contentType());
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    assertNotNull(storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT));
+    String targetBlobName = "test-rewrite-blob-target";
+    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName)
+        .contentType(CONTENT_TYPE)
+        .metadata(ImmutableMap.of("k", "v"))
+        .build();
+    Storage.CopyRequest req = Storage.CopyRequest.of(source, target);
+    CopyWriter rewriter = storage.copy(req);
+    rewriter.copyChunk();
+    assertTrue(rewriter.isDone());
+    assertEquals(rewriter.result(), storage.get(BUCKET, targetBlobName));
     assertTrue(storage.delete(BUCKET, sourceBlobName));
     assertTrue(storage.delete(BUCKET, targetBlobName));
   }
 
   @Test
   public void testCopyBlobFail() {
-    String sourceBlobName = "test-copy-blob-fail-source";
-    BlobInfo blob = BlobInfo.builder(BUCKET, sourceBlobName).build();
-    assertNotNull(storage.create(blob));
-    String targetBlobName = "test-copy-blob-fail-target";
-    Storage.CopyRequest req = new Storage.CopyRequest.Builder()
-        .source(BUCKET, sourceBlobName)
-        .target(BlobInfo.builder(BUCKET, targetBlobName).build())
-        .sourceOptions(Storage.BlobSourceOption.metagenerationMatch(-1L))
+    String sourceBlobName = "test-copy-blob-source-fail";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    assertNotNull(storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT));
+    String targetBlobName = "test-rewrite-blob-target-fail";
+    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName).contentType(CONTENT_TYPE).build();
+    Storage.CopyRequest req = Storage.CopyRequest.builder()
+        .source(source)
+        .sourceOptions(Storage.BlobSourceOption.generationMatch(-1L))
+        .target(target)
         .build();
     try {
       storage.copy(req);
@@ -659,42 +661,5 @@ public class ITStorageTest {
     assertEquals(CONTENT_TYPE, updatedBlobs.get(0).contentType());
     assertNull(updatedBlobs.get(1));
     assertTrue(storage.delete(BUCKET, sourceBlobName1));
-  }
-
-  @Test
-  public void testRewriteBlob() {
-    String sourceBlobName = "test-rewrite-blob-source";
-    BlobId source = BlobId.of(BUCKET, sourceBlobName);
-    assertNotNull(storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT));
-    String targetBlobName = "test-rewrite-blob-target";
-    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName).contentType(CONTENT_TYPE).build();
-    Storage.RewriteRequest req = Storage.RewriteRequest.of(source, target);
-    BlobRewriter rewriter = storage.rewriter(req);
-    rewriter.copyChunk();
-    assertTrue(rewriter.isDone());
-    assertEquals(rewriter.result(), storage.get(BUCKET, targetBlobName));
-    assertTrue(storage.delete(BUCKET, sourceBlobName));
-    assertTrue(storage.delete(BUCKET, targetBlobName));
-  }
-
-  @Test
-  public void testRewriteBlobFail() {
-    String sourceBlobName = "test-rewrite-blob-source-fail";
-    BlobId source = BlobId.of(BUCKET, sourceBlobName);
-    assertNotNull(storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT));
-    String targetBlobName = "test-rewrite-blob-target-fail";
-    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName).contentType(CONTENT_TYPE).build();
-    Storage.RewriteRequest req = Storage.RewriteRequest.builder()
-        .source(source)
-        .sourceOptions(Storage.BlobSourceOption.generationMatch(-1L))
-        .target(target)
-        .build();
-    try {
-      storage.rewriter(req);
-      fail("StorageException was expected");
-    } catch (StorageException ex) {
-      // expected
-    }
-    assertTrue(storage.delete(BUCKET, sourceBlobName));
   }
 }
