@@ -411,8 +411,6 @@ public abstract class ServiceOptions<
   }
 
   protected static String getAppEngineProjectId() {
-    // TODO(ozarov): An alternative to reflection would be to depend on AE api jar:
-    // http://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk/1.2.0
     try {
       Class<?> factoryClass =
           Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
