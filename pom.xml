@@ -63,6 +63,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
+    <site.installationModule>gcloud-java</site.installationModule>
   </properties>
   <modules>
     <module>gcloud-java-core</module>
@@ -332,7 +333,7 @@
                 <quiet>true</quiet>
                 <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
                 <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-                <artifactId>gcloud-java</artifactId>
+                <artifactId>${site.installationModule}</artifactId>
                 <packaging>jar</packaging>
               </configuration>
             </plugin>
