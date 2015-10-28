@@ -23,9 +23,9 @@ import static org.junit.Assert.fail;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.ExceptionHandler.Interceptor.RetryResult;
 
-import org.junit.rules.ExpectedException;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -251,7 +251,8 @@ public final class RetryParams implements Serializable {
   }
 
   /**
-   * Returns the totalRetryPeriodMillis. Default value is {@value #DEFAULT_TOTAL_RETRY_PERIOD_MILLIS}.
+   * Returns the totalRetryPeriodMillis. Default value is
+   * {@value #DEFAULT_TOTAL_RETRY_PERIOD_MILLIS}.
    */
   public long getTotalRetryPeriodMillis() {
     return totalRetryPeriodMillis;

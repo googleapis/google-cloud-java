@@ -48,9 +48,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class ServiceOptions<
-        ServiceT extends Service,
-        ServiceRpcT,
-        OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>>
+    ServiceT extends Service,
+    ServiceRpcT,
+    OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>>
     implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
@@ -116,9 +116,9 @@ public abstract class ServiceOptions<
    * Implementations should implement {@code Serializable} wherever possible and must document
    * whether or not they do support serialization.
    */
-  public static abstract class Clock {
+  public abstract static class Clock {
 
-    private static ServiceOptions.Clock DEFAULT_TIME_SOURCE = new DefaultClock();
+    private static final ServiceOptions.Clock DEFAULT_TIME_SOURCE = new DefaultClock();
 
     /**
      * Returns current time in milliseconds according to this clock.
