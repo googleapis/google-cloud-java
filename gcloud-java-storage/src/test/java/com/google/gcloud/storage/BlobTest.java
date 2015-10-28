@@ -121,7 +121,7 @@ public class BlobTest {
 
   @Test
   public void testCopyToBucket() throws Exception {
-    BlobInfo target = BLOB_INFO.toBuilder().blobId(BlobId.of("bt", "n")).build();
+    BlobInfo target = BlobInfo.builder(BlobId.of("bt", "n")).build();
     CopyWriter copyWriter = createMock(CopyWriter.class);
     Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
     expect(storage.copy(capture(capturedCopyRequest))).andReturn(copyWriter);
@@ -136,7 +136,7 @@ public class BlobTest {
 
   @Test
   public void testCopyTo() throws Exception {
-    BlobInfo target = BLOB_INFO.toBuilder().blobId(BlobId.of("bt", "nt")).build();
+    BlobInfo target = BlobInfo.builder(BlobId.of("bt", "nt")).build();
     CopyWriter copyWriter = createMock(CopyWriter.class);
     Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
     expect(storage.copy(capture(capturedCopyRequest))).andReturn(copyWriter);
@@ -153,7 +153,7 @@ public class BlobTest {
   public void testCopyToBlobId() throws Exception {
     BlobId targetId = BlobId.of("bt", "nt");
     CopyWriter copyWriter = createMock(CopyWriter.class);
-    BlobInfo target = BLOB_INFO.toBuilder().blobId(targetId).build();
+    BlobInfo target = BLOB_INFO.builder(targetId).build();
     Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
     expect(storage.copy(capture(capturedCopyRequest))).andReturn(copyWriter);
     replay(storage);

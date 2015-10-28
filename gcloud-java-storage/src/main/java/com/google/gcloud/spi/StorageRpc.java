@@ -177,13 +177,13 @@ public interface StorageRpc {
 
     public final RewriteRequest rewriteRequest;
     public final StorageObject result;
-    public final Long blobSize;
-    public final Boolean isDone;
+    public final long blobSize;
+    public final boolean isDone;
     public final String rewriteToken;
-    public final Long totalBytesRewritten;
+    public final long totalBytesRewritten;
 
-    public RewriteResponse(RewriteRequest rewriteRequest, StorageObject result, Long blobSize,
-        Boolean isDone, String rewriteToken, Long totalBytesRewritten) {
+    public RewriteResponse(RewriteRequest rewriteRequest, StorageObject result, long blobSize,
+        boolean isDone, String rewriteToken, long totalBytesRewritten) {
       this.rewriteRequest = rewriteRequest;
       this.result = result;
       this.blobSize = blobSize;
@@ -204,9 +204,9 @@ public interface StorageRpc {
       return Objects.equals(this.rewriteRequest, other.rewriteRequest)
           && Objects.equals(this.result, other.result)
           && Objects.equals(this.rewriteToken, other.rewriteToken)
-          && Objects.equals(this.blobSize, other.blobSize)
+          && this.blobSize == other.blobSize
           && Objects.equals(this.isDone, other.isDone)
-          && Objects.equals(this.totalBytesRewritten, other.totalBytesRewritten);
+          && this.totalBytesRewritten == other.totalBytesRewritten;
     }
 
     @Override
@@ -244,9 +244,6 @@ public interface StorageRpc {
 
   StorageObject compose(Iterable<StorageObject> sources, StorageObject target,
       Map<Option, ?> targetOptions) throws StorageException;
-
-  StorageObject copy(StorageObject source, Map<Option, ?> sourceOptions,
-      StorageObject target, Map<Option, ?> targetOptions) throws StorageException;
 
   byte[] load(StorageObject storageObject, Map<Option, ?> options)
       throws StorageException;

@@ -600,9 +600,8 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     storage = options.service();
     CopyWriter writer = storage.copy(request);
-    assertNull(writer.result());
-    assertEquals(new Long(42L), writer.blobSize());
-    assertEquals(new Long(21L), writer.totalBytesCopied());
+    assertEquals(42L, writer.blobSize());
+    assertEquals(21L, writer.totalBytesCopied());
     assertTrue(!writer.isDone());
   }
 
@@ -622,9 +621,8 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     storage = options.service();
     CopyWriter writer = storage.copy(request);
-    assertNull(writer.result());
-    assertEquals(new Long(42L), writer.blobSize());
-    assertEquals(new Long(21L), writer.totalBytesCopied());
+    assertEquals(42L, writer.blobSize());
+    assertEquals(21L, writer.totalBytesCopied());
     assertTrue(!writer.isDone());
   }
 
@@ -642,15 +640,13 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     storage = options.service();
     CopyWriter writer = storage.copy(request);
-    assertNull(writer.result());
-    assertEquals(new Long(42L), writer.blobSize());
-    assertEquals(new Long(21L), writer.totalBytesCopied());
+    assertEquals(42L, writer.blobSize());
+    assertEquals(21L, writer.totalBytesCopied());
     assertTrue(!writer.isDone());
-    writer.copyChunk();
-    assertTrue(writer.isDone());
     assertEquals(BLOB_INFO1, writer.result());
-    assertEquals(new Long(42L), writer.totalBytesCopied());
-    assertEquals(new Long(42L), writer.blobSize());
+    assertTrue(writer.isDone());
+    assertEquals(42L, writer.totalBytesCopied());
+    assertEquals(42L, writer.blobSize());
   }
 
   @Test

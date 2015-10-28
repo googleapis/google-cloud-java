@@ -457,7 +457,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         @Override
         public RewriteResponse call() {
           return storageRpc.openRewrite(new StorageRpc.RewriteRequest(source, sourceOptions, target,
-              targetOptions, copyRequest.megabytesRewrittenPerCall()));
+              targetOptions, copyRequest.megabytesCopiedPerChunk()));
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
       return new CopyWriter(options(), rewriteResponse);

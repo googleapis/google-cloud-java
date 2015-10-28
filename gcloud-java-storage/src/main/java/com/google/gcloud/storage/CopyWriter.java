@@ -34,8 +34,8 @@ import java.util.concurrent.Callable;
 /**
  * Google Storage blob copy writer. This class holds the result of a copy request.
  * If source and destination blobs do not share the same location or storage class more than one
- * RPC request is needed to copy the blob. When this is the case {@link #copyChunk()} can be used
- * to copy to destination other chunks of the source blob.
+ * RPC request is needed to copy the blob otherwise one or more {@link #copyChunk()} calls are
+ * necessary to complete the copy.
  *
  * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite">Rewrite</a>
  */
@@ -52,31 +52,36 @@ public class CopyWriter implements Restorable<CopyWriter> {
   }
 
   /**
-   * Returns the updated information for the just written blob when {@link #isDone} is {@code true}.
-   * Returns {@code null} otherwise.
+   * Returns the updated information for the just written blob. This method might block and issue
+   * several RPC requests to complete blob copy.
+   *
+   * @throws StorageException upon failure
    */
   public BlobInfo result() {
-    return rewriteResponse.result != null ? BlobInfo.fromPb(rewriteResponse.result) : null;
+    while(!isDone()) {
+      copyChunk();
+    }
+    return BlobInfo.fromPb(rewriteResponse.result);
   }
 
   /**
    * Size of the blob being copied.
    */
-  public Long blobSize() {
+  public long blobSize() {
     return rewriteResponse.blobSize;
   }
 
   /**
    * Returns {@code true} of blob rewrite finished, {@code false} otherwise.
    */
-  public Boolean isDone() {
+  public boolean isDone() {
     return rewriteResponse.isDone;
   }
 
   /**
    * Returns the number of bytes copied. 
    */
-  public Long totalBytesCopied() {
+  public long totalBytesCopied() {
     return rewriteResponse.totalBytesRewritten;
   }
 
@@ -111,7 +116,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
         rewriteResponse.rewriteRequest.targetOptions)
         .blobSize(blobSize())
         .isDone(isDone())
-        .megabytesRewrittenPerCall(rewriteResponse.rewriteRequest.megabytesRewrittenPerCall)
+        .megabytesCopiedPerChunk(rewriteResponse.rewriteRequest.megabytesRewrittenPerCall)
         .rewriteToken(rewriteResponse.rewriteToken)
         .totalBytesRewritten(totalBytesCopied())
         .build();
@@ -127,11 +132,11 @@ public class CopyWriter implements Restorable<CopyWriter> {
     private final BlobInfo target;
     private final Map<StorageRpc.Option, ?> targetOptions;
     private final BlobInfo result;
-    private final Long blobSize;
-    private final Boolean isDone;
+    private final long blobSize;
+    private final boolean isDone;
     private final String rewriteToken;
-    private final Long totalBytesCopied;
-    private final Long megabytesRewrittenPerCall;
+    private final long totalBytesCopied;
+    private final Long megabytesCopiedPerChunk;
 
     StateImpl(Builder builder) {
       this.serviceOptions = builder.serviceOptions;
@@ -144,7 +149,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
       this.isDone = builder.isDone;
       this.rewriteToken = builder.rewriteToken;
       this.totalBytesCopied = builder.totalBytesCopied;
-      this.megabytesRewrittenPerCall = builder.megabytesRewrittenPerCall;
+      this.megabytesCopiedPerChunk = builder.megabytesCopiedPerChunk;
     }
 
     static class Builder {
@@ -155,11 +160,11 @@ public class CopyWriter implements Restorable<CopyWriter> {
       private final BlobInfo target;
       private final Map<StorageRpc.Option, ?> targetOptions;
       private BlobInfo result;
-      private Long blobSize;
-      private Boolean isDone;
+      private long blobSize;
+      private boolean isDone;
       private String rewriteToken;
-      private Long totalBytesCopied;
-      private Long megabytesRewrittenPerCall;
+      private long totalBytesCopied;
+      private Long megabytesCopiedPerChunk;
 
       private Builder(StorageOptions options, BlobId source,
           Map<StorageRpc.Option, ?> sourceOptions,
@@ -176,12 +181,12 @@ public class CopyWriter implements Restorable<CopyWriter> {
         return this;
       }
 
-      Builder blobSize(Long blobSize) {
+      Builder blobSize(long blobSize) {
         this.blobSize = blobSize;
         return this;
       }
 
-      Builder isDone(Boolean isDone) {
+      Builder isDone(boolean isDone) {
         this.isDone = isDone;
         return this;
       }
@@ -191,13 +196,13 @@ public class CopyWriter implements Restorable<CopyWriter> {
         return this;
       }
 
-      Builder totalBytesRewritten(Long totalBytesRewritten) {
+      Builder totalBytesRewritten(long totalBytesRewritten) {
         this.totalBytesCopied = totalBytesRewritten;
         return this;
       }
 
-      Builder megabytesRewrittenPerCall(Long megabytesRewrittenPerCall) {
-        this.megabytesRewrittenPerCall = megabytesRewrittenPerCall;
+      Builder megabytesCopiedPerChunk(Long megabytesCopiedPerChunk) {
+        this.megabytesCopiedPerChunk = megabytesCopiedPerChunk;
         return this;
       }
 
@@ -215,7 +220,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
     @Override
     public CopyWriter restore() {
       RewriteRequest rewriteRequest = new RewriteRequest(
-          source.toPb(), sourceOptions, target.toPb(), targetOptions, megabytesRewrittenPerCall);
+          source.toPb(), sourceOptions, target.toPb(), targetOptions, megabytesCopiedPerChunk);
       RewriteResponse rewriteResponse = new RewriteResponse(rewriteRequest,
           result != null ? result.toPb() : null, blobSize, isDone, rewriteToken,
           totalBytesCopied);
@@ -225,7 +230,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
     @Override
     public int hashCode() {
       return Objects.hash(serviceOptions, source, sourceOptions, target, targetOptions, result,
-          blobSize, isDone, megabytesRewrittenPerCall, rewriteToken, totalBytesCopied);
+          blobSize, isDone, megabytesCopiedPerChunk, rewriteToken, totalBytesCopied);
     }
 
     @Override
@@ -244,10 +249,10 @@ public class CopyWriter implements Restorable<CopyWriter> {
           && Objects.equals(this.targetOptions, other.targetOptions)
           && Objects.equals(this.result, other.result)
           && Objects.equals(this.rewriteToken, other.rewriteToken)
-          && Objects.equals(this.blobSize, other.blobSize)
-          && Objects.equals(this.isDone, other.isDone)
-          && Objects.equals(this.megabytesRewrittenPerCall, other.megabytesRewrittenPerCall)
-          && Objects.equals(this.totalBytesCopied, other.totalBytesCopied);
+          && Objects.equals(this.megabytesCopiedPerChunk, other.megabytesCopiedPerChunk)
+          && this.blobSize == other.blobSize
+          && this.isDone == other.isDone
+          && this.totalBytesCopied == other.totalBytesCopied;
     }
 
     @Override

@@ -86,11 +86,10 @@ public class CopyWriterTest {
     EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
     EasyMock.replay(storageRpcMock);
     copyWriter = new CopyWriter(options, RESPONSE);
-    copyWriter.copyChunk();
-    assertTrue(copyWriter.isDone());
     assertEquals(RESULT, copyWriter.result());
-    assertEquals(new Long(42L), copyWriter.totalBytesCopied());
-    assertEquals(new Long(42L), copyWriter.blobSize());
+    assertTrue(copyWriter.isDone());
+    assertEquals(42L, copyWriter.totalBytesCopied());
+    assertEquals(42L, copyWriter.blobSize());
   }
 
   @Test
@@ -99,16 +98,10 @@ public class CopyWriterTest {
     EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
     EasyMock.replay(storageRpcMock);
     copyWriter = new CopyWriter(options, RESPONSE);
-    int loopCount = 0;
-    while (!copyWriter.isDone()) {
-      copyWriter.copyChunk();
-      loopCount++;
-    }
-    assertTrue(copyWriter.isDone());
     assertEquals(RESULT, copyWriter.result());
-    assertEquals(new Long(42L), copyWriter.totalBytesCopied());
-    assertEquals(new Long(42L), copyWriter.blobSize());
-    assertEquals(2, loopCount);
+    assertTrue(copyWriter.isDone());
+    assertEquals(42L, copyWriter.totalBytesCopied());
+    assertEquals(42L, copyWriter.blobSize());
   }
 
   @Test
@@ -119,15 +112,13 @@ public class CopyWriterTest {
     copyWriter = new CopyWriter(options, RESPONSE);
     copyWriter.copyChunk();
     assertTrue(!copyWriter.isDone());
-    assertEquals(null, copyWriter.result());
-    assertEquals(new Long(21L), copyWriter.totalBytesCopied());
-    assertEquals(new Long(42L), copyWriter.blobSize());
+    assertEquals(21L, copyWriter.totalBytesCopied());
+    assertEquals(42L, copyWriter.blobSize());
     RestorableState<CopyWriter> rewriterState = copyWriter.capture();
     CopyWriter restoredRewriter = rewriterState.restore();
-    restoredRewriter.copyChunk();
-    assertTrue(restoredRewriter.isDone());
     assertEquals(RESULT, restoredRewriter.result());
-    assertEquals(new Long(42L), restoredRewriter.totalBytesCopied());
-    assertEquals(new Long(42L), restoredRewriter.blobSize());
+    assertTrue(restoredRewriter.isDone());
+    assertEquals(42L, restoredRewriter.totalBytesCopied());
+    assertEquals(42L, restoredRewriter.blobSize());
   }
 }

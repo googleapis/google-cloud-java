@@ -223,7 +223,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public CopyWriter copyTo(BlobId targetBlob, BlobSourceOption... options) {
-    BlobInfo updatedInfo = info.toBuilder().blobId(targetBlob).build();
+    BlobInfo updatedInfo = BlobInfo.builder(targetBlob).build();
     CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
         .sourceOptions(convert(info, options)).target(updatedInfo).build();
     return storage.copy(copyRequest);
@@ -266,7 +266,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public CopyWriter copyTo(String targetBucket, String targetBlob, BlobSourceOption... options) {
-    BlobInfo updatedInfo = info.toBuilder().blobId(BlobId.of(targetBucket, targetBlob)).build();
+    BlobInfo updatedInfo = BlobInfo.builder(targetBucket, targetBlob).build();
     CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
         .sourceOptions(convert(info, options)).target(updatedInfo).build();
     return storage.copy(copyRequest);

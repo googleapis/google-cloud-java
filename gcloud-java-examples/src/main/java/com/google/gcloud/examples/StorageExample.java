@@ -368,9 +368,6 @@ public class StorageExample {
     @Override
     public void run(Storage storage, CopyRequest request) {
       CopyWriter copyWriter = storage.copy(request);
-      while (!copyWriter.isDone()) {
-        copyWriter.copyChunk();
-      }
       System.out.println("Copied " + copyWriter.result());
     }
 

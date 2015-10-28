@@ -500,7 +500,7 @@ public interface Storage extends Service<StorageOptions> {
     private final List<BlobSourceOption> sourceOptions;
     private final BlobInfo target;
     private final List<BlobTargetOption> targetOptions;
-    private final Long megabytesRewrittenPerCall;
+    private final Long megabytesCopiedPerChunk;
 
     public static class Builder {
 
@@ -508,10 +508,10 @@ public interface Storage extends Service<StorageOptions> {
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
       private BlobId source;
       private BlobInfo target;
-      private Long megabytesRewrittenPerCall;
+      private Long megabytesCopiedPerChunk;
 
       /**
-       * Sets the blob to rewrite given bucket and blob name.
+       * Sets the blob to copy given bucket and blob name.
        *
        * @return the builder.
        */
@@ -521,7 +521,7 @@ public interface Storage extends Service<StorageOptions> {
       }
 
       /**
-       * Sets the blob to rewrite given a {@link BlobId}.
+       * Sets the blob to copy given a {@link BlobId}.
        *
        * @return the builder.
        */
@@ -551,7 +551,7 @@ public interface Storage extends Service<StorageOptions> {
       }
 
       /**
-       * Sets the rewrite target.
+       * Sets the copy target.
        *
        * @return the builder.
        */
@@ -582,18 +582,18 @@ public interface Storage extends Service<StorageOptions> {
 
       /**
        * Sets the maximum number of megabytes to copy for each RPC call. This parameter is ignored
-       * if source and target blob share the same location and storage class as rewrite is made with
+       * if source and target blob share the same location and storage class as copy is made with
        * one single RPC.
        *
        * @return the builder.
        */
-      public Builder megabytesRewrittenPerCall(Long megabytesRewrittenPerCall) {
-        this.megabytesRewrittenPerCall = megabytesRewrittenPerCall;
+      public Builder megabytesCopiedPerChunk(Long megabytesCopiedPerChunk) {
+        this.megabytesCopiedPerChunk = megabytesCopiedPerChunk;
         return this;
       }
 
       /**
-       * Creates a {@code RewriteRequest}.
+       * Creates a {@code CopyRequest}.
        */
       public CopyRequest build() {
         checkNotNull(source);
@@ -607,7 +607,7 @@ public interface Storage extends Service<StorageOptions> {
       sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
       target = checkNotNull(builder.target);
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
-      megabytesRewrittenPerCall = builder.megabytesRewrittenPerCall;
+      megabytesCopiedPerChunk = builder.megabytesCopiedPerChunk;
     }
 
     /**
@@ -640,11 +640,11 @@ public interface Storage extends Service<StorageOptions> {
 
     /**
      * Returns the maximum number of megabytes to copy for each RPC call. This parameter is ignored
-     * if source and target blob share the same location and storage class as rewrite is made with
+     * if source and target blob share the same location and storage class as copy is made with
      * one single RPC.
      */
-    public Long megabytesRewrittenPerCall() {
-      return megabytesRewrittenPerCall;
+    public Long megabytesCopiedPerChunk() {
+      return megabytesCopiedPerChunk;
     }
 
     public static CopyRequest of(String sourceBucket, String sourceBlob, BlobInfo target) {
@@ -831,16 +831,13 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Sends a copy request. Returns a {@link CopyWriter} object for the provided
    * {@code CopyRequest}. If source and destination objects share the same location and storage
-   * class the source blob is copied and its information can be accessed with
-   * {@link CopyWriter#result()}, regardless of the {@link CopyRequest#megabytesRewrittenPerCall}
-   * parameter. If source and destination have different location or storage class multiple RPC
-   * calls might be needed depending on blob's size.
+   * class the source blob is copied with one request and {@link CopyWriter#result()} immediately
+   * returns, regardless of the {@link CopyRequest#megabytesCopiedPerChunk} parameter.
+   * If source and destination have different location or storage class {@link CopyWriter#result()}
+   * might issue multiple RPC calls depending on blob's size.
    * <p>
    * Example usage of copy:
-   * <pre>    {@code CopyWriter copyWriter = service.copy(copyRequest);}
-   *    {@code while(!copyWriter.isDone()) {
-   *       copyWriter.copyChunk();
-   *   }}
+   * <pre>    {@code BlobInfo blob = service.copy(copyRequest).result();}
    * </pre>
    *
    * @return a {@link CopyWriter} object that can be used to get information on the newly created

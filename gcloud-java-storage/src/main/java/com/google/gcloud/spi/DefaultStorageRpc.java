@@ -322,30 +322,6 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public StorageObject copy(StorageObject source, Map<Option, ?> sourceOptions,
-      StorageObject target, Map<Option, ?> targetOptions) throws StorageException {
-    try {
-      return storage
-          .objects()
-          .copy(source.getBucket(), source.getName(), target.getBucket(), target.getName(),
-              target.getContentType() != null ? target : null)
-          .setProjection(DEFAULT_PROJECTION)
-          .setIfSourceMetagenerationMatch(IF_SOURCE_METAGENERATION_MATCH.getLong(sourceOptions))
-          .setIfSourceMetagenerationNotMatch(
-              IF_SOURCE_METAGENERATION_NOT_MATCH.getLong(sourceOptions))
-          .setIfSourceGenerationMatch(IF_SOURCE_GENERATION_MATCH.getLong(sourceOptions))
-          .setIfSourceGenerationNotMatch(IF_SOURCE_GENERATION_NOT_MATCH.getLong(sourceOptions))
-          .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(targetOptions))
-          .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(targetOptions))
-          .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(targetOptions))
-          .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(targetOptions))
-          .execute();
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
-  }
-
-  @Override
   public byte[] load(StorageObject from, Map<Option, ?> options)
       throws StorageException {
     try {
