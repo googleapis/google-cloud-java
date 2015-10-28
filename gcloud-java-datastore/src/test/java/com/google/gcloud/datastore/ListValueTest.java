@@ -28,7 +28,8 @@ import java.util.List;
 
 public class ListValueTest {
 
-  private static final List<Value<?>> CONTENT = ImmutableList.of(NullValue.of(), StringValue.of("foo"));
+  private static final List<Value<?>> CONTENT =
+      ImmutableList.of(NullValue.of(), StringValue.of("foo"));
 
   @Test
   public void testToBuilder() throws Exception {

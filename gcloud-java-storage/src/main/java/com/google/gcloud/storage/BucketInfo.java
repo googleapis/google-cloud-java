@@ -83,7 +83,7 @@ public final class BucketInfo implements Serializable {
   private final Location location;
   private final StorageClass storageClass;
 
-  public static abstract class DeleteRule implements Serializable {
+  public abstract static class DeleteRule implements Serializable {
 
     private static final long serialVersionUID = 3137971668395933033L;
     private static final String SUPPORTED_ACTION = "Delete";
@@ -393,7 +393,7 @@ public final class BucketInfo implements Serializable {
     }
   }
 
-  public final static class Builder {
+  public static final class Builder {
 
     private String id;
     private String name;

@@ -16,9 +16,9 @@
 
 package com.google.gcloud.storage;
 
-import com.google.api.services.storage.model.StorageObject;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;

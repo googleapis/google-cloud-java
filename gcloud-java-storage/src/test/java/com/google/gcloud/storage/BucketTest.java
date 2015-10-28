@@ -28,6 +28,12 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.storage.BatchResponse.Result;
+
+import org.easymock.Capture;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Collections;
@@ -35,10 +41,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import org.easymock.Capture;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
 public class BucketTest {
 

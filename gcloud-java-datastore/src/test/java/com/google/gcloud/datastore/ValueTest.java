@@ -42,7 +42,8 @@ public class ValueTest {
   private static final NullValue NULL_VALUE = NullValue.of();
   private static final StringValue STRING_VALUE = StringValue.of("hello");
   private static final RawValue RAW_VALUE = RawValue.of(STRING_VALUE.toPb());
-  private static final ImmutableMap<ValueType, Object[]> TYPES = ImmutableMap.<ValueType, Object[]>builder()
+  private static final ImmutableMap<ValueType, Object[]> TYPES =
+      ImmutableMap.<ValueType, Object[]>builder()
       .put(ValueType.NULL, new Object[] {NullValue.class, NULL_VALUE.get()})
       .put(ValueType.KEY, new Object[] {KeyValue.class, KEY})
       .put(ValueType.BLOB, new Object[] {BlobValue.class, BLOB})
@@ -160,7 +161,7 @@ public class ValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testHasMeaning() throws Exception {
-    for (Value<?> value: typeToValue.values()) {
+    for (Value<?> value : typeToValue.values()) {
       assertFalse(value.hasMeaning());
     }
 
@@ -171,7 +172,7 @@ public class ValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testMeaning() throws Exception {
-    for (Value<?> value: typeToValue.values()) {
+    for (Value<?> value : typeToValue.values()) {
       assertNull(value.meaning());
     }
 
