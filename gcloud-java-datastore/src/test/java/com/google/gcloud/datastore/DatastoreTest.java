@@ -459,7 +459,6 @@ public class DatastoreTest {
     assertEquals("Dan", entity.getString("name"));
     assertEquals(2, entity.properties().size());
     assertFalse(results4.hasNext());
-    // TODO(ozarov): construct a test to verify nextQuery/pagination
   }
 
   @Test

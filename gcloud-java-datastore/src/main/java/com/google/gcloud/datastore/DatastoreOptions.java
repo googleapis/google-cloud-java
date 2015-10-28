@@ -172,8 +172,6 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
   }
 
   private static String defaultNamespace() {
-    // TODO(ozarov): An alternative to reflection would be to depend on AE api jar:
-    // http://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk/1.2.0
     try {
       Class<?> clazz = Class.forName("com.google.appengine.api.NamespaceManager");
       Method method = clazz.getMethod("get");
