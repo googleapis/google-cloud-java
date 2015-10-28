@@ -376,16 +376,15 @@ public class StorageExample {
 
     @Override
     CopyRequest parse(String... args) {
-      if (args.length != 5) {
+      if (args.length != 4) {
         throw new IllegalArgumentException();
       }
-      return CopyRequest.of(args[0], args[1],
-          BlobInfo.builder(args[2], args[3]).contentType(args[4]).build());
+      return CopyRequest.of(args[0], args[1], BlobInfo.builder(args[2], args[3]).build());
     }
 
     @Override
     public String params() {
-      return "<from_bucket> <from_path> <to_bucket> <to_path> <to_content_type>";
+      return "<from_bucket> <from_path> <to_bucket> <to_path>";
     }
   }
 

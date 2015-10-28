@@ -539,7 +539,7 @@ public class DefaultStorageRpc implements StorageRpc {
           ? req.megabytesRewrittenPerCall * MEGABYTE : null;
       com.google.api.services.storage.model.RewriteResponse rewriteReponse = storage.objects()
           .rewrite(req.source.getBucket(), req.source.getName(), req.target.getBucket(),
-              req.target.getName(), req.target)
+              req.target.getName(), req.target.getContentType() != null ? req.target : null)
           .setRewriteToken(token)
           .setMaxBytesRewrittenPerCall(maxBytesRewrittenPerCall)
           .setProjection(DEFAULT_PROJECTION)

@@ -655,6 +655,16 @@ public interface Storage extends Service<StorageOptions> {
       return builder().source(sourceBlobId).target(target).build();
     }
 
+    public static CopyRequest of(String sourceBucket, String sourceBlob, String targetBlob) {
+      return of(sourceBucket, sourceBlob,
+          BlobInfo.builder(BlobId.of(sourceBucket, targetBlob)).build());
+    }
+
+    public static CopyRequest of(BlobId sourceBlobId, String targetBlob) {
+      return of(sourceBlobId,
+          BlobInfo.builder(BlobId.of(sourceBlobId.bucket(), targetBlob)).build());
+    }
+
     public static Builder builder() {
       return new Builder();
     }
