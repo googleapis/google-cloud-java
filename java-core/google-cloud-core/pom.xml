@@ -13,6 +13,9 @@
     <artifactId>gcloud-java-pom</artifactId>
     <version>0.0.11-SNAPSHOT</version>
   </parent>
+  <properties>
+    <site.installationModule>gcloud-java-core</site.installationModule>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>com.google.auth</groupId>
@@ -90,102 +93,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.4</version>
-        <configuration>
-          <skipDeploy>true</skipDeploy>
-          <reportPlugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-changelog-plugin</artifactId>
-              <version>2.3</version>
-            </plugin>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-project-info-reports-plugin</artifactId>
-              <version>2.8</version>
-              <reportSets>
-                <reportSet>
-                  <reports>
-                    <report>index</report>
-                    <report>dependency-info</report>
-                    <report>dependencies</report>
-                    <report>dependency-convergence</report>
-                    <report>project-team</report>
-                    <report>mailing-list</report>
-                    <report>cim</report>
-                    <report>issue-tracking</report>
-                    <report>license</report>
-                    <report>scm</report>
-                    <report>dependency-management</report>
-                    <report>distribution-management</report>
-                    <report>summary</report>
-                    <report>modules</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-              <configuration>
-                <aggregate>true</aggregate>
-                <quiet>true</quiet>
-                <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-                <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-                <artifactId>gcloud-java-core</artifactId>
-                <packaging>jar</packaging>
-              </configuration>
-            </plugin>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-dependency-plugin</artifactId>
-              <version>2.10</version>
-            </plugin>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-javadoc-plugin</artifactId>
-              <version>2.10.3</version>
-              <reportSets>
-                <reportSet>
-                  <id>html</id>
-                  <reports>
-                    <report>javadoc</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-              <configuration>
-                <aggregate>true</aggregate>
-                <show>protected</show>
-                <nohelp>true</nohelp>
-                <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
-              </configuration>
-            </plugin>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-surefire-report-plugin</artifactId>
-              <version>2.18.1</version>
-            </plugin>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-checkstyle-plugin</artifactId>
-              <version>2.16</version>
-              <configuration>
-                <configLocation>checkstyle.xml</configLocation>
-                <failOnViolation>false</failOnViolation>
-              </configuration>
-            </plugin>
-            <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>cobertura-maven-plugin</artifactId>
-              <version>2.7</version>
-              <configuration>
-                <aggregate>true</aggregate>
-              </configuration>
-            </plugin>
-          </reportPlugins>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>
