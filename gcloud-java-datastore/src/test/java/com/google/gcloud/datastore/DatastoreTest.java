@@ -346,7 +346,8 @@ public class DatastoreTest {
 
   @Test
   public void testRunGqlQueryNoCasting() {
-    Query<Entity> query1 = Query.gqlQueryBuilder(ResultType.ENTITY, "select * from " + KIND1).build();
+    Query<Entity> query1 =
+        Query.gqlQueryBuilder(ResultType.ENTITY, "select * from " + KIND1).build();
     QueryResults<Entity> results1 = datastore.run(query1);
     assertTrue(results1.hasNext());
     assertEquals(ENTITY1, results1.next());

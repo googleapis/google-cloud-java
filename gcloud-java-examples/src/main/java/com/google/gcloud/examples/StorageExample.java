@@ -83,7 +83,7 @@ public class StorageExample {
 
   private static final Map<String, StorageAction> ACTIONS = new HashMap<>();
 
-  private static abstract class StorageAction<T> {
+  private abstract static class StorageAction<T> {
 
     abstract void run(Storage storage, T request) throws Exception;
 
@@ -94,7 +94,7 @@ public class StorageExample {
     }
   }
 
-  private static abstract class BlobsAction extends StorageAction<BlobId[]> {
+  private abstract static class BlobsAction extends StorageAction<BlobId[]> {
 
     @Override
     BlobId[] parse(String... args) {
@@ -483,8 +483,8 @@ public class StorageExample {
     private void run(Storage storage, ServiceAccountAuthCredentials cred, BlobInfo blobInfo)
         throws IOException {
       Blob blob = new Blob(storage, blobInfo);
-      System.out.println("Signed URL: " +
-          blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.serviceAccount(cred)));
+      System.out.println("Signed URL: "
+          + blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.serviceAccount(cred)));
     }
 
     @Override

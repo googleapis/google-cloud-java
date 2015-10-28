@@ -222,7 +222,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     return get(blob, new BlobSourceOption[0]);
   }
 
-  private static abstract class BasePageFetcher<T extends Serializable>
+  private abstract static class BasePageFetcher<T extends Serializable>
       implements BaseListResult.NextPageFetcher<T> {
 
     private static final long serialVersionUID = 8236329004030295223L;
@@ -497,7 +497,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toUpdate =
         Lists.newArrayListWithCapacity(batchRequest.toUpdate().size());
-    for (Map.Entry<BlobInfo, Iterable<BlobTargetOption>> entry : batchRequest.toUpdate().entrySet()) {
+    for (Map.Entry<BlobInfo, Iterable<BlobTargetOption>> entry :
+        batchRequest.toUpdate().entrySet()) {
       BlobInfo blobInfo = entry.getKey();
       Map<StorageRpc.Option, ?> optionsMap =
           optionMap(blobInfo.generation(), blobInfo.metageneration(), entry.getValue());
@@ -582,7 +583,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           "Signing key was not provided and could not be derived");
       cred = (ServiceAccountAuthCredentials) this.options().authCredentials();
     }
-    // construct signature data - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
+    // construct signature - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
     StringBuilder stBuilder = new StringBuilder();
     if (optionMap.containsKey(SignUrlOption.Option.HTTP_METHOD)) {
       stBuilder.append(optionMap.get(SignUrlOption.Option.HTTP_METHOD));

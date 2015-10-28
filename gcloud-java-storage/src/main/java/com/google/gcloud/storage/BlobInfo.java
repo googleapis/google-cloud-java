@@ -204,8 +204,8 @@ public final class BlobInfo implements Serializable {
     }
 
     public Builder metadata(Map<String, String> metadata) {
-      this.metadata = metadata != null ?
-          new HashMap(metadata) : Data.<Map>nullOf(ImmutableEmptyMap.class);
+      this.metadata = metadata != null
+          ? new HashMap(metadata) : Data.<Map>nullOf(ImmutableEmptyMap.class);
       return this;
     }
 

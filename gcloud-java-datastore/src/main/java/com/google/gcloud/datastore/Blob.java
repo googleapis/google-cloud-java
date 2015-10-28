@@ -35,7 +35,8 @@ import java.nio.ByteBuffer;
  * A Google Cloud Datastore Blob.
  * This class is immutable.
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
+ * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">
+ *   Google Cloud Datastore Entities, Properties, and Keys</a>
  */
 public final class Blob extends Serializable<DatastoreV1.Value> {
 

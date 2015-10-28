@@ -31,7 +31,7 @@ public class OptionTest {
     assertEquals("/", option.value());
   }
 
-  @Test(expected=NullPointerException.class)
+  @Test(expected = NullPointerException.class)
   public void testIndexOutOfBoundsException() {
     new Option(null, "/");
   }

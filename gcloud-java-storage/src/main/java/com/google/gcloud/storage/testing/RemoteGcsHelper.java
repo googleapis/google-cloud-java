@@ -17,16 +17,16 @@
 package com.google.gcloud.storage.testing;
 
 import com.google.gcloud.AuthCredentials;
-import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.StorageOptions;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

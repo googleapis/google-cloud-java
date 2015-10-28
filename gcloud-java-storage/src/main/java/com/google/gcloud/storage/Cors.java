@@ -98,7 +98,7 @@ public final class Cors implements Serializable {
       if (!(obj instanceof Origin)) {
         return false;
       }
-      return value.equals(((Origin)obj).value);
+      return value.equals(((Origin) obj).value);
     }
 
     @Override

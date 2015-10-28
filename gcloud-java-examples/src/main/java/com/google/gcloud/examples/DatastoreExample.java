@@ -202,7 +202,7 @@ public class DatastoreExample {
           DatastoreExample.class.getSimpleName(), actionAndParams);
       return;
     }
-    args = args.length > 3 ? Arrays.copyOfRange(args, 3, args.length): new String []{};
+    args = args.length > 3 ? Arrays.copyOfRange(args, 3, args.length) : new String []{};
     Transaction tx = datastore.newTransaction();
     try {
       action.run(tx, key, args);

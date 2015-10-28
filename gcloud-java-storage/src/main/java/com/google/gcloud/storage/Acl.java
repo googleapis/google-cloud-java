@@ -36,7 +36,7 @@ public final class Acl implements Serializable {
     OWNER, READER, WRITER
   }
 
-  public static abstract class Entity implements Serializable {
+  public abstract static class Entity implements Serializable {
 
     private static final long serialVersionUID = -2707407252771255840L;
 
@@ -69,8 +69,7 @@ public final class Acl implements Serializable {
         return false;
       }
       Entity entity = (Entity) o;
-      return Objects.equals(type, entity.type) &&
-          Objects.equals(value, entity.value);
+      return Objects.equals(type, entity.type) && Objects.equals(value, entity.value);
     }
 
     @Override

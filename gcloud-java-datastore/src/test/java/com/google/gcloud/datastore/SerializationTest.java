@@ -48,8 +48,8 @@ public class SerializationTest {
   private static final Key KEY2 = Key.builder(KEY1, "v", 2).build();
   private static final DateTime DATE_TIME1 = DateTime.now();
   private static final Blob BLOB1 = Blob.copyFrom(UTF_8.encode("hello world"));
-  private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1,2});
-  private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[]{10});
+  private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1, 2});
+  private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[] {10});
   private static final Query<?> GQL1 =
       Query.gqlQueryBuilder("select * from kind1 where name = @name and age > @1")
       .setBinding("name", "name1")

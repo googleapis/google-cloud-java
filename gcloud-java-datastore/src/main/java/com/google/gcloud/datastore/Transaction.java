@@ -47,7 +47,8 @@ import java.util.List;
  *   }
  * } </pre>
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/transactions">Google Cloud Datastore transactions</a>
+ * @see <a href="https://cloud.google.com/datastore/docs/concepts/transactions">
+ *   Google Cloud Datastore transactions</a>
  *
  */
 public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter {

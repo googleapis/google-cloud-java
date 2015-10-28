@@ -22,6 +22,12 @@ import static org.junit.Assert.assertTrue;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
+import org.easymock.EasyMock;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -31,12 +37,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-
-import org.easymock.EasyMock;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class RemoteGcsHelperTest {
 
@@ -91,7 +91,7 @@ public class RemoteGcsHelperTest {
       return BLOB_LIST.iterator();
     }
   };
-  private static String KEY_PATH = "/does/not/exist/key." + UUID.randomUUID().toString() + ".json";
+  private static String keyPath = "/does/not/exist/key." + UUID.randomUUID().toString() + ".json";
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -99,7 +99,7 @@ public class RemoteGcsHelperTest {
   @BeforeClass
   public static void beforeClass() {
     while (Files.exists(Paths.get(JSON_KEY))) {
-      KEY_PATH = "/does/not/exist/key." + UUID.randomUUID().toString() + ".json";
+      keyPath = "/does/not/exist/key." + UUID.randomUUID().toString() + ".json";
     }
   }
 
@@ -163,7 +163,7 @@ public class RemoteGcsHelperTest {
   @Test
   public void testCreateNoKey() {
     thrown.expect(RemoteGcsHelper.GcsHelperException.class);
-    thrown.expectMessage(KEY_PATH + " (No such file or directory)");
-    RemoteGcsHelper.create(PROJECT_ID, KEY_PATH);
+    thrown.expectMessage(keyPath + " (No such file or directory)");
+    RemoteGcsHelper.create(PROJECT_ID, keyPath);
   }
 }
