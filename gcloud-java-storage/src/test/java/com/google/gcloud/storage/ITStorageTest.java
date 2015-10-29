@@ -318,12 +318,20 @@ public class ITStorageTest {
   public void testCopyBlob() {
     String sourceBlobName = "test-copy-blob-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
-    assertNotNull(storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT));
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    BlobInfo blob = BlobInfo.builder(source)
+        .contentType(CONTENT_TYPE)
+        .metadata(metadata)
+        .build();
+    assertNotNull(storage.create(blob, BLOB_BYTE_CONTENT));
     String targetBlobName = "test-copy-blob-target";
-    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName).contentType(CONTENT_TYPE).build();
+    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName).build();
     Storage.CopyRequest req = Storage.CopyRequest.of(source, target);
     CopyWriter copyWriter = storage.copy(req);
-    assertEquals(copyWriter.result(), storage.get(BUCKET, targetBlobName));
+    assertEquals(BUCKET, copyWriter.result().bucket());
+    assertEquals(targetBlobName, copyWriter.result().name());
+    assertEquals(CONTENT_TYPE, copyWriter.result().contentType());
+    assertEquals(metadata, copyWriter.result().metadata());
     assertTrue(copyWriter.isDone());
     assertTrue(storage.delete(BUCKET, sourceBlobName));
     assertTrue(storage.delete(BUCKET, targetBlobName));
@@ -334,14 +342,18 @@ public class ITStorageTest {
     String sourceBlobName = "test-copy-blob-update-metadata-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
     assertNotNull(storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT));
-    String targetBlobName = "test-copy-blob-target";
+    String targetBlobName = "test-copy-blob-update-metadata-target";
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
     BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName)
         .contentType(CONTENT_TYPE)
-        .metadata(ImmutableMap.of("k", "v"))
+        .metadata(metadata)
         .build();
     Storage.CopyRequest req = Storage.CopyRequest.of(source, target);
     CopyWriter copyWriter = storage.copy(req);
-    assertEquals(copyWriter.result(), storage.get(BUCKET, targetBlobName));
+    assertEquals(BUCKET, copyWriter.result().bucket());
+    assertEquals(targetBlobName, copyWriter.result().name());
+    assertEquals(CONTENT_TYPE, copyWriter.result().contentType());
+    assertEquals(metadata, copyWriter.result().metadata());
     assertTrue(copyWriter.isDone());
     assertTrue(storage.delete(BUCKET, sourceBlobName));
     assertTrue(storage.delete(BUCKET, targetBlobName));

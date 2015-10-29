@@ -839,6 +839,14 @@ public interface Storage extends Service<StorageOptions> {
    * Example usage of copy:
    * <pre>    {@code BlobInfo blob = service.copy(copyRequest).result();}
    * </pre>
+   * To explicitly issue chunk copy requests use {@link CopyWriter#copyChunk()} instead:
+   * <pre>    {@code CopyWriter copyWriter = service.copy(copyRequest);
+   *    while (!copyWriter.isDone()) {
+   *        copyWriter.copyChunk();
+   *    }
+   *    BlobInfo blob = copyWriter.result();
+   * }
+   * </pre>
    *
    * @return a {@link CopyWriter} object that can be used to get information on the newly created
    *     blob or to complete the copy if more than one RPC request is needed

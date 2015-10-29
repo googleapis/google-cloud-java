@@ -32,10 +32,11 @@ import java.util.Objects;
 import java.util.concurrent.Callable;
 
 /**
- * Google Storage blob copy writer. This class holds the result of a copy request.
- * If source and destination blobs do not share the same location or storage class more than one
- * RPC request is needed to copy the blob otherwise one or more {@link #copyChunk()} calls are
- * necessary to complete the copy.
+ * Google Storage blob copy writer. This class holds the result of a copy request. If source and
+ * destination blobs share the same location and storage class the copy is completed in one RPC call
+ * otherwise one or more {@link #copyChunk} calls are necessary to complete the copy. In addition,
+ * {@link CopyWriter#result()} can be used to automatically complete the copy and return information
+ * on the newly created blob.
  *
  * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite">Rewrite</a>
  */
@@ -52,20 +53,26 @@ public class CopyWriter implements Restorable<CopyWriter> {
   }
 
   /**
-   * Returns the updated information for the just written blob. This method might block and issue
-   * several RPC requests to complete blob copy.
+   * Returns the updated information for the written blob. Calling this method when {@code isDone()}
+   * is {@code false} will block until all pending chunks are copied.
+   * <p>
+   * This method has the same effect of doing:
+   * <pre>    {@code while (!copyWriter.isDone()) {
+   *        copyWriter.copyChunk();
+   *    }}
+   * </pre>
    *
    * @throws StorageException upon failure
    */
   public BlobInfo result() {
-    while(!isDone()) {
+    while (!isDone()) {
       copyChunk();
     }
     return BlobInfo.fromPb(rewriteResponse.result);
   }
 
   /**
-   * Size of the blob being copied.
+   * Returns the size of the blob being copied.
    */
   public long blobSize() {
     return rewriteResponse.blobSize;
