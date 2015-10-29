@@ -85,7 +85,7 @@ public class DefaultStorageRpc implements StorageRpc {
     this.options = options;
     storage = new Storage.Builder(transport, new JacksonFactory(), initializer)
         .setRootUrl(options.host())
-        .setApplicationName("gcloud-java")
+        .setApplicationName(options.applicationName())
         .build();
   }
 
