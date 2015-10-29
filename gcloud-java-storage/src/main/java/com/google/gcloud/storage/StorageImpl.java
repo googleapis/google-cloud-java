@@ -49,6 +49,7 @@ import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.StorageRpc.RewriteResponse;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
 import java.io.ByteArrayInputStream;
@@ -444,21 +445,22 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BlobInfo copy(CopyRequest copyRequest) {
+  public CopyWriter copy(final CopyRequest copyRequest) {
     final StorageObject source = copyRequest.source().toPb();
-    copyRequest.sourceOptions();
     final Map<StorageRpc.Option, ?> sourceOptions =
         optionMap(null, null, copyRequest.sourceOptions(), true);
     final StorageObject target = copyRequest.target().toPb();
     final Map<StorageRpc.Option, ?> targetOptions = optionMap(copyRequest.target().generation(),
         copyRequest.target().metageneration(), copyRequest.targetOptions());
     try {
-      return BlobInfo.fromPb(runWithRetries(new Callable<StorageObject>() {
+      RewriteResponse rewriteResponse = runWithRetries(new Callable<RewriteResponse>() {
         @Override
-        public StorageObject call() {
-          return storageRpc.copy(source, sourceOptions, target, targetOptions);
+        public RewriteResponse call() {
+          return storageRpc.openRewrite(new StorageRpc.RewriteRequest(source, sourceOptions, target,
+              targetOptions, copyRequest.megabytesCopiedPerChunk()));
         }
-      }, options().retryParams(), EXCEPTION_HANDLER));
+      }, options().retryParams(), EXCEPTION_HANDLER);
+      return new CopyWriter(options(), rewriteResponse);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }

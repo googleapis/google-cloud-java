@@ -494,12 +494,13 @@ public interface Storage extends Service<StorageOptions> {
 
   class CopyRequest implements Serializable {
 
-    private static final long serialVersionUID = -2606508373751748775L;
+    private static final long serialVersionUID = -4498650529476219937L;
 
     private final BlobId source;
     private final List<BlobSourceOption> sourceOptions;
     private final BlobInfo target;
     private final List<BlobTargetOption> targetOptions;
+    private final Long megabytesCopiedPerChunk;
 
     public static class Builder {
 
@@ -507,42 +508,93 @@ public interface Storage extends Service<StorageOptions> {
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
       private BlobId source;
       private BlobInfo target;
+      private Long megabytesCopiedPerChunk;
 
+      /**
+       * Sets the blob to copy given bucket and blob name.
+       *
+       * @return the builder.
+       */
       public Builder source(String bucket, String blob) {
         this.source = BlobId.of(bucket, blob);
         return this;
       }
 
+      /**
+       * Sets the blob to copy given a {@link BlobId}.
+       *
+       * @return the builder.
+       */
       public Builder source(BlobId source) {
         this.source = source;
         return this;
       }
 
+      /**
+       * Sets blob's source options.
+       *
+       * @return the builder.
+       */
       public Builder sourceOptions(BlobSourceOption... options) {
         Collections.addAll(sourceOptions, options);
         return this;
       }
 
+      /**
+       * Sets blob's source options.
+       *
+       * @return the builder.
+       */
       public Builder sourceOptions(Iterable<BlobSourceOption> options) {
         Iterables.addAll(sourceOptions, options);
         return this;
       }
 
+      /**
+       * Sets the copy target.
+       *
+       * @return the builder.
+       */
       public Builder target(BlobInfo target) {
         this.target = target;
         return this;
       }
 
+      /**
+       * Sets blob's target options.
+       *
+       * @return the builder.
+       */
       public Builder targetOptions(BlobTargetOption... options) {
         Collections.addAll(targetOptions, options);
         return this;
       }
 
+      /**
+       * Sets blob's target options.
+       *
+       * @return the builder.
+       */
       public Builder targetOptions(Iterable<BlobTargetOption> options) {
         Iterables.addAll(targetOptions, options);
         return this;
       }
 
+      /**
+       * Sets the maximum number of megabytes to copy for each RPC call. This parameter is ignored
+       * if source and target blob share the same location and storage class as copy is made with
+       * one single RPC.
+       *
+       * @return the builder.
+       */
+      public Builder megabytesCopiedPerChunk(Long megabytesCopiedPerChunk) {
+        this.megabytesCopiedPerChunk = megabytesCopiedPerChunk;
+        return this;
+      }
+
+      /**
+       * Creates a {@code CopyRequest}.
+       */
       public CopyRequest build() {
         checkNotNull(source);
         checkNotNull(target);
@@ -555,22 +607,44 @@ public interface Storage extends Service<StorageOptions> {
       sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
       target = checkNotNull(builder.target);
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
+      megabytesCopiedPerChunk = builder.megabytesCopiedPerChunk;
     }
 
+    /**
+     * Returns the blob to rewrite, as a {@link BlobId}.
+     */
     public BlobId source() {
       return source;
     }
 
+    /**
+     * Returns blob's source options.
+     */
     public List<BlobSourceOption> sourceOptions() {
       return sourceOptions;
     }
 
+    /**
+     * Returns the rewrite target.
+     */
     public BlobInfo target() {
       return target;
     }
 
+    /**
+     * Returns blob's target options.
+     */
     public List<BlobTargetOption> targetOptions() {
       return targetOptions;
+    }
+
+    /**
+     * Returns the maximum number of megabytes to copy for each RPC call. This parameter is ignored
+     * if source and target blob share the same location and storage class as copy is made with
+     * one single RPC.
+     */
+    public Long megabytesCopiedPerChunk() {
+      return megabytesCopiedPerChunk;
     }
 
     public static CopyRequest of(String sourceBucket, String sourceBlob, BlobInfo target) {
@@ -755,12 +829,31 @@ public interface Storage extends Service<StorageOptions> {
   BlobInfo compose(ComposeRequest composeRequest);
 
   /**
-   * Send a copy request.
+   * Sends a copy request. Returns a {@link CopyWriter} object for the provided
+   * {@code CopyRequest}. If source and destination objects share the same location and storage
+   * class the source blob is copied with one request and {@link CopyWriter#result()} immediately
+   * returns, regardless of the {@link CopyRequest#megabytesCopiedPerChunk} parameter.
+   * If source and destination have different location or storage class {@link CopyWriter#result()}
+   * might issue multiple RPC calls depending on blob's size.
+   * <p>
+   * Example usage of copy:
+   * <pre>    {@code BlobInfo blob = service.copy(copyRequest).result();}
+   * </pre>
+   * To explicitly issue chunk copy requests use {@link CopyWriter#copyChunk()} instead:
+   * <pre>    {@code CopyWriter copyWriter = service.copy(copyRequest);
+   *    while (!copyWriter.isDone()) {
+   *        copyWriter.copyChunk();
+   *    }
+   *    BlobInfo blob = copyWriter.result();
+   * }
+   * </pre>
    *
-   * @return the copied blob.
+   * @return a {@link CopyWriter} object that can be used to get information on the newly created
+   *     blob or to complete the copy if more than one RPC request is needed
    * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite">Rewrite</a>
    */
-  BlobInfo copy(CopyRequest copyRequest);
+  CopyWriter copy(CopyRequest copyRequest);
 
   /**
    * Reads all the bytes from a blob.

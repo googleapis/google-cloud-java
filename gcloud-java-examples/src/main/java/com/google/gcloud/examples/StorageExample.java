@@ -24,6 +24,7 @@ import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.BlobReadChannel;
+import com.google.gcloud.storage.CopyWriter;
 import com.google.gcloud.storage.BlobWriteChannel;
 import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.BucketInfo;
@@ -366,8 +367,8 @@ public class StorageExample {
   private static class CopyAction extends StorageAction<CopyRequest> {
     @Override
     public void run(Storage storage, CopyRequest request) {
-      BlobInfo copiedBlobInfo = storage.copy(request);
-      System.out.println("Copied " + copiedBlobInfo);
+      CopyWriter copyWriter = storage.copy(request);
+      System.out.println("Copied " + copyWriter.result());
     }
 
     @Override
