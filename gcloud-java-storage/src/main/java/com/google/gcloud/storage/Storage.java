@@ -555,27 +555,37 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder.
        */
-      public Builder target(BlobInfo target) {
-        this.target = target;
+      public Builder target(BlobId target) {
+        this.target = BlobInfo.builder(target).build();
         return this;
       }
 
       /**
-       * Sets blob's target options.
+       * Sets the copy target and target options. Copied blob metadata is set to {@code target}.
+       * This method throws an exception if target blob's content type is {@code null}.
        *
        * @return the builder.
+       * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
        */
-      public Builder targetOptions(BlobTargetOption... options) {
+      public Builder target(BlobInfo target, BlobTargetOption... options)
+          throws IllegalArgumentException {
+        checkContentType(target);
+        this.target = target;
         Collections.addAll(targetOptions, options);
         return this;
       }
 
       /**
-       * Sets blob's target options.
+       * Sets the copy target and target options. Copied blob metadata is set to {@code target}.
+       * This method throws an exception if target blob's content type is {@code null}.
        *
        * @return the builder.
+       * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
        */
-      public Builder targetOptions(Iterable<BlobTargetOption> options) {
+      public Builder target(BlobInfo target, Iterable<BlobTargetOption> options)
+          throws IllegalArgumentException {
+        checkContentType(target);
+        this.target = target;
         Iterables.addAll(targetOptions, options);
         return this;
       }
@@ -647,26 +657,100 @@ public interface Storage extends Service<StorageOptions> {
       return megabytesCopiedPerChunk;
     }
 
-    public static CopyRequest of(String sourceBucket, String sourceBlob, BlobInfo target) {
+    /**
+     * Creates a copy request. Copied blob metadata is set to {@code target}. This method throws an
+     * exception if target blob's content type is {@code null}.
+     *
+     * @param sourceBucket name of the bucket containing the source blob
+     * @param sourceBlob name of the source blob
+     * @param target a {@code BlobInfo} object for the target blob
+     * @return a copy request.
+     * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
+     */
+    public static CopyRequest of(String sourceBucket, String sourceBlob, BlobInfo target)
+        throws IllegalArgumentException {
+      checkContentType(target);
       return builder().source(sourceBucket, sourceBlob).target(target).build();
     }
 
-    public static CopyRequest of(BlobId sourceBlobId, BlobInfo target) {
+    /**
+     * Creates a copy request. Copied blob metadata is set to {@code target}. This method throws an
+     * exception if target blob's content type is {@code null}.
+     *
+     * @param sourceBlobId a {@code BlobId} object for the source blob
+     * @param target a {@code BlobInfo} object for the target blob
+     * @return a copy request.
+     * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
+     */
+    public static CopyRequest of(BlobId sourceBlobId, BlobInfo target)
+        throws IllegalArgumentException {
+      checkContentType(target);
       return builder().source(sourceBlobId).target(target).build();
     }
 
+    /**
+     * Creates a copy request.
+     *
+     * @param sourceBucket name of the bucket containing both the source and the target blob
+     * @param sourceBlob name of the source blob
+     * @param targetBlob name of the target blob
+     * @return a copy request.
+     */
     public static CopyRequest of(String sourceBucket, String sourceBlob, String targetBlob) {
-      return of(sourceBucket, sourceBlob,
-          BlobInfo.builder(BlobId.of(sourceBucket, targetBlob)).build());
+      return CopyRequest.builder()
+          .source(sourceBucket, sourceBlob)
+          .target(BlobId.of(sourceBucket, targetBlob))
+          .build();
     }
 
+    /**
+     * Creates a copy request.
+     *
+     * @param sourceBucket name of the bucket containing the source blob
+     * @param sourceBlob name of the source blob
+     * @param target a {@code BlobId} object for the target blob
+     * @return a copy request.
+     */
+    public static CopyRequest of(String sourceBucket, String sourceBlob, BlobId target) {
+      return builder().source(sourceBucket, sourceBlob).target(target).build();
+    }
+
+    /**
+     * Creates a copy request.
+     *
+     * @param sourceBlobId a {@code BlobId} object for the source blob
+     * @param targetBlob name of the target blob, in the same bucket of the source blob
+     * @return a copy request.
+     */
     public static CopyRequest of(BlobId sourceBlobId, String targetBlob) {
-      return of(sourceBlobId,
-          BlobInfo.builder(BlobId.of(sourceBlobId.bucket(), targetBlob)).build());
+      return CopyRequest.builder()
+          .source(sourceBlobId)
+          .target(BlobId.of(sourceBlobId.bucket(), targetBlob))
+          .build();
+    }
+
+    /**
+     * Creates a copy request.
+     *
+     * @param sourceBlobId a {@code BlobId} object for the source blob
+     * @param targetBlobId a {@code BlobId} object for the target blob
+     * @return a copy request.
+     */
+    public static CopyRequest of(BlobId sourceBlobId, BlobId targetBlobId) {
+      return CopyRequest.builder()
+          .source(sourceBlobId)
+          .target(targetBlobId)
+          .build();
     }
 
     public static Builder builder() {
       return new Builder();
+    }
+
+    private static void checkContentType(BlobInfo blobInfo) throws IllegalArgumentException {
+      if (blobInfo.contentType() == null) {
+        throw new IllegalArgumentException("Blob content type can not be null");
+      }
     }
   }
 

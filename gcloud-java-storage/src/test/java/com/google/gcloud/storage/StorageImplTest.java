@@ -591,7 +591,7 @@ public class StorageImplTest {
 
   @Test
   public void testCopy() {
-    CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2);
+    CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2.blobId());
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
         EMPTY_RPC_OPTIONS, request.target().toPb(), EMPTY_RPC_OPTIONS, null);
     StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
@@ -610,8 +610,7 @@ public class StorageImplTest {
     CopyRequest request = Storage.CopyRequest.builder()
         .source(BLOB_INFO2.blobId())
         .sourceOptions(BLOB_SOURCE_GENERATION, BLOB_SOURCE_METAGENERATION)
-        .target(BLOB_INFO1)
-        .targetOptions(BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
+        .target(BLOB_INFO1, BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
         .build();
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
         BLOB_SOURCE_OPTIONS_COPY, request.target().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
@@ -628,7 +627,7 @@ public class StorageImplTest {
 
   @Test
   public void testCopyMultipleRequests() {
-    CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2);
+    CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2.blobId());
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
         EMPTY_RPC_OPTIONS, request.target().toPb(), EMPTY_RPC_OPTIONS, null);
     StorageRpc.RewriteResponse rpcResponse1 = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,

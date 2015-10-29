@@ -376,7 +376,7 @@ public class StorageExample {
       if (args.length != 4) {
         throw new IllegalArgumentException();
       }
-      return CopyRequest.of(args[0], args[1], BlobInfo.builder(args[2], args[3]).build());
+      return CopyRequest.of(args[0], args[1], BlobId.of(args[2], args[3]));
     }
 
     @Override
@@ -544,11 +544,14 @@ public class StorageExample {
     StorageOptions.Builder optionsBuilder =
         StorageOptions.builder().retryParams(RetryParams.getDefaultInstance());
     StorageAction action;
+    String actionName;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
+      actionName = args[1];
       optionsBuilder.projectId(args[0]);
       action = ACTIONS.get(args[1]);
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {
+      actionName = args[0];
       action = ACTIONS.get(args[0]);
       args = Arrays.copyOfRange(args, 1, args.length);
     }
@@ -562,7 +565,7 @@ public class StorageExample {
     try {
       request = action.parse(args);
     } catch (IllegalArgumentException ex) {
-      System.out.println("Invalid input for action '" + args[1] + "'");
+      System.out.println("Invalid input for action '" + actionName + "'");
       System.out.println("Expected: " + action.params());
       return;
     } catch (Exception ex) {
