@@ -551,7 +551,7 @@ public interface Storage extends Service<StorageOptions> {
       }
 
       /**
-       * Sets the copy target.
+       * Sets the copy target. Target blob information is copied from source.
        *
        * @return the builder.
        */
@@ -561,8 +561,9 @@ public interface Storage extends Service<StorageOptions> {
       }
 
       /**
-       * Sets the copy target and target options. Copied blob metadata is set to {@code target}.
-       * This method throws an exception if target blob's content type is {@code null}.
+       * Sets the copy target and target options. {@code target} parameter is used to override
+       * source blob information (e.g. {@code contentType}, {@code contentLanguage}). {@code
+       * target.contentType} is a required field.
        *
        * @return the builder.
        * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
@@ -576,8 +577,9 @@ public interface Storage extends Service<StorageOptions> {
       }
 
       /**
-       * Sets the copy target and target options. Copied blob metadata is set to {@code target}.
-       * This method throws an exception if target blob's content type is {@code null}.
+       * Sets the copy target and target options. {@code target} parameter is used to override
+       * source blob information (e.g. {@code contentType}, {@code contentLanguage}). {@code
+       * target.contentType} is a required field.
        *
        * @return the builder.
        * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
@@ -658,8 +660,9 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Creates a copy request. Copied blob metadata is set to {@code target}. This method throws an
-     * exception if target blob's content type is {@code null}.
+     * Creates a copy request. {@code target} parameter is used to override source blob information
+     * (e.g. {@code contentType}, {@code contentLanguage}). {@code target.contentType} is a required
+     * field.
      *
      * @param sourceBucket name of the bucket containing the source blob
      * @param sourceBlob name of the source blob
@@ -674,8 +677,9 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Creates a copy request. Copied blob metadata is set to {@code target}. This method throws an
-     * exception if target blob's content type is {@code null}.
+     * Creates a copy request. {@code target} parameter is used to override source blob information
+     * (e.g. {@code contentType}, {@code contentLanguage}). {@code target.contentType} is a required
+     * field.
      *
      * @param sourceBlobId a {@code BlobId} object for the source blob
      * @param target a {@code BlobInfo} object for the target blob
@@ -689,7 +693,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Creates a copy request.
+     * Creates a copy request. Target blob information is copied from source.
      *
      * @param sourceBucket name of the bucket containing both the source and the target blob
      * @param sourceBlob name of the source blob
@@ -704,7 +708,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Creates a copy request.
+     * Creates a copy request. Target blob information is copied from source.
      *
      * @param sourceBucket name of the bucket containing the source blob
      * @param sourceBlob name of the source blob
@@ -716,7 +720,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Creates a copy request.
+     * Creates a copy request. Target blob information is copied from source.
      *
      * @param sourceBlobId a {@code BlobId} object for the source blob
      * @param targetBlob name of the target blob, in the same bucket of the source blob
@@ -730,7 +734,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Creates a copy request.
+     * Creates a copy request. Target blob information is copied from source.
      *
      * @param sourceBlobId a {@code BlobId} object for the source blob
      * @param targetBlobId a {@code BlobId} object for the target blob
@@ -748,9 +752,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     private static void checkContentType(BlobInfo blobInfo) throws IllegalArgumentException {
-      if (blobInfo.contentType() == null) {
-        throw new IllegalArgumentException("Blob content type can not be null");
-      }
+      checkArgument(blobInfo.contentType() != null, "Blob content type can not be null");
     }
   }
 
