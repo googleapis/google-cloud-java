@@ -137,7 +137,7 @@ public class BucketTest {
   @Test
   public void testGet() throws Exception {
     BlobInfo info = BlobInfo.builder("b", "n").build();
-    expect(storage.get(BlobId.of(bucket.info().name(), "n"), new Storage.BlobSourceOption[0]))
+    expect(storage.get(BlobId.of(bucket.info().name(), "n"), new Storage.BlobGetOption[0]))
         .andReturn(info);
     replay(storage);
     Blob blob = bucket.get("n");

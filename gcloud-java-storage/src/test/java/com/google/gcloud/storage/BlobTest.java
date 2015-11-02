@@ -72,14 +72,16 @@ public class BlobTest {
 
   @Test
   public void testExists_True() throws Exception {
-    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobSourceOption[0])).andReturn(BLOB_INFO);
+    Storage.BlobGetOption[] expectedOptions = {Storage.BlobGetOption.fields()};
+    expect(storage.get(BLOB_INFO.blobId(), expectedOptions)).andReturn(BLOB_INFO);
     replay(storage);
     assertTrue(blob.exists());
   }
 
   @Test
   public void testExists_False() throws Exception {
-    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobSourceOption[0])).andReturn(null);
+    Storage.BlobGetOption[] expectedOptions = {Storage.BlobGetOption.fields()};
+    expect(storage.get(BLOB_INFO.blobId(), expectedOptions)).andReturn(null);
     replay(storage);
     assertFalse(blob.exists());
   }
@@ -95,7 +97,7 @@ public class BlobTest {
   @Test
   public void testReload() throws Exception {
     BlobInfo updatedInfo = BLOB_INFO.toBuilder().cacheControl("c").build();
-    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobSourceOption[0])).andReturn(updatedInfo);
+    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(updatedInfo);
     replay(storage);
     Blob updatedBlob = blob.reload();
     assertSame(storage, blob.storage());

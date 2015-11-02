@@ -24,7 +24,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterators;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.Page;
-import com.google.gcloud.storage.Storage.BlobSourceOption;
+import com.google.gcloud.storage.Storage.BlobGetOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.BlobWriteOption;
 import com.google.gcloud.storage.Storage.BucketSourceOption;
@@ -221,7 +221,7 @@ public final class Bucket {
    * @param options blob search options
    * @throws StorageException upon failure
    */
-  public Blob get(String blob, BlobSourceOption... options) {
+  public Blob get(String blob, BlobGetOption... options) {
     return new Blob(storage, storage.get(BlobId.of(info.name(), blob), options));
   }
 

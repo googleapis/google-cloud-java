@@ -161,6 +161,87 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testGetBlobEmptySelectedFields() {
+    String blobName = "test-get-empty-selected-fields-blob";
+    BlobInfo blob = BlobInfo.builder(BUCKET, blobName).contentType(CONTENT_TYPE).build();
+    assertNotNull(storage.create(blob));
+    BlobInfo remoteBlob = storage.get(blob.blobId(), Storage.BlobGetOption.fields());
+    assertEquals(blob.blobId(), remoteBlob.blobId());
+    assertNull(remoteBlob.contentType());
+    assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testGetBlobSelectedFields() {
+    String blobName = "test-get-selected-fields-blob";
+    BlobInfo blob = BlobInfo.builder(BUCKET, blobName)
+        .contentType(CONTENT_TYPE)
+        .metadata(ImmutableMap.of("k", "v"))
+        .build();
+    assertNotNull(storage.create(blob));
+    BlobInfo remoteBlob = storage.get(blob.blobId(), Storage.BlobGetOption.fields(
+        Storage.BlobField.metadata()));
+    assertEquals(blob.blobId(), remoteBlob.blobId());
+    assertEquals(ImmutableMap.of("k", "v"), remoteBlob.metadata());
+    assertNull(remoteBlob.contentType());
+    assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testListBlobsSelectedFields() {
+    String[] blobNames = {"test-list-blobs-selected-fields-blob1",
+        "test-list-blobs-selected-fields-blob2"};
+    ImmutableMap metadata = ImmutableMap.of("k", "v");
+    BlobInfo blob1 = BlobInfo.builder(BUCKET, blobNames[0])
+        .contentType(CONTENT_TYPE)
+        .metadata(metadata)
+        .build();
+    BlobInfo blob2 = BlobInfo.builder(BUCKET, blobNames[1])
+        .contentType(CONTENT_TYPE)
+        .metadata(metadata)
+        .build();
+    assertNotNull(storage.create(blob1));
+    assertNotNull(storage.create(blob2));
+    ListResult<BlobInfo> result = storage.list(BUCKET,
+        Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
+        Storage.BlobListOption.fields(Storage.BlobField.metadata()));
+    int index = 0;
+    for (BlobInfo remoteBlob : result) {
+      assertEquals(BUCKET, remoteBlob.bucket());
+      assertEquals(blobNames[index++], remoteBlob.name());
+      assertEquals(metadata, remoteBlob.metadata());
+      assertNull(remoteBlob.contentType());
+    }
+    assertTrue(storage.delete(BUCKET, blobNames[0]));
+    assertTrue(storage.delete(BUCKET, blobNames[1]));
+  }
+
+  @Test
+  public void testListBlobsEmptySelectedFields() {
+    String[] blobNames = {"test-list-blobs-empty-selected-fields-blob1",
+        "test-list-blobs-empty-selected-fields-blob2"};
+    BlobInfo blob1 = BlobInfo.builder(BUCKET, blobNames[0])
+        .contentType(CONTENT_TYPE)
+        .build();
+    BlobInfo blob2 = BlobInfo.builder(BUCKET, blobNames[1])
+        .contentType(CONTENT_TYPE)
+        .build();
+    assertNotNull(storage.create(blob1));
+    assertNotNull(storage.create(blob2));
+    ListResult<BlobInfo> result = storage.list(BUCKET,
+        Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+        Storage.BlobListOption.fields());
+    int index = 0;
+    for (BlobInfo remoteBlob : result) {
+      assertEquals(BUCKET, remoteBlob.bucket());
+      assertEquals(blobNames[index++], remoteBlob.name());
+      assertNull(remoteBlob.contentType());
+    }
+    assertTrue(storage.delete(BUCKET, blobNames[0]));
+    assertTrue(storage.delete(BUCKET, blobNames[1]));
+  }
+
+  @Test
   public void testUpdateBlob() {
     String blobName = "test-update-blob";
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
@@ -442,7 +523,7 @@ public class ITStorageTest {
     BatchRequest batchRequest = BatchRequest.builder()
         .update(updatedBlob, Storage.BlobTargetOption.generationMatch())
         .delete(BUCKET, blobName, Storage.BlobSourceOption.generationMatch(-1L))
-        .get(BUCKET, blobName, Storage.BlobSourceOption.generationMatch(-1L))
+        .get(BUCKET, blobName, Storage.BlobGetOption.generationMatch(-1L))
         .build();
     BatchResponse updateResponse = storage.apply(batchRequest);
     assertEquals(1, updateResponse.updates().size());

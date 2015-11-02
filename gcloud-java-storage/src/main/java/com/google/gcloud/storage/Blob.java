@@ -19,6 +19,7 @@ package com.google.gcloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.gcloud.storage.Blob.BlobSourceOption.convert;
+import static com.google.gcloud.storage.Blob.BlobSourceOption.toGetOptions;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
@@ -29,6 +30,7 @@ import com.google.gcloud.storage.Storage.CopyRequest;
 import com.google.gcloud.storage.Storage.SignUrlOption;
 
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -71,6 +73,21 @@ public final class Blob {
       }
     }
 
+    private Storage.BlobGetOption toGetOption(BlobInfo blobInfo) {
+      switch (rpcOption()) {
+        case IF_GENERATION_MATCH:
+          return Storage.BlobGetOption.generationMatch(blobInfo.generation());
+        case IF_GENERATION_NOT_MATCH:
+          return Storage.BlobGetOption.generationNotMatch(blobInfo.generation());
+        case IF_METAGENERATION_MATCH:
+          return Storage.BlobGetOption.metagenerationMatch(blobInfo.metageneration());
+        case IF_METAGENERATION_NOT_MATCH:
+          return Storage.BlobGetOption.metagenerationNotMatch(blobInfo.metageneration());
+        default:
+          throw new AssertionError("Unexpected enum value");
+      }
+    }
+
     public static BlobSourceOption generationMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH);
     }
@@ -92,6 +109,15 @@ public final class Blob {
       int index = 0;
       for (BlobSourceOption option : options) {
         convertedOptions[index++] = option.convert(blobInfo);
+      }
+      return convertedOptions;
+    }
+
+    static Storage.BlobGetOption[] toGetOptions(BlobInfo blobInfo, BlobSourceOption... options) {
+      Storage.BlobGetOption[] convertedOptions = new Storage.BlobGetOption[options.length];
+      int index = 0;
+      for (BlobSourceOption option : options) {
+        convertedOptions[index++] = option.toGetOption(blobInfo);
       }
       return convertedOptions;
     }
@@ -159,7 +185,10 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public boolean exists(BlobSourceOption... options) {
-    return storage.get(info.blobId(), convert(info, options)) != null;
+    int length = options.length;
+    Storage.BlobGetOption[] getOptions = Arrays.copyOf(toGetOptions(info, options), length + 1);
+    getOptions[length] = Storage.BlobGetOption.fields();
+    return storage.get(info.blobId(), getOptions) != null;
   }
 
   /**
@@ -180,7 +209,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public Blob reload(BlobSourceOption... options) {
-    return new Blob(storage, storage.get(info.blobId(), convert(info, options)));
+    return new Blob(storage, storage.get(info.blobId(), toGetOptions(info, options)));
   }
 
   /**
