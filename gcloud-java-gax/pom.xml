@@ -58,7 +58,7 @@
             <goals><goal>add-source</goal></goals>
             <configuration>
               <sources>
-                <source>src/generated/main</source>
+                <source>generated/src/main</source>
               </sources>
             </configuration>
           </execution>
