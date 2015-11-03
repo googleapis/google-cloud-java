@@ -16,13 +16,26 @@
 
 package com.google.gcloud.spi;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.services.cloudresourcemanager.model.Policy;
 import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.gcloud.resourcemanager.ResourceManagerException;
 
+import java.util.Collections;
 import java.util.List;
 
 public interface ResourceManagerRpc {
+
+  public enum Permission {
+    CREATE,
+    DELETE,
+    GET,
+    LIST,
+    UPDATE,
+    GET_IAM_POLICY,
+    SET_IAM_POLICY;
+  }
 
   class Tuple<X, Y> {
     private final X x;
@@ -49,20 +62,24 @@ public interface ResourceManagerRpc {
   public class ListOptions {
     private List<String> filters;
     private String pageToken;
+    private int pageSize;
 
-    private static final ListOptions DEFAULT_INSTANCE = new ListOptions(null, null);
+    private static final ListOptions DEFAULT_INSTANCE =
+        new ListOptions(Collections.<String>emptyList(), null, -1);
 
-    ListOptions(List<String> filters, String pageToken) {
-      this.filters = filters;
+    ListOptions(List<String> filters, String pageToken, int pageSize) {
+      this.filters = checkNotNull(filters);
       this.pageToken = pageToken;
+      this.pageSize = pageSize;
     }
 
     public static ListOptions getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    public static ListOptions createListOption(List<String> filters, String pageToken) {
-      return new ListOptions(filters, pageToken);
+    public static ListOptions createListOption(
+        List<String> filters, String pageToken, int pageSize) {
+      return new ListOptions(filters, pageToken, pageSize);
     }
 
     public String pageToken() {
@@ -71,6 +88,10 @@ public interface ResourceManagerRpc {
 
     public List<String> filters() {
       return filters;
+    }
+
+    public int pageSize() {
+      return pageSize;
     }
   }
 
@@ -90,6 +111,6 @@ public interface ResourceManagerRpc {
 
   void setIamPolicy(String projectId, Policy policy) throws ResourceManagerException;
 
-  boolean hasPermissions(String projectId, List<String> permissions)
+  List<Boolean> hasPermissions(String projectId, List<Permission> permissions)
       throws ResourceManagerException;
 }
