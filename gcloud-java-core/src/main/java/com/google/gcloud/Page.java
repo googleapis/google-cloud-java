@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud;
 
 /**
- * Interface for Google Cloud storage list result.
+ * Interface for Google Cloud paginated results.
  */
-public interface ListResult<T> extends Iterable<T> {
+public interface Page<T> extends Iterable<T> {
 
   /**
    * Returns the cursor for the nextPage or {@code null} if no more results.
@@ -27,8 +27,8 @@ public interface ListResult<T> extends Iterable<T> {
   String nextPageCursor();
 
   /**
-   * Returns the results of the nextPage or {@code null} if no more result.
+   * Returns the next page of results or {@code null} if no more result.
    */
-  ListResult<T> nextPage();
+  Page<T> nextPage();
 
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -22,9 +22,9 @@ import java.util.Iterator;
 import java.util.Objects;
 
 /**
- * Base implementation for Google Cloud storage list result.
+ * Base implementation for Google Cloud paginated results.
  */
-public class BaseListResult<T extends Serializable> implements ListResult<T>, Serializable {
+public class BasePage<T extends Serializable> implements Page<T>, Serializable {
 
   private static final long serialVersionUID = -6937287874908527950L;
 
@@ -33,10 +33,10 @@ public class BaseListResult<T extends Serializable> implements ListResult<T>, Se
   private final NextPageFetcher<T> pageFetcher;
 
   public interface NextPageFetcher<T extends Serializable> extends Serializable {
-    ListResult<T> nextPage();
+    Page<T> nextPage();
   }
 
-  public BaseListResult(NextPageFetcher<T> pageFetcher, String cursor, Iterable<T> results) {
+  public BasePage(NextPageFetcher<T> pageFetcher, String cursor, Iterable<T> results) {
     this.pageFetcher = pageFetcher;
     this.cursor = cursor;
     this.results = results;
@@ -48,7 +48,7 @@ public class BaseListResult<T extends Serializable> implements ListResult<T>, Se
   }
 
   @Override
-  public ListResult<T> nextPage() {
+  public Page<T> nextPage() {
     if (cursor == null || pageFetcher == null) {
       return null;
     }
@@ -67,10 +67,10 @@ public class BaseListResult<T extends Serializable> implements ListResult<T>, Se
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof BaseListResult)) {
+    if (!(obj instanceof BasePage)) {
       return false;
     }
-    BaseListResult<?> other = (BaseListResult<?>) obj;
+    BasePage<?> other = (BasePage<?>) obj;
     return Objects.equals(cursor, other.cursor)
         && Objects.equals(results, other.results);
   }

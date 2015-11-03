@@ -27,6 +27,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.BasePage;
+import com.google.gcloud.Page;
 import com.google.gcloud.storage.BatchResponse.Result;
 
 import org.easymock.Capture;
@@ -114,18 +116,18 @@ public class BucketTest {
 
   @Test
   public void testList() throws Exception {
-    BaseListResult<BlobInfo> blobInfoResult = new BaseListResult<>(null, "c", BLOB_INFO_RESULTS);
-    expect(storage.list(BUCKET_INFO.name())).andReturn(blobInfoResult);
+    BasePage<BlobInfo> blobInfoPage = new BasePage<>(null, "c", BLOB_INFO_RESULTS);
+    expect(storage.list(BUCKET_INFO.name())).andReturn(blobInfoPage);
     replay(storage);
-    ListResult<Blob> blobResult = bucket.list();
-    Iterator<BlobInfo> blobInfoIterator = blobInfoResult.iterator();
-    Iterator<Blob> blobIterator = blobResult.iterator();
+    Page<Blob> blobPage = bucket.list();
+    Iterator<BlobInfo> blobInfoIterator = blobInfoPage.iterator();
+    Iterator<Blob> blobIterator = blobPage.iterator();
     while (blobInfoIterator.hasNext() && blobIterator.hasNext()) {
       assertEquals(blobInfoIterator.next(), blobIterator.next().info());
     }
     assertFalse(blobInfoIterator.hasNext());
     assertFalse(blobIterator.hasNext());
-    assertEquals(blobInfoResult.nextPageCursor(), blobResult.nextPageCursor());
+    assertEquals(blobInfoPage.nextPageCursor(), blobPage.nextPageCursor());
   }
 
   @Test

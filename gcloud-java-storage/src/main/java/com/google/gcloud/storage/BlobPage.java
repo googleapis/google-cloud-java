@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Iterators;
+import com.google.gcloud.Page;
 
 import java.util.Iterator;
 import java.util.Objects;
@@ -27,12 +28,12 @@ import java.util.Objects;
 /**
  * Implementation of a paginated list of Google Cloud storage {@code Blob}.
  */
-public class BlobListResult implements ListResult<Blob> {
+public class BlobPage implements Page<Blob> {
 
-  private final ListResult<BlobInfo> infoList;
+  private final Page<BlobInfo> infoList;
   private final Storage storage;
 
-  public BlobListResult(Storage storage, ListResult<BlobInfo> infoList) {
+  public BlobPage(Storage storage, Page<BlobInfo> infoList) {
     this.storage = checkNotNull(storage);
     this.infoList = checkNotNull(infoList);
   }
@@ -43,12 +44,12 @@ public class BlobListResult implements ListResult<Blob> {
   }
 
   @Override
-  public ListResult<Blob> nextPage() {
-    ListResult<BlobInfo> nextPageInfoList = infoList.nextPage();
+  public Page<Blob> nextPage() {
+    Page<BlobInfo> nextPageInfoList = infoList.nextPage();
     if (nextPageInfoList == null) {
       return null;
     }
-    return new BlobListResult(storage, nextPageInfoList);
+    return new BlobPage(storage, nextPageInfoList);
   }
 
   @Override
@@ -68,10 +69,10 @@ public class BlobListResult implements ListResult<Blob> {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof BlobListResult)) {
+    if (!(obj instanceof BlobPage)) {
       return false;
     }
-    BlobListResult other = (BlobListResult) obj;
+    BlobPage other = (BlobPage) obj;
     return Objects.equals(infoList, other.infoList);
   }
 }

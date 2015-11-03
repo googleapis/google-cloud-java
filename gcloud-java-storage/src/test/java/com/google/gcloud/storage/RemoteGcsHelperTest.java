@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.Page;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import org.easymock.EasyMock;
@@ -74,15 +75,15 @@ public class RemoteGcsHelperTest {
       BlobInfo.builder(BUCKET_NAME, "n2").build());
   private static final StorageException RETRYABLE_EXCEPTION = new StorageException(409, "", true);
   private static final StorageException FATAL_EXCEPTION = new StorageException(500, "", false);
-  private static final ListResult<BlobInfo> BLOB_LIST_RESULT = new ListResult<BlobInfo>() {
+  private static final Page<BlobInfo> BLOB_PAGE = new Page<BlobInfo>() {
 
     @Override
     public String nextPageCursor() {
-      return "listResult";
+      return "nextPageCursor";
     }
 
     @Override
-    public ListResult<BlobInfo> nextPage() {
+    public Page<BlobInfo> nextPage() {
       return null;
     }
 
@@ -106,7 +107,7 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDelete() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_LIST_RESULT);
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
     for (BlobInfo info : BLOB_LIST) {
       EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
     }
@@ -119,7 +120,7 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteTimeout() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_LIST_RESULT).anyTimes();
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE).anyTimes();
     for (BlobInfo info : BLOB_LIST) {
       EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true).anyTimes();
     }
@@ -132,7 +133,7 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteFail() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_LIST_RESULT);
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
     for (BlobInfo info : BLOB_LIST) {
       EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
     }

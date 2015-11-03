@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
+import com.google.gcloud.Page;
 import com.google.gcloud.storage.Storage.BlobSourceOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.BlobWriteOption;
@@ -134,8 +135,8 @@ public final class Bucket {
    * @param options options for listing blobs
    * @throws StorageException upon failure
    */
-  public ListResult<Blob> list(Storage.BlobListOption... options) {
-    return new BlobListResult(storage, storage.list(info.name(), options));
+  public Page<Blob> list(Storage.BlobListOption... options) {
+    return new BlobPage(storage, storage.list(info.name(), options));
   }
 
   /**

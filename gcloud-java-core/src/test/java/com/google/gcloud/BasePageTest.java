@@ -14,31 +14,32 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud;
 
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.BasePage;
 
 import org.junit.Test;
 
 import java.util.Collections;
 
-public class BaseListResultTest {
+public class BasePageTest {
 
   @Test
-  public void testListResult() throws Exception {
+  public void testPage() throws Exception {
     ImmutableList<String> values = ImmutableList.of("1", "2");
-    final BaseListResult<String> nextResult =
-        new BaseListResult<>(null, "c", Collections.<String>emptyList());
-    BaseListResult.NextPageFetcher<String> fetcher = new BaseListResult.NextPageFetcher<String>() {
+    final BasePage<String> nextResult =
+        new BasePage<>(null, "c", Collections.<String>emptyList());
+    BasePage.NextPageFetcher<String> fetcher = new BasePage.NextPageFetcher<String>() {
 
       @Override
-      public BaseListResult<String> nextPage() {
+      public BasePage<String> nextPage() {
         return nextResult;
       }
     };
-    BaseListResult<String> result = new BaseListResult<>(fetcher, "c", values);
+    BasePage<String> result = new BasePage<>(fetcher, "c", values);
     assertEquals(nextResult, result.nextPage());
     assertEquals("c", result.nextPageCursor());
     assertEquals(values, ImmutableList.copyOf(result.iterator()));

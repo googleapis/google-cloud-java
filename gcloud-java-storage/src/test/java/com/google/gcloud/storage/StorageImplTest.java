@@ -35,6 +35,7 @@ import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.ServiceOptions;
+import com.google.gcloud.Page;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.spi.StorageRpcFactory;
@@ -400,9 +401,9 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.list(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    ListResult<BucketInfo> listResult = storage.list();
-    assertEquals(cursor, listResult.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(listResult, BucketInfo.class));
+    Page<BucketInfo> page = storage.list();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page, BucketInfo.class));
   }
 
   @Test
@@ -411,10 +412,10 @@ public class StorageImplTest {
         Tuple.<String, Iterable<com.google.api.services.storage.model.Bucket>>of(null, null));
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    ListResult<BucketInfo> listResult = storage.list();
-    assertNull(listResult.nextPageCursor());
+    Page<BucketInfo> page = storage.list();
+    assertNull(page.nextPageCursor());
     assertArrayEquals(ImmutableList.of().toArray(),
-        Iterables.toArray(listResult, BucketInfo.class));
+        Iterables.toArray(page, BucketInfo.class));
   }
 
   @Test
@@ -426,9 +427,9 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.list(BUCKET_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    ListResult<BucketInfo> listResult = storage.list(BUCKET_LIST_MAX_RESULT, BUCKET_LIST_PREFIX);
-    assertEquals(cursor, listResult.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(listResult, BucketInfo.class));
+    Page<BucketInfo> page = storage.list(BUCKET_LIST_MAX_RESULT, BUCKET_LIST_PREFIX);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page, BucketInfo.class));
   }
 
   @Test
@@ -440,22 +441,21 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.list(BUCKET_NAME1, EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    ListResult<BlobInfo> listResult = storage.list(BUCKET_NAME1);
-    assertEquals(cursor, listResult.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(listResult, BlobInfo.class));
+    Page<BlobInfo> page = storage.list(BUCKET_NAME1);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page, BlobInfo.class));
   }
 
   @Test
   public void testListBlobsEmpty() {
     EasyMock.expect(storageRpcMock.list(BUCKET_NAME1, EMPTY_RPC_OPTIONS))
-        .andReturn(
-            Tuple.<String, Iterable<com.google.api.services.storage.model.StorageObject>>of(null,
-                null));
+        .andReturn(Tuple.<String, Iterable<com.google.api.services.storage.model.StorageObject>>of(
+            null, null));
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    ListResult<BlobInfo> listResult = storage.list(BUCKET_NAME1);
-    assertNull(listResult.nextPageCursor());
-    assertArrayEquals(ImmutableList.of().toArray(), Iterables.toArray(listResult, BlobInfo.class));
+    Page<BlobInfo> page = storage.list(BUCKET_NAME1);
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(ImmutableList.of().toArray(), Iterables.toArray(page, BlobInfo.class));
   }
 
   @Test
@@ -467,10 +467,9 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.list(BUCKET_NAME1, BLOB_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    ListResult<BlobInfo> listResult =
-        storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX);
-    assertEquals(cursor, listResult.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(listResult, BlobInfo.class));
+    Page<BlobInfo> page = storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page, BlobInfo.class));
   }
 
   @Test

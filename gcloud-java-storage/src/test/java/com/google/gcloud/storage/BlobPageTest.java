@@ -24,13 +24,15 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.BasePage;
+import com.google.gcloud.Page;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Iterator;
 
-public class BlobListResultTest {
+public class BlobPageTest {
 
   private static final Iterable<BlobInfo> FIRST_PAGE_RESULTS = ImmutableList.of(
       BlobInfo.builder("b1", "n1").build(),
@@ -40,29 +42,29 @@ public class BlobListResultTest {
       BlobInfo.builder("b1", "n1").build(),
       BlobInfo.builder("b2", "n2").build());
 
-  private BaseListResult<BlobInfo> firstPage;
-  private BaseListResult<BlobInfo> secondPage;
+  private BasePage<BlobInfo> firstPage;
+  private BasePage<BlobInfo> secondPage;
   private Storage storage;
-  private BlobListResult blobListResult;
+  private BlobPage blobPage;
 
   @Before
   public void setUp() throws Exception {
-    firstPage = createStrictMock(BaseListResult.class);
-    secondPage = createStrictMock(BaseListResult.class);
+    firstPage = createStrictMock(BasePage.class);
+    secondPage = createStrictMock(BasePage.class);
     storage = createStrictMock(Storage.class);
-    blobListResult = new BlobListResult(storage, firstPage);
+    blobPage = new BlobPage(storage, firstPage);
   }
 
   @Test
-  public void testListResult() throws Exception {
+  public void testPage() throws Exception {
     expect(firstPage.iterator()).andReturn(FIRST_PAGE_RESULTS.iterator());
     replay(firstPage);
     Iterator<BlobInfo> firstPageIterator = FIRST_PAGE_RESULTS.iterator();
-    Iterator<Blob> blobListIterator = blobListResult.iterator();
-    while (blobListIterator.hasNext() && firstPageIterator.hasNext()) {
-      assertEquals(firstPageIterator.next(), blobListIterator.next().info());
+    Iterator<Blob> pageIterator = blobPage.iterator();
+    while (pageIterator.hasNext() && firstPageIterator.hasNext()) {
+      assertEquals(firstPageIterator.next(), pageIterator.next().info());
     }
-    assertFalse(blobListIterator.hasNext());
+    assertFalse(pageIterator.hasNext());
     assertFalse(firstPageIterator.hasNext());
     verify(firstPage);
   }
@@ -71,7 +73,7 @@ public class BlobListResultTest {
   public void testCursor() throws Exception {
     expect(firstPage.nextPageCursor()).andReturn("c");
     replay(firstPage);
-    assertEquals("c", blobListResult.nextPageCursor());
+    assertEquals("c", blobPage.nextPageCursor());
     verify(firstPage);
   }
 
@@ -81,7 +83,7 @@ public class BlobListResultTest {
     expect(secondPage.iterator()).andReturn(SECOND_PAGE_RESULTS.iterator());
     replay(firstPage);
     replay(secondPage);
-    ListResult<Blob> nextPageResult = blobListResult.nextPage();
+    Page<Blob> nextPageResult = blobPage.nextPage();
     Iterator<BlobInfo> secondPageIterator = SECOND_PAGE_RESULTS.iterator();
     Iterator<Blob> blobListIterator = nextPageResult.iterator();
     while (blobListIterator.hasNext() && secondPageIterator.hasNext()) {
