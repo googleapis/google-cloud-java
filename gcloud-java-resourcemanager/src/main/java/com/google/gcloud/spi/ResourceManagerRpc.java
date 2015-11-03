@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.cloudresourcemanager.model.Policy;
 import com.google.api.services.cloudresourcemanager.model.Project;
+import com.google.common.collect.ImmutableList;
 import com.google.gcloud.resourcemanager.ResourceManagerException;
 
 import java.util.Collections;
@@ -34,7 +35,7 @@ public interface ResourceManagerRpc {
     LIST,
     UPDATE,
     GET_IAM_POLICY,
-    SET_IAM_POLICY;
+    SET_IAM_POLICY
   }
 
   class Tuple<X, Y> {
@@ -68,7 +69,7 @@ public interface ResourceManagerRpc {
         new ListOptions(Collections.<String>emptyList(), null, -1);
 
     ListOptions(List<String> filters, String pageToken, int pageSize) {
-      this.filters = checkNotNull(filters);
+      this.filters = checkNotNull(ImmutableList.copyOf(filters));
       this.pageToken = pageToken;
       this.pageSize = pageSize;
     }
@@ -105,7 +106,7 @@ public interface ResourceManagerRpc {
 
   void undelete(String projectId) throws ResourceManagerException;
 
-  Project update(String projectId, Project project) throws ResourceManagerException;
+  Project update(Project project) throws ResourceManagerException;
 
   Policy getIamPolicy(String projectId) throws ResourceManagerException;
 
@@ -113,4 +114,6 @@ public interface ResourceManagerRpc {
 
   List<Boolean> hasPermissions(String projectId, List<Permission> permissions)
       throws ResourceManagerException;
+
+  // TODO(ajaykannan): implement "Organization" functionality when available
 }
