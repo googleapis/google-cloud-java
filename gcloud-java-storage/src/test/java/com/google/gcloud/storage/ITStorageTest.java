@@ -325,8 +325,7 @@ public class ITStorageTest {
         .build();
     assertNotNull(storage.create(blob, BLOB_BYTE_CONTENT));
     String targetBlobName = "test-copy-blob-target";
-    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName).build();
-    Storage.CopyRequest req = Storage.CopyRequest.of(source, target);
+    Storage.CopyRequest req = Storage.CopyRequest.of(source, BlobId.of(BUCKET, targetBlobName));
     CopyWriter copyWriter = storage.copy(req);
     assertEquals(BUCKET, copyWriter.result().bucket());
     assertEquals(targetBlobName, copyWriter.result().name());
