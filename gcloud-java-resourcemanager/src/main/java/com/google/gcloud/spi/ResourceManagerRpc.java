@@ -46,15 +46,41 @@ public interface ResourceManagerRpc {
     }
   }
 
+  public class ListOptions {
+    private List<String> filters;
+    private String pageToken;
+
+    private static final ListOptions DEFAULT_INSTANCE = new ListOptions(null, null);
+
+    ListOptions(List<String> filters, String pageToken) {
+      this.filters = filters;
+      this.pageToken = pageToken;
+    }
+
+    public static ListOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static ListOptions createListOption(List<String> filters, String pageToken) {
+      return new ListOptions(filters, pageToken);
+    }
+
+    public String pageToken() {
+      return pageToken;
+    }
+
+    public List<String> filters() {
+      return filters;
+    }
+  }
+
   Project create(Project project) throws ResourceManagerException;
 
   void delete(String projectId) throws ResourceManagerException;
 
   Project get(String projectId) throws ResourceManagerException;
 
-  Tuple<String, Iterable<Project>> list() throws ResourceManagerException;
-
-  Tuple<String, Iterable<Project>> list(String filter) throws ResourceManagerException;
+  Tuple<String, Iterable<Project>> list(ListOptions listOptions) throws ResourceManagerException;
 
   void undelete(String projectId) throws ResourceManagerException;
 
@@ -64,6 +90,6 @@ public interface ResourceManagerRpc {
 
   void setIamPolicy(String projectId, Policy policy) throws ResourceManagerException;
 
-  List<String> testIamPermissions(String projectId, List<String> permissions)
+  boolean hasPermissions(String projectId, List<String> permissions)
       throws ResourceManagerException;
 }
