@@ -38,6 +38,22 @@ public interface ResourceManagerRpc {
     SET_IAM_POLICY
   }
 
+  public enum DeleteResult {
+    SUCCESS,
+    ALREADY_DELETED
+  }
+
+  public enum UndeleteResult {
+    SUCCESS,
+    DELETE_IN_PROGRESS,
+    GONE
+  }
+
+  public enum SetIamPolicyResult {
+    SUCCESS,
+    ETAG_NOT_MATCH
+  }
+
   class Tuple<X, Y> {
     private final X x;
     private final Y y;
@@ -98,19 +114,19 @@ public interface ResourceManagerRpc {
 
   Project create(Project project) throws ResourceManagerException;
 
-  void delete(String projectId) throws ResourceManagerException;
+  DeleteResult delete(String projectId) throws ResourceManagerException;
 
   Project get(String projectId) throws ResourceManagerException;
 
   Tuple<String, Iterable<Project>> list(ListOptions listOptions) throws ResourceManagerException;
 
-  void undelete(String projectId) throws ResourceManagerException;
+  UndeleteResult undelete(String projectId) throws ResourceManagerException;
 
   Project update(Project project) throws ResourceManagerException;
 
   Policy getIamPolicy(String projectId) throws ResourceManagerException;
 
-  void setIamPolicy(String projectId, Policy policy) throws ResourceManagerException;
+  SetIamPolicyResult setIamPolicy(String projectId, Policy policy) throws ResourceManagerException;
 
   List<Boolean> hasPermissions(String projectId, List<Permission> permissions)
       throws ResourceManagerException;
