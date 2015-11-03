@@ -138,19 +138,27 @@ public class StorageImplTest {
   private static final Storage.BlobWriteOption BLOB_WRITE_CRC2C =
       Storage.BlobWriteOption.crc32cMatch();
 
-  // Bucket source options
+  // Bucket get/source options
   private static final Storage.BucketSourceOption BUCKET_SOURCE_METAGENERATION =
       Storage.BucketSourceOption.metagenerationMatch(BUCKET_INFO1.metageneration());
   private static final Map<StorageRpc.Option, ?> BUCKET_SOURCE_OPTIONS = ImmutableMap.of(
       StorageRpc.Option.IF_METAGENERATION_MATCH, BUCKET_SOURCE_METAGENERATION.value());
+  private static final Storage.BucketGetOption BUCKET_GET_METAGENERATION =
+      Storage.BucketGetOption.metagenerationMatch(BUCKET_INFO1.metageneration());
+  private static final Storage.BucketGetOption BUCKET_GET_FIELDS =
+      Storage.BucketGetOption.fields(Storage.BucketField.LOCATION, Storage.BucketField.ACL);
+  private static final Storage.BucketGetOption BUCKET_GET_EMPTY_FIELDS =
+      Storage.BucketGetOption.fields();
+  private static final Map<StorageRpc.Option, ?> BUCKET_GET_OPTIONS = ImmutableMap.of(
+      StorageRpc.Option.IF_METAGENERATION_MATCH, BUCKET_SOURCE_METAGENERATION.value());
 
-  // Blob read/source options
+  // Blob get/source options
   private static final Storage.BlobGetOption BLOB_GET_METAGENERATION =
       Storage.BlobGetOption.metagenerationMatch(BLOB_INFO1.metageneration());
   private static final Storage.BlobGetOption BLOB_GET_GENERATION =
       Storage.BlobGetOption.generationMatch(BLOB_INFO1.generation());
   private static final Storage.BlobGetOption BLOB_GET_FIELDS =
-      Storage.BlobGetOption.fields(Storage.BlobField.contentType(), Storage.BlobField.crc32c());
+      Storage.BlobGetOption.fields(Storage.BlobField.CONTENT_TYPE, Storage.BlobField.CRC32C);
   private static final Storage.BlobGetOption BLOB_GET_EMPTY_FIELDS =
       Storage.BlobGetOption.fields();
   private static final Map<StorageRpc.Option, ?> BLOB_GET_OPTIONS = ImmutableMap.of(
@@ -172,6 +180,10 @@ public class StorageImplTest {
       Storage.BucketListOption.maxResults(42L);
   private static final Storage.BucketListOption BUCKET_LIST_PREFIX =
       Storage.BucketListOption.prefix("prefix");
+  private static final Storage.BucketListOption BUCKET_LIST_FIELDS =
+      Storage.BucketListOption.fields(Storage.BucketField.LOCATION, Storage.BucketField.ACL);
+  private static final Storage.BucketListOption BUCKET_LIST_EMPTY_FIELDS =
+      Storage.BucketListOption.fields();
   private static final Map<StorageRpc.Option, ?> BUCKET_LIST_OPTIONS = ImmutableMap.of(
       StorageRpc.Option.MAX_RESULTS, BUCKET_LIST_MAX_RESULT.value(),
       StorageRpc.Option.PREFIX, BUCKET_LIST_PREFIX.value());
@@ -182,7 +194,7 @@ public class StorageImplTest {
   private static final Storage.BlobListOption BLOB_LIST_PREFIX =
       Storage.BlobListOption.prefix("prefix");
   private static final Storage.BlobListOption BLOB_LIST_FIELDS =
-      Storage.BlobListOption.fields(Storage.BlobField.contentType(), Storage.BlobField.md5Hash());
+      Storage.BlobListOption.fields(Storage.BlobField.CONTENT_TYPE, Storage.BlobField.MD5HASH);
   private static final Storage.BlobListOption BLOB_LIST_EMPTY_FIELDS =
       Storage.BlobListOption.fields();
   private static final Map<StorageRpc.Option, ?> BLOB_LIST_OPTIONS = ImmutableMap.of(
@@ -374,14 +386,49 @@ public class StorageImplTest {
 
   @Test
   public void testGetBucketWithOptions() {
-    EasyMock.expect(storageRpcMock.get(BucketInfo.of(BUCKET_NAME1).toPb(), BUCKET_SOURCE_OPTIONS))
+    EasyMock.expect(storageRpcMock.get(BucketInfo.of(BUCKET_NAME1).toPb(), BUCKET_GET_OPTIONS))
         .andReturn(BUCKET_INFO1.toPb());
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    BucketInfo bucket =
-        storage.get(BUCKET_NAME1,
-            Storage.BucketSourceOption.metagenerationMatch(BUCKET_INFO1.metageneration()));
+    BucketInfo bucket = storage.get(BUCKET_NAME1, BUCKET_GET_METAGENERATION);
     assertEquals(BUCKET_INFO1, bucket);
+  }
+
+  @Test
+  public void testGetBucketWithSelectedFields() {
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
+        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    EasyMock.expect(storageRpcMock.get(EasyMock.eq(BucketInfo.of(BUCKET_NAME1).toPb()),
+        EasyMock.capture(capturedOptions))).andReturn(BUCKET_INFO1.toPb());
+    EasyMock.replay(storageRpcMock);
+    storage = options.service();
+    BucketInfo bucket = storage.get(BUCKET_NAME1, BUCKET_GET_METAGENERATION, BUCKET_GET_FIELDS);
+    assertEquals(BUCKET_GET_METAGENERATION.value(),
+        capturedOptions.getValue().get(BUCKET_GET_METAGENERATION.rpcOption()));
+    String selector = (String) capturedOptions.getValue().get(BLOB_GET_FIELDS.rpcOption());
+    assertTrue(selector.contains("name"));
+    assertTrue(selector.contains("location"));
+    assertTrue(selector.contains("acl"));
+    assertEquals(17, selector.length());
+    assertEquals(BUCKET_INFO1.name(), bucket.name());
+  }
+
+  @Test
+  public void testGetBucketWithEmptyFields() {
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
+        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    EasyMock.expect(storageRpcMock.get(EasyMock.eq(BucketInfo.of(BUCKET_NAME1).toPb()),
+        EasyMock.capture(capturedOptions))).andReturn(BUCKET_INFO1.toPb());
+    EasyMock.replay(storageRpcMock);
+    storage = options.service();
+    BucketInfo bucket = storage.get(BUCKET_NAME1, BUCKET_GET_METAGENERATION,
+        BUCKET_GET_EMPTY_FIELDS);
+    assertEquals(BUCKET_GET_METAGENERATION.value(),
+        capturedOptions.getValue().get(BUCKET_GET_METAGENERATION.rpcOption()));
+    String selector = (String) capturedOptions.getValue().get(BLOB_GET_FIELDS.rpcOption());
+    assertTrue(selector.contains("name"));
+    assertEquals(4, selector.length());
+    assertEquals(BUCKET_INFO1.name(), bucket.name());
   }
 
   @Test
@@ -408,7 +455,7 @@ public class StorageImplTest {
   }
 
   @Test
-  public void testGetWithSelectedFields() {
+  public void testGetBlobWithSelectedFields() {
     Capture<Map<StorageRpc.Option, Object>> capturedOptions =
         Capture.<Map<StorageRpc.Option, Object>>newInstance();
     EasyMock.expect(storageRpcMock.get(EasyMock.eq(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb()),
@@ -431,7 +478,7 @@ public class StorageImplTest {
   }
 
   @Test
-  public void testGetWithEmptyFields() {
+  public void testGetBlobWithEmptyFields() {
     Capture<Map<StorageRpc.Option, Object>> capturedOptions =
         Capture.<Map<StorageRpc.Option, Object>>newInstance();
     EasyMock.expect(storageRpcMock.get(EasyMock.eq(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb()),
@@ -489,6 +536,48 @@ public class StorageImplTest {
     Page<BucketInfo> page = storage.list(BUCKET_LIST_MAX_RESULT, BUCKET_LIST_PREFIX);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), BucketInfo.class));
+  }
+
+  @Test
+  public void testListBucketsWithSelectedFields() {
+    String cursor = "cursor";
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
+        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    ImmutableList<BucketInfo> bucketList = ImmutableList.of(BUCKET_INFO1, BUCKET_INFO2);
+    Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result =
+        Tuple.of(cursor, Iterables.transform(bucketList, BucketInfo.TO_PB_FUNCTION));
+    EasyMock.expect(storageRpcMock.list(EasyMock.capture(capturedOptions))).andReturn(result);
+    EasyMock.replay(storageRpcMock);
+    storage = options.service();
+    ListResult<BucketInfo> listResult = storage.list(BUCKET_LIST_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(BLOB_LIST_FIELDS.rpcOption());
+    assertTrue(selector.contains("items"));
+    assertTrue(selector.contains("name"));
+    assertTrue(selector.contains("acl"));
+    assertTrue(selector.contains("location"));
+    assertEquals(24, selector.length());
+    assertEquals(cursor, listResult.nextPageCursor());
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(listResult, BucketInfo.class));
+  }
+
+  @Test
+  public void testListBucketsWithEmptyFields() {
+    String cursor = "cursor";
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
+        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    ImmutableList<BucketInfo> bucketList = ImmutableList.of(BUCKET_INFO1, BUCKET_INFO2);
+    Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result =
+        Tuple.of(cursor, Iterables.transform(bucketList, BucketInfo.TO_PB_FUNCTION));
+    EasyMock.expect(storageRpcMock.list(EasyMock.capture(capturedOptions))).andReturn(result);
+    EasyMock.replay(storageRpcMock);
+    storage = options.service();
+    ListResult<BucketInfo> listResult = storage.list(BUCKET_LIST_EMPTY_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(BLOB_LIST_FIELDS.rpcOption());
+    assertTrue(selector.contains("items"));
+    assertTrue(selector.contains("name"));
+    assertEquals(11, selector.length());
+    assertEquals(cursor, listResult.nextPageCursor());
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(listResult, BucketInfo.class));
   }
 
   @Test
@@ -552,6 +641,7 @@ public class StorageImplTest {
     assertEquals(BLOB_LIST_PREFIX.value(),
         capturedOptions.getValue().get(BLOB_LIST_PREFIX.rpcOption()));
     String selector = (String) capturedOptions.getValue().get(BLOB_LIST_FIELDS.rpcOption());
+    assertTrue(selector.contains("items"));
     assertTrue(selector.contains("bucket"));
     assertTrue(selector.contains("name"));
     assertTrue(selector.contains("contentType"));
@@ -581,6 +671,7 @@ public class StorageImplTest {
     assertEquals(BLOB_LIST_PREFIX.value(),
         capturedOptions.getValue().get(BLOB_LIST_PREFIX.rpcOption()));
     String selector = (String) capturedOptions.getValue().get(BLOB_LIST_EMPTY_FIELDS.rpcOption());
+    assertTrue(selector.contains("items"));
     assertTrue(selector.contains("bucket"));
     assertTrue(selector.contains("name"));
     assertEquals(18, selector.length());

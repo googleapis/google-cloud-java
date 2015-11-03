@@ -24,10 +24,10 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterators;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.Page;
+import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobGetOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.BlobWriteOption;
-import com.google.gcloud.storage.Storage.BucketSourceOption;
 import com.google.gcloud.storage.Storage.BucketTargetOption;
 
 import java.io.IOException;
@@ -119,6 +119,66 @@ public final class Bucket {
     }
   }
 
+  public static class BucketSourceOption extends Option {
+
+    private static final long serialVersionUID = 6928872234155522371L;
+
+    private BucketSourceOption(StorageRpc.Option rpcOption) {
+      super(rpcOption, null);
+    }
+
+    private Storage.BucketSourceOption toSourceOptions(BucketInfo bucketInfo) {
+      switch (rpcOption()) {
+        case IF_METAGENERATION_MATCH:
+          return Storage.BucketSourceOption.metagenerationMatch(bucketInfo.metageneration());
+        case IF_METAGENERATION_NOT_MATCH:
+          return Storage.BucketSourceOption.metagenerationNotMatch(bucketInfo.metageneration());
+        default:
+          throw new AssertionError("Unexpected enum value");
+      }
+    }
+
+    private Storage.BucketGetOption toGetOption(BucketInfo bucketInfo) {
+      switch (rpcOption()) {
+        case IF_METAGENERATION_MATCH:
+          return Storage.BucketGetOption.metagenerationMatch(bucketInfo.metageneration());
+        case IF_METAGENERATION_NOT_MATCH:
+          return Storage.BucketGetOption.metagenerationNotMatch(bucketInfo.metageneration());
+        default:
+          throw new AssertionError("Unexpected enum value");
+      }
+    }
+
+    public static BucketSourceOption metagenerationMatch() {
+      return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
+    }
+
+    public static BucketSourceOption metagenerationNotMatch() {
+      return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
+    }
+
+    static Storage.BucketSourceOption[] toSourceOptions(BucketInfo bucketInfo,
+         BucketSourceOption... options) {
+      Storage.BucketSourceOption[] convertedOptions =
+          new Storage.BucketSourceOption[options.length];
+      int index = 0;
+      for (BucketSourceOption option : options) {
+        convertedOptions[index++] = option.toSourceOptions(bucketInfo);
+      }
+      return convertedOptions;
+    }
+
+    static Storage.BucketGetOption[] toGetOptions(BucketInfo bucketInfo,
+        BucketSourceOption... options) {
+      Storage.BucketGetOption[] convertedOptions = new Storage.BucketGetOption[options.length];
+      int index = 0;
+      for (BucketSourceOption option : options) {
+        convertedOptions[index++] = option.toGetOption(bucketInfo);
+      }
+      return convertedOptions;
+    }
+  }
+
   /**
    * Constructs a {@code Bucket} object for the provided {@code BucketInfo}. The storage service is
    * used to issue requests.
@@ -170,7 +230,8 @@ public final class Bucket {
    * @throws StorageException upon failure
    */
   public Bucket reload(BucketSourceOption... options) {
-    return new Bucket(storage, storage.get(info.name(), options));
+    return new Bucket(storage, storage.get(info.name(),
+        BucketSourceOption.toGetOptions(info, options)));
   }
 
   /**
@@ -198,7 +259,7 @@ public final class Bucket {
    * @throws StorageException upon failure
    */
   public boolean delete(BucketSourceOption... options) {
-    return storage.delete(info.name(), options);
+    return storage.delete(info.name(), BucketSourceOption.toSourceOptions(info, options));
   }
 
   /**

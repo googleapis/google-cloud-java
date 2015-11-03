@@ -180,7 +180,7 @@ public class ITStorageTest {
         .build();
     assertNotNull(storage.create(blob));
     BlobInfo remoteBlob = storage.get(blob.blobId(), Storage.BlobGetOption.fields(
-        Storage.BlobField.metadata()));
+        Storage.BlobField.METADATA));
     assertEquals(blob.blobId(), remoteBlob.blobId());
     assertEquals(ImmutableMap.of("k", "v"), remoteBlob.metadata());
     assertNull(remoteBlob.contentType());
@@ -204,7 +204,7 @@ public class ITStorageTest {
     assertNotNull(storage.create(blob2));
     ListResult<BlobInfo> result = storage.list(BUCKET,
         Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
-        Storage.BlobListOption.fields(Storage.BlobField.metadata()));
+        Storage.BlobListOption.fields(Storage.BlobField.METADATA));
     int index = 0;
     for (BlobInfo remoteBlob : result) {
       assertEquals(BUCKET, remoteBlob.bucket());

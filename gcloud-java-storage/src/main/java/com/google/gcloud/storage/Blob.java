@@ -18,7 +18,7 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.gcloud.storage.Blob.BlobSourceOption.convert;
+import static com.google.gcloud.storage.Blob.BlobSourceOption.toSourceOptions;
 import static com.google.gcloud.storage.Blob.BlobSourceOption.toGetOptions;
 
 import com.google.common.base.Function;
@@ -58,7 +58,7 @@ public final class Blob {
       super(rpcOption, null);
     }
 
-    private Storage.BlobSourceOption convert(BlobInfo blobInfo) {
+    private Storage.BlobSourceOption toSourceOptions(BlobInfo blobInfo) {
       switch (rpcOption()) {
         case IF_GENERATION_MATCH:
           return Storage.BlobSourceOption.generationMatch(blobInfo.generation());
@@ -104,11 +104,12 @@ public final class Blob {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
 
-    static Storage.BlobSourceOption[] convert(BlobInfo blobInfo, BlobSourceOption... options) {
+    static Storage.BlobSourceOption[] toSourceOptions(BlobInfo blobInfo,
+        BlobSourceOption... options) {
       Storage.BlobSourceOption[] convertedOptions = new Storage.BlobSourceOption[options.length];
       int index = 0;
       for (BlobSourceOption option : options) {
-        convertedOptions[index++] = option.convert(blobInfo);
+        convertedOptions[index++] = option.toSourceOptions(blobInfo);
       }
       return convertedOptions;
     }
@@ -126,7 +127,7 @@ public final class Blob {
   /**
    * Constructs a {@code Blob} object for the provided {@code BlobInfo}. The storage service is used
    * to issue requests.
-   * 
+   *
    * @param storage the storage service used for issuing requests
    * @param info blob's info
    */
@@ -138,7 +139,7 @@ public final class Blob {
   /**
    * Creates a {@code Blob} object for the provided bucket and blob names. Performs an RPC call to
    * get the latest blob information.
-   * 
+   *
    * @param storage the storage service used for issuing requests
    * @param bucket bucket's name
    * @param blob blob's name
@@ -152,7 +153,7 @@ public final class Blob {
   /**
    * Creates a {@code Blob} object for the provided {@code blobId}. Performs an RPC call to get the
    * latest blob information.
-   * 
+   *
    * @param storage the storage service used for issuing requests
    * @param blobId blob's identifier
    * @return the {@code Blob} object or {@code null} if not found.
@@ -253,7 +254,7 @@ public final class Blob {
    */
   public CopyWriter copyTo(BlobId targetBlob, BlobSourceOption... options) {
     CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
-        .sourceOptions(convert(info, options)).target(targetBlob).build();
+        .sourceOptions(toSourceOptions(info, options)).target(targetBlob).build();
     return storage.copy(copyRequest);
   }
 
@@ -265,7 +266,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public boolean delete(BlobSourceOption... options) {
-    return storage.delete(info.blobId(), convert(info, options));
+    return storage.delete(info.blobId(), toSourceOptions(info, options));
   }
 
   /**
@@ -304,7 +305,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public BlobReadChannel reader(BlobSourceOption... options) {
-    return storage.reader(info.blobId(), convert(info, options));
+    return storage.reader(info.blobId(), toSourceOptions(info, options));
   }
 
   /**

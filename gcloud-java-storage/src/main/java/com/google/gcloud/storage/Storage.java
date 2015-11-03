@@ -86,189 +86,84 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
-  public static class AclField extends EntityField {
+  enum BucketField {
+    ID("id"),
+    SELF_LINK("selfLink"),
+    NAME("name"),
+    TIME_CREATED("timeCreated"),
+    UPDATED("updated"),
+    METAGENERATION("metageneration"),
+    ACL("acl"),
+    DEFAULT_OBJECT_ACL("defaultObjectAcl"),
+    OWNER("owner"),
+    LOCATION("location"),
+    WEBSITE("website"),
+    VERSIONING("versioning"),
+    CORS("cors"),
+    STORAGE_CLASS("storageClass"),
+    ETAG("etag");
 
-    public AclField(String selector) {
-      super(selector);
+    private final String selector;
+
+    BucketField(String selector) {
+      this.selector = selector;
     }
 
-    public static AclField bucket() {
-      return new AclField("bucket");
+    public String selector() {
+      return selector;
     }
 
-    public static AclField domain() {
-      return new AclField("domain");
-    }
-
-    public static AclField email() {
-      return new AclField("email");
-    }
-
-    public static AclField entity() {
-      return new AclField("entity");
-    }
-
-    public static AclField entityId() {
-      return new AclField("entityId");
-    }
-
-    public static AclField etag() {
-      return new AclField("etag");
-    }
-
-    public static AclField generation() {
-      return new AclField("generation");
-    }
-
-    public static AclField id() {
-      return new AclField("id");
-    }
-
-    public static AclField kind() {
-      return new AclField("kind");
-    }
-
-    public static AclField object() {
-      return new AclField("object");
-    }
-
-    public static AclField projectTeam() {
-      return new AclField("projectTeam");
-    }
-
-    public static AclField role() {
-      return new AclField("role");
-    }
-
-    public static AclField selfLink() {
-      return new AclField("selfLink");
-    }
-
-    static String selector(AclField... aclFields) {
-      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(aclFields.length + 2);
-      fieldStrings.add(AclField.role().selector());
-      fieldStrings.add(AclField.entity().selector());
-      for (AclField field : aclFields) {
+    static String selector(BucketField... fields) {
+      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
+      fieldStrings.add(NAME.selector());
+      for (BucketField field : fields) {
         fieldStrings.add(field.selector());
       }
-      return new StringBuffer()
-          .append("acl(")
-          .append(Joiner.on(",").join(fieldStrings))
-          .append(")")
-          .toString();
+      return Joiner.on(',').join(fieldStrings);
     }
   }
 
-  public static class BlobField extends EntityField {
+  enum BlobField {
+    ACL("acl"),
+    BUCKET("bucket"),
+    CACHE_CONTROL("cacheControl"),
+    COMPONENT_COUNT("componentCount"),
+    CONTENT_DISPOSITION("contentDisposition"),
+    CONTENT_ENCODING("contentEncoding"),
+    CONTENT_LANGUAGE("contentLanguage"),
+    CONTENT_TYPE("contentType"),
+    CRC32C("crc32c"),
+    ETAG("etag"),
+    GENERATION("generation"),
+    ID("id"),
+    KIND("kind"),
+    MD5HASH("md5Hash"),
+    MEDIA_LINK("mediaLink"),
+    METADATA("metadata"),
+    METAGENERATION("metageneration"),
+    NAME("name"),
+    OWNER("owner"),
+    SELF_LINK("selfLink"),
+    SIZE("size"),
+    STORAGE_CLASS("storageClass"),
+    TIME_CREATED("timeCreated"),
+    TIME_DELETED("timeDeleted"),
+    UPDATED("updated");
 
-    public BlobField(String selector) {
-      super(selector);
+    private final String selector;
+
+    BlobField(String selector) {
+      this.selector = selector;
     }
 
-    public static BlobField acl(AclField... aclFields) {
-      return new BlobField(AclField.selector(aclFields));
-    }
-
-    public static BlobField bucket() {
-      return new BlobField("bucket");
-    }
-
-    public static BlobField cacheControl() {
-      return new BlobField("cacheControl");
-    }
-
-    public static BlobField componentCount() {
-      return new BlobField("componentCount");
-    }
-
-    public static BlobField contentDisposition() {
-      return new BlobField("contentDisposition");
-    }
-
-    public static BlobField contentEncoding() {
-      return new BlobField("contentEncoding");
-    }
-
-    public static BlobField contentLanguage() {
-      return new BlobField("contentLanguage");
-    }
-
-    public static BlobField contentType() {
-      return new BlobField("contentType");
-    }
-
-    public static BlobField crc32c() {
-      return new BlobField("crc32c");
-    }
-
-    public static BlobField etag() {
-      return new BlobField("etag");
-    }
-
-    public static BlobField generation() {
-      return new BlobField("generation");
-    }
-
-    public static BlobField id() {
-      return new BlobField("id");
-    }
-
-    public static BlobField kind() {
-      return new BlobField("kind");
-    }
-
-    public static BlobField md5Hash() {
-      return new BlobField("md5Hash");
-    }
-
-    public static BlobField mediaLink() {
-      return new BlobField("mediaLink");
-    }
-
-    public static BlobField metadata() {
-      return new BlobField("metadata");
-    }
-
-    public static BlobField metageneration() {
-      return new BlobField("metageneration");
-    }
-
-    public static BlobField name() {
-      return new BlobField("name");
-    }
-
-    public static BlobField owner() {
-      return new BlobField("owner");
-    }
-
-    public static BlobField selfLink() {
-      return new BlobField("selfLink");
-    }
-
-    public static BlobField size() {
-      return new BlobField("size");
-    }
-
-    public static BlobField storageClass() {
-      return new BlobField("storageClass");
-    }
-
-    public static BlobField timeCreated() {
-      return new BlobField("timeCreated");
-    }
-
-    public static BlobField timeDeleted() {
-      return new BlobField("timeDeleted");
-    }
-
-    public static BlobField updated() {
-      return new BlobField("updated");
+    public String selector() {
+      return selector;
     }
 
     static String selector(BlobField... fields) {
       HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
-      fieldStrings.add(bucket().selector());
-      fieldStrings.add(name().selector());
+      fieldStrings.add(BUCKET.selector());
+      fieldStrings.add(NAME.selector());
       for (BlobField field : fields) {
         fieldStrings.add(field.selector());
       }
@@ -319,6 +214,37 @@ public interface Storage extends Service<StorageOptions> {
 
     public static BucketSourceOption metagenerationNotMatch(long metageneration) {
       return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+  }
+
+  class BucketGetOption extends Option {
+
+    private static final long serialVersionUID = 1901844869484087395L;
+
+    private BucketGetOption(StorageRpc.Option rpcOption, long metageneration) {
+      super(rpcOption, metageneration);
+    }
+
+    private BucketGetOption(StorageRpc.Option rpcOption, String value) {
+      super(rpcOption, value);
+    }
+
+    public static BucketGetOption metagenerationMatch(long metageneration) {
+      return new BucketGetOption(StorageRpc.Option.IF_METAGENERATION_MATCH, metageneration);
+    }
+
+    public static BucketGetOption metagenerationNotMatch(long metageneration) {
+      return new BucketGetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option to specify the bucket's fields to be returned by the RPC call. If this
+     * option is not provided all bucket's fields are returned. {@code BucketGetOption.fields}) can
+     * be used to specify only the fields of interest. Bucket name is always returned, even if not
+     * specified.
+     */
+    public static BucketGetOption fields(BucketField... fields) {
+      return new BucketGetOption(StorageRpc.Option.FIELDS, BucketField.selector(fields));
     }
   }
 
@@ -540,6 +466,18 @@ public interface Storage extends Service<StorageOptions> {
 
     public static BucketListOption prefix(String prefix) {
       return new BucketListOption(StorageRpc.Option.PREFIX, prefix);
+    }
+
+    /**
+     * Returns an option to specify the bucket's fields to be returned by the RPC call. If this
+     * option is not provided all bucket's fields are returned. {@code BucketListOption.fields}) can
+     * be used to specify only the fields of interest. Bucket name is always returned, even if not
+     * specified.
+     */
+    public static BucketListOption fields(BucketField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(BucketField.selector(fields)).append(")");
+      return new BucketListOption(StorageRpc.Option.FIELDS, builder.toString());
     }
   }
 
@@ -1057,7 +995,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  BucketInfo get(String bucket, BucketSourceOption... options);
+  BucketInfo get(String bucket, BucketGetOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
