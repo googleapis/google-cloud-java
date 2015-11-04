@@ -19,17 +19,24 @@ package com.google.gcloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.Iterators;
+import com.google.gcloud.BasePage;
 import com.google.gcloud.Page;
 import com.google.gcloud.storage.Storage.BlobSourceOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.BlobWriteOption;
 import com.google.gcloud.storage.Storage.BucketSourceOption;
 import com.google.gcloud.storage.Storage.BucketTargetOption;
-import java.io.InputStream;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
@@ -46,6 +53,71 @@ public final class Bucket {
 
   private final Storage storage;
   private final BucketInfo info;
+
+  private static class BlobPageFetcher implements BasePage.NextPageFetcher<Blob> {
+
+    private static final long serialVersionUID = 3221100177471323801L;
+
+    private final StorageOptions options;
+    private final Page<BlobInfo> infoPage;
+
+    BlobPageFetcher(StorageOptions options, Page<BlobInfo> infoPage) {
+      this.options = options;
+      this.infoPage = infoPage;
+    }
+
+    @Override
+    public Page<Blob> nextPage() {
+      Page<BlobInfo> nextInfoPage = infoPage.nextPage();
+      return new BasePage<Blob>(new BlobPageFetcher(options, nextInfoPage),
+          nextInfoPage.nextPageCursor(), new LazyBlobIterable(options, nextInfoPage.values()));
+    }
+  }
+
+  private static class LazyBlobIterable implements Iterable<Blob>, Serializable {
+
+    private static final long serialVersionUID = -3092290247725378832L;
+
+    private final StorageOptions options;
+    private Iterable<BlobInfo> infoIterable;
+    private transient Storage storage;
+
+    public LazyBlobIterable(StorageOptions options, Iterable<BlobInfo> infoIterable) {
+      this.options = options;
+      this.infoIterable = infoIterable;
+      this.storage = options.service();
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+      in.defaultReadObject();
+      this.storage = options.service();
+    }
+
+    @Override
+    public Iterator<Blob> iterator() {
+      return Iterators.transform(infoIterable.iterator(), new Function<BlobInfo, Blob>() {
+        @Override
+        public Blob apply(BlobInfo blobInfo) {
+          return new Blob(storage, blobInfo);
+        }
+      });
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(options, infoIterable);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof LazyBlobIterable)) {
+        return false;
+      }
+      LazyBlobIterable other = (LazyBlobIterable) obj;
+      return Objects.equals(options, other.options)
+          && Objects.equals(infoIterable, other.infoIterable);
+    }
+  }
 
   /**
    * Constructs a {@code Bucket} object for the provided {@code BucketInfo}. The storage service is
@@ -136,7 +208,10 @@ public final class Bucket {
    * @throws StorageException upon failure
    */
   public Page<Blob> list(Storage.BlobListOption... options) {
-    return new BlobPage(storage, storage.list(info.name(), options));
+    Page<BlobInfo> infoPage = storage.list(info.name(), options);
+    StorageOptions storageOptions = storage.options();
+    return new BasePage<Blob>(new BlobPageFetcher(storageOptions, infoPage),
+        infoPage.nextPageCursor(), new LazyBlobIterable(storageOptions, infoPage.values()));
   }
 
   /**

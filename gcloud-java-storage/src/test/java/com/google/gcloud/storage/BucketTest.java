@@ -116,18 +116,22 @@ public class BucketTest {
 
   @Test
   public void testList() throws Exception {
+    StorageOptions storageOptions = createStrictMock(StorageOptions.class);
     BasePage<BlobInfo> blobInfoPage = new BasePage<>(null, "c", BLOB_INFO_RESULTS);
     expect(storage.list(BUCKET_INFO.name())).andReturn(blobInfoPage);
-    replay(storage);
+    expect(storage.options()).andReturn(storageOptions);
+    expect(storageOptions.service()).andReturn(storage);
+    replay(storage, storageOptions);
     Page<Blob> blobPage = bucket.list();
-    Iterator<BlobInfo> blobInfoIterator = blobInfoPage.iterator();
-    Iterator<Blob> blobIterator = blobPage.iterator();
+    Iterator<BlobInfo> blobInfoIterator = blobInfoPage.values().iterator();
+    Iterator<Blob> blobIterator = blobPage.values().iterator();
     while (blobInfoIterator.hasNext() && blobIterator.hasNext()) {
       assertEquals(blobInfoIterator.next(), blobIterator.next().info());
     }
     assertFalse(blobInfoIterator.hasNext());
     assertFalse(blobIterator.hasNext());
     assertEquals(blobInfoPage.nextPageCursor(), blobPage.nextPageCursor());
+    verify(storageOptions);
   }
 
   @Test

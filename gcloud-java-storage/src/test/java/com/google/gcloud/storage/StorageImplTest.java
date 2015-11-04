@@ -403,7 +403,7 @@ public class StorageImplTest {
     storage = options.service();
     Page<BucketInfo> page = storage.list();
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page, BucketInfo.class));
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), BucketInfo.class));
   }
 
   @Test
@@ -415,7 +415,7 @@ public class StorageImplTest {
     Page<BucketInfo> page = storage.list();
     assertNull(page.nextPageCursor());
     assertArrayEquals(ImmutableList.of().toArray(),
-        Iterables.toArray(page, BucketInfo.class));
+        Iterables.toArray(page.values(), BucketInfo.class));
   }
 
   @Test
@@ -429,7 +429,7 @@ public class StorageImplTest {
     storage = options.service();
     Page<BucketInfo> page = storage.list(BUCKET_LIST_MAX_RESULT, BUCKET_LIST_PREFIX);
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page, BucketInfo.class));
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), BucketInfo.class));
   }
 
   @Test
@@ -443,7 +443,7 @@ public class StorageImplTest {
     storage = options.service();
     Page<BlobInfo> page = storage.list(BUCKET_NAME1);
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(page, BlobInfo.class));
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), BlobInfo.class));
   }
 
   @Test
@@ -455,7 +455,8 @@ public class StorageImplTest {
     storage = options.service();
     Page<BlobInfo> page = storage.list(BUCKET_NAME1);
     assertNull(page.nextPageCursor());
-    assertArrayEquals(ImmutableList.of().toArray(), Iterables.toArray(page, BlobInfo.class));
+    assertArrayEquals(ImmutableList.of().toArray(),
+        Iterables.toArray(page.values(), BlobInfo.class));
   }
 
   @Test
@@ -469,7 +470,7 @@ public class StorageImplTest {
     storage = options.service();
     Page<BlobInfo> page = storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX);
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(page, BlobInfo.class));
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), BlobInfo.class));
   }
 
   @Test

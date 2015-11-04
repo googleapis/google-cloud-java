@@ -18,28 +18,36 @@ package com.google.gcloud;
 
 import java.io.Serializable;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.Objects;
 
 /**
  * Base implementation for Google Cloud paginated results.
  */
-public class BasePage<T extends Serializable> implements Page<T>, Serializable {
+public class BasePage<T> implements Page<T>, Serializable {
 
-  private static final long serialVersionUID = -6937287874908527950L;
+  private static final long serialVersionUID = 3914827379823557934L;
 
   private final String cursor;
   private final Iterable<T> results;
   private final NextPageFetcher<T> pageFetcher;
 
-  public interface NextPageFetcher<T extends Serializable> extends Serializable {
+  public interface NextPageFetcher<T> extends Serializable {
     Page<T> nextPage();
   }
 
+  /**
+   * Creates a {@code BasePage} object. In order for the object to be serializable the {@code
+   * results} parameter must be serializable.
+   */
   public BasePage(NextPageFetcher<T> pageFetcher, String cursor, Iterable<T> results) {
     this.pageFetcher = pageFetcher;
     this.cursor = cursor;
     this.results = results;
+  }
+
+  @Override
+  public Iterable<T> values() {
+    return results == null ? Collections.EMPTY_LIST : results;
   }
 
   @Override
@@ -53,11 +61,6 @@ public class BasePage<T extends Serializable> implements Page<T>, Serializable {
       return null;
     }
     return pageFetcher.nextPage();
-  }
-
-  @Override
-  public Iterator<T> iterator() {
-    return results == null ? Collections.<T>emptyIterator() : results.iterator();
   }
 
   @Override
