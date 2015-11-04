@@ -75,14 +75,16 @@ public class BucketTest {
 
   @Test
   public void testExists_True() throws Exception {
-    expect(storage.get(BUCKET_INFO.name())).andReturn(BUCKET_INFO);
+    Storage.BucketGetOption[] expectedOptions = {Storage.BucketGetOption.fields()};
+    expect(storage.get(BUCKET_INFO.name(), expectedOptions)).andReturn(BUCKET_INFO);
     replay(storage);
     assertTrue(bucket.exists());
   }
 
   @Test
   public void testExists_False() throws Exception {
-    expect(storage.get(BUCKET_INFO.name())).andReturn(null);
+    Storage.BucketGetOption[] expectedOptions = {Storage.BucketGetOption.fields()};
+    expect(storage.get(BUCKET_INFO.name(), expectedOptions)).andReturn(null);
     replay(storage);
     assertFalse(bucket.exists());
   }

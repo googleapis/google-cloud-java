@@ -18,6 +18,8 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.gcloud.storage.Bucket.BucketSourceOption.toGetOptions;
+import static com.google.gcloud.storage.Bucket.BucketSourceOption.toSourceOptions;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -35,6 +37,7 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -218,8 +221,11 @@ public final class Bucket {
    * @return true if this bucket exists, false otherwise
    * @throws StorageException upon failure
    */
-  public boolean exists() {
-    return storage.get(info.name()) != null;
+  public boolean exists(BucketSourceOption... options) {
+    int length = options.length;
+    Storage.BucketGetOption[] getOptions = Arrays.copyOf(toGetOptions(info, options), length + 1);
+    getOptions[length] = Storage.BucketGetOption.fields();
+    return storage.get(info.name(), getOptions) != null;
   }
 
   /**
@@ -230,8 +236,7 @@ public final class Bucket {
    * @throws StorageException upon failure
    */
   public Bucket reload(BucketSourceOption... options) {
-    return new Bucket(storage, storage.get(info.name(),
-        BucketSourceOption.toGetOptions(info, options)));
+    return new Bucket(storage, storage.get(info.name(), toGetOptions(info, options)));
   }
 
   /**
@@ -259,7 +264,7 @@ public final class Bucket {
    * @throws StorageException upon failure
    */
   public boolean delete(BucketSourceOption... options) {
-    return storage.delete(info.name(), BucketSourceOption.toSourceOptions(info, options));
+    return storage.delete(info.name(), toSourceOptions(info, options));
   }
 
   /**
