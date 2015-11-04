@@ -151,6 +151,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .setPrefix(PREFIX.getString(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
           .execute();
       return Tuple.<String, Iterable<Bucket>>of(buckets.getNextPageToken(), buckets.getItems());
     } catch (IOException ex) {
@@ -186,6 +187,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .setProjection(DEFAULT_PROJECTION)
           .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
+          .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
