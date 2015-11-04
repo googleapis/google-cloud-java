@@ -210,8 +210,8 @@ public final class Bucket {
   public Page<Blob> list(Storage.BlobListOption... options) {
     Page<BlobInfo> infoPage = storage.list(info.name(), options);
     StorageOptions storageOptions = storage.options();
-    return new PageImpl<Blob>(new BlobPageFetcher(storageOptions, infoPage),
-        infoPage.nextPageCursor(), new LazyBlobIterable(storageOptions, infoPage.values()));
+    return new PageImpl<>(new BlobPageFetcher(storageOptions, infoPage), infoPage.nextPageCursor(),
+        new LazyBlobIterable(storageOptions, infoPage.values()));
   }
 
   /**
