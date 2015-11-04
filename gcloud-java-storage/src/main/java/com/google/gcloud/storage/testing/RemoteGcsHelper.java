@@ -195,7 +195,7 @@ public class RemoteGcsHelper {
     @Override
     public Boolean call() throws Exception {
       while (true) {
-        for (BlobInfo info : storage.list(bucket)) {
+        for (BlobInfo info : storage.list(bucket).values()) {
           storage.delete(bucket, info.name());
         }
         try {

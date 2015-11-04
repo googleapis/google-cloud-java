@@ -21,6 +21,7 @@ import static org.junit.Assert.assertNotSame;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.PageImpl;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
@@ -54,7 +55,7 @@ public class SerializationTest {
       Collections.singletonList(BatchResponse.Result.of(true)),
       Collections.<BatchResponse.Result<BlobInfo>>emptyList(),
       Collections.<BatchResponse.Result<BlobInfo>>emptyList());
-  private static final BaseListResult<BlobInfo> LIST_RESULT = new BaseListResult<>(
+  private static final PageImpl<BlobInfo> PAGE_RESULT = new PageImpl<>(
       null, "c", Collections.singletonList(BlobInfo.builder("b", "n").build()));
   private static final Storage.BlobListOption BLOB_LIST_OPTIONS =
       Storage.BlobListOption.maxResults(100);
@@ -93,7 +94,7 @@ public class SerializationTest {
   public void testModelAndRequests() throws Exception {
     Serializable[] objects = {ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, BLOB_INFO,
         BUCKET_INFO,
-        ORIGIN, CORS, BATCH_REQUEST, BATCH_RESPONSE, LIST_RESULT, BLOB_LIST_OPTIONS,
+        ORIGIN, CORS, BATCH_REQUEST, BATCH_RESPONSE, PAGE_RESULT, BLOB_LIST_OPTIONS,
         BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS, BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS,
         BUCKET_TARGET_OPTIONS};
     for (Serializable obj : objects) {

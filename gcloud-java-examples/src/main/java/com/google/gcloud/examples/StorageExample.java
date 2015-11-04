@@ -18,6 +18,7 @@ package com.google.gcloud.examples;
 
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
+import com.google.gcloud.Page;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.Blob;
@@ -213,8 +214,12 @@ public class StorageExample {
     public void run(Storage storage, String bucketName) {
       if (bucketName == null) {
         // list buckets
-        for (BucketInfo b : storage.list()) {
-          System.out.println(b);
+        Page<BucketInfo> bucketPage = storage.list();
+        while (bucketPage != null) {
+          for (BucketInfo b : bucketPage.values()) {
+            System.out.println(b);
+          }
+          bucketPage = bucketPage.nextPage();
         }
       } else {
         // list a bucket's blobs
@@ -223,8 +228,12 @@ public class StorageExample {
           System.out.println("No such bucket");
           return;
         }
-        for (Blob b : bucket.list()) {
-          System.out.println(b.info());
+        Page<Blob> blobPage = bucket.list();
+        while (blobPage != null) {
+          for (Blob b : blobPage.values()) {
+            System.out.println(b.info());
+          }
+          blobPage = blobPage.nextPage();
         }
       }
     }

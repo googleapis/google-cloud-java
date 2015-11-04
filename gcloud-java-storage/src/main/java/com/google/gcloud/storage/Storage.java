@@ -24,6 +24,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Service;
+import com.google.gcloud.Page;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
@@ -827,14 +828,14 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  ListResult<BucketInfo> list(BucketListOption... options);
+  Page<BucketInfo> list(BucketListOption... options);
 
   /**
    * List the bucket's blobs.
    *
    * @throws StorageException upon failure
    */
-  ListResult<BlobInfo> list(String bucket, BlobListOption... options);
+  Page<BlobInfo> list(String bucket, BlobListOption... options);
 
   /**
    * Update bucket information.

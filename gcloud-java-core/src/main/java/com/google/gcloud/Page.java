@@ -14,12 +14,29 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud;
 
 /**
- * Interface for Google Cloud storage list result.
+ * Interface for Google Cloud paginated results.
+ *
+ * <p>
+ * A typical {@code Page} usage:
+ * <pre> {@code
+ * Page<T> page = ...; // get a Page<T> instance
+ * while (page != null) {
+ *   for (T value : page.values()) {
+ *     // do something with value
+ *   }
+ *   page = page.nextPage();
+ * }
+ * }</pre>
  */
-public interface ListResult<T> extends Iterable<T> {
+public interface Page<T> {
+
+  /**
+   * Returns the values contained in this page.
+   */
+  Iterable<T> values();
 
   /**
    * Returns the cursor for the nextPage or {@code null} if no more results.
@@ -27,8 +44,8 @@ public interface ListResult<T> extends Iterable<T> {
   String nextPageCursor();
 
   /**
-   * Returns the results of the nextPage or {@code null} if no more result.
+   * Returns the next page of results or {@code null} if no more result.
    */
-  ListResult<T> nextPage();
+  Page<T> nextPage();
 
 }

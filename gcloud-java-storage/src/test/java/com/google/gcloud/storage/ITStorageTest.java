@@ -81,10 +81,10 @@ public class ITStorageTest {
   @Test(timeout = 5000)
   public void testListBuckets() throws InterruptedException {
     Iterator<BucketInfo> bucketIterator =
-        storage.list(Storage.BucketListOption.prefix(BUCKET)).iterator();
+        storage.list(Storage.BucketListOption.prefix(BUCKET)).values().iterator();
     while (!bucketIterator.hasNext()) {
       Thread.sleep(500);
-      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET)).iterator();
+      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET)).values().iterator();
     }
     while (bucketIterator.hasNext()) {
       assertTrue(bucketIterator.next().name().startsWith(BUCKET));
