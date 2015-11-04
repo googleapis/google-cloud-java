@@ -73,25 +73,11 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
-  public static abstract class EntityField {
-
-    private final String selector;
-
-    public EntityField(String selector) {
-      this.selector = selector;
-    }
-
-    public String selector() {
-      return selector;
-    }
-  }
-
   enum BucketField {
     ID("id"),
     SELF_LINK("selfLink"),
     NAME("name"),
     TIME_CREATED("timeCreated"),
-    UPDATED("updated"),
     METAGENERATION("metageneration"),
     ACL("acl"),
     DEFAULT_OBJECT_ACL("defaultObjectAcl"),
@@ -114,7 +100,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     static String selector(BucketField... fields) {
-      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
+      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
       fieldStrings.add(NAME.selector());
       for (BucketField field : fields) {
         fieldStrings.add(field.selector());
@@ -146,7 +132,6 @@ public interface Storage extends Service<StorageOptions> {
     SELF_LINK("selfLink"),
     SIZE("size"),
     STORAGE_CLASS("storageClass"),
-    TIME_CREATED("timeCreated"),
     TIME_DELETED("timeDeleted"),
     UPDATED("updated");
 
