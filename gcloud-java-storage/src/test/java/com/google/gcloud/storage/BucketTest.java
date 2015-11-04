@@ -27,7 +27,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gcloud.BasePage;
+import com.google.gcloud.PageImpl;
 import com.google.gcloud.Page;
 import com.google.gcloud.storage.BatchResponse.Result;
 
@@ -117,7 +117,7 @@ public class BucketTest {
   @Test
   public void testList() throws Exception {
     StorageOptions storageOptions = createStrictMock(StorageOptions.class);
-    BasePage<BlobInfo> blobInfoPage = new BasePage<>(null, "c", BLOB_INFO_RESULTS);
+    PageImpl<BlobInfo> blobInfoPage = new PageImpl<>(null, "c", BLOB_INFO_RESULTS);
     expect(storage.list(BUCKET_INFO.name())).andReturn(blobInfoPage);
     expect(storage.options()).andReturn(storageOptions);
     expect(storageOptions.service()).andReturn(storage);

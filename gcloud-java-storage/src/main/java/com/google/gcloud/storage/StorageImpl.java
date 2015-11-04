@@ -44,7 +44,7 @@ import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
-import com.google.gcloud.BasePage;
+import com.google.gcloud.PageImpl;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
@@ -226,7 +226,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   private abstract static class BasePageFetcher<T extends Serializable>
-      implements BasePage.NextPageFetcher<T> {
+      implements PageImpl.NextPageFetcher<T> {
 
     private static final long serialVersionUID = 8236329004030295223L;
     protected final Map<StorageRpc.Option, ?> requestOptions;
@@ -304,7 +304,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                   return BucketInfo.fromPb(bucketPb);
                 }
               });
-      return new BasePage<>(new BucketPageFetcher(serviceOptions, cursor, optionsMap), cursor,
+      return new PageImpl<>(new BucketPageFetcher(serviceOptions, cursor, optionsMap), cursor,
           buckets);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
@@ -335,7 +335,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                   return BlobInfo.fromPb(storageObject);
                 }
               });
-      return new BasePage<>(new BlobPageFetcher(bucket, serviceOptions, cursor, optionsMap),
+      return new PageImpl<>(new BlobPageFetcher(bucket, serviceOptions, cursor, optionsMap),
           cursor,
           blobs);
     } catch (RetryHelperException e) {

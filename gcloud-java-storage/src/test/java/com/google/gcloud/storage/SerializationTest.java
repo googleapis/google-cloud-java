@@ -21,7 +21,7 @@ import static org.junit.Assert.assertNotSame;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
-import com.google.gcloud.BasePage;
+import com.google.gcloud.PageImpl;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
@@ -55,7 +55,7 @@ public class SerializationTest {
       Collections.singletonList(BatchResponse.Result.of(true)),
       Collections.<BatchResponse.Result<BlobInfo>>emptyList(),
       Collections.<BatchResponse.Result<BlobInfo>>emptyList());
-  private static final BasePage<BlobInfo> PAGE_RESULT = new BasePage<>(
+  private static final PageImpl<BlobInfo> PAGE_RESULT = new PageImpl<>(
       null, "c", Collections.singletonList(BlobInfo.builder("b", "n").build()));
   private static final Storage.BlobListOption BLOB_LIST_OPTIONS =
       Storage.BlobListOption.maxResults(100);

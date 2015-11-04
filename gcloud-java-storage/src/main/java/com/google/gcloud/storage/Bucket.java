@@ -22,7 +22,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterators;
-import com.google.gcloud.BasePage;
+import com.google.gcloud.PageImpl;
 import com.google.gcloud.Page;
 import com.google.gcloud.storage.Storage.BlobSourceOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
@@ -54,7 +54,7 @@ public final class Bucket {
   private final Storage storage;
   private final BucketInfo info;
 
-  private static class BlobPageFetcher implements BasePage.NextPageFetcher<Blob> {
+  private static class BlobPageFetcher implements PageImpl.NextPageFetcher<Blob> {
 
     private static final long serialVersionUID = 3221100177471323801L;
 
@@ -69,7 +69,7 @@ public final class Bucket {
     @Override
     public Page<Blob> nextPage() {
       Page<BlobInfo> nextInfoPage = infoPage.nextPage();
-      return new BasePage<Blob>(new BlobPageFetcher(options, nextInfoPage),
+      return new PageImpl<Blob>(new BlobPageFetcher(options, nextInfoPage),
           nextInfoPage.nextPageCursor(), new LazyBlobIterable(options, nextInfoPage.values()));
     }
   }
@@ -210,7 +210,7 @@ public final class Bucket {
   public Page<Blob> list(Storage.BlobListOption... options) {
     Page<BlobInfo> infoPage = storage.list(info.name(), options);
     StorageOptions storageOptions = storage.options();
-    return new BasePage<Blob>(new BlobPageFetcher(storageOptions, infoPage),
+    return new PageImpl<Blob>(new BlobPageFetcher(storageOptions, infoPage),
         infoPage.nextPageCursor(), new LazyBlobIterable(storageOptions, infoPage.values()));
   }
 
