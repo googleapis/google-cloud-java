@@ -11,6 +11,7 @@ import com.google.common.collect.Maps;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
@@ -766,7 +767,7 @@ public class PathTemplate {
 
   private static String encodeUrl(String text) {
     try {
-      return URLEncoder.encode(text, "UTF-8");
+      return URLEncoder.encode(text, StandardCharsets.UTF_8.name());
     } catch (UnsupportedEncodingException e) {
       throw new ValidationException("UTF-8 encoding is not supported on this platform");
     }
@@ -774,7 +775,7 @@ public class PathTemplate {
 
   private static String decodeUrl(String url) {
     try {
-      return URLDecoder.decode(url, "UTF-8");
+      return URLDecoder.decode(url, StandardCharsets.UTF_8.name());
     } catch (UnsupportedEncodingException e) {
       throw new ValidationException("UTF-8 encoding is not supported on this platform");
     }
