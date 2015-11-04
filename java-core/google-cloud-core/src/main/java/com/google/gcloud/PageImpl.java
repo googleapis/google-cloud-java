@@ -23,7 +23,7 @@ import java.util.Objects;
 /**
  * Base implementation for Google Cloud paginated results.
  */
-public class BasePage<T> implements Page<T>, Serializable {
+public class PageImpl<T> implements Page<T>, Serializable {
 
   private static final long serialVersionUID = 3914827379823557934L;
 
@@ -36,10 +36,10 @@ public class BasePage<T> implements Page<T>, Serializable {
   }
 
   /**
-   * Creates a {@code BasePage} object. In order for the object to be serializable the {@code
+   * Creates a {@code PageImpl} object. In order for the object to be serializable the {@code
    * results} parameter must be serializable.
    */
-  public BasePage(NextPageFetcher<T> pageFetcher, String cursor, Iterable<T> results) {
+  public PageImpl(NextPageFetcher<T> pageFetcher, String cursor, Iterable<T> results) {
     this.pageFetcher = pageFetcher;
     this.cursor = cursor;
     this.results = results;
@@ -70,10 +70,10 @@ public class BasePage<T> implements Page<T>, Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof BasePage)) {
+    if (!(obj instanceof PageImpl)) {
       return false;
     }
-    BasePage<?> other = (BasePage<?>) obj;
+    PageImpl<?> other = (PageImpl<?>) obj;
     return Objects.equals(cursor, other.cursor)
         && Objects.equals(results, other.results);
   }
