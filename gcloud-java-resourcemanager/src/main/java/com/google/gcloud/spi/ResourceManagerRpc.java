@@ -33,25 +33,9 @@ public interface ResourceManagerRpc {
     DELETE,
     GET,
     LIST,
-    UPDATE,
+    REPLACE,
     GET_IAM_POLICY,
-    SET_IAM_POLICY
-  }
-
-  public enum DeleteResult {
-    SUCCESS,
-    ALREADY_DELETED
-  }
-
-  public enum UndeleteResult {
-    SUCCESS,
-    DELETE_IN_PROGRESS,
-    GONE
-  }
-
-  public enum SetIamPolicyResult {
-    SUCCESS,
-    ETAG_NOT_MATCH
+    REPLACE_IAM_POLICY
   }
 
   class Tuple<X, Y> {
@@ -114,22 +98,22 @@ public interface ResourceManagerRpc {
 
   Project create(Project project) throws ResourceManagerException;
 
-  DeleteResult delete(String projectId) throws ResourceManagerException;
+  void delete(String projectId) throws ResourceManagerException;
 
   Project get(String projectId) throws ResourceManagerException;
 
   Tuple<String, Iterable<Project>> list(ListOptions listOptions) throws ResourceManagerException;
 
-  UndeleteResult undelete(String projectId) throws ResourceManagerException;
+  void undelete(String projectId) throws ResourceManagerException;
 
-  Project update(Project project) throws ResourceManagerException;
+  Project replace(Project project) throws ResourceManagerException;
 
   Policy getIamPolicy(String projectId) throws ResourceManagerException;
 
-  SetIamPolicyResult setIamPolicy(String projectId, Policy policy) throws ResourceManagerException;
+  boolean replaceIamPolicy(String projectId, Policy policy) throws ResourceManagerException;
 
   List<Boolean> hasPermissions(String projectId, List<Permission> permissions)
       throws ResourceManagerException;
 
-  // TODO(ajaykannan): implement "Organization" functionality when available
+  // TODO(ajaykannan): implement "Organization" functionality when available (issue #319)
 }
