@@ -26,7 +26,10 @@ import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.Page;
 import com.google.gcloud.RestorableState;
+import com.google.gcloud.storage.Storage.BlobField;
+import com.google.gcloud.storage.Storage.BucketField;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import org.junit.AfterClass;
@@ -80,15 +83,47 @@ public class ITStorageTest {
 
   @Test(timeout = 5000)
   public void testListBuckets() throws InterruptedException {
-    Iterator<BucketInfo> bucketIterator =
-        storage.list(Storage.BucketListOption.prefix(BUCKET)).values().iterator();
+    Iterator<BucketInfo> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+        Storage.BucketListOption.fields()).values().iterator();
     while (!bucketIterator.hasNext()) {
       Thread.sleep(500);
-      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET)).values().iterator();
+      bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+          Storage.BucketListOption.fields()).values().iterator();
     }
     while (bucketIterator.hasNext()) {
-      assertTrue(bucketIterator.next().name().startsWith(BUCKET));
+      BucketInfo remoteBucket = bucketIterator.next();
+      assertTrue(remoteBucket.name().startsWith(BUCKET));
+      assertNull(remoteBucket.createTime());
+      assertNull(remoteBucket.selfLink());
     }
+  }
+
+  @Test
+  public void testGetBucketSelectedFields() {
+    BucketInfo remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
+    assertEquals(BUCKET, remoteBucket.name());
+    assertNull(remoteBucket.createTime());
+    assertNotNull(remoteBucket.id());
+  }
+
+  @Test
+  public void testGetBucketAllSelectedFields() {
+    BucketInfo remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ACL,
+        BucketField.CORS, BucketField.DEFAULT_OBJECT_ACL, BucketField.ETAG, BucketField.ID,
+        BucketField.LOCATION, BucketField.METAGENERATION, BucketField.NAME, BucketField.OWNER,
+        BucketField.SELF_LINK, BucketField.STORAGE_CLASS, BucketField.TIME_CREATED,
+        BucketField.VERSIONING, BucketField.WEBSITE));
+    assertEquals(BUCKET, remoteBucket.name());
+    assertNotNull(remoteBucket.createTime());
+    assertNotNull(remoteBucket.selfLink());
+  }
+
+  @Test
+  public void testGetBucketEmptyFields() {
+    BucketInfo remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields());
+    assertEquals(BUCKET, remoteBucket.name());
+    assertNull(remoteBucket.createTime());
+    assertNull(remoteBucket.selfLink());
   }
 
   @Test
@@ -180,10 +215,32 @@ public class ITStorageTest {
         .build();
     assertNotNull(storage.create(blob));
     BlobInfo remoteBlob = storage.get(blob.blobId(), Storage.BlobGetOption.fields(
-        Storage.BlobField.METADATA));
+        BlobField.METADATA));
     assertEquals(blob.blobId(), remoteBlob.blobId());
     assertEquals(ImmutableMap.of("k", "v"), remoteBlob.metadata());
     assertNull(remoteBlob.contentType());
+    assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testGetBlobAllSelectedFields() {
+    String blobName = "test-get-all-selected-fields-blob";
+    BlobInfo blob = BlobInfo.builder(BUCKET, blobName)
+        .contentType(CONTENT_TYPE)
+        .metadata(ImmutableMap.of("k", "v"))
+        .build();
+    assertNotNull(storage.create(blob));
+    BlobInfo remoteBlob = storage.get(blob.blobId(), Storage.BlobGetOption.fields(
+        BlobField.ACL, BlobField.BUCKET, BlobField.CACHE_CONTROL, BlobField.COMPONENT_COUNT,
+        BlobField.CONTENT_DISPOSITION, BlobField.CONTENT_ENCODING, BlobField.CONTENT_LANGUAGE,
+        BlobField.CONTENT_TYPE, BlobField.CRC32C, BlobField.ETAG, BlobField.GENERATION,
+        BlobField.ID, BlobField.KIND, BlobField.MD5HASH, BlobField.MEDIA_LINK, BlobField.METADATA,
+        BlobField.METAGENERATION, BlobField.NAME, BlobField.OWNER, BlobField.SELF_LINK,
+        BlobField.SIZE, BlobField.STORAGE_CLASS, BlobField.TIME_DELETED, BlobField.UPDATED));
+    assertEquals(blob.blobId(), remoteBlob.blobId());
+    assertEquals(ImmutableMap.of("k", "v"), remoteBlob.metadata());
+    assertNotNull(remoteBlob.id());
+    assertNotNull(remoteBlob.selfLink());
     assertTrue(storage.delete(BUCKET, blobName));
   }
 
@@ -202,11 +259,11 @@ public class ITStorageTest {
         .build();
     assertNotNull(storage.create(blob1));
     assertNotNull(storage.create(blob2));
-    ListResult<BlobInfo> result = storage.list(BUCKET,
+    Page<BlobInfo> page = storage.list(BUCKET,
         Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
-        Storage.BlobListOption.fields(Storage.BlobField.METADATA));
+        Storage.BlobListOption.fields(BlobField.METADATA));
     int index = 0;
-    for (BlobInfo remoteBlob : result) {
+    for (BlobInfo remoteBlob : page.values()) {
       assertEquals(BUCKET, remoteBlob.bucket());
       assertEquals(blobNames[index++], remoteBlob.name());
       assertEquals(metadata, remoteBlob.metadata());
@@ -228,11 +285,11 @@ public class ITStorageTest {
         .build();
     assertNotNull(storage.create(blob1));
     assertNotNull(storage.create(blob2));
-    ListResult<BlobInfo> result = storage.list(BUCKET,
+    Page<BlobInfo> page = storage.list(BUCKET,
         Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
         Storage.BlobListOption.fields());
     int index = 0;
-    for (BlobInfo remoteBlob : result) {
+    for (BlobInfo remoteBlob : page.values()) {
       assertEquals(BUCKET, remoteBlob.bucket());
       assertEquals(blobNames[index++], remoteBlob.name());
       assertNull(remoteBlob.contentType());

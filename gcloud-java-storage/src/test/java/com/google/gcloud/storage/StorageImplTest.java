@@ -549,15 +549,15 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.list(EasyMock.capture(capturedOptions))).andReturn(result);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    ListResult<BucketInfo> listResult = storage.list(BUCKET_LIST_FIELDS);
+    Page<BucketInfo> page = storage.list(BUCKET_LIST_FIELDS);
     String selector = (String) capturedOptions.getValue().get(BLOB_LIST_FIELDS.rpcOption());
     assertTrue(selector.contains("items"));
     assertTrue(selector.contains("name"));
     assertTrue(selector.contains("acl"));
     assertTrue(selector.contains("location"));
     assertEquals(24, selector.length());
-    assertEquals(cursor, listResult.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(listResult, BucketInfo.class));
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), BucketInfo.class));
   }
 
   @Test
@@ -571,13 +571,13 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.list(EasyMock.capture(capturedOptions))).andReturn(result);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    ListResult<BucketInfo> listResult = storage.list(BUCKET_LIST_EMPTY_FIELDS);
+    Page<BucketInfo> page = storage.list(BUCKET_LIST_EMPTY_FIELDS);
     String selector = (String) capturedOptions.getValue().get(BLOB_LIST_FIELDS.rpcOption());
     assertTrue(selector.contains("items"));
     assertTrue(selector.contains("name"));
     assertEquals(11, selector.length());
-    assertEquals(cursor, listResult.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(listResult, BucketInfo.class));
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), BucketInfo.class));
   }
 
   @Test
@@ -634,7 +634,7 @@ public class StorageImplTest {
         .andReturn(result);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    ListResult<BlobInfo> listResult =
+    Page<BlobInfo> page =
         storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_FIELDS);
     assertEquals(BLOB_LIST_MAX_RESULT.value(),
         capturedOptions.getValue().get(BLOB_LIST_MAX_RESULT.rpcOption()));
@@ -647,8 +647,8 @@ public class StorageImplTest {
     assertTrue(selector.contains("contentType"));
     assertTrue(selector.contains("md5Hash"));
     assertEquals(38, selector.length());
-    assertEquals(cursor, listResult.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(listResult, BlobInfo.class));
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), BlobInfo.class));
   }
 
   @Test
@@ -664,7 +664,7 @@ public class StorageImplTest {
         .andReturn(result);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    ListResult<BlobInfo> listResult =
+    Page<BlobInfo> page =
         storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_EMPTY_FIELDS);
     assertEquals(BLOB_LIST_MAX_RESULT.value(),
         capturedOptions.getValue().get(BLOB_LIST_MAX_RESULT.rpcOption()));
@@ -675,8 +675,8 @@ public class StorageImplTest {
     assertTrue(selector.contains("bucket"));
     assertTrue(selector.contains("name"));
     assertEquals(18, selector.length());
-    assertEquals(cursor, listResult.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(listResult, BlobInfo.class));
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), BlobInfo.class));
   }
 
   @Test
