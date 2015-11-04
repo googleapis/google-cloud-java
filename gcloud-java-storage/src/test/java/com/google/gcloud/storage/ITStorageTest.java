@@ -108,11 +108,8 @@ public class ITStorageTest {
 
   @Test
   public void testGetBucketAllSelectedFields() {
-    BucketInfo remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ACL,
-        BucketField.CORS, BucketField.DEFAULT_OBJECT_ACL, BucketField.ETAG, BucketField.ID,
-        BucketField.LOCATION, BucketField.METAGENERATION, BucketField.NAME, BucketField.OWNER,
-        BucketField.SELF_LINK, BucketField.STORAGE_CLASS, BucketField.TIME_CREATED,
-        BucketField.VERSIONING, BucketField.WEBSITE));
+    BucketInfo remoteBucket = storage.get(BUCKET,
+        Storage.BucketGetOption.fields(BucketField.values()));
     assertEquals(BUCKET, remoteBucket.name());
     assertNotNull(remoteBucket.createTime());
     assertNotNull(remoteBucket.selfLink());
@@ -230,13 +227,8 @@ public class ITStorageTest {
         .metadata(ImmutableMap.of("k", "v"))
         .build();
     assertNotNull(storage.create(blob));
-    BlobInfo remoteBlob = storage.get(blob.blobId(), Storage.BlobGetOption.fields(
-        BlobField.ACL, BlobField.BUCKET, BlobField.CACHE_CONTROL, BlobField.COMPONENT_COUNT,
-        BlobField.CONTENT_DISPOSITION, BlobField.CONTENT_ENCODING, BlobField.CONTENT_LANGUAGE,
-        BlobField.CONTENT_TYPE, BlobField.CRC32C, BlobField.ETAG, BlobField.GENERATION,
-        BlobField.ID, BlobField.KIND, BlobField.MD5HASH, BlobField.MEDIA_LINK, BlobField.METADATA,
-        BlobField.METAGENERATION, BlobField.NAME, BlobField.OWNER, BlobField.SELF_LINK,
-        BlobField.SIZE, BlobField.STORAGE_CLASS, BlobField.TIME_DELETED, BlobField.UPDATED));
+    BlobInfo remoteBlob = storage.get(blob.blobId(),
+        Storage.BlobGetOption.fields(BlobField.values()));
     assertEquals(blob.blobId(), remoteBlob.blobId());
     assertEquals(ImmutableMap.of("k", "v"), remoteBlob.metadata());
     assertNotNull(remoteBlob.id());
