@@ -18,8 +18,25 @@ package com.google.gcloud;
 
 /**
  * Interface for Google Cloud paginated results.
+ *
+ * <p>
+ * A typical {@code Page} usage:
+ * <pre> {@code
+ * Page<T> page = ...; // get a Page<T> instance
+ * while (page != null) {
+ *   for (T value : page.values()) {
+ *     // do something with value
+ *   }
+ *   page = page.nextPage();
+ * }
+ * }</pre>
  */
-public interface Page<T> extends Iterable<T> {
+public interface Page<T> {
+
+  /**
+   * Returns the values contained in this page.
+   */
+  Iterable<T> values();
 
   /**
    * Returns the cursor for the nextPage or {@code null} if no more results.

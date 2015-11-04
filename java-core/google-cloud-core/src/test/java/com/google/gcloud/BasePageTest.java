@@ -19,7 +19,6 @@ package com.google.gcloud;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gcloud.BasePage;
 
 import org.junit.Test;
 
@@ -42,7 +41,6 @@ public class BasePageTest {
     BasePage<String> result = new BasePage<>(fetcher, "c", values);
     assertEquals(nextResult, result.nextPage());
     assertEquals("c", result.nextPageCursor());
-    assertEquals(values, ImmutableList.copyOf(result.iterator()));
-
+    assertEquals(values, ImmutableList.copyOf(result.values().iterator()));
   }
 }
