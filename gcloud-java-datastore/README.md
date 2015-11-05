@@ -15,13 +15,21 @@ Java idiomatic client for [Google Cloud Datastore] (https://cloud.google.com/dat
 
 Quickstart
 ----------
-Add this to your pom.xml file
+If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-datastore</artifactId>
   <version>0.0.10</version>
 </dependency>
+```
+If you are using Gradle, add this to your dependencies
+```Groovy
+compile 'com.google.gcloud:gcloud-java-datastore:jar:0.0.10'
+```
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "com.google.gcloud" % "gcloud-java-datastore" % "0.0.10"
 ```
 
 Example Application
