@@ -16,8 +16,10 @@
 
 package com.google.gcloud.storage;
 
+import com.google.gcloud.BaseServiceException;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
+import com.google.gcloud.RetryHelper.RetryInterruptedException;
 
 /**
  * Storage service exception.
@@ -25,29 +27,13 @@ import com.google.gcloud.RetryHelper.RetryHelperException;
  * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/status-codes">Google Cloud
  *      Storage error codes</a>
  */
-public class StorageException extends RuntimeException {
+public class StorageException extends BaseServiceException {
 
-  private static final long serialVersionUID = -3748432005065428084L;
+  private static final long serialVersionUID = 8088235105953640145L;
   private static final int UNKNOWN_CODE = -1;
 
-  private final int code;
-  private final boolean retryable;
-
   public StorageException(int code, String message, boolean retryable) {
-    super(message);
-    this.code = code;
-    this.retryable = retryable;
-  }
-
-  /**
-   * Returns the code associated with this exception.
-   */
-  public int code() {
-    return code;
-  }
-
-  public boolean retryable() {
-    return retryable;
+    super(code, message, retryable);
   }
 
   /**

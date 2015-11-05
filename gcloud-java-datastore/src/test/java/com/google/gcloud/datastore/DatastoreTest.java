@@ -197,7 +197,7 @@ public class DatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals(DatastoreException.Code.ABORTED, expected.code());
+      assertEquals(DatastoreException.ErrorInfo.ABORTED, expected.errorInfo());
     }
   }
 
@@ -225,7 +225,7 @@ public class DatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals(DatastoreException.Code.ABORTED, expected.code());
+      assertEquals(DatastoreException.ErrorInfo.ABORTED, expected.errorInfo());
     }
   }
 
