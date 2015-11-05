@@ -19,9 +19,11 @@ package com.google.gcloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Service;
 import com.google.gcloud.Page;
@@ -33,6 +35,7 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -67,6 +70,89 @@ public interface Storage extends Service<StorageOptions> {
 
     String entry() {
       return entry;
+    }
+  }
+
+  enum BucketField {
+    ID("id"),
+    SELF_LINK("selfLink"),
+    NAME("name"),
+    TIME_CREATED("timeCreated"),
+    METAGENERATION("metageneration"),
+    ACL("acl"),
+    DEFAULT_OBJECT_ACL("defaultObjectAcl"),
+    OWNER("owner"),
+    LOCATION("location"),
+    WEBSITE("website"),
+    VERSIONING("versioning"),
+    CORS("cors"),
+    STORAGE_CLASS("storageClass"),
+    ETAG("etag");
+
+    private final String selector;
+
+    BucketField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(BucketField... fields) {
+      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
+      fieldStrings.add(NAME.selector());
+      for (BucketField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  enum BlobField {
+    ACL("acl"),
+    BUCKET("bucket"),
+    CACHE_CONTROL("cacheControl"),
+    COMPONENT_COUNT("componentCount"),
+    CONTENT_DISPOSITION("contentDisposition"),
+    CONTENT_ENCODING("contentEncoding"),
+    CONTENT_LANGUAGE("contentLanguage"),
+    CONTENT_TYPE("contentType"),
+    CRC32C("crc32c"),
+    ETAG("etag"),
+    GENERATION("generation"),
+    ID("id"),
+    KIND("kind"),
+    MD5HASH("md5Hash"),
+    MEDIA_LINK("mediaLink"),
+    METADATA("metadata"),
+    METAGENERATION("metageneration"),
+    NAME("name"),
+    OWNER("owner"),
+    SELF_LINK("selfLink"),
+    SIZE("size"),
+    STORAGE_CLASS("storageClass"),
+    TIME_DELETED("timeDeleted"),
+    UPDATED("updated");
+
+    private final String selector;
+
+    BlobField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(BlobField... fields) {
+      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
+      fieldStrings.add(BUCKET.selector());
+      fieldStrings.add(NAME.selector());
+      for (BlobField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -113,6 +199,37 @@ public interface Storage extends Service<StorageOptions> {
 
     public static BucketSourceOption metagenerationNotMatch(long metageneration) {
       return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+  }
+
+  class BucketGetOption extends Option {
+
+    private static final long serialVersionUID = 1901844869484087395L;
+
+    private BucketGetOption(StorageRpc.Option rpcOption, long metageneration) {
+      super(rpcOption, metageneration);
+    }
+
+    private BucketGetOption(StorageRpc.Option rpcOption, String value) {
+      super(rpcOption, value);
+    }
+
+    public static BucketGetOption metagenerationMatch(long metageneration) {
+      return new BucketGetOption(StorageRpc.Option.IF_METAGENERATION_MATCH, metageneration);
+    }
+
+    public static BucketGetOption metagenerationNotMatch(long metageneration) {
+      return new BucketGetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option to specify the bucket's fields to be returned by the RPC call. If this
+     * option is not provided all bucket's fields are returned. {@code BucketGetOption.fields}) can
+     * be used to specify only the fields of interest. Bucket name is always returned, even if not
+     * specified.
+     */
+    public static BucketGetOption fields(BucketField... fields) {
+      return new BucketGetOption(StorageRpc.Option.FIELDS, BucketField.selector(fields));
     }
   }
 
@@ -277,6 +394,45 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
+  class BlobGetOption extends Option {
+
+    private static final long serialVersionUID = 803817709703661480L;
+
+    private BlobGetOption(StorageRpc.Option rpcOption, long value) {
+      super(rpcOption, value);
+    }
+
+    private BlobGetOption(StorageRpc.Option rpcOption, String value) {
+      super(rpcOption, value);
+    }
+
+    public static BlobGetOption generationMatch(long generation) {
+      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
+    }
+
+    public static BlobGetOption generationNotMatch(long generation) {
+      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, generation);
+    }
+
+    public static BlobGetOption metagenerationMatch(long metageneration) {
+      return new BlobGetOption(StorageRpc.Option.IF_METAGENERATION_MATCH, metageneration);
+    }
+
+    public static BlobGetOption metagenerationNotMatch(long metageneration) {
+      return new BlobGetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option to specify the blob's fields to be returned by the RPC call. If this option
+     * is not provided all blob's fields are returned. {@code BlobGetOption.fields}) can be used to
+     * specify only the fields of interest. Blob name and bucket are always returned, even if not
+     * specified.
+     */
+    public static BlobGetOption fields(BlobField... fields) {
+      return new BlobGetOption(StorageRpc.Option.FIELDS, BlobField.selector(fields));
+    }
+  }
+
   class BucketListOption extends Option {
 
     private static final long serialVersionUID = 8754017079673290353L;
@@ -295,6 +451,18 @@ public interface Storage extends Service<StorageOptions> {
 
     public static BucketListOption prefix(String prefix) {
       return new BucketListOption(StorageRpc.Option.PREFIX, prefix);
+    }
+
+    /**
+     * Returns an option to specify the bucket's fields to be returned by the RPC call. If this
+     * option is not provided all bucket's fields are returned. {@code BucketListOption.fields}) can
+     * be used to specify only the fields of interest. Bucket name is always returned, even if not
+     * specified.
+     */
+    public static BucketListOption fields(BucketField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(BucketField.selector(fields)).append(")");
+      return new BucketListOption(StorageRpc.Option.FIELDS, builder.toString());
     }
   }
 
@@ -320,6 +488,18 @@ public interface Storage extends Service<StorageOptions> {
 
     public static BlobListOption recursive(boolean recursive) {
       return new BlobListOption(StorageRpc.Option.DELIMITER, recursive);
+    }
+
+    /**
+     * Returns an option to specify the blob's fields to be returned by the RPC call. If this option
+     * is not provided all blob's fields are returned. {@code BlobListOption.fields}) can be used to
+     * specify only the fields of interest. Blob name and bucket are always returned, even if not
+     * specified.
+     */
+    public static BlobListOption fields(BlobField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(BlobField.selector(fields)).append(")");
+      return new BlobListOption(StorageRpc.Option.FIELDS, builder.toString());
     }
   }
 
@@ -800,21 +980,21 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  BucketInfo get(String bucket, BucketSourceOption... options);
+  BucketInfo get(String bucket, BucketGetOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  BlobInfo get(String bucket, String blob, BlobSourceOption... options);
+  BlobInfo get(String bucket, String blob, BlobGetOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  BlobInfo get(BlobId blob, BlobSourceOption... options);
+  BlobInfo get(BlobId blob, BlobGetOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
