@@ -17,7 +17,7 @@
 package com.google.gcloud;
 
 /**
- * Base service exception.
+ * Base class for all service exceptions.
  */
 public class BaseServiceException extends RuntimeException {
 
@@ -45,6 +45,9 @@ public class BaseServiceException extends RuntimeException {
     return code;
   }
 
+  /**
+   * Returns {@code true} when it is safe to retry the operation that caused this exception.
+   */
   public boolean retryable() {
     return retryable;
   }
