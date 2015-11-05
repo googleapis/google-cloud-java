@@ -19,7 +19,7 @@ package com.google.gcloud.datastore;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-import com.google.gcloud.datastore.DatastoreException.Code;
+import com.google.gcloud.datastore.DatastoreException.DatastoreError;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 
@@ -28,16 +28,16 @@ import org.junit.Test;
 public class DatastoreExceptionTest {
 
   @Test
-  public void testCode() throws Exception {
+  public void testDatastoreError() throws Exception {
     for (Reason reason : Reason.values()) {
-      Code code = Code.valueOf(reason.name());
-      assertEquals(reason.retryable(), code.retryable());
-      assertEquals(reason.description(), code.description());
-      assertEquals(reason.httpStatus(), code.httpStatus());
+      DatastoreError error = DatastoreError.valueOf(reason.name());
+      assertEquals(reason.retryable(), error.retryable());
+      assertEquals(reason.description(), error.description());
+      assertEquals(reason.httpStatus(), error.httpStatus());
     }
 
-    DatastoreException exception = new DatastoreException(Code.ABORTED, "bla");
-    assertEquals(Code.ABORTED, exception.code());
+    DatastoreException exception = new DatastoreException(DatastoreError.ABORTED, "bla");
+    assertEquals(DatastoreError.ABORTED, exception.datastoreError());
   }
 
   @Test
@@ -47,7 +47,7 @@ public class DatastoreExceptionTest {
         DatastoreException.translateAndThrow(new DatastoreRpcException(reason));
         fail("Exception expected");
       } catch (DatastoreException ex) {
-        assertEquals(reason.name(), ex.code().name());
+        assertEquals(reason.name(), ex.datastoreError().name());
       }
     }
   }
@@ -58,7 +58,7 @@ public class DatastoreExceptionTest {
       DatastoreException.throwInvalidRequest("message %s %d", "a", 1);
       fail("Exception expected");
     } catch (DatastoreException ex) {
-      assertEquals(Code.FAILED_PRECONDITION, ex.code());
+      assertEquals(DatastoreError.FAILED_PRECONDITION, ex.datastoreError());
       assertEquals("message a 1", ex.getMessage());
     }
   }
