@@ -14,6 +14,8 @@ if [ "${RELEASED_VERSION##*-}" != "SNAPSHOT" ]; then
     for item in ${module_folders[*]}
     do
         sed -ri "s/<version>[0-9]+\.[0-9]+\.[0-9]+<\/version>/<version>${RELEASED_VERSION}<\/version>/g" ${item}/README.md
+        sed -ri "s/:[0-9]+\.[0-9]+\.[0-9]+'/:${RELEASED_VERSION}'/g" ${item}/README.md
+        sed -ri "s/\"[0-9]+\.[0-9]+\.[0-9]+\"/\"${RELEASED_VERSION}\"/g" ${item}/README.md
     done
     
     git add README.md */README.md

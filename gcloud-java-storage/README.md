@@ -15,13 +15,21 @@ Java idiomatic client for [Google Cloud Storage] (https://cloud.google.com/stora
 
 Quickstart
 ----------
-Add this to your pom.xml file
+If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-storage</artifactId>
   <version>0.0.10</version>
 </dependency>
+```
+If you are using Gradle, add this to your dependencies
+```Groovy
+compile 'com.google.gcloud:gcloud-java-storage:jar:0.0.10'
+```
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "com.google.gcloud" % "gcloud-java-storage" % "0.0.10"
 ```
 
 Example Application
