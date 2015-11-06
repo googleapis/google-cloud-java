@@ -44,8 +44,18 @@ There are multiple ways to authenticate to use Google Cloud services.
 
 1. When using `gcloud-java` libraries from within Compute/App Engine, no additional authentication steps are necessary.
 2. When using `gcloud-java` libraries elsewhere, there are two options:
-  * [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).  Supply a path to the downloaded JSON credentials file when building the options supplied to datastore/storage constructor.
+  * [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).  After downloading that key, you must do one of the following:
+    * Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key.  For example, `export GOOGLE_APPLICATION_CREDENTIALS=/path/to/my/key.json`
+    * Supply the downloaded JSON credentials file when building the options supplied to datastore/storage constructor.  For example, `StorageOptions.builder().authCredentials(AuthCredentials.createForJson(new FileInputStream("/path/to/my/key.json")).build().service()` returns a `Storage` object that has the necessary permissions.
   * If running locally for development/testing, you can use use [Google Cloud SDK](https://cloud.google.com/sdk/?hl=en).  To use the SDK authentication, [download the SDK](https://cloud.google.com/sdk/?hl=en) if you haven't already.  Then login using the SDK (`gcloud auth login` in command line), and set your current project using `gcloud config set project PROJECT_ID`.
+
+`gcloud-java` looks for credentials in the following order, stopping once it finds credentials:
+
+1. Credentials supplied to the `DatastoreOptions`/`ServiceOptions` builder
+2. App Engine credentials
+3. Key file pointed to by the GOOGLE_APPLICATION_CREDENTIALS environment variable
+4. Google SDK credentials
+5. Compute Engine credentials
 
 Google Cloud Datastore
 ----------------------
