@@ -37,8 +37,8 @@ Example Applications
 - [`StorageExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
   - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
 
-Specifying a Project
---------------------
+Specifying a Project ID
+-----------------------
 
 Most `gcloud-java` libraries require a project ID.  There are multiple ways to specify this project ID.
 
@@ -49,11 +49,7 @@ Most `gcloud-java` libraries require a project ID.  There are multiple ways to s
   ```java
   Datastore datastore = DatastoreOptions.builder().projectId("PROJECT_ID").build().service(); 
   ```
-  * Specify the environment variable `GCLOUD_PROJECT`.  For example, type the following into command line:
-
-  ```bash
-  export GCLOUD_PROJECT=PROJECT_ID
-  ```
+  * Specify the environment variable `GCLOUD_PROJECT` to be your desired project ID.
   * Set the project ID using the [Google Cloud SDK](https://cloud.google.com/sdk/?hl=en).  To use the SDK, [download the SDK](https://cloud.google.com/sdk/?hl=en) if you haven't already, and set the project ID from the command line.  For example:
 
   ```
@@ -62,10 +58,11 @@ Most `gcloud-java` libraries require a project ID.  There are multiple ways to s
 
 `gcloud-java` determines the project ID from the following sources in the listed order, stopping once it finds a value:
 
-1. Project ID supplied when building the service options.
-2. Project ID specified by the environment variable `GCLOUD_PROJECT`.
-3. Project ID used by App Engine.
-4. Project ID specified in the Google Cloud SDK.
+1. Project ID supplied when building the service options
+2. Project ID specified by the environment variable `GCLOUD_PROJECT`
+3. App Engine project ID
+4. Compute Engine project ID
+5. Google Cloud SDK project ID
 
 Authentication
 --------------
@@ -86,7 +83,7 @@ There are multiple ways to authenticate to use Google Cloud services.
       .build()
       .service();
     ```
-  * If running locally for development/testing, you can use use Google Cloud SDK.  Download the SDK if you haven't already, then login using the SDK (`gcloud auth login` in command line).  Be sure your current project is set correctly by running `gcloud config set project PROJECT_ID`.
+  * If running locally for development/testing, you can use use Google Cloud SDK.  Download the SDK if you haven't already, then login using the SDK (`gcloud auth login` in command line).  Be sure to set your project ID as described above.
 
 `gcloud-java` looks for credentials in the following order, stopping once it finds credentials:
 
