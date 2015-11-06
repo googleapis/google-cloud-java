@@ -30,6 +30,7 @@ import com.google.gcloud.spi.ServiceRpcFactory;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -387,8 +388,18 @@ public abstract class ServiceOptions<
     } else {
       configDir = new File(System.getProperty("user.home"), ".config/gcloud");
     }
-    try (BufferedReader reader =
-        new BufferedReader(new FileReader(new File(configDir, "properties")))) {
+    FileReader fileReader;
+    try {
+      fileReader = new FileReader(new File(configDir, "configurations/config_default"));
+    } catch (FileNotFoundException newConfigFileNotFoundEx) {
+      try {
+        fileReader = new FileReader(new File(configDir, "properties"));
+      } catch (FileNotFoundException oldConfigFileNotFoundEx) {
+        // return null if we can't find config file
+        return null;
+      }
+    }
+    try (BufferedReader reader = new BufferedReader(fileReader)) {
       String line;
       String section = null;
       Pattern projectPattern = Pattern.compile("^project\\s*=\\s*(.*)$");
