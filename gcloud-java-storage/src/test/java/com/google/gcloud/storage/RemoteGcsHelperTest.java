@@ -33,6 +33,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -89,6 +90,11 @@ public class RemoteGcsHelperTest {
     @Override
     public Iterable<BlobInfo> values() {
       return BLOB_LIST;
+    }
+
+    @Override
+    public Iterator<BlobInfo> iterateAll() {
+      return BLOB_LIST.iterator();
     }
   };
   private static String keyPath = "/does/not/exist/key." + UUID.randomUUID().toString() + ".json";

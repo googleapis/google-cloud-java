@@ -53,6 +53,7 @@ import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -214,12 +215,9 @@ public class StorageExample {
     public void run(Storage storage, String bucketName) {
       if (bucketName == null) {
         // list buckets
-        Page<BucketInfo> bucketPage = storage.list();
-        while (bucketPage != null) {
-          for (BucketInfo b : bucketPage.values()) {
-            System.out.println(b);
-          }
-          bucketPage = bucketPage.nextPage();
+        Iterator<BucketInfo> bucketInfoIterator = storage.list().iterateAll();
+        while (bucketInfoIterator.hasNext()) {
+          System.out.println(bucketInfoIterator.next());
         }
       } else {
         // list a bucket's blobs
@@ -228,12 +226,9 @@ public class StorageExample {
           System.out.println("No such bucket");
           return;
         }
-        Page<Blob> blobPage = bucket.list();
-        while (blobPage != null) {
-          for (Blob b : blobPage.values()) {
-            System.out.println(b.info());
-          }
-          blobPage = blobPage.nextPage();
+        Iterator<Blob> blobIterator = bucket.list().iterateAll();
+        while (blobIterator.hasNext()) {
+          System.out.println(blobIterator.next().info());
         }
       }
     }
