@@ -76,7 +76,6 @@ public class SerializationTest {
     StorageOptions options =
         StorageOptions.builder()
             .projectId("p1")
-            .authCredentials(AuthCredentials.createApplicationDefaults())
             .build();
     StorageOptions serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);

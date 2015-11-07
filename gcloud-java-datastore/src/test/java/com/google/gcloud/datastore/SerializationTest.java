@@ -135,7 +135,6 @@ public class SerializationTest {
   public void testServiceOptions() throws Exception {
     DatastoreOptions options =
         DatastoreOptions.builder()
-            .authCredentials(AuthCredentials.createApplicationDefaults())
             .normalizeDataset(false)
             .projectId("ds1")
             .build();
