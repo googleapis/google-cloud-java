@@ -50,18 +50,14 @@ public class PageImpl<T> implements Page<T>, Serializable {
 
     @Override
     protected T computeNext() {
-      if (currentPageIterator.hasNext()) {
-        return currentPageIterator.next();
-      }
-      Page<T> nextPage = currentPage.nextPage();
-      if (nextPage != null) {
-        currentPage = nextPage;
-        currentPageIterator = currentPage.values().iterator();
-        if (currentPageIterator.hasNext()) {
-          return currentPageIterator.next();
+      while (!currentPageIterator.hasNext()) {
+        currentPage = currentPage.nextPage();
+        if (currentPage == null) {
+          return endOfData();
         }
+        currentPageIterator = currentPage.values().iterator();
       }
-      return endOfData();
+      return currentPageIterator.next();
     }
   }
 
