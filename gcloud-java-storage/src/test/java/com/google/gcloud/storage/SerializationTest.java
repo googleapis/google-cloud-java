@@ -73,19 +73,21 @@ public class SerializationTest {
 
   @Test
   public void testServiceOptions() throws Exception {
-    StorageOptions options = StorageOptions.builder()
-        .projectId("p1")
-        .authCredentials(AuthCredentials.createForAppEngine())
-        .build();
+    StorageOptions options =
+        StorageOptions.builder()
+            .projectId("p1")
+            .authCredentials(AuthCredentials.createApplicationDefaults())
+            .build();
     StorageOptions serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);
 
-    options = options.toBuilder()
-        .projectId("p2")
-        .retryParams(RetryParams.getDefaultInstance())
-        .authCredentials(AuthCredentials.noCredentials())
-        .pathDelimiter(":")
-        .build();
+    options =
+        options.toBuilder()
+            .projectId("p2")
+            .retryParams(RetryParams.getDefaultInstance())
+            .authCredentials(AuthCredentials.noCredentials())
+            .pathDelimiter(":")
+            .build();
     serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);
   }
