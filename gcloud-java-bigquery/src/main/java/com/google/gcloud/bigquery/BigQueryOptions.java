@@ -18,68 +18,68 @@ package com.google.gcloud.bigquery;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.spi.DefaultBigqueryRpc;
-import com.google.gcloud.spi.BigqueryRpc;
-import com.google.gcloud.spi.BigqueryRpcFactory;
+import com.google.gcloud.spi.DefaultBigQueryRpc;
+import com.google.gcloud.spi.BigQueryRpc;
+import com.google.gcloud.spi.BigQueryRpcFactory;
 
 import java.util.Set;
 
-public class BigqueryOptions extends ServiceOptions<Bigquery, BigqueryRpc, BigqueryOptions> {
+public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQueryOptions> {
 
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
   private static final long serialVersionUID = -215981591481708043L;
 
-  public static class DefaultBigqueryFactory implements BigqueryFactory {
+  public static class DefaultBigqueryFactory implements BigQueryFactory {
 
-    private static final BigqueryFactory INSTANCE = new DefaultBigqueryFactory();
+    private static final BigQueryFactory INSTANCE = new DefaultBigqueryFactory();
 
     @Override
-    public Bigquery create(BigqueryOptions options) {
+    public BigQuery create(BigQueryOptions options) {
       // TODO(mziccard) return new BigqueryImpl(options);
       return null;
     }
   }
 
-  public static class DefaultBigqueryRpcFactory implements BigqueryRpcFactory {
+  public static class DefaultBigQueryRpcFactory implements BigQueryRpcFactory {
 
-    private static final BigqueryRpcFactory INSTANCE = new DefaultBigqueryRpcFactory();
+    private static final BigQueryRpcFactory INSTANCE = new DefaultBigQueryRpcFactory();
 
     @Override
-    public BigqueryRpc create(BigqueryOptions options) {
+    public BigQueryRpc create(BigQueryOptions options) {
       // TODO(mziccard) return new DefaultBigqueryRpc(options);
       return null;
     }
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<Bigquery, BigqueryRpc, BigqueryOptions, Builder> {
+      ServiceOptions.Builder<BigQuery, BigQueryRpc, BigQueryOptions, Builder> {
 
     private Builder() {
     }
 
-    private Builder(BigqueryOptions options) {
+    private Builder(BigQueryOptions options) {
       super(options);
     }
 
     @Override
-    public BigqueryOptions build() {
-      return new BigqueryOptions(this);
+    public BigQueryOptions build() {
+      return new BigQueryOptions(this);
     }
   }
 
-  private BigqueryOptions(Builder builder) {
-    super(BigqueryFactory.class, BigqueryRpcFactory.class, builder);
+  private BigQueryOptions(Builder builder) {
+    super(BigQueryFactory.class, BigQueryRpcFactory.class, builder);
   }
 
   @Override
-  protected BigqueryFactory defaultServiceFactory() {
+  protected BigQueryFactory defaultServiceFactory() {
     return DefaultBigqueryFactory.INSTANCE;
   }
 
   @Override
-  protected BigqueryRpcFactory defaultRpcFactory() {
-    return DefaultBigqueryRpcFactory.INSTANCE;
+  protected BigQueryRpcFactory defaultRpcFactory() {
+    return DefaultBigQueryRpcFactory.INSTANCE;
   }
 
   @Override
@@ -99,10 +99,10 @@ public class BigqueryOptions extends ServiceOptions<Bigquery, BigqueryRpc, Bigqu
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof BigqueryOptions)) {
+    if (!(obj instanceof BigQueryOptions)) {
       return false;
     }
-    BigqueryOptions other = (BigqueryOptions) obj;
+    BigQueryOptions other = (BigQueryOptions) obj;
     return baseEquals(other);
   }
 

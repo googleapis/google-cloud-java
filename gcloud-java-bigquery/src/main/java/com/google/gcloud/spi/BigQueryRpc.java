@@ -17,7 +17,6 @@
 package com.google.gcloud.spi;
 
 import com.google.api.services.bigquery.model.Dataset;
-import com.google.api.services.bigquery.model.DatasetReference;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.JobReference;
@@ -28,11 +27,11 @@ import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.api.services.bigquery.model.TableRow;
-import com.google.gcloud.bigquery.BigqueryException;
+import com.google.gcloud.bigquery.BigQueryException;
 
 import java.util.Map;
 
-public interface BigqueryRpc {
+public interface BigQueryRpc {
 
   // These options are part of the Google Cloud BigQuery query parameters
   enum Option {
@@ -46,7 +45,7 @@ public interface BigqueryRpc {
     PAGE_TOKEN("pageToken"),
     START_INDEX("startIndex"),
     STATE_FILTER("stateFilter"),
-    TIMEOUT("timeOut");
+    TIMEOUT("timeoutMs");
 
     private final String value;
 
@@ -99,44 +98,44 @@ public interface BigqueryRpc {
     }
   }
 
-  Dataset getDataset(String datasetId, Map<Option, ?> options) throws BigqueryException;
+  Dataset getDataset(String datasetId, Map<Option, ?> options) throws BigQueryException;
 
-  Tuple<String, Iterable<Dataset>> listDatasets(Map<Option, ?> options) throws BigqueryException;
+  Tuple<String, Iterable<Dataset>> listDatasets(Map<Option, ?> options) throws BigQueryException;
 
-  Dataset create(Dataset dataset, Map<Option, ?> options) throws BigqueryException;
+  Dataset create(Dataset dataset, Map<Option, ?> options) throws BigQueryException;
 
-  boolean deleteDataset(String datasetId, Map<Option, ?> options) throws BigqueryException;
+  boolean deleteDataset(String datasetId, Map<Option, ?> options) throws BigQueryException;
 
-  Dataset patch(Dataset dataset, Map<Option, ?> options) throws BigqueryException;
+  Dataset patch(Dataset dataset, Map<Option, ?> options) throws BigQueryException;
 
-  Table getTable(String datasetId, String tableId, Map<Option, ?> options) throws BigqueryException;
+  Table getTable(String datasetId, String tableId, Map<Option, ?> options) throws BigQueryException;
 
   Tuple<String, Iterable<Table>> listTables(String dataset, Map<Option, ?> options)
-      throws BigqueryException;
+      throws BigQueryException;
 
-  Table create(String dataset, Table table, Map<Option, ?> options) throws BigqueryException;
+  Table create(Table table, Map<Option, ?> options) throws BigQueryException;
 
   boolean deleteTable(String datasetId, String tableId, Map<Option, ?> options)
-      throws BigqueryException;
+      throws BigQueryException;
 
-  Table patch(Table table, Map<Option, ?> options) throws BigqueryException;
+  Table patch(Table table, Map<Option, ?> options) throws BigQueryException;
 
   TableDataInsertAllResponse insertAll(TableReference table, TableDataInsertAllRequest request,
-      Map<Option, ?> options) throws BigqueryException;
+      Map<Option, ?> options) throws BigQueryException;
 
   Tuple<String, Iterable<TableRow>> listTableData(String datasetId, String tableId,
-      Map<Option, ?> options) throws BigqueryException;
+      Map<Option, ?> options) throws BigQueryException;
 
-  Job getJob(String jobId, Map<Option, ?> options) throws BigqueryException;
+  Job getJob(String jobId, Map<Option, ?> options) throws BigQueryException;
 
-  Tuple<String, Iterable<Job>> listJobs(Map<Option, ?> options) throws BigqueryException;
+  Tuple<String, Iterable<Job>> listJobs(Map<Option, ?> options) throws BigQueryException;
 
-  Job create(Job job, Map<Option, ?> options) throws BigqueryException;
+  Job create(Job job, Map<Option, ?> options) throws BigQueryException;
 
-  boolean cancel(String jobId, Map<Option, ?> options) throws BigqueryException;
+  boolean cancel(String jobId, Map<Option, ?> options) throws BigQueryException;
 
   GetQueryResultsResponse getQueryResults(JobReference job, Map<Option, ?> options)
-      throws BigqueryException;
+      throws BigQueryException;
 
-  QueryResponse query(QueryRequest request, Map<Option, ?> options) throws BigqueryException;
+  QueryResponse query(QueryRequest request, Map<Option, ?> options) throws BigQueryException;
 }

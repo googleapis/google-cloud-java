@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.bigquery;
+package com.google.gcloud.spi;
 
-
-import com.google.gcloud.ServiceFactory;
+import com.google.gcloud.bigquery.BigQueryOptions;
 
 /**
- * An interface for BigQuery factories.
+ * An interface for BigQuery RPC factory.
+ * Implementation will be loaded via {@link java.util.ServiceLoader}.
  */
-public interface BigqueryFactory extends ServiceFactory<Bigquery, BigqueryOptions> {
+public interface BigQueryRpcFactory extends ServiceRpcFactory<BigQueryRpc, BigQueryOptions> {
 }

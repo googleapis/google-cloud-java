@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.bigquery;
 
-import com.google.gcloud.bigquery.BigqueryOptions;
+import com.google.gcloud.Service;
 
 /**
- * An interface for BigQuery RPC factory.
- * Implementation will be loaded via {@link java.util.ServiceLoader}.
+ * An interface for Google Cloud BigQuery.
+ *
+ * @see <a href="https://cloud.google.com/bigquery/what-is-bigquery">Google Cloud BigQuery</a>
  */
-public interface BigqueryRpcFactory extends ServiceRpcFactory<BigqueryRpc, BigqueryOptions> {
+public interface BigQuery extends Service<BigQueryOptions> {
+
+  // TODO(mziccard) add missing methods
 }

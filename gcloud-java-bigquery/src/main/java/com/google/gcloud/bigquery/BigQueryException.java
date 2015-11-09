@@ -26,29 +26,29 @@ import com.google.gcloud.RetryHelper.RetryInterruptedException;
  * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Google Cloud
  *      BigQuery error codes</a>
  */
-public class BigqueryException extends BaseServiceException {
+public class BigQueryException extends BaseServiceException {
 
   private static final long serialVersionUID = -5504832700512784654L;
   public static final int UNKNOWN_CODE = -1;
 
-  public BigqueryException(int code, String message, boolean retryable) {
+  public BigQueryException(int code, String message, boolean retryable) {
     super(code, message, retryable);
   }
 
   /**
-   * Translate RetryHelperException to the BigqueryException that caused the error. This method will
+   * Translate RetryHelperException to the BigQueryException that caused the error. This method will
    * always throw an exception.
    *
-   * @throws BigqueryException when {@code ex} was caused by a {@code BigqueryException}
+   * @throws BigQueryException when {@code ex} was caused by a {@code BigQueryException}
    * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
-  static BigqueryException translateAndThrow(RetryHelperException ex) {
-    if (ex.getCause() instanceof BigqueryException) {
-      throw (BigqueryException) ex.getCause();
+  static BigQueryException translateAndThrow(RetryHelperException ex) {
+    if (ex.getCause() instanceof BigQueryException) {
+      throw (BigQueryException) ex.getCause();
     }
     if (ex instanceof RetryInterruptedException) {
       RetryInterruptedException.propagate();
     }
-    throw new BigqueryException(UNKNOWN_CODE, ex.getMessage(), false);
+    throw new BigQueryException(UNKNOWN_CODE, ex.getMessage(), false);
   }
 }

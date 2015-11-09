@@ -16,14 +16,11 @@
 
 package com.google.gcloud.bigquery;
 
-import com.google.gcloud.Service;
+
+import com.google.gcloud.ServiceFactory;
 
 /**
- * An interface for Google Cloud BigQuery.
- *
- * @see <a href="https://cloud.google.com/bigquery/what-is-bigquery">Google Cloud BigQuery</a>
+ * An interface for BigQuery factories.
  */
-public interface Bigquery extends Service<BigqueryOptions> {
-
-  // TODO(mziccard) add missing methods
+public interface BigQueryFactory extends ServiceFactory<BigQuery, BigQueryOptions> {
 }
