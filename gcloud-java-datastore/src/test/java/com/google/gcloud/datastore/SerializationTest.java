@@ -133,21 +133,19 @@ public class SerializationTest {
 
   @Test
   public void testServiceOptions() throws Exception {
-    DatastoreOptions options =
-        DatastoreOptions.builder()
-            .normalizeDataset(false)
-            .projectId("ds1")
-            .build();
+    DatastoreOptions options = DatastoreOptions.builder()
+        .normalizeDataset(false)
+        .projectId("ds1")
+        .build();
     DatastoreOptions serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);
 
-    options =
-        options.toBuilder()
-            .namespace("ns1")
-            .retryParams(RetryParams.getDefaultInstance())
-            .authCredentials(AuthCredentials.noCredentials())
-            .force(true)
-            .build();
+    options = options.toBuilder()
+        .namespace("ns1")
+        .retryParams(RetryParams.getDefaultInstance())
+        .authCredentials(AuthCredentials.noCredentials())
+        .force(true)
+        .build();
     serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);
   }
