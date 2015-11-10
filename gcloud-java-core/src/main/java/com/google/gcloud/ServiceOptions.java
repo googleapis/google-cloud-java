@@ -306,7 +306,10 @@ public abstract class ServiceOptions<
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
       Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
-    projectId = checkNotNull(builder.projectId != null ? builder.projectId : defaultProject());
+    projectId = builder.projectId != null ? builder.projectId : defaultProject();
+    if (projectIdRequired()) {
+      checkNotNull(projectId);
+    }
     host = firstNonNull(builder.host, defaultHost());
     httpTransportFactory = firstNonNull(builder.httpTransportFactory,
         getFromServiceLoader(HttpTransportFactory.class, DefaultHttpTransportFactory.INSTANCE));
@@ -323,6 +326,16 @@ public abstract class ServiceOptions<
     connectTimeout = builder.connectTimeout;
     readTimeout = builder.readTimeout;
     clock = firstNonNull(builder.clock, Clock.defaultClock());
+  }
+
+  /**
+   * Returns whether a service requires a project ID. This method may be overridden in
+   * service-specific Options objects.
+   *
+   * @return true if a project ID is required to use the service, false if not.
+   */
+  public boolean projectIdRequired() {
+    return true;
   }
 
   private static AuthCredentials defaultAuthCredentials() {
@@ -462,6 +475,8 @@ public abstract class ServiceOptions<
 
   /**
    * Returns the project id.
+   *
+   * Return value can be null (for services that don't require a project id).
    */
   public String projectId() {
     return projectId;
