@@ -17,7 +17,7 @@
 package com.google.gcloud;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkArgument;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
@@ -308,7 +308,10 @@ public abstract class ServiceOptions<
       Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
     projectId = builder.projectId != null ? builder.projectId : defaultProject();
     if (projectIdRequired()) {
-      checkNotNull(projectId);
+      checkArgument(
+          projectId != null,
+          "A project ID is required for this service but could not be determined from the builder or "
+          + "the environment.  Please set a project ID using the builder.");
     }
     host = firstNonNull(builder.host, defaultHost());
     httpTransportFactory = firstNonNull(builder.httpTransportFactory,
@@ -334,7 +337,7 @@ public abstract class ServiceOptions<
    *
    * @return true if a project ID is required to use the service, false if not.
    */
-  public boolean projectIdRequired() {
+  protected boolean projectIdRequired() {
     return true;
   }
 
