@@ -17,7 +17,7 @@
 package com.google.gcloud;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkArgument;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
@@ -306,7 +306,13 @@ public abstract class ServiceOptions<
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
       Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
-    projectId = checkNotNull(builder.projectId != null ? builder.projectId : defaultProject());
+    projectId = builder.projectId != null ? builder.projectId : defaultProject();
+    if (projectIdRequired()) {
+      checkArgument(
+          projectId != null,
+          "A project ID is required for this service but could not be determined from the builder or "
+          + "the environment.  Please set a project ID using the builder.");
+    }
     host = firstNonNull(builder.host, defaultHost());
     httpTransportFactory = firstNonNull(builder.httpTransportFactory,
         getFromServiceLoader(HttpTransportFactory.class, DefaultHttpTransportFactory.INSTANCE));
@@ -323,6 +329,16 @@ public abstract class ServiceOptions<
     connectTimeout = builder.connectTimeout;
     readTimeout = builder.readTimeout;
     clock = firstNonNull(builder.clock, Clock.defaultClock());
+  }
+
+  /**
+   * Returns whether a service requires a project ID. This method may be overridden in
+   * service-specific Options objects.
+   *
+   * @return true if a project ID is required to use the service, false if not.
+   */
+  protected boolean projectIdRequired() {
+    return true;
   }
 
   private static AuthCredentials defaultAuthCredentials() {
@@ -462,6 +478,8 @@ public abstract class ServiceOptions<
 
   /**
    * Returns the project id.
+   *
+   * Return value can be null (for services that don't require a project id).
    */
   public String projectId() {
     return projectId;
