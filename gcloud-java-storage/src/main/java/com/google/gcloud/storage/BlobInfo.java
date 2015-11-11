@@ -123,6 +123,9 @@ public final class BlobInfo implements Serializable {
 
     private Builder() {}
 
+    /**
+     * Sets the blob identity.
+     */
     public Builder blobId(BlobId blobId) {
       this.blobId = checkNotNull(blobId);
       return this;
@@ -133,21 +136,33 @@ public final class BlobInfo implements Serializable {
       return this;
     }
 
+    /**
+     * Sets the blob's data content type.
+     */
     public Builder contentType(String contentType) {
       this.contentType = firstNonNull(contentType, Data.<String>nullOf(String.class));
       return this;
     }
 
+    /**
+     * Sets the blob's data content disposition.
+     */
     public Builder contentDisposition(String contentDisposition) {
       this.contentDisposition = firstNonNull(contentDisposition, Data.<String>nullOf(String.class));
       return this;
     }
 
+    /**
+     * Sets the blob's data content language.
+     */
     public Builder contentLanguage(String contentLanguage) {
       this.contentLanguage = firstNonNull(contentLanguage, Data.<String>nullOf(String.class));
       return this;
     }
 
+    /**
+     * Sets the blob's data content encoding.
+     */
     public Builder contentEncoding(String contentEncoding) {
       this.contentEncoding = firstNonNull(contentEncoding, Data.<String>nullOf(String.class));
       return this;
@@ -158,11 +173,20 @@ public final class BlobInfo implements Serializable {
       return this;
     }
 
+    /**
+     * Sets the blob's data cache control.
+     */
     public Builder cacheControl(String cacheControl) {
       this.cacheControl = firstNonNull(cacheControl, Data.<String>nullOf(String.class));
       return this;
     }
 
+    /**
+     * Sets the blob's access control configuration.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+     *     About Access Control Lists</a>
+     */
     public Builder acl(List<Acl> acl) {
       this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
@@ -188,11 +212,18 @@ public final class BlobInfo implements Serializable {
       return this;
     }
 
+    /**
+     * Sets the MD5 hash of blob's data. MD5 value must be encoded in base64.
+     */
     public Builder md5(String md5) {
       this.md5 = firstNonNull(md5, Data.<String>nullOf(String.class));
       return this;
     }
 
+    /**
+     * Sets the CRC32C checksum of blob's data. CRC32C value must be encoded in base64 in big-endian
+     * order.
+     */
     public Builder crc32c(String crc32c) {
       this.crc32c = firstNonNull(crc32c, Data.<String>nullOf(String.class));
       return this;
@@ -203,6 +234,9 @@ public final class BlobInfo implements Serializable {
       return this;
     }
 
+    /**
+     * Sets the blob's metadata.
+     */
     public Builder metadata(Map<String, String> metadata) {
       this.metadata = metadata != null
           ? new HashMap(metadata) : Data.<Map>nullOf(ImmutableEmptyMap.class);
@@ -229,6 +263,9 @@ public final class BlobInfo implements Serializable {
       return this;
     }
 
+    /**
+     * Creates a {@code BlobInfo} object.
+     */
     public BlobInfo build() {
       checkNotNull(blobId);
       return new BlobInfo(this);
@@ -259,98 +296,177 @@ public final class BlobInfo implements Serializable {
     updateTime = builder.updateTime;
   }
 
+  /**
+   * Returns the blob's identity.
+   */
   public BlobId blobId() {
     return blobId;
   }
 
+  /**
+   * Returns the name of the containing bucket.
+   */
   public String bucket() {
     return blobId().bucket();
   }
 
+  /**
+   * Returns the blob's id.
+   */
   public String id() {
     return id;
   }
 
+  /**
+   * Returns the blob's name.
+   */
   public String name() {
     return blobId().name();
   }
 
+  /**
+   * Returns the blob's data cache control.
+   */
   public String cacheControl() {
     return Data.isNull(cacheControl) ? null : cacheControl;
   }
 
+  /**
+   * Returns the blob's access control configuration.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+   *     About Access Control Lists</a>
+   */
   public List<Acl> acl() {
     return acl;
   }
 
+  /**
+   * Returns the blob's owner.
+   */
   public Acl.Entity owner() {
     return owner;
   }
 
+  /**
+   * Returns the blob's data size in bytes.
+   */
   public Long size() {
     return size;
   }
 
+  /**
+   * Returns the blob's data content type.
+   */
   public String contentType() {
     return Data.isNull(contentType) ? null : contentType;
   }
 
+  /**
+   * Returns the blob's data content encoding.
+   */
   public String contentEncoding() {
     return Data.isNull(contentEncoding) ? null : contentEncoding;
   }
 
+  /**
+   * Returns the blob's data content disposition.
+   */
   public String contentDisposition() {
     return Data.isNull(contentDisposition) ? null : contentDisposition;
   }
 
+  /**
+   * Returns the blob's data content language.
+   */
   public String contentLanguage() {
     return Data.isNull(contentLanguage) ? null : contentLanguage;
   }
 
+  /**
+   * Returns the number of components that make up this object. Components are accumulated through
+   * the {@link Storage#compose(Storage.ComposeRequest)} operation.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/composite-objects#_Count">Component Count
+   *     Property</a>
+   */
   public Integer componentCount() {
     return componentCount;
   }
 
+  /**
+   * Returns blob resource's entity tag.
+   */
   public String etag() {
     return etag;
   }
 
+  /**
+   * Returns the URI of this blob as a string.
+   */
   public String selfLink() {
     return selfLink;
   }
 
+  /**
+   * Returns the MD5 hash of blob's data encoded in base64.
+   */
   public String md5() {
     return Data.isNull(md5) ? null : md5;
   }
 
+  /**
+   * Returns the CRC32C checksum of blob's data encoded in base64 in big-endian order.
+   */
   public String crc32c() {
     return Data.isNull(crc32c) ? null : crc32c;
   }
 
+  /**
+   * Returns the blob's media download link.
+   */
   public String mediaLink() {
     return mediaLink;
   }
 
+  /**
+   * Returns blob's metadata.
+   */
   public Map<String, String> metadata() {
     return metadata == null || Data.isNull(metadata) ? null : Collections.unmodifiableMap(metadata);
   }
 
+  /**
+   * Returns blob's data generation.
+   */
   public Long generation() {
     return generation;
   }
 
+  /**
+   * Returns blob's metageneration.
+   */
   public Long metageneration() {
     return metageneration;
   }
 
+  /**
+   * Returns the deletion time of the blob.
+   */
   public Long deleteTime() {
     return deleteTime;
   }
 
+  /**
+   * Returns the last modification time of the blob's metadata.
+   */
   public Long updateTime() {
     return updateTime;
   }
 
+  /**
+   * Returns a builder for the current blob.
+   */
   public Builder toBuilder() {
     return new Builder()
         .blobId(blobId)
@@ -444,14 +560,23 @@ public final class BlobInfo implements Serializable {
     return storageObject;
   }
 
+  /**
+   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
+   */
   public static Builder builder(BucketInfo bucketInfo, String name) {
     return builder(bucketInfo.name(), name);
   }
 
+  /**
+   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
+   */
   public static Builder builder(String bucket, String name) {
     return new Builder().blobId(BlobId.of(bucket, name));
   }
 
+  /**
+   * Returns a {@code BlobInfo} builder where blob identity is set to the provided value.
+   */
   public static Builder builder(BlobId blobId) {
     return new Builder().blobId(blobId);
   }
