@@ -51,7 +51,7 @@
             <goals><goal>add-source</goal></goals>
             <configuration>
               <sources>
-                <source>generated/src/main</source>
+                <source>generated/src/main/java</source>
               </sources>
             </configuration>
           </execution>
