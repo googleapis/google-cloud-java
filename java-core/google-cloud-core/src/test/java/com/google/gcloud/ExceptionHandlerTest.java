@@ -82,7 +82,7 @@ public class ExceptionHandlerTest {
     }
 
     // using default exception handler (retry upon any non-runtime exceptions)
-    ExceptionHandler handler = ExceptionHandler.getDefaultInstance();
+    ExceptionHandler handler = ExceptionHandler.defaultInstance();
     assertValidCallable(new A(), handler);
     assertValidCallable(new B(), handler);
     assertValidCallable(new C(), handler);
