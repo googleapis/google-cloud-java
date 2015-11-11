@@ -804,7 +804,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns the blob to rewrite, as a {@link BlobId}.
+     * Returns the blob to copy, as a {@link BlobId}.
      */
     public BlobId source() {
       return source;
@@ -818,7 +818,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns the rewrite target.
+     * Returns the {@link BlobInfo} for the target blob.
      */
     public BlobInfo target() {
       return target;
