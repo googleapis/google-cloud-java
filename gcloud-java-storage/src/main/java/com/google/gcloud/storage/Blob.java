@@ -50,6 +50,9 @@ public final class Blob {
   private final Storage storage;
   private final BlobInfo info;
 
+  /**
+   * Class for specifying blob source options when {@code Blob} methods are used.
+   */
   public static class BlobSourceOption extends Option {
 
     private static final long serialVersionUID = 214616862061934846L;
@@ -88,18 +91,34 @@ public final class Blob {
       }
     }
 
+    /**
+     * Returns an option for blob's generation match. If this option is used the request will fail
+     * if generation does not match.
+     */
     public static BlobSourceOption generationMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's generation mismatch. If this option is used the request will
+     * fail if generation matches.
+     */
     public static BlobSourceOption generationNotMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration match. If this option is used the request will
+     * fail if metageneration does not match.
+     */
     public static BlobSourceOption metagenerationMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration mismatch. If this option is used the request will
+     * fail if metageneration matches.
+     */
     public static BlobSourceOption metagenerationNotMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
