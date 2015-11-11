@@ -41,15 +41,15 @@ public class RetryParamsTest {
 
   @Test
   public void testDefaults() {
-    RetryParams params1 = RetryParams.getDefaultInstance();
+    RetryParams params1 = RetryParams.defaultInstance();
     RetryParams params2 = RetryParams.builder().build();
     for (RetryParams params : Arrays.asList(params1, params2)) {
-      assertEquals(DEFAULT_INITIAL_RETRY_DELAY_MILLIS, params.getInitialRetryDelayMillis());
-      assertEquals(DEFAULT_MAX_RETRY_DELAY_MILLIS, params.getMaxRetryDelayMillis());
-      assertEquals(DEFAULT_RETRY_DELAY_BACKOFF_FACTOR, params.getRetryDelayBackoffFactor(), 0);
-      assertEquals(DEFAULT_RETRY_MAX_ATTEMPTS, params.getRetryMaxAttempts());
-      assertEquals(DEFAULT_RETRY_MIN_ATTEMPTS, params.getRetryMinAttempts());
-      assertEquals(DEFAULT_TOTAL_RETRY_PERIOD_MILLIS, params.getTotalRetryPeriodMillis());
+      assertEquals(DEFAULT_INITIAL_RETRY_DELAY_MILLIS, params.initialRetryDelayMillis());
+      assertEquals(DEFAULT_MAX_RETRY_DELAY_MILLIS, params.maxRetryDelayMillis());
+      assertEquals(DEFAULT_RETRY_DELAY_BACKOFF_FACTOR, params.retryDelayBackoffFactor(), 0);
+      assertEquals(DEFAULT_RETRY_MAX_ATTEMPTS, params.retryMaxAttempts());
+      assertEquals(DEFAULT_RETRY_MIN_ATTEMPTS, params.retryMinAttempts());
+      assertEquals(DEFAULT_TOTAL_RETRY_PERIOD_MILLIS, params.totalRetryPeriodMillis());
     }
   }
 
@@ -65,12 +65,12 @@ public class RetryParamsTest {
     RetryParams params1 = builder.build();
     RetryParams params2 = new RetryParams.Builder(params1).build();
     for (RetryParams params : Arrays.asList(params1, params2)) {
-      assertEquals(101, params.getInitialRetryDelayMillis());
-      assertEquals(102, params.getMaxRetryDelayMillis());
-      assertEquals(103, params.getRetryDelayBackoffFactor(), 0);
-      assertEquals(107, params.getRetryMinAttempts());
-      assertEquals(108, params.getRetryMaxAttempts());
-      assertEquals(109, params.getTotalRetryPeriodMillis());
+      assertEquals(101, params.initialRetryDelayMillis());
+      assertEquals(102, params.maxRetryDelayMillis());
+      assertEquals(103, params.retryDelayBackoffFactor(), 0);
+      assertEquals(107, params.retryMinAttempts());
+      assertEquals(108, params.retryMaxAttempts());
+      assertEquals(109, params.totalRetryPeriodMillis());
     }
   }
 
@@ -79,19 +79,19 @@ public class RetryParamsTest {
     RetryParams.Builder builder = RetryParams.builder();
     builder.initialRetryDelayMillis(-1);
     builder = assertFailure(builder);
-    builder.maxRetryDelayMillis(RetryParams.getDefaultInstance().getInitialRetryDelayMillis() - 1);
+    builder.maxRetryDelayMillis(RetryParams.defaultInstance().initialRetryDelayMillis() - 1);
     builder = assertFailure(builder);
     builder.retryDelayBackoffFactor(-1);
     builder = assertFailure(builder);
     builder.retryMinAttempts(-1);
     builder = assertFailure(builder);
-    builder.retryMaxAttempts(RetryParams.getDefaultInstance().getRetryMinAttempts() - 1);
+    builder.retryMaxAttempts(RetryParams.defaultInstance().retryMinAttempts() - 1);
     builder = assertFailure(builder);
     builder.totalRetryPeriodMillis(-1);
     builder = assertFailure(builder);
     // verify that it is OK for min and max to be equal
-    builder.retryMaxAttempts(RetryParams.getDefaultInstance().getRetryMinAttempts());
-    builder.maxRetryDelayMillis(RetryParams.getDefaultInstance().getInitialRetryDelayMillis());
+    builder.retryMaxAttempts(RetryParams.defaultInstance().retryMinAttempts());
+    builder.maxRetryDelayMillis(RetryParams.defaultInstance().initialRetryDelayMillis());
     builder.build();
   }
 

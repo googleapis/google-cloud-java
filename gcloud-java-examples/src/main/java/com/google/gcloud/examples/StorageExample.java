@@ -18,7 +18,6 @@ package com.google.gcloud.examples;
 
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
-import com.google.gcloud.Page;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.Blob;
@@ -546,7 +545,7 @@ public class StorageExample {
       return;
     }
     StorageOptions.Builder optionsBuilder =
-        StorageOptions.builder().retryParams(RetryParams.getDefaultInstance());
+        StorageOptions.builder().retryParams(RetryParams.defaultInstance());
     StorageAction action;
     String actionName;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {

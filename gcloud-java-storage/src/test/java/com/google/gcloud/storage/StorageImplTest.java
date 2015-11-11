@@ -1202,7 +1202,7 @@ public class StorageImplTest {
         .andThrow(new StorageException(500, "InternalError", true))
         .andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.toBuilder().retryParams(RetryParams.getDefaultInstance()).build().service();
+    storage = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
     BlobInfo readBlob = storage.get(blob);
     assertEquals(BLOB_INFO1, readBlob);
   }
@@ -1214,7 +1214,7 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
         .andThrow(new StorageException(501, exceptionMessage, false));
     EasyMock.replay(storageRpcMock);
-    storage = options.toBuilder().retryParams(RetryParams.getDefaultInstance()).build().service();
+    storage = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
     thrown.expect(StorageException.class);
     thrown.expectMessage(exceptionMessage);
     storage.get(blob);
@@ -1227,7 +1227,7 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
         .andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(storageRpcMock);
-    storage = options.toBuilder().retryParams(RetryParams.getDefaultInstance()).build().service();
+    storage = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
     thrown.expect(StorageException.class);
     thrown.expectMessage(exceptionMessage);
     storage.get(blob);

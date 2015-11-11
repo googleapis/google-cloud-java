@@ -143,7 +143,7 @@ import com.google.gcloud.datastore.KeyFactory;
 
 // Authentication is automatic inside Google Compute Engine
 // and Google App Engine.
-DatastoreOptions options = DatastoreOptions.builder().build();
+DatastoreOptions options = DatastoreOptions.defaultInstance();
 Datastore datastore = options.service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind(<span class="hljs-string">KIND</span>);
 Key key = keyFactory.newKey(keyName);

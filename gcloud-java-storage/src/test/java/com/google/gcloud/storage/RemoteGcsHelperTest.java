@@ -159,11 +159,11 @@ public class RemoteGcsHelperTest {
     assertEquals(PROJECT_ID, options.projectId());
     assertEquals(60000, options.connectTimeout());
     assertEquals(60000, options.readTimeout());
-    assertEquals(10, options.retryParams().getRetryMaxAttempts());
-    assertEquals(6, options.retryParams().getRetryMinAttempts());
-    assertEquals(30000, options.retryParams().getMaxRetryDelayMillis());
-    assertEquals(120000, options.retryParams().getTotalRetryPeriodMillis());
-    assertEquals(250, options.retryParams().getInitialRetryDelayMillis());
+    assertEquals(10, options.retryParams().retryMaxAttempts());
+    assertEquals(6, options.retryParams().retryMinAttempts());
+    assertEquals(30000, options.retryParams().maxRetryDelayMillis());
+    assertEquals(120000, options.retryParams().totalRetryPeriodMillis());
+    assertEquals(250, options.retryParams().initialRetryDelayMillis());
   }
 
   @Test
