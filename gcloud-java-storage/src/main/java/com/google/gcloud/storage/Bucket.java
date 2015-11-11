@@ -122,6 +122,9 @@ public final class Bucket {
     }
   }
 
+  /**
+   * Class for specifying bucket source options when {@code Bucket} methods are used.
+   */
   public static class BucketSourceOption extends Option {
 
     private static final long serialVersionUID = 6928872234155522371L;
@@ -152,10 +155,18 @@ public final class Bucket {
       }
     }
 
+    /**
+     * Returns an option for bucket's metageneration match. If this option is used the request will
+     * fail if metageneration does not match.
+     */
     public static BucketSourceOption metagenerationMatch() {
       return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for bucket's metageneration mismatch. If this option is used the request
+     * will fail if metageneration matches.
+     */
     public static BucketSourceOption metagenerationNotMatch() {
       return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
