@@ -124,7 +124,7 @@ public class RetryHelperTest {
         }
         return timesCalled;
       }
-    }, params, ExceptionHandler.getDefaultInstance());
+    }, params, ExceptionHandler.defaultInstance());
     assertEquals(timesToFail + 1, attempted);
     assertNull(RetryHelper.getContext());
   }

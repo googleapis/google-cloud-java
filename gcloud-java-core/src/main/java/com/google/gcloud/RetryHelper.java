@@ -229,7 +229,7 @@ public class RetryHelper<V> {
 
   public static <V> V runWithRetries(Callable<V> callable) throws RetryHelperException {
     return runWithRetries(callable, RetryParams.defaultInstance(),
-        ExceptionHandler.getDefaultInstance());
+        ExceptionHandler.defaultInstance());
   }
 
   public static <V> V runWithRetries(Callable<V> callable, RetryParams params,
