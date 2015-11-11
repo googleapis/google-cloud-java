@@ -118,7 +118,7 @@ public class RetryHelperTest {
       @Override public Integer call() throws IOException {
         timesCalled++;
         assertEquals(timesCalled, RetryHelper.getContext().getAttemptNumber());
-        assertEquals(10, RetryHelper.getContext().getRetryParams().getRetryMaxAttempts());
+        assertEquals(10, RetryHelper.getContext().getRetryParams().retryMaxAttempts());
         if (timesCalled <= timesToFail) {
           throw new IOException();
         }

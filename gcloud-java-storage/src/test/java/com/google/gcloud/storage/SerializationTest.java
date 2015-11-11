@@ -82,7 +82,7 @@ public class SerializationTest {
 
     options = options.toBuilder()
         .projectId("p2")
-        .retryParams(RetryParams.getDefaultInstance())
+        .retryParams(RetryParams.defaultInstance())
         .authCredentials(AuthCredentials.noCredentials())
         .pathDelimiter(":")
         .build();
@@ -110,7 +110,7 @@ public class SerializationTest {
   public void testReadChannelState() throws IOException, ClassNotFoundException {
     StorageOptions options = StorageOptions.builder()
         .projectId("p2")
-        .retryParams(RetryParams.getDefaultInstance())
+        .retryParams(RetryParams.defaultInstance())
         .authCredentials(AuthCredentials.noCredentials())
         .build();
     BlobReadChannel reader =
@@ -126,7 +126,7 @@ public class SerializationTest {
   public void testWriteChannelState() throws IOException, ClassNotFoundException {
     StorageOptions options = StorageOptions.builder()
         .projectId("p2")
-        .retryParams(RetryParams.getDefaultInstance())
+        .retryParams(RetryParams.defaultInstance())
         .authCredentials(AuthCredentials.noCredentials())
         .build();
     BlobWriteChannelImpl writer = new BlobWriteChannelImpl(

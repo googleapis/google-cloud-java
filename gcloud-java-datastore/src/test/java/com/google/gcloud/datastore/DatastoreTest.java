@@ -625,7 +625,7 @@ public class DatastoreTest {
     EasyMock.replay(rpcFactoryMock, rpcMock);
     DatastoreOptions options =
         this.options.toBuilder()
-            .retryParams(RetryParams.getDefaultInstance())
+            .retryParams(RetryParams.defaultInstance())
             .serviceRpcFactory(rpcFactoryMock)
             .build();
     return options.service();
@@ -738,7 +738,7 @@ public class DatastoreTest {
         .andReturn(responsePb);
     EasyMock.replay(rpcFactoryMock, rpcMock);
     DatastoreOptions options = this.options.toBuilder()
-        .retryParams(RetryParams.getDefaultInstance())
+        .retryParams(RetryParams.defaultInstance())
         .serviceRpcFactory(rpcFactoryMock)
         .build();
     Datastore datastore = options.service();
@@ -784,7 +784,7 @@ public class DatastoreTest {
         .andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(rpcFactoryMock, rpcMock);
     DatastoreOptions options = this.options.toBuilder()
-        .retryParams(RetryParams.getDefaultInstance())
+        .retryParams(RetryParams.defaultInstance())
         .serviceRpcFactory(rpcFactoryMock)
         .build();
     Datastore datastore = options.service();
