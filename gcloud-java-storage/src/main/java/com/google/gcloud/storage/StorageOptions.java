@@ -111,6 +111,13 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
     return pathDelimiter;
   }
 
+  /**
+   * Returns a default {@code StorageOptions} instance.
+   */
+  public static StorageOptions getDefaultInstance() {
+    return builder().build();
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);

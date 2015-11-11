@@ -171,6 +171,13 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
     return namespace;
   }
 
+  /**
+   * Returns a default {@code DatastoreOptions} instance.
+   */
+  public static DatastoreOptions getDefaultInstance() {
+    return builder().build();
+  }
+
   private static String defaultNamespace() {
     try {
       Class<?> clazz = Class.forName("com.google.appengine.api.NamespaceManager");
