@@ -174,7 +174,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
   /**
    * Returns a default {@code DatastoreOptions} instance.
    */
-  public static DatastoreOptions getDefaultInstance() {
+  public static DatastoreOptions defaultInstance() {
     return builder().build();
   }
 

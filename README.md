@@ -121,7 +121,7 @@ import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-Datastore datastore = DatastoreOptions.getDefaultInstance().service();
+Datastore datastore = DatastoreOptions.defaultInstance().service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);

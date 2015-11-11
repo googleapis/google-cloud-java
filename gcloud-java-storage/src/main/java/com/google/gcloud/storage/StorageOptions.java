@@ -114,7 +114,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
   /**
    * Returns a default {@code StorageOptions} instance.
    */
-  public static StorageOptions getDefaultInstance() {
+  public static StorageOptions defaultInstance() {
     return builder().build();
   }
 
