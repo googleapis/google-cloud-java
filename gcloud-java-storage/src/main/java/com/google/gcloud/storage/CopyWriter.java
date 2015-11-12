@@ -79,14 +79,14 @@ public class CopyWriter implements Restorable<CopyWriter> {
   }
 
   /**
-   * Returns {@code true} of blob rewrite finished, {@code false} otherwise.
+   * Returns {@code true} if blob copy has finished, {@code false} otherwise.
    */
   public boolean isDone() {
     return rewriteResponse.isDone;
   }
 
   /**
-   * Returns the number of bytes copied. 
+   * Returns the number of bytes copied.
    */
   public long totalBytesCopied() {
     return rewriteResponse.totalBytesRewritten;

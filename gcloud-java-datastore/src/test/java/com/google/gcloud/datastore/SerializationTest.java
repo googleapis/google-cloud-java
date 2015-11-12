@@ -143,7 +143,7 @@ public class SerializationTest {
 
     options = options.toBuilder()
         .namespace("ns1")
-        .retryParams(RetryParams.getDefaultInstance())
+        .retryParams(RetryParams.defaultInstance())
         .authCredentials(AuthCredentials.noCredentials())
         .force(true)
         .build();

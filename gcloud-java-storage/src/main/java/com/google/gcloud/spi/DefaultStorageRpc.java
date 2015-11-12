@@ -15,6 +15,7 @@
 package com.google.gcloud.spi;
 
 import static com.google.gcloud.spi.StorageRpc.Option.DELIMITER;
+import static com.google.gcloud.spi.StorageRpc.Option.FIELDS;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_GENERATION_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_METAGENERATION_MATCH;
@@ -150,6 +151,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .setPrefix(PREFIX.getString(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
           .execute();
       return Tuple.<String, Iterable<Bucket>>of(buckets.getNextPageToken(), buckets.getItems());
     } catch (IOException ex) {
@@ -168,6 +170,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .setPrefix(PREFIX.getString(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
           .execute();
       return Tuple.<String, Iterable<StorageObject>>of(
           objects.getNextPageToken(), objects.getItems());
@@ -184,6 +187,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .setProjection(DEFAULT_PROJECTION)
           .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
+          .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -207,7 +211,8 @@ public class DefaultStorageRpc implements StorageRpc {
         .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
         .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
         .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
-        .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
+        .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options))
+        .setFields(FIELDS.getString(options));
   }
 
   @Override

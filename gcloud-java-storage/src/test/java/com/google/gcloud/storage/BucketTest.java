@@ -27,6 +27,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.PageImpl;
+import com.google.gcloud.Page;
 import com.google.gcloud.storage.BatchResponse.Result;
 
 import org.easymock.Capture;
@@ -73,14 +75,16 @@ public class BucketTest {
 
   @Test
   public void testExists_True() throws Exception {
-    expect(storage.get(BUCKET_INFO.name())).andReturn(BUCKET_INFO);
+    Storage.BucketGetOption[] expectedOptions = {Storage.BucketGetOption.fields()};
+    expect(storage.get(BUCKET_INFO.name(), expectedOptions)).andReturn(BUCKET_INFO);
     replay(storage);
     assertTrue(bucket.exists());
   }
 
   @Test
   public void testExists_False() throws Exception {
-    expect(storage.get(BUCKET_INFO.name())).andReturn(null);
+    Storage.BucketGetOption[] expectedOptions = {Storage.BucketGetOption.fields()};
+    expect(storage.get(BUCKET_INFO.name(), expectedOptions)).andReturn(null);
     replay(storage);
     assertFalse(bucket.exists());
   }
@@ -114,24 +118,28 @@ public class BucketTest {
 
   @Test
   public void testList() throws Exception {
-    BaseListResult<BlobInfo> blobInfoResult = new BaseListResult<>(null, "c", BLOB_INFO_RESULTS);
-    expect(storage.list(BUCKET_INFO.name())).andReturn(blobInfoResult);
-    replay(storage);
-    ListResult<Blob> blobResult = bucket.list();
-    Iterator<BlobInfo> blobInfoIterator = blobInfoResult.iterator();
-    Iterator<Blob> blobIterator = blobResult.iterator();
+    StorageOptions storageOptions = createStrictMock(StorageOptions.class);
+    PageImpl<BlobInfo> blobInfoPage = new PageImpl<>(null, "c", BLOB_INFO_RESULTS);
+    expect(storage.list(BUCKET_INFO.name())).andReturn(blobInfoPage);
+    expect(storage.options()).andReturn(storageOptions);
+    expect(storageOptions.service()).andReturn(storage);
+    replay(storage, storageOptions);
+    Page<Blob> blobPage = bucket.list();
+    Iterator<BlobInfo> blobInfoIterator = blobInfoPage.values().iterator();
+    Iterator<Blob> blobIterator = blobPage.values().iterator();
     while (blobInfoIterator.hasNext() && blobIterator.hasNext()) {
       assertEquals(blobInfoIterator.next(), blobIterator.next().info());
     }
     assertFalse(blobInfoIterator.hasNext());
     assertFalse(blobIterator.hasNext());
-    assertEquals(blobInfoResult.nextPageCursor(), blobResult.nextPageCursor());
+    assertEquals(blobInfoPage.nextPageCursor(), blobPage.nextPageCursor());
+    verify(storageOptions);
   }
 
   @Test
   public void testGet() throws Exception {
     BlobInfo info = BlobInfo.builder("b", "n").build();
-    expect(storage.get(BlobId.of(bucket.info().name(), "n"), new Storage.BlobSourceOption[0]))
+    expect(storage.get(BlobId.of(bucket.info().name(), "n"), new Storage.BlobGetOption[0]))
         .andReturn(info);
     replay(storage);
     Blob blob = bucket.get("n");

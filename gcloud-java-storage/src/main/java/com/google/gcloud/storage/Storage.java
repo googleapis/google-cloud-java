@@ -19,11 +19,14 @@ package com.google.gcloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Service;
+import com.google.gcloud.Page;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
@@ -32,6 +35,7 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -69,6 +73,92 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
+  enum BucketField {
+    ID("id"),
+    SELF_LINK("selfLink"),
+    NAME("name"),
+    TIME_CREATED("timeCreated"),
+    METAGENERATION("metageneration"),
+    ACL("acl"),
+    DEFAULT_OBJECT_ACL("defaultObjectAcl"),
+    OWNER("owner"),
+    LOCATION("location"),
+    WEBSITE("website"),
+    VERSIONING("versioning"),
+    CORS("cors"),
+    STORAGE_CLASS("storageClass"),
+    ETAG("etag");
+
+    private final String selector;
+
+    BucketField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(BucketField... fields) {
+      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
+      fieldStrings.add(NAME.selector());
+      for (BucketField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  enum BlobField {
+    ACL("acl"),
+    BUCKET("bucket"),
+    CACHE_CONTROL("cacheControl"),
+    COMPONENT_COUNT("componentCount"),
+    CONTENT_DISPOSITION("contentDisposition"),
+    CONTENT_ENCODING("contentEncoding"),
+    CONTENT_LANGUAGE("contentLanguage"),
+    CONTENT_TYPE("contentType"),
+    CRC32C("crc32c"),
+    ETAG("etag"),
+    GENERATION("generation"),
+    ID("id"),
+    KIND("kind"),
+    MD5HASH("md5Hash"),
+    MEDIA_LINK("mediaLink"),
+    METADATA("metadata"),
+    METAGENERATION("metageneration"),
+    NAME("name"),
+    OWNER("owner"),
+    SELF_LINK("selfLink"),
+    SIZE("size"),
+    STORAGE_CLASS("storageClass"),
+    TIME_DELETED("timeDeleted"),
+    UPDATED("updated");
+
+    private final String selector;
+
+    BlobField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(BlobField... fields) {
+      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
+      fieldStrings.add(BUCKET.selector());
+      fieldStrings.add(NAME.selector());
+      for (BlobField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  /**
+   * Class for specifying bucket target options.
+   */
   class BucketTargetOption extends Option {
 
     private static final long serialVersionUID = -5880204616982900975L;
@@ -81,23 +171,40 @@ public interface Storage extends Service<StorageOptions> {
       this(rpcOption, null);
     }
 
+    /**
+     * Returns an option for specifying bucket's predefined ACL configuration.
+     */
     public static BucketTargetOption predefinedAcl(PredefinedAcl acl) {
       return new BucketTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.entry());
     }
 
+    /**
+     * Returns an option for specifying bucket's default ACL configuration for blobs.
+     */
     public static BucketTargetOption predefinedDefaultObjectAcl(PredefinedAcl acl) {
       return new BucketTargetOption(StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL, acl.entry());
     }
 
+    /**
+     * Returns an option for bucket's metageneration match. If this option is used the request will
+     * fail if metageneration does not match.
+     */
     public static BucketTargetOption metagenerationMatch() {
       return new BucketTargetOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for bucket's metageneration mismatch. If this option is used the request
+     * will fail if metageneration matches.
+     */
     public static BucketTargetOption metagenerationNotMatch() {
       return new BucketTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
   }
 
+  /**
+   * Class for specifying bucket source options.
+   */
   class BucketSourceOption extends Option {
 
     private static final long serialVersionUID = 5185657617120212117L;
@@ -106,15 +213,68 @@ public interface Storage extends Service<StorageOptions> {
       super(rpcOption, metageneration);
     }
 
+    /**
+     * Returns an option for bucket's metageneration match. If this option is used the request will
+     * fail if bucket's metageneration does not match the provided value.
+     */
     public static BucketSourceOption metagenerationMatch(long metageneration) {
       return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH, metageneration);
     }
 
+    /**
+     * Returns an option for bucket's metageneration mismatch. If this option is used the request
+     * will fail if bucket's metageneration matches the provided value.
+     */
     public static BucketSourceOption metagenerationNotMatch(long metageneration) {
       return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
     }
   }
 
+  /**
+   * Class for specifying bucket source options.
+   */
+  class BucketGetOption extends Option {
+
+    private static final long serialVersionUID = 1901844869484087395L;
+
+    private BucketGetOption(StorageRpc.Option rpcOption, long metageneration) {
+      super(rpcOption, metageneration);
+    }
+
+    private BucketGetOption(StorageRpc.Option rpcOption, String value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option for bucket's metageneration match. If this option is used the request will
+     * fail if bucket's metageneration does not match the provided value.
+     */
+    public static BucketGetOption metagenerationMatch(long metageneration) {
+      return new BucketGetOption(StorageRpc.Option.IF_METAGENERATION_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option for bucket's metageneration mismatch. If this option is used the request
+     * will fail if bucket's metageneration matches the provided value.
+     */
+    public static BucketGetOption metagenerationNotMatch(long metageneration) {
+      return new BucketGetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option to specify the bucket's fields to be returned by the RPC call. If this
+     * option is not provided all bucket's fields are returned. {@code BucketGetOption.fields}) can
+     * be used to specify only the fields of interest. Bucket name is always returned, even if not
+     * specified.
+     */
+    public static BucketGetOption fields(BucketField... fields) {
+      return new BucketGetOption(StorageRpc.Option.FIELDS, BucketField.selector(fields));
+    }
+  }
+
+  /**
+   * Class for specifying blob target options.
+   */
   class BlobTargetOption extends Option {
 
     private static final long serialVersionUID = 214616862061934846L;
@@ -127,26 +287,48 @@ public interface Storage extends Service<StorageOptions> {
       this(rpcOption, null);
     }
 
+    /**
+     * Returns an option for specifying blob's predefined ACL configuration.
+     */
     public static BlobTargetOption predefinedAcl(PredefinedAcl acl) {
       return new BlobTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.entry());
     }
 
+    /**
+     * Returns an option that causes an operation to succeed only if the target blob does not exist.
+     */
     public static BlobTargetOption doesNotExist() {
       return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_MATCH, 0L);
     }
 
+    /**
+     * Returns an option for blob's data generation match. If this option is used the request will
+     * fail if generation does not match.
+     */
     public static BlobTargetOption generationMatch() {
       return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if generation matches.
+     */
     public static BlobTargetOption generationNotMatch() {
       return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration match. If this option is used the request will
+     * fail if metageneration does not match.
+     */
     public static BlobTargetOption metagenerationMatch() {
       return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration mismatch. If this option is used the request will
+     * fail if metageneration matches.
+     */
     public static BlobTargetOption metagenerationNotMatch() {
       return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
@@ -172,6 +354,9 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
+  /**
+   * Class for specifying blob write options.
+   */
   class BlobWriteOption implements Serializable {
 
     private static final long serialVersionUID = -3880421670966224580L;
@@ -218,39 +403,72 @@ public interface Storage extends Service<StorageOptions> {
       return this.option == other.option && Objects.equals(this.value, other.value);
     }
 
+    /**
+     * Returns an option for specifying blob's predefined ACL configuration.
+     */
     public static BlobWriteOption predefinedAcl(PredefinedAcl acl) {
       return new BlobWriteOption(Option.PREDEFINED_ACL, acl.entry());
     }
 
+    /**
+     * Returns an option that causes an operation to succeed only if the target blob does not exist.
+     */
     public static BlobWriteOption doesNotExist() {
       return new BlobWriteOption(Option.IF_GENERATION_MATCH, 0L);
     }
 
+    /**
+     * Returns an option for blob's data generation match. If this option is used the request will
+     * fail if generation does not match.
+     */
     public static BlobWriteOption generationMatch() {
       return new BlobWriteOption(Option.IF_GENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if generation matches.
+     */
     public static BlobWriteOption generationNotMatch() {
       return new BlobWriteOption(Option.IF_GENERATION_NOT_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration match. If this option is used the request will
+     * fail if metageneration does not match.
+     */
     public static BlobWriteOption metagenerationMatch() {
       return new BlobWriteOption(Option.IF_METAGENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration mismatch. If this option is used the request will
+     * fail if metageneration matches.
+     */
     public static BlobWriteOption metagenerationNotMatch() {
       return new BlobWriteOption(Option.IF_METAGENERATION_NOT_MATCH);
     }
 
+    /**
+     * Returns an option for blob's data MD5 hash match. If this option is used the request will
+     * fail if blobs' data MD5 hash does not match.
+     */
     public static BlobWriteOption md5Match() {
       return new BlobWriteOption(Option.IF_MD5_MATCH, true);
     }
 
+    /**
+     * Returns an option for blob's data CRC32C checksum match. If this option is used the request
+     * will fail if blobs' data CRC32C checksum does not match.
+     */
     public static BlobWriteOption crc32cMatch() {
       return new BlobWriteOption(Option.IF_CRC32C_MATCH, true);
     }
   }
 
+  /**
+   * Class for specifying blob source options.
+   */
   class BlobSourceOption extends Option {
 
     private static final long serialVersionUID = -3712768261070182991L;
@@ -259,23 +477,100 @@ public interface Storage extends Service<StorageOptions> {
       super(rpcOption, value);
     }
 
+    /**
+     * Returns an option for blob's data generation match. If this option is used the request will
+     * fail if blob's generation does not match the provided value.
+     */
     public static BlobSourceOption generationMatch(long generation) {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
     }
 
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if blob's generation matches the provided value.
+     */
     public static BlobSourceOption generationNotMatch(long generation) {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, generation);
     }
 
+    /**
+     * Returns an option for blob's metageneration match. If this option is used the request will
+     * fail if blob's metageneration does not match the provided value.
+     */
     public static BlobSourceOption metagenerationMatch(long metageneration) {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH, metageneration);
     }
 
+    /**
+     * Returns an option for blob's metageneration mismatch. If this option is used the request will
+     * fail if blob's metageneration matches the provided value.
+     */
     public static BlobSourceOption metagenerationNotMatch(long metageneration) {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
     }
   }
 
+  /**
+   * Class for specifying blob get options.
+   */
+  class BlobGetOption extends Option {
+
+    private static final long serialVersionUID = 803817709703661480L;
+
+    private BlobGetOption(StorageRpc.Option rpcOption, long value) {
+      super(rpcOption, value);
+    }
+
+    private BlobGetOption(StorageRpc.Option rpcOption, String value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option for blob's data generation match. If this option is used the request will
+     * fail if blob's generation does not match the provided value.
+     */
+    public static BlobGetOption generationMatch(long generation) {
+      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
+    }
+
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if blob's generation matches the provided value.
+     */
+    public static BlobGetOption generationNotMatch(long generation) {
+      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, generation);
+    }
+
+    /**
+     * Returns an option for blob's metageneration match. If this option is used the request will
+     * fail if blob's metageneration does not match the provided value.
+     */
+    public static BlobGetOption metagenerationMatch(long metageneration) {
+      return new BlobGetOption(StorageRpc.Option.IF_METAGENERATION_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option for blob's metageneration mismatch. If this option is used the request will
+     * fail if blob's metageneration matches the provided value.
+     */
+    public static BlobGetOption metagenerationNotMatch(long metageneration) {
+      return new BlobGetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option to specify the blob's fields to be returned by the RPC call. If this option
+     * is not provided all blob's fields are returned. {@code BlobGetOption.fields}) can be used to
+     * specify only the fields of interest. Blob name and bucket are always returned, even if not
+     * specified.
+     */
+    public static BlobGetOption fields(BlobField... fields) {
+      return new BlobGetOption(StorageRpc.Option.FIELDS, BlobField.selector(fields));
+    }
+  }
+
+  /**
+   * Class for specifying bucket list options.
+   */
   class BucketListOption extends Option {
 
     private static final long serialVersionUID = 8754017079673290353L;
@@ -284,19 +579,44 @@ public interface Storage extends Service<StorageOptions> {
       super(option, value);
     }
 
+    /**
+     * Returns an option to specify the maximum number of buckets to be returned.
+     */
     public static BucketListOption maxResults(long maxResults) {
       return new BucketListOption(StorageRpc.Option.MAX_RESULTS, maxResults);
     }
 
+    /**
+     * Returns an option to specify the page token from which to start listing buckets.
+     */
     public static BucketListOption startPageToken(String pageToken) {
       return new BucketListOption(StorageRpc.Option.PAGE_TOKEN, pageToken);
     }
 
+    /**
+     * Returns an option to set a prefix to filter results to buckets whose names begin with this
+     * prefix.
+     */
     public static BucketListOption prefix(String prefix) {
       return new BucketListOption(StorageRpc.Option.PREFIX, prefix);
     }
+
+    /**
+     * Returns an option to specify the bucket's fields to be returned by the RPC call. If this
+     * option is not provided all bucket's fields are returned. {@code BucketListOption.fields}) can
+     * be used to specify only the fields of interest. Bucket name is always returned, even if not
+     * specified.
+     */
+    public static BucketListOption fields(BucketField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(BucketField.selector(fields)).append(")");
+      return new BucketListOption(StorageRpc.Option.FIELDS, builder.toString());
+    }
   }
 
+  /**
+   * Class for specifying blob list options.
+   */
   class BlobListOption extends Option {
 
     private static final long serialVersionUID = 9083383524788661294L;
@@ -305,23 +625,51 @@ public interface Storage extends Service<StorageOptions> {
       super(option, value);
     }
 
+    /**
+     * Returns an option to specify the maximum number of blobs to be returned.
+     */
     public static BlobListOption maxResults(long maxResults) {
       return new BlobListOption(StorageRpc.Option.MAX_RESULTS, maxResults);
     }
 
+    /**
+     * Returns an option to specify the page token from which to start listing blobs.
+     */
     public static BlobListOption startPageToken(String pageToken) {
       return new BlobListOption(StorageRpc.Option.PAGE_TOKEN, pageToken);
     }
 
+    /**
+     * Returns an option to set a prefix to filter results to blobs whose names begin with this
+     * prefix.
+     */
     public static BlobListOption prefix(String prefix) {
       return new BlobListOption(StorageRpc.Option.PREFIX, prefix);
     }
 
+    /**
+     * Returns an option to specify whether blob listing should include subdirectories or not.
+     */
     public static BlobListOption recursive(boolean recursive) {
       return new BlobListOption(StorageRpc.Option.DELIMITER, recursive);
     }
+
+    /**
+     * Returns an option to specify the blob's fields to be returned by the RPC call. If this option
+     * is not provided all blob's fields are returned. {@code BlobListOption.fields}) can be used to
+     * specify only the fields of interest. Blob name and bucket are always returned, even if not
+     * specified.
+     */
+    public static BlobListOption fields(BlobField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(BlobField.selector(fields)).append(")");
+      return new BlobListOption(StorageRpc.Option.FIELDS, builder.toString());
+    }
   }
 
+  /**
+   * Class for specifying signed URL options.
+   */
   class SignUrlOption implements Serializable {
 
     private static final long serialVersionUID = 7850569877451099267L;
@@ -381,6 +729,12 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
+  /**
+   * A class to contain all information needed for a Google Cloud Storage Compose operation.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/composite-objects#_Compose">
+   *     Compose Operation</a>
+   */
   class ComposeRequest implements Serializable {
 
     private static final long serialVersionUID = -7385681353748590911L;
@@ -389,6 +743,9 @@ public interface Storage extends Service<StorageOptions> {
     private final BlobInfo target;
     private final List<BlobTargetOption> targetOptions;
 
+    /**
+     * Class for Compose source blobs.
+     */
     public static class SourceBlob implements Serializable {
 
       private static final long serialVersionUID = 4094962795951990439L;
@@ -420,6 +777,9 @@ public interface Storage extends Service<StorageOptions> {
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
       private BlobInfo target;
 
+      /**
+       * Add source blobs for compose operation.
+       */
       public Builder addSource(Iterable<String> blobs) {
         for (String blob : blobs) {
           sourceBlobs.add(new SourceBlob(blob));
@@ -427,6 +787,9 @@ public interface Storage extends Service<StorageOptions> {
         return this;
       }
 
+      /**
+       * Add source blobs for compose operation.
+       */
       public Builder addSource(String... blobs) {
         return addSource(Arrays.asList(blobs));
       }
@@ -439,21 +802,33 @@ public interface Storage extends Service<StorageOptions> {
         return this;
       }
 
+      /**
+       * Sets compose operation's target blob.
+       */
       public Builder target(BlobInfo target) {
         this.target = target;
         return this;
       }
 
+      /**
+       * Sets compose operation's target blob options.
+       */
       public Builder targetOptions(BlobTargetOption... options) {
         Collections.addAll(targetOptions, options);
         return this;
       }
 
+      /**
+       * Sets compose operation's target blob options.
+       */
       public Builder targetOptions(Iterable<BlobTargetOption> options) {
         Iterables.addAll(targetOptions, options);
         return this;
       }
 
+      /**
+       * Creates a {@code ComposeRequest} object.
+       */
       public ComposeRequest build() {
         checkArgument(!sourceBlobs.isEmpty());
         checkNotNull(target);
@@ -467,31 +842,59 @@ public interface Storage extends Service<StorageOptions> {
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
     }
 
+    /**
+     * Returns compose operation's source blobs.
+     */
     public List<SourceBlob> sourceBlobs() {
       return sourceBlobs;
     }
 
+    /**
+     * Returns compose operation's target blob.
+     */
     public BlobInfo target() {
       return target;
     }
 
+    /**
+     * Returns compose operation's target blob's options.
+     */
     public List<BlobTargetOption> targetOptions() {
       return targetOptions;
     }
 
+    /**
+     * Creates a {@code ComposeRequest} object.
+     *
+     * @param sources source blobs names
+     * @param target target blob
+     */
     public static ComposeRequest of(Iterable<String> sources, BlobInfo target) {
       return builder().target(target).addSource(sources).build();
     }
 
+    /**
+     * Creates a {@code ComposeRequest} object.
+     *
+     * @param bucket name of the bucket where the compose operation takes place
+     * @param sources source blobs names
+     * @param target target blob name
+     */
     public static ComposeRequest of(String bucket, Iterable<String> sources, String target) {
       return of(sources, BlobInfo.builder(BlobId.of(bucket, target)).build());
     }
 
+    /**
+     * Returns a {@code ComposeRequest} builder.
+     */
     public static Builder builder() {
       return new Builder();
     }
   }
 
+  /**
+   * A class to contain all information needed for a Google Cloud Storage Copy operation.
+   */
   class CopyRequest implements Serializable {
 
     private static final long serialVersionUID = -4498650529476219937L;
@@ -605,7 +1008,7 @@ public interface Storage extends Service<StorageOptions> {
       }
 
       /**
-       * Creates a {@code CopyRequest}.
+       * Creates a {@code CopyRequest} object.
        */
       public CopyRequest build() {
         checkNotNull(source);
@@ -623,7 +1026,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns the blob to rewrite, as a {@link BlobId}.
+     * Returns the blob to copy, as a {@link BlobId}.
      */
     public BlobId source() {
       return source;
@@ -637,7 +1040,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns the rewrite target.
+     * Returns the {@link BlobInfo} for the target blob.
      */
     public BlobInfo target() {
       return target;
@@ -799,21 +1202,21 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  BucketInfo get(String bucket, BucketSourceOption... options);
+  BucketInfo get(String bucket, BucketGetOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  BlobInfo get(String bucket, String blob, BlobSourceOption... options);
+  BlobInfo get(String bucket, String blob, BlobGetOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  BlobInfo get(BlobId blob, BlobSourceOption... options);
+  BlobInfo get(BlobId blob, BlobGetOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
@@ -827,14 +1230,14 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  ListResult<BucketInfo> list(BucketListOption... options);
+  Page<BucketInfo> list(BucketListOption... options);
 
   /**
    * List the bucket's blobs.
    *
    * @throws StorageException upon failure
    */
-  ListResult<BlobInfo> list(String bucket, BlobListOption... options);
+  Page<BlobInfo> list(String bucket, BlobListOption... options);
 
   /**
    * Update bucket information.
