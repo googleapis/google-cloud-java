@@ -38,10 +38,16 @@ public final class BlobId implements Serializable {
     this.name = name;
   }
 
+  /**
+   * Returns the name of the bucket containing the blob.
+   */
   public String bucket() {
     return bucket;
   }
 
+  /**
+   * Returns the name of the blob.
+   */
   public String name() {
     return name;
   }
@@ -72,6 +78,12 @@ public final class BlobId implements Serializable {
     return storageObject;
   }
 
+  /**
+   * Creates a blob identifier.
+   *
+   * @param bucket the name of the bucket that contains the blob
+   * @param name the name of the blob
+   */
   public static BlobId of(String bucket, String name) {
     return new BlobId(checkNotNull(bucket), checkNotNull(name));
   }
