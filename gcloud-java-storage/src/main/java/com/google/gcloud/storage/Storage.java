@@ -594,7 +594,8 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option to set a prefix for listed buckets names.
+     * Returns an option to set a prefix to filter results to buckets whose names begin with this
+     * prefix.
      */
     public static BucketListOption prefix(String prefix) {
       return new BucketListOption(StorageRpc.Option.PREFIX, prefix);
@@ -639,7 +640,8 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option to set a prefix for listed blobs names.
+     * Returns an option to set a prefix to filter results to blobs whose names begin with this
+     * prefix.
      */
     public static BlobListOption prefix(String prefix) {
       return new BlobListOption(StorageRpc.Option.PREFIX, prefix);
