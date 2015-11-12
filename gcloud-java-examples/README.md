@@ -12,13 +12,21 @@ Examples for gcloud-java (Java idiomatic client for [Google Cloud Platform][clou
 
 Quickstart
 ----------
-Add this to your pom.xml file
+If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-examples</artifactId>
   <version>0.0.10</version>
 </dependency>
+```
+If you are using Gradle, add this to your dependencies
+```Groovy
+compile 'com.google.gcloud:gcloud-java-examples:jar:0.0.10'
+```
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "com.google.gcloud" % "gcloud-java-examples" % "0.0.10"
 ```
 
 To run examples from your command line:
