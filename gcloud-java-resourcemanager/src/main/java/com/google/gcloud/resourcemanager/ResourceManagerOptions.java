@@ -71,6 +71,11 @@ public class ResourceManagerOptions
   }
 
   @Override
+  protected boolean projectIdRequired() {
+    return false;
+  }
+
+  @Override
   protected ResourceManagerFactory defaultServiceFactory() {
     return DefaultResourceManagerFactory.INSTANCE;
   }

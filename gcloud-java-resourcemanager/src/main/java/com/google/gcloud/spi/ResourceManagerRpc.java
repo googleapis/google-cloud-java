@@ -29,13 +29,24 @@ import java.util.List;
 public interface ResourceManagerRpc {
 
   public enum Permission {
-    CREATE,
-    DELETE,
-    GET,
-    LIST,
-    REPLACE,
-    GET_IAM_POLICY,
-    REPLACE_IAM_POLICY
+    CREATE("resourcemanager.projects.create"),
+    DELETE("resourcemanager.projects.delete"),
+    GET("resourcemanager.projects.get"),
+    LIST("resourcemanager.projects.list"),
+    REPLACE("resourcemanager.projects.replace"),
+    UNDELETE("resourcemanager.projects.undelete"),
+    GET_IAM_POLICY("resourcemanager.projects.getIamPolicy"),
+    REPLACE_IAM_POLICY("resourcemanager.projects.setIamPolicy");
+
+    String permissionPb;
+
+    Permission(String permissionPb) {
+      this.permissionPb = permissionPb;
+    }
+
+    String toPb() {
+      return permissionPb;
+    }
   }
 
   class Tuple<X, Y> {
@@ -110,7 +121,7 @@ public interface ResourceManagerRpc {
 
   Policy getIamPolicy(String projectId) throws ResourceManagerException;
 
-  boolean replaceIamPolicy(String projectId, Policy policy) throws ResourceManagerException;
+  Policy replaceIamPolicy(String projectId, Policy policy) throws ResourceManagerException;
 
   List<Boolean> hasPermissions(String projectId, List<Permission> permissions)
       throws ResourceManagerException;
