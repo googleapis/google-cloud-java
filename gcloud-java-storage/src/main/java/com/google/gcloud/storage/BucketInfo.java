@@ -300,7 +300,7 @@ public final class BucketInfo implements Serializable {
      * Creates an {@code IsLiveDeleteRule} object.
      *
      * @param isLive if set to {@code true} live blobs meet the delete condition. If set to
-     *     {@code false} delete condition is met by archived objects.
+     *     {@code false} delete condition is met by archived blobs.
      */
     public IsLiveDeleteRule(boolean isLive) {
       super(Type.IS_LIVE);
@@ -362,7 +362,8 @@ public final class BucketInfo implements Serializable {
     }
 
     /**
-     * Sets whether blob versioning should be enabled or not for the bucket.
+     * Sets whether versioning should be enabled for this bucket. When set to true, versioning is
+     * fully enabled.
      */
     public Builder versioningEnabled(Boolean enable) {
       this.versioningEnabled = firstNonNull(enable, Data.<Boolean>nullOf(Boolean.class));
@@ -370,7 +371,8 @@ public final class BucketInfo implements Serializable {
     }
 
     /**
-     * Sets the bucket's website index page.
+     * Sets the bucket's website index page. Behaves as the bucket's directory index where missing
+     * blobs are treated as potential directories.
      */
     public Builder indexPage(String indexPage) {
       this.indexPage = indexPage;
@@ -378,7 +380,7 @@ public final class BucketInfo implements Serializable {
     }
 
     /**
-     * Sets the bucket's website page to return when a resource is not found.
+     * Sets the custom object to return when a requested resource is not found.
      */
     public Builder notFoundPage(String notFoundPage) {
       this.notFoundPage = notFoundPage;
@@ -386,7 +388,7 @@ public final class BucketInfo implements Serializable {
     }
 
     /**
-     * Sets bucket's delete rules.
+     * Sets the bucket's lifecycle configuration as a number of delete rules.
      *
      * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
      */
@@ -396,10 +398,9 @@ public final class BucketInfo implements Serializable {
     }
 
     /**
-     * Sets the bucket's storage class. A list of supported values is available
-     * <a href="https://cloud.google.com/storage/docs/json_api/v1/buckets#resource">here</a>.
-     *
-     * @see <a href="https://cloud.google.com/storage/docs/storage-classes">Storage Classes</a>
+     * Sets the bucket's storage class. This defines how blobs in the bucket are stored and
+     * determines the SLA and the cost of storage. A list of supported values is available
+     * <a href="https://cloud.google.com/storage/docs/storage-classes">here</a>.
      */
     public Builder storageClass(String storageClass) {
       this.storageClass = storageClass;
@@ -407,7 +408,8 @@ public final class BucketInfo implements Serializable {
     }
 
     /**
-     * Sets the bucket's location. A list of supported values is available
+     * Sets the bucket's location. Data for blobs in the bucket resides in physical storage within
+     * this region. A list of supported values is available
      * <a href="https://cloud.google.com/storage/docs/bucket-locations">here</a>.
      */
     public Builder location(String location) {
@@ -507,7 +509,7 @@ public final class BucketInfo implements Serializable {
   }
 
   /**
-   * Returns the bucket's owner.
+   * Returns the bucket's owner. This is always the project team's owner group.
    */
   public Entity owner() {
     return owner;
@@ -521,35 +523,40 @@ public final class BucketInfo implements Serializable {
   }
 
   /**
-   * Returns {@code true} if blob versioning is enabled for this bucket, {@code false} otherwise.
+   * Returns {@code true} if versioning is fully enabled for this bucket, {@code false} otherwise.
    */
   public Boolean versioningEnabled() {
     return Data.isNull(versioningEnabled) ? null : versioningEnabled;
   }
 
   /**
-   * Returns bucket's website index page.
+   * Returns bucket's website index page. Behaves as the bucket's directory index where missing
+   * blobs are treated as potential directories.
    */
   public String indexPage() {
     return indexPage;
   }
 
   /**
-   * Returns bucket's website not found page, used we a resource could not be found.
+   * Returns the custom object to return when a requested resource is not found.
    */
   public String notFoundPage() {
     return notFoundPage;
   }
 
   /**
-   * Returns bucket's delete rules.
+   * Returns bucket's lifecycle configuration as a number of delete rules.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
    */
   public List<? extends DeleteRule> deleteRules() {
     return deleteRules;
   }
 
   /**
-   * Returns bucket resource's entity tag.
+   * Returns HTTP 1.1 Entity tag for the bucket.
+   *
+   * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
    */
   public String etag() {
     return etag;
@@ -570,7 +577,8 @@ public final class BucketInfo implements Serializable {
   }
 
   /**
-   * Returns the bucket's location.
+   * Returns the bucket's location. Data for blobs in the bucket resides in physical storage within
+   * this region.
    *
    * @see <a href="https://cloud.google.com/storage/docs/bucket-locations">Bucket Locations</a>
    */
@@ -579,7 +587,8 @@ public final class BucketInfo implements Serializable {
   }
 
   /**
-   * Returns the bucket's storage class.
+   * Returns the bucket's storage class. This defines how blobs in the bucket are stored and
+   * determines the SLA and the cost of storage.
    *
    * @see <a href="https://cloud.google.com/storage/docs/storage-classes">Storage Classes</a>
    */
@@ -589,6 +598,9 @@ public final class BucketInfo implements Serializable {
 
   /**
    * Returns the bucket's Cross-Origin Resource Sharing (CORS) configuration.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
+   *     Cross-Origin Resource Sharing (CORS)</a>
    */
   public List<Cors> cors() {
     return cors;
