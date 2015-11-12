@@ -58,7 +58,7 @@ public final class BatchRequest implements Serializable {
      * Delete the given blob.
      */
     public Builder delete(BlobId blob, BlobSourceOption... options) {
-      toDelete.put(blob, Lists.newArrayList(options));
+      toDelete.put(blob, Lists.newArrayList(BlobSourceOption.setGeneration(blob, options)));
       return this;
     }
 
@@ -82,7 +82,7 @@ public final class BatchRequest implements Serializable {
      * Retrieve metadata for the given blob.
      */
     public Builder get(BlobId blob, BlobGetOption... options) {
-      toGet.put(blob, Lists.newArrayList(options));
+      toGet.put(blob, Lists.newArrayList(BlobGetOption.setGeneration(blob, options)));
       return this;
     }
 

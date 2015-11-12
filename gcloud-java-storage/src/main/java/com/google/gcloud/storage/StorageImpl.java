@@ -199,7 +199,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public BlobInfo get(BlobId blob, BlobGetOption... options) {
     final StorageObject storedObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap =
+        optionMap(BlobGetOption.setGeneration(blob, options));
     try {
       StorageObject storageObject = runWithRetries(new Callable<StorageObject>() {
         @Override
@@ -405,7 +406,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public boolean delete(BlobId blob, BlobSourceOption... options) {
     final StorageObject storageObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap =
+        optionMap(BlobSourceOption.setGeneration(blob, options));
     try {
       return runWithRetries(new Callable<Boolean>() {
         @Override
@@ -428,8 +430,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     final List<StorageObject> sources =
         Lists.newArrayListWithCapacity(composeRequest.sourceBlobs().size());
     for (ComposeRequest.SourceBlob sourceBlob : composeRequest.sourceBlobs()) {
-      sources.add(BlobInfo.builder(composeRequest.target().bucket(), sourceBlob.name())
-          .generation(sourceBlob.generation()).build().toPb());
+      sources.add(BlobInfo.builder(
+          BlobId.of(composeRequest.target().bucket(), sourceBlob.name(), sourceBlob.generation()))
+              .build().toPb());
     }
     final StorageObject target = composeRequest.target().toPb();
     final Map<StorageRpc.Option, ?> targetOptions = optionMap(composeRequest.target().generation(),
@@ -476,7 +479,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public byte[] readAllBytes(BlobId blob, BlobSourceOption... options) {
     final StorageObject storageObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap =
+        optionMap(BlobSourceOption.setGeneration(blob, options));
     try {
       return runWithRetries(new Callable<byte[]>() {
         @Override
@@ -557,7 +561,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public BlobReadChannel reader(BlobId blob, BlobSourceOption... options) {
-    Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    Map<StorageRpc.Option, ?> optionsMap =
+        optionMap(BlobSourceOption.setGeneration(blob, options));
     return new BlobReadChannelImpl(options(), blob, optionsMap);
   }
 

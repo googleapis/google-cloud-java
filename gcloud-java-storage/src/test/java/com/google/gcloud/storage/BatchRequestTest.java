@@ -37,12 +37,12 @@ public class BatchRequestTest {
   @Test
   public void testBatchRequest() {
     BatchRequest request = BatchRequest.builder()
-        .delete("b1", "o1")
+        .delete(BlobId.of("b1", "o1", 1L), BlobSourceOption.generationMatch())
         .delete("b1", "o2", BlobSourceOption.generationMatch(1),
             BlobSourceOption.metagenerationMatch(2))
         .update(BlobInfo.builder("b2", "o1").build(), BlobTargetOption.predefinedAcl(PUBLIC_READ))
         .update(BlobInfo.builder("b2", "o2").build())
-        .get("b3", "o1")
+        .get(BlobId.of("b3", "o1", 1L), BlobGetOption.generationMatch())
         .get("b3", "o2", BlobGetOption.generationMatch(1))
         .get("b3", "o3")
         .build();
@@ -50,11 +50,15 @@ public class BatchRequestTest {
     Iterator<Entry<BlobId, Iterable<BlobSourceOption>>> deletes = request
         .toDelete().entrySet().iterator();
     Entry<BlobId, Iterable<BlobSourceOption>> delete = deletes.next();
-    assertEquals(BlobId.of("b1", "o1"), delete.getKey());
-    assertTrue(Iterables.isEmpty(delete.getValue()));
+    assertEquals(BlobId.of("b1", "o1", 1L), delete.getKey());
+    assertEquals(1, Iterables.size(delete.getValue()));
+    assertEquals(BlobSourceOption.generationMatch(1L), Iterables.getFirst(delete.getValue(), null));
     delete = deletes.next();
     assertEquals(BlobId.of("b1", "o2"), delete.getKey());
     assertEquals(2, Iterables.size(delete.getValue()));
+    assertEquals(BlobSourceOption.generationMatch(1L), Iterables.getFirst(delete.getValue(), null));
+    assertEquals(BlobSourceOption.metagenerationMatch(2L),
+        Iterables.get(delete.getValue(), 1, null));
     assertFalse(deletes.hasNext());
 
     Iterator<Entry<BlobInfo, Iterable<BlobTargetOption>>> updates = request
@@ -71,8 +75,9 @@ public class BatchRequestTest {
 
     Iterator<Entry<BlobId, Iterable<BlobGetOption>>> gets = request.toGet().entrySet().iterator();
     Entry<BlobId, Iterable<BlobGetOption>> get = gets.next();
-    assertEquals(BlobId.of("b3", "o1"), get.getKey());
-    assertTrue(Iterables.isEmpty(get.getValue()));
+    assertEquals(BlobId.of("b3", "o1", 1L), get.getKey());
+    assertEquals(1, Iterables.size(get.getValue()));
+    assertEquals(BlobGetOption.generationMatch(1), Iterables.getFirst(get.getValue(), null));
     get = gets.next();
     assertEquals(BlobId.of("b3", "o2"), get.getKey());
     assertEquals(1, Iterables.size(get.getValue()));

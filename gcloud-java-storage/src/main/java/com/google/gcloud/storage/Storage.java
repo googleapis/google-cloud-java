@@ -473,14 +473,32 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = -3712768261070182991L;
 
-    private BlobSourceOption(StorageRpc.Option rpcOption, long value) {
+    private BlobSourceOption(StorageRpc.Option rpcOption, Long value) {
       super(rpcOption, value);
     }
 
     /**
      * Returns an option for blob's data generation match. If this option is used the request will
-     * fail if blob's generation does not match the provided value.
+     * fail if blob's generation does not match. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
      */
+    public static BlobSourceOption generationMatch() {
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, null);
+    }
+
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if blob's generation matches. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
+     */
+    public static BlobSourceOption generationNotMatch() {
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, null);
+    }
+
     public static BlobSourceOption generationMatch(long generation) {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
     }
@@ -508,6 +526,26 @@ public interface Storage extends Service<StorageOptions> {
     public static BlobSourceOption metagenerationNotMatch(long metageneration) {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
     }
+
+    static BlobSourceOption[] setGeneration(BlobId blobId, Iterable<BlobSourceOption> options) {
+      return setGeneration(blobId, Iterables.toArray(options, BlobSourceOption.class));
+    }
+
+    static BlobSourceOption[] setGeneration(BlobId blobId, BlobSourceOption... options) {
+      BlobSourceOption[] updatedOptions = new BlobSourceOption[options.length];
+      int index = 0;
+      for (BlobSourceOption option : options) {
+        if ((option.rpcOption() == StorageRpc.Option.IF_GENERATION_MATCH
+            || option.rpcOption() == StorageRpc.Option.IF_GENERATION_NOT_MATCH)
+            && option.value() == null) {
+          updatedOptions[index] = new BlobSourceOption(option.rpcOption(), blobId.generation());
+        } else {
+          updatedOptions[index] = option;
+        }
+        index++;
+      }
+      return updatedOptions;
+    }
   }
 
   /**
@@ -517,7 +555,7 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = 803817709703661480L;
 
-    private BlobGetOption(StorageRpc.Option rpcOption, long value) {
+    private BlobGetOption(StorageRpc.Option rpcOption, Long value) {
       super(rpcOption, value);
     }
 
@@ -527,8 +565,26 @@ public interface Storage extends Service<StorageOptions> {
 
     /**
      * Returns an option for blob's data generation match. If this option is used the request will
-     * fail if blob's generation does not match the provided value.
+     * fail if blob's generation does not match. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
      */
+    public static BlobGetOption generationMatch() {
+      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_MATCH, (Long) null);
+    }
+
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if blob's generation matches. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
+     */
+    public static BlobGetOption generationNotMatch() {
+      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, (Long) null);
+    }
+
     public static BlobGetOption generationMatch(long generation) {
       return new BlobGetOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
     }
@@ -565,6 +621,22 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobGetOption fields(BlobField... fields) {
       return new BlobGetOption(StorageRpc.Option.FIELDS, BlobField.selector(fields));
+    }
+
+    static BlobGetOption[] setGeneration(BlobId blobId, BlobGetOption... options) {
+      BlobGetOption[] updatedOptions = new BlobGetOption[options.length];
+      int index = 0;
+      for (BlobGetOption option : options) {
+        if ((option.rpcOption() == StorageRpc.Option.IF_GENERATION_MATCH
+            || option.rpcOption() == StorageRpc.Option.IF_GENERATION_NOT_MATCH)
+            && option.value() == null) {
+          updatedOptions[index] = new BlobGetOption(option.rpcOption(), blobId.generation());
+        } else {
+          updatedOptions[index] = option;
+        }
+        index++;
+      }
+      return updatedOptions;
     }
   }
 
@@ -1019,7 +1091,8 @@ public interface Storage extends Service<StorageOptions> {
 
     private CopyRequest(Builder builder) {
       source = checkNotNull(builder.source);
-      sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
+      sourceOptions = ImmutableList.copyOf(
+          BlobSourceOption.setGeneration(source, builder.sourceOptions));
       target = checkNotNull(builder.target);
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
       megabytesCopiedPerChunk = builder.megabytesCopiedPerChunk;
