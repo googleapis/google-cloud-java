@@ -20,13 +20,21 @@ This client supports the following Google Cloud Platform services:
 
 Quickstart
 ----------
-Add this to your pom.xml file
+If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.0.10</version>
+  <version>0.0.11</version>
 </dependency>
+```
+If you are using Gradle, add this to your dependencies
+```Groovy
+compile 'com.google.gcloud:gcloud-java:jar:0.0.11'
+```
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.0.11"
 ```
 
 Java Versions

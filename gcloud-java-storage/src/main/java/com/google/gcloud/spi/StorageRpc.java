@@ -47,7 +47,8 @@ public interface StorageRpc {
     MAX_RESULTS("maxResults"),
     PAGE_TOKEN("pageToken"),
     DELIMITER("delimiter"),
-    VERSIONS("versions");
+    VERSIONS("versions"),
+    FIELDS("fields");
 
     private final String value;
 

@@ -23,6 +23,7 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.Iterables;
+import com.google.gcloud.storage.Storage.BlobGetOption;
 import com.google.gcloud.storage.Storage.BlobSourceOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 
@@ -42,7 +43,7 @@ public class BatchRequestTest {
         .update(BlobInfo.builder("b2", "o1").build(), BlobTargetOption.predefinedAcl(PUBLIC_READ))
         .update(BlobInfo.builder("b2", "o2").build())
         .get("b3", "o1")
-        .get("b3", "o2", BlobSourceOption.generationMatch(1))
+        .get("b3", "o2", BlobGetOption.generationMatch(1))
         .get("b3", "o3")
         .build();
 
@@ -68,16 +69,14 @@ public class BatchRequestTest {
     assertTrue(Iterables.isEmpty(update.getValue()));
     assertFalse(updates.hasNext());
 
-    Iterator<Entry<BlobId, Iterable<BlobSourceOption>>> gets = request
-        .toGet().entrySet().iterator();
-    Entry<BlobId, Iterable<BlobSourceOption>> get = gets.next();
+    Iterator<Entry<BlobId, Iterable<BlobGetOption>>> gets = request.toGet().entrySet().iterator();
+    Entry<BlobId, Iterable<BlobGetOption>> get = gets.next();
     assertEquals(BlobId.of("b3", "o1"), get.getKey());
     assertTrue(Iterables.isEmpty(get.getValue()));
     get = gets.next();
     assertEquals(BlobId.of("b3", "o2"), get.getKey());
     assertEquals(1, Iterables.size(get.getValue()));
-    assertEquals(BlobSourceOption.generationMatch(1),
-        Iterables.getFirst(get.getValue(), null));
+    assertEquals(BlobGetOption.generationMatch(1), Iterables.getFirst(get.getValue(), null));
     get = gets.next();
     assertEquals(BlobId.of("b3", "o3"), get.getKey());
     assertTrue(Iterables.isEmpty(get.getValue()));

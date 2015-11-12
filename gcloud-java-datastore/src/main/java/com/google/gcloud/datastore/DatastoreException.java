@@ -18,6 +18,7 @@ package com.google.gcloud.datastore;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.BaseServiceException;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
@@ -26,21 +27,21 @@ import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DatastoreException extends RuntimeException {
+public class DatastoreException extends BaseServiceException {
 
-  private static final long serialVersionUID = 8170357898917041899L;
-  private static final ImmutableMap<String, Code> REASON_TO_CODE;
-  private static final ImmutableMap<Integer, Code> HTTP_TO_CODE;
+  private static final long serialVersionUID = -2336749234060754893L;
+  private static final ImmutableMap<String, DatastoreError> REASON_TO_ERROR;
+  private static final ImmutableMap<Integer, DatastoreError> HTTP_TO_ERROR;
 
-  private final Code code;
+  private final DatastoreError error;
 
   /**
-   * An error code to represent the failure.
+   * Represents Datastore errors.
    *
    * @see <a href="https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes">Google Cloud
    *     Datastore error codes</a>
    */
-  public enum Code {
+  public enum DatastoreError {
 
     ABORTED(Reason.ABORTED),
     DEADLINE_EXCEEDED(Reason.DEADLINE_EXCEEDED),
@@ -57,29 +58,25 @@ public class DatastoreException extends RuntimeException {
     private final String description;
     private final int httpStatus;
 
-    Code(Reason reason) {
+    DatastoreError(Reason reason) {
       this(reason.retryable(), reason.description(), reason.httpStatus());
     }
 
-    Code(boolean retryable, String description, int httpStatus) {
+    DatastoreError(boolean retryable, String description, int httpStatus) {
       this.retryable = retryable;
       this.description = description;
       this.httpStatus = httpStatus;
     }
 
-    public String description() {
+    String description() {
       return description;
     }
 
-    public int httpStatus() {
+    int httpStatus() {
       return httpStatus;
     }
 
-    /**
-     * Returns {@code true} if this exception is transient and the same request could be retried.
-     * For any retry it is highly recommended to apply an exponential backoff.
-     */
-    public boolean retryable() {
+    boolean retryable() {
       return retryable;
     }
 
@@ -89,30 +86,31 @@ public class DatastoreException extends RuntimeException {
   }
 
   static {
-    ImmutableMap.Builder<String, Code> builder = ImmutableMap.builder();
-    Map<Integer, Code> httpCodes = new HashMap<>();
-    for (Code code : Code.values()) {
-      builder.put(code.name(), code);
-      httpCodes.put(code.httpStatus(), code);
+    ImmutableMap.Builder<String, DatastoreError> builder = ImmutableMap.builder();
+    Map<Integer, DatastoreError> httpCodes = new HashMap<>();
+    for (DatastoreError error : DatastoreError.values()) {
+      builder.put(error.name(), error);
+      httpCodes.put(error.httpStatus(), error);
     }
-    REASON_TO_CODE = builder.build();
-    HTTP_TO_CODE = ImmutableMap.copyOf(httpCodes);
+    REASON_TO_ERROR = builder.build();
+    HTTP_TO_ERROR = ImmutableMap.copyOf(httpCodes);
   }
 
-  public DatastoreException(Code code, String message, Exception cause) {
-    super(MoreObjects.firstNonNull(message, code.description), cause);
-    this.code = code;
+  public DatastoreException(DatastoreError error, String message, Exception cause) {
+    super(error.httpStatus(), MoreObjects.firstNonNull(message, error.description),
+        error.retryable(), cause);
+    this.error = error;
   }
 
-  public DatastoreException(Code code, String message) {
-    this(code, message, null);
+  public DatastoreException(DatastoreError error, String message) {
+    this(error, message, null);
   }
 
   /**
-   * Returns the code associated with this exception.
+   * Returns the DatastoreError associated with this exception.
    */
-  public Code code() {
-    return code;
+  public DatastoreError datastoreError() {
+    return error;
   }
 
   static DatastoreException translateAndThrow(RetryHelperException ex) {
@@ -122,35 +120,36 @@ public class DatastoreException extends RuntimeException {
     if (ex instanceof RetryHelper.RetryInterruptedException) {
       RetryHelper.RetryInterruptedException.propagate();
     }
-    throw new DatastoreException(Code.UNKNOWN, ex.getMessage(), ex);
+    throw new DatastoreException(DatastoreError.UNKNOWN, ex.getMessage(), ex);
   }
 
   /**
-   * Translate DatastoreException to DatastoreException based on their
+   * Translate DatastoreRpcExceptions to DatastoreExceptions based on their
    * HTTP error codes. This method will always throw a new DatastoreException.
    *
    * @throws DatastoreException every time
    */
   static DatastoreException translateAndThrow(DatastoreRpcException exception) {
     String message = exception.getMessage();
-    Code code = REASON_TO_CODE.get(exception.reason());
-    if (code == null) {
-      code = MoreObjects.firstNonNull(HTTP_TO_CODE.get(exception.httpStatus()), Code.UNKNOWN);
+    DatastoreError error = REASON_TO_ERROR.get(exception.reason());
+    if (error == null) {
+      error = MoreObjects.firstNonNull(
+          HTTP_TO_ERROR.get(exception.httpStatus()), DatastoreError.UNKNOWN);
     }
-    throw code.translate(exception, message);
+    throw error.translate(exception, message);
   }
 
   /**
-   * Throw a DatastoreException with {@code FAILED_PRECONDITION} code and the {@code message}
+   * Throw a DatastoreException with {@code FAILED_PRECONDITION} error and the {@code message}
    * in a nested exception.
    *
    * @throws DatastoreException every time
    */
   static DatastoreException throwInvalidRequest(String massage, Object... params) {
-    throw new DatastoreException(Code.FAILED_PRECONDITION, String.format(massage, params));
+    throw new DatastoreException(DatastoreError.FAILED_PRECONDITION, String.format(massage, params));
   }
 
   static DatastoreException propagateUserException(Exception ex) {
-    throw new DatastoreException(Code.UNKNOWN, ex.getMessage(), ex);
+    throw new DatastoreException(DatastoreError.UNKNOWN, ex.getMessage(), ex);
   }
 }

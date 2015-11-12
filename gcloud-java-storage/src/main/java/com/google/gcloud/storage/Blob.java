@@ -18,7 +18,8 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.gcloud.storage.Blob.BlobSourceOption.convert;
+import static com.google.gcloud.storage.Blob.BlobSourceOption.toSourceOptions;
+import static com.google.gcloud.storage.Blob.BlobSourceOption.toGetOptions;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
@@ -29,6 +30,7 @@ import com.google.gcloud.storage.Storage.CopyRequest;
 import com.google.gcloud.storage.Storage.SignUrlOption;
 
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -48,6 +50,9 @@ public final class Blob {
   private final Storage storage;
   private final BlobInfo info;
 
+  /**
+   * Class for specifying blob source options when {@code Blob} methods are used.
+   */
   public static class BlobSourceOption extends Option {
 
     private static final long serialVersionUID = 214616862061934846L;
@@ -56,7 +61,7 @@ public final class Blob {
       super(rpcOption, null);
     }
 
-    private Storage.BlobSourceOption convert(BlobInfo blobInfo) {
+    private Storage.BlobSourceOption toSourceOptions(BlobInfo blobInfo) {
       switch (rpcOption()) {
         case IF_GENERATION_MATCH:
           return Storage.BlobSourceOption.generationMatch(blobInfo.generation());
@@ -71,27 +76,68 @@ public final class Blob {
       }
     }
 
+    private Storage.BlobGetOption toGetOption(BlobInfo blobInfo) {
+      switch (rpcOption()) {
+        case IF_GENERATION_MATCH:
+          return Storage.BlobGetOption.generationMatch(blobInfo.generation());
+        case IF_GENERATION_NOT_MATCH:
+          return Storage.BlobGetOption.generationNotMatch(blobInfo.generation());
+        case IF_METAGENERATION_MATCH:
+          return Storage.BlobGetOption.metagenerationMatch(blobInfo.metageneration());
+        case IF_METAGENERATION_NOT_MATCH:
+          return Storage.BlobGetOption.metagenerationNotMatch(blobInfo.metageneration());
+        default:
+          throw new AssertionError("Unexpected enum value");
+      }
+    }
+
+    /**
+     * Returns an option for blob's generation match. If this option is used the request will fail
+     * if generation does not match.
+     */
     public static BlobSourceOption generationMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's generation mismatch. If this option is used the request will
+     * fail if generation matches.
+     */
     public static BlobSourceOption generationNotMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration match. If this option is used the request will
+     * fail if metageneration does not match.
+     */
     public static BlobSourceOption metagenerationMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration mismatch. If this option is used the request will
+     * fail if metageneration matches.
+     */
     public static BlobSourceOption metagenerationNotMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
 
-    static Storage.BlobSourceOption[] convert(BlobInfo blobInfo, BlobSourceOption... options) {
+    static Storage.BlobSourceOption[] toSourceOptions(BlobInfo blobInfo,
+        BlobSourceOption... options) {
       Storage.BlobSourceOption[] convertedOptions = new Storage.BlobSourceOption[options.length];
       int index = 0;
       for (BlobSourceOption option : options) {
-        convertedOptions[index++] = option.convert(blobInfo);
+        convertedOptions[index++] = option.toSourceOptions(blobInfo);
+      }
+      return convertedOptions;
+    }
+
+    static Storage.BlobGetOption[] toGetOptions(BlobInfo blobInfo, BlobSourceOption... options) {
+      Storage.BlobGetOption[] convertedOptions = new Storage.BlobGetOption[options.length];
+      int index = 0;
+      for (BlobSourceOption option : options) {
+        convertedOptions[index++] = option.toGetOption(blobInfo);
       }
       return convertedOptions;
     }
@@ -100,7 +146,7 @@ public final class Blob {
   /**
    * Constructs a {@code Blob} object for the provided {@code BlobInfo}. The storage service is used
    * to issue requests.
-   * 
+   *
    * @param storage the storage service used for issuing requests
    * @param info blob's info
    */
@@ -112,7 +158,7 @@ public final class Blob {
   /**
    * Creates a {@code Blob} object for the provided bucket and blob names. Performs an RPC call to
    * get the latest blob information.
-   * 
+   *
    * @param storage the storage service used for issuing requests
    * @param bucket bucket's name
    * @param blob blob's name
@@ -126,7 +172,7 @@ public final class Blob {
   /**
    * Creates a {@code Blob} object for the provided {@code blobId}. Performs an RPC call to get the
    * latest blob information.
-   * 
+   *
    * @param storage the storage service used for issuing requests
    * @param blobId blob's identifier
    * @return the {@code Blob} object or {@code null} if not found.
@@ -159,7 +205,10 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public boolean exists(BlobSourceOption... options) {
-    return storage.get(info.blobId(), convert(info, options)) != null;
+    int length = options.length;
+    Storage.BlobGetOption[] getOptions = Arrays.copyOf(toGetOptions(info, options), length + 1);
+    getOptions[length] = Storage.BlobGetOption.fields();
+    return storage.get(info.blobId(), getOptions) != null;
   }
 
   /**
@@ -180,7 +229,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public Blob reload(BlobSourceOption... options) {
-    return new Blob(storage, storage.get(info.blobId(), convert(info, options)));
+    return new Blob(storage, storage.get(info.blobId(), toGetOptions(info, options)));
   }
 
   /**
@@ -224,7 +273,7 @@ public final class Blob {
    */
   public CopyWriter copyTo(BlobId targetBlob, BlobSourceOption... options) {
     CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
-        .sourceOptions(convert(info, options)).target(targetBlob).build();
+        .sourceOptions(toSourceOptions(info, options)).target(targetBlob).build();
     return storage.copy(copyRequest);
   }
 
@@ -236,7 +285,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public boolean delete(BlobSourceOption... options) {
-    return storage.delete(info.blobId(), convert(info, options));
+    return storage.delete(info.blobId(), toSourceOptions(info, options));
   }
 
   /**
@@ -275,7 +324,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public BlobReadChannel reader(BlobSourceOption... options) {
-    return storage.reader(info.blobId(), convert(info, options));
+    return storage.reader(info.blobId(), toSourceOptions(info, options));
   }
 
   /**

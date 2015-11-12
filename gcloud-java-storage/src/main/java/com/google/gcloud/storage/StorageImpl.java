@@ -44,10 +44,12 @@ import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
+import com.google.gcloud.PageImpl;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.RetryHelper.RetryHelperException;
+import com.google.gcloud.Page;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.RewriteResponse;
 import com.google.gcloud.spi.StorageRpc.Tuple;
@@ -165,7 +167,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BucketInfo get(String bucket, BucketSourceOption... options) {
+  public BucketInfo get(String bucket, BucketGetOption... options) {
     final com.google.api.services.storage.model.Bucket bucketPb = BucketInfo.of(bucket).toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     try {
@@ -190,12 +192,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BlobInfo get(String bucket, String blob, BlobSourceOption... options) {
+  public BlobInfo get(String bucket, String blob, BlobGetOption... options) {
     return get(BlobId.of(bucket, blob), options);
   }
 
   @Override
-  public BlobInfo get(BlobId blob, BlobSourceOption... options) {
+  public BlobInfo get(BlobId blob, BlobGetOption... options) {
     final StorageObject storedObject = blob.toPb();
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
     try {
@@ -220,11 +222,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public BlobInfo get(BlobId blob) {
-    return get(blob, new BlobSourceOption[0]);
+    return get(blob, new BlobGetOption[0]);
   }
 
   private abstract static class BasePageFetcher<T extends Serializable>
-      implements BaseListResult.NextPageFetcher<T> {
+      implements PageImpl.NextPageFetcher<T> {
 
     private static final long serialVersionUID = 8236329004030295223L;
     protected final Map<StorageRpc.Option, ?> requestOptions;
@@ -256,7 +258,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
 
     @Override
-    public ListResult<BucketInfo> nextPage() {
+    public Page<BucketInfo> nextPage() {
       return listBuckets(serviceOptions, requestOptions);
     }
   }
@@ -273,17 +275,17 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
 
     @Override
-    public ListResult<BlobInfo> nextPage() {
+    public Page<BlobInfo> nextPage() {
       return listBlobs(bucket, serviceOptions, requestOptions);
     }
   }
 
   @Override
-  public ListResult<BucketInfo> list(BucketListOption... options) {
+  public Page<BucketInfo> list(BucketListOption... options) {
     return listBuckets(options(), optionMap(options));
   }
 
-  private static ListResult<BucketInfo> listBuckets(final StorageOptions serviceOptions,
+  private static Page<BucketInfo> listBuckets(final StorageOptions serviceOptions,
       final Map<StorageRpc.Option, ?> optionsMap) {
     try {
       Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result = runWithRetries(
@@ -302,7 +304,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                   return BucketInfo.fromPb(bucketPb);
                 }
               });
-      return new BaseListResult<>(new BucketPageFetcher(serviceOptions, cursor, optionsMap), cursor,
+      return new PageImpl<>(new BucketPageFetcher(serviceOptions, cursor, optionsMap), cursor,
           buckets);
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
@@ -310,11 +312,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public ListResult<BlobInfo> list(final String bucket, BlobListOption... options) {
+  public Page<BlobInfo> list(final String bucket, BlobListOption... options) {
     return listBlobs(bucket, options(), optionMap(options));
   }
 
-  private static ListResult<BlobInfo> listBlobs(final String bucket,
+  private static Page<BlobInfo> listBlobs(final String bucket,
       final StorageOptions serviceOptions, final Map<StorageRpc.Option, ?> optionsMap) {
     try {
       Tuple<String, Iterable<StorageObject>> result = runWithRetries(
@@ -333,7 +335,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                   return BlobInfo.fromPb(storageObject);
                 }
               });
-      return new BaseListResult<>(new BlobPageFetcher(bucket, serviceOptions, cursor, optionsMap),
+      return new PageImpl<>(new BlobPageFetcher(bucket, serviceOptions, cursor, optionsMap),
           cursor,
           blobs);
     } catch (RetryHelperException e) {
@@ -508,7 +510,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toGet =
         Lists.newArrayListWithCapacity(batchRequest.toGet().size());
-    for (Map.Entry<BlobId, Iterable<BlobSourceOption>> entry : batchRequest.toGet().entrySet()) {
+    for (Map.Entry<BlobId, Iterable<BlobGetOption>> entry : batchRequest.toGet().entrySet()) {
       BlobId blob = entry.getKey();
       Map<StorageRpc.Option, ?> optionsMap = optionMap(null, null, entry.getValue());
       toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
