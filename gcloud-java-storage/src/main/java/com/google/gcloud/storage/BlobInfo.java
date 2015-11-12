@@ -138,6 +138,8 @@ public final class BlobInfo implements Serializable {
 
     /**
      * Sets the blob's data content type.
+     *
+     * @see <a href="https://tools.ietf.org/html/rfc2616#section-14.17">Content-Type</a>
      */
     public Builder contentType(String contentType) {
       this.contentType = firstNonNull(contentType, Data.<String>nullOf(String.class));
@@ -146,6 +148,8 @@ public final class BlobInfo implements Serializable {
 
     /**
      * Sets the blob's data content disposition.
+     *
+     * @see <a href="https://tools.ietf.org/html/rfc6266">Content-Disposition</a>
      */
     public Builder contentDisposition(String contentDisposition) {
       this.contentDisposition = firstNonNull(contentDisposition, Data.<String>nullOf(String.class));
@@ -154,6 +158,8 @@ public final class BlobInfo implements Serializable {
 
     /**
      * Sets the blob's data content language.
+     *
+     * @see <a href="http://tools.ietf.org/html/bcp47">Content-Language</a>
      */
     public Builder contentLanguage(String contentLanguage) {
       this.contentLanguage = firstNonNull(contentLanguage, Data.<String>nullOf(String.class));
@@ -162,6 +168,8 @@ public final class BlobInfo implements Serializable {
 
     /**
      * Sets the blob's data content encoding.
+     *
+     * @see <a href="https://tools.ietf.org/html/rfc7231#section-3.1.2.2">Content-Encoding</a>
      */
     public Builder contentEncoding(String contentEncoding) {
       this.contentEncoding = firstNonNull(contentEncoding, Data.<String>nullOf(String.class));
@@ -175,6 +183,8 @@ public final class BlobInfo implements Serializable {
 
     /**
      * Sets the blob's data cache control.
+     *
+     * @see <a href="https://tools.ietf.org/html/rfc7234#section-5.2">Cache-Control</a>
      */
     public Builder cacheControl(String cacheControl) {
       this.cacheControl = firstNonNull(cacheControl, Data.<String>nullOf(String.class));
@@ -214,6 +224,9 @@ public final class BlobInfo implements Serializable {
 
     /**
      * Sets the MD5 hash of blob's data. MD5 value must be encoded in base64.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
+     *     Hashes and ETags: Best Practices</a>
      */
     public Builder md5(String md5) {
       this.md5 = firstNonNull(md5, Data.<String>nullOf(String.class));
@@ -221,8 +234,12 @@ public final class BlobInfo implements Serializable {
     }
 
     /**
-     * Sets the CRC32C checksum of blob's data. CRC32C value must be encoded in base64 in big-endian
-     * order.
+     * Sets the CRC32C checksum of blob's data as described in
+     * <a href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
+     * base64 in big-endian order.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
+     *     Hashes and ETags: Best Practices</a>
      */
     public Builder crc32c(String crc32c) {
       this.crc32c = firstNonNull(crc32c, Data.<String>nullOf(String.class));
@@ -235,7 +252,7 @@ public final class BlobInfo implements Serializable {
     }
 
     /**
-     * Sets the blob's metadata.
+     * Sets the blob's user provided metadata.
      */
     public Builder metadata(Map<String, String> metadata) {
       this.metadata = metadata != null
@@ -326,6 +343,8 @@ public final class BlobInfo implements Serializable {
 
   /**
    * Returns the blob's data cache control.
+   *
+   * @see <a href="https://tools.ietf.org/html/rfc7234#section-5.2">Cache-Control</a>
    */
   public String cacheControl() {
     return Data.isNull(cacheControl) ? null : cacheControl;
@@ -342,14 +361,16 @@ public final class BlobInfo implements Serializable {
   }
 
   /**
-   * Returns the blob's owner.
+   * Returns the blob's owner. This will always be the uploader of the blob.
    */
   public Acl.Entity owner() {
     return owner;
   }
 
   /**
-   * Returns the blob's data size in bytes.
+   * Returns the content length of the data in bytes.
+   *
+   * @see <a href="https://tools.ietf.org/html/rfc2616#section-14.13">Content-Length</a>
    */
   public Long size() {
     return size;
@@ -357,6 +378,8 @@ public final class BlobInfo implements Serializable {
 
   /**
    * Returns the blob's data content type.
+   *
+   * @see <a href="https://tools.ietf.org/html/rfc2616#section-14.17">Content-Type</a>
    */
   public String contentType() {
     return Data.isNull(contentType) ? null : contentType;
@@ -364,6 +387,8 @@ public final class BlobInfo implements Serializable {
 
   /**
    * Returns the blob's data content encoding.
+   *
+   * @see <a href="https://tools.ietf.org/html/rfc7231#section-3.1.2.2">Content-Encoding</a>
    */
   public String contentEncoding() {
     return Data.isNull(contentEncoding) ? null : contentEncoding;
@@ -371,6 +396,8 @@ public final class BlobInfo implements Serializable {
 
   /**
    * Returns the blob's data content disposition.
+   *
+   * @see <a href="https://tools.ietf.org/html/rfc6266">Content-Disposition</a>
    */
   public String contentDisposition() {
     return Data.isNull(contentDisposition) ? null : contentDisposition;
@@ -378,14 +405,18 @@ public final class BlobInfo implements Serializable {
 
   /**
    * Returns the blob's data content language.
+   *
+   * @see <a href="http://tools.ietf.org/html/bcp47">Content-Language</a>
    */
   public String contentLanguage() {
     return Data.isNull(contentLanguage) ? null : contentLanguage;
   }
 
   /**
-   * Returns the number of components that make up this object. Components are accumulated through
-   * the {@link Storage#compose(Storage.ComposeRequest)} operation.
+   * Returns the number of components that make up this blob. Components are accumulated through
+   * the {@link Storage#compose(Storage.ComposeRequest)} operation and are limited to a count of
+   * 1024, counting 1 for each non-composite component blob and componentCount for each composite
+   * component blob. This value is set only for composite blobs.
    *
    * @see <a href="https://cloud.google.com/storage/docs/composite-objects#_Count">Component Count
    *     Property</a>
@@ -395,7 +426,9 @@ public final class BlobInfo implements Serializable {
   }
 
   /**
-   * Returns blob resource's entity tag.
+   * Returns HTTP 1.1 Entity tag for the blob.
+   *
+   * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
    */
   public String etag() {
     return etag;
@@ -410,13 +443,21 @@ public final class BlobInfo implements Serializable {
 
   /**
    * Returns the MD5 hash of blob's data encoded in base64.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
+   *     Hashes and ETags: Best Practices</a>
    */
   public String md5() {
     return Data.isNull(md5) ? null : md5;
   }
 
   /**
-   * Returns the CRC32C checksum of blob's data encoded in base64 in big-endian order.
+   * Returns the CRC32C checksum of blob's data as described in
+   * <a href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
+   * base64 in big-endian order.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
+   *     Hashes and ETags: Best Practices</a>
    */
   public String crc32c() {
     return Data.isNull(crc32c) ? null : crc32c;
@@ -430,21 +471,23 @@ public final class BlobInfo implements Serializable {
   }
 
   /**
-   * Returns blob's metadata.
+   * Returns blob's user provided metadata.
    */
   public Map<String, String> metadata() {
     return metadata == null || Data.isNull(metadata) ? null : Collections.unmodifiableMap(metadata);
   }
 
   /**
-   * Returns blob's data generation.
+   * Returns blob's data generation. Used for blob versioning.
    */
   public Long generation() {
     return generation;
   }
 
   /**
-   * Returns blob's metageneration.
+   * Returns blob's metageneration. Used for preconditions and for detecting changes in metadata.
+   * A metageneration number is only meaningful in the context of a particular generation of a
+   * particular blob.
    */
   public Long metageneration() {
     return metageneration;
