@@ -33,7 +33,6 @@ import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.storage.Acl.Entity;
 
 import java.io.IOException;
