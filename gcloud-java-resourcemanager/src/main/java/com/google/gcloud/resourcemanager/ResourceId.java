@@ -1,0 +1,82 @@
+/*
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+package com.google.gcloud.resourcemanager;
+
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+/**
+ * Represents a Google Cloud Resource Manager Resource ID
+ */
+public class ResourceId implements Serializable {
+
+  private static final long serialVersionUID = 7928469304338358885L;
+  private final String id;
+  private final Type type;
+
+  public enum Type {
+    ORGANIZATION("organization"),
+    UNKNOWN("unknown");
+
+    private final String strValue;
+
+    Type(String strValue) {
+      this.strValue = strValue;
+    }
+  }
+
+  private ResourceId(String id, Type type) {
+    this.id = checkNotNull(id);
+    this.type = checkNotNull(type);
+  }
+
+  public String id() {
+    return id;
+  }
+
+  public Type type() {
+    return type;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return obj instanceof ResourceId && Objects.equals(this.id, ((ResourceId) obj).id)
+        && Objects.equals(this.type, ((ResourceId) obj).type);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, type);
+  }
+
+  public static ResourceId of(String id, Type type) {
+    return new ResourceId(id, type);
+  }
+
+  com.google.api.services.cloudresourcemanager.model.ResourceId toPb() {
+    com.google.api.services.cloudresourcemanager.model.ResourceId resourceIdPb =
+        new com.google.api.services.cloudresourcemanager.model.ResourceId();
+    resourceIdPb.setId(id);
+    resourceIdPb.setType(type.strValue);
+    return resourceIdPb;
+  }
+
+  static ResourceId fromPb(
+      com.google.api.services.cloudresourcemanager.model.ResourceId resourceIdPb) {
+    return new ResourceId(resourceIdPb.getId(), Type.valueOf(resourceIdPb.getType().toUpperCase()));
+  }
+}
