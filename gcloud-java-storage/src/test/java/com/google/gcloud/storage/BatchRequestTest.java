@@ -52,7 +52,7 @@ public class BatchRequestTest {
     Entry<BlobId, Iterable<BlobSourceOption>> delete = deletes.next();
     assertEquals(BlobId.of("b1", "o1", 1L), delete.getKey());
     assertEquals(1, Iterables.size(delete.getValue()));
-    assertEquals(BlobSourceOption.generationMatch(1L), Iterables.getFirst(delete.getValue(), null));
+    assertEquals(BlobSourceOption.generationMatch(), Iterables.getFirst(delete.getValue(), null));
     delete = deletes.next();
     assertEquals(BlobId.of("b1", "o2"), delete.getKey());
     assertEquals(2, Iterables.size(delete.getValue()));
@@ -77,7 +77,7 @@ public class BatchRequestTest {
     Entry<BlobId, Iterable<BlobGetOption>> get = gets.next();
     assertEquals(BlobId.of("b3", "o1", 1L), get.getKey());
     assertEquals(1, Iterables.size(get.getValue()));
-    assertEquals(BlobGetOption.generationMatch(1), Iterables.getFirst(get.getValue(), null));
+    assertEquals(BlobGetOption.generationMatch(), Iterables.getFirst(get.getValue(), null));
     get = gets.next();
     assertEquals(BlobId.of("b3", "o2"), get.getKey());
     assertEquals(1, Iterables.size(get.getValue()));

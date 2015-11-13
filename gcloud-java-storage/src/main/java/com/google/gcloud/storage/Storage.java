@@ -526,26 +526,6 @@ public interface Storage extends Service<StorageOptions> {
     public static BlobSourceOption metagenerationNotMatch(long metageneration) {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
     }
-
-    static BlobSourceOption[] setGeneration(BlobId blobId, Iterable<BlobSourceOption> options) {
-      return setGeneration(blobId, Iterables.toArray(options, BlobSourceOption.class));
-    }
-
-    static BlobSourceOption[] setGeneration(BlobId blobId, BlobSourceOption... options) {
-      BlobSourceOption[] updatedOptions = new BlobSourceOption[options.length];
-      int index = 0;
-      for (BlobSourceOption option : options) {
-        if ((option.rpcOption() == StorageRpc.Option.IF_GENERATION_MATCH
-            || option.rpcOption() == StorageRpc.Option.IF_GENERATION_NOT_MATCH)
-            && option.value() == null) {
-          updatedOptions[index] = new BlobSourceOption(option.rpcOption(), blobId.generation());
-        } else {
-          updatedOptions[index] = option;
-        }
-        index++;
-      }
-      return updatedOptions;
-    }
   }
 
   /**
@@ -621,22 +601,6 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobGetOption fields(BlobField... fields) {
       return new BlobGetOption(StorageRpc.Option.FIELDS, BlobField.selector(fields));
-    }
-
-    static BlobGetOption[] setGeneration(BlobId blobId, BlobGetOption... options) {
-      BlobGetOption[] updatedOptions = new BlobGetOption[options.length];
-      int index = 0;
-      for (BlobGetOption option : options) {
-        if ((option.rpcOption() == StorageRpc.Option.IF_GENERATION_MATCH
-            || option.rpcOption() == StorageRpc.Option.IF_GENERATION_NOT_MATCH)
-            && option.value() == null) {
-          updatedOptions[index] = new BlobGetOption(option.rpcOption(), blobId.generation());
-        } else {
-          updatedOptions[index] = option;
-        }
-        index++;
-      }
-      return updatedOptions;
     }
   }
 
@@ -1091,8 +1055,7 @@ public interface Storage extends Service<StorageOptions> {
 
     private CopyRequest(Builder builder) {
       source = checkNotNull(builder.source);
-      sourceOptions = ImmutableList.copyOf(
-          BlobSourceOption.setGeneration(source, builder.sourceOptions));
+      sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
       target = checkNotNull(builder.target);
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
       megabytesCopiedPerChunk = builder.megabytesCopiedPerChunk;
