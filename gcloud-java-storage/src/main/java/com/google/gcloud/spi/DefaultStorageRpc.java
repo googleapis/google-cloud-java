@@ -207,6 +207,7 @@ public class DefaultStorageRpc implements StorageRpc {
       throws IOException {
     return storage.objects()
         .get(object.getBucket(), object.getName())
+        .setGeneration(object.getGeneration())
         .setProjection(DEFAULT_PROJECTION)
         .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
         .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
@@ -288,6 +289,7 @@ public class DefaultStorageRpc implements StorageRpc {
       throws IOException {
     return storage.objects()
         .delete(blob.getBucket(), blob.getName())
+        .setGeneration(blob.getGeneration())
         .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
         .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
         .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
@@ -332,6 +334,7 @@ public class DefaultStorageRpc implements StorageRpc {
     try {
       Storage.Objects.Get getRequest = storage.objects()
           .get(from.getBucket(), from.getName())
+          .setGeneration(from.getGeneration())
           .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
@@ -409,8 +412,10 @@ public class DefaultStorageRpc implements StorageRpc {
   public byte[] read(StorageObject from, Map<Option, ?> options, long position, int bytes)
       throws StorageException {
     try {
-      Get req = storage.objects().get(from.getBucket(), from.getName());
-      req.setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
+      Get req = storage.objects()
+          .get(from.getBucket(), from.getName())
+          .setGeneration(from.getGeneration())
+          .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
@@ -521,6 +526,7 @@ public class DefaultStorageRpc implements StorageRpc {
       com.google.api.services.storage.model.RewriteResponse rewriteReponse = storage.objects()
           .rewrite(req.source.getBucket(), req.source.getName(), req.target.getBucket(),
               req.target.getName(), req.target.getContentType() != null ? req.target : null)
+          .setSourceGeneration(req.source.getGeneration())
           .setRewriteToken(token)
           .setMaxBytesRewrittenPerCall(maxBytesRewrittenPerCall)
           .setProjection(DEFAULT_PROJECTION)

@@ -19,6 +19,7 @@ package com.google.gcloud.storage;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -130,7 +131,8 @@ public class ITStorageTest {
     BlobInfo remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
     assertNotNull(remoteBlob);
     assertEquals(blob.bucket(), remoteBlob.bucket());
-    assertEquals(blob.name(), remoteBlob.name());    byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+    assertEquals(blob.name(), remoteBlob.name());
+    byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     assertTrue(storage.delete(BUCKET, blobName));
   }
@@ -245,13 +247,23 @@ public class ITStorageTest {
     String blobName = "test-get-blob-fail";
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
-    BlobId wrongGenerationBlob = BlobId.of(BUCKET, blobName, -1L);
+    BlobId wrongGenerationBlob = BlobId.of(BUCKET, blobName);
     try {
-      storage.get(wrongGenerationBlob, Storage.BlobGetOption.generationMatch());
+      storage.get(wrongGenerationBlob, Storage.BlobGetOption.generationMatch(-1));
       fail("StorageException was expected");
     } catch (StorageException ex) {
       // expected
     }
+    assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testGetBlobFailNonExistingGeneration() {
+    String blobName = "test-get-blob-fail-non-existing-generation";
+    BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
+    assertNotNull(storage.create(blob));
+    BlobId wrongGenerationBlob = BlobId.of(BUCKET, blobName, -1L);
+    assertNull(storage.get(wrongGenerationBlob));
     assertTrue(storage.delete(BUCKET, blobName));
   }
 
@@ -403,6 +415,14 @@ public class ITStorageTest {
   public void testDeleteNonExistingBlob() {
     String blobName = "test-delete-non-existing-blob";
     assertTrue(!storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testDeleteBlobNonExistingGeneration() {
+    String blobName = "test-delete-blob-non-existing-generation";
+    BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
+    assertNotNull(storage.create(blob));
+    assertTrue(!storage.delete(BlobId.of(BUCKET, blobName, -1L)));
   }
 
   @Test
@@ -611,19 +631,20 @@ public class ITStorageTest {
     BatchRequest batchRequest = BatchRequest.builder()
         .update(updatedBlob, Storage.BlobTargetOption.generationMatch())
         .delete(BUCKET, blobName, Storage.BlobSourceOption.generationMatch(-1L))
-        .delete(BlobId.of(BUCKET, blobName, -1L), Storage.BlobSourceOption.generationMatch())
+        .delete(BlobId.of(BUCKET, blobName, -1L))
         .get(BUCKET, blobName, Storage.BlobGetOption.generationMatch(-1L))
-        .get(BlobId.of(BUCKET, blobName, -1L), Storage.BlobGetOption.generationMatch())
+        .get(BlobId.of(BUCKET, blobName, -1L))
         .build();
-    BatchResponse updateResponse = storage.apply(batchRequest);
-    assertEquals(1, updateResponse.updates().size());
-    assertEquals(2, updateResponse.deletes().size());
-    assertEquals(2, updateResponse.gets().size());
-    assertTrue(updateResponse.updates().get(0).failed());
-    assertTrue(updateResponse.gets().get(0).failed());
-    assertTrue(updateResponse.gets().get(1).failed());
-    assertTrue(updateResponse.deletes().get(0).failed());
-    assertTrue(updateResponse.deletes().get(1).failed());
+    BatchResponse batchResponse = storage.apply(batchRequest);
+    assertEquals(1, batchResponse.updates().size());
+    assertEquals(2, batchResponse.deletes().size());
+    assertEquals(2, batchResponse.gets().size());
+    assertTrue(batchResponse.updates().get(0).failed());
+    assertTrue(batchResponse.gets().get(0).failed());
+    assertFalse(batchResponse.gets().get(1).failed());
+    assertNull(batchResponse.gets().get(1).get());
+    assertTrue(batchResponse.deletes().get(0).failed());
+    assertTrue(batchResponse.deletes().get(1).failed());
     assertTrue(storage.delete(BUCKET, blobName));
   }
 
