@@ -450,9 +450,11 @@ public abstract class ServiceOptions<
     try {
       Class<?> factoryClass =
           Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
+      Class<?> serviceClass =
+          Class.forName("com.google.appengine.api.appidentity.AppIdentityService");
       Method method = factoryClass.getMethod("getAppIdentityService");
       Object appIdentityService = method.invoke(null);
-      method = appIdentityService.getClass().getMethod("getServiceAccountName");
+      method = serviceClass.getMethod("getServiceAccountName");
       String serviceAccountName = (String) method.invoke(appIdentityService);
       int indexOfAtSign = serviceAccountName.indexOf('@');
       return serviceAccountName.substring(0, indexOfAtSign);
