@@ -60,6 +60,7 @@ import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
+import com.google.common.primitives.Ints;
 import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.StorageOptions;
 
@@ -415,7 +416,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
       MediaHttpDownloader downloader = req.getMediaHttpDownloader();
-      downloader.setContentRange(position, (int) position + bytes);
+      downloader.setContentRange(position, Ints.checkedCast(position + bytes - 1));
       downloader.setDirectDownloadEnabled(true);
       ByteArrayOutputStream output = new ByteArrayOutputStream();
       req.executeMediaAndDownloadTo(output);
