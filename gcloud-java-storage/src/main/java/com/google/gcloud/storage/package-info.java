@@ -17,7 +17,7 @@
 /**
  * A client to Google Cloud Storage.
  *
- * <p>Here's a simple usage example for when running on App/Compute Engine:
+ * <p>Here's a simple usage example for using gcloud-java from App/Compute Engine:
  * <pre>{@code
  * Storage storage = StorageOptions.defaultInstance().service();
  * BlobId blobId = BlobId.of("bucket", "blob_name");
@@ -38,7 +38,7 @@
  * href="https://github.com/GoogleCloudPlatform/gcloud-java#specifying-a-project-id">specify a
  * project ID</a> and
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java#authentication">provide
- * authentication</a>.
+ * credentials</a>.
  * @see <a href="https://cloud.google.com/storage/">Google Cloud Storage</a>
  */
 package com.google.gcloud.storage;
