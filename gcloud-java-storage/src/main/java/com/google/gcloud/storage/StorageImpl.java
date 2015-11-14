@@ -199,7 +199,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public BlobInfo get(BlobId blob, BlobGetOption... options) {
     final StorageObject storedObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     try {
       StorageObject storageObject = runWithRetries(new Callable<StorageObject>() {
         @Override
@@ -405,7 +405,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public boolean delete(BlobId blob, BlobSourceOption... options) {
     final StorageObject storageObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     try {
       return runWithRetries(new Callable<Boolean>() {
         @Override
@@ -428,8 +428,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     final List<StorageObject> sources =
         Lists.newArrayListWithCapacity(composeRequest.sourceBlobs().size());
     for (ComposeRequest.SourceBlob sourceBlob : composeRequest.sourceBlobs()) {
-      sources.add(BlobInfo.builder(composeRequest.target().bucket(), sourceBlob.name())
-          .generation(sourceBlob.generation()).build().toPb());
+      sources.add(BlobInfo.builder(
+          BlobId.of(composeRequest.target().bucket(), sourceBlob.name(), sourceBlob.generation()))
+              .build().toPb());
     }
     final StorageObject target = composeRequest.target().toPb();
     final Map<StorageRpc.Option, ?> targetOptions = optionMap(composeRequest.target().generation(),
@@ -450,7 +451,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   public CopyWriter copy(final CopyRequest copyRequest) {
     final StorageObject source = copyRequest.source().toPb();
     final Map<StorageRpc.Option, ?> sourceOptions =
-        optionMap(null, null, copyRequest.sourceOptions(), true);
+        optionMap(copyRequest.source().generation(), null, copyRequest.sourceOptions(), true);
     final StorageObject target = copyRequest.target().toPb();
     final Map<StorageRpc.Option, ?> targetOptions = optionMap(copyRequest.target().generation(),
         copyRequest.target().metageneration(), copyRequest.targetOptions());
@@ -476,7 +477,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public byte[] readAllBytes(BlobId blob, BlobSourceOption... options) {
     final StorageObject storageObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     try {
       return runWithRetries(new Callable<byte[]>() {
         @Override
@@ -495,7 +496,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         Lists.newArrayListWithCapacity(batchRequest.toDelete().size());
     for (Map.Entry<BlobId, Iterable<BlobSourceOption>> entry : batchRequest.toDelete().entrySet()) {
       BlobId blob = entry.getKey();
-      Map<StorageRpc.Option, ?> optionsMap = optionMap(null, null, entry.getValue());
+      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob.generation(), null, entry.getValue());
       StorageObject storageObject = blob.toPb();
       toDelete.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(storageObject, optionsMap));
     }
@@ -512,7 +513,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         Lists.newArrayListWithCapacity(batchRequest.toGet().size());
     for (Map.Entry<BlobId, Iterable<BlobGetOption>> entry : batchRequest.toGet().entrySet()) {
       BlobId blob = entry.getKey();
-      Map<StorageRpc.Option, ?> optionsMap = optionMap(null, null, entry.getValue());
+      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob.generation(), null, entry.getValue());
       toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
     }
     StorageRpc.BatchResponse response =
@@ -557,7 +558,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public BlobReadChannel reader(BlobId blob, BlobSourceOption... options) {
-    Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     return new BlobReadChannelImpl(options(), blob, optionsMap);
   }
 
@@ -740,5 +741,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   private Map<StorageRpc.Option, ?> optionMap(BlobInfo blobInfo, Option... options) {
     return optionMap(blobInfo.generation(), blobInfo.metageneration(), options);
+  }
+
+  private Map<StorageRpc.Option, ?> optionMap(BlobId blobId, Option... options) {
+    return optionMap(blobId.generation(), null, options);
   }
 }

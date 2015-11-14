@@ -473,14 +473,32 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = -3712768261070182991L;
 
-    private BlobSourceOption(StorageRpc.Option rpcOption, long value) {
+    private BlobSourceOption(StorageRpc.Option rpcOption, Long value) {
       super(rpcOption, value);
     }
 
     /**
      * Returns an option for blob's data generation match. If this option is used the request will
-     * fail if blob's generation does not match the provided value.
+     * fail if blob's generation does not match. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
      */
+    public static BlobSourceOption generationMatch() {
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, null);
+    }
+
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if blob's generation matches. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
+     */
+    public static BlobSourceOption generationNotMatch() {
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, null);
+    }
+
     public static BlobSourceOption generationMatch(long generation) {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
     }
@@ -517,7 +535,7 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = 803817709703661480L;
 
-    private BlobGetOption(StorageRpc.Option rpcOption, long value) {
+    private BlobGetOption(StorageRpc.Option rpcOption, Long value) {
       super(rpcOption, value);
     }
 
@@ -527,8 +545,26 @@ public interface Storage extends Service<StorageOptions> {
 
     /**
      * Returns an option for blob's data generation match. If this option is used the request will
-     * fail if blob's generation does not match the provided value.
+     * fail if blob's generation does not match. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
      */
+    public static BlobGetOption generationMatch() {
+      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_MATCH, (Long) null);
+    }
+
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if blob's generation matches. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
+     */
+    public static BlobGetOption generationNotMatch() {
+      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, (Long) null);
+    }
+
     public static BlobGetOption generationMatch(long generation) {
       return new BlobGetOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
     }

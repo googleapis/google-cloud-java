@@ -76,7 +76,6 @@ public final class BlobInfo implements Serializable {
   private final String crc32c;
   private final String mediaLink;
   private final Map<String, String> metadata;
-  private final Long generation;
   private final Long metageneration;
   private final Long deleteTime;
   private final Long updateTime;
@@ -116,7 +115,6 @@ public final class BlobInfo implements Serializable {
     private String crc32c;
     private String mediaLink;
     private Map<String, String> metadata;
-    private Long generation;
     private Long metageneration;
     private Long deleteTime;
     private Long updateTime;
@@ -260,11 +258,6 @@ public final class BlobInfo implements Serializable {
       return this;
     }
 
-    Builder generation(Long generation) {
-      this.generation = generation;
-      return this;
-    }
-
     Builder metageneration(Long metageneration) {
       this.metageneration = metageneration;
       return this;
@@ -307,7 +300,6 @@ public final class BlobInfo implements Serializable {
     crc32c = builder.crc32c;
     mediaLink = builder.mediaLink;
     metadata = builder.metadata;
-    generation = builder.generation;
     metageneration = builder.metageneration;
     deleteTime = builder.deleteTime;
     updateTime = builder.updateTime;
@@ -481,7 +473,7 @@ public final class BlobInfo implements Serializable {
    * Returns blob's data generation. Used for blob versioning.
    */
   public Long generation() {
-    return generation;
+    return blobId().generation();
   }
 
   /**
@@ -514,7 +506,6 @@ public final class BlobInfo implements Serializable {
     return new Builder()
         .blobId(blobId)
         .id(id)
-        .generation(generation)
         .cacheControl(cacheControl)
         .contentEncoding(contentEncoding)
         .contentType(contentType)
@@ -540,6 +531,7 @@ public final class BlobInfo implements Serializable {
     return MoreObjects.toStringHelper(this)
         .add("bucket", bucket())
         .add("name", name())
+        .add("generation", generation())
         .add("size", size())
         .add("content-type", contentType())
         .add("metadata", metadata())
@@ -590,7 +582,6 @@ public final class BlobInfo implements Serializable {
     storageObject.setContentEncoding(contentEncoding);
     storageObject.setCrc32c(crc32c);
     storageObject.setContentType(contentType);
-    storageObject.setGeneration(generation);
     storageObject.setMd5Hash(md5);
     storageObject.setMediaLink(mediaLink);
     storageObject.setMetageneration(metageneration);
@@ -618,8 +609,19 @@ public final class BlobInfo implements Serializable {
   }
 
   /**
-   * Returns a {@code BlobInfo} builder where blob identity is set to the provided value.
+   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
    */
+  public static Builder builder(BucketInfo bucketInfo, String name, Long generation) {
+    return builder(bucketInfo.name(), name, generation);
+  }
+
+  /**
+   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
+   */
+  public static Builder builder(String bucket, String name, Long generation) {
+    return new Builder().blobId(BlobId.of(bucket, name, generation));
+  }
+
   public static Builder builder(BlobId blobId) {
     return new Builder().blobId(blobId);
   }
@@ -637,9 +639,6 @@ public final class BlobInfo implements Serializable {
     }
     if (storageObject.getContentType() != null) {
       builder.contentType(storageObject.getContentType());
-    }
-    if (storageObject.getGeneration() != null) {
-      builder.generation(storageObject.getGeneration());
     }
     if (storageObject.getMd5Hash() != null) {
       builder.md5(storageObject.getMd5Hash());
