@@ -271,7 +271,7 @@ public final class Bucket {
    * Deletes this bucket.
    *
    * @param options bucket delete options
-   * @return true if bucket was deleted
+   * @return {@code true} if bucket was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   public boolean delete(BucketSourceOption... options) {
