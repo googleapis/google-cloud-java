@@ -35,15 +35,16 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Create a new project.
    *
-   * @return ProjectInfo object representing the new project's metadata.  The returned object will
-   * include additional read-only information, namely project number, lifecycle state, and creation
-   * time.
+   * @return ProjectInfo object representing the new project's metadata. The returned object will
+   *     include additional read-only information, namely project number, lifecycle state, and
+   *     creation time.
    * @throws ResourceManagerException upon failure
    */
   ProjectInfo create(ProjectInfo project);
 
   /**
-   * Delete the requested project.
+   * Sends a request to delete a project. For an unspecified amount of time, this action can be
+   * undone using {@link #undelete}.
    *
    * @throws ResourceManagerException upon failure
    */
@@ -57,8 +58,8 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   ProjectInfo get(String projectId);
 
   /**
-   * List the projects viewable by the current user.  Use {@link ListOptions} to filter this list,
-   * set page size, and set page tokens.  Note that pagination is currently not implemented by the
+   * List the projects viewable by the current user. Use {@link ListOptions} to filter this list,
+   * set page size, and set page tokens. Note that pagination is currently not implemented by the
    * Cloud Resource Manager API.
    *
    * @return {@code Page<ProjectInfo>}, a paginated list of projects.
@@ -75,8 +76,8 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   ProjectInfo replace(ProjectInfo newProject);
 
   /**
-   * Undo a delete request.  This will only succeed if the project's lifecycle state is
-   * DELETE_REQUESTED.
+   * Undo a delete request. This will only succeed if the server processes the undelete request
+   * while the project's state is {@code DELETE_REQUESTED}.
    *
    * @throws ResourceManagerException
    */
@@ -102,8 +103,8 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * Test whether the caller of this function has the permissions provided as arguments.
    *
    * @return List of booleans representing whether the caller has the corresponding permission in
-   * the given permissions list.
+   *     the given permissions array.
    * @throws ResourceManagerException upon failure
    */
-  List<Boolean> hasPermissions(String projectId, List<Permission> permissions);
+  List<Boolean> hasPermissions(String projectId, Permission... permissions);
 }

@@ -29,14 +29,8 @@ public class ResourceId implements Serializable {
   private final Type type;
 
   public enum Type {
-    ORGANIZATION("organization"),
-    UNKNOWN("unknown");
-
-    private final String strValue;
-
-    Type(String strValue) {
-      this.strValue = strValue;
-    }
+    ORGANIZATION,
+    UNKNOWN;
   }
 
   private ResourceId(String id, Type type) {
@@ -54,8 +48,7 @@ public class ResourceId implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ResourceId && Objects.equals(this.id, ((ResourceId) obj).id)
-        && Objects.equals(this.type, ((ResourceId) obj).type);
+    return obj instanceof ResourceId && Objects.equals(toPb(), ((ResourceId) obj).toPb());
   }
 
   @Override
@@ -71,7 +64,7 @@ public class ResourceId implements Serializable {
     com.google.api.services.cloudresourcemanager.model.ResourceId resourceIdPb =
         new com.google.api.services.cloudresourcemanager.model.ResourceId();
     resourceIdPb.setId(id);
-    resourceIdPb.setType(type.strValue);
+    resourceIdPb.setType(type.toString().toLowerCase());
     return resourceIdPb;
   }
 
