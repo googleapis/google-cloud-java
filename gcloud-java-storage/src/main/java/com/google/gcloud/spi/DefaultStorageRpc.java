@@ -368,7 +368,11 @@ public class DefaultStorageRpc implements StorageRpc {
 
           @Override
           public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
-            deletes.put(tuple.x(), Tuple.<Boolean, StorageException>of(null, translate(e)));
+            if (e.getCode() == 404) {
+              deletes.put(tuple.x(), Tuple.<Boolean, StorageException>of(Boolean.FALSE, null));
+            } else {
+              deletes.put(tuple.x(), Tuple.<Boolean, StorageException>of(null, translate(e)));
+            }
           }
         });
       }
