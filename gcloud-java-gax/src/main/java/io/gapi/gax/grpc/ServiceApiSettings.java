@@ -105,8 +105,10 @@ public class ServiceApiSettings {
   }
 
   /**
-   * An instance of ManagedChannel; shutdown will be called on this channel when
-   * the instance of LoggingServiceApi is shut down.
+   * The channel used to send requests to the service. Whichever service api class that
+   * this instance of ServiceApiSettings is passed to will call shutdown() on this
+   * channel. This injection mechanism is intended for use by unit tests to override
+   * the channel that would be created by default for real calls to the service.
    */
   public ServiceApiSettings setChannel(ManagedChannel channel) {
     this.channel = channel;
