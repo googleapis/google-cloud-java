@@ -17,26 +17,36 @@
 package com.google.gcloud.resourcemanager;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
 public class ResourceIdTest {
 
-private static final ResourceId RESOURCE_ID = ResourceId.of("id", ResourceId.Type.ORGANIZATION);
+  private static final String ID = "id";
+  private static final ResourceId.Type TYPE = ResourceId.Type.ORGANIZATION;
+  private static final ResourceId RESOURCE_ID = ResourceId.of(ID, TYPE);
 
   @Test
   public void testOf() {
-    assertEquals(RESOURCE_ID.id(), "id");
-    assertEquals(RESOURCE_ID.type(), ResourceId.Type.ORGANIZATION);
+    assertEquals(ID, RESOURCE_ID.id());
+    assertEquals(TYPE, RESOURCE_ID.type());
   }
 
   @Test
   public void testEquals() {
-    assertEquals(RESOURCE_ID, ResourceId.of("id", ResourceId.Type.ORGANIZATION));
+    assertEquals(RESOURCE_ID, ResourceId.of(ID, TYPE));
+    assertEquals(ID, RESOURCE_ID.id());
+    assertEquals(TYPE, RESOURCE_ID.type());
+    assertNotEquals(ResourceId.of("another-ID", TYPE), RESOURCE_ID);
+    assertNotEquals(ResourceId.of(ID, ResourceId.Type.UNKNOWN), RESOURCE_ID);
   }
 
   @Test
   public void testToAndFromPb() {
-    assertEquals(RESOURCE_ID, ResourceId.fromPb(RESOURCE_ID.toPb()));
+    ResourceId copy = ResourceId.fromPb(RESOURCE_ID.toPb());
+    assertEquals(RESOURCE_ID, copy);
+    assertEquals(ID, copy.id());
+    assertEquals(TYPE, copy.type());
   }
 }

@@ -17,6 +17,7 @@ package com.google.gcloud.resourcemanager;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.ISODateTimeFormat;
@@ -86,7 +87,7 @@ public class ProjectInfo implements Serializable {
     }
 
     public Builder labels(Map<String, String> labels) {
-      this.labels = checkNotNull(labels);
+      this.labels = Maps.newHashMap(checkNotNull(labels));
       return this;
     }
 
@@ -111,23 +112,18 @@ public class ProjectInfo implements Serializable {
     }
 
     public ProjectInfo build() {
-      return new ProjectInfo(name, id, labels, number, state, createTimeMillis, parent);
+      return new ProjectInfo(this);
     }
   }
 
-  ProjectInfo(String name, String id, Map<String, String> labels, Long number, State state,
-      Long createTimeMillis, ResourceId parent) {
-    this.name = name;
-    this.id = checkNotNull(id);
-    ImmutableMap.Builder<String, String> labelsMapBuilder = ImmutableMap.builder();
-    for (Map.Entry<String, String> entry : labels.entrySet()) {
-      labelsMapBuilder.put(entry.getKey(), entry.getValue());
-    }
-    this.labels = (labels == null) ? null : labelsMapBuilder.build();
-    this.number = number;
-    this.state = state;
-    this.createTimeMillis = createTimeMillis;
-    this.parent = parent;
+  ProjectInfo(Builder builder) {
+    this.name = builder.name;
+    this.id = checkNotNull(builder.id);
+    this.labels = ImmutableMap.copyOf(builder.labels);
+    this.number = builder.number;
+    this.state = builder.state;
+    this.createTimeMillis = builder.createTimeMillis;
+    this.parent = builder.parent;
   }
 
   public String id() {
@@ -160,17 +156,7 @@ public class ProjectInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    if (obj == this) {
-      return true;
-    } else if (obj instanceof ProjectInfo) {
-      ProjectInfo other = (ProjectInfo) obj;
-      return Objects.equals(this.name, other.name) && Objects.equals(this.id, other.id)
-          && Objects.equals(this.labels, other.labels) && Objects.equals(this.number, other.number)
-          && Objects.equals(this.state, other.state)
-          && Objects.equals(this.createTimeMillis, other.createTimeMillis)
-          && Objects.equals(this.parent, other.parent);
-    }
-    return false;
+    return obj instanceof ProjectInfo && Objects.equals(toPb(), ((ProjectInfo) obj).toPb());
   }
 
   @Override
@@ -183,14 +169,10 @@ public class ProjectInfo implements Serializable {
   }
 
   public Builder toBuilder() {
-    Map<String, String> mutableLabels = new HashMap<String, String>();
-    for (Map.Entry<String, String> entry : labels.entrySet()) {
-      mutableLabels.put(entry.getKey(), entry.getValue());
-    }
     return new Builder()
         .name(name)
         .id(id)
-        .labels(mutableLabels)
+        .labels(labels)
         .number(number)
         .state(state)
         .createTimeMillis(createTimeMillis)

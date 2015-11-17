@@ -17,21 +17,20 @@
 package com.google.gcloud.resourcemanager;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
+
+import com.google.common.collect.ImmutableMap;
 
 import org.junit.Test;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class ProjectInfoTest {
 
   private static final String ID = "project-id";
   private static final String NAME = "myProj";
-  private static final Map<String, String> LABELS = new HashMap<String, String>();
-  static {
-    LABELS.put("k1", "v1");
-    LABELS.put("k2", "k2");
-  }
+  private static final Map<String, String> LABELS = ImmutableMap.of("k1", "v1", "k2", "v2");
   private static final Long NUMBER = 123L;
   private static final Long CREATE_TIME_MILLIS = 123456789L;
   private static final ProjectInfo.State STATE = ProjectInfo.State.DELETE_REQUESTED;
@@ -56,18 +55,53 @@ public class ProjectInfoTest {
     assertEquals(CREATE_TIME_MILLIS, FULL_PROJECT_INFO.createTimeMillis());
     assertEquals(STATE, FULL_PROJECT_INFO.state());
     assertEquals(PARENT, FULL_PROJECT_INFO.parent());
+
+    assertEquals(ID, PARTIAL_PROJECT_INFO.id());
+    assertEquals(null, PARTIAL_PROJECT_INFO.name());
+    assertTrue(PARTIAL_PROJECT_INFO.labels().isEmpty());
+    assertEquals(null, PARTIAL_PROJECT_INFO.number());
+    assertEquals(null, PARTIAL_PROJECT_INFO.createTimeMillis());
+    assertEquals(null, PARTIAL_PROJECT_INFO.state());
+    assertEquals(null, PARTIAL_PROJECT_INFO.parent());
   }
 
   @Test
   public void testToBuilder() {
-    assertEquals(FULL_PROJECT_INFO, FULL_PROJECT_INFO.toBuilder().build());
-    assertEquals(PARTIAL_PROJECT_INFO, PARTIAL_PROJECT_INFO.toBuilder().build());
+    compareProjects(FULL_PROJECT_INFO, FULL_PROJECT_INFO.toBuilder().build());
+    compareProjects(PARTIAL_PROJECT_INFO, PARTIAL_PROJECT_INFO.toBuilder().build());
   }
 
   @Test
   public void testToAndFromPb() {
-    assertEquals(FULL_PROJECT_INFO, ProjectInfo.fromPb(FULL_PROJECT_INFO.toPb()));
-    assertEquals(PARTIAL_PROJECT_INFO, ProjectInfo.fromPb(PARTIAL_PROJECT_INFO.toPb()));
+    compareProjects(FULL_PROJECT_INFO, ProjectInfo.fromPb(FULL_PROJECT_INFO.toPb()));
+    compareProjects(PARTIAL_PROJECT_INFO, ProjectInfo.fromPb(PARTIAL_PROJECT_INFO.toPb()));
+  }
+
+  @Test
+  public void testEquals() {
+    compareProjects(
+        FULL_PROJECT_INFO,
+        ProjectInfo.builder(ID)
+            .name(NAME)
+            .labels(LABELS)
+            .number(NUMBER)
+            .createTimeMillis(CREATE_TIME_MILLIS)
+            .state(STATE)
+            .parent(PARENT)
+            .build());
+    compareProjects(PARTIAL_PROJECT_INFO, ProjectInfo.builder(ID).build());
+    assertNotEquals(FULL_PROJECT_INFO, PARTIAL_PROJECT_INFO);
+  }
+
+  private void compareProjects(ProjectInfo expected, ProjectInfo value) {
+    assertEquals(expected, value);
+    assertEquals(expected.id(), value.id());
+    assertEquals(expected.name(), value.name());
+    assertEquals(expected.labels(), value.labels());
+    assertEquals(expected.number(), value.number());
+    assertEquals(expected.createTimeMillis(), value.createTimeMillis());
+    assertEquals(expected.state(), value.state());
+    assertEquals(expected.parent(), value.parent());
   }
 }
 

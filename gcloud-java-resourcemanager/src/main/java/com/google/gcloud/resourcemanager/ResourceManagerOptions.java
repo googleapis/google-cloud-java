@@ -40,6 +40,13 @@ public class ResourceManagerOptions
     }
   }
 
+  /**
+   * Returns a default {@code ResourceManagerOptions} instance.
+   */
+  public static ResourceManagerOptions defaultInstance() {
+    return builder().build();
+  }
+
   public static class DefaultResourceManagerRpcFactory implements ResourceManagerRpcFactory {
     private static final ResourceManagerRpcFactory INSTANCE =
         new DefaultResourceManagerRpcFactory();

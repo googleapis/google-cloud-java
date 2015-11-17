@@ -19,6 +19,8 @@ package com.google.gcloud.resourcemanager;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.RetryParams;
@@ -34,36 +36,27 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class SerializationTest {
 
   private static final ResourceId RESOURCE_ID =
       ResourceId.of("some id", ResourceId.Type.ORGANIZATION);
-  private static final Binding OWNER_BINDING;
-  private static final Binding EDITOR_BINDING;
-  private static final Binding VIEWER_BINDING;
-  private static final Binding EMPTY_BINDING = Policy.Binding.builder().build();
-  static {
-    List<Member> ownerMemberList = new ArrayList<>();
-    List<Member> editorMemberList = new ArrayList<>();
-    List<Member> viewerMemberList = new ArrayList<>();
-    ownerMemberList.add(Member.user("first-owner@email.com"));
-    ownerMemberList.add(Member.group("group-of-owners@email.com"));
-    OWNER_BINDING = Policy.Binding.builder().role(RoleType.OWNER).members(ownerMemberList).build();
-    editorMemberList.add(Member.serviceAccount("editor@someemail.com"));
-    EDITOR_BINDING =
-        Policy.Binding.builder().role(RoleType.EDITOR).members(editorMemberList).build();
-    viewerMemberList.add(Member.serviceAccount("app@someemail.com"));
-    viewerMemberList.add(Member.user("viewer@email.com"));
-    VIEWER_BINDING =
-        Policy.Binding.builder().role(RoleType.VIEWER).members(viewerMemberList).build();
-  }
-  private static final Policy POLICY =
+  private static final List<Member> OWNER_MEMBER_LIST = ImmutableList.of(
+      Member.user("first-owner@email.com"), Member.group("group-of-owners@email.com"));
+  private static final List<Member> EDITOR_MEMBER_LIST =
+      ImmutableList.of(Member.serviceAccount("editor@someemail.com"));
+  private static final List<Member> VIEWER_MEMBER_LIST =
+      ImmutableList.of(Member.serviceAccount("app@someemail.com"), Member.user("viewer@email.com"));
+  private static final Binding OWNER_BINDING =
+      Policy.Binding.builder().role(RoleType.OWNER).members(OWNER_MEMBER_LIST).build();
+  private static final Binding EDITOR_BINDING =
+      Policy.Binding.builder().role(RoleType.EDITOR).members(EDITOR_MEMBER_LIST).build();
+  private static final Binding VIEWER_BINDING =
+      Policy.Binding.builder().role(RoleType.VIEWER).members(VIEWER_MEMBER_LIST).build();
+  private static final Policy EMPTY_POLICY = Policy.builder().build();
+  private static final Policy FULL_POLICY =
       Policy.builder()
           .addBinding(OWNER_BINDING)
           .addBinding(EDITOR_BINDING)
@@ -71,17 +64,18 @@ public class SerializationTest {
           .version(1)
           .etag("some-etag-value")
           .build();
-  private static final Policy EMPTY_POLICY = Policy.builder().build();
-  private static final ProjectInfo PROJECT_INFO1 = ProjectInfo.builder("id1").build();
-  private static final ProjectInfo PROJECT_INFO2;
-  static {
-    Map<String, String> labels = new HashMap<String, String>();
-    labels.put("key", "value");
-    PROJECT_INFO2 =
-        new ProjectInfo("name", "id", labels, 123L, ProjectInfo.State.ACTIVE, 1234L, RESOURCE_ID);
-  }
+  private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder("id1").build();
+  private static final ProjectInfo FULL_PROJECT_INFO =
+      ProjectInfo.builder("id")
+          .name("name")
+          .labels(ImmutableMap.of("key", "value"))
+          .number(123L)
+          .state(ProjectInfo.State.ACTIVE)
+          .createTimeMillis(1234L)
+          .parent(RESOURCE_ID)
+          .build();
   private static final PageImpl<ProjectInfo> PAGE_RESULT =
-      new PageImpl<>(null, "c", Collections.singletonList(PROJECT_INFO1));
+      new PageImpl<>(null, "c", Collections.singletonList(PARTIAL_PROJECT_INFO));
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -101,8 +95,8 @@ public class SerializationTest {
   @Test
   public void testModelAndRequests() throws Exception {
     Serializable[] objects = {RESOURCE_ID, OWNER_BINDING.members().get(0), OWNER_BINDING,
-        EDITOR_BINDING, VIEWER_BINDING, EMPTY_BINDING, POLICY, EMPTY_POLICY, PROJECT_INFO1,
-        PROJECT_INFO2, PAGE_RESULT};
+        EDITOR_BINDING, VIEWER_BINDING, EMPTY_POLICY, FULL_POLICY, PARTIAL_PROJECT_INFO,
+        FULL_PROJECT_INFO, PAGE_RESULT};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

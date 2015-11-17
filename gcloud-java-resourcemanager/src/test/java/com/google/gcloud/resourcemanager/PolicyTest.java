@@ -17,40 +17,31 @@
 package com.google.gcloud.resourcemanager;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotEquals;
 
+import com.google.common.collect.ImmutableList;
 import com.google.gcloud.resourcemanager.Policy.Binding;
 import com.google.gcloud.resourcemanager.Policy.Member;
 import com.google.gcloud.resourcemanager.Policy.RoleType;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PolicyTest {
 
-  private static final Binding OWNER_BINDING;
-  private static final Binding EDITOR_BINDING;
-  private static final Binding VIEWER_BINDING;
-  private static final Binding EMPTY_BINDING = Policy.Binding.builder().build();
-  private static final List<Member> OWNER_MEMBER_LIST = new ArrayList<>();
-  private static final List<Member> EDITOR_MEMBER_LIST = new ArrayList<>();
-  private static final List<Member> VIEWER_MEMBER_LIST = new ArrayList<>();
-  static {
-    OWNER_MEMBER_LIST.add(Member.user("first-owner@email.com"));
-    OWNER_MEMBER_LIST.add(Member.group("group-of-owners@email.com"));
-    OWNER_BINDING =
-        Policy.Binding.builder().role(RoleType.OWNER).members(OWNER_MEMBER_LIST).build();
-    EDITOR_MEMBER_LIST.add(Member.serviceAccount("editor@someemail.com"));
-    EDITOR_BINDING =
-        Policy.Binding.builder().role(RoleType.EDITOR).members(EDITOR_MEMBER_LIST).build();
-    VIEWER_MEMBER_LIST.add(Member.serviceAccount("app@someemail.com"));
-    VIEWER_MEMBER_LIST.add(Member.user("viewer@email.com"));
-    VIEWER_BINDING =
-        Policy.Binding.builder().role(RoleType.VIEWER).members(VIEWER_MEMBER_LIST).build();
-  }
+  private static final List<Member> OWNER_MEMBER_LIST = ImmutableList.of(
+      Member.user("first-owner@email.com"), Member.group("group-of-owners@email.com"));
+  private static final List<Member> EDITOR_MEMBER_LIST =
+      ImmutableList.of(Member.serviceAccount("editor@someemail.com"));
+  private static final List<Member> VIEWER_MEMBER_LIST =
+      ImmutableList.of(Member.serviceAccount("app@someemail.com"), Member.user("viewer@email.com"));
+  private static final Binding OWNER_BINDING =
+      Policy.Binding.builder().role(RoleType.OWNER).members(OWNER_MEMBER_LIST).build();
+  private static final Binding EDITOR_BINDING =
+      Policy.Binding.builder().role(RoleType.EDITOR).members(EDITOR_MEMBER_LIST).build();
+  private static final Binding VIEWER_BINDING =
+      Policy.Binding.builder().role(RoleType.VIEWER).members(VIEWER_MEMBER_LIST).build();
   private static final Policy EMPTY_POLICY = Policy.builder().build();
   private static final Integer VERSION = 1;
   private static final String ETAG = "some-etag-value";
@@ -65,16 +56,13 @@ public class PolicyTest {
 
   @Test
   public void testBindingBuilder() {
-    assertEquals(OWNER_BINDING.role(), RoleType.OWNER);
-    assertEquals(OWNER_BINDING.members(), OWNER_MEMBER_LIST);
-    assertNull(EMPTY_BINDING.role());
-    assertTrue(EMPTY_BINDING.members().isEmpty());
+    assertEquals(RoleType.OWNER, OWNER_BINDING.role());
+    assertEquals(OWNER_MEMBER_LIST, OWNER_BINDING.members());
   }
 
   @Test
   public void testBindingToBuilder() {
     assertEquals(OWNER_BINDING, OWNER_BINDING.toBuilder().build());
-    assertEquals(EMPTY_BINDING, EMPTY_BINDING.toBuilder().build());
   }
 
   @Test
@@ -82,7 +70,6 @@ public class PolicyTest {
     assertEquals(OWNER_BINDING, Binding.fromPb(OWNER_BINDING.toPb()));
     assertEquals(EDITOR_BINDING, Binding.fromPb(EDITOR_BINDING.toPb()));
     assertEquals(VIEWER_BINDING, Binding.fromPb(VIEWER_BINDING.toPb()));
-    assertEquals(EMPTY_BINDING, Binding.fromPb(EMPTY_BINDING.toPb()));
   }
 
   @Test
@@ -96,13 +83,35 @@ public class PolicyTest {
 
   @Test
   public void testPolicyToBuilder() {
-    assertEquals(FULL_POLICY, FULL_POLICY.toBuilder().build());
-    assertEquals(EMPTY_POLICY, EMPTY_POLICY.toBuilder().build());
+    comparePolicies(FULL_POLICY, FULL_POLICY.toBuilder().build());
+    comparePolicies(EMPTY_POLICY, EMPTY_POLICY.toBuilder().build());
   }
 
   @Test
   public void testPolicyToAndFromPb() {
-    assertEquals(EMPTY_POLICY, Policy.fromPb(EMPTY_POLICY.toPb()));
-    assertEquals(FULL_POLICY, Policy.fromPb(FULL_POLICY.toPb()));
+    comparePolicies(FULL_POLICY, Policy.fromPb(FULL_POLICY.toPb()));
+    comparePolicies(EMPTY_POLICY, Policy.fromPb(EMPTY_POLICY.toPb()));
+  }
+
+  @Test
+  public void testEquals() {
+    comparePolicies(
+        FULL_POLICY,
+        Policy.builder()
+            .addBinding(OWNER_BINDING)
+            .addBinding(EDITOR_BINDING)
+            .addBinding(VIEWER_BINDING)
+            .version(VERSION)
+            .etag(ETAG)
+            .build());
+    comparePolicies(EMPTY_POLICY, Policy.builder().build());
+    assertNotEquals(FULL_POLICY, EMPTY_POLICY);
+  }
+
+  private void comparePolicies(Policy expected, Policy value) {
+    assertEquals(expected, value);
+    assertEquals(expected.bindings(), value.bindings());
+    assertEquals(expected.version(), value.version());
+    assertEquals(expected.etag(), value.etag());
   }
 }

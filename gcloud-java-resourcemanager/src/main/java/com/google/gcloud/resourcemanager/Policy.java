@@ -19,6 +19,7 @@ package com.google.gcloud.resourcemanager;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -122,6 +123,32 @@ public class Policy implements Serializable {
       return obj instanceof Member && Objects.equals(this.memberType, ((Member) obj).memberType)
           && Objects.equals(this.emailOrDomain, ((Member) obj).emailOrDomain);
     }
+
+    String toPb() {
+      return emailOrDomain != null ? memberType.prefix() + emailOrDomain : memberType.prefix();
+    }
+
+    static Member fromPb(String memberPb) {
+      String[] memberInfo = memberPb.split(":", 2);
+      String memberStr = memberInfo[0];
+      String emailOrDomain = (memberInfo.length > 1) ? memberInfo[1] : null;
+      switch (memberStr) {
+        case "allUsers":
+          return new Member(MemberType.ALL_USERS, null);
+        case "allAuthenticatedUsers":
+          return new Member(MemberType.ALL_AUTHENTICATED_USERS, null);
+        case "user":
+          return new Member(MemberType.USER, checkNotNull(emailOrDomain));
+        case "serviceAccount":
+          return new Member(MemberType.SERVICE_ACCOUNT, checkNotNull(emailOrDomain));
+        case "group":
+          return new Member(MemberType.GROUP, checkNotNull(emailOrDomain));
+        case "domain":
+          return new Member(MemberType.DOMAIN, checkNotNull(emailOrDomain));
+        default:
+          throw new UnsupportedOperationException("Unsupported member type: " + memberStr);
+      }
+    }
   }
 
   /**
@@ -147,7 +174,7 @@ public class Policy implements Serializable {
       }
 
       public Builder members(List<Member> members) {
-        this.members = checkNotNull(members);
+        this.members = Lists.newArrayList(checkNotNull(members));
         return this;
       }
 
@@ -172,15 +199,11 @@ public class Policy implements Serializable {
     }
 
     private Binding(RoleType role, List<Member> members) {
-      this.role = role;
-      ImmutableList.Builder<Member> membersListBuilder = new ImmutableList.Builder<>();
-      for (Member member : members) {
-        membersListBuilder.add(member);
-      }
-      this.members = membersListBuilder.build();
+      this.role = checkNotNull(role);
+      this.members = ImmutableList.copyOf(members);
     }
 
-    public static Binding binding(RoleType role, List<Member> members) {
+    public static Binding of(RoleType role, List<Member> members) {
       return new Binding(role, members);
     }
 
@@ -197,26 +220,16 @@ public class Policy implements Serializable {
     }
 
     public Builder toBuilder() {
-      List<Member> mutableMembers = new ArrayList<>();
-      for (Member member : members) {
-        mutableMembers.add(member);
-      }
-      return new Builder().role(role).members(mutableMembers);
+      return new Builder().role(role).members(members);
     }
 
     com.google.api.services.cloudresourcemanager.model.Binding toPb() {
       com.google.api.services.cloudresourcemanager.model.Binding bindingPb =
           new com.google.api.services.cloudresourcemanager.model.Binding();
-      if (role != null) {
-        bindingPb.setRole("roles/" + role.toString().toLowerCase());
-      }
+      bindingPb.setRole("roles/" + role.toString().toLowerCase());
       List<String> membersPb = new ArrayList<>(members.size());
       for (Member member : members) {
-        if (member.emailOrDomain() != null) {
-          membersPb.add(member.type().prefix() + member.emailOrDomain());
-        } else {
-          membersPb.add(member.type().prefix());
-        }
+        membersPb.add(member.toPb());
       }
       bindingPb.setMembers(membersPb);
       return bindingPb;
@@ -229,31 +242,7 @@ public class Policy implements Serializable {
       List<Member> members = new ArrayList<>();
       if (bindingPb.getMembers() != null) {
         for (String memberPb : bindingPb.getMembers()) {
-          String[] memberInfo = memberPb.split(":", 2);
-          String memberTypeStr = memberInfo[0];
-          String emailOrDomain = (memberInfo.length > 1) ? emailOrDomain = memberInfo[1] : null;
-          switch (memberTypeStr) {
-            case "allUsers":
-              members.add(new Member(MemberType.ALL_USERS, null));
-              break;
-            case "allAuthenticatedUsers":
-              members.add(new Member(MemberType.ALL_AUTHENTICATED_USERS, null));
-              break;
-            case "user":
-              members.add(new Member(MemberType.USER, checkNotNull(emailOrDomain)));
-              break;
-            case "serviceAccount":
-              members.add(new Member(MemberType.SERVICE_ACCOUNT, checkNotNull(emailOrDomain)));
-              break;
-            case "group":
-              members.add(new Member(MemberType.GROUP, checkNotNull(emailOrDomain)));
-              break;
-            case "domain":
-              members.add(new Member(MemberType.DOMAIN, checkNotNull(emailOrDomain)));
-              break;
-            default:
-              throw new UnsupportedOperationException("Unsupported member type: " + memberTypeStr);
-          }
+          members.add(Member.fromPb(memberPb));
         }
       }
       return new Binding(role, members);
@@ -266,8 +255,7 @@ public class Policy implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-      return obj instanceof Binding && Objects.equals(this.role, ((Binding) obj).role)
-          && Objects.equals(this.members, ((Binding) obj).members);
+      return obj instanceof Binding && Objects.equals(toPb(), ((Binding) obj).toPb());
     }
   }
 
@@ -296,7 +284,7 @@ public class Policy implements Serializable {
     }
 
     public Builder bindings(List<Binding> bindings) {
-      this.bindings = checkNotNull(bindings);
+      this.bindings = new ArrayList<>(checkNotNull(bindings));
       return this;
     }
 
@@ -316,11 +304,7 @@ public class Policy implements Serializable {
   }
 
   Policy(Builder builder) {
-    ImmutableList.Builder<Binding> bindingsListBuilder = new ImmutableList.Builder<>();
-    for (Binding binding : builder.bindings) {
-      bindingsListBuilder.add(binding);
-    }
-    bindings = bindingsListBuilder.build();
+    bindings = ImmutableList.copyOf(builder.bindings);
     version = builder.version;
     etag = builder.etag;
   }
@@ -342,11 +326,7 @@ public class Policy implements Serializable {
   }
 
   public Builder toBuilder() {
-    List<Binding> mutableBindings = new ArrayList<>();
-    for (Binding binding : bindings) {
-      mutableBindings.add(binding);
-    }
-    return new Builder().bindings(mutableBindings).etag(etag).version(version);
+    return new Builder().bindings(bindings).etag(etag).version(version);
   }
 
   @Override
@@ -356,9 +336,7 @@ public class Policy implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof Policy && Objects.equals(this.bindings, ((Policy) obj).bindings)
-        && Objects.equals(this.etag, ((Policy) obj).etag)
-        && Objects.equals(this.version, ((Policy) obj).version);
+    return obj instanceof Policy && Objects.equals(toPb(), ((Policy) obj).toPb());
   }
 
   com.google.api.services.cloudresourcemanager.model.Policy toPb() {
