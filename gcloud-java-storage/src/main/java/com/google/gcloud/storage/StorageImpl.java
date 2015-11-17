@@ -43,6 +43,8 @@ import com.google.common.collect.Sets;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
+import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.AuthCredentials.ApplicationDefaultAuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.BaseService;
@@ -584,9 +586,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     ServiceAccountAuthCredentials cred =
         (ServiceAccountAuthCredentials) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
     if (cred == null) {
-      checkArgument(options().authCredentials() instanceof ServiceAccountAuthCredentials,
-          "Signing key was not provided and could not be derived");
-      cred = (ServiceAccountAuthCredentials) this.options().authCredentials();
+      AuthCredentials serviceCred = this.options().authCredentials();
+      if (serviceCred instanceof ServiceAccountAuthCredentials) {
+        cred = (ServiceAccountAuthCredentials) serviceCred;
+      } else {
+        if (serviceCred instanceof ApplicationDefaultAuthCredentials) {
+          cred = ((ApplicationDefaultAuthCredentials) serviceCred).toServiceAccountCredentials();
+        }
+      }
+      checkArgument(cred != null, "Signing key was not provided and could not be derived");
     }
     // construct signature - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
     StringBuilder stBuilder = new StringBuilder();
