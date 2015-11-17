@@ -1,45 +1,31 @@
 /*
- * Copyright 2015, Google Inc. All rights reserved.
+ * Copyright 2015 Google Inc. All Rights Reserved.
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
  *
- *    * Redistributions of source code must retain the above copyright
- * notice, this list of conditions and the following disclaimer.
- *    * Redistributions in binary form must reproduce the above
- * copyright notice, this list of conditions and the following disclaimer
- * in the documentation and/or other materials provided with the
- * distribution.
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- *    * Neither the name of Google Inc. nor the names of its
- * contributors may be used to endorse or promote products derived from
- * this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
 
 /*
  * EDITING INSTRUCTIONS
- * This file was generated from the file google/pubsub/v1/pubsub.proto,
- * and updates to that file get reflected here through a regular refresh process.
- * However, manual additions are allowed because the refresh process performs
+ * This file was generated from the file
+ * https://github.com/google/googleapis/blob/master/google/pubsub/v1/pubsub.proto
+ * and updates to that file get reflected here through a refresh process.
+ * For the short term, the refresh process will only be runnable by Google engineers.
+ * Manual additions are allowed because the refresh process performs
  * a 3-way merge in order to preserve those manual additions. In order to not
  * break the refresh process, only certain types of modifications are
  * allowed.
  *
- * Allowed modifications - currently there is only one type allowed:
+ * Allowed modifications - currently these are the only types allowed:
  * 1. New methods (these should be added to the end of the class)
+ * 2. New imports
  *
  * Happy editing!
  */
@@ -96,28 +82,27 @@ public class PublisherApi implements AutoCloseable {
   public static final int DEFAULT_SERVICE_PORT = 443;
 
 
-  public static final ApiCallable<Topic, Topic>
+  private static final ApiCallable<Topic, Topic>
       CREATE_TOPIC = ApiCallable.create(PublisherGrpc.METHOD_CREATE_TOPIC);
-  public static final ApiCallable<PublishRequest, PublishResponse>
+  private static final ApiCallable<PublishRequest, PublishResponse>
       PUBLISH = ApiCallable.create(PublisherGrpc.METHOD_PUBLISH);
-  public static final ApiCallable<GetTopicRequest, Topic>
+  private static final ApiCallable<GetTopicRequest, Topic>
       GET_TOPIC = ApiCallable.create(PublisherGrpc.METHOD_GET_TOPIC);
-  public static final ApiCallable<ListTopicsRequest, ListTopicsResponse>
+  private static final ApiCallable<ListTopicsRequest, ListTopicsResponse>
       LIST_TOPICS = ApiCallable.create(PublisherGrpc.METHOD_LIST_TOPICS);
-  public static final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
+  private static final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
       LIST_TOPIC_SUBSCRIPTIONS = ApiCallable.create(PublisherGrpc.METHOD_LIST_TOPIC_SUBSCRIPTIONS);
-  public static final ApiCallable<DeleteTopicRequest, Empty>
+  private static final ApiCallable<DeleteTopicRequest, Empty>
       DELETE_TOPIC = ApiCallable.create(PublisherGrpc.METHOD_DELETE_TOPIC);
-
-
-
 
   private static PageDescriptor<ListTopicsRequest, ListTopicsResponse, Topic> LIST_TOPICS_PAGE_DESC =
       new PageDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>() {
-        @Override public Object emptyToken() {
+        @Override
+        public Object emptyToken() {
           return "";
         }
-        @Override public ListTopicsRequest injectToken(
+        @Override
+        public ListTopicsRequest injectToken(
             ListTopicsRequest payload, Object token) {
           return ListTopicsRequest
             .newBuilder(payload)
@@ -133,12 +118,15 @@ public class PublisherApi implements AutoCloseable {
           return payload.getTopicsList();
         }
       };
+
   private static PageDescriptor<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String> LIST_TOPIC_SUBSCRIPTIONS_PAGE_DESC =
       new PageDescriptor<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>() {
-        @Override public Object emptyToken() {
+        @Override
+        public Object emptyToken() {
           return "";
         }
-        @Override public ListTopicSubscriptionsRequest injectToken(
+        @Override
+        public ListTopicSubscriptionsRequest injectToken(
             ListTopicSubscriptionsRequest payload, Object token) {
           return ListTopicSubscriptionsRequest
             .newBuilder(payload)
@@ -159,8 +147,17 @@ public class PublisherApi implements AutoCloseable {
     "https://www.googleapis.com/auth/pubsub"
   };
 
+  /**
+   * A PathTemplate representing the fully-qualified path to represent
+   * a project resource.
+   */
   public static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.create("/projects/{project}");
+
+  /**
+   * A PathTemplate representing the fully-qualified path to represent
+   * a topic resource.
+   */
   public static final PathTemplate TOPIC_PATH_TEMPLATE =
       PathTemplate.create("/projects/{project}/topics/{topic}");
 
@@ -190,7 +187,11 @@ public class PublisherApi implements AutoCloseable {
     return new PublisherApi(settings);
   }
 
-  private PublisherApi(ServiceApiSettings settings) throws IOException {
+  /**
+   * Constructs an instance of PublisherApi, using the given settings. This is protected so that it
+   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected PublisherApi(ServiceApiSettings settings) throws IOException {
     ServiceApiSettings internalSettings = ApiUtils.settingsWithChannels(settings,
         SERVICE_ADDRESS, DEFAULT_SERVICE_PORT, ALL_SCOPES);
     this.settings = internalSettings;
@@ -201,12 +202,20 @@ public class PublisherApi implements AutoCloseable {
   // Resource Name Helper Functions
   // ==============================
 
-  public static final String createProject(String project) {
+  /**
+   * Creates a string containing the fully-qualified path to represent
+   * a project resource.
+   */
+  public static final String createProjectPath(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate(
         "project", project);
   }
 
-  public static final String createTopic(String project, String topic) {
+  /**
+   * Creates a string containing the fully-qualified path to represent
+   * a topic resource.
+   */
+  public static final String createTopicPath(String project, String topic) {
     return TOPIC_PATH_TEMPLATE.instantiate(
         "project", project,"topic", topic);
   }
@@ -481,7 +490,8 @@ public class PublisherApi implements AutoCloseable {
    * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
    * cancelled.
    */
-  @Override public void close() {
+  @Override
+  public void close() {
     // Manually-added shutdown code
 
     // Auto-generated shutdown code

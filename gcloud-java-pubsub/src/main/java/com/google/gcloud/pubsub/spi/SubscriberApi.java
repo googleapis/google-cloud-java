@@ -1,45 +1,31 @@
 /*
- * Copyright 2015, Google Inc. All rights reserved.
+ * Copyright 2015 Google Inc. All Rights Reserved.
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
  *
- *    * Redistributions of source code must retain the above copyright
- * notice, this list of conditions and the following disclaimer.
- *    * Redistributions in binary form must reproduce the above
- * copyright notice, this list of conditions and the following disclaimer
- * in the documentation and/or other materials provided with the
- * distribution.
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- *    * Neither the name of Google Inc. nor the names of its
- * contributors may be used to endorse or promote products derived from
- * this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
 
 /*
  * EDITING INSTRUCTIONS
- * This file was generated from the file google/pubsub/v1/pubsub.proto,
- * and updates to that file get reflected here through a regular refresh process.
- * However, manual additions are allowed because the refresh process performs
+ * This file was generated from the file
+ * https://github.com/google/googleapis/blob/master/google/pubsub/v1/pubsub.proto
+ * and updates to that file get reflected here through a refresh process.
+ * For the short term, the refresh process will only be runnable by Google engineers.
+ * Manual additions are allowed because the refresh process performs
  * a 3-way merge in order to preserve those manual additions. In order to not
  * break the refresh process, only certain types of modifications are
  * allowed.
  *
- * Allowed modifications - currently there is only one type allowed:
+ * Allowed modifications - currently these are the only types allowed:
  * 1. New methods (these should be added to the end of the class)
+ * 2. New imports
  *
  * Happy editing!
  */
@@ -97,31 +83,31 @@ public class SubscriberApi implements AutoCloseable {
   public static final int DEFAULT_SERVICE_PORT = 443;
 
 
-  public static final ApiCallable<Subscription, Subscription>
+  private static final ApiCallable<Subscription, Subscription>
       CREATE_SUBSCRIPTION = ApiCallable.create(SubscriberGrpc.METHOD_CREATE_SUBSCRIPTION);
-  public static final ApiCallable<GetSubscriptionRequest, Subscription>
+  private static final ApiCallable<GetSubscriptionRequest, Subscription>
       GET_SUBSCRIPTION = ApiCallable.create(SubscriberGrpc.METHOD_GET_SUBSCRIPTION);
-  public static final ApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+  private static final ApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
       LIST_SUBSCRIPTIONS = ApiCallable.create(SubscriberGrpc.METHOD_LIST_SUBSCRIPTIONS);
-  public static final ApiCallable<DeleteSubscriptionRequest, Empty>
+  private static final ApiCallable<DeleteSubscriptionRequest, Empty>
       DELETE_SUBSCRIPTION = ApiCallable.create(SubscriberGrpc.METHOD_DELETE_SUBSCRIPTION);
-  public static final ApiCallable<ModifyAckDeadlineRequest, Empty>
+  private static final ApiCallable<ModifyAckDeadlineRequest, Empty>
       MODIFY_ACK_DEADLINE = ApiCallable.create(SubscriberGrpc.METHOD_MODIFY_ACK_DEADLINE);
-  public static final ApiCallable<AcknowledgeRequest, Empty>
+  private static final ApiCallable<AcknowledgeRequest, Empty>
       ACKNOWLEDGE = ApiCallable.create(SubscriberGrpc.METHOD_ACKNOWLEDGE);
-  public static final ApiCallable<PullRequest, PullResponse>
+  private static final ApiCallable<PullRequest, PullResponse>
       PULL = ApiCallable.create(SubscriberGrpc.METHOD_PULL);
-  public static final ApiCallable<ModifyPushConfigRequest, Empty>
+  private static final ApiCallable<ModifyPushConfigRequest, Empty>
       MODIFY_PUSH_CONFIG = ApiCallable.create(SubscriberGrpc.METHOD_MODIFY_PUSH_CONFIG);
-
-
 
   private static PageDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> LIST_SUBSCRIPTIONS_PAGE_DESC =
       new PageDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>() {
-        @Override public Object emptyToken() {
+        @Override
+        public Object emptyToken() {
           return "";
         }
-        @Override public ListSubscriptionsRequest injectToken(
+        @Override
+        public ListSubscriptionsRequest injectToken(
             ListSubscriptionsRequest payload, Object token) {
           return ListSubscriptionsRequest
             .newBuilder(payload)
@@ -138,16 +124,21 @@ public class SubscriberApi implements AutoCloseable {
         }
       };
 
-
-
-
-
   private static String ALL_SCOPES[] = {
     "https://www.googleapis.com/auth/pubsub"
   };
 
+  /**
+   * A PathTemplate representing the fully-qualified path to represent
+   * a project resource.
+   */
   public static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.create("/projects/{project}");
+
+  /**
+   * A PathTemplate representing the fully-qualified path to represent
+   * a subscription resource.
+   */
   public static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
       PathTemplate.create("/projects/{project}/subscriptions/{subscription}");
 
@@ -188,12 +179,20 @@ public class SubscriberApi implements AutoCloseable {
   // Resource Name Helper Functions
   // ==============================
 
-  public static final String createProject(String project) {
+  /**
+   * Creates a string containing the fully-qualified path to represent
+   * a project resource.
+   */
+  public static final String createProjectPath(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate(
         "project", project);
   }
 
-  public static final String createSubscription(String project, String subscription) {
+  /**
+   * Creates a string containing the fully-qualified path to represent
+   * a subscription resource.
+   */
+  public static final String createSubscriptionPath(String project, String subscription) {
     return SUBSCRIPTION_PATH_TEMPLATE.instantiate(
         "project", project,"subscription", subscription);
   }
@@ -646,7 +645,8 @@ public class SubscriberApi implements AutoCloseable {
    * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
    * cancelled.
    */
-  @Override public void close() {
+  @Override
+  public void close() {
     // Manually-added shutdown code
 
     // Auto-generated shutdown code
