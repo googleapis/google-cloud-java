@@ -24,6 +24,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -119,7 +120,7 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
   }
 
-  private static class ApplicationDefaultAuthCredentials extends AuthCredentials {
+  public static class ApplicationDefaultAuthCredentials extends AuthCredentials {
 
     private GoogleCredentials googleCredentials;
 
@@ -159,7 +160,16 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     @Override
     protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
         Set<String> scopes) {
-      return new HttpCredentialsAdapter(googleCredentials);
+      return new HttpCredentialsAdapter(googleCredentials.createScoped(scopes));
+    }
+
+    public ServiceAccountAuthCredentials toServiceAccountCredentials() {
+      if (googleCredentials instanceof ServiceAccountCredentials) {
+        ServiceAccountCredentials credentials = (ServiceAccountCredentials) googleCredentials;
+        return new ServiceAccountAuthCredentials(credentials.getClientEmail(),
+            credentials.getPrivateKey());
+      }
+      return null;
     }
 
     @Override

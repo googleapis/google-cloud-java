@@ -231,11 +231,11 @@ public final class ExceptionHandler implements Serializable {
     }
   }
 
-  public Set<Class<? extends Exception>> getRetriableExceptions() {
+  public Set<Class<? extends Exception>> retriableExceptions() {
     return retriableExceptions;
   }
 
-  public Set<Class<? extends Exception>> getNonRetriableExceptions() {
+  public Set<Class<? extends Exception>> nonRetriableExceptions() {
     return nonRetriableExceptions;
   }
 
@@ -262,7 +262,7 @@ public final class ExceptionHandler implements Serializable {
   /**
    * Returns an instance which retry any checked exception and abort on any runtime exception.
    */
-  public static ExceptionHandler getDefaultInstance() {
+  public static ExceptionHandler defaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
