@@ -644,7 +644,8 @@ public class ITStorageTest {
     assertFalse(batchResponse.gets().get(1).failed());
     assertNull(batchResponse.gets().get(1).get());
     assertTrue(batchResponse.deletes().get(0).failed());
-    assertTrue(batchResponse.deletes().get(1).failed());
+    assertFalse(batchResponse.deletes().get(1).failed());
+    assertFalse(batchResponse.deletes().get(1).get());
     assertTrue(storage.delete(BUCKET, blobName));
   }
 

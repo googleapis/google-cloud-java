@@ -28,7 +28,6 @@ import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
-import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.services.storage.model.StorageObject;
@@ -177,14 +176,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           new Callable<com.google.api.services.storage.model.Bucket>() {
             @Override
             public com.google.api.services.storage.model.Bucket call() {
-              try {
-                return storageRpc.get(bucketPb, optionsMap);
-              } catch (StorageException ex) {
-                if (ex.code() == HTTP_NOT_FOUND) {
-                  return null;
-                }
-                throw ex;
-              }
+              return storageRpc.get(bucketPb, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : BucketInfo.fromPb(answer);
@@ -206,14 +198,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       StorageObject storageObject = runWithRetries(new Callable<StorageObject>() {
         @Override
         public StorageObject call() {
-          try {
-            return storageRpc.get(storedObject, optionsMap);
-          } catch (StorageException ex) {
-            if (ex.code() == HTTP_NOT_FOUND) {
-              return null;
-            }
-            throw ex;
-          }
+          return storageRpc.get(storedObject, optionsMap);
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
       return storageObject == null ? null : BlobInfo.fromPb(storageObject);
@@ -525,28 +510,23 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     List<BatchResponse.Result<BlobInfo>> updates = transformBatchResult(
         toUpdate, response.updates, BlobInfo.FROM_PB_FUNCTION);
     List<BatchResponse.Result<BlobInfo>> gets = transformBatchResult(
-        toGet, response.gets, BlobInfo.FROM_PB_FUNCTION, HTTP_NOT_FOUND);
+        toGet, response.gets, BlobInfo.FROM_PB_FUNCTION);
     return new BatchResponse(deletes, updates, gets);
   }
 
   private <I, O extends Serializable> List<BatchResponse.Result<O>> transformBatchResult(
       Iterable<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request,
-      Map<StorageObject, Tuple<I, StorageException>> results, Function<I, O> transform,
-      int... nullOnErrorCodes) {
-    Set nullOnErrorCodesSet = Sets.newHashSet(Ints.asList(nullOnErrorCodes));
+      Map<StorageObject, Tuple<I, StorageException>> results, Function<I, O> transform) {
     List<BatchResponse.Result<O>> response = Lists.newArrayListWithCapacity(results.size());
     for (Tuple<StorageObject, ?> tuple : request) {
       Tuple<I, StorageException> result = results.get(tuple.x());
-      if (result.x() != null) {
-        response.add(BatchResponse.Result.of(transform.apply(result.x())));
+      I object = result.x();
+      StorageException exception = result.y();
+      if (exception != null) {
+        response.add(new BatchResponse.Result<O>(exception));
       } else {
-        StorageException exception = result.y();
-        if (nullOnErrorCodesSet.contains(exception.code())) {
-          //noinspection unchecked
-          response.add(BatchResponse.Result.<O>empty());
-        } else {
-          response.add(new BatchResponse.Result<O>(exception));
-        }
+        response.add(object != null ?
+            BatchResponse.Result.of(transform.apply(object)) : BatchResponse.Result.<O>empty());
       }
     }
     return response;

@@ -1316,7 +1316,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Delete the requested bucket.
    *
-   * @return true if bucket was deleted
+   * @return {@code true} if bucket was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   boolean delete(String bucket, BucketSourceOption... options);
@@ -1324,7 +1324,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Delete the requested blob.
    *
-   * @return true if blob was deleted
+   * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   boolean delete(String bucket, String blob, BlobSourceOption... options);
@@ -1332,7 +1332,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Delete the requested blob.
    *
-   * @return true if blob was deleted
+   * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   boolean delete(BlobId blob, BlobSourceOption... options);
@@ -1340,7 +1340,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Delete the requested blob.
    *
-   * @return true if blob was deleted
+   * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   boolean delete(BlobId blob);
@@ -1478,8 +1478,8 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @param blobIds blobs to delete
    * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
-   *     list is {@code true}. If deletion failed or access to the resource was denied the item is
-   *     {@code false}.
+   *     list is {@code true}. If a blob was not found, deletion failed or access to the resource
+   *     was denied the corresponding item is {@code false}.
    * @throws StorageException upon failure
    */
   List<Boolean> delete(BlobId... blobIds);
