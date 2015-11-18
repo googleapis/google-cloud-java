@@ -410,8 +410,8 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public byte[] read(StorageObject from, Map<Option, ?> options, long position, int bytes)
-      throws StorageException {
+  public Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position,
+      int bytes) throws StorageException {
     try {
       Get req = storage.objects()
           .get(from.getBucket(), from.getName())
@@ -420,12 +420,13 @@ public class DefaultStorageRpc implements StorageRpc {
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
-      MediaHttpDownloader downloader = req.getMediaHttpDownloader();
-      downloader.setContentRange(position, Ints.checkedCast(position + bytes - 1));
-      downloader.setDirectDownloadEnabled(true);
+      StringBuilder range = new StringBuilder();
+      range.append("bytes=").append(position).append("-").append(position + bytes - 1);
+      req.getRequestHeaders().setRange(range.toString());
       ByteArrayOutputStream output = new ByteArrayOutputStream();
-      req.executeMediaAndDownloadTo(output);
-      return output.toByteArray();
+      req.executeMedia().download(output);
+      String etag = req.getLastResponseHeaders().getETag();
+      return Tuple.of(etag, output.toByteArray());
     } catch (IOException ex) {
       throw translate(ex);
     }

@@ -49,6 +49,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -725,6 +726,39 @@ public class ITStorageTest {
       reader.read(ByteBuffer.allocate(42));
       fail("StorageException was expected");
     } catch (StorageException ex) {
+      // expected
+    }
+    assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testReadChannelFailUpdatedGeneration() throws IOException {
+    String blobName = "test-read-blob-fail-updated-generation";
+    BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
+    Random random = new Random();
+    int chunkSize = 1024;
+    int blobSize = 2 * chunkSize;
+    byte[] content = new byte[blobSize];
+    random.nextBytes(content);
+    BlobInfo remoteBlob = storage.create(blob, content);
+    assertNotNull(remoteBlob);
+    assertEquals(blobSize, (long) remoteBlob.size());
+    try (BlobReadChannel reader = storage.reader(blob.blobId())) {
+      reader.chunkSize(chunkSize);
+      ByteBuffer readBytes = ByteBuffer.allocate(chunkSize);
+      int numReadBytes = reader.read(readBytes);
+      assertEquals(chunkSize, numReadBytes);
+      assertArrayEquals(Arrays.copyOf(content, chunkSize), readBytes.array());
+      try (BlobWriteChannel writer = storage.writer(blob)) {
+        byte[] newContent = new byte[blobSize];
+        random.nextBytes(newContent);
+        int numWrittenBytes = writer.write(ByteBuffer.wrap(newContent));
+        assertEquals(blobSize, numWrittenBytes);
+      }
+      readBytes = ByteBuffer.allocate(chunkSize);
+      reader.read(readBytes);
+      fail("StorageException was expected");
+    } catch(StorageException ex) {
       // expected
     }
     assertTrue(storage.delete(BUCKET, blobName));

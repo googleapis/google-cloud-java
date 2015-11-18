@@ -249,7 +249,7 @@ public interface StorageRpc {
   byte[] load(StorageObject storageObject, Map<Option, ?> options)
       throws StorageException;
 
-  byte[] read(StorageObject from, Map<Option, ?> options, long position, int bytes)
+  Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position, int bytes)
       throws StorageException;
 
   String open(StorageObject object, Map<Option, ?> options) throws StorageException;

@@ -33,6 +33,7 @@ import com.google.gcloud.spi.StorageRpc.Tuple;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
+import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -1405,14 +1406,20 @@ public interface Storage extends Service<StorageOptions> {
   BatchResponse apply(BatchRequest batchRequest);
 
   /**
-   * Return a channel for reading the blob's content.
+   * Return a channel for reading the blob's content. The blob's latest generation is read. If the
+   * blob changes while reading (i.e. {@link BlobInfo#etag()} changes), subsequent calls to
+   * {@link BlobReadChannel#read(ByteBuffer)} may throw {@link StorageException}.
    *
    * @throws StorageException upon failure
    */
   BlobReadChannel reader(String bucket, String blob, BlobSourceOption... options);
 
   /**
-   * Return a channel for reading the blob's content.
+   * Return a channel for reading the blob's content. If {@code blob.generation()} is set
+   * data corresponding to that generation is read. If {@code blob.generation()} is {@code null}
+   * the blob's latest generation is read. If the blob changes while reading (i.e.
+   * {@link BlobInfo#etag()} changes), subsequent calls to {@link BlobReadChannel#read(ByteBuffer)}
+   * may throw {@link StorageException}.
    *
    * @throws StorageException upon failure
    */
