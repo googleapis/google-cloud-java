@@ -21,6 +21,6 @@ if [ "${RELEASED_VERSION##*-}" != "SNAPSHOT" ]; then
     git add README.md */README.md
     git config --global user.name "travis-ci"
     git config --global user.email "travis@travis-ci.org"
-    git commit -m "Updating version in README files."
+    git commit -m "Updating version in README files. [ci skip]"
     git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/GoogleCloudPlatform/gcloud-java.git" HEAD:master > /dev/null 2>&1
 fi

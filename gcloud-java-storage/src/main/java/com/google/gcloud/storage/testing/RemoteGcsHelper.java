@@ -45,8 +45,6 @@ public class RemoteGcsHelper {
 
   private static final Logger log = Logger.getLogger(RemoteGcsHelper.class.getName());
   private static final String BUCKET_NAME_PREFIX = "gcloud-test-bucket-temp-";
-  private static final String PROJECT_ID_ENV_VAR = "GCLOUD_TESTS_PROJECT_ID";
-  private static final String PRIVATE_KEY_ENV_VAR = "GCLOUD_TESTS_KEY";
   private final StorageOptions options;
 
   private RemoteGcsHelper(StorageOptions options) {
@@ -107,13 +105,7 @@ public class RemoteGcsHelper {
       StorageOptions storageOptions = StorageOptions.builder()
           .authCredentials(AuthCredentials.createForJson(keyStream))
           .projectId(projectId)
-          .retryParams(RetryParams.builder()
-              .retryMaxAttempts(10)
-              .retryMinAttempts(6)
-              .maxRetryDelayMillis(30000)
-              .totalRetryPeriodMillis(120000)
-              .initialRetryDelayMillis(250)
-              .build())
+          .retryParams(retryParams())
           .connectTimeout(60000)
           .readTimeout(60000)
           .build();
@@ -145,41 +137,30 @@ public class RemoteGcsHelper {
         log.log(Level.WARNING, ex.getMessage());
       }
       throw GcsHelperException.translate(ex);
-    } catch (IOException ex) {
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, ex.getMessage());
-      }
-      throw GcsHelperException.translate(ex);
     }
   }
 
   /**
-   * Creates a {@code RemoteGcsHelper} object. Project id and path to JSON key are read from two
-   * environment variables: {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY}.
-   *
-   * @return A {@code RemoteGcsHelper} object for the provided options.
-   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if environment
-   *     variables {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY} are not set or if
-   *     the file pointed by {@code GCLOUD_TESTS_KEY} does not exist
+   * Creates a {@code RemoteGcsHelper} object using default project id and authentication
+   * credentials.
    */
   public static RemoteGcsHelper create() throws GcsHelperException {
-    String projectId = System.getenv(PROJECT_ID_ENV_VAR);
-    String keyPath = System.getenv(PRIVATE_KEY_ENV_VAR);
-    if (projectId == null) {
-      String message = "Environment variable " + PROJECT_ID_ENV_VAR + " not set";
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, message);
-      }
-      throw new GcsHelperException(message);
-    }
-    if (keyPath == null) {
-      String message = "Environment variable " + PRIVATE_KEY_ENV_VAR + " not set";
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, message);
-      }
-      throw new GcsHelperException(message);
-    }
-    return create(projectId, keyPath);
+    StorageOptions storageOptions = StorageOptions.builder()
+        .retryParams(retryParams())
+        .connectTimeout(60000)
+        .readTimeout(60000)
+        .build();
+    return new RemoteGcsHelper(storageOptions);
+  }
+
+  private static RetryParams retryParams() {
+    return RetryParams.builder()
+        .retryMaxAttempts(10)
+        .retryMinAttempts(6)
+        .maxRetryDelayMillis(30000)
+        .totalRetryPeriodMillis(120000)
+        .initialRetryDelayMillis(250)
+        .build();
   }
 
   private static class DeleteBucketTask implements Callable<Boolean> {

@@ -25,16 +25,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.0.10</version>
+  <version>0.0.12</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java:jar:0.0.10'
+compile 'com.google.gcloud:gcloud-java:jar:0.0.12'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.0.10"
+libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.0.12"
 ```
 
 Example Applications
@@ -121,7 +121,7 @@ import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-Datastore datastore = DatastoreOptions.getDefaultInstance().service();
+Datastore datastore = DatastoreOptions.defaultInstance().service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
@@ -164,8 +164,7 @@ import com.google.gcloud.storage.StorageOptions;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-StorageOptions options = StorageOptions.builder().projectId("project").build();
-Storage storage = options.service();
+Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
 Blob blob = Blob.load(storage, blobId);
 if (blob == null) {
