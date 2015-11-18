@@ -227,8 +227,18 @@ public interface StorageRpc {
   Tuple<String, Iterable<StorageObject>> list(String bucket, Map<Option, ?> options)
       throws StorageException;
 
+  /**
+   * Returns the requested bucket or {@code null} if not found.
+   *
+   * @throws StorageException upon failure
+   */
   Bucket get(Bucket bucket, Map<Option, ?> options) throws StorageException;
 
+  /**
+   * Returns the requested storage object or {@code null} if not found.
+   *
+   * @throws StorageException upon failure
+   */
   StorageObject get(StorageObject object, Map<Option, ?> options)
       throws StorageException;
 

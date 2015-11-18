@@ -30,6 +30,7 @@ import static com.google.gcloud.spi.StorageRpc.Option.PREDEFINED_ACL;
 import static com.google.gcloud.spi.StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL;
 import static com.google.gcloud.spi.StorageRpc.Option.PREFIX;
 import static com.google.gcloud.spi.StorageRpc.Option.VERSIONS;
+import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
 import com.google.api.client.googleapis.json.GoogleJsonError;
@@ -94,7 +95,8 @@ public class DefaultStorageRpc implements StorageRpc {
 
   private static StorageException translate(IOException exception) {
     StorageException translated;
-    if (exception instanceof GoogleJsonResponseException) {
+    if (exception instanceof GoogleJsonResponseException
+        && ((GoogleJsonResponseException) exception).getDetails() != null) {
       translated = translate(((GoogleJsonResponseException) exception).getDetails());
     } else {
       translated = new StorageException(0, exception.getMessage(), false);
@@ -191,7 +193,11 @@ public class DefaultStorageRpc implements StorageRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      throw translate(ex);
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
     }
   }
 
@@ -200,7 +206,11 @@ public class DefaultStorageRpc implements StorageRpc {
     try {
       return getRequest(object, options).execute();
     } catch (IOException ex) {
-      throw translate(ex);
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
     }
   }
 
@@ -265,7 +275,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return true;
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == 404) {
+      if (serviceException.code() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -279,7 +289,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return true;
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == 404) {
+      if (serviceException.code() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -368,7 +378,7 @@ public class DefaultStorageRpc implements StorageRpc {
 
           @Override
           public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
-            if (e.getCode() == 404) {
+            if (e.getCode() == HTTP_NOT_FOUND) {
               deletes.put(tuple.x(), Tuple.<Boolean, StorageException>of(Boolean.FALSE, null));
             } else {
               deletes.put(tuple.x(), Tuple.<Boolean, StorageException>of(null, translate(e)));
@@ -401,8 +411,13 @@ public class DefaultStorageRpc implements StorageRpc {
 
           @Override
           public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
-            gets.put(tuple.x(),
-                Tuple.<StorageObject, StorageException>of(null, translate(e)));
+            if (e.getCode() == HTTP_NOT_FOUND) {
+              gets.put(tuple.x(),
+                  Tuple.<StorageObject, StorageException>of(null, null));
+            } else {
+              gets.put(tuple.x(),
+                  Tuple.<StorageObject, StorageException>of(null, translate(e)));
+            }
           }
         });
       }
