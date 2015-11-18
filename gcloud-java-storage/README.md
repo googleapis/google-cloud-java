@@ -68,7 +68,7 @@ import com.google.gcloud.storage.StorageOptions;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-Storage storage = StorageOptions.getDefaultInstance().service();
+Storage storage = StorageOptions.defaultInstance().service();
 Blob blob = new Blob(storage, "bucket", "blob_name");
 if (!blob.exists()) {
   storage2.create(blob.info(), "Hello, Cloud Storage!".getBytes(UTF_8));
