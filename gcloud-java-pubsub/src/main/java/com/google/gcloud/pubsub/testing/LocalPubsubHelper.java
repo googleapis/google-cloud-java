@@ -19,19 +19,22 @@ import java.net.SocketAddress;
  * A class that runs an in-memory Publisher instance for use in tests.
  */
 public class LocalPubsubHelper {
-  private static final SocketAddress address = new LocalAddress("in-process-1");
-  private static Server server;
-  private static LocalPublisherImpl publisherImpl;
+  private static int FLOW_CONTROL_WINDOW = 65 * 1024;
+
+  private final SocketAddress address;
+  private final Server server;
+  private final LocalPublisherImpl publisherImpl;
 
   /**
    * Constructs a new LocalPubsubHelper. The method start() must
    * be called before it is used.
    */
-  public LocalPubsubHelper() {
+  public LocalPubsubHelper(String addressString) {
+    address = new LocalAddress(addressString);
     publisherImpl = new LocalPublisherImpl();
     NettyServerBuilder builder = NettyServerBuilder
         .forAddress(address)
-        .flowControlWindow(65 * 1024)
+        .flowControlWindow(FLOW_CONTROL_WINDOW)
         .channelType(LocalServerChannel.class);
     builder.addService(PublisherGrpc.bindService(publisherImpl));
     server = builder.build();

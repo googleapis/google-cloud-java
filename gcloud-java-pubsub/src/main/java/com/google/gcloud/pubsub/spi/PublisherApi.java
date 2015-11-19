@@ -49,7 +49,6 @@ import io.gapi.gax.grpc.PageDescriptor;
 import io.gapi.gax.grpc.ServiceApiSettings;
 import io.gapi.gax.internal.ApiUtils;
 import io.gapi.gax.protobuf.PathTemplate;
-import io.grpc.Channel;
 import io.grpc.ManagedChannel;
 
 import java.io.IOException;
@@ -151,14 +150,14 @@ public class PublisherApi implements AutoCloseable {
    * A PathTemplate representing the fully-qualified path to represent
    * a project resource.
    */
-  public static final PathTemplate PROJECT_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.create("/projects/{project}");
 
   /**
    * A PathTemplate representing the fully-qualified path to represent
    * a topic resource.
    */
-  public static final PathTemplate TOPIC_PATH_TEMPLATE =
+  private static final PathTemplate TOPIC_PATH_TEMPLATE =
       PathTemplate.create("/projects/{project}/topics/{topic}");
 
   // ========
@@ -220,13 +219,28 @@ public class PublisherApi implements AutoCloseable {
         "project", project,"topic", topic);
   }
 
+  /**
+   * Extracts the project from the given fully-qualified path which
+   * represents a project resource.
+   */
+  public static final String extractProjectFromProjectPath(String projectPath) {
+    return PROJECT_PATH_TEMPLATE.parse(projectPath).get("project");
+  }
 
-  // ========
-  // Getters
-  // ========
+  /**
+   * Extracts the project from the given fully-qualified path which
+   * represents a topic resource.
+   */
+  public static final String extractProjectFromTopicPath(String topicPath) {
+    return TOPIC_PATH_TEMPLATE.parse(topicPath).get("project");
+  }
 
-  public Channel getChannel() {
-    return channel;
+  /**
+   * Extracts the topic from the given fully-qualified path which
+   * represents a topic resource.
+   */
+  public static final String extractTopicFromTopicPath(String topicPath) {
+    return TOPIC_PATH_TEMPLATE.parse(topicPath).get("topic");
   }
 
 
