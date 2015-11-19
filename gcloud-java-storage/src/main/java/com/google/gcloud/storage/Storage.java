@@ -1408,7 +1408,11 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Return a channel for reading the blob's content. The blob's latest generation is read. If the
    * blob changes while reading (i.e. {@link BlobInfo#etag()} changes), subsequent calls to
-   * {@link BlobReadChannel#read(ByteBuffer)} may throw {@link StorageException}.
+   * {@code blobReadChannel.read(ByteBuffer)} may throw {@link StorageException}.
+   *
+   * <p>The {@link BlobSourceOption#generationMatch(long)} option can be provided to ensure that
+   * {@code blobReadChannel.read(ByteBuffer)} calls will throw {@link StorageException} if blob`s
+   * generation differs from the expected one.
    *
    * @throws StorageException upon failure
    */
@@ -1418,8 +1422,13 @@ public interface Storage extends Service<StorageOptions> {
    * Return a channel for reading the blob's content. If {@code blob.generation()} is set
    * data corresponding to that generation is read. If {@code blob.generation()} is {@code null}
    * the blob's latest generation is read. If the blob changes while reading (i.e.
-   * {@link BlobInfo#etag()} changes), subsequent calls to {@link BlobReadChannel#read(ByteBuffer)}
+   * {@link BlobInfo#etag()} changes), subsequent calls to {@code blobReadChannel.read(ByteBuffer)}
    * may throw {@link StorageException}.
+   *
+   * <p>The {@link BlobSourceOption#generationMatch()} and
+   * {@link BlobSourceOption#generationMatch(long)} options can be used to ensure that
+   * {@code blobReadChannel.read(ByteBuffer)} calls will throw {@link StorageException} if the
+   * blob`s generation differs from the expected one.
    *
    * @throws StorageException upon failure
    */

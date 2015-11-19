@@ -188,7 +188,6 @@ public class BlobReadChannelImplTest {
       StringBuilder messageBuilder = new StringBuilder();
       messageBuilder.append("Blob ").append(blobId).append(" was updated while reading");
       assertEquals(messageBuilder.toString(), ex.getMessage());
-      // expected
     }
   }
 

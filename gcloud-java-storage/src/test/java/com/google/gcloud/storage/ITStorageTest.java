@@ -759,7 +759,9 @@ public class ITStorageTest {
       reader.read(readBytes);
       fail("StorageException was expected");
     } catch(StorageException ex) {
-      // expected
+      StringBuilder messageBuilder = new StringBuilder();
+      messageBuilder.append("Blob ").append(blob.blobId()).append(" was updated while reading");
+      assertEquals(messageBuilder.toString(), ex.getMessage());
     }
     assertTrue(storage.delete(BUCKET, blobName));
   }
