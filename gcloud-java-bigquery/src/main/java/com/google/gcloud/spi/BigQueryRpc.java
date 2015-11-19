@@ -98,23 +98,57 @@ public interface BigQueryRpc {
     }
   }
 
+  /**
+   * Returns the requested dataset or {@code null} if not found.
+   *
+   * @throws BigQueryException upon failure
+   */
   Dataset getDataset(String datasetId, Map<Option, ?> options) throws BigQueryException;
 
+  /**
+   * Lists the project's datasets. Partial information is returned on a dataset (datasetReference,
+   * friendlyName and id). To get full information use {@link #getDataset(String, Map)}.
+   *
+   * @throws BigQueryException upon failure
+   */
   Tuple<String, Iterable<Dataset>> listDatasets(Map<Option, ?> options) throws BigQueryException;
 
   Dataset create(Dataset dataset, Map<Option, ?> options) throws BigQueryException;
 
+  /**
+   * Delete the requested dataset.
+   *
+   * @return {@code true} if dataset was deleted, {@code false} if it was not found
+   * @throws BigQueryException upon failure
+   */
   boolean deleteDataset(String datasetId, Map<Option, ?> options) throws BigQueryException;
 
   Dataset patch(Dataset dataset, Map<Option, ?> options) throws BigQueryException;
 
+  /**
+   * Returns the requested table or {@code null} if not found.
+   *
+   * @throws BigQueryException upon failure
+   */
   Table getTable(String datasetId, String tableId, Map<Option, ?> options) throws BigQueryException;
 
+  /**
+   * Lists the dataset's tables. Partial information is returned on a table (tableReference,
+   * friendlyName, id and type). To get full information use {@link #getTable(String, String, Map)}.
+   *
+   * @throws BigQueryException upon failure
+   */
   Tuple<String, Iterable<Table>> listTables(String dataset, Map<Option, ?> options)
       throws BigQueryException;
 
   Table create(Table table, Map<Option, ?> options) throws BigQueryException;
 
+  /**
+   * Delete the requested table.
+   *
+   * @return {@code true} if table was deleted, {@code false} if it was not found
+   * @throws BigQueryException upon failure
+   */
   boolean deleteTable(String datasetId, String tableId, Map<Option, ?> options)
       throws BigQueryException;
 
@@ -126,8 +160,18 @@ public interface BigQueryRpc {
   Tuple<String, Iterable<TableRow>> listTableData(String datasetId, String tableId,
       Map<Option, ?> options) throws BigQueryException;
 
+  /**
+   * Returns the requested job or {@code null} if not found.
+   *
+   * @throws BigQueryException upon failure
+   */
   Job getJob(String jobId, Map<Option, ?> options) throws BigQueryException;
 
+  /**
+   * Lists the project's jobs.
+   *
+   * @throws BigQueryException upon failure
+   */
   Tuple<String, Iterable<Job>> listJobs(Map<Option, ?> options) throws BigQueryException;
 
   Job create(Job job, Map<Option, ?> options) throws BigQueryException;

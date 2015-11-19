@@ -20,6 +20,7 @@ import static com.google.gcloud.spi.BigQueryRpc.Option.QUOTA_USER;
 import static com.google.gcloud.spi.BigQueryRpc.Option.START_INDEX;
 import static com.google.gcloud.spi.BigQueryRpc.Option.TIMEOUT;
 import static com.google.gcloud.spi.BigQueryRpc.Option.USER_IP;
+import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
@@ -64,7 +65,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
 
   public static final String DEFAULT_PROJECTION = "full";
   // see: https://cloud.google.com/bigquery/troubleshooting-errors
-  private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(503);
+  private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(500, 502, 503, 504);
   private final BigQueryOptions options;
   private final Bigquery bigquery;
 
@@ -80,7 +81,8 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
 
   private static BigQueryException translate(IOException exception) {
     BigQueryException translated;
-    if (exception instanceof GoogleJsonResponseException) {
+    if (exception instanceof GoogleJsonResponseException
+        && ((GoogleJsonResponseException) exception).getDetails() != null) {
       translated = translate(((GoogleJsonResponseException) exception).getDetails());
     } else {
       translated =
@@ -91,8 +93,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   private static BigQueryException translate(GoogleJsonError exception) {
-    boolean retryable = RETRYABLE_CODES.contains(exception.getCode())
-        || "InternalError".equals(exception.getMessage());
+    boolean retryable = RETRYABLE_CODES.contains(exception.getCode());
     return new BigQueryException(exception.getCode(), exception.getMessage(), retryable);
   }
 
@@ -105,8 +106,12 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .setQuotaUser(QUOTA_USER.getString(options))
           .setUserIp(USER_IP.getString(options))
           .execute();
-    } catch (IOException ex) {
-      throw translate(ex);
+    } catch(IOException ex) {
+      BigQueryException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
     }
   }
 
@@ -164,7 +169,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       return true;
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
-      if (serviceException.code() == 404) {
+      if (serviceException.code() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -195,8 +200,12 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .setQuotaUser(QUOTA_USER.getString(options))
           .setUserIp(USER_IP.getString(options))
           .execute();
-    } catch (IOException ex) {
-      throw translate(ex);
+    } catch(IOException ex) {
+      BigQueryException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
     }
   }
 
@@ -320,8 +329,12 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .setQuotaUser(QUOTA_USER.getString(options))
           .setUserIp(USER_IP.getString(options))
           .execute();
-    } catch (IOException ex) {
-      throw translate(ex);
+    } catch(IOException ex) {
+      BigQueryException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
     }
   }
 
@@ -381,7 +394,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       return true;
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
-      if (serviceException.code() == 404) {
+      if (serviceException.code() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -401,8 +414,12 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
               BigInteger.valueOf(START_INDEX.getLong(options)) : null)
           .setTimeoutMs(TIMEOUT.getLong(options))
           .execute();
-    } catch (IOException ex) {
-      throw translate(ex);
+    } catch(IOException ex) {
+      BigQueryException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
     }
   }
 
