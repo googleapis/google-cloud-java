@@ -35,6 +35,7 @@ import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.JobList;
 import com.google.api.services.bigquery.model.JobReference;
+import com.google.api.services.bigquery.model.JobStatus;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.QueryResponse;
 import com.google.api.services.bigquery.model.Table;
@@ -220,8 +221,9 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
           .execute();
+      Iterable<TableList.Tables> tables = tableList.getTables();
       return Tuple.of(tableList.getNextPageToken(),
-          Iterables.transform(tableList.getTables(),
+          Iterables.transform(tables != null ? tables : ImmutableList.<TableList.Tables>of(),
               new Function<TableList.Tables, Table>() {
                 @Override
                 public Table apply(TableList.Tables f) {
@@ -350,11 +352,19 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .setPageToken(PAGE_TOKEN.getString(options))
           .setProjection(DEFAULT_PROJECTION)
           .execute();
+      Iterable<JobList.Jobs> jobs = jobsList.getJobs();
       return Tuple.of(jobsList.getNextPageToken(),
-          Iterables.transform(jobsList.getJobs(),
+          Iterables.transform(jobs != null ? jobs : ImmutableList.<JobList.Jobs>of(),
               new Function<JobList.Jobs, Job>() {
                 @Override
                 public Job apply(JobList.Jobs f) {
+                  JobStatus statusPb = f.getStatus() != null ? f.getStatus() : new JobStatus();
+                  if (statusPb.getState() == null) {
+                    statusPb.setState(f.getState());
+                  }
+                  if (statusPb.getErrorResult() == null) {
+                    statusPb.setErrorResult(f.getErrorResult());
+                  }
                   return new Job()
                       .setConfiguration(f.getConfiguration())
                       .setId(f.getId())
