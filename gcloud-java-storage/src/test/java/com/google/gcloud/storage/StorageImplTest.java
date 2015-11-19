@@ -1030,7 +1030,7 @@ public class StorageImplTest {
     byte[] result = new byte[DEFAULT_CHUNK_SIZE];
     EasyMock.expect(
         storageRpcMock.read(BLOB_INFO2.toPb(), BLOB_SOURCE_OPTIONS, 0, DEFAULT_CHUNK_SIZE))
-        .andReturn(result);
+        .andReturn(StorageRpc.Tuple.of("etag", result));
     EasyMock.replay(storageRpcMock);
     storage = options.service();
     BlobReadChannel channel = storage.reader(BUCKET_NAME1, BLOB_NAME2, BLOB_SOURCE_GENERATION,
@@ -1045,7 +1045,7 @@ public class StorageImplTest {
     byte[] result = new byte[DEFAULT_CHUNK_SIZE];
     EasyMock.expect(
         storageRpcMock.read(BLOB_INFO1.blobId().toPb(), BLOB_SOURCE_OPTIONS, 0, DEFAULT_CHUNK_SIZE))
-        .andReturn(result);
+        .andReturn(StorageRpc.Tuple.of("etag", result));
     EasyMock.replay(storageRpcMock);
     storage = options.service();
     BlobReadChannel channel = storage.reader(BLOB_INFO1.blobId(),
