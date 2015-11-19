@@ -50,7 +50,6 @@ import io.gapi.gax.grpc.PageDescriptor;
 import io.gapi.gax.grpc.ServiceApiSettings;
 import io.gapi.gax.internal.ApiUtils;
 import io.gapi.gax.protobuf.PathTemplate;
-import io.grpc.Channel;
 import io.grpc.ManagedChannel;
 
 import java.io.IOException;
@@ -132,14 +131,14 @@ public class SubscriberApi implements AutoCloseable {
    * A PathTemplate representing the fully-qualified path to represent
    * a project resource.
    */
-  public static final PathTemplate PROJECT_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.create("/projects/{project}");
 
   /**
    * A PathTemplate representing the fully-qualified path to represent
    * a subscription resource.
    */
-  public static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
+  private static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
       PathTemplate.create("/projects/{project}/subscriptions/{subscription}");
 
   // ========
@@ -168,7 +167,11 @@ public class SubscriberApi implements AutoCloseable {
     return new SubscriberApi(settings);
   }
 
-  private SubscriberApi(ServiceApiSettings settings) throws IOException {
+  /**
+   * Constructs an instance of SubscriberApi, using the given settings. This is protected so that it
+   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
+  protected SubscriberApi(ServiceApiSettings settings) throws IOException {
     ServiceApiSettings internalSettings = ApiUtils.settingsWithChannels(settings,
         SERVICE_ADDRESS, DEFAULT_SERVICE_PORT, ALL_SCOPES);
     this.settings = internalSettings;
@@ -197,13 +200,28 @@ public class SubscriberApi implements AutoCloseable {
         "project", project,"subscription", subscription);
   }
 
+  /**
+   * Extracts the project from the given fully-qualified path which
+   * represents a project resource.
+   */
+  public static final String extractProjectFromProjectPath(String projectPath) {
+    return PROJECT_PATH_TEMPLATE.parse(projectPath).get("project");
+  }
 
-  // ========
-  // Getters
-  // ========
+  /**
+   * Extracts the project from the given fully-qualified path which
+   * represents a subscription resource.
+   */
+  public static final String extractProjectFromSubscriptionPath(String subscriptionPath) {
+    return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionPath).get("project");
+  }
 
-  public Channel getChannel() {
-    return channel;
+  /**
+   * Extracts the subscription from the given fully-qualified path which
+   * represents a subscription resource.
+   */
+  public static final String extractSubscriptionFromSubscriptionPath(String subscriptionPath) {
+    return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionPath).get("subscription");
   }
 
 

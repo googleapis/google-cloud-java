@@ -77,8 +77,8 @@ public class LocalPublisherImpl implements Publisher {
   public void listTopics(ListTopicsRequest request, StreamObserver<ListTopicsResponse> responseObserver) {
     List<Topic> responseTopics = new ArrayList<>();
     for (String topicName : topics.keySet()) {
-      String projectOfTopic = PublisherApi.TOPIC_PATH_TEMPLATE.parse(topicName).get("project");
-      String projectOfRequest = PublisherApi.PROJECT_PATH_TEMPLATE.parse(request.getProject()).get("project");
+      String projectOfTopic = PublisherApi.extractProjectFromTopicPath(topicName);
+      String projectOfRequest = PublisherApi.extractProjectFromProjectPath(request.getProject());
       if (projectOfTopic.equals(projectOfRequest)) {
         Topic topicObj = Topic.newBuilder().setName(topicName).build();
         responseTopics.add(topicObj);

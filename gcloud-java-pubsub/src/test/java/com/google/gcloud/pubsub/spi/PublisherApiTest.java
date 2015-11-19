@@ -38,7 +38,7 @@ public class PublisherApiTest {
 
   @BeforeClass
   public static void startStaticServer() {
-    pubsubHelper = new LocalPubsubHelper().start();
+    pubsubHelper = new LocalPubsubHelper("in-process-1").start();
   }
 
   @AfterClass
