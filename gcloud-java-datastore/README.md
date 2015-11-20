@@ -91,7 +91,7 @@ Then add the following code to put an entity in Datastore.
 KeyFactory keyFactory = datastore.newKeyFactory().kind("Person");
 Key key = keyFactory.newKey("John Doe");
 Entity entity = Entity.builder(key)
-    .set("age", 30)
+    .set("age", 51)
     .set("favorite_food", "pizza")
     .build();
 datastore.put(entity);
@@ -100,7 +100,7 @@ datastore.put(entity);
 Later, if you want to get this entity back, add the following to your code:
 
 ```java
-Entity johnEntity = datastore.get("John Doe");
+Entity johnEntity = datastore.get(key);
 ```
 
 #### Running a query
