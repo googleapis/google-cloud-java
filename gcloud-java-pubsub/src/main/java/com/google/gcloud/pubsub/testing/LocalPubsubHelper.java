@@ -43,13 +43,12 @@ public class LocalPubsubHelper {
   /**
    * Starts the in-memory service.
    */
-  public LocalPubsubHelper start() {
+  public void start() {
     try {
       server.start();
     } catch (IOException ex) {
       throw new RuntimeException(ex);
     }
-    return this;
   }
 
   /**
