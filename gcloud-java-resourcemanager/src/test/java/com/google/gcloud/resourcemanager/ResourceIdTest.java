@@ -24,7 +24,7 @@ import org.junit.Test;
 public class ResourceIdTest {
 
   private static final String ID = "id";
-  private static final ResourceId.Type TYPE = ResourceId.Type.ORGANIZATION;
+  private static final String TYPE = "organization";
   private static final ResourceId RESOURCE_ID = ResourceId.of(ID, TYPE);
 
   @Test
@@ -39,7 +39,6 @@ public class ResourceIdTest {
     assertEquals(ID, RESOURCE_ID.id());
     assertEquals(TYPE, RESOURCE_ID.type());
     assertNotEquals(ResourceId.of("another-ID", TYPE), RESOURCE_ID);
-    assertNotEquals(ResourceId.of(ID, ResourceId.Type.UNKNOWN), RESOURCE_ID);
   }
 
   @Test

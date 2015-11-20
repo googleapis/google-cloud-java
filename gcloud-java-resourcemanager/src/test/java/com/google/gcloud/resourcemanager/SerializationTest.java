@@ -41,8 +41,7 @@ import java.util.List;
 
 public class SerializationTest {
 
-  private static final ResourceId RESOURCE_ID =
-      ResourceId.of("some id", ResourceId.Type.ORGANIZATION);
+  private static final ResourceId RESOURCE_ID = ResourceId.of("some id", "organization");
   private static final List<Member> OWNER_MEMBER_LIST = ImmutableList.of(
       Member.user("first-owner@email.com"), Member.group("group-of-owners@email.com"));
   private static final List<Member> EDITOR_MEMBER_LIST =

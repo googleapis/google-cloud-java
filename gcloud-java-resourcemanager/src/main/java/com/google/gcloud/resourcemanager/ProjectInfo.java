@@ -41,11 +41,24 @@ public class ProjectInfo implements Serializable {
   private final Long createTimeMillis;
   private final ResourceId parent;
 
+  /**
+   * The project lifecycle state.
+   *
+   * <ul>
+   * <li>LIFECYCLE_STATE_UNSPECIFIED: only used/useful for distinguishing unset values
+   * <li>ACTIVE: the normal and active state
+   * <li>DELETE_REQUESTED: the project has been marked for deletion by the user or by the system
+   *         (Google Cloud Platform). This can generally be reversed by calling
+   *         {@link ResourceManager#undelete}.
+   * <li>DELETE_IN_PROGRESS: the process of deleting the project has begun. Reversing the deletion
+   *         is no longer possible.
+   * <ul>
+   */
   public enum State {
     LIFECYCLE_STATE_UNSPECIFIED,
     ACTIVE,
     DELETE_REQUESTED,
-    DELETE_IN_PROGRESS;
+    DELETE_IN_PROGRESS
   }
 
   public static class Builder {
@@ -58,34 +71,68 @@ public class ProjectInfo implements Serializable {
     private ResourceId parent;
 
     Builder() {
-      labels = new HashMap<String, String>();
+      labels = new HashMap<>();
     }
 
+    /**
+     * Set the user-assigned name of the project.
+     *
+     * This field is optional and can remain unset. Allowed characters are: lowercase and uppercase
+     * letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point. This
+     * field can be changed after project creation.
+     */
     public Builder name(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * Set the unique, user-assigned ID of the project.
+     *
+     * The ID must be 6 to 30 lowercase letters, digits, or hyphens. It must start with a letter.
+     * Trailing hyphens are prohibited. This field cannot be changed after the server creates the
+     * project.
+     */
     public Builder id(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * Add a label associated with this project.
+     *
+     * See {@link #labels} for label restrictions.
+     */
     public Builder addLabel(String key, String value) {
       this.labels.put(key, value);
       return this;
     }
 
+    /**
+     * Remove a label associated with this project.
+     */
     public Builder removeLabel(String key) {
       this.labels.remove(key);
       return this;
     }
 
+    /**
+     * Clear the labels associated with this project.
+     */
     public Builder clearLabels() {
       this.labels.clear();
       return this;
     }
 
+    /**
+     * Set the labels associated with this project.
+     *
+     * Label keys must be between 1 and 63 characters long and must conform to the following regular
+     * expression: [a-z]([-a-z0-9]*[a-z0-9])?. Label values must be between 0 and 63 characters long
+     * and must conform to the regular expression ([a-z]([-a-z0-9]*[a-z0-9])?)?. No more than 256
+     * labels can be associated with a given resource. This field can be changed after project
+     * creation.
+     */
     public Builder labels(Map<String, String> labels) {
       this.labels = Maps.newHashMap(checkNotNull(labels));
       return this;
@@ -106,6 +153,15 @@ public class ProjectInfo implements Serializable {
       return this;
     }
 
+    /**
+     * Set the parent of the project.
+     *
+     * If this field is left unset in a project creation request, the server will set this field by
+     * default to the creator of the project. The parent cannot be changed after the server creates
+     * the project. When calling {@link ResourceManager#replace}, be sure to set the parent of the
+     * new ProjectInfo instance. Leaving the parent unset or setting it to null in a replace request
+     * will cause an error.
+     */
     public Builder parent(ResourceId parent) {
       this.parent = parent;
       return this;
@@ -126,30 +182,64 @@ public class ProjectInfo implements Serializable {
     this.parent = builder.parent;
   }
 
+  /**
+   * Get the unique, user-assigned ID of the project.
+   *
+   * This field cannot be changed after the server creates the project.
+   */
   public String id() {
     return id;
   }
 
+  /**
+   * Get the user-assigned name of the project.
+   *
+   * This field is optional, can remain unset, and can be changed after project creation.
+   */
   public String name() {
     return name;
   }
 
+  /**
+   * Get number uniquely identifying the project.
+   *
+   * This field is set by the server and is read-only.
+   */
   public Long number() {
     return number;
   }
 
+  /**
+   * Get the immutable map of labels associated with this project.
+   */
   public Map<String, String> labels() {
     return labels;
   }
 
+  /**
+   * Get the project's lifecycle state.
+   *
+   * This is a read-only field. To change the lifecycle state of your project, use the
+   * {@code delete} or {@code undelete} method.
+   */
   public State state() {
     return state;
   }
 
+  /**
+   * Get the project's creation time (in milliseconds).
+   *
+   * This field is set by the server and is read-only.
+   */
   public Long createTimeMillis() {
     return createTimeMillis;
   }
 
+  /**
+   * Get the parent of the project.
+   *
+   * The parent cannot be changed after the server creates the project.
+   */
   public ResourceId parent() {
     return parent;
   }
