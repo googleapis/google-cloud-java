@@ -25,6 +25,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.client.util.Lists;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.Page;
@@ -65,6 +66,7 @@ public class ITStorageTest {
   private static final String CONTENT_TYPE = "text/plain";
   private static final byte[] BLOB_BYTE_CONTENT = {0xD, 0xE, 0xA, 0xD};
   private static final String BLOB_STRING_CONTENT = "Hello Google Cloud Storage!";
+  private static final int MAX_BATCH_DELETES = 100;
 
   @BeforeClass
   public static void beforeClass() {
@@ -621,6 +623,54 @@ public class ITStorageTest {
     assertEquals(0, deleteResponse.updates().size());
     assertTrue(deleteResponse.deletes().get(0).get());
     assertTrue(deleteResponse.deletes().get(1).get());
+  }
+
+  @Test
+  public void testBatchRequestManyDeletes() {
+    List<BlobId> blobsToDelete = Lists.newArrayListWithCapacity(2 * MAX_BATCH_DELETES);
+    for (int i = 0; i < 2 * MAX_BATCH_DELETES; i++) {
+      blobsToDelete.add(BlobId.of(BUCKET, "test-batch-request-many-deletes-blob-" + i));
+    }
+    BatchRequest.Builder builder = BatchRequest.builder();
+    for (BlobId blob : blobsToDelete) {
+      builder.delete(blob);
+    }
+    String sourceBlobName1 = "test-batch-request-many-deletes-source-blob-1";
+    String sourceBlobName2 = "test-batch-request-many-deletes-source-blob-2";
+    BlobInfo sourceBlob1 = BlobInfo.builder(BUCKET, sourceBlobName1).build();
+    BlobInfo sourceBlob2 = BlobInfo.builder(BUCKET, sourceBlobName2).build();
+    assertNotNull(storage.create(sourceBlob1));
+    assertNotNull(storage.create(sourceBlob2));
+    BlobInfo updatedBlob2 = sourceBlob2.toBuilder().contentType(CONTENT_TYPE).build();
+
+    BatchRequest updateRequest = builder
+        .get(BUCKET, sourceBlobName1)
+        .update(updatedBlob2)
+        .build();
+    BatchResponse response = storage.apply(updateRequest);
+    assertEquals(2 * MAX_BATCH_DELETES, response.deletes().size());
+    assertEquals(1, response.updates().size());
+    assertEquals(1, response.gets().size());
+
+    // Check deletes
+    for (BatchResponse.Result<Boolean> deleteResult : response.deletes()) {
+      assertFalse(deleteResult.failed());
+      assertFalse(deleteResult.get());
+    }
+
+    // Check updates
+    BlobInfo remoteUpdatedBlob2 = response.updates().get(0).get();
+    assertEquals(sourceBlob2.bucket(), remoteUpdatedBlob2.bucket());
+    assertEquals(sourceBlob2.name(), remoteUpdatedBlob2.name());
+    assertEquals(updatedBlob2.contentType(), remoteUpdatedBlob2.contentType());
+
+    // Check gets
+    BlobInfo remoteBlob1 = response.gets().get(0).get();
+    assertEquals(sourceBlob1.bucket(), remoteBlob1.bucket());
+    assertEquals(sourceBlob1.name(), remoteBlob1.name());
+
+    assertTrue(storage.delete(BUCKET, sourceBlobName1));
+    assertTrue(storage.delete(BUCKET, sourceBlobName2));
   }
 
   @Test
