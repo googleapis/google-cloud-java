@@ -35,12 +35,15 @@ import com.google.auth.Credentials;
 
 import io.grpc.ManagedChannel;
 
+/**
+ * A settings class to configure a service api class.
+ */
 public class ServiceApiSettings {
   private boolean isIdempotentRetrying;
 
   private Credentials credentials;
 
-  private String servicePath;
+  private String serviceAddress;
   private int port;
 
   private ManagedChannel channel;
@@ -48,7 +51,7 @@ public class ServiceApiSettings {
   public ServiceApiSettings() {
     isIdempotentRetrying = true;
     credentials = null;
-    servicePath = null;
+    serviceAddress = null;
     port = 0;
   }
 
@@ -69,7 +72,8 @@ public class ServiceApiSettings {
 
   /**
    * Sets the credentials to use in order to call the service. The default is to acquire
-   * the credentials using GoogleCredentials.getApplicationDefault().
+   * the credentials using GoogleCredentials.getApplicationDefault(). These credentials
+   * will not be used if the channel is set.
    */
   public ServiceApiSettings setCredentials(Credentials credentials) {
     this.credentials = credentials;
@@ -81,19 +85,19 @@ public class ServiceApiSettings {
   }
 
   /**
-   * The path used to reach the service.
+   * The path used to reach the service. This value will not be used if the channel is set.
    */
-  public ServiceApiSettings setServicePath(String servicePath) {
-    this.servicePath = servicePath;
+  public ServiceApiSettings setServiceAddress(String serviceAddress) {
+    this.serviceAddress = serviceAddress;
     return this;
   }
 
-  public String getServicePath() {
-    return servicePath;
+  public String getServiceAddress() {
+    return serviceAddress;
   }
 
   /**
-   * The port used to reach the service.
+   * The port used to reach the service. This value will not be used if the channel is set.
    */
   public ServiceApiSettings setPort(int port) {
     this.port = port;
@@ -105,8 +109,10 @@ public class ServiceApiSettings {
   }
 
   /**
-   * An instance of ManagedChannel; shutdown will be called on this channel when
-   * the instance of LoggingServiceApi is shut down.
+   * The channel used to send requests to the service. Whichever service api class that
+   * this instance of ServiceApiSettings is passed to will call shutdown() on this
+   * channel. This injection mechanism is intended for use by unit tests to override
+   * the channel that would be created by default for real calls to the service.
    */
   public ServiceApiSettings setChannel(ManagedChannel channel) {
     this.channel = channel;

@@ -32,6 +32,12 @@
       <artifactId>auto-value</artifactId>
       <version>1.1</version>
     </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -45,7 +51,7 @@
             <goals><goal>add-source</goal></goals>
             <configuration>
               <sources>
-                <source>generated/src/main</source>
+                <source>generated/src/main/java</source>
               </sources>
             </configuration>
           </execution>

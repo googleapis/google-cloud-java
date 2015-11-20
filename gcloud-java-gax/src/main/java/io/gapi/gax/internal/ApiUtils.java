@@ -31,12 +31,7 @@
 
 package io.gapi.gax.internal;
 
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.concurrent.Executors;
-
+import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.collect.Lists;
 
@@ -47,6 +42,11 @@ import io.grpc.ManagedChannel;
 import io.grpc.auth.ClientAuthInterceptor;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.Executors;
 
 public class ApiUtils {
 
@@ -63,17 +63,26 @@ public class ApiUtils {
   }
 
   /**
-   * Creates a channel for the given path, address and port.
+   * Acquires application-default credentials, applying the given scopes if the
+   * credentials require scopes.
    */
-  public static ManagedChannel createChannel(String address, int port, Collection<String> scopes)
+  public static Credentials credentialsWithScopes(String scopes[]) throws IOException {
+    List<String> scopeList = Arrays.asList(scopes);
+    GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
+    if (credentials.createScopedRequired()) {
+      credentials = credentials.createScoped(scopeList);
+    }
+    return credentials;
+  }
+
+  /**
+   * Creates a channel for the given address, port, and credentials.
+   */
+  public static ManagedChannel createChannel(String address, int port, Credentials credentials)
       throws IOException {
     List<ClientInterceptor> interceptors = Lists.newArrayList();
     //TODO: MIGRATION interceptors.add(ChannelFactory.authorityInterceptor(address));
 
-    GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
-    if (credentials.createScopedRequired()) {
-      credentials = credentials.createScoped(scopes);
-    }
     interceptors.add(new ClientAuthInterceptor(credentials,
         Executors.newFixedThreadPool(AUTH_THREADS)));
 
@@ -84,23 +93,31 @@ public class ApiUtils {
         .build();
   }
 
-  public static ServiceApiSettings settingsWithChannels(ServiceApiSettings settings,
-      String defaultServicePath, int defaultServicePort, String scopes[]) throws IOException {
+  /**
+   * Creates a new instance of ServiceApiSettings with all fields populated, using
+   * the given defaults if the corresponding values are not set on ServiceApiSettings.
+   */
+  public static ServiceApiSettings populateSettings(ServiceApiSettings settings,
+      String defaultServiceAddress, int defaultServicePort, String scopes[]) throws IOException {
     ManagedChannel channel = settings.getChannel();
 
     if (channel == null) {
-      String servicePath = defaultServicePath;
-      if (settings.getServicePath() != null) {
-        servicePath = settings.getServicePath();
+      String servicePath = settings.getServiceAddress();
+      if (servicePath == null) {
+        servicePath = defaultServiceAddress;
       }
 
-      int port = defaultServicePort;
-      if (settings.getPort() != 0) {
-        port = settings.getPort();
+      int port = settings.getPort();
+      if (port == 0) {
+        port = defaultServicePort;
       }
 
-      List<String> scopeList = Arrays.asList(scopes);
-      channel = ApiUtils.createChannel(servicePath, port, scopeList);
+      Credentials credentials = settings.getCredentials();
+      if (credentials == null) {
+        credentials = credentialsWithScopes(scopes);
+      }
+
+      channel = ApiUtils.createChannel(servicePath, port, credentials);
     }
 
     return new ServiceApiSettings()
