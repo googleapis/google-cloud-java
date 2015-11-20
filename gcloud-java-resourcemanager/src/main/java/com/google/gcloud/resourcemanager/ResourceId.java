@@ -26,14 +26,9 @@ public class ResourceId implements Serializable {
 
   private static final long serialVersionUID = 7928469304338358885L;
   private final String id;
-  private final Type type;
+  private final String type;
 
-  public enum Type {
-    ORGANIZATION,
-    UNKNOWN;
-  }
-
-  private ResourceId(String id, Type type) {
+  private ResourceId(String id, String type) {
     this.id = checkNotNull(id);
     this.type = checkNotNull(type);
   }
@@ -42,7 +37,7 @@ public class ResourceId implements Serializable {
     return id;
   }
 
-  public Type type() {
+  public String type() {
     return type;
   }
 
@@ -56,7 +51,7 @@ public class ResourceId implements Serializable {
     return Objects.hash(id, type);
   }
 
-  public static ResourceId of(String id, Type type) {
+  public static ResourceId of(String id, String type) {
     return new ResourceId(id, type);
   }
 
@@ -70,6 +65,6 @@ public class ResourceId implements Serializable {
 
   static ResourceId fromPb(
       com.google.api.services.cloudresourcemanager.model.ResourceId resourceIdPb) {
-    return new ResourceId(resourceIdPb.getId(), Type.valueOf(resourceIdPb.getType().toUpperCase()));
+    return new ResourceId(resourceIdPb.getId(), resourceIdPb.getType());
   }
 }
