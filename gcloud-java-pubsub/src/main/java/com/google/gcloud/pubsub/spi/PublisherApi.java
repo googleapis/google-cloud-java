@@ -191,7 +191,7 @@ public class PublisherApi implements AutoCloseable {
    * easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected PublisherApi(ServiceApiSettings settings) throws IOException {
-    ServiceApiSettings internalSettings = ApiUtils.settingsWithChannels(settings,
+    ServiceApiSettings internalSettings = ApiUtils.populateSettings(settings,
         SERVICE_ADDRESS, DEFAULT_SERVICE_PORT, ALL_SCOPES);
     this.settings = internalSettings;
     this.channel = internalSettings.getChannel();
