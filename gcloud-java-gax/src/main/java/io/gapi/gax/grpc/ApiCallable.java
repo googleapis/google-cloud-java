@@ -62,8 +62,6 @@ import javax.annotation.Nullable;
 public abstract class ApiCallable<RequestT, ResponseT> {
 
   // TODO(wrwg): Support interceptors and method/call option configurations.
-  // TODO(wrwg): gather more feedback whether the overload with java.util.Concurrent hurts that
-  //             much that we want to rename this into ClientCallable or such.
 
   // Subclass Contract
   // =================
@@ -390,20 +388,4 @@ public abstract class ApiCallable<RequestT, ResponseT> {
     return new PageStreamingCallable<RequestT, ResponseT, ResourceT>(this, pageDescriptor);
   }
 
-  /**
-   * Returns a callable which behaves the same as {@link #pageStreaming(PageDescriptor)}, with
-   * the page descriptor attempted to derive from the callable descriptor.
-   *
-   * @throws IllegalArgumentException if a page descriptor is not derivable.
-   */
-  public <ResourceT> ApiCallable<RequestT, ResourceT>
-      pageStreaming(Class<ResourceT> resourceType) {
-    PageDescriptor<RequestT, ResponseT, ResourceT> pageDescriptor =
-        getDescriptor() != null ? getDescriptor().getPageDescriptor(resourceType) : null;
-    if (pageDescriptor == null) {
-      throw new IllegalArgumentException(String.format(
-          "cannot derive page descriptor for '%s'", this));
-    }
-    return pageStreaming(pageDescriptor);
-  }
 }
