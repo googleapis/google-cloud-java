@@ -75,7 +75,9 @@ Most `gcloud-java` libraries require a project ID.  There are multiple ways to s
 Authentication
 --------------
 
-There are multiple ways to authenticate to use Google Cloud services.
+First, ensure that the necessary Google Cloud APIs are enabled for your project. To do this, follow the instructions on the [authentication document](https://github.com/GoogleCloudPlatform/gcloud-common/tree/master/authentication) shared by all the gcloud language libraries.
+
+Next, choose a method for authenticating API requests from within your project:
 
 1. When using `gcloud-java` libraries from within Compute/App Engine, no additional authentication steps are necessary.
 2. When using `gcloud-java` libraries elsewhere, there are two options:
@@ -180,6 +182,11 @@ if (blob == null) {
 }
 ```
 
+Troubleshooting
+---------------
+
+To get help, follow the `gcloud-java` links in the `gcloud-*` [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/tree/master/troubleshooting).
+
 Java Versions
 -------------
 
@@ -206,7 +213,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See [CONTRIBUTING] for more information on how to get started.
+See `gcloud-java`'s [CONTRIBUTING] documentation and the `gcloud-*` [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/tree/master/contributing) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
