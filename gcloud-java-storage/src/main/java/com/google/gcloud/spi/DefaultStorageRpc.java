@@ -35,7 +35,6 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
-import com.google.api.client.googleapis.media.MediaHttpDownloader;
 import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpHeaders;
@@ -59,9 +58,10 @@ import com.google.api.services.storage.model.ComposeRequest.SourceObjects.Object
 import com.google.api.services.storage.model.Objects;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.primitives.Ints;
 import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.StorageOptions;
 
@@ -69,6 +69,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -82,6 +83,7 @@ public class DefaultStorageRpc implements StorageRpc {
   // see: https://cloud.google.com/storage/docs/concepts-techniques#practices
   private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(504, 503, 502, 500, 429, 408);
   private static final long MEGABYTE = 1024L * 1024L;
+  private static final int MAX_BATCH_DELETES = 100;
 
   public DefaultStorageRpc(StorageOptions options) {
     HttpTransport transport = options.httpTransportFactory().create();
@@ -361,6 +363,24 @@ public class DefaultStorageRpc implements StorageRpc {
 
   @Override
   public BatchResponse batch(BatchRequest request) throws StorageException {
+    List<List<Tuple<StorageObject, Map<Option, ?>>>> partitionedToDelete =
+        Lists.partition(request.toDelete, MAX_BATCH_DELETES);
+    Iterator<List<Tuple<StorageObject, Map<Option, ?>>>> iterator = partitionedToDelete.iterator();
+    BatchRequest chunkRequest = new BatchRequest(iterator.hasNext() ? iterator.next() :
+        ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of(), request.toUpdate, request.toGet);
+    BatchResponse response = batchChunk(chunkRequest);
+    Map<StorageObject, Tuple<Boolean, StorageException>> deletes =
+        Maps.newHashMapWithExpectedSize(request.toDelete.size());
+    deletes.putAll(response.deletes);
+    while (iterator.hasNext()) {
+      chunkRequest = new BatchRequest(iterator.next(), null, null);
+      BatchResponse deleteBatchResponse = batchChunk(chunkRequest);
+      deletes.putAll(deleteBatchResponse.deletes);
+    }
+    return new BatchResponse(deletes, response.updates, response.gets);
+  }
+
+  private BatchResponse batchChunk(BatchRequest request) {
     com.google.api.client.googleapis.batch.BatchRequest batch = storage.batch();
     final Map<StorageObject, Tuple<Boolean, StorageException>> deletes =
         Maps.newConcurrentMap();
