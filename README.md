@@ -75,7 +75,7 @@ Most `gcloud-java` libraries require a project ID.  There are multiple ways to s
 Authentication
 --------------
 
-First, ensure that the necessary Google Cloud APIs are enabled for your project. To do this, follow the instructions on the [authentication document](https://github.com/GoogleCloudPlatform/gcloud-common/tree/master/authentication) shared by all the gcloud language libraries.
+First, ensure that the necessary Google Cloud APIs are enabled for your project. To do this, follow the instructions on the [authentication document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/authentication/readme.md#authentication) shared by all the gcloud language libraries.
 
 Next, choose a method for authenticating API requests from within your project:
 
