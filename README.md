@@ -96,9 +96,9 @@ There are multiple ways to authenticate to use Google Cloud services.
 `gcloud-java` looks for credentials in the following order, stopping once it finds credentials:
 
 1. Credentials supplied when building the service options
-2. Key file pointed to by the GOOGLE_APPLICATION_CREDENTIALS environment variable
-3. Google Cloud SDK credentials
-4. App Engine credentials
+2. App Engine credentials
+3. Key file pointed to by the GOOGLE_APPLICATION_CREDENTIALS environment variable
+4. Google Cloud SDK credentials
 5. Compute Engine credentials
 
 Google Cloud Datastore

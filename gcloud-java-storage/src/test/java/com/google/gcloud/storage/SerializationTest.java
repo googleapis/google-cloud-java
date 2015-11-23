@@ -75,6 +75,7 @@ public class SerializationTest {
   public void testServiceOptions() throws Exception {
     StorageOptions options = StorageOptions.builder()
         .projectId("p1")
+        .authCredentials(AuthCredentials.createForAppEngine())
         .build();
     StorageOptions serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);

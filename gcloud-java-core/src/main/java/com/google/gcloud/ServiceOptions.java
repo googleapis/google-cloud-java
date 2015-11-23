@@ -356,6 +356,15 @@ public abstract class ServiceOptions<
   }
 
   private static AuthCredentials defaultAuthCredentials() {
+    // Consider App Engine.
+    if (appEngineAppId() != null) {
+      try {
+        return AuthCredentials.createForAppEngine();
+      } catch (Exception ignore) {
+        // Maybe not on App Engine
+      }
+    }
+
     try {
       return AuthCredentials.createApplicationDefaults();
     } catch (Exception ex) {

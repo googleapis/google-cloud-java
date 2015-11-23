@@ -19,6 +19,7 @@ package com.google.gcloud;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.api.client.googleapis.extensions.appengine.auth.oauth2.AppIdentityCredential;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
@@ -37,6 +38,45 @@ import java.util.Set;
  * Credentials for accessing Google Cloud services.
  */
 public abstract class AuthCredentials implements Restorable<AuthCredentials> {
+
+  private static class AppEngineAuthCredentials extends AuthCredentials {
+
+    private static final AuthCredentials INSTANCE = new AppEngineAuthCredentials();
+    private static final AppEngineAuthCredentialsState STATE =
+        new AppEngineAuthCredentialsState();
+
+    private static class AppEngineAuthCredentialsState
+        implements RestorableState<AuthCredentials>, Serializable {
+
+      private static final long serialVersionUID = 3558563960848658928L;
+
+      @Override
+      public AuthCredentials restore() {
+        return INSTANCE;
+      }
+
+      @Override
+      public int hashCode() {
+        return getClass().getName().hashCode();
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        return obj instanceof AppEngineAuthCredentialsState;
+      }
+    }
+
+    @Override
+    protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
+        Set<String> scopes) {
+      return new AppIdentityCredential(scopes);
+    }
+
+    @Override
+    public RestorableState<AuthCredentials> capture() {
+      return STATE;
+    }
+  }
 
   public static class ServiceAccountAuthCredentials extends AuthCredentials {
 
@@ -181,12 +221,16 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
   protected abstract HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
       Set<String> scopes);
 
+  public static AuthCredentials createForAppEngine() {
+    return AppEngineAuthCredentials.INSTANCE;
+  }
+
   /**
    * Returns the Application Default Credentials.
    *
    * <p>Returns the Application Default Credentials which are credentials that identify and
    * authorize the whole application. This is the built-in service account if running on
-   * Google App/Compute Engine or the credentials file can be read from the path in the environment
+   * Google Compute Engine or the credentials file can be read from the path in the environment
    * variable GOOGLE_APPLICATION_CREDENTIALS.
    * </p>
    *
