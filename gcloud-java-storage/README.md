@@ -91,7 +91,7 @@ import com.google.gcloud.storage.BucketInfo;
 
 Then add the following code to create a bucket and upload a simple blob.
 
-*Important: Bucket names have to be globally unique. If you choose a bucket name that already exists, you'll get a helpful error message telling you to choose another name. In the code below, replace "my_unique_bucket" with a unique bucket name.*
+*Important: Bucket names have to be globally unique. If you choose a bucket name that already exists, you'll get a helpful error message telling you to choose another name. In the code below, replace "my_unique_bucket" with a unique bucket name. See more about naming rules [here](https://cloud.google.com/storage/docs/bucket-naming?hl=en#requirements).*
 
 ```java
 // Create a bucket
