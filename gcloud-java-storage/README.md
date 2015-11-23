@@ -95,43 +95,29 @@ Then add the following code to create a bucket and upload a simple blob.
 
 ```java
 // Create a bucket
-String bucketName = "my_unique_bucket"; // Remember to change this to something unique
-BucketInfo bucketInfo = storage.create(BucketInfo.builder(bucketName).build());
+String bucketName = "my_unique_bucket"; // Change this to something unique
+BucketInfo bucketInfo = storage.create(BucketInfo.of(bucketName));
 
 // Upload a blob to the newly created bucket
 BlobId blobId = BlobId.of(bucketName, "my_blob_name");
-BlobInfo blobInfo = storage.create(BlobInfo.builder(blobId).build(),
-                                   "a simple blob".getBytes(UTF_8));
+BlobInfo blobInfo = storage.create(
+    BlobInfo.builder(blobId).contentType("text/plain").build(),
+    "a simple blob".getBytes(UTF_8));
 ```
 
 At this point, you will be able to see your newly created bucket and blob on the Google Developers Console.
 
 #### Retrieving data
-Now that we have content uploaded to the server, we can see how to read data from the server. Add the following import:
+Now that we have content uploaded to the server, we can see how to read data from the server.  Add the following line to your program to get back the blob we uploaded.
 
 ```java
-import com.google.gcloud.storage.Blob;
-```
-
-Then add the following lines to your program to get back the blob we uploaded.
-
-```java
-Blob blob = Blob.load(storage, blobInfo.blobId());
-String blobContent = new String(blob.content(), UTF_8);
-```
-
-If others have permission to edit the blob, then you may want to call `reload` to get a more up to date copy of the blob later in your program. The following snippet shows how to get a new Blob object containing updated information.
-
-```
-Blob refreshedBlob = blob.reload();
+String blobContent = new String(storage.readAllBytes(blobId), UTF_8);
 ```
 
 #### Listing buckets and contents of buckets
 Suppose that you've added more buckets and blobs, and now you want to see the names of your buckets and the contents of each one. Add the following imports:
 
 ```java
-import com.google.gcloud.storage.Bucket;
-
 import java.util.Iterator;
 ```
 
@@ -146,11 +132,10 @@ while (bucketInfoIterator.hasNext()) {
 }
 
 // List the blobs in a particular bucket
-Bucket bucket = Bucket.load(storage, bucketName);
-Iterator<Blob> blobIterator = bucket.list().iterateAll();
+Iterator<BlobInfo> blobIterator = storage.list(bucketName).iterateAll();
 System.out.println("My blobs:");
 while (blobIterator.hasNext()) {
-  System.out.println(blobIterator.next().info());
+  System.out.println(blobIterator.next());
 }
 ```
 
@@ -161,13 +146,11 @@ Here we put together all the code shown above into one program.  This program as
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.gcloud.storage.Storage;
-import com.google.gcloud.storage.StorageOptions;
-import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
-import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.BucketInfo;
+import com.google.gcloud.storage.Storage;
+import com.google.gcloud.storage.StorageOptions;
 
 import java.util.Iterator;
 
@@ -179,21 +162,17 @@ public class GcloudStorageExample {
     Storage storage = StorageOptions.defaultInstance().service();
 
     // Create a bucket
-    String bucketName = "my_unique_bucket-1323252"; // Remember to change this to something unique
-    BucketInfo bucketInfo = storage.create(BucketInfo.builder(bucketName).build());
+    String bucketName = "my_unique_bucket"; // Change this to something unique
+    BucketInfo bucketInfo = storage.create(BucketInfo.of(bucketName));
 
     // Upload a blob to the newly created bucket
     BlobId blobId = BlobId.of(bucketName, "my_blob_name");
-    BlobInfo blobInfo = storage.create(BlobInfo.builder(blobId).build(),
-                                       "a simple blob".getBytes(UTF_8));
+    BlobInfo blobInfo = storage.create(
+        BlobInfo.builder(blobId).contentType("text/plain").build(),
+        "a simple blob".getBytes(UTF_8));
 
     // Retrieve a blob from the server
-    Blob blob = Blob.load(storage, blobInfo.blobId());
-    String blobContent = new String(blob.content(), UTF_8);
-
-    // An example of how to get an updated blob
-    // This is useful in cases where others with access to your blob may have changed it.
-    Blob refreshedBlob = blob.reload();
+    String blobContent = new String(storage.readAllBytes(blobId), UTF_8);
 
     // List all your buckets
     Iterator<BucketInfo> bucketInfoIterator = storage.list().iterateAll();
@@ -203,11 +182,10 @@ public class GcloudStorageExample {
     }
 
     // List the blobs in a particular bucket
-    Bucket bucket = Bucket.load(storage, bucketName);
-    Iterator<Blob> blobIterator = bucket.list().iterateAll();
+    Iterator<BlobInfo> blobIterator = storage.list(bucketName).iterateAll();
     System.out.println("My blobs:");
     while (blobIterator.hasNext()) {
-      System.out.println(blobIterator.next().info());
+      System.out.println(blobIterator.next());
     }
   }
 }
