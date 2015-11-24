@@ -126,10 +126,12 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
       return new DatastoreRpcException(reason);
     } else {
       boolean retryable = false;
+      reasonStr = "Unknown";
       if (exception.getCause() instanceof SocketTimeoutException) {
         retryable = true;
+        reasonStr = "Request timeout";
       }
-      return new DatastoreRpcException("Unknown", exception.getCode(), retryable, message);
+      return new DatastoreRpcException(reasonStr, exception.getCode(), retryable, message);
     }
   }
 
