@@ -89,6 +89,12 @@ public class BlobInfoTest {
   }
 
   @Test
+  public void testToBuilderIncomplete() {
+    BlobInfo incompleteBlobInfo = BlobInfo.builder(BlobId.of("b2", "n2")).build();
+    compareBlobs(incompleteBlobInfo, incompleteBlobInfo.toBuilder().build());
+  }
+
+  @Test
   public void testBuilder() {
     assertEquals("b", BLOB_INFO.bucket());
     assertEquals("n", BLOB_INFO.name());
