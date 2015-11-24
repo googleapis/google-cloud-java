@@ -42,6 +42,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.net.InetAddress;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -121,9 +122,15 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     if (reason == null) {
       reason = HTTP_STATUS_TO_REASON.get(exception.getCode());
     }
-    return reason != null
-        ? new DatastoreRpcException(reason)
-        : new DatastoreRpcException("Unknown", exception.getCode(), false, message);
+    if (reason != null) {
+      return new DatastoreRpcException(reason);
+    } else {
+      boolean retryable = false;
+      if (exception.getCause() instanceof SocketTimeoutException) {
+        retryable = true;
+      }
+      return new DatastoreRpcException("Unknown", exception.getCode(), retryable, message);
+    }
   }
 
   @Override

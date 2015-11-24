@@ -68,6 +68,7 @@ import com.google.gcloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -101,7 +102,11 @@ public class DefaultStorageRpc implements StorageRpc {
         && ((GoogleJsonResponseException) exception).getDetails() != null) {
       translated = translate(((GoogleJsonResponseException) exception).getDetails());
     } else {
-      translated = new StorageException(0, exception.getMessage(), false);
+      boolean retryable = false;
+      if (exception instanceof SocketTimeoutException) {
+        retryable = true;
+      }
+      translated = new StorageException(0, exception.getMessage(), retryable);
     }
     translated.initCause(exception);
     return translated;
