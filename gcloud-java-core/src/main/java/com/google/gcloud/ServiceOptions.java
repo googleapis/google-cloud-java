@@ -21,13 +21,10 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
-import com.google.api.client.googleapis.compute.ComputeCredential;
-import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.spi.ServiceRpcFactory;
 
@@ -44,7 +41,6 @@ import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.security.GeneralSecurityException;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Objects;
@@ -113,23 +109,7 @@ public abstract class ServiceOptions<
           // Maybe not on App Engine
         }
       }
-      // Consider Compute
-      try {
-        return getComputeHttpTransport();
-      } catch (Exception e) {
-        // Maybe not on GCE
-      }
       return new NetHttpTransport();
-    }
-
-    private static HttpTransport getComputeHttpTransport()
-        throws IOException, GeneralSecurityException {
-      NetHttpTransport transport = GoogleNetHttpTransport.newTrustedTransport();
-      // Try to connect using Google Compute Engine service account credentials.
-      ComputeCredential credential = new ComputeCredential(transport, new JacksonFactory());
-      // Force token refresh to detect if we are running on Google Compute Engine.
-      credential.refreshToken();
-      return transport;
     }
   }
 
