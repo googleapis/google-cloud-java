@@ -128,6 +128,8 @@ while (results.hasNext()) {
 }
 ```
 
+Cloud Datastore relies on indexing to run queries. Indexing is turned on by default for most types of properties. To read more about indexing, see the [Cloud Datastore Index Configuration documentation](https://cloud.google.com/datastore/docs/tools/indexconfig).
+
 #### Complete source code
 
 Here we put together all the code shown above into one program.  This program assumes that you are running on Compute Engine or from your own desktop. To run this example on App Engine, simply move the code from the main method to your application's servlet class.
