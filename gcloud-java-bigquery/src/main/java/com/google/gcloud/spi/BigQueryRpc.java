@@ -35,8 +35,6 @@ public interface BigQueryRpc {
 
   // These options are part of the Google Cloud BigQuery query parameters
   enum Option {
-    QUOTA_USER("quotaUser"),
-    USER_IP("userIp"),
     FIELDS("fields"),
     DELETE_CONTENTS("deleteContents"),
     ALL_DATASETS("all"),

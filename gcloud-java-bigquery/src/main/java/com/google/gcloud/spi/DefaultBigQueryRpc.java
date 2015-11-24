@@ -16,10 +16,8 @@ package com.google.gcloud.spi;
 
 import static com.google.gcloud.spi.BigQueryRpc.Option.DELETE_CONTENTS;
 import static com.google.gcloud.spi.BigQueryRpc.Option.FIELDS;
-import static com.google.gcloud.spi.BigQueryRpc.Option.QUOTA_USER;
 import static com.google.gcloud.spi.BigQueryRpc.Option.START_INDEX;
 import static com.google.gcloud.spi.BigQueryRpc.Option.TIMEOUT;
-import static com.google.gcloud.spi.BigQueryRpc.Option.USER_IP;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
@@ -104,8 +102,6 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       return bigquery.datasets()
           .get(this.options.projectId(), datasetId)
           .setFields(FIELDS.getString(options))
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .execute();
     } catch(IOException ex) {
       BigQueryException serviceException = translate(ex);
@@ -122,8 +118,6 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
     try {
       DatasetList datasetsList = bigquery.datasets()
           .list(this.options.projectId())
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .setAll(Option.ALL_DATASETS.getBoolean(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
@@ -151,8 +145,6 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
     try {
       return bigquery.datasets().insert(this.options.projectId(), dataset)
           .setFields(FIELDS.getString(options))
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -163,8 +155,6 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   public boolean deleteDataset(String datasetId, Map<Option, ?> options) throws BigQueryException {
     try {
       bigquery.datasets().delete(this.options.projectId(), datasetId)
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .setDeleteContents(DELETE_CONTENTS.getBoolean(options))
           .execute();
       return true;
@@ -181,10 +171,9 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   public Dataset patch(Dataset dataset, Map<Option, ?> options) throws BigQueryException {
     try {
       DatasetReference reference = dataset.getDatasetReference();
-      return bigquery.datasets().patch(reference.getProjectId(), reference.getDatasetId(), dataset)
+      return bigquery.datasets()
+          .patch(this.options.projectId(), reference.getDatasetId(), dataset)
           .setFields(FIELDS.getString(options))
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -198,8 +187,6 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       return bigquery.tables()
           .get(this.options.projectId(), datasetId, tableId)
           .setFields(FIELDS.getString(options))
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .execute();
     } catch(IOException ex) {
       BigQueryException serviceException = translate(ex);
@@ -216,8 +203,6 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
     try {
       TableList tableList = bigquery.tables()
           .list(this.options.projectId(), datasetId)
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
           .execute();
@@ -247,8 +232,6 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       return bigquery.tables()
           .insert(this.options.projectId(), table.getTableReference().getDatasetId(), table)
           .setFields(FIELDS.getString(options))
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -259,14 +242,11 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   public boolean deleteTable(String datasetId, String tableId, Map<Option, ?> options)
       throws BigQueryException {
     try {
-      bigquery.tables().delete(this.options.projectId(), datasetId, tableId)
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
-          .execute();
+      bigquery.tables().delete(this.options.projectId(), datasetId, tableId).execute();
       return true;
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
-      if (serviceException.code() == 404) {
+      if (serviceException.code() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -278,10 +258,8 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
     try {
       TableReference reference = table.getTableReference();
       return bigquery.tables()
-          .patch(reference.getProjectId(), reference.getDatasetId(), reference.getTableId(), table)
+          .patch(this.options.projectId(), reference.getDatasetId(), reference.getTableId(), table)
           .setFields(FIELDS.getString(options))
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -294,8 +272,6 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
     try {
       return bigquery.tabledata()
           .insertAll(this.options.projectId(), table.getDatasetId(), table.getTableId(), request)
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -308,8 +284,6 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
     try {
       TableDataList tableDataList = bigquery.tabledata()
           .list(this.options.projectId(), datasetId, tableId)
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
           .setStartIndex(START_INDEX.getLong(options) != null ?
@@ -328,8 +302,6 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       return bigquery.jobs()
           .get(this.options.projectId(), jobId)
           .setFields(FIELDS.getString(options))
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .execute();
     } catch(IOException ex) {
       BigQueryException serviceException = translate(ex);
@@ -386,8 +358,6 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       return bigquery.jobs()
           .insert(this.options.projectId(), job)
           .setFields(FIELDS.getString(options))
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -397,10 +367,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   @Override
   public boolean cancel(String jobId, Map<Option, ?> options) throws BigQueryException {
     try {
-      bigquery.jobs().cancel(this.options.projectId(), jobId)
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
-          .execute();
+      bigquery.jobs().cancel(this.options.projectId(), jobId).execute();
       return true;
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
@@ -415,9 +382,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   public GetQueryResultsResponse getQueryResults(JobReference job, Map<Option, ?> options)
       throws BigQueryException {
     try {
-      return bigquery.jobs().getQueryResults(this.options.projectId(), job.getProjectId())
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
+      return bigquery.jobs().getQueryResults(this.options.projectId(), job.getJobId())
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
           .setStartIndex(START_INDEX.getLong(options) != null ?
@@ -437,10 +402,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   public QueryResponse query(QueryRequest request, Map<Option, ?> options)
       throws BigQueryException {
     try {
-      return bigquery.jobs().query(this.options.projectId(), request)
-          .setQuotaUser(QUOTA_USER.getString(options))
-          .setUserIp(USER_IP.getString(options))
-          .execute();
+      return bigquery.jobs().query(this.options.projectId(), request).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
