@@ -18,10 +18,6 @@ package com.google.gcloud.resourcemanager;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.gcloud.spi.ResourceManagerRpc.Permission;
-
-import java.util.List;
-
 /**
  * A Google Cloud Resource Manager project object.
  *
@@ -32,57 +28,70 @@ public class Project {
 
   private final ResourceManager resourceManager;
   private final ProjectInfo info;
-  private final Policy policy;
 
   /**
-   * Constructs a Project object that contains the ProjectInfo and Policy given.
+   * Constructs a Project object that contains the ProjectInfo given.
    */
-  public Project(ResourceManager resourceManager, ProjectInfo projectInfo, Policy policy) {
+  public Project(ResourceManager resourceManager, ProjectInfo projectInfo) {
     this.resourceManager = checkNotNull(resourceManager);
     this.info = checkNotNull(projectInfo);
-    this.policy = checkNotNull(policy);
   }
 
   /**
-   * Constructs a Project object that contains project and policy information loaded from the
-   * server.
+   * Constructs a Project object that contains project information loaded from the server.
    *
-   * @return Project object containing the project's metadata and IAM policy
+   * @return Project object containing the project's metadata
    * @throws ResourceManagerException upon failure
    */
   public static Project load(ResourceManager resourceManager, String projectId) {
     ProjectInfo projectInfo = resourceManager.get(projectId);
-    Policy policy = resourceManager.getIamPolicy(projectId);
-    return new Project(resourceManager, projectInfo, policy);
+    return new Project(resourceManager, projectInfo);
   }
 
+  /**
+   * Returns the {@link ProjectInfo} object associated with this Project.
+   */
   public ProjectInfo info() {
     return info;
   }
 
-  public Policy policy() {
-    return policy;
-  }
-
+  /**
+   * Returns the {@link ResourceManager} service object associated with this Project.
+   */
   public ResourceManager resourceManager() {
     return resourceManager;
   }
 
   /**
-   * Returns a Project object with updated project and policy information.
+   * Returns a Project object with updated project information.
    *
-   * @return Project object containing the project's updated metadata and IAM policy
+   * @return Project object containing the project's updated metadata
    * @throws ResourceManagerException upon failure
    */
   public Project reload() {
-    return new Project(
-        resourceManager, resourceManager.get(info.id()), resourceManager.getIamPolicy(info.id()));
+    return new Project(resourceManager, resourceManager.get(info.id()));
   }
 
   /**
-   * Requests that this project be deleted. For an unspecified amount of time, this action can be
-   * undone by calling {@link #undelete}.
+   * Marks the project identified by the specified project ID for deletion.
    *
+   * This method will only affect the project if the following criteria are met:
+   * <ul>
+   * <li>The project does not have a billing account associated with it.
+   * <li>The project has a lifecycle state of {@link ProjectInfo.State#ACTIVE}.
+   * </ul>
+   * This method changes the project's lifecycle state from {@link ProjectInfo.State#ACTIVE} to
+   * {@link ProjectInfo.State#DELETE_REQUESTED}. The deletion starts at an unspecified time, at
+   * which point the lifecycle state changes to {@link ProjectInfo.State#DELETE_IN_PROGRESS}. Until
+   * the deletion completes, you can check the lifecycle state checked by retrieving the project
+   * with {@link ResourceManager#get}, and the project remains visible to
+   * {@link ResourceManager#list}. However, you cannot update the project. After the deletion
+   * completes, the project is not retrievable by the {@link ResourceManager#get} and
+   * {@link ResourceManager#list} methods. The caller must have modify permissions for this project.
+   *
+   * @see
+   *     <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/delete">
+   *     Cloud Resource Manager delete</a>
    * @throws ResourceManagerException upon failure
    */
   public void delete() {
@@ -90,54 +99,34 @@ public class Project {
   }
 
   /**
-   * Requests that a project's lifecycle status be changed from {@code DELETE_REQUESTED} to
-   * {@code ACTIVE}.
+   * Restores the project identified by the specified project ID.
    *
-   * @throws ResourceManagerException upon failure
+   * You can only use this method for a project that has a lifecycle state of
+   * {@link ProjectInfo.State#DELETE_REQUESTED}. After deletion starts, as indicated by a lifecycle
+   * state of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
+   * caller must have modify permissions for this project.
+   *
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">
+   *     Cloud Resource Manager undelete</a>
+   * @throws ResourceManagerException
    */
   public void undelete() {
     resourceManager.undelete(info.id());
   }
 
   /**
-   * Replaces the project metadata (not including the IAM policy) using the given ProjectInfo.
+   * Replaces the attributes of the project.
    *
-   * @return Project object containing the project's updated metadata
+   * The caller must have modify permissions for this project.
+   *
+   * @see
+   *     <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">
+   *     Cloud Resource Manager update</a>
+   * @return the ProjectInfo representing the new project metadata
    * @throws ResourceManagerException upon failure
    */
   public Project replace(ProjectInfo projectInfo) {
-    return new Project(resourceManager, resourceManager.replace(checkNotNull(projectInfo)), policy);
-  }
-
-  /**
-   * Replaces the project's IAM policy using the given policy.
-   *
-   * @return Project object containing the project's updated IAM policy
-   * @throws ResourceManagerException upon failure
-   */
-  public Project replaceIamPolicy(Policy policy) {
-    return new Project(
-        resourceManager, info, resourceManager.replaceIamPolicy(info.id(), checkNotNull(policy)));
-  }
-
-  /**
-   * Returns whether the caller has the permissions specified in the parameters.
-   *
-   * @return List of booleans representing whether the user has the corresponding permission
-   *     provided as a parameter
-   * @throws ResourceManagerException upon failure
-   */
-  public List<Boolean> hasPermissions(Permission... permissions) {
-    return resourceManager.hasPermissions(info.id(), permissions);
-  }
-
-  /**
-   * Returns whether the caller has all the permissions specified in the parameters.
-   *
-   * @return true if the caller has all the permissions specified, otherwise false.
-   * @throws ResourceManagerException upon failure
-   */
-  public boolean hasAllPermissions(Permission... permissions) {
-    return !(hasPermissions(permissions).contains(false));
+    return new Project(resourceManager, resourceManager.replace(checkNotNull(projectInfo)));
   }
 }

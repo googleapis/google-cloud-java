@@ -16,11 +16,13 @@
 
 package com.google.gcloud.resourcemanager;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
-import com.google.gcloud.spi.ResourceManagerRpc.ListOptions;
-import com.google.gcloud.spi.ResourceManagerRpc.Permission;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -32,79 +34,134 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
 
   public static final String DEFAULT_CONTENT_TYPE = "application/octet-stream";
 
+  public class ListOptions {
+    private List<String> filters;
+    private String pageToken;
+    private int pageSize;
+
+    private static final ListOptions DEFAULT_INSTANCE =
+        new ListOptions(Collections.<String>emptyList(), null, -1);
+
+    ListOptions(List<String> filters, String pageToken, int pageSize) {
+      this.filters = checkNotNull(ImmutableList.copyOf(filters));
+      this.pageToken = pageToken;
+      this.pageSize = pageSize;
+    }
+
+    public static ListOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static ListOptions createListOption(
+        List<String> filters, String pageToken, int pageSize) {
+      return new ListOptions(filters, pageToken, pageSize);
+    }
+
+    public String pageToken() {
+      return pageToken;
+    }
+
+    public List<String> filters() {
+      return filters;
+    }
+
+    public int pageSize() {
+      return pageSize;
+    }
+  }
+
   /**
    * Create a new project.
    *
+   * Initially, the project resource is owned by its creator exclusively. The creator can later
+   * grant permission to others to read or update the project. Several APIs are activated
+   * automatically for the project, including Google Cloud Storage.
+   *
+   * @see
+   *     <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/create">
+   *     Cloud Resource Manager create</a>
+   *
    * @return ProjectInfo object representing the new project's metadata. The returned object will
-   *     include additional read-only information, namely project number, lifecycle state, and
-   *     creation time.
+   *     include the following read-only fields supplied by the server: project number, lifecycle
+   *     state, and creation time.
    * @throws ResourceManagerException upon failure
    */
   ProjectInfo create(ProjectInfo project);
 
   /**
-   * Sends a request to delete a project. For an unspecified amount of time, this action can be
-   * undone using {@link #undelete}.
+   * Marks the project identified by the specified project ID for deletion.
    *
+   * This method will only affect the project if the following criteria are met:
+   * <ul>
+   * <li>The project does not have a billing account associated with it.
+   * <li>The project has a lifecycle state of {@link ProjectInfo.State#ACTIVE}.
+   * </ul>
+   * This method changes the project's lifecycle state from {@link ProjectInfo.State#ACTIVE} to
+   * {@link ProjectInfo.State#DELETE_REQUESTED}. The deletion starts at an unspecified time, at
+   * which point the lifecycle state changes to {@link ProjectInfo.State#DELETE_IN_PROGRESS}. Until
+   * the deletion completes, you can check the lifecycle state checked by retrieving the project
+   * with {@link ResourceManager#get}, and the project remains visible to
+   * {@link ResourceManager#list}. However, you cannot update the project. After the deletion
+   * completes, the project is not retrievable by the {@link ResourceManager#get} and
+   * {@link ResourceManager#list} methods. The caller must have modify permissions for this project.
+   *
+   * @see
+   *     <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/delete">
+   *     Cloud Resource Manager delete</a>
    * @throws ResourceManagerException upon failure
    */
   void delete(String projectId);
 
   /**
-   * Return the requested project or {@code null} if not found.
+   * Retrieves the project identified by the specified project ID.
    *
+   * The caller must have read permissions for this project.
+   *
+   * @see <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/get">
+   *     Cloud Resource Manager get</a>
    * @throws ResourceManagerException upon failure
    */
   ProjectInfo get(String projectId);
 
   /**
-   * List the projects viewable by the current user. Use {@link ListOptions} to filter this list,
-   * set page size, and set page tokens. Note that pagination is currently not implemented by the
-   * Cloud Resource Manager API.
+   * Lists the projects visible to the current user.
    *
-   * @return {@code Page<ProjectInfo>}, a paginated list of projects.
+   * This method returns projects in an unspecified order. New projects do not necessarily appear at
+   * the end of the list. Use {@link ListOptions} to filter this list, set page size, and set page
+   * tokens. Note that pagination is currently not implemented by the Cloud Resource Manager API.
+   *
+   * @see <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/list">
+   *     Cloud Resource Manager list</a>
+   * @return {@code Page<ProjectInfo>}, a page of projects.
    * @throws ResourceManagerException upon failure
    */
   Page<ProjectInfo> list(ListOptions listOptions);
 
   /**
-   * Replace project metadata.
+   * Replaces the attributes of the project.
    *
+   * The caller must have modify permissions for this project.
+   *
+   * @see
+   *     <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">
+   *     Cloud Resource Manager update</a>
    * @return the ProjectInfo representing the new project metadata
    * @throws ResourceManagerException upon failure
    */
   ProjectInfo replace(ProjectInfo newProject);
 
   /**
-   * Undo a delete request. This will only succeed if the server processes the undelete request
-   * while the project's state is {@code DELETE_REQUESTED}.
+   * Restores the project identified by the specified project ID.
    *
+   * You can only use this method for a project that has a lifecycle state of
+   * {@link ProjectInfo.State#DELETE_REQUESTED}. After deletion starts, as indicated by a lifecycle
+   * state of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
+   * caller must have modify permissions for this project.
+   *
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">
+   *     Cloud Resource Manager undelete</a>
    * @throws ResourceManagerException
    */
   void undelete(String projectId);
-
-  /**
-   * Get the IAM policy for the project specified.
-   *
-   * @return IAM Policy
-   * @throws ResourceManagerException upon failure
-   */
-  Policy getIamPolicy(String projectId);
-
-  /**
-   * Replace the IAM Policy for a project with the policy given.
-   *
-   * @return the new IAM Policy
-   * @throws ResourceManagerException upon failure
-   */
-  Policy replaceIamPolicy(String projectId, Policy policy);
-
-  /**
-   * Test whether the caller of this function has the permissions provided as arguments.
-   *
-   * @return List of booleans representing whether the caller has the corresponding permission in
-   *     the given permissions array.
-   * @throws ResourceManagerException upon failure
-   */
-  List<Boolean> hasPermissions(String projectId, Permission... permissions);
 }
