@@ -19,14 +19,10 @@ package com.google.gcloud.resourcemanager;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.RetryParams;
-import com.google.gcloud.resourcemanager.Policy.Binding;
-import com.google.gcloud.resourcemanager.Policy.Member;
-import com.google.gcloud.resourcemanager.Policy.RoleType;
 
 import org.junit.Test;
 
@@ -37,32 +33,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Collections;
-import java.util.List;
 
 public class SerializationTest {
 
   private static final ResourceId RESOURCE_ID = ResourceId.of("some id", "organization");
-  private static final List<Member> OWNER_MEMBER_LIST = ImmutableList.of(
-      Member.user("first-owner@email.com"), Member.group("group-of-owners@email.com"));
-  private static final List<Member> EDITOR_MEMBER_LIST =
-      ImmutableList.of(Member.serviceAccount("editor@someemail.com"));
-  private static final List<Member> VIEWER_MEMBER_LIST =
-      ImmutableList.of(Member.serviceAccount("app@someemail.com"), Member.user("viewer@email.com"));
-  private static final Binding OWNER_BINDING =
-      Policy.Binding.builder().role(RoleType.OWNER).members(OWNER_MEMBER_LIST).build();
-  private static final Binding EDITOR_BINDING =
-      Policy.Binding.builder().role(RoleType.EDITOR).members(EDITOR_MEMBER_LIST).build();
-  private static final Binding VIEWER_BINDING =
-      Policy.Binding.builder().role(RoleType.VIEWER).members(VIEWER_MEMBER_LIST).build();
-  private static final Policy EMPTY_POLICY = Policy.builder().build();
-  private static final Policy FULL_POLICY =
-      Policy.builder()
-          .addBinding(OWNER_BINDING)
-          .addBinding(EDITOR_BINDING)
-          .addBinding(VIEWER_BINDING)
-          .version(1)
-          .etag("some-etag-value")
-          .build();
   private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder("id1").build();
   private static final ProjectInfo FULL_PROJECT_INFO =
       ProjectInfo.builder("id")
@@ -93,9 +67,7 @@ public class SerializationTest {
 
   @Test
   public void testModelAndRequests() throws Exception {
-    Serializable[] objects = {RESOURCE_ID, OWNER_BINDING.members().get(0), OWNER_BINDING,
-        EDITOR_BINDING, VIEWER_BINDING, EMPTY_POLICY, FULL_POLICY, PARTIAL_PROJECT_INFO,
-        FULL_PROJECT_INFO, PAGE_RESULT};
+    Serializable[] objects = {RESOURCE_ID, PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PAGE_RESULT};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

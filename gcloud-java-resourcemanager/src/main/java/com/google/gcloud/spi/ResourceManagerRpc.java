@@ -16,17 +16,43 @@
 
 package com.google.gcloud.spi;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.api.services.cloudresourcemanager.model.Policy;
 import com.google.api.services.cloudresourcemanager.model.Project;
-import com.google.common.collect.ImmutableList;
 import com.google.gcloud.resourcemanager.ResourceManagerException;
 
-import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public interface ResourceManagerRpc {
+
+  enum Option {
+    FILTER("filter"),
+    PAGE_SIZE("maxResults"),
+    PAGE_TOKEN("pageToken");
+
+    private final String value;
+
+    Option(String value) {
+      this.value = value;
+    }
+
+    public String value() {
+      return value;
+    }
+
+    @SuppressWarnings("unchecked")
+    <T> T get(Map<Option, ?> options) {
+      return (T) options.get(this);
+    }
+
+    String getString(Map<Option, ?> options) {
+      return get(options);
+    }
+
+    Long getInt(Map<Option, ?> options) {
+      return get(options);
+    }
+  }
 
   public enum Permission {
     CREATE("resourcemanager.projects.create"),
@@ -71,49 +97,13 @@ public interface ResourceManagerRpc {
     }
   }
 
-  public class ListOptions {
-    private List<String> filters;
-    private String pageToken;
-    private int pageSize;
-
-    private static final ListOptions DEFAULT_INSTANCE =
-        new ListOptions(Collections.<String>emptyList(), null, -1);
-
-    ListOptions(List<String> filters, String pageToken, int pageSize) {
-      this.filters = checkNotNull(ImmutableList.copyOf(filters));
-      this.pageToken = pageToken;
-      this.pageSize = pageSize;
-    }
-
-    public static ListOptions getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    public static ListOptions createListOption(
-        List<String> filters, String pageToken, int pageSize) {
-      return new ListOptions(filters, pageToken, pageSize);
-    }
-
-    public String pageToken() {
-      return pageToken;
-    }
-
-    public List<String> filters() {
-      return filters;
-    }
-
-    public int pageSize() {
-      return pageSize;
-    }
-  }
-
   Project create(Project project) throws ResourceManagerException;
 
   void delete(String projectId) throws ResourceManagerException;
 
   Project get(String projectId) throws ResourceManagerException;
 
-  Tuple<String, Iterable<Project>> list(ListOptions listOptions) throws ResourceManagerException;
+  Tuple<String, Iterable<Project>> list(Map<Option, ?> options) throws ResourceManagerException;
 
   void undelete(String projectId) throws ResourceManagerException;
 
