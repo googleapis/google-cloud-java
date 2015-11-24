@@ -42,9 +42,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.net.InetAddress;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -95,7 +93,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
         }
         InetAddress hostAddr = InetAddress.getByName(new URL(normalizedHost).getHost());
         return hostAddr.isAnyLocalAddress() || hostAddr.isLoopbackAddress();
-      } catch (UnknownHostException | MalformedURLException e) {
+      } catch (Exception e) {
         // ignore
       }
     }
