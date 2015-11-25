@@ -20,7 +20,11 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Represents a Google Cloud Resource Manager Resource ID
+ * Represents a Google Cloud Resource Manager Resource ID.
+ *
+ * A 'resource' in Google Cloud Platform is a generic term for something you (a developer) may want
+ * to interact with through one of our API's. Some examples are an AppEngine app, a Compute Engine
+ * instance, and Cloud SQL database.
  */
 public class ResourceId implements Serializable {
 
@@ -33,10 +37,20 @@ public class ResourceId implements Serializable {
     this.type = checkNotNull(type);
   }
 
+  /**
+   * Required field for the type-specific ID.
+   *
+   * This should correspond to the ID used in the type-specific APIs.
+   */
   public String id() {
     return id;
   }
 
+  /**
+   * Required field representing the resource type this ID is for.
+   *
+   * At present, the only valid type is "organization".
+   */
   public String type() {
     return type;
   }
@@ -51,6 +65,12 @@ public class ResourceId implements Serializable {
     return Objects.hash(id, type);
   }
 
+  /**
+   * Create a new Resource ID with the given ID and resource type.
+   *
+   * The ID should correspond to the ID used in the type-specific APIs. At present, the only valid
+   * type is "organization".
+   */
   public static ResourceId of(String id, String type) {
     return new ResourceId(id, type);
   }

@@ -16,11 +16,9 @@
 
 package com.google.gcloud.spi;
 
-import com.google.api.services.cloudresourcemanager.model.Policy;
 import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.gcloud.resourcemanager.ResourceManagerException;
 
-import java.util.List;
 import java.util.Map;
 
 public interface ResourceManagerRpc {
@@ -51,27 +49,6 @@ public interface ResourceManagerRpc {
 
     Long getInt(Map<Option, ?> options) {
       return get(options);
-    }
-  }
-
-  public enum Permission {
-    CREATE("resourcemanager.projects.create"),
-    DELETE("resourcemanager.projects.delete"),
-    GET("resourcemanager.projects.get"),
-    LIST("resourcemanager.projects.list"),
-    REPLACE("resourcemanager.projects.replace"),
-    UNDELETE("resourcemanager.projects.undelete"),
-    GET_IAM_POLICY("resourcemanager.projects.getIamPolicy"),
-    REPLACE_IAM_POLICY("resourcemanager.projects.setIamPolicy");
-
-    String permissionPb;
-
-    Permission(String permissionPb) {
-      this.permissionPb = permissionPb;
-    }
-
-    String toPb() {
-      return permissionPb;
     }
   }
 
@@ -108,13 +85,6 @@ public interface ResourceManagerRpc {
   void undelete(String projectId) throws ResourceManagerException;
 
   Project replace(Project project) throws ResourceManagerException;
-
-  Policy getIamPolicy(String projectId) throws ResourceManagerException;
-
-  Policy replaceIamPolicy(String projectId, Policy policy) throws ResourceManagerException;
-
-  List<Boolean> hasPermissions(String projectId, List<Permission> permissions)
-      throws ResourceManagerException;
 
   // TODO(ajaykannan): implement "Organization" functionality when available (issue #319)
 }
