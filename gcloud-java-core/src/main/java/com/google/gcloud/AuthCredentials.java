@@ -19,12 +19,9 @@ package com.google.gcloud;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
-import com.google.api.client.googleapis.compute.ComputeCredential;
 import com.google.api.client.googleapis.extensions.appengine.auth.oauth2.AppIdentityCredential;
-import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -33,7 +30,6 @@ import com.google.auth.oauth2.ServiceAccountCredentials;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
-import java.security.GeneralSecurityException;
 import java.security.PrivateKey;
 import java.util.Objects;
 import java.util.Set;
@@ -164,55 +160,6 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
   }
 
-  private static class ComputeEngineAuthCredentials extends AuthCredentials {
-
-    private ComputeCredential computeCredential;
-
-    private static final ComputeEngineAuthCredentialsState STATE =
-        new ComputeEngineAuthCredentialsState();
-
-    private static class ComputeEngineAuthCredentialsState
-        implements RestorableState<AuthCredentials>, Serializable {
-
-      private static final long serialVersionUID = -6168594072854417404L;
-
-      @Override
-      public AuthCredentials restore() {
-        try {
-          return new ComputeEngineAuthCredentials();
-        } catch (IOException | GeneralSecurityException e) {
-          throw new IllegalStateException(
-              "Could not restore " + ComputeEngineAuthCredentials.class.getSimpleName(), e);
-        }
-      }
-
-      @Override
-      public int hashCode() {
-        return getClass().getName().hashCode();
-      }
-
-      @Override
-      public boolean equals(Object obj) {
-        return obj instanceof ComputeEngineAuthCredentialsState;
-      }
-    }
-
-    ComputeEngineAuthCredentials() throws IOException, GeneralSecurityException {
-      computeCredential = getComputeCredential();
-    }
-
-    @Override
-    protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
-        Set<String> scopes) {
-      return computeCredential;
-    }
-
-    @Override
-    public RestorableState<AuthCredentials> capture() {
-      return STATE;
-    }
-  }
-
   public static class ApplicationDefaultAuthCredentials extends AuthCredentials {
 
     private GoogleCredentials googleCredentials;
@@ -278,11 +225,6 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     return AppEngineAuthCredentials.INSTANCE;
   }
 
-  public static AuthCredentials createForComputeEngine()
-      throws IOException, GeneralSecurityException {
-    return new ComputeEngineAuthCredentials();
-  }
-
   /**
    * Returns the Application Default Credentials.
    *
@@ -336,14 +278,5 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
 
   public static AuthCredentials noCredentials() {
     return ServiceAccountAuthCredentials.NO_CREDENTIALS;
-  }
-
-  static ComputeCredential getComputeCredential() throws IOException, GeneralSecurityException {
-    NetHttpTransport transport = GoogleNetHttpTransport.newTrustedTransport();
-    // Try to connect using Google Compute Engine service account credentials.
-    ComputeCredential credential = new ComputeCredential(transport, new JacksonFactory());
-    // Force token refresh to detect if we are running on Google Compute Engine.
-    credential.refreshToken();
-    return credential;
   }
 }

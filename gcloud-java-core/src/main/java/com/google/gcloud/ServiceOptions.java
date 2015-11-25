@@ -109,12 +109,6 @@ public abstract class ServiceOptions<
           // Maybe not on App Engine
         }
       }
-      // Consider Compute
-      try {
-        return AuthCredentials.getComputeCredential().getTransport();
-      } catch (Exception e) {
-        // Maybe not on GCE
-      }
       return new NetHttpTransport();
     }
   }
@@ -342,7 +336,7 @@ public abstract class ServiceOptions<
   }
 
   private static AuthCredentials defaultAuthCredentials() {
-    // Consider App Engine. This will not be needed once issue #21 is fixed.
+    // Consider App Engine.
     if (appEngineAppId() != null) {
       try {
         return AuthCredentials.createForAppEngine();
@@ -354,16 +348,8 @@ public abstract class ServiceOptions<
     try {
       return AuthCredentials.createApplicationDefaults();
     } catch (Exception ex) {
-      // fallback to old-style
+      return AuthCredentials.noCredentials();
     }
-
-    // Consider old-style Compute. This will not be needed once issue #21 is fixed.
-    try {
-      return AuthCredentials.createForComputeEngine();
-    } catch (Exception ignore) {
-      // Maybe not on GCE
-    }
-    return AuthCredentials.noCredentials();
   }
 
   protected static String appEngineAppId() {
@@ -383,6 +369,49 @@ public abstract class ServiceOptions<
   }
 
   protected static String googleCloudProjectId() {
+    File configDir;
+    if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
+      configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
+    } else if (isWindows() && System.getenv().containsKey("APPDATA")) {
+      configDir = new File(System.getenv("APPDATA"), "gcloud");
+    } else {
+      configDir = new File(System.getProperty("user.home"), ".config/gcloud");
+    }
+    FileReader fileReader = null;
+    try {
+      fileReader = new FileReader(new File(configDir, "configurations/config_default"));
+    } catch (FileNotFoundException newConfigFileNotFoundEx) {
+      try {
+        fileReader = new FileReader(new File(configDir, "properties"));
+      } catch (FileNotFoundException oldConfigFileNotFoundEx) {
+        // ignore
+      }
+    }
+    if (fileReader != null) {
+      try (BufferedReader reader = new BufferedReader(fileReader)) {
+        String line;
+        String section = null;
+        Pattern projectPattern = Pattern.compile("^project\\s*=\\s*(.*)$");
+        Pattern sectionPattern = Pattern.compile("^\\[(.*)\\]$");
+        while ((line = reader.readLine()) != null) {
+          if (line.isEmpty() || line.startsWith(";")) {
+            continue;
+          }
+          line = line.trim();
+          Matcher matcher = sectionPattern.matcher(line);
+          if (matcher.matches()) {
+            section = matcher.group(1);
+          } else if (section == null || section.equals("core")) {
+            matcher = projectPattern.matcher(line);
+            if (matcher.matches()) {
+              return matcher.group(1);
+            }
+          }
+        }
+      } catch (IOException ex) {
+        // ignore
+      }
+    }
     try {
       URL url = new URL("http://metadata/computeMetadata/v1/project/project-id");
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -394,48 +423,6 @@ public abstract class ServiceOptions<
         }
       }
     } catch (IOException ignore) {
-      // ignore
-    }
-    File configDir;
-    if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
-      configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
-    } else if (isWindows() && System.getenv().containsKey("APPDATA")) {
-      configDir = new File(System.getenv("APPDATA"), "gcloud");
-    } else {
-      configDir = new File(System.getProperty("user.home"), ".config/gcloud");
-    }
-    FileReader fileReader;
-    try {
-      fileReader = new FileReader(new File(configDir, "configurations/config_default"));
-    } catch (FileNotFoundException newConfigFileNotFoundEx) {
-      try {
-        fileReader = new FileReader(new File(configDir, "properties"));
-      } catch (FileNotFoundException oldConfigFileNotFoundEx) {
-        // return null if we can't find config file
-        return null;
-      }
-    }
-    try (BufferedReader reader = new BufferedReader(fileReader)) {
-      String line;
-      String section = null;
-      Pattern projectPattern = Pattern.compile("^project\\s*=\\s*(.*)$");
-      Pattern sectionPattern = Pattern.compile("^\\[(.*)\\]$");
-      while ((line = reader.readLine()) != null) {
-        if (line.isEmpty() || line.startsWith(";")) {
-          continue;
-        }
-        line = line.trim();
-        Matcher matcher = sectionPattern.matcher(line);
-        if (matcher.matches()) {
-          section = matcher.group(1);
-        } else if (section == null || section.equals("core")) {
-          matcher = projectPattern.matcher(line);
-          if (matcher.matches()) {
-            return matcher.group(1);
-          }
-        }
-      }
-    } catch (IOException ex) {
       // ignore
     }
     // return null if can't determine
