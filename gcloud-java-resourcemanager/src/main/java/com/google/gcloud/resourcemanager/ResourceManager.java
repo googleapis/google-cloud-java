@@ -16,9 +16,13 @@
 
 package com.google.gcloud.resourcemanager;
 
+import com.google.common.base.Joiner;
+import com.google.common.collect.Sets;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.ResourceManagerRpc;
+
+import java.util.HashSet;
 
 /**
  * An interface for Google Cloud Resource Manager.
@@ -30,6 +34,62 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   public static final String DEFAULT_CONTENT_TYPE = "application/octet-stream";
 
   /**
+   * The fields of a project.
+   *
+   * These values can be used to specify the fields to include of in a partial response when calling
+   * {@link ResourceManager#get} or {@link ResourceManager#list}. Project ID is always returned,
+   * even if not specified.
+   */
+  enum ProjectField {
+    ID("projectId"),
+    NAME("name"),
+    LABELS("labels"),
+    NUMBER("projectNumber"),
+    STATE("lifecycleState"),
+    CREATE_TIME("createTime");
+
+    private final String selector;
+
+    ProjectField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(ProjectField... fields) {
+      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
+      fieldStrings.add(ID.selector());
+      for (ProjectField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  public class ProjectGetOption extends Option {
+
+    private static final long serialVersionUID = 270185129961146874L;
+
+    private ProjectGetOption(ResourceManagerRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the project's fields to be returned by the RPC call.
+     *
+     * If this option is not provided all project fields are returned.
+     * {@code ProjectListOption.fields} can be used to specify only the fields of interest. Project
+     * ID is always returned, even if not specified. {@link ProjectField} provides a list of fields
+     * that can be used.
+     */
+    public static ProjectGetOption fields(ProjectField... fields) {
+      return new ProjectGetOption(ResourceManagerRpc.Option.FIELDS, ProjectField.selector(fields));
+    }
+  }
+
+  /**
    * Class for specifying project list options.
    */
   public class ProjectListOption extends Option {
@@ -38,17 +98,6 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
 
     private ProjectListOption(ResourceManagerRpc.Option option, Object value) {
       super(option, value);
-    }
-
-    /**
-     * Returns an option to specify a page token.
-     *
-     * The page token (returned from a previous call to list) indicates from where listing should
-     * continue. Pagination is not yet supported; the server ignores this field. Optional.
-     */
-    public static ProjectListOption pageToken(String pageToken) {
-      // return new ProjectListOption(ResourceManagerRpc.Option.PAGE_TOKEN, pageToken);
-      throw new UnsupportedOperationException("paging for project lists is not implemented yet.");
     }
 
     /**
@@ -80,15 +129,17 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     }
 
     /**
-     * The maximum number of projects to return in the response.
+     * Returns an option to specify the project's fields to be returned by the RPC call.
      *
-     * The server can return fewer projects than requested. If unspecified, server picks an
-     * appropriate default. Note: pagination is not yet supported; the server ignores this field.
-     * Optional.
+     * If this option is not provided all project fields are returned.
+     * {@code ProjectListOption.fields} can be used to specify only the fields of interest. Project
+     * ID is always returned, even if not specified. {@link ProjectField} provides a list of fields
+     * that can be used.
      */
-    public static ProjectListOption pageSize(int pageSize) {
-      // return new ProjectListOption(ResourceManagerRpc.Option.PAGE_SIZE, pageSize);
-      throw new UnsupportedOperationException("paging for project lists is not implemented yet.");
+    public static ProjectListOption fields(ProjectField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("projects(").append(ProjectField.selector(fields)).append(")");
+      return new ProjectListOption(ResourceManagerRpc.Option.FIELDS, builder.toString());
     }
   }
 
@@ -143,7 +194,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    *     Cloud Resource Manager get</a>
    * @throws ResourceManagerException upon failure
    */
-  ProjectInfo get(String projectId);
+  ProjectInfo get(String projectId, ProjectGetOption... options);
 
   /**
    * Lists the projects visible to the current user.

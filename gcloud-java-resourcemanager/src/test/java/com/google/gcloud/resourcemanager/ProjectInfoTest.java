@@ -34,7 +34,6 @@ public class ProjectInfoTest {
   private static final Long NUMBER = 123L;
   private static final Long CREATE_TIME_MILLIS = 123456789L;
   private static final ProjectInfo.State STATE = ProjectInfo.State.DELETE_REQUESTED;
-  private static final ResourceId PARENT = ResourceId.of("owner-id", "organization");
   private static final ProjectInfo FULL_PROJECT_INFO =
       ProjectInfo.builder(ID)
           .name(NAME)
@@ -42,7 +41,6 @@ public class ProjectInfoTest {
           .number(NUMBER)
           .createTimeMillis(CREATE_TIME_MILLIS)
           .state(STATE)
-          .parent(PARENT)
           .build();
   private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder(ID).build();
 
@@ -54,7 +52,6 @@ public class ProjectInfoTest {
     assertEquals(NUMBER, FULL_PROJECT_INFO.number());
     assertEquals(CREATE_TIME_MILLIS, FULL_PROJECT_INFO.createTimeMillis());
     assertEquals(STATE, FULL_PROJECT_INFO.state());
-    assertEquals(PARENT, FULL_PROJECT_INFO.parent());
 
     assertEquals(ID, PARTIAL_PROJECT_INFO.id());
     assertEquals(null, PARTIAL_PROJECT_INFO.name());
@@ -62,7 +59,6 @@ public class ProjectInfoTest {
     assertEquals(null, PARTIAL_PROJECT_INFO.number());
     assertEquals(null, PARTIAL_PROJECT_INFO.createTimeMillis());
     assertEquals(null, PARTIAL_PROJECT_INFO.state());
-    assertEquals(null, PARTIAL_PROJECT_INFO.parent());
   }
 
   @Test
@@ -87,7 +83,6 @@ public class ProjectInfoTest {
             .number(NUMBER)
             .createTimeMillis(CREATE_TIME_MILLIS)
             .state(STATE)
-            .parent(PARENT)
             .build());
     compareProjects(PARTIAL_PROJECT_INFO, ProjectInfo.builder(ID).build());
     assertNotEquals(FULL_PROJECT_INFO, PARTIAL_PROJECT_INFO);
@@ -101,7 +96,6 @@ public class ProjectInfoTest {
     assertEquals(expected.number(), value.number());
     assertEquals(expected.createTimeMillis(), value.createTimeMillis());
     assertEquals(expected.state(), value.state());
-    assertEquals(expected.parent(), value.parent());
   }
 }
 

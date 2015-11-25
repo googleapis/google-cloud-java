@@ -36,7 +36,6 @@ import java.util.Collections;
 
 public class SerializationTest {
 
-  private static final ResourceId RESOURCE_ID = ResourceId.of("some id", "organization");
   private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder("id1").build();
   private static final ProjectInfo FULL_PROJECT_INFO =
       ProjectInfo.builder("id")
@@ -45,7 +44,6 @@ public class SerializationTest {
           .number(123L)
           .state(ProjectInfo.State.ACTIVE)
           .createTimeMillis(1234L)
-          .parent(RESOURCE_ID)
           .build();
   private static final PageImpl<ProjectInfo> PAGE_RESULT =
       new PageImpl<>(null, "c", Collections.singletonList(PARTIAL_PROJECT_INFO));
@@ -67,7 +65,7 @@ public class SerializationTest {
 
   @Test
   public void testModelAndRequests() throws Exception {
-    Serializable[] objects = {RESOURCE_ID, PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PAGE_RESULT};
+    Serializable[] objects = {PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PAGE_RESULT};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

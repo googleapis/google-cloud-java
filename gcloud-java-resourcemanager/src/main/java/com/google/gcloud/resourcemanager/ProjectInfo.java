@@ -38,7 +38,6 @@ public class ProjectInfo implements Serializable {
   private final Long number;
   private final State state;
   private final Long createTimeMillis;
-  private final ResourceId parent;
 
   /**
    * The project lifecycle state.
@@ -80,7 +79,6 @@ public class ProjectInfo implements Serializable {
     private Long number;
     private State state;
     private Long createTimeMillis;
-    private ResourceId parent;
 
     Builder() {
       labels = new HashMap<>();
@@ -165,20 +163,6 @@ public class ProjectInfo implements Serializable {
       return this;
     }
 
-    /**
-     * Set the parent of the project.
-     *
-     * If this field is left unset in a project creation request, the server will set this field by
-     * default to the creator of the project. The parent cannot be changed after the server creates
-     * the project. When calling {@link ResourceManager#replace}, be sure to set the parent of the
-     * new ProjectInfo instance. Leaving the parent unset or setting it to null in a replace request
-     * will cause an error.
-     */
-    public Builder parent(ResourceId parent) {
-      this.parent = parent;
-      return this;
-    }
-
     public ProjectInfo build() {
       return new ProjectInfo(this);
     }
@@ -191,7 +175,6 @@ public class ProjectInfo implements Serializable {
     this.number = builder.number;
     this.state = builder.state;
     this.createTimeMillis = builder.createTimeMillis;
-    this.parent = builder.parent;
   }
 
   /**
@@ -247,15 +230,6 @@ public class ProjectInfo implements Serializable {
     return createTimeMillis;
   }
 
-  /**
-   * Get the parent of the project.
-   *
-   * The parent cannot be changed after the server creates the project.
-   */
-  public ResourceId parent() {
-    return parent;
-  }
-
   @Override
   public boolean equals(Object obj) {
     return obj instanceof ProjectInfo && Objects.equals(toPb(), ((ProjectInfo) obj).toPb());
@@ -263,7 +237,7 @@ public class ProjectInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, id, labels, number, state, createTimeMillis, parent);
+    return Objects.hash(name, id, labels, number, state, createTimeMillis);
   }
 
   public static Builder builder(String id) {
@@ -277,8 +251,7 @@ public class ProjectInfo implements Serializable {
         .labels(labels)
         .number(number)
         .state(state)
-        .createTimeMillis(createTimeMillis)
-        .parent(parent);
+        .createTimeMillis(createTimeMillis);
   }
 
   com.google.api.services.cloudresourcemanager.model.Project toPb() {
@@ -294,9 +267,6 @@ public class ProjectInfo implements Serializable {
     if (createTimeMillis != null) {
       projectPb.setCreateTime(ISODateTimeFormat.dateTime().print(createTimeMillis));
     }
-    if (parent != null) {
-      projectPb.setParent(parent.toPb());
-    }
     return projectPb;
   }
 
@@ -305,9 +275,6 @@ public class ProjectInfo implements Serializable {
         ProjectInfo.builder(projectPb.getProjectId()).name(projectPb.getName());
     if (projectPb.getLabels() != null) {
       builder.labels(projectPb.getLabels());
-    }
-    if (projectPb.getParent() != null) {
-      builder.parent(ResourceId.fromPb(projectPb.getParent()));
     }
     return builder.build();
   }
