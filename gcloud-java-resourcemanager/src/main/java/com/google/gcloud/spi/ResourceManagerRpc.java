@@ -25,8 +25,7 @@ public interface ResourceManagerRpc {
 
   enum Option {
     FILTER("filter"),
-    PAGE_SIZE("maxResults"),
-    PAGE_TOKEN("pageToken");
+    FIELDS("fields");
 
     private final String value;
 
