@@ -106,7 +106,7 @@ public final class BlobInfo implements Serializable {
     private String contentLanguage;
     private Integer componentCount;
     private String cacheControl;
-    private ImmutableList<Acl> acl;
+    private List<Acl> acl;
     private Acl.Entity owner;
     private Long size;
     private String etag;
@@ -120,6 +120,29 @@ public final class BlobInfo implements Serializable {
     private Long updateTime;
 
     private Builder() {}
+
+    private Builder(BlobInfo blobInfo) {
+      blobId = blobInfo.blobId;
+      id = blobInfo.id;
+      cacheControl = blobInfo.cacheControl;
+      contentEncoding = blobInfo.contentEncoding;
+      contentType = blobInfo.contentType;
+      contentDisposition = blobInfo.contentDisposition;
+      contentLanguage = blobInfo.contentLanguage;
+      componentCount = blobInfo.componentCount;
+      acl = blobInfo.acl;
+      owner = blobInfo.owner;
+      size = blobInfo.size;
+      etag = blobInfo.etag;
+      selfLink = blobInfo.selfLink;
+      md5 = blobInfo.md5;
+      crc32c = blobInfo.crc32c;
+      mediaLink = blobInfo.mediaLink;
+      metadata = blobInfo.metadata;
+      metageneration = blobInfo.metageneration;
+      deleteTime = blobInfo.deleteTime;
+      updateTime = blobInfo.updateTime;
+    }
 
     /**
      * Sets the blob identity.
@@ -503,27 +526,7 @@ public final class BlobInfo implements Serializable {
    * Returns a builder for the current blob.
    */
   public Builder toBuilder() {
-    return new Builder()
-        .blobId(blobId)
-        .id(id)
-        .cacheControl(cacheControl)
-        .contentEncoding(contentEncoding)
-        .contentType(contentType)
-        .contentDisposition(contentDisposition)
-        .contentLanguage(contentLanguage)
-        .componentCount(componentCount)
-        .crc32c(crc32c)
-        .md5(md5)
-        .deleteTime(deleteTime)
-        .updateTime(updateTime)
-        .mediaLink(mediaLink)
-        .metadata(metadata)
-        .metageneration(metageneration)
-        .acl(acl)
-        .owner(owner)
-        .size(size)
-        .etag(etag)
-        .selfLink(selfLink);
+    return new Builder(this);
   }
 
   @Override
