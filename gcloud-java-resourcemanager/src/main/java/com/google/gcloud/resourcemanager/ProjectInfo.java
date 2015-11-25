@@ -19,7 +19,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 
-import org.joda.time.DateTime;
 import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.Serializable;
@@ -45,19 +44,32 @@ public class ProjectInfo implements Serializable {
    * The project lifecycle state.
    *
    * <ul>
-   * <li>LIFECYCLE_STATE_UNSPECIFIED: only used/useful for distinguishing unset values
-   * <li>ACTIVE: the normal and active state
-   * <li>DELETE_REQUESTED: the project has been marked for deletion by the user or by the system
-   *         (Google Cloud Platform). This can generally be reversed by calling
-   *         {@link ResourceManager#undelete}.
-   * <li>DELETE_IN_PROGRESS: the process of deleting the project has begun. Reversing the deletion
-   *         is no longer possible.
+   * <li>LIFECYCLE_STATE_UNSPECIFIED:
+   * <li>ACTIVE:
+   * <li>DELETE_REQUESTED:
+   * <li>DELETE_IN_PROGRESS:
    * <ul>
    */
   public enum State {
+    /**
+     * Only used/useful for distinguishing unset values
+     */
     LIFECYCLE_STATE_UNSPECIFIED,
+
+    /**
+     * The normal and active state
+     */
     ACTIVE,
+
+    /**
+     * The project has been marked for deletion by the user or by the system (Google Cloud
+     * Platform). This can generally be reversed by calling {@link ResourceManager#undelete}.
+     */
     DELETE_REQUESTED,
+
+    /**
+     * the process of deleting the project has begun. Reversing the deletion is no longer possible.
+     */
     DELETE_IN_PROGRESS
   }
 
@@ -289,18 +301,10 @@ public class ProjectInfo implements Serializable {
   }
 
   static ProjectInfo fromPb(com.google.api.services.cloudresourcemanager.model.Project projectPb) {
-    ProjectInfo.Builder builder = 
-        ProjectInfo.builder(projectPb.getProjectId())
-            .name(projectPb.getName())
-            .number(projectPb.getProjectNumber());
+    ProjectInfo.Builder builder =
+        ProjectInfo.builder(projectPb.getProjectId()).name(projectPb.getName());
     if (projectPb.getLabels() != null) {
       builder.labels(projectPb.getLabels());
-    }
-    if (projectPb.getLifecycleState() != null) {
-      builder.state(State.valueOf(projectPb.getLifecycleState()));
-    }
-    if (projectPb.getCreateTime() != null) {
-      builder.createTimeMillis(DateTime.parse(projectPb.getCreateTime()).getMillis());
     }
     if (projectPb.getParent() != null) {
       builder.parent(ResourceId.fromPb(projectPb.getParent()));

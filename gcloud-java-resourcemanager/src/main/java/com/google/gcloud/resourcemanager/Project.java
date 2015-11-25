@@ -109,7 +109,7 @@ public class Project {
    * @see <a href=
    *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">
    *     Cloud Resource Manager undelete</a>
-   * @throws ResourceManagerException
+   * @throws ResourceManagerException upon failure (including when the project can't be restored)
    */
   public void undelete() {
     resourceManager.undelete(info.id());

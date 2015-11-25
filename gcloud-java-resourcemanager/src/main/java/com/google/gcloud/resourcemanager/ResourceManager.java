@@ -16,14 +16,9 @@
 
 package com.google.gcloud.resourcemanager;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
-import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
-
-import java.util.Collections;
-import java.util.List;
+import com.google.gcloud.spi.ResourceManagerRpc;
 
 /**
  * An interface for Google Cloud Resource Manager.
@@ -34,39 +29,66 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
 
   public static final String DEFAULT_CONTENT_TYPE = "application/octet-stream";
 
-  public class ListOptions {
-    private List<String> filters;
-    private String pageToken;
-    private int pageSize;
+  /**
+   * Class for specifying project list options.
+   */
+  public class ProjectListOption extends Option {
 
-    private static final ListOptions DEFAULT_INSTANCE =
-        new ListOptions(Collections.<String>emptyList(), null, -1);
+    private static final long serialVersionUID = 7888768979702012328L;
 
-    ListOptions(List<String> filters, String pageToken, int pageSize) {
-      this.filters = checkNotNull(ImmutableList.copyOf(filters));
-      this.pageToken = pageToken;
-      this.pageSize = pageSize;
+    private ProjectListOption(ResourceManagerRpc.Option option, Object value) {
+      super(option, value);
     }
 
-    public static ListOptions getDefaultInstance() {
-      return DEFAULT_INSTANCE;
+    /**
+     * Returns an option to specify a page token.
+     *
+     * The page token (returned from a previous call to list) indicates from where listing should
+     * continue. Pagination is not yet supported; the server ignores this field. Optional.
+     */
+    public static ProjectListOption pageToken(String pageToken) {
+      // return new ProjectListOption(ResourceManagerRpc.Option.PAGE_TOKEN, pageToken);
+      throw new UnsupportedOperationException("paging for project lists is not implemented yet.");
     }
 
-    public static ListOptions createListOption(
-        List<String> filters, String pageToken, int pageSize) {
-      return new ListOptions(filters, pageToken, pageSize);
+    /**
+     * Returns an option to specify a filter.
+     *
+     * Filter rules are case insensitive. The fields eligible for filtering are:
+     * <ul>
+     * <li>name
+     * <li>id
+     * <li>labels.key, where key is the name of a label
+     * </ul>
+     *
+     * Some examples of using labels as filters:
+     * <ul>
+     * <li> name:*  The project has a name.
+     * <li> name:Howl   The project's name is Howl or howl.
+     * <li> name:HOWL   Equivalent to above.
+     * <li> NAME:howl   Equivalent to above.
+     * <li> labels.color:*  The project has the label color.
+     * <li> labels.color:red    The project's label color has the value red.
+     * <li> labels.color:red label.size:big  The project's label color has the value red and its
+     *     label size has the value big.
+     * </ul>
+     *
+     * Optional.
+     */
+    public static ProjectListOption filter(String filter) {
+      return new ProjectListOption(ResourceManagerRpc.Option.FILTER, filter);
     }
 
-    public String pageToken() {
-      return pageToken;
-    }
-
-    public List<String> filters() {
-      return filters;
-    }
-
-    public int pageSize() {
-      return pageSize;
+    /**
+     * The maximum number of projects to return in the response.
+     *
+     * The server can return fewer projects than requested. If unspecified, server picks an
+     * appropriate default. Note: pagination is not yet supported; the server ignores this field.
+     * Optional.
+     */
+    public static ProjectListOption pageSize(int pageSize) {
+      // return new ProjectListOption(ResourceManagerRpc.Option.PAGE_SIZE, pageSize);
+      throw new UnsupportedOperationException("paging for project lists is not implemented yet.");
     }
   }
 
@@ -127,15 +149,16 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * Lists the projects visible to the current user.
    *
    * This method returns projects in an unspecified order. New projects do not necessarily appear at
-   * the end of the list. Use {@link ListOptions} to filter this list, set page size, and set page
-   * tokens. Note that pagination is currently not implemented by the Cloud Resource Manager API.
+   * the end of the list. Use {@link ProjectListOption} to filter this list, set page size, and set
+   * page tokens. Note that pagination is currently not implemented by the Cloud Resource Manager
+   * API.
    *
    * @see <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/list">
    *     Cloud Resource Manager list</a>
    * @return {@code Page<ProjectInfo>}, a page of projects.
    * @throws ResourceManagerException upon failure
    */
-  Page<ProjectInfo> list(ListOptions listOptions);
+  Page<ProjectInfo> list(ProjectListOption... options);
 
   /**
    * Replaces the attributes of the project.
