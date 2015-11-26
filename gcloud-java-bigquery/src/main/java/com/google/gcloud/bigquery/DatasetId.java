@@ -16,8 +16,9 @@
 
 package com.google.gcloud.bigquery;
 
-import com.google.api.services.bigquery.model.DatasetReference;
 import static com.google.common.base.Preconditions.checkNotNull;
+
+import com.google.api.services.bigquery.model.DatasetReference;
 
 import java.io.Serializable;
 import java.util.Objects;

@@ -16,10 +16,10 @@
 
 package com.google.gcloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.common.base.Function;
-
-import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.io.Serializable;
 import java.util.Objects;

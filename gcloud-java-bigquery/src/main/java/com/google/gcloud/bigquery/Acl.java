@@ -22,7 +22,12 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Access Control for a BigQuery Dataset.
+ * Access Control for a BigQuery Dataset. BigQuery uses ACLs to manage permissions on datasets. ACLs
+ * are not directly supported on tables. A table inherits its ACL from the dataset that contains it.
+ * Project roles affect your ability to run jobs or manage the project, while dataset roles affect
+ * how you can access or modify the data inside of a project.
+ *
+ * @see <a href="https://cloud.google.com/bigquery/access-control">Access Control</a>
  */
 public final class Acl implements Serializable {
 
@@ -31,16 +36,38 @@ public final class Acl implements Serializable {
   private final Entity entity;
   private final Role role;
 
+  /**
+   * Dataset roles supported by BigQuery.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/access-control#datasetroles">Dataset Roles</a>
+   */
   public enum Role {
-    OWNER, READER, WRITER
+    /**
+     * Can read, query, copy or export tables in the dataset.
+     */
+    READER,
+    /**
+     * Same as {@link #READER} plus can edit or append data in the dataset.
+     */
+    WRITER,
+    /**
+     * Same as {@link #WRITER} plus can update and delete the dataset.
+     */
+    OWNER
   }
 
+  /**
+   * Base class for BigQuery entities that can be grant access to the dataset.
+   */
   public static abstract class Entity implements Serializable {
 
     private static final long serialVersionUID = 8111776788607959944L;
 
     private final Type type;
 
+    /**
+     * Types of BigQuery entities.
+     */
     public enum Type {
       DOMAIN, GROUP, USER, VIEW
     }
@@ -78,7 +105,8 @@ public final class Acl implements Serializable {
   }
 
   /**
-   * Class for a BigQuery Domain entity.
+   * Class for a BigQuery Domain entity. Objects of this class represent a domain to grant access
+   * to. Any users signed in with the domain specified will be granted the specified access.
    */
   public static final class Domain extends Entity {
 
@@ -131,7 +159,10 @@ public final class Acl implements Serializable {
   }
 
   /**
-   * Class for a BigQuery Group entity.
+   * Class for a BigQuery Group entity. Objects of this class represent a group to grante access to.
+   * A Group entity can be created given the group's email or can be a special group:
+   * {@link #ofProjectOwners()}, {@link #ofProjectReaders()}, {@link #ofProjectWriters()} or
+   * {@link #ofAllAuthenticatedUsers()}.
    */
   public static final class Group extends Entity {
 
@@ -144,9 +175,9 @@ public final class Acl implements Serializable {
     private final String identifier;
 
     /**
-     * Creates a Group entity given its identifier. Identifier can be either a special group
-     * identifier ({@code projectOwners}, {@code projectReaders}, {@code projectWriters} and
-     * {@code allAuthenticatedUsers}) or a group email.
+     * Creates a Group entity given its identifier. Identifier can be either a
+     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
+     *     special group identifier</a> or a group email.
      */
     public Group(String identifier) {
       super(Type.GROUP);
@@ -154,9 +185,9 @@ public final class Acl implements Serializable {
     }
 
     /**
-     * Returns group's identifier, can be either a special group identifier ({@code projectOwners},
-     * {@code projectReaders}, {@code projectWriters} and {@code allAuthenticatedUsers}) or a group
-     * email.
+     * Returns group's identifier, can be either a
+     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
+     *     special group identifier</a> or a group email.
      */
     public String identifier() {
       return identifier;
@@ -196,9 +227,8 @@ public final class Acl implements Serializable {
         case ALL_AUTHENTICATED_USERS:
           return new Access().setSpecialGroup(ALL_AUTHENTICATED_USERS);
         default:
-          break;
+          return new Access().setGroupByEmail(identifier);
       }
-      return new Access().setGroupByEmail(identifier);
     }
 
     /**
@@ -223,7 +253,7 @@ public final class Acl implements Serializable {
     }
 
     /**
-     * Returns a Group entity representing all project's users.
+     * Returns a Group entity representing all BigQuery authenticated users.
      */
     public static Group ofAllAuthenticatedUsers() {
       return new Group(ALL_AUTHENTICATED_USERS);
@@ -231,7 +261,8 @@ public final class Acl implements Serializable {
   }
 
   /**
-   * Class for a BigQuery User entity.
+   * Class for a BigQuery User entity. Objects of this class represent a user to grant access to
+   * given the email address.
    */
   public static final class User extends Entity {
     
@@ -283,7 +314,10 @@ public final class Acl implements Serializable {
   }
 
   /**
-   * Class for a BigQuery View entity.
+   * Class for a BigQuery View entity. Objects of this class represent a view from a different
+   * dataset to grant access to. Queries executed against that view will have read access to tables
+   * in this dataset. The role field is not required when this field is set. If that view is updated
+   * by any user, access to the view needs to be granted again via an update operation.
    */
   public static final class View extends Entity {
 
@@ -298,7 +332,7 @@ public final class Acl implements Serializable {
     }
 
     /**
-     * Returns table's email.
+     * Returns table's identity.
      */
     public TableId id() {
       return id;

@@ -31,7 +31,9 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery Dataset information.
+ * Google BigQuery Dataset information. A dataset is a grouping mechanism that holds zero or more
+ * tables. Datasets are the lowest level unit of access control; you cannot control access at the
+ * table level.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#datasets">
  * Managing Jobs, Datasets, and Projects</a>
@@ -128,7 +130,8 @@ public final class DatasetInfo implements Serializable {
      * expirationTime for a given table is reached, that table will be deleted automatically. If a
      * table's expirationTime is modified or removed before the table expires, or if you provide an
      * explicit expirationTime when creating a table, that value takes precedence over the default
-     * expiration time indicated by this property.
+     * expiration time indicated by this property. This property is experimental and might be
+     * subject to change or removed.
      */
     public Builder defaultTableLifetime(Long defaultTableLifetime) {
       this.defaultTableLifetime =
@@ -168,10 +171,11 @@ public final class DatasetInfo implements Serializable {
     }
 
     /**
-     * Sets the geographic location where the dataset should reside.
+     * Sets the geographic location where the dataset should reside. This property is experimental
+     * and might be subject to change or removed.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
-     *     Dataset Location</a>
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#location">Dataset
+     *     Location</a>
      */
     public Builder location(String location) {
       this.location = firstNonNull(location, Data.<String>nullOf(String.class));
@@ -306,7 +310,15 @@ public final class DatasetInfo implements Serializable {
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("datasetId", datasetId)
+        .add("creationTime", creationTime)
+        .add("defaultTableLifetime", defaultTableLifetime)
         .add("description", description)
+        .add("etag", etag)
+        .add("friendlyName", friendlyName)
+        .add("id", id)
+        .add("lastModified", lastModified)
+        .add("location", location)
+        .add("selfLink", selfLink)
         .add("acl", acl)
         .toString();
   }

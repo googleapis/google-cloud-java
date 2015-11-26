@@ -68,7 +68,11 @@ public class DatasetInfoTest {
     assertEquals("description2", datasetInfo.description());
     datasetInfo = datasetInfo.toBuilder().datasetId(DATASET_ID).description("description").build();
     compareDatasets(DATASET_INFO, datasetInfo);
-    datasetInfo = DatasetInfo.builder(DATASET_ID).build();
+  }
+
+  @Test
+  public void testToBuilderIncomplete() {
+    DatasetInfo datasetInfo = DatasetInfo.builder(DATASET_ID).build();
     assertEquals(datasetInfo, datasetInfo.toBuilder().build());
   }
 
