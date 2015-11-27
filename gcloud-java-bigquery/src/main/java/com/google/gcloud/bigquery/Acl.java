@@ -16,6 +16,8 @@
 
 package com.google.gcloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.services.bigquery.model.Dataset.Access;
 
 import java.io.Serializable;
@@ -370,7 +372,7 @@ public final class Acl implements Serializable {
    * Build an ACL for an {@code entity} and a {@code role}.
    */
   public Acl(Entity entity, Role role) {
-    this.entity = entity;
+    this.entity = checkNotNull(entity);
     this.role = role;
   }
 
@@ -378,7 +380,7 @@ public final class Acl implements Serializable {
    * Build an ACL for a view entity.
    */
   public Acl(View view) {
-    this.entity = view;
+    this.entity = checkNotNull(view);
     this.role = null;
   }
 
@@ -428,7 +430,7 @@ public final class Acl implements Serializable {
   }
 
   static Acl fromPb(Access access) {
-    Role role = Role.valueOf(access.getRole());
-    return new Acl(Entity.fromPb(access), role);
+    return new Acl(Entity.fromPb(access),
+        access.getRole() != null ? Role.valueOf(access.getRole()) : null);
   }
 }

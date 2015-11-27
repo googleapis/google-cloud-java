@@ -87,5 +87,9 @@ public class AclTest {
     assertEquals(Role.READER, acl.role());
     Dataset.Access pb = acl.toPb();
     assertEquals(acl, Acl.fromPb(pb));
+    View view = new View(TableId.of("project", "dataset", "view"));
+    acl = new Acl(view);
+    assertEquals(view, acl.entity());
+    assertEquals(null, acl.role());
   }
 }
