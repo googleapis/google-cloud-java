@@ -27,7 +27,7 @@ import java.util.Objects;
 /**
  * Base class for Resource Manager operation options
  */
-public class Option implements Serializable {
+class Option implements Serializable {
 
   private static final long serialVersionUID = 2655177550880762967L;
 
@@ -70,4 +70,3 @@ public class Option implements Serializable {
         .toString();
   }
 }
-

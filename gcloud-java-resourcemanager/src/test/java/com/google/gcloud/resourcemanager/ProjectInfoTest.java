@@ -28,35 +28,37 @@ import java.util.Map;
 
 public class ProjectInfoTest {
 
-  private static final String ID = "project-id";
+  private static final String PROJECT_ID = "project-id";
   private static final String NAME = "myProj";
   private static final Map<String, String> LABELS = ImmutableMap.of("k1", "v1", "k2", "v2");
-  private static final Long NUMBER = 123L;
+  private static final Long PROJECT_NUMBER = 123L;
   private static final Long CREATE_TIME_MILLIS = 123456789L;
   private static final ProjectInfo.State STATE = ProjectInfo.State.DELETE_REQUESTED;
-  private static final ProjectInfo FULL_PROJECT_INFO =
-      ProjectInfo.builder(ID)
-          .name(NAME)
-          .labels(LABELS)
-          .number(NUMBER)
-          .createTimeMillis(CREATE_TIME_MILLIS)
-          .state(STATE)
-          .build();
-  private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder(ID).build();
+  private static final ProjectInfo.ResourceId PARENT =
+      new ProjectInfo.ResourceId("id", "organization");
+  private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.builder(PROJECT_ID)
+      .name(NAME)
+      .labels(LABELS)
+      .projectNumber(PROJECT_NUMBER)
+      .createTimeMillis(CREATE_TIME_MILLIS)
+      .state(STATE)
+      .parent(PARENT)
+      .build();
+  private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder(PROJECT_ID).build();
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, FULL_PROJECT_INFO.id());
+    assertEquals(PROJECT_ID, FULL_PROJECT_INFO.projectId());
     assertEquals(NAME, FULL_PROJECT_INFO.name());
     assertEquals(LABELS, FULL_PROJECT_INFO.labels());
-    assertEquals(NUMBER, FULL_PROJECT_INFO.number());
+    assertEquals(PROJECT_NUMBER, FULL_PROJECT_INFO.projectNumber());
     assertEquals(CREATE_TIME_MILLIS, FULL_PROJECT_INFO.createTimeMillis());
     assertEquals(STATE, FULL_PROJECT_INFO.state());
 
-    assertEquals(ID, PARTIAL_PROJECT_INFO.id());
+    assertEquals(PROJECT_ID, PARTIAL_PROJECT_INFO.projectId());
     assertEquals(null, PARTIAL_PROJECT_INFO.name());
     assertTrue(PARTIAL_PROJECT_INFO.labels().isEmpty());
-    assertEquals(null, PARTIAL_PROJECT_INFO.number());
+    assertEquals(null, PARTIAL_PROJECT_INFO.projectNumber());
     assertEquals(null, PARTIAL_PROJECT_INFO.createTimeMillis());
     assertEquals(null, PARTIAL_PROJECT_INFO.state());
   }
@@ -77,25 +79,27 @@ public class ProjectInfoTest {
   public void testEquals() {
     compareProjects(
         FULL_PROJECT_INFO,
-        ProjectInfo.builder(ID)
+        ProjectInfo.builder(PROJECT_ID)
             .name(NAME)
             .labels(LABELS)
-            .number(NUMBER)
+            .projectNumber(PROJECT_NUMBER)
             .createTimeMillis(CREATE_TIME_MILLIS)
             .state(STATE)
+            .parent(PARENT)
             .build());
-    compareProjects(PARTIAL_PROJECT_INFO, ProjectInfo.builder(ID).build());
+    compareProjects(PARTIAL_PROJECT_INFO, ProjectInfo.builder(PROJECT_ID).build());
     assertNotEquals(FULL_PROJECT_INFO, PARTIAL_PROJECT_INFO);
   }
 
   private void compareProjects(ProjectInfo expected, ProjectInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.projectId(), value.projectId());
     assertEquals(expected.name(), value.name());
     assertEquals(expected.labels(), value.labels());
-    assertEquals(expected.number(), value.number());
+    assertEquals(expected.projectNumber(), value.projectNumber());
     assertEquals(expected.createTimeMillis(), value.createTimeMillis());
     assertEquals(expected.state(), value.state());
+    assertEquals(expected.parent(), value.parent());
   }
 }
 

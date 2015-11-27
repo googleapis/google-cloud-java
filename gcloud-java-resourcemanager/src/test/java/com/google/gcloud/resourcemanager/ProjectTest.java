@@ -33,20 +33,19 @@ import org.junit.Test;
 import java.util.Map;
 
 public class ProjectTest {
-  private static final String ID = "project-id";
+  private static final String PROJECT_ID = "project-id";
   private static final String NAME = "myProj";
   private static final Map<String, String> LABELS = ImmutableMap.of("k1", "v1", "k2", "v2");
-  private static final Long NUMBER = 123L;
+  private static final Long PROJECT_NUMBER = 123L;
   private static final Long CREATE_TIME_MILLIS = 123456789L;
   private static final ProjectInfo.State STATE = ProjectInfo.State.DELETE_REQUESTED;
-  private static final ProjectInfo PROJECT_INFO =
-      ProjectInfo.builder(ID)
-          .name(NAME)
-          .labels(LABELS)
-          .number(NUMBER)
-          .createTimeMillis(CREATE_TIME_MILLIS)
-          .state(STATE)
-          .build();
+  private static final ProjectInfo PROJECT_INFO = ProjectInfo.builder(PROJECT_ID)
+      .name(NAME)
+      .labels(LABELS)
+      .projectNumber(PROJECT_NUMBER)
+      .createTimeMillis(CREATE_TIME_MILLIS)
+      .state(STATE)
+      .build();
 
   private ResourceManager resourceManager;
   private Project project;
@@ -64,25 +63,20 @@ public class ProjectTest {
 
   @Test
   public void testLoad() {
-    expect(resourceManager.get(PROJECT_INFO.id())).andReturn(PROJECT_INFO);
+    expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(PROJECT_INFO);
     replay(resourceManager);
-    Project loadedProject = Project.load(resourceManager, PROJECT_INFO.id());
+    Project loadedProject = Project.load(resourceManager, PROJECT_INFO.projectId());
     assertEquals(PROJECT_INFO, loadedProject.info());
   }
 
   @Test
   public void testReload() {
     ProjectInfo newInfo = PROJECT_INFO.toBuilder().addLabel("k3", "v3").build();
-    expect(resourceManager.get(PROJECT_INFO.id())).andReturn(newInfo);
+    expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(newInfo);
     replay(resourceManager);
     Project newProject = project.reload();
     assertSame(resourceManager, newProject.resourceManager());
     assertEquals(newInfo, newProject.info());
-  }
-
-  @Test
-  public void testPolicy() {
-    replay(resourceManager);
   }
 
   @Test
@@ -99,7 +93,7 @@ public class ProjectTest {
 
   @Test
   public void testDelete() {
-    resourceManager.delete(PROJECT_INFO.id());
+    resourceManager.delete(PROJECT_INFO.projectId());
     expectLastCall();
     replay(resourceManager);
     project.delete();
@@ -107,7 +101,7 @@ public class ProjectTest {
 
   @Test
   public void testUndelete() {
-    resourceManager.undelete(PROJECT_INFO.id());
+    resourceManager.undelete(PROJECT_INFO.projectId());
     expectLastCall();
     replay(resourceManager);
     project.undelete();
