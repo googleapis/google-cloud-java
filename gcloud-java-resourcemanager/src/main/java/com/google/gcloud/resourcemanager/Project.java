@@ -21,8 +21,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * A Google Cloud Resource Manager project object.
  *
- * This class' member variables are immutable.  Methods that change or update the underlying Project
- * information return a new Project instance.
+ * A Project is a high-level Google Cloud Platform entity. It is a container for ACLs, APIs,
+ * AppEngine Apps, VMs, and other Google Cloud Platform resources. This class' member variables are
+ * immutable.  Methods that change or update the underlying Project information return a new Project
+ * instance.
  */
 public class Project {
 
@@ -69,7 +71,7 @@ public class Project {
    * @throws ResourceManagerException upon failure
    */
   public Project reload() {
-    return new Project(resourceManager, resourceManager.get(info.id()));
+    return Project.load(resourceManager, info.projectId());
   }
 
   /**
@@ -89,13 +91,13 @@ public class Project {
    * completes, the project is not retrievable by the {@link ResourceManager#get} and
    * {@link ResourceManager#list} methods. The caller must have modify permissions for this project.
    *
-   * @see
-   *     <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/delete">
-   *     Cloud Resource Manager delete</a>
+   * @see <a
+   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/delete">Cloud
+   * Resource Manager delete</a>
    * @throws ResourceManagerException upon failure
    */
   public void delete() {
-    resourceManager.delete(info.id());
+    resourceManager.delete(info.projectId());
   }
 
   /**
@@ -106,13 +108,13 @@ public class Project {
    * state of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
    * caller must have modify permissions for this project.
    *
-   * @see <a href=
-   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">
-   *     Cloud Resource Manager undelete</a>
+   * @see <a
+   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">Cloud
+   * Resource Manager undelete</a>
    * @throws ResourceManagerException upon failure (including when the project can't be restored)
    */
   public void undelete() {
-    resourceManager.undelete(info.id());
+    resourceManager.undelete(info.projectId());
   }
 
   /**
@@ -120,9 +122,9 @@ public class Project {
    *
    * The caller must have modify permissions for this project.
    *
-   * @see
-   *     <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">
-   *     Cloud Resource Manager update</a>
+   * @see <a
+   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">Cloud
+   * Resource Manager update</a>
    * @return the ProjectInfo representing the new project metadata
    * @throws ResourceManagerException upon failure
    */

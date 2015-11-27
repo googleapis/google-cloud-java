@@ -14,11 +14,14 @@
 
 package com.google.gcloud.resourcemanager;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.client.util.Data;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 
+import org.joda.time.DateTime;
 import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.Serializable;
@@ -28,26 +31,23 @@ import java.util.Objects;
 
 /**
  * A Google Cloud Resource Manager project metadata object.
+ * 
+ * A Project is a high-level Google Cloud Platform entity. It is a container for ACLs, APIs,
+ * AppEngine Apps, VMs, and other Google Cloud Platform resources.
  */
 public class ProjectInfo implements Serializable {
 
   private static final long serialVersionUID = 9148970963697734236L;
   private final String name;
-  private final String id;
+  private final String projectId;
   private final Map<String, String> labels;
-  private final Long number;
+  private final Long projectNumber;
   private final State state;
   private final Long createTimeMillis;
+  private final ResourceId parent;
 
   /**
-   * The project lifecycle state.
-   *
-   * <ul>
-   * <li>LIFECYCLE_STATE_UNSPECIFIED:
-   * <li>ACTIVE:
-   * <li>DELETE_REQUESTED:
-   * <li>DELETE_IN_PROGRESS:
-   * <ul>
+   * The project lifecycle states.
    */
   public enum State {
     /**
@@ -72,16 +72,71 @@ public class ProjectInfo implements Serializable {
     DELETE_IN_PROGRESS
   }
 
+  static class ResourceId implements Serializable {
+
+    private static final long serialVersionUID = -325199985993344726L;
+
+    private final String id;
+    private final String type;
+
+    ResourceId(String id, String type) {
+      this.id = checkNotNull(id);
+      this.type = checkNotNull(type);
+    }
+
+    String id() {
+      return id;
+    }
+
+    String type() {
+      return type;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      return obj instanceof ResourceId && Objects.equals(toPb(), ((ResourceId) obj).toPb());
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(id, type);
+    }
+
+    com.google.api.services.cloudresourcemanager.model.ResourceId toPb() {
+      com.google.api.services.cloudresourcemanager.model.ResourceId resourceIdPb =
+          new com.google.api.services.cloudresourcemanager.model.ResourceId();
+      resourceIdPb.setId(id);
+      resourceIdPb.setType(type.toString().toLowerCase());
+      return resourceIdPb;
+    }
+
+    static ResourceId fromPb(
+        com.google.api.services.cloudresourcemanager.model.ResourceId resourceIdPb) {
+      return new ResourceId(resourceIdPb.getId(), resourceIdPb.getType());
+    }
+  }
+
   public static class Builder {
+
     private String name;
-    private String id;
-    private Map<String, String> labels;
-    private Long number;
+    private String projectId;
+    private Map<String, String> labels = new HashMap<>();
+    private Long projectNumber;
     private State state;
     private Long createTimeMillis;
+    private ResourceId parent;
 
-    Builder() {
-      labels = new HashMap<>();
+    private Builder() {
+    }
+
+    Builder(ProjectInfo info) {
+      this.name = info.name;
+      this.projectId = info.projectId;
+      this.labels = Maps.newHashMap(checkNotNull(info.labels));
+      this.projectNumber = info.projectNumber;
+      this.state = info.state;
+      this.createTimeMillis = info.createTimeMillis;
+      this.parent = info.parent;
     }
 
     /**
@@ -92,7 +147,7 @@ public class ProjectInfo implements Serializable {
      * field can be changed after project creation.
      */
     public Builder name(String name) {
-      this.name = name;
+      this.name = firstNonNull(name, Data.<String>nullOf(String.class));
       return this;
     }
 
@@ -103,8 +158,8 @@ public class ProjectInfo implements Serializable {
      * Trailing hyphens are prohibited. This field cannot be changed after the server creates the
      * project.
      */
-    public Builder id(String id) {
-      this.id = id;
+    public Builder projectId(String projectId) {
+      this.projectId = projectId;
       return this;
     }
 
@@ -148,8 +203,8 @@ public class ProjectInfo implements Serializable {
       return this;
     }
 
-    Builder number(Long number) {
-      this.number = number;
+    Builder projectNumber(Long projectNumber) {
+      this.projectNumber = projectNumber;
       return this;
     }
 
@@ -163,6 +218,11 @@ public class ProjectInfo implements Serializable {
       return this;
     }
 
+    Builder parent(ResourceId parent) {
+      this.parent = parent;
+      return this;
+    }
+
     public ProjectInfo build() {
       return new ProjectInfo(this);
     }
@@ -170,11 +230,12 @@ public class ProjectInfo implements Serializable {
 
   ProjectInfo(Builder builder) {
     this.name = builder.name;
-    this.id = checkNotNull(builder.id);
+    this.projectId = checkNotNull(builder.projectId);
     this.labels = ImmutableMap.copyOf(builder.labels);
-    this.number = builder.number;
+    this.projectNumber = builder.projectNumber;
     this.state = builder.state;
     this.createTimeMillis = builder.createTimeMillis;
+    this.parent = builder.parent;
   }
 
   /**
@@ -182,8 +243,8 @@ public class ProjectInfo implements Serializable {
    *
    * This field cannot be changed after the server creates the project.
    */
-  public String id() {
-    return id;
+  public String projectId() {
+    return projectId;
   }
 
   /**
@@ -192,7 +253,7 @@ public class ProjectInfo implements Serializable {
    * This field is optional, can remain unset, and can be changed after project creation.
    */
   public String name() {
-    return name;
+    return Data.isNull(name) ? null : name;
   }
 
   /**
@@ -200,8 +261,8 @@ public class ProjectInfo implements Serializable {
    *
    * This field is set by the server and is read-only.
    */
-  public Long number() {
-    return number;
+  public Long projectNumber() {
+    return projectNumber;
   }
 
   /**
@@ -221,6 +282,10 @@ public class ProjectInfo implements Serializable {
     return state;
   }
 
+  ResourceId parent() {
+    return parent;
+  }
+
   /**
    * Get the project's creation time (in milliseconds).
    *
@@ -237,44 +302,53 @@ public class ProjectInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, id, labels, number, state, createTimeMillis);
+    return Objects.hash(name, projectId, labels, projectNumber, state, createTimeMillis, parent);
   }
 
   public static Builder builder(String id) {
-    return new Builder().id(id);
+    return new Builder().projectId(id);
   }
 
   public Builder toBuilder() {
-    return new Builder()
-        .name(name)
-        .id(id)
-        .labels(labels)
-        .number(number)
-        .state(state)
-        .createTimeMillis(createTimeMillis);
+    return new Builder(this);
   }
 
   com.google.api.services.cloudresourcemanager.model.Project toPb() {
     com.google.api.services.cloudresourcemanager.model.Project projectPb =
         new com.google.api.services.cloudresourcemanager.model.Project();
     projectPb.setName(name);
-    projectPb.setProjectId(id);
+    projectPb.setProjectId(projectId);
     projectPb.setLabels(labels);
-    projectPb.setProjectNumber(number);
+    projectPb.setProjectNumber(projectNumber);
     if (state != null) {
       projectPb.setLifecycleState(state.toString());
     }
     if (createTimeMillis != null) {
       projectPb.setCreateTime(ISODateTimeFormat.dateTime().print(createTimeMillis));
     }
+    if (parent != null) {
+      projectPb.setParent(parent.toPb());
+    }
     return projectPb;
   }
 
   static ProjectInfo fromPb(com.google.api.services.cloudresourcemanager.model.Project projectPb) {
     ProjectInfo.Builder builder =
-        ProjectInfo.builder(projectPb.getProjectId()).name(projectPb.getName());
+        ProjectInfo.builder(projectPb.getProjectId()).projectNumber(projectPb.getProjectNumber());
+    if (projectPb.getName() != null) {
+      builder.name(projectPb.getName());
+    }
     if (projectPb.getLabels() != null) {
       builder.labels(projectPb.getLabels());
+    }
+    if (projectPb.getLifecycleState() != null) {
+      builder.state(State.valueOf(projectPb.getLifecycleState()));
+    }
+    if (projectPb.getCreateTime() != null) {
+      builder.createTimeMillis(DateTime.parse(projectPb.getCreateTime()).getMillis());
+    }
+    if (projectPb.getParent() != null) {
+      builder.parent(ResourceId.fromPb(projectPb.getParent()));
     }
     return builder.build();
   }

@@ -41,10 +41,10 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * even if not specified.
    */
   enum ProjectField {
-    ID("projectId"),
+    PROJECT_ID("projectId"),
     NAME("name"),
     LABELS("labels"),
-    NUMBER("projectNumber"),
+    PROJECT_NUMBER("projectNumber"),
     STATE("lifecycleState"),
     CREATE_TIME("createTime");
 
@@ -60,7 +60,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
 
     static String selector(ProjectField... fields) {
       HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(ID.selector());
+      fieldStrings.add(PROJECT_ID.selector());
       for (ProjectField field : fields) {
         fieldStrings.add(field.selector());
       }
@@ -68,6 +68,9 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     }
   }
 
+  /**
+   * Class for specifying project get options.
+   */
   public class ProjectGetOption extends Option {
 
     private static final long serialVersionUID = 270185129961146874L;
@@ -80,7 +83,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      * Returns an option to specify the project's fields to be returned by the RPC call.
      *
      * If this option is not provided all project fields are returned.
-     * {@code ProjectListOption.fields} can be used to specify only the fields of interest. Project
+     * {@code ProjectGetOption.fields} can be used to specify only the fields of interest. Project
      * ID is always returned, even if not specified. {@link ProjectField} provides a list of fields
      * that can be used.
      */
@@ -106,11 +109,14 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      * Filter rules are case insensitive. The fields eligible for filtering are:
      * <ul>
      * <li>name
-     * <li>id
+     * <li>project ID
      * <li>labels.key, where key is the name of a label
      * </ul>
      *
-     * Some examples of using labels as filters:
+     * You can specify multiple filters by adding a space between each filter. Multiple filters
+     * are composed using "and".
+     *
+     * Some examples of filters:
      * <ul>
      * <li> name:*  The project has a name.
      * <li> name:Howl   The project's name is Howl or howl.
@@ -121,8 +127,6 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      * <li> labels.color:red label.size:big  The project's label color has the value red and its
      *     label size has the value big.
      * </ul>
-     *
-     * Optional.
      */
     public static ProjectListOption filter(String filter) {
       return new ProjectListOption(ResourceManagerRpc.Option.FILTER, filter);
@@ -150,10 +154,9 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * grant permission to others to read or update the project. Several APIs are activated
    * automatically for the project, including Google Cloud Storage.
    *
-   * @see
-   *     <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/create">
-   *     Cloud Resource Manager create</a>
-   *
+   * @see <a
+   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/create">Cloud
+   * Resource Manager create</a>
    * @return ProjectInfo object representing the new project's metadata. The returned object will
    *     include the following read-only fields supplied by the server: project number, lifecycle
    *     state, and creation time.
@@ -178,9 +181,9 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * completes, the project is not retrievable by the {@link ResourceManager#get} and
    * {@link ResourceManager#list} methods. The caller must have modify permissions for this project.
    *
-   * @see
-   *     <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/delete">
-   *     Cloud Resource Manager delete</a>
+   * @see <a
+   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/delete">Cloud
+   * Resource Manager delete</a>
    * @throws ResourceManagerException upon failure
    */
   void delete(String projectId);
@@ -190,8 +193,9 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    *
    * The caller must have read permissions for this project.
    *
-   * @see <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/get">
-   *     Cloud Resource Manager get</a>
+   * @see <a
+   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/get">Cloud
+   * Resource Manager get</a>
    * @throws ResourceManagerException upon failure
    */
   ProjectInfo get(String projectId, ProjectGetOption... options);
@@ -204,8 +208,9 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * page tokens. Note that pagination is currently not implemented by the Cloud Resource Manager
    * API.
    *
-   * @see <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/list">
-   *     Cloud Resource Manager list</a>
+   * @see <a
+   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/list">Cloud
+   * Resource Manager list</a>
    * @return {@code Page<ProjectInfo>}, a page of projects.
    * @throws ResourceManagerException upon failure
    */
@@ -216,9 +221,9 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    *
    * The caller must have modify permissions for this project.
    *
-   * @see
-   *     <a href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">
-   *     Cloud Resource Manager update</a>
+   * @see <a
+   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">Cloud
+   * Resource Manager update</a>
    * @return the ProjectInfo representing the new project metadata
    * @throws ResourceManagerException upon failure
    */
@@ -232,9 +237,9 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * state of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
    * caller must have modify permissions for this project.
    *
-   * @see <a href=
-   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">
-   *     Cloud Resource Manager undelete</a>
+   * @see <a
+   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">Cloud
+   * Resource Manager undelete</a>
    * @throws ResourceManagerException
    */
   void undelete(String projectId);

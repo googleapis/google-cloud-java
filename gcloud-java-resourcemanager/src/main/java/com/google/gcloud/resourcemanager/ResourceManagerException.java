@@ -17,6 +17,7 @@
 package com.google.gcloud.resourcemanager;
 
 import com.google.gcloud.BaseServiceException;
+import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.RetryHelper.RetryInterruptedException;
 
@@ -44,7 +45,12 @@ public class ResourceManagerException extends BaseServiceException {
    * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
   static ResourceManagerException translateAndThrow(RetryHelperException ex) {
+    if (ex.getCause() instanceof ResourceManagerException) {
+      throw (ResourceManagerException) ex.getCause();
+    }
+    if (ex instanceof RetryHelper.RetryInterruptedException) {
+      RetryHelper.RetryInterruptedException.propagate();
+    }
     throw new ResourceManagerException(UNKNOWN_CODE, ex.getMessage(), false);
-    // TODO(ajaykannan): Fix me!
   }
 }

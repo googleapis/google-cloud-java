@@ -37,14 +37,13 @@ import java.util.Collections;
 public class SerializationTest {
 
   private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder("id1").build();
-  private static final ProjectInfo FULL_PROJECT_INFO =
-      ProjectInfo.builder("id")
-          .name("name")
-          .labels(ImmutableMap.of("key", "value"))
-          .number(123L)
-          .state(ProjectInfo.State.ACTIVE)
-          .createTimeMillis(1234L)
-          .build();
+  private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.builder("id")
+      .name("name")
+      .labels(ImmutableMap.of("key", "value"))
+      .projectNumber(123L)
+      .state(ProjectInfo.State.ACTIVE)
+      .createTimeMillis(1234L)
+      .build();
   private static final PageImpl<ProjectInfo> PAGE_RESULT =
       new PageImpl<>(null, "c", Collections.singletonList(PARTIAL_PROJECT_INFO));
 
@@ -53,12 +52,11 @@ public class SerializationTest {
     ResourceManagerOptions options = ResourceManagerOptions.builder().build();
     ResourceManagerOptions serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);
-    options =
-        options.toBuilder()
-            .projectId("some-unnecessary-project-ID")
-            .retryParams(RetryParams.defaultInstance())
-            .authCredentials(AuthCredentials.noCredentials())
-            .build();
+    options = options.toBuilder()
+        .projectId("some-unnecessary-project-ID")
+        .retryParams(RetryParams.defaultInstance())
+        .authCredentials(AuthCredentials.noCredentials())
+        .build();
     serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);
   }
