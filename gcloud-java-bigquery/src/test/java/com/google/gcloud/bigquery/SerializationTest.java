@@ -67,6 +67,54 @@ public class SerializationTest {
       .selfLink(SELF_LINK)
       .build();
   private static final TableId TABLE_ID = TableId.of("project", "dataset", "table");
+  private static final CsvOptions CSV_OPTIONS = CsvOptions.builder()
+      .allowJaggedRows(true)
+      .allowQuotedNewLines(false)
+      .encoding("CSV")
+      .fieldDelimiter(",")
+      .quote("\"")
+      .skipLeadingRows(42)
+      .build();
+  private static final FieldSchema FIELD_SCHEMA1 =
+      FieldSchema.builder("StringField", FieldSchema.Type.STRING)
+          .mode(FieldSchema.Mode.NULLABLE)
+          .description("FieldDescription1")
+          .build();
+  private static final FieldSchema FIELD_SCHEMA2 =
+      FieldSchema.builder("IntegerField", FieldSchema.Type.INTEGER)
+          .mode(FieldSchema.Mode.REPEATED)
+          .description("FieldDescription2")
+          .build();
+  private static final FieldSchema FIELD_SCHEMA3 =
+      FieldSchema.builder("RecordField", ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .mode(FieldSchema.Mode.REQUIRED)
+          .description("FieldDescription3")
+          .build();
+  private static final List<FieldSchema> FIELDS = ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2,
+      FIELD_SCHEMA3);
+  private static final TableSchema TABLE_SCHEMA = TableSchema.of(FIELDS);
+  private static final TableInfo.StreamingBuffer STREAMING_BUFFER =
+      new TableInfo.StreamingBuffer(1L, 2L, 3L);
+  private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
+  private static final ExternalDataConfiguration EXTERNAL_DATA_CONFIGURATION =
+      ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, "CSV")
+      .csvOptions(CSV_OPTIONS)
+      .ignoreUnknownValues(true)
+      .maxBadRecords(42)
+      .build();
+  private static final UserDefinedFunction INLINE_FUNCTION =
+      new UserDefinedFunction.InlineFunction("inline");
+  private static final UserDefinedFunction URI_FUNCTION =
+      new UserDefinedFunction.UriFunction("URI");
+  private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, TABLE_SCHEMA)
+      .creationTime(CREATION_TIME)
+      .description(DESCRIPTION)
+      .etag(ETAG)
+      .id(ID)
+      .location(LOCATION)
+      .type(TableInfo.Type.TABLE)
+      .streamingBuffer(STREAMING_BUFFER)
+      .build();
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -89,7 +137,8 @@ public class SerializationTest {
   @Test
   public void testModelAndRequests() throws Exception {
     Serializable[] objects = {DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
-        DATASET_INFO, TABLE_ID};
+        DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, EXTERNAL_DATA_CONFIGURATION,
+        TABLE_SCHEMA, TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
