@@ -1,11 +1,17 @@
 package com.google.gcloud.spi;
 
+import static com.google.gcloud.spi.ResourceManagerRpc.Option.FIELDS;
+import static com.google.gcloud.spi.ResourceManagerRpc.Option.FILTER;
+import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_SIZE;
+import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_TOKEN;
+
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.services.cloudresourcemanager.Cloudresourcemanager;
+import com.google.api.services.cloudresourcemanager.model.ListProjectsResponse;
 import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.resourcemanager.ResourceManagerException;
@@ -20,13 +26,11 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   // see https://cloud.google.com/resource-manager/v1/errors/core_errors
   private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(503, 500, 429, 417);
 
-  private final ResourceManagerOptions options;
   private final Cloudresourcemanager resourceManager;
 
   public DefaultResourceManagerRpc(ResourceManagerOptions options) {
     HttpTransport transport = options.httpTransportFactory().create();
     HttpRequestInitializer initializer = options.httpRequestInitializer();
-    this.options = options;
     resourceManager =
         new Cloudresourcemanager.Builder(transport, new JacksonFactory(), initializer)
             .setRootUrl(options.host())
@@ -52,37 +56,68 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
 
   @Override
   public Project create(Project project) throws ResourceManagerException {
-    // TODO(ajaykannan): fix me!
-    return null;
+    try {
+      return resourceManager.projects().create(project).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
   }
 
   @Override
   public void delete(String projectId) throws ResourceManagerException {
-    // TODO(ajaykannan): fix me!
+    try {
+      resourceManager.projects().delete(projectId).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
   }
 
   @Override
   public Project get(String projectId, Map<Option, ?> options) throws ResourceManagerException {
-    // TODO(ajaykannan): fix me!
-    return null;
+    try {
+      return resourceManager.projects()
+          .get(projectId)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
   }
 
   @Override
   public Tuple<String, Iterable<Project>> list(Map<Option, ?> options)
       throws ResourceManagerException {
-    // TODO(ajaykannan): fix me!
-    return null;
+    try {
+      ListProjectsResponse response = resourceManager.projects()
+          .list()
+          .setFilter(FIELDS.getString(options))
+          .setFilter(FILTER.getString(options))
+          .setPageSize(PAGE_SIZE.getInt(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          .execute();
+      return Tuple.<String, Iterable<Project>>of(
+          response.getNextPageToken(), response.getProjects());
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
   }
 
   @Override
   public void undelete(String projectId) throws ResourceManagerException {
-    // TODO(ajaykannan): fix me!
+    try {
+      resourceManager.projects().undelete(projectId).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
   }
 
   @Override
   public Project replace(Project project) throws ResourceManagerException {
-    // TODO(ajaykannan): fix me!
-    return null;
+    try {
+      return resourceManager.projects().update(project.getProjectId(), project).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
   }
 }
 
