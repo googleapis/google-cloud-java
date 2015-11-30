@@ -25,16 +25,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.0.11</version>
+  <version>0.0.12</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java:jar:0.0.11'
+compile 'com.google.gcloud:gcloud-java:jar:0.0.12'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.0.11"
+libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.0.12"
 ```
 
 Example Applications
@@ -69,13 +69,15 @@ Most `gcloud-java` libraries require a project ID.  There are multiple ways to s
 1. Project ID supplied when building the service options
 2. Project ID specified by the environment variable `GCLOUD_PROJECT`
 3. App Engine project ID
-4. Compute Engine project ID
-5. Google Cloud SDK project ID
+4. Google Cloud SDK project ID
+5. Compute Engine project ID
 
 Authentication
 --------------
 
-There are multiple ways to authenticate to use Google Cloud services.
+First, ensure that the necessary Google Cloud APIs are enabled for your project. To do this, follow the instructions on the [authentication document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/authentication/readme.md#authentication) shared by all the gcloud language libraries.
+
+Next, choose a method for authenticating API requests from within your project:
 
 1. When using `gcloud-java` libraries from within Compute/App Engine, no additional authentication steps are necessary.
 2. When using `gcloud-java` libraries elsewhere, there are two options:
@@ -164,8 +166,7 @@ import com.google.gcloud.storage.StorageOptions;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-StorageOptions options = StorageOptions.builder().projectId("project").build();
-Storage storage = options.service();
+Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
 Blob blob = Blob.load(storage, blobId);
 if (blob == null) {
@@ -180,6 +181,11 @@ if (blob == null) {
   channel.close();
 }
 ```
+
+Troubleshooting
+---------------
+
+To get help, follow the `gcloud-java` links in the `gcloud-*` [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Java Versions
 -------------
@@ -207,7 +213,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See [CONTRIBUTING] for more information on how to get started.
+See `gcloud-java`'s [CONTRIBUTING] documentation and the `gcloud-*` [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -218,7 +224,7 @@ Apache 2.0 - See [LICENSE] for more information.
 
 
 [CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md
+[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md
 [cloud-platform]: https://cloud.google.com/

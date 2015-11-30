@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.gcloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.0.12-SNAPSHOT</version>
+    <version>0.0.13-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-datastore</site.installationModule>
@@ -27,6 +27,12 @@
       <artifactId>google-api-services-datastore-protobuf</artifactId>
       <version>v1beta2-rev1-2.1.2</version>
       <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.api-client</groupId>
+          <artifactId>google-api-client</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

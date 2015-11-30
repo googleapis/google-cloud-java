@@ -28,7 +28,6 @@ import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
-import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.services.storage.model.StorageObject;
@@ -43,6 +42,8 @@ import com.google.common.collect.Sets;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
+import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.AuthCredentials.ApplicationDefaultAuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.BaseService;
@@ -175,14 +176,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           new Callable<com.google.api.services.storage.model.Bucket>() {
             @Override
             public com.google.api.services.storage.model.Bucket call() {
-              try {
-                return storageRpc.get(bucketPb, optionsMap);
-              } catch (StorageException ex) {
-                if (ex.code() == HTTP_NOT_FOUND) {
-                  return null;
-                }
-                throw ex;
-              }
+              return storageRpc.get(bucketPb, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : BucketInfo.fromPb(answer);
@@ -199,19 +193,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public BlobInfo get(BlobId blob, BlobGetOption... options) {
     final StorageObject storedObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     try {
       StorageObject storageObject = runWithRetries(new Callable<StorageObject>() {
         @Override
         public StorageObject call() {
-          try {
-            return storageRpc.get(storedObject, optionsMap);
-          } catch (StorageException ex) {
-            if (ex.code() == HTTP_NOT_FOUND) {
-              return null;
-            }
-            throw ex;
-          }
+          return storageRpc.get(storedObject, optionsMap);
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
       return storageObject == null ? null : BlobInfo.fromPb(storageObject);
@@ -405,7 +392,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public boolean delete(BlobId blob, BlobSourceOption... options) {
     final StorageObject storageObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     try {
       return runWithRetries(new Callable<Boolean>() {
         @Override
@@ -428,8 +415,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     final List<StorageObject> sources =
         Lists.newArrayListWithCapacity(composeRequest.sourceBlobs().size());
     for (ComposeRequest.SourceBlob sourceBlob : composeRequest.sourceBlobs()) {
-      sources.add(BlobInfo.builder(composeRequest.target().bucket(), sourceBlob.name())
-          .generation(sourceBlob.generation()).build().toPb());
+      sources.add(BlobInfo.builder(
+          BlobId.of(composeRequest.target().bucket(), sourceBlob.name(), sourceBlob.generation()))
+              .build().toPb());
     }
     final StorageObject target = composeRequest.target().toPb();
     final Map<StorageRpc.Option, ?> targetOptions = optionMap(composeRequest.target().generation(),
@@ -450,7 +438,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   public CopyWriter copy(final CopyRequest copyRequest) {
     final StorageObject source = copyRequest.source().toPb();
     final Map<StorageRpc.Option, ?> sourceOptions =
-        optionMap(null, null, copyRequest.sourceOptions(), true);
+        optionMap(copyRequest.source().generation(), null, copyRequest.sourceOptions(), true);
     final StorageObject target = copyRequest.target().toPb();
     final Map<StorageRpc.Option, ?> targetOptions = optionMap(copyRequest.target().generation(),
         copyRequest.target().metageneration(), copyRequest.targetOptions());
@@ -476,7 +464,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   @Override
   public byte[] readAllBytes(BlobId blob, BlobSourceOption... options) {
     final StorageObject storageObject = blob.toPb();
-    final Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    final Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     try {
       return runWithRetries(new Callable<byte[]>() {
         @Override
@@ -495,7 +483,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         Lists.newArrayListWithCapacity(batchRequest.toDelete().size());
     for (Map.Entry<BlobId, Iterable<BlobSourceOption>> entry : batchRequest.toDelete().entrySet()) {
       BlobId blob = entry.getKey();
-      Map<StorageRpc.Option, ?> optionsMap = optionMap(null, null, entry.getValue());
+      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob.generation(), null, entry.getValue());
       StorageObject storageObject = blob.toPb();
       toDelete.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(storageObject, optionsMap));
     }
@@ -512,7 +500,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
         Lists.newArrayListWithCapacity(batchRequest.toGet().size());
     for (Map.Entry<BlobId, Iterable<BlobGetOption>> entry : batchRequest.toGet().entrySet()) {
       BlobId blob = entry.getKey();
-      Map<StorageRpc.Option, ?> optionsMap = optionMap(null, null, entry.getValue());
+      Map<StorageRpc.Option, ?> optionsMap = optionMap(blob.generation(), null, entry.getValue());
       toGet.add(Tuple.<StorageObject, Map<StorageRpc.Option, ?>>of(blob.toPb(), optionsMap));
     }
     StorageRpc.BatchResponse response =
@@ -522,28 +510,23 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     List<BatchResponse.Result<BlobInfo>> updates = transformBatchResult(
         toUpdate, response.updates, BlobInfo.FROM_PB_FUNCTION);
     List<BatchResponse.Result<BlobInfo>> gets = transformBatchResult(
-        toGet, response.gets, BlobInfo.FROM_PB_FUNCTION, HTTP_NOT_FOUND);
+        toGet, response.gets, BlobInfo.FROM_PB_FUNCTION);
     return new BatchResponse(deletes, updates, gets);
   }
 
   private <I, O extends Serializable> List<BatchResponse.Result<O>> transformBatchResult(
       Iterable<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> request,
-      Map<StorageObject, Tuple<I, StorageException>> results, Function<I, O> transform,
-      int... nullOnErrorCodes) {
-    Set nullOnErrorCodesSet = Sets.newHashSet(Ints.asList(nullOnErrorCodes));
+      Map<StorageObject, Tuple<I, StorageException>> results, Function<I, O> transform) {
     List<BatchResponse.Result<O>> response = Lists.newArrayListWithCapacity(results.size());
     for (Tuple<StorageObject, ?> tuple : request) {
       Tuple<I, StorageException> result = results.get(tuple.x());
-      if (result.x() != null) {
-        response.add(BatchResponse.Result.of(transform.apply(result.x())));
+      I object = result.x();
+      StorageException exception = result.y();
+      if (exception != null) {
+        response.add(new BatchResponse.Result<O>(exception));
       } else {
-        StorageException exception = result.y();
-        if (nullOnErrorCodesSet.contains(exception.code())) {
-          //noinspection unchecked
-          response.add(BatchResponse.Result.<O>empty());
-        } else {
-          response.add(new BatchResponse.Result<O>(exception));
-        }
+        response.add(object != null ?
+            BatchResponse.Result.of(transform.apply(object)) : BatchResponse.Result.<O>empty());
       }
     }
     return response;
@@ -557,7 +540,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public BlobReadChannel reader(BlobId blob, BlobSourceOption... options) {
-    Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
+    Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
     return new BlobReadChannelImpl(options(), blob, optionsMap);
   }
 
@@ -583,9 +566,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     ServiceAccountAuthCredentials cred =
         (ServiceAccountAuthCredentials) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
     if (cred == null) {
-      checkArgument(options().authCredentials() instanceof ServiceAccountAuthCredentials,
-          "Signing key was not provided and could not be derived");
-      cred = (ServiceAccountAuthCredentials) this.options().authCredentials();
+      AuthCredentials serviceCred = this.options().authCredentials();
+      if (serviceCred instanceof ServiceAccountAuthCredentials) {
+        cred = (ServiceAccountAuthCredentials) serviceCred;
+      } else {
+        if (serviceCred instanceof ApplicationDefaultAuthCredentials) {
+          cred = ((ApplicationDefaultAuthCredentials) serviceCred).toServiceAccountCredentials();
+        }
+      }
+      checkArgument(cred != null, "Signing key was not provided and could not be derived");
     }
     // construct signature - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
     StringBuilder stBuilder = new StringBuilder();
@@ -740,5 +729,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   private Map<StorageRpc.Option, ?> optionMap(BlobInfo blobInfo, Option... options) {
     return optionMap(blobInfo.generation(), blobInfo.metageneration(), options);
+  }
+
+  private Map<StorageRpc.Option, ?> optionMap(BlobId blobId, Option... options) {
+    return optionMap(blobId.generation(), null, options);
   }
 }
