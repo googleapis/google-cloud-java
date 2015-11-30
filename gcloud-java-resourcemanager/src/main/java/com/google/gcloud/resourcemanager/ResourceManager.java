@@ -133,6 +133,26 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     }
 
     /**
+     * Returns an option to specify a page token.
+     *
+     * The page token (returned from a previous call to list) indicates from where listing should
+     * continue. Pagination is not yet supported; the server ignores this field.
+     */
+    public static ProjectListOption pageToken(String pageToken) {
+      return new ProjectListOption(ResourceManagerRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * The maximum number of projects to return in the response.
+     *
+     * The server can return fewer projects than requested. If unspecified, server picks an
+     * appropriate default. Note: pagination is not yet supported; the server ignores this field.
+     */
+    public static ProjectListOption pageSize(int pageSize) {
+      return new ProjectListOption(ResourceManagerRpc.Option.PAGE_SIZE, pageSize);
+    }
+
+    /**
      * Returns an option to specify the project's fields to be returned by the RPC call.
      *
      * If this option is not provided all project fields are returned.
