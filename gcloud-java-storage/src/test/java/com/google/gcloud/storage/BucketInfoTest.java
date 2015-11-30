@@ -91,7 +91,7 @@ public class BucketInfoTest {
   @Test
   public void testToBuilderIncomplete() {
     BucketInfo incompleteBucketInfo = BucketInfo.builder("b").build();
-    assertEquals(incompleteBucketInfo.name(), incompleteBucketInfo.toBuilder().build().name());
+    compareBuckets(incompleteBucketInfo, incompleteBucketInfo.toBuilder().build());
   }
 
   @Test

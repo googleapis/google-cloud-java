@@ -325,17 +325,36 @@ public final class BucketInfo implements Serializable {
     private Boolean versioningEnabled;
     private String indexPage;
     private String notFoundPage;
-    private ImmutableList<DeleteRule> deleteRules;
+    private List<DeleteRule> deleteRules;
     private String storageClass;
     private String location;
     private String etag;
     private Long createTime;
     private Long metageneration;
-    private ImmutableList<Cors> cors;
-    private ImmutableList<Acl> acl;
-    private ImmutableList<Acl> defaultAcl;
+    private List<Cors> cors;
+    private List<Acl> acl;
+    private List<Acl> defaultAcl;
 
     private Builder() {}
+
+    private Builder(BucketInfo bucketInfo) {
+      id = bucketInfo.id;
+      name = bucketInfo.name;
+      etag = bucketInfo.etag;
+      createTime = bucketInfo.createTime;
+      metageneration = bucketInfo.metageneration;
+      location = bucketInfo.location;
+      storageClass = bucketInfo.storageClass;
+      cors = bucketInfo.cors;
+      acl = bucketInfo.acl;
+      defaultAcl = bucketInfo.defaultAcl;
+      owner = bucketInfo.owner;
+      selfLink = bucketInfo.selfLink;
+      versioningEnabled = bucketInfo.versioningEnabled;
+      indexPage = bucketInfo.indexPage;
+      notFoundPage = bucketInfo.notFoundPage;
+      deleteRules = bucketInfo.deleteRules;
+    }
 
     /**
      * Sets the bucket's name.
@@ -629,23 +648,7 @@ public final class BucketInfo implements Serializable {
    * Returns a builder for the current bucket.
    */
   public Builder toBuilder() {
-    return new Builder()
-        .name(name)
-        .id(id)
-        .createTime(createTime)
-        .etag(etag)
-        .metageneration(metageneration)
-        .cors(cors)
-        .acl(acl)
-        .defaultAcl(defaultAcl)
-        .location(location)
-        .storageClass(storageClass)
-        .owner(owner)
-        .selfLink(selfLink)
-        .versioningEnabled(versioningEnabled)
-        .indexPage(indexPage)
-        .notFoundPage(notFoundPage)
-        .deleteRules(deleteRules);
+    return new Builder(this);
   }
 
   @Override

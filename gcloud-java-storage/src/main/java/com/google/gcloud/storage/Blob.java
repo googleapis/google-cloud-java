@@ -281,7 +281,7 @@ public final class Blob {
    * Deletes this blob.
    *
    * @param options blob delete options
-   * @return true if blob was deleted
+   * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   public boolean delete(BlobSourceOption... options) {
@@ -422,8 +422,8 @@ public final class Blob {
    * @param storage the storage service used to issue the request
    * @param blobs the blobs to delete
    * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
-   *     list is {@code true}. If deletion failed or access to the resource was denied the item is
-   *     {@code false}.
+   *     list is {@code true}. If a blob was not found, deletion failed or access to the resource
+   *     was denied the corresponding item is {@code false}.
    * @throws StorageException upon failure
    */
   public static List<Boolean> delete(Storage storage, BlobId... blobs) {

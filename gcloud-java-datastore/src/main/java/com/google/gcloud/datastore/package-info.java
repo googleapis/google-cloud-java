@@ -17,10 +17,9 @@
 /**
  * A client to the Google Cloud Datastore.
  *
- * <p>A simple usage example:
+ * <p>Here's a simple usage example for using gcloud-java from App/Compute Engine:
  * <pre> {@code
- * DatastoreOptions options = DatastoreOptions.builder().projectId(PROJECT_ID).build();
- * Datastore datastore = options.service();
+ * Datastore datastore = DatastoreOptions.defaultInstance().service();
  * KeyFactory keyFactory = datastore.newKeyFactory().kind(kind);
  * Key key = keyFactory.newKey(keyName);
  * Entity entity = datastore.get(key);
@@ -47,6 +46,11 @@
  * }
  * } </pre>
  *
+ * <p>When using gcloud-java from outside of App/Compute Engine, you have to <a
+ * href="https://github.com/GoogleCloudPlatform/gcloud-java#specifying-a-project-id">specify a
+ * project ID</a> and
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java#authentication">provide
+ * credentials</a>.
  * @see <a href="https://cloud.google.com/datastore/">Google Cloud Datastore</a>
  */
 package com.google.gcloud.datastore;

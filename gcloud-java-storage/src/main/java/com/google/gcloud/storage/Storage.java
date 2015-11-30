@@ -33,6 +33,7 @@ import com.google.gcloud.spi.StorageRpc.Tuple;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
+import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -473,14 +474,32 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = -3712768261070182991L;
 
-    private BlobSourceOption(StorageRpc.Option rpcOption, long value) {
+    private BlobSourceOption(StorageRpc.Option rpcOption, Long value) {
       super(rpcOption, value);
     }
 
     /**
      * Returns an option for blob's data generation match. If this option is used the request will
-     * fail if blob's generation does not match the provided value.
+     * fail if blob's generation does not match. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
      */
+    public static BlobSourceOption generationMatch() {
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, null);
+    }
+
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if blob's generation matches. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
+     */
+    public static BlobSourceOption generationNotMatch() {
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, null);
+    }
+
     public static BlobSourceOption generationMatch(long generation) {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
     }
@@ -517,7 +536,7 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = 803817709703661480L;
 
-    private BlobGetOption(StorageRpc.Option rpcOption, long value) {
+    private BlobGetOption(StorageRpc.Option rpcOption, Long value) {
       super(rpcOption, value);
     }
 
@@ -527,8 +546,26 @@ public interface Storage extends Service<StorageOptions> {
 
     /**
      * Returns an option for blob's data generation match. If this option is used the request will
-     * fail if blob's generation does not match the provided value.
+     * fail if blob's generation does not match. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
      */
+    public static BlobGetOption generationMatch() {
+      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_MATCH, (Long) null);
+    }
+
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if blob's generation matches. The generation value to compare with the actual
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
+     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * {@link BlobId} is provided an exception is thrown.
+     */
+    public static BlobGetOption generationNotMatch() {
+      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, (Long) null);
+    }
+
     public static BlobGetOption generationMatch(long generation) {
       return new BlobGetOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
     }
@@ -1280,7 +1317,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Delete the requested bucket.
    *
-   * @return true if bucket was deleted
+   * @return {@code true} if bucket was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   boolean delete(String bucket, BucketSourceOption... options);
@@ -1288,7 +1325,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Delete the requested blob.
    *
-   * @return true if blob was deleted
+   * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   boolean delete(String bucket, String blob, BlobSourceOption... options);
@@ -1296,7 +1333,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Delete the requested blob.
    *
-   * @return true if blob was deleted
+   * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   boolean delete(BlobId blob, BlobSourceOption... options);
@@ -1304,7 +1341,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Delete the requested blob.
    *
-   * @return true if blob was deleted
+   * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   boolean delete(BlobId blob);
@@ -1369,14 +1406,29 @@ public interface Storage extends Service<StorageOptions> {
   BatchResponse apply(BatchRequest batchRequest);
 
   /**
-   * Return a channel for reading the blob's content.
+   * Return a channel for reading the blob's content. The blob's latest generation is read. If the
+   * blob changes while reading (i.e. {@link BlobInfo#etag()} changes), subsequent calls to
+   * {@code blobReadChannel.read(ByteBuffer)} may throw {@link StorageException}.
+   *
+   * <p>The {@link BlobSourceOption#generationMatch(long)} option can be provided to ensure that
+   * {@code blobReadChannel.read(ByteBuffer)} calls will throw {@link StorageException} if blob`s
+   * generation differs from the expected one.
    *
    * @throws StorageException upon failure
    */
   BlobReadChannel reader(String bucket, String blob, BlobSourceOption... options);
 
   /**
-   * Return a channel for reading the blob's content.
+   * Return a channel for reading the blob's content. If {@code blob.generation()} is set
+   * data corresponding to that generation is read. If {@code blob.generation()} is {@code null}
+   * the blob's latest generation is read. If the blob changes while reading (i.e.
+   * {@link BlobInfo#etag()} changes), subsequent calls to {@code blobReadChannel.read(ByteBuffer)}
+   * may throw {@link StorageException}.
+   *
+   * <p>The {@link BlobSourceOption#generationMatch()} and
+   * {@link BlobSourceOption#generationMatch(long)} options can be used to ensure that
+   * {@code blobReadChannel.read(ByteBuffer)} calls will throw {@link StorageException} if the
+   * blob`s generation differs from the expected one.
    *
    * @throws StorageException upon failure
    */
@@ -1442,8 +1494,8 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @param blobIds blobs to delete
    * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
-   *     list is {@code true}. If deletion failed or access to the resource was denied the item is
-   *     {@code false}.
+   *     list is {@code true}. If a blob was not found, deletion failed or access to the resource
+   *     was denied the corresponding item is {@code false}.
    * @throws StorageException upon failure
    */
   List<Boolean> delete(BlobId... blobIds);
