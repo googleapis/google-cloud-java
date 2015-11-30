@@ -46,6 +46,10 @@ public class SerializationTest {
       .build();
   private static final PageImpl<ProjectInfo> PAGE_RESULT =
       new PageImpl<>(null, "c", Collections.singletonList(PARTIAL_PROJECT_INFO));
+  private static final ResourceManager.ProjectGetOption PROJECT_GET_OPTION =
+      ResourceManager.ProjectGetOption.fields(ResourceManager.ProjectField.NAME);
+  private static final ResourceManager.ProjectListOption PROJECT_LIST_OPTION =
+      ResourceManager.ProjectListOption.filter("name:*");
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -63,7 +67,8 @@ public class SerializationTest {
 
   @Test
   public void testModelAndRequests() throws Exception {
-    Serializable[] objects = {PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PAGE_RESULT};
+    Serializable[] objects = {PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PAGE_RESULT,
+        PROJECT_GET_OPTION, PROJECT_LIST_OPTION};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

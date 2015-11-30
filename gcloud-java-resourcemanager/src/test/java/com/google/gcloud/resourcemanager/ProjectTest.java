@@ -18,7 +18,6 @@ package com.google.gcloud.resourcemanager;
 
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.expectLastCall;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
@@ -94,7 +93,6 @@ public class ProjectTest {
   @Test
   public void testDelete() {
     resourceManager.delete(PROJECT_INFO.projectId());
-    expectLastCall();
     replay(resourceManager);
     project.delete();
   }
@@ -102,7 +100,6 @@ public class ProjectTest {
   @Test
   public void testUndelete() {
     resourceManager.undelete(PROJECT_INFO.projectId());
-    expectLastCall();
     replay(resourceManager);
     project.undelete();
   }
