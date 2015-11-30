@@ -36,7 +36,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * The fields of a project.
    *
-   * These values can be used to specify the fields to include of in a partial response when calling
+   * These values can be used to specify the fields to include in a partial response when calling
    * {@link ResourceManager#get} or {@link ResourceManager#list}. Project ID is always returned,
    * even if not specified.
    */

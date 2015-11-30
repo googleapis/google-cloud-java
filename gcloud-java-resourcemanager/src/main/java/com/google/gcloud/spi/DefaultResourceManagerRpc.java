@@ -17,6 +17,7 @@ import java.util.Set;
 
 public class DefaultResourceManagerRpc implements ResourceManagerRpc {
 
+  // see https://cloud.google.com/resource-manager/v1/errors/core_errors
   private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(503, 500, 429, 417);
 
   private final ResourceManagerOptions options;
@@ -45,9 +46,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   }
 
   private static ResourceManagerException translate(GoogleJsonError exception) {
-    boolean retryable =
-        RETRYABLE_CODES.contains(exception.getCode())
-        || "InternalError".equals(exception.getMessage());
+    boolean retryable = RETRYABLE_CODES.contains(exception.getCode());
     return new ResourceManagerException(exception.getCode(), exception.getMessage(), retryable);
   }
 
@@ -63,7 +62,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   }
 
   @Override
-  public Project get(String projectId) throws ResourceManagerException {
+  public Project get(String projectId, Map<Option, ?> options) throws ResourceManagerException {
     // TODO(ajaykannan): fix me!
     return null;
   }

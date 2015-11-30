@@ -77,7 +77,7 @@ public interface ResourceManagerRpc {
 
   void delete(String projectId) throws ResourceManagerException;
 
-  Project get(String projectId) throws ResourceManagerException;
+  Project get(String projectId, Map<Option, ?> options) throws ResourceManagerException;
 
   Tuple<String, Iterable<Project>> list(Map<Option, ?> options) throws ResourceManagerException;
 

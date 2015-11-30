@@ -132,7 +132,7 @@ public class ProjectInfo implements Serializable {
     Builder(ProjectInfo info) {
       this.name = info.name;
       this.projectId = info.projectId;
-      this.labels = Maps.newHashMap(checkNotNull(info.labels));
+      this.labels.putAll(info.labels);
       this.projectNumber = info.projectNumber;
       this.state = info.state;
       this.createTimeMillis = info.createTimeMillis;
@@ -159,7 +159,7 @@ public class ProjectInfo implements Serializable {
      * project.
      */
     public Builder projectId(String projectId) {
-      this.projectId = projectId;
+      this.projectId = checkNotNull(projectId);
       return this;
     }
 
@@ -230,7 +230,7 @@ public class ProjectInfo implements Serializable {
 
   ProjectInfo(Builder builder) {
     this.name = builder.name;
-    this.projectId = checkNotNull(builder.projectId);
+    this.projectId = builder.projectId;
     this.labels = ImmutableMap.copyOf(builder.labels);
     this.projectNumber = builder.projectNumber;
     this.state = builder.state;
