@@ -16,6 +16,8 @@
 
 package com.google.gcloud.resourcemanager;
 
+import com.google.gcloud.BaseServiceException;
+import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.RetryHelper.RetryInterruptedException;
 
@@ -25,29 +27,13 @@ import com.google.gcloud.RetryHelper.RetryInterruptedException;
  * @see <a href="https://cloud.google.com/resource-manager/v1/errors/core_errors">Google Cloud
  *      Resource Manager error codes</a>
  */
-public class ResourceManagerException extends RuntimeException {
+public class ResourceManagerException extends BaseServiceException {
 
   private static final long serialVersionUID = 6841689911565501705L;
   private static final int UNKNOWN_CODE = -1;
 
-  private final int code;
-  private final boolean retryable;
-
   public ResourceManagerException(int code, String message, boolean retryable) {
-    super(message);
-    this.code = code;
-    this.retryable = retryable;
-  }
-
-  /**
-   * Returns the code associated with this exception.
-   */
-  public int code() {
-    return code;
-  }
-
-  public boolean retryable() {
-    return retryable;
+    super(code, message, retryable);
   }
 
   /**
@@ -59,7 +45,12 @@ public class ResourceManagerException extends RuntimeException {
    * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
   static ResourceManagerException translateAndThrow(RetryHelperException ex) {
+    if (ex.getCause() instanceof ResourceManagerException) {
+      throw (ResourceManagerException) ex.getCause();
+    }
+    if (ex instanceof RetryHelper.RetryInterruptedException) {
+      RetryHelper.RetryInterruptedException.propagate();
+    }
     throw new ResourceManagerException(UNKNOWN_CODE, ex.getMessage(), false);
-        // TODO(ajaykannan): Fix me!
   }
 }
