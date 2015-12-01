@@ -31,7 +31,6 @@ import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_N
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.services.storage.model.StorageObject;
-import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.common.base.Function;
 import com.google.common.base.Functions;
@@ -43,7 +42,6 @@ import com.google.common.collect.Maps;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
-import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
@@ -562,18 +560,16 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     for (SignUrlOption option : options) {
       optionMap.put(option.option(), option.value());
     }
-    ServiceAccountAuthCredentials serviceAccountAuthCred =
+    ServiceAccountAuthCredentials authCred =
         (ServiceAccountAuthCredentials) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
-    ServiceAccountCredentials cred = (ServiceAccountCredentials) (serviceAccountAuthCred != null
-        ? serviceAccountAuthCred.credentials() : null);
-    if (serviceAccountAuthCred == null) {
-      AuthCredentials authCred = this.options().authCredentials();
-      GoogleCredentials serviceCred =
-          authCred != null ? authCred.credentials() : null;
+    ServiceAccountCredentials cred =
+        (ServiceAccountCredentials) (authCred != null ? authCred.credentials() : null);
+    if (authCred == null) {
       checkArgument(
-          serviceCred instanceof ServiceAccountCredentials,
+          this.options().authCredentials() != null
+          && this.options().authCredentials().credentials() instanceof ServiceAccountCredentials,
           "Signing key was not provided and could not be derived");
-      cred = (ServiceAccountCredentials) serviceCred;
+      cred = (ServiceAccountCredentials) this.options().authCredentials().credentials();
     }
     // construct signature - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
     StringBuilder stBuilder = new StringBuilder();
