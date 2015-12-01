@@ -24,7 +24,7 @@ import java.util.Set;
 public class DefaultResourceManagerRpc implements ResourceManagerRpc {
 
   // see https://cloud.google.com/resource-manager/v1/errors/core_errors
-  private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(503, 500, 429, 417);
+  private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(503, 500, 429);
 
   private final Cloudresourcemanager resourceManager;
 
@@ -90,7 +90,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
     try {
       ListProjectsResponse response = resourceManager.projects()
           .list()
-          .setFilter(FIELDS.getString(options))
+          .setFields(FIELDS.getString(options))
           .setFilter(FILTER.getString(options))
           .setPageSize(PAGE_SIZE.getInt(options))
           .setPageToken(PAGE_TOKEN.getString(options))
