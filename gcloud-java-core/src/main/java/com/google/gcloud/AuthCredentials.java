@@ -136,8 +136,6 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     private final String account;
     private final PrivateKey privateKey;
 
-    private static final AuthCredentials NO_CREDENTIALS = new ServiceAccountAuthCredentials();
-
     private static class ServiceAccountAuthCredentialsState
         implements RestorableState<AuthCredentials>, Serializable {
 
@@ -153,9 +151,6 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
 
       @Override
       public AuthCredentials restore() {
-        if (account == null && privateKey == null) {
-          return NO_CREDENTIALS;
-        }
         return new ServiceAccountAuthCredentials(account, privateKey);
       }
 
@@ -180,16 +175,9 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
       this.privateKey = checkNotNull(privateKey);
     }
 
-    ServiceAccountAuthCredentials() {
-      account = null;
-      privateKey = null;
-    }
-
     @Override
     protected GoogleCredentials credentials() {
-      return (privateKey == null)
-          ? new GoogleCredentials(null)
-          : new ServiceAccountCredentials(null, account, privateKey, null, null);
+      return new ServiceAccountCredentials(null, account, privateKey, null, null);
     }
 
     public String account() {
@@ -326,9 +314,5 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
       throw new IOException(
           "The given JSON Credentials Stream is not a service account credential.");
     }
-  }
-
-  public static AuthCredentials noCredentials() {
-    return ServiceAccountAuthCredentials.NO_CREDENTIALS;
   }
 }
