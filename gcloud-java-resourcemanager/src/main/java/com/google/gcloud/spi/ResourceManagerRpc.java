@@ -48,7 +48,7 @@ public interface ResourceManagerRpc {
       return get(options);
     }
 
-    Long getInt(Map<Option, ?> options) {
+    Integer getInt(Map<Option, ?> options) {
       return get(options);
     }
   }
