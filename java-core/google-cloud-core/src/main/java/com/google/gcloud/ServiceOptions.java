@@ -312,8 +312,9 @@ public abstract class ServiceOptions<
     httpTransportFactory = firstNonNull(builder.httpTransportFactory,
         getFromServiceLoader(HttpTransportFactory.class, DefaultHttpTransportFactory.INSTANCE));
     httpTransportFactoryClassName = httpTransportFactory.getClass().getName();
-    authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
-    authCredentialsState = authCredentials.capture();
+    authCredentials =
+        builder.authCredentials != null ? builder.authCredentials : defaultAuthCredentials();
+    authCredentialsState = authCredentials != null ? authCredentials.capture() : null;
     retryParams = builder.retryParams;
     serviceFactory = firstNonNull(builder.serviceFactory,
         getFromServiceLoader(serviceFactoryClass, defaultServiceFactory()));
@@ -349,7 +350,7 @@ public abstract class ServiceOptions<
     try {
       return AuthCredentials.createApplicationDefaults();
     } catch (Exception ex) {
-      return AuthCredentials.noCredentials();
+      return null;
     }
   }
 
@@ -509,12 +510,15 @@ public abstract class ServiceOptions<
    * options.
    */
   public HttpRequestInitializer httpRequestInitializer() {
-    final HttpRequestInitializer baseRequestInitializer =
-        new HttpCredentialsAdapter(authCredentials().credentials().createScoped(scopes()));
+    final HttpRequestInitializer delegate = authCredentials() != null
+        ? new HttpCredentialsAdapter(authCredentials().credentials().createScoped(scopes()))
+        : null;
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
-        baseRequestInitializer.initialize(httpRequest);
+        if (delegate != null) {
+          delegate.initialize(httpRequest);
+        }
         if (connectTimeout >= 0) {
           httpRequest.setConnectTimeout(connectTimeout);
         }
@@ -580,7 +584,7 @@ public abstract class ServiceOptions<
     httpTransportFactory = newInstance(httpTransportFactoryClassName);
     serviceFactory = newInstance(serviceFactoryClassName);
     serviceRpcFactory = newInstance(serviceRpcFactoryClassName);
-    authCredentials = authCredentialsState.restore();
+    authCredentials = authCredentialsState != null ? authCredentialsState.restore() : null;
   }
 
   private static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
