@@ -18,21 +18,17 @@ package com.google.gcloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
-import com.google.api.client.googleapis.extensions.appengine.auth.oauth2.AppIdentityCredential;
-import com.google.api.client.http.HttpRequestInitializer;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.json.jackson.JacksonFactory;
-import com.google.auth.http.HttpCredentialsAdapter;
+import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.lang.reflect.Method;
 import java.security.PrivateKey;
+import java.util.Collection;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * Credentials for accessing Google Cloud services.
@@ -42,8 +38,66 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
   private static class AppEngineAuthCredentials extends AuthCredentials {
 
     private static final AuthCredentials INSTANCE = new AppEngineAuthCredentials();
-    private static final AppEngineAuthCredentialsState STATE =
-        new AppEngineAuthCredentialsState();
+    private static final AppEngineAuthCredentialsState STATE = new AppEngineAuthCredentialsState();
+
+    private static class AppEngineCredentials extends GoogleCredentials {
+
+      private final Object appIdentityService;
+      private final Collection<String> scopes;
+      private final boolean scopesRequired;
+
+      AppEngineCredentials() {
+        try {
+          Class<?> factoryClass =
+              Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
+          Method method = factoryClass.getMethod("getAppIdentityService");
+          this.appIdentityService = method.invoke(null);
+          this.scopes = null;
+          this.scopesRequired = true;
+        } catch (Exception e) {
+          throw new RuntimeException("Could not create AppEngineCredentials using reflection.");
+        }
+      }
+
+      AppEngineCredentials(Collection<String> scopes, Object appIdentityService) {
+          this.appIdentityService = appIdentityService;
+          this.scopes = scopes;
+          this.scopesRequired = (scopes == null || scopes.isEmpty());
+      }
+
+      /**
+       * Refresh the access token by getting it from the App Identity service
+       */
+      @Override
+      public AccessToken refreshAccessToken() throws IOException {
+        if (createScopedRequired()) {
+          throw new IOException("AppEngineCredentials requires createScoped call before use.");
+        }
+        try {
+          Class<?> serviceClass =
+              Class.forName("com.google.appengine.api.appidentity.AppIdentityService");
+          Class<?> tokenResultClass = Class.forName(
+              "com.google.appengine.api.appidentity.AppIdentityService$GetAccessTokenResult");
+          Method getAccessTokenResult = serviceClass.getMethod("getAccessToken", Iterable.class);
+          Object accessTokenResult = getAccessTokenResult.invoke(appIdentityService, scopes);
+          Method getAccessToken = tokenResultClass.getMethod("getAccessToken");
+          String accessToken = (String) getAccessToken.invoke(accessTokenResult);
+          return new AccessToken(accessToken, null);
+        } catch (Exception e) {
+          throw new RuntimeException("Could not get the access token using reflection.");
+        }
+      }
+
+      @Override
+      public boolean createScopedRequired() {
+        return scopesRequired;
+      }
+
+      @Override
+      public GoogleCredentials createScoped(Collection<String> scopes) {
+        return new AppEngineCredentials(scopes, appIdentityService);
+      }
+    }
 
     private static class AppEngineAuthCredentialsState
         implements RestorableState<AuthCredentials>, Serializable {
@@ -67,9 +121,8 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
 
     @Override
-    protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
-        Set<String> scopes) {
-      return new AppIdentityCredential(scopes);
+    protected GoogleCredentials credentials() {
+      return new AppEngineCredentials();
     }
 
     @Override
@@ -133,17 +186,10 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
 
     @Override
-    protected HttpRequestInitializer httpRequestInitializer(
-        HttpTransport transport, Set<String> scopes) {
-      GoogleCredential.Builder builder = new GoogleCredential.Builder()
-          .setTransport(transport)
-          .setJsonFactory(new JacksonFactory());
-      if (privateKey != null) {
-        builder.setServiceAccountPrivateKey(privateKey);
-        builder.setServiceAccountId(account);
-        builder.setServiceAccountScopes(scopes);
-      }
-      return builder.build();
+    protected GoogleCredentials credentials() {
+      return (privateKey == null)
+          ? new GoogleCredentials(null)
+          : new ServiceAccountCredentials(null, account, privateKey, null, null);
     }
 
     public String account() {
@@ -198,9 +244,8 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
 
     @Override
-    protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
-        Set<String> scopes) {
-      return new HttpCredentialsAdapter(googleCredentials.createScoped(scopes));
+    protected GoogleCredentials credentials() {
+      return googleCredentials;
     }
 
     public ServiceAccountAuthCredentials toServiceAccountCredentials() {
@@ -218,8 +263,7 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
   }
 
-  protected abstract HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
-      Set<String> scopes);
+  protected abstract GoogleCredentials credentials();
 
   public static AuthCredentials createForAppEngine() {
     return AppEngineAuthCredentials.INSTANCE;
@@ -271,9 +315,17 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
    */
   public static ServiceAccountAuthCredentials createForJson(InputStream jsonCredentialStream)
       throws IOException {
-    GoogleCredential tempCredentials = GoogleCredential.fromStream(jsonCredentialStream);
-    return new ServiceAccountAuthCredentials(tempCredentials.getServiceAccountId(),
-        tempCredentials.getServiceAccountPrivateKey());
+    GoogleCredentials tempCredentials = GoogleCredentials.fromStream(jsonCredentialStream);
+    if (tempCredentials instanceof ServiceAccountCredentials) {
+      ServiceAccountCredentials tempServiceAccountCredentials =
+          (ServiceAccountCredentials) tempCredentials;
+      return new ServiceAccountAuthCredentials(
+          tempServiceAccountCredentials.getClientEmail(),
+          tempServiceAccountCredentials.getPrivateKey());
+    } else {
+      throw new IOException(
+          "The given JSON Credentials Stream is not a service account credential.");
+    }
   }
 
   public static AuthCredentials noCredentials() {

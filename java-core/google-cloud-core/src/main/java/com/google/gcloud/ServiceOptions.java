@@ -25,6 +25,7 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.spi.ServiceRpcFactory;
 
@@ -508,9 +509,8 @@ public abstract class ServiceOptions<
    * options.
    */
   public HttpRequestInitializer httpRequestInitializer() {
-    HttpTransport httpTransport = httpTransportFactory.create();
     final HttpRequestInitializer baseRequestInitializer =
-        authCredentials().httpRequestInitializer(httpTransport, scopes());
+        new HttpCredentialsAdapter(authCredentials().credentials().createScoped(scopes()));
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
