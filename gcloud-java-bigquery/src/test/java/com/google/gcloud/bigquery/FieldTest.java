@@ -22,30 +22,31 @@ import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 
-public class FieldSchemaTest {
+public class FieldTest {
 
   private static final String FIELD_NAME1 = "StringField";
   private static final String FIELD_NAME2 = "IntegerField";
   private static final String FIELD_NAME3 = "RecordField";
-  private static final FieldSchema.Type FIELD_TYPE1 = FieldSchema.Type.STRING;
-  private static final FieldSchema.Type FIELD_TYPE2 = FieldSchema.Type.INTEGER;
-  private static final FieldSchema.Type FIELD_TYPE3 = FieldSchema.Type.RECORD;
-  private static final FieldSchema.Mode FIELD_MODE1 = FieldSchema.Mode.NULLABLE;
-  private static final FieldSchema.Mode FIELD_MODE2 = FieldSchema.Mode.REPEATED;
-  private static final FieldSchema.Mode FIELD_MODE3 = FieldSchema.Mode.REQUIRED;
+  private static final Field.Type FIELD_TYPE1 = Field.Type.string();
+  private static final Field.Type FIELD_TYPE2 = Field.Type.integer();
+  private static final Field.Mode FIELD_MODE1 = Field.Mode.NULLABLE;
+  private static final Field.Mode FIELD_MODE2 = Field.Mode.REPEATED;
+  private static final Field.Mode FIELD_MODE3 = Field.Mode.REQUIRED;
   private static final String FIELD_DESCRIPTION1 = "FieldDescription1";
   private static final String FIELD_DESCRIPTION2 = "FieldDescription2";
   private static final String FIELD_DESCRIPTION3 = "FieldDescription3";
-  private static final FieldSchema FIELD_SCHEMA1 = FieldSchema.builder(FIELD_NAME1, FIELD_TYPE1)
+  private static final Field FIELD_SCHEMA1 = Field.builder(FIELD_NAME1, FIELD_TYPE1)
       .mode(FIELD_MODE1)
       .description(FIELD_DESCRIPTION1)
       .build();
-  private static final FieldSchema FIELD_SCHEMA2 = FieldSchema.builder(FIELD_NAME2, FIELD_TYPE2)
+  private static final Field FIELD_SCHEMA2 = Field.builder(FIELD_NAME2, FIELD_TYPE2)
       .mode(FIELD_MODE2)
       .description(FIELD_DESCRIPTION2)
       .build();
-  private static final FieldSchema FIELD_SCHEMA3 = FieldSchema
-      .builder(FIELD_NAME3, ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2))
+  private static final Field.Type FIELD_TYPE3 =
+      Field.Type.record(ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2));
+  private static final Field FIELD_SCHEMA3 = Field
+      .builder(FIELD_NAME3, FIELD_TYPE3)
       .mode(FIELD_MODE3)
       .description(FIELD_DESCRIPTION3)
       .build();
@@ -55,20 +56,20 @@ public class FieldSchemaTest {
     compareFieldSchemas(FIELD_SCHEMA1, FIELD_SCHEMA1.toBuilder().build());
     compareFieldSchemas(FIELD_SCHEMA2, FIELD_SCHEMA2.toBuilder().build());
     compareFieldSchemas(FIELD_SCHEMA3, FIELD_SCHEMA3.toBuilder().build());
-    FieldSchema fieldSchema = FIELD_SCHEMA1.toBuilder()
+    Field field = FIELD_SCHEMA1.toBuilder()
         .description("New Description")
         .build();
-    assertEquals("New Description", fieldSchema.description());
-    fieldSchema = fieldSchema.toBuilder().description(FIELD_DESCRIPTION1).build();
-    compareFieldSchemas(FIELD_SCHEMA1, fieldSchema);
+    assertEquals("New Description", field.description());
+    field = field.toBuilder().description(FIELD_DESCRIPTION1).build();
+    compareFieldSchemas(FIELD_SCHEMA1, field);
   }
 
   @Test
   public void testToBuilderIncomplete() {
-    FieldSchema fieldSchema = FieldSchema.of(FIELD_NAME1, FIELD_TYPE1);
-    compareFieldSchemas(fieldSchema, fieldSchema.toBuilder().build());
-    fieldSchema = FieldSchema.of(FIELD_NAME2, ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2));
-    compareFieldSchemas(fieldSchema, fieldSchema.toBuilder().build());
+    Field field = Field.of(FIELD_NAME1, FIELD_TYPE1);
+    compareFieldSchemas(field, field.toBuilder().build());
+    field = Field.of(FIELD_NAME2, FIELD_TYPE3);
+    compareFieldSchemas(field, field.toBuilder().build());
   }
 
   @Test
@@ -87,14 +88,14 @@ public class FieldSchemaTest {
 
   @Test
   public void testToAndFromPb() {
-    compareFieldSchemas(FIELD_SCHEMA1, FieldSchema.fromPb(FIELD_SCHEMA1.toPb()));
-    compareFieldSchemas(FIELD_SCHEMA2, FieldSchema.fromPb(FIELD_SCHEMA2.toPb()));
-    compareFieldSchemas(FIELD_SCHEMA3, FieldSchema.fromPb(FIELD_SCHEMA3.toPb()));
-    FieldSchema fieldSchema = FieldSchema.builder(FIELD_NAME1, FIELD_TYPE1).build();
-    compareFieldSchemas(fieldSchema, FieldSchema.fromPb(fieldSchema.toPb()));
+    compareFieldSchemas(FIELD_SCHEMA1, Field.fromPb(FIELD_SCHEMA1.toPb()));
+    compareFieldSchemas(FIELD_SCHEMA2, Field.fromPb(FIELD_SCHEMA2.toPb()));
+    compareFieldSchemas(FIELD_SCHEMA3, Field.fromPb(FIELD_SCHEMA3.toPb()));
+    Field field = Field.builder(FIELD_NAME1, FIELD_TYPE1).build();
+    compareFieldSchemas(field, Field.fromPb(field.toPb()));
   }
 
-  private void compareFieldSchemas(FieldSchema expected, FieldSchema value) {
+  private void compareFieldSchemas(Field expected, Field value) {
     assertEquals(expected, value);
     assertEquals(expected.name(), value.name());
     assertEquals(expected.type(), value.type());

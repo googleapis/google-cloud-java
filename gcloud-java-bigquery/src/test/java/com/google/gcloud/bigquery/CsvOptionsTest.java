@@ -20,11 +20,14 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+
 public class CsvOptionsTest {
 
   private static final Boolean ALLOW_JAGGED_ROWS = true;
   private static final Boolean ALLOW_QUOTED_NEWLINE = true;
-  private static final String ENCODING = "UTF_8";
+  private static final Charset ENCODING = StandardCharsets.UTF_8;
   private static final String FIELD_DELIMITER = ",";
   private static final String QUOTE = "\"";
   private static final Integer SKIP_LEADING_ROWS = 42;
@@ -58,7 +61,7 @@ public class CsvOptionsTest {
   public void testBuilder() {
     assertEquals(ALLOW_JAGGED_ROWS, CSV_OPTIONS.allowJaggedRows());
     assertEquals(ALLOW_QUOTED_NEWLINE, CSV_OPTIONS.allowQuotedNewLines());
-    assertEquals(ENCODING, CSV_OPTIONS.encoding());
+    assertEquals(ENCODING.name(), CSV_OPTIONS.encoding());
     assertEquals(FIELD_DELIMITER, CSV_OPTIONS.fieldDelimiter());
     assertEquals(QUOTE, CSV_OPTIONS.quote());
     assertEquals(SKIP_LEADING_ROWS, CSV_OPTIONS.skipLeadingRows());

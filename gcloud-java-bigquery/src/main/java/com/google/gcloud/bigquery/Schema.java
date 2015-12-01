@@ -31,39 +31,39 @@ import java.util.Objects;
 /**
  * This class represents the schema for a Google BigQuery Table or data source.
  */
-public class TableSchema implements Serializable {
+public class Schema implements Serializable {
 
-  static final Function<com.google.api.services.bigquery.model.TableSchema, TableSchema>
+  static final Function<com.google.api.services.bigquery.model.TableSchema, Schema>
       FROM_PB_FUNCTION = new Function<com.google.api.services.bigquery.model.TableSchema,
-          TableSchema>() {
+          Schema>() {
             @Override
-            public TableSchema apply(com.google.api.services.bigquery.model.TableSchema pb) {
-              return TableSchema.fromPb(pb);
+            public Schema apply(com.google.api.services.bigquery.model.TableSchema pb) {
+              return Schema.fromPb(pb);
             }
           };
-  static final Function<TableSchema, com.google.api.services.bigquery.model.TableSchema>
-      TO_PB_FUNCTION = new Function<TableSchema,
+  static final Function<Schema, com.google.api.services.bigquery.model.TableSchema>
+      TO_PB_FUNCTION = new Function<Schema,
           com.google.api.services.bigquery.model.TableSchema>() {
             @Override
-            public com.google.api.services.bigquery.model.TableSchema apply(TableSchema schema) {
+            public com.google.api.services.bigquery.model.TableSchema apply(Schema schema) {
               return schema.toPb();
             }
           };
 
   private static final long serialVersionUID = 2007400596384553696L;
 
-  private final List<FieldSchema> fields;
+  private final List<Field> fields;
 
   public static final class Builder {
 
-    private List<FieldSchema> fields;
+    private List<Field> fields;
 
     private Builder() {}
 
     /**
      * Adds a field's schema to the table's schema.
      */
-    public Builder addField(FieldSchema field) {
+    public Builder addField(Field field) {
       if (fields == null) {
         fields = Lists.newArrayList();
       }
@@ -74,38 +74,44 @@ public class TableSchema implements Serializable {
     /**
      * Sets table's schema fields.
      */
-    public Builder fields(Iterable<FieldSchema> fields) {
+    public Builder fields(Iterable<Field> fields) {
       this.fields = Lists.newArrayList(checkNotNull(fields));
       return this;
     }
 
     /**
-     * Creates an {@code TableSchema} object.
+     * Sets table's schema fields.
      */
-    public TableSchema build() {
-      return new TableSchema(this);
+    public Builder fields(Field... fields) {
+      this.fields = Lists.newArrayList(fields);
+      return this;
+    }
+
+    /**
+     * Creates an {@code Schema} object.
+     */
+    public Schema build() {
+      return new Schema(this);
     }
   }
 
-  private TableSchema(Builder builder) {
+  private Schema(Builder builder) {
     this.fields = builder.fields != null ? ImmutableList.copyOf(builder.fields) :
-        ImmutableList.<FieldSchema>of();
+        ImmutableList.<Field>of();
   }
 
   /**
    * Returns the fields in the current table schema.
    */
-  public List<FieldSchema> fields() {
+  public List<Field> fields() {
     return fields;
   }
 
   /**
-   * Returns a builder for the {@code TableSchema} object.
+   * Returns a builder for the {@code Schema} object.
    */
   public Builder toBuilder() {
-    Builder builder = new Builder();
-    builder.fields(fields);
-    return builder;
+    return builder().fields(fields);
   }
 
   @Override
@@ -122,14 +128,14 @@ public class TableSchema implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof TableSchema && Objects.equals(toPb(), ((TableSchema) obj).toPb());
+    return obj instanceof Schema && Objects.equals(toPb(), ((Schema) obj).toPb());
   }
 
   com.google.api.services.bigquery.model.TableSchema toPb() {
     com.google.api.services.bigquery.model.TableSchema tableSchemaPb =
         new com.google.api.services.bigquery.model.TableSchema();
     if (fields != null) {
-      List<TableFieldSchema> fieldsPb = Lists.transform(fields, FieldSchema.TO_PB_FUNCTION);
+      List<TableFieldSchema> fieldsPb = Lists.transform(fields, Field.TO_PB_FUNCTION);
       tableSchemaPb.setFields(fieldsPb);
     }
     return tableSchemaPb;
@@ -139,13 +145,16 @@ public class TableSchema implements Serializable {
     return new Builder();
   }
 
-  public static TableSchema of(Iterable<FieldSchema> fields) {
+  public static Schema of(Iterable<Field> fields) {
     checkNotNull(fields);
     return builder().fields(fields).build();
   }
 
-  static TableSchema fromPb(com.google.api.services.bigquery.model.TableSchema tableSchemaPb) {
-    Builder schemaBuilder = new Builder();
-    return TableSchema.of(Lists.transform(tableSchemaPb.getFields(), FieldSchema.FROM_PB_FUNCTION));
+  public static Schema of(Field... fields) {
+    return builder().fields(fields).build();
+  }
+
+  static Schema fromPb(com.google.api.services.bigquery.model.TableSchema tableSchemaPb) {
+    return Schema.of(Lists.transform(tableSchemaPb.getFields(), Field.FROM_PB_FUNCTION));
   }
 }

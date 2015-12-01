@@ -31,6 +31,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class SerializationTest {
@@ -70,29 +71,27 @@ public class SerializationTest {
   private static final CsvOptions CSV_OPTIONS = CsvOptions.builder()
       .allowJaggedRows(true)
       .allowQuotedNewLines(false)
-      .encoding("CSV")
+      .encoding(StandardCharsets.ISO_8859_1)
       .fieldDelimiter(",")
       .quote("\"")
       .skipLeadingRows(42)
       .build();
-  private static final FieldSchema FIELD_SCHEMA1 =
-      FieldSchema.builder("StringField", FieldSchema.Type.STRING)
-          .mode(FieldSchema.Mode.NULLABLE)
+  private static final Field FIELD_SCHEMA1 =
+      Field.builder("StringField", Field.Type.string())
+          .mode(Field.Mode.NULLABLE)
           .description("FieldDescription1")
           .build();
-  private static final FieldSchema FIELD_SCHEMA2 =
-      FieldSchema.builder("IntegerField", FieldSchema.Type.INTEGER)
-          .mode(FieldSchema.Mode.REPEATED)
+  private static final Field FIELD_SCHEMA2 =
+      Field.builder("IntegerField", Field.Type.integer())
+          .mode(Field.Mode.REPEATED)
           .description("FieldDescription2")
           .build();
-  private static final FieldSchema FIELD_SCHEMA3 =
-      FieldSchema.builder("RecordField", ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2))
-          .mode(FieldSchema.Mode.REQUIRED)
+  private static final Field FIELD_SCHEMA3 =
+      Field.builder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .mode(Field.Mode.REQUIRED)
           .description("FieldDescription3")
           .build();
-  private static final List<FieldSchema> FIELDS = ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2,
-      FIELD_SCHEMA3);
-  private static final TableSchema TABLE_SCHEMA = TableSchema.of(FIELDS);
+  private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final TableInfo.StreamingBuffer STREAMING_BUFFER =
       new TableInfo.StreamingBuffer(1L, 2L, 3L);
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");

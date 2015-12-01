@@ -34,10 +34,9 @@ import java.util.Objects;
 
 /**
  * Google BigQuery Table information. A BigQuery table is a standard, two-dimensional table with
- * individual records organized in rows, and a data type assigned to each column
- * (also called a field). Individual fields within a record may contain nested and repeated children
- * fields. Every table is described by a schema that describes field names, types, and other
- * information.
+ * individual records organized in rows, and a data type assigned to each column (also called a
+ * field). Individual fields within a record may contain nested and repeated children fields. Every
+ * table is described by a schema that describes field names, types, and other information.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
  */
@@ -162,7 +161,7 @@ public class TableInfo implements Serializable {
   private final TableId tableId;
   private final String friendlyName;
   private final String description;
-  private final TableSchema schema;
+  private final Schema schema;
   private final Long numBytes;
   private final Long numRows;
   private final Long creationTime;
@@ -183,7 +182,7 @@ public class TableInfo implements Serializable {
     private TableId tableId;
     private String friendlyName;
     private String description;
-    private TableSchema schema;
+    private Schema schema;
     private Long numBytes;
     private Long numRows;
     private Long creationTime;
@@ -295,7 +294,7 @@ public class TableInfo implements Serializable {
      * Sets the table's schema. Providing a schema is not necessary when {@link #viewQuery} is
      * provided.
      */
-    public Builder schema(TableSchema schema) {
+    public Builder schema(Schema schema) {
       this.schema = schema;
       return this;
     }
@@ -348,16 +347,15 @@ public class TableInfo implements Serializable {
      * Creates a {@code TableInfo} object.
      */
     public TableInfo build() {
-      checkNotNull(tableId);
       return new TableInfo(this);
     }
   }
 
   private TableInfo(Builder builder) {
+    this.tableId = checkNotNull(builder.tableId);
     this.etag = builder.etag;
     this.id = builder.id;
     this.selfLink = builder.selfLink;
-    this.tableId = builder.tableId;
     this.friendlyName = builder.friendlyName;
     this.description = builder.description;
     this.schema = builder.schema;
@@ -420,7 +418,7 @@ public class TableInfo implements Serializable {
   /**
    * Returns the table's schema.
    */
-  public TableSchema schema() {
+  public Schema schema() {
     return schema;
   }
 
@@ -637,7 +635,7 @@ public class TableInfo implements Serializable {
    * @param tableId table id
    * @param schema table's schema definition
    */
-  public static Builder builder(TableId tableId, TableSchema schema) {
+  public static Builder builder(TableId tableId, Schema schema) {
     return new Builder().tableId(tableId).schema(schema);
   }
 
@@ -678,7 +676,7 @@ public class TableInfo implements Serializable {
    * @param tableId table id
    * @param schema table's schema definition
    */
-  public static TableInfo of(TableId tableId, TableSchema schema) {
+  public static TableInfo of(TableId tableId, Schema schema) {
     return builder(tableId, schema).build();
   }
 
@@ -707,7 +705,7 @@ public class TableInfo implements Serializable {
       builder.numRows(tablePb.getNumRows().longValue());
     }
     if (tablePb.getSchema() != null) {
-      builder.schema(TableSchema.fromPb(tablePb.getSchema()));
+      builder.schema(Schema.fromPb(tablePb.getSchema()));
     }
     if (tablePb.getStreamingBuffer() != null) {
       builder.streamingBuffer(StreamingBuffer.fromPb(tablePb.getStreamingBuffer()));

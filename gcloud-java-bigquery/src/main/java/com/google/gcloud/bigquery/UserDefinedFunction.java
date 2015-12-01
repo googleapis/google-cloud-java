@@ -71,10 +71,7 @@ public abstract class UserDefinedFunction implements Serializable {
 
     private static final long serialVersionUID = 1083672109192091686L;
 
-    /**
-     * Creates a Google Cloud BigQuery user-defined function given a code blob.
-     */
-    public InlineFunction(String inlineCode) {
+    InlineFunction(String inlineCode) {
       super(Type.INLINE, inlineCode);
     }
 
@@ -97,11 +94,7 @@ public abstract class UserDefinedFunction implements Serializable {
 
     private static final long serialVersionUID = 4660331691852223839L;
 
-    /**
-     * Creates a Google Cloud BigQuery user-defined function given a Google Cloud Storage URI (e.g.
-     * gs://bucket/path).
-     */
-    public UriFunction(String functionUri) {
+    UriFunction(String functionUri) {
       super(Type.FROM_URI, functionUri);
     }
 

@@ -27,24 +27,22 @@ import java.util.List;
 
 public class TableInfoTest {
 
-  private static final FieldSchema FIELD_SCHEMA1 =
-      FieldSchema.builder("StringField", FieldSchema.Type.STRING)
-          .mode(FieldSchema.Mode.NULLABLE)
+  private static final Field FIELD_SCHEMA1 =
+      Field.builder("StringField", Field.Type.string())
+          .mode(Field.Mode.NULLABLE)
           .description("FieldDescription1")
           .build();
-  private static final FieldSchema FIELD_SCHEMA2 =
-      FieldSchema.builder("IntegerField", FieldSchema.Type.INTEGER)
-          .mode(FieldSchema.Mode.REPEATED)
+  private static final Field FIELD_SCHEMA2 =
+      Field.builder("IntegerField", Field.Type.integer())
+          .mode(Field.Mode.REPEATED)
           .description("FieldDescription2")
           .build();
-  private static final FieldSchema FIELD_SCHEMA3 =
-      FieldSchema.builder("RecordField", ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2))
-          .mode(FieldSchema.Mode.REQUIRED)
+  private static final Field FIELD_SCHEMA3 =
+      Field.builder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .mode(Field.Mode.REQUIRED)
           .description("FieldDescription3")
           .build();
-  private static final List<FieldSchema> FIELDS = ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2,
-      FIELD_SCHEMA3);
-  private static final TableSchema TABLE_SCHEMA = TableSchema.of(FIELDS);
+  private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final String VIEW_QUERY = "VIEW QUERY";
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final String SOURCE_FORMAT = "CSV";
@@ -72,8 +70,6 @@ public class TableInfoTest {
   private static final Long LAST_MODIFIED_TIME = 20L;
   private static final String LOCATION = "US";
   private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
-  private static List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
-      UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, TABLE_SCHEMA)
       .creationTime(CREATION_TIME)
       .description(DESCRIPTION)
@@ -104,6 +100,8 @@ public class TableInfoTest {
       .streamingBuffer(STREAMING_BUFFER)
       .type(TableInfo.Type.TABLE)
       .build();
+  private static List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
+      UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final TableInfo VIEW_INFO =
       TableInfo.builder(TABLE_ID, VIEW_QUERY, USER_DEFINED_FUNCTIONS)
           .creationTime(CREATION_TIME)

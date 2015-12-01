@@ -62,7 +62,7 @@ public class ExternalDataConfiguration implements Serializable {
   private static final long serialVersionUID = -8004288831035566549L;
 
   private final List<String> sourceUris;
-  private final TableSchema schema;
+  private final Schema schema;
   private final String sourceFormat;
   private final Integer maxBadRecords;
   private final Boolean ignoreUnknownValues;
@@ -72,7 +72,7 @@ public class ExternalDataConfiguration implements Serializable {
   public static final class Builder {
 
     private List<String> sourceUris;
-    private TableSchema schema;
+    private Schema schema;
     private String sourceFormat;
     private Integer maxBadRecords;
     private Boolean ignoreUnknownValues;
@@ -97,13 +97,15 @@ public class ExternalDataConfiguration implements Serializable {
     /**
      * Sets the schema for the external data.
      */
-    public Builder schema(TableSchema schema) {
+    public Builder schema(Schema schema) {
       this.schema = checkNotNull(schema);
       return this;
     }
 
     /**
-     * Sets the source format of the external data.
+     * Sets the source format of the external data. Supported values are {@code CSV} for CSV files,
+     * and {@code NEWLINE_DELIMITED_JSON} for newline-delimited JSON. If not set, files are assumed
+     * to be in CSV format.
      *
      * <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
      *     Source Format</a>
@@ -212,7 +214,7 @@ public class ExternalDataConfiguration implements Serializable {
   /**
    * Returns the schema for the external data.
    */
-  public TableSchema schema() {
+  public Schema schema() {
     return schema;
   }
 
@@ -327,7 +329,7 @@ public class ExternalDataConfiguration implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static Builder builder(List<String> sourceUris, TableSchema schema, String format) {
+  public static Builder builder(List<String> sourceUris, Schema schema, String format) {
     return new Builder().sourceUris(sourceUris).schema(schema).sourceFormat(format);
   }
 
@@ -345,7 +347,7 @@ public class ExternalDataConfiguration implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static Builder builder(String sourceUri, TableSchema schema, String format) {
+  public static Builder builder(String sourceUri, Schema schema, String format) {
     return new Builder()
         .sourceUris(ImmutableList.of(sourceUri))
         .schema(schema)
@@ -368,7 +370,7 @@ public class ExternalDataConfiguration implements Serializable {
    *     Source Format</a>
    */
   public static ExternalDataConfiguration of(
-      List<String> sourceUris, TableSchema schema, String format) {
+      List<String> sourceUris, Schema schema, String format) {
     return builder(sourceUris, schema, format).build();
   }
 
@@ -386,7 +388,7 @@ public class ExternalDataConfiguration implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static ExternalDataConfiguration of(String sourceUri, TableSchema schema, String format) {
+  public static ExternalDataConfiguration of(String sourceUri, Schema schema, String format) {
     return builder(sourceUri, schema, format).build();
   }
 
@@ -397,7 +399,7 @@ public class ExternalDataConfiguration implements Serializable {
       builder.sourceUris(externalDataConfiguration.getSourceUris());
     }
     if (externalDataConfiguration.getSchema() != null) {
-      builder.schema(TableSchema.fromPb(externalDataConfiguration.getSchema()));
+      builder.schema(Schema.fromPb(externalDataConfiguration.getSchema()));
     }
     if (externalDataConfiguration.getSourceFormat() != null) {
       builder.sourceFormat(externalDataConfiguration.getSourceFormat());
