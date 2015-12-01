@@ -31,6 +31,8 @@ import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_N
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.services.storage.model.StorageObject;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.common.base.Function;
 import com.google.common.base.Functions;
 import com.google.common.collect.ImmutableList;
@@ -38,19 +40,17 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
 import com.google.gcloud.AuthCredentials;
-import com.google.gcloud.AuthCredentials.ApplicationDefaultAuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
-import com.google.gcloud.PageImpl;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
-import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.Page;
+import com.google.gcloud.PageImpl;
+import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.RewriteResponse;
 import com.google.gcloud.spi.StorageRpc.Tuple;
@@ -71,7 +71,6 @@ import java.util.Collections;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
@@ -566,15 +565,13 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     ServiceAccountAuthCredentials cred =
         (ServiceAccountAuthCredentials) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
     if (cred == null) {
-      AuthCredentials serviceCred = this.options().authCredentials();
-      if (serviceCred instanceof ServiceAccountAuthCredentials) {
-        cred = (ServiceAccountAuthCredentials) serviceCred;
-      } else {
-        if (serviceCred instanceof ApplicationDefaultAuthCredentials) {
-          cred = ((ApplicationDefaultAuthCredentials) serviceCred).toServiceAccountCredentials();
-        }
-      }
-      checkArgument(cred != null, "Signing key was not provided and could not be derived");
+      AuthCredentials authCredentials = this.options().authCredentials();
+      GoogleCredentials serviceCred =
+          authCredentials != null ? authCredentials.credentials() : null;
+      checkArgument(
+          serviceCred instanceof ServiceAccountCredentials,
+          "Signing key was not provided and could not be derived");
+      cred = (ServiceAccountAuthCredentials) authCredentials;
     }
     // construct signature - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
     StringBuilder stBuilder = new StringBuilder();
