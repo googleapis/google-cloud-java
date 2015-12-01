@@ -562,16 +562,18 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     for (SignUrlOption option : options) {
       optionMap.put(option.option(), option.value());
     }
-    ServiceAccountAuthCredentials cred =
+    ServiceAccountAuthCredentials serviceAccountAuthCred =
         (ServiceAccountAuthCredentials) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
-    if (cred == null) {
-      AuthCredentials authCredentials = this.options().authCredentials();
+    ServiceAccountCredentials cred = (ServiceAccountCredentials) (serviceAccountAuthCred != null
+        ? serviceAccountAuthCred.credentials() : null);
+    if (serviceAccountAuthCred == null) {
+      AuthCredentials authCred = this.options().authCredentials();
       GoogleCredentials serviceCred =
-          authCredentials != null ? authCredentials.credentials() : null;
+          authCred != null ? authCred.credentials() : null;
       checkArgument(
           serviceCred instanceof ServiceAccountCredentials,
           "Signing key was not provided and could not be derived");
-      cred = (ServiceAccountAuthCredentials) authCredentials;
+      cred = (ServiceAccountCredentials) serviceCred;
     }
     // construct signature - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
     StringBuilder stBuilder = new StringBuilder();
@@ -607,12 +609,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     stBuilder.append(path);
     try {
       Signature signer = Signature.getInstance("SHA256withRSA");
-      signer.initSign(cred.privateKey());
+      signer.initSign(cred.getPrivateKey());
       signer.update(stBuilder.toString().getBytes(UTF_8));
       String signature =
           URLEncoder.encode(BaseEncoding.base64().encode(signer.sign()), UTF_8.name());
       stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
-      stBuilder.append("?GoogleAccessId=").append(cred.account());
+      stBuilder.append("?GoogleAccessId=").append(cred.getClientEmail());
       stBuilder.append("&Expires=").append(expiration);
       stBuilder.append("&Signature=").append(signature);
       return new URL(stBuilder.toString());
