@@ -46,7 +46,6 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
       private final Method getAccessToken;
       private final Method getAccessTokenResult;
       private final Collection<String> scopes;
-      private final boolean scopesRequired;
 
       AppEngineCredentials() {
         try {
@@ -61,19 +60,16 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
           this.getAccessTokenResult = serviceClass.getMethod("getAccessToken", Iterable.class);
           this.getAccessToken = tokenResultClass.getMethod("getAccessToken");
           this.scopes = null;
-          this.scopesRequired = true;
         } catch (Exception e) {
-          throw new RuntimeException("Could not create AppEngineCredentials using reflection.");
+          throw new RuntimeException("Could not create AppEngineCredentials.", e);
         }
       }
 
-      AppEngineCredentials(Collection<String> scopes, Object appIdentityService,
-          Method getAccessToken, Method getAccessTokenResult) {
-        this.appIdentityService = appIdentityService;
-        this.getAccessToken = getAccessToken;
-        this.getAccessTokenResult = getAccessTokenResult;
+      AppEngineCredentials(Collection<String> scopes, AppEngineCredentials unscoped) {
+        this.appIdentityService = unscoped.appIdentityService;
+        this.getAccessToken = unscoped.getAccessToken;
+        this.getAccessTokenResult = unscoped.getAccessTokenResult;
         this.scopes = scopes;
-        this.scopesRequired = (scopes == null || scopes.isEmpty());
       }
 
       /**
@@ -89,19 +85,18 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
           String accessToken = (String) getAccessToken.invoke(accessTokenResult);
           return new AccessToken(accessToken, null);
         } catch (Exception e) {
-          throw new RuntimeException("Could not get the access token using reflection.");
+          throw new IOException("Could not get the access token.", e);
         }
       }
 
       @Override
       public boolean createScopedRequired() {
-        return scopesRequired;
+        return scopes == null || scopes.isEmpty();
       }
 
       @Override
       public GoogleCredentials createScoped(Collection<String> scopes) {
-        return new AppEngineCredentials(
-            scopes, appIdentityService, getAccessToken, getAccessTokenResult);
+        return new AppEngineCredentials(scopes, this);
       }
     }
 
@@ -308,6 +303,7 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
           tempServiceAccountCredentials.getClientEmail(),
           tempServiceAccountCredentials.getPrivateKey());
     }
-    throw new IOException("The given JSON Credentials Stream is not a service account credential.");
+    throw new IOException(
+        "The given JSON Credentials Stream is not for a service account credential.");
   }
 }
