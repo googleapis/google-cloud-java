@@ -83,7 +83,7 @@ public class SerializationTest {
     options = options.toBuilder()
         .projectId("p2")
         .retryParams(RetryParams.defaultInstance())
-        .authCredentials(AuthCredentials.noCredentials())
+        .authCredentials(null)
         .pathDelimiter(":")
         .build();
     serializedCopy = serializeAndDeserialize(options);
@@ -111,7 +111,6 @@ public class SerializationTest {
     StorageOptions options = StorageOptions.builder()
         .projectId("p2")
         .retryParams(RetryParams.defaultInstance())
-        .authCredentials(AuthCredentials.noCredentials())
         .build();
     BlobReadChannel reader =
         new BlobReadChannelImpl(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
@@ -127,7 +126,6 @@ public class SerializationTest {
     StorageOptions options = StorageOptions.builder()
         .projectId("p2")
         .retryParams(RetryParams.defaultInstance())
-        .authCredentials(AuthCredentials.noCredentials())
         .build();
     BlobWriteChannelImpl writer = new BlobWriteChannelImpl(
         options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");

@@ -31,11 +31,10 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
 import com.google.common.io.BaseEncoding;
-import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
+import com.google.gcloud.Page;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.Page;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.spi.StorageRpcFactory;
@@ -260,7 +259,6 @@ public class StorageImplTest {
     EasyMock.replay(rpcFactoryMock);
     options = StorageOptions.builder()
         .projectId("projectId")
-        .authCredentials(AuthCredentials.noCredentials())
         .clock(TIME_SOURCE)
         .serviceRpcFactory(rpcFactoryMock)
         .build();
