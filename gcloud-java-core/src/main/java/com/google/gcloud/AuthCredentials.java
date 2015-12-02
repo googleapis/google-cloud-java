@@ -177,7 +177,7 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
 
     @Override
-    public GoogleCredentials credentials() {
+    public ServiceAccountCredentials credentials() {
       return new ServiceAccountCredentials(null, account, privateKey, null, null);
     }
 

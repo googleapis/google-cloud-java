@@ -562,8 +562,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
     ServiceAccountAuthCredentials authCred =
         (ServiceAccountAuthCredentials) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
-    ServiceAccountCredentials cred =
-        (ServiceAccountCredentials) (authCred != null ? authCred.credentials() : null);
+    ServiceAccountCredentials cred = authCred != null ? authCred.credentials() : null;
     if (authCred == null) {
       checkArgument(
           this.options().authCredentials() != null
