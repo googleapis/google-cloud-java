@@ -65,5 +65,51 @@ Here is an example that clears the bucket created in Step 3 with a timeout of 5 
   RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
   ```
 
+### Testing code that uses Resource Manager
+
+#### On your machine
+
+You can test against a temporary local Resource Manager by following these steps:
+
+1. Before running your testing code, start the Resource Manager emulator `LocalResourceManagerHelper`. This can be done as follows:
+
+  ```java
+  import com.google.gcloud.resourcemanager.testing.LocalResourceManagerHelper;
+
+  LocalResourceManagerHelper helper = LocalResourceManagerHelper.create();
+  helper.start();
+  ```
+
+  This will spawn a server thread that listens to `localhost` at an ephemeral port for Resource Manager requests.
+
+2. In your program, create and use a Resource Manager service object whose host is set host to `localhost` at the appropriate port.  For example:
+
+  ```java
+  ResourceManager resourceManager = ResourceManagerOptions.builder()
+      .host("http://localhost:" + helper.port()).build().service();
+  ```
+
+3. Run your tests.
+
+4. Stop the Resource Manager emulator.
+
+  ```java
+  helper.stop();
+  ```
+
+  This method will block a short amount of time until the server thread has been terminated.
+
+#### On a remote machine
+
+You can test against a remote Resource Manager emulator as well.  To do this, set the host to the hostname of the remote machine, like the example below.
+
+  ```java
+  ResourceManager resourceManager = ResourceManagerOptions.builder()
+      .host("http://<hostname of machine>:<port>").build();
+  ```
+
+Note that the remote Resource Manager emulator must be running before your tests are run.
+
+
 
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts

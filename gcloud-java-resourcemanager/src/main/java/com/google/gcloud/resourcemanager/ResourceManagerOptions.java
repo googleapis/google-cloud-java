@@ -18,6 +18,7 @@ package com.google.gcloud.resourcemanager;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
+import com.google.gcloud.spi.DefaultResourceManagerRpc;
 import com.google.gcloud.spi.ResourceManagerRpc;
 import com.google.gcloud.spi.ResourceManagerRpcFactory;
 
@@ -28,15 +29,17 @@ public class ResourceManagerOptions
 
   private static final long serialVersionUID = 538303101192527452L;
   private static final String GCRM_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
-  private static final Set<String> SCOPES = ImmutableSet.of(GCRM_SCOPE);
+  private static final String READ_ONLY_GCRM_SCOPE =
+      "https://www.googleapis.com/auth/cloud-platform.read-only";
+  private static final Set<String> SCOPES = ImmutableSet.of(GCRM_SCOPE, READ_ONLY_GCRM_SCOPE);
+  private static final String DEFAULT_HOST = "https://cloudresourcemanager.googleapis.com";
 
   public static class DefaultResourceManagerFactory implements ResourceManagerFactory {
     private static final ResourceManagerFactory INSTANCE = new DefaultResourceManagerFactory();
 
     @Override
     public ResourceManager create(ResourceManagerOptions options) {
-      // return new ResourceManagerImpl(options);
-      return null; // TODO(ajaykannan): Fix me!
+      return new ResourceManagerImpl(options);
     }
   }
 
@@ -53,9 +56,13 @@ public class ResourceManagerOptions
 
     @Override
     public ResourceManagerRpc create(ResourceManagerOptions options) {
-      // return new DefaultResourceManagerRpc(options);
-      return null; // TODO(ajaykannan): Fix me!
+      return new DefaultResourceManagerRpc(options);
     }
+  }
+
+  @Override
+  protected String defaultHost() {
+    return DEFAULT_HOST;
   }
 
   public static class Builder extends ServiceOptions.Builder<ResourceManager, ResourceManagerRpc,

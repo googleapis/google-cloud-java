@@ -31,7 +31,6 @@ import java.util.Objects;
 
 /**
  * A Google Cloud Resource Manager project metadata object.
- * 
  * A Project is a high-level Google Cloud Platform entity. It is a container for ACLs, APIs,
  * AppEngine Apps, VMs, and other Google Cloud Platform resources.
  */
@@ -324,7 +323,7 @@ public class ProjectInfo implements Serializable {
       projectPb.setLifecycleState(state.toString());
     }
     if (createTimeMillis != null) {
-      projectPb.setCreateTime(ISODateTimeFormat.dateTime().print(createTimeMillis));
+      projectPb.setCreateTime(ISODateTimeFormat.dateTime().withZoneUTC().print(createTimeMillis));
     }
     if (parent != null) {
       projectPb.setParent(parent.toPb());

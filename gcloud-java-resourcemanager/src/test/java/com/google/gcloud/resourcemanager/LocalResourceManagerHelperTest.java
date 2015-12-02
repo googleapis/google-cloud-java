@@ -19,7 +19,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class LocalResourceManagerHelperTest {
@@ -295,16 +294,21 @@ public class LocalResourceManagerHelperTest {
         COMPLETE_PROJECT.getProjectId(), "DELETE_REQUESTED");
     rpc.create(PROJECT_WITH_PARENT);
     projects = rpc.list(EMPTY_RPC_OPTIONS);
-    Iterator<com.google.api.services.cloudresourcemanager.model.Project> it =
-        projects.y().iterator();
-    compareReadWriteFields(COMPLETE_PROJECT, it.next());
-    compareReadWriteFields(PROJECT_WITH_PARENT, it.next());
+    for (com.google.api.services.cloudresourcemanager.model.Project p : projects.y()) {
+      if (p.getProjectId().equals(COMPLETE_PROJECT.getProjectId())) {
+        compareReadWriteFields(COMPLETE_PROJECT, p);
+      } else if (p.getProjectId().equals(PROJECT_WITH_PARENT.getProjectId())) {
+        compareReadWriteFields(PROJECT_WITH_PARENT, p);
+      } else {
+        fail("Unexpected project in list.");
+      }
+    }
   }
 
   @Test
   public void testListFieldOptions() {
     Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
-    rpcOptions.put(ResourceManagerRpc.Option.FIELDS, "projectId,name,labels");
+    rpcOptions.put(ResourceManagerRpc.Option.FIELDS, "projects(projectId,name,labels)");
     rpcOptions.put(ResourceManagerRpc.Option.PAGE_TOKEN, "somePageToken");
     rpcOptions.put(ResourceManagerRpc.Option.PAGE_SIZE, 1);
     rpc.create(PROJECT_WITH_PARENT);

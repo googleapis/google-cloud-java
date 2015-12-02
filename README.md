@@ -14,6 +14,7 @@ This client supports the following Google Cloud Platform services:
 
 -  [Google Cloud Datastore] (#google-cloud-datastore)
 -  [Google Cloud Storage] (#google-cloud-storage)
+-  [Google Cloud Resource Manager] (#google-cloud-resource-manager)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -182,6 +183,38 @@ if (blob == null) {
 }
 ```
 
+Google Cloud Resource Manager
+----------------------
+
+- [API Documentation][resourcemanager-api]
+- [Official Documentation][cloud-resourcemanager-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
+
+```java
+import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.resourcemanager.ProjectInfo;
+import com.google.gcloud.resourcemanager.ResourceManager;
+import com.google.gcloud.resourcemanager.ResourceManagerOptions;
+
+import java.util.Iterator;
+
+ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+ProjectInfo myProject = resourceManager.get("some-project-id-that-I-own");
+ProjectInfo newProjectInfo = resourceManager.replace(projectFromServer.toBuilder()
+    .labels(ImmutableMap.of("launch-status", "in-development")).build());
+System.out.println("Updated the labels of project " + newProjectInfo.projectId()
+    + " to be " + newProjectInfo.labels() +  System.lineSeparator());
+// List all the projects you have permission to view.
+Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();
+System.out.println("Projects I can view:");
+while (projectIterator.hasNext()) {
+  System.out.println(projectIterator.next().projectId());
+}
+```
+
 Troubleshooting
 ---------------
 
@@ -241,3 +274,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
 [cloud-storage-activation]: https://cloud.google.com/storage/docs/signup
 [storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/storage/package-summary.html
+
+[resourcemanager-api]:http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/resourcemanager/package-summary.html
+[cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/
