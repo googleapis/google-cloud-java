@@ -19,7 +19,7 @@ Go to the [releases page](https://github.com/GoogleCloudPlatform/gcloud-java/rel
   git --no-pager log v0.0.12..v0.1.0 --pretty=oneline --abbrev-commit --no-merges
   ```
 
-  Ensure that the format is consistent with previous releases (for an example, see the [0.1.0 release](https://github.com/GoogleCloudPlatform/gcloud-java/releases/tag/v0.1.0)).  After adding any missing updates and reformatting as necessary, publish the "draft".
+  Ensure that the format is consistent with previous releases (for an example, see the [0.1.0 release](https://github.com/GoogleCloudPlatform/gcloud-java/releases/tag/v0.1.0)).  After adding any missing updates and reformatting as necessary, publish the draft.  Finally, create a new draft for the next release.
 
 5. Run `utilities/update_pom_version.sh` again (to include "-SNAPSHOT" in the project version).
 As mentioned before, there is an optional version argument.  By default, the script will update the version from "X.Y.Z" to "X.Y.Z+1-SNAPSHOT".  Suppose a different version is desired, for example X+1.0.0-SNAPSHOT.  Then the appropriate command to run would be `utilities/update_pom_version.sh X+1.0.0-SNAPSHOT`.
