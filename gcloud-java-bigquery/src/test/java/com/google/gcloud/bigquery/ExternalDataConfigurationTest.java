@@ -49,9 +49,8 @@ public class ExternalDataConfigurationTest {
   private static final String COMPRESSION = "GZIP";
   private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
   private static final ExternalDataConfiguration CONFIGURATION = ExternalDataConfiguration
-      .builder(SOURCE_URIS, TABLE_SCHEMA, SOURCE_FORMAT)
+      .builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
       .compression(COMPRESSION)
-      .csvOptions(CSV_OPTIONS)
       .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
       .maxBadRecords(MAX_BAD_RECORDS)
       .build();
@@ -70,7 +69,7 @@ public class ExternalDataConfigurationTest {
   @Test
   public void testToBuilderIncomplete() {
     ExternalDataConfiguration configuration =
-        ExternalDataConfiguration.of(SOURCE_URIS, TABLE_SCHEMA, SOURCE_FORMAT);
+        ExternalDataConfiguration.of(SOURCE_URIS, TABLE_SCHEMA, FormatOptions.json());
     assertEquals(configuration, configuration.toBuilder().build());
   }
 
@@ -81,7 +80,7 @@ public class ExternalDataConfigurationTest {
     assertEquals(IGNORE_UNKNOWN_VALUES, CONFIGURATION.ignoreUnknownValues());
     assertEquals(MAX_BAD_RECORDS, CONFIGURATION.maxBadRecords());
     assertEquals(TABLE_SCHEMA, CONFIGURATION.schema());
-    assertEquals(SOURCE_FORMAT, CONFIGURATION.sourceFormat());
+    assertEquals(SOURCE_FORMAT, CONFIGURATION.format());
     assertEquals(SOURCE_URIS, CONFIGURATION.sourceUris());
   }
 
@@ -89,7 +88,7 @@ public class ExternalDataConfigurationTest {
   public void testToAndFromPb() {
     compareConfiguration(CONFIGURATION, ExternalDataConfiguration.fromPb(CONFIGURATION.toPb()));
     ExternalDataConfiguration configuration =
-        ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, SOURCE_FORMAT).build();
+        ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS).build();
     compareConfiguration(configuration, ExternalDataConfiguration.fromPb(configuration.toPb()));
   }
 
@@ -101,7 +100,7 @@ public class ExternalDataConfigurationTest {
     assertEquals(expected.ignoreUnknownValues(), value.ignoreUnknownValues());
     assertEquals(expected.maxBadRecords(), value.maxBadRecords());
     assertEquals(expected.schema(), value.schema());
-    assertEquals(expected.sourceFormat(), value.sourceFormat());
+    assertEquals(expected.format(), value.format());
     assertEquals(expected.sourceUris(), value.sourceUris());
   }
 }

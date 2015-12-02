@@ -49,11 +49,9 @@ public class TableInfoTest {
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
-  private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
   private static final ExternalDataConfiguration CONFIGURATION = ExternalDataConfiguration
-      .builder(SOURCE_URIS, TABLE_SCHEMA, SOURCE_FORMAT)
+      .builder(SOURCE_URIS, TABLE_SCHEMA, FormatOptions.datastoreBackup())
       .compression(COMPRESSION)
-      .csvOptions(CSV_OPTIONS)
       .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
       .maxBadRecords(MAX_BAD_RECORDS)
       .build();

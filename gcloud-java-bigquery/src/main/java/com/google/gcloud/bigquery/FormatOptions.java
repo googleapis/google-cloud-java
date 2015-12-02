@@ -1,0 +1,90 @@
+/*
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.gcloud.bigquery;
+
+import com.google.common.base.MoreObjects;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+/**
+ * Base class for Google BigQuery format options. These class define the format of external data
+ * used by BigQuery, for either federated tables or load jobs.
+ */
+public class FormatOptions implements Serializable {
+
+  static final String CSV = "CSV";
+  static final String JSON = "NEWLINE_DELIMITED_JSON";
+  static final String DATASTORE_BACKUP = "DATASTORE_BACKUP";
+  private static final long serialVersionUID = -443376052020423691L;
+
+  private final String type;
+
+  FormatOptions(String type) {
+    this.type = type;
+  }
+
+  /**
+   * Returns the external data format, as a string.
+   */
+  public String type() {
+    return type;
+  }
+
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this).add("format", type).toString();
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(type);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return obj instanceof FormatOptions && Objects.equals(type, ((FormatOptions) obj).type());
+  }
+
+  /**
+   * Default options for CSV format.
+   */
+  public static FormatOptions csv() {
+    return new FormatOptions(CSV);
+  }
+
+  /**
+   * Default options for NEWLINE_DELIMITED_JSON format.
+   */
+  public static FormatOptions json() {
+    return new FormatOptions(JSON);
+  }
+
+  /**
+   * Default options for DATASTORE_BACKUP format.
+   */
+  public static FormatOptions datastoreBackup() {
+    return new FormatOptions(DATASTORE_BACKUP);
+  }
+
+  /**
+   * Default options for the provided format.
+   */
+  public static FormatOptions of(String format) {
+    return new FormatOptions(format);
+  }
+}

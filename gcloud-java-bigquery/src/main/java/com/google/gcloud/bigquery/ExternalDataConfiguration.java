@@ -63,29 +63,27 @@ public class ExternalDataConfiguration implements Serializable {
 
   private final List<String> sourceUris;
   private final Schema schema;
-  private final String sourceFormat;
+  private final FormatOptions formatOptions;
   private final Integer maxBadRecords;
   private final Boolean ignoreUnknownValues;
   private final String compression;
-  private final CsvOptions csvOptions;
 
   public static final class Builder {
 
     private List<String> sourceUris;
     private Schema schema;
-    private String sourceFormat;
+    private FormatOptions formatOptions;
     private Integer maxBadRecords;
     private Boolean ignoreUnknownValues;
     private String compression;
-    private CsvOptions csvOptions;
 
     private Builder() {}
 
     /**
-     * Sets the fully-qualified URIs that point to your data in Google Cloud Storage. Each URI can
-     * contain one '*' wildcard character that must come after the bucket's name. Size limits
-     * related to load jobs apply to external data sources, plus an additional limit of 10 GB
-     * maximum size across all URIs.
+     * Sets the fully-qualified URIs that point to your data in Google Cloud Storage (e.g.
+     * gs://bucket/path). Each URI can contain one '*' wildcard character that must come after the
+     * bucket's name. Size limits related to load jobs apply to external data sources, plus an
+     * additional limit of 10 GB maximum size across all URIs.
      *
      * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
      */
@@ -103,15 +101,14 @@ public class ExternalDataConfiguration implements Serializable {
     }
 
     /**
-     * Sets the source format of the external data. Supported values are {@code CSV} for CSV files,
-     * and {@code NEWLINE_DELIMITED_JSON} for newline-delimited JSON. If not set, files are assumed
-     * to be in CSV format.
+     * Sets the source format, and possibly some parsing options, of the external data. Supported
+     * formats are {@code CSV} and {@code NEWLINE_DELIMITED_JSON}.
      *
      * <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
      *     Source Format</a>
      */
-    public Builder sourceFormat(String sourceFormat) {
-      this.sourceFormat = checkNotNull(sourceFormat);
+    public Builder formatOptions(FormatOptions formatOptions) {
+      this.formatOptions = checkNotNull(formatOptions);
       return this;
     }
 
@@ -129,9 +126,8 @@ public class ExternalDataConfiguration implements Serializable {
      * Sets whether BigQuery should allow extra values that are not represented in the table schema.
      * If true, the extra values are ignored. If false, records with extra columns are treated as
      * bad records, and if there are too many bad records, an invalid error is returned in the job
-     * result. The default value is false. The value set with
-     * {@link #sourceFormat(String)} property determines what
-     * BigQuery treats as an extra value.
+     * result. The default value is false. The value set with {@link #formatOptions(FormatOptions)}
+     * property determines what BigQuery treats as an extra value.
      *
      * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">
      *     Ignore Unknown Values</a>
@@ -153,15 +149,6 @@ public class ExternalDataConfiguration implements Serializable {
     }
 
     /**
-     * Sets additional properties to be used to parse CSV data (used when
-     * {@link #sourceFormat(String)} is set to CSV).
-     */
-    public Builder csvOptions(CsvOptions csvOptions) {
-      this.csvOptions = csvOptions;
-      return this;
-    }
-
-    /**
      * Creates an {@code ExternalDataConfiguration} object.
      */
     public ExternalDataConfiguration build() {
@@ -174,9 +161,8 @@ public class ExternalDataConfiguration implements Serializable {
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
     this.maxBadRecords = builder.maxBadRecords;
     this.schema = builder.schema;
-    this.sourceFormat = builder.sourceFormat;
+    this.formatOptions = builder.formatOptions;
     this.sourceUris = builder.sourceUris;
-    this.csvOptions = builder.csvOptions;
   }
 
   /**
@@ -193,8 +179,8 @@ public class ExternalDataConfiguration implements Serializable {
    * Returns whether BigQuery should allow extra values that are not represented in the table
    * schema. If true, the extra values are ignored. If false, records with extra columns are treated
    * as bad records, and if there are too many bad records, an invalid error is returned in the job
-   * result. The default value is false. The value of {@link #sourceFormat()} determines what
-   * BigQuery treats as an extra value.
+   * result. The default value is false. The value of {@link #format()} determines what BigQuery
+   * treats as an extra value.
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">
    *     Ignore Unknown Values</a>
@@ -219,13 +205,13 @@ public class ExternalDataConfiguration implements Serializable {
   }
 
   /**
-   * Sets the source format of the external data.
+   * Returns the source format of the external data.
    *
    * <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public String sourceFormat() {
-    return sourceFormat;
+  public String format() {
+    return formatOptions.type();
   }
 
   /**
@@ -241,11 +227,11 @@ public class ExternalDataConfiguration implements Serializable {
   }
 
   /**
-   * Returns additional properties used to parse CSV data (used when {@link #sourceFormat()} is set
-   * to CSV).
+   * Returns additional properties used to parse CSV data (used when {@link #format()} is set to
+   * CSV). Returns {@code null} if not set.
    */
   public CsvOptions csvOptions() {
-    return csvOptions;
+    return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
   }
 
   /**
@@ -257,28 +243,26 @@ public class ExternalDataConfiguration implements Serializable {
         .ignoreUnknownValues(ignoreUnknownValues)
         .maxBadRecords(maxBadRecords)
         .schema(schema)
-        .sourceFormat(sourceFormat)
-        .sourceUris(sourceUris)
-        .csvOptions(csvOptions);
+        .formatOptions(formatOptions)
+        .sourceUris(sourceUris);
   }
 
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("sourceUris", sourceUris)
-        .add("sourceFormat", sourceFormat)
+        .add("formatOptions", formatOptions)
         .add("schema", schema)
         .add("compression", compression)
         .add("ignoreUnknownValues", ignoreUnknownValues)
         .add("maxBadRecords", maxBadRecords)
-        .add("csvOptions", csvOptions)
         .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(compression, ignoreUnknownValues, maxBadRecords, schema, sourceFormat,
-        sourceUris, csvOptions);
+    return Objects.hash(compression, ignoreUnknownValues, maxBadRecords, schema, formatOptions,
+        sourceUris);
   }
 
   @Override
@@ -302,14 +286,14 @@ public class ExternalDataConfiguration implements Serializable {
     if (schema != null) {
       externalConfigurationPb.setSchema(schema.toPb());
     }
-    if (sourceFormat != null) {
-      externalConfigurationPb.setSourceFormat(sourceFormat);
+    if (formatOptions != null) {
+      externalConfigurationPb.setSourceFormat(formatOptions.type());
     }
     if (sourceUris != null) {
       externalConfigurationPb.setSourceUris(sourceUris);
     }
-    if (csvOptions != null) {
-      externalConfigurationPb.setCsvOptions(csvOptions.toPb());
+    if (csvOptions() != null) {
+      externalConfigurationPb.setCsvOptions(csvOptions().toPb());
     }
     return externalConfigurationPb;
   }
@@ -329,8 +313,8 @@ public class ExternalDataConfiguration implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static Builder builder(List<String> sourceUris, Schema schema, String format) {
-    return new Builder().sourceUris(sourceUris).schema(schema).sourceFormat(format);
+  public static Builder builder(List<String> sourceUris, Schema schema, FormatOptions format) {
+    return new Builder().sourceUris(sourceUris).schema(schema).formatOptions(format);
   }
 
   /**
@@ -347,11 +331,11 @@ public class ExternalDataConfiguration implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static Builder builder(String sourceUri, Schema schema, String format) {
+  public static Builder builder(String sourceUri, Schema schema, FormatOptions format) {
     return new Builder()
         .sourceUris(ImmutableList.of(sourceUri))
         .schema(schema)
-        .sourceFormat(format);
+        .formatOptions(format);
   }
 
   /**
@@ -369,8 +353,8 @@ public class ExternalDataConfiguration implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static ExternalDataConfiguration of(
-      List<String> sourceUris, Schema schema, String format) {
+  public static ExternalDataConfiguration of(List<String> sourceUris, Schema schema,
+      FormatOptions format) {
     return builder(sourceUris, schema, format).build();
   }
 
@@ -388,7 +372,8 @@ public class ExternalDataConfiguration implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static ExternalDataConfiguration of(String sourceUri, Schema schema, String format) {
+  public static ExternalDataConfiguration of(String sourceUri, Schema schema,
+      FormatOptions format) {
     return builder(sourceUri, schema, format).build();
   }
 
@@ -402,7 +387,7 @@ public class ExternalDataConfiguration implements Serializable {
       builder.schema(Schema.fromPb(externalDataConfiguration.getSchema()));
     }
     if (externalDataConfiguration.getSourceFormat() != null) {
-      builder.sourceFormat(externalDataConfiguration.getSourceFormat());
+      builder.formatOptions(FormatOptions.of(externalDataConfiguration.getSourceFormat()));
     }
     if (externalDataConfiguration.getCompression() != null) {
       builder.compression(externalDataConfiguration.getCompression());
@@ -411,7 +396,7 @@ public class ExternalDataConfiguration implements Serializable {
       builder.ignoreUnknownValues(externalDataConfiguration.getIgnoreUnknownValues());
     }
     if (externalDataConfiguration.getCsvOptions() != null) {
-      builder.csvOptions(CsvOptions.fromPb(externalDataConfiguration.getCsvOptions()));
+      builder.formatOptions(CsvOptions.fromPb(externalDataConfiguration.getCsvOptions()));
     }
     if (externalDataConfiguration.getMaxBadRecords() != null) {
       builder.maxBadRecords(externalDataConfiguration.getMaxBadRecords());

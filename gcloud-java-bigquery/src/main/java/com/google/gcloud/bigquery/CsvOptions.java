@@ -18,15 +18,14 @@ package com.google.gcloud.bigquery;
 
 import com.google.common.base.MoreObjects;
 
-import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.Objects;
 
 /**
- * Google BigQuery CSV options. This class wraps some properties of CSV files used by BigQuery to
- * parse external data.
+ * Google BigQuery options for CSV format. This class wraps some properties of CSV files used by
+ * BigQuery to parse external data.
  */
-public class CsvOptions implements Serializable {
+public class CsvOptions extends FormatOptions {
 
   private static final long serialVersionUID = 2193570529308612708L;
 
@@ -132,6 +131,7 @@ public class CsvOptions implements Serializable {
   }
 
   private CsvOptions(Builder builder) {
+    super(FormatOptions.CSV);
     this.allowJaggedRows = builder.allowJaggedRows;
     this.allowQuotedNewLines = builder.allowQuotedNewLines;
     this.encoding = builder.encoding;
@@ -226,24 +226,12 @@ public class CsvOptions implements Serializable {
   com.google.api.services.bigquery.model.CsvOptions toPb() {
     com.google.api.services.bigquery.model.CsvOptions csvOptions =
         new com.google.api.services.bigquery.model.CsvOptions();
-    if (allowJaggedRows != null) {
-      csvOptions.setAllowJaggedRows(allowJaggedRows);
-    }
-    if (allowQuotedNewLines != null) {
-      csvOptions.setAllowQuotedNewlines(allowQuotedNewLines);
-    }
-    if (encoding != null) {
-      csvOptions.setEncoding(encoding);
-    }
-    if (fieldDelimiter != null) {
-      csvOptions.setFieldDelimiter(fieldDelimiter);
-    }
-    if (quote != null) {
-      csvOptions.setQuote(quote);
-    }
-    if (skipLeadingRows != null) {
-      csvOptions.setSkipLeadingRows(skipLeadingRows);
-    }
+    csvOptions.setAllowJaggedRows(allowJaggedRows);
+    csvOptions.setAllowQuotedNewlines(allowQuotedNewLines);
+    csvOptions.setEncoding(encoding);
+    csvOptions.setFieldDelimiter(fieldDelimiter);
+    csvOptions.setQuote(quote);
+    csvOptions.setSkipLeadingRows(skipLeadingRows);
     return csvOptions;
   }
 

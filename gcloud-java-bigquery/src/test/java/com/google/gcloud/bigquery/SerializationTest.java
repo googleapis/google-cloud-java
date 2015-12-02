@@ -96,8 +96,7 @@ public class SerializationTest {
       new TableInfo.StreamingBuffer(1L, 2L, 3L);
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final ExternalDataConfiguration EXTERNAL_DATA_CONFIGURATION =
-      ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, "CSV")
-      .csvOptions(CSV_OPTIONS)
+      ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
       .ignoreUnknownValues(true)
       .maxBadRecords(42)
       .build();

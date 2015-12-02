@@ -59,6 +59,7 @@ public class CsvOptionsTest {
 
   @Test
   public void testBuilder() {
+    assertEquals(FormatOptions.CSV, CSV_OPTIONS.type());
     assertEquals(ALLOW_JAGGED_ROWS, CSV_OPTIONS.allowJaggedRows());
     assertEquals(ALLOW_QUOTED_NEWLINE, CSV_OPTIONS.allowQuotedNewLines());
     assertEquals(ENCODING.name(), CSV_OPTIONS.encoding());
