@@ -44,11 +44,11 @@ public abstract class UserDefinedFunction implements Serializable {
   }
 
   private final Type type;
-  private final String functionDefinition;
+  private final String content;
 
-  UserDefinedFunction(Type type, String functionDefinition) {
+  UserDefinedFunction(Type type, String content) {
     this.type = type;
-    this.functionDefinition = functionDefinition;
+    this.content = content;
   }
 
   public Type type() {
@@ -56,18 +56,17 @@ public abstract class UserDefinedFunction implements Serializable {
   }
 
   /**
-   * Returns function's definition. If {@link #type()} is {@link Type#INLINE} this method returns
-   * a code blob. If {@link #type()} is {@link Type#FROM_URI} this method returns a Google Cloud
-   * Storage URI (e.g. gs://bucket/path).
+   * If {@link #type()} is {@link Type#INLINE} this method returns a code blob. If {@link #type()}
+   * is {@link Type#FROM_URI} the method returns a Google Cloud Storage URI (e.g. gs://bucket/path).
    */
-  public String functionDefinition() {
-    return functionDefinition;
+  public String content() {
+    return content;
   }
 
   /**
    * A Google Cloud BigQuery user-defined function, as a code blob.
    */
-  public static final class InlineFunction extends UserDefinedFunction {
+  static final class InlineFunction extends UserDefinedFunction {
 
     private static final long serialVersionUID = 1083672109192091686L;
 
@@ -77,20 +76,20 @@ public abstract class UserDefinedFunction implements Serializable {
 
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this).add("inlineCode", functionDefinition()).toString();
+      return MoreObjects.toStringHelper(this).add("inlineCode", content()).toString();
     }
 
     @Override
     public com.google.api.services.bigquery.model.UserDefinedFunctionResource toPb() {
       return new com.google.api.services.bigquery.model.UserDefinedFunctionResource()
-          .setInlineCode(functionDefinition());
+          .setInlineCode(content());
     }
   }
 
   /**
    * A Google Cloud BigQuery user-defined function, as an URI to Google Cloud Storage.
    */
-  public static final class UriFunction extends UserDefinedFunction {
+  static final class UriFunction extends UserDefinedFunction {
 
     private static final long serialVersionUID = 4660331691852223839L;
 
@@ -100,19 +99,19 @@ public abstract class UserDefinedFunction implements Serializable {
 
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this).add("functionUri", functionDefinition()).toString();
+      return MoreObjects.toStringHelper(this).add("functionUri", content()).toString();
     }
 
     @Override
     public com.google.api.services.bigquery.model.UserDefinedFunctionResource toPb() {
       return new com.google.api.services.bigquery.model.UserDefinedFunctionResource()
-          .setResourceUri(functionDefinition());
+          .setResourceUri(content());
     }
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, functionDefinition);
+    return Objects.hash(type, content);
   }
 
   @Override

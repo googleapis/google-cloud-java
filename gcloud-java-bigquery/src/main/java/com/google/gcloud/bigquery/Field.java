@@ -219,7 +219,7 @@ public class Field implements Serializable {
     }
 
     /**
-     * Sets the mode of the field. By default {@link Mode#NULLABLE} is used.
+     * Sets the mode of the field. When not specified {@link Mode#NULLABLE} is used.
      */
     public Builder mode(Mode mode) {
       this.mode = mode;
@@ -235,7 +235,7 @@ public class Field implements Serializable {
     }
 
     /**
-     * Creates an {@code Field} object.
+     * Creates a {@code Field} object.
      */
     public Field build() {
       return new Field(this);

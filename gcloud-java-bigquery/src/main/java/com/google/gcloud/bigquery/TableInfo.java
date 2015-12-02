@@ -258,7 +258,7 @@ public class TableInfo implements Serializable {
     }
 
     /**
-     * Sets a user-friendly name for the dataset.
+     * Sets a user-friendly name for the table.
      */
     public Builder friendlyName(String friendlyName) {
       this.friendlyName = firstNonNull(friendlyName, Data.<String>nullOf(String.class));
@@ -291,8 +291,8 @@ public class TableInfo implements Serializable {
     }
 
     /**
-     * Sets the table's schema. Providing a schema is not necessary when {@link #viewQuery} is
-     * provided.
+     * Sets the table's schema. Providing a schema is not necessary when {@link #viewQuery(String)}
+     * or {@link #externalConfiguration(ExternalDataConfiguration)} are provided.
      */
     public Builder schema(Schema schema) {
       this.schema = schema;
@@ -380,7 +380,7 @@ public class TableInfo implements Serializable {
   }
 
   /**
-   * Returns an opaque id for the dataset.
+   * Returns an opaque id for the table.
    */
   public String id() {
     return id;

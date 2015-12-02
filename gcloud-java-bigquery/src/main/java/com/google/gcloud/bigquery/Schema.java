@@ -146,7 +146,6 @@ public class Schema implements Serializable {
   }
 
   public static Schema of(Iterable<Field> fields) {
-    checkNotNull(fields);
     return builder().fields(fields).build();
   }
 
