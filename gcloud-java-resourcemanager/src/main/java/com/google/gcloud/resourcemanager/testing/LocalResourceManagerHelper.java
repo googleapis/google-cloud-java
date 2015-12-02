@@ -236,7 +236,10 @@ public class LocalResourceManagerHelper {
         String[] argEntry = arg.split("=");
         switch (argEntry[0]) {
           case "fields":
-            options.put("fields", argEntry[1].split(","));
+            // List fields are in the form "projects(field1, field2, ...)"
+            options.put(
+                "fields",
+                argEntry[1].substring("projects(".length(), argEntry[1].length() - 1).split(","));
             break;
           case "filter":
             options.put("filter", argEntry[1].split(" "));
