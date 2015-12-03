@@ -29,41 +29,23 @@ import com.google.api.services.datastore.DatastoreV1.RollbackResponse;
 import com.google.api.services.datastore.DatastoreV1.RunQueryRequest;
 import com.google.api.services.datastore.DatastoreV1.RunQueryResponse;
 import com.google.api.services.datastore.client.Datastore;
-import com.google.api.services.datastore.client.DatastoreException;
 import com.google.api.services.datastore.client.DatastoreFactory;
 import com.google.api.services.datastore.client.DatastoreOptions.Builder;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.datastore.DatastoreException;
 import com.google.gcloud.datastore.DatastoreOptions;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import java.io.IOException;
 import java.net.InetAddress;
-import java.net.SocketTimeoutException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
 public class DefaultDatastoreRpc implements DatastoreRpc {
 
   private final Datastore client;
-
-  private static final ImmutableMap<String, Reason> STR_TO_REASON;
-  private static final ImmutableMap<Integer, Reason> HTTP_STATUS_TO_REASON;
-
-  static {
-    ImmutableMap.Builder<String, Reason> builder = ImmutableMap.builder();
-    Map<Integer, Reason> httpCodes = new HashMap<>();
-    for (Reason reason : Reason.values()) {
-      builder.put(reason.name(), reason);
-      httpCodes.put(reason.httpStatus(), reason);
-    }
-    STR_TO_REASON = builder.build();
-    HTTP_STATUS_TO_REASON = ImmutableMap.copyOf(httpCodes);
-  }
 
   public DefaultDatastoreRpc(DatastoreOptions options) {
     String normalizedHost = normalizeHost(options.host());
@@ -105,88 +87,81 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     return url.startsWith("http://") || url.startsWith("https://");
   }
 
-  private static DatastoreRpcException translate(DatastoreException exception) {
+  private static DatastoreException translate(
+      com.google.api.services.datastore.client.DatastoreException exception) {
     String message = exception.getMessage();
-    String reasonStr = "";
+    int code = exception.getCode();
+    String reason = "";
     if (message != null) {
       try {
         JSONObject json = new JSONObject(new JSONTokener(message));
         JSONObject error = json.getJSONObject("error").getJSONArray("errors").getJSONObject(0);
-        reasonStr = error.getString("reason");
+        reason = error.getString("reason");
         message = error.getString("message");
       } catch (JSONException ignore) {
         // ignore - will be converted to unknown
       }
     }
-    Reason reason = STR_TO_REASON.get(reasonStr);
     if (reason == null) {
-      reason = HTTP_STATUS_TO_REASON.get(exception.getCode());
-    }
-    if (reason != null) {
-      return new DatastoreRpcException(reason);
-    } else {
-      boolean retryable = false;
-      reasonStr = "Unknown";
-      if (exception.getCause() instanceof SocketTimeoutException) {
-        retryable = true;
-        reasonStr = "Request timeout";
+      if (exception.getCause() instanceof IOException) {
+        return new DatastoreException((IOException) exception.getCause());
       }
-      return new DatastoreRpcException(reasonStr, exception.getCode(), retryable, message);
     }
+    return new DatastoreException(DatastoreException.Reason.of(reason), code, message);
   }
 
   @Override
   public AllocateIdsResponse allocateIds(AllocateIdsRequest request)
-      throws DatastoreRpcException {
+      throws DatastoreException {
     try {
       return client.allocateIds(request);
-    } catch (DatastoreException ex) {
+    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
 
   @Override
   public BeginTransactionResponse beginTransaction(BeginTransactionRequest request)
-      throws DatastoreRpcException {
+      throws DatastoreException {
     try {
       return client.beginTransaction(request);
-    } catch (DatastoreException ex) {
+    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
 
   @Override
-  public CommitResponse commit(CommitRequest request) throws DatastoreRpcException {
+  public CommitResponse commit(CommitRequest request) throws DatastoreException {
     try {
       return client.commit(request);
-    } catch (DatastoreException ex) {
+    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
 
   @Override
-  public LookupResponse lookup(LookupRequest request) throws DatastoreRpcException {
+  public LookupResponse lookup(LookupRequest request) throws DatastoreException {
     try {
       return client.lookup(request);
-    } catch (DatastoreException ex) {
+    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
 
   @Override
-  public RollbackResponse rollback(RollbackRequest request) throws DatastoreRpcException {
+  public RollbackResponse rollback(RollbackRequest request) throws DatastoreException {
     try {
       return client.rollback(request);
-    } catch (DatastoreException ex) {
+    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
 
   @Override
-  public RunQueryResponse runQuery(RunQueryRequest request) throws DatastoreRpcException {
+  public RunQueryResponse runQuery(RunQueryRequest request) throws DatastoreException {
     try {
       return client.runQuery(request);
-    } catch (DatastoreException ex) {
+    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
       throw translate(ex);
     }
   }

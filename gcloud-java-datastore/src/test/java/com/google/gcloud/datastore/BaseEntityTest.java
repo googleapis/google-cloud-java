@@ -84,7 +84,7 @@ public class BaseEntityTest {
     assertEquals(BlobValue.of(BLOB), entity.getValue("blob"));
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testGetValueNotFound() throws Exception {
     BaseEntity<Key> entity = builder.clear().build();
     entity.getValue("blob");
@@ -99,7 +99,7 @@ public class BaseEntityTest {
     assertTrue(entity.isNull("blob"));
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testIsNullNotFound() throws Exception {
     BaseEntity<Key> entity = builder.clear().build();
     entity.isNull("null");

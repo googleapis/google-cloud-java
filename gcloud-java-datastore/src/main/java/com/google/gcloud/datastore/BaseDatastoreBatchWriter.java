@@ -16,6 +16,9 @@
 
 package com.google.gcloud.datastore;
 
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkState;
+
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Iterables;
@@ -64,10 +67,8 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
 
   private void addInternal(FullEntity<Key> entity) {
     Key key = entity.key();
-    if (toAdd.containsKey(key) || toUpdate.containsKey(key) || toPut.containsKey(key)) {
-      throw newInvalidRequest("Entity with the key %s was already added or updated in this %s",
-          entity.key(), name);
-    }
+    checkArgument(!toAdd.containsKey(key) && !toUpdate.containsKey(key) && !toPut.containsKey(key),
+        "Entity with the key %s was already added or updated in this %s", entity.key(), name);
     if (toDelete.remove(key)) {
       toPut.put(key, entity);
     } else {
@@ -120,10 +121,8 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     validateActive();
     for (Entity entity : entities) {
       Key key = entity.key();
-      if (toDelete.contains(key)) {
-        throw newInvalidRequest("Entity with the key %s was already deleted in this %s",
-            entity.key(), name);
-      }
+      checkArgument(!toDelete.contains(key),
+          "Entity with the key %s was already deleted in this %s", entity.key(), name);
       if (toAdd.remove(key) != null || toPut.containsKey(key)) {
         toPut.put(key, entity);
       } else {
@@ -190,13 +189,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   }
 
   protected void validateActive() {
-    if (!active) {
-      throw newInvalidRequest("%s is no longer active", name);
-    }
-  }
-
-  protected DatastoreException newInvalidRequest(String msg, Object... params) {
-    return DatastoreException.throwInvalidRequest(String.format(msg, params));
+    checkState(active, "%s is no longer active", name);
   }
 
   protected DatastoreV1.Mutation.Builder toMutationPb() {

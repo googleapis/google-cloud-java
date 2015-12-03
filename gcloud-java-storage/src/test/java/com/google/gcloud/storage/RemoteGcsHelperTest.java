@@ -73,8 +73,8 @@ public class RemoteGcsHelperTest {
   private static final List<BlobInfo> BLOB_LIST = ImmutableList.of(
       BlobInfo.builder(BUCKET_NAME, "n1").build(),
       BlobInfo.builder(BUCKET_NAME, "n2").build());
-  private static final StorageException RETRYABLE_EXCEPTION = new StorageException(409, "", true);
-  private static final StorageException FATAL_EXCEPTION = new StorageException(500, "", false);
+  private static final StorageException RETRYABLE_EXCEPTION = new StorageException(409, "");
+  private static final StorageException FATAL_EXCEPTION = new StorageException(501, "");
   private static final Page<BlobInfo> BLOB_PAGE = new Page<BlobInfo>() {
 
     @Override

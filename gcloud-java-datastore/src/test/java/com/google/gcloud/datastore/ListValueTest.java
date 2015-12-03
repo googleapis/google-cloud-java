@@ -46,7 +46,7 @@ public class ListValueTest {
     assertFalse(value.hasMeaning());
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = UnsupportedOperationException.class)
   public void testIndexedCannotBeSpecified() {
     ListValue.builder().indexed(false);
   }

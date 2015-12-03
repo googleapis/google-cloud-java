@@ -27,92 +27,23 @@ import com.google.api.services.datastore.DatastoreV1.RollbackRequest;
 import com.google.api.services.datastore.DatastoreV1.RollbackResponse;
 import com.google.api.services.datastore.DatastoreV1.RunQueryRequest;
 import com.google.api.services.datastore.DatastoreV1.RunQueryResponse;
+import com.google.gcloud.datastore.DatastoreException;
 
 /**
  * Provides access to the remote Datastore service.
  */
 public interface DatastoreRpc {
 
-  public class DatastoreRpcException extends Exception {
-
-    /**
-     * The reason for the exception.
-     *
-     * @see <a href="https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes">Google
-     *     Cloud Datastore error codes</a>
-     */
-    public enum Reason {
-
-      ABORTED(true, "Request aborted", 409),
-      DEADLINE_EXCEEDED(true, "Deadline exceeded", 403),
-      FAILED_PRECONDITION(false, "Invalid request", 412),
-      INTERNAL(false, "Server returned an error", 500),
-      INVALID_ARGUMENT(false, "Request parameter has an invalid value", 400),
-      PERMISSION_DENIED(false, "Unauthorized request", 403),
-      RESOURCE_EXHAUSTED(false, "Quota exceeded", 402),
-      UNAVAILABLE(true, "Could not reach service", 503);
-
-      private final boolean retryable;
-      private final String description;
-      private final int httpStatus;
-
-      private Reason(boolean retryable, String description, int httpStatus) {
-        this.retryable = retryable;
-        this.description = description;
-        this.httpStatus = httpStatus;
-      }
-
-      public boolean retryable() {
-        return retryable;
-      }
-
-      public String description() {
-        return description;
-      }
-
-      public int httpStatus() {
-        return httpStatus;
-      }
-    }
-
-    private final String reason;
-    private final int httpStatus;
-    private final boolean retryable;
-
-    public DatastoreRpcException(Reason reason) {
-      this(reason.name(), reason.httpStatus, reason.retryable, reason.description);
-    }
-
-    public DatastoreRpcException(String reason, int httpStatus, boolean retryable, String message) {
-      super(message);
-      this.reason = reason;
-      this.httpStatus = httpStatus;
-      this.retryable = retryable;
-    }
-
-    public String reason() {
-      return reason;
-    }
-
-    public int httpStatus() {
-      return httpStatus;
-    }
-
-    public boolean retryable() {
-      return retryable;
-    }
-  }
-
-  AllocateIdsResponse allocateIds(AllocateIdsRequest request) throws DatastoreRpcException;
+  AllocateIdsResponse allocateIds(AllocateIdsRequest request) throws DatastoreException;
 
   BeginTransactionResponse beginTransaction(BeginTransactionRequest request)
-      throws DatastoreRpcException;
+      throws DatastoreException;
 
-  CommitResponse commit(CommitRequest request) throws DatastoreRpcException;
+  CommitResponse commit(CommitRequest request) throws DatastoreException;
 
-  LookupResponse lookup(LookupRequest request) throws DatastoreRpcException;
+  LookupResponse lookup(LookupRequest request) throws DatastoreException;
 
-  RollbackResponse rollback(RollbackRequest request) throws DatastoreRpcException;
+  RollbackResponse rollback(RollbackRequest request) throws DatastoreException;
 
-  RunQueryResponse runQuery(RunQueryRequest request) throws DatastoreRpcException;
+  RunQueryResponse runQuery(RunQueryRequest request) throws DatastoreException;
 }
