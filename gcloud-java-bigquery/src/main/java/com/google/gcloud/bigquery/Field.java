@@ -16,9 +16,11 @@
 
 package com.google.gcloud.bigquery;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.client.util.Data;
 import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -180,7 +182,7 @@ public class Field implements Serializable {
    * than one value.
    */
   public enum Mode {
-    NULLABLE, REQUIRED, REPEATED
+    NULLABLE, REQUIRED, REPEATED, NOT_SET
   }
 
   private final String name;
@@ -196,6 +198,13 @@ public class Field implements Serializable {
     private String description;
 
     private Builder() {}
+
+    private Builder(Field field) {
+      this.name = field.name;
+      this.type = field.type;
+      this.mode = field.mode;
+      this.description = field.description;
+    }
 
     /**
      * Sets the field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or
@@ -222,7 +231,7 @@ public class Field implements Serializable {
      * Sets the mode of the field. When not specified {@link Mode#NULLABLE} is used.
      */
     public Builder mode(Mode mode) {
-      this.mode = mode;
+      this.mode = firstNonNull(mode, Mode.NOT_SET);
       return this;
     }
 
@@ -230,7 +239,7 @@ public class Field implements Serializable {
      * Sets the field description. The maximum length is 16K characters.
      */
     public Builder description(String description) {
-      this.description = description;
+      this.description = firstNonNull(description, Data.<String>nullOf(String.class));
       return this;
     }
 
@@ -270,14 +279,14 @@ public class Field implements Serializable {
    * Returns the field mode. By default {@link Mode#NULLABLE} is used.
    */
   public Mode mode() {
-    return mode;
+    return mode == Mode.NOT_SET ? null : mode;
   }
 
   /**
    * Returns the field description.
    */
   public String description() {
-    return description;
+    return Data.isNull(description) ? null : description;
   }
 
   /**
@@ -292,11 +301,7 @@ public class Field implements Serializable {
    * Returns a builder for the {@code Field} object.
    */
   public Builder toBuilder() {
-    return new Builder()
-        .name(this.name)
-        .type(this.type)
-        .mode(this.mode)
-        .description(this.description);
+    return new Builder(this);
   }
 
   @Override
@@ -324,7 +329,7 @@ public class Field implements Serializable {
     fieldSchemaPb.setName(name);
     fieldSchemaPb.setType(type.value().name());
     if (mode != null) {
-      fieldSchemaPb.setMode(mode.name());
+      fieldSchemaPb.setMode(mode == Mode.NOT_SET ? Data.<String>nullOf(String.class) : mode.name());
     }
     if (description != null) {
       fieldSchemaPb.setDescription(description);
