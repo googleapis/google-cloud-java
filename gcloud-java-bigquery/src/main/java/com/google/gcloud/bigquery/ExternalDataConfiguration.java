@@ -179,8 +179,8 @@ public class ExternalDataConfiguration implements Serializable {
    * Returns whether BigQuery should allow extra values that are not represented in the table
    * schema. If true, the extra values are ignored. If false, records with extra columns are treated
    * as bad records, and if there are too many bad records, an invalid error is returned in the job
-   * result. The default value is false. The value of {@link #format()} determines what BigQuery
-   * treats as an extra value.
+   * result. The default value is false. The value of {@link #formatOptions()} determines what
+   * BigQuery treats as an extra value.
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">
    *     Ignore Unknown Values</a>
@@ -205,16 +205,6 @@ public class ExternalDataConfiguration implements Serializable {
   }
 
   /**
-   * Returns the source format of the external data.
-   *
-   * <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
-   *     Source Format</a>
-   */
-  public String format() {
-    return formatOptions.type();
-  }
-
-  /**
    * Returns the fully-qualified URIs that point to your data in Google Cloud Storage. Each URI can
    * contain one '*' wildcard character that must come after the bucket's name. Size limits
    * related to load jobs apply to external data sources, plus an additional limit of 10 GB
@@ -227,11 +217,12 @@ public class ExternalDataConfiguration implements Serializable {
   }
 
   /**
-   * Returns additional properties used to parse CSV data (used when {@link #format()} is set to
-   * CSV). Returns {@code null} if not set.
+   * Returns the source format, and possibly some parsing options, of the external data. Supported
+   * formats are {@code CSV} and {@code NEWLINE_DELIMITED_JSON}.
    */
-  public CsvOptions csvOptions() {
-    return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
+  @SuppressWarnings("unchecked")
+  public <F extends FormatOptions> F formatOptions() {
+    return (F) formatOptions;
   }
 
   /**
@@ -292,8 +283,8 @@ public class ExternalDataConfiguration implements Serializable {
     if (sourceUris != null) {
       externalConfigurationPb.setSourceUris(sourceUris);
     }
-    if (csvOptions() != null) {
-      externalConfigurationPb.setCsvOptions(csvOptions().toPb());
+    if (formatOptions instanceof CsvOptions) {
+      externalConfigurationPb.setCsvOptions(((CsvOptions) formatOptions).toPb());
     }
     return externalConfigurationPb;
   }

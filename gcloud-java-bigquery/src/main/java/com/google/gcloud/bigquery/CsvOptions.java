@@ -203,6 +203,7 @@ public class CsvOptions extends FormatOptions {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
+        .add("type", type())
         .add("allowJaggedRows", allowJaggedRows)
         .add("allowQuotedNewLines", allowQuotedNewLines)
         .add("encoding", encoding)
@@ -214,8 +215,8 @@ public class CsvOptions extends FormatOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowJaggedRows, allowQuotedNewLines, encoding, fieldDelimiter, quote,
-        skipLeadingRows);
+    return Objects.hash(type(), allowJaggedRows, allowQuotedNewLines, encoding, fieldDelimiter,
+        quote, skipLeadingRows);
   }
 
   @Override

@@ -43,7 +43,6 @@ public class ExternalDataConfigurationTest {
           .description("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
-  private static final String SOURCE_FORMAT = "CSV";
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
@@ -76,11 +75,10 @@ public class ExternalDataConfigurationTest {
   @Test
   public void testBuilder() {
     assertEquals(COMPRESSION, CONFIGURATION.compression());
-    assertEquals(CSV_OPTIONS, CONFIGURATION.csvOptions());
+    assertEquals(CSV_OPTIONS, CONFIGURATION.formatOptions());
     assertEquals(IGNORE_UNKNOWN_VALUES, CONFIGURATION.ignoreUnknownValues());
     assertEquals(MAX_BAD_RECORDS, CONFIGURATION.maxBadRecords());
     assertEquals(TABLE_SCHEMA, CONFIGURATION.schema());
-    assertEquals(SOURCE_FORMAT, CONFIGURATION.format());
     assertEquals(SOURCE_URIS, CONFIGURATION.sourceUris());
   }
 
@@ -96,11 +94,10 @@ public class ExternalDataConfigurationTest {
       ExternalDataConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.compression(), value.compression());
-    assertEquals(expected.csvOptions(), value.csvOptions());
+    assertEquals(expected.formatOptions(), value.formatOptions());
     assertEquals(expected.ignoreUnknownValues(), value.ignoreUnknownValues());
     assertEquals(expected.maxBadRecords(), value.maxBadRecords());
     assertEquals(expected.schema(), value.schema());
-    assertEquals(expected.format(), value.format());
     assertEquals(expected.sourceUris(), value.sourceUris());
   }
 }

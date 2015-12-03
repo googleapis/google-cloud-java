@@ -63,8 +63,8 @@ public class FormatOptions implements Serializable {
   /**
    * Default options for CSV format.
    */
-  public static FormatOptions csv() {
-    return new FormatOptions(CSV);
+  public static CsvOptions csv() {
+    return CsvOptions.builder().build();
   }
 
   /**
