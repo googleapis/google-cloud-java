@@ -16,6 +16,7 @@
 
 package com.google.gcloud.datastore;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.gcloud.datastore.BlobValue.of;
 import static com.google.gcloud.datastore.BooleanValue.of;
 import static com.google.gcloud.datastore.DateTimeValue.of;
@@ -248,9 +249,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   public <V extends Value<?>> V getValue(String name) {
     @SuppressWarnings("unchecked")
     V property = (V) properties.get(name);
-    if (property == null) {
-      throw DatastoreException.throwInvalidRequest("No such property %s", name);
-    }
+    checkArgument(property != null, "No such property %s", name);
     return property;
   }
 

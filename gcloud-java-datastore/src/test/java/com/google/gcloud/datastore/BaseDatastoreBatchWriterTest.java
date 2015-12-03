@@ -109,25 +109,25 @@ public class BaseDatastoreBatchWriterTest {
     assertEquals(pb, batchWriter.toMutationPb().build());
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testAddDuplicate() throws Exception {
     batchWriter.add(ENTITY1);
     batchWriter.add(ENTITY1);
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testAddAfterPut() throws Exception {
     batchWriter.put(ENTITY1);
     batchWriter.add(ENTITY1);
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testAddAfterUpdate() throws Exception {
     batchWriter.update(ENTITY1);
     batchWriter.add(ENTITY1);
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = IllegalStateException.class)
   public void testAddWhenNotActive() throws Exception {
     batchWriter.deactivate();
     batchWriter.add(ENTITY1);
@@ -145,7 +145,7 @@ public class BaseDatastoreBatchWriterTest {
     assertEquals(pb, batchWriter.toMutationPb().build());
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = IllegalStateException.class)
   public void testAddWithDeferredAllocationWhenNotActive() throws Exception {
     batchWriter.deactivate();
     batchWriter.addWithDeferredIdAllocation(INCOMPLETE_ENTITY_1);
@@ -196,13 +196,13 @@ public class BaseDatastoreBatchWriterTest {
     assertEquals(pb, batchWriter.toMutationPb().build());
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testUpdateAfterDelete() throws Exception {
     batchWriter.delete(KEY1);
     batchWriter.update(ENTITY1, ENTITY2);
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = IllegalStateException.class)
   public void testUpdateWhenNotActive() throws Exception {
     batchWriter.deactivate();
     batchWriter.update(ENTITY1);
@@ -264,7 +264,7 @@ public class BaseDatastoreBatchWriterTest {
     assertEquals(pb, batchWriter.toMutationPb().build());
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = IllegalStateException.class)
   public void testPutWhenNotActive() throws Exception {
     batchWriter.deactivate();
     batchWriter.put(ENTITY1);
@@ -314,7 +314,7 @@ public class BaseDatastoreBatchWriterTest {
     assertEquals(pb, batchWriter.toMutationPb().build());
   }
 
-  @Test(expected = DatastoreException.class)
+  @Test(expected = IllegalStateException.class)
   public void testDeleteWhenNotActive() throws Exception {
     batchWriter.deactivate();
     batchWriter.delete(KEY1);

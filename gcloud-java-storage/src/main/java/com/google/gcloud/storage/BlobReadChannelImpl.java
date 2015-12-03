@@ -20,6 +20,7 @@ import static com.google.gcloud.RetryHelper.runWithRetries;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
+import com.google.gcloud.BaseServiceException;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.spi.StorageRpc;
@@ -128,7 +129,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
         if (lastEtag != null && !Objects.equals(result.x(), lastEtag)) {
           StringBuilder messageBuilder = new StringBuilder();
           messageBuilder.append("Blob ").append(blob).append(" was updated while reading");
-          throw new StorageException(0, messageBuilder.toString(), false);
+          throw new StorageException(BaseServiceException.UNKNOWN_CODE, messageBuilder.toString());
         }
         lastEtag = result.x();
         buffer = result.y();

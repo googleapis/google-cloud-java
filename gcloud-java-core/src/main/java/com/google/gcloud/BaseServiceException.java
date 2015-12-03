@@ -16,26 +16,80 @@
 
 package com.google.gcloud;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+import java.util.Collections;
+import java.util.Set;
+
 /**
  * Base class for all service exceptions.
  */
 public class BaseServiceException extends RuntimeException {
 
   private static final long serialVersionUID = 5028833760039966178L;
+  public static final int UNKNOWN_CODE = 0;
 
   private final int code;
   private final boolean retryable;
+  private final boolean idempotent;
 
-  public BaseServiceException(int code, String message, boolean retryable) {
-    super(message);
-    this.code = code;
-    this.retryable = retryable;
+  public BaseServiceException(IOException exception, boolean idempotent) {
+    super(exception.getMessage(), exception);
+    this.code = statusCode(exception);
+    this.idempotent = idempotent;
+    this.retryable = idempotent && isRetryable(exception);
   }
 
-  public BaseServiceException(int code, String message, boolean retryable, Exception cause) {
+  public BaseServiceException(GoogleJsonError error, boolean idempotent) {
+    super(error.getMessage());
+    this.code = error.getCode();
+    this.idempotent = idempotent;
+    this.retryable = idempotent && isRetryable(error);
+  }
+
+  public BaseServiceException(int code, String message, boolean retryable, boolean idempotent) {
+    super(message);
+    this.code = code;
+    this.idempotent = idempotent;
+    this.retryable = idempotent && retryable;
+  }
+
+  public BaseServiceException(int code, String message, boolean retryable, boolean idempotent,
+      Exception cause) {
     super(message, cause);
     this.code = code;
-    this.retryable = retryable;
+    this.idempotent = idempotent;
+    this.retryable = idempotent && retryable;
+  }
+
+  protected Set<Integer> retryableCodes() {
+    return Collections.emptySet();
+  }
+
+  protected int statusCode(IOException exception) {
+    if (exception instanceof GoogleJsonResponseException) {
+      if (((GoogleJsonResponseException) exception).getDetails() != null) {
+        return ((GoogleJsonResponseException) exception).getDetails().getCode();
+      }
+    }
+    return UNKNOWN_CODE;
+  }
+
+  protected boolean isRetryable(GoogleJsonError error) {
+    return error != null && retryableCodes().contains(error.getCode());
+  }
+
+  protected boolean isRetryable(IOException exception) {
+    if (exception instanceof GoogleJsonResponseException) {
+      return isRetryable(((GoogleJsonResponseException) exception).getDetails());
+    }
+    if (exception instanceof SocketTimeoutException) {
+      return true;
+    }
+    return false;
   }
 
   /**
@@ -50,5 +104,23 @@ public class BaseServiceException extends RuntimeException {
    */
   public boolean retryable() {
     return retryable;
+  }
+
+  /**
+   * Returns {@code true} when the operation that caused this exception had no side effects.
+   */
+  public boolean idempotent() {
+    return idempotent;
+  }
+
+  protected static <T extends BaseServiceException> T translateAndThrow(
+      RetryHelper.RetryHelperException ex) {
+    if (ex.getCause() instanceof BaseServiceException) {
+      throw (T) ex.getCause();
+    }
+    if (ex instanceof RetryHelper.RetryInterruptedException) {
+      RetryHelper.RetryInterruptedException.propagate();
+    }
+    return null;
   }
 }

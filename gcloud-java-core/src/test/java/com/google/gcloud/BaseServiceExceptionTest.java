@@ -16,30 +16,91 @@
 
 package com.google.gcloud;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
+
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import java.io.IOException;
+import java.net.SocketTimeoutException;
 
 /**
  * Tests for {@link BaseServiceException}.
  */
 public class BaseServiceExceptionTest {
 
-  private final int code = 1;
-  private final String message = "some message";
-  private final boolean retryable = true;
+  private static final int CODE = 1;
+  private static final String MESSAGE = "some message";
+  private static final boolean RETRYABLE = true;
+  private static final boolean IDEMPOTENT = true;
 
   @Test
   public void testBaseServiceException() {
-    BaseServiceException serviceException = new BaseServiceException(code, message, retryable);
-    assertEquals(serviceException.code(), code);
-    assertEquals(serviceException.getMessage(), message);
-    assertEquals(serviceException.getCause(), null);
+    BaseServiceException serviceException = new BaseServiceException(CODE, MESSAGE, RETRYABLE,
+        IDEMPOTENT);
+    assertEquals(CODE, serviceException.code());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(RETRYABLE, serviceException.retryable());
+    assertEquals(IDEMPOTENT, serviceException.idempotent());
+    assertEquals(null, serviceException.getCause());
+
+    serviceException = new BaseServiceException(CODE, MESSAGE, RETRYABLE, false);
+    assertEquals(CODE, serviceException.code());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(false, serviceException.retryable());
+    assertEquals(false, serviceException.idempotent());
+    assertEquals(null, serviceException.getCause());
 
     Exception cause = new RuntimeException();
-    serviceException = new BaseServiceException(code, message, retryable, cause);
-    assertEquals(serviceException.code(), code);
-    assertEquals(serviceException.getMessage(), message);
-    assertEquals(serviceException.getCause(), cause);
+    serviceException = new BaseServiceException(CODE, MESSAGE, RETRYABLE, IDEMPOTENT, cause);
+    assertEquals(CODE, serviceException.code());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(RETRYABLE, serviceException.retryable());
+    assertEquals(IDEMPOTENT, serviceException.idempotent());
+    assertEquals(cause, serviceException.getCause());
+
+    serviceException = new BaseServiceException(CODE, MESSAGE, RETRYABLE, false, cause);
+    assertEquals(CODE, serviceException.code());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(false, serviceException.retryable());
+    assertEquals(false, serviceException.idempotent());
+
+    IOException exception = new SocketTimeoutException();
+    serviceException = new BaseServiceException(exception, true);
+    assertEquals(true, serviceException.retryable());
+    assertEquals(true, serviceException.idempotent());
+    assertEquals(exception, serviceException.getCause());
+
+    GoogleJsonError error = new GoogleJsonError();
+    error.setCode(CODE);
+    error.setMessage(MESSAGE);
+    serviceException = new BaseServiceException(error, true);
+    assertEquals(CODE, serviceException.code());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(false, serviceException.retryable());
+    assertEquals(true, serviceException.idempotent());
+  }
+
+  @Test
+  public void testTranslateAndThrow() throws Exception {
+    BaseServiceException cause = new BaseServiceException(CODE, MESSAGE, RETRYABLE, IDEMPOTENT);
+    RetryHelper.RetryHelperException exceptionMock = createMock(RetryHelper.RetryHelperException.class);
+    expect(exceptionMock.getCause()).andReturn(cause).times(2);
+    replay(exceptionMock);
+    try {
+      BaseServiceException.translateAndThrow(exceptionMock);
+    } catch (BaseServiceException ex) {
+      assertEquals(CODE, ex.code());
+      assertEquals(MESSAGE, ex.getMessage());
+      assertEquals(RETRYABLE, ex.retryable());
+      assertEquals(IDEMPOTENT, ex.idempotent());
+    } finally {
+      verify(exceptionMock);
+    }
   }
 }

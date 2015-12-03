@@ -17,6 +17,7 @@
 package com.google.gcloud.datastore;
 
 import static com.google.api.services.datastore.DatastoreV1.Value.LIST_VALUE_FIELD_NUMBER;
+import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
@@ -72,7 +73,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
 
     public Builder addValue(Value<?> value) {
       // see datastore_v1.proto definition for list_value
-      Preconditions.checkArgument(value.type() != ValueType.LIST, "Cannot contain another list");
+      checkArgument(value.type() != ValueType.LIST, "Cannot contain another list");
       listBuilder.add(value);
       return this;
     }
@@ -87,8 +88,8 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
 
     @Override
     public Builder indexed(boolean indexed) {
-      // see issue #26
-      throw DatastoreException.throwInvalidRequest("ListValue can't specify index");
+      // todo() see issue #26
+      throw new UnsupportedOperationException("ListValue can't specify index");
     }
 
     /**
