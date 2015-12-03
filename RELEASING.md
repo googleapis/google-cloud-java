@@ -12,8 +12,14 @@ The PR should look something like [#225](https://github.com/GoogleCloudPlatform/
 
 3. Before moving on, verify that the artifacts have successfully been pushed to the Maven Central Repository.  Open Travis CI, click the ["Build History" tab](https://travis-ci.org/GoogleCloudPlatform/gcloud-java/builds), and open the second build's logs for Step 2's PR.  Be sure that you are not opening the "Pull Request" build logs.  When the build finishes, scroll to the end of the log and verify that the artifacts were successfully staged and deployed.  You can also search for `gcloud-java` on the [Sonatype website](https://oss.sonatype.org/#nexus-search;quick~gcloud-java) and check the latest version number.  If the deployment didn't succeed because of a flaky test, rerun the build.
 
-4. Create a release on Github manually.
-Go to the [releases page](https://github.com/GoogleCloudPlatform/gcloud-java/releases) and click "Draft a new release."  Use `vX.Y.Z` as the "Tag Version" and `X.Y.Z` as the "Release Title", where `X.Y.Z` is the release version as listed in the `pom.xml` files.
+4. Publish a release on Github manually.
+Go to the [releases page](https://github.com/GoogleCloudPlatform/gcloud-java/releases) and open the appropriate release draft. Make sure the "Tag Version" is `vX.Y.Z` and the "Release Title" is `X.Y.Z`, where `X.Y.Z` is the release version as listed in the `pom.xml` files.  The draft should already have all changes that impact users since the previous release.  To double check this, you can use the `git log` command and look through the merged master branch pull requests.  Here is an example of the log command to get non-merge commits between v0.0.12 and v0.1.0:
+
+  ```
+  git --no-pager log v0.0.12..v0.1.0 --pretty=oneline --abbrev-commit --no-merges
+  ```
+
+  Ensure that the format is consistent with previous releases (for an example, see the [0.1.0 release](https://github.com/GoogleCloudPlatform/gcloud-java/releases/tag/v0.1.0)).  After adding any missing updates and reformatting as necessary, publish the draft.  Finally, create a new draft for the next release.
 
 5. Run `utilities/update_pom_version.sh` again (to include "-SNAPSHOT" in the project version).
 As mentioned before, there is an optional version argument.  By default, the script will update the version from "X.Y.Z" to "X.Y.Z+1-SNAPSHOT".  Suppose a different version is desired, for example X+1.0.0-SNAPSHOT.  Then the appropriate command to run would be `utilities/update_pom_version.sh X+1.0.0-SNAPSHOT`.
