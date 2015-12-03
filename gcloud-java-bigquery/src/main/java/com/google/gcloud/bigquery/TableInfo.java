@@ -60,29 +60,6 @@ public class TableInfo implements Serializable {
   private static final long serialVersionUID = -7679032506430816205L;
 
   /**
-   * The table type.
-   */
-  public enum Type {
-    /**
-     * A normal BigQuery table.
-     */
-    TABLE,
-    /**
-     * A virtual table defined by a SQL query.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
-     */
-    VIEW,
-    /**
-     * A BigQuery table backed by external data.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data
-     *     Sources</a>
-     */
-    EXTERNAL
-  }
-
-  /**
    * Google BigQuery Table's Streaming Buffer information. This class contains information on a
    * table's streaming buffer as the estimated size in number of rows/bytes.
    */
@@ -159,18 +136,14 @@ public class TableInfo implements Serializable {
   private final String id;
   private final String selfLink;
   private final TableId tableId;
+  private final TableType type;
   private final String friendlyName;
   private final String description;
-  private final Schema schema;
   private final Long numBytes;
   private final Long numRows;
   private final Long creationTime;
   private final Long expirationTime;
   private final Long lastModifiedTime;
-  private final String viewQuery;
-  private final List<UserDefinedFunction> userDefinedFunctions;
-  private final Type type;
-  private final ExternalDataConfiguration externalConfiguration;
   private final String location;
   private final StreamingBuffer streamingBuffer;
 
@@ -180,18 +153,14 @@ public class TableInfo implements Serializable {
     private String id;
     private String selfLink;
     private TableId tableId;
+    private TableType type;
     private String friendlyName;
     private String description;
-    private Schema schema;
     private Long numBytes;
     private Long numRows;
     private Long creationTime;
     private Long expirationTime;
     private Long lastModifiedTime;
-    private String viewQuery;
-    private List<UserDefinedFunction> userDefinedFunctions;
-    private Type type;
-    private ExternalDataConfiguration externalConfiguration;
     private String location;
     private StreamingBuffer streamingBuffer;
 
@@ -202,18 +171,14 @@ public class TableInfo implements Serializable {
       this.id = tableInfo.id;
       this.selfLink = tableInfo.selfLink;
       this.tableId = tableInfo.tableId;
+      this.type = tableInfo.type;
       this.friendlyName = tableInfo.friendlyName;
       this.description = tableInfo.description;
-      this.schema = tableInfo.schema;
       this.numBytes = tableInfo.numBytes;
       this.numRows = tableInfo.numRows;
       this.creationTime = tableInfo.creationTime;
       this.expirationTime = tableInfo.expirationTime;
       this.lastModifiedTime = tableInfo.lastModifiedTime;
-      this.viewQuery = tableInfo.viewQuery;
-      this.userDefinedFunctions = tableInfo.userDefinedFunctions;
-      this.type = tableInfo.type;
-      this.externalConfiguration = tableInfo.externalConfiguration;
       this.location = tableInfo.location;
       this.streamingBuffer = tableInfo.streamingBuffer;
     }
@@ -242,18 +207,6 @@ public class TableInfo implements Serializable {
      */
     public Builder expirationTime(Long expirationTime) {
       this.expirationTime = firstNonNull(expirationTime, Data.<Long>nullOf(Long.class));
-      return this;
-    }
-
-    /**
-     * Sets the data format, location, and other properties of a table stored outside of BigQuery.
-     * This property is experimental and might be subject to change or removed.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data
-     *     Sources</a>
-     */
-    public Builder externalConfiguration(ExternalDataConfiguration externalConfiguration) {
-      this.externalConfiguration = externalConfiguration;
       return this;
     }
 
@@ -290,15 +243,6 @@ public class TableInfo implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the table's schema. Providing a schema is not necessary when {@link #viewQuery(String)}
-     * or {@link #externalConfiguration(ExternalDataConfiguration)} are provided.
-     */
-    public Builder schema(Schema schema) {
-      this.schema = schema;
-      return this;
-    }
-
     Builder selfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
@@ -317,29 +261,11 @@ public class TableInfo implements Serializable {
       return this;
     }
 
-    Builder type(Type type) {
+    /**
+     * Sets the table type.
+     */
+    public Builder type(TableType type) {
       this.type = type;
-      return this;
-    }
-
-    /**
-     * Sets the query used to create a table of {@link Type#VIEW} type.
-     */
-    public Builder viewQuery(String viewQuery) {
-      this.viewQuery = viewQuery;
-      return this;
-    }
-
-    /**
-     * Sets user-defined functions to be used by the view's query. User defined functions are only
-     * used when {@link #type(TableInfo.Type)} is set to {@link Type#VIEW} and a query is provided via
-     * {@link #viewQuery(String)}.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
-     *     Functions</a>
-     */
-    public Builder userDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
-      this.userDefinedFunctions = userDefinedFunctions;
       return this;
     }
 
@@ -358,16 +284,12 @@ public class TableInfo implements Serializable {
     this.selfLink = builder.selfLink;
     this.friendlyName = builder.friendlyName;
     this.description = builder.description;
-    this.schema = builder.schema;
+    this.type = builder.type;
     this.numBytes = builder.numBytes;
     this.numRows = builder.numRows;
     this.creationTime = builder.creationTime;
     this.expirationTime = builder.expirationTime;
     this.lastModifiedTime = builder.lastModifiedTime;
-    this.viewQuery = builder.viewQuery;
-    this.userDefinedFunctions = builder.userDefinedFunctions;
-    this.type = builder.type;
-    this.externalConfiguration = builder.externalConfiguration;
     this.location = builder.location;
     this.streamingBuffer = builder.streamingBuffer;
   }
@@ -405,21 +327,14 @@ public class TableInfo implements Serializable {
    * Returns a user-friendly name for the table.
    */
   public String friendlyName() {
-    return friendlyName;
+    return Data.isNull(friendlyName) ? null : friendlyName;
   }
 
   /**
    * Returns a user-friendly description for the table.
    */
   public String description() {
-    return description;
-  }
-
-  /**
-   * Returns the table's schema.
-   */
-  public Schema schema() {
-    return schema;
+    return Data.isNull(description) ? null : description;
   }
 
   /**
@@ -448,7 +363,7 @@ public class TableInfo implements Serializable {
    * table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.
    */
   public Long expirationTime() {
-    return expirationTime;
+    return Data.isNull(expirationTime) ? null : expirationTime;
   }
 
   /**
@@ -459,42 +374,21 @@ public class TableInfo implements Serializable {
   }
 
   /**
-   * If this table is a view ({@link #type()} returns {@link Type#VIEW}) this method returns the
-   * query used to create the view. Returns {@code null} otherwise.
-   */
-  public String viewQuery() {
-    return viewQuery;
-  }
-
-  /**
-   * If this table is a view ({@link #type()} returns {@link Type#VIEW} this method returns user
-   * defined functions that can be used by {@link #viewQuery}.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined Functions
-   *     </a>
-   */
-  public List<UserDefinedFunction> userDefinedFunctions() {
-    return userDefinedFunctions;
-  }
-
-  /**
    * Returns the type of the table.
    */
-  public Type type() {
-    return type;
+  public Schema schema() {
+    return type.schema();
   }
 
   /**
-   * If this table is external ({@link #type()} returns {@link Type#EXTERNAL}) this method returns
-   * the data format, location, and other properties of a table stored outside of BigQuery.
-   * If the table is not {@link Type#EXTERNAL} this method returns {@code null}. This property
-   * is experimental and might be subject to change or removed.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data Sources
-   *     </a>
+   * Returns the table's type. If this table is simple table the method returns an instance of
+   * {@link TableType}. If this table is an external table this method returns an instance of
+   * {@link com.google.gcloud.bigquery.TableType.ExternalTable}. If this table is a view table this
+   * method returns an instance of {@link com.google.gcloud.bigquery.TableType.View}.
    */
-  public ExternalDataConfiguration externalConfiguration() {
-    return externalConfiguration;
+  @SuppressWarnings("unchecked")
+  public <T extends TableType> T type() {
+    return (T) type;
   }
 
   /**
@@ -527,10 +421,6 @@ public class TableInfo implements Serializable {
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("tableId", tableId)
-        .add("schema", schema)
-        .add("externalDataConfiguration", externalConfiguration)
-        .add("query", viewQuery)
-        .add("userDefinedFunctions", userDefinedFunctions)
         .add("type", type)
         .add("location", location)
         .add("streamingBuffer", streamingBuffer)
@@ -560,31 +450,30 @@ public class TableInfo implements Serializable {
   Table toPb() {
     Table tablePb = new Table();
     tablePb.setTableReference(tableId.toPb());
-    if (externalConfiguration != null) {
-      tablePb.setExternalDataConfiguration(externalConfiguration.toPb());
-    }
     if (lastModifiedTime != null) {
       tablePb.setLastModifiedTime(BigInteger.valueOf(lastModifiedTime));
     }
     if (numRows != null) {
       tablePb.setNumRows(BigInteger.valueOf(numRows));
     }
-    if (schema != null) {
-      tablePb.setSchema(schema.toPb());
+    if (schema() != null) {
+      tablePb.setSchema(schema().toPb());
+    }
+    if (type instanceof TableType.View) {
+      TableType.View viewType = (TableType.View) type;
+      ViewDefinition viewDefinition = new ViewDefinition().setQuery(viewType.query());
+      if (viewType.userDefinedFunctions() != null) {
+        viewDefinition.setUserDefinedFunctionResources(
+            Lists.transform(viewType.userDefinedFunctions(), UserDefinedFunction.TO_PB_FUNCTION));
+      }
+      tablePb.setView(viewDefinition);
+    }
+    if (type instanceof TableType.ExternalTable) {
+      tablePb.setExternalDataConfiguration(
+          ((TableType.ExternalTable) type).configuration().toPb());
     }
     if (streamingBuffer != null) {
       tablePb.setStreamingBuffer(streamingBuffer.toPb());
-    }
-    if (viewQuery != null) {
-      ViewDefinition viewDefinition = new ViewDefinition().setQuery(viewQuery);
-      if (userDefinedFunctions != null) {
-        viewDefinition.setUserDefinedFunctionResources(
-            Lists.transform(userDefinedFunctions, UserDefinedFunction.TO_PB_FUNCTION));
-      }
-      tablePb.setView(new ViewDefinition().setQuery(viewQuery));
-    }
-    if (type != null) {
-      tablePb.setType(type.name());
     }
     tablePb.setCreationTime(creationTime);
     tablePb.setDescription(description);
@@ -599,98 +488,37 @@ public class TableInfo implements Serializable {
   }
 
   /**
-   * Returns a builder for a BigQuery table backed by external data. External tables are
-   * experimental and might be subject to change or removed.
+   * Returns a builder for a BigQuery table given its type.
    *
    * @param tableId table id
-   * @param configuration configuration for external data source
+   * @param type the type of the table
    */
-  public static Builder builder(TableId tableId, ExternalDataConfiguration configuration) {
-    return new Builder().tableId(tableId).externalConfiguration(configuration);
+  public static Builder builder(TableId tableId, TableType type) {
+    return new Builder().tableId(tableId).type(type);
   }
 
   /**
-   * Returns a builder for a BigQuery view.
+   * Creates BigQuery table given its type
    *
    * @param tableId table id
-   * @param query query used to create the view
+   * @param type the type of the table
    */
-  public static Builder builder(TableId tableId, String query) {
-    return new Builder().tableId(tableId).viewQuery(query);
-  }
-
-  /**
-   * Returns a builder for a BigQuery view.
-   *
-   * @param tableId table id
-   * @param query query used to create the view
-   */
-  public static Builder builder(TableId tableId, String query, List<UserDefinedFunction> functions) {
-    return new Builder().tableId(tableId).viewQuery(query).userDefinedFunctions(functions);
-  }
-
-  /**
-   * Returns a builder for a BigQuery table.
-   *
-   * @param tableId table id
-   * @param schema table's schema definition
-   */
-  public static Builder builder(TableId tableId, Schema schema) {
-    return new Builder().tableId(tableId).schema(schema);
-  }
-
-  /**
-   * Creates BigQuery table backed by external data.
-   *
-   * @param tableId table id
-   * @param configuration configuration for external data source
-   */
-  public static TableInfo of(TableId tableId, ExternalDataConfiguration configuration) {
-    return builder(tableId, configuration).build();
-  }
-
-  /**
-   * Creates a BigQuery view.
-   *
-   * @param tableId table id
-   * @param query query used to create the view
-   */
-  public static TableInfo of(TableId tableId, String query) {
-    return builder(tableId, query).build();
-  }
-
-  /**
-   * Creates a BigQuery view.
-   *
-   * @param tableId table id
-   * @param query query used to create the view
-   * @param functions user defined funtions that can be used in {@code query}
-   */
-  public static TableInfo of(TableId tableId, String query, List<UserDefinedFunction> functions) {
-    return builder(tableId, query, functions).build();
-  }
-
-  /**
-   * Creates a BigQuery table.
-   *
-   * @param tableId table id
-   * @param schema table's schema definition
-   */
-  public static TableInfo of(TableId tableId, Schema schema) {
-    return builder(tableId, schema).build();
+  public static TableInfo of(TableId tableId, TableType type) {
+    return builder(tableId, type).build();
   }
 
   static TableInfo fromPb(Table tablePb) {
     Builder builder = new Builder().tableId(TableId.fromPb(tablePb.getTableReference()));
+    Schema schema = null;
+    if (tablePb.getSchema() != null) {
+      schema = Schema.fromPb(tablePb.getSchema());
+      builder.type(TableType.table(schema));
+    }
     if (tablePb.getDescription() != null) {
       builder.description(tablePb.getDescription());
     }
     if (tablePb.getExpirationTime() != null) {
       builder.expirationTime(tablePb.getExpirationTime());
-    }
-    if (tablePb.getExternalDataConfiguration() != null) {
-      builder.externalConfiguration(
-          ExternalDataConfiguration.fromPb(tablePb.getExternalDataConfiguration()));
     }
     if (tablePb.getFriendlyName() != null) {
       builder.friendlyName(tablePb.getFriendlyName());
@@ -704,22 +532,22 @@ public class TableInfo implements Serializable {
     if (tablePb.getNumRows() != null) {
       builder.numRows(tablePb.getNumRows().longValue());
     }
-    if (tablePb.getSchema() != null) {
-      builder.schema(Schema.fromPb(tablePb.getSchema()));
-    }
     if (tablePb.getStreamingBuffer() != null) {
       builder.streamingBuffer(StreamingBuffer.fromPb(tablePb.getStreamingBuffer()));
     }
-    if (tablePb.getType() != null) {
-      builder.type(Type.valueOf(tablePb.getType()));
-    }
     if (tablePb.getView() != null) {
-      builder.viewQuery(tablePb.getView().getQuery());
+      String query = tablePb.getView().getQuery();
+      List<UserDefinedFunction> functions = null;
       if (tablePb.getView().getUserDefinedFunctionResources() != null) {
-        builder.userDefinedFunctions(
-            Lists.transform(tablePb.getView().getUserDefinedFunctionResources(),
-                UserDefinedFunction.FROM_PB_FUNCTION));
+        functions = Lists.transform(tablePb.getView().getUserDefinedFunctionResources(),
+                UserDefinedFunction.FROM_PB_FUNCTION);
       }
+      builder.type(new TableType.View(schema, query, functions));
+    }
+    if (tablePb.getExternalDataConfiguration() != null) {
+      ExternalDataConfiguration configuration =
+          ExternalDataConfiguration.fromPb(tablePb.getExternalDataConfiguration());
+      builder.type(new TableType.ExternalTable(schema, configuration));
     }
     if (tablePb.getCreationTime() != null) {
       builder.creationTime(tablePb.getCreationTime());

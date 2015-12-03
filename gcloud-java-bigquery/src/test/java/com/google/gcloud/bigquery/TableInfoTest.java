@@ -17,6 +17,7 @@
 package com.google.gcloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.bigquery.TableInfo.StreamingBuffer;
@@ -68,40 +69,8 @@ public class TableInfoTest {
   private static final Long LAST_MODIFIED_TIME = 20L;
   private static final String LOCATION = "US";
   private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
-  private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, TABLE_SCHEMA)
-      .creationTime(CREATION_TIME)
-      .description(DESCRIPTION)
-      .etag(ETAG)
-      .expirationTime(EXPIRATION_TIME)
-      .friendlyName(FRIENDLY_NAME)
-      .id(ID)
-      .lastModifiedTime(LAST_MODIFIED_TIME)
-      .location(LOCATION)
-      .numBytes(NUM_BYTES)
-      .numRows(NUM_ROWS)
-      .selfLink(SELF_LINK)
-      .streamingBuffer(STREAMING_BUFFER)
-      .type(TableInfo.Type.TABLE)
-      .build();
-  private static final TableInfo EXTERNAL_TABLE_INFO = TableInfo.builder(TABLE_ID, CONFIGURATION)
-      .creationTime(CREATION_TIME)
-      .description(DESCRIPTION)
-      .etag(ETAG)
-      .expirationTime(EXPIRATION_TIME)
-      .friendlyName(FRIENDLY_NAME)
-      .id(ID)
-      .lastModifiedTime(LAST_MODIFIED_TIME)
-      .location(LOCATION)
-      .numBytes(NUM_BYTES)
-      .numRows(NUM_ROWS)
-      .selfLink(SELF_LINK)
-      .streamingBuffer(STREAMING_BUFFER)
-      .type(TableInfo.Type.TABLE)
-      .build();
-  private static List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
-      UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
-  private static final TableInfo VIEW_INFO =
-      TableInfo.builder(TABLE_ID, VIEW_QUERY, USER_DEFINED_FUNCTIONS)
+  private static final TableInfo TABLE_INFO =
+      TableInfo.builder(TABLE_ID, TableType.table(TABLE_SCHEMA))
           .creationTime(CREATION_TIME)
           .description(DESCRIPTION)
           .etag(ETAG)
@@ -114,7 +83,38 @@ public class TableInfoTest {
           .numRows(NUM_ROWS)
           .selfLink(SELF_LINK)
           .streamingBuffer(STREAMING_BUFFER)
-          .type(TableInfo.Type.VIEW)
+          .build();
+  private static final TableInfo EXTERNAL_TABLE_INFO =
+      TableInfo.builder(TABLE_ID, TableType.externalTable(CONFIGURATION))
+          .creationTime(CREATION_TIME)
+          .description(DESCRIPTION)
+          .etag(ETAG)
+          .expirationTime(EXPIRATION_TIME)
+          .friendlyName(FRIENDLY_NAME)
+          .id(ID)
+          .lastModifiedTime(LAST_MODIFIED_TIME)
+          .location(LOCATION)
+          .numBytes(NUM_BYTES)
+          .numRows(NUM_ROWS)
+          .selfLink(SELF_LINK)
+          .streamingBuffer(STREAMING_BUFFER)
+          .build();
+  private static List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
+      UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
+  private static final TableInfo VIEW_INFO =
+      TableInfo.builder(TABLE_ID, TableType.view(VIEW_QUERY, USER_DEFINED_FUNCTIONS))
+          .creationTime(CREATION_TIME)
+          .description(DESCRIPTION)
+          .etag(ETAG)
+          .expirationTime(EXPIRATION_TIME)
+          .friendlyName(FRIENDLY_NAME)
+          .id(ID)
+          .lastModifiedTime(LAST_MODIFIED_TIME)
+          .location(LOCATION)
+          .numBytes(NUM_BYTES)
+          .numRows(NUM_ROWS)
+          .selfLink(SELF_LINK)
+          .streamingBuffer(STREAMING_BUFFER)
           .build();
 
   @Test
@@ -123,13 +123,10 @@ public class TableInfoTest {
     compareTableInfo(VIEW_INFO, VIEW_INFO.toBuilder().build());
     compareTableInfo(EXTERNAL_TABLE_INFO, EXTERNAL_TABLE_INFO.toBuilder().build());
     TableInfo tableInfo = TABLE_INFO.toBuilder()
-        .type(TableInfo.Type.VIEW)
         .description("newDescription")
         .build();
-    assertEquals(TableInfo.Type.VIEW, tableInfo.type());
     assertEquals("newDescription", tableInfo.description());
     tableInfo = tableInfo.toBuilder()
-        .type(TableInfo.Type.TABLE)
         .description("description")
         .build();
     compareTableInfo(TABLE_INFO, tableInfo);
@@ -137,15 +134,14 @@ public class TableInfoTest {
 
   @Test
   public void testToBuilderIncomplete() {
-    TableInfo tableInfo = TableInfo.of(TABLE_ID, VIEW_QUERY);
+    TableInfo tableInfo = TableInfo.of(TABLE_ID, TableType.view(VIEW_QUERY));
     assertEquals(tableInfo, tableInfo.toBuilder().build());
   }
   @Test
   public void testBuilder() {
     assertEquals(TABLE_ID, TABLE_INFO.tableId());
+    assertTrue(VIEW_INFO.type() instanceof TableType);
     assertEquals(TABLE_SCHEMA, TABLE_INFO.schema());
-    assertEquals(null, TABLE_INFO.viewQuery());
-    assertEquals(null, TABLE_INFO.externalConfiguration());
     assertEquals(CREATION_TIME, TABLE_INFO.creationTime());
     assertEquals(DESCRIPTION, TABLE_INFO.description());
     assertEquals(ETAG, TABLE_INFO.etag());
@@ -158,11 +154,11 @@ public class TableInfoTest {
     assertEquals(NUM_ROWS, TABLE_INFO.numRows());
     assertEquals(SELF_LINK, TABLE_INFO.selfLink());
     assertEquals(STREAMING_BUFFER, TABLE_INFO.streamingBuffer());
-    assertEquals(TableInfo.Type.TABLE, TABLE_INFO.type());
+    assertEquals(TableType.Type.TABLE, TABLE_INFO.type().type());
     assertEquals(TABLE_ID, VIEW_INFO.tableId());
     assertEquals(null, VIEW_INFO.schema());
-    assertEquals(VIEW_QUERY, VIEW_INFO.viewQuery());
-    assertEquals(null, VIEW_INFO.externalConfiguration());
+    assertTrue(VIEW_INFO.type() instanceof TableType.View);
+    assertEquals(VIEW_QUERY, ((TableType.View) VIEW_INFO.type()).query());
     assertEquals(CREATION_TIME, VIEW_INFO.creationTime());
     assertEquals(DESCRIPTION, VIEW_INFO.description());
     assertEquals(ETAG, VIEW_INFO.etag());
@@ -175,11 +171,12 @@ public class TableInfoTest {
     assertEquals(NUM_ROWS, VIEW_INFO.numRows());
     assertEquals(SELF_LINK, VIEW_INFO.selfLink());
     assertEquals(STREAMING_BUFFER, VIEW_INFO.streamingBuffer());
-    assertEquals(TableInfo.Type.VIEW, VIEW_INFO.type());
+    assertEquals(TableType.Type.VIEW, VIEW_INFO.type().type());
     assertEquals(TABLE_ID, EXTERNAL_TABLE_INFO.tableId());
     assertEquals(null, EXTERNAL_TABLE_INFO.schema());
-    assertEquals(null, EXTERNAL_TABLE_INFO.viewQuery());
-    assertEquals(CONFIGURATION, EXTERNAL_TABLE_INFO.externalConfiguration());
+    assertTrue(EXTERNAL_TABLE_INFO.type() instanceof TableType.ExternalTable);
+    assertEquals(CONFIGURATION,
+        ((TableType.ExternalTable) EXTERNAL_TABLE_INFO.type()).configuration());
     assertEquals(CREATION_TIME, EXTERNAL_TABLE_INFO.creationTime());
     assertEquals(DESCRIPTION, EXTERNAL_TABLE_INFO.description());
     assertEquals(ETAG, EXTERNAL_TABLE_INFO.etag());
@@ -192,7 +189,7 @@ public class TableInfoTest {
     assertEquals(NUM_ROWS, EXTERNAL_TABLE_INFO.numRows());
     assertEquals(SELF_LINK, EXTERNAL_TABLE_INFO.selfLink());
     assertEquals(STREAMING_BUFFER, EXTERNAL_TABLE_INFO.streamingBuffer());
-    assertEquals(TableInfo.Type.TABLE, EXTERNAL_TABLE_INFO.type());
+    assertEquals(TableType.Type.EXTERNAL, EXTERNAL_TABLE_INFO.type().type());
   }
 
   @Test
@@ -206,8 +203,7 @@ public class TableInfoTest {
     assertEquals(expected, value);
     assertEquals(expected.tableId(), value.tableId());
     assertEquals(expected.schema(), value.schema());
-    assertEquals(expected.viewQuery(), value.viewQuery());
-    assertEquals(expected.externalConfiguration(), value.externalConfiguration());
+    assertEquals(expected.type(), value.type());
     assertEquals(expected.creationTime(), value.creationTime());
     assertEquals(expected.description(), value.description());
     assertEquals(expected.etag(), value.etag());

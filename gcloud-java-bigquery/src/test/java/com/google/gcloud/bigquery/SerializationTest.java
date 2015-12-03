@@ -104,15 +104,15 @@ public class SerializationTest {
       new UserDefinedFunction.InlineFunction("inline");
   private static final UserDefinedFunction URI_FUNCTION =
       new UserDefinedFunction.UriFunction("URI");
-  private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, TABLE_SCHEMA)
-      .creationTime(CREATION_TIME)
-      .description(DESCRIPTION)
-      .etag(ETAG)
-      .id(ID)
-      .location(LOCATION)
-      .type(TableInfo.Type.TABLE)
-      .streamingBuffer(STREAMING_BUFFER)
-      .build();
+  private static final TableInfo TABLE_INFO =
+      TableInfo.builder(TABLE_ID, TableType.table(TABLE_SCHEMA))
+          .creationTime(CREATION_TIME)
+          .description(DESCRIPTION)
+          .etag(ETAG)
+          .id(ID)
+          .location(LOCATION)
+          .streamingBuffer(STREAMING_BUFFER)
+          .build();
 
   @Test
   public void testServiceOptions() throws Exception {
