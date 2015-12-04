@@ -22,10 +22,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.client.util.Data;
 import com.google.api.services.bigquery.model.Streamingbuffer;
 import com.google.api.services.bigquery.model.Table;
-import com.google.api.services.bigquery.model.ViewDefinition;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-import com.google.common.collect.Lists;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -38,7 +36,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
  */
-public class BaseTableInfo implements Serializable {
+public abstract class BaseTableInfo implements Serializable {
 
   static final Function<Table, BaseTableInfo> FROM_PB_FUNCTION =
       new Function<Table, BaseTableInfo>() {
@@ -167,7 +165,7 @@ public class BaseTableInfo implements Serializable {
   private final Long expirationTime;
   private final Long lastModifiedTime;
 
-  public static class Builder<T extends BaseTableInfo, B extends Builder<T, B>> {
+  public static abstract class Builder<T extends BaseTableInfo, B extends Builder<T, B>> {
 
     private String etag;
     private String id;
@@ -199,6 +197,28 @@ public class BaseTableInfo implements Serializable {
       this.creationTime = tableInfo.creationTime;
       this.expirationTime = tableInfo.expirationTime;
       this.lastModifiedTime = tableInfo.lastModifiedTime;
+    }
+
+    protected Builder(Table tablePb) {
+      this.type = Type.valueOf(tablePb.getType());
+      this.tableId = TableId.fromPb(tablePb.getTableReference());
+      if (tablePb.getSchema() != null) {
+        this.schema(Schema.fromPb(tablePb.getSchema()));
+      }
+      if (tablePb.getLastModifiedTime() != null) {
+        this.lastModifiedTime(tablePb.getLastModifiedTime().longValue());
+      }
+      if (tablePb.getNumRows() != null) {
+        this.numRows(tablePb.getNumRows().longValue());
+      }
+      this.description = tablePb.getDescription();
+      this.expirationTime = tablePb.getExpirationTime();
+      this.friendlyName = tablePb.getFriendlyName();
+      this.creationTime = tablePb.getCreationTime();
+      this.etag = tablePb.getEtag();
+      this.id = tablePb.getId();
+      this.numBytes = tablePb.getNumBytes();
+      this.selfLink = tablePb.getSelfLink();
     }
 
     @SuppressWarnings("unchecked")
@@ -288,12 +308,9 @@ public class BaseTableInfo implements Serializable {
     }
 
     /**
-     * Creates a {@code BaseTableInfo} object.
+     * Creates an object.
      */
-    @SuppressWarnings("unchecked")
-    public T build() {
-      return (T) new BaseTableInfo(this);
-    }
+    public abstract T build();
   }
 
   protected BaseTableInfo(Builder builder) {
@@ -408,11 +425,9 @@ public class BaseTableInfo implements Serializable {
   }
 
   /**
-   * Returns a builder for the {@code BaseTableInfo} object.
+   * Returns a builder for the object.
    */
-  public Builder toBuilder() {
-    return new Builder(this);
-  }
+  public abstract Builder toBuilder();
 
   protected MoreObjects.ToStringHelper toStringHelper() {
     return MoreObjects.toStringHelper(this)
@@ -458,6 +473,7 @@ public class BaseTableInfo implements Serializable {
     if (schema != null) {
       tablePb.setSchema(schema.toPb());
     }
+    tablePb.setType(type.name());
     tablePb.setCreationTime(creationTime);
     tablePb.setDescription(description);
     tablePb.setEtag(etag);
@@ -471,71 +487,16 @@ public class BaseTableInfo implements Serializable {
 
   @SuppressWarnings("unchecked")
   static <T extends BaseTableInfo> T fromPb(Table tablePb) {
-    Builder builder;
-    TableId tableId = TableId.fromPb(tablePb.getTableReference());
-    Schema schema = tablePb.getSchema() != null ? Schema.fromPb(tablePb.getSchema()) : null;
-    if (Objects.equals(tablePb.getType(), Type.VIEW.name()) || tablePb.getView() != null) {
-      ViewDefinition viewPb = tablePb.getView();
-      ViewInfo.Builder viewBuilder = ViewInfo.builder(tableId, viewPb.getQuery());
-      if (tablePb.getView().getUserDefinedFunctionResources() != null) {
-        viewBuilder.userDefinedFunctions(Lists.transform(viewPb.getUserDefinedFunctionResources(),
-            UserDefinedFunction.FROM_PB_FUNCTION));
-      }
-      builder = viewBuilder;
-    } else if (Objects.equals(tablePb.getType(), Type.EXTERNAL.name())
-        || tablePb.getExternalDataConfiguration() != null) {
-      ExternalTableInfo.Builder externalBuilder = ExternalTableInfo.builder(tableId,
-          ExternalDataConfiguration.fromPb(tablePb.getExternalDataConfiguration()));
-      if (tablePb.getStreamingBuffer() != null) {
-        externalBuilder.streamingBuffer(StreamingBuffer.fromPb(tablePb.getStreamingBuffer()));
-      }
-      builder = externalBuilder;
-    } else if (Objects.equals(tablePb.getType(), Type.TABLE.name()) || schema != null) {
-      TableInfo.Builder tableBuilder = TableInfo.builder(tableId, schema);
-      if (tablePb.getLocation() != null) {
-        tableBuilder.location(tablePb.getLocation());
-      }
-      if (tablePb.getStreamingBuffer() != null) {
-        tableBuilder.streamingBuffer(StreamingBuffer.fromPb(tablePb.getStreamingBuffer()));
-      }
-      builder = tableBuilder;
-    } else {
-      // This is for incomplete tables returned by bigquery.listTables
-      builder = new Builder().tableId(tableId);
+    switch (Type.valueOf(tablePb.getType())) {
+      case TABLE:
+        return (T) TableInfo.fromPb(tablePb);
+      case VIEW:
+        return (T) ViewInfo.fromPb(tablePb);
+      case EXTERNAL:
+        return (T) ExternalTableInfo.fromPb(tablePb);
+      default:
+        // never reached
+        throw new IllegalArgumentException("Format " + tablePb.getType() + " is not supported");
     }
-    if (schema != null) {
-      builder.schema(schema);
-    }
-    if (tablePb.getDescription() != null) {
-      builder.description(tablePb.getDescription());
-    }
-    if (tablePb.getExpirationTime() != null) {
-      builder.expirationTime(tablePb.getExpirationTime());
-    }
-    if (tablePb.getFriendlyName() != null) {
-      builder.friendlyName(tablePb.getFriendlyName());
-    }
-    if (tablePb.getLastModifiedTime() != null) {
-      builder.lastModifiedTime(tablePb.getLastModifiedTime().longValue());
-    }
-    if (tablePb.getNumRows() != null) {
-      builder.numRows(tablePb.getNumRows().longValue());
-    }
-    if (tablePb.getCreationTime() != null) {
-      builder.creationTime(tablePb.getCreationTime());
-    }
-    if (tablePb.getEtag() != null) {
-      builder.etag(tablePb.getEtag());
-    }
-    if (tablePb.getId() != null) {
-      builder.id(tablePb.getId());
-    }
-    if (tablePb.getNumBytes() != null) {
-      builder.numBytes(tablePb.getNumBytes());
-    }
-    if (tablePb.getSelfLink() != null) {
-      builder.selfLink(tablePb.getSelfLink());
-    }
-    return (T) builder.build();
   }
 }

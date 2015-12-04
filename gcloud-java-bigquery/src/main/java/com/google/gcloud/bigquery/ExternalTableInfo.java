@@ -21,8 +21,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.MoreObjects;
 
-import java.util.Objects;
-
 /**
  * Google BigQuery External Table information. BigQuery's external tables are tables whose data
  * reside outside of BigQuery but can be queried as normal BigQuery tables. External tables are
@@ -51,9 +49,15 @@ public class ExternalTableInfo extends BaseTableInfo {
       this.streamingBuffer = tableInfo.streamingBuffer;
     }
 
-    @Override
-    protected Builder self() {
-      return this;
+    protected Builder(Table tablePb) {
+      super(tablePb);
+      if (tablePb.getExternalDataConfiguration() != null) {
+        this.configuration =
+            ExternalDataConfiguration.fromPb(tablePb.getExternalDataConfiguration());
+      }
+      if (tablePb.getStreamingBuffer() != null) {
+        this.streamingBuffer = StreamingBuffer.fromPb(tablePb.getStreamingBuffer());
+      }
     }
 
     /**
@@ -83,7 +87,7 @@ public class ExternalTableInfo extends BaseTableInfo {
 
   private ExternalTableInfo(Builder builder) {
     super(builder);
-    this.configuration = checkNotNull(builder.configuration);
+    this.configuration = builder.configuration;
     this.streamingBuffer = builder.streamingBuffer;
   }
 
@@ -122,12 +126,6 @@ public class ExternalTableInfo extends BaseTableInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof ExternalTableInfo
-        && Objects.equals(toPb(), ((ExternalTableInfo) obj).toPb());
-  }
-
-  @Override
   Table toPb() {
     Table tablePb = super.toPb();
     tablePb.setExternalDataConfiguration(configuration.toPb());
@@ -155,5 +153,10 @@ public class ExternalTableInfo extends BaseTableInfo {
    */
   public static ExternalTableInfo of(TableId table, ExternalDataConfiguration configuration) {
     return builder(table, configuration).build();
+  }
+
+  @SuppressWarnings("unchecked")
+  static ExternalTableInfo fromPb(Table tablePb) {
+    return new Builder(tablePb).build();
   }
 }

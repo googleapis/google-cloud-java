@@ -19,8 +19,6 @@ package com.google.gcloud.bigquery;
 import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.MoreObjects;
 
-import java.util.Objects;
-
 /**
  * A Google BigQuery Table information. A BigQuery table is a standard, two-dimensional table with
  * individual records organized in rows, and a data type assigned to each column (also called a
@@ -49,9 +47,12 @@ public class TableInfo extends BaseTableInfo {
       this.streamingBuffer = tableInfo.streamingBuffer;
     }
 
-    @Override
-    protected Builder self() {
-      return this;
+    protected Builder(Table tablePb) {
+      super(tablePb);
+      this.location = tablePb.getLocation();
+      if (tablePb.getStreamingBuffer() != null) {
+        this.streamingBuffer = StreamingBuffer.fromPb(tablePb.getStreamingBuffer());
+      }
     }
 
     Builder location(String location) {
@@ -119,7 +120,7 @@ public class TableInfo extends BaseTableInfo {
   }
 
   /**
-   * Returns a builder for the {@code ExternalTableInfo} object.
+   * Returns a builder for the {@code TableInfo} object.
    */
   @Override
   public Builder toBuilder() {
@@ -134,12 +135,6 @@ public class TableInfo extends BaseTableInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof TableInfo
-        && Objects.equals(toPb(), ((TableInfo) obj).toPb());
-  }
-
-  @Override
   Table toPb() {
     Table tablePb = super.toPb();
     tablePb.setLocation(location);
@@ -147,5 +142,10 @@ public class TableInfo extends BaseTableInfo {
       tablePb.setStreamingBuffer(streamingBuffer.toPb());
     }
     return tablePb;
+  }
+
+  @SuppressWarnings("unchecked")
+  static TableInfo fromPb(Table tablePb) {
+    return new Builder(tablePb).build();
   }
 }

@@ -25,7 +25,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Google BigQuery View Table information. BigQuery's views are logical views, not materialized
@@ -54,9 +53,16 @@ public class ViewInfo extends BaseTableInfo {
       this.userDefinedFunctions = viewInfo.userDefinedFunctions;
     }
 
-    @Override
-    protected Builder self() {
-      return this;
+    protected Builder(Table tablePb) {
+      super(tablePb);
+      ViewDefinition viewPb = tablePb.getView();
+      if (viewPb != null) {
+        this.query = viewPb.getQuery();
+        if (viewPb.getUserDefinedFunctionResources() != null) {
+          this.userDefinedFunctions = Lists.transform(viewPb.getUserDefinedFunctionResources(),
+              UserDefinedFunction.FROM_PB_FUNCTION);
+        }
+      }
     }
 
     /**
@@ -100,7 +106,7 @@ public class ViewInfo extends BaseTableInfo {
 
   private ViewInfo(Builder builder) {
     super(builder);
-    this.query = checkNotNull(builder.query);
+    this.query = builder.query;
     this.userDefinedFunctions = builder.userDefinedFunctions;
   }
 
@@ -138,15 +144,9 @@ public class ViewInfo extends BaseTableInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof ViewInfo && Objects.equals(toPb(), ((ViewInfo) obj).toPb());
-  }
-
-  @Override
   Table toPb() {
     Table tablePb = super.toPb();
-    ViewDefinition viewDefinition = new ViewDefinition()
-        .setQuery(query);
+    ViewDefinition viewDefinition = new ViewDefinition().setQuery(query);
     if (userDefinedFunctions != null) {
       viewDefinition.setUserDefinedFunctionResources(Lists.transform(userDefinedFunctions,
           UserDefinedFunction.TO_PB_FUNCTION));
@@ -225,5 +225,10 @@ public class ViewInfo extends BaseTableInfo {
    */
   public static ViewInfo of(TableId table, String query, UserDefinedFunction... functions) {
     return builder(table, query, functions).build();
+  }
+
+  @SuppressWarnings("unchecked")
+  static ViewInfo fromPb(Table tablePb) {
+    return new Builder(tablePb).build();
   }
 }
