@@ -92,8 +92,8 @@ public class SerializationTest {
           .description("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
-  private static final TableInfo.StreamingBuffer STREAMING_BUFFER =
-      new TableInfo.StreamingBuffer(1L, 2L, 3L);
+  private static final BaseTableInfo.StreamingBuffer STREAMING_BUFFER =
+      new BaseTableInfo.StreamingBuffer(1L, 2L, 3L);
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final ExternalDataConfiguration EXTERNAL_DATA_CONFIGURATION =
       ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
@@ -104,13 +104,28 @@ public class SerializationTest {
       new UserDefinedFunction.InlineFunction("inline");
   private static final UserDefinedFunction URI_FUNCTION =
       new UserDefinedFunction.UriFunction("URI");
-  private static final TableInfo TABLE_INFO =
-      TableInfo.builder(TABLE_ID, TableType.table(TABLE_SCHEMA))
+  private static final BaseTableInfo TABLE_INFO =
+      TableInfo.builder(TABLE_ID, TABLE_SCHEMA)
           .creationTime(CREATION_TIME)
           .description(DESCRIPTION)
           .etag(ETAG)
           .id(ID)
           .location(LOCATION)
+          .streamingBuffer(STREAMING_BUFFER)
+          .build();
+  private static final ViewInfo VIEW_INFO =
+      ViewInfo.builder(TABLE_ID, "QUERY")
+          .creationTime(CREATION_TIME)
+          .description(DESCRIPTION)
+          .etag(ETAG)
+          .id(ID)
+          .build();
+  private static final ExternalTableInfo EXTERNAL_TABLE_INFO =
+      ExternalTableInfo.builder(TABLE_ID, EXTERNAL_DATA_CONFIGURATION)
+          .creationTime(CREATION_TIME)
+          .description(DESCRIPTION)
+          .etag(ETAG)
+          .id(ID)
           .streamingBuffer(STREAMING_BUFFER)
           .build();
 
@@ -136,7 +151,7 @@ public class SerializationTest {
   public void testModelAndRequests() throws Exception {
     Serializable[] objects = {DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
         DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, EXTERNAL_DATA_CONFIGURATION,
-        TABLE_SCHEMA, TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION};
+        TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
