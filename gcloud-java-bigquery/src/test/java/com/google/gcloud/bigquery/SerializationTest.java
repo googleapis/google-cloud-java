@@ -31,6 +31,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class SerializationTest {
@@ -67,6 +68,66 @@ public class SerializationTest {
       .selfLink(SELF_LINK)
       .build();
   private static final TableId TABLE_ID = TableId.of("project", "dataset", "table");
+  private static final CsvOptions CSV_OPTIONS = CsvOptions.builder()
+      .allowJaggedRows(true)
+      .allowQuotedNewLines(false)
+      .encoding(StandardCharsets.ISO_8859_1)
+      .fieldDelimiter(",")
+      .quote("\"")
+      .skipLeadingRows(42)
+      .build();
+  private static final Field FIELD_SCHEMA1 =
+      Field.builder("StringField", Field.Type.string())
+          .mode(Field.Mode.NULLABLE)
+          .description("FieldDescription1")
+          .build();
+  private static final Field FIELD_SCHEMA2 =
+      Field.builder("IntegerField", Field.Type.integer())
+          .mode(Field.Mode.REPEATED)
+          .description("FieldDescription2")
+          .build();
+  private static final Field FIELD_SCHEMA3 =
+      Field.builder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .mode(Field.Mode.REQUIRED)
+          .description("FieldDescription3")
+          .build();
+  private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
+  private static final BaseTableInfo.StreamingBuffer STREAMING_BUFFER =
+      new BaseTableInfo.StreamingBuffer(1L, 2L, 3L);
+  private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
+  private static final ExternalDataConfiguration EXTERNAL_DATA_CONFIGURATION =
+      ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+      .ignoreUnknownValues(true)
+      .maxBadRecords(42)
+      .build();
+  private static final UserDefinedFunction INLINE_FUNCTION =
+      new UserDefinedFunction.InlineFunction("inline");
+  private static final UserDefinedFunction URI_FUNCTION =
+      new UserDefinedFunction.UriFunction("URI");
+  private static final BaseTableInfo TABLE_INFO =
+      TableInfo.builder(TABLE_ID, TABLE_SCHEMA)
+          .creationTime(CREATION_TIME)
+          .description(DESCRIPTION)
+          .etag(ETAG)
+          .id(ID)
+          .location(LOCATION)
+          .streamingBuffer(STREAMING_BUFFER)
+          .build();
+  private static final ViewInfo VIEW_INFO =
+      ViewInfo.builder(TABLE_ID, "QUERY")
+          .creationTime(CREATION_TIME)
+          .description(DESCRIPTION)
+          .etag(ETAG)
+          .id(ID)
+          .build();
+  private static final ExternalTableInfo EXTERNAL_TABLE_INFO =
+      ExternalTableInfo.builder(TABLE_ID, EXTERNAL_DATA_CONFIGURATION)
+          .creationTime(CREATION_TIME)
+          .description(DESCRIPTION)
+          .etag(ETAG)
+          .id(ID)
+          .streamingBuffer(STREAMING_BUFFER)
+          .build();
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -89,7 +150,8 @@ public class SerializationTest {
   @Test
   public void testModelAndRequests() throws Exception {
     Serializable[] objects = {DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
-        DATASET_INFO, TABLE_ID};
+        DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, EXTERNAL_DATA_CONFIGURATION,
+        TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
