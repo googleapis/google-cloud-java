@@ -283,7 +283,7 @@ public class ExternalDataConfiguration implements Serializable {
     if (sourceUris != null) {
       externalConfigurationPb.setSourceUris(sourceUris);
     }
-    if (formatOptions instanceof CsvOptions) {
+    if (formatOptions != null && FormatOptions.CSV.equals(formatOptions.type())) {
       externalConfigurationPb.setCsvOptions(((CsvOptions) formatOptions).toPb());
     }
     return externalConfigurationPb;

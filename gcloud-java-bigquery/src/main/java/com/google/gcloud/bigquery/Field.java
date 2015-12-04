@@ -182,19 +182,19 @@ public class Field implements Serializable {
    * than one value.
    */
   public enum Mode {
-    NULLABLE, REQUIRED, REPEATED, NOT_SET
+    NULLABLE, REQUIRED, REPEATED
   }
 
   private final String name;
   private final Type type;
-  private final Mode mode;
+  private final String mode;
   private final String description;
 
   public static final class Builder {
 
     private String name;
     private Type type;
-    private Mode mode;
+    private String mode;
     private String description;
 
     private Builder() {}
@@ -231,7 +231,7 @@ public class Field implements Serializable {
      * Sets the mode of the field. When not specified {@link Mode#NULLABLE} is used.
      */
     public Builder mode(Mode mode) {
-      this.mode = firstNonNull(mode, Mode.NOT_SET);
+      this.mode = mode != null ? mode.name() : Data.<String>nullOf(String.class);
       return this;
     }
 
@@ -279,7 +279,7 @@ public class Field implements Serializable {
    * Returns the field mode. By default {@link Mode#NULLABLE} is used.
    */
   public Mode mode() {
-    return mode == Mode.NOT_SET ? null : mode;
+    return mode != null ? Mode.valueOf(mode) : null;
   }
 
   /**
@@ -329,7 +329,7 @@ public class Field implements Serializable {
     fieldSchemaPb.setName(name);
     fieldSchemaPb.setType(type.value().name());
     if (mode != null) {
-      fieldSchemaPb.setMode(mode == Mode.NOT_SET ? Data.<String>nullOf(String.class) : mode.name());
+      fieldSchemaPb.setMode(mode);
     }
     if (description != null) {
       fieldSchemaPb.setDescription(description);
