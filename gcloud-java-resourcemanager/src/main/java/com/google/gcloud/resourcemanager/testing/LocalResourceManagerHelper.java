@@ -5,9 +5,15 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.json.JsonFactory;
 import com.google.api.services.cloudresourcemanager.model.Project;
+import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Objects;
+import com.google.common.base.Predicates;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import com.google.common.io.ByteStreams;
 
 import com.sun.net.httpserver.Headers;
@@ -20,15 +26,17 @@ import org.joda.time.format.ISODateTimeFormat;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 
@@ -42,11 +50,14 @@ public class LocalResourceManagerHelper {
   private static final Logger log = Logger.getLogger(LocalResourceManagerHelper.class.getName());
   private static final JsonFactory jsonFactory =
       new com.google.api.client.json.jackson.JacksonFactory();
-  private static final int HTTP_STATUS_OK = 200;
   private static final Random PROJECT_NUMBER_GENERATOR = new Random();
 
+  // see https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects
+  private static final Set<Character> PERMISSIBLE_PROJECT_NAME_PUNCTUATION =
+      ImmutableSet.of('-', '\'', '"', ' ', '!');
+
   private HttpServer server;
-  private final Map<String, Project> projects = new HashMap<>();
+  private final ConcurrentHashMap<String, Project> projects = new ConcurrentHashMap<>();
 
   static class Response {
     private final int code;
@@ -96,7 +107,7 @@ public class LocalResourceManagerHelper {
       args.put("message", message);
       args.put("status", status);
       try {
-        return jsonFactory.toString(args);
+        return jsonFactory.toString(ImmutableMap.of("error", args));
       } catch (IOException e) {
         throw new RuntimeException("Error when generating JSON error response.");
       }
@@ -131,6 +142,7 @@ public class LocalResourceManagerHelper {
       if (response == null) {
         throw new UnsupportedOperationException("Request not recognized.");
       }
+      exchange.getResponseHeaders().set("Content-type", "application/json; charset=UTF-8");
       exchange.sendResponseHeaders(response.code(), response.body().length());
       OutputStream outputStream = exchange.getResponseBody();
       outputStream.write(response.body().getBytes());
@@ -173,6 +185,9 @@ public class LocalResourceManagerHelper {
           case "fields":
             options.put("fields", argEntry[1].split(","));
             break;
+          case "filter":
+            options.put("filter", argEntry[1].split(" "));
+            break;
           case "pageToken":
             // support pageToken when Cloud Resource Manager supports this (#421)
             break;
@@ -185,12 +200,66 @@ public class LocalResourceManagerHelper {
     return options;
   }
 
+  private static final boolean isValidProject(Project project) {
+    if (project.getProjectId() == null) {
+      log.info("Project ID cannot be empty.");
+      return false;
+    }
+    if (!isValidIdOrLabel(project.getProjectId(), 6, 30)) {
+      log.info("Project " + project.getProjectId() + " has an invalid ID."
+          + " See https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects"
+          + " for more information.");
+      return false;
+    }
+    if (project.getName() != null) {
+      for (char c : project.getName().toCharArray()) {
+        if (!PERMISSIBLE_PROJECT_NAME_PUNCTUATION.contains(c) && !Character.isLetterOrDigit(c)) {
+          log.info("Project " + project.getProjectId() + " has an invalid name."
+              + " See https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects"
+              + " for more information.");
+          return false;
+        }
+      }
+    }
+    if (project.getLabels() != null) {
+      if (project.getLabels().size() > 256) {
+        log.info("Project " + project.getProjectId() + " exceeds the limit of 256 labels.");
+        return false;
+      }
+      for (Map.Entry<String, String> entry : project.getLabels().entrySet()) {
+        if (!isValidIdOrLabel(entry.getKey(), 1, 63)
+            || !isValidIdOrLabel(entry.getValue(), 0, 63)) {
+          log.info("Project " + project.getProjectId() + " has an invalid label entry."
+              + " See https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects"
+              + " for more information.");
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  private static final boolean isValidIdOrLabel(String value, int minLength, int maxLength) {
+    for (char c : value.toCharArray()) {
+      if (c != '-' && !Character.isDigit(c)
+          && (!Character.isLetter(c) || !Character.isLowerCase(c))) {
+        return false;
+      }
+    }
+    if (value.length() > 0 && (!Character.isLetter(value.charAt(0)) || value.endsWith("-"))) {
+      return false;
+    }
+    return value.length() >= minLength && value.length() <= maxLength;
+  }
+
   Response create(Project project) throws IOException {
     project.setLifecycleState("ACTIVE");
     project.setProjectNumber(Math.abs(PROJECT_NUMBER_GENERATOR.nextLong()));
     project.setCreateTime(ISODateTimeFormat.dateTime().print(new Date().getTime()));
     Response response;
-    if (projects.containsKey(checkNotNull(project.getProjectId()))) {
+    if (!isValidProject(project)) {
+      response = Error.INVALID_ARGUMENT.response;
+    } else if (projects.containsKey(project.getProjectId())) {
       response = Error.ALREADY_EXISTS.response;
       log.info(
           "A project with the same project ID (" + project.getProjectId() + ") already exists.");
@@ -198,7 +267,7 @@ public class LocalResourceManagerHelper {
       projects.put(project.getProjectId(), project);
       String createdProjectStr = jsonFactory.toString(project);
       log.info("Created the following project: " + createdProjectStr);
-      response = new Response(HTTP_STATUS_OK, createdProjectStr);
+      response = new Response(HttpURLConnection.HTTP_OK, createdProjectStr);
     }
     return response;
   }
@@ -214,7 +283,7 @@ public class LocalResourceManagerHelper {
       log.info("Error when deleting " + projectId + " because the lifecycle state was not ACTIVE.");
     } else {
       project.setLifecycleState("DELETE_REQUESTED");
-      response = new Response(HTTP_STATUS_OK, "{}");
+      response = new Response(HttpURLConnection.HTTP_OK, "{}");
       log.info("Successfully requested delete for the following project: " + projectId);
     }
     return response;
@@ -227,23 +296,69 @@ public class LocalResourceManagerHelper {
       log.info("Project not found.");
     } else {
       response = new Response(
-          HTTP_STATUS_OK, jsonFactory.toString(extractFields(projects.get(projectId), fields)));
+          HttpURLConnection.HTTP_OK,
+          jsonFactory.toString(extractFields(projects.get(projectId), fields)));
     }
     return response;
   }
 
-  Response list(Map<String, Object> options) throws IOException {
+  Response list(final Map<String, Object> options) {
     // Use pageSize and pageToken options when Cloud Resource Manager does so (#421)
-    List<String> projectsSerialized = new ArrayList<>();
-    for (Project p : projects.values()) {
-      projectsSerialized.add(
-          jsonFactory.toString(extractFields(p, (String[]) options.get("fields"))));
-    }
+    List<String> projectsSerialized = Lists.newArrayList(Iterables.filter(
+        Iterables.transform(projects.values(), new Function<Project, String>() {
+          @Override
+          public String apply(Project p) {
+            try {
+              return includeProject(p, (String[]) options.get("filter"))
+                  ? jsonFactory.toString(extractFields(p, (String[]) options.get("fields"))) : null;
+            } catch (IOException e) {
+              log.info("Error when serializing project " + p.getProjectId());
+              return null;
+            }
+          }
+        }),
+        Predicates.notNull()));
     StringBuilder responseBody = new StringBuilder();
     responseBody.append("{\"projects\": [");
     responseBody.append(Joiner.on(",").join(projectsSerialized));
     responseBody.append("]}");
-    return new Response(HTTP_STATUS_OK, responseBody.toString());
+    return new Response(HttpURLConnection.HTTP_OK, responseBody.toString());
+  }
+
+  private static boolean includeProject(Project project, String[] filters) {
+    if (filters == null) {
+      return true;
+    }
+    for (String filter : filters) {
+      String[] filterEntry = filter.toLowerCase().split(":");
+      if ("id".equals(filterEntry[0])) {
+        if (!satisfiesFilter(project.getProjectId(), filterEntry[1])) {
+          return false;
+        }
+      } else if ("name".equals(filterEntry[0])) {
+        if (!satisfiesFilter(project.getName(), filterEntry[1])) {
+          return false;
+        }
+      } else if (filterEntry[0].startsWith("labels")) {
+        String labelKey = filterEntry[0].split("\\.")[1];
+        if (project.getLabels() != null) {
+          String labelValue = project.getLabels().get(labelKey);
+          if (!satisfiesFilter(labelValue, filterEntry[1])) {
+            return false;
+          }
+        }
+      } else {
+        log.info("Could not parse the following filter: " + filter);
+      }
+    }
+    return true;
+  }
+
+  private static boolean satisfiesFilter(String projectValue, String filterValue) {
+    if (projectValue == null) {
+      return false;
+    }
+    return "*".equals(filterValue) ? true : filterValue.equals(projectValue.toLowerCase());
   }
 
   private static Project extractFields(Project fullProject, String[] fields) {
@@ -281,7 +396,7 @@ public class LocalResourceManagerHelper {
 
   Response replace(Project project) throws IOException {
     Response response;
-    Project oldProject = projects.get(checkNotNull(project.getProjectId()));
+    Project oldProject = projects.get(project.getProjectId());
     if (oldProject == null) {
       response = Error.PERMISSION_DENIED.response; // when possible, change this to 404 (#440)
       log.info(
@@ -302,7 +417,7 @@ public class LocalResourceManagerHelper {
       projects.put(project.getProjectId(), project);
       String updatedProjectStr = jsonFactory.toString(project);
       log.info("Successfully updated the project to be: " + updatedProjectStr);
-      response = new Response(HTTP_STATUS_OK, updatedProjectStr);
+      response = new Response(HttpURLConnection.HTTP_OK, updatedProjectStr);
     }
     return response;
   }
@@ -319,7 +434,7 @@ public class LocalResourceManagerHelper {
           + " because the lifecycle state was not DELETE_REQUESTED.");
     } else {
       project.setLifecycleState("ACTIVE");
-      response = new Response(HTTP_STATUS_OK, "{}");
+      response = new Response(HttpURLConnection.HTTP_OK, "{}");
       log.info("Successfully undeleted " + projectId + ".");
     }
     return response;
@@ -378,11 +493,10 @@ public class LocalResourceManagerHelper {
    * @return true if the project was successfully added, false otherwise
    */
   public boolean addProject(Project project) {
-    if (projects.containsKey(checkNotNull(project.getProjectId()))) {
-      return false;
+    if (isValidProject(project)) {
+      return projects.putIfAbsent(project.getProjectId(), clone(project)) == null ? true : false;
     }
-    projects.put(project.getProjectId(), clone(project));
-    return true;
+    return false;
   }
 
   /**
@@ -391,22 +505,20 @@ public class LocalResourceManagerHelper {
    * @return Project (if it exists) or null (if it doesn't exist)
    */
   public Project getProject(String projectId) {
-    com.google.api.services.cloudresourcemanager.model.Project original = projects.get(projectId);
+    Project original = projects.get(projectId);
     return original != null ? clone(projects.get(projectId)) : null;
   }
 
-  private static com.google.api.services.cloudresourcemanager.model.Project clone(
-      com.google.api.services.cloudresourcemanager.model.Project original) {
-    com.google.api.services.cloudresourcemanager.model.Project clone =
-        new com.google.api.services.cloudresourcemanager.model.Project();
-    clone.setProjectId(original.getProjectId());
-    clone.setName(original.getName());
-    clone.setLabels(original.getLabels());
-    clone.setProjectNumber(original.getProjectNumber());
-    clone.setCreateTime(original.getCreateTime());
-    clone.setLifecycleState(original.getLifecycleState());
-    clone.setParent(original.getParent());
-    return clone;
+  private static Project clone(Project original) {
+    return new Project()
+        .setProjectId(original.getProjectId())
+        .setName(original.getName())
+        .setLabels(original.getLabels() != null ? ImmutableMap.copyOf(original.getLabels()) : null)
+        .setProjectNumber(
+            original.getProjectNumber() != null ? original.getProjectNumber().longValue() : null)
+        .setCreateTime(original.getCreateTime())
+        .setLifecycleState(original.getLifecycleState())
+        .setParent(original.getParent() != null ? original.getParent().clone() : null);
   }
 
   /**
@@ -418,11 +530,7 @@ public class LocalResourceManagerHelper {
    * @return true if the project was successfully deleted, false otherwise.
    */
   public boolean removeProject(String projectId) {
-    if (projects.containsKey(projectId)) {
-      projects.remove(checkNotNull(projectId));
-      return true;
-    }
-    return false;
+    return projects.remove(checkNotNull(projectId)) != null ? true : false;
   }
 
   /**
@@ -431,8 +539,7 @@ public class LocalResourceManagerHelper {
    * @return true if the project number was successfully changed, false otherwise.
    */
   public boolean changeProjectNumber(String projectId, long projectNumber) {
-    com.google.api.services.cloudresourcemanager.model.Project project =
-        projects.get(checkNotNull(projectId));
+    Project project = projects.get(checkNotNull(projectId));
     if (project != null) {
       project.setProjectNumber(projectNumber);
       return true;
@@ -450,8 +557,7 @@ public class LocalResourceManagerHelper {
         "ACTIVE".equals(lifecycleState) || "DELETE_REQUESTED".equals(lifecycleState)
         || "DELETE_IN_PROGRESS".equals(lifecycleState),
         "Lifecycle state must be ACTIVE, DELETE_REQUESTED, or DELETE_IN_PROGRESS");
-    com.google.api.services.cloudresourcemanager.model.Project project =
-        projects.get(checkNotNull(projectId));
+    Project project = projects.get(checkNotNull(projectId));
     if (project != null) {
       project.setLifecycleState(lifecycleState);
       return true;
@@ -465,10 +571,9 @@ public class LocalResourceManagerHelper {
    * @return true if the project create time was successfully changed, false otherwise.
    */
   public boolean changeCreateTime(String projectId, String createTime) {
-    com.google.api.services.cloudresourcemanager.model.Project project =
-        projects.get(checkNotNull(projectId));
+    Project project = projects.get(checkNotNull(projectId));
     if (project != null) {
-      project.setCreateTime(createTime);
+      project.setCreateTime(checkNotNull(createTime));
       return true;
     }
     return false;

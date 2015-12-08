@@ -5,6 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.resourcemanager.testing.LocalResourceManagerHelper;
@@ -26,6 +27,14 @@ import java.util.Map;
 public class LocalResourceManagerHelperTest {
 
   private static final int PORT = 8080;
+  private static final long DEFAULT_PROJECT_NUMBER = 123456789L;
+  private static final String DEFAULT_CREATE_TIME = "2011-11-11T01:23:45.678Z";
+  private static final String DEFAULT_PARENT_ID = "12345";
+  private static final String DEFAULT_PARENT_TYPE = "organization";
+  private static final com.google.api.services.cloudresourcemanager.model.ResourceId PARENT =
+      new com.google.api.services.cloudresourcemanager.model.ResourceId()
+          .setId(DEFAULT_PARENT_ID)
+          .setType(DEFAULT_PARENT_TYPE);
   private static final Map<ResourceManagerRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
   private static final LocalResourceManagerHelper RESOURCE_MANAGER_HELPER =
       LocalResourceManagerHelper.create(PORT);
@@ -34,58 +43,47 @@ public class LocalResourceManagerHelperTest {
       .host("http://localhost:" + PORT)
       .build());
   private static final com.google.api.services.cloudresourcemanager.model.Project PARTIAL_PROJECT =
-      new com.google.api.services.cloudresourcemanager.model.Project();
+      new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
+          "partial-project");
   private static final com.google.api.services.cloudresourcemanager.model.Project COMPLETE_PROJECT =
-      new com.google.api.services.cloudresourcemanager.model.Project();
+      new com.google.api.services.cloudresourcemanager.model.Project()
+          .setProjectId("complete-project")
+          .setName("full project")
+          .setLabels(ImmutableMap.of("k1", "v1", "k2", "v2"))
+          .setProjectNumber(DEFAULT_PROJECT_NUMBER)
+          .setCreateTime(DEFAULT_CREATE_TIME)
+          .setLifecycleState("ACTIVE");
   private static final com.google.api.services.cloudresourcemanager.model.Project
-      DELETE_REQUESTED_PROJECT = new com.google.api.services.cloudresourcemanager.model.Project();
+      DELETE_REQUESTED_PROJECT = copyFrom(COMPLETE_PROJECT)
+          .setProjectId("delete-requested-project-id")
+          .setLifecycleState("DELETE_REQUESTED");
   private static final com.google.api.services.cloudresourcemanager.model.Project
-      DELETE_IN_PROGRESS_PROJECT = new com.google.api.services.cloudresourcemanager.model.Project();
+      DELETE_IN_PROGRESS_PROJECT = copyFrom(COMPLETE_PROJECT)
+          .setProjectId("delete-in-progress-project-id")
+          .setLifecycleState("DELETE_IN_PROGRESS");
   private static final com.google.api.services.cloudresourcemanager.model.Project
-      PROJECT_WITH_PARENT = new com.google.api.services.cloudresourcemanager.model.Project();
-  private static final com.google.api.services.cloudresourcemanager.model.ResourceId PARENT =
-      new com.google.api.services.cloudresourcemanager.model.ResourceId();
-  private static final long DEFAULT_PROJECT_NUMBER = 123456789L;
-  private static final String DEFAULT_CREATE_TIME = "2011-11-11T01:23:45.678Z";
-  private static final String DEFAULT_PARENT_ID = "12345";
-  private static final String DEFAULT_PARENT_TYPE = "organization";
+      PROJECT_WITH_PARENT =
+      copyFrom(COMPLETE_PROJECT).setProjectId("project-with-parent-id").setParent(PARENT);
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() {
-    PARTIAL_PROJECT.setProjectId("partialProject");
-    COMPLETE_PROJECT.setProjectId("completeProject");
-    COMPLETE_PROJECT.setName("full project");
-    COMPLETE_PROJECT.setLabels(ImmutableMap.of("k1", "v1", "k2", "v2"));
-    COMPLETE_PROJECT.setProjectNumber(DEFAULT_PROJECT_NUMBER);
-    COMPLETE_PROJECT.setCreateTime(DEFAULT_CREATE_TIME);
-    COMPLETE_PROJECT.setLifecycleState("ACTIVE");
-    copyProperties(COMPLETE_PROJECT, PROJECT_WITH_PARENT);
-    PARENT.setId(DEFAULT_PARENT_ID);
-    PARENT.setType(DEFAULT_PARENT_TYPE);
-    PROJECT_WITH_PARENT.setProjectId("projectWithParentId");
-    PROJECT_WITH_PARENT.setParent(PARENT);
-    copyProperties(COMPLETE_PROJECT, DELETE_REQUESTED_PROJECT);
-    DELETE_REQUESTED_PROJECT.setProjectId("deleteRequestedProjectId");
-    DELETE_REQUESTED_PROJECT.setLifecycleState("DELETE_REQUESTED");
-    copyProperties(COMPLETE_PROJECT, DELETE_IN_PROGRESS_PROJECT);
-    DELETE_IN_PROGRESS_PROJECT.setProjectId("deleteInProgressProjectId");
-    DELETE_IN_PROGRESS_PROJECT.setLifecycleState("DELETE_IN_PROGRESS");
     RESOURCE_MANAGER_HELPER.start();
   }
 
-  private static void copyProperties(
-      com.google.api.services.cloudresourcemanager.model.Project from,
-      com.google.api.services.cloudresourcemanager.model.Project to) {
-    to.setProjectId(from.getProjectId());
-    to.setName(from.getName());
-    to.setLabels(from.getLabels());
-    to.setProjectNumber(from.getProjectNumber());
-    to.setCreateTime(from.getCreateTime());
-    to.setLifecycleState(from.getLifecycleState());
-    to.setParent(from.getParent());
+  private static com.google.api.services.cloudresourcemanager.model.Project copyFrom(
+      com.google.api.services.cloudresourcemanager.model.Project from) {
+    return new com.google.api.services.cloudresourcemanager.model.Project()
+        .setProjectId(from.getProjectId())
+        .setName(from.getName())
+        .setLabels(from.getLabels() != null ? ImmutableMap.copyOf(from.getLabels()) : null)
+        .setProjectNumber(
+            from.getProjectNumber() != null ? from.getProjectNumber().longValue() : null)
+        .setCreateTime(from.getCreateTime())
+        .setLifecycleState(from.getLifecycleState())
+        .setParent(from.getParent() != null ? from.getParent().clone() : null);
   }
 
   @Before
@@ -120,6 +118,96 @@ public class LocalResourceManagerHelperTest {
     assertEquals(PROJECT_WITH_PARENT.getName(), returnedProject.getName());
     assertNotNull(returnedProject.getProjectNumber());
     assertFalse(PROJECT_WITH_PARENT.getCreateTime().equals(returnedProject.getCreateTime()));
+  }
+
+  @Test
+  public void testIsInvalidProjectId() {
+    com.google.api.services.cloudresourcemanager.model.Project project =
+        new com.google.api.services.cloudresourcemanager.model.Project();
+    expectInvalidArgumentException(project);
+    project.setProjectId("abcde");
+    expectInvalidArgumentException(project);
+    project.setProjectId("this-project-id-is-more-than-thirty-characters-long");
+    expectInvalidArgumentException(project);
+    project.setProjectId("project-id-with-invalid-character-?");
+    expectInvalidArgumentException(project);
+    project.setProjectId("-invalid-start-character");
+    expectInvalidArgumentException(project);
+    project.setProjectId("invalid-ending-character-");
+    expectInvalidArgumentException(project);
+    project.setProjectId("some-valid-project-id-12345");
+    rpc.create(project);
+    assertNotNull(RESOURCE_MANAGER_HELPER.getProject(project.getProjectId()));
+  }
+
+  private void expectInvalidArgumentException(
+      com.google.api.services.cloudresourcemanager.model.Project project) {
+    try {
+      rpc.create(project);
+      fail("Should fail because of an invalid argument.");
+    } catch (ResourceManagerException e) {
+      assertEquals("Request contains an invalid argument.", e.getMessage());
+    }
+  }
+
+  @Test
+  public void testIsInvalidProjectName() {
+    com.google.api.services.cloudresourcemanager.model.Project project =
+        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
+            "some-project-id");
+    rpc.create(project);
+    assertNull(RESOURCE_MANAGER_HELPER.getProject(project.getProjectId()).getName());
+    RESOURCE_MANAGER_HELPER.removeProject(project.getProjectId());
+    project.setName("This is a valid name-'\"!");
+    rpc.create(project);
+    assertEquals(
+        project.getName(), RESOURCE_MANAGER_HELPER.getProject(project.getProjectId()).getName());
+    RESOURCE_MANAGER_HELPER.removeProject(project.getProjectId());
+    project.setName("invalid-character-,");
+    thrown.expect(ResourceManagerException.class);
+    thrown.expectMessage("Request contains an invalid argument.");
+    rpc.create(project);
+  }
+
+  @Test
+  public void testIsInvalidProjectLabels() {
+    com.google.api.services.cloudresourcemanager.model.Project project =
+        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
+            "some-valid-project-id");
+    rpc.create(project);
+    RESOURCE_MANAGER_HELPER.removeProject(project.getProjectId());
+    project.setLabels(ImmutableMap.of("", "v1"));
+    expectInvalidArgumentException(project);
+    project.setLabels(ImmutableMap.of(
+        "this-project-label-is-more-than-sixty-three-characters-long-so-it-should-fail", "v1"));
+    expectInvalidArgumentException(project);
+    project.setLabels(ImmutableMap.of(
+        "k1", "this-project-label-is-more-than-sixty-three-characters-long-so-it-should-fail"));
+    expectInvalidArgumentException(project);
+    project.setLabels(ImmutableMap.of("k1?", "v1"));
+    expectInvalidArgumentException(project);
+    project.setLabels(ImmutableMap.of("k1", "v1*"));
+    expectInvalidArgumentException(project);
+    project.setLabels(ImmutableMap.of("-k1", "v1"));
+    expectInvalidArgumentException(project);
+    project.setLabels(ImmutableMap.of("k1", "-v1"));
+    expectInvalidArgumentException(project);
+    project.setLabels(ImmutableMap.of("k1-", "v1"));
+    expectInvalidArgumentException(project);
+    project.setLabels(ImmutableMap.of("k1", "v1-"));
+    expectInvalidArgumentException(project);
+    Map<String, String> tooManyLabels = new HashMap<>();
+    for (int i = 0; i < 257; i++) {
+      tooManyLabels.put("k" + Integer.toString(i), "v" + Integer.toString(i));
+    }
+    expectInvalidArgumentException(project);
+    project.setLabels(ImmutableMap.of("k-1", ""));
+    rpc.create(project);
+    assertNotNull(RESOURCE_MANAGER_HELPER.getProject(project.getProjectId()));
+    assertTrue(RESOURCE_MANAGER_HELPER.getProject(project.getProjectId())
+        .getLabels()
+        .get("k-1")
+        .isEmpty());
   }
 
   @Test
@@ -196,7 +284,7 @@ public class LocalResourceManagerHelperTest {
   }
 
   @Test
-  public void testListWithOptions() {
+  public void testListFieldOptions() {
     Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
     rpcOptions.put(ResourceManagerRpc.Option.FIELDS, "projectId,name,labels");
     rpcOptions.put(ResourceManagerRpc.Option.PAGE_TOKEN, "somePageToken");
@@ -217,18 +305,57 @@ public class LocalResourceManagerHelperTest {
   }
 
   @Test
+  public void testListFilterOptions() {
+    Map<ResourceManagerRpc.Option, Object> rpcFilterOptions = new HashMap<>();
+    rpcFilterOptions.put(
+        ResourceManagerRpc.Option.FILTER, "id:* name:myProject labels.color:blue LABELS.SIZE:*");
+    com.google.api.services.cloudresourcemanager.model.Project matchingProject =
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId("matching-project")
+            .setName("MyProject")
+            .setProjectNumber(DEFAULT_PROJECT_NUMBER)
+            .setLabels(ImmutableMap.of("Color", "blue", "size", "Big"));
+    com.google.api.services.cloudresourcemanager.model.Project nonMatchingProject1 =
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId("non-matching-project1")
+            .setName("myProject")
+            .setProjectNumber(DEFAULT_PROJECT_NUMBER);
+    nonMatchingProject1.setLabels(ImmutableMap.of("color", "blue"));
+    com.google.api.services.cloudresourcemanager.model.Project nonMatchingProject2 =
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId("non-matching-project2")
+            .setName("myProj")
+            .setProjectNumber(DEFAULT_PROJECT_NUMBER)
+            .setLabels(ImmutableMap.of("color", "blue", "size", "big"));
+    com.google.api.services.cloudresourcemanager.model.Project nonMatchingProject3 =
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId("non-matching-project3")
+            .setProjectNumber(DEFAULT_PROJECT_NUMBER);
+    RESOURCE_MANAGER_HELPER.addProject(matchingProject);
+    RESOURCE_MANAGER_HELPER.addProject(nonMatchingProject1);
+    RESOURCE_MANAGER_HELPER.addProject(nonMatchingProject2);
+    RESOURCE_MANAGER_HELPER.addProject(nonMatchingProject3);
+    for (com.google.api.services.cloudresourcemanager.model.Project p :
+        rpc.list(rpcFilterOptions).y()) {
+      assertFalse(p.equals(nonMatchingProject1));
+      assertFalse(p.equals(nonMatchingProject2));
+      assertTrue(p.equals(matchingProject));
+    }
+  }
+
+  @Test
   public void testReplace() {
     RESOURCE_MANAGER_HELPER.addProject(COMPLETE_PROJECT);
-    com.google.api.services.cloudresourcemanager.model.Project anotherCompleteProject =
-        new com.google.api.services.cloudresourcemanager.model.Project();
-    anotherCompleteProject.setProjectId(COMPLETE_PROJECT.getProjectId());
     String newName = "new name";
-    anotherCompleteProject.setName(newName);
     Map<String, String> newLabels = ImmutableMap.of("new k1", "new v1");
-    anotherCompleteProject.setLabels(newLabels);
-    anotherCompleteProject.setProjectNumber(987654321L);
-    anotherCompleteProject.setCreateTime("2000-01-01T00:00:00.001Z");
-    anotherCompleteProject.setLifecycleState("DELETE_REQUESTED");
+    com.google.api.services.cloudresourcemanager.model.Project anotherCompleteProject =
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId(COMPLETE_PROJECT.getProjectId())
+            .setName(newName)
+            .setLabels(newLabels)
+            .setProjectNumber(987654321L)
+            .setCreateTime("2000-01-01T00:00:00.001Z")
+            .setLifecycleState("DELETE_REQUESTED");
     rpc.replace(anotherCompleteProject);
     com.google.api.services.cloudresourcemanager.model.Project returnedProject =
         RESOURCE_MANAGER_HELPER.getProject(COMPLETE_PROJECT.getProjectId());
@@ -253,8 +380,8 @@ public class LocalResourceManagerHelperTest {
     thrown.expect(ResourceManagerException.class);
     thrown.expectMessage("Precondition check failed.");
     com.google.api.services.cloudresourcemanager.model.Project anotherProject =
-        new com.google.api.services.cloudresourcemanager.model.Project();
-    anotherProject.setProjectId(DELETE_REQUESTED_PROJECT.getProjectId());
+        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
+            DELETE_REQUESTED_PROJECT.getProjectId());
     rpc.replace(anotherProject);
   }
 
@@ -264,8 +391,8 @@ public class LocalResourceManagerHelperTest {
     thrown.expect(ResourceManagerException.class);
     thrown.expectMessage("Precondition check failed.");
     com.google.api.services.cloudresourcemanager.model.Project anotherProject =
-        new com.google.api.services.cloudresourcemanager.model.Project();
-    anotherProject.setProjectId(DELETE_IN_PROGRESS_PROJECT.getProjectId());
+        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
+            DELETE_IN_PROGRESS_PROJECT.getProjectId());
     rpc.replace(anotherProject);
   }
 
@@ -273,9 +400,9 @@ public class LocalResourceManagerHelperTest {
   public void testReplaceAddingParent() {
     RESOURCE_MANAGER_HELPER.addProject(COMPLETE_PROJECT);
     com.google.api.services.cloudresourcemanager.model.Project anotherProject =
-        new com.google.api.services.cloudresourcemanager.model.Project();
-    anotherProject.setProjectId(COMPLETE_PROJECT.getProjectId());
-    anotherProject.setParent(PARENT);
+        new com.google.api.services.cloudresourcemanager.model.Project()
+            .setProjectId(COMPLETE_PROJECT.getProjectId())
+            .setParent(PARENT);
     thrown.expect(ResourceManagerException.class);
     thrown.expectMessage("Request contains an invalid argument.");
     rpc.replace(anotherProject);
@@ -285,8 +412,8 @@ public class LocalResourceManagerHelperTest {
   public void testReplaceRemovingParent() {
     RESOURCE_MANAGER_HELPER.addProject(PROJECT_WITH_PARENT);
     com.google.api.services.cloudresourcemanager.model.Project anotherProject =
-        new com.google.api.services.cloudresourcemanager.model.Project();
-    anotherProject.setProjectId(PROJECT_WITH_PARENT.getProjectId());
+        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
+            PROJECT_WITH_PARENT.getProjectId());
     thrown.expect(ResourceManagerException.class);
     thrown.expectMessage("Request contains an invalid argument.");
     rpc.replace(anotherProject);
@@ -336,11 +463,13 @@ public class LocalResourceManagerHelperTest {
   public void testAddProject() {
     assertTrue(RESOURCE_MANAGER_HELPER.addProject(COMPLETE_PROJECT));
     com.google.api.services.cloudresourcemanager.model.Project project =
-        new com.google.api.services.cloudresourcemanager.model.Project();
-    project.setProjectId(COMPLETE_PROJECT.getProjectId());
+        new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
+            COMPLETE_PROJECT.getProjectId());
     assertFalse(RESOURCE_MANAGER_HELPER.addProject(project));
     assertFalse(
         project.equals(RESOURCE_MANAGER_HELPER.getProject(COMPLETE_PROJECT.getProjectId())));
+    assertFalse(RESOURCE_MANAGER_HELPER.addProject(
+        new com.google.api.services.cloudresourcemanager.model.Project()));
   }
 
   @Test
