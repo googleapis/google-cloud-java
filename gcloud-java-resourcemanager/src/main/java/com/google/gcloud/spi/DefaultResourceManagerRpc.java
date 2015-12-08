@@ -5,6 +5,7 @@ import static com.google.gcloud.spi.ResourceManagerRpc.Option.FILTER;
 import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_SIZE;
 import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_TOKEN;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
@@ -40,7 +41,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   private static ResourceManagerException translate(IOException exception) {
     ResourceManagerException translated;
     if (exception instanceof GoogleJsonResponseException) {
-      translated = translate((GoogleJsonResponseException) exception);
+      translated = translate(((GoogleJsonResponseException) exception).getDetails());
     } else {
       translated = new ResourceManagerException(0, exception.getMessage(), false);
     }
@@ -48,10 +49,9 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
     return translated;
   }
 
-  private static ResourceManagerException translate(GoogleJsonResponseException exception) {
-    boolean retryable = RETRYABLE_CODES.contains(exception.getStatusCode());
-    return new ResourceManagerException(
-        exception.getStatusCode(), exception.getMessage(), retryable);
+  private static ResourceManagerException translate(GoogleJsonError exception) {
+    boolean retryable = RETRYABLE_CODES.contains(exception.getCode());
+    return new ResourceManagerException(exception.getCode(), exception.getMessage(), retryable);
   }
 
   @Override
