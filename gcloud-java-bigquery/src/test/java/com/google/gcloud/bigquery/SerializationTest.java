@@ -128,6 +128,47 @@ public class SerializationTest {
           .id(ID)
           .streamingBuffer(STREAMING_BUFFER)
           .build();
+  private static final JobStatistics JOB_STATISTICS = JobStatistics.builder()
+          .creationTime(1L)
+          .endTime(3L)
+          .startTime(2L)
+          .build();
+  private static final JobStatistics.ExtractStatistics EXTRACT_STATISTICS =
+      JobStatistics.ExtractStatistics.builder()
+          .creationTime(1L)
+          .endTime(3L)
+          .startTime(2L)
+          .destinationUriFileCounts(ImmutableList.of(42L))
+          .build();
+  private static final JobStatistics.LoadStatistics LOAD_STATISTICS =
+      JobStatistics.LoadStatistics.builder()
+          .creationTime(1L)
+          .endTime(3L)
+          .startTime(2L)
+          .inputFiles(42L)
+          .outputBytes(1024L)
+          .inputBytes(2048L)
+          .outputRows(24L)
+          .build();
+  private static final JobStatistics.QueryStatistics QUERY_STATISTICS =
+      JobStatistics.QueryStatistics.builder()
+          .creationTime(1L)
+          .endTime(3L)
+          .startTime(2L)
+          .totalBytesProcessed(2048L)
+          .totalBytesBilled(1024L)
+          .cacheHit(false)
+          .billingTier(42)
+          .build();
+  private static final BigQueryError BIGQUERY_ERROR =
+      new BigQueryError("reason", "location", "message", "debugInfo");
+  private static final JobStatus JOB_STATUS = new JobStatus(JobStatus.State.DONE, BIGQUERY_ERROR,
+      ImmutableList.of(BIGQUERY_ERROR));
+  private static final JobId JOB_ID = JobId.of("project", "job");
+  private static final CopyJobInfo COPY_JOB = CopyJobInfo.of(TABLE_ID, TABLE_ID);
+  private static final ExtractJobInfo EXTRACT_JOB = ExtractJobInfo.of(TABLE_ID, SOURCE_URIS);
+  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(TABLE_ID, SOURCE_URIS);
+  private static final QueryJobInfo QUERY_JOB = QueryJobInfo.of("query");
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -151,7 +192,9 @@ public class SerializationTest {
   public void testModelAndRequests() throws Exception {
     Serializable[] objects = {DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
         DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, EXTERNAL_DATA_CONFIGURATION,
-        TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION};
+        TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION,
+        JOB_STATISTICS, EXTRACT_STATISTICS, LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR,
+        JOB_STATUS, JOB_ID, COPY_JOB, EXTRACT_JOB, LOAD_JOB, QUERY_JOB};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
