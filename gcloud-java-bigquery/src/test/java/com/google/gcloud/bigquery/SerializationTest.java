@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
 
@@ -33,6 +34,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Map;
 
 public class SerializationTest {
 
@@ -169,6 +171,23 @@ public class SerializationTest {
   private static final ExtractJobInfo EXTRACT_JOB = ExtractJobInfo.of(TABLE_ID, SOURCE_URIS);
   private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(TABLE_ID, SOURCE_URIS);
   private static final QueryJobInfo QUERY_JOB = QueryJobInfo.of("query");
+  private static final Map<String, Object> CONTENT1 =
+      ImmutableMap.<String, Object>of("key", "val1");
+  private static final Map<String, Object> CONTENT2 =
+      ImmutableMap.<String, Object>of("key", "val2");
+  private static final InsertAllRequest INSERT_ALL_REQUEST = InsertAllRequest.builder(TABLE_ID)
+      .addRow(CONTENT1)
+      .addRow(CONTENT2)
+      .ignoreUnknownValues(true)
+      .skipInvalidRows(false)
+      .build();
+  private static final Map<Long, List<BigQueryError>> ERRORS_MAP =
+      ImmutableMap.<Long, List<BigQueryError>>of(0L, ImmutableList.of(BIGQUERY_ERROR));
+  private static final InsertAllResponse INSERT_ALL_RESPONSE = new InsertAllResponse(ERRORS_MAP);
+  private static final FieldValue FIELD_VALUE = new FieldValue(FieldValue.Kind.PRIMITIVE, "value");
+  private static final TableRow TABLE_ROW = new TableRow.Builder()
+      .addValue(FIELD_VALUE)
+      .build();
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -194,7 +213,8 @@ public class SerializationTest {
         DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, EXTERNAL_DATA_CONFIGURATION,
         TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION,
         JOB_STATISTICS, EXTRACT_STATISTICS, LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR,
-        JOB_STATUS, JOB_ID, COPY_JOB, EXTRACT_JOB, LOAD_JOB, QUERY_JOB};
+        JOB_STATUS, JOB_ID, COPY_JOB, EXTRACT_JOB, LOAD_JOB, QUERY_JOB, INSERT_ALL_REQUEST,
+        INSERT_ALL_RESPONSE, FIELD_VALUE, TABLE_ROW};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
