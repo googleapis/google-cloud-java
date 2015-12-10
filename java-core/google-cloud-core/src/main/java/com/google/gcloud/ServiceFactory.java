@@ -22,6 +22,7 @@ package com.google.gcloud;
  * Implementation must provide a public no-arg constructor.
  * Loading of a factory implementation is done via {@link java.util.ServiceLoader}.
  */
+@SuppressWarnings("rawtypes")
 public interface ServiceFactory<ServiceT extends Service, ServiceOptionsT extends ServiceOptions> {
 
   ServiceT create(ServiceOptionsT serviceOptions);

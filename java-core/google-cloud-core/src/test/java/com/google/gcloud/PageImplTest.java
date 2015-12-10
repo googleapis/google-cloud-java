@@ -22,8 +22,6 @@ import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 
-import java.util.Collections;
-
 public class PageImplTest {
 
   private static final ImmutableList<String> VALUES = ImmutableList.of("1", "2");
