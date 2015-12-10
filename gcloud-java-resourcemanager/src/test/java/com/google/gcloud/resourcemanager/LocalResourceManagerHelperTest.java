@@ -16,9 +16,7 @@ import com.google.gcloud.spi.ResourceManagerRpc.Tuple;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -26,7 +24,6 @@ import java.util.Map;
 
 public class LocalResourceManagerHelperTest {
 
-  private static final int PORT = 8080;
   private static final long DEFAULT_PROJECT_NUMBER = 123456789L;
   private static final String DEFAULT_CREATE_TIME = "2011-11-11T01:23:45.678Z";
   private static final String DEFAULT_PARENT_ID = "12345";
@@ -37,10 +34,10 @@ public class LocalResourceManagerHelperTest {
           .setType(DEFAULT_PARENT_TYPE);
   private static final Map<ResourceManagerRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
   private static final LocalResourceManagerHelper RESOURCE_MANAGER_HELPER =
-      LocalResourceManagerHelper.create(PORT);
+      LocalResourceManagerHelper.create();
   private static final ResourceManagerRpc rpc = new DefaultResourceManagerRpc(
       ResourceManagerOptions.builder()
-      .host("http://localhost:" + PORT)
+      .host("http://localhost:" + RESOURCE_MANAGER_HELPER.port())
       .build());
   private static final com.google.api.services.cloudresourcemanager.model.Project PARTIAL_PROJECT =
       new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
@@ -64,9 +61,6 @@ public class LocalResourceManagerHelperTest {
   private static final com.google.api.services.cloudresourcemanager.model.Project
       PROJECT_WITH_PARENT =
       copyFrom(COMPLETE_PROJECT).setProjectId("project-with-parent-id").setParent(PARENT);
-
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() {
@@ -95,7 +89,7 @@ public class LocalResourceManagerHelperTest {
   public static void afterClass() {
     RESOURCE_MANAGER_HELPER.stop();
   }
-  
+
   @Test
   public void testCreate() {
     com.google.api.services.cloudresourcemanager.model.Project returnedProject =
@@ -107,9 +101,14 @@ public class LocalResourceManagerHelperTest {
     assertNull(returnedProject.getParent());
     assertNotNull(returnedProject.getProjectNumber());
     assertNotNull(returnedProject.getCreateTime());
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Requested entity already exists.");
-    rpc.create(PARTIAL_PROJECT);
+    try {
+      rpc.create(PARTIAL_PROJECT);
+      fail("Should fail, project already exists.");
+    } catch (ResourceManagerException e) {
+      assertEquals(409, e.code());
+      assertTrue(e.getMessage().startsWith("A project with the same project ID")
+          && e.getMessage().endsWith("already exists."));
+    }
     returnedProject = rpc.create(PROJECT_WITH_PARENT);
     assertEquals(PROJECT_WITH_PARENT.getProjectId(), returnedProject.getProjectId());
     assertEquals("ACTIVE", returnedProject.getLifecycleState());
@@ -124,29 +123,32 @@ public class LocalResourceManagerHelperTest {
   public void testIsInvalidProjectId() {
     com.google.api.services.cloudresourcemanager.model.Project project =
         new com.google.api.services.cloudresourcemanager.model.Project();
-    expectInvalidArgumentException(project);
+    String invalidIDMessageSubstring = "invalid ID";
+    expectInvalidArgumentException(project, "Project ID cannot be empty.");
     project.setProjectId("abcde");
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidIDMessageSubstring);
     project.setProjectId("this-project-id-is-more-than-thirty-characters-long");
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidIDMessageSubstring);
     project.setProjectId("project-id-with-invalid-character-?");
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidIDMessageSubstring);
     project.setProjectId("-invalid-start-character");
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidIDMessageSubstring);
     project.setProjectId("invalid-ending-character-");
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidIDMessageSubstring);
     project.setProjectId("some-valid-project-id-12345");
     rpc.create(project);
     assertNotNull(RESOURCE_MANAGER_HELPER.getProject(project.getProjectId()));
   }
 
   private void expectInvalidArgumentException(
-      com.google.api.services.cloudresourcemanager.model.Project project) {
+      com.google.api.services.cloudresourcemanager.model.Project project,
+      String errorMessageSubstring) {
     try {
       rpc.create(project);
       fail("Should fail because of an invalid argument.");
     } catch (ResourceManagerException e) {
-      assertEquals("Request contains an invalid argument.", e.getMessage());
+      assertEquals(400, e.code());
+      assertTrue(e.getMessage().contains(errorMessageSubstring));
     }
   }
 
@@ -164,9 +166,13 @@ public class LocalResourceManagerHelperTest {
         project.getName(), RESOURCE_MANAGER_HELPER.getProject(project.getProjectId()).getName());
     RESOURCE_MANAGER_HELPER.removeProject(project.getProjectId());
     project.setName("invalid-character-,");
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Request contains an invalid argument.");
-    rpc.create(project);
+    try {
+      rpc.create(project);
+      fail("Should fail because of invalid project name.");
+    } catch (ResourceManagerException e) {
+      assertEquals(400, e.code());
+      assertTrue(e.getMessage().contains("invalid name"));
+    }
   }
 
   @Test
@@ -175,32 +181,33 @@ public class LocalResourceManagerHelperTest {
         new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
             "some-valid-project-id");
     rpc.create(project);
+    String invalidLabelMessageSubstring = "invalid label entry";
     RESOURCE_MANAGER_HELPER.removeProject(project.getProjectId());
     project.setLabels(ImmutableMap.of("", "v1"));
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidLabelMessageSubstring);
     project.setLabels(ImmutableMap.of(
         "this-project-label-is-more-than-sixty-three-characters-long-so-it-should-fail", "v1"));
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidLabelMessageSubstring);
     project.setLabels(ImmutableMap.of(
         "k1", "this-project-label-is-more-than-sixty-three-characters-long-so-it-should-fail"));
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidLabelMessageSubstring);
     project.setLabels(ImmutableMap.of("k1?", "v1"));
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidLabelMessageSubstring);
     project.setLabels(ImmutableMap.of("k1", "v1*"));
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidLabelMessageSubstring);
     project.setLabels(ImmutableMap.of("-k1", "v1"));
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidLabelMessageSubstring);
     project.setLabels(ImmutableMap.of("k1", "-v1"));
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidLabelMessageSubstring);
     project.setLabels(ImmutableMap.of("k1-", "v1"));
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidLabelMessageSubstring);
     project.setLabels(ImmutableMap.of("k1", "v1-"));
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidLabelMessageSubstring);
     Map<String, String> tooManyLabels = new HashMap<>();
     for (int i = 0; i < 257; i++) {
       tooManyLabels.put("k" + Integer.toString(i), "v" + Integer.toString(i));
     }
-    expectInvalidArgumentException(project);
+    expectInvalidArgumentException(project, invalidLabelMessageSubstring);
     project.setLabels(ImmutableMap.of("k-1", ""));
     rpc.create(project);
     assertNotNull(RESOURCE_MANAGER_HELPER.getProject(project.getProjectId()));
@@ -214,9 +221,13 @@ public class LocalResourceManagerHelperTest {
   public void testDelete() {
     RESOURCE_MANAGER_HELPER.addProject(COMPLETE_PROJECT);
     rpc.delete(COMPLETE_PROJECT.getProjectId());
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("The caller does not have permission.");
-    rpc.delete("some-nonexistant-project-id");
+    try {
+      rpc.delete("some-nonexistant-project-id");
+      fail("Should fail because the project was already deleted.");
+    } catch (ResourceManagerException e) {
+      assertEquals(403, e.code());
+      assertTrue(e.getMessage().contains("the project was not found"));
+    }
   }
 
   @Test
@@ -224,9 +235,13 @@ public class LocalResourceManagerHelperTest {
     RESOURCE_MANAGER_HELPER.addProject(COMPLETE_PROJECT);
     RESOURCE_MANAGER_HELPER.changeLifecycleState(
         COMPLETE_PROJECT.getProjectId(), "DELETE_IN_PROGRESS");
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Precondition check failed.");
-    rpc.delete(COMPLETE_PROJECT.getProjectId());
+    try {
+      rpc.delete(COMPLETE_PROJECT.getProjectId());
+      fail("Should fail because the project is not ACTIVE.");
+    } catch (ResourceManagerException e) {
+      assertEquals(400, e.code());
+      assertTrue(e.getMessage().contains("the lifecycle state was not ACTIVE"));
+    }
   }
 
   @Test
@@ -234,9 +249,13 @@ public class LocalResourceManagerHelperTest {
     RESOURCE_MANAGER_HELPER.addProject(COMPLETE_PROJECT);
     RESOURCE_MANAGER_HELPER.changeLifecycleState(
         COMPLETE_PROJECT.getProjectId(), "DELETE_REQUESTED");
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Precondition check failed.");
-    rpc.delete(COMPLETE_PROJECT.getProjectId());
+    try {
+      rpc.delete(COMPLETE_PROJECT.getProjectId());
+      fail("Should fail because the project is not ACTIVE.");
+    } catch (ResourceManagerException e) {
+      assertEquals(400, e.code());
+      assertTrue(e.getMessage().contains("the lifecycle state was not ACTIVE"));
+    }
   }
 
   @Test
@@ -245,10 +264,14 @@ public class LocalResourceManagerHelperTest {
     com.google.api.services.cloudresourcemanager.model.Project returnedProject =
         rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS);
     assertEquals(COMPLETE_PROJECT, returnedProject);
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("The caller does not have permission.");
     RESOURCE_MANAGER_HELPER.removeProject(COMPLETE_PROJECT.getProjectId());
-    rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS);
+    try {
+      rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS);
+      fail("Should fail because the project doesn't exist.");
+    } catch (ResourceManagerException e) {
+      assertEquals(403, e.code());
+      assertTrue(e.getMessage().contains("not found"));
+    }
   }
 
   @Test
@@ -366,34 +389,46 @@ public class LocalResourceManagerHelperTest {
     assertEquals(COMPLETE_PROJECT.getCreateTime(), returnedProject.getCreateTime());
     assertEquals(COMPLETE_PROJECT.getLifecycleState(), returnedProject.getLifecycleState());
     assertNull(returnedProject.getParent());
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("The caller does not have permission.");
     com.google.api.services.cloudresourcemanager.model.Project nonexistantProject =
         new com.google.api.services.cloudresourcemanager.model.Project();
     nonexistantProject.setProjectId("some-project-id-that-does-not-exist");
-    rpc.replace(nonexistantProject);
+    try {
+      rpc.replace(nonexistantProject);
+      fail("Should fail because the project doesn't exist.");
+    } catch (ResourceManagerException e) {
+      assertEquals(403, e.code());
+      assertTrue(e.getMessage().contains("the project was not found"));
+    }
   }
 
   @Test
   public void testReplaceWhenDeleteRequested() {
     RESOURCE_MANAGER_HELPER.addProject(DELETE_REQUESTED_PROJECT);
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Precondition check failed.");
     com.google.api.services.cloudresourcemanager.model.Project anotherProject =
         new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
             DELETE_REQUESTED_PROJECT.getProjectId());
-    rpc.replace(anotherProject);
+    try {
+      rpc.replace(anotherProject);
+      fail("Should fail because the project is not ACTIVE.");
+    } catch (ResourceManagerException e) {
+      assertEquals(400, e.code());
+      assertTrue(e.getMessage().contains("the lifecycle state was not ACTIVE"));
+    }
   }
 
   @Test
   public void testReplaceWhenDeleteInProgress() {
     RESOURCE_MANAGER_HELPER.addProject(DELETE_IN_PROGRESS_PROJECT);
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Precondition check failed.");
     com.google.api.services.cloudresourcemanager.model.Project anotherProject =
         new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
             DELETE_IN_PROGRESS_PROJECT.getProjectId());
-    rpc.replace(anotherProject);
+    try {
+      rpc.replace(anotherProject);
+      fail("Should fail because the project is not ACTIVE.");
+    } catch (ResourceManagerException e) {
+      assertEquals(400, e.code());
+      assertTrue(e.getMessage().contains("the lifecycle state was not ACTIVE"));
+    }
   }
 
   @Test
@@ -403,9 +438,16 @@ public class LocalResourceManagerHelperTest {
         new com.google.api.services.cloudresourcemanager.model.Project()
             .setProjectId(COMPLETE_PROJECT.getProjectId())
             .setParent(PARENT);
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Request contains an invalid argument.");
-    rpc.replace(anotherProject);
+    try {
+      rpc.replace(anotherProject);
+      fail("Should fail because the project's parent was modified after creation.");
+    } catch (ResourceManagerException e) {
+      assertEquals(400, e.code());
+      assertEquals(
+          "The server currently only supports setting the parent once "
+          + "and does not allow unsetting it.",
+          e.getMessage());
+    }
   }
 
   @Test
@@ -414,9 +456,16 @@ public class LocalResourceManagerHelperTest {
     com.google.api.services.cloudresourcemanager.model.Project anotherProject =
         new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
             PROJECT_WITH_PARENT.getProjectId());
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Request contains an invalid argument.");
-    rpc.replace(anotherProject);
+    try {
+      rpc.replace(anotherProject);
+      fail("Should fail because the project's parent was unset.");
+    } catch (ResourceManagerException e) {
+      assertEquals(400, e.code());
+      assertEquals(
+          "The server currently only supports setting the parent once "
+          + "and does not allow unsetting it.",
+          e.getMessage());
+    }
   }
 
   @Test
@@ -426,25 +475,37 @@ public class LocalResourceManagerHelperTest {
     com.google.api.services.cloudresourcemanager.model.Project returnedProject =
         rpc.get(DELETE_REQUESTED_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS);
     assertEquals("ACTIVE", returnedProject.getLifecycleState());
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("The caller does not have permission.");
-    rpc.undelete("invalid-project-id");
+    try {
+      rpc.undelete("invalid-project-id");
+      fail("Should fail because the project doesn't exist.");
+    } catch (ResourceManagerException e) {
+      assertEquals(403, e.code());
+      assertTrue(e.getMessage().contains("the project was not found"));
+    }
   }
 
   @Test
   public void testUndeleteWhenActive() {
     RESOURCE_MANAGER_HELPER.addProject(COMPLETE_PROJECT);
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Precondition check failed.");
-    rpc.undelete(COMPLETE_PROJECT.getProjectId());
+    try {
+      rpc.undelete(COMPLETE_PROJECT.getProjectId());
+      fail("Should fail because the project is not deleted.");
+    } catch (ResourceManagerException e) {
+      assertEquals(400, e.code());
+      assertTrue(e.getMessage().contains("lifecycle state was not DELETE_REQUESTED"));
+    }
   }
 
   @Test
   public void testUndeleteWhenDeleteInProgress() {
     RESOURCE_MANAGER_HELPER.addProject(DELETE_IN_PROGRESS_PROJECT);
-    thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Precondition check failed.");
-    rpc.undelete(DELETE_IN_PROGRESS_PROJECT.getProjectId());
+    try {
+      rpc.undelete(DELETE_IN_PROGRESS_PROJECT.getProjectId());
+      fail("Should fail because the project is not deleted.");
+    } catch (ResourceManagerException e) {
+      assertEquals(400, e.code());
+      assertTrue(e.getMessage().contains("lifecycle state was not DELETE_REQUESTED"));
+    }
   }
 
   @Test
@@ -454,9 +515,13 @@ public class LocalResourceManagerHelperTest {
     RESOURCE_MANAGER_HELPER.addProject(COMPLETE_PROJECT);
     assertTrue(RESOURCE_MANAGER_HELPER.changeLifecycleState(
         COMPLETE_PROJECT.getProjectId(), "DELETE_IN_PROGRESS"));
-    thrown.expect(IllegalArgumentException.class);
-    assertFalse(RESOURCE_MANAGER_HELPER.changeLifecycleState(
-        COMPLETE_PROJECT.getProjectId(), "INVALID_STATE"));
+    try {
+      RESOURCE_MANAGER_HELPER.changeLifecycleState(
+          COMPLETE_PROJECT.getProjectId(), "INVALID_STATE");
+      fail("Should fail because of an invalid lifecycle state");
+    } catch (IllegalArgumentException e) {
+      // ignore
+    }
   }
 
   @Test

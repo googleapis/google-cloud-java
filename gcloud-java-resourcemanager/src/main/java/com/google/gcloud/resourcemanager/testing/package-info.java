@@ -21,10 +21,7 @@
  * <p>Before the test:
  * <pre> {@code
  * LocalResourceManagerHelper resourceManagerHelper = LocalResourceManagerHelper.create();
- * // TODO(ajaykannan): implement the following line when ResourceManagerImpl is checked in.
  * ResourceManager resourceManager = resourceManagerHelper.options().service();
- * implement this in the next PR
- * resourceManager.list();
  * } </pre>
  *
  * <p>After the test:
