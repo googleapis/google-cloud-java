@@ -53,12 +53,8 @@ import java.util.jar.Manifest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@SuppressWarnings("rawtypes")
-public abstract class ServiceOptions<
-    ServiceT extends Service,
-    ServiceRpcT,
-    OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>>
-    implements Serializable {
+public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, ServiceRpcT,
+    OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>> implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final long serialVersionUID = 1203687993961393350L;
@@ -154,9 +150,7 @@ public abstract class ServiceOptions<
     }
   }
 
-  protected abstract static class Builder<
-      ServiceT extends Service,
-      ServiceRpcT,
+  protected abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
       OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
       B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {
 
