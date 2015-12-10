@@ -24,6 +24,7 @@ import com.google.gcloud.ServiceOptions;
  * Implementation must provide a public no-arg constructor.
  * Loading of a factory implementation is done via {@link java.util.ServiceLoader}.
  */
+@SuppressWarnings("rawtypes")
 public interface ServiceRpcFactory<ServiceRpcT, OptionsT extends ServiceOptions> {
 
   ServiceRpcT create(OptionsT options);

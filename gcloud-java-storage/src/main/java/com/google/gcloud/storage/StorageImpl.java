@@ -522,8 +522,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       if (exception != null) {
         response.add(new BatchResponse.Result<O>(exception));
       } else {
-        response.add(object != null ?
-            BatchResponse.Result.of(transform.apply(object)) : BatchResponse.Result.<O>empty());
+        response.add(object != null
+            ? BatchResponse.Result.of(transform.apply(object)) : BatchResponse.Result.<O>empty());
       }
     }
     return response;

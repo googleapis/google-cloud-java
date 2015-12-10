@@ -24,8 +24,8 @@ import static com.google.gcloud.storage.Bucket.BucketSourceOption.toSourceOption
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterators;
-import com.google.gcloud.PageImpl;
 import com.google.gcloud.Page;
+import com.google.gcloud.PageImpl;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobGetOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;

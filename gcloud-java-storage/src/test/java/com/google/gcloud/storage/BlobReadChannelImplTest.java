@@ -57,7 +57,7 @@ public class BlobReadChannelImplTest {
   private BlobReadChannelImpl reader;
 
   @Before
-  public void setUp() throws IOException, InterruptedException {
+  public void setUp() {
     rpcFactoryMock = createMock(StorageRpcFactory.class);
     storageRpcMock = createMock(StorageRpc.class);
     expect(rpcFactoryMock.create(anyObject(StorageOptions.class))).andReturn(storageRpcMock);
@@ -144,7 +144,7 @@ public class BlobReadChannelImplTest {
   }
 
   @Test
-  public void testClose() throws IOException {
+  public void testClose() {
     replay(storageRpcMock);
     reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     assertTrue(reader.isOpen());
@@ -176,9 +176,9 @@ public class BlobReadChannelImplTest {
     ByteBuffer secondReadBuffer = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
     expect(storageRpcMock.read(blobId.toPb(), EMPTY_RPC_OPTIONS, 0, DEFAULT_CHUNK_SIZE))
         .andReturn(StorageRpc.Tuple.of("etag1", firstResult));
-    expect(storageRpcMock.read(
-        blobId.toPb(), EMPTY_RPC_OPTIONS, DEFAULT_CHUNK_SIZE, DEFAULT_CHUNK_SIZE))
-            .andReturn(StorageRpc.Tuple.of("etag2", firstResult));
+    expect(
+        storageRpcMock.read(blobId.toPb(), EMPTY_RPC_OPTIONS, DEFAULT_CHUNK_SIZE,
+            DEFAULT_CHUNK_SIZE)).andReturn(StorageRpc.Tuple.of("etag2", secondResult));
     replay(storageRpcMock);
     reader.read(firstReadBuffer);
     try {
@@ -192,7 +192,7 @@ public class BlobReadChannelImplTest {
   }
 
   @Test
-  public void testSaveAndRestore() throws IOException, ClassNotFoundException {
+  public void testSaveAndRestore() throws IOException {
     byte[] firstResult = randomByteArray(DEFAULT_CHUNK_SIZE);
     byte[] secondResult = randomByteArray(DEFAULT_CHUNK_SIZE);
     ByteBuffer firstReadBuffer = ByteBuffer.allocate(42);
@@ -216,6 +216,7 @@ public class BlobReadChannelImplTest {
   public void testStateEquals() {
     replay(storageRpcMock);
     reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    @SuppressWarnings("resource") // avoid closing when you don't want partial writes to GCS
     BlobReadChannel secondReader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     RestorableState<BlobReadChannel> state = reader.capture();
     RestorableState<BlobReadChannel> secondState = secondReader.capture();

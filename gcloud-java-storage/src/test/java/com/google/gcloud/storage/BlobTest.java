@@ -155,7 +155,7 @@ public class BlobTest {
   public void testCopyToBlobId() throws Exception {
     BlobId targetId = BlobId.of("bt", "nt");
     CopyWriter copyWriter = createMock(CopyWriter.class);
-    BlobInfo target = BLOB_INFO.builder(targetId).build();
+    BlobInfo target = BlobInfo.builder(targetId).build();
     Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
     expect(storage.copy(capture(capturedCopyRequest))).andReturn(copyWriter);
     replay(storage);

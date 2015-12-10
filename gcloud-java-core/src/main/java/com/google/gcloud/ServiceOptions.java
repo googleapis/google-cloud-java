@@ -53,11 +53,8 @@ import java.util.jar.Manifest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class ServiceOptions<
-    ServiceT extends Service,
-    ServiceRpcT,
-    OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>>
-    implements Serializable {
+public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, ServiceRpcT,
+    OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>> implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final long serialVersionUID = 1203687993961393350L;
@@ -153,9 +150,7 @@ public abstract class ServiceOptions<
     }
   }
 
-  protected abstract static class Builder<
-      ServiceT extends Service,
-      ServiceRpcT,
+  protected abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
       OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
       B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {
 
@@ -305,8 +300,8 @@ public abstract class ServiceOptions<
     if (projectIdRequired()) {
       checkArgument(
           projectId != null,
-          "A project ID is required for this service but could not be determined from the builder or "
-          + "the environment.  Please set a project ID using the builder.");
+          "A project ID is required for this service but could not be determined from the builder "
+          + "or the environment.  Please set a project ID using the builder.");
     }
     host = firstNonNull(builder.host, defaultHost());
     httpTransportFactory = firstNonNull(builder.httpTransportFactory,
@@ -453,6 +448,7 @@ public abstract class ServiceOptions<
     }
   }
 
+  @SuppressWarnings("unchecked")
   public ServiceT service() {
     if (service == null) {
       service = serviceFactory.create((OptionsT) this);
@@ -460,6 +456,7 @@ public abstract class ServiceOptions<
     return service;
   }
 
+  @SuppressWarnings("unchecked")
   public ServiceRpcT rpc() {
     if (rpc == null) {
       rpc = serviceRpcFactory.create((OptionsT) this);
@@ -587,6 +584,7 @@ public abstract class ServiceOptions<
     authCredentials = authCredentialsState != null ? authCredentialsState.restore() : null;
   }
 
+  @SuppressWarnings("unchecked")
   private static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
     try {
       return (T) Class.forName(className).newInstance();

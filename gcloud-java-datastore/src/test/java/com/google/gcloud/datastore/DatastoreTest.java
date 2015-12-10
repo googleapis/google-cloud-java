@@ -121,7 +121,7 @@ public class DatastoreTest {
   }
 
   @Before
-  public void setUp() throws IOException, InterruptedException {
+  public void setUp() {
     options = DatastoreOptions.builder()
         .projectId(PROJECT_ID)
         .host("http://localhost:" + PORT)

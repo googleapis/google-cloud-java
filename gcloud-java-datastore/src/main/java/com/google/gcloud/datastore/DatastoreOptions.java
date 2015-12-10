@@ -157,11 +157,13 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
     return projectId != null ? projectId : super.defaultProject();
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   protected DatastoreFactory defaultServiceFactory() {
     return DefaultDatastoreFactory.INSTANCE;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   protected DatastoreRpcFactory defaultRpcFactory() {
     return DefaultDatastoreRpcFactory.INSTANCE;
@@ -199,6 +201,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
     return SCOPES;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public Builder toBuilder() {
     return new Builder(this);

@@ -251,7 +251,7 @@ public class StorageImplTest {
   }
 
   @Before
-  public void setUp() throws IOException, InterruptedException {
+  public void setUp() {
     rpcFactoryMock = EasyMock.createMock(StorageRpcFactory.class);
     storageRpcMock = EasyMock.createMock(StorageRpc.class);
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(StorageOptions.class)))
@@ -363,7 +363,7 @@ public class StorageImplTest {
   }
 
   @Test
-  public void testCreateBlobFromStream() throws IOException {
+  public void testCreateBlobFromStream() {
     ByteArrayInputStream fileStream = new ByteArrayInputStream(BLOB_CONTENT);
     BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
     BlobInfo infoWithHashes = infoBuilder.md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build();

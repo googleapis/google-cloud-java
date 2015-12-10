@@ -73,7 +73,7 @@ public class PageImpl<T> implements Page<T>, Serializable {
 
   @Override
   public Iterable<T> values() {
-    return results == null ? Collections.EMPTY_LIST : results;
+    return results == null ? Collections.<T>emptyList() : results;
   }
 
   @Override

@@ -18,7 +18,6 @@ package com.google.gcloud.storage;
 
 import static com.google.gcloud.storage.Acl.Project.ProjectRole.VIEWERS;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
