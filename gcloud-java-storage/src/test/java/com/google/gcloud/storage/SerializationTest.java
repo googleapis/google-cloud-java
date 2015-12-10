@@ -128,7 +128,8 @@ public class SerializationTest {
         .projectId("p2")
         .retryParams(RetryParams.defaultInstance())
         .build();
-    @SuppressWarnings("resource") // avoid closing when you don't want partial writes to GCS
+    // avoid closing when you don't want partial writes to GCS upon failure
+    @SuppressWarnings("resource")
     BlobWriteChannelImpl writer = new BlobWriteChannelImpl(
         options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");
     RestorableState<BlobWriteChannel> state = writer.capture();

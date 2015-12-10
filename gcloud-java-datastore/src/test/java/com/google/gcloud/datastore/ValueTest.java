@@ -66,7 +66,7 @@ public class ValueTest {
       super(ValueType.LIST);
     }
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
+    @SuppressWarnings({"unchecked"})
     @Override
     public Value<Set> build() {
       return new Value(this) {
