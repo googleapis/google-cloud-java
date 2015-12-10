@@ -106,6 +106,7 @@ public class FieldValue implements Serializable {
    * Returns this field's value as a {@link Long}. This method should only be used if the
    * corresponding field has {@link Field.Type#integer()} type.
    *
+   * @throws ClassCastException if the field has not primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Integer}
    */
   @SuppressWarnings("unchecked")
@@ -117,6 +118,7 @@ public class FieldValue implements Serializable {
    * Returns this field's value as a {@link Double}. This method should only be used if the
    * corresponding field has {@link Field.Type#floatingPoint()} type.
    *
+   * @throws ClassCastException if the field has not primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Double}
    */
   @SuppressWarnings("unchecked")
@@ -128,6 +130,7 @@ public class FieldValue implements Serializable {
    * Returns this field's value as a {@link Boolean}. This method should only be used if the
    * corresponding field has {@link Field.Type#bool()} type.
    *
+   * @throws ClassCastException if the field has not primitive type
    * @throws IllegalStateException if the field's value could not be converted to {@link Boolean}
    */
   @SuppressWarnings("unchecked")
@@ -142,6 +145,7 @@ public class FieldValue implements Serializable {
    * Returns this field's value as a {@link Long}, representing a timestamp in microseconds. This
    * method should only be used if the corresponding field has {@link Field.Type#timestamp()} type.
    *
+   * @throws ClassCastException if the field has not primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Long}
    */
   @SuppressWarnings("unchecked")
