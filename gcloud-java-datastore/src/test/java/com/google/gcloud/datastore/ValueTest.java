@@ -60,11 +60,13 @@ public class ValueTest {
 
   private ImmutableMap<ValueType, Value<?>> typeToValue;
 
+  @SuppressWarnings("rawtypes")
   private class TestBuilder extends Value.BaseBuilder<Set, Value<Set>, TestBuilder> {
     TestBuilder() {
       super(ValueType.LIST);
     }
 
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @Override
     public Value<Set> build() {
       return new Value(this) {
@@ -197,6 +199,7 @@ public class ValueTest {
   @Test
   public void testToBuilder() throws Exception {
     Set<String> content = Collections.singleton("bla");
+    @SuppressWarnings("rawtypes")
     ValueBuilder builder = new TestBuilder();
     builder.meaning(1).set(content).indexed(true);
     Value<?> value = builder.build();

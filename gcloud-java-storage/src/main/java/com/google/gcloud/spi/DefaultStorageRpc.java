@@ -371,8 +371,10 @@ public class DefaultStorageRpc implements StorageRpc {
     List<List<Tuple<StorageObject, Map<Option, ?>>>> partitionedToDelete =
         Lists.partition(request.toDelete, MAX_BATCH_DELETES);
     Iterator<List<Tuple<StorageObject, Map<Option, ?>>>> iterator = partitionedToDelete.iterator();
-    BatchRequest chunkRequest = new BatchRequest(iterator.hasNext() ? iterator.next() :
-        ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of(), request.toUpdate, request.toGet);
+    BatchRequest chunkRequest = new BatchRequest(
+        iterator.hasNext()
+            ? iterator.next() : ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of(),
+        request.toUpdate, request.toGet);
     BatchResponse response = batchChunk(chunkRequest);
     Map<StorageObject, Tuple<Boolean, StorageException>> deletes =
         Maps.newHashMapWithExpectedSize(request.toDelete.size());

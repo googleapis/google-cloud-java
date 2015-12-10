@@ -89,11 +89,13 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
     pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   protected StorageFactory defaultServiceFactory() {
     return DefaultStorageFactory.INSTANCE;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   protected StorageRpcFactory defaultRpcFactory() {
     return DefaultStorageRpcFactory.INSTANCE;
@@ -118,6 +120,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
     return builder().build();
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public Builder toBuilder() {
     return new Builder(this);

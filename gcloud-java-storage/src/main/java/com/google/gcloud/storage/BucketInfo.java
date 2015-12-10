@@ -217,6 +217,7 @@ public final class BucketInfo implements Serializable {
       rule = new JacksonFactory().fromString(in.readUTF(), Rule.class);
     }
 
+    @Override
     Rule toPb() {
       return rule;
     }

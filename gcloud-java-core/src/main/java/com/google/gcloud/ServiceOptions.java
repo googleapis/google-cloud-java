@@ -53,6 +53,7 @@ import java.util.jar.Manifest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@SuppressWarnings("rawtypes")
 public abstract class ServiceOptions<
     ServiceT extends Service,
     ServiceRpcT,
@@ -305,8 +306,8 @@ public abstract class ServiceOptions<
     if (projectIdRequired()) {
       checkArgument(
           projectId != null,
-          "A project ID is required for this service but could not be determined from the builder or "
-          + "the environment.  Please set a project ID using the builder.");
+          "A project ID is required for this service but could not be determined from the builder "
+          + "or the environment.  Please set a project ID using the builder.");
     }
     host = firstNonNull(builder.host, defaultHost());
     httpTransportFactory = firstNonNull(builder.httpTransportFactory,
@@ -453,6 +454,7 @@ public abstract class ServiceOptions<
     }
   }
 
+  @SuppressWarnings("unchecked")
   public ServiceT service() {
     if (service == null) {
       service = serviceFactory.create((OptionsT) this);
@@ -460,6 +462,7 @@ public abstract class ServiceOptions<
     return service;
   }
 
+  @SuppressWarnings("unchecked")
   public ServiceRpcT rpc() {
     if (rpc == null) {
       rpc = serviceRpcFactory.create((OptionsT) this);
@@ -587,6 +590,7 @@ public abstract class ServiceOptions<
     authCredentials = authCredentialsState != null ? authCredentialsState.restore() : null;
   }
 
+  @SuppressWarnings("unchecked")
   private static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
     try {
       return (T) Class.forName(className).newInstance();

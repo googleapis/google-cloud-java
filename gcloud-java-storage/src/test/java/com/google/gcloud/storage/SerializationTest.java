@@ -119,6 +119,7 @@ public class SerializationTest {
     assertEquals(state, deserializedState);
     assertEquals(state.hashCode(), deserializedState.hashCode());
     assertEquals(state.toString(), deserializedState.toString());
+    reader.close();
   }
 
   @Test
@@ -127,6 +128,7 @@ public class SerializationTest {
         .projectId("p2")
         .retryParams(RetryParams.defaultInstance())
         .build();
+    @SuppressWarnings("resource") // avoid closing when you don't want partial writes to GCS
     BlobWriteChannelImpl writer = new BlobWriteChannelImpl(
         options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");
     RestorableState<BlobWriteChannel> state = writer.capture();

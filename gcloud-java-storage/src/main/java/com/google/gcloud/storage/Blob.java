@@ -18,8 +18,8 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.gcloud.storage.Blob.BlobSourceOption.toSourceOptions;
 import static com.google.gcloud.storage.Blob.BlobSourceOption.toGetOptions;
+import static com.google.gcloud.storage.Blob.BlobSourceOption.toSourceOptions;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;

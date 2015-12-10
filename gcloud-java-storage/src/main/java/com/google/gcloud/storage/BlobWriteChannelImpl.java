@@ -37,7 +37,6 @@ import java.util.Objects;
  */
 class BlobWriteChannelImpl implements BlobWriteChannel {
 
-  private static final long serialVersionUID = 8675286882724938737L;
   private static final int MIN_CHUNK_SIZE = 256 * 1024;
   private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
 

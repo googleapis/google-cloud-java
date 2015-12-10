@@ -41,7 +41,6 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.ByteBuffer;
@@ -53,7 +52,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -77,7 +75,7 @@ public class ITStorageTest {
 
   @AfterClass
   public static void afterClass()
-      throws ExecutionException, TimeoutException, InterruptedException {
+throws ExecutionException, InterruptedException {
     if (storage != null && !RemoteGcsHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS)) {
       if (log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
@@ -154,7 +152,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testCreateBlobStream() throws UnsupportedEncodingException {
+  public void testCreateBlobStream() {
     String blobName = "test-create-blob-stream";
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName).contentType(CONTENT_TYPE).build();
     ByteArrayInputStream stream = new ByteArrayInputStream(BLOB_STRING_CONTENT.getBytes(UTF_8));
@@ -185,7 +183,7 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testCreateBlobMd5Fail() throws UnsupportedEncodingException {
+  public void testCreateBlobMd5Fail() {
     String blobName = "test-create-blob-md5-fail";
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName)
         .contentType(CONTENT_TYPE)
@@ -809,7 +807,7 @@ public class ITStorageTest {
       readBytes = ByteBuffer.allocate(chunkSize);
       reader.read(readBytes);
       fail("StorageException was expected");
-    } catch(StorageException ex) {
+    } catch (StorageException ex) {
       StringBuilder messageBuilder = new StringBuilder();
       messageBuilder.append("Blob ").append(blob.blobId()).append(" was updated while reading");
       assertEquals(messageBuilder.toString(), ex.getMessage());
