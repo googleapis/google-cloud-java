@@ -60,7 +60,6 @@ public class LocalResourceManagerHelper {
     try {
       BASE_CONTEXT = new URI(CONTEXT);
     } catch (URISyntaxException e) {
-      log.log(Level.WARNING, "URI.", e);
       throw new RuntimeException(
           "Could not initialize LocalResourceManagerHelper due to URISyntaxException.", e);
     }
