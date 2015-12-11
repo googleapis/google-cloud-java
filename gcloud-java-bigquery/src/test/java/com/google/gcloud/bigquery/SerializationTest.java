@@ -184,10 +184,8 @@ public class SerializationTest {
   private static final Map<Long, List<BigQueryError>> ERRORS_MAP =
       ImmutableMap.<Long, List<BigQueryError>>of(0L, ImmutableList.of(BIGQUERY_ERROR));
   private static final InsertAllResponse INSERT_ALL_RESPONSE = new InsertAllResponse(ERRORS_MAP);
-  private static final FieldValue FIELD_VALUE = new FieldValue(FieldValue.Attribute.PRIMITIVE, "value");
-  private static final TableRow TABLE_ROW = new TableRow.Builder()
-      .addValue(FIELD_VALUE)
-      .build();
+  private static final FieldValue FIELD_VALUE =
+      new FieldValue(FieldValue.Attribute.PRIMITIVE, "value");
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -214,7 +212,7 @@ public class SerializationTest {
         TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION,
         JOB_STATISTICS, EXTRACT_STATISTICS, LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR,
         JOB_STATUS, JOB_ID, COPY_JOB, EXTRACT_JOB, LOAD_JOB, QUERY_JOB, INSERT_ALL_REQUEST,
-        INSERT_ALL_RESPONSE, FIELD_VALUE, TABLE_ROW};
+        INSERT_ALL_RESPONSE, FIELD_VALUE};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
