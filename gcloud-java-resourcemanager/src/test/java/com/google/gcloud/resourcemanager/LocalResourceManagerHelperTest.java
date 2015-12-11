@@ -68,10 +68,9 @@ public class LocalResourceManagerHelperTest {
   }
 
   private void clearProjects() {
-    Iterator<com.google.api.services.cloudresourcemanager.model.Project> it =
-        rpc.list(EMPTY_RPC_OPTIONS).y().iterator();
-    while (it.hasNext()) {
-      RESOURCE_MANAGER_HELPER.removeProject(it.next().getProjectId());
+    for (com.google.api.services.cloudresourcemanager.model.Project project :
+        rpc.list(EMPTY_RPC_OPTIONS).y()) {
+      RESOURCE_MANAGER_HELPER.removeProject(project.getProjectId());
     }
   }
 
@@ -196,7 +195,8 @@ public class LocalResourceManagerHelperTest {
     for (int i = 0; i < 257; i++) {
       tooManyLabels.put("k" + Integer.toString(i), "v" + Integer.toString(i));
     }
-    expectInvalidArgumentException(project, invalidLabelMessageSubstring);
+    project.setLabels(tooManyLabels);
+    expectInvalidArgumentException(project, "exceeds the limit of 256 labels");
     project.setLabels(ImmutableMap.of("k-1", ""));
     rpc.create(project);
     assertNotNull(rpc.get(project.getProjectId(), EMPTY_RPC_OPTIONS));

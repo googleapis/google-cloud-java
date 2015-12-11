@@ -34,6 +34,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 
@@ -51,6 +52,19 @@ public class LocalResourceManagerHelper {
   private static final Random PROJECT_NUMBER_GENERATOR = new Random();
   private static final String VERSION = "v1beta1";
   private static final String CONTEXT = "/" + VERSION + "/projects";
+  private static final URI BASE_CONTEXT;
+  private static final Set<String> SUPPORTED_COMPRESSION_ENCODINGS =
+      ImmutableSet.of("gzip", "x-gzip");
+
+  static {
+    try {
+      BASE_CONTEXT = new URI(CONTEXT);
+    } catch (URISyntaxException e) {
+      log.log(Level.WARNING, "URI.", e);
+      throw new RuntimeException(
+          "Could not initialize LocalResourceManagerHelper due to URISyntaxException.", e);
+    }
+  }
 
   // see https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects
   private static final Set<Character> PERMISSIBLE_PROJECT_NAME_PUNCTUATION =
@@ -60,7 +74,7 @@ public class LocalResourceManagerHelper {
   private final ConcurrentHashMap<String, Project> projects = new ConcurrentHashMap<>();
   private final int port;
 
-  static class Response {
+  private static class Response {
     private final int code;
     private final String body;
 
@@ -78,7 +92,7 @@ public class LocalResourceManagerHelper {
     }
   }
 
-  enum Error {
+  private enum Error {
     ALREADY_EXISTS(409, "global", "alreadyExists", "ALREADY_EXISTS"),
     PERMISSION_DENIED(403, "global", "forbidden", "PERMISSION_DENIED"),
     // change failed precondition error code to 412 when #440 is fixed
@@ -126,24 +140,14 @@ public class LocalResourceManagerHelper {
     @Override
     public void handle(HttpExchange exchange) {
       // see https://cloud.google.com/resource-manager/reference/rest/
-      Response response = null;
-      URI baseContext = null;
-      try {
-        baseContext = new URI(CONTEXT);
-      } catch (URISyntaxException e) {
-        writeResponse(
-            exchange,
-            Error.INTERNAL_ERROR.response(
-                "URI syntax exception when constructing URI from the path '" + CONTEXT + "'"));
-        return;
-      }
-      String path = baseContext.relativize(exchange.getRequestURI()).getPath();
+      Response response;
+      String path = BASE_CONTEXT.relativize(exchange.getRequestURI()).getPath();
       String requestMethod = exchange.getRequestMethod();
       try {
         switch (requestMethod) {
           case "POST":
-            if (path.contains(":undelete")) {
-              response = undelete(projectIdFromURI(path));
+            if (path.endsWith(":undelete")) {
+              response = undelete(projectIdFromUri(path));
             } else {
               String requestBody =
                   decodeContent(exchange.getRequestHeaders(), exchange.getRequestBody());
@@ -151,12 +155,12 @@ public class LocalResourceManagerHelper {
             }
             break;
           case "DELETE":
-            response = delete(projectIdFromURI(path));
+            response = delete(projectIdFromUri(path));
             break;
           case "GET":
             if (!path.isEmpty()) {
               response =
-                  get(projectIdFromURI(path), parseFields(exchange.getRequestURI().getQuery()));
+                  get(projectIdFromUri(path), parseFields(exchange.getRequestURI().getQuery()));
             } else {
               response = list(parseListOptions(exchange.getRequestURI().getQuery()));
             }
@@ -165,10 +169,12 @@ public class LocalResourceManagerHelper {
             String requestBody =
                 decodeContent(exchange.getRequestHeaders(), exchange.getRequestBody());
             response =
-                replace(projectIdFromURI(path), jsonFactory.fromString(requestBody, Project.class));
+                replace(projectIdFromUri(path), jsonFactory.fromString(requestBody, Project.class));
             break;
           default:
-            response = Error.BAD_REQUEST.response("The server could not understand the request.");
+            response = Error.BAD_REQUEST.response(
+                "The server could not understand the following request URI: " + requestMethod + " "
+                + path);
         }
       } catch (IOException e) {
         response = Error.BAD_REQUEST.response(e.getMessage());
@@ -185,7 +191,7 @@ public class LocalResourceManagerHelper {
       outputStream.write(response.body().getBytes(StandardCharsets.UTF_8));
       outputStream.close();
     } catch (IOException e) {
-      log.info("IOException encountered when sending response.");
+      log.log(Level.WARNING, "IOException encountered when sending response.", e);
     }
   }
 
@@ -194,10 +200,12 @@ public class LocalResourceManagerHelper {
     InputStream input = inputStream;
     try {
       if (contentEncoding != null && !contentEncoding.isEmpty()) {
-        if (contentEncoding.get(0).equals("gzip") || contentEncoding.get(0).equals("x-gzip")) {
+        String encoding = contentEncoding.get(0);
+        if (SUPPORTED_COMPRESSION_ENCODINGS.contains(encoding)) {
           input = new GZIPInputStream(inputStream);
-        } else if (!contentEncoding.equals("identity")) {
-          throw new IOException("The request has an unsupported HTTP content encoding.");
+        } else if (!encoding.equals("identity")) {
+          throw new IOException(
+              "The request has the following unsupported HTTP content encoding: " + encoding);
         }
       }
       return new String(ByteStreams.toByteArray(input), StandardCharsets.UTF_8);
@@ -206,7 +214,7 @@ public class LocalResourceManagerHelper {
     }
   }
 
-  private static String projectIdFromURI(String path) throws IOException {
+  private static String projectIdFromUri(String path) throws IOException {
     if (path.isEmpty()) {
       throw new IOException("The URI path '" + path + "' doesn't have a project ID.");
     }
@@ -286,7 +294,7 @@ public class LocalResourceManagerHelper {
         return false;
       }
     }
-    if (value.length() > 0 && (!Character.isLetter(value.charAt(0)) || value.endsWith("-"))) {
+    if (!value.isEmpty() && (!Character.isLetter(value.charAt(0)) || value.endsWith("-"))) {
       return false;
     }
     return value.length() >= minLength && value.length() <= maxLength;
@@ -316,7 +324,9 @@ public class LocalResourceManagerHelper {
   Response delete(String projectId) {
     Project project = projects.get(projectId);
     if (project == null) {
-      // when possible, change this to 404 (#440)
+      // Currently the service returns 403 Permission Denied when trying to delete a project that
+      // doesn't exist. Here we mimic this behavior, but this line should be changed to throw a
+      // 404 Not Found error when the service fixes this (#440).
       return Error.PERMISSION_DENIED.response(
           "Error when deleting " + projectId + " because the project was not found.");
     }
@@ -331,7 +341,9 @@ public class LocalResourceManagerHelper {
 
   Response get(String projectId, String[] fields) {
     if (!projects.containsKey(projectId)) {
-      // when possible, change this to 404 (#440)
+      // Currently the service returns 403 Permission Denied when trying to get a project that
+      // doesn't exist. Here we mimic this behavior, but this line should be changed to throw a
+      // 404 Not Found error when the service fixes this (#440).
       return Error.PERMISSION_DENIED.response("Project " + projectId + " not found.");
     }
     Project project = projects.get(projectId);
@@ -385,16 +397,17 @@ public class LocalResourceManagerHelper {
     }
     for (String filter : filters) {
       String[] filterEntry = filter.toLowerCase().split(":");
-      if ("id".equals(filterEntry[0])) {
+      String filterType = filterEntry[0];
+      if ("id".equals(filterType)) {
         if (!satisfiesFilter(project.getProjectId(), filterEntry[1])) {
           return false;
         }
-      } else if ("name".equals(filterEntry[0])) {
+      } else if ("name".equals(filterType)) {
         if (!satisfiesFilter(project.getName(), filterEntry[1])) {
           return false;
         }
-      } else if (filterEntry[0].startsWith("labels")) {
-        String labelKey = filterEntry[0].split("\\.")[1];
+      } else if (filterType.startsWith("labels.")) {
+        String labelKey = filterType.substring("labels.".length());
         if (project.getLabels() != null) {
           String labelValue = project.getLabels().get(labelKey);
           if (!satisfiesFilter(labelValue, filterEntry[1])) {
@@ -410,7 +423,7 @@ public class LocalResourceManagerHelper {
     if (projectValue == null) {
       return false;
     }
-    return "*".equals(filterValue) ? true : filterValue.equals(projectValue.toLowerCase());
+    return "*".equals(filterValue) || filterValue.equals(projectValue.toLowerCase());
   }
 
   private static Project extractFields(Project fullProject, String[] fields) {
@@ -449,7 +462,9 @@ public class LocalResourceManagerHelper {
   Response replace(String projectId, Project project) {
     Project originalProject = projects.get(projectId);
     if (originalProject == null) {
-      // when possible, change this to 404 (#440)
+      // Currently the service returns 403 Permission Denied when trying to replace a project that
+      // doesn't exist. Here we mimic this behavior, but this line should be changed to throw a
+      // 404 Not Found error when the service fixes this (#440).
       return Error.PERMISSION_DENIED.response(
           "Error when replacing " + projectId + " because the project was not found.");
     } else if (!originalProject.getLifecycleState().equals("ACTIVE")) {
@@ -474,7 +489,9 @@ public class LocalResourceManagerHelper {
     Project project = projects.get(projectId);
     Response response;
     if (project == null) {
-      // when possible, change this to 404 (#440)
+      // Currently the service returns 403 Permission Denied when trying to undelete a project that
+      // doesn't exist. Here we mimic this behavior, but this line should be changed to throw a
+      // 404 Not Found error when the service fixes this (#440).
       response = Error.PERMISSION_DENIED.response(
           "Error when undeleting " + projectId + " because the project was not found.");
     } else if (!project.getLifecycleState().equals("DELETE_REQUESTED")) {
@@ -488,9 +505,8 @@ public class LocalResourceManagerHelper {
   }
 
   private LocalResourceManagerHelper() {
-    InetSocketAddress addr = new InetSocketAddress(0);
     try {
-      server = HttpServer.create(addr, 0);
+      server = HttpServer.create(new InetSocketAddress(0), 0);
       port = server.getAddress().getPort();
       server.createContext(CONTEXT, new RequestHandler());
     } catch (IOException e) {
@@ -550,9 +566,9 @@ public class LocalResourceManagerHelper {
    * <p>This method can be used to fully remove a project (to mimic when the server completely
    * deletes a project).
    *
-   * @return true if the project was successfully deleted, false otherwise.
+   * @return true if the project was successfully deleted, false if the project didn't exist.
    */
   public boolean removeProject(String projectId) {
-    return projects.remove(checkNotNull(projectId)) != null ? true : false;
+    return projects.remove(checkNotNull(projectId)) != null;
   }
 }
