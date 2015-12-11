@@ -41,6 +41,8 @@ import java.util.Objects;
  */
 public class InsertAllResponse implements Serializable {
 
+  private static final long serialVersionUID = -6934152676514098452L;
+
   private final Map<Long, List<BigQueryError>> insertErrors;
 
   InsertAllResponse(Map<Long, List<BigQueryError>> insertErrors) {
@@ -59,7 +61,7 @@ public class InsertAllResponse implements Serializable {
   /**
    * Returns errors for the provided row index. If no error exists returns {@code null}.
    */
-  public List<BigQueryError> errorsFor(Long index) {
+  public List<BigQueryError> errorsFor(long index) {
     return insertErrors.get(index);
   }
 
@@ -89,7 +91,7 @@ public class InsertAllResponse implements Serializable {
 
   TableDataInsertAllResponse toPb() {
     TableDataInsertAllResponse responsePb = new TableDataInsertAllResponse();
-    if (insertErrors.size() > 0) {
+    if (!insertErrors.isEmpty()) {
       responsePb.setInsertErrors(ImmutableList.copyOf(Iterables.transform(insertErrors.entrySet(),
           new Function<Map.Entry<Long, List<BigQueryError>>, InsertErrors>() {
             @Override

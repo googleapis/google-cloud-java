@@ -16,10 +16,12 @@
 
 package com.google.gcloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.api.client.util.Data;
 import com.google.api.client.util.Lists;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
@@ -34,19 +36,25 @@ import java.util.Objects;
  */
 public class FieldValue implements Serializable {
 
+  static final Function<Object, FieldValue> FROM_PB_FUNCTION = new Function<Object, FieldValue>() {
+    @Override
+    public FieldValue apply(Object pb) {
+      return FieldValue.fromPb(pb);
+    }
+  };
   private static final int MICROSECONDS = 1000000;
   private static final long serialVersionUID = 469098630191710061L;
 
-  private final Kind kind;
+  private final Attribute attribute;
   private final Object value;
 
   /**
-   * The field value's kind, giving information on the field's content type.
+   * The field value's attribute, giving information on the field's content type.
    */
-  public enum Kind {
+  public enum Attribute {
     /**
-     * A primitive field value. A {@code FieldValue} has type {@link #PRIMITIVE} when the
-     * corresponding field has type {@link Field.Type#bool()}, {@link Field.Type#string()}
+     * A primitive field value. A {@code FieldValue} is primitive when the corresponding field has
+     * type {@link Field.Type#bool()}, {@link Field.Type#string()},
      * {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
      * {@link Field.Type#timestamp()} or the value is set to {@code null}.
      */
@@ -63,39 +71,47 @@ public class FieldValue implements Serializable {
     RECORD
   }
 
-  FieldValue(Kind kind, Object value) {
-    this.kind = kind;
+  FieldValue(Attribute attribute, Object value) {
+    this.attribute = attribute;
     this.value = value;
   }
 
   /**
-   * Returns the kind of this Field Value.
+   * Returns the attribute of this Field Value.
    *
-   * @return {@link Kind#PRIMITIVE} if the value is of primitive type ({@link Field.Type#bool()},
-   *     {@link Field.Type#string()}, {@link Field.Type#floatingPoint()},
-   *     {@link Field.Type#integer()}, {@link Field.Type#timestamp()}) or is {@code null}. Returns
-   *     {@link Kind#REPEATED} if the corresponding field has ({@link Field.Mode#REPEATED}) mode.
-   *     Returns {@link Kind#RECORD} if the corresponding field has
+   * @return {@link Attribute#PRIMITIVE} if the field is a primitive type
+   *     ({@link Field.Type#bool()}, {@link Field.Type#string()},
+   *     {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
+   *     {@link Field.Type#timestamp()}) or is {@code null}. Returns {@link Attribute#REPEATED} if
+   *     the corresponding field has ({@link Field.Mode#REPEATED}) mode. Returns
+   *     {@link Attribute#RECORD} if the corresponding field is a
    *     {@link Field.Type#record(Field...)} type.
    */
-  public Kind kind() {
-    return kind;
+  public Attribute attribute() {
+    return attribute;
   }
 
   /**
-   * Return this field's value as an {@link Object}.
+   * Returns {@code true} if this field's value is {@code null}, {@code false} otherwise.
+   */
+  public boolean isNull() {
+    return value == null;
+  }
+
+  /**
+   * Returns this field's value as an {@link Object}.
    */
   public Object value() {
     return value;
   }
 
   /**
-   * Return this field's value as a {@link String}. This method should only be used if the
+   * Returns this field's value as a {@link String}. This method should only be used if the
    * corresponding field has primitive type ({@link Field.Type#bool()}, {@link Field.Type#string()},
    * {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
    * {@link Field.Type#timestamp()}).
    *
-   * @throws ClassCastException if the field has not primitive type
+   * @throws ClassCastException if the field is not a primitive type
    */
   @SuppressWarnings("unchecked")
   public String stringValue() {
@@ -103,60 +119,68 @@ public class FieldValue implements Serializable {
   }
 
   /**
-   * Returns this field's value as a {@link Long}. This method should only be used if the
+   * Returns this field's value as a {@code long}. This method should only be used if the
    * corresponding field has {@link Field.Type#integer()} type.
    *
-   * @throws ClassCastException if the field has not primitive type
+   * @throws ClassCastException if the field is not a primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Integer}
+   * @throws NullPointerException if {@link #isNull()} returns {@code true}
    */
   @SuppressWarnings("unchecked")
   public long longValue() {
-    return Long.valueOf(stringValue());
+    return Long.parseLong(stringValue());
   }
 
   /**
    * Returns this field's value as a {@link Double}. This method should only be used if the
    * corresponding field has {@link Field.Type#floatingPoint()} type.
    *
-   * @throws ClassCastException if the field has not primitive type
+   * @throws ClassCastException if the field is not a primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Double}
+   * @throws NullPointerException if {@link #isNull()} returns {@code true}
    */
   @SuppressWarnings("unchecked")
   public double doubleValue() {
-    return Double.valueOf(stringValue());
+    return Double.parseDouble(stringValue());
   }
 
   /**
    * Returns this field's value as a {@link Boolean}. This method should only be used if the
    * corresponding field has {@link Field.Type#bool()} type.
    *
-   * @throws ClassCastException if the field has not primitive type
+   * @throws ClassCastException if the field is not a primitive type
    * @throws IllegalStateException if the field's value could not be converted to {@link Boolean}
+   * @throws NullPointerException if {@link #isNull()} returns {@code true}
    */
   @SuppressWarnings("unchecked")
   public boolean booleanValue() {
     String stringValue = stringValue();
+    checkNotNull(stringValue);
     checkState(stringValue.equalsIgnoreCase("true") || stringValue.equalsIgnoreCase("false"),
         "Field value is not of boolean type");
     return Boolean.parseBoolean(stringValue);
   }
 
   /**
-   * Returns this field's value as a {@link Long}, representing a timestamp in microseconds. This
-   * method should only be used if the corresponding field has {@link Field.Type#timestamp()} type.
+   * Returns this field's value as a {@code long}, representing a timestamp in microseconds since
+   * epoch (UNIX time). This method should only be used if the corresponding field has
+   * {@link Field.Type#timestamp()} type.
    *
-   * @throws ClassCastException if the field has not primitive type
+   * @throws ClassCastException if the field is not a primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Long}
+   * @throws NullPointerException if {@link #isNull()} returns {@code true}
    */
   @SuppressWarnings("unchecked")
   public long timestampValue() {
+    // timestamps are encoded in the format 1408452095.22 where the integer part is seconds since
+    // epoch (e.g. 1408452095.22 == 2014-08-19 07:41:35.220 -05:00)
     return new Double(((Double.valueOf(stringValue())) * MICROSECONDS)).longValue();
   }
 
   /**
    * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #kind()} is
-   * {@link Kind#REPEATED}).
+   * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #attribute()} is
+   * {@link Attribute#REPEATED}).
    *
    * @throws ClassCastException if the field has not {@link Field.Mode#REPEATED} mode
    */
@@ -167,10 +191,10 @@ public class FieldValue implements Serializable {
 
   /**
    * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Type#record(Field...)} type (i.e. {@link #kind()} is
-   * {@link Kind#RECORD}).
+   * the corresponding field has {@link Field.Type#record(Field...)} type (i.e. {@link #attribute()}
+   * is {@link Attribute#RECORD}).
    *
-   * @throws ClassCastException if the field has not {@link Field.Type#record(Field...)} type
+   * @throws ClassCastException if the field is not a {@link Field.Type#record(Field...)} type
    */
   @SuppressWarnings("unchecked")
   public List<FieldValue> recordValue() {
@@ -180,14 +204,14 @@ public class FieldValue implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("kind", kind)
+        .add("attribute", attribute)
         .add("value", value)
         .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(kind, value);
+    return Objects.hash(attribute, value);
   }
 
   @Override
@@ -196,16 +220,16 @@ public class FieldValue implements Serializable {
       return false;
     }
     FieldValue other = (FieldValue) obj;
-    return kind == other.kind && Objects.equals(value, other.value);
+    return attribute == other.attribute && Objects.equals(value, other.value);
   }
 
   @SuppressWarnings("unchecked")
   static FieldValue fromPb(Object cellPb) {
     if (Data.isNull(cellPb)) {
-      return new FieldValue(Kind.PRIMITIVE, null);
+      return new FieldValue(Attribute.PRIMITIVE, null);
     }
     if (cellPb instanceof String) {
-      return new FieldValue(Kind.PRIMITIVE, cellPb);
+      return new FieldValue(Attribute.PRIMITIVE, cellPb);
     }
     if (cellPb instanceof List) {
       List<Object> cellsListPb = (List<Object>) cellPb;
@@ -213,7 +237,7 @@ public class FieldValue implements Serializable {
       for (Object repeatedCellPb : cellsListPb) {
         repeatedCells.add(FieldValue.fromPb(repeatedCellPb));
       }
-      return new FieldValue(Kind.REPEATED, repeatedCells);
+      return new FieldValue(Attribute.REPEATED, repeatedCells);
     }
     if (cellPb instanceof Map) {
       Map<String, Object> cellMapPb = (Map<String, Object>) cellPb;
@@ -223,7 +247,7 @@ public class FieldValue implements Serializable {
         for (Object repeatedCellPb : cellsListPb) {
           recordCells.add(FieldValue.fromPb(repeatedCellPb));
         }
-        return new FieldValue(Kind.RECORD, recordCells);
+        return new FieldValue(Attribute.RECORD, recordCells);
       }
       // This should never be the case when we are processing a first level table field (i.e. a
       // row's field, not a record sub-field)

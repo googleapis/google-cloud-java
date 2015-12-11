@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 
 import java.io.Serializable;
@@ -74,7 +75,7 @@ public class InsertAllRequest implements Serializable {
 
     RowToInsert(String id, Map<String, Object> content) {
       this.id = id;
-      this.content = content;
+      this.content = ImmutableMap.copyOf(content);
     }
 
     /**
@@ -115,13 +116,23 @@ public class InsertAllRequest implements Serializable {
     }
 
     /**
-     * Creates a row to be inserted.
+     * Creates a row to be inserted with associated id.
      *
      * @param id id of the row, used to identify duplicates
      * @param content the actual content of the row
      */
     public static RowToInsert of(String id, Map<String, Object> content) {
       return new RowToInsert(checkNotNull(id), checkNotNull(content));
+    }
+
+    /**
+     * Creates a row to be inserted without associated id.
+     *
+     * @param id id of the row, used to identify duplicates
+     * @param content the actual content of the row
+     */
+    public static RowToInsert of(Map<String, Object> content) {
+      return new RowToInsert(null, checkNotNull(content));
     }
   }
 
@@ -168,7 +179,7 @@ public class InsertAllRequest implements Serializable {
      * <p>
      * Example usage of adding a row with associated id:
      * <pre>    {@code
-     *   InsertAllRequest.Buider builder = InsertAllRequest.builder(tableId);
+     *   InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
      *   List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
      *   Map<String, Object> recordContent = new HashMap<String, Object>();
      *   recordContent.put("subfieldName1", "value");
@@ -190,7 +201,7 @@ public class InsertAllRequest implements Serializable {
      * <p>
      * Example usage of adding a row without an associated id:
      * <pre>    {@code
-     *   InsertAllRequest.Buider builder = InsertAllRequest.builder(tableId);
+     *   InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
      *   List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
      *   Map<String, Object> recordContent = new HashMap<String, Object>();
      *   recordContent.put("subfieldName1", "value");

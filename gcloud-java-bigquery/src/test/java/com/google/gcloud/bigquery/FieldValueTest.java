@@ -46,64 +46,64 @@ public class FieldValueTest {
   @Test
   public void testFromPb() {
     FieldValue value = FieldValue.fromPb(BOOLEAN_FIELD);
-    assertEquals(FieldValue.Kind.PRIMITIVE, value.kind());
+    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
     assertFalse(value.booleanValue());
     value = FieldValue.fromPb(INTEGER_FIELD);
-    assertEquals(FieldValue.Kind.PRIMITIVE, value.kind());
+    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
     assertEquals(1, value.longValue());
     value = FieldValue.fromPb(FLOAT_FIELD);
-    assertEquals(FieldValue.Kind.PRIMITIVE, value.kind());
+    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
     assertEquals(1.5, value.doubleValue(), 0);
     value = FieldValue.fromPb(STRING_FIELD);
-    assertEquals(FieldValue.Kind.PRIMITIVE, value.kind());
+    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
     assertEquals("string", value.stringValue());
     value = FieldValue.fromPb(TIMESTAMP_FIELD);
-    assertEquals(FieldValue.Kind.PRIMITIVE, value.kind());
+    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
     assertEquals(42000000, value.timestampValue());
     value = FieldValue.fromPb(NULL_FIELD);
     assertNull(value.value());
     value = FieldValue.fromPb(REPEATED_FIELD);
-    assertEquals(FieldValue.Kind.REPEATED, value.kind());
+    assertEquals(FieldValue.Attribute.REPEATED, value.attribute());
     assertEquals(FieldValue.fromPb(INTEGER_FIELD), value.repeatedValue().get(0));
     assertEquals(FieldValue.fromPb(INTEGER_FIELD), value.repeatedValue().get(1));
     value = FieldValue.fromPb(RECORD_FIELD);
-    assertEquals(FieldValue.Kind.RECORD, value.kind());
+    assertEquals(FieldValue.Attribute.RECORD, value.attribute());
     assertEquals(FieldValue.fromPb(FLOAT_FIELD), value.repeatedValue().get(0));
     assertEquals(FieldValue.fromPb(TIMESTAMP_FIELD), value.repeatedValue().get(1));
   }
 
   @Test
   public void testEquals() {
-    FieldValue booleanValue = new FieldValue(FieldValue.Kind.PRIMITIVE, "false");
+    FieldValue booleanValue = new FieldValue(FieldValue.Attribute.PRIMITIVE, "false");
     assertEquals(booleanValue, FieldValue.fromPb(BOOLEAN_FIELD));
     assertEquals(booleanValue.hashCode(), FieldValue.fromPb(BOOLEAN_FIELD).hashCode());
 
-    FieldValue integerValue = new FieldValue(FieldValue.Kind.PRIMITIVE, "1");
+    FieldValue integerValue = new FieldValue(FieldValue.Attribute.PRIMITIVE, "1");
     assertEquals(integerValue, FieldValue.fromPb(INTEGER_FIELD));
     assertEquals(integerValue.hashCode(), FieldValue.fromPb(INTEGER_FIELD).hashCode());
 
-    FieldValue floatValue = new FieldValue(FieldValue.Kind.PRIMITIVE, "1.5");
+    FieldValue floatValue = new FieldValue(FieldValue.Attribute.PRIMITIVE, "1.5");
     assertEquals(floatValue, FieldValue.fromPb(FLOAT_FIELD));
     assertEquals(floatValue.hashCode(), FieldValue.fromPb(FLOAT_FIELD).hashCode());
 
-    FieldValue stringValue = new FieldValue(FieldValue.Kind.PRIMITIVE, "string");
+    FieldValue stringValue = new FieldValue(FieldValue.Attribute.PRIMITIVE, "string");
     assertEquals(stringValue, FieldValue.fromPb(STRING_FIELD));
     assertEquals(stringValue.hashCode(), FieldValue.fromPb(STRING_FIELD).hashCode());
 
-    FieldValue timestampValue = new FieldValue(FieldValue.Kind.PRIMITIVE, "42");
+    FieldValue timestampValue = new FieldValue(FieldValue.Attribute.PRIMITIVE, "42");
     assertEquals(timestampValue, FieldValue.fromPb(TIMESTAMP_FIELD));
     assertEquals(timestampValue.hashCode(), FieldValue.fromPb(TIMESTAMP_FIELD).hashCode());
 
-    FieldValue nullValue = new FieldValue(FieldValue.Kind.PRIMITIVE, null);
+    FieldValue nullValue = new FieldValue(FieldValue.Attribute.PRIMITIVE, null);
     assertEquals(nullValue, FieldValue.fromPb(NULL_FIELD));
     assertEquals(nullValue.hashCode(), FieldValue.fromPb(NULL_FIELD).hashCode());
 
-    FieldValue repeatedValue = new FieldValue(FieldValue.Kind.REPEATED,
+    FieldValue repeatedValue = new FieldValue(FieldValue.Attribute.REPEATED,
         ImmutableList.of(integerValue, integerValue));
     assertEquals(repeatedValue, FieldValue.fromPb(REPEATED_FIELD));
     assertEquals(repeatedValue.hashCode(), FieldValue.fromPb(REPEATED_FIELD).hashCode());
 
-    FieldValue recordValue = new FieldValue(FieldValue.Kind.RECORD,
+    FieldValue recordValue = new FieldValue(FieldValue.Attribute.RECORD,
         ImmutableList.of(floatValue, timestampValue));
     assertEquals(recordValue, FieldValue.fromPb(RECORD_FIELD));
     assertEquals(recordValue.hashCode(), FieldValue.fromPb(RECORD_FIELD).hashCode());

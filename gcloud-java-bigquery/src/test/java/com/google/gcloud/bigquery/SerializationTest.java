@@ -184,7 +184,7 @@ public class SerializationTest {
   private static final Map<Long, List<BigQueryError>> ERRORS_MAP =
       ImmutableMap.<Long, List<BigQueryError>>of(0L, ImmutableList.of(BIGQUERY_ERROR));
   private static final InsertAllResponse INSERT_ALL_RESPONSE = new InsertAllResponse(ERRORS_MAP);
-  private static final FieldValue FIELD_VALUE = new FieldValue(FieldValue.Kind.PRIMITIVE, "value");
+  private static final FieldValue FIELD_VALUE = new FieldValue(FieldValue.Attribute.PRIMITIVE, "value");
   private static final TableRow TABLE_ROW = new TableRow.Builder()
       .addValue(FIELD_VALUE)
       .build();

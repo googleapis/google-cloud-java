@@ -35,11 +35,11 @@ public class InsertAllRequestTest {
   private static final Map<String, Object> CONTENT2 =
       ImmutableMap.<String, Object>of("key", "val2");
   private static final List<InsertAllRequest.RowToInsert> ROWS =
-      ImmutableList.of(new InsertAllRequest.RowToInsert(null, CONTENT1),
-          new InsertAllRequest.RowToInsert(null, CONTENT2));
+      ImmutableList.of(InsertAllRequest.RowToInsert.of(CONTENT1),
+          InsertAllRequest.RowToInsert.of(CONTENT2));
   private static final List<InsertAllRequest.RowToInsert> ROWS_WITH_ID =
-      ImmutableList.of(new InsertAllRequest.RowToInsert("id1", CONTENT1),
-          new InsertAllRequest.RowToInsert("id2", CONTENT2));
+      ImmutableList.of(InsertAllRequest.RowToInsert.of("id1", CONTENT1),
+          InsertAllRequest.RowToInsert.of("id2", CONTENT2));
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final Schema TABLE_SCHEMA = Schema.of();
   private static final BaseTableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_SCHEMA);
