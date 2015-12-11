@@ -69,6 +69,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     String normalizedHost = normalizeHost(options.host());
     client = DatastoreFactory.get().create(
         new Builder()
+            .transport(options.httpTransportFactory().create())
             .dataset(options.projectId())
             .host(normalizedHost)
             .initializer(options.httpRequestInitializer())
