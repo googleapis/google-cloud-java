@@ -31,8 +31,8 @@ import java.util.Objects;
 
 /**
  * Google BigQuery Table Field Value class. Objects of this class represent values of a BigQuery
- * Table Field. A list of values forms a {@link TableRow}. Tables rows can be gotten as the result
- * of a query or when listing table data.
+ * Table Field. A list of values forms a table row. Tables rows can be gotten as the result of a
+ * query or when listing table data.
  */
 public class FieldValue implements Serializable {
 
@@ -99,7 +99,8 @@ public class FieldValue implements Serializable {
   }
 
   /**
-   * Returns this field's value as an {@link Object}.
+   * Returns this field's value as an {@link Object}. If {@link #isNull()} is {@code true} this
+   * method returns {@code null}.
    */
   public Object value() {
     return value;
@@ -112,9 +113,11 @@ public class FieldValue implements Serializable {
    * {@link Field.Type#timestamp()}).
    *
    * @throws ClassCastException if the field is not a primitive type
+   * @throws NullPointerException if {@link #isNull()} returns {@code true}
    */
   @SuppressWarnings("unchecked")
   public String stringValue() {
+    checkNotNull(value);
     return (String) value;
   }
 
@@ -155,7 +158,6 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   public boolean booleanValue() {
     String stringValue = stringValue();
-    checkNotNull(stringValue);
     checkState(stringValue.equalsIgnoreCase("true") || stringValue.equalsIgnoreCase("false"),
         "Field value is not of boolean type");
     return Boolean.parseBoolean(stringValue);
@@ -183,9 +185,11 @@ public class FieldValue implements Serializable {
    * {@link Attribute#REPEATED}).
    *
    * @throws ClassCastException if the field has not {@link Field.Mode#REPEATED} mode
+   * @throws NullPointerException if {@link #isNull()} returns {@code true}
    */
   @SuppressWarnings("unchecked")
   public List<FieldValue> repeatedValue() {
+    checkNotNull(value);
     return (List<FieldValue>) value;
   }
 
@@ -195,9 +199,11 @@ public class FieldValue implements Serializable {
    * is {@link Attribute#RECORD}).
    *
    * @throws ClassCastException if the field is not a {@link Field.Type#record(Field...)} type
+   * @throws NullPointerException if {@link #isNull()} returns {@code true}
    */
   @SuppressWarnings("unchecked")
   public List<FieldValue> recordValue() {
+    checkNotNull(value);
     return (List<FieldValue>) value;
   }
 

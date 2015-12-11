@@ -50,8 +50,7 @@ public class InsertAllRequest implements Serializable {
    * A Google Big Query row to be inserted into a table. Each {@code RowToInsert} has an associated
    * id used by BigQuery to detect duplicate insertion requests on a best-effort basis.
    *
-   * <p>
-   * Example usage of creating a row to insert:
+   * <p>Example usage of creating a row to insert:
    * <pre>    {@code
    *   List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
    *   Map<String, Object> recordContent = new HashMap<String, Object>();
@@ -128,7 +127,6 @@ public class InsertAllRequest implements Serializable {
     /**
      * Creates a row to be inserted without associated id.
      *
-     * @param id id of the row, used to identify duplicates
      * @param content the actual content of the row
      */
     public static RowToInsert of(Map<String, Object> content) {
@@ -176,8 +174,7 @@ public class InsertAllRequest implements Serializable {
     /**
      * Adds a row to be inserted with associated id.
      *
-     * <p>
-     * Example usage of adding a row with associated id:
+     * <p>Example usage of adding a row with associated id:
      * <pre>    {@code
      *   InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
      *   List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
@@ -198,8 +195,7 @@ public class InsertAllRequest implements Serializable {
     /**
      * Adds a row to be inserted without an associated id.
      *
-     * <p>
-     * Example usage of adding a row without an associated id:
+     * <p>Example usage of adding a row without an associated id:
      * <pre>    {@code
      *   InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
      *   List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);

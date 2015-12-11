@@ -35,7 +35,7 @@ import java.util.Objects;
 /**
  * Google Cloud BigQuery insert all response. Objects of this class possibly contain errors for an
  * {@link InsertAllRequest}. If a row failed to be inserted, the non-empty list of errors associated
- * to that row's index can be obtained with {@link InsertAllResponse#errorsFor(Long)}.
+ * to that row's index can be obtained with {@link InsertAllResponse#errorsFor(long)}.
  * {@link InsertAllResponse#insertErrors()} can be used to return all errors caused by a
  * {@link InsertAllRequest} as a map.
  */
