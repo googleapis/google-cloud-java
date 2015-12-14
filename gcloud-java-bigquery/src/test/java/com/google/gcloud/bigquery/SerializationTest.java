@@ -203,7 +203,7 @@ public class SerializationTest {
       .build();
   private static final QueryResponse QUERY_RESPONSE = QueryResponse.builder()
       .etag(ETAG)
-      .job(JOB_ID)
+      .jobId(JOB_ID)
       .jobComplete(true)
       .result(QUERY_RESULT)
       .build();

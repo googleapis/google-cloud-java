@@ -72,17 +72,17 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
     Builder pageFetcher(QueryResultsPageFetcher pageFetcher) {
       this.pageFetcher = pageFetcher;
       return this;
-    };
+    }
 
     Builder cursor(String cursor) {
       this.cursor = cursor;
       return this;
-    };
+    }
 
     Builder results(Iterable<List<FieldValue>> results) {
       this.results = results;
       return this;
-    };
+    }
 
     QueryResult build() {
       return new QueryResult(this);
@@ -108,7 +108,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
   }
 
   /**
-   * Returns the schema of the results.
+   * Returns the schema of the results. This is present only when the query completes successfully.
    */
   public Schema schema() {
     return schema;

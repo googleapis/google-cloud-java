@@ -19,6 +19,7 @@ package com.google.gcloud.bigquery;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
 
@@ -62,7 +63,7 @@ public class QueryResponseTest {
       .build();
   private static final QueryResponse QUERY_RESPONSE = QueryResponse.builder()
       .etag(ETAG)
-      .job(JOB_ID)
+      .jobId(JOB_ID)
       .jobComplete(JOB_COMPLETE)
       .executionErrors(ERRORS)
       .result(QUERY_RESULT)
@@ -72,9 +73,10 @@ public class QueryResponseTest {
   public void testBuilder() {
     assertEquals(ETAG, QUERY_RESPONSE.etag());
     assertEquals(QUERY_RESULT, QUERY_RESPONSE.result());
-    assertEquals(JOB_ID, QUERY_RESPONSE.job());
+    assertEquals(JOB_ID, QUERY_RESPONSE.jobId());
     assertEquals(JOB_COMPLETE, QUERY_RESPONSE.jobComplete());
     assertEquals(ERRORS, QUERY_RESPONSE.executionErrors());
+    assertTrue(QUERY_RESPONSE.hasErrors());
   }
 
   @Test
@@ -82,9 +84,10 @@ public class QueryResponseTest {
     QueryResponse queryResponse = QueryResponse.builder().jobComplete(false).build();
     assertNull(queryResponse.etag());
     assertNull(queryResponse.result());
-    assertNull(queryResponse.job());
+    assertNull(queryResponse.jobId());
     assertFalse(queryResponse.jobComplete());
-    assertNull(queryResponse.executionErrors());
+    assertEquals(ImmutableList.<BigQueryError>of(), queryResponse.executionErrors());
+    assertFalse(queryResponse.hasErrors());
   }
 
   @Test
@@ -96,8 +99,9 @@ public class QueryResponseTest {
     assertEquals(expected, value);
     assertEquals(expected.etag(), value.etag());
     assertEquals(expected.result(), value.result());
-    assertEquals(expected.job(), value.job());
+    assertEquals(expected.jobId(), value.jobId());
     assertEquals(expected.jobComplete(), value.jobComplete());
     assertEquals(expected.executionErrors(), value.executionErrors());
+    assertEquals(expected.hasErrors(), value.hasErrors());
   }
 }

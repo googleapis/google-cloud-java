@@ -17,6 +17,7 @@
 package com.google.gcloud.bigquery;
 
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
 
 import java.io.Serializable;
 import java.util.List;
@@ -30,10 +31,11 @@ import java.util.Objects;
  * <pre>    {@code
  *    QueryResponse response = bigquery.query(request);
  *    while (!response.jobComplete()) {
- *      response = bigquery.getQueryResults(response.job());
+ *      response = bigquery.getQueryResults(response.jobId());
  *      Thread.sleep(1000);
  *    }
  *    List<BigQueryError> executionErrors = response.executionErrors();
+ *    // look for errors in executionErrors
  *    QueryResult result = response.result();
  *    Iterator<List<FieldValue>> rowIterator = result.iterateAll();
  *    while(rowIterator.hasNext()) {
@@ -52,7 +54,7 @@ public class QueryResponse implements Serializable {
 
   private final QueryResult result;
   private final String etag;
-  private final JobId job;
+  private final JobId jobId;
   private final boolean jobComplete;
   private final List<BigQueryError> executionErrors;
 
@@ -60,7 +62,7 @@ public class QueryResponse implements Serializable {
 
     private QueryResult result;
     private String etag;
-    private JobId job;
+    private JobId jobId;
     private boolean jobComplete;
     private List<BigQueryError> executionErrors;
 
@@ -76,8 +78,8 @@ public class QueryResponse implements Serializable {
       return this;
     }
 
-    Builder job(JobId job) {
-      this.job = job;
+    Builder jobId(JobId jobId) {
+      this.jobId = jobId;
       return this;
     }
 
@@ -99,9 +101,10 @@ public class QueryResponse implements Serializable {
   private QueryResponse(Builder builder) {
     this.result = builder.result;
     this.etag = builder.etag;
-    this.job = builder.job;
+    this.jobId = builder.jobId;
     this.jobComplete = builder.jobComplete;
-    this.executionErrors = builder.executionErrors;
+    this.executionErrors = builder.executionErrors != null ? builder.executionErrors
+      : ImmutableList.<BigQueryError>of();
   }
 
   /**
@@ -123,8 +126,8 @@ public class QueryResponse implements Serializable {
    * Returns the identity of the BigQuery Job that was created to run the query. This field will be
    * present even if the original request timed out.
    */
-  public JobId job() {
-    return job;
+  public JobId jobId() {
+    return jobId;
   }
 
   /**
@@ -135,6 +138,15 @@ public class QueryResponse implements Serializable {
    */
   public boolean jobComplete() {
     return jobComplete;
+  }
+
+  /**
+   * Returns whether errors and warnings occurred during the execution of the job. If this method
+   * returns {@code true} it does not necessarily mean that the job has completed or was
+   * unsuccessful.
+   */
+  public boolean hasErrors() {
+    return !executionErrors.isEmpty();
   }
 
   /**
@@ -150,7 +162,7 @@ public class QueryResponse implements Serializable {
     return MoreObjects.toStringHelper(this)
         .add("result", result)
         .add("etag", etag)
-        .add("job", job)
+        .add("jobId", jobId)
         .add("jobComplete", jobComplete)
         .add("executionErrors", executionErrors)
         .toString();
@@ -158,7 +170,7 @@ public class QueryResponse implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(job);
+    return Objects.hash(jobId);
   }
 
   @Override
@@ -173,7 +185,7 @@ public class QueryResponse implements Serializable {
     return jobComplete == response.jobComplete
         && Objects.equals(etag, response.etag)
         && Objects.equals(result, response.result)
-        && Objects.equals(job, response.job)
+        && Objects.equals(jobId, response.jobId)
         && Objects.equals(executionErrors, response.executionErrors);
   }
 

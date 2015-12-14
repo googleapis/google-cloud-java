@@ -27,7 +27,7 @@ import java.util.Objects;
  * Google Cloud BigQuery Query Request. This class can be used to run a BigQuery SQL query and
  * return results if the query completes within a specified timeout. The query results are saved to
  * a temporary table that is deleted approximately 24 hours after the query is run. The query is run
- * through a BigQuery Job whose identity can be accessed via {@link QueryResponse#job()}.
+ * through a BigQuery Job whose identity can be accessed via {@link QueryResponse#jobId()}.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/query">Query</a>
  * @see <a href="https://cloud.google.com/bigquery/query-reference">Query Reference</a>
