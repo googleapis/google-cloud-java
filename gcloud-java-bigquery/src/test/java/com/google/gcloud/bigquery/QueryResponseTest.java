@@ -17,11 +17,10 @@
 package com.google.gcloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gcloud.Page;
-import com.google.gcloud.PageImpl;
 
 import org.junit.Test;
 
@@ -38,15 +37,13 @@ public class QueryResponseTest {
   private static final Schema SCHEMA = Schema.of(FIELD_SCHEMA1);
   private static final JobId JOB_ID = JobId.of("project", "job");
   private static final Long TOTAL_ROWS = 42L;
-  private static final PageImpl.NextPageFetcher<List<FieldValue>> FETCHER =
-      new PageImpl.NextPageFetcher<List<FieldValue>>() {
+  private static final QueryResult.QueryResultsPageFetcher FETCHER =
+      new QueryResult.QueryResultsPageFetcher() {
         @Override
-        public Page<List<FieldValue>> nextPage() {
+        public QueryResult nextPage() {
           return null;
         }
       };
-  private static final Page<List<FieldValue>> ROWS =
-      new PageImpl<>(FETCHER, "cursor", ImmutableList.<List<FieldValue>>of());
   private static final Long TOTAL_BYTES_PROCESSED = 4200L;
   private static final Boolean JOB_COMPLETE = true;
   private static final List<BigQueryError> ERRORS = ImmutableList.of(
@@ -54,43 +51,40 @@ public class QueryResponseTest {
       new BigQueryError("reason2", "location2", "message2", "debugInfo2")
   );
   private static final Boolean CACHE_HIT = false;
+  private static final QueryResult QUERY_RESULT = QueryResult.builder()
+      .schema(SCHEMA)
+      .totalRows(TOTAL_ROWS)
+      .totalBytesProcessed(TOTAL_BYTES_PROCESSED)
+      .cursor("cursor")
+      .pageFetcher(FETCHER)
+      .results(ImmutableList.<List<FieldValue>>of())
+      .cacheHit(CACHE_HIT)
+      .build();
   private static final QueryResponse QUERY_RESPONSE = QueryResponse.builder()
       .etag(ETAG)
-      .schema(SCHEMA)
       .job(JOB_ID)
-      .totalRows(TOTAL_ROWS)
-      .rows(ROWS)
-      .totalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .jobComplete(JOB_COMPLETE)
       .executionErrors(ERRORS)
-      .cacheHit(CACHE_HIT)
+      .result(QUERY_RESULT)
       .build();
 
   @Test
   public void testBuilder() {
     assertEquals(ETAG, QUERY_RESPONSE.etag());
-    assertEquals(SCHEMA, QUERY_RESPONSE.schema());
+    assertEquals(QUERY_RESULT, QUERY_RESPONSE.result());
     assertEquals(JOB_ID, QUERY_RESPONSE.job());
-    assertEquals(TOTAL_ROWS, QUERY_RESPONSE.totalRows());
-    assertEquals(ROWS, QUERY_RESPONSE.rows());
-    assertEquals(TOTAL_BYTES_PROCESSED, (Long) QUERY_RESPONSE.totalBytesProcessed());
     assertEquals(JOB_COMPLETE, QUERY_RESPONSE.jobComplete());
     assertEquals(ERRORS, QUERY_RESPONSE.executionErrors());
-    assertEquals(CACHE_HIT, QUERY_RESPONSE.cacheHit());
   }
 
   @Test
   public void testBuilderIncomplete() {
     QueryResponse queryResponse = QueryResponse.builder().jobComplete(false).build();
     assertNull(queryResponse.etag());
-    assertNull(queryResponse.schema());
+    assertNull(queryResponse.result());
     assertNull(queryResponse.job());
-    assertNull(queryResponse.totalRows());
-    assertNull(queryResponse.rows());
-    assertNull(queryResponse.totalBytesProcessed());
-    assertEquals(false, queryResponse.jobComplete());
+    assertFalse(queryResponse.jobComplete());
     assertNull(queryResponse.executionErrors());
-    assertNull(queryResponse.cacheHit());
   }
 
   @Test
@@ -101,13 +95,9 @@ public class QueryResponseTest {
   private void compareQueryResponse(QueryResponse expected, QueryResponse value) {
     assertEquals(expected, value);
     assertEquals(expected.etag(), value.etag());
-    assertEquals(expected.schema(), value.schema());
+    assertEquals(expected.result(), value.result());
     assertEquals(expected.job(), value.job());
-    assertEquals(expected.totalRows(), value.totalRows());
-    assertEquals(expected.rows(), value.rows());
-    assertEquals(expected.totalBytesProcessed(), value.totalBytesProcessed());
     assertEquals(expected.jobComplete(), value.jobComplete());
     assertEquals(expected.executionErrors(), value.executionErrors());
-    assertEquals(expected.cacheHit(), value.cacheHit());
   }
 }

@@ -193,11 +193,19 @@ public class SerializationTest {
       .maxResults(42L)
       .maxWaitTime(10L)
       .build();
+  private static final QueryResult QUERY_RESULT = QueryResult.builder()
+      .schema(TABLE_SCHEMA)
+      .totalRows(1L)
+      .totalBytesProcessed(42L)
+      .cursor("cursor")
+      .pageFetcher(null)
+      .results(ImmutableList.<List<FieldValue>>of())
+      .build();
   private static final QueryResponse QUERY_RESPONSE = QueryResponse.builder()
       .etag(ETAG)
-      .schema(TABLE_SCHEMA)
       .job(JOB_ID)
-      .totalRows(1L)
+      .jobComplete(true)
+      .result(QUERY_RESULT)
       .build();
 
   @Test

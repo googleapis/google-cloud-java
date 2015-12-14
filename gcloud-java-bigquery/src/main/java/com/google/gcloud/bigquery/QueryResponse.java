@@ -17,7 +17,6 @@
 package com.google.gcloud.bigquery;
 
 import com.google.common.base.MoreObjects;
-import com.google.gcloud.Page;
 
 import java.io.Serializable;
 import java.util.List;
@@ -35,7 +34,12 @@ import java.util.Objects;
  *      Thread.sleep(1000);
  *    }
  *    List<BigQueryError> executionErrors = response.executionErrors();
- *    Page<List<FieldValue>> rows = response.rows();
+ *    QueryResult result = response.result();
+ *    Iterator<List<FieldValue>> rowIterator = result.iterateAll();
+ *    while(rowIterator.hasNext()) {
+ *      List<FieldValue> row = rowIterator.next();
+ *      // do something with row
+ *    }
  * }</pre>
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/getQueryResults">Get Query
@@ -46,57 +50,34 @@ public class QueryResponse implements Serializable {
 
   private static final long serialVersionUID = 3549226764825005655L;
 
+  private final QueryResult result;
   private final String etag;
-  private final Schema schema;
   private final JobId job;
-  private final Long totalRows;
-  private final Page<List<FieldValue>> rows;
-  private final Long totalBytesProcessed;
   private final boolean jobComplete;
   private final List<BigQueryError> executionErrors;
-  private final Boolean cacheHit;
 
   static final class Builder {
 
+    private QueryResult result;
     private String etag;
-    private Schema schema;
     private JobId job;
-    private Long totalRows;
-    private Page<List<FieldValue>> rows;
-    private Long totalBytesProcessed;
     private boolean jobComplete;
     private List<BigQueryError> executionErrors;
-    private Boolean cacheHit;
 
     private Builder() {}
+
+    Builder result(QueryResult result) {
+      this.result = result;
+      return this;
+    }
 
     Builder etag(String etag) {
       this.etag = etag;
       return this;
     }
 
-    Builder schema(Schema schema) {
-      this.schema = schema;
-      return this;
-    }
-
     Builder job(JobId job) {
       this.job = job;
-      return this;
-    }
-
-    Builder totalRows(Long totalRows) {
-      this.totalRows = totalRows;
-      return this;
-    }
-
-    Builder rows(Page<List<FieldValue>> rows) {
-      this.rows = rows;
-      return this;
-    }
-
-    Builder totalBytesProcessed(Long totalBytesProcessed) {
-      this.totalBytesProcessed = totalBytesProcessed;
       return this;
     }
 
@@ -110,26 +91,25 @@ public class QueryResponse implements Serializable {
       return this;
     }
 
-    Builder cacheHit(Boolean cacheHit) {
-      this.cacheHit = cacheHit;
-      return this;
-    }
-
     QueryResponse build() {
       return new QueryResponse(this);
     }
   }
 
   private QueryResponse(Builder builder) {
+    this.result = builder.result;
     this.etag = builder.etag;
-    this.schema = builder.schema;
     this.job = builder.job;
-    this.totalRows = builder.totalRows;
-    this.rows = builder.rows;
-    this.totalBytesProcessed = builder.totalBytesProcessed;
     this.jobComplete = builder.jobComplete;
     this.executionErrors = builder.executionErrors;
-    this.cacheHit = builder.cacheHit;
+  }
+
+  /**
+   * Returns the result of the query. Returns {@code null} if {@link #jobComplete()} is {@code
+   * false}.
+   */
+  public QueryResult result() {
+    return result;
   }
 
   /**
@@ -137,14 +117,6 @@ public class QueryResponse implements Serializable {
    */
   public String etag() {
     return etag;
-  }
-
-  /**
-   * Returns the schema of the results if the query completed successfully. Returns {@code null}
-   * otherwise.
-   */
-  public Schema schema() {
-    return schema;
   }
 
   /**
@@ -156,36 +128,10 @@ public class QueryResponse implements Serializable {
   }
 
   /**
-   * Returns the total number of rows in the complete query result set, which can be more than the
-   * number of rows in the first page of results returned by {@link #rows()}. Returns {@code null}
-   * if the query did not complete successfully.
-   */
-  public Long totalRows() {
-    return totalRows;
-  }
-
-  /**
-   * Returns the query result as a paginated list of rows, if the query completed successfully.
-   * Returns {@code null} otherwise.
-   */
-  public Page<List<FieldValue>> rows() {
-    return rows;
-  }
-
-  /**
-   * Returns the total number of bytes processed for the query. If this query was a dry run, this is
-   * the number of bytes that would be processed if the query were run. Returns {@code null}
-   * if the query did not complete.
-   */
-  public Long totalBytesProcessed() {
-    return totalBytesProcessed;
-  }
-
-  /**
-   * Returns whether the job running the query has completed or not. If {@link #rows()} and
-   * {@link #totalRows()} are not {@code null}, this method will always return {@code true}. If this
-   * method returns {@code false} {@link #totalRows()} and {@link #rows()} return {@code null}. This
-   * method can be used to check if query execution completed and results are available.
+   * Returns whether the job running the query has completed or not. If {@link #result()} is not
+   * {@code null}, this method will always return {@code true}. If this method returns {@code false}
+   * {@link #result()} returns {@code null}. This method can be used to check if query execution
+   * completed and results are available.
    */
   public boolean jobComplete() {
     return jobComplete;
@@ -199,25 +145,14 @@ public class QueryResponse implements Serializable {
     return executionErrors;
   }
 
-  /**
-   * Returns whether the query result was fetched from the query cache.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
-   */
-  public Boolean cacheHit() {
-    return cacheHit;
-  }
-
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
+        .add("result", result)
+        .add("etag", etag)
         .add("job", job)
         .add("jobComplete", jobComplete)
-        .add("totalRows", totalRows)
-        .add("schema", schema)
-        .add("totalBytesProcessed", totalBytesProcessed)
         .add("executionErrors", executionErrors)
-        .add("cacheHit", cacheHit)
         .toString();
   }
 
@@ -236,13 +171,10 @@ public class QueryResponse implements Serializable {
     }
     QueryResponse response = (QueryResponse) obj;
     return jobComplete == response.jobComplete
-        && Objects.equals(schema, response.schema)
+        && Objects.equals(etag, response.etag)
+        && Objects.equals(result, response.result)
         && Objects.equals(job, response.job)
-        && Objects.equals(totalRows, response.totalRows)
-        && Objects.equals(rows, response.rows)
-        && Objects.equals(totalBytesProcessed, response.totalBytesProcessed)
-        && Objects.equals(executionErrors, response.executionErrors)
-        && Objects.equals(cacheHit, response.cacheHit);
+        && Objects.equals(executionErrors, response.executionErrors);
   }
 
   static Builder builder() {
