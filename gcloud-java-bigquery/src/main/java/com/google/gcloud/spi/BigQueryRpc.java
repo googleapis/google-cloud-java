@@ -19,13 +19,11 @@ package com.google.gcloud.spi;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
-import com.google.api.services.bigquery.model.JobReference;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.QueryResponse;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
-import com.google.api.services.bigquery.model.TableReference;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.gcloud.bigquery.BigQueryException;
 
@@ -113,6 +111,10 @@ public interface BigQueryRpc {
 
   Dataset create(Dataset dataset, Map<Option, ?> options) throws BigQueryException;
 
+  Table create(Table table, Map<Option, ?> options) throws BigQueryException;
+
+  Job create(Job job, Map<Option, ?> options) throws BigQueryException;
+
   /**
    * Delete the requested dataset.
    *
@@ -122,6 +124,8 @@ public interface BigQueryRpc {
   boolean deleteDataset(String datasetId, Map<Option, ?> options) throws BigQueryException;
 
   Dataset patch(Dataset dataset, Map<Option, ?> options) throws BigQueryException;
+
+  Table patch(Table table, Map<Option, ?> options) throws BigQueryException;
 
   /**
    * Returns the requested table or {@code null} if not found.
@@ -139,21 +143,16 @@ public interface BigQueryRpc {
   Tuple<String, Iterable<Table>> listTables(String dataset, Map<Option, ?> options)
       throws BigQueryException;
 
-  Table create(Table table, Map<Option, ?> options) throws BigQueryException;
-
   /**
    * Delete the requested table.
    *
    * @return {@code true} if table was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
-  boolean deleteTable(String datasetId, String tableId, Map<Option, ?> options)
-      throws BigQueryException;
+  boolean deleteTable(String datasetId, String tableId) throws BigQueryException;
 
-  Table patch(Table table, Map<Option, ?> options) throws BigQueryException;
-
-  TableDataInsertAllResponse insertAll(TableReference table, TableDataInsertAllRequest request,
-      Map<Option, ?> options) throws BigQueryException;
+  TableDataInsertAllResponse insertAll(String datasetId, String tableId,
+      TableDataInsertAllRequest request) throws BigQueryException;
 
   Tuple<String, Iterable<TableRow>> listTableData(String datasetId, String tableId,
       Map<Option, ?> options) throws BigQueryException;
@@ -172,12 +171,18 @@ public interface BigQueryRpc {
    */
   Tuple<String, Iterable<Job>> listJobs(Map<Option, ?> options) throws BigQueryException;
 
-  Job create(Job job, Map<Option, ?> options) throws BigQueryException;
+  /**
+   * Sends a job cancel request. This call will return immediately, and the client will need to poll
+   * for the job status to see if the cancel completed successfully.
+   *
+   * @return {@code true} if cancel was requested successfully, {@code false} if the job was not
+   *     found
+   * @throws BigQueryException upon failure
+   */
+  boolean cancel(String jobId) throws BigQueryException;
 
-  boolean cancel(String jobId, Map<Option, ?> options) throws BigQueryException;
-
-  GetQueryResultsResponse getQueryResults(JobReference job, Map<Option, ?> options)
+  GetQueryResultsResponse getQueryResults(String jobId, Map<Option, ?> options)
       throws BigQueryException;
 
-  QueryResponse query(QueryRequest request, Map<Option, ?> options) throws BigQueryException;
+  QueryResponse query(QueryRequest request) throws BigQueryException;
 }
