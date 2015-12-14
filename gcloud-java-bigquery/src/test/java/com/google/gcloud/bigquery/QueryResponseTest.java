@@ -46,7 +46,7 @@ public class QueryResponseTest {
         }
       };
   private static final Page<List<FieldValue>> ROWS =
-      new PageImpl<List<FieldValue>>(FETCHER, "cursor", ImmutableList.<List<FieldValue>>of());
+      new PageImpl<>(FETCHER, "cursor", ImmutableList.<List<FieldValue>>of());
   private static final Long TOTAL_BYTES_PROCESSED = 4200L;
   private static final Boolean JOB_COMPLETE = true;
   private static final List<BigQueryError> ERRORS = ImmutableList.of(
@@ -62,7 +62,7 @@ public class QueryResponseTest {
       .rows(ROWS)
       .totalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .jobComplete(JOB_COMPLETE)
-      .errors(ERRORS)
+      .executionErrors(ERRORS)
       .cacheHit(CACHE_HIT)
       .build();
 
@@ -73,9 +73,9 @@ public class QueryResponseTest {
     assertEquals(JOB_ID, QUERY_RESPONSE.job());
     assertEquals(TOTAL_ROWS, QUERY_RESPONSE.totalRows());
     assertEquals(ROWS, QUERY_RESPONSE.rows());
-    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESPONSE.totalBytesProcessed());
+    assertEquals(TOTAL_BYTES_PROCESSED, (Long) QUERY_RESPONSE.totalBytesProcessed());
     assertEquals(JOB_COMPLETE, QUERY_RESPONSE.jobComplete());
-    assertEquals(ERRORS, QUERY_RESPONSE.errors());
+    assertEquals(ERRORS, QUERY_RESPONSE.executionErrors());
     assertEquals(CACHE_HIT, QUERY_RESPONSE.cacheHit());
   }
 
@@ -89,7 +89,7 @@ public class QueryResponseTest {
     assertNull(queryResponse.rows());
     assertNull(queryResponse.totalBytesProcessed());
     assertEquals(false, queryResponse.jobComplete());
-    assertNull(queryResponse.errors());
+    assertNull(queryResponse.executionErrors());
     assertNull(queryResponse.cacheHit());
   }
 
@@ -107,7 +107,7 @@ public class QueryResponseTest {
     assertEquals(expected.rows(), value.rows());
     assertEquals(expected.totalBytesProcessed(), value.totalBytesProcessed());
     assertEquals(expected.jobComplete(), value.jobComplete());
-    assertEquals(expected.errors(), value.errors());
+    assertEquals(expected.executionErrors(), value.executionErrors());
     assertEquals(expected.cacheHit(), value.cacheHit());
   }
 }

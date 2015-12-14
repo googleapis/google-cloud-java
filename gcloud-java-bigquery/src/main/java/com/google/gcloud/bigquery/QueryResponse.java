@@ -26,6 +26,21 @@ import java.util.Objects;
 /**
  * Google Cloud BigQuery Query Response. This class contains the results of a Query Job or of a
  * Query Request.
+ *
+ * <p>Example usage of a query response:
+ * <pre>    {@code
+ *    QueryResponse response = bigquery.query(request);
+ *    while (!response.jobComplete()) {
+ *      response = bigquery.getQueryResults(response.job());
+ *      Thread.sleep(1000);
+ *    }
+ *    List<BigQueryError> executionErrors = response.executionErrors();
+ *    Page<List<FieldValue>> rows = response.rows();
+ * }</pre>
+ *
+ * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/getQueryResults">Get Query
+ *     Results</a>
+ * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/query">Query</a>
  */
 public class QueryResponse implements Serializable {
 
@@ -37,8 +52,8 @@ public class QueryResponse implements Serializable {
   private final Long totalRows;
   private final Page<List<FieldValue>> rows;
   private final Long totalBytesProcessed;
-  private final Boolean jobComplete;
-  private final List<BigQueryError> errors;
+  private final boolean jobComplete;
+  private final List<BigQueryError> executionErrors;
   private final Boolean cacheHit;
 
   static final class Builder {
@@ -49,8 +64,8 @@ public class QueryResponse implements Serializable {
     private Long totalRows;
     private Page<List<FieldValue>> rows;
     private Long totalBytesProcessed;
-    private Boolean jobComplete;
-    private List<BigQueryError> errors;
+    private boolean jobComplete;
+    private List<BigQueryError> executionErrors;
     private Boolean cacheHit;
 
     private Builder() {}
@@ -85,13 +100,13 @@ public class QueryResponse implements Serializable {
       return this;
     }
 
-    Builder jobComplete(Boolean jobComplete) {
+    Builder jobComplete(boolean jobComplete) {
       this.jobComplete = jobComplete;
       return this;
     }
 
-    Builder errors(List<BigQueryError> errors) {
-      this.errors = errors;
+    Builder executionErrors(List<BigQueryError> executionErrors) {
+      this.executionErrors = executionErrors;
       return this;
     }
 
@@ -113,7 +128,7 @@ public class QueryResponse implements Serializable {
     this.rows = builder.rows;
     this.totalBytesProcessed = builder.totalBytesProcessed;
     this.jobComplete = builder.jobComplete;
-    this.errors = builder.errors;
+    this.executionErrors = builder.executionErrors;
     this.cacheHit = builder.cacheHit;
   }
 
@@ -125,7 +140,7 @@ public class QueryResponse implements Serializable {
   }
 
   /**
-   * Returns the schema of the results when the query completed successfully. Returns {@code null}
+   * Returns the schema of the results if the query completed successfully. Returns {@code null}
    * otherwise.
    */
   public Schema schema() {
@@ -158,7 +173,9 @@ public class QueryResponse implements Serializable {
   }
 
   /**
-   * Returns the total number of bytes processed for the query.
+   * Returns the total number of bytes processed for the query. If this query was a dry run, this is
+   * the number of bytes that would be processed if the query were run. Returns {@code null}
+   * if the query did not complete.
    */
   public Long totalBytesProcessed() {
     return totalBytesProcessed;
@@ -166,10 +183,11 @@ public class QueryResponse implements Serializable {
 
   /**
    * Returns whether the job running the query has completed or not. If {@link #rows()} and
-   * {@link #totalRows()} are present, this method will always return {@code true}. If this method
-   * returns {@code false}, {@link #totalRows()} will not be available.
+   * {@link #totalRows()} are not {@code null}, this method will always return {@code true}. If this
+   * method returns {@code false} {@link #totalRows()} and {@link #rows()} return {@code null}. This
+   * method can be used to check if query execution completed and results are available.
    */
-  public Boolean jobComplete() {
+  public boolean jobComplete() {
     return jobComplete;
   }
 
@@ -177,8 +195,8 @@ public class QueryResponse implements Serializable {
    * Returns errors and warnings encountered during the running of the job, if any. Errors here do
    * not necessarily mean that the job has completed or was unsuccessful.
    */
-  public List<BigQueryError> errors() {
-    return errors;
+  public List<BigQueryError> executionErrors() {
+    return executionErrors;
   }
 
   /**
@@ -198,7 +216,7 @@ public class QueryResponse implements Serializable {
         .add("totalRows", totalRows)
         .add("schema", schema)
         .add("totalBytesProcessed", totalBytesProcessed)
-        .add("errors", errors)
+        .add("executionErrors", executionErrors)
         .add("cacheHit", cacheHit)
         .toString();
   }
@@ -217,13 +235,13 @@ public class QueryResponse implements Serializable {
       return false;
     }
     QueryResponse response = (QueryResponse) obj;
-    return Objects.equals(schema, response.schema)
+    return jobComplete == response.jobComplete
+        && Objects.equals(schema, response.schema)
         && Objects.equals(job, response.job)
         && Objects.equals(totalRows, response.totalRows)
         && Objects.equals(rows, response.rows)
         && Objects.equals(totalBytesProcessed, response.totalBytesProcessed)
-        && Objects.equals(jobComplete, response.jobComplete)
-        && Objects.equals(errors, response.errors)
+        && Objects.equals(executionErrors, response.executionErrors)
         && Objects.equals(cacheHit, response.cacheHit);
   }
 

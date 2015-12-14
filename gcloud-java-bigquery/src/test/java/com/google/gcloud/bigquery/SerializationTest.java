@@ -186,6 +186,19 @@ public class SerializationTest {
   private static final InsertAllResponse INSERT_ALL_RESPONSE = new InsertAllResponse(ERRORS_MAP);
   private static final FieldValue FIELD_VALUE =
       new FieldValue(FieldValue.Attribute.PRIMITIVE, "value");
+  private static final QueryRequest QUERY_REQUEST = QueryRequest.builder("query")
+      .useQueryCache(true)
+      .defaultDataset(DATASET_ID)
+      .dryRun(false)
+      .maxResults(42L)
+      .maxWaitTime(10L)
+      .build();
+  private static final QueryResponse QUERY_RESPONSE = QueryResponse.builder()
+      .etag(ETAG)
+      .schema(TABLE_SCHEMA)
+      .job(JOB_ID)
+      .totalRows(1L)
+      .build();
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -212,7 +225,7 @@ public class SerializationTest {
         TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION,
         JOB_STATISTICS, EXTRACT_STATISTICS, LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR,
         JOB_STATUS, JOB_ID, COPY_JOB, EXTRACT_JOB, LOAD_JOB, QUERY_JOB, INSERT_ALL_REQUEST,
-        INSERT_ALL_RESPONSE, FIELD_VALUE};
+        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

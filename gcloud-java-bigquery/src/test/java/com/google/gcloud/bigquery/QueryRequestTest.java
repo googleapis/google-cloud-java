@@ -19,7 +19,9 @@ package com.google.gcloud.bigquery;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class QueryRequestTest {
 
@@ -36,6 +38,9 @@ public class QueryRequestTest {
       .maxResults(MAX_RESULTS)
       .maxWaitTime(MAX_WAIT_TIME)
       .build();
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testToBuilder() {
@@ -62,6 +67,8 @@ public class QueryRequestTest {
     assertEquals(DRY_RUN, QUERY_REQUEST.dryRun());
     assertEquals(MAX_RESULTS, QUERY_REQUEST.maxResults());
     assertEquals(MAX_WAIT_TIME, QUERY_REQUEST.maxWaitTime());
+    thrown.expect(NullPointerException.class);
+    QueryRequest.builder(null);
   }
 
   @Test
@@ -73,6 +80,8 @@ public class QueryRequestTest {
     assertNull(request.dryRun());
     assertNull(request.maxResults());
     assertNull(request.maxWaitTime());
+    thrown.expect(NullPointerException.class);
+    QueryRequest.of(null);
   }
 
   @Test

@@ -26,10 +26,11 @@ import java.util.Objects;
 /**
  * Google Cloud BigQuery Query Request. This class can be used to run a BigQuery SQL query and
  * return results if the query completes within a specified timeout. The query results are saved to
- * a temporary table that is deleted approximately 24 hours after the query is run. Query is run
+ * a temporary table that is deleted approximately 24 hours after the query is run. The query is run
  * through a BigQuery Job whose identity can be accessed via {@link QueryResponse#job()}.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/query">Query</a>
+ * @see <a href="https://cloud.google.com/bigquery/query-reference">Query Reference</a>
  */
 public class QueryRequest implements Serializable {
 
@@ -57,7 +58,7 @@ public class QueryRequest implements Serializable {
      * Sets the BigQuery query to be executed.
      */
     public Builder query(String query) {
-      this.query = query;
+      this.query = checkNotNull(query);
       return this;
     }
 
@@ -84,9 +85,8 @@ public class QueryRequest implements Serializable {
      * Sets how long to wait for the query to complete, in milliseconds, before the request times
      * out and returns. Note that this is only a timeout for the request, not the query. If the
      * query takes longer to run than the timeout value, the call returns without any results and
-     * with the {@link QueryResponse#jobComplete()} set to {@code false}. You can call
-     * {@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)} to wait for the query
-     * to complete and read the results. The default value is 10000 milliseconds (10 seconds).
+     * with the {@link QueryResponse#jobComplete()} set to {@code false}. If not set, a wait time of
+     * 10000 milliseconds (10 seconds) is used.
      */
     public Builder maxWaitTime(Long maxWaitTime) {
       this.maxWaitTime = maxWaitTime;
@@ -94,9 +94,9 @@ public class QueryRequest implements Serializable {
     }
 
     /**
-     * Sets whether the query has to be dry run or not. If set, the query is not executed: if the
-     * query is valid statistics are returned on how many bytes would be processed, if the query is
-     * invalid an error is returned.
+     * Sets whether the query has to be dry run or not. If set, the query is not executed. If the
+     * query is valid statistics are returned on how many bytes would be processed. If the query is
+     * invalid an error is returned. If not set the query is executed.
      */
     public Builder dryRun(Boolean dryRun) {
       this.dryRun = dryRun;
@@ -105,7 +105,8 @@ public class QueryRequest implements Serializable {
 
     /**
      * Sets whether to look for the result in the query cache. The query cache is a best-effort
-     * cache that will be flushed whenever tables in the query are modified.
+     * cache that will be flushed whenever tables in the query are modified. If not specified the
+     * query cache is used.
      *
      * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
      */
@@ -120,7 +121,7 @@ public class QueryRequest implements Serializable {
   }
 
   private QueryRequest(Builder builder) {
-    query = checkNotNull(builder.query);
+    query = builder.query;
     maxResults = builder.maxResults;
     defaultDataset = builder.defaultDataset;
     maxWaitTime = builder.maxWaitTime;
@@ -155,16 +156,17 @@ public class QueryRequest implements Serializable {
    * query takes longer to run than the timeout value, the call returns without any results and
    * with the {@link QueryResponse#jobComplete()} set to {@code false}. You can call
    * {@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)} to wait for the query
-   * to complete and read the results. The default value is 10000 milliseconds (10 seconds).
+   * to complete and read the results. If not set, a wait time of 10000 milliseconds (10 seconds)
+   * is used.
    */
   public Long maxWaitTime() {
     return maxWaitTime;
   }
 
   /**
-   * Returns whether the query has to be dry run or not. If set, the query is not executed: if the
-   * query is valid statistics are returned on how many bytes would be processed, if the query is
-   * invalid an error is returned.
+   * Returns whether the query has to be dry run or not. If set, the query is not executed. If the
+   * query is valid statistics are returned on how many bytes would be processed. If the query is
+   * invalid an error is returned. If not set the query is executed.
    */
   public Boolean dryRun() {
     return dryRun;
@@ -172,7 +174,8 @@ public class QueryRequest implements Serializable {
 
   /**
    * Returns whether to look for the result in the query cache. The query cache is a best-effort
-   * cache that will be flushed whenever tables in the query are modified.
+   * cache that will be flushed whenever tables in the query are modified. If not specified the
+   * query cache is used.
    *
    * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
    */
