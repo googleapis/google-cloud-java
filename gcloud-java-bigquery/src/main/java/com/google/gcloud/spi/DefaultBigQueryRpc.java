@@ -16,6 +16,8 @@ package com.google.gcloud.spi;
 
 import static com.google.gcloud.spi.BigQueryRpc.Option.DELETE_CONTENTS;
 import static com.google.gcloud.spi.BigQueryRpc.Option.FIELDS;
+import static com.google.gcloud.spi.BigQueryRpc.Option.MAX_RESULTS;
+import static com.google.gcloud.spi.BigQueryRpc.Option.PAGE_TOKEN;
 import static com.google.gcloud.spi.BigQueryRpc.Option.START_INDEX;
 import static com.google.gcloud.spi.BigQueryRpc.Option.TIMEOUT;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
@@ -32,7 +34,6 @@ import com.google.api.services.bigquery.model.DatasetReference;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.JobList;
-import com.google.api.services.bigquery.model.JobReference;
 import com.google.api.services.bigquery.model.JobStatus;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.QueryResponse;
@@ -47,9 +48,6 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
-
-import static com.google.gcloud.spi.BigQueryRpc.Option.MAX_RESULTS;
-import static com.google.gcloud.spi.BigQueryRpc.Option.PAGE_TOKEN;
 
 import com.google.gcloud.bigquery.BigQueryException;
 import com.google.gcloud.bigquery.BigQueryOptions;
@@ -103,7 +101,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .get(this.options.projectId(), datasetId)
           .setFields(FIELDS.getString(options))
           .execute();
-    } catch(IOException ex) {
+    } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
       if (serviceException.code() == HTTP_NOT_FOUND) {
         return null;
@@ -124,15 +122,16 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .execute();
       Iterable<DatasetList.Datasets> datasets = datasetsList.getDatasets();
       return Tuple.of(datasetsList.getNextPageToken(),
-          Iterables.transform(datasets != null ? datasets : ImmutableList.<DatasetList.Datasets>of(),
+          Iterables.transform(datasets != null ? datasets :
+              ImmutableList.<DatasetList.Datasets>of(),
               new Function<DatasetList.Datasets, Dataset>() {
                 @Override
-                public Dataset apply(DatasetList.Datasets f) {
+                public Dataset apply(DatasetList.Datasets datasetPb) {
                   return new Dataset()
-                      .setDatasetReference(f.getDatasetReference())
-                      .setFriendlyName(f.getFriendlyName())
-                      .setId(f.getId())
-                      .setKind(f.getKind());
+                      .setDatasetReference(datasetPb.getDatasetReference())
+                      .setFriendlyName(datasetPb.getFriendlyName())
+                      .setId(datasetPb.getId())
+                      .setKind(datasetPb.getKind());
                 }
               }));
     } catch (IOException ex) {
@@ -144,6 +143,33 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   public Dataset create(Dataset dataset, Map<Option, ?> options) throws BigQueryException {
     try {
       return bigquery.datasets().insert(this.options.projectId(), dataset)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Table create(Table table, Map<Option, ?> options)
+      throws BigQueryException {
+    try {
+      // unset the type, as it is output only
+      table.setType(null);
+      return bigquery.tables()
+          .insert(this.options.projectId(), table.getTableReference().getDatasetId(), table)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Job create(Job job, Map<Option, ?> options) throws BigQueryException {
+    try {
+      return bigquery.jobs()
+          .insert(this.options.projectId(), job)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -181,6 +207,21 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
+  public Table patch(Table table, Map<Option, ?> options) throws BigQueryException {
+    try {
+      // unset the type, as it is output only
+      table.setType(null);
+      TableReference reference = table.getTableReference();
+      return bigquery.tables()
+          .patch(this.options.projectId(), reference.getDatasetId(), reference.getTableId(), table)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
   public Table getTable(String datasetId, String tableId, Map<Option, ?> options)
       throws BigQueryException {
     try {
@@ -188,7 +229,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .get(this.options.projectId(), datasetId, tableId)
           .setFields(FIELDS.getString(options))
           .execute();
-    } catch(IOException ex) {
+    } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
       if (serviceException.code() == HTTP_NOT_FOUND) {
         return null;
@@ -211,13 +252,13 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           Iterables.transform(tables != null ? tables : ImmutableList.<TableList.Tables>of(),
               new Function<TableList.Tables, Table>() {
                 @Override
-                public Table apply(TableList.Tables f) {
+                public Table apply(TableList.Tables tablePb) {
                   return new Table()
-                      .setFriendlyName(f.getFriendlyName())
-                      .setId(f.getId())
-                      .setKind(f.getKind())
-                      .setTableReference(f.getTableReference())
-                      .setType(f.getType());
+                      .setFriendlyName(tablePb.getFriendlyName())
+                      .setId(tablePb.getId())
+                      .setKind(tablePb.getKind())
+                      .setTableReference(tablePb.getTableReference())
+                      .setType(tablePb.getType());
                 }
               }));
     } catch (IOException ex) {
@@ -226,21 +267,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Table create(Table table, Map<Option, ?> options)
-      throws BigQueryException {
-    try {
-      return bigquery.tables()
-          .insert(this.options.projectId(), table.getTableReference().getDatasetId(), table)
-          .setFields(FIELDS.getString(options))
-          .execute();
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
-  }
-
-  @Override
-  public boolean deleteTable(String datasetId, String tableId, Map<Option, ?> options)
-      throws BigQueryException {
+  public boolean deleteTable(String datasetId, String tableId) throws BigQueryException {
     try {
       bigquery.tables().delete(this.options.projectId(), datasetId, tableId).execute();
       return true;
@@ -254,24 +281,11 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Table patch(Table table, Map<Option, ?> options) throws BigQueryException {
-    try {
-      TableReference reference = table.getTableReference();
-      return bigquery.tables()
-          .patch(this.options.projectId(), reference.getDatasetId(), reference.getTableId(), table)
-          .setFields(FIELDS.getString(options))
-          .execute();
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
-  }
-
-  @Override
-  public TableDataInsertAllResponse insertAll(TableReference table,
-      TableDataInsertAllRequest request, Map<Option, ?> options) throws BigQueryException {
+  public TableDataInsertAllResponse insertAll(String datasetId, String tableId,
+      TableDataInsertAllRequest request) throws BigQueryException {
     try {
       return bigquery.tabledata()
-          .insertAll(this.options.projectId(), table.getDatasetId(), table.getTableId(), request)
+          .insertAll(this.options.projectId(), datasetId, tableId, request)
           .execute();
     } catch (IOException ex) {
       throw translate(ex);
@@ -286,8 +300,8 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .list(this.options.projectId(), datasetId, tableId)
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
-          .setStartIndex(START_INDEX.getLong(options) != null ?
-              BigInteger.valueOf(START_INDEX.getLong(options)) : null)
+          .setStartIndex(START_INDEX.getLong(options) != null
+              ? BigInteger.valueOf(START_INDEX.getLong(options)) : null)
           .execute();
       return Tuple.<String, Iterable<TableRow>>of(tableDataList.getPageToken(),
           tableDataList.getRows());
@@ -303,7 +317,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .get(this.options.projectId(), jobId)
           .setFields(FIELDS.getString(options))
           .execute();
-    } catch(IOException ex) {
+    } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
       if (serviceException.code() == HTTP_NOT_FOUND) {
         return null;
@@ -329,22 +343,23 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           Iterables.transform(jobs != null ? jobs : ImmutableList.<JobList.Jobs>of(),
               new Function<JobList.Jobs, Job>() {
                 @Override
-                public Job apply(JobList.Jobs f) {
-                  JobStatus statusPb = f.getStatus() != null ? f.getStatus() : new JobStatus();
+                public Job apply(JobList.Jobs jobPb) {
+                  JobStatus statusPb = jobPb.getStatus() != null
+                      ? jobPb.getStatus() : new JobStatus();
                   if (statusPb.getState() == null) {
-                    statusPb.setState(f.getState());
+                    statusPb.setState(jobPb.getState());
                   }
                   if (statusPb.getErrorResult() == null) {
-                    statusPb.setErrorResult(f.getErrorResult());
+                    statusPb.setErrorResult(jobPb.getErrorResult());
                   }
                   return new Job()
-                      .setConfiguration(f.getConfiguration())
-                      .setId(f.getId())
-                      .setJobReference(f.getJobReference())
-                      .setKind(f.getKind())
-                      .setStatistics(f.getStatistics())
-                      .setStatus(f.getStatus())
-                      .setUserEmail(f.getUserEmail());
+                      .setConfiguration(jobPb.getConfiguration())
+                      .setId(jobPb.getId())
+                      .setJobReference(jobPb.getJobReference())
+                      .setKind(jobPb.getKind())
+                      .setStatistics(jobPb.getStatistics())
+                      .setStatus(statusPb)
+                      .setUserEmail(jobPb.getUserEmail());
                 }
               }));
     } catch (IOException ex) {
@@ -353,19 +368,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Job create(Job job, Map<Option, ?> options) throws BigQueryException {
-    try {
-      return bigquery.jobs()
-          .insert(this.options.projectId(), job)
-          .setFields(FIELDS.getString(options))
-          .execute();
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
-  }
-
-  @Override
-  public boolean cancel(String jobId, Map<Option, ?> options) throws BigQueryException {
+  public boolean cancel(String jobId) throws BigQueryException {
     try {
       bigquery.jobs().cancel(this.options.projectId(), jobId).execute();
       return true;
@@ -379,17 +382,17 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public GetQueryResultsResponse getQueryResults(JobReference job, Map<Option, ?> options)
+  public GetQueryResultsResponse getQueryResults(String jobId, Map<Option, ?> options)
       throws BigQueryException {
     try {
-      return bigquery.jobs().getQueryResults(this.options.projectId(), job.getJobId())
+      return bigquery.jobs().getQueryResults(this.options.projectId(), jobId)
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
-          .setStartIndex(START_INDEX.getLong(options) != null ?
-              BigInteger.valueOf(START_INDEX.getLong(options)) : null)
+          .setStartIndex(START_INDEX.getLong(options) != null
+              ? BigInteger.valueOf(START_INDEX.getLong(options)) : null)
           .setTimeoutMs(TIMEOUT.getLong(options))
           .execute();
-    } catch(IOException ex) {
+    } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
       if (serviceException.code() == HTTP_NOT_FOUND) {
         return null;
@@ -399,8 +402,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public QueryResponse query(QueryRequest request, Map<Option, ?> options)
-      throws BigQueryException {
+  public QueryResponse query(QueryRequest request) throws BigQueryException {
     try {
       return bigquery.jobs().query(this.options.projectId(), request).execute();
     } catch (IOException ex) {
