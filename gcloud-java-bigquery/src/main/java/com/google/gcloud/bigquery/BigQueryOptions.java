@@ -18,9 +18,9 @@ package com.google.gcloud.bigquery;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.spi.DefaultBigQueryRpc;
 import com.google.gcloud.spi.BigQueryRpc;
 import com.google.gcloud.spi.BigQueryRpcFactory;
+import com.google.gcloud.spi.DefaultBigQueryRpc;
 
 import java.util.Set;
 
@@ -36,8 +36,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
 
     @Override
     public BigQuery create(BigQueryOptions options) {
-      // TODO(mziccard) return new BigqueryImpl(options);
-      return null;
+      return new BigQueryImpl(options);
     }
   }
 
@@ -47,8 +46,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
 
     @Override
     public BigQueryRpc create(BigQueryOptions options) {
-      // TODO(mziccard) return new DefaultBigqueryRpc(options);
-      return null;
+      return new DefaultBigQueryRpc(options);
     }
   }
 
@@ -104,6 +102,10 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
     }
     BigQueryOptions other = (BigQueryOptions) obj;
     return baseEquals(other);
+  }
+
+  public static BigQueryOptions defaultInstance() {
+    return builder().build();
   }
 
   public static Builder builder() {

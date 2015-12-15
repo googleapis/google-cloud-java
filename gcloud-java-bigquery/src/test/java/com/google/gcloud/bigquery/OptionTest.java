@@ -16,10 +16,23 @@
 
 package com.google.gcloud.bigquery;
 
-import com.google.gcloud.ServiceFactory;
+import static org.junit.Assert.assertEquals;
 
-/**
- * An interface for BigQuery factories.
- */
-public interface BigQueryFactory extends ServiceFactory<BigQuery, BigQueryOptions> {
+import com.google.gcloud.spi.BigQueryRpc;
+
+import org.junit.Test;
+
+public class OptionTest {
+
+  @Test
+  public void testOption() {
+    Option option = new Option(BigQueryRpc.Option.PAGE_TOKEN, "token");
+    assertEquals(BigQueryRpc.Option.PAGE_TOKEN, option.rpcOption());
+    assertEquals("token", option.value());
+  }
+
+  @Test(expected=NullPointerException.class)
+  public void testIndexOutOfBoundsException() {
+    new Option(null, "token");
+  }
 }
