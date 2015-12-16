@@ -32,7 +32,7 @@ public class OptionTest {
   }
 
   @Test(expected=NullPointerException.class)
-  public void testIndexOutOfBoundsException() {
+  public void testNullRpcOption() {
     new Option(null, "token");
   }
 }

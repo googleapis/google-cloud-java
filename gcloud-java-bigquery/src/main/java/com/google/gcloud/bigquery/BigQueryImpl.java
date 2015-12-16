@@ -25,7 +25,6 @@ import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
-import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.common.base.Function;
@@ -300,7 +299,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public boolean delete(final String datasetId, final String tableId) throws BigQueryException {
+  public boolean delete(String datasetId, String tableId) throws BigQueryException {
     return delete(TableId.of(datasetId, tableId));
   }
 
@@ -420,16 +419,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
     });
     requestPb.setRows(rowsPb);
-    try {
-      return InsertAllResponse.fromPb(runWithRetries(new Callable<TableDataInsertAllResponse>() {
-        @Override
-        public TableDataInsertAllResponse call() {
-          return bigQueryRpc.insertAll(tableId.dataset(), tableId.table(), requestPb);
-        }
-      }, options().retryParams(), EXCEPTION_HANDLER));
-    } catch (RetryHelper.RetryHelperException e) {
-      throw BigQueryException.translateAndThrow(e);
-    }
+    return InsertAllResponse.fromPb(
+        bigQueryRpc.insertAll(tableId.dataset(), tableId.table(), requestPb));
   }
 
   @Override
@@ -475,7 +466,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public JobInfo getJob(final String jobId, JobOption... options) throws BigQueryException {
+  public JobInfo getJob(String jobId, JobOption... options) throws BigQueryException {
     return getJob(JobId.of(jobId), options);
   }
 
@@ -575,7 +566,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public QueryResponse getQueryResults(JobId job, QueryResultsOption... options)
       throws BigQueryException {
-    final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
+    Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     return getQueryResults(job, options(), optionsMap);
   }
 

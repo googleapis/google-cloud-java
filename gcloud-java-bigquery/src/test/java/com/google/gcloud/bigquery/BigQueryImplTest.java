@@ -55,7 +55,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
@@ -170,9 +169,12 @@ public class BigQueryImplTest {
       BigQuery.DatasetListOption.all();
   private static final BigQuery.DatasetListOption DATASET_LIST_PAGE_TOKEN =
       BigQuery.DatasetListOption.startPageToken("cursor");
+  private static final BigQuery.DatasetListOption DATASET_LIST_MAX_RESULTS =
+      BigQuery.DatasetListOption.maxResults(42L);
   private static final Map<BigQueryRpc.Option, ?> DATASET_LIST_OPTIONS = ImmutableMap.of(
       BigQueryRpc.Option.ALL_DATASETS, true,
-      BigQueryRpc.Option.PAGE_TOKEN, "cursor");
+      BigQueryRpc.Option.PAGE_TOKEN, "cursor",
+      BigQueryRpc.Option.MAX_RESULTS, 42L);
 
   // Dataset delete options
   private static final BigQuery.DatasetDeleteOption DATASET_DELETE_CONTENTS =
@@ -198,9 +200,12 @@ public class BigQueryImplTest {
       BigQuery.TableDataListOption.maxResults(42L);
   private static final BigQuery.TableDataListOption TABLE_DATA_LIST_PAGE_TOKEN =
       BigQuery.TableDataListOption.startPageToken("cursor");
+  private static final BigQuery.TableDataListOption TABLE_DATA_LIST_START_INDEX =
+      BigQuery.TableDataListOption.startIndex(0L);
   private static final Map<BigQueryRpc.Option, ?> TABLE_DATA_LIST_OPTIONS = ImmutableMap.of(
       BigQueryRpc.Option.MAX_RESULTS, 42L,
-      BigQueryRpc.Option.PAGE_TOKEN, "cursor");
+      BigQueryRpc.Option.PAGE_TOKEN, "cursor",
+      BigQueryRpc.Option.START_INDEX, 0L);
 
   // Job options
   private static final BigQuery.JobOption JOB_OPTION_FIELDS =
@@ -213,18 +218,30 @@ public class BigQueryImplTest {
       BigQuery.JobListOption.allUsers();
   private static final BigQuery.JobListOption JOB_LIST_STATE_FILTER =
       BigQuery.JobListOption.stateFilter(JobStatus.State.DONE, JobStatus.State.PENDING);
+  private static final BigQuery.JobListOption JOB_LIST_PAGE_TOKEN =
+      BigQuery.JobListOption.startPageToken("cursor");
+  private static final BigQuery.JobListOption JOB_LIST_MAX_RESULTS =
+      BigQuery.JobListOption.maxResults(42L);
   private static final Map<BigQueryRpc.Option, ?> JOB_LIST_OPTIONS = ImmutableMap.of(
       BigQueryRpc.Option.ALL_USERS, true,
-      BigQueryRpc.Option.STATE_FILTER, ImmutableList.of("done", "pending"));
+      BigQueryRpc.Option.STATE_FILTER, ImmutableList.of("done", "pending"),
+      BigQueryRpc.Option.PAGE_TOKEN, "cursor",
+      BigQueryRpc.Option.MAX_RESULTS, 42L);
 
   // Query Results options
   private static final BigQuery.QueryResultsOption QUERY_RESULTS_OPTION_TIME =
       BigQuery.QueryResultsOption.maxWaitTime(42L);
   private static final BigQuery.QueryResultsOption QUERY_RESULTS_OPTION_INDEX =
       BigQuery.QueryResultsOption.startIndex(1024L);
+  private static final BigQuery.QueryResultsOption QUERY_RESULTS_OPTION_PAGE_TOKEN =
+      BigQuery.QueryResultsOption.startPageToken("cursor");
+  private static final BigQuery.QueryResultsOption QUERY_RESULTS_OPTION_MAX_RESULTS =
+      BigQuery.QueryResultsOption.maxResults(0L);
   private static final Map<BigQueryRpc.Option, ?> QUERY_RESULTS_OPTIONS = ImmutableMap.of(
       BigQueryRpc.Option.TIMEOUT, 42L,
-      BigQueryRpc.Option.START_INDEX, 1024L);
+      BigQueryRpc.Option.START_INDEX, 1024L,
+      BigQueryRpc.Option.PAGE_TOKEN, "cursor",
+      BigQueryRpc.Option.MAX_RESULTS, 0L);
 
   private BigQueryOptions options;
   private BigQueryRpcFactory rpcFactoryMock;
@@ -235,7 +252,7 @@ public class BigQueryImplTest {
   public ExpectedException thrown = ExpectedException.none();
 
   @Before
-  public void setUp() throws IOException, InterruptedException {
+  public void setUp() {
     rpcFactoryMock = EasyMock.createMock(BigQueryRpcFactory.class);
     bigqueryRpcMock = EasyMock.createMock(BigQueryRpc.class);
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(BigQueryOptions.class)))
@@ -249,7 +266,7 @@ public class BigQueryImplTest {
   }
 
   @After
-  public void tearDown() throws Exception {
+  public void tearDown() {
     EasyMock.verify(rpcFactoryMock, bigqueryRpcMock);
   }
 
@@ -361,7 +378,8 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.listDatasets(DATASET_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    Page<DatasetInfo> page = bigquery.listDatasets(DATASET_LIST_ALL, DATASET_LIST_PAGE_TOKEN);
+    Page<DatasetInfo> page = bigquery.listDatasets(DATASET_LIST_ALL, DATASET_LIST_PAGE_TOKEN,
+        DATASET_LIST_MAX_RESULTS);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(datasetList.toArray(), Iterables.toArray(page.values(), DatasetInfo.class));
   }
@@ -592,7 +610,11 @@ public class BigQueryImplTest {
         new RowToInsert("row1", row1),
         new RowToInsert("row2", row2)
     );
-    InsertAllRequest request = InsertAllRequest.builder(TABLE_ID).rows(rows).build();
+    InsertAllRequest request = InsertAllRequest.builder(TABLE_ID)
+        .rows(rows)
+        .skipInvalidRows(false)
+        .ignoreUnknownValues(true)
+        .build();
     TableDataInsertAllRequest requestPb = new TableDataInsertAllRequest().setRows(
         Lists.transform(rows, new Function<RowToInsert, TableDataInsertAllRequest.Rows>() {
           @Override
@@ -601,7 +623,7 @@ public class BigQueryImplTest {
                 .setJson(rowToInsert.content());
           }
         })
-    );
+    ).setSkipInvalidRows(false).setIgnoreUnknownValues(true);
     TableDataInsertAllResponse responsePb = new TableDataInsertAllResponse().setInsertErrors(
         ImmutableList.of(new TableDataInsertAllResponse.InsertErrors().setIndex(0L).setErrors(
             ImmutableList.of(new ErrorProto().setMessage("ErrorMessage")))));
@@ -696,7 +718,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     Page<List<FieldValue>> page = bigquery.listTableData(DATASET, TABLE,
-        TABLE_DATA_LIST_MAX_RESULTS, TABLE_DATA_LIST_PAGE_TOKEN);
+        TABLE_DATA_LIST_MAX_RESULTS, TABLE_DATA_LIST_PAGE_TOKEN, TABLE_DATA_LIST_START_INDEX);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(tableData.toArray(), Iterables.toArray(page.values(), List.class));
   }
@@ -813,7 +835,8 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.listJobs(JOB_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    Page<JobInfo> page = bigquery.listJobs(JOB_LIST_ALL_USERS, JOB_LIST_STATE_FILTER);
+    Page<JobInfo> page = bigquery.listJobs(JOB_LIST_ALL_USERS, JOB_LIST_STATE_FILTER,
+        JOB_LIST_PAGE_TOKEN, JOB_LIST_MAX_RESULTS);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(jobList.toArray(), Iterables.toArray(page.values(), JobInfo.class));
   }
@@ -874,6 +897,8 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     QueryResponse response = bigquery.query(QUERY_REQUEST);
+    assertNull(response.etag());
+    assertNull(response.result());
     assertEquals(queryJob, response.jobId());
     assertEquals(false, response.jobComplete());
     assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
@@ -882,10 +907,43 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testQueryRequestCompleted() {
+    JobId queryJob = JobId.of(PROJECT, JOB);
+    com.google.api.services.bigquery.model.QueryResponse responsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setJobReference(queryJob.toPb())
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setJobComplete(true)
+            .setCacheHit(false)
+            .setPageToken("cursor")
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(1L));
+    EasyMock.expect(bigqueryRpcMock.query(QUERY_REQUEST_WITH_PROJECT.toPb())).andReturn(responsePb);
+    EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.service();
+    QueryResponse response = bigquery.query(QUERY_REQUEST);
+    assertNull(response.etag());
+    assertEquals(queryJob, response.jobId());
+    assertEquals(true, response.jobComplete());
+    assertEquals(false, response.result().cacheHit());
+    assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
+    assertFalse(response.hasErrors());
+    assertEquals(null, response.result().schema());
+    assertEquals(42L, response.result().totalBytesProcessed());
+    assertEquals(1L, response.result().totalRows());
+    for (List<FieldValue> row : response.result().values()) {
+      assertEquals(false, row.get(0).booleanValue());
+      assertEquals(1L, row.get(1).longValue());
+    }
+    assertEquals("cursor", response.result().nextPageCursor());
+  }
+
+  @Test
   public void testGetQueryResults() {
     JobId queryJob = JobId.of(PROJECT, JOB);
     com.google.api.services.bigquery.model.GetQueryResultsResponse responsePb =
         new com.google.api.services.bigquery.model.GetQueryResultsResponse()
+            .setEtag("etag")
             .setJobReference(queryJob.toPb())
             .setRows(ImmutableList.of(TABLE_ROW))
             .setJobComplete(true)
@@ -897,6 +955,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     QueryResponse response = bigquery.getQueryResults(queryJob);
+    assertEquals("etag", response.etag());
     assertEquals(queryJob, response.jobId());
     assertEquals(true, response.jobComplete());
     assertEquals(false, response.result().cacheHit());
@@ -929,7 +988,8 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     QueryResponse response = bigquery.getQueryResults(queryJob, QUERY_RESULTS_OPTION_TIME,
-        QUERY_RESULTS_OPTION_INDEX);
+        QUERY_RESULTS_OPTION_INDEX, QUERY_RESULTS_OPTION_MAX_RESULTS,
+        QUERY_RESULTS_OPTION_PAGE_TOKEN);
     assertEquals(queryJob, response.jobId());
     assertEquals(true, response.jobComplete());
     assertEquals(false, response.result().cacheHit());

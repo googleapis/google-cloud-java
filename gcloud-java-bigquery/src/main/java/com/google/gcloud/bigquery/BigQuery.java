@@ -16,7 +16,10 @@
 
 package com.google.gcloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 import com.google.common.base.Function;
+import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
@@ -24,8 +27,8 @@ import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.BigQueryRpc;
 
-import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * An interface for Google Cloud BigQuery.
@@ -34,11 +37,17 @@ import java.util.List;
  */
 public interface BigQuery extends Service<BigQueryOptions> {
 
+  /**
+   * Fields of a BigQuery Dataset resource.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#resource">Dataset
+   *     Resource</a>
+   */
   enum DatasetField {
     ACCESS("access"),
     CREATION_TIME("creationTime"),
     DATASET_REFERENCE("datasetReference"),
-    DEFAULT_TABLE_EXPIRATION_MS("defaultTableLifetime"),
+    DEFAULT_TABLE_EXPIRATION_MS("defaultTableExpirationMsS"),
     DESCRIPTION("description"),
     ETAG("etag"),
     FRIENDLY_NAME("friendlyName"),
@@ -58,15 +67,21 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     static String selector(DatasetField... fields) {
-      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
       fieldStrings.add(DATASET_REFERENCE.selector());
       for (DatasetField field : fields) {
         fieldStrings.add(field.selector());
       }
-      return com.google.common.base.Joiner.on(',').join(fieldStrings);
+      return Joiner.on(',').join(fieldStrings);
     }
   }
 
+  /**
+   * Fields of a BigQuery Table resource.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#resource">Table
+   *     Resource</a>
+   */
   enum TableField {
     CREATION_TIME("creationTime"),
     DESCRIPTION("description"),
@@ -97,16 +112,22 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     static String selector(TableField... fields) {
-      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
       fieldStrings.add(TABLE_REFERENCE.selector());
       fieldStrings.add(TYPE.selector());
       for (TableField field : fields) {
         fieldStrings.add(field.selector());
       }
-      return com.google.common.base.Joiner.on(',').join(fieldStrings);
+      return Joiner.on(',').join(fieldStrings);
     }
   }
 
+  /**
+   * Fields of a BigQuery Job resource.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#resource">Job Resource
+   *     </a>
+   */
   enum JobField {
     CONFIGURATION("configuration"),
     ETAG("etag"),
@@ -128,13 +149,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     static String selector(JobField... fields) {
-      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
       fieldStrings.add(JOB_REFERENCE.selector());
       fieldStrings.add(CONFIGURATION.selector());
       for (JobField field : fields) {
         fieldStrings.add(field.selector());
       }
-      return com.google.common.base.Joiner.on(',').join(fieldStrings);
+      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -184,7 +205,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
     /**
      * Returns an option to specify the dataset's fields to be returned by the RPC call. If this
-     * option is not provided all dataset's fields are returned. {@code DatasetOption.fields}) can
+     * option is not provided all dataset's fields are returned. {@code DatasetOption.fields} can
      * be used to specify only the fields of interest. {@link DatasetInfo#datasetId()} is always
      * returned, even if not specified.
      */
@@ -228,6 +249,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * Returns an option to specify the maximum number of tables to be returned.
      */
     public static TableListOption maxResults(long maxResults) {
+      checkArgument(maxResults >= 0);
       return new TableListOption(BigQueryRpc.Option.MAX_RESULTS, maxResults);
     }
 
@@ -252,7 +274,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
     /**
      * Returns an option to specify the table's fields to be returned by the RPC call. If this
-     * option is not provided all table's fields are returned. {@code TableOption.fields}) can be
+     * option is not provided all table's fields are returned. {@code TableOption.fields} can be
      * used to specify only the fields of interest. {@link BaseTableInfo#tableId()} and
      * {@link BaseTableInfo#type()} are always returned, even if not specified.
      */
@@ -276,6 +298,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * Returns an option to specify the maximum number of rows to be returned.
      */
     public static TableDataListOption maxResults(long maxResults) {
+      checkArgument(maxResults >= 0);
       return new TableDataListOption(BigQueryRpc.Option.MAX_RESULTS, maxResults);
     }
 
@@ -291,6 +314,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * data.
      */
     public static TableDataListOption startIndex(long index) {
+      checkArgument(index >= 0);
       return new TableDataListOption(BigQueryRpc.Option.START_INDEX, index);
     }
   }
@@ -314,14 +338,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     /**
-     * Returns an option to list only jobs that match the provided filters.
+     * Returns an option to list only jobs that match the provided state filters.
      */
     public static JobListOption stateFilter(JobStatus.State... stateFilters) {
       List<String> stringFilters = Lists.transform(ImmutableList.copyOf(stateFilters),
           new Function<JobStatus.State, String>() {
             @Override
             public String apply(JobStatus.State state) {
-              return state.toString().toLowerCase();
+              return state.name().toLowerCase();
             }
           });
       return new JobListOption(BigQueryRpc.Option.STATE_FILTER, stringFilters);
@@ -331,6 +355,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * Returns an option to specify the maximum number of jobs to be returned.
      */
     public static JobListOption maxResults(long maxResults) {
+      checkArgument(maxResults >= 0);
       return new JobListOption(BigQueryRpc.Option.MAX_RESULTS, maxResults);
     }
 
@@ -343,7 +368,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
     /**
      * Returns an option to specify the job's fields to be returned by the RPC call. If this option
-     * is not provided all job's fields are returned. {@code JobOption.fields()}) can be used to
+     * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to
      * specify only the fields of interest. {@link JobInfo#jobId()}, {@link JobStatus#state()},
      * {@link JobStatus#error()} as well as type-specific configuration (e.g.
      * {@link QueryJobInfo#query()} for Query Jobs) are always returned, even if not specified.
@@ -370,7 +395,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
     /**
      * Returns an option to specify the job's fields to be returned by the RPC call. If this option
-     * is not provided all job's fields are returned. {@code JobOption.fields}) can be used to
+     * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to
      * specify only the fields of interest. {@link JobInfo#jobId()} as well as type-specific
      * configuration (e.g. {@link QueryJobInfo#query()} for Query Jobs) are always returned, even if
      * not specified.
@@ -395,21 +420,23 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * Returns an option to specify the maximum number of rows to be returned.
      */
     public static QueryResultsOption maxResults(long maxResults) {
+      checkArgument(maxResults >= 0);
       return new QueryResultsOption(BigQueryRpc.Option.MAX_RESULTS, maxResults);
     }
 
     /**
-     * Returns an option to specify the page token from which to start listing query results.
+     * Returns an option to specify the page token from which to start getting query results.
      */
     public static QueryResultsOption startPageToken(String pageToken) {
       return new QueryResultsOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
 
     /**
-     * Returns an option that sets the zero-based index of the row from which to start listing query
+     * Returns an option that sets the zero-based index of the row from which to start getting query
      * results.
      */
-    public static QueryResultsOption startIndex(Long startIndex) {
+    public static QueryResultsOption startIndex(long startIndex) {
+      checkArgument(startIndex >= 0);
       return new QueryResultsOption(BigQueryRpc.Option.START_INDEX, startIndex);
     }
 
@@ -418,7 +445,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * before returning. Default is 10 seconds. If the timeout passes before the job completes,
      * {@link QueryResponse#jobComplete()} will be {@code false}.
      */
-    public static QueryResultsOption maxWaitTime(Long maxWaitTime) {
+    public static QueryResultsOption maxWaitTime(long maxWaitTime) {
+      checkArgument(maxWaitTime >= 0);
       return new QueryResultsOption(BigQueryRpc.Option.TIMEOUT, maxWaitTime);
     }
   }
@@ -460,7 +488,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Lists the project's datasets. This method returns partial information on each dataset
-   * ({@link DatasetInfo#datasetId()} ()}, {@link DatasetInfo#friendlyName()} and
+   * ({@link DatasetInfo#datasetId()}, {@link DatasetInfo#friendlyName()} and
    * {@link DatasetInfo#id()}). To get complete information use either
    * {@link #getDataset(String, DatasetOption...)} or
    * {@link #getDataset(DatasetId, DatasetOption...)}.
@@ -592,15 +620,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
   JobInfo getJob(JobId jobId, JobOption... options) throws BigQueryException;
 
   /**
-   * Lists the dataset's tables.
+   * Lists the jobs.
    *
    * @throws BigQueryException upon failure
    */
   Page<JobInfo> listJobs(JobListOption... options) throws BigQueryException;
 
   /**
-   * Sends a job cancel request. This call will return immediately, and the client will need to poll
-   * for the job status to see if the cancel completed successfully.
+   * Sends a job cancel request. This call will return immediately. The job status can then be
+   * checked using either {@link #getJob(JobId, JobOption...)} or
+   * {@link #getJob(String, JobOption...)}).
    *
    * @return {@code true} if cancel was requested successfully, {@code false} if the job was not
    *     found
@@ -609,9 +638,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
   boolean cancel(String jobId) throws BigQueryException;
 
   /**
-   * Sends a job cancel request. This call will return immediately. The client will need to poll
-   * for the job status using either {@link #getJob(JobId, JobOption...)} or
-   * {@link #getJob(String, JobOption...)}) to see if the cancel operation completed successfully.
+   * Sends a job cancel request. This call will return immediately. The job status can then be
+   * checked using either {@link #getJob(JobId, JobOption...)} or
+   * {@link #getJob(String, JobOption...)}).
    *
    * @return {@code true} if cancel was requested successfully, {@code false} if the job was not
    *     found
@@ -620,14 +649,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
   boolean cancel(JobId tableId) throws BigQueryException;
 
   /**
-   * Runs the query associated to the request.
+   * Runs the query associated with the request.
    *
    * @throws BigQueryException upon failure
    */
   QueryResponse query(QueryRequest request) throws BigQueryException;
 
   /**
-   * Returns results of the query associated to the provided job.
+   * Returns results of the query associated with the provided job.
    *
    * @throws BigQueryException upon failure
    */

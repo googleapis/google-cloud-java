@@ -233,7 +233,11 @@ public class SerializationTest {
         TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION,
         JOB_STATISTICS, EXTRACT_STATISTICS, LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR,
         JOB_STATUS, JOB_ID, COPY_JOB, EXTRACT_JOB, LOAD_JOB, QUERY_JOB, INSERT_ALL_REQUEST,
-        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE};
+        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE,
+        BigQuery.DatasetOption.fields(), BigQuery.DatasetDeleteOption.deleteContents(),
+        BigQuery.DatasetListOption.all(), BigQuery.TableOption.fields(),
+        BigQuery.TableListOption.maxResults(42L), BigQuery.JobOption.fields(),
+        BigQuery.JobListOption.allUsers()};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
