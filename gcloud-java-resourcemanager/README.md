@@ -50,7 +50,7 @@ with the Cloud Resource Manager using this client Library.
 Getting Started
 ---------------
 #### Prerequisites
-You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login`.
+You will need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following command in command line: `gcloud auth login`.
 
 > Note: You don't need a project ID to use this service. If you have a project ID set in the Google Cloud SDK, you can unset it by typing `gcloud config unset project` in command line.
 
@@ -68,7 +68,7 @@ ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().servi
 ```
 
 #### Creating a project
-All you need to create a project is a globally unique project ID.  You can also optionally attach a non-unique name and labels to your project. Read more about naming guidelines for project IDs, names, and labels [here](https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects). To create a project, add the following imports at the top of your file:
+All you need to create a project is a globally unique project ID.  You can also optionally attach a non-unique name and labels to your project. Read more about naming guidelines for project IDs, names, and labels [here](https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects). To create a project, add the following import at the top of your file:
 
 ```java
 import com.google.gcloud.resourcemanager.ProjectInfo;
@@ -84,7 +84,7 @@ ProjectInfo myProject = resourceManager.create(ProjectInfo.builder(myProjectId).
 Note that the return value from `create` is a `ProjectInfo` that includes additional read-only information, like creation time, project number, and lifecycle state. Read more about these fields on the [Projects page](https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects).
 
 #### Getting a specific project
-You can load a project if you know it's project ID and have read permissions to the project. For example, say we wanted to get the project we just created. We can do the following:
+You can load a project if you know it's project ID and have read permissions to the project. For example, to get the project we just created we can do the following:
 
 ```java
 ProjectInfo projectFromServer = resourceManager.get(myProjectId);
@@ -93,23 +93,17 @@ ProjectInfo projectFromServer = resourceManager.get(myProjectId);
 #### Editing a project
 To edit a project, create a new `ProjectInfo` object and pass it in to the `ResourceManager.replace` method.
 
-Suppose that you want to add a label for the newly created project to denote that it's launch status is "in development". Import the following:
-
-```java
-import com.google.common.collect.ImmutableMap;
-```
-
-Then add the following code to your program:
+For example, to add a label for the newly created project to denote that it's launch status is "in development", add the following code:
 
 ```java
 ProjectInfo newProjectInfo = resourceManager.replace(projectFromServer.toBuilder()
-    .labels(ImmutableMap.of("launch-status", "in-development")).build());
+    .addLabel("launch-status", "in-development").build());
 ```
 
 Note that the values of the project you pass in to `replace` overwrite the server's values for non-read-only fields, namely `projectName` and `labels`. For example, if you create a project with `projectName` "some-project-name" and subsequently call replace using a `ProjectInfo` object that didn't set the `projectName`, then the server will unset the project's name. The server ignores any attempted changes to the read-only fields `projectNumber`, `lifecycleState`, and `createTime`. The `projectId` cannot change.
 
 #### Listing all projects
-Suppose that we want list of all projects for which we have read permissions. Add the following import:
+Suppose that we want a list of all projects for which we have read permissions. Add the following import:
 
 ```java
 import java.util.Iterator;
@@ -130,7 +124,6 @@ while (projectIterator.hasNext()) {
 Here we put together all the code shown above into one program.  This program assumes that you are running from your own desktop.
 
 ```java
-import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.resourcemanager.ProjectInfo;
 import com.google.gcloud.resourcemanager.ResourceManager;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
@@ -150,14 +143,13 @@ public class GcloudJavaResourceManagerExample {
 
     // Get a project from the server.
     ProjectInfo projectFromServer = resourceManager.get(myProjectId);
-    System.out.println("Got project " + projectFromServer.projectId() + " from the server."
-        + System.lineSeparator());
+    System.out.println("Got project " + projectFromServer.projectId() + " from the server.");
 
     // Update a project
-    ProjectInfo newProjectInfo = resourceManager.replace(projectFromServer.toBuilder()
-        .labels(ImmutableMap.of("launch-status", "in-development")).build());
+    ProjectInfo newProjectInfo = resourceManager.replace(myProject.toBuilder()
+        .addLabel("launch-status", "in-development").build());
     System.out.println("Updated the labels of project " + newProjectInfo.projectId()
-        + " to be " + newProjectInfo.labels() +  System.lineSeparator());
+        + " to be " + newProjectInfo.labels());
 
     // List all the projects you have permission to view.
     Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();

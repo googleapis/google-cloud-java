@@ -256,13 +256,7 @@ public class LocalResourceManagerHelperTest {
         rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS);
     compareReadWriteFields(COMPLETE_PROJECT, returnedProject);
     RESOURCE_MANAGER_HELPER.removeProject(COMPLETE_PROJECT.getProjectId());
-    try {
-      rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS);
-      fail("Should fail because the project doesn't exist.");
-    } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
-      assertTrue(e.getMessage().contains("not found"));
-    }
+    assertNull(rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS));
   }
 
   @Test
@@ -534,13 +528,7 @@ public class LocalResourceManagerHelperTest {
     assertFalse(RESOURCE_MANAGER_HELPER.removeProject(COMPLETE_PROJECT.getProjectId()));
     rpc.create(COMPLETE_PROJECT);
     assertTrue(RESOURCE_MANAGER_HELPER.removeProject(COMPLETE_PROJECT.getProjectId()));
-    try {
-      rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS);
-      fail("Project shouldn't exist.");
-    } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
-      assertTrue(e.getMessage().contains("not found."));
-    }
+    assertNull(rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS));
   }
 
   private void compareReadWriteFields(

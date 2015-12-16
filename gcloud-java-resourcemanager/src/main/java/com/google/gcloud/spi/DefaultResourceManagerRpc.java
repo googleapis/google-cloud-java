@@ -80,7 +80,12 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      throw translate(ex);
+      ResourceManagerException translated = translate(ex);
+      if (translated.code() == 403) {
+        return null; // Project not found
+      } else {
+        throw translated;
+      }
     }
   }
 

@@ -103,7 +103,6 @@ public class ResourceManagerImplTest {
     ProjectInfo returnedProject = RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     compareReadWriteFields(PARTIAL_PROJECT, returnedProject);
     assertEquals(ProjectInfo.State.ACTIVE, returnedProject.state());
-    assertTrue(returnedProject.labels().isEmpty());
     assertNull(returnedProject.name());
     assertNull(returnedProject.parent());
     assertNotNull(returnedProject.projectNumber());
@@ -127,8 +126,7 @@ public class ResourceManagerImplTest {
   public void testDelete() {
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     RESOURCE_MANAGER.delete(COMPLETE_PROJECT.projectId());
-    assertEquals(
-        ProjectInfo.State.DELETE_REQUESTED,
+    assertEquals(ProjectInfo.State.DELETE_REQUESTED,
         RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId()).state());
     try {
       RESOURCE_MANAGER.delete("some-nonexistant-project-id");
@@ -145,13 +143,7 @@ public class ResourceManagerImplTest {
     ProjectInfo returnedProject = RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId());
     compareReadWriteFields(COMPLETE_PROJECT, returnedProject);
     RESOURCE_MANAGER_HELPER.removeProject(COMPLETE_PROJECT.projectId());
-    try {
-      RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId());
-      fail("Should fail because the project doesn't exist.");
-    } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
-      assertTrue(e.getMessage().contains("not found"));
-    }
+    assertNull(RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId()));
   }
 
   @Test
@@ -171,7 +163,7 @@ public class ResourceManagerImplTest {
   @Test
   public void testList() {
     Page<ProjectInfo> projects = RESOURCE_MANAGER.list();
-    assertFalse(projects.values().iterator().hasNext()); // change this when #421 is resolved
+    assertFalse(projects.values().iterator().hasNext()); // TODO: change this when #421 is resolved
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     for (ProjectInfo p : RESOURCE_MANAGER.list().values()) {
@@ -231,7 +223,6 @@ public class ResourceManagerImplTest {
     String newName = "new name";
     Map<String, String> newLabels = ImmutableMap.of("new k1", "new v1");
     ProjectInfo anotherCompleteProject = ProjectInfo.builder(COMPLETE_PROJECT.projectId())
-        .name(newName)
         .labels(newLabels)
         .projectNumber(987654321L)
         .createTimeMillis(230682061315L)
@@ -296,10 +287,24 @@ public class ResourceManagerImplTest {
 
   @Test
   public void testNonRetryableException() {
-    String projectId = "some-project-id";
+    ResourceManagerRpcFactory rpcFactoryMock = EasyMock.createMock(ResourceManagerRpcFactory.class);
+    ResourceManagerRpc resourceManagerRpcMock = EasyMock.createMock(ResourceManagerRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(ResourceManagerOptions.class)))
+        .andReturn(resourceManagerRpcMock);
+    EasyMock.replay(rpcFactoryMock);
+    ResourceManager resourceManagerMock = ResourceManagerOptions.builder()
+        .serviceRpcFactory(rpcFactoryMock)
+        .retryParams(RetryParams.defaultInstance())
+        .build()
+        .service();
+    EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.projectId(), EMPTY_RPC_OPTIONS))
+        .andThrow(new ResourceManagerException(
+            403, "Project " + PARTIAL_PROJECT.projectId() + " not found.", false))
+        .once();
+    EasyMock.replay(resourceManagerRpcMock);
     thrown.expect(ResourceManagerException.class);
-    thrown.expectMessage("Project " + projectId + " not found.");
-    RESOURCE_MANAGER.get(projectId);
+    thrown.expectMessage("Project " + PARTIAL_PROJECT.projectId() + " not found.");
+    resourceManagerMock.get(PARTIAL_PROJECT.projectId());
   }
 
   @Test

@@ -194,7 +194,6 @@ Google Cloud Resource Manager
 Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
 
 ```java
-import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.resourcemanager.ProjectInfo;
 import com.google.gcloud.resourcemanager.ResourceManager;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
@@ -203,10 +202,10 @@ import java.util.Iterator;
 
 ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
 ProjectInfo myProject = resourceManager.get("some-project-id-that-I-own");
-ProjectInfo newProjectInfo = resourceManager.replace(projectFromServer.toBuilder()
-    .labels(ImmutableMap.of("launch-status", "in-development")).build());
+ProjectInfo newProjectInfo = resourceManager.replace(myProject.toBuilder()
+    .addLabel("launch-status", "in-development").build());
 System.out.println("Updated the labels of project " + newProjectInfo.projectId()
-    + " to be " + newProjectInfo.labels() +  System.lineSeparator());
+    + " to be " + newProjectInfo.labels());
 // List all the projects you have permission to view.
 Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();
 System.out.println("Projects I can view:");

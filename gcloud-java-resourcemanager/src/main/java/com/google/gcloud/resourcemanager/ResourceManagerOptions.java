@@ -29,9 +29,7 @@ public class ResourceManagerOptions
 
   private static final long serialVersionUID = 538303101192527452L;
   private static final String GCRM_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
-  private static final String READ_ONLY_GCRM_SCOPE =
-      "https://www.googleapis.com/auth/cloud-platform.read-only";
-  private static final Set<String> SCOPES = ImmutableSet.of(GCRM_SCOPE, READ_ONLY_GCRM_SCOPE);
+  private static final Set<String> SCOPES = ImmutableSet.of(GCRM_SCOPE);
   private static final String DEFAULT_HOST = "https://cloudresourcemanager.googleapis.com";
 
   public static class DefaultResourceManagerFactory implements ResourceManagerFactory {
