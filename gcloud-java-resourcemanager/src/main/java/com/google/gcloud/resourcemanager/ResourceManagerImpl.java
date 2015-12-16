@@ -42,6 +42,8 @@ public class ResourceManagerImpl
 
   private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
 
+    private static final long serialVersionUID = 2091576149969931704L;
+
     @Override
     public RetryResult afterEval(Exception exception, RetryResult retryResult) {
       return Interceptor.RetryResult.CONTINUE_EVALUATION;
@@ -69,14 +71,13 @@ public class ResourceManagerImpl
   }
 
   @Override
-  public ProjectInfo create(ProjectInfo project) {
-    final com.google.api.services.cloudresourcemanager.model.Project projectPb = project.toPb();
+  public ProjectInfo create(final ProjectInfo project) {
     try {
       return ProjectInfo.fromPb(runWithRetries(
           new Callable<com.google.api.services.cloudresourcemanager.model.Project>() {
             @Override
             public com.google.api.services.cloudresourcemanager.model.Project call() {
-              return resourceManagerRpc.create(projectPb);
+              return resourceManagerRpc.create(project.toPb());
             }
           }, options().retryParams(), EXCEPTION_HANDLER));
     } catch (RetryHelperException e) {
@@ -103,13 +104,14 @@ public class ResourceManagerImpl
   public ProjectInfo get(final String projectId, ProjectGetOption... options) {
     final Map<ResourceManagerRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      return ProjectInfo.fromPb(runWithRetries(
+      com.google.api.services.cloudresourcemanager.model.Project answer = runWithRetries(
           new Callable<com.google.api.services.cloudresourcemanager.model.Project>() {
             @Override
             public com.google.api.services.cloudresourcemanager.model.Project call() {
               return resourceManagerRpc.get(projectId, optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER));
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : ProjectInfo.fromPb(answer);
     } catch (RetryHelperException e) {
       throw ResourceManagerException.translateAndThrow(e);
     }
@@ -117,6 +119,9 @@ public class ResourceManagerImpl
 
   private abstract static class BasePageFetcher<T extends Serializable>
       implements PageImpl.NextPageFetcher<T> {
+
+    private static final long serialVersionUID = -5560906434575940205L;
+
     protected final Map<ResourceManagerRpc.Option, ?> requestOptions;
     protected final ResourceManagerOptions serviceOptions;
 
@@ -137,6 +142,9 @@ public class ResourceManagerImpl
   }
 
   private static class ProjectPageFetcher extends BasePageFetcher<ProjectInfo> {
+
+    private static final long serialVersionUID = -533306655445189098L;
+
     ProjectPageFetcher(ResourceManagerOptions serviceOptions, String cursor,
         Map<ResourceManagerRpc.Option, ?> optionMap) {
       super(serviceOptions, cursor, optionMap);
@@ -153,18 +161,15 @@ public class ResourceManagerImpl
     return listProjects(options(), optionMap(options));
   }
 
-  private static Page<ProjectInfo> listProjects(
-      final ResourceManagerOptions serviceOptions,
+  private static Page<ProjectInfo> listProjects(final ResourceManagerOptions serviceOptions,
       final Map<ResourceManagerRpc.Option, ?> optionsMap) {
     try {
       Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model.Project>> result =
-          runWithRetries(
-              new Callable<Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model
-                                                 .Project>>>() {
+          runWithRetries(new Callable<Tuple<String,
+              Iterable<com.google.api.services.cloudresourcemanager.model.Project>>>() {
                 @Override
-                public Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model
-                                             .Project>>
-                    call() {
+                public Tuple<String,
+                    Iterable<com.google.api.services.cloudresourcemanager.model.Project>> call() {
                   return serviceOptions.rpc().list(optionsMap);
                 }
               },
@@ -190,14 +195,13 @@ public class ResourceManagerImpl
   }
 
   @Override
-  public ProjectInfo replace(ProjectInfo newProject) {
-    final com.google.api.services.cloudresourcemanager.model.Project projectPb = newProject.toPb();
+  public ProjectInfo replace(final ProjectInfo newProject) {
     try {
       return ProjectInfo.fromPb(runWithRetries(
           new Callable<com.google.api.services.cloudresourcemanager.model.Project>() {
             @Override
             public com.google.api.services.cloudresourcemanager.model.Project call() {
-              return resourceManagerRpc.replace(projectPb);
+              return resourceManagerRpc.replace(newProject.toPb());
             }
           }, options().retryParams(), EXCEPTION_HANDLER));
     } catch (RetryHelperException e) {

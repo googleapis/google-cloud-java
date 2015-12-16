@@ -82,7 +82,7 @@ You can test against a temporary local Resource Manager by following these steps
 
   This will spawn a server thread that listens to `localhost` at an ephemeral port for Resource Manager requests.
 
-2. In your program, create and use a Resource Manager service object whose host is set host to `localhost` at the appropriate port.  For example:
+2. In your program, create and use a Resource Manager service object whose host is set to `localhost` at the appropriate port.  For example:
 
   ```java
   ResourceManager resourceManager = ResourceManagerOptions.builder()
@@ -97,7 +97,7 @@ You can test against a temporary local Resource Manager by following these steps
   helper.stop();
   ```
 
-  This method will block a short amount of time until the server thread has been terminated.
+  This method will block until the server thread has been terminated.
 
 #### On a remote machine
 
