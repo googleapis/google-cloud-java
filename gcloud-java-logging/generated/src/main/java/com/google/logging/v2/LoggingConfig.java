@@ -54,15 +54,14 @@ public final class LoggingConfig {
     java.lang.String[] descriptorData = {
       "\n&google/logging/v2/logging_config.proto" +
       "\022\021google.logging.v2\032\034google/api/annotati" +
-      "ons.proto\032&google/logging/v1/logging_con" +
-      "fig.proto\032\033google/protobuf/empty.proto\032\037" +
+      "ons.proto\032\033google/protobuf/empty.proto\032\037" +
       "google/protobuf/timestamp.proto\"\306\001\n\007LogS" +
       "ink\022\014\n\004name\030\001 \001(\t\022\023\n\013destination\030\003 \001(\t\022\016" +
       "\n\006filter\030\005 \001(\t\022G\n\025output_version_format\030" +
       "\006 \001(\0162(.google.logging.v2.LogSink.Versio" +
       "nFormat\"?\n\rVersionFormat\022\036\n\032VERSION_FORM" +
-      "AT_UNSPECIFIED\020\000\022\006\n\002V2\020\001\022\006\n\002V1\020\002\"O\n\020List",
-      "SinksRequest\022\024\n\014project_name\030\001 \001(\t\022\022\n\npa" +
+      "AT_UNSPECIFIED\020\000\022\006\n\002V2\020\001\022\006\n\002V1\020\002\"O\n\020List" +
+      "SinksRequest\022\024\n\014project_name\030\001 \001(\t\022\022\n\npa",
       "ge_token\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\"W\n\021Lis" +
       "tSinksResponse\022)\n\005sinks\030\001 \003(\0132\032.google.l" +
       "ogging.v2.LogSink\022\027\n\017next_page_token\030\002 \001" +
@@ -71,8 +70,8 @@ public final class LoggingConfig {
       "(\t\022(\n\004sink\030\002 \001(\0132\032.google.logging.v2.Log" +
       "Sink\"P\n\021UpdateSinkRequest\022\021\n\tsink_name\030\001" +
       " \001(\t\022(\n\004sink\030\002 \001(\0132\032.google.logging.v2.L" +
-      "ogSink\"&\n\021DeleteSinkRequest\022\021\n\tsink_name",
-      "\030\001 \001(\t2\245\005\n\017ConfigServiceV2\022\210\001\n\tListSinks" +
+      "ogSink\"&\n\021DeleteSinkRequest\022\021\n\tsink_name" +
+      "\030\001 \001(\t2\245\005\n\017ConfigServiceV2\022\210\001\n\tListSinks",
       "\022#.google.logging.v2.ListSinksRequest\032$." +
       "google.logging.v2.ListSinksResponse\"0\202\323\344" +
       "\223\002*\022(/v2beta1/{project_name=projects/*}/" +
@@ -81,8 +80,8 @@ public final class LoggingConfig {
       "/\202\323\344\223\002)\022\'/v2beta1/{sink_name=projects/*/" +
       "sinks/*}\022\206\001\n\nCreateSink\022$.google.logging" +
       ".v2.CreateSinkRequest\032\032.google.logging.v" +
-      "2.LogSink\"6\202\323\344\223\0020\"(/v2beta1/{project_nam",
-      "e=projects/*}/sinks:\004sink\022\205\001\n\nUpdateSink" +
+      "2.LogSink\"6\202\323\344\223\0020\"(/v2beta1/{project_nam" +
+      "e=projects/*}/sinks:\004sink\022\205\001\n\nUpdateSink",
       "\022$.google.logging.v2.UpdateSinkRequest\032\032" +
       ".google.logging.v2.LogSink\"5\202\323\344\223\002/\032\'/v2b" +
       "eta1/{sink_name=projects/*/sinks/*}:\004sin" +
@@ -104,7 +103,6 @@ public final class LoggingConfig {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-          com.google.logging.v1.LoggingConfig.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
@@ -156,7 +154,6 @@ public final class LoggingConfig {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.logging.v1.LoggingConfig.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
