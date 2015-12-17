@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gcloud.bigquery.BaseTableInfo.StreamingBuffer;
+import com.google.gcloud.bigquery.TableInfo.StreamingBuffer;
 
 import org.junit.Test;
 
@@ -46,7 +46,6 @@ public class TableInfoTest {
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final String VIEW_QUERY = "VIEW QUERY";
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
-  private static final String SOURCE_FORMAT = "CSV";
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
@@ -96,10 +95,9 @@ public class TableInfoTest {
           .numBytes(NUM_BYTES)
           .numRows(NUM_ROWS)
           .selfLink(SELF_LINK)
-          .streamingBuffer(STREAMING_BUFFER)
           .build();
-  private static List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
-      UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
+  private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS =
+      ImmutableList.of(UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final ViewInfo VIEW_INFO =
       ViewInfo.builder(TABLE_ID, VIEW_QUERY, USER_DEFINED_FUNCTIONS)
           .creationTime(CREATION_TIME)
@@ -184,13 +182,12 @@ public class TableInfoTest {
     assertEquals(NUM_BYTES, EXTERNAL_TABLE_INFO.numBytes());
     assertEquals(NUM_ROWS, EXTERNAL_TABLE_INFO.numRows());
     assertEquals(SELF_LINK, EXTERNAL_TABLE_INFO.selfLink());
-    assertEquals(STREAMING_BUFFER, EXTERNAL_TABLE_INFO.streamingBuffer());
     assertEquals(BaseTableInfo.Type.EXTERNAL, EXTERNAL_TABLE_INFO.type());
   }
 
   @Test
   public void testToAndFromPb() {
-    assertTrue(BaseTableInfo.fromPb(TABLE_INFO.toPb()) instanceof BaseTableInfo);
+    assertTrue(BaseTableInfo.fromPb(TABLE_INFO.toPb()) instanceof TableInfo);
     compareTableInfo(TABLE_INFO, BaseTableInfo.<TableInfo>fromPb(TABLE_INFO.toPb()));
     assertTrue(BaseTableInfo.fromPb(VIEW_INFO.toPb()) instanceof ViewInfo);
     compareViewInfo(VIEW_INFO, BaseTableInfo.<ViewInfo>fromPb(VIEW_INFO.toPb()));
@@ -235,6 +232,5 @@ public class TableInfoTest {
     compareBaseTableInfo(expected, value);
     assertEquals(expected, value);
     assertEquals(expected.configuration(), value.configuration());
-    assertEquals(expected.streamingBuffer(), value.streamingBuffer());
   }
 }

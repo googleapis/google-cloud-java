@@ -20,10 +20,10 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.Data;
-import com.google.api.services.bigquery.model.Streamingbuffer;
 import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -63,12 +63,14 @@ public abstract class BaseTableInfo implements Serializable {
      * A normal BigQuery table.
      */
     TABLE,
+
     /**
      * A virtual table defined by a SQL query.
      *
      * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
      */
     VIEW,
+
     /**
      * A BigQuery table backed by external data.
      *
@@ -76,79 +78,6 @@ public abstract class BaseTableInfo implements Serializable {
      *     Sources</a>
      */
     EXTERNAL
-  }
-
-  /**
-   * Google BigQuery Table's Streaming Buffer information. This class contains information on a
-   * table's streaming buffer as the estimated size in number of rows/bytes.
-   */
-  public static class StreamingBuffer implements Serializable {
-
-    private static final long serialVersionUID = -6713971364725267597L;
-    private final long estimatedRows;
-    private final long estimatedBytes;
-    private final long oldestEntryTime;
-
-    StreamingBuffer(long estimatedRows, long estimatedBytes, long oldestEntryTime) {
-      this.estimatedRows = estimatedRows;
-      this.estimatedBytes = estimatedBytes;
-      this.oldestEntryTime = oldestEntryTime;
-    }
-
-    /**
-     * Returns a lower-bound estimate of the number of rows currently in the streaming buffer.
-     */
-    public long estimatedRows() {
-      return estimatedRows;
-    }
-
-    /**
-     * Returns a lower-bound estimate of the number of bytes currently in the streaming buffer.
-     */
-    public long estimatedBytes() {
-      return estimatedBytes;
-    }
-
-    /**
-     * Returns the timestamp of the oldest entry in the streaming buffer, in milliseconds since
-     * epoch.
-     */
-    public long oldestEntryTime() {
-      return oldestEntryTime;
-    }
-
-    @Override
-    public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("estimatedRows", estimatedRows)
-          .add("estimatedBytes", estimatedBytes)
-          .add("oldestEntryTime", oldestEntryTime)
-          .toString();
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(estimatedRows, estimatedBytes, oldestEntryTime);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      return obj instanceof StreamingBuffer
-          && Objects.equals(toPb(), ((StreamingBuffer) obj).toPb());
-    }
-
-    public Streamingbuffer toPb() {
-      return new Streamingbuffer()
-          .setEstimatedBytes(BigInteger.valueOf(estimatedBytes))
-          .setEstimatedRows(BigInteger.valueOf(estimatedRows))
-          .setOldestEntryTime(BigInteger.valueOf(oldestEntryTime));
-    }
-
-    static StreamingBuffer fromPb(Streamingbuffer streamingBufferPb) {
-      return new StreamingBuffer(streamingBufferPb.getEstimatedRows().longValue(),
-          streamingBufferPb.getEstimatedBytes().longValue(),
-          streamingBufferPb.getOldestEntryTime().longValue());
-    }
   }
 
   private final String etag;
@@ -165,7 +94,7 @@ public abstract class BaseTableInfo implements Serializable {
   private final Long expirationTime;
   private final Long lastModifiedTime;
 
-  public static abstract class Builder<T extends BaseTableInfo, B extends Builder<T, B>> {
+  public abstract static class Builder<T extends BaseTableInfo, B extends Builder<T, B>> {
 
     private String etag;
     private String id;
@@ -429,7 +358,7 @@ public abstract class BaseTableInfo implements Serializable {
    */
   public abstract Builder toBuilder();
 
-  protected MoreObjects.ToStringHelper toStringHelper() {
+  ToStringHelper toStringHelper() {
     return MoreObjects.toStringHelper(this)
         .add("tableId", tableId)
         .add("type", type)

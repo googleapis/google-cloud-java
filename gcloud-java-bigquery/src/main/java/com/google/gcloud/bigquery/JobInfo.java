@@ -241,7 +241,7 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
 
   ToStringHelper toStringHelper() {
     return MoreObjects.toStringHelper(this)
-        .add("jobId", jobId)
+        .add("job", jobId)
         .add("status", status)
         .add("statistics", statistics)
         .add("userEmail", userEmail)

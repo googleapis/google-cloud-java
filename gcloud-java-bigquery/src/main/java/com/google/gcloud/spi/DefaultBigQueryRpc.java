@@ -122,8 +122,8 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .execute();
       Iterable<DatasetList.Datasets> datasets = datasetsList.getDatasets();
       return Tuple.of(datasetsList.getNextPageToken(),
-          Iterables.transform(datasets != null ? datasets :
-              ImmutableList.<DatasetList.Datasets>of(),
+          Iterables.transform(datasets != null ? datasets
+              : ImmutableList.<DatasetList.Datasets>of(),
               new Function<DatasetList.Datasets, Dataset>() {
                 @Override
                 public Dataset apply(DatasetList.Datasets datasetPb) {

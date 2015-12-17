@@ -27,7 +27,35 @@ import java.util.Objects;
  * Google Cloud BigQuery Query Request. This class can be used to run a BigQuery SQL query and
  * return results if the query completes within a specified timeout. The query results are saved to
  * a temporary table that is deleted approximately 24 hours after the query is run. The query is run
- * through a BigQuery Job whose identity can be accessed via {@link QueryResponse#jobId()}.
+ * through a BigQuery Job whose identity can be accessed via {@link QueryResponse#jobId()}. If the
+ * query does not complete within the provided {@link Builder#maxWaitTime(Long)}, the response
+ * returned by {@link BigQuery#query(QueryRequest)} will have {@link QueryResponse#jobComplete()}
+ * set to {@code false} and {@link QueryResponse#result()} set to {@code null}. To obtain query
+ * results you can use {@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)} until
+ * {@link QueryResponse#jobComplete()} returns {@code true}.
+ *
+ * <p>Example usage of a query request:
+ * <pre>    {@code
+ *    // Substitute "field", "table" and "dataset" with real field, table and dataset identifiers
+ *    QueryRequest request = QueryRequest.builder("SELECT field FROM table")
+ *      .defaultDataset(DatasetId.of("dataset"))
+ *      .maxWaitTime(60000L)
+ *      .maxResults(1000L)
+ *      .build();
+ *    QueryResponse response = bigquery.query(request);
+ *    while (!response.jobComplete()) {
+ *      Thread.sleep(1000);
+ *      response = bigquery.getQueryResults(response.jobId());
+ *    }
+ *    List<BigQueryError> executionErrors = response.executionErrors();
+ *    // look for errors in executionErrors
+ *    QueryResult result = response.result();
+ *    Iterator<List<FieldValue>> rowIterator = result.iterateAll();
+ *    while(rowIterator.hasNext()) {
+ *      List<FieldValue> row = rowIterator.next();
+ *      // do something with row
+ *    }
+ * }</pre>
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/query">Query</a>
  * @see <a href="https://cloud.google.com/bigquery/query-reference">Query Reference</a>

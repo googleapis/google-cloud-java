@@ -48,10 +48,12 @@ public final class Acl implements Serializable {
      * Can read, query, copy or export tables in the dataset.
      */
     READER,
+
     /**
      * Same as {@link #READER} plus can edit or append data in the dataset.
      */
     WRITER,
+
     /**
      * Same as {@link #WRITER} plus can update and delete the dataset.
      */
@@ -61,7 +63,7 @@ public final class Acl implements Serializable {
   /**
    * Base class for BigQuery entities that can be grant access to the dataset.
    */
-  public static abstract class Entity implements Serializable {
+  public abstract static class Entity implements Serializable {
 
     private static final long serialVersionUID = 8111776788607959944L;
 
@@ -132,14 +134,14 @@ public final class Acl implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-      if (this == o) {
+    public boolean equals(Object obj) {
+      if (this == obj) {
         return true;
       }
-      if (o == null || getClass() != o.getClass()) {
+      if (obj == null || getClass() != obj.getClass()) {
         return false;
       }
-      Domain domainEntity = (Domain) o;
+      Domain domainEntity = (Domain) obj;
       return Objects.equals(type(), domainEntity.type())
           && Objects.equals(domain, domainEntity.domain());
     }
@@ -196,14 +198,14 @@ public final class Acl implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-      if (this == o) {
+    public boolean equals(Object obj) {
+      if (this == obj) {
         return true;
       }
-      if (o == null || getClass() != o.getClass()) {
+      if (obj == null || getClass() != obj.getClass()) {
         return false;
       }
-      Group group = (Group) o;
+      Group group = (Group) obj;
       return Objects.equals(type(), group.type()) && Objects.equals(identifier, group.identifier);
     }
 
@@ -288,14 +290,14 @@ public final class Acl implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-      if (this == o) {
+    public boolean equals(Object obj) {
+      if (this == obj) {
         return true;
       }
-      if (o == null || getClass() != o.getClass()) {
+      if (obj == null || getClass() != obj.getClass()) {
         return false;
       }
-      User user = (User) o;
+      User user = (User) obj;
       return Objects.equals(type(), user.type()) && Objects.equals(email, user.email);
     }
 
@@ -341,14 +343,14 @@ public final class Acl implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-      if (this == o) {
+    public boolean equals(Object obj) {
+      if (this == obj) {
         return true;
       }
-      if (o == null || getClass() != o.getClass()) {
+      if (obj == null || getClass() != obj.getClass()) {
         return false;
       }
-      View view = (View) o;
+      View view = (View) obj;
       return Objects.equals(type(), view.type()) && Objects.equals(id, view.id);
     }
 

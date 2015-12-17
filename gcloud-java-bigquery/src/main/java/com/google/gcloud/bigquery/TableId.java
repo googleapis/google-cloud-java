@@ -50,7 +50,7 @@ public class TableId implements Serializable {
   private final String table;
 
   /**
-   * Returns project's user-defined id
+   * Returns project's user-defined id.
    */
   public String project() {
     return project;

@@ -23,6 +23,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.bigquery.TableInfo.StreamingBuffer;
 
 import org.junit.Test;
 
@@ -94,8 +95,7 @@ public class SerializationTest {
           .description("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
-  private static final BaseTableInfo.StreamingBuffer STREAMING_BUFFER =
-      new BaseTableInfo.StreamingBuffer(1L, 2L, 3L);
+  private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final ExternalDataConfiguration EXTERNAL_DATA_CONFIGURATION =
       ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
@@ -128,7 +128,6 @@ public class SerializationTest {
           .description(DESCRIPTION)
           .etag(ETAG)
           .id(ID)
-          .streamingBuffer(STREAMING_BUFFER)
           .build();
   private static final JobStatistics JOB_STATISTICS = JobStatistics.builder()
           .creationTime(1L)

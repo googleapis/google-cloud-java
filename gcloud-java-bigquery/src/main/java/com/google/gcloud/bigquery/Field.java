@@ -32,10 +32,10 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery Table field. A table field has a name, a value, a mode and possibly a description.
- * Supported types are: {@link Type#integer()}, {@link Type#bool()}, {@link Type#string()},
- * {@link Type#floatingPoint()}, {@link Type#timestamp()} and {@link Type#record(Field...)}. One or
- * more fields form a table's schema.
+ * Google BigQuery Table field. A table field has a name, a value, a mode and possibly a
+ * description. Supported types are: {@link Type#integer()}, {@link Type#bool()},
+ * {@link Type#string()}, {@link Type#floatingPoint()}, {@link Type#timestamp()} and
+ * {@link Type#record(Field...)}. One or more fields form a table's schema.
  */
 public class Field implements Serializable {
 
