@@ -45,6 +45,8 @@ public class ProjectInfoTest {
       .parent(PARENT)
       .build();
   private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder(PROJECT_ID).build();
+  private static final ProjectInfo UNNAMED_PROJECT_FROM_LIST =
+      PARTIAL_PROJECT_INFO.toBuilder().name("Unnamed").build();
 
   @Test
   public void testBuilder() {
@@ -71,8 +73,10 @@ public class ProjectInfoTest {
 
   @Test
   public void testToAndFromPb() {
+    assertTrue(FULL_PROJECT_INFO.toPb().getCreateTime().endsWith("Z"));
     compareProjects(FULL_PROJECT_INFO, ProjectInfo.fromPb(FULL_PROJECT_INFO.toPb()));
     compareProjects(PARTIAL_PROJECT_INFO, ProjectInfo.fromPb(PARTIAL_PROJECT_INFO.toPb()));
+    compareProjects(PARTIAL_PROJECT_INFO, ProjectInfo.fromPb(UNNAMED_PROJECT_FROM_LIST.toPb()));
   }
 
   @Test

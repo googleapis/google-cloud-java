@@ -31,7 +31,6 @@ import java.util.Objects;
 
 /**
  * A Google Cloud Resource Manager project metadata object.
- * 
  * A Project is a high-level Google Cloud Platform entity. It is a container for ACLs, APIs,
  * AppEngine Apps, VMs, and other Google Cloud Platform resources.
  */
@@ -51,12 +50,12 @@ public class ProjectInfo implements Serializable {
    */
   public enum State {
     /**
-     * Only used/useful for distinguishing unset values
+     * Only used/useful for distinguishing unset values.
      */
     LIFECYCLE_STATE_UNSPECIFIED,
 
     /**
-     * The normal and active state
+     * The normal and active state.
      */
     ACTIVE,
 
@@ -67,7 +66,7 @@ public class ProjectInfo implements Serializable {
     DELETE_REQUESTED,
 
     /**
-     * the process of deleting the project has begun. Reversing the deletion is no longer possible.
+     * The process of deleting the project has begun. Reversing the deletion is no longer possible.
      */
     DELETE_IN_PROGRESS
   }
@@ -106,7 +105,7 @@ public class ProjectInfo implements Serializable {
       com.google.api.services.cloudresourcemanager.model.ResourceId resourceIdPb =
           new com.google.api.services.cloudresourcemanager.model.ResourceId();
       resourceIdPb.setId(id);
-      resourceIdPb.setType(type.toString().toLowerCase());
+      resourceIdPb.setType(type.toLowerCase());
       return resourceIdPb;
     }
 
@@ -142,9 +141,9 @@ public class ProjectInfo implements Serializable {
     /**
      * Set the user-assigned name of the project.
      *
-     * This field is optional and can remain unset. Allowed characters are: lowercase and uppercase
-     * letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point. This
-     * field can be changed after project creation.
+     * <p>This field is optional and can remain unset. Allowed characters are: lowercase and
+     * uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.
+     * This field can be changed after project creation.
      */
     public Builder name(String name) {
       this.name = firstNonNull(name, Data.<String>nullOf(String.class));
@@ -154,7 +153,7 @@ public class ProjectInfo implements Serializable {
     /**
      * Set the unique, user-assigned ID of the project.
      *
-     * The ID must be 6 to 30 lowercase letters, digits, or hyphens. It must start with a letter.
+     * <p>The ID must be 6 to 30 lowercase letters, digits, or hyphens. It must start with a letter.
      * Trailing hyphens are prohibited. This field cannot be changed after the server creates the
      * project.
      */
@@ -166,7 +165,7 @@ public class ProjectInfo implements Serializable {
     /**
      * Add a label associated with this project.
      *
-     * See {@link #labels} for label restrictions.
+     * <p>See {@link #labels} for label restrictions.
      */
     public Builder addLabel(String key, String value) {
       this.labels.put(key, value);
@@ -192,11 +191,11 @@ public class ProjectInfo implements Serializable {
     /**
      * Set the labels associated with this project.
      *
-     * Label keys must be between 1 and 63 characters long and must conform to the following regular
-     * expression: [a-z]([-a-z0-9]*[a-z0-9])?. Label values must be between 0 and 63 characters long
-     * and must conform to the regular expression ([a-z]([-a-z0-9]*[a-z0-9])?)?. No more than 256
-     * labels can be associated with a given resource. This field can be changed after project
-     * creation.
+     * <p>Label keys must be between 1 and 63 characters long and must conform to the following
+     * regular expression: [a-z]([-a-z0-9]*[a-z0-9])?. Label values must be between 0 and 63
+     * characters long and must conform to the regular expression ([a-z]([-a-z0-9]*[a-z0-9])?)?. No
+     * more than 256 labels can be associated with a given resource. This field can be changed after
+     * project creation.
      */
     public Builder labels(Map<String, String> labels) {
       this.labels = Maps.newHashMap(checkNotNull(labels));
@@ -241,7 +240,7 @@ public class ProjectInfo implements Serializable {
   /**
    * Get the unique, user-assigned ID of the project.
    *
-   * This field cannot be changed after the server creates the project.
+   * <p>This field cannot be changed after the server creates the project.
    */
   public String projectId() {
     return projectId;
@@ -250,7 +249,7 @@ public class ProjectInfo implements Serializable {
   /**
    * Get the user-assigned name of the project.
    *
-   * This field is optional, can remain unset, and can be changed after project creation.
+   * <p>This field is optional, can remain unset, and can be changed after project creation.
    */
   public String name() {
     return Data.isNull(name) ? null : name;
@@ -259,7 +258,7 @@ public class ProjectInfo implements Serializable {
   /**
    * Get number uniquely identifying the project.
    *
-   * This field is set by the server and is read-only.
+   * <p>This field is set by the server and is read-only.
    */
   public Long projectNumber() {
     return projectNumber;
@@ -275,7 +274,7 @@ public class ProjectInfo implements Serializable {
   /**
    * Get the project's lifecycle state.
    *
-   * This is a read-only field. To change the lifecycle state of your project, use the
+   * <p>This is a read-only field. To change the lifecycle state of your project, use the
    * {@code delete} or {@code undelete} method.
    */
   public State state() {
@@ -289,7 +288,7 @@ public class ProjectInfo implements Serializable {
   /**
    * Get the project's creation time (in milliseconds).
    *
-   * This field is set by the server and is read-only.
+   * <p>This field is set by the server and is read-only.
    */
   public Long createTimeMillis() {
     return createTimeMillis;
@@ -324,7 +323,7 @@ public class ProjectInfo implements Serializable {
       projectPb.setLifecycleState(state.toString());
     }
     if (createTimeMillis != null) {
-      projectPb.setCreateTime(ISODateTimeFormat.dateTime().print(createTimeMillis));
+      projectPb.setCreateTime(ISODateTimeFormat.dateTime().withZoneUTC().print(createTimeMillis));
     }
     if (parent != null) {
       projectPb.setParent(parent.toPb());
@@ -333,9 +332,8 @@ public class ProjectInfo implements Serializable {
   }
 
   static ProjectInfo fromPb(com.google.api.services.cloudresourcemanager.model.Project projectPb) {
-    ProjectInfo.Builder builder =
-        ProjectInfo.builder(projectPb.getProjectId()).projectNumber(projectPb.getProjectNumber());
-    if (projectPb.getName() != null) {
+    Builder builder = builder(projectPb.getProjectId()).projectNumber(projectPb.getProjectNumber());
+    if (projectPb.getName() != null && !projectPb.getName().equals("Unnamed")) {
       builder.name(projectPb.getName());
     }
     if (projectPb.getLabels() != null) {

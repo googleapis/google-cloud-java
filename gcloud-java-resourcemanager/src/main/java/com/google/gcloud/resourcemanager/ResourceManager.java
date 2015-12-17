@@ -36,7 +36,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * The fields of a project.
    *
-   * These values can be used to specify the fields to include in a partial response when calling
+   * <p>These values can be used to specify the fields to include in a partial response when calling
    * {@link ResourceManager#get} or {@link ResourceManager#list}. Project ID is always returned,
    * even if not specified.
    */
@@ -82,7 +82,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     /**
      * Returns an option to specify the project's fields to be returned by the RPC call.
      *
-     * If this option is not provided all project fields are returned.
+     * <p>If this option is not provided all project fields are returned.
      * {@code ProjectGetOption.fields} can be used to specify only the fields of interest. Project
      * ID is always returned, even if not specified. {@link ProjectField} provides a list of fields
      * that can be used.
@@ -106,17 +106,17 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     /**
      * Returns an option to specify a filter.
      *
-     * Filter rules are case insensitive. The fields eligible for filtering are:
+     * <p>Filter rules are case insensitive. The fields eligible for filtering are:
      * <ul>
      * <li>name
      * <li>project ID
      * <li>labels.key, where key is the name of a label
      * </ul>
      *
-     * You can specify multiple filters by adding a space between each filter. Multiple filters
+     * <p>You can specify multiple filters by adding a space between each filter. Multiple filters
      * are composed using "and".
      *
-     * Some examples of filters:
+     * <p>Some examples of filters:
      * <ul>
      * <li> name:*  The project has a name.
      * <li> name:Howl   The project's name is Howl or howl.
@@ -135,7 +135,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     /**
      * Returns an option to specify a page token.
      *
-     * The page token (returned from a previous call to list) indicates from where listing should
+     * <p>The page token (returned from a previous call to list) indicates from where listing should
      * continue.
      */
     public static ProjectListOption pageToken(String pageToken) {
@@ -145,7 +145,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     /**
      * The maximum number of projects to return per RPC.
      *
-     * The server can return fewer projects than requested. When there are more results than the
+     * <p>The server can return fewer projects than requested. When there are more results than the
      * page size, the server will return a page token that can be used to fetch other results.
      * Note: pagination is not yet supported; the server currently ignores this field and returns
      * all results.
@@ -157,7 +157,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     /**
      * Returns an option to specify the project's fields to be returned by the RPC call.
      *
-     * If this option is not provided all project fields are returned.
+     * <p>If this option is not provided all project fields are returned.
      * {@code ProjectListOption.fields} can be used to specify only the fields of interest. Project
      * ID is always returned, even if not specified. {@link ProjectField} provides a list of fields
      * that can be used.
@@ -172,7 +172,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Create a new project.
    *
-   * Initially, the project resource is owned by its creator exclusively. The creator can later
+   * <p>Initially, the project resource is owned by its creator exclusively. The creator can later
    * grant permission to others to read or update the project. Several APIs are activated
    * automatically for the project, including Google Cloud Storage.
    *
@@ -189,7 +189,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Marks the project identified by the specified project ID for deletion.
    *
-   * This method will only affect the project if the following criteria are met:
+   * <p>This method will only affect the project if the following criteria are met:
    * <ul>
    * <li>The project does not have a billing account associated with it.
    * <li>The project has a lifecycle state of {@link ProjectInfo.State#ACTIVE}.
@@ -213,7 +213,8 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Retrieves the project identified by the specified project ID.
    *
-   * The caller must have read permissions for this project.
+   * <p>The caller must have read permissions for this project. Returns {@code null} if project
+   * not found.
    *
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/get">Cloud
@@ -225,7 +226,8 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Lists the projects visible to the current user.
    *
-   * This method returns projects in an unspecified order. New projects do not necessarily appear at
+   * <p>This method returns projects in an unspecified order. New projects do not necessarily appear
+   * at
    * the end of the list. Use {@link ProjectListOption} to filter this list, set page size, and set
    * page tokens. Note that pagination is currently not implemented by the Cloud Resource Manager
    * API.
@@ -241,7 +243,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Replaces the attributes of the project.
    *
-   * The caller must have modify permissions for this project.
+   * <p>The caller must have modify permissions for this project.
    *
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">Cloud
@@ -254,7 +256,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Restores the project identified by the specified project ID.
    *
-   * You can only use this method for a project that has a lifecycle state of
+   * <p>You can only use this method for a project that has a lifecycle state of
    * {@link ProjectInfo.State#DELETE_REQUESTED}. After deletion starts, as indicated by a lifecycle
    * state of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
    * caller must have modify permissions for this project.

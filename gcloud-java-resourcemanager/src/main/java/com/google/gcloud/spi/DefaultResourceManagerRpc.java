@@ -4,6 +4,7 @@ import static com.google.gcloud.spi.ResourceManagerRpc.Option.FIELDS;
 import static com.google.gcloud.spi.ResourceManagerRpc.Option.FILTER;
 import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_SIZE;
 import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_TOKEN;
+import static java.net.HttpURLConnection.HTTP_FORBIDDEN;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
@@ -80,7 +81,12 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      throw translate(ex);
+      ResourceManagerException translated = translate(ex);
+      if (translated.code() == HTTP_FORBIDDEN) {
+        return null; // Project not found
+      } else {
+        throw translated;
+      }
     }
   }
 

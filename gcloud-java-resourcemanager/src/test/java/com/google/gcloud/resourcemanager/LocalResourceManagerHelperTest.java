@@ -19,7 +19,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class LocalResourceManagerHelperTest {
@@ -33,10 +32,8 @@ public class LocalResourceManagerHelperTest {
   private static final Map<ResourceManagerRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
   private static final LocalResourceManagerHelper RESOURCE_MANAGER_HELPER =
       LocalResourceManagerHelper.create();
-  private static final ResourceManagerRpc rpc = new DefaultResourceManagerRpc(
-      ResourceManagerOptions.builder()
-      .host("http://localhost:" + RESOURCE_MANAGER_HELPER.port())
-      .build());
+  private static final ResourceManagerRpc rpc =
+      new DefaultResourceManagerRpc(RESOURCE_MANAGER_HELPER.options());
   private static final com.google.api.services.cloudresourcemanager.model.Project PARTIAL_PROJECT =
       new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
           "partial-project");
@@ -257,13 +254,7 @@ public class LocalResourceManagerHelperTest {
         rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS);
     compareReadWriteFields(COMPLETE_PROJECT, returnedProject);
     RESOURCE_MANAGER_HELPER.removeProject(COMPLETE_PROJECT.getProjectId());
-    try {
-      rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS);
-      fail("Should fail because the project doesn't exist.");
-    } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
-      assertTrue(e.getMessage().contains("not found"));
-    }
+    assertNull(rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS));
   }
 
   @Test
@@ -295,16 +286,21 @@ public class LocalResourceManagerHelperTest {
         COMPLETE_PROJECT.getProjectId(), "DELETE_REQUESTED");
     rpc.create(PROJECT_WITH_PARENT);
     projects = rpc.list(EMPTY_RPC_OPTIONS);
-    Iterator<com.google.api.services.cloudresourcemanager.model.Project> it =
-        projects.y().iterator();
-    compareReadWriteFields(COMPLETE_PROJECT, it.next());
-    compareReadWriteFields(PROJECT_WITH_PARENT, it.next());
+    for (com.google.api.services.cloudresourcemanager.model.Project p : projects.y()) {
+      if (p.getProjectId().equals(COMPLETE_PROJECT.getProjectId())) {
+        compareReadWriteFields(COMPLETE_PROJECT, p);
+      } else if (p.getProjectId().equals(PROJECT_WITH_PARENT.getProjectId())) {
+        compareReadWriteFields(PROJECT_WITH_PARENT, p);
+      } else {
+        fail("Unexpected project in list.");
+      }
+    }
   }
 
   @Test
   public void testListFieldOptions() {
     Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
-    rpcOptions.put(ResourceManagerRpc.Option.FIELDS, "projectId,name,labels");
+    rpcOptions.put(ResourceManagerRpc.Option.FIELDS, "projects(projectId,name,labels)");
     rpcOptions.put(ResourceManagerRpc.Option.PAGE_TOKEN, "somePageToken");
     rpcOptions.put(ResourceManagerRpc.Option.PAGE_SIZE, 1);
     rpc.create(PROJECT_WITH_PARENT);
@@ -530,13 +526,7 @@ public class LocalResourceManagerHelperTest {
     assertFalse(RESOURCE_MANAGER_HELPER.removeProject(COMPLETE_PROJECT.getProjectId()));
     rpc.create(COMPLETE_PROJECT);
     assertTrue(RESOURCE_MANAGER_HELPER.removeProject(COMPLETE_PROJECT.getProjectId()));
-    try {
-      rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS);
-      fail("Project shouldn't exist.");
-    } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
-      assertTrue(e.getMessage().contains("not found."));
-    }
+    assertNull(rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS));
   }
 
   private void compareReadWriteFields(
