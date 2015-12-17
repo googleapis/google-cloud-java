@@ -26,27 +26,24 @@ import com.google.common.base.MoreObjects.ToStringHelper;
  * reside outside of BigQuery but can be queried as normal BigQuery tables. External tables are
  * experimental and might be subject to change or removed.
  *
- * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data
- *     Sources</a>
+ * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data Sources
+ *     </a>
  */
 public class ExternalTableInfo extends BaseTableInfo {
 
   private static final long serialVersionUID = -5893406738246214865L;
 
   private final ExternalDataConfiguration configuration;
-  private final StreamingBuffer streamingBuffer;
 
   public static final class Builder extends BaseTableInfo.Builder<ExternalTableInfo, Builder> {
 
     private ExternalDataConfiguration configuration;
-    private StreamingBuffer streamingBuffer;
 
     private Builder() {}
 
     private Builder(ExternalTableInfo tableInfo) {
       super(tableInfo);
       this.configuration = tableInfo.configuration;
-      this.streamingBuffer = tableInfo.streamingBuffer;
     }
 
     protected Builder(Table tablePb) {
@@ -54,9 +51,6 @@ public class ExternalTableInfo extends BaseTableInfo {
       if (tablePb.getExternalDataConfiguration() != null) {
         this.configuration =
             ExternalDataConfiguration.fromPb(tablePb.getExternalDataConfiguration());
-      }
-      if (tablePb.getStreamingBuffer() != null) {
-        this.streamingBuffer = StreamingBuffer.fromPb(tablePb.getStreamingBuffer());
       }
     }
 
@@ -68,11 +62,6 @@ public class ExternalTableInfo extends BaseTableInfo {
      */
     public Builder configuration(ExternalDataConfiguration configuration) {
       this.configuration = checkNotNull(configuration);
-      return self();
-    }
-
-    Builder streamingBuffer(StreamingBuffer streamingBuffer) {
-      this.streamingBuffer = streamingBuffer;
       return self();
     }
 
@@ -88,26 +77,17 @@ public class ExternalTableInfo extends BaseTableInfo {
   private ExternalTableInfo(Builder builder) {
     super(builder);
     this.configuration = builder.configuration;
-    this.streamingBuffer = builder.streamingBuffer;
   }
 
   /**
    * Returns the data format, location and other properties of a table stored outside of BigQuery.
    * This property is experimental and might be subject to change or removed.
    *
-   * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data
-   *     Sources</a>
+   * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data Sources
+   *     </a>
    */
   public ExternalDataConfiguration configuration() {
     return configuration;
-  }
-
-  /**
-   * Returns information on the table's streaming buffer if any exists. Returns {@code null} if no
-   * streaming buffer exists.
-   */
-  public StreamingBuffer streamingBuffer() {
-    return streamingBuffer;
   }
 
   /**
@@ -120,18 +100,13 @@ public class ExternalTableInfo extends BaseTableInfo {
 
   @Override
   ToStringHelper toStringHelper() {
-    return super.toStringHelper()
-        .add("configuration", configuration)
-        .add("streamingBuffer", streamingBuffer);
+    return super.toStringHelper().add("configuration", configuration);
   }
 
   @Override
   Table toPb() {
     Table tablePb = super.toPb();
     tablePb.setExternalDataConfiguration(configuration.toPb());
-    if (streamingBuffer != null) {
-      tablePb.setStreamingBuffer(streamingBuffer.toPb());
-    }
     return tablePb;
   }
 

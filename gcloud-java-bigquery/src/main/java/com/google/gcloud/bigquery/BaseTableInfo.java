@@ -20,7 +20,6 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.Data;
-import com.google.api.services.bigquery.model.Streamingbuffer;
 import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -79,79 +78,6 @@ public abstract class BaseTableInfo implements Serializable {
      *     Sources</a>
      */
     EXTERNAL
-  }
-
-  /**
-   * Google BigQuery Table's Streaming Buffer information. This class contains information on a
-   * table's streaming buffer as the estimated size in number of rows/bytes.
-   */
-  public static class StreamingBuffer implements Serializable {
-
-    private static final long serialVersionUID = -6713971364725267597L;
-    private final long estimatedRows;
-    private final long estimatedBytes;
-    private final long oldestEntryTime;
-
-    StreamingBuffer(long estimatedRows, long estimatedBytes, long oldestEntryTime) {
-      this.estimatedRows = estimatedRows;
-      this.estimatedBytes = estimatedBytes;
-      this.oldestEntryTime = oldestEntryTime;
-    }
-
-    /**
-     * Returns a lower-bound estimate of the number of rows currently in the streaming buffer.
-     */
-    public long estimatedRows() {
-      return estimatedRows;
-    }
-
-    /**
-     * Returns a lower-bound estimate of the number of bytes currently in the streaming buffer.
-     */
-    public long estimatedBytes() {
-      return estimatedBytes;
-    }
-
-    /**
-     * Returns the timestamp of the oldest entry in the streaming buffer, in milliseconds since
-     * epoch.
-     */
-    public long oldestEntryTime() {
-      return oldestEntryTime;
-    }
-
-    @Override
-    public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("estimatedRows", estimatedRows)
-          .add("estimatedBytes", estimatedBytes)
-          .add("oldestEntryTime", oldestEntryTime)
-          .toString();
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(estimatedRows, estimatedBytes, oldestEntryTime);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      return obj instanceof StreamingBuffer
-          && Objects.equals(toPb(), ((StreamingBuffer) obj).toPb());
-    }
-
-    Streamingbuffer toPb() {
-      return new Streamingbuffer()
-          .setEstimatedBytes(BigInteger.valueOf(estimatedBytes))
-          .setEstimatedRows(BigInteger.valueOf(estimatedRows))
-          .setOldestEntryTime(BigInteger.valueOf(oldestEntryTime));
-    }
-
-    static StreamingBuffer fromPb(Streamingbuffer streamingBufferPb) {
-      return new StreamingBuffer(streamingBufferPb.getEstimatedRows().longValue(),
-          streamingBufferPb.getEstimatedBytes().longValue(),
-          streamingBufferPb.getOldestEntryTime().longValue());
-    }
   }
 
   private final String etag;

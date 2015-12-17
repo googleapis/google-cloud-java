@@ -31,7 +31,7 @@ public class OptionTest {
     assertEquals("token", option.value());
   }
 
-  @Test(expected=NullPointerException.class)
+  @Test(expected = NullPointerException.class)
   public void testNullRpcOption() {
     new Option(null, "token");
   }

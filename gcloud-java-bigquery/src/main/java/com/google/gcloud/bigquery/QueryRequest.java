@@ -28,7 +28,7 @@ import java.util.Objects;
  * return results if the query completes within a specified timeout. The query results are saved to
  * a temporary table that is deleted approximately 24 hours after the query is run. The query is run
  * through a BigQuery Job whose identity can be accessed via {@link QueryResponse#jobId()}. If the
- * query does not complete within the provided {@link Builder#maxWaitTime(Long)} the response
+ * query does not complete within the provided {@link Builder#maxWaitTime(Long)}, the response
  * returned by {@link BigQuery#query(QueryRequest)} will have {@link QueryResponse#jobComplete()}
  * set to {@code false} and {@link QueryResponse#result()} set to {@code null}. To obtain query
  * results you can use {@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)} until
@@ -36,6 +36,7 @@ import java.util.Objects;
  *
  * <p>Example usage of a query request:
  * <pre>    {@code
+ *    // Substitute "field", "table" and "dataset" with real field, table and dataset identifiers
  *    QueryRequest request = QueryRequest.builder("SELECT field FROM table")
  *      .defaultDataset(DatasetId.of("dataset"))
  *      .maxWaitTime(60000L)
