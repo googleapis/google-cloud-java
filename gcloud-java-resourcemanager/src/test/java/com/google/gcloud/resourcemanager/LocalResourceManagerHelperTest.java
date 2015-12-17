@@ -32,10 +32,8 @@ public class LocalResourceManagerHelperTest {
   private static final Map<ResourceManagerRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
   private static final LocalResourceManagerHelper RESOURCE_MANAGER_HELPER =
       LocalResourceManagerHelper.create();
-  private static final ResourceManagerRpc rpc = new DefaultResourceManagerRpc(
-      ResourceManagerOptions.builder()
-      .host("http://localhost:" + RESOURCE_MANAGER_HELPER.port())
-      .build());
+  private static final ResourceManagerRpc rpc =
+      new DefaultResourceManagerRpc(RESOURCE_MANAGER_HELPER.options());
   private static final com.google.api.services.cloudresourcemanager.model.Project PARTIAL_PROJECT =
       new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
           "partial-project");

@@ -48,10 +48,8 @@ public class ResourceManagerImplTest {
 
   private static final LocalResourceManagerHelper RESOURCE_MANAGER_HELPER =
       LocalResourceManagerHelper.create();
-  private static final ResourceManager RESOURCE_MANAGER = ResourceManagerOptions.builder()
-          .host("http://localhost:" + RESOURCE_MANAGER_HELPER.port())
-      .build()
-      .service();
+  private static final ResourceManager RESOURCE_MANAGER =
+      RESOURCE_MANAGER_HELPER.options().service();
   private static final ProjectGetOption GET_FIELDS =
       ProjectGetOption.fields(ProjectField.NAME, ProjectField.CREATE_TIME);
   private static final ProjectListOption LIST_FIELDS =
