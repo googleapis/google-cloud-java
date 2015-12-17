@@ -17,7 +17,7 @@
 package com.google.gcloud.bigquery;
 
 import com.google.api.services.bigquery.model.Table;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 
 /**
  * A Google BigQuery Table information. A BigQuery table is a standard, two-dimensional table with
@@ -110,7 +110,7 @@ public class TableInfo extends BaseTableInfo {
   }
 
   /**
-   * Creates BigQuery table given its type
+   * Creates BigQuery table given its type.
    *
    * @param tableId table id
    * @param schema the schema of the table
@@ -128,7 +128,7 @@ public class TableInfo extends BaseTableInfo {
   }
 
   @Override
-  protected MoreObjects.ToStringHelper toStringHelper() {
+  ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("location", location)
         .add("streamingBuffer", streamingBuffer);

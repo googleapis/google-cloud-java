@@ -96,8 +96,8 @@ public class Schema implements Serializable {
   }
 
   private Schema(Builder builder) {
-    this.fields = builder.fields != null ? ImmutableList.copyOf(builder.fields) :
-        ImmutableList.<Field>of();
+    this.fields = builder.fields != null ? ImmutableList.copyOf(builder.fields)
+        : ImmutableList.<Field>of();
   }
 
   /**

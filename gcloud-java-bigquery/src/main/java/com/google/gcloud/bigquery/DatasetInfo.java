@@ -384,8 +384,8 @@ public final class DatasetInfo implements Serializable {
       builder.acl(Lists.transform(datasetPb.getAccess(),
           new Function<Dataset.Access, Acl>() {
             @Override
-            public Acl apply(Dataset.Access f) {
-              return Acl.fromPb(f);
+            public Acl apply(Dataset.Access accessPb) {
+              return Acl.fromPb(accessPb);
             }
           }));
     }

@@ -24,6 +24,7 @@ import com.google.api.services.bigquery.model.Streamingbuffer;
 import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -63,12 +64,14 @@ public abstract class BaseTableInfo implements Serializable {
      * A normal BigQuery table.
      */
     TABLE,
+
     /**
      * A virtual table defined by a SQL query.
      *
      * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
      */
     VIEW,
+
     /**
      * A BigQuery table backed by external data.
      *
@@ -137,7 +140,7 @@ public abstract class BaseTableInfo implements Serializable {
           && Objects.equals(toPb(), ((StreamingBuffer) obj).toPb());
     }
 
-    public Streamingbuffer toPb() {
+    Streamingbuffer toPb() {
       return new Streamingbuffer()
           .setEstimatedBytes(BigInteger.valueOf(estimatedBytes))
           .setEstimatedRows(BigInteger.valueOf(estimatedRows))
@@ -165,7 +168,7 @@ public abstract class BaseTableInfo implements Serializable {
   private final Long expirationTime;
   private final Long lastModifiedTime;
 
-  public static abstract class Builder<T extends BaseTableInfo, B extends Builder<T, B>> {
+  public abstract static class Builder<T extends BaseTableInfo, B extends Builder<T, B>> {
 
     private String etag;
     private String id;
@@ -429,7 +432,7 @@ public abstract class BaseTableInfo implements Serializable {
    */
   public abstract Builder toBuilder();
 
-  protected MoreObjects.ToStringHelper toStringHelper() {
+  ToStringHelper toStringHelper() {
     return MoreObjects.toStringHelper(this)
         .add("tableId", tableId)
         .add("type", type)

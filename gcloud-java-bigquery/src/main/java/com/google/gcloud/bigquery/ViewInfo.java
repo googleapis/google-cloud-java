@@ -20,7 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.ViewDefinition;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
@@ -76,8 +76,8 @@ public class ViewInfo extends BaseTableInfo {
     /**
      * Sets user defined functions that can be used by {@link #query()}.
      *
-     * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined Functions
-     *     </a>
+     * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
+     *     Functions</a>
      */
     public Builder userDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
       this.userDefinedFunctions = ImmutableList.copyOf(checkNotNull(userDefinedFunctions));
@@ -87,8 +87,8 @@ public class ViewInfo extends BaseTableInfo {
     /**
      * Sets user defined functions that can be used by {@link #query()}.
      *
-     * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined Functions
-     *     </a>
+     * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
+     *     Functions</a>
      */
     public Builder userDefinedFunctions(UserDefinedFunction... userDefinedFunctions) {
       this.userDefinedFunctions = ImmutableList.copyOf(userDefinedFunctions);
@@ -115,7 +115,7 @@ public class ViewInfo extends BaseTableInfo {
    */
   public String query() {
     return query;
-  };
+  }
 
   /**
    * Returns user defined functions that can be used by {@link #query()}. Returns {@code null} if
@@ -137,7 +137,7 @@ public class ViewInfo extends BaseTableInfo {
   }
 
   @Override
-  protected MoreObjects.ToStringHelper toStringHelper() {
+  ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("query", query)
         .add("userDefinedFunctions", userDefinedFunctions);

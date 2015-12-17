@@ -47,9 +47,9 @@ public class JobId implements Serializable {
     return job;
   }
 
-  private JobId(String project, String dataset) {
+  private JobId(String project, String job) {
     this.project = project;
-    this.job = dataset;
+    this.job = job;
   }
 
   /**

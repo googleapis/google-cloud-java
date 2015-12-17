@@ -190,6 +190,9 @@ public class CsvOptions extends FormatOptions {
     return skipLeadingRows;
   }
 
+  /**
+   * Returns a builder for the {@code CsvOptions} object.
+   */
   public Builder toBuilder() {
     return new Builder()
         .allowJaggedRows(allowJaggedRows)

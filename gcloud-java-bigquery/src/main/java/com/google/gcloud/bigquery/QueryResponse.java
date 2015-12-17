@@ -24,15 +24,16 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Google Cloud BigQuery Query Response. This class contains the results of a Query Job or of a
- * Query Request.
+ * Google Cloud BigQuery Query Response. This class contains the results of a Query Job
+ * ({@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)}) or of a
+ * Query Request ({@link BigQuery#query(QueryRequest)}).
  *
  * <p>Example usage of a query response:
  * <pre>    {@code
  *    QueryResponse response = bigquery.query(request);
  *    while (!response.jobComplete()) {
- *      response = bigquery.getQueryResults(response.jobId());
  *      Thread.sleep(1000);
+ *      response = bigquery.getQueryResults(response.jobId());
  *    }
  *    List<BigQueryError> executionErrors = response.executionErrors();
  *    // look for errors in executionErrors

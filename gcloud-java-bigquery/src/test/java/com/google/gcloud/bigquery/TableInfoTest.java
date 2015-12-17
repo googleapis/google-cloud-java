@@ -98,8 +98,8 @@ public class TableInfoTest {
           .selfLink(SELF_LINK)
           .streamingBuffer(STREAMING_BUFFER)
           .build();
-  private static List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
-      UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
+  private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS =
+      ImmutableList.of(UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final ViewInfo VIEW_INFO =
       ViewInfo.builder(TABLE_ID, VIEW_QUERY, USER_DEFINED_FUNCTIONS)
           .creationTime(CREATION_TIME)
@@ -190,7 +190,7 @@ public class TableInfoTest {
 
   @Test
   public void testToAndFromPb() {
-    assertTrue(BaseTableInfo.fromPb(TABLE_INFO.toPb()) instanceof BaseTableInfo);
+    assertTrue(BaseTableInfo.fromPb(TABLE_INFO.toPb()) instanceof TableInfo);
     compareTableInfo(TABLE_INFO, BaseTableInfo.<TableInfo>fromPb(TABLE_INFO.toPb()));
     assertTrue(BaseTableInfo.fromPb(VIEW_INFO.toPb()) instanceof ViewInfo);
     compareViewInfo(VIEW_INFO, BaseTableInfo.<ViewInfo>fromPb(VIEW_INFO.toPb()));

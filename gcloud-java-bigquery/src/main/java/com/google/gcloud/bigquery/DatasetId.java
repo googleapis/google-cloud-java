@@ -34,7 +34,7 @@ public class DatasetId implements Serializable {
   private final String dataset;
 
   /**
-   * Returns project's user-defined id
+   * Returns project's user-defined id.
    */
   public String project() {
     return project;
@@ -81,11 +81,11 @@ public class DatasetId implements Serializable {
     return toPb().toString();
   }
 
-  public DatasetReference toPb() {
+  DatasetReference toPb() {
     return new DatasetReference().setProjectId(project).setDatasetId(dataset);
   }
 
-  public static DatasetId fromPb(DatasetReference datasetRef) {
+  static DatasetId fromPb(DatasetReference datasetRef) {
     return new DatasetId(
         datasetRef.getProjectId(),
         datasetRef.getDatasetId());

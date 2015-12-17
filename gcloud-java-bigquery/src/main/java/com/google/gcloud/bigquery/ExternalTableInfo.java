@@ -19,7 +19,7 @@ package com.google.gcloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.Table;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 
 /**
  * Google BigQuery External Table information. BigQuery's external tables are tables whose data
@@ -100,7 +100,7 @@ public class ExternalTableInfo extends BaseTableInfo {
    */
   public ExternalDataConfiguration configuration() {
     return configuration;
-  };
+  }
 
   /**
    * Returns information on the table's streaming buffer if any exists. Returns {@code null} if no
@@ -119,7 +119,7 @@ public class ExternalTableInfo extends BaseTableInfo {
   }
 
   @Override
-  protected MoreObjects.ToStringHelper toStringHelper() {
+  ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("configuration", configuration)
         .add("streamingBuffer", streamingBuffer);
