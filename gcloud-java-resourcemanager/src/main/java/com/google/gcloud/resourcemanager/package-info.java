@@ -16,7 +16,24 @@
 
 /**
  * A client to Google Cloud Resource Manager.
- * //TODO(ajaykannan): add code example
+ *
+ * <p>Here's a simple usage example for using gcloud-java-resourcemanager:
+ * <pre>{@code
+ * ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+ * String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID.
+ * ProjectInfo myProject = resourceManager.create(ProjectInfo.builder(myProjectId).build());
+ * ProjectInfo newProjectInfo = resourceManager.replace(myProject.toBuilder()
+ *     .addLabel("launch-status", "in-development").build());
+ * Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();
+ * System.out.println("Projects I can view:");
+ * while (projectIterator.hasNext()) {
+ *   System.out.println(projectIterator.next().projectId());
+ * }}</pre>
+ *
+ * Remember that you must authenticate using the Google Cloud SDK. See more about
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java#specifying-a-project-id">providing
+ * credentials here</a>.
+ *
  * @see <a href="https://cloud.google.com/resource-manager/">Google Cloud Resource Manager</a>
  */
 

@@ -33,7 +33,7 @@ To run examples from your command line:
 
 1. Login using gcloud SDK (`gcloud auth login` in command line)
 
-2. Set your current project using `gcloud config set project PROJECT_ID`
+2. If you are running an example other than `ResourceManagerExample`, set your current project using `gcloud config set project PROJECT_ID`. If you are running `ResourceManagerExample`, unset your project by using `gcloud config unset project`.
 
 3. Compile using Maven (`mvn compile` in command line from your base project directory)
 
@@ -56,7 +56,16 @@ To run examples from your command line:
   $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="list <bucket_name>"
   $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="download <bucket_name> test.txt"
   $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="delete <bucket_name> test.txt"
-```
+  ```
+
+  Here's an example run of `ResourceManagerExample`.
+
+  Be sure to change the placeholder project ID "my-project-id" with your own globally unique project ID.
+  ```
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.ResourceManagerExample" -Dexec.args="create my-project-id"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.ResourceManagerExample" -Dexec.args="list"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.ResourceManagerExample" -Dexec.args="get my-project-id"
+  ```
 
 Troubleshooting
 ---------------

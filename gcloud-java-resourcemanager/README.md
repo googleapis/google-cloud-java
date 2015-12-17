@@ -5,12 +5,10 @@ Java idiomatic client for [Google Cloud Resource Manager] (https://cloud.google.
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-
-<!-- TODO(ajaykannan): add in the maven shield once the artifact is pushed to maven -->
+[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-resourcemanager.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-resourcemanager.svg)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
-
-<!-- TODO(ajaykannan): add in a link to javadocs once the site has been generated with resource manager docs included -->
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/resourcemanager/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -34,9 +32,9 @@ If you are using SBT, add this to your dependencies
 libraryDependencies += "com.google.gcloud" % "gcloud-java-resourcemanager" % "0.1.0"
 ```
 
-<!-- TODO(ajaykannan): once the API becomes usable, make an example application
 Example Application
--------------------- -->
+--------------------
+[`ResourceManagerExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/ResourceManagerExample.html).
 
 Authentication
 --------------
