@@ -17,8 +17,22 @@ Java idiomatic client for [Google Cloud Resource Manager] (https://cloud.google.
 
 Quickstart
 ----------
-This library is currently under development and will be available soon!
-<!--TODO(ajaykannan): add in pom.xml snippet once gcloud-java-resourcemanager becomes available on maven -->
+If you are using Maven, add this to your pom.xml file
+```xml
+<dependency>
+  <groupId>com.google.gcloud</groupId>
+  <artifactId>gcloud-java-resourcemanager</artifactId>
+  <version>0.1.0</version>
+</dependency>
+```
+If you are using Gradle, add this to your dependencies
+```Groovy
+compile 'com.google.gcloud:gcloud-java-resourcemanager:jar:0.1.0'
+```
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "com.google.gcloud" % "gcloud-java-resourcemanager" % "0.1.0"
+```
 
 <!-- TODO(ajaykannan): once the API becomes usable, make an example application
 Example Application
@@ -38,7 +52,7 @@ Google [Cloud Resource Manager][cloud-resourcemanager] provides a programmatic w
 * Create new projects.
 * Update existing projects.
 * Delete projects.
-* Undelete, or recover, projects that you don't want to delete.
+* Undelete projects that you don't want to delete.
 
 Google Cloud Resource Manager is currently in beta and may occasionally make backwards incompatible changes.
 
@@ -74,7 +88,7 @@ All you need to create a project is a globally unique project ID.  You can also 
 import com.google.gcloud.resourcemanager.ProjectInfo;
 ```
 
-Then add the following code to create a project (be sure to change `myProjectId` to be something unique).
+Then add the following code to create a project (be sure to change `myProjectId` to your own unique project ID).
 
 ```java
 String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID.
@@ -121,7 +135,7 @@ while (projectIterator.hasNext()) {
 
 #### Complete source code
 
-Here we put together all the code shown above into one program.  This program assumes that you are running from your own desktop.
+Here we put together all the code shown above into one program.  This program assumes that you are running from your own desktop and used the Google Cloud SDK to authenticate yourself.
 
 ```java
 import com.google.gcloud.resourcemanager.ProjectInfo;

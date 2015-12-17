@@ -201,7 +201,7 @@ import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 import java.util.Iterator;
 
 ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
-ProjectInfo myProject = resourceManager.get("some-project-id-that-I-own");
+ProjectInfo myProject = resourceManager.get("some-project-id"); // Use an existing project's ID
 ProjectInfo newProjectInfo = resourceManager.replace(myProject.toBuilder()
     .addLabel("launch-status", "in-development").build());
 System.out.println("Updated the labels of project " + newProjectInfo.projectId()

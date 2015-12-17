@@ -12,6 +12,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.ByteStreams;
+import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
@@ -524,10 +525,10 @@ public class LocalResourceManagerHelper {
   }
 
   /**
-   * Returns the port that the LocalResourceManagerHelper listens to for requests.
+   * Returns a ResourceManagerOptions instance that sets the host to use the mock server.
    */
-  public int port() {
-    return port;
+  public ResourceManagerOptions options() {
+    return ResourceManagerOptions.builder().host("http://localhost:" + port).build();
   }
 
   /**
