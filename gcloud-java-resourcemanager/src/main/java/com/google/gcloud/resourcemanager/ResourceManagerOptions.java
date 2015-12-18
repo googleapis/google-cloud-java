@@ -108,6 +108,11 @@ public class ResourceManagerOptions
   }
 
   @Override
+  public int hashCode() {
+    return baseHashCode();
+  }
+
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }

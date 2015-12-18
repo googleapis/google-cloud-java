@@ -21,7 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * A Google Cloud Resource Manager project object.
  *
- * A Project is a high-level Google Cloud Platform entity. It is a container for ACLs, APIs,
+ * <p>A Project is a high-level Google Cloud Platform entity. It is a container for ACLs, APIs,
  * AppEngine Apps, VMs, and other Google Cloud Platform resources. This class' member variables are
  * immutable.  Methods that change or update the underlying Project information return a new Project
  * instance.
@@ -77,7 +77,7 @@ public class Project {
   /**
    * Marks the project identified by the specified project ID for deletion.
    *
-   * This method will only affect the project if the following criteria are met:
+   * <p>This method will only affect the project if the following criteria are met:
    * <ul>
    * <li>The project does not have a billing account associated with it.
    * <li>The project has a lifecycle state of {@link ProjectInfo.State#ACTIVE}.
@@ -103,7 +103,7 @@ public class Project {
   /**
    * Restores the project identified by the specified project ID.
    *
-   * You can only use this method for a project that has a lifecycle state of
+   * <p>You can only use this method for a project that has a lifecycle state of
    * {@link ProjectInfo.State#DELETE_REQUESTED}. After deletion starts, as indicated by a lifecycle
    * state of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
    * caller must have modify permissions for this project.
@@ -120,7 +120,7 @@ public class Project {
   /**
    * Replaces the attributes of the project.
    *
-   * The caller must have modify permissions for this project.
+   * <p>The caller must have modify permissions for this project.
    *
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">Cloud
