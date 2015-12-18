@@ -25,7 +25,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Base class for Resource Manager operation options
+ * Base class for Resource Manager operation options.
  */
 class Option implements Serializable {
 

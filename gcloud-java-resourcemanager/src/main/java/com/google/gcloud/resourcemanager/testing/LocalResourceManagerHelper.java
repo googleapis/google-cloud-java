@@ -70,7 +70,7 @@ public class LocalResourceManagerHelper {
   private static final Set<Character> PERMISSIBLE_PROJECT_NAME_PUNCTUATION =
       ImmutableSet.of('-', '\'', '"', ' ', '!');
 
-  private HttpServer server;
+  private final HttpServer server;
   private final ConcurrentHashMap<String, Project> projects = new ConcurrentHashMap<>();
   private final int port;
 
@@ -257,7 +257,7 @@ public class LocalResourceManagerHelper {
     return options;
   }
 
-  private static final String checkForProjectErrors(Project project) {
+  private static String checkForProjectErrors(Project project) {
     if (project.getProjectId() == null) {
       return "Project ID cannot be empty.";
     }
@@ -291,9 +291,9 @@ public class LocalResourceManagerHelper {
     return null;
   }
 
-  private static final boolean isValidIdOrLabel(String value, int minLength, int maxLength) {
+  private static boolean isValidIdOrLabel(String value, int minLength, int maxLength) {
     for (char c : value.toCharArray()) {
-      if (c != '-' && !Character.isDigit(c) && (!Character.isLowerCase(c))) {
+      if (c != '-' && !Character.isDigit(c) && !Character.isLowerCase(c)) {
         return false;
       }
     }
@@ -367,7 +367,7 @@ public class LocalResourceManagerHelper {
     }
     String[] fields = (String[]) options.get("fields");
     for (Project p : projects.values()) {
-      Boolean includeProject = includeProject(p, filters);
+      boolean includeProject = includeProject(p, filters);
       if (includeProject) {
         try {
           projectsSerialized.add(jsonFactory.toString(extractFields(p, fields)));

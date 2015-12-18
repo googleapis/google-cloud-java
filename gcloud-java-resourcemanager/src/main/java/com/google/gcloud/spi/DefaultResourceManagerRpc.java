@@ -5,6 +5,7 @@ import static com.google.gcloud.spi.ResourceManagerRpc.Option.FILTER;
 import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_SIZE;
 import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_TOKEN;
 import static java.net.HttpURLConnection.HTTP_FORBIDDEN;
+import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
@@ -26,6 +27,9 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
 
   // see https://cloud.google.com/resource-manager/v1/errors/core_errors
   private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(503, 500, 429);
+  private static final Set<String> RETRYABLE_REASONS = ImmutableSet.of("concurrentLimitExceeded",
+      "limitExceeded", "rateLimitExceeded", "rateLimitExceededUnreg", "servingLimitExceeded",
+      "userRateLimitExceeded", "userRateLimitExceededUnreg", "variableTermLimitExceeded");
 
   private final Cloudresourcemanager resourceManager;
 
@@ -51,7 +55,9 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   }
 
   private static ResourceManagerException translate(GoogleJsonError exception) {
-    boolean retryable = RETRYABLE_CODES.contains(exception.getCode());
+    boolean retryable =
+        RETRYABLE_CODES.contains(exception.getCode()) || (!exception.getErrors().isEmpty()
+            && RETRYABLE_REASONS.contains(exception.getErrors().get(0).getReason()));
     return new ResourceManagerException(exception.getCode(), exception.getMessage(), retryable);
   }
 
@@ -82,7 +88,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
           .execute();
     } catch (IOException ex) {
       ResourceManagerException translated = translate(ex);
-      if (translated.code() == HTTP_FORBIDDEN) {
+      if (translated.code() == HTTP_FORBIDDEN || translated.code() == HTTP_NOT_FOUND) {
         return null; // Project not found
       } else {
         throw translated;

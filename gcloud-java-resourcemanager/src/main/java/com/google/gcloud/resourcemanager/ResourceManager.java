@@ -22,7 +22,7 @@ import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.ResourceManagerRpc;
 
-import java.util.HashSet;
+import java.util.Set;
 
 /**
  * An interface for Google Cloud Resource Manager.
@@ -31,7 +31,7 @@ import java.util.HashSet;
  */
 public interface ResourceManager extends Service<ResourceManagerOptions> {
 
-  public static final String DEFAULT_CONTENT_TYPE = "application/octet-stream";
+  String DEFAULT_CONTENT_TYPE = "application/octet-stream";
 
   /**
    * The fields of a project.
@@ -59,7 +59,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     }
 
     static String selector(ProjectField... fields) {
-      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
       fieldStrings.add(PROJECT_ID.selector());
       for (ProjectField field : fields) {
         fieldStrings.add(field.selector());
@@ -71,7 +71,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Class for specifying project get options.
    */
-  public class ProjectGetOption extends Option {
+  class ProjectGetOption extends Option {
 
     private static final long serialVersionUID = 270185129961146874L;
 
@@ -95,7 +95,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Class for specifying project list options.
    */
-  public class ProjectListOption extends Option {
+  class ProjectListOption extends Option {
 
     private static final long serialVersionUID = 7888768979702012328L;
 
@@ -227,10 +227,9 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * Lists the projects visible to the current user.
    *
    * <p>This method returns projects in an unspecified order. New projects do not necessarily appear
-   * at
-   * the end of the list. Use {@link ProjectListOption} to filter this list, set page size, and set
-   * page tokens. Note that pagination is currently not implemented by the Cloud Resource Manager
-   * API.
+   * at the end of the list. Use {@link ProjectListOption} to filter this list, set page size, and
+   * set page tokens. Note that pagination is currently not implemented by the Cloud Resource
+   * Manager API.
    *
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/list">Cloud
@@ -264,7 +263,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">Cloud
    * Resource Manager undelete</a>
-   * @throws ResourceManagerException
+   * @throws ResourceManagerException upon failure
    */
   void undelete(String projectId);
 }
