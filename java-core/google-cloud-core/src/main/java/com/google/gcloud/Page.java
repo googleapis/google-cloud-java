@@ -16,11 +16,22 @@
 
 package com.google.gcloud;
 
+import java.util.Iterator;
+
 /**
  * Interface for Google Cloud paginated results.
  *
  * <p>
- * A typical {@code Page} usage:
+ * Use {@code Page} to iterate through all values (also in next pages):
+ * <pre> {@code
+ * Page<T> page = ...; // get a Page<T> instance
+ * Iterator<T> iterator = page.iterateAll();
+ * while (iterator.hasNext()) {
+ *   T value = iterator.next();
+ *   // do something with value
+ * }}</pre>
+ * <p>
+ * Or handle pagination explicitly:
  * <pre> {@code
  * Page<T> page = ...; // get a Page<T> instance
  * while (page != null) {
@@ -28,8 +39,7 @@ package com.google.gcloud;
  *     // do something with value
  *   }
  *   page = page.nextPage();
- * }
- * }</pre>
+ * }}</pre>
  */
 public interface Page<T> {
 
@@ -37,6 +47,12 @@ public interface Page<T> {
    * Returns the values contained in this page.
    */
   Iterable<T> values();
+
+  /**
+   * Returns an iterator for all values, possibly also in the next pages. Once current page's values
+   * are traversed the iterator fetches next page, if any.
+   */
+  Iterator<T> iterateAll();
 
   /**
    * Returns the cursor for the nextPage or {@code null} if no more results.

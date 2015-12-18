@@ -22,25 +22,40 @@ import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 
-import java.util.Collections;
-
 public class PageImplTest {
 
-  @Test
-  public void testPage() throws Exception {
-    ImmutableList<String> values = ImmutableList.of("1", "2");
-    final PageImpl<String> nextResult =
-        new PageImpl<>(null, "c", Collections.<String>emptyList());
-    PageImpl.NextPageFetcher<String> fetcher = new PageImpl.NextPageFetcher<String>() {
+  private static final ImmutableList<String> VALUES = ImmutableList.of("1", "2");
+  private static final ImmutableList<String> NEXT_VALUES = ImmutableList.of("3", "4");
+  private static final ImmutableList<String> ALL_VALUES = ImmutableList.<String>builder()
+      .addAll(VALUES)
+      .addAll(NEXT_VALUES)
+      .build();
 
+  @Test
+  public void testPage() {
+    final PageImpl<String> nextResult = new PageImpl<>(null, "c", NEXT_VALUES);
+    PageImpl.NextPageFetcher<String> fetcher = new PageImpl.NextPageFetcher<String>() {
       @Override
       public PageImpl<String> nextPage() {
         return nextResult;
       }
     };
-    PageImpl<String> result = new PageImpl<>(fetcher, "c", values);
+    PageImpl<String> result = new PageImpl<>(fetcher, "c", VALUES);
     assertEquals(nextResult, result.nextPage());
     assertEquals("c", result.nextPageCursor());
-    assertEquals(values, ImmutableList.copyOf(result.values().iterator()));
+    assertEquals(VALUES, result.values());
+  }
+
+  @Test
+  public void testIterateAll() {
+    final PageImpl<String> nextResult = new PageImpl<>(null, "c", NEXT_VALUES);
+    PageImpl.NextPageFetcher<String> fetcher = new PageImpl.NextPageFetcher<String>() {
+      @Override
+      public PageImpl<String> nextPage() {
+        return nextResult;
+      }
+    };
+    PageImpl<String> result = new PageImpl<>(fetcher, "c", VALUES);
+    assertEquals(ALL_VALUES, ImmutableList.copyOf(result.iterateAll()));
   }
 }
