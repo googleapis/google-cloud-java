@@ -18,6 +18,7 @@
  * A testing helper for Google BigQuery.
  *
  * <p>A simple usage example:
+ *
  * <p>Before the test:
  * <pre> {@code
  * RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();

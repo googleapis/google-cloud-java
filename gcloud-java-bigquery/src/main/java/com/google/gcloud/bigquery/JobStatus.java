@@ -56,7 +56,7 @@ public class JobStatus implements Serializable {
   /**
    * Returns the state of the job. A {@link State#PENDING} job is waiting to be executed. A
    * {@link State#RUNNING} is being executed. A {@link State#DONE} job has completed either
-   * suceeding or failing. If failed {@link #error()} will be non-null.
+   * succeeding or failing. If failed {@link #error()} will be non-null.
    */
   public State state() {
     return state;
