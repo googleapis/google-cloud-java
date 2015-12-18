@@ -18,6 +18,7 @@
  * A client to Google Cloud Resource Manager.
  *
  * <p>Here's a simple usage example for using gcloud-java-resourcemanager:
+ *
  * <pre>{@code
  * ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
  * String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID.
@@ -30,7 +31,7 @@
  *   System.out.println(projectIterator.next().projectId());
  * }}</pre>
  *
- * Remember that you must authenticate using the Google Cloud SDK. See more about
+ * <p>Remember that you must authenticate using the Google Cloud SDK. See more about
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java#specifying-a-project-id">providing
  * credentials here</a>.
  *

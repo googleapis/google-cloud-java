@@ -16,6 +16,7 @@
 
 package com.google.gcloud.examples;
 
+import com.google.common.base.Joiner;
 import com.google.gcloud.resourcemanager.ProjectInfo;
 import com.google.gcloud.resourcemanager.ResourceManager;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
@@ -23,18 +24,19 @@ import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * An example of using the Google Cloud Resource Manager.
- * <p>
- * This example creates, gets, and lists projects.
- * <p>
- * Steps needed for running the example:<ol>
+ *
+ * <p>This example creates, deletes, gets, and lists projects.
+ *
+ * <p> Steps needed for running the example:<ol>
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven - {@code mvn exec:java
  * -Dexec.mainClass="com.google.gcloud.examples.ResourceManagerExample"
- * -Dexec.args="[create|get|list projectId]"}</li>
+ * -Dexec.args="[list | [create | delete | get] projectId]"}</li>
  * </ol>
  */
 public class ResourceManagerExample {
@@ -44,51 +46,88 @@ public class ResourceManagerExample {
 
   private interface ResourceManagerAction {
     void run(ResourceManager resourceManager, String... args);
-    String getRequiredParams();
+
+    String[] getRequiredParams();
+
+    String[] getOptionalParams();
   }
 
   private static class CreateAction implements ResourceManagerAction {
     @Override
     public void run(ResourceManager resourceManager, String... args) {
-      if (args.length > 0) {
-        String projectId = args[0];
-        ProjectInfo project = resourceManager.create(ProjectInfo.builder(projectId).build());
+      if (args.length % 2 != 1) {
+        System.out.println(usage("create", ACTIONS.get("create")));
+        return;
+      }
+      String projectId = args[0];
+      Map<String, String> labels = new HashMap<>();
+      for (int i = 1; i < args.length; i += 2) {
+        labels.put(args[i], args[i + 1]);
+      }
+      ProjectInfo project =
+          resourceManager.create(ProjectInfo.builder(projectId).labels(labels).build());
         System.out.printf(
             "Successfully created project '%s': %s.%n", projectId, projectDetails(project));
-      } else {
-        System.out.println("Error: must supply a globally unique project ID for your new project.");
-      }
     }
 
     @Override
-    public String getRequiredParams() {
-      return "projectId";
+    public String[] getRequiredParams() {
+      return new String[] {"project-id"};
+    }
+
+    @Override
+    public String[] getOptionalParams() {
+      return new String[] {"label-key-1", "label-value-1", "label-key-2", "label-value-2", "..."};
+    }
+  }
+
+  private static class DeleteAction implements ResourceManagerAction {
+    @Override
+    public void run(ResourceManager resourceManager, String... args) {
+      String projectId = args[0];
+      System.out.print("Are you sure [y/N]: ");
+      Scanner scanner = new Scanner(System.in);
+      if (scanner.nextLine().toLowerCase().equals("y")) {
+        resourceManager.delete(args[0]);
+        System.out.println("Successfully deleted project " + projectId + ".");
+      } else {
+        System.out.println("Will not delete project " + projectId + ".");
+      }
+      scanner.close();
+    }
+
+    @Override
+    public String[] getRequiredParams() {
+      return new String[] {"project-id"};
+    }
+
+    @Override
+    public String[] getOptionalParams() {
+      return new String[] {};
     }
   }
 
   private static class GetAction implements ResourceManagerAction {
     @Override
     public void run(ResourceManager resourceManager, String... args) {
-      if (args.length > 0) {
-        String projectId = args[0];
-        ProjectInfo project = resourceManager.get(projectId);
-        if (project != null) {
-          System.out.printf(
-              "Successfully got project '%s': %s.%n", projectId, projectDetails(project));
-        } else {
-          System.out.printf("Could not find project '%s'.%n", projectId);
-        }
+      String projectId = args[0];
+      ProjectInfo project = resourceManager.get(projectId);
+      if (project != null) {
+        System.out.printf(
+            "Successfully got project '%s': %s.%n", projectId, projectDetails(project));
       } else {
-        System.out.println(
-            "Error: must supply a project ID corresponding to a project for which you have viewing"
-            + " permissions. You can create a project and then call get using the same project ID"
-            + " if you have no other projects to use in this test.");
+        System.out.printf("Could not find project '%s'.%n", projectId);
       }
     }
 
     @Override
-    public String getRequiredParams() {
-      return "projectId";
+    public String[] getRequiredParams() {
+      return new String[] {"project-id"};
+    }
+
+    @Override
+    public String[] getOptionalParams() {
+      return new String[] {};
     }
   }
 
@@ -102,20 +141,51 @@ public class ResourceManagerExample {
     }
 
     @Override
-    public String getRequiredParams() {
-      return "";
+    public String[] getRequiredParams() {
+      return new String[] {};
+    }
+
+    @Override
+    public String[] getOptionalParams() {
+      return new String[] {};
     }
   }
 
   static {
     ACTIONS.put("create", new CreateAction());
+    ACTIONS.put("delete", new DeleteAction());
     ACTIONS.put("get", new GetAction());
     ACTIONS.put("list", new ListAction());
   }
 
   private static String projectDetails(ProjectInfo project) {
-    return "{projectId:" + project.projectId() + ", projectNumber:" + project.projectNumber()
-        + ", createTimeMillis:" + project.createTimeMillis() + ", state:" + project.state() + "}";
+    return new StringBuffer()
+        .append("{projectId:")
+        .append(project.projectId())
+        .append(", projectNumber:")
+        .append(project.projectNumber())
+        .append(", createTimeMillis:")
+        .append(project.createTimeMillis())
+        .append(", state:")
+        .append(project.state())
+        .append(", labels:")
+        .append(project.labels())
+        .append("}")
+        .toString();
+  }
+
+  private static String usage(String actionName, ResourceManagerAction action) {
+    StringBuilder usage = new StringBuilder();
+    usage.append(actionName);
+    String requiredParam = Joiner.on(" ").join(action.getRequiredParams());
+    String optionalParam = Joiner.on(" ").join(action.getOptionalParams());
+    if (!requiredParam.isEmpty()) {
+      usage.append(' ').append(requiredParam);
+    }
+    if (!optionalParam.isEmpty()) {
+      usage.append(" [").append(optionalParam).append("]");
+    }
+    return usage.toString();
   }
 
   public static void main(String... args) {
@@ -124,11 +194,7 @@ public class ResourceManagerExample {
     if (action == null) {
       StringBuilder actionAndParams = new StringBuilder();
       for (Map.Entry<String, ResourceManagerAction> entry : ACTIONS.entrySet()) {
-        actionAndParams.append(entry.getKey());
-        String param = entry.getValue().getRequiredParams();
-        if (param != null && !param.isEmpty()) {
-          actionAndParams.append(' ').append(param);
-        }
+        actionAndParams.append(usage(entry.getKey(), entry.getValue()));
         actionAndParams.append('|');
       }
       actionAndParams.setLength(actionAndParams.length() - 1);
@@ -142,6 +208,10 @@ public class ResourceManagerExample {
     // ResourceManager resourceManager = LocalResourceManagerHelper.options().service();
     ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
     args = args.length > 1 ? Arrays.copyOfRange(args, 1, args.length) : new String[] {};
-    action.run(resourceManager, args);
+    if (args.length < action.getRequiredParams().length) {
+      System.out.println("Usage: " + usage(actionName, action));
+    } else {
+      action.run(resourceManager, args);
+    }
   }
 }
