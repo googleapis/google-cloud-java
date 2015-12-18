@@ -18,7 +18,6 @@ package com.google.gcloud.storage;
 
 import static com.google.gcloud.storage.Acl.Project.ProjectRole.VIEWERS;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
@@ -31,10 +30,8 @@ import com.google.gcloud.storage.BucketInfo.CreatedBeforeDeleteRule;
 import com.google.gcloud.storage.BucketInfo.DeleteRule;
 import com.google.gcloud.storage.BucketInfo.DeleteRule.Type;
 import com.google.gcloud.storage.BucketInfo.IsLiveDeleteRule;
-import com.google.gcloud.storage.BucketInfo.Location;
 import com.google.gcloud.storage.BucketInfo.NumNewerVersionsDeleteRule;
 import com.google.gcloud.storage.BucketInfo.RawDeleteRule;
-import com.google.gcloud.storage.BucketInfo.StorageClass;
 
 import org.junit.Test;
 
@@ -59,8 +56,8 @@ public class BucketInfoTest {
       Collections.singletonList(new AgeDeleteRule(5));
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
-  private static final Location LOCATION = Location.asia();
-  private static final StorageClass STORAGE_CLASS = StorageClass.standard();
+  private static final String LOCATION = "ASIA";
+  private static final String STORAGE_CLASS = "STANDARD";
   private static final Boolean VERSIONING_ENABLED = true;
   private static final BucketInfo BUCKET_INFO = BucketInfo.builder("b")
       .acl(ACL)
@@ -93,7 +90,7 @@ public class BucketInfoTest {
   @Test
   public void testToBuilderIncomplete() {
     BucketInfo incompleteBucketInfo = BucketInfo.builder("b").build();
-    assertEquals(incompleteBucketInfo.name(), incompleteBucketInfo.toBuilder().build().name());
+    compareBuckets(incompleteBucketInfo, incompleteBucketInfo.toBuilder().build());
   }
 
   @Test
@@ -147,16 +144,6 @@ public class BucketInfoTest {
     assertEquals(expected.location(), value.location());
     assertEquals(expected.storageClass(), value.storageClass());
     assertEquals(expected.versioningEnabled(), value.versioningEnabled());
-  }
-
-  @Test
-  public void testLocation() {
-    assertEquals("ASIA", Location.asia().value());
-    assertEquals("EU", Location.eu().value());
-    assertEquals("US", Location.us().value());
-    assertSame(Location.asia(), Location.of("asia"));
-    assertSame(Location.eu(), Location.of("EU"));
-    assertSame(Location.us(), Location.of("uS"));
   }
 
   @Test

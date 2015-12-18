@@ -23,7 +23,10 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- *  Access Control List on for buckets or blobs.
+ * Access Control List for buckets or blobs.
+ *
+ * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+ *     About Access Control Lists</a>
  */
 public final class Acl implements Serializable {
 
@@ -36,6 +39,9 @@ public final class Acl implements Serializable {
     OWNER, READER, WRITER
   }
 
+  /**
+   * Base class for Access Control List entities.
+   */
   public abstract static class Entity implements Serializable {
 
     private static final long serialVersionUID = -2707407252771255840L;
@@ -52,10 +58,16 @@ public final class Acl implements Serializable {
       this.value = value;
     }
 
+    /**
+     * Returns the type of entity.
+     */
     public Type type() {
       return type;
     }
 
+    /**
+     * Returns the entity's value.
+     */
     protected String value() {
       return value;
     }
@@ -112,42 +124,75 @@ public final class Acl implements Serializable {
     }
   }
 
+  /**
+   * Class for ACL Domain entities.
+   */
   public static final class Domain extends Entity {
 
     private static final long serialVersionUID = -3033025857280447253L;
 
+    /**
+     * Creates a domain entity.
+     *
+     * @param domain the domain associated to this entity
+     */
     public Domain(String domain) {
       super(Type.DOMAIN, domain);
     }
 
+    /**
+     * Returns the domain associated to this entity.
+     */
     public String domain() {
       return value();
     }
   }
 
+  /**
+   * Class for ACL Group entities.
+   */
   public static final class Group extends Entity {
 
     private static final long serialVersionUID = -1660987136294408826L;
 
+    /**
+     * Creates a group entity.
+     *
+     * @param email the group email
+     */
     public Group(String email) {
       super(Type.GROUP, email);
     }
 
+    /**
+     * Returns the group email.
+     */
     public String email() {
       return value();
     }
   }
 
+  /**
+   * Class for ACL User entities.
+   */
   public static final class User extends Entity {
 
     private static final long serialVersionUID = 3076518036392737008L;
     private static final String ALL_USERS = "allUsers";
     private static final String ALL_AUTHENTICATED_USERS = "allAuthenticatedUsers";
 
+    /**
+     * Creates a user entity.
+     *
+     * @param email the user email
+     */
     public User(String email) {
       super(Type.USER, email);
     }
 
+    /**
+     * Returns the user email.
+     */
     public String email() {
       return value();
     }
@@ -174,6 +219,9 @@ public final class Acl implements Serializable {
     }
   }
 
+  /**
+   * Class for ACL Project entities.
+   */
   public static final class Project extends Entity {
 
     private static final long serialVersionUID = 7933776866530023027L;
@@ -185,16 +233,28 @@ public final class Acl implements Serializable {
       OWNERS, EDITORS, VIEWERS
     }
 
+    /**
+     * Creates a project entity.
+     *
+     * @param pRole a role in the project, used to select project's teams
+     * @param projectId id of the project
+     */
     public Project(ProjectRole pRole, String projectId) {
       super(Type.PROJECT, pRole.name().toLowerCase() + "-" + projectId);
       this.pRole = pRole;
       this.projectId = projectId;
     }
 
+    /**
+     * Returns the role in the project for this entity.
+     */
     public ProjectRole projectRole() {
       return pRole;
     }
 
+    /**
+     * Returns the project id for this entity.
+     */
     public String projectId() {
       return projectId;
     }
@@ -214,15 +274,27 @@ public final class Acl implements Serializable {
     }
   }
 
+  /**
+   * Creats an ACL object.
+   *
+   * @param entity the entity for this ACL object
+   * @param role the role to associate to the {@code entity} object
+   */
   public Acl(Entity entity, Role role) {
     this.entity = entity;
     this.role = role;
   }
 
+  /**
+   * Returns the entity for this ACL object.
+   */
   public Entity entity() {
     return entity;
   }
 
+  /**
+   * Returns the role associated to the entity in this ACL object.
+   */
   public Role role() {
     return role;
   }

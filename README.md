@@ -25,16 +25,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.0.10</version>
+  <version>0.1.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java:jar:0.0.10'
+compile 'com.google.gcloud:gcloud-java:0.1.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.0.10"
+libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.1.0"
 ```
 
 Example Applications
@@ -45,15 +45,63 @@ Example Applications
 - [`StorageExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
   - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
 
+Specifying a Project ID
+-----------------------
+
+Most `gcloud-java` libraries require a project ID.  There are multiple ways to specify this project ID.
+
+1. When using `gcloud-java` libraries from within Compute/App Engine, there's no need to specify a project ID.  It is automatically inferred from the production environment.
+2. When using `gcloud-java` elsewhere, you can do one of the following:
+  * Supply the project ID when building the service options.  For example, to use Datastore from a project with ID "PROJECT_ID", you can write:
+
+  ```java
+  Datastore datastore = DatastoreOptions.builder().projectId("PROJECT_ID").build().service(); 
+  ```
+  * Specify the environment variable `GCLOUD_PROJECT` to be your desired project ID.
+  * Set the project ID using the [Google Cloud SDK](https://cloud.google.com/sdk/?hl=en).  To use the SDK, [download the SDK](https://cloud.google.com/sdk/?hl=en) if you haven't already, and set the project ID from the command line.  For example:
+
+  ```
+  gcloud config set project PROJECT_ID
+  ```
+
+`gcloud-java` determines the project ID from the following sources in the listed order, stopping once it finds a value:
+
+1. Project ID supplied when building the service options
+2. Project ID specified by the environment variable `GCLOUD_PROJECT`
+3. App Engine project ID
+4. Google Cloud SDK project ID
+5. Compute Engine project ID
+
 Authentication
 --------------
 
-There are multiple ways to authenticate to use Google Cloud services.
+First, ensure that the necessary Google Cloud APIs are enabled for your project. To do this, follow the instructions on the [authentication document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/authentication/readme.md#authentication) shared by all the gcloud language libraries.
+
+Next, choose a method for authenticating API requests from within your project:
 
 1. When using `gcloud-java` libraries from within Compute/App Engine, no additional authentication steps are necessary.
 2. When using `gcloud-java` libraries elsewhere, there are two options:
-  * [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).  Supply a path to the downloaded JSON credentials file when building the options supplied to datastore/storage constructor.
-  * If running locally for development/testing, you can use use [Google Cloud SDK](https://cloud.google.com/sdk/?hl=en).  To use the SDK authentication, [download the SDK](https://cloud.google.com/sdk/?hl=en) if you haven't already.  Then login using the SDK (`gcloud auth login` in command line), and set your current project using `gcloud config set project PROJECT_ID`.
+  * [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).  After downloading that key, you must do one of the following:
+    * Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key.  For example:
+    ```bash
+    export GOOGLE_APPLICATION_CREDENTIALS=/path/to/my/key.json
+    ```
+    * Supply the JSON credentials file when building the service options.  For example, this Storage object has the necessary permissions to interact with your Google Cloud Storage data:
+    ```java
+    Storage storage = StorageOptions.builder()
+      .authCredentials(AuthCredentials.createForJson(new FileInputStream("/path/to/my/key.json"))
+      .build()
+      .service();
+    ```
+  * If running locally for development/testing, you can use use Google Cloud SDK.  Download the SDK if you haven't already, then login using the SDK (`gcloud auth login` in command line).  Be sure to set your project ID as described above.
+
+`gcloud-java` looks for credentials in the following order, stopping once it finds credentials:
+
+1. Credentials supplied when building the service options
+2. App Engine credentials
+3. Key file pointed to by the GOOGLE_APPLICATION_CREDENTIALS environment variable
+4. Google Cloud SDK credentials
+5. Compute Engine credentials
 
 Google Cloud Datastore
 ----------------------
@@ -75,7 +123,7 @@ import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
-Datastore datastore = DatastoreOptions.getDefaultInstance().service();
+Datastore datastore = DatastoreOptions.defaultInstance().service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
@@ -118,8 +166,7 @@ import com.google.gcloud.storage.StorageOptions;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-StorageOptions options = StorageOptions.builder().projectId("project").build();
-Storage storage = options.service();
+Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
 Blob blob = Blob.load(storage, blobId);
 if (blob == null) {
@@ -134,6 +181,11 @@ if (blob == null) {
   channel.close();
 }
 ```
+
+Troubleshooting
+---------------
+
+To get help, follow the `gcloud-java` links in the `gcloud-*` [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Java Versions
 -------------
@@ -161,7 +213,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See [CONTRIBUTING] for more information on how to get started.
+See `gcloud-java`'s [CONTRIBUTING] documentation and the `gcloud-*` [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -172,7 +224,7 @@ Apache 2.0 - See [LICENSE] for more information.
 
 
 [CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md
+[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md
 [cloud-platform]: https://cloud.google.com/

@@ -218,8 +218,8 @@ public class SerializationTest {
 
     options = options.toBuilder()
         .projectId("p2")
-        .retryParams(RetryParams.getDefaultInstance())
-        .authCredentials(AuthCredentials.noCredentials())
+        .retryParams(RetryParams.defaultInstance())
+        .authCredentials(null)
         .build();
     serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);

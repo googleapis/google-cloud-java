@@ -82,8 +82,8 @@ public class SerializationTest {
 
     options = options.toBuilder()
         .projectId("p2")
-        .retryParams(RetryParams.getDefaultInstance())
-        .authCredentials(AuthCredentials.noCredentials())
+        .retryParams(RetryParams.defaultInstance())
+        .authCredentials(null)
         .pathDelimiter(":")
         .build();
     serializedCopy = serializeAndDeserialize(options);
@@ -110,8 +110,7 @@ public class SerializationTest {
   public void testReadChannelState() throws IOException, ClassNotFoundException {
     StorageOptions options = StorageOptions.builder()
         .projectId("p2")
-        .retryParams(RetryParams.getDefaultInstance())
-        .authCredentials(AuthCredentials.noCredentials())
+        .retryParams(RetryParams.defaultInstance())
         .build();
     BlobReadChannel reader =
         new BlobReadChannelImpl(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
@@ -120,15 +119,17 @@ public class SerializationTest {
     assertEquals(state, deserializedState);
     assertEquals(state.hashCode(), deserializedState.hashCode());
     assertEquals(state.toString(), deserializedState.toString());
+    reader.close();
   }
 
   @Test
   public void testWriteChannelState() throws IOException, ClassNotFoundException {
     StorageOptions options = StorageOptions.builder()
         .projectId("p2")
-        .retryParams(RetryParams.getDefaultInstance())
-        .authCredentials(AuthCredentials.noCredentials())
+        .retryParams(RetryParams.defaultInstance())
         .build();
+    // avoid closing when you don't want partial writes to GCS upon failure
+    @SuppressWarnings("resource")
     BlobWriteChannelImpl writer = new BlobWriteChannelImpl(
         options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");
     RestorableState<BlobWriteChannel> state = writer.capture();

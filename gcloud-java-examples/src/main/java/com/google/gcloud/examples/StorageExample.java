@@ -18,17 +18,16 @@ package com.google.gcloud.examples;
 
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
-import com.google.gcloud.Page;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.BlobReadChannel;
-import com.google.gcloud.storage.CopyWriter;
 import com.google.gcloud.storage.BlobWriteChannel;
 import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.BucketInfo;
+import com.google.gcloud.storage.CopyWriter;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.ComposeRequest;
 import com.google.gcloud.storage.Storage.CopyRequest;
@@ -53,6 +52,7 @@ import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -214,12 +214,9 @@ public class StorageExample {
     public void run(Storage storage, String bucketName) {
       if (bucketName == null) {
         // list buckets
-        Page<BucketInfo> bucketPage = storage.list();
-        while (bucketPage != null) {
-          for (BucketInfo b : bucketPage.values()) {
-            System.out.println(b);
-          }
-          bucketPage = bucketPage.nextPage();
+        Iterator<BucketInfo> bucketInfoIterator = storage.list().iterateAll();
+        while (bucketInfoIterator.hasNext()) {
+          System.out.println(bucketInfoIterator.next());
         }
       } else {
         // list a bucket's blobs
@@ -228,12 +225,9 @@ public class StorageExample {
           System.out.println("No such bucket");
           return;
         }
-        Page<Blob> blobPage = bucket.list();
-        while (blobPage != null) {
-          for (Blob b : blobPage.values()) {
-            System.out.println(b.info());
-          }
-          blobPage = blobPage.nextPage();
+        Iterator<Blob> blobIterator = bucket.list().iterateAll();
+        while (blobIterator.hasNext()) {
+          System.out.println(blobIterator.next().info());
         }
       }
     }
@@ -551,7 +545,7 @@ public class StorageExample {
       return;
     }
     StorageOptions.Builder optionsBuilder =
-        StorageOptions.builder().retryParams(RetryParams.getDefaultInstance());
+        StorageOptions.builder().retryParams(RetryParams.defaultInstance());
     StorageAction action;
     String actionName;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {

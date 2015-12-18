@@ -16,8 +16,11 @@
 
 package com.google.gcloud;
 
+import com.google.common.collect.AbstractIterator;
+
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Objects;
 
 /**
@@ -35,6 +38,29 @@ public class PageImpl<T> implements Page<T>, Serializable {
     Page<T> nextPage();
   }
 
+  static class PageIterator<T> extends AbstractIterator<T> {
+
+    private Iterator<T> currentPageIterator;
+    private Page<T> currentPage;
+
+    PageIterator(Page<T> currentPage) {
+      this.currentPageIterator = currentPage.values().iterator();
+      this.currentPage = currentPage;
+    }
+
+    @Override
+    protected T computeNext() {
+      while (!currentPageIterator.hasNext()) {
+        currentPage = currentPage.nextPage();
+        if (currentPage == null) {
+          return endOfData();
+        }
+        currentPageIterator = currentPage.values().iterator();
+      }
+      return currentPageIterator.next();
+    }
+  }
+
   /**
    * Creates a {@code PageImpl} object. In order for the object to be serializable the {@code
    * results} parameter must be serializable.
@@ -47,7 +73,12 @@ public class PageImpl<T> implements Page<T>, Serializable {
 
   @Override
   public Iterable<T> values() {
-    return results == null ? Collections.EMPTY_LIST : results;
+    return results == null ? Collections.<T>emptyList() : results;
+  }
+
+  @Override
+  public Iterator<T> iterateAll() {
+    return new PageIterator<T>(this);
   }
 
   @Override

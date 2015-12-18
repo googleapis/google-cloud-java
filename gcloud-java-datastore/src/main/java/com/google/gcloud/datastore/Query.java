@@ -35,6 +35,10 @@ import java.util.Map;
  * A Google Cloud Datastore query.
  * For usage examples see {@link GqlQuery} and {@link StructuredQuery}.
  *
+ * Note that queries require proper indexing. See
+ * <a href="https://cloud.google.com/datastore/docs/tools/indexconfig">
+ * Cloud Datastore Index Configuration</a> for help configuring indexes.
+ *
  * @param <V> the type of the values returned by this query.
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/queries">Datastore Queries</a>
  */

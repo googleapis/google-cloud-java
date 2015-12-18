@@ -260,7 +260,6 @@ public class BigQueryImplTest {
     EasyMock.replay(rpcFactoryMock);
     options = BigQueryOptions.builder()
         .projectId(PROJECT)
-        .authCredentials(AuthCredentials.noCredentials())
         .serviceRpcFactory(rpcFactoryMock)
         .build();
   }
@@ -1011,7 +1010,7 @@ public class BigQueryImplTest {
         .andThrow(new BigQueryException(500, "InternalError", true))
         .andReturn(DATASET_INFO_WITH_PROJECT.toPb());
     EasyMock.replay(bigqueryRpcMock);
-    bigquery = options.toBuilder().retryParams(RetryParams.getDefaultInstance()).build().service();
+    bigquery = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
     DatasetInfo dataset = bigquery.getDataset(DATASET);
     assertEquals(DATASET_INFO_WITH_PROJECT, dataset);
   }
@@ -1022,7 +1021,7 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.getDataset(DATASET, EMPTY_RPC_OPTIONS))
         .andThrow(new BigQueryException(501, exceptionMessage, false));
     EasyMock.replay(bigqueryRpcMock);
-    bigquery = options.toBuilder().retryParams(RetryParams.getDefaultInstance()).build().service();
+    bigquery = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
     thrown.expect(BigQueryException.class);
     thrown.expectMessage(exceptionMessage);
     bigquery.getDataset(DatasetId.of(DATASET));
@@ -1034,7 +1033,7 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.getDataset(DATASET, EMPTY_RPC_OPTIONS))
         .andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(bigqueryRpcMock);
-    bigquery = options.toBuilder().retryParams(RetryParams.getDefaultInstance()).build().service();
+    bigquery = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
     thrown.expect(BigQueryException.class);
     thrown.expectMessage(exceptionMessage);
     bigquery.getDataset(DATASET);

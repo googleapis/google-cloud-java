@@ -18,8 +18,8 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.gcloud.storage.Blob.BlobSourceOption.toSourceOptions;
 import static com.google.gcloud.storage.Blob.BlobSourceOption.toGetOptions;
+import static com.google.gcloud.storage.Blob.BlobSourceOption.toSourceOptions;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
@@ -50,6 +50,9 @@ public final class Blob {
   private final Storage storage;
   private final BlobInfo info;
 
+  /**
+   * Class for specifying blob source options when {@code Blob} methods are used.
+   */
   public static class BlobSourceOption extends Option {
 
     private static final long serialVersionUID = 214616862061934846L;
@@ -88,18 +91,34 @@ public final class Blob {
       }
     }
 
+    /**
+     * Returns an option for blob's generation match. If this option is used the request will fail
+     * if generation does not match.
+     */
     public static BlobSourceOption generationMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's generation mismatch. If this option is used the request will
+     * fail if generation matches.
+     */
     public static BlobSourceOption generationNotMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration match. If this option is used the request will
+     * fail if metageneration does not match.
+     */
     public static BlobSourceOption metagenerationMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration mismatch. If this option is used the request will
+     * fail if metageneration matches.
+     */
     public static BlobSourceOption metagenerationNotMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
@@ -262,7 +281,7 @@ public final class Blob {
    * Deletes this blob.
    *
    * @param options blob delete options
-   * @return true if blob was deleted
+   * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   public boolean delete(BlobSourceOption... options) {
@@ -403,8 +422,8 @@ public final class Blob {
    * @param storage the storage service used to issue the request
    * @param blobs the blobs to delete
    * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
-   *     list is {@code true}. If deletion failed or access to the resource was denied the item is
-   *     {@code false}.
+   *     list is {@code true}. If a blob was not found, deletion failed or access to the resource
+   *     was denied the corresponding item is {@code false}.
    * @throws StorageException upon failure
    */
   public static List<Boolean> delete(Storage storage, BlobId... blobs) {
