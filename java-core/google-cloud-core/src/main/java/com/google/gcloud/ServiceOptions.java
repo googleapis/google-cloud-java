@@ -17,7 +17,7 @@
 package com.google.gcloud;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkArgument;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
@@ -25,6 +25,7 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.spi.ServiceRpcFactory;
 
@@ -52,11 +53,8 @@ import java.util.jar.Manifest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class ServiceOptions<
-    ServiceT extends Service,
-    ServiceRpcT,
-    OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>>
-    implements Serializable {
+public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, ServiceRpcT,
+    OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>> implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final long serialVersionUID = 1203687993961393350L;
@@ -109,12 +107,6 @@ public abstract class ServiceOptions<
           // Maybe not on App Engine
         }
       }
-      // Consider Compute
-      try {
-        return AuthCredentials.getComputeCredential().getTransport();
-      } catch (Exception e) {
-        // Maybe not on GCE
-      }
       return new NetHttpTransport();
     }
   }
@@ -158,9 +150,7 @@ public abstract class ServiceOptions<
     }
   }
 
-  protected abstract static class Builder<
-      ServiceT extends Service,
-      ServiceRpcT,
+  protected abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
       OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
       B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {
 
@@ -306,13 +296,20 @@ public abstract class ServiceOptions<
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
       Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
-    projectId = checkNotNull(builder.projectId != null ? builder.projectId : defaultProject());
+    projectId = builder.projectId != null ? builder.projectId : defaultProject();
+    if (projectIdRequired()) {
+      checkArgument(
+          projectId != null,
+          "A project ID is required for this service but could not be determined from the builder "
+          + "or the environment.  Please set a project ID using the builder.");
+    }
     host = firstNonNull(builder.host, defaultHost());
     httpTransportFactory = firstNonNull(builder.httpTransportFactory,
         getFromServiceLoader(HttpTransportFactory.class, DefaultHttpTransportFactory.INSTANCE));
     httpTransportFactoryClassName = httpTransportFactory.getClass().getName();
-    authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
-    authCredentialsState = authCredentials.capture();
+    authCredentials =
+        builder.authCredentials != null ? builder.authCredentials : defaultAuthCredentials();
+    authCredentialsState = authCredentials != null ? authCredentials.capture() : null;
     retryParams = builder.retryParams;
     serviceFactory = firstNonNull(builder.serviceFactory,
         getFromServiceLoader(serviceFactoryClass, defaultServiceFactory()));
@@ -325,8 +322,18 @@ public abstract class ServiceOptions<
     clock = firstNonNull(builder.clock, Clock.defaultClock());
   }
 
+  /**
+   * Returns whether a service requires a project ID. This method may be overridden in
+   * service-specific Options objects.
+   *
+   * @return true if a project ID is required to use the service, false if not.
+   */
+  protected boolean projectIdRequired() {
+    return true;
+  }
+
   private static AuthCredentials defaultAuthCredentials() {
-    // Consider App Engine. This will not be needed once issue #21 is fixed.
+    // Consider App Engine.
     if (appEngineAppId() != null) {
       try {
         return AuthCredentials.createForAppEngine();
@@ -338,16 +345,8 @@ public abstract class ServiceOptions<
     try {
       return AuthCredentials.createApplicationDefaults();
     } catch (Exception ex) {
-      // fallback to old-style
+      return null;
     }
-
-    // Consider old-style Compute. This will not be needed once issue #21 is fixed.
-    try {
-      return AuthCredentials.createForComputeEngine();
-    } catch (Exception ignore) {
-      // Maybe not on GCE
-    }
-    return AuthCredentials.noCredentials();
   }
 
   protected static String appEngineAppId() {
@@ -367,6 +366,49 @@ public abstract class ServiceOptions<
   }
 
   protected static String googleCloudProjectId() {
+    File configDir;
+    if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
+      configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
+    } else if (isWindows() && System.getenv().containsKey("APPDATA")) {
+      configDir = new File(System.getenv("APPDATA"), "gcloud");
+    } else {
+      configDir = new File(System.getProperty("user.home"), ".config/gcloud");
+    }
+    FileReader fileReader = null;
+    try {
+      fileReader = new FileReader(new File(configDir, "configurations/config_default"));
+    } catch (FileNotFoundException newConfigFileNotFoundEx) {
+      try {
+        fileReader = new FileReader(new File(configDir, "properties"));
+      } catch (FileNotFoundException oldConfigFileNotFoundEx) {
+        // ignore
+      }
+    }
+    if (fileReader != null) {
+      try (BufferedReader reader = new BufferedReader(fileReader)) {
+        String line;
+        String section = null;
+        Pattern projectPattern = Pattern.compile("^project\\s*=\\s*(.*)$");
+        Pattern sectionPattern = Pattern.compile("^\\[(.*)\\]$");
+        while ((line = reader.readLine()) != null) {
+          if (line.isEmpty() || line.startsWith(";")) {
+            continue;
+          }
+          line = line.trim();
+          Matcher matcher = sectionPattern.matcher(line);
+          if (matcher.matches()) {
+            section = matcher.group(1);
+          } else if (section == null || section.equals("core")) {
+            matcher = projectPattern.matcher(line);
+            if (matcher.matches()) {
+              return matcher.group(1);
+            }
+          }
+        }
+      } catch (IOException ex) {
+        // ignore
+      }
+    }
     try {
       URL url = new URL("http://metadata/computeMetadata/v1/project/project-id");
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -378,48 +420,6 @@ public abstract class ServiceOptions<
         }
       }
     } catch (IOException ignore) {
-      // ignore
-    }
-    File configDir;
-    if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
-      configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
-    } else if (isWindows() && System.getenv().containsKey("APPDATA")) {
-      configDir = new File(System.getenv("APPDATA"), "gcloud");
-    } else {
-      configDir = new File(System.getProperty("user.home"), ".config/gcloud");
-    }
-    FileReader fileReader;
-    try {
-      fileReader = new FileReader(new File(configDir, "configurations/config_default"));
-    } catch (FileNotFoundException newConfigFileNotFoundEx) {
-      try {
-        fileReader = new FileReader(new File(configDir, "properties"));
-      } catch (FileNotFoundException oldConfigFileNotFoundEx) {
-        // return null if we can't find config file
-        return null;
-      }
-    }
-    try (BufferedReader reader = new BufferedReader(fileReader)) {
-      String line;
-      String section = null;
-      Pattern projectPattern = Pattern.compile("^project\\s*=\\s*(.*)$");
-      Pattern sectionPattern = Pattern.compile("^\\[(.*)\\]$");
-      while ((line = reader.readLine()) != null) {
-        if (line.isEmpty() || line.startsWith(";")) {
-          continue;
-        }
-        line = line.trim();
-        Matcher matcher = sectionPattern.matcher(line);
-        if (matcher.matches()) {
-          section = matcher.group(1);
-        } else if (section == null || section.equals("core")) {
-          matcher = projectPattern.matcher(line);
-          if (matcher.matches()) {
-            return matcher.group(1);
-          }
-        }
-      }
-    } catch (IOException ex) {
       // ignore
     }
     // return null if can't determine
@@ -434,9 +434,11 @@ public abstract class ServiceOptions<
     try {
       Class<?> factoryClass =
           Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
+      Class<?> serviceClass =
+          Class.forName("com.google.appengine.api.appidentity.AppIdentityService");
       Method method = factoryClass.getMethod("getAppIdentityService");
       Object appIdentityService = method.invoke(null);
-      method = appIdentityService.getClass().getMethod("getServiceAccountName");
+      method = serviceClass.getMethod("getServiceAccountName");
       String serviceAccountName = (String) method.invoke(appIdentityService);
       int indexOfAtSign = serviceAccountName.indexOf('@');
       return serviceAccountName.substring(0, indexOfAtSign);
@@ -446,6 +448,7 @@ public abstract class ServiceOptions<
     }
   }
 
+  @SuppressWarnings("unchecked")
   public ServiceT service() {
     if (service == null) {
       service = serviceFactory.create((OptionsT) this);
@@ -453,6 +456,7 @@ public abstract class ServiceOptions<
     return service;
   }
 
+  @SuppressWarnings("unchecked")
   public ServiceRpcT rpc() {
     if (rpc == null) {
       rpc = serviceRpcFactory.create((OptionsT) this);
@@ -462,6 +466,8 @@ public abstract class ServiceOptions<
 
   /**
    * Returns the project id.
+   *
+   * Return value can be null (for services that don't require a project id).
    */
   public String projectId() {
     return projectId;
@@ -501,13 +507,15 @@ public abstract class ServiceOptions<
    * options.
    */
   public HttpRequestInitializer httpRequestInitializer() {
-    HttpTransport httpTransport = httpTransportFactory.create();
-    final HttpRequestInitializer baseRequestInitializer =
-        authCredentials().httpRequestInitializer(httpTransport, scopes());
+    final HttpRequestInitializer delegate = authCredentials() != null
+        ? new HttpCredentialsAdapter(authCredentials().credentials().createScoped(scopes()))
+        : null;
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
-        baseRequestInitializer.initialize(httpRequest);
+        if (delegate != null) {
+          delegate.initialize(httpRequest);
+        }
         if (connectTimeout >= 0) {
           httpRequest.setConnectTimeout(connectTimeout);
         }
@@ -573,9 +581,10 @@ public abstract class ServiceOptions<
     httpTransportFactory = newInstance(httpTransportFactoryClassName);
     serviceFactory = newInstance(serviceFactoryClassName);
     serviceRpcFactory = newInstance(serviceRpcFactoryClassName);
-    authCredentials = authCredentialsState.restore();
+    authCredentials = authCredentialsState != null ? authCredentialsState.restore() : null;
   }
 
+  @SuppressWarnings("unchecked")
   private static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
     try {
       return (T) Class.forName(className).newInstance();
