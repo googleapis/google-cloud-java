@@ -213,8 +213,8 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   /**
    * Retrieves the project identified by the specified project ID.
    *
-   * <p>The caller must have read permissions for this project. Returns {@code null} if project
-   * not found.
+   * <p>Returns {@code null} if the project is not found or if the user doesn't have read
+   * permissions for the project.
    *
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/get">Cloud

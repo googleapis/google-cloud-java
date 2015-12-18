@@ -89,7 +89,8 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
     } catch (IOException ex) {
       ResourceManagerException translated = translate(ex);
       if (translated.code() == HTTP_FORBIDDEN || translated.code() == HTTP_NOT_FOUND) {
-        return null; // Project not found
+        // Service can return either 403 or 404 to signify that the project doesn't exist.
+        return null;
       } else {
         throw translated;
       }
