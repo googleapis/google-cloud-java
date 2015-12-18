@@ -33,7 +33,7 @@ To run examples from your command line:
 
 1. Login using gcloud SDK (`gcloud auth login` in command line)
 
-2. If you are running an example other than `ResourceManagerExample`, set your current project using `gcloud config set project PROJECT_ID`. If you are running `ResourceManagerExample`, unset your project by using `gcloud config unset project`.
+2. Set your current project using `gcloud config set project PROJECT_ID`. This step is not necessary for `ResourceManagerExample`.
 
 3. Compile using Maven (`mvn compile` in command line from your base project directory)
 
