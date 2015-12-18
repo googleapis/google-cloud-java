@@ -27,8 +27,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gcloud.PageImpl;
 import com.google.gcloud.Page;
+import com.google.gcloud.PageImpl;
 import com.google.gcloud.storage.BatchResponse.Result;
 
 import org.easymock.Capture;
@@ -153,8 +153,8 @@ public class BucketTest {
     for (BlobInfo info : BLOB_INFO_RESULTS) {
       batchResultList.add(new Result<>(info));
     }
-    BatchResponse response =
-        new BatchResponse(Collections.EMPTY_LIST, Collections.EMPTY_LIST, batchResultList);
+    BatchResponse response = new BatchResponse(Collections.<Result<Boolean>>emptyList(),
+        Collections.<Result<BlobInfo>>emptyList(), batchResultList);
     expect(storage.apply(capture(capturedBatchRequest))).andReturn(response);
     replay(storage);
     List<Blob> blobs = bucket.get("n1", "n2", "n3");

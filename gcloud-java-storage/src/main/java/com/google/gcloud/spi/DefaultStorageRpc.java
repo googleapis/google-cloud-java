@@ -30,11 +30,11 @@ import static com.google.gcloud.spi.StorageRpc.Option.PREDEFINED_ACL;
 import static com.google.gcloud.spi.StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL;
 import static com.google.gcloud.spi.StorageRpc.Option.PREFIX;
 import static com.google.gcloud.spi.StorageRpc.Option.VERSIONS;
+import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
-import com.google.api.client.googleapis.media.MediaHttpDownloader;
 import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpHeaders;
@@ -58,7 +58,9 @@ import com.google.api.services.storage.model.ComposeRequest.SourceObjects.Object
 import com.google.api.services.storage.model.Objects;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.StorageOptions;
@@ -66,7 +68,9 @@ import com.google.gcloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -80,6 +84,7 @@ public class DefaultStorageRpc implements StorageRpc {
   // see: https://cloud.google.com/storage/docs/concepts-techniques#practices
   private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(504, 503, 502, 500, 429, 408);
   private static final long MEGABYTE = 1024L * 1024L;
+  private static final int MAX_BATCH_DELETES = 100;
 
   public DefaultStorageRpc(StorageOptions options) {
     HttpTransport transport = options.httpTransportFactory().create();
@@ -93,10 +98,15 @@ public class DefaultStorageRpc implements StorageRpc {
 
   private static StorageException translate(IOException exception) {
     StorageException translated;
-    if (exception instanceof GoogleJsonResponseException) {
+    if (exception instanceof GoogleJsonResponseException
+        && ((GoogleJsonResponseException) exception).getDetails() != null) {
       translated = translate(((GoogleJsonResponseException) exception).getDetails());
     } else {
-      translated = new StorageException(0, exception.getMessage(), false);
+      boolean retryable = false;
+      if (exception instanceof SocketTimeoutException) {
+        retryable = true;
+      }
+      translated = new StorageException(0, exception.getMessage(), retryable);
     }
     translated.initCause(exception);
     return translated;
@@ -190,7 +200,11 @@ public class DefaultStorageRpc implements StorageRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      throw translate(ex);
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
     }
   }
 
@@ -199,7 +213,11 @@ public class DefaultStorageRpc implements StorageRpc {
     try {
       return getRequest(object, options).execute();
     } catch (IOException ex) {
-      throw translate(ex);
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
     }
   }
 
@@ -207,6 +225,7 @@ public class DefaultStorageRpc implements StorageRpc {
       throws IOException {
     return storage.objects()
         .get(object.getBucket(), object.getName())
+        .setGeneration(object.getGeneration())
         .setProjection(DEFAULT_PROJECTION)
         .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
         .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
@@ -263,7 +282,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return true;
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == 404) {
+      if (serviceException.code() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -277,7 +296,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return true;
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == 404) {
+      if (serviceException.code() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -288,6 +307,7 @@ public class DefaultStorageRpc implements StorageRpc {
       throws IOException {
     return storage.objects()
         .delete(blob.getBucket(), blob.getName())
+        .setGeneration(blob.getGeneration())
         .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
         .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
         .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
@@ -332,6 +352,7 @@ public class DefaultStorageRpc implements StorageRpc {
     try {
       Storage.Objects.Get getRequest = storage.objects()
           .get(from.getBucket(), from.getName())
+          .setGeneration(from.getGeneration())
           .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
@@ -347,6 +368,26 @@ public class DefaultStorageRpc implements StorageRpc {
 
   @Override
   public BatchResponse batch(BatchRequest request) throws StorageException {
+    List<List<Tuple<StorageObject, Map<Option, ?>>>> partitionedToDelete =
+        Lists.partition(request.toDelete, MAX_BATCH_DELETES);
+    Iterator<List<Tuple<StorageObject, Map<Option, ?>>>> iterator = partitionedToDelete.iterator();
+    BatchRequest chunkRequest = new BatchRequest(
+        iterator.hasNext()
+            ? iterator.next() : ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of(),
+        request.toUpdate, request.toGet);
+    BatchResponse response = batchChunk(chunkRequest);
+    Map<StorageObject, Tuple<Boolean, StorageException>> deletes =
+        Maps.newHashMapWithExpectedSize(request.toDelete.size());
+    deletes.putAll(response.deletes);
+    while (iterator.hasNext()) {
+      chunkRequest = new BatchRequest(iterator.next(), null, null);
+      BatchResponse deleteBatchResponse = batchChunk(chunkRequest);
+      deletes.putAll(deleteBatchResponse.deletes);
+    }
+    return new BatchResponse(deletes, response.updates, response.gets);
+  }
+
+  private BatchResponse batchChunk(BatchRequest request) {
     com.google.api.client.googleapis.batch.BatchRequest batch = storage.batch();
     final Map<StorageObject, Tuple<Boolean, StorageException>> deletes =
         Maps.newConcurrentMap();
@@ -364,7 +405,11 @@ public class DefaultStorageRpc implements StorageRpc {
 
           @Override
           public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
-            deletes.put(tuple.x(), Tuple.<Boolean, StorageException>of(null, translate(e)));
+            if (e.getCode() == HTTP_NOT_FOUND) {
+              deletes.put(tuple.x(), Tuple.<Boolean, StorageException>of(Boolean.FALSE, null));
+            } else {
+              deletes.put(tuple.x(), Tuple.<Boolean, StorageException>of(null, translate(e)));
+            }
           }
         });
       }
@@ -393,8 +438,13 @@ public class DefaultStorageRpc implements StorageRpc {
 
           @Override
           public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
-            gets.put(tuple.x(),
-                Tuple.<StorageObject, StorageException>of(null, translate(e)));
+            if (e.getCode() == HTTP_NOT_FOUND) {
+              gets.put(tuple.x(),
+                  Tuple.<StorageObject, StorageException>of(null, null));
+            } else {
+              gets.put(tuple.x(),
+                  Tuple.<StorageObject, StorageException>of(null, translate(e)));
+            }
           }
         });
       }
@@ -406,20 +456,23 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public byte[] read(StorageObject from, Map<Option, ?> options, long position, int bytes)
-      throws StorageException {
+  public Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position,
+      int bytes) throws StorageException {
     try {
-      Get req = storage.objects().get(from.getBucket(), from.getName());
-      req.setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
+      Get req = storage.objects()
+          .get(from.getBucket(), from.getName())
+          .setGeneration(from.getGeneration())
+          .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
-      MediaHttpDownloader downloader = req.getMediaHttpDownloader();
-      downloader.setContentRange(position, (int) position + bytes);
-      downloader.setDirectDownloadEnabled(true);
+      StringBuilder range = new StringBuilder();
+      range.append("bytes=").append(position).append("-").append(position + bytes - 1);
+      req.getRequestHeaders().setRange(range.toString());
       ByteArrayOutputStream output = new ByteArrayOutputStream();
-      req.executeMediaAndDownloadTo(output);
-      return output.toByteArray();
+      req.executeMedia().download(output);
+      String etag = req.getLastResponseHeaders().getETag();
+      return Tuple.of(etag, output.toByteArray());
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -521,6 +574,7 @@ public class DefaultStorageRpc implements StorageRpc {
       com.google.api.services.storage.model.RewriteResponse rewriteReponse = storage.objects()
           .rewrite(req.source.getBucket(), req.source.getName(), req.target.getBucket(),
               req.target.getName(), req.target.getContentType() != null ? req.target : null)
+          .setSourceGeneration(req.source.getGeneration())
           .setRewriteToken(token)
           .setMaxBytesRewrittenPerCall(maxBytesRewrittenPerCall)
           .setProjection(DEFAULT_PROJECTION)

@@ -23,6 +23,7 @@ import com.google.common.base.MoreObjects;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.spi.StorageRpc.Tuple;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -41,6 +42,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
   private final StorageOptions serviceOptions;
   private final BlobId blob;
   private final Map<StorageRpc.Option, ?> requestOptions;
+  private String lastEtag;
   private int position;
   private boolean isOpen;
   private boolean endOfStream;
@@ -117,12 +119,19 @@ class BlobReadChannelImpl implements BlobReadChannel {
       }
       final int toRead = Math.max(byteBuffer.remaining(), chunkSize);
       try {
-        buffer = runWithRetries(new Callable<byte[]>() {
+        Tuple<String, byte[]> result = runWithRetries(new Callable<Tuple<String, byte[]>>() {
           @Override
-          public byte[] call() {
+          public Tuple<String, byte[]> call() {
             return storageRpc.read(storageObject, requestOptions, position, toRead);
           }
         }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER);
+        if (lastEtag != null && !Objects.equals(result.x(), lastEtag)) {
+          StringBuilder messageBuilder = new StringBuilder();
+          messageBuilder.append("Blob ").append(blob).append(" was updated while reading");
+          throw new StorageException(0, messageBuilder.toString(), false);
+        }
+        lastEtag = result.x();
+        buffer = result.y();
       } catch (RetryHelper.RetryHelperException e) {
         throw StorageException.translateAndThrow(e);
       }
@@ -152,6 +161,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
     private final StorageOptions serviceOptions;
     private final BlobId blob;
     private final Map<StorageRpc.Option, ?> requestOptions;
+    private final String lastEtag;
     private final int position;
     private final boolean isOpen;
     private final boolean endOfStream;
@@ -161,6 +171,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
       this.serviceOptions = builder.serviceOptions;
       this.blob = builder.blob;
       this.requestOptions = builder.requestOptions;
+      this.lastEtag = builder.lastEtag;
       this.position = builder.position;
       this.isOpen = builder.isOpen;
       this.endOfStream = builder.endOfStream;
@@ -171,6 +182,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
       private final StorageOptions serviceOptions;
       private final BlobId blob;
       private final Map<StorageRpc.Option, ?> requestOptions;
+      private String lastEtag;
       private int position;
       private boolean isOpen;
       private boolean endOfStream;
@@ -180,6 +192,11 @@ class BlobReadChannelImpl implements BlobReadChannel {
         this.serviceOptions = options;
         this.blob = blob;
         this.requestOptions = reqOptions;
+      }
+
+      Builder lastEtag(String lastEtag) {
+        this.lastEtag = lastEtag;
+        return this;
       }
 
       Builder position(int position) {
@@ -215,6 +232,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
     @Override
     public BlobReadChannel restore() {
       BlobReadChannelImpl channel = new BlobReadChannelImpl(serviceOptions, blob, requestOptions);
+      channel.lastEtag = lastEtag;
       channel.position = position;
       channel.isOpen = isOpen;
       channel.endOfStream = endOfStream;
@@ -224,8 +242,8 @@ class BlobReadChannelImpl implements BlobReadChannel {
 
     @Override
     public int hashCode() {
-      return Objects.hash(serviceOptions, blob, requestOptions, position, isOpen, endOfStream,
-          chunkSize);
+      return Objects.hash(serviceOptions, blob, requestOptions, lastEtag, position, isOpen,
+          endOfStream, chunkSize);
     }
 
     @Override
@@ -240,6 +258,7 @@ class BlobReadChannelImpl implements BlobReadChannel {
       return Objects.equals(this.serviceOptions, other.serviceOptions)
           && Objects.equals(this.blob, other.blob)
           && Objects.equals(this.requestOptions, other.requestOptions)
+          && Objects.equals(this.lastEtag, other.lastEtag)
           && this.position == other.position
           && this.isOpen == other.isOpen
           && this.endOfStream == other.endOfStream

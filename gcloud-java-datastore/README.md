@@ -20,16 +20,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-datastore</artifactId>
-  <version>0.0.10</version>
+  <version>0.1.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-datastore:jar:0.0.10'
+compile 'com.google.gcloud:gcloud-java-datastore:jar:0.1.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-datastore" % "0.0.10"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-datastore" % "0.1.0"
 ```
 
 Example Application
@@ -56,35 +56,145 @@ Cloud Datastore for your project.
 See the ``gcloud-java`` API [datastore documentation][datastore-api] to learn how to interact
 with the Cloud Datastore using this Client Library.
 
-Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) and a project ID if running this snippet elsewhere.
+Getting Started
+---------------
+#### Prerequisites
+For this tutorial, you will need a [Google Developers Console](https://console.developers.google.com/) project with the Datastore API enabled. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+
+#### Installation and setup
+You'll need to obtain the `gcloud-java-datastore` library.  See the [Quickstart](#quickstart) section to add `gcloud-java-datastore` as a dependency in your code.
+
+#### Creating an authorized service object
+To make authenticated requests to Google Cloud Datastore, you must create a service object with credentials. You can then make API calls by calling methods on the Datastore service object. The simplest way to authenticate is to use [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials). These credentials are automatically inferred from your environment, so you only need the following code to create your service object:
 
 ```java
 import com.google.gcloud.datastore.Datastore;
 import com.google.gcloud.datastore.DatastoreOptions;
-import com.google.gcloud.datastore.DateTime;
+
+Datastore datastore = DatastoreOptions.defaultInstance().service();
+```
+
+For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) page.
+
+#### Storing data
+Objects in Datastore are known as entities. Entities are grouped by "kind" and have keys for easy access. In this code snippet, we will create a new entity representing a person and store that data by the person's name.  First, add the following imports at the top of your file:
+
+```java
 import com.google.gcloud.datastore.Entity;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
+```
 
-Datastore datastore = DatastoreOptions.getDefaultInstance().service();
-KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
-Key key = keyFactory.newKey(keyName);
-Entity entity = datastore.get(key);
-if (entity == null) {
-  entity = Entity.builder(key)
-      .set("name", "John Do")
-      .set("age", 30)
-      .set("access_time", DateTime.now())
-      .build();
-  datastore.put(entity);
-} else {
-  System.out.println("Updating access_time for " + entity.getString("name"));
-  entity = Entity.builder(entity)
-      .set("access_time", DateTime.now())
-      .build();
-  datastore.update(entity);
+Then add the following code to put an entity in Datastore.
+
+```java
+KeyFactory keyFactory = datastore.newKeyFactory().kind("Person");
+Key key = keyFactory.newKey("John Doe");
+Entity entity = Entity.builder(key)
+    .set("age", 51)
+    .set("favorite_food", "pizza")
+    .build();
+datastore.put(entity);
+```
+
+Later, if you want to get this entity back, add the following to your code:
+
+```java
+Entity johnEntity = datastore.get(key);
+```
+
+#### Running a query
+In addition to retrieving entities by their keys, you can perform queries to retrieve entities by the values of their properties. A typical query includes an entity kind, filters to select entities with matching values, and sort orders to sequence the results. `gcloud-java-datastore` supports two types of queries: `StructuredQuery` (that allows you to construct query elements) and `GqlQuery` (which operates using [GQL syntax](https://cloud.google.com/datastore/docs/apis/gql/gql_reference)) in string format. In this tutorial, we will use a simple `StructuredQuery`.
+
+Suppose that you've added more people to Datastore, and now you want to find all people whose favorite food is pizza. Import the following:
+
+```java
+import com.google.gcloud.datastore.Query;
+import com.google.gcloud.datastore.QueryResults;
+import com.google.gcloud.datastore.StructuredQuery;
+import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
+```
+
+Then add the following code to your program:
+
+```java
+Query<Entity> query = Query.entityQueryBuilder()
+    .kind("Person")
+    .filter(PropertyFilter.eq("favorite_food", "pizza"))
+    .build();
+QueryResults<Entity> results = datastore.run(query);
+while (results.hasNext()) {
+  Entity currentEntity = results.next();
 }
 ```
+
+Cloud Datastore relies on indexing to run queries. Indexing is turned on by default for most types of properties. To read more about indexing, see the [Cloud Datastore Index Configuration documentation](https://cloud.google.com/datastore/docs/tools/indexconfig).
+
+#### Complete source code
+
+Here we put together all the code shown above into one program.  This program assumes that you are running on Compute Engine or from your own desktop. To run this example on App Engine, simply move the code from the main method to your application's servlet class.
+
+```java
+import com.google.gcloud.datastore.Datastore;
+import com.google.gcloud.datastore.DatastoreOptions;
+import com.google.gcloud.datastore.Entity;
+import com.google.gcloud.datastore.Key;
+import com.google.gcloud.datastore.KeyFactory;
+import com.google.gcloud.datastore.Query;
+import com.google.gcloud.datastore.QueryResults;
+import com.google.gcloud.datastore.StructuredQuery;
+import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
+
+public class GcloudJavaDatastoreExample {
+
+  public static void main(String[] args) {
+    // Create datastore service object.
+    // By default, credentials are inferred from the runtime environment.
+    Datastore datastore = DatastoreOptions.defaultInstance().service();
+
+    // Add an entity to Datastore
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("Person");
+    Key key = keyFactory.newKey("John Doe");
+    Entity entity = Entity.builder(key)
+        .set("age", 51)
+        .set("favorite_food", "pizza")
+        .build();
+    datastore.put(entity);
+
+    // Get an entity from Datastore
+    Entity johnEntity = datastore.get(key);
+
+    // Add a couple more entities to make the query results more interesting
+    Key janeKey = keyFactory.newKey("Jane Doe");
+    Entity janeEntity = Entity.builder(janeKey)
+        .set("age", 44)
+        .set("favorite_food", "pizza")
+        .build();
+    Key joeKey = keyFactory.newKey("Joe Shmoe");
+    Entity joeEntity = Entity.builder(joeKey)
+        .set("age", 27)
+        .set("favorite_food", "sushi")
+        .build();
+    datastore.put(janeEntity, joeEntity);
+
+    // Run a query
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Person")
+        .filter(PropertyFilter.eq("favorite_food", "pizza"))
+        .build();
+    QueryResults<Entity> results = datastore.run(query);
+    while (results.hasNext()) {
+      Entity currentEntity = results.next();
+      // Do something using the entity.  (e.g. send an invite a pizza party)
+    }
+  }
+}
+```
+
+Troubleshooting
+---------------
+
+To get help, follow the `gcloud-java` links in the `gcloud-*` [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Java Versions
 -------------
@@ -112,7 +222,9 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See [CONTRIBUTING] for more information on how to get started.
+See `gcloud-java`'s [CONTRIBUTING] documentation and the `gcloud-*` [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
 License
 -------
@@ -121,6 +233,7 @@ Apache 2.0 - See [LICENSE] for more information.
 
 
 [CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-datastore
 [cloud-platform]: https://cloud.google.com/

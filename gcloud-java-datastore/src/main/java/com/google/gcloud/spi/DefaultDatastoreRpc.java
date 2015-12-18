@@ -42,9 +42,8 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.net.InetAddress;
-import java.net.MalformedURLException;
+import java.net.SocketTimeoutException;
 import java.net.URL;
-import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,6 +69,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     String normalizedHost = normalizeHost(options.host());
     client = DatastoreFactory.get().create(
         new Builder()
+            .transport(options.httpTransportFactory().create())
             .dataset(options.projectId())
             .host(normalizedHost)
             .initializer(options.httpRequestInitializer())
@@ -95,7 +95,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
         }
         InetAddress hostAddr = InetAddress.getByName(new URL(normalizedHost).getHost());
         return hostAddr.isAnyLocalAddress() || hostAddr.isLoopbackAddress();
-      } catch (UnknownHostException | MalformedURLException e) {
+      } catch (Exception e) {
         // ignore
       }
     }
@@ -123,9 +123,17 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     if (reason == null) {
       reason = HTTP_STATUS_TO_REASON.get(exception.getCode());
     }
-    return reason != null
-        ? new DatastoreRpcException(reason)
-        : new DatastoreRpcException("Unknown", exception.getCode(), false, message);
+    if (reason != null) {
+      return new DatastoreRpcException(reason);
+    } else {
+      boolean retryable = false;
+      reasonStr = "Unknown";
+      if (exception.getCause() instanceof SocketTimeoutException) {
+        retryable = true;
+        reasonStr = "Request timeout";
+      }
+      return new DatastoreRpcException(reasonStr, exception.getCode(), retryable, message);
+    }
   }
 
   @Override

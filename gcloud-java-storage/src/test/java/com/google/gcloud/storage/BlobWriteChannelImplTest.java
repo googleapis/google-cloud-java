@@ -65,7 +65,7 @@ public class BlobWriteChannelImplTest {
   private BlobWriteChannelImpl writer;
 
   @Before
-  public void setUp() throws IOException, InterruptedException {
+  public void setUp() {
     rpcFactoryMock = createMock(StorageRpcFactory.class);
     storageRpcMock = createMock(StorageRpc.class);
     expect(rpcFactoryMock.create(anyObject(StorageOptions.class)))
@@ -234,6 +234,8 @@ public class BlobWriteChannelImplTest {
         .times(2);
     replay(storageRpcMock);
     writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    // avoid closing when you don't want partial writes to GCS upon failure
+    @SuppressWarnings("resource")
     BlobWriteChannel writer2 = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     RestorableState<BlobWriteChannel> state = writer.capture();
     RestorableState<BlobWriteChannel> state2 = writer2.capture();

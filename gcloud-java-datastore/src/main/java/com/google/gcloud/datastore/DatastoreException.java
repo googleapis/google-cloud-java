@@ -146,7 +146,8 @@ public class DatastoreException extends BaseServiceException {
    * @throws DatastoreException every time
    */
   static DatastoreException throwInvalidRequest(String massage, Object... params) {
-    throw new DatastoreException(DatastoreError.FAILED_PRECONDITION, String.format(massage, params));
+    throw new DatastoreException(
+        DatastoreError.FAILED_PRECONDITION, String.format(massage, params));
   }
 
   static DatastoreException propagateUserException(Exception ex) {
