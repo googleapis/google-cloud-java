@@ -218,7 +218,6 @@ public class ResourceManagerImplTest {
   @Test
   public void testReplace() {
     ProjectInfo createdProject = RESOURCE_MANAGER.create(COMPLETE_PROJECT);
-    String newName = "new name";
     Map<String, String> newLabels = ImmutableMap.of("new k1", "new v1");
     ProjectInfo anotherCompleteProject = ProjectInfo.builder(COMPLETE_PROJECT.projectId())
         .labels(newLabels)

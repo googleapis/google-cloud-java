@@ -18,7 +18,7 @@
  * A testing helper for Google Cloud Resource Manager.
  *
  * <p>A simple usage example:
- * <p>Before the test:
+ * Before the test:
  * <pre> {@code
  * LocalResourceManagerHelper resourceManagerHelper = LocalResourceManagerHelper.create();
  * ResourceManager resourceManager = resourceManagerHelper.options().service();
