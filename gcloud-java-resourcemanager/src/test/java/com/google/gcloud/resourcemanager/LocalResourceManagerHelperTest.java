@@ -57,8 +57,7 @@ public class LocalResourceManagerHelperTest {
         .setProjectId(from.getProjectId())
         .setName(from.getName())
         .setLabels(from.getLabels() != null ? ImmutableMap.copyOf(from.getLabels()) : null)
-        .setProjectNumber(
-            from.getProjectNumber() != null ? from.getProjectNumber().longValue() : null)
+        .setProjectNumber(from.getProjectNumber())
         .setCreateTime(from.getCreateTime())
         .setLifecycleState(from.getLifecycleState())
         .setParent(from.getParent() != null ? from.getParent().clone() : null);
