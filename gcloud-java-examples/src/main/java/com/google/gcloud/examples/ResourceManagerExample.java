@@ -55,19 +55,19 @@ public class ResourceManagerExample {
   private static class CreateAction implements ResourceManagerAction {
     @Override
     public void run(ResourceManager resourceManager, String... args) {
-      if (args.length % 2 != 1) {
-        System.out.println(usage("create", ACTIONS.get("create")));
-        return;
-      }
       String projectId = args[0];
       Map<String, String> labels = new HashMap<>();
       for (int i = 1; i < args.length; i += 2) {
-        labels.put(args[i], args[i + 1]);
+        if (i + 1 < args.length) {
+          labels.put(args[i], args[i + 1]);
+        } else {
+          labels.put(args[i], "");
+        }
       }
       ProjectInfo project =
           resourceManager.create(ProjectInfo.builder(projectId).labels(labels).build());
-        System.out.printf(
-            "Successfully created project '%s': %s.%n", projectId, projectDetails(project));
+      System.out.printf(
+          "Successfully created project '%s': %s.%n", projectId, projectDetails(project));
     }
 
     @Override
@@ -85,10 +85,10 @@ public class ResourceManagerExample {
     @Override
     public void run(ResourceManager resourceManager, String... args) {
       String projectId = args[0];
-      System.out.print("Are you sure [y/N]: ");
+      System.out.printf("Going to delete project \"%s\". Are you sure [y/N]: ", projectId);
       Scanner scanner = new Scanner(System.in);
       if (scanner.nextLine().toLowerCase().equals("y")) {
-        resourceManager.delete(args[0]);
+        resourceManager.delete(projectId);
         System.out.println("Successfully deleted project " + projectId + ".");
       } else {
         System.out.println("Will not delete project " + projectId + ".");
@@ -159,7 +159,7 @@ public class ResourceManagerExample {
   }
 
   private static String projectDetails(ProjectInfo project) {
-    return new StringBuffer()
+    return new StringBuilder()
         .append("{projectId:")
         .append(project.projectId())
         .append(", projectNumber:")
@@ -174,18 +174,21 @@ public class ResourceManagerExample {
         .toString();
   }
 
-  private static String usage(String actionName, ResourceManagerAction action) {
-    StringBuilder usage = new StringBuilder();
+  private static void addUsage(
+      String actionName, ResourceManagerAction action, StringBuilder usage) {
     usage.append(actionName);
-    String requiredParam = Joiner.on(" ").join(action.getRequiredParams());
-    String optionalParam = Joiner.on(" ").join(action.getOptionalParams());
-    if (!requiredParam.isEmpty()) {
-      usage.append(' ').append(requiredParam);
+    Joiner joiner = Joiner.on(" ");
+    String[] requiredParams = action.getRequiredParams();
+    String[] optionalParams = action.getOptionalParams();
+    if (requiredParams.length > 0) {
+      usage.append(' ');
+      joiner.appendTo(usage, requiredParams);
     }
-    if (!optionalParam.isEmpty()) {
-      usage.append(" [").append(optionalParam).append("]");
+    if (optionalParams.length > 0) {
+      usage.append(" [");
+      joiner.appendTo(usage, optionalParams);
+      usage.append(']');
     }
-    return usage.toString();
   }
 
   public static void main(String... args) {
@@ -194,7 +197,7 @@ public class ResourceManagerExample {
     if (action == null) {
       StringBuilder actionAndParams = new StringBuilder();
       for (Map.Entry<String, ResourceManagerAction> entry : ACTIONS.entrySet()) {
-        actionAndParams.append(usage(entry.getKey(), entry.getValue()));
+        addUsage(entry.getKey(), entry.getValue(), actionAndParams);
         actionAndParams.append('|');
       }
       actionAndParams.setLength(actionAndParams.length() - 1);
@@ -209,7 +212,9 @@ public class ResourceManagerExample {
     ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
     args = args.length > 1 ? Arrays.copyOfRange(args, 1, args.length) : new String[] {};
     if (args.length < action.getRequiredParams().length) {
-      System.out.println("Usage: " + usage(actionName, action));
+      StringBuilder usage = new StringBuilder();
+      addUsage(actionName, action, usage);
+      System.out.println("Usage: " + usage);
     } else {
       action.run(resourceManager, args);
     }
