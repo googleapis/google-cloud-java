@@ -1,6 +1,10 @@
 ## gcloud-java tools for testing
 
-This library provides tools to help write tests for code that uses gcloud-java services.
+This library provides tools to help write tests for code that uses the following gcloud-java services:
+
+-  [Datastore] (#testing-code-that-uses-datastore)
+-  [Storage] (#testing-code-that-uses-storage)
+-  [Resource Manager] (#testing-code-that-uses-resource-manager)
 
 ### Testing code that uses Datastore
 
@@ -64,6 +68,39 @@ Here is an example that clears the bucket created in Step 3 with a timeout of 5 
   ```java
   RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
   ```
+
+### Testing code that uses Resource Manager
+
+#### On your machine
+
+You can test against a temporary local Resource Manager by following these steps:
+
+1. Before running your testing code, start the Resource Manager emulator `LocalResourceManagerHelper`. This can be done as follows:
+
+  ```java
+  import com.google.gcloud.resourcemanager.testing.LocalResourceManagerHelper;
+
+  LocalResourceManagerHelper helper = LocalResourceManagerHelper.create();
+  helper.start();
+  ```
+
+  This will spawn a server thread that listens to `localhost` at an ephemeral port for Resource Manager requests.
+
+2. In your program, create and use a Resource Manager service object whose host is set to `localhost` at the appropriate port.  For example:
+
+  ```java
+  ResourceManager resourceManager = LocalResourceManagerHelper.options().service();
+  ```
+
+3. Run your tests.
+
+4. Stop the Resource Manager emulator.
+
+  ```java
+  helper.stop();
+  ```
+
+  This method will block until the server thread has been terminated.
 
 
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
