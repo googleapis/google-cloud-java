@@ -39,7 +39,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.Page;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.bigquery.InsertAllRequest.RowToInsert;
@@ -860,7 +859,6 @@ public class BigQueryImplTest {
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(jobList.toArray(), Iterables.toArray(page.values(), JobInfo.class));
     String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.rpcOption());
-    System.out.println(selector);
     assertTrue(selector.contains("etag,jobs("));
     assertTrue(selector.contains("configuration"));
     assertTrue(selector.contains("jobReference"));

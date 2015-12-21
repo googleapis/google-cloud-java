@@ -194,7 +194,7 @@ public class TableInfo extends BaseTableInfo {
    * @param tableId table id
    * @param schema the schema of the table
    */
-  public static BaseTableInfo of(TableId tableId, Schema schema) {
+  public static TableInfo of(TableId tableId, Schema schema) {
     return builder(tableId, schema).build();
   }
 

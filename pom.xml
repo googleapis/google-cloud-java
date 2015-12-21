@@ -71,6 +71,7 @@
     <module>gcloud-java-storage</module>
     <module>gcloud-java</module>
     <module>gcloud-java-examples</module>
+    <module>gcloud-java-bigquery</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>

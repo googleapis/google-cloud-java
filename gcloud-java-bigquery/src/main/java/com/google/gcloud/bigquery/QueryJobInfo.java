@@ -239,7 +239,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      * the query is allowed to create large results at a slight cost in performance. If {@code true}
      * {@link Builder#destinationTable(TableId)} must be provided.
      *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults>
+     * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults">
      *     Returning Large Query Results</a>
      */
     public Builder allowLargeResults(Boolean allowLargeResults) {
@@ -309,7 +309,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
    * the query is allowed to create large results at a slight cost in performance.
    * the query is allowed to create large results at a slight cost in performance.
    *
-   * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults>
+   * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults">
    *     Returning Large Query Results</a>
    */
   public Boolean allowLargeResults() {

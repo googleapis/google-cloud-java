@@ -163,8 +163,8 @@ public final class Acl implements Serializable {
   }
 
   /**
-   * Class for a BigQuery Group entity. Objects of this class represent a group to grante access to.
-   * A Group entity can be created given the group's email or can be a special group:
+   * Class for a BigQuery Group entity. Objects of this class represent a group to granted access
+   * to. A Group entity can be created given the group's email or can be a special group:
    * {@link #ofProjectOwners()}, {@link #ofProjectReaders()}, {@link #ofProjectWriters()} or
    * {@link #ofAllAuthenticatedUsers()}.
    */
