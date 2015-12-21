@@ -50,7 +50,7 @@ import java.util.concurrent.TimeUnit;
  */
 public interface Storage extends Service<StorageOptions> {
 
-  public static final String DEFAULT_CONTENT_TYPE = "application/octet-stream";
+  String DEFAULT_CONTENT_TYPE = "application/octet-stream";
 
   enum PredefinedAcl {
     AUTHENTICATED_READ("authenticatedRead"),

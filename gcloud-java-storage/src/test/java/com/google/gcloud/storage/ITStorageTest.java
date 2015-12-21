@@ -271,7 +271,7 @@ public class ITStorageTest {
   public void testListBlobsSelectedFields() {
     String[] blobNames = {"test-list-blobs-selected-fields-blob1",
         "test-list-blobs-selected-fields-blob2"};
-    ImmutableMap metadata = ImmutableMap.of("k", "v");
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
     BlobInfo blob1 = BlobInfo.builder(BUCKET, blobNames[0])
         .contentType(CONTENT_TYPE)
         .metadata(metadata)

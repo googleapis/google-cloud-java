@@ -275,7 +275,7 @@ public final class Acl implements Serializable {
   }
 
   /**
-   * Creats an ACL object.
+   * Creates an ACL object.
    *
    * @param entity the entity for this ACL object
    * @param role the role to associate to the {@code entity} object

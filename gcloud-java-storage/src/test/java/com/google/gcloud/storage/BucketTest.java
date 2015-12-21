@@ -23,6 +23,7 @@ import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
@@ -219,6 +220,7 @@ public class BucketTest {
     expect(storage.get(BUCKET_INFO.name())).andReturn(BUCKET_INFO);
     replay(storage);
     Bucket loadedBucket = Bucket.load(storage, BUCKET_INFO.name());
+    assertNotNull(loadedBucket);
     assertEquals(BUCKET_INFO, loadedBucket.info());
   }
 }

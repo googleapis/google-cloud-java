@@ -25,6 +25,7 @@ import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
@@ -272,13 +273,13 @@ public class BlobTest {
 
   @Test
   public void testDeleteSome() throws Exception {
-    List<Boolean> deleleResultList = Arrays.asList(true, true, true);
-    expect(storage.delete(BLOB_ID_ARRAY)).andReturn(deleleResultList);
+    List<Boolean> deleteResult = Arrays.asList(true, true, true);
+    expect(storage.delete(BLOB_ID_ARRAY)).andReturn(deleteResult);
     replay(storage);
     List<Boolean> result = Blob.delete(storage, BLOB_ID_ARRAY);
-    assertEquals(deleleResultList.size(), result.size());
-    for (int i = 0; i < deleleResultList.size(); i++) {
-      assertEquals(deleleResultList.get(i), result.get(i));
+    assertEquals(deleteResult.size(), result.size());
+    for (int i = 0; i < deleteResult.size(); i++) {
+      assertEquals(deleteResult.get(i), result.get(i));
     }
   }
 
@@ -295,6 +296,7 @@ public class BlobTest {
     expect(storage.get(BLOB_INFO.blobId())).andReturn(BLOB_INFO);
     replay(storage);
     Blob loadedBlob = Blob.load(storage, BLOB_INFO.blobId());
+    assertNotNull(loadedBlob);
     assertEquals(BLOB_INFO, loadedBlob.info());
   }
 }

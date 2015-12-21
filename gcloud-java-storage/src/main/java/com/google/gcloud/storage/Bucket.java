@@ -71,7 +71,7 @@ public final class Bucket {
     @Override
     public Page<Blob> nextPage() {
       Page<BlobInfo> nextInfoPage = infoPage.nextPage();
-      return new PageImpl<Blob>(new BlobPageFetcher(options, nextInfoPage),
+      return new PageImpl<>(new BlobPageFetcher(options, nextInfoPage),
           nextInfoPage.nextPageCursor(), new LazyBlobIterable(options, nextInfoPage.values()));
     }
   }
