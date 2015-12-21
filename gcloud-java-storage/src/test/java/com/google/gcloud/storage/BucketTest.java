@@ -95,7 +95,7 @@ public class BucketTest {
     expect(storage.get(updatedInfo.name())).andReturn(updatedInfo);
     replay(storage);
     Bucket updatedBucket = bucket.reload();
-    assertSame(storage, bucket.storage());
+    assertSame(storage, updatedBucket.storage());
     assertEquals(updatedInfo, updatedBucket.info());
   }
 

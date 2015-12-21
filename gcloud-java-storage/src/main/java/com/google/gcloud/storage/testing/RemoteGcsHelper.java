@@ -39,7 +39,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Utility to create a remote storage configuration for testing
+ * Utility to create a remote storage configuration for testing. Storage options can be obtained via
+ * the {@link #options()} method. Returned options have custom {@link StorageOptions#retryParams()}:
+ * {@link RetryParams#retryMaxAttempts()} is {@code 10}, {@link RetryParams#retryMinAttempts()} is
+ * {@code 6}, {@link RetryParams#maxRetryDelayMillis()} is {@code 30000},
+ * {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
+ * {@link RetryParams#initialRetryDelayMillis()} is {@code 250}.
+ * {@link StorageOptions#connectTimeout()} and {@link StorageOptions#readTimeout()} are both set
+ * to {@code 60000}.
  */
 public class RemoteGcsHelper {
 
@@ -111,28 +118,6 @@ public class RemoteGcsHelper {
           .build();
       return new RemoteGcsHelper(storageOptions);
     } catch (IOException ex) {
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, ex.getMessage());
-      }
-      throw GcsHelperException.translate(ex);
-    }
-  }
-
-  /**
-   * Creates a {@code RemoteGcsHelper} object for the given project id and JSON key path.
-   *
-   * @param projectId id of the project to be used for running the tests
-   * @param keyPath path to the JSON key to be used for running the tests
-   * @return A {@code RemoteGcsHelper} object for the provided options.
-   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if the file
-   *     pointed by {@code keyPath} does not exist
-   */
-  public static RemoteGcsHelper create(String projectId, String keyPath)
-      throws GcsHelperException {
-    try {
-      InputStream keyFileStream = new FileInputStream(keyPath);
-      return create(projectId, keyFileStream);
-    } catch (FileNotFoundException ex) {
       if (log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, ex.getMessage());
       }

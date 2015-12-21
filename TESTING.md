@@ -51,7 +51,8 @@ Currently, there isn't an emulator for Google Cloud Storage, so an alternative i
 3. Create a `RemoteGcsHelper` object using your project ID and JSON key.
 Here is an example that uses the `RemoteGcsHelper` to create a bucket.
   ```java
-  RemoteGcsHelper gcsHelper = RemoteGcsHelper.create(PROJECT_ID, "/path/to/my/JSON/key.json");
+  RemoteGcsHelper gcsHelper =
+      RemoteGcsHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
   Storage storage = gcsHelper.options().service();
   String bucket = RemoteGcsHelper.generateBucketName();
   storage.create(BucketInfo.of(bucket));

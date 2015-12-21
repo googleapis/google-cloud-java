@@ -100,7 +100,7 @@ public class BlobTest {
     expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(updatedInfo);
     replay(storage);
     Blob updatedBlob = blob.reload();
-    assertSame(storage, blob.storage());
+    assertSame(storage, updatedBlob.storage());
     assertEquals(updatedInfo, updatedBlob.info());
   }
 

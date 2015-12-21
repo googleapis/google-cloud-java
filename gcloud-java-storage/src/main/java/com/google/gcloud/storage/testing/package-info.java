@@ -20,7 +20,7 @@
  * <p>A simple usage example:
  * <p>Before the test:
  * <pre> {@code
- * RemoteGcsHelper gcsHelper = RemoteGcsHelper.create(PROJECT_ID, "/path/to/JSON/key.json");
+ * RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
  * Storage storage = gcsHelper.options().service();
  * String bucket = RemoteGcsHelper.generateBucketName();
  * storage.create(BucketInfo.of(bucket));
