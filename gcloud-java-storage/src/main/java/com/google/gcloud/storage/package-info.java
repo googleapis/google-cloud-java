@@ -34,7 +34,7 @@
  *   channel.close();
  * }}</pre>
  *
- * When using gcloud-java from outside of App/Compute Engine, you have to <a
+ * <p>When using gcloud-java from outside of App/Compute Engine, you have to <a
  * href="https://github.com/GoogleCloudPlatform/gcloud-java#specifying-a-project-id">specify a
  * project ID</a> and
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java#authentication">provide

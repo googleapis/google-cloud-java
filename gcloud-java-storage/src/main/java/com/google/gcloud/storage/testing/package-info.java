@@ -18,6 +18,7 @@
  * A testing helper for Google Cloud Storage.
  *
  * <p>A simple usage example:
+ *
  * <p>Before the test:
  * <pre> {@code
  * RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();

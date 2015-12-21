@@ -23,8 +23,6 @@ import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.StorageOptions;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;

@@ -46,8 +46,7 @@ import java.util.Objects;
 /**
  * A Google cloud storage bucket.
  *
- * <p>
- * Objects of this class are immutable. Operations that modify the bucket like {@link #update}
+ * <p>Objects of this class are immutable. Operations that modify the bucket like {@link #update}
  * return a new object. To get a {@code Bucket} object with the most recent information use
  * {@link #reload}.
  * </p>

@@ -39,8 +39,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * A Google cloud storage object.
  *
- * <p>
- * Objects of this class are immutable. Operations that modify the blob like {@link #update} and
+ * <p>Objects of this class are immutable. Operations that modify the blob like {@link #update} and
  * {@link #copyTo} return a new object. To get a {@code Blob} object with the most recent
  * information use {@link #reload}.
  * </p>
@@ -239,13 +238,13 @@ public final class Blob {
    * made on the metadata generation of the current blob. If you want to update the information only
    * if the current blob metadata are at their latest version use the {@code metagenerationMatch}
    * option: {@code blob.update(newInfo, BlobTargetOption.metagenerationMatch())}.
-   * <p>
-   * Original metadata are merged with metadata in the provided {@code blobInfo}. To replace
+   *
+   * <p>Original metadata are merged with metadata in the provided {@code blobInfo}. To replace
    * metadata instead you first have to unset them. Unsetting metadata can be done by setting the
    * provided {@code blobInfo}'s metadata to {@code null}.
    * </p>
-   * <p>
-   * Example usage of replacing blob's metadata:
+   *
+   * <p>Example usage of replacing blob's metadata:
    * <pre>    {@code blob.update(blob.info().toBuilder().metadata(null).build());}
    *    {@code blob.update(blob.info().toBuilder().metadata(newMetadata).build());}
    * </pre>
@@ -262,6 +261,17 @@ public final class Blob {
   }
 
   /**
+   * Deletes this blob.
+   *
+   * @param options blob delete options
+   * @return {@code true} if blob was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  public boolean delete(BlobSourceOption... options) {
+    return storage.delete(info.blobId(), toSourceOptions(info, options));
+  }
+
+  /**
    * Sends a copy request for the current blob to the target blob. Possibly also some of the
    * metadata are copied (e.g. content-type).
    *
@@ -275,17 +285,6 @@ public final class Blob {
     CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
         .sourceOptions(toSourceOptions(info, options)).target(targetBlob).build();
     return storage.copy(copyRequest);
-  }
-
-  /**
-   * Deletes this blob.
-   *
-   * @param options blob delete options
-   * @return {@code true} if blob was deleted, {@code false} if it was not found
-   * @throws StorageException upon failure
-   */
-  public boolean delete(BlobSourceOption... options) {
-    return storage.delete(info.blobId(), toSourceOptions(info, options));
   }
 
   /**
@@ -381,8 +380,8 @@ public final class Blob {
     return Collections.unmodifiableList(Lists.transform(storage.get(blobs),
         new Function<BlobInfo, Blob>() {
           @Override
-          public Blob apply(BlobInfo f) {
-            return f != null ? new Blob(storage, f) : null;
+          public Blob apply(BlobInfo blobInfo) {
+            return blobInfo != null ? new Blob(storage, blobInfo) : null;
           }
         }));
   }
@@ -410,8 +409,8 @@ public final class Blob {
     return Collections.unmodifiableList(Lists.transform(storage.update(infos),
         new Function<BlobInfo, Blob>() {
           @Override
-          public Blob apply(BlobInfo f) {
-            return f != null ? new Blob(storage, f) : null;
+          public Blob apply(BlobInfo blobInfo) {
+            return blobInfo != null ? new Blob(storage, blobInfo) : null;
           }
         }));
   }
