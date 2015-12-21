@@ -179,11 +179,11 @@ public class ResourceManagerExample {
     usage.append(actionName);
     Joiner joiner = Joiner.on(" ");
     String[] requiredParams = action.getRequiredParams();
-    String[] optionalParams = action.getOptionalParams();
     if (requiredParams.length > 0) {
       usage.append(' ');
       joiner.appendTo(usage, requiredParams);
     }
+    String[] optionalParams = action.getOptionalParams();
     if (optionalParams.length > 0) {
       usage.append(" [");
       joiner.appendTo(usage, optionalParams);
@@ -213,8 +213,9 @@ public class ResourceManagerExample {
     args = args.length > 1 ? Arrays.copyOfRange(args, 1, args.length) : new String[] {};
     if (args.length < action.getRequiredParams().length) {
       StringBuilder usage = new StringBuilder();
+      usage.append("Usage: ");
       addUsage(actionName, action, usage);
-      System.out.println("Usage: " + usage);
+      System.out.println(usage);
     } else {
       action.run(resourceManager, args);
     }

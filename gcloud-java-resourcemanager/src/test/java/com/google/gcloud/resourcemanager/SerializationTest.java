@@ -20,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
 import com.google.common.collect.ImmutableMap;
-import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.RetryParams;
 
@@ -59,7 +58,6 @@ public class SerializationTest {
     options = options.toBuilder()
         .projectId("some-unnecessary-project-ID")
         .retryParams(RetryParams.defaultInstance())
-        .authCredentials(AuthCredentials.noCredentials())
         .build();
     serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);
