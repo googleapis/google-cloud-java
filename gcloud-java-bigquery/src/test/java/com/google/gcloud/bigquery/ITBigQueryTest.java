@@ -37,7 +37,9 @@ import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -127,6 +129,9 @@ public class ITBigQueryTest {
 
   private static BigQuery bigquery;
   private static Storage storage;
+
+  @Rule
+  public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
@@ -731,7 +736,6 @@ public class ITBigQueryTest {
     assertEquals(2, rowCount);
     assertTrue(bigquery.delete(DATASET, tableName));
   }
-
 
   @Test
   public void testExtract() throws InterruptedException {

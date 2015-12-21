@@ -22,8 +22,6 @@ import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryException;
 import com.google.gcloud.bigquery.BigQueryOptions;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
@@ -31,7 +29,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Utility to create a remote BigQuery configuration for testing.
+ * Utility to create a remote BigQuery configuration for testing. BigQuery options can be obtained
+ * via the {@link #options()} method. Returned options have custom
+ * {@link BigQueryOptions#retryParams()}: {@link RetryParams#retryMaxAttempts()} is {@code 10},
+ * {@link RetryParams#retryMinAttempts()} is {@code 6}, {@link RetryParams#maxRetryDelayMillis()} is
+ * {@code 30000}, {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
+ * {@link RetryParams#initialRetryDelayMillis()} is {@code 250}.
+ * {@link BigQueryOptions#connectTimeout()} and {@link BigQueryOptions#readTimeout()} are both set
+ * to {@code 60000}.
  */
 public class RemoteBigQueryHelper {
 
@@ -90,27 +95,6 @@ public class RemoteBigQueryHelper {
           .build();
       return new RemoteBigQueryHelper(bigqueryOptions);
     } catch (IOException ex) {
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, ex.getMessage());
-      }
-      throw BigQueryHelperException.translate(ex);
-    }
-  }
-
-  /**
-   * Creates a {@code RemoteBigQueryHelper} object for the given project id and JSON key path.
-   *
-   * @param projectId id of the project to be used for running the tests
-   * @param keyPath path to the JSON key to be used for running the tests
-   * @return A {@code RemoteBigQueryHelper} object for the provided options.
-   * @throws BigQueryHelperException if the file pointed by {@code keyPath} does not exist
-   */
-  public static RemoteBigQueryHelper create(String projectId, String keyPath)
-      throws BigQueryHelperException {
-    try {
-      InputStream keyFileStream = new FileInputStream(keyPath);
-      return create(projectId, keyFileStream);
-    } catch (FileNotFoundException ex) {
       if (log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, ex.getMessage());
       }

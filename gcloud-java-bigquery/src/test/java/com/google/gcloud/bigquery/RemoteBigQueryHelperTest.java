@@ -23,16 +23,12 @@ import com.google.gcloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.gcloud.bigquery.testing.RemoteBigQueryHelper;
 
 import org.easymock.EasyMock;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
 public class RemoteBigQueryHelperTest {
@@ -66,18 +62,9 @@ public class RemoteBigQueryHelperTest {
       + "  \"type\": \"service_account\"\n"
       + "}";
   private static final InputStream JSON_KEY_STREAM = new ByteArrayInputStream(JSON_KEY.getBytes());
-  private static String keyPath = "/does/not/exist/key." + UUID.randomUUID().toString() + ".json";
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
-
-  @BeforeClass
-  public static void beforeClass() {
-    while (Files.exists(Paths.get(JSON_KEY))) {
-      keyPath = "/does/not/exist/key." + UUID.randomUUID().toString() + ".json";
-    }
-  }
-
   @Test
   public void testForceDelete() throws InterruptedException, ExecutionException {
     BigQuery bigqueryMock = EasyMock.createMock(BigQuery.class);
@@ -100,12 +87,5 @@ public class RemoteBigQueryHelperTest {
     assertEquals(30000, options.retryParams().maxRetryDelayMillis());
     assertEquals(120000, options.retryParams().totalRetryPeriodMillis());
     assertEquals(250, options.retryParams().initialRetryDelayMillis());
-  }
-
-  @Test
-  public void testCreateNoKey() {
-    thrown.expect(RemoteBigQueryHelper.BigQueryHelperException.class);
-    thrown.expectMessage(keyPath + " (No such file or directory)");
-    RemoteBigQueryHelper.create(PROJECT_ID, keyPath);
   }
 }
