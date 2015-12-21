@@ -40,12 +40,12 @@ public final class DateTimeValue extends Value<DateTime> {
         }
 
         @Override
-        protected DateTime getValue(DatastoreV1.Value from) {
+        DateTime getValue(DatastoreV1.Value from) {
           return new DateTime(from.getTimestampMicrosecondsValue());
         }
 
         @Override
-        protected void setValue(DateTimeValue from, DatastoreV1.Value.Builder to) {
+        void setValue(DateTimeValue from, DatastoreV1.Value.Builder to) {
           to.setTimestampMicrosecondsValue(from.get().timestampMicroseconds());
         }
       };

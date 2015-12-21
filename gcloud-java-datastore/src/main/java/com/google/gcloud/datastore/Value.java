@@ -80,9 +80,9 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
       return builder.build();
     }
 
-    protected abstract V getValue(DatastoreV1.Value from);
+    abstract V getValue(DatastoreV1.Value from);
 
-    protected abstract void setValue(P from, DatastoreV1.Value.Builder to);
+    abstract void setValue(P from, DatastoreV1.Value.Builder to);
   }
 
   @SuppressWarnings("deprecation")
@@ -211,7 +211,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 
   @Override
   @SuppressWarnings("unchecked")
-  protected DatastoreV1.Value toPb() {
+  DatastoreV1.Value toPb() {
     return type().getMarshaller().toProto(this);
   }
 
@@ -231,7 +231,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(DatastoreV1.Value.parseFrom(bytesPb));
   }
 }

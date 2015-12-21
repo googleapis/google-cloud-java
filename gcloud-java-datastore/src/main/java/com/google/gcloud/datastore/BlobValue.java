@@ -40,12 +40,12 @@ public final class BlobValue extends Value<Blob> {
         }
 
         @Override
-        protected Blob getValue(DatastoreV1.Value from) {
+        Blob getValue(DatastoreV1.Value from) {
           return new Blob(from.getBlobValue());
         }
 
         @Override
-        protected void setValue(BlobValue from, DatastoreV1.Value.Builder to) {
+        void setValue(BlobValue from, DatastoreV1.Value.Builder to) {
           to.setBlobValue(from.get().byteString());
         }
       };

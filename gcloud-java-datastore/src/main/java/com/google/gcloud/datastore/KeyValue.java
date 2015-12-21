@@ -40,12 +40,12 @@ public final class KeyValue extends Value<Key> {
         }
 
         @Override
-        protected Key getValue(DatastoreV1.Value from) {
+        Key getValue(DatastoreV1.Value from) {
           return Key.fromPb(from.getKeyValue());
         }
 
         @Override
-        protected void setValue(KeyValue from, DatastoreV1.Value.Builder to) {
+        void setValue(KeyValue from, DatastoreV1.Value.Builder to) {
           to.setKeyValue(from.get().toPb());
         }
       };

@@ -40,12 +40,12 @@ public final class NullValue extends Value<Void> {
         }
 
         @Override
-        protected Void getValue(DatastoreV1.Value from) {
+        Void getValue(DatastoreV1.Value from) {
           return null;
         }
 
         @Override
-        protected void setValue(NullValue from, DatastoreV1.Value.Builder to) {
+        void setValue(NullValue from, DatastoreV1.Value.Builder to) {
           // nothing to set
         }
       };

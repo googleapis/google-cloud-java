@@ -45,7 +45,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
         }
 
         @Override
-        protected List<Value<?>> getValue(DatastoreV1.Value from) {
+        List<Value<?>> getValue(DatastoreV1.Value from) {
           List<Value<?>> properties = new ArrayList<>(from.getListValueCount());
           for (DatastoreV1.Value valuePb : from.getListValueList()) {
             properties.add(Value.fromPb(valuePb));
@@ -54,7 +54,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
         }
 
         @Override
-        protected void setValue(ListValue from, DatastoreV1.Value.Builder to) {
+        void setValue(ListValue from, DatastoreV1.Value.Builder to) {
           for (Value<?> property : from.get()) {
             to.addListValue(property.toPb());
           }

@@ -40,12 +40,12 @@ public final class DoubleValue extends Value<Double> {
         }
 
         @Override
-        protected Double getValue(DatastoreV1.Value from) {
+        Double getValue(DatastoreV1.Value from) {
           return from.getDoubleValue();
         }
 
         @Override
-        protected void setValue(DoubleValue from, DatastoreV1.Value.Builder to) {
+        void setValue(DoubleValue from, DatastoreV1.Value.Builder to) {
           to.setDoubleValue(from.get());
         }
       };

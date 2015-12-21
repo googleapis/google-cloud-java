@@ -40,12 +40,12 @@ public final class StringValue extends Value<String> {
         }
 
         @Override
-        protected String getValue(DatastoreV1.Value from) {
+        String getValue(DatastoreV1.Value from) {
           return from.getStringValue();
         }
 
         @Override
-        protected void setValue(StringValue from, DatastoreV1.Value.Builder to) {
+        void setValue(StringValue from, DatastoreV1.Value.Builder to) {
           to.setStringValue(from.get());
         }
       };

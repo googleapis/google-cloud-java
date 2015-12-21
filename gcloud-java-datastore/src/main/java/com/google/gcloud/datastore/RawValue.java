@@ -38,12 +38,12 @@ public final class RawValue extends Value<DatastoreV1.Value> {
         }
 
         @Override
-        protected DatastoreV1.Value getValue(DatastoreV1.Value from) {
+        DatastoreV1.Value getValue(DatastoreV1.Value from) {
           return from;
         }
 
         @Override
-        protected void setValue(RawValue from, DatastoreV1.Value.Builder to) {
+        void setValue(RawValue from, DatastoreV1.Value.Builder to) {
           to.mergeFrom(from.get());
         }
       };
