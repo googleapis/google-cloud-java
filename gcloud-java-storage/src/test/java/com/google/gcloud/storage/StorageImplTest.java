@@ -398,8 +398,7 @@ public class StorageImplTest {
 
   @Test
   public void testGetBucketWithSelectedFields() {
-    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
-        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(storageRpcMock.get(EasyMock.eq(BucketInfo.of(BUCKET_NAME1).toPb()),
         EasyMock.capture(capturedOptions))).andReturn(BUCKET_INFO1.toPb());
     EasyMock.replay(storageRpcMock);
@@ -417,8 +416,7 @@ public class StorageImplTest {
 
   @Test
   public void testGetBucketWithEmptyFields() {
-    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
-        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(storageRpcMock.get(EasyMock.eq(BucketInfo.of(BUCKET_NAME1).toPb()),
         EasyMock.capture(capturedOptions))).andReturn(BUCKET_INFO1.toPb());
     EasyMock.replay(storageRpcMock);
@@ -470,8 +468,7 @@ public class StorageImplTest {
 
   @Test
   public void testGetBlobWithSelectedFields() {
-    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
-        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(storageRpcMock.get(EasyMock.eq(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb()),
         EasyMock.capture(capturedOptions))).andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(storageRpcMock);
@@ -493,8 +490,7 @@ public class StorageImplTest {
 
   @Test
   public void testGetBlobWithEmptyFields() {
-    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
-        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(storageRpcMock.get(EasyMock.eq(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb()),
         EasyMock.capture(capturedOptions))).andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(storageRpcMock);
@@ -555,8 +551,7 @@ public class StorageImplTest {
   @Test
   public void testListBucketsWithSelectedFields() {
     String cursor = "cursor";
-    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
-        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     ImmutableList<BucketInfo> bucketList = ImmutableList.of(BUCKET_INFO1, BUCKET_INFO2);
     Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result =
         Tuple.of(cursor, Iterables.transform(bucketList, BucketInfo.TO_PB_FUNCTION));
@@ -577,8 +572,7 @@ public class StorageImplTest {
   @Test
   public void testListBucketsWithEmptyFields() {
     String cursor = "cursor";
-    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
-        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     ImmutableList<BucketInfo> bucketList = ImmutableList.of(BUCKET_INFO1, BUCKET_INFO2);
     Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result =
         Tuple.of(cursor, Iterables.transform(bucketList, BucketInfo.TO_PB_FUNCTION));
@@ -638,8 +632,7 @@ public class StorageImplTest {
   @Test
   public void testListBlobsWithSelectedFields() {
     String cursor = "cursor";
-    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
-        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     ImmutableList<BlobInfo> blobList = ImmutableList.of(BLOB_INFO1, BLOB_INFO2);
     Tuple<String, Iterable<com.google.api.services.storage.model.StorageObject>> result =
         Tuple.of(cursor, Iterables.transform(blobList, BlobInfo.TO_PB_FUNCTION));
@@ -668,8 +661,7 @@ public class StorageImplTest {
   @Test
   public void testListBlobsWithEmptyFields() {
     String cursor = "cursor";
-    Capture<Map<StorageRpc.Option, Object>> capturedOptions =
-        Capture.<Map<StorageRpc.Option, Object>>newInstance();
+    Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     ImmutableList<BlobInfo> blobList = ImmutableList.of(BLOB_INFO1, BLOB_INFO2);
     Tuple<String, Iterable<com.google.api.services.storage.model.StorageObject>> result =
         Tuple.of(cursor, Iterables.transform(blobList, BlobInfo.TO_PB_FUNCTION));

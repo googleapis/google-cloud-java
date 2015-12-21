@@ -269,6 +269,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     return listBuckets(options(), optionMap(options));
   }
 
+  @Override
+  public Page<BlobInfo> list(final String bucket, BlobListOption... options) {
+    return listBlobs(bucket, options(), optionMap(options));
+  }
+
   private static Page<BucketInfo> listBuckets(final StorageOptions serviceOptions,
       final Map<StorageRpc.Option, ?> optionsMap) {
     try {
@@ -293,11 +298,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
-  }
-
-  @Override
-  public Page<BlobInfo> list(final String bucket, BlobListOption... options) {
-    return listBlobs(bucket, options(), optionMap(options));
   }
 
   private static Page<BlobInfo> listBlobs(final String bucket,
@@ -554,8 +554,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   @Override
   public URL signUrl(BlobInfo blobInfo, long duration, TimeUnit unit, SignUrlOption... options) {
-    long expiration = TimeUnit.SECONDS.convert(
-        options().clock().millis() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
     EnumMap<SignUrlOption.Option, Object> optionMap = Maps.newEnumMap(SignUrlOption.Option.class);
     for (SignUrlOption option : options) {
       optionMap.put(option.option(), option.value());
@@ -588,6 +586,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       stBuilder.append(blobInfo.contentType());
     }
     stBuilder.append('\n');
+    long expiration = TimeUnit.SECONDS.convert(
+        options().clock().millis() + unit.toMillis(duration), TimeUnit.MILLISECONDS);
     stBuilder.append(expiration).append('\n');
     StringBuilder path = new StringBuilder();
     if (!blobInfo.bucket().startsWith("/")) {
@@ -606,9 +606,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       Signature signer = Signature.getInstance("SHA256withRSA");
       signer.initSign(cred.getPrivateKey());
       signer.update(stBuilder.toString().getBytes(UTF_8));
+      stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
       String signature =
           URLEncoder.encode(BaseEncoding.base64().encode(signer.sign()), UTF_8.name());
-      stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
       stBuilder.append("?GoogleAccessId=").append(cred.getClientEmail());
       stBuilder.append("&Expires=").append(expiration);
       stBuilder.append("&Signature=").append(signature);
@@ -654,10 +654,27 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       List<BatchResponse.Result<T>> results, final T errorValue) {
     return Lists.transform(results, new Function<BatchResponse.Result<T>, T>() {
       @Override
-      public T apply(BatchResponse.Result<T> f) {
-        return f.failed() ? errorValue : f.get();
+      public T apply(BatchResponse.Result<T> result) {
+        return result.failed() ? errorValue : result.get();
       }
     });
+  }
+
+  private static <T> void addToOptionMap(StorageRpc.Option option, T defaultValue,
+      Map<StorageRpc.Option, Object> map) {
+    addToOptionMap(option, option, defaultValue, map);
+  }
+
+  private static <T> void addToOptionMap(StorageRpc.Option getOption, StorageRpc.Option putOption,
+      T defaultValue, Map<StorageRpc.Option, Object> map) {
+    if (map.containsKey(getOption)) {
+      @SuppressWarnings("unchecked")
+      T value = (T) map.remove(getOption);
+      checkArgument(value != null || defaultValue != null,
+          "Option " + getOption.value() + " is missing a value");
+      value = firstNonNull(value, defaultValue);
+      map.put(putOption, value);
+    }
   }
 
   private Map<StorageRpc.Option, ?> optionMap(Long generation, Long metaGeneration,
@@ -689,23 +706,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       addToOptionMap(IF_METAGENERATION_NOT_MATCH, metaGeneration, temp);
     }
     return ImmutableMap.copyOf(temp);
-  }
-
-  private static <T> void addToOptionMap(StorageRpc.Option option, T defaultValue,
-      Map<StorageRpc.Option, Object> map) {
-    addToOptionMap(option, option, defaultValue, map);
-  }
-
-  private static <T> void addToOptionMap(StorageRpc.Option getOption, StorageRpc.Option putOption,
-      T defaultValue, Map<StorageRpc.Option, Object> map) {
-    if (map.containsKey(getOption)) {
-      @SuppressWarnings("unchecked")
-      T value = (T) map.remove(getOption);
-      checkArgument(value != null || defaultValue != null,
-          "Option " + getOption.value() + " is missing a value");
-      value = firstNonNull(value, defaultValue);
-      map.put(putOption, value);
-    }
   }
 
   private Map<StorageRpc.Option, ?> optionMap(Option... options) {

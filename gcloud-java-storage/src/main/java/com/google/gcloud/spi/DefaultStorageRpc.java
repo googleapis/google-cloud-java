@@ -479,8 +479,8 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public void write(String uploadId, byte[] toWrite, int toWriteOffset, StorageObject dest,
-      long destOffset, int length, boolean last) throws StorageException {
+  public void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+      boolean last) throws StorageException {
     try {
       GenericUrl url = new GenericUrl(uploadId);
       HttpRequest httpRequest = storage.getRequestFactory().buildPutRequest(url,
@@ -571,7 +571,7 @@ public class DefaultStorageRpc implements StorageRpc {
     try {
       Long maxBytesRewrittenPerCall = req.megabytesRewrittenPerCall != null
           ? req.megabytesRewrittenPerCall * MEGABYTE : null;
-      com.google.api.services.storage.model.RewriteResponse rewriteReponse = storage.objects()
+      com.google.api.services.storage.model.RewriteResponse rewriteResponse = storage.objects()
           .rewrite(req.source.getBucket(), req.source.getName(), req.target.getBucket(),
               req.target.getName(), req.target.getContentType() != null ? req.target : null)
           .setSourceGeneration(req.source.getGeneration())
@@ -590,11 +590,11 @@ public class DefaultStorageRpc implements StorageRpc {
           .execute();
       return new RewriteResponse(
           req,
-          rewriteReponse.getResource(),
-          rewriteReponse.getObjectSize().longValue(),
-          rewriteReponse.getDone(),
-          rewriteReponse.getRewriteToken(),
-          rewriteReponse.getTotalBytesRewritten().longValue());
+          rewriteResponse.getResource(),
+          rewriteResponse.getObjectSize().longValue(),
+          rewriteResponse.getDone(),
+          rewriteResponse.getRewriteToken(),
+          rewriteResponse.getTotalBytesRewritten().longValue());
     } catch (IOException ex) {
       throw translate(ex);
     }

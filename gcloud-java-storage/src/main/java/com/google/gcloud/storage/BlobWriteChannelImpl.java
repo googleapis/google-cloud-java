@@ -91,7 +91,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
         runWithRetries(callable(new Runnable() {
           @Override
           public void run() {
-            storageRpc.write(uploadId, buffer, 0, storageObject, position, length, false);
+            storageRpc.write(uploadId, buffer, 0, position, length, false);
           }
         }), options.retryParams(), StorageImpl.EXCEPTION_HANDLER);
       } catch (RetryHelper.RetryHelperException e) {
@@ -139,7 +139,7 @@ class BlobWriteChannelImpl implements BlobWriteChannel {
         runWithRetries(callable(new Runnable() {
           @Override
           public void run() {
-            storageRpc.write(uploadId, buffer, 0, storageObject, position, limit, true);
+            storageRpc.write(uploadId, buffer, 0, position, limit, true);
           }
         }), options.retryParams(), StorageImpl.EXCEPTION_HANDLER);
       } catch (RetryHelper.RetryHelperException e) {

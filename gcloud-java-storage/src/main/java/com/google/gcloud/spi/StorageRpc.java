@@ -264,8 +264,8 @@ public interface StorageRpc {
 
   String open(StorageObject object, Map<Option, ?> options) throws StorageException;
 
-  void write(String uploadId, byte[] toWrite, int toWriteOffset, StorageObject dest,
-      long destOffset, int length, boolean last) throws StorageException;
+  void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+      boolean last) throws StorageException;
 
   RewriteResponse openRewrite(RewriteRequest rewriteRequest) throws StorageException;
 
