@@ -50,7 +50,7 @@ import java.util.concurrent.TimeUnit;
  */
 public interface Storage extends Service<StorageOptions> {
 
-  public static final String DEFAULT_CONTENT_TYPE = "application/octet-stream";
+  String DEFAULT_CONTENT_TYPE = "application/octet-stream";
 
   enum PredefinedAcl {
     AUTHENTICATED_READ("authenticatedRead"),
@@ -489,6 +489,14 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * Returns an option for blob's data generation match. If this option is used the request will
+     * fail if blob's generation does not match the provided value.
+     */
+    public static BlobSourceOption generationMatch(long generation) {
+      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
+    }
+
+    /**
      * Returns an option for blob's data generation mismatch. If this option is used the request
      * will fail if blob's generation matches. The generation value to compare with the actual
      * blob's generation is taken from a source {@link BlobId} object. When this option is passed
@@ -497,10 +505,6 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobSourceOption generationNotMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, null);
-    }
-
-    public static BlobSourceOption generationMatch(long generation) {
-      return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
     }
 
     /**
@@ -555,6 +559,14 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * Returns an option for blob's data generation match. If this option is used the request will
+     * fail if blob's generation does not match the provided value.
+     */
+    public static BlobGetOption generationMatch(long generation) {
+      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
+    }
+
+    /**
      * Returns an option for blob's data generation mismatch. If this option is used the request
      * will fail if blob's generation matches. The generation value to compare with the actual
      * blob's generation is taken from a source {@link BlobId} object. When this option is passed
@@ -563,10 +575,6 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobGetOption generationNotMatch() {
       return new BlobGetOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, (Long) null);
-    }
-
-    public static BlobGetOption generationMatch(long generation) {
-      return new BlobGetOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
     }
 
     /**
@@ -1287,8 +1295,8 @@ public interface Storage extends Service<StorageOptions> {
    * Update blob information. Original metadata are merged with metadata in the provided
    * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
-   * <p>
-   * Example usage of replacing blob's metadata:
+   *
+   * <p>Example usage of replacing blob's metadata:
    * <pre>    {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
    *    {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
    * </pre>
@@ -1302,8 +1310,8 @@ public interface Storage extends Service<StorageOptions> {
    * Update blob information. Original metadata are merged with metadata in the provided
    * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
-   * <p>
-   * Example usage of replacing blob's metadata:
+   *
+   * <p>Example usage of replacing blob's metadata:
    * <pre>    {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
    *    {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
    * </pre>
@@ -1360,8 +1368,8 @@ public interface Storage extends Service<StorageOptions> {
    * returns, regardless of the {@link CopyRequest#megabytesCopiedPerChunk} parameter.
    * If source and destination have different location or storage class {@link CopyWriter#result()}
    * might issue multiple RPC calls depending on blob's size.
-   * <p>
-   * Example usage of copy:
+   *
+   * <p>Example usage of copy:
    * <pre>    {@code BlobInfo blob = service.copy(copyRequest).result();}
    * </pre>
    * To explicitly issue chunk copy requests use {@link CopyWriter#copyChunk()} instead:
@@ -1449,8 +1457,8 @@ public interface Storage extends Service<StorageOptions> {
    * is only valid within a certain time period.
    * This is particularly useful if you don't want publicly
    * accessible blobs, but don't want to require users to explicitly log in.
-   * <p>
-   * Example usage of creating a signed URL that is valid for 2 weeks:
+   *
+   * <p>Example usage of creating a signed URL that is valid for 2 weeks:
    * <pre>   {@code
    *     service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS);
    * }</pre>

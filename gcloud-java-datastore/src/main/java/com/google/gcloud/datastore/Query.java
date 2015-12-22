@@ -65,7 +65,8 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
       private static final long serialVersionUID = 1602329532153860907L;
 
-      @Override protected Object convert(DatastoreV1.Entity entityPb) {
+      @Override
+      Object convert(DatastoreV1.Entity entityPb) {
         if (entityPb.getPropertyCount() == 0) {
           if (!entityPb.hasKey()) {
             return null;
@@ -81,7 +82,8 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
       private static final long serialVersionUID = 7712959777507168274L;
 
-      @Override protected Entity convert(DatastoreV1.Entity entityPb) {
+      @Override
+      Entity convert(DatastoreV1.Entity entityPb) {
         return Entity.fromPb(entityPb);
       }
     };
@@ -91,7 +93,8 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
       private static final long serialVersionUID = -8514289244104446252L;
 
-      @Override protected Key convert(DatastoreV1.Entity entityPb) {
+      @Override
+      Key convert(DatastoreV1.Entity entityPb) {
         return Key.fromPb(entityPb.getKey());
       }
     };
@@ -102,7 +105,8 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
           private static final long serialVersionUID = -7591409419690650246L;
 
-          @Override protected ProjectionEntity convert(DatastoreV1.Entity entityPb) {
+          @Override
+          ProjectionEntity convert(DatastoreV1.Entity entityPb) {
             return ProjectionEntity.fromPb(entityPb);
           }
     };
@@ -151,7 +155,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       return resultClass.isAssignableFrom(otherResultType.resultClass);
     }
 
-    protected abstract V convert(DatastoreV1.Entity entityPb);
+    abstract V convert(DatastoreV1.Entity entityPb);
 
     static ResultType<?> fromPb(DatastoreV1.EntityResult.ResultType typePb) {
       return MoreObjects.firstNonNull(PB_TO_INSTANCE.get(typePb), UNKNOWN);
@@ -181,16 +185,16 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(resultType, namespace, bytesPb);
   }
 
-  protected abstract Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
+  abstract Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException;
 
-  protected abstract void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb);
+  abstract void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb);
 
-  protected abstract Query<V> nextQuery(DatastoreV1.QueryResultBatch responsePb);
+  abstract Query<V> nextQuery(DatastoreV1.QueryResultBatch responsePb);
 
   /**
    * Returns a new {@link GqlQuery} builder.

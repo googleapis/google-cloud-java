@@ -26,8 +26,10 @@ import java.nio.channels.ReadableByteChannel;
 /**
  * A channel for reading data from a Google Cloud Storage object.
  *
- * Implementations of this class may buffer data internally to reduce remote calls. This interface
- * implements {@link Restorable} to allow saving the reader's state to continue reading afterwards.
+ * <p>Implementations of this class may buffer data internally to reduce remote calls. This
+ * interface implements {@link Restorable} to allow saving the reader's state to continue reading
+ * afterwards.
+ * </p>
  */
 public interface BlobReadChannel extends ReadableByteChannel, Closeable,
     Restorable<BlobReadChannel> {

@@ -199,7 +199,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     return DatastoreException.throwInvalidRequest(String.format(msg, params));
   }
 
-  protected DatastoreV1.Mutation.Builder toMutationPb() {
+  DatastoreV1.Mutation.Builder toMutationPb() {
     DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
     for (FullEntity<IncompleteKey> entity : toAddAutoId()) {
       mutationPb.addInsertAutoId(entity.toPb());

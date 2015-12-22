@@ -26,6 +26,11 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-resourcemanager</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
       <artifactId>gcloud-java-storage</artifactId>
       <version>${project.version}</version>
     </dependency>

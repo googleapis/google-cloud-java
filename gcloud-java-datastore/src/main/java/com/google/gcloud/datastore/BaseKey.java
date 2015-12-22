@@ -172,7 +172,7 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
   }
 
   @Override
-  protected DatastoreV1.Key toPb() {
+  DatastoreV1.Key toPb() {
     DatastoreV1.Key.Builder keyPb = DatastoreV1.Key.newBuilder();
     DatastoreV1.PartitionId.Builder partitionIdPb = DatastoreV1.PartitionId.newBuilder();
     if (projectId != null) {

@@ -14,6 +14,8 @@ This client supports the following Google Cloud Platform services:
 
 -  [Google Cloud Datastore] (#google-cloud-datastore)
 -  [Google Cloud Storage] (#google-cloud-storage)
+-  [Google Cloud Resource Manager] (#google-cloud-resource-manager)
+-  [Google Cloud BigQuery] (#google-cloud-bigquery)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -182,6 +184,82 @@ if (blob == null) {
 }
 ```
 
+Google Cloud Resource Manager
+----------------------
+
+- [API Documentation][resourcemanager-api]
+- [Official Documentation][cloud-resourcemanager-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
+
+```java
+import com.google.gcloud.resourcemanager.ProjectInfo;
+import com.google.gcloud.resourcemanager.ResourceManager;
+import com.google.gcloud.resourcemanager.ResourceManagerOptions;
+
+import java.util.Iterator;
+
+ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+ProjectInfo myProject = resourceManager.get("some-project-id"); // Use an existing project's ID
+ProjectInfo newProjectInfo = resourceManager.replace(myProject.toBuilder()
+    .addLabel("launch-status", "in-development").build());
+System.out.println("Updated the labels of project " + newProjectInfo.projectId()
+    + " to be " + newProjectInfo.labels());
+// List all the projects you have permission to view.
+Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();
+System.out.println("Projects I can view:");
+while (projectIterator.hasNext()) {
+  System.out.println(projectIterator.next().projectId());
+}
+```
+
+Google Cloud BigQuery
+----------------------
+
+- [API Documentation][bigquery-api]
+- [Official Documentation][cloud-bigquery-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example from within Compute/App Engine. Note that you
+must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+```java
+import com.google.gcloud.bigquery.BaseTableInfo;
+import com.google.gcloud.bigquery.BigQuery;
+import com.google.gcloud.bigquery.BigQueryOptions;
+import com.google.gcloud.bigquery.Field;
+import com.google.gcloud.bigquery.JobStatus;
+import com.google.gcloud.bigquery.LoadJobInfo;
+import com.google.gcloud.bigquery.Schema;
+import com.google.gcloud.bigquery.TableId;
+import com.google.gcloud.bigquery.TableInfo;
+
+BigQuery bigquery = BigQueryOptions.defaultInstance().service();
+TableId tableId = TableId.of("dataset", "table");
+BaseTableInfo info = bigquery.getTable(tableId);
+if (info == null) {
+  System.out.println("Creating table " + tableId);
+  Field integerField = Field.of("fieldName", Field.Type.integer());
+  bigquery.create(TableInfo.of(tableId, Schema.of(integerField)));
+} else {
+  System.out.println("Loading data into table " + tableId);
+  LoadJobInfo loadJob = LoadJobInfo.of(tableId, "gs://bucket/path");
+  loadJob = bigquery.create(loadJob);
+  while (loadJob.status().state() != JobStatus.State.DONE) {
+    Thread.sleep(1000L);
+    loadJob = bigquery.getJob(loadJob.jobId());
+  }
+  if (loadJob.status().error() != null) {
+    System.out.println("Job completed with errors");
+  } else {
+    System.out.println("Job succeeded");
+  }
+}
+```
+
 Troubleshooting
 ---------------
 
@@ -241,3 +319,10 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
 [cloud-storage-activation]: https://cloud.google.com/storage/docs/signup
 [storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/storage/package-summary.html
+
+[resourcemanager-api]:http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/resourcemanager/package-summary.html
+[cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/
+
+[cloud-bigquery]: https://cloud.google.com/bigquery/
+[cloud-bigquery-docs]: https://cloud.google.com/bigquery/docs/overview
+[bigquery-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/bigquery/package-summary.html

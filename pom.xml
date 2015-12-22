@@ -68,6 +68,7 @@
   <modules>
     <module>gcloud-java-core</module>
     <module>gcloud-java-datastore</module>
+    <module>gcloud-java-resourcemanager</module>
     <module>gcloud-java-storage</module>
     <module>gcloud-java</module>
     <module>gcloud-java-examples</module>
