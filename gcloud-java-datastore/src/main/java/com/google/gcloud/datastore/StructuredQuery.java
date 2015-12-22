@@ -103,7 +103,7 @@ public class StructuredQuery<V> extends Query<V> {
     Filter() {
     }
 
-    protected abstract DatastoreV1.Filter toPb();
+    abstract DatastoreV1.Filter toPb();
 
     static Filter fromPb(DatastoreV1.Filter filterPb) {
       if (filterPb.hasCompositeFilter()) {
@@ -186,7 +186,7 @@ public class StructuredQuery<V> extends Query<V> {
     }
 
     @Override
-    protected DatastoreV1.Filter toPb() {
+    DatastoreV1.Filter toPb() {
       DatastoreV1.Filter.Builder filterPb = DatastoreV1.Filter.newBuilder();
       DatastoreV1.CompositeFilter.Builder compositeFilterPb = filterPb.getCompositeFilterBuilder();
       compositeFilterPb.setOperator(operator.toPb());
@@ -231,7 +231,7 @@ public class StructuredQuery<V> extends Query<V> {
       this.value = checkNotNull(value);
     }
 
-    public static PropertyFilter fromPb(DatastoreV1.PropertyFilter propertyFilterPb) {
+    static PropertyFilter fromPb(DatastoreV1.PropertyFilter propertyFilterPb) {
       String property = propertyFilterPb.getProperty().getName();
       Operator operator = Operator.fromPb(propertyFilterPb.getOperator());
       Value<?> value = Value.fromPb(propertyFilterPb.getValue());
@@ -435,7 +435,7 @@ public class StructuredQuery<V> extends Query<V> {
     }
 
     @Override
-    protected DatastoreV1.Filter toPb() {
+    DatastoreV1.Filter toPb() {
       DatastoreV1.Filter.Builder filterPb = DatastoreV1.Filter.newBuilder();
       DatastoreV1.PropertyFilter.Builder propertyFilterPb = filterPb.getPropertyFilterBuilder();
       propertyFilterPb.getPropertyBuilder().setName(property);
@@ -587,7 +587,7 @@ public class StructuredQuery<V> extends Query<V> {
       return expressionPb.build();
     }
 
-    public static Projection fromPb(DatastoreV1.PropertyExpression propertyExpressionPb) {
+    static Projection fromPb(DatastoreV1.PropertyExpression propertyExpressionPb) {
       String property = propertyExpressionPb.getProperty().getName();
       Aggregate aggregate = null;
       if (propertyExpressionPb.hasAggregationFunction()) {
@@ -795,7 +795,7 @@ public class StructuredQuery<V> extends Query<V> {
     }
 
     @Override
-    protected KeyQueryBuilder mergeFrom(DatastoreV1.Query queryPb) {
+    KeyQueryBuilder mergeFrom(DatastoreV1.Query queryPb) {
       super.mergeFrom(queryPb);
       projection(Projection.property(KEY_PROPERTY_NAME));
       clearGroupBy();
@@ -948,12 +948,12 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   @Override
-  protected void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb) {
+  void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb) {
     requestPb.setQuery(toPb());
   }
 
   @Override
-  protected StructuredQuery<V> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
+  StructuredQuery<V> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
     Builder<V> builder = new Builder<>(type());
     builder.mergeFrom(toPb());
     builder.startCursor(new Cursor(responsePb.getEndCursor()));
@@ -969,7 +969,7 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   @Override
-  protected DatastoreV1.Query toPb() {
+  DatastoreV1.Query toPb() {
     DatastoreV1.Query.Builder queryPb = DatastoreV1.Query.newBuilder();
     if (kind != null) {
       queryPb.addKindBuilder().setName(kind);
@@ -1002,7 +1002,7 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   @Override
-  protected Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
+  Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
     return fromPb(resultType, namespace, DatastoreV1.Query.parseFrom(bytesPb));
   }

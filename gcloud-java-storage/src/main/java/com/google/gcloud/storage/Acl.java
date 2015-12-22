@@ -73,14 +73,14 @@ public final class Acl implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-      if (this == o) {
+    public boolean equals(Object obj) {
+      if (this == obj) {
         return true;
       }
-      if (o == null || getClass() != o.getClass()) {
+      if (obj == null || getClass() != obj.getClass()) {
         return false;
       }
-      Entity entity = (Entity) o;
+      Entity entity = (Entity) obj;
       return Objects.equals(type, entity.type) && Objects.equals(value, entity.value);
     }
 
@@ -226,7 +226,7 @@ public final class Acl implements Serializable {
 
     private static final long serialVersionUID = 7933776866530023027L;
 
-    private final ProjectRole pRole;
+    private final ProjectRole projectRole;
     private final String projectId;
 
     public enum ProjectRole {
@@ -236,12 +236,12 @@ public final class Acl implements Serializable {
     /**
      * Creates a project entity.
      *
-     * @param pRole a role in the project, used to select project's teams
+     * @param projectRole a role in the project, used to select project's teams
      * @param projectId id of the project
      */
-    public Project(ProjectRole pRole, String projectId) {
-      super(Type.PROJECT, pRole.name().toLowerCase() + "-" + projectId);
-      this.pRole = pRole;
+    public Project(ProjectRole projectRole, String projectId) {
+      super(Type.PROJECT, projectRole.name().toLowerCase() + "-" + projectId);
+      this.projectRole = projectRole;
       this.projectId = projectId;
     }
 
@@ -249,7 +249,7 @@ public final class Acl implements Serializable {
      * Returns the role in the project for this entity.
      */
     public ProjectRole projectRole() {
-      return pRole;
+      return projectRole;
     }
 
     /**
@@ -275,7 +275,7 @@ public final class Acl implements Serializable {
   }
 
   /**
-   * Creats an ACL object.
+   * Creates an ACL object.
    *
    * @param entity the entity for this ACL object
    * @param role the role to associate to the {@code entity} object
