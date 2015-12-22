@@ -103,41 +103,43 @@ public class BigQueryImplTest {
           .description("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
-  private static final BaseTableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_SCHEMA);
-  private static final BaseTableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_SCHEMA);
-  private static final BaseTableInfo TABLE_INFO_WITH_PROJECT =
+  private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_SCHEMA);
+  private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_SCHEMA);
+  private static final TableInfo TABLE_INFO_WITH_PROJECT =
       TableInfo.of(TABLE_ID_WITH_PROJECT, TABLE_SCHEMA);
-  private static final JobInfo LOAD_JOB = LoadJobInfo.of(TABLE_ID, "URI");
-  private static final JobInfo LOAD_JOB_WITH_PROJECT = LoadJobInfo.of(TABLE_ID_WITH_PROJECT, "URI");
-  private static final JobInfo COMPLETE_LOAD_JOB = LoadJobInfo.builder(TABLE_ID_WITH_PROJECT, "URI")
-      .jobId(JobId.of(PROJECT, JOB))
-      .build();
-  private static final JobInfo COPY_JOB =
+  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(TABLE_ID, "URI");
+  private static final LoadJobInfo LOAD_JOB_WITH_PROJECT =
+      LoadJobInfo.of(TABLE_ID_WITH_PROJECT, "URI");
+  private static final LoadJobInfo COMPLETE_LOAD_JOB =
+      LoadJobInfo.builder(TABLE_ID_WITH_PROJECT, "URI")
+          .jobId(JobId.of(PROJECT, JOB))
+          .build();
+  private static final CopyJobInfo COPY_JOB =
       CopyJobInfo.of(TABLE_ID, ImmutableList.of(TABLE_ID, TABLE_ID));
-  private static final JobInfo COPY_JOB_WITH_PROJECT =
+  private static final CopyJobInfo COPY_JOB_WITH_PROJECT =
       CopyJobInfo.of(TABLE_ID_WITH_PROJECT, ImmutableList.of(TABLE_ID_WITH_PROJECT,
           TABLE_ID_WITH_PROJECT));
-  private static final JobInfo COMPLETE_COPY_JOB =
+  private static final CopyJobInfo COMPLETE_COPY_JOB =
       CopyJobInfo.builder(TABLE_ID_WITH_PROJECT, ImmutableList.of(TABLE_ID_WITH_PROJECT,
           TABLE_ID_WITH_PROJECT))
           .jobId(JobId.of(PROJECT, JOB))
           .build();
-  private static final JobInfo QUERY_JOB = QueryJobInfo.builder("SQL")
+  private static final QueryJobInfo QUERY_JOB = QueryJobInfo.builder("SQL")
       .defaultDataset(DatasetId.of(DATASET))
       .destinationTable(TABLE_ID)
       .build();
-  private static final JobInfo QUERY_JOB_WITH_PROJECT = QueryJobInfo.builder("SQL")
+  private static final QueryJobInfo QUERY_JOB_WITH_PROJECT = QueryJobInfo.builder("SQL")
       .defaultDataset(DatasetId.of(PROJECT, DATASET))
       .destinationTable(TABLE_ID_WITH_PROJECT)
       .build();
-  private static final JobInfo COMPLETE_QUERY_JOB = QueryJobInfo.builder("SQL")
+  private static final QueryJobInfo COMPLETE_QUERY_JOB = QueryJobInfo.builder("SQL")
       .defaultDataset(DatasetId.of(PROJECT, DATASET)).destinationTable(TABLE_ID_WITH_PROJECT)
       .jobId(JobId.of(PROJECT, JOB))
       .build();
-  private static final JobInfo EXTRACT_JOB = ExtractJobInfo.of(TABLE_ID, "URI");
-  private static final JobInfo EXTRACT_JOB_WITH_PROJECT =
+  private static final ExtractJobInfo EXTRACT_JOB = ExtractJobInfo.of(TABLE_ID, "URI");
+  private static final ExtractJobInfo EXTRACT_JOB_WITH_PROJECT =
       ExtractJobInfo.of(TABLE_ID_WITH_PROJECT, "URI");
-  private static final JobInfo COMPLETE_EXTRACT_JOB =
+  private static final ExtractJobInfo COMPLETE_EXTRACT_JOB =
       ExtractJobInfo.builder(TABLE_ID_WITH_PROJECT, "URI")
           .jobId(JobId.of(PROJECT, JOB))
           .build();
@@ -447,7 +449,7 @@ public class BigQueryImplTest {
         .andReturn(TABLE_INFO_WITH_PROJECT.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    BaseTableInfo table = bigquery.create(TABLE_INFO);
+    TableInfo table = bigquery.create(TABLE_INFO);
     assertEquals(TABLE_INFO_WITH_PROJECT, table);
   }
 
@@ -459,7 +461,7 @@ public class BigQueryImplTest {
         .andReturn(TABLE_INFO_WITH_PROJECT.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    BaseTableInfo table = bigquery.create(TABLE_INFO, TABLE_OPTION_FIELDS);
+    TableInfo table = bigquery.create(TABLE_INFO, TABLE_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(TABLE_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("tableReference"));
     assertTrue(selector.contains("schema"));
@@ -474,7 +476,7 @@ public class BigQueryImplTest {
         .andReturn(TABLE_INFO_WITH_PROJECT.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    BaseTableInfo table = bigquery.getTable(DATASET, TABLE);
+    TableInfo table = bigquery.getTable(DATASET, TABLE);
     assertEquals(TABLE_INFO_WITH_PROJECT, table);
   }
 
@@ -484,7 +486,7 @@ public class BigQueryImplTest {
         .andReturn(TABLE_INFO_WITH_PROJECT.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    BaseTableInfo table = bigquery.getTable(TABLE_ID);
+    TableInfo table = bigquery.getTable(TABLE_ID);
     assertEquals(TABLE_INFO_WITH_PROJECT, table);
   }
 
@@ -495,7 +497,7 @@ public class BigQueryImplTest {
         .andReturn(TABLE_INFO_WITH_PROJECT.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    BaseTableInfo table = bigquery.getTable(TABLE_ID, TABLE_OPTION_FIELDS);
+    TableInfo table = bigquery.getTable(TABLE_ID, TABLE_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(TABLE_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("tableReference"));
     assertTrue(selector.contains("schema"));
@@ -507,8 +509,8 @@ public class BigQueryImplTest {
   @Test
   public void testListTables() {
     String cursor = "cursor";
-    ImmutableList<BaseTableInfo> tableList = ImmutableList.of(TABLE_INFO_WITH_PROJECT,
-        OTHER_TABLE_INFO);
+    ImmutableList<BaseTableInfo> tableList =
+        ImmutableList.<BaseTableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
     Tuple<String, Iterable<Table>> result =
         Tuple.of(cursor, Iterables.transform(tableList, BaseTableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(DATASET, EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -522,8 +524,8 @@ public class BigQueryImplTest {
   @Test
   public void testListTablesFromDatasetId() {
     String cursor = "cursor";
-    ImmutableList<BaseTableInfo> tableList = ImmutableList.of(TABLE_INFO_WITH_PROJECT,
-        OTHER_TABLE_INFO);
+    ImmutableList<BaseTableInfo> tableList =
+        ImmutableList.<BaseTableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
     Tuple<String, Iterable<Table>> result =
         Tuple.of(cursor, Iterables.transform(tableList, BaseTableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(DATASET, EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -537,8 +539,8 @@ public class BigQueryImplTest {
   @Test
   public void testListTablesWithOptions() {
     String cursor = "cursor";
-    ImmutableList<BaseTableInfo> tableList = ImmutableList.of(TABLE_INFO_WITH_PROJECT,
-        OTHER_TABLE_INFO);
+    ImmutableList<BaseTableInfo> tableList =
+        ImmutableList.<BaseTableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
     Tuple<String, Iterable<Table>> result =
         Tuple.of(cursor, Iterables.transform(tableList, BaseTableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(DATASET, TABLE_LIST_OPTIONS)).andReturn(result);
@@ -568,30 +570,30 @@ public class BigQueryImplTest {
 
   @Test
   public void testUpdateTable() {
-    BaseTableInfo updatedTableInfo = TABLE_INFO.toBuilder().description("newDescription").build();
-    BaseTableInfo updatedTableInfoWithProject = TABLE_INFO_WITH_PROJECT.toBuilder()
+    TableInfo updatedTableInfo = TABLE_INFO.toBuilder().description("newDescription").build();
+    TableInfo updatedTableInfoWithProject = TABLE_INFO_WITH_PROJECT.toBuilder()
         .description("newDescription")
         .build();
     EasyMock.expect(bigqueryRpcMock.patch(updatedTableInfoWithProject.toPb(), EMPTY_RPC_OPTIONS))
         .andReturn(updatedTableInfoWithProject.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    BaseTableInfo table = bigquery.update(updatedTableInfo);
+    TableInfo table = bigquery.update(updatedTableInfo);
     assertEquals(updatedTableInfoWithProject, table);
   }
 
   @Test
   public void testUpdateTableWithSelectedFields() {
     Capture<Map<BigQueryRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    BaseTableInfo updatedTableInfo = TABLE_INFO.toBuilder().description("newDescription").build();
-    BaseTableInfo updatedTableInfoWithProject = TABLE_INFO_WITH_PROJECT.toBuilder()
+    TableInfo updatedTableInfo = TABLE_INFO.toBuilder().description("newDescription").build();
+    TableInfo updatedTableInfoWithProject = TABLE_INFO_WITH_PROJECT.toBuilder()
         .description("newDescription")
         .build();
     EasyMock.expect(bigqueryRpcMock.patch(eq(updatedTableInfoWithProject.toPb()),
         capture(capturedOptions))).andReturn(updatedTableInfoWithProject.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    BaseTableInfo table = bigquery.update(updatedTableInfo, TABLE_OPTION_FIELDS);
+    TableInfo table = bigquery.update(updatedTableInfo, TABLE_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(TABLE_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("tableReference"));
     assertTrue(selector.contains("schema"));
@@ -727,7 +729,7 @@ public class BigQueryImplTest {
         .andReturn(COMPLETE_QUERY_JOB.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    JobInfo job = bigquery.create(QUERY_JOB);
+    QueryJobInfo job = bigquery.create(QUERY_JOB);
     assertEquals(COMPLETE_QUERY_JOB, job);
   }
 
@@ -737,7 +739,7 @@ public class BigQueryImplTest {
         .andReturn(COMPLETE_LOAD_JOB.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    JobInfo job = bigquery.create(LOAD_JOB);
+    LoadJobInfo job = bigquery.create(LOAD_JOB);
     assertEquals(COMPLETE_LOAD_JOB, job);
   }
 
@@ -747,7 +749,7 @@ public class BigQueryImplTest {
         .andReturn(COMPLETE_COPY_JOB.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    JobInfo job = bigquery.create(COPY_JOB);
+    CopyJobInfo job = bigquery.create(COPY_JOB);
     assertEquals(COMPLETE_COPY_JOB, job);
   }
 
@@ -757,7 +759,7 @@ public class BigQueryImplTest {
         .andReturn(COMPLETE_EXTRACT_JOB.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    JobInfo job = bigquery.create(EXTRACT_JOB);
+    ExtractJobInfo job = bigquery.create(EXTRACT_JOB);
     assertEquals(COMPLETE_EXTRACT_JOB, job);
   }
 
@@ -769,7 +771,7 @@ public class BigQueryImplTest {
         .andReturn(COMPLETE_QUERY_JOB.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    JobInfo job = bigquery.create(QUERY_JOB, JOB_OPTION_FIELDS);
+    QueryJobInfo job = bigquery.create(QUERY_JOB, JOB_OPTION_FIELDS);
     assertEquals(COMPLETE_QUERY_JOB, job);
     String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("jobReference"));
@@ -784,7 +786,7 @@ public class BigQueryImplTest {
         .andReturn(COMPLETE_COPY_JOB.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    JobInfo job = bigquery.getJob(JOB);
+    CopyJobInfo job = bigquery.getJob(JOB);
     assertEquals(COMPLETE_COPY_JOB, job);
   }
 
@@ -794,15 +796,15 @@ public class BigQueryImplTest {
         .andReturn(COMPLETE_COPY_JOB.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    JobInfo job = bigquery.getJob(JobId.of(PROJECT, JOB));
+    CopyJobInfo job = bigquery.getJob(JobId.of(PROJECT, JOB));
     assertEquals(COMPLETE_COPY_JOB, job);
   }
 
   @Test
   public void testListJobs() {
     String cursor = "cursor";
-    ImmutableList<JobInfo> jobList = ImmutableList.of(QUERY_JOB_WITH_PROJECT,
-        LOAD_JOB_WITH_PROJECT);
+    ImmutableList<JobInfo> jobList =
+        ImmutableList.<JobInfo>of(QUERY_JOB_WITH_PROJECT, LOAD_JOB_WITH_PROJECT);
     Tuple<String, Iterable<Job>> result =
         Tuple.of(cursor, Iterables.transform(jobList, new Function<JobInfo, Job>() {
           @Override
@@ -821,8 +823,8 @@ public class BigQueryImplTest {
   @Test
   public void testListJobsWithOptions() {
     String cursor = "cursor";
-    ImmutableList<JobInfo> jobList = ImmutableList.of(QUERY_JOB_WITH_PROJECT,
-        LOAD_JOB_WITH_PROJECT);
+    ImmutableList<JobInfo> jobList =
+        ImmutableList.<JobInfo>of(QUERY_JOB_WITH_PROJECT, LOAD_JOB_WITH_PROJECT);
     Tuple<String, Iterable<Job>> result =
         Tuple.of(cursor, Iterables.transform(jobList, new Function<JobInfo, Job>() {
           @Override
@@ -843,8 +845,8 @@ public class BigQueryImplTest {
   public void testListJobsWithSelectedFields() {
     String cursor = "cursor";
     Capture<Map<BigQueryRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    ImmutableList<JobInfo> jobList = ImmutableList.of(QUERY_JOB_WITH_PROJECT,
-        LOAD_JOB_WITH_PROJECT);
+    ImmutableList<JobInfo> jobList =
+        ImmutableList.<JobInfo>of(QUERY_JOB_WITH_PROJECT, LOAD_JOB_WITH_PROJECT);
     Tuple<String, Iterable<Job>> result =
         Tuple.of(cursor, Iterables.transform(jobList, new Function<JobInfo, Job>() {
           @Override

@@ -199,7 +199,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public BaseTableInfo create(BaseTableInfo table, TableOption... options)
+  public <T extends BaseTableInfo> T create(T table, TableOption... options)
       throws BigQueryException {
     final Table tablePb = setProjectId(table).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
@@ -216,7 +216,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public JobInfo create(JobInfo job, JobOption... options) throws BigQueryException {
+  public <T extends JobInfo> T create(T job, JobOption... options) throws BigQueryException {
     final Job jobPb = setProjectId(job).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
@@ -335,7 +335,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public BaseTableInfo update(BaseTableInfo table, TableOption... options)
+  public <T extends BaseTableInfo> T update(T table, TableOption... options)
       throws BigQueryException {
     final Table tablePb = setProjectId(table).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
@@ -352,13 +352,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public BaseTableInfo getTable(final String datasetId, final String tableId,
+  public <T extends BaseTableInfo> T getTable(final String datasetId, final String tableId,
       TableOption... options) throws BigQueryException {
     return getTable(TableId.of(datasetId, tableId), options);
   }
 
   @Override
-  public BaseTableInfo getTable(final TableId tableId, TableOption... options)
+  public <T extends BaseTableInfo> T getTable(final TableId tableId, TableOption... options)
       throws BigQueryException {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
@@ -368,7 +368,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           return bigQueryRpc.getTable(tableId.dataset(), tableId.table(), optionsMap);
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : BaseTableInfo.fromPb(answer);
+      return answer == null ? null : BaseTableInfo.<T>fromPb(answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -466,12 +466,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public JobInfo getJob(String jobId, JobOption... options) throws BigQueryException {
+  public <T extends JobInfo> T getJob(String jobId, JobOption... options) throws BigQueryException {
     return getJob(JobId.of(jobId), options);
   }
 
   @Override
-  public JobInfo getJob(final JobId jobId, JobOption... options) throws BigQueryException {
+  public <T extends JobInfo> T getJob(final JobId jobId, JobOption... options)
+      throws BigQueryException {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       Job answer = runWithRetries(new Callable<Job>() {
@@ -480,7 +481,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           return bigQueryRpc.getJob(jobId.job(), optionsMap);
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : JobInfo.fromPb(answer);
+      return answer == null ? null : JobInfo.<T>fromPb(answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
