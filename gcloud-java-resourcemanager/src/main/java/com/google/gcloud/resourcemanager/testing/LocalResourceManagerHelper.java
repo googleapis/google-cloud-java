@@ -95,9 +95,7 @@ public class LocalResourceManagerHelper {
   private enum Error {
     ALREADY_EXISTS(409, "global", "alreadyExists", "ALREADY_EXISTS"),
     PERMISSION_DENIED(403, "global", "forbidden", "PERMISSION_DENIED"),
-    // change failed precondition error code to 412 when #440 is fixed
     FAILED_PRECONDITION(400, "global", "failedPrecondition", "FAILED_PRECONDITION"),
-    // change invalid argument error code to 412 when #440 is fixed
     INVALID_ARGUMENT(400, "global", "badRequest", "INVALID_ARGUMENT"),
     BAD_REQUEST(400, "global", "badRequest", "BAD_REQUEST"),
     INTERNAL_ERROR(500, "global", "internalError", "INTERNAL_ERROR");
@@ -324,12 +322,9 @@ public class LocalResourceManagerHelper {
     }
   }
 
-  Response delete(String projectId) {
+  synchronized Response delete(String projectId) {
     Project project = projects.get(projectId);
     if (project == null) {
-      // Currently the service returns 403 Permission Denied when trying to delete a project that
-      // doesn't exist. Here we mimic this behavior, but this line should be changed to throw a
-      // 404 Not Found error when the service fixes this (#440).
       return Error.PERMISSION_DENIED.response(
           "Error when deleting " + projectId + " because the project was not found.");
     }
@@ -343,18 +338,16 @@ public class LocalResourceManagerHelper {
   }
 
   Response get(String projectId, String[] fields) {
-    if (!projects.containsKey(projectId)) {
-      // Currently the service returns 403 Permission Denied when trying to get a project that
-      // doesn't exist. Here we mimic this behavior, but this line should be changed to throw a
-      // 404 Not Found error when the service fixes this (#440).
-      return Error.PERMISSION_DENIED.response("Project " + projectId + " not found.");
-    }
     Project project = projects.get(projectId);
-    try {
-      return new Response(HTTP_OK, jsonFactory.toString(extractFields(project, fields)));
-    } catch (IOException e) {
-      return Error.INTERNAL_ERROR.response(
-          "Error when serializing project " + project.getProjectId());
+    if (project != null) {
+      try {
+        return new Response(HTTP_OK, jsonFactory.toString(extractFields(project, fields)));
+      } catch (IOException e) {
+        return Error.INTERNAL_ERROR.response(
+            "Error when serializing project " + project.getProjectId());
+      }
+    } else {
+      return Error.PERMISSION_DENIED.response("Project " + projectId + " not found.");
     }
   }
 
@@ -462,12 +455,9 @@ public class LocalResourceManagerHelper {
     return project;
   }
 
-  Response replace(String projectId, Project project) {
+  synchronized Response replace(String projectId, Project project) {
     Project originalProject = projects.get(projectId);
     if (originalProject == null) {
-      // Currently the service returns 403 Permission Denied when trying to replace a project that
-      // doesn't exist. Here we mimic this behavior, but this line should be changed to throw a
-      // 404 Not Found error when the service fixes this (#440).
       return Error.PERMISSION_DENIED.response(
           "Error when replacing " + projectId + " because the project was not found.");
     } else if (!originalProject.getLifecycleState().equals("ACTIVE")) {
@@ -478,23 +468,23 @@ public class LocalResourceManagerHelper {
           "The server currently only supports setting the parent once "
           + "and does not allow unsetting it.");
     }
-    originalProject.setName(project.getName());
-    originalProject.setLabels(project.getLabels());
-    originalProject.setParent(project.getParent());
+    project.setProjectId(projectId);
+    project.setLifecycleState(originalProject.getLifecycleState());
+    project.setCreateTime(originalProject.getCreateTime());
+    project.setProjectNumber(originalProject.getProjectNumber());
+    // replace cannot fail because both this method and removeProject are synchronized
+    projects.replace(projectId, project);
     try {
-      return new Response(HTTP_OK, jsonFactory.toString(originalProject));
+      return new Response(HTTP_OK, jsonFactory.toString(project));
     } catch (IOException e) {
       return Error.INTERNAL_ERROR.response("Error when serializing project " + projectId);
     }
   }
 
-  Response undelete(String projectId) {
+  synchronized Response undelete(String projectId) {
     Project project = projects.get(projectId);
     Response response;
     if (project == null) {
-      // Currently the service returns 403 Permission Denied when trying to undelete a project that
-      // doesn't exist. Here we mimic this behavior, but this line should be changed to throw a
-      // 404 Not Found error when the service fixes this (#440).
       response = Error.PERMISSION_DENIED.response(
           "Error when undeleting " + projectId + " because the project was not found.");
     } else if (!project.getLifecycleState().equals("DELETE_REQUESTED")) {
@@ -550,7 +540,7 @@ public class LocalResourceManagerHelper {
    *
    * @return true if the lifecycle state was successfully updated, false otherwise.
    */
-  public boolean changeLifecycleState(String projectId, String lifecycleState) {
+  public synchronized boolean changeLifecycleState(String projectId, String lifecycleState) {
     checkArgument(
         "ACTIVE".equals(lifecycleState) || "DELETE_REQUESTED".equals(lifecycleState)
         || "DELETE_IN_PROGRESS".equals(lifecycleState),
@@ -571,7 +561,9 @@ public class LocalResourceManagerHelper {
    *
    * @return true if the project was successfully deleted, false if the project didn't exist.
    */
-  public boolean removeProject(String projectId) {
+  public synchronized boolean removeProject(String projectId) {
+    // Because this method is synchronized, any code that relies on non-atomic read/write operations
+    // should not fail if that code is also synchronized.
     return projects.remove(checkNotNull(projectId)) != null;
   }
 }
