@@ -463,14 +463,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  BaseTableInfo create(BaseTableInfo table, TableOption... options) throws BigQueryException;
+  <T extends BaseTableInfo> T create(T table, TableOption... options) throws BigQueryException;
 
   /**
    * Creates a new job.
    *
    * @throws BigQueryException upon failure
    */
-  JobInfo create(JobInfo job, JobOption... options) throws BigQueryException;
+  <T extends JobInfo> T create(T job, JobOption... options) throws BigQueryException;
 
   /**
    * Returns the requested dataset or {@code null} if not found.
@@ -541,14 +541,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  BaseTableInfo update(BaseTableInfo table, TableOption... options) throws BigQueryException;
+  <T extends BaseTableInfo> T update(T table, TableOption... options) throws BigQueryException;
 
   /**
    * Returns the requested table or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  BaseTableInfo getTable(String datasetId, String tableId, TableOption... options)
+  <T extends BaseTableInfo> T getTable(String datasetId, String tableId, TableOption... options)
       throws BigQueryException;
 
   /**
@@ -556,7 +556,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  BaseTableInfo getTable(TableId tableId, TableOption... options) throws BigQueryException;
+  <T extends BaseTableInfo> T getTable(TableId tableId, TableOption... options)
+      throws BigQueryException;
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table
@@ -610,14 +611,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  JobInfo getJob(String jobId, JobOption... options) throws BigQueryException;
+  <T extends JobInfo> T getJob(String jobId, JobOption... options) throws BigQueryException;
 
   /**
    * Returns the requested job or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  JobInfo getJob(JobId jobId, JobOption... options) throws BigQueryException;
+  <T extends JobInfo> T getJob(JobId jobId, JobOption... options) throws BigQueryException;
 
   /**
    * Lists the jobs.

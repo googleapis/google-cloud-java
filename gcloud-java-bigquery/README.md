@@ -118,7 +118,7 @@ Field stringField = Field.of("StringField", Field.Type.string());
 // Table schema definition
 Schema schema = Schema.of(stringField);
 // Create a table
-BaseTableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, schema));
+TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, schema));
 ```
 
 #### Loading data into a table
@@ -232,7 +232,7 @@ public class GcloudBigQueryExample {
     // Table schema definition
     Schema schema = Schema.of(stringField);
     // Create a table
-    BaseTableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, schema));
+    TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, schema));
 
     // Define rows to insert
     Map<String, Object> firstRow = new HashMap<>();
