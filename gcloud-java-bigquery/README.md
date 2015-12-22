@@ -98,15 +98,15 @@ bigquery.create(DatasetInfo.builder(datasetId).build());
 
 #### Creating a table
 With BigQuery you can create different types of tables: normal tables with an associated schema,
-external tables backed by data stored on Google Cloud Storage and view tables that are created from
-a BigQuery SQL query. In this code snippet we show how to create a normal table with only one string
-field. Add the following imports at the top of your file:
+external tables backed by data stored on [Google Cloud Storage][cloud-storage] and view tables that
+are created from a BigQuery SQL query. In this code snippet we show how to create a normal table
+with only one string field. Add the following imports at the top of your file:
 
 ```java
+import com.google.gcloud.bigquery.BaseTableInfo;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.Schema;
 import com.google.gcloud.bigquery.TableId;
-import com.google.gcloud.bigquery.BaseTableInfo;
 import com.google.gcloud.bigquery.TableInfo;
 ```
 Then add the following code to create the table:
@@ -114,9 +114,7 @@ Then add the following code to create the table:
 ```java
 TableId tableId = TableId.of(datasetId, "my_table_id");
 // Table field definition
-Field stringField = Field.builder("StringField", Field.Type.string())
-    .mode(Field.Mode.NULLABLE)
-    .build();
+Field stringField = Field.of("StringField", Field.Type.string());
 // Table schema definition
 Schema schema = Schema.of(stringField);
 // Create a table
@@ -172,14 +170,15 @@ Then add the following code to run the query and wait for the result:
 
 ```java
 // Create a query request
-QueryRequest queryRequest = QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
-    .maxWaitTime(60000L)
-    .maxResults(1000L)
-    .build();
+QueryRequest queryRequest =
+    QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
+        .maxWaitTime(60000L)
+        .maxResults(1000L)
+        .build();
 // Request query to be executed and wait for results
 QueryResponse queryResponse = bigquery.query(queryRequest);
 while (!queryResponse.jobComplete()) {
-  Thread.sleep(1000);
+  Thread.sleep(1000L);
   queryResponse = bigquery.getQueryResults(queryResponse.jobId());
 }
 // Read rows
@@ -229,9 +228,7 @@ public class GcloudBigQueryExample {
 
     TableId tableId = TableId.of(datasetId, "my_table_id");
     // Table field definition
-    Field stringField = Field.builder("StringField", Field.Type.string())
-        .mode(Field.Mode.NULLABLE)
-        .build();
+    Field stringField = Field.of("StringField", Field.Type.string());
     // Table schema definition
     Schema schema = Schema.of(stringField);
     // Create a table
@@ -255,14 +252,15 @@ public class GcloudBigQueryExample {
     }
 
     // Create a query request
-    QueryRequest queryRequest = QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
-        .maxWaitTime(60000L)
-        .maxResults(1000L)
-        .build();
+    QueryRequest queryRequest =
+        QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
+            .maxWaitTime(60000L)
+            .maxResults(1000L)
+            .build();
     // Request query to be executed and wait for results
     QueryResponse queryResponse = bigquery.query(queryRequest);
     while (!queryResponse.jobComplete()) {
-      Thread.sleep(1000);
+      Thread.sleep(1000L);
       queryResponse = bigquery.getQueryResults(queryResponse.jobId());
     }
     // Read rows
@@ -274,6 +272,11 @@ public class GcloudBigQueryExample {
   }
 }
 ```
+
+Troubleshooting
+---------------
+
+To get help, follow the `gcloud-java` links in the `gcloud-*`[shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Java Versions
 -------------
@@ -315,4 +318,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-bigquery]: https://cloud.google.com/bigquery/
+[cloud-storage]: https://cloud.google.com/storage/
 [bigquery-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/bigquery/package-summary.html
