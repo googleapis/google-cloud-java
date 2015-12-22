@@ -40,12 +40,12 @@ public final class BooleanValue extends Value<Boolean> {
         }
 
         @Override
-        Boolean getValue(DatastoreV1.Value from) {
+        protected Boolean getValue(DatastoreV1.Value from) {
           return from.getBooleanValue();
         }
 
         @Override
-        void setValue(BooleanValue from, DatastoreV1.Value.Builder to) {
+        protected void setValue(BooleanValue from, DatastoreV1.Value.Builder to) {
           to.setBooleanValue(from.get());
         }
       };

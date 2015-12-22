@@ -80,9 +80,9 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
       return builder.build();
     }
 
-    abstract V getValue(DatastoreV1.Value from);
+    protected abstract V getValue(DatastoreV1.Value from);
 
-    abstract void setValue(P from, DatastoreV1.Value.Builder to);
+    protected abstract void setValue(P from, DatastoreV1.Value.Builder to);
   }
 
   @SuppressWarnings("deprecation")

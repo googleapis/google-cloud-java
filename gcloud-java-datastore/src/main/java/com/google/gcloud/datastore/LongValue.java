@@ -40,12 +40,12 @@ public final class LongValue extends Value<Long> {
         }
 
         @Override
-        Long getValue(DatastoreV1.Value from) {
+        protected Long getValue(DatastoreV1.Value from) {
           return from.getIntegerValue();
         }
 
         @Override
-        void setValue(LongValue from, DatastoreV1.Value.Builder to) {
+        protected void setValue(LongValue from, DatastoreV1.Value.Builder to) {
           to.setIntegerValue(from.get());
         }
       };

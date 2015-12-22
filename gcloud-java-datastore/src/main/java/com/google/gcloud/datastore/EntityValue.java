@@ -41,12 +41,12 @@ public class EntityValue extends Value<FullEntity<?>> {
         }
 
         @Override
-        FullEntity<?> getValue(DatastoreV1.Value from) {
+        protected FullEntity<?> getValue(DatastoreV1.Value from) {
           return FullEntity.fromPb(from.getEntityValue());
         }
 
         @Override
-        void setValue(EntityValue from, DatastoreV1.Value.Builder to) {
+        protected void setValue(EntityValue from, DatastoreV1.Value.Builder to) {
           to.setEntityValue(from.get().toPb());
         }
       };
