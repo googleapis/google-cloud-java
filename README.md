@@ -15,6 +15,7 @@ This client supports the following Google Cloud Platform services:
 -  [Google Cloud Datastore] (#google-cloud-datastore)
 -  [Google Cloud Storage] (#google-cloud-storage)
 -  [Google Cloud Resource Manager] (#google-cloud-resource-manager)
+-  [Google Cloud BigQuery] (#google-cloud-bigquery)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -214,6 +215,51 @@ while (projectIterator.hasNext()) {
 }
 ```
 
+Google Cloud BigQuery
+----------------------
+
+- [API Documentation][bigquery-api]
+- [Official Documentation][cloud-bigquery-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example from within Compute/App Engine. Note that you
+must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+```java
+import com.google.gcloud.bigquery.BaseTableInfo;
+import com.google.gcloud.bigquery.BigQuery;
+import com.google.gcloud.bigquery.BigQueryOptions;
+import com.google.gcloud.bigquery.Field;
+import com.google.gcloud.bigquery.JobStatus;
+import com.google.gcloud.bigquery.LoadJobInfo;
+import com.google.gcloud.bigquery.Schema;
+import com.google.gcloud.bigquery.TableId;
+import com.google.gcloud.bigquery.TableInfo;
+
+BigQuery bigquery = BigQueryOptions.defaultInstance().service();
+TableId tableId = TableId.of("dataset", "table");
+BaseTableInfo info = bigquery.getTable(tableId);
+if (info == null) {
+  System.out.println("Creating table " + tableId);
+  Field integerField = Field.of("fieldName", Field.Type.integer());
+  bigquery.create(TableInfo.of(tableId, Schema.of(integerField)));
+} else {
+  System.out.println("Loading data into table " + tableId);
+  LoadJobInfo loadJob = LoadJobInfo.of(tableId, "gs://bucket/path");
+  loadJob = bigquery.create(loadJob);
+  while (loadJob.status().state() != JobStatus.State.DONE) {
+    Thread.sleep(1000L);
+    loadJob = bigquery.getJob(loadJob.jobId());
+  }
+  if (loadJob.status().error() != null) {
+    System.out.println("Job completed with errors");
+  } else {
+    System.out.println("Job succeeded");
+  }
+}
+```
+
 Troubleshooting
 ---------------
 
@@ -276,3 +322,7 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [resourcemanager-api]:http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/resourcemanager/package-summary.html
 [cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/
+
+[cloud-bigquery]: https://cloud.google.com/bigquery/
+[cloud-bigquery-docs]: https://cloud.google.com/bigquery/docs/overview
+[bigquery-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/bigquery/package-summary.html

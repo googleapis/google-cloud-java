@@ -5,6 +5,7 @@ This library provides tools to help write tests for code that uses the following
 -  [Datastore] (#testing-code-that-uses-datastore)
 -  [Storage] (#testing-code-that-uses-storage)
 -  [Resource Manager] (#testing-code-that-uses-resource-manager)
+-  [BigQuery] (#testing-code-that-uses-bigquery)
 
 ### Testing code that uses Datastore
 
@@ -103,5 +104,34 @@ You can test against a temporary local Resource Manager by following these steps
 
   This method will block until the server thread has been terminated.
 
+### Testing code that uses BigQuery
+
+Currently, there isn't an emulator for Google BigQuery, so an alternative is to create a test
+project. `RemoteBigQueryHelper` contains convenience methods to make setting up and cleaning up the
+test project easier. To use this class, follow the steps below:
+
+1. Create a test Google Cloud project.
+
+2. Download a [JSON service account credentials file][create-service-account] from the Google
+Developer's Console.
+
+3. Create a `RemoteBigQueryHelper` object using your project ID and JSON key.
+Here is an example that uses the `RemoteBigQueryHelper` to create a dataset.
+  ```java
+  RemoteBigQueryHelper bigqueryHelper =
+      RemoteBigQueryHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
+  BigQuery bigquery = bigqueryHelper.options().service();
+  String dataset = RemoteBigQueryHelper.generateDatasetName();
+  bigquery.create(DatasetInfo.builder(dataset).build());
+  ```
+
+4. Run your tests.
+
+5. Clean up the test project by using `forceDelete` to clear any datasets used.
+Here is an example that clears the dataset created in Step 3.
+  ```java
+  RemoteBigQueryHelper.forceDelete(bigquery, dataset);
+  ```
 
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
+[create-service-account]:https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount
