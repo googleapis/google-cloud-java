@@ -147,12 +147,12 @@ public final class Blob extends Serializable<DatastoreV1.Value> {
   }
 
   @Override
-  protected Value toPb() {
+  Value toPb() {
     return DatastoreV1.Value.newBuilder().setBlobValue(byteString).build();
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return new Blob(DatastoreV1.Value.parseFrom(bytesPb).getBlobValue());
   }
 }

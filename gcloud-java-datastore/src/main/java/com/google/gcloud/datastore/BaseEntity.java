@@ -90,7 +90,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
     }
 
     @SuppressWarnings("unchecked")
-    protected B fill(DatastoreV1.Entity entityPb) {
+    B fill(DatastoreV1.Entity entityPb) {
       Map<String, Value<?>> copiedProperties = Maps.newHashMap();
       for (DatastoreV1.Property property : entityPb.getPropertyList()) {
         copiedProperties.put(property.getName(), Value.fromPb(property.getValue()));
@@ -375,7 +375,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     Builder<?, ?> builder = emptyBuilder();
     builder.fill(DatastoreV1.Entity.parseFrom(bytesPb));
     return builder.build();
@@ -384,7 +384,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   protected abstract Builder<?, ?> emptyBuilder();
 
   @Override
-  protected final DatastoreV1.Entity toPb() {
+  final DatastoreV1.Entity toPb() {
     DatastoreV1.Entity.Builder entityPb = DatastoreV1.Entity.newBuilder();
     for (Map.Entry<String, Value<?>> entry : properties.entrySet()) {
       DatastoreV1.Property.Builder propertyPb = DatastoreV1.Property.newBuilder();
