@@ -85,6 +85,9 @@ public class FormatOptions implements Serializable {
    * Default options for the provided format.
    */
   public static FormatOptions of(String format) {
+    if (format.equals(CSV)) {
+      return csv();
+    }
     return new FormatOptions(format);
   }
 }
