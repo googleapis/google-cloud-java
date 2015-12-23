@@ -37,10 +37,10 @@ import java.util.TreeMap;
 
 /**
  * An example of using the Google Cloud Datastore.
- * <p>
- * This example adds, display or clear comments for a given user.
- * <p>
- * Steps needed for running the example:<ol>
+ *
+ * <p>This example adds, display or clear comments for a given user.
+ *
+ * <p>Steps needed for running the example:<ol>
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven - {@code mvn exec:java
@@ -58,6 +58,7 @@ public class DatastoreExample {
 
   private interface DatastoreAction {
     void run(Transaction tx, Key userKey, String... args);
+
     String getRequiredParams();
   }
 
