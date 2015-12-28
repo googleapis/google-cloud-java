@@ -59,27 +59,27 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * An example of using the Google Cloud Storage.
- * <p>
- * This example demonstrates a simple/typical storage usage.
- * <p>
- * Steps needed for running the example:
+ *
+ * <p>This example demonstrates a simple/typical storage usage.
+ *
+ * <p>Steps needed for running the example:
  * <ol>
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven -
  * {@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
- * -Dexec.args="[<project_id>] list [<bucket>]| info [<bucket> [<file>]]|
- *  download <bucket> <path> [local_file]| upload <local_file> <bucket> [<path>]|
- *  delete <bucket> <path>+| cp <from_bucket> <from_path> <to_bucket> <to_path>|
- *  compose <bucket> <from_path>+ <to_path>| update_metadata <bucket> <file> [key=value]*|
+ * -Dexec.args="[<project_id>] list [<bucket>] | info [<bucket> [<file>]] |
+ *  download <bucket> <path> [local_file] | upload <local_file> <bucket> [<path>] |
+ *  delete <bucket> <path>+ | cp <from_bucket> <from_path> <to_bucket> <to_path> |
+ *  compose <bucket> <from_path>+ <to_path> | update_metadata <bucket> <file> [key=value]* |
  *  sign_url <service_account_private_key_file> <service_account_email> <bucket> <path>"}
  * </li>
  * </ol>
  *
- * The first parameter is an optional project_id (logged-in project will be used if not supplied).
- * Second parameter is a Storage operation (list, delete, compose,...) to demonstrate the its
- * usage. Any other arguments are specific to the operation.
- * See each action's run method for the specific Storage interaction.
+ * <p>The first parameter is an optional {@code project_id} (logged-in project will be used if not
+ * supplied). Second parameter is a Storage operation (list, delete, compose,...) and can be used to
+ * demonstrate its usage. Any other arguments are specific to the operation. See each action's run
+ * method for the specific Storage interaction.
  */
 public class StorageExample {
 
@@ -523,7 +523,7 @@ public class StorageExample {
     ACTIONS.put("sign_url", new SignUrlAction());
   }
 
-  public static void printUsage() {
+  private static void printUsage() {
     StringBuilder actionAndParams = new StringBuilder();
     for (Map.Entry<String, StorageAction> entry : ACTIONS.entrySet()) {
       actionAndParams.append("\n\t").append(entry.getKey());

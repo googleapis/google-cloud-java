@@ -67,6 +67,16 @@ To run examples from your command line:
   $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.ResourceManagerExample" -Dexec.args="get my-project-id"
   ```
 
+  Here's an example run of `BigQueryExample`.
+
+  Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud BigQuery API is enabled.
+  ```
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="create dataset new_dataset_id"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="create table new_dataset_id new_table_id field_name:string"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="list tables new_dataset_id"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="query 'select * from new_dataset_id.new_table_id'"
+  ```
+
 Troubleshooting
 ---------------
 

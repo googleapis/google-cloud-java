@@ -16,6 +16,11 @@
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-bigquery</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
       <artifactId>gcloud-java-core</artifactId>
       <version>${project.version}</version>
     </dependency>
