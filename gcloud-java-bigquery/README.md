@@ -5,7 +5,7 @@ Java idiomatic client for [Google Cloud BigQuery] (https://cloud.google.com/bigq
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-<!-- TODO(mziccard): add in the maven shield once the artifact is pushed to maven -->
+[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-bigquery.svg)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/bigquery/package-summary.html)
@@ -16,18 +16,26 @@ Java idiomatic client for [Google Cloud BigQuery] (https://cloud.google.com/bigq
 Quickstart
 ----------
 If you are using Maven, add this to your pom.xml file
-<!-- TODO(mziccard): add mvn dependency code -->
-
+```xml
+<dependency>
+  <groupId>com.google.gcloud</groupId>
+  <artifactId>gcloud-java-bigquery</artifactId>
+  <version>0.1.1</version>
+</dependency>
+```
 If you are using Gradle, add this to your dependencies
-<!-- TODO(mziccard): add gradle dependency code -->
-
+```Groovy
+compile 'com.google.gcloud:gcloud-java-bigquery:0.1.1'
+```
 If you are using SBT, add this to your dependencies
-<!-- TODO(mziccard): add sbt dependency code -->
+```Scala
+libraryDependencies += "com.google.gcloud" % "gcloud-java-bigquery" % "0.1.1"
+```
 
 Example Application
 -------------------
-
-<!-- TODO(mziccard): add example application -->
+- [`BigQueryExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
+Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/BigQueryExample.html).
 
 Authentication
 --------------
