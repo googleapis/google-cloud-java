@@ -22,7 +22,7 @@ If you are using Maven, add this to your pom.xml file
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-core:jar:0.1.1'
+compile 'com.google.gcloud:gcloud-java-core:0.1.1'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
