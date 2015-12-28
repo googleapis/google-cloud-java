@@ -185,6 +185,7 @@ public class LocalResourceManagerHelper {
     exchange.getResponseHeaders().set("Content-type", "application/json; charset=UTF-8");
     OutputStream outputStream = exchange.getResponseBody();
     try {
+      exchange.getResponseHeaders().add("Connection", "close");
       exchange.sendResponseHeaders(response.code(), response.body().length());
       outputStream.write(response.body().getBytes(StandardCharsets.UTF_8));
       outputStream.close();
