@@ -45,6 +45,7 @@ public class InsertAllRequest implements Serializable {
   private final List<RowToInsert> rows;
   private final Boolean skipInvalidRows;
   private final Boolean ignoreUnknownValues;
+  private final String templateSuffix;
 
   /**
    * A Google Big Query row to be inserted into a table. Each {@code RowToInsert} has an associated
@@ -140,6 +141,7 @@ public class InsertAllRequest implements Serializable {
     private List<RowToInsert> rows;
     private Boolean skipInvalidRows;
     private Boolean ignoreUnknownValues;
+    private String templateSuffix;
 
     private Builder() {}
 
@@ -231,6 +233,20 @@ public class InsertAllRequest implements Serializable {
       return this;
     }
 
+    /**
+     * If specified, the destination table is treated as a base template. Rows are inserted into an
+     * instance table named "{destination}{templateSuffix}". BigQuery will manage the creation of
+     * the instance table, using the schema of the base template table.
+     *
+     * @see <a
+     *     href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
+     *     Template Tables</a>
+     */
+    public Builder templateSuffix(String templateSuffix) {
+      this.templateSuffix = templateSuffix;
+      return this;
+    }
+
     public InsertAllRequest build() {
       return new InsertAllRequest(this);
     }
@@ -241,6 +257,7 @@ public class InsertAllRequest implements Serializable {
     this.rows = ImmutableList.copyOf(checkNotNull(builder.rows));
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
     this.skipInvalidRows = builder.skipInvalidRows;
+    this.templateSuffix = builder.templateSuffix;
   }
 
   /**
@@ -271,6 +288,19 @@ public class InsertAllRequest implements Serializable {
    */
   public Boolean skipInvalidRows() {
     return skipInvalidRows;
+  }
+
+  /**
+   * If specified, the destination table is treated as a base template. Rows are inserted into an
+   * instance table named "{destination}{templateSuffix}". BigQuery will manage the creation of the
+   * instance table, using the schema of the base template table.
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
+   *     Template Tables</a>
+   */
+  public String templateSuffix() {
+    return templateSuffix;
   }
 
   /**
@@ -384,12 +414,13 @@ public class InsertAllRequest implements Serializable {
         .add("rows", rows)
         .add("ignoreUnknownValues", ignoreUnknownValues)
         .add("skipInvalidRows", skipInvalidRows)
+        .add("templateSuffix", templateSuffix)
         .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(table, rows, ignoreUnknownValues, skipInvalidRows);
+    return Objects.hash(table, rows, ignoreUnknownValues, skipInvalidRows, templateSuffix);
   }
 
   @Override
@@ -401,6 +432,7 @@ public class InsertAllRequest implements Serializable {
     return Objects.equals(table, other.table)
         && Objects.equals(rows, other.rows)
         && Objects.equals(ignoreUnknownValues, other.ignoreUnknownValues)
-        && Objects.equals(skipInvalidRows, other.skipInvalidRows);
+        && Objects.equals(skipInvalidRows, other.skipInvalidRows)
+        && Objects.equals(templateSuffix, other.templateSuffix);
   }
 }

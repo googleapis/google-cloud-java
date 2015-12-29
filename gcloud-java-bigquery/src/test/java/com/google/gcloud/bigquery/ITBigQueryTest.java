@@ -476,6 +476,41 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testInsertAllWithSuffix() {
+    String tableName = "test_insert_all_with_suffix_table";
+    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
+    assertNotNull(bigquery.create(tableInfo));
+    InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
+        .addRow(ImmutableMap.<String, Object>of(
+            "TimestampField", "2014-08-19 07:41:35.220 -05:00",
+            "StringField", "stringValue",
+            "IntegerField", ImmutableList.of(0, 1),
+            "BooleanField", false,
+            "RecordField", ImmutableMap.of(
+                "TimestampField", "1969-07-20 20:18:04 UTC",
+                "IntegerField", ImmutableList.of(1, 0),
+                "BooleanField", true)))
+        .addRow(ImmutableMap.<String, Object>of(
+            "TimestampField", "2014-08-19 07:41:35.220 -05:00",
+            "StringField", "stringValue",
+            "IntegerField", ImmutableList.of(0, 1),
+            "BooleanField", false,
+            "RecordField", ImmutableMap.of(
+                "TimestampField", "1969-07-20 20:18:04 UTC",
+                "IntegerField", ImmutableList.of(1, 0),
+                "BooleanField", true)))
+        .templateSuffix("_suffix")
+        .build();
+    InsertAllResponse response = bigquery.insertAll(request);
+    assertFalse(response.hasErrors());
+    assertEquals(0, response.insertErrors().size());
+    String newTableName = tableName + "_suffix";
+    assertNotNull(bigquery.getTable(DATASET, newTableName, TableOption.fields()));
+    assertTrue(bigquery.delete(TableId.of(DATASET, tableName)));
+    assertTrue(bigquery.delete(TableId.of(DATASET, newTableName)));
+  }
+
+  @Test
   public void testInsertAllWithErrors() {
     String tableName = "test_insert_all_with_errors_table";
     BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);

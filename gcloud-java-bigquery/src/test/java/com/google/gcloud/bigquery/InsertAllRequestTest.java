@@ -18,6 +18,7 @@ package com.google.gcloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
@@ -45,6 +46,7 @@ public class InsertAllRequestTest {
   private static final BaseTableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_SCHEMA);
   private static final boolean SKIP_INVALID_ROWS = true;
   private static final boolean IGNORE_UNKNOWN_VALUES = false;
+  private static final String TEMPLATE_SUFFIX = "templateSuffix";
   private static final InsertAllRequest INSERT_ALL_REQUEST1 = InsertAllRequest.builder(TABLE_ID)
       .addRow(CONTENT1)
       .addRow(CONTENT2)
@@ -90,20 +92,25 @@ public class InsertAllRequestTest {
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .skipInvalidRows(SKIP_INVALID_ROWS)
           .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST9 =
-      InsertAllRequest.builder(TABLE_INFO)
-          .addRow("id1", CONTENT1)
-          .addRow("id2", CONTENT2)
-          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-          .skipInvalidRows(SKIP_INVALID_ROWS)
-          .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST10 =
-      InsertAllRequest.builder(TABLE_INFO)
-          .addRow("id1", CONTENT1)
-          .addRow("id2", CONTENT2)
-          .ignoreUnknownValues(true)
-          .skipInvalidRows(false)
-          .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST9 = InsertAllRequest.builder(TABLE_INFO)
+      .addRow("id1", CONTENT1)
+      .addRow("id2", CONTENT2)
+      .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+      .skipInvalidRows(SKIP_INVALID_ROWS)
+      .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST10 = InsertAllRequest.builder(TABLE_INFO)
+      .addRow("id1", CONTENT1)
+      .addRow("id2", CONTENT2)
+      .ignoreUnknownValues(true)
+      .skipInvalidRows(false)
+      .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST11 = InsertAllRequest.builder(TABLE_INFO)
+      .addRow("id1", CONTENT1)
+      .addRow("id2", CONTENT2)
+      .ignoreUnknownValues(true)
+      .skipInvalidRows(false)
+      .templateSuffix(TEMPLATE_SUFFIX)
+      .build();
 
   @Test
   public void testBuilder() {
@@ -117,6 +124,7 @@ public class InsertAllRequestTest {
     assertEquals(TABLE_ID, INSERT_ALL_REQUEST8.table());
     assertEquals(TABLE_ID, INSERT_ALL_REQUEST9.table());
     assertEquals(TABLE_ID, INSERT_ALL_REQUEST10.table());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST11.table());
     assertEquals(ROWS, INSERT_ALL_REQUEST1.rows());
     assertEquals(ROWS, INSERT_ALL_REQUEST2.rows());
     assertEquals(ROWS, INSERT_ALL_REQUEST4.rows());
@@ -127,6 +135,7 @@ public class InsertAllRequestTest {
     assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST8.rows());
     assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST9.rows());
     assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST10.rows());
+    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST11.rows());
     assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST1.skipInvalidRows());
     assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST2.skipInvalidRows());
     assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST3.skipInvalidRows());
@@ -137,6 +146,7 @@ public class InsertAllRequestTest {
     assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST8.skipInvalidRows());
     assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST9.skipInvalidRows());
     assertFalse(INSERT_ALL_REQUEST10.skipInvalidRows());
+    assertFalse(INSERT_ALL_REQUEST11.skipInvalidRows());
     assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST1.ignoreUnknownValues());
     assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST2.ignoreUnknownValues());
     assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST3.ignoreUnknownValues());
@@ -147,6 +157,18 @@ public class InsertAllRequestTest {
     assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST8.ignoreUnknownValues());
     assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST9.ignoreUnknownValues());
     assertTrue(INSERT_ALL_REQUEST10.ignoreUnknownValues());
+    assertTrue(INSERT_ALL_REQUEST11.ignoreUnknownValues());
+    assertNull(INSERT_ALL_REQUEST1.templateSuffix());
+    assertNull(INSERT_ALL_REQUEST2.templateSuffix());
+    assertNull(INSERT_ALL_REQUEST3.templateSuffix());
+    assertNull(INSERT_ALL_REQUEST4.templateSuffix());
+    assertNull(INSERT_ALL_REQUEST5.templateSuffix());
+    assertNull(INSERT_ALL_REQUEST6.templateSuffix());
+    assertNull(INSERT_ALL_REQUEST7.templateSuffix());
+    assertNull(INSERT_ALL_REQUEST8.templateSuffix());
+    assertNull(INSERT_ALL_REQUEST9.templateSuffix());
+    assertNull(INSERT_ALL_REQUEST10.templateSuffix());
+    assertEquals(TEMPLATE_SUFFIX, INSERT_ALL_REQUEST11.templateSuffix());
   }
 
   @Test
@@ -183,6 +205,8 @@ public class InsertAllRequestTest {
     compareInsertAllRequest(INSERT_ALL_REQUEST5, INSERT_ALL_REQUEST7);
     compareInsertAllRequest(INSERT_ALL_REQUEST7, INSERT_ALL_REQUEST8);
     compareInsertAllRequest(INSERT_ALL_REQUEST8, INSERT_ALL_REQUEST9);
+    compareInsertAllRequest(INSERT_ALL_REQUEST10, INSERT_ALL_REQUEST10);
+    compareInsertAllRequest(INSERT_ALL_REQUEST11, INSERT_ALL_REQUEST11);
   }
 
   private void compareInsertAllRequest(InsertAllRequest expected, InsertAllRequest value) {
@@ -193,5 +217,6 @@ public class InsertAllRequestTest {
     assertEquals(expected.rows(), value.rows());
     assertEquals(expected.ignoreUnknownValues(), value.ignoreUnknownValues());
     assertEquals(expected.skipInvalidRows(), value.skipInvalidRows());
+    assertEquals(expected.templateSuffix(), value.templateSuffix());
   }
 }
