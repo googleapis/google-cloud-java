@@ -18,7 +18,7 @@
  * A client to Google Cloud Storage.
  *
  * <p>Here's a simple usage example for using gcloud-java from App/Compute Engine:
- * <pre>{@code
+ * <pre> {@code
  * Storage storage = StorageOptions.defaultInstance().service();
  * BlobId blobId = BlobId.of("bucket", "blob_name");
  * Blob blob = Blob.load(storage, blobId);
