@@ -614,6 +614,7 @@ public class BigQueryImplTest {
         .rows(rows)
         .skipInvalidRows(false)
         .ignoreUnknownValues(true)
+        .templateSuffix("suffix")
         .build();
     TableDataInsertAllRequest requestPb = new TableDataInsertAllRequest().setRows(
         Lists.transform(rows, new Function<RowToInsert, TableDataInsertAllRequest.Rows>() {
@@ -623,7 +624,7 @@ public class BigQueryImplTest {
                 .setJson(rowToInsert.content());
           }
         })
-    ).setSkipInvalidRows(false).setIgnoreUnknownValues(true);
+    ).setSkipInvalidRows(false).setIgnoreUnknownValues(true).setTemplateSuffix("suffix");
     TableDataInsertAllResponse responsePb = new TableDataInsertAllResponse().setInsertErrors(
         ImmutableList.of(new TableDataInsertAllResponse.InsertErrors().setIndex(0L).setErrors(
             ImmutableList.of(new ErrorProto().setMessage("ErrorMessage")))));

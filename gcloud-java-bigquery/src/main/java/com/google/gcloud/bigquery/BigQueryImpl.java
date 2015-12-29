@@ -412,6 +412,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     final TableDataInsertAllRequest requestPb = new TableDataInsertAllRequest();
     requestPb.setIgnoreUnknownValues(request.ignoreUnknownValues());
     requestPb.setSkipInvalidRows(request.skipInvalidRows());
+    requestPb.setTemplateSuffix(request.templateSuffix());
     List<Rows> rowsPb = Lists.transform(request.rows(), new Function<RowToInsert, Rows>() {
       @Override
       public Rows apply(RowToInsert rowToInsert) {
