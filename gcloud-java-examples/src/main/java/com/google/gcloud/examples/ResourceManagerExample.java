@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * An example of using the Google Cloud Resource Manager.
+ * An example of using Google Cloud Resource Manager.
  *
  * <p>This example creates, deletes, gets, and lists projects.
  *

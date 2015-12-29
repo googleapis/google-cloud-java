@@ -36,7 +36,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * An example of using the Google Cloud Datastore.
+ * An example of using Google Cloud Datastore.
  *
  * <p>This example adds, display or clear comments for a given user.
  *

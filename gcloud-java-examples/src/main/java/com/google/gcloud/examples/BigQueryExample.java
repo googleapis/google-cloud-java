@@ -49,7 +49,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * An example of using the Google BigQuery.
+ * An example of using Google BigQuery.
  *
  * <p>This example demonstrates a simple/typical BigQuery usage.
  *
@@ -58,17 +58,25 @@ import java.util.Map;
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven -
- * {@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample"
- * -Dexec.args="[<project_id>] list datasets | list tables <dataset> | list jobs |
- *  list data <dataset> <table> | info dataset <dataset> | info table <dataset> <table> |
- *  info job <job> | create dataset <dataset> |
+ * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="[<project_id>]
+ *  list datasets |
+ *  list tables <dataset> |
+ *  list jobs |
+ *  list data <dataset> <table> |
+ *  info dataset <dataset> |
+ *  info table <dataset> <table> |
+ *  info job <job> |
+ *  create dataset <dataset> |
  *  create table <dataset> <table> (<fieldName>:<primitiveType>)+ |
  *  create view <dataset> <table> <query> |
  *  create external-table <dataset> <table> <format> (<fieldName>:<primitiveType>)+ <sourceUri> |
- *  delete dataset <dataset> | delete table <dataset> <table> | cancel <job> |
+ *  delete dataset <dataset> |
+ *  delete table <dataset> <table> |
+ *  cancel <job> |
  *  copy <sourceDataset> <sourceTable> <destinationDataset> <destinationTable> |
  *  load <dataset> <table> <format> <sourceUri>+ |
- *  extract <dataset> <table> <format> <destinationUri>+ | query <query>"}
+ *  extract <dataset> <table> <format> <destinationUri>+ |
+ *  query <query>"}</pre>
  * </li>
  * </ol>
  *
@@ -122,16 +130,18 @@ public class BigQueryExample {
         if (action != null) {
           Object actionArguments = action.parse(Arrays.copyOfRange(args, 1, args.length));
           return Tuple.of(action, actionArguments);
+        } else {
+          throw new IllegalArgumentException("Unrecognized entity '" + args[0] + "'.");
         }
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("Missing required entity.");
     }
 
     @Override
     public String params() {
       StringBuilder builder = new StringBuilder();
       for (Map.Entry<String, BigQueryAction> entry : subActions.entrySet()) {
-        builder.append("\n").append(entry.getKey());
+        builder.append('\n').append(entry.getKey());
         String param = entry.getValue().params();
         if (param != null && !param.isEmpty()) {
           builder.append(' ').append(param);
@@ -141,13 +151,13 @@ public class BigQueryExample {
     }
   }
 
-  private abstract static class VoidAction extends BigQueryAction<Void> {
+  private abstract static class NoArgsAction extends BigQueryAction<Void> {
     @Override
     Void parse(String... args) throws Exception {
       if (args.length == 0) {
         return null;
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("This action takes no arguments.");
     }
   }
 
@@ -157,7 +167,7 @@ public class BigQueryExample {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets/list">Datasets: list
    *     </a>
    */
-  private static class ListDatasetsAction extends VoidAction {
+  private static class ListDatasetsAction extends NoArgsAction {
     @Override
     public void run(BigQuery bigquery, Void arg) {
       Iterator<DatasetInfo> datasetInfoIterator = bigquery.listDatasets().iterateAll();
@@ -170,10 +180,15 @@ public class BigQueryExample {
   private abstract static class DatasetAction extends BigQueryAction<DatasetId> {
     @Override
     DatasetId parse(String... args) throws Exception {
+      String message;
       if (args.length == 1) {
         return DatasetId.of(args[0]);
+      } else if (args.length > 1) {
+        message = "Too many arguments.";
+      } else {
+        message = "Missing required dataset id.";
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException(message);
     }
 
     @Override
@@ -233,18 +248,26 @@ public class BigQueryExample {
   private static class DeleteDatasetAction extends DatasetAction {
     @Override
     public void run(BigQuery bigquery, DatasetId datasetId) {
-      bigquery.delete(datasetId);
-      System.out.println("Dataset " + datasetId + " was deleted");
+      if (bigquery.delete(datasetId)) {
+        System.out.println("Dataset " + datasetId + " was deleted");
+      } else {
+        System.out.println("Dataset " + datasetId + " not found");
+      }
     }
   }
 
   private abstract static class TableAction extends BigQueryAction<TableId> {
     @Override
     TableId parse(String... args) throws Exception {
+      String message;
       if (args.length == 2) {
         return TableId.of(args[0], args[1]);
+      } else if (args.length < 2) {
+        message = "Missing required dataset and table id.";
+      } else {
+        message = "Too many arguments.";
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException(message);
     }
 
     @Override
@@ -274,8 +297,11 @@ public class BigQueryExample {
   private static class DeleteTableAction extends TableAction {
     @Override
     public void run(BigQuery bigquery, TableId tableId) {
-      bigquery.delete(tableId);
-      System.out.println("Table " + tableId + " was deleted");
+      if (bigquery.delete(tableId)) {
+        System.out.println("Table " + tableId + " was deleted");
+      } else {
+        System.out.println("Table " + tableId + " not found");
+      }
     }
   }
 
@@ -298,10 +324,15 @@ public class BigQueryExample {
   private abstract static class JobAction extends BigQueryAction<JobId> {
     @Override
     JobId parse(String... args) throws Exception {
+      String message;
       if (args.length == 1) {
         return JobId.of(args[0]);
+      } else if (args.length > 1) {
+        message = "Too many arguments.";
+      } else {
+        message = "Missing required query.";
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException(message);
     }
 
     @Override
@@ -315,7 +346,7 @@ public class BigQueryExample {
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/list">Jobs: list</a>
    */
-  private static class ListJobsAction extends VoidAction {
+  private static class ListJobsAction extends NoArgsAction {
     @Override
     public void run(BigQuery bigquery, Void arg) {
       Iterator<JobInfo> datasetInfoIterator = bigquery.listJobs().iterateAll();
@@ -345,8 +376,11 @@ public class BigQueryExample {
   private static class CancelJobAction extends JobAction {
     @Override
     public void run(BigQuery bigquery, JobId jobId) {
-      bigquery.cancel(jobId);
-      System.out.println("Requested cancel for job " + jobId);
+      if (bigquery.cancel(jobId)) {
+        System.out.println("Requested cancel for job " + jobId);
+      } else {
+        System.out.println("Job " + jobId + " not found");
+      }
     }
   }
 
@@ -354,7 +388,7 @@ public class BigQueryExample {
     @Override
     void run(BigQuery bigquery, BaseTableInfo table) throws Exception {
       BaseTableInfo createTable = bigquery.create(table);
-      System.out.println("Created table " + createTable.tableId());
+      System.out.println("Created table:");
       System.out.println(createTable.toString());
     }
 
@@ -363,10 +397,10 @@ public class BigQueryExample {
       for (int i = start; i < end; i++) {
         String[] fieldsArray = args[i].split(":");
         if (fieldsArray.length != 2) {
-          throw new IllegalArgumentException();
+          throw new IllegalArgumentException("Unrecognized field definition '" + args[i] + "'.");
         }
         String fieldName = fieldsArray[0];
-        String typeString = fieldsArray[1];
+        String typeString = fieldsArray[1].toLowerCase();
         Field.Type fieldType;
         switch (typeString) {
           case "string":
@@ -385,7 +419,7 @@ public class BigQueryExample {
             fieldType = Field.Type.bool();
             break;
           default:
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Unrecognized field type '" + typeString + "'.");
         }
         builder.addField(Field.of(fieldName, fieldType));
       }
@@ -409,7 +443,7 @@ public class BigQueryExample {
         TableId tableId = TableId.of(dataset, table);
         return TableInfo.of(tableId, parseSchema(args, 2, args.length));
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("Missing required arguments.");
     }
 
     @Override
@@ -437,7 +471,7 @@ public class BigQueryExample {
                 parseSchema(args, 3, args.length - 1), FormatOptions.of(args[2]));
         return ExternalTableInfo.of(tableId, configuration);
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("Missing required arguments.");
     }
 
     @Override
@@ -456,14 +490,19 @@ public class BigQueryExample {
   private static class CreateViewAction extends CreateTableAction {
     @Override
     BaseTableInfo parse(String... args) throws Exception {
+      String message;
       if (args.length == 3) {
         String dataset = args[0];
         String table = args[1];
         String query = args[2];
         TableId tableId = TableId.of(dataset, table);
         return ViewInfo.of(tableId, query);
+      } else if (args.length < 3) {
+        message = "Missing required dataset id, table id or query.";
+      } else {
+        message = "Too many arguments.";
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException(message);
     }
 
     @Override
@@ -508,7 +547,7 @@ public class BigQueryExample {
             .formatOptions(FormatOptions.of(format))
             .build();
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("Missing required arguments.");
     }
 
     @Override
@@ -534,7 +573,7 @@ public class BigQueryExample {
             .format(format)
             .build();
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("Missing required arguments.");
     }
 
     @Override
@@ -551,12 +590,17 @@ public class BigQueryExample {
   private static class CopyAction extends JobRunAction {
     @Override
     CopyJobInfo parse(String... args) throws Exception {
+      String message;
       if (args.length == 4) {
         TableId sourceTableId = TableId.of(args[0], args[1]);
         TableId destinationTableId = TableId.of(args[2], args[3]);
         return CopyJobInfo.of(destinationTableId, sourceTableId);
+      } else if (args.length < 3) {
+        message = "Missing required source or destination table.";
+      } else {
+        message = "Too many arguments.";
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException(message);
     }
 
     @Override
@@ -597,10 +641,15 @@ public class BigQueryExample {
 
     @Override
     QueryRequest parse(String... args) throws Exception {
+      String message;
       if (args.length == 1) {
         return QueryRequest.of(args[0]);
+      }  else if (args.length > 1) {
+        message = "Too many arguments.";
+      } else {
+        message = "Missing required query.";
       }
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException(message);
     }
 
     @Override
@@ -650,6 +699,11 @@ public class BigQueryExample {
 
   @SuppressWarnings("unchecked")
   public static void main(String... args) throws Exception {
+    if (args.length < 1) {
+      System.out.println("Missing required project id and action");
+      printUsage();
+      return;
+    }
     BigQueryOptions.Builder optionsBuilder = BigQueryOptions.builder();
     BigQueryAction action;
     String actionName;
@@ -673,7 +727,7 @@ public class BigQueryExample {
     try {
       request = action.parse(args);
     } catch (IllegalArgumentException ex) {
-      System.out.println("Invalid input for action '" + actionName + "'");
+      System.out.println("Invalid input for action '" + actionName + "'. " + ex.getMessage());
       System.out.println("Expected: " + action.params());
       return;
     } catch (Exception ex) {

@@ -58,7 +58,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * An example of using the Google Cloud Storage.
+ * An example of using Google Cloud Storage.
  *
  * <p>This example demonstrates a simple/typical storage usage.
  *
@@ -67,12 +67,16 @@ import java.util.concurrent.TimeUnit;
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven -
- * {@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
- * -Dexec.args="[<project_id>] list [<bucket>] | info [<bucket> [<file>]] |
- *  download <bucket> <path> [local_file] | upload <local_file> <bucket> [<path>] |
- *  delete <bucket> <path>+ | cp <from_bucket> <from_path> <to_bucket> <to_path> |
- *  compose <bucket> <from_path>+ <to_path> | update_metadata <bucket> <file> [key=value]* |
- *  sign_url <service_account_private_key_file> <service_account_email> <bucket> <path>"}
+ * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="[<project_id>]
+ *  list [<bucket>] |
+ *  info [<bucket> [<file>]] |
+ *  download <bucket> <path> [local_file] |
+ *  upload <local_file> <bucket> [<path>] |
+ *  delete <bucket> <path>+ |
+ *  cp <from_bucket> <from_path> <to_bucket> <to_path> |
+ *  compose <bucket> <from_path>+ <to_path> |
+ *  update_metadata <bucket> <file> [key=value]* |
+ *  sign_url <service_account_private_key_file> <service_account_email> <bucket> <path>"}</pre>
  * </li>
  * </ol>
  *
