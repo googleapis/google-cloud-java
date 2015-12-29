@@ -39,6 +39,17 @@ To run examples from your command line:
 
 4. Run an example using Maven from command line.
 
+  Here's an example run of `BigQueryExample`.
+
+  Before running the example, go to the [Google Developers Console][developers-console] to ensure that BigQuery API is enabled.
+  ```
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="create dataset new_dataset_id"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="create table new_dataset_id new_table_id field_name:string"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="list tables new_dataset_id"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="load new_dataset_id new_table_id CSV gs://my_bucket/my_csv_file"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="query 'select * from new_dataset_id.new_table_id'"
+  ```
+
   Here's an example run of `DatastoreExample`.
   
   Note that you have to enable the Google Cloud Datastore API on the [Google Developers Console][developers-console] before running the following commands.
@@ -46,16 +57,6 @@ To run examples from your command line:
   $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DatastoreExample" -Dexec.args="my_name add my\ comment"
   $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DatastoreExample" -Dexec.args="my_name display"
   $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DatastoreExample" -Dexec.args="my_name delete"
-  ```
-
-  Here's an example run of `StorageExample`.
-
-  Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket.  Also ensure that you have a test file (`test.txt` is chosen here) to upload to Cloud Storage stored locally on your machine.
-  ```
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="upload /path/to/test.txt <bucket_name>"
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="list <bucket_name>"
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="download <bucket_name> test.txt"
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="delete <bucket_name> test.txt"
   ```
 
   Here's an example run of `ResourceManagerExample`.
@@ -67,14 +68,14 @@ To run examples from your command line:
   $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.ResourceManagerExample" -Dexec.args="get my-project-id"
   ```
 
-  Here's an example run of `BigQueryExample`.
+  Here's an example run of `StorageExample`.
 
-  Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud BigQuery API is enabled.
+  Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket.  Also ensure that you have a test file (`test.txt` is chosen here) to upload to Cloud Storage stored locally on your machine.
   ```
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="create dataset new_dataset_id"
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="create table new_dataset_id new_table_id field_name:string"
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="list tables new_dataset_id"
-  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="query 'select * from new_dataset_id.new_table_id'"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="upload /path/to/test.txt <bucket_name>"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="list <bucket_name>"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="download <bucket_name> test.txt"
+  $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample" -Dexec.args="delete <bucket_name> test.txt"
   ```
 
 Troubleshooting
