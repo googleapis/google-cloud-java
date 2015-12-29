@@ -16,6 +16,8 @@
 
 package com.google.gcloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
@@ -85,7 +87,7 @@ public class FormatOptions implements Serializable {
    * Default options for the provided format.
    */
   public static FormatOptions of(String format) {
-    if (format.equals(CSV)) {
+    if (checkNotNull(format).equals(CSV)) {
       return csv();
     }
     return new FormatOptions(format);
