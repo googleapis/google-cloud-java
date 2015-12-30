@@ -94,6 +94,12 @@ public abstract class BaseTableInfo implements Serializable {
   private final Long expirationTime;
   private final Long lastModifiedTime;
 
+  /**
+   * Base builder for tables.
+   *
+   * @param <T> the table type.
+   * @param <B> the table builder.
+   */
   public abstract static class Builder<T extends BaseTableInfo, B extends Builder<T, B>> {
 
     private String etag;

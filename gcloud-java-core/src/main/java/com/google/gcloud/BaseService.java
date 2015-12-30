@@ -16,6 +16,11 @@
 
 package com.google.gcloud;
 
+/**
+ * Base class for service objects.
+ *
+ * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service.
+ */
 public abstract class BaseService<OptionsT extends ServiceOptions<?, ?, OptionsT>>
     implements Service<OptionsT> {
 
