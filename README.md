@@ -12,10 +12,10 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 This client supports the following Google Cloud Platform services:
 
--  [Google Cloud Datastore] (#google-cloud-datastore)
--  [Google Cloud Storage] (#google-cloud-storage)
--  [Google Cloud Resource Manager] (#google-cloud-resource-manager)
 -  [Google Cloud BigQuery] (#google-cloud-bigquery)
+-  [Google Cloud Datastore] (#google-cloud-datastore)
+-  [Google Cloud Resource Manager] (#google-cloud-resource-manager)
+-  [Google Cloud Storage] (#google-cloud-storage)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -42,14 +42,14 @@ libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.1.1"
 Example Applications
 --------------------
 
-- [`DatastoreExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/DatastoreExample.java) - A simple command line interface for the Cloud Datastore
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html).
-- [`StorageExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
-- [`ResourceManagerExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/ResourceManagerExample.html).
 - [`BigQueryExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality
   - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/BigQueryExample.html).
+- [`DatastoreExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/DatastoreExample.java) - A simple command line interface for the Cloud Datastore
+  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html).
+- [`ResourceManagerExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
+  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/ResourceManagerExample.html).
+- [`StorageExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
+  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
 
 Specifying a Project ID
 -----------------------
@@ -109,116 +109,6 @@ Next, choose a method for authenticating API requests from within your project:
 4. Google Cloud SDK credentials
 5. Compute Engine credentials
 
-Google Cloud Datastore
-----------------------
-
-- [API Documentation][datastore-api]
-- [Official Documentation][cloud-datastore-docs]
-
-*Follow the [activation instructions][cloud-datastore-activation] to use the Google Cloud Datastore API with your project.*
-
-#### Preview
-
-Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-```java
-import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreOptions;
-import com.google.gcloud.datastore.DateTime;
-import com.google.gcloud.datastore.Entity;
-import com.google.gcloud.datastore.Key;
-import com.google.gcloud.datastore.KeyFactory;
-
-Datastore datastore = DatastoreOptions.defaultInstance().service();
-KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
-Key key = keyFactory.newKey(keyName);
-Entity entity = datastore.get(key);
-if (entity == null) {
-  entity = Entity.builder(key)
-      .set("name", "John Do")
-      .set("age", 30)
-      .set("access_time", DateTime.now())
-      .build();
-  datastore.put(entity);
-} else {
-  System.out.println("Updating access_time for " + entity.getString("name"));
-  entity = Entity.builder(entity)
-      .set("access_time", DateTime.now())
-      .build();
-  datastore.update(entity);
-}
-```
-
-Google Cloud Storage
-----------------------
-
-- [API Documentation][storage-api]
-- [Official Documentation][cloud-storage-docs]
-
-*Follow the [activation instructions][cloud-storage-activation] to use the Google Cloud Storage API with your project.*
-
-#### Preview
-
-Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-```java
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import com.google.gcloud.storage.Blob;
-import com.google.gcloud.storage.BlobId;
-import com.google.gcloud.storage.Storage;
-import com.google.gcloud.storage.StorageOptions;
-
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
-
-Storage storage = StorageOptions.defaultInstance().service();
-BlobId blobId = BlobId.of("bucket", "blob_name");
-Blob blob = Blob.load(storage, blobId);
-if (blob == null) {
-  BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
-  storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
-} else {
-  System.out.println("Updating content for " + blobId.name());
-  byte[] prevContent = blob.content();
-  System.out.println(new String(prevContent, UTF_8));
-  WritableByteChannel channel = blob.writer();
-  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
-  channel.close();
-}
-```
-
-Google Cloud Resource Manager
-----------------------
-
-- [API Documentation][resourcemanager-api]
-- [Official Documentation][cloud-resourcemanager-docs]
-
-#### Preview
-
-Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
-
-```java
-import com.google.gcloud.resourcemanager.ProjectInfo;
-import com.google.gcloud.resourcemanager.ResourceManager;
-import com.google.gcloud.resourcemanager.ResourceManagerOptions;
-
-import java.util.Iterator;
-
-ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
-ProjectInfo myProject = resourceManager.get("some-project-id"); // Use an existing project's ID
-ProjectInfo newProjectInfo = resourceManager.replace(myProject.toBuilder()
-    .addLabel("launch-status", "in-development").build());
-System.out.println("Updated the labels of project " + newProjectInfo.projectId()
-    + " to be " + newProjectInfo.labels());
-// List all the projects you have permission to view.
-Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();
-System.out.println("Projects I can view:");
-while (projectIterator.hasNext()) {
-  System.out.println(projectIterator.next().projectId());
-}
-```
-
 Google Cloud BigQuery
 ----------------------
 
@@ -261,6 +151,116 @@ if (info == null) {
   } else {
     System.out.println("Job succeeded");
   }
+}
+```
+
+Google Cloud Datastore
+----------------------
+
+- [API Documentation][datastore-api]
+- [Official Documentation][cloud-datastore-docs]
+
+*Follow the [activation instructions][cloud-datastore-activation] to use the Google Cloud Datastore API with your project.*
+
+#### Preview
+
+Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+```java
+import com.google.gcloud.datastore.Datastore;
+import com.google.gcloud.datastore.DatastoreOptions;
+import com.google.gcloud.datastore.DateTime;
+import com.google.gcloud.datastore.Entity;
+import com.google.gcloud.datastore.Key;
+import com.google.gcloud.datastore.KeyFactory;
+
+Datastore datastore = DatastoreOptions.defaultInstance().service();
+KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
+Key key = keyFactory.newKey(keyName);
+Entity entity = datastore.get(key);
+if (entity == null) {
+  entity = Entity.builder(key)
+      .set("name", "John Do")
+      .set("age", 30)
+      .set("access_time", DateTime.now())
+      .build();
+  datastore.put(entity);
+} else {
+  System.out.println("Updating access_time for " + entity.getString("name"));
+  entity = Entity.builder(entity)
+      .set("access_time", DateTime.now())
+      .build();
+  datastore.update(entity);
+}
+```
+
+Google Cloud Resource Manager
+----------------------
+
+- [API Documentation][resourcemanager-api]
+- [Official Documentation][cloud-resourcemanager-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
+
+```java
+import com.google.gcloud.resourcemanager.ProjectInfo;
+import com.google.gcloud.resourcemanager.ResourceManager;
+import com.google.gcloud.resourcemanager.ResourceManagerOptions;
+
+import java.util.Iterator;
+
+ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+ProjectInfo myProject = resourceManager.get("some-project-id"); // Use an existing project's ID
+ProjectInfo newProjectInfo = resourceManager.replace(myProject.toBuilder()
+    .addLabel("launch-status", "in-development").build());
+System.out.println("Updated the labels of project " + newProjectInfo.projectId()
+    + " to be " + newProjectInfo.labels());
+// List all the projects you have permission to view.
+Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();
+System.out.println("Projects I can view:");
+while (projectIterator.hasNext()) {
+  System.out.println(projectIterator.next().projectId());
+}
+```
+
+Google Cloud Storage
+----------------------
+
+- [API Documentation][storage-api]
+- [Official Documentation][cloud-storage-docs]
+
+*Follow the [activation instructions][cloud-storage-activation] to use the Google Cloud Storage API with your project.*
+
+#### Preview
+
+Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+```java
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.BlobId;
+import com.google.gcloud.storage.Storage;
+import com.google.gcloud.storage.StorageOptions;
+
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
+
+Storage storage = StorageOptions.defaultInstance().service();
+BlobId blobId = BlobId.of("bucket", "blob_name");
+Blob blob = Blob.load(storage, blobId);
+if (blob == null) {
+  BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+  storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
+} else {
+  System.out.println("Updating content for " + blobId.name());
+  byte[] prevContent = blob.content();
+  System.out.println(new String(prevContent, UTF_8));
+  WritableByteChannel channel = blob.writer();
+  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
+  channel.close();
 }
 ```
 
