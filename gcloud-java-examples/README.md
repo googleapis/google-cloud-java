@@ -41,7 +41,17 @@ To run examples from your command line:
 
   Here's an example run of `BigQueryExample`.
 
-  Before running the example, go to the [Google Developers Console][developers-console] to ensure that BigQuery API is enabled.
+  Before running the example, go to the [Google Developers Console][developers-console] to ensure
+  that BigQuery API is enabled. You can upload a CSV file `my_csv_file` to the `my_bucket` bucket
+  (replace `my_csv_file` and `my_bucket` with actual file and bucket names) using the GCS
+  [web browser](https://console.developers.google.com/storage/browser). The CSV file will be used to
+  load data into a BigQuery table and should look something like:
+  ```csv
+  value1
+  value2
+  value3
+  ```
+  Then you are ready to run the following example:
   ```
   $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="create dataset new_dataset_id"
   $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="create table new_dataset_id new_table_id field_name:string"
