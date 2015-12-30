@@ -33,6 +33,8 @@ package com.google.gcloud;
  * X restorableObj = state.restore();
  * ...
  * }</pre>
+ *
+ * @param <T> the restorable object's type.
  */
 public interface Restorable<T extends Restorable<T>> {
 
