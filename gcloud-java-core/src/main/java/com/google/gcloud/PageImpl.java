@@ -25,6 +25,8 @@ import java.util.Objects;
 
 /**
  * Base implementation for Google Cloud paginated results.
+ *
+ * @param <T> the value type that the page holds.
  */
 public class PageImpl<T> implements Page<T>, Serializable {
 
@@ -34,6 +36,11 @@ public class PageImpl<T> implements Page<T>, Serializable {
   private final Iterable<T> results;
   private final NextPageFetcher<T> pageFetcher;
 
+  /**
+   * Interface for fetching the next page of results from the service.
+   *
+   * @param <T> the value type that the page holds.
+   */
   public interface NextPageFetcher<T> extends Serializable {
     Page<T> nextPage();
   }

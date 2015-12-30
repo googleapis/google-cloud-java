@@ -53,6 +53,13 @@ import java.util.jar.Manifest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Abstract class representing service options.
+ *
+ * @param <ServiceT> the service subclass.
+ * @param <ServiceRpcT> the spi-layer class corresponding to the service.
+ * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service.
+ */
 public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, ServiceRpcT,
     OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>> implements Serializable {
 
@@ -150,6 +157,14 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
+  /**
+   * Builder for {@code ServiceOptions}.
+   *
+   * @param <ServiceT> the service subclass.
+   * @param <ServiceRpcT> the spi-layer class corresponding to the service.
+   * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service.
+   * @param <B> the {@code ServiceOptions} builder.
+   */
   protected abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
       OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
       B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {

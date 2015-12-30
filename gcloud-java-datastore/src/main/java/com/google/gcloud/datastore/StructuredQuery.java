@@ -609,7 +609,13 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
-  static class BaseBuilder<V, B extends BaseBuilder<V, B>> {
+  /**
+   * Base class for StructuredQuery builders.
+   *
+   * @param <V> the type of result the query returns.
+   * @param <B> the query builder.
+   */
+  protected static class BaseBuilder<V, B extends BaseBuilder<V, B>> {
 
     private final ResultType<V> resultType;
     private String namespace;

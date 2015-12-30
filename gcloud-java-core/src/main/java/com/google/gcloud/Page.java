@@ -40,6 +40,8 @@ import java.util.Iterator;
  *   }
  *   page = page.nextPage();
  * }}</pre>
+ *
+ * @param <T> the value type that the page holds.
  */
 public interface Page<T> {
 
