@@ -476,7 +476,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testInsertAllWithSuffix() {
+  public void testInsertAllWithSuffix() throws InterruptedException {
     String tableName = "test_insert_all_with_suffix_table";
     BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
     assertNotNull(bigquery.create(tableInfo));
@@ -505,7 +505,12 @@ public class ITBigQueryTest {
     assertFalse(response.hasErrors());
     assertEquals(0, response.insertErrors().size());
     String newTableName = tableName + "_suffix";
-    assertNotNull(bigquery.getTable(DATASET, newTableName, TableOption.fields()));
+    BaseTableInfo suffixTable = bigquery.getTable(DATASET, newTableName, TableOption.fields());
+    while (suffixTable == null) {
+      Thread.sleep(1000L);
+      suffixTable = bigquery.getTable(DATASET, newTableName, TableOption.fields());
+    }
+    assertNotNull(suffixTable);
     assertTrue(bigquery.delete(TableId.of(DATASET, tableName)));
     assertTrue(bigquery.delete(TableId.of(DATASET, newTableName)));
   }
