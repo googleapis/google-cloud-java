@@ -122,6 +122,24 @@ public class TableTest {
   }
 
   @Test
+  public void testReloadNull() throws Exception {
+    expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(null);
+    replay(bigquery);
+    assertNull(table.reload());
+  }
+
+  @Test
+  public void testReloadWithOptions() throws Exception {
+    TableInfo updatedInfo = TABLE_INFO.toBuilder().description("Description").build();
+    expect(bigquery.getTable(TABLE_INFO.tableId(), BigQuery.TableOption.fields()))
+        .andReturn(updatedInfo);
+    replay(bigquery);
+    Table updatedTable = table.reload(BigQuery.TableOption.fields());
+    assertSame(bigquery, updatedTable.bigquery());
+    assertEquals(updatedInfo, updatedTable.info());
+  }
+
+  @Test
   public void testDelete() throws Exception {
     expect(bigquery.delete(TABLE_INFO.tableId())).andReturn(true);
     replay(bigquery);
@@ -239,5 +257,26 @@ public class TableTest {
     expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(null);
     replay(bigquery);
     assertNull(Table.load(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table()));
+  }
+
+  @Test
+  public void testLoadFromIdWithOptions() throws Exception {
+    expect(bigquery.getTable(TABLE_INFO.tableId(), BigQuery.TableOption.fields()))
+        .andReturn(TABLE_INFO);
+    replay(bigquery);
+    Table loadedTable = Table.load(bigquery, TABLE_INFO.tableId(), BigQuery.TableOption.fields());
+    assertNotNull(loadedTable);
+    assertEquals(TABLE_INFO, loadedTable.info());
+  }
+
+  @Test
+  public void testLoadFromStringsWithOptions() throws Exception {
+    expect(bigquery.getTable(TABLE_INFO.tableId(), BigQuery.TableOption.fields()))
+        .andReturn(TABLE_INFO);
+    replay(bigquery);
+    Table loadedTable =
+        Table.load(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table(), BigQuery.TableOption.fields());
+    assertNotNull(loadedTable);
+    assertEquals(TABLE_INFO, loadedTable.info());
   }
 }

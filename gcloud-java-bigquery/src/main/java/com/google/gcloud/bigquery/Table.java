@@ -57,11 +57,13 @@ public final class Table {
    * @param bigquery the BigQuery service used for issuing requests
    * @param dataset the dataset's user-defined id
    * @param table the table's user-defined id
-   * @return the {@code Table} object or {@code null} if not found.
+   * @param options table options
+   * @return the {@code Table} object or {@code null} if not found
    * @throws BigQueryException upon failure
    */
-  public static Table load(BigQuery bigquery, String dataset, String table) {
-    return load(bigquery, TableId.of(dataset, table));
+  public static Table load(BigQuery bigquery, String dataset, String table,
+      BigQuery.TableOption... options) {
+    return load(bigquery, TableId.of(dataset, table), options);
   }
 
   /**
@@ -70,11 +72,12 @@ public final class Table {
    *
    * @param bigquery the BigQuery service used for issuing requests
    * @param table the table's identity
-   * @return the {@code Table} object or {@code null} if not found.
+   * @param options table options
+   * @return the {@code Table} object or {@code null} if not found
    * @throws BigQueryException upon failure
    */
-  public static Table load(BigQuery bigquery, TableId table) {
-    BaseTableInfo info = bigquery.getTable(table);
+  public static Table load(BigQuery bigquery, TableId table, BigQuery.TableOption... options) {
+    BaseTableInfo info = bigquery.getTable(table, options);
     return info != null ? new Table(bigquery, info) : null;
   }
 
@@ -88,7 +91,7 @@ public final class Table {
   /**
    * Checks if this table exists.
    *
-   * @return {@code true} if this table exists, {@code false} otherwise.
+   * @return {@code true} if this table exists, {@code false} otherwise
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
@@ -96,14 +99,14 @@ public final class Table {
   }
 
   /**
-   * Fetches current table's latest information.
+   * Fetches current table's latest information. Returns {@code null} if the table does not exist.
    *
    * @param options table options
-   * @return a {@code Table} object with latest information.
+   * @return a {@code Table} object with latest information or {@code null} if not found
    * @throws BigQueryException upon failure
    */
   public Table reload(BigQuery.TableOption... options) {
-    return new Table(bigquery, bigquery.getTable(info.tableId(), options));
+    return Table.load(bigquery, info.tableId(), options);
   }
 
   /**
@@ -113,7 +116,7 @@ public final class Table {
    * @param tableInfo new table's information. Dataset's and table's user-defined ids must match the
    *     ones of the current table
    * @param options dataset options
-   * @return a {@code Table} object with updated information.
+   * @return a {@code Table} object with updated information
    * @throws BigQueryException upon failure
    */
   public Table update(BaseTableInfo tableInfo, BigQuery.TableOption... options) {
@@ -127,7 +130,7 @@ public final class Table {
   /**
    * Deletes this table.
    *
-   * @return {@code true} if table was deleted, {@code false} if it was not found.
+   * @return {@code true} if table was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
   public boolean delete() {

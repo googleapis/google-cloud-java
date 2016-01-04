@@ -88,9 +88,27 @@ public class DatasetTest {
   @Test
   public void testReload() throws Exception {
     DatasetInfo updatedInfo = DATASET_INFO.toBuilder().description("Description").build();
-    expect(bigquery.getDataset(DATASET_ID)).andReturn(updatedInfo);
+    expect(bigquery.getDataset(DATASET_ID.dataset())).andReturn(updatedInfo);
     replay(bigquery);
     Dataset updatedDataset = dataset.reload();
+    assertSame(bigquery, updatedDataset.bigquery());
+    assertEquals(updatedInfo, updatedDataset.info());
+  }
+
+  @Test
+  public void testReloadNull() throws Exception {
+    expect(bigquery.getDataset(DATASET_ID.dataset())).andReturn(null);
+    replay(bigquery);
+    assertNull(dataset.reload());
+  }
+
+  @Test
+  public void testReloadWithOptions() throws Exception {
+    DatasetInfo updatedInfo = DATASET_INFO.toBuilder().description("Description").build();
+    expect(bigquery.getDataset(DATASET_ID.dataset(), BigQuery.DatasetOption.fields()))
+        .andReturn(updatedInfo);
+    replay(bigquery);
+    Dataset updatedDataset = dataset.reload(BigQuery.DatasetOption.fields());
     assertSame(bigquery, updatedDataset.bigquery());
     assertEquals(updatedInfo, updatedDataset.info());
   }
@@ -193,5 +211,16 @@ public class DatasetTest {
     expect(bigquery.getDataset(DATASET_INFO.datasetId().dataset())).andReturn(null);
     replay(bigquery);
     assertNull(Dataset.load(bigquery, DATASET_INFO.datasetId().dataset()));
+  }
+
+  @Test
+  public void testLoadWithOptions() throws Exception {
+    expect(bigquery.getDataset(DATASET_INFO.datasetId().dataset(), BigQuery.DatasetOption.fields()))
+        .andReturn(DATASET_INFO);
+    replay(bigquery);
+    Dataset loadedDataset = Dataset.load(bigquery, DATASET_INFO.datasetId().dataset(),
+        BigQuery.DatasetOption.fields());
+    assertNotNull(loadedDataset);
+    assertEquals(DATASET_INFO, loadedDataset.info());
   }
 }

@@ -127,11 +127,12 @@ public final class Dataset {
    *
    * @param bigquery the BigQuery service used for issuing requests
    * @param dataset dataset's user-defined id
-   * @return the {@code Dataset} object or {@code null} if not found.
+   * @param options dataset options
+   * @return the {@code Dataset} object or {@code null} if not found
    * @throws BigQueryException upon failure
    */
-  public static Dataset load(BigQuery bigquery, String dataset) {
-    DatasetInfo info = bigquery.getDataset(dataset);
+  public static Dataset load(BigQuery bigquery, String dataset, BigQuery.DatasetOption... options) {
+    DatasetInfo info = bigquery.getDataset(dataset, options);
     return info != null ? new Dataset(bigquery, info) : null;
   }
 
@@ -145,7 +146,7 @@ public final class Dataset {
   /**
    * Checks if this dataset exists.
    *
-   * @return {@code true} if this dataset exists, {@code false} otherwise.
+   * @return {@code true} if this dataset exists, {@code false} otherwise
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
@@ -153,14 +154,15 @@ public final class Dataset {
   }
 
   /**
-   * Fetches current dataset's latest information.
+   * Fetches current dataset's latest information. Returns {@code null} if the dataset does not
+   * exist.
    *
    * @param options dataset options
-   * @return a {@code Dataset} object with latest information.
+   * @return a {@code Dataset} object with latest information or {@code null} if not found
    * @throws BigQueryException upon failure
    */
   public Dataset reload(BigQuery.DatasetOption... options) {
-    return new Dataset(bigquery, bigquery.getDataset(info.datasetId(), options));
+    return Dataset.load(bigquery, info.datasetId().dataset(), options);
   }
 
   /**
@@ -170,7 +172,7 @@ public final class Dataset {
    * @param datasetInfo new dataset's information. User-defined id must match the one of the current
    *     dataset
    * @param options dataset options
-   * @return a {@code Dataset} object with updated information.
+   * @return a {@code Dataset} object with updated information
    * @throws BigQueryException upon failure
    */
   public Dataset update(DatasetInfo datasetInfo, BigQuery.DatasetOption... options) {
@@ -221,7 +223,7 @@ public final class Dataset {
    * @param table the table's user-defined id
    * @param schema the table's schema
    * @param options options for table creation
-   * @return a {@code Table} object for the created table.
+   * @return a {@code Table} object for the created table
    * @throws BigQueryException upon failure
    */
   public Table create(String table, Schema schema, BigQuery.TableOption... options) {
@@ -236,7 +238,7 @@ public final class Dataset {
    * @param query the query used to generate the table
    * @param functions user-defined functions that can be used by the query
    * @param options options for table creation
-   * @return a {@code Table} object for the created table.
+   * @return a {@code Table} object for the created table
    * @throws BigQueryException upon failure
    */
   public Table create(String table, String query, List<UserDefinedFunction> functions,
@@ -252,7 +254,7 @@ public final class Dataset {
    * @param table the table's user-defined id
    * @param query the query used to generate the table
    * @param options options for table creation
-   * @return a {@code Table} object for the created table.
+   * @return a {@code Table} object for the created table
    * @throws BigQueryException upon failure
    */
   public Table create(String table, String query, BigQuery.TableOption... options) {
@@ -266,7 +268,7 @@ public final class Dataset {
    * @param table the table's user-defined id
    * @param configuration data format, location and other properties of an external table
    * @param options options for table creation
-   * @return a {@code Table} object for the created table.
+   * @return a {@code Table} object for the created table
    * @throws BigQueryException upon failure
    */
   public Table create(String table, ExternalDataConfiguration configuration,

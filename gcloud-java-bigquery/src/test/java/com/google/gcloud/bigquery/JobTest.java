@@ -109,9 +109,27 @@ public class JobTest {
   @Test
   public void testReload() throws Exception {
     JobInfo updatedInfo = JOB_INFO.toBuilder().etag("etag").build();
-    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(updatedInfo);
+    expect(bigquery.getJob(JOB_INFO.jobId().job())).andReturn(updatedInfo);
     replay(bigquery);
     Job updatedJob = job.reload();
+    assertSame(bigquery, updatedJob.bigquery());
+    assertEquals(updatedInfo, updatedJob.info());
+  }
+
+  @Test
+  public void testReloadNull() throws Exception {
+    expect(bigquery.getJob(JOB_INFO.jobId().job())).andReturn(null);
+    replay(bigquery);
+    assertNull(job.reload());
+  }
+
+  @Test
+  public void testReloadWithOptions() throws Exception {
+    JobInfo updatedInfo = JOB_INFO.toBuilder().etag("etag").build();
+    expect(bigquery.getJob(JOB_INFO.jobId().job(), BigQuery.JobOption.fields()))
+        .andReturn(updatedInfo);
+    replay(bigquery);
+    Job updatedJob = job.reload(BigQuery.JobOption.fields());
     assertSame(bigquery, updatedJob.bigquery());
     assertEquals(updatedInfo, updatedJob.info());
   }
@@ -137,5 +155,15 @@ public class JobTest {
     expect(bigquery.getJob(JOB_INFO.jobId().job())).andReturn(null);
     replay(bigquery);
     assertNull(Job.load(bigquery, JOB_INFO.jobId().job()));
+  }
+
+  @Test
+  public void testLoadWithOptions() throws Exception {
+    expect(bigquery.getJob(JOB_INFO.jobId().job(), BigQuery.JobOption.fields()))
+        .andReturn(JOB_INFO);
+    replay(bigquery);
+    Job loadedJob = Job.load(bigquery, JOB_INFO.jobId().job(), BigQuery.JobOption.fields());
+    assertNotNull(loadedJob);
+    assertEquals(JOB_INFO, loadedJob.info());
   }
 }

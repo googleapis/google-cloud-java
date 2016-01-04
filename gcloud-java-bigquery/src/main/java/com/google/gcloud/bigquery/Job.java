@@ -43,16 +43,17 @@ public final class Job {
   }
 
   /**
-   * Creates a {@code Job} object for the provided job's user-defined id. Performs an RPC call
-   * to get the latest job information.
+   * Creates a {@code Job} object for the provided job's user-defined id. Performs an RPC call to
+   * get the latest job information.
    *
    * @param bigquery the BigQuery service used for issuing requests
    * @param job job's id, either user-defined or picked by the BigQuery service
-   * @return the {@code Job} object or {@code null} if not found.
+   * @param options job options
+   * @return the {@code Job} object or {@code null} if not found
    * @throws BigQueryException upon failure
    */
-  public static Job load(BigQuery bigquery, String job) {
-    JobInfo info = bigquery.getJob(job);
+  public static Job load(BigQuery bigquery, String job, BigQuery.JobOption... options) {
+    JobInfo info = bigquery.getJob(job, options);
     return info != null ? new Job(bigquery, info) : null;
   }
 
@@ -66,7 +67,7 @@ public final class Job {
   /**
    * Checks if this job exists.
    *
-   * @return {@code true} if this job exists, {@code false} otherwise.
+   * @return {@code true} if this job exists, {@code false} otherwise
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
@@ -74,10 +75,18 @@ public final class Job {
   }
 
   /**
-   * Checks if this job has completed its execution, either failing or succeeding.
+   * Checks if this job has completed its execution, either failing or succeeding. If the job does
+   * not exist this method returns {@code false}. To correctly wait for job's completion check that
+   * the job exists first, using {@link #exists()}:
+   * <pre> {@code
+   * if (job.exists()) {
+   *   while(!job.isDone()) {
+   *     Thread.sleep(1000L);
+   *   }
+   * }}</pre>
    *
    * @return {@code true} if this job is in {@link JobStatus.State#DONE} state, {@code false} if the
-   *     state is not {@link JobStatus.State#DONE} or the job does not exist.
+   *     state is not {@link JobStatus.State#DONE} or the job does not exist
    * @throws BigQueryException upon failure
    */
   public boolean isDone() {
@@ -87,21 +96,21 @@ public final class Job {
   }
 
   /**
-   * Fetches current job's latest information.
+   * Fetches current job's latest information. Returns {@code null} if the job does not exist.
    *
    * @param options job options
-   * @return a {@code Job} object with latest information.
+   * @return a {@code Job} object with latest information or {@code null} if not found
    * @throws BigQueryException upon failure
    */
   public Job reload(BigQuery.JobOption... options) {
-    return new Job(bigquery, bigquery.getJob(info.jobId(), options));
+    return Job.load(bigquery, info.jobId().job(), options);
   }
 
   /**
    * Sends a job cancel request.
    *
    * @return {@code true} if cancel request was sent successfully, {@code false} if job was not
-   *     found.
+   *     found
    * @throws BigQueryException upon failure
    */
   public boolean cancel() {
