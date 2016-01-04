@@ -45,7 +45,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BlobTest {
 
-  private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").build();
+  private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").metageneration(42L).build();
   private static final BlobId[] BLOB_ID_ARRAY = {BlobId.of("b1", "n1"),
       BlobId.of("b2", "n2"), BlobId.of("b3", "n3")};
   private static final BlobInfo[] BLOB_INFO_ARRAY = {BlobInfo.builder("b1", "n1").build(),
@@ -101,6 +101,24 @@ public class BlobTest {
     expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(updatedInfo);
     replay(storage);
     Blob updatedBlob = blob.reload();
+    assertSame(storage, updatedBlob.storage());
+    assertEquals(updatedInfo, updatedBlob.info());
+  }
+
+  @Test
+  public void testReloadNull() throws Exception {
+    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(null);
+    replay(storage);
+    assertNull(blob.reload());
+  }
+
+  @Test
+  public void testReloadWithOptions() throws Exception {
+    BlobInfo updatedInfo = BLOB_INFO.toBuilder().cacheControl("c").build();
+    Storage.BlobGetOption[] options = {Storage.BlobGetOption.metagenerationMatch(42L)};
+    expect(storage.get(BLOB_INFO.blobId(), options)).andReturn(updatedInfo);
+    replay(storage);
+    Blob updatedBlob = blob.reload(Blob.BlobSourceOption.metagenerationMatch());
     assertSame(storage, updatedBlob.storage());
     assertEquals(updatedInfo, updatedBlob.info());
   }
@@ -285,7 +303,7 @@ public class BlobTest {
 
   @Test
   public void testLoadFromString() throws Exception {
-    expect(storage.get(BLOB_INFO.blobId())).andReturn(BLOB_INFO);
+    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(BLOB_INFO);
     replay(storage);
     Blob loadedBlob = Blob.load(storage, BLOB_INFO.bucket(), BLOB_INFO.name());
     assertEquals(BLOB_INFO, loadedBlob.info());
@@ -293,9 +311,44 @@ public class BlobTest {
 
   @Test
   public void testLoadFromId() throws Exception {
-    expect(storage.get(BLOB_INFO.blobId())).andReturn(BLOB_INFO);
+    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(BLOB_INFO);
     replay(storage);
     Blob loadedBlob = Blob.load(storage, BLOB_INFO.blobId());
+    assertNotNull(loadedBlob);
+    assertEquals(BLOB_INFO, loadedBlob.info());
+  }
+
+  @Test
+  public void testLoadFromStringNull() throws Exception {
+    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(null);
+    replay(storage);
+    assertNull(Blob.load(storage, BLOB_INFO.bucket(), BLOB_INFO.name()));
+  }
+
+  @Test
+  public void testLoadFromIdNull() throws Exception {
+    expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(null);
+    replay(storage);
+    assertNull(Blob.load(storage, BLOB_INFO.blobId()));
+  }
+
+  @Test
+  public void testLoadFromStringWithOptions() throws Exception {
+    expect(storage.get(BLOB_INFO.blobId(), Storage.BlobGetOption.generationMatch(42L)))
+        .andReturn(BLOB_INFO);
+    replay(storage);
+    Blob loadedBlob = Blob.load(storage, BLOB_INFO.bucket(), BLOB_INFO.name(),
+        Storage.BlobGetOption.generationMatch(42L));
+    assertEquals(BLOB_INFO, loadedBlob.info());
+  }
+
+  @Test
+  public void testLoadFromIdWithOptions() throws Exception {
+    expect(storage.get(BLOB_INFO.blobId(), Storage.BlobGetOption.generationMatch(42L)))
+        .andReturn(BLOB_INFO);
+    replay(storage);
+    Blob loadedBlob =
+        Blob.load(storage, BLOB_INFO.blobId(), Storage.BlobGetOption.generationMatch(42L));
     assertNotNull(loadedBlob);
     assertEquals(BLOB_INFO, loadedBlob.info());
   }

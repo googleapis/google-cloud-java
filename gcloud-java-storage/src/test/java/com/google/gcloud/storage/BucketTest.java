@@ -24,6 +24,7 @@ import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
@@ -47,7 +48,7 @@ import java.util.Set;
 
 public class BucketTest {
 
-  private static final BucketInfo BUCKET_INFO = BucketInfo.of("b");
+  private static final BucketInfo BUCKET_INFO = BucketInfo.builder("b").metageneration(42L).build();
   private static final Iterable<BlobInfo> BLOB_INFO_RESULTS = ImmutableList.of(
       BlobInfo.builder("b", "n1").build(),
       BlobInfo.builder("b", "n2").build(),
@@ -96,6 +97,24 @@ public class BucketTest {
     expect(storage.get(updatedInfo.name())).andReturn(updatedInfo);
     replay(storage);
     Bucket updatedBucket = bucket.reload();
+    assertSame(storage, updatedBucket.storage());
+    assertEquals(updatedInfo, updatedBucket.info());
+  }
+
+  @Test
+  public void testReloadNull() throws Exception {
+    expect(storage.get(BUCKET_INFO.name())).andReturn(null);
+    replay(storage);
+    assertNull(bucket.reload());
+  }
+
+  @Test
+  public void testReloadWithOptions() throws Exception {
+    BucketInfo updatedInfo = BUCKET_INFO.toBuilder().notFoundPage("p").build();
+    expect(storage.get(updatedInfo.name(), Storage.BucketGetOption.metagenerationMatch(42L)))
+        .andReturn(updatedInfo);
+    replay(storage);
+    Bucket updatedBucket = bucket.reload(Bucket.BucketSourceOption.metagenerationMatch());
     assertSame(storage, updatedBucket.storage());
     assertEquals(updatedInfo, updatedBucket.info());
   }
@@ -220,6 +239,24 @@ public class BucketTest {
     expect(storage.get(BUCKET_INFO.name())).andReturn(BUCKET_INFO);
     replay(storage);
     Bucket loadedBucket = Bucket.load(storage, BUCKET_INFO.name());
+    assertNotNull(loadedBucket);
+    assertEquals(BUCKET_INFO, loadedBucket.info());
+  }
+
+  @Test
+  public void testLoadNull() throws Exception {
+    expect(storage.get(BUCKET_INFO.name())).andReturn(null);
+    replay(storage);
+    assertNull(Bucket.load(storage, BUCKET_INFO.name()));
+  }
+
+  @Test
+  public void testLoadWithOptions() throws Exception {
+    expect(storage.get(BUCKET_INFO.name(), Storage.BucketGetOption.fields()))
+        .andReturn(BUCKET_INFO);
+    replay(storage);
+    Bucket loadedBucket =
+        Bucket.load(storage, BUCKET_INFO.name(), Storage.BucketGetOption.fields());
     assertNotNull(loadedBucket);
     assertEquals(BUCKET_INFO, loadedBucket.info());
   }
