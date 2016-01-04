@@ -42,12 +42,12 @@ public class Project {
   /**
    * Constructs a Project object that contains project information loaded from the server.
    *
-   * @return Project object containing the project's metadata
+   * @return Project object containing the project's metadata or {@code null} if not found
    * @throws ResourceManagerException upon failure
    */
   public static Project load(ResourceManager resourceManager, String projectId) {
     ProjectInfo projectInfo = resourceManager.get(projectId);
-    return new Project(resourceManager, projectInfo);
+    return projectInfo != null ? new Project(resourceManager, projectInfo) : null;
   }
 
   /**
@@ -67,7 +67,7 @@ public class Project {
   /**
    * Returns a Project object with updated project information.
    *
-   * @return Project object containing the project's updated metadata
+   * @return Project object containing the project's updated metadata or {@code null} if not found
    * @throws ResourceManagerException upon failure
    */
   public Project reload() {

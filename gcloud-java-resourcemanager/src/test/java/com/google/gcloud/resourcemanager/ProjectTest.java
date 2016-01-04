@@ -21,6 +21,8 @@ import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 
 import com.google.common.collect.ImmutableMap;
@@ -76,6 +78,24 @@ public class ProjectTest {
     Project newProject = project.reload();
     assertSame(resourceManager, newProject.resourceManager());
     assertEquals(newInfo, newProject.info());
+  }
+
+  @Test
+  public void testLoadNull() {
+    expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(null);
+    replay(resourceManager);
+    assertNull(Project.load(resourceManager, PROJECT_INFO.projectId()));
+  }
+
+  @Test
+  public void testReloadDeletedProject() {
+    expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(PROJECT_INFO);
+    expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(null);
+    replay(resourceManager);
+    Project loadedProject = Project.load(resourceManager, PROJECT_INFO.projectId());
+    assertNotNull(loadedProject);
+    Project reloadedProject = loadedProject.reload();
+    assertNull(reloadedProject);
   }
 
   @Test
