@@ -81,6 +81,13 @@ public class ProjectTest {
   }
 
   @Test
+  public void testLoadNull() {
+    expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(null);
+    replay(resourceManager);
+    assertNull(Project.load(resourceManager, PROJECT_INFO.projectId()));
+  }
+
+  @Test
   public void testReloadDeletedProject() {
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(PROJECT_INFO);
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(null);
