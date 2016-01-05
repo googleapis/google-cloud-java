@@ -506,11 +506,11 @@ public class ITBigQueryTest {
     assertEquals(0, response.insertErrors().size());
     String newTableName = tableName + "_suffix";
     BaseTableInfo suffixTable = bigquery.getTable(DATASET, newTableName, TableOption.fields());
+    // wait until the new table is created. If the table is never created the test will time-out
     while (suffixTable == null) {
       Thread.sleep(1000L);
       suffixTable = bigquery.getTable(DATASET, newTableName, TableOption.fields());
     }
-    assertNotNull(suffixTable);
     assertTrue(bigquery.delete(TableId.of(DATASET, tableName)));
     assertTrue(bigquery.delete(TableId.of(DATASET, newTableName)));
   }
