@@ -236,7 +236,16 @@ public class InsertAllRequest implements Serializable {
     /**
      * If specified, the destination table is treated as a base template. Rows are inserted into an
      * instance table named "{destination}{templateSuffix}". BigQuery will manage the creation of
-     * the instance table, using the schema of the base template table.
+     * the instance table, using the schema of the base template table. Table creation might take
+     * some time. To obtain table's information after {@link BigQuery#insertAll(InsertAllRequest)}
+     * is called use:
+     * <pre> {@code
+     * String suffixTableId = ...;
+     * BaseTableInfo suffixTable = bigquery.getTable(DATASET, suffixTableId);
+     * while (suffixTable == null) {
+     *   Thread.sleep(1000L);
+     *   suffixTable = bigquery.getTable(DATASET, suffixTableId);
+     * }}</pre>
      *
      * @see <a
      *     href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
@@ -293,7 +302,16 @@ public class InsertAllRequest implements Serializable {
   /**
    * If specified, the destination table is treated as a base template. Rows are inserted into an
    * instance table named "{destination}{templateSuffix}". BigQuery will manage the creation of the
-   * instance table, using the schema of the base template table.
+   * instance table, using the schema of the base template table. Table creation might take some
+   * time. To obtain table's information after {@link BigQuery#insertAll(InsertAllRequest)} is
+   * called use:
+   * <pre> {@code
+   * String suffixTableId = ...;
+   * BaseTableInfo suffixTable = bigquery.getTable(DATASET, suffixTableId);
+   * while (suffixTable == null) {
+   *   Thread.sleep(1000L);
+   *   suffixTable = bigquery.getTable(DATASET, suffixTableId);
+   * }}</pre>
    *
    * @see <a
    *     href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
