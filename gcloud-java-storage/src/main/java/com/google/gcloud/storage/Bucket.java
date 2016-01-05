@@ -210,11 +210,12 @@ public final class Bucket {
    * 
    * @param storage the storage service used for issuing requests
    * @param bucket bucket's name
-   * @return the {@code Bucket} object or {@code null} if not found.
+   * @param options blob get options
+   * @return the {@code Bucket} object or {@code null} if not found
    * @throws StorageException upon failure
    */
-  public static Bucket load(Storage storage, String bucket) {
-    BucketInfo info = storage.get(bucket);
+  public static Bucket load(Storage storage, String bucket, Storage.BucketGetOption... options) {
+    BucketInfo info = storage.get(bucket, options);
     return info != null ? new Bucket(storage, info) : null;
   }
 
@@ -239,14 +240,14 @@ public final class Bucket {
   }
 
   /**
-   * Fetches current bucket's latest information.
+   * Fetches current bucket's latest information. Returns {@code null} if the bucket does not exist.
    *
    * @param options bucket read options
-   * @return a {@code Bucket} object with latest information
+   * @return a {@code Bucket} object with latest information or {@code null} if not found
    * @throws StorageException upon failure
    */
   public Bucket reload(BucketSourceOption... options) {
-    return new Bucket(storage, storage.get(info.name(), toGetOptions(info, options)));
+    return Bucket.load(storage, info.name(), toGetOptions(info, options));
   }
 
   /**
@@ -307,7 +308,7 @@ public final class Bucket {
    * @param blobName1 first blob to get
    * @param blobName2 second blob to get
    * @param blobNames other blobs to get
-   * @return an immutable list of {@code Blob} objects.
+   * @return an immutable list of {@code Blob} objects
    * @throws StorageException upon failure
    */
   public List<Blob> get(String blobName1, String blobName2, String... blobNames) {
@@ -337,7 +338,7 @@ public final class Bucket {
    * @param contentType the blob content type. If {@code null} then
    *     {@value com.google.gcloud.storage.Storage#DEFAULT_CONTENT_TYPE} is used.
    * @param options options for blob creation
-   * @return a complete blob information.
+   * @return a complete blob information
    * @throws StorageException upon failure
    */
   public Blob create(String blob, byte[] content, String contentType, BlobTargetOption... options) {
@@ -356,7 +357,7 @@ public final class Bucket {
    * @param contentType the blob content type. If {@code null} then
    *     {@value com.google.gcloud.storage.Storage#DEFAULT_CONTENT_TYPE} is used.
    * @param options options for blob creation
-   * @return a complete blob information.
+   * @return a complete blob information
    * @throws StorageException upon failure
    */
   public Blob create(String blob, InputStream content, String contentType,

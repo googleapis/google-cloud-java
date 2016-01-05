@@ -156,29 +156,32 @@ public final class Blob {
 
   /**
    * Creates a {@code Blob} object for the provided bucket and blob names. Performs an RPC call to
-   * get the latest blob information.
+   * get the latest blob information. Returns {@code null} if the blob does not exist.
    *
    * @param storage the storage service used for issuing requests
    * @param bucket bucket's name
+   * @param options blob get options
    * @param blob blob's name
-   * @return the {@code Blob} object or {@code null} if not found.
+   * @return the {@code Blob} object or {@code null} if not found
    * @throws StorageException upon failure
    */
-  public static Blob load(Storage storage, String bucket, String blob) {
-    return load(storage, BlobId.of(bucket, blob));
+  public static Blob load(Storage storage, String bucket, String blob,
+      Storage.BlobGetOption... options) {
+    return load(storage, BlobId.of(bucket, blob), options);
   }
 
   /**
    * Creates a {@code Blob} object for the provided {@code blobId}. Performs an RPC call to get the
-   * latest blob information.
+   * latest blob information. Returns {@code null} if the blob does not exist.
    *
    * @param storage the storage service used for issuing requests
    * @param blobId blob's identifier
-   * @return the {@code Blob} object or {@code null} if not found.
+   * @param options blob get options
+   * @return the {@code Blob} object or {@code null} if not found
    * @throws StorageException upon failure
    */
-  public static Blob load(Storage storage, BlobId blobId) {
-    BlobInfo info = storage.get(blobId);
+  public static Blob load(Storage storage, BlobId blobId, Storage.BlobGetOption... options) {
+    BlobInfo info = storage.get(blobId, options);
     return info != null ? new Blob(storage, info) : null;
   }
 
@@ -221,14 +224,14 @@ public final class Blob {
   }
 
   /**
-   * Fetches current blob's latest information.
+   * Fetches current blob's latest information. Returns {@code null} if the blob does not exist.
    *
    * @param options blob read options
-   * @return a {@code Blob} object with latest information
+   * @return a {@code Blob} object with latest information or {@code null} if not found
    * @throws StorageException upon failure
    */
   public Blob reload(BlobSourceOption... options) {
-    return new Blob(storage, storage.get(info.blobId(), toGetOptions(info, options)));
+    return Blob.load(storage, info.blobId(), toGetOptions(info, options));
   }
 
   /**
@@ -368,7 +371,7 @@ public final class Blob {
    * @param storage the storage service used to issue the request
    * @param blobs the blobs to get
    * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
-   *     been denied the corresponding item in the list is {@code null}.
+   *     been denied the corresponding item in the list is {@code null}
    * @throws StorageException upon failure
    */
   public static List<Blob> get(final Storage storage, BlobId... blobs) {
@@ -397,7 +400,7 @@ public final class Blob {
    * @param storage the storage service used to issue the request
    * @param infos the blobs to update
    * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
-   *     been denied the corresponding item in the list is {@code null}.
+   *     been denied the corresponding item in the list is {@code null}
    * @throws StorageException upon failure
    */
   public static List<Blob> update(final Storage storage, BlobInfo... infos) {
@@ -422,7 +425,7 @@ public final class Blob {
    * @param blobs the blobs to delete
    * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
    *     list is {@code true}. If a blob was not found, deletion failed or access to the resource
-   *     was denied the corresponding item is {@code false}.
+   *     was denied the corresponding item is {@code false}
    * @throws StorageException upon failure
    */
   public static List<Boolean> delete(Storage storage, BlobId... blobs) {
