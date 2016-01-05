@@ -610,6 +610,8 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
+    QueryJobInfo queryJob = bigquery.getJob(response.jobId());
+    assertNotNull(queryJob.statistics().queryPlan());
   }
 
   @Test

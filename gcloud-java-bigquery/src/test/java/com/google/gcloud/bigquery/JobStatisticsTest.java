@@ -22,6 +22,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.gcloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.gcloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.gcloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.gcloud.bigquery.QueryStage.QueryStep;
 
 import org.junit.Test;
 
@@ -63,6 +64,26 @@ public class JobStatisticsTest {
       .inputBytes(INPUT_BYTES)
       .inputFiles(INPUT_FILES)
       .build();
+  private static final List<String> SUBSTEPS1 = ImmutableList.of("substep1", "substep2");
+  private static final List<String> SUBSTEPS2 = ImmutableList.of("substep3", "substep4");
+  private static final QueryStep QUERY_STEP1 = new QueryStep("KIND", SUBSTEPS1);
+  private static final QueryStep QUERY_STEP2 = new QueryStep("KIND", SUBSTEPS2);
+  private static final QueryStage QUERY_STAGE = QueryStage.builder()
+      .computeRatioAvg(1.1)
+      .computeRatioMax(2.2)
+      .id(42L)
+      .name("stage")
+      .readRatioAvg(3.3)
+      .readRatioMax(4.4)
+      .recordsRead(5L)
+      .recordsWritten(6L)
+      .steps(ImmutableList.of(QUERY_STEP1, QUERY_STEP2))
+      .waitRatioAvg(7.7)
+      .waitRatioMax(8.8)
+      .writeRatioAvg(9.9)
+      .writeRatioMax(10.10)
+      .build();
+  private static final List<QueryStage> QUERY_PLAN = ImmutableList.of(QUERY_STAGE);
   private static final QueryStatistics QUERY_STATISTICS = QueryStatistics.builder()
       .creationTime(CREATION_TIME)
       .endTime(END_TIME)
@@ -71,6 +92,7 @@ public class JobStatisticsTest {
       .cacheHit(CACHE_HIT)
       .totalBytesBilled(TOTAL_BYTES_BILLED)
       .totalBytesProcessed(TOTAL_BYTES_PROCESSED)
+      .queryPlan(QUERY_PLAN)
       .build();
   private static final QueryStatistics QUERY_STATISTICS_INCOMPLETE = QueryStatistics.builder()
       .creationTime(CREATION_TIME)
@@ -111,6 +133,8 @@ public class JobStatisticsTest {
     assertEquals(CACHE_HIT, QUERY_STATISTICS.cacheHit());
     assertEquals(TOTAL_BYTES_BILLED, QUERY_STATISTICS.totalBytesBilled());
     assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.totalBytesProcessed());
+    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_STATISTICS.totalBytesProcessed());
+    assertEquals(QUERY_PLAN, QUERY_STATISTICS.queryPlan());
 
     assertEquals(CREATION_TIME, LOAD_STATISTICS_INCOMPLETE.creationTime());
     assertEquals(START_TIME, LOAD_STATISTICS_INCOMPLETE.startTime());
@@ -127,6 +151,7 @@ public class JobStatisticsTest {
     assertEquals(CACHE_HIT, QUERY_STATISTICS_INCOMPLETE.cacheHit());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.totalBytesBilled());
     assertEquals(null, QUERY_STATISTICS_INCOMPLETE.totalBytesProcessed());
+    assertEquals(null, QUERY_STATISTICS_INCOMPLETE.queryPlan());
   }
 
   @Test
@@ -165,6 +190,7 @@ public class JobStatisticsTest {
     assertEquals(expected.cacheHit(), value.cacheHit());
     assertEquals(expected.totalBytesBilled(), value.totalBytesBilled());
     assertEquals(expected.totalBytesProcessed(), value.totalBytesProcessed());
+    assertEquals(expected.queryPlan(), value.queryPlan());
   }
 
   private void compareStatistics(JobStatistics expected, JobStatistics value) {
