@@ -59,6 +59,12 @@ public class JobTest {
   }
 
   @Test
+  public void testBigQuery() throws Exception {
+    assertSame(bigquery, job.bigquery());
+    replay(bigquery);
+  }
+
+  @Test
   public void testExists_True() throws Exception {
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields()};
     expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(JOB_INFO);

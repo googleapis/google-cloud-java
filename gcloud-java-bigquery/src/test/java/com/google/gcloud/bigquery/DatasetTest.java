@@ -33,9 +33,12 @@ import com.google.gcloud.PageImpl;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.util.Iterator;
+import java.util.List;
 
 public class DatasetTest {
 
@@ -48,7 +51,12 @@ public class DatasetTest {
       ExternalTableInfo.builder(TableId.of("dataset", "table2"),
           ExternalDataConfiguration.of(ImmutableList.of("URI"), Schema.of(), FormatOptions.csv()))
           .build());
+  private static final UserDefinedFunction FUNCTION1 = UserDefinedFunction.inline("inline");
+  private static final UserDefinedFunction FUNCTION2 = UserDefinedFunction.inline("gs://b/f");
+  private static final List<UserDefinedFunction> FUNCTIONS = ImmutableList.of(FUNCTION1, FUNCTION2);
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
   private BigQuery bigquery;
   private Dataset dataset;
 
@@ -66,6 +74,12 @@ public class DatasetTest {
   @Test
   public void testInfo() throws Exception {
     assertEquals(DATASET_INFO, dataset.info());
+    replay(bigquery);
+  }
+
+  @Test
+  public void testBigQuery() throws Exception {
+    assertSame(bigquery, dataset.bigquery());
     replay(bigquery);
   }
 
@@ -119,7 +133,28 @@ public class DatasetTest {
     expect(bigquery.update(updatedInfo)).andReturn(updatedInfo);
     replay(bigquery);
     Dataset updatedDataset = dataset.update(updatedInfo);
-    assertSame(bigquery, dataset.bigquery());
+    assertSame(bigquery, updatedDataset.bigquery());
+    assertEquals(updatedInfo, updatedDataset.info());
+  }
+
+  @Test
+  public void testUpdateWithDifferentId() throws Exception {
+    DatasetInfo updatedInfo = DATASET_INFO.toBuilder()
+        .datasetId(DatasetId.of("dataset2"))
+        .description("Description")
+        .build();
+    replay(bigquery);
+    thrown.expect(IllegalArgumentException.class);
+    dataset.update(updatedInfo);
+  }
+
+  @Test
+  public void testUpdateWithOptions() throws Exception {
+    DatasetInfo updatedInfo = DATASET_INFO.toBuilder().description("Description").build();
+    expect(bigquery.update(updatedInfo, BigQuery.DatasetOption.fields())).andReturn(updatedInfo);
+    replay(bigquery);
+    Dataset updatedDataset = dataset.update(updatedInfo, BigQuery.DatasetOption.fields());
+    assertSame(bigquery, updatedDataset.bigquery());
     assertEquals(updatedInfo, updatedDataset.info());
   }
 
@@ -151,6 +186,27 @@ public class DatasetTest {
   }
 
   @Test
+  public void testListWithOptions() throws Exception {
+    BigQueryOptions bigqueryOptions = createStrictMock(BigQueryOptions.class);
+    PageImpl<BaseTableInfo> tableInfoPage = new PageImpl<>(null, "c", TABLE_INFO_RESULTS);
+    expect(bigquery.listTables(DATASET_INFO.datasetId(), BigQuery.TableListOption.maxResults(10L)))
+        .andReturn(tableInfoPage);
+    expect(bigquery.options()).andReturn(bigqueryOptions);
+    expect(bigqueryOptions.service()).andReturn(bigquery);
+    replay(bigquery, bigqueryOptions);
+    Page<Table> tablePage = dataset.list(BigQuery.TableListOption.maxResults(10L));
+    Iterator<BaseTableInfo> tableInfoIterator = tableInfoPage.values().iterator();
+    Iterator<Table> tableIterator = tablePage.values().iterator();
+    while (tableInfoIterator.hasNext() && tableIterator.hasNext()) {
+      assertEquals(tableInfoIterator.next(), tableIterator.next().info());
+    }
+    assertFalse(tableInfoIterator.hasNext());
+    assertFalse(tableIterator.hasNext());
+    assertEquals(tableInfoPage.nextPageCursor(), tablePage.nextPageCursor());
+    verify(bigqueryOptions);
+  }
+
+  @Test
   public void testGet() throws Exception {
     BaseTableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), Schema.of()).build();
     expect(bigquery.getTable(TableId.of("dataset", "table1"))).andReturn(info);
@@ -168,11 +224,31 @@ public class DatasetTest {
   }
 
   @Test
+  public void testGetWithOptions() throws Exception {
+    BaseTableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), Schema.of()).build();
+    expect(bigquery.getTable(TableId.of("dataset", "table1"), BigQuery.TableOption.fields()))
+        .andReturn(info);
+    replay(bigquery);
+    Table table = dataset.get("table1", BigQuery.TableOption.fields());
+    assertNotNull(table);
+    assertEquals(info, table.info());
+  }
+
+  @Test
   public void testCreateTable() throws Exception {
     TableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), Schema.of(FIELD)).build();
     expect(bigquery.create(info)).andReturn(info);
     replay(bigquery);
     Table table = dataset.create("table1", Schema.of(FIELD));
+    assertEquals(info, table.info());
+  }
+
+  @Test
+  public void testCreateTableWithOptions() throws Exception {
+    TableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), Schema.of(FIELD)).build();
+    expect(bigquery.create(info, BigQuery.TableOption.fields())).andReturn(info);
+    replay(bigquery);
+    Table table = dataset.create("table1", Schema.of(FIELD), BigQuery.TableOption.fields());
     assertEquals(info, table.info());
   }
 
@@ -186,6 +262,24 @@ public class DatasetTest {
   }
 
   @Test
+  public void testCreateViewWithUserDefinedFunctions() throws Exception {
+    ViewInfo info = ViewInfo.builder(TableId.of("dataset", "table2"), "QUERY", FUNCTIONS).build();
+    expect(bigquery.create(info)).andReturn(info);
+    replay(bigquery);
+    Table table = dataset.create("table2", "QUERY", FUNCTIONS);
+    assertEquals(info, table.info());
+  }
+
+  @Test
+  public void testCreateViewWithOptions() throws Exception {
+    ViewInfo info = ViewInfo.builder(TableId.of("dataset", "table2"), "QUERY").build();
+    expect(bigquery.create(info, BigQuery.TableOption.fields())).andReturn(info);
+    replay(bigquery);
+    Table table = dataset.create("table2", "QUERY", BigQuery.TableOption.fields());
+    assertEquals(info, table.info());
+  }
+
+  @Test
   public void testCreateExternalTable() throws Exception {
     ExternalTableInfo info = ExternalTableInfo.builder(TableId.of("dataset", "table3"),
         ExternalDataConfiguration.of(ImmutableList.of("URI"), Schema.of(), FormatOptions.csv()))
@@ -194,6 +288,18 @@ public class DatasetTest {
     replay(bigquery);
     Table table = dataset.create("table3", ExternalDataConfiguration.of(
         ImmutableList.of("URI"), Schema.of(), FormatOptions.csv()));
+    assertEquals(info, table.info());
+  }
+
+  @Test
+  public void testCreateExternalTableWithOptions() throws Exception {
+    ExternalTableInfo info = ExternalTableInfo.builder(TableId.of("dataset", "table3"),
+        ExternalDataConfiguration.of(ImmutableList.of("URI"), Schema.of(), FormatOptions.csv()))
+        .build();
+    expect(bigquery.create(info, BigQuery.TableOption.fields())).andReturn(info);
+    replay(bigquery);
+    Table table = dataset.create("table3", ExternalDataConfiguration.of(
+        ImmutableList.of("URI"), Schema.of(), FormatOptions.csv()), BigQuery.TableOption.fields());
     assertEquals(info, table.info());
   }
 

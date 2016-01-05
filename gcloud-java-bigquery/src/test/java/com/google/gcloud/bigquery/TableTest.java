@@ -36,7 +36,9 @@ import com.google.gcloud.bigquery.InsertAllRequest.RowToInsert;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.util.Iterator;
 import java.util.List;
@@ -75,6 +77,8 @@ public class TableTest {
   private static final Iterable<List<FieldValue>> ROWS = ImmutableList.of(
       (List<FieldValue>) ImmutableList.of(FIELD_VALUE1), ImmutableList.of(FIELD_VALUE2));
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
   private BigQuery bigquery;
   private Table table;
 
@@ -92,6 +96,12 @@ public class TableTest {
   @Test
   public void testInfo() throws Exception {
     assertEquals(TABLE_INFO, table.info());
+    replay(bigquery);
+  }
+
+  @Test
+  public void testBigQuery() throws Exception {
+    assertSame(bigquery, table.bigquery());
     replay(bigquery);
   }
 
@@ -140,6 +150,48 @@ public class TableTest {
   }
 
   @Test
+  public void testUpdate() throws Exception {
+    BaseTableInfo updatedInfo = TABLE_INFO.toBuilder().description("Description").build();
+    expect(bigquery.update(updatedInfo)).andReturn(updatedInfo);
+    replay(bigquery);
+    Table updatedTable = table.update(updatedInfo);
+    assertSame(bigquery, updatedTable.bigquery());
+    assertEquals(updatedInfo, updatedTable.info());
+  }
+
+  @Test
+  public void testUpdateWithDifferentId() throws Exception {
+    TableInfo updatedInfo = TABLE_INFO.toBuilder()
+        .tableId(TableId.of("dataset", "table3"))
+        .description("Description")
+        .build();
+    replay(bigquery);
+    thrown.expect(IllegalArgumentException.class);
+    table.update(updatedInfo);
+  }
+
+  @Test
+  public void testUpdateWithDifferentDatasetId() throws Exception {
+    TableInfo updatedInfo = TABLE_INFO.toBuilder()
+        .tableId(TableId.of("dataset1", "table1"))
+        .description("Description")
+        .build();
+    replay(bigquery);
+    thrown.expect(IllegalArgumentException.class);
+    table.update(updatedInfo);
+  }
+
+  @Test
+  public void testUpdateWithOptions() throws Exception {
+    BaseTableInfo updatedInfo = TABLE_INFO.toBuilder().description("Description").build();
+    expect(bigquery.update(updatedInfo, BigQuery.TableOption.fields())).andReturn(updatedInfo);
+    replay(bigquery);
+    Table updatedTable = table.update(updatedInfo, BigQuery.TableOption.fields());
+    assertSame(bigquery, updatedTable.bigquery());
+    assertEquals(updatedInfo, updatedTable.info());
+  }
+
+  @Test
   public void testDelete() throws Exception {
     expect(bigquery.delete(TABLE_INFO.tableId())).andReturn(true);
     replay(bigquery);
@@ -168,6 +220,18 @@ public class TableTest {
     expect(bigquery.listTableData(TABLE_ID1)).andReturn(tableDataPage);
     replay(bigquery);
     Page<List<FieldValue>> dataPage = table.list();
+    Iterator<List<FieldValue>> tableDataIterator = tableDataPage.values().iterator();
+    Iterator<List<FieldValue>> dataIterator = dataPage.values().iterator();
+    assertTrue(Iterators.elementsEqual(tableDataIterator, dataIterator));
+  }
+
+  @Test
+  public void testListWithOptions() throws Exception {
+    PageImpl<List<FieldValue>> tableDataPage = new PageImpl<>(null, "c", ROWS);
+    expect(bigquery.listTableData(TABLE_ID1, BigQuery.TableDataListOption.maxResults(10L)))
+        .andReturn(tableDataPage);
+    replay(bigquery);
+    Page<List<FieldValue>> dataPage = table.list(BigQuery.TableDataListOption.maxResults(10L));
     Iterator<List<FieldValue>> tableDataIterator = tableDataPage.values().iterator();
     Iterator<List<FieldValue>> dataIterator = dataPage.values().iterator();
     assertTrue(Iterators.elementsEqual(tableDataIterator, dataIterator));
