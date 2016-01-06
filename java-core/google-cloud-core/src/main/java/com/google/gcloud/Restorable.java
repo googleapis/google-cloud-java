@@ -34,7 +34,7 @@ package com.google.gcloud;
  * ...
  * }</pre>
  *
- * @param <T> the restorable object's type.
+ * @param <T> the restorable object's type
  */
 public interface Restorable<T extends Restorable<T>> {
 
