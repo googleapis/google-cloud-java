@@ -408,6 +408,23 @@ public class LoadJobInfo extends JobInfo<LoadStatistics> {
   }
 
   /**
+   * Returns a BigQuery Load Job for the given destination table, format and source URI. Job's id is
+   * chosen by the service.
+   */
+  public static LoadJobInfo of(TableId destinationTable, FormatOptions format, String sourceUri) {
+    return builder(destinationTable, sourceUri).formatOptions(format).build();
+  }
+
+  /**
+   * Returns a BigQuery Load Job for the given destination table, format and source URIs. Job's id
+   * is chosen by the service.
+   */
+  public static LoadJobInfo of(TableId destinationTable, FormatOptions format,
+      List<String> sourceUris) {
+    return builder(destinationTable, sourceUris).formatOptions(format).build();
+  }
+
+  /**
    * Returns a BigQuery Load Job for the given destination table and source URI. Job's id is set to
    * the provided value.
    */
@@ -421,6 +438,24 @@ public class LoadJobInfo extends JobInfo<LoadStatistics> {
    */
   public static LoadJobInfo of(JobId jobId, TableId destinationTable, List<String> sourceUris) {
     return builder(destinationTable, sourceUris).jobId(jobId).build();
+  }
+
+  /**
+   * Returns a BigQuery Load Job for the given destination table, format, and source URI. Job's id
+   * is set to the provided value.
+   */
+  public static LoadJobInfo of(JobId jobId, TableId destinationTable, FormatOptions format,
+      String sourceUri) {
+    return builder(destinationTable, sourceUri).formatOptions(format).jobId(jobId).build();
+  }
+
+  /**
+   * Returns a BigQuery Load Job for the given destination table, format and source URIs. Job's id
+   * is set to the provided value.
+   */
+  public static LoadJobInfo of(JobId jobId, TableId destinationTable, FormatOptions format,
+      List<String> sourceUris) {
+    return builder(destinationTable, sourceUris).formatOptions(format).jobId(jobId).build();
   }
 
   @SuppressWarnings("unchecked")

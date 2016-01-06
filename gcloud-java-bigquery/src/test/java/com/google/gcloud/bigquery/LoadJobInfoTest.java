@@ -102,6 +102,16 @@ public class LoadJobInfoTest {
     job = LoadJobInfo.of(TABLE_ID, SOURCE_URI);
     assertEquals(TABLE_ID, job.destinationTable());
     assertEquals(ImmutableList.of(SOURCE_URI), job.sourceUris());
+    job = LoadJobInfo.of(TABLE_ID, CSV_OPTIONS, SOURCE_URIS);
+    assertEquals(TABLE_ID, job.destinationTable());
+    assertEquals(SOURCE_URIS, job.sourceUris());
+    assertEquals(FORMAT, job.format());
+    assertEquals(CSV_OPTIONS, job.csvOptions());
+    job = LoadJobInfo.of(TABLE_ID, CSV_OPTIONS, SOURCE_URI);
+    assertEquals(TABLE_ID, job.destinationTable());
+    assertEquals(ImmutableList.of(SOURCE_URI), job.sourceUris());
+    assertEquals(FORMAT, job.format());
+    assertEquals(CSV_OPTIONS, job.csvOptions());
     job = LoadJobInfo.of(JOB_ID, TABLE_ID, SOURCE_URIS);
     assertEquals(JOB_ID, job.jobId());
     assertEquals(TABLE_ID, job.destinationTable());
@@ -110,6 +120,18 @@ public class LoadJobInfoTest {
     assertEquals(JOB_ID, job.jobId());
     assertEquals(TABLE_ID, job.destinationTable());
     assertEquals(ImmutableList.of(SOURCE_URI), job.sourceUris());
+    job = LoadJobInfo.of(JOB_ID, TABLE_ID, CSV_OPTIONS, SOURCE_URIS);
+    assertEquals(JOB_ID, job.jobId());
+    assertEquals(TABLE_ID, job.destinationTable());
+    assertEquals(SOURCE_URIS, job.sourceUris());
+    assertEquals(FORMAT, job.format());
+    assertEquals(CSV_OPTIONS, job.csvOptions());
+    job = LoadJobInfo.of(JOB_ID, TABLE_ID, CSV_OPTIONS, SOURCE_URI);
+    assertEquals(JOB_ID, job.jobId());
+    assertEquals(TABLE_ID, job.destinationTable());
+    assertEquals(ImmutableList.of(SOURCE_URI), job.sourceUris());
+    assertEquals(FORMAT, job.format());
+    assertEquals(CSV_OPTIONS, job.csvOptions());
   }
 
   @Test

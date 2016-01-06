@@ -231,10 +231,8 @@ public final class Table {
    */
   Job extract(String format, List<String> destinationUris, BigQuery.JobOption... options)
       throws BigQueryException {
-    ExtractJobInfo job = ExtractJobInfo.builder(info.tableId(), destinationUris)
-        .format(format)
-        .build();
-    return new Job(bigquery, bigquery.create(job, options));
+    return new Job(bigquery,
+        bigquery.create(ExtractJobInfo.of(info.tableId(), format, destinationUris), options));
   }
 
   /**
@@ -264,10 +262,8 @@ public final class Table {
    */
   Job load(FormatOptions format, List<String> sourceUris, BigQuery.JobOption... options)
       throws BigQueryException {
-    LoadJobInfo job = LoadJobInfo.builder(info.tableId(), sourceUris)
-        .formatOptions(format)
-        .build();
-    return new Job(bigquery, bigquery.create(job, options));
+    return new Job(bigquery, bigquery.create(LoadJobInfo.of(info.tableId(), format, sourceUris),
+        options));
   }
 
   /**

@@ -264,6 +264,23 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
   }
 
   /**
+   * Returns a BigQuery Extract Job for the given source table, format and destination URI. Job's id
+   * is chosen by the service.
+   */
+  public static ExtractJobInfo of(TableId sourceTable, String format, String destinationUri) {
+    return builder(sourceTable, destinationUri).format(format).build();
+  }
+
+  /**
+   * Returns a BigQuery Extract Job for the given source table, format and destination URIs. Job's
+   * id is chosen by the service.
+   */
+  public static ExtractJobInfo of(TableId sourceTable, String format,
+      List<String> destinationUris) {
+    return builder(sourceTable, destinationUris).format(format).build();
+  }
+
+  /**
    * Returns a BigQuery Extract Job for the given source table and destination URI. Job's id is set
    * to the provided value.
    */
@@ -277,6 +294,24 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
    */
   public static ExtractJobInfo of(JobId jobId, TableId sourceTable, List<String> destinationUris) {
     return builder(sourceTable, destinationUris).jobId(jobId).build();
+  }
+
+  /**
+   * Returns a BigQuery Extract Job for the given source table, format and destination URI. Job's id
+   * is set to the provided value.
+   */
+  public static ExtractJobInfo of(JobId jobId, TableId sourceTable, String format,
+      String destinationUri) {
+    return builder(sourceTable, destinationUri).format(format).jobId(jobId).build();
+  }
+
+  /**
+   * Returns a BigQuery Extract Job for the given source table, format and destination URIs. Job's
+   * id is set to the provided value.
+   */
+  public static ExtractJobInfo of(JobId jobId, TableId sourceTable, String format,
+      List<String> destinationUris) {
+    return builder(sourceTable, destinationUris).format(format).jobId(jobId).build();
   }
 
   @SuppressWarnings("unchecked")
