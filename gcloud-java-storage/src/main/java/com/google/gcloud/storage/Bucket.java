@@ -81,7 +81,7 @@ public final class Bucket {
     private static final long serialVersionUID = -3092290247725378832L;
 
     private final StorageOptions options;
-    private Iterable<BlobInfo> infoIterable;
+    private final Iterable<BlobInfo> infoIterable;
     private transient Storage storage;
 
     public LazyBlobIterable(StorageOptions options, Iterable<BlobInfo> infoIterable) {

@@ -69,7 +69,7 @@ public final class Dataset {
     private static final long serialVersionUID = 3312744215731674032L;
 
     private final BigQueryOptions options;
-    private Iterable<BaseTableInfo> infoIterable;
+    private final Iterable<BaseTableInfo> infoIterable;
     private transient BigQuery bigquery;
 
     public LazyTableIterable(BigQueryOptions options, Iterable<BaseTableInfo> infoIterable) {
