@@ -38,6 +38,7 @@ public class ExtractJobInfoTest {
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final String FIELD_DELIMITER = ",";
   private static final String FORMAT = "CSV";
+  private static final String JSON_FORMAT = "NEWLINE_DELIMITED_JSON";
   private static final Boolean PRINT_HEADER = true;
   private static final String COMPRESSION = "GZIP";
   private static final JobId JOB_ID = JobId.of("job");
@@ -95,6 +96,14 @@ public class ExtractJobInfoTest {
     job = ExtractJobInfo.of(TABLE_ID, DESTINATION_URI);
     assertEquals(TABLE_ID, job.sourceTable());
     assertEquals(ImmutableList.of(DESTINATION_URI), job.destinationUris());
+    job = ExtractJobInfo.of(TABLE_ID, JSON_FORMAT, DESTINATION_URIS);
+    assertEquals(TABLE_ID, job.sourceTable());
+    assertEquals(DESTINATION_URIS, job.destinationUris());
+    assertEquals(JSON_FORMAT, job.format());
+    job = ExtractJobInfo.of(TABLE_ID, JSON_FORMAT, DESTINATION_URI);
+    assertEquals(TABLE_ID, job.sourceTable());
+    assertEquals(ImmutableList.of(DESTINATION_URI), job.destinationUris());
+    assertEquals(JSON_FORMAT, job.format());
     job = ExtractJobInfo.of(JOB_ID, TABLE_ID, DESTINATION_URIS);
     assertEquals(JOB_ID, job.jobId());
     assertEquals(TABLE_ID, job.sourceTable());
@@ -103,6 +112,16 @@ public class ExtractJobInfoTest {
     assertEquals(JOB_ID, job.jobId());
     assertEquals(TABLE_ID, job.sourceTable());
     assertEquals(ImmutableList.of(DESTINATION_URI), job.destinationUris());
+    job = ExtractJobInfo.of(JOB_ID, TABLE_ID, JSON_FORMAT, DESTINATION_URIS);
+    assertEquals(JOB_ID, job.jobId());
+    assertEquals(TABLE_ID, job.sourceTable());
+    assertEquals(DESTINATION_URIS, job.destinationUris());
+    assertEquals(JSON_FORMAT, job.format());
+    job = ExtractJobInfo.of(JOB_ID, TABLE_ID, JSON_FORMAT, DESTINATION_URI);
+    assertEquals(JOB_ID, job.jobId());
+    assertEquals(TABLE_ID, job.sourceTable());
+    assertEquals(ImmutableList.of(DESTINATION_URI), job.destinationUris());
+    assertEquals(JSON_FORMAT, job.format());
   }
 
   @Test
