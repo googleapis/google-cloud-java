@@ -339,10 +339,10 @@ public class JobStatistics implements Serializable {
     }
 
     /**
-     * Returns the query plan as a list of stages. Each stage involves a number of steps that read
-     * from data sources, perform a series of transformations on the input, and emit an output to a
-     * future stage (or the final result). The query plan is available for a completed query job and
-     * is retained for 7 days.
+     * Returns the query plan as a list of stages or {@code null} if a query plan is not available.
+     * Each stage involves a number of steps that read from data sources, perform a series of
+     * transformations on the input, and emit an output to a future stage (or the final result). The
+     * query plan is available for a completed query job and is retained for 7 days.
      *
      * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation">Query Plan</a>
      */

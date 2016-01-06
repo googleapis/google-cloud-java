@@ -78,18 +78,27 @@ public class QueryStage implements Serializable {
         };
     private static final long serialVersionUID = 8663444604771794411L;
 
-    private final String kind;
+    private final String name;
     private final List<String> substeps;
 
-    QueryStep(String kind, List<String> substeps) {
-      this.kind = kind;
+    QueryStep(String name, List<String> substeps) {
+      this.name = name;
       this.substeps = substeps;
     }
 
-    public String kind() {
-      return kind;
+    /**
+     * Returns a machine-readable name for the operation.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation#steps_metadata">Steps
+     *     Metadata</a>
+     */
+    public String name() {
+      return name;
     }
 
+    /**
+     * Returns a list of human-readable stage descriptions.
+     */
     public List<String> substeps() {
       return substeps;
     }
@@ -97,14 +106,14 @@ public class QueryStage implements Serializable {
     @Override
     public String toString() {
       return MoreObjects.toStringHelper(this)
-          .add("kind", kind)
+          .add("name", name)
           .add("substeps", substeps)
           .toString();
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(kind, substeps);
+      return Objects.hash(name, substeps);
     }
 
     @Override
@@ -113,20 +122,16 @@ public class QueryStage implements Serializable {
         return false;
       }
       QueryStep other = (QueryStep) obj;
-      return Objects.equals(kind, other.kind)
-          && Objects.equals(substeps, other.substeps);
+      return Objects.equals(name, other.name) && Objects.equals(substeps, other.substeps);
     }
 
     ExplainQueryStep toPb() {
-      return new ExplainQueryStep().setKind(kind).setSubsteps(substeps);
+      return new ExplainQueryStep().setKind(name).setSubsteps(substeps);
     }
 
     static QueryStep fromPb(com.google.api.services.bigquery.model.ExplainQueryStep stepPb) {
-      List<String> substeps = null;
-      if (stepPb.getSubsteps() != null) {
-        substeps = ImmutableList.copyOf(stepPb.getSubsteps());
-      }
-      return new QueryStep(stepPb.getKind(), substeps);
+      return new QueryStep(stepPb.getKind(), ImmutableList.copyOf(stepPb.getSubsteps() != null
+          ? stepPb.getSubsteps() : ImmutableList.<String>of()));
     }
   }
 
@@ -249,14 +254,16 @@ public class QueryStage implements Serializable {
   }
 
   /**
-   * Returns the relative amount of time the average shard spent on CPU-bound tasks.
+   * Returns the time the average worker spent CPU-bound, divided by the longest time spent by any
+   * worker in any segment.
    */
   public double computeRatioAvg() {
     return computeRatioAvg;
   }
 
   /**
-   * Returns the relative amount of time the slowest shard spent on CPU-bound tasks.
+   * Returns the time the slowest worker spent CPU-bound, divided by the longest time spent by any
+   * worker in any segment.
    */
   public double computeRatioMax() {
     return computeRatioMax;
@@ -277,28 +284,30 @@ public class QueryStage implements Serializable {
   }
 
   /**
-   * Returns the relative amount of time the average shard spent reading input.
+   * Returns the time the average worker spent reading input data, divided by the longest time spent
+   * by any worker in any segment.
    */
   public double readRatioAvg() {
     return readRatioAvg;
   }
 
   /**
-   * Returns the relative amount of time the slowest shard spent reading input.
+   * Returns the time the slowest worker spent reading input data, divided by the longest time spent
+   * by any worker in any segment.
    */
   public double readRatioMax() {
     return readRatioMax;
   }
 
   /**
-   * Returns the number of records read into the stage.
+   * Returns the number of rows (top-level records) read by the stage.
    */
   public long recordsRead() {
     return recordsRead;
   }
 
   /**
-   * Returns the number of records written by the stage.
+   * Returns the number of rows (top-level records) written by the stage.
    */
   public long recordsWritten() {
     return recordsWritten;
@@ -312,28 +321,32 @@ public class QueryStage implements Serializable {
   }
 
   /**
-   * Returns the relative amount of time the average shard spent waiting to be scheduled.
+   * Returns the time the average worker spent waiting to be scheduled, divided by the longest time
+   * spent by any worker in any segment.
    */
   public double waitRatioAvg() {
     return waitRatioAvg;
   }
 
   /**
-   * Returns the relative amount of time the slowest shard spent waiting to be scheduled.
+   * Returns the time the slowest worker spent waiting to be scheduled, divided by the longest time
+   * spent by any worker in any segment.
    */
   public double waitRatioMax() {
     return waitRatioMax;
   }
 
   /**
-   * Returns the relative amount of time the average shard spent on writing output.
+   * Returns the time the average worker spent writing output data, divided by the longest time
+   * spent by any worker in any segment.
    */
   public double writeRatioAvg() {
     return writeRatioAvg;
   }
 
   /**
-   * Returns the relative amount of time the slowest shard spent on writing output.
+   * Returns the time the slowest worker spent writing output data, divided by the longest time
+   * spent by any worker in any segment.
    */
   public double writeRatioMax() {
     return writeRatioMax;

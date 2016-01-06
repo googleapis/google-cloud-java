@@ -18,6 +18,7 @@ package com.google.gcloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 
+import com.google.api.services.bigquery.model.ExplainQueryStep;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.bigquery.QueryStage.QueryStep;
 
@@ -62,8 +63,8 @@ public class QueryStageTest {
 
   @Test
   public void testQueryStepConstructor() {
-    assertEquals("KIND", QUERY_STEP1.kind());
-    assertEquals("KIND", QUERY_STEP2.kind());
+    assertEquals("KIND", QUERY_STEP1.name());
+    assertEquals("KIND", QUERY_STEP2.name());
     assertEquals(SUBSTEPS1, QUERY_STEP1.substeps());
     assertEquals(SUBSTEPS2, QUERY_STEP2.substeps());
   }
@@ -90,6 +91,10 @@ public class QueryStageTest {
     compareQueryStep(QUERY_STEP1, QueryStep.fromPb(QUERY_STEP1.toPb()));
     compareQueryStep(QUERY_STEP2, QueryStep.fromPb(QUERY_STEP2.toPb()));
     compareQueryStage(QUERY_STAGE, QueryStage.fromPb(QUERY_STAGE.toPb()));
+    ExplainQueryStep stepPb = new ExplainQueryStep();
+    stepPb.setKind("KIND");
+    stepPb.setSubsteps(null);
+    compareQueryStep(new QueryStep("KIND", ImmutableList.<String>of()), QueryStep.fromPb(stepPb));
   }
 
   @Test
@@ -119,7 +124,7 @@ public class QueryStageTest {
 
   private void compareQueryStep(QueryStep expected, QueryStep value) {
     assertEquals(expected, value);
-    assertEquals(expected.kind(), value.kind());
+    assertEquals(expected.name(), value.name());
     assertEquals(expected.substeps(), value.substeps());
     assertEquals(expected.hashCode(), value.hashCode());
   }
