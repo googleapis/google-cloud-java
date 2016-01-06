@@ -8,8 +8,14 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Google Cloud BigQuery Job Error. Objects of this class represent errors occurred during the
- * execution of a BigQuery Job.
+ * Google Cloud BigQuery Error. Objects of this class represent errors encountered by the BigQuery
+ * service while executing a request. A BigQuery Job that terminated with an error has a non-null
+ * {@link JobStatus#error()}. A job can also encounter errors during its execution that do not cause
+ * the whole job to fail (see {@link JobStatus#executionErrors()}). Similarly, queries and insert
+ * all requests can cause BigQuery errors that do not mean the whole operation failed (see
+ * {@link QueryResponse#executionErrors()} and {@link InsertAllResponse#insertErrors()}). When a
+ * {@link BigQueryException} is thrown the BigQuery Error that caused it, if any, can be accessed
+ * with {@link BigQueryException#error()}.
  */
 public class BigQueryError implements Serializable {
 
@@ -34,14 +40,14 @@ public class BigQueryError implements Serializable {
   private final String debugInfo;
   private final String message;
 
-  BigQueryError(String reason, String location, String message, String debugInfo) {
+  public BigQueryError(String reason, String location, String message, String debugInfo) {
     this.reason = reason;
     this.location = location;
     this.debugInfo = debugInfo;
     this.message = message;
   }
 
-  BigQueryError(String reason, String location, String message) {
+  public BigQueryError(String reason, String location, String message) {
     this.reason = reason;
     this.location = location;
     this.message = message;

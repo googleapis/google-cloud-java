@@ -49,6 +49,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 
+import com.google.gcloud.bigquery.BigQueryError;
 import com.google.gcloud.bigquery.BigQueryException;
 import com.google.gcloud.bigquery.BigQueryOptions;
 
@@ -91,7 +92,14 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
 
   private static BigQueryException translate(GoogleJsonError exception) {
     boolean retryable = RETRYABLE_CODES.contains(exception.getCode());
-    return new BigQueryException(exception.getCode(), exception.getMessage(), retryable);
+    BigQueryError bigqueryError = null;
+    if (exception.getErrors() != null  && !exception.getErrors().isEmpty()) {
+      GoogleJsonError.ErrorInfo error = exception.getErrors().get(0);
+      bigqueryError = new BigQueryError(error.getReason(), error.getLocation(), error.getMessage(),
+          (String) error.get("debugInfo"));
+    }
+    return new BigQueryException(exception.getCode(), exception.getMessage(), retryable,
+        bigqueryError);
   }
 
   @Override

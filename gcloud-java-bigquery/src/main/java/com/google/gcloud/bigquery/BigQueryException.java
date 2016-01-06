@@ -31,8 +31,23 @@ public class BigQueryException extends BaseServiceException {
   private static final long serialVersionUID = -5504832700512784654L;
   public static final int UNKNOWN_CODE = -1;
 
+  private final BigQueryError error;
+
   public BigQueryException(int code, String message, boolean retryable) {
+    this(code, message, retryable, null);
+  }
+
+  public BigQueryException(int code, String message, boolean retryable, BigQueryError error) {
     super(code, message, retryable);
+    this.error = error;
+  }
+
+  /**
+   * Returns the {@link BigQueryError} that caused this exception. Returns {@code null} if none
+   * exists.
+   */
+  public BigQueryError error() {
+    return error;
   }
 
   /**
