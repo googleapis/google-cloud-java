@@ -37,7 +37,7 @@ import java.io.Serializable;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-public class ResourceManagerImpl
+final class ResourceManagerImpl
     extends BaseService<ResourceManagerOptions> implements ResourceManager {
 
   private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
