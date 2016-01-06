@@ -53,8 +53,8 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
 
     /**
      * Query is queued and started as soon as idle resources are available, usually within a few
-     * minutes. If a {@link Priority#BATCH} query hasn't started within 3 hours, its priority is
-     * changed to {@link Priority#INTERACTIVE}.
+     * minutes. If the query hasn't started within 3 hours, its priority is changed to
+     * {@link Priority#INTERACTIVE}.
      */
     BATCH
   }
