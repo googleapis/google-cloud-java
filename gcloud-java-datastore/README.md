@@ -44,7 +44,7 @@ See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#auth
 About Google Cloud Datastore
 ----------------------------
 
-Google [Cloud Datastore][cloud-datastore] is a fully managed, schemaless database for
+Google [Cloud Datastore][cloud-datastore-docs] is a fully managed, schemaless database for
 storing non-relational data. Cloud Datastore automatically scales with
 your users and supports ACID transactions, high availability of reads and
 writes, strong consistency for reads and ancestor queries, and eventual
@@ -77,7 +77,7 @@ Datastore datastore = DatastoreOptions.defaultInstance().service();
 For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) page.
 
 #### Storing data
-Objects in Datastore are known as entities. Entities are grouped by "kind" and have keys for easy access. In this code snippet, we will create a new entity representing a person and store that data by the person's name.  First, add the following imports at the top of your file:
+Objects in Datastore are known as entities. Entities are grouped by "kind" and have keys for easy access. In this code snippet, we will create a new entity representing a person and store that data by the person's email.  First, add the following imports at the top of your file:
 
 ```java
 import com.google.gcloud.datastore.Entity;
@@ -89,8 +89,9 @@ Then add the following code to put an entity in Datastore.
 
 ```java
 KeyFactory keyFactory = datastore.newKeyFactory().kind("Person");
-Key key = keyFactory.newKey("John Doe");
+Key key = keyFactory.newKey("john.doe@gmail.com");
 Entity entity = Entity.builder(key)
+    .set("name", "John Doe")
     .set("age", 51)
     .set("favorite_food", "pizza")
     .build();
@@ -125,6 +126,7 @@ Query<Entity> query = Query.entityQueryBuilder()
 QueryResults<Entity> results = datastore.run(query);
 while (results.hasNext()) {
   Entity currentEntity = results.next();
+  System.out.println(currentEntity.getString("name") + ", you're invited to a pizza party!");
 }
 ```
 
@@ -132,7 +134,7 @@ Cloud Datastore relies on indexing to run queries. Indexing is turned on by defa
 
 #### Complete source code
 
-Here we put together all the code shown above into one program.  This program assumes that you are running on Compute Engine or from your own desktop. To run this example on App Engine, simply move the code from the main method to your application's servlet class.
+Here we put together all the code shown above into one program.  This program assumes that you are running on Compute Engine or from your own desktop. To run this example on App Engine, move this code to your application's servlet class and print the query output to the webpage instead of `System.out`.
 
 ```java
 import com.google.gcloud.datastore.Datastore;
@@ -145,7 +147,7 @@ import com.google.gcloud.datastore.QueryResults;
 import com.google.gcloud.datastore.StructuredQuery;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 
-public class GcloudJavaDatastoreExample {
+public class GcloudDatastoreExample {
 
   public static void main(String[] args) {
     // Create datastore service object.
@@ -154,8 +156,9 @@ public class GcloudJavaDatastoreExample {
 
     // Add an entity to Datastore
     KeyFactory keyFactory = datastore.newKeyFactory().kind("Person");
-    Key key = keyFactory.newKey("John Doe");
+    Key key = keyFactory.newKey("john.doe@gmail.com");
     Entity entity = Entity.builder(key)
+        .set("name", "John Doe")
         .set("age", 51)
         .set("favorite_food", "pizza")
         .build();
@@ -165,13 +168,15 @@ public class GcloudJavaDatastoreExample {
     Entity johnEntity = datastore.get(key);
 
     // Add a couple more entities to make the query results more interesting
-    Key janeKey = keyFactory.newKey("Jane Doe");
+    Key janeKey = keyFactory.newKey("jane.doe@gmail.com");
     Entity janeEntity = Entity.builder(janeKey)
+        .set("name", "Jane Doe")
         .set("age", 44)
         .set("favorite_food", "pizza")
         .build();
-    Key joeKey = keyFactory.newKey("Joe Shmoe");
+    Key joeKey = keyFactory.newKey("joe.shmoe@gmail.com");
     Entity joeEntity = Entity.builder(joeKey)
+        .set("name", "Joe Shmoe")
         .set("age", 27)
         .set("favorite_food", "sushi")
         .build();
@@ -185,7 +190,7 @@ public class GcloudJavaDatastoreExample {
     QueryResults<Entity> results = datastore.run(query);
     while (results.hasNext()) {
       Entity currentEntity = results.next();
-      // Do something using the entity.  (e.g. send an invite a pizza party)
+      System.out.println(currentEntity.getString("name") + ", you're invited to a pizza party!");
     }
   }
 }
@@ -237,8 +242,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
 [TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-datastore
 [cloud-platform]: https://cloud.google.com/
-[cloud-datastore]: https://cloud.google.com/datastore/docs
 [cloud-datastore-docs]: https://cloud.google.com/datastore/docs
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
 [datastore-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html
-

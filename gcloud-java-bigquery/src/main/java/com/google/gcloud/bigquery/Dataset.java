@@ -184,7 +184,7 @@ public final class Dataset {
   /**
    * Deletes this dataset.
    *
-   * @return {@code true} if dataset was deleted, {@code false} if it was not found.
+   * @return {@code true} if dataset was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
   public boolean delete() {

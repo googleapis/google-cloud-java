@@ -65,9 +65,10 @@ public class Project {
   }
 
   /**
-   * Returns a Project object with updated project information.
+   * Fetches the current project's latest information. Returns {@code null} if the job does not
+   * exist.
    *
-   * @return Project object containing the project's updated metadata or {@code null} if not found
+   * @return Project containing the project's updated metadata or {@code null} if not found
    * @throws ResourceManagerException upon failure
    */
   public Project reload() {

@@ -58,7 +58,7 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
 
   /**
    * Resets the KeyFactory to its initial state.
-   * @return {@code this} for chaining.
+   * @return {@code this} for chaining
    */
   public KeyFactory reset() {
     projectId(pi);

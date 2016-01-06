@@ -258,8 +258,8 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
    * variable GOOGLE_APPLICATION_CREDENTIALS.
    * </p>
    *
-   * @return the credentials instance.
-   * @throws IOException if the credentials cannot be created in the current environment.
+   * @return the credentials instance
+   * @throws IOException if the credentials cannot be created in the current environment
    */
   public static AuthCredentials createApplicationDefaults() throws IOException {
     return new ApplicationDefaultAuthCredentials();
@@ -275,7 +275,7 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
    *
    * @param account id of the Service Account
    * @param privateKey private key associated to the account
-   * @return the credentials instance.
+   * @return the credentials instance
    */
   public static ServiceAccountAuthCredentials createFor(String account, PrivateKey privateKey) {
     return new ServiceAccountAuthCredentials(account, privateKey);
@@ -290,8 +290,8 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
    * </p>
    *
    * @param jsonCredentialStream stream for Service Account Credentials in JSON format
-   * @return the credentials instance.
-   * @throws IOException if the credentials cannot be created from the stream.
+   * @return the credentials instance
+   * @throws IOException if the credentials cannot be created from the stream
    */
   public static ServiceAccountAuthCredentials createForJson(InputStream jsonCredentialStream)
       throws IOException {

@@ -960,7 +960,7 @@ public interface Storage extends Service<StorageOptions> {
       /**
        * Sets the blob to copy given bucket and blob name.
        *
-       * @return the builder.
+       * @return the builder
        */
       public Builder source(String bucket, String blob) {
         this.source = BlobId.of(bucket, blob);
@@ -970,7 +970,7 @@ public interface Storage extends Service<StorageOptions> {
       /**
        * Sets the blob to copy given a {@link BlobId}.
        *
-       * @return the builder.
+       * @return the builder
        */
       public Builder source(BlobId source) {
         this.source = source;
@@ -980,7 +980,7 @@ public interface Storage extends Service<StorageOptions> {
       /**
        * Sets blob's source options.
        *
-       * @return the builder.
+       * @return the builder
        */
       public Builder sourceOptions(BlobSourceOption... options) {
         Collections.addAll(sourceOptions, options);
@@ -990,7 +990,7 @@ public interface Storage extends Service<StorageOptions> {
       /**
        * Sets blob's source options.
        *
-       * @return the builder.
+       * @return the builder
        */
       public Builder sourceOptions(Iterable<BlobSourceOption> options) {
         Iterables.addAll(sourceOptions, options);
@@ -1000,7 +1000,7 @@ public interface Storage extends Service<StorageOptions> {
       /**
        * Sets the copy target. Target blob information is copied from source.
        *
-       * @return the builder.
+       * @return the builder
        */
       public Builder target(BlobId target) {
         this.target = BlobInfo.builder(target).build();
@@ -1012,7 +1012,7 @@ public interface Storage extends Service<StorageOptions> {
        * source blob information (e.g. {@code contentType}, {@code contentLanguage}). {@code
        * target.contentType} is a required field.
        *
-       * @return the builder.
+       * @return the builder
        * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
        */
       public Builder target(BlobInfo target, BlobTargetOption... options)
@@ -1028,7 +1028,7 @@ public interface Storage extends Service<StorageOptions> {
        * source blob information (e.g. {@code contentType}, {@code contentLanguage}). {@code
        * target.contentType} is a required field.
        *
-       * @return the builder.
+       * @return the builder
        * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
        */
       public Builder target(BlobInfo target, Iterable<BlobTargetOption> options)
@@ -1044,7 +1044,7 @@ public interface Storage extends Service<StorageOptions> {
        * if source and target blob share the same location and storage class as copy is made with
        * one single RPC.
        *
-       * @return the builder.
+       * @return the builder
        */
       public Builder megabytesCopiedPerChunk(Long megabytesCopiedPerChunk) {
         this.megabytesCopiedPerChunk = megabytesCopiedPerChunk;
@@ -1114,7 +1114,7 @@ public interface Storage extends Service<StorageOptions> {
      * @param sourceBucket name of the bucket containing the source blob
      * @param sourceBlob name of the source blob
      * @param target a {@code BlobInfo} object for the target blob
-     * @return a copy request.
+     * @return a copy request
      * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
      */
     public static CopyRequest of(String sourceBucket, String sourceBlob, BlobInfo target)
@@ -1130,7 +1130,7 @@ public interface Storage extends Service<StorageOptions> {
      *
      * @param sourceBlobId a {@code BlobId} object for the source blob
      * @param target a {@code BlobInfo} object for the target blob
-     * @return a copy request.
+     * @return a copy request
      * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
      */
     public static CopyRequest of(BlobId sourceBlobId, BlobInfo target)
@@ -1145,7 +1145,7 @@ public interface Storage extends Service<StorageOptions> {
      * @param sourceBucket name of the bucket containing both the source and the target blob
      * @param sourceBlob name of the source blob
      * @param targetBlob name of the target blob
-     * @return a copy request.
+     * @return a copy request
      */
     public static CopyRequest of(String sourceBucket, String sourceBlob, String targetBlob) {
       return CopyRequest.builder()
@@ -1160,7 +1160,7 @@ public interface Storage extends Service<StorageOptions> {
      * @param sourceBucket name of the bucket containing the source blob
      * @param sourceBlob name of the source blob
      * @param target a {@code BlobId} object for the target blob
-     * @return a copy request.
+     * @return a copy request
      */
     public static CopyRequest of(String sourceBucket, String sourceBlob, BlobId target) {
       return builder().source(sourceBucket, sourceBlob).target(target).build();
@@ -1171,7 +1171,7 @@ public interface Storage extends Service<StorageOptions> {
      *
      * @param sourceBlobId a {@code BlobId} object for the source blob
      * @param targetBlob name of the target blob, in the same bucket of the source blob
-     * @return a copy request.
+     * @return a copy request
      */
     public static CopyRequest of(BlobId sourceBlobId, String targetBlob) {
       return CopyRequest.builder()
@@ -1185,7 +1185,7 @@ public interface Storage extends Service<StorageOptions> {
      *
      * @param sourceBlobId a {@code BlobId} object for the source blob
      * @param targetBlobId a {@code BlobId} object for the target blob
-     * @return a copy request.
+     * @return a copy request
      */
     public static CopyRequest of(BlobId sourceBlobId, BlobId targetBlobId) {
       return CopyRequest.builder()
@@ -1206,7 +1206,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Create a new bucket.
    *
-   * @return a complete bucket information.
+   * @return a complete bucket information
    * @throws StorageException upon failure
    */
   BucketInfo create(BucketInfo bucketInfo, BucketTargetOption... options);
@@ -1214,7 +1214,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Create a new blob with no content.
    *
-   * @return a complete blob information.
+   * @return a complete blob information
    * @throws StorageException upon failure
    */
   BlobInfo create(BlobInfo blobInfo, BlobTargetOption... options);
@@ -1224,7 +1224,7 @@ public interface Storage extends Service<StorageOptions> {
    * {@link #writer} is recommended as it uses resumable upload. MD5 and CRC32C hashes of
    * {@code content} are computed and used for validating transferred data.
    *
-   * @return a complete blob information.
+   * @return a complete blob information
    * @throws StorageException upon failure
    * @see <a href="https://cloud.google.com/storage/docs/hashes-etags">Hashes and ETags</a>
    */
@@ -1236,7 +1236,7 @@ public interface Storage extends Service<StorageOptions> {
    * values in the given {@code blobInfo} are ignored unless requested via the
    * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
    *
-   * @return a complete blob information.
+   * @return a complete blob information
    * @throws StorageException upon failure
    */
   BlobInfo create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options);
@@ -1356,7 +1356,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Send a compose request.
    *
-   * @return the composed blob.
+   * @return the composed blob
    * @throws StorageException upon failure
    */
   BlobInfo compose(ComposeRequest composeRequest);
@@ -1391,7 +1391,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Reads all the bytes from a blob.
    *
-   * @return the blob's content.
+   * @return the blob's content
    * @throws StorageException upon failure
    */
   byte[] readAllBytes(String bucket, String blob, BlobSourceOption... options);
@@ -1399,7 +1399,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Reads all the bytes from a blob.
    *
-   * @return the blob's content.
+   * @return the blob's content
    * @throws StorageException upon failure
    */
   byte[] readAllBytes(BlobId blob, BlobSourceOption... options);

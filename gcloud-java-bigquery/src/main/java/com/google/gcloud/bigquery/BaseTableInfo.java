@@ -97,8 +97,8 @@ public abstract class BaseTableInfo implements Serializable {
   /**
    * Base builder for tables.
    *
-   * @param <T> the table type.
-   * @param <B> the table builder.
+   * @param <T> the table type
+   * @param <B> the table builder
    */
   public abstract static class Builder<T extends BaseTableInfo, B extends Builder<T, B>> {
 
