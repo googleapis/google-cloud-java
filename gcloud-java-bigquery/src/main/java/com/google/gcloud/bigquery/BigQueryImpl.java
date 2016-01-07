@@ -18,6 +18,7 @@ package com.google.gcloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.gcloud.RetryHelper.runWithRetries;
+import static java.util.concurrent.Executors.callable;
 
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
@@ -43,9 +44,18 @@ import com.google.gcloud.RetryHelper;
 import com.google.gcloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.gcloud.spi.BigQueryRpc;
 
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.channels.Channels;
+import java.nio.channels.FileChannel;
+import java.nio.channels.SeekableByteChannel;
+import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicLong;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
 
@@ -423,6 +433,74 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
+  public void insertAll(LoadConfiguration configuration, final byte[] content) {
+    Function<Long, InputStream> nextStream = new Function<Long, InputStream>() {
+      @Override
+      public InputStream apply(Long startPos) {
+        return new ByteArrayInputStream(content, startPos.intValue(), content.length);
+      }
+    };
+    insertAll(configuration, nextStream);
+  }
+
+  @Override
+  public void insertAll(LoadConfiguration configuration, final SeekableByteChannel channel) {
+    Function<Long, InputStream> nextStream = new Function<Long, InputStream>() {
+      @Override
+      public InputStream apply(Long startPos) {
+        try {
+          channel.position(startPos);
+          return Channels.newInputStream(channel);
+        } catch (IOException e) {
+          BigQueryException exception = new BigQueryException(0, e.getMessage(), false);
+          exception.initCause(e);
+          throw exception;
+        }
+      }
+    };
+    insertAll(configuration, nextStream);
+  }
+
+  private void insertAll(LoadConfiguration configuration,
+      final Function<Long, InputStream> nextStream) throws BigQueryException {
+    try {
+      final String uploadId = open(configuration);
+      final AtomicLong startPos = new AtomicLong(0L);
+      runWithRetries(callable(new Runnable() {
+        @Override
+        public void run() {
+          try {
+            bigQueryRpc.write(uploadId, nextStream.apply(startPos.get()), startPos.get());
+          } catch (BigQueryException ex) {
+            BigQueryRpc.Tuple<Boolean, Long> uploadStatus = runWithRetries(
+                new Callable<BigQueryRpc.Tuple<Boolean, Long>>() {
+                  @Override
+                  public BigQueryRpc.Tuple<Boolean, Long> call() {
+                    return bigQueryRpc.status(uploadId);
+                  }
+                }, options().retryParams(), EXCEPTION_HANDLER);
+            if (!uploadStatus.x()) {
+              startPos.set(uploadStatus.y() != null ? uploadStatus.y() + 1 : 0);
+              throw new BigQueryException(0, "Resume Incomplete", true);
+            }
+          }
+        }
+      }), options().retryParams(), EXCEPTION_HANDLER);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
+  }
+
+  private String open(final LoadConfiguration configuration) {
+    return runWithRetries(new Callable<String>() {
+      @Override
+      public String call() {
+        return bigQueryRpc.open(setProjectId(configuration).toPb());
+      }
+    }, options().retryParams(), EXCEPTION_HANDLER);
+  }
+
+  @Override
   public Page<List<FieldValue>> listTableData(String datasetId, String tableId,
       TableDataListOption... options) throws BigQueryException {
     return listTableData(TableId.of(datasetId, tableId), options(), optionMap(options));
@@ -698,8 +776,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     if (job instanceof LoadJobInfo) {
       LoadJobInfo loadJob = (LoadJobInfo) job;
       LoadJobInfo.Builder loadBuilder = loadJob.toBuilder();
-      loadBuilder.destinationTable(setProjectId(loadJob.destinationTable()));
-      return loadBuilder.build();
+      return loadBuilder.configuration(setProjectId(loadJob.configuration())).build();
     }
     return job;
   }
@@ -709,6 +786,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     if (request.defaultDataset() != null) {
       builder.defaultDataset(setProjectId(request.defaultDataset()));
     }
+    return builder.build();
+  }
+
+  private LoadConfiguration setProjectId(LoadConfiguration configuration) {
+    LoadConfiguration.Builder builder = configuration.toBuilder();
+    builder.destinationTable(setProjectId(configuration.destinationTable()));
     return builder.build();
   }
 }

@@ -147,10 +147,11 @@ public class ITBigQueryTest {
         JSON_CONTENT.getBytes(StandardCharsets.UTF_8));
     DatasetInfo info = DatasetInfo.builder(DATASET).description(DESCRIPTION).build();
     bigquery.create(info);
-    LoadJobInfo job = LoadJobInfo.builder(TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE)
+    LoadConfiguration configuration = LoadConfiguration.builder(TABLE_ID, FormatOptions.json())
         .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
         .schema(TABLE_SCHEMA)
-        .formatOptions(FormatOptions.json())
+        .build();
+    LoadJobInfo job = LoadJobInfo.builder(configuration, "gs://" + BUCKET + "/" + JSON_LOAD_FILE)
         .build();
     job = bigquery.create(job);
     while (job.status().state() != JobStatus.State.DONE) {
@@ -811,10 +812,11 @@ public class ITBigQueryTest {
   public void testExtractJob() throws InterruptedException {
     String tableName = "test_export_job_table";
     TableId destinationTable = TableId.of(DATASET, tableName);
+    LoadConfiguration loadConfiguration = LoadConfiguration.builder(destinationTable)
+        .schema(SIMPLE_SCHEMA)
+        .build();
     LoadJobInfo remoteLoadJob = bigquery.create(
-        LoadJobInfo.builder(destinationTable, "gs://" + BUCKET + "/" + LOAD_FILE)
-            .schema(SIMPLE_SCHEMA)
-            .build());
+        LoadJobInfo.builder(loadConfiguration, "gs://" + BUCKET + "/" + LOAD_FILE).build());
     while (remoteLoadJob.status().state() != JobStatus.State.DONE) {
       Thread.sleep(1000);
       remoteLoadJob = bigquery.getJob(remoteLoadJob.jobId());
@@ -857,5 +859,49 @@ public class ITBigQueryTest {
   @Test
   public void testCancelNonExistingJob() throws InterruptedException {
     assertFalse(bigquery.cancel("test_cancel_non_existing_job"));
+  }
+
+  @Test
+  public void testInsertAllResumable() throws InterruptedException, IOException {
+    String destinationTableName = "test_insert_all_resumable_table";
+    TableId tableId = TableId.of(DATASET, destinationTableName);
+    LoadConfiguration configuration =
+        LoadConfiguration.builder(tableId)
+            .formatOptions(FormatOptions.json())
+            .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+            .schema(TABLE_SCHEMA)
+            .build();
+    bigquery.insertAll(configuration, JSON_CONTENT.getBytes(StandardCharsets.UTF_8));
+    // wait until the new table is created. If the table is never created the test will time-out
+    while (bigquery.getTable(tableId) == null) {
+      Thread.sleep(1000L);
+    }
+    Page<List<FieldValue>> rows = bigquery.listTableData(tableId);
+    int rowCount = 0;
+    for (List<FieldValue> row : rows.values()) {
+      FieldValue timestampCell = row.get(0);
+      FieldValue stringCell = row.get(1);
+      FieldValue integerCell = row.get(2);
+      FieldValue booleanCell = row.get(3);
+      FieldValue recordCell = row.get(4);
+      assertEquals(FieldValue.Attribute.PRIMITIVE, timestampCell.attribute());
+      assertEquals(FieldValue.Attribute.PRIMITIVE, stringCell.attribute());
+      assertEquals(FieldValue.Attribute.REPEATED, integerCell.attribute());
+      assertEquals(FieldValue.Attribute.PRIMITIVE, booleanCell.attribute());
+      assertEquals(FieldValue.Attribute.RECORD, recordCell.attribute());
+      assertEquals(1408452095220000L, timestampCell.timestampValue());
+      assertEquals("stringValue", stringCell.stringValue());
+      assertEquals(0, integerCell.repeatedValue().get(0).longValue());
+      assertEquals(1, integerCell.repeatedValue().get(1).longValue());
+      assertEquals(false, booleanCell.booleanValue());
+      assertEquals(-14182916000000L, recordCell.recordValue().get(0).timestampValue());
+      assertTrue(recordCell.recordValue().get(1).isNull());
+      assertEquals(1, recordCell.recordValue().get(2).repeatedValue().get(0).longValue());
+      assertEquals(0, recordCell.recordValue().get(2).repeatedValue().get(1).longValue());
+      assertEquals(true, recordCell.recordValue().get(3).booleanValue());
+      rowCount++;
+    }
+    assertEquals(2, rowCount);
+    assertTrue(bigquery.delete(DATASET, destinationTableName));
   }
 }

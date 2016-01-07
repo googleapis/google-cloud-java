@@ -19,6 +19,7 @@ package com.google.gcloud.spi;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
+import com.google.api.services.bigquery.model.JobConfigurationLoad;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.QueryResponse;
 import com.google.api.services.bigquery.model.Table;
@@ -27,6 +28,7 @@ import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.gcloud.bigquery.BigQueryException;
 
+import java.io.InputStream;
 import java.util.Map;
 
 public interface BigQueryRpc {
@@ -185,4 +187,35 @@ public interface BigQueryRpc {
       throws BigQueryException;
 
   QueryResponse query(QueryRequest request) throws BigQueryException;
+
+  /**
+   * Opens a resumable upload session and returns an upload URI.
+   *
+   * @param configuration load configuration
+   * @throws BigQueryException upon failure
+   */
+  String open(JobConfigurationLoad configuration) throws BigQueryException;
+
+  /**
+   * Returns the status of a resumable upload session.
+   *
+   * @param uploadUri the resumable upload session URI
+   * @return a {@link Tuple} {@code t} such that {@code t.x()} is {@code true} if and only if the
+   *     upload completed. If {@code t.x()} is {@code false} {@code t.y()} is the last byte
+   *     correctly uploaded to the resumable URI
+   * @throws BigQueryException upon failure
+   */
+  Tuple<Boolean, Long> status(String uploadUri);
+
+  /**
+   * Uploads the provided data to the resumable upload session at the specified position.
+   *
+   * @param uploadUri the resumable upload session URI
+   * @param toWrite a stream of data to upload
+   * @param startPos the start position of data being uploaded. Should be set to {@code 0} for the
+   *     first upload attempt. For resume attempts should be set to the value returned by
+   *     {@link #status(String)}
+   * @throws BigQueryException upon failure
+   */
+  void write(String uploadUri, InputStream toWrite, long startPos) throws BigQueryException;
 }

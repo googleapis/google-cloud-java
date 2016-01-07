@@ -54,7 +54,12 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.nio.channels.SeekableByteChannel;
 import java.util.List;
 import java.util.Map;
 
@@ -107,11 +112,11 @@ public class BigQueryImplTest {
   private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_SCHEMA);
   private static final TableInfo TABLE_INFO_WITH_PROJECT =
       TableInfo.of(TABLE_ID_WITH_PROJECT, TABLE_SCHEMA);
-  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(TABLE_ID, "URI");
+  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(LoadConfiguration.of(TABLE_ID), "URI");
   private static final LoadJobInfo LOAD_JOB_WITH_PROJECT =
-      LoadJobInfo.of(TABLE_ID_WITH_PROJECT, "URI");
+      LoadJobInfo.of(LoadConfiguration.of(TABLE_ID_WITH_PROJECT), "URI");
   private static final LoadJobInfo COMPLETE_LOAD_JOB =
-      LoadJobInfo.builder(TABLE_ID_WITH_PROJECT, "URI")
+      LoadJobInfo.builder(LoadConfiguration.of(TABLE_ID_WITH_PROJECT), "URI")
           .jobId(JobId.of(PROJECT, JOB))
           .build();
   private static final CopyJobInfo COPY_JOB =
@@ -157,6 +162,57 @@ public class BigQueryImplTest {
       .useQueryCache(false)
       .defaultDataset(DatasetId.of(PROJECT, DATASET))
       .build();
+  private static final byte[] CONTENT = {0xD, 0xE, 0xA, 0xD};
+  private static final SeekableByteChannel SEEKABLE_BYTE_CHANNEL = new SeekableByteChannel() {
+
+    private int position = 0;
+    private byte[] content = CONTENT;
+
+    @Override
+    public int read(ByteBuffer dst) throws IOException {
+      if (position >= content.length) {
+        return 0;
+      }
+      int toRead = dst.remaining() > (CONTENT.length - position) ? (CONTENT.length - position)
+          : dst.remaining();
+      dst.put(content, position, toRead);
+      return toRead;
+    }
+
+    @Override
+    public int write(ByteBuffer src) throws IOException {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public long position() throws IOException {
+      return position;
+    }
+
+    @Override
+    public SeekableByteChannel position(long newPosition) throws IOException {
+      this.position = (int) newPosition;
+      return this;
+    }
+
+    @Override
+    public long size() throws IOException {
+      return content.length;
+    }
+
+    @Override
+    public SeekableByteChannel truncate(long size) throws IOException {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean isOpen() {
+      return true;
+    }
+
+    @Override
+    public void close() throws IOException { }
+  };
 
   // Empty BigQueryRpc options
   private static final Map<BigQueryRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -637,6 +693,86 @@ public class BigQueryImplTest {
     assertNull(response.errorsFor(1L));
     assertEquals(1, response.errorsFor(0L).size());
     assertEquals("ErrorMessage", response.errorsFor(0L).get(0).message());
+  }
+
+  @Test
+  public void testInsertAllBytesResumable() throws IOException {
+    String uploadUri = "uploadURI";
+    Capture<ByteArrayInputStream> capturedInputStream = Capture.newInstance();
+    LoadConfiguration loadConfiguration = LoadConfiguration.of(TABLE_ID);
+    EasyMock.expect(bigqueryRpcMock.open(LoadConfiguration.of(TABLE_ID_WITH_PROJECT).toPb()))
+        .andReturn(uploadUri);
+    bigqueryRpcMock.write(eq(uploadUri), capture(capturedInputStream), eq(0L));
+    EasyMock.expectLastCall().once();
+    EasyMock.replay(bigqueryRpcMock);
+    byte[] readContent = new byte[4];
+    bigquery = options.service();
+    bigquery.insertAll(loadConfiguration, CONTENT);
+    int read = capturedInputStream.getValue().read(readContent);
+    assertEquals(4, read);
+    assertArrayEquals(CONTENT, readContent);
+  }
+
+  @Test
+  public void testInsertAllBytesResumableWithException() throws IOException {
+    String uploadUri = "uploadURI";
+    Capture<ByteArrayInputStream> capturedInputStream = Capture.newInstance();
+    LoadConfiguration loadConfiguration = LoadConfiguration.of(TABLE_ID);
+    EasyMock.expect(bigqueryRpcMock.open(LoadConfiguration.of(TABLE_ID_WITH_PROJECT).toPb()))
+        .andReturn(uploadUri);
+    bigqueryRpcMock.write(eq(uploadUri), capture(capturedInputStream), eq(0L));
+    EasyMock.expectLastCall().andThrow(new BigQueryException(0, "Error", true));
+    EasyMock.expect(bigqueryRpcMock.status(uploadUri)).andReturn(Tuple.of(false, 1L));
+    bigqueryRpcMock.write(eq(uploadUri), capture(capturedInputStream), eq(2L));
+    EasyMock.expectLastCall();
+    EasyMock.replay(bigqueryRpcMock);
+    byte[] readContent = new byte[2];
+    bigquery = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
+    bigquery.insertAll(loadConfiguration, CONTENT);
+    int read = capturedInputStream.getValue().read(readContent);
+    assertEquals(2, read);
+    byte[] expectedContent = {0xA, 0xD};
+    assertArrayEquals(expectedContent, readContent);
+  }
+
+  @Test
+  public void testInsertAllChannelResumable() throws IOException {
+    String uploadUri = "uploadURI";
+    Capture<InputStream> capturedInputStream = Capture.newInstance();
+    LoadConfiguration loadConfiguration = LoadConfiguration.of(TABLE_ID);
+    EasyMock.expect(bigqueryRpcMock.open(LoadConfiguration.of(TABLE_ID_WITH_PROJECT).toPb()))
+        .andReturn(uploadUri);
+    bigqueryRpcMock.write(eq(uploadUri), capture(capturedInputStream), eq(0L));
+    EasyMock.expectLastCall().once();
+    EasyMock.replay(bigqueryRpcMock);
+    byte[] readContent = new byte[4];
+    bigquery = options.service();
+    bigquery.insertAll(loadConfiguration, SEEKABLE_BYTE_CHANNEL);
+    int read = capturedInputStream.getValue().read(readContent);
+    assertEquals(4, read);
+    assertArrayEquals(CONTENT, readContent);
+  }
+
+  @Test
+  public void testInsertAllChannelResumableWithException() throws IOException {
+    String uploadUri = "uploadURI";
+    Capture<InputStream> capturedInputStream = Capture.newInstance();
+    LoadConfiguration loadConfiguration = LoadConfiguration.of(TABLE_ID);
+    EasyMock.expect(bigqueryRpcMock.open(LoadConfiguration.of(TABLE_ID_WITH_PROJECT).toPb()))
+        .andReturn(uploadUri);
+    bigqueryRpcMock.write(eq(uploadUri), capture(capturedInputStream), eq(0L));
+    EasyMock.expectLastCall().andThrow(new BigQueryException(0, "Error", true));
+    EasyMock.expect(bigqueryRpcMock.status(uploadUri)).andReturn(Tuple.of(false, 1L));
+    bigqueryRpcMock.write(eq(uploadUri), capture(capturedInputStream), eq(2L));
+    EasyMock.expectLastCall();
+    EasyMock.replay(bigqueryRpcMock);
+    byte[] readContent = new byte[2];
+    bigquery = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
+    bigquery.insertAll(loadConfiguration, SEEKABLE_BYTE_CHANNEL);
+    int read = capturedInputStream.getValue().read(readContent);
+    assertEquals(2, read);
+    byte[] expectedContent = {0xA, 0xD};
+    assertArrayEquals(expectedContent, readContent);
   }
 
   @Test

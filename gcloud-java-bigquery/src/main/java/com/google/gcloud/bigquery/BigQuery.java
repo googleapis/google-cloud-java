@@ -27,6 +27,7 @@ import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.BigQueryRpc;
 
+import java.nio.channels.SeekableByteChannel;
 import java.util.List;
 import java.util.Set;
 
@@ -589,6 +590,33 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    */
   InsertAllResponse insertAll(InsertAllRequest request) throws BigQueryException;
+
+  /**
+   * Sends a resumable insert request given a seekable channel containing the rows to be inserted.
+   * This method does not close the channel so you should take care of closing it.
+   *
+   * <p>Example usage of inserting data from a local file:
+   * <pre> {@code
+   * LoadConfiguration config = LoadConfiguration.of(TableId.of("my_dataset_id", "my_table_id"));
+   * try(FileChannel channel = FileChannel.open(Paths.get("/path/to/file"))) {
+   *   bigquery.insertAll(config, channel);
+   * }}</pre>
+   *
+   * @throws BigQueryException upon failure
+   * @see <a href="https://cloud.google.com/bigquery/loading-data-post-request#resumable">Resumable
+   *     Upload</a>
+   */
+  void insertAll(LoadConfiguration configuration, SeekableByteChannel channel)
+      throws BigQueryException;
+
+  /**
+   * Sends a resumable insert request given a byte array containing the rows to be inserted.
+   *
+   * @throws BigQueryException upon failure
+   * @see <a href="https://cloud.google.com/bigquery/loading-data-post-request#resumable">Resumable
+   *     Upload</a>
+   */
+  void insertAll(LoadConfiguration configuration, byte[] content) throws BigQueryException;
 
   /**
    * Lists the table's rows.

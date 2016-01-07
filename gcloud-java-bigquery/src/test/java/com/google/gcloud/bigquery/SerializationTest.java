@@ -168,7 +168,15 @@ public class SerializationTest {
   private static final JobId JOB_ID = JobId.of("project", "job");
   private static final CopyJobInfo COPY_JOB = CopyJobInfo.of(TABLE_ID, TABLE_ID);
   private static final ExtractJobInfo EXTRACT_JOB = ExtractJobInfo.of(TABLE_ID, SOURCE_URIS);
-  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(TABLE_ID, SOURCE_URIS);
+  private static final LoadConfiguration LOAD_CONFIGURATION = LoadConfiguration.builder(TABLE_ID)
+      .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+      .writeDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
+      .formatOptions(CSV_OPTIONS)
+      .ignoreUnknownValues(true)
+      .maxBadRecords(10)
+      .schema(TABLE_SCHEMA)
+      .build();
+  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(LOAD_CONFIGURATION, SOURCE_URIS);
   private static final QueryJobInfo QUERY_JOB = QueryJobInfo.of("query");
   private static final Map<String, Object> CONTENT1 =
       ImmutableMap.<String, Object>of("key", "val1");
@@ -231,8 +239,8 @@ public class SerializationTest {
         DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, EXTERNAL_DATA_CONFIGURATION,
         TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION,
         JOB_STATISTICS, EXTRACT_STATISTICS, LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR,
-        JOB_STATUS, JOB_ID, COPY_JOB, EXTRACT_JOB, LOAD_JOB, QUERY_JOB, INSERT_ALL_REQUEST,
-        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE,
+        JOB_STATUS, JOB_ID, COPY_JOB, EXTRACT_JOB, LOAD_CONFIGURATION, LOAD_JOB, QUERY_JOB,
+        INSERT_ALL_REQUEST, INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE,
         BigQuery.DatasetOption.fields(), BigQuery.DatasetDeleteOption.deleteContents(),
         BigQuery.DatasetListOption.all(), BigQuery.TableOption.fields(),
         BigQuery.TableListOption.maxResults(42L), BigQuery.JobOption.fields(),

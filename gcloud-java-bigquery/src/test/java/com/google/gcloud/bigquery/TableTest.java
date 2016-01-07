@@ -48,9 +48,9 @@ public class TableTest {
   private static final TableId TABLE_ID1 = TableId.of("dataset", "table1");
   private static final TableId TABLE_ID2 = TableId.of("dataset", "table2");
   private static final JobInfo COPY_JOB_INFO = CopyJobInfo.of(TABLE_ID2, TABLE_ID1);
-  private static final JobInfo LOAD_JOB_INFO =
-      LoadJobInfo.builder(TABLE_ID1, ImmutableList.of("URI"))
-          .formatOptions(FormatOptions.json())
+  private static final JobInfo LOAD_JOB_INFO = LoadJobInfo.builder(
+      LoadConfiguration.builder(TABLE_ID1).formatOptions(FormatOptions.json()).build(),
+      ImmutableList.of("URI"))
           .build();
   private static final JobInfo EXTRACT_JOB_INFO =
       ExtractJobInfo.builder(TABLE_ID1, ImmutableList.of("URI"))

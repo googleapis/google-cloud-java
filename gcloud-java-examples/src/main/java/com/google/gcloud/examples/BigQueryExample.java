@@ -33,6 +33,7 @@ import com.google.gcloud.bigquery.FormatOptions;
 import com.google.gcloud.bigquery.JobId;
 import com.google.gcloud.bigquery.JobInfo;
 import com.google.gcloud.bigquery.JobStatus;
+import com.google.gcloud.bigquery.LoadConfiguration;
 import com.google.gcloud.bigquery.LoadJobInfo;
 import com.google.gcloud.bigquery.QueryRequest;
 import com.google.gcloud.bigquery.QueryResponse;
@@ -42,6 +43,8 @@ import com.google.gcloud.bigquery.TableInfo;
 import com.google.gcloud.bigquery.ViewInfo;
 import com.google.gcloud.spi.BigQueryRpc.Tuple;
 
+import java.nio.channels.FileChannel;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -544,8 +547,8 @@ public class BigQueryExample {
         String table = args[1];
         String format = args[2];
         TableId tableId = TableId.of(dataset, table);
-        return LoadJobInfo.builder(tableId, Arrays.asList(args).subList(3, args.length))
-            .formatOptions(FormatOptions.of(format))
+        LoadConfiguration configuration = LoadConfiguration.of(tableId, FormatOptions.of(format));
+        return LoadJobInfo.builder(configuration, Arrays.asList(args).subList(3, args.length))
             .build();
       }
       throw new IllegalArgumentException("Missing required arguments.");
@@ -659,6 +662,40 @@ public class BigQueryExample {
     }
   }
 
+  /**
+   * This class demonstrates how to load data into a BigQuery Table from a local file.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/loading-data-post-request#resumable">Resumable
+   *     Upload</a>
+   */
+  private static class LoadFileAction extends BigQueryAction<Tuple<LoadConfiguration, String>> {
+    @Override
+    void run(BigQuery bigquery, Tuple<LoadConfiguration, String> configuration) throws Exception {
+      System.out.println("Running insert");
+      try(FileChannel channel = FileChannel.open(Paths.get(configuration.y()))) {
+        bigquery.insertAll(configuration.x(), channel);
+      }
+    }
+
+    @Override
+    Tuple<LoadConfiguration, String> parse(String... args) throws Exception {
+      if (args.length == 4) {
+        String dataset = args[0];
+        String table = args[1];
+        String format = args[2];
+        TableId tableId = TableId.of(dataset, table);
+        LoadConfiguration configuration = LoadConfiguration.of(tableId, FormatOptions.of(format));
+        return Tuple.of(configuration, args[3]);
+      }
+      throw new IllegalArgumentException("Missing required arguments.");
+    }
+
+    @Override
+    protected String params() {
+      return "<dataset> <table> <format> <filePath>";
+    }
+  }
+
   static {
     CREATE_ACTIONS.put("dataset", new CreateDatasetAction());
     CREATE_ACTIONS.put("table", new CreateSimpleTableAction());
@@ -682,6 +719,7 @@ public class BigQueryExample {
     ACTIONS.put("extract", new ExtractAction());
     ACTIONS.put("copy", new CopyAction());
     ACTIONS.put("query", new QueryAction());
+    ACTIONS.put("load-file", new LoadFileAction());
   }
 
   private static void printUsage() {

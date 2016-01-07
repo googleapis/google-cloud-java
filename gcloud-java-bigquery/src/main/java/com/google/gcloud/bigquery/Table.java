@@ -22,6 +22,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
 
+import java.nio.channels.SeekableByteChannel;
 import java.util.List;
 import java.util.Objects;
 
@@ -168,6 +169,43 @@ public final class Table {
   }
 
   /**
+   * Insert the rows in the provided byte array into the table using a resumable upload.
+   *
+   * @param format the format of the data to be inserted
+   * @param content data to be inserted as a byte array
+   * @throws BigQueryException upon failure
+   */
+  void insert(FormatOptions format, byte[] content) throws BigQueryException {
+    LoadConfiguration configuration = LoadConfiguration.builder(info.tableId())
+        .schema(info.schema())
+        .formatOptions(format)
+        .build();
+    bigquery.insertAll(configuration, content);
+  }
+
+  /**
+   * Insert the rows in the provided seekable byte channel into the table using a resumable upload.
+   * This method does not close the channel.
+   *
+   * <p>Example usage of inserting data from a local file:
+   * <pre> {@code
+   * try(FileChannel channel = FileChannel.open(Paths.get("/path/to/file"))) {
+   *   table.insert(FormatOptions.csv(), channel);
+   * }}</pre>
+   *
+   * @param format the format of the data to be inserted
+   * @param channel data to be inserted as a seekable byte channel
+   * @throws BigQueryException upon failure
+   */
+  void insert(FormatOptions format, SeekableByteChannel channel) throws BigQueryException {
+    LoadConfiguration configuration = LoadConfiguration.builder(info.tableId())
+        .schema(info.schema())
+        .formatOptions(format)
+        .build();
+    bigquery.insertAll(configuration, channel);
+  }
+
+  /**
    * Returns the paginated list rows in this table.
    *
    * @param options table data list options
@@ -262,7 +300,8 @@ public final class Table {
    */
   Job load(FormatOptions format, List<String> sourceUris, BigQuery.JobOption... options)
       throws BigQueryException {
-    return new Job(bigquery, bigquery.create(LoadJobInfo.of(info.tableId(), format, sourceUris),
+    return new Job(bigquery,
+        bigquery.create(LoadJobInfo.of(LoadConfiguration.of(info.tableId(), format), sourceUris),
         options));
   }
 
