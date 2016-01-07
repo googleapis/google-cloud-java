@@ -615,6 +615,8 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
+    QueryJobInfo queryJob = bigquery.getJob(response.jobId());
+    assertNotNull(queryJob.statistics().queryPlan());
   }
 
   @Test
@@ -774,6 +776,8 @@ public class ITBigQueryTest {
     }
     assertEquals(2, rowCount);
     assertTrue(bigquery.delete(DATASET, tableName));
+    QueryJobInfo queryJob = bigquery.getJob(remoteJob.jobId());
+    assertNotNull(queryJob.statistics().queryPlan());
   }
 
   @Test

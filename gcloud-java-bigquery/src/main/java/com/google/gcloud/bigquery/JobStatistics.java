@@ -5,6 +5,7 @@ import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.collect.Lists;
 
 import java.io.Serializable;
 import java.util.List;
@@ -242,6 +243,7 @@ public class JobStatistics implements Serializable {
     private final Boolean cacheHit;
     private final Long totalBytesBilled;
     private final Long totalBytesProcessed;
+    private final List<QueryStage> queryPlan;
 
     static final class Builder extends JobStatistics.Builder<QueryStatistics, Builder> {
 
@@ -249,6 +251,7 @@ public class JobStatistics implements Serializable {
       private Boolean cacheHit;
       private Long totalBytesBilled;
       private Long totalBytesProcessed;
+      private List<QueryStage> queryPlan;
 
       private Builder() {}
 
@@ -258,6 +261,10 @@ public class JobStatistics implements Serializable {
         this.cacheHit = statisticsPb.getQuery().getCacheHit();
         this.totalBytesBilled = statisticsPb.getQuery().getTotalBytesBilled();
         this.totalBytesProcessed = statisticsPb.getQuery().getTotalBytesProcessed();
+        if (statisticsPb.getQuery().getQueryPlan() != null) {
+          this.queryPlan =
+              Lists.transform(statisticsPb.getQuery().getQueryPlan(), QueryStage.FROM_PB_FUNCTION);
+        }
       }
 
       Builder billingTier(Integer billingTier) {
@@ -280,6 +287,11 @@ public class JobStatistics implements Serializable {
         return self();
       }
 
+      Builder queryPlan(List<QueryStage> queryPlan) {
+        this.queryPlan = queryPlan;
+        return self();
+      }
+
       @Override
       QueryStatistics build() {
         return new QueryStatistics(this);
@@ -292,6 +304,7 @@ public class JobStatistics implements Serializable {
       this.cacheHit = builder.cacheHit;
       this.totalBytesBilled = builder.totalBytesBilled;
       this.totalBytesProcessed = builder.totalBytesProcessed;
+      this.queryPlan = builder.queryPlan;
     }
 
     /**
@@ -325,13 +338,26 @@ public class JobStatistics implements Serializable {
       return totalBytesProcessed;
     }
 
+    /**
+     * Returns the query plan as a list of stages or {@code null} if a query plan is not available.
+     * Each stage involves a number of steps that read from data sources, perform a series of
+     * transformations on the input, and emit an output to a future stage (or the final result). The
+     * query plan is available for a completed query job and is retained for 7 days.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation">Query Plan</a>
+     */
+    public List<QueryStage> queryPlan() {
+      return queryPlan;
+    }
+
     @Override
     ToStringHelper toStringHelper() {
       return super.toStringHelper()
           .add("billingTier", billingTier)
           .add("cacheHit", cacheHit)
           .add("totalBytesBilled", totalBytesBilled)
-          .add("totalBytesProcessed", totalBytesProcessed);
+          .add("totalBytesProcessed", totalBytesProcessed)
+          .add("queryPlan", queryPlan);
     }
 
     @Override
@@ -343,7 +369,7 @@ public class JobStatistics implements Serializable {
     @Override
     public int hashCode() {
       return Objects.hash(super.hashCode(), billingTier, cacheHit, totalBytesBilled,
-          totalBytesProcessed);
+          totalBytesProcessed, queryPlan);
     }
 
     @Override
@@ -353,6 +379,9 @@ public class JobStatistics implements Serializable {
       queryStatisticsPb.setCacheHit(cacheHit);
       queryStatisticsPb.setTotalBytesBilled(totalBytesBilled);
       queryStatisticsPb.setTotalBytesProcessed(totalBytesProcessed);
+      if (queryPlan != null) {
+        queryStatisticsPb.setQueryPlan(Lists.transform(queryPlan, QueryStage.TO_PB_FUNCTION));
+      }
       return super.toPb().setQuery(queryStatisticsPb);
     }
 
