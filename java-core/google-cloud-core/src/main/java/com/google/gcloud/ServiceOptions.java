@@ -56,9 +56,9 @@ import java.util.regex.Pattern;
 /**
  * Abstract class representing service options.
  *
- * @param <ServiceT> the service subclass.
- * @param <ServiceRpcT> the spi-layer class corresponding to the service.
- * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service.
+ * @param <ServiceT> the service subclass
+ * @param <ServiceRpcT> the spi-layer class corresponding to the service
+ * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
  */
 public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, ServiceRpcT,
     OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>> implements Serializable {
@@ -160,10 +160,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   /**
    * Builder for {@code ServiceOptions}.
    *
-   * @param <ServiceT> the service subclass.
-   * @param <ServiceRpcT> the spi-layer class corresponding to the service.
-   * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service.
-   * @param <B> the {@code ServiceOptions} builder.
+   * @param <ServiceT> the service subclass
+   * @param <ServiceRpcT> the spi-layer class corresponding to the service
+   * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
+   * @param <B> the {@code ServiceOptions} builder
    */
   protected abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
       OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
@@ -215,7 +215,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      * replaced by Java8's {@code java.time.Clock}.
      *
      * @param clock the clock to set
-     * @return the builder.
+     * @return the builder
      */
     public B clock(Clock clock) {
       this.clock = clock;
@@ -225,7 +225,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     /**
      * Sets project id.
      *
-     * @return the builder.
+     * @return the builder
      */
     public B projectId(String projectId) {
       this.projectId = projectId;
@@ -235,7 +235,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     /**
      * Sets service host.
      *
-     * @return the builder.
+     * @return the builder
      */
     public B host(String host) {
       this.host = host;
@@ -245,7 +245,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     /**
      * Sets the transport factory.
      *
-     * @return the builder.
+     * @return the builder
      */
     public B httpTransportFactory(HttpTransportFactory httpTransportFactory) {
       this.httpTransportFactory = httpTransportFactory;
@@ -255,7 +255,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     /**
      * Sets the service authentication credentials.
      *
-     * @return the builder.
+     * @return the builder
      */
     public B authCredentials(AuthCredentials authCredentials) {
       this.authCredentials = authCredentials;
@@ -266,7 +266,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      * Sets configuration parameters for request retries. If no configuration is set
      * {@link RetryParams#noRetries()} is used.
      *
-     * @return the builder.
+     * @return the builder
      */
     public B retryParams(RetryParams retryParams) {
       this.retryParams = retryParams;
@@ -288,7 +288,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      *
      * @param connectTimeout connection timeout in milliseconds. 0 for an infinite timeout, a
      *        negative number for the default value (20000).
-     * @return the builder.
+     * @return the builder
      */
     public B connectTimeout(int connectTimeout) {
       this.connectTimeout = connectTimeout;
@@ -300,7 +300,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      *
      * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a negative number
      *        for the default value (20000).
-     * @return the builder.
+     * @return the builder
      */
     public B readTimeout(int readTimeout) {
       this.readTimeout = readTimeout;
@@ -341,7 +341,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * Returns whether a service requires a project ID. This method may be overridden in
    * service-specific Options objects.
    *
-   * @return true if a project ID is required to use the service, false if not.
+   * @return true if a project ID is required to use the service, false if not
    */
   protected boolean projectIdRequired() {
     return true;
