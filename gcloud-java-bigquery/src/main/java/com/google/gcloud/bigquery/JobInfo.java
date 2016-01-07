@@ -33,7 +33,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs">Jobs</a>
  *
- * @param <S> the statistics type.
+ * @param <S> the statistics type
  */
 public abstract class JobInfo<S extends JobStatistics> implements Serializable {
 
@@ -92,9 +92,9 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
   /**
    * Base builder for jobs.
    *
-   * @param <T> the job type.
-   * @param <S> the job statistics type.
-   * @param <B> the job builder.
+   * @param <T> the job type
+   * @param <S> the job statistics type
+   * @param <B> the job builder
    */
   public abstract static class Builder<T extends JobInfo, S extends JobStatistics,
       B extends Builder<T, S, B>> {

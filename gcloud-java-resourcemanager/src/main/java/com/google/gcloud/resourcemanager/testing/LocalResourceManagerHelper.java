@@ -539,7 +539,7 @@ public class LocalResourceManagerHelper {
   /**
    * Utility method to change the lifecycle state of the specified project.
    *
-   * @return true if the lifecycle state was successfully updated, false otherwise.
+   * @return true if the lifecycle state was successfully updated, false otherwise
    */
   public synchronized boolean changeLifecycleState(String projectId, String lifecycleState) {
     checkArgument(
@@ -560,7 +560,7 @@ public class LocalResourceManagerHelper {
    * <p>This method can be used to fully remove a project (to mimic when the server completely
    * deletes a project).
    *
-   * @return true if the project was successfully deleted, false if the project didn't exist.
+   * @return true if the project was successfully deleted, false if the project didn't exist
    */
   public synchronized boolean removeProject(String projectId) {
     // Because this method is synchronized, any code that relies on non-atomic read/write operations

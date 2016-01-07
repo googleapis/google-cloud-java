@@ -234,7 +234,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/list">Cloud
    * Resource Manager list</a>
-   * @return {@code Page<ProjectInfo>}, a page of projects.
+   * @return {@code Page<ProjectInfo>}, a page of projects
    * @throws ResourceManagerException upon failure
    */
   Page<ProjectInfo> list(ProjectListOption... options);

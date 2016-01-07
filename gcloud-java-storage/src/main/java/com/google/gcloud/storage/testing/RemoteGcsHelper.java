@@ -71,7 +71,7 @@ public class RemoteGcsHelper {
    * @param bucket the bucket to be deleted
    * @param timeout the maximum time to wait
    * @param unit the time unit of the timeout argument
-   * @return true if deletion succeeded, false if timeout expired.
+   * @return true if deletion succeeded, false if timeout expired
    * @throws InterruptedException if the thread deleting the bucket is interrupted while waiting
    * @throws ExecutionException if an exception was thrown while deleting bucket or bucket objects
    */
@@ -100,7 +100,7 @@ public class RemoteGcsHelper {
    *
    * @param projectId id of the project to be used for running the tests
    * @param keyStream input stream for a JSON key
-   * @return A {@code RemoteGcsHelper} object for the provided options.
+   * @return A {@code RemoteGcsHelper} object for the provided options
    * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if
    *     {@code keyStream} is not a valid JSON key stream
    */

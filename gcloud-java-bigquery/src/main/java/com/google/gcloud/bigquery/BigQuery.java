@@ -500,7 +500,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Deletes the requested dataset.
    *
-   * @return {@code true} if dataset was deleted, {@code false} if it was not found.
+   * @return {@code true} if dataset was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
   boolean delete(String datasetId, DatasetDeleteOption... options) throws BigQueryException;
@@ -508,7 +508,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Deletes the requested dataset.
    *
-   * @return {@code true} if dataset was deleted, {@code false} if it was not found.
+   * @return {@code true} if dataset was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
   boolean delete(DatasetId datasetId, DatasetDeleteOption... options) throws BigQueryException;
@@ -516,7 +516,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Deletes the requested table.
    *
-   * @return {@code true} if table was deleted, {@code false} if it was not found.
+   * @return {@code true} if table was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
   boolean delete(String datasetId, String tableId) throws BigQueryException;
@@ -524,7 +524,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Deletes the requested table.
    *
-   * @return {@code true} if table was deleted, {@code false} if it was not found.
+   * @return {@code true} if table was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
   boolean delete(TableId tableId) throws BigQueryException;

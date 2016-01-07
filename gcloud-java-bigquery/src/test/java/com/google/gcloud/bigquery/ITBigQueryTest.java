@@ -16,9 +16,9 @@
 
 package com.google.gcloud.bigquery;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -302,8 +302,8 @@ public class ITBigQueryTest {
     assertEquals(createdTableInfo.tableId(), remoteTableInfo.tableId());
     assertEquals(TABLE_SCHEMA, remoteTableInfo.schema());
     QueryRequest request = QueryRequest.builder(
-        "SELECT TimestampField, StringField, IntegerField, BooleanField FROM " + DATASET + "." +
-            tableName)
+        "SELECT TimestampField, StringField, IntegerField, BooleanField FROM " + DATASET + "."
+            + tableName)
         .defaultDataset(DatasetId.of(DATASET))
         .maxWaitTime(60000L)
         .maxResults(1000L)

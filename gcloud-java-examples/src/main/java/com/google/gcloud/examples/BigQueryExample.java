@@ -58,7 +58,8 @@ import java.util.Map;
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven -
- * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample" -Dexec.args="[<project_id>]
+ * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample"
+ *  -Dexec.args="[<project_id>]
  *  list datasets |
  *  list tables <dataset> |
  *  list jobs |

@@ -60,7 +60,7 @@ public class RemoteBigQueryHelper {
    *
    * @param bigquery the BigQuery service to be used to issue the delete request
    * @param dataset the dataset to be deleted
-   * @return {@code true} if deletion succeeded, {@code false} if the dataset was not found.
+   * @return {@code true} if deletion succeeded, {@code false} if the dataset was not found
    * @throws BigQueryException upon failure
    */
   public static boolean forceDelete(BigQuery bigquery, String dataset) {
@@ -80,7 +80,7 @@ public class RemoteBigQueryHelper {
    *
    * @param projectId id of the project to be used for running the tests
    * @param keyStream input stream for a JSON key
-   * @return A {@code RemoteBigQueryHelper} object for the provided options.
+   * @return A {@code RemoteBigQueryHelper} object for the provided options
    * @throws BigQueryHelperException if {@code keyStream} is not a valid JSON key stream
    */
   public static RemoteBigQueryHelper create(String projectId, InputStream keyStream)

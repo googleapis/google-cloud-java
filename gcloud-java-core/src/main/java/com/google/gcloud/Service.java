@@ -19,7 +19,7 @@ package com.google.gcloud;
 /**
  * Interface for service objects.
  *
- * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service.
+ * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
  */
 public interface Service<OptionsT extends ServiceOptions<?, ?, OptionsT>> {
   OptionsT options();

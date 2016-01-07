@@ -64,7 +64,7 @@ public final class ExceptionHandler implements Serializable {
      * This method is called after the evaluation and could alter its result.
      *
      * @param exception the exception that is being evaluated
-     * @param retryResult the result of the evaluation so far.
+     * @param retryResult the result of the evaluation so far
      * @return {@link RetryResult} to indicate if the exception should be ignored (
      *         {@link RetryResult#RETRY}), propagated ({@link RetryResult#NO_RETRY}), or evaluation
      *         should proceed ({@link RetryResult#CONTINUE_EVALUATION}).
@@ -250,7 +250,7 @@ public final class ExceptionHandler implements Serializable {
     Interceptor.RetryResult retryResult =
         retryInfo == null ? Interceptor.RetryResult.NO_RETRY : retryInfo.retry;
     for (Interceptor interceptor : interceptors) {
-      Interceptor.RetryResult interceptorRetry = 
+      Interceptor.RetryResult interceptorRetry =
           checkNotNull(interceptor.afterEval(ex, retryResult));
       if (interceptorRetry != Interceptor.RetryResult.CONTINUE_EVALUATION) {
         retryResult = interceptorRetry;

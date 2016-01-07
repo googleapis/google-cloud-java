@@ -71,7 +71,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
      * Sets the path delimiter for the storage service.
      *
      * @param pathDelimiter the path delimiter to set
-     * @return the builder.
+     * @return the builder
      */
     public Builder pathDelimiter(String pathDelimiter) {
       this.pathDelimiter = pathDelimiter;
