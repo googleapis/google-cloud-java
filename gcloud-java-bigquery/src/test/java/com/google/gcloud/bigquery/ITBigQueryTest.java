@@ -21,6 +21,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -243,6 +244,11 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testGetNonExistingTable() {
+    assertNull(bigquery.getTable(DATASET, "test_get_non_existing_table"));
+  }
+
+  @Test
   public void testCreateAndGetTable() {
     String tableName = "test_create_and_get_table";
     TableId tableId = TableId.of(DATASET, tableName);
@@ -411,7 +417,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testUdpateTable() {
+  public void testUpdateTable() {
     String tableName = "test_update_table";
     BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
     BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
@@ -426,7 +432,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testUdpateTableWithSelectedFields() {
+  public void testUpdateTableWithSelectedFields() {
     String tableName = "test_update_with_selected_fields_table";
     BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
     BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
@@ -442,6 +448,27 @@ public class ITBigQueryTest {
     assertNull(updatedTableInfo.numBytes());
     assertNull(updatedTableInfo.numRows());
     assertTrue(bigquery.delete(DATASET, tableName));
+  }
+
+  @Test
+  public void testUpdateNonExistingTable() {
+    TableInfo tableInfo =
+        TableInfo.of(TableId.of(DATASET, "test_update_non_existing_table"), SIMPLE_SCHEMA);
+    try {
+      bigquery.update(tableInfo);
+      fail("BigQueryException was expected");
+    } catch (BigQueryException e) {
+      BigQueryError error = e.error();
+      assertNotNull(error);
+      assertEquals("notFound", error.reason());
+      assertNotNull(error.message());
+      assertNotNull(error.debugInfo());
+    }
+  }
+
+  @Test
+  public void testDeleteNonExistingTable() {
+    assertFalse(bigquery.delete(DATASET, "test_delete_non_existing_table"));
   }
 
   @Test
@@ -825,5 +852,10 @@ public class ITBigQueryTest {
       remoteJob = bigquery.getJob(remoteJob.jobId());
     }
     assertNull(remoteJob.status().error());
+  }
+
+  @Test
+  public void testCancelNonExistingJob() throws InterruptedException {
+    assertFalse(bigquery.cancel("test_cancel_non_existing_job"));
   }
 }
