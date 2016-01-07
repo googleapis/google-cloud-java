@@ -17,10 +17,12 @@
 package com.google.gcloud;
 
 import com.google.common.collect.AbstractIterator;
+import com.google.common.collect.ImmutableMap;
 
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -85,7 +87,7 @@ public class PageImpl<T> implements Page<T>, Serializable {
 
   @Override
   public Iterator<T> iterateAll() {
-    return new PageIterator<T>(this);
+    return new PageIterator<>(this);
   }
 
   @Override
@@ -114,5 +116,29 @@ public class PageImpl<T> implements Page<T>, Serializable {
     PageImpl<?> other = (PageImpl<?>) obj;
     return Objects.equals(cursor, other.cursor)
         && Objects.equals(results, other.results);
+  }
+
+  /**
+   * Utility method to construct the options map for the next page request.
+   *
+   * @param <T> the value type that the page holds. Instances of {@code T} should be
+   *     {@code Serializable}
+   * @param pageTokenOption the key for the next page cursor option in the options map
+   * @param cursor the cursor for the next page
+   * @param optionMap the previous options map
+   * @return the options map for the next page request
+   */
+  public static <T> Map<T, Object> nextRequestOptions(
+      T pageTokenOption, String cursor, Map<T, ?> optionMap) {
+    ImmutableMap.Builder<T, Object> builder = ImmutableMap.builder();
+    if (cursor != null) {
+      builder.put(pageTokenOption, cursor);
+    }
+    for (Map.Entry<T, ?> option : optionMap.entrySet()) {
+      if (!Objects.equals(option.getKey(), pageTokenOption)) {
+        builder.put(option.getKey(), option.getValue());
+      }
+    }
+    return builder.build();
   }
 }

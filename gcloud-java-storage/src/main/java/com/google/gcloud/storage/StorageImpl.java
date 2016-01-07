@@ -48,6 +48,7 @@ import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
+import com.google.gcloud.PageImpl.NextPageFetcher;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.RewriteResponse;
@@ -209,36 +210,18 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     return get(blob, new BlobGetOption[0]);
   }
 
-  private abstract static class BasePageFetcher<T extends Serializable>
-      implements PageImpl.NextPageFetcher<T> {
+  private static class BucketPageFetcher implements NextPageFetcher<BucketInfo> {
 
-    private static final long serialVersionUID = 8236329004030295223L;
-    protected final Map<StorageRpc.Option, ?> requestOptions;
-    protected final StorageOptions serviceOptions;
+    private static final long serialVersionUID = 5850406828803613729L;
+    private final Map<StorageRpc.Option, ?> requestOptions;
+    private final StorageOptions serviceOptions;
 
-    BasePageFetcher(StorageOptions serviceOptions, String cursor,
+    BucketPageFetcher(
+        StorageOptions serviceOptions, String cursor,
         Map<StorageRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(StorageRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
-      ImmutableMap.Builder<StorageRpc.Option, Object> builder = ImmutableMap.builder();
-      if (cursor != null) {
-        builder.put(StorageRpc.Option.PAGE_TOKEN, cursor);
-      }
-      for (Map.Entry<StorageRpc.Option, ?> option : optionMap.entrySet()) {
-        if (option.getKey() != StorageRpc.Option.PAGE_TOKEN) {
-          builder.put(option.getKey(), option.getValue());
-        }
-      }
-      this.requestOptions = builder.build();
-    }
-  }
-
-  private static class BucketPageFetcher extends BasePageFetcher<BucketInfo> {
-
-    private static final long serialVersionUID = -5490616010200159174L;
-
-    BucketPageFetcher(StorageOptions serviceOptions, String cursor,
-        Map<StorageRpc.Option, ?> optionMap) {
-      super(serviceOptions, cursor, optionMap);
     }
 
     @Override
@@ -247,14 +230,18 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
   }
 
-  private static class BlobPageFetcher extends BasePageFetcher<BlobInfo> {
+  private static class BlobPageFetcher implements NextPageFetcher<BlobInfo> {
 
-    private static final long serialVersionUID = -5490616010200159174L;
+    private static final long serialVersionUID = 81807334445874098L;
+    private final Map<StorageRpc.Option, ?> requestOptions;
+    private final StorageOptions serviceOptions;
     private final String bucket;
 
     BlobPageFetcher(String bucket, StorageOptions serviceOptions, String cursor,
         Map<StorageRpc.Option, ?> optionMap) {
-      super(serviceOptions, cursor, optionMap);
+      this.requestOptions =
+          PageImpl.nextRequestOptions(StorageRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
       this.bucket = bucket;
     }
 

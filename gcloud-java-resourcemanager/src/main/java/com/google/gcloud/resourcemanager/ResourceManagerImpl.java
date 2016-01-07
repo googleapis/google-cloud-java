@@ -29,11 +29,11 @@ import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
+import com.google.gcloud.PageImpl.NextPageFetcher;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.spi.ResourceManagerRpc;
 import com.google.gcloud.spi.ResourceManagerRpc.Tuple;
 
-import java.io.Serializable;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
@@ -117,37 +117,17 @@ final class ResourceManagerImpl
     }
   }
 
-  private abstract static class BasePageFetcher<T extends Serializable>
-      implements PageImpl.NextPageFetcher<T> {
+  private static class ProjectPageFetcher implements NextPageFetcher<ProjectInfo> {
 
-    private static final long serialVersionUID = -5560906434575940205L;
-
-    protected final Map<ResourceManagerRpc.Option, ?> requestOptions;
-    protected final ResourceManagerOptions serviceOptions;
-
-    BasePageFetcher(ResourceManagerOptions serviceOptions, String cursor,
-        Map<ResourceManagerRpc.Option, ?> optionMap) {
-      this.serviceOptions = serviceOptions;
-      ImmutableMap.Builder<ResourceManagerRpc.Option, Object> builder = ImmutableMap.builder();
-      if (cursor != null) {
-        builder.put(ResourceManagerRpc.Option.PAGE_TOKEN, cursor);
-      }
-      for (Map.Entry<ResourceManagerRpc.Option, ?> option : optionMap.entrySet()) {
-        if (option.getKey() != ResourceManagerRpc.Option.PAGE_TOKEN) {
-          builder.put(option.getKey(), option.getValue());
-        }
-      }
-      this.requestOptions = builder.build();
-    }
-  }
-
-  private static class ProjectPageFetcher extends BasePageFetcher<ProjectInfo> {
-
-    private static final long serialVersionUID = -533306655445189098L;
+    private static final long serialVersionUID = 2158209410430566961L;
+    private final Map<ResourceManagerRpc.Option, ?> requestOptions;
+    private final ResourceManagerOptions serviceOptions;
 
     ProjectPageFetcher(ResourceManagerOptions serviceOptions, String cursor,
         Map<ResourceManagerRpc.Option, ?> optionMap) {
-      super(serviceOptions, cursor, optionMap);
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ResourceManagerRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
     }
 
     @Override
