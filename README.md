@@ -48,6 +48,8 @@ Example Applications
   - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html).
 - [`ResourceManagerExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
   - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/ResourceManagerExample.html).
+- [`SparkDemo`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/managedvms/sparkjava) - An example of using gcloud-java-datastore from within the SparkJava and App Engine Managed VM frameworks.
+  - Read about how it works on the example's [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managedvms/sparkjava#how-does-it-work).
 - [`StorageExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
   - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
 
