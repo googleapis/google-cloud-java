@@ -38,6 +38,7 @@ import com.google.gcloud.ExceptionHandler;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
+import com.google.gcloud.PageImpl.NextPageFetcher;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.gcloud.spi.BigQueryRpc;
@@ -69,36 +70,17 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
       .abortOn(RuntimeException.class).interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
 
-  private abstract static class BasePageFetcher<T> implements PageImpl.NextPageFetcher<T> {
+  private static class DatasetPageFetcher implements NextPageFetcher<DatasetInfo> {
 
-    private static final long serialVersionUID = -338124488600215401L;
-
-    protected final Map<BigQueryRpc.Option, ?> requestOptions;
-    protected final BigQueryOptions serviceOptions;
-
-    BasePageFetcher(BigQueryOptions serviceOptions, String cursor,
-        Map<BigQueryRpc.Option, ?> optionMap) {
-      this.serviceOptions = serviceOptions;
-      ImmutableMap.Builder<BigQueryRpc.Option, Object> builder = ImmutableMap.builder();
-      if (cursor != null) {
-        builder.put(BigQueryRpc.Option.PAGE_TOKEN, cursor);
-      }
-      for (Map.Entry<BigQueryRpc.Option, ?> option : optionMap.entrySet()) {
-        if (option.getKey() != BigQueryRpc.Option.PAGE_TOKEN) {
-          builder.put(option.getKey(), option.getValue());
-        }
-      }
-      this.requestOptions = builder.build();
-    }
-  }
-
-  private static class DatasetPageFetcher extends BasePageFetcher<DatasetInfo> {
-
-    private static final long serialVersionUID = 3030824397616608646L;
+    private static final long serialVersionUID = -3057564042439021278L;
+    private final Map<BigQueryRpc.Option, ?> requestOptions;
+    private final BigQueryOptions serviceOptions;
 
     DatasetPageFetcher(BigQueryOptions serviceOptions, String cursor,
         Map<BigQueryRpc.Option, ?> optionMap) {
-      super(serviceOptions, cursor, optionMap);
+      this.requestOptions =
+          PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
     }
 
     @Override
@@ -107,14 +89,18 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private static class TablePageFetcher extends BasePageFetcher<BaseTableInfo> {
+  private static class TablePageFetcher implements NextPageFetcher<BaseTableInfo> {
 
-    private static final long serialVersionUID = 5908129355985236115L;
+    private static final long serialVersionUID = 8611248840504201187L;
+    private final Map<BigQueryRpc.Option, ?> requestOptions;
+    private final BigQueryOptions serviceOptions;
     private final String dataset;
 
     TablePageFetcher(String dataset, BigQueryOptions serviceOptions, String cursor,
         Map<BigQueryRpc.Option, ?> optionMap) {
-      super(serviceOptions, cursor, optionMap);
+      this.requestOptions =
+          PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
       this.dataset = dataset;
     }
 
@@ -124,13 +110,17 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private static class JobPageFetcher extends BasePageFetcher<JobInfo> {
+  private static class JobPageFetcher implements NextPageFetcher<JobInfo> {
 
-    private static final long serialVersionUID = -4984845360519279880L;
+    private static final long serialVersionUID = 8536533282558245472L;
+    private final Map<BigQueryRpc.Option, ?> requestOptions;
+    private final BigQueryOptions serviceOptions;
 
     JobPageFetcher(BigQueryOptions serviceOptions, String cursor,
         Map<BigQueryRpc.Option, ?> optionMap) {
-      super(serviceOptions, cursor, optionMap);
+      this.requestOptions =
+          PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
     }
 
     @Override
@@ -139,14 +129,18 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private static class TableDataPageFetcher extends BasePageFetcher<List<FieldValue>> {
+  private static class TableDataPageFetcher implements NextPageFetcher<List<FieldValue>> {
 
-    private static final long serialVersionUID = 1281938239570262432L;
+    private static final long serialVersionUID = -8501991114794410114L;
+    private final Map<BigQueryRpc.Option, ?> requestOptions;
+    private final BigQueryOptions serviceOptions;
     private final TableId table;
 
     TableDataPageFetcher(TableId table, BigQueryOptions serviceOptions, String cursor,
         Map<BigQueryRpc.Option, ?> optionMap) {
-      super(serviceOptions, cursor, optionMap);
+      this.requestOptions =
+          PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
       this.table = table;
     }
 
@@ -156,15 +150,19 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private static class QueryResultsPageFetcherImpl extends BasePageFetcher<List<FieldValue>>
-      implements QueryResult.QueryResultsPageFetcher {
+  private static class QueryResultsPageFetcherImpl
+      implements NextPageFetcher<List<FieldValue>>, QueryResult.QueryResultsPageFetcher {
 
-    private static final long serialVersionUID = 6713948754731557486L;
+    private static final long serialVersionUID = -9198905840550459803L;
+    private final Map<BigQueryRpc.Option, ?> requestOptions;
+    private final BigQueryOptions serviceOptions;
     private final JobId job;
 
     QueryResultsPageFetcherImpl(JobId job, BigQueryOptions serviceOptions, String cursor,
         Map<BigQueryRpc.Option, ?> optionMap) {
-      super(serviceOptions, cursor, optionMap);
+      this.requestOptions =
+          PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
       this.job = job;
     }
 
