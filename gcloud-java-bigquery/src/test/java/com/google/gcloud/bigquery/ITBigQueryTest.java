@@ -462,7 +462,6 @@ public class ITBigQueryTest {
       assertNotNull(error);
       assertEquals("notFound", error.reason());
       assertNotNull(error.message());
-      assertNotNull(error.debugInfo());
     }
   }
 
