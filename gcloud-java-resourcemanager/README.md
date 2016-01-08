@@ -1,4 +1,4 @@
-Google Cloud Java Client for Resource Manager
+Google Cloud Java Client for Resource Manager (Alpha)
 =============================================
 
 Java idiomatic client for [Google Cloud Resource Manager] (https://cloud.google.com/resource-manager/).
