@@ -134,7 +134,7 @@ public class StorageExample {
       if (blobIds.length == 1) {
         if (blobIds[0].name().isEmpty()) {
           // get Bucket
-          Bucket bucket = Bucket.load(storage, blobIds[0].bucket());
+          Bucket bucket = Bucket.get(storage, blobIds[0].bucket());
           if (bucket == null) {
             System.out.println("No such bucket");
             return;
@@ -142,7 +142,7 @@ public class StorageExample {
           System.out.println("Bucket info: " + bucket.info());
         } else {
           // get Blob
-          Blob blob = Blob.load(storage, blobIds[0]);
+          Blob blob = Blob.get(storage, blobIds[0]);
           if (blob == null) {
             System.out.println("No such object");
             return;
@@ -151,7 +151,7 @@ public class StorageExample {
         }
       } else {
         // use batch to get multiple blobs.
-        List<Blob> blobs = Blob.get(storage, blobIds);
+        List<Blob> blobs = Blob.get(storage, Arrays.asList(blobIds));
         for (Blob blob : blobs) {
           if (blob != null) {
             System.out.println(blob.info());
@@ -225,7 +225,7 @@ public class StorageExample {
         }
       } else {
         // list a bucket's blobs
-        Bucket bucket = Bucket.load(storage, bucketName);
+        Bucket bucket = Bucket.get(storage, bucketName);
         if (bucket == null) {
           System.out.println("No such bucket");
           return;
@@ -312,7 +312,7 @@ public class StorageExample {
     }
 
     private void run(Storage storage, BlobId blobId, Path downloadTo) throws IOException {
-      Blob blob = Blob.load(storage, blobId);
+      Blob blob = Blob.get(storage, blobId);
       if (blob == null) {
         System.out.println("No such object");
         return;
@@ -439,7 +439,7 @@ public class StorageExample {
     }
 
     private void run(Storage storage, BlobId blobId, Map<String, String> metadata) {
-      Blob blob = Blob.load(storage, blobId);
+      Blob blob = Blob.get(storage, blobId);
       if (blob == null) {
         System.out.println("No such object");
         return;

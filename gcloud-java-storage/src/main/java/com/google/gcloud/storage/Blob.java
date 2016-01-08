@@ -22,6 +22,7 @@ import static com.google.gcloud.storage.Blob.BlobSourceOption.toGetOptions;
 import static com.google.gcloud.storage.Blob.BlobSourceOption.toSourceOptions;
 
 import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
@@ -165,9 +166,9 @@ public final class Blob {
    * @return the {@code Blob} object or {@code null} if not found
    * @throws StorageException upon failure
    */
-  public static Blob load(Storage storage, String bucket, String blob,
+  public static Blob get(Storage storage, String bucket, String blob,
       Storage.BlobGetOption... options) {
-    return load(storage, BlobId.of(bucket, blob), options);
+    return get(storage, BlobId.of(bucket, blob), options);
   }
 
   /**
@@ -180,7 +181,7 @@ public final class Blob {
    * @return the {@code Blob} object or {@code null} if not found
    * @throws StorageException upon failure
    */
-  public static Blob load(Storage storage, BlobId blobId, Storage.BlobGetOption... options) {
+  public static Blob get(Storage storage, BlobId blobId, Storage.BlobGetOption... options) {
     BlobInfo info = storage.get(blobId, options);
     return info != null ? new Blob(storage, info) : null;
   }
@@ -231,7 +232,7 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public Blob reload(BlobSourceOption... options) {
-    return Blob.load(storage, info.blobId(), toGetOptions(info, options));
+    return Blob.get(storage, info.blobId(), toGetOptions(info, options));
   }
 
   /**
@@ -369,18 +370,40 @@ public final class Blob {
    * Gets the requested blobs. A batch request is used to fetch blobs.
    *
    * @param storage the storage service used to issue the request
-   * @param blobs the blobs to get
+   * @param first the first blob to get
+   * @param second the second blob to get
+   * @param other other blobs to get
    * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
    *     been denied the corresponding item in the list is {@code null}
    * @throws StorageException upon failure
    */
-  public static List<Blob> get(final Storage storage, BlobId... blobs) {
+  public static List<Blob> get(Storage storage, BlobId first, BlobId second, BlobId... other) {
+    checkNotNull(storage);
+    checkNotNull(first);
+    checkNotNull(second);
+    checkNotNull(other);
+    ImmutableList<BlobId> blobs = ImmutableList.<BlobId>builder()
+        .add(first)
+        .add(second)
+        .addAll(Arrays.asList(other))
+        .build();
+    return get(storage, blobs);
+  }
+
+  /**
+   * Gets the requested blobs. A batch request is used to fetch blobs.
+   *
+   * @param storage the storage service used to issue the request
+   * @param blobs list of blobs to get
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
+   *     been denied the corresponding item in the list is {@code null}
+   * @throws StorageException upon failure
+   */
+  public static List<Blob> get(final Storage storage, List<BlobId> blobs) {
     checkNotNull(storage);
     checkNotNull(blobs);
-    if (blobs.length == 0) {
-      return Collections.emptyList();
-    }
-    return Collections.unmodifiableList(Lists.transform(storage.get(blobs),
+    BlobId[] blobArray = blobs.toArray(new BlobId[blobs.size()]);
+    return Collections.unmodifiableList(Lists.transform(storage.get(blobArray),
         new Function<BlobInfo, Blob>() {
           @Override
           public Blob apply(BlobInfo blobInfo) {

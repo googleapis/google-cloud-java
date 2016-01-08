@@ -211,17 +211,23 @@ public class BlobTest {
   }
 
   @Test
-  public void testGetNone() throws Exception {
-    replay(storage);
-    assertTrue(Blob.get(storage).isEmpty());
-  }
-
-  @Test
   public void testGetSome() throws Exception {
     List<BlobInfo> blobInfoList = Arrays.asList(BLOB_INFO_ARRAY);
     expect(storage.get(BLOB_ID_ARRAY)).andReturn(blobInfoList);
     replay(storage);
-    List<Blob> result = Blob.get(storage, BLOB_ID_ARRAY);
+    List<Blob> result = Blob.get(storage, BLOB_ID_ARRAY[0], BLOB_ID_ARRAY[1], BLOB_ID_ARRAY[2]);
+    assertEquals(blobInfoList.size(), result.size());
+    for (int i = 0; i < blobInfoList.size(); i++) {
+      assertEquals(blobInfoList.get(i), result.get(i).info());
+    }
+  }
+
+  @Test
+  public void testGetSomeList() throws Exception {
+    List<BlobInfo> blobInfoList = Arrays.asList(BLOB_INFO_ARRAY);
+    expect(storage.get(BLOB_ID_ARRAY)).andReturn(blobInfoList);
+    replay(storage);
+    List<Blob> result = Blob.get(storage, Arrays.asList(BLOB_ID_ARRAY));
     assertEquals(blobInfoList.size(), result.size());
     for (int i = 0; i < blobInfoList.size(); i++) {
       assertEquals(blobInfoList.get(i), result.get(i).info());
@@ -233,7 +239,7 @@ public class BlobTest {
     List<BlobInfo> blobInfoList = Arrays.asList(BLOB_INFO_ARRAY[0], null, BLOB_INFO_ARRAY[2]);
     expect(storage.get(BLOB_ID_ARRAY)).andReturn(blobInfoList);
     replay(storage);
-    List<Blob> result = Blob.get(storage, BLOB_ID_ARRAY);
+    List<Blob> result = Blob.get(storage, BLOB_ID_ARRAY[0], BLOB_ID_ARRAY[1], BLOB_ID_ARRAY[2]);
     assertEquals(blobInfoList.size(), result.size());
     for (int i = 0; i < blobInfoList.size(); i++) {
       if (blobInfoList.get(i) != null) {
@@ -302,53 +308,53 @@ public class BlobTest {
   }
 
   @Test
-  public void testLoadFromString() throws Exception {
+  public void testGetFromString() throws Exception {
     expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(BLOB_INFO);
     replay(storage);
-    Blob loadedBlob = Blob.load(storage, BLOB_INFO.bucket(), BLOB_INFO.name());
+    Blob loadedBlob = Blob.get(storage, BLOB_INFO.bucket(), BLOB_INFO.name());
     assertEquals(BLOB_INFO, loadedBlob.info());
   }
 
   @Test
-  public void testLoadFromId() throws Exception {
+  public void testGetFromId() throws Exception {
     expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(BLOB_INFO);
     replay(storage);
-    Blob loadedBlob = Blob.load(storage, BLOB_INFO.blobId());
+    Blob loadedBlob = Blob.get(storage, BLOB_INFO.blobId());
     assertNotNull(loadedBlob);
     assertEquals(BLOB_INFO, loadedBlob.info());
   }
 
   @Test
-  public void testLoadFromStringNull() throws Exception {
+  public void testGetFromStringNull() throws Exception {
     expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(null);
     replay(storage);
-    assertNull(Blob.load(storage, BLOB_INFO.bucket(), BLOB_INFO.name()));
+    assertNull(Blob.get(storage, BLOB_INFO.bucket(), BLOB_INFO.name()));
   }
 
   @Test
-  public void testLoadFromIdNull() throws Exception {
+  public void testGetFromIdNull() throws Exception {
     expect(storage.get(BLOB_INFO.blobId(), new Storage.BlobGetOption[0])).andReturn(null);
     replay(storage);
-    assertNull(Blob.load(storage, BLOB_INFO.blobId()));
+    assertNull(Blob.get(storage, BLOB_INFO.blobId()));
   }
 
   @Test
-  public void testLoadFromStringWithOptions() throws Exception {
+  public void testGetFromStringWithOptions() throws Exception {
     expect(storage.get(BLOB_INFO.blobId(), Storage.BlobGetOption.generationMatch(42L)))
         .andReturn(BLOB_INFO);
     replay(storage);
-    Blob loadedBlob = Blob.load(storage, BLOB_INFO.bucket(), BLOB_INFO.name(),
+    Blob loadedBlob = Blob.get(storage, BLOB_INFO.bucket(), BLOB_INFO.name(),
         Storage.BlobGetOption.generationMatch(42L));
     assertEquals(BLOB_INFO, loadedBlob.info());
   }
 
   @Test
-  public void testLoadFromIdWithOptions() throws Exception {
+  public void testGetFromIdWithOptions() throws Exception {
     expect(storage.get(BLOB_INFO.blobId(), Storage.BlobGetOption.generationMatch(42L)))
         .andReturn(BLOB_INFO);
     replay(storage);
     Blob loadedBlob =
-        Blob.load(storage, BLOB_INFO.blobId(), Storage.BlobGetOption.generationMatch(42L));
+        Blob.get(storage, BLOB_INFO.blobId(), Storage.BlobGetOption.generationMatch(42L));
     assertNotNull(loadedBlob);
     assertEquals(BLOB_INFO, loadedBlob.info());
   }

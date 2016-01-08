@@ -304,27 +304,27 @@ public class DatasetTest {
   }
 
   @Test
-  public void testLoad() throws Exception {
+  public void testStaticGet() throws Exception {
     expect(bigquery.getDataset(DATASET_INFO.datasetId().dataset())).andReturn(DATASET_INFO);
     replay(bigquery);
-    Dataset loadedDataset = Dataset.load(bigquery, DATASET_INFO.datasetId().dataset());
+    Dataset loadedDataset = Dataset.get(bigquery, DATASET_INFO.datasetId().dataset());
     assertNotNull(loadedDataset);
     assertEquals(DATASET_INFO, loadedDataset.info());
   }
 
   @Test
-  public void testLoadNull() throws Exception {
+  public void testStaticGetNull() throws Exception {
     expect(bigquery.getDataset(DATASET_INFO.datasetId().dataset())).andReturn(null);
     replay(bigquery);
-    assertNull(Dataset.load(bigquery, DATASET_INFO.datasetId().dataset()));
+    assertNull(Dataset.get(bigquery, DATASET_INFO.datasetId().dataset()));
   }
 
   @Test
-  public void testLoadWithOptions() throws Exception {
+  public void testStaticGetWithOptions() throws Exception {
     expect(bigquery.getDataset(DATASET_INFO.datasetId().dataset(), BigQuery.DatasetOption.fields()))
         .andReturn(DATASET_INFO);
     replay(bigquery);
-    Dataset loadedDataset = Dataset.load(bigquery, DATASET_INFO.datasetId().dataset(),
+    Dataset loadedDataset = Dataset.get(bigquery, DATASET_INFO.datasetId().dataset(),
         BigQuery.DatasetOption.fields());
     assertNotNull(loadedDataset);
     assertEquals(DATASET_INFO, loadedDataset.info());

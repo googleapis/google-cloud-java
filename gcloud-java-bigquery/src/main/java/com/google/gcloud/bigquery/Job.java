@@ -52,7 +52,7 @@ public final class Job {
    * @return the {@code Job} object or {@code null} if not found
    * @throws BigQueryException upon failure
    */
-  public static Job load(BigQuery bigquery, String job, BigQuery.JobOption... options) {
+  public static Job get(BigQuery bigquery, String job, BigQuery.JobOption... options) {
     JobInfo info = bigquery.getJob(job, options);
     return info != null ? new Job(bigquery, info) : null;
   }
@@ -103,7 +103,7 @@ public final class Job {
    * @throws BigQueryException upon failure
    */
   public Job reload(BigQuery.JobOption... options) {
-    return Job.load(bigquery, info.jobId().job(), options);
+    return Job.get(bigquery, info.jobId().job(), options);
   }
 
   /**
