@@ -12,9 +12,9 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 This client supports the following Google Cloud Platform services:
 
--  [Google Cloud BigQuery] (#google-cloud-bigquery)
+-  [Google Cloud BigQuery] (#google-cloud-bigquery-alpha) (Alpha)
 -  [Google Cloud Datastore] (#google-cloud-datastore)
--  [Google Cloud Resource Manager] (#google-cloud-resource-manager)
+-  [Google Cloud Resource Manager] (#google-cloud-resource-manager-alpha) (Alpha)
 -  [Google Cloud Storage] (#google-cloud-storage)
 
 > Note: This client is a work-in-progress, and may occasionally
@@ -109,7 +109,7 @@ Next, choose a method for authenticating API requests from within your project:
 4. Google Cloud SDK credentials
 5. Compute Engine credentials
 
-Google Cloud BigQuery
+Google Cloud BigQuery (Alpha)
 ----------------------
 
 - [API Documentation][bigquery-api]
@@ -194,7 +194,7 @@ if (entity == null) {
 }
 ```
 
-Google Cloud Resource Manager
+Google Cloud Resource Manager (Alpha)
 ----------------------
 
 - [API Documentation][resourcemanager-api]
