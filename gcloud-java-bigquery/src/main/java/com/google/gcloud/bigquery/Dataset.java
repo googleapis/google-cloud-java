@@ -131,7 +131,7 @@ public final class Dataset {
    * @return the {@code Dataset} object or {@code null} if not found
    * @throws BigQueryException upon failure
    */
-  public static Dataset load(BigQuery bigquery, String dataset, BigQuery.DatasetOption... options) {
+  public static Dataset get(BigQuery bigquery, String dataset, BigQuery.DatasetOption... options) {
     DatasetInfo info = bigquery.getDataset(dataset, options);
     return info != null ? new Dataset(bigquery, info) : null;
   }
@@ -162,7 +162,7 @@ public final class Dataset {
    * @throws BigQueryException upon failure
    */
   public Dataset reload(BigQuery.DatasetOption... options) {
-    return Dataset.load(bigquery, info.datasetId().dataset(), options);
+    return Dataset.get(bigquery, info.datasetId().dataset(), options);
   }
 
   /**

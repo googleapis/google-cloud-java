@@ -66,7 +66,7 @@ public class ProjectTest {
   public void testLoad() {
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(PROJECT_INFO);
     replay(resourceManager);
-    Project loadedProject = Project.load(resourceManager, PROJECT_INFO.projectId());
+    Project loadedProject = Project.get(resourceManager, PROJECT_INFO.projectId());
     assertEquals(PROJECT_INFO, loadedProject.info());
   }
 
@@ -84,7 +84,7 @@ public class ProjectTest {
   public void testLoadNull() {
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(null);
     replay(resourceManager);
-    assertNull(Project.load(resourceManager, PROJECT_INFO.projectId()));
+    assertNull(Project.get(resourceManager, PROJECT_INFO.projectId()));
   }
 
   @Test
@@ -92,7 +92,7 @@ public class ProjectTest {
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(PROJECT_INFO);
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(null);
     replay(resourceManager);
-    Project loadedProject = Project.load(resourceManager, PROJECT_INFO.projectId());
+    Project loadedProject = Project.get(resourceManager, PROJECT_INFO.projectId());
     assertNotNull(loadedProject);
     Project reloadedProject = loadedProject.reload();
     assertNull(reloadedProject);

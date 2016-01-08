@@ -214,7 +214,7 @@ public final class Bucket {
    * @return the {@code Bucket} object or {@code null} if not found
    * @throws StorageException upon failure
    */
-  public static Bucket load(Storage storage, String bucket, Storage.BucketGetOption... options) {
+  public static Bucket get(Storage storage, String bucket, Storage.BucketGetOption... options) {
     BucketInfo info = storage.get(bucket, options);
     return info != null ? new Bucket(storage, info) : null;
   }
@@ -247,7 +247,7 @@ public final class Bucket {
    * @throws StorageException upon failure
    */
   public Bucket reload(BucketSourceOption... options) {
-    return Bucket.load(storage, info.name(), toGetOptions(info, options));
+    return Bucket.get(storage, info.name(), toGetOptions(info, options));
   }
 
   /**

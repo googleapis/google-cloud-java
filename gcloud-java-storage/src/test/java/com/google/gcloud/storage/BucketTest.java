@@ -235,28 +235,28 @@ public class BucketTest {
   }
 
   @Test
-  public void testLoad() throws Exception {
+  public void testStaticGet() throws Exception {
     expect(storage.get(BUCKET_INFO.name())).andReturn(BUCKET_INFO);
     replay(storage);
-    Bucket loadedBucket = Bucket.load(storage, BUCKET_INFO.name());
+    Bucket loadedBucket = Bucket.get(storage, BUCKET_INFO.name());
     assertNotNull(loadedBucket);
     assertEquals(BUCKET_INFO, loadedBucket.info());
   }
 
   @Test
-  public void testLoadNull() throws Exception {
+  public void testStaticGetNull() throws Exception {
     expect(storage.get(BUCKET_INFO.name())).andReturn(null);
     replay(storage);
-    assertNull(Bucket.load(storage, BUCKET_INFO.name()));
+    assertNull(Bucket.get(storage, BUCKET_INFO.name()));
   }
 
   @Test
-  public void testLoadWithOptions() throws Exception {
+  public void testStaticGetWithOptions() throws Exception {
     expect(storage.get(BUCKET_INFO.name(), Storage.BucketGetOption.fields()))
         .andReturn(BUCKET_INFO);
     replay(storage);
     Bucket loadedBucket =
-        Bucket.load(storage, BUCKET_INFO.name(), Storage.BucketGetOption.fields());
+        Bucket.get(storage, BUCKET_INFO.name(), Storage.BucketGetOption.fields());
     assertNotNull(loadedBucket);
     assertEquals(BUCKET_INFO, loadedBucket.info());
   }

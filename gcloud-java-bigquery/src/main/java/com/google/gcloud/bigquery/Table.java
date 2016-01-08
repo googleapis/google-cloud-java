@@ -61,9 +61,9 @@ public final class Table {
    * @return the {@code Table} object or {@code null} if not found
    * @throws BigQueryException upon failure
    */
-  public static Table load(BigQuery bigquery, String dataset, String table,
+  public static Table get(BigQuery bigquery, String dataset, String table,
       BigQuery.TableOption... options) {
-    return load(bigquery, TableId.of(dataset, table), options);
+    return get(bigquery, TableId.of(dataset, table), options);
   }
 
   /**
@@ -76,7 +76,7 @@ public final class Table {
    * @return the {@code Table} object or {@code null} if not found
    * @throws BigQueryException upon failure
    */
-  public static Table load(BigQuery bigquery, TableId table, BigQuery.TableOption... options) {
+  public static Table get(BigQuery bigquery, TableId table, BigQuery.TableOption... options) {
     BaseTableInfo info = bigquery.getTable(table, options);
     return info != null ? new Table(bigquery, info) : null;
   }
@@ -106,7 +106,7 @@ public final class Table {
    * @throws BigQueryException upon failure
    */
   public Table reload(BigQuery.TableOption... options) {
-    return Table.load(bigquery, info.tableId(), options);
+    return Table.get(bigquery, info.tableId(), options);
   }
 
   /**

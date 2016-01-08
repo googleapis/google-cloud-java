@@ -292,54 +292,54 @@ public class TableTest {
   }
 
   @Test
-  public void testLoadFromId() throws Exception {
+  public void testGetFromId() throws Exception {
     expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(TABLE_INFO);
     replay(bigquery);
-    Table loadedTable = Table.load(bigquery, TABLE_INFO.tableId());
+    Table loadedTable = Table.get(bigquery, TABLE_INFO.tableId());
     assertNotNull(loadedTable);
     assertEquals(TABLE_INFO, loadedTable.info());
   }
 
   @Test
-  public void testLoadFromStrings() throws Exception {
+  public void testGetFromStrings() throws Exception {
     expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(TABLE_INFO);
     replay(bigquery);
-    Table loadedTable = Table.load(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table());
+    Table loadedTable = Table.get(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table());
     assertNotNull(loadedTable);
     assertEquals(TABLE_INFO, loadedTable.info());
   }
 
   @Test
-  public void testLoadFromIdNull() throws Exception {
+  public void testGetFromIdNull() throws Exception {
     expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(null);
     replay(bigquery);
-    assertNull(Table.load(bigquery, TABLE_INFO.tableId()));
+    assertNull(Table.get(bigquery, TABLE_INFO.tableId()));
   }
 
   @Test
-  public void testLoadFromStringsNull() throws Exception {
+  public void testGetFromStringsNull() throws Exception {
     expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(null);
     replay(bigquery);
-    assertNull(Table.load(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table()));
+    assertNull(Table.get(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table()));
   }
 
   @Test
-  public void testLoadFromIdWithOptions() throws Exception {
+  public void testGetFromIdWithOptions() throws Exception {
     expect(bigquery.getTable(TABLE_INFO.tableId(), BigQuery.TableOption.fields()))
         .andReturn(TABLE_INFO);
     replay(bigquery);
-    Table loadedTable = Table.load(bigquery, TABLE_INFO.tableId(), BigQuery.TableOption.fields());
+    Table loadedTable = Table.get(bigquery, TABLE_INFO.tableId(), BigQuery.TableOption.fields());
     assertNotNull(loadedTable);
     assertEquals(TABLE_INFO, loadedTable.info());
   }
 
   @Test
-  public void testLoadFromStringsWithOptions() throws Exception {
+  public void testGetFromStringsWithOptions() throws Exception {
     expect(bigquery.getTable(TABLE_INFO.tableId(), BigQuery.TableOption.fields()))
         .andReturn(TABLE_INFO);
     replay(bigquery);
     Table loadedTable =
-        Table.load(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table(), BigQuery.TableOption.fields());
+        Table.get(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table(), BigQuery.TableOption.fields());
     assertNotNull(loadedTable);
     assertEquals(TABLE_INFO, loadedTable.info());
   }
