@@ -89,6 +89,23 @@ public class RemoteGcsHelper {
   }
 
   /**
+   * Deletes a bucket, even if non-empty. Objects in the bucket are listed and deleted until bucket
+   * deletion succeeds. This method can be used to delete buckets from within App Engine.  Note that
+   * this method does not set a timeout.
+   *
+   * @param storage the storage service to be used to issue requests
+   * @param bucket the bucket to be deleted
+   * @throws StorageException if an exception is encountered during bucket deletion
+   */
+  public static void forceDelete(Storage storage, String bucket) throws StorageException {
+    try {
+      new DeleteBucketTask(storage, bucket).call();
+    } catch (Exception e) {
+      throw (StorageException) e;
+    }
+  }
+
+  /**
    * Returns a bucket name generated using a random UUID.
    */
   public static String generateBucketName() {

@@ -140,6 +140,37 @@ public class RemoteGcsHelperTest {
     }
   }
 
+
+  @Test
+  public void testForceDeleteNoTimeout() throws Exception {
+    Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
+    for (BlobInfo info : BLOB_LIST) {
+      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
+    }
+    EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
+    EasyMock.replay(storageMock);
+    RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME);
+    EasyMock.verify(storageMock);
+  }
+
+  @Test
+  public void testForceDeleteNoTimeoutFail() throws Exception {
+    Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
+    for (BlobInfo info : BLOB_LIST) {
+      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
+    }
+    EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(FATAL_EXCEPTION);
+    EasyMock.replay(storageMock);
+    thrown.expect(StorageException.class);
+    try {
+      RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME);
+    } finally {
+      EasyMock.verify(storageMock);
+    }
+  }
+
   @Test
   public void testCreateFromStream() {
     RemoteGcsHelper helper = RemoteGcsHelper.create(PROJECT_ID, JSON_KEY_STREAM);
