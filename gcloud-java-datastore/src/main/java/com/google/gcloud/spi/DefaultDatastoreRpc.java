@@ -124,7 +124,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
       reason = HTTP_STATUS_TO_REASON.get(exception.getCode());
     }
     if (reason != null) {
-      return new DatastoreRpcException(reason);
+      return new DatastoreRpcException(reason, exception);
     } else {
       boolean retryable = false;
       reasonStr = "Unknown";
@@ -132,7 +132,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
         retryable = true;
         reasonStr = "Request timeout";
       }
-      return new DatastoreRpcException(reasonStr, exception.getCode(), retryable, message);
+      return new DatastoreRpcException(reasonStr, exception.getCode(), retryable, message, exception);
     }
   }
 
