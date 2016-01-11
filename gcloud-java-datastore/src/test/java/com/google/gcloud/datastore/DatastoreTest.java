@@ -734,7 +734,7 @@ public class DatastoreTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(rpcMock);
     EasyMock.expect(rpcMock.lookup(requestPb))
-        .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.UNAVAILABLE))
+        .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.UNAVAILABLE, null))
         .andReturn(responsePb);
     EasyMock.replay(rpcFactoryMock, rpcMock);
     DatastoreOptions options = this.options.toBuilder()
@@ -756,7 +756,7 @@ public class DatastoreTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(rpcMock);
     EasyMock.expect(rpcMock.lookup(requestPb))
-        .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.PERMISSION_DENIED))
+        .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.PERMISSION_DENIED, null))
         .times(1);
     EasyMock.replay(rpcFactoryMock, rpcMock);
     RetryParams retryParams = RetryParams.builder().retryMinAttempts(2).build();
