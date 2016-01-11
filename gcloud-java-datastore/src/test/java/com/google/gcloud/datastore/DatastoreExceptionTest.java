@@ -42,7 +42,7 @@ public class DatastoreExceptionTest {
 
   @Test
   public void testTranslateAndThrow() throws Exception {
-    DatastoreRpcException toTranslate = null; // this should be preserved as a cause
+    DatastoreRpcException toTranslate = null; // should be preserved as a cause
     for (Reason reason : Reason.values()) {
       try {
         toTranslate = new DatastoreRpcException(reason, null);
