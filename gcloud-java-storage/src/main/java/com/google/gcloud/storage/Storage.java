@@ -26,7 +26,9 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Page;
+import com.google.gcloud.ReadChannel;
 import com.google.gcloud.Service;
+import com.google.gcloud.WriteChannel;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 
@@ -1423,7 +1425,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  BlobReadChannel reader(String bucket, String blob, BlobSourceOption... options);
+  ReadChannel reader(String bucket, String blob, BlobSourceOption... options);
 
   /**
    * Return a channel for reading the blob's content. If {@code blob.generation()} is set
@@ -1439,7 +1441,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  BlobReadChannel reader(BlobId blob, BlobSourceOption... options);
+  ReadChannel reader(BlobId blob, BlobSourceOption... options);
 
   /**
    * Create a blob and return a channel for writing its content. By default any md5 and crc32c
@@ -1448,7 +1450,7 @@ public interface Storage extends Service<StorageOptions> {
    *
    * @throws StorageException upon failure
    */
-  BlobWriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options);
+  WriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options);
 
   /**
    * Generates a signed URL for a blob.

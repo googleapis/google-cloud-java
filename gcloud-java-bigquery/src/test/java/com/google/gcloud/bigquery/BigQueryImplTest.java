@@ -41,6 +41,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.gcloud.Page;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.WriteChannel;
 import com.google.gcloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.gcloud.spi.BigQueryRpc;
 import com.google.gcloud.spi.BigQueryRpc.Tuple;
@@ -107,11 +108,11 @@ public class BigQueryImplTest {
   private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_SCHEMA);
   private static final TableInfo TABLE_INFO_WITH_PROJECT =
       TableInfo.of(TABLE_ID_WITH_PROJECT, TABLE_SCHEMA);
-  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(TABLE_ID, "URI");
+  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(LoadConfiguration.of(TABLE_ID), "URI");
   private static final LoadJobInfo LOAD_JOB_WITH_PROJECT =
-      LoadJobInfo.of(TABLE_ID_WITH_PROJECT, "URI");
+      LoadJobInfo.of(LoadConfiguration.of(TABLE_ID_WITH_PROJECT), "URI");
   private static final LoadJobInfo COMPLETE_LOAD_JOB =
-      LoadJobInfo.builder(TABLE_ID_WITH_PROJECT, "URI")
+      LoadJobInfo.builder(LoadConfiguration.of(TABLE_ID_WITH_PROJECT), "URI")
           .jobId(JobId.of(PROJECT, JOB))
           .build();
   private static final CopyJobInfo COPY_JOB =
@@ -1004,6 +1005,18 @@ public class BigQueryImplTest {
       assertEquals(1L, row.get(1).longValue());
     }
     assertEquals("cursor", response.result().nextPageCursor());
+  }
+
+  @Test
+  public void testWriter() {
+    LoadConfiguration loadConfiguration = LoadConfiguration.of(TABLE_ID);
+    EasyMock.expect(bigqueryRpcMock.open(LoadConfiguration.of(TABLE_ID_WITH_PROJECT).toPb()))
+        .andReturn("upload-id");
+    EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.service();
+    WriteChannel channel = bigquery.writer(loadConfiguration);
+    assertNotNull(channel);
+    assertTrue(channel.isOpen());
   }
 
   @Test

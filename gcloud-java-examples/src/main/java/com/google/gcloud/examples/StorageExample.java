@@ -18,12 +18,12 @@ package com.google.gcloud.examples;
 
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
+import com.google.gcloud.ReadChannel;
+import com.google.gcloud.WriteChannel;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
-import com.google.gcloud.storage.BlobReadChannel;
-import com.google.gcloud.storage.BlobWriteChannel;
 import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.BucketInfo;
 import com.google.gcloud.storage.CopyWriter;
@@ -258,7 +258,7 @@ public class StorageExample {
         // When content is not available or large (1MB or more) it is recommended
         // to write it in chunks via the blob's channel writer.
         Blob blob = new Blob(storage, blobInfo);
-        try (BlobWriteChannel writer = blob.writer()) {
+        try (WriteChannel writer = blob.writer()) {
           byte[] buffer = new byte[1024];
           try (InputStream input = Files.newInputStream(uploadFrom)) {
             int limit;
@@ -326,7 +326,7 @@ public class StorageExample {
         writeTo.write(content);
       } else {
         // When Blob size is big or unknown use the blob's channel reader.
-        try (BlobReadChannel reader = blob.reader()) {
+        try (ReadChannel reader = blob.reader()) {
           WritableByteChannel channel = Channels.newChannel(writeTo);
           ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
           while (reader.read(bytes) > 0) {

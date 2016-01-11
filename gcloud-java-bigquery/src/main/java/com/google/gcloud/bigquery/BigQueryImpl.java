@@ -619,6 +619,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .results(transformTableData(rowsPb));
   }
 
+  public TableDataWriteChannel writer(LoadConfiguration loadConfiguration) {
+    return new TableDataWriteChannel(options(), setProjectId(loadConfiguration));
+  }
+
   private Map<BigQueryRpc.Option, ?> optionMap(Option... options) {
     Map<BigQueryRpc.Option, Object> optionMap = Maps.newEnumMap(BigQueryRpc.Option.class);
     for (Option option : options) {
@@ -698,8 +702,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     if (job instanceof LoadJobInfo) {
       LoadJobInfo loadJob = (LoadJobInfo) job;
       LoadJobInfo.Builder loadBuilder = loadJob.toBuilder();
-      loadBuilder.destinationTable(setProjectId(loadJob.destinationTable()));
-      return loadBuilder.build();
+      return loadBuilder.configuration(setProjectId(loadJob.configuration())).build();
     }
     return job;
   }
@@ -709,6 +712,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     if (request.defaultDataset() != null) {
       builder.defaultDataset(setProjectId(request.defaultDataset()));
     }
+    return builder.build();
+  }
+
+  private LoadConfiguration setProjectId(LoadConfiguration configuration) {
+    LoadConfiguration.Builder builder = configuration.toBuilder();
+    builder.destinationTable(setProjectId(configuration.destinationTable()));
     return builder.build();
   }
 }

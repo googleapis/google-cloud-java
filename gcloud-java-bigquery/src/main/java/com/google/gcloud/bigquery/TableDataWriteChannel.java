@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud.bigquery;
 
 import static com.google.gcloud.RetryHelper.runWithRetries;
 import static java.util.concurrent.Executors.callable;
@@ -23,21 +23,20 @@ import com.google.gcloud.BaseWriteChannel;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.spi.StorageRpc;
 
-import java.util.Map;
+import java.util.Arrays;
 
 /**
- * Write channel implementation to upload Google Cloud Storage blobs.
+ * WriteChannel implementation to stream data into a BigQuery table.
  */
-class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
+class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, LoadConfiguration> {
 
-  BlobWriteChannel(StorageOptions options, BlobInfo blob, Map<StorageRpc.Option, ?> optionsMap) {
-    this(options, blob, options.rpc().open(blob.toPb(), optionsMap));
+  TableDataWriteChannel(BigQueryOptions options, LoadConfiguration loadConfiguration) {
+    this(options, loadConfiguration, options.rpc().open(loadConfiguration.toPb()));
   }
 
-  BlobWriteChannel(StorageOptions options, BlobInfo blobInfo, String uploadId) {
-    super(options, blobInfo, uploadId);
+  TableDataWriteChannel(BigQueryOptions options, LoadConfiguration config, String uploadId) {
+    super(options, config, uploadId);
   }
 
   @Override
@@ -48,9 +47,9 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
         public void run() {
           options().rpc().write(uploadId(), buffer(), 0, position(), length, last);
         }
-      }), options().retryParams(), StorageImpl.EXCEPTION_HANDLER);
+      }), options().retryParams(), BigQueryImpl.EXCEPTION_HANDLER);
     } catch (RetryHelper.RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
+      throw BigQueryException.translateAndThrow(e);
     }
   }
 
@@ -58,33 +57,33 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
     return StateImpl.builder(options(), entity(), uploadId());
   }
 
-  static class StateImpl extends BaseWriteChannel.BaseState<StorageOptions, BlobInfo> {
+  static class StateImpl extends BaseWriteChannel.BaseState<BigQueryOptions, LoadConfiguration> {
 
-    private static final long serialVersionUID = -9028324143780151286L;
+    private static final long serialVersionUID = -787362105981823738L;
 
     StateImpl(Builder builder) {
       super(builder);
     }
 
-    static class Builder extends BaseWriteChannel.BaseState.Builder<StorageOptions, BlobInfo> {
+    static class Builder
+        extends BaseWriteChannel.BaseState.Builder<BigQueryOptions, LoadConfiguration> {
 
-      private Builder(StorageOptions options, BlobInfo blobInfo, String uploadId) {
-        super(options, blobInfo, uploadId);
+      private Builder(BigQueryOptions options, LoadConfiguration configuration, String uploadId) {
+        super(options, configuration, uploadId);
       }
 
-      @Override
       public RestorableState<WriteChannel> build() {
         return new StateImpl(this);
       }
     }
 
-    static Builder builder(StorageOptions options, BlobInfo blobInfo, String uploadId) {
-      return new Builder(options, blobInfo, uploadId);
+    static Builder builder(BigQueryOptions options, LoadConfiguration config, String uploadId) {
+      return new Builder(options, config, uploadId);
     }
 
     @Override
     public WriteChannel restore() {
-      BlobWriteChannel channel = new BlobWriteChannel(serviceOptions, entity, uploadId);
+      TableDataWriteChannel channel = new TableDataWriteChannel(serviceOptions, entity, uploadId);
       channel.restore(this);
       return channel;
     }

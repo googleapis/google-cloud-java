@@ -662,4 +662,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    */
   QueryResponse getQueryResults(JobId job, QueryResultsOption... options) throws BigQueryException;
+
+  /**
+   * Returns a channel to write data to be inserted into a BigQuery table. Data format and other
+   * options can be configured using the {@link LoadConfiguration} parameter.
+   *
+   * @throws BigQueryException upon failure
+   */
+  TableDataWriteChannel writer(LoadConfiguration loadConfiguration);
 }

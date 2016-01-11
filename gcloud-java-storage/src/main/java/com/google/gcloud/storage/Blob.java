@@ -24,6 +24,8 @@ import static com.google.gcloud.storage.Blob.BlobSourceOption.toSourceOptions;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.gcloud.ReadChannel;
+import com.google.gcloud.WriteChannel;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.BlobWriteOption;
@@ -321,24 +323,24 @@ public final class Blob {
   }
 
   /**
-   * Returns a {@code BlobReadChannel} object for reading this blob's content.
+   * Returns a {@code ReadChannel} object for reading this blob's content.
    *
    * @param options blob read options
    * @throws StorageException upon failure
    */
-  public BlobReadChannel reader(BlobSourceOption... options) {
+  public ReadChannel reader(BlobSourceOption... options) {
     return storage.reader(info.blobId(), toSourceOptions(info, options));
   }
 
   /**
-   * Returns a {@code BlobWriteChannel} object for writing to this blob. By default any md5 and
+   * Returns a {@code WriteChannel} object for writing to this blob. By default any md5 and
    * crc32c values in the current blob are ignored unless requested via the
    * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
    *
    * @param options target blob options
    * @throws StorageException upon failure
    */
-  public BlobWriteChannel writer(BlobWriteOption... options) {
+  public WriteChannel writer(BlobWriteOption... options) {
     return storage.writer(info, options);
   }
 

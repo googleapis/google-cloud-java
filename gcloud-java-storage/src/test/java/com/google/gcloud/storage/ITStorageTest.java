@@ -29,7 +29,9 @@ import com.google.api.client.util.Lists;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.Page;
+import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RestorableState;
+import com.google.gcloud.WriteChannel;
 import com.google.gcloud.storage.Storage.BlobField;
 import com.google.gcloud.storage.Storage.BucketField;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
@@ -702,14 +704,14 @@ public class ITStorageTest {
     String blobName = "test-read-and-write-channels-blob";
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
     byte[] stringBytes;
-    try (BlobWriteChannel writer = storage.writer(blob)) {
+    try (WriteChannel writer = storage.writer(blob)) {
       stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
       writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
       writer.write(ByteBuffer.wrap(stringBytes));
     }
     ByteBuffer readBytes;
     ByteBuffer readStringBytes;
-    try (BlobReadChannel reader = storage.reader(blob.blobId())) {
+    try (ReadChannel reader = storage.reader(blob.blobId())) {
       readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
       readStringBytes = ByteBuffer.allocate(stringBytes.length);
       reader.read(readBytes);
@@ -725,21 +727,21 @@ public class ITStorageTest {
     String blobName = "test-read-and-write-capture-channels-blob";
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
     byte[] stringBytes;
-    BlobWriteChannel writer = storage.writer(blob);
+    WriteChannel writer = storage.writer(blob);
     stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
     writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
-    RestorableState<BlobWriteChannel> writerState = writer.capture();
-    BlobWriteChannel secondWriter = writerState.restore();
+    RestorableState<WriteChannel> writerState = writer.capture();
+    WriteChannel secondWriter = writerState.restore();
     secondWriter.write(ByteBuffer.wrap(stringBytes));
     secondWriter.close();
     ByteBuffer readBytes;
     ByteBuffer readStringBytes;
-    BlobReadChannel reader = storage.reader(blob.blobId());
+    ReadChannel reader = storage.reader(blob.blobId());
     reader.chunkSize(BLOB_BYTE_CONTENT.length);
     readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
     reader.read(readBytes);
-    RestorableState<BlobReadChannel> readerState = reader.capture();
-    BlobReadChannel secondReader = readerState.restore();
+    RestorableState<ReadChannel> readerState = reader.capture();
+    ReadChannel secondReader = readerState.restore();
     readStringBytes = ByteBuffer.allocate(stringBytes.length);
     secondReader.read(readStringBytes);
     reader.close();
@@ -754,14 +756,14 @@ public class ITStorageTest {
     String blobName = "test-read-channel-blob-fail";
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
-    try (BlobReadChannel reader =
+    try (ReadChannel reader =
         storage.reader(blob.blobId(), Storage.BlobSourceOption.metagenerationMatch(-1L))) {
       reader.read(ByteBuffer.allocate(42));
       fail("StorageException was expected");
     } catch (StorageException ex) {
       // expected
     }
-    try (BlobReadChannel reader =
+    try (ReadChannel reader =
              storage.reader(blob.blobId(), Storage.BlobSourceOption.generationMatch(-1L))) {
       reader.read(ByteBuffer.allocate(42));
       fail("StorageException was expected");
@@ -769,7 +771,7 @@ public class ITStorageTest {
       // expected
     }
     BlobId blobIdWrongGeneration = BlobId.of(BUCKET, blobName, -1L);
-    try (BlobReadChannel reader =
+    try (ReadChannel reader =
              storage.reader(blobIdWrongGeneration, Storage.BlobSourceOption.generationMatch())) {
       reader.read(ByteBuffer.allocate(42));
       fail("StorageException was expected");
@@ -791,13 +793,13 @@ public class ITStorageTest {
     BlobInfo remoteBlob = storage.create(blob, content);
     assertNotNull(remoteBlob);
     assertEquals(blobSize, (long) remoteBlob.size());
-    try (BlobReadChannel reader = storage.reader(blob.blobId())) {
+    try (ReadChannel reader = storage.reader(blob.blobId())) {
       reader.chunkSize(chunkSize);
       ByteBuffer readBytes = ByteBuffer.allocate(chunkSize);
       int numReadBytes = reader.read(readBytes);
       assertEquals(chunkSize, numReadBytes);
       assertArrayEquals(Arrays.copyOf(content, chunkSize), readBytes.array());
-      try (BlobWriteChannel writer = storage.writer(blob)) {
+      try (WriteChannel writer = storage.writer(blob)) {
         byte[] newContent = new byte[blobSize];
         random.nextBytes(newContent);
         int numWrittenBytes = writer.write(ByteBuffer.wrap(newContent));
@@ -819,8 +821,7 @@ public class ITStorageTest {
     String blobName = "test-write-channel-blob-fail";
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName, -1L).build();
     try {
-      try (BlobWriteChannel writer =
-          storage.writer(blob, Storage.BlobWriteOption.generationMatch())) {
+      try (WriteChannel writer = storage.writer(blob, Storage.BlobWriteOption.generationMatch())) {
         writer.write(ByteBuffer.allocate(42));
       }
       fail("StorageException was expected");
@@ -835,7 +836,7 @@ public class ITStorageTest {
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
     BlobInfo remoteBlob = storage.create(blob);
     byte[] stringBytes;
-    try (BlobWriteChannel writer = storage.writer(remoteBlob)) {
+    try (WriteChannel writer = storage.writer(remoteBlob)) {
       stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
       writer.write(ByteBuffer.wrap(stringBytes));
     }
