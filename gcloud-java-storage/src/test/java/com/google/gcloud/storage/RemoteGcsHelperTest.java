@@ -140,9 +140,8 @@ public class RemoteGcsHelperTest {
     }
   }
 
-
   @Test
-  public void testForceDeleteNoTimeout() throws Exception {
+  public void testForceDeleteNoTimeout() {
     Storage storageMock = EasyMock.createMock(Storage.class);
     EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
     for (BlobInfo info : BLOB_LIST) {
@@ -155,7 +154,7 @@ public class RemoteGcsHelperTest {
   }
 
   @Test
-  public void testForceDeleteNoTimeoutFail() throws Exception {
+  public void testForceDeleteNoTimeoutFail() {
     Storage storageMock = EasyMock.createMock(Storage.class);
     EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
     for (BlobInfo info : BLOB_LIST) {

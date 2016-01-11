@@ -65,7 +65,10 @@ public class RemoteGcsHelper {
 
   /**
    * Deletes a bucket, even if non-empty. Objects in the bucket are listed and deleted until bucket
-   * deletion succeeds or {@code timeout} expires.
+   * deletion succeeds or {@code timeout} expires. To allow for the timeout, this method uses a
+   * separate thread to send the delete requests. Use
+   * {@link #forceDelete(Storage storage, String bucket)} if spawning an additional thread is
+   * undesirable, such as in the App Engine production runtime.
    *
    * @param storage the storage service to be used to issue requests
    * @param bucket the bucket to be deleted
@@ -89,20 +92,14 @@ public class RemoteGcsHelper {
   }
 
   /**
-   * Deletes a bucket, even if non-empty. Objects in the bucket are listed and deleted until bucket
-   * deletion succeeds. This method can be used to delete buckets from within App Engine.  Note that
-   * this method does not set a timeout.
+   * Deletes a bucket, even if non-empty. This method blocks until the deletion completes or fails.
    *
    * @param storage the storage service to be used to issue requests
    * @param bucket the bucket to be deleted
    * @throws StorageException if an exception is encountered during bucket deletion
    */
-  public static void forceDelete(Storage storage, String bucket) throws StorageException {
-    try {
-      new DeleteBucketTask(storage, bucket).call();
-    } catch (Exception e) {
-      throw (StorageException) e;
-    }
+  public static void forceDelete(Storage storage, String bucket) {
+    new DeleteBucketTask(storage, bucket).call();
   }
 
   /**
@@ -174,7 +171,7 @@ public class RemoteGcsHelper {
     }
 
     @Override
-    public Boolean call() throws Exception {
+    public Boolean call() {
       while (true) {
         for (BlobInfo info : storage.list(bucket).values()) {
           storage.delete(bucket, info.name());
@@ -184,7 +181,12 @@ public class RemoteGcsHelper {
           return true;
         } catch (StorageException e) {
           if (e.code() == 409) {
-            Thread.sleep(500);
+            try {
+              Thread.sleep(500);
+            } catch (InterruptedException interruptedException) {
+              Thread.currentThread().interrupt();
+              throw e;
+            }
           } else {
             throw e;
           }
