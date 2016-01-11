@@ -79,12 +79,12 @@ public interface DatastoreRpc {
     private final int httpStatus;
     private final boolean retryable;
 
-    public DatastoreRpcException(Reason reason) {
-      this(reason.name(), reason.httpStatus, reason.retryable, reason.description);
+    public DatastoreRpcException(Reason reason, Throwable cause) {
+      this(reason.name(), reason.httpStatus, reason.retryable, reason.description, cause);
     }
 
-    public DatastoreRpcException(String reason, int httpStatus, boolean retryable, String message) {
-      super(message);
+    public DatastoreRpcException(String reason, int httpStatus, boolean retryable, String message, Throwable cause) {
+      super(message, cause);
       this.reason = reason;
       this.httpStatus = httpStatus;
       this.retryable = retryable;
