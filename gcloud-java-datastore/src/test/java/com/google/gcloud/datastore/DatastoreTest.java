@@ -125,6 +125,7 @@ public class DatastoreTest {
     options = DatastoreOptions.builder()
         .projectId(PROJECT_ID)
         .host("http://localhost:" + PORT)
+        .retryParams(RetryParams.noRetries())
         .build();
     datastore = options.service();
     StructuredQuery<Key> query = Query.keyQueryBuilder().build();

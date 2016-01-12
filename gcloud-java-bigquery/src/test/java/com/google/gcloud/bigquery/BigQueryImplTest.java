@@ -262,6 +262,7 @@ public class BigQueryImplTest {
     options = BigQueryOptions.builder()
         .projectId(PROJECT)
         .serviceRpcFactory(rpcFactoryMock)
+        .retryParams(RetryParams.noRetries())
         .build();
   }
 
