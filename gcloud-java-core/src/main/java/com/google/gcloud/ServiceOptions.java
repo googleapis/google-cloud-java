@@ -511,11 +511,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns configuration parameters for request retries. By default requests are not retried:
-   * {@link RetryParams#noRetries()} is used.
+   * Returns configuration parameters for request retries. By default requests are retried:
+   * {@link RetryParams#defaultInstance()} is used.
    */
   public RetryParams retryParams() {
-    return retryParams != null ? retryParams : RetryParams.noRetries();
+    return retryParams;
   }
 
   /**
