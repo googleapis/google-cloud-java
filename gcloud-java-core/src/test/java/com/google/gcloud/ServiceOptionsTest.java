@@ -18,6 +18,7 @@ package com.google.gcloud;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -76,9 +77,11 @@ public class ServiceOptionsTest {
   }
   private static final HttpTransportFactory MOCK_HTTP_TRANSPORT_FACTORY =
       EasyMock.createMock(HttpTransportFactory.class);
+  private static final Clock TEST_CLOCK = new TestClock();
   private static final TestServiceOptions OPTIONS =
       TestServiceOptions.builder()
           .authCredentials(authCredentials)
+          .clock(TEST_CLOCK)
           .connectTimeout(1234)
           .host("host")
           .httpTransportFactory(MOCK_HTTP_TRANSPORT_FACTORY)
@@ -90,18 +93,25 @@ public class ServiceOptionsTest {
       TestServiceOptions.builder().projectId("project-id").build();
   private static final TestServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
 
-  interface TestService extends Service<TestServiceOptions> {}
+  private static class TestClock extends Clock {
+    @Override
+    public long millis() {
+      return 123456789L;
+    }
+  }
 
-  static class TestServiceImpl
+  private interface TestService extends Service<TestServiceOptions> {}
+
+  private static class TestServiceImpl
       extends BaseService<TestServiceOptions> implements TestService {
-    TestServiceImpl(TestServiceOptions options) {
+    private TestServiceImpl(TestServiceOptions options) {
       super(options);
     }
   }
 
-  interface TestServiceFactory extends ServiceFactory<TestService, TestServiceOptions> {}
+  private interface TestServiceFactory extends ServiceFactory<TestService, TestServiceOptions> {}
 
-  static class DefaultTestServiceFactory implements TestServiceFactory {
+  private static class DefaultTestServiceFactory implements TestServiceFactory {
     private static final TestServiceFactory INSTANCE = new DefaultTestServiceFactory();
 
     @Override
@@ -110,10 +120,10 @@ public class ServiceOptionsTest {
     }
   }
 
-  interface TestServiceRpcFactory
+  private interface TestServiceRpcFactory
       extends ServiceRpcFactory<TestServiceRpc, TestServiceOptions> {}
 
-  static class DefaultTestServiceRpcFactory implements TestServiceRpcFactory {
+  private static class DefaultTestServiceRpcFactory implements TestServiceRpcFactory {
     private static final TestServiceRpcFactory INSTANCE = new DefaultTestServiceRpcFactory();
 
     @Override
@@ -122,14 +132,15 @@ public class ServiceOptionsTest {
     }
   }
 
-  interface TestServiceRpc {}
+  private interface TestServiceRpc {}
 
-  static class DefaultTestServiceRpc implements TestServiceRpc {
+  private static class DefaultTestServiceRpc implements TestServiceRpc {
     DefaultTestServiceRpc(TestServiceOptions options) {}
   }
 
-  static class TestServiceOptions extends ServiceOptions<TestService, TestServiceRpc, TestServiceOptions> {
-    static class Builder
+  private static class TestServiceOptions
+      extends ServiceOptions<TestService, TestServiceRpc, TestServiceOptions> {
+    private static class Builder
         extends ServiceOptions.Builder<TestService, TestServiceRpc, TestServiceOptions, Builder> {
       private Builder() {}
 
@@ -143,12 +154,8 @@ public class ServiceOptionsTest {
       }
     }
 
-    protected TestServiceOptions(Builder builder) {
+    private TestServiceOptions(Builder builder) {
       super(TestServiceFactory.class, TestServiceRpcFactory.class, builder);
-    }
-
-    public static TestServiceOptions defaultInstance() {
-      return builder().build();
     }
 
     @Override
@@ -171,7 +178,7 @@ public class ServiceOptionsTest {
       return new Builder(this);
     }
 
-    public static Builder builder() {
+    private static Builder builder() {
       return new Builder();
     }
 
@@ -188,21 +195,21 @@ public class ServiceOptionsTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(authCredentials, OPTIONS.authCredentials());
-    assertEquals(Clock.defaultClock(), OPTIONS.clock());
+    assertSame(authCredentials, OPTIONS.authCredentials());
+    assertSame(TEST_CLOCK, OPTIONS.clock());
     assertEquals(1234, OPTIONS.connectTimeout());
     assertEquals("host", OPTIONS.host());
-    assertEquals(MOCK_HTTP_TRANSPORT_FACTORY, OPTIONS.httpTransportFactory());
+    assertSame(MOCK_HTTP_TRANSPORT_FACTORY, OPTIONS.httpTransportFactory());
     assertEquals("project-id", OPTIONS.projectId());
     assertEquals(5678, OPTIONS.readTimeout());
-    assertEquals(RetryParams.noRetries(), OPTIONS.retryParams());
+    assertSame(RetryParams.noRetries(), OPTIONS.retryParams());
 
-    assertEquals(Clock.defaultClock(), DEFAULT_OPTIONS.clock());
+    assertSame(Clock.defaultClock(), DEFAULT_OPTIONS.clock());
     assertEquals(-1, DEFAULT_OPTIONS.connectTimeout());
     assertEquals("https://www.googleapis.com", DEFAULT_OPTIONS.host());
     assertTrue(DEFAULT_OPTIONS.httpTransportFactory() instanceof DefaultHttpTransportFactory);
     assertEquals(-1, DEFAULT_OPTIONS.readTimeout());
-    assertEquals(RetryParams.defaultInstance(), DEFAULT_OPTIONS.retryParams());
+    assertSame(RetryParams.defaultInstance(), DEFAULT_OPTIONS.retryParams());
   }
 
   @Test
