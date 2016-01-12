@@ -30,6 +30,8 @@ End-to-end tests should ensure that gcloud-java works when running on the
 
 When changes are made to authentication and project ID-related code, authentication and project ID inference should be tested using all relevant methods detailed in the [authentication docs](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) and [project ID docs](https://github.com/GoogleCloudPlatform/gcloud-java#specifying-a-project-id).
 
+Known issue: If you have installed the Google Cloud SDK, be sure to log in (using `gcloud auth login`) before running tests. Though the Datastore tests use a local Datastore emulator that doesn't require authentication, they will not run if you have the Google Cloud SDK installed but aren't authenticated.
+
 Adding Features
 ---------------
 In order to add a feature to gcloud-java:
