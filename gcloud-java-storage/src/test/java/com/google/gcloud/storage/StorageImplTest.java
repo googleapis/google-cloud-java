@@ -261,6 +261,7 @@ public class StorageImplTest {
         .projectId("projectId")
         .clock(TIME_SOURCE)
         .serviceRpcFactory(rpcFactoryMock)
+        .retryParams(RetryParams.noRetries())
         .build();
   }
 

@@ -28,6 +28,7 @@ import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.RestorableState;
+import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpcFactory;
 
@@ -65,6 +66,7 @@ public class BlobReadChannelImplTest {
     options = StorageOptions.builder()
         .projectId("projectId")
         .serviceRpcFactory(rpcFactoryMock)
+        .retryParams(RetryParams.noRetries())
         .build();
   }
 

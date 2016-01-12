@@ -264,7 +264,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
     /**
      * Sets configuration parameters for request retries. If no configuration is set
-     * {@link RetryParams#noRetries()} is used.
+     * {@link RetryParams#defaultInstance()} is used. To disable retries, supply
+     * {@link RetryParams#noRetries()} here.
      *
      * @return the builder
      */
@@ -325,7 +326,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     authCredentials =
         builder.authCredentials != null ? builder.authCredentials : defaultAuthCredentials();
     authCredentialsState = authCredentials != null ? authCredentials.capture() : null;
-    retryParams = builder.retryParams;
+    retryParams = firstNonNull(builder.retryParams, RetryParams.defaultInstance());
     serviceFactory = firstNonNull(builder.serviceFactory,
         getFromServiceLoader(serviceFactoryClass, defaultServiceFactory()));
     serviceFactoryClassName = serviceFactory.getClass().getName();
@@ -510,11 +511,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns configuration parameters for request retries. By default requests are not retried:
-   * {@link RetryParams#noRetries()} is used.
+   * Returns configuration parameters for request retries. By default requests are retried:
+   * {@link RetryParams#defaultInstance()} is used.
    */
   public RetryParams retryParams() {
-    return retryParams != null ? retryParams : RetryParams.noRetries();
+    return retryParams;
   }
 
   /**

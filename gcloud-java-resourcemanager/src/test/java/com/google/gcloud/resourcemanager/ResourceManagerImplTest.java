@@ -25,7 +25,6 @@ import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.Page;
-import com.google.gcloud.RetryParams;
 import com.google.gcloud.resourcemanager.ProjectInfo.ResourceId;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectField;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectGetOption;
@@ -271,7 +270,6 @@ public class ResourceManagerImplTest {
     EasyMock.replay(rpcFactoryMock);
     ResourceManager resourceManagerMock = ResourceManagerOptions.builder()
         .serviceRpcFactory(rpcFactoryMock)
-        .retryParams(RetryParams.defaultInstance())
         .build()
         .service();
     EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.projectId(), EMPTY_RPC_OPTIONS))
@@ -291,7 +289,6 @@ public class ResourceManagerImplTest {
     EasyMock.replay(rpcFactoryMock);
     ResourceManager resourceManagerMock = ResourceManagerOptions.builder()
         .serviceRpcFactory(rpcFactoryMock)
-        .retryParams(RetryParams.defaultInstance())
         .build()
         .service();
     EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.projectId(), EMPTY_RPC_OPTIONS))
