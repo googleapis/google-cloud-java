@@ -478,7 +478,7 @@ public class DatastoreTest {
     }
     EasyMock.replay(rpcFactoryMock, rpcMock);
     Datastore mockDatastore =
-        this.options.toBuilder()
+        options.toBuilder()
             .retryParams(RetryParams.defaultInstance())
             .serviceRpcFactory(rpcFactoryMock)
             .build()

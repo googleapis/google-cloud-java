@@ -100,6 +100,9 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   @Override
   public Cursor cursorAfter() {
     //return new Cursor(cursor); // only available in v1beta3
-    return new Cursor(queryResultBatchPb.getEndCursor());
+    if (!hasNext()) {
+      return new Cursor(queryResultBatchPb.getEndCursor());
+    }
+    return null;
   }
 }
