@@ -35,8 +35,9 @@ public interface QueryResults<V> extends Iterator<V> {
   Class<?> resultClass();
 
   /**
-   * Returns the Cursor for point after the value returned in the last {@link #next} call.
-   * Not currently implemented (depends on v1beta3).
+   * Returns the Cursor for the point after the value returned in the last {@link #next} call. Until
+   * v1beta3 is supported, this field should only be used if you have set a limit and the number of
+   * results is equal to that limit.
    */
   Cursor cursorAfter();
 }

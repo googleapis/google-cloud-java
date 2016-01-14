@@ -27,6 +27,9 @@ import static org.junit.Assert.fail;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.api.services.datastore.DatastoreV1.EntityResult;
+import com.google.api.services.datastore.DatastoreV1.QueryResultBatch;
+import com.google.api.services.datastore.DatastoreV1.RunQueryRequest;
+import com.google.api.services.datastore.DatastoreV1.RunQueryResponse;
 import com.google.common.collect.Iterators;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.Query.ResultType;
@@ -460,6 +463,95 @@ public class DatastoreTest {
     assertEquals("Dan", entity.getString("name"));
     assertEquals(2, entity.properties().size());
     assertFalse(results4.hasNext());
+  }
+
+  @Test
+  public void testQueryPaginationWithLimit() throws DatastoreRpcException {
+    DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
+    DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
+        .andReturn(rpcMock);
+    List<RunQueryResponse> responses = buildResponsesForQueryPaginationWithLimit();
+    for (int i = 0; i < responses.size(); i++) {
+      EasyMock.expect(rpcMock.runQuery(EasyMock.anyObject(RunQueryRequest.class)))
+          .andReturn(responses.get(i));
+    }
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    Datastore mockDatastore =
+        this.options.toBuilder()
+            .retryParams(RetryParams.defaultInstance())
+            .serviceRpcFactory(rpcFactoryMock)
+            .build()
+            .service();
+    int limit = 2;
+    int totalCount = 0;
+    StructuredQuery<Entity> query = Query.entityQueryBuilder().limit(limit).build();
+    while (true) {
+      QueryResults<Entity> results = mockDatastore.run(query);
+      int resultCount = 0;
+      while (results.hasNext()) {
+        results.next();
+        resultCount++;
+        totalCount++;
+      }
+      if (resultCount < limit) {
+        break;
+      }
+      query = query.toBuilder().startCursor(results.cursorAfter()).build();
+    }
+    assertEquals(totalCount, 5);
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  private List<RunQueryResponse> buildResponsesForQueryPaginationWithLimit() {
+    Entity entity4 = Entity.builder(KEY4).set("value", StringValue.of("value")).build();
+    Entity entity5 = Entity.builder(KEY5).set("value", "value").build();
+    datastore.add(ENTITY3, entity4, entity5);
+    List<RunQueryResponse> responses = new ArrayList<>();
+    Query<Entity> query = Query.entityQueryBuilder().build();
+    RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
+    query.populatePb(requestPb);
+    QueryResultBatch queryResultBatchPb =
+        RunQueryResponse.newBuilder()
+            .mergeFrom(((DatastoreImpl) datastore).runQuery(requestPb.build()))
+            .getBatch();
+    QueryResultBatch queryResultBatchPb1 =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED)
+            .clearEntityResult()
+            .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(0, 1))
+            .setEndCursor(queryResultBatchPb.getEntityResultList().get(0).getCursor())
+            .build();
+    responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb1).build());
+    QueryResultBatch queryResultBatchPb2 =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
+            .clearEntityResult()
+            .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(1, 2))
+            .setEndCursor(queryResultBatchPb.getEntityResultList().get(1).getCursor())
+            .build();
+    responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb2).build());
+    QueryResultBatch queryResultBatchPb3 =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
+            .clearEntityResult()
+            .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(2, 4))
+            .setEndCursor(queryResultBatchPb.getEntityResultList().get(3).getCursor())
+            .build();
+    responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb3).build());
+    QueryResultBatch queryResultBatchPb4 =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.NO_MORE_RESULTS)
+            .clearEntityResult()
+            .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(4, 5))
+            .setEndCursor(queryResultBatchPb.getEntityResultList().get(4).getCursor())
+            .build();
+    responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb4).build());
+    return responses;
   }
 
   @Test
