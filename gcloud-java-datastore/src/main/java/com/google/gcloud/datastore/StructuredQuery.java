@@ -633,6 +633,20 @@ public class StructuredQuery<V> extends Query<V> {
       this.resultType = resultType;
     }
 
+    BaseBuilder(StructuredQuery<V> query) {
+      resultType = query.type();
+      namespace = query.namespace();
+      kind = query.kind;
+      projection.addAll(query.projection);
+      filter = query.filter;
+      groupBy.addAll(query.groupBy);
+      orderBy.addAll(query.orderBy);
+      startCursor = query.startCursor;
+      endCursor = query.endCursor;
+      offset = query.offset;
+      limit = query.limit;
+    }
+
     @SuppressWarnings("unchecked")
     B self() {
       return (B) this;
@@ -772,6 +786,10 @@ public class StructuredQuery<V> extends Query<V> {
 
     Builder(ResultType<V> resultType) {
       super(resultType);
+    }
+
+    Builder(StructuredQuery<V> query) {
+      super(query);
     }
   }
 
@@ -951,6 +969,10 @@ public class StructuredQuery<V> extends Query<V> {
 
   public Integer limit() {
     return limit;
+  }
+
+  public Builder<V> toBuilder() {
+    return new Builder<>(this);
   }
 
   @Override
