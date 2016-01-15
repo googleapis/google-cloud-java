@@ -23,8 +23,6 @@ import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Sets;
 import com.google.gcloud.BaseService;
-import com.google.gcloud.ExceptionHandler;
-import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.RetryParams;
@@ -41,31 +39,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
 
-final class DatastoreImpl extends BaseService<DatastoreOptions>
-    implements Datastore {
-
-  private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR =
-      new Interceptor() {
-
-        private static final long serialVersionUID = 6911242958397733203L;
-
-        @Override
-        public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-          return Interceptor.RetryResult.CONTINUE_EVALUATION;
-        }
-
-        @Override
-        public RetryResult beforeEval(Exception exception) {
-          if (exception instanceof DatastoreException) {
-            boolean retryable = ((DatastoreException) exception).retryable();
-            return retryable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
-          }
-          return Interceptor.RetryResult.CONTINUE_EVALUATION;
-        }
-      };
-  private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
-      .abortOn(RuntimeException.class, DatastoreException.class)
-      .interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
+final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datastore {
 
   private final DatastoreRpc datastoreRpc;
   private final RetryParams retryParams;
