@@ -1266,7 +1266,7 @@ public class StorageImplTest {
   public void testRetryableException() {
     BlobId blob = BlobId.of(BUCKET_NAME1, BLOB_NAME1);
     EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
-        .andThrow(new StorageException(500, "InternalError", true))
+        .andThrow(new StorageException(500, "internalError"))
         .andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(storageRpcMock);
     storage = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
@@ -1279,7 +1279,7 @@ public class StorageImplTest {
     BlobId blob = BlobId.of(BUCKET_NAME1, BLOB_NAME1);
     String exceptionMessage = "Not Implemented";
     EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
-        .andThrow(new StorageException(501, exceptionMessage, false));
+        .andThrow(new StorageException(501, exceptionMessage));
     EasyMock.replay(storageRpcMock);
     storage = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
     thrown.expect(StorageException.class);

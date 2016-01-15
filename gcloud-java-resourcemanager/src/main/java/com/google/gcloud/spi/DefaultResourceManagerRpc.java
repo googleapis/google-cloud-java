@@ -7,29 +7,19 @@ import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_TOKEN;
 import static java.net.HttpURLConnection.HTTP_FORBIDDEN;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
-import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.services.cloudresourcemanager.Cloudresourcemanager;
 import com.google.api.services.cloudresourcemanager.model.ListProjectsResponse;
 import com.google.api.services.cloudresourcemanager.model.Project;
-import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.resourcemanager.ResourceManagerException;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 
 import java.io.IOException;
 import java.util.Map;
-import java.util.Set;
 
 public class DefaultResourceManagerRpc implements ResourceManagerRpc {
-
-  // see https://cloud.google.com/resource-manager/v1/errors/core_errors
-  private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(503, 500, 429);
-  private static final Set<String> RETRYABLE_REASONS = ImmutableSet.of("concurrentLimitExceeded",
-      "limitExceeded", "rateLimitExceeded", "rateLimitExceededUnreg", "servingLimitExceeded",
-      "userRateLimitExceeded", "userRateLimitExceededUnreg", "variableTermLimitExceeded");
 
   private final Cloudresourcemanager resourceManager;
 
@@ -44,21 +34,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   }
 
   private static ResourceManagerException translate(IOException exception) {
-    ResourceManagerException translated;
-    if (exception instanceof GoogleJsonResponseException) {
-      translated = translate(((GoogleJsonResponseException) exception).getDetails());
-    } else {
-      translated = new ResourceManagerException(0, exception.getMessage(), false);
-    }
-    translated.initCause(exception);
-    return translated;
-  }
-
-  private static ResourceManagerException translate(GoogleJsonError exception) {
-    boolean retryable =
-        RETRYABLE_CODES.contains(exception.getCode()) || (!exception.getErrors().isEmpty()
-            && RETRYABLE_REASONS.contains(exception.getErrors().get(0).getReason()));
-    return new ResourceManagerException(exception.getCode(), exception.getMessage(), retryable);
+    return new ResourceManagerException(exception);
   }
 
   @Override

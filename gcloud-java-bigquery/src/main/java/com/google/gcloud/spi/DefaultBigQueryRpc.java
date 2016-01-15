@@ -25,7 +25,6 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static java.net.HttpURLConnection.HTTP_OK;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
@@ -58,10 +57,8 @@ import com.google.api.services.bigquery.model.TableReference;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 
-import com.google.gcloud.bigquery.BigQueryError;
 import com.google.gcloud.bigquery.BigQueryException;
 import com.google.gcloud.bigquery.BigQueryOptions;
 
@@ -69,13 +66,10 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class DefaultBigQueryRpc implements BigQueryRpc {
 
   public static final String DEFAULT_PROJECTION = "full";
-  // see: https://cloud.google.com/bigquery/troubleshooting-errors
-  private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(500, 502, 503, 504);
   private static final String BASE_RESUMABLE_URI =
       "https://www.googleapis.com/upload/bigquery/v2/projects/";
   // see: https://cloud.google.com/bigquery/loading-data-post-request#resume-upload
@@ -94,28 +88,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   private static BigQueryException translate(IOException exception) {
-    BigQueryException translated;
-    if (exception instanceof GoogleJsonResponseException
-        && ((GoogleJsonResponseException) exception).getDetails() != null) {
-      translated = translate(((GoogleJsonResponseException) exception).getDetails());
-    } else {
-      translated =
-          new BigQueryException(BigQueryException.UNKNOWN_CODE, exception.getMessage(), false);
-    }
-    translated.initCause(exception);
-    return translated;
-  }
-
-  private static BigQueryException translate(GoogleJsonError exception) {
-    boolean retryable = RETRYABLE_CODES.contains(exception.getCode());
-    BigQueryError bigqueryError = null;
-    if (exception.getErrors() != null  && !exception.getErrors().isEmpty()) {
-      GoogleJsonError.ErrorInfo error = exception.getErrors().get(0);
-      bigqueryError = new BigQueryError(error.getReason(), error.getLocation(), error.getMessage(),
-          (String) error.get("debugInfo"));
-    }
-    return new BigQueryException(exception.getCode(), exception.getMessage(), retryable,
-        bigqueryError);
+    return new BigQueryException(exception);
   }
 
   @Override
@@ -489,10 +462,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
         if (exception != null) {
           throw exception;
         }
-        GoogleJsonError error = new GoogleJsonError();
-        error.setCode(code);
-        error.setMessage(message);
-        throw translate(error);
+        throw new BigQueryException(code, message);
       }
     } catch (IOException ex) {
       throw translate(ex);

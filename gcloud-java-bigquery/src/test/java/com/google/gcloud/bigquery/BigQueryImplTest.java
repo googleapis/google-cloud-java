@@ -1022,7 +1022,7 @@ public class BigQueryImplTest {
   @Test
   public void testRetryableException() {
     EasyMock.expect(bigqueryRpcMock.getDataset(DATASET, EMPTY_RPC_OPTIONS))
-        .andThrow(new BigQueryException(500, "InternalError", true))
+        .andThrow(new BigQueryException(500, "InternalError"))
         .andReturn(DATASET_INFO_WITH_PROJECT.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
@@ -1034,7 +1034,7 @@ public class BigQueryImplTest {
   public void testNonRetryableException() {
     String exceptionMessage = "Not Implemented";
     EasyMock.expect(bigqueryRpcMock.getDataset(DATASET, EMPTY_RPC_OPTIONS))
-        .andThrow(new BigQueryException(501, exceptionMessage, false));
+        .andThrow(new BigQueryException(501, exceptionMessage));
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
     thrown.expect(BigQueryException.class);
