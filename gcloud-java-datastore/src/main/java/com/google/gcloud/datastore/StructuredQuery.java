@@ -972,7 +972,7 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   public Builder<V> toBuilder() {
-    return new Builder<V>(this);
+    return new Builder<>(this);
   }
 
   @Override

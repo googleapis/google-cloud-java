@@ -477,12 +477,11 @@ public class DatastoreTest {
           .andReturn(responses.get(i));
     }
     EasyMock.replay(rpcFactoryMock, rpcMock);
-    Datastore mockDatastore =
-        options.toBuilder()
-            .retryParams(RetryParams.defaultInstance())
-            .serviceRpcFactory(rpcFactoryMock)
-            .build()
-            .service();
+    Datastore mockDatastore = options.toBuilder()
+        .retryParams(RetryParams.defaultInstance())
+        .serviceRpcFactory(rpcFactoryMock)
+        .build()
+        .service();
     int limit = 2;
     int totalCount = 0;
     StructuredQuery<Entity> query = Query.entityQueryBuilder().limit(limit).build();
@@ -511,45 +510,40 @@ public class DatastoreTest {
     Query<Entity> query = Query.entityQueryBuilder().build();
     RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
     query.populatePb(requestPb);
-    QueryResultBatch queryResultBatchPb =
-        RunQueryResponse.newBuilder()
-            .mergeFrom(((DatastoreImpl) datastore).runQuery(requestPb.build()))
-            .getBatch();
-    QueryResultBatch queryResultBatchPb1 =
-        QueryResultBatch.newBuilder()
-            .mergeFrom(queryResultBatchPb)
-            .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED)
-            .clearEntityResult()
-            .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(0, 1))
-            .setEndCursor(queryResultBatchPb.getEntityResultList().get(0).getCursor())
-            .build();
+    QueryResultBatch queryResultBatchPb = RunQueryResponse.newBuilder()
+        .mergeFrom(((DatastoreImpl) datastore).runQuery(requestPb.build()))
+        .getBatch();
+    QueryResultBatch queryResultBatchPb1 = QueryResultBatch.newBuilder()
+        .mergeFrom(queryResultBatchPb)
+        .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED)
+        .clearEntityResult()
+        .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(0, 1))
+        .setEndCursor(queryResultBatchPb.getEntityResultList().get(0).getCursor())
+        .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb1).build());
-    QueryResultBatch queryResultBatchPb2 =
-        QueryResultBatch.newBuilder()
-            .mergeFrom(queryResultBatchPb)
-            .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
-            .clearEntityResult()
-            .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(1, 2))
-            .setEndCursor(queryResultBatchPb.getEntityResultList().get(1).getCursor())
-            .build();
+    QueryResultBatch queryResultBatchPb2 = QueryResultBatch.newBuilder()
+        .mergeFrom(queryResultBatchPb)
+        .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
+        .clearEntityResult()
+        .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(1, 2))
+        .setEndCursor(queryResultBatchPb.getEntityResultList().get(1).getCursor())
+        .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb2).build());
-    QueryResultBatch queryResultBatchPb3 =
-        QueryResultBatch.newBuilder()
-            .mergeFrom(queryResultBatchPb)
-            .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
-            .clearEntityResult()
-            .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(2, 4))
-            .setEndCursor(queryResultBatchPb.getEntityResultList().get(3).getCursor())
-            .build();
+    QueryResultBatch queryResultBatchPb3 = QueryResultBatch.newBuilder()
+        .mergeFrom(queryResultBatchPb)
+        .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
+        .clearEntityResult()
+        .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(2, 4))
+        .setEndCursor(queryResultBatchPb.getEntityResultList().get(3).getCursor())
+        .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb3).build());
-    QueryResultBatch queryResultBatchPb4 =
-        QueryResultBatch.newBuilder()
-            .mergeFrom(queryResultBatchPb)
-            .setMoreResults(QueryResultBatch.MoreResultsType.NO_MORE_RESULTS)
-            .clearEntityResult()
-            .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(4, 5))
-            .setEndCursor(queryResultBatchPb.getEntityResultList().get(4).getCursor())
-            .build();
+    QueryResultBatch queryResultBatchPb4 = QueryResultBatch.newBuilder()
+        .mergeFrom(queryResultBatchPb)
+        .setMoreResults(QueryResultBatch.MoreResultsType.NO_MORE_RESULTS)
+        .clearEntityResult()
+        .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(4, 5))
+        .setEndCursor(queryResultBatchPb.getEntityResultList().get(4).getCursor())
+        .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb4).build());
     return responses;
   }
