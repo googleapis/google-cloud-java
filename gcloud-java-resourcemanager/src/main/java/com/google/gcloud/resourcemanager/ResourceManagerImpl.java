@@ -71,13 +71,15 @@ final class ResourceManagerImpl
   }
 
   @Override
-  public ProjectInfo create(final ProjectInfo project) {
+  public Project create(final Project project) {
     try {
-      return ProjectInfo.fromPb(runWithRetries(
+      return Project.fromPb(
+          this,
+          runWithRetries(
           new Callable<com.google.api.services.cloudresourcemanager.model.Project>() {
             @Override
             public com.google.api.services.cloudresourcemanager.model.Project call() {
-              return resourceManagerRpc.create(project.toPb());
+                  return resourceManagerRpc.create(project.toPb());
             }
           }, options().retryParams(), EXCEPTION_HANDLER));
     } catch (RetryHelperException e) {
@@ -101,7 +103,7 @@ final class ResourceManagerImpl
   }
 
   @Override
-  public ProjectInfo get(final String projectId, ProjectGetOption... options) {
+  public Project get(final String projectId, ProjectGetOption... options) {
     final Map<ResourceManagerRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.cloudresourcemanager.model.Project answer = runWithRetries(
@@ -111,13 +113,13 @@ final class ResourceManagerImpl
               return resourceManagerRpc.get(projectId, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : ProjectInfo.fromPb(answer);
+      return answer == null ? null : Project.fromPb(this, answer);
     } catch (RetryHelperException e) {
       throw ResourceManagerException.translateAndThrow(e);
     }
   }
 
-  private static class ProjectPageFetcher implements NextPageFetcher<ProjectInfo> {
+  private static class ProjectPageFetcher implements NextPageFetcher<Project> {
 
     private static final long serialVersionUID = 2158209410430566961L;
     private final Map<ResourceManagerRpc.Option, ?> requestOptions;
@@ -131,17 +133,18 @@ final class ResourceManagerImpl
     }
 
     @Override
-    public Page<ProjectInfo> nextPage() {
+    public Page<Project> nextPage() {
       return listProjects(serviceOptions, requestOptions);
     }
   }
 
   @Override
-  public Page<ProjectInfo> list(ProjectListOption... options) {
+  public Page<Project> list(ProjectListOption... options) {
     return listProjects(options(), optionMap(options));
   }
 
-  private static Page<ProjectInfo> listProjects(final ResourceManagerOptions serviceOptions,
+  private static Page<Project> listProjects(
+      final ResourceManagerOptions serviceOptions,
       final Map<ResourceManagerRpc.Option, ?> optionsMap) {
     try {
       Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model.Project>> result =
@@ -155,16 +158,16 @@ final class ResourceManagerImpl
               },
               serviceOptions.retryParams(), EXCEPTION_HANDLER);
       String cursor = result.x();
-      Iterable<ProjectInfo> projects =
+      Iterable<Project> projects =
           result.y() == null
-              ? ImmutableList.<ProjectInfo>of() : Iterables.transform(
+              ? ImmutableList.<Project>of() : Iterables.transform(
                   result.y(),
                   new Function<com.google.api.services.cloudresourcemanager.model.Project,
-                      ProjectInfo>() {
+                      Project>() {
                     @Override
-                    public ProjectInfo apply(
+                    public Project apply(
                         com.google.api.services.cloudresourcemanager.model.Project projectPb) {
-                      return ProjectInfo.fromPb(projectPb);
+                      return Project.fromPb(serviceOptions.service(), projectPb);
                     }
                   });
       return new PageImpl<>(
@@ -175,9 +178,11 @@ final class ResourceManagerImpl
   }
 
   @Override
-  public ProjectInfo replace(final ProjectInfo newProject) {
+  public Project replace(final Project newProject) {
     try {
-      return ProjectInfo.fromPb(runWithRetries(
+      return Project.fromPb(
+          this,
+          runWithRetries(
           new Callable<com.google.api.services.cloudresourcemanager.model.Project>() {
             @Override
             public com.google.api.services.cloudresourcemanager.model.Project call() {
