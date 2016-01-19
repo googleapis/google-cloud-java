@@ -15,35 +15,45 @@
  */
 package com.google.gcloud.dns;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
 
+import java.io.Serializable;
+
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A class that represents Google Cloud DNS record set.
  *
- * <p>
- * A unit of data that will be returned by the DNS servers.
+ * <p> A unit of data that will be returned by the DNS servers.
  *
- * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets">Google
- * Cloud DNS documentation</a>
+ * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets">Google Cloud DNS
+ * documentation</a>
  */
-public class DnsRecord {
+public class DnsRecord implements Serializable {
 
-  private String name;
-  private List<String> rrdatas = new LinkedList<>();
-  private Integer ttl = 86400; // the default ttl of 24 hours
-  private DnsRecordType type;
-  private String parentName;
-  private Long parentId;
+  private static final long serialVersionUID = 2016011914302204L;
+  private final String name;
+  private final List<String> rrdatas;
+  private final Integer ttl;
+  private final DnsRecordType type;
+  private final String zoneName;
+  private final Long zoneId;
 
   /**
    * A private constructor. Obtain an instance using {@link DnsRecord#Builder}.
    */
   private DnsRecord() {
+    this.name = null;
+    this.rrdatas = null;
+    this.ttl = null;
+    this.type = null;
+    this.zoneName = null;
+    this.zoneId = null;
   }
 
   DnsRecord(Builder builder) {
@@ -51,74 +61,64 @@ public class DnsRecord {
     this.rrdatas = ImmutableList.copyOf(builder.rrdatas);
     this.ttl = builder.ttl;
     this.type = builder.type;
-    this.parentName = builder.parentName;
-    this.parentId = builder.parentId;
+    this.zoneName = builder.zoneName;
+    this.zoneId = builder.zoneId;
   }
 
   /**
    * Enum for the DNS record types supported by Cloud DNS.
    *
-   * <p>
-   * Google Cloud DNS currently supports records of type A, AAAA, CNAME, MX
-   * NAPTR, NS, PTR, SOA, SPF, SRV, TXT.
+   * <p> Google Cloud DNS currently supports records of type A, AAAA, CNAME, MX NAPTR, NS, PTR, SOA,
+   * SPF, SRV, TXT.
    *
-   * @see
-   * <a href="https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types">Cloud
-   * DNS supported record types</a>
+   * @see <a href="https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types">Cloud DNS
+   * supported record types</a>
    */
   public enum DnsRecordType {
-    A("A"),
-    AAAA("AAAA"),
-    CNAME("CNAME"),
-    MX("MX"),
-    NAPTR("NAPTR"),
-    NS("NS"),
-    PTR("PTR"),
-    SOA("SOA"),
-    SPF("SPF"),
-    SRV("SRV"),
-    TXT("TXT");
-
-    private final String type;
-
-    private DnsRecordType(String type) {
-      this.type = type;
-    }
+    A,
+    AAAA,
+    CNAME,
+    MX,
+    NAPTR,
+    NS,
+    PTR,
+    SOA,
+    SPF,
+    SRV,
+    TXT;
   }
 
   public static class Builder {
 
     private List<String> rrdatas = new LinkedList<>();
     private String name;
-    private Integer ttl = 86400; // default ttl of 24 hours
+    private Integer ttl;
     private DnsRecordType type;
-    private String parentName;
-    private Long parentId;
+    private String zoneName;
+    private Long zoneId;
 
     private Builder() {
     }
 
     /**
-     * Creates a builder and pre-populates attributes with the values from the
-     * provided DnsRecord instance.
+     * Creates a builder and pre-populates attributes with the values from the provided DnsRecord
+     * instance.
      */
     public Builder(DnsRecord record) {
       this.name = record.name;
       this.ttl = record.ttl;
       this.type = record.type;
-      this.parentId = record.parentId;
-      this.parentName = record.parentName;
+      this.zoneId = record.zoneId;
+      this.zoneName = record.zoneName;
       this.rrdatas.addAll(record.rrdatas);
     }
 
     /**
-     * Adds a record to the record set.
+     * Adds a record to the record set. The records should be as defined in RFC 1035 (section 5) and
+     * RFC 1034 (section 3.6.1). Examples of records are available in Google DNS documentation.
      *
-     * <p>
-     * The records should be as defined in RFC 1035 (section 5) and RFC 1034
-     * (section 3.6.1). Examples of records are available in
-     * <a href="https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types">Cloud
-     * DNS documentation</a>.
+     * @see <a href="https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types">Google
+     * DNS documentation </a>.
      */
     public Builder add(String record) {
       this.rrdatas.add(checkNotNull(record));
@@ -134,25 +134,19 @@ public class DnsRecord {
     }
 
     /**
-     * Sets the number of seconds that this record can be cached by resolvers.
-     * This number must be non-negative.
+     * Sets the number of seconds that this record can be cached by resolvers. This number must be
+     * non-negative.
      *
      * @param ttl A non-negative number of seconds
      */
     public Builder ttl(int ttl) {
-      // change only if 
-      if (ttl < 0) {
-        throw new IllegalArgumentException(
-                "TTL cannot be negative. The supplied value was " + ttl + "."
-        );
-      }
+      checkArgument(ttl >= 0, "TTL cannot be negative. The supplied value was " + ttl + ".");
       this.ttl = ttl;
       return this;
     }
 
     /**
-     * The identifier of a supported record type, for example, A, AAAA, MX, TXT,
-     * and so on.
+     * The identifier of a supported record type, for example, A, AAAA, MX, TXT, and so on.
      */
     public Builder type(DnsRecordType type) {
       this.type = checkNotNull(type);
@@ -171,8 +165,8 @@ public class DnsRecord {
      */
     public Builder managedZone(ManagedZoneInfo parent) {
       checkNotNull(parent);
-      this.parentId = parent.id();
-      this.parentName = parent.name();
+      this.zoneId = parent.id();
+      this.zoneName = parent.name();
       return this;
     }
   }
@@ -192,9 +186,7 @@ public class DnsRecord {
   }
 
   /**
-   * Get user assigned name of this DNS record.
-   *
-   * TODO: is this field mandatory?
+   * Get the mandatory user assigned name of this DNS record.
    */
   public String name() {
     return name;
@@ -204,16 +196,12 @@ public class DnsRecord {
    * Returns a list of DNS record stored in this record set.
    */
   public List<String> rrdatas() {
-    return rrdatas;
+    return ImmutableList.copyOf(rrdatas);
   }
 
   /**
-   * Returns the number of seconds that this ResourceRecordSet can be cached by
-   * resolvers.
-   *
-   * <p>
-   * This number is provided by the user. If this values is not set, we use
-   * default of 86400.
+   * Returns the number of seconds that this ResourceRecordSet can be cached by resolvers. This
+   * number is provided by the user.
    */
   public Integer ttl() {
     return ttl;
@@ -227,28 +215,56 @@ public class DnsRecord {
   }
 
   /**
-   * Returns name of the managed zone that this record belongs to.
-   *
-   * <p>
-   * The name of the managed zone is provided by the user when the managed zone
-   * is created. It is unique within a project. If this DNS record is not
-   * associated with a managed zone, this returns null.
+   * Returns name of the managed zone that this record belongs to. The name of the managed zone is
+   * provided by the user when the managed zone is created. It is unique within a project. If this
+   * DNS record is not associated with a managed zone, this returns null.
    */
-  public String parentName() {
-    return parentName;
+  public String zoneName() {
+    return zoneName;
   }
 
   /**
    * Returns name of the managed zone that this record belongs to.
    *
-   * <p>
-   * The id of the managed zone is determined by the server when the managed
-   * zone is created. It is a read only value. If this DNS record is not
-   * associated with a managed zone, or if the id of the managed zone was not
-   * loaded from the cloud service, this returns null.
+   * <p> The id of the managed zone is determined by the server when the managed zone is created. It
+   * is a read only value. If this DNS record is not associated with a managed zone, or if the id of
+   * the managed zone was not loaded from the cloud service, this returns null.
    */
-  public Long parentId() {
-    return parentId;
+  public Long zoneId() {
+    return zoneId;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, rrdatas, ttl, type, zoneName, zoneId);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof DnsRecord) {
+      DnsRecord other = (DnsRecord) obj;
+      return zoneId == other.zoneId()
+              && zoneName == other.zoneName
+              && this.toRRSet().equals(other.toRRSet());
+    }
+    return false;
+  }
+
+  com.google.api.services.dns.model.ResourceRecordSet toRRSet() {
+    com.google.api.services.dns.model.ResourceRecordSet rrset =
+            new com.google.api.services.dns.model.ResourceRecordSet();
+    rrset.setName(name);
+    rrset.setRrdatas(this.rrdatas());
+    rrset.setTtl(ttl);
+    rrset.setType(type == null ? null : type.name());
+    return rrset;
+  }
+
+  @Override
+  public String toString() {
+    return "DnsRecord{" + "name=" + name + ", rrdatas=" + rrdatas
+            + ", ttl=" + ttl + ", type=" + type + ", zoneName="
+            + zoneName + ", zoneId=" + zoneId + '}';
   }
 
 }

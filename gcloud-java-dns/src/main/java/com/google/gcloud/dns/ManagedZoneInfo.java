@@ -16,8 +16,8 @@
 package com.google.gcloud.dns;
 
 /**
- * TODO: Implement.
- * TODO: Add documentation.
+ * todo(mderka): Implement.
+ * todo(mderka): Add documentation.
  */
 public class ManagedZoneInfo {
 
@@ -26,19 +26,19 @@ public class ManagedZoneInfo {
 
   public String name() {
     throw new UnsupportedOperationException("Not implemented yet.");
-    // TODO: Implement
+    // todo(mderka): Implement
   }
 
   public Long id() {
     return id;
-    // TODO: Implement
+    // todo(mderka): Implement
   }
 
   private ManagedZoneInfo() {
     name = null;
     id = null;
     throw new UnsupportedOperationException("Not implemented yet");
-    // TODO: Implement
+    // todo(mderka): Implement
   }
 
 }
