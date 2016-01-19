@@ -95,8 +95,8 @@ public class CopyJobInfo extends JobInfo<JobStatistics> {
     /**
      * Sets whether the job is allowed to create new tables.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.link">
-     *     Jobs: Link Configuration</a>
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
+     *     Create Disposition</a>
      */
     public Builder createDisposition(CreateDisposition createDisposition) {
       this.createDisposition = createDisposition;
@@ -106,8 +106,8 @@ public class CopyJobInfo extends JobInfo<JobStatistics> {
     /**
      * Sets the action that should occur if the destination table already exists.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.link">
-     *     Jobs: Link Configuration</a>
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
+     *     Write Disposition</a>
      */
     public Builder writeDisposition(WriteDisposition writeDisposition) {
       this.writeDisposition = writeDisposition;
@@ -145,8 +145,8 @@ public class CopyJobInfo extends JobInfo<JobStatistics> {
   /**
    * Returns whether the job is allowed to create new tables.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy">
-   *     Jobs: Copy Configuration</a>
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
+   *     Create Disposition</a>
    */
   public CreateDisposition createDisposition() {
     return this.createDisposition;
@@ -155,8 +155,8 @@ public class CopyJobInfo extends JobInfo<JobStatistics> {
   /**
    * Returns the action that should occur if the destination table already exists.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy">
-   *     Jobs: Copy Configuration</a>
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
+   *     Write Disposition</a>
    */
   public WriteDisposition writeDisposition() {
     return writeDisposition;

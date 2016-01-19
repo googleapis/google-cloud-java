@@ -49,6 +49,7 @@ import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.PageImpl.NextPageFetcher;
+import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.RewriteResponse;
@@ -517,15 +518,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BlobReadChannel reader(String bucket, String blob, BlobSourceOption... options) {
+  public ReadChannel reader(String bucket, String blob, BlobSourceOption... options) {
     Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
-    return new BlobReadChannelImpl(options(), BlobId.of(bucket, blob), optionsMap);
+    return new BlobReadChannel(options(), BlobId.of(bucket, blob), optionsMap);
   }
 
   @Override
-  public BlobReadChannel reader(BlobId blob, BlobSourceOption... options) {
+  public ReadChannel reader(BlobId blob, BlobSourceOption... options) {
     Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
-    return new BlobReadChannelImpl(options(), blob, optionsMap);
+    return new BlobReadChannel(options(), blob, optionsMap);
   }
 
   @Override
@@ -536,7 +537,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   private BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options) {
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
-    return new BlobWriteChannelImpl(options(), blobInfo, optionsMap);
+    return new BlobWriteChannel(options(), blobInfo, optionsMap);
   }
 
   @Override

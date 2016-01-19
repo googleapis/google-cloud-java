@@ -22,7 +22,9 @@ import static org.junit.Assert.assertNotSame;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.WriteChannel;
 import com.google.gcloud.bigquery.TableInfo.StreamingBuffer;
 
 import org.junit.Test;
@@ -99,9 +101,9 @@ public class SerializationTest {
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final ExternalDataConfiguration EXTERNAL_DATA_CONFIGURATION =
       ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
-      .ignoreUnknownValues(true)
-      .maxBadRecords(42)
-      .build();
+          .ignoreUnknownValues(true)
+          .maxBadRecords(42)
+          .build();
   private static final UserDefinedFunction INLINE_FUNCTION =
       new UserDefinedFunction.InlineFunction("inline");
   private static final UserDefinedFunction URI_FUNCTION =
@@ -130,10 +132,10 @@ public class SerializationTest {
           .id(ID)
           .build();
   private static final JobStatistics JOB_STATISTICS = JobStatistics.builder()
-          .creationTime(1L)
-          .endTime(3L)
-          .startTime(2L)
-          .build();
+      .creationTime(1L)
+      .endTime(3L)
+      .startTime(2L)
+      .build();
   private static final JobStatistics.ExtractStatistics EXTRACT_STATISTICS =
       JobStatistics.ExtractStatistics.builder()
           .creationTime(1L)
@@ -168,7 +170,15 @@ public class SerializationTest {
   private static final JobId JOB_ID = JobId.of("project", "job");
   private static final CopyJobInfo COPY_JOB = CopyJobInfo.of(TABLE_ID, TABLE_ID);
   private static final ExtractJobInfo EXTRACT_JOB = ExtractJobInfo.of(TABLE_ID, SOURCE_URIS);
-  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(TABLE_ID, SOURCE_URIS);
+  private static final LoadConfiguration LOAD_CONFIGURATION = LoadConfiguration.builder(TABLE_ID)
+      .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+      .writeDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
+      .formatOptions(CSV_OPTIONS)
+      .ignoreUnknownValues(true)
+      .maxBadRecords(10)
+      .schema(TABLE_SCHEMA)
+      .build();
+  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(LOAD_CONFIGURATION, SOURCE_URIS);
   private static final QueryJobInfo QUERY_JOB = QueryJobInfo.of("query");
   private static final Map<String, Object> CONTENT1 =
       ImmutableMap.<String, Object>of("key", "val1");
@@ -231,8 +241,8 @@ public class SerializationTest {
         DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, EXTERNAL_DATA_CONFIGURATION,
         TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION,
         JOB_STATISTICS, EXTRACT_STATISTICS, LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR,
-        JOB_STATUS, JOB_ID, COPY_JOB, EXTRACT_JOB, LOAD_JOB, QUERY_JOB, INSERT_ALL_REQUEST,
-        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE,
+        JOB_STATUS, JOB_ID, COPY_JOB, EXTRACT_JOB, LOAD_CONFIGURATION, LOAD_JOB, QUERY_JOB,
+        INSERT_ALL_REQUEST, INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE,
         BigQuery.DatasetOption.fields(), BigQuery.DatasetDeleteOption.deleteContents(),
         BigQuery.DatasetListOption.all(), BigQuery.TableOption.fields(),
         BigQuery.TableListOption.maxResults(42L), BigQuery.JobOption.fields(),
@@ -246,8 +256,25 @@ public class SerializationTest {
     }
   }
 
+  @Test
+  public void testWriteChannelState() throws IOException, ClassNotFoundException {
+    BigQueryOptions options = BigQueryOptions.builder()
+        .projectId("p2")
+        .retryParams(RetryParams.defaultInstance())
+        .build();
+    // avoid closing when you don't want partial writes upon failure
+    @SuppressWarnings("resource")
+    TableDataWriteChannel writer =
+        new TableDataWriteChannel(options, LOAD_CONFIGURATION, "upload-id");
+    RestorableState<WriteChannel> state = writer.capture();
+    RestorableState<WriteChannel> deserializedState = serializeAndDeserialize(state);
+    assertEquals(state, deserializedState);
+    assertEquals(state.hashCode(), deserializedState.hashCode());
+    assertEquals(state.toString(), deserializedState.toString());
+  }
+
   @SuppressWarnings("unchecked")
-  private <T extends java.io.Serializable> T serializeAndDeserialize(T obj)
+  private <T> T serializeAndDeserialize(T obj)
       throws IOException, ClassNotFoundException {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
     try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {

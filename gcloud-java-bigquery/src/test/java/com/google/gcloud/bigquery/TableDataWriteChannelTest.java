@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud.bigquery;
 
 import static org.easymock.EasyMock.anyObject;
 import static org.easymock.EasyMock.capture;
@@ -30,11 +30,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.RestorableState;
-import com.google.gcloud.RetryParams;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpcFactory;
+import com.google.gcloud.WriteChannel;
+import com.google.gcloud.spi.BigQueryRpc;
+import com.google.gcloud.spi.BigQueryRpcFactory;
 
 import org.easymock.Capture;
 import org.easymock.CaptureType;
@@ -45,69 +44,71 @@ import org.junit.Test;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-import java.util.Map;
 import java.util.Random;
 
-public class BlobWriteChannelImplTest {
+public class TableDataWriteChannelTest {
 
-  private static final String BUCKET_NAME = "b";
-  private static final String BLOB_NAME = "n";
   private static final String UPLOAD_ID = "uploadid";
-  private static final BlobInfo BLOB_INFO = BlobInfo.builder(BUCKET_NAME, BLOB_NAME).build();
-  private static final Map<StorageRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
+  private static final TableId TABLE_ID = TableId.of("dataset", "table");
+  private static final LoadConfiguration LOAD_CONFIGURATION = LoadConfiguration.builder(TABLE_ID)
+      .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+      .writeDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
+      .formatOptions(FormatOptions.json())
+      .ignoreUnknownValues(true)
+      .maxBadRecords(10)
+      .build();
   private static final int MIN_CHUNK_SIZE = 256 * 1024;
   private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
   private static final int CUSTOM_CHUNK_SIZE = 4 * MIN_CHUNK_SIZE;
   private static final Random RANDOM = new Random();
 
-  private StorageOptions options;
-  private StorageRpcFactory rpcFactoryMock;
-  private StorageRpc storageRpcMock;
-  private BlobWriteChannelImpl writer;
+  private BigQueryOptions options;
+  private BigQueryRpcFactory rpcFactoryMock;
+  private BigQueryRpc bigqueryRpcMock;
+  private TableDataWriteChannel writer;
 
   @Before
   public void setUp() {
-    rpcFactoryMock = createMock(StorageRpcFactory.class);
-    storageRpcMock = createMock(StorageRpc.class);
-    expect(rpcFactoryMock.create(anyObject(StorageOptions.class)))
-        .andReturn(storageRpcMock);
+    rpcFactoryMock = createMock(BigQueryRpcFactory.class);
+    bigqueryRpcMock = createMock(BigQueryRpc.class);
+    expect(rpcFactoryMock.create(anyObject(BigQueryOptions.class)))
+        .andReturn(bigqueryRpcMock);
     replay(rpcFactoryMock);
-    options = StorageOptions.builder()
+    options = BigQueryOptions.builder()
         .projectId("projectid")
         .serviceRpcFactory(rpcFactoryMock)
-        .retryParams(RetryParams.noRetries())
         .build();
   }
 
   @After
   public void tearDown() throws Exception {
-    verify(rpcFactoryMock, storageRpcMock);
+    verify(rpcFactoryMock, bigqueryRpcMock);
   }
 
   @Test
   public void testCreate() {
-    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
-    replay(storageRpcMock);
-    writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
+    replay(bigqueryRpcMock);
+    writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     assertTrue(writer.isOpen());
   }
 
   @Test
   public void testWriteWithoutFlush() throws IOException {
-    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
-    replay(storageRpcMock);
-    writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
+    replay(bigqueryRpcMock);
+    writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     assertEquals(MIN_CHUNK_SIZE, writer.write(ByteBuffer.allocate(MIN_CHUNK_SIZE)));
   }
 
   @Test
   public void testWriteWithFlush() throws IOException {
-    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L),
+    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L),
         eq(CUSTOM_CHUNK_SIZE), eq(false));
-    replay(storageRpcMock);
-    writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    replay(bigqueryRpcMock);
+    writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     writer.chunkSize(CUSTOM_CHUNK_SIZE);
     ByteBuffer buffer = randomBuffer(CUSTOM_CHUNK_SIZE);
     assertEquals(CUSTOM_CHUNK_SIZE, writer.write(buffer));
@@ -116,12 +117,12 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testWritesAndFlush() throws IOException {
-    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L),
+    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L),
         eq(DEFAULT_CHUNK_SIZE), eq(false));
-    replay(storageRpcMock);
-    writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    replay(bigqueryRpcMock);
+    writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     ByteBuffer[] buffers = new ByteBuffer[DEFAULT_CHUNK_SIZE / MIN_CHUNK_SIZE];
     for (int i = 0; i < buffers.length; i++) {
       buffers[i] = randomBuffer(MIN_CHUNK_SIZE);
@@ -137,11 +138,11 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testCloseWithoutFlush() throws IOException {
-    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true));
-    replay(storageRpcMock);
-    writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true));
+    replay(bigqueryRpcMock);
+    writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     assertTrue(writer.isOpen());
     writer.close();
     assertArrayEquals(new byte[0], capturedBuffer.getValue());
@@ -150,13 +151,13 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testCloseWithFlush() throws IOException {
-    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
     ByteBuffer buffer = randomBuffer(MIN_CHUNK_SIZE);
-    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(MIN_CHUNK_SIZE),
+    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(MIN_CHUNK_SIZE),
         eq(true));
-    replay(storageRpcMock);
-    writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    replay(bigqueryRpcMock);
+    writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     assertTrue(writer.isOpen());
     writer.write(buffer);
     writer.close();
@@ -167,15 +168,15 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testWriteClosed() throws IOException {
-    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true));
-    replay(storageRpcMock);
-    writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true));
+    replay(bigqueryRpcMock);
+    writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     writer.close();
     try {
       writer.write(ByteBuffer.allocate(MIN_CHUNK_SIZE));
-      fail("Expected BlobWriteChannel write to throw IOException");
+      fail("Expected TableDataWriteChannel write to throw IOException");
     } catch (IOException ex) {
       // expected
     }
@@ -183,21 +184,21 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testSaveAndRestore() throws IOException {
-    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance(CaptureType.ALL);
     Capture<Long> capturedPosition = Capture.newInstance(CaptureType.ALL);
-    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0),
+    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0),
         captureLong(capturedPosition), eq(DEFAULT_CHUNK_SIZE), eq(false));
     expectLastCall().times(2);
-    replay(storageRpcMock);
+    replay(bigqueryRpcMock);
     ByteBuffer buffer1 = randomBuffer(DEFAULT_CHUNK_SIZE);
     ByteBuffer buffer2 = randomBuffer(DEFAULT_CHUNK_SIZE);
-    writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     assertEquals(DEFAULT_CHUNK_SIZE, writer.write(buffer1));
     assertArrayEquals(buffer1.array(), capturedBuffer.getValues().get(0));
     assertEquals(new Long(0L), capturedPosition.getValues().get(0));
-    RestorableState<BlobWriteChannel> writerState = writer.capture();
-    BlobWriteChannel restoredWriter = writerState.restore();
+    RestorableState<WriteChannel> writerState = writer.capture();
+    WriteChannel restoredWriter = writerState.restore();
     assertEquals(DEFAULT_CHUNK_SIZE, restoredWriter.write(buffer2));
     assertArrayEquals(buffer2.array(), capturedBuffer.getValues().get(1));
     assertEquals(new Long(DEFAULT_CHUNK_SIZE), capturedPosition.getValues().get(1));
@@ -205,36 +206,35 @@ public class BlobWriteChannelImplTest {
 
   @Test
   public void testSaveAndRestoreClosed() throws IOException {
-    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    storageRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true));
-    replay(storageRpcMock);
-    writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true));
+    replay(bigqueryRpcMock);
+    writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     writer.close();
-    RestorableState<BlobWriteChannel> writerState = writer.capture();
-    RestorableState<BlobWriteChannel> expectedWriterState =
-        BlobWriteChannelImpl.StateImpl.builder(options, BLOB_INFO, UPLOAD_ID)
+    RestorableState<WriteChannel> writerState = writer.capture();
+    RestorableState<WriteChannel> expectedWriterState =
+        TableDataWriteChannel.StateImpl.builder(options, LOAD_CONFIGURATION, UPLOAD_ID)
             .buffer(null)
             .chunkSize(DEFAULT_CHUNK_SIZE)
             .isOpen(false)
             .position(0)
             .build();
-    BlobWriteChannel restoredWriter = writerState.restore();
+    WriteChannel restoredWriter = writerState.restore();
     assertArrayEquals(new byte[0], capturedBuffer.getValue());
     assertEquals(expectedWriterState, restoredWriter.capture());
   }
 
   @Test
   public void testStateEquals() {
-    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID)
-        .times(2);
-    replay(storageRpcMock);
-    writer = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
-    // avoid closing when you don't want partial writes to GCS upon failure
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID).times(2);
+    replay(bigqueryRpcMock);
+    writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
+    // avoid closing when you don't want partial writes upon failure
     @SuppressWarnings("resource")
-    BlobWriteChannel writer2 = new BlobWriteChannelImpl(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
-    RestorableState<BlobWriteChannel> state = writer.capture();
-    RestorableState<BlobWriteChannel> state2 = writer2.capture();
+    WriteChannel writer2 = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
+    RestorableState<WriteChannel> state = writer.capture();
+    RestorableState<WriteChannel> state2 = writer2.capture();
     assertEquals(state, state2);
     assertEquals(state.hashCode(), state2.hashCode());
     assertEquals(state.toString(), state2.toString());

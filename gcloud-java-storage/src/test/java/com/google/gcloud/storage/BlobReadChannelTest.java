@@ -27,6 +27,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
@@ -42,7 +43,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Random;
 
-public class BlobReadChannelImplTest {
+public class BlobReadChannelTest {
 
   private static final String BUCKET_NAME = "b";
   private static final String BLOB_NAME = "n";
@@ -55,7 +56,7 @@ public class BlobReadChannelImplTest {
   private StorageOptions options;
   private StorageRpcFactory rpcFactoryMock;
   private StorageRpc storageRpcMock;
-  private BlobReadChannelImpl reader;
+  private BlobReadChannel reader;
 
   @Before
   public void setUp() {
@@ -78,13 +79,13 @@ public class BlobReadChannelImplTest {
   @Test
   public void testCreate() {
     replay(storageRpcMock);
-    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     assertTrue(reader.isOpen());
   }
 
   @Test
   public void testReadBuffered() throws IOException {
-    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     byte[] result = randomByteArray(DEFAULT_CHUNK_SIZE);
     ByteBuffer firstReadBuffer = ByteBuffer.allocate(42);
     ByteBuffer secondReadBuffer = ByteBuffer.allocate(42);
@@ -102,7 +103,7 @@ public class BlobReadChannelImplTest {
 
   @Test
   public void testReadBig() throws IOException {
-    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     reader.chunkSize(CUSTOM_CHUNK_SIZE);
     byte[] firstResult = randomByteArray(DEFAULT_CHUNK_SIZE);
     byte[] secondResult = randomByteArray(DEFAULT_CHUNK_SIZE);
@@ -123,7 +124,7 @@ public class BlobReadChannelImplTest {
 
   @Test
   public void testReadFinish() throws IOException {
-    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     byte[] result = {};
     ByteBuffer readBuffer = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
     expect(storageRpcMock.read(BLOB_ID.toPb(), EMPTY_RPC_OPTIONS, 0, DEFAULT_CHUNK_SIZE))
@@ -134,7 +135,7 @@ public class BlobReadChannelImplTest {
 
   @Test
   public void testSeek() throws IOException {
-    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     reader.seek(42);
     byte[] result = randomByteArray(DEFAULT_CHUNK_SIZE);
     ByteBuffer readBuffer = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
@@ -148,7 +149,7 @@ public class BlobReadChannelImplTest {
   @Test
   public void testClose() {
     replay(storageRpcMock);
-    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     assertTrue(reader.isOpen());
     reader.close();
     assertTrue(!reader.isOpen());
@@ -157,7 +158,7 @@ public class BlobReadChannelImplTest {
   @Test
   public void testReadClosed() {
     replay(storageRpcMock);
-    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     reader.close();
     try {
       ByteBuffer readBuffer = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
@@ -171,7 +172,7 @@ public class BlobReadChannelImplTest {
   @Test
   public void testReadGenerationChanged() throws IOException {
     BlobId blobId = BlobId.of(BUCKET_NAME, BLOB_NAME);
-    reader = new BlobReadChannelImpl(options, blobId, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannel(options, blobId, EMPTY_RPC_OPTIONS);
     byte[] firstResult = randomByteArray(DEFAULT_CHUNK_SIZE);
     byte[] secondResult = randomByteArray(DEFAULT_CHUNK_SIZE);
     ByteBuffer firstReadBuffer = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
@@ -185,7 +186,7 @@ public class BlobReadChannelImplTest {
     reader.read(firstReadBuffer);
     try {
       reader.read(secondReadBuffer);
-      fail("Expected BlobReadChannel read to throw StorageException");
+      fail("Expected ReadChannel read to throw StorageException");
     } catch (StorageException ex) {
       StringBuilder messageBuilder = new StringBuilder();
       messageBuilder.append("Blob ").append(blobId).append(" was updated while reading");
@@ -204,10 +205,10 @@ public class BlobReadChannelImplTest {
     expect(storageRpcMock.read(BLOB_ID.toPb(), EMPTY_RPC_OPTIONS, 42, DEFAULT_CHUNK_SIZE))
         .andReturn(StorageRpc.Tuple.of("etag", secondResult));
     replay(storageRpcMock);
-    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     reader.read(firstReadBuffer);
-    RestorableState<BlobReadChannel> readerState = reader.capture();
-    BlobReadChannel restoredReader = readerState.restore();
+    RestorableState<ReadChannel> readerState = reader.capture();
+    ReadChannel restoredReader = readerState.restore();
     restoredReader.read(secondReadBuffer);
     assertArrayEquals(Arrays.copyOf(firstResult, firstReadBuffer.capacity()),
         firstReadBuffer.array());
@@ -217,11 +218,11 @@ public class BlobReadChannelImplTest {
   @Test
   public void testStateEquals() {
     replay(storageRpcMock);
-    reader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     @SuppressWarnings("resource") // avoid closing when you don't want partial writes to GCS
-    BlobReadChannel secondReader = new BlobReadChannelImpl(options, BLOB_ID, EMPTY_RPC_OPTIONS);
-    RestorableState<BlobReadChannel> state = reader.capture();
-    RestorableState<BlobReadChannel> secondState = secondReader.capture();
+        ReadChannel secondReader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    RestorableState<ReadChannel> state = reader.capture();
+    RestorableState<ReadChannel> secondState = secondReader.capture();
     assertEquals(state, secondState);
     assertEquals(state.hashCode(), secondState.hashCode());
     assertEquals(state.toString(), secondState.toString());
