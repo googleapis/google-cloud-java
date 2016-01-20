@@ -58,6 +58,16 @@ public class BaseServiceException extends RuntimeException {
       return reason;
     }
 
+    boolean isRetryable(Set<Error> retryableErrors) {
+      for (Error retryableError : retryableErrors) {
+        if ((retryableError.code() == null || retryableError.code().equals(this.code()))
+            && (retryableError.reason() == null || retryableError.reason().equals(this.reason()))) {
+          return true;
+        }
+      }
+      return false;
+    }
+
     @Override
     public String toString() {
       return MoreObjects.toStringHelper(this).add("code", code).add("reason", reason).toString();
@@ -83,7 +93,7 @@ public class BaseServiceException extends RuntimeException {
       Error error = error(((GoogleJsonResponseException) exception).getDetails());
       this.code = error.code;
       this.reason = error.reason;
-      this.retryable = isRetryable(error);
+      this.retryable = error.isRetryable(retryableErrors());
     } else {
       this.code = UNKNOWN_CODE;
       this.reason = null;
@@ -110,7 +120,7 @@ public class BaseServiceException extends RuntimeException {
     this.code = code;
     this.reason = reason;
     this.idempotent = idempotent;
-    this.retryable = idempotent && isRetryable(new Error(code, reason));
+    this.retryable = idempotent && new Error(code, reason).isRetryable(retryableErrors());
   }
 
   protected Set<Error> retryableErrors() {
@@ -118,7 +128,7 @@ public class BaseServiceException extends RuntimeException {
   }
 
   protected boolean isRetryable(GoogleJsonError error) {
-    return error != null && isRetryable(error(error));
+    return error != null && error(error).isRetryable(retryableErrors());
   }
 
   protected boolean isRetryable(IOException exception) {
@@ -126,16 +136,6 @@ public class BaseServiceException extends RuntimeException {
       return isRetryable(((GoogleJsonResponseException) exception).getDetails());
     }
     return exception instanceof SocketTimeoutException;
-  }
-
-  protected boolean isRetryable(Error error) {
-    for (Error retryableError : retryableErrors()) {
-      if ((retryableError.code() == null || retryableError.code().equals(error.code()))
-          && (retryableError.reason() == null || retryableError.reason().equals(error.reason()))) {
-        return true;
-      }
-    }
-    return false;
   }
 
   /**
