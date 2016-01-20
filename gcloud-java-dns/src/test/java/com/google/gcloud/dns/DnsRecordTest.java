@@ -25,28 +25,29 @@ import org.junit.Test;
 
 import org.easymock.EasyMock;
 
-
 public class DnsRecordTest {
 
   private static final String NAME = "example.com.";
   private static final Integer TTL = 3600;
   private static final DnsRecord.DnsRecordType TYPE = DnsRecord.DnsRecordType.AAAA;
-  private static final ManagedZoneInfo MANAGED_ZONE_INFO_MOCK =
-          EasyMock.createMock(ManagedZoneInfo.class);
   private static final Long ZONE_ID = 12L;
   private static final String ZONE_NAME = "name";
+  // the following is initialized in @BeforeClass setUp()
+  private static DnsRecord record;
+  private static ManagedZoneInfo managedZoneInfoMock;
 
-  static {
-    EasyMock.expect(MANAGED_ZONE_INFO_MOCK.id()).andReturn(ZONE_ID);
-    EasyMock.expect(MANAGED_ZONE_INFO_MOCK.name()).andReturn(ZONE_NAME);
-    EasyMock.replay(MANAGED_ZONE_INFO_MOCK);
+  @BeforeClass
+  public static void setUp() {
+    managedZoneInfoMock = EasyMock.createMock(ManagedZoneInfo.class);
+    EasyMock.expect(managedZoneInfoMock.id()).andReturn(ZONE_ID);
+    EasyMock.expect(managedZoneInfoMock.name()).andReturn(ZONE_NAME);
+    EasyMock.replay(managedZoneInfoMock);
+    record = DnsRecord.builder()
+            .name(NAME)
+            .ttl(TTL)
+            .managedZone(managedZoneInfoMock)
+            .build();
   }
-
-  private static final DnsRecord RECORD = DnsRecord.builder()
-          .name(NAME)
-          .ttl(TTL)
-          .managedZone(MANAGED_ZONE_INFO_MOCK)
-          .build();
 
   @Test
   public void testDefaultDnsRecord() {
@@ -57,20 +58,23 @@ public class DnsRecordTest {
   @Test
   public void testBuilder() {
 
-    assertEquals(NAME, RECORD.name());
-    assertEquals(TTL, RECORD.ttl());
+    assertEquals(NAME, record.name());
+    assertEquals(TTL, record.ttl());
 
-    assertEquals(ZONE_ID, RECORD.zoneId()); // this was never assigned
-    assertEquals(ZONE_NAME, RECORD.zoneName());
-    assertEquals(0, RECORD.rrdatas().size());
+    assertEquals(ZONE_ID, record.zoneId()); // this was never assigned
+    assertEquals(ZONE_NAME, record.zoneName());
+    assertEquals(0, record.rrdatas().size());
     // verify that one can add records to the record set
     String testingRecord = "Testing record";
     String anotherTestingRecord = "Another record 123";
-    DnsRecord anotherRecord = RECORD.toBuilder()
+    String differentName = ZONE_NAME + "something";
+    DnsRecord anotherRecord = record.toBuilder()
             .add(testingRecord)
             .add(anotherTestingRecord)
+            .managedZone(differentName)
             .build();
     assertEquals(2, anotherRecord.rrdatas().size());
+    assertEquals(differentName, anotherRecord.zoneName());
     assertTrue(anotherRecord.rrdatas().contains(testingRecord));
     assertTrue(anotherRecord.rrdatas().contains(anotherTestingRecord));
   }
@@ -89,39 +93,39 @@ public class DnsRecordTest {
 
   @Test
   public void testEqualsAndNotEquals() {
-    DnsRecord clone = RECORD.toBuilder().build();
-    assertEquals(clone, RECORD);
-    clone = RECORD.toBuilder().add("another record").build();
+    DnsRecord clone = record.toBuilder().build();
+    assertEquals(clone, record);
+    clone = record.toBuilder().add("another record").build();
     final String differentName = "totally different name";
-    clone = RECORD.toBuilder().name(differentName).build();
-    assertNotEquals(clone, RECORD);
-    clone = RECORD.toBuilder().ttl(RECORD.ttl() + 1).build();
-    assertNotEquals(clone, RECORD);
-    clone = RECORD.toBuilder().type(DnsRecord.DnsRecordType.TXT).build();
-    assertNotEquals(clone, RECORD);
+    clone = record.toBuilder().name(differentName).build();
+    assertNotEquals(clone, record);
+    clone = record.toBuilder().ttl(record.ttl() + 1).build();
+    assertNotEquals(clone, record);
+    clone = record.toBuilder().type(DnsRecord.DnsRecordType.TXT).build();
+    assertNotEquals(clone, record);
     ManagedZoneInfo anotherMock = EasyMock.createMock(ManagedZoneInfo.class);
     EasyMock.expect(anotherMock.id()).andReturn(ZONE_ID + 1);
     EasyMock.expect(anotherMock.name()).andReturn(ZONE_NAME + "more text");
     EasyMock.replay(anotherMock);
-    clone = RECORD.toBuilder().managedZone(anotherMock).build();
-    assertNotEquals(clone, RECORD);
+    clone = record.toBuilder().managedZone(anotherMock).build();
+    assertNotEquals(clone, record);
   }
 
   @Test
   public void testSameHashCodeOnEquals() {
-    int hash = RECORD.hashCode();
-    DnsRecord clone = RECORD.toBuilder().build();
+    int hash = record.hashCode();
+    DnsRecord clone = record.toBuilder().build();
     assertEquals(clone.hashCode(), hash);
   }
 
   @Test
   public void testDifferentHashCodeOnDifferent() {
-    int hash = RECORD.hashCode();
+    int hash = record.hashCode();
     final String differentName = "totally different name";
-    DnsRecord clone = RECORD.toBuilder().name(differentName).build();
-    assertNotEquals(differentName, RECORD.name());
+    DnsRecord clone = record.toBuilder().name(differentName).build();
+    assertNotEquals(differentName, record.name());
     assertNotEquals(clone.hashCode(), hash);
-    DnsRecord anotherClone = RECORD.toBuilder().add("another record").build();
+    DnsRecord anotherClone = record.toBuilder().add("another record").build();
     assertNotEquals(anotherClone.hashCode(), hash);
   }
 

@@ -18,6 +18,7 @@ package com.google.gcloud.dns;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 
 import java.io.Serializable;
@@ -29,7 +30,7 @@ import java.util.Objects;
 /**
  * A class that represents Google Cloud DNS record set.
  *
- * <p> A unit of data that will be returned by the DNS servers.
+ * <p>A unit of data that will be returned by the DNS servers.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets">Google Cloud DNS
  * documentation</a>
@@ -44,9 +45,6 @@ public class DnsRecord implements Serializable {
   private final String zoneName;
   private final Long zoneId;
 
-  /**
-   * A private constructor. Obtain an instance using {@link DnsRecord#Builder}.
-   */
   private DnsRecord() {
     this.name = null;
     this.rrdatas = null;
@@ -68,7 +66,7 @@ public class DnsRecord implements Serializable {
   /**
    * Enum for the DNS record types supported by Cloud DNS.
    *
-   * <p> Google Cloud DNS currently supports records of type A, AAAA, CNAME, MX NAPTR, NS, PTR, SOA,
+   * <p>Google Cloud DNS currently supports records of type A, AAAA, CNAME, MX NAPTR, NS, PTR, SOA,
    * SPF, SRV, TXT.
    *
    * @see <a href="https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types">Cloud DNS
@@ -85,7 +83,7 @@ public class DnsRecord implements Serializable {
     SOA,
     SPF,
     SRV,
-    TXT;
+    TXT
   }
 
   public static class Builder {
@@ -162,11 +160,21 @@ public class DnsRecord implements Serializable {
 
     /**
      * Sets references to the managed zone that this DNS record belongs to.
+     *
+     * todo(mderka): consider if this method is needed; may not be possible when listing records
      */
-    public Builder managedZone(ManagedZoneInfo parent) {
+    Builder managedZone(ManagedZoneInfo parent) {
       checkNotNull(parent);
       this.zoneId = parent.id();
       this.zoneName = parent.name();
+      return this;
+    }
+
+    /**
+     * Sets name reference to the managed zone that this DNS record belongs to.
+     */
+    Builder managedZone(String managedZoneName) {
+      this.zoneName = checkNotNull(managedZoneName);
       return this;
     }
   }
@@ -196,12 +204,12 @@ public class DnsRecord implements Serializable {
    * Returns a list of DNS record stored in this record set.
    */
   public List<String> rrdatas() {
-    return ImmutableList.copyOf(rrdatas);
+    return rrdatas;
   }
 
   /**
-   * Returns the number of seconds that this ResourceRecordSet can be cached by resolvers. This
-   * number is provided by the user.
+   * Returns the number of seconds that this DnsResource can be cached by resolvers. This number is
+   * provided by the user.
    */
   public Integer ttl() {
     return ttl;
@@ -224,9 +232,9 @@ public class DnsRecord implements Serializable {
   }
 
   /**
-   * Returns name of the managed zone that this record belongs to.
+   * Returns id of the managed zone that this record belongs to.
    *
-   * <p> The id of the managed zone is determined by the server when the managed zone is created. It
+   * <p>The id of the managed zone is determined by the server when the managed zone is created. It
    * is a read only value. If this DNS record is not associated with a managed zone, or if the id of
    * the managed zone was not loaded from the cloud service, this returns null.
    */
@@ -241,30 +249,32 @@ public class DnsRecord implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    if (obj instanceof DnsRecord) {
-      DnsRecord other = (DnsRecord) obj;
-      return zoneId == other.zoneId()
-              && zoneName == other.zoneName
-              && this.toRRSet().equals(other.toRRSet());
-    }
-    return false;
+    return (obj instanceof DnsRecord) && Objects.equals(this.toPb(), ((DnsRecord) obj).toPb())
+            && this.zoneId().equals(((DnsRecord) obj).zoneId())
+            && this.zoneName().equals(((DnsRecord) obj).zoneName());
+
   }
 
-  com.google.api.services.dns.model.ResourceRecordSet toRRSet() {
-    com.google.api.services.dns.model.ResourceRecordSet rrset =
+  com.google.api.services.dns.model.ResourceRecordSet toPb() {
+    com.google.api.services.dns.model.ResourceRecordSet pb =
             new com.google.api.services.dns.model.ResourceRecordSet();
-    rrset.setName(name);
-    rrset.setRrdatas(this.rrdatas());
-    rrset.setTtl(ttl);
-    rrset.setType(type == null ? null : type.name());
-    return rrset;
+    pb.setName(this.name());
+    pb.setRrdatas(this.rrdatas());
+    pb.setTtl(this.ttl());
+    pb.setType(this.type() == null ? null : this.type().name());
+    return pb;
   }
 
   @Override
   public String toString() {
-    return "DnsRecord{" + "name=" + name + ", rrdatas=" + rrdatas
-            + ", ttl=" + ttl + ", type=" + type + ", zoneName="
-            + zoneName + ", zoneId=" + zoneId + '}';
+    return MoreObjects.toStringHelper(this)
+            .add("name", name())
+            .add("rrdatas", rrdatas())
+            .add("ttl", ttl())
+            .add("type", type())
+            .add("zoneName", zoneName())
+            .add("zoneId", zoneId())
+            .toString();
   }
 
 }
