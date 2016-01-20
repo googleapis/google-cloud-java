@@ -76,8 +76,8 @@ public class BigQueryException extends BaseServiceException {
    * @throws BigQueryException when {@code ex} was caused by a {@code BigQueryException}
    * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
-  public static BigQueryException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndThrow(ex);
+  static BaseServiceException translateAndThrow(RetryHelperException ex) {
+    BaseServiceException.translateAndPropagateIfPossible(ex);
     throw new BigQueryException(UNKNOWN_CODE, ex.getMessage());
   }
 }

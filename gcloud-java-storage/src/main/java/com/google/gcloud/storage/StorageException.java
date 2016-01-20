@@ -69,8 +69,8 @@ public class StorageException extends BaseServiceException {
    * @throws StorageException when {@code ex} was caused by a {@code StorageException}
    * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
-  public static StorageException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndThrow(ex);
+  static StorageException translateAndThrow(RetryHelperException ex) {
+    BaseServiceException.translateAndPropagateIfPossible(ex);
     throw new StorageException(UNKNOWN_CODE, ex.getMessage());
   }
 }

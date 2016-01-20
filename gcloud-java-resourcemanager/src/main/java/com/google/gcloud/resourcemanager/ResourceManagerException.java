@@ -68,8 +68,8 @@ public class ResourceManagerException extends BaseServiceException {
    * ResourceManagerException}
    * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
-  public static ResourceManagerException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndThrow(ex);
+  static ResourceManagerException translateAndThrow(RetryHelperException ex) {
+    BaseServiceException.translateAndPropagateIfPossible(ex);
     throw new ResourceManagerException(UNKNOWN_CODE, ex.getMessage());
   }
 }

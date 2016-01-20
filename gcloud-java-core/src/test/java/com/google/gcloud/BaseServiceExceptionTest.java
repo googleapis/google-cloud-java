@@ -137,14 +137,12 @@ public class BaseServiceExceptionTest {
   @Test
   public void testTranslateAndThrow() throws Exception {
     BaseServiceException cause = new BaseServiceException(CODE, MESSAGE, REASON, IDEMPOTENT);
-    RetryHelper.RetryHelperException exceptionMock = createMock(RetryHelper.RetryHelperException.class);
+    RetryHelper.RetryHelperException exceptionMock =
+        createMock(RetryHelper.RetryHelperException.class);
     expect(exceptionMock.getCause()).andReturn(cause).times(2);
     replay(exceptionMock);
     try {
-      BaseServiceException ex = BaseServiceException.translateAndThrow(exceptionMock);
-      if (ex != null) {
-        throw ex;
-      }
+      BaseServiceException.translateAndPropagateIfPossible(exceptionMock);
     } catch (BaseServiceException ex) {
       assertEquals(CODE, ex.code());
       assertEquals(MESSAGE, ex.getMessage());

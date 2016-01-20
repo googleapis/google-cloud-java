@@ -63,8 +63,8 @@ public class DatastoreException extends BaseServiceException {
    * @throws DatastoreException when {@code ex} was caused by a {@code DatastoreException}
    * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
-  public static DatastoreException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndThrow(ex);
+  static DatastoreException translateAndThrow(RetryHelperException ex) {
+    BaseServiceException.translateAndPropagateIfPossible(ex);
     throw new DatastoreException(UNKNOWN_CODE, ex.getMessage(), null);
   }
 
