@@ -105,7 +105,7 @@ public class BaseServiceException extends RuntimeException {
   }
 
   public BaseServiceException(int code, String message, String reason, boolean idempotent,
-      Exception cause) {
+      Throwable cause) {
     super(message, cause);
     this.code = code;
     this.reason = reason;

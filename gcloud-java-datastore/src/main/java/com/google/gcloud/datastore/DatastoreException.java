@@ -39,7 +39,7 @@ public class DatastoreException extends BaseServiceException {
       new Error(503, "UNAVAILABLE"));
   private static final long serialVersionUID = 2663750991205874435L;
 
-  public DatastoreException(int code, String message, String reason, Exception cause) {
+  public DatastoreException(int code, String message, String reason, Throwable cause) {
     super(code, message, reason, true, cause);
   }
 
