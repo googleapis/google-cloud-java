@@ -184,14 +184,12 @@ public class BaseServiceException extends RuntimeException {
     return exception.getMessage();
   }
 
-  protected static BaseServiceException translateAndThrow(
-      RetryHelper.RetryHelperException ex) {
+  protected static void translateAndPropagateIfPossible(RetryHelper.RetryHelperException ex) {
     if (ex.getCause() instanceof BaseServiceException) {
       throw (BaseServiceException) ex.getCause();
     }
     if (ex instanceof RetryHelper.RetryInterruptedException) {
       RetryHelper.RetryInterruptedException.propagate();
     }
-    return null;
   }
 }
