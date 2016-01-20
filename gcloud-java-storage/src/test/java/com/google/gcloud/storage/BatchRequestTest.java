@@ -27,6 +27,8 @@ import com.google.gcloud.storage.Storage.BlobGetOption;
 import com.google.gcloud.storage.Storage.BlobSourceOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 
+import org.easymock.EasyMock;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Iterator;
@@ -34,14 +36,25 @@ import java.util.Map.Entry;
 
 public class BatchRequestTest {
 
+  private Storage storage;
+
+  @Before
+  public void setUp() {
+    storage = EasyMock.createMock(Storage.class);
+    EasyMock.expect(storage.options()).andReturn(null).anyTimes();
+    EasyMock.replay(storage);
+  }
+
   @Test
   public void testBatchRequest() {
     BatchRequest request = BatchRequest.builder()
         .delete(BlobId.of("b1", "o1", 1L), BlobSourceOption.generationMatch())
         .delete("b1", "o2", BlobSourceOption.generationMatch(1),
             BlobSourceOption.metagenerationMatch(2))
-        .update(BlobInfo.builder("b2", "o1").build(), BlobTargetOption.predefinedAcl(PUBLIC_READ))
-        .update(BlobInfo.builder("b2", "o2").build())
+        .update(
+            Blob.builder(storage, "b2", "o1").build(),
+            BlobTargetOption.predefinedAcl(PUBLIC_READ))
+        .update(Blob.builder(storage, "b2", "o2").build())
         .get(BlobId.of("b3", "o1", 1L), BlobGetOption.generationMatch())
         .get("b3", "o2", BlobGetOption.generationMatch(1))
         .get("b3", "o3")
@@ -61,15 +74,15 @@ public class BatchRequestTest {
         Iterables.get(delete.getValue(), 1, null));
     assertFalse(deletes.hasNext());
 
-    Iterator<Entry<BlobInfo, Iterable<BlobTargetOption>>> updates = request
-        .toUpdate().entrySet().iterator();
-    Entry<BlobInfo, Iterable<BlobTargetOption>> update = updates.next();
-    assertEquals(BlobInfo.builder("b2", "o1").build(), update.getKey());
+    Iterator<Entry<Blob, Iterable<BlobTargetOption>>> updates =
+        request.toUpdate().entrySet().iterator();
+    Entry<Blob, Iterable<BlobTargetOption>> update = updates.next();
+    assertEquals(Blob.builder(storage, "b2", "o1").build(), update.getKey());
     assertEquals(1, Iterables.size(update.getValue()));
     assertEquals(BlobTargetOption.predefinedAcl(PUBLIC_READ),
         Iterables.getFirst(update.getValue(), null));
     update = updates.next();
-    assertEquals(BlobInfo.builder("b2", "o2").build(), update.getKey());
+    assertEquals(Blob.builder(storage, "b2", "o2").build(), update.getKey());
     assertTrue(Iterables.isEmpty(update.getValue()));
     assertFalse(updates.hasNext());
 
@@ -93,40 +106,40 @@ public class BatchRequestTest {
     BatchRequest request = BatchRequest.builder()
         .delete("b1", "o1")
         .delete("b1", "o2")
-        .update(BlobInfo.builder("b2", "o1").build())
-        .update(BlobInfo.builder("b2", "o2").build())
+        .update(Blob.builder(storage, "b2", "o1").build())
+        .update(Blob.builder(storage, "b2", "o2").build())
         .get("b3", "o1")
         .get("b3", "o2")
         .build();
     BatchRequest requestEquals = BatchRequest.builder()
         .delete("b1", "o1")
         .delete("b1", "o2")
-        .update(BlobInfo.builder("b2", "o1").build())
-        .update(BlobInfo.builder("b2", "o2").build())
+        .update(Blob.builder(storage, "b2", "o1").build())
+        .update(Blob.builder(storage, "b2", "o2").build())
         .get("b3", "o1")
         .get("b3", "o2")
         .build();
     BatchRequest requestNotEquals1 = BatchRequest.builder()
         .delete("b1", "o1")
         .delete("b1", "o3")
-        .update(BlobInfo.builder("b2", "o1").build())
-        .update(BlobInfo.builder("b2", "o2").build())
+        .update(Blob.builder(storage, "b2", "o1").build())
+        .update(Blob.builder(storage, "b2", "o2").build())
         .get("b3", "o1")
         .get("b3", "o2")
         .build();
     BatchRequest requestNotEquals2 = BatchRequest.builder()
         .delete("b1", "o1")
         .delete("b1", "o2")
-        .update(BlobInfo.builder("b2", "o1").build())
-        .update(BlobInfo.builder("b2", "o3").build())
+        .update(Blob.builder(storage, "b2", "o1").build())
+        .update(Blob.builder(storage, "b2", "o3").build())
         .get("b3", "o1")
         .get("b3", "o2")
         .build();
     BatchRequest requestNotEquals3 = BatchRequest.builder()
         .delete("b1", "o1")
         .delete("b1", "o2")
-        .update(BlobInfo.builder("b2", "o1").build())
-        .update(BlobInfo.builder("b2", "o2").build())
+        .update(Blob.builder(storage, "b2", "o1").build())
+        .update(Blob.builder(storage, "b2", "o2").build())
         .get("b3", "o1")
         .get("b3", "o3")
         .build();

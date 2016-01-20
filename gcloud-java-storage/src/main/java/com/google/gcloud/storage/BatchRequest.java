@@ -35,13 +35,13 @@ public final class BatchRequest implements Serializable {
   private static final long serialVersionUID = -1527992265939800345L;
 
   private final Map<BlobId, Iterable<BlobSourceOption>> toDelete;
-  private final Map<BlobInfo, Iterable<BlobTargetOption>> toUpdate;
+  private final Map<Blob, Iterable<BlobTargetOption>> toUpdate;
   private final Map<BlobId, Iterable<BlobGetOption>> toGet;
 
   public static class Builder {
 
     private Map<BlobId, Iterable<BlobSourceOption>> toDelete = new LinkedHashMap<>();
-    private Map<BlobInfo, Iterable<BlobTargetOption>> toUpdate = new LinkedHashMap<>();
+    private Map<Blob, Iterable<BlobTargetOption>> toUpdate = new LinkedHashMap<>();
     private Map<BlobId, Iterable<BlobGetOption>> toGet = new LinkedHashMap<>();
 
     private Builder() {}
@@ -65,8 +65,8 @@ public final class BatchRequest implements Serializable {
     /**
      * Update the given blob.
      */
-    public Builder update(BlobInfo blobInfo, BlobTargetOption... options) {
-      toUpdate.put(blobInfo, Lists.newArrayList(options));
+    public Builder update(Blob blob, BlobTargetOption... options) {
+      toUpdate.put(blob, Lists.newArrayList(options));
       return this;
     }
 
@@ -117,7 +117,7 @@ public final class BatchRequest implements Serializable {
     return toDelete;
   }
 
-  public Map<BlobInfo, Iterable<BlobTargetOption>> toUpdate() {
+  public Map<Blob, Iterable<BlobTargetOption>> toUpdate() {
     return toUpdate;
   }
 

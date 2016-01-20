@@ -22,7 +22,6 @@ import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
@@ -44,21 +43,14 @@ public class ProjectTest {
   private static final Project.State STATE = Project.State.DELETE_REQUESTED;
   private static final Project.ResourceId PARENT = new Project.ResourceId("id", "organization");
   private ResourceManager resourceManager;
+  private ResourceManager serviceMockToBuildProject;
   private Project fullProject;
-  private Project fullProjectFromConstructor;
+  private Project expectedFullProject;
   private Project partialProject;
   private Project unnamedProjectFromList;
 
   private void initializeProjects() {
-    fullProject =
-        Project.builder(resourceManager, PROJECT_ID)
-        .name(NAME)
-        .labels(LABELS)
-        .projectNumber(PROJECT_NUMBER)
-        .createTimeMillis(CREATE_TIME_MILLIS)
-        .state(STATE)
-        .parent(PARENT)
-        .build();
+    fullProject = expectedFullProject.toBuilder().resourceManager(resourceManager).build();
     partialProject = Project.builder(resourceManager, PROJECT_ID).build();
     unnamedProjectFromList = partialProject.toBuilder().name("Unnamed").build();
   }
@@ -66,8 +58,17 @@ public class ProjectTest {
   @Before
   public void setup() {
     resourceManager = createMock(ResourceManager.class);
-    fullProjectFromConstructor = new Project(NAME, PROJECT_ID, LABELS, PROJECT_NUMBER, STATE,
-        CREATE_TIME_MILLIS, PARENT, null, resourceManager);
+    serviceMockToBuildProject = createMock(ResourceManager.class);
+    expect(serviceMockToBuildProject.options()).andReturn(null).anyTimes();
+    replay(serviceMockToBuildProject);
+    expectedFullProject = Project.builder(serviceMockToBuildProject, PROJECT_ID)
+        .name(NAME)
+        .labels(LABELS)
+        .projectNumber(PROJECT_NUMBER)
+        .createTimeMillis(CREATE_TIME_MILLIS)
+        .state(STATE)
+        .parent(PARENT)
+        .build();
     expect(resourceManager.options()).andReturn(null).anyTimes();
   }
 
@@ -137,7 +138,7 @@ public class ProjectTest {
 
   @Test
   public void testCreate() {
-    expect(resourceManager.get(PROJECT_ID)).andReturn(fullProjectFromConstructor);
+    expect(resourceManager.get(PROJECT_ID)).andReturn(expectedFullProject);
     replay(resourceManager);
     initializeProjects();
     Project loadedProject = Project.get(resourceManager, fullProject.projectId());
@@ -146,7 +147,7 @@ public class ProjectTest {
 
   @Test
   public void testGet() {
-    expect(resourceManager.get(PROJECT_ID)).andReturn(fullProjectFromConstructor);
+    expect(resourceManager.get(PROJECT_ID)).andReturn(expectedFullProject);
     replay(resourceManager);
     initializeProjects();
     Project loadedProject = Project.get(resourceManager, fullProject.projectId());
@@ -156,13 +157,12 @@ public class ProjectTest {
   @Test
   public void testReload() {
     Map<String, String> newLabels = ImmutableMap.of("k1", "v1", "k2", "v2", "k3", "v3");
-    Project project = new Project(NAME, PROJECT_ID, newLabels, PROJECT_NUMBER, STATE,
-        CREATE_TIME_MILLIS, PARENT, null, resourceManager);
+    Project project = expectedFullProject.toBuilder().labels(newLabels).build();
     expect(resourceManager.get(PROJECT_ID)).andReturn(project);
     replay(resourceManager);
     initializeProjects();
-    Project newProject = project.reload();
-    assertSame(resourceManager, newProject.resourceManager());
+    Project newProject = fullProject.reload();
+    assertSame(serviceMockToBuildProject, newProject.resourceManager());
     assertEquals(project, newProject);
   }
 
@@ -176,14 +176,10 @@ public class ProjectTest {
 
   @Test
   public void testReloadDeletedProject() {
-    expect(resourceManager.get(PROJECT_ID)).andReturn(fullProjectFromConstructor);
     expect(resourceManager.get(PROJECT_ID)).andReturn(null);
     replay(resourceManager);
     initializeProjects();
-    Project loadedProject = Project.get(resourceManager, fullProject.projectId());
-    assertNotNull(loadedProject);
-    Project reloadedProject = loadedProject.reload();
-    assertNull(reloadedProject);
+    assertNull(fullProject.reload());
   }
 
   @Test
@@ -212,13 +208,12 @@ public class ProjectTest {
   @Test
   public void testReplace() {
     Map<String, String> newLabels = ImmutableMap.of("k1", "v1", "k2", "v2", "k3", "v3");
-    Project expected = new Project(NAME, PROJECT_ID, newLabels, PROJECT_NUMBER, STATE,
-        CREATE_TIME_MILLIS, PARENT, null, resourceManager);
+    Project expected = expectedFullProject.toBuilder().labels(newLabels).build();
     expect(resourceManager.replace(expected)).andReturn(expected);
     replay(resourceManager);
     initializeProjects();
-    Project actual = expected.replace(expected);
-    assertSame(resourceManager, actual.resourceManager());
+    Project actual = fullProject.replace(expected);
+    assertSame(serviceMockToBuildProject, actual.resourceManager());
     compareProjects(expected, actual);
   }
 

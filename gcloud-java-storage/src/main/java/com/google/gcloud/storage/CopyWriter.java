@@ -45,9 +45,11 @@ public class CopyWriter implements Restorable<CopyWriter> {
   private final StorageOptions serviceOptions;
   private final StorageRpc storageRpc;
   private RewriteResponse rewriteResponse;
+  private transient Storage storage;
 
   CopyWriter(StorageOptions serviceOptions, RewriteResponse rewriteResponse) {
     this.serviceOptions = serviceOptions;
+    this.storage = serviceOptions.service();
     this.rewriteResponse = rewriteResponse;
     this.storageRpc = serviceOptions.rpc();
   }
@@ -64,11 +66,11 @@ public class CopyWriter implements Restorable<CopyWriter> {
    *
    * @throws StorageException upon failure
    */
-  public BlobInfo result() {
+  public Blob result() {
     while (!isDone()) {
       copyChunk();
     }
-    return BlobInfo.fromPb(rewriteResponse.result);
+    return Blob.fromPb(storage, rewriteResponse.result);
   }
 
   /**
@@ -119,7 +121,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
         serviceOptions,
         BlobId.fromPb(rewriteResponse.rewriteRequest.source),
         rewriteResponse.rewriteRequest.sourceOptions,
-        BlobInfo.fromPb(rewriteResponse.rewriteRequest.target),
+            Blob.fromPb(storage, rewriteResponse.rewriteRequest.target),
         rewriteResponse.rewriteRequest.targetOptions)
         .blobSize(blobSize())
         .isDone(isDone())
@@ -136,9 +138,9 @@ public class CopyWriter implements Restorable<CopyWriter> {
     private final StorageOptions serviceOptions;
     private final BlobId source;
     private final Map<StorageRpc.Option, ?> sourceOptions;
-    private final BlobInfo target;
+    private final Blob target;
     private final Map<StorageRpc.Option, ?> targetOptions;
-    private final BlobInfo result;
+    private final Blob result;
     private final long blobSize;
     private final boolean isDone;
     private final String rewriteToken;
@@ -164,9 +166,9 @@ public class CopyWriter implements Restorable<CopyWriter> {
       private final StorageOptions serviceOptions;
       private final BlobId source;
       private final Map<StorageRpc.Option, ?> sourceOptions;
-      private final BlobInfo target;
+      private final Blob target;
       private final Map<StorageRpc.Option, ?> targetOptions;
-      private BlobInfo result;
+      private Blob result;
       private long blobSize;
       private boolean isDone;
       private String rewriteToken;
@@ -174,8 +176,8 @@ public class CopyWriter implements Restorable<CopyWriter> {
       private Long megabytesCopiedPerChunk;
 
       private Builder(StorageOptions options, BlobId source,
-          Map<StorageRpc.Option, ?> sourceOptions,
-          BlobInfo target, Map<StorageRpc.Option, ?> targetOptions) {
+          Map<StorageRpc.Option, ?> sourceOptions, Blob target,
+          Map<StorageRpc.Option, ?> targetOptions) {
         this.serviceOptions = options;
         this.source = source;
         this.sourceOptions = sourceOptions;
@@ -183,7 +185,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
         this.targetOptions = targetOptions;
       }
 
-      Builder result(BlobInfo result) {
+      Builder result(Blob result) {
         this.result = result;
         return this;
       }
@@ -219,7 +221,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
     }
 
     static Builder builder(StorageOptions options, BlobId source,
-        Map<StorageRpc.Option, ?> sourceOptions, BlobInfo target,
+        Map<StorageRpc.Option, ?> sourceOptions, Blob target,
         Map<StorageRpc.Option, ?> targetOptions) {
       return new Builder(options, source, sourceOptions, target, targetOptions);
     }

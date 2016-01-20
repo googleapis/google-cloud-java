@@ -84,17 +84,6 @@ public class StorageImplTest {
   private static final String CONTENT_CRC32C = "9N3EPQ==";
   private static final int DEFAULT_CHUNK_SIZE = 2 * 1024 * 1024;
 
-  // BucketInfo objects
-  private static final BucketInfo BUCKET_INFO1 =
-      BucketInfo.builder(BUCKET_NAME1).metageneration(42L).build();
-  private static final BucketInfo BUCKET_INFO2 = BucketInfo.builder(BUCKET_NAME2).build();
-
-  // BlobInfo objects
-  private static final BlobInfo BLOB_INFO1 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME1, 24L)
-      .metageneration(42L).contentType("application/json").md5("md5string").build();
-  private static final BlobInfo BLOB_INFO2 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME2).build();
-  private static final BlobInfo BLOB_INFO3 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME3).build();
-
   // Empty StorageRpc options
   private static final Map<StorageRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
 
@@ -103,9 +92,7 @@ public class StorageImplTest {
       Storage.BucketTargetOption.metagenerationMatch();
   private static final Storage.BucketTargetOption BUCKET_TARGET_PREDEFINED_ACL =
       Storage.BucketTargetOption.predefinedAcl(Storage.PredefinedAcl.PRIVATE);
-  private static final Map<StorageRpc.Option, ?> BUCKET_TARGET_OPTIONS = ImmutableMap.of(
-      StorageRpc.Option.IF_METAGENERATION_MATCH, BUCKET_INFO1.metageneration(),
-      StorageRpc.Option.PREDEFINED_ACL, BUCKET_TARGET_PREDEFINED_ACL.value());
+  private static Map<StorageRpc.Option, ?> bucketTargetOptions;
 
   // Blob target options (create, update, compose)
   private static final Storage.BlobTargetOption BLOB_TARGET_GENERATION =
@@ -116,16 +103,9 @@ public class StorageImplTest {
       Storage.BlobTargetOption.doesNotExist();
   private static final Storage.BlobTargetOption BLOB_TARGET_PREDEFINED_ACL =
       Storage.BlobTargetOption.predefinedAcl(Storage.PredefinedAcl.PRIVATE);
-  private static final Map<StorageRpc.Option, ?> BLOB_TARGET_OPTIONS_CREATE = ImmutableMap.of(
-      StorageRpc.Option.IF_METAGENERATION_MATCH, BLOB_INFO1.metageneration(),
-      StorageRpc.Option.IF_GENERATION_MATCH, 0L,
-      StorageRpc.Option.PREDEFINED_ACL, BUCKET_TARGET_PREDEFINED_ACL.value());
-  private static final Map<StorageRpc.Option, ?> BLOB_TARGET_OPTIONS_UPDATE = ImmutableMap.of(
-      StorageRpc.Option.IF_METAGENERATION_MATCH, BLOB_INFO1.metageneration(),
-      StorageRpc.Option.PREDEFINED_ACL, BUCKET_TARGET_PREDEFINED_ACL.value());
-  private static final Map<StorageRpc.Option, ?> BLOB_TARGET_OPTIONS_COMPOSE = ImmutableMap.of(
-      StorageRpc.Option.IF_GENERATION_MATCH, BLOB_INFO1.generation(),
-      StorageRpc.Option.IF_METAGENERATION_MATCH, BLOB_INFO1.metageneration());
+  private static Map<StorageRpc.Option, ?> blobTargetOptionsCreate;
+  private static Map<StorageRpc.Option, ?> blobTargetOptionsUpdate;
+  private static Map<StorageRpc.Option, ?> blobTargetOptionsCompose;
 
   // Blob write options (create, writer)
   private static final Storage.BlobWriteOption BLOB_WRITE_METAGENERATION =
@@ -140,45 +120,31 @@ public class StorageImplTest {
       Storage.BlobWriteOption.crc32cMatch();
 
   // Bucket get/source options
-  private static final Storage.BucketSourceOption BUCKET_SOURCE_METAGENERATION =
-      Storage.BucketSourceOption.metagenerationMatch(BUCKET_INFO1.metageneration());
-  private static final Map<StorageRpc.Option, ?> BUCKET_SOURCE_OPTIONS = ImmutableMap.of(
-      StorageRpc.Option.IF_METAGENERATION_MATCH, BUCKET_SOURCE_METAGENERATION.value());
-  private static final Storage.BucketGetOption BUCKET_GET_METAGENERATION =
-      Storage.BucketGetOption.metagenerationMatch(BUCKET_INFO1.metageneration());
+  private static Storage.BucketSourceOption bucketSourceMetageneration;
+  private static Map<StorageRpc.Option, ?> bucketSourceOptions;
+  private static Storage.BucketGetOption bucketGetMetageneration;
   private static final Storage.BucketGetOption BUCKET_GET_FIELDS =
       Storage.BucketGetOption.fields(Storage.BucketField.LOCATION, Storage.BucketField.ACL);
   private static final Storage.BucketGetOption BUCKET_GET_EMPTY_FIELDS =
       Storage.BucketGetOption.fields();
-  private static final Map<StorageRpc.Option, ?> BUCKET_GET_OPTIONS = ImmutableMap.of(
-      StorageRpc.Option.IF_METAGENERATION_MATCH, BUCKET_SOURCE_METAGENERATION.value());
+  private static Map<StorageRpc.Option, ?> bucketGetOptions;
 
   // Blob get/source options
-  private static final Storage.BlobGetOption BLOB_GET_METAGENERATION =
-      Storage.BlobGetOption.metagenerationMatch(BLOB_INFO1.metageneration());
-  private static final Storage.BlobGetOption BLOB_GET_GENERATION =
-      Storage.BlobGetOption.generationMatch(BLOB_INFO1.generation());
+  private static Storage.BlobGetOption blobGetMetageneration;
+  private static Storage.BlobGetOption blobGetGeneration;
   private static final Storage.BlobGetOption BLOB_GET_GENERATION_FROM_BLOB_ID =
       Storage.BlobGetOption.generationMatch();
   private static final Storage.BlobGetOption BLOB_GET_FIELDS =
       Storage.BlobGetOption.fields(Storage.BlobField.CONTENT_TYPE, Storage.BlobField.CRC32C);
   private static final Storage.BlobGetOption BLOB_GET_EMPTY_FIELDS =
       Storage.BlobGetOption.fields();
-  private static final Map<StorageRpc.Option, ?> BLOB_GET_OPTIONS = ImmutableMap.of(
-      StorageRpc.Option.IF_METAGENERATION_MATCH, BLOB_GET_METAGENERATION.value(),
-      StorageRpc.Option.IF_GENERATION_MATCH, BLOB_GET_GENERATION.value());
-  private static final Storage.BlobSourceOption BLOB_SOURCE_METAGENERATION =
-      Storage.BlobSourceOption.metagenerationMatch(BLOB_INFO1.metageneration());
-  private static final Storage.BlobSourceOption BLOB_SOURCE_GENERATION =
-      Storage.BlobSourceOption.generationMatch(BLOB_INFO1.generation());
+  private static Map<StorageRpc.Option, ?> blobGetOptions;
+  private static Storage.BlobSourceOption blobSourceMetageneration;
+  private static Storage.BlobSourceOption blobSourceGeneration;
   private static final Storage.BlobSourceOption BLOB_SOURCE_GENERATION_FROM_BLOB_ID =
       Storage.BlobSourceOption.generationMatch();
-  private static final Map<StorageRpc.Option, ?> BLOB_SOURCE_OPTIONS = ImmutableMap.of(
-      StorageRpc.Option.IF_METAGENERATION_MATCH, BLOB_SOURCE_METAGENERATION.value(),
-      StorageRpc.Option.IF_GENERATION_MATCH, BLOB_SOURCE_GENERATION.value());
-  private static final Map<StorageRpc.Option, ?> BLOB_SOURCE_OPTIONS_COPY = ImmutableMap.of(
-      StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH, BLOB_SOURCE_METAGENERATION.value(),
-      StorageRpc.Option.IF_SOURCE_GENERATION_MATCH, BLOB_SOURCE_GENERATION.value());
+  private static Map<StorageRpc.Option, ?> blobSourceOptions;
+  private static Map<StorageRpc.Option, ?> blobSourceOptionsCopy;
 
   // Bucket list options
   private static final Storage.BucketListOption BUCKET_LIST_MAX_RESULT =
@@ -205,6 +171,44 @@ public class StorageImplTest {
   private static final Map<StorageRpc.Option, ?> BLOB_LIST_OPTIONS = ImmutableMap.of(
       StorageRpc.Option.MAX_RESULTS, BLOB_LIST_MAX_RESULT.value(),
       StorageRpc.Option.PREFIX, BLOB_LIST_PREFIX.value());
+
+  private void initializeGenerationOptions() {
+    bucketTargetOptions =
+        ImmutableMap.of(StorageRpc.Option.IF_METAGENERATION_MATCH, bucket1.metageneration(),
+            StorageRpc.Option.PREDEFINED_ACL, BUCKET_TARGET_PREDEFINED_ACL.value());
+    blobTargetOptionsCreate = ImmutableMap.of(StorageRpc.Option.IF_METAGENERATION_MATCH,
+        blob1.metageneration(), StorageRpc.Option.IF_GENERATION_MATCH, 0L,
+        StorageRpc.Option.PREDEFINED_ACL, BUCKET_TARGET_PREDEFINED_ACL.value());
+    blobTargetOptionsUpdate =
+        ImmutableMap.of(StorageRpc.Option.IF_METAGENERATION_MATCH, blob1.metageneration(),
+            StorageRpc.Option.PREDEFINED_ACL, BUCKET_TARGET_PREDEFINED_ACL.value());
+    blobTargetOptionsCompose =
+        ImmutableMap.of(StorageRpc.Option.IF_GENERATION_MATCH, blob1.generation(),
+            StorageRpc.Option.IF_METAGENERATION_MATCH, blob1.metageneration());
+    bucketSourceMetageneration =
+        Storage.BucketSourceOption.metagenerationMatch(bucket1.metageneration());
+    bucketSourceOptions = ImmutableMap.of(
+        StorageRpc.Option.IF_METAGENERATION_MATCH, bucketSourceMetageneration.value());
+    bucketGetMetageneration =
+        Storage.BucketGetOption.metagenerationMatch(bucket1.metageneration());
+    bucketGetOptions = ImmutableMap.of(
+        StorageRpc.Option.IF_METAGENERATION_MATCH, bucketSourceMetageneration.value());
+
+    blobGetMetageneration = Storage.BlobGetOption.metagenerationMatch(blob1.metageneration());
+    blobGetGeneration = Storage.BlobGetOption.generationMatch(blob1.generation());
+    blobGetOptions =
+        ImmutableMap.of(StorageRpc.Option.IF_METAGENERATION_MATCH, blobGetMetageneration.value(),
+            StorageRpc.Option.IF_GENERATION_MATCH, blobGetGeneration.value());
+    blobSourceMetageneration =
+        Storage.BlobSourceOption.metagenerationMatch(blob1.metageneration());
+    blobSourceGeneration = Storage.BlobSourceOption.generationMatch(blob1.generation());
+    blobSourceOptions =
+        ImmutableMap.of(StorageRpc.Option.IF_METAGENERATION_MATCH, blobSourceMetageneration.value(),
+            StorageRpc.Option.IF_GENERATION_MATCH, blobSourceGeneration.value());
+    blobSourceOptionsCopy = ImmutableMap.of(StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH,
+        blobSourceMetageneration.value(), StorageRpc.Option.IF_SOURCE_GENERATION_MATCH,
+        blobSourceGeneration.value());
+  }
 
   private static final String PRIVATE_KEY_STRING = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoG"
           + "BAL2xolH1zrISQ8+GzOV29BNjjzq4/HIP8Psd1+cZb81vDklSF+95wB250MSE0BDc81pvIMwj5OmIfLg1NY6uB"
@@ -237,6 +241,19 @@ public class StorageImplTest {
   private StorageRpcFactory rpcFactoryMock;
   private StorageRpc storageRpcMock;
   private Storage storage;
+  private Storage mockStorage;
+
+
+  // Bucket objects
+  private Bucket bucket1;
+  private Bucket expectedBucket1;
+  private Bucket bucket2;
+
+  // Blob objects
+  private Blob blob1;
+  private Blob expectedBlob1;
+  private Blob blob2;
+  private Blob blob3;
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -257,7 +274,8 @@ public class StorageImplTest {
     rpcFactoryMock = EasyMock.createMock(StorageRpcFactory.class);
     storageRpcMock = EasyMock.createMock(StorageRpc.class);
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(StorageOptions.class)))
-        .andReturn(storageRpcMock);
+        .andReturn(storageRpcMock)
+        .anyTimes();
     EasyMock.replay(rpcFactoryMock);
     options = StorageOptions.builder()
         .projectId("projectId")
@@ -265,6 +283,30 @@ public class StorageImplTest {
         .serviceRpcFactory(rpcFactoryMock)
         .retryParams(RetryParams.noRetries())
         .build();
+    mockStorage = EasyMock.createMock(Storage.class);
+    EasyMock.expect(mockStorage.options()).andReturn(options).anyTimes();
+    EasyMock.replay(mockStorage);
+    expectedBucket1 = Bucket.builder(mockStorage, BUCKET_NAME1).metageneration(42L).build();
+    bucket2 = Bucket.builder(mockStorage, BUCKET_NAME2).build();
+    expectedBlob1 =
+        Blob.builder(mockStorage, BUCKET_NAME1, BLOB_NAME1, 24L)
+        .metageneration(42L)
+            .contentType("application/json")
+            .md5("md5string")
+        .build();
+    blob2 = Blob.builder(mockStorage, BUCKET_NAME1, BLOB_NAME2).build();
+    blob3 = Blob.builder(mockStorage, BUCKET_NAME1, BLOB_NAME3).build();
+  }
+
+  private void initializeObjectsWithServiceDependencies() {
+    storage = options.service();
+    bucket1 = Bucket.builder(storage, BUCKET_NAME1).metageneration(42L).build();
+    blob1 = Blob.builder(storage, BUCKET_NAME1, BLOB_NAME1, 24L)
+        .metageneration(42L)
+        .contentType("application/json")
+        .md5("md5string")
+        .build();
+    initializeGenerationOptions();
   }
 
   @After
@@ -281,37 +323,40 @@ public class StorageImplTest {
 
   @Test
   public void testCreateBucket() {
-    EasyMock.expect(storageRpcMock.create(BUCKET_INFO1.toPb(), EMPTY_RPC_OPTIONS))
-        .andReturn(BUCKET_INFO1.toPb());
+    EasyMock.expect(storageRpcMock.create(expectedBucket1.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(expectedBucket1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BucketInfo bucket = storage.create(BUCKET_INFO1);
-    assertEquals(BUCKET_INFO1.toPb(), bucket.toPb());
+    initializeObjectsWithServiceDependencies();
+    Bucket bucket = storage.create(bucket1);
+    assertEquals(bucket1.toPb(), bucket.toPb());
   }
 
   @Test
   public void testCreateBucketWithOptions() {
-    EasyMock.expect(storageRpcMock.create(BUCKET_INFO1.toPb(), BUCKET_TARGET_OPTIONS))
-        .andReturn(BUCKET_INFO1.toPb());
+    EasyMock.expect(storageRpcMock.create(expectedBucket1.toPb(), bucketTargetOptions))
+        .andReturn(expectedBucket1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BucketInfo bucket =
-        storage.create(BUCKET_INFO1, BUCKET_TARGET_METAGENERATION, BUCKET_TARGET_PREDEFINED_ACL);
-    assertEquals(BUCKET_INFO1, bucket);
+    initializeObjectsWithServiceDependencies();
+    Bucket bucket =
+        storage.create(bucket1, BUCKET_TARGET_METAGENERATION, BUCKET_TARGET_PREDEFINED_ACL);
+    assertEquals(bucket1, bucket);
   }
 
   @Test
   public void testCreateBlob() throws IOException {
     Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
-    EasyMock.expect(storageRpcMock.create(
-        EasyMock.eq(BLOB_INFO1.toBuilder().md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build().toPb()),
+    EasyMock.expect(storageRpcMock.create(EasyMock.eq(expectedBlob1.toBuilder()
+                                                  .md5(CONTENT_MD5)
+                                                  .crc32c(CONTENT_CRC32C)
+                                                  .build()
+                                                  .toPb()),
         EasyMock.capture(capturedStream),
         EasyMock.eq(EMPTY_RPC_OPTIONS)))
-        .andReturn(BLOB_INFO1.toPb());
+        .andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob = storage.create(BLOB_INFO1, BLOB_CONTENT);
-    assertEquals(BLOB_INFO1, blob);
+    initializeObjectsWithServiceDependencies();
+    Blob blob = storage.create(blob1, BLOB_CONTENT);
+    assertEquals(blob1, blob);
     ByteArrayInputStream byteStream = capturedStream.getValue();
     byte[] streamBytes = new byte[BLOB_CONTENT.length];
     assertEquals(BLOB_CONTENT.length, byteStream.read(streamBytes));
@@ -323,18 +368,18 @@ public class StorageImplTest {
   public void testCreateEmptyBlob() throws IOException {
     Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
     EasyMock.expect(storageRpcMock.create(
-        EasyMock.eq(BLOB_INFO1.toBuilder()
+EasyMock.eq(expectedBlob1.toBuilder()
             .md5("1B2M2Y8AsgTpgAmY7PhCfg==")
             .crc32c("AAAAAA==")
             .build()
             .toPb()),
         EasyMock.capture(capturedStream),
         EasyMock.eq(EMPTY_RPC_OPTIONS)))
-        .andReturn(BLOB_INFO1.toPb());
+        .andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob = storage.create(BLOB_INFO1);
-    assertEquals(BLOB_INFO1, blob);
+    initializeObjectsWithServiceDependencies();
+    Blob blob = storage.create(blob1);
+    assertEquals(blob1, blob);
     ByteArrayInputStream byteStream = capturedStream.getValue();
     byte[] streamBytes = new byte[BLOB_CONTENT.length];
     assertEquals(-1, byteStream.read(streamBytes));
@@ -343,21 +388,18 @@ public class StorageImplTest {
   @Test
   public void testCreateBlobWithOptions() throws IOException {
     Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
-    EasyMock.expect(storageRpcMock.create(
-        EasyMock.eq(BLOB_INFO1.toBuilder()
-            .md5(CONTENT_MD5)
-            .crc32c(CONTENT_CRC32C)
-            .build()
-            .toPb()),
-        EasyMock.capture(capturedStream),
-        EasyMock.eq(BLOB_TARGET_OPTIONS_CREATE)))
-        .andReturn(BLOB_INFO1.toPb());
+    EasyMock
+        .expect(storageRpcMock.create(
+            EasyMock.eq(
+                expectedBlob1.toBuilder().md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build().toPb()),
+            EasyMock.capture(capturedStream), EasyMock.eq(blobTargetOptionsCreate)))
+        .andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob =
-        storage.create(BLOB_INFO1, BLOB_CONTENT, BLOB_TARGET_METAGENERATION, BLOB_TARGET_NOT_EXIST,
+    initializeObjectsWithServiceDependencies();
+    Blob blob =
+        storage.create(blob1, BLOB_CONTENT, BLOB_TARGET_METAGENERATION, BLOB_TARGET_NOT_EXIST,
             BLOB_TARGET_PREDEFINED_ACL);
-    assertEquals(BLOB_INFO1, blob);
+    assertEquals(blob1, blob);
     ByteArrayInputStream byteStream = capturedStream.getValue();
     byte[] streamBytes = new byte[BLOB_CONTENT.length];
     assertEquals(BLOB_CONTENT.length, byteStream.read(streamBytes));
@@ -368,161 +410,169 @@ public class StorageImplTest {
   @Test
   public void testCreateBlobFromStream() {
     ByteArrayInputStream fileStream = new ByteArrayInputStream(BLOB_CONTENT);
-    BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
-    BlobInfo infoWithHashes = infoBuilder.md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build();
-    BlobInfo infoWithoutHashes = infoBuilder.md5(null).crc32c(null).build();
-    EasyMock.expect(storageRpcMock.create(infoWithoutHashes.toPb(), fileStream, EMPTY_RPC_OPTIONS))
-        .andReturn(BLOB_INFO1.toPb());
+    Blob.Builder blobBuilder = expectedBlob1.toBuilder();
+    Blob blobWithHashes = blobBuilder.md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build();
+    Blob blobWithoutHashes = blobBuilder.md5(null).crc32c(null).build();
+    EasyMock.expect(storageRpcMock.create(blobWithoutHashes.toPb(), fileStream, EMPTY_RPC_OPTIONS))
+        .andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob = storage.create(infoWithHashes, fileStream);
-    assertEquals(BLOB_INFO1, blob);
+    initializeObjectsWithServiceDependencies();
+    Blob blob = storage.create(blobWithHashes, fileStream);
+    assertEquals(blob1, blob);
   }
 
   @Test
   public void testGetBucket() {
-    EasyMock.expect(storageRpcMock.get(BucketInfo.of(BUCKET_NAME1).toPb(), EMPTY_RPC_OPTIONS))
-        .andReturn(BUCKET_INFO1.toPb());
+    EasyMock
+        .expect(storageRpcMock.get(Bucket.of(mockStorage, BUCKET_NAME1).toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(expectedBucket1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BucketInfo bucket = storage.get(BUCKET_NAME1);
-    assertEquals(BUCKET_INFO1, bucket);
+    initializeObjectsWithServiceDependencies();
+    Bucket bucket = storage.get(BUCKET_NAME1);
+    assertEquals(bucket1, bucket);
   }
 
   @Test
   public void testGetBucketWithOptions() {
-    EasyMock.expect(storageRpcMock.get(BucketInfo.of(BUCKET_NAME1).toPb(), BUCKET_GET_OPTIONS))
-        .andReturn(BUCKET_INFO1.toPb());
+    EasyMock
+        .expect(
+storageRpcMock.get(Bucket.of(mockStorage, BUCKET_NAME1).toPb(), bucketGetOptions))
+        .andReturn(expectedBucket1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BucketInfo bucket = storage.get(BUCKET_NAME1, BUCKET_GET_METAGENERATION);
-    assertEquals(BUCKET_INFO1, bucket);
+    initializeObjectsWithServiceDependencies();
+    Bucket bucket = storage.get(BUCKET_NAME1, bucketGetMetageneration);
+    assertEquals(bucket1, bucket);
   }
 
   @Test
   public void testGetBucketWithSelectedFields() {
     Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(storageRpcMock.get(EasyMock.eq(BucketInfo.of(BUCKET_NAME1).toPb()),
-        EasyMock.capture(capturedOptions))).andReturn(BUCKET_INFO1.toPb());
+    EasyMock
+        .expect(storageRpcMock.get(
+                        EasyMock.eq(Bucket.of(mockStorage, BUCKET_NAME1).toPb()),
+                        EasyMock.capture(capturedOptions))).andReturn(expectedBucket1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BucketInfo bucket = storage.get(BUCKET_NAME1, BUCKET_GET_METAGENERATION, BUCKET_GET_FIELDS);
-    assertEquals(BUCKET_GET_METAGENERATION.value(),
-        capturedOptions.getValue().get(BUCKET_GET_METAGENERATION.rpcOption()));
+    initializeObjectsWithServiceDependencies();
+    Bucket bucket = storage.get(BUCKET_NAME1, bucketGetMetageneration, BUCKET_GET_FIELDS);
+    assertEquals(
+        bucketGetMetageneration.value(),
+        capturedOptions.getValue().get(bucketGetMetageneration.rpcOption()));
     String selector = (String) capturedOptions.getValue().get(BLOB_GET_FIELDS.rpcOption());
     assertTrue(selector.contains("name"));
     assertTrue(selector.contains("location"));
     assertTrue(selector.contains("acl"));
     assertEquals(17, selector.length());
-    assertEquals(BUCKET_INFO1.name(), bucket.name());
+    assertEquals(bucket1.name(), bucket.name());
   }
 
   @Test
   public void testGetBucketWithEmptyFields() {
     Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(storageRpcMock.get(EasyMock.eq(BucketInfo.of(BUCKET_NAME1).toPb()),
-        EasyMock.capture(capturedOptions))).andReturn(BUCKET_INFO1.toPb());
+    EasyMock
+        .expect(storageRpcMock.get(
+                        EasyMock.eq(Bucket.of(mockStorage, BUCKET_NAME1).toPb()),
+                        EasyMock.capture(capturedOptions))).andReturn(expectedBucket1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BucketInfo bucket = storage.get(BUCKET_NAME1, BUCKET_GET_METAGENERATION,
+    initializeObjectsWithServiceDependencies();
+    Bucket bucket = storage.get(BUCKET_NAME1, bucketGetMetageneration,
         BUCKET_GET_EMPTY_FIELDS);
-    assertEquals(BUCKET_GET_METAGENERATION.value(),
-        capturedOptions.getValue().get(BUCKET_GET_METAGENERATION.rpcOption()));
+    assertEquals(
+        bucketGetMetageneration.value(),
+        capturedOptions.getValue().get(bucketGetMetageneration.rpcOption()));
     String selector = (String) capturedOptions.getValue().get(BLOB_GET_FIELDS.rpcOption());
     assertTrue(selector.contains("name"));
     assertEquals(4, selector.length());
-    assertEquals(BUCKET_INFO1.name(), bucket.name());
+    assertEquals(bucket1.name(), bucket.name());
   }
 
   @Test
   public void testGetBlob() {
     EasyMock.expect(
         storageRpcMock.get(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), EMPTY_RPC_OPTIONS))
-        .andReturn(BLOB_INFO1.toPb());
+        .andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob = storage.get(BUCKET_NAME1, BLOB_NAME1);
-    assertEquals(BLOB_INFO1, blob);
+    initializeObjectsWithServiceDependencies();
+    Blob blob = storage.get(BUCKET_NAME1, BLOB_NAME1);
+    assertEquals(blob1, blob);
   }
 
   @Test
   public void testGetBlobWithOptions() {
-    EasyMock.expect(
-        storageRpcMock.get(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), BLOB_GET_OPTIONS))
-        .andReturn(BLOB_INFO1.toPb());
+    EasyMock.expect(storageRpcMock.get(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), blobGetOptions))
+        .andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob =
-        storage.get(BUCKET_NAME1, BLOB_NAME1, BLOB_GET_METAGENERATION, BLOB_GET_GENERATION);
-    assertEquals(BLOB_INFO1, blob);
+    initializeObjectsWithServiceDependencies();
+    Blob blob = storage.get(BUCKET_NAME1, BLOB_NAME1, blobGetMetageneration, blobGetGeneration);
+    assertEquals(blob1, blob);
   }
 
   @Test
   public void testGetBlobWithOptionsFromBlobId() {
-    EasyMock.expect(
-        storageRpcMock.get(BLOB_INFO1.blobId().toPb(), BLOB_GET_OPTIONS))
-        .andReturn(BLOB_INFO1.toPb());
+    EasyMock.expect(storageRpcMock.get(expectedBlob1.blobId().toPb(), blobGetOptions))
+        .andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob =
-        storage.get(BLOB_INFO1.blobId(), BLOB_GET_METAGENERATION, BLOB_GET_GENERATION_FROM_BLOB_ID);
-    assertEquals(BLOB_INFO1, blob);
+    initializeObjectsWithServiceDependencies();
+    Blob blob =
+        storage.get(blob1.blobId(), blobGetMetageneration, BLOB_GET_GENERATION_FROM_BLOB_ID);
+    assertEquals(blob1, blob);
   }
 
   @Test
   public void testGetBlobWithSelectedFields() {
     Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(storageRpcMock.get(EasyMock.eq(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb()),
-        EasyMock.capture(capturedOptions))).andReturn(BLOB_INFO1.toPb());
+                        EasyMock.capture(capturedOptions))).andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob = storage.get(BUCKET_NAME1, BLOB_NAME1, BLOB_GET_METAGENERATION,
-        BLOB_GET_GENERATION, BLOB_GET_FIELDS);
-    assertEquals(BLOB_GET_METAGENERATION.value(),
-        capturedOptions.getValue().get(BLOB_GET_METAGENERATION.rpcOption()));
-    assertEquals(BLOB_GET_GENERATION.value(),
-        capturedOptions.getValue().get(BLOB_GET_GENERATION.rpcOption()));
+    initializeObjectsWithServiceDependencies();
+    Blob blob = storage.get(
+        BUCKET_NAME1, BLOB_NAME1, blobGetMetageneration, blobGetGeneration, BLOB_GET_FIELDS);
+    assertEquals(
+        blobGetMetageneration.value(),
+        capturedOptions.getValue().get(blobGetMetageneration.rpcOption()));
+    assertEquals(
+        blobGetGeneration.value(), capturedOptions.getValue().get(blobGetGeneration.rpcOption()));
     String selector = (String) capturedOptions.getValue().get(BLOB_GET_FIELDS.rpcOption());
     assertTrue(selector.contains("bucket"));
     assertTrue(selector.contains("name"));
     assertTrue(selector.contains("contentType"));
     assertTrue(selector.contains("crc32c"));
     assertEquals(30, selector.length());
-    assertEquals(BLOB_INFO1, blob);
+    assertEquals(blob1, blob);
   }
 
   @Test
   public void testGetBlobWithEmptyFields() {
     Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(storageRpcMock.get(EasyMock.eq(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb()),
-        EasyMock.capture(capturedOptions))).andReturn(BLOB_INFO1.toPb());
+                        EasyMock.capture(capturedOptions))).andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob = storage.get(BUCKET_NAME1, BLOB_NAME1, BLOB_GET_METAGENERATION,
-        BLOB_GET_GENERATION, BLOB_GET_EMPTY_FIELDS);
-    assertEquals(BLOB_GET_METAGENERATION.value(),
-        capturedOptions.getValue().get(BLOB_GET_METAGENERATION.rpcOption()));
-    assertEquals(BLOB_GET_GENERATION.value(),
-        capturedOptions.getValue().get(BLOB_GET_GENERATION.rpcOption()));
+    initializeObjectsWithServiceDependencies();
+    Blob blob = storage.get(
+        BUCKET_NAME1, BLOB_NAME1, blobGetMetageneration, blobGetGeneration, BLOB_GET_EMPTY_FIELDS);
+    assertEquals(
+        blobGetMetageneration.value(),
+        capturedOptions.getValue().get(blobGetMetageneration.rpcOption()));
+    assertEquals(
+        blobGetGeneration.value(), capturedOptions.getValue().get(blobGetGeneration.rpcOption()));
     String selector = (String) capturedOptions.getValue().get(BLOB_GET_FIELDS.rpcOption());
     assertTrue(selector.contains("bucket"));
     assertTrue(selector.contains("name"));
     assertEquals(11, selector.length());
-    assertEquals(BLOB_INFO1, blob);
+    assertEquals(blob1, blob);
   }
 
   @Test
   public void testListBuckets() {
     String cursor = "cursor";
-    ImmutableList<BucketInfo> bucketList = ImmutableList.of(BUCKET_INFO1, BUCKET_INFO2);
+    ImmutableList<Bucket> bucketList = ImmutableList.of(expectedBucket1, bucket2);
     Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result =
-        Tuple.of(cursor, Iterables.transform(bucketList, BucketInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(bucketList, Bucket.TO_PB_FUNCTION));
     EasyMock.expect(storageRpcMock.list(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    Page<BucketInfo> page = storage.list();
+    initializeObjectsWithServiceDependencies();
+    Page<Bucket> page = storage.list();
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), BucketInfo.class));
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
   }
 
   @Test
@@ -530,38 +580,37 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.list(EMPTY_RPC_OPTIONS)).andReturn(
         Tuple.<String, Iterable<com.google.api.services.storage.model.Bucket>>of(null, null));
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    Page<BucketInfo> page = storage.list();
+    initializeObjectsWithServiceDependencies();
+    Page<Bucket> page = storage.list();
     assertNull(page.nextPageCursor());
-    assertArrayEquals(ImmutableList.of().toArray(),
-        Iterables.toArray(page.values(), BucketInfo.class));
+    assertArrayEquals(ImmutableList.of().toArray(), Iterables.toArray(page.values(), Bucket.class));
   }
 
   @Test
   public void testListBucketsWithOptions() {
     String cursor = "cursor";
-    ImmutableList<BucketInfo> bucketList = ImmutableList.of(BUCKET_INFO1, BUCKET_INFO2);
+    ImmutableList<Bucket> bucketList = ImmutableList.of(expectedBucket1, bucket2);
     Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result =
-        Tuple.of(cursor, Iterables.transform(bucketList, BucketInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(bucketList, Bucket.TO_PB_FUNCTION));
     EasyMock.expect(storageRpcMock.list(BUCKET_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    Page<BucketInfo> page = storage.list(BUCKET_LIST_MAX_RESULT, BUCKET_LIST_PREFIX);
+    initializeObjectsWithServiceDependencies();
+    Page<Bucket> page = storage.list(BUCKET_LIST_MAX_RESULT, BUCKET_LIST_PREFIX);
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), BucketInfo.class));
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
   }
 
   @Test
   public void testListBucketsWithSelectedFields() {
     String cursor = "cursor";
     Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    ImmutableList<BucketInfo> bucketList = ImmutableList.of(BUCKET_INFO1, BUCKET_INFO2);
+    ImmutableList<Bucket> bucketList = ImmutableList.of(expectedBucket1, bucket2);
     Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result =
-        Tuple.of(cursor, Iterables.transform(bucketList, BucketInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(bucketList, Bucket.TO_PB_FUNCTION));
     EasyMock.expect(storageRpcMock.list(EasyMock.capture(capturedOptions))).andReturn(result);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    Page<BucketInfo> page = storage.list(BUCKET_LIST_FIELDS);
+    initializeObjectsWithServiceDependencies();
+    Page<Bucket> page = storage.list(BUCKET_LIST_FIELDS);
     String selector = (String) capturedOptions.getValue().get(BLOB_LIST_FIELDS.rpcOption());
     assertTrue(selector.contains("items"));
     assertTrue(selector.contains("name"));
@@ -569,40 +618,40 @@ public class StorageImplTest {
     assertTrue(selector.contains("location"));
     assertEquals(24, selector.length());
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), BucketInfo.class));
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
   }
 
   @Test
   public void testListBucketsWithEmptyFields() {
     String cursor = "cursor";
     Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    ImmutableList<BucketInfo> bucketList = ImmutableList.of(BUCKET_INFO1, BUCKET_INFO2);
+    ImmutableList<Bucket> bucketList = ImmutableList.of(expectedBucket1, bucket2);
     Tuple<String, Iterable<com.google.api.services.storage.model.Bucket>> result =
-        Tuple.of(cursor, Iterables.transform(bucketList, BucketInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(bucketList, Bucket.TO_PB_FUNCTION));
     EasyMock.expect(storageRpcMock.list(EasyMock.capture(capturedOptions))).andReturn(result);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    Page<BucketInfo> page = storage.list(BUCKET_LIST_EMPTY_FIELDS);
+    initializeObjectsWithServiceDependencies();
+    Page<Bucket> page = storage.list(BUCKET_LIST_EMPTY_FIELDS);
     String selector = (String) capturedOptions.getValue().get(BLOB_LIST_FIELDS.rpcOption());
     assertTrue(selector.contains("items"));
     assertTrue(selector.contains("name"));
     assertEquals(11, selector.length());
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), BucketInfo.class));
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
   }
 
   @Test
   public void testListBlobs() {
     String cursor = "cursor";
-    ImmutableList<BlobInfo> blobList = ImmutableList.of(BLOB_INFO1, BLOB_INFO2);
+    ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, blob2);
     Tuple<String, Iterable<com.google.api.services.storage.model.StorageObject>> result =
-        Tuple.of(cursor, Iterables.transform(blobList, BlobInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(blobList, Blob.TO_PB_FUNCTION));
     EasyMock.expect(storageRpcMock.list(BUCKET_NAME1, EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    Page<BlobInfo> page = storage.list(BUCKET_NAME1);
+    initializeObjectsWithServiceDependencies();
+    Page<Blob> page = storage.list(BUCKET_NAME1);
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), BlobInfo.class));
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
   }
 
   @Test
@@ -611,40 +660,39 @@ public class StorageImplTest {
         .andReturn(Tuple.<String, Iterable<com.google.api.services.storage.model.StorageObject>>of(
             null, null));
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    Page<BlobInfo> page = storage.list(BUCKET_NAME1);
+    initializeObjectsWithServiceDependencies();
+    Page<Blob> page = storage.list(BUCKET_NAME1);
     assertNull(page.nextPageCursor());
-    assertArrayEquals(ImmutableList.of().toArray(),
-        Iterables.toArray(page.values(), BlobInfo.class));
+    assertArrayEquals(ImmutableList.of().toArray(), Iterables.toArray(page.values(), Blob.class));
   }
 
   @Test
   public void testListBlobsWithOptions() {
     String cursor = "cursor";
-    ImmutableList<BlobInfo> blobList = ImmutableList.of(BLOB_INFO1, BLOB_INFO2);
+    ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, blob2);
     Tuple<String, Iterable<com.google.api.services.storage.model.StorageObject>> result =
-        Tuple.of(cursor, Iterables.transform(blobList, BlobInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(blobList, Blob.TO_PB_FUNCTION));
     EasyMock.expect(storageRpcMock.list(BUCKET_NAME1, BLOB_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    Page<BlobInfo> page = storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX);
+    initializeObjectsWithServiceDependencies();
+    Page<Blob> page = storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX);
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), BlobInfo.class));
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
   }
 
   @Test
   public void testListBlobsWithSelectedFields() {
     String cursor = "cursor";
     Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    ImmutableList<BlobInfo> blobList = ImmutableList.of(BLOB_INFO1, BLOB_INFO2);
+    ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, blob2);
     Tuple<String, Iterable<com.google.api.services.storage.model.StorageObject>> result =
-        Tuple.of(cursor, Iterables.transform(blobList, BlobInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(blobList, Blob.TO_PB_FUNCTION));
     EasyMock.expect(
         storageRpcMock.list(EasyMock.eq(BUCKET_NAME1), EasyMock.capture(capturedOptions)))
         .andReturn(result);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    Page<BlobInfo> page =
+    initializeObjectsWithServiceDependencies();
+    Page<Blob> page =
         storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_FIELDS);
     assertEquals(BLOB_LIST_MAX_RESULT.value(),
         capturedOptions.getValue().get(BLOB_LIST_MAX_RESULT.rpcOption()));
@@ -658,22 +706,22 @@ public class StorageImplTest {
     assertTrue(selector.contains("md5Hash"));
     assertEquals(38, selector.length());
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), BlobInfo.class));
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
   }
 
   @Test
   public void testListBlobsWithEmptyFields() {
     String cursor = "cursor";
     Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    ImmutableList<BlobInfo> blobList = ImmutableList.of(BLOB_INFO1, BLOB_INFO2);
+    ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, blob2);
     Tuple<String, Iterable<com.google.api.services.storage.model.StorageObject>> result =
-        Tuple.of(cursor, Iterables.transform(blobList, BlobInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(blobList, Blob.TO_PB_FUNCTION));
     EasyMock.expect(
         storageRpcMock.list(EasyMock.eq(BUCKET_NAME1), EasyMock.capture(capturedOptions)))
         .andReturn(result);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    Page<BlobInfo> page =
+    initializeObjectsWithServiceDependencies();
+    Page<Blob> page =
         storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_EMPTY_FIELDS);
     assertEquals(BLOB_LIST_MAX_RESULT.value(),
         capturedOptions.getValue().get(BLOB_LIST_MAX_RESULT.rpcOption()));
@@ -685,73 +733,75 @@ public class StorageImplTest {
     assertTrue(selector.contains("name"));
     assertEquals(18, selector.length());
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), BlobInfo.class));
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
   }
 
   @Test
   public void testUpdateBucket() {
-    BucketInfo updatedBucketInfo = BUCKET_INFO1.toBuilder().indexPage("some-page").build();
-    EasyMock.expect(storageRpcMock.patch(updatedBucketInfo.toPb(), EMPTY_RPC_OPTIONS))
-        .andReturn(updatedBucketInfo.toPb());
+    Bucket updatedBucket = expectedBucket1.toBuilder().indexPage("some-page").build();
+    EasyMock.expect(storageRpcMock.patch(updatedBucket.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(updatedBucket.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BucketInfo bucket = storage.update(updatedBucketInfo);
-    assertEquals(updatedBucketInfo, bucket);
+    initializeObjectsWithServiceDependencies();
+    Bucket bucket = storage.update(updatedBucket);
+    assertEquals(updatedBucket, bucket);
   }
 
   @Test
   public void testUpdateBucketWithOptions() {
-    BucketInfo updatedBucketInfo = BUCKET_INFO1.toBuilder().indexPage("some-page").build();
-    EasyMock.expect(storageRpcMock.patch(updatedBucketInfo.toPb(), BUCKET_TARGET_OPTIONS))
-        .andReturn(updatedBucketInfo.toPb());
+    Bucket updatedBucket = expectedBucket1.toBuilder().indexPage("some-page").build();
+    EasyMock.expect(storageRpcMock.patch(updatedBucket.toPb(), bucketTargetOptions))
+        .andReturn(updatedBucket.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BucketInfo bucket =
-        storage.update(updatedBucketInfo, BUCKET_TARGET_METAGENERATION,
+    initializeObjectsWithServiceDependencies();
+    Bucket bucket =
+        storage.update(updatedBucket, BUCKET_TARGET_METAGENERATION,
             BUCKET_TARGET_PREDEFINED_ACL);
-    assertEquals(updatedBucketInfo, bucket);
+    assertEquals(updatedBucket, bucket);
   }
 
   @Test
   public void testUpdateBlob() {
-    BlobInfo updatedBlobInfo = BLOB_INFO1.toBuilder().contentType("some-content-type").build();
-    EasyMock.expect(storageRpcMock.patch(updatedBlobInfo.toPb(), EMPTY_RPC_OPTIONS))
-        .andReturn(updatedBlobInfo.toPb());
+    Blob updatedBlob = expectedBlob1.toBuilder().contentType("some-content-type").build();
+    EasyMock.expect(storageRpcMock.patch(updatedBlob.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(updatedBlob.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob = storage.update(updatedBlobInfo);
-    assertEquals(updatedBlobInfo, blob);
+    initializeObjectsWithServiceDependencies();
+    Blob blob = storage.update(updatedBlob);
+    assertEquals(updatedBlob, blob);
   }
 
   @Test
   public void testUpdateBlobWithOptions() {
-    BlobInfo updatedBlobInfo = BLOB_INFO1.toBuilder().contentType("some-content-type").build();
-    EasyMock.expect(storageRpcMock.patch(updatedBlobInfo.toPb(), BLOB_TARGET_OPTIONS_UPDATE))
-        .andReturn(updatedBlobInfo.toPb());
+    Blob updatedBlob = expectedBlob1.toBuilder().contentType("some-content-type").build();
+    EasyMock.expect(storageRpcMock.patch(updatedBlob.toPb(), blobTargetOptionsUpdate))
+        .andReturn(updatedBlob.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob =
-        storage.update(updatedBlobInfo, BLOB_TARGET_METAGENERATION, BLOB_TARGET_PREDEFINED_ACL);
-    assertEquals(updatedBlobInfo, blob);
+    initializeObjectsWithServiceDependencies();
+    Blob blob = storage.update(updatedBlob, BLOB_TARGET_METAGENERATION, BLOB_TARGET_PREDEFINED_ACL);
+    assertEquals(updatedBlob, blob);
   }
 
   @Test
   public void testDeleteBucket() {
-    EasyMock.expect(storageRpcMock.delete(BucketInfo.of(BUCKET_NAME1).toPb(), EMPTY_RPC_OPTIONS))
+    EasyMock
+        .expect(
+            storageRpcMock.delete(Bucket.of(mockStorage, BUCKET_NAME1).toPb(), EMPTY_RPC_OPTIONS))
         .andReturn(true);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
+    initializeObjectsWithServiceDependencies();
     assertTrue(storage.delete(BUCKET_NAME1));
   }
 
   @Test
   public void testDeleteBucketWithOptions() {
     EasyMock
-        .expect(storageRpcMock.delete(BucketInfo.of(BUCKET_NAME1).toPb(), BUCKET_SOURCE_OPTIONS))
+        .expect(
+            storageRpcMock.delete(Bucket.of(mockStorage, BUCKET_NAME1).toPb(), bucketSourceOptions))
         .andReturn(true);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    assertTrue(storage.delete(BUCKET_NAME1, BUCKET_SOURCE_METAGENERATION));
+    initializeObjectsWithServiceDependencies();
+    assertTrue(storage.delete(BUCKET_NAME1, bucketSourceMetageneration));
   }
 
   @Test
@@ -760,71 +810,77 @@ public class StorageImplTest {
         storageRpcMock.delete(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), EMPTY_RPC_OPTIONS))
         .andReturn(true);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
+    initializeObjectsWithServiceDependencies();
     assertTrue(storage.delete(BUCKET_NAME1, BLOB_NAME1));
   }
 
   @Test
   public void testDeleteBlobWithOptions() {
     EasyMock.expect(
-        storageRpcMock.delete(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), BLOB_SOURCE_OPTIONS))
+            storageRpcMock.delete(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), blobSourceOptions))
         .andReturn(true);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    assertTrue(storage.delete(BUCKET_NAME1, BLOB_NAME1, BLOB_SOURCE_GENERATION,
-        BLOB_SOURCE_METAGENERATION));
+    initializeObjectsWithServiceDependencies();
+    assertTrue(
+        storage.delete(BUCKET_NAME1, BLOB_NAME1, blobSourceGeneration, blobSourceMetageneration));
   }
 
   @Test
   public void testDeleteBlobWithOptionsFromBlobId() {
-    EasyMock.expect(
-        storageRpcMock.delete(BLOB_INFO1.blobId().toPb(), BLOB_SOURCE_OPTIONS))
+    EasyMock.expect(storageRpcMock.delete(expectedBlob1.blobId().toPb(), blobSourceOptions))
         .andReturn(true);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    assertTrue(storage.delete(BLOB_INFO1.blobId(), BLOB_SOURCE_GENERATION_FROM_BLOB_ID,
-        BLOB_SOURCE_METAGENERATION));
+    initializeObjectsWithServiceDependencies();
+    assertTrue(storage.delete(
+        blob1.blobId(), BLOB_SOURCE_GENERATION_FROM_BLOB_ID, blobSourceMetageneration));
   }
 
   @Test
   public void testCompose() {
     Storage.ComposeRequest req = Storage.ComposeRequest.builder()
         .addSource(BLOB_NAME2, BLOB_NAME3)
-        .target(BLOB_INFO1)
+            .target(expectedBlob1)
         .build();
-    EasyMock.expect(storageRpcMock.compose(ImmutableList.of(BLOB_INFO2.toPb(), BLOB_INFO3.toPb()),
-        BLOB_INFO1.toPb(), EMPTY_RPC_OPTIONS)).andReturn(BLOB_INFO1.toPb());
+    EasyMock
+        .expect(storageRpcMock.compose(
+            ImmutableList.of(blob2.toPb(), blob3.toPb()),
+            expectedBlob1.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob = storage.compose(req);
-    assertEquals(BLOB_INFO1, blob);
+    initializeObjectsWithServiceDependencies();
+    Blob blob = storage.compose(req);
+    assertEquals(blob1, blob);
   }
 
   @Test
   public void testComposeWithOptions() {
     Storage.ComposeRequest req = Storage.ComposeRequest.builder()
         .addSource(BLOB_NAME2, BLOB_NAME3)
-        .target(BLOB_INFO1)
+            .target(expectedBlob1)
         .targetOptions(BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
         .build();
-    EasyMock.expect(storageRpcMock.compose(ImmutableList.of(BLOB_INFO2.toPb(), BLOB_INFO3.toPb()),
-        BLOB_INFO1.toPb(), BLOB_TARGET_OPTIONS_COMPOSE)).andReturn(BLOB_INFO1.toPb());
+    EasyMock
+        .expect(storageRpcMock.compose(
+            ImmutableList.of(blob2.toPb(), blob3.toPb()),
+            expectedBlob1.toPb(), blobTargetOptionsCompose))
+        .andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    BlobInfo blob = storage.compose(req);
-    assertEquals(BLOB_INFO1, blob);
+    initializeObjectsWithServiceDependencies();
+    Blob blob = storage.compose(req);
+    assertEquals(blob1, blob);
   }
 
   @Test
   public void testCopy() {
-    CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2.blobId());
+    CopyRequest request =
+        Storage.CopyRequest.of(mockStorage, expectedBlob1.blobId(), blob2.blobId());
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
         EMPTY_RPC_OPTIONS, request.target().toPb(), EMPTY_RPC_OPTIONS, null);
     StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
         false, "token", 21L);
     EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
+    initializeObjectsWithServiceDependencies();
     CopyWriter writer = storage.copy(request);
     assertEquals(42L, writer.blobSize());
     assertEquals(21L, writer.totalBytesCopied());
@@ -834,17 +890,17 @@ public class StorageImplTest {
   @Test
   public void testCopyWithOptions() {
     CopyRequest request = Storage.CopyRequest.builder()
-        .source(BLOB_INFO2.blobId())
-        .sourceOptions(BLOB_SOURCE_GENERATION, BLOB_SOURCE_METAGENERATION)
-        .target(BLOB_INFO1, BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
+            .source(blob2.blobId())
+            .sourceOptions(blobSourceGeneration, blobSourceMetageneration)
+            .target(expectedBlob1, BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
         .build();
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        BLOB_SOURCE_OPTIONS_COPY, request.target().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
+        blobSourceOptionsCopy, request.target().toPb(), blobTargetOptionsCompose, null);
     StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
         false, "token", 21L);
     EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
+    initializeObjectsWithServiceDependencies();
     CopyWriter writer = storage.copy(request);
     assertEquals(42L, writer.blobSize());
     assertEquals(21L, writer.totalBytesCopied());
@@ -854,17 +910,17 @@ public class StorageImplTest {
   @Test
   public void testCopyWithOptionsFromBlobId() {
     CopyRequest request = Storage.CopyRequest.builder()
-        .source(BLOB_INFO1.blobId())
-        .sourceOptions(BLOB_SOURCE_GENERATION_FROM_BLOB_ID, BLOB_SOURCE_METAGENERATION)
-        .target(BLOB_INFO1, BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
+            .source(expectedBlob1.blobId())
+            .sourceOptions(BLOB_SOURCE_GENERATION_FROM_BLOB_ID, blobSourceMetageneration)
+            .target(expectedBlob1, BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
         .build();
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        BLOB_SOURCE_OPTIONS_COPY, request.target().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
+        blobSourceOptionsCopy, request.target().toPb(), blobTargetOptionsCompose, null);
     StorageRpc.RewriteResponse rpcResponse =
         new StorageRpc.RewriteResponse(rpcRequest, null, 42L, false, "token", 21L);
     EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
+    initializeObjectsWithServiceDependencies();
     CopyWriter writer = storage.copy(request);
     assertEquals(42L, writer.blobSize());
     assertEquals(21L, writer.totalBytesCopied());
@@ -873,22 +929,23 @@ public class StorageImplTest {
 
   @Test
   public void testCopyMultipleRequests() {
-    CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2.blobId());
+    CopyRequest request =
+        Storage.CopyRequest.of(mockStorage, expectedBlob1.blobId(), blob2.blobId());
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
         EMPTY_RPC_OPTIONS, request.target().toPb(), EMPTY_RPC_OPTIONS, null);
     StorageRpc.RewriteResponse rpcResponse1 = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
         false, "token", 21L);
-    StorageRpc.RewriteResponse rpcResponse2 = new StorageRpc.RewriteResponse(rpcRequest,
-        BLOB_INFO1.toPb(), 42L, true, "token", 42L);
+    StorageRpc.RewriteResponse rpcResponse2 =
+        new StorageRpc.RewriteResponse(rpcRequest, expectedBlob1.toPb(), 42L, true, "token", 42L);
     EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse1);
     EasyMock.expect(storageRpcMock.continueRewrite(rpcResponse1)).andReturn(rpcResponse2);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
+    initializeObjectsWithServiceDependencies();
     CopyWriter writer = storage.copy(request);
     assertEquals(42L, writer.blobSize());
     assertEquals(21L, writer.totalBytesCopied());
     assertTrue(!writer.isDone());
-    assertEquals(BLOB_INFO1, writer.result());
+    assertEquals(blob1, writer.result());
     assertTrue(writer.isDone());
     assertEquals(42L, writer.totalBytesCopied());
     assertEquals(42L, writer.blobSize());
@@ -900,7 +957,7 @@ public class StorageImplTest {
         storageRpcMock.load(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), EMPTY_RPC_OPTIONS))
         .andReturn(BLOB_CONTENT);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
+    initializeObjectsWithServiceDependencies();
     byte[] readBytes = storage.readAllBytes(BUCKET_NAME1, BLOB_NAME1);
     assertArrayEquals(BLOB_CONTENT, readBytes);
   }
@@ -908,24 +965,23 @@ public class StorageImplTest {
   @Test
   public void testReadAllBytesWithOptions() {
     EasyMock.expect(
-        storageRpcMock.load(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), BLOB_SOURCE_OPTIONS))
+        storageRpcMock.load(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), blobSourceOptions))
         .andReturn(BLOB_CONTENT);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    byte[] readBytes = storage.readAllBytes(BUCKET_NAME1, BLOB_NAME1, BLOB_SOURCE_GENERATION,
-        BLOB_SOURCE_METAGENERATION);
+    initializeObjectsWithServiceDependencies();
+    byte[] readBytes = storage.readAllBytes(
+        BUCKET_NAME1, BLOB_NAME1, blobSourceGeneration, blobSourceMetageneration);
     assertArrayEquals(BLOB_CONTENT, readBytes);
   }
 
   @Test
   public void testReadAllBytesWithOptionsFromBlobId() {
-    EasyMock.expect(
-        storageRpcMock.load(BLOB_INFO1.blobId().toPb(), BLOB_SOURCE_OPTIONS))
+    EasyMock.expect(storageRpcMock.load(expectedBlob1.blobId().toPb(), blobSourceOptions))
         .andReturn(BLOB_CONTENT);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    byte[] readBytes = storage.readAllBytes(BLOB_INFO1.blobId(),
-        BLOB_SOURCE_GENERATION_FROM_BLOB_ID, BLOB_SOURCE_METAGENERATION);
+    initializeObjectsWithServiceDependencies();
+    byte[] readBytes = storage.readAllBytes(
+        blob1.blobId(), BLOB_SOURCE_GENERATION_FROM_BLOB_ID, blobSourceMetageneration);
     assertArrayEquals(BLOB_CONTENT, readBytes);
   }
 
@@ -933,7 +989,7 @@ public class StorageImplTest {
   public void testApply() {
     BatchRequest req = BatchRequest.builder()
         .delete(BUCKET_NAME1, BLOB_NAME1)
-        .update(BLOB_INFO2)
+            .update(blob2)
         .get(BUCKET_NAME1, BLOB_NAME3)
         .build();
     List<StorageObject> toDelete = ImmutableList.of(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb());
@@ -974,7 +1030,7 @@ public class StorageImplTest {
     Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
     EasyMock.expect(storageRpcMock.batch(EasyMock.capture(capturedBatchRequest))).andReturn(res);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
+    initializeObjectsWithServiceDependencies();
     BatchResponse batchResponse = storage.apply(req);
 
     // Verify captured StorageRpc.BatchRequest
@@ -1012,7 +1068,7 @@ public class StorageImplTest {
   @Test
   public void testReader() {
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
+    initializeObjectsWithServiceDependencies();
     ReadChannel channel = storage.reader(BUCKET_NAME1, BLOB_NAME1);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
@@ -1021,13 +1077,12 @@ public class StorageImplTest {
   @Test
   public void testReaderWithOptions() throws IOException {
     byte[] result = new byte[DEFAULT_CHUNK_SIZE];
-    EasyMock.expect(
-        storageRpcMock.read(BLOB_INFO2.toPb(), BLOB_SOURCE_OPTIONS, 0, DEFAULT_CHUNK_SIZE))
+    EasyMock.expect(storageRpcMock.read(blob2.toPb(), blobSourceOptions, 0, DEFAULT_CHUNK_SIZE))
         .andReturn(StorageRpc.Tuple.of("etag", result));
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    ReadChannel channel = storage.reader(BUCKET_NAME1, BLOB_NAME2, BLOB_SOURCE_GENERATION,
-        BLOB_SOURCE_METAGENERATION);
+    initializeObjectsWithServiceDependencies();
+    ReadChannel channel =
+        storage.reader(BUCKET_NAME1, BLOB_NAME2, blobSourceGeneration, blobSourceMetageneration);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
     channel.read(ByteBuffer.allocate(42));
@@ -1036,13 +1091,13 @@ public class StorageImplTest {
   @Test
   public void testReaderWithOptionsFromBlobId() throws IOException {
     byte[] result = new byte[DEFAULT_CHUNK_SIZE];
-    EasyMock.expect(
-        storageRpcMock.read(BLOB_INFO1.blobId().toPb(), BLOB_SOURCE_OPTIONS, 0, DEFAULT_CHUNK_SIZE))
+    EasyMock.expect(storageRpcMock.read(expectedBlob1.blobId().toPb(), blobSourceOptions, 0,
+                        DEFAULT_CHUNK_SIZE))
         .andReturn(StorageRpc.Tuple.of("etag", result));
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    ReadChannel channel = storage.reader(BLOB_INFO1.blobId(),
-        BLOB_SOURCE_GENERATION_FROM_BLOB_ID, BLOB_SOURCE_METAGENERATION);
+    initializeObjectsWithServiceDependencies();
+    ReadChannel channel = storage.reader(
+        blob1.blobId(), BLOB_SOURCE_GENERATION_FROM_BLOB_ID, blobSourceMetageneration);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
     channel.read(ByteBuffer.allocate(42));
@@ -1050,26 +1105,26 @@ public class StorageImplTest {
 
   @Test
   public void testWriter() {
-    BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
-    BlobInfo infoWithHashes = infoBuilder.md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build();
-    BlobInfo infoWithoutHashes = infoBuilder.md5(null).crc32c(null).build();
-    EasyMock.expect(storageRpcMock.open(infoWithoutHashes.toPb(), EMPTY_RPC_OPTIONS))
+    Blob.Builder blobBuilder = expectedBlob1.toBuilder();
+    Blob blobWithHashes = blobBuilder.md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build();
+    Blob blobWithoutHashes = blobBuilder.md5(null).crc32c(null).build();
+    EasyMock.expect(storageRpcMock.open(blobWithoutHashes.toPb(), EMPTY_RPC_OPTIONS))
         .andReturn("upload-id");
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    WriteChannel channel = storage.writer(infoWithHashes);
+    initializeObjectsWithServiceDependencies();
+    WriteChannel channel = storage.writer(blobWithHashes);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
   }
 
   @Test
   public void testWriterWithOptions() {
-    BlobInfo info = BLOB_INFO1.toBuilder().md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build();
-    EasyMock.expect(storageRpcMock.open(info.toPb(), BLOB_TARGET_OPTIONS_CREATE))
+    Blob blob = expectedBlob1.toBuilder().md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build();
+    EasyMock.expect(storageRpcMock.open(blob.toPb(), blobTargetOptionsCreate))
         .andReturn("upload-id");
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    WriteChannel channel = storage.writer(info, BLOB_WRITE_METAGENERATION, BLOB_WRITE_NOT_EXIST,
+    initializeObjectsWithServiceDependencies();
+    WriteChannel channel = storage.writer(blob, BLOB_WRITE_METAGENERATION, BLOB_WRITE_NOT_EXIST,
         BLOB_WRITE_PREDEFINED_ACL, BLOB_WRITE_CRC2C, BLOB_WRITE_MD5_HASH);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
@@ -1079,10 +1134,11 @@ public class StorageImplTest {
   public void testSignUrl() throws NoSuchAlgorithmException, InvalidKeyException,
       SignatureException, UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
+    initializeObjectsWithServiceDependencies();
     ServiceAccountAuthCredentials authCredentials =
         ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
     storage = options.toBuilder().authCredentials(authCredentials).build().service();
-    URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS);
+    URL url = storage.signUrl(blob1, 14, TimeUnit.DAYS);
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1).append("/")
@@ -1107,11 +1163,12 @@ public class StorageImplTest {
   public void testSignUrlWithOptions() throws NoSuchAlgorithmException, InvalidKeyException,
       SignatureException, UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
+    initializeObjectsWithServiceDependencies();
     ServiceAccountAuthCredentials authCredentials =
         ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
     storage = options.toBuilder().authCredentials(authCredentials).build().service();
     URL url =
-        storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS,
+        storage.signUrl(blob1, 14, TimeUnit.DAYS,
             Storage.SignUrlOption.httpMethod(HttpMethod.POST),
             Storage.SignUrlOption.withContentType(), Storage.SignUrlOption.withMd5());
     String stringUrl = url.toString();
@@ -1123,8 +1180,8 @@ public class StorageImplTest {
     String signature = stringUrl.substring(expectedUrl.length());
 
     StringBuilder signedMessageBuilder = new StringBuilder();
-    signedMessageBuilder.append(HttpMethod.POST).append('\n').append(BLOB_INFO1.md5()).append('\n')
-        .append(BLOB_INFO1.contentType()).append('\n').append(42L + 1209600).append('\n')
+    signedMessageBuilder.append(HttpMethod.POST).append('\n').append(blob1.md5()).append('\n')
+        .append(blob1.contentType()).append('\n').append(42L + 1209600).append('\n')
         .append("/").append(BUCKET_NAME1).append("/").append(BLOB_NAME1);
 
     Signature signer = Signature.getInstance("SHA256withRSA");
@@ -1154,12 +1211,11 @@ public class StorageImplTest {
     StorageRpc.BatchResponse res =
         new StorageRpc.BatchResponse(deleteResult, updateResult, getResult);
 
-
     Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
     EasyMock.expect(storageRpcMock.batch(EasyMock.capture(capturedBatchRequest))).andReturn(res);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    List<BlobInfo> resultBlobs = storage.get(blobId1, blobId2);
+    initializeObjectsWithServiceDependencies();
+    List<Blob> resultBlobs = storage.get(blobId1, blobId2);
 
     // Verify captured StorageRpc.BatchRequest
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToGet =
@@ -1179,10 +1235,12 @@ public class StorageImplTest {
 
   @Test
   public void testUpdateAll() {
-    BlobInfo blobInfo1 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME1).contentType("type").build();
-    BlobInfo blobInfo2 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME2).contentType("type").build();
-    StorageObject storageObject1 = blobInfo1.toPb();
-    StorageObject storageObject2 = blobInfo2.toPb();
+    Blob blob1 =
+        Blob.builder(mockStorage, BUCKET_NAME1, BLOB_NAME1).contentType("type").build();
+    Blob blob2 =
+        Blob.builder(mockStorage, BUCKET_NAME1, BLOB_NAME2).contentType("type").build();
+    StorageObject storageObject1 = blob1.toPb();
+    StorageObject storageObject2 = blob2.toPb();
     List<StorageObject> toUpdate = ImmutableList.of(storageObject1, storageObject2);
 
     Map<StorageObject, Tuple<Boolean, StorageException>> deleteResult = ImmutableMap.of();
@@ -1197,12 +1255,11 @@ public class StorageImplTest {
     StorageRpc.BatchResponse res =
         new StorageRpc.BatchResponse(deleteResult, updateResult, getResult);
 
-
     Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
     EasyMock.expect(storageRpcMock.batch(EasyMock.capture(capturedBatchRequest))).andReturn(res);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    List<BlobInfo> resultBlobs = storage.update(blobInfo1, blobInfo2);
+    initializeObjectsWithServiceDependencies();
+    List<Blob> resultBlobs = storage.update(blob1, blob2);
 
     // Verify captured StorageRpc.BatchRequest
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToUpdate =
@@ -1222,10 +1279,10 @@ public class StorageImplTest {
 
   @Test
   public void testDeleteAll() {
-    BlobInfo blobInfo1 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME1).build();
-    BlobInfo blobInfo2 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME2).build();
-    StorageObject storageObject1 = blobInfo1.toPb();
-    StorageObject storageObject2 = blobInfo2.toPb();
+    Blob blob1 = Blob.builder(mockStorage, BUCKET_NAME1, BLOB_NAME1).build();
+    Blob blob2 = Blob.builder(mockStorage, BUCKET_NAME1, BLOB_NAME2).build();
+    StorageObject storageObject1 = blob1.toPb();
+    StorageObject storageObject2 = blob2.toPb();
     List<StorageObject> toUpdate = ImmutableList.of(storageObject1, storageObject2);
 
     Map<StorageObject, Tuple<StorageObject, StorageException>> updateResult = ImmutableMap.of();
@@ -1243,8 +1300,8 @@ public class StorageImplTest {
     Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
     EasyMock.expect(storageRpcMock.batch(EasyMock.capture(capturedBatchRequest))).andReturn(res);
     EasyMock.replay(storageRpcMock);
-    storage = options.service();
-    List<Boolean> deleteResults = storage.delete(blobInfo1.blobId(), blobInfo2.blobId());
+    initializeObjectsWithServiceDependencies();
+    List<Boolean> deleteResults = storage.delete(blob1.blobId(), blob2.blobId());
 
     // Verify captured StorageRpc.BatchRequest
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToDelete =
@@ -1267,11 +1324,13 @@ public class StorageImplTest {
     BlobId blob = BlobId.of(BUCKET_NAME1, BLOB_NAME1);
     EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
         .andThrow(new StorageException(500, "InternalError", true))
-        .andReturn(BLOB_INFO1.toPb());
+        .andReturn(expectedBlob1.toPb());
     EasyMock.replay(storageRpcMock);
+    initializeObjectsWithServiceDependencies();
     storage = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
-    BlobInfo readBlob = storage.get(blob);
-    assertEquals(BLOB_INFO1, readBlob);
+    blob1 = blob1.toBuilder().storage(storage).build();
+    Blob readBlob = storage.get(blob);
+    assertEquals(blob1, readBlob);
   }
 
   @Test

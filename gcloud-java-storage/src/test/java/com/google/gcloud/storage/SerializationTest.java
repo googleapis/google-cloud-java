@@ -42,23 +42,24 @@ import java.util.Map;
 
 public class SerializationTest {
 
+  private static final Storage STORAGE = StorageOptions.defaultInstance().service();
   private static final Acl.Domain ACL_DOMAIN = new Acl.Domain("domain");
   private static final Acl.Group ACL_GROUP = new Acl.Group("group");
-  private static final Acl.Project ACL_PROJECT_ = new Acl.Project(ProjectRole.VIEWERS, "pid");
+  private static final Acl.Project ACL_PROJECT = new Acl.Project(ProjectRole.VIEWERS, "pid");
   private static final Acl.User ACL_USER = new Acl.User("user");
   private static final Acl.RawEntity ACL_RAW = new Acl.RawEntity("raw");
-  private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").build();
-  private static final BucketInfo BUCKET_INFO = BucketInfo.of("b");
+  private static final Blob BLOB = Blob.builder(STORAGE, "b", "n").build();
+  private static final Bucket BUCKET = Bucket.of(STORAGE, "b");
   private static final Cors.Origin ORIGIN = Cors.Origin.any();
   private static final Cors CORS =
       Cors.builder().maxAgeSeconds(1).origins(Collections.singleton(ORIGIN)).build();
   private static final BatchRequest BATCH_REQUEST = BatchRequest.builder().delete("B", "N").build();
   private static final BatchResponse BATCH_RESPONSE = new BatchResponse(
       Collections.singletonList(BatchResponse.Result.of(true)),
-      Collections.<BatchResponse.Result<BlobInfo>>emptyList(),
-      Collections.<BatchResponse.Result<BlobInfo>>emptyList());
-  private static final PageImpl<BlobInfo> PAGE_RESULT = new PageImpl<>(
-      null, "c", Collections.singletonList(BlobInfo.builder("b", "n").build()));
+      Collections.<BatchResponse.Result<Blob>>emptyList(),
+      Collections.<BatchResponse.Result<Blob>>emptyList());
+  private static final PageImpl<Blob> PAGE_RESULT =
+      new PageImpl<>(null, "c", Collections.singletonList(Blob.builder(STORAGE, "b", "n").build()));
   private static final Storage.BlobListOption BLOB_LIST_OPTIONS =
       Storage.BlobListOption.maxResults(100);
   private static final Storage.BlobSourceOption BLOB_SOURCE_OPTIONS =
@@ -94,8 +95,7 @@ public class SerializationTest {
 
   @Test
   public void testModelAndRequests() throws Exception {
-    Serializable[] objects = {ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, BLOB_INFO,
-        BUCKET_INFO,
+    Serializable[] objects = {ACL_DOMAIN, ACL_GROUP, ACL_PROJECT, ACL_USER, ACL_RAW, BLOB, BUCKET,
         ORIGIN, CORS, BATCH_REQUEST, BATCH_RESPONSE, PAGE_RESULT, BLOB_LIST_OPTIONS,
         BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS, BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS,
         BUCKET_TARGET_OPTIONS};
@@ -132,8 +132,8 @@ public class SerializationTest {
         .build();
     // avoid closing when you don't want partial writes to GCS upon failure
     @SuppressWarnings("resource")
-    BlobWriteChannel writer =
-        new BlobWriteChannel(options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");
+    BlobWriteChannel writer = new BlobWriteChannel(
+        Blob.builder(options.service(), BlobId.of("b", "n")).build(), "upload-id");
     RestorableState<WriteChannel> state = writer.capture();
     RestorableState<WriteChannel> deserializedState = serializeAndDeserialize(state);
     assertEquals(state, deserializedState);

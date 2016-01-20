@@ -236,8 +236,8 @@ public class Project implements Serializable {
 
     /**
      * Sets the service object associated with this Project. This service object is used to send
-     * requests relevant to this blob (e.g. {@link #delete}, {@link #get}, {@link #reload},
-     * {@link #replace}, {@link #undelete}).
+     * requests relevant to this blob (e.g. {@link #delete}, {@link #reload}, {@link #replace},
+     * {@link #undelete}).
      */
     public Builder resourceManager(ResourceManager resourceManager) {
       this.resourceManager = checkNotNull(resourceManager);
@@ -259,20 +259,6 @@ public class Project implements Serializable {
     this.parent = builder.parent;
     this.options = builder.resourceManager.options();
     this.resourceManager = builder.resourceManager;
-  }
-
-  Project(String name, String projectId, Map<String, String> labels, Long projectNumber,
-      State state, Long createTimeMillis, ResourceId parent, ResourceManagerOptions options,
-      ResourceManager resourceManager) {
-    this.name = name;
-    this.projectId = projectId;
-    this.labels = ImmutableMap.copyOf(labels);
-    this.projectNumber = projectNumber;
-    this.state = state;
-    this.createTimeMillis = createTimeMillis;
-    this.parent = parent;
-    this.options = options;
-    this.resourceManager = resourceManager;
   }
 
   /**

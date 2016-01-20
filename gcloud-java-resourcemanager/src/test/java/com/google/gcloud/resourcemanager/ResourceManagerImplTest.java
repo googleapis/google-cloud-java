@@ -285,7 +285,8 @@ public class ResourceManagerImplTest {
         .andReturn(PARTIAL_PROJECT.toPb());
     EasyMock.replay(resourceManagerRpcMock);
     Project returnedProject = resourceManagerMock.get(PARTIAL_PROJECT.projectId());
-    assertEquals(PARTIAL_PROJECT, returnedProject);
+    assertEquals(
+        PARTIAL_PROJECT.toBuilder().resourceManager(resourceManagerMock).build(), returnedProject);
   }
 
   @Test
