@@ -27,15 +27,13 @@ public class DnsRecordTest {
   private static final String NAME = "example.com.";
   private static final Integer TTL = 3600;
   private static final DnsRecord.DnsRecordType TYPE = DnsRecord.DnsRecordType.AAAA;
-  private static final DnsRecord record = DnsRecord.builder()
-          .name(NAME)
+  private static final DnsRecord record = DnsRecord.builder(NAME, TYPE)
           .ttl(TTL)
-          .type(TYPE)
           .build();
 
   @Test
   public void testDefaultDnsRecord() {
-    DnsRecord record = DnsRecord.builder().build();
+    DnsRecord record = DnsRecord.builder(NAME, TYPE).build();
     assertEquals(0, record.records().size());
   }
 
@@ -59,13 +57,13 @@ public class DnsRecordTest {
   @Test
   public void testValidTtl() {
     try {
-      DnsRecord.builder().ttl(-1);
+      DnsRecord.builder(NAME, TYPE).ttl(-1);
       fail("A negative value is not acceptable for ttl.");
     } catch (IllegalArgumentException e) {
       // expected
     }
-    DnsRecord.builder().ttl(0);
-    DnsRecord.builder().ttl(Integer.MAX_VALUE);
+    DnsRecord.builder(NAME, TYPE).ttl(0);
+    DnsRecord.builder(NAME, TYPE).ttl(Integer.MAX_VALUE);
   }
 
   @Test
@@ -88,5 +86,27 @@ public class DnsRecordTest {
     int hash = record.hashCode();
     DnsRecord clone = record.toBuilder().build();
     assertEquals(clone.hashCode(), hash);
+  }
+
+  @Test
+  public void testToAndFromPb() {
+    assertEquals(record, DnsRecord.fromPb(record.toPb()));
+    DnsRecord partial = DnsRecord.builder(NAME, TYPE).build();
+    assertEquals(partial, DnsRecord.fromPb(partial.toPb()));
+    partial = DnsRecord.builder(NAME, TYPE).addRecord("test").build();
+    assertEquals(partial, DnsRecord.fromPb(partial.toPb()));
+    partial = DnsRecord.builder(NAME, TYPE).ttl(15).build();
+    assertEquals(partial, DnsRecord.fromPb(partial.toPb()));
+  }
+
+  @Test
+  public void testToBuilder() {
+    assertEquals(record, record.toBuilder().build());
+    DnsRecord partial = DnsRecord.builder(NAME, TYPE).build();
+    assertEquals(partial, partial.toBuilder().build());
+    partial = DnsRecord.builder(NAME, TYPE).addRecord("test").build();
+    assertEquals(partial, partial.toBuilder().build());
+    partial = DnsRecord.builder(NAME, TYPE).ttl(15).build();
+    assertEquals(partial, partial.toBuilder().build());
   }
 }

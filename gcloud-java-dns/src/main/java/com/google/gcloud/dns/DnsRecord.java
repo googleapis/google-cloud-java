@@ -24,18 +24,17 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 import java.io.Serializable;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * A class that represents Google Cloud DNS record set.
+ * A class that represents a Google Cloud DNS record set.
  *
- * <p>A DnsRecord is the unit of data that will be returned by the DNS servers upon a DNS request
- * for a specific domain. The DnsRecord holds the current state of the DNS records that make up a
- * managed zone. You can read the records but you do not modify them directly. Rather, you edit
- * the records in a managed zone by creating a {@link ChangeRequest}.
+ * <p>A {@code DnsRecord} is the unit of data that will be returned by the DNS servers upon a DNS
+ * request for a specific domain. The {@code DnsRecord} holds the current state of the DNS records
+ * that make up a managed zone. You can read the records but you do not modify them directly.
+ * Rather, you edit the records in a managed zone by creating a ChangeRequest.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets">Google Cloud DNS
  * documentation</a>
@@ -117,8 +116,8 @@ public class DnsRecord implements Serializable {
     }
 
     /**
-     * Creates a builder and pre-populates attributes with the values from the provided DnsRecord
-     * instance.
+     * Creates a builder and pre-populates attributes with the values from the provided {@code
+     * DnsRecord} instance.
      */
     private Builder(DnsRecord record) {
       this.name = record.name;
@@ -142,7 +141,7 @@ public class DnsRecord implements Serializable {
     /**
      * Removes a record from the set. An exact match is required.
      */
-    public Builder removerRecord(String record) {
+    public Builder removeRecord(String record) {
       this.rrdatas.remove(checkNotNull(record));
       return this;
     }
@@ -150,7 +149,7 @@ public class DnsRecord implements Serializable {
     /**
      * Removes a record on the given index from the set.
      */
-    public Builder removerRecord(int index) {
+    public Builder removeRecord(int index) {
       checkArgument(index >= 0 && index < this.rrdatas.size(), "The index is out of bounds. An " +
               "integer between 0 and " + (this.rrdatas.size() - 1) + " is required. The provided " +
               "value was " + index + ".");
@@ -225,10 +224,10 @@ public class DnsRecord implements Serializable {
   }
 
   /**
-   * Creates an empty builder.
+   * Creates a builder for {@code DnsRecord} with mandatorily set name and type of the record.
    */
-  public static Builder builder() {
-    return new Builder();
+  public static Builder builder(String name, DnsRecordType type) {
+    return new Builder().name(name).type(type);
   }
 
   /**
@@ -279,6 +278,17 @@ public class DnsRecord implements Serializable {
     return pb;
   }
 
+  static DnsRecord fromPb(com.google.api.services.dns.model.ResourceRecordSet pb) {
+    Builder b = builder(pb.getName(), DnsRecordType.valueOf(pb.getType()));
+    if (pb.getRrdatas() != null) {
+      b.records(pb.getRrdatas());
+    }
+    if (pb.getTtl() != null) {
+      b.ttl(pb.getTtl());
+    }
+    return b.build();
+  }
+
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
@@ -288,5 +298,4 @@ public class DnsRecord implements Serializable {
             .add("type", type())
             .toString();
   }
-
 }
