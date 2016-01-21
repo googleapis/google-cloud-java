@@ -975,7 +975,7 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.batch(EasyMock.capture(capturedBatchRequest))).andReturn(res);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    BatchResponse batchResponse = storage.apply(req);
+    BatchResponse batchResponse = storage.submit(req);
 
     // Verify captured StorageRpc.BatchRequest
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToDelete =

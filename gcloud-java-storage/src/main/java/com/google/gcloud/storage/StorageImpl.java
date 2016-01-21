@@ -441,7 +441,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BatchResponse apply(BatchRequest batchRequest) {
+  public BatchResponse submit(BatchRequest batchRequest) {
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toDelete =
         Lists.newArrayListWithCapacity(batchRequest.toDelete().size());
     for (Map.Entry<BlobId, Iterable<BlobSourceOption>> entry : batchRequest.toDelete().entrySet()) {
@@ -592,7 +592,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     for (BlobId blob : blobIds) {
       requestBuilder.get(blob);
     }
-    BatchResponse response = apply(requestBuilder.build());
+    BatchResponse response = submit(requestBuilder.build());
     return Collections.unmodifiableList(transformResultList(response.gets(), null));
   }
 
@@ -602,7 +602,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     for (BlobInfo blobInfo : blobInfos) {
       requestBuilder.update(blobInfo);
     }
-    BatchResponse response = apply(requestBuilder.build());
+    BatchResponse response = submit(requestBuilder.build());
     return Collections.unmodifiableList(transformResultList(response.updates(), null));
   }
 
@@ -612,7 +612,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     for (BlobId blob : blobIds) {
       requestBuilder.delete(blob);
     }
-    BatchResponse response = apply(requestBuilder.build());
+    BatchResponse response = submit(requestBuilder.build());
     return Collections.unmodifiableList(transformResultList(response.deletes(), Boolean.FALSE));
   }
 

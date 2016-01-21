@@ -584,7 +584,7 @@ public class ITStorageTest {
         .update(updatedBlob1)
         .update(updatedBlob2)
         .build();
-    BatchResponse updateResponse = storage.apply(updateRequest);
+    BatchResponse updateResponse = storage.submit(updateRequest);
     assertEquals(2, updateResponse.updates().size());
     assertEquals(0, updateResponse.deletes().size());
     assertEquals(0, updateResponse.gets().size());
@@ -602,7 +602,7 @@ public class ITStorageTest {
         .get(BUCKET, sourceBlobName1)
         .get(BUCKET, sourceBlobName2)
         .build();
-    BatchResponse getResponse = storage.apply(getRequest);
+    BatchResponse getResponse = storage.submit(getRequest);
     assertEquals(2, getResponse.gets().size());
     assertEquals(0, getResponse.deletes().size());
     assertEquals(0, getResponse.updates().size());
@@ -616,7 +616,7 @@ public class ITStorageTest {
         .delete(BUCKET, sourceBlobName1)
         .delete(BUCKET, sourceBlobName2)
         .build();
-    BatchResponse deleteResponse = storage.apply(deleteRequest);
+    BatchResponse deleteResponse = storage.submit(deleteRequest);
     assertEquals(2, deleteResponse.deletes().size());
     assertEquals(0, deleteResponse.gets().size());
     assertEquals(0, deleteResponse.updates().size());
@@ -646,7 +646,7 @@ public class ITStorageTest {
         .get(BUCKET, sourceBlobName1)
         .update(updatedBlob2)
         .build();
-    BatchResponse response = storage.apply(updateRequest);
+    BatchResponse response = storage.submit(updateRequest);
     assertEquals(2 * MAX_BATCH_DELETES, response.deletes().size());
     assertEquals(1, response.updates().size());
     assertEquals(1, response.gets().size());
@@ -685,7 +685,7 @@ public class ITStorageTest {
         .get(BUCKET, blobName, Storage.BlobGetOption.generationMatch(-1L))
         .get(BlobId.of(BUCKET, blobName, -1L))
         .build();
-    BatchResponse batchResponse = storage.apply(batchRequest);
+    BatchResponse batchResponse = storage.submit(batchRequest);
     assertEquals(1, batchResponse.updates().size());
     assertEquals(2, batchResponse.deletes().size());
     assertEquals(2, batchResponse.gets().size());

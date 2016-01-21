@@ -1412,7 +1412,7 @@ public interface Storage extends Service<StorageOptions> {
    * @return the batch response
    * @throws StorageException upon failure
    */
-  BatchResponse apply(BatchRequest batchRequest);
+  BatchResponse submit(BatchRequest batchRequest);
 
   /**
    * Return a channel for reading the blob's content. The blob's latest generation is read. If the
