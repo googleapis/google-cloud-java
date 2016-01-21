@@ -214,6 +214,16 @@ public class TableInfo extends BaseTableInfo {
   }
 
   @Override
+  public boolean equals(Object obj) {
+    return obj instanceof TableInfo && Objects.equals(toPb(), ((TableInfo) obj).toPb());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), location, streamingBuffer);
+  }
+
+  @Override
   Table toPb() {
     Table tablePb = super.toPb();
     tablePb.setLocation(location);
