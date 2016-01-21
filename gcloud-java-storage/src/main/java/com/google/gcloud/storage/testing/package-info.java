@@ -24,7 +24,7 @@
  * RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
  * Storage storage = gcsHelper.options().service();
  * String bucket = RemoteGcsHelper.generateBucketName();
- * storage.create(BucketInfo.of(bucket));
+ * Bucket.of(storage, bucket).create();
  * } </pre>
  *
  * <p>After the test:

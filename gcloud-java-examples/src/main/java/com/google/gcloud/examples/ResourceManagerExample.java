@@ -17,7 +17,7 @@
 package com.google.gcloud.examples;
 
 import com.google.common.base.Joiner;
-import com.google.gcloud.resourcemanager.ProjectInfo;
+import com.google.gcloud.resourcemanager.Project;
 import com.google.gcloud.resourcemanager.ResourceManager;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 
@@ -64,8 +64,7 @@ public class ResourceManagerExample {
           labels.put(args[i], "");
         }
       }
-      ProjectInfo project =
-          resourceManager.create(ProjectInfo.builder(projectId).labels(labels).build());
+      Project project = Project.builder(resourceManager, projectId).labels(labels).build().create();
       System.out.printf(
           "Successfully created project '%s': %s.%n", projectId, projectDetails(project));
     }
@@ -111,7 +110,7 @@ public class ResourceManagerExample {
     @Override
     public void run(ResourceManager resourceManager, String... args) {
       String projectId = args[0];
-      ProjectInfo project = resourceManager.get(projectId);
+      Project project = resourceManager.get(projectId);
       if (project != null) {
         System.out.printf(
             "Successfully got project '%s': %s.%n", projectId, projectDetails(project));
@@ -135,7 +134,7 @@ public class ResourceManagerExample {
     @Override
     public void run(ResourceManager resourceManager, String... args) {
       System.out.println("Projects you can view:");
-      for (ProjectInfo project : resourceManager.list().values()) {
+      for (Project project : resourceManager.list().values()) {
         System.out.println(projectDetails(project));
       }
     }
@@ -158,7 +157,7 @@ public class ResourceManagerExample {
     ACTIONS.put("list", new ListAction());
   }
 
-  private static String projectDetails(ProjectInfo project) {
+  private static String projectDetails(Project project) {
     return new StringBuilder()
         .append("{projectId:")
         .append(project.projectId())

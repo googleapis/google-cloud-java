@@ -18,7 +18,7 @@ package com.google.gcloud.storage.testing;
 
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
-import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.StorageOptions;
@@ -173,8 +173,8 @@ public class RemoteGcsHelper {
     @Override
     public Boolean call() {
       while (true) {
-        for (BlobInfo info : storage.list(bucket).values()) {
-          storage.delete(bucket, info.name());
+        for (Blob blob : storage.list(bucket).values()) {
+          storage.delete(bucket, blob.name());
         }
         try {
           storage.delete(bucket);

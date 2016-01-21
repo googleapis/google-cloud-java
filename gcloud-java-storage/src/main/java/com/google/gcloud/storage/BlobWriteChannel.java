@@ -30,14 +30,14 @@ import java.util.Map;
 /**
  * Write channel implementation to upload Google Cloud Storage blobs.
  */
-class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
+class BlobWriteChannel extends BaseWriteChannel<StorageOptions, Blob> {
 
-  BlobWriteChannel(StorageOptions options, BlobInfo blob, Map<StorageRpc.Option, ?> optionsMap) {
-    this(options, blob, options.rpc().open(blob.toPb(), optionsMap));
+  BlobWriteChannel(Blob blob, Map<StorageRpc.Option, ?> optionsMap) {
+    this(blob, blob.options().rpc().open(blob.toPb(), optionsMap));
   }
 
-  BlobWriteChannel(StorageOptions options, BlobInfo blobInfo, String uploadId) {
-    super(options, blobInfo, uploadId);
+  BlobWriteChannel(Blob blob, String uploadId) {
+    super(blob.options(), blob, uploadId);
   }
 
   @Override
@@ -54,11 +54,12 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
     }
   }
 
+  @Override
   protected StateImpl.Builder stateBuilder() {
-    return StateImpl.builder(options(), entity(), uploadId());
+    return StateImpl.builder(entity(), uploadId());
   }
 
-  static class StateImpl extends BaseWriteChannel.BaseState<StorageOptions, BlobInfo> {
+  static class StateImpl extends BaseWriteChannel.BaseState<StorageOptions, Blob> {
 
     private static final long serialVersionUID = -9028324143780151286L;
 
@@ -66,10 +67,10 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
       super(builder);
     }
 
-    static class Builder extends BaseWriteChannel.BaseState.Builder<StorageOptions, BlobInfo> {
+    static class Builder extends BaseWriteChannel.BaseState.Builder<StorageOptions, Blob> {
 
-      private Builder(StorageOptions options, BlobInfo blobInfo, String uploadId) {
-        super(options, blobInfo, uploadId);
+      private Builder(Blob blob, String uploadId) {
+        super(blob.options(), blob, uploadId);
       }
 
       @Override
@@ -78,13 +79,13 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
       }
     }
 
-    static Builder builder(StorageOptions options, BlobInfo blobInfo, String uploadId) {
-      return new Builder(options, blobInfo, uploadId);
+    static Builder builder(Blob blob, String uploadId) {
+      return new Builder(blob, uploadId);
     }
 
     @Override
     public WriteChannel restore() {
-      BlobWriteChannel channel = new BlobWriteChannel(serviceOptions, entity, uploadId);
+      BlobWriteChannel channel = new BlobWriteChannel(entity, uploadId);
       channel.restore(this);
       return channel;
     }

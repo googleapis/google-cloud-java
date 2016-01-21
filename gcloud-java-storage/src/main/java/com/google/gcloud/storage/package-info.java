@@ -23,8 +23,8 @@
  * BlobId blobId = BlobId.of("bucket", "blob_name");
  * Blob blob = Blob.get(storage, blobId);
  * if (blob == null) {
- *   BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
- *   storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
+ *   blob = Blob.builder(storage, blobId).contentType("text/plain").build();
+ *   blob.create("Hello, Cloud Storage!".getBytes(UTF_8));
  * } else {
  *   System.out.println("Updating content for " + blobId.name());
  *   byte[] prevContent = blob.content();

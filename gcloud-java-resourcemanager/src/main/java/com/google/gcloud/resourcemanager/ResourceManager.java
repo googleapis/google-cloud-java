@@ -179,12 +179,12 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/create">Cloud
    * Resource Manager create</a>
-   * @return ProjectInfo object representing the new project's metadata. The returned object will
+   * @return Project object representing the new project's metadata. The returned object will
    *     include the following read-only fields supplied by the server: project number, lifecycle
    *     state, and creation time.
    * @throws ResourceManagerException upon failure
    */
-  ProjectInfo create(ProjectInfo project);
+  Project create(Project project);
 
   /**
    * Marks the project identified by the specified project ID for deletion.
@@ -192,11 +192,11 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * <p>This method will only affect the project if the following criteria are met:
    * <ul>
    * <li>The project does not have a billing account associated with it.
-   * <li>The project has a lifecycle state of {@link ProjectInfo.State#ACTIVE}.
+   * <li>The project has a lifecycle state of {@link Project.State#ACTIVE}.
    * </ul>
-   * This method changes the project's lifecycle state from {@link ProjectInfo.State#ACTIVE} to
-   * {@link ProjectInfo.State#DELETE_REQUESTED}. The deletion starts at an unspecified time, at
-   * which point the lifecycle state changes to {@link ProjectInfo.State#DELETE_IN_PROGRESS}. Until
+   * This method changes the project's lifecycle state from {@link Project.State#ACTIVE} to
+   * {@link Project.State#DELETE_REQUESTED}. The deletion starts at an unspecified time, at
+   * which point the lifecycle state changes to {@link Project.State#DELETE_IN_PROGRESS}. Until
    * the deletion completes, you can check the lifecycle state checked by retrieving the project
    * with {@link ResourceManager#get}, and the project remains visible to
    * {@link ResourceManager#list}. However, you cannot update the project. After the deletion
@@ -221,7 +221,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * Resource Manager get</a>
    * @throws ResourceManagerException upon failure
    */
-  ProjectInfo get(String projectId, ProjectGetOption... options);
+  Project get(String projectId, ProjectGetOption... options);
 
   /**
    * Lists the projects visible to the current user.
@@ -234,10 +234,10 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/list">Cloud
    * Resource Manager list</a>
-   * @return {@code Page<ProjectInfo>}, a page of projects
+   * @return {@code Page<Project>}, a page of projects
    * @throws ResourceManagerException upon failure
    */
-  Page<ProjectInfo> list(ProjectListOption... options);
+  Page<Project> list(ProjectListOption... options);
 
   /**
    * Replaces the attributes of the project.
@@ -247,17 +247,17 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">Cloud
    * Resource Manager update</a>
-   * @return the ProjectInfo representing the new project metadata
+   * @return the Project representing the new project metadata
    * @throws ResourceManagerException upon failure
    */
-  ProjectInfo replace(ProjectInfo newProject);
+  Project replace(Project newProject);
 
   /**
    * Restores the project identified by the specified project ID.
    *
    * <p>You can only use this method for a project that has a lifecycle state of
-   * {@link ProjectInfo.State#DELETE_REQUESTED}. After deletion starts, as indicated by a lifecycle
-   * state of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
+   * {@link Project.State#DELETE_REQUESTED}. After deletion starts, as indicated by a lifecycle
+   * state of {@link Project.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
    * caller must have modify permissions for this project.
    *
    * @see <a

@@ -25,7 +25,7 @@ import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.Page;
-import com.google.gcloud.resourcemanager.ProjectInfo.ResourceId;
+import com.google.gcloud.resourcemanager.Project.ResourceId;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectField;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectGetOption;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectListOption;
@@ -55,9 +55,11 @@ public class ResourceManagerImplTest {
       ProjectListOption.fields(ProjectField.NAME, ProjectField.LABELS);
   private static final ProjectListOption LIST_FILTER =
       ProjectListOption.filter("id:* name:myProject labels.color:blue LABELS.SIZE:*");
-  private static final ProjectInfo PARTIAL_PROJECT = ProjectInfo.builder("partial-project").build();
+  private static final Project PARTIAL_PROJECT =
+      Project.builder(RESOURCE_MANAGER, "partial-project").build();
   private static final ResourceId PARENT = new ResourceId("id", "type");
-  private static final ProjectInfo COMPLETE_PROJECT = ProjectInfo.builder("complete-project")
+  private static final Project COMPLETE_PROJECT =
+      Project.builder(RESOURCE_MANAGER, "complete-project")
       .name("name")
       .labels(ImmutableMap.of("k1", "v1"))
       .parent(PARENT)
@@ -78,7 +80,7 @@ public class ResourceManagerImplTest {
   }
 
   private void clearProjects() {
-    for (ProjectInfo project : RESOURCE_MANAGER.list().values()) {
+    for (Project project : RESOURCE_MANAGER.list().values()) {
       RESOURCE_MANAGER_HELPER.removeProject(project.projectId());
     }
   }
@@ -88,7 +90,7 @@ public class ResourceManagerImplTest {
     RESOURCE_MANAGER_HELPER.stop();
   }
 
-  private void compareReadWriteFields(ProjectInfo expected, ProjectInfo actual) {
+  private void compareReadWriteFields(Project expected, Project actual) {
     assertEquals(expected.projectId(), actual.projectId());
     assertEquals(expected.name(), actual.name());
     assertEquals(expected.labels(), actual.labels());
@@ -97,9 +99,9 @@ public class ResourceManagerImplTest {
 
   @Test
   public void testCreate() {
-    ProjectInfo returnedProject = RESOURCE_MANAGER.create(PARTIAL_PROJECT);
+    Project returnedProject = RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     compareReadWriteFields(PARTIAL_PROJECT, returnedProject);
-    assertEquals(ProjectInfo.State.ACTIVE, returnedProject.state());
+    assertEquals(Project.State.ACTIVE, returnedProject.state());
     assertNull(returnedProject.name());
     assertNull(returnedProject.parent());
     assertNotNull(returnedProject.projectNumber());
@@ -114,7 +116,7 @@ public class ResourceManagerImplTest {
     }
     returnedProject = RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     compareReadWriteFields(COMPLETE_PROJECT, returnedProject);
-    assertEquals(ProjectInfo.State.ACTIVE, returnedProject.state());
+    assertEquals(Project.State.ACTIVE, returnedProject.state());
     assertNotNull(returnedProject.projectNumber());
     assertNotNull(returnedProject.createTimeMillis());
   }
@@ -123,7 +125,8 @@ public class ResourceManagerImplTest {
   public void testDelete() {
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     RESOURCE_MANAGER.delete(COMPLETE_PROJECT.projectId());
-    assertEquals(ProjectInfo.State.DELETE_REQUESTED,
+    assertEquals(
+        Project.State.DELETE_REQUESTED,
         RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId()).state());
     try {
       RESOURCE_MANAGER.delete("some-nonexistant-project-id");
@@ -137,7 +140,7 @@ public class ResourceManagerImplTest {
   @Test
   public void testGet() {
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
-    ProjectInfo returnedProject = RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId());
+    Project returnedProject = RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId());
     compareReadWriteFields(COMPLETE_PROJECT, returnedProject);
     RESOURCE_MANAGER_HELPER.removeProject(COMPLETE_PROJECT.projectId());
     assertNull(RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId()));
@@ -145,8 +148,8 @@ public class ResourceManagerImplTest {
 
   @Test
   public void testGetWithOptions() {
-    ProjectInfo originalProject = RESOURCE_MANAGER.create(COMPLETE_PROJECT);
-    ProjectInfo returnedProject = RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId(), GET_FIELDS);
+    Project originalProject = RESOURCE_MANAGER.create(COMPLETE_PROJECT);
+    Project returnedProject = RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId(), GET_FIELDS);
     assertFalse(COMPLETE_PROJECT.equals(returnedProject));
     assertEquals(COMPLETE_PROJECT.projectId(), returnedProject.projectId());
     assertEquals(COMPLETE_PROJECT.name(), returnedProject.name());
@@ -159,11 +162,11 @@ public class ResourceManagerImplTest {
 
   @Test
   public void testList() {
-    Page<ProjectInfo> projects = RESOURCE_MANAGER.list();
+    Page<Project> projects = RESOURCE_MANAGER.list();
     assertFalse(projects.values().iterator().hasNext()); // TODO: change this when #421 is resolved
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
-    for (ProjectInfo p : RESOURCE_MANAGER.list().values()) {
+    for (Project p : RESOURCE_MANAGER.list().values()) {
       if (p.projectId().equals(PARTIAL_PROJECT.projectId())) {
         compareReadWriteFields(PARTIAL_PROJECT, p);
       } else if (p.projectId().equals(COMPLETE_PROJECT.projectId())) {
@@ -177,8 +180,8 @@ public class ResourceManagerImplTest {
   @Test
   public void testListFieldOptions() {
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
-    Page<ProjectInfo> projects = RESOURCE_MANAGER.list(LIST_FIELDS);
-    ProjectInfo returnedProject = projects.iterateAll().next();
+    Page<Project> projects = RESOURCE_MANAGER.list(LIST_FIELDS);
+    Project returnedProject = projects.iterateAll().next();
     assertEquals(COMPLETE_PROJECT.projectId(), returnedProject.projectId());
     assertEquals(COMPLETE_PROJECT.name(), returnedProject.name());
     assertEquals(COMPLETE_PROJECT.labels(), returnedProject.labels());
@@ -190,24 +193,28 @@ public class ResourceManagerImplTest {
 
   @Test
   public void testListFilterOptions() {
-    ProjectInfo matchingProject = ProjectInfo.builder("matching-project")
+    Project matchingProject =
+        Project.builder(RESOURCE_MANAGER, "matching-project")
         .name("MyProject")
         .labels(ImmutableMap.of("color", "blue", "size", "big"))
         .build();
-    ProjectInfo nonMatchingProject1 = ProjectInfo.builder("non-matching-project1")
+    Project nonMatchingProject1 =
+        Project.builder(RESOURCE_MANAGER, "non-matching-project1")
         .name("myProject")
         .labels(ImmutableMap.of("color", "blue"))
         .build();
-    ProjectInfo nonMatchingProject2 = ProjectInfo.builder("non-matching-project2")
+    Project nonMatchingProject2 =
+        Project.builder(RESOURCE_MANAGER, "non-matching-project2")
         .name("myProj")
         .labels(ImmutableMap.of("color", "blue", "size", "big"))
         .build();
-    ProjectInfo nonMatchingProject3 = ProjectInfo.builder("non-matching-project3").build();
+    Project nonMatchingProject3 =
+        Project.builder(RESOURCE_MANAGER, "non-matching-project3").build();
     RESOURCE_MANAGER.create(matchingProject);
     RESOURCE_MANAGER.create(nonMatchingProject1);
     RESOURCE_MANAGER.create(nonMatchingProject2);
     RESOURCE_MANAGER.create(nonMatchingProject3);
-    for (ProjectInfo p : RESOURCE_MANAGER.list(LIST_FILTER).values()) {
+    for (Project p : RESOURCE_MANAGER.list(LIST_FILTER).values()) {
       assertFalse(p.equals(nonMatchingProject1));
       assertFalse(p.equals(nonMatchingProject2));
       compareReadWriteFields(matchingProject, p);
@@ -216,22 +223,23 @@ public class ResourceManagerImplTest {
 
   @Test
   public void testReplace() {
-    ProjectInfo createdProject = RESOURCE_MANAGER.create(COMPLETE_PROJECT);
+    Project createdProject = RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     Map<String, String> newLabels = ImmutableMap.of("new k1", "new v1");
-    ProjectInfo anotherCompleteProject = ProjectInfo.builder(COMPLETE_PROJECT.projectId())
+    Project anotherCompleteProject =
+        Project.builder(RESOURCE_MANAGER, COMPLETE_PROJECT.projectId())
         .labels(newLabels)
         .projectNumber(987654321L)
         .createTimeMillis(230682061315L)
-        .state(ProjectInfo.State.DELETE_REQUESTED)
+            .state(Project.State.DELETE_REQUESTED)
         .parent(createdProject.parent())
         .build();
-    ProjectInfo returnedProject = RESOURCE_MANAGER.replace(anotherCompleteProject);
+    Project returnedProject = RESOURCE_MANAGER.replace(anotherCompleteProject);
     compareReadWriteFields(anotherCompleteProject, returnedProject);
     assertEquals(createdProject.projectNumber(), returnedProject.projectNumber());
     assertEquals(createdProject.createTimeMillis(), returnedProject.createTimeMillis());
     assertEquals(createdProject.state(), returnedProject.state());
-    ProjectInfo nonexistantProject =
-        ProjectInfo.builder("some-project-id-that-does-not-exist").build();
+    Project nonexistantProject =
+        Project.builder(RESOURCE_MANAGER, "some-project-id-that-does-not-exist").build();
     try {
       RESOURCE_MANAGER.replace(nonexistantProject);
       fail("Should fail because the project doesn't exist.");
@@ -246,12 +254,12 @@ public class ResourceManagerImplTest {
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     RESOURCE_MANAGER.delete(COMPLETE_PROJECT.projectId());
     assertEquals(
-        ProjectInfo.State.DELETE_REQUESTED,
+        Project.State.DELETE_REQUESTED,
         RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId()).state());
     RESOURCE_MANAGER.undelete(COMPLETE_PROJECT.projectId());
-    ProjectInfo revivedProject = RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId());
+    Project revivedProject = RESOURCE_MANAGER.get(COMPLETE_PROJECT.projectId());
     compareReadWriteFields(COMPLETE_PROJECT, revivedProject);
-    assertEquals(ProjectInfo.State.ACTIVE, revivedProject.state());
+    assertEquals(Project.State.ACTIVE, revivedProject.state());
     try {
       RESOURCE_MANAGER.undelete("invalid-project-id");
       fail("Should fail because the project doesn't exist.");
@@ -276,8 +284,9 @@ public class ResourceManagerImplTest {
         .andThrow(new ResourceManagerException(500, "Internal Error", true))
         .andReturn(PARTIAL_PROJECT.toPb());
     EasyMock.replay(resourceManagerRpcMock);
-    ProjectInfo returnedProject = resourceManagerMock.get(PARTIAL_PROJECT.projectId());
-    assertEquals(PARTIAL_PROJECT, returnedProject);
+    Project returnedProject = resourceManagerMock.get(PARTIAL_PROJECT.projectId());
+    assertEquals(
+        PARTIAL_PROJECT.toBuilder().resourceManager(resourceManagerMock).build(), returnedProject);
   }
 
   @Test

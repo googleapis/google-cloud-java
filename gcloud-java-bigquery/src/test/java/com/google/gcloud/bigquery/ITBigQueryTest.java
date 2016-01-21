@@ -34,8 +34,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.Page;
 import com.google.gcloud.bigquery.BigQuery.DatasetOption;
 import com.google.gcloud.bigquery.testing.RemoteBigQueryHelper;
-import com.google.gcloud.storage.BlobInfo;
-import com.google.gcloud.storage.BucketInfo;
+import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
@@ -145,10 +145,16 @@ public class ITBigQueryTest {
     RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
     bigquery = bigqueryHelper.options().service();
     storage = gcsHelper.options().service();
-    storage.create(BucketInfo.of(BUCKET));
-    storage.create(BlobInfo.builder(BUCKET, LOAD_FILE).contentType("text/plain").build(),
+    Bucket.of(storage, BUCKET).create();
+    Blob.builder(storage, BUCKET, LOAD_FILE)
+        .contentType("text/plain")
+        .build()
+        .create(
         CSV_CONTENT.getBytes(StandardCharsets.UTF_8));
-    storage.create(BlobInfo.builder(BUCKET, JSON_LOAD_FILE).contentType("application/json").build(),
+    Blob.builder(storage, BUCKET, JSON_LOAD_FILE)
+        .contentType("application/json")
+        .build()
+        .create(
         JSON_CONTENT.getBytes(StandardCharsets.UTF_8));
     DatasetInfo info = DatasetInfo.builder(DATASET).description(DESCRIPTION).build();
     bigquery.create(info);
