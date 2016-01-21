@@ -226,6 +226,14 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
     }
 
     /**
+     * Sets the default dataset. This dataset is used for all unqualified table names used in the
+     * query.
+     */
+    public Builder defaultDataset(String defaultDataset) {
+      return defaultDataset(DatasetId.of(defaultDataset));
+    }
+
+    /**
      * Sets a priority for the query. If not specified the priority is assumed to be
      * {@link Priority#INTERACTIVE}.
      */

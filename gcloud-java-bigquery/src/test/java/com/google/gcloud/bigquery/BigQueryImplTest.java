@@ -902,7 +902,7 @@ public class BigQueryImplTest {
     assertNull(response.etag());
     assertNull(response.result());
     assertEquals(queryJob, response.jobId());
-    assertEquals(false, response.jobComplete());
+    assertEquals(false, response.jobCompleted());
     assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
     assertFalse(response.hasErrors());
     assertEquals(null, response.result());
@@ -926,7 +926,7 @@ public class BigQueryImplTest {
     QueryResponse response = bigquery.query(QUERY_REQUEST);
     assertNull(response.etag());
     assertEquals(queryJob, response.jobId());
-    assertEquals(true, response.jobComplete());
+    assertEquals(true, response.jobCompleted());
     assertEquals(false, response.result().cacheHit());
     assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
     assertFalse(response.hasErrors());
@@ -959,7 +959,7 @@ public class BigQueryImplTest {
     QueryResponse response = bigquery.getQueryResults(queryJob);
     assertEquals("etag", response.etag());
     assertEquals(queryJob, response.jobId());
-    assertEquals(true, response.jobComplete());
+    assertEquals(true, response.jobCompleted());
     assertEquals(false, response.result().cacheHit());
     assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
     assertFalse(response.hasErrors());
@@ -993,7 +993,7 @@ public class BigQueryImplTest {
         QUERY_RESULTS_OPTION_INDEX, QUERY_RESULTS_OPTION_MAX_RESULTS,
         QUERY_RESULTS_OPTION_PAGE_TOKEN);
     assertEquals(queryJob, response.jobId());
-    assertEquals(true, response.jobComplete());
+    assertEquals(true, response.jobCompleted());
     assertEquals(false, response.result().cacheHit());
     assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
     assertFalse(response.hasErrors());

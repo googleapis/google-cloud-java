@@ -44,7 +44,6 @@ import com.google.gcloud.bigquery.TableInfo;
 import com.google.gcloud.bigquery.ViewInfo;
 import com.google.gcloud.spi.BigQueryRpc.Tuple;
 
-import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -99,6 +98,7 @@ import java.util.Map;
  */
 public class BigQueryExample {
 
+  private static final int CHUNK_SIZE = 8 * 256 * 1024;
   private static final Map<String, BigQueryAction> CREATE_ACTIONS = new HashMap<>();
   private static final Map<String, BigQueryAction> INFO_ACTIONS = new HashMap<>();
   private static final Map<String, BigQueryAction> LIST_ACTIONS = new HashMap<>();
@@ -627,7 +627,7 @@ public class BigQueryExample {
     void run(BigQuery bigquery, QueryRequest queryRequest) throws Exception {
       System.out.println("Running query");
       QueryResponse queryResponse = bigquery.query(queryRequest);
-      while (!queryResponse.jobComplete()) {
+      while (!queryResponse.jobCompleted()) {
         System.out.println("Waiting for query job " + queryResponse.jobId() + " to complete");
         Thread.sleep(1000L);
         queryResponse = bigquery.getQueryResults(queryResponse.jobId());
@@ -676,12 +676,12 @@ public class BigQueryExample {
     void run(BigQuery bigquery, Tuple<LoadConfiguration, String> configuration) throws Exception {
       System.out.println("Running insert");
       try (FileChannel fileChannel = FileChannel.open(Paths.get(configuration.y()))) {
-        ByteBuffer buffer = ByteBuffer.allocate(256 * 1024);
         WriteChannel writeChannel = bigquery.writer(configuration.x());
-        while (fileChannel.read(buffer) > 0) {
-          buffer.flip();
-          writeChannel.write(buffer);
-          buffer.clear();
+        long position = 0;
+        long written = fileChannel.transferTo(position, CHUNK_SIZE, writeChannel);
+        while (written > 0) {
+          position += written;
+          written = fileChannel.transferTo(position, CHUNK_SIZE, writeChannel);
         }
         writeChannel.close();
       }

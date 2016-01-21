@@ -514,10 +514,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       QueryResponse.Builder builder = QueryResponse.builder();
       JobId completeJobId = JobId.fromPb(results.getJobReference());
       builder.jobId(completeJobId);
-      builder.jobComplete(results.getJobComplete());
+      builder.jobCompleted(results.getJobComplete());
       List<TableRow> rowsPb = results.getRows();
       if (results.getJobComplete()) {
-        builder.jobComplete(true);
+        builder.jobCompleted(true);
         QueryResult.Builder resultBuilder = transformQueryResults(completeJobId, rowsPb,
             results.getPageToken(), options(), ImmutableMap.<BigQueryRpc.Option, Object>of());
         resultBuilder.totalBytesProcessed(results.getTotalBytesProcessed());
@@ -561,7 +561,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       JobId completeJobId = JobId.fromPb(results.getJobReference());
       builder.jobId(completeJobId);
       builder.etag(results.getEtag());
-      builder.jobComplete(results.getJobComplete());
+      builder.jobCompleted(results.getJobComplete());
       List<TableRow> rowsPb = results.getRows();
       if (results.getJobComplete()) {
         QueryResult.Builder resultBuilder = transformQueryResults(completeJobId, rowsPb,
