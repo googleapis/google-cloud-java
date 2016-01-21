@@ -320,7 +320,7 @@ public class ITBigQueryTest {
         .maxResults(1000L)
         .build();
     QueryResponse response = bigquery.query(request);
-    while (!response.jobComplete()) {
+    while (!response.jobCompleted()) {
       response = bigquery.getQueryResults(response.jobId());
       Thread.sleep(1000);
     }
@@ -382,7 +382,7 @@ public class ITBigQueryTest {
         .maxResults(1000L)
         .build();
     QueryResponse response = bigquery.query(request);
-    while (!response.jobComplete()) {
+    while (!response.jobCompleted()) {
       response = bigquery.getQueryResults(response.jobId());
       Thread.sleep(1000);
     }
@@ -627,7 +627,7 @@ public class ITBigQueryTest {
         .maxResults(1000L)
         .build();
     QueryResponse response = bigquery.query(request);
-    while (!response.jobComplete()) {
+    while (!response.jobCompleted()) {
       Thread.sleep(1000);
       response = bigquery.getQueryResults(response.jobId());
     }
@@ -786,7 +786,7 @@ public class ITBigQueryTest {
     assertNull(remoteJob.status().error());
 
     QueryResponse response = bigquery.getQueryResults(remoteJob.jobId());
-    while (!response.jobComplete()) {
+    while (!response.jobCompleted()) {
       Thread.sleep(1000);
       response = bigquery.getQueryResults(response.jobId());
     }
