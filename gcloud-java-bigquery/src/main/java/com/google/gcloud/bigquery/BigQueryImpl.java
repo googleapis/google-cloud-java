@@ -34,8 +34,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.gcloud.BaseService;
-import com.google.gcloud.ExceptionHandler;
-import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.PageImpl.NextPageFetcher;
@@ -48,27 +46,6 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
-
-  private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
-
-    private static final long serialVersionUID = -7478333733015750774L;
-
-    @Override
-    public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-      return Interceptor.RetryResult.CONTINUE_EVALUATION;
-    }
-
-    @Override
-    public RetryResult beforeEval(Exception exception) {
-      if (exception instanceof BigQueryException) {
-        boolean retriable = ((BigQueryException) exception).retryable();
-        return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
-      }
-      return Interceptor.RetryResult.CONTINUE_EVALUATION;
-    }
-  };
-  static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
-      .abortOn(RuntimeException.class).interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
 
   private static class DatasetPageFetcher implements NextPageFetcher<DatasetInfo> {
 
@@ -537,10 +514,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       QueryResponse.Builder builder = QueryResponse.builder();
       JobId completeJobId = JobId.fromPb(results.getJobReference());
       builder.jobId(completeJobId);
-      builder.jobComplete(results.getJobComplete());
+      builder.jobCompleted(results.getJobComplete());
       List<TableRow> rowsPb = results.getRows();
       if (results.getJobComplete()) {
-        builder.jobComplete(true);
+        builder.jobCompleted(true);
         QueryResult.Builder resultBuilder = transformQueryResults(completeJobId, rowsPb,
             results.getPageToken(), options(), ImmutableMap.<BigQueryRpc.Option, Object>of());
         resultBuilder.totalBytesProcessed(results.getTotalBytesProcessed());
@@ -584,7 +561,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       JobId completeJobId = JobId.fromPb(results.getJobReference());
       builder.jobId(completeJobId);
       builder.etag(results.getEtag());
-      builder.jobComplete(results.getJobComplete());
+      builder.jobCompleted(results.getJobComplete());
       List<TableRow> rowsPb = results.getRows();
       if (results.getJobComplete()) {
         QueryResult.Builder resultBuilder = transformQueryResults(completeJobId, rowsPb,
@@ -617,6 +594,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .pageFetcher(nextPageFetcher)
         .cursor(cursor)
         .results(transformTableData(rowsPb));
+  }
+
+  public TableDataWriteChannel writer(LoadConfiguration loadConfiguration) {
+    return new TableDataWriteChannel(options(), setProjectId(loadConfiguration));
   }
 
   private Map<BigQueryRpc.Option, ?> optionMap(Option... options) {
@@ -698,8 +679,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     if (job instanceof LoadJobInfo) {
       LoadJobInfo loadJob = (LoadJobInfo) job;
       LoadJobInfo.Builder loadBuilder = loadJob.toBuilder();
-      loadBuilder.destinationTable(setProjectId(loadJob.destinationTable()));
-      return loadBuilder.build();
+      return loadBuilder.configuration(setProjectId(loadJob.configuration())).build();
     }
     return job;
   }
@@ -709,6 +689,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     if (request.defaultDataset() != null) {
       builder.defaultDataset(setProjectId(request.defaultDataset()));
     }
+    return builder.build();
+  }
+
+  private LoadConfiguration setProjectId(LoadConfiguration configuration) {
+    LoadConfiguration.Builder builder = configuration.toBuilder();
+    builder.destinationTable(setProjectId(configuration.destinationTable()));
     return builder.build();
   }
 }

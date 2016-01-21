@@ -16,42 +16,80 @@
 
 package com.google.gcloud.datastore;
 
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.gcloud.datastore.DatastoreException.DatastoreError;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
+import com.google.gcloud.BaseServiceException;
+import com.google.gcloud.RetryHelper;
 
 import org.junit.Test;
+
+import java.io.IOException;
+import java.net.SocketTimeoutException;
 
 public class DatastoreExceptionTest {
 
   @Test
-  public void testDatastoreError() throws Exception {
-    for (Reason reason : Reason.values()) {
-      DatastoreError error = DatastoreError.valueOf(reason.name());
-      assertEquals(reason.retryable(), error.retryable());
-      assertEquals(reason.description(), error.description());
-      assertEquals(reason.httpStatus(), error.httpStatus());
-    }
+  public void testDatastoreException() throws Exception {
+    DatastoreException exception = new DatastoreException(409, "message", "ABORTED");
+    assertEquals(409, exception.code());
+    assertEquals("ABORTED", exception.reason());
+    assertEquals("message", exception.getMessage());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
 
-    DatastoreException exception = new DatastoreException(DatastoreError.ABORTED, "bla");
-    assertEquals(DatastoreError.ABORTED, exception.datastoreError());
+    exception = new DatastoreException(403, "message", "DEADLINE_EXCEEDED");
+    assertEquals(403, exception.code());
+    assertEquals("DEADLINE_EXCEEDED", exception.reason());
+    assertEquals("message", exception.getMessage());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+
+    exception = new DatastoreException(503, "message", "UNAVAILABLE");
+    assertEquals(503, exception.code());
+    assertEquals("UNAVAILABLE", exception.reason());
+    assertEquals("message", exception.getMessage());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+
+    exception = new DatastoreException(500, "message", "INTERNAL");
+    assertEquals(500, exception.code());
+    assertEquals("INTERNAL", exception.reason());
+    assertEquals("message", exception.getMessage());
+    assertFalse(exception.retryable());
+    assertTrue(exception.idempotent());
+
+    IOException cause = new SocketTimeoutException();
+    exception = new DatastoreException(cause);
+    assertNull(exception.reason());
+    assertNull(exception.getMessage());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+
   }
 
   @Test
   public void testTranslateAndThrow() throws Exception {
-    DatastoreRpcException toTranslate = null; // should be preserved as a cause
-    for (Reason reason : Reason.values()) {
-      try {
-        toTranslate = new DatastoreRpcException(reason, null);
-        DatastoreException.translateAndThrow(toTranslate);
-        fail("Exception expected");
-      } catch (DatastoreException ex) {
-        assertEquals(reason.name(), ex.datastoreError().name());
-        assertEquals(toTranslate, ex.getCause());
-      }
+    DatastoreException cause = new DatastoreException(503, "message", "UNAVAILABLE");
+    RetryHelper.RetryHelperException exceptionMock = createMock(RetryHelper.RetryHelperException.class);
+    expect(exceptionMock.getCause()).andReturn(cause).times(2);
+    replay(exceptionMock);
+    try {
+      DatastoreException.translateAndThrow(exceptionMock);
+    } catch (BaseServiceException ex) {
+      assertEquals(503, ex.code());
+      assertEquals("message", ex.getMessage());
+      assertTrue(ex.retryable());
+      assertTrue(ex.idempotent());
+    } finally {
+      verify(exceptionMock);
     }
   }
 
@@ -61,7 +99,7 @@ public class DatastoreExceptionTest {
       DatastoreException.throwInvalidRequest("message %s %d", "a", 1);
       fail("Exception expected");
     } catch (DatastoreException ex) {
-      assertEquals(DatastoreError.FAILED_PRECONDITION, ex.datastoreError());
+      assertEquals("FAILED_PRECONDITION", ex.reason());
       assertEquals("message a 1", ex.getMessage());
     }
   }

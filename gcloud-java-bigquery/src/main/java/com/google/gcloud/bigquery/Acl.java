@@ -104,7 +104,7 @@ public final class Acl implements Serializable {
       }
       // Unreachable
       throw new BigQueryException(BigQueryException.UNKNOWN_CODE,
-          "Unrecognized access configuration", false);
+          "Unrecognized access configuration");
     }
   }
 

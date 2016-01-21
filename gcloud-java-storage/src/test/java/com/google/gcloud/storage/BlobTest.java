@@ -31,6 +31,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.util.Lists;
+import com.google.gcloud.ReadChannel;
 import com.google.gcloud.storage.Storage.CopyRequest;
 
 import org.easymock.Capture;
@@ -188,7 +189,7 @@ public class BlobTest {
 
   @Test
   public void testReader() throws Exception {
-    BlobReadChannel channel = createMock(BlobReadChannel.class);
+    ReadChannel channel = createMock(ReadChannel.class);
     expect(storage.reader(BLOB_INFO.blobId())).andReturn(channel);
     replay(storage);
     assertSame(channel, blob.reader());

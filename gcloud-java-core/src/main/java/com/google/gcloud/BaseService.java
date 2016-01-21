@@ -16,6 +16,8 @@
 
 package com.google.gcloud;
 
+import com.google.gcloud.ExceptionHandler.Interceptor;
+
 /**
  * Base class for service objects.
  *
@@ -23,6 +25,29 @@ package com.google.gcloud;
  */
 public abstract class BaseService<OptionsT extends ServiceOptions<?, ?, OptionsT>>
     implements Service<OptionsT> {
+
+  public static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
+
+    private static final long serialVersionUID = -8429573486870467828L;
+
+    @Override
+    public RetryResult afterEval(Exception exception, RetryResult retryResult) {
+      return Interceptor.RetryResult.CONTINUE_EVALUATION;
+    }
+
+    @Override
+    public RetryResult beforeEval(Exception exception) {
+      if (exception instanceof BaseServiceException) {
+        boolean retriable = ((BaseServiceException) exception).retryable();
+        return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
+      }
+      return Interceptor.RetryResult.CONTINUE_EVALUATION;
+    }
+  };
+  public static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
+      .abortOn(RuntimeException.class)
+      .interceptor(EXCEPTION_HANDLER_INTERCEPTOR)
+      .build();
 
   private final OptionsT options;
 

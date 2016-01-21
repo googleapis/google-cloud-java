@@ -262,8 +262,8 @@ public final class Table {
    */
   Job load(FormatOptions format, List<String> sourceUris, BigQuery.JobOption... options)
       throws BigQueryException {
-    return new Job(bigquery, bigquery.create(LoadJobInfo.of(info.tableId(), format, sourceUris),
-        options));
+    LoadConfiguration configuration = LoadConfiguration.of(info.tableId(), format);
+    return new Job(bigquery, bigquery.create(LoadJobInfo.of(configuration, sourceUris), options));
   }
 
   /**

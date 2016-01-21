@@ -319,7 +319,7 @@ public final class Bucket {
       batch.get(info.name(), name);
     }
     List<Blob> blobs = new ArrayList<>(blobNames.length);
-    BatchResponse response = storage.apply(batch.build());
+    BatchResponse response = storage.submit(batch.build());
     for (BatchResponse.Result<BlobInfo> result : response.gets()) {
       BlobInfo blobInfo = result.get();
       blobs.add(blobInfo != null ? new Blob(storage, blobInfo) : null);

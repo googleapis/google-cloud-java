@@ -20,12 +20,21 @@ import static com.google.gcloud.spi.BigQueryRpc.Option.MAX_RESULTS;
 import static com.google.gcloud.spi.BigQueryRpc.Option.PAGE_TOKEN;
 import static com.google.gcloud.spi.BigQueryRpc.Option.START_INDEX;
 import static com.google.gcloud.spi.BigQueryRpc.Option.TIMEOUT;
+import static java.net.HttpURLConnection.HTTP_CREATED;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
+import static java.net.HttpURLConnection.HTTP_OK;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.http.ByteArrayContent;
+import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.json.JsonHttpContent;
+import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.services.bigquery.Bigquery;
 import com.google.api.services.bigquery.model.Dataset;
@@ -33,6 +42,8 @@ import com.google.api.services.bigquery.model.DatasetList;
 import com.google.api.services.bigquery.model.DatasetReference;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
+import com.google.api.services.bigquery.model.JobConfiguration;
+import com.google.api.services.bigquery.model.JobConfigurationLoad;
 import com.google.api.services.bigquery.model.JobList;
 import com.google.api.services.bigquery.model.JobStatus;
 import com.google.api.services.bigquery.model.QueryRequest;
@@ -46,10 +57,8 @@ import com.google.api.services.bigquery.model.TableReference;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 
-import com.google.gcloud.bigquery.BigQueryError;
 import com.google.gcloud.bigquery.BigQueryException;
 import com.google.gcloud.bigquery.BigQueryOptions;
 
@@ -57,13 +66,14 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class DefaultBigQueryRpc implements BigQueryRpc {
 
   public static final String DEFAULT_PROJECTION = "full";
-  // see: https://cloud.google.com/bigquery/troubleshooting-errors
-  private static final Set<Integer> RETRYABLE_CODES = ImmutableSet.of(500, 502, 503, 504);
+  private static final String BASE_RESUMABLE_URI =
+      "https://www.googleapis.com/upload/bigquery/v2/projects/";
+  // see: https://cloud.google.com/bigquery/loading-data-post-request#resume-upload
+  private static final int HTTP_RESUME_INCOMPLETE = 308;
   private final BigQueryOptions options;
   private final Bigquery bigquery;
 
@@ -78,28 +88,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   private static BigQueryException translate(IOException exception) {
-    BigQueryException translated;
-    if (exception instanceof GoogleJsonResponseException
-        && ((GoogleJsonResponseException) exception).getDetails() != null) {
-      translated = translate(((GoogleJsonResponseException) exception).getDetails());
-    } else {
-      translated =
-          new BigQueryException(BigQueryException.UNKNOWN_CODE, exception.getMessage(), false);
-    }
-    translated.initCause(exception);
-    return translated;
-  }
-
-  private static BigQueryException translate(GoogleJsonError exception) {
-    boolean retryable = RETRYABLE_CODES.contains(exception.getCode());
-    BigQueryError bigqueryError = null;
-    if (exception.getErrors() != null  && !exception.getErrors().isEmpty()) {
-      GoogleJsonError.ErrorInfo error = exception.getErrors().get(0);
-      bigqueryError = new BigQueryError(error.getReason(), error.getLocation(), error.getMessage(),
-          (String) error.get("debugInfo"));
-    }
-    return new BigQueryException(exception.getCode(), exception.getMessage(), retryable,
-        bigqueryError);
+    return new BigQueryException(exception);
   }
 
   @Override
@@ -413,6 +402,68 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   public QueryResponse query(QueryRequest request) throws BigQueryException {
     try {
       return bigquery.jobs().query(this.options.projectId(), request).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public String open(JobConfigurationLoad configuration) throws BigQueryException {
+    try {
+      Job loadJob = new Job().setConfiguration(new JobConfiguration().setLoad(configuration));
+      StringBuilder builder = new StringBuilder()
+          .append(BASE_RESUMABLE_URI)
+          .append(options.projectId())
+          .append("/jobs");
+      GenericUrl url = new GenericUrl(builder.toString());
+      url.set("uploadType", "resumable");
+      JsonFactory jsonFactory = bigquery.getJsonFactory();
+      HttpRequestFactory requestFactory = bigquery.getRequestFactory();
+      HttpRequest httpRequest =
+          requestFactory.buildPostRequest(url, new JsonHttpContent(jsonFactory, loadJob));
+      httpRequest.getHeaders().set("X-Upload-Content-Value", "application/octet-stream");
+      HttpResponse response = httpRequest.execute();
+      return response.getHeaders().getLocation();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+      boolean last) throws BigQueryException {
+    try {
+      GenericUrl url = new GenericUrl(uploadId);
+      HttpRequest httpRequest = bigquery.getRequestFactory().buildPutRequest(url,
+          new ByteArrayContent(null, toWrite, toWriteOffset, length));
+      long limit = destOffset + length;
+      StringBuilder range = new StringBuilder("bytes ");
+      range.append(destOffset).append('-').append(limit - 1).append('/');
+      if (last) {
+        range.append(limit);
+      } else {
+        range.append('*');
+      }
+      httpRequest.getHeaders().setContentRange(range.toString());
+      int code;
+      String message;
+      IOException exception = null;
+      try {
+        HttpResponse response = httpRequest.execute();
+        code = response.getStatusCode();
+        message = response.getStatusMessage();
+      } catch (HttpResponseException ex) {
+        exception = ex;
+        code = ex.getStatusCode();
+        message = ex.getStatusMessage();
+      }
+      if (!last && code != HTTP_RESUME_INCOMPLETE
+          || last && !(code == HTTP_OK || code == HTTP_CREATED)) {
+        if (exception != null) {
+          throw exception;
+        }
+        throw new BigQueryException(code, message);
+      }
     } catch (IOException ex) {
       throw translate(ex);
     }

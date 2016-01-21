@@ -16,10 +16,13 @@
 
 package com.google.gcloud.resourcemanager;
 
+import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.BaseServiceException;
-import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.RetryHelper.RetryInterruptedException;
+
+import java.io.IOException;
+import java.util.Set;
 
 /**
  * Resource Manager service exception.
@@ -29,11 +32,32 @@ import com.google.gcloud.RetryHelper.RetryInterruptedException;
  */
 public class ResourceManagerException extends BaseServiceException {
 
-  private static final long serialVersionUID = 6841689911565501705L;
-  private static final int UNKNOWN_CODE = -1;
+  // see https://cloud.google.com/resource-manager/v1/errors/core_errors
+  private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
+      new Error(503, null),
+      new Error(500, null),
+      new Error(429, null),
+      new Error(403, "concurrentLimitExceeded"),
+      new Error(403, "limitExceeded"),
+      new Error(403, "rateLimitExceeded"),
+      new Error(403, "rateLimitExceededUnreg"),
+      new Error(403, "servingLimitExceeded"),
+      new Error(403, "userRateLimitExceeded"),
+      new Error(403, "userRateLimitExceededUnreg"),
+      new Error(403, "variableTermLimitExceeded"));
+  private static final long serialVersionUID = -9207194488966554136L;
 
-  public ResourceManagerException(int code, String message, boolean retryable) {
-    super(code, message, retryable);
+  public ResourceManagerException(int code, String message) {
+    super(code, message, null, true);
+  }
+
+  public ResourceManagerException(IOException exception) {
+    super(exception, true);
+  }
+
+  @Override
+  protected Set<Error> retryableErrors() {
+    return RETRYABLE_ERRORS;
   }
 
   /**
@@ -45,12 +69,7 @@ public class ResourceManagerException extends BaseServiceException {
    * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
   static ResourceManagerException translateAndThrow(RetryHelperException ex) {
-    if (ex.getCause() instanceof ResourceManagerException) {
-      throw (ResourceManagerException) ex.getCause();
-    }
-    if (ex instanceof RetryHelper.RetryInterruptedException) {
-      RetryHelper.RetryInterruptedException.propagate();
-    }
-    throw new ResourceManagerException(UNKNOWN_CODE, ex.getMessage(), false);
+    BaseServiceException.translateAndPropagateIfPossible(ex);
+    throw new ResourceManagerException(UNKNOWN_CODE, ex.getMessage());
   }
 }

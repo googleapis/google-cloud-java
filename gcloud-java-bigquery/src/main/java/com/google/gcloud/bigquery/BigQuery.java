@@ -443,7 +443,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option that sets how long to wait for the query to complete, in milliseconds,
      * before returning. Default is 10 seconds. If the timeout passes before the job completes,
-     * {@link QueryResponse#jobComplete()} will be {@code false}.
+     * {@link QueryResponse#jobCompleted()} will be {@code false}.
      */
     public static QueryResultsOption maxWaitTime(long maxWaitTime) {
       checkArgument(maxWaitTime >= 0);
@@ -662,4 +662,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @throws BigQueryException upon failure
    */
   QueryResponse getQueryResults(JobId job, QueryResultsOption... options) throws BigQueryException;
+
+  /**
+   * Returns a channel to write data to be inserted into a BigQuery table. Data format and other
+   * options can be configured using the {@link LoadConfiguration} parameter.
+   *
+   * @throws BigQueryException upon failure
+   */
+  TableDataWriteChannel writer(LoadConfiguration loadConfiguration);
 }

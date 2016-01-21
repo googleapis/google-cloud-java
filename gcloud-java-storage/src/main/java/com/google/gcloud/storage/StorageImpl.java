@@ -44,11 +44,10 @@ import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.BaseService;
-import com.google.gcloud.ExceptionHandler;
-import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.PageImpl.NextPageFetcher;
+import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.RewriteResponse;
@@ -75,26 +74,6 @@ import java.util.concurrent.TimeUnit;
 
 final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
-  private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR = new Interceptor() {
-
-    private static final long serialVersionUID = -7758580330857881124L;
-
-    @Override
-    public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-      return Interceptor.RetryResult.CONTINUE_EVALUATION;
-    }
-
-    @Override
-    public RetryResult beforeEval(Exception exception) {
-      if (exception instanceof StorageException) {
-        boolean retriable = ((StorageException) exception).retryable();
-        return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
-      }
-      return Interceptor.RetryResult.CONTINUE_EVALUATION;
-    }
-  };
-  static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
-      .abortOn(RuntimeException.class).interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
   private static final byte[] EMPTY_BYTE_ARRAY = {};
   private static final String EMPTY_BYTE_ARRAY_MD5 = "1B2M2Y8AsgTpgAmY7PhCfg==";
   private static final String EMPTY_BYTE_ARRAY_CRC32C = "AAAAAA==";
@@ -462,7 +441,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BatchResponse apply(BatchRequest batchRequest) {
+  public BatchResponse submit(BatchRequest batchRequest) {
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> toDelete =
         Lists.newArrayListWithCapacity(batchRequest.toDelete().size());
     for (Map.Entry<BlobId, Iterable<BlobSourceOption>> entry : batchRequest.toDelete().entrySet()) {
@@ -517,15 +496,15 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
-  public BlobReadChannel reader(String bucket, String blob, BlobSourceOption... options) {
+  public ReadChannel reader(String bucket, String blob, BlobSourceOption... options) {
     Map<StorageRpc.Option, ?> optionsMap = optionMap(options);
-    return new BlobReadChannelImpl(options(), BlobId.of(bucket, blob), optionsMap);
+    return new BlobReadChannel(options(), BlobId.of(bucket, blob), optionsMap);
   }
 
   @Override
-  public BlobReadChannel reader(BlobId blob, BlobSourceOption... options) {
+  public ReadChannel reader(BlobId blob, BlobSourceOption... options) {
     Map<StorageRpc.Option, ?> optionsMap = optionMap(blob, options);
-    return new BlobReadChannelImpl(options(), blob, optionsMap);
+    return new BlobReadChannel(options(), blob, optionsMap);
   }
 
   @Override
@@ -536,7 +515,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
 
   private BlobWriteChannel writer(BlobInfo blobInfo, BlobTargetOption... options) {
     final Map<StorageRpc.Option, ?> optionsMap = optionMap(blobInfo, options);
-    return new BlobWriteChannelImpl(options(), blobInfo, optionsMap);
+    return new BlobWriteChannel(options(), blobInfo, optionsMap);
   }
 
   @Override
@@ -613,7 +592,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     for (BlobId blob : blobIds) {
       requestBuilder.get(blob);
     }
-    BatchResponse response = apply(requestBuilder.build());
+    BatchResponse response = submit(requestBuilder.build());
     return Collections.unmodifiableList(transformResultList(response.gets(), null));
   }
 
@@ -623,7 +602,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     for (BlobInfo blobInfo : blobInfos) {
       requestBuilder.update(blobInfo);
     }
-    BatchResponse response = apply(requestBuilder.build());
+    BatchResponse response = submit(requestBuilder.build());
     return Collections.unmodifiableList(transformResultList(response.updates(), null));
   }
 
@@ -633,7 +612,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     for (BlobId blob : blobIds) {
       requestBuilder.delete(blob);
     }
-    BatchResponse response = apply(requestBuilder.build());
+    BatchResponse response = submit(requestBuilder.build());
     return Collections.unmodifiableList(transformResultList(response.deletes(), Boolean.FALSE));
   }
 

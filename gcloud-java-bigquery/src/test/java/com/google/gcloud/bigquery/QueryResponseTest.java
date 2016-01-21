@@ -64,7 +64,7 @@ public class QueryResponseTest {
   private static final QueryResponse QUERY_RESPONSE = QueryResponse.builder()
       .etag(ETAG)
       .jobId(JOB_ID)
-      .jobComplete(JOB_COMPLETE)
+      .jobCompleted(JOB_COMPLETE)
       .executionErrors(ERRORS)
       .result(QUERY_RESULT)
       .build();
@@ -74,18 +74,18 @@ public class QueryResponseTest {
     assertEquals(ETAG, QUERY_RESPONSE.etag());
     assertEquals(QUERY_RESULT, QUERY_RESPONSE.result());
     assertEquals(JOB_ID, QUERY_RESPONSE.jobId());
-    assertEquals(JOB_COMPLETE, QUERY_RESPONSE.jobComplete());
+    assertEquals(JOB_COMPLETE, QUERY_RESPONSE.jobCompleted());
     assertEquals(ERRORS, QUERY_RESPONSE.executionErrors());
     assertTrue(QUERY_RESPONSE.hasErrors());
   }
 
   @Test
   public void testBuilderIncomplete() {
-    QueryResponse queryResponse = QueryResponse.builder().jobComplete(false).build();
+    QueryResponse queryResponse = QueryResponse.builder().jobCompleted(false).build();
     assertNull(queryResponse.etag());
     assertNull(queryResponse.result());
     assertNull(queryResponse.jobId());
-    assertFalse(queryResponse.jobComplete());
+    assertFalse(queryResponse.jobCompleted());
     assertEquals(ImmutableList.<BigQueryError>of(), queryResponse.executionErrors());
     assertFalse(queryResponse.hasErrors());
   }
@@ -100,7 +100,7 @@ public class QueryResponseTest {
     assertEquals(expected.etag(), value.etag());
     assertEquals(expected.result(), value.result());
     assertEquals(expected.jobId(), value.jobId());
-    assertEquals(expected.jobComplete(), value.jobComplete());
+    assertEquals(expected.jobCompleted(), value.jobCompleted());
     assertEquals(expected.executionErrors(), value.executionErrors());
     assertEquals(expected.hasErrors(), value.hasErrors());
   }

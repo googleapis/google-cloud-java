@@ -16,37 +16,77 @@
 
 package com.google.gcloud.storage;
 
-import com.google.gcloud.Restorable;
-import com.google.gcloud.RestorableState;
+import static com.google.gcloud.RetryHelper.runWithRetries;
+import static java.util.concurrent.Executors.callable;
 
-import java.io.Closeable;
-import java.nio.channels.WritableByteChannel;
+import com.google.gcloud.BaseWriteChannel;
+import com.google.gcloud.RestorableState;
+import com.google.gcloud.RetryHelper;
+import com.google.gcloud.WriteChannel;
+import com.google.gcloud.spi.StorageRpc;
+
+import java.util.Map;
 
 /**
- * A channel for writing data to a Google Cloud Storage object.
- *
- * <p>Implementations of this class may further buffer data internally to reduce remote calls.
- * Written data will only be visible after calling {@link #close()}. This interface implements
- * {@link Restorable} to allow saving the writer's state to continue writing afterwards.
- * </p>
+ * Write channel implementation to upload Google Cloud Storage blobs.
  */
-public interface BlobWriteChannel extends WritableByteChannel, Closeable,
-    Restorable<BlobWriteChannel> {
+class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
 
-  /**
-   * Sets the minimum size that will be written by a single RPC.
-   * Written data will be buffered and only flushed upon reaching this size or closing the channel.
-   */
-  void chunkSize(int chunkSize);
+  BlobWriteChannel(StorageOptions options, BlobInfo blob, Map<StorageRpc.Option, ?> optionsMap) {
+    this(options, blob, options.rpc().open(blob.toPb(), optionsMap));
+  }
 
-  /**
-   * Captures the write channel state so that it can be saved and restored afterwards. The original
-   * {@code BlobWriteChannel} and the restored one should not both be used. Closing one channel
-   * causes the other channel to close, subsequent writes will fail.
-   *
-   * @return a {@link RestorableState} object that contains the write channel state and can restore
-   *     it afterwards.
-   */
+  BlobWriteChannel(StorageOptions options, BlobInfo blobInfo, String uploadId) {
+    super(options, blobInfo, uploadId);
+  }
+
   @Override
-  RestorableState<BlobWriteChannel> capture();
+  protected void flushBuffer(final int length, final boolean last) {
+    try {
+      runWithRetries(callable(new Runnable() {
+        @Override
+        public void run() {
+          options().rpc().write(uploadId(), buffer(), 0, position(), length, last);
+        }
+      }), options().retryParams(), StorageImpl.EXCEPTION_HANDLER);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  protected StateImpl.Builder stateBuilder() {
+    return StateImpl.builder(options(), entity(), uploadId());
+  }
+
+  static class StateImpl extends BaseWriteChannel.BaseState<StorageOptions, BlobInfo> {
+
+    private static final long serialVersionUID = -9028324143780151286L;
+
+    StateImpl(Builder builder) {
+      super(builder);
+    }
+
+    static class Builder extends BaseWriteChannel.BaseState.Builder<StorageOptions, BlobInfo> {
+
+      private Builder(StorageOptions options, BlobInfo blobInfo, String uploadId) {
+        super(options, blobInfo, uploadId);
+      }
+
+      @Override
+      public RestorableState<WriteChannel> build() {
+        return new StateImpl(this);
+      }
+    }
+
+    static Builder builder(StorageOptions options, BlobInfo blobInfo, String uploadId) {
+      return new Builder(options, blobInfo, uploadId);
+    }
+
+    @Override
+    public WriteChannel restore() {
+      BlobWriteChannel channel = new BlobWriteChannel(serviceOptions, entity, uploadId);
+      channel.restore(this);
+      return channel;
+    }
+  }
 }

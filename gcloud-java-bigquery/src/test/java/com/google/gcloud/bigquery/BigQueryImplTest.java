@@ -41,6 +41,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.gcloud.Page;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.WriteChannel;
 import com.google.gcloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.gcloud.spi.BigQueryRpc;
 import com.google.gcloud.spi.BigQueryRpc.Tuple;
@@ -107,11 +108,11 @@ public class BigQueryImplTest {
   private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_SCHEMA);
   private static final TableInfo TABLE_INFO_WITH_PROJECT =
       TableInfo.of(TABLE_ID_WITH_PROJECT, TABLE_SCHEMA);
-  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(TABLE_ID, "URI");
+  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.of(LoadConfiguration.of(TABLE_ID), "URI");
   private static final LoadJobInfo LOAD_JOB_WITH_PROJECT =
-      LoadJobInfo.of(TABLE_ID_WITH_PROJECT, "URI");
+      LoadJobInfo.of(LoadConfiguration.of(TABLE_ID_WITH_PROJECT), "URI");
   private static final LoadJobInfo COMPLETE_LOAD_JOB =
-      LoadJobInfo.builder(TABLE_ID_WITH_PROJECT, "URI")
+      LoadJobInfo.builder(LoadConfiguration.of(TABLE_ID_WITH_PROJECT), "URI")
           .jobId(JobId.of(PROJECT, JOB))
           .build();
   private static final CopyJobInfo COPY_JOB =
@@ -901,7 +902,7 @@ public class BigQueryImplTest {
     assertNull(response.etag());
     assertNull(response.result());
     assertEquals(queryJob, response.jobId());
-    assertEquals(false, response.jobComplete());
+    assertEquals(false, response.jobCompleted());
     assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
     assertFalse(response.hasErrors());
     assertEquals(null, response.result());
@@ -925,7 +926,7 @@ public class BigQueryImplTest {
     QueryResponse response = bigquery.query(QUERY_REQUEST);
     assertNull(response.etag());
     assertEquals(queryJob, response.jobId());
-    assertEquals(true, response.jobComplete());
+    assertEquals(true, response.jobCompleted());
     assertEquals(false, response.result().cacheHit());
     assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
     assertFalse(response.hasErrors());
@@ -958,7 +959,7 @@ public class BigQueryImplTest {
     QueryResponse response = bigquery.getQueryResults(queryJob);
     assertEquals("etag", response.etag());
     assertEquals(queryJob, response.jobId());
-    assertEquals(true, response.jobComplete());
+    assertEquals(true, response.jobCompleted());
     assertEquals(false, response.result().cacheHit());
     assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
     assertFalse(response.hasErrors());
@@ -992,7 +993,7 @@ public class BigQueryImplTest {
         QUERY_RESULTS_OPTION_INDEX, QUERY_RESULTS_OPTION_MAX_RESULTS,
         QUERY_RESULTS_OPTION_PAGE_TOKEN);
     assertEquals(queryJob, response.jobId());
-    assertEquals(true, response.jobComplete());
+    assertEquals(true, response.jobCompleted());
     assertEquals(false, response.result().cacheHit());
     assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
     assertFalse(response.hasErrors());
@@ -1007,9 +1008,21 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testWriter() {
+    LoadConfiguration loadConfiguration = LoadConfiguration.of(TABLE_ID);
+    EasyMock.expect(bigqueryRpcMock.open(LoadConfiguration.of(TABLE_ID_WITH_PROJECT).toPb()))
+        .andReturn("upload-id");
+    EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.service();
+    WriteChannel channel = bigquery.writer(loadConfiguration);
+    assertNotNull(channel);
+    assertTrue(channel.isOpen());
+  }
+
+  @Test
   public void testRetryableException() {
     EasyMock.expect(bigqueryRpcMock.getDataset(DATASET, EMPTY_RPC_OPTIONS))
-        .andThrow(new BigQueryException(500, "InternalError", true))
+        .andThrow(new BigQueryException(500, "InternalError"))
         .andReturn(DATASET_INFO_WITH_PROJECT.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
@@ -1021,7 +1034,7 @@ public class BigQueryImplTest {
   public void testNonRetryableException() {
     String exceptionMessage = "Not Implemented";
     EasyMock.expect(bigqueryRpcMock.getDataset(DATASET, EMPTY_RPC_OPTIONS))
-        .andThrow(new BigQueryException(501, exceptionMessage, false));
+        .andThrow(new BigQueryException(501, exceptionMessage));
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
     thrown.expect(BigQueryException.class);

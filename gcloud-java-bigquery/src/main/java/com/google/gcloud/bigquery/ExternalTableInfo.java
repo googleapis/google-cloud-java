@@ -21,6 +21,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.MoreObjects.ToStringHelper;
 
+import java.util.Objects;
+
 /**
  * Google BigQuery External Table information. BigQuery's external tables are tables whose data
  * reside outside of BigQuery but can be queried as normal BigQuery tables. External tables are
@@ -101,6 +103,17 @@ public class ExternalTableInfo extends BaseTableInfo {
   @Override
   ToStringHelper toStringHelper() {
     return super.toStringHelper().add("configuration", configuration);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return obj instanceof ExternalTableInfo
+        && Objects.equals(toPb(), ((ExternalTableInfo) obj).toPb());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), configuration);
   }
 
   @Override
