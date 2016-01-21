@@ -147,17 +147,6 @@ public class DnsRecord implements Serializable {
     }
 
     /**
-     * Removes a record on the given index from the set.
-     */
-    public Builder removeRecord(int index) {
-      checkArgument(index >= 0 && index < this.rrdatas.size(), "The index is out of bounds. An " +
-              "integer between 0 and " + (this.rrdatas.size() - 1) + " is required. The provided " +
-              "value was " + index + ".");
-      this.rrdatas.remove(index);
-      return this;
-    }
-
-    /**
      * Removes all the records.
      */
     public Builder clearRecords() {
