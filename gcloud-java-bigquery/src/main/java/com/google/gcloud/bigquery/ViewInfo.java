@@ -25,6 +25,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Google BigQuery View Table information. BigQuery's views are logical views, not materialized
@@ -141,6 +142,16 @@ public class ViewInfo extends BaseTableInfo {
     return super.toStringHelper()
         .add("query", query)
         .add("userDefinedFunctions", userDefinedFunctions);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return obj instanceof ViewInfo && Objects.equals(toPb(), ((ViewInfo) obj).toPb());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), query, userDefinedFunctions);
   }
 
   @Override
