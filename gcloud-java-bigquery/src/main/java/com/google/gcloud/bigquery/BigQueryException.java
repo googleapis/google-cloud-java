@@ -16,6 +16,8 @@
 
 package com.google.gcloud.bigquery;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.BaseServiceException;
 import com.google.gcloud.RetryHelper.RetryHelperException;
@@ -53,7 +55,16 @@ public class BigQueryException extends BaseServiceException {
 
   public BigQueryException(IOException exception) {
     super(exception, true);
-    this.error = null;
+    BigQueryError bigqueryError = null;
+    if (exception instanceof GoogleJsonResponseException) {
+      GoogleJsonError error = ((GoogleJsonResponseException) exception).getDetails();
+      if (error != null && error.getErrors() != null  && !error.getErrors().isEmpty()) {
+        GoogleJsonError.ErrorInfo errorInfo = error.getErrors().get(0);
+        bigqueryError = new BigQueryError(errorInfo.getReason(), errorInfo.getLocation(),
+            errorInfo.getMessage(), (String) error.get("debugInfo"));
+      }
+    }
+    this.error = bigqueryError;
   }
 
   /**
