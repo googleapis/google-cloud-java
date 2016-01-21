@@ -273,7 +273,7 @@ public class ResourceManagerImplTest {
         .build()
         .service();
     EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.projectId(), EMPTY_RPC_OPTIONS))
-        .andThrow(new ResourceManagerException(500, "Internal Error", true))
+        .andThrow(new ResourceManagerException(500, "Internal Error"))
         .andReturn(PARTIAL_PROJECT.toPb());
     EasyMock.replay(resourceManagerRpcMock);
     ProjectInfo returnedProject = resourceManagerMock.get(PARTIAL_PROJECT.projectId());
@@ -293,7 +293,7 @@ public class ResourceManagerImplTest {
         .service();
     EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.projectId(), EMPTY_RPC_OPTIONS))
         .andThrow(new ResourceManagerException(
-            403, "Project " + PARTIAL_PROJECT.projectId() + " not found.", false))
+            403, "Project " + PARTIAL_PROJECT.projectId() + " not found."))
         .once();
     EasyMock.replay(resourceManagerRpcMock);
     thrown.expect(ResourceManagerException.class);

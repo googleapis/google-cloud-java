@@ -38,8 +38,6 @@ import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.datastore.testing.LocalGcdHelper;
 import com.google.gcloud.spi.DatastoreRpc;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 import com.google.gcloud.spi.DatastoreRpcFactory;
 
 import org.easymock.EasyMock;
@@ -201,7 +199,7 @@ public class DatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals(DatastoreException.DatastoreError.ABORTED, expected.datastoreError());
+      assertEquals("ABORTED", expected.reason());
     }
   }
 
@@ -229,7 +227,7 @@ public class DatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals(DatastoreException.DatastoreError.ABORTED, expected.datastoreError());
+      assertEquals("ABORTED", expected.reason());
     }
   }
 
@@ -466,7 +464,7 @@ public class DatastoreTest {
   }
 
   @Test
-  public void testQueryPaginationWithLimit() throws DatastoreRpcException {
+  public void testQueryPaginationWithLimit() throws DatastoreException {
     DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
     DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
@@ -639,7 +637,7 @@ public class DatastoreTest {
     assertFalse(result.hasNext());
   }
 
-  public void testGetArrayDeferredResults() throws DatastoreRpcException {
+  public void testGetArrayDeferredResults() throws DatastoreException {
     Set<Key> requestedKeys = new HashSet<>();
     requestedKeys.add(KEY1);
     requestedKeys.add(KEY2);
@@ -654,7 +652,7 @@ public class DatastoreTest {
     assertEquals(requestedKeys, keysOfFoundEntities);
   }
 
-  public void testFetchArrayDeferredResults() throws DatastoreRpcException {
+  public void testFetchArrayDeferredResults() throws DatastoreException {
     List<Entity> foundEntities =
         createDatastoreForDeferredLookup().fetch(KEY1, KEY2, KEY3, KEY4, KEY5);
     assertEquals(foundEntities.get(0).key(), KEY1);
@@ -665,7 +663,7 @@ public class DatastoreTest {
     assertEquals(foundEntities.size(), 5);
   }
 
-  private Datastore createDatastoreForDeferredLookup() throws DatastoreRpcException {
+  private Datastore createDatastoreForDeferredLookup() throws DatastoreException {
     List<DatastoreV1.Key> keysPb = new ArrayList<>();
     keysPb.add(KEY1.toPb());
     keysPb.add(KEY2.toPb());
@@ -821,7 +819,7 @@ public class DatastoreTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(rpcMock);
     EasyMock.expect(rpcMock.lookup(requestPb))
-        .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.UNAVAILABLE, null))
+        .andThrow(new DatastoreException(503, "UNAVAILABLE", "UNAVAILABLE", null))
         .andReturn(responsePb);
     EasyMock.replay(rpcFactoryMock, rpcMock);
     DatastoreOptions options = this.options.toBuilder()
@@ -843,7 +841,8 @@ public class DatastoreTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(rpcMock);
     EasyMock.expect(rpcMock.lookup(requestPb))
-        .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.PERMISSION_DENIED, null))
+        .andThrow(
+            new DatastoreException(DatastoreException.UNKNOWN_CODE, "denied", "PERMISSION_DENIED"))
         .times(1);
     EasyMock.replay(rpcFactoryMock, rpcMock);
     RetryParams retryParams = RetryParams.builder().retryMinAttempts(2).build();
@@ -853,7 +852,7 @@ public class DatastoreTest {
         .build();
     Datastore datastore = options.service();
     thrown.expect(DatastoreException.class);
-    thrown.expectMessage(Reason.PERMISSION_DENIED.description());
+    thrown.expectMessage("denied");
     datastore.get(KEY1);
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
