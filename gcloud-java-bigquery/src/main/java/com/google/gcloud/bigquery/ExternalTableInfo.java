@@ -107,13 +107,12 @@ public class ExternalTableInfo extends BaseTableInfo {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ExternalTableInfo
-        && Objects.equals(toPb(), ((ExternalTableInfo) obj).toPb());
+    return obj instanceof ExternalTableInfo && baseEquals((ExternalTableInfo) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), configuration);
+    return Objects.hash(baseHashCode(), configuration);
   }
 
   @Override

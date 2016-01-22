@@ -146,12 +146,12 @@ public class ViewInfo extends BaseTableInfo {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ViewInfo && Objects.equals(toPb(), ((ViewInfo) obj).toPb());
+    return obj instanceof ViewInfo && baseEquals((ViewInfo) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), query, userDefinedFunctions);
+    return Objects.hash(baseHashCode(), query, userDefinedFunctions);
   }
 
   @Override
