@@ -17,6 +17,7 @@
 package com.google.gcloud.examples;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.WriteChannel;
 import com.google.gcloud.bigquery.BaseTableInfo;
 import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryError;
@@ -33,6 +34,7 @@ import com.google.gcloud.bigquery.FormatOptions;
 import com.google.gcloud.bigquery.JobId;
 import com.google.gcloud.bigquery.JobInfo;
 import com.google.gcloud.bigquery.JobStatus;
+import com.google.gcloud.bigquery.LoadConfiguration;
 import com.google.gcloud.bigquery.LoadJobInfo;
 import com.google.gcloud.bigquery.QueryRequest;
 import com.google.gcloud.bigquery.QueryResponse;
@@ -42,6 +44,8 @@ import com.google.gcloud.bigquery.TableInfo;
 import com.google.gcloud.bigquery.ViewInfo;
 import com.google.gcloud.spi.BigQueryRpc.Tuple;
 
+import java.nio.channels.FileChannel;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -77,7 +81,8 @@ import java.util.Map;
  *  copy <sourceDataset> <sourceTable> <destinationDataset> <destinationTable> |
  *  load <dataset> <table> <format> <sourceUri>+ |
  *  extract <dataset> <table> <format> <destinationUri>+ |
- *  query <query>"}</pre>
+ *  query <query> |
+ *  load-file <dataset> <table> <format> <filePath>"}</pre>
  * </li>
  * </ol>
  *
@@ -93,6 +98,7 @@ import java.util.Map;
  */
 public class BigQueryExample {
 
+  private static final int CHUNK_SIZE = 8 * 256 * 1024;
   private static final Map<String, BigQueryAction> CREATE_ACTIONS = new HashMap<>();
   private static final Map<String, BigQueryAction> INFO_ACTIONS = new HashMap<>();
   private static final Map<String, BigQueryAction> LIST_ACTIONS = new HashMap<>();
@@ -523,7 +529,7 @@ public class BigQueryExample {
         startedJob = bigquery.getJob(startedJob.jobId());
       }
       if (startedJob.status().error() == null) {
-        System.out.println("Job " + startedJob.jobId().job() + " suceeded");
+        System.out.println("Job " + startedJob.jobId().job() + " succeeded");
       } else {
         System.out.println("Job " + startedJob.jobId().job() + " failed");
         System.out.println("Error: " + startedJob.status().error());
@@ -544,8 +550,8 @@ public class BigQueryExample {
         String table = args[1];
         String format = args[2];
         TableId tableId = TableId.of(dataset, table);
-        return LoadJobInfo.builder(tableId, Arrays.asList(args).subList(3, args.length))
-            .formatOptions(FormatOptions.of(format))
+        LoadConfiguration configuration = LoadConfiguration.of(tableId, FormatOptions.of(format));
+        return LoadJobInfo.builder(configuration, Arrays.asList(args).subList(3, args.length))
             .build();
       }
       throw new IllegalArgumentException("Missing required arguments.");
@@ -621,7 +627,7 @@ public class BigQueryExample {
     void run(BigQuery bigquery, QueryRequest queryRequest) throws Exception {
       System.out.println("Running query");
       QueryResponse queryResponse = bigquery.query(queryRequest);
-      while (!queryResponse.jobComplete()) {
+      while (!queryResponse.jobCompleted()) {
         System.out.println("Waiting for query job " + queryResponse.jobId() + " to complete");
         Thread.sleep(1000L);
         queryResponse = bigquery.getQueryResults(queryResponse.jobId());
@@ -659,6 +665,47 @@ public class BigQueryExample {
     }
   }
 
+  /**
+   * This class demonstrates how to load data into a BigQuery Table from a local file.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/loading-data-post-request#resumable">Resumable
+   *     Upload</a>
+   */
+  private static class LoadFileAction extends BigQueryAction<Tuple<LoadConfiguration, String>> {
+    @Override
+    void run(BigQuery bigquery, Tuple<LoadConfiguration, String> configuration) throws Exception {
+      System.out.println("Running insert");
+      try (FileChannel fileChannel = FileChannel.open(Paths.get(configuration.y()))) {
+        WriteChannel writeChannel = bigquery.writer(configuration.x());
+        long position = 0;
+        long written = fileChannel.transferTo(position, CHUNK_SIZE, writeChannel);
+        while (written > 0) {
+          position += written;
+          written = fileChannel.transferTo(position, CHUNK_SIZE, writeChannel);
+        }
+        writeChannel.close();
+      }
+    }
+
+    @Override
+    Tuple<LoadConfiguration, String> parse(String... args) throws Exception {
+      if (args.length == 4) {
+        String dataset = args[0];
+        String table = args[1];
+        String format = args[2];
+        TableId tableId = TableId.of(dataset, table);
+        LoadConfiguration configuration = LoadConfiguration.of(tableId, FormatOptions.of(format));
+        return Tuple.of(configuration, args[3]);
+      }
+      throw new IllegalArgumentException("Missing required arguments.");
+    }
+
+    @Override
+    protected String params() {
+      return "<dataset> <table> <format> <filePath>";
+    }
+  }
+
   static {
     CREATE_ACTIONS.put("dataset", new CreateDatasetAction());
     CREATE_ACTIONS.put("table", new CreateSimpleTableAction());
@@ -682,6 +729,7 @@ public class BigQueryExample {
     ACTIONS.put("extract", new ExtractAction());
     ACTIONS.put("copy", new CopyAction());
     ACTIONS.put("query", new QueryAction());
+    ACTIONS.put("load-file", new LoadFileAction());
   }
 
   private static void printUsage() {

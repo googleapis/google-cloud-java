@@ -47,7 +47,6 @@ public class LoadJobInfoTest {
   private static final CreateDisposition CREATE_DISPOSITION = CreateDisposition.CREATE_IF_NEEDED;
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;
   private static final Integer MAX_BAD_RECORDS = 42;
-  private static final String FORMAT = "CSV";
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final List<String> PROJECTION_FIELDS = ImmutableList.of("field1", "field2");
   private static final JobId JOB_ID = JobId.of("job");
@@ -66,13 +65,7 @@ public class LoadJobInfoTest {
       .inputBytes(2048L)
       .outputRows(24L)
       .build();
-  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.builder(TABLE_ID, SOURCE_URIS)
-      .etag(ETAG)
-      .id(ID)
-      .selfLink(SELF_LINK)
-      .userEmail(EMAIL)
-      .jobId(JOB_ID)
-      .status(JOB_STATUS)
+  private static final LoadConfiguration LOAD_CONFIGURATION = LoadConfiguration.builder(TABLE_ID)
       .createDisposition(CREATE_DISPOSITION)
       .writeDisposition(WRITE_DISPOSITION)
       .formatOptions(CSV_OPTIONS)
@@ -80,63 +73,47 @@ public class LoadJobInfoTest {
       .maxBadRecords(MAX_BAD_RECORDS)
       .projectionFields(PROJECTION_FIELDS)
       .schema(TABLE_SCHEMA)
+      .build();
+  private static final LoadJobInfo LOAD_JOB = LoadJobInfo.builder(LOAD_CONFIGURATION, SOURCE_URIS)
+      .etag(ETAG)
+      .id(ID)
+      .selfLink(SELF_LINK)
+      .userEmail(EMAIL)
+      .jobId(JOB_ID)
+      .status(JOB_STATUS)
       .statistics(JOB_STATISTICS)
       .build();
 
   @Test
   public void testToBuilder() {
     compareLoadJobInfo(LOAD_JOB, LOAD_JOB.toBuilder().build());
-    LoadJobInfo job = LOAD_JOB.toBuilder()
-        .destinationTable(TableId.of("dataset", "newTable"))
-        .build();
-    assertEquals("newTable", job.destinationTable().table());
-    job = job.toBuilder().destinationTable(TABLE_ID).build();
+    LoadJobInfo job = LOAD_JOB.toBuilder().etag("newEtag").build();
+    assertEquals("newEtag", job.etag());
+    job = job.toBuilder().etag(ETAG).build();
     compareLoadJobInfo(LOAD_JOB, job);
   }
 
   @Test
   public void testOf() {
-    LoadJobInfo job = LoadJobInfo.of(TABLE_ID, SOURCE_URIS);
-    assertEquals(TABLE_ID, job.destinationTable());
+    LoadJobInfo job = LoadJobInfo.of(LOAD_CONFIGURATION, SOURCE_URIS);
+    assertEquals(LOAD_CONFIGURATION, job.configuration());
     assertEquals(SOURCE_URIS, job.sourceUris());
-    job = LoadJobInfo.of(TABLE_ID, SOURCE_URI);
-    assertEquals(TABLE_ID, job.destinationTable());
+    job = LoadJobInfo.of(LOAD_CONFIGURATION, SOURCE_URI);
+    assertEquals(LOAD_CONFIGURATION, job.configuration());
     assertEquals(ImmutableList.of(SOURCE_URI), job.sourceUris());
-    job = LoadJobInfo.of(TABLE_ID, CSV_OPTIONS, SOURCE_URIS);
-    assertEquals(TABLE_ID, job.destinationTable());
+    job = LoadJobInfo.of(JOB_ID, LOAD_CONFIGURATION, SOURCE_URIS);
+    assertEquals(JOB_ID, job.jobId());
+    assertEquals(LOAD_CONFIGURATION, job.configuration());
     assertEquals(SOURCE_URIS, job.sourceUris());
-    assertEquals(FORMAT, job.format());
-    assertEquals(CSV_OPTIONS, job.csvOptions());
-    job = LoadJobInfo.of(TABLE_ID, CSV_OPTIONS, SOURCE_URI);
-    assertEquals(TABLE_ID, job.destinationTable());
+    job = LoadJobInfo.of(JOB_ID, LOAD_CONFIGURATION, SOURCE_URI);
+    assertEquals(JOB_ID, job.jobId());
+    assertEquals(LOAD_CONFIGURATION, job.configuration());
     assertEquals(ImmutableList.of(SOURCE_URI), job.sourceUris());
-    assertEquals(FORMAT, job.format());
-    assertEquals(CSV_OPTIONS, job.csvOptions());
-    job = LoadJobInfo.of(JOB_ID, TABLE_ID, SOURCE_URIS);
-    assertEquals(JOB_ID, job.jobId());
-    assertEquals(TABLE_ID, job.destinationTable());
-    assertEquals(SOURCE_URIS, job.sourceUris());
-    job = LoadJobInfo.of(JOB_ID, TABLE_ID, SOURCE_URI);
-    assertEquals(JOB_ID, job.jobId());
-    assertEquals(TABLE_ID, job.destinationTable());
-    assertEquals(ImmutableList.of(SOURCE_URI), job.sourceUris());
-    job = LoadJobInfo.of(JOB_ID, TABLE_ID, CSV_OPTIONS, SOURCE_URIS);
-    assertEquals(JOB_ID, job.jobId());
-    assertEquals(TABLE_ID, job.destinationTable());
-    assertEquals(SOURCE_URIS, job.sourceUris());
-    assertEquals(FORMAT, job.format());
-    assertEquals(CSV_OPTIONS, job.csvOptions());
-    job = LoadJobInfo.of(JOB_ID, TABLE_ID, CSV_OPTIONS, SOURCE_URI);
-    assertEquals(JOB_ID, job.jobId());
-    assertEquals(TABLE_ID, job.destinationTable());
-    assertEquals(ImmutableList.of(SOURCE_URI), job.sourceUris());
-    assertEquals(FORMAT, job.format());
-    assertEquals(CSV_OPTIONS, job.csvOptions());
   }
 
   @Test
   public void testToBuilderIncomplete() {
-    LoadJobInfo job = LoadJobInfo.of(TABLE_ID, SOURCE_URIS);
+    LoadJobInfo job = LoadJobInfo.of(LOAD_CONFIGURATION, SOURCE_URIS);
     compareLoadJobInfo(job, job.toBuilder().build());
   }
 
@@ -148,16 +125,8 @@ public class LoadJobInfoTest {
     assertEquals(EMAIL, LOAD_JOB.userEmail());
     assertEquals(JOB_ID, LOAD_JOB.jobId());
     assertEquals(JOB_STATUS, LOAD_JOB.status());
-    assertEquals(TABLE_ID, LOAD_JOB.destinationTable());
+    assertEquals(LOAD_CONFIGURATION, LOAD_JOB.configuration());
     assertEquals(SOURCE_URIS, LOAD_JOB.sourceUris());
-    assertEquals(CREATE_DISPOSITION, LOAD_JOB.createDisposition());
-    assertEquals(WRITE_DISPOSITION, LOAD_JOB.writeDisposition());
-    assertEquals(CSV_OPTIONS, LOAD_JOB.csvOptions());
-    assertEquals(FORMAT, LOAD_JOB.format());
-    assertEquals(IGNORE_UNKNOWN_VALUES, LOAD_JOB.ignoreUnknownValues());
-    assertEquals(MAX_BAD_RECORDS, LOAD_JOB.maxBadRecords());
-    assertEquals(PROJECTION_FIELDS, LOAD_JOB.projectionFields());
-    assertEquals(TABLE_SCHEMA, LOAD_JOB.schema());
     assertEquals(JOB_STATISTICS, LOAD_JOB.statistics());
   }
 
@@ -170,7 +139,7 @@ public class LoadJobInfoTest {
     assertEquals(JOB_STATISTICS, JobStatistics.fromPb(LOAD_JOB.toPb().getStatistics()));
     compareLoadJobInfo(LOAD_JOB, LoadJobInfo.fromPb(LOAD_JOB.toPb()));
     compareLoadJobInfo(LOAD_JOB, (LoadJobInfo) JobInfo.fromPb(LOAD_JOB.toPb()));
-    LoadJobInfo job = LoadJobInfo.of(TABLE_ID, SOURCE_URIS);
+    LoadJobInfo job = LoadJobInfo.of(LOAD_CONFIGURATION, SOURCE_URIS);
     compareLoadJobInfo(job, LoadJobInfo.fromPb(job.toPb()));
     compareLoadJobInfo(job, (LoadJobInfo) JobInfo.fromPb(job.toPb()));
   }
@@ -186,15 +155,7 @@ public class LoadJobInfoTest {
     assertEquals(expected.status(), value.status());
     assertEquals(expected.statistics(), value.statistics());
     assertEquals(expected.userEmail(), value.userEmail());
-    assertEquals(expected.destinationTable(), value.destinationTable());
+    assertEquals(expected.configuration(), value.configuration());
     assertEquals(expected.sourceUris(), value.sourceUris());
-    assertEquals(expected.createDisposition(), value.createDisposition());
-    assertEquals(expected.writeDisposition(), value.writeDisposition());
-    assertEquals(expected.csvOptions(), value.csvOptions());
-    assertEquals(expected.format(), value.format());
-    assertEquals(expected.ignoreUnknownValues(), value.ignoreUnknownValues());
-    assertEquals(expected.maxBadRecords(), value.maxBadRecords());
-    assertEquals(expected.projectionFields(), value.projectionFields());
-    assertEquals(expected.schema(), value.schema());
   }
 }

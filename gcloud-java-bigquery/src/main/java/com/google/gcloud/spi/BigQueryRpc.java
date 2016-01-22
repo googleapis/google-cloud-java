@@ -19,6 +19,7 @@ package com.google.gcloud.spi;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
+import com.google.api.services.bigquery.model.JobConfigurationLoad;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.QueryResponse;
 import com.google.api.services.bigquery.model.Table;
@@ -185,4 +186,26 @@ public interface BigQueryRpc {
       throws BigQueryException;
 
   QueryResponse query(QueryRequest request) throws BigQueryException;
+
+  /**
+   * Opens a resumable upload session to load data into a BigQuery table and returns an upload URI.
+   *
+   * @param configuration load configuration
+   * @throws BigQueryException upon failure
+   */
+  String open(JobConfigurationLoad configuration) throws BigQueryException;
+
+  /**
+   * Uploads the provided data to the resumable upload session at the specified position.
+   *
+   * @param uploadId the resumable upload session URI
+   * @param toWrite a byte array of data to upload
+   * @param toWriteOffset offset in the {@code toWrite} param to start writing from
+   * @param destOffset offset in the destination where to upload data to
+   * @param length the number of bytes to upload
+   * @param last {@code true} indicates that the last chunk is being uploaded
+   * @throws BigQueryException upon failure
+   */
+  void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+      boolean last) throws BigQueryException;
 }

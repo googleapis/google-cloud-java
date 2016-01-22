@@ -31,7 +31,7 @@ import java.util.Objects;
  * <p>Example usage of a query response:
  * <pre>    {@code
  *    QueryResponse response = bigquery.query(request);
- *    while (!response.jobComplete()) {
+ *    while (!response.jobCompleted()) {
  *      Thread.sleep(1000);
  *      response = bigquery.getQueryResults(response.jobId());
  *    }
@@ -56,7 +56,7 @@ public class QueryResponse implements Serializable {
   private final QueryResult result;
   private final String etag;
   private final JobId jobId;
-  private final boolean jobComplete;
+  private final boolean jobCompleted;
   private final List<BigQueryError> executionErrors;
 
   static final class Builder {
@@ -64,7 +64,7 @@ public class QueryResponse implements Serializable {
     private QueryResult result;
     private String etag;
     private JobId jobId;
-    private boolean jobComplete;
+    private boolean jobCompleted;
     private List<BigQueryError> executionErrors;
 
     private Builder() {}
@@ -84,8 +84,8 @@ public class QueryResponse implements Serializable {
       return this;
     }
 
-    Builder jobComplete(boolean jobComplete) {
-      this.jobComplete = jobComplete;
+    Builder jobCompleted(boolean jobCompleted) {
+      this.jobCompleted = jobCompleted;
       return this;
     }
 
@@ -103,13 +103,13 @@ public class QueryResponse implements Serializable {
     this.result = builder.result;
     this.etag = builder.etag;
     this.jobId = builder.jobId;
-    this.jobComplete = builder.jobComplete;
+    this.jobCompleted = builder.jobCompleted;
     this.executionErrors = builder.executionErrors != null ? builder.executionErrors
       : ImmutableList.<BigQueryError>of();
   }
 
   /**
-   * Returns the result of the query. Returns {@code null} if {@link #jobComplete()} is {@code
+   * Returns the result of the query. Returns {@code null} if {@link #jobCompleted()} is {@code
    * false}.
    */
   public QueryResult result() {
@@ -137,8 +137,8 @@ public class QueryResponse implements Serializable {
    * {@link #result()} returns {@code null}. This method can be used to check if query execution
    * completed and results are available.
    */
-  public boolean jobComplete() {
-    return jobComplete;
+  public boolean jobCompleted() {
+    return jobCompleted;
   }
 
   /**
@@ -164,7 +164,7 @@ public class QueryResponse implements Serializable {
         .add("result", result)
         .add("etag", etag)
         .add("jobId", jobId)
-        .add("jobComplete", jobComplete)
+        .add("jobCompleted", jobCompleted)
         .add("executionErrors", executionErrors)
         .toString();
   }
@@ -183,7 +183,7 @@ public class QueryResponse implements Serializable {
       return false;
     }
     QueryResponse response = (QueryResponse) obj;
-    return jobComplete == response.jobComplete
+    return jobCompleted == response.jobCompleted
         && Objects.equals(etag, response.etag)
         && Objects.equals(result, response.result)
         && Objects.equals(jobId, response.jobId)

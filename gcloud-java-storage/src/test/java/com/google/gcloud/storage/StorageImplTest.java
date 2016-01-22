@@ -33,8 +33,10 @@ import com.google.common.collect.Maps;
 import com.google.common.io.BaseEncoding;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Page;
+import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.ServiceOptions;
+import com.google.gcloud.WriteChannel;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.spi.StorageRpcFactory;
@@ -973,7 +975,7 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.batch(EasyMock.capture(capturedBatchRequest))).andReturn(res);
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    BatchResponse batchResponse = storage.apply(req);
+    BatchResponse batchResponse = storage.submit(req);
 
     // Verify captured StorageRpc.BatchRequest
     List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToDelete =
@@ -1011,7 +1013,7 @@ public class StorageImplTest {
   public void testReader() {
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    BlobReadChannel channel = storage.reader(BUCKET_NAME1, BLOB_NAME1);
+    ReadChannel channel = storage.reader(BUCKET_NAME1, BLOB_NAME1);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
   }
@@ -1024,7 +1026,7 @@ public class StorageImplTest {
         .andReturn(StorageRpc.Tuple.of("etag", result));
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    BlobReadChannel channel = storage.reader(BUCKET_NAME1, BLOB_NAME2, BLOB_SOURCE_GENERATION,
+    ReadChannel channel = storage.reader(BUCKET_NAME1, BLOB_NAME2, BLOB_SOURCE_GENERATION,
         BLOB_SOURCE_METAGENERATION);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
@@ -1039,7 +1041,7 @@ public class StorageImplTest {
         .andReturn(StorageRpc.Tuple.of("etag", result));
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    BlobReadChannel channel = storage.reader(BLOB_INFO1.blobId(),
+    ReadChannel channel = storage.reader(BLOB_INFO1.blobId(),
         BLOB_SOURCE_GENERATION_FROM_BLOB_ID, BLOB_SOURCE_METAGENERATION);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
@@ -1055,7 +1057,7 @@ public class StorageImplTest {
         .andReturn("upload-id");
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    BlobWriteChannel channel = storage.writer(infoWithHashes);
+    WriteChannel channel = storage.writer(infoWithHashes);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
   }
@@ -1067,7 +1069,7 @@ public class StorageImplTest {
         .andReturn("upload-id");
     EasyMock.replay(storageRpcMock);
     storage = options.service();
-    BlobWriteChannel channel = storage.writer(info, BLOB_WRITE_METAGENERATION, BLOB_WRITE_NOT_EXIST,
+    WriteChannel channel = storage.writer(info, BLOB_WRITE_METAGENERATION, BLOB_WRITE_NOT_EXIST,
         BLOB_WRITE_PREDEFINED_ACL, BLOB_WRITE_CRC2C, BLOB_WRITE_MD5_HASH);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
@@ -1264,7 +1266,7 @@ public class StorageImplTest {
   public void testRetryableException() {
     BlobId blob = BlobId.of(BUCKET_NAME1, BLOB_NAME1);
     EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
-        .andThrow(new StorageException(500, "InternalError", true))
+        .andThrow(new StorageException(500, "internalError"))
         .andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(storageRpcMock);
     storage = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
@@ -1277,7 +1279,7 @@ public class StorageImplTest {
     BlobId blob = BlobId.of(BUCKET_NAME1, BLOB_NAME1);
     String exceptionMessage = "Not Implemented";
     EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
-        .andThrow(new StorageException(501, exceptionMessage, false));
+        .andThrow(new StorageException(501, exceptionMessage));
     EasyMock.replay(storageRpcMock);
     storage = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
     thrown.expect(StorageException.class);

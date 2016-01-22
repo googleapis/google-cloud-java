@@ -28,8 +28,8 @@ import java.util.List;
 public class DatasetInfoTest {
 
   private static final List<Acl> ACCESS_RULES = ImmutableList.of(
-      new Acl(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
-      new Acl(new Acl.View(TableId.of("project", "dataset", "table")), Acl.Role.WRITER));
+      Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
+      Acl.of(new Acl.View(TableId.of("project", "dataset", "table")), Acl.Role.WRITER));
   private static final Long CREATION_TIME = System.currentTimeMillis();
   private static final Long DEFAULT_TABLE_EXPIRATION = CREATION_TIME + 100;
   private static final String DESCRIPTION = "description";

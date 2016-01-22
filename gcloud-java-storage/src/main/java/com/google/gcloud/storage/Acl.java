@@ -274,13 +274,7 @@ public final class Acl implements Serializable {
     }
   }
 
-  /**
-   * Creates an ACL object.
-   *
-   * @param entity the entity for this ACL object
-   * @param role the role to associate to the {@code entity} object
-   */
-  public Acl(Entity entity, Role role) {
+  private Acl(Entity entity, Role role) {
     this.entity = entity;
     this.role = role;
   }
@@ -297,6 +291,16 @@ public final class Acl implements Serializable {
    */
   public Role role() {
     return role;
+  }
+
+  /**
+   * Returns an Acl object.
+   *
+   * @param entity the entity for this ACL object
+   * @param role the role to associate to the {@code entity} object
+   */
+  public static Acl of(Entity entity, Role role) {
+    return new Acl(entity, role);
   }
 
   @Override
@@ -333,11 +337,11 @@ public final class Acl implements Serializable {
 
   static Acl fromPb(ObjectAccessControl objectAccessControl) {
     Role role = Role.valueOf(objectAccessControl.getRole());
-    return new Acl(Entity.fromPb(objectAccessControl.getEntity()), role);
+    return Acl.of(Entity.fromPb(objectAccessControl.getEntity()), role);
   }
 
   static Acl fromPb(BucketAccessControl bucketAccessControl) {
     Role role = Role.valueOf(bucketAccessControl.getRole());
-    return new Acl(Entity.fromPb(bucketAccessControl.getEntity()), role);
+    return Acl.of(Entity.fromPb(bucketAccessControl.getEntity()), role);
   }
 }

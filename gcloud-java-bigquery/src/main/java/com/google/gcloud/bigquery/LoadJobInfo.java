@@ -34,81 +34,29 @@ import java.util.Objects;
  */
 public class LoadJobInfo extends JobInfo<LoadStatistics> {
 
-  private static final long serialVersionUID = 2515503817007974115L;
+  private static final long serialVersionUID = 6349304826867750535L;
 
   private final List<String> sourceUris;
-  private final TableId destinationTable;
-  private final CreateDisposition createDisposition;
-  private final WriteDisposition writeDisposition;
-  private final FormatOptions formatOptions;
-  private final Integer maxBadRecords;
-  private final Schema schema;
-  private final Boolean ignoreUnknownValues;
-  private final List<String> projectionFields;
+  private final LoadConfiguration configuration;
 
   public static final class Builder extends JobInfo.Builder<LoadJobInfo, LoadStatistics, Builder> {
 
     private List<String> sourceUris;
-    private TableId destinationTable;
-    private CreateDisposition createDisposition;
-    private WriteDisposition writeDisposition;
-    private FormatOptions formatOptions;
-    private Integer maxBadRecords;
-    private Schema schema;
-    private Boolean ignoreUnknownValues;
-    private List<String> projectionFields;
+    private LoadConfiguration configuration;
 
     private Builder() {}
 
     private Builder(LoadJobInfo jobInfo) {
       super(jobInfo);
       this.sourceUris = jobInfo.sourceUris;
-      this.destinationTable = jobInfo.destinationTable;
-      this.createDisposition = jobInfo.createDisposition;
-      this.writeDisposition = jobInfo.writeDisposition;
-      this.formatOptions = jobInfo.formatOptions;
-      this.maxBadRecords = jobInfo.maxBadRecords;
-      this.schema = jobInfo.schema;
-      this.ignoreUnknownValues = jobInfo.ignoreUnknownValues;
-      this.projectionFields = jobInfo.projectionFields;
+      this.configuration = jobInfo.configuration;
     }
 
     private Builder(Job jobPb) {
       super(jobPb);
       JobConfigurationLoad loadConfigurationPb = jobPb.getConfiguration().getLoad();
+      this.configuration = LoadConfiguration.fromPb(loadConfigurationPb);
       this.sourceUris = loadConfigurationPb.getSourceUris();
-      this.destinationTable = TableId.fromPb(loadConfigurationPb.getDestinationTable());
-      if (loadConfigurationPb.getCreateDisposition() != null) {
-        this.createDisposition =
-            CreateDisposition.valueOf(loadConfigurationPb.getCreateDisposition());
-      }
-      if (loadConfigurationPb.getWriteDisposition() != null) {
-        this.writeDisposition = WriteDisposition.valueOf(loadConfigurationPb.getWriteDisposition());
-      }
-      if (loadConfigurationPb.getSourceFormat() != null) {
-        this.formatOptions = FormatOptions.of(loadConfigurationPb.getSourceFormat());
-      }
-      if (loadConfigurationPb.getAllowJaggedRows() != null
-          || loadConfigurationPb.getAllowQuotedNewlines() != null
-          || loadConfigurationPb.getEncoding() != null
-          || loadConfigurationPb.getFieldDelimiter() != null
-          || loadConfigurationPb.getQuote() != null
-          || loadConfigurationPb.getSkipLeadingRows() != null) {
-        CsvOptions.Builder builder = CsvOptions.builder()
-            .allowJaggedRows(loadConfigurationPb.getAllowJaggedRows())
-            .allowQuotedNewLines(loadConfigurationPb.getAllowQuotedNewlines())
-            .encoding(loadConfigurationPb.getEncoding())
-            .fieldDelimiter(loadConfigurationPb.getFieldDelimiter())
-            .quote(loadConfigurationPb.getQuote())
-            .skipLeadingRows(loadConfigurationPb.getSkipLeadingRows());
-        this.formatOptions = builder.build();
-      }
-      this.maxBadRecords = loadConfigurationPb.getMaxBadRecords();
-      if (loadConfigurationPb.getSchema() != null) {
-        this.schema = Schema.fromPb(loadConfigurationPb.getSchema());
-      }
-      this.ignoreUnknownValues = loadConfigurationPb.getIgnoreUnknownValues();
-      this.projectionFields = loadConfigurationPb.getProjectionFields();
     }
 
     /**
@@ -122,88 +70,10 @@ public class LoadJobInfo extends JobInfo<LoadStatistics> {
     }
 
     /**
-     * Sets the destination table to load the data into.
+     * Sets the configuration for the BigQuery Load Job.
      */
-    public Builder destinationTable(TableId destinationTable) {
-      this.destinationTable = destinationTable;
-      return this;
-    }
-
-    /**
-     * Sets whether the job is allowed to create new tables.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load">
-     *     Jobs: Load Configuration</a>
-     */
-    public Builder createDisposition(CreateDisposition createDisposition) {
-      this.createDisposition = createDisposition;
-      return this;
-    }
-
-    /**
-     * Sets the action that should occur if the destination table already exists.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load">
-     *     Jobs: Load Configuration</a>
-     */
-    public Builder writeDisposition(WriteDisposition writeDisposition) {
-      this.writeDisposition = writeDisposition;
-      return this;
-    }
-
-    /**
-     * Sets the source format, and possibly some parsing options, of the external data. Supported
-     * formats are {@code CSV}, {@code NEWLINE_DELIMITED_JSON} and {@code DATASTORE_BACKUP}. If not
-     * specified, {@code CSV} format is assumed.
-     *
-     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
-     *     Source Format</a>
-     */
-    public Builder formatOptions(FormatOptions formatOptions) {
-      this.formatOptions = formatOptions;
-      return this;
-    }
-
-    /**
-     * Sets the maximum number of bad records that BigQuery can ignore when running the job. If the
-     * number of bad records exceeds this value, an invalid error is returned in the job result.
-     * By default no bad record is ignored.
-     */
-    public Builder maxBadRecords(Integer maxBadRecords) {
-      this.maxBadRecords = maxBadRecords;
-      return this;
-    }
-
-    /**
-     * Sets the schema for the destination table. The schema can be omitted if the destination table
-     * already exists, or if you're loading data from Google Cloud Datastore.
-     */
-    public Builder schema(Schema schema) {
-      this.schema = schema;
-      return this;
-    }
-
-    /**
-     * Sets whether BigQuery should allow extra values that are not represented in the table schema.
-     * If {@code true}, the extra values are ignored. If {@code true}, records with extra columns
-     * are treated as bad records, and if there are too many bad records, an invalid error is
-     * returned in the job result. By default unknown values are not allowed.
-     */
-    public Builder ignoreUnknownValues(Boolean ignoreUnknownValues) {
-      this.ignoreUnknownValues = ignoreUnknownValues;
-      return this;
-    }
-
-    /**
-     * Sets which entity properties to load into BigQuery from a Cloud Datastore backup. This field
-     * is only used if the source format is set to {@code DATASTORE_BACKUP}. Property names are case
-     * sensitive and must be top-level properties. If no properties are specified, BigQuery loads
-     * all properties. If any named property isn't found in the Cloud Datastore backup, an invalid
-     * error is returned in the job result.
-     */
-    public Builder projectionFields(List<String> projectionFields) {
-      this.projectionFields =
-          projectionFields != null ? ImmutableList.copyOf(projectionFields) : null;
+    public Builder configuration(LoadConfiguration configuration) {
+      this.configuration = configuration;
       return this;
     }
 
@@ -216,14 +86,7 @@ public class LoadJobInfo extends JobInfo<LoadStatistics> {
   private LoadJobInfo(Builder builder) {
     super(builder);
     this.sourceUris = builder.sourceUris;
-    this.destinationTable = checkNotNull(builder.destinationTable);
-    this.createDisposition = builder.createDisposition;
-    this.writeDisposition = builder.writeDisposition;
-    this.formatOptions = builder.formatOptions;
-    this.maxBadRecords = builder.maxBadRecords;
-    this.schema = builder.schema;
-    this.ignoreUnknownValues = builder.ignoreUnknownValues;
-    this.projectionFields = builder.projectionFields;
+    this.configuration = builder.configuration;
   }
 
   /**
@@ -236,82 +99,10 @@ public class LoadJobInfo extends JobInfo<LoadStatistics> {
   }
 
   /**
-   * Returns the destination table to load the data into.
+   * Returns the configuration for the BigQuery Load Job.
    */
-  public TableId destinationTable() {
-    return destinationTable;
-  }
-
-  /**
-   * Returns whether the job is allowed to create new tables.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load">
-   *     Jobs: Load Configuration</a>
-   */
-  public CreateDisposition createDisposition() {
-    return this.createDisposition;
-  }
-
-  /**
-   * Returns the action that should occur if the destination table already exists.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load">
-   *     Jobs: Load Configuration</a>
-   */
-  public WriteDisposition writeDisposition() {
-    return writeDisposition;
-  }
-
-  /**
-   * Returns additional properties used to parse CSV data (used when {@link #format()} is set
-   * to CSV). Returns {@code null} if not set.
-   */
-  public CsvOptions csvOptions() {
-    return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
-  }
-
-  /**
-   * Returns the maximum number of bad records that BigQuery can ignore when running the job. If the
-   * number of bad records exceeds this value, an invalid error is returned in the job result.
-   * By default no bad record is ignored.
-   */
-  public Integer maxBadRecords() {
-    return maxBadRecords;
-  }
-
-  /**
-   * Returns the schema for the destination table, if set. Returns {@code null} otherwise.
-   */
-  public Schema schema() {
-    return schema;
-  }
-
-  /**
-   * Returns the format of the data files.
-   */
-  public String format() {
-    return formatOptions != null ? formatOptions.type() : null;
-  }
-
-  /**
-   * Returns whether BigQuery should allow extra values that are not represented in the table
-   * schema. If {@code true}, the extra values are ignored. If {@code true}, records with extra
-   * columns are treated as bad records, and if there are too many bad records, an invalid error is
-   * returned in the job result. By default unknown values are not allowed.
-   */
-  public Boolean ignoreUnknownValues() {
-    return ignoreUnknownValues;
-  }
-
-  /**
-   * Returns which entity properties to load into BigQuery from a Cloud Datastore backup. This field
-   * is only used if the source format is set to {@code DATASTORE_BACKUP}. Property names are case
-   * sensitive and must be top-level properties. If no properties are specified, BigQuery loads
-   * all properties. If any named property isn't found in the Cloud Datastore backup, an invalid
-   * error is returned in the job result.
-   */
-  public List<String> projectionFields() {
-    return projectionFields;
+  public LoadConfiguration configuration() {
+    return configuration;
   }
 
   @Override
@@ -321,16 +112,7 @@ public class LoadJobInfo extends JobInfo<LoadStatistics> {
 
   @Override
   ToStringHelper toStringHelper() {
-    return super.toStringHelper()
-        .add("destinationTable", destinationTable)
-        .add("sourceUris", sourceUris)
-        .add("createDisposition", createDisposition)
-        .add("writeDisposition", writeDisposition)
-        .add("formatOptions", formatOptions)
-        .add("maxBadRecords", maxBadRecords)
-        .add("schema", schema)
-        .add("ignoreUnknownValue", ignoreUnknownValues)
-        .add("projectionFields", projectionFields);
+    return super.toStringHelper().add("sourceUris", sourceUris).add("configuration", configuration);
   }
 
   @Override
@@ -340,122 +122,61 @@ public class LoadJobInfo extends JobInfo<LoadStatistics> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), sourceUris, destinationTable, createDisposition,
-        writeDisposition, formatOptions, maxBadRecords, schema, ignoreUnknownValues,
-        projectionFields);
+    return Objects.hash(super.hashCode(), sourceUris, configuration);
   }
 
   @Override
   Job toPb() {
-    JobConfigurationLoad loadConfigurationPb = new JobConfigurationLoad();
+    JobConfigurationLoad loadConfigurationPb = configuration.toPb();
     loadConfigurationPb.setSourceUris(sourceUris);
-    loadConfigurationPb.setDestinationTable(destinationTable.toPb());
-    if (createDisposition != null) {
-      loadConfigurationPb.setCreateDisposition(createDisposition.toString());
-    }
-    if (writeDisposition != null) {
-      loadConfigurationPb.setWriteDisposition(writeDisposition.toString());
-    }
-    if (csvOptions() != null) {
-      CsvOptions csvOptions = csvOptions();
-      loadConfigurationPb.setFieldDelimiter(csvOptions.fieldDelimiter())
-          .setAllowJaggedRows(csvOptions.allowJaggedRows())
-          .setAllowQuotedNewlines(csvOptions.allowQuotedNewLines())
-          .setEncoding(csvOptions.encoding())
-          .setQuote(csvOptions.quote())
-          .setSkipLeadingRows(csvOptions.skipLeadingRows());
-    }
-    if (schema != null) {
-      loadConfigurationPb.setSchema(schema.toPb());
-    }
-    if (formatOptions != null) {
-      loadConfigurationPb.setSourceFormat(formatOptions.type());
-    }
-    loadConfigurationPb.setMaxBadRecords(maxBadRecords);
-    loadConfigurationPb.setIgnoreUnknownValues(ignoreUnknownValues);
-    loadConfigurationPb.setProjectionFields(projectionFields);
     return super.toPb().setConfiguration(new JobConfiguration().setLoad(loadConfigurationPb));
   }
 
   /**
-   * Creates a builder for a BigQuery Load Job given destination table and source URI.
+   * Creates a builder for a BigQuery Load Job given the load configuration and source URI.
    */
-  public static Builder builder(TableId destinationTable, String sourceUri) {
-    return builder(destinationTable, ImmutableList.of(checkNotNull(sourceUri)));
+  public static Builder builder(LoadConfiguration configuration, String sourceUri) {
+    return builder(configuration, ImmutableList.of(checkNotNull(sourceUri)));
   }
 
   /**
-   * Creates a builder for a BigQuery Load Job given destination table and source URIs.
+   * Creates a builder for a BigQuery Load Job given the load configuration and source URIs.
    */
-  public static Builder builder(TableId destinationTable, List<String> sourceUris) {
-    return new Builder().destinationTable(destinationTable).sourceUris(sourceUris);
+  public static Builder builder(LoadConfiguration configuration, List<String> sourceUris) {
+    return new Builder().configuration(configuration).sourceUris(sourceUris);
   }
 
   /**
-   * Returns a BigQuery Load Job for the given destination table and source URI. Job's id is chosen
+   * Returns a BigQuery Load Job for the given load configuration and source URI. Job's id is chosen
    * by the service.
    */
-  public static LoadJobInfo of(TableId destinationTable, String sourceUri) {
-    return builder(destinationTable, sourceUri).build();
+  public static LoadJobInfo of(LoadConfiguration configuration, String sourceUri) {
+    return builder(configuration, sourceUri).build();
   }
 
   /**
-   * Returns a BigQuery Load Job for the given destination table and source URIs. Job's id is chosen
-   * by the service.
-   */
-  public static LoadJobInfo of(TableId destinationTable, List<String> sourceUris) {
-    return builder(destinationTable, sourceUris).build();
-  }
-
-  /**
-   * Returns a BigQuery Load Job for the given destination table, format and source URI. Job's id is
+   * Returns a BigQuery Load Job for the given load configuration and source URIs. Job's id is
    * chosen by the service.
    */
-  public static LoadJobInfo of(TableId destinationTable, FormatOptions format, String sourceUri) {
-    return builder(destinationTable, sourceUri).formatOptions(format).build();
+  public static LoadJobInfo of(LoadConfiguration configuration, List<String> sourceUris) {
+    return builder(configuration, sourceUris).build();
   }
 
   /**
-   * Returns a BigQuery Load Job for the given destination table, format and source URIs. Job's id
-   * is chosen by the service.
-   */
-  public static LoadJobInfo of(TableId destinationTable, FormatOptions format,
-      List<String> sourceUris) {
-    return builder(destinationTable, sourceUris).formatOptions(format).build();
-  }
-
-  /**
-   * Returns a BigQuery Load Job for the given destination table and source URI. Job's id is set to
+   * Returns a BigQuery Load Job for the given load configuration and source URI. Job's id is set to
    * the provided value.
    */
-  public static LoadJobInfo of(JobId jobId, TableId destinationTable, String sourceUri) {
-    return builder(destinationTable, sourceUri).jobId(jobId).build();
+  public static LoadJobInfo of(JobId jobId, LoadConfiguration configuration, String sourceUri) {
+    return builder(configuration, sourceUri).jobId(jobId).build();
   }
 
   /**
-   * Returns a BigQuery Load Job for the given destination table and source URIs. Job's id is set to
-   * the provided value.
+   * Returns a BigQuery Load Job for the given load configuration and source URIs. Job's id is set
+   * to the provided value.
    */
-  public static LoadJobInfo of(JobId jobId, TableId destinationTable, List<String> sourceUris) {
-    return builder(destinationTable, sourceUris).jobId(jobId).build();
-  }
-
-  /**
-   * Returns a BigQuery Load Job for the given destination table, format, and source URI. Job's id
-   * is set to the provided value.
-   */
-  public static LoadJobInfo of(JobId jobId, TableId destinationTable, FormatOptions format,
-      String sourceUri) {
-    return builder(destinationTable, sourceUri).formatOptions(format).jobId(jobId).build();
-  }
-
-  /**
-   * Returns a BigQuery Load Job for the given destination table, format and source URIs. Job's id
-   * is set to the provided value.
-   */
-  public static LoadJobInfo of(JobId jobId, TableId destinationTable, FormatOptions format,
+  public static LoadJobInfo of(JobId jobId, LoadConfiguration configuration,
       List<String> sourceUris) {
-    return builder(destinationTable, sourceUris).formatOptions(format).jobId(jobId).build();
+    return builder(configuration, sourceUris).jobId(jobId).build();
   }
 
   @SuppressWarnings("unchecked")

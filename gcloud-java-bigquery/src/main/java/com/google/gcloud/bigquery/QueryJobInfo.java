@@ -197,8 +197,8 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
     /**
      * Sets whether the job is allowed to create tables.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query">
-     *     Jobs: Query Configuration</a>
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.createDisposition">
+     *     Create Disposition</a>
      */
     public Builder createDisposition(CreateDisposition createDisposition) {
       this.createDisposition = createDisposition;
@@ -208,8 +208,8 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
     /**
      * Sets the action that should occur if the destination table already exists.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query">
-     *     Jobs: Query Configuration</a>
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.writeDisposition">
+     *     Write Disposition</a>
      */
     public Builder writeDisposition(WriteDisposition writeDisposition) {
       this.writeDisposition = writeDisposition;
@@ -223,6 +223,14 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
     public Builder defaultDataset(DatasetId defaultDataset) {
       this.defaultDataset = defaultDataset;
       return self();
+    }
+
+    /**
+     * Sets the default dataset. This dataset is used for all unqualified table names used in the
+     * query.
+     */
+    public Builder defaultDataset(String defaultDataset) {
+      return defaultDataset(DatasetId.of(defaultDataset));
     }
 
     /**
@@ -319,8 +327,8 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
   /**
    * Returns whether the job is allowed to create new tables.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query">
-   *     Jobs: Query Configuration</a>
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.createDisposition">
+   *     Create Disposition</a>
    */
   public CreateDisposition createDisposition() {
     return createDisposition;
@@ -399,8 +407,8 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
   /**
    * Returns the action that should occur if the destination table already exists.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query">
-   *     Jobs: Query Configuration</a>
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.writeDisposition">
+   *     Write Disposition</a>
    */
   public WriteDisposition writeDisposition() {
     return writeDisposition;

@@ -29,10 +29,10 @@ import java.util.Objects;
  * a temporary table that is deleted approximately 24 hours after the query is run. The query is run
  * through a BigQuery Job whose identity can be accessed via {@link QueryResponse#jobId()}. If the
  * query does not complete within the provided {@link Builder#maxWaitTime(Long)}, the response
- * returned by {@link BigQuery#query(QueryRequest)} will have {@link QueryResponse#jobComplete()}
+ * returned by {@link BigQuery#query(QueryRequest)} will have {@link QueryResponse#jobCompleted()}
  * set to {@code false} and {@link QueryResponse#result()} set to {@code null}. To obtain query
  * results you can use {@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)} until
- * {@link QueryResponse#jobComplete()} returns {@code true}.
+ * {@link QueryResponse#jobCompleted()} returns {@code true}.
  *
  * <p>Example usage of a query request:
  * <pre>    {@code
@@ -43,7 +43,7 @@ import java.util.Objects;
  *      .maxResults(1000L)
  *      .build();
  *    QueryResponse response = bigquery.query(request);
- *    while (!response.jobComplete()) {
+ *    while (!response.jobCompleted()) {
  *      Thread.sleep(1000);
  *      response = bigquery.getQueryResults(response.jobId());
  *    }
@@ -110,10 +110,17 @@ public class QueryRequest implements Serializable {
     }
 
     /**
+     * Sets the default dataset to assume for any unqualified table names in the query.
+     */
+    public Builder defaultDataset(String defaultDataset) {
+      return defaultDataset(DatasetId.of(defaultDataset));
+    }
+
+    /**
      * Sets how long to wait for the query to complete, in milliseconds, before the request times
      * out and returns. Note that this is only a timeout for the request, not the query. If the
      * query takes longer to run than the timeout value, the call returns without any results and
-     * with the {@link QueryResponse#jobComplete()} set to {@code false}. If not set, a wait time of
+     * with the {@link QueryResponse#jobCompleted()} set to {@code false}. If not set, a wait time of
      * 10000 milliseconds (10 seconds) is used.
      */
     public Builder maxWaitTime(Long maxWaitTime) {
@@ -182,7 +189,7 @@ public class QueryRequest implements Serializable {
    * Returns how long to wait for the query to complete, in milliseconds, before the request times
    * out and returns. Note that this is only a timeout for the request, not the query. If the
    * query takes longer to run than the timeout value, the call returns without any results and
-   * with the {@link QueryResponse#jobComplete()} set to {@code false}. You can call
+   * with the {@link QueryResponse#jobCompleted()} set to {@code false}. You can call
    * {@link BigQuery#getQueryResults(JobId, BigQuery.QueryResultsOption...)} to wait for the query
    * to complete and read the results. If not set, a wait time of 10000 milliseconds (10 seconds)
    * is used.
