@@ -212,12 +212,12 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ExtractJobInfo && Objects.equals(toPb(), ((ExtractJobInfo) obj).toPb());
+    return obj instanceof ExtractJobInfo && baseEquals((ExtractJobInfo) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), sourceTable, destinationUris, printHeader, fieldDelimiter,
+    return Objects.hash(baseHashCode(), sourceTable, destinationUris, printHeader, fieldDelimiter,
         format, compression);
   }
 

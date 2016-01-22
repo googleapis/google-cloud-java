@@ -178,12 +178,12 @@ public class CopyJobInfo extends JobInfo<JobStatistics> {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof CopyJobInfo && Objects.equals(toPb(), ((CopyJobInfo) obj).toPb());
+    return obj instanceof CopyJobInfo && baseEquals((CopyJobInfo) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), sourceTables, destinationTable, createDisposition,
+    return Objects.hash(baseHashCode(), sourceTables, destinationTable, createDisposition,
         writeDisposition);
   }
 

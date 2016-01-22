@@ -447,12 +447,12 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof QueryJobInfo && Objects.equals(toPb(), ((QueryJobInfo) obj).toPb());
+    return obj instanceof QueryJobInfo && baseEquals((QueryJobInfo) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), allowLargeResults, createDisposition, destinationTable,
+    return Objects.hash(baseHashCode(), allowLargeResults, createDisposition, destinationTable,
         defaultDataset, flattenResults, priority, query, tableDefinitions, useQueryCache,
         userDefinedFunctions, writeDisposition, dryRun);
   }

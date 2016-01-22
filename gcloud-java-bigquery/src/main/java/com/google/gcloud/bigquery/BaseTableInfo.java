@@ -386,14 +386,12 @@ public abstract class BaseTableInfo implements Serializable {
     return toStringHelper().toString();
   }
 
-  @Override
-  public int hashCode() {
+  protected final int baseHashCode() {
     return Objects.hash(tableId);
   }
 
-  @Override
-  public boolean equals(Object obj) {
-    return obj instanceof BaseTableInfo && Objects.equals(toPb(), ((BaseTableInfo) obj).toPb());
+  protected final boolean baseEquals(BaseTableInfo tableInfo) {
+    return Objects.equals(toPb(), tableInfo.toPb());
   }
 
   Table toPb() {

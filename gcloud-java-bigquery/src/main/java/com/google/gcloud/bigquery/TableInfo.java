@@ -215,12 +215,12 @@ public class TableInfo extends BaseTableInfo {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof TableInfo && Objects.equals(toPb(), ((TableInfo) obj).toPb());
+    return obj instanceof TableInfo && baseEquals((TableInfo) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), location, streamingBuffer);
+    return Objects.hash(baseHashCode(), location, streamingBuffer);
   }
 
   @Override
