@@ -264,14 +264,12 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
     return toStringHelper().toString();
   }
 
-  @Override
-  public int hashCode() {
+  protected final int baseHashCode() {
     return Objects.hash(jobId);
   }
 
-  @Override
-  public boolean equals(Object obj) {
-    return obj instanceof JobInfo && Objects.equals(toPb(), ((JobInfo) obj).toPb());
+  protected final boolean baseEquals(JobInfo jobInfo) {
+    return Objects.equals(toPb(), jobInfo.toPb());
   }
 
   Job toPb() {

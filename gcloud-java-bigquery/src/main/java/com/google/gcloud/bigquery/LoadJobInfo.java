@@ -117,12 +117,12 @@ public class LoadJobInfo extends JobInfo<LoadStatistics> {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof LoadJobInfo && Objects.equals(toPb(), ((LoadJobInfo) obj).toPb());
+    return obj instanceof LoadJobInfo && baseEquals((LoadJobInfo) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), sourceUris, configuration);
+    return Objects.hash(baseHashCode(), sourceUris, configuration);
   }
 
   @Override
