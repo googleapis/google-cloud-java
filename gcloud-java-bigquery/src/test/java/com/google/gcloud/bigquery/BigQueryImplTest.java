@@ -68,11 +68,11 @@ public class BigQueryImplTest {
   private static final String OTHER_TABLE = "otherTable";
   private static final String OTHER_DATASET = "otherDataset";
   private static final List<Acl> ACCESS_RULES = ImmutableList.of(
-      new Acl(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
-      new Acl(new Acl.View(TableId.of("dataset", "table")), Acl.Role.WRITER));
+      Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
+      Acl.of(new Acl.View(TableId.of("dataset", "table")), Acl.Role.WRITER));
   private static final List<Acl> ACCESS_RULES_WITH_PROJECT = ImmutableList.of(
-      new Acl(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
-      new Acl(new Acl.View(TableId.of(PROJECT, "dataset", "table"))));
+      Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
+      Acl.of(new Acl.View(TableId.of(PROJECT, "dataset", "table"))));
   private static final DatasetInfo DATASET_INFO = DatasetInfo.builder(DATASET)
       .acl(ACCESS_RULES)
       .description("description")
