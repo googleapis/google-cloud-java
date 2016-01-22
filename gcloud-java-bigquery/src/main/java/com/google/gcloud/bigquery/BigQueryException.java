@@ -55,16 +55,11 @@ public class BigQueryException extends BaseServiceException {
 
   public BigQueryException(IOException exception) {
     super(exception, true);
-    BigQueryError bigqueryError = null;
-    if (exception instanceof GoogleJsonResponseException) {
-      GoogleJsonError error = ((GoogleJsonResponseException) exception).getDetails();
-      if (error != null && error.getErrors() != null  && !error.getErrors().isEmpty()) {
-        GoogleJsonError.ErrorInfo errorInfo = error.getErrors().get(0);
-        bigqueryError = new BigQueryError(errorInfo.getReason(), errorInfo.getLocation(),
-            errorInfo.getMessage(), (String) error.get("debugInfo"));
-      }
+    BigQueryError error = null;
+    if (reason() != null) {
+      error = new BigQueryError(reason(), location(), getMessage(), debugInfo());
     }
-    this.error = bigqueryError;
+    this.error = error;
   }
 
   /**

@@ -86,20 +86,32 @@ public class BaseServiceException extends RuntimeException {
   private final boolean retryable;
   private final String reason;
   private final boolean idempotent;
+  private final String location;
+  private final String debugInfo;
 
   public BaseServiceException(IOException exception, boolean idempotent) {
     super(message(exception), exception);
+    int code = UNKNOWN_CODE;
+    String reason = null;
+    String location = null;
+    String debugInfo = null;
     if (exception instanceof GoogleJsonResponseException) {
-      Error error = error(((GoogleJsonResponseException) exception).getDetails());
-      this.code = error.code;
-      this.reason = error.reason;
-      this.retryable = error.isRetryable(retryableErrors());
-    } else {
-      this.code = UNKNOWN_CODE;
-      this.reason = null;
-      this.retryable = idempotent && isRetryable(exception);
+      GoogleJsonError jsonError = ((GoogleJsonResponseException) exception).getDetails();
+      Error error = error(jsonError);
+      code = error.code;
+      reason = error.reason;
+      if (reason != null) {
+        GoogleJsonError.ErrorInfo errorInfo = jsonError.getErrors().get(0);
+        location = errorInfo.getLocation();
+        debugInfo = (String) errorInfo.get("debugInfo");
+      }
     }
+    this.code = code;
+    this.retryable = idempotent && isRetryable(exception);
+    this.reason = reason;
     this.idempotent = idempotent;
+    this.location = location;
+    this.debugInfo = debugInfo;
   }
 
   public BaseServiceException(GoogleJsonError error, boolean idempotent) {
@@ -108,6 +120,8 @@ public class BaseServiceException extends RuntimeException {
     this.reason = reason(error);
     this.idempotent = idempotent;
     this.retryable = idempotent && isRetryable(error);
+    this.location = null;
+    this.debugInfo = null;
   }
 
   public BaseServiceException(int code, String message, String reason, boolean idempotent) {
@@ -121,6 +135,8 @@ public class BaseServiceException extends RuntimeException {
     this.reason = reason;
     this.idempotent = idempotent;
     this.retryable = idempotent && new Error(code, reason).isRetryable(retryableErrors());
+    this.location = null;
+    this.debugInfo = null;
   }
 
   protected Set<Error> retryableErrors() {
@@ -164,6 +180,18 @@ public class BaseServiceException extends RuntimeException {
    */
   public boolean idempotent() {
     return idempotent;
+  }
+
+  /**
+   * Returns the service location where the error causing the exception occurred. Returns
+   * {@code null} if not set.
+   */
+  public String location() {
+    return location;
+  }
+
+  protected String debugInfo() {
+    return debugInfo;
   }
 
   protected static String reason(GoogleJsonError error) {
