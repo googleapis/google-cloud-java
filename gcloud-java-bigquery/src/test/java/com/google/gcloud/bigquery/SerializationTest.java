@@ -42,12 +42,12 @@ import java.util.Map;
 public class SerializationTest {
 
   private static final Acl DOMAIN_ACCESS =
-      new Acl(new Acl.Domain("domain"), Acl.Role.WRITER);
+      Acl.of(new Acl.Domain("domain"), Acl.Role.WRITER);
   private static final Acl GROUP_ACCESS =
-      new Acl(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER);
-  private static final Acl USER_ACCESS = new Acl(new Acl.User("user"), Acl.Role.OWNER);
+      Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER);
+  private static final Acl USER_ACCESS = Acl.of(new Acl.User("user"), Acl.Role.OWNER);
   private static final Acl VIEW_ACCESS =
-      new Acl(new Acl.View(TableId.of("project", "dataset", "table")), Acl.Role.WRITER);
+      Acl.of(new Acl.View(TableId.of("project", "dataset", "table")), Acl.Role.WRITER);
   private static final List<Acl> ACCESS_RULES = ImmutableList.of(DOMAIN_ACCESS, GROUP_ACCESS,
       VIEW_ACCESS, USER_ACCESS);
   private static final Long CREATION_TIME = System.currentTimeMillis() - 10;

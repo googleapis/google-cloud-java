@@ -81,14 +81,14 @@ public class AclTest {
   }
 
   @Test
-  public void testAcl() {
-    Acl acl = new Acl(Group.ofAllAuthenticatedUsers(), Role.READER);
+  public void testOf() {
+    Acl acl = Acl.of(Group.ofAllAuthenticatedUsers(), Role.READER);
     assertEquals(Group.ofAllAuthenticatedUsers(), acl.entity());
     assertEquals(Role.READER, acl.role());
     Dataset.Access pb = acl.toPb();
     assertEquals(acl, Acl.fromPb(pb));
     View view = new View(TableId.of("project", "dataset", "view"));
-    acl = new Acl(view);
+    acl = Acl.of(view);
     assertEquals(view, acl.entity());
     assertEquals(null, acl.role());
   }

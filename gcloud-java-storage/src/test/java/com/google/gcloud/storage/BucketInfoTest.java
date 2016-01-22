@@ -41,8 +41,8 @@ import java.util.List;
 public class BucketInfoTest {
 
   private static final List<Acl> ACL = ImmutableList.of(
-      new Acl(User.ofAllAuthenticatedUsers(), Role.READER),
-      new Acl(new Project(VIEWERS, "p1"), Role.WRITER));
+      Acl.of(User.ofAllAuthenticatedUsers(), Role.READER),
+      Acl.of(new Project(VIEWERS, "p1"), Role.WRITER));
   private static final String ETAG = "0xFF00";
   private static final String ID = "B/N:1";
   private static final Long META_GENERATION = 10L;
@@ -51,7 +51,7 @@ public class BucketInfoTest {
   private static final Long CREATE_TIME = System.currentTimeMillis();
   private static final List<Cors> CORS = Collections.singletonList(Cors.builder().build());
   private static final List<Acl> DEFAULT_ACL =
-      Collections.singletonList(new Acl(User.ofAllAuthenticatedUsers(), Role.WRITER));
+      Collections.singletonList(Acl.of(User.ofAllAuthenticatedUsers(), Role.WRITER));
   private static final List<? extends DeleteRule> DELETE_RULES =
       Collections.singletonList(new AgeDeleteRule(5));
   private static final String INDEX_PAGE = "index.html";

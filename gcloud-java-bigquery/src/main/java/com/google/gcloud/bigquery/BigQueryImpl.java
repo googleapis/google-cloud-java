@@ -621,7 +621,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           if (viewReferencePb.getProjectId() == null) {
             viewReferencePb.setProjectId(options().projectId());
           }
-          acls.add(new Acl(new Acl.View(TableId.fromPb(viewReferencePb))));
+          acls.add(Acl.of(new Acl.View(TableId.fromPb(viewReferencePb))));
         } else {
           acls.add(acl);
         }

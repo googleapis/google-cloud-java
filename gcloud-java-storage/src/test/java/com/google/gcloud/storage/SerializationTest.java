@@ -47,6 +47,7 @@ public class SerializationTest {
   private static final Acl.Project ACL_PROJECT_ = new Acl.Project(ProjectRole.VIEWERS, "pid");
   private static final Acl.User ACL_USER = new Acl.User("user");
   private static final Acl.RawEntity ACL_RAW = new Acl.RawEntity("raw");
+  private static final Acl ACL = Acl.of(ACL_DOMAIN, Acl.Role.OWNER);
   private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").build();
   private static final BucketInfo BUCKET_INFO = BucketInfo.of("b");
   private static final Cors.Origin ORIGIN = Cors.Origin.any();
@@ -94,11 +95,10 @@ public class SerializationTest {
 
   @Test
   public void testModelAndRequests() throws Exception {
-    Serializable[] objects = {ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, BLOB_INFO,
-        BUCKET_INFO,
-        ORIGIN, CORS, BATCH_REQUEST, BATCH_RESPONSE, PAGE_RESULT, BLOB_LIST_OPTIONS,
-        BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS, BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS,
-        BUCKET_TARGET_OPTIONS};
+    Serializable[] objects = {ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, ACL,
+        BLOB_INFO, BUCKET_INFO, ORIGIN, CORS, BATCH_REQUEST, BATCH_RESPONSE, PAGE_RESULT,
+        BLOB_LIST_OPTIONS, BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS, BUCKET_LIST_OPTIONS,
+        BUCKET_SOURCE_OPTIONS, BUCKET_TARGET_OPTIONS};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

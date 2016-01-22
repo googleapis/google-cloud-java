@@ -34,8 +34,8 @@ import java.util.Map;
 public class BlobInfoTest {
 
   private static final List<Acl> ACL = ImmutableList.of(
-      new Acl(User.ofAllAuthenticatedUsers(), READER),
-      new Acl(new Project(VIEWERS, "p1"), WRITER));
+      Acl.of(User.ofAllAuthenticatedUsers(), READER),
+      Acl.of(new Project(VIEWERS, "p1"), WRITER));
   private static final Integer COMPONENT_COUNT = 2;
   private static final String CONTENT_TYPE = "text/html";
   private static final String CACHE_CONTROL = "cache";
