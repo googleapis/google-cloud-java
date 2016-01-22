@@ -33,7 +33,7 @@ import java.util.Objects;
  *
  * <p>A {@code DnsRecord} is the unit of data that will be returned by the DNS servers upon a DNS
  * request for a specific domain. The {@code DnsRecord} holds the current state of the DNS records
- * that make up a managed zone. You can read the records but you do not modify them directly.
+ * that make up a managed zone. You can read the records but you cannot modify them directly.
  * Rather, you edit the records in a managed zone by creating a ChangeRequest.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets">Google Cloud DNS
@@ -45,7 +45,7 @@ public class DnsRecord implements Serializable {
   private final String name;
   private final List<String> rrdatas;
   private final Integer ttl;
-  private final DnsRecordType type;
+  private final Type type;
 
   /**
    * Enum for the DNS record types supported by Cloud DNS.
@@ -56,7 +56,7 @@ public class DnsRecord implements Serializable {
    * @see <a href="https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types">Cloud DNS
    * supported record types</a>
    */
-  public enum DnsRecordType {
+  public enum Type {
     /**
      * Address record, which is used to map host names to their IPv4 address.
      */
@@ -105,14 +105,19 @@ public class DnsRecord implements Serializable {
     TXT
   }
 
+  /**
+   * A builder of {@link DnsRecord}.
+   */
   public static class Builder {
 
     private List<String> rrdatas = new LinkedList<>();
     private String name;
     private Integer ttl;
-    private DnsRecordType type;
+    private Type type;
 
-    private Builder() {
+    private Builder(String name, Type type) {
+      this.name = checkNotNull(name);
+      this.type = checkNotNull(type);
     }
 
     /**
@@ -177,7 +182,7 @@ public class DnsRecord implements Serializable {
      * @param ttl A non-negative number of seconds
      */
     public Builder ttl(int ttl) {
-      checkArgument(ttl >= 0, "TTL cannot be negative. The supplied value was " + ttl + ".");
+      checkArgument(ttl >= 0, "TTL cannot be negative. The supplied value was %s.", ttl);
       this.ttl = ttl;
       return this;
     }
@@ -185,7 +190,7 @@ public class DnsRecord implements Serializable {
     /**
      * The identifier of a supported record type, for example, A, AAAA, MX, TXT, and so on.
      */
-    public Builder type(DnsRecordType type) {
+    public Builder type(Type type) {
       this.type = checkNotNull(type);
       return this;
     }
@@ -198,7 +203,7 @@ public class DnsRecord implements Serializable {
     }
   }
 
-  DnsRecord(Builder builder) {
+  private DnsRecord(Builder builder) {
     this.name = builder.name;
     this.rrdatas = ImmutableList.copyOf(builder.rrdatas);
     this.ttl = builder.ttl;
@@ -213,14 +218,14 @@ public class DnsRecord implements Serializable {
   }
 
   /**
-   * Creates a builder for {@code DnsRecord} with mandatorily set name and type of the record.
+   * Creates a {@code DnsRecord} builder for the given {@code name} and {@code type}.
    */
-  public static Builder builder(String name, DnsRecordType type) {
-    return new Builder().name(name).type(type);
+  public static Builder builder(String name, Type type) {
+    return new Builder(name, type);
   }
 
   /**
-   * Get the mandatory user assigned name of this DNS record.
+   * Returns the user-assigned name of this DNS record.
    */
   public String name() {
     return name;
@@ -243,7 +248,7 @@ public class DnsRecord implements Serializable {
   /**
    * Returns the type of this DNS record.
    */
-  public DnsRecordType type() {
+  public Type type() {
     return type;
   }
 
@@ -259,16 +264,16 @@ public class DnsRecord implements Serializable {
 
   com.google.api.services.dns.model.ResourceRecordSet toPb() {
     com.google.api.services.dns.model.ResourceRecordSet pb =
-            new com.google.api.services.dns.model.ResourceRecordSet();
+        new com.google.api.services.dns.model.ResourceRecordSet();
     pb.setName(this.name());
     pb.setRrdatas(this.records());
     pb.setTtl(this.ttl());
-    pb.setType(this.type() == null ? null : this.type().name());
+    pb.setType(this.type().name());
     return pb;
   }
 
   static DnsRecord fromPb(com.google.api.services.dns.model.ResourceRecordSet pb) {
-    Builder b = builder(pb.getName(), DnsRecordType.valueOf(pb.getType()));
+    Builder b = builder(pb.getName(), Type.valueOf(pb.getType()));
     if (pb.getRrdatas() != null) {
       b.records(pb.getRrdatas());
     }
@@ -281,10 +286,10 @@ public class DnsRecord implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-            .add("name", name())
-            .add("rrdatas", records())
-            .add("ttl", ttl())
-            .add("type", type())
-            .toString();
+        .add("name", name())
+        .add("rrdatas", records())
+        .add("ttl", ttl())
+        .add("type", type())
+        .toString();
   }
 }

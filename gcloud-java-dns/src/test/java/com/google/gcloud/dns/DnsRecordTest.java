@@ -26,29 +26,32 @@ public class DnsRecordTest {
 
   private static final String NAME = "example.com.";
   private static final Integer TTL = 3600;
-  private static final DnsRecord.DnsRecordType TYPE = DnsRecord.DnsRecordType.AAAA;
+  private static final DnsRecord.Type TYPE = DnsRecord.Type.AAAA;
   private static final DnsRecord record = DnsRecord.builder(NAME, TYPE)
-          .ttl(TTL)
-          .build();
+      .ttl(TTL)
+      .build();
 
   @Test
   public void testDefaultDnsRecord() {
     DnsRecord record = DnsRecord.builder(NAME, TYPE).build();
     assertEquals(0, record.records().size());
+    assertEquals(TYPE, record.type());
+    assertEquals(NAME, record.name());
   }
 
   @Test
   public void testBuilder() {
     assertEquals(NAME, record.name());
     assertEquals(TTL, record.ttl());
+    assertEquals(TYPE, record.type());
     assertEquals(0, record.records().size());
     // verify that one can add records to the record set
     String testingRecord = "Testing record";
     String anotherTestingRecord = "Another record 123";
     DnsRecord anotherRecord = record.toBuilder()
-            .addRecord(testingRecord)
-            .addRecord(anotherTestingRecord)
-            .build();
+        .addRecord(testingRecord)
+        .addRecord(anotherTestingRecord)
+        .build();
     assertEquals(2, anotherRecord.records().size());
     assertTrue(anotherRecord.records().contains(testingRecord));
     assertTrue(anotherRecord.records().contains(anotherTestingRecord));
@@ -72,12 +75,12 @@ public class DnsRecordTest {
     assertEquals(clone, record);
     clone = record.toBuilder().addRecord("another record").build();
     assertNotEquals(clone, record);
-    final String differentName = "totally different name";
+    String differentName = "totally different name";
     clone = record.toBuilder().name(differentName).build();
     assertNotEquals(clone, record);
     clone = record.toBuilder().ttl(record.ttl() + 1).build();
     assertNotEquals(clone, record);
-    clone = record.toBuilder().type(DnsRecord.DnsRecordType.TXT).build();
+    clone = record.toBuilder().type(DnsRecord.Type.TXT).build();
     assertNotEquals(clone, record);
   }
 
@@ -108,5 +111,25 @@ public class DnsRecordTest {
     assertEquals(partial, partial.toBuilder().build());
     partial = DnsRecord.builder(NAME, TYPE).ttl(15).build();
     assertEquals(partial, partial.toBuilder().build());
+  }
+
+  @Test
+  public void clearRecordSet() {
+    // make sure that we are starting not empty
+    DnsRecord clone = record.toBuilder().addRecord("record").addRecord("another").build();
+    assertNotEquals(0, clone.records().size());
+    clone = clone.toBuilder().clearRecords().build();
+    assertEquals(0, clone.records().size());
+    clone.toPb(); // verify that pb allows it
+  }
+
+  @Test
+  public void removeFromRecordSet() {
+    String recordString = "record";
+    // make sure that we are starting not empty
+    DnsRecord clone = record.toBuilder().addRecord(recordString).build();
+    assertNotEquals(0, clone.records().size());
+    clone = clone.toBuilder().removeRecord(recordString).build();
+    assertEquals(0, clone.records().size());
   }
 }
