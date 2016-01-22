@@ -115,28 +115,7 @@ public class ProjectInfo implements Serializable {
     }
   }
 
-  public static class Builder {
-
-    private String name;
-    private String projectId;
-    private Map<String, String> labels = new HashMap<>();
-    private Long projectNumber;
-    private State state;
-    private Long createTimeMillis;
-    private ResourceId parent;
-
-    private Builder() {
-    }
-
-    Builder(ProjectInfo info) {
-      this.name = info.name;
-      this.projectId = info.projectId;
-      this.labels.putAll(info.labels);
-      this.projectNumber = info.projectNumber;
-      this.state = info.state;
-      this.createTimeMillis = info.createTimeMillis;
-      this.parent = info.parent;
-    }
+  public static abstract class Builder {
 
     /**
      * Set the user-assigned name of the project.
@@ -145,10 +124,7 @@ public class ProjectInfo implements Serializable {
      * uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.
      * This field can be changed after project creation.
      */
-    public Builder name(String name) {
-      this.name = firstNonNull(name, Data.<String>nullOf(String.class));
-      return this;
-    }
+    public abstract Builder name(String name);
 
     /**
      * Set the unique, user-assigned ID of the project.
@@ -157,36 +133,24 @@ public class ProjectInfo implements Serializable {
      * Trailing hyphens are prohibited. This field cannot be changed after the server creates the
      * project.
      */
-    public Builder projectId(String projectId) {
-      this.projectId = checkNotNull(projectId);
-      return this;
-    }
+    public abstract Builder projectId(String projectId);
 
     /**
      * Add a label associated with this project.
      *
      * <p>See {@link #labels} for label restrictions.
      */
-    public Builder addLabel(String key, String value) {
-      this.labels.put(key, value);
-      return this;
-    }
+    public abstract Builder addLabel(String key, String value);
 
     /**
      * Remove a label associated with this project.
      */
-    public Builder removeLabel(String key) {
-      this.labels.remove(key);
-      return this;
-    }
+    public abstract Builder removeLabel(String key);
 
     /**
      * Clear the labels associated with this project.
      */
-    public Builder clearLabels() {
-      this.labels.clear();
-      return this;
-    }
+    public abstract Builder clearLabels();
 
     /**
      * Set the labels associated with this project.
@@ -197,37 +161,108 @@ public class ProjectInfo implements Serializable {
      * more than 256 labels can be associated with a given resource. This field can be changed after
      * project creation.
      */
+    public abstract Builder labels(Map<String, String> labels);
+
+    abstract Builder projectNumber(Long projectNumber);
+
+    abstract Builder state(State state);
+
+    abstract Builder createTimeMillis(Long createTimeMillis);
+
+    abstract Builder parent(ResourceId parent);
+
+    public abstract ProjectInfo build();
+  }
+
+  static class BuilderImpl extends Builder {
+
+    private String name;
+    private String projectId;
+    private Map<String, String> labels = new HashMap<>();
+    private Long projectNumber;
+    private State state;
+    private Long createTimeMillis;
+    private ResourceId parent;
+
+    BuilderImpl() {}
+
+    BuilderImpl(ProjectInfo info) {
+      this.name = info.name;
+      this.projectId = info.projectId;
+      this.labels.putAll(info.labels);
+      this.projectNumber = info.projectNumber;
+      this.state = info.state;
+      this.createTimeMillis = info.createTimeMillis;
+      this.parent = info.parent;
+    }
+
+    @Override
+    public Builder name(String name) {
+      this.name = firstNonNull(name, Data.<String>nullOf(String.class));
+      return this;
+    }
+
+    @Override
+    public Builder projectId(String projectId) {
+      this.projectId = checkNotNull(projectId);
+      return this;
+    }
+
+    @Override
+    public Builder addLabel(String key, String value) {
+      this.labels.put(key, value);
+      return this;
+    }
+
+    @Override
+    public Builder removeLabel(String key) {
+      this.labels.remove(key);
+      return this;
+    }
+
+    @Override
+    public Builder clearLabels() {
+      this.labels.clear();
+      return this;
+    }
+
+    @Override
     public Builder labels(Map<String, String> labels) {
       this.labels = Maps.newHashMap(checkNotNull(labels));
       return this;
     }
 
+    @Override
     Builder projectNumber(Long projectNumber) {
       this.projectNumber = projectNumber;
       return this;
     }
 
+    @Override
     Builder state(State state) {
       this.state = state;
       return this;
     }
 
+    @Override
     Builder createTimeMillis(Long createTimeMillis) {
       this.createTimeMillis = createTimeMillis;
       return this;
     }
 
+    @Override
     Builder parent(ResourceId parent) {
       this.parent = parent;
       return this;
     }
 
+    @Override
     public ProjectInfo build() {
       return new ProjectInfo(this);
     }
   }
 
-  ProjectInfo(Builder builder) {
+  ProjectInfo(BuilderImpl builder) {
     this.name = builder.name;
     this.projectId = builder.projectId;
     this.labels = ImmutableMap.copyOf(builder.labels);
@@ -296,7 +331,8 @@ public class ProjectInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ProjectInfo && Objects.equals(toPb(), ((ProjectInfo) obj).toPb());
+    return obj.getClass().equals(ProjectInfo.class)
+        && Objects.equals(toPb(), ((ProjectInfo) obj).toPb());
   }
 
   @Override
@@ -305,11 +341,11 @@ public class ProjectInfo implements Serializable {
   }
 
   public static Builder builder(String id) {
-    return new Builder().projectId(id);
+    return new BuilderImpl().projectId(id);
   }
 
   public Builder toBuilder() {
-    return new Builder(this);
+    return new BuilderImpl(this);
   }
 
   com.google.api.services.cloudresourcemanager.model.Project toPb() {
