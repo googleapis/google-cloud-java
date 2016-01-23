@@ -1,5 +1,4 @@
 #!/bin/bash
-source ./utilities/integration_test_env.sh
 
 # This script is used by Travis-CI to publish artifacts (binary, sorce and javadoc jars) when releasing snapshots.
 # This script is referenced in .travis.yml.
@@ -11,6 +10,7 @@ echo "Travis JDK version:  " ${TRAVIS_JDK_VERSION}
 if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" ]; then
     mvn clean cobertura:cobertura coveralls:report
     if [ "${TRAVIS_PULL_REQUEST}" == "false" -a "${TRAVIS_BRANCH}" == "master" ]; then
+        source ./utilities/integration_test_env.sh
         SITE_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|\w+:)')
         if [ "${SITE_VERSION##*-}" != "SNAPSHOT" ]; then
             # Deploy site if not a SNAPSHOT
