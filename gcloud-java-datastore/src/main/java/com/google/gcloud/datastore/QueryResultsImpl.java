@@ -21,6 +21,7 @@ import com.google.api.services.datastore.DatastoreV1.QueryResultBatch.MoreResult
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
 import com.google.gcloud.datastore.Query.ResultType;
+import com.google.protobuf.ByteString;
 
 import java.util.Iterator;
 import java.util.Objects;
@@ -36,7 +37,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   private DatastoreV1.QueryResultBatch queryResultBatchPb;
   private boolean lastBatch;
   private Iterator<DatastoreV1.EntityResult> entityResultPbIter;
-  //private ByteString cursor; // only available in v1beta3
+  private ByteString cursor; // only available in v1beta3
 
 
   QueryResultsImpl(DatastoreImpl datastore, DatastoreV1.ReadOptions readOptionsPb,
@@ -83,6 +84,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
       sendRequest();
     }
     if (!entityResultPbIter.hasNext()) {
+      cursor = queryResultBatchPb.getEndCursor();
       return endOfData();
     }
     DatastoreV1.EntityResult entityResultPb = entityResultPbIter.next();
@@ -99,7 +101,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
 
   @Override
   public Cursor cursorAfter() {
+    return cursor == null ? null : new Cursor(cursor);
     //return new Cursor(cursor); // only available in v1beta3
-    return null;
   }
 }

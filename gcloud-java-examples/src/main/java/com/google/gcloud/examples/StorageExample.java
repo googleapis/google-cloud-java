@@ -18,16 +18,15 @@ package com.google.gcloud.examples;
 
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
-import com.google.gcloud.RetryParams;
+import com.google.gcloud.ReadChannel;
+import com.google.gcloud.WriteChannel;
 import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
-import com.google.gcloud.storage.BlobReadChannel;
-import com.google.gcloud.storage.CopyWriter;
-import com.google.gcloud.storage.BlobWriteChannel;
 import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.BucketInfo;
+import com.google.gcloud.storage.CopyWriter;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.ComposeRequest;
 import com.google.gcloud.storage.Storage.CopyRequest;
@@ -52,33 +51,39 @@ import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * An example of using the Google Cloud Storage.
- * <p>
- * This example demonstrates a simple/typical storage usage.
- * <p>
- * Steps needed for running the example:
+ * An example of using Google Cloud Storage.
+ *
+ * <p>This example demonstrates a simple/typical storage usage.
+ *
+ * <p>Steps needed for running the example:
  * <ol>
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven -
- * {@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
- * -Dexec.args="[<project_id>] list [<bucket>]| info [<bucket> [<file>]]|
- *  download <bucket> <path> [local_file]| upload <local_file> <bucket> [<path>]|
- *  delete <bucket> <path>+| cp <from_bucket> <from_path> <to_bucket> <to_path>|
- *  compose <bucket> <from_path>+ <to_path>| update_metadata <bucket> <file> [key=value]*|
- *  sign_url <service_account_private_key_file> <service_account_email> <bucket> <path>"}
+ * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
+ *  -Dexec.args="[<project_id>]
+ *  list [<bucket>] |
+ *  info [<bucket> [<file>]] |
+ *  download <bucket> <path> [local_file] |
+ *  upload <local_file> <bucket> [<path>] |
+ *  delete <bucket> <path>+ |
+ *  cp <from_bucket> <from_path> <to_bucket> <to_path> |
+ *  compose <bucket> <from_path>+ <to_path> |
+ *  update_metadata <bucket> <file> [key=value]* |
+ *  sign_url <service_account_private_key_file> <service_account_email> <bucket> <path>"}</pre>
  * </li>
  * </ol>
  *
- * The first parameter is an optional project_id (logged-in project will be used if not supplied).
- * Second parameter is a Storage operation (list, delete, compose,...) to demonstrate the its
- * usage. Any other arguments are specific to the operation.
- * See each action's run method for the specific Storage interaction.
+ * <p>The first parameter is an optional {@code project_id} (logged-in project will be used if not
+ * supplied). Second parameter is a Storage operation (list, delete, compose,...) and can be used to
+ * demonstrate its usage. Any other arguments are specific to the operation. See each action's run
+ * method for the specific Storage interaction.
  */
 public class StorageExample {
 
@@ -128,7 +133,7 @@ public class StorageExample {
       if (blobIds.length == 1) {
         if (blobIds[0].name().isEmpty()) {
           // get Bucket
-          Bucket bucket = Bucket.load(storage, blobIds[0].bucket());
+          Bucket bucket = Bucket.get(storage, blobIds[0].bucket());
           if (bucket == null) {
             System.out.println("No such bucket");
             return;
@@ -136,7 +141,7 @@ public class StorageExample {
           System.out.println("Bucket info: " + bucket.info());
         } else {
           // get Blob
-          Blob blob = Blob.load(storage, blobIds[0]);
+          Blob blob = Blob.get(storage, blobIds[0]);
           if (blob == null) {
             System.out.println("No such object");
             return;
@@ -145,7 +150,7 @@ public class StorageExample {
         }
       } else {
         // use batch to get multiple blobs.
-        List<Blob> blobs = Blob.get(storage, blobIds);
+        List<Blob> blobs = Blob.get(storage, Arrays.asList(blobIds));
         for (Blob blob : blobs) {
           if (blob != null) {
             System.out.println(blob.info());
@@ -213,18 +218,20 @@ public class StorageExample {
     public void run(Storage storage, String bucketName) {
       if (bucketName == null) {
         // list buckets
-        for (BucketInfo b : storage.list()) {
-          System.out.println(b);
+        Iterator<BucketInfo> bucketInfoIterator = storage.list().iterateAll();
+        while (bucketInfoIterator.hasNext()) {
+          System.out.println(bucketInfoIterator.next());
         }
       } else {
         // list a bucket's blobs
-        Bucket bucket = Bucket.load(storage, bucketName);
+        Bucket bucket = Bucket.get(storage, bucketName);
         if (bucket == null) {
           System.out.println("No such bucket");
           return;
         }
-        for (Blob b : bucket.list()) {
-          System.out.println(b.info());
+        Iterator<Blob> blobIterator = bucket.list().iterateAll();
+        while (blobIterator.hasNext()) {
+          System.out.println(blobIterator.next().info());
         }
       }
     }
@@ -251,7 +258,7 @@ public class StorageExample {
         // When content is not available or large (1MB or more) it is recommended
         // to write it in chunks via the blob's channel writer.
         Blob blob = new Blob(storage, blobInfo);
-        try (BlobWriteChannel writer = blob.writer()) {
+        try (WriteChannel writer = blob.writer()) {
           byte[] buffer = new byte[1024];
           try (InputStream input = Files.newInputStream(uploadFrom)) {
             int limit;
@@ -304,7 +311,7 @@ public class StorageExample {
     }
 
     private void run(Storage storage, BlobId blobId, Path downloadTo) throws IOException {
-      Blob blob = Blob.load(storage, blobId);
+      Blob blob = Blob.get(storage, blobId);
       if (blob == null) {
         System.out.println("No such object");
         return;
@@ -319,7 +326,7 @@ public class StorageExample {
         writeTo.write(content);
       } else {
         // When Blob size is big or unknown use the blob's channel reader.
-        try (BlobReadChannel reader = blob.reader()) {
+        try (ReadChannel reader = blob.reader()) {
           WritableByteChannel channel = Channels.newChannel(writeTo);
           ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
           while (reader.read(bytes) > 0) {
@@ -431,7 +438,7 @@ public class StorageExample {
     }
 
     private void run(Storage storage, BlobId blobId, Map<String, String> metadata) {
-      Blob blob = Blob.load(storage, blobId);
+      Blob blob = Blob.get(storage, blobId);
       if (blob == null) {
         System.out.println("No such object");
         return;
@@ -520,7 +527,7 @@ public class StorageExample {
     ACTIONS.put("sign_url", new SignUrlAction());
   }
 
-  public static void printUsage() {
+  private static void printUsage() {
     StringBuilder actionAndParams = new StringBuilder();
     for (Map.Entry<String, StorageAction> entry : ACTIONS.entrySet()) {
       actionAndParams.append("\n\t").append(entry.getKey());
@@ -541,8 +548,7 @@ public class StorageExample {
       printUsage();
       return;
     }
-    StorageOptions.Builder optionsBuilder =
-        StorageOptions.builder().retryParams(RetryParams.getDefaultInstance());
+    StorageOptions.Builder optionsBuilder = StorageOptions.builder();
     StorageAction action;
     String actionName;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {

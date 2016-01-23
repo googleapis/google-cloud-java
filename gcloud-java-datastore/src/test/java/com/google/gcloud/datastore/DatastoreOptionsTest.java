@@ -30,8 +30,6 @@ import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
-
 public class DatastoreOptionsTest {
 
   private static final String PROJECT_ID = "project_id";
@@ -41,7 +39,7 @@ public class DatastoreOptionsTest {
   private DatastoreOptions.Builder options;
 
   @Before
-  public void setUp() throws IOException, InterruptedException {
+  public void setUp() {
     datastoreRpcFactory = EasyMock.createMock(DatastoreRpcFactory.class);
     datastoreRpc = EasyMock.createMock(DatastoreRpc.class);
     options = DatastoreOptions.builder()

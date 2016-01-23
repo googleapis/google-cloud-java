@@ -102,12 +102,12 @@ public final class Cursor extends Serializable<DatastoreV1.Value> {
   }
 
   @Override
-  protected Value toPb() {
+  Value toPb() {
     return DatastoreV1.Value.newBuilder().setBlobValue(byteString).build();
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(DatastoreV1.Value.parseFrom(bytesPb));
   }
 

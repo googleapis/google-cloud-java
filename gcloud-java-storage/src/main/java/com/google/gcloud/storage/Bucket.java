@@ -18,25 +18,35 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.gcloud.storage.Bucket.BucketSourceOption.toGetOptions;
+import static com.google.gcloud.storage.Bucket.BucketSourceOption.toSourceOptions;
 
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-import com.google.gcloud.storage.Storage.BlobSourceOption;
+import com.google.common.collect.Iterators;
+import com.google.gcloud.Page;
+import com.google.gcloud.PageImpl;
+import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.storage.Storage.BlobGetOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.BlobWriteOption;
-import com.google.gcloud.storage.Storage.BucketSourceOption;
 import com.google.gcloud.storage.Storage.BucketTargetOption;
-import java.io.InputStream;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
 /**
  * A Google cloud storage bucket.
  *
- * <p>
- * Objects of this class are immutable. Operations that modify the bucket like {@link #update}
+ * <p>Objects of this class are immutable. Operations that modify the bucket like {@link #update}
  * return a new object. To get a {@code Bucket} object with the most recent information use
  * {@link #reload}.
  * </p>
@@ -45,6 +55,142 @@ public final class Bucket {
 
   private final Storage storage;
   private final BucketInfo info;
+
+  private static class BlobPageFetcher implements PageImpl.NextPageFetcher<Blob> {
+
+    private static final long serialVersionUID = 3221100177471323801L;
+
+    private final StorageOptions options;
+    private final Page<BlobInfo> infoPage;
+
+    BlobPageFetcher(StorageOptions options, Page<BlobInfo> infoPage) {
+      this.options = options;
+      this.infoPage = infoPage;
+    }
+
+    @Override
+    public Page<Blob> nextPage() {
+      Page<BlobInfo> nextInfoPage = infoPage.nextPage();
+      return new PageImpl<>(new BlobPageFetcher(options, nextInfoPage),
+          nextInfoPage.nextPageCursor(), new LazyBlobIterable(options, nextInfoPage.values()));
+    }
+  }
+
+  private static class LazyBlobIterable implements Iterable<Blob>, Serializable {
+
+    private static final long serialVersionUID = -3092290247725378832L;
+
+    private final StorageOptions options;
+    private final Iterable<BlobInfo> infoIterable;
+    private transient Storage storage;
+
+    public LazyBlobIterable(StorageOptions options, Iterable<BlobInfo> infoIterable) {
+      this.options = options;
+      this.infoIterable = infoIterable;
+      this.storage = options.service();
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+      in.defaultReadObject();
+      this.storage = options.service();
+    }
+
+    @Override
+    public Iterator<Blob> iterator() {
+      return Iterators.transform(infoIterable.iterator(), new Function<BlobInfo, Blob>() {
+        @Override
+        public Blob apply(BlobInfo blobInfo) {
+          return new Blob(storage, blobInfo);
+        }
+      });
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(options, infoIterable);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof LazyBlobIterable)) {
+        return false;
+      }
+      LazyBlobIterable other = (LazyBlobIterable) obj;
+      return Objects.equals(options, other.options)
+          && Objects.equals(infoIterable, other.infoIterable);
+    }
+  }
+
+  /**
+   * Class for specifying bucket source options when {@code Bucket} methods are used.
+   */
+  public static class BucketSourceOption extends Option {
+
+    private static final long serialVersionUID = 6928872234155522371L;
+
+    private BucketSourceOption(StorageRpc.Option rpcOption) {
+      super(rpcOption, null);
+    }
+
+    private Storage.BucketSourceOption toSourceOptions(BucketInfo bucketInfo) {
+      switch (rpcOption()) {
+        case IF_METAGENERATION_MATCH:
+          return Storage.BucketSourceOption.metagenerationMatch(bucketInfo.metageneration());
+        case IF_METAGENERATION_NOT_MATCH:
+          return Storage.BucketSourceOption.metagenerationNotMatch(bucketInfo.metageneration());
+        default:
+          throw new AssertionError("Unexpected enum value");
+      }
+    }
+
+    private Storage.BucketGetOption toGetOption(BucketInfo bucketInfo) {
+      switch (rpcOption()) {
+        case IF_METAGENERATION_MATCH:
+          return Storage.BucketGetOption.metagenerationMatch(bucketInfo.metageneration());
+        case IF_METAGENERATION_NOT_MATCH:
+          return Storage.BucketGetOption.metagenerationNotMatch(bucketInfo.metageneration());
+        default:
+          throw new AssertionError("Unexpected enum value");
+      }
+    }
+
+    /**
+     * Returns an option for bucket's metageneration match. If this option is used the request will
+     * fail if metageneration does not match.
+     */
+    public static BucketSourceOption metagenerationMatch() {
+      return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
+    }
+
+    /**
+     * Returns an option for bucket's metageneration mismatch. If this option is used the request
+     * will fail if metageneration matches.
+     */
+    public static BucketSourceOption metagenerationNotMatch() {
+      return new BucketSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
+    }
+
+    static Storage.BucketSourceOption[] toSourceOptions(BucketInfo bucketInfo,
+         BucketSourceOption... options) {
+      Storage.BucketSourceOption[] convertedOptions =
+          new Storage.BucketSourceOption[options.length];
+      int index = 0;
+      for (BucketSourceOption option : options) {
+        convertedOptions[index++] = option.toSourceOptions(bucketInfo);
+      }
+      return convertedOptions;
+    }
+
+    static Storage.BucketGetOption[] toGetOptions(BucketInfo bucketInfo,
+        BucketSourceOption... options) {
+      Storage.BucketGetOption[] convertedOptions = new Storage.BucketGetOption[options.length];
+      int index = 0;
+      for (BucketSourceOption option : options) {
+        convertedOptions[index++] = option.toGetOption(bucketInfo);
+      }
+      return convertedOptions;
+    }
+  }
 
   /**
    * Constructs a {@code Bucket} object for the provided {@code BucketInfo}. The storage service is
@@ -64,11 +210,12 @@ public final class Bucket {
    * 
    * @param storage the storage service used for issuing requests
    * @param bucket bucket's name
-   * @return the {@code Bucket} object or {@code null} if not found.
+   * @param options blob get options
+   * @return the {@code Bucket} object or {@code null} if not found
    * @throws StorageException upon failure
    */
-  public static Bucket load(Storage storage, String bucket) {
-    BucketInfo info = storage.get(bucket);
+  public static Bucket get(Storage storage, String bucket, Storage.BucketGetOption... options) {
+    BucketInfo info = storage.get(bucket, options);
     return info != null ? new Bucket(storage, info) : null;
   }
 
@@ -85,19 +232,22 @@ public final class Bucket {
    * @return true if this bucket exists, false otherwise
    * @throws StorageException upon failure
    */
-  public boolean exists() {
-    return storage.get(info.name()) != null;
+  public boolean exists(BucketSourceOption... options) {
+    int length = options.length;
+    Storage.BucketGetOption[] getOptions = Arrays.copyOf(toGetOptions(info, options), length + 1);
+    getOptions[length] = Storage.BucketGetOption.fields();
+    return storage.get(info.name(), getOptions) != null;
   }
 
   /**
-   * Fetches current bucket's latest information.
+   * Fetches current bucket's latest information. Returns {@code null} if the bucket does not exist.
    *
    * @param options bucket read options
-   * @return a {@code Bucket} object with latest information
+   * @return a {@code Bucket} object with latest information or {@code null} if not found
    * @throws StorageException upon failure
    */
   public Bucket reload(BucketSourceOption... options) {
-    return new Bucket(storage, storage.get(info.name(), options));
+    return Bucket.get(storage, info.name(), toGetOptions(info, options));
   }
 
   /**
@@ -121,11 +271,11 @@ public final class Bucket {
    * Deletes this bucket.
    *
    * @param options bucket delete options
-   * @return true if bucket was deleted
+   * @return {@code true} if bucket was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   public boolean delete(BucketSourceOption... options) {
-    return storage.delete(info.name(), options);
+    return storage.delete(info.name(), toSourceOptions(info, options));
   }
 
   /**
@@ -134,8 +284,11 @@ public final class Bucket {
    * @param options options for listing blobs
    * @throws StorageException upon failure
    */
-  public ListResult<Blob> list(Storage.BlobListOption... options) {
-    return new BlobListResult(storage, storage.list(info.name(), options));
+  public Page<Blob> list(Storage.BlobListOption... options) {
+    Page<BlobInfo> infoPage = storage.list(info.name(), options);
+    StorageOptions storageOptions = storage.options();
+    return new PageImpl<>(new BlobPageFetcher(storageOptions, infoPage), infoPage.nextPageCursor(),
+        new LazyBlobIterable(storageOptions, infoPage.values()));
   }
 
   /**
@@ -145,7 +298,7 @@ public final class Bucket {
    * @param options blob search options
    * @throws StorageException upon failure
    */
-  public Blob get(String blob, BlobSourceOption... options) {
+  public Blob get(String blob, BlobGetOption... options) {
     return new Blob(storage, storage.get(BlobId.of(info.name(), blob), options));
   }
 
@@ -155,7 +308,7 @@ public final class Bucket {
    * @param blobName1 first blob to get
    * @param blobName2 second blob to get
    * @param blobNames other blobs to get
-   * @return an immutable list of {@code Blob} objects.
+   * @return an immutable list of {@code Blob} objects
    * @throws StorageException upon failure
    */
   public List<Blob> get(String blobName1, String blobName2, String... blobNames) {
@@ -166,7 +319,7 @@ public final class Bucket {
       batch.get(info.name(), name);
     }
     List<Blob> blobs = new ArrayList<>(blobNames.length);
-    BatchResponse response = storage.apply(batch.build());
+    BatchResponse response = storage.submit(batch.build());
     for (BatchResponse.Result<BlobInfo> result : response.gets()) {
       BlobInfo blobInfo = result.get();
       blobs.add(blobInfo != null ? new Blob(storage, blobInfo) : null);
@@ -185,7 +338,7 @@ public final class Bucket {
    * @param contentType the blob content type. If {@code null} then
    *     {@value com.google.gcloud.storage.Storage#DEFAULT_CONTENT_TYPE} is used.
    * @param options options for blob creation
-   * @return a complete blob information.
+   * @return a complete blob information
    * @throws StorageException upon failure
    */
   public Blob create(String blob, byte[] content, String contentType, BlobTargetOption... options) {
@@ -204,7 +357,7 @@ public final class Bucket {
    * @param contentType the blob content type. If {@code null} then
    *     {@value com.google.gcloud.storage.Storage#DEFAULT_CONTENT_TYPE} is used.
    * @param options options for blob creation
-   * @return a complete blob information.
+   * @return a complete blob information
    * @throws StorageException upon failure
    */
   public Blob create(String blob, InputStream content, String contentType,

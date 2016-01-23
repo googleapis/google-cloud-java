@@ -211,7 +211,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 
   @Override
   @SuppressWarnings("unchecked")
-  protected DatastoreV1.Value toPb() {
+  DatastoreV1.Value toPb() {
     return type().getMarshaller().toProto(this);
   }
 
@@ -231,7 +231,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(DatastoreV1.Value.parseFrom(bytesPb));
   }
 }

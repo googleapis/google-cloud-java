@@ -86,7 +86,7 @@ public final class PathElement extends Serializable<DatastoreV1.Key.PathElement>
   }
 
   @Override
-  protected DatastoreV1.Key.PathElement toPb() {
+  DatastoreV1.Key.PathElement toPb() {
     DatastoreV1.Key.PathElement.Builder pathElementPb = DatastoreV1.Key.PathElement.newBuilder();
     pathElementPb.setKind(kind);
     if (id != null) {
@@ -98,7 +98,7 @@ public final class PathElement extends Serializable<DatastoreV1.Key.PathElement>
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(DatastoreV1.Key.PathElement.parseFrom(bytesPb));
   }
 
