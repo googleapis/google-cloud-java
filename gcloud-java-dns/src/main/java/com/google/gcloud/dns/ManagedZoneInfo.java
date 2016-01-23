@@ -16,11 +16,11 @@
 
 package com.google.gcloud.dns;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.ISODateTimeFormat;
@@ -32,15 +32,16 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * This class is a container for the managed zone metainformation. Managed zone is a resource that
- * represents a DNS zone hosted by the Cloud DNS service. See <a href="https://cloud.google.com/dns/api/v1/managedZones">Google
- * Cloud DNS documentation</a> for more information.
+ * A {@code ManagedZone} represents a DNS zone hosted by the Google Cloud DNS service. A zone is a
+ * subtree of the DNS namespace under one administrative responsibility. See <a
+ * href="https://cloud.google.com/dns/api/v1/managedZones">Google Cloud DNS documentation</a> for
+ * more information.
  */
 public class ManagedZoneInfo implements Serializable {
 
   private static final long serialVersionUID = 201601191647L;
   private final String name;
-  private final Long id;
+  private final BigInteger id;
   private final Long creationTimeMillis;
   private final String dnsName;
   private final String description;
@@ -52,17 +53,21 @@ public class ManagedZoneInfo implements Serializable {
    */
   public static class Builder {
     private String name;
-    private Long id;
+    private BigInteger id;
     private Long creationTimeMillis;
     private String dnsName;
     private String description;
     private String nameServerSet;
     private List<String> nameServers = new LinkedList<>();
 
+    /**
+     * Returns an empty builder for {@code ManagedZoneInfo}. We use it internally in {@code
+     * toPb()}.
+     */
     private Builder() {
     }
 
-    private Builder(Long id) {
+    private Builder(BigInteger id) {
       this.id = checkNotNull(id);
     }
 
@@ -70,7 +75,7 @@ public class ManagedZoneInfo implements Serializable {
       this.name = checkNotNull(name);
     }
 
-    private Builder(String name, Long id) {
+    private Builder(String name, BigInteger id) {
       this.name = checkNotNull(name);
       this.id = checkNotNull(id);
     }
@@ -99,7 +104,7 @@ public class ManagedZoneInfo implements Serializable {
     /**
      * Sets an id for the managed zone which is assigned to the managed zone by the server.
      */
-    public Builder id(long id) {
+    Builder id(BigInteger id) {
       this.id = id;
       return this;
     }
@@ -108,7 +113,6 @@ public class ManagedZoneInfo implements Serializable {
      * Sets the time when this managed zone was created.
      */
     Builder creationTimeMillis(long creationTimeMillis) {
-      checkArgument(creationTimeMillis >= 0, "The timestamp cannot be negative.");
       this.creationTimeMillis = creationTimeMillis;
       return this;
     }
@@ -123,8 +127,7 @@ public class ManagedZoneInfo implements Serializable {
 
     /**
      * Sets a mandatory description for this managed zone. The value is a string of at most 1024
-     * characters (this limit is posed by Google Cloud DNS; gcloud-java does not enforce the limit)
-     * which has no effect on the managed zone's function.
+     * characters which has no effect on the managed zone's function.
      */
     public Builder description(String description) {
       this.description = checkNotNull(description);
@@ -133,7 +136,8 @@ public class ManagedZoneInfo implements Serializable {
 
     /**
      * Optionally specifies the NameServerSet for this managed zone. A NameServerSet is a set of DNS
-     * name servers that all host the same ManagedZones.
+     * name servers that all host the same ManagedZones. Most users will not need to specify this
+     * value.
      */
     public Builder nameServerSet(String nameServerSet) {
       // todo(mderka) add more to the doc when questions are answered by the service owner
@@ -146,20 +150,13 @@ public class ManagedZoneInfo implements Serializable {
      * provided by Google Cloud DNS and is read only.
      */
     Builder nameServers(List<String> nameServers) {
-      this.nameServers.addAll(checkNotNull(nameServers));
+      checkNotNull(nameServers);
+      this.nameServers = Lists.newLinkedList(nameServers);
       return this;
     }
 
     /**
-     * Removes all the nameservers from the list.
-     */
-    Builder clearNameServers() {
-      this.nameServers.clear();
-      return this;
-    }
-
-    /**
-     * Builds the instance of ManagedZoneInfo based on the information set here.
+     * Builds the instance of {@code ManagedZoneInfo} based on the information set by this builder.
      */
     public ManagedZoneInfo build() {
       return new ManagedZoneInfo(this);
@@ -186,22 +183,15 @@ public class ManagedZoneInfo implements Serializable {
   /**
    * Returns a builder for {@code ManagedZoneInfo} with an assigned {@code id}.
    */
-  public static Builder builder(Long id) {
+  public static Builder builder(BigInteger id) {
     return new Builder(id);
   }
 
   /**
    * Returns a builder for {@code ManagedZoneInfo} with an assigned {@code name} and {@code id}.
    */
-  public static Builder builder(String name, Long id) {
+  public static Builder builder(String name, BigInteger id) {
     return new Builder(name, id);
-  }
-
-  /**
-   * Returns an empty builder for {@code ManagedZoneInfo}. We use it internally in {@code toPb()}.
-   */
-  private static Builder builder() {
-    return new Builder();
   }
 
   /**
@@ -214,7 +204,7 @@ public class ManagedZoneInfo implements Serializable {
   /**
    * Returns the read-only managed zone id assigned by the server.
    */
-  public Long id() {
+  public BigInteger id() {
     return id;
   }
 
@@ -233,8 +223,7 @@ public class ManagedZoneInfo implements Serializable {
   }
 
   /**
-   * Returns the description of this managed zone. This is at most 1024 long mandatory string
-   * provided by the user.
+   * Returns the description of this managed zone.
    */
   public String description() {
     return description;
@@ -270,7 +259,7 @@ public class ManagedZoneInfo implements Serializable {
     pb.setDescription(this.description());
     pb.setDnsName(this.dnsName());
     if (this.id() != null) {
-      pb.setId(BigInteger.valueOf(this.id()));
+      pb.setId(this.id());
     }
     pb.setName(this.name());
     pb.setNameServers(this.nameServers());
@@ -284,7 +273,7 @@ public class ManagedZoneInfo implements Serializable {
   }
 
   static ManagedZoneInfo fromPb(com.google.api.services.dns.model.ManagedZone pb) {
-    Builder b = builder();
+    Builder b = new Builder();
     if (pb.getDescription() != null) {
       b.description(pb.getDescription());
     }
@@ -292,7 +281,7 @@ public class ManagedZoneInfo implements Serializable {
       b.dnsName(pb.getDnsName());
     }
     if (pb.getId() != null) {
-      b.id(pb.getId().longValue());
+      b.id(pb.getId());
     }
     if (pb.getName() != null) {
       b.name(pb.getName());

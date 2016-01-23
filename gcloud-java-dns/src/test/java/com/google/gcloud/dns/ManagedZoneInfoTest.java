@@ -17,24 +17,23 @@
 package com.google.gcloud.dns;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import com.google.common.collect.Lists;
 
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
+import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ManagedZoneInfoTest {
 
   private static final String NAME = "mz-example.com";
-  private static final Long ID = 123L;
+  private static final BigInteger ID = BigInteger.valueOf(123L);
   private static final Long CREATION_TIME_MILLIS = 1123468321321L;
   private static final String DNS_NAME = "example.com.";
   private static final String DESCRIPTION = "description for the zone";
@@ -42,15 +41,14 @@ public class ManagedZoneInfoTest {
   private static final String NS1 = "name server 1";
   private static final String NS2 = "name server 2";
   private static final String NS3 = "name server 3";
-  private static List<String> nameServers = new LinkedList<>();
-  private static ManagedZoneInfo info;
+  private List<String> nameServers = new LinkedList<>();
+  private ManagedZoneInfo info;
 
-  @BeforeClass
-  public static void setUp() {
+  @Before
+  public void setUp() {
     nameServers.add(NS1);
     nameServers.add(NS2);
     nameServers.add(NS3);
-    assertEquals(3, nameServers.size());
     info = ManagedZoneInfo.builder(NAME, ID)
         .creationTimeMillis(CREATION_TIME_MILLIS)
         .dnsName(DNS_NAME)
@@ -58,7 +56,6 @@ public class ManagedZoneInfoTest {
         .nameServerSet(NAME_SERVER_SET)
         .nameServers(nameServers)
         .build();
-    System.out.println(info);
   }
 
   @Test
@@ -105,12 +102,7 @@ public class ManagedZoneInfoTest {
 
   @Test
   public void testValidCreationTime() {
-    try {
-      ManagedZoneInfo.builder(NAME).creationTimeMillis(-1);
-      fail("A negative value is not acceptable for creation time.");
-    } catch (IllegalArgumentException e) {
-      // expected
-    }
+    ManagedZoneInfo.builder(NAME).creationTimeMillis(-1);
     ManagedZoneInfo.builder(NAME).creationTimeMillis(0);
     ManagedZoneInfo.builder(NAME).creationTimeMillis(Long.MAX_VALUE);
   }
@@ -132,7 +124,7 @@ public class ManagedZoneInfoTest {
     assertNotEquals(clone, info);
     clone = info.toBuilder().dnsName(differentName).build();
     assertNotEquals(clone, info);
-    clone = info.toBuilder().id(info.id() + 1).build();
+    clone = info.toBuilder().id(info.id().add(BigInteger.ONE)).build();
     assertNotEquals(clone, info);
     clone = info.toBuilder().nameServerSet(info.nameServerSet() + "salt").build();
     assertNotEquals(clone, info);
@@ -188,11 +180,20 @@ public class ManagedZoneInfoTest {
   }
 
   @Test
-  public void testClearNameServers() {
-    ManagedZoneInfo clone = info.toBuilder().build();
-    assertFalse(clone.nameServers().isEmpty());
-    clone = clone.toBuilder().clearNameServers().build();
+  public void testEmptyNameServers() {
+    ManagedZoneInfo clone = info.toBuilder().nameServers(new LinkedList<String>()).build();
     assertTrue(clone.nameServers().isEmpty());
     clone.toPb(); // test that this is allowed
+  }
+
+  @Test
+  public void testDateParsing() {
+    com.google.api.services.dns.model.ManagedZone pb =
+        info.toPb();
+    pb.setCreationTime("2016-01-19T18:00:12.854Z"); // a real value obtained from Google Cloud DNS
+    ManagedZoneInfo mz = ManagedZoneInfo.fromPb(pb); // parses the string timestamp to millis
+    com.google.api.services.dns.model.ManagedZone pbClone = mz.toPb(); // converts it back to string
+    assertEquals(pb, pbClone);
+    assertEquals(pb.getCreationTime(), pbClone.getCreationTime());
   }
 }
