@@ -21,9 +21,9 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigInteger;
@@ -41,22 +41,14 @@ public class ManagedZoneInfoTest {
   private static final String NS1 = "name server 1";
   private static final String NS2 = "name server 2";
   private static final String NS3 = "name server 3";
-  private List<String> nameServers = new LinkedList<>();
-  private ManagedZoneInfo info;
-
-  @Before
-  public void setUp() {
-    nameServers.add(NS1);
-    nameServers.add(NS2);
-    nameServers.add(NS3);
-    info = ManagedZoneInfo.builder(NAME, ID)
-        .creationTimeMillis(CREATION_TIME_MILLIS)
-        .dnsName(DNS_NAME)
-        .description(DESCRIPTION)
-        .nameServerSet(NAME_SERVER_SET)
-        .nameServers(nameServers)
-        .build();
-  }
+  private static final List<String> NAME_SERVERS = ImmutableList.of(NS1, NS2, NS3);
+  private static final ManagedZoneInfo INFO = ManagedZoneInfo.builder(NAME, ID)
+      .creationTimeMillis(CREATION_TIME_MILLIS)
+      .dnsName(DNS_NAME)
+      .description(DESCRIPTION)
+      .nameServerSet(NAME_SERVER_SET)
+      .nameServers(NAME_SERVERS)
+      .build();
 
   @Test
   public void testDefaultBuilders() {
@@ -88,58 +80,51 @@ public class ManagedZoneInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(3, info.nameServers().size());
-    assertEquals(NS1, info.nameServers().get(0));
-    assertEquals(NS2, info.nameServers().get(1));
-    assertEquals(NS3, info.nameServers().get(2));
-    assertEquals(NAME, info.name());
-    assertEquals(ID, info.id());
-    assertEquals(CREATION_TIME_MILLIS, info.creationTimeMillis());
-    assertEquals(NAME_SERVER_SET, info.nameServerSet());
-    assertEquals(DESCRIPTION, info.description());
-    assertEquals(DNS_NAME, info.dnsName());
-  }
-
-  @Test
-  public void testValidCreationTime() {
-    ManagedZoneInfo.builder(NAME).creationTimeMillis(-1);
-    ManagedZoneInfo.builder(NAME).creationTimeMillis(0);
-    ManagedZoneInfo.builder(NAME).creationTimeMillis(Long.MAX_VALUE);
+    assertEquals(3, INFO.nameServers().size());
+    assertEquals(NS1, INFO.nameServers().get(0));
+    assertEquals(NS2, INFO.nameServers().get(1));
+    assertEquals(NS3, INFO.nameServers().get(2));
+    assertEquals(NAME, INFO.name());
+    assertEquals(ID, INFO.id());
+    assertEquals(CREATION_TIME_MILLIS, INFO.creationTimeMillis());
+    assertEquals(NAME_SERVER_SET, INFO.nameServerSet());
+    assertEquals(DESCRIPTION, INFO.description());
+    assertEquals(DNS_NAME, INFO.dnsName());
   }
 
   @Test
   public void testEqualsAndNotEquals() {
-    ManagedZoneInfo clone = info.toBuilder().build();
-    assertEquals(clone, info);
-    List<String> moreServers = Lists.newLinkedList(nameServers);
+    ManagedZoneInfo clone = INFO.toBuilder().build();
+    assertEquals(INFO, clone);
+    List<String> moreServers = Lists.newLinkedList(NAME_SERVERS);
     moreServers.add(NS1);
-    clone = info.toBuilder().nameServers(moreServers).build();
-    assertNotEquals(clone, info);
+    clone = INFO.toBuilder().nameServers(moreServers).build();
+    assertNotEquals(INFO, clone);
     String differentName = "totally different name";
-    clone = info.toBuilder().name(differentName).build();
-    assertNotEquals(clone, info);
-    clone = info.toBuilder().creationTimeMillis(info.creationTimeMillis() + 1).build();
-    assertNotEquals(clone, info);
-    clone = info.toBuilder().description(info.description() + "aaaa").build();
-    assertNotEquals(clone, info);
-    clone = info.toBuilder().dnsName(differentName).build();
-    assertNotEquals(clone, info);
-    clone = info.toBuilder().id(info.id().add(BigInteger.ONE)).build();
-    assertNotEquals(clone, info);
-    clone = info.toBuilder().nameServerSet(info.nameServerSet() + "salt").build();
-    assertNotEquals(clone, info);
+    clone = INFO.toBuilder().name(differentName).build();
+    assertNotEquals(INFO, clone);
+    clone = INFO.toBuilder().creationTimeMillis(INFO.creationTimeMillis() + 1).build();
+    assertNotEquals(INFO, clone);
+    clone = INFO.toBuilder().description(INFO.description() + "aaaa").build();
+    assertNotEquals(INFO, clone);
+    clone = INFO.toBuilder().dnsName(differentName).build();
+    assertNotEquals(INFO, clone);
+    clone = INFO.toBuilder().id(INFO.id().add(BigInteger.ONE)).build();
+    assertNotEquals(INFO, clone);
+    clone = INFO.toBuilder().nameServerSet(INFO.nameServerSet() + "salt").build();
+    assertNotEquals(INFO, clone);
   }
 
   @Test
   public void testSameHashCodeOnEquals() {
-    int hash = info.hashCode();
-    ManagedZoneInfo clone = info.toBuilder().build();
+    int hash = INFO.hashCode();
+    ManagedZoneInfo clone = INFO.toBuilder().build();
     assertEquals(clone.hashCode(), hash);
   }
 
   @Test
   public void testToBuilder() {
-    assertEquals(info, info.toBuilder().build());
+    assertEquals(INFO, INFO.toBuilder().build());
     ManagedZoneInfo partial = ManagedZoneInfo.builder(NAME).build();
     assertEquals(partial, partial.toBuilder().build());
     partial = ManagedZoneInfo.builder(ID).build();
@@ -160,7 +145,7 @@ public class ManagedZoneInfoTest {
 
   @Test
   public void testToAndFromPb() {
-    assertEquals(info, ManagedZoneInfo.fromPb(info.toPb()));
+    assertEquals(INFO, ManagedZoneInfo.fromPb(INFO.toPb()));
     ManagedZoneInfo partial = ManagedZoneInfo.builder(NAME).build();
     assertEquals(partial, ManagedZoneInfo.fromPb(partial.toPb()));
     partial = ManagedZoneInfo.builder(ID).build();
@@ -181,15 +166,14 @@ public class ManagedZoneInfoTest {
 
   @Test
   public void testEmptyNameServers() {
-    ManagedZoneInfo clone = info.toBuilder().nameServers(new LinkedList<String>()).build();
+    ManagedZoneInfo clone = INFO.toBuilder().nameServers(new LinkedList<String>()).build();
     assertTrue(clone.nameServers().isEmpty());
     clone.toPb(); // test that this is allowed
   }
 
   @Test
   public void testDateParsing() {
-    com.google.api.services.dns.model.ManagedZone pb =
-        info.toPb();
+    com.google.api.services.dns.model.ManagedZone pb = INFO.toPb();
     pb.setCreationTime("2016-01-19T18:00:12.854Z"); // a real value obtained from Google Cloud DNS
     ManagedZoneInfo mz = ManagedZoneInfo.fromPb(pb); // parses the string timestamp to millis
     com.google.api.services.dns.model.ManagedZone pbClone = mz.toPb(); // converts it back to string

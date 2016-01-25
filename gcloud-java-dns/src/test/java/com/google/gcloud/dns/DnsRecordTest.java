@@ -72,16 +72,16 @@ public class DnsRecordTest {
   @Test
   public void testEqualsAndNotEquals() {
     DnsRecord clone = record.toBuilder().build();
-    assertEquals(clone, record);
+    assertEquals(record, clone);
     clone = record.toBuilder().addRecord("another record").build();
-    assertNotEquals(clone, record);
+    assertNotEquals(record, clone);
     String differentName = "totally different name";
     clone = record.toBuilder().name(differentName).build();
-    assertNotEquals(clone, record);
+    assertNotEquals(record, clone);
     clone = record.toBuilder().ttl(record.ttl() + 1).build();
-    assertNotEquals(clone, record);
+    assertNotEquals(record, clone);
     clone = record.toBuilder().type(DnsRecord.Type.TXT).build();
-    assertNotEquals(clone, record);
+    assertNotEquals(record, clone);
   }
 
   @Test

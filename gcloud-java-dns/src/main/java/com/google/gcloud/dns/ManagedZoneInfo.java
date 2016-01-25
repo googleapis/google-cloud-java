@@ -318,6 +318,7 @@ public class ManagedZoneInfo implements Serializable {
         .add("dnsName", dnsName())
         .add("nameServerSet", nameServerSet())
         .add("nameServers", nameServers())
+        .add("creationTimeMillis", creationTimeMillis())
         .toString();
   }
 }
