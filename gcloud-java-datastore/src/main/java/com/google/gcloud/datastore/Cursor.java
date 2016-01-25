@@ -23,7 +23,6 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.api.services.datastore.DatastoreV1.Value;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
-import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.TextFormat;
@@ -44,7 +43,6 @@ public final class Cursor extends Serializable<DatastoreV1.Value> {
   private final transient ByteString byteString;
 
   Cursor(ByteString byteString) {
-    Preconditions.checkArgument(byteString.isValidUtf8(), "content is not a valid UTF-8");
     this.byteString = byteString;
   }
 
