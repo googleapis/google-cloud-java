@@ -782,7 +782,7 @@ public class StructuredQuery<V> extends Query<V> {
     }
   }
 
-  static final class Builder<V> extends BaseBuilder<V, Builder<V>> {
+  public static final class Builder<V> extends BaseBuilder<V, Builder<V>> {
 
     Builder(ResultType<V> resultType) {
       super(resultType);
