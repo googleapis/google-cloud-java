@@ -22,12 +22,12 @@ import com.google.gcloud.bigquery.BaseTableInfo;
 import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryError;
 import com.google.gcloud.bigquery.BigQueryOptions;
-import com.google.gcloud.bigquery.CopyJobInfo;
+import com.google.gcloud.bigquery.CopyJobConfiguration;
 import com.google.gcloud.bigquery.DatasetId;
 import com.google.gcloud.bigquery.DatasetInfo;
 import com.google.gcloud.bigquery.ExternalDataConfiguration;
 import com.google.gcloud.bigquery.ExternalTableInfo;
-import com.google.gcloud.bigquery.ExtractJobInfo;
+import com.google.gcloud.bigquery.ExtractJobConfiguration;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.FieldValue;
 import com.google.gcloud.bigquery.FormatOptions;
@@ -35,7 +35,7 @@ import com.google.gcloud.bigquery.JobId;
 import com.google.gcloud.bigquery.JobInfo;
 import com.google.gcloud.bigquery.JobStatus;
 import com.google.gcloud.bigquery.LoadConfiguration;
-import com.google.gcloud.bigquery.LoadJobInfo;
+import com.google.gcloud.bigquery.LoadJobConfiguration;
 import com.google.gcloud.bigquery.QueryRequest;
 import com.google.gcloud.bigquery.QueryResponse;
 import com.google.gcloud.bigquery.Schema;
@@ -544,15 +544,15 @@ public class BigQueryExample {
    */
   private static class LoadAction extends JobRunAction {
     @Override
-    LoadJobInfo parse(String... args) throws Exception {
+    JobInfo parse(String... args) throws Exception {
       if (args.length >= 4) {
         String dataset = args[0];
         String table = args[1];
         String format = args[2];
         TableId tableId = TableId.of(dataset, table);
-        LoadConfiguration configuration = LoadConfiguration.of(tableId, FormatOptions.of(format));
-        return LoadJobInfo.builder(configuration, Arrays.asList(args).subList(3, args.length))
-            .build();
+        LoadJobConfiguration configuration = LoadJobConfiguration.of(
+            tableId, Arrays.asList(args).subList(3, args.length), FormatOptions.of(format));
+        return JobInfo.of(configuration);
       }
       throw new IllegalArgumentException("Missing required arguments.");
     }
@@ -570,15 +570,15 @@ public class BigQueryExample {
    */
   private static class ExtractAction extends JobRunAction {
     @Override
-    ExtractJobInfo parse(String... args) throws Exception {
+    JobInfo parse(String... args) throws Exception {
       if (args.length >= 4) {
         String dataset = args[0];
         String table = args[1];
         String format = args[2];
         TableId tableId = TableId.of(dataset, table);
-        return ExtractJobInfo.builder(tableId, Arrays.asList(args).subList(3, args.length))
-            .format(format)
-            .build();
+        ExtractJobConfiguration configuration =
+            ExtractJobConfiguration.of(tableId, Arrays.asList(args).subList(3, args.length));
+        return JobInfo.of(configuration);
       }
       throw new IllegalArgumentException("Missing required arguments.");
     }
@@ -596,12 +596,12 @@ public class BigQueryExample {
    */
   private static class CopyAction extends JobRunAction {
     @Override
-    CopyJobInfo parse(String... args) throws Exception {
+    JobInfo parse(String... args) throws Exception {
       String message;
       if (args.length == 4) {
         TableId sourceTableId = TableId.of(args[0], args[1]);
         TableId destinationTableId = TableId.of(args[2], args[3]);
-        return CopyJobInfo.of(destinationTableId, sourceTableId);
+        return JobInfo.of(CopyJobConfiguration.of(destinationTableId, sourceTableId));
       } else if (args.length < 3) {
         message = "Missing required source or destination table.";
       } else {

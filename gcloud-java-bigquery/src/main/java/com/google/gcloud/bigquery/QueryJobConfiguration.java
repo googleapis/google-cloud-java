@@ -18,26 +18,26 @@ package com.google.gcloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.services.bigquery.model.Job;
-import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
-import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.gcloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.gcloud.bigquery.JobInfo.CreateDisposition;
+import com.google.gcloud.bigquery.JobInfo.WriteDisposition;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 /**
- * Google BigQuery Query Job. A Query Job runs a query against BigQuery data.
+ * Google BigQuery Query Job configuration. A Query Job runs a query against BigQuery data.
  */
-public class QueryJobInfo extends JobInfo<QueryStatistics> {
+public final class QueryJobConfiguration implements JobConfiguration, Serializable {
 
-  private static final long serialVersionUID = -8708709356039780158L;
+  private static final long serialVersionUID = -1108948249081804890L;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be
@@ -72,8 +72,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
   private final Boolean flattenResults;
   private final Boolean dryRun;
 
-  public static final class Builder extends JobInfo.Builder<QueryJobInfo, QueryStatistics,
-      Builder> {
+  public static final class Builder {
 
     private String query;
     private TableId destinationTable;
@@ -90,30 +89,28 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
 
     private Builder() {}
 
-    private Builder(QueryJobInfo jobInfo) {
-      super(jobInfo);
-      this.query = jobInfo.query;
-      this.destinationTable = jobInfo.destinationTable;
-      this.tableDefinitions = jobInfo.tableDefinitions;
-      this.userDefinedFunctions = jobInfo.userDefinedFunctions;
-      this.createDisposition = jobInfo.createDisposition;
-      this.writeDisposition = jobInfo.writeDisposition;
-      this.defaultDataset = jobInfo.defaultDataset;
-      this.priority = jobInfo.priority;
-      this.allowLargeResults = jobInfo.allowLargeResults;
-      this.useQueryCache = jobInfo.useQueryCache;
-      this.flattenResults = jobInfo.flattenResults;
-      this.dryRun = jobInfo.dryRun;
+    private Builder(QueryJobConfiguration jobConfiguration) {
+      this.query = jobConfiguration.query;
+      this.destinationTable = jobConfiguration.destinationTable;
+      this.tableDefinitions = jobConfiguration.tableDefinitions;
+      this.userDefinedFunctions = jobConfiguration.userDefinedFunctions;
+      this.createDisposition = jobConfiguration.createDisposition;
+      this.writeDisposition = jobConfiguration.writeDisposition;
+      this.defaultDataset = jobConfiguration.defaultDataset;
+      this.priority = jobConfiguration.priority;
+      this.allowLargeResults = jobConfiguration.allowLargeResults;
+      this.useQueryCache = jobConfiguration.useQueryCache;
+      this.flattenResults = jobConfiguration.flattenResults;
+      this.dryRun = jobConfiguration.dryRun;
     }
 
-    private Builder(Job jobPb) {
-      super(jobPb);
-      JobConfigurationQuery queryConfigurationPb = jobPb.getConfiguration().getQuery();
+    private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
+      JobConfigurationQuery queryConfigurationPb = configurationPb.getQuery();
       this.query = queryConfigurationPb.getQuery();
       allowLargeResults = queryConfigurationPb.getAllowLargeResults();
       useQueryCache = queryConfigurationPb.getUseQueryCache();
       flattenResults = queryConfigurationPb.getFlattenResults();
-      dryRun = jobPb.getConfiguration().getDryRun();
+      dryRun = configurationPb.getDryRun();
       if (queryConfigurationPb.getDestinationTable() != null) {
         destinationTable = TableId.fromPb(queryConfigurationPb.getDestinationTable());
       }
@@ -133,10 +130,12 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
             UserDefinedFunction.FROM_PB_FUNCTION);
       }
       if (queryConfigurationPb.getCreateDisposition() != null) {
-        createDisposition = CreateDisposition.valueOf(queryConfigurationPb.getCreateDisposition());
+        createDisposition =
+            CreateDisposition.valueOf(queryConfigurationPb.getCreateDisposition());
       }
       if (queryConfigurationPb.getWriteDisposition() != null) {
-        writeDisposition = WriteDisposition.valueOf(queryConfigurationPb.getWriteDisposition());
+        writeDisposition =
+            WriteDisposition.valueOf(queryConfigurationPb.getWriteDisposition());
       }
     }
 
@@ -145,7 +144,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      */
     public Builder query(String query) {
       this.query = query;
-      return self();
+      return this;
     }
 
     /**
@@ -154,7 +153,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      */
     public Builder destinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
-      return self();
+      return this;
     }
 
     /**
@@ -165,7 +164,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      */
     public Builder tableDefinitions(Map<String, ExternalDataConfiguration> tableDefinitions) {
       this.tableDefinitions = tableDefinitions != null ? Maps.newHashMap(tableDefinitions) : null;
-      return self();
+      return this;
     }
 
     /**
@@ -180,7 +179,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
         this.tableDefinitions = Maps.newHashMap();
       }
       this.tableDefinitions.put(checkNotNull(tableName), checkNotNull(tableDefinition));
-      return self();
+      return this;
     }
 
     /**
@@ -191,7 +190,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
     public Builder userDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
       this.userDefinedFunctions =
           userDefinedFunctions != null ? ImmutableList.copyOf(userDefinedFunctions) : null;
-      return self();
+      return this;
     }
 
     /**
@@ -202,7 +201,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      */
     public Builder createDisposition(CreateDisposition createDisposition) {
       this.createDisposition = createDisposition;
-      return self();
+      return this;
     }
 
     /**
@@ -213,7 +212,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      */
     public Builder writeDisposition(WriteDisposition writeDisposition) {
       this.writeDisposition = writeDisposition;
-      return self();
+      return this;
     }
 
     /**
@@ -222,7 +221,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      */
     public Builder defaultDataset(DatasetId defaultDataset) {
       this.defaultDataset = defaultDataset;
-      return self();
+      return this;
     }
 
     /**
@@ -239,7 +238,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      */
     public Builder priority(Priority priority) {
       this.priority = priority;
-      return self();
+      return this;
     }
 
     /**
@@ -252,7 +251,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      */
     public Builder allowLargeResults(Boolean allowLargeResults) {
       this.allowLargeResults = allowLargeResults;
-      return self();
+      return this;
     }
 
     /**
@@ -264,7 +263,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      */
     public Builder useQueryCache(Boolean useQueryCache) {
       this.useQueryCache = useQueryCache;
-      return self();
+      return this;
     }
 
     /**
@@ -276,7 +275,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      */
     public Builder flattenResults(Boolean flattenResults) {
       this.flattenResults = flattenResults;
-      return self();
+      return this;
     }
 
     /**
@@ -286,17 +285,15 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
      */
     public Builder dryRun(Boolean dryRun) {
       this.dryRun = dryRun;
-      return self();
+      return this;
     }
 
-    @Override
-    public QueryJobInfo build() {
-      return new QueryJobInfo(this);
+    public QueryJobConfiguration build() {
+      return new QueryJobConfiguration(this);
     }
   }
 
-  private QueryJobInfo(Builder builder) {
-    super(builder);
+  private QueryJobConfiguration(Builder builder) {
     this.query = checkNotNull(builder.query);
     this.allowLargeResults = builder.allowLargeResults;
     this.createDisposition = builder.createDisposition;
@@ -310,6 +307,11 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
     this.tableDefinitions =
         builder.tableDefinitions != null ? ImmutableMap.copyOf(builder.tableDefinitions) : null;
     this.dryRun = builder.dryRun;
+  }
+
+  @Override
+  public Type type() {
+    return Type.QUERY;
   }
 
   /**
@@ -423,14 +425,13 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
     return dryRun;
   }
 
-  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
 
   @Override
-  ToStringHelper toStringHelper() {
-    return super.toStringHelper()
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
         .add("query", query)
         .add("destinationTable", destinationTable)
         .add("defaultDataset", defaultDataset)
@@ -442,24 +443,26 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
         .add("userDefinedFunctions", userDefinedFunctions)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
-        .add("dryRun", dryRun);
+        .add("dryRun", dryRun)
+        .toString();
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof QueryJobInfo && baseEquals((QueryJobInfo) obj);
+    return obj instanceof QueryJobConfiguration
+        && Objects.equals(toPb(), ((QueryJobConfiguration) obj).toPb());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), allowLargeResults, createDisposition, destinationTable,
-        defaultDataset, flattenResults, priority, query, tableDefinitions, useQueryCache,
-        userDefinedFunctions, writeDisposition, dryRun);
+    return Objects.hash(allowLargeResults, createDisposition, destinationTable, defaultDataset,
+        flattenResults, priority, query, tableDefinitions, useQueryCache, userDefinedFunctions,
+        writeDisposition, dryRun);
   }
 
-  @Override
-  Job toPb() {
-    JobConfiguration configurationPb = new JobConfiguration();
+  com.google.api.services.bigquery.model.JobConfiguration toPb() {
+    com.google.api.services.bigquery.model.JobConfiguration configurationPb =
+        new com.google.api.services.bigquery.model.JobConfiguration();
     JobConfigurationQuery queryConfigurationPb = new JobConfigurationQuery();
     queryConfigurationPb.setQuery(query);
     configurationPb.setDryRun(dryRun());
@@ -495,7 +498,7 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
     if (writeDisposition != null) {
       queryConfigurationPb.setWriteDisposition(writeDisposition.toString());
     }
-    return super.toPb().setConfiguration(configurationPb.setQuery(queryConfigurationPb));
+    return configurationPb.setQuery(queryConfigurationPb);
   }
 
   /**
@@ -509,20 +512,12 @@ public class QueryJobInfo extends JobInfo<QueryStatistics> {
    * Returns a BigQuery Copy Job for the given the query to be run. Job's id is chosen by the
    * service.
    */
-  public static QueryJobInfo of(String query) {
+  public static QueryJobConfiguration of(String query) {
     return builder(query).build();
   }
 
-  /**
-   * Returns a BigQuery Copy Job for the given the query to be run. Job's id is set to the provided
-   * value.
-   */
-  public static QueryJobInfo of(JobId jobId, String query) {
-    return builder(query).jobId(jobId).build();
-  }
-
-  @SuppressWarnings("unchecked")
-  static QueryJobInfo fromPb(Job jobPb) {
+  static QueryJobConfiguration fromPb(
+      com.google.api.services.bigquery.model.JobConfiguration jobPb) {
     return new Builder(jobPb).build();
   }
 }

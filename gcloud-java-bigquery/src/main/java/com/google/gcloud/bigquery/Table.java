@@ -200,8 +200,8 @@ public final class Table {
    * @throws BigQueryException upon failure
    */
   Job copy(TableId destinationTable, BigQuery.JobOption... options) throws BigQueryException {
-    JobInfo job = bigquery.create(CopyJobInfo.of(destinationTable, info.tableId()), options);
-    return new Job(bigquery, job);
+    CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, info.tableId());
+    return new Job(bigquery, bigquery.create(JobInfo.of(configuration), options));
   }
 
   /**
@@ -231,8 +231,9 @@ public final class Table {
    */
   Job extract(String format, List<String> destinationUris, BigQuery.JobOption... options)
       throws BigQueryException {
-    return new Job(bigquery,
-        bigquery.create(ExtractJobInfo.of(info.tableId(), format, destinationUris), options));
+    ExtractJobConfiguration extractConfiguration =
+        ExtractJobConfiguration.of(info.tableId(), destinationUris, format);
+    return new Job(bigquery, bigquery.create(JobInfo.of(extractConfiguration), options));
   }
 
   /**
@@ -262,8 +263,8 @@ public final class Table {
    */
   Job load(FormatOptions format, List<String> sourceUris, BigQuery.JobOption... options)
       throws BigQueryException {
-    LoadConfiguration configuration = LoadConfiguration.of(info.tableId(), format);
-    return new Job(bigquery, bigquery.create(LoadJobInfo.of(configuration, sourceUris), options));
+    LoadJobConfiguration loadConfig = LoadJobConfiguration.of(info.tableId(), sourceUris, format);
+    return new Job(bigquery, bigquery.create(JobInfo.of(loadConfig), options));
   }
 
   /**

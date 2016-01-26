@@ -408,9 +408,9 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public String open(JobConfigurationLoad configuration) throws BigQueryException {
+  public String open(JobConfiguration configuration) throws BigQueryException {
     try {
-      Job loadJob = new Job().setConfiguration(new JobConfiguration().setLoad(configuration));
+      Job loadJob = new Job().setConfiguration(configuration);
       StringBuilder builder = new StringBuilder()
           .append(BASE_RESUMABLE_URI)
           .append(options.projectId())

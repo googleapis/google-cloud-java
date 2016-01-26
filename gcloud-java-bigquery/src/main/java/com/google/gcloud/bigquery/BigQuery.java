@@ -371,8 +371,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to
      * specify only the fields of interest. {@link JobInfo#jobId()}, {@link JobStatus#state()},
      * {@link JobStatus#error()} as well as type-specific configuration (e.g.
-     * {@link QueryJobInfo#query()} for Query Jobs) are always returned, even if not specified.
-     * {@link JobField#SELF_LINK} and {@link JobField#ETAG} can not be selected when listing jobs.
+     * {@link QueryJobConfiguration#query()} for Query Jobs) are always returned, even if not
+     * specified. {@link JobField#SELF_LINK} and {@link JobField#ETAG} can not be selected when
+     * listing jobs.
      */
     public static JobListOption fields(JobField... fields) {
       String selector = JobField.selector(fields);
@@ -397,8 +398,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * Returns an option to specify the job's fields to be returned by the RPC call. If this option
      * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to
      * specify only the fields of interest. {@link JobInfo#jobId()} as well as type-specific
-     * configuration (e.g. {@link QueryJobInfo#query()} for Query Jobs) are always returned, even if
-     * not specified.
+     * configuration (e.g. {@link QueryJobConfiguration#query()} for Query Jobs) are always
+     * returned, even if not specified.
      */
     public static JobOption fields(JobField... fields) {
       return new JobOption(BigQueryRpc.Option.FIELDS, JobField.selector(fields));
@@ -470,7 +471,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  <T extends JobInfo> T create(T job, JobOption... options) throws BigQueryException;
+  JobInfo create(JobInfo job, JobOption... options) throws BigQueryException;
 
   /**
    * Returns the requested dataset or {@code null} if not found.
@@ -611,14 +612,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  <T extends JobInfo> T getJob(String jobId, JobOption... options) throws BigQueryException;
+  JobInfo getJob(String jobId, JobOption... options) throws BigQueryException;
 
   /**
    * Returns the requested job or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  <T extends JobInfo> T getJob(JobId jobId, JobOption... options) throws BigQueryException;
+  JobInfo getJob(JobId jobId, JobOption... options) throws BigQueryException;
 
   /**
    * Lists the jobs.

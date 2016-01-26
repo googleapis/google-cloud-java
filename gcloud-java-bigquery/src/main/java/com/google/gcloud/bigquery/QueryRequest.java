@@ -120,8 +120,8 @@ public class QueryRequest implements Serializable {
      * Sets how long to wait for the query to complete, in milliseconds, before the request times
      * out and returns. Note that this is only a timeout for the request, not the query. If the
      * query takes longer to run than the timeout value, the call returns without any results and
-     * with the {@link QueryResponse#jobCompleted()} set to {@code false}. If not set, a wait time of
-     * 10000 milliseconds (10 seconds) is used.
+     * with the {@link QueryResponse#jobCompleted()} set to {@code false}. If not set, a wait time
+     * of 10000 milliseconds (10 seconds) is used.
      */
     public Builder maxWaitTime(Long maxWaitTime) {
       this.maxWaitTime = maxWaitTime;

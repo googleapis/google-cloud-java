@@ -191,7 +191,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public <T extends JobInfo> T create(T job, JobOption... options) throws BigQueryException {
+  public JobInfo create(JobInfo job, JobOption... options) throws BigQueryException {
     final Job jobPb = setProjectId(job).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
@@ -442,12 +442,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public <T extends JobInfo> T getJob(String jobId, JobOption... options) throws BigQueryException {
+  public JobInfo getJob(String jobId, JobOption... options) throws BigQueryException {
     return getJob(JobId.of(jobId), options);
   }
 
   @Override
-  public <T extends JobInfo> T getJob(final JobId jobId, JobOption... options)
+  public JobInfo getJob(final JobId jobId, JobOption... options)
       throws BigQueryException {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
@@ -457,7 +457,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           return bigQueryRpc.getJob(jobId.job(), optionsMap);
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : JobInfo.<T>fromPb(answer);
+      return answer == null ? null : JobInfo.fromPb(answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -646,42 +646,48 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   private JobInfo setProjectId(JobInfo job) {
-    if (job instanceof CopyJobInfo) {
-      CopyJobInfo copyJob = (CopyJobInfo) job;
-      CopyJobInfo.Builder copyBuilder = copyJob.toBuilder();
-      copyBuilder.destinationTable(setProjectId(copyJob.destinationTable()));
-      copyBuilder.sourceTables(
-          Lists.transform(copyJob.sourceTables(), new Function<TableId, TableId>() {
-            @Override
-            public TableId apply(TableId tableId) {
-              return setProjectId(tableId);
-            }
-          }));
-      return copyBuilder.build();
+    JobConfiguration configuration = job.configuration();
+    JobInfo.Builder jobBuilder = job.toBuilder();
+    switch (configuration.type()) {
+      case COPY:
+        CopyJobConfiguration copyConfiguration = (CopyJobConfiguration) configuration;
+        CopyJobConfiguration.Builder copyBuilder = copyConfiguration.toBuilder();
+        copyBuilder.sourceTables(
+            Lists.transform(copyConfiguration.sourceTables(), new Function<TableId, TableId>() {
+              @Override
+              public TableId apply(TableId tableId) {
+                return setProjectId(tableId);
+              }
+            }));
+        copyBuilder.destinationTable(setProjectId(copyConfiguration.destinationTable()));
+        jobBuilder.configuration(copyBuilder.build());
+        break;
+      case QUERY:
+        QueryJobConfiguration queryConfiguration = (QueryJobConfiguration) configuration;
+        QueryJobConfiguration.Builder queryBuilder = queryConfiguration.toBuilder();
+        if (queryConfiguration.destinationTable() != null) {
+          queryBuilder.destinationTable(setProjectId(queryConfiguration.destinationTable()));
+        }
+        if (queryConfiguration.defaultDataset() != null) {
+          queryBuilder.defaultDataset(setProjectId(queryConfiguration.defaultDataset()));
+        }
+        jobBuilder.configuration(queryBuilder.build());
+        break;
+      case EXTRACT:
+        ExtractJobConfiguration extractConfiguration = (ExtractJobConfiguration) configuration;
+        ExtractJobConfiguration.Builder extractBuilder = extractConfiguration.toBuilder();
+        extractBuilder.sourceTable(setProjectId(extractConfiguration.sourceTable()));
+        jobBuilder.configuration(extractBuilder.build());
+        break;
+      case LOAD:
+        LoadJobConfiguration loadConfiguration = (LoadJobConfiguration) configuration;
+        jobBuilder.configuration((LoadJobConfiguration) setProjectId(loadConfiguration));
+        break;
+      default:
+        // never reached
+        throw new IllegalArgumentException("Job configuration is not supported");
     }
-    if (job instanceof QueryJobInfo) {
-      QueryJobInfo queryJob = (QueryJobInfo) job;
-      QueryJobInfo.Builder queryBuilder = queryJob.toBuilder();
-      if (queryJob.destinationTable() != null) {
-        queryBuilder.destinationTable(setProjectId(queryJob.destinationTable()));
-      }
-      if (queryJob.defaultDataset() != null) {
-        queryBuilder.defaultDataset(setProjectId(queryJob.defaultDataset()));
-      }
-      return queryBuilder.build();
-    }
-    if (job instanceof ExtractJobInfo) {
-      ExtractJobInfo extractJob = (ExtractJobInfo) job;
-      ExtractJobInfo.Builder extractBuilder = extractJob.toBuilder();
-      extractBuilder.sourceTable(setProjectId(extractJob.sourceTable()));
-      return extractBuilder.build();
-    }
-    if (job instanceof LoadJobInfo) {
-      LoadJobInfo loadJob = (LoadJobInfo) job;
-      LoadJobInfo.Builder loadBuilder = loadJob.toBuilder();
-      return loadBuilder.configuration(setProjectId(loadJob.configuration())).build();
-    }
-    return job;
+    return jobBuilder.build();
   }
 
   private QueryRequest setProjectId(QueryRequest request) {

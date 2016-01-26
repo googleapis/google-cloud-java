@@ -152,12 +152,12 @@ public class ITBigQueryTest {
         JSON_CONTENT.getBytes(StandardCharsets.UTF_8));
     DatasetInfo info = DatasetInfo.builder(DATASET).description(DESCRIPTION).build();
     bigquery.create(info);
-    LoadConfiguration configuration = LoadConfiguration.builder(TABLE_ID, FormatOptions.json())
+    LoadJobConfiguration configuration = LoadJobConfiguration.builder(
+            TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
         .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
         .schema(TABLE_SCHEMA)
         .build();
-    LoadJobInfo job = LoadJobInfo.of(configuration, "gs://" + BUCKET + "/" + JSON_LOAD_FILE);
-    job = bigquery.create(job);
+    JobInfo job = bigquery.create(JobInfo.of(configuration));
     while (job.status().state() != JobStatus.State.DONE) {
       Thread.sleep(1000);
       job = bigquery.getJob(job.jobId());
@@ -646,8 +646,9 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
-    QueryJobInfo queryJob = bigquery.getJob(response.jobId());
-    assertNotNull(queryJob.statistics().queryPlan());
+    JobInfo queryJob = bigquery.getJob(response.jobId());
+    JobStatistics.QueryStatistics statistics = queryJob.statistics();
+    assertNotNull(statistics.queryPlan());
   }
 
   @Test
@@ -685,14 +686,18 @@ public class ITBigQueryTest {
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
     assertEquals(sourceTableName, createdTableInfo.tableId().table());
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
-    CopyJobInfo job = CopyJobInfo.of(destinationTable, sourceTable);
-    CopyJobInfo createdJob = bigquery.create(job);
-    CopyJobInfo remoteJob = bigquery.getJob(createdJob.jobId());
+    CopyJobConfiguration copyJobConfiguration =
+        CopyJobConfiguration.of(destinationTable, sourceTable);
+    JobInfo job = JobInfo.of(copyJobConfiguration);
+    JobInfo createdJob = bigquery.create(job);
+    JobInfo remoteJob = bigquery.getJob(createdJob.jobId());
     assertEquals(createdJob.jobId(), remoteJob.jobId());
-    assertEquals(createdJob.sourceTables(), remoteJob.sourceTables());
-    assertEquals(createdJob.destinationTable(), remoteJob.destinationTable());
-    assertEquals(createdJob.createDisposition(), remoteJob.createDisposition());
-    assertEquals(createdJob.writeDisposition(), remoteJob.writeDisposition());
+    CopyJobConfiguration createdConfiguration = createdJob.configuration();
+    CopyJobConfiguration remoteConfiguration = remoteJob.configuration();
+    assertEquals(createdConfiguration.sourceTables(), remoteConfiguration.sourceTables());
+    assertEquals(createdConfiguration.destinationTable(), remoteConfiguration.destinationTable());
+    assertEquals(createdConfiguration.createDisposition(), remoteConfiguration.createDisposition());
+    assertEquals(createdConfiguration.writeDisposition(), remoteConfiguration.writeDisposition());
     assertNotNull(remoteJob.etag());
     assertNotNull(remoteJob.statistics());
     assertNotNull(remoteJob.status());
@@ -713,23 +718,25 @@ public class ITBigQueryTest {
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
     assertEquals(sourceTableName, createdTableInfo.tableId().table());
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
-    CopyJobInfo job = CopyJobInfo.of(destinationTable, sourceTable);
-    CopyJobInfo createdJob = bigquery.create(job, JobOption.fields(JobField.ETAG));
+    CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, sourceTable);
+    JobInfo createdJob =
+        bigquery.create(JobInfo.of(configuration), JobOption.fields(JobField.ETAG));
+    CopyJobConfiguration createdConfiguration = createdJob.configuration();
     assertNotNull(createdJob.jobId());
-    assertNotNull(createdJob.sourceTables());
-    assertNotNull(createdJob.destinationTable());
+    assertNotNull(createdConfiguration.sourceTables());
+    assertNotNull(createdConfiguration.destinationTable());
     assertNotNull(createdJob.etag());
     assertNull(createdJob.statistics());
     assertNull(createdJob.status());
     assertNull(createdJob.selfLink());
     assertNull(createdJob.userEmail());
-    CopyJobInfo remoteJob = bigquery.getJob(createdJob.jobId(),
-        JobOption.fields(JobField.ETAG));
+    JobInfo remoteJob = bigquery.getJob(createdJob.jobId(), JobOption.fields(JobField.ETAG));
+    CopyJobConfiguration remoteConfiguration = remoteJob.configuration();
     assertEquals(createdJob.jobId(), remoteJob.jobId());
-    assertEquals(createdJob.sourceTables(), remoteJob.sourceTables());
-    assertEquals(createdJob.destinationTable(), remoteJob.destinationTable());
-    assertEquals(createdJob.createDisposition(), remoteJob.createDisposition());
-    assertEquals(createdJob.writeDisposition(), remoteJob.writeDisposition());
+    assertEquals(createdConfiguration.sourceTables(), remoteConfiguration.sourceTables());
+    assertEquals(createdConfiguration.destinationTable(), remoteConfiguration.destinationTable());
+    assertEquals(createdConfiguration.createDisposition(), remoteConfiguration.createDisposition());
+    assertEquals(createdConfiguration.writeDisposition(), remoteConfiguration.writeDisposition());
     assertNotNull(remoteJob.etag());
     assertNull(remoteJob.statistics());
     assertNull(remoteJob.status());
@@ -750,8 +757,8 @@ public class ITBigQueryTest {
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
     assertEquals(sourceTableName, createdTableInfo.tableId().table());
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
-    CopyJobInfo job = CopyJobInfo.of(destinationTable, sourceTable);
-    CopyJobInfo remoteJob = bigquery.create(job);
+    CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, sourceTable);
+    JobInfo remoteJob = bigquery.create(JobInfo.of(configuration));
     while (remoteJob.status().state() != JobStatus.State.DONE) {
       Thread.sleep(1000);
       remoteJob = bigquery.getJob(remoteJob.jobId());
@@ -774,11 +781,11 @@ public class ITBigQueryTest {
         .append(TABLE_ID.table())
         .toString();
     TableId destinationTable = TableId.of(DATASET, tableName);
-    QueryJobInfo job = QueryJobInfo.builder(query)
+    QueryJobConfiguration configuration = QueryJobConfiguration.builder(query)
         .defaultDataset(DatasetId.of(DATASET))
         .destinationTable(destinationTable)
         .build();
-    QueryJobInfo remoteJob = bigquery.create(job);
+    JobInfo remoteJob = bigquery.create(JobInfo.of(configuration));
     while (remoteJob.status().state() != JobStatus.State.DONE) {
       Thread.sleep(1000);
       remoteJob = bigquery.getJob(remoteJob.jobId());
@@ -807,30 +814,33 @@ public class ITBigQueryTest {
     }
     assertEquals(2, rowCount);
     assertTrue(bigquery.delete(DATASET, tableName));
-    QueryJobInfo queryJob = bigquery.getJob(remoteJob.jobId());
-    assertNotNull(queryJob.statistics().queryPlan());
+    JobInfo queryJob = bigquery.getJob(remoteJob.jobId());
+    JobStatistics.QueryStatistics statistics = queryJob.statistics();
+    assertNotNull(statistics.queryPlan());
   }
 
   @Test
   public void testExtractJob() throws InterruptedException {
     String tableName = "test_export_job_table";
     TableId destinationTable = TableId.of(DATASET, tableName);
-    LoadConfiguration configuration = LoadConfiguration.builder(destinationTable)
-        .schema(SIMPLE_SCHEMA)
-        .build();
-    LoadJobInfo remoteLoadJob =
-        bigquery.create(LoadJobInfo.of(configuration, "gs://" + BUCKET + "/" + LOAD_FILE));
+    LoadJobConfiguration configuration =
+        LoadJobConfiguration.builder(destinationTable, "gs://" + BUCKET + "/" + LOAD_FILE)
+            .schema(SIMPLE_SCHEMA)
+            .build();
+    JobInfo remoteLoadJob =
+        bigquery.create(JobInfo.of(configuration));
     while (remoteLoadJob.status().state() != JobStatus.State.DONE) {
       Thread.sleep(1000);
       remoteLoadJob = bigquery.getJob(remoteLoadJob.jobId());
     }
     assertNull(remoteLoadJob.status().error());
 
-    ExtractJobInfo extractJob =
-        ExtractJobInfo.builder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
-          .printHeader(false)
-          .build();
-    ExtractJobInfo remoteExtractJob = bigquery.create(extractJob);
+    ExtractJobConfiguration extractConfiguration =
+        ExtractJobConfiguration.builder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
+            .printHeader(false)
+            .build();
+    JobInfo extractJob = JobInfo.of(extractConfiguration);
+    JobInfo remoteExtractJob = bigquery.create(extractJob);
     while (remoteExtractJob.status().state() != JobStatus.State.DONE) {
       Thread.sleep(1000);
       remoteExtractJob = bigquery.getJob(remoteExtractJob.jobId());
@@ -846,11 +856,11 @@ public class ITBigQueryTest {
     String destinationTableName = "test_cancel_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.table();
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
-    QueryJobInfo job = QueryJobInfo.builder(query)
+    QueryJobConfiguration configuration = QueryJobConfiguration.builder(query)
         .defaultDataset(DatasetId.of(DATASET))
         .destinationTable(destinationTable)
         .build();
-    JobInfo remoteJob = bigquery.create(job);
+    JobInfo remoteJob = bigquery.create(JobInfo.of(configuration));
     assertTrue(bigquery.cancel(remoteJob.jobId()));
     while (remoteJob.status().state() != JobStatus.State.DONE) {
       Thread.sleep(1000);

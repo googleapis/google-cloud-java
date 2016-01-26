@@ -25,29 +25,28 @@ import com.google.gcloud.bigquery.JobInfo.CreateDisposition;
 import com.google.gcloud.bigquery.JobInfo.WriteDisposition;
 
 import java.io.Serializable;
-import java.nio.channels.SeekableByteChannel;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery Configuration for a load operation. A load configuration can be used to build a
- * {@link LoadJobInfo} or to load data into a table with a {@link com.google.gcloud.WriteChannel}
+ * Google BigQuery Configuration for a load operation. A load configuration can be used to load data
+ * into a table with a {@link com.google.gcloud.WriteChannel}
  * ({@link BigQuery#writer(LoadConfiguration)}).
  */
 public class LoadConfiguration implements Serializable {
 
   private static final long serialVersionUID = 470267591917413578L;
 
-  private final TableId destinationTable;
-  private final CreateDisposition createDisposition;
-  private final WriteDisposition writeDisposition;
-  private final FormatOptions formatOptions;
-  private final Integer maxBadRecords;
-  private final Schema schema;
-  private final Boolean ignoreUnknownValues;
-  private final List<String> projectionFields;
+  protected final TableId destinationTable;
+  protected final CreateDisposition createDisposition;
+  protected final WriteDisposition writeDisposition;
+  protected final FormatOptions formatOptions;
+  protected final Integer maxBadRecords;
+  protected final Schema schema;
+  protected final Boolean ignoreUnknownValues;
+  protected final List<String> projectionFields;
 
-  public static final class Builder {
+  public static class Builder<T extends LoadConfiguration, B extends Builder> {
 
     private TableId destinationTable;
     private CreateDisposition createDisposition;
@@ -58,9 +57,9 @@ public class LoadConfiguration implements Serializable {
     private Boolean ignoreUnknownValues;
     private List<String> projectionFields;
 
-    private Builder() {}
+    protected Builder() {}
 
-    private Builder(LoadConfiguration loadConfiguration) {
+    protected Builder(LoadConfiguration loadConfiguration) {
       this.destinationTable = loadConfiguration.destinationTable;
       this.createDisposition = loadConfiguration.createDisposition;
       this.writeDisposition = loadConfiguration.writeDisposition;
@@ -71,7 +70,8 @@ public class LoadConfiguration implements Serializable {
       this.projectionFields = loadConfiguration.projectionFields;
     }
 
-    private Builder(JobConfigurationLoad loadConfigurationPb) {
+    protected Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
+      JobConfigurationLoad loadConfigurationPb = configurationPb.getLoad();
       this.destinationTable = TableId.fromPb(loadConfigurationPb.getDestinationTable());
       if (loadConfigurationPb.getCreateDisposition() != null) {
         this.createDisposition =
@@ -106,12 +106,17 @@ public class LoadConfiguration implements Serializable {
       this.projectionFields = loadConfigurationPb.getProjectionFields();
     }
 
+    @SuppressWarnings("unchecked")
+    B self() {
+      return (B) this;
+    }
+
     /**
      * Sets the destination table to load the data into.
      */
-    public Builder destinationTable(TableId destinationTable) {
+    public B destinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
-      return this;
+      return self();
     }
 
     /**
@@ -120,9 +125,9 @@ public class LoadConfiguration implements Serializable {
      * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.createDisposition">
      *     Create Disposition</a>
      */
-    public Builder createDisposition(CreateDisposition createDisposition) {
+    public B createDisposition(CreateDisposition createDisposition) {
       this.createDisposition = createDisposition;
-      return this;
+      return self();
     }
 
     /**
@@ -131,9 +136,9 @@ public class LoadConfiguration implements Serializable {
      * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.writeDisposition">
      *     Write Disposition</a>
      */
-    public Builder writeDisposition(WriteDisposition writeDisposition) {
+    public B writeDisposition(WriteDisposition writeDisposition) {
       this.writeDisposition = writeDisposition;
-      return this;
+      return self();
     }
 
     /**
@@ -144,9 +149,9 @@ public class LoadConfiguration implements Serializable {
      * <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
      *     Source Format</a>
      */
-    public Builder formatOptions(FormatOptions formatOptions) {
+    public B formatOptions(FormatOptions formatOptions) {
       this.formatOptions = formatOptions;
-      return this;
+      return self();
     }
 
     /**
@@ -154,9 +159,9 @@ public class LoadConfiguration implements Serializable {
      * number of bad records exceeds this value, an invalid error is returned in the job result.
      * By default no bad record is ignored.
      */
-    public Builder maxBadRecords(Integer maxBadRecords) {
+    public B maxBadRecords(Integer maxBadRecords) {
       this.maxBadRecords = maxBadRecords;
-      return this;
+      return self();
     }
 
     /**
@@ -164,9 +169,9 @@ public class LoadConfiguration implements Serializable {
      * already exists, or if you're loading data from a Google Cloud Datastore backup (i.e.
      * {@code DATASTORE_BACKUP} format option).
      */
-    public Builder schema(Schema schema) {
+    public B schema(Schema schema) {
       this.schema = schema;
-      return this;
+      return self();
     }
 
     /**
@@ -175,9 +180,9 @@ public class LoadConfiguration implements Serializable {
      * are treated as bad records, and if there are too many bad records, an invalid error is
      * returned in the job result. By default unknown values are not allowed.
      */
-    public Builder ignoreUnknownValues(Boolean ignoreUnknownValues) {
+    public B ignoreUnknownValues(Boolean ignoreUnknownValues) {
       this.ignoreUnknownValues = ignoreUnknownValues;
-      return this;
+      return self();
     }
 
     /**
@@ -187,18 +192,20 @@ public class LoadConfiguration implements Serializable {
      * all properties. If any named property isn't found in the Cloud Datastore backup, an invalid
      * error is returned in the job result.
      */
-    public Builder projectionFields(List<String> projectionFields) {
+    public B projectionFields(List<String> projectionFields) {
       this.projectionFields =
           projectionFields != null ? ImmutableList.copyOf(projectionFields) : null;
-      return this;
+      return self();
     }
 
-    public LoadConfiguration build() {
-      return new LoadConfiguration(this);
+    @SuppressWarnings("unchecked")
+    public T build() {
+      return (T) new LoadConfiguration(this);
     }
   }
 
-  private LoadConfiguration(Builder builder) {
+  @SuppressWarnings("unchecked")
+  protected LoadConfiguration(Builder builder) {
     this.destinationTable = checkNotNull(builder.destinationTable);
     this.createDisposition = builder.createDisposition;
     this.writeDisposition = builder.writeDisposition;
@@ -206,7 +213,7 @@ public class LoadConfiguration implements Serializable {
     this.maxBadRecords = builder.maxBadRecords;
     this.schema = builder.schema;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
-    this.projectionFields = builder.projectionFields;
+    this.projectionFields = (List<String>) builder.projectionFields;
   }
 
   /**
@@ -292,8 +299,7 @@ public class LoadConfiguration implements Serializable {
     return new Builder(this);
   }
 
-  @Override
-  public String toString() {
+  MoreObjects.ToStringHelper toStringHelper() {
     return MoreObjects.toStringHelper(this)
         .add("destinationTable", destinationTable)
         .add("createDisposition", createDisposition)
@@ -302,8 +308,12 @@ public class LoadConfiguration implements Serializable {
         .add("maxBadRecords", maxBadRecords)
         .add("schema", schema)
         .add("ignoreUnknownValue", ignoreUnknownValues)
-        .add("projectionFields", projectionFields)
-        .toString();
+        .add("projectionFields", projectionFields);
+  }
+
+  @Override
+  public String toString() {
+    return toStringHelper().toString();
   }
 
   @Override
@@ -318,7 +328,7 @@ public class LoadConfiguration implements Serializable {
         maxBadRecords, schema, ignoreUnknownValues, projectionFields);
   }
 
-  JobConfigurationLoad toPb() {
+  com.google.api.services.bigquery.model.JobConfiguration toPb() {
     JobConfigurationLoad loadConfigurationPb = new JobConfigurationLoad();
     loadConfigurationPb.setDestinationTable(destinationTable.toPb());
     if (createDisposition != null) {
@@ -345,25 +355,27 @@ public class LoadConfiguration implements Serializable {
     loadConfigurationPb.setMaxBadRecords(maxBadRecords);
     loadConfigurationPb.setIgnoreUnknownValues(ignoreUnknownValues);
     loadConfigurationPb.setProjectionFields(projectionFields);
-    return loadConfigurationPb;
+    return new com.google.api.services.bigquery.model.JobConfiguration()
+        .setLoad(loadConfigurationPb);
   }
 
-  static LoadConfiguration fromPb(JobConfigurationLoad configurationPb) {
-    return new Builder(configurationPb).build();
+  static LoadConfiguration fromPb(
+      com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
+    return new Builder<>(configurationPb).build();
   }
 
   /**
    * Creates a builder for a BigQuery Load Configuration given the destination table.
    */
   public static Builder builder(TableId destinationTable) {
-    return new Builder().destinationTable(destinationTable);
+    return new Builder<>().destinationTable(destinationTable);
   }
 
   /**
    * Creates a builder for a BigQuery Load Configuration given the destination table and format.
    */
   public static Builder builder(TableId destinationTable, FormatOptions format) {
-    return new Builder().destinationTable(destinationTable).formatOptions(format);
+    return new Builder<>().destinationTable(destinationTable).formatOptions(format);
   }
 
   /**

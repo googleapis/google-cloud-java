@@ -18,23 +18,22 @@ package com.google.gcloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.services.bigquery.model.Job;
-import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobConfigurationExtract;
-import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-import com.google.gcloud.bigquery.JobStatistics.ExtractStatistics;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery Extract Jobs. An Extract Job exports a BigQuery table to Google Cloud Storage.
- * The extract destination provided as URIs that point to objects in Google Cloud Storage.
+ * Google BigQuery Extract Job configuration. An Extract Job exports a BigQuery table to Google
+ * Cloud Storage. The extract destination provided as URIs that point to objects in Google Cloud
+ * Storage.
  */
-public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
+public final class ExtractJobConfiguration  implements JobConfiguration, Serializable {
 
-  private static final long serialVersionUID = -9126951217071361576L;
+  private static final long serialVersionUID = 4147749733166593761L;
 
   private final TableId sourceTable;
   private final List<String> destinationUris;
@@ -43,8 +42,7 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
   private final String format;
   private final String compression;
 
-  public static final class Builder extends JobInfo.Builder<ExtractJobInfo, ExtractStatistics,
-      Builder> {
+  public static final class Builder {
 
     private TableId sourceTable;
     private List<String> destinationUris;
@@ -55,8 +53,7 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
 
     private Builder() {}
 
-    private Builder(ExtractJobInfo jobInfo) {
-      super(jobInfo);
+    private Builder(ExtractJobConfiguration jobInfo) {
       this.sourceTable = jobInfo.sourceTable;
       this.destinationUris = jobInfo.destinationUris;
       this.printHeader = jobInfo.printHeader;
@@ -65,9 +62,8 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
       this.compression = jobInfo.compression;
     }
 
-    private Builder(Job jobPb) {
-      super(jobPb);
-      JobConfigurationExtract extractConfigurationPb = jobPb.getConfiguration().getExtract();
+    private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
+      JobConfigurationExtract extractConfigurationPb = configurationPb.getExtract();
       this.sourceTable = TableId.fromPb(extractConfigurationPb.getSourceTable());
       this.destinationUris = extractConfigurationPb.getDestinationUris();
       this.printHeader = extractConfigurationPb.getPrintHeader();
@@ -81,7 +77,7 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
      */
     public Builder sourceTable(TableId sourceTable) {
       this.sourceTable = sourceTable;
-      return self();
+      return this;
     }
 
     /**
@@ -90,7 +86,7 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
      */
     public Builder destinationUris(List<String> destinationUris) {
       this.destinationUris = destinationUris != null ? ImmutableList.copyOf(destinationUris) : null;
-      return self();
+      return this;
     }
 
     /**
@@ -98,7 +94,7 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
      */
     public Builder printHeader(Boolean printHeader) {
       this.printHeader = printHeader;
-      return self();
+      return this;
     }
 
     /**
@@ -106,7 +102,7 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
      */
     public Builder fieldDelimiter(String fieldDelimiter) {
       this.fieldDelimiter = fieldDelimiter;
-      return self();
+      return this;
     }
 
     /**
@@ -117,7 +113,7 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
      */
     public Builder format(String format) {
       this.format = format;
-      return self();
+      return this;
     }
 
     /**
@@ -129,23 +125,26 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
      */
     public Builder compression(String compression) {
       this.compression = compression;
-      return self();
+      return this;
     }
 
-    @Override
-    public ExtractJobInfo build() {
-      return new ExtractJobInfo(this);
+    public ExtractJobConfiguration build() {
+      return new ExtractJobConfiguration(this);
     }
   }
 
-  private ExtractJobInfo(Builder builder) {
-    super(builder);
+  private ExtractJobConfiguration(Builder builder) {
     this.sourceTable = checkNotNull(builder.sourceTable);
     this.destinationUris = checkNotNull(builder.destinationUris);
     this.printHeader = builder.printHeader;
     this.fieldDelimiter = builder.fieldDelimiter;
     this.format = builder.format;
     this.compression = builder.compression;
+  }
+
+  @Override
+  public Type type() {
+    return Type.EXTRACT;
   }
 
   /**
@@ -194,35 +193,35 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
     return compression;
   }
 
-  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
 
   @Override
-  ToStringHelper toStringHelper() {
-    return super.toStringHelper()
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
         .add("sourceTable", sourceTable)
         .add("destinationUris", destinationUris)
         .add("format", format)
         .add("printHeader", printHeader)
         .add("fieldDelimiter", fieldDelimiter)
-        .add("compression", compression);
+        .add("compression", compression)
+        .toString();
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ExtractJobInfo && baseEquals((ExtractJobInfo) obj);
+    return obj instanceof ExtractJobConfiguration
+        && Objects.equals(toPb(), ((ExtractJobConfiguration) obj).toPb());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), sourceTable, destinationUris, printHeader, fieldDelimiter,
+    return Objects.hash(sourceTable, destinationUris, printHeader, fieldDelimiter,
         format, compression);
   }
 
-  @Override
-  Job toPb() {
+  com.google.api.services.bigquery.model.JobConfiguration toPb() {
     JobConfigurationExtract extractConfigurationPb = new JobConfigurationExtract();
     extractConfigurationPb.setDestinationUris(destinationUris);
     extractConfigurationPb.setSourceTable(sourceTable.toPb());
@@ -230,92 +229,60 @@ public class ExtractJobInfo extends JobInfo<ExtractStatistics> {
     extractConfigurationPb.setFieldDelimiter(fieldDelimiter);
     extractConfigurationPb.setDestinationFormat(format);
     extractConfigurationPb.setCompression(compression);
-    return super.toPb().setConfiguration(new JobConfiguration().setExtract(extractConfigurationPb));
+    return new com.google.api.services.bigquery.model.JobConfiguration()
+        .setExtract(extractConfigurationPb);
   }
 
   /**
-   * Creates a builder for a BigQuery Extract Job given source table and destination URI.
+   * Creates a builder for a BigQuery Extract Job configuration given source table and destination
+   * URI.
    */
   public static Builder builder(TableId sourceTable, String destinationUri) {
     return builder(sourceTable, ImmutableList.of(checkNotNull(destinationUri)));
   }
 
   /**
-   * Creates a builder for a BigQuery Extract Job given source table and destination URIs.
+   * Creates a builder for a BigQuery Extract Job configuration given source table and destination
+   * URIs.
    */
   public static Builder builder(TableId sourceTable, List<String> destinationUris) {
     return new Builder().sourceTable(sourceTable).destinationUris(destinationUris);
   }
 
   /**
-   * Returns a BigQuery Extract Job for the given source table and destination URI. Job's id is
-   * chosen by the service.
+   * Returns a BigQuery Extract Job configuration for the given source table and destination URI.
    */
-  public static ExtractJobInfo of(TableId sourceTable, String destinationUri) {
+  public static ExtractJobConfiguration of(TableId sourceTable, String destinationUri) {
     return builder(sourceTable, destinationUri).build();
   }
 
   /**
-   * Returns a BigQuery Extract Job for the given source table and destination URIs. Job's id is
-   * chosen by the service.
+   * Returns a BigQuery Extract Job configuration for the given source table and destination URIs.
    */
-  public static ExtractJobInfo of(TableId sourceTable, List<String> destinationUris) {
+  public static ExtractJobConfiguration of(TableId sourceTable, List<String> destinationUris) {
     return builder(sourceTable, destinationUris).build();
   }
 
   /**
-   * Returns a BigQuery Extract Job for the given source table, format and destination URI. Job's id
-   * is chosen by the service.
+   * Returns a BigQuery Extract Job configuration for the given source table, format and destination
+   * URI.
    */
-  public static ExtractJobInfo of(TableId sourceTable, String format, String destinationUri) {
+  public static ExtractJobConfiguration of(TableId sourceTable, String destinationUri,
+      String format) {
     return builder(sourceTable, destinationUri).format(format).build();
   }
 
   /**
-   * Returns a BigQuery Extract Job for the given source table, format and destination URIs. Job's
-   * id is chosen by the service.
+   * Returns a BigQuery Extract Job configuration for the given source table, format and destination
+   * URIs.
    */
-  public static ExtractJobInfo of(TableId sourceTable, String format,
-      List<String> destinationUris) {
+  public static ExtractJobConfiguration of(TableId sourceTable, List<String> destinationUris,
+      String format) {
     return builder(sourceTable, destinationUris).format(format).build();
   }
 
-  /**
-   * Returns a BigQuery Extract Job for the given source table and destination URI. Job's id is set
-   * to the provided value.
-   */
-  public static ExtractJobInfo of(JobId jobId, TableId sourceTable, String destinationUri) {
-    return builder(sourceTable, destinationUri).jobId(jobId).build();
-  }
-
-  /**
-   * Returns a BigQuery Extract Job for the given source table and destination URIs. Job's id is set
-   * to the provided value.
-   */
-  public static ExtractJobInfo of(JobId jobId, TableId sourceTable, List<String> destinationUris) {
-    return builder(sourceTable, destinationUris).jobId(jobId).build();
-  }
-
-  /**
-   * Returns a BigQuery Extract Job for the given source table, format and destination URI. Job's id
-   * is set to the provided value.
-   */
-  public static ExtractJobInfo of(JobId jobId, TableId sourceTable, String format,
-      String destinationUri) {
-    return builder(sourceTable, destinationUri).format(format).jobId(jobId).build();
-  }
-
-  /**
-   * Returns a BigQuery Extract Job for the given source table, format and destination URIs. Job's
-   * id is set to the provided value.
-   */
-  public static ExtractJobInfo of(JobId jobId, TableId sourceTable, String format,
-      List<String> destinationUris) {
-    return builder(sourceTable, destinationUris).format(format).jobId(jobId).build();
-  }
-
-  @SuppressWarnings("unchecked")
-  static ExtractJobInfo fromPb(Job jobPb) {
-    return new Builder(jobPb).build();
+  static ExtractJobConfiguration fromPb(
+      com.google.api.services.bigquery.model.JobConfiguration confPb) {
+    return new Builder(confPb).build();
   }
 }
