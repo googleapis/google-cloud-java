@@ -100,7 +100,7 @@ public class DatastoreExample {
         return;
       }
       System.out.printf("User '%s' has %d comment[s].%n", userKey.name(), user.getLong("count"));
-      int limit = 10;
+      int limit = 200;
       Map<DateTime, String> sortedComments = new TreeMap<>();
       StructuredQuery<Entity> query =
           Query.entityQueryBuilder()
