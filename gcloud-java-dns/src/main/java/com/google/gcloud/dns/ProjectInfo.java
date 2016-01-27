@@ -26,14 +26,14 @@ import java.util.Objects;
 
 /**
  * The class that encapsulates information about a project in Google Cloud DNS. A project is a top
- * level container for resources including {@link ManagedZone}s. Projects can be created only in the
+ * level container for resources including {@code ManagedZone}s. Projects can be created only in the
  * APIs console.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/projects">Google Cloud DNS documentation</a>
  */
 public class ProjectInfo implements Serializable {
 
-  private static final long serialVersionUID = 201601251420L;
+  private static final long serialVersionUID = 8696578863323485036L;
   private final String id;
   private final BigInteger number;
   private final Quota quota;
@@ -55,8 +55,9 @@ public class ProjectInfo implements Serializable {
     /**
      * Creates an instance of {@code Quota}.
      *
-     * This is the only way of creating an instance of {@code Quota}. As the service does not allow
-     * for specifying options, quota is an "all-or-nothing object" and we do not need a builder.
+     * <p>This is the only way of creating an instance of {@code Quota}. As the service does not
+     * allow for specifying options, quota is an "all-or-nothing object" and we do not need a
+     * builder.
      */
     Quota(Integer zones,
           Integer resourceRecordsPerRrset,
@@ -102,7 +103,7 @@ public class ProjectInfo implements Serializable {
     }
 
     /**
-     * Returns the maximum allowed number of {@link DnsRecord}s per {@link ManagedZone} in the
+     * Returns the maximum allowed number of {@link DnsRecord}s per {@code ManagedZone} in the
      * project.
      */
     public Integer rrsetsPerManagedZone() {
@@ -117,8 +118,8 @@ public class ProjectInfo implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-      return (o instanceof Quota) && this.toPb().equals(((Quota) o).toPb());
+    public boolean equals(Object other) {
+      return (other instanceof Quota) && this.toPb().equals(((Quota) other).toPb());
     }
 
     @Override
@@ -139,14 +140,14 @@ public class ProjectInfo implements Serializable {
     }
 
     static Quota fromPb(com.google.api.services.dns.model.Quota pb) {
-      Quota q = new Quota(pb.getManagedZones(),
+      Quota quota = new Quota(pb.getManagedZones(),
           pb.getResourceRecordsPerRrset(),
           pb.getRrsetAdditionsPerChange(),
           pb.getRrsetDeletionsPerChange(),
           pb.getRrsetsPerManagedZone(),
           pb.getTotalRrdataSizePerChange()
       );
-      return q;
+      return quota;
     }
 
     @Override
@@ -205,10 +206,10 @@ public class ProjectInfo implements Serializable {
     }
   }
 
-  private ProjectInfo(Builder b) {
-    this.id = b.id;
-    this.number = b.number;
-    this.quota = b.quota;
+  private ProjectInfo(Builder builder) {
+    this.id = builder.id;
+    this.number = builder.number;
+    this.quota = builder.quota;
   }
 
   /**
@@ -250,22 +251,22 @@ public class ProjectInfo implements Serializable {
   }
 
   static ProjectInfo fromPb(com.google.api.services.dns.model.Project pb) {
-    Builder b = builder();
+    Builder builder = builder();
     if (pb.getId() != null) {
-      b.id(pb.getId());
+      builder.id(pb.getId());
     }
     if (pb.getNumber() != null) {
-      b.number(pb.getNumber());
+      builder.number(pb.getNumber());
     }
     if (pb.getQuota() != null) {
-      b.quota(Quota.fromPb(pb.getQuota()));
+      builder.quota(Quota.fromPb(pb.getQuota()));
     }
-    return b.build();
+    return builder.build();
   }
 
   @Override
-  public boolean equals(Object o) {
-    return (o instanceof ProjectInfo) && this.toPb().equals(((ProjectInfo) o).toPb());
+  public boolean equals(Object other) {
+    return (other instanceof ProjectInfo) && this.toPb().equals(((ProjectInfo) other).toPb());
   }
 
   @Override
