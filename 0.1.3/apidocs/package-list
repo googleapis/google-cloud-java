@@ -1,0 +1,11 @@
+com.google.gcloud
+com.google.gcloud.bigquery
+com.google.gcloud.bigquery.testing
+com.google.gcloud.datastore
+com.google.gcloud.datastore.testing
+com.google.gcloud.examples
+com.google.gcloud.resourcemanager
+com.google.gcloud.resourcemanager.testing
+com.google.gcloud.spi
+com.google.gcloud.storage
+com.google.gcloud.storage.testing

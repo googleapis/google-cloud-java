@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<rss version="0.91">
+  <channel>
+    <title>GCloud Java bigquery - Checkstyle report</title>
+    <link>https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery</link>
+    <description>GCloud Java bigquery - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2016 Google</copyright>
+    <item>
+      <title>File: 47,
+             Errors: 0,
+             Warnings: 14,
+             Infos: 0
+      </title>
+            <link>https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html</link>
+      <description>
+        <p>Click <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.spi.DefaultBigQueryRpc.java">com/google/gcloud/spi/DefaultBigQueryRpc.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.BigQueryFactory.java">com/google/gcloud/bigquery/BigQueryFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.Job.java">com/google/gcloud/bigquery/Job.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.LoadJobInfo.java">com/google/gcloud/bigquery/LoadJobInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.CopyJobInfo.java">com/google/gcloud/bigquery/CopyJobInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.DatasetId.java">com/google/gcloud/bigquery/DatasetId.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.Acl.java">com/google/gcloud/bigquery/Acl.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.QueryStage.java">com/google/gcloud/bigquery/QueryStage.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.FieldValue.java">com/google/gcloud/bigquery/FieldValue.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.Dataset.java">com/google/gcloud/bigquery/Dataset.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.TableDataWriteChannel.java">com/google/gcloud/bigquery/TableDataWriteChannel.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.spi.BigQueryRpcFactory.java">com/google/gcloud/spi/BigQueryRpcFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.JobStatistics.java">com/google/gcloud/bigquery/JobStatistics.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.JobStatus.java">com/google/gcloud/bigquery/JobStatus.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.package-info.java">com/google/gcloud/bigquery/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.ExternalTableInfo.java">com/google/gcloud/bigquery/ExternalTableInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.BigQueryOptions.java">com/google/gcloud/bigquery/BigQueryOptions.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.BaseTableInfo.java">com/google/gcloud/bigquery/BaseTableInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.InsertAllRequest.java">com/google/gcloud/bigquery/InsertAllRequest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.QueryResponse.java">com/google/gcloud/bigquery/QueryResponse.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.spi.BigQueryRpc.java">com/google/gcloud/spi/BigQueryRpc.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  8
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.Table.java">com/google/gcloud/bigquery/Table.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.BigQueryImpl.java">com/google/gcloud/bigquery/BigQueryImpl.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.Option.java">com/google/gcloud/bigquery/Option.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.ExtractJobInfo.java">com/google/gcloud/bigquery/ExtractJobInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.testing.package-info.java">com/google/gcloud/bigquery/testing/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.InsertAllResponse.java">com/google/gcloud/bigquery/InsertAllResponse.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.ExternalDataConfiguration.java">com/google/gcloud/bigquery/ExternalDataConfiguration.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.ViewInfo.java">com/google/gcloud/bigquery/ViewInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.QueryRequest.java">com/google/gcloud/bigquery/QueryRequest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.TableId.java">com/google/gcloud/bigquery/TableId.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.LoadConfiguration.java">com/google/gcloud/bigquery/LoadConfiguration.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.FormatOptions.java">com/google/gcloud/bigquery/FormatOptions.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.UserDefinedFunction.java">com/google/gcloud/bigquery/UserDefinedFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.Schema.java">com/google/gcloud/bigquery/Schema.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.QueryResult.java">com/google/gcloud/bigquery/QueryResult.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.JobId.java">com/google/gcloud/bigquery/JobId.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.BigQueryException.java">com/google/gcloud/bigquery/BigQueryException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.Field.java">com/google/gcloud/bigquery/Field.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.CsvOptions.java">com/google/gcloud/bigquery/CsvOptions.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.DatasetInfo.java">com/google/gcloud/bigquery/DatasetInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.BigQueryError.java">com/google/gcloud/bigquery/BigQueryError.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.BigQuery.java">com/google/gcloud/bigquery/BigQuery.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.testing.RemoteBigQueryHelper.java">com/google/gcloud/bigquery/testing/RemoteBigQueryHelper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.TableInfo.java">com/google/gcloud/bigquery/TableInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.QueryJobInfo.java">com/google/gcloud/bigquery/QueryJobInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/GoogleCloudPlatform/gcloud-java/gcloud-java-bigquery/checkstyle.html#com.google.gcloud.bigquery.JobInfo.java">com/google/gcloud/bigquery/JobInfo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+
