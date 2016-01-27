@@ -596,8 +596,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .results(transformTableData(rowsPb));
   }
 
-  public TableDataWriteChannel writer(LoadConfiguration loadConfiguration) {
-    return new TableDataWriteChannel(options(), setProjectId(loadConfiguration));
+  public TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration) {
+    return new TableDataWriteChannel(options(), setProjectId(writeChannelConfiguration));
   }
 
   private Map<BigQueryRpc.Option, ?> optionMap(Option... options) {
@@ -681,7 +681,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         break;
       case LOAD:
         LoadJobConfiguration loadConfiguration = (LoadJobConfiguration) configuration;
-        jobBuilder.configuration((LoadJobConfiguration) setProjectId(loadConfiguration));
+        jobBuilder.configuration(setProjectId(loadConfiguration));
         break;
       default:
         // never reached
@@ -698,9 +698,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     return builder.build();
   }
 
-  private LoadConfiguration setProjectId(LoadConfiguration configuration) {
+  @SuppressWarnings("unchecked")
+  private <T extends LoadConfiguration> T setProjectId(T configuration) {
     LoadConfiguration.Builder builder = configuration.toBuilder();
     builder.destinationTable(setProjectId(configuration.destinationTable()));
-    return builder.build();
+    return (T) builder.build();
   }
 }

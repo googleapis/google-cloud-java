@@ -666,9 +666,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Returns a channel to write data to be inserted into a BigQuery table. Data format and other
-   * options can be configured using the {@link LoadConfiguration} parameter.
+   * options can be configured using the {@link WriteChannelConfiguration} parameter.
    *
    * @throws BigQueryException upon failure
    */
-  TableDataWriteChannel writer(LoadConfiguration loadConfiguration);
+  TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration);
 }

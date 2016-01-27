@@ -19,73 +19,66 @@ package com.google.gcloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationLoad;
-import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.bigquery.JobInfo.CreateDisposition;
+import com.google.gcloud.bigquery.JobInfo.WriteDisposition;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery load job configuration. A load job loads data from one of several formats into a
- * table. Data is provided as URIs that point to objects in Google Cloud Storage. Load job
- * configurations have {@link JobConfiguration.Type#LOAD} type.
+ * Google BigQuery Configuration for a load operation. A load configuration can be used to load data
+ * into a table with a {@link com.google.gcloud.WriteChannel}
+ * ({@link BigQuery#writer(WriteChannelConfiguration)}).
  */
-public class LoadJobConfiguration extends JobConfiguration implements LoadConfiguration {
+public class WriteChannelConfiguration implements LoadConfiguration, Serializable {
 
-  private static final long serialVersionUID = -2673554846792429829L;
+  private static final long serialVersionUID = 470267591917413578L;
 
-  private final List<String> sourceUris;
   protected final TableId destinationTable;
-  protected final JobInfo.CreateDisposition createDisposition;
-  protected final JobInfo.WriteDisposition writeDisposition;
+  protected final CreateDisposition createDisposition;
+  protected final WriteDisposition writeDisposition;
   protected final FormatOptions formatOptions;
   protected final Integer maxBadRecords;
   protected final Schema schema;
   protected final Boolean ignoreUnknownValues;
   protected final List<String> projectionFields;
 
-  public static final class Builder
-      extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
-      implements LoadConfiguration.Builder {
+  public static final class Builder implements LoadConfiguration.Builder {
 
-    private List<String> sourceUris;
     private TableId destinationTable;
-    private JobInfo.CreateDisposition createDisposition;
-    private JobInfo.WriteDisposition writeDisposition;
+    private CreateDisposition createDisposition;
+    private WriteDisposition writeDisposition;
     private FormatOptions formatOptions;
     private Integer maxBadRecords;
     private Schema schema;
     private Boolean ignoreUnknownValues;
     private List<String> projectionFields;
 
-    private Builder() {
-      super(Type.LOAD);
+    protected Builder() {}
+
+    protected Builder(WriteChannelConfiguration writeChannelConfiguration) {
+      this.destinationTable = writeChannelConfiguration.destinationTable;
+      this.createDisposition = writeChannelConfiguration.createDisposition;
+      this.writeDisposition = writeChannelConfiguration.writeDisposition;
+      this.formatOptions = writeChannelConfiguration.formatOptions;
+      this.maxBadRecords = writeChannelConfiguration.maxBadRecords;
+      this.schema = writeChannelConfiguration.schema;
+      this.ignoreUnknownValues = writeChannelConfiguration.ignoreUnknownValues;
+      this.projectionFields = writeChannelConfiguration.projectionFields;
     }
 
-    private Builder(LoadJobConfiguration loadConfiguration) {
-      super(Type.LOAD);
-      this.destinationTable = loadConfiguration.destinationTable;
-      this.createDisposition = loadConfiguration.createDisposition;
-      this.writeDisposition = loadConfiguration.writeDisposition;
-      this.formatOptions = loadConfiguration.formatOptions;
-      this.maxBadRecords = loadConfiguration.maxBadRecords;
-      this.schema = loadConfiguration.schema;
-      this.ignoreUnknownValues = loadConfiguration.ignoreUnknownValues;
-      this.projectionFields = loadConfiguration.projectionFields;
-      this.sourceUris = loadConfiguration.sourceUris;
-    }
-
-    private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
-      super(Type.LOAD);
+    protected Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
       JobConfigurationLoad loadConfigurationPb = configurationPb.getLoad();
       this.destinationTable = TableId.fromPb(loadConfigurationPb.getDestinationTable());
       if (loadConfigurationPb.getCreateDisposition() != null) {
         this.createDisposition =
-            JobInfo.CreateDisposition.valueOf(loadConfigurationPb.getCreateDisposition());
+            CreateDisposition.valueOf(loadConfigurationPb.getCreateDisposition());
       }
       if (loadConfigurationPb.getWriteDisposition() != null) {
-        this.writeDisposition =
-            JobInfo.WriteDisposition.valueOf(loadConfigurationPb.getWriteDisposition());
+        this.writeDisposition = WriteDisposition.valueOf(loadConfigurationPb.getWriteDisposition());
       }
       if (loadConfigurationPb.getSourceFormat() != null) {
         this.formatOptions = FormatOptions.of(loadConfigurationPb.getSourceFormat());
@@ -111,9 +104,6 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
       }
       this.ignoreUnknownValues = loadConfigurationPb.getIgnoreUnknownValues();
       this.projectionFields = loadConfigurationPb.getProjectionFields();
-      if (loadConfigurationPb.getSourceUris() != null) {
-        this.sourceUris = ImmutableList.copyOf(configurationPb.getLoad().getSourceUris());
-      }
     }
 
     @Override
@@ -123,18 +113,18 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
     }
 
     @Override
-    public Builder createDisposition(JobInfo.CreateDisposition createDisposition) {
+    public Builder createDisposition(CreateDisposition createDisposition) {
       this.createDisposition = createDisposition;
       return this;
     }
 
     @Override
-    public Builder writeDisposition(JobInfo.WriteDisposition writeDisposition) {
+    public Builder writeDisposition(WriteDisposition writeDisposition) {
       this.writeDisposition = writeDisposition;
       return this;
     }
 
-   @Override
+    @Override
     public Builder formatOptions(FormatOptions formatOptions) {
       this.formatOptions = formatOptions;
       return this;
@@ -165,26 +155,13 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
       return this;
     }
 
-    /**
-     * Sets the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
-     * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
-     * 'bucket' name.
-     */
-    public Builder sourceUris(List<String> sourceUris) {
-      this.sourceUris = ImmutableList.copyOf(checkNotNull(sourceUris));
-      return this;
-    }
-
-    @Override
-    public LoadJobConfiguration build() {
-      return new LoadJobConfiguration(this);
+    public WriteChannelConfiguration build() {
+      return new WriteChannelConfiguration(this);
     }
   }
 
-  private LoadJobConfiguration(Builder builder) {
-    super(builder);
-    this.sourceUris = builder.sourceUris;
-    this.destinationTable = builder.destinationTable;
+  protected WriteChannelConfiguration(Builder builder) {
+    this.destinationTable = checkNotNull(builder.destinationTable);
     this.createDisposition = builder.createDisposition;
     this.writeDisposition = builder.writeDisposition;
     this.formatOptions = builder.formatOptions;
@@ -200,12 +177,12 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
   }
 
   @Override
-  public JobInfo.CreateDisposition createDisposition() {
+  public CreateDisposition createDisposition() {
     return this.createDisposition;
   }
 
   @Override
-  public JobInfo.WriteDisposition writeDisposition() {
+  public WriteDisposition writeDisposition() {
     return writeDisposition;
   }
 
@@ -239,23 +216,13 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
     return projectionFields;
   }
 
-  /**
-   * Returns the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
-   * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
-   * 'bucket' name.
-   */
-  public List<String> sourceUris() {
-    return sourceUris;
-  }
-
   @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  @Override
-  protected ToStringHelper toStringHelper() {
-    return super.toStringHelper()
+  MoreObjects.ToStringHelper toStringHelper() {
+    return MoreObjects.toStringHelper(this)
         .add("destinationTable", destinationTable)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
@@ -263,18 +230,24 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
         .add("maxBadRecords", maxBadRecords)
         .add("schema", schema)
         .add("ignoreUnknownValue", ignoreUnknownValues)
-        .add("projectionFields", projectionFields)
-        .add("sourceUris", sourceUris);
+        .add("projectionFields", projectionFields);
+  }
+
+  @Override
+  public String toString() {
+    return toStringHelper().toString();
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof LoadJobConfiguration && baseEquals((LoadJobConfiguration) obj);
+    return obj instanceof WriteChannelConfiguration
+        && Objects.equals(toPb(), ((WriteChannelConfiguration) obj).toPb());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), sourceUris);
+    return Objects.hash(destinationTable, createDisposition, writeDisposition, formatOptions,
+        maxBadRecords, schema, ignoreUnknownValues, projectionFields);
   }
 
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
@@ -304,81 +277,40 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
     loadConfigurationPb.setMaxBadRecords(maxBadRecords);
     loadConfigurationPb.setIgnoreUnknownValues(ignoreUnknownValues);
     loadConfigurationPb.setProjectionFields(projectionFields);
-    if (sourceUris != null) {
-      loadConfigurationPb.setSourceUris(ImmutableList.copyOf(sourceUris));
-    }
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);
   }
 
-  /**
-   * Creates a builder for a BigQuery Load Job configuration given the destination table and source
-   * URIs.
-   */
-  public static Builder builder(TableId destinationTable, List<String> sourceUris) {
-    return new Builder().destinationTable(destinationTable).sourceUris(sourceUris);
+  static WriteChannelConfiguration fromPb(
+      com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
+    return new Builder(configurationPb).build();
   }
 
   /**
-   * Creates a builder for a BigQuery Load Job configuration given the destination table and source
-   * URI.
+   * Creates a builder for a BigQuery Load Configuration given the destination table.
    */
-  public static Builder builder(TableId destinationTable, String sourceUri) {
-    return builder(destinationTable, ImmutableList.of(sourceUri));
+  public static Builder builder(TableId destinationTable) {
+    return new Builder().destinationTable(destinationTable);
   }
 
   /**
-   * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
-   * source URIs.
+   * Creates a builder for a BigQuery Load Configuration given the destination table and format.
    */
-  public static Builder builder(TableId destinationTable, List<String> sourceUris,
-      FormatOptions format) {
-    return builder(destinationTable, sourceUris).formatOptions(format);
+  public static Builder builder(TableId destinationTable, FormatOptions format) {
+    return builder(destinationTable).formatOptions(format);
   }
 
   /**
-   * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
-   * source URI.
+   * Returns a BigQuery Load Configuration for the given destination table.
    */
-  public static Builder builder(TableId destinationTable, String sourceUri, FormatOptions format) {
-    return builder(destinationTable, ImmutableList.of(sourceUri), format);
+  public static WriteChannelConfiguration of(TableId destinationTable) {
+    return builder(destinationTable).build();
   }
 
   /**
-   * Returns a BigQuery Load Job Configuration for the given destination table and source URIs.
+   * Returns a BigQuery Load Configuration for the given destination table and format.
    */
-  public static LoadJobConfiguration of(TableId destinationTable, List<String> sourceUris) {
-    return builder(destinationTable, sourceUris).build();
-  }
-
-  /**
-   * Returns a BigQuery Load Job Configuration for the given destination table and source URI.
-   */
-  public static LoadJobConfiguration of(TableId destinationTable, String sourceUri) {
-    return of(destinationTable, ImmutableList.of(sourceUri));
-  }
-
-  /**
-   * Returns a BigQuery Load Job Configuration for the given destination table, format and source
-   * URI.
-   */
-  public static LoadJobConfiguration of(TableId destinationTable, List<String> sourceUris,
-      FormatOptions format) {
-    return builder(destinationTable, sourceUris, format).build();
-  }
-
-  /**
-   * Returns a BigQuery Load Job Configuration for the given destination table, format and source
-   * URI.
-   */
-  public static LoadJobConfiguration of(TableId destinationTable, String sourceUri,
-      FormatOptions format) {
-    return of(destinationTable, ImmutableList.of(sourceUri), format);
-  }
-
-  @SuppressWarnings("unchecked")
-  static LoadJobConfiguration fromPb(
-      com.google.api.services.bigquery.model.JobConfiguration confPb) {
-    return new Builder(confPb).build();
+  public static WriteChannelConfiguration of(TableId destinationTable, FormatOptions format) {
+    return builder(destinationTable).formatOptions(format).build();
   }
 }

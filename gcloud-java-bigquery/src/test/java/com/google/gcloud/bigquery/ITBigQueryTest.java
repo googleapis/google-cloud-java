@@ -878,7 +878,7 @@ public class ITBigQueryTest {
   public void testInsertFromFile() throws InterruptedException, FileNotFoundException {
     String destinationTableName = "test_insert_from_file_table";
     TableId tableId = TableId.of(DATASET, destinationTableName);
-    LoadConfiguration configuration = LoadConfiguration.builder(tableId)
+    WriteChannelConfiguration configuration = WriteChannelConfiguration.builder(tableId)
         .formatOptions(FormatOptions.json())
         .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
         .schema(TABLE_SCHEMA)

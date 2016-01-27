@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ package com.google.gcloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -27,15 +27,15 @@ import com.google.common.collect.Maps;
 import com.google.gcloud.bigquery.JobInfo.CreateDisposition;
 import com.google.gcloud.bigquery.JobInfo.WriteDisposition;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 /**
- * Google BigQuery Query Job configuration. A Query Job runs a query against BigQuery data.
+ * Google BigQuery Query Job configuration. A Query Job runs a query against BigQuery data. Query
+ * job configurations have {@link JobConfiguration.Type#QUERY} type.
  */
-public final class QueryJobConfiguration implements JobConfiguration, Serializable {
+public final class QueryJobConfiguration extends JobConfiguration {
 
   private static final long serialVersionUID = -1108948249081804890L;
 
@@ -72,7 +72,7 @@ public final class QueryJobConfiguration implements JobConfiguration, Serializab
   private final Boolean flattenResults;
   private final Boolean dryRun;
 
-  public static final class Builder {
+  public static final class Builder extends JobConfiguration.Builder<QueryJobConfiguration, Builder> {
 
     private String query;
     private TableId destinationTable;
@@ -87,9 +87,12 @@ public final class QueryJobConfiguration implements JobConfiguration, Serializab
     private Boolean flattenResults;
     private Boolean dryRun;
 
-    private Builder() {}
+    private Builder() {
+      super(Type.QUERY);
+    }
 
     private Builder(QueryJobConfiguration jobConfiguration) {
+      super(Type.QUERY);
       this.query = jobConfiguration.query;
       this.destinationTable = jobConfiguration.destinationTable;
       this.tableDefinitions = jobConfiguration.tableDefinitions;
@@ -105,6 +108,7 @@ public final class QueryJobConfiguration implements JobConfiguration, Serializab
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
+      super(Type.QUERY);
       JobConfigurationQuery queryConfigurationPb = configurationPb.getQuery();
       this.query = queryConfigurationPb.getQuery();
       allowLargeResults = queryConfigurationPb.getAllowLargeResults();
@@ -294,6 +298,7 @@ public final class QueryJobConfiguration implements JobConfiguration, Serializab
   }
 
   private QueryJobConfiguration(Builder builder) {
+    super(builder);
     this.query = checkNotNull(builder.query);
     this.allowLargeResults = builder.allowLargeResults;
     this.createDisposition = builder.createDisposition;
@@ -307,11 +312,6 @@ public final class QueryJobConfiguration implements JobConfiguration, Serializab
     this.tableDefinitions =
         builder.tableDefinitions != null ? ImmutableMap.copyOf(builder.tableDefinitions) : null;
     this.dryRun = builder.dryRun;
-  }
-
-  @Override
-  public Type type() {
-    return Type.QUERY;
   }
 
   /**
@@ -425,13 +425,14 @@ public final class QueryJobConfiguration implements JobConfiguration, Serializab
     return dryRun;
   }
 
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
 
   @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this)
+  protected ToStringHelper toStringHelper() {
+    return super.toStringHelper()
         .add("query", query)
         .add("destinationTable", destinationTable)
         .add("defaultDataset", defaultDataset)
@@ -443,21 +444,19 @@ public final class QueryJobConfiguration implements JobConfiguration, Serializab
         .add("userDefinedFunctions", userDefinedFunctions)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
-        .add("dryRun", dryRun)
-        .toString();
+        .add("dryRun", dryRun);
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof QueryJobConfiguration
-        && Objects.equals(toPb(), ((QueryJobConfiguration) obj).toPb());
+    return obj instanceof QueryJobConfiguration && baseEquals((QueryJobConfiguration) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(allowLargeResults, createDisposition, destinationTable, defaultDataset,
-        flattenResults, priority, query, tableDefinitions, useQueryCache, userDefinedFunctions,
-        writeDisposition, dryRun);
+    return Objects.hash(baseHashCode(), allowLargeResults, createDisposition, destinationTable,
+        defaultDataset, flattenResults, priority, query, tableDefinitions, useQueryCache,
+        userDefinedFunctions, writeDisposition, dryRun);
   }
 
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
@@ -516,6 +515,7 @@ public final class QueryJobConfiguration implements JobConfiguration, Serializab
     return builder(query).build();
   }
 
+  @SuppressWarnings("unchecked")
   static QueryJobConfiguration fromPb(
       com.google.api.services.bigquery.model.JobConfiguration jobPb) {
     return new Builder(jobPb).build();

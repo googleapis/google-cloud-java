@@ -28,7 +28,7 @@ import org.junit.Test;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-public class LoadConfigurationTest {
+public class WriteChannelConfigurationTest {
 
   private static final CsvOptions CSV_OPTIONS = CsvOptions.builder()
       .allowJaggedRows(true)
@@ -47,7 +47,7 @@ public class LoadConfigurationTest {
       .description("FieldDescription")
       .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
-  private static final LoadConfiguration LOAD_CONFIGURATION = LoadConfiguration.builder(TABLE_ID)
+  private static final WriteChannelConfiguration LOAD_CONFIGURATION = WriteChannelConfiguration.builder(TABLE_ID)
       .createDisposition(CREATE_DISPOSITION)
       .writeDisposition(WRITE_DISPOSITION)
       .formatOptions(CSV_OPTIONS)
@@ -60,7 +60,7 @@ public class LoadConfigurationTest {
   @Test
   public void testToBuilder() {
     compareLoadConfiguration(LOAD_CONFIGURATION, LOAD_CONFIGURATION.toBuilder().build());
-    LoadConfiguration configuration = LOAD_CONFIGURATION.toBuilder()
+    WriteChannelConfiguration configuration = LOAD_CONFIGURATION.toBuilder()
         .destinationTable(TableId.of("dataset", "newTable"))
         .build();
     assertEquals("newTable", configuration.destinationTable().table());
@@ -70,9 +70,9 @@ public class LoadConfigurationTest {
 
   @Test
   public void testOf() {
-    LoadConfiguration configuration = LoadConfiguration.of(TABLE_ID);
+    WriteChannelConfiguration configuration = WriteChannelConfiguration.of(TABLE_ID);
     assertEquals(TABLE_ID, configuration.destinationTable());
-    configuration = LoadConfiguration.of(TABLE_ID, CSV_OPTIONS);
+    configuration = WriteChannelConfiguration.of(TABLE_ID, CSV_OPTIONS);
     assertEquals(TABLE_ID, configuration.destinationTable());
     assertEquals(FORMAT, configuration.format());
     assertEquals(CSV_OPTIONS, configuration.csvOptions());
@@ -80,7 +80,7 @@ public class LoadConfigurationTest {
 
   @Test
   public void testToBuilderIncomplete() {
-    LoadConfiguration configuration = LoadConfiguration.of(TABLE_ID);
+    WriteChannelConfiguration configuration = WriteChannelConfiguration.of(TABLE_ID);
     compareLoadConfiguration(configuration, configuration.toBuilder().build());
   }
 
@@ -101,12 +101,12 @@ public class LoadConfigurationTest {
   public void testToPbAndFromPb() {
     assertNull(LOAD_CONFIGURATION.toPb().getLoad().getSourceUris());
     compareLoadConfiguration(LOAD_CONFIGURATION,
-        LoadConfiguration.fromPb(LOAD_CONFIGURATION.toPb()));
-    LoadConfiguration configuration = LoadConfiguration.of(TABLE_ID);
-    compareLoadConfiguration(configuration, LoadConfiguration.fromPb(configuration.toPb()));
+        WriteChannelConfiguration.fromPb(LOAD_CONFIGURATION.toPb()));
+    WriteChannelConfiguration configuration = WriteChannelConfiguration.of(TABLE_ID);
+    compareLoadConfiguration(configuration, WriteChannelConfiguration.fromPb(configuration.toPb()));
   }
 
-  private void compareLoadConfiguration(LoadConfiguration expected, LoadConfiguration value) {
+  private void compareLoadConfiguration(WriteChannelConfiguration expected, WriteChannelConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());

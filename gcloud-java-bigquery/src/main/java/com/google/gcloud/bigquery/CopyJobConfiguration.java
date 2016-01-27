@@ -1,21 +1,36 @@
+/*
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.google.gcloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationTableCopy;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery Copy Job configuration. A Copy Job copies an existing table to another new or
- * existing table.
+ * Google BigQuery copy job configuration. A copy job copies an existing table to another new or
+ * existing table. Copy job configurations have {@link JobConfiguration.Type#COPY} type.
  */
-public final class CopyJobConfiguration implements JobConfiguration, Serializable {
+public final class CopyJobConfiguration extends JobConfiguration {
 
   private static final long serialVersionUID = 1140509641399762967L;
 
@@ -24,16 +39,20 @@ public final class CopyJobConfiguration implements JobConfiguration, Serializabl
   private final JobInfo.CreateDisposition createDisposition;
   private final JobInfo.WriteDisposition writeDisposition;
 
-  public static final class Builder {
+  public static final class Builder
+      extends JobConfiguration.Builder<CopyJobConfiguration, Builder> {
 
     private List<TableId> sourceTables;
     private TableId destinationTable;
     private JobInfo.CreateDisposition createDisposition;
     private JobInfo.WriteDisposition writeDisposition;
 
-    private Builder() {}
+    private Builder() {
+      super(Type.COPY);
+    }
 
     private Builder(CopyJobConfiguration jobConfiguration) {
+      super(Type.COPY);
       this.sourceTables = jobConfiguration.sourceTables;
       this.destinationTable = jobConfiguration.destinationTable;
       this.createDisposition = jobConfiguration.createDisposition;
@@ -41,6 +60,7 @@ public final class CopyJobConfiguration implements JobConfiguration, Serializabl
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
+      super(Type.COPY);
       JobConfigurationTableCopy copyConfigurationPb = configurationPb.getCopy();
       this.destinationTable = TableId.fromPb(copyConfigurationPb.getDestinationTable());
       if (copyConfigurationPb.getSourceTables() != null) {
@@ -103,15 +123,11 @@ public final class CopyJobConfiguration implements JobConfiguration, Serializabl
   }
 
   private CopyJobConfiguration(Builder builder) {
+    super(builder);
     this.sourceTables = checkNotNull(builder.sourceTables);
     this.destinationTable = checkNotNull(builder.destinationTable);
     this.createDisposition = builder.createDisposition;
     this.writeDisposition = builder.writeDisposition;
-  }
-
-  @Override
-  public Type type() {
-    return Type.COPY;
   }
 
   /**
@@ -148,29 +164,29 @@ public final class CopyJobConfiguration implements JobConfiguration, Serializabl
     return writeDisposition;
   }
 
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
 
   @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this)
+  protected ToStringHelper toStringHelper() {
+    return super.toStringHelper()
         .add("sourceTables", sourceTables)
         .add("destinationTable", destinationTable)
         .add("createDisposition", createDisposition)
-        .add("writeDisposition", writeDisposition)
-        .toString();
+        .add("writeDisposition", writeDisposition);
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof CopyJobConfiguration
-        && Objects.equals(toPb(), ((CopyJobConfiguration) obj).toPb());
+    return obj instanceof CopyJobConfiguration && baseEquals((CopyJobConfiguration) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceTables, destinationTable, createDisposition, writeDisposition);
+    return Objects.hash(baseHashCode(), sourceTables, destinationTable, createDisposition,
+        writeDisposition);
   }
 
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
@@ -218,6 +234,7 @@ public final class CopyJobConfiguration implements JobConfiguration, Serializabl
     return builder(destinationTable, sourceTables).build();
   }
 
+  @SuppressWarnings("unchecked")
   static CopyJobConfiguration fromPb(
       com.google.api.services.bigquery.model.JobConfiguration jobPb) {
     return new Builder(jobPb).build();

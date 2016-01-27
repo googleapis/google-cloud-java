@@ -172,14 +172,15 @@ public class SerializationTest {
       CopyJobConfiguration.of(TABLE_ID, TABLE_ID);
   private static final ExtractJobConfiguration EXTRACT_JOB_CONFIGURATION =
       ExtractJobConfiguration.of(TABLE_ID, SOURCE_URIS);
-  private static final LoadConfiguration LOAD_CONFIGURATION = LoadConfiguration.builder(TABLE_ID)
-      .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
-      .writeDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
-      .formatOptions(CSV_OPTIONS)
-      .ignoreUnknownValues(true)
-      .maxBadRecords(10)
-      .schema(TABLE_SCHEMA)
-      .build();
+  private static final WriteChannelConfiguration LOAD_CONFIGURATION =
+      WriteChannelConfiguration.builder(TABLE_ID)
+          .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+          .writeDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
+          .formatOptions(CSV_OPTIONS)
+          .ignoreUnknownValues(true)
+          .maxBadRecords(10)
+          .schema(TABLE_SCHEMA)
+          .build();
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION =
       LoadJobConfiguration.of(TABLE_ID, SOURCE_URIS);
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =

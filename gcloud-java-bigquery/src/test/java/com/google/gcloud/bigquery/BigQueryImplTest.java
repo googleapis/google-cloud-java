@@ -1010,12 +1010,13 @@ public class BigQueryImplTest {
 
   @Test
   public void testWriter() {
-    LoadConfiguration loadConfiguration = LoadConfiguration.of(TABLE_ID);
-    EasyMock.expect(bigqueryRpcMock.open(LoadConfiguration.of(TABLE_ID_WITH_PROJECT).toPb()))
-        .andReturn("upload-id");
+    WriteChannelConfiguration writeChannelConfiguration = WriteChannelConfiguration.of(TABLE_ID);
+    EasyMock.expect(
+        bigqueryRpcMock.open(WriteChannelConfiguration.of(TABLE_ID_WITH_PROJECT).toPb()))
+            .andReturn("upload-id");
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    WriteChannel channel = bigquery.writer(loadConfiguration);
+    WriteChannel channel = bigquery.writer(writeChannelConfiguration);
     assertNotNull(channel);
     assertTrue(channel.isOpen());
   }

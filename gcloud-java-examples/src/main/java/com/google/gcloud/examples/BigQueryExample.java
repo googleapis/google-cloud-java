@@ -34,7 +34,7 @@ import com.google.gcloud.bigquery.FormatOptions;
 import com.google.gcloud.bigquery.JobId;
 import com.google.gcloud.bigquery.JobInfo;
 import com.google.gcloud.bigquery.JobStatus;
-import com.google.gcloud.bigquery.LoadConfiguration;
+import com.google.gcloud.bigquery.WriteChannelConfiguration;
 import com.google.gcloud.bigquery.LoadJobConfiguration;
 import com.google.gcloud.bigquery.QueryRequest;
 import com.google.gcloud.bigquery.QueryResponse;
@@ -576,8 +576,8 @@ public class BigQueryExample {
         String table = args[1];
         String format = args[2];
         TableId tableId = TableId.of(dataset, table);
-        ExtractJobConfiguration configuration =
-            ExtractJobConfiguration.of(tableId, Arrays.asList(args).subList(3, args.length));
+        ExtractJobConfiguration configuration = ExtractJobConfiguration.of(
+            tableId, Arrays.asList(args).subList(3, args.length), format);
         return JobInfo.of(configuration);
       }
       throw new IllegalArgumentException("Missing required arguments.");
@@ -671,9 +671,11 @@ public class BigQueryExample {
    * @see <a href="https://cloud.google.com/bigquery/loading-data-post-request#resumable">Resumable
    *     Upload</a>
    */
-  private static class LoadFileAction extends BigQueryAction<Tuple<LoadConfiguration, String>> {
+  private static class LoadFileAction
+      extends BigQueryAction<Tuple<WriteChannelConfiguration, String>> {
     @Override
-    void run(BigQuery bigquery, Tuple<LoadConfiguration, String> configuration) throws Exception {
+    void run(BigQuery bigquery, Tuple<WriteChannelConfiguration, String> configuration)
+        throws Exception {
       System.out.println("Running insert");
       try (FileChannel fileChannel = FileChannel.open(Paths.get(configuration.y()))) {
         WriteChannel writeChannel = bigquery.writer(configuration.x());
@@ -688,13 +690,14 @@ public class BigQueryExample {
     }
 
     @Override
-    Tuple<LoadConfiguration, String> parse(String... args) throws Exception {
+    Tuple<WriteChannelConfiguration, String> parse(String... args) throws Exception {
       if (args.length == 4) {
         String dataset = args[0];
         String table = args[1];
         String format = args[2];
         TableId tableId = TableId.of(dataset, table);
-        LoadConfiguration configuration = LoadConfiguration.of(tableId, FormatOptions.of(format));
+        WriteChannelConfiguration configuration =
+            WriteChannelConfiguration.of(tableId, FormatOptions.of(format));
         return Tuple.of(configuration, args[3]);
       }
       throw new IllegalArgumentException("Missing required arguments.");

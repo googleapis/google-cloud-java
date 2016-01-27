@@ -125,19 +125,7 @@ public final class JobInfo implements Serializable {
         this.statistics = JobStatistics.fromPb(jobPb.getStatistics());
       }
       this.userEmail = jobPb.getUserEmail();
-      com.google.api.services.bigquery.model.JobConfiguration confPb = jobPb.getConfiguration();
-      if (confPb.getCopy() != null) {
-        this.configuration = CopyJobConfiguration.fromPb(confPb);
-      } else if (confPb.getExtract() != null) {
-        this.configuration = ExtractJobConfiguration.fromPb(confPb);
-      } else if (confPb.getLoad() != null) {
-        this.configuration = LoadJobConfiguration.fromPb(confPb);
-      } else if (confPb.getQuery() != null) {
-        this.configuration = QueryJobConfiguration.fromPb(confPb);
-      } else {
-        // never reached
-        throw new IllegalArgumentException("Job configuration is not supported");
-      }
+      this.configuration = JobConfiguration.fromPb(jobPb.getConfiguration());
     }
 
     Builder etag(String etag) {
@@ -305,23 +293,7 @@ public final class JobInfo implements Serializable {
     if (statistics != null) {
       jobPb.setStatistics(statistics.toPb());
     }
-    switch (configuration.type()) {
-      case COPY:
-        jobPb.setConfiguration(this.<CopyJobConfiguration>configuration().toPb());
-        break;
-      case EXTRACT:
-        jobPb.setConfiguration(this.<ExtractJobConfiguration>configuration().toPb());
-        break;
-      case LOAD:
-        jobPb.setConfiguration(this.<LoadJobConfiguration>configuration().toPb());
-        break;
-      case QUERY:
-        jobPb.setConfiguration(this.<QueryJobConfiguration>configuration().toPb());
-        break;
-      default:
-        // never reached
-        throw new IllegalArgumentException("Job configuration is not supported");
-    }
+    jobPb.setConfiguration(configuration.toPb());
     return jobPb;
   }
 

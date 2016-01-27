@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,19 +19,18 @@ package com.google.gcloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationExtract;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery Extract Job configuration. An Extract Job exports a BigQuery table to Google
+ * Google BigQuery extract job configuration. An extract job exports a BigQuery table to Google
  * Cloud Storage. The extract destination provided as URIs that point to objects in Google Cloud
- * Storage.
+ * Storage. Extract job configurations have {@link JobConfiguration.Type#EXTRACT} type.
  */
-public final class ExtractJobConfiguration  implements JobConfiguration, Serializable {
+public final class ExtractJobConfiguration extends JobConfiguration {
 
   private static final long serialVersionUID = 4147749733166593761L;
 
@@ -42,7 +41,8 @@ public final class ExtractJobConfiguration  implements JobConfiguration, Seriali
   private final String format;
   private final String compression;
 
-  public static final class Builder {
+  public static final class Builder
+      extends JobConfiguration.Builder<ExtractJobConfiguration, Builder> {
 
     private TableId sourceTable;
     private List<String> destinationUris;
@@ -51,9 +51,12 @@ public final class ExtractJobConfiguration  implements JobConfiguration, Seriali
     private String format;
     private String compression;
 
-    private Builder() {}
+    private Builder() {
+      super(Type.EXTRACT);
+    }
 
     private Builder(ExtractJobConfiguration jobInfo) {
+      super(Type.EXTRACT);
       this.sourceTable = jobInfo.sourceTable;
       this.destinationUris = jobInfo.destinationUris;
       this.printHeader = jobInfo.printHeader;
@@ -63,6 +66,7 @@ public final class ExtractJobConfiguration  implements JobConfiguration, Seriali
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
+      super(Type.EXTRACT);
       JobConfigurationExtract extractConfigurationPb = configurationPb.getExtract();
       this.sourceTable = TableId.fromPb(extractConfigurationPb.getSourceTable());
       this.destinationUris = extractConfigurationPb.getDestinationUris();
@@ -134,17 +138,13 @@ public final class ExtractJobConfiguration  implements JobConfiguration, Seriali
   }
 
   private ExtractJobConfiguration(Builder builder) {
+    super(builder);
     this.sourceTable = checkNotNull(builder.sourceTable);
     this.destinationUris = checkNotNull(builder.destinationUris);
     this.printHeader = builder.printHeader;
     this.fieldDelimiter = builder.fieldDelimiter;
     this.format = builder.format;
     this.compression = builder.compression;
-  }
-
-  @Override
-  public Type type() {
-    return Type.EXTRACT;
   }
 
   /**
@@ -193,31 +193,30 @@ public final class ExtractJobConfiguration  implements JobConfiguration, Seriali
     return compression;
   }
 
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
 
   @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this)
+  protected ToStringHelper toStringHelper() {
+    return super.toStringHelper()
         .add("sourceTable", sourceTable)
         .add("destinationUris", destinationUris)
         .add("format", format)
         .add("printHeader", printHeader)
         .add("fieldDelimiter", fieldDelimiter)
-        .add("compression", compression)
-        .toString();
+        .add("compression", compression);
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ExtractJobConfiguration
-        && Objects.equals(toPb(), ((ExtractJobConfiguration) obj).toPb());
+    return obj instanceof ExtractJobConfiguration && baseEquals((ExtractJobConfiguration) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceTable, destinationUris, printHeader, fieldDelimiter,
+    return Objects.hash(baseHashCode(), sourceTable, destinationUris, printHeader, fieldDelimiter,
         format, compression);
   }
 
@@ -281,6 +280,7 @@ public final class ExtractJobConfiguration  implements JobConfiguration, Seriali
     return builder(sourceTable, destinationUris).format(format).build();
   }
 
+  @SuppressWarnings("unchecked")
   static ExtractJobConfiguration fromPb(
       com.google.api.services.bigquery.model.JobConfiguration confPb) {
     return new Builder(confPb).build();
