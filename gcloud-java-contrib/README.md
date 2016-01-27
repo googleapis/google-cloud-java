@@ -3,27 +3,24 @@ Google Cloud Java Contributions
 
 Packages that provide higher-level abstraction/functionality for common gcloud-java use cases.
 
-[//]: # (commented out because there isn't any code yet, so this won't work)
-[//]: #
-[//]: # (Quickstart)
-[//]: # (----------)
-[//]: # (If you are using Maven, add this to your pom.xml file)
-[//]: # (```xml)
-[//]: # (<dependency>)
-[//]: # (  <groupId>com.google.gcloud</groupId>)
-[//]: # (  <artifactId>gcloud-java-contrib</artifactId>)
-[//]: # (  <version>0.1.3</version>)
-[//]: # (</dependency>)
-[//]: # (```)
-[//]: # (If you are using Gradle, add this to your dependencies)
-[//]: # (```Groovy)
-[//]: # (compile 'com.google.gcloud:gcloud-java-contrib:0.1.3')
-[//]: # (```)
-[//]: # (If you are using SBT, add this to your dependencies)
-[//]: # (```Scala)
-[//]: # (libraryDependencies += "com.google.gcloud" % "gcloud-java-contrib" % "0.1.3")
-[//]: # (```)
-
+Quickstart
+----------
+If you are using Maven, add this to your pom.xml file
+```xml
+<dependency>
+  <groupId>com.google.gcloud</groupId>
+  <artifactId>gcloud-java-contrib</artifactId>
+  <version>0.1.3</version>
+</dependency>
+```
+If you are using Gradle, add this to your dependencies
+```Groovy
+compile 'com.google.gcloud:gcloud-java-contrib:0.1.3'
+```
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "com.google.gcloud" % "gcloud-java-contrib" % "0.1.3"
+```
 
 Java Versions
 -------------
