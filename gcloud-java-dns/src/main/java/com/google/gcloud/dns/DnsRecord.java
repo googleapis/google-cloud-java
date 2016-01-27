@@ -273,14 +273,14 @@ public class DnsRecord implements Serializable {
   }
 
   static DnsRecord fromPb(com.google.api.services.dns.model.ResourceRecordSet pb) {
-    Builder b = builder(pb.getName(), Type.valueOf(pb.getType()));
+    Builder builder = builder(pb.getName(), Type.valueOf(pb.getType()));
     if (pb.getRrdatas() != null) {
-      b.records(pb.getRrdatas());
+      builder.records(pb.getRrdatas());
     }
     if (pb.getTtl() != null) {
-      b.ttl(pb.getTtl());
+      builder.ttl(pb.getTtl());
     }
-    return b.build();
+    return builder.build();
   }
 
   @Override
