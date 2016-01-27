@@ -159,7 +159,7 @@ public class ChangeRequestTest {
   @Test
   public void testAddAddition() {
     try {
-      CHANGE.toBuilder().add(null).build();
+      CHANGE.toBuilder().add(null);
       fail("Should not be able to add null DnsRecord.");
     } catch (NullPointerException e) {
       // expected
@@ -171,7 +171,7 @@ public class ChangeRequestTest {
   @Test
   public void testAddDeletion() {
     try {
-      ChangeRequest clone = CHANGE.toBuilder().delete(null).build();
+      CHANGE.toBuilder().delete(null);
       fail("Should not be able to delete null DnsRecord.");
     } catch (NullPointerException e) {
       // expected
@@ -203,7 +203,6 @@ public class ChangeRequestTest {
   @Test
   public void testRemoveDeletion() {
     ChangeRequest clone = CHANGE.toBuilder().removeDeletion(RECORD3).build();
-    assertFalse(clone.deletions().contains(RECORD3));
     assertTrue(clone.deletions().isEmpty());
   }
 
@@ -215,17 +214,5 @@ public class ChangeRequestTest {
     assertNotNull(converted.startTimeMillis());
     assertEquals(change, converted.toPb());
     assertEquals(change.getStartTime(), converted.toPb().getStartTime());
-  }
-
-  @Test
-  public void testStatusTranslation() {
-    assertEquals(ChangeRequest.Status.DONE, ChangeRequest.Status.translate("done"));
-    assertEquals(ChangeRequest.Status.PENDING, ChangeRequest.Status.translate("pending"));
-    try {
-      ChangeRequest.Status.translate("another");
-      fail("Such a status does not exist.");
-    } catch (IllegalArgumentException e) {
-      // expected
-    }
   }
 }

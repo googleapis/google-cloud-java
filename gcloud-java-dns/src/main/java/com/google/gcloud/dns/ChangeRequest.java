@@ -16,7 +16,12 @@
 
 package com.google.gcloud.dns;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import com.google.api.services.dns.model.ResourceRecordSet;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 import org.joda.time.DateTime;
@@ -27,17 +32,29 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 /**
- * A class representing a change. A change is an atomic update to a collection of {@link DnsRecord}s
- * within a {@code ManagedZone}.
+ * A class representing an atomic update to a collection of {@link DnsRecord}s within a {@code
+ * ManagedZone}.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/changes">Google Cloud DNS documentation</a>
  */
 public class ChangeRequest implements Serializable {
 
-  private static final long serialVersionUID = 201601251649L;
+  private static final Function<ResourceRecordSet, DnsRecord> FROM_PB_FUNCTION =
+      new Function<com.google.api.services.dns.model.ResourceRecordSet, DnsRecord>() {
+        @Override
+        public DnsRecord apply(com.google.api.services.dns.model.ResourceRecordSet pb) {
+          return DnsRecord.fromPb(pb);
+        }
+      };
+  private static final Function<DnsRecord, ResourceRecordSet> TO_PB_FUNCTION =
+      new Function<DnsRecord, ResourceRecordSet>() {
+        @Override
+        public com.google.api.services.dns.model.ResourceRecordSet apply(DnsRecord error) {
+          return error.toPb();
+        }
+      };
+  private static final long serialVersionUID = -8703939628990291682L;
   private final List<DnsRecord> additions;
   private final List<DnsRecord> deletions;
   private final String id;
@@ -51,24 +68,8 @@ public class ChangeRequest implements Serializable {
    * documentation</a>
    */
   public enum Status {
-    PENDING("pending"),
-    DONE("done");
-
-    private final String status;
-
-    Status(String status) {
-      this.status = status;
-    }
-
-    static Status translate(String status) {
-      if ("pending".equals(status)) {
-        return PENDING;
-      } else if ("done".equals(status)) {
-        return DONE;
-      } else {
-        throw new IllegalArgumentException("Such a status is unknown.");
-      }
-    }
+    PENDING,
+    DONE
   }
 
   /**
@@ -101,10 +102,19 @@ public class ChangeRequest implements Serializable {
       this.additions = Lists.newLinkedList(checkNotNull(additions));
       return this;
     }
+    
+    /**
+     * Sets a collection of {@link DnsRecord}s which are to be deleted from the zone upon executing
+     * this {@code ChangeRequest}.
+     */
+    public Builder deletions(List<DnsRecord> deletions) {
+      this.deletions = Lists.newLinkedList(checkNotNull(deletions));
+      return this;
+    }
 
     /**
-     * Adds a {@link DnsRecord} which to be <strong>added</strong> to the zone upon executing this
-     * {@code ChangeRequest}.
+     * Adds a {@link DnsRecord} to be <strong>added</strong> to the zone upon executing this {@code
+     * ChangeRequest}.
      */
     public Builder add(DnsRecord record) {
       this.additions.add(checkNotNull(record));
@@ -112,7 +122,7 @@ public class ChangeRequest implements Serializable {
     }
 
     /**
-     * Adds a {@link DnsRecord} which to be <strong>deleted</strong> to the zone upon executing this
+     * Adds a {@link DnsRecord} to be <strong>deleted</strong> to the zone upon executing this
      * {@code ChangeRequest}.
      */
     public Builder delete(DnsRecord record) {
@@ -139,7 +149,7 @@ public class ChangeRequest implements Serializable {
     }
 
     /**
-     * Removes a single {@link DnsRecord} from the collection of of records to be
+     * Removes a single {@link DnsRecord} from the collection of records to be
      * <strong>added</strong> to the zone upon executing this {@code ChangeRequest}.
      */
     public Builder removeAddition(DnsRecord record) {
@@ -148,20 +158,11 @@ public class ChangeRequest implements Serializable {
     }
 
     /**
-     * Removes a single {@link DnsRecord} from the collection of of records to be
+     * Removes a single {@link DnsRecord} from the collection of records to be
      * <strong>deleted</strong> from the zone upon executing this {@code ChangeRequest}.
      */
     public Builder removeDeletion(DnsRecord record) {
       this.deletions.remove(record);
-      return this;
-    }
-
-    /**
-     * Sets a collection of {@link DnsRecord}s which are to be deleted from the zone upon executing
-     * this {@code ChangeRequest}.
-     */
-    public Builder deletions(List<DnsRecord> deletions) {
-      this.deletions = Lists.newLinkedList(checkNotNull(deletions));
       return this;
     }
 
@@ -199,8 +200,8 @@ public class ChangeRequest implements Serializable {
   }
 
   private ChangeRequest(Builder builder) {
-    this.additions = builder.additions;
-    this.deletions = builder.deletions;
+    this.additions = ImmutableList.copyOf(builder.additions);
+    this.deletions = ImmutableList.copyOf(builder.deletions);
     this.id = builder.id;
     this.startTimeMillis = builder.startTimeMillis;
     this.status = builder.status;
@@ -221,7 +222,7 @@ public class ChangeRequest implements Serializable {
   }
 
   /**
-   * Returns the list of {@link DnsRecord}s to be added to the zone upon executing this {@code
+   * Returns the list of {@link DnsRecord}s to be added to the zone upon submitting this {@code
    * ChangeRequest}.
    */
   public List<DnsRecord> additions() {
@@ -229,7 +230,7 @@ public class ChangeRequest implements Serializable {
   }
 
   /**
-   * Returns the list of {@link DnsRecord}s to be deleted from the zone upon executing this {@code
+   * Returns the list of {@link DnsRecord}s to be deleted from the zone upon submitting this {@code
    * ChangeRequest}.
    */
   public List<DnsRecord> deletions() {
@@ -270,56 +271,39 @@ public class ChangeRequest implements Serializable {
     }
     // set status
     if (status() != null) {
-      pb.setStatus(status().status);
+      pb.setStatus(status().name().toLowerCase());
     }
     // set a list of additions
-    if (additions() != null) {
-      LinkedList<com.google.api.services.dns.model.ResourceRecordSet> additionsPb =
-          new LinkedList<>();
-      for (DnsRecord addition : additions()) {
-        additionsPb.add(addition.toPb());
-      }
-      pb.setAdditions(additionsPb);
-    }
+    pb.setAdditions(Lists.transform(additions(), TO_PB_FUNCTION));
     // set a list of deletions
-    if (deletions() != null) {
-      LinkedList<com.google.api.services.dns.model.ResourceRecordSet> deletionsPb =
-          new LinkedList<>();
-      for (DnsRecord deletion : deletions()) {
-        deletionsPb.add(deletion.toPb());
-      }
-      pb.setDeletions(deletionsPb);
-    }
+    pb.setDeletions(Lists.transform(deletions(), TO_PB_FUNCTION));
     return pb;
   }
 
   static ChangeRequest fromPb(com.google.api.services.dns.model.Change pb) {
-    Builder b = builder();
+    Builder builder = builder();
     if (pb.getId() != null) {
-      b.id(pb.getId());
+      builder.id(pb.getId());
     }
     if (pb.getStartTime() != null) {
-      b.startTimeMillis(DateTime.parse(pb.getStartTime()).getMillis());
+      builder.startTimeMillis(DateTime.parse(pb.getStartTime()).getMillis());
     }
     if (pb.getStatus() != null) {
-      b.status(ChangeRequest.Status.translate(pb.getStatus()));
+      // we are assuming that status indicated in pb is a lower case version of the enum name
+      builder.status(ChangeRequest.Status.valueOf(pb.getStatus().toUpperCase()));
     }
     if (pb.getDeletions() != null) {
-      for (com.google.api.services.dns.model.ResourceRecordSet deletion : pb.getDeletions()) {
-        b.delete(DnsRecord.fromPb(deletion));
-      }
+      builder.deletions(Lists.transform(pb.getDeletions(), FROM_PB_FUNCTION));
     }
     if (pb.getAdditions() != null) {
-      for (com.google.api.services.dns.model.ResourceRecordSet addition : pb.getAdditions()) {
-        b.add(DnsRecord.fromPb(addition));
-      }
+      builder.additions(Lists.transform(pb.getAdditions(), FROM_PB_FUNCTION));
     }
-    return b.build();
+    return builder.build();
   }
 
   @Override
-  public boolean equals(Object o) {
-    return (o instanceof ChangeRequest) && this.toPb().equals(((ChangeRequest) o).toPb());
+  public boolean equals(Object other) {
+    return (other instanceof ChangeRequest) && toPb().equals(((ChangeRequest) other).toPb());
   }
 
   @Override
