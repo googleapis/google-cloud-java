@@ -30,7 +30,7 @@ public final class EntityQuery extends StructuredQuery<Entity> {
   private static final long serialVersionUID = 2990565454831019471L;
 
   /**
-   * A {@code EntityQuery} builder for queries that return Entity results.
+   * A {@code EntityQuery} builder for queries that return {@link Entity} results.
    */
   public static final class Builder extends StructuredQuery.BuilderImpl<Entity, Builder> {
 

@@ -155,22 +155,11 @@ public class StructuredQueryTest {
 
   @Test
   public void testToBuilder() {
-    StructuredQuery<Entity> entityQuery =
-    Query.entityQueryBuilder().namespace("n1").kind("k1").build();
-    Query<Entity> entityQueryResult = entityQuery.toBuilder().build();
-    StructuredQuery<Key> keyQuery = Query.keyQueryBuilder().namespace("n2").kind("k2").build();
-    Query<Key> keyQueryResult = keyQuery.toBuilder().build();
-    StructuredQuery<ProjectionEntity> projectionEntityQuery = Query.projectionEntityQueryBuilder()
-        .kind("k3")
-        .projection(Projection.property("p1"), Projection.property("p2"))
-        .build();
-    Query<ProjectionEntity> projectionEntityQueryResult = projectionEntityQuery.toBuilder().build();
-    assertEquals(entityQuery, entityQueryResult);
-    assertTrue(entityQueryResult instanceof EntityQuery);
-    assertEquals(keyQuery, keyQueryResult);
-    assertTrue(keyQueryResult instanceof KeyQuery);
-    assertEquals(projectionEntityQuery, projectionEntityQueryResult);
-    assertTrue(projectionEntityQueryResult instanceof ProjectionEntityQuery);
+    List<StructuredQuery<?>> queries =
+        ImmutableList.<StructuredQuery<?>>of(ENTITY_QUERY, KEY_QUERY, PROJECTION_QUERY);
+    for (StructuredQuery<?> query : queries) {
+      assertEquals(query, query.toBuilder().build());
+    }
   }
 
   @Test

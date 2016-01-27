@@ -28,7 +28,8 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
   private static final long serialVersionUID = 5488451194542425391L;
 
   /**
-   * A {@code ProjectionEntityQuery} builder for queries that return Key results.
+   * A {@code ProjectionEntityQuery} builder for queries that return {@link ProjectionEntity}
+   * results.
    */
   public static final class Builder extends StructuredQuery.BuilderImpl<ProjectionEntity, Builder> {
 
@@ -43,6 +44,7 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
     /**
      * Clears the projection clause.
      */
+    @Override
     public Builder clearProjection() {
       super.clearProjection();
       return this;
@@ -51,6 +53,7 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
     /**
      * Sets the query's projection clause (clearing any previously specified Projection settings).
      */
+    @Override
     public Builder projection(Projection projection, Projection... others) {
       super.projection(projection, others);
       return this;
@@ -59,6 +62,7 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
     /**
      * Adds one or more projections to the existing projection clause.
      */
+    @Override
     public Builder addProjection(Projection projection, Projection... others) {
       super.addProjection(projection, others);
       return this;
@@ -67,6 +71,7 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
     /**
      * Clears the group by clause.
      */
+    @Override
     public Builder clearGroupBy() {
       super.clearGroupBy();
       return this;
@@ -75,6 +80,7 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
     /**
      * Sets the query's group by clause (clearing any previously specified GroupBy settings).
      */
+    @Override
     public Builder groupBy(String property, String... others) {
       super.groupBy(property, others);
       return this;
@@ -83,6 +89,7 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
     /**
      * Adds one or more properties to the existing group by clause.
      */
+    @Override
     public Builder addGroupBy(String property, String... others) {
       super.addGroupBy(property, others);
       return this;

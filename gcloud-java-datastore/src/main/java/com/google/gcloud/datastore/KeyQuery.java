@@ -30,7 +30,7 @@ public final class KeyQuery extends StructuredQuery<Key> {
   private static final long serialVersionUID = -746768461459070045L;
 
   /**
-   * A {@code KeyQuery} builder for queries that return Key results.
+   * A {@code KeyQuery} builder for queries that return {@link Key} results.
    */
   public static final class Builder extends StructuredQuery.BuilderImpl<Key, Builder> {
 
