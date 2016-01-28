@@ -89,22 +89,22 @@ public class ProjectInfo implements Serializable {
     }
 
     /**
-     * Returns the maximum allowed number of {@link DnsRecord}s to add per {@code ChangesRequest}.
+     * Returns the maximum allowed number of {@link DnsRecord}s to add per {@link ChangeRequest}.
      */
     public int rrsetAdditionsPerChange() {
       return rrsetAdditionsPerChange;
     }
 
     /**
-     * Returns the maximum allowed number of {@link DnsRecord}s to delete per {@code
-     * ChangesRequest}.
+     * Returns the maximum allowed number of {@link DnsRecord}s to delete per {@link
+     * ChangeRequest}.
      */
     public int rrsetDeletionsPerChange() {
       return rrsetDeletionsPerChange;
     }
 
     /**
-     * Returns the maximum allowed number of {@link DnsRecord}s per {@code ManagedZone} in the
+     * Returns the maximum allowed number of {@link DnsRecord}s per {@link ManagedZoneInfo} in the
      * project.
      */
     public int rrsetsPerManagedZone() {
