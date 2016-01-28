@@ -1236,7 +1236,8 @@ public interface Storage extends Service<StorageOptions> {
    * Create a new blob. Direct upload is used to upload {@code content}. For large content,
    * {@link #writer} is recommended as it uses resumable upload. By default any md5 and crc32c
    * values in the given {@code blobInfo} are ignored unless requested via the
-   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
+   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options. The given
+   * input stream is closed upon success.
    *
    * @return a complete blob information
    * @throws StorageException upon failure
