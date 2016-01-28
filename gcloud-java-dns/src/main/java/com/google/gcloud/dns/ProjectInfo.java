@@ -26,7 +26,7 @@ import java.util.Objects;
 
 /**
  * The class provides the Google Cloud DNS information associated with this project. A project is a
- * top level container for resources including {@code ManagedZone}s. Projects can be created only in
+ * top level container for resources including {@code Zone}s. Projects can be created only in
  * the APIs console.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/projects">Google Cloud DNS documentation</a>
@@ -75,7 +75,7 @@ public class ProjectInfo implements Serializable {
     }
 
     /**
-     * Returns the maximum allowed number of managed zones in the project.
+     * Returns the maximum allowed number of zones in the project.
      */
     public int zones() {
       return zones;
@@ -104,7 +104,7 @@ public class ProjectInfo implements Serializable {
     }
 
     /**
-     * Returns the maximum allowed number of {@link DnsRecord}s per {@link ManagedZoneInfo} in the
+     * Returns the maximum allowed number of {@link DnsRecord}s per {@link ZoneInfo} in the
      * project.
      */
     public int rrsetsPerManagedZone() {

@@ -33,8 +33,8 @@ import java.util.Objects;
  *
  * <p>A {@code DnsRecord} is the unit of data that will be returned by the DNS servers upon a DNS
  * request for a specific domain. The {@code DnsRecord} holds the current state of the DNS records
- * that make up a managed zone. You can read the records but you cannot modify them directly.
- * Rather, you edit the records in a managed zone by creating a ChangeRequest.
+ * that make up a zone. You can read the records but you cannot modify them directly.
+ * Rather, you edit the records in a zone by creating a ChangeRequest.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets">Google Cloud DNS
  * documentation</a>
