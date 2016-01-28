@@ -53,12 +53,12 @@ public class ProjectInfoTest {
 
   @Test
   public void testQuotaConstructor() {
-    assertEquals(Integer.valueOf(1), QUOTA.zones());
-    assertEquals(Integer.valueOf(2), QUOTA.resourceRecordsPerRrset());
-    assertEquals(Integer.valueOf(3), QUOTA.rrsetAdditionsPerChange());
-    assertEquals(Integer.valueOf(4), QUOTA.rrsetDeletionsPerChange());
-    assertEquals(Integer.valueOf(5), QUOTA.rrsetsPerManagedZone());
-    assertEquals(Integer.valueOf(6), QUOTA.totalRrdataSizePerChange());
+    assertEquals(1, QUOTA.zones());
+    assertEquals(2, QUOTA.resourceRecordsPerRrset());
+    assertEquals(3, QUOTA.rrsetAdditionsPerChange());
+    assertEquals(4, QUOTA.rrsetDeletionsPerChange());
+    assertEquals(5, QUOTA.rrsetsPerManagedZone());
+    assertEquals(6, QUOTA.totalRrdataSizePerChange());
   }
 
   @Test

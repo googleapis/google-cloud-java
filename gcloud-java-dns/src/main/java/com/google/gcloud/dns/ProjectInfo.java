@@ -25,9 +25,9 @@ import java.math.BigInteger;
 import java.util.Objects;
 
 /**
- * The class that encapsulates information about a project in Google Cloud DNS. A project is a top
- * level container for resources including {@code ManagedZone}s. Projects can be created only in the
- * APIs console.
+ * The class provides the Google Cloud DNS information associated with this project. A project is a
+ * top level container for resources including {@code ManagedZone}s. Projects can be created only in
+ * the APIs console.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/projects">Google Cloud DNS documentation</a>
  */
@@ -41,16 +41,17 @@ public class ProjectInfo implements Serializable {
   /**
    * This class represents quotas assigned to the {@code ProjectInfo}.
    *
-   * @see <a href="https://cloud.google.com/dns/api/v1/projects">Google Cloud DNS documentation</a>
+   * @see <a href="https://cloud.google.com/dns/api/v1/projects#quota">Google Cloud DNS
+   * documentation</a>
    */
   public static class Quota {
 
-    private Integer zones;
-    private Integer resourceRecordsPerRrset;
-    private Integer rrsetAdditionsPerChange;
-    private Integer rrsetDeletionsPerChange;
-    private Integer rrsetsPerManagedZone;
-    private Integer totalRrdataSizePerChange;
+    private final int zones;
+    private final int resourceRecordsPerRrset;
+    private final int rrsetAdditionsPerChange;
+    private final int rrsetDeletionsPerChange;
+    private final int rrsetsPerManagedZone;
+    private final int totalRrdataSizePerChange;
 
     /**
      * Creates an instance of {@code Quota}.
@@ -59,38 +60,38 @@ public class ProjectInfo implements Serializable {
      * allow for specifying options, quota is an "all-or-nothing object" and we do not need a
      * builder.
      */
-    Quota(Integer zones,
-          Integer resourceRecordsPerRrset,
-          Integer rrsetAdditionsPerChange,
-          Integer rrsetDeletionsPerChange,
-          Integer rrsetsPerManagedZone,
-          Integer totalRrdataSizePerChange) {
-      this.zones = checkNotNull(zones);
-      this.resourceRecordsPerRrset = checkNotNull(resourceRecordsPerRrset);
-      this.rrsetAdditionsPerChange = checkNotNull(rrsetAdditionsPerChange);
-      this.rrsetDeletionsPerChange = checkNotNull(rrsetDeletionsPerChange);
-      this.rrsetsPerManagedZone = checkNotNull(rrsetsPerManagedZone);
-      this.totalRrdataSizePerChange = checkNotNull(totalRrdataSizePerChange);
+    Quota(int zones,
+          int resourceRecordsPerRrset,
+          int rrsetAdditionsPerChange,
+          int rrsetDeletionsPerChange,
+          int rrsetsPerManagedZone,
+          int totalRrdataSizePerChange) {
+      this.zones = zones;
+      this.resourceRecordsPerRrset = resourceRecordsPerRrset;
+      this.rrsetAdditionsPerChange = rrsetAdditionsPerChange;
+      this.rrsetDeletionsPerChange = rrsetDeletionsPerChange;
+      this.rrsetsPerManagedZone = rrsetsPerManagedZone;
+      this.totalRrdataSizePerChange = totalRrdataSizePerChange;
     }
 
     /**
      * Returns the maximum allowed number of managed zones in the project.
      */
-    public Integer zones() {
+    public int zones() {
       return zones;
     }
 
     /**
      * Returns the maximum allowed number of records per {@link DnsRecord}.
      */
-    public Integer resourceRecordsPerRrset() {
+    public int resourceRecordsPerRrset() {
       return resourceRecordsPerRrset;
     }
 
     /**
      * Returns the maximum allowed number of {@link DnsRecord}s to add per {@code ChangesRequest}.
      */
-    public Integer rrsetAdditionsPerChange() {
+    public int rrsetAdditionsPerChange() {
       return rrsetAdditionsPerChange;
     }
 
@@ -98,7 +99,7 @@ public class ProjectInfo implements Serializable {
      * Returns the maximum allowed number of {@link DnsRecord}s to delete per {@code
      * ChangesRequest}.
      */
-    public Integer rrsetDeletionsPerChange() {
+    public int rrsetDeletionsPerChange() {
       return rrsetDeletionsPerChange;
     }
 
@@ -106,14 +107,14 @@ public class ProjectInfo implements Serializable {
      * Returns the maximum allowed number of {@link DnsRecord}s per {@code ManagedZone} in the
      * project.
      */
-    public Integer rrsetsPerManagedZone() {
+    public int rrsetsPerManagedZone() {
       return rrsetsPerManagedZone;
     }
 
     /**
      * Returns the maximum allowed size for total records in one ChangesRequest in bytes.
      */
-    public Integer totalRrdataSizePerChange() {
+    public int totalRrdataSizePerChange() {
       return totalRrdataSizePerChange;
     }
 
@@ -220,32 +221,32 @@ public class ProjectInfo implements Serializable {
   }
 
   /**
-   * Returns the user-assigned unique identifier for the project.
-   */
-  public String id() {
-    return id;
-  }
-
-  /**
-   * Returns the unique numeric identifier for the project.
-   */
-  public BigInteger number() {
-    return number;
-  }
-
-  /**
    * Returns the {@code Quota} object which contains quotas assigned to this project.
    */
   public Quota quota() {
     return quota;
   }
 
+  /**
+   * Returns project number. For internal use only.
+   */
+  BigInteger number() {
+    return number;
+  }
+
+  /**
+   * Returns project id. For internal use only.
+   */
+  String id() {
+    return id;
+  }
+
   com.google.api.services.dns.model.Project toPb() {
     com.google.api.services.dns.model.Project pb = new com.google.api.services.dns.model.Project();
-    pb.setId(id());
-    pb.setNumber(number());
-    if (this.quota() != null) {
-      pb.setQuota(quota().toPb());
+    pb.setId(id);
+    pb.setNumber(number);
+    if (this.quota != null) {
+      pb.setQuota(quota.toPb());
     }
     return pb;
   }
@@ -266,7 +267,7 @@ public class ProjectInfo implements Serializable {
 
   @Override
   public boolean equals(Object other) {
-    return (other instanceof ProjectInfo) && this.toPb().equals(((ProjectInfo) other).toPb());
+    return (other instanceof ProjectInfo) && toPb().equals(((ProjectInfo) other).toPb());
   }
 
   @Override
