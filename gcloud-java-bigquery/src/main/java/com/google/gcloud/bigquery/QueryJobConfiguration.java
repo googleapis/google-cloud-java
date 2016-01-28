@@ -72,7 +72,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Boolean flattenResults;
   private final Boolean dryRun;
 
-  public static final class Builder extends JobConfiguration.Builder<QueryJobConfiguration, Builder> {
+  public static final class Builder
+      extends JobConfiguration.Builder<QueryJobConfiguration, Builder> {
 
     private String query;
     private TableId destinationTable;

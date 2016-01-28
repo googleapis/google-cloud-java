@@ -134,7 +134,7 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
       return this;
     }
 
-   @Override
+    @Override
     public Builder formatOptions(FormatOptions formatOptions) {
       this.formatOptions = formatOptions;
       return this;
