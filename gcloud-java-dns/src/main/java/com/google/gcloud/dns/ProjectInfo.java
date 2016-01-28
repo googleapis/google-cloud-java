@@ -50,7 +50,7 @@ public class ProjectInfo implements Serializable {
     private final int resourceRecordsPerRrset;
     private final int rrsetAdditionsPerChange;
     private final int rrsetDeletionsPerChange;
-    private final int rrsetsPerManagedZone;
+    private final int rrsetsPerZone;
     private final int totalRrdataSizePerChange;
 
     /**
@@ -64,13 +64,13 @@ public class ProjectInfo implements Serializable {
           int resourceRecordsPerRrset,
           int rrsetAdditionsPerChange,
           int rrsetDeletionsPerChange,
-          int rrsetsPerManagedZone,
+          int rrsetsPerZone,
           int totalRrdataSizePerChange) {
       this.zones = zones;
       this.resourceRecordsPerRrset = resourceRecordsPerRrset;
       this.rrsetAdditionsPerChange = rrsetAdditionsPerChange;
       this.rrsetDeletionsPerChange = rrsetDeletionsPerChange;
-      this.rrsetsPerManagedZone = rrsetsPerManagedZone;
+      this.rrsetsPerZone = rrsetsPerZone;
       this.totalRrdataSizePerChange = totalRrdataSizePerChange;
     }
 
@@ -107,8 +107,8 @@ public class ProjectInfo implements Serializable {
      * Returns the maximum allowed number of {@link DnsRecord}s per {@link ZoneInfo} in the
      * project.
      */
-    public int rrsetsPerManagedZone() {
-      return rrsetsPerManagedZone;
+    public int rrsetsPerZone() {
+      return rrsetsPerZone;
     }
 
     /**
@@ -126,7 +126,7 @@ public class ProjectInfo implements Serializable {
     @Override
     public int hashCode() {
       return Objects.hash(zones, resourceRecordsPerRrset, rrsetAdditionsPerChange,
-          rrsetDeletionsPerChange, rrsetsPerManagedZone, totalRrdataSizePerChange);
+          rrsetDeletionsPerChange, rrsetsPerZone, totalRrdataSizePerChange);
     }
 
     com.google.api.services.dns.model.Quota toPb() {
@@ -135,7 +135,7 @@ public class ProjectInfo implements Serializable {
       pb.setResourceRecordsPerRrset(resourceRecordsPerRrset);
       pb.setRrsetAdditionsPerChange(rrsetAdditionsPerChange);
       pb.setRrsetDeletionsPerChange(rrsetDeletionsPerChange);
-      pb.setRrsetsPerManagedZone(rrsetsPerManagedZone);
+      pb.setRrsetsPerManagedZone(rrsetsPerZone);
       pb.setTotalRrdataSizePerChange(totalRrdataSizePerChange);
       return pb;
     }
@@ -158,7 +158,7 @@ public class ProjectInfo implements Serializable {
           .add("resourceRecordsPerRrset", resourceRecordsPerRrset)
           .add("rrsetAdditionsPerChange", rrsetAdditionsPerChange)
           .add("rrsetDeletionsPerChange", rrsetDeletionsPerChange)
-          .add("rrsetsPerManagedZone", rrsetsPerManagedZone)
+          .add("rrsetsPerZone", rrsetsPerZone)
           .add("totalRrdataSizePerChange", totalRrdataSizePerChange)
           .toString();
     }

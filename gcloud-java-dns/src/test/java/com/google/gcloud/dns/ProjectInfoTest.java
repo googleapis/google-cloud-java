@@ -57,7 +57,7 @@ public class ProjectInfoTest {
     assertEquals(2, QUOTA.resourceRecordsPerRrset());
     assertEquals(3, QUOTA.rrsetAdditionsPerChange());
     assertEquals(4, QUOTA.rrsetDeletionsPerChange());
-    assertEquals(5, QUOTA.rrsetsPerManagedZone());
+    assertEquals(5, QUOTA.rrsetsPerZone());
     assertEquals(6, QUOTA.totalRrdataSizePerChange());
   }
 
@@ -101,11 +101,11 @@ public class ProjectInfoTest {
   public void testToAndFromPb() {
     assertEquals(PROJECT_INFO, ProjectInfo.fromPb(PROJECT_INFO.toPb()));
     ProjectInfo partial = ProjectInfo.builder().id(ID).build();
-    assertEquals(partial, PROJECT_INFO.fromPb(partial.toPb()));
+    assertEquals(partial, ProjectInfo.fromPb(partial.toPb()));
     partial = ProjectInfo.builder().number(NUMBER).build();
-    assertEquals(partial, PROJECT_INFO.fromPb(partial.toPb()));
+    assertEquals(partial, ProjectInfo.fromPb(partial.toPb()));
     partial = ProjectInfo.builder().quota(QUOTA).build();
-    assertEquals(partial, PROJECT_INFO.fromPb(partial.toPb()));
+    assertEquals(partial, ProjectInfo.fromPb(partial.toPb()));
     assertNotEquals(PROJECT_INFO, partial);
   }
 

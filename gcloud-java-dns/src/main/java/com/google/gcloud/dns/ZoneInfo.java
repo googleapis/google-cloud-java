@@ -207,7 +207,7 @@ public class ZoneInfo implements Serializable {
   }
 
   /**
-   * Returns the time when this time that this zone was created on the server.
+   * Returns the time when this zone was created on the server.
    */
   public Long creationTimeMillis() {
     return creationTimeMillis;

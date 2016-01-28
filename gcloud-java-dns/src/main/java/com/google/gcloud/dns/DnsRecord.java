@@ -22,6 +22,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.common.primitives.Ints;
 
 import java.io.Serializable;
 import java.util.LinkedList;
@@ -187,13 +188,9 @@ public class DnsRecord implements Serializable {
       checkArgument(duration >= 0,
           "Duration cannot be negative. The supplied value was %s.", duration);
       checkNotNull(unit);
-      // convert to seconds and check that we are not overflowing int
-      // we cannot do that because pb does not support it
+      // we cannot have long because pb does not support it
       long converted = unit.toSeconds(duration);
-      checkArgument(converted <= Integer.MAX_VALUE,
-          "The duration converted to seconds is out of range of int. The value converts to %s sec.",
-          converted);
-      ttl = (int) converted;
+      ttl = Ints.checkedCast(converted);
       return this;
     }
 
