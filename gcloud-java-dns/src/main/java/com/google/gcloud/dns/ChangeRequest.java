@@ -34,7 +34,7 @@ import java.util.Objects;
 
 /**
  * A class representing an atomic update to a collection of {@link DnsRecord}s within a {@code
- * ManagedZone}.
+ * Zone}.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/changes">Google Cloud DNS documentation</a>
  */
@@ -102,7 +102,7 @@ public class ChangeRequest implements Serializable {
       this.additions = Lists.newLinkedList(checkNotNull(additions));
       return this;
     }
-    
+
     /**
      * Sets a collection of {@link DnsRecord}s which are to be deleted from the zone upon executing
      * this {@code ChangeRequest}.

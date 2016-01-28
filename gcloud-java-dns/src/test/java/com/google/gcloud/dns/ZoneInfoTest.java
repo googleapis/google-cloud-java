@@ -30,7 +30,7 @@ import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ManagedZoneInfoTest {
+public class ZoneInfoTest {
 
   private static final String NAME = "mz-example.com";
   private static final BigInteger ID = BigInteger.valueOf(123L);
@@ -42,7 +42,7 @@ public class ManagedZoneInfoTest {
   private static final String NS2 = "name server 2";
   private static final String NS3 = "name server 3";
   private static final List<String> NAME_SERVERS = ImmutableList.of(NS1, NS2, NS3);
-  private static final ManagedZoneInfo INFO = ManagedZoneInfo.builder(NAME, ID)
+  private static final ZoneInfo INFO = ZoneInfo.builder(NAME, ID)
       .creationTimeMillis(CREATION_TIME_MILLIS)
       .dnsName(DNS_NAME)
       .description(DESCRIPTION)
@@ -52,7 +52,7 @@ public class ManagedZoneInfoTest {
 
   @Test
   public void testDefaultBuilders() {
-    ManagedZoneInfo withName = ManagedZoneInfo.builder(NAME).build();
+    ZoneInfo withName = ZoneInfo.builder(NAME).build();
     assertTrue(withName.nameServers().isEmpty());
     assertEquals(NAME, withName.name());
     assertNull(withName.id());
@@ -60,7 +60,7 @@ public class ManagedZoneInfoTest {
     assertNull(withName.nameServerSet());
     assertNull(withName.description());
     assertNull(withName.dnsName());
-    ManagedZoneInfo withId = ManagedZoneInfo.builder(ID).build();
+    ZoneInfo withId = ZoneInfo.builder(ID).build();
     assertTrue(withId.nameServers().isEmpty());
     assertEquals(ID, withId.id());
     assertNull(withId.name());
@@ -68,7 +68,7 @@ public class ManagedZoneInfoTest {
     assertNull(withId.nameServerSet());
     assertNull(withId.description());
     assertNull(withId.dnsName());
-    ManagedZoneInfo withBoth = ManagedZoneInfo.builder(NAME, ID).build();
+    ZoneInfo withBoth = ZoneInfo.builder(NAME, ID).build();
     assertTrue(withBoth.nameServers().isEmpty());
     assertEquals(ID, withBoth.id());
     assertEquals(NAME, withBoth.name());
@@ -94,7 +94,7 @@ public class ManagedZoneInfoTest {
 
   @Test
   public void testEqualsAndNotEquals() {
-    ManagedZoneInfo clone = INFO.toBuilder().build();
+    ZoneInfo clone = INFO.toBuilder().build();
     assertEquals(INFO, clone);
     List<String> moreServers = Lists.newLinkedList(NAME_SERVERS);
     moreServers.add(NS1);
@@ -118,55 +118,55 @@ public class ManagedZoneInfoTest {
   @Test
   public void testSameHashCodeOnEquals() {
     int hash = INFO.hashCode();
-    ManagedZoneInfo clone = INFO.toBuilder().build();
+    ZoneInfo clone = INFO.toBuilder().build();
     assertEquals(clone.hashCode(), hash);
   }
 
   @Test
   public void testToBuilder() {
     assertEquals(INFO, INFO.toBuilder().build());
-    ManagedZoneInfo partial = ManagedZoneInfo.builder(NAME).build();
+    ZoneInfo partial = ZoneInfo.builder(NAME).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ManagedZoneInfo.builder(ID).build();
+    partial = ZoneInfo.builder(ID).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ManagedZoneInfo.builder(NAME).description(DESCRIPTION).build();
+    partial = ZoneInfo.builder(NAME).description(DESCRIPTION).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ManagedZoneInfo.builder(NAME).dnsName(DNS_NAME).build();
+    partial = ZoneInfo.builder(NAME).dnsName(DNS_NAME).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ManagedZoneInfo.builder(NAME).creationTimeMillis(CREATION_TIME_MILLIS).build();
+    partial = ZoneInfo.builder(NAME).creationTimeMillis(CREATION_TIME_MILLIS).build();
     assertEquals(partial, partial.toBuilder().build());
     List<String> nameServers = new LinkedList<>();
     nameServers.add(NS1);
-    partial = ManagedZoneInfo.builder(NAME).nameServers(nameServers).build();
+    partial = ZoneInfo.builder(NAME).nameServers(nameServers).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ManagedZoneInfo.builder(NAME).nameServerSet(NAME_SERVER_SET).build();
+    partial = ZoneInfo.builder(NAME).nameServerSet(NAME_SERVER_SET).build();
     assertEquals(partial, partial.toBuilder().build());
   }
 
   @Test
   public void testToAndFromPb() {
-    assertEquals(INFO, ManagedZoneInfo.fromPb(INFO.toPb()));
-    ManagedZoneInfo partial = ManagedZoneInfo.builder(NAME).build();
-    assertEquals(partial, ManagedZoneInfo.fromPb(partial.toPb()));
-    partial = ManagedZoneInfo.builder(ID).build();
-    assertEquals(partial, ManagedZoneInfo.fromPb(partial.toPb()));
-    partial = ManagedZoneInfo.builder(NAME).description(DESCRIPTION).build();
-    assertEquals(partial, ManagedZoneInfo.fromPb(partial.toPb()));
-    partial = ManagedZoneInfo.builder(NAME).dnsName(DNS_NAME).build();
-    assertEquals(partial, ManagedZoneInfo.fromPb(partial.toPb()));
-    partial = ManagedZoneInfo.builder(NAME).creationTimeMillis(CREATION_TIME_MILLIS).build();
-    assertEquals(partial, ManagedZoneInfo.fromPb(partial.toPb()));
+    assertEquals(INFO, ZoneInfo.fromPb(INFO.toPb()));
+    ZoneInfo partial = ZoneInfo.builder(NAME).build();
+    assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
+    partial = ZoneInfo.builder(ID).build();
+    assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
+    partial = ZoneInfo.builder(NAME).description(DESCRIPTION).build();
+    assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
+    partial = ZoneInfo.builder(NAME).dnsName(DNS_NAME).build();
+    assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
+    partial = ZoneInfo.builder(NAME).creationTimeMillis(CREATION_TIME_MILLIS).build();
+    assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
     List<String> nameServers = new LinkedList<>();
     nameServers.add(NS1);
-    partial = ManagedZoneInfo.builder(NAME).nameServers(nameServers).build();
-    assertEquals(partial, ManagedZoneInfo.fromPb(partial.toPb()));
-    partial = ManagedZoneInfo.builder(NAME).nameServerSet(NAME_SERVER_SET).build();
-    assertEquals(partial, ManagedZoneInfo.fromPb(partial.toPb()));
+    partial = ZoneInfo.builder(NAME).nameServers(nameServers).build();
+    assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
+    partial = ZoneInfo.builder(NAME).nameServerSet(NAME_SERVER_SET).build();
+    assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
   }
 
   @Test
   public void testEmptyNameServers() {
-    ManagedZoneInfo clone = INFO.toBuilder().nameServers(new LinkedList<String>()).build();
+    ZoneInfo clone = INFO.toBuilder().nameServers(new LinkedList<String>()).build();
     assertTrue(clone.nameServers().isEmpty());
     clone.toPb(); // test that this is allowed
   }
@@ -175,7 +175,7 @@ public class ManagedZoneInfoTest {
   public void testDateParsing() {
     com.google.api.services.dns.model.ManagedZone pb = INFO.toPb();
     pb.setCreationTime("2016-01-19T18:00:12.854Z"); // a real value obtained from Google Cloud DNS
-    ManagedZoneInfo mz = ManagedZoneInfo.fromPb(pb); // parses the string timestamp to millis
+    ZoneInfo mz = ZoneInfo.fromPb(pb); // parses the string timestamp to millis
     com.google.api.services.dns.model.ManagedZone pbClone = mz.toPb(); // converts it back to string
     assertEquals(pb, pbClone);
     assertEquals(pb.getCreationTime(), pbClone.getCreationTime());

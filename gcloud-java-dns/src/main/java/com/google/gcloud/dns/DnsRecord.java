@@ -22,19 +22,21 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.common.primitives.Ints;
 
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A class that represents a Google Cloud DNS record set.
  *
  * <p>A {@code DnsRecord} is the unit of data that will be returned by the DNS servers upon a DNS
  * request for a specific domain. The {@code DnsRecord} holds the current state of the DNS records
- * that make up a managed zone. You can read the records but you cannot modify them directly.
- * Rather, you edit the records in a managed zone by creating a ChangeRequest.
+ * that make up a zone. You can read the records but you cannot modify them directly. Rather, you
+ * edit the records in a zone by creating a ChangeRequest.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets">Google Cloud DNS
  * documentation</a>
@@ -44,7 +46,7 @@ public class DnsRecord implements Serializable {
   private static final long serialVersionUID = 2016011914302204L;
   private final String name;
   private final List<String> rrdatas;
-  private final Integer ttl;
+  private final Integer ttl; // this is in seconds
   private final Type type;
 
   /**
@@ -176,14 +178,19 @@ public class DnsRecord implements Serializable {
     }
 
     /**
-     * Sets the number of seconds that this record can be cached by resolvers. This number must be
-     * non-negative.
+     * Sets the time that this record can be cached by resolvers. This number must be non-negative.
+     * The maximum duration must be equivalent to at most {@link Integer#MAX_VALUE} seconds.
      *
-     * @param ttl A non-negative number of seconds
+     * @param duration A non-negative number of time units
+     * @param unit     The unit of the ttl parameter
      */
-    public Builder ttl(int ttl) {
-      checkArgument(ttl >= 0, "TTL cannot be negative. The supplied value was %s.", ttl);
-      this.ttl = ttl;
+    public Builder ttl(int duration, TimeUnit unit) {
+      checkArgument(duration >= 0,
+          "Duration cannot be negative. The supplied value was %s.", duration);
+      checkNotNull(unit);
+      // we cannot have long because pb does not support it
+      long converted = unit.toSeconds(duration);
+      ttl = Ints.checkedCast(converted);
       return this;
     }
 
@@ -278,7 +285,7 @@ public class DnsRecord implements Serializable {
       builder.records(pb.getRrdatas());
     }
     if (pb.getTtl() != null) {
-      builder.ttl(pb.getTtl());
+      builder.ttl(pb.getTtl(), TimeUnit.SECONDS);
     }
     return builder.build();
   }
