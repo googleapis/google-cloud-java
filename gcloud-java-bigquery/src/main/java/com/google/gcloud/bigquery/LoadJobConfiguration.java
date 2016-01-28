@@ -277,6 +277,11 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
     return Objects.hash(baseHashCode(), sourceUris);
   }
 
+  @Override
+  LoadJobConfiguration setProjectId(String projectId) {
+    return toBuilder().destinationTable(destinationTable().setProjectId(projectId)).build();
+  }
+
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
     JobConfigurationLoad loadConfigurationPb = new JobConfigurationLoad();
     loadConfigurationPb.setDestinationTable(destinationTable.toPb());

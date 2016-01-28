@@ -26,7 +26,7 @@ import org.junit.rules.ExpectedException;
 public class QueryRequestTest {
 
   private static final String QUERY = "BigQuery SQL";
-  private static final DatasetId DATASET_ID = DatasetId.of("project", "dataset");
+  private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final Boolean USE_QUERY_CACHE = true;
   private static final Boolean DRY_RUN = false;
   private static final Long MAX_RESULTS = 42L;
@@ -89,6 +89,11 @@ public class QueryRequestTest {
     compareQueryRequest(QUERY_REQUEST, QueryRequest.fromPb(QUERY_REQUEST.toPb()));
     QueryRequest queryRequest = QueryRequest.of(QUERY);
     compareQueryRequest(queryRequest, QueryRequest.fromPb(queryRequest.toPb()));
+  }
+
+  @Test
+  public void testSetProjectId() {
+    assertEquals("p", QUERY_REQUEST.setProjectId("p").defaultDataset().project());
   }
 
   private void compareQueryRequest(QueryRequest expected, QueryRequest value) {

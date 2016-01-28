@@ -196,6 +196,13 @@ public class TableInfoTest {
         BaseTableInfo.<ExternalTableInfo>fromPb(EXTERNAL_TABLE_INFO.toPb()));
   }
 
+  @Test
+  public void testSetProjectId() {
+    assertEquals("project", TABLE_INFO.setProjectId("project").tableId().project());
+    assertEquals("project", EXTERNAL_TABLE_INFO.setProjectId("project").tableId().project());
+    assertEquals("project", VIEW_INFO.setProjectId("project").tableId().project());
+  }
+
   private void compareBaseTableInfo(BaseTableInfo expected, BaseTableInfo value) {
     assertEquals(expected, value);
     assertEquals(expected.tableId(), value.tableId());

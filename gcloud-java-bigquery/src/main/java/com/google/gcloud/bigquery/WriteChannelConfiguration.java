@@ -250,6 +250,10 @@ public class WriteChannelConfiguration implements LoadConfiguration, Serializabl
         maxBadRecords, schema, ignoreUnknownValues, projectionFields);
   }
 
+  WriteChannelConfiguration setProjectId(String projectId) {
+    return toBuilder().destinationTable(destinationTable().setProjectId(projectId)).build();
+  }
+
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
     JobConfigurationLoad loadConfigurationPb = new JobConfigurationLoad();
     loadConfigurationPb.setDestinationTable(destinationTable.toPb());

@@ -116,6 +116,12 @@ public class LoadJobConfigurationTest {
     compareLoadJobConfiguration(configuration, LoadJobConfiguration.fromPb(configuration.toPb()));
   }
 
+  @Test
+  public void testSetProjectId() {
+    LoadConfiguration configuration = LOAD_CONFIGURATION.setProjectId("p");
+    assertEquals("p", configuration.destinationTable().project());
+  }
+
   private void compareLoadJobConfiguration(LoadJobConfiguration expected,
       LoadJobConfiguration value) {
     assertEquals(expected, value);

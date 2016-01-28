@@ -29,7 +29,10 @@ public class DatasetInfoTest {
 
   private static final List<Acl> ACCESS_RULES = ImmutableList.of(
       Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
-      Acl.of(new Acl.View(TableId.of("project", "dataset", "table")), Acl.Role.WRITER));
+      Acl.of(new Acl.View(TableId.of("dataset", "table"))));
+  private static final List<Acl> ACCESS_RULES_COMPLETE = ImmutableList.of(
+      Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
+      Acl.of(new Acl.View(TableId.of("project", "dataset", "table"))));
   private static final Long CREATION_TIME = System.currentTimeMillis();
   private static final Long DEFAULT_TABLE_EXPIRATION = CREATION_TIME + 100;
   private static final String DESCRIPTION = "description";
@@ -55,6 +58,7 @@ public class DatasetInfoTest {
       .build();
   private static final DatasetInfo DATASET_INFO_COMPLETE = DATASET_INFO.toBuilder()
       .datasetId(DATASET_ID_COMPLETE)
+      .acl(ACCESS_RULES_COMPLETE)
       .build();
 
   @Test
@@ -91,7 +95,7 @@ public class DatasetInfoTest {
     assertEquals(LOCATION, DATASET_INFO.location());
     assertEquals(SELF_LINK, DATASET_INFO.selfLink());
     assertEquals(DATASET_ID_COMPLETE, DATASET_INFO_COMPLETE.datasetId());
-    assertEquals(ACCESS_RULES, DATASET_INFO_COMPLETE.acl());
+    assertEquals(ACCESS_RULES_COMPLETE, DATASET_INFO_COMPLETE.acl());
     assertEquals(CREATION_TIME, DATASET_INFO_COMPLETE.creationTime());
     assertEquals(DEFAULT_TABLE_EXPIRATION, DATASET_INFO_COMPLETE.defaultTableLifetime());
     assertEquals(DESCRIPTION, DATASET_INFO_COMPLETE.description());
@@ -108,6 +112,11 @@ public class DatasetInfoTest {
     compareDatasets(DATASET_INFO_COMPLETE, DatasetInfo.fromPb(DATASET_INFO_COMPLETE.toPb()));
     DatasetInfo datasetInfo = DatasetInfo.builder("project", "dataset").build();
     compareDatasets(datasetInfo, DatasetInfo.fromPb(datasetInfo.toPb()));
+  }
+
+  @Test
+  public void testSetProjectId() {
+    assertEquals(DATASET_INFO_COMPLETE, DATASET_INFO.setProjectId("project"));
   }
 
   private void compareDatasets(DatasetInfo expected, DatasetInfo value) {

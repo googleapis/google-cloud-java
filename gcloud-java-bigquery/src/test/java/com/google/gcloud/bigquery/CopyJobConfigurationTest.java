@@ -108,6 +108,15 @@ public class CopyJobConfigurationTest {
         jobConfiguration, CopyJobConfiguration.fromPb(jobConfiguration.toPb()));
   }
 
+  @Test
+  public void testSetProjectId() {
+    CopyJobConfiguration configuration = COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.setProjectId("p");
+    assertEquals("p", configuration.destinationTable().project());
+    for (TableId sourceTable : configuration.sourceTables()) {
+      assertEquals("p", sourceTable.project());
+    }
+  }
+
   private void compareCopyJobConfiguration(CopyJobConfiguration expected,
       CopyJobConfiguration value) {
     assertEquals(expected, value);

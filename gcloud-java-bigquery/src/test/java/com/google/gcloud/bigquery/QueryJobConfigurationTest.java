@@ -35,8 +35,8 @@ import java.util.Map;
 public class QueryJobConfigurationTest {
 
   private static final String QUERY = "BigQuery SQL";
-  private static final DatasetId DATASET_ID = DatasetId.of("project", "dataset");
-  private static final TableId TABLE_ID = TableId.of("project", "dataset", "table");
+  private static final DatasetId DATASET_ID = DatasetId.of("dataset");
+  private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
       Field.builder("StringField", Field.Type.string())
@@ -139,6 +139,13 @@ public class QueryJobConfigurationTest {
         QueryJobConfiguration.fromPb(QUERY_JOB_CONFIGURATION.toPb()));
     QueryJobConfiguration job = QueryJobConfiguration.of(QUERY);
     compareQueryJobConfiguration(job, QueryJobConfiguration.fromPb(job.toPb()));
+  }
+
+  @Test
+  public void testSetProjectId() {
+    QueryJobConfiguration configuration = QUERY_JOB_CONFIGURATION.setProjectId("p");
+    assertEquals("p", configuration.defaultDataset().project());
+    assertEquals("p", configuration.destinationTable().project());
   }
 
   private void compareQueryJobConfiguration(QueryJobConfiguration expected,

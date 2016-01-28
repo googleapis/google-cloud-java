@@ -19,6 +19,7 @@ package com.google.gcloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationTableCopy;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -187,6 +188,20 @@ public final class CopyJobConfiguration extends JobConfiguration {
   public int hashCode() {
     return Objects.hash(baseHashCode(), sourceTables, destinationTable, createDisposition,
         writeDisposition);
+  }
+
+  @Override
+  CopyJobConfiguration setProjectId(final String projectId) {
+    Builder builder = toBuilder();
+    builder.sourceTables(
+        Lists.transform(sourceTables(), new Function<TableId, TableId>() {
+          @Override
+          public TableId apply(TableId tableId) {
+            return tableId.setProjectId(projectId);
+          }
+        }));
+    builder.destinationTable(destinationTable().setProjectId(projectId));
+    return builder.build();
   }
 
   com.google.api.services.bigquery.model.JobConfiguration toPb() {

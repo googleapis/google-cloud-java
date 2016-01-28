@@ -118,6 +118,12 @@ public class ExtractJobConfigurationTest {
     compareExtractJobConfiguration(job, ExtractJobConfiguration.fromPb(job.toPb()));
   }
 
+  @Test
+  public void testSetProjectId() {
+    ExtractJobConfiguration configuration = EXTRACT_CONFIGURATION.setProjectId("p");
+    assertEquals("p", configuration.sourceTable().project());
+  }
+
   private void compareExtractJobConfiguration(ExtractJobConfiguration expected,
       ExtractJobConfiguration value) {
     assertEquals(expected, value);

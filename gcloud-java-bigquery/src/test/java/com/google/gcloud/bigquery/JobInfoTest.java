@@ -85,7 +85,7 @@ public class JobInfoTest {
           .build();
   private static final List<String> DESTINATION_URIS = ImmutableList.of("uri1", "uri2");
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
-  private static final DatasetId DATASET_ID = DatasetId.of("project", "dataset");
+  private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
       Field.builder("StringField", Field.Type.string())
@@ -336,6 +336,22 @@ public class JobInfoTest {
     compareJobInfo(QUERY_JOB, JobInfo.fromPb(QUERY_JOB.toPb()));
     assertTrue(JobInfo.fromPb(QUERY_JOB.toPb()).configuration() instanceof QueryJobConfiguration);
     assertTrue(JobInfo.fromPb(QUERY_JOB.toPb()).statistics() instanceof QueryStatistics);
+  }
+
+  @Test
+  public void testSetProjectId() {
+    CopyJobConfiguration copyConfiguration = COPY_JOB.setProjectId("p").configuration();
+    assertEquals("p", copyConfiguration.destinationTable().project());
+    for (TableId sourceTable : copyConfiguration.sourceTables()) {
+      assertEquals("p", sourceTable.project());
+    }
+    ExtractJobConfiguration extractConfiguration = EXTRACT_JOB.setProjectId("p").configuration();
+    assertEquals("p", extractConfiguration.sourceTable().project());
+    LoadConfiguration loadConfiguration = LOAD_JOB.setProjectId("p").configuration();
+    assertEquals("p", loadConfiguration.destinationTable().project());
+    QueryJobConfiguration queryConfiguration = QUERY_JOB.setProjectId("p").configuration();
+    assertEquals("p", queryConfiguration.defaultDataset().project());
+    assertEquals("p", queryConfiguration.destinationTable().project());
   }
 
   private void compareJobInfo(JobInfo expected, JobInfo value) {

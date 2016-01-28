@@ -459,6 +459,18 @@ public final class QueryJobConfiguration extends JobConfiguration {
         userDefinedFunctions, writeDisposition, dryRun);
   }
 
+  @Override
+  QueryJobConfiguration setProjectId(String projectId) {
+    Builder builder = toBuilder();
+    if (destinationTable() != null) {
+      builder.destinationTable(destinationTable().setProjectId(projectId));
+    }
+    if (defaultDataset() != null) {
+      builder.defaultDataset(defaultDataset().setProjectId(projectId));
+    }
+    return builder.build();
+  }
+
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
     com.google.api.services.bigquery.model.JobConfiguration configurationPb =
         new com.google.api.services.bigquery.model.JobConfiguration();

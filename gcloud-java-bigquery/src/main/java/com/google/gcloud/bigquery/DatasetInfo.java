@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.Data;
 import com.google.api.services.bigquery.model.Dataset;
+import com.google.api.services.bigquery.model.TableReference;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
@@ -331,6 +332,28 @@ public final class DatasetInfo implements Serializable {
   @Override
   public boolean equals(Object obj) {
     return obj instanceof DatasetInfo && Objects.equals(toPb(), ((DatasetInfo) obj).toPb());
+  }
+
+  DatasetInfo setProjectId(String projectId) {
+    Builder builder = toBuilder();
+    builder.datasetId(datasetId().setProjectId(projectId));
+    if (acl() != null) {
+      List<Acl> acls = Lists.newArrayListWithCapacity(acl().size());
+      for (Acl acl : acl()) {
+        if (acl.entity().type() == Acl.Entity.Type.VIEW) {
+          Dataset.Access accessPb = acl.toPb();
+          TableReference viewReferencePb = accessPb.getView();
+          if (viewReferencePb.getProjectId() == null) {
+            viewReferencePb.setProjectId(projectId);
+          }
+          acls.add(Acl.of(new Acl.View(TableId.fromPb(viewReferencePb))));
+        } else {
+          acls.add(acl);
+        }
+      }
+      builder.acl(acls);
+    }
+    return builder.build();
   }
 
   Dataset toPb() {

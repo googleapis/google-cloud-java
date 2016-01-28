@@ -122,6 +122,8 @@ public abstract class JobConfiguration implements Serializable {
     return Objects.equals(toPb(), jobConfiguration.toPb());
   }
 
+  abstract JobConfiguration setProjectId(String projectId);
+
   abstract com.google.api.services.bigquery.model.JobConfiguration toPb();
 
   @SuppressWarnings("unchecked")

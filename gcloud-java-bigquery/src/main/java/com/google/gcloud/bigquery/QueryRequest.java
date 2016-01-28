@@ -253,6 +253,14 @@ public class QueryRequest implements Serializable {
     return obj instanceof QueryRequest && Objects.equals(toPb(), ((QueryRequest) obj).toPb());
   }
 
+  QueryRequest setProjectId(String projectId) {
+    Builder builder = toBuilder();
+    if (defaultDataset() != null) {
+      builder.defaultDataset(defaultDataset().setProjectId(projectId));
+    }
+    return builder.build();
+  }
+
   com.google.api.services.bigquery.model.QueryRequest toPb() {
     com.google.api.services.bigquery.model.QueryRequest queryRequestPb =
         new com.google.api.services.bigquery.model.QueryRequest().setQuery(query);

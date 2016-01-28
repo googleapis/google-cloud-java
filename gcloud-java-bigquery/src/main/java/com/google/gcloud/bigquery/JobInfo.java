@@ -278,6 +278,10 @@ public final class JobInfo implements Serializable {
     return obj instanceof JobInfo && Objects.equals(toPb(), ((JobInfo) obj).toPb());
   }
 
+  JobInfo setProjectId(String projectId) {
+    return toBuilder().configuration(this.configuration().setProjectId(projectId)).build();
+  }
+
   Job toPb() {
     Job jobPb = new Job();
     jobPb.setEtag(etag);

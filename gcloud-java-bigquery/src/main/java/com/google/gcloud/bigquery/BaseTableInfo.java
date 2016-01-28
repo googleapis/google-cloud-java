@@ -394,6 +394,10 @@ public abstract class BaseTableInfo implements Serializable {
     return Objects.equals(toPb(), tableInfo.toPb());
   }
 
+  BaseTableInfo setProjectId(String projectId) {
+    return toBuilder().tableId(tableId().setProjectId(projectId)).build();
+  }
+
   Table toPb() {
     Table tablePb = new Table();
     tablePb.setTableReference(tableId.toPb());

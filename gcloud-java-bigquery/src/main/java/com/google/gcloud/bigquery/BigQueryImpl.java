@@ -25,7 +25,6 @@ import com.google.api.services.bigquery.model.Job;
 import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
-import com.google.api.services.bigquery.model.TableReference;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
@@ -159,7 +158,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public DatasetInfo create(DatasetInfo dataset, DatasetOption... options)
       throws BigQueryException {
-    final Dataset datasetPb = setProjectId(dataset).toPb();
+    final Dataset datasetPb = dataset.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return DatasetInfo.fromPb(runWithRetries(new Callable<Dataset>() {
@@ -176,7 +175,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public <T extends BaseTableInfo> T create(T table, TableOption... options)
       throws BigQueryException {
-    final Table tablePb = setProjectId(table).toPb();
+    final Table tablePb = table.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return BaseTableInfo.fromPb(runWithRetries(new Callable<Table>() {
@@ -192,7 +191,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public JobInfo create(JobInfo job, JobOption... options) throws BigQueryException {
-    final Job jobPb = setProjectId(job).toPb();
+    final Job jobPb = job.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return JobInfo.fromPb(runWithRetries(new Callable<Job>() {
@@ -295,7 +294,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public DatasetInfo update(DatasetInfo dataset, DatasetOption... options)
       throws BigQueryException {
-    final Dataset datasetPb = setProjectId(dataset).toPb();
+    final Dataset datasetPb = dataset.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return DatasetInfo.fromPb(runWithRetries(new Callable<Dataset>() {
@@ -312,7 +311,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public <T extends BaseTableInfo> T update(T table, TableOption... options)
       throws BigQueryException {
-    final Table tablePb = setProjectId(table).toPb();
+    final Table tablePb = table.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return BaseTableInfo.fromPb(runWithRetries(new Callable<Table>() {
@@ -508,7 +507,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           runWithRetries(new Callable<com.google.api.services.bigquery.model.QueryResponse>() {
             @Override
             public com.google.api.services.bigquery.model.QueryResponse call() {
-              return bigQueryRpc.query(setProjectId(request).toPb());
+              return bigQueryRpc.query(request.setProjectId(options().projectId()).toPb());
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       QueryResponse.Builder builder = QueryResponse.builder();
@@ -597,7 +596,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   public TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration) {
-    return new TableDataWriteChannel(options(), setProjectId(writeChannelConfiguration));
+    return new TableDataWriteChannel(options(),
+        writeChannelConfiguration.setProjectId(options().projectId()));
   }
 
   private Map<BigQueryRpc.Option, ?> optionMap(Option... options) {
@@ -607,101 +607,5 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return optionMap;
-  }
-
-  private DatasetInfo setProjectId(DatasetInfo dataset) {
-    DatasetInfo.Builder datasetBuilder = dataset.toBuilder();
-    datasetBuilder.datasetId(setProjectId(dataset.datasetId()));
-    if (dataset.acl() != null) {
-      List<Acl> acls = Lists.newArrayListWithCapacity(dataset.acl().size());
-      for (Acl acl : dataset.acl()) {
-        if (acl.entity().type() == Acl.Entity.Type.VIEW) {
-          Dataset.Access accessPb = acl.toPb();
-          TableReference viewReferencePb = accessPb.getView();
-          if (viewReferencePb.getProjectId() == null) {
-            viewReferencePb.setProjectId(options().projectId());
-          }
-          acls.add(Acl.of(new Acl.View(TableId.fromPb(viewReferencePb))));
-        } else {
-          acls.add(acl);
-        }
-      }
-      datasetBuilder.acl(acls);
-    }
-    return datasetBuilder.build();
-  }
-
-  private DatasetId setProjectId(DatasetId dataset) {
-    return dataset.project() != null ? dataset
-        : DatasetId.of(options().projectId(), dataset.dataset());
-  }
-
-  private BaseTableInfo setProjectId(BaseTableInfo table) {
-    return table.toBuilder().tableId(setProjectId(table.tableId())).build();
-  }
-
-  private TableId setProjectId(TableId table) {
-    return table.project() != null ? table
-        : TableId.of(options().projectId(), table.dataset(), table.table());
-  }
-
-  private JobInfo setProjectId(JobInfo job) {
-    JobConfiguration configuration = job.configuration();
-    JobInfo.Builder jobBuilder = job.toBuilder();
-    switch (configuration.type()) {
-      case COPY:
-        CopyJobConfiguration copyConfiguration = (CopyJobConfiguration) configuration;
-        CopyJobConfiguration.Builder copyBuilder = copyConfiguration.toBuilder();
-        copyBuilder.sourceTables(
-            Lists.transform(copyConfiguration.sourceTables(), new Function<TableId, TableId>() {
-              @Override
-              public TableId apply(TableId tableId) {
-                return setProjectId(tableId);
-              }
-            }));
-        copyBuilder.destinationTable(setProjectId(copyConfiguration.destinationTable()));
-        jobBuilder.configuration(copyBuilder.build());
-        break;
-      case QUERY:
-        QueryJobConfiguration queryConfiguration = (QueryJobConfiguration) configuration;
-        QueryJobConfiguration.Builder queryBuilder = queryConfiguration.toBuilder();
-        if (queryConfiguration.destinationTable() != null) {
-          queryBuilder.destinationTable(setProjectId(queryConfiguration.destinationTable()));
-        }
-        if (queryConfiguration.defaultDataset() != null) {
-          queryBuilder.defaultDataset(setProjectId(queryConfiguration.defaultDataset()));
-        }
-        jobBuilder.configuration(queryBuilder.build());
-        break;
-      case EXTRACT:
-        ExtractJobConfiguration extractConfiguration = (ExtractJobConfiguration) configuration;
-        ExtractJobConfiguration.Builder extractBuilder = extractConfiguration.toBuilder();
-        extractBuilder.sourceTable(setProjectId(extractConfiguration.sourceTable()));
-        jobBuilder.configuration(extractBuilder.build());
-        break;
-      case LOAD:
-        LoadJobConfiguration loadConfiguration = (LoadJobConfiguration) configuration;
-        jobBuilder.configuration(setProjectId(loadConfiguration));
-        break;
-      default:
-        // never reached
-        throw new IllegalArgumentException("Job configuration is not supported");
-    }
-    return jobBuilder.build();
-  }
-
-  private QueryRequest setProjectId(QueryRequest request) {
-    QueryRequest.Builder builder = request.toBuilder();
-    if (request.defaultDataset() != null) {
-      builder.defaultDataset(setProjectId(request.defaultDataset()));
-    }
-    return builder.build();
-  }
-
-  @SuppressWarnings("unchecked")
-  private <T extends LoadConfiguration> T setProjectId(T configuration) {
-    LoadConfiguration.Builder builder = configuration.toBuilder();
-    builder.destinationTable(setProjectId(configuration.destinationTable()));
-    return (T) builder.build();
   }
 }
