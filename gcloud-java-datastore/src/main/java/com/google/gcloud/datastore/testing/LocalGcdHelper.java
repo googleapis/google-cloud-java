@@ -524,7 +524,8 @@ public class LocalGcdHelper {
     }
   }
 
-  public static void sendQuitRequest(int port) {
+  public static boolean sendQuitRequest(int port) {
+    StringBuilder result = new StringBuilder();
     try {
       URL url = new URL("http", "localhost", port, "/_ah/admin/quit");
       HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -535,12 +536,14 @@ public class LocalGcdHelper {
       out.write("".getBytes());
       out.flush();
       InputStream in = con.getInputStream();
-      while (in.read() != -1) {
-        // consume input
+      int currByte = 0;
+      while ((currByte = in.read()) != -1) {
+        result.append(((char) currByte));
       }
     } catch (IOException ignore) {
       // ignore
     }
+    return result.toString().startsWith("Shutting down local server");
   }
 
   public void stop() throws IOException, InterruptedException {

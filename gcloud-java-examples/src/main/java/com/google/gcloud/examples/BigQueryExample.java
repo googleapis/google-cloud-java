@@ -1,0 +1,789 @@
+/*
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.gcloud.examples;
+
+import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.WriteChannel;
+import com.google.gcloud.bigquery.BaseTableInfo;
+import com.google.gcloud.bigquery.BigQuery;
+import com.google.gcloud.bigquery.BigQueryError;
+import com.google.gcloud.bigquery.BigQueryOptions;
+import com.google.gcloud.bigquery.CopyJobInfo;
+import com.google.gcloud.bigquery.DatasetId;
+import com.google.gcloud.bigquery.DatasetInfo;
+import com.google.gcloud.bigquery.ExternalDataConfiguration;
+import com.google.gcloud.bigquery.ExternalTableInfo;
+import com.google.gcloud.bigquery.ExtractJobInfo;
+import com.google.gcloud.bigquery.Field;
+import com.google.gcloud.bigquery.FieldValue;
+import com.google.gcloud.bigquery.FormatOptions;
+import com.google.gcloud.bigquery.JobId;
+import com.google.gcloud.bigquery.JobInfo;
+import com.google.gcloud.bigquery.JobStatus;
+import com.google.gcloud.bigquery.LoadConfiguration;
+import com.google.gcloud.bigquery.LoadJobInfo;
+import com.google.gcloud.bigquery.QueryRequest;
+import com.google.gcloud.bigquery.QueryResponse;
+import com.google.gcloud.bigquery.Schema;
+import com.google.gcloud.bigquery.TableId;
+import com.google.gcloud.bigquery.TableInfo;
+import com.google.gcloud.bigquery.ViewInfo;
+import com.google.gcloud.spi.BigQueryRpc.Tuple;
+
+import java.nio.channels.FileChannel;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * An example of using Google BigQuery.
+ *
+ * <p>This example demonstrates a simple/typical BigQuery usage.
+ *
+ * <p>Steps needed for running the example:
+ * <ol>
+ * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
+ * <li>compile using maven - {@code mvn compile}</li>
+ * <li>run using maven -
+ * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.BigQueryExample"
+ *  -Dexec.args="[<project_id>]
+ *  list datasets |
+ *  list tables <dataset> |
+ *  list jobs |
+ *  list data <dataset> <table> |
+ *  info dataset <dataset> |
+ *  info table <dataset> <table> |
+ *  info job <job> |
+ *  create dataset <dataset> |
+ *  create table <dataset> <table> (<fieldName>:<primitiveType>)+ |
+ *  create view <dataset> <table> <query> |
+ *  create external-table <dataset> <table> <format> (<fieldName>:<primitiveType>)+ <sourceUri> |
+ *  delete dataset <dataset> |
+ *  delete table <dataset> <table> |
+ *  cancel <job> |
+ *  copy <sourceDataset> <sourceTable> <destinationDataset> <destinationTable> |
+ *  load <dataset> <table> <format> <sourceUri>+ |
+ *  extract <dataset> <table> <format> <destinationUri>+ |
+ *  query <query> |
+ *  load-file <dataset> <table> <format> <filePath>"}</pre>
+ * </li>
+ * </ol>
+ *
+ * <p>The first parameter is an optional {@code project_id} (logged-in project will be used if not
+ * supplied). Second parameter is a BigQuery operation and can be used to demonstrate its usage. For
+ * operations that apply to more than one entity (`list`, `create`, `info` and `delete`) the third
+ * parameter specifies the entity. {@code <primitiveType>} indicates that only primitive types are
+ * supported by the {@code create table} and {@code create external-table} operations
+ * ({@code string}, {@code float}, {@code integer}, {@code timestamp}, {@code boolean}).
+ * {@code <sourceUri>}, {@code <sourceUris>} and {@code <destinationUris>} parameters are URIs to
+ * Google Cloud Storage blobs, in the form {@code gs://bucket/path}. See each action's run method
+ * for the specific BigQuery interaction.
+ */
+public class BigQueryExample {
+
+  private static final int CHUNK_SIZE = 8 * 256 * 1024;
+  private static final Map<String, BigQueryAction> CREATE_ACTIONS = new HashMap<>();
+  private static final Map<String, BigQueryAction> INFO_ACTIONS = new HashMap<>();
+  private static final Map<String, BigQueryAction> LIST_ACTIONS = new HashMap<>();
+  private static final Map<String, BigQueryAction> DELETE_ACTIONS = new HashMap<>();
+  private static final Map<String, BigQueryAction> ACTIONS = new HashMap<>();
+
+  private abstract static class BigQueryAction<T> {
+
+    abstract void run(BigQuery bigquery, T request) throws Exception;
+
+    abstract T parse(String... args) throws Exception;
+
+    protected String params() {
+      return "";
+    }
+  }
+
+  private static class ParentAction extends BigQueryAction<Tuple<BigQueryAction, Object>> {
+
+    private final Map<String, BigQueryAction> subActions;
+
+    public ParentAction(Map<String, BigQueryAction> subActions) {
+      this.subActions = ImmutableMap.copyOf(subActions);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    void run(BigQuery bigquery, Tuple<BigQueryAction, Object> subaction) throws Exception {
+      subaction.x().run(bigquery, subaction.y());
+    }
+
+    @Override
+    Tuple<BigQueryAction, Object> parse(String... args) throws Exception {
+      if (args.length >= 1) {
+        BigQueryAction action = subActions.get(args[0]);
+        if (action != null) {
+          Object actionArguments = action.parse(Arrays.copyOfRange(args, 1, args.length));
+          return Tuple.of(action, actionArguments);
+        } else {
+          throw new IllegalArgumentException("Unrecognized entity '" + args[0] + "'.");
+        }
+      }
+      throw new IllegalArgumentException("Missing required entity.");
+    }
+
+    @Override
+    public String params() {
+      StringBuilder builder = new StringBuilder();
+      for (Map.Entry<String, BigQueryAction> entry : subActions.entrySet()) {
+        builder.append('\n').append(entry.getKey());
+        String param = entry.getValue().params();
+        if (param != null && !param.isEmpty()) {
+          builder.append(' ').append(param);
+        }
+      }
+      return builder.toString();
+    }
+  }
+
+  private abstract static class NoArgsAction extends BigQueryAction<Void> {
+    @Override
+    Void parse(String... args) throws Exception {
+      if (args.length == 0) {
+        return null;
+      }
+      throw new IllegalArgumentException("This action takes no arguments.");
+    }
+  }
+
+  /**
+   * This class demonstrates how to list BigQuery Datasets.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets/list">Datasets: list
+   *     </a>
+   */
+  private static class ListDatasetsAction extends NoArgsAction {
+    @Override
+    public void run(BigQuery bigquery, Void arg) {
+      Iterator<DatasetInfo> datasetInfoIterator = bigquery.listDatasets().iterateAll();
+      while (datasetInfoIterator.hasNext()) {
+        System.out.println(datasetInfoIterator.next());
+      }
+    }
+  }
+
+  private abstract static class DatasetAction extends BigQueryAction<DatasetId> {
+    @Override
+    DatasetId parse(String... args) throws Exception {
+      String message;
+      if (args.length == 1) {
+        return DatasetId.of(args[0]);
+      } else if (args.length > 1) {
+        message = "Too many arguments.";
+      } else {
+        message = "Missing required dataset id.";
+      }
+      throw new IllegalArgumentException(message);
+    }
+
+    @Override
+    public String params() {
+      return "<dataset>";
+    }
+  }
+
+  /**
+   * This class demonstrates how to list BigQuery Tables in a Dataset.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/list">Tables: list</a>
+   */
+  private static class ListTablesAction extends DatasetAction {
+    @Override
+    public void run(BigQuery bigquery, DatasetId datasetId) {
+      Iterator<BaseTableInfo> tableInfoIterator = bigquery.listTables(datasetId).iterateAll();
+      while (tableInfoIterator.hasNext()) {
+        System.out.println(tableInfoIterator.next());
+      }
+    }
+  }
+
+  /**
+   * This class demonstrates how to retrieve information on a BigQuery Dataset.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets/get">Datasets: get
+   *     </a>
+   */
+  private static class DatasetInfoAction extends DatasetAction {
+    @Override
+    public void run(BigQuery bigquery, DatasetId datasetId) {
+      System.out.println("Dataset info: " + bigquery.getDataset(datasetId));
+    }
+  }
+
+  /**
+   * This class demonstrates how to create a BigQuery Dataset.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets/insert">Datasets:
+   *     insert</a>
+   */
+  private static class CreateDatasetAction extends DatasetAction {
+    @Override
+    public void run(BigQuery bigquery, DatasetId datasetId) {
+      bigquery.create(DatasetInfo.builder(datasetId).build());
+      System.out.println("Created dataset " + datasetId);
+    }
+  }
+
+  /**
+   * This class demonstrates how to delete a BigQuery Dataset.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets/delete">Datasets:
+   *     delete</a>
+   */
+  private static class DeleteDatasetAction extends DatasetAction {
+    @Override
+    public void run(BigQuery bigquery, DatasetId datasetId) {
+      if (bigquery.delete(datasetId)) {
+        System.out.println("Dataset " + datasetId + " was deleted");
+      } else {
+        System.out.println("Dataset " + datasetId + " not found");
+      }
+    }
+  }
+
+  private abstract static class TableAction extends BigQueryAction<TableId> {
+    @Override
+    TableId parse(String... args) throws Exception {
+      String message;
+      if (args.length == 2) {
+        return TableId.of(args[0], args[1]);
+      } else if (args.length < 2) {
+        message = "Missing required dataset and table id.";
+      } else {
+        message = "Too many arguments.";
+      }
+      throw new IllegalArgumentException(message);
+    }
+
+    @Override
+    public String params() {
+      return "<dataset> <table>";
+    }
+  }
+
+  /**
+   * This class demonstrates how to retrieve information on a BigQuery Table.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/get">Tables: get</a>
+   */
+  private static class TableInfoAction extends TableAction {
+    @Override
+    public void run(BigQuery bigquery, TableId tableId) {
+      System.out.println("Table info: " + bigquery.getTable(tableId));
+    }
+  }
+
+  /**
+   * This class demonstrates how to delete a BigQuery Table.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/delete">Tables: delete
+   *     </a>
+   */
+  private static class DeleteTableAction extends TableAction {
+    @Override
+    public void run(BigQuery bigquery, TableId tableId) {
+      if (bigquery.delete(tableId)) {
+        System.out.println("Table " + tableId + " was deleted");
+      } else {
+        System.out.println("Table " + tableId + " not found");
+      }
+    }
+  }
+
+  /**
+   * This class demonstrates how to list the rows in a BigQuery Table.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tabledata/list">Tabledata:
+   *     list</a>
+   */
+  private static class ListTableDataAction extends TableAction {
+    @Override
+    public void run(BigQuery bigquery, TableId tableId) {
+      Iterator<List<FieldValue>> iterator = bigquery.listTableData(tableId).iterateAll();
+      while (iterator.hasNext()) {
+        System.out.println(iterator.next());
+      }
+    }
+  }
+
+  private abstract static class JobAction extends BigQueryAction<JobId> {
+    @Override
+    JobId parse(String... args) throws Exception {
+      String message;
+      if (args.length == 1) {
+        return JobId.of(args[0]);
+      } else if (args.length > 1) {
+        message = "Too many arguments.";
+      } else {
+        message = "Missing required query.";
+      }
+      throw new IllegalArgumentException(message);
+    }
+
+    @Override
+    public String params() {
+      return "<job>";
+    }
+  }
+
+  /**
+   * This class demonstrates how to list BigQuery Jobs.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/list">Jobs: list</a>
+   */
+  private static class ListJobsAction extends NoArgsAction {
+    @Override
+    public void run(BigQuery bigquery, Void arg) {
+      Iterator<JobInfo> datasetInfoIterator = bigquery.listJobs().iterateAll();
+      while (datasetInfoIterator.hasNext()) {
+        System.out.println(datasetInfoIterator.next());
+      }
+    }
+  }
+
+  /**
+   * This class demonstrates how to retrieve information on a BigQuery Job.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/get">Jobs: get</a>
+   */
+  private static class JobInfoAction extends JobAction {
+    @Override
+    public void run(BigQuery bigquery, JobId jobId) {
+      System.out.println("Job info: " + bigquery.getJob(jobId));
+    }
+  }
+
+  /**
+   * This class demonstrates how to cancel a BigQuery Job.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/cancel">Jobs: cancel</a>
+   */
+  private static class CancelJobAction extends JobAction {
+    @Override
+    public void run(BigQuery bigquery, JobId jobId) {
+      if (bigquery.cancel(jobId)) {
+        System.out.println("Requested cancel for job " + jobId);
+      } else {
+        System.out.println("Job " + jobId + " not found");
+      }
+    }
+  }
+
+  private abstract static class CreateTableAction extends BigQueryAction<BaseTableInfo> {
+    @Override
+    void run(BigQuery bigquery, BaseTableInfo table) throws Exception {
+      BaseTableInfo createTable = bigquery.create(table);
+      System.out.println("Created table:");
+      System.out.println(createTable.toString());
+    }
+
+    static Schema parseSchema(String[] args, int start, int end) {
+      Schema.Builder builder = Schema.builder();
+      for (int i = start; i < end; i++) {
+        String[] fieldsArray = args[i].split(":");
+        if (fieldsArray.length != 2) {
+          throw new IllegalArgumentException("Unrecognized field definition '" + args[i] + "'.");
+        }
+        String fieldName = fieldsArray[0];
+        String typeString = fieldsArray[1].toLowerCase();
+        Field.Type fieldType;
+        switch (typeString) {
+          case "string":
+            fieldType = Field.Type.string();
+            break;
+          case "integer":
+            fieldType = Field.Type.integer();
+            break;
+          case "timestamp":
+            fieldType = Field.Type.timestamp();
+            break;
+          case "float":
+            fieldType = Field.Type.floatingPoint();
+            break;
+          case "boolean":
+            fieldType = Field.Type.bool();
+            break;
+          default:
+            throw new IllegalArgumentException("Unrecognized field type '" + typeString + "'.");
+        }
+        builder.addField(Field.of(fieldName, fieldType));
+      }
+      return builder.build();
+    }
+  }
+
+  /**
+   * This class demonstrates how to create a simple BigQuery Table (i.e. a table of type
+   * {@link BaseTableInfo.Type#TABLE}).
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/insert">Tables: insert
+   *     </a>
+   */
+  private static class CreateSimpleTableAction extends CreateTableAction {
+    @Override
+    BaseTableInfo parse(String... args) throws Exception {
+      if (args.length >= 3) {
+        String dataset = args[0];
+        String table = args[1];
+        TableId tableId = TableId.of(dataset, table);
+        return TableInfo.of(tableId, parseSchema(args, 2, args.length));
+      }
+      throw new IllegalArgumentException("Missing required arguments.");
+    }
+
+    @Override
+    protected String params() {
+      return "<dataset> <table> (<fieldName>:<primitiveType>)+";
+    }
+  }
+
+  /**
+   * This class demonstrates how to create a BigQuery External Table (i.e. a table of type
+   * {@link BaseTableInfo.Type#EXTERNAL}).
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/insert">Tables: insert
+   *     </a>
+   */
+  private static class CreateExternalTableAction extends CreateTableAction {
+    @Override
+    BaseTableInfo parse(String... args) throws Exception {
+      if (args.length >= 5) {
+        String dataset = args[0];
+        String table = args[1];
+        TableId tableId = TableId.of(dataset, table);
+        ExternalDataConfiguration configuration =
+            ExternalDataConfiguration.of(args[args.length - 1],
+                parseSchema(args, 3, args.length - 1), FormatOptions.of(args[2]));
+        return ExternalTableInfo.of(tableId, configuration);
+      }
+      throw new IllegalArgumentException("Missing required arguments.");
+    }
+
+    @Override
+    protected String params() {
+      return "<dataset> <table> <format> (<fieldName>:<primitiveType>)+ <sourceUri>";
+    }
+  }
+
+  /**
+   * This class demonstrates how to create a BigQuery View Table (i.e. a table of type
+   * {@link BaseTableInfo.Type#VIEW}).
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/insert">Tables: insert
+   *     </a>
+   */
+  private static class CreateViewAction extends CreateTableAction {
+    @Override
+    BaseTableInfo parse(String... args) throws Exception {
+      String message;
+      if (args.length == 3) {
+        String dataset = args[0];
+        String table = args[1];
+        String query = args[2];
+        TableId tableId = TableId.of(dataset, table);
+        return ViewInfo.of(tableId, query);
+      } else if (args.length < 3) {
+        message = "Missing required dataset id, table id or query.";
+      } else {
+        message = "Too many arguments.";
+      }
+      throw new IllegalArgumentException(message);
+    }
+
+    @Override
+    protected String params() {
+      return "<dataset> <table> <query>";
+    }
+  }
+
+  private abstract static class JobRunAction extends BigQueryAction<JobInfo> {
+    @Override
+    void run(BigQuery bigquery, JobInfo job) throws Exception {
+      System.out.println("Creating job");
+      JobInfo startedJob = bigquery.create(job);
+      while (startedJob.status().state() != JobStatus.State.DONE) {
+        System.out.println("Waiting for job " + startedJob.jobId().job() + " to complete");
+        Thread.sleep(1000L);
+        startedJob = bigquery.getJob(startedJob.jobId());
+      }
+      if (startedJob.status().error() == null) {
+        System.out.println("Job " + startedJob.jobId().job() + " succeeded");
+      } else {
+        System.out.println("Job " + startedJob.jobId().job() + " failed");
+        System.out.println("Error: " + startedJob.status().error());
+      }
+    }
+  }
+
+  /**
+   * This class demonstrates how to create a BigQuery Load Job and wait for it to complete.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/insert">Jobs: insert</a>
+   */
+  private static class LoadAction extends JobRunAction {
+    @Override
+    LoadJobInfo parse(String... args) throws Exception {
+      if (args.length >= 4) {
+        String dataset = args[0];
+        String table = args[1];
+        String format = args[2];
+        TableId tableId = TableId.of(dataset, table);
+        LoadConfiguration configuration = LoadConfiguration.of(tableId, FormatOptions.of(format));
+        return LoadJobInfo.builder(configuration, Arrays.asList(args).subList(3, args.length))
+            .build();
+      }
+      throw new IllegalArgumentException("Missing required arguments.");
+    }
+
+    @Override
+    protected String params() {
+      return "<dataset> <table> <format> <sourceUri>+";
+    }
+  }
+
+  /**
+   * This class demonstrates how to create a BigQuery Extract Job and wait for it to complete.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/insert">Jobs: insert</a>
+   */
+  private static class ExtractAction extends JobRunAction {
+    @Override
+    ExtractJobInfo parse(String... args) throws Exception {
+      if (args.length >= 4) {
+        String dataset = args[0];
+        String table = args[1];
+        String format = args[2];
+        TableId tableId = TableId.of(dataset, table);
+        return ExtractJobInfo.builder(tableId, Arrays.asList(args).subList(3, args.length))
+            .format(format)
+            .build();
+      }
+      throw new IllegalArgumentException("Missing required arguments.");
+    }
+
+    @Override
+    protected String params() {
+      return "<dataset> <table> <format> <destinationUri>+";
+    }
+  }
+
+  /**
+   * This class demonstrates how to create a BigQuery Copy Job and wait for it to complete.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/insert">Jobs: insert</a>
+   */
+  private static class CopyAction extends JobRunAction {
+    @Override
+    CopyJobInfo parse(String... args) throws Exception {
+      String message;
+      if (args.length == 4) {
+        TableId sourceTableId = TableId.of(args[0], args[1]);
+        TableId destinationTableId = TableId.of(args[2], args[3]);
+        return CopyJobInfo.of(destinationTableId, sourceTableId);
+      } else if (args.length < 3) {
+        message = "Missing required source or destination table.";
+      } else {
+        message = "Too many arguments.";
+      }
+      throw new IllegalArgumentException(message);
+    }
+
+    @Override
+    protected String params() {
+      return "<sourceDataset> <sourceTable> <destinationDataset> <destinationTable>";
+    }
+  }
+
+  /**
+   * This class demonstrates how to run a BigQuery SQL Query and wait for associated job to
+   * complete. Results or errors are shown.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/query">Jobs: query</a>
+   */
+  private static class QueryAction extends BigQueryAction<QueryRequest> {
+    @Override
+    void run(BigQuery bigquery, QueryRequest queryRequest) throws Exception {
+      System.out.println("Running query");
+      QueryResponse queryResponse = bigquery.query(queryRequest);
+      while (!queryResponse.jobCompleted()) {
+        System.out.println("Waiting for query job " + queryResponse.jobId() + " to complete");
+        Thread.sleep(1000L);
+        queryResponse = bigquery.getQueryResults(queryResponse.jobId());
+      }
+      if (!queryResponse.hasErrors()) {
+        System.out.println("Query succeeded. Results:");
+        Iterator<List<FieldValue>> iterator = queryResponse.result().iterateAll();
+        while (iterator.hasNext()) {
+          System.out.println(iterator.next());
+        }
+      } else {
+        System.out.println("Query completed with errors. Errors:");
+        for (BigQueryError err : queryResponse.executionErrors()) {
+          System.out.println(err);
+        }
+      }
+    }
+
+    @Override
+    QueryRequest parse(String... args) throws Exception {
+      String message;
+      if (args.length == 1) {
+        return QueryRequest.of(args[0]);
+      }  else if (args.length > 1) {
+        message = "Too many arguments.";
+      } else {
+        message = "Missing required query.";
+      }
+      throw new IllegalArgumentException(message);
+    }
+
+    @Override
+    protected String params() {
+      return "<query>";
+    }
+  }
+
+  /**
+   * This class demonstrates how to load data into a BigQuery Table from a local file.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/loading-data-post-request#resumable">Resumable
+   *     Upload</a>
+   */
+  private static class LoadFileAction extends BigQueryAction<Tuple<LoadConfiguration, String>> {
+    @Override
+    void run(BigQuery bigquery, Tuple<LoadConfiguration, String> configuration) throws Exception {
+      System.out.println("Running insert");
+      try (FileChannel fileChannel = FileChannel.open(Paths.get(configuration.y()))) {
+        WriteChannel writeChannel = bigquery.writer(configuration.x());
+        long position = 0;
+        long written = fileChannel.transferTo(position, CHUNK_SIZE, writeChannel);
+        while (written > 0) {
+          position += written;
+          written = fileChannel.transferTo(position, CHUNK_SIZE, writeChannel);
+        }
+        writeChannel.close();
+      }
+    }
+
+    @Override
+    Tuple<LoadConfiguration, String> parse(String... args) throws Exception {
+      if (args.length == 4) {
+        String dataset = args[0];
+        String table = args[1];
+        String format = args[2];
+        TableId tableId = TableId.of(dataset, table);
+        LoadConfiguration configuration = LoadConfiguration.of(tableId, FormatOptions.of(format));
+        return Tuple.of(configuration, args[3]);
+      }
+      throw new IllegalArgumentException("Missing required arguments.");
+    }
+
+    @Override
+    protected String params() {
+      return "<dataset> <table> <format> <filePath>";
+    }
+  }
+
+  static {
+    CREATE_ACTIONS.put("dataset", new CreateDatasetAction());
+    CREATE_ACTIONS.put("table", new CreateSimpleTableAction());
+    CREATE_ACTIONS.put("view", new CreateViewAction());
+    CREATE_ACTIONS.put("external-table", new CreateExternalTableAction());
+    INFO_ACTIONS.put("dataset", new DatasetInfoAction());
+    INFO_ACTIONS.put("table", new TableInfoAction());
+    INFO_ACTIONS.put("job", new JobInfoAction());
+    LIST_ACTIONS.put("datasets", new ListDatasetsAction());
+    LIST_ACTIONS.put("tables", new ListTablesAction());
+    LIST_ACTIONS.put("jobs", new ListJobsAction());
+    LIST_ACTIONS.put("data", new ListTableDataAction());
+    DELETE_ACTIONS.put("dataset", new DeleteDatasetAction());
+    DELETE_ACTIONS.put("table", new DeleteTableAction());
+    ACTIONS.put("create", new ParentAction(CREATE_ACTIONS));
+    ACTIONS.put("info", new ParentAction(INFO_ACTIONS));
+    ACTIONS.put("list", new ParentAction(LIST_ACTIONS));
+    ACTIONS.put("delete", new ParentAction(DELETE_ACTIONS));
+    ACTIONS.put("cancel", new CancelJobAction());
+    ACTIONS.put("load", new LoadAction());
+    ACTIONS.put("extract", new ExtractAction());
+    ACTIONS.put("copy", new CopyAction());
+    ACTIONS.put("query", new QueryAction());
+    ACTIONS.put("load-file", new LoadFileAction());
+  }
+
+  private static void printUsage() {
+    StringBuilder actionAndParams = new StringBuilder();
+    for (Map.Entry<String, BigQueryAction> entry : ACTIONS.entrySet()) {
+      actionAndParams.append("\n\t").append(entry.getKey());
+
+      String param = entry.getValue().params();
+      if (param != null && !param.isEmpty()) {
+        actionAndParams.append(' ').append(param.replace("\n", "\n\t\t"));
+      }
+    }
+    System.out.printf("Usage: %s [<project_id>] operation [entity] <args>*%s%n",
+        BigQueryExample.class.getSimpleName(), actionAndParams);
+  }
+
+  @SuppressWarnings("unchecked")
+  public static void main(String... args) throws Exception {
+    if (args.length < 1) {
+      System.out.println("Missing required project id and action");
+      printUsage();
+      return;
+    }
+    BigQueryOptions.Builder optionsBuilder = BigQueryOptions.builder();
+    BigQueryAction action;
+    String actionName;
+    if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
+      actionName = args[1];
+      optionsBuilder.projectId(args[0]);
+      action = ACTIONS.get(args[1]);
+      args = Arrays.copyOfRange(args, 2, args.length);
+    } else {
+      actionName = args[0];
+      action = ACTIONS.get(args[0]);
+      args = Arrays.copyOfRange(args, 1, args.length);
+    }
+    if (action == null) {
+      System.out.println("Unrecognized action.");
+      printUsage();
+      return;
+    }
+    BigQuery bigquery = optionsBuilder.build().service();
+    Object request;
+    try {
+      request = action.parse(args);
+    } catch (IllegalArgumentException ex) {
+      System.out.println("Invalid input for action '" + actionName + "'. " + ex.getMessage());
+      System.out.println("Expected: " + action.params());
+      return;
+    } catch (Exception ex) {
+      System.out.println("Failed to parse request.");
+      ex.printStackTrace();
+      return;
+    }
+    action.run(bigquery, request);
+  }
+}

@@ -115,10 +115,10 @@ public class BaseKeyTest {
     BaseKey key = builder.build();
     assertTrue(key.ancestors().isEmpty());
     List<PathElement> path = new ArrayList<>();
-    path.add(PathElement.of("p1","v1"));
+    path.add(PathElement.of("p1", "v1"));
     key = builder.ancestors(path.get(0)).build();
     assertEquals(path, key.ancestors());
-    path.add(PathElement.of("p2","v2"));
+    path.add(PathElement.of("p2", "v2"));
     key = builder.ancestors(path.get(1)).build();
     assertEquals(path, key.ancestors());
   }

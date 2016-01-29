@@ -4,7 +4,7 @@
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.11-SNAPSHOT</version>
+  <version>0.1.4-SNAPSHOT</version>
   <name>GCloud Java</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
   <description>
@@ -63,13 +63,17 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
+    <site.installationModule>gcloud-java</site.installationModule>
   </properties>
   <modules>
+    <module>gcloud-java</module>
+    <module>gcloud-java-bigquery</module>
+    <module>gcloud-java-contrib</module>
     <module>gcloud-java-core</module>
     <module>gcloud-java-datastore</module>
-    <module>gcloud-java-storage</module>
-    <module>gcloud-java</module>
     <module>gcloud-java-examples</module>
+    <module>gcloud-java-resourcemanager</module>
+    <module>gcloud-java-storage</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>
@@ -332,6 +336,8 @@
                 <quiet>true</quiet>
                 <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
                 <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
+                <artifactId>${site.installationModule}</artifactId>
+                <packaging>jar</packaging>
               </configuration>
             </plugin>
             <plugin>

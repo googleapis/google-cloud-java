@@ -85,8 +85,8 @@ public final class PathElement extends Serializable<com.google.datastore.v1beta3
   }
 
   @Override
-  protected com.google.datastore.v1beta3.Key.PathElement toPb() {
-    com.google.datastore.v1beta3.Key.PathElement.Builder pathElementPb = 
+  com.google.datastore.v1beta3.Key.PathElement toPb() {
+    com.google.datastore.v1beta3.Key.PathElement.Builder pathElementPb =
         com.google.datastore.v1beta3.Key.PathElement.newBuilder();
     pathElementPb.setKind(kind);
     if (id != null) {
@@ -98,7 +98,7 @@ public final class PathElement extends Serializable<com.google.datastore.v1beta3
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(com.google.datastore.v1beta3.Key.PathElement.parseFrom(bytesPb));
   }
 

@@ -53,7 +53,7 @@ public class IncompleteKey extends BaseKey {
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(com.google.datastore.v1beta3.Key.parseFrom(bytesPb));
   }
 

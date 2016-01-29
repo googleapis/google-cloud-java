@@ -33,7 +33,6 @@ import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.storage.Acl.Entity;
 
 import java.io.IOException;
@@ -80,10 +79,16 @@ public final class BucketInfo implements Serializable {
   private final List<Cors> cors;
   private final List<Acl> acl;
   private final List<Acl> defaultAcl;
-  private final Location location;
-  private final StorageClass storageClass;
+  private final String location;
+  private final String storageClass;
 
-  public static abstract class DeleteRule implements Serializable {
+  /**
+   * Base class for bucket's delete rules. Allows to configure automatic deletion of blobs and blobs
+   * versions.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   */
+  public abstract static class DeleteRule implements Serializable {
 
     private static final long serialVersionUID = 3137971668395933033L;
     private static final String SUPPORTED_ACTION = "Delete";
@@ -153,11 +158,23 @@ public final class BucketInfo implements Serializable {
     }
   }
 
+  /**
+   * Delete rule class that sets a Time To Live for blobs in the bucket.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   */
   public static class AgeDeleteRule extends DeleteRule {
 
     private static final long serialVersionUID = 5697166940712116380L;
     private final int daysToLive;
 
+    /**
+     * Creates an {@code AgeDeleteRule} object.
+     *
+     * @param daysToLive blobs' Time To Live expressed in days. The time when the age condition is
+     *     considered to be satisfied is computed by adding {@code daysToLive} days to the
+     *     midnight following blob's creation time in UTC.
+     */
     public AgeDeleteRule(int daysToLive) {
       super(Type.AGE);
       this.daysToLive = daysToLive;
@@ -200,16 +217,28 @@ public final class BucketInfo implements Serializable {
       rule = new JacksonFactory().fromString(in.readUTF(), Rule.class);
     }
 
+    @Override
     Rule toPb() {
       return rule;
     }
   }
 
+  /**
+   * Delete rule class for blobs in the bucket that have been created before a certain date.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   */
   public static class CreatedBeforeDeleteRule extends DeleteRule {
 
     private static final long serialVersionUID = 881692650279195867L;
     private final long timeMillis;
 
+    /**
+     * Creates an {@code CreatedBeforeDeleteRule} object.
+     *
+     * @param timeMillis a date in UTC. Blobs that have been created before midnight of the provided
+     *     date meet the delete condition
+     */
     public CreatedBeforeDeleteRule(long timeMillis) {
       super(Type.CREATE_BEFORE);
       this.timeMillis = timeMillis;
@@ -225,11 +254,23 @@ public final class BucketInfo implements Serializable {
     }
   }
 
+  /**
+   * Delete rule class for versioned blobs. Specifies when to delete a blob's version according to
+   * the number of available newer versions for that blob.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   */
   public static class NumNewerVersionsDeleteRule extends DeleteRule {
 
     private static final long serialVersionUID = -1955554976528303894L;
     private final int numNewerVersions;
 
+    /**
+     * Creates an {@code NumNewerVersionsDeleteRule} object.
+     *
+     * @param numNewerVersions the number of newer versions. A blob's version meets the delete
+     *     condition when {@code numNewerVersions} newer versions are available.
+     */
     public NumNewerVersionsDeleteRule(int numNewerVersions) {
       super(Type.NUM_NEWER_VERSIONS);
       this.numNewerVersions = numNewerVersions;
@@ -245,11 +286,22 @@ public final class BucketInfo implements Serializable {
     }
   }
 
+  /**
+   * Delete rule class to distinguish between live and archived blobs.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Object Lifecycle Management</a>
+   */
   public static class IsLiveDeleteRule extends DeleteRule {
 
     private static final long serialVersionUID = -3502994563121313364L;
     private final boolean isLive;
 
+    /**
+     * Creates an {@code IsLiveDeleteRule} object.
+     *
+     * @param isLive if set to {@code true} live blobs meet the delete condition. If set to
+     *     {@code false} delete condition is met by archived blobs.
+     */
     public IsLiveDeleteRule(boolean isLive) {
       super(Type.IS_LIVE);
       this.isLive = isLive;
@@ -265,135 +317,7 @@ public final class BucketInfo implements Serializable {
     }
   }
 
-  public static final class StorageClass implements Serializable {
-
-    private static final long serialVersionUID = 374002156285326563L;
-    private static final ImmutableMap<String, Option> STRING_TO_OPTION;
-    private static final StorageClass NULL_VALUE =
-        new StorageClass(Data.<String>nullOf(String.class));
-
-    private final String value;
-
-    public enum Option {
-      DURABLE_REDUCED_AVAILABILITY, STANDARD;
-
-      private final StorageClass storageClass;
-
-      Option() {
-        storageClass = new StorageClass(name());
-      }
-    }
-
-    private StorageClass(String value) {
-      this.value = checkNotNull(value);
-    }
-
-    @Override
-    public String toString() {
-      return value();
-    }
-
-    public String value() {
-      return value;
-    }
-
-    public static StorageClass standard() {
-      return Option.STANDARD.storageClass;
-    }
-
-    public static StorageClass durableReducedAvailability() {
-      return Option.DURABLE_REDUCED_AVAILABILITY.storageClass;
-    }
-
-    public static StorageClass of(String value) {
-      Option option = STRING_TO_OPTION.get(value.toUpperCase());
-      return option == null ? new StorageClass(value) : option.storageClass;
-    }
-
-    static {
-      ImmutableMap.Builder<String, Option> map = ImmutableMap.builder();
-      for (Option option : Option.values()) {
-        map.put(option.name(), option);
-      }
-      STRING_TO_OPTION = map.build();
-    }
-  }
-
-  public static final class Location implements Serializable {
-
-    private static final long serialVersionUID = 9073107666838637662L;
-    private static final ImmutableMap<String, Option> STRING_TO_OPTION;
-    private static final Location NULL_VALUE = new Location(Data.<String>nullOf(String.class));
-
-    private final String value;
-
-    public enum Option {
-      US, EU, ASIA;
-
-      private final Location location;
-
-      Option() {
-        location = new Location(name());
-      }
-    }
-
-    private Location(String value) {
-      this.value = checkNotNull(value);
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(value);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      if (this == obj) {
-        return true;
-      }
-      if (obj == null || getClass() != obj.getClass()) {
-        return false;
-      }
-      final Location other = (Location) obj;
-      return Objects.equals(this.value, other.value);
-    }
-
-    @Override
-    public String toString() {
-      return value();
-    }
-
-    public String value() {
-      return value;
-    }
-
-    public static Location us() {
-      return Option.US.location;
-    }
-
-    public static Location eu() {
-      return Option.EU.location;
-    }
-
-    public static Location asia() {
-      return Option.ASIA.location;
-    }
-
-    public static Location of(String value) {
-      Option option = STRING_TO_OPTION.get(value.toUpperCase());
-      return option == null ? new Location(value) : option.location;
-    }
-
-    static {
-      ImmutableMap.Builder<String, Option> map = ImmutableMap.builder();
-      for (Option option : Option.values()) {
-        map.put(option.name(), option);
-      }
-      STRING_TO_OPTION = map.build();
-    }
-  }
-
-  public final static class Builder {
+  public static final class Builder {
 
     private String id;
     private String name;
@@ -402,18 +326,40 @@ public final class BucketInfo implements Serializable {
     private Boolean versioningEnabled;
     private String indexPage;
     private String notFoundPage;
-    private ImmutableList<DeleteRule> deleteRules;
-    private StorageClass storageClass;
-    private Location location;
+    private List<DeleteRule> deleteRules;
+    private String storageClass;
+    private String location;
     private String etag;
     private Long createTime;
     private Long metageneration;
-    private ImmutableList<Cors> cors;
-    private ImmutableList<Acl> acl;
-    private ImmutableList<Acl> defaultAcl;
+    private List<Cors> cors;
+    private List<Acl> acl;
+    private List<Acl> defaultAcl;
 
     private Builder() {}
 
+    private Builder(BucketInfo bucketInfo) {
+      id = bucketInfo.id;
+      name = bucketInfo.name;
+      etag = bucketInfo.etag;
+      createTime = bucketInfo.createTime;
+      metageneration = bucketInfo.metageneration;
+      location = bucketInfo.location;
+      storageClass = bucketInfo.storageClass;
+      cors = bucketInfo.cors;
+      acl = bucketInfo.acl;
+      defaultAcl = bucketInfo.defaultAcl;
+      owner = bucketInfo.owner;
+      selfLink = bucketInfo.selfLink;
+      versioningEnabled = bucketInfo.versioningEnabled;
+      indexPage = bucketInfo.indexPage;
+      notFoundPage = bucketInfo.notFoundPage;
+      deleteRules = bucketInfo.deleteRules;
+    }
+
+    /**
+     * Sets the bucket's name.
+     */
     public Builder name(String name) {
       this.name = checkNotNull(name);
       return this;
@@ -434,33 +380,59 @@ public final class BucketInfo implements Serializable {
       return this;
     }
 
+    /**
+     * Sets whether versioning should be enabled for this bucket. When set to true, versioning is
+     * fully enabled.
+     */
     public Builder versioningEnabled(Boolean enable) {
       this.versioningEnabled = firstNonNull(enable, Data.<Boolean>nullOf(Boolean.class));
       return this;
     }
 
+    /**
+     * Sets the bucket's website index page. Behaves as the bucket's directory index where missing
+     * blobs are treated as potential directories.
+     */
     public Builder indexPage(String indexPage) {
       this.indexPage = indexPage;
       return this;
     }
 
+    /**
+     * Sets the custom object to return when a requested resource is not found.
+     */
     public Builder notFoundPage(String notFoundPage) {
       this.notFoundPage = notFoundPage;
       return this;
     }
 
+    /**
+     * Sets the bucket's lifecycle configuration as a number of delete rules.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
+     */
     public Builder deleteRules(Iterable<? extends DeleteRule> rules) {
       this.deleteRules = rules != null ? ImmutableList.copyOf(rules) : null;
       return this;
     }
 
-    public Builder storageClass(StorageClass storageClass) {
-      this.storageClass = firstNonNull(storageClass, StorageClass.NULL_VALUE);
+    /**
+     * Sets the bucket's storage class. This defines how blobs in the bucket are stored and
+     * determines the SLA and the cost of storage. A list of supported values is available
+     * <a href="https://cloud.google.com/storage/docs/storage-classes">here</a>.
+     */
+    public Builder storageClass(String storageClass) {
+      this.storageClass = storageClass;
       return this;
     }
 
-    public Builder location(Location location) {
-      this.location = firstNonNull(location, Location.NULL_VALUE);
+    /**
+     * Sets the bucket's location. Data for blobs in the bucket resides in physical storage within
+     * this region. A list of supported values is available
+     * <a href="https://cloud.google.com/storage/docs/bucket-locations">here</a>.
+     */
+    public Builder location(String location) {
+      this.location = location;
       return this;
     }
 
@@ -479,21 +451,43 @@ public final class BucketInfo implements Serializable {
       return this;
     }
 
+    /**
+     * Sets the bucket's Cross-Origin Resource Sharing (CORS) configuration.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
+     *     Cross-Origin Resource Sharing (CORS)</a>
+     */
     public Builder cors(Iterable<Cors> cors) {
       this.cors = cors != null ? ImmutableList.copyOf(cors) : null;
       return this;
     }
 
+    /**
+     * Sets the bucket's access control configuration.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+     *     About Access Control Lists</a>
+     */
     public Builder acl(Iterable<Acl> acl) {
       this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
+    /**
+     * Sets the default access control configuration to apply to bucket's blobs when no other
+     * configuration is specified.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+     *     About Access Control Lists</a>
+     */
     public Builder defaultAcl(Iterable<Acl> acl) {
       this.defaultAcl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
+    /**
+     * Creates a {@code BucketInfo} object.
+     */
     public BucketInfo build() {
       checkNotNull(name);
       return new BucketInfo(this);
@@ -519,88 +513,143 @@ public final class BucketInfo implements Serializable {
     deleteRules = builder.deleteRules;
   }
 
+  /**
+   * Returns the bucket's id.
+   */
   public String id() {
     return id;
   }
 
+  /**
+   * Returns the bucket's name.
+   */
   public String name() {
     return name;
   }
 
+  /**
+   * Returns the bucket's owner. This is always the project team's owner group.
+   */
   public Entity owner() {
     return owner;
   }
 
+  /**
+   * Returns the URI of this bucket as a string.
+   */
   public String selfLink() {
     return selfLink;
   }
 
+  /**
+   * Returns {@code true} if versioning is fully enabled for this bucket, {@code false} otherwise.
+   */
   public Boolean versioningEnabled() {
     return Data.isNull(versioningEnabled) ? null : versioningEnabled;
   }
 
+  /**
+   * Returns bucket's website index page. Behaves as the bucket's directory index where missing
+   * blobs are treated as potential directories.
+   */
   public String indexPage() {
     return indexPage;
   }
 
+  /**
+   * Returns the custom object to return when a requested resource is not found.
+   */
   public String notFoundPage() {
     return notFoundPage;
   }
 
+  /**
+   * Returns bucket's lifecycle configuration as a number of delete rules.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
+   */
   public List<? extends DeleteRule> deleteRules() {
     return deleteRules;
   }
 
+  /**
+   * Returns HTTP 1.1 Entity tag for the bucket.
+   *
+   * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
+   */
   public String etag() {
     return etag;
   }
 
+  /**
+   * Returns the time at which the bucket was created.
+   */
   public Long createTime() {
     return createTime;
   }
 
+  /**
+   * Returns the metadata generation of this bucket.
+   */
   public Long metageneration() {
     return metageneration;
   }
 
-  public Location location() {
-    return location == null || Data.isNull(location.value) ? null : location;
+  /**
+   * Returns the bucket's location. Data for blobs in the bucket resides in physical storage within
+   * this region.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/bucket-locations">Bucket Locations</a>
+   */
+  public String location() {
+    return location;
   }
 
-  public StorageClass storageClass() {
-    return storageClass == null || Data.isNull(storageClass.value) ? null : storageClass;
+  /**
+   * Returns the bucket's storage class. This defines how blobs in the bucket are stored and
+   * determines the SLA and the cost of storage.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/storage-classes">Storage Classes</a>
+   */
+  public String storageClass() {
+    return storageClass;
   }
 
+  /**
+   * Returns the bucket's Cross-Origin Resource Sharing (CORS) configuration.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
+   *     Cross-Origin Resource Sharing (CORS)</a>
+   */
   public List<Cors> cors() {
     return cors;
   }
 
+  /**
+   * Returns the bucket's access control configuration.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+   *     About Access Control Lists</a>
+   */
   public List<Acl> acl() {
     return acl;
   }
 
+  /**
+   * Returns the default access control configuration for this bucket's blobs.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+   *     About Access Control Lists</a>
+   */
   public List<Acl> defaultAcl() {
     return defaultAcl;
   }
 
+  /**
+   * Returns a builder for the current bucket.
+   */
   public Builder toBuilder() {
-    return new Builder()
-        .name(name)
-        .id(id)
-        .createTime(createTime)
-        .etag(etag)
-        .metageneration(metageneration)
-        .cors(cors)
-        .acl(acl)
-        .defaultAcl(defaultAcl)
-        .location(location)
-        .storageClass(storageClass)
-        .owner(owner)
-        .selfLink(selfLink)
-        .versioningEnabled(versioningEnabled)
-        .indexPage(indexPage)
-        .notFoundPage(notFoundPage)
-        .deleteRules(deleteRules);
+    return new Builder(this);
   }
 
   @Override
@@ -633,10 +682,10 @@ public final class BucketInfo implements Serializable {
       bucketPb.setMetageneration(metageneration);
     }
     if (location != null) {
-      bucketPb.setLocation(location.value());
+      bucketPb.setLocation(location);
     }
     if (storageClass != null) {
-      bucketPb.setStorageClass(storageClass.value());
+      bucketPb.setStorageClass(storageClass);
     }
     if (cors != null) {
       bucketPb.setCors(transform(cors, Cors.TO_PB_FUNCTION));
@@ -683,10 +732,16 @@ public final class BucketInfo implements Serializable {
     return bucketPb;
   }
 
+  /**
+   * Creates a {@code BucketInfo} object for the provided bucket name.
+   */
   public static BucketInfo of(String name) {
     return builder(name).build();
   }
 
+  /**
+   * Returns a {@code BucketInfo} builder where the bucket's name is set to the provided name.
+   */
   public static Builder builder(String name) {
     return new Builder().name(name);
   }
@@ -709,10 +764,10 @@ public final class BucketInfo implements Serializable {
       builder.createTime(bucketPb.getTimeCreated().getValue());
     }
     if (bucketPb.getLocation() != null) {
-      builder.location(Location.of(bucketPb.getLocation()));
+      builder.location(bucketPb.getLocation());
     }
     if (bucketPb.getStorageClass() != null) {
-      builder.storageClass(StorageClass.of(bucketPb.getStorageClass()));
+      builder.storageClass(bucketPb.getStorageClass());
     }
     if (bucketPb.getCors() != null) {
       builder.cors(transform(bucketPb.getCors(), Cors.FROM_PB_FUNCTION));

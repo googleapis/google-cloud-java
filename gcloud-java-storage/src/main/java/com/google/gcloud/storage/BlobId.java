@@ -16,34 +16,51 @@
 
 package com.google.gcloud.storage;
 
-import com.google.api.services.storage.model.StorageObject;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Google Storage object identifier.
+ * Google Storage Object identifier. A {@code BlobId} object includes the name of the containing
+ * bucket, the blob's name and possibly the blob's generation. If {@link #generation()} is
+ * {@code null} the identifier refers to the latest blob's generation.
  */
 public final class BlobId implements Serializable {
 
   private static final long serialVersionUID = -6156002883225601925L;
   private final String bucket;
   private final String name;
+  private final Long generation;
 
-  private BlobId(String bucket, String name) {
+  private BlobId(String bucket, String name, Long generation) {
     this.bucket = bucket;
     this.name = name;
+    this.generation = generation;
   }
 
+  /**
+   * Returns the name of the bucket containing the blob.
+   */
   public String bucket() {
     return bucket;
   }
 
+  /**
+   * Returns the name of the blob.
+   */
   public String name() {
     return name;
+  }
+
+  /**
+   * Returns blob's data generation. Used for versioning.
+   */
+  public Long generation() {
+    return generation;
   }
 
   @Override
@@ -51,32 +68,54 @@ public final class BlobId implements Serializable {
     return MoreObjects.toStringHelper(this)
         .add("bucket", bucket())
         .add("name", name())
+        .add("generation", generation())
         .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bucket, name);
+    return Objects.hash(bucket, name, generation);
   }
 
   @Override
   public boolean equals(Object obj) {
     return obj instanceof BlobId && Objects.equals(bucket, ((BlobId) obj).bucket)
-        && Objects.equals(name, ((BlobId) obj).name);
+        && Objects.equals(name, ((BlobId) obj).name)
+        && Objects.equals(generation, ((BlobId) obj).generation);
   }
 
   StorageObject toPb() {
     StorageObject storageObject = new StorageObject();
     storageObject.setBucket(bucket);
     storageObject.setName(name);
+    storageObject.setGeneration(generation);
     return storageObject;
   }
 
+  /**
+   * Creates a blob identifier. Generation is set to {@code null}.
+   *
+   * @param bucket the name of the bucket that contains the blob
+   * @param name the name of the blob
+   */
   public static BlobId of(String bucket, String name) {
-    return new BlobId(checkNotNull(bucket), checkNotNull(name));
+    return new BlobId(checkNotNull(bucket), checkNotNull(name), null);
+  }
+
+  /**
+   * Creates a {@code BlobId} object.
+   *
+   * @param bucket name of the containing bucket
+   * @param name blob's name
+   * @param generation blob's data generation, used for versioning. If {@code null} the identifier
+   *     refers to the latest blob's generation
+   */
+  public static BlobId of(String bucket, String name, Long generation) {
+    return new BlobId(checkNotNull(bucket), checkNotNull(name), generation);
   }
 
   static BlobId fromPb(StorageObject storageObject) {
-    return BlobId.of(storageObject.getBucket(), storageObject.getName());
+    return BlobId.of(storageObject.getBucket(), storageObject.getName(),
+        storageObject.getGeneration());
   }
 }

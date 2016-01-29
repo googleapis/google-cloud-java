@@ -18,81 +18,167 @@ package com.google.gcloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
-import com.google.api.client.googleapis.compute.ComputeCredential;
-import com.google.api.client.googleapis.extensions.appengine.auth.oauth2.AppIdentityCredential;
-import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
-import com.google.api.client.http.HttpRequestInitializer;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson.JacksonFactory;
-import com.google.auth.http.HttpCredentialsAdapter;
+import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectStreamException;
 import java.io.Serializable;
-import java.security.GeneralSecurityException;
+import java.lang.reflect.Method;
 import java.security.PrivateKey;
+import java.util.Collection;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * Credentials for accessing Google Cloud services.
  */
-public abstract class AuthCredentials implements Serializable {
-
-  private static final long serialVersionUID = 236297804453464604L;
+public abstract class AuthCredentials implements Restorable<AuthCredentials> {
 
   private static class AppEngineAuthCredentials extends AuthCredentials {
 
-    private static final long serialVersionUID = 7931300552744202954L;
-
     private static final AuthCredentials INSTANCE = new AppEngineAuthCredentials();
+    private static final AppEngineAuthCredentialsState STATE = new AppEngineAuthCredentialsState();
 
-    @Override
-    protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
-        Set<String> scopes) {
-      return new AppIdentityCredential(scopes);
+    private static class AppEngineCredentials extends GoogleCredentials {
+
+      private final Object appIdentityService;
+      private final Method getAccessToken;
+      private final Method getAccessTokenResult;
+      private final Collection<String> scopes;
+
+      AppEngineCredentials() {
+        try {
+          Class<?> factoryClass =
+              Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
+          Method method = factoryClass.getMethod("getAppIdentityService");
+          this.appIdentityService = method.invoke(null);
+          Class<?> serviceClass =
+              Class.forName("com.google.appengine.api.appidentity.AppIdentityService");
+          Class<?> tokenResultClass = Class.forName(
+              "com.google.appengine.api.appidentity.AppIdentityService$GetAccessTokenResult");
+          this.getAccessTokenResult = serviceClass.getMethod("getAccessToken", Iterable.class);
+          this.getAccessToken = tokenResultClass.getMethod("getAccessToken");
+          this.scopes = null;
+        } catch (Exception e) {
+          throw new RuntimeException("Could not create AppEngineCredentials.", e);
+        }
+      }
+
+      AppEngineCredentials(Collection<String> scopes, AppEngineCredentials unscoped) {
+        this.appIdentityService = unscoped.appIdentityService;
+        this.getAccessToken = unscoped.getAccessToken;
+        this.getAccessTokenResult = unscoped.getAccessTokenResult;
+        this.scopes = scopes;
+      }
+
+      /**
+       * Refresh the access token by getting it from the App Identity service
+       */
+      @Override
+      public AccessToken refreshAccessToken() throws IOException {
+        if (createScopedRequired()) {
+          throw new IOException("AppEngineCredentials requires createScoped call before use.");
+        }
+        try {
+          Object accessTokenResult = getAccessTokenResult.invoke(appIdentityService, scopes);
+          String accessToken = (String) getAccessToken.invoke(accessTokenResult);
+          return new AccessToken(accessToken, null);
+        } catch (Exception e) {
+          throw new IOException("Could not get the access token.", e);
+        }
+      }
+
+      @Override
+      public boolean createScopedRequired() {
+        return scopes == null || scopes.isEmpty();
+      }
+
+      @Override
+      public GoogleCredentials createScoped(Collection<String> scopes) {
+        return new AppEngineCredentials(scopes, this);
+      }
     }
 
-    private Object readResolve() throws ObjectStreamException {
-      return INSTANCE;
+    private static class AppEngineAuthCredentialsState
+        implements RestorableState<AuthCredentials>, Serializable {
+
+      private static final long serialVersionUID = 3558563960848658928L;
+
+      @Override
+      public AuthCredentials restore() {
+        return INSTANCE;
+      }
+
+      @Override
+      public int hashCode() {
+        return getClass().getName().hashCode();
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        return obj instanceof AppEngineAuthCredentialsState;
+      }
+    }
+
+    @Override
+    public GoogleCredentials credentials() {
+      return new AppEngineCredentials();
+    }
+
+    @Override
+    public RestorableState<AuthCredentials> capture() {
+      return STATE;
     }
   }
 
   public static class ServiceAccountAuthCredentials extends AuthCredentials {
 
-    private static final long serialVersionUID = 8007708734318445901L;
     private final String account;
     private final PrivateKey privateKey;
 
-    private static final AuthCredentials NO_CREDENTIALS = new ServiceAccountAuthCredentials();
+    private static class ServiceAccountAuthCredentialsState
+        implements RestorableState<AuthCredentials>, Serializable {
+
+      private static final long serialVersionUID = -7302180782414633639L;
+
+      private final String account;
+      private final PrivateKey privateKey;
+
+      private ServiceAccountAuthCredentialsState(String account, PrivateKey privateKey) {
+        this.account = account;
+        this.privateKey = privateKey;
+      }
+
+      @Override
+      public AuthCredentials restore() {
+        return new ServiceAccountAuthCredentials(account, privateKey);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(account, privateKey);
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        if (!(obj instanceof ServiceAccountAuthCredentialsState)) {
+          return false;
+        }
+        ServiceAccountAuthCredentialsState other = (ServiceAccountAuthCredentialsState) obj;
+        return Objects.equals(account, other.account)
+            && Objects.equals(privateKey, other.privateKey);
+      }
+    }
 
     ServiceAccountAuthCredentials(String account, PrivateKey privateKey) {
       this.account = checkNotNull(account);
       this.privateKey = checkNotNull(privateKey);
     }
 
-    ServiceAccountAuthCredentials() {
-      account = null;
-      privateKey = null;
-    }
-
     @Override
-    protected HttpRequestInitializer httpRequestInitializer(
-        HttpTransport transport, Set<String> scopes) {
-      GoogleCredential.Builder builder = new GoogleCredential.Builder()
-          .setTransport(transport)
-          .setJsonFactory(new JacksonFactory());
-      if (privateKey != null) {
-        builder.setServiceAccountPrivateKey(privateKey);
-        builder.setServiceAccountId(account);
-        builder.setServiceAccountScopes(scopes);
-      }
-      return builder.build();
+    public ServiceAccountCredentials credentials() {
+      return new ServiceAccountCredentials(null, account, privateKey, null, null);
     }
 
     public String account() {
@@ -104,79 +190,63 @@ public abstract class AuthCredentials implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-      return Objects.hash(account, privateKey);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      if (!(obj instanceof ServiceAccountAuthCredentials)) {
-        return false;
-      }
-      ServiceAccountAuthCredentials other = (ServiceAccountAuthCredentials) obj;
-      return Objects.equals(account, other.account)
-          && Objects.equals(privateKey, other.privateKey);
+    public RestorableState<AuthCredentials> capture() {
+      return new ServiceAccountAuthCredentialsState(account, privateKey);
     }
   }
 
-  private static class ComputeEngineAuthCredentials extends AuthCredentials {
+  public static class ApplicationDefaultAuthCredentials extends AuthCredentials {
 
-    private static final long serialVersionUID = -5217355402127260144L;
+    private GoogleCredentials googleCredentials;
 
-    private transient ComputeCredential computeCredential;
+    private static final ApplicationDefaultAuthCredentialsState STATE =
+        new ApplicationDefaultAuthCredentialsState();
 
-    ComputeEngineAuthCredentials() throws IOException, GeneralSecurityException {
-      computeCredential = getComputeCredential();
-    }
+    private static class ApplicationDefaultAuthCredentialsState
+        implements RestorableState<AuthCredentials>, Serializable {
 
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-      in.defaultReadObject();
-      try {
-        computeCredential = getComputeCredential();
-      } catch (GeneralSecurityException e) {
-        throw new IOException(e);
+      private static final long serialVersionUID = -8839085552021212257L;
+
+      @Override
+      public AuthCredentials restore() {
+        try {
+          return new ApplicationDefaultAuthCredentials();
+        } catch (IOException e) {
+          throw new IllegalStateException(
+              "Could not restore " + ApplicationDefaultAuthCredentials.class.getSimpleName(), e);
+        }
+      }
+
+      @Override
+      public int hashCode() {
+        return getClass().getName().hashCode();
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        return obj instanceof ApplicationDefaultAuthCredentialsState;
       }
     }
-
-    @Override
-    protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
-        Set<String> scopes) {
-      return computeCredential;
-    }
-  }
-
-  private static class ApplicationDefaultAuthCredentials extends AuthCredentials {
-
-    private static final long serialVersionUID = -8306873864136099893L;
-
-    private transient GoogleCredentials googleCredentials;
 
     ApplicationDefaultAuthCredentials() throws IOException {
       googleCredentials = GoogleCredentials.getApplicationDefault();
     }
 
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-      in.defaultReadObject();
-      googleCredentials = GoogleCredentials.getApplicationDefault();
+    @Override
+    public GoogleCredentials credentials() {
+      return googleCredentials;
     }
 
     @Override
-    protected HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
-        Set<String> scopes) {
-      return new HttpCredentialsAdapter(googleCredentials);
+    public RestorableState<AuthCredentials> capture() {
+      return STATE;
     }
   }
 
-  protected abstract HttpRequestInitializer httpRequestInitializer(HttpTransport transport,
-      Set<String> scopes);
+  public abstract GoogleCredentials credentials();
 
   public static AuthCredentials createForAppEngine() {
     return AppEngineAuthCredentials.INSTANCE;
-  }
-
-  public static AuthCredentials createForComputeEngine()
-      throws IOException, GeneralSecurityException {
-    return new ComputeEngineAuthCredentials();
   }
 
   /**
@@ -188,8 +258,8 @@ public abstract class AuthCredentials implements Serializable {
    * variable GOOGLE_APPLICATION_CREDENTIALS.
    * </p>
    *
-   * @return the credentials instance.
-   * @throws IOException if the credentials cannot be created in the current environment.
+   * @return the credentials instance
+   * @throws IOException if the credentials cannot be created in the current environment
    */
   public static AuthCredentials createApplicationDefaults() throws IOException {
     return new ApplicationDefaultAuthCredentials();
@@ -205,7 +275,7 @@ public abstract class AuthCredentials implements Serializable {
    *
    * @param account id of the Service Account
    * @param privateKey private key associated to the account
-   * @return the credentials instance.
+   * @return the credentials instance
    */
   public static ServiceAccountAuthCredentials createFor(String account, PrivateKey privateKey) {
     return new ServiceAccountAuthCredentials(account, privateKey);
@@ -220,26 +290,20 @@ public abstract class AuthCredentials implements Serializable {
    * </p>
    *
    * @param jsonCredentialStream stream for Service Account Credentials in JSON format
-   * @return the credentials instance.
-   * @throws IOException if the credentials cannot be created from the stream.
+   * @return the credentials instance
+   * @throws IOException if the credentials cannot be created from the stream
    */
   public static ServiceAccountAuthCredentials createForJson(InputStream jsonCredentialStream)
       throws IOException {
-    GoogleCredential tempCredentials = GoogleCredential.fromStream(jsonCredentialStream);
-    return new ServiceAccountAuthCredentials(tempCredentials.getServiceAccountId(),
-        tempCredentials.getServiceAccountPrivateKey());
-  }
-
-  public static AuthCredentials noCredentials() {
-    return ServiceAccountAuthCredentials.NO_CREDENTIALS;
-  }
-
-  static ComputeCredential getComputeCredential() throws IOException, GeneralSecurityException {
-    NetHttpTransport transport = GoogleNetHttpTransport.newTrustedTransport();
-    // Try to connect using Google Compute Engine service account credentials.
-    ComputeCredential credential = new ComputeCredential(transport, new JacksonFactory());
-    // Force token refresh to detect if we are running on Google Compute Engine.
-    credential.refreshToken();
-    return credential;
+    GoogleCredentials tempCredentials = GoogleCredentials.fromStream(jsonCredentialStream);
+    if (tempCredentials instanceof ServiceAccountCredentials) {
+      ServiceAccountCredentials tempServiceAccountCredentials =
+          (ServiceAccountCredentials) tempCredentials;
+      return new ServiceAccountAuthCredentials(
+          tempServiceAccountCredentials.getClientEmail(),
+          tempServiceAccountCredentials.getPrivateKey());
+    }
+    throw new IOException(
+        "The given JSON Credentials Stream is not for a service account credential.");
   }
 }

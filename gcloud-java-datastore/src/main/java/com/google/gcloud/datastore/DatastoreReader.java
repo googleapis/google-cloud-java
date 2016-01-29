@@ -27,7 +27,7 @@ public interface DatastoreReader {
   /**
    * Returns an {@link Entity} for the given {@link Key} or {@code null} if does not exists.
    *
-   * @throws DatastoreException upon failure.
+   * @throws DatastoreException upon failure
    */
   Entity get(Key key);
 
@@ -38,7 +38,7 @@ public interface DatastoreReader {
    * from the returned {@code Iterator}'s {@link Iterator#hasNext hasNext} or
    * {@link Iterator#next next} methods.
    *
-   * @throws DatastoreException upon failure.
+   * @throws DatastoreException upon failure
    * @see #get(Key)
    */
   Iterator<Entity> get(Key... key);
@@ -53,7 +53,7 @@ public interface DatastoreReader {
   /**
    * Submit a {@link Query} and returns its result.
    *
-   * @throws DatastoreException upon failure.
+   * @throws DatastoreException upon failure
    */
   <T> QueryResults<T> run(Query<T> query);
 }

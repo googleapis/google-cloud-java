@@ -17,6 +17,7 @@
 package com.google.gcloud.storage;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.storage.BatchResponse.Result;
@@ -34,12 +35,38 @@ public class BatchResponseTest {
   @Test
   public void testBatchResponse() {
     List<Result<Boolean>> deletes = ImmutableList.of(Result.of(true), Result.of(false));
-    List<Result<BlobInfo>> updates = ImmutableList.of(Result.of(BLOB_INFO_1), Result.of(BLOB_INFO_2));
+    List<Result<BlobInfo>> updates =
+        ImmutableList.of(Result.of(BLOB_INFO_1), Result.of(BLOB_INFO_2));
     List<Result<BlobInfo>> gets = ImmutableList.of(Result.of(BLOB_INFO_2), Result.of(BLOB_INFO_3));
     BatchResponse response = new BatchResponse(deletes, updates, gets);
-
     assertEquals(deletes, response.deletes());
     assertEquals(updates, response.updates());
     assertEquals(gets, response.gets());
+  }
+
+  @Test
+  public void testEquals() {
+    List<Result<Boolean>> deletes = ImmutableList.of(Result.of(true), Result.of(false));
+    List<Result<BlobInfo>> updates =
+        ImmutableList.of(Result.of(BLOB_INFO_1), Result.of(BLOB_INFO_2));
+    List<Result<BlobInfo>> gets = ImmutableList.of(Result.of(BLOB_INFO_2), Result.of(BLOB_INFO_3));
+    List<Result<Boolean>> otherDeletes = ImmutableList.of(Result.of(false), Result.of(true));
+    List<Result<BlobInfo>> otherUpdates =
+        ImmutableList.of(Result.of(BLOB_INFO_2), Result.of(BLOB_INFO_3));
+    List<Result<BlobInfo>> otherGets =
+        ImmutableList.of(Result.of(BLOB_INFO_1), Result.of(BLOB_INFO_2));
+    BatchResponse response = new BatchResponse(deletes, updates, gets);
+    BatchResponse responseEquals = new BatchResponse(deletes, updates, gets);
+    BatchResponse responseNotEquals1 = new BatchResponse(otherDeletes, updates, gets);
+    BatchResponse responseNotEquals2 = new BatchResponse(deletes, otherUpdates, gets);
+    BatchResponse responseNotEquals3 = new BatchResponse(deletes, updates, otherGets);
+    assertEquals(response, responseEquals);
+    assertEquals(response.hashCode(), responseEquals.hashCode());
+    assertNotEquals(response, responseNotEquals1);
+    assertNotEquals(response.hashCode(), responseNotEquals1.hashCode());
+    assertNotEquals(response, responseNotEquals2);
+    assertNotEquals(response.hashCode(), responseNotEquals2.hashCode());
+    assertNotEquals(response, responseNotEquals3);
+    assertNotEquals(response.hashCode(), responseNotEquals3.hashCode());
   }
 }

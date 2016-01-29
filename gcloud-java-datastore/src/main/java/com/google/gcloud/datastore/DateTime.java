@@ -96,20 +96,20 @@ public final class DateTime extends Serializable<com.google.protobuf.Timestamp>
   }
 
   @Override
-  protected com.google.protobuf.Timestamp toPb() {
+  com.google.protobuf.Timestamp toPb() {
     return microsecondsToTimestampPb(timestampMicroseconds);
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return new DateTime(timestampPbToMicroseconds(
         com.google.protobuf.Timestamp.parseFrom(bytesPb)));
   }
-  
+
   protected static long timestampPbToMicroseconds(com.google.protobuf.Timestamp timestampPb) {
     return timestampPb.getSeconds() * 1000000 + timestampPb.getNanos() / 1000;
   }
-  
+
   protected static com.google.protobuf.Timestamp microsecondsToTimestampPb(long microseconds) {
     long seconds = microseconds / 1000000;
     int nanos = (int) (microseconds % 1000000) * 1000;

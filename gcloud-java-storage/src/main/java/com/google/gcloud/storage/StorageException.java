@@ -16,8 +16,14 @@
 
 package com.google.gcloud.storage;
 
-import com.google.gcloud.RetryHelper;
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.common.collect.ImmutableSet;
+import com.google.gcloud.BaseServiceException;
 import com.google.gcloud.RetryHelper.RetryHelperException;
+import com.google.gcloud.RetryHelper.RetryInterruptedException;
+
+import java.io.IOException;
+import java.util.Set;
 
 /**
  * Storage service exception.
@@ -25,29 +31,35 @@ import com.google.gcloud.RetryHelper.RetryHelperException;
  * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/status-codes">Google Cloud
  *      Storage error codes</a>
  */
-public class StorageException extends RuntimeException {
+public class StorageException extends BaseServiceException {
 
-  private static final long serialVersionUID = -3748432005065428084L;
-  private static final int UNKNOWN_CODE = -1;
+  // see: https://cloud.google.com/storage/docs/concepts-techniques#practices
+  private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
+      new Error(504, null),
+      new Error(503, null),
+      new Error(502, null),
+      new Error(500, null),
+      new Error(429, null),
+      new Error(408, null),
+      new Error(null, "internalError"));
 
-  private final int code;
-  private final boolean retryable;
+  private static final long serialVersionUID = -4168430271327813063L;
 
-  public StorageException(int code, String message, boolean retryable) {
-    super(message);
-    this.code = code;
-    this.retryable = retryable;
+  public StorageException(int code, String message) {
+    super(code, message, null, true);
   }
 
-  /**
-   * Returns the code associated with this exception.
-   */
-  public int code() {
-    return code;
+  public StorageException(IOException exception) {
+    super(exception, true);
   }
 
-  public boolean retryable() {
-    return retryable;
+  public StorageException(GoogleJsonError error) {
+    super(error, true);
+  }
+
+  @Override
+  protected Set<Error> retryableErrors() {
+    return RETRYABLE_ERRORS;
   }
 
   /**
@@ -58,12 +70,7 @@ public class StorageException extends RuntimeException {
    * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
    */
   static StorageException translateAndThrow(RetryHelperException ex) {
-    if (ex.getCause() instanceof StorageException) {
-      throw (StorageException) ex.getCause();
-    }
-    if (ex instanceof RetryHelper.RetryInterruptedException) {
-      RetryHelper.RetryInterruptedException.propagate();
-    }
-    throw new StorageException(UNKNOWN_CODE, ex.getMessage(), false);
+    BaseServiceException.translateAndPropagateIfPossible(ex);
+    throw new StorageException(UNKNOWN_CODE, ex.getMessage());
   }
 }

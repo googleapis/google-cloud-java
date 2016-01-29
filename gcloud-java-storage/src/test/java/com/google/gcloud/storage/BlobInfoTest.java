@@ -34,8 +34,8 @@ import java.util.Map;
 public class BlobInfoTest {
 
   private static final List<Acl> ACL = ImmutableList.of(
-      new Acl(User.ofAllAuthenticatedUsers(), READER),
-      new Acl(new Project(VIEWERS, "p1"), WRITER));
+      Acl.of(User.ofAllAuthenticatedUsers(), READER),
+      Acl.of(new Project(VIEWERS, "p1"), WRITER));
   private static final Integer COMPONENT_COUNT = 2;
   private static final String CONTENT_TYPE = "text/html";
   private static final String CACHE_CONTROL = "cache";
@@ -55,7 +55,7 @@ public class BlobInfoTest {
   private static final String SELF_LINK = "http://storage/b/n";
   private static final Long SIZE = 1024L;
   private static final Long UPDATE_TIME = DELETE_TIME - 1L;
-  private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n")
+  private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n", GENERATION)
       .acl(ACL)
       .componentCount(COMPONENT_COUNT)
       .contentType(CONTENT_TYPE)
@@ -66,7 +66,6 @@ public class BlobInfoTest {
       .crc32c(CRC32)
       .deleteTime(DELETE_TIME)
       .etag(ETAG)
-      .generation(GENERATION)
       .id(ID)
       .md5(MD5)
       .mediaLink(MEDIA_LINK)
@@ -85,8 +84,14 @@ public class BlobInfoTest {
     assertEquals("n2", blobInfo.name());
     assertEquals("b2", blobInfo.bucket());
     assertEquals(Long.valueOf(200), blobInfo.size());
-    blobInfo = blobInfo.toBuilder().blobId(BlobId.of("b", "n")).size(SIZE).build();
+    blobInfo = blobInfo.toBuilder().blobId(BlobId.of("b", "n", GENERATION)).size(SIZE).build();
     compareBlobs(BLOB_INFO, blobInfo);
+  }
+
+  @Test
+  public void testToBuilderIncomplete() {
+    BlobInfo incompleteBlobInfo = BlobInfo.builder(BlobId.of("b2", "n2")).build();
+    compareBlobs(incompleteBlobInfo, incompleteBlobInfo.toBuilder().build());
   }
 
   @Test
@@ -150,6 +155,6 @@ public class BlobInfoTest {
 
   @Test
   public void testBlobId() {
-    assertEquals(BlobId.of("b", "n"), BLOB_INFO.blobId());
+    assertEquals(BlobId.of("b", "n", GENERATION), BLOB_INFO.blobId());
   }
 }

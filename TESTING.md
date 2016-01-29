@@ -1,6 +1,11 @@
 ## gcloud-java tools for testing
 
-This library provides tools to help write tests for code that uses gcloud-java services.
+This library provides tools to help write tests for code that uses the following gcloud-java services:
+
+-  [Datastore] (#testing-code-that-uses-datastore)
+-  [Storage] (#testing-code-that-uses-storage)
+-  [Resource Manager] (#testing-code-that-uses-resource-manager)
+-  [BigQuery] (#testing-code-that-uses-bigquery)
 
 ### Testing code that uses Datastore
 
@@ -18,7 +23,7 @@ You can test against a temporary local datastore by following these steps:
       .projectId(PROJECT_ID)
       .host("http://localhost:8080")
       .build();
-  Datastore localDatastore = DatastoreFactory.instance().get(options);
+  Datastore localDatastore = options.service();
   ```
 3. Run your tests.
 
@@ -35,7 +40,7 @@ You can test against a remote datastore emulator as well.  To do this, set the `
       .projectId(PROJECT_ID)
       .host("http://<hostname of machine>:<port>")
       .build();
-  Datastore localDatastore = DatastoreFactory.instance().get(options);
+  Datastore localDatastore = options.service();
   ```
 
 Note that the remote datastore must be running before your tests are run.
@@ -51,8 +56,9 @@ Currently, there isn't an emulator for Google Cloud Storage, so an alternative i
 3. Create a `RemoteGcsHelper` object using your project ID and JSON key.
 Here is an example that uses the `RemoteGcsHelper` to create a bucket.
   ```java
-  RemoteGcsHelper gcsHelper = RemoteGcsHelper.create(PROJECT_ID, "/path/to/my/JSON/key.json");
-  Storage storage = StorageFactory.instance().get(gcsHelper.options());
+  RemoteGcsHelper gcsHelper =
+      RemoteGcsHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
+  Storage storage = gcsHelper.options().service();
   String bucket = RemoteGcsHelper.generateBucketName();
   storage.create(BucketInfo.of(bucket));
   ```
@@ -65,5 +71,67 @@ Here is an example that clears the bucket created in Step 3 with a timeout of 5 
   RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
   ```
 
+### Testing code that uses Resource Manager
+
+#### On your machine
+
+You can test against a temporary local Resource Manager by following these steps:
+
+1. Before running your testing code, start the Resource Manager emulator `LocalResourceManagerHelper`. This can be done as follows:
+
+  ```java
+  import com.google.gcloud.resourcemanager.testing.LocalResourceManagerHelper;
+
+  LocalResourceManagerHelper helper = LocalResourceManagerHelper.create();
+  helper.start();
+  ```
+
+  This will spawn a server thread that listens to `localhost` at an ephemeral port for Resource Manager requests.
+
+2. In your program, create and use a Resource Manager service object whose host is set to `localhost` at the appropriate port.  For example:
+
+  ```java
+  ResourceManager resourceManager = LocalResourceManagerHelper.options().service();
+  ```
+
+3. Run your tests.
+
+4. Stop the Resource Manager emulator.
+
+  ```java
+  helper.stop();
+  ```
+
+  This method will block until the server thread has been terminated.
+
+### Testing code that uses BigQuery
+
+Currently, there isn't an emulator for Google BigQuery, so an alternative is to create a test
+project. `RemoteBigQueryHelper` contains convenience methods to make setting up and cleaning up the
+test project easier. To use this class, follow the steps below:
+
+1. Create a test Google Cloud project.
+
+2. Download a [JSON service account credentials file][create-service-account] from the Google
+Developer's Console.
+
+3. Create a `RemoteBigQueryHelper` object using your project ID and JSON key.
+Here is an example that uses the `RemoteBigQueryHelper` to create a dataset.
+  ```java
+  RemoteBigQueryHelper bigqueryHelper =
+      RemoteBigQueryHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
+  BigQuery bigquery = bigqueryHelper.options().service();
+  String dataset = RemoteBigQueryHelper.generateDatasetName();
+  bigquery.create(DatasetInfo.builder(dataset).build());
+  ```
+
+4. Run your tests.
+
+5. Clean up the test project by using `forceDelete` to clear any datasets used.
+Here is an example that clears the dataset created in Step 3.
+  ```java
+  RemoteBigQueryHelper.forceDelete(bigquery, dataset);
+  ```
 
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
+[create-service-account]:https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount

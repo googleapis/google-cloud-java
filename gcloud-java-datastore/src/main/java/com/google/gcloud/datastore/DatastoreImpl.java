@@ -22,17 +22,14 @@ import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Sets;
 import com.google.gcloud.BaseService;
-import com.google.gcloud.ExceptionHandler;
-import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.DatastoreRpc;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
 import com.google.protobuf.ByteString;
 
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -42,39 +39,14 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
 
-
-final class DatastoreImpl extends BaseService<DatastoreOptions>
-    implements Datastore {
-
-  private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR =
-      new Interceptor() {
-
-        private static final long serialVersionUID = 6911242958397733203L;
-
-        @Override
-        public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-          return Interceptor.RetryResult.CONTINUE_EVALUATION;
-        }
-
-        @Override
-        public RetryResult beforeEval(Exception exception) {
-          if (exception instanceof DatastoreRpcException) {
-            boolean retryable = ((DatastoreRpcException) exception).retryable();
-            return retryable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
-          }
-          return Interceptor.RetryResult.CONTINUE_EVALUATION;
-        }
-      };
-  private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
-      .abortOn(RuntimeException.class, DatastoreRpcException.class)
-      .interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
+final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datastore {
 
   private final DatastoreRpc datastoreRpc;
   private final RetryParams retryParams;
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
-    this.datastoreRpc = options.datastoreRpc();
+    this.datastoreRpc = options.rpc();
     retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
   }
 
@@ -108,7 +80,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1beta3.RunQueryResponse>() {
         @Override public com.google.datastore.v1beta3.RunQueryResponse call()
-            throws DatastoreRpcException {
+            throws DatastoreException {
           return datastoreRpc.runQuery(requestPb);
         }
       }, retryParams, EXCEPTION_HANDLER);
@@ -127,7 +99,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
     if (keys.length == 0) {
       return Collections.emptyList();
     }
-    com.google.datastore.v1beta3.AllocateIdsRequest.Builder requestPb = 
+    com.google.datastore.v1beta3.AllocateIdsRequest.Builder requestPb =
         com.google.datastore.v1beta3.AllocateIdsRequest.newBuilder();
     for (IncompleteKey key : keys) {
       requestPb.addKeys(trimNameOrId(key).toPb());
@@ -146,7 +118,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1beta3.AllocateIdsResponse>() {
         @Override public com.google.datastore.v1beta3.AllocateIdsResponse call()
-            throws DatastoreRpcException {
+            throws DatastoreException {
           return datastoreRpc.allocateIds(requestPb);
         }
       }, retryParams, EXCEPTION_HANDLER);
@@ -183,7 +155,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       if (completeEntity != null) {
         if (completeEntities.put(completeEntity.key(), completeEntity) != null) {
           throw DatastoreException.throwInvalidRequest(
-              "Duplicate entity with the key %s", entity.key());
+            "Duplicate entity with the key %s", entity.key());
         }
       } else {
         Preconditions.checkArgument(entity.hasKey(), "entity %s is missing a key", entity);
@@ -227,7 +199,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
     if (keys.length == 0) {
       return Collections.emptyIterator();
     }
-    com.google.datastore.v1beta3.LookupRequest.Builder requestPb = 
+    com.google.datastore.v1beta3.LookupRequest.Builder requestPb =
         com.google.datastore.v1beta3.LookupRequest.newBuilder();
     if (readOptionsPb != null) {
       requestPb.setReadOptions(readOptionsPb);
@@ -276,7 +248,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1beta3.LookupResponse>() {
         @Override public com.google.datastore.v1beta3.LookupResponse call()
-            throws DatastoreRpcException {
+            throws DatastoreException {
           return datastoreRpc.lookup(requestPb);
         }
       }, retryParams, EXCEPTION_HANDLER);
@@ -289,7 +261,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   @Override
   public final void update(Entity... entities) {
     if (entities.length > 0) {
-      List<com.google.datastore.v1beta3.Mutation> mutationsPb = 
+      List<com.google.datastore.v1beta3.Mutation> mutationsPb =
           new ArrayList<>();
       Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
       for (Entity entity : entities) {
@@ -307,7 +279,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   @Override
   public final void put(Entity... entities) {
     if (entities.length > 0) {
-      List<com.google.datastore.v1beta3.Mutation> mutationsPb = 
+      List<com.google.datastore.v1beta3.Mutation> mutationsPb =
           new ArrayList<>();
       Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
       for (Entity entity : entities) {
@@ -341,7 +313,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
 
   private com.google.datastore.v1beta3.CommitResponse commitMutation(
       List<com.google.datastore.v1beta3.Mutation> mutationsPb) {
-    com.google.datastore.v1beta3.CommitRequest.Builder requestPb = 
+    com.google.datastore.v1beta3.CommitRequest.Builder requestPb =
         com.google.datastore.v1beta3.CommitRequest.newBuilder();
     requestPb.setMode(com.google.datastore.v1beta3.CommitRequest.Mode.NON_TRANSACTIONAL);
     requestPb.addAllMutations(mutationsPb);
@@ -353,11 +325,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
     try {
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1beta3.CommitResponse>() {
-        @Override public com.google.datastore.v1beta3.CommitResponse call()
-            throws DatastoreRpcException {
-          return datastoreRpc.commit(requestPb);
-        }
-      }, retryParams, EXCEPTION_HANDLER);
+            @Override
+            public com.google.datastore.v1beta3.CommitResponse call() throws DatastoreException {
+              return datastoreRpc.commit(requestPb);
+            }
+          },
+          retryParams,
+          EXCEPTION_HANDLER);
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -373,19 +347,21 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
     try {
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1beta3.BeginTransactionResponse>() {
-        @Override
-        public com.google.datastore.v1beta3.BeginTransactionResponse call()
-            throws DatastoreRpcException {
-          return datastoreRpc.beginTransaction(requestPb);
-        }
-      }, retryParams, EXCEPTION_HANDLER);
+            @Override
+            public com.google.datastore.v1beta3.BeginTransactionResponse call()
+                throws DatastoreException {
+              return datastoreRpc.beginTransaction(requestPb);
+            }
+          },
+          retryParams,
+          EXCEPTION_HANDLER);
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
   }
 
   void rollbackTransaction(ByteString transaction) {
-    com.google.datastore.v1beta3.RollbackRequest.Builder requestPb = 
+    com.google.datastore.v1beta3.RollbackRequest.Builder requestPb =
         com.google.datastore.v1beta3.RollbackRequest.newBuilder();
     requestPb.setTransaction(transaction);
     rollback(requestPb.build());
@@ -394,7 +370,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   void rollback(final com.google.datastore.v1beta3.RollbackRequest requestPb) {
     try {
       RetryHelper.runWithRetries(new Callable<Void>() {
-        @Override public Void call() throws DatastoreRpcException {
+        @Override public Void call() throws DatastoreException {
           datastoreRpc.rollback(requestPb);
           return null;
         }

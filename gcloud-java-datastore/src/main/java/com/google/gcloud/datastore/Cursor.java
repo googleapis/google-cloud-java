@@ -17,19 +17,12 @@
 package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
-import com.google.common.base.Preconditions;
+import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.google.protobuf.TextFormat;
-import com.google.protobuf.TextFormat.ParseException;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 
 /**
  * A Google Cloud Datastore cursor.
@@ -42,7 +35,6 @@ public final class Cursor extends Serializable<com.google.datastore.v1beta3.Valu
   private final transient ByteString byteString;
 
   Cursor(ByteString byteString) {
-    Preconditions.checkArgument(byteString.isValidUtf8(), "content is not a valid UTF-8");
     this.byteString = byteString;
   }
 
@@ -74,11 +66,7 @@ public final class Cursor extends Serializable<com.google.datastore.v1beta3.Valu
    * Returns the cursor in an encoded form that can be used as part of a URL.
    */
   public String toUrlSafe() {
-    try {
-      return URLEncoder.encode(TextFormat.printToString(toPb()), UTF_8.name());
-    } catch (UnsupportedEncodingException e) {
-      throw new IllegalStateException("Unexpected encoding exception", e);
-    }
+    return BaseEncoding.base64Url().encode(byteString.toByteArray());
   }
 
   /**
@@ -86,12 +74,8 @@ public final class Cursor extends Serializable<com.google.datastore.v1beta3.Valu
    */
   public static Cursor fromUrlSafe(String urlSafe) {
     try {
-      String utf8Str = URLDecoder.decode(urlSafe, UTF_8.name());
-      com.google.datastore.v1beta3.Value.Builder builder =
-          com.google.datastore.v1beta3.Value.newBuilder();
-      TextFormat.merge(utf8Str, builder);
-      return fromPb(builder.build());
-    } catch (UnsupportedEncodingException | ParseException e) {
+      return Cursor.copyFrom(BaseEncoding.base64Url().decode(urlSafe));
+    } catch (IllegalArgumentException e) {
       throw new IllegalStateException("Unexpected decoding exception", e);
     }
   }
@@ -101,12 +85,12 @@ public final class Cursor extends Serializable<com.google.datastore.v1beta3.Valu
   }
 
   @Override
-  protected com.google.datastore.v1beta3.Value toPb() {
+  com.google.datastore.v1beta3.Value toPb() {
     return com.google.datastore.v1beta3.Value.newBuilder().setBlobValue(byteString).build();
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(com.google.datastore.v1beta3.Value.parseFrom(bytesPb));
   }
 

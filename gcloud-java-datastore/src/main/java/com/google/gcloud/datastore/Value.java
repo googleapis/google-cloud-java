@@ -63,7 +63,7 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
     @SuppressWarnings("deprecation")
     @Override
     public final com.google.datastore.v1beta3.Value toProto(P value) {
-      com.google.datastore.v1beta3.Value.Builder builder = 
+      com.google.datastore.v1beta3.Value.Builder builder =
           com.google.datastore.v1beta3.Value.newBuilder();
       builder.setExcludeFromIndexes(value.excludeFromIndexes());
       builder.setMeaning(value.meaning());
@@ -193,19 +193,19 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
 
   @Override
   @SuppressWarnings("unchecked")
-  protected com.google.datastore.v1beta3.Value toPb() {
+  com.google.datastore.v1beta3.Value toPb() {
     return type().getMarshaller().toProto(this);
   }
 
   static Value<?> fromPb(com.google.datastore.v1beta3.Value proto) {
     ValueTypeCase descriptorId = proto.getValueTypeCase();
     ValueType valueType = ValueType.getByDescriptorId(descriptorId.getNumber());
-    return valueType == null ? RawValue.MARSHALLER.fromProto(proto).build() 
+    return valueType == null ? RawValue.MARSHALLER.fromProto(proto).build()
         : valueType.getMarshaller().fromProto(proto).build();
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(com.google.datastore.v1beta3.Value.parseFrom(bytesPb));
   }
 }
