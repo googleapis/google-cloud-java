@@ -38,8 +38,8 @@ import java.util.Objects;
  * {@code RetryParams}, first create a {@link RetryParams.Builder}. The builder is mutable and each
  * of the parameters can be set (any unset parameters will fallback to the defaults). The
  * {@code Builder} can be then used to create an immutable {@code RetryParams} object. For default
- * {@code RetryParams} use {@link #getDefaultInstance}. Default settings are subject to change
- * release to release. If you require specific settings, explicitly create an instance of
+ * {@code RetryParams} use {@link #defaultInstance}. Default settings are subject to change release
+ * to release. If you require specific settings, explicitly create an instance of
  * {@code RetryParams} with all the required settings.
  *
  * @see RetryHelper
@@ -91,12 +91,12 @@ public final class RetryParams implements Serializable {
         retryDelayBackoffFactor = DEFAULT_RETRY_DELAY_BACKOFF_FACTOR;
         totalRetryPeriodMillis = DEFAULT_TOTAL_RETRY_PERIOD_MILLIS;
       } else {
-        retryMinAttempts = retryParams.getRetryMinAttempts();
-        retryMaxAttempts = retryParams.getRetryMaxAttempts();
-        initialRetryDelayMillis = retryParams.getInitialRetryDelayMillis();
-        maxRetryDelayMillis = retryParams.getMaxRetryDelayMillis();
-        retryDelayBackoffFactor = retryParams.getRetryDelayBackoffFactor();
-        totalRetryPeriodMillis = retryParams.getTotalRetryPeriodMillis();
+        retryMinAttempts = retryParams.retryMinAttempts();
+        retryMaxAttempts = retryParams.retryMaxAttempts();
+        initialRetryDelayMillis = retryParams.initialRetryDelayMillis();
+        maxRetryDelayMillis = retryParams.maxRetryDelayMillis();
+        retryDelayBackoffFactor = retryParams.retryDelayBackoffFactor();
+        totalRetryPeriodMillis = retryParams.totalRetryPeriodMillis();
       }
     }
 
@@ -201,7 +201,7 @@ public final class RetryParams implements Serializable {
   /**
    * Returns an instance with the default parameters.
    */
-  public static RetryParams getDefaultInstance() {
+  public static RetryParams defaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -216,14 +216,14 @@ public final class RetryParams implements Serializable {
   /**
    * Returns the retryMinAttempts. Default value is {@value #DEFAULT_RETRY_MIN_ATTEMPTS}.
    */
-  public int getRetryMinAttempts() {
+  public int retryMinAttempts() {
     return retryMinAttempts;
   }
 
   /**
    * Returns the retryMaxAttempts. Default value is {@value #DEFAULT_RETRY_MAX_ATTEMPTS}.
    */
-  public int getRetryMaxAttempts() {
+  public int retryMaxAttempts() {
     return retryMaxAttempts;
   }
 
@@ -231,14 +231,14 @@ public final class RetryParams implements Serializable {
    * Returns the initialRetryDelayMillis. Default value is
    * {@value #DEFAULT_INITIAL_RETRY_DELAY_MILLIS}.
    */
-  public long getInitialRetryDelayMillis() {
+  public long initialRetryDelayMillis() {
     return initialRetryDelayMillis;
   }
 
   /**
    * Returns the maxRetryDelayMillis. Default values is {@value #DEFAULT_MAX_RETRY_DELAY_MILLIS}.
    */
-  public long getMaxRetryDelayMillis() {
+  public long maxRetryDelayMillis() {
     return maxRetryDelayMillis;
   }
 
@@ -246,14 +246,15 @@ public final class RetryParams implements Serializable {
    * Returns the maxRetryDelayBackoffFactor. Default values is
    * {@value #DEFAULT_RETRY_DELAY_BACKOFF_FACTOR}.
    */
-  public double getRetryDelayBackoffFactor() {
+  public double retryDelayBackoffFactor() {
     return retryDelayBackoffFactor;
   }
 
   /**
-   * Returns the totalRetryPeriodMillis. Default value is {@value #DEFAULT_TOTAL_RETRY_PERIOD_MILLIS}.
+   * Returns the totalRetryPeriodMillis. Default value is
+   * {@value #DEFAULT_TOTAL_RETRY_PERIOD_MILLIS}.
    */
-  public long getTotalRetryPeriodMillis() {
+  public long totalRetryPeriodMillis() {
     return totalRetryPeriodMillis;
   }
 

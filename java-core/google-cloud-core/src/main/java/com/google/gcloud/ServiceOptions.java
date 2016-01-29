@@ -17,6 +17,7 @@
 package com.google.gcloud;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -25,53 +26,84 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.spi.ServiceRpcFactory;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.ServiceLoader;
 import java.util.Set;
+import java.util.jar.Attributes;
+import java.util.jar.JarFile;
+import java.util.jar.Manifest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class ServiceOptions<
-        ServiceRpcT,
-        OptionsT extends ServiceOptions<ServiceRpcT, OptionsT>>
-    implements Serializable {
+/**
+ * Abstract class representing service options.
+ *
+ * @param <ServiceT> the service subclass
+ * @param <ServiceRpcT> the spi-layer class corresponding to the service
+ * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
+ */
+public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, ServiceRpcT,
+    OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>> implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final long serialVersionUID = 1203687993961393350L;
   private static final String PROJECT_ENV_NAME = "GCLOUD_PROJECT";
+  private static final String MANIFEST_ARTIFACT_ID_KEY = "artifactId";
+  private static final String MANIFEST_VERSION_KEY = "Implementation-Version";
+  private static final String ARTIFACT_ID = "gcloud-java-core";
+  private static final String APPLICATION_BASE_NAME = "gcloud-java";
+  private static final String APPLICATION_NAME = getApplicationName();
 
   private final String projectId;
   private final String host;
-  private final HttpTransportFactory httpTransportFactory;
-  private final AuthCredentials authCredentials;
+  private final String httpTransportFactoryClassName;
+  private final RestorableState<AuthCredentials> authCredentialsState;
   private final RetryParams retryParams;
-  private final ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+  private final String serviceRpcFactoryClassName;
+  private final String serviceFactoryClassName;
   private final int connectTimeout;
   private final int readTimeout;
   private final Clock clock;
 
-  public interface HttpTransportFactory extends Serializable {
+  private transient HttpTransportFactory httpTransportFactory;
+  private transient AuthCredentials authCredentials;
+  private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
+  private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
+  private transient ServiceT service;
+  private transient ServiceRpcT rpc;
+
+  /**
+   * A base interface for all {@link HttpTransport} factories.
+   *
+   * Implementation must provide a public no-arg constructor. Loading of a factory implementation is
+   * done via {@link java.util.ServiceLoader}.
+   */
+  public interface HttpTransportFactory {
     HttpTransport create();
   }
 
-  private enum DefaultHttpTransportFactory implements HttpTransportFactory {
+  public static class DefaultHttpTransportFactory implements HttpTransportFactory {
 
-    INSTANCE;
+    private static final HttpTransportFactory INSTANCE = new DefaultHttpTransportFactory();
 
     @Override
     public HttpTransport create() {
@@ -82,12 +114,6 @@ public abstract class ServiceOptions<
         } catch (Exception ignore) {
           // Maybe not on App Engine
         }
-      }
-      // Consider Compute
-      try {
-        return AuthCredentials.getComputeCredential().getTransport();
-      } catch (Exception e) {
-        // Maybe not on GCE
       }
       return new NetHttpTransport();
     }
@@ -100,9 +126,9 @@ public abstract class ServiceOptions<
    * Implementations should implement {@code Serializable} wherever possible and must document
    * whether or not they do support serialization.
    */
-  public static abstract class Clock {
+  public abstract static class Clock {
 
-    private static ServiceOptions.Clock DEFAULT_TIME_SOURCE = new DefaultClock();
+    private static final ServiceOptions.Clock DEFAULT_TIME_SOURCE = new DefaultClock();
 
     /**
      * Returns current time in milliseconds according to this clock.
@@ -132,16 +158,24 @@ public abstract class ServiceOptions<
     }
   }
 
-  protected abstract static class Builder<
-      ServiceRpcT,
-      OptionsT extends ServiceOptions<ServiceRpcT, OptionsT>,
-      B extends Builder<ServiceRpcT, OptionsT, B>> {
+  /**
+   * Builder for {@code ServiceOptions}.
+   *
+   * @param <ServiceT> the service subclass
+   * @param <ServiceRpcT> the spi-layer class corresponding to the service
+   * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
+   * @param <B> the {@code ServiceOptions} builder
+   */
+  protected abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
+      OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
+      B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {
 
     private String projectId;
     private String host;
     private HttpTransportFactory httpTransportFactory;
     private AuthCredentials authCredentials;
     private RetryParams retryParams;
+    private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
     private int connectTimeout = -1;
     private int readTimeout = -1;
@@ -149,16 +183,20 @@ public abstract class ServiceOptions<
 
     protected Builder() {}
 
-    protected Builder(ServiceOptions<ServiceRpcT, OptionsT> options) {
+    protected Builder(ServiceOptions<ServiceT, ServiceRpcT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
       httpTransportFactory = options.httpTransportFactory;
       authCredentials = options.authCredentials;
       retryParams = options.retryParams;
+      serviceFactory = options.serviceFactory;
       serviceRpcFactory = options.serviceRpcFactory;
+      connectTimeout = options.connectTimeout;
+      readTimeout = options.readTimeout;
+      clock = options.clock;
     }
 
-    protected abstract ServiceOptions<ServiceRpcT, OptionsT> build();
+    protected abstract ServiceOptions<ServiceT, ServiceRpcT, OptionsT> build();
 
     @SuppressWarnings("unchecked")
     protected B self() {
@@ -166,11 +204,19 @@ public abstract class ServiceOptions<
     }
 
     /**
+     * Sets the service factory.
+     */
+    public B serviceFactory(ServiceFactory<ServiceT, OptionsT> serviceFactory) {
+      this.serviceFactory = serviceFactory;
+      return self();
+    }
+
+    /**
      * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
      * replaced by Java8's {@code java.time.Clock}.
      *
      * @param clock the clock to set
-     * @return the builder.
+     * @return the builder
      */
     public B clock(Clock clock) {
       this.clock = clock;
@@ -180,7 +226,7 @@ public abstract class ServiceOptions<
     /**
      * Sets project id.
      *
-     * @return the builder.
+     * @return the builder
      */
     public B projectId(String projectId) {
       this.projectId =
@@ -191,7 +237,7 @@ public abstract class ServiceOptions<
     /**
      * Sets service host.
      *
-     * @return the builder.
+     * @return the builder
      */
     public B host(String host) {
       this.host = host;
@@ -201,7 +247,7 @@ public abstract class ServiceOptions<
     /**
      * Sets the transport factory.
      *
-     * @return the builder.
+     * @return the builder
      */
     public B httpTransportFactory(HttpTransportFactory httpTransportFactory) {
       this.httpTransportFactory = httpTransportFactory;
@@ -211,7 +257,7 @@ public abstract class ServiceOptions<
     /**
      * Sets the service authentication credentials.
      *
-     * @return the builder.
+     * @return the builder
      */
     public B authCredentials(AuthCredentials authCredentials) {
       this.authCredentials = authCredentials;
@@ -220,9 +266,10 @@ public abstract class ServiceOptions<
 
     /**
      * Sets configuration parameters for request retries. If no configuration is set
-     * {@link RetryParams#noRetries()} is used.
+     * {@link RetryParams#defaultInstance()} is used. To disable retries, supply
+     * {@link RetryParams#noRetries()} here.
      *
-     * @return the builder.
+     * @return the builder
      */
     public B retryParams(RetryParams retryParams) {
       this.retryParams = retryParams;
@@ -243,8 +290,8 @@ public abstract class ServiceOptions<
      * Sets the timeout in milliseconds to establish a connection.
      *
      * @param connectTimeout connection timeout in milliseconds. 0 for an infinite timeout, a
-     * negative number for the default value (20000).
-     * @return the builder.
+     *        negative number for the default value (20000).
+     * @return the builder
      */
     public B connectTimeout(int connectTimeout) {
       this.connectTimeout = connectTimeout;
@@ -254,9 +301,9 @@ public abstract class ServiceOptions<
     /**
      * Sets the timeout in milliseconds to read data from an established connection.
      *
-     * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a
-     * negative number for the default value (20000).
-     * @return the builder.
+     * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a negative number
+     *        for the default value (20000).
+     * @return the builder
      */
     public B readTimeout(int readTimeout) {
       this.readTimeout = readTimeout;
@@ -264,21 +311,47 @@ public abstract class ServiceOptions<
     }
   }
 
-  protected ServiceOptions(Builder<ServiceRpcT, OptionsT, ?> builder) {
-    projectId = checkNotNull(builder.projectId != null ? builder.projectId : defaultProject());
+  protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
+      Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
+      Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
+    projectId = builder.projectId != null ? builder.projectId : defaultProject();
+    if (projectIdRequired()) {
+      checkArgument(
+          projectId != null,
+          "A project ID is required for this service but could not be determined from the builder "
+          + "or the environment.  Please set a project ID using the builder.");
+    }
     host = firstNonNull(builder.host, defaultHost());
-    httpTransportFactory =
-        firstNonNull(builder.httpTransportFactory, DefaultHttpTransportFactory.INSTANCE);
-    authCredentials = firstNonNull(builder.authCredentials, defaultAuthCredentials());
-    retryParams = builder.retryParams;
-    serviceRpcFactory = builder.serviceRpcFactory;
+    httpTransportFactory = firstNonNull(builder.httpTransportFactory,
+        getFromServiceLoader(HttpTransportFactory.class, DefaultHttpTransportFactory.INSTANCE));
+    httpTransportFactoryClassName = httpTransportFactory.getClass().getName();
+    authCredentials =
+        builder.authCredentials != null ? builder.authCredentials : defaultAuthCredentials();
+    authCredentialsState = authCredentials != null ? authCredentials.capture() : null;
+    retryParams = firstNonNull(builder.retryParams, RetryParams.defaultInstance());
+    serviceFactory = firstNonNull(builder.serviceFactory,
+        getFromServiceLoader(serviceFactoryClass, defaultServiceFactory()));
+    serviceFactoryClassName = serviceFactory.getClass().getName();
+    serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
+        getFromServiceLoader(rpcFactoryClass, defaultRpcFactory()));
+    serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
     connectTimeout = builder.connectTimeout;
     readTimeout = builder.readTimeout;
     clock = firstNonNull(builder.clock, Clock.defaultClock());
   }
 
+  /**
+   * Returns whether a service requires a project ID. This method may be overridden in
+   * service-specific Options objects.
+   *
+   * @return true if a project ID is required to use the service, false if not
+   */
+  protected boolean projectIdRequired() {
+    return true;
+  }
+
   private static AuthCredentials defaultAuthCredentials() {
-    // Consider App Engine. This will not be needed once issue #21 is fixed.
+    // Consider App Engine.
     if (appEngineAppId() != null) {
       try {
         return AuthCredentials.createForAppEngine();
@@ -290,16 +363,8 @@ public abstract class ServiceOptions<
     try {
       return AuthCredentials.createApplicationDefaults();
     } catch (Exception ex) {
-      // fallback to old-style
+      return null;
     }
-
-    // Consider old-style Compute. This will not be needed once issue #21 is fixed.
-    try {
-      return AuthCredentials.createForComputeEngine();
-    } catch (Exception ignore) {
-      // Maybe not on GCE
-    }
-    return AuthCredentials.noCredentials();
   }
 
   protected static String appEngineAppId() {
@@ -319,6 +384,49 @@ public abstract class ServiceOptions<
   }
 
   protected static String googleCloudProjectId() {
+    File configDir;
+    if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
+      configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
+    } else if (isWindows() && System.getenv().containsKey("APPDATA")) {
+      configDir = new File(System.getenv("APPDATA"), "gcloud");
+    } else {
+      configDir = new File(System.getProperty("user.home"), ".config/gcloud");
+    }
+    FileReader fileReader = null;
+    try {
+      fileReader = new FileReader(new File(configDir, "configurations/config_default"));
+    } catch (FileNotFoundException newConfigFileNotFoundEx) {
+      try {
+        fileReader = new FileReader(new File(configDir, "properties"));
+      } catch (FileNotFoundException oldConfigFileNotFoundEx) {
+        // ignore
+      }
+    }
+    if (fileReader != null) {
+      try (BufferedReader reader = new BufferedReader(fileReader)) {
+        String line;
+        String section = null;
+        Pattern projectPattern = Pattern.compile("^project\\s*=\\s*(.*)$");
+        Pattern sectionPattern = Pattern.compile("^\\[(.*)\\]$");
+        while ((line = reader.readLine()) != null) {
+          if (line.isEmpty() || line.startsWith(";")) {
+            continue;
+          }
+          line = line.trim();
+          Matcher matcher = sectionPattern.matcher(line);
+          if (matcher.matches()) {
+            section = matcher.group(1);
+          } else if (section == null || section.equals("core")) {
+            matcher = projectPattern.matcher(line);
+            if (matcher.matches()) {
+              return matcher.group(1);
+            }
+          }
+        }
+      } catch (IOException ex) {
+        // ignore
+      }
+    }
     try {
       URL url = new URL("http://metadata/computeMetadata/v1/project/project-id");
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -332,38 +440,6 @@ public abstract class ServiceOptions<
     } catch (IOException ignore) {
       // ignore
     }
-   File configDir;
-    if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
-      configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
-    } else if (isWindows() &&  System.getenv().containsKey("APPDATA")) {
-      configDir = new File(System.getenv("APPDATA"), "gcloud");
-    } else {
-      configDir = new File(System.getProperty("user.home"), ".config/gcloud");
-    }
-    try (BufferedReader reader =
-        new BufferedReader(new FileReader(new File(configDir, "properties")))) {
-      String line;
-      String section = null;
-      Pattern projectPattern = Pattern.compile("^project\\s*=\\s*(.*)$");
-      Pattern sectionPattern = Pattern.compile("^\\[(.*)\\]$");
-      while ((line = reader.readLine()) != null) {
-        if (line.isEmpty() || line.startsWith(";")) {
-          continue;
-        }
-        line = line.trim();
-        Matcher matcher = sectionPattern.matcher(line);
-        if (matcher.matches()) {
-          section = matcher.group(1);
-        } else if (section == null || section.equals("core")) {
-          matcher = projectPattern.matcher(line);
-          if (matcher.matches()) {
-            return matcher.group(1);
-          }
-        }
-      }
-    } catch (IOException ex) {
-      // ignore
-    }
     // return null if can't determine
     return null;
   }
@@ -373,14 +449,14 @@ public abstract class ServiceOptions<
   }
 
   protected static String getAppEngineProjectId() {
-    // TODO(ozarov): An alternative to reflection would be to depend on AE api jar:
-    // http://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk/1.2.0
     try {
       Class<?> factoryClass =
           Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
+      Class<?> serviceClass =
+          Class.forName("com.google.appengine.api.appidentity.AppIdentityService");
       Method method = factoryClass.getMethod("getAppIdentityService");
       Object appIdentityService = method.invoke(null);
-      method = appIdentityService.getClass().getMethod("getServiceAccountName");
+      method = serviceClass.getMethod("getServiceAccountName");
       String serviceAccountName = (String) method.invoke(appIdentityService);
       int indexOfAtSign = serviceAccountName.indexOf('@');
       return serviceAccountName.substring(0, indexOfAtSign);
@@ -390,10 +466,26 @@ public abstract class ServiceOptions<
     }
   }
 
-  protected abstract Set<String> scopes();
+  @SuppressWarnings("unchecked")
+  public ServiceT service() {
+    if (service == null) {
+      service = serviceFactory.create((OptionsT) this);
+    }
+    return service;
+  }
+
+  @SuppressWarnings("unchecked")
+  public ServiceRpcT rpc() {
+    if (rpc == null) {
+      rpc = serviceRpcFactory.create((OptionsT) this);
+    }
+    return rpc;
+  }
 
   /**
-   * Returns the project id. 
+   * Returns the project id.
+   *
+   * Return value can be null (for services that don't require a project id).
    */
   public String projectId() {
     return projectId;
@@ -421,18 +513,11 @@ public abstract class ServiceOptions<
   }
 
   /**
-   * Returns configuration parameters for request retries. By default requests are not retried:
-   * {@link RetryParams#noRetries()} is used.
+   * Returns configuration parameters for request retries. By default requests are retried:
+   * {@link RetryParams#defaultInstance()} is used.
    */
   public RetryParams retryParams() {
-    return retryParams != null ? retryParams : RetryParams.noRetries();
-  }
-
-  /**
-   * Returns the factory for rpc services.
-   */
-  public ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory() {
-    return serviceRpcFactory;
+    return retryParams;
   }
 
   /**
@@ -440,13 +525,15 @@ public abstract class ServiceOptions<
    * options.
    */
   public HttpRequestInitializer httpRequestInitializer() {
-    HttpTransport httpTransport = httpTransportFactory.create();
-    final HttpRequestInitializer baseRequestInitializer =
-        authCredentials().httpRequestInitializer(httpTransport, scopes());
+    final HttpRequestInitializer delegate = authCredentials() != null
+        ? new HttpCredentialsAdapter(authCredentials().credentials().createScoped(scopes()))
+        : null;
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
-        baseRequestInitializer.initialize(httpRequest);
+        if (delegate != null) {
+          delegate.initialize(httpRequest);
+        }
         if (connectTimeout >= 0) {
           httpRequest.setConnectTimeout(connectTimeout);
         }
@@ -474,41 +561,84 @@ public abstract class ServiceOptions<
   }
 
   /**
-   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to
-   * get current time. 
+   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
+   * current time.
    */
   public Clock clock() {
     return clock;
   }
 
-  protected int baseHashCode() {
-    return Objects.hash(projectId, host, httpTransportFactory, authCredentials, retryParams,
-        serviceRpcFactory, connectTimeout, readTimeout, clock);
+  /**
+   * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
+   */
+  public String applicationName() {
+    return APPLICATION_NAME;
   }
 
-  protected boolean baseEquals(ServiceOptions<?, ?> other) {
+  protected int baseHashCode() {
+    return Objects.hash(projectId, host, httpTransportFactoryClassName, authCredentialsState,
+        retryParams, serviceFactoryClassName, serviceRpcFactoryClassName, connectTimeout,
+        readTimeout, clock);
+  }
+
+  protected boolean baseEquals(ServiceOptions<?, ?, ?> other) {
     return Objects.equals(projectId, other.projectId)
         && Objects.equals(host, other.host)
-        && Objects.equals(httpTransportFactory, other.httpTransportFactory)
-        && Objects.equals(authCredentials, other.authCredentials)
+        && Objects.equals(httpTransportFactoryClassName, other.httpTransportFactoryClassName)
+        && Objects.equals(authCredentialsState, other.authCredentialsState)
         && Objects.equals(retryParams, other.retryParams)
-        && Objects.equals(serviceRpcFactory, other.serviceRpcFactory)
+        && Objects.equals(serviceFactoryClassName, other.serviceFactoryClassName)
+        && Objects.equals(serviceRpcFactoryClassName, other.serviceRpcFactoryClassName)
         && Objects.equals(connectTimeout, other.connectTimeout)
         && Objects.equals(readTimeout, other.readTimeout)
         && Objects.equals(clock, clock);
   }
 
-  public abstract Builder<ServiceRpcT, OptionsT, ?> toBuilder();
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    httpTransportFactory = newInstance(httpTransportFactoryClassName);
+    serviceFactory = newInstance(serviceFactoryClassName);
+    serviceRpcFactory = newInstance(serviceRpcFactoryClassName);
+    authCredentials = authCredentialsState != null ? authCredentialsState.restore() : null;
+  }
 
-  /**
-   * Creates a service RPC using a factory loaded by {@link ServiceLoader}.
-   */
-  protected static
-      <ServiceRpcT, OptionsT extends ServiceOptions<ServiceRpcT, OptionsT>>
-      ServiceRpcT createRpc(OptionsT options,
-          Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> factoryClass) {
-    ServiceRpcFactory<ServiceRpcT, OptionsT> factory =
-        Iterables.getFirst(ServiceLoader.load(factoryClass), null);
-    return factory == null ? null : factory.create(options);
+  @SuppressWarnings("unchecked")
+  private static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
+    try {
+      return (T) Class.forName(className).newInstance();
+    } catch (InstantiationException | IllegalAccessException e) {
+      throw new IOException(e);
+    }
+  }
+
+  protected abstract <T extends ServiceFactory<ServiceT, OptionsT>> T defaultServiceFactory();
+
+  protected abstract <T extends ServiceRpcFactory<ServiceRpcT, OptionsT>> T defaultRpcFactory();
+
+  protected abstract Set<String> scopes();
+
+  public abstract <B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> B toBuilder();
+
+  private static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
+    return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
+  }
+
+  private static String getApplicationName() {
+    String version = null;
+    try {
+      Enumeration<URL> resources =
+          ServiceOptions.class.getClassLoader().getResources(JarFile.MANIFEST_NAME);
+      while (resources.hasMoreElements() && version == null) {
+        Manifest manifest = new Manifest(resources.nextElement().openStream());
+        Attributes manifestAttributes = manifest.getMainAttributes();
+        String artifactId = manifestAttributes.getValue(MANIFEST_ARTIFACT_ID_KEY);
+        if (artifactId != null && artifactId.equals(ARTIFACT_ID)) {
+          version = manifestAttributes.getValue(MANIFEST_VERSION_KEY);
+        }
+      }
+    } catch (IOException e) {
+      // ignore
+    }
+    return version != null ? APPLICATION_BASE_NAME + "/" + version : APPLICATION_BASE_NAME;
   }
 }

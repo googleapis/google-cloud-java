@@ -17,10 +17,16 @@
 package com.google.gcloud;
 
 /**
- * Interface for service objects.
+ * A base interface for all service factories.
  *
- * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
+ * <p>Implementation must provide a public no-arg constructor.
+ * Loading of a factory implementation is done via {@link java.util.ServiceLoader}.
+ *
+ * @param <ServiceT> the service subclass
+ * @param <ServiceOptionsT> the {@code ServiceOptions} subclass corresponding to the service
  */
-public interface Service<OptionsT extends ServiceOptions<?, ?, OptionsT>> {
-  OptionsT options();
+@SuppressWarnings("rawtypes")
+public interface ServiceFactory<ServiceT extends Service, ServiceOptionsT extends ServiceOptions> {
+
+  ServiceT create(ServiceOptionsT serviceOptions);
 }
