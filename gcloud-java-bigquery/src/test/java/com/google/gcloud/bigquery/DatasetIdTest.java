@@ -45,6 +45,11 @@ public class DatasetIdTest {
     compareDatasetIds(DATASET_COMPLETE, DatasetId.fromPb(DATASET_COMPLETE.toPb()));
   }
 
+  @Test
+  public void testSetProjectId() {
+    assertEquals(DATASET_COMPLETE, DATASET.setProjectId("project"));
+  }
+
   private void compareDatasetIds(DatasetId expected, DatasetId value) {
     assertEquals(expected, value);
     assertEquals(expected.project(), value.project());

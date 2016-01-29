@@ -47,6 +47,11 @@ public class TableIdTest {
     compareTableIds(TABLE_COMPLETE, TableId.fromPb(TABLE_COMPLETE.toPb()));
   }
 
+  @Test
+  public void testSetProjectId() {
+    assertEquals(TABLE_COMPLETE, TABLE.setProjectId("project"));
+  }
+
   private void compareTableIds(TableId expected, TableId value) {
     assertEquals(expected, value);
     assertEquals(expected.project(), value.project());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,23 +25,18 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.bigquery.JobInfo.CreateDisposition;
 import com.google.gcloud.bigquery.JobInfo.WriteDisposition;
-import com.google.gcloud.bigquery.JobStatistics.QueryStatistics;
-import com.google.gcloud.bigquery.QueryJobInfo.Priority;
+import com.google.gcloud.bigquery.QueryJobConfiguration.Priority;
 
 import org.junit.Test;
 
 import java.util.List;
 import java.util.Map;
 
-public class QueryJobInfoTest {
+public class QueryJobConfigurationTest {
 
-  private static final String ETAG = "etag";
-  private static final String ID = "id";
-  private static final String SELF_LINK = "selfLink";
-  private static final String EMAIL = "email";
   private static final String QUERY = "BigQuery SQL";
-  private static final DatasetId DATASET_ID = DatasetId.of("project", "dataset");
-  private static final TableId TABLE_ID = TableId.of("project", "dataset", "table");
+  private static final DatasetId DATASET_ID = DatasetId.of("dataset");
+  private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
       Field.builder("StringField", Field.Type.string())
@@ -79,114 +74,86 @@ public class QueryJobInfoTest {
   private static final boolean FLATTEN_RESULTS = true;
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
       UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
-  private static final JobId JOB_ID = JobId.of("job");
-  private static final JobStatus JOB_STATUS = new JobStatus(JobStatus.State.DONE);
-  private static final QueryStatistics JOB_STATISTICS = QueryStatistics.builder()
-      .creationTime(1L)
-      .endTime(3L)
-      .startTime(2L)
-      .totalBytesProcessed(2048L)
-      .totalBytesBilled(1024L)
-      .cacheHit(false)
-      .billingTier(42)
-      .build();
-  private static final QueryJobInfo QUERY_JOB = QueryJobInfo.builder(QUERY)
-      .etag(ETAG)
-      .id(ID)
-      .selfLink(SELF_LINK)
-      .userEmail(EMAIL)
-      .jobId(JOB_ID)
-      .status(JOB_STATUS)
-      .useQueryCache(USE_QUERY_CACHE)
-      .tableDefinitions(TABLE_DEFINITIONS)
-      .allowLargeResults(ALLOW_LARGE_RESULTS)
-      .createDisposition(CREATE_DISPOSITION)
-      .defaultDataset(DATASET_ID)
-      .destinationTable(TABLE_ID)
-      .writeDisposition(WRITE_DISPOSITION)
-      .priority(PRIORITY)
-      .flattenResults(FLATTEN_RESULTS)
-      .userDefinedFunctions(USER_DEFINED_FUNCTIONS)
-      .dryRun(true)
-      .statistics(JOB_STATISTICS)
-      .build();
+  private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
+      QueryJobConfiguration.builder(QUERY)
+          .useQueryCache(USE_QUERY_CACHE)
+          .tableDefinitions(TABLE_DEFINITIONS)
+          .allowLargeResults(ALLOW_LARGE_RESULTS)
+          .createDisposition(CREATE_DISPOSITION)
+          .defaultDataset(DATASET_ID)
+          .destinationTable(TABLE_ID)
+          .writeDisposition(WRITE_DISPOSITION)
+          .priority(PRIORITY)
+          .flattenResults(FLATTEN_RESULTS)
+          .userDefinedFunctions(USER_DEFINED_FUNCTIONS)
+          .dryRun(true)
+          .build();
 
   @Test
   public void testToBuilder() {
-    compareQueryJobInfo(QUERY_JOB, QUERY_JOB.toBuilder().build());
-    QueryJobInfo job = QUERY_JOB.toBuilder()
+    compareQueryJobConfiguration(QUERY_JOB_CONFIGURATION,
+        QUERY_JOB_CONFIGURATION.toBuilder().build());
+    QueryJobConfiguration job = QUERY_JOB_CONFIGURATION.toBuilder()
         .query("New BigQuery SQL")
         .build();
     assertEquals("New BigQuery SQL", job.query());
     job = job.toBuilder().query(QUERY).build();
-    compareQueryJobInfo(QUERY_JOB, job);
+    compareQueryJobConfiguration(QUERY_JOB_CONFIGURATION, job);
   }
 
   @Test
   public void testOf() {
-    QueryJobInfo job = QueryJobInfo.of(QUERY);
-    assertEquals(QUERY, job.query());
-    job = QueryJobInfo.of(JOB_ID, QUERY);
-    assertEquals(JOB_ID, job.jobId());
+    QueryJobConfiguration job = QueryJobConfiguration.of(QUERY);
     assertEquals(QUERY, job.query());
   }
 
   @Test
   public void testToBuilderIncomplete() {
-    QueryJobInfo job = QueryJobInfo.of(QUERY);
-    compareQueryJobInfo(job, job.toBuilder().build());
+    QueryJobConfiguration job = QueryJobConfiguration.of(QUERY);
+    compareQueryJobConfiguration(job, job.toBuilder().build());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(ETAG, QUERY_JOB.etag());
-    assertEquals(ID, QUERY_JOB.id());
-    assertEquals(SELF_LINK, QUERY_JOB.selfLink());
-    assertEquals(EMAIL, QUERY_JOB.userEmail());
-    assertEquals(JOB_ID, QUERY_JOB.jobId());
-    assertEquals(JOB_STATUS, QUERY_JOB.status());
-    assertEquals(ALLOW_LARGE_RESULTS, QUERY_JOB.allowLargeResults());
-    assertEquals(CREATE_DISPOSITION, QUERY_JOB.createDisposition());
-    assertEquals(DATASET_ID, QUERY_JOB.defaultDataset());
-    assertEquals(TABLE_ID, QUERY_JOB.destinationTable());
-    assertEquals(FLATTEN_RESULTS, QUERY_JOB.flattenResults());
-    assertEquals(PRIORITY, QUERY_JOB.priority());
-    assertEquals(QUERY, QUERY_JOB.query());
-    assertEquals(TABLE_DEFINITIONS, QUERY_JOB.tableDefinitions());
-    assertEquals(USE_QUERY_CACHE, QUERY_JOB.useQueryCache());
-    assertEquals(USER_DEFINED_FUNCTIONS, QUERY_JOB.userDefinedFunctions());
-    assertEquals(WRITE_DISPOSITION, QUERY_JOB.writeDisposition());
-    assertTrue(QUERY_JOB.dryRun());
-    assertEquals(JOB_STATISTICS, QUERY_JOB.statistics());
+    assertEquals(ALLOW_LARGE_RESULTS, QUERY_JOB_CONFIGURATION.allowLargeResults());
+    assertEquals(CREATE_DISPOSITION, QUERY_JOB_CONFIGURATION.createDisposition());
+    assertEquals(DATASET_ID, QUERY_JOB_CONFIGURATION.defaultDataset());
+    assertEquals(TABLE_ID, QUERY_JOB_CONFIGURATION.destinationTable());
+    assertEquals(FLATTEN_RESULTS, QUERY_JOB_CONFIGURATION.flattenResults());
+    assertEquals(PRIORITY, QUERY_JOB_CONFIGURATION.priority());
+    assertEquals(QUERY, QUERY_JOB_CONFIGURATION.query());
+    assertEquals(TABLE_DEFINITIONS, QUERY_JOB_CONFIGURATION.tableDefinitions());
+    assertEquals(USE_QUERY_CACHE, QUERY_JOB_CONFIGURATION.useQueryCache());
+    assertEquals(USER_DEFINED_FUNCTIONS, QUERY_JOB_CONFIGURATION.userDefinedFunctions());
+    assertEquals(WRITE_DISPOSITION, QUERY_JOB_CONFIGURATION.writeDisposition());
+    assertTrue(QUERY_JOB_CONFIGURATION.dryRun());
   }
 
   @Test
   public void testToPbAndFromPb() {
-    assertNotNull(QUERY_JOB.toPb().getConfiguration().getQuery());
-    assertNull(QUERY_JOB.toPb().getConfiguration().getExtract());
-    assertNull(QUERY_JOB.toPb().getConfiguration().getCopy());
-    assertNull(QUERY_JOB.toPb().getConfiguration().getLoad());
-    assertEquals(JOB_STATISTICS, JobStatistics.fromPb(QUERY_JOB.statistics().toPb()));
-    compareQueryJobInfo(QUERY_JOB, QueryJobInfo.fromPb(QUERY_JOB.toPb()));
-    compareQueryJobInfo(QUERY_JOB,
-        (QueryJobInfo) JobInfo.fromPb(QUERY_JOB.toPb()));
-    QueryJobInfo job = QueryJobInfo.of(QUERY);
-    compareQueryJobInfo(job, QueryJobInfo.fromPb(job.toPb()));
-    compareQueryJobInfo(job, (QueryJobInfo) JobInfo.fromPb(job.toPb()));
+    assertNotNull(QUERY_JOB_CONFIGURATION.toPb().getQuery());
+    assertNull(QUERY_JOB_CONFIGURATION.toPb().getExtract());
+    assertNull(QUERY_JOB_CONFIGURATION.toPb().getCopy());
+    assertNull(QUERY_JOB_CONFIGURATION.toPb().getLoad());
+    compareQueryJobConfiguration(QUERY_JOB_CONFIGURATION,
+        QueryJobConfiguration.fromPb(QUERY_JOB_CONFIGURATION.toPb()));
+    QueryJobConfiguration job = QueryJobConfiguration.of(QUERY);
+    compareQueryJobConfiguration(job, QueryJobConfiguration.fromPb(job.toPb()));
   }
 
-  private void compareQueryJobInfo(QueryJobInfo expected, QueryJobInfo value) {
+  @Test
+  public void testSetProjectId() {
+    QueryJobConfiguration configuration = QUERY_JOB_CONFIGURATION.setProjectId("p");
+    assertEquals("p", configuration.defaultDataset().project());
+    assertEquals("p", configuration.destinationTable().project());
+  }
+
+  private void compareQueryJobConfiguration(QueryJobConfiguration expected,
+      QueryJobConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
-    assertEquals(expected.etag(), value.etag());
-    assertEquals(expected.id(), value.id());
-    assertEquals(expected.jobId(), value.jobId());
-    assertEquals(expected.selfLink(), value.selfLink());
-    assertEquals(expected.status(), value.status());
-    assertEquals(expected.statistics(), value.statistics());
     assertEquals(expected.dryRun(), value.dryRun());
-    assertEquals(expected.userEmail(), value.userEmail());
     assertEquals(expected.allowLargeResults(), value.allowLargeResults());
     assertEquals(expected.createDisposition(), value.createDisposition());
     assertEquals(expected.defaultDataset(), value.defaultDataset());

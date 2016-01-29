@@ -130,7 +130,7 @@ import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryOptions;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.JobStatus;
-import com.google.gcloud.bigquery.LoadJobInfo;
+import com.google.gcloud.bigquery.JobInfo;
 import com.google.gcloud.bigquery.Schema;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
@@ -144,7 +144,8 @@ if (info == null) {
   bigquery.create(TableInfo.of(tableId, Schema.of(integerField)));
 } else {
   System.out.println("Loading data into table " + tableId);
-  LoadJobInfo loadJob = LoadJobInfo.of(tableId, "gs://bucket/path");
+  LoadJobConfiguration configuration = LoadJobConfiguration.of(tableId, "gs://bucket/path");
+  JobInfo loadJob = JobInfo.of(configuration);
   loadJob = bigquery.create(loadJob);
   while (loadJob.status().state() != JobStatus.State.DONE) {
     Thread.sleep(1000L);

@@ -24,18 +24,18 @@ import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.WriteChannel;
 
-import java.util.Arrays;
-
 /**
  * WriteChannel implementation to stream data into a BigQuery table.
  */
-class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, LoadConfiguration> {
+class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> {
 
-  TableDataWriteChannel(BigQueryOptions options, LoadConfiguration loadConfiguration) {
-    this(options, loadConfiguration, options.rpc().open(loadConfiguration.toPb()));
+  TableDataWriteChannel(BigQueryOptions options,
+      WriteChannelConfiguration writeChannelConfiguration) {
+    this(options, writeChannelConfiguration, options.rpc().open(writeChannelConfiguration.toPb()));
   }
 
-  TableDataWriteChannel(BigQueryOptions options, LoadConfiguration config, String uploadId) {
+  TableDataWriteChannel(BigQueryOptions options, WriteChannelConfiguration config,
+      String uploadId) {
     super(options, config, uploadId);
   }
 
@@ -57,7 +57,8 @@ class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, LoadConfig
     return StateImpl.builder(options(), entity(), uploadId());
   }
 
-  static class StateImpl extends BaseWriteChannel.BaseState<BigQueryOptions, LoadConfiguration> {
+  static class StateImpl
+      extends BaseWriteChannel.BaseState<BigQueryOptions, WriteChannelConfiguration> {
 
     private static final long serialVersionUID = -787362105981823738L;
 
@@ -66,9 +67,10 @@ class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, LoadConfig
     }
 
     static class Builder
-        extends BaseWriteChannel.BaseState.Builder<BigQueryOptions, LoadConfiguration> {
+        extends BaseWriteChannel.BaseState.Builder<BigQueryOptions, WriteChannelConfiguration> {
 
-      private Builder(BigQueryOptions options, LoadConfiguration configuration, String uploadId) {
+      private Builder(BigQueryOptions options, WriteChannelConfiguration configuration,
+          String uploadId) {
         super(options, configuration, uploadId);
       }
 
@@ -77,7 +79,8 @@ class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, LoadConfig
       }
     }
 
-    static Builder builder(BigQueryOptions options, LoadConfiguration config, String uploadId) {
+    static Builder builder(BigQueryOptions options, WriteChannelConfiguration config,
+        String uploadId) {
       return new Builder(options, config, uploadId);
     }
 
