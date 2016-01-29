@@ -55,7 +55,8 @@ public class TableTest {
   private static final JobInfo EXTRACT_JOB_INFO =
       JobInfo.of(ExtractJobConfiguration.of(TABLE_ID1, ImmutableList.of("URI"), "CSV"));
   private static final Field FIELD = Field.of("FieldName", Field.Type.integer());
-  private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID1, Schema.of(FIELD));
+  private static final BaseTableType TABLE_TYPE = DefaultTableType.of(Schema.of(FIELD));
+  private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID1, TABLE_TYPE);
   private static final List<RowToInsert> ROWS_TO_INSERT = ImmutableList.of(
       RowToInsert.of("id1", ImmutableMap.<String, Object>of("key", "val1")),
       RowToInsert.of("id2", ImmutableMap.<String, Object>of("key", "val2")));
@@ -149,7 +150,7 @@ public class TableTest {
 
   @Test
   public void testUpdate() throws Exception {
-    BaseTableInfo updatedInfo = TABLE_INFO.toBuilder().description("Description").build();
+    TableInfo updatedInfo = TABLE_INFO.toBuilder().description("Description").build();
     expect(bigquery.update(updatedInfo)).andReturn(updatedInfo);
     replay(bigquery);
     Table updatedTable = table.update(updatedInfo);
@@ -181,7 +182,7 @@ public class TableTest {
 
   @Test
   public void testUpdateWithOptions() throws Exception {
-    BaseTableInfo updatedInfo = TABLE_INFO.toBuilder().description("Description").build();
+    TableInfo updatedInfo = TABLE_INFO.toBuilder().description("Description").build();
     expect(bigquery.update(updatedInfo, BigQuery.TableOption.fields())).andReturn(updatedInfo);
     replay(bigquery);
     Table updatedTable = table.update(updatedInfo, BigQuery.TableOption.fields());

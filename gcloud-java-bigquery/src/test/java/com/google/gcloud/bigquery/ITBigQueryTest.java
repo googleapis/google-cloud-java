@@ -257,20 +257,21 @@ public class ITBigQueryTest {
   public void testCreateAndGetTable() {
     String tableName = "test_create_and_get_table";
     TableId tableId = TableId.of(DATASET, tableName);
-    BaseTableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, TABLE_SCHEMA));
+    DefaultTableType tableType = DefaultTableType.of(TABLE_SCHEMA);
+    TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, tableType));
     assertNotNull(createdTableInfo);
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
     assertEquals(tableName, createdTableInfo.tableId().table());
-    BaseTableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName);
+    TableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName);
     assertNotNull(remoteTableInfo);
-    assertTrue(remoteTableInfo instanceof TableInfo);
+    assertTrue(remoteTableInfo.type() instanceof DefaultTableType);
     assertEquals(createdTableInfo.tableId(), remoteTableInfo.tableId());
-    assertEquals(BaseTableInfo.Type.TABLE, remoteTableInfo.type());
-    assertEquals(TABLE_SCHEMA, remoteTableInfo.schema());
+    assertEquals(BaseTableType.Type.TABLE, remoteTableInfo.type().type());
+    assertEquals(TABLE_SCHEMA, remoteTableInfo.type().schema());
     assertNotNull(remoteTableInfo.creationTime());
     assertNotNull(remoteTableInfo.lastModifiedTime());
-    assertNotNull(remoteTableInfo.numBytes());
-    assertNotNull(remoteTableInfo.numRows());
+    assertNotNull(remoteTableInfo.<DefaultTableType>type().numBytes());
+    assertNotNull(remoteTableInfo.<DefaultTableType>type().numRows());
     assertTrue(bigquery.delete(DATASET, tableName));
   }
 
@@ -278,21 +279,22 @@ public class ITBigQueryTest {
   public void testCreateAndGetTableWithSelectedField() {
     String tableName = "test_create_and_get_selected_fields_table";
     TableId tableId = TableId.of(DATASET, tableName);
-    BaseTableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, TABLE_SCHEMA));
+    DefaultTableType tableType = DefaultTableType.of(TABLE_SCHEMA);
+    TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, tableType));
     assertNotNull(createdTableInfo);
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
     assertEquals(tableName, createdTableInfo.tableId().table());
-    BaseTableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName,
+    TableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName,
         TableOption.fields(TableField.CREATION_TIME));
     assertNotNull(remoteTableInfo);
-    assertTrue(remoteTableInfo instanceof TableInfo);
+    assertTrue(remoteTableInfo.type() instanceof DefaultTableType);
     assertEquals(createdTableInfo.tableId(), remoteTableInfo.tableId());
-    assertEquals(BaseTableInfo.Type.TABLE, remoteTableInfo.type());
+    assertEquals(BaseTableType.Type.TABLE, remoteTableInfo.type().type());
     assertNotNull(remoteTableInfo.creationTime());
-    assertNull(remoteTableInfo.schema());
+    assertNull(remoteTableInfo.type().schema());
     assertNull(remoteTableInfo.lastModifiedTime());
-    assertNull(remoteTableInfo.numBytes());
-    assertNull(remoteTableInfo.numRows());
+    assertNull(remoteTableInfo.<DefaultTableType>type().numBytes());
+    assertNull(remoteTableInfo.<DefaultTableType>type().numRows());
     assertTrue(bigquery.delete(DATASET, tableName));
   }
 
@@ -300,18 +302,18 @@ public class ITBigQueryTest {
   public void testCreateExternalTable() throws InterruptedException {
     String tableName = "test_create_external_table";
     TableId tableId = TableId.of(DATASET, tableName);
-    ExternalDataConfiguration externalDataConfiguration = ExternalDataConfiguration.of(
+    ExternalTableType externalTableType = ExternalTableType.of(
         "gs://" + BUCKET + "/" + JSON_LOAD_FILE, TABLE_SCHEMA, FormatOptions.json());
-    BaseTableInfo tableInfo = ExternalTableInfo.of(tableId, externalDataConfiguration);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
+    TableInfo tableInfo = TableInfo.of(tableId, externalTableType);
+    TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
     assertEquals(tableName, createdTableInfo.tableId().table());
-    BaseTableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName);
+    TableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName);
     assertNotNull(remoteTableInfo);
-    assertTrue(remoteTableInfo instanceof ExternalTableInfo);
+    assertTrue(remoteTableInfo.type() instanceof ExternalTableType);
     assertEquals(createdTableInfo.tableId(), remoteTableInfo.tableId());
-    assertEquals(TABLE_SCHEMA, remoteTableInfo.schema());
+    assertEquals(TABLE_SCHEMA, remoteTableInfo.type().schema());
     QueryRequest request = QueryRequest.builder(
         "SELECT TimestampField, StringField, IntegerField, BooleanField FROM " + DATASET + "."
             + tableName)
@@ -350,17 +352,17 @@ public class ITBigQueryTest {
   public void testCreateViewTable() throws InterruptedException {
     String tableName = "test_create_view_table";
     TableId tableId = TableId.of(DATASET, tableName);
-    BaseTableInfo tableInfo = ViewInfo.of(tableId,
-        "SELECT TimestampField, StringField, BooleanField FROM " + DATASET + "."
-            + TABLE_ID.table());
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
+    ViewType viewType = ViewType.of("SELECT TimestampField, StringField, BooleanField FROM "
+        + DATASET + "." + TABLE_ID.table());
+    TableInfo tableInfo = TableInfo.of(tableId, viewType);
+    TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
     assertEquals(tableName, createdTableInfo.tableId().table());
-    BaseTableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName);
+    TableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName);
     assertNotNull(remoteTableInfo);
     assertEquals(createdTableInfo.tableId(), remoteTableInfo.tableId());
-    assertTrue(remoteTableInfo instanceof ViewInfo);
+    assertTrue(remoteTableInfo.type() instanceof ViewType);
     Schema expectedSchema = Schema.builder()
         .addField(
             Field.builder("TimestampField", Field.Type.timestamp())
@@ -375,7 +377,7 @@ public class ITBigQueryTest {
                 .mode(Field.Mode.NULLABLE)
                 .build())
         .build();
-    assertEquals(expectedSchema, remoteTableInfo.schema());
+    assertEquals(expectedSchema, remoteTableInfo.type().schema());
     QueryRequest request = QueryRequest.builder("SELECT * FROM " + tableName)
         .defaultDataset(DatasetId.of(DATASET))
         .maxWaitTime(60000L)
@@ -406,12 +408,13 @@ public class ITBigQueryTest {
   @Test
   public void testListTables() {
     String tableName = "test_list_tables";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
+    DefaultTableType tableType = DefaultTableType.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableType);
+    TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
-    Page<BaseTableInfo> tables = bigquery.listTables(DATASET);
+    Page<TableInfo> tables = bigquery.listTables(DATASET);
     boolean found = false;
-    Iterator<BaseTableInfo> tableIterator = tables.values().iterator();
+    Iterator<TableInfo> tableIterator = tables.values().iterator();
     while (tableIterator.hasNext() && !found) {
       if (tableIterator.next().tableId().equals(createdTableInfo.tableId())) {
         found = true;
@@ -424,14 +427,15 @@ public class ITBigQueryTest {
   @Test
   public void testUpdateTable() {
     String tableName = "test_update_table";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
+    DefaultTableType tableType = DefaultTableType.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableType);
+    TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
-    BaseTableInfo updatedTableInfo = bigquery.update(tableInfo.toBuilder()
+    TableInfo updatedTableInfo = bigquery.update(tableInfo.toBuilder()
         .description("newDescription").build());
     assertEquals(DATASET, updatedTableInfo.tableId().dataset());
     assertEquals(tableName, updatedTableInfo.tableId().table());
-    assertEquals(TABLE_SCHEMA, updatedTableInfo.schema());
+    assertEquals(TABLE_SCHEMA, updatedTableInfo.type().schema());
     assertEquals("newDescription", updatedTableInfo.description());
     assertTrue(bigquery.delete(DATASET, tableName));
   }
@@ -439,26 +443,28 @@ public class ITBigQueryTest {
   @Test
   public void testUpdateTableWithSelectedFields() {
     String tableName = "test_update_with_selected_fields_table";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
+    DefaultTableType tableType = DefaultTableType.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableType);
+    TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
-    BaseTableInfo updatedTableInfo = bigquery.update(tableInfo.toBuilder().description("newDescr")
+    TableInfo updatedTableInfo = bigquery.update(tableInfo.toBuilder().description("newDescr")
         .build(), TableOption.fields(TableField.DESCRIPTION));
-    assertTrue(updatedTableInfo instanceof TableInfo);
+    assertTrue(updatedTableInfo.type() instanceof DefaultTableType);
     assertEquals(DATASET, updatedTableInfo.tableId().dataset());
     assertEquals(tableName, updatedTableInfo.tableId().table());
     assertEquals("newDescr", updatedTableInfo.description());
-    assertNull(updatedTableInfo.schema());
+    assertNull(updatedTableInfo.type().schema());
     assertNull(updatedTableInfo.lastModifiedTime());
-    assertNull(updatedTableInfo.numBytes());
-    assertNull(updatedTableInfo.numRows());
+    assertNull(updatedTableInfo.<DefaultTableType>type().numBytes());
+    assertNull(updatedTableInfo.<DefaultTableType>type().numRows());
     assertTrue(bigquery.delete(DATASET, tableName));
   }
 
   @Test
   public void testUpdateNonExistingTable() {
-    TableInfo tableInfo =
-        TableInfo.of(TableId.of(DATASET, "test_update_non_existing_table"), SIMPLE_SCHEMA);
+
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, "test_update_non_existing_table"),
+        DefaultTableType.of(SIMPLE_SCHEMA));
     try {
       bigquery.update(tableInfo);
       fail("BigQueryException was expected");
@@ -478,7 +484,8 @@ public class ITBigQueryTest {
   @Test
   public void testInsertAll() {
     String tableName = "test_insert_all_table";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
+    DefaultTableType tableType = DefaultTableType.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableType);
     assertNotNull(bigquery.create(tableInfo));
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
         .addRow(ImmutableMap.<String, Object>of(
@@ -509,7 +516,8 @@ public class ITBigQueryTest {
   @Test
   public void testInsertAllWithSuffix() throws InterruptedException {
     String tableName = "test_insert_all_with_suffix_table";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
+    DefaultTableType tableType = DefaultTableType.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableType);
     assertNotNull(bigquery.create(tableInfo));
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
         .addRow(ImmutableMap.<String, Object>of(
@@ -536,7 +544,7 @@ public class ITBigQueryTest {
     assertFalse(response.hasErrors());
     assertEquals(0, response.insertErrors().size());
     String newTableName = tableName + "_suffix";
-    BaseTableInfo suffixTable = bigquery.getTable(DATASET, newTableName, TableOption.fields());
+    TableInfo suffixTable = bigquery.getTable(DATASET, newTableName, TableOption.fields());
     // wait until the new table is created. If the table is never created the test will time-out
     while (suffixTable == null) {
       Thread.sleep(1000L);
@@ -549,7 +557,8 @@ public class ITBigQueryTest {
   @Test
   public void testInsertAllWithErrors() {
     String tableName = "test_insert_all_with_errors_table";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
+    DefaultTableType tableType = DefaultTableType.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableType);
     assertNotNull(bigquery.create(tableInfo));
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
         .addRow(ImmutableMap.<String, Object>of(
@@ -680,8 +689,9 @@ public class ITBigQueryTest {
     String sourceTableName = "test_create_and_get_job_source_table";
     String destinationTableName = "test_create_and_get_job_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
-    BaseTableInfo tableInfo = TableInfo.of(sourceTable, SIMPLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
+    DefaultTableType tableType = DefaultTableType.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(sourceTable, tableType);
+    TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
     assertEquals(sourceTableName, createdTableInfo.tableId().table());
@@ -712,8 +722,9 @@ public class ITBigQueryTest {
     String sourceTableName = "test_create_and_get_job_with_selected_fields_source_table";
     String destinationTableName = "test_create_and_get_job_with_selected_fields_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
-    BaseTableInfo tableInfo = TableInfo.of(sourceTable, SIMPLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
+    DefaultTableType tableType = DefaultTableType.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(sourceTable, tableType);
+    TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
     assertEquals(sourceTableName, createdTableInfo.tableId().table());
@@ -751,8 +762,9 @@ public class ITBigQueryTest {
     String sourceTableName = "test_copy_job_source_table";
     String destinationTableName = "test_copy_job_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
-    BaseTableInfo tableInfo = TableInfo.of(sourceTable, SIMPLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
+    DefaultTableType tableType = DefaultTableType.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(sourceTable, tableType);
+    TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
     assertEquals(sourceTableName, createdTableInfo.tableId().table());
@@ -764,11 +776,11 @@ public class ITBigQueryTest {
       remoteJob = bigquery.getJob(remoteJob.jobId());
     }
     assertNull(remoteJob.status().error());
-    BaseTableInfo remoteTableInfo = bigquery.getTable(DATASET, destinationTableName);
+    TableInfo remoteTableInfo = bigquery.getTable(DATASET, destinationTableName);
     assertNotNull(remoteTableInfo);
     assertEquals(destinationTable.dataset(), remoteTableInfo.tableId().dataset());
     assertEquals(destinationTableName, remoteTableInfo.tableId().table());
-    assertEquals(SIMPLE_SCHEMA, remoteTableInfo.schema());
+    assertEquals(TABLE_SCHEMA, remoteTableInfo.type().schema());
     assertTrue(bigquery.delete(DATASET, sourceTableName));
     assertTrue(bigquery.delete(DATASET, destinationTableName));
   }

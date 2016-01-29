@@ -61,7 +61,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
 
   private final String query;
   private final TableId destinationTable;
-  private final Map<String, ExternalDataConfiguration> tableDefinitions;
+  private final Map<String, ExternalTableType> tableDefinitions;
   private final List<UserDefinedFunction> userDefinedFunctions;
   private final CreateDisposition createDisposition;
   private final WriteDisposition writeDisposition;
@@ -77,7 +77,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
 
     private String query;
     private TableId destinationTable;
-    private Map<String, ExternalDataConfiguration> tableDefinitions;
+    private Map<String, ExternalTableType> tableDefinitions;
     private List<UserDefinedFunction> userDefinedFunctions;
     private CreateDisposition createDisposition;
     private WriteDisposition writeDisposition;
@@ -127,7 +127,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       }
       if (queryConfigurationPb.getTableDefinitions() != null) {
         tableDefinitions = Maps.transformValues(queryConfigurationPb.getTableDefinitions(),
-            ExternalDataConfiguration.FROM_PB_FUNCTION);
+            ExternalTableType.FROM_EXTERNAL_DATA_FUNCTION);
       }
       if (queryConfigurationPb.getUserDefinedFunctionResources() != null) {
         userDefinedFunctions = Lists.transform(
@@ -167,7 +167,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * sources. By defining these properties, the data sources can be queried as if they were
      * standard BigQuery tables.
      */
-    public Builder tableDefinitions(Map<String, ExternalDataConfiguration> tableDefinitions) {
+    public Builder tableDefinitions(Map<String, ExternalTableType> tableDefinitions) {
       this.tableDefinitions = tableDefinitions != null ? Maps.newHashMap(tableDefinitions) : null;
       return this;
     }
@@ -179,7 +179,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * @param tableName name of the table
      * @param tableDefinition external data configuration for the table used by this query
      */
-    public Builder addTableDefinition(String tableName, ExternalDataConfiguration tableDefinition) {
+    public Builder addTableDefinition(String tableName, ExternalTableType tableDefinition) {
       if (this.tableDefinitions == null) {
         this.tableDefinitions = Maps.newHashMap();
       }
@@ -383,7 +383,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    * sources. By defining these properties, the data sources can be queried as if they were
    * standard BigQuery tables.
    */
-  public Map<String, ExternalDataConfiguration> tableDefinitions() {
+  public Map<String, ExternalTableType> tableDefinitions() {
     return tableDefinitions;
   }
 
@@ -498,7 +498,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
     if (tableDefinitions != null) {
       queryConfigurationPb.setTableDefinitions(
-          Maps.transformValues(tableDefinitions, ExternalDataConfiguration.TO_PB_FUNCTION));
+          Maps.transformValues(tableDefinitions, ExternalTableType.TO_EXTERNAL_DATA_FUNCTION));
     }
     if (useQueryCache != null) {
       queryConfigurationPb.setUseQueryCache(useQueryCache);

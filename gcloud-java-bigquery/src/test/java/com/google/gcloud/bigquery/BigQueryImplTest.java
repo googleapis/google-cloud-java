@@ -104,10 +104,11 @@ public class BigQueryImplTest {
           .description("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
-  private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_SCHEMA);
-  private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_SCHEMA);
+  private static final DefaultTableType TABLE_TYPE = DefaultTableType.of(TABLE_SCHEMA);
+  private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_TYPE);
+  private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_TYPE);
   private static final TableInfo TABLE_INFO_WITH_PROJECT =
-      TableInfo.of(TABLE_ID_WITH_PROJECT, TABLE_SCHEMA);
+      TableInfo.of(TABLE_ID_WITH_PROJECT, TABLE_TYPE);
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION =
       LoadJobConfiguration.of(TABLE_ID, "URI");
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION_WITH_PROJECT =
@@ -511,47 +512,47 @@ public class BigQueryImplTest {
   @Test
   public void testListTables() {
     String cursor = "cursor";
-    ImmutableList<BaseTableInfo> tableList =
-        ImmutableList.<BaseTableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
+    ImmutableList<TableInfo> tableList =
+        ImmutableList.<TableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
     Tuple<String, Iterable<Table>> result =
-        Tuple.of(cursor, Iterables.transform(tableList, BaseTableInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(DATASET, EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    Page<BaseTableInfo> page = bigquery.listTables(DATASET);
+    Page<TableInfo> page = bigquery.listTables(DATASET);
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(tableList.toArray(), Iterables.toArray(page.values(), BaseTableInfo.class));
+    assertArrayEquals(tableList.toArray(), Iterables.toArray(page.values(), TableInfo.class));
   }
 
   @Test
   public void testListTablesFromDatasetId() {
     String cursor = "cursor";
-    ImmutableList<BaseTableInfo> tableList =
-        ImmutableList.<BaseTableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
+    ImmutableList<TableInfo> tableList =
+        ImmutableList.<TableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
     Tuple<String, Iterable<Table>> result =
-        Tuple.of(cursor, Iterables.transform(tableList, BaseTableInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(DATASET, EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    Page<BaseTableInfo> page = bigquery.listTables(DatasetId.of(PROJECT, DATASET));
+    Page<TableInfo> page = bigquery.listTables(DatasetId.of(PROJECT, DATASET));
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(tableList.toArray(), Iterables.toArray(page.values(), BaseTableInfo.class));
+    assertArrayEquals(tableList.toArray(), Iterables.toArray(page.values(), TableInfo.class));
   }
 
   @Test
   public void testListTablesWithOptions() {
     String cursor = "cursor";
-    ImmutableList<BaseTableInfo> tableList =
-        ImmutableList.<BaseTableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
+    ImmutableList<TableInfo> tableList =
+        ImmutableList.<TableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
     Tuple<String, Iterable<Table>> result =
-        Tuple.of(cursor, Iterables.transform(tableList, BaseTableInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(DATASET, TABLE_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
-    Page<BaseTableInfo> page = bigquery.listTables(DATASET, TABLE_LIST_MAX_RESULTS,
+    Page<TableInfo> page = bigquery.listTables(DATASET, TABLE_LIST_MAX_RESULTS,
         TABLE_LIST_PAGE_TOKEN);
     assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(tableList.toArray(), Iterables.toArray(page.values(), BaseTableInfo.class));
+    assertArrayEquals(tableList.toArray(), Iterables.toArray(page.values(), TableInfo.class));
   }
 
   @Test

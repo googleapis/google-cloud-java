@@ -28,7 +28,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -49,16 +48,16 @@ public final class Dataset {
     private static final long serialVersionUID = 6906197848579250598L;
 
     private final BigQueryOptions options;
-    private final Page<BaseTableInfo> infoPage;
+    private final Page<TableInfo> infoPage;
 
-    TablePageFetcher(BigQueryOptions options, Page<BaseTableInfo> infoPage) {
+    TablePageFetcher(BigQueryOptions options, Page<TableInfo> infoPage) {
       this.options = options;
       this.infoPage = infoPage;
     }
 
     @Override
     public Page<Table> nextPage() {
-      Page<BaseTableInfo> nextInfoPage = infoPage.nextPage();
+      Page<TableInfo> nextInfoPage = infoPage.nextPage();
       return new PageImpl<>(new TablePageFetcher(options, nextInfoPage),
           nextInfoPage.nextPageCursor(), new LazyTableIterable(options, nextInfoPage.values()));
     }
@@ -69,10 +68,10 @@ public final class Dataset {
     private static final long serialVersionUID = 3312744215731674032L;
 
     private final BigQueryOptions options;
-    private final Iterable<BaseTableInfo> infoIterable;
+    private final Iterable<TableInfo> infoIterable;
     private transient BigQuery bigquery;
 
-    public LazyTableIterable(BigQueryOptions options, Iterable<BaseTableInfo> infoIterable) {
+    public LazyTableIterable(BigQueryOptions options, Iterable<TableInfo> infoIterable) {
       this.options = options;
       this.infoIterable = infoIterable;
       this.bigquery = options.service();
@@ -85,9 +84,9 @@ public final class Dataset {
 
     @Override
     public Iterator<Table> iterator() {
-      return Iterators.transform(infoIterable.iterator(), new Function<BaseTableInfo, Table>() {
+      return Iterators.transform(infoIterable.iterator(), new Function<TableInfo, Table>() {
         @Override
-        public Table apply(BaseTableInfo tableInfo) {
+        public Table apply(TableInfo tableInfo) {
           return new Table(bigquery, tableInfo);
         }
       });
@@ -198,7 +197,7 @@ public final class Dataset {
    * @throws BigQueryException upon failure
    */
   public Page<Table> list(BigQuery.TableListOption... options) {
-    Page<BaseTableInfo> infoPage = bigquery.listTables(info.datasetId(), options);
+    Page<TableInfo> infoPage = bigquery.listTables(info.datasetId(), options);
     BigQueryOptions bigqueryOptions = bigquery.options();
     return new PageImpl<>(new TablePageFetcher(bigqueryOptions, infoPage),
         infoPage.nextPageCursor(), new LazyTableIterable(bigqueryOptions, infoPage.values()));
@@ -212,69 +211,22 @@ public final class Dataset {
    * @throws BigQueryException upon failure
    */
   public Table get(String table, BigQuery.TableOption... options) {
-    BaseTableInfo tableInfo =
+    TableInfo tableInfo =
         bigquery.getTable(TableId.of(info.datasetId().dataset(), table), options);
     return tableInfo != null ? new Table(bigquery, tableInfo) : null;
   }
 
   /**
-   * Creates a new simple table in this dataset.
+   * Creates a new table in this dataset.
    *
    * @param table the table's user-defined id
-   * @param schema the table's schema
+   * @param type the table's type
    * @param options options for table creation
    * @return a {@code Table} object for the created table
    * @throws BigQueryException upon failure
    */
-  public Table create(String table, Schema schema, BigQuery.TableOption... options) {
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(info.datasetId().dataset(), table), schema);
-    return new Table(bigquery, bigquery.create(tableInfo, options));
-  }
-
-  /**
-   * Creates a new view table in this dataset.
-   *
-   * @param table the table's user-defined id
-   * @param query the query used to generate the table
-   * @param functions user-defined functions that can be used by the query
-   * @param options options for table creation
-   * @return a {@code Table} object for the created table
-   * @throws BigQueryException upon failure
-   */
-  public Table create(String table, String query, List<UserDefinedFunction> functions,
-      BigQuery.TableOption... options) {
-    BaseTableInfo tableInfo =
-        ViewInfo.of(TableId.of(info.datasetId().dataset(), table), query, functions);
-    return new Table(bigquery, bigquery.create(tableInfo, options));
-  }
-
-  /**
-   * Creates a new view table in this dataset.
-   *
-   * @param table the table's user-defined id
-   * @param query the query used to generate the table
-   * @param options options for table creation
-   * @return a {@code Table} object for the created table
-   * @throws BigQueryException upon failure
-   */
-  public Table create(String table, String query, BigQuery.TableOption... options) {
-    BaseTableInfo tableInfo =  ViewInfo.of(TableId.of(info.datasetId().dataset(), table), query);
-    return new Table(bigquery, bigquery.create(tableInfo, options));
-  }
-
-  /**
-   * Creates a new external table in this dataset.
-   *
-   * @param table the table's user-defined id
-   * @param configuration data format, location and other properties of an external table
-   * @param options options for table creation
-   * @return a {@code Table} object for the created table
-   * @throws BigQueryException upon failure
-   */
-  public Table create(String table, ExternalDataConfiguration configuration,
-      BigQuery.TableOption... options) {
-    BaseTableInfo tableInfo =
-        ExternalTableInfo.of(TableId.of(info.datasetId().dataset(), table), configuration);
+  public Table create(String table, BaseTableType type, BigQuery.TableOption... options) {
+    TableInfo tableInfo = TableInfo.of(TableId.of(info.datasetId().dataset(), table), type);
     return new Table(bigquery, bigquery.create(tableInfo, options));
   }
 

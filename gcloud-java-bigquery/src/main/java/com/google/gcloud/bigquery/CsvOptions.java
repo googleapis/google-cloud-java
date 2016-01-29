@@ -144,7 +144,7 @@ public class CsvOptions extends FormatOptions {
    * Returns whether BigQuery should accept rows that are missing trailing optional columns. If
    * {@code true}, BigQuery treats missing trailing columns as null values. If {@code false},
    * records with missing trailing columns are treated as bad records, and if the number of bad
-   * records exceeds {@link ExternalDataConfiguration#maxBadRecords()}, an invalid error is returned
+   * records exceeds {@link ExternalTableType#maxBadRecords()}, an invalid error is returned
    * in the job result.
    */
   public Boolean allowJaggedRows() {

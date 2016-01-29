@@ -58,13 +58,13 @@ public class QueryJobConfigurationTest {
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
   private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
-  private static final ExternalDataConfiguration TABLE_CONFIGURATION = ExternalDataConfiguration
-      .builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
-      .compression(COMPRESSION)
-      .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-      .maxBadRecords(MAX_BAD_RECORDS)
-      .build();
-  private static final Map<String, ExternalDataConfiguration> TABLE_DEFINITIONS =
+  private static final ExternalTableType TABLE_CONFIGURATION =
+      ExternalTableType.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+          .compression(COMPRESSION)
+          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .maxBadRecords(MAX_BAD_RECORDS)
+          .build();
+  private static final Map<String, ExternalTableType> TABLE_DEFINITIONS =
       ImmutableMap.of("tableName", TABLE_CONFIGURATION);
   private static final CreateDisposition CREATE_DISPOSITION = CreateDisposition.CREATE_IF_NEEDED;
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;

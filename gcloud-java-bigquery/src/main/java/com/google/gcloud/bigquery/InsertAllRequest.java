@@ -241,7 +241,7 @@ public class InsertAllRequest implements Serializable {
      * is called use:
      * <pre> {@code
      * String suffixTableId = ...;
-     * BaseTableInfo suffixTable = bigquery.getTable(DATASET, suffixTableId);
+     * TableInfo suffixTable = bigquery.getTable(DATASET, suffixTableId);
      * while (suffixTable == null) {
      *   Thread.sleep(1000L);
      *   suffixTable = bigquery.getTable(DATASET, suffixTableId);
@@ -307,7 +307,7 @@ public class InsertAllRequest implements Serializable {
    * called use:
    * <pre> {@code
    * String suffixTableId = ...;
-   * BaseTableInfo suffixTable = bigquery.getTable(DATASET, suffixTableId);
+   * TableInfo suffixTable = bigquery.getTable(DATASET, suffixTableId);
    * while (suffixTable == null) {
    *   Thread.sleep(1000L);
    *   suffixTable = bigquery.getTable(DATASET, suffixTableId);
@@ -371,7 +371,7 @@ public class InsertAllRequest implements Serializable {
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
    * rows to insert.
    */
-  public static Builder builder(BaseTableInfo tableInfo, Iterable<RowToInsert> rows) {
+  public static Builder builder(TableInfo tableInfo, Iterable<RowToInsert> rows) {
     return builder(tableInfo.tableId(), rows);
   }
 
@@ -379,7 +379,7 @@ public class InsertAllRequest implements Serializable {
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
    * rows to insert.
    */
-  public static Builder builder(BaseTableInfo tableInfo, RowToInsert... rows) {
+  public static Builder builder(TableInfo tableInfo, RowToInsert... rows) {
     return builder(tableInfo.tableId(), rows);
   }
 
@@ -414,14 +414,14 @@ public class InsertAllRequest implements Serializable {
   /**
    * Returns a {@code InsertAllRequest} object given the destination table and the rows to insert.
    */
-  public static InsertAllRequest of(BaseTableInfo tableInfo, Iterable<RowToInsert> rows) {
+  public static InsertAllRequest of(TableInfo tableInfo, Iterable<RowToInsert> rows) {
     return builder(tableInfo.tableId(), rows).build();
   }
 
   /**
    * Returns a {@code InsertAllRequest} object given the destination table and the rows to insert.
    */
-  public static InsertAllRequest of(BaseTableInfo tableInfo, RowToInsert... rows) {
+  public static InsertAllRequest of(TableInfo tableInfo, RowToInsert... rows) {
     return builder(tableInfo.tableId(), rows).build();
   }
 
