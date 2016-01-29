@@ -56,7 +56,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     }
 
     private Builder(ExtractJobConfiguration jobInfo) {
-      super(Type.EXTRACT);
+      this();
       this.sourceTable = jobInfo.sourceTable;
       this.destinationUris = jobInfo.destinationUris;
       this.printHeader = jobInfo.printHeader;
@@ -66,7 +66,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
-      super(Type.EXTRACT);
+      this();
       JobConfigurationExtract extractConfigurationPb = configurationPb.getExtract();
       this.sourceTable = TableId.fromPb(extractConfigurationPb.getSourceTable());
       this.destinationUris = extractConfigurationPb.getDestinationUris();
@@ -199,7 +199,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   }
 
   @Override
-  protected ToStringHelper toStringHelper() {
+  ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("sourceTable", sourceTable)
         .add("destinationUris", destinationUris)

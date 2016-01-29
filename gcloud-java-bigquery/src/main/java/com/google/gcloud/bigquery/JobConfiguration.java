@@ -69,12 +69,12 @@ public abstract class JobConfiguration implements Serializable {
 
     private Type type;
 
-    protected Builder(Type type) {
+    Builder(Type type) {
       this.type = checkNotNull(type);
     }
 
     @SuppressWarnings("unchecked")
-    protected B self() {
+    B self() {
       return (B) this;
     }
 
@@ -89,7 +89,7 @@ public abstract class JobConfiguration implements Serializable {
     public abstract T build();
   }
 
-  protected JobConfiguration(Builder builder) {
+  JobConfiguration(Builder builder) {
     this.type = builder.type;
   }
 
@@ -105,7 +105,7 @@ public abstract class JobConfiguration implements Serializable {
    */
   public abstract Builder toBuilder();
 
-  protected ToStringHelper toStringHelper() {
+  ToStringHelper toStringHelper() {
     return MoreObjects.toStringHelper(this).add("type", type);
   }
 
@@ -114,11 +114,11 @@ public abstract class JobConfiguration implements Serializable {
     return toStringHelper().toString();
   }
 
-  protected final int baseHashCode() {
+  final int baseHashCode() {
     return Objects.hash(type);
   }
 
-  protected final boolean baseEquals(JobConfiguration jobConfiguration) {
+  final boolean baseEquals(JobConfiguration jobConfiguration) {
     return Objects.equals(toPb(), jobConfiguration.toPb());
   }
 

@@ -93,7 +93,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
 
     private Builder(QueryJobConfiguration jobConfiguration) {
-      super(Type.QUERY);
+      this();
       this.query = jobConfiguration.query;
       this.destinationTable = jobConfiguration.destinationTable;
       this.tableDefinitions = jobConfiguration.tableDefinitions;
@@ -109,7 +109,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
-      super(Type.QUERY);
+      this();
       JobConfigurationQuery queryConfigurationPb = configurationPb.getQuery();
       this.query = queryConfigurationPb.getQuery();
       allowLargeResults = queryConfigurationPb.getAllowLargeResults();
@@ -432,7 +432,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   }
 
   @Override
-  protected ToStringHelper toStringHelper() {
+  ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("query", query)
         .add("destinationTable", destinationTable)

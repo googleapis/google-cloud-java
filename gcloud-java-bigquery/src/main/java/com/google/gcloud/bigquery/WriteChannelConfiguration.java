@@ -37,14 +37,14 @@ public class WriteChannelConfiguration implements LoadConfiguration, Serializabl
 
   private static final long serialVersionUID = 470267591917413578L;
 
-  protected final TableId destinationTable;
-  protected final CreateDisposition createDisposition;
-  protected final WriteDisposition writeDisposition;
-  protected final FormatOptions formatOptions;
-  protected final Integer maxBadRecords;
-  protected final Schema schema;
-  protected final Boolean ignoreUnknownValues;
-  protected final List<String> projectionFields;
+  private final TableId destinationTable;
+  private final CreateDisposition createDisposition;
+  private final WriteDisposition writeDisposition;
+  private final FormatOptions formatOptions;
+  private final Integer maxBadRecords;
+  private final Schema schema;
+  private final Boolean ignoreUnknownValues;
+  private final List<String> projectionFields;
 
   public static final class Builder implements LoadConfiguration.Builder {
 
@@ -57,9 +57,9 @@ public class WriteChannelConfiguration implements LoadConfiguration, Serializabl
     private Boolean ignoreUnknownValues;
     private List<String> projectionFields;
 
-    protected Builder() {}
+    private Builder() {}
 
-    protected Builder(WriteChannelConfiguration writeChannelConfiguration) {
+    private Builder(WriteChannelConfiguration writeChannelConfiguration) {
       this.destinationTable = writeChannelConfiguration.destinationTable;
       this.createDisposition = writeChannelConfiguration.createDisposition;
       this.writeDisposition = writeChannelConfiguration.writeDisposition;
@@ -70,7 +70,7 @@ public class WriteChannelConfiguration implements LoadConfiguration, Serializabl
       this.projectionFields = writeChannelConfiguration.projectionFields;
     }
 
-    protected Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
+    private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
       JobConfigurationLoad loadConfigurationPb = configurationPb.getLoad();
       this.destinationTable = TableId.fromPb(loadConfigurationPb.getDestinationTable());
       if (loadConfigurationPb.getCreateDisposition() != null) {

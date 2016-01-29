@@ -347,7 +347,7 @@ public class JobInfoTest {
     }
     ExtractJobConfiguration extractConfiguration = EXTRACT_JOB.setProjectId("p").configuration();
     assertEquals("p", extractConfiguration.sourceTable().project());
-    LoadConfiguration loadConfiguration = LOAD_JOB.setProjectId("p").configuration();
+    LoadJobConfiguration loadConfiguration = LOAD_JOB.setProjectId("p").configuration();
     assertEquals("p", loadConfiguration.destinationTable().project());
     QueryJobConfiguration queryConfiguration = QUERY_JOB.setProjectId("p").configuration();
     assertEquals("p", queryConfiguration.defaultDataset().project());

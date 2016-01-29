@@ -30,19 +30,19 @@ import java.util.Objects;
  * table. Data is provided as URIs that point to objects in Google Cloud Storage. Load job
  * configurations have {@link JobConfiguration.Type#LOAD} type.
  */
-public class LoadJobConfiguration extends JobConfiguration implements LoadConfiguration {
+public final class LoadJobConfiguration extends JobConfiguration implements LoadConfiguration {
 
   private static final long serialVersionUID = -2673554846792429829L;
 
   private final List<String> sourceUris;
-  protected final TableId destinationTable;
-  protected final JobInfo.CreateDisposition createDisposition;
-  protected final JobInfo.WriteDisposition writeDisposition;
-  protected final FormatOptions formatOptions;
-  protected final Integer maxBadRecords;
-  protected final Schema schema;
-  protected final Boolean ignoreUnknownValues;
-  protected final List<String> projectionFields;
+  private final TableId destinationTable;
+  private final JobInfo.CreateDisposition createDisposition;
+  private final JobInfo.WriteDisposition writeDisposition;
+  private final FormatOptions formatOptions;
+  private final Integer maxBadRecords;
+  private final Schema schema;
+  private final Boolean ignoreUnknownValues;
+  private final List<String> projectionFields;
 
   public static final class Builder
       extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
@@ -63,7 +63,7 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
     }
 
     private Builder(LoadJobConfiguration loadConfiguration) {
-      super(Type.LOAD);
+      this();
       this.destinationTable = loadConfiguration.destinationTable;
       this.createDisposition = loadConfiguration.createDisposition;
       this.writeDisposition = loadConfiguration.writeDisposition;
@@ -76,7 +76,7 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
-      super(Type.LOAD);
+      this();
       JobConfigurationLoad loadConfigurationPb = configurationPb.getLoad();
       this.destinationTable = TableId.fromPb(loadConfigurationPb.getDestinationTable());
       if (loadConfigurationPb.getCreateDisposition() != null) {
@@ -254,7 +254,7 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
   }
 
   @Override
-  protected ToStringHelper toStringHelper() {
+  ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("destinationTable", destinationTable)
         .add("createDisposition", createDisposition)

@@ -53,7 +53,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     }
 
     private Builder(CopyJobConfiguration jobConfiguration) {
-      super(Type.COPY);
+      this();
       this.sourceTables = jobConfiguration.sourceTables;
       this.destinationTable = jobConfiguration.destinationTable;
       this.createDisposition = jobConfiguration.createDisposition;
@@ -61,7 +61,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
-      super(Type.COPY);
+      this();
       JobConfigurationTableCopy copyConfigurationPb = configurationPb.getCopy();
       this.destinationTable = TableId.fromPb(copyConfigurationPb.getDestinationTable());
       if (copyConfigurationPb.getSourceTables() != null) {
@@ -171,7 +171,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
   }
 
   @Override
-  protected ToStringHelper toStringHelper() {
+  ToStringHelper toStringHelper() {
     return super.toStringHelper()
         .add("sourceTables", sourceTables)
         .add("destinationTable", destinationTable)
