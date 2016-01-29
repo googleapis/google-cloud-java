@@ -18,6 +18,8 @@ package com.google.gcloud.dns;
 
 import com.google.gcloud.BaseServiceException;
 
+import java.io.IOException;
+
 /**
  * DNS service exception.
  */
@@ -25,12 +27,8 @@ public class DnsException extends BaseServiceException {
 
   private static final long serialVersionUID = 490302380416260252L;
 
-  public DnsException(int code, String message, boolean retryable) {
-    super(code, message, retryable);
-  }
-
-  public DnsException(int code, String message, boolean retryable, Exception cause) {
-    super(code, message, retryable, cause);
+  public DnsException(IOException exception, boolean idempotent) {
+    super(exception, idempotent);
   }
 
   //TODO(mderka) Add translation and retry functionality. Created issue #593.
