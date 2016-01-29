@@ -36,7 +36,6 @@ public interface QueryResults<V> extends Iterator<V> {
   Class<?> resultClass();
 
   /**
-<<<<<<< HEAD
    * Returns the Cursor for the point after the value returned in the last {@link #next} call. This
    * cursor can be used to issue subsequent queries (with the same constraints) that may return
    * additional results.
@@ -51,11 +50,7 @@ public interface QueryResults<V> extends Iterator<V> {
    * // Consume some results (using results.next()) and do any other actions as necessary.
    * query = query.toBuilder().startCursor(results.cursorAfter()).build();
    * results = datastore.run(query); // now we will iterate over all entities not yet consumed
-   * </pre>
-=======
-   * Returns the Cursor for the point after the value returned in the last {@link #next} call.
-   * Currently, {@code cursorAfter} returns null in all cases but the last result.
->>>>>>> upstream/master
+   * }</pre>
    */
   Cursor cursorAfter();
 }
