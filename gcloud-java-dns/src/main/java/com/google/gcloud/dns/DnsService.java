@@ -18,6 +18,7 @@ package com.google.gcloud.dns;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Sets;
+import com.google.gcloud.Service;
 import com.google.gcloud.spi.DnsServiceRpc;
 
 import java.io.Serializable;
