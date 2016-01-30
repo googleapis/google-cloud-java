@@ -18,13 +18,14 @@ package com.google.gcloud.spi;
 
 import java.util.Map;
 
-public interface DnsServiceRpc {
+public interface DnsRpc {
 
   enum Option {
     FIELDS("fields"),
     PAGE_SIZE("maxSize"),
     PAGE_TOKEN("pageToken"),
     DNS_NAME("dnsName"),
+    DNS_TYPE("type"),
     SORTING_KEY("sortBy"),
     SORTING_ORDER("sortOrder");
 

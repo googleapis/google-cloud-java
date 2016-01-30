@@ -19,7 +19,7 @@ package com.google.gcloud.dns;
 import com.google.gcloud.ServiceFactory;
 
 /**
- * An interface for DnsService factories.
+ * An interface for Dns factories.
  */
-public interface DnsServiceFactory extends ServiceFactory<DnsService, DnsServiceOptions> {
+public interface DnsFactory extends ServiceFactory<Dns, DnsOptions> {
 }

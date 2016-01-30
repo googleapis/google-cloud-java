@@ -16,11 +16,11 @@
 
 package com.google.gcloud.spi;
 
-import com.google.gcloud.dns.DnsServiceOptions;
+import com.google.gcloud.dns.DnsOptions;
 
 /**
- * An interface for DnsServiceRpc factory. Implementation will be loaded via {@link
+ * An interface for DnsRpc factory. Implementation will be loaded via {@link
  * java.util.ServiceLoader}.
  */
-public interface DnsServiceRpcFactory extends ServiceRpcFactory<DnsServiceRpc, DnsServiceOptions> {
+public interface DnsRpcFactory extends ServiceRpcFactory<DnsRpc, DnsOptions> {
 }

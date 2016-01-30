@@ -16,62 +16,64 @@
 
 package com.google.gcloud.dns;
 
+import com.google.common.collect.Sets;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.spi.DnsServiceRpc;
-import com.google.gcloud.spi.DnsServiceRpcFactory;
+import com.google.gcloud.spi.DnsRpc;
+import com.google.gcloud.spi.DnsRpcFactory;
 
 import java.util.Set;
 
-public class DnsServiceOptions
-    extends ServiceOptions<DnsService, DnsServiceRpc, DnsServiceOptions> {
+public class DnsOptions
+    extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
 
   private static final long serialVersionUID = -5311219368450107146L;
 
   // TODO(mderka) Finish implementation. Created issue #595.
 
-  public static class DefaultDnsServiceFactory implements DnsServiceFactory {
-    private static final DnsServiceFactory INSTANCE = new DefaultDnsServiceFactory();
+  public static class DefaultDnsFactory implements DnsFactory {
+    private static final DnsFactory INSTANCE = new DefaultDnsFactory();
 
     @Override
-    public DnsService create(DnsServiceOptions options) {
+    public Dns create(DnsOptions options) {
       // TODO(mderka) Implement. Created issue #595.
       return null;
     }
   }
 
-  public static class Builder extends ServiceOptions.Builder<DnsService, DnsServiceRpc,
-      DnsServiceOptions, Builder> {
+  public static class Builder extends ServiceOptions.Builder<Dns, DnsRpc,
+      DnsOptions, Builder> {
 
     private Builder() {
     }
 
-    private Builder(DnsServiceOptions options) {
+    private Builder(DnsOptions options) {
       super(options);
     }
 
     @Override
-    public DnsServiceOptions build() {
-      return new DnsServiceOptions(this);
+    public DnsOptions build() {
+      return new DnsOptions(this);
     }
   }
 
-  private DnsServiceOptions(Builder builder) {
-    super(DnsServiceFactory.class, DnsServiceRpcFactory.class, builder);
+  private DnsOptions(Builder builder) {
+    super(DnsFactory.class, DnsRpcFactory.class, builder);
   }
 
   @Override
-  protected DnsServiceFactory defaultServiceFactory() {
-    return DefaultDnsServiceFactory.INSTANCE;
+  protected DnsFactory defaultServiceFactory() {
+    return DefaultDnsFactory.INSTANCE;
   }
 
   @Override
-  protected DnsServiceRpcFactory defaultRpcFactory() {
+  protected DnsRpcFactory defaultRpcFactory() {
     return null;
   }
 
   @Override
   protected Set<String> scopes() {
-    return null;
+    // TODO(mderka) Verify.
+    return Sets.newHashSet("ndev.clouddns.readwrite");
   }
 
   @Override

@@ -19,7 +19,7 @@ package com.google.gcloud.dns;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-import com.google.gcloud.spi.DnsServiceRpc;
+import com.google.gcloud.spi.DnsRpc;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -27,13 +27,13 @@ import java.util.Objects;
 /**
  * A base class for options.
  */
-public abstract class AbstractOption implements Serializable {
+abstract class AbstractOption implements Serializable {
 
-  private static final long serialVersionUID = 201601261704L;
+  private static final long serialVersionUID = -5912727967831484228L;
   private final Object value;
-  private final DnsServiceRpc.Option rpcOption;
+  private final DnsRpc.Option rpcOption;
 
-  AbstractOption(DnsServiceRpc.Option rpcOption, Object value) {
+  AbstractOption(DnsRpc.Option rpcOption, Object value) {
     this.rpcOption = checkNotNull(rpcOption);
     this.value = value;
   }
@@ -42,7 +42,7 @@ public abstract class AbstractOption implements Serializable {
     return value;
   }
 
-  DnsServiceRpc.Option rpcOption() {
+  DnsRpc.Option rpcOption() {
     return rpcOption;
   }
 
@@ -52,18 +52,19 @@ public abstract class AbstractOption implements Serializable {
       return false;
     }
     AbstractOption other = (AbstractOption) obj;
-    return Objects.equals(value, other.value);
+    return Objects.equals(value, other.value) && Objects.equals(rpcOption, other.rpcOption);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value);
+    return Objects.hash(value, rpcOption);
   }
 
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("value", value)
+        .add("rpcOption", rpcOption)
         .toString();
   }
 }
