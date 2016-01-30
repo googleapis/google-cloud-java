@@ -16,7 +16,7 @@
 
 package com.google.gcloud.dns;
 
-import com.google.common.collect.Sets;
+import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.spi.DnsRpc;
 import com.google.gcloud.spi.DnsRpcFactory;
@@ -26,16 +26,28 @@ import java.util.Set;
 public class DnsOptions
     extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
 
-  private static final long serialVersionUID = -5311219368450107146L;
-
-  // TODO(mderka) Finish implementation. Created issue #595.
+  private static final long serialVersionUID = -519128051411747771L;
+  private static final String GC_DNS_RW = "https://www.googleapis.com/auth/ndev.clouddns.readwrite";
+  private static final String GC_DNS_R = "https://www.googleapis.com/auth/ndev.clouddns.readonly";
+  private static final Set<String> SCOPES = ImmutableSet.of(GC_DNS_RW, GC_DNS_R);
 
   public static class DefaultDnsFactory implements DnsFactory {
     private static final DnsFactory INSTANCE = new DefaultDnsFactory();
 
     @Override
     public Dns create(DnsOptions options) {
-      // TODO(mderka) Implement. Created issue #595.
+      // TODO(mderka) Implement when DnsImpl is available. Created issue #595.
+      return null;
+    }
+  }
+
+  public static class DefaultDnsRpcFactory implements DnsRpcFactory {
+
+    private static final DnsRpcFactory INSTANCE = new DefaultDnsRpcFactory();
+
+    @Override
+    public DnsRpc create(DnsOptions options) {
+      // TODO(mderka) Implement when DefaultDnsRpc is available. Created issue #595.
       return null;
     }
   }
@@ -60,11 +72,13 @@ public class DnsOptions
     super(DnsFactory.class, DnsRpcFactory.class, builder);
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   protected DnsFactory defaultServiceFactory() {
     return DefaultDnsFactory.INSTANCE;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   protected DnsRpcFactory defaultRpcFactory() {
     return null;
@@ -72,10 +86,10 @@ public class DnsOptions
 
   @Override
   protected Set<String> scopes() {
-    // TODO(mderka) Verify.
-    return Sets.newHashSet("ndev.clouddns.readwrite");
+    return SCOPES;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public Builder toBuilder() {
     return new Builder(this);
