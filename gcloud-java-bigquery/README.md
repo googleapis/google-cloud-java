@@ -269,7 +269,7 @@ public class GcloudBigQueryExample {
             .build();
     // Request query to be executed and wait for results
     QueryResponse queryResponse = bigquery.query(queryRequest);
-    while (!queryResponse.jobComplete()) {
+    while (!queryResponse.jobCompleted()) {
       Thread.sleep(1000L);
       queryResponse = bigquery.getQueryResults(queryResponse.jobId());
     }

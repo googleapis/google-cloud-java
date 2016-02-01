@@ -62,7 +62,8 @@ public class ViewDefinitionTest {
   @Test
   public void testToAndFromPb() {
     assertTrue(BaseTableDefinition.fromPb(VIEW_DEFINITION.toPb()) instanceof ViewDefinition);
-    compareViewDefinition(VIEW_DEFINITION, BaseTableDefinition.<ViewDefinition>fromPb(VIEW_DEFINITION.toPb()));
+    compareViewDefinition(VIEW_DEFINITION,
+        BaseTableDefinition.<ViewDefinition>fromPb(VIEW_DEFINITION.toPb()));
   }
 
   private void compareViewDefinition(ViewDefinition expected, ViewDefinition value) {
