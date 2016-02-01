@@ -77,15 +77,17 @@ Storage storage = StorageOptions.defaultInstance().service();
 For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) page.
 
 #### Storing data
-Stored objects are called "blobs" in `gcloud-java` and are organized into containers called "buckets".  In this code snippet, we will create a new bucket and upload a blob to that bucket.
+Stored objects are called "blobs" in `gcloud-java` and are organized into containers called "buckets".  `Blob`, a subclass of `BlobInfo`, adds a layer of service-related functionality over `BlobInfo`.  Similarly, `Bucket` adds a layer of service-related functionality over `BucketInfo`.  In this code snippet, we will create a new bucket and upload a blob to that bucket.
 
 Add the following imports at the top of your file:
 
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.BucketInfo;
 ```
 
@@ -96,11 +98,11 @@ Then add the following code to create a bucket and upload a simple blob.
 ```java
 // Create a bucket
 String bucketName = "my_unique_bucket"; // Change this to something unique
-BucketInfo bucketInfo = storage.create(BucketInfo.of(bucketName));
+Bucket bucket = storage.create(BucketInfo.of(bucketName));
 
 // Upload a blob to the newly created bucket
 BlobId blobId = BlobId.of(bucketName, "my_blob_name");
-BlobInfo blobInfo = storage.create(
+Blob blob = storage.create(
     BlobInfo.builder(blobId).contentType("text/plain").build(),
     "a simple blob".getBytes(UTF_8));
 ```
@@ -125,14 +127,14 @@ Then add the following code to list all your buckets and all the blobs inside yo
 
 ```java
 // List all your buckets
-Iterator<BucketInfo> bucketInfoIterator = storage.list().iterateAll();
+Iterator<Bucket> bucketIterator = storage.list().iterateAll();
 System.out.println("My buckets:");
-while (bucketInfoIterator.hasNext()) {
-  System.out.println(bucketInfoIterator.next());
+while (bucketIterator.hasNext()) {
+  System.out.println(bucketIterator.next());
 }
 
 // List the blobs in a particular bucket
-Iterator<BlobInfo> blobIterator = storage.list(bucketName).iterateAll();
+Iterator<Blob> blobIterator = storage.list(bucketName).iterateAll();
 System.out.println("My blobs:");
 while (blobIterator.hasNext()) {
   System.out.println(blobIterator.next());
@@ -146,8 +148,10 @@ Here we put together all the code shown above into one program.  This program as
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.BucketInfo;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageOptions;
@@ -163,11 +167,11 @@ public class GcloudStorageExample {
 
     // Create a bucket
     String bucketName = "my_unique_bucket"; // Change this to something unique
-    BucketInfo bucketInfo = storage.create(BucketInfo.of(bucketName));
+    Bucket bucket = storage.create(BucketInfo.of(bucketName));
 
     // Upload a blob to the newly created bucket
     BlobId blobId = BlobId.of(bucketName, "my_blob_name");
-    BlobInfo blobInfo = storage.create(
+    Blob blob = storage.create(
         BlobInfo.builder(blobId).contentType("text/plain").build(),
         "a simple blob".getBytes(UTF_8));
 
@@ -175,14 +179,14 @@ public class GcloudStorageExample {
     String blobContent = new String(storage.readAllBytes(blobId), UTF_8);
 
     // List all your buckets
-    Iterator<BucketInfo> bucketInfoIterator = storage.list().iterateAll();
+    Iterator<Bucket> bucketIterator = storage.list().iterateAll();
     System.out.println("My buckets:");
-    while (bucketInfoIterator.hasNext()) {
-      System.out.println(bucketInfoIterator.next());
+    while (bucketIterator.hasNext()) {
+      System.out.println(bucketIterator.next());
     }
 
     // List the blobs in a particular bucket
-    Iterator<BlobInfo> blobIterator = storage.list(bucketName).iterateAll();
+    Iterator<Blob> blobIterator = storage.list(bucketName).iterateAll();
     System.out.println("My blobs:");
     while (blobIterator.hasNext()) {
       System.out.println(blobIterator.next());

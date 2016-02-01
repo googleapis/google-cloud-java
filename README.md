@@ -248,6 +248,7 @@ Here is a code snippet showing a simple usage example from within Compute/App En
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageOptions;
@@ -257,7 +258,7 @@ import java.nio.channels.WritableByteChannel;
 
 Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
-Blob blob = Blob.get(storage, blobId);
+Blob blob = storage.get(storage, blobId);
 if (blob == null) {
   BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
   storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));

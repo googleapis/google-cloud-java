@@ -86,7 +86,8 @@ public class ITStorageTest {
 
   @Test(timeout = 5000)
   public void testListBuckets() throws InterruptedException {
-    Iterator<BucketInfo> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+    Iterator<Bucket> bucketIterator =
+        storage.list(Storage.BucketListOption.prefix(BUCKET),
         Storage.BucketListOption.fields()).values().iterator();
     while (!bucketIterator.hasNext()) {
       Thread.sleep(500);
@@ -284,7 +285,8 @@ public class ITStorageTest {
         .build();
     assertNotNull(storage.create(blob1));
     assertNotNull(storage.create(blob2));
-    Page<BlobInfo> page = storage.list(BUCKET,
+    Page<Blob> page =
+        storage.list(BUCKET,
         Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
         Storage.BlobListOption.fields(BlobField.METADATA));
     int index = 0;
@@ -310,7 +312,8 @@ public class ITStorageTest {
         .build();
     assertNotNull(storage.create(blob1));
     assertNotNull(storage.create(blob2));
-    Page<BlobInfo> page = storage.list(BUCKET,
+    Page<Blob> page = storage.list(
+        BUCKET,
         Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
         Storage.BlobListOption.fields());
     int index = 0;
@@ -884,7 +887,7 @@ public class ITStorageTest {
     BlobInfo sourceBlob2 = BlobInfo.builder(BUCKET, sourceBlobName2).build();
     assertNotNull(storage.create(sourceBlob1));
     assertNotNull(storage.create(sourceBlob2));
-    List<BlobInfo> remoteBlobs = storage.get(sourceBlob1.blobId(), sourceBlob2.blobId());
+    List<Blob> remoteBlobs = storage.get(sourceBlob1.blobId(), sourceBlob2.blobId());
     assertEquals(sourceBlob1.bucket(), remoteBlobs.get(0).bucket());
     assertEquals(sourceBlob1.name(), remoteBlobs.get(0).name());
     assertEquals(sourceBlob2.bucket(), remoteBlobs.get(1).bucket());
@@ -900,7 +903,7 @@ public class ITStorageTest {
     BlobInfo sourceBlob1 = BlobInfo.builder(BUCKET, sourceBlobName1).build();
     BlobInfo sourceBlob2 = BlobInfo.builder(BUCKET, sourceBlobName2).build();
     assertNotNull(storage.create(sourceBlob1));
-    List<BlobInfo> remoteBlobs = storage.get(sourceBlob1.blobId(), sourceBlob2.blobId());
+    List<Blob> remoteBlobs = storage.get(sourceBlob1.blobId(), sourceBlob2.blobId());
     assertEquals(sourceBlob1.bucket(), remoteBlobs.get(0).bucket());
     assertEquals(sourceBlob1.name(), remoteBlobs.get(0).name());
     assertNull(remoteBlobs.get(1));
@@ -942,7 +945,7 @@ public class ITStorageTest {
     BlobInfo remoteBlob2 = storage.create(sourceBlob2);
     assertNotNull(remoteBlob1);
     assertNotNull(remoteBlob2);
-    List<BlobInfo> updatedBlobs = storage.update(
+    List<Blob> updatedBlobs = storage.update(
         remoteBlob1.toBuilder().contentType(CONTENT_TYPE).build(),
         remoteBlob2.toBuilder().contentType(CONTENT_TYPE).build());
     assertEquals(sourceBlob1.bucket(), updatedBlobs.get(0).bucket());
@@ -963,7 +966,7 @@ public class ITStorageTest {
     BlobInfo sourceBlob2 = BlobInfo.builder(BUCKET, sourceBlobName2).build();
     BlobInfo remoteBlob1 = storage.create(sourceBlob1);
     assertNotNull(remoteBlob1);
-    List<BlobInfo> updatedBlobs = storage.update(
+    List<Blob> updatedBlobs = storage.update(
         remoteBlob1.toBuilder().contentType(CONTENT_TYPE).build(),
         sourceBlob2.toBuilder().contentType(CONTENT_TYPE).build());
     assertEquals(sourceBlob1.bucket(), updatedBlobs.get(0).bucket());
