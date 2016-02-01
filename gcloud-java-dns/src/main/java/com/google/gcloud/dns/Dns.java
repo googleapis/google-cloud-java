@@ -193,7 +193,7 @@ public interface Dns extends Service<DnsOptions> {
     DESCENDING, ASCENDING;
 
     public String selector() {
-      return this.name().toLowerCase();
+      return name().toLowerCase();
     }
   }
 
