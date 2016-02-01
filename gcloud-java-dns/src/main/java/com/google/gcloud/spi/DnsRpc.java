@@ -26,7 +26,6 @@ public interface DnsRpc {
     PAGE_TOKEN("pageToken"),
     DNS_NAME("dnsName"),
     DNS_TYPE("type"),
-    SORTING_KEY("sortBy"),
     SORTING_ORDER("sortOrder");
 
     private final String value;

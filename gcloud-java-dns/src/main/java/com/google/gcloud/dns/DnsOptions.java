@@ -28,8 +28,7 @@ public class DnsOptions
 
   private static final long serialVersionUID = -519128051411747771L;
   private static final String GC_DNS_RW = "https://www.googleapis.com/auth/ndev.clouddns.readwrite";
-  private static final String GC_DNS_R = "https://www.googleapis.com/auth/ndev.clouddns.readonly";
-  private static final Set<String> SCOPES = ImmutableSet.of(GC_DNS_RW, GC_DNS_R);
+  private static final Set<String> SCOPES = ImmutableSet.of(GC_DNS_RW);
 
   public static class DefaultDnsFactory implements DnsFactory {
     private static final DnsFactory INSTANCE = new DefaultDnsFactory();

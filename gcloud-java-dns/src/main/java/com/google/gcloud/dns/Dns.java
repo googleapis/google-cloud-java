@@ -31,12 +31,14 @@ import java.util.Set;
  */
 public interface Dns extends Service<DnsOptions> {
 
+
+
   /**
    * The fields of a project.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@code Dns#getProjectInfo(ProjectGetOption...)}. Project ID is always returned, even if
-   * not specified.
+   * {@code Dns#getProjectInfo(ProjectGetOption...)}. Project ID is always returned, even if not
+   * specified.
    */
   enum ProjectField {
     PROJECT_ID("id"),
@@ -67,8 +69,8 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a zone.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@code Dns#getZone(BigInteger, ZoneFieldOption...)} or {@code Dns#getZone(String,
-   * ZoneFieldOption...)}. The ID is always returned, even if not specified.
+   * {@code Dns#getZone(BigInteger, ZoneOption...)} or {@code Dns#getZone(String, ZoneOption...)}.
+   * The ID is always returned, even if not specified.
    */
   enum ZoneField {
     CREATION_TIME("creationTime"),
@@ -104,8 +106,8 @@ public interface Dns extends Service<DnsOptions> {
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
    * {@code Dns#listDnsRecords(BigInteger, DnsRecordListOption...)} or {@code
-   * Dns#listDnsRecords(String, DnsRecordListOption...)}. The name is always returned even if
-   * not selected.
+   * Dns#listDnsRecords(String, DnsRecordListOption...)}. The name is always returned even if not
+   * selected.
    */
   enum DnsRecordField {
     DNS_RECORDS("rrdatas"),
@@ -137,9 +139,9 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a change request.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@code Dns#applyChangeRequest(ChangeRequest, BigInteger, ChangeRequestOption...)}
-   * or {@code Dns#applyChangeRequest(ChangeRequest, String, ChangeRequestOption...)}
-   * The ID is always returned even if not selected.
+   * {@code Dns#applyChangeRequest(ChangeRequest, BigInteger, ChangeRequestOption...)} or {@code
+   * Dns#applyChangeRequest(ChangeRequest, String, ChangeRequestOption...)} The ID is always
+   * returned even if not selected.
    */
   enum ChangeRequestField {
     ID("id"),
@@ -165,24 +167,6 @@ public interface Dns extends Service<DnsOptions> {
         fieldStrings.add(field.selector());
       }
       return Joiner.on(',').join(fieldStrings);
-    }
-  }
-
-  /**
-   * The sorting keys for listing change requests. The only currently supported sorting key is the
-   * when the change request was created.
-   */
-  enum ChangeRequestSortingKey {
-    TIME_CREATED("changeSequence");
-
-    private final String selector;
-
-    ChangeRequestSortingKey(String selector) {
-      this.selector = selector;
-    }
-
-    String selector() {
-      return selector;
     }
   }
 
@@ -261,24 +245,23 @@ public interface Dns extends Service<DnsOptions> {
   /**
    * Class for specifying zone field options.
    */
-  class ZoneFieldOption extends AbstractOption implements Serializable {
+  class ZoneOption extends AbstractOption implements Serializable {
 
     private static final long serialVersionUID = -8065564464895945037L;
 
-    ZoneFieldOption(DnsRpc.Option option, Object value) {
+    ZoneOption(DnsRpc.Option option, Object value) {
       super(option, value);
     }
 
     /**
      * Returns an option to specify the zones's fields to be returned by the RPC call.
      *
-     * <p>If this option is not provided all zone fields are returned. {@code
-     * ZoneFieldOption.fields} can be used to specify only the fields of interest. Zone ID is always
-     * returned, even if not specified. {@link ZoneField} provides a list of fields that can be
-     * used.
+     * <p>If this option is not provided all zone fields are returned. {@code ZoneOption.fields} can
+     * be used to specify only the fields of interest. Zone ID is always returned, even if not
+     * specified. {@link ZoneField} provides a list of fields that can be used.
      */
-    public static ZoneFieldOption fields(ZoneField... fields) {
-      return new ZoneFieldOption(DnsRpc.Option.FIELDS, ZoneField.selector(fields));
+    public static ZoneOption fields(ZoneField... fields) {
+      return new ZoneOption(DnsRpc.Option.FIELDS, ZoneField.selector(fields));
     }
   }
 
@@ -296,10 +279,9 @@ public interface Dns extends Service<DnsOptions> {
     /**
      * Returns an option to specify the zones's fields to be returned by the RPC call.
      *
-     * <p>If this option is not provided all zone fields are returned. {@code
-     * ZoneFieldOption.fields} can be used to specify only the fields of interest. Zone ID is always
-     * returned, even if not specified. {@link ZoneField} provides a list of fields that can be
-     * used.
+     * <p>If this option is not provided all zone fields are returned. {@code ZoneOption.fields} can
+     * be used to specify only the fields of interest. Zone ID is always returned, even if not
+     * specified. {@link ZoneField} provides a list of fields that can be used.
      */
     public static ZoneListOption fields(ZoneField... fields) {
       return new ZoneListOption(DnsRpc.Option.FIELDS, ZoneField.selector(fields));
@@ -366,9 +348,9 @@ public interface Dns extends Service<DnsOptions> {
      * service.
      *
      * <p>If this option is not provided all change request fields are returned. {@code
-     * ChangeRequestOption.fields} can be used to specify only the fields of interest. The ID
-     * of the change request is always returned, even if not specified. {@link ChangeRequestField}
-     * provides a list of fields that can be used.
+     * ChangeRequestOption.fields} can be used to specify only the fields of interest. The ID of the
+     * change request is always returned, even if not specified. {@link ChangeRequestField} provides
+     * a list of fields that can be used.
      */
     public static ChangeRequestOption fields(ChangeRequestField... fields) {
       return new ChangeRequestOption(
@@ -394,9 +376,9 @@ public interface Dns extends Service<DnsOptions> {
      * service.
      *
      * <p>If this option is not provided all change request fields are returned. {@code
-     * ChangeRequestOption.fields} can be used to specify only the fields of interest. The ID
-     * of the change request is always returned, even if not specified. {@link ChangeRequestField}
-     * provides a list of fields that can be used.
+     * ChangeRequestOption.fields} can be used to specify only the fields of interest. The ID of the
+     * change request is always returned, even if not specified. {@link ChangeRequestField} provides
+     * a list of fields that can be used.
      */
     public static ChangeRequestListOption fields(ChangeRequestField... fields) {
       return new ChangeRequestListOption(
@@ -427,16 +409,10 @@ public interface Dns extends Service<DnsOptions> {
     }
 
     /**
-     * Returns an option for specifying the sorting criterion of change requests. Note the the only
-     * currently supported criterion is the change sequence.
-     */
-    public static ChangeRequestListOption sortBy(ChangeRequestSortingKey key) {
-      return new ChangeRequestListOption(DnsRpc.Option.SORTING_KEY, key.selector());
-    }
-
-    /**
-     * Returns an option to specify whether the the change requests should be listed in ascending or
-     * descending order.
+     * Returns an option to specify whether the the change requests should be listed in ascending
+     * (most-recent last) or descending (most-recent first) order with respect to when the change
+     * request was accepted by the server. If this option is not provided, the listing order is
+     * undefined.
      */
     public static ChangeRequestListOption sortOrder(SortingOrder order) {
       return new ChangeRequestListOption(DnsRpc.Option.SORTING_ORDER, order.selector());
