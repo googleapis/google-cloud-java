@@ -44,14 +44,15 @@ public class DatasetTest {
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final DatasetInfo DATASET_INFO = DatasetInfo.builder(DATASET_ID).build();
   private static final Field FIELD = Field.of("FieldName", Field.Type.integer());
-  private static final DefaultTableType TABLE_TYPE = DefaultTableType.of(Schema.of(FIELD));
-  private static final ViewType VIEW_TYPE = ViewType.of("QUERY");
-  private static final ExternalTableType EXTERNAL_TABLE_TYPE =
-      ExternalTableType.of(ImmutableList.of("URI"), Schema.of(), FormatOptions.csv());
+  private static final DefaultTableDefinition TABLE_DEFINITION =
+      DefaultTableDefinition.of(Schema.of(FIELD));
+  private static final ViewDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
+  private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
+      ExternalTableDefinition.of(ImmutableList.of("URI"), Schema.of(), FormatOptions.csv());
   private static final Iterable<TableInfo> TABLE_INFO_RESULTS = ImmutableList.of(
-      TableInfo.builder(TableId.of("dataset", "table1"), TABLE_TYPE).build(),
-      TableInfo.builder(TableId.of("dataset", "table2"), VIEW_TYPE).build(),
-      TableInfo.builder(TableId.of("dataset", "table2"), EXTERNAL_TABLE_TYPE).build());
+      TableInfo.builder(TableId.of("dataset", "table1"), TABLE_DEFINITION).build(),
+      TableInfo.builder(TableId.of("dataset", "table2"), VIEW_DEFINITION).build(),
+      TableInfo.builder(TableId.of("dataset", "table2"), EXTERNAL_TABLE_DEFINITION).build());
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -206,7 +207,7 @@ public class DatasetTest {
 
   @Test
   public void testGet() throws Exception {
-    TableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), TABLE_TYPE).build();
+    TableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), TABLE_DEFINITION).build();
     expect(bigquery.getTable(TableId.of("dataset", "table1"))).andReturn(info);
     replay(bigquery);
     Table table = dataset.get("table1");
@@ -223,7 +224,7 @@ public class DatasetTest {
 
   @Test
   public void testGetWithOptions() throws Exception {
-    TableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), TABLE_TYPE).build();
+    TableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), TABLE_DEFINITION).build();
     expect(bigquery.getTable(TableId.of("dataset", "table1"), BigQuery.TableOption.fields()))
         .andReturn(info);
     replay(bigquery);
@@ -234,19 +235,19 @@ public class DatasetTest {
 
   @Test
   public void testCreateTable() throws Exception {
-    TableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), TABLE_TYPE).build();
+    TableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), TABLE_DEFINITION).build();
     expect(bigquery.create(info)).andReturn(info);
     replay(bigquery);
-    Table table = dataset.create("table1", TABLE_TYPE);
+    Table table = dataset.create("table1", TABLE_DEFINITION);
     assertEquals(info, table.info());
   }
 
   @Test
   public void testCreateTableWithOptions() throws Exception {
-    TableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), TABLE_TYPE).build();
+    TableInfo info = TableInfo.builder(TableId.of("dataset", "table1"), TABLE_DEFINITION).build();
     expect(bigquery.create(info, BigQuery.TableOption.fields())).andReturn(info);
     replay(bigquery);
-    Table table = dataset.create("table1", TABLE_TYPE, BigQuery.TableOption.fields());
+    Table table = dataset.create("table1", TABLE_DEFINITION, BigQuery.TableOption.fields());
     assertEquals(info, table.info());
   }
 

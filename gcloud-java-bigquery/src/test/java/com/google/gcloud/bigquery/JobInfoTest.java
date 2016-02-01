@@ -118,8 +118,8 @@ public class JobInfoTest {
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
-  private static final ExternalTableType TABLE_CONFIGURATION =
-      ExternalTableType.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+  private static final ExternalTableDefinition TABLE_CONFIGURATION =
+      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .compression(COMPRESSION)
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .maxBadRecords(MAX_BAD_RECORDS)
@@ -135,7 +135,7 @@ public class JobInfoTest {
           .schema(TABLE_SCHEMA)
           .build();
   private static final String QUERY = "BigQuery SQL";
-  private static final Map<String, ExternalTableType> TABLE_DEFINITIONS =
+  private static final Map<String, ExternalTableDefinition> TABLE_DEFINITIONS =
       ImmutableMap.of("tableName", TABLE_CONFIGURATION);
   private static final QueryJobConfiguration.Priority PRIORITY =
       QueryJobConfiguration.Priority.BATCH;

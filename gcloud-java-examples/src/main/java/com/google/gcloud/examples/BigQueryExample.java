@@ -18,15 +18,14 @@ package com.google.gcloud.examples;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.bigquery.DefaultTableType;
-import com.google.gcloud.bigquery.ExternalTableType;
-import com.google.gcloud.bigquery.TableInfo;
 import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryError;
 import com.google.gcloud.bigquery.BigQueryOptions;
 import com.google.gcloud.bigquery.CopyJobConfiguration;
 import com.google.gcloud.bigquery.DatasetId;
 import com.google.gcloud.bigquery.DatasetInfo;
+import com.google.gcloud.bigquery.DefaultTableDefinition;
+import com.google.gcloud.bigquery.ExternalTableDefinition;
 import com.google.gcloud.bigquery.ExtractJobConfiguration;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.FieldValue;
@@ -34,13 +33,14 @@ import com.google.gcloud.bigquery.FormatOptions;
 import com.google.gcloud.bigquery.JobId;
 import com.google.gcloud.bigquery.JobInfo;
 import com.google.gcloud.bigquery.JobStatus;
-import com.google.gcloud.bigquery.ViewType;
-import com.google.gcloud.bigquery.WriteChannelConfiguration;
 import com.google.gcloud.bigquery.LoadJobConfiguration;
 import com.google.gcloud.bigquery.QueryRequest;
 import com.google.gcloud.bigquery.QueryResponse;
 import com.google.gcloud.bigquery.Schema;
 import com.google.gcloud.bigquery.TableId;
+import com.google.gcloud.bigquery.TableInfo;
+import com.google.gcloud.bigquery.ViewDefinition;
+import com.google.gcloud.bigquery.WriteChannelConfiguration;
 import com.google.gcloud.spi.BigQueryRpc.Tuple;
 
 import java.nio.channels.FileChannel;
@@ -434,8 +434,8 @@ public class BigQueryExample {
   }
 
   /**
-   * This class demonstrates how to create a simple BigQuery Table (i.e. a table of type
-   * {@link DefaultTableType}).
+   * This class demonstrates how to create a simple BigQuery Table (i.e. a table created from a
+   * {@link DefaultTableDefinition}).
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/insert">Tables: insert
    *     </a>
@@ -447,7 +447,7 @@ public class BigQueryExample {
         String dataset = args[0];
         String table = args[1];
         TableId tableId = TableId.of(dataset, table);
-        return TableInfo.of(tableId, DefaultTableType.of(parseSchema(args, 2, args.length)));
+        return TableInfo.of(tableId, DefaultTableDefinition.of(parseSchema(args, 2, args.length)));
       }
       throw new IllegalArgumentException("Missing required arguments.");
     }
@@ -459,8 +459,8 @@ public class BigQueryExample {
   }
 
   /**
-   * This class demonstrates how to create a BigQuery External Table (i.e. a table of type
-   * {@link ExternalTableType}).
+   * This class demonstrates how to create a BigQuery External Table (i.e. a table created from a
+   * {@link ExternalTableDefinition}).
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/insert">Tables: insert
    *     </a>
@@ -472,10 +472,10 @@ public class BigQueryExample {
         String dataset = args[0];
         String table = args[1];
         TableId tableId = TableId.of(dataset, table);
-        ExternalTableType externalTableType =
-            ExternalTableType.of(args[args.length - 1],
+        ExternalTableDefinition externalTableDefinition =
+            ExternalTableDefinition.of(args[args.length - 1],
                 parseSchema(args, 3, args.length - 1), FormatOptions.of(args[2]));
-        return TableInfo.of(tableId, externalTableType);
+        return TableInfo.of(tableId, externalTableDefinition);
       }
       throw new IllegalArgumentException("Missing required arguments.");
     }
@@ -487,8 +487,8 @@ public class BigQueryExample {
   }
 
   /**
-   * This class demonstrates how to create a BigQuery View Table (i.e. a table of type
-   * {@link ViewType}).
+   * This class demonstrates how to create a BigQuery View Table (i.e. a table created from a
+   * {@link ViewDefinition}).
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/insert">Tables: insert
    *     </a>
@@ -502,7 +502,7 @@ public class BigQueryExample {
         String table = args[1];
         String query = args[2];
         TableId tableId = TableId.of(dataset, table);
-        return TableInfo.of(tableId, ViewType.of(query));
+        return TableInfo.of(tableId, ViewDefinition.of(query));
       } else if (args.length < 3) {
         message = "Missing required dataset id, table id or query.";
       } else {

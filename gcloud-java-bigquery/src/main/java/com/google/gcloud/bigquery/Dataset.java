@@ -220,13 +220,14 @@ public final class Dataset {
    * Creates a new table in this dataset.
    *
    * @param table the table's user-defined id
-   * @param type the table's type
+   * @param definition the table's definition
    * @param options options for table creation
    * @return a {@code Table} object for the created table
    * @throws BigQueryException upon failure
    */
-  public Table create(String table, BaseTableType type, BigQuery.TableOption... options) {
-    TableInfo tableInfo = TableInfo.of(TableId.of(info.datasetId().dataset(), table), type);
+  public Table create(String table, BaseTableDefinition definition,
+      BigQuery.TableOption... options) {
+    TableInfo tableInfo = TableInfo.of(TableId.of(info.datasetId().dataset(), table), definition);
     return new Table(bigquery, bigquery.create(tableInfo, options));
   }
 

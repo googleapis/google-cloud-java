@@ -33,7 +33,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
  */
-public class DefaultTableType extends BaseTableType {
+public class DefaultTableDefinition extends BaseTableDefinition {
 
   private static final long serialVersionUID = 2113445776046717900L;
 
@@ -115,7 +115,8 @@ public class DefaultTableType extends BaseTableType {
     }
   }
 
-  public static final class Builder extends BaseTableType.Builder<DefaultTableType, Builder> {
+  public static final class Builder
+      extends BaseTableDefinition.Builder<DefaultTableDefinition, Builder> {
 
     private Long numBytes;
     private Long numRows;
@@ -126,12 +127,12 @@ public class DefaultTableType extends BaseTableType {
       super(Type.TABLE);
     }
 
-    private Builder(DefaultTableType tableType) {
-      super(tableType);
-      this.numBytes = tableType.numBytes;
-      this.numRows = tableType.numRows;
-      this.location = tableType.location;
-      this.streamingBuffer = tableType.streamingBuffer;
+    private Builder(DefaultTableDefinition tableDefinition) {
+      super(tableDefinition);
+      this.numBytes = tableDefinition.numBytes;
+      this.numRows = tableDefinition.numRows;
+      this.location = tableDefinition.location;
+      this.streamingBuffer = tableDefinition.streamingBuffer;
     }
 
     private Builder(Table tablePb) {
@@ -167,15 +168,15 @@ public class DefaultTableType extends BaseTableType {
     }
 
     /**
-     * Creates a {@code DefaultTableType} object.
+     * Creates a {@code DefaultTableDefinition} object.
      */
     @Override
-    public DefaultTableType build() {
-      return new DefaultTableType(this);
+    public DefaultTableDefinition build() {
+      return new DefaultTableDefinition(this);
     }
   }
 
-  private DefaultTableType(Builder builder) {
+  private DefaultTableDefinition(Builder builder) {
     super(builder);
     this.numBytes = builder.numBytes;
     this.numRows = builder.numRows;
@@ -228,12 +229,12 @@ public class DefaultTableType extends BaseTableType {
    *
    * @param schema the schema of the table
    */
-  public static DefaultTableType of(Schema schema) {
+  public static DefaultTableDefinition of(Schema schema) {
     return builder().schema(schema).build();
   }
 
   /**
-   * Returns a builder for the {@code DefaultTableType} object.
+   * Returns a builder for the {@code DefaultTableDefinition} object.
    */
   @Override
   public Builder toBuilder() {
@@ -251,7 +252,7 @@ public class DefaultTableType extends BaseTableType {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof DefaultTableType && baseEquals((DefaultTableType) obj);
+    return obj instanceof DefaultTableDefinition && baseEquals((DefaultTableDefinition) obj);
   }
 
   @Override
@@ -274,7 +275,7 @@ public class DefaultTableType extends BaseTableType {
   }
 
   @SuppressWarnings("unchecked")
-  static DefaultTableType fromPb(Table tablePb) {
+  static DefaultTableDefinition fromPb(Table tablePb) {
     return new Builder(tablePb).build();
   }
 }

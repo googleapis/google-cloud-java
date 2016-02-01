@@ -27,7 +27,7 @@ import java.util.Objects;
 /**
  * Base class for a Google BigQuery table type.
  */
-public abstract class BaseTableType implements Serializable{
+public abstract class BaseTableDefinition implements Serializable {
 
   private static final long serialVersionUID = -374760330662959529L;
 
@@ -36,22 +36,22 @@ public abstract class BaseTableType implements Serializable{
    */
   public enum Type {
     /**
-     * A normal BigQuery table. Instances of {@code BaseTableType} for this type are implemented by
-     * {@link DefaultTableType}.
+     * A normal BigQuery table. Instances of {@code BaseTableDefinition} for this type are
+     * implemented by {@link DefaultTableDefinition}.
      */
     TABLE,
 
     /**
-     * A virtual table defined by a SQL query. Instances of {@code BaseTableType} for this type are
-     * implemented by {@link ViewType}.
+     * A virtual table defined by a SQL query. Instances of {@code BaseTableDefinition} for this
+     * type are implemented by {@link ViewDefinition}.
      *
      * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
      */
     VIEW,
 
     /**
-     * A BigQuery table backed by external data. Instances of {@code BaseTableType} for this type
-     * are implemented by {@link ExternalTableType}.
+     * A BigQuery table backed by external data. Instances of {@code BaseTableDefinition} for this
+     * type are implemented by {@link ExternalTableDefinition}.
      *
      * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data
      *     Sources</a>
@@ -68,7 +68,7 @@ public abstract class BaseTableType implements Serializable{
    * @param <T> the table type class
    * @param <B> the table type builder
    */
-  public abstract static class Builder<T extends BaseTableType, B extends Builder<T, B>> {
+  public abstract static class Builder<T extends BaseTableDefinition, B extends Builder<T, B>> {
 
     private Type type;
     private Schema schema;
@@ -77,9 +77,9 @@ public abstract class BaseTableType implements Serializable{
       this.type = type;
     }
 
-    Builder(BaseTableType tableType) {
-      this.type = tableType.type;
-      this.schema = tableType.schema;
+    Builder(BaseTableDefinition tableDefinition) {
+      this.type = tableDefinition.type;
+      this.schema = tableDefinition.schema;
     }
 
     Builder(Table tablePb) {
@@ -113,7 +113,7 @@ public abstract class BaseTableType implements Serializable{
     public abstract T build();
   }
 
-  BaseTableType(Builder builder) {
+  BaseTableDefinition(Builder builder) {
     this.type = builder.type;
     this.schema = builder.schema;
   }
@@ -152,7 +152,7 @@ public abstract class BaseTableType implements Serializable{
     return Objects.hash(type);
   }
 
-  final boolean baseEquals(BaseTableType jobConfiguration) {
+  final boolean baseEquals(BaseTableDefinition jobConfiguration) {
     return Objects.equals(toPb(), jobConfiguration.toPb());
   }
 
@@ -166,14 +166,14 @@ public abstract class BaseTableType implements Serializable{
   }
 
   @SuppressWarnings("unchecked")
-  static <T extends BaseTableType> T fromPb(Table tablePb) {
+  static <T extends BaseTableDefinition> T fromPb(Table tablePb) {
     switch (Type.valueOf(tablePb.getType())) {
       case TABLE:
-        return (T) DefaultTableType.fromPb(tablePb);
+        return (T) DefaultTableDefinition.fromPb(tablePb);
       case VIEW:
-        return (T) ViewType.fromPb(tablePb);
+        return (T) ViewDefinition.fromPb(tablePb);
       case EXTERNAL:
-        return (T) ExternalTableType.fromPb(tablePb);
+        return (T) ExternalTableDefinition.fromPb(tablePb);
       default:
         // never reached
         throw new IllegalArgumentException("Format " + tablePb.getType() + " is not supported");

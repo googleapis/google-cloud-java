@@ -25,47 +25,47 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class ViewTypeTest {
+public class ViewDefinitionTest {
 
   private static final String VIEW_QUERY = "VIEW QUERY";
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS =
       ImmutableList.of(UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
-  private static final ViewType VIEW_TYPE =
-      ViewType.builder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
+  private static final ViewDefinition VIEW_DEFINITION =
+      ViewDefinition.builder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
 
   @Test
   public void testToBuilder() {
-    compareViewType(VIEW_TYPE, VIEW_TYPE.toBuilder().build());
-    ViewType viewType = VIEW_TYPE.toBuilder()
+    compareViewDefinition(VIEW_DEFINITION, VIEW_DEFINITION.toBuilder().build());
+    ViewDefinition viewDefinition = VIEW_DEFINITION.toBuilder()
         .query("NEW QUERY")
         .build();
-    assertEquals("NEW QUERY", viewType.query());
-    viewType = viewType.toBuilder()
+    assertEquals("NEW QUERY", viewDefinition.query());
+    viewDefinition = viewDefinition.toBuilder()
         .query(VIEW_QUERY)
         .build();
-    compareViewType(VIEW_TYPE, viewType);
+    compareViewDefinition(VIEW_DEFINITION, viewDefinition);
   }
 
   @Test
   public void testToBuilderIncomplete() {
-    BaseTableType tableType = ViewType.of(VIEW_QUERY);
-    assertEquals(tableType, tableType.toBuilder().build());
+    BaseTableDefinition viewDefinition = ViewDefinition.of(VIEW_QUERY);
+    assertEquals(viewDefinition, viewDefinition.toBuilder().build());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(VIEW_QUERY, VIEW_TYPE.query());
-    assertEquals(BaseTableType.Type.VIEW, VIEW_TYPE.type());
-    assertEquals(USER_DEFINED_FUNCTIONS, VIEW_TYPE.userDefinedFunctions());
+    assertEquals(VIEW_QUERY, VIEW_DEFINITION.query());
+    assertEquals(BaseTableDefinition.Type.VIEW, VIEW_DEFINITION.type());
+    assertEquals(USER_DEFINED_FUNCTIONS, VIEW_DEFINITION.userDefinedFunctions());
   }
 
   @Test
   public void testToAndFromPb() {
-    assertTrue(BaseTableType.fromPb(VIEW_TYPE.toPb()) instanceof ViewType);
-    compareViewType(VIEW_TYPE, BaseTableType.<ViewType>fromPb(VIEW_TYPE.toPb()));
+    assertTrue(BaseTableDefinition.fromPb(VIEW_DEFINITION.toPb()) instanceof ViewDefinition);
+    compareViewDefinition(VIEW_DEFINITION, BaseTableDefinition.<ViewDefinition>fromPb(VIEW_DEFINITION.toPb()));
   }
 
-  private void compareViewType(ViewType expected, ViewType value) {
+  private void compareViewDefinition(ViewDefinition expected, ViewDefinition value) {
     assertEquals(expected, value);
     assertEquals(expected.query(), value.query());
     assertEquals(expected.userDefinedFunctions(), value.userDefinedFunctions());

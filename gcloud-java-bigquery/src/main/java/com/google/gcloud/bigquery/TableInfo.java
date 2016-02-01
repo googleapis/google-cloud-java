@@ -30,9 +30,9 @@ import java.math.BigInteger;
 import java.util.Objects;
 
 /**
- * Google BigQuery table information. Use {@link DefaultTableType} to create simple BigQuery table.
- * Use {@link ViewType} to create a BigQuery view. Use {@link ExternalTableType} to create a
- * BigQuery a table backed by external data.
+ * Google BigQuery table information. Use {@link DefaultTableDefinition} to create simple BigQuery
+ * table. Use {@link ViewDefinition} to create a BigQuery view. Use {@link ExternalTableDefinition}
+ * to create a BigQuery a table backed by external data.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
  */
@@ -64,7 +64,7 @@ public final class TableInfo implements Serializable {
   private final Long creationTime;
   private final Long expirationTime;
   private final Long lastModifiedTime;
-  private final BaseTableType type;
+  private final BaseTableDefinition definition;
 
   /**
    * Builder for tables.
@@ -80,7 +80,7 @@ public final class TableInfo implements Serializable {
     private Long creationTime;
     private Long expirationTime;
     private Long lastModifiedTime;
-    private BaseTableType type;
+    private BaseTableDefinition definition;
 
     private Builder() {}
 
@@ -94,7 +94,7 @@ public final class TableInfo implements Serializable {
       this.creationTime = tableInfo.creationTime;
       this.expirationTime = tableInfo.expirationTime;
       this.lastModifiedTime = tableInfo.lastModifiedTime;
-      this.type = tableInfo.type;
+      this.definition = tableInfo.definition;
     }
 
     private Builder(Table tablePb) {
@@ -109,7 +109,7 @@ public final class TableInfo implements Serializable {
       this.etag = tablePb.getEtag();
       this.id = tablePb.getId();
       this.selfLink = tablePb.getSelfLink();
-      this.type = BaseTableType.fromPb(tablePb);
+      this.definition = BaseTableDefinition.fromPb(tablePb);
     }
 
     Builder creationTime(Long creationTime) {
@@ -171,10 +171,10 @@ public final class TableInfo implements Serializable {
     }
 
     /**
-     * Sets the table type.
+     * Sets the table definition.
      */
-    public Builder type(BaseTableType type) {
-      this.type = checkNotNull(type);
+    public Builder definition(BaseTableDefinition definition) {
+      this.definition = checkNotNull(definition);
       return this;
     }
 
@@ -196,7 +196,7 @@ public final class TableInfo implements Serializable {
     this.creationTime = builder.creationTime;
     this.expirationTime = builder.expirationTime;
     this.lastModifiedTime = builder.lastModifiedTime;
-    this.type = builder.type;
+    this.definition = builder.definition;
   }
 
   /**
@@ -265,11 +265,11 @@ public final class TableInfo implements Serializable {
   }
 
   /**
-   * Returns the table type.
+   * Returns the table definition.
    */
   @SuppressWarnings("unchecked")
-  public <T extends BaseTableType> T type() {
-    return (T) type;
+  public <T extends BaseTableDefinition> T definition() {
+    return (T) definition;
   }
 
   /**
@@ -290,7 +290,7 @@ public final class TableInfo implements Serializable {
         .add("expirationTime", expirationTime)
         .add("creationTime", creationTime)
         .add("lastModifiedTime", lastModifiedTime)
-        .add("type", type);
+        .add("definition", definition);
   }
 
   @Override
@@ -309,17 +309,17 @@ public final class TableInfo implements Serializable {
   }
 
   /**
-   * Returns a builder for a {@code TableInfo} object given table identity and type.
+   * Returns a builder for a {@code TableInfo} object given table identity and definition.
    */
-  public static Builder builder(TableId tableId, BaseTableType type) {
-    return new Builder().tableId(tableId).type(type);
+  public static Builder builder(TableId tableId, BaseTableDefinition definition) {
+    return new Builder().tableId(tableId).definition(definition);
   }
 
   /**
-   * Returns a {@code TableInfo} object given table identity and type.
+   * Returns a {@code TableInfo} object given table identity and definition.
    */
-  public static TableInfo of(TableId tableId, BaseTableType type) {
-    return builder(tableId, type).build();
+  public static TableInfo of(TableId tableId, BaseTableDefinition definition) {
+    return builder(tableId, definition).build();
   }
 
   TableInfo setProjectId(String projectId) {
@@ -327,7 +327,7 @@ public final class TableInfo implements Serializable {
   }
 
   Table toPb() {
-    Table tablePb = type.toPb();
+    Table tablePb = definition.toPb();
     tablePb.setTableReference(tableId.toPb());
     if (lastModifiedTime != null) {
       tablePb.setLastModifiedTime(BigInteger.valueOf(lastModifiedTime));

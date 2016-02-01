@@ -104,7 +104,7 @@ public class BigQueryImplTest {
           .description("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
-  private static final DefaultTableType TABLE_TYPE = DefaultTableType.of(TABLE_SCHEMA);
+  private static final DefaultTableDefinition TABLE_TYPE = DefaultTableDefinition.of(TABLE_SCHEMA);
   private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_TYPE);
   private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_TYPE);
   private static final TableInfo TABLE_INFO_WITH_PROJECT =

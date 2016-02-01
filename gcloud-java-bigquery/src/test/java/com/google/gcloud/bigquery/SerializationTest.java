@@ -25,7 +25,7 @@ import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.bigquery.DefaultTableType.StreamingBuffer;
+import com.google.gcloud.bigquery.DefaultTableDefinition.StreamingBuffer;
 
 import org.junit.Test;
 
@@ -99,8 +99,8 @@ public class SerializationTest {
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
-  private static final ExternalTableType EXTERNAL_TABLE_TYPE =
-      ExternalTableType.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+  private static final ExternalTableDefinition EXTERNAL_TABLE_TYPE =
+      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .ignoreUnknownValues(true)
           .maxBadRecords(42)
           .build();
@@ -108,7 +108,7 @@ public class SerializationTest {
       new UserDefinedFunction.InlineFunction("inline");
   private static final UserDefinedFunction URI_FUNCTION =
       new UserDefinedFunction.UriFunction("URI");
-  private static final BaseTableType TABLE_TYPE = DefaultTableType.builder()
+  private static final BaseTableDefinition TABLE_TYPE = DefaultTableDefinition.builder()
       .schema(TABLE_SCHEMA)
       .location(LOCATION)
       .streamingBuffer(STREAMING_BUFFER)
@@ -119,7 +119,7 @@ public class SerializationTest {
       .etag(ETAG)
       .id(ID)
       .build();
-  private static final BaseTableType VIEW_TYPE = ViewType.of("QUERY");
+  private static final BaseTableDefinition VIEW_TYPE = ViewDefinition.of("QUERY");
   private static final TableInfo VIEW_INFO = TableInfo.builder(TABLE_ID, VIEW_TYPE)
       .creationTime(CREATION_TIME)
       .description(DESCRIPTION)

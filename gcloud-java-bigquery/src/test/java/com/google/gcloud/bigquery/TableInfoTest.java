@@ -55,9 +55,9 @@ public class TableInfoTest {
   private static final Long NUM_BYTES = 42L;
   private static final Long NUM_ROWS = 43L;
   private static final String LOCATION = "US";
-  private static final DefaultTableType.StreamingBuffer STREAMING_BUFFER =
-      new DefaultTableType.StreamingBuffer(1L, 2L, 3L);
-  private static final DefaultTableType DEFAULT_TABLE_TYPE = DefaultTableType.builder()
+  private static final DefaultTableDefinition.StreamingBuffer STREAMING_BUFFER =
+      new DefaultTableDefinition.StreamingBuffer(1L, 2L, 3L);
+  private static final DefaultTableDefinition DEFAULT_TABLE_TYPE = DefaultTableDefinition.builder()
       .location(LOCATION)
       .numBytes(NUM_BYTES)
       .numRows(NUM_ROWS)
@@ -70,8 +70,8 @@ public class TableInfoTest {
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
   private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
-  private static final ExternalTableType EXTERNAL_TABLE_TYPE =
-      ExternalTableType.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+  private static final ExternalTableDefinition EXTERNAL_TABLE_TYPE =
+      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .compression(COMPRESSION)
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .maxBadRecords(MAX_BAD_RECORDS)
@@ -80,8 +80,8 @@ public class TableInfoTest {
   private static final String VIEW_QUERY = "VIEW QUERY";
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS =
       ImmutableList.of(UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
-  private static final ViewType VIEW_TYPE =
-      ViewType.builder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
+  private static final ViewDefinition VIEW_TYPE =
+      ViewDefinition.builder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
 
   private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, DEFAULT_TABLE_TYPE)
       .creationTime(CREATION_TIME)
@@ -150,10 +150,10 @@ public class TableInfoTest {
     assertEquals(FRIENDLY_NAME, TABLE_INFO.friendlyName());
     assertEquals(ID, TABLE_INFO.id());
     assertEquals(LAST_MODIFIED_TIME, TABLE_INFO.lastModifiedTime());
-    assertEquals(DEFAULT_TABLE_TYPE, TABLE_INFO.type());
+    assertEquals(DEFAULT_TABLE_TYPE, TABLE_INFO.definition());
     assertEquals(SELF_LINK, TABLE_INFO.selfLink());
     assertEquals(TABLE_ID, VIEW_INFO.tableId());
-    assertEquals(VIEW_TYPE, VIEW_INFO.type());
+    assertEquals(VIEW_TYPE, VIEW_INFO.definition());
     assertEquals(CREATION_TIME, VIEW_INFO.creationTime());
     assertEquals(DESCRIPTION, VIEW_INFO.description());
     assertEquals(ETAG, VIEW_INFO.etag());
@@ -161,7 +161,7 @@ public class TableInfoTest {
     assertEquals(FRIENDLY_NAME, VIEW_INFO.friendlyName());
     assertEquals(ID, VIEW_INFO.id());
     assertEquals(LAST_MODIFIED_TIME, VIEW_INFO.lastModifiedTime());
-    assertEquals(VIEW_TYPE, VIEW_INFO.type());
+    assertEquals(VIEW_TYPE, VIEW_INFO.definition());
     assertEquals(SELF_LINK, VIEW_INFO.selfLink());
     assertEquals(TABLE_ID, EXTERNAL_TABLE_INFO.tableId());
     assertEquals(CREATION_TIME, EXTERNAL_TABLE_INFO.creationTime());
@@ -171,7 +171,7 @@ public class TableInfoTest {
     assertEquals(FRIENDLY_NAME, EXTERNAL_TABLE_INFO.friendlyName());
     assertEquals(ID, EXTERNAL_TABLE_INFO.id());
     assertEquals(LAST_MODIFIED_TIME, EXTERNAL_TABLE_INFO.lastModifiedTime());
-    assertEquals(EXTERNAL_TABLE_TYPE, EXTERNAL_TABLE_INFO.type());
+    assertEquals(EXTERNAL_TABLE_TYPE, EXTERNAL_TABLE_INFO.definition());
     assertEquals(SELF_LINK, EXTERNAL_TABLE_INFO.selfLink());
   }
 
@@ -192,7 +192,7 @@ public class TableInfoTest {
   private void compareTableInfo(TableInfo expected, TableInfo value) {
     assertEquals(expected, value);
     assertEquals(expected.tableId(), value.tableId());
-    assertEquals(expected.type(), value.type());
+    assertEquals(expected.definition(), value.definition());
     assertEquals(expected.creationTime(), value.creationTime());
     assertEquals(expected.description(), value.description());
     assertEquals(expected.etag(), value.etag());
@@ -201,7 +201,7 @@ public class TableInfoTest {
     assertEquals(expected.id(), value.id());
     assertEquals(expected.lastModifiedTime(), value.lastModifiedTime());
     assertEquals(expected.selfLink(), value.selfLink());
-    assertEquals(expected.type(), value.type());
+    assertEquals(expected.definition(), value.definition());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

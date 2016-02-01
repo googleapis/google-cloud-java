@@ -24,7 +24,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class ExternalTableTypeTest {
+public class ExternalTableDefinitionTest {
 
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
@@ -47,8 +47,8 @@ public class ExternalTableTypeTest {
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
   private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
-  private static final ExternalTableType EXTERNAL_TABLE_TYPE =
-      ExternalTableType.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+  private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
+      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .compression(COMPRESSION)
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .maxBadRecords(MAX_BAD_RECORDS)
@@ -56,43 +56,47 @@ public class ExternalTableTypeTest {
 
   @Test
   public void testToBuilder() {
-    compareExternalTableType(EXTERNAL_TABLE_TYPE, EXTERNAL_TABLE_TYPE.toBuilder().build());
-    ExternalTableType externalTableType = EXTERNAL_TABLE_TYPE.toBuilder().compression("NONE").build();
-    assertEquals("NONE", externalTableType.compression());
-    externalTableType = externalTableType.toBuilder()
+    compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION,
+        EXTERNAL_TABLE_DEFINITION.toBuilder().build());
+    ExternalTableDefinition externalTableDefinition =
+        EXTERNAL_TABLE_DEFINITION.toBuilder().compression("NONE").build();
+    assertEquals("NONE", externalTableDefinition.compression());
+    externalTableDefinition = externalTableDefinition.toBuilder()
         .compression(COMPRESSION)
         .build();
-    compareExternalTableType(EXTERNAL_TABLE_TYPE, externalTableType);
+    compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION, externalTableDefinition);
   }
 
   @Test
   public void testToBuilderIncomplete() {
-    ExternalTableType externalTableType =
-        ExternalTableType.of(SOURCE_URIS, TABLE_SCHEMA, FormatOptions.json());
-    assertEquals(externalTableType, externalTableType.toBuilder().build());
+    ExternalTableDefinition externalTableDefinition =
+        ExternalTableDefinition.of(SOURCE_URIS, TABLE_SCHEMA, FormatOptions.json());
+    assertEquals(externalTableDefinition, externalTableDefinition.toBuilder().build());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(BaseTableType.Type.EXTERNAL, EXTERNAL_TABLE_TYPE.type());
-    assertEquals(COMPRESSION, EXTERNAL_TABLE_TYPE.compression());
-    assertEquals(CSV_OPTIONS, EXTERNAL_TABLE_TYPE.formatOptions());
-    assertEquals(IGNORE_UNKNOWN_VALUES, EXTERNAL_TABLE_TYPE.ignoreUnknownValues());
-    assertEquals(MAX_BAD_RECORDS, EXTERNAL_TABLE_TYPE.maxBadRecords());
-    assertEquals(TABLE_SCHEMA, EXTERNAL_TABLE_TYPE.schema());
-    assertEquals(SOURCE_URIS, EXTERNAL_TABLE_TYPE.sourceUris());
+    assertEquals(BaseTableDefinition.Type.EXTERNAL, EXTERNAL_TABLE_DEFINITION.type());
+    assertEquals(COMPRESSION, EXTERNAL_TABLE_DEFINITION.compression());
+    assertEquals(CSV_OPTIONS, EXTERNAL_TABLE_DEFINITION.formatOptions());
+    assertEquals(IGNORE_UNKNOWN_VALUES, EXTERNAL_TABLE_DEFINITION.ignoreUnknownValues());
+    assertEquals(MAX_BAD_RECORDS, EXTERNAL_TABLE_DEFINITION.maxBadRecords());
+    assertEquals(TABLE_SCHEMA, EXTERNAL_TABLE_DEFINITION.schema());
+    assertEquals(SOURCE_URIS, EXTERNAL_TABLE_DEFINITION.sourceUris());
   }
 
   @Test
   public void testToAndFromPb() {
-    compareExternalTableType(EXTERNAL_TABLE_TYPE,
-        ExternalTableType.fromPb(EXTERNAL_TABLE_TYPE.toPb()));
-    ExternalTableType externalTableType =
-        ExternalTableType.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS).build();
-    compareExternalTableType(externalTableType, ExternalTableType.fromPb(externalTableType.toPb()));
+    compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION,
+        ExternalTableDefinition.fromPb(EXTERNAL_TABLE_DEFINITION.toPb()));
+    ExternalTableDefinition externalTableDefinition =
+        ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS).build();
+    compareExternalTableDefinition(externalTableDefinition,
+        ExternalTableDefinition.fromPb(externalTableDefinition.toPb()));
   }
 
-  private void compareExternalTableType(ExternalTableType expected, ExternalTableType value) {
+  private void compareExternalTableDefinition(ExternalTableDefinition expected,
+      ExternalTableDefinition value) {
     assertEquals(expected, value);
     assertEquals(expected.compression(), value.compression());
     assertEquals(expected.formatOptions(), value.formatOptions());

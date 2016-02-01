@@ -35,19 +35,21 @@ import java.util.Objects;
  * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data Sources
  *     </a>
  */
-public class ExternalTableType extends BaseTableType {
+public class ExternalTableDefinition extends BaseTableDefinition {
 
-  static final Function<ExternalDataConfiguration, ExternalTableType> FROM_EXTERNAL_DATA_FUNCTION =
-      new Function<ExternalDataConfiguration, ExternalTableType>() {
+  static final Function<ExternalDataConfiguration, ExternalTableDefinition>
+      FROM_EXTERNAL_DATA_FUNCTION =
+      new Function<ExternalDataConfiguration, ExternalTableDefinition>() {
         @Override
-        public ExternalTableType apply(ExternalDataConfiguration pb) {
-          return ExternalTableType.fromExternalDataConfiguration(pb);
+        public ExternalTableDefinition apply(ExternalDataConfiguration pb) {
+          return ExternalTableDefinition.fromExternalDataConfiguration(pb);
         }
       };
-  static final Function<ExternalTableType, ExternalDataConfiguration> TO_EXTERNAL_DATA_FUNCTION =
-      new Function<ExternalTableType, ExternalDataConfiguration>() {
+  static final Function<ExternalTableDefinition, ExternalDataConfiguration>
+      TO_EXTERNAL_DATA_FUNCTION =
+      new Function<ExternalTableDefinition, ExternalDataConfiguration>() {
         @Override
-        public ExternalDataConfiguration apply(ExternalTableType tableInfo) {
+        public ExternalDataConfiguration apply(ExternalTableDefinition tableInfo) {
           return tableInfo.toExternalDataConfigurationPb();
         }
       };
@@ -60,7 +62,8 @@ public class ExternalTableType extends BaseTableType {
   private final Boolean ignoreUnknownValues;
   private final String compression;
 
-  public static final class Builder extends BaseTableType.Builder<ExternalTableType, Builder> {
+  public static final class Builder
+      extends BaseTableDefinition.Builder<ExternalTableDefinition, Builder> {
 
     private List<String> sourceUris;
     private FormatOptions formatOptions;
@@ -72,13 +75,13 @@ public class ExternalTableType extends BaseTableType {
       super(Type.EXTERNAL);
     }
 
-    private Builder(ExternalTableType tableType) {
-      super(tableType);
-      this.sourceUris = tableType.sourceUris;
-      this.formatOptions = tableType.formatOptions;
-      this.maxBadRecords = tableType.maxBadRecords;
-      this.ignoreUnknownValues = tableType.ignoreUnknownValues;
-      this.compression = tableType.compression;
+    private Builder(ExternalTableDefinition tableDefinition) {
+      super(tableDefinition);
+      this.sourceUris = tableDefinition.sourceUris;
+      this.formatOptions = tableDefinition.formatOptions;
+      this.maxBadRecords = tableDefinition.maxBadRecords;
+      this.ignoreUnknownValues = tableDefinition.ignoreUnknownValues;
+      this.compression = tableDefinition.compression;
     }
 
     private Builder(Table tablePb) {
@@ -163,15 +166,15 @@ public class ExternalTableType extends BaseTableType {
     }
 
     /**
-     * Creates a {@code ExternalTableType} object.
+     * Creates an {@code ExternalTableDefinition} object.
      */
     @Override
-    public ExternalTableType build() {
-      return new ExternalTableType(this);
+    public ExternalTableDefinition build() {
+      return new ExternalTableDefinition(this);
     }
   }
 
-  private ExternalTableType(Builder builder) {
+  private ExternalTableDefinition(Builder builder) {
     super(builder);
     this.compression = builder.compression;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
@@ -234,7 +237,7 @@ public class ExternalTableType extends BaseTableType {
   }
 
   /**
-   * Returns a builder for the {@code ExternalTableType} object.
+   * Returns a builder for the {@code ExternalTableDefinition} object.
    */
   @Override
   public Builder toBuilder() {
@@ -253,7 +256,7 @@ public class ExternalTableType extends BaseTableType {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ExternalTableType && baseEquals((ExternalTableType) obj);
+    return obj instanceof ExternalTableDefinition && baseEquals((ExternalTableDefinition) obj);
   }
 
   @Override
@@ -297,7 +300,7 @@ public class ExternalTableType extends BaseTableType {
   }
 
   /**
-   * Creates a builder for an ExternalTableType object.
+   * Creates a builder for an ExternalTableDefinition object.
    *
    * @param sourceUris the fully-qualified URIs that point to your data in Google Cloud Storage.
    *     Each URI can contain one '*' wildcard character that must come after the bucket's name.
@@ -316,7 +319,7 @@ public class ExternalTableType extends BaseTableType {
   }
 
   /**
-   * Creates a builder for an ExternalTableType object.
+   * Creates a builder for an ExternalTableDefinition object.
    *
    * @param sourceUri a fully-qualified URI that points to your data in Google Cloud Storage. The
    *     URI can contain one '*' wildcard character that must come after the bucket's name. Size
@@ -334,7 +337,7 @@ public class ExternalTableType extends BaseTableType {
   }
 
   /**
-   * Creates an ExternalTableType object.
+   * Creates an ExternalTableDefinition object.
    *
    * @param sourceUris the fully-qualified URIs that point to your data in Google Cloud Storage.
    *     Each URI can contain one '*' wildcard character that must come after the bucket's name.
@@ -348,7 +351,8 @@ public class ExternalTableType extends BaseTableType {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static ExternalTableType of(List<String> sourceUris, Schema schema, FormatOptions format) {
+  public static ExternalTableDefinition of(List<String> sourceUris, Schema schema,
+      FormatOptions format) {
     return builder(sourceUris, schema, format).build();
   }
 
@@ -366,16 +370,16 @@ public class ExternalTableType extends BaseTableType {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static ExternalTableType of(String sourceUri, Schema schema, FormatOptions format) {
+  public static ExternalTableDefinition of(String sourceUri, Schema schema, FormatOptions format) {
     return builder(sourceUri, schema, format).build();
   }
 
   @SuppressWarnings("unchecked")
-  static ExternalTableType fromPb(Table tablePb) {
+  static ExternalTableDefinition fromPb(Table tablePb) {
     return new Builder(tablePb).build();
   }
 
-  static ExternalTableType fromExternalDataConfiguration(
+  static ExternalTableDefinition fromExternalDataConfiguration(
       ExternalDataConfiguration externalDataConfiguration) {
     Builder builder = new Builder();
     if (externalDataConfiguration.getSourceUris() != null) {
