@@ -111,7 +111,7 @@ are created from a BigQuery SQL query. In this code snippet we show how to creat
 with only one string field. Add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.bigquery.DefaultTableDefinition;
+import com.google.gcloud.bigquery.TableDefinition;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.Schema;
 import com.google.gcloud.bigquery.TableId;
@@ -126,7 +126,7 @@ Field stringField = Field.of("StringField", Field.Type.string());
 // Table schema definition
 Schema schema = Schema.of(stringField);
 // Create a table
-DefaultTableDefinition tableDefinition = DefaultTableDefinition.of(schema);
+TableDefinition tableDefinition = TableDefinition.of(schema);
 TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, tableDefinition));
 ```
 
@@ -208,7 +208,7 @@ display on your webpage.
 import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryOptions;
 import com.google.gcloud.bigquery.DatasetInfo;
-import com.google.gcloud.bigquery.DefaultTableDefinition;
+import com.google.gcloud.bigquery.TableDefinition;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.FieldValue;
 import com.google.gcloud.bigquery.InsertAllRequest;
@@ -241,7 +241,7 @@ public class GcloudBigQueryExample {
     // Table schema definition
     Schema schema = Schema.of(stringField);
     // Create a table
-    DefaultTableDefinition tableDefinition = DefaultTableDefinition.of(schema);
+    TableDefinition tableDefinition = TableDefinition.of(schema);
     TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, tableDefinition));
 
     // Define rows to insert

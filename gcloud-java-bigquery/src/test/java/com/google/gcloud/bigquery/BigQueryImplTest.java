@@ -104,11 +104,11 @@ public class BigQueryImplTest {
           .description("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
-  private static final DefaultTableDefinition TABLE_TYPE = DefaultTableDefinition.of(TABLE_SCHEMA);
-  private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_TYPE);
-  private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_TYPE);
+  private static final TableDefinition TABLE_DEFINITION = TableDefinition.of(TABLE_SCHEMA);
+  private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
+  private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_DEFINITION);
   private static final TableInfo TABLE_INFO_WITH_PROJECT =
-      TableInfo.of(TABLE_ID_WITH_PROJECT, TABLE_TYPE);
+      TableInfo.of(TABLE_ID_WITH_PROJECT, TABLE_DEFINITION);
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION =
       LoadJobConfiguration.of(TABLE_ID, "URI");
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION_WITH_PROJECT =

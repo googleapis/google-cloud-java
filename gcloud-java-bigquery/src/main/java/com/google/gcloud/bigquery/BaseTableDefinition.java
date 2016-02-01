@@ -37,7 +37,7 @@ public abstract class BaseTableDefinition implements Serializable {
   public enum Type {
     /**
      * A normal BigQuery table. Instances of {@code BaseTableDefinition} for this type are
-     * implemented by {@link DefaultTableDefinition}.
+     * implemented by {@link TableDefinition}.
      */
     TABLE,
 
@@ -169,7 +169,7 @@ public abstract class BaseTableDefinition implements Serializable {
   static <T extends BaseTableDefinition> T fromPb(Table tablePb) {
     switch (Type.valueOf(tablePb.getType())) {
       case TABLE:
-        return (T) DefaultTableDefinition.fromPb(tablePb);
+        return (T) TableDefinition.fromPb(tablePb);
       case VIEW:
         return (T) ViewDefinition.fromPb(tablePb);
       case EXTERNAL:

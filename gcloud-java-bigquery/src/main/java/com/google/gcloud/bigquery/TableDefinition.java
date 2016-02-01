@@ -33,7 +33,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
  */
-public class DefaultTableDefinition extends BaseTableDefinition {
+public class TableDefinition extends BaseTableDefinition {
 
   private static final long serialVersionUID = 2113445776046717900L;
 
@@ -116,7 +116,7 @@ public class DefaultTableDefinition extends BaseTableDefinition {
   }
 
   public static final class Builder
-      extends BaseTableDefinition.Builder<DefaultTableDefinition, Builder> {
+      extends BaseTableDefinition.Builder<TableDefinition, Builder> {
 
     private Long numBytes;
     private Long numRows;
@@ -127,7 +127,7 @@ public class DefaultTableDefinition extends BaseTableDefinition {
       super(Type.TABLE);
     }
 
-    private Builder(DefaultTableDefinition tableDefinition) {
+    private Builder(TableDefinition tableDefinition) {
       super(tableDefinition);
       this.numBytes = tableDefinition.numBytes;
       this.numRows = tableDefinition.numRows;
@@ -168,15 +168,15 @@ public class DefaultTableDefinition extends BaseTableDefinition {
     }
 
     /**
-     * Creates a {@code DefaultTableDefinition} object.
+     * Creates a {@code TableDefinition} object.
      */
     @Override
-    public DefaultTableDefinition build() {
-      return new DefaultTableDefinition(this);
+    public TableDefinition build() {
+      return new TableDefinition(this);
     }
   }
 
-  private DefaultTableDefinition(Builder builder) {
+  private TableDefinition(Builder builder) {
     super(builder);
     this.numBytes = builder.numBytes;
     this.numRows = builder.numRows;
@@ -229,12 +229,12 @@ public class DefaultTableDefinition extends BaseTableDefinition {
    *
    * @param schema the schema of the table
    */
-  public static DefaultTableDefinition of(Schema schema) {
+  public static TableDefinition of(Schema schema) {
     return builder().schema(schema).build();
   }
 
   /**
-   * Returns a builder for the {@code DefaultTableDefinition} object.
+   * Returns a builder for the {@code TableDefinition} object.
    */
   @Override
   public Builder toBuilder() {
@@ -252,7 +252,7 @@ public class DefaultTableDefinition extends BaseTableDefinition {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof DefaultTableDefinition && baseEquals((DefaultTableDefinition) obj);
+    return obj instanceof TableDefinition && baseEquals((TableDefinition) obj);
   }
 
   @Override
@@ -275,7 +275,7 @@ public class DefaultTableDefinition extends BaseTableDefinition {
   }
 
   @SuppressWarnings("unchecked")
-  static DefaultTableDefinition fromPb(Table tablePb) {
+  static TableDefinition fromPb(Table tablePb) {
     return new Builder(tablePb).build();
   }
 }

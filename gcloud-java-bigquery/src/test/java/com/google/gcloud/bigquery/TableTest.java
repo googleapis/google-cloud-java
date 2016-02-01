@@ -55,8 +55,8 @@ public class TableTest {
   private static final JobInfo EXTRACT_JOB_INFO =
       JobInfo.of(ExtractJobConfiguration.of(TABLE_ID1, ImmutableList.of("URI"), "CSV"));
   private static final Field FIELD = Field.of("FieldName", Field.Type.integer());
-  private static final BaseTableDefinition TABLE_TYPE = DefaultTableDefinition.of(Schema.of(FIELD));
-  private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID1, TABLE_TYPE);
+  private static final BaseTableDefinition TABLE_DEFINITION = TableDefinition.of(Schema.of(FIELD));
+  private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID1, TABLE_DEFINITION);
   private static final List<RowToInsert> ROWS_TO_INSERT = ImmutableList.of(
       RowToInsert.of("id1", ImmutableMap.<String, Object>of("key", "val1")),
       RowToInsert.of("id2", ImmutableMap.<String, Object>of("key", "val2")));

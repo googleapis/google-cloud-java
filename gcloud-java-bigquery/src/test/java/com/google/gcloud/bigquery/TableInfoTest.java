@@ -55,9 +55,9 @@ public class TableInfoTest {
   private static final Long NUM_BYTES = 42L;
   private static final Long NUM_ROWS = 43L;
   private static final String LOCATION = "US";
-  private static final DefaultTableDefinition.StreamingBuffer STREAMING_BUFFER =
-      new DefaultTableDefinition.StreamingBuffer(1L, 2L, 3L);
-  private static final DefaultTableDefinition DEFAULT_TABLE_TYPE = DefaultTableDefinition.builder()
+  private static final TableDefinition.StreamingBuffer STREAMING_BUFFER =
+      new TableDefinition.StreamingBuffer(1L, 2L, 3L);
+  private static final TableDefinition TABLE_DEFINITION = TableDefinition.builder()
       .location(LOCATION)
       .numBytes(NUM_BYTES)
       .numRows(NUM_ROWS)
@@ -70,7 +70,7 @@ public class TableInfoTest {
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
   private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
-  private static final ExternalTableDefinition EXTERNAL_TABLE_TYPE =
+  private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
       ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .compression(COMPRESSION)
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
@@ -83,7 +83,7 @@ public class TableInfoTest {
   private static final ViewDefinition VIEW_TYPE =
       ViewDefinition.builder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
 
-  private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, DEFAULT_TABLE_TYPE)
+  private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, TABLE_DEFINITION)
       .creationTime(CREATION_TIME)
       .description(DESCRIPTION)
       .etag(ETAG)
@@ -104,7 +104,7 @@ public class TableInfoTest {
       .selfLink(SELF_LINK)
       .build();
   private static final TableInfo EXTERNAL_TABLE_INFO =
-      TableInfo.builder(TABLE_ID, EXTERNAL_TABLE_TYPE)
+      TableInfo.builder(TABLE_ID, EXTERNAL_TABLE_DEFINITION)
           .creationTime(CREATION_TIME)
           .description(DESCRIPTION)
           .etag(ETAG)
@@ -132,11 +132,11 @@ public class TableInfoTest {
 
   @Test
   public void testToBuilderIncomplete() {
-    TableInfo tableInfo = TableInfo.of(TABLE_ID, DEFAULT_TABLE_TYPE);
+    TableInfo tableInfo = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
     assertEquals(tableInfo, tableInfo.toBuilder().build());
     tableInfo = TableInfo.of(TABLE_ID, VIEW_TYPE);
     assertEquals(tableInfo, tableInfo.toBuilder().build());
-    tableInfo = TableInfo.of(TABLE_ID, EXTERNAL_TABLE_TYPE);
+    tableInfo = TableInfo.of(TABLE_ID, EXTERNAL_TABLE_DEFINITION);
     assertEquals(tableInfo, tableInfo.toBuilder().build());
   }
 
@@ -150,7 +150,7 @@ public class TableInfoTest {
     assertEquals(FRIENDLY_NAME, TABLE_INFO.friendlyName());
     assertEquals(ID, TABLE_INFO.id());
     assertEquals(LAST_MODIFIED_TIME, TABLE_INFO.lastModifiedTime());
-    assertEquals(DEFAULT_TABLE_TYPE, TABLE_INFO.definition());
+    assertEquals(TABLE_DEFINITION, TABLE_INFO.definition());
     assertEquals(SELF_LINK, TABLE_INFO.selfLink());
     assertEquals(TABLE_ID, VIEW_INFO.tableId());
     assertEquals(VIEW_TYPE, VIEW_INFO.definition());
@@ -171,7 +171,7 @@ public class TableInfoTest {
     assertEquals(FRIENDLY_NAME, EXTERNAL_TABLE_INFO.friendlyName());
     assertEquals(ID, EXTERNAL_TABLE_INFO.id());
     assertEquals(LAST_MODIFIED_TIME, EXTERNAL_TABLE_INFO.lastModifiedTime());
-    assertEquals(EXTERNAL_TABLE_TYPE, EXTERNAL_TABLE_INFO.definition());
+    assertEquals(EXTERNAL_TABLE_DEFINITION, EXTERNAL_TABLE_INFO.definition());
     assertEquals(SELF_LINK, EXTERNAL_TABLE_INFO.selfLink());
   }
 

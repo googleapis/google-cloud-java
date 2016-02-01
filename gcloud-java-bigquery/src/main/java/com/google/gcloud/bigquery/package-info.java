@@ -26,7 +26,7 @@
  *   System.out.println("Creating table " + tableId);
  *   Field integerField = Field.of("fieldName", Field.Type.integer());
  *   Schema schema = Schema.of(integerField);
- *   bigquery.create(TableInfo.of(tableId, DefaultTableDefinition.of(schema)));
+ *   bigquery.create(TableInfo.of(tableId, TableDefinition.of(schema)));
  * } else {
  *   System.out.println("Loading data into table " + tableId);
  *   LoadJobConfiguration configuration = LoadJobConfiguration.of(tableId, "gs://bucket/path");
