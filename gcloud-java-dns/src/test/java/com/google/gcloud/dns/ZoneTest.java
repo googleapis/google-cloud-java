@@ -348,9 +348,9 @@ public class ZoneTest {
 
   @Test
   public void applyChangeByIdAndFound() {
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_ID)).andReturn(CHANGE_REQUEST_AFTER);
+    expect(dns.applyChangeRequest(ZONE_ID, CHANGE_REQUEST)).andReturn(CHANGE_REQUEST_AFTER);
     // again for options
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.applyChangeRequest(ZONE_ID, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(CHANGE_REQUEST_AFTER);
     replay(dns);
     ChangeRequest result = zone.applyChangeRequest(CHANGE_REQUEST);
@@ -364,13 +364,13 @@ public class ZoneTest {
 
   @Test
   public void applyChangeByIdAndNotFoundAndNameSetAndFound() {
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_ID)).andReturn(null);
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_NAME))
+    expect(dns.applyChangeRequest(ZONE_ID, CHANGE_REQUEST)).andReturn(null);
+    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST))
         .andReturn(CHANGE_REQUEST_AFTER);
     // again for options
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.applyChangeRequest(ZONE_ID, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(CHANGE_REQUEST_AFTER);
     replay(dns);
     ChangeRequest result = zone.applyChangeRequest(CHANGE_REQUEST);
@@ -384,12 +384,12 @@ public class ZoneTest {
 
   @Test
   public void applyChangeIdAndNotFoundAndNameSetAndNotFound() {
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_ID)).andReturn(null);
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_NAME)).andReturn(null);
+    expect(dns.applyChangeRequest(ZONE_ID, CHANGE_REQUEST)).andReturn(null);
+    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST)).andReturn(null);
     // again with options
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.applyChangeRequest(ZONE_ID, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
     replay(dns);
     ChangeRequest result = zone.applyChangeRequest(CHANGE_REQUEST);
@@ -401,8 +401,8 @@ public class ZoneTest {
 
   @Test
   public void applyChangeRequestByIdAndNotFoundAndNameNotSet() {
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_ID)).andReturn(null);
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.applyChangeRequest(ZONE_ID, CHANGE_REQUEST)).andReturn(null);
+    expect(dns.applyChangeRequest(ZONE_ID, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null); // for options
     replay(dns);
     ChangeRequest result = zoneNoName.applyChangeRequest(CHANGE_REQUEST);
@@ -415,10 +415,10 @@ public class ZoneTest {
   @Test
   public void applyChangeByNameAndFound() {
     // ID is not set
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_NAME))
+    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST))
         .andReturn(CHANGE_REQUEST_AFTER);
     // again for options
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(CHANGE_REQUEST_AFTER);
     replay(dns);
     ChangeRequest result = zoneNoId.applyChangeRequest(CHANGE_REQUEST);
@@ -431,9 +431,9 @@ public class ZoneTest {
   @Test
   public void applyChangeByNameAndNotFound() {
     // ID is not set
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_NAME)).andReturn(null);
+    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST)).andReturn(null);
     // again for options
-    expect(dns.applyChangeRequest(CHANGE_REQUEST, ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
     replay(dns);
     ChangeRequest result = zoneNoId.applyChangeRequest(CHANGE_REQUEST);
@@ -486,16 +486,16 @@ public class ZoneTest {
 
   @Test
   public void getChangeByIdAndFound() {
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_ID)).andReturn(CHANGE_REQUEST_AFTER);
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID)).andReturn(CHANGE_REQUEST_AFTER);
     // again for options
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(CHANGE_REQUEST_AFTER);
     replay(dns);
-    ChangeRequest result = zone.getChangeRequest(CHANGE_REQUEST);
+    ChangeRequest result = zone.getChangeRequest(CHANGE_REQUEST.id());
     assertNotEquals(CHANGE_REQUEST, result);
     assertEquals(CHANGE_REQUEST_AFTER, result);
     // for options
-    result = zone.getChangeRequest(CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS);
+    result = zone.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
     assertNotEquals(CHANGE_REQUEST, result);
     assertEquals(CHANGE_REQUEST_AFTER, result);
     // test no id
@@ -503,82 +503,82 @@ public class ZoneTest {
 
   @Test
   public void getChangeByIdAndNotFoundAndNameSetAndFound() {
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_ID)).andReturn(null);
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_NAME))
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID)).andReturn(null);
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME))
         .andReturn(CHANGE_REQUEST_AFTER);
     // again for options
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(CHANGE_REQUEST_AFTER);
     replay(dns);
-    ChangeRequest result = zone.getChangeRequest(CHANGE_REQUEST);
+    ChangeRequest result = zone.getChangeRequest(CHANGE_REQUEST.id());
     assertNotEquals(CHANGE_REQUEST, result);
     assertEquals(CHANGE_REQUEST_AFTER, result);
     // for options
-    result = zone.getChangeRequest(CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS);
+    result = zone.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
     assertNotEquals(CHANGE_REQUEST, result);
     assertEquals(CHANGE_REQUEST_AFTER, result);
   }
 
   @Test
   public void getChangeIdAndNotFoundAndNameSetAndNotFound() {
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_ID)).andReturn(null);
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_NAME)).andReturn(null);
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID)).andReturn(null);
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME)).andReturn(null);
     // again with options
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
     replay(dns);
-    ChangeRequest result = zone.getChangeRequest(CHANGE_REQUEST);
+    ChangeRequest result = zone.getChangeRequest(CHANGE_REQUEST.id());
     assertNull(result);
     // again for options
-    result = zone.getChangeRequest(CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS);
+    result = zone.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
     assertNull(result);
   }
 
   @Test
   public void getChangeRequestByIdAndNotFoundAndNameNotSet() {
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_ID)).andReturn(null);
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID)).andReturn(null);
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null); // for options
     replay(dns);
-    ChangeRequest result = zoneNoName.getChangeRequest(CHANGE_REQUEST);
+    ChangeRequest result = zoneNoName.getChangeRequest(CHANGE_REQUEST.id());
     assertNull(result);
     // again for options
-    result = zoneNoName.getChangeRequest(CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS);
+    result = zoneNoName.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
     assertNull(result);
   }
 
   @Test
   public void getChangeByNameAndFound() {
     // ID is not set
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_NAME))
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME))
         .andReturn(CHANGE_REQUEST_AFTER);
     // again for options
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(CHANGE_REQUEST_AFTER);
     replay(dns);
-    ChangeRequest result = zoneNoId.getChangeRequest(CHANGE_REQUEST);
+    ChangeRequest result = zoneNoId.getChangeRequest(CHANGE_REQUEST.id());
     assertEquals(CHANGE_REQUEST_AFTER, result);
     // check options
-    result = zoneNoId.getChangeRequest(CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS);
+    result = zoneNoId.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
     assertEquals(CHANGE_REQUEST_AFTER, result);
   }
 
   @Test
   public void getChangeByNameAndNotFound() {
     // ID is not set
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_NAME)).andReturn(null);
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME)).andReturn(null);
     // again for options
-    expect(dns.getChangeRequest(CHANGE_REQUEST, ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
     replay(dns);
-    ChangeRequest result = zoneNoId.getChangeRequest(CHANGE_REQUEST);
+    ChangeRequest result = zoneNoId.getChangeRequest(CHANGE_REQUEST.id());
     assertNull(result);
     // check options
-    result = zoneNoId.getChangeRequest(CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS);
+    result = zoneNoId.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
     assertNull(result);
   }
 
@@ -627,38 +627,38 @@ public class ZoneTest {
   public void getChangeRequestWithNoId() {
     replay(dns); // no calls expected
     try {
-      zone.getChangeRequest(CHANGE_REQUEST_NO_ID);
-      fail("Cannot get ChangeRequest with no id.");
+      zone.getChangeRequest(CHANGE_REQUEST_NO_ID.id());
+      fail("Cannot get ChangeRequest by null id.");
     } catch (NullPointerException e) {
       // expected
     }
     try {
-      zone.getChangeRequest(CHANGE_REQUEST_NO_ID, CHANGE_REQUEST_FIELD_OPTIONS);
-      fail("Cannot get ChangeRequest with no id.");
+      zone.getChangeRequest(CHANGE_REQUEST_NO_ID.id(), CHANGE_REQUEST_FIELD_OPTIONS);
+      fail("Cannot get ChangeRequest by null id.");
     } catch (NullPointerException e) {
       // expected
     }
     try {
-      zoneNoId.getChangeRequest(CHANGE_REQUEST_NO_ID);
-      fail("Cannot get ChangeRequest with no id.");
+      zoneNoId.getChangeRequest(CHANGE_REQUEST_NO_ID.id());
+      fail("Cannot get ChangeRequest by null id.");
     } catch (NullPointerException e) {
       // expected
     }
     try {
-      zoneNoId.getChangeRequest(CHANGE_REQUEST_NO_ID, CHANGE_REQUEST_FIELD_OPTIONS);
-      fail("Cannot get ChangeRequest with no id.");
+      zoneNoId.getChangeRequest(CHANGE_REQUEST_NO_ID.id(), CHANGE_REQUEST_FIELD_OPTIONS);
+      fail("Cannot get ChangeRequest by null id.");
     } catch (NullPointerException e) {
       // expected
     }
     try {
-      zoneNoName.getChangeRequest(CHANGE_REQUEST_NO_ID);
-      fail("Cannot get ChangeRequest with no id.");
+      zoneNoName.getChangeRequest(CHANGE_REQUEST_NO_ID.id());
+      fail("Cannot get ChangeRequest by null id.");
     } catch (NullPointerException e) {
       // expected
     }
     try {
-      zoneNoName.getChangeRequest(CHANGE_REQUEST_NO_ID, CHANGE_REQUEST_FIELD_OPTIONS);
-      fail("Cannot get ChangeRequest with no id.");
+      zoneNoName.getChangeRequest(CHANGE_REQUEST_NO_ID.id(), CHANGE_REQUEST_FIELD_OPTIONS);
+      fail("Cannot get ChangeRequest by null id.");
     } catch (NullPointerException e) {
       // expected
     }

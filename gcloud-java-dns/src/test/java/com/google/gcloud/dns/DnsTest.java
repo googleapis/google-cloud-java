@@ -94,7 +94,7 @@ public class DnsTest {
   @Test
   public void testProjectGetOption() {
     // fields
-    Dns.ProjectGetOption fields = Dns.ProjectGetOption.fields(Dns.ProjectField.QUOTA);
+    Dns.ProjectOption fields = Dns.ProjectOption.fields(Dns.ProjectField.QUOTA);
     assertEquals(DnsRpc.Option.FIELDS, fields.rpcOption());
     assertTrue(fields.value() instanceof String);
     assertTrue(((String) fields.value()).contains(Dns.ProjectField.QUOTA.selector()));

@@ -16,6 +16,7 @@
 
 package com.google.gcloud.dns;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.gcloud.Page;
@@ -52,15 +53,14 @@ public class Zone implements Serializable {
 
   /**
    * Constructs a {@code Zone} object that contains meta information received from the Google Cloud
-   * DNS service for the provided zoneName.
+   * DNS service for the provided {@code zoneName}.
    *
-   * @param zoneName Name of the zone to be searched for
-   * @param options Optional restriction on what fields should be returned by the service
-   * @return Zone object containing metadata or null if not not found
+   * @param zoneName name of the zone to be searched for
+   * @param options optional restriction on what fields should be returned by the service
+   * @return zone object containing metadata or {@code null} if not not found
    * @throws DnsException upon failure
    */
-  public static Zone get(Dns dnsService, String zoneName,
-                         Dns.ZoneOption... options) {
+  public static Zone get(Dns dnsService, String zoneName, Dns.ZoneOption... options) {
     checkNotNull(zoneName);
     checkNotNull(dnsService);
     ZoneInfo zoneInfo = dnsService.getZone(zoneName, options);
@@ -68,16 +68,15 @@ public class Zone implements Serializable {
   }
 
   /**
-   * Constructs a {@code Zone} object that contains meta information received from the Google Cloud
-   * DNS service for the provided zoneName.
+   * Constructs a {@code Zone} object that contains information received from the Google Cloud DNS
+   * service for the provided {@code zoneId}.
    *
    * @param zoneId ID of the zone to be searched for
-   * @param options Optional restriction on what fields should be returned by the service
-   * @return Zone object containing metadata or null if not not found
+   * @param options optional restriction on what fields should be returned by the service
+   * @return zone object containing zone's information or {@code null} if not not found
    * @throws DnsException upon failure
    */
-  public static Zone get(Dns dnsService, BigInteger zoneId,
-                         Dns.ZoneOption... options) {
+  public static Zone get(Dns dnsService, BigInteger zoneId, Dns.ZoneOption... options) {
     checkNotNull(zoneId);
     checkNotNull(dnsService);
     ZoneInfo zoneInfo = dnsService.getZone(zoneId, options);
@@ -88,8 +87,8 @@ public class Zone implements Serializable {
    * Retrieves the latest information about the zone. The method first attempts to retrieve the zone
    * by ID and if not set or zone is not found, it searches by name.
    *
-   * @param options Optional restriction on what fields should be fetched
-   * @return Zone object containing updated metadata or null if not not found
+   * @param options optional restriction on what fields should be fetched
+   * @return zone object containing updated information or {@code null} if not not found
    * @throws DnsException upon failure
    * @throws NullPointerException if both zone ID and name are not initialized
    */
@@ -110,7 +109,7 @@ public class Zone implements Serializable {
    * Deletes the zone. The method first attempts to delete the zone by ID. If the zone is not found
    * or id is not set, it attempts to delete by name.
    *
-   * @return true is zone was found and deleted and false otherwise
+   * @return {@code true} is zone was found and deleted and {@code false} otherwise
    * @throws DnsException upon failure
    * @throws NullPointerException if both zone ID and name are not initialized
    */
@@ -131,10 +130,10 @@ public class Zone implements Serializable {
    * Lists all {@link DnsRecord}s associated with this zone. First searches for zone by ID and if
    * not found then by name.
    *
-   * @param options Optional restriction on listing and on what fields of {@link DnsRecord} should
+   * @param options optional restriction on listing and on what fields of {@link DnsRecord} should
    * be returned by the service
-   * @return {@code Page<DnsRecord>}, a page of DNS records, or null if the zone is not found
-   * @throws DnsException upon failure
+   * @return a page of DNS records
+   * @throws DnsException upon failure or if the zone is not found
    * @throws NullPointerException if both zone ID and name are not initialized
    */
   public Page<DnsRecord> listDnsRecords(Dns.DnsRecordListOption... options) {
@@ -153,25 +152,24 @@ public class Zone implements Serializable {
   /**
    * Submits {@link ChangeRequest} to the service for it to applied to this zone. First searches for
    * the zone by ID and if not found then by name. Returns a {@link ChangeRequest} with
-   * server-assigned ID or null if the zone was not found.
+   * server-assigned ID or {@code null} if the zone was not found.
    *
-   * @param options Optional restriction on what fields of {@link ChangeRequest} should be returned
-   * by the service
-   * @return ChangeRequest with server-assigned ID or null if the zone was not found.
-   * @throws DnsException upon failure
+   * @param options optional restriction on what fields of {@link ChangeRequest} should be returned
+   * @return ChangeRequest with server-assigned ID
+   * @throws DnsException upon failure or if the zone is not found
    * @throws NullPointerException if both zone ID and name are not initialized
    */
   public ChangeRequest applyChangeRequest(ChangeRequest changeRequest,
-                                          Dns.ChangeRequestOption... options) {
+      Dns.ChangeRequestOption... options) {
     checkNameOrIdNotNull();
     checkNotNull(changeRequest);
     ChangeRequest updated = null;
     if (zoneInfo.id() != null) {
-      updated = dns.applyChangeRequest(changeRequest, zoneInfo.id(), options);
+      updated = dns.applyChangeRequest(zoneInfo.id(), changeRequest, options);
     }
     if (updated == null && zoneInfo.name() != null) {
       // zone was not found by id or id is not set at all
-      updated = dns.applyChangeRequest(changeRequest, zoneInfo.name(), options);
+      updated = dns.applyChangeRequest(zoneInfo.name(), changeRequest, options);
     }
     return updated;
   }
@@ -179,41 +177,38 @@ public class Zone implements Serializable {
   /**
    * Retrieves an updated information about a change request previously submitted to be applied to
    * this zone. First searches for the zone by ID and if not found then by name. Returns a {@link
-   * ChangeRequest} if found and null is the zone or the change request was not found.
+   * ChangeRequest} if found and {@code null} is the zone or the change request was not found.
    *
-   * @param options Optional restriction on what fields of {@link ChangeRequest} should be returned
-   * by the service
-   * @return ChangeRequest with updated information of null if the change request or zone was not
-   * found.
-   * @throws DnsException upon failure
+   * @param options optional restriction on what fields of {@link ChangeRequest} should be returned
+   * @return updated ChangeRequest
+   * @throws DnsException upon failure or if the zone is not found
    * @throws NullPointerException if both zone ID and name are not initialized
    * @throws NullPointerException if the change request does not have initialized id
    */
-  public ChangeRequest getChangeRequest(ChangeRequest changeRequest,
-                                        Dns.ChangeRequestOption... options) {
+  public ChangeRequest getChangeRequest(String changeRequestId,
+      Dns.ChangeRequestOption... options) {
     checkNameOrIdNotNull();
-    checkNotNull(changeRequest);
-    checkNotNull(changeRequest.id());
+    checkNotNull(changeRequestId);
     ChangeRequest updated = null;
     if (zoneInfo.id() != null) {
-      updated = dns.getChangeRequest(changeRequest, zoneInfo.id(), options);
+      updated = dns.getChangeRequest(changeRequestId, zoneInfo.id(), options);
     }
     if (updated == null && zoneInfo.name() != null) {
       // zone was not found by id or id is not set at all
-      updated = dns.getChangeRequest(changeRequest, zoneInfo.name(), options);
+      updated = dns.getChangeRequest(changeRequestId, zoneInfo.name(), options);
     }
     return updated;
   }
 
   /**
    * Retrieves all change requests for this zone. First searches for the zone by ID and if not found
-   * then by name. Returns a page of {@link ChangeRequest}s or null if the zone is not found.
+   * then by name. Returns a page of {@link ChangeRequest}s or {@code null} if the zone is not
+   * found.
    *
-   * @param options Optional restriction on listing and on what fields of {@link ChangeRequest}s
+   * @param options optional restriction on listing and on what fields of {@link ChangeRequest}s
    * should be returned by the service
-   * @return {@code Page<ChangeRequest>}, a page of change requests, or null if the zone is not
-   * found
-   * @throws DnsException upon failure
+   * @return a page of change requests
+   * @throws DnsException upon failure or if the zone is not found
    * @throws NullPointerException if both zone ID and name are not initialized
    */
   public Page<ChangeRequest> listChangeRequests(Dns.ChangeRequestListOption... options) {
@@ -233,24 +228,21 @@ public class Zone implements Serializable {
    * Check that at least one of name and ID are initialized and throw and exception if not.
    */
   private void checkNameOrIdNotNull() {
-    if (zoneInfo != null && zoneInfo.id() == null && zoneInfo.name() == null) {
-      throw new NullPointerException("Both zoneInfo.id and zoneInfo.name are null. "
-          + "This is an inconsistent state which should never happen.");
-    }
+    checkArgument(zoneInfo != null && (zoneInfo.id() != null || zoneInfo.name() != null),
+        "Both zoneInfo.id and zoneInfo.name are null. This is should never happen.");
   }
 
   /**
-   * Returns the {@link ZoneInfo} object containing meta information about this managed zone.
+   * Returns the {@link ZoneInfo} object containing information about this zone.
    */
   public ZoneInfo info() {
     return this.zoneInfo;
   }
 
   /**
-   * Returns the {@link Dns} service object associated with this managed zone.
+   * Returns the {@link Dns} service object associated with this zone.
    */
   public Dns dns() {
     return this.dns;
   }
-
 }
