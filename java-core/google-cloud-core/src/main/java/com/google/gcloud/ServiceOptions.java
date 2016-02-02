@@ -18,7 +18,6 @@ package com.google.gcloud;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
@@ -229,8 +228,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      * @return the builder
      */
     public B projectId(String projectId) {
-      this.projectId =
-          checkNotNull(projectId, "Project ID cannot be set to null. Leave unset for default.");
+      this.projectId = projectId;
       return self();
     }
 
