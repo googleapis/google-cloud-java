@@ -44,8 +44,9 @@ public class ProjectInfo implements Serializable {
    * @see <a href="https://cloud.google.com/dns/api/v1/projects#quota">Google Cloud DNS
    * documentation</a>
    */
-  public static class Quota {
+  public static class Quota implements Serializable {
 
+    private static final long serialVersionUID = 6854685970605363639L;
     private final int zones;
     private final int resourceRecordsPerRrset;
     private final int rrsetAdditionsPerChange;
