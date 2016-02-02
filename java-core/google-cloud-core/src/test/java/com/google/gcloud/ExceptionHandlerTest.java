@@ -23,9 +23,9 @@ import static org.junit.Assert.fail;
 import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.ExceptionHandler.Interceptor.RetryResult;
 
-import org.junit.rules.ExpectedException;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -82,7 +82,7 @@ public class ExceptionHandlerTest {
     }
 
     // using default exception handler (retry upon any non-runtime exceptions)
-    ExceptionHandler handler = ExceptionHandler.getDefaultInstance();
+    ExceptionHandler handler = ExceptionHandler.defaultInstance();
     assertValidCallable(new A(), handler);
     assertValidCallable(new B(), handler);
     assertValidCallable(new C(), handler);

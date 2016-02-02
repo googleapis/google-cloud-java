@@ -22,8 +22,10 @@ package com.google.gcloud;
  *
  * Implementations of this class must implement {@link java.io.Serializable} to ensure that the
  * state of a the object can be correctly serialized.
+ *
+ * @param <T> the restored object's type
  */
-public interface RestorableState<T> {
+public interface RestorableState<T extends Restorable<T>> {
 
   /**
    * Returns an object whose internal state reflects the one saved in the invocation object.
