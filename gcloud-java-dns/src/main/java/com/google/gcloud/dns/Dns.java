@@ -24,14 +24,14 @@ import com.google.gcloud.spi.DnsRpc;
 import java.io.Serializable;
 import java.util.Set;
 
+import static com.google.gcloud.dns.Dns.ZoneField.selector;
+
 /**
  * An interface for the Google Cloud DNS service.
  *
  * @see <a href="https://cloud.google.com/dns/docs">Google Cloud DNS</a>
  */
 public interface Dns extends Service<DnsOptions> {
-
-
 
   /**
    * The fields of a project.
@@ -284,7 +284,9 @@ public interface Dns extends Service<DnsOptions> {
      * specified. {@link ZoneField} provides a list of fields that can be used.
      */
     public static ZoneListOption fields(ZoneField... fields) {
-      return new ZoneListOption(DnsRpc.Option.FIELDS, ZoneField.selector(fields));
+      StringBuilder builder = new StringBuilder();
+      builder.append("managedZones(").append(selector(fields)).append(')');
+      return new ZoneListOption(DnsRpc.Option.FIELDS, builder.toString());
     }
 
     /**
@@ -381,10 +383,9 @@ public interface Dns extends Service<DnsOptions> {
      * a list of fields that can be used.
      */
     public static ChangeRequestListOption fields(ChangeRequestField... fields) {
-      return new ChangeRequestListOption(
-          DnsRpc.Option.FIELDS,
-          ChangeRequestField.selector(fields)
-      );
+      StringBuilder builder = new StringBuilder();
+      builder.append("changes(").append(ChangeRequestField.selector(fields)).append(')');
+      return new ChangeRequestListOption(DnsRpc.Option.FIELDS, builder.toString());
     }
 
     /**

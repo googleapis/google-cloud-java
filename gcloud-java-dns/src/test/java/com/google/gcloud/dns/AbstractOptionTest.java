@@ -16,13 +16,13 @@
 
 package com.google.gcloud.dns;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.fail;
-
 import com.google.gcloud.spi.DnsRpc;
 
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.fail;
 
 public class AbstractOptionTest {
 
@@ -30,16 +30,12 @@ public class AbstractOptionTest {
   private static final DnsRpc.Option ANOTHER_RPC_OPTION = DnsRpc.Option.DNS_NAME;
   private static final String VALUE = "some value";
   private static final String OTHER_VALUE = "another value";
-  private static final AbstractOption OPTION = new AbstractOption(RPC_OPTION, VALUE) {
-  };
-  private static final AbstractOption OPTION_EQUALS = new AbstractOption(RPC_OPTION, VALUE) {
-  };
+  private static final AbstractOption OPTION = new AbstractOption(RPC_OPTION, VALUE) {};
+  private static final AbstractOption OPTION_EQUALS = new AbstractOption(RPC_OPTION, VALUE) {};
   private static final AbstractOption OPTION_NOT_EQUALS1 =
-      new AbstractOption(RPC_OPTION, OTHER_VALUE) {
-      };
+      new AbstractOption(RPC_OPTION, OTHER_VALUE) {};
   private static final AbstractOption OPTION_NOT_EQUALS2 =
-      new AbstractOption(ANOTHER_RPC_OPTION, VALUE) {
-      };
+      new AbstractOption(ANOTHER_RPC_OPTION, VALUE) {};
 
   @Test
   public void testEquals() {
@@ -58,13 +54,11 @@ public class AbstractOptionTest {
     assertEquals(RPC_OPTION, OPTION.rpcOption());
     assertEquals(VALUE, OPTION.value());
     try {
-      new AbstractOption(null, VALUE) {
-      };
+      new AbstractOption(null, VALUE) {};
       fail("Cannot build with empty option.");
     } catch (NullPointerException e) {
       // expected
     }
-    new AbstractOption(RPC_OPTION, null) {
-    }; // null value is ok
+    new AbstractOption(RPC_OPTION, null) {}; // null value is ok
   }
 }
