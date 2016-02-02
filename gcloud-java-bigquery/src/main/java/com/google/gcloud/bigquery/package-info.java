@@ -28,7 +28,8 @@
  *   bigquery.create(TableInfo.of(tableId, Schema.of(integerField)));
  * } else {
  *   System.out.println("Loading data into table " + tableId);
- *   LoadJobInfo loadJob = LoadJobInfo.of(tableId, "gs://bucket/path");
+ *   LoadJobConfiguration configuration = LoadJobConfiguration.of(tableId, "gs://bucket/path");
+ *   JobInfo loadJob = JobInfo.of(configuration);
  *   loadJob = bigquery.create(loadJob);
  *   while (loadJob.status().state() != JobStatus.State.DONE) {
  *     Thread.sleep(1000L);

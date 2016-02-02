@@ -50,13 +50,14 @@ public class TableDataWriteChannelTest {
 
   private static final String UPLOAD_ID = "uploadid";
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
-  private static final LoadConfiguration LOAD_CONFIGURATION = LoadConfiguration.builder(TABLE_ID)
-      .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
-      .writeDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
-      .formatOptions(FormatOptions.json())
-      .ignoreUnknownValues(true)
-      .maxBadRecords(10)
-      .build();
+  private static final WriteChannelConfiguration LOAD_CONFIGURATION =
+      WriteChannelConfiguration.builder(TABLE_ID)
+          .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+          .writeDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
+          .formatOptions(FormatOptions.json())
+          .ignoreUnknownValues(true)
+          .maxBadRecords(10)
+          .build();
   private static final int MIN_CHUNK_SIZE = 256 * 1024;
   private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
   private static final int CUSTOM_CHUNK_SIZE = 4 * MIN_CHUNK_SIZE;

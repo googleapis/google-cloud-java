@@ -36,7 +36,8 @@ public class JobTest {
   private static final JobId JOB_ID = JobId.of("dataset", "job");
   private static final TableId TABLE_ID1 = TableId.of("dataset", "table1");
   private static final TableId TABLE_ID2 = TableId.of("dataset", "table2");
-  private static final JobInfo JOB_INFO = CopyJobInfo.of(JOB_ID, TABLE_ID1, TABLE_ID2);
+  private static final JobInfo JOB_INFO =
+      JobInfo.of(JOB_ID, CopyJobConfiguration.of(TABLE_ID1, TABLE_ID2));
 
   private BigQuery bigquery;
   private Job job;

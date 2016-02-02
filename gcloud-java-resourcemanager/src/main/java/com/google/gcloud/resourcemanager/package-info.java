@@ -21,10 +21,12 @@
  * <pre> {@code
  * ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
  * String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID.
- * ProjectInfo myProject = resourceManager.create(ProjectInfo.builder(myProjectId).build());
- * ProjectInfo newProjectInfo = resourceManager.replace(myProject.toBuilder()
- *     .addLabel("launch-status", "in-development").build());
- * Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();
+ * Project myProject = resourceManager.create(ProjectInfo.builder(myProjectId).build());
+ * Project newProject = myProject.toBuilder()
+ *     .addLabel("launch-status", "in-development")
+ *     .build()
+ *     .replace();
+ * Iterator<Project> projectIterator = resourceManager.list().iterateAll();
  * System.out.println("Projects I can view:");
  * while (projectIterator.hasNext()) {
  *   System.out.println(projectIterator.next().projectId());

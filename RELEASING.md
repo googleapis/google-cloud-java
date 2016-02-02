@@ -26,6 +26,8 @@ As mentioned before, there is an optional version argument.  By default, the scr
 
 6. Create and merge in another PR to reflect the updated project version.  For an example of what this PR should look like, see [#227](https://github.com/GoogleCloudPlatform/gcloud-java/pull/227).
 
+7. Be sure to update App Engine documentation and [java-docs-samples](https://github.com/GoogleCloudPlatform/java-docs-samples) code as necessary.  See directions [here](https://docs.google.com/a/google.com/document/d/1SS3xNn2v0qW7EadGUPBUAPIQAH5VY6WSFmT17ZjjUVE/edit?usp=sharing).
+
 ### To push a snapshot version
 
 Pushing a snapshot is completely automated.  If "-SNAPSHOT" is included in the version denoted by the base directory's pom.xml, then an updated artifact will be pushed to the snapshot repository when Travis CI successfully completes a non-PR build.

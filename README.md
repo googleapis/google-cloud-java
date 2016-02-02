@@ -130,7 +130,7 @@ import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryOptions;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.JobStatus;
-import com.google.gcloud.bigquery.LoadJobInfo;
+import com.google.gcloud.bigquery.JobInfo;
 import com.google.gcloud.bigquery.Schema;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
@@ -144,7 +144,8 @@ if (info == null) {
   bigquery.create(TableInfo.of(tableId, Schema.of(integerField)));
 } else {
   System.out.println("Loading data into table " + tableId);
-  LoadJobInfo loadJob = LoadJobInfo.of(tableId, "gs://bucket/path");
+  LoadJobConfiguration configuration = LoadJobConfiguration.of(tableId, "gs://bucket/path");
+  JobInfo loadJob = JobInfo.of(configuration);
   loadJob = bigquery.create(loadJob);
   while (loadJob.status().state() != JobStatus.State.DONE) {
     Thread.sleep(1000L);
@@ -209,20 +210,22 @@ Google Cloud Resource Manager (Alpha)
 Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
 
 ```java
-import com.google.gcloud.resourcemanager.ProjectInfo;
+import com.google.gcloud.resourcemanager.Project;
 import com.google.gcloud.resourcemanager.ResourceManager;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 
 import java.util.Iterator;
 
 ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
-ProjectInfo myProject = resourceManager.get("some-project-id"); // Use an existing project's ID
-ProjectInfo newProjectInfo = resourceManager.replace(myProject.toBuilder()
-    .addLabel("launch-status", "in-development").build());
-System.out.println("Updated the labels of project " + newProjectInfo.projectId()
-    + " to be " + newProjectInfo.labels());
+Project myProject = resourceManager.get("some-project-id"); // Use an existing project's ID
+Project newProject = myProject.toBuilder()
+    .addLabel("launch-status", "in-development")
+    .build()
+    .replace();
+System.out.println("Updated the labels of project " + newProject.projectId()
+    + " to be " + newProject.labels());
 // List all the projects you have permission to view.
-Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();
+Iterator<Project> projectIterator = resourceManager.list().iterateAll();
 System.out.println("Projects I can view:");
 while (projectIterator.hasNext()) {
   System.out.println(projectIterator.next().projectId());

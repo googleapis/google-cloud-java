@@ -18,25 +18,110 @@ package com.google.gcloud.resourcemanager;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.Map;
+import java.util.Objects;
+
 /**
  * A Google Cloud Resource Manager project object.
  *
  * <p>A Project is a high-level Google Cloud Platform entity. It is a container for ACLs, APIs,
  * AppEngine Apps, VMs, and other Google Cloud Platform resources. This class' member variables are
- * immutable.  Methods that change or update the underlying Project information return a new Project
- * instance.
+ * immutable. Methods that change or update the underlying Project information return a new Project
+ * instance. {@code Project} adds a layer of service-related functionality over {@link ProjectInfo}.
  */
-public class Project {
+public class Project extends ProjectInfo {
 
-  private final ResourceManager resourceManager;
-  private final ProjectInfo info;
+  private static final long serialVersionUID = 6767630161335155133L;
 
-  /**
-   * Constructs a Project object that contains the ProjectInfo given.
-   */
-  public Project(ResourceManager resourceManager, ProjectInfo projectInfo) {
+  private final ResourceManagerOptions options;
+  private transient ResourceManager resourceManager;
+
+  public static class Builder extends ProjectInfo.Builder {
+    private final ResourceManager resourceManager;
+    private ProjectInfo.BuilderImpl infoBuilder;
+
+    Builder(ResourceManager resourceManager) {
+      this.resourceManager = resourceManager;
+      this.infoBuilder = new ProjectInfo.BuilderImpl();
+    }
+
+    Builder(Project project) {
+      this.resourceManager = project.resourceManager;
+      this.infoBuilder = new ProjectInfo.BuilderImpl(project);
+    }
+
+    @Override
+    public Builder name(String name) {
+      infoBuilder.name(name);
+      return this;
+    }
+
+    @Override
+    public Builder projectId(String projectId) {
+      infoBuilder.projectId(projectId);
+      return this;
+    }
+
+    @Override
+    public Builder addLabel(String key, String value) {
+      infoBuilder.addLabel(key, value);
+      return this;
+    }
+
+    @Override
+    public Builder removeLabel(String key) {
+      infoBuilder.removeLabel(key);
+      return this;
+    }
+
+    @Override
+    public Builder clearLabels() {
+      infoBuilder.clearLabels();
+      return this;
+    }
+
+    @Override
+    public Builder labels(Map<String, String> labels) {
+      infoBuilder.labels(labels);
+      return this;
+    }
+
+    @Override
+    Builder projectNumber(Long projectNumber) {
+      infoBuilder.projectNumber(projectNumber);
+      return this;
+    }
+
+    @Override
+    Builder state(State state) {
+      infoBuilder.state(state);
+      return this;
+    }
+
+    @Override
+    Builder createTimeMillis(Long createTimeMillis) {
+      infoBuilder.createTimeMillis(createTimeMillis);
+      return this;
+    }
+
+    @Override
+    Builder parent(ResourceId parent) {
+      infoBuilder.parent(parent);
+      return this;
+    }
+
+    @Override
+    public Project build() {
+      return new Project(resourceManager, infoBuilder);
+    }
+  }
+
+  Project(ResourceManager resourceManager, ProjectInfo.BuilderImpl infoBuilder) {
+    super(infoBuilder);
     this.resourceManager = checkNotNull(resourceManager);
-    this.info = checkNotNull(projectInfo);
+    this.options = resourceManager.options();
   }
 
   /**
@@ -46,15 +131,7 @@ public class Project {
    * @throws ResourceManagerException upon failure
    */
   public static Project get(ResourceManager resourceManager, String projectId) {
-    ProjectInfo projectInfo = resourceManager.get(projectId);
-    return projectInfo != null ? new Project(resourceManager, projectInfo) : null;
-  }
-
-  /**
-   * Returns the {@link ProjectInfo} object associated with this Project.
-   */
-  public ProjectInfo info() {
-    return info;
+    return resourceManager.get(projectId);
   }
 
   /**
@@ -72,7 +149,7 @@ public class Project {
    * @throws ResourceManagerException upon failure
    */
   public Project reload() {
-    return Project.get(resourceManager, info.projectId());
+    return Project.get(resourceManager, projectId());
   }
 
   /**
@@ -98,7 +175,7 @@ public class Project {
    * @throws ResourceManagerException upon failure
    */
   public void delete() {
-    resourceManager.delete(info.projectId());
+    resourceManager.delete(projectId());
   }
 
   /**
@@ -115,21 +192,52 @@ public class Project {
    * @throws ResourceManagerException upon failure (including when the project can't be restored)
    */
   public void undelete() {
-    resourceManager.undelete(info.projectId());
+    resourceManager.undelete(projectId());
   }
 
   /**
-   * Replaces the attributes of the project.
+   * Replaces the attributes of the project with the attributes of this project.
    *
    * <p>The caller must have modify permissions for this project.
    *
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">Cloud
    * Resource Manager update</a>
-   * @return the ProjectInfo representing the new project metadata
+   * @return the Project representing the new project metadata
    * @throws ResourceManagerException upon failure
    */
-  public Project replace(ProjectInfo projectInfo) {
-    return new Project(resourceManager, resourceManager.replace(checkNotNull(projectInfo)));
+  public Project replace() {
+    return resourceManager.replace(this);
+  }
+
+  static Builder builder(ResourceManager resourceManager, String projectId) {
+    return new Builder(resourceManager).projectId(projectId);
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return obj instanceof Project && Objects.equals(toPb(), ((Project) obj).toPb())
+        && Objects.equals(options, ((Project) obj).options);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), options);
+  }
+
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+    this.resourceManager = options.service();
+  }
+
+  static Project fromPb(ResourceManager resourceManager,
+      com.google.api.services.cloudresourcemanager.model.Project answer) {
+    ProjectInfo info = ProjectInfo.fromPb(answer);
+    return new Project(resourceManager, new ProjectInfo.BuilderImpl(info));
   }
 }
