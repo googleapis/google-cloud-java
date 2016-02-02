@@ -18,15 +18,13 @@ package com.google.gcloud.examples;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.bigquery.BaseTableInfo;
 import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryError;
 import com.google.gcloud.bigquery.BigQueryOptions;
 import com.google.gcloud.bigquery.CopyJobConfiguration;
 import com.google.gcloud.bigquery.DatasetId;
 import com.google.gcloud.bigquery.DatasetInfo;
-import com.google.gcloud.bigquery.ExternalDataConfiguration;
-import com.google.gcloud.bigquery.ExternalTableInfo;
+import com.google.gcloud.bigquery.ExternalTableDefinition;
 import com.google.gcloud.bigquery.ExtractJobConfiguration;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.FieldValue;
@@ -34,14 +32,15 @@ import com.google.gcloud.bigquery.FormatOptions;
 import com.google.gcloud.bigquery.JobId;
 import com.google.gcloud.bigquery.JobInfo;
 import com.google.gcloud.bigquery.JobStatus;
-import com.google.gcloud.bigquery.WriteChannelConfiguration;
 import com.google.gcloud.bigquery.LoadJobConfiguration;
 import com.google.gcloud.bigquery.QueryRequest;
 import com.google.gcloud.bigquery.QueryResponse;
 import com.google.gcloud.bigquery.Schema;
+import com.google.gcloud.bigquery.StandardTableDefinition;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
-import com.google.gcloud.bigquery.ViewInfo;
+import com.google.gcloud.bigquery.ViewDefinition;
+import com.google.gcloud.bigquery.WriteChannelConfiguration;
 import com.google.gcloud.spi.BigQueryRpc.Tuple;
 
 import java.nio.channels.FileChannel;
@@ -212,7 +211,7 @@ public class BigQueryExample {
   private static class ListTablesAction extends DatasetAction {
     @Override
     public void run(BigQuery bigquery, DatasetId datasetId) {
-      Iterator<BaseTableInfo> tableInfoIterator = bigquery.listTables(datasetId).iterateAll();
+      Iterator<TableInfo> tableInfoIterator = bigquery.listTables(datasetId).iterateAll();
       while (tableInfoIterator.hasNext()) {
         System.out.println(tableInfoIterator.next());
       }
@@ -391,10 +390,10 @@ public class BigQueryExample {
     }
   }
 
-  private abstract static class CreateTableAction extends BigQueryAction<BaseTableInfo> {
+  private abstract static class CreateTableAction extends BigQueryAction<TableInfo> {
     @Override
-    void run(BigQuery bigquery, BaseTableInfo table) throws Exception {
-      BaseTableInfo createTable = bigquery.create(table);
+    void run(BigQuery bigquery, TableInfo table) throws Exception {
+      TableInfo createTable = bigquery.create(table);
       System.out.println("Created table:");
       System.out.println(createTable.toString());
     }
@@ -435,20 +434,20 @@ public class BigQueryExample {
   }
 
   /**
-   * This class demonstrates how to create a simple BigQuery Table (i.e. a table of type
-   * {@link BaseTableInfo.Type#TABLE}).
+   * This class demonstrates how to create a simple BigQuery Table (i.e. a table created from a
+   * {@link StandardTableDefinition}).
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/insert">Tables: insert
    *     </a>
    */
   private static class CreateSimpleTableAction extends CreateTableAction {
     @Override
-    BaseTableInfo parse(String... args) throws Exception {
+    TableInfo parse(String... args) throws Exception {
       if (args.length >= 3) {
         String dataset = args[0];
         String table = args[1];
         TableId tableId = TableId.of(dataset, table);
-        return TableInfo.of(tableId, parseSchema(args, 2, args.length));
+        return TableInfo.of(tableId, StandardTableDefinition.of(parseSchema(args, 2, args.length)));
       }
       throw new IllegalArgumentException("Missing required arguments.");
     }
@@ -460,23 +459,23 @@ public class BigQueryExample {
   }
 
   /**
-   * This class demonstrates how to create a BigQuery External Table (i.e. a table of type
-   * {@link BaseTableInfo.Type#EXTERNAL}).
+   * This class demonstrates how to create a BigQuery External Table (i.e. a table created from a
+   * {@link ExternalTableDefinition}).
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/insert">Tables: insert
    *     </a>
    */
   private static class CreateExternalTableAction extends CreateTableAction {
     @Override
-    BaseTableInfo parse(String... args) throws Exception {
+    TableInfo parse(String... args) throws Exception {
       if (args.length >= 5) {
         String dataset = args[0];
         String table = args[1];
         TableId tableId = TableId.of(dataset, table);
-        ExternalDataConfiguration configuration =
-            ExternalDataConfiguration.of(args[args.length - 1],
+        ExternalTableDefinition externalTableDefinition =
+            ExternalTableDefinition.of(args[args.length - 1],
                 parseSchema(args, 3, args.length - 1), FormatOptions.of(args[2]));
-        return ExternalTableInfo.of(tableId, configuration);
+        return TableInfo.of(tableId, externalTableDefinition);
       }
       throw new IllegalArgumentException("Missing required arguments.");
     }
@@ -488,22 +487,22 @@ public class BigQueryExample {
   }
 
   /**
-   * This class demonstrates how to create a BigQuery View Table (i.e. a table of type
-   * {@link BaseTableInfo.Type#VIEW}).
+   * This class demonstrates how to create a BigQuery View Table (i.e. a table created from a
+   * {@link ViewDefinition}).
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/insert">Tables: insert
    *     </a>
    */
   private static class CreateViewAction extends CreateTableAction {
     @Override
-    BaseTableInfo parse(String... args) throws Exception {
+    TableInfo parse(String... args) throws Exception {
       String message;
       if (args.length == 3) {
         String dataset = args[0];
         String table = args[1];
         String query = args[2];
         TableId tableId = TableId.of(dataset, table);
-        return ViewInfo.of(tableId, query);
+        return TableInfo.of(tableId, ViewDefinition.of(query));
       } else if (args.length < 3) {
         message = "Missing required dataset id, table id or query.";
       } else {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,66 +18,91 @@ package com.google.gcloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.bigquery.model.ExternalDataConfiguration;
+import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery configuration for tables backed by external data. Objects of this class describe
- * the data format, location, and other properties of a table stored outside of BigQuery.
- * By defining these properties, the data source can then be queried as if it were a standard
- * BigQuery table. Support for external tables is experimental and might be subject to changes or
- * removed.
+ * Google BigQuery external table type. BigQuery's external tables are tables whose data reside
+ * outside of BigQuery but can be queried as normal BigQuery tables. External tables are
+ * experimental and might be subject to change or removed.
  *
  * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data Sources
  *     </a>
  */
-public class ExternalDataConfiguration implements Serializable {
+public class ExternalTableDefinition extends TableDefinition {
 
-  static final Function<com.google.api.services.bigquery.model.ExternalDataConfiguration,
-      ExternalDataConfiguration> FROM_PB_FUNCTION =
-      new Function<com.google.api.services.bigquery.model.ExternalDataConfiguration,
-          ExternalDataConfiguration>() {
+  static final Function<ExternalDataConfiguration, ExternalTableDefinition>
+      FROM_EXTERNAL_DATA_FUNCTION =
+      new Function<ExternalDataConfiguration, ExternalTableDefinition>() {
         @Override
-        public ExternalDataConfiguration apply(
-            com.google.api.services.bigquery.model.ExternalDataConfiguration configurationPb) {
-          return ExternalDataConfiguration.fromPb(configurationPb);
+        public ExternalTableDefinition apply(ExternalDataConfiguration pb) {
+          return ExternalTableDefinition.fromExternalDataConfiguration(pb);
         }
       };
-  static final Function<ExternalDataConfiguration,
-      com.google.api.services.bigquery.model.ExternalDataConfiguration> TO_PB_FUNCTION =
-      new Function<ExternalDataConfiguration,
-          com.google.api.services.bigquery.model.ExternalDataConfiguration>() {
+  static final Function<ExternalTableDefinition, ExternalDataConfiguration>
+      TO_EXTERNAL_DATA_FUNCTION =
+      new Function<ExternalTableDefinition, ExternalDataConfiguration>() {
         @Override
-        public com.google.api.services.bigquery.model.ExternalDataConfiguration apply(
-            ExternalDataConfiguration configuration) {
-          return configuration.toPb();
+        public ExternalDataConfiguration apply(ExternalTableDefinition tableInfo) {
+          return tableInfo.toExternalDataConfigurationPb();
         }
       };
 
-  private static final long serialVersionUID = -8004288831035566549L;
+  private static final long serialVersionUID = -5951580238459622025L;
 
   private final List<String> sourceUris;
-  private final Schema schema;
   private final FormatOptions formatOptions;
   private final Integer maxBadRecords;
   private final Boolean ignoreUnknownValues;
   private final String compression;
 
-  public static final class Builder {
+  public static final class Builder
+      extends TableDefinition.Builder<ExternalTableDefinition, Builder> {
 
     private List<String> sourceUris;
-    private Schema schema;
     private FormatOptions formatOptions;
     private Integer maxBadRecords;
     private Boolean ignoreUnknownValues;
     private String compression;
 
-    private Builder() {}
+    private Builder() {
+      super(Type.EXTERNAL);
+    }
+
+    private Builder(ExternalTableDefinition tableDefinition) {
+      super(tableDefinition);
+      this.sourceUris = tableDefinition.sourceUris;
+      this.formatOptions = tableDefinition.formatOptions;
+      this.maxBadRecords = tableDefinition.maxBadRecords;
+      this.ignoreUnknownValues = tableDefinition.ignoreUnknownValues;
+      this.compression = tableDefinition.compression;
+    }
+
+    private Builder(Table tablePb) {
+      super(tablePb);
+      com.google.api.services.bigquery.model.ExternalDataConfiguration externalDataConfiguration =
+          tablePb.getExternalDataConfiguration();
+      if (externalDataConfiguration != null) {
+        if (externalDataConfiguration.getSourceUris() != null) {
+          this.sourceUris = ImmutableList.copyOf(externalDataConfiguration.getSourceUris());
+        }
+        if (externalDataConfiguration.getSourceFormat() != null) {
+          this.formatOptions = FormatOptions.of(externalDataConfiguration.getSourceFormat());
+        }
+        this.compression = externalDataConfiguration.getCompression();
+        this.ignoreUnknownValues = externalDataConfiguration.getIgnoreUnknownValues();
+        if (externalDataConfiguration.getCsvOptions() != null) {
+          this.formatOptions = CsvOptions.fromPb(externalDataConfiguration.getCsvOptions());
+        }
+        this.maxBadRecords = externalDataConfiguration.getMaxBadRecords();
+      }
+    }
 
     /**
      * Sets the fully-qualified URIs that point to your data in Google Cloud Storage (e.g.
@@ -89,14 +114,6 @@ public class ExternalDataConfiguration implements Serializable {
      */
     public Builder sourceUris(List<String> sourceUris) {
       this.sourceUris = ImmutableList.copyOf(checkNotNull(sourceUris));
-      return this;
-    }
-
-    /**
-     * Sets the schema for the external data.
-     */
-    public Builder schema(Schema schema) {
-      this.schema = checkNotNull(schema);
       return this;
     }
 
@@ -149,18 +166,19 @@ public class ExternalDataConfiguration implements Serializable {
     }
 
     /**
-     * Creates an {@code ExternalDataConfiguration} object.
+     * Creates an {@code ExternalTableDefinition} object.
      */
-    public ExternalDataConfiguration build() {
-      return new ExternalDataConfiguration(this);
+    @Override
+    public ExternalTableDefinition build() {
+      return new ExternalTableDefinition(this);
     }
   }
 
-  ExternalDataConfiguration(Builder builder) {
+  private ExternalTableDefinition(Builder builder) {
+    super(builder);
     this.compression = builder.compression;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
     this.maxBadRecords = builder.maxBadRecords;
-    this.schema = builder.schema;
     this.formatOptions = builder.formatOptions;
     this.sourceUris = builder.sourceUris;
   }
@@ -198,13 +216,6 @@ public class ExternalDataConfiguration implements Serializable {
   }
 
   /**
-   * Returns the schema for the external data.
-   */
-  public Schema schema() {
-    return schema;
-  }
-
-  /**
    * Returns the fully-qualified URIs that point to your data in Google Cloud Storage. Each URI can
    * contain one '*' wildcard character that must come after the bucket's name. Size limits
    * related to load jobs apply to external data sources, plus an additional limit of 10 GB
@@ -226,43 +237,42 @@ public class ExternalDataConfiguration implements Serializable {
   }
 
   /**
-   * Returns a builder for the {@code ExternalDataConfiguration} object.
+   * Returns a builder for the {@code ExternalTableDefinition} object.
    */
+  @Override
   public Builder toBuilder() {
-    return new Builder()
-        .compression(compression)
-        .ignoreUnknownValues(ignoreUnknownValues)
-        .maxBadRecords(maxBadRecords)
-        .schema(schema)
-        .formatOptions(formatOptions)
-        .sourceUris(sourceUris);
+    return new Builder(this);
   }
 
   @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this)
+  ToStringHelper toStringHelper() {
+    return super.toStringHelper()
         .add("sourceUris", sourceUris)
         .add("formatOptions", formatOptions)
-        .add("schema", schema)
         .add("compression", compression)
         .add("ignoreUnknownValues", ignoreUnknownValues)
-        .add("maxBadRecords", maxBadRecords)
-        .toString();
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(compression, ignoreUnknownValues, maxBadRecords, schema, formatOptions,
-        sourceUris);
+        .add("maxBadRecords", maxBadRecords);
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ExternalDataConfiguration
-        && Objects.equals(toPb(), ((ExternalDataConfiguration) obj).toPb());
+    return obj instanceof ExternalTableDefinition && baseEquals((ExternalTableDefinition) obj);
   }
 
-  com.google.api.services.bigquery.model.ExternalDataConfiguration toPb() {
+  @Override
+  public int hashCode() {
+    return Objects.hash(baseHashCode(), compression, ignoreUnknownValues, maxBadRecords,
+        formatOptions, sourceUris);
+  }
+
+  @Override
+  com.google.api.services.bigquery.model.Table toPb() {
+    Table tablePb = super.toPb();
+    tablePb.setExternalDataConfiguration(toExternalDataConfigurationPb());
+    return tablePb;
+  }
+
+  com.google.api.services.bigquery.model.ExternalDataConfiguration toExternalDataConfigurationPb() {
     com.google.api.services.bigquery.model.ExternalDataConfiguration externalConfigurationPb =
         new com.google.api.services.bigquery.model.ExternalDataConfiguration();
     if (compression != null) {
@@ -274,8 +284,8 @@ public class ExternalDataConfiguration implements Serializable {
     if (maxBadRecords != null) {
       externalConfigurationPb.setMaxBadRecords(maxBadRecords);
     }
-    if (schema != null) {
-      externalConfigurationPb.setSchema(schema.toPb());
+    if (schema() != null) {
+      externalConfigurationPb.setSchema(schema().toPb());
     }
     if (formatOptions != null) {
       externalConfigurationPb.setSourceFormat(formatOptions.type());
@@ -290,7 +300,7 @@ public class ExternalDataConfiguration implements Serializable {
   }
 
   /**
-   * Creates a builder for an ExternalDataConfiguration object.
+   * Creates a builder for an ExternalTableDefinition object.
    *
    * @param sourceUris the fully-qualified URIs that point to your data in Google Cloud Storage.
    *     Each URI can contain one '*' wildcard character that must come after the bucket's name.
@@ -298,7 +308,7 @@ public class ExternalDataConfiguration implements Serializable {
    *     of 10 GB maximum size across all URIs.
    * @param schema the schema for the external data
    * @param format the source format of the external data
-   * @return a builder for an ExternalDataConfiguration object given source URIs, schema and format
+   * @return a builder for an ExternalTableDefinition object given source URIs, schema and format
    *
    * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
@@ -309,28 +319,25 @@ public class ExternalDataConfiguration implements Serializable {
   }
 
   /**
-   * Creates a builder for an ExternalDataConfiguration object.
+   * Creates a builder for an ExternalTableDefinition object.
    *
    * @param sourceUri a fully-qualified URI that points to your data in Google Cloud Storage. The
    *     URI can contain one '*' wildcard character that must come after the bucket's name. Size
    *     limits related to load jobs apply to external data sources.
    * @param schema the schema for the external data
    * @param format the source format of the external data
-   * @return a builder for an ExternalDataConfiguration object given source URI, schema and format
+   * @return a builder for an ExternalTableDefinition object given source URI, schema and format
    *
    * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
   public static Builder builder(String sourceUri, Schema schema, FormatOptions format) {
-    return new Builder()
-        .sourceUris(ImmutableList.of(sourceUri))
-        .schema(schema)
-        .formatOptions(format);
+    return builder(ImmutableList.of(sourceUri), schema, format);
   }
 
   /**
-   * Creates an ExternalDataConfiguration object.
+   * Creates an ExternalTableDefinition object.
    *
    * @param sourceUris the fully-qualified URIs that point to your data in Google Cloud Storage.
    *     Each URI can contain one '*' wildcard character that must come after the bucket's name.
@@ -338,38 +345,42 @@ public class ExternalDataConfiguration implements Serializable {
    *     of 10 GB maximum size across all URIs.
    * @param schema the schema for the external data
    * @param format the source format of the external data
-   * @return an ExternalDataConfiguration object given source URIs, schema and format
+   * @return an ExternalTableDefinition object given source URIs, schema and format
    *
    * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static ExternalDataConfiguration of(List<String> sourceUris, Schema schema,
+  public static ExternalTableDefinition of(List<String> sourceUris, Schema schema,
       FormatOptions format) {
     return builder(sourceUris, schema, format).build();
   }
 
   /**
-   * Creates an ExternalDataConfiguration object.
+   * Creates an ExternalTableDefinition object.
    *
    * @param sourceUri a fully-qualified URI that points to your data in Google Cloud Storage. The
    *     URI can contain one '*' wildcard character that must come after the bucket's name. Size
    *     limits related to load jobs apply to external data sources.
    * @param schema the schema for the external data
    * @param format the source format of the external data
-   * @return an ExternalDataConfiguration object given source URIs, schema and format
+   * @return an ExternalTableDefinition object given source URIs, schema and format
    *
    * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static ExternalDataConfiguration of(String sourceUri, Schema schema,
-      FormatOptions format) {
+  public static ExternalTableDefinition of(String sourceUri, Schema schema, FormatOptions format) {
     return builder(sourceUri, schema, format).build();
   }
 
-  static ExternalDataConfiguration fromPb(
-      com.google.api.services.bigquery.model.ExternalDataConfiguration externalDataConfiguration) {
+  @SuppressWarnings("unchecked")
+  static ExternalTableDefinition fromPb(Table tablePb) {
+    return new Builder(tablePb).build();
+  }
+
+  static ExternalTableDefinition fromExternalDataConfiguration(
+      ExternalDataConfiguration externalDataConfiguration) {
     Builder builder = new Builder();
     if (externalDataConfiguration.getSourceUris() != null) {
       builder.sourceUris(externalDataConfiguration.getSourceUris());

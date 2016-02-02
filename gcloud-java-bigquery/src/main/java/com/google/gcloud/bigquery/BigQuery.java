@@ -275,8 +275,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the table's fields to be returned by the RPC call. If this
      * option is not provided all table's fields are returned. {@code TableOption.fields} can be
-     * used to specify only the fields of interest. {@link BaseTableInfo#tableId()} and
-     * {@link BaseTableInfo#type()} are always returned, even if not specified.
+     * used to specify only the fields of interest. {@link TableInfo#tableId()} and type (which is
+     * part of {@link TableInfo#definition()}) are always returned, even if not specified.
      */
     public static TableOption fields(TableField... fields) {
       return new TableOption(BigQueryRpc.Option.FIELDS, TableField.selector(fields));
@@ -464,7 +464,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  <T extends BaseTableInfo> T create(T table, TableOption... options) throws BigQueryException;
+  TableInfo create(TableInfo table, TableOption... options) throws BigQueryException;
 
   /**
    * Creates a new job.
@@ -542,14 +542,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  <T extends BaseTableInfo> T update(T table, TableOption... options) throws BigQueryException;
+  TableInfo update(TableInfo table, TableOption... options) throws BigQueryException;
 
   /**
    * Returns the requested table or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  <T extends BaseTableInfo> T getTable(String datasetId, String tableId, TableOption... options)
+  TableInfo getTable(String datasetId, String tableId, TableOption... options)
       throws BigQueryException;
 
   /**
@@ -557,31 +557,31 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  <T extends BaseTableInfo> T getTable(TableId tableId, TableOption... options)
+  TableInfo getTable(TableId tableId, TableOption... options)
       throws BigQueryException;
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table
-   * ({@link BaseTableInfo#tableId()}, {@link BaseTableInfo#friendlyName()},
-   * {@link BaseTableInfo#id()} and {@link BaseTableInfo#type()}). To get complete information use
-   * either {@link #getTable(TableId, TableOption...)} or
+   * ({@link TableInfo#tableId()}, {@link TableInfo#friendlyName()}, {@link TableInfo#id()} and
+   * type, which is part of {@link TableInfo#definition()}). To get complete information use either
+   * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *
    * @throws BigQueryException upon failure
    */
-  Page<BaseTableInfo> listTables(String datasetId, TableListOption... options)
+  Page<TableInfo> listTables(String datasetId, TableListOption... options)
       throws BigQueryException;
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table
-   * ({@link BaseTableInfo#tableId()}, {@link BaseTableInfo#friendlyName()},
-   * {@link BaseTableInfo#id()} and {@link BaseTableInfo#type()}). To get complete information use
-   * either {@link #getTable(TableId, TableOption...)} or
+   * ({@link TableInfo#tableId()}, {@link TableInfo#friendlyName()}, {@link TableInfo#id()} and
+   * type, which is part of {@link TableInfo#definition()}). To get complete information use either
+   * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *
    * @throws BigQueryException upon failure
    */
-  Page<BaseTableInfo> listTables(DatasetId datasetId, TableListOption... options)
+  Page<TableInfo> listTables(DatasetId datasetId, TableListOption... options)
       throws BigQueryException;
 
   /**

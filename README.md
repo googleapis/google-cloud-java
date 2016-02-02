@@ -125,23 +125,25 @@ Here is a code snippet showing a simple usage example from within Compute/App En
 must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 
 ```java
-import com.google.gcloud.bigquery.BaseTableInfo;
 import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryOptions;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.JobStatus;
 import com.google.gcloud.bigquery.JobInfo;
+import com.google.gcloud.bigquery.LoadJobConfiguration;
 import com.google.gcloud.bigquery.Schema;
+import com.google.gcloud.bigquery.StandardTableDefinition;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
 
 BigQuery bigquery = BigQueryOptions.defaultInstance().service();
 TableId tableId = TableId.of("dataset", "table");
-BaseTableInfo info = bigquery.getTable(tableId);
+TableInfo info = bigquery.getTable(tableId);
 if (info == null) {
   System.out.println("Creating table " + tableId);
   Field integerField = Field.of("fieldName", Field.Type.integer());
-  bigquery.create(TableInfo.of(tableId, Schema.of(integerField)));
+  Schema schema = Schema.of(integerField);
+  bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
 } else {
   System.out.println("Loading data into table " + tableId);
   LoadJobConfiguration configuration = LoadJobConfiguration.of(tableId, "gs://bucket/path");

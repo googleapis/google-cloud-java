@@ -36,7 +36,7 @@ import java.util.Objects;
 public final class Table {
 
   private final BigQuery bigquery;
-  private final BaseTableInfo info;
+  private final TableInfo info;
 
   /**
    * Constructs a {@code Table} object for the provided {@code TableInfo}. The BigQuery service
@@ -45,7 +45,7 @@ public final class Table {
    * @param bigquery the BigQuery service used for issuing requests
    * @param info table's info
    */
-  public Table(BigQuery bigquery, BaseTableInfo info) {
+  public Table(BigQuery bigquery, TableInfo info) {
     this.bigquery = checkNotNull(bigquery);
     this.info = checkNotNull(info);
   }
@@ -77,14 +77,14 @@ public final class Table {
    * @throws BigQueryException upon failure
    */
   public static Table get(BigQuery bigquery, TableId table, BigQuery.TableOption... options) {
-    BaseTableInfo info = bigquery.getTable(table, options);
+    TableInfo info = bigquery.getTable(table, options);
     return info != null ? new Table(bigquery, info) : null;
   }
 
   /**
    * Returns the table's information.
    */
-  public BaseTableInfo info() {
+  public TableInfo info() {
     return info;
   }
 
@@ -119,7 +119,7 @@ public final class Table {
    * @return a {@code Table} object with updated information
    * @throws BigQueryException upon failure
    */
-  public Table update(BaseTableInfo tableInfo, BigQuery.TableOption... options) {
+  public Table update(TableInfo tableInfo, BigQuery.TableOption... options) {
     checkArgument(Objects.equals(tableInfo.tableId().dataset(),
         info.tableId().dataset()), "Dataset's user-defined ids must match");
     checkArgument(Objects.equals(tableInfo.tableId().table(),

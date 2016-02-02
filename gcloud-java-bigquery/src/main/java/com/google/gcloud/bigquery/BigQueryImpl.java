@@ -65,7 +65,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private static class TablePageFetcher implements NextPageFetcher<BaseTableInfo> {
+  private static class TablePageFetcher implements NextPageFetcher<TableInfo> {
 
     private static final long serialVersionUID = 8611248840504201187L;
     private final Map<BigQueryRpc.Option, ?> requestOptions;
@@ -81,7 +81,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     @Override
-    public Page<BaseTableInfo> nextPage() {
+    public Page<TableInfo> nextPage() {
       return listTables(dataset, serviceOptions, requestOptions);
     }
   }
@@ -173,12 +173,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public <T extends BaseTableInfo> T create(T table, TableOption... options)
+  public TableInfo create(TableInfo table, TableOption... options)
       throws BigQueryException {
     final Table tablePb = table.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      return BaseTableInfo.fromPb(runWithRetries(new Callable<Table>() {
+      return TableInfo.fromPb(runWithRetries(new Callable<Table>() {
         @Override
         public Table call() {
           return bigQueryRpc.create(tablePb, optionsMap);
@@ -309,12 +309,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public <T extends BaseTableInfo> T update(T table, TableOption... options)
+  public TableInfo update(TableInfo table, TableOption... options)
       throws BigQueryException {
     final Table tablePb = table.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      return BaseTableInfo.fromPb(runWithRetries(new Callable<Table>() {
+      return TableInfo.fromPb(runWithRetries(new Callable<Table>() {
         @Override
         public Table call() {
           return bigQueryRpc.patch(tablePb, optionsMap);
@@ -326,13 +326,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public <T extends BaseTableInfo> T getTable(final String datasetId, final String tableId,
+  public TableInfo getTable(final String datasetId, final String tableId,
       TableOption... options) throws BigQueryException {
     return getTable(TableId.of(datasetId, tableId), options);
   }
 
   @Override
-  public <T extends BaseTableInfo> T getTable(final TableId tableId, TableOption... options)
+  public TableInfo getTable(final TableId tableId, TableOption... options)
       throws BigQueryException {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
@@ -342,25 +342,25 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           return bigQueryRpc.getTable(tableId.dataset(), tableId.table(), optionsMap);
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : BaseTableInfo.<T>fromPb(answer);
+      return answer == null ? null : TableInfo.fromPb(answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
   @Override
-  public Page<BaseTableInfo> listTables(String datasetId, TableListOption... options)
+  public Page<TableInfo> listTables(String datasetId, TableListOption... options)
       throws BigQueryException {
     return listTables(datasetId, options(), optionMap(options));
   }
 
   @Override
-  public Page<BaseTableInfo> listTables(DatasetId datasetId, TableListOption... options)
+  public Page<TableInfo> listTables(DatasetId datasetId, TableListOption... options)
       throws BigQueryException {
     return listTables(datasetId.dataset(), options(), optionMap(options));
   }
 
-  private static Page<BaseTableInfo> listTables(final String datasetId, final BigQueryOptions
+  private static Page<TableInfo> listTables(final String datasetId, final BigQueryOptions
       serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
       BigQueryRpc.Tuple<String, Iterable<Table>> result =
@@ -371,8 +371,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             }
           }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
       String cursor = result.x();
-      Iterable<BaseTableInfo> tables = Iterables.transform(result.y(),
-          BaseTableInfo.FROM_PB_FUNCTION);
+      Iterable<TableInfo> tables = Iterables.transform(result.y(),
+          TableInfo.FROM_PB_FUNCTION);
       return new PageImpl<>(new TablePageFetcher(datasetId, serviceOptions, cursor, optionsMap),
           cursor, tables);
     } catch (RetryHelper.RetryHelperException e) {

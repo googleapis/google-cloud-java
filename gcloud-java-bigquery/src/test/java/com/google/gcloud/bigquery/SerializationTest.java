@@ -25,7 +25,7 @@ import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.bigquery.TableInfo.StreamingBuffer;
+import com.google.gcloud.bigquery.StandardTableDefinition.StreamingBuffer;
 
 import org.junit.Test;
 
@@ -99,8 +99,8 @@ public class SerializationTest {
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
-  private static final ExternalDataConfiguration EXTERNAL_DATA_CONFIGURATION =
-      ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+  private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
+      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .ignoreUnknownValues(true)
           .maxBadRecords(42)
           .build();
@@ -108,24 +108,26 @@ public class SerializationTest {
       new UserDefinedFunction.InlineFunction("inline");
   private static final UserDefinedFunction URI_FUNCTION =
       new UserDefinedFunction.UriFunction("URI");
-  private static final BaseTableInfo TABLE_INFO =
-      TableInfo.builder(TABLE_ID, TABLE_SCHEMA)
-          .creationTime(CREATION_TIME)
-          .description(DESCRIPTION)
-          .etag(ETAG)
-          .id(ID)
-          .location(LOCATION)
-          .streamingBuffer(STREAMING_BUFFER)
-          .build();
-  private static final ViewInfo VIEW_INFO =
-      ViewInfo.builder(TABLE_ID, "QUERY")
-          .creationTime(CREATION_TIME)
-          .description(DESCRIPTION)
-          .etag(ETAG)
-          .id(ID)
-          .build();
-  private static final ExternalTableInfo EXTERNAL_TABLE_INFO =
-      ExternalTableInfo.builder(TABLE_ID, EXTERNAL_DATA_CONFIGURATION)
+  private static final TableDefinition TABLE_DEFINITION = StandardTableDefinition.builder()
+      .schema(TABLE_SCHEMA)
+      .location(LOCATION)
+      .streamingBuffer(STREAMING_BUFFER)
+      .build();
+  private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, TABLE_DEFINITION)
+      .creationTime(CREATION_TIME)
+      .description(DESCRIPTION)
+      .etag(ETAG)
+      .id(ID)
+      .build();
+  private static final TableDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
+  private static final TableInfo VIEW_INFO = TableInfo.builder(TABLE_ID, VIEW_DEFINITION)
+      .creationTime(CREATION_TIME)
+      .description(DESCRIPTION)
+      .etag(ETAG)
+      .id(ID)
+      .build();
+  private static final TableInfo EXTERNAL_TABLE_INFO =
+      TableInfo.builder(TABLE_ID, EXTERNAL_TABLE_DEFINITION)
           .creationTime(CREATION_TIME)
           .description(DESCRIPTION)
           .etag(ETAG)
@@ -244,10 +246,11 @@ public class SerializationTest {
   @Test
   public void testModelAndRequests() throws Exception {
     Serializable[] objects = {DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
-        DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, EXTERNAL_DATA_CONFIGURATION,
-        TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION,
-        JOB_STATISTICS, EXTRACT_STATISTICS, LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR,
-        JOB_STATUS, JOB_ID, COPY_JOB_CONFIGURATION, EXTRACT_JOB_CONFIGURATION, LOAD_CONFIGURATION,
+        DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, TABLE_DEFINITION,
+        EXTERNAL_TABLE_DEFINITION, VIEW_DEFINITION, TABLE_SCHEMA, TABLE_INFO, VIEW_INFO,
+        EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION, JOB_STATISTICS, EXTRACT_STATISTICS,
+        LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR, JOB_STATUS, JOB_ID,
+        COPY_JOB_CONFIGURATION, EXTRACT_JOB_CONFIGURATION, LOAD_CONFIGURATION,
         LOAD_JOB_CONFIGURATION, QUERY_JOB_CONFIGURATION, JOB_INFO, INSERT_ALL_REQUEST,
         INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE,
         BigQuery.DatasetOption.fields(), BigQuery.DatasetDeleteOption.deleteContents(),
