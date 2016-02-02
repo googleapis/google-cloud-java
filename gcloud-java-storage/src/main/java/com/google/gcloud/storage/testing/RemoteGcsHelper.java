@@ -17,16 +17,14 @@
 package com.google.gcloud.storage.testing;
 
 import com.google.gcloud.AuthCredentials;
-import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.StorageOptions;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -39,14 +37,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Utility to create a remote storage configuration for testing
+ * Utility to create a remote storage configuration for testing. Storage options can be obtained via
+ * the {@link #options()} method. Returned options have custom {@link StorageOptions#retryParams()}:
+ * {@link RetryParams#retryMaxAttempts()} is {@code 10}, {@link RetryParams#retryMinAttempts()} is
+ * {@code 6}, {@link RetryParams#maxRetryDelayMillis()} is {@code 30000},
+ * {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
+ * {@link RetryParams#initialRetryDelayMillis()} is {@code 250}.
+ * {@link StorageOptions#connectTimeout()} and {@link StorageOptions#readTimeout()} are both set
+ * to {@code 60000}.
  */
 public class RemoteGcsHelper {
 
   private static final Logger log = Logger.getLogger(RemoteGcsHelper.class.getName());
   private static final String BUCKET_NAME_PREFIX = "gcloud-test-bucket-temp-";
-  private static final String PROJECT_ID_ENV_VAR = "GCLOUD_TESTS_PROJECT_ID";
-  private static final String PRIVATE_KEY_ENV_VAR = "GCLOUD_TESTS_KEY";
   private final StorageOptions options;
 
   private RemoteGcsHelper(StorageOptions options) {
@@ -62,13 +65,16 @@ public class RemoteGcsHelper {
 
   /**
    * Deletes a bucket, even if non-empty. Objects in the bucket are listed and deleted until bucket
-   * deletion succeeds or {@code timeout} expires.
+   * deletion succeeds or {@code timeout} expires. To allow for the timeout, this method uses a
+   * separate thread to send the delete requests. Use
+   * {@link #forceDelete(Storage storage, String bucket)} if spawning an additional thread is
+   * undesirable, such as in the App Engine production runtime.
    *
    * @param storage the storage service to be used to issue requests
    * @param bucket the bucket to be deleted
    * @param timeout the maximum time to wait
    * @param unit the time unit of the timeout argument
-   * @return true if deletion succeeded, false if timeout expired.
+   * @return true if deletion succeeded, false if timeout expired
    * @throws InterruptedException if the thread deleting the bucket is interrupted while waiting
    * @throws ExecutionException if an exception was thrown while deleting bucket or bucket objects
    */
@@ -86,6 +92,17 @@ public class RemoteGcsHelper {
   }
 
   /**
+   * Deletes a bucket, even if non-empty. This method blocks until the deletion completes or fails.
+   *
+   * @param storage the storage service to be used to issue requests
+   * @param bucket the bucket to be deleted
+   * @throws StorageException if an exception is encountered during bucket deletion
+   */
+  public static void forceDelete(Storage storage, String bucket) {
+    new DeleteBucketTask(storage, bucket).call();
+  }
+
+  /**
    * Returns a bucket name generated using a random UUID.
    */
   public static String generateBucketName() {
@@ -97,7 +114,7 @@ public class RemoteGcsHelper {
    *
    * @param projectId id of the project to be used for running the tests
    * @param keyStream input stream for a JSON key
-   * @return A {@code RemoteGcsHelper} object for the provided options.
+   * @return A {@code RemoteGcsHelper} object for the provided options
    * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if
    *     {@code keyStream} is not a valid JSON key stream
    */
@@ -107,13 +124,7 @@ public class RemoteGcsHelper {
       StorageOptions storageOptions = StorageOptions.builder()
           .authCredentials(AuthCredentials.createForJson(keyStream))
           .projectId(projectId)
-          .retryParams(RetryParams.builder()
-              .retryMaxAttempts(10)
-              .retryMinAttempts(6)
-              .maxRetryDelayMillis(30000)
-              .totalRetryPeriodMillis(120000)
-              .initialRetryDelayMillis(250)
-              .build())
+          .retryParams(retryParams())
           .connectTimeout(60000)
           .readTimeout(60000)
           .build();
@@ -127,59 +138,26 @@ public class RemoteGcsHelper {
   }
 
   /**
-   * Creates a {@code RemoteGcsHelper} object for the given project id and JSON key path.
-   *
-   * @param projectId id of the project to be used for running the tests
-   * @param keyPath path to the JSON key to be used for running the tests
-   * @return A {@code RemoteGcsHelper} object for the provided options.
-   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if the file
-   *     pointed by {@code keyPath} does not exist
-   */
-  public static RemoteGcsHelper create(String projectId, String keyPath)
-      throws GcsHelperException {
-    try {
-      InputStream keyFileStream = new FileInputStream(keyPath);
-      return create(projectId, keyFileStream);
-    } catch (FileNotFoundException ex) {
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, ex.getMessage());
-      }
-      throw GcsHelperException.translate(ex);
-    } catch (IOException ex) {
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, ex.getMessage());
-      }
-      throw GcsHelperException.translate(ex);
-    }
-  }
-
-  /**
-   * Creates a {@code RemoteGcsHelper} object. Project id and path to JSON key are read from two
-   * environment variables: {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY}.
-   *
-   * @return A {@code RemoteGcsHelper} object for the provided options.
-   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if environment
-   *     variables {@code GCLOUD_TESTS_PROJECT_ID} and {@code GCLOUD_TESTS_KEY} are not set or if
-   *     the file pointed by {@code GCLOUD_TESTS_KEY} does not exist
+   * Creates a {@code RemoteGcsHelper} object using default project id and authentication
+   * credentials.
    */
   public static RemoteGcsHelper create() throws GcsHelperException {
-    String projectId = System.getenv(PROJECT_ID_ENV_VAR);
-    String keyPath = System.getenv(PRIVATE_KEY_ENV_VAR);
-    if (projectId == null) {
-      String message = "Environment variable " + PROJECT_ID_ENV_VAR + " not set";
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, message);
-      }
-      throw new GcsHelperException(message);
-    }
-    if (keyPath == null) {
-      String message = "Environment variable " + PRIVATE_KEY_ENV_VAR + " not set";
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, message);
-      }
-      throw new GcsHelperException(message);
-    }
-    return create(projectId, keyPath);
+    StorageOptions storageOptions = StorageOptions.builder()
+        .retryParams(retryParams())
+        .connectTimeout(60000)
+        .readTimeout(60000)
+        .build();
+    return new RemoteGcsHelper(storageOptions);
+  }
+
+  private static RetryParams retryParams() {
+    return RetryParams.builder()
+        .retryMaxAttempts(10)
+        .retryMinAttempts(6)
+        .maxRetryDelayMillis(30000)
+        .totalRetryPeriodMillis(120000)
+        .initialRetryDelayMillis(250)
+        .build();
   }
 
   private static class DeleteBucketTask implements Callable<Boolean> {
@@ -193,9 +171,9 @@ public class RemoteGcsHelper {
     }
 
     @Override
-    public Boolean call() throws Exception {
+    public Boolean call() {
       while (true) {
-        for (BlobInfo info : storage.list(bucket)) {
+        for (BlobInfo info : storage.list(bucket).values()) {
           storage.delete(bucket, info.name());
         }
         try {
@@ -203,7 +181,12 @@ public class RemoteGcsHelper {
           return true;
         } catch (StorageException e) {
           if (e.code() == 409) {
-            Thread.sleep(500);
+            try {
+              Thread.sleep(500);
+            } catch (InterruptedException interruptedException) {
+              Thread.currentThread().interrupt();
+              throw e;
+            }
           } else {
             throw e;
           }

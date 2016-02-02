@@ -23,7 +23,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.spi.DatastoreRpc;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
 import com.google.gcloud.spi.DatastoreRpcFactory;
 import com.google.gcloud.spi.DefaultDatastoreRpc;
 
@@ -32,19 +31,38 @@ import java.util.Iterator;
 import java.util.Objects;
 import java.util.Set;
 
-public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOptions> {
+public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, DatastoreOptions> {
 
-  private static final long serialVersionUID = -8636602944160689193L;
+  private static final long serialVersionUID = 5056049000758143852L;
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final String USERINFO_SCOPE = "https://www.googleapis.com/auth/userinfo.email";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE, USERINFO_SCOPE);
 
   private final String namespace;
   private final boolean normalizeDataset;
-  private transient DatastoreRpc datastoreRpc;
+
+  public static class DefaultDatastoreFactory implements DatastoreFactory {
+
+    private static final DatastoreFactory INSTANCE = new DefaultDatastoreFactory();
+
+    @Override
+    public Datastore create(DatastoreOptions options) {
+      return new DatastoreImpl(options);
+    }
+  }
+
+  public static class DefaultDatastoreRpcFactory implements DatastoreRpcFactory {
+
+    private static final DatastoreRpcFactory INSTANCE = new DefaultDatastoreRpcFactory();
+
+    @Override
+    public DatastoreRpc create(DatastoreOptions options) {
+      return new DefaultDatastoreRpc(options);
+    }
+  }
 
   public static class Builder extends
-      ServiceOptions.Builder<DatastoreRpc, DatastoreOptions, Builder> {
+      ServiceOptions.Builder<Datastore, DatastoreRpc, DatastoreOptions, Builder> {
 
     private String namespace;
     private boolean normalizeDataset = true;
@@ -76,7 +94,7 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
   }
 
   private DatastoreOptions(Builder builder) {
-    super(builder);
+    super(DatastoreFactory.class, DatastoreRpcFactory.class, builder);
     normalizeDataset = builder.normalizeDataset;
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
   }
@@ -89,34 +107,29 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     Builder builder = toBuilder();
     builder.normalizeDataset(false);
     // Replace provided project-id with full project-id (s~xxx, e~xxx,...)
-    com.google.datastore.v1beta3.LookupRequest.Builder requestPb = 
+    com.google.datastore.v1beta3.LookupRequest.Builder requestPb =
         com.google.datastore.v1beta3.LookupRequest.newBuilder();
     com.google.datastore.v1beta3.Key key = com.google.datastore.v1beta3.Key.newBuilder()
         .addPath(com.google.datastore.v1beta3.Key.PathElement.newBuilder()
-            .setKind("__foo__").setName("bar"))
+        .setKind("__foo__").setName("bar"))
         .build();
     requestPb.addKeys(key);
-    try {
-      com.google.datastore.v1beta3.LookupResponse responsePb = 
-          datastoreRpc().lookup(requestPb.build());
-      if (responsePb.getDeferredCount() > 0) {
-        key = responsePb.getDeferred(0);
-      } else {
-        Iterator<com.google.datastore.v1beta3.EntityResult> combinedIter =
-            Iterables.concat(responsePb.getMissingList(), responsePb.getFoundList()).iterator();
-        key = combinedIter.next().getEntity().getKey();
-      }
-      builder.projectId(key.getPartitionId().getProjectId());
-      return new DatastoreOptions(builder);
-    } catch (DatastoreRpcException e) {
-      throw DatastoreException.translateAndThrow(e);
+    com.google.datastore.v1beta3.LookupResponse responsePb = rpc().lookup(requestPb.build());
+    if (responsePb.getDeferredCount() > 0) {
+      key = responsePb.getDeferred(0);
+    } else {
+      Iterator<com.google.datastore.v1beta3.EntityResult> combinedIter =
+          Iterables.concat(responsePb.getMissingList(), responsePb.getFoundList()).iterator();
+      key = combinedIter.next().getEntity().getKey();
     }
+    builder.projectId(key.getPartitionId().getProjectId());
+    return new DatastoreOptions(builder);
   }
 
   @Override
   protected String defaultHost() {
     String host = System.getProperty(
-        com.google.datastore.v1beta3.client.DatastoreHelper.LOCAL_HOST_ENV_VAR, 
+        com.google.datastore.v1beta3.client.DatastoreHelper.LOCAL_HOST_ENV_VAR,
         System.getenv(com.google.datastore.v1beta3.client.DatastoreHelper.LOCAL_HOST_ENV_VAR));
     return host != null ? host : super.defaultHost();
   }
@@ -132,13 +145,30 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     return projectId != null ? projectId : super.defaultProject();
   }
 
+  @SuppressWarnings("unchecked")
+  @Override
+  protected DatastoreFactory defaultServiceFactory() {
+    return DefaultDatastoreFactory.INSTANCE;
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  protected DatastoreRpcFactory defaultRpcFactory() {
+    return DefaultDatastoreRpcFactory.INSTANCE;
+  }
+
   public String namespace() {
     return namespace;
   }
 
+  /**
+   * Returns a default {@code DatastoreOptions} instance.
+   */
+  public static DatastoreOptions defaultInstance() {
+    return builder().build();
+  }
+
   private static String defaultNamespace() {
-    // TODO(ozarov): An alternative to reflection would be to depend on AE api jar:
-    // http://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk/1.2.0
     try {
       Class<?> clazz = Class.forName("com.google.appengine.api.NamespaceManager");
       Method method = clazz.getMethod("get");
@@ -155,6 +185,7 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     return SCOPES;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -173,25 +204,6 @@ public class DatastoreOptions extends ServiceOptions<DatastoreRpc, DatastoreOpti
     DatastoreOptions other = (DatastoreOptions) obj;
     return baseEquals(other) && Objects.equals(namespace, other.namespace)
         && Objects.equals(normalizeDataset, other.normalizeDataset);
-  }
-
-  DatastoreRpc datastoreRpc() {
-    if (datastoreRpc != null) {
-      return datastoreRpc;
-    }
-    if (serviceRpcFactory() != null) {
-      datastoreRpc = serviceRpcFactory().create(this);
-    } else {
-      datastoreRpc = createRpc(this, DatastoreRpcFactory.class);
-      if (datastoreRpc == null) {
-        datastoreRpc = new DefaultDatastoreRpc(this);
-      }
-    }
-    return datastoreRpc;
-  }
-
-  public static DatastoreOptions defaultInstance() {
-    return builder().build();
   }
 
   public static Builder builder() {

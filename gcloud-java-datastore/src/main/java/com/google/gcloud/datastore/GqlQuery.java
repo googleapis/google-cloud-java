@@ -116,8 +116,8 @@ public final class GqlQuery<V> extends Query<V> {
     }
 
     @Override
-    protected com.google.datastore.v1beta3.GqlQueryParameter toPb() {
-      com.google.datastore.v1beta3.GqlQueryParameter.Builder argPb = 
+    com.google.datastore.v1beta3.GqlQueryParameter toPb() {
+      com.google.datastore.v1beta3.GqlQueryParameter.Builder argPb =
           com.google.datastore.v1beta3.GqlQueryParameter.newBuilder();
       if (cursor != null) {
         argPb.setCursor(cursor.byteString());
@@ -129,7 +129,7 @@ public final class GqlQuery<V> extends Query<V> {
     }
 
     @Override
-    protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+    Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
       return fromPb(com.google.datastore.v1beta3.GqlQueryParameter.parseFrom(bytesPb));
     }
 
@@ -357,12 +357,12 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   @Override
-  protected com.google.datastore.v1beta3.GqlQuery toPb() {
-    com.google.datastore.v1beta3.GqlQuery.Builder queryPb = 
+  com.google.datastore.v1beta3.GqlQuery toPb() {
+    com.google.datastore.v1beta3.GqlQuery.Builder queryPb =
         com.google.datastore.v1beta3.GqlQuery.newBuilder();
     queryPb.setQueryString(queryString);
     queryPb.setAllowLiterals(allowLiteral);
-    Map<String, com.google.datastore.v1beta3.GqlQueryParameter> namedBindingsPb = 
+    Map<String, com.google.datastore.v1beta3.GqlQueryParameter> namedBindingsPb =
         queryPb.getMutableNamedBindings();
     for (Map.Entry<String, Binding> entry : namedBindings.entrySet()) {
       namedBindingsPb.put(entry.getKey(), entry.getValue().toPb());
@@ -374,18 +374,18 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   @Override
-  protected void populatePb(com.google.datastore.v1beta3.RunQueryRequest.Builder requestPb) {
+  void populatePb(com.google.datastore.v1beta3.RunQueryRequest.Builder requestPb) {
     requestPb.setGqlQuery(toPb());
   }
 
   @Override
-  protected Query<V> nextQuery(com.google.datastore.v1beta3.RunQueryResponse responsePb) {
+  Query<V> nextQuery(com.google.datastore.v1beta3.RunQueryResponse responsePb) {
     return StructuredQuery.<V>fromPb(type(), namespace(), responsePb.getQuery())
         .nextQuery(responsePb);
   }
 
   @Override
-  protected Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
+  Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
     return fromPb(resultType, namespace, com.google.datastore.v1beta3.GqlQuery.parseFrom(bytesPb));
   }

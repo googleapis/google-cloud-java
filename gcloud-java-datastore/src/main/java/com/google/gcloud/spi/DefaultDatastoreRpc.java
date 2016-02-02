@@ -16,37 +16,19 @@
 
 package com.google.gcloud.spi;
 
-import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.datastore.DatastoreException;
 import com.google.gcloud.datastore.DatastoreOptions;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
 
+import java.io.IOException;
 import java.net.InetAddress;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.UnknownHostException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class DefaultDatastoreRpc implements DatastoreRpc {
 
   private final com.google.datastore.v1beta3.client.Datastore client;
 
-  private static final ImmutableMap<String, Reason> STR_TO_REASON;
-  private static final ImmutableMap<Integer, Reason> HTTP_STATUS_TO_REASON;
-
-  static {
-    ImmutableMap.Builder<String, Reason> builder = ImmutableMap.builder();
-    Map<Integer, Reason> httpCodes = new HashMap<>();
-    for (Reason reason : Reason.values()) {
-      builder.put(reason.name(), reason);
-      httpCodes.put(reason.httpStatus(), reason);
-    }
-    STR_TO_REASON = builder.build();
-    HTTP_STATUS_TO_REASON = ImmutableMap.copyOf(httpCodes);
-  }
-
   public DefaultDatastoreRpc(DatastoreOptions options) {
-    com.google.datastore.v1beta3.client.DatastoreOptions.Builder clientBuilder = 
+    com.google.datastore.v1beta3.client.DatastoreOptions.Builder clientBuilder =
         new com.google.datastore.v1beta3.client.DatastoreOptions.Builder()
             .projectId(options.projectId())
             .initializer(options.httpRequestInitializer());
@@ -75,7 +57,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
         String normalizedHost = "http://" + removeScheme(host);
         InetAddress hostAddr = InetAddress.getByName(new URL(normalizedHost).getHost());
         return hostAddr.isAnyLocalAddress() || hostAddr.isLoopbackAddress();
-      } catch (UnknownHostException | MalformedURLException e) {
+      } catch (Exception e) {
         // ignore
       }
     }
@@ -93,37 +75,35 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     return url;
   }
 
-  private static DatastoreRpcException translate(
+  private static DatastoreException translate(
       com.google.datastore.v1beta3.client.DatastoreException exception) {
-    String reasonStr = "";
+    String reason = "";
     if (exception.getCode() != null) {
-      reasonStr = exception.getCode().name();
+      reason = exception.getCode().name();
     }
-    Reason reason = STR_TO_REASON.get(reasonStr);
-    if (reason == null) {
-      reason = HTTP_STATUS_TO_REASON.get(exception.getCode());
+    if (reason.isEmpty()) {
+      if (exception.getCause() instanceof IOException) {
+        return new DatastoreException((IOException) exception.getCause());
+      }
     }
-    return reason != null
-        ? new DatastoreRpcException(reason)
-        : new DatastoreRpcException("Unknown", 
-            exception.getCode().ordinal(), 
-            false, 
-            exception.getMessage());
+    return new DatastoreException(
+        exception.getCode().ordinal(), exception.getMessage(), reason, exception);
   }
 
   @Override
   public com.google.datastore.v1beta3.AllocateIdsResponse allocateIds(
-      com.google.datastore.v1beta3.AllocateIdsRequest request) throws DatastoreRpcException {
+      com.google.datastore.v1beta3.AllocateIdsRequest request) throws DatastoreException {
     try {
       return client.allocateIds(request);
     } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
+
       throw translate(ex);
     }
   }
 
   @Override
   public com.google.datastore.v1beta3.BeginTransactionResponse beginTransaction(
-      com.google.datastore.v1beta3.BeginTransactionRequest request) throws DatastoreRpcException {
+      com.google.datastore.v1beta3.BeginTransactionRequest request) throws DatastoreException {
     try {
       return client.beginTransaction(request);
     } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
@@ -133,7 +113,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
 
   @Override
   public com.google.datastore.v1beta3.CommitResponse commit(
-      com.google.datastore.v1beta3.CommitRequest request) throws DatastoreRpcException {
+      com.google.datastore.v1beta3.CommitRequest request) throws DatastoreException {
     try {
       return client.commit(request);
     } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
@@ -143,7 +123,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
 
   @Override
   public com.google.datastore.v1beta3.LookupResponse lookup(
-      com.google.datastore.v1beta3.LookupRequest request) throws DatastoreRpcException {
+      com.google.datastore.v1beta3.LookupRequest request) throws DatastoreException {
     try {
       return client.lookup(request);
     } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
@@ -153,7 +133,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
 
   @Override
   public com.google.datastore.v1beta3.RollbackResponse rollback(
-      com.google.datastore.v1beta3.RollbackRequest request) throws DatastoreRpcException {
+      com.google.datastore.v1beta3.RollbackRequest request) throws DatastoreException {
     try {
       return client.rollback(request);
     } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
@@ -163,7 +143,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
 
   @Override
   public com.google.datastore.v1beta3.RunQueryResponse runQuery(
-      com.google.datastore.v1beta3.RunQueryRequest request) throws DatastoreRpcException {
+      com.google.datastore.v1beta3.RunQueryRequest request) throws DatastoreException {
     try {
       return client.runQuery(request);
     } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
@@ -171,4 +151,3 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     }
   }
 }
-

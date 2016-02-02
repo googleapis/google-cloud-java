@@ -18,10 +18,14 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.gcloud.storage.Blob.BlobSourceOption.convert;
+import static com.google.gcloud.storage.Blob.BlobSourceOption.toGetOptions;
+import static com.google.gcloud.storage.Blob.BlobSourceOption.toSourceOptions;
 
 import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.gcloud.ReadChannel;
+import com.google.gcloud.WriteChannel;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.BlobWriteOption;
@@ -29,6 +33,7 @@ import com.google.gcloud.storage.Storage.CopyRequest;
 import com.google.gcloud.storage.Storage.SignUrlOption;
 
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
@@ -37,8 +42,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * A Google cloud storage object.
  *
- * <p>
- * Objects of this class are immutable. Operations that modify the blob like {@link #update} and
+ * <p>Objects of this class are immutable. Operations that modify the blob like {@link #update} and
  * {@link #copyTo} return a new object. To get a {@code Blob} object with the most recent
  * information use {@link #reload}.
  * </p>
@@ -48,6 +52,9 @@ public final class Blob {
   private final Storage storage;
   private final BlobInfo info;
 
+  /**
+   * Class for specifying blob source options when {@code Blob} methods are used.
+   */
   public static class BlobSourceOption extends Option {
 
     private static final long serialVersionUID = 214616862061934846L;
@@ -56,7 +63,7 @@ public final class Blob {
       super(rpcOption, null);
     }
 
-    private Storage.BlobSourceOption convert(BlobInfo blobInfo) {
+    private Storage.BlobSourceOption toSourceOptions(BlobInfo blobInfo) {
       switch (rpcOption()) {
         case IF_GENERATION_MATCH:
           return Storage.BlobSourceOption.generationMatch(blobInfo.generation());
@@ -71,27 +78,68 @@ public final class Blob {
       }
     }
 
+    private Storage.BlobGetOption toGetOption(BlobInfo blobInfo) {
+      switch (rpcOption()) {
+        case IF_GENERATION_MATCH:
+          return Storage.BlobGetOption.generationMatch(blobInfo.generation());
+        case IF_GENERATION_NOT_MATCH:
+          return Storage.BlobGetOption.generationNotMatch(blobInfo.generation());
+        case IF_METAGENERATION_MATCH:
+          return Storage.BlobGetOption.metagenerationMatch(blobInfo.metageneration());
+        case IF_METAGENERATION_NOT_MATCH:
+          return Storage.BlobGetOption.metagenerationNotMatch(blobInfo.metageneration());
+        default:
+          throw new AssertionError("Unexpected enum value");
+      }
+    }
+
+    /**
+     * Returns an option for blob's generation match. If this option is used the request will fail
+     * if generation does not match.
+     */
     public static BlobSourceOption generationMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's generation mismatch. If this option is used the request will
+     * fail if generation matches.
+     */
     public static BlobSourceOption generationNotMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration match. If this option is used the request will
+     * fail if metageneration does not match.
+     */
     public static BlobSourceOption metagenerationMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_MATCH);
     }
 
+    /**
+     * Returns an option for blob's metageneration mismatch. If this option is used the request will
+     * fail if metageneration matches.
+     */
     public static BlobSourceOption metagenerationNotMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
 
-    static Storage.BlobSourceOption[] convert(BlobInfo blobInfo, BlobSourceOption... options) {
+    static Storage.BlobSourceOption[] toSourceOptions(BlobInfo blobInfo,
+        BlobSourceOption... options) {
       Storage.BlobSourceOption[] convertedOptions = new Storage.BlobSourceOption[options.length];
       int index = 0;
       for (BlobSourceOption option : options) {
-        convertedOptions[index++] = option.convert(blobInfo);
+        convertedOptions[index++] = option.toSourceOptions(blobInfo);
+      }
+      return convertedOptions;
+    }
+
+    static Storage.BlobGetOption[] toGetOptions(BlobInfo blobInfo, BlobSourceOption... options) {
+      Storage.BlobGetOption[] convertedOptions = new Storage.BlobGetOption[options.length];
+      int index = 0;
+      for (BlobSourceOption option : options) {
+        convertedOptions[index++] = option.toGetOption(blobInfo);
       }
       return convertedOptions;
     }
@@ -100,7 +148,7 @@ public final class Blob {
   /**
    * Constructs a {@code Blob} object for the provided {@code BlobInfo}. The storage service is used
    * to issue requests.
-   * 
+   *
    * @param storage the storage service used for issuing requests
    * @param info blob's info
    */
@@ -111,29 +159,32 @@ public final class Blob {
 
   /**
    * Creates a {@code Blob} object for the provided bucket and blob names. Performs an RPC call to
-   * get the latest blob information.
-   * 
+   * get the latest blob information. Returns {@code null} if the blob does not exist.
+   *
    * @param storage the storage service used for issuing requests
    * @param bucket bucket's name
+   * @param options blob get options
    * @param blob blob's name
-   * @return the {@code Blob} object or {@code null} if not found.
+   * @return the {@code Blob} object or {@code null} if not found
    * @throws StorageException upon failure
    */
-  public static Blob load(Storage storage, String bucket, String blob) {
-    return load(storage, BlobId.of(bucket, blob));
+  public static Blob get(Storage storage, String bucket, String blob,
+      Storage.BlobGetOption... options) {
+    return get(storage, BlobId.of(bucket, blob), options);
   }
 
   /**
    * Creates a {@code Blob} object for the provided {@code blobId}. Performs an RPC call to get the
-   * latest blob information.
-   * 
+   * latest blob information. Returns {@code null} if the blob does not exist.
+   *
    * @param storage the storage service used for issuing requests
    * @param blobId blob's identifier
-   * @return the {@code Blob} object or {@code null} if not found.
+   * @param options blob get options
+   * @return the {@code Blob} object or {@code null} if not found
    * @throws StorageException upon failure
    */
-  public static Blob load(Storage storage, BlobId blobId) {
-    BlobInfo info = storage.get(blobId);
+  public static Blob get(Storage storage, BlobId blobId, Storage.BlobGetOption... options) {
+    BlobInfo info = storage.get(blobId, options);
     return info != null ? new Blob(storage, info) : null;
   }
 
@@ -159,7 +210,10 @@ public final class Blob {
    * @throws StorageException upon failure
    */
   public boolean exists(BlobSourceOption... options) {
-    return storage.get(info.blobId(), convert(info, options)) != null;
+    int length = options.length;
+    Storage.BlobGetOption[] getOptions = Arrays.copyOf(toGetOptions(info, options), length + 1);
+    getOptions[length] = Storage.BlobGetOption.fields();
+    return storage.get(info.blobId(), getOptions) != null;
   }
 
   /**
@@ -173,14 +227,14 @@ public final class Blob {
   }
 
   /**
-   * Fetches current blob's latest information.
+   * Fetches current blob's latest information. Returns {@code null} if the blob does not exist.
    *
    * @param options blob read options
-   * @return a {@code Blob} object with latest information
+   * @return a {@code Blob} object with latest information or {@code null} if not found
    * @throws StorageException upon failure
    */
   public Blob reload(BlobSourceOption... options) {
-    return new Blob(storage, storage.get(info.blobId(), convert(info, options)));
+    return Blob.get(storage, info.blobId(), toGetOptions(info, options));
   }
 
   /**
@@ -190,6 +244,16 @@ public final class Blob {
    * made on the metadata generation of the current blob. If you want to update the information only
    * if the current blob metadata are at their latest version use the {@code metagenerationMatch}
    * option: {@code blob.update(newInfo, BlobTargetOption.metagenerationMatch())}.
+   *
+   * <p>Original metadata are merged with metadata in the provided {@code blobInfo}. To replace
+   * metadata instead you first have to unset them. Unsetting metadata can be done by setting the
+   * provided {@code blobInfo}'s metadata to {@code null}.
+   * </p>
+   *
+   * <p>Example usage of replacing blob's metadata:
+   * <pre>    {@code blob.update(blob.info().toBuilder().metadata(null).build());}
+   *    {@code blob.update(blob.info().toBuilder().metadata(newMetadata).build());}
+   * </pre>
    *
    * @param blobInfo new blob's information. Bucket and blob names must match the current ones
    * @param options update options
@@ -203,81 +267,80 @@ public final class Blob {
   }
 
   /**
-   * Copies this blob to the specified target. Possibly copying also some of the metadata
-   * (e.g. content-type).
-   *
-   * @param targetBlob target blob's id
-   * @param options source blob options
-   * @return the copied blob
-   * @throws StorageException upon failure
-   */
-  public Blob copyTo(BlobId targetBlob, BlobSourceOption... options) {
-    BlobInfo updatedInfo = info.toBuilder().blobId(targetBlob).build();
-    CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
-        .sourceOptions(convert(info, options)).target(updatedInfo).build();
-    return new Blob(storage, storage.copy(copyRequest));
-  }
-
-  /**
    * Deletes this blob.
    *
    * @param options blob delete options
-   * @return true if blob was deleted
+   * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
    */
   public boolean delete(BlobSourceOption... options) {
-    return storage.delete(info.blobId(), convert(info, options));
+    return storage.delete(info.blobId(), toSourceOptions(info, options));
   }
 
   /**
-   * Copies this blob to the target bucket, preserving its name. Possibly copying also some of the
-   * metadata (e.g. content-type).
+   * Sends a copy request for the current blob to the target blob. Possibly also some of the
+   * metadata are copied (e.g. content-type).
+   *
+   * @param targetBlob target blob's id
+   * @param options source blob options
+   * @return a {@link CopyWriter} object that can be used to get information on the newly created
+   *     blob or to complete the copy if more than one RPC request is needed
+   * @throws StorageException upon failure
+   */
+  public CopyWriter copyTo(BlobId targetBlob, BlobSourceOption... options) {
+    CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
+        .sourceOptions(toSourceOptions(info, options)).target(targetBlob).build();
+    return storage.copy(copyRequest);
+  }
+
+  /**
+   * Sends a copy request for the current blob to the target bucket, preserving its name. Possibly
+   * copying also some of the metadata (e.g. content-type).
    *
    * @param targetBucket target bucket's name
    * @param options source blob options
-   * @return the copied blob
+   * @return a {@link CopyWriter} object that can be used to get information on the newly created
+   *     blob or to complete the copy if more than one RPC request is needed
    * @throws StorageException upon failure
    */
-  public Blob copyTo(String targetBucket, BlobSourceOption... options) {
+  public CopyWriter copyTo(String targetBucket, BlobSourceOption... options) {
     return copyTo(targetBucket, info.name(), options);
   }
 
   /**
-   * Copies this blob to the target bucket with a new name. Possibly copying also some of the
-   * metadata (e.g. content-type).
+   * Sends a copy request for the current blob to the target blob. Possibly also some of the
+   * metadata are copied (e.g. content-type).
    *
    * @param targetBucket target bucket's name
    * @param targetBlob target blob's name
    * @param options source blob options
-   * @return the copied blob
+   * @return a {@link CopyWriter} object that can be used to get information on the newly created
+   *     blob or to complete the copy if more than one RPC request is needed
    * @throws StorageException upon failure
    */
-  public Blob copyTo(String targetBucket, String targetBlob, BlobSourceOption... options) {
-    BlobInfo updatedInfo = info.toBuilder().blobId(BlobId.of(targetBucket, targetBlob)).build();
-    CopyRequest copyRequest = CopyRequest.builder().source(info.bucket(), info.name())
-        .sourceOptions(convert(info, options)).target(updatedInfo).build();
-    return new Blob(storage, storage.copy(copyRequest));
+  public CopyWriter copyTo(String targetBucket, String targetBlob, BlobSourceOption... options) {
+    return copyTo(BlobId.of(targetBucket, targetBlob), options);
   }
 
   /**
-   * Returns a {@code BlobReadChannel} object for reading this blob's content.
+   * Returns a {@code ReadChannel} object for reading this blob's content.
    *
    * @param options blob read options
    * @throws StorageException upon failure
    */
-  public BlobReadChannel reader(BlobSourceOption... options) {
-    return storage.reader(info.blobId(), convert(info, options));
+  public ReadChannel reader(BlobSourceOption... options) {
+    return storage.reader(info.blobId(), toSourceOptions(info, options));
   }
 
   /**
-   * Returns a {@code BlobWriteChannel} object for writing to this blob. By default any md5 and
+   * Returns a {@code WriteChannel} object for writing to this blob. By default any md5 and
    * crc32c values in the current blob are ignored unless requested via the
    * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
    *
    * @param options target blob options
    * @throws StorageException upon failure
    */
-  public BlobWriteChannel writer(BlobWriteOption... options) {
+  public WriteChannel writer(BlobWriteOption... options) {
     return storage.writer(info, options);
   }
 
@@ -306,38 +369,63 @@ public final class Blob {
   }
 
   /**
-   * Gets the requested blobs. If {@code infos.length == 0} an empty list is returned. If
-   * {@code infos.length > 1} a batch request is used to fetch blobs.
+   * Gets the requested blobs. A batch request is used to fetch blobs.
    *
    * @param storage the storage service used to issue the request
-   * @param blobs the blobs to get
+   * @param first the first blob to get
+   * @param second the second blob to get
+   * @param other other blobs to get
    * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
-   *     been denied the corresponding item in the list is {@code null}.
+   *     been denied the corresponding item in the list is {@code null}
    * @throws StorageException upon failure
    */
-  public static List<Blob> get(final Storage storage, BlobId... blobs) {
+  public static List<Blob> get(Storage storage, BlobId first, BlobId second, BlobId... other) {
+    checkNotNull(storage);
+    checkNotNull(first);
+    checkNotNull(second);
+    checkNotNull(other);
+    ImmutableList<BlobId> blobs = ImmutableList.<BlobId>builder()
+        .add(first)
+        .add(second)
+        .addAll(Arrays.asList(other))
+        .build();
+    return get(storage, blobs);
+  }
+
+  /**
+   * Gets the requested blobs. A batch request is used to fetch blobs.
+   *
+   * @param storage the storage service used to issue the request
+   * @param blobs list of blobs to get
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
+   *     been denied the corresponding item in the list is {@code null}
+   * @throws StorageException upon failure
+   */
+  public static List<Blob> get(final Storage storage, List<BlobId> blobs) {
     checkNotNull(storage);
     checkNotNull(blobs);
-    if (blobs.length == 0) {
-      return Collections.emptyList();
-    }
-    return Collections.unmodifiableList(Lists.transform(storage.get(blobs),
+    BlobId[] blobArray = blobs.toArray(new BlobId[blobs.size()]);
+    return Collections.unmodifiableList(Lists.transform(storage.get(blobArray),
         new Function<BlobInfo, Blob>() {
           @Override
-          public Blob apply(BlobInfo f) {
-            return f != null ? new Blob(storage, f) : null;
+          public Blob apply(BlobInfo blobInfo) {
+            return blobInfo != null ? new Blob(storage, blobInfo) : null;
           }
         }));
   }
 
   /**
-   * Updates the requested blobs. If {@code infos.length == 0} an empty list is returned. If
-   * {@code infos.length > 1} a batch request is used to update blobs.
+   * Updates the requested blobs. A batch request is used to update blobs. Original metadata are
+   * merged with metadata in the provided {@code BlobInfo} objects. To replace metadata instead
+   * you first have to unset them. Unsetting metadata can be done by setting the provided
+   * {@code BlobInfo} objects metadata to {@code null}. See
+   * {@link #update(com.google.gcloud.storage.BlobInfo,
+   * com.google.gcloud.storage.Storage.BlobTargetOption...) } for a code example.
    *
    * @param storage the storage service used to issue the request
    * @param infos the blobs to update
    * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
-   *     been denied the corresponding item in the list is {@code null}.
+   *     been denied the corresponding item in the list is {@code null}
    * @throws StorageException upon failure
    */
   public static List<Blob> update(final Storage storage, BlobInfo... infos) {
@@ -349,21 +437,20 @@ public final class Blob {
     return Collections.unmodifiableList(Lists.transform(storage.update(infos),
         new Function<BlobInfo, Blob>() {
           @Override
-          public Blob apply(BlobInfo f) {
-            return f != null ? new Blob(storage, f) : null;
+          public Blob apply(BlobInfo blobInfo) {
+            return blobInfo != null ? new Blob(storage, blobInfo) : null;
           }
         }));
   }
 
   /**
-   * Deletes the requested blobs. If {@code infos.length == 0} an empty list is returned. If
-   * {@code infos.length > 1} a batch request is used to delete blobs.
+   * Deletes the requested blobs. A batch request is used to delete blobs.
    *
    * @param storage the storage service used to issue the request
    * @param blobs the blobs to delete
    * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
-   *     list is {@code true}. If deletion failed or access to the resource was denied the item is
-   *     {@code false}.
+   *     list is {@code true}. If a blob was not found, deletion failed or access to the resource
+   *     was denied the corresponding item is {@code false}
    * @throws StorageException upon failure
    */
   public static List<Boolean> delete(Storage storage, BlobId... blobs) {

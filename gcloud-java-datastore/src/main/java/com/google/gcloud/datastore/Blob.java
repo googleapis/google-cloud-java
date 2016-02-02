@@ -33,7 +33,8 @@ import java.nio.ByteBuffer;
  * A Google Cloud Datastore Blob.
  * This class is immutable.
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore Entities, Properties, and Keys</a>
+ * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">
+ *   Google Cloud Datastore Entities, Properties, and Keys</a>
  */
 public final class Blob extends Serializable<com.google.datastore.v1beta3.Value> {
 
@@ -106,7 +107,7 @@ public final class Blob extends Serializable<com.google.datastore.v1beta3.Value>
    *
    * @throws java.nio.ReadOnlyBufferException if the target is read-only
    * @throws java.nio.BufferOverflowException if the target's remaining() space is not large
-   *        enough to hold the data.
+   *        enough to hold the data
    */
   public void copyTo(ByteBuffer target) {
     byteString.copyTo(target);
@@ -144,12 +145,12 @@ public final class Blob extends Serializable<com.google.datastore.v1beta3.Value>
   }
 
   @Override
-  protected com.google.datastore.v1beta3.Value toPb() {
+  com.google.datastore.v1beta3.Value toPb() {
     return com.google.datastore.v1beta3.Value.newBuilder().setBlobValue(byteString).build();
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return new Blob(com.google.datastore.v1beta3.Value.parseFrom(bytesPb).getBlobValue());
   }
 }

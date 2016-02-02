@@ -17,7 +17,6 @@
 package com.google.gcloud.examples;
 
 import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreFactory;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.datastore.DateTime;
 import com.google.gcloud.datastore.Entity;
@@ -26,8 +25,8 @@ import com.google.gcloud.datastore.IncompleteKey;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 import com.google.gcloud.datastore.Query;
-import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.QueryResults;
+import com.google.gcloud.datastore.StructuredQuery;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.datastore.Transaction;
 
@@ -37,11 +36,11 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * An example of using the Google Cloud Datastore.
- * <p>
- * This example adds, display or clear comments for a given user.
- * <p>
- * Steps needed for running the example:<ol>
+ * An example of using Google Cloud Datastore.
+ *
+ * <p>This example adds, display or clear comments for a given user.
+ *
+ * <p>Steps needed for running the example:<ol>
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven - {@code mvn exec:java
@@ -59,6 +58,7 @@ public class DatastoreExample {
 
   private interface DatastoreAction {
     void run(Transaction tx, Key userKey, String... args);
+
     String getRequiredParams();
   }
 
@@ -100,21 +100,31 @@ public class DatastoreExample {
         return;
       }
       System.out.printf("User '%s' has %d comment[s].%n", userKey.name(), user.getLong("count"));
-      // ORDER BY timestamp";
-      String gql = "SELECT * FROM " + COMMENT_KIND + " WHERE __key__ HAS ANCESTOR @1";
-      Query<Entity> query = Query.gqlQueryBuilder(ResultType.ENTITY, gql)
-          .namespace(NAMESPACE)
-          .addBinding(userKey)
-          .build();
-      QueryResults<Entity> results = tx.run(query);
-      // We could have added "ORDER BY timestamp" to the query to avoid the sorting bellow
-      // but that would require adding an ancestor index for timestamp
-      // see: https://cloud.google.com/datastore/docs/tools/indexconfig
+      int limit = 200;
       Map<DateTime, String> sortedComments = new TreeMap<>();
-      while (results.hasNext()) {
-        Entity result = results.next();
-        sortedComments.put(result.getDateTime("timestamp"), result.getString("content"));
+      StructuredQuery<Entity> query =
+          Query.entityQueryBuilder()
+              .namespace(NAMESPACE)
+              .kind(COMMENT_KIND)
+              .filter(PropertyFilter.hasAncestor(userKey))
+              .limit(limit)
+              .build();
+      while (true) {
+        QueryResults<Entity> results = tx.run(query);
+        int resultCount = 0;
+        while (results.hasNext()) {
+          Entity result = results.next();
+          sortedComments.put(result.getDateTime("timestamp"), result.getString("content"));
+          resultCount++;
+        }
+        if (resultCount < limit) {
+          break;
+        }
+        query = query.toBuilder().startCursor(results.cursorAfter()).build();
       }
+      // We could have added "ORDER BY timestamp" to the query to avoid sorting, but that would
+      // require adding an ancestor index for timestamp.
+      // See: https://cloud.google.com/datastore/docs/tools/indexconfig
       for (Map.Entry<DateTime, String> entry : sortedComments.entrySet()) {
         System.out.printf("\t%s: %s%n", entry.getKey(), entry.getValue());
       }
@@ -183,7 +193,7 @@ public class DatastoreExample {
         .namespace(NAMESPACE)
         .build();
     String name = args.length > 1 ? args[1] : System.getProperty("user.name");
-    Datastore datastore = DatastoreFactory.instance().get(options);
+    Datastore datastore = options.service();
     KeyFactory keyFactory = datastore.newKeyFactory().kind(USER_KIND);
     Key key = keyFactory.newKey(name);
     String actionName = args.length > 2 ? args[2].toLowerCase() : DEFAULT_ACTION;
@@ -203,7 +213,7 @@ public class DatastoreExample {
           DatastoreExample.class.getSimpleName(), actionAndParams);
       return;
     }
-    args = args.length > 3 ? Arrays.copyOfRange(args, 3, args.length): new String []{};
+    args = args.length > 3 ? Arrays.copyOfRange(args, 3, args.length) : new String []{};
     Transaction tx = datastore.newTransaction();
     try {
       action.run(tx, key, args);

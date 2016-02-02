@@ -23,7 +23,10 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- *  Access Control List on for buckets or blobs.
+ * Access Control List for buckets or blobs.
+ *
+ * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+ *     About Access Control Lists</a>
  */
 public final class Acl implements Serializable {
 
@@ -36,7 +39,10 @@ public final class Acl implements Serializable {
     OWNER, READER, WRITER
   }
 
-  public static abstract class Entity implements Serializable {
+  /**
+   * Base class for Access Control List entities.
+   */
+  public abstract static class Entity implements Serializable {
 
     private static final long serialVersionUID = -2707407252771255840L;
 
@@ -52,25 +58,30 @@ public final class Acl implements Serializable {
       this.value = value;
     }
 
+    /**
+     * Returns the type of entity.
+     */
     public Type type() {
       return type;
     }
 
+    /**
+     * Returns the entity's value.
+     */
     protected String value() {
       return value;
     }
 
     @Override
-    public boolean equals(Object o) {
-      if (this == o) {
+    public boolean equals(Object obj) {
+      if (this == obj) {
         return true;
       }
-      if (o == null || getClass() != o.getClass()) {
+      if (obj == null || getClass() != obj.getClass()) {
         return false;
       }
-      Entity entity = (Entity) o;
-      return Objects.equals(type, entity.type) &&
-          Objects.equals(value, entity.value);
+      Entity entity = (Entity) obj;
+      return Objects.equals(type, entity.type) && Objects.equals(value, entity.value);
     }
 
     @Override
@@ -113,42 +124,75 @@ public final class Acl implements Serializable {
     }
   }
 
+  /**
+   * Class for ACL Domain entities.
+   */
   public static final class Domain extends Entity {
 
     private static final long serialVersionUID = -3033025857280447253L;
 
+    /**
+     * Creates a domain entity.
+     *
+     * @param domain the domain associated to this entity
+     */
     public Domain(String domain) {
       super(Type.DOMAIN, domain);
     }
 
+    /**
+     * Returns the domain associated to this entity.
+     */
     public String domain() {
       return value();
     }
   }
 
+  /**
+   * Class for ACL Group entities.
+   */
   public static final class Group extends Entity {
 
     private static final long serialVersionUID = -1660987136294408826L;
 
+    /**
+     * Creates a group entity.
+     *
+     * @param email the group email
+     */
     public Group(String email) {
       super(Type.GROUP, email);
     }
 
+    /**
+     * Returns the group email.
+     */
     public String email() {
       return value();
     }
   }
 
+  /**
+   * Class for ACL User entities.
+   */
   public static final class User extends Entity {
 
     private static final long serialVersionUID = 3076518036392737008L;
     private static final String ALL_USERS = "allUsers";
     private static final String ALL_AUTHENTICATED_USERS = "allAuthenticatedUsers";
 
+    /**
+     * Creates a user entity.
+     *
+     * @param email the user email
+     */
     public User(String email) {
       super(Type.USER, email);
     }
 
+    /**
+     * Returns the user email.
+     */
     public String email() {
       return value();
     }
@@ -175,27 +219,42 @@ public final class Acl implements Serializable {
     }
   }
 
+  /**
+   * Class for ACL Project entities.
+   */
   public static final class Project extends Entity {
 
     private static final long serialVersionUID = 7933776866530023027L;
 
-    private final ProjectRole pRole;
+    private final ProjectRole projectRole;
     private final String projectId;
 
     public enum ProjectRole {
       OWNERS, EDITORS, VIEWERS
     }
 
-    public Project(ProjectRole pRole, String projectId) {
-      super(Type.PROJECT, pRole.name().toLowerCase() + "-" + projectId);
-      this.pRole = pRole;
+    /**
+     * Creates a project entity.
+     *
+     * @param projectRole a role in the project, used to select project's teams
+     * @param projectId id of the project
+     */
+    public Project(ProjectRole projectRole, String projectId) {
+      super(Type.PROJECT, projectRole.name().toLowerCase() + "-" + projectId);
+      this.projectRole = projectRole;
       this.projectId = projectId;
     }
 
+    /**
+     * Returns the role in the project for this entity.
+     */
     public ProjectRole projectRole() {
-      return pRole;
+      return projectRole;
     }
 
+    /**
+     * Returns the project id for this entity.
+     */
     public String projectId() {
       return projectId;
     }
@@ -215,17 +274,33 @@ public final class Acl implements Serializable {
     }
   }
 
-  public Acl(Entity entity, Role role) {
+  private Acl(Entity entity, Role role) {
     this.entity = entity;
     this.role = role;
   }
 
+  /**
+   * Returns the entity for this ACL object.
+   */
   public Entity entity() {
     return entity;
   }
 
+  /**
+   * Returns the role associated to the entity in this ACL object.
+   */
   public Role role() {
     return role;
+  }
+
+  /**
+   * Returns an Acl object.
+   *
+   * @param entity the entity for this ACL object
+   * @param role the role to associate to the {@code entity} object
+   */
+  public static Acl of(Entity entity, Role role) {
+    return new Acl(entity, role);
   }
 
   @Override
@@ -262,11 +337,11 @@ public final class Acl implements Serializable {
 
   static Acl fromPb(ObjectAccessControl objectAccessControl) {
     Role role = Role.valueOf(objectAccessControl.getRole());
-    return new Acl(Entity.fromPb(objectAccessControl.getEntity()), role);
+    return Acl.of(Entity.fromPb(objectAccessControl.getEntity()), role);
   }
 
   static Acl fromPb(BucketAccessControl bucketAccessControl) {
     Role role = Role.valueOf(bucketAccessControl.getRole());
-    return new Acl(Entity.fromPb(bucketAccessControl.getEntity()), role);
+    return Acl.of(Entity.fromPb(bucketAccessControl.getEntity()), role);
   }
 }

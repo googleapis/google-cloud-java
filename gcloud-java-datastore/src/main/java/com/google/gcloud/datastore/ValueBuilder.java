@@ -18,6 +18,10 @@ package com.google.gcloud.datastore;
 
 /**
  * A common interface for Value builders.
+ *
+ * @param <V> the data type that the {@code Value} object holds.
+ * @param <P> the value type.
+ * @param <B> the value type's associated builder.
  */
 public interface ValueBuilder<V, P extends Value<V>, B extends ValueBuilder<V, P, B>> {
 

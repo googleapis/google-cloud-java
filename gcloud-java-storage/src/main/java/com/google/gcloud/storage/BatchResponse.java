@@ -113,7 +113,7 @@ public final class BatchResponse implements Serializable {
     }
   }
 
-  public BatchResponse(List<Result<Boolean>> deleteResult, List<Result<BlobInfo>> updateResult,
+  BatchResponse(List<Result<Boolean>> deleteResult, List<Result<BlobInfo>> updateResult,
       List<Result<BlobInfo>> getResult) {
     this.deleteResult = ImmutableList.copyOf(deleteResult);
     this.updateResult = ImmutableList.copyOf(updateResult);
@@ -133,7 +133,7 @@ public final class BatchResponse implements Serializable {
     BatchResponse other = (BatchResponse) obj;
     return Objects.equals(deleteResult, other.deleteResult)
         && Objects.equals(updateResult, other.updateResult)
-        && Objects.equals(updateResult, other.updateResult);
+        && Objects.equals(getResult, other.getResult);
   }
 
   /**

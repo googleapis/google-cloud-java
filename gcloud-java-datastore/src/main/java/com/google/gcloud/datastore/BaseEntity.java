@@ -21,8 +21,8 @@ import static com.google.gcloud.datastore.BooleanValue.of;
 import static com.google.gcloud.datastore.DateTimeValue.of;
 import static com.google.gcloud.datastore.DoubleValue.of;
 import static com.google.gcloud.datastore.EntityValue.of;
-import static com.google.gcloud.datastore.LatLngValue.of;
 import static com.google.gcloud.datastore.KeyValue.of;
+import static com.google.gcloud.datastore.LatLngValue.of;
 import static com.google.gcloud.datastore.ListValue.of;
 import static com.google.gcloud.datastore.LongValue.of;
 import static com.google.gcloud.datastore.NullValue.of;
@@ -48,7 +48,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
  *     Entities, Properties, and Keys</a>
  */
-public abstract class BaseEntity<K extends IncompleteKey> 
+public abstract class BaseEntity<K extends IncompleteKey>
     extends Serializable<com.google.datastore.v1beta3.Entity> {
 
   private static final long serialVersionUID = 8175618724683792766L;
@@ -91,7 +91,7 @@ public abstract class BaseEntity<K extends IncompleteKey>
     }
 
     @SuppressWarnings("unchecked")
-    protected B fill(com.google.datastore.v1beta3.Entity entityPb) {
+    B fill(com.google.datastore.v1beta3.Entity entityPb) {
       Map<String, Value<?>> copiedProperties = Maps.newHashMap();
       for (Map.Entry<String, com.google.datastore.v1beta3.Value> entry :
         entityPb.getProperties().entrySet()) {
@@ -250,7 +250,7 @@ public abstract class BaseEntity<K extends IncompleteKey>
   /**
    * Returns the {@link Value} for the given property {@code name}.
    *
-   * @throws DatastoreException if not such property.
+   * @throws DatastoreException if not such property
    */
   public <V extends Value<?>> V getValue(String name) {
     @SuppressWarnings("unchecked")
@@ -264,7 +264,7 @@ public abstract class BaseEntity<K extends IncompleteKey>
   /**
    * Returns true if property is an instance of NullValue.
    *
-   * @throws DatastoreException if not such property.
+   * @throws DatastoreException if not such property
    */
   public boolean isNull(String name) {
     return getValue(name) instanceof NullValue;
@@ -274,8 +274,8 @@ public abstract class BaseEntity<K extends IncompleteKey>
   /**
    * Returns the property value as a string.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a string.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a string
    */
   @SuppressWarnings("unchecked")
   public String getString(String name) {
@@ -285,8 +285,8 @@ public abstract class BaseEntity<K extends IncompleteKey>
   /**
    * Returns the property value as long.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a long.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a long
    */
   @SuppressWarnings("unchecked")
   public long getLong(String name) {
@@ -296,8 +296,8 @@ public abstract class BaseEntity<K extends IncompleteKey>
   /**
    * Returns the property value as a double.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a double.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a double
    */
   @SuppressWarnings("unchecked")
   public double getDouble(String name) {
@@ -307,8 +307,8 @@ public abstract class BaseEntity<K extends IncompleteKey>
   /**
    * Returns the property value as a boolean.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a boolean.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a boolean
    */
   @SuppressWarnings("unchecked")
   public boolean getBoolean(String name) {
@@ -318,8 +318,8 @@ public abstract class BaseEntity<K extends IncompleteKey>
   /**
    * Returns the property value as a DateTime.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a DateTime.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a DateTime
    */
   @SuppressWarnings("unchecked")
   public DateTime getDateTime(String name) {
@@ -340,8 +340,8 @@ public abstract class BaseEntity<K extends IncompleteKey>
   /**
    * Returns the property value as a Key.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a Key.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a Key
    */
   @SuppressWarnings("unchecked")
   public Key getKey(String name) {
@@ -351,8 +351,8 @@ public abstract class BaseEntity<K extends IncompleteKey>
   /**
    * Returns the property value as an entity.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not an entity.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not an entity
    */
   @SuppressWarnings("unchecked")
   public <K extends IncompleteKey> FullEntity<K> getEntity(String name) {
@@ -362,8 +362,8 @@ public abstract class BaseEntity<K extends IncompleteKey>
   /**
    * Returns the property value as a list of values.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a list of values.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a list of values
    */
   @SuppressWarnings("unchecked")
   public List<? extends Value<?>> getList(String name) {
@@ -373,8 +373,8 @@ public abstract class BaseEntity<K extends IncompleteKey>
   /**
    * Returns the property value as a blob.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a blob.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a blob
    */
   @SuppressWarnings("unchecked")
   public Blob getBlob(String name) {
@@ -393,7 +393,7 @@ public abstract class BaseEntity<K extends IncompleteKey>
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     Builder<?, ?> builder = emptyBuilder();
     builder.fill(com.google.datastore.v1beta3.Entity.parseFrom(bytesPb));
     return builder.build();
@@ -402,8 +402,8 @@ public abstract class BaseEntity<K extends IncompleteKey>
   protected abstract Builder<?, ?> emptyBuilder();
 
   @Override
-  protected final com.google.datastore.v1beta3.Entity toPb() {
-    com.google.datastore.v1beta3.Entity.Builder entityPb = 
+  final com.google.datastore.v1beta3.Entity toPb() {
+    com.google.datastore.v1beta3.Entity.Builder entityPb =
         com.google.datastore.v1beta3.Entity.newBuilder();
     Map<String, com.google.datastore.v1beta3.Value> propertiesPb = entityPb.getMutableProperties();
     for (Map.Entry<String, Value<?>> entry : properties.entrySet()) {

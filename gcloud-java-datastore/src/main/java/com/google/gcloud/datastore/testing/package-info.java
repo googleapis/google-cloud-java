@@ -25,9 +25,9 @@
  *     .projectId(PROJECT_ID)
  *     .host("localhost:8080")
  *     .build();
- * Datastore localDatastore = DatastoreFactory.instance().get(options);
+ * Datastore localDatastore = options.service();
  * } </pre>
- * 
+ *
  * <p>After the test:
  * <pre> {@code
  * gcdHelper.stop();

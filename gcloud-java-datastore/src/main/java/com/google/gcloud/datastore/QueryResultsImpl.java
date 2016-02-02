@@ -39,7 +39,6 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   private Iterator<com.google.datastore.v1beta3.EntityResult> entityResultPbIter;
   private ByteString cursor;
 
-
   QueryResultsImpl(DatastoreImpl datastore, com.google.datastore.v1beta3.ReadOptions readOptionsPb,
                    Query<T> query) {
     this.datastore = datastore;
@@ -94,6 +93,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
       sendRequest();
     }
     if (!entityResultPbIter.hasNext()) {
+      cursor = runQueryResponsePb.getBatch().getEndCursor();
       return endOfData();
     }
     com.google.datastore.v1beta3.EntityResult entityResultPb = entityResultPbIter.next();

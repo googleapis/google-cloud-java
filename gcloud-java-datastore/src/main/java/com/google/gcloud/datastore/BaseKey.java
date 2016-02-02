@@ -30,7 +30,7 @@ import java.util.Objects;
 /**
  * Base class for keys.
  */
-abstract class BaseKey extends Serializable<com.google.datastore.v1beta3.Key> {
+public abstract class BaseKey extends Serializable<com.google.datastore.v1beta3.Key> {
 
   private static final long serialVersionUID = -4671243265877410635L;
 
@@ -38,7 +38,12 @@ abstract class BaseKey extends Serializable<com.google.datastore.v1beta3.Key> {
   private final transient String namespace;
   private final transient ImmutableList<PathElement> path;
 
-  abstract static class Builder<B extends Builder<B>> {
+  /**
+   * Base class for key builders.
+   *
+   * @param <B> the key builder.
+   */
+  protected abstract static class Builder<B extends Builder<B>> {
 
     String projectId = "";
     String namespace = "";
@@ -171,9 +176,9 @@ abstract class BaseKey extends Serializable<com.google.datastore.v1beta3.Key> {
   }
 
   @Override
-  protected com.google.datastore.v1beta3.Key toPb() {
+  com.google.datastore.v1beta3.Key toPb() {
     com.google.datastore.v1beta3.Key.Builder keyPb = com.google.datastore.v1beta3.Key.newBuilder();
-    com.google.datastore.v1beta3.PartitionId.Builder partitionIdPb = 
+    com.google.datastore.v1beta3.PartitionId.Builder partitionIdPb =
         com.google.datastore.v1beta3.PartitionId.newBuilder();
     partitionIdPb.setProjectId(projectId);
     partitionIdPb.setNamespaceId(namespace);

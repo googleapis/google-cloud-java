@@ -47,8 +47,8 @@ public class SerializationTest {
   private static final DateTime DATE_TIME1 = DateTime.now();
   private static final LatLng LAT_LNG = new LatLng(37.422035, -122.084124);
   private static final Blob BLOB1 = Blob.copyFrom(UTF_8.encode("hello world"));
-  private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1,2});
-  private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[]{10});
+  private static final Cursor CURSOR1 = Cursor.copyFrom(new byte[] {1, 2});
+  private static final Cursor CURSOR2 = Cursor.copyFrom(new byte[] {10});
   private static final Query<?> GQL1 =
       Query.gqlQueryBuilder("select * from kind1 where name = @name and age > @1")
       .setBinding("name", "name1")
@@ -145,8 +145,8 @@ public class SerializationTest {
 
     options = options.toBuilder()
         .namespace("ns1")
-        .retryParams(RetryParams.getDefaultInstance())
-        .authCredentials(AuthCredentials.noCredentials())
+        .retryParams(RetryParams.defaultInstance())
+        .authCredentials(null)
         .build();
     serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);

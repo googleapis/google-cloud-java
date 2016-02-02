@@ -27,6 +27,7 @@ import com.google.gcloud.storage.StorageException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public interface StorageRpc {
 
@@ -46,7 +47,8 @@ public interface StorageRpc {
     MAX_RESULTS("maxResults"),
     PAGE_TOKEN("pageToken"),
     DELIMITER("delimiter"),
-    VERSIONS("versions");
+    VERSIONS("versions"),
+    FIELDS("fields");
 
     private final String value;
 
@@ -132,6 +134,89 @@ public interface StorageRpc {
     }
   }
 
+  class RewriteRequest {
+
+    public final StorageObject source;
+    public final Map<StorageRpc.Option, ?> sourceOptions;
+    public final StorageObject target;
+    public final Map<StorageRpc.Option, ?> targetOptions;
+    public final Long megabytesRewrittenPerCall;
+
+    public RewriteRequest(StorageObject source, Map<StorageRpc.Option, ?> sourceOptions,
+        StorageObject target, Map<StorageRpc.Option, ?> targetOptions,
+        Long megabytesRewrittenPerCall) {
+      this.source = source;
+      this.sourceOptions = sourceOptions;
+      this.target = target;
+      this.targetOptions = targetOptions;
+      this.megabytesRewrittenPerCall = megabytesRewrittenPerCall;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == null) {
+        return false;
+      }
+      if (!(obj instanceof RewriteRequest)) {
+        return false;
+      }
+      final RewriteRequest other = (RewriteRequest) obj;
+      return Objects.equals(this.source, other.source)
+          && Objects.equals(this.sourceOptions, other.sourceOptions)
+          && Objects.equals(this.target, other.target)
+          && Objects.equals(this.targetOptions, other.targetOptions)
+          && Objects.equals(this.megabytesRewrittenPerCall, other.megabytesRewrittenPerCall);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(source, sourceOptions, target, targetOptions, megabytesRewrittenPerCall);
+    }
+  }
+
+  class RewriteResponse {
+
+    public final RewriteRequest rewriteRequest;
+    public final StorageObject result;
+    public final long blobSize;
+    public final boolean isDone;
+    public final String rewriteToken;
+    public final long totalBytesRewritten;
+
+    public RewriteResponse(RewriteRequest rewriteRequest, StorageObject result, long blobSize,
+        boolean isDone, String rewriteToken, long totalBytesRewritten) {
+      this.rewriteRequest = rewriteRequest;
+      this.result = result;
+      this.blobSize = blobSize;
+      this.isDone = isDone;
+      this.rewriteToken = rewriteToken;
+      this.totalBytesRewritten = totalBytesRewritten;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == null) {
+        return false;
+      }
+      if (!(obj instanceof RewriteResponse)) {
+        return false;
+      }
+      final RewriteResponse other = (RewriteResponse) obj;
+      return Objects.equals(this.rewriteRequest, other.rewriteRequest)
+          && Objects.equals(this.result, other.result)
+          && Objects.equals(this.rewriteToken, other.rewriteToken)
+          && this.blobSize == other.blobSize
+          && Objects.equals(this.isDone, other.isDone)
+          && this.totalBytesRewritten == other.totalBytesRewritten;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(rewriteRequest, result, blobSize, isDone, rewriteToken,
+          totalBytesRewritten);
+    }
+  }
+
   Bucket create(Bucket bucket, Map<Option, ?> options) throws StorageException;
 
   StorageObject create(StorageObject object, InputStream content, Map<Option, ?> options)
@@ -142,8 +227,18 @@ public interface StorageRpc {
   Tuple<String, Iterable<StorageObject>> list(String bucket, Map<Option, ?> options)
       throws StorageException;
 
+  /**
+   * Returns the requested bucket or {@code null} if not found.
+   *
+   * @throws StorageException upon failure
+   */
   Bucket get(Bucket bucket, Map<Option, ?> options) throws StorageException;
 
+  /**
+   * Returns the requested storage object or {@code null} if not found.
+   *
+   * @throws StorageException upon failure
+   */
   StorageObject get(StorageObject object, Map<Option, ?> options)
       throws StorageException;
 
@@ -161,17 +256,18 @@ public interface StorageRpc {
   StorageObject compose(Iterable<StorageObject> sources, StorageObject target,
       Map<Option, ?> targetOptions) throws StorageException;
 
-  StorageObject copy(StorageObject source, Map<Option, ?> sourceOptions,
-      StorageObject target, Map<Option, ?> targetOptions) throws StorageException;
-
   byte[] load(StorageObject storageObject, Map<Option, ?> options)
       throws StorageException;
 
-  byte[] read(StorageObject from, Map<Option, ?> options, long position, int bytes)
+  Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position, int bytes)
       throws StorageException;
 
   String open(StorageObject object, Map<Option, ?> options) throws StorageException;
 
-  void write(String uploadId, byte[] toWrite, int toWriteOffset, StorageObject dest,
-      long destOffset, int length, boolean last) throws StorageException;
+  void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+      boolean last) throws StorageException;
+
+  RewriteResponse openRewrite(RewriteRequest rewriteRequest) throws StorageException;
+
+  RewriteResponse continueRewrite(RewriteResponse previousResponse) throws StorageException;
 }

@@ -17,27 +17,10 @@
 package com.google.gcloud.datastore;
 
 
+import com.google.gcloud.ServiceFactory;
+
 /**
- * A base class for Datastore factories.
+ * An interface for Datastore factories.
  */
-public abstract class DatastoreFactory {
-
-  private static final DatastoreFactory INSTANCE = new DatastoreFactory() {
-      @Override
-      public Datastore get(DatastoreOptions options) {
-        return new DatastoreImpl(options);
-      }
-    };
-
-  /**
-   * Returns the default factory instance.
-   */
-  public static DatastoreFactory instance() {
-    return INSTANCE;
-  }
-
-  /**
-   * Returns a {@code Datastore} service for the given options.
-   */
-  public abstract Datastore get(DatastoreOptions options);
+public interface DatastoreFactory extends ServiceFactory<Datastore, DatastoreOptions> {
 }
