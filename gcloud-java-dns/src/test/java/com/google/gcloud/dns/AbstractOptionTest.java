@@ -16,13 +16,13 @@
 
 package com.google.gcloud.dns;
 
-import com.google.gcloud.spi.DnsRpc;
-
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.fail;
+
+import com.google.gcloud.spi.DnsRpc;
+
+import org.junit.Test;
 
 public class AbstractOptionTest {
 
