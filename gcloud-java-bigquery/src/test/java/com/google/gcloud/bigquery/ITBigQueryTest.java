@@ -257,21 +257,21 @@ public class ITBigQueryTest {
   public void testCreateAndGetTable() {
     String tableName = "test_create_and_get_table";
     TableId tableId = TableId.of(DATASET, tableName);
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, tableDefinition));
     assertNotNull(createdTableInfo);
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
     assertEquals(tableName, createdTableInfo.tableId().table());
     TableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName);
     assertNotNull(remoteTableInfo);
-    assertTrue(remoteTableInfo.definition() instanceof TableDefinition);
+    assertTrue(remoteTableInfo.definition() instanceof StandardTableDefinition);
     assertEquals(createdTableInfo.tableId(), remoteTableInfo.tableId());
-    assertEquals(BaseTableDefinition.Type.TABLE, remoteTableInfo.definition().type());
+    assertEquals(TableDefinition.Type.TABLE, remoteTableInfo.definition().type());
     assertEquals(TABLE_SCHEMA, remoteTableInfo.definition().schema());
     assertNotNull(remoteTableInfo.creationTime());
     assertNotNull(remoteTableInfo.lastModifiedTime());
-    assertNotNull(remoteTableInfo.<TableDefinition>definition().numBytes());
-    assertNotNull(remoteTableInfo.<TableDefinition>definition().numRows());
+    assertNotNull(remoteTableInfo.<StandardTableDefinition>definition().numBytes());
+    assertNotNull(remoteTableInfo.<StandardTableDefinition>definition().numRows());
     assertTrue(bigquery.delete(DATASET, tableName));
   }
 
@@ -279,7 +279,7 @@ public class ITBigQueryTest {
   public void testCreateAndGetTableWithSelectedField() {
     String tableName = "test_create_and_get_selected_fields_table";
     TableId tableId = TableId.of(DATASET, tableName);
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, tableDefinition));
     assertNotNull(createdTableInfo);
     assertEquals(DATASET, createdTableInfo.tableId().dataset());
@@ -287,14 +287,14 @@ public class ITBigQueryTest {
     TableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName,
         TableOption.fields(TableField.CREATION_TIME));
     assertNotNull(remoteTableInfo);
-    assertTrue(remoteTableInfo.definition() instanceof TableDefinition);
+    assertTrue(remoteTableInfo.definition() instanceof StandardTableDefinition);
     assertEquals(createdTableInfo.tableId(), remoteTableInfo.tableId());
-    assertEquals(BaseTableDefinition.Type.TABLE, remoteTableInfo.definition().type());
+    assertEquals(TableDefinition.Type.TABLE, remoteTableInfo.definition().type());
     assertNotNull(remoteTableInfo.creationTime());
     assertNull(remoteTableInfo.definition().schema());
     assertNull(remoteTableInfo.lastModifiedTime());
-    assertNull(remoteTableInfo.<TableDefinition>definition().numBytes());
-    assertNull(remoteTableInfo.<TableDefinition>definition().numRows());
+    assertNull(remoteTableInfo.<StandardTableDefinition>definition().numBytes());
+    assertNull(remoteTableInfo.<StandardTableDefinition>definition().numRows());
     assertTrue(bigquery.delete(DATASET, tableName));
   }
 
@@ -409,7 +409,7 @@ public class ITBigQueryTest {
   @Test
   public void testListTables() {
     String tableName = "test_list_tables";
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
@@ -428,7 +428,7 @@ public class ITBigQueryTest {
   @Test
   public void testUpdateTable() {
     String tableName = "test_update_table";
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
@@ -444,27 +444,27 @@ public class ITBigQueryTest {
   @Test
   public void testUpdateTableWithSelectedFields() {
     String tableName = "test_update_with_selected_fields_table";
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
     TableInfo updatedTableInfo = bigquery.update(tableInfo.toBuilder().description("newDescr")
         .build(), TableOption.fields(TableField.DESCRIPTION));
-    assertTrue(updatedTableInfo.definition() instanceof TableDefinition);
+    assertTrue(updatedTableInfo.definition() instanceof StandardTableDefinition);
     assertEquals(DATASET, updatedTableInfo.tableId().dataset());
     assertEquals(tableName, updatedTableInfo.tableId().table());
     assertEquals("newDescr", updatedTableInfo.description());
     assertNull(updatedTableInfo.definition().schema());
     assertNull(updatedTableInfo.lastModifiedTime());
-    assertNull(updatedTableInfo.<TableDefinition>definition().numBytes());
-    assertNull(updatedTableInfo.<TableDefinition>definition().numRows());
+    assertNull(updatedTableInfo.<StandardTableDefinition>definition().numBytes());
+    assertNull(updatedTableInfo.<StandardTableDefinition>definition().numRows());
     assertTrue(bigquery.delete(DATASET, tableName));
   }
 
   @Test
   public void testUpdateNonExistingTable() {
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, "test_update_non_existing_table"),
-        TableDefinition.of(SIMPLE_SCHEMA));
+        StandardTableDefinition.of(SIMPLE_SCHEMA));
     try {
       bigquery.update(tableInfo);
       fail("BigQueryException was expected");
@@ -484,7 +484,7 @@ public class ITBigQueryTest {
   @Test
   public void testInsertAll() {
     String tableName = "test_insert_all_table";
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     assertNotNull(bigquery.create(tableInfo));
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
@@ -516,7 +516,7 @@ public class ITBigQueryTest {
   @Test
   public void testInsertAllWithSuffix() throws InterruptedException {
     String tableName = "test_insert_all_with_suffix_table";
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     assertNotNull(bigquery.create(tableInfo));
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
@@ -557,7 +557,7 @@ public class ITBigQueryTest {
   @Test
   public void testInsertAllWithErrors() {
     String tableName = "test_insert_all_with_errors_table";
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     assertNotNull(bigquery.create(tableInfo));
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
@@ -689,7 +689,7 @@ public class ITBigQueryTest {
     String sourceTableName = "test_create_and_get_job_source_table";
     String destinationTableName = "test_create_and_get_job_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(sourceTable, tableDefinition);
     TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
@@ -722,7 +722,7 @@ public class ITBigQueryTest {
     String sourceTableName = "test_create_and_get_job_with_selected_fields_source_table";
     String destinationTableName = "test_create_and_get_job_with_selected_fields_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(sourceTable, tableDefinition);
     TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);
@@ -762,7 +762,7 @@ public class ITBigQueryTest {
     String sourceTableName = "test_copy_job_source_table";
     String destinationTableName = "test_copy_job_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(sourceTable, tableDefinition);
     TableInfo createdTableInfo = bigquery.create(tableInfo);
     assertNotNull(createdTableInfo);

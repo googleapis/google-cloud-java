@@ -104,7 +104,8 @@ public class BigQueryImplTest {
           .description("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
-  private static final TableDefinition TABLE_DEFINITION = TableDefinition.of(TABLE_SCHEMA);
+  private static final StandardTableDefinition TABLE_DEFINITION =
+      StandardTableDefinition.of(TABLE_SCHEMA);
   private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
   private static final TableInfo OTHER_TABLE_INFO = TableInfo.of(OTHER_TABLE_ID, TABLE_DEFINITION);
   private static final TableInfo TABLE_INFO_WITH_PROJECT =
@@ -513,7 +514,7 @@ public class BigQueryImplTest {
   public void testListTables() {
     String cursor = "cursor";
     ImmutableList<TableInfo> tableList =
-        ImmutableList.<TableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
+        ImmutableList.of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
     Tuple<String, Iterable<Table>> result =
         Tuple.of(cursor, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(DATASET, EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -528,7 +529,7 @@ public class BigQueryImplTest {
   public void testListTablesFromDatasetId() {
     String cursor = "cursor";
     ImmutableList<TableInfo> tableList =
-        ImmutableList.<TableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
+        ImmutableList.of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
     Tuple<String, Iterable<Table>> result =
         Tuple.of(cursor, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(DATASET, EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -543,7 +544,7 @@ public class BigQueryImplTest {
   public void testListTablesWithOptions() {
     String cursor = "cursor";
     ImmutableList<TableInfo> tableList =
-        ImmutableList.<TableInfo>of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
+        ImmutableList.of(TABLE_INFO_WITH_PROJECT, OTHER_TABLE_INFO);
     Tuple<String, Iterable<Table>> result =
         Tuple.of(cursor, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(DATASET, TABLE_LIST_OPTIONS)).andReturn(result);

@@ -76,7 +76,7 @@ public class ExternalTableDefinitionTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(BaseTableDefinition.Type.EXTERNAL, EXTERNAL_TABLE_DEFINITION.type());
+    assertEquals(TableDefinition.Type.EXTERNAL, EXTERNAL_TABLE_DEFINITION.type());
     assertEquals(COMPRESSION, EXTERNAL_TABLE_DEFINITION.compression());
     assertEquals(CSV_OPTIONS, EXTERNAL_TABLE_DEFINITION.formatOptions());
     assertEquals(IGNORE_UNKNOWN_VALUES, EXTERNAL_TABLE_DEFINITION.ignoreUnknownValues());

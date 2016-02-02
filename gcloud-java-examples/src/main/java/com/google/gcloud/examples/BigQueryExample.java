@@ -24,7 +24,6 @@ import com.google.gcloud.bigquery.BigQueryOptions;
 import com.google.gcloud.bigquery.CopyJobConfiguration;
 import com.google.gcloud.bigquery.DatasetId;
 import com.google.gcloud.bigquery.DatasetInfo;
-import com.google.gcloud.bigquery.TableDefinition;
 import com.google.gcloud.bigquery.ExternalTableDefinition;
 import com.google.gcloud.bigquery.ExtractJobConfiguration;
 import com.google.gcloud.bigquery.Field;
@@ -37,6 +36,7 @@ import com.google.gcloud.bigquery.LoadJobConfiguration;
 import com.google.gcloud.bigquery.QueryRequest;
 import com.google.gcloud.bigquery.QueryResponse;
 import com.google.gcloud.bigquery.Schema;
+import com.google.gcloud.bigquery.StandardTableDefinition;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
 import com.google.gcloud.bigquery.ViewDefinition;
@@ -435,7 +435,7 @@ public class BigQueryExample {
 
   /**
    * This class demonstrates how to create a simple BigQuery Table (i.e. a table created from a
-   * {@link TableDefinition}).
+   * {@link StandardTableDefinition}).
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/insert">Tables: insert
    *     </a>
@@ -447,7 +447,7 @@ public class BigQueryExample {
         String dataset = args[0];
         String table = args[1];
         TableId tableId = TableId.of(dataset, table);
-        return TableInfo.of(tableId, TableDefinition.of(parseSchema(args, 2, args.length)));
+        return TableInfo.of(tableId, StandardTableDefinition.of(parseSchema(args, 2, args.length)));
       }
       throw new IllegalArgumentException("Missing required arguments.");
     }

@@ -211,8 +211,7 @@ public final class Dataset {
    * @throws BigQueryException upon failure
    */
   public Table get(String table, BigQuery.TableOption... options) {
-    TableInfo tableInfo =
-        bigquery.getTable(TableId.of(info.datasetId().dataset(), table), options);
+    TableInfo tableInfo = bigquery.getTable(TableId.of(info.datasetId().dataset(), table), options);
     return tableInfo != null ? new Table(bigquery, tableInfo) : null;
   }
 
@@ -225,8 +224,7 @@ public final class Dataset {
    * @return a {@code Table} object for the created table
    * @throws BigQueryException upon failure
    */
-  public Table create(String table, BaseTableDefinition definition,
-      BigQuery.TableOption... options) {
+  public Table create(String table, TableDefinition definition, BigQuery.TableOption... options) {
     TableInfo tableInfo = TableInfo.of(TableId.of(info.datasetId().dataset(), table), definition);
     return new Table(bigquery, bigquery.create(tableInfo, options));
   }

@@ -25,7 +25,7 @@ import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.bigquery.TableDefinition.StreamingBuffer;
+import com.google.gcloud.bigquery.StandardTableDefinition.StreamingBuffer;
 
 import org.junit.Test;
 
@@ -108,7 +108,7 @@ public class SerializationTest {
       new UserDefinedFunction.InlineFunction("inline");
   private static final UserDefinedFunction URI_FUNCTION =
       new UserDefinedFunction.UriFunction("URI");
-  private static final BaseTableDefinition TABLE_DEFINITION = TableDefinition.builder()
+  private static final TableDefinition TABLE_DEFINITION = StandardTableDefinition.builder()
       .schema(TABLE_SCHEMA)
       .location(LOCATION)
       .streamingBuffer(STREAMING_BUFFER)
@@ -119,7 +119,7 @@ public class SerializationTest {
       .etag(ETAG)
       .id(ID)
       .build();
-  private static final BaseTableDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
+  private static final TableDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
   private static final TableInfo VIEW_INFO = TableInfo.builder(TABLE_ID, VIEW_DEFINITION)
       .creationTime(CREATION_TIME)
       .description(DESCRIPTION)

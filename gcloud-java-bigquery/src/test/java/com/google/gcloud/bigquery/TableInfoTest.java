@@ -55,9 +55,9 @@ public class TableInfoTest {
   private static final Long NUM_BYTES = 42L;
   private static final Long NUM_ROWS = 43L;
   private static final String LOCATION = "US";
-  private static final TableDefinition.StreamingBuffer STREAMING_BUFFER =
-      new TableDefinition.StreamingBuffer(1L, 2L, 3L);
-  private static final TableDefinition TABLE_DEFINITION = TableDefinition.builder()
+  private static final StandardTableDefinition.StreamingBuffer STREAMING_BUFFER =
+      new StandardTableDefinition.StreamingBuffer(1L, 2L, 3L);
+  private static final StandardTableDefinition TABLE_DEFINITION = StandardTableDefinition.builder()
       .location(LOCATION)
       .numBytes(NUM_BYTES)
       .numRows(NUM_ROWS)

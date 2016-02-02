@@ -48,22 +48,22 @@ public class ViewDefinitionTest {
 
   @Test
   public void testToBuilderIncomplete() {
-    BaseTableDefinition viewDefinition = ViewDefinition.of(VIEW_QUERY);
+    TableDefinition viewDefinition = ViewDefinition.of(VIEW_QUERY);
     assertEquals(viewDefinition, viewDefinition.toBuilder().build());
   }
 
   @Test
   public void testBuilder() {
     assertEquals(VIEW_QUERY, VIEW_DEFINITION.query());
-    assertEquals(BaseTableDefinition.Type.VIEW, VIEW_DEFINITION.type());
+    assertEquals(TableDefinition.Type.VIEW, VIEW_DEFINITION.type());
     assertEquals(USER_DEFINED_FUNCTIONS, VIEW_DEFINITION.userDefinedFunctions());
   }
 
   @Test
   public void testToAndFromPb() {
-    assertTrue(BaseTableDefinition.fromPb(VIEW_DEFINITION.toPb()) instanceof ViewDefinition);
+    assertTrue(TableDefinition.fromPb(VIEW_DEFINITION.toPb()) instanceof ViewDefinition);
     compareViewDefinition(VIEW_DEFINITION,
-        BaseTableDefinition.<ViewDefinition>fromPb(VIEW_DEFINITION.toPb()));
+        TableDefinition.<ViewDefinition>fromPb(VIEW_DEFINITION.toPb()));
   }
 
   private void compareViewDefinition(ViewDefinition expected, ViewDefinition value) {

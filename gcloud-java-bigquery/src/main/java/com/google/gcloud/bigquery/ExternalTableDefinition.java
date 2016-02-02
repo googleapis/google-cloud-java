@@ -35,7 +35,7 @@ import java.util.Objects;
  * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data Sources
  *     </a>
  */
-public class ExternalTableDefinition extends BaseTableDefinition {
+public class ExternalTableDefinition extends TableDefinition {
 
   static final Function<ExternalDataConfiguration, ExternalTableDefinition>
       FROM_EXTERNAL_DATA_FUNCTION =
@@ -63,7 +63,7 @@ public class ExternalTableDefinition extends BaseTableDefinition {
   private final String compression;
 
   public static final class Builder
-      extends BaseTableDefinition.Builder<ExternalTableDefinition, Builder> {
+      extends TableDefinition.Builder<ExternalTableDefinition, Builder> {
 
     private List<String> sourceUris;
     private FormatOptions formatOptions;

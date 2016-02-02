@@ -30,9 +30,9 @@ import java.math.BigInteger;
 import java.util.Objects;
 
 /**
- * Google BigQuery table information. Use {@link TableDefinition} to create simple BigQuery table.
- * Use {@link ViewDefinition} to create a BigQuery view. Use {@link ExternalTableDefinition} to
- * create a BigQuery a table backed by external data.
+ * Google BigQuery table information. Use {@link StandardTableDefinition} to create simple BigQuery
+ * table. Use {@link ViewDefinition} to create a BigQuery view. Use {@link ExternalTableDefinition}
+ * to create a BigQuery a table backed by external data.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
  */
@@ -64,7 +64,7 @@ public final class TableInfo implements Serializable {
   private final Long creationTime;
   private final Long expirationTime;
   private final Long lastModifiedTime;
-  private final BaseTableDefinition definition;
+  private final TableDefinition definition;
 
   /**
    * Builder for tables.
@@ -80,7 +80,7 @@ public final class TableInfo implements Serializable {
     private Long creationTime;
     private Long expirationTime;
     private Long lastModifiedTime;
-    private BaseTableDefinition definition;
+    private TableDefinition definition;
 
     private Builder() {}
 
@@ -109,7 +109,7 @@ public final class TableInfo implements Serializable {
       this.etag = tablePb.getEtag();
       this.id = tablePb.getId();
       this.selfLink = tablePb.getSelfLink();
-      this.definition = BaseTableDefinition.fromPb(tablePb);
+      this.definition = TableDefinition.fromPb(tablePb);
     }
 
     Builder creationTime(Long creationTime) {
@@ -171,11 +171,11 @@ public final class TableInfo implements Serializable {
     }
 
     /**
-     * Sets the table definition. Use {@link TableDefinition} to create simple BigQuery table. Use
-     * {@link ViewDefinition} to create a BigQuery view. Use {@link ExternalTableDefinition} to
-     * create a BigQuery a table backed by external data.
+     * Sets the table definition. Use {@link StandardTableDefinition} to create simple BigQuery
+     * table. Use {@link ViewDefinition} to create a BigQuery view. Use
+     * {@link ExternalTableDefinition} to create a BigQuery a table backed by external data.
      */
-    public Builder definition(BaseTableDefinition definition) {
+    public Builder definition(TableDefinition definition) {
       this.definition = checkNotNull(definition);
       return this;
     }
@@ -270,7 +270,7 @@ public final class TableInfo implements Serializable {
    * Returns the table definition.
    */
   @SuppressWarnings("unchecked")
-  public <T extends BaseTableDefinition> T definition() {
+  public <T extends TableDefinition> T definition() {
     return (T) definition;
   }
 
@@ -313,14 +313,14 @@ public final class TableInfo implements Serializable {
   /**
    * Returns a builder for a {@code TableInfo} object given table identity and definition.
    */
-  public static Builder builder(TableId tableId, BaseTableDefinition definition) {
+  public static Builder builder(TableId tableId, TableDefinition definition) {
     return new Builder().tableId(tableId).definition(definition);
   }
 
   /**
    * Returns a {@code TableInfo} object given table identity and definition.
    */
-  public static TableInfo of(TableId tableId, BaseTableDefinition definition) {
+  public static TableInfo of(TableId tableId, TableDefinition definition) {
     return builder(tableId, definition).build();
   }
 

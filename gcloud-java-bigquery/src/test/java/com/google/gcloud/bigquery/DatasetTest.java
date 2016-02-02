@@ -44,8 +44,8 @@ public class DatasetTest {
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final DatasetInfo DATASET_INFO = DatasetInfo.builder(DATASET_ID).build();
   private static final Field FIELD = Field.of("FieldName", Field.Type.integer());
-  private static final TableDefinition TABLE_DEFINITION =
-      TableDefinition.of(Schema.of(FIELD));
+  private static final StandardTableDefinition TABLE_DEFINITION =
+      StandardTableDefinition.of(Schema.of(FIELD));
   private static final ViewDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
       ExternalTableDefinition.of(ImmutableList.of("URI"), Schema.of(), FormatOptions.csv());

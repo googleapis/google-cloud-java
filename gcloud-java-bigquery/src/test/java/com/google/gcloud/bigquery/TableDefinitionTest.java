@@ -19,7 +19,7 @@ package com.google.gcloud.bigquery;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.google.gcloud.bigquery.TableDefinition.StreamingBuffer;
+import com.google.gcloud.bigquery.StandardTableDefinition.StreamingBuffer;
 
 import org.junit.Test;
 
@@ -45,8 +45,8 @@ public class TableDefinitionTest {
   private static final Long NUM_ROWS = 43L;
   private static final String LOCATION = "US";
   private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
-  private static final TableDefinition TABLE_DEFINITION =
-      TableDefinition.builder()
+  private static final StandardTableDefinition TABLE_DEFINITION =
+      StandardTableDefinition.builder()
           .location(LOCATION)
           .numBytes(NUM_BYTES)
           .numRows(NUM_ROWS)
@@ -56,11 +56,8 @@ public class TableDefinitionTest {
 
   @Test
   public void testToBuilder() {
-    compareTableDefinition(TABLE_DEFINITION,
-        TABLE_DEFINITION.toBuilder().build());
-    TableDefinition tableDefinition = TABLE_DEFINITION.toBuilder()
-        .location("EU")
-        .build();
+    compareTableDefinition(TABLE_DEFINITION, TABLE_DEFINITION.toBuilder().build());
+    StandardTableDefinition tableDefinition = TABLE_DEFINITION.toBuilder().location("EU").build();
     assertEquals("EU", tableDefinition.location());
     tableDefinition = tableDefinition.toBuilder()
         .location(LOCATION)
@@ -70,13 +67,13 @@ public class TableDefinitionTest {
 
   @Test
   public void testToBuilderIncomplete() {
-    TableDefinition tableDefinition = TableDefinition.of(TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     assertEquals(tableDefinition, tableDefinition.toBuilder().build());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(BaseTableDefinition.Type.TABLE, TABLE_DEFINITION.type());
+    assertEquals(TableDefinition.Type.TABLE, TABLE_DEFINITION.type());
     assertEquals(TABLE_SCHEMA, TABLE_DEFINITION.schema());
     assertEquals(LOCATION, TABLE_DEFINITION.location());
     assertEquals(NUM_BYTES, TABLE_DEFINITION.numBytes());
@@ -86,14 +83,13 @@ public class TableDefinitionTest {
 
   @Test
   public void testToAndFromPb() {
-    assertTrue(
-        BaseTableDefinition.fromPb(TABLE_DEFINITION.toPb())
-            instanceof TableDefinition);
+    assertTrue(TableDefinition.fromPb(TABLE_DEFINITION.toPb()) instanceof StandardTableDefinition);
     compareTableDefinition(TABLE_DEFINITION,
-        BaseTableDefinition.<TableDefinition>fromPb(TABLE_DEFINITION.toPb()));
+        TableDefinition.<StandardTableDefinition>fromPb(TABLE_DEFINITION.toPb()));
   }
 
-  private void compareTableDefinition(TableDefinition expected, TableDefinition value) {
+  private void compareTableDefinition(StandardTableDefinition expected,
+      StandardTableDefinition value) {
     assertEquals(expected, value);
     assertEquals(expected.schema(), value.schema());
     assertEquals(expected.type(), value.type());

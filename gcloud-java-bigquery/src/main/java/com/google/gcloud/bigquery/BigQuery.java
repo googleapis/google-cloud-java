@@ -275,8 +275,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the table's fields to be returned by the RPC call. If this
      * option is not provided all table's fields are returned. {@code TableOption.fields} can be
-     * used to specify only the fields of interest. {@link TableInfo#tableId()} and
-     * {@link TableInfo#definition()} are always returned, even if not specified.
+     * used to specify only the fields of interest. {@link TableInfo#tableId()} and type (which is
+     * part of {@link TableInfo#definition()}) are always returned, even if not specified.
      */
     public static TableOption fields(TableField... fields) {
       return new TableOption(BigQueryRpc.Option.FIELDS, TableField.selector(fields));
@@ -562,9 +562,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table
-   * ({@link TableInfo#tableId()}, {@link TableInfo#friendlyName()},
-   * {@link TableInfo#id()} and {@link TableInfo#definition()}). To get complete information use
-   * either {@link #getTable(TableId, TableOption...)} or
+   * ({@link TableInfo#tableId()}, {@link TableInfo#friendlyName()}, {@link TableInfo#id()} and
+   * type, which is part of {@link TableInfo#definition()}). To get complete information use either
+   * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *
    * @throws BigQueryException upon failure
@@ -575,7 +575,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Lists the tables in the dataset. This method returns partial information on each table
    * ({@link TableInfo#tableId()}, {@link TableInfo#friendlyName()}, {@link TableInfo#id()} and
-   * {@link TableInfo#definition()}). To get complete information use either
+   * type, which is part of {@link TableInfo#definition()}). To get complete information use either
    * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *

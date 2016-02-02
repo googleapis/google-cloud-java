@@ -16,266 +16,167 @@
 
 package com.google.gcloud.bigquery;
 
-import com.google.api.services.bigquery.model.Streamingbuffer;
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.MoreObjects.ToStringHelper;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.Objects;
 
 /**
- * A Google BigQuery default table type. This type is used for standard, two-dimensional tables with
- * individual records organized in rows, and a data type assigned to each column (also called a
- * field). Individual fields within a record may contain nested and repeated children fields. Every
- * table is described by a schema that describes field names, types, and other information.
- *
- * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
+ * Base class for a Google BigQuery table type.
  */
-public class TableDefinition extends BaseTableDefinition {
+public abstract class TableDefinition implements Serializable {
 
-  private static final long serialVersionUID = 2113445776046717900L;
+  private static final long serialVersionUID = -374760330662959529L;
 
-  private final Long numBytes;
-  private final Long numRows;
-  private final String location;
-  private final StreamingBuffer streamingBuffer;
+  private final Type type;
+  private final Schema schema;
 
   /**
-   * Google BigQuery Table's Streaming Buffer information. This class contains information on a
-   * table's streaming buffer as the estimated size in number of rows/bytes.
+   * The table type.
    */
-  public static class StreamingBuffer implements Serializable {
-
-    private static final long serialVersionUID = 822027055549277843L;
-    private final long estimatedRows;
-    private final long estimatedBytes;
-    private final long oldestEntryTime;
-
-    StreamingBuffer(long estimatedRows, long estimatedBytes, long oldestEntryTime) {
-      this.estimatedRows = estimatedRows;
-      this.estimatedBytes = estimatedBytes;
-      this.oldestEntryTime = oldestEntryTime;
-    }
+  public enum Type {
+    /**
+     * A normal BigQuery table. Instances of {@code TableDefinition} for this type are implemented
+     * by {@link StandardTableDefinition}.
+     */
+    TABLE,
 
     /**
-     * Returns a lower-bound estimate of the number of rows currently in the streaming buffer.
+     * A virtual table defined by a SQL query. Instances of {@code TableDefinition} for this type
+     * are implemented by {@link ViewDefinition}.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
      */
-    public long estimatedRows() {
-      return estimatedRows;
-    }
+    VIEW,
 
     /**
-     * Returns a lower-bound estimate of the number of bytes currently in the streaming buffer.
+     * A BigQuery table backed by external data. Instances of {@code TableDefinition} for this type
+     * are implemented by {@link ExternalTableDefinition}.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data
+     *     Sources</a>
      */
-    public long estimatedBytes() {
-      return estimatedBytes;
-    }
-
-    /**
-     * Returns the timestamp of the oldest entry in the streaming buffer, in milliseconds since
-     * epoch.
-     */
-    public long oldestEntryTime() {
-      return oldestEntryTime;
-    }
-
-    @Override
-    public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("estimatedRows", estimatedRows)
-          .add("estimatedBytes", estimatedBytes)
-          .add("oldestEntryTime", oldestEntryTime)
-          .toString();
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(estimatedRows, estimatedBytes, oldestEntryTime);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      return obj instanceof StreamingBuffer
-          && Objects.equals(toPb(), ((StreamingBuffer) obj).toPb());
-    }
-
-    Streamingbuffer toPb() {
-      return new Streamingbuffer()
-          .setEstimatedBytes(BigInteger.valueOf(estimatedBytes))
-          .setEstimatedRows(BigInteger.valueOf(estimatedRows))
-          .setOldestEntryTime(BigInteger.valueOf(oldestEntryTime));
-    }
-
-    static StreamingBuffer fromPb(Streamingbuffer streamingBufferPb) {
-      return new StreamingBuffer(streamingBufferPb.getEstimatedRows().longValue(),
-          streamingBufferPb.getEstimatedBytes().longValue(),
-          streamingBufferPb.getOldestEntryTime().longValue());
-    }
+    EXTERNAL
   }
 
-  public static final class Builder
-      extends BaseTableDefinition.Builder<TableDefinition, Builder> {
+  /**
+   * Base builder for table types.
+   *
+   * @param <T> the table type class
+   * @param <B> the table type builder
+   */
+  public abstract static class Builder<T extends TableDefinition, B extends Builder<T, B>> {
 
-    private Long numBytes;
-    private Long numRows;
-    private String location;
-    private StreamingBuffer streamingBuffer;
+    private Type type;
+    private Schema schema;
 
-    private Builder() {
-      super(Type.TABLE);
+    Builder(Type type) {
+      this.type = type;
     }
 
-    private Builder(TableDefinition tableDefinition) {
-      super(tableDefinition);
-      this.numBytes = tableDefinition.numBytes;
-      this.numRows = tableDefinition.numRows;
-      this.location = tableDefinition.location;
-      this.streamingBuffer = tableDefinition.streamingBuffer;
+    Builder(TableDefinition tableDefinition) {
+      this.type = tableDefinition.type;
+      this.schema = tableDefinition.schema;
     }
 
-    private Builder(Table tablePb) {
-      super(tablePb);
-      if (tablePb.getNumRows() != null) {
-        this.numRows(tablePb.getNumRows().longValue());
-      }
-      this.numBytes = tablePb.getNumBytes();
-      this.location = tablePb.getLocation();
-      if (tablePb.getStreamingBuffer() != null) {
-        this.streamingBuffer = StreamingBuffer.fromPb(tablePb.getStreamingBuffer());
+    Builder(Table tablePb) {
+      this.type = Type.valueOf(tablePb.getType());
+      if (tablePb.getSchema() != null) {
+        this.schema(Schema.fromPb(tablePb.getSchema()));
       }
     }
 
-    Builder numBytes(Long numBytes) {
-      this.numBytes = numBytes;
-      return self();
+    @SuppressWarnings("unchecked")
+    B self() {
+      return (B) this;
     }
 
-    Builder numRows(Long numRows) {
-      this.numRows = numRows;
-      return self();
-    }
-
-    Builder location(String location) {
-      this.location = location;
-      return self();
-    }
-
-    Builder streamingBuffer(StreamingBuffer streamingBuffer) {
-      this.streamingBuffer = streamingBuffer;
+    B type(Type type) {
+      this.type = type;
       return self();
     }
 
     /**
-     * Creates a {@code TableDefinition} object.
+     * Sets the table schema.
      */
-    @Override
-    public TableDefinition build() {
-      return new TableDefinition(this);
+    public B schema(Schema schema) {
+      this.schema = checkNotNull(schema);
+      return self();
     }
+
+    /**
+     * Creates an object.
+     */
+    public abstract T build();
   }
 
-  private TableDefinition(Builder builder) {
-    super(builder);
-    this.numBytes = builder.numBytes;
-    this.numRows = builder.numRows;
-    this.location = builder.location;
-    this.streamingBuffer = builder.streamingBuffer;
-  }
-
-  /**
-   * Returns the size of this table in bytes, excluding any data in the streaming buffer.
-   */
-  public Long numBytes() {
-    return numBytes;
+  TableDefinition(Builder builder) {
+    this.type = builder.type;
+    this.schema = builder.schema;
   }
 
   /**
-   * Returns the number of rows in this table, excluding any data in the streaming buffer.
+   * Returns the table's type. If this table is simple table the method returns {@link Type#TABLE}.
+   * If this table is an external table this method returns {@link Type#EXTERNAL}. If this table is
+   * a view table this method returns {@link Type#VIEW}.
    */
-  public Long numRows() {
-    return numRows;
+  public Type type() {
+    return type;
   }
 
   /**
-   * Returns the geographic location where the table should reside. This value is inherited from the
-   * dataset.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
-   *     Dataset Location</a>
+   * Returns the table's schema.
    */
-  public String location() {
-    return location;
+  public Schema schema() {
+    return schema;
   }
 
   /**
-   * Returns information on the table's streaming buffer if any exists. Returns {@code null} if no
-   * streaming buffer exists.
+   * Returns a builder for the object.
    */
-  public StreamingBuffer streamingBuffer() {
-    return streamingBuffer;
-  }
+  public abstract Builder toBuilder();
 
-  /**
-   * Returns a builder for a BigQuery default table type.
-   */
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  /**
-   * Creates a BigQuery default table type given its schema.
-   *
-   * @param schema the schema of the table
-   */
-  public static TableDefinition of(Schema schema) {
-    return builder().schema(schema).build();
-  }
-
-  /**
-   * Returns a builder for the {@code TableDefinition} object.
-   */
-  @Override
-  public Builder toBuilder() {
-    return new Builder(this);
+  MoreObjects.ToStringHelper toStringHelper() {
+    return MoreObjects.toStringHelper(this).add("type", type).add("schema", schema);
   }
 
   @Override
-  ToStringHelper toStringHelper() {
-    return super.toStringHelper()
-        .add("numBytes", numBytes)
-        .add("numRows", numRows)
-        .add("location", location)
-        .add("streamingBuffer", streamingBuffer);
+  public String toString() {
+    return toStringHelper().toString();
   }
 
-  @Override
-  public boolean equals(Object obj) {
-    return obj instanceof TableDefinition && baseEquals((TableDefinition) obj);
+  final int baseHashCode() {
+    return Objects.hash(type);
   }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(baseHashCode(), numBytes, numRows, location, streamingBuffer);
+  final boolean baseEquals(TableDefinition jobConfiguration) {
+    return Objects.equals(toPb(), jobConfiguration.toPb());
   }
 
-  @Override
   Table toPb() {
-    Table tablePb = super.toPb();
-    if (numRows != null) {
-      tablePb.setNumRows(BigInteger.valueOf(numRows));
+    Table tablePb = new Table();
+    if (schema != null) {
+      tablePb.setSchema(schema.toPb());
     }
-    tablePb.setNumBytes(numBytes);
-    tablePb.setLocation(location);
-    if (streamingBuffer != null) {
-      tablePb.setStreamingBuffer(streamingBuffer.toPb());
-    }
+    tablePb.setType(type.name());
     return tablePb;
   }
 
   @SuppressWarnings("unchecked")
-  static TableDefinition fromPb(Table tablePb) {
-    return new Builder(tablePb).build();
+  static <T extends TableDefinition> T fromPb(Table tablePb) {
+    switch (Type.valueOf(tablePb.getType())) {
+      case TABLE:
+        return (T) StandardTableDefinition.fromPb(tablePb);
+      case VIEW:
+        return (T) ViewDefinition.fromPb(tablePb);
+      case EXTERNAL:
+        return (T) ExternalTableDefinition.fromPb(tablePb);
+      default:
+        // never reached
+        throw new IllegalArgumentException("Format " + tablePb.getType() + " is not supported");
+    }
   }
 }

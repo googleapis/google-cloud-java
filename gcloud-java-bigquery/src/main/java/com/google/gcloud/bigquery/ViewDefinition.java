@@ -32,14 +32,14 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
  */
-public final class ViewDefinition extends BaseTableDefinition {
+public final class ViewDefinition extends TableDefinition {
 
   private static final long serialVersionUID = -8789311196910794545L;
 
   private final String query;
   private final List<UserDefinedFunction> userDefinedFunctions;
 
-  public static final class Builder extends BaseTableDefinition.Builder<ViewDefinition, Builder> {
+  public static final class Builder extends TableDefinition.Builder<ViewDefinition, Builder> {
 
     private String query;
     private List<UserDefinedFunction> userDefinedFunctions;
