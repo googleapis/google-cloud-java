@@ -93,6 +93,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
       sendRequest();
     }
     if (!entityResultPbIter.hasNext()) {
+      cursor = runQueryResponsePb.getBatch().getEndCursor();
       return endOfData();
     }
     com.google.datastore.v1beta3.EntityResult entityResultPb = entityResultPbIter.next();

@@ -106,11 +106,11 @@ public final class DateTime extends Serializable<com.google.protobuf.Timestamp>
         com.google.protobuf.Timestamp.parseFrom(bytesPb)));
   }
 
-  protected static long timestampPbToMicroseconds(com.google.protobuf.Timestamp timestampPb) {
+  static long timestampPbToMicroseconds(com.google.protobuf.Timestamp timestampPb) {
     return timestampPb.getSeconds() * 1000000 + timestampPb.getNanos() / 1000;
   }
 
-  protected static com.google.protobuf.Timestamp microsecondsToTimestampPb(long microseconds) {
+  static com.google.protobuf.Timestamp microsecondsToTimestampPb(long microseconds) {
     long seconds = microseconds / 1000000;
     int nanos = (int) (microseconds % 1000000) * 1000;
     return com.google.protobuf.Timestamp.newBuilder().setSeconds(seconds).setNanos(nanos).build();

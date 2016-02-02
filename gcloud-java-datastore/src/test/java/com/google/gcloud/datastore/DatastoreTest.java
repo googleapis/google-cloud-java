@@ -986,7 +986,7 @@ public class DatastoreTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(rpcMock);
     EasyMock.expect(rpcMock.lookup(requestPb))
-        .andThrow(new DatastoreException(503, "UNAVAILABLE", "UNAVAILABLE", null))
+        .andThrow(new DatastoreException(14, "UNAVAILABLE", "UNAVAILABLE", null))
         .andReturn(responsePb);
     EasyMock.replay(rpcFactoryMock, rpcMock);
     DatastoreOptions options = this.options.toBuilder()
