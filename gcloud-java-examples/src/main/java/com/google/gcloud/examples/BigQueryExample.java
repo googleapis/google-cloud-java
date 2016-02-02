@@ -22,6 +22,7 @@ import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryError;
 import com.google.gcloud.bigquery.BigQueryOptions;
 import com.google.gcloud.bigquery.CopyJobConfiguration;
+import com.google.gcloud.bigquery.Dataset;
 import com.google.gcloud.bigquery.DatasetId;
 import com.google.gcloud.bigquery.DatasetInfo;
 import com.google.gcloud.bigquery.ExternalTableDefinition;
@@ -29,14 +30,15 @@ import com.google.gcloud.bigquery.ExtractJobConfiguration;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.FieldValue;
 import com.google.gcloud.bigquery.FormatOptions;
+import com.google.gcloud.bigquery.Job;
 import com.google.gcloud.bigquery.JobId;
 import com.google.gcloud.bigquery.JobInfo;
-import com.google.gcloud.bigquery.JobStatus;
 import com.google.gcloud.bigquery.LoadJobConfiguration;
 import com.google.gcloud.bigquery.QueryRequest;
 import com.google.gcloud.bigquery.QueryResponse;
 import com.google.gcloud.bigquery.Schema;
 import com.google.gcloud.bigquery.StandardTableDefinition;
+import com.google.gcloud.bigquery.Table;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
 import com.google.gcloud.bigquery.ViewDefinition;
@@ -176,7 +178,7 @@ public class BigQueryExample {
   private static class ListDatasetsAction extends NoArgsAction {
     @Override
     public void run(BigQuery bigquery, Void arg) {
-      Iterator<DatasetInfo> datasetInfoIterator = bigquery.listDatasets().iterateAll();
+      Iterator<Dataset> datasetInfoIterator = bigquery.listDatasets().iterateAll();
       while (datasetInfoIterator.hasNext()) {
         System.out.println(datasetInfoIterator.next());
       }
@@ -211,7 +213,7 @@ public class BigQueryExample {
   private static class ListTablesAction extends DatasetAction {
     @Override
     public void run(BigQuery bigquery, DatasetId datasetId) {
-      Iterator<TableInfo> tableInfoIterator = bigquery.listTables(datasetId).iterateAll();
+      Iterator<Table> tableInfoIterator = bigquery.listTables(datasetId).iterateAll();
       while (tableInfoIterator.hasNext()) {
         System.out.println(tableInfoIterator.next());
       }
@@ -355,7 +357,7 @@ public class BigQueryExample {
   private static class ListJobsAction extends NoArgsAction {
     @Override
     public void run(BigQuery bigquery, Void arg) {
-      Iterator<JobInfo> datasetInfoIterator = bigquery.listJobs().iterateAll();
+      Iterator<Job> datasetInfoIterator = bigquery.listJobs().iterateAll();
       while (datasetInfoIterator.hasNext()) {
         System.out.println(datasetInfoIterator.next());
       }
@@ -521,11 +523,10 @@ public class BigQueryExample {
     @Override
     void run(BigQuery bigquery, JobInfo job) throws Exception {
       System.out.println("Creating job");
-      JobInfo startedJob = bigquery.create(job);
-      while (startedJob.status().state() != JobStatus.State.DONE) {
+      Job startedJob = bigquery.create(job);
+      while (!startedJob.isDone()) {
         System.out.println("Waiting for job " + startedJob.jobId().job() + " to complete");
         Thread.sleep(1000L);
-        startedJob = bigquery.getJob(startedJob.jobId());
       }
       if (startedJob.status().error() == null) {
         System.out.println("Job " + startedJob.jobId().job() + " succeeded");

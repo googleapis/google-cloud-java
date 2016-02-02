@@ -206,7 +206,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the dataset's fields to be returned by the RPC call. If this
      * option is not provided all dataset's fields are returned. {@code DatasetOption.fields} can
-     * be used to specify only the fields of interest. {@link DatasetInfo#datasetId()} is always
+     * be used to specify only the fields of interest. {@link Dataset#datasetId()} is always
      * returned, even if not specified.
      */
     public static DatasetOption fields(DatasetField... fields) {
@@ -275,8 +275,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the table's fields to be returned by the RPC call. If this
      * option is not provided all table's fields are returned. {@code TableOption.fields} can be
-     * used to specify only the fields of interest. {@link TableInfo#tableId()} and type (which is
-     * part of {@link TableInfo#definition()}) are always returned, even if not specified.
+     * used to specify only the fields of interest. {@link Table#tableId()} and type (which is part
+     * of {@link Table#definition()}) are always returned, even if not specified.
      */
     public static TableOption fields(TableField... fields) {
       return new TableOption(BigQueryRpc.Option.FIELDS, TableField.selector(fields));
@@ -369,7 +369,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the job's fields to be returned by the RPC call. If this option
      * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to
-     * specify only the fields of interest. {@link JobInfo#jobId()}, {@link JobStatus#state()},
+     * specify only the fields of interest. {@link Job#jobId()}, {@link JobStatus#state()},
      * {@link JobStatus#error()} as well as type-specific configuration (e.g.
      * {@link QueryJobConfiguration#query()} for Query Jobs) are always returned, even if not
      * specified. {@link JobField#SELF_LINK} and {@link JobField#ETAG} can not be selected when
@@ -397,7 +397,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the job's fields to be returned by the RPC call. If this option
      * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to
-     * specify only the fields of interest. {@link JobInfo#jobId()} as well as type-specific
+     * specify only the fields of interest. {@link Job#jobId()} as well as type-specific
      * configuration (e.g. {@link QueryJobConfiguration#query()} for Query Jobs) are always
      * returned, even if not specified.
      */
@@ -457,46 +457,45 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  DatasetInfo create(DatasetInfo dataset, DatasetOption... options) throws BigQueryException;
+  Dataset create(DatasetInfo dataset, DatasetOption... options) throws BigQueryException;
 
   /**
    * Creates a new table.
    *
    * @throws BigQueryException upon failure
    */
-  TableInfo create(TableInfo table, TableOption... options) throws BigQueryException;
+  Table create(TableInfo table, TableOption... options) throws BigQueryException;
 
   /**
    * Creates a new job.
    *
    * @throws BigQueryException upon failure
    */
-  JobInfo create(JobInfo job, JobOption... options) throws BigQueryException;
+  Job create(JobInfo job, JobOption... options) throws BigQueryException;
 
   /**
    * Returns the requested dataset or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  DatasetInfo getDataset(String datasetId, DatasetOption... options) throws BigQueryException;
+  Dataset getDataset(String datasetId, DatasetOption... options) throws BigQueryException;
 
   /**
    * Returns the requested dataset or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  DatasetInfo getDataset(DatasetId datasetId, DatasetOption... options) throws BigQueryException;
+  Dataset getDataset(DatasetId datasetId, DatasetOption... options) throws BigQueryException;
 
   /**
    * Lists the project's datasets. This method returns partial information on each dataset
-   * ({@link DatasetInfo#datasetId()}, {@link DatasetInfo#friendlyName()} and
-   * {@link DatasetInfo#id()}). To get complete information use either
-   * {@link #getDataset(String, DatasetOption...)} or
+   * ({@link Dataset#datasetId()}, {@link Dataset#friendlyName()} and {@link Dataset#id()}). To get
+   * complete information use either {@link #getDataset(String, DatasetOption...)} or
    * {@link #getDataset(DatasetId, DatasetOption...)}.
    *
    * @throws BigQueryException upon failure
    */
-  Page<DatasetInfo> listDatasets(DatasetListOption... options) throws BigQueryException;
+  Page<Dataset> listDatasets(DatasetListOption... options) throws BigQueryException;
 
   /**
    * Deletes the requested dataset.
@@ -535,54 +534,50 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  DatasetInfo update(DatasetInfo dataset, DatasetOption... options) throws BigQueryException;
+  Dataset update(DatasetInfo dataset, DatasetOption... options) throws BigQueryException;
 
   /**
    * Updates table information.
    *
    * @throws BigQueryException upon failure
    */
-  TableInfo update(TableInfo table, TableOption... options) throws BigQueryException;
+  Table update(TableInfo table, TableOption... options) throws BigQueryException;
 
   /**
    * Returns the requested table or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  TableInfo getTable(String datasetId, String tableId, TableOption... options)
-      throws BigQueryException;
+  Table getTable(String datasetId, String tableId, TableOption... options) throws BigQueryException;
 
   /**
    * Returns the requested table or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  TableInfo getTable(TableId tableId, TableOption... options)
-      throws BigQueryException;
+  Table getTable(TableId tableId, TableOption... options) throws BigQueryException;
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table
-   * ({@link TableInfo#tableId()}, {@link TableInfo#friendlyName()}, {@link TableInfo#id()} and
-   * type, which is part of {@link TableInfo#definition()}). To get complete information use either
+   * ({@link TableInfo#tableId()}, {@link Table#friendlyName()}, {@link Table#id()} and type, which
+   * is part of {@link Table#definition()}). To get complete information use either
    * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *
    * @throws BigQueryException upon failure
    */
-  Page<TableInfo> listTables(String datasetId, TableListOption... options)
-      throws BigQueryException;
+  Page<Table> listTables(String datasetId, TableListOption... options) throws BigQueryException;
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table
-   * ({@link TableInfo#tableId()}, {@link TableInfo#friendlyName()}, {@link TableInfo#id()} and
-   * type, which is part of {@link TableInfo#definition()}). To get complete information use either
+   * ({@link TableInfo#tableId()}, {@link Table#friendlyName()}, {@link Table#id()} and type, which
+   * is part of {@link Table#definition()}). To get complete information use either
    * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *
    * @throws BigQueryException upon failure
    */
-  Page<TableInfo> listTables(DatasetId datasetId, TableListOption... options)
-      throws BigQueryException;
+  Page<Table> listTables(DatasetId datasetId, TableListOption... options) throws BigQueryException;
 
   /**
    * Sends an insert all request.
@@ -612,21 +607,21 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  JobInfo getJob(String jobId, JobOption... options) throws BigQueryException;
+  Job getJob(String jobId, JobOption... options) throws BigQueryException;
 
   /**
    * Returns the requested job or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  JobInfo getJob(JobId jobId, JobOption... options) throws BigQueryException;
+  Job getJob(JobId jobId, JobOption... options) throws BigQueryException;
 
   /**
    * Lists the jobs.
    *
    * @throws BigQueryException upon failure
    */
-  Page<JobInfo> listJobs(JobListOption... options) throws BigQueryException;
+  Page<Job> listJobs(JobListOption... options) throws BigQueryException;
 
   /**
    * Sends a job cancel request. This call will return immediately. The job status can then be

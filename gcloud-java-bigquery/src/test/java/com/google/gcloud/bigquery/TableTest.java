@@ -16,13 +16,14 @@
 
 package com.google.gcloud.bigquery;
 
+import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
+import static org.easymock.EasyMock.eq;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
@@ -35,16 +36,21 @@ import com.google.gcloud.PageImpl;
 import com.google.gcloud.bigquery.InsertAllRequest.RowToInsert;
 
 import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.util.Iterator;
 import java.util.List;
 
 public class TableTest {
 
+  private static final String ETAG = "etag";
+  private static final String ID = "project:dataset:table1";
+  private static final String SELF_LINK = "selfLink";
+  private static final String FRIENDLY_NAME = "friendlyName";
+  private static final String DESCRIPTION = "description";
+  private static final Long CREATION_TIME = 10L;
+  private static final Long EXPIRATION_TIME = 100L;
+  private static final Long LAST_MODIFIED_TIME = 20L;
   private static final TableId TABLE_ID1 = TableId.of("dataset", "table1");
   private static final TableId TABLE_ID2 = TableId.of("dataset", "table2");
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION =
@@ -77,148 +83,198 @@ public class TableTest {
   private static final Iterable<List<FieldValue>> ROWS = ImmutableList.of(
       (List<FieldValue>) ImmutableList.of(FIELD_VALUE1), ImmutableList.of(FIELD_VALUE2));
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  private BigQuery serviceMockReturnsOptions = createStrictMock(BigQuery.class);
+  private BigQueryOptions mockOptions = createMock(BigQueryOptions.class);
   private BigQuery bigquery;
+  private Table expectedTable;
   private Table table;
 
-  @Before
-  public void setUp() throws Exception {
+  private void initializeExpectedTable(int optionsCalls) {
+    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    replay(serviceMockReturnsOptions);
     bigquery = createStrictMock(BigQuery.class);
-    table = new Table(bigquery, TABLE_INFO);
+    expectedTable = new Table(serviceMockReturnsOptions, new TableInfo.BuilderImpl(TABLE_INFO));
+  }
+
+  private void initializeTable() {
+    table = new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO));
   }
 
   @After
   public void tearDown() throws Exception {
-    verify(bigquery);
+    verify(bigquery, serviceMockReturnsOptions);
   }
 
   @Test
-  public void testInfo() throws Exception {
-    assertEquals(TABLE_INFO, table.info());
+  public void testBuilder() {
+    initializeExpectedTable(2);
     replay(bigquery);
+    Table builtTable = Table.builder(serviceMockReturnsOptions, TABLE_ID1, TABLE_DEFINITION)
+        .creationTime(CREATION_TIME)
+        .description(DESCRIPTION)
+        .etag(ETAG)
+        .expirationTime(EXPIRATION_TIME)
+        .friendlyName(FRIENDLY_NAME)
+        .id(ID)
+        .lastModifiedTime(LAST_MODIFIED_TIME)
+        .selfLink(SELF_LINK)
+        .build();
+    assertEquals(TABLE_ID1, builtTable.tableId());
+    assertEquals(CREATION_TIME, builtTable.creationTime());
+    assertEquals(DESCRIPTION, builtTable.description());
+    assertEquals(ETAG, builtTable.etag());
+    assertEquals(EXPIRATION_TIME, builtTable.expirationTime());
+    assertEquals(FRIENDLY_NAME, builtTable.friendlyName());
+    assertEquals(ID, builtTable.id());
+    assertEquals(LAST_MODIFIED_TIME, builtTable.lastModifiedTime());
+    assertEquals(TABLE_DEFINITION, builtTable.definition());
+    assertEquals(SELF_LINK, builtTable.selfLink());
+    assertSame(serviceMockReturnsOptions, builtTable.bigquery());
   }
 
   @Test
-  public void testBigQuery() throws Exception {
-    assertSame(bigquery, table.bigquery());
+  public void testToBuilder() {
+    initializeExpectedTable(4);
     replay(bigquery);
+    compareTable(expectedTable, expectedTable.toBuilder().build());
   }
 
   @Test
   public void testExists_True() throws Exception {
+    initializeExpectedTable(1);
     BigQuery.TableOption[] expectedOptions = {BigQuery.TableOption.fields()};
-    expect(bigquery.getTable(TABLE_INFO.tableId(), expectedOptions)).andReturn(TABLE_INFO);
+    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getTable(TABLE_INFO.tableId(), expectedOptions)).andReturn(expectedTable);
     replay(bigquery);
+    initializeTable();
     assertTrue(table.exists());
   }
 
   @Test
   public void testExists_False() throws Exception {
+    initializeExpectedTable(1);
     BigQuery.TableOption[] expectedOptions = {BigQuery.TableOption.fields()};
+    expect(bigquery.options()).andReturn(mockOptions);
     expect(bigquery.getTable(TABLE_INFO.tableId(), expectedOptions)).andReturn(null);
     replay(bigquery);
+    initializeTable();
     assertFalse(table.exists());
   }
 
   @Test
   public void testReload() throws Exception {
+    initializeExpectedTable(4);
     TableInfo updatedInfo = TABLE_INFO.toBuilder().description("Description").build();
-    expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(updatedInfo);
+    Table expectedTable =
+        new Table(serviceMockReturnsOptions, new TableInfo.BuilderImpl(updatedInfo));
+    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(expectedTable);
     replay(bigquery);
+    initializeTable();
     Table updatedTable = table.reload();
-    assertSame(bigquery, updatedTable.bigquery());
-    assertEquals(updatedInfo, updatedTable.info());
+    compareTable(expectedTable, updatedTable);
   }
 
   @Test
   public void testReloadNull() throws Exception {
+    initializeExpectedTable(1);
+    expect(bigquery.options()).andReturn(mockOptions);
     expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(null);
     replay(bigquery);
+    initializeTable();
     assertNull(table.reload());
   }
 
   @Test
   public void testReloadWithOptions() throws Exception {
+    initializeExpectedTable(4);
     TableInfo updatedInfo = TABLE_INFO.toBuilder().description("Description").build();
+    Table expectedTable =
+        new Table(serviceMockReturnsOptions, new TableInfo.BuilderImpl(updatedInfo));
+    expect(bigquery.options()).andReturn(mockOptions);
     expect(bigquery.getTable(TABLE_INFO.tableId(), BigQuery.TableOption.fields()))
-        .andReturn(updatedInfo);
+        .andReturn(expectedTable);
     replay(bigquery);
+    initializeTable();
     Table updatedTable = table.reload(BigQuery.TableOption.fields());
-    assertSame(bigquery, updatedTable.bigquery());
-    assertEquals(updatedInfo, updatedTable.info());
+    compareTable(expectedTable, updatedTable);
   }
 
   @Test
-  public void testUpdate() throws Exception {
-    TableInfo updatedInfo = TABLE_INFO.toBuilder().description("Description").build();
-    expect(bigquery.update(updatedInfo)).andReturn(updatedInfo);
+  public void testUpdate() {
+    initializeExpectedTable(4);
+    Table expectedUpdatedTable = expectedTable.toBuilder().description("Description").build();
+    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.update(eq(expectedTable))).andReturn(expectedUpdatedTable);
     replay(bigquery);
-    Table updatedTable = table.update(updatedInfo);
-    assertSame(bigquery, updatedTable.bigquery());
-    assertEquals(updatedInfo, updatedTable.info());
+    initializeTable();
+    Table actualUpdatedTable = table.update();
+    compareTable(expectedUpdatedTable, actualUpdatedTable);
   }
 
   @Test
-  public void testUpdateWithDifferentId() throws Exception {
-    TableInfo updatedInfo = TABLE_INFO.toBuilder()
-        .tableId(TableId.of("dataset", "table3"))
-        .description("Description")
-        .build();
+  public void testUpdateWithOptions() {
+    initializeExpectedTable(4);
+    Table expectedUpdatedTable = expectedTable.toBuilder().description("Description").build();
+    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.update(eq(expectedTable), eq(BigQuery.TableOption.fields())))
+        .andReturn(expectedUpdatedTable);
     replay(bigquery);
-    thrown.expect(IllegalArgumentException.class);
-    table.update(updatedInfo);
+    initializeTable();
+    Table actualUpdatedTable = table.update(BigQuery.TableOption.fields());
+    compareTable(expectedUpdatedTable, actualUpdatedTable);
   }
 
   @Test
-  public void testUpdateWithDifferentDatasetId() throws Exception {
-    TableInfo updatedInfo = TABLE_INFO.toBuilder()
-        .tableId(TableId.of("dataset1", "table1"))
-        .description("Description")
-        .build();
-    replay(bigquery);
-    thrown.expect(IllegalArgumentException.class);
-    table.update(updatedInfo);
-  }
-
-  @Test
-  public void testUpdateWithOptions() throws Exception {
-    TableInfo updatedInfo = TABLE_INFO.toBuilder().description("Description").build();
-    expect(bigquery.update(updatedInfo, BigQuery.TableOption.fields())).andReturn(updatedInfo);
-    replay(bigquery);
-    Table updatedTable = table.update(updatedInfo, BigQuery.TableOption.fields());
-    assertSame(bigquery, updatedTable.bigquery());
-    assertEquals(updatedInfo, updatedTable.info());
-  }
-
-  @Test
-  public void testDelete() throws Exception {
+  public void testDeleteTrue() {
+    initializeExpectedTable(1);
+    expect(bigquery.options()).andReturn(mockOptions);
     expect(bigquery.delete(TABLE_INFO.tableId())).andReturn(true);
     replay(bigquery);
+    initializeTable();
     assertTrue(table.delete());
   }
 
   @Test
+  public void testDeleteFalse() {
+    initializeExpectedTable(1);
+    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.delete(TABLE_INFO.tableId())).andReturn(false);
+    replay(bigquery);
+    initializeTable();
+    assertFalse(table.delete());
+  }
+
+  @Test
   public void testInsert() throws Exception {
+    initializeExpectedTable(1);
+    expect(bigquery.options()).andReturn(mockOptions);
     expect(bigquery.insertAll(INSERT_ALL_REQUEST)).andReturn(EMPTY_INSERT_ALL_RESPONSE);
     replay(bigquery);
+    initializeTable();
     InsertAllResponse response = table.insert(ROWS_TO_INSERT);
     assertSame(EMPTY_INSERT_ALL_RESPONSE, response);
   }
 
   @Test
   public void testInsertComplete() throws Exception {
+    initializeExpectedTable(1);
+    expect(bigquery.options()).andReturn(mockOptions);
     expect(bigquery.insertAll(INSERT_ALL_REQUEST_COMPLETE)).andReturn(EMPTY_INSERT_ALL_RESPONSE);
     replay(bigquery);
+    initializeTable();
     InsertAllResponse response = table.insert(ROWS_TO_INSERT, true, true);
     assertSame(EMPTY_INSERT_ALL_RESPONSE, response);
   }
 
   @Test
   public void testList() throws Exception {
+    initializeExpectedTable(1);
+    expect(bigquery.options()).andReturn(mockOptions);
     PageImpl<List<FieldValue>> tableDataPage = new PageImpl<>(null, "c", ROWS);
     expect(bigquery.listTableData(TABLE_ID1)).andReturn(tableDataPage);
     replay(bigquery);
+    initializeTable();
     Page<List<FieldValue>> dataPage = table.list();
     Iterator<List<FieldValue>> tableDataIterator = tableDataPage.values().iterator();
     Iterator<List<FieldValue>> dataIterator = dataPage.values().iterator();
@@ -227,10 +283,13 @@ public class TableTest {
 
   @Test
   public void testListWithOptions() throws Exception {
+    initializeExpectedTable(1);
+    expect(bigquery.options()).andReturn(mockOptions);
     PageImpl<List<FieldValue>> tableDataPage = new PageImpl<>(null, "c", ROWS);
     expect(bigquery.listTableData(TABLE_ID1, BigQuery.TableDataListOption.maxResults(10L)))
         .andReturn(tableDataPage);
     replay(bigquery);
+    initializeTable();
     Page<List<FieldValue>> dataPage = table.list(BigQuery.TableDataListOption.maxResults(10L));
     Iterator<List<FieldValue>> tableDataIterator = tableDataPage.values().iterator();
     Iterator<List<FieldValue>> dataIterator = dataPage.values().iterator();
@@ -239,85 +298,106 @@ public class TableTest {
 
   @Test
   public void testCopyFromString() throws Exception {
-    expect(bigquery.create(COPY_JOB_INFO)).andReturn(COPY_JOB_INFO);
+    initializeExpectedTable(2);
+    expect(bigquery.options()).andReturn(mockOptions);
+    Job expectedJob = new Job(serviceMockReturnsOptions, new JobInfo.BuilderImpl(COPY_JOB_INFO));
+    expect(bigquery.create(COPY_JOB_INFO))
+        .andReturn(expectedJob);
     replay(bigquery);
+    initializeTable();
     Job job = table.copy(TABLE_ID2.dataset(), TABLE_ID2.table());
-    assertSame(bigquery, job.bigquery());
-    assertEquals(COPY_JOB_INFO, job.info());
+    assertSame(expectedJob, job);
   }
 
   @Test
   public void testCopyFromId() throws Exception {
-    expect(bigquery.create(COPY_JOB_INFO)).andReturn(COPY_JOB_INFO);
+    initializeExpectedTable(2);
+    expect(bigquery.options()).andReturn(mockOptions);
+    Job expectedJob = new Job(serviceMockReturnsOptions, new JobInfo.BuilderImpl(COPY_JOB_INFO));
+    expect(bigquery.create(COPY_JOB_INFO)).andReturn(expectedJob);
     replay(bigquery);
-    Job job = table.copy(TABLE_ID2);
-    assertSame(bigquery, job.bigquery());
-    assertEquals(COPY_JOB_INFO, job.info());
+    initializeTable();
+    Job job = table.copy(TABLE_ID2.dataset(), TABLE_ID2.table());
+    assertSame(expectedJob, job);
   }
 
   @Test
   public void testLoadDataUri() throws Exception {
-    expect(bigquery.create(LOAD_JOB_INFO)).andReturn(LOAD_JOB_INFO);
+    initializeExpectedTable(2);
+    expect(bigquery.options()).andReturn(mockOptions);
+    Job expectedJob = new Job(serviceMockReturnsOptions, new JobInfo.BuilderImpl(LOAD_JOB_INFO));
+    expect(bigquery.create(LOAD_JOB_INFO)).andReturn(expectedJob);
     replay(bigquery);
+    initializeTable();
     Job job = table.load(FormatOptions.json(), "URI");
-    assertSame(bigquery, job.bigquery());
-    assertEquals(LOAD_JOB_INFO, job.info());
+    assertSame(expectedJob, job);
   }
 
   @Test
   public void testLoadDataUris() throws Exception {
-    expect(bigquery.create(LOAD_JOB_INFO)).andReturn(LOAD_JOB_INFO);
+    initializeExpectedTable(2);
+    expect(bigquery.options()).andReturn(mockOptions);
+    Job expectedJob = new Job(serviceMockReturnsOptions, new JobInfo.BuilderImpl(LOAD_JOB_INFO));
+    expect(bigquery.create(LOAD_JOB_INFO)).andReturn(expectedJob);
     replay(bigquery);
+    initializeTable();
     Job job = table.load(FormatOptions.json(), ImmutableList.of("URI"));
-    assertSame(bigquery, job.bigquery());
-    assertEquals(LOAD_JOB_INFO, job.info());
+    assertSame(expectedJob, job);
   }
 
   @Test
   public void testExtractDataUri() throws Exception {
-    expect(bigquery.create(EXTRACT_JOB_INFO)).andReturn(EXTRACT_JOB_INFO);
+    initializeExpectedTable(2);
+    expect(bigquery.options()).andReturn(mockOptions);
+    Job expectedJob = new Job(serviceMockReturnsOptions, new JobInfo.BuilderImpl(EXTRACT_JOB_INFO));
+    expect(bigquery.create(EXTRACT_JOB_INFO)).andReturn(expectedJob);
     replay(bigquery);
+    initializeTable();
     Job job = table.extract("CSV", "URI");
-    assertSame(bigquery, job.bigquery());
-    assertEquals(EXTRACT_JOB_INFO, job.info());
+    assertSame(expectedJob, job);
   }
 
   @Test
   public void testExtractDataUris() throws Exception {
-    expect(bigquery.create(EXTRACT_JOB_INFO)).andReturn(EXTRACT_JOB_INFO);
+    initializeExpectedTable(2);
+    expect(bigquery.options()).andReturn(mockOptions);
+    Job expectedJob = new Job(serviceMockReturnsOptions, new JobInfo.BuilderImpl(EXTRACT_JOB_INFO));
+    expect(bigquery.create(EXTRACT_JOB_INFO)).andReturn(expectedJob);
     replay(bigquery);
+    initializeTable();
     Job job = table.extract("CSV", ImmutableList.of("URI"));
-    assertSame(bigquery, job.bigquery());
-    assertEquals(EXTRACT_JOB_INFO, job.info());
+    assertSame(expectedJob, job);
   }
 
   @Test
   public void testGetFromId() throws Exception {
-    expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(TABLE_INFO);
+    initializeExpectedTable(3);
+    expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(expectedTable);
     replay(bigquery);
     Table loadedTable = Table.get(bigquery, TABLE_INFO.tableId());
-    assertNotNull(loadedTable);
-    assertEquals(TABLE_INFO, loadedTable.info());
+    compareTable(expectedTable, loadedTable);
   }
 
   @Test
   public void testGetFromStrings() throws Exception {
-    expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(TABLE_INFO);
+    initializeExpectedTable(3);
+    expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(expectedTable);
     replay(bigquery);
     Table loadedTable = Table.get(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table());
-    assertNotNull(loadedTable);
-    assertEquals(TABLE_INFO, loadedTable.info());
+    compareTable(expectedTable, loadedTable);
   }
 
   @Test
   public void testGetFromIdNull() throws Exception {
+    initializeExpectedTable(1);
     expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(null);
     replay(bigquery);
-    assertNull(Table.get(bigquery, TABLE_INFO.tableId()));
+    assertNull(Table.get(bigquery, TABLE_ID1));
   }
 
   @Test
   public void testGetFromStringsNull() throws Exception {
+    initializeExpectedTable(1);
     expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(null);
     replay(bigquery);
     assertNull(Table.get(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table()));
@@ -325,22 +405,51 @@ public class TableTest {
 
   @Test
   public void testGetFromIdWithOptions() throws Exception {
+    initializeExpectedTable(3);
     expect(bigquery.getTable(TABLE_INFO.tableId(), BigQuery.TableOption.fields()))
-        .andReturn(TABLE_INFO);
+        .andReturn(expectedTable);
     replay(bigquery);
     Table loadedTable = Table.get(bigquery, TABLE_INFO.tableId(), BigQuery.TableOption.fields());
-    assertNotNull(loadedTable);
-    assertEquals(TABLE_INFO, loadedTable.info());
+    compareTable(expectedTable, loadedTable);
   }
 
   @Test
   public void testGetFromStringsWithOptions() throws Exception {
+    initializeExpectedTable(3);
     expect(bigquery.getTable(TABLE_INFO.tableId(), BigQuery.TableOption.fields()))
-        .andReturn(TABLE_INFO);
+        .andReturn(expectedTable);
     replay(bigquery);
     Table loadedTable =
         Table.get(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table(), BigQuery.TableOption.fields());
-    assertNotNull(loadedTable);
-    assertEquals(TABLE_INFO, loadedTable.info());
+    compareTable(expectedTable, loadedTable);
+  }
+
+  @Test
+  public void testBigquery() {
+    initializeExpectedTable(1);
+    replay(bigquery);
+    assertSame(serviceMockReturnsOptions, expectedTable.bigquery());
+  }
+
+  private void compareTable(Table expected, Table value) {
+    assertEquals(expected, value);
+    compareTableInfo(expected, value);
+    assertEquals(expected.bigquery().options(), value.bigquery().options());
+  }
+
+  private void compareTableInfo(TableInfo expected, TableInfo value) {
+    assertEquals(expected, value);
+    assertEquals(expected.tableId(), value.tableId());
+    assertEquals(expected.definition(), value.definition());
+    assertEquals(expected.creationTime(), value.creationTime());
+    assertEquals(expected.description(), value.description());
+    assertEquals(expected.etag(), value.etag());
+    assertEquals(expected.expirationTime(), value.expirationTime());
+    assertEquals(expected.friendlyName(), value.friendlyName());
+    assertEquals(expected.id(), value.id());
+    assertEquals(expected.lastModifiedTime(), value.lastModifiedTime());
+    assertEquals(expected.selfLink(), value.selfLink());
+    assertEquals(expected.definition(), value.definition());
+    assertEquals(expected.hashCode(), value.hashCode());
   }
 }

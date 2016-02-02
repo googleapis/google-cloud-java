@@ -39,7 +39,7 @@ import java.util.Objects;
  * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#datasets">
  * Managing Jobs, Datasets, and Projects</a>
  */
-public final class DatasetInfo implements Serializable {
+public class DatasetInfo implements Serializable {
 
   static final Function<Dataset, DatasetInfo> FROM_PB_FUNCTION =
       new Function<Dataset, DatasetInfo>() {
@@ -70,7 +70,72 @@ public final class DatasetInfo implements Serializable {
   private final String location;
   private final String selfLink;
 
-  public static final class Builder {
+  public abstract static class Builder {
+
+    /**
+     * Sets the dataset identity.
+     */
+    public abstract Builder datasetId(DatasetId datasetId);
+
+    /**
+     * Sets the dataset's access control configuration.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/access-control">Access Control</a>
+     */
+    public abstract Builder acl(List<Acl> acl);
+
+    abstract Builder creationTime(Long creationTime);
+
+    /**
+     * Sets the default lifetime of all tables in the dataset, in milliseconds. The minimum value is
+     * 3600000 milliseconds (one hour). Once this property is set, all newly-created tables in the
+     * dataset will have an expirationTime property set to the creation time plus the value in this
+     * property, and changing the value will only affect new tables, not existing ones. When the
+     * expirationTime for a given table is reached, that table will be deleted automatically. If a
+     * table's expirationTime is modified or removed before the table expires, or if you provide an
+     * explicit expirationTime when creating a table, that value takes precedence over the default
+     * expiration time indicated by this property. This property is experimental and might be
+     * subject to change or removed.
+     */
+    public abstract Builder defaultTableLifetime(Long defaultTableLifetime);
+
+    /**
+     * Sets a user-friendly description for the dataset.
+     */
+    public abstract Builder description(String description);
+
+    abstract Builder etag(String etag);
+
+    /**
+     * Sets a user-friendly name for the dataset.
+     */
+    public abstract Builder friendlyName(String friendlyName);
+
+    abstract Builder id(String id);
+
+    abstract Builder lastModified(Long lastModified);
+
+    /**
+     * Sets the geographic location where the dataset should reside. This property is experimental
+     * and might be subject to change or removed.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#location">Dataset
+     *     Location</a>
+     */
+    public abstract Builder location(String location);
+
+    abstract Builder selfLink(String selfLink);
+
+    /**
+     * Creates a {@code DatasetInfo} object.
+     */
+    public abstract DatasetInfo build();
+  }
+
+  /**
+   * Base class for a {@code DatasetInfo} builder.
+   */
+  static final class BuilderImpl extends Builder {
 
     private DatasetId datasetId;
     private List<Acl> acl;
@@ -84,9 +149,9 @@ public final class DatasetInfo implements Serializable {
     private String location;
     private String selfLink;
 
-    private Builder() {}
+    BuilderImpl() {}
 
-    private Builder(DatasetInfo datasetInfo) {
+    BuilderImpl(DatasetInfo datasetInfo) {
       this.datasetId = datasetInfo.datasetId;
       this.acl = datasetInfo.acl;
       this.creationTime = datasetInfo.creationTime;
@@ -100,103 +165,103 @@ public final class DatasetInfo implements Serializable {
       this.selfLink = datasetInfo.selfLink;
     }
 
-    /**
-     * Sets the dataset identity.
-     */
+    BuilderImpl(com.google.api.services.bigquery.model.Dataset datasetPb) {
+      if (datasetPb.getDatasetReference() != null) {
+        this.datasetId = DatasetId.fromPb(datasetPb.getDatasetReference());
+      }
+      if (datasetPb.getAccess() != null) {
+        this.acl = Lists.transform(datasetPb.getAccess(), new Function<Dataset.Access, Acl>() {
+          @Override
+          public Acl apply(Dataset.Access accessPb) {
+            return Acl.fromPb(accessPb);
+          }
+        });
+      }
+      this.creationTime = datasetPb.getCreationTime();
+      this.defaultTableLifetime = datasetPb.getDefaultTableExpirationMs();
+      this.description = datasetPb.getDescription();
+      this.etag = datasetPb.getEtag();
+      this.friendlyName = datasetPb.getFriendlyName();
+      this.id = datasetPb.getId();
+      this.lastModified = datasetPb.getLastModifiedTime();
+      this.location = datasetPb.getLocation();
+      this.selfLink = datasetPb.getSelfLink();
+    }
+
+    @Override
     public Builder datasetId(DatasetId datasetId) {
       this.datasetId = checkNotNull(datasetId);
       return this;
     }
 
-    /**
-     * Sets the dataset's access control configuration.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/access-control">Access Control</a>
-     */
+    @Override
     public Builder acl(List<Acl> acl) {
       this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
+    @Override
     Builder creationTime(Long creationTime) {
       this.creationTime = creationTime;
       return this;
     }
 
-    /**
-     * Sets the default lifetime of all tables in the dataset, in milliseconds. The minimum value is
-     * 3600000 milliseconds (one hour). Once this property is set, all newly-created tables in the
-     * dataset will have an expirationTime property set to the creation time plus the value in this
-     * property, and changing the value will only affect new tables, not existing ones. When the
-     * expirationTime for a given table is reached, that table will be deleted automatically. If a
-     * table's expirationTime is modified or removed before the table expires, or if you provide an
-     * explicit expirationTime when creating a table, that value takes precedence over the default
-     * expiration time indicated by this property. This property is experimental and might be
-     * subject to change or removed.
-     */
+    @Override
     public Builder defaultTableLifetime(Long defaultTableLifetime) {
       this.defaultTableLifetime =
           firstNonNull(defaultTableLifetime, Data.<Long>nullOf(Long.class));
       return this;
     }
 
-    /**
-     * Sets a user-friendly description for the dataset.
-     */
+    @Override
     public Builder description(String description) {
       this.description = firstNonNull(description, Data.<String>nullOf(String.class));
       return this;
     }
 
+    @Override
     Builder etag(String etag) {
       this.etag = etag;
       return this;
     }
 
-    /**
-     * Sets a user-friendly name for the dataset.
-     */
+    @Override
     public Builder friendlyName(String friendlyName) {
       this.friendlyName = firstNonNull(friendlyName, Data.<String>nullOf(String.class));
       return this;
     }
 
+    @Override
     Builder id(String id) {
       this.id = id;
       return this;
     }
 
+    @Override
     Builder lastModified(Long lastModified) {
       this.lastModified = lastModified;
       return this;
     }
 
-    /**
-     * Sets the geographic location where the dataset should reside. This property is experimental
-     * and might be subject to change or removed.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#location">Dataset
-     *     Location</a>
-     */
+    @Override
     public Builder location(String location) {
       this.location = firstNonNull(location, Data.<String>nullOf(String.class));
       return this;
     }
 
+    @Override
     Builder selfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
-    /**
-     * Creates a {@code DatasetInfo} object.
-     */
+    @Override
     public DatasetInfo build() {
       return new DatasetInfo(this);
     }
   }
 
-  private DatasetInfo(Builder builder) {
+  DatasetInfo(BuilderImpl builder) {
     datasetId = checkNotNull(builder.datasetId);
     acl = builder.acl;
     creationTime = builder.creationTime;
@@ -301,10 +366,10 @@ public final class DatasetInfo implements Serializable {
   }
 
   /**
-   * Returns a builder for the {@code DatasetInfo} object.
+   * Returns a builder for the dataset object.
    */
   public Builder toBuilder() {
-    return new Builder(this);
+    return new BuilderImpl(this);
   }
 
   @Override
@@ -331,7 +396,8 @@ public final class DatasetInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof DatasetInfo && Objects.equals(toPb(), ((DatasetInfo) obj).toPb());
+    return obj.getClass().equals(DatasetInfo.class)
+        && Objects.equals(toPb(), ((DatasetInfo) obj).toPb());
   }
 
   DatasetInfo setProjectId(String projectId) {
@@ -380,65 +446,27 @@ public final class DatasetInfo implements Serializable {
   }
 
   /**
-   * Returns a builder for the DatasetInfo object given it's user-defined id.
+   * Returns a builder for a {@code DatasetInfo} object given it's identity.
+   */
+  public static Builder builder(DatasetId datasetId) {
+    return new BuilderImpl().datasetId(datasetId);
+  }
+
+  /**
+   * Returns a builder for a {@code DatasetInfo} object given it's user-defined id.
    */
   public static Builder builder(String datasetId) {
-    return new Builder().datasetId(DatasetId.of(datasetId));
+    return builder(DatasetId.of(datasetId));
   }
 
   /**
    * Returns a builder for the DatasetInfo object given it's project and user-defined id.
    */
   public static Builder builder(String projectId, String datasetId) {
-    return new Builder().datasetId(DatasetId.of(projectId, datasetId));
-  }
-
-  /**
-   * Returns a builder for the DatasetInfo object given it's identity.
-   */
-  public static Builder builder(DatasetId datasetId) {
-    return new Builder().datasetId(datasetId);
+    return builder(DatasetId.of(projectId, datasetId));
   }
 
   static DatasetInfo fromPb(Dataset datasetPb) {
-    Builder builder = builder(datasetPb.getDatasetReference().getProjectId(),
-        datasetPb.getDatasetReference().getDatasetId());
-    if (datasetPb.getAccess() != null) {
-      builder.acl(Lists.transform(datasetPb.getAccess(),
-          new Function<Dataset.Access, Acl>() {
-            @Override
-            public Acl apply(Dataset.Access accessPb) {
-              return Acl.fromPb(accessPb);
-            }
-          }));
-    }
-    if (datasetPb.getCreationTime() != null) {
-      builder.creationTime(datasetPb.getCreationTime());
-    }
-    if (datasetPb.getDefaultTableExpirationMs() != null) {
-      builder.defaultTableLifetime(datasetPb.getDefaultTableExpirationMs());
-    }
-    if (datasetPb.getDescription() != null) {
-      builder.description(datasetPb.getDescription());
-    }
-    if (datasetPb.getEtag() != null) {
-      builder.etag(datasetPb.getEtag());
-    }
-    if (datasetPb.getFriendlyName() != null) {
-      builder.friendlyName(datasetPb.getFriendlyName());
-    }
-    if (datasetPb.getId() != null) {
-      builder.id(datasetPb.getId());
-    }
-    if (datasetPb.getLastModifiedTime() != null) {
-      builder.lastModified(datasetPb.getLastModifiedTime());
-    }
-    if (datasetPb.getLocation() != null) {
-      builder.location(datasetPb.getLocation());
-    }
-    if (datasetPb.getSelfLink() != null) {
-      builder.selfLink(datasetPb.getSelfLink());
-    }
-    return builder.build();
+    return new BuilderImpl(datasetPb).build();
   }
 }

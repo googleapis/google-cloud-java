@@ -18,28 +18,98 @@ package com.google.gcloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.Objects;
+
 /**
  * A Google BigQuery Job.
  *
  * <p>Objects of this class are immutable. To get a {@code Job} object with the most recent
- * information use {@link #reload}.
+ * information use {@link #reload}. {@code Job} adds a layer of service-related functionality over
+ * {@link JobInfo}.
  * </p>
  */
-public final class Job {
+public final class Job extends JobInfo {
 
-  private final BigQuery bigquery;
-  private final JobInfo info;
+  private static final long serialVersionUID = -4324100991693024704L;
 
-  /**
-   * Constructs a {@code Job} object for the provided {@code JobInfo}. The BigQuery service
-   * is used to issue requests.
-   *
-   * @param bigquery the BigQuery service used for issuing requests
-   * @param info jobs's info
-   */
-  public Job(BigQuery bigquery, JobInfo info) {
+  private final BigQueryOptions options;
+  private transient BigQuery bigquery;
+
+  static final class Builder extends JobInfo.Builder {
+
+    private final BigQuery bigquery;
+    private final JobInfo.BuilderImpl infoBuilder;
+
+    private Builder(BigQuery bigquery) {
+      this.bigquery = bigquery;
+      this.infoBuilder = new JobInfo.BuilderImpl();
+    }
+
+    private Builder(Job job) {
+      this.bigquery = job.bigquery;
+      this.infoBuilder = new JobInfo.BuilderImpl(job);
+    }
+
+    @Override
+    Builder etag(String etag) {
+      infoBuilder.etag(etag);
+      return this;
+    }
+
+    @Override
+    Builder id(String id) {
+      infoBuilder.id(id);
+      return this;
+    }
+
+    @Override
+    public Builder jobId(JobId jobId) {
+      infoBuilder.jobId(jobId);
+      return this;
+    }
+
+    @Override
+    Builder selfLink(String selfLink) {
+      infoBuilder.selfLink(selfLink);
+      return this;
+    }
+
+    @Override
+    Builder status(JobStatus status) {
+      infoBuilder.status(status);
+      return this;
+    }
+
+    @Override
+    Builder statistics(JobStatistics statistics) {
+      infoBuilder.statistics(statistics);
+      return this;
+    }
+
+    @Override
+    Builder userEmail(String userEmail) {
+      infoBuilder.userEmail(userEmail);
+      return this;
+    }
+
+    @Override
+    public Builder configuration(JobConfiguration configuration) {
+      infoBuilder.configuration(configuration);
+      return this;
+    }
+
+    @Override
+    public Job build() {
+      return new Job(bigquery, infoBuilder);
+    }
+  }
+
+  Job(BigQuery bigquery, JobInfo.BuilderImpl infoBuilder) {
+    super(infoBuilder);
     this.bigquery = checkNotNull(bigquery);
-    this.info = checkNotNull(info);
+    this.options = bigquery.options();
   }
 
   /**
@@ -53,15 +123,7 @@ public final class Job {
    * @throws BigQueryException upon failure
    */
   public static Job get(BigQuery bigquery, String job, BigQuery.JobOption... options) {
-    JobInfo info = bigquery.getJob(job, options);
-    return info != null ? new Job(bigquery, info) : null;
-  }
-
-  /**
-   * Returns the job's information.
-   */
-  public JobInfo info() {
-    return info;
+    return bigquery.getJob(job, options);
   }
 
   /**
@@ -71,7 +133,7 @@ public final class Job {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
-    return bigquery.getJob(info.jobId(), BigQuery.JobOption.fields()) != null;
+    return bigquery.getJob(jobId(), BigQuery.JobOption.fields()) != null;
   }
 
   /**
@@ -90,8 +152,7 @@ public final class Job {
    * @throws BigQueryException upon failure
    */
   public boolean isDone() {
-    JobInfo job = bigquery.getJob(info.jobId(),
-        BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
+    Job job = bigquery.getJob(jobId(), BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
     return job != null && job.status().state() == JobStatus.State.DONE;
   }
 
@@ -103,7 +164,7 @@ public final class Job {
    * @throws BigQueryException upon failure
    */
   public Job reload(BigQuery.JobOption... options) {
-    return Job.get(bigquery, info.jobId().job(), options);
+    return Job.get(bigquery, jobId().job(), options);
   }
 
   /**
@@ -114,7 +175,7 @@ public final class Job {
    * @throws BigQueryException upon failure
    */
   public boolean cancel() {
-    return bigquery.cancel(info.jobId());
+    return bigquery.cancel(jobId());
   }
 
   /**
@@ -122,5 +183,35 @@ public final class Job {
    */
   public BigQuery bigquery() {
     return bigquery;
+  }
+
+  static Builder builder(BigQuery bigquery, JobConfiguration configuration) {
+    return new Builder(bigquery).configuration(configuration);
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return obj instanceof Job
+        && Objects.equals(toPb(), ((Job) obj).toPb())
+        && Objects.equals(options, ((Job) obj).options);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), options);
+  }
+
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+    this.bigquery = options.service();
+  }
+
+  static Job fromPb(BigQuery bigquery, com.google.api.services.bigquery.model.Job jobPb) {
+    return new Job(bigquery, new JobInfo.BuilderImpl(jobPb));
   }
 }

@@ -114,6 +114,7 @@ with only one string field. Add the following imports at the top of your file:
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.Schema;
 import com.google.gcloud.bigquery.StandardTableDefinition;
+import com.google.gcloud.bigquery.Table;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
 ```
@@ -127,7 +128,7 @@ Field stringField = Field.of("StringField", Field.Type.string());
 Schema schema = Schema.of(stringField);
 // Create a table
 StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
-TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, tableDefinition));
+Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
 ```
 
 #### Loading data into a table
@@ -216,6 +217,7 @@ import com.google.gcloud.bigquery.QueryRequest;
 import com.google.gcloud.bigquery.QueryResponse;
 import com.google.gcloud.bigquery.Schema;
 import com.google.gcloud.bigquery.StandardTableDefinition;
+import com.google.gcloud.bigquery.Table;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
 
@@ -242,7 +244,7 @@ public class GcloudBigQueryExample {
     Schema schema = Schema.of(stringField);
     // Create a table
     StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
-    TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
 
     // Define rows to insert
     Map<String, Object> firstRow = new HashMap<>();
