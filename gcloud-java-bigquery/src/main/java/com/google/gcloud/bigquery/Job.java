@@ -37,7 +37,7 @@ public final class Job extends JobInfo {
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
 
-  static final class Builder extends JobInfo.Builder {
+  public static final class Builder extends JobInfo.Builder {
 
     private final BigQuery bigquery;
     private final JobInfo.BuilderImpl infoBuilder;
@@ -113,20 +113,6 @@ public final class Job extends JobInfo {
   }
 
   /**
-   * Creates a {@code Job} object for the provided job's user-defined id. Performs an RPC call to
-   * get the latest job information.
-   *
-   * @param bigquery the BigQuery service used for issuing requests
-   * @param job job's id, either user-defined or picked by the BigQuery service
-   * @param options job options
-   * @return the {@code Job} object or {@code null} if not found
-   * @throws BigQueryException upon failure
-   */
-  public static Job get(BigQuery bigquery, String job, BigQuery.JobOption... options) {
-    return bigquery.getJob(job, options);
-  }
-
-  /**
    * Checks if this job exists.
    *
    * @return {@code true} if this job exists, {@code false} otherwise
@@ -164,7 +150,7 @@ public final class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public Job reload(BigQuery.JobOption... options) {
-    return Job.get(bigquery, jobId().job(), options);
+    return bigquery.getJob(jobId().job(), options);
   }
 
   /**

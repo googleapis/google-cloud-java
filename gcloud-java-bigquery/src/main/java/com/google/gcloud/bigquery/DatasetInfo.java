@@ -460,7 +460,7 @@ public class DatasetInfo implements Serializable {
   }
 
   /**
-   * Returns a builder for the DatasetInfo object given it's project and user-defined id.
+   * Returns a builder for the DatasetInfo object given it's user-defined project and dataset ids.
    */
   public static Builder builder(String projectId, String datasetId) {
     return builder(DatasetId.of(projectId, datasetId));

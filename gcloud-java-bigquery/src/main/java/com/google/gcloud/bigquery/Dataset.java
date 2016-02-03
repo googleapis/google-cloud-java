@@ -41,7 +41,7 @@ public final class Dataset extends DatasetInfo {
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
 
-  static final class Builder extends DatasetInfo.Builder {
+  public static final class Builder extends DatasetInfo.Builder {
 
     private final BigQuery bigquery;
     private final DatasetInfo.BuilderImpl infoBuilder;
@@ -135,20 +135,6 @@ public final class Dataset extends DatasetInfo {
   }
 
   /**
-   * Creates a {@code Dataset} object for the provided dataset's user-defined id. Performs an RPC
-   * call to get the latest dataset information.
-   *
-   * @param bigquery the BigQuery service used for issuing requests
-   * @param dataset dataset's user-defined id
-   * @param options dataset options
-   * @return the {@code Dataset} object or {@code null} if not found
-   * @throws BigQueryException upon failure
-   */
-  public static Dataset get(BigQuery bigquery, String dataset, BigQuery.DatasetOption... options) {
-    return bigquery.getDataset(dataset, options);
-  }
-
-  /**
    * Checks if this dataset exists.
    *
    * @return {@code true} if this dataset exists, {@code false} otherwise
@@ -167,7 +153,7 @@ public final class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public Dataset reload(BigQuery.DatasetOption... options) {
-    return Dataset.get(bigquery, datasetId().dataset(), options);
+    return bigquery.getDataset(datasetId().dataset(), options);
   }
 
   /**
@@ -234,14 +220,11 @@ public final class Dataset extends DatasetInfo {
     return bigquery;
   }
 
-  public static Builder builder(BigQuery bigquery, DatasetId datasetId) {
+  static Builder builder(BigQuery bigquery, DatasetId datasetId) {
     return new Builder(bigquery).datasetId(datasetId);
   }
 
-  /**
-   * Returns a builder for a {@code DatasetInfo} object given it's user-defined id.
-   */
-  public static Builder builder(BigQuery bigquery, String datasetId) {
+  static Builder builder(BigQuery bigquery, String datasetId) {
     return builder(bigquery, DatasetId.of(datasetId));
   }
 

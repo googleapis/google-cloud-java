@@ -27,6 +27,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
@@ -335,31 +336,18 @@ public class DatasetTest {
   }
 
   @Test
-  public void testStaticGet() throws Exception {
-    initializeExpectedDataset(3);
-    expect(bigquery.getDataset(DATASET_INFO.datasetId().dataset())).andReturn(expectedDataset);
-    replay(bigquery);
-    Dataset loadedDataset = Dataset.get(bigquery, DATASET_INFO.datasetId().dataset());
-    compareDataset(expectedDataset, loadedDataset);
-  }
-
-  @Test
-  public void testStaticGetNull() throws Exception {
+  public void testBigquery() {
     initializeExpectedDataset(1);
-    expect(bigquery.getDataset(DATASET_INFO.datasetId().dataset())).andReturn(null);
     replay(bigquery);
-    assertNull(Dataset.get(bigquery, DATASET_INFO.datasetId().dataset()));
+    assertSame(serviceMockReturnsOptions, expectedDataset.bigquery());
   }
 
   @Test
-  public void testStaticGetWithOptions() throws Exception {
-    initializeExpectedDataset(3);
-    expect(bigquery.getDataset(DATASET_INFO.datasetId().dataset(), BigQuery.DatasetOption.fields()))
-        .andReturn(expectedDataset);
+  public void testToAndFromPb() {
+    initializeExpectedDataset(4);
     replay(bigquery);
-    Dataset loadedDataset =
-        Dataset.get(bigquery, DATASET_INFO.datasetId().dataset(), BigQuery.DatasetOption.fields());
-    compareDataset(expectedDataset, loadedDataset);
+    compareDataset(expectedDataset,
+        Dataset.fromPb(serviceMockReturnsOptions, expectedDataset.toPb()));
   }
 
   private void compareDataset(Dataset expected, Dataset value) {

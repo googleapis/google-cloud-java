@@ -370,65 +370,17 @@ public class TableTest {
   }
 
   @Test
-  public void testGetFromId() throws Exception {
-    initializeExpectedTable(3);
-    expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(expectedTable);
-    replay(bigquery);
-    Table loadedTable = Table.get(bigquery, TABLE_INFO.tableId());
-    compareTable(expectedTable, loadedTable);
-  }
-
-  @Test
-  public void testGetFromStrings() throws Exception {
-    initializeExpectedTable(3);
-    expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(expectedTable);
-    replay(bigquery);
-    Table loadedTable = Table.get(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table());
-    compareTable(expectedTable, loadedTable);
-  }
-
-  @Test
-  public void testGetFromIdNull() throws Exception {
-    initializeExpectedTable(1);
-    expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(null);
-    replay(bigquery);
-    assertNull(Table.get(bigquery, TABLE_ID1));
-  }
-
-  @Test
-  public void testGetFromStringsNull() throws Exception {
-    initializeExpectedTable(1);
-    expect(bigquery.getTable(TABLE_INFO.tableId())).andReturn(null);
-    replay(bigquery);
-    assertNull(Table.get(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table()));
-  }
-
-  @Test
-  public void testGetFromIdWithOptions() throws Exception {
-    initializeExpectedTable(3);
-    expect(bigquery.getTable(TABLE_INFO.tableId(), BigQuery.TableOption.fields()))
-        .andReturn(expectedTable);
-    replay(bigquery);
-    Table loadedTable = Table.get(bigquery, TABLE_INFO.tableId(), BigQuery.TableOption.fields());
-    compareTable(expectedTable, loadedTable);
-  }
-
-  @Test
-  public void testGetFromStringsWithOptions() throws Exception {
-    initializeExpectedTable(3);
-    expect(bigquery.getTable(TABLE_INFO.tableId(), BigQuery.TableOption.fields()))
-        .andReturn(expectedTable);
-    replay(bigquery);
-    Table loadedTable =
-        Table.get(bigquery, TABLE_ID1.dataset(), TABLE_ID1.table(), BigQuery.TableOption.fields());
-    compareTable(expectedTable, loadedTable);
-  }
-
-  @Test
   public void testBigquery() {
     initializeExpectedTable(1);
     replay(bigquery);
     assertSame(serviceMockReturnsOptions, expectedTable.bigquery());
+  }
+
+  @Test
+  public void testToAndFromPb() {
+    initializeExpectedTable(4);
+    replay(bigquery);
+    compareTable(expectedTable, Table.fromPb(serviceMockReturnsOptions, expectedTable.toPb()));
   }
 
   private void compareTable(Table expected, Table value) {

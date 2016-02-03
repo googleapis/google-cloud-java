@@ -395,7 +395,7 @@ public class BigQueryExample {
   private abstract static class CreateTableAction extends BigQueryAction<TableInfo> {
     @Override
     void run(BigQuery bigquery, TableInfo table) throws Exception {
-      TableInfo createTable = bigquery.create(table);
+      Table createTable = bigquery.create(table);
       System.out.println("Created table:");
       System.out.println(createTable.toString());
     }

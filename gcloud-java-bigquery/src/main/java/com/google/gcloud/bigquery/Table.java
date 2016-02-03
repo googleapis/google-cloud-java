@@ -42,7 +42,7 @@ public final class Table extends TableInfo {
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
 
-  static class Builder extends TableInfo.Builder {
+  public static class Builder extends TableInfo.Builder {
 
     private final BigQuery bigquery;
     private final TableInfo.BuilderImpl infoBuilder;
@@ -130,36 +130,6 @@ public final class Table extends TableInfo {
   }
 
   /**
-   * Creates a {@code Table} object for the provided dataset and table's user-defined ids. Performs
-   * an RPC call to get the latest table information.
-   *
-   * @param bigquery the BigQuery service used for issuing requests
-   * @param dataset the dataset's user-defined id
-   * @param table the table's user-defined id
-   * @param options table options
-   * @return the {@code Table} object or {@code null} if not found
-   * @throws BigQueryException upon failure
-   */
-  public static Table get(BigQuery bigquery, String dataset, String table,
-      BigQuery.TableOption... options) {
-    return get(bigquery, TableId.of(dataset, table), options);
-  }
-
-  /**
-   * Creates a {@code Table} object for the provided table identity. Performs an RPC call to get the
-   * latest table information.
-   *
-   * @param bigquery the BigQuery service used for issuing requests
-   * @param table the table's identity
-   * @param options table options
-   * @return the {@code Table} object or {@code null} if not found
-   * @throws BigQueryException upon failure
-   */
-  public static Table get(BigQuery bigquery, TableId table, BigQuery.TableOption... options) {
-    return bigquery.getTable(table, options);
-  }
-
-  /**
    * Checks if this table exists.
    *
    * @return {@code true} if this table exists, {@code false} otherwise
@@ -177,7 +147,7 @@ public final class Table extends TableInfo {
    * @throws BigQueryException upon failure
    */
   public Table reload(BigQuery.TableOption... options) {
-    return Table.get(bigquery, tableId(), options);
+    return bigquery.getTable(tableId(), options);
   }
 
   /**

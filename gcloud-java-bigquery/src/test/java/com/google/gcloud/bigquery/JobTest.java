@@ -223,38 +223,17 @@ public class JobTest {
   }
 
   @Test
-  public void testGet() throws Exception {
-    initializeExpectedJob(3);
-    expect(bigquery.getJob(JOB_INFO.jobId().job())).andReturn(expectedJob);
-    replay(bigquery);
-    Job loadedJob = Job.get(bigquery, JOB_INFO.jobId().job());
-    compareJob(expectedJob, loadedJob);
-  }
-
-  @Test
-  public void testGetNull() throws Exception {
-    initializeExpectedJob(1);
-    expect(bigquery.getJob(JOB_INFO.jobId().job())).andReturn(null);
-    replay(bigquery);
-    Job loadedJob = Job.get(bigquery, JOB_INFO.jobId().job());
-    assertNull(loadedJob);
-  }
-
-  @Test
-  public void testGetWithOptions() throws Exception {
-    initializeExpectedJob(3);
-    expect(bigquery.getJob(JOB_INFO.jobId().job(), BigQuery.JobOption.fields()))
-        .andReturn(expectedJob);
-    replay(bigquery);
-    Job loadedJob = Job.get(bigquery, JOB_INFO.jobId().job(), BigQuery.JobOption.fields());
-    compareJob(expectedJob, loadedJob);
-  }
-
-  @Test
   public void testBigquery() {
     initializeExpectedJob(1);
     replay(bigquery);
     assertSame(serviceMockReturnsOptions, expectedJob.bigquery());
+  }
+
+  @Test
+  public void testToAndFromPb() {
+    initializeExpectedJob(4);
+    replay(bigquery);
+    compareJob(expectedJob, Job.fromPb(serviceMockReturnsOptions, expectedJob.toPb()));
   }
 
   private void compareJob(Job expected, Job value) {

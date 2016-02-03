@@ -559,7 +559,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table
-   * ({@link TableInfo#tableId()}, {@link Table#friendlyName()}, {@link Table#id()} and type, which
+   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#id()} and type, which
    * is part of {@link Table#definition()}). To get complete information use either
    * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
@@ -570,7 +570,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Lists the tables in the dataset. This method returns partial information on each table
-   * ({@link TableInfo#tableId()}, {@link Table#friendlyName()}, {@link Table#id()} and type, which
+   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#id()} and type, which
    * is part of {@link Table#definition()}). To get complete information use either
    * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
