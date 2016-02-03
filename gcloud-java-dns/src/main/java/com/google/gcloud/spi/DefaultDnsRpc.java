@@ -30,6 +30,7 @@ import java.util.Map;
  */
 public class DefaultDnsRpc implements DnsRpc {
 
+  private static final String SORTING_KEY = "changeSequence";
   private final Dns dns;
   private final DnsOptions options;
 
@@ -64,9 +65,14 @@ public class DefaultDnsRpc implements DnsRpc {
     // just fields option
     try {
       return dns.managedZones().get(this.options.projectId(), zoneName)
-          .setFields(FIELDS.getString(options)).execute();
+          .setFields(FIELDS.getString(options))
+          .execute();
     } catch (IOException ex) {
-      throw translate(ex);
+      DnsException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
     }
   }
 
@@ -151,7 +157,16 @@ public class DefaultDnsRpc implements DnsRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      throw translate(ex);
+      DnsException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        // message format "The 'parameters.changeId' resource named '4' does not exist."
+        if (serviceException.getMessage().contains("changeId")) {
+          // the change id was not found, but the zone exists
+          return null;
+        }
+        // the zone does not exist, so throw an exception
+      }
+      throw serviceException;
     }
   }
 
@@ -165,9 +180,8 @@ public class DefaultDnsRpc implements DnsRpc {
           .setMaxResults(PAGE_SIZE.getInt(options))
           .setPageToken(PAGE_TOKEN.getString(options));
       if (SORTING_ORDER.getString(options) != null) {
-        // this needs to be checked and changed if more sorting options are implemented, issue #604
-        String key = "changeSequence";
-        request = request.setSortBy(key).setSortOrder(SORTING_ORDER.getString(options));
+        // todo check and change if more sorting options are implemented, issue #604
+        request = request.setSortBy(SORTING_KEY).setSortOrder(SORTING_ORDER.getString(options));
       }
       ChangesListResponse response = request.execute();
       return Tuple.<String, Iterable<Change>>of(response.getNextPageToken(), response.getChanges());

@@ -85,7 +85,7 @@ public interface DnsRpc {
    * Creates a new zone.
    *
    * @param zone a zone to be created
-   * @return Updated {@link ManagedZone} object
+   * @return Updated {@code ManagedZone} object
    * @throws DnsException upon failure
    */
   ManagedZone create(ManagedZone zone) throws DnsException;
@@ -121,7 +121,7 @@ public interface DnsRpc {
    *
    * @param zoneName name of the zone to be listed
    * @param options a map of options for the service call
-   * @throws DnsException upon failure or if zone not found
+   * @throws DnsException upon failure or if zone was not found
    */
   Tuple<String, Iterable<ResourceRecordSet>> listDnsRecords(String zoneName,
       Map<Option, ?> options) throws DnsException;
@@ -131,18 +131,18 @@ public interface DnsRpc {
    * 
    * @param options a map of options for the service call
    * @return up-to-date project information
-   * @throws DnsException upon failure
+   * @throws DnsException upon failure or if the project is not found
    */
   Project getProject(Map<Option, ?> options) throws DnsException;
 
   /**
    * Applies change request to a zone. 
    *
-   * @param zoneName the name of a zone to which the {@link Change} should be applied
+   * @param zoneName the name of a zone to which the {@code Change} should be applied
    * @param changeRequest change to be applied
    * @param options a map of options for the service call
    * @return updated change object with server-assigned ID
-   * @throws DnsException upon failure or if zone not found
+   * @throws DnsException upon failure or if zone was not found
    */
   Change applyChangeRequest(String zoneName, Change changeRequest, Map<Option, ?> options) 
       throws DnsException;
@@ -150,21 +150,21 @@ public interface DnsRpc {
   /**
    * Returns an existing change request.
    *
-   * @param zoneName the name of a zone to which the {@link Change} was be applied
+   * @param zoneName the name of a zone to which the {@code Change} was be applied
    * @param changeRequestId the unique id assigned to the change by the server
    * @param options a map of options for the service call
-   * @return up-to-date change object
-   * @throws DnsException upon failure or if zone not found
+   * @return up-to-date change object or {@code null} if change was not found
+   * @throws DnsException upon failure or if zone was not found
    */
   Change getChangeRequest(String zoneName, String changeRequestId, Map<Option, ?> options) 
       throws DnsException;
 
   /**
-   * List an existing change requests for a zone.
+   * List existing change requests for a zone.
    *
-   * @param zoneName the name of a zone to which the {@link Change}s were be applied
+   * @param zoneName the name of a zone to which the {@code Change}s were be applied
    * @param options a map of options for the service call
-   * @throws DnsException upon failure or if zone not found
+   * @throws DnsException upon failure or if zone was not found
    */
   Tuple<String, Iterable<Change>> listChangeRequests(String zoneName, Map<Option, ?> options) 
       throws DnsException;
