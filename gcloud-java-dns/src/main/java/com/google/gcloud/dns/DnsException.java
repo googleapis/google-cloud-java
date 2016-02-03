@@ -27,8 +27,8 @@ public class DnsException extends BaseServiceException {
 
   private static final long serialVersionUID = 490302380416260252L;
 
-  public DnsException(IOException exception, boolean idempotent) {
-    super(exception, idempotent);
+  public DnsException(IOException exception) {
+    super(exception, true);
   }
 
   //TODO(mderka) Add translation and retry functionality. Created issue #593.
