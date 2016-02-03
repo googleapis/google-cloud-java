@@ -18,13 +18,13 @@ package com.google.gcloud.dns;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Sets;
+import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.DnsRpc;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Set;
-
-import static com.google.gcloud.dns.Dns.ZoneField.selector;
 
 /**
  * An interface for the Google Cloud DNS service.
@@ -37,7 +37,7 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a project.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@code Dns#getProjectInfo(ProjectGetOption...)}. Project ID is always returned, even if not
+   * {@link Dns#getProjectInfo(ProjectOption...)}. Project ID is always returned, even if not
    * specified.
    */
   enum ProjectField {
@@ -69,7 +69,7 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a zone.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@code Dns#getZone(BigInteger, ZoneOption...)} or {@code Dns#getZone(String, ZoneOption...)}.
+   * {@link Dns#getZone(BigInteger, ZoneOption...)} or {@link Dns#getZone(String, ZoneOption...)}.
    * The ID is always returned, even if not specified.
    */
   enum ZoneField {
@@ -105,7 +105,7 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a DNS record.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@code Dns#listDnsRecords(BigInteger, DnsRecordListOption...)} or {@code
+   * {@link Dns#listDnsRecords(BigInteger, DnsRecordListOption...)} or {@link
    * Dns#listDnsRecords(String, DnsRecordListOption...)}. The name is always returned even if not
    * selected.
    */
@@ -139,8 +139,8 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a change request.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@code Dns#applyChangeRequest(ChangeRequest, BigInteger, ChangeRequestOption...)} or {@code
-   * Dns#applyChangeRequest(ChangeRequest, String, ChangeRequestOption...)} The ID is always
+   * {@link Dns#applyChangeRequest(BigInteger, ChangeRequest, ChangeRequestOption...)} or {@link
+   * Dns#applyChangeRequest(String, ChangeRequest, ChangeRequestOption...)} The ID is always
    * returned even if not selected.
    */
   enum ChangeRequestField {
@@ -285,7 +285,7 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static ZoneListOption fields(ZoneField... fields) {
       StringBuilder builder = new StringBuilder();
-      builder.append("managedZones(").append(selector(fields)).append(')');
+      builder.append("managedZones(").append(ZoneField.selector(fields)).append(')');
       return new ZoneListOption(DnsRpc.Option.FIELDS, builder.toString());
     }
 
@@ -313,11 +313,11 @@ public interface Dns extends Service<DnsOptions> {
   /**
    * Class for specifying project options.
    */
-  class ProjectGetOption extends AbstractOption implements Serializable {
+  class ProjectOption extends AbstractOption implements Serializable {
 
     private static final long serialVersionUID = 6817937338218847748L;
 
-    ProjectGetOption(DnsRpc.Option option, Object value) {
+    ProjectOption(DnsRpc.Option option, Object value) {
       super(option, value);
     }
 
@@ -325,12 +325,12 @@ public interface Dns extends Service<DnsOptions> {
      * Returns an option to specify the project's fields to be returned by the RPC call.
      *
      * <p>If this option is not provided all project fields are returned. {@code
-     * ProjectGetOption.fields} can be used to specify only the fields of interest. Project ID is
+     * ProjectOption.fields} can be used to specify only the fields of interest. Project ID is
      * always returned, even if not specified. {@link ProjectField} provides a list of fields that
      * can be used.
      */
-    public static ProjectGetOption fields(ProjectField... fields) {
-      return new ProjectGetOption(DnsRpc.Option.FIELDS, ProjectField.selector(fields));
+    public static ProjectOption fields(ProjectField... fields) {
+      return new ProjectOption(DnsRpc.Option.FIELDS, ProjectField.selector(fields));
     }
   }
 
@@ -420,5 +420,178 @@ public interface Dns extends Service<DnsOptions> {
     }
   }
 
-  // TODO(mderka) Add methods. Created issue #596.
+  /**
+   * Creates a new zone.
+   *
+   * <p>Returns {@link ZoneInfo} object representing the new zone's information. In addition to the
+   * name, dns name and description (supplied by the user within the {@code zoneInfo} parameter),
+   * the returned object will include the following read-only fields supplied by the server:
+   * creation time, id, and list of name servers.
+   *
+   * @throws DnsException upon failure
+   * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/create">Cloud DNS Managed Zones:
+   * create</a>
+   */
+  ZoneInfo create(ZoneInfo zoneInfo);
+
+  /**
+   * Returns the zone by the specified zone name. Returns {@code null} if the zone is not found. The
+   * returned fields can be optionally restricted by specifying {@link ZoneOption}s.
+   *
+   * @throws DnsException upon failure
+   * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/get">Cloud DNS Managed Zones:
+   * get</a>
+   */
+  ZoneInfo getZone(String zoneName, ZoneOption... options);
+
+  /**
+   * Returns the zone by the specified zone id. Returns {@code null} if the zone is not found. The
+   * returned fields can be optionally restricted by specifying {@link ZoneOption}s.
+   *
+   * @throws DnsException upon failure
+   * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/get">Cloud DNS Managed Zones:
+   * get</a>
+   */
+  ZoneInfo getZone(BigInteger zoneId, ZoneOption... options);
+
+  /**
+   * Lists the zones inside the project.
+   *
+   * <p>This method returns zones in an unspecified order. New zones do not necessarily appear at
+   * the end of the list. Use {@link ZoneListOption} to restrict the listing to a domain name, set
+   * page size, and set page token.
+   *
+   * @return a page of zones
+   * @throws DnsException upon failure
+   * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/list">Cloud DNS Managed Zones:
+   * list</a>
+   */
+  Page<Zone> listZones(ZoneListOption... options);
+
+  /**
+   * Deletes an existing zone identified by name. Returns {@code true} if the zone was successfully
+   * deleted and {@code false} otherwise.
+   *
+   * @return {@code true} if zone was found and deleted and {@code false} otherwise
+   * @throws DnsException upon failure
+   * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/delete">Cloud DNS Managed Zones:
+   * delete</a>
+   */
+  boolean delete(String zoneName); // delete does not admit any options
+
+  /**
+   * Deletes an existing zone identified by id. Returns {@code true} if the zone was successfully
+   * deleted and {@code false} otherwise.
+   *
+   * @return {@code true} if zone was found and deleted and {@code false} otherwise
+   * @throws DnsException upon failure
+   * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/delete">Cloud DNS Managed Zones:
+   * delete</a>
+   */
+  boolean delete(BigInteger zoneId); // delete does not admit any options
+
+  /**
+   * Lists the DNS records in the zone identified by name.
+   *
+   * <p>The fields to be returned, page size and page tokens can be specified using {@link
+   * DnsRecordListOption}s.
+   *
+   * @throws DnsException upon failure or if the zone cannot be found
+   * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets/list">Cloud DNS
+   * ResourceRecordSets: list</a>
+   */
+  Page<DnsRecord> listDnsRecords(String zoneName, DnsRecordListOption... options);
+
+  /**
+   * Lists the DNS records in the zone identified by ID.
+   *
+   * <p>The fields to be returned, page size and page tokens can be specified using {@link
+   * DnsRecordListOption}s.
+   *
+   * @throws DnsException upon failure or if the zone cannot be found
+   * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets/list">Cloud DNS
+   * ResourceRecordSets: list</a>
+   */
+  Page<DnsRecord> listDnsRecords(BigInteger zoneId, DnsRecordListOption... options);
+
+  /**
+   * Retrieves the information about the current project. The returned fields can be optionally
+   * restricted by specifying {@link ProjectOption}s.
+   *
+   * @throws DnsException upon failure
+   * @see <a href="https://cloud.google.com/dns/api/v1/projects/get">Cloud DNS Projects: get</a>
+   */
+  ProjectInfo getProjectInfo(ProjectOption... fields);
+
+  /**
+   * Submits a change request for the specified zone. The returned object contains the following
+   * read-only fields supplied by the server: id, start time and status. time, id, and list of name
+   * servers. The fields to be returned can be selected by {@link ChangeRequestOption}s.
+   *
+   * @return the new {@link ChangeRequest} or {@code null} if zone is not found
+   * @throws DnsException upon failure
+   * @see <a href="https://cloud.google.com/dns/api/v1/changes/create">Cloud DNS Changes: create</a>
+   */
+  ChangeRequest applyChangeRequest(BigInteger zoneId, ChangeRequest changeRequest,
+      ChangeRequestOption... options);
+
+  /**
+   * Submits a change request for the specified zone. The returned object contains the following
+   * read-only fields supplied by the server: id, start time and status. time, id, and list of name
+   * servers. The fields to be returned can be selected by {@link ChangeRequestOption}s.
+   *
+   * @return the new {@link ChangeRequest}
+   * @throws DnsException upon failure if zone is not found
+   * @see <a href="https://cloud.google.com/dns/api/v1/changes/create">Cloud DNS Changes: create</a>
+   */
+  ChangeRequest applyChangeRequest(String zoneName, ChangeRequest changeRequest,
+      ChangeRequestOption... options);
+
+  /**
+   * Retrieves updated information about a change request previously submitted for a zone identified
+   * by ID. Returns {@code null} if the request cannot be found and throws an exception if the zone
+   * does not exist. The fields to be returned using can be specified using {@link
+   * ChangeRequestOption}s.
+   *
+   * @throws DnsException upon failure or if the zone cannot be found
+   * @see <a href="https://cloud.google.com/dns/api/v1/changes/get">Cloud DNS Chages: get</a>
+   */
+  ChangeRequest getChangeRequest(BigInteger zoneId, String changeRequestId,
+      ChangeRequestOption... options);
+
+  /**
+   * Retrieves updated information about a change request previously submitted for a zone identified
+   * by ID. Returns {@code null} if the request cannot be found and throws an exception if the zone
+   * does not exist. The fields to be returned using can be specified using {@link
+   * ChangeRequestOption}s.
+   *
+   * @throws DnsException upon failure or if the zone cannot be found
+   * @see <a href="https://cloud.google.com/dns/api/v1/changes/get">Cloud DNS Chages: get</a>
+   */
+  ChangeRequest getChangeRequest(String zoneName, String changeRequestId,
+      ChangeRequestOption... options);
+
+  /**
+   * Lists the change requests for the zone identified by ID that were submitted to the service.
+   *
+   * <p>The sorting order for changes (based on when they were received by the server), fields to be
+   * returned, page size and page token can be specified using {@link ChangeRequestListOption}s.
+   *
+   * @return A page of change requests
+   * @throws DnsException upon failure or if the zone cannot be found
+   * @see <a href="https://cloud.google.com/dns/api/v1/changes/list">Cloud DNS Chages: list</a>
+   */
+  Page<ChangeRequest> listChangeRequests(BigInteger zoneId, ChangeRequestListOption... options);
+
+  /**
+   * Lists the change requests for the zone identified by name that were submitted to the service.
+   *
+   * <p>The sorting order for changes (based on when they were received by the server), fields to be
+   * returned, page size and page token can be specified using {@link ChangeRequestListOption}s.
+   *
+   * @return A page of change requests
+   * @throws DnsException upon failure or if the zone cannot be found
+   * @see <a href="https://cloud.google.com/dns/api/v1/changes/list">Cloud DNS Chages: list</a>
+   */
+  Page<ChangeRequest> listChangeRequests(String zoneName, ChangeRequestListOption... options);
 }
