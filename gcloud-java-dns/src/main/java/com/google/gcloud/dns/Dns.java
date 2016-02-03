@@ -524,16 +524,6 @@ public interface Dns extends Service<DnsOptions> {
   ProjectInfo getProjectInfo(ProjectOption... fields);
 
   /**
-   * Returns the current project id.
-   */
-  String getProjectId();
-
-  /**
-   * Returns the current project number.
-   */
-  BigInteger getProjectNumber();
-
-  /**
    * Submits a change request for the specified zone. The returned object contains the following
    * read-only fields supplied by the server: id, start time and status. time, id, and list of name
    * servers. The fields to be returned can be selected by {@link ChangeRequestOption}s.
@@ -566,7 +556,7 @@ public interface Dns extends Service<DnsOptions> {
    * @throws DnsException upon failure or if the zone cannot be found
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/get">Cloud DNS Chages: get</a>
    */
-  ChangeRequest getChangeRequest(String changeRequestId, BigInteger zoneId,
+  ChangeRequest getChangeRequest(BigInteger zoneId, String changeRequestId,
       ChangeRequestOption... options);
 
   /**
@@ -578,7 +568,7 @@ public interface Dns extends Service<DnsOptions> {
    * @throws DnsException upon failure or if the zone cannot be found
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/get">Cloud DNS Chages: get</a>
    */
-  ChangeRequest getChangeRequest(String changeRequestId, String zoneName,
+  ChangeRequest getChangeRequest(String zoneName, String changeRequestId,
       ChangeRequestOption... options);
 
   /**

@@ -130,8 +130,7 @@ public class Zone implements Serializable {
    * Lists all {@link DnsRecord}s associated with this zone. First searches for zone by ID and if
    * not found then by name.
    *
-   * @param options optional restriction on listing and on what fields of {@link DnsRecord} should
-   * be returned by the service
+   * @param options optional restriction on listing and fields of {@link DnsRecord}s returned
    * @return a page of DNS records
    * @throws DnsException upon failure or if the zone is not found
    * @throws NullPointerException if both zone ID and name are not initialized
@@ -191,11 +190,11 @@ public class Zone implements Serializable {
     checkNotNull(changeRequestId);
     ChangeRequest updated = null;
     if (zoneInfo.id() != null) {
-      updated = dns.getChangeRequest(changeRequestId, zoneInfo.id(), options);
+      updated = dns.getChangeRequest(zoneInfo.id(), changeRequestId, options);
     }
     if (updated == null && zoneInfo.name() != null) {
       // zone was not found by id or id is not set at all
-      updated = dns.getChangeRequest(changeRequestId, zoneInfo.name(), options);
+      updated = dns.getChangeRequest(zoneInfo.name(), changeRequestId, options);
     }
     return updated;
   }
@@ -205,8 +204,7 @@ public class Zone implements Serializable {
    * then by name. Returns a page of {@link ChangeRequest}s or {@code null} if the zone is not
    * found.
    *
-   * @param options optional restriction on listing and on what fields of {@link ChangeRequest}s
-   * should be returned by the service
+   * @param options optional restriction on listing and fields to be returned
    * @return a page of change requests
    * @throws DnsException upon failure or if the zone is not found
    * @throws NullPointerException if both zone ID and name are not initialized
@@ -236,7 +234,7 @@ public class Zone implements Serializable {
    * Returns the {@link ZoneInfo} object containing information about this zone.
    */
   public ZoneInfo info() {
-    return this.zoneInfo;
+    return zoneInfo;
   }
 
   /**

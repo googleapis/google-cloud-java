@@ -101,16 +101,15 @@ public class ZoneTest {
     Zone retrieved = Zone.get(dns, ZONE_ID);
     assertSame(dns, retrieved.dns());
     assertEquals(ZONE_INFO, retrieved.info());
-    BigInteger id = null;
     try {
-      Zone.get(dns, id);
-      fail("Cannot get null zone.");
+      Zone.get(dns, (BigInteger) null);
+      fail("Cannot get by null id.");
     } catch (NullPointerException e) {
       // expected
     }
     try {
-      Zone.get(null, id);
-      fail("Cannot get null zone.");
+      Zone.get(null, new BigInteger("12"));
+      fail("Cannot get anything from null service.");
     } catch (NullPointerException e) {
       // expected
     }
@@ -126,16 +125,15 @@ public class ZoneTest {
     Zone retrieved = Zone.get(dns, ZONE_NAME);
     assertSame(dns, retrieved.dns());
     assertEquals(ZONE_INFO, retrieved.info());
-    String name = null;
     try {
-      Zone.get(dns, name);
-      fail("Cannot get null zone.");
+      Zone.get(dns, (String) null);
+      fail("Cannot get by null name.");
     } catch (NullPointerException e) {
       // expected
     }
     try {
-      Zone.get(null, name);
-      fail("Cannot get null zone.");
+      Zone.get(null, "Not null");
+      fail("Cannot get anything from null service.");
     } catch (NullPointerException e) {
       // expected
     }
@@ -195,6 +193,7 @@ public class ZoneTest {
 
   @Test
   public void listDnsRecordsByIdAndFound() {
+    @SuppressWarnings("unchecked")
     Page<DnsRecord> pageMock = createStrictMock(Page.class);
     replay(pageMock);
     expect(dns.listDnsRecords(ZONE_ID)).andReturn(pageMock);
@@ -210,6 +209,7 @@ public class ZoneTest {
 
   @Test
   public void listDnsRecordsByIdAndNotFoundAndNameSetAndFound() {
+    @SuppressWarnings("unchecked")
     Page<DnsRecord> pageMock = createStrictMock(Page.class);
     replay(pageMock);
     expect(dns.listDnsRecords(ZONE_ID)).andReturn(null);
@@ -251,6 +251,7 @@ public class ZoneTest {
 
   @Test
   public void listDnsRecordsByNameAndFound() {
+    @SuppressWarnings("unchecked")
     Page<DnsRecord> pageMock = createStrictMock(Page.class);
     replay(pageMock);
     expect(dns.listDnsRecords(ZONE_NAME)).andReturn(pageMock);
@@ -486,9 +487,9 @@ public class ZoneTest {
 
   @Test
   public void getChangeByIdAndFound() {
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID)).andReturn(CHANGE_REQUEST_AFTER);
+    expect(dns.getChangeRequest(ZONE_ID, CHANGE_REQUEST.id())).andReturn(CHANGE_REQUEST_AFTER);
     // again for options
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(ZONE_ID, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(CHANGE_REQUEST_AFTER);
     replay(dns);
     ChangeRequest result = zone.getChangeRequest(CHANGE_REQUEST.id());
@@ -503,13 +504,13 @@ public class ZoneTest {
 
   @Test
   public void getChangeByIdAndNotFoundAndNameSetAndFound() {
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID)).andReturn(null);
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME))
+    expect(dns.getChangeRequest(ZONE_ID, CHANGE_REQUEST.id())).andReturn(null);
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id()))
         .andReturn(CHANGE_REQUEST_AFTER);
     // again for options
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(ZONE_ID, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(CHANGE_REQUEST_AFTER);
     replay(dns);
     ChangeRequest result = zone.getChangeRequest(CHANGE_REQUEST.id());
@@ -523,12 +524,12 @@ public class ZoneTest {
 
   @Test
   public void getChangeIdAndNotFoundAndNameSetAndNotFound() {
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID)).andReturn(null);
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME)).andReturn(null);
+    expect(dns.getChangeRequest(ZONE_ID, CHANGE_REQUEST.id())).andReturn(null);
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id())).andReturn(null);
     // again with options
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(ZONE_ID, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
     replay(dns);
     ChangeRequest result = zone.getChangeRequest(CHANGE_REQUEST.id());
@@ -540,8 +541,8 @@ public class ZoneTest {
 
   @Test
   public void getChangeRequestByIdAndNotFoundAndNameNotSet() {
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID)).andReturn(null);
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_ID, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(ZONE_ID, CHANGE_REQUEST.id())).andReturn(null);
+    expect(dns.getChangeRequest(ZONE_ID, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null); // for options
     replay(dns);
     ChangeRequest result = zoneNoName.getChangeRequest(CHANGE_REQUEST.id());
@@ -554,10 +555,10 @@ public class ZoneTest {
   @Test
   public void getChangeByNameAndFound() {
     // ID is not set
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME))
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id()))
         .andReturn(CHANGE_REQUEST_AFTER);
     // again for options
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(CHANGE_REQUEST_AFTER);
     replay(dns);
     ChangeRequest result = zoneNoId.getChangeRequest(CHANGE_REQUEST.id());
@@ -570,9 +571,9 @@ public class ZoneTest {
   @Test
   public void getChangeByNameAndNotFound() {
     // ID is not set
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME)).andReturn(null);
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id())).andReturn(null);
     // again for options
-    expect(dns.getChangeRequest(CHANGE_REQUEST.id(), ZONE_NAME, CHANGE_REQUEST_FIELD_OPTIONS))
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(null);
     replay(dns);
     ChangeRequest result = zoneNoId.getChangeRequest(CHANGE_REQUEST.id());
@@ -666,6 +667,7 @@ public class ZoneTest {
 
   @Test
   public void listChangeRequestsByIdAndFound() {
+    @SuppressWarnings("unchecked")
     Page<ChangeRequest> pageMock = createStrictMock(Page.class);
     replay(pageMock);
     expect(dns.listChangeRequests(ZONE_ID)).andReturn(pageMock);
@@ -681,6 +683,7 @@ public class ZoneTest {
 
   @Test
   public void listChangeRequestsByIdAndNotFoundAndNameSetAndFound() {
+    @SuppressWarnings("unchecked")
     Page<ChangeRequest> pageMock = createStrictMock(Page.class);
     replay(pageMock);
     expect(dns.listChangeRequests(ZONE_ID)).andReturn(null);
@@ -724,6 +727,7 @@ public class ZoneTest {
 
   @Test
   public void listChangeRequestsByNameAndFound() {
+    @SuppressWarnings("unchecked")
     Page<ChangeRequest> pageMock = createStrictMock(Page.class);
     replay(pageMock);
     expect(dns.listChangeRequests(ZONE_NAME)).andReturn(pageMock);
