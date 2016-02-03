@@ -40,7 +40,7 @@ public class Project extends ProjectInfo {
 
   public static class Builder extends ProjectInfo.Builder {
     private final ResourceManager resourceManager;
-    private ProjectInfo.BuilderImpl infoBuilder;
+    private final ProjectInfo.BuilderImpl infoBuilder;
 
     Builder(ResourceManager resourceManager) {
       this.resourceManager = resourceManager;

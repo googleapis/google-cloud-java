@@ -317,7 +317,7 @@ public class BucketInfo implements Serializable {
     }
   }
 
-  public static abstract class Builder {
+  public abstract static class Builder {
     /**
      * Sets the bucket's name.
      */

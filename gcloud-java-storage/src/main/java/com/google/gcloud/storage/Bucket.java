@@ -124,7 +124,7 @@ public final class Bucket extends BucketInfo {
 
   public static class Builder extends BucketInfo.Builder {
     private final Storage storage;
-    private BucketInfo.BuilderImpl infoBuilder;
+    private final BucketInfo.BuilderImpl infoBuilder;
 
     Builder(Storage storage) {
       this.storage = storage;
@@ -355,8 +355,7 @@ public final class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Blob create(String blob, byte[] content, String contentType, BlobTargetOption... options) {
-    BlobInfo blobInfo =
-        BlobInfo.builder(BlobId.of(name(), blob))
+    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob))
         .contentType(MoreObjects.firstNonNull(contentType, Storage.DEFAULT_CONTENT_TYPE)).build();
     return storage.create(blobInfo, content, options);
   }
@@ -376,8 +375,7 @@ public final class Bucket extends BucketInfo {
    */
   public Blob create(String blob, InputStream content, String contentType,
       BlobWriteOption... options) {
-    BlobInfo blobInfo =
-        BlobInfo.builder(BlobId.of(name(), blob))
+    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob))
         .contentType(MoreObjects.firstNonNull(contentType, Storage.DEFAULT_CONTENT_TYPE)).build();
     return storage.create(blobInfo, content, options);
   }
@@ -405,12 +403,12 @@ public final class Bucket extends BucketInfo {
     return Objects.hash(super.hashCode(), options);
   }
 
-  static Bucket fromPb(Storage storage, com.google.api.services.storage.model.Bucket bucketPb) {
-    return new Bucket(storage, new BucketInfo.BuilderImpl(BucketInfo.fromPb(bucketPb)));
-  }
-
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
     this.storage = options.service();
+  }
+
+  static Bucket fromPb(Storage storage, com.google.api.services.storage.model.Bucket bucketPb) {
+    return new Bucket(storage, new BucketInfo.BuilderImpl(BucketInfo.fromPb(bucketPb)));
   }
 }

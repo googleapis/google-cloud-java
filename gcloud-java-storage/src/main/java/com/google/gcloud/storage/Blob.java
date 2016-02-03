@@ -63,12 +63,13 @@ public final class Blob extends BlobInfo {
           return Blob.fromPb(pb.x(), pb.y());
         }
       };
-  static final Function<Blob, StorageObject> BLOB_TO_PB_FUNCTION = new Function<Blob, StorageObject>() {
-    @Override
-    public StorageObject apply(Blob blob) {
-      return blob.toPb();
-    }
-  };
+  static final Function<Blob, StorageObject> BLOB_TO_PB_FUNCTION =
+      new Function<Blob, StorageObject>() {
+        @Override
+        public StorageObject apply(Blob blob) {
+          return blob.toPb();
+        }
+      };
 
   /**
    * Class for specifying blob source options when {@code Blob} methods are used.
@@ -166,7 +167,7 @@ public final class Blob extends BlobInfo {
   public static class Builder extends BlobInfo.Builder {
 
     private final Storage storage;
-    private BlobInfo.BuilderImpl infoBuilder;
+    private final BlobInfo.BuilderImpl infoBuilder;
 
     Builder(Storage storage) {
       this.storage = storage;
@@ -393,12 +394,11 @@ public final class Blob extends BlobInfo {
    * @throws StorageException upon failure
    */
   public CopyWriter copyTo(BlobId targetBlob, BlobSourceOption... options) {
-    CopyRequest copyRequest =
-        CopyRequest.builder()
-            .source(bucket(), name())
-            .sourceOptions(toSourceOptions(this, options))
-            .target(targetBlob)
-            .build();
+    CopyRequest copyRequest = CopyRequest.builder()
+        .source(bucket(), name())
+        .sourceOptions(toSourceOptions(this, options))
+        .target(targetBlob)
+        .build();
     return storage.copy(copyRequest);
   }
 

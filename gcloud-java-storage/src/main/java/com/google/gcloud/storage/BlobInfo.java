@@ -97,7 +97,7 @@ public class BlobInfo implements Serializable {
     }
   }
 
-  public static abstract class Builder {
+  public abstract static class Builder {
 
     /**
      * Sets the blob identity.
@@ -245,9 +245,6 @@ public class BlobInfo implements Serializable {
       updateTime = blobInfo.updateTime;
     }
 
-    /**
-     * Sets the blob identity.
-     */
     @Override
     public Builder blobId(BlobId blobId) {
       this.blobId = checkNotNull(blobId);
@@ -260,44 +257,24 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the blob's data content type.
-     *
-     * @see <a href="https://tools.ietf.org/html/rfc2616#section-14.17">Content-Type</a>
-     */
     @Override
     public Builder contentType(String contentType) {
       this.contentType = firstNonNull(contentType, Data.<String>nullOf(String.class));
       return this;
     }
 
-    /**
-     * Sets the blob's data content disposition.
-     *
-     * @see <a href="https://tools.ietf.org/html/rfc6266">Content-Disposition</a>
-     */
     @Override
     public Builder contentDisposition(String contentDisposition) {
       this.contentDisposition = firstNonNull(contentDisposition, Data.<String>nullOf(String.class));
       return this;
     }
 
-    /**
-     * Sets the blob's data content language.
-     *
-     * @see <a href="http://tools.ietf.org/html/bcp47">Content-Language</a>
-     */
     @Override
     public Builder contentLanguage(String contentLanguage) {
       this.contentLanguage = firstNonNull(contentLanguage, Data.<String>nullOf(String.class));
       return this;
     }
 
-    /**
-     * Sets the blob's data content encoding.
-     *
-     * @see <a href="https://tools.ietf.org/html/rfc7231#section-3.1.2.2">Content-Encoding</a>
-     */
     @Override
     public Builder contentEncoding(String contentEncoding) {
       this.contentEncoding = firstNonNull(contentEncoding, Data.<String>nullOf(String.class));
@@ -310,23 +287,12 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the blob's data cache control.
-     *
-     * @see <a href="https://tools.ietf.org/html/rfc7234#section-5.2">Cache-Control</a>
-     */
     @Override
     public Builder cacheControl(String cacheControl) {
       this.cacheControl = firstNonNull(cacheControl, Data.<String>nullOf(String.class));
       return this;
     }
 
-    /**
-     * Sets the blob's access control configuration.
-     *
-     * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
-     *     About Access Control Lists</a>
-     */
     @Override
     public Builder acl(List<Acl> acl) {
       this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
@@ -357,26 +323,12 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the MD5 hash of blob's data. MD5 value must be encoded in base64.
-     *
-     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
-     *     Hashes and ETags: Best Practices</a>
-     */
     @Override
     public Builder md5(String md5) {
       this.md5 = firstNonNull(md5, Data.<String>nullOf(String.class));
       return this;
     }
 
-    /**
-     * Sets the CRC32C checksum of blob's data as described in
-     * <a href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
-     * base64 in big-endian order.
-     *
-     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
-     *     Hashes and ETags: Best Practices</a>
-     */
     @Override
     public Builder crc32c(String crc32c) {
       this.crc32c = firstNonNull(crc32c, Data.<String>nullOf(String.class));
@@ -389,9 +341,6 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the blob's user provided metadata.
-     */
     @Override
     public Builder metadata(Map<String, String> metadata) {
       this.metadata = metadata != null
@@ -417,9 +366,6 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
-    /**
-     * Creates a {@code BlobInfo} object.
-     */
     @Override
     public BlobInfo build() {
       checkNotNull(blobId);
@@ -731,7 +677,7 @@ public class BlobInfo implements Serializable {
    * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
    */
   public static Builder builder(String bucket, String name) {
-    return new BuilderImpl().blobId(BlobId.of(bucket, name));
+    return builder(BlobId.of(bucket, name));
   }
 
   /**
@@ -745,7 +691,7 @@ public class BlobInfo implements Serializable {
    * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
    */
   public static Builder builder(String bucket, String name, Long generation) {
-    return new BuilderImpl().blobId(BlobId.of(bucket, name, generation));
+    return builder(BlobId.of(bucket, name, generation));
   }
 
   public static Builder builder(BlobId blobId) {

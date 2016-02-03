@@ -16,10 +16,10 @@
 
 package com.google.gcloud.storage;
 
-import static org.easymock.EasyMock.anyObject;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
+import static org.easymock.EasyMock.eq;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
@@ -145,7 +145,7 @@ public class BlobTest {
     initializeExpectedBlob(2);
     Blob expectedUpdatedBlob = expectedBlob.toBuilder().cacheControl("c").build();
     expect(storage.options()).andReturn(mockOptions).times(2);
-    expect(storage.update(anyObject(Blob.class), new Storage.BlobTargetOption[0]))
+    expect(storage.update(eq(expectedUpdatedBlob), new Storage.BlobTargetOption[0]))
         .andReturn(expectedUpdatedBlob);
     replay(storage);
     initializeBlob();
@@ -235,7 +235,7 @@ public class BlobTest {
     initializeExpectedBlob(2);
     BlobWriteChannel channel = createMock(BlobWriteChannel.class);
     expect(storage.options()).andReturn(mockOptions);
-    expect(storage.writer(anyObject(Blob.class))).andReturn(channel);
+    expect(storage.writer(eq(expectedBlob))).andReturn(channel);
     replay(storage);
     initializeBlob();
     assertSame(channel, blob.writer());

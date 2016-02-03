@@ -115,7 +115,7 @@ public class ProjectInfo implements Serializable {
     }
   }
 
-  public static abstract class Builder {
+  public abstract static class Builder {
 
     /**
      * Set the user-assigned name of the project.

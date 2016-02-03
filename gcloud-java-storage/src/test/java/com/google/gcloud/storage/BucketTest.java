@@ -67,14 +67,11 @@ public class BucketTest {
     storage = createStrictMock(Storage.class);
     expectedBucket = new Bucket(serviceMockReturnsOptions, new BucketInfo.BuilderImpl(BUCKET_INFO));
     blobResults = ImmutableList.of(
-        new Blob(
-            serviceMockReturnsOptions,
+        new Blob(serviceMockReturnsOptions,
             new BlobInfo.BuilderImpl(BlobInfo.builder("b", "n1").build())),
-        new Blob(
-            serviceMockReturnsOptions,
+        new Blob(serviceMockReturnsOptions,
             new BlobInfo.BuilderImpl(BlobInfo.builder("b", "n2").build())),
-        new Blob(
-            serviceMockReturnsOptions,
+        new Blob(serviceMockReturnsOptions,
             new BlobInfo.BuilderImpl(BlobInfo.builder("b", "n3").build())));
   }
 
