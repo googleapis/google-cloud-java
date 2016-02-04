@@ -34,7 +34,7 @@ public class DnsTest {
     String dnsName = "some name";
     Dns.DnsRecordListOption dnsRecordListOption = Dns.DnsRecordListOption.dnsName(dnsName);
     assertEquals(dnsName, dnsRecordListOption.value());
-    assertEquals(DnsRpc.Option.DNS_NAME, dnsRecordListOption.rpcOption());
+    assertEquals(DnsRpc.Option.NAME, dnsRecordListOption.rpcOption());
     // page token
     dnsRecordListOption = Dns.DnsRecordListOption.pageToken(PAGE_TOKEN);
     assertEquals(PAGE_TOKEN, dnsRecordListOption.value());

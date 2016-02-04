@@ -18,6 +18,7 @@ package com.google.gcloud.dns;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
+import com.google.gcloud.spi.DefaultDnsRpc;
 import com.google.gcloud.spi.DnsRpc;
 import com.google.gcloud.spi.DnsRpcFactory;
 
@@ -46,8 +47,7 @@ public class DnsOptions
 
     @Override
     public DnsRpc create(DnsOptions options) {
-      // TODO(mderka) Implement when DefaultDnsRpc is available. Created issue #595.
-      return null;
+      return new DefaultDnsRpc(options);
     }
   }
 
@@ -80,7 +80,7 @@ public class DnsOptions
   @SuppressWarnings("unchecked")
   @Override
   protected DnsRpcFactory defaultRpcFactory() {
-    return null;
+    return DefaultDnsRpcFactory.INSTANCE;
   }
 
   @Override
