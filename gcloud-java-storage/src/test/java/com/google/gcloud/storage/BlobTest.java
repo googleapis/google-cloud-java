@@ -16,6 +16,9 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.gcloud.storage.Acl.Project.ProjectRole.VIEWERS;
+import static com.google.gcloud.storage.Acl.Role.READER;
+import static com.google.gcloud.storage.Acl.Role.WRITER;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
@@ -30,7 +33,11 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.ReadChannel;
+import com.google.gcloud.storage.Acl.Project;
+import com.google.gcloud.storage.Acl.User;
 import com.google.gcloud.storage.Storage.CopyRequest;
 
 import org.easymock.Capture;
@@ -39,10 +46,54 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.net.URL;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class BlobTest {
 
+  private static final List<Acl> ACL = ImmutableList.of(
+      Acl.of(User.ofAllAuthenticatedUsers(), READER), Acl.of(new Project(VIEWERS, "p1"), WRITER));
+  private static final Integer COMPONENT_COUNT = 2;
+  private static final String CONTENT_TYPE = "text/html";
+  private static final String CACHE_CONTROL = "cache";
+  private static final String CONTENT_DISPOSITION = "content-disposition";
+  private static final String CONTENT_ENCODING = "UTF-8";
+  private static final String CONTENT_LANGUAGE = "En";
+  private static final String CRC32 = "0xFF00";
+  private static final Long DELETE_TIME = System.currentTimeMillis();
+  private static final String ETAG = "0xFF00";
+  private static final Long GENERATION = 1L;
+  private static final String ID = "B/N:1";
+  private static final String MD5 = "0xFF00";
+  private static final String MEDIA_LINK = "http://media/b/n";
+  private static final Map<String, String> METADATA = ImmutableMap.of("n1", "v1", "n2", "v2");
+  private static final Long META_GENERATION = 10L;
+  private static final User OWNER = new User("user@gmail.com");
+  private static final String SELF_LINK = "http://storage/b/n";
+  private static final Long SIZE = 1024L;
+  private static final Long UPDATE_TIME = DELETE_TIME - 1L;
+  private static final BlobInfo FULL_BLOB_INFO = BlobInfo.builder("b", "n", GENERATION)
+      .acl(ACL)
+      .componentCount(COMPONENT_COUNT)
+      .contentType(CONTENT_TYPE)
+      .cacheControl(CACHE_CONTROL)
+      .contentDisposition(CONTENT_DISPOSITION)
+      .contentEncoding(CONTENT_ENCODING)
+      .contentLanguage(CONTENT_LANGUAGE)
+      .crc32c(CRC32)
+      .deleteTime(DELETE_TIME)
+      .etag(ETAG)
+      .id(ID)
+      .md5(MD5)
+      .mediaLink(MEDIA_LINK)
+      .metadata(METADATA)
+      .metageneration(META_GENERATION)
+      .owner(OWNER)
+      .selfLink(SELF_LINK)
+      .size(SIZE)
+      .updateTime(UPDATE_TIME)
+      .build();
   private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").metageneration(42L).build();
 
   private Storage storage;
@@ -250,5 +301,15 @@ public class BlobTest {
     replay(storage);
     initializeBlob();
     assertEquals(url, blob.signUrl(100, TimeUnit.SECONDS));
+  }
+
+  @Test
+  public void testToBuilder() {
+    expect(storage.options()).andReturn(mockOptions).times(4);
+    replay(storage);
+    Blob fullBlob = new Blob(storage, new BlobInfo.BuilderImpl(FULL_BLOB_INFO));
+    assertEquals(fullBlob, fullBlob.toBuilder().build());
+    Blob simpleBlob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO));
+    assertEquals(simpleBlob, simpleBlob.toBuilder().build());
   }
 }

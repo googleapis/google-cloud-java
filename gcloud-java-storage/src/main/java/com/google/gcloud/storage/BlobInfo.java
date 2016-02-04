@@ -49,13 +49,6 @@ import java.util.Set;
  */
 public class BlobInfo implements Serializable {
 
-  static final Function<StorageObject, BlobInfo> INFO_FROM_PB_FUNCTION =
-      new Function<StorageObject, BlobInfo>() {
-        @Override
-        public BlobInfo apply(StorageObject pb) {
-          return BlobInfo.fromPb(pb);
-        }
-      };
   static final Function<BlobInfo, StorageObject> INFO_TO_PB_FUNCTION =
       new Function<BlobInfo, StorageObject>() {
         @Override

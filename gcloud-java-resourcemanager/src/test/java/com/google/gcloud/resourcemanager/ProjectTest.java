@@ -24,7 +24,6 @@ import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -72,26 +71,6 @@ public class ProjectTest {
   }
 
   @Test
-  public void testBuilder() {
-    initializeExpectedProject(2);
-    replay(resourceManager);
-    Project builtProject = Project.builder(serviceMockReturnsOptions, PROJECT_ID)
-        .name(NAME)
-        .labels(LABELS)
-        .projectNumber(PROJECT_NUMBER)
-        .createTimeMillis(CREATE_TIME_MILLIS)
-        .state(STATE)
-        .build();
-    assertEquals(PROJECT_ID, builtProject.projectId());
-    assertEquals(NAME, builtProject.name());
-    assertEquals(LABELS, builtProject.labels());
-    assertEquals(PROJECT_NUMBER, builtProject.projectNumber());
-    assertEquals(CREATE_TIME_MILLIS, builtProject.createTimeMillis());
-    assertEquals(STATE, builtProject.state());
-    assertSame(serviceMockReturnsOptions, builtProject.resourceManager());
-  }
-
-  @Test
   public void testToBuilder() {
     initializeExpectedProject(4);
     replay(resourceManager);
@@ -103,7 +82,7 @@ public class ProjectTest {
     initializeExpectedProject(1);
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(expectedProject);
     replay(resourceManager);
-    Project loadedProject = Project.get(resourceManager, PROJECT_INFO.projectId());
+    Project loadedProject = resourceManager.get(PROJECT_INFO.projectId());
     assertEquals(expectedProject, loadedProject);
   }
 
@@ -126,7 +105,7 @@ public class ProjectTest {
     initializeExpectedProject(1);
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(null);
     replay(resourceManager);
-    assertNull(Project.get(resourceManager, PROJECT_INFO.projectId()));
+    assertNull(resourceManager.get(PROJECT_INFO.projectId()));
   }
 
   @Test

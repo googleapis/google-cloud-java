@@ -63,13 +63,6 @@ public final class Blob extends BlobInfo {
           return Blob.fromPb(pb.x(), pb.y());
         }
       };
-  static final Function<Blob, StorageObject> BLOB_TO_PB_FUNCTION =
-      new Function<Blob, StorageObject>() {
-        @Override
-        public StorageObject apply(Blob blob) {
-          return blob.toPb();
-        }
-      };
 
   /**
    * Class for specifying blob source options when {@code Blob} methods are used.

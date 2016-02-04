@@ -16,6 +16,9 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.gcloud.storage.Acl.Project.ProjectRole.VIEWERS;
+import static com.google.gcloud.storage.Acl.Role.READER;
+import static com.google.gcloud.storage.Acl.Role.WRITER;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
@@ -30,10 +33,15 @@ import static org.junit.Assert.assertTrue;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
+import com.google.gcloud.storage.Acl.Project;
+import com.google.gcloud.storage.Acl.User;
 import com.google.gcloud.storage.BatchResponse.Result;
+import com.google.gcloud.storage.BucketInfo.AgeDeleteRule;
+import com.google.gcloud.storage.BucketInfo.DeleteRule;
 
 import org.easymock.Capture;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -46,6 +54,41 @@ import java.util.Set;
 
 public class BucketTest {
 
+  private static final List<Acl> ACL = ImmutableList.of(
+      Acl.of(User.ofAllAuthenticatedUsers(), READER), Acl.of(new Project(VIEWERS, "p1"), WRITER));
+  private static final String ETAG = "0xFF00";
+  private static final String ID = "B/N:1";
+  private static final Long META_GENERATION = 10L;
+  private static final User OWNER = new User("user@gmail.com");
+  private static final String SELF_LINK = "http://storage/b/n";
+  private static final Long CREATE_TIME = System.currentTimeMillis();
+  private static final List<Cors> CORS = Collections.singletonList(Cors.builder().build());
+  private static final List<Acl> DEFAULT_ACL =
+      Collections.singletonList(Acl.of(User.ofAllAuthenticatedUsers(), WRITER));
+  private static final List<? extends DeleteRule> DELETE_RULES =
+      Collections.singletonList(new AgeDeleteRule(5));
+  private static final String INDEX_PAGE = "index.html";
+  private static final String NOT_FOUND_PAGE = "error.html";
+  private static final String LOCATION = "ASIA";
+  private static final String STORAGE_CLASS = "STANDARD";
+  private static final Boolean VERSIONING_ENABLED = true;
+  private static final BucketInfo FULL_BUCKET_INFO = BucketInfo.builder("b")
+      .acl(ACL)
+      .etag(ETAG)
+      .id(ID)
+      .metageneration(META_GENERATION)
+      .owner(OWNER)
+      .selfLink(SELF_LINK)
+      .cors(CORS)
+      .createTime(CREATE_TIME)
+      .defaultAcl(DEFAULT_ACL)
+      .deleteRules(DELETE_RULES)
+      .indexPage(INDEX_PAGE)
+      .notFoundPage(NOT_FOUND_PAGE)
+      .location(LOCATION)
+      .storageClass(STORAGE_CLASS)
+      .versioningEnabled(VERSIONING_ENABLED)
+      .build();
   private static final BucketInfo BUCKET_INFO = BucketInfo.builder("b").metageneration(42L).build();
   private static final String CONTENT_TYPE = "text/plain";
 
@@ -56,6 +99,11 @@ public class BucketTest {
   private Bucket expectedBucket;
   private Iterable<Blob> blobResults;
 
+  @Before
+  public void setUp() {
+    storage = createStrictMock(Storage.class);
+  }
+
   @After
   public void tearDown() throws Exception {
     verify(storage);
@@ -64,7 +112,6 @@ public class BucketTest {
   private void initializeExpectedBucket(int optionsCalls) {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
-    storage = createStrictMock(Storage.class);
     expectedBucket = new Bucket(serviceMockReturnsOptions, new BucketInfo.BuilderImpl(BUCKET_INFO));
     blobResults = ImmutableList.of(
         new Blob(serviceMockReturnsOptions,
@@ -282,5 +329,15 @@ public class BucketTest {
     initializeBucket();
     Blob blob = bucket.create("n", streamContent, null);
     assertEquals(expectedBlob, blob);
+  }
+
+  @Test
+  public void testToBuilder() {
+    expect(storage.options()).andReturn(mockOptions).times(4);
+    replay(storage);
+    Bucket fullBucket = new Bucket(storage, new BucketInfo.BuilderImpl(FULL_BUCKET_INFO));
+    assertEquals(fullBucket, fullBucket.toBuilder().build());
+    Bucket simpleBlob = new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO));
+    assertEquals(simpleBlob, simpleBlob.toBuilder().build());
   }
 }

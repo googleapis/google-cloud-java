@@ -125,16 +125,6 @@ public class Project extends ProjectInfo {
   }
 
   /**
-   * Constructs a Project object that contains project information got from the server.
-   *
-   * @return Project object containing the project's metadata or {@code null} if not found
-   * @throws ResourceManagerException upon failure
-   */
-  public static Project get(ResourceManager resourceManager, String projectId) {
-    return resourceManager.get(projectId);
-  }
-
-  /**
    * Returns the {@link ResourceManager} service object associated with this Project.
    */
   public ResourceManager resourceManager() {
@@ -149,7 +139,7 @@ public class Project extends ProjectInfo {
    * @throws ResourceManagerException upon failure
    */
   public Project reload() {
-    return Project.get(resourceManager, projectId());
+    return resourceManager.get(projectId());
   }
 
   /**
@@ -208,10 +198,6 @@ public class Project extends ProjectInfo {
    */
   public Project replace() {
     return resourceManager.replace(this);
-  }
-
-  static Builder builder(ResourceManager resourceManager, String projectId) {
-    return new Builder(resourceManager).projectId(projectId);
   }
 
   @Override
