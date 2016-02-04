@@ -54,9 +54,12 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   @Override
-  public ManagedZone create(ManagedZone zone) throws DnsException {
+  public ManagedZone create(ManagedZone zone, Map<Option, ?> options) throws DnsException {
     try {
-      return dns.managedZones().create(this.options.projectId(), zone).execute();
+      return dns.managedZones()
+          .create(this.options.projectId(), zone)
+          .setFields(FIELDS.getString(options))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }

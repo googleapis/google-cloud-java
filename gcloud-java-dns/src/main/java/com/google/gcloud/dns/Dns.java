@@ -421,14 +421,15 @@ public interface Dns extends Service<DnsOptions> {
    *
    * <p>Returns {@link ZoneInfo} object representing the new zone's information. In addition to the
    * name, dns name and description (supplied by the user within the {@code zoneInfo} parameter),
-   * the returned object will include the following read-only fields supplied by the server:
-   * creation time, id, and list of name servers.
+   * the returned object can include the following read-only fields supplied by the server: creation
+   * time, id, and list of name servers. The returned fields can be optionally restricted by
+   * specifying {@link ZoneOption}s.
    *
    * @throws DnsException upon failure
    * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/create">Cloud DNS Managed Zones:
    * create</a>
    */
-  ZoneInfo create(ZoneInfo zoneInfo);
+  ZoneInfo create(ZoneInfo zoneInfo, ZoneOption... options);
 
   /**
    * Returns the zone by the specified zone name. Returns {@code null} if the zone is not found. The

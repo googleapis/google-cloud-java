@@ -87,10 +87,11 @@ public interface DnsRpc {
    * Creates a new zone.
    *
    * @param zone a zone to be created
+   * @param options a map of options for the service call
    * @return Updated {@code ManagedZone} object
    * @throws DnsException upon failure
    */
-  ManagedZone create(ManagedZone zone) throws DnsException;
+  ManagedZone create(ManagedZone zone, Map<Option, ?> options) throws DnsException;
 
   /**
    * Retrieves and returns an existing zone.
