@@ -312,4 +312,53 @@ public class BlobTest {
     Blob simpleBlob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO));
     assertEquals(simpleBlob, simpleBlob.toBuilder().build());
   }
+
+  @Test
+  public void testBuilder() {
+    initializeExpectedBlob(4);
+    expect(storage.options()).andReturn(mockOptions).times(2);
+    replay(storage);
+    Blob.Builder builder = new Blob.Builder(new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO)));
+    Blob blob = builder.acl(ACL)
+        .componentCount(COMPONENT_COUNT)
+        .contentType(CONTENT_TYPE)
+        .cacheControl(CACHE_CONTROL)
+        .contentDisposition(CONTENT_DISPOSITION)
+        .contentEncoding(CONTENT_ENCODING)
+        .contentLanguage(CONTENT_LANGUAGE)
+        .crc32c(CRC32)
+        .deleteTime(DELETE_TIME)
+        .etag(ETAG)
+        .id(ID)
+        .md5(MD5)
+        .mediaLink(MEDIA_LINK)
+        .metadata(METADATA)
+        .metageneration(META_GENERATION)
+        .owner(OWNER)
+        .selfLink(SELF_LINK)
+        .size(SIZE)
+        .updateTime(UPDATE_TIME)
+        .build();
+    assertEquals("b", blob.bucket());
+    assertEquals("n", blob.name());
+    assertEquals(ACL, blob.acl());
+    assertEquals(COMPONENT_COUNT, blob.componentCount());
+    assertEquals(CONTENT_TYPE, blob.contentType());
+    assertEquals(CACHE_CONTROL, blob.cacheControl());
+    assertEquals(CONTENT_DISPOSITION, blob.contentDisposition());
+    assertEquals(CONTENT_ENCODING, blob.contentEncoding());
+    assertEquals(CONTENT_LANGUAGE, blob.contentLanguage());
+    assertEquals(CRC32, blob.crc32c());
+    assertEquals(DELETE_TIME, blob.deleteTime());
+    assertEquals(ETAG, blob.etag());
+    assertEquals(ID, blob.id());
+    assertEquals(MD5, blob.md5());
+    assertEquals(MEDIA_LINK, blob.mediaLink());
+    assertEquals(METADATA, blob.metadata());
+    assertEquals(META_GENERATION, blob.metageneration());
+    assertEquals(OWNER, blob.owner());
+    assertEquals(SELF_LINK, blob.selfLink());
+    assertEquals(SIZE, blob.size());
+    assertEquals(UPDATE_TIME, blob.updateTime());
+  }
 }

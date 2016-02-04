@@ -162,11 +162,6 @@ public final class Blob extends BlobInfo {
     private final Storage storage;
     private final BlobInfo.BuilderImpl infoBuilder;
 
-    Builder(Storage storage) {
-      this.storage = storage;
-      this.infoBuilder = new BlobInfo.BuilderImpl();
-    }
-
     Builder(Blob blob) {
       this.storage = blob.storage();
       this.infoBuilder = new BlobInfo.BuilderImpl(blob);

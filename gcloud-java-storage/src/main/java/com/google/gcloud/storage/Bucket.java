@@ -126,11 +126,6 @@ public final class Bucket extends BucketInfo {
     private final Storage storage;
     private final BucketInfo.BuilderImpl infoBuilder;
 
-    Builder(Storage storage) {
-      this.storage = storage;
-      this.infoBuilder = new BucketInfo.BuilderImpl();
-    }
-
     Builder(Bucket bucket) {
       this.storage = bucket.storage;
       this.infoBuilder = new BucketInfo.BuilderImpl(bucket);

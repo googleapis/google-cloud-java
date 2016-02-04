@@ -28,6 +28,7 @@ import static org.junit.Assert.assertNull;
 import com.google.common.collect.ImmutableMap;
 
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Map;
@@ -53,6 +54,11 @@ public class ProjectTest {
   private Project expectedProject;
   private Project project;
 
+  @Before
+  public void setUp() {
+    resourceManager = createStrictMock(ResourceManager.class);
+  }
+
   @After
   public void tearDown() throws Exception {
     verify(resourceManager);
@@ -61,7 +67,6 @@ public class ProjectTest {
   private void initializeExpectedProject(int optionsCalls) {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
-    resourceManager = createStrictMock(ResourceManager.class);
     expectedProject =
         new Project(serviceMockReturnsOptions, new ProjectInfo.BuilderImpl(PROJECT_INFO));
   }
@@ -75,6 +80,28 @@ public class ProjectTest {
     initializeExpectedProject(4);
     replay(resourceManager);
     compareProjects(expectedProject, expectedProject.toBuilder().build());
+  }
+
+  @Test
+  public void testBuilder() {
+    initializeExpectedProject(4);
+    expect(resourceManager.options()).andReturn(mockOptions).times(4);
+    replay(resourceManager);
+    Project.Builder builder = new Project.Builder(new Project(resourceManager, new ProjectInfo.BuilderImpl()));
+    Project project = builder.name(NAME)
+        .projectId(PROJECT_ID)
+        .labels(LABELS)
+        .projectNumber(PROJECT_NUMBER)
+        .createTimeMillis(CREATE_TIME_MILLIS)
+        .state(STATE)
+        .build();
+    assertEquals(PROJECT_ID, project.projectId());
+    assertEquals(NAME, project.name());
+    assertEquals(LABELS, project.labels());
+    assertEquals(PROJECT_NUMBER, project.projectNumber());
+    assertEquals(CREATE_TIME_MILLIS, project.createTimeMillis());
+    assertEquals(STATE, project.state());
+    assertEquals(resourceManager.options(), project.resourceManager().options());
   }
 
   @Test

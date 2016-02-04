@@ -42,11 +42,6 @@ public class Project extends ProjectInfo {
     private final ResourceManager resourceManager;
     private final ProjectInfo.BuilderImpl infoBuilder;
 
-    Builder(ResourceManager resourceManager) {
-      this.resourceManager = resourceManager;
-      this.infoBuilder = new ProjectInfo.BuilderImpl();
-    }
-
     Builder(Project project) {
       this.resourceManager = project.resourceManager;
       this.infoBuilder = new ProjectInfo.BuilderImpl(project);

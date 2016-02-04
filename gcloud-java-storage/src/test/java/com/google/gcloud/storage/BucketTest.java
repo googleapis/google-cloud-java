@@ -340,4 +340,46 @@ public class BucketTest {
     Bucket simpleBlob = new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO));
     assertEquals(simpleBlob, simpleBlob.toBuilder().build());
   }
+
+  @Test
+  public void testBuilder() {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions).times(4);
+    replay(storage);
+    Bucket.Builder builder =
+        new Bucket.Builder(new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO)));
+    Bucket bucket = builder.acl(ACL)
+        .etag(ETAG)
+        .id(ID)
+        .metageneration(META_GENERATION)
+        .owner(OWNER)
+        .selfLink(SELF_LINK)
+        .cors(CORS)
+        .createTime(CREATE_TIME)
+        .defaultAcl(DEFAULT_ACL)
+        .deleteRules(DELETE_RULES)
+        .indexPage(INDEX_PAGE)
+        .notFoundPage(NOT_FOUND_PAGE)
+        .location(LOCATION)
+        .storageClass(STORAGE_CLASS)
+        .versioningEnabled(VERSIONING_ENABLED)
+        .build();
+    assertEquals("b", bucket.name());
+    assertEquals(ACL, bucket.acl());
+    assertEquals(ETAG, bucket.etag());
+    assertEquals(ID, bucket.id());
+    assertEquals(META_GENERATION, bucket.metageneration());
+    assertEquals(OWNER, bucket.owner());
+    assertEquals(SELF_LINK, bucket.selfLink());
+    assertEquals(CREATE_TIME, bucket.createTime());
+    assertEquals(CORS, bucket.cors());
+    assertEquals(DEFAULT_ACL, bucket.defaultAcl());
+    assertEquals(DELETE_RULES, bucket.deleteRules());
+    assertEquals(INDEX_PAGE, bucket.indexPage());
+    assertEquals(NOT_FOUND_PAGE, bucket.notFoundPage());
+    assertEquals(LOCATION, bucket.location());
+    assertEquals(STORAGE_CLASS, bucket.storageClass());
+    assertEquals(VERSIONING_ENABLED, bucket.versioningEnabled());
+    assertEquals(storage.options(), bucket.storage().options());
+  }
 }
