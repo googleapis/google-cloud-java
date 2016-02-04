@@ -1,6 +1,8 @@
 package com.google.gcloud.spi;
 
+import static com.google.gcloud.spi.DnsRpc.ListResult.of;
 import static com.google.gcloud.spi.DnsRpc.Option.DNS_NAME;
+import static com.google.gcloud.spi.DnsRpc.Option.NAME;
 import static com.google.gcloud.spi.DnsRpc.Option.DNS_TYPE;
 import static com.google.gcloud.spi.DnsRpc.Option.FIELDS;
 import static com.google.gcloud.spi.DnsRpc.Option.PAGE_SIZE;
@@ -30,7 +32,7 @@ import java.util.Map;
  */
 public class DefaultDnsRpc implements DnsRpc {
 
-  private static final String SORTING_KEY = "changeSequence";
+  private static final String SORT_BY = "changeSequence";
   private final Dns dns;
   private final DnsOptions options;
 
@@ -77,17 +79,16 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<ManagedZone>> listZones(Map<Option, ?> options)
-      throws DnsException {
+  public ListResult<ManagedZone> listZones(Map<Option, ?> options) throws DnsException {
     // fields, page token, page size
     try {
       ManagedZonesListResponse zoneList = dns.managedZones().list(this.options.projectId())
           .setFields(FIELDS.getString(options))
           .setMaxResults(PAGE_SIZE.getInt(options))
+          .setDnsName(DNS_NAME.getString(options))
           .setPageToken(PAGE_TOKEN.getString(options))
           .execute();
-      return Tuple.<String, Iterable<ManagedZone>>of(zoneList.getNextPageToken(),
-          zoneList.getManagedZones());
+      return of(zoneList.getNextPageToken(), zoneList.getManagedZones());
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -108,8 +109,8 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<ResourceRecordSet>> listDnsRecords(String zoneName,
-      Map<Option, ?> options) throws DnsException {
+  public ListResult<ResourceRecordSet> listDnsRecords(String zoneName, Map<Option, ?> options)
+      throws DnsException {
     // options are fields, page token, dns name, type
     try {
       ResourceRecordSetsListResponse response = dns.resourceRecordSets()
@@ -117,11 +118,10 @@ public class DefaultDnsRpc implements DnsRpc {
           .setFields(FIELDS.getString(options))
           .setPageToken(PAGE_TOKEN.getString(options))
           .setMaxResults(PAGE_SIZE.getInt(options))
-          .setName(DNS_NAME.getString(options))
+          .setName(NAME.getString(options))
           .setType(DNS_TYPE.getString(options))
           .execute();
-      return Tuple.<String, Iterable<ResourceRecordSet>>of(response.getNextPageToken(),
-          response.getRrsets());
+      return of(response.getNextPageToken(), response.getRrsets());
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -159,8 +159,7 @@ public class DefaultDnsRpc implements DnsRpc {
     } catch (IOException ex) {
       DnsException serviceException = translate(ex);
       if (serviceException.code() == HTTP_NOT_FOUND) {
-        // message format "The 'parameters.changeId' resource named '4' does not exist."
-        if (serviceException.getMessage().contains("changeId")) {
+        if (serviceException.location().equals("entity.parameters.changeId")) {
           // the change id was not found, but the zone exists
           return null;
         }
@@ -171,7 +170,7 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<Change>> listChangeRequests(String zoneName, Map<Option, ?> options)
+  public ListResult<Change> listChangeRequests(String zoneName, Map<Option, ?> options)
       throws DnsException {
     // options are fields, page token, page size, sort order
     try {
@@ -181,10 +180,10 @@ public class DefaultDnsRpc implements DnsRpc {
           .setPageToken(PAGE_TOKEN.getString(options));
       if (SORTING_ORDER.getString(options) != null) {
         // todo check and change if more sorting options are implemented, issue #604
-        request = request.setSortBy(SORTING_KEY).setSortOrder(SORTING_ORDER.getString(options));
+        request = request.setSortBy(SORT_BY).setSortOrder(SORTING_ORDER.getString(options));
       }
       ChangesListResponse response = request.execute();
-      return Tuple.<String, Iterable<Change>>of(response.getNextPageToken(), response.getChanges());
+      return ListResult.of(response.getNextPageToken(), response.getChanges());
     } catch (IOException ex) {
       throw translate(ex);
     }

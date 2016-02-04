@@ -230,7 +230,7 @@ public interface Dns extends Service<DnsOptions> {
      * Restricts the list to only DNS records with this fully qualified domain name.
      */
     public static DnsRecordListOption dnsName(String dnsName) {
-      return new DnsRecordListOption(DnsRpc.Option.DNS_NAME, dnsName);
+      return new DnsRecordListOption(DnsRpc.Option.NAME, dnsName);
     }
 
     /**

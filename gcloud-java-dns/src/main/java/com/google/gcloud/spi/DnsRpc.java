@@ -20,6 +20,7 @@ import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
+import com.google.common.collect.ImmutableList;
 import com.google.gcloud.dns.DnsException;
 
 import java.util.Map;
@@ -28,9 +29,10 @@ public interface DnsRpc {
 
   enum Option {
     FIELDS("fields"),
-    PAGE_SIZE("maxSize"),
+    PAGE_SIZE("maxResults"),
     PAGE_TOKEN("pageToken"),
     DNS_NAME("dnsName"),
+    NAME("name"),
     DNS_TYPE("type"),
     SORTING_ORDER("sortOrder");
 
@@ -58,26 +60,26 @@ public interface DnsRpc {
     }
   }
 
-  class Tuple<X, Y> {
+  class ListResult<T> {
 
-    private final X x;
-    private final Y y;
+    private final Iterable<T> results;
+    private final String pageToken;
 
-    private Tuple(X x, Y y) {
-      this.x = x;
-      this.y = y;
+    public ListResult(String pageToken, Iterable<T> results) {
+      this.results = ImmutableList.copyOf(results);
+      this.pageToken = pageToken;
     }
 
-    public static <X, Y> Tuple<X, Y> of(X x, Y y) {
-      return new Tuple<>(x, y);
+    public static <T> ListResult<T> of(String pageToken, Iterable<T> list) {
+      return new ListResult<>(pageToken, list);
     }
 
-    public X x() {
-      return x;
+    public Iterable<T> results() {
+      return results;
     }
 
-    public Y y() {
-      return y;
+    public String pageToken() {
+      return pageToken;
     }
   }
 
@@ -106,7 +108,7 @@ public interface DnsRpc {
    * @param options a map of options for the service call
    * @throws DnsException upon failure
    */
-  Tuple<String, Iterable<ManagedZone>> listZones(Map<Option, ?> options) throws DnsException;
+  ListResult<ManagedZone> listZones(Map<Option, ?> options) throws DnsException;
 
   /**
    * Deletes the zone identified by the name.
@@ -123,12 +125,12 @@ public interface DnsRpc {
    * @param options a map of options for the service call
    * @throws DnsException upon failure or if zone was not found
    */
-  Tuple<String, Iterable<ResourceRecordSet>> listDnsRecords(String zoneName,
-      Map<Option, ?> options) throws DnsException;
+  ListResult<ResourceRecordSet> listDnsRecords(String zoneName, Map<Option, ?> options)
+      throws DnsException;
 
   /**
    * Returns information about the current project.
-   * 
+   *
    * @param options a map of options for the service call
    * @return up-to-date project information
    * @throws DnsException upon failure or if the project is not found
@@ -136,7 +138,7 @@ public interface DnsRpc {
   Project getProject(Map<Option, ?> options) throws DnsException;
 
   /**
-   * Applies change request to a zone. 
+   * Applies change request to a zone.
    *
    * @param zoneName the name of a zone to which the {@code Change} should be applied
    * @param changeRequest change to be applied
@@ -144,7 +146,7 @@ public interface DnsRpc {
    * @return updated change object with server-assigned ID
    * @throws DnsException upon failure or if zone was not found
    */
-  Change applyChangeRequest(String zoneName, Change changeRequest, Map<Option, ?> options) 
+  Change applyChangeRequest(String zoneName, Change changeRequest, Map<Option, ?> options)
       throws DnsException;
 
   /**
@@ -156,7 +158,7 @@ public interface DnsRpc {
    * @return up-to-date change object or {@code null} if change was not found
    * @throws DnsException upon failure or if zone was not found
    */
-  Change getChangeRequest(String zoneName, String changeRequestId, Map<Option, ?> options) 
+  Change getChangeRequest(String zoneName, String changeRequestId, Map<Option, ?> options)
       throws DnsException;
 
   /**
@@ -166,6 +168,6 @@ public interface DnsRpc {
    * @param options a map of options for the service call
    * @throws DnsException upon failure or if zone was not found
    */
-  Tuple<String, Iterable<Change>> listChangeRequests(String zoneName, Map<Option, ?> options) 
+  ListResult<Change> listChangeRequests(String zoneName, Map<Option, ?> options)
       throws DnsException;
 }
