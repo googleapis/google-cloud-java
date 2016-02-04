@@ -41,7 +41,7 @@ public class ZoneInfo implements Serializable {
 
   private static final long serialVersionUID = 201601191647L;
   private final String name;
-  private final BigInteger id;
+  private final String id;
   private final Long creationTimeMillis;
   private final String dnsName;
   private final String description;
@@ -53,7 +53,7 @@ public class ZoneInfo implements Serializable {
    */
   public static class Builder {
     private String name;
-    private BigInteger id;
+    private String id;
     private Long creationTimeMillis;
     private String dnsName;
     private String description;
@@ -66,17 +66,8 @@ public class ZoneInfo implements Serializable {
     private Builder() {
     }
 
-    private Builder(BigInteger id) {
-      this.id = checkNotNull(id);
-    }
-
     private Builder(String name) {
       this.name = checkNotNull(name);
-    }
-
-    private Builder(String name, BigInteger id) {
-      this.name = checkNotNull(name);
-      this.id = checkNotNull(id);
     }
 
     /**
@@ -103,7 +94,7 @@ public class ZoneInfo implements Serializable {
     /**
      * Sets an id for the zone which is assigned to the zone by the server.
      */
-    Builder id(BigInteger id) {
+    Builder id(String id) {
       this.id = id;
       return this;
     }
@@ -179,20 +170,6 @@ public class ZoneInfo implements Serializable {
   }
 
   /**
-   * Returns a builder for {@code ZoneInfo} with an assigned {@code id}.
-   */
-  public static Builder builder(BigInteger id) {
-    return new Builder(id);
-  }
-
-  /**
-   * Returns a builder for {@code ZoneInfo} with an assigned {@code name} and {@code id}.
-   */
-  public static Builder builder(String name, BigInteger id) {
-    return new Builder(name, id);
-  }
-
-  /**
    * Returns the user-defined name of the zone.
    */
   public String name() {
@@ -202,7 +179,7 @@ public class ZoneInfo implements Serializable {
   /**
    * Returns the read-only zone id assigned by the server.
    */
-  public BigInteger id() {
+  public String id() {
     return id;
   }
 
@@ -255,7 +232,7 @@ public class ZoneInfo implements Serializable {
     pb.setDescription(this.description());
     pb.setDnsName(this.dnsName());
     if (this.id() != null) {
-      pb.setId(this.id());
+      pb.setId(new BigInteger(this.id()));
     }
     pb.setName(this.name());
     pb.setNameServers(this.nameServers());
@@ -277,7 +254,7 @@ public class ZoneInfo implements Serializable {
       builder.dnsName(pb.getDnsName());
     }
     if (pb.getId() != null) {
-      builder.id(pb.getId());
+      builder.id(pb.getId().toString());
     }
     if (pb.getName() != null) {
       builder.name(pb.getName());

@@ -16,13 +16,11 @@
 
 package com.google.gcloud.dns;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.gcloud.Page;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 /**
  * A Google Cloud DNS Zone object.
@@ -39,7 +37,7 @@ public class Zone implements Serializable {
 
   // TODO(mderka) Zone and zoneInfo to be merged. Opened issue #605.
 
-  private static final long serialVersionUID = -4012581571095484813L;
+  private static final long serialVersionUID = 6847890192129375500L;
   private final ZoneInfo zoneInfo;
   private final Dns dns;
 
@@ -68,166 +66,81 @@ public class Zone implements Serializable {
   }
 
   /**
-   * Constructs a {@code Zone} object that contains information received from the Google Cloud DNS
-   * service for the provided {@code zoneId}.
-   *
-   * @param zoneId ID of the zone to be searched for
-   * @param options optional restriction on what fields should be returned by the service
-   * @return zone object containing zone's information or {@code null} if not not found
-   * @throws DnsException upon failure
-   */
-  public static Zone get(Dns dnsService, BigInteger zoneId, Dns.ZoneOption... options) {
-    checkNotNull(zoneId);
-    checkNotNull(dnsService);
-    ZoneInfo zoneInfo = dnsService.getZone(zoneId, options);
-    return zoneInfo == null ? null : new Zone(dnsService, zoneInfo);
-  }
-
-  /**
-   * Retrieves the latest information about the zone. The method first attempts to retrieve the zone
-   * by ID and if not set or zone is not found, it searches by name.
+   * Retrieves the latest information about the zone. The method retrieves the zone by name which
+   * must always be initialized.
    *
    * @param options optional restriction on what fields should be fetched
    * @return zone object containing updated information or {@code null} if not not found
    * @throws DnsException upon failure
-   * @throws NullPointerException if both zone ID and name are not initialized
    */
   public Zone reload(Dns.ZoneOption... options) {
-    checkNameOrIdNotNull();
-    Zone zone = null;
-    if (zoneInfo.id() != null) {
-      zone = Zone.get(dns, zoneInfo.id(), options);
-    }
-    if (zone == null && zoneInfo.name() != null) {
-      // zone was not found by id or id is not set at all
-      zone = Zone.get(dns, zoneInfo.name(), options);
-    }
-    return zone;
+    return Zone.get(dns, zoneInfo.name(), options);
   }
 
   /**
-   * Deletes the zone. The method first attempts to delete the zone by ID. If the zone is not found
-   * or id is not set, it attempts to delete by name.
+   * Deletes the zone. The method first deletes the zone by name which must always be initialized.
    *
    * @return {@code true} is zone was found and deleted and {@code false} otherwise
    * @throws DnsException upon failure
-   * @throws NullPointerException if both zone ID and name are not initialized
    */
   public boolean delete() {
-    checkNameOrIdNotNull();
-    boolean deleted = false;
-    if (zoneInfo.id() != null) {
-      deleted = dns.delete(zoneInfo.id());
-    }
-    if (!deleted && zoneInfo.name() != null) {
-      // zone was not found by id or id is not set at all
-      deleted = dns.delete(zoneInfo.name());
-    }
-    return deleted;
+    return dns.delete(zoneInfo.name());
   }
 
   /**
-   * Lists all {@link DnsRecord}s associated with this zone. First searches for zone by ID and if
-   * not found then by name.
+   * Lists all {@link DnsRecord}s associated with this zone. The method searches for zone by name
+   * which must always be initialized.
    *
    * @param options optional restriction on listing and fields of {@link DnsRecord}s returned
    * @return a page of DNS records
    * @throws DnsException upon failure or if the zone is not found
-   * @throws NullPointerException if both zone ID and name are not initialized
    */
   public Page<DnsRecord> listDnsRecords(Dns.DnsRecordListOption... options) {
-    checkNameOrIdNotNull();
-    Page<DnsRecord> page = null;
-    if (zoneInfo.id() != null) {
-      page = dns.listDnsRecords(zoneInfo.id(), options);
-    }
-    if (page == null && zoneInfo.name() != null) {
-      // zone was not found by id or id is not set at all
-      page = dns.listDnsRecords(zoneInfo.name(), options);
-    }
-    return page;
+    return dns.listDnsRecords(zoneInfo.name(), options);
   }
 
   /**
-   * Submits {@link ChangeRequest} to the service for it to applied to this zone. First searches for
-   * the zone by ID and if not found then by name. Returns a {@link ChangeRequest} with
-   * server-assigned ID or {@code null} if the zone was not found.
+   * Submits {@link ChangeRequest} to the service for it to applied to this zone. The method
+   * searches for zone by name which must always be initialized.
    *
    * @param options optional restriction on what fields of {@link ChangeRequest} should be returned
    * @return ChangeRequest with server-assigned ID
    * @throws DnsException upon failure or if the zone is not found
-   * @throws NullPointerException if both zone ID and name are not initialized
    */
   public ChangeRequest applyChangeRequest(ChangeRequest changeRequest,
       Dns.ChangeRequestOption... options) {
-    checkNameOrIdNotNull();
     checkNotNull(changeRequest);
-    ChangeRequest updated = null;
-    if (zoneInfo.id() != null) {
-      updated = dns.applyChangeRequest(zoneInfo.id(), changeRequest, options);
-    }
-    if (updated == null && zoneInfo.name() != null) {
-      // zone was not found by id or id is not set at all
-      updated = dns.applyChangeRequest(zoneInfo.name(), changeRequest, options);
-    }
-    return updated;
+    return dns.applyChangeRequest(zoneInfo.name(), changeRequest, options);
   }
 
   /**
    * Retrieves an updated information about a change request previously submitted to be applied to
-   * this zone. First searches for the zone by ID and if not found then by name. Returns a {@link
-   * ChangeRequest} if found and {@code null} is the zone or the change request was not found.
+   * this zone. The method searches for zone by name which must always be initialized. Returns a
+   * {@link ChangeRequest} if and {@code null} if the change request was not found. Throws {@link
+   * DnsException} if the zone is not found.
    *
    * @param options optional restriction on what fields of {@link ChangeRequest} should be returned
    * @return updated ChangeRequest
    * @throws DnsException upon failure or if the zone is not found
-   * @throws NullPointerException if both zone ID and name are not initialized
    * @throws NullPointerException if the change request does not have initialized id
    */
   public ChangeRequest getChangeRequest(String changeRequestId,
       Dns.ChangeRequestOption... options) {
-    checkNameOrIdNotNull();
     checkNotNull(changeRequestId);
-    ChangeRequest updated = null;
-    if (zoneInfo.id() != null) {
-      updated = dns.getChangeRequest(zoneInfo.id(), changeRequestId, options);
-    }
-    if (updated == null && zoneInfo.name() != null) {
-      // zone was not found by id or id is not set at all
-      updated = dns.getChangeRequest(zoneInfo.name(), changeRequestId, options);
-    }
-    return updated;
+    return dns.getChangeRequest(zoneInfo.name(), changeRequestId, options);
   }
 
   /**
-   * Retrieves all change requests for this zone. First searches for the zone by ID and if not found
-   * then by name. Returns a page of {@link ChangeRequest}s or {@code null} if the zone is not
-   * found.
+   * Retrieves all change requests for this zone. The method searches for zone by name which must
+   * always be initialized. Returns a page of {@link ChangeRequest}s. Throws a {@link DnsException}
+   * if the zone is not found.
    *
    * @param options optional restriction on listing and fields to be returned
    * @return a page of change requests
    * @throws DnsException upon failure or if the zone is not found
-   * @throws NullPointerException if both zone ID and name are not initialized
    */
   public Page<ChangeRequest> listChangeRequests(Dns.ChangeRequestListOption... options) {
-    checkNameOrIdNotNull();
-    Page<ChangeRequest> changeRequests = null;
-    if (zoneInfo.id() != null) {
-      changeRequests = dns.listChangeRequests(zoneInfo.id(), options);
-    }
-    if (changeRequests == null && zoneInfo.name() != null) {
-      // zone was not found by id or id is not set at all
-      changeRequests = dns.listChangeRequests(zoneInfo.name(), options);
-    }
-    return changeRequests;
-  }
-
-  /**
-   * Check that at least one of name and ID are initialized and throw and exception if not.
-   */
-  private void checkNameOrIdNotNull() {
-    checkArgument(zoneInfo != null && (zoneInfo.id() != null || zoneInfo.name() != null),
-        "Both zoneInfo.id and zoneInfo.name are null. This is should never happen.");
+    return dns.listChangeRequests(zoneInfo.name(), options);
   }
 
   /**

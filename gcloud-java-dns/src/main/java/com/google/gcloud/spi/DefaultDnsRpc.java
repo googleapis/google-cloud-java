@@ -2,9 +2,9 @@ package com.google.gcloud.spi;
 
 import static com.google.gcloud.spi.DnsRpc.ListResult.of;
 import static com.google.gcloud.spi.DnsRpc.Option.DNS_NAME;
-import static com.google.gcloud.spi.DnsRpc.Option.NAME;
 import static com.google.gcloud.spi.DnsRpc.Option.DNS_TYPE;
 import static com.google.gcloud.spi.DnsRpc.Option.FIELDS;
+import static com.google.gcloud.spi.DnsRpc.Option.NAME;
 import static com.google.gcloud.spi.DnsRpc.Option.PAGE_SIZE;
 import static com.google.gcloud.spi.DnsRpc.Option.PAGE_TOKEN;
 import static com.google.gcloud.spi.DnsRpc.Option.SORTING_ORDER;
