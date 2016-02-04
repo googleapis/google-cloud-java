@@ -32,7 +32,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs">Jobs</a>
  */
-public final class JobInfo implements Serializable {
+public class JobInfo implements Serializable {
 
   static final Function<Job, JobInfo> FROM_PB_FUNCTION =
       new Function<Job, JobInfo>() {
@@ -41,7 +41,17 @@ public final class JobInfo implements Serializable {
           return JobInfo.fromPb(pb);
         }
       };
+
   private static final long serialVersionUID = -3272941007234620265L;
+
+  private final String etag;
+  private final String id;
+  private final JobId jobId;
+  private final String selfLink;
+  private final JobStatus status;
+  private final JobStatistics statistics;
+  private final String userEmail;
+  private final JobConfiguration configuration;
 
   /**
    * Specifies whether the job is allowed to create new tables.
@@ -78,16 +88,44 @@ public final class JobInfo implements Serializable {
     WRITE_EMPTY
   }
 
-  private final String etag;
-  private final String id;
-  private final JobId jobId;
-  private final String selfLink;
-  private final JobStatus status;
-  private final JobStatistics statistics;
-  private final String userEmail;
-  private final JobConfiguration configuration;
+  /**
+   * A builder for {@code JobInfo} objects.
+   */
+  public abstract static class Builder {
 
-  public static final class Builder {
+    abstract Builder etag(String etag);
+
+    abstract Builder id(String id);
+
+    /**
+     * Sets the job identity.
+     */
+    public abstract Builder jobId(JobId jobId);
+
+    abstract Builder selfLink(String selfLink);
+
+    abstract Builder status(JobStatus status);
+
+    abstract Builder statistics(JobStatistics statistics);
+
+    abstract Builder userEmail(String userEmail);
+
+    /**
+     * Sets a configuration for the {@code JobInfo} object. Use {@link CopyJobConfiguration} for a
+     * job that copies an existing table. Use {@link ExtractJobConfiguration} for a job that exports
+     * a table to Google Cloud Storage. Use {@link LoadJobConfiguration} for a job that loads data
+     * from Google Cloud Storage into a table. Use {@link QueryJobConfiguration} for a job that runs
+     * a query.
+     */
+    public abstract Builder configuration(JobConfiguration configuration);
+
+    /**
+     * Creates a {@code JobInfo} object.
+     */
+    public abstract JobInfo build();
+  }
+
+  static final class BuilderImpl extends Builder {
 
     private String etag;
     private String id;
@@ -98,9 +136,9 @@ public final class JobInfo implements Serializable {
     private String userEmail;
     private JobConfiguration configuration;
 
-    private Builder() {}
+    BuilderImpl() {}
 
-    private Builder(JobInfo jobInfo) {
+    BuilderImpl(JobInfo jobInfo) {
       this.etag = jobInfo.etag;
       this.id = jobInfo.id;
       this.jobId = jobInfo.jobId;
@@ -111,7 +149,7 @@ public final class JobInfo implements Serializable {
       this.configuration = jobInfo.configuration;
     }
 
-    protected Builder(Job jobPb) {
+    BuilderImpl(Job jobPb) {
       this.etag = jobPb.getEtag();
       this.id = jobPb.getId();
       if (jobPb.getJobReference() != null) {
@@ -128,55 +166,61 @@ public final class JobInfo implements Serializable {
       this.configuration = JobConfiguration.fromPb(jobPb.getConfiguration());
     }
 
+    @Override
     Builder etag(String etag) {
       this.etag = etag;
       return this;
     }
 
+    @Override
     Builder id(String id) {
       this.id = id;
       return this;
     }
 
-    /**
-     * Sets the job identity.
-     */
+    @Override
     public Builder jobId(JobId jobId) {
       this.jobId = jobId;
       return this;
     }
 
+    @Override
     Builder selfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    @Override
     Builder status(JobStatus status) {
       this.status = status;
       return this;
     }
 
+    @Override
     Builder statistics(JobStatistics statistics) {
       this.statistics = statistics;
       return this;
     }
 
+    @Override
     Builder userEmail(String userEmail) {
       this.userEmail = userEmail;
       return this;
     }
 
+    @Override
     public Builder configuration(JobConfiguration configuration) {
       this.configuration = configuration;
       return this;
     }
 
+    @Override
     public JobInfo build() {
       return new JobInfo(this);
     }
   }
 
-  private JobInfo(Builder builder) {
+  JobInfo(BuilderImpl builder) {
     this.jobId = builder.jobId;
     this.etag = builder.etag;
     this.id = builder.id;
@@ -248,10 +292,10 @@ public final class JobInfo implements Serializable {
   }
 
   /**
-   * Returns a builder for the job.
+   * Returns a builder for the job object.
    */
   public Builder toBuilder() {
-    return new Builder(this);
+    return new BuilderImpl(this);
   }
 
   @Override
@@ -275,7 +319,7 @@ public final class JobInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof JobInfo && Objects.equals(toPb(), ((JobInfo) obj).toPb());
+    return obj.getClass().equals(JobInfo.class) && Objects.equals(toPb(), ((JobInfo) obj).toPb());
   }
 
   JobInfo setProjectId(String projectId) {
@@ -301,19 +345,40 @@ public final class JobInfo implements Serializable {
     return jobPb;
   }
 
+  /**
+   * Returns a builder for a {@code JobInfo} object given the job configuration. Use
+   * {@link CopyJobConfiguration} for a job that copies an existing table. Use
+   * {@link ExtractJobConfiguration} for a job that exports a table to Google Cloud Storage. Use
+   * {@link LoadJobConfiguration} for a job that loads data from Google Cloud Storage into a table.
+   * Use {@link QueryJobConfiguration} for a job that runs a query.
+   */
   public static Builder builder(JobConfiguration configuration) {
-    return new Builder().configuration(configuration);
+    return new BuilderImpl().configuration(configuration);
   }
 
+  /**
+   * Returns a {@code JobInfo} object given the job configuration. Use {@link CopyJobConfiguration}
+   * for a job that copies an existing table. Use {@link ExtractJobConfiguration} for a job that
+   * exports a table to Google Cloud Storage. Use {@link LoadJobConfiguration} for a job that loads
+   * data from Google Cloud Storage into a table. Use {@link QueryJobConfiguration} for a job that
+   * runs a query.
+   */
   public static JobInfo of(JobConfiguration configuration) {
     return builder(configuration).build();
   }
 
+  /**
+   * Returns a builder for a {@code JobInfo} object given the job identity and configuration. Use
+   * {@link CopyJobConfiguration} for a job that copies an existing table. Use
+   * {@link ExtractJobConfiguration} for a job that exports a table to Google Cloud Storage. Use
+   * {@link LoadJobConfiguration} for a job that loads data from Google Cloud Storage into a table.
+   * Use {@link QueryJobConfiguration} for a job that runs a query.
+   */
   public static JobInfo of(JobId jobId, JobConfiguration configuration) {
     return builder(configuration).jobId(jobId).build();
   }
 
   static JobInfo fromPb(Job jobPb) {
-    return new Builder(jobPb).build();
+    return new BuilderImpl(jobPb).build();
   }
 }

@@ -21,8 +21,8 @@
  * <pre> {@code
  * BigQuery bigquery = BigQueryOptions.defaultInstance().service();
  * TableId tableId = TableId.of("dataset", "table");
- * TableInfo info = bigquery.getTable(tableId);
- * if (info == null) {
+ * Table table = bigquery.getTable(tableId);
+ * if (table == null) {
  *   System.out.println("Creating table " + tableId);
  *   Field integerField = Field.of("fieldName", Field.Type.integer());
  *   Schema schema = Schema.of(integerField);
@@ -30,11 +30,9 @@
  * } else {
  *   System.out.println("Loading data into table " + tableId);
  *   LoadJobConfiguration configuration = LoadJobConfiguration.of(tableId, "gs://bucket/path");
- *   JobInfo loadJob = JobInfo.of(configuration);
- *   loadJob = bigquery.create(loadJob);
- *   while (loadJob.status().state() != JobStatus.State.DONE) {
+ *   Job loadJob = bigquery.create(JobInfo.of(configuration));
+ *   while (!loadJob.isDone()) {
  *     Thread.sleep(1000L);
- *     loadJob = bigquery.getJob(loadJob.jobId());
  *   }
  *   if (loadJob.status().error() != null) {
  *     System.out.println("Job completed with errors");

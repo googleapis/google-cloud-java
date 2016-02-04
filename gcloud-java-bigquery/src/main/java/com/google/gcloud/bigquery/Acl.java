@@ -325,6 +325,8 @@ public final class Acl implements Serializable {
    */
   public static final class View extends Entity {
 
+    private static final long serialVersionUID = -6851072781269419383L;
+
     private final TableId id;
 
     /**
