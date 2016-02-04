@@ -472,6 +472,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return builder.build();
   }
 
+  @Override
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
     com.google.api.services.bigquery.model.JobConfiguration configurationPb =
         new com.google.api.services.bigquery.model.JobConfiguration();

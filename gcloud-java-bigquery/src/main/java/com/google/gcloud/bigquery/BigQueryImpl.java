@@ -621,6 +621,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .results(transformTableData(rowsPb));
   }
 
+  @Override
   public TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration) {
     return new TableDataWriteChannel(options(),
         writeChannelConfiguration.setProjectId(options().projectId()));

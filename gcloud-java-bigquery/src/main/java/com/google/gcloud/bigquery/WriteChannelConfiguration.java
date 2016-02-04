@@ -155,6 +155,7 @@ public class WriteChannelConfiguration implements LoadConfiguration, Serializabl
       return this;
     }
 
+    @Override
     public WriteChannelConfiguration build() {
       return new WriteChannelConfiguration(this);
     }
