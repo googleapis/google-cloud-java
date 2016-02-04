@@ -41,17 +41,21 @@ public final class Dataset extends DatasetInfo {
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
 
+  /**
+   * A builder for {@code Dataset} objects.
+   */
   public static final class Builder extends DatasetInfo.Builder {
 
     private final BigQuery bigquery;
     private final DatasetInfo.BuilderImpl infoBuilder;
 
-    private Builder(BigQuery bigquery) {
+    Builder(BigQuery bigquery, DatasetId datasetId) {
       this.bigquery = bigquery;
       this.infoBuilder = new DatasetInfo.BuilderImpl();
+      this.infoBuilder.datasetId(datasetId);
     }
 
-    private Builder(Dataset dataset) {
+    Builder(Dataset dataset) {
       this.bigquery = dataset.bigquery;
       this.infoBuilder = new DatasetInfo.BuilderImpl(dataset);
     }
@@ -218,14 +222,6 @@ public final class Dataset extends DatasetInfo {
    */
   public BigQuery bigquery() {
     return bigquery;
-  }
-
-  static Builder builder(BigQuery bigquery, DatasetId datasetId) {
-    return new Builder(bigquery).datasetId(datasetId);
-  }
-
-  static Builder builder(BigQuery bigquery, String datasetId) {
-    return builder(bigquery, DatasetId.of(datasetId));
   }
 
   @Override

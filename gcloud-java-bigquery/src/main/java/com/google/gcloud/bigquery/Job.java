@@ -37,17 +37,21 @@ public final class Job extends JobInfo {
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
 
+  /**
+   * A builder for {@code Job} objects.
+   */
   public static final class Builder extends JobInfo.Builder {
 
     private final BigQuery bigquery;
     private final JobInfo.BuilderImpl infoBuilder;
 
-    private Builder(BigQuery bigquery) {
+    Builder(BigQuery bigquery, JobConfiguration configuration) {
       this.bigquery = bigquery;
       this.infoBuilder = new JobInfo.BuilderImpl();
+      this.infoBuilder.configuration(configuration);
     }
 
-    private Builder(Job job) {
+    Builder(Job job) {
       this.bigquery = job.bigquery;
       this.infoBuilder = new JobInfo.BuilderImpl(job);
     }
@@ -169,10 +173,6 @@ public final class Job extends JobInfo {
    */
   public BigQuery bigquery() {
     return bigquery;
-  }
-
-  static Builder builder(BigQuery bigquery, JobConfiguration configuration) {
-    return new Builder(bigquery).configuration(configuration);
   }
 
   @Override

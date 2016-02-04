@@ -109,7 +109,7 @@ public class TableTest {
   public void testBuilder() {
     initializeExpectedTable(2);
     replay(bigquery);
-    Table builtTable = Table.builder(serviceMockReturnsOptions, TABLE_ID1, TABLE_DEFINITION)
+    Table builtTable = new Table.Builder(serviceMockReturnsOptions, TABLE_ID1, TABLE_DEFINITION)
         .creationTime(CREATION_TIME)
         .description(DESCRIPTION)
         .etag(ETAG)

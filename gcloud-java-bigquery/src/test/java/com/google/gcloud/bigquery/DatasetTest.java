@@ -95,7 +95,7 @@ public class DatasetTest {
   public void testBuilder() {
     initializeExpectedDataset(2);
     replay(bigquery);
-    Dataset builtDataset = Dataset.builder(serviceMockReturnsOptions, DATASET_ID)
+    Dataset builtDataset = new Dataset.Builder(serviceMockReturnsOptions, DATASET_ID)
         .acl(ACCESS_RULES)
         .creationTime(CREATION_TIME)
         .defaultTableLifetime(DEFAULT_TABLE_EXPIRATION)

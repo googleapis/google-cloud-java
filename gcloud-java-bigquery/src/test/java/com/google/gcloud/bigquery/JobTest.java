@@ -84,7 +84,7 @@ public class JobTest {
   public void testBuilder() {
     initializeExpectedJob(2);
     replay(bigquery);
-    Job builtJob = Job.builder(serviceMockReturnsOptions, COPY_CONFIGURATION)
+    Job builtJob = new Job.Builder(serviceMockReturnsOptions, COPY_CONFIGURATION)
         .jobId(JOB_ID)
         .statistics(COPY_JOB_STATISTICS)
         .jobId(JOB_ID)

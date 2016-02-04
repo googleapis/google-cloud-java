@@ -70,6 +70,9 @@ public class DatasetInfo implements Serializable {
   private final String location;
   private final String selfLink;
 
+  /**
+   * A builder for {@code DatasetInfo} objects.
+   */
   public abstract static class Builder {
 
     /**
@@ -132,9 +135,6 @@ public class DatasetInfo implements Serializable {
     public abstract DatasetInfo build();
   }
 
-  /**
-   * Base class for a {@code DatasetInfo} builder.
-   */
   static final class BuilderImpl extends Builder {
 
     private DatasetId datasetId;

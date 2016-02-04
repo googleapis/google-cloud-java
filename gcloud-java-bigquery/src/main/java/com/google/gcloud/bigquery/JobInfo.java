@@ -89,7 +89,7 @@ public class JobInfo implements Serializable {
   }
 
   /**
-   * Base class for a {@code JobInfo} builder.
+   * A builder for {@code JobInfo} objects.
    */
   public abstract static class Builder {
 

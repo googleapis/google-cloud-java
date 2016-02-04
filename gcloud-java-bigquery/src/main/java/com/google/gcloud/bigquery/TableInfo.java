@@ -66,7 +66,7 @@ public class TableInfo implements Serializable {
   private final TableDefinition definition;
 
   /**
-   * Base class for a {@code JobInfo} builder.
+   * A builder for {@code TableInfo} objects.
    */
   public abstract static class Builder {
 

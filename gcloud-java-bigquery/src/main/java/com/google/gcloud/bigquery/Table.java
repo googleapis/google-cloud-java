@@ -42,14 +42,18 @@ public final class Table extends TableInfo {
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
 
+  /**
+   * A builder for {@code Table} objects.
+   */
   public static class Builder extends TableInfo.Builder {
 
     private final BigQuery bigquery;
     private final TableInfo.BuilderImpl infoBuilder;
 
-    Builder(BigQuery bigquery) {
+    Builder(BigQuery bigquery, TableId tableId, TableDefinition defintion) {
       this.bigquery = bigquery;
       this.infoBuilder = new TableInfo.BuilderImpl();
+      this.infoBuilder.tableId(tableId).definition(defintion);
     }
 
     Builder(Table table) {
@@ -228,7 +232,7 @@ public final class Table extends TableInfo {
 
   /**
    * Starts a BigQuery Job to copy the current table to the provided destination table. Returns the
-   * started {@link Job} object. ddd
+   * started {@link Job} object.
    *
    * @param destinationTable the destination table of the copy job
    * @param options job options
@@ -307,10 +311,6 @@ public final class Table extends TableInfo {
    */
   public BigQuery bigquery() {
     return bigquery;
-  }
-
-  static Builder builder(BigQuery bigquery, TableId tableId, TableDefinition definition) {
-    return new Builder(bigquery).tableId(tableId).definition(definition);
   }
 
   @Override
