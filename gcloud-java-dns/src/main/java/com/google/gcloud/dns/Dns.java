@@ -23,7 +23,6 @@ import com.google.gcloud.Service;
 import com.google.gcloud.spi.DnsRpc;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.Set;
 
 /**
@@ -69,8 +68,7 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a zone.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#getZone(BigInteger, ZoneOption...)} or {@link Dns#getZone(String, ZoneOption...)}.
-   * The ID is always returned, even if not specified.
+   * {@link Dns#getZone(String, ZoneOption...)}. The name is always returned, even if not specified.
    */
   enum ZoneField {
     CREATION_TIME("creationTime"),
@@ -93,7 +91,7 @@ public interface Dns extends Service<DnsOptions> {
 
     static String selector(ZoneField... fields) {
       Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(ZONE_ID.selector());
+      fieldStrings.add(NAME.selector());
       for (ZoneField field : fields) {
         fieldStrings.add(field.selector());
       }
@@ -105,9 +103,8 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a DNS record.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#listDnsRecords(BigInteger, DnsRecordListOption...)} or {@link
-   * Dns#listDnsRecords(String, DnsRecordListOption...)}. The name is always returned even if not
-   * selected.
+   * {@link Dns#listDnsRecords(String, DnsRecordListOption...)}. The name is always returned even if
+   * not selected.
    */
   enum DnsRecordField {
     DNS_RECORDS("rrdatas"),
@@ -139,8 +136,7 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a change request.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#applyChangeRequest(BigInteger, ChangeRequest, ChangeRequestOption...)} or {@link
-   * Dns#applyChangeRequest(String, ChangeRequest, ChangeRequestOption...)} The ID is always
+   * {@link Dns#applyChangeRequest(String, ChangeRequest, ChangeRequestOption...)} The ID is always
    * returned even if not selected.
    */
   enum ChangeRequestField {
@@ -425,14 +421,15 @@ public interface Dns extends Service<DnsOptions> {
    *
    * <p>Returns {@link ZoneInfo} object representing the new zone's information. In addition to the
    * name, dns name and description (supplied by the user within the {@code zoneInfo} parameter),
-   * the returned object will include the following read-only fields supplied by the server:
-   * creation time, id, and list of name servers.
+   * the returned object can include the following read-only fields supplied by the server: creation
+   * time, id, and list of name servers. The returned fields can be optionally restricted by
+   * specifying {@link ZoneOption}s.
    *
    * @throws DnsException upon failure
    * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/create">Cloud DNS Managed Zones:
    * create</a>
    */
-  ZoneInfo create(ZoneInfo zoneInfo);
+  ZoneInfo create(ZoneInfo zoneInfo, ZoneOption... options);
 
   /**
    * Returns the zone by the specified zone name. Returns {@code null} if the zone is not found. The
@@ -443,16 +440,6 @@ public interface Dns extends Service<DnsOptions> {
    * get</a>
    */
   ZoneInfo getZone(String zoneName, ZoneOption... options);
-
-  /**
-   * Returns the zone by the specified zone id. Returns {@code null} if the zone is not found. The
-   * returned fields can be optionally restricted by specifying {@link ZoneOption}s.
-   *
-   * @throws DnsException upon failure
-   * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/get">Cloud DNS Managed Zones:
-   * get</a>
-   */
-  ZoneInfo getZone(BigInteger zoneId, ZoneOption... options);
 
   /**
    * Lists the zones inside the project.
@@ -480,17 +467,6 @@ public interface Dns extends Service<DnsOptions> {
   boolean delete(String zoneName); // delete does not admit any options
 
   /**
-   * Deletes an existing zone identified by id. Returns {@code true} if the zone was successfully
-   * deleted and {@code false} otherwise.
-   *
-   * @return {@code true} if zone was found and deleted and {@code false} otherwise
-   * @throws DnsException upon failure
-   * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/delete">Cloud DNS Managed Zones:
-   * delete</a>
-   */
-  boolean delete(BigInteger zoneId); // delete does not admit any options
-
-  /**
    * Lists the DNS records in the zone identified by name.
    *
    * <p>The fields to be returned, page size and page tokens can be specified using {@link
@@ -503,18 +479,6 @@ public interface Dns extends Service<DnsOptions> {
   Page<DnsRecord> listDnsRecords(String zoneName, DnsRecordListOption... options);
 
   /**
-   * Lists the DNS records in the zone identified by ID.
-   *
-   * <p>The fields to be returned, page size and page tokens can be specified using {@link
-   * DnsRecordListOption}s.
-   *
-   * @throws DnsException upon failure or if the zone cannot be found
-   * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets/list">Cloud DNS
-   * ResourceRecordSets: list</a>
-   */
-  Page<DnsRecord> listDnsRecords(BigInteger zoneId, DnsRecordListOption... options);
-
-  /**
    * Retrieves the information about the current project. The returned fields can be optionally
    * restricted by specifying {@link ProjectOption}s.
    *
@@ -522,18 +486,6 @@ public interface Dns extends Service<DnsOptions> {
    * @see <a href="https://cloud.google.com/dns/api/v1/projects/get">Cloud DNS Projects: get</a>
    */
   ProjectInfo getProjectInfo(ProjectOption... fields);
-
-  /**
-   * Submits a change request for the specified zone. The returned object contains the following
-   * read-only fields supplied by the server: id, start time and status. time, id, and list of name
-   * servers. The fields to be returned can be selected by {@link ChangeRequestOption}s.
-   *
-   * @return the new {@link ChangeRequest} or {@code null} if zone is not found
-   * @throws DnsException upon failure
-   * @see <a href="https://cloud.google.com/dns/api/v1/changes/create">Cloud DNS Changes: create</a>
-   */
-  ChangeRequest applyChangeRequest(BigInteger zoneId, ChangeRequest changeRequest,
-      ChangeRequestOption... options);
 
   /**
    * Submits a change request for the specified zone. The returned object contains the following
@@ -556,32 +508,8 @@ public interface Dns extends Service<DnsOptions> {
    * @throws DnsException upon failure or if the zone cannot be found
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/get">Cloud DNS Chages: get</a>
    */
-  ChangeRequest getChangeRequest(BigInteger zoneId, String changeRequestId,
-      ChangeRequestOption... options);
-
-  /**
-   * Retrieves updated information about a change request previously submitted for a zone identified
-   * by ID. Returns {@code null} if the request cannot be found and throws an exception if the zone
-   * does not exist. The fields to be returned using can be specified using {@link
-   * ChangeRequestOption}s.
-   *
-   * @throws DnsException upon failure or if the zone cannot be found
-   * @see <a href="https://cloud.google.com/dns/api/v1/changes/get">Cloud DNS Chages: get</a>
-   */
   ChangeRequest getChangeRequest(String zoneName, String changeRequestId,
       ChangeRequestOption... options);
-
-  /**
-   * Lists the change requests for the zone identified by ID that were submitted to the service.
-   *
-   * <p>The sorting order for changes (based on when they were received by the server), fields to be
-   * returned, page size and page token can be specified using {@link ChangeRequestListOption}s.
-   *
-   * @return A page of change requests
-   * @throws DnsException upon failure or if the zone cannot be found
-   * @see <a href="https://cloud.google.com/dns/api/v1/changes/list">Cloud DNS Chages: list</a>
-   */
-  Page<ChangeRequest> listChangeRequests(BigInteger zoneId, ChangeRequestListOption... options);
 
   /**
    * Lists the change requests for the zone identified by name that were submitted to the service.

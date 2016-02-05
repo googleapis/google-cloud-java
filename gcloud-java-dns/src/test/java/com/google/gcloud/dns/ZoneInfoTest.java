@@ -26,14 +26,13 @@ import com.google.common.collect.Lists;
 
 import org.junit.Test;
 
-import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ZoneInfoTest {
 
   private static final String NAME = "mz-example.com";
-  private static final BigInteger ID = BigInteger.valueOf(123L);
+  private static final String ID = "123456";
   private static final Long CREATION_TIME_MILLIS = 1123468321321L;
   private static final String DNS_NAME = "example.com.";
   private static final String DESCRIPTION = "description for the zone";
@@ -42,8 +41,9 @@ public class ZoneInfoTest {
   private static final String NS2 = "name server 2";
   private static final String NS3 = "name server 3";
   private static final List<String> NAME_SERVERS = ImmutableList.of(NS1, NS2, NS3);
-  private static final ZoneInfo INFO = ZoneInfo.builder(NAME, ID)
+  private static final ZoneInfo INFO = ZoneInfo.builder(NAME)
       .creationTimeMillis(CREATION_TIME_MILLIS)
+      .id(ID)
       .dnsName(DNS_NAME)
       .description(DESCRIPTION)
       .nameServerSet(NAME_SERVER_SET)
@@ -52,30 +52,14 @@ public class ZoneInfoTest {
 
   @Test
   public void testDefaultBuilders() {
-    ZoneInfo withName = ZoneInfo.builder(NAME).build();
-    assertTrue(withName.nameServers().isEmpty());
-    assertEquals(NAME, withName.name());
-    assertNull(withName.id());
-    assertNull(withName.creationTimeMillis());
-    assertNull(withName.nameServerSet());
-    assertNull(withName.description());
-    assertNull(withName.dnsName());
-    ZoneInfo withId = ZoneInfo.builder(ID).build();
-    assertTrue(withId.nameServers().isEmpty());
-    assertEquals(ID, withId.id());
-    assertNull(withId.name());
-    assertNull(withId.creationTimeMillis());
-    assertNull(withId.nameServerSet());
-    assertNull(withId.description());
-    assertNull(withId.dnsName());
-    ZoneInfo withBoth = ZoneInfo.builder(NAME, ID).build();
-    assertTrue(withBoth.nameServers().isEmpty());
-    assertEquals(ID, withBoth.id());
-    assertEquals(NAME, withBoth.name());
-    assertNull(withBoth.creationTimeMillis());
-    assertNull(withBoth.nameServerSet());
-    assertNull(withBoth.description());
-    assertNull(withBoth.dnsName());
+    ZoneInfo zone = ZoneInfo.builder(NAME).build();
+    assertTrue(zone.nameServers().isEmpty());
+    assertEquals(NAME, zone.name());
+    assertNull(zone.id());
+    assertNull(zone.creationTimeMillis());
+    assertNull(zone.nameServerSet());
+    assertNull(zone.description());
+    assertNull(zone.dnsName());
   }
 
   @Test
@@ -109,7 +93,7 @@ public class ZoneInfoTest {
     assertNotEquals(INFO, clone);
     clone = INFO.toBuilder().dnsName(differentName).build();
     assertNotEquals(INFO, clone);
-    clone = INFO.toBuilder().id(INFO.id().add(BigInteger.ONE)).build();
+    clone = INFO.toBuilder().id(INFO.id() + "1111").build();
     assertNotEquals(INFO, clone);
     clone = INFO.toBuilder().nameServerSet(INFO.nameServerSet() + "salt").build();
     assertNotEquals(INFO, clone);
@@ -127,7 +111,7 @@ public class ZoneInfoTest {
     assertEquals(INFO, INFO.toBuilder().build());
     ZoneInfo partial = ZoneInfo.builder(NAME).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ZoneInfo.builder(ID).build();
+    partial = ZoneInfo.builder(NAME).id(ID).build();
     assertEquals(partial, partial.toBuilder().build());
     partial = ZoneInfo.builder(NAME).description(DESCRIPTION).build();
     assertEquals(partial, partial.toBuilder().build());
@@ -148,7 +132,7 @@ public class ZoneInfoTest {
     assertEquals(INFO, ZoneInfo.fromPb(INFO.toPb()));
     ZoneInfo partial = ZoneInfo.builder(NAME).build();
     assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
-    partial = ZoneInfo.builder(ID).build();
+    partial = ZoneInfo.builder(NAME).id(ID).build();
     assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
     partial = ZoneInfo.builder(NAME).description(DESCRIPTION).build();
     assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));

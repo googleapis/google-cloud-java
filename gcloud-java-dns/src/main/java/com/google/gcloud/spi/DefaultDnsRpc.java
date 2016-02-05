@@ -2,9 +2,9 @@ package com.google.gcloud.spi;
 
 import static com.google.gcloud.spi.DnsRpc.ListResult.of;
 import static com.google.gcloud.spi.DnsRpc.Option.DNS_NAME;
-import static com.google.gcloud.spi.DnsRpc.Option.NAME;
 import static com.google.gcloud.spi.DnsRpc.Option.DNS_TYPE;
 import static com.google.gcloud.spi.DnsRpc.Option.FIELDS;
+import static com.google.gcloud.spi.DnsRpc.Option.NAME;
 import static com.google.gcloud.spi.DnsRpc.Option.PAGE_SIZE;
 import static com.google.gcloud.spi.DnsRpc.Option.PAGE_TOKEN;
 import static com.google.gcloud.spi.DnsRpc.Option.SORTING_ORDER;
@@ -54,9 +54,12 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   @Override
-  public ManagedZone create(ManagedZone zone) throws DnsException {
+  public ManagedZone create(ManagedZone zone, Map<Option, ?> options) throws DnsException {
     try {
-      return dns.managedZones().create(this.options.projectId(), zone).execute();
+      return dns.managedZones()
+          .create(this.options.projectId(), zone)
+          .setFields(FIELDS.getString(options))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
