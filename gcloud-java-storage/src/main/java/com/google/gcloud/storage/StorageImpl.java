@@ -266,7 +266,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                   return Bucket.fromPb(serviceOptions.service(), bucketPb);
                 }
               });
-      return new PageImpl<Bucket>(
+      return new PageImpl<>(
           new BucketPageFetcher(serviceOptions, cursor, optionsMap), cursor,
           buckets);
     } catch (RetryHelperException e) {
@@ -294,7 +294,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
                   return Blob.fromPb(serviceOptions.service(), storageObject);
                 }
               });
-      return new PageImpl<Blob>(
+      return new PageImpl<>(
           new BlobPageFetcher(bucket, serviceOptions, cursor, optionsMap),
           cursor,
           blobs);

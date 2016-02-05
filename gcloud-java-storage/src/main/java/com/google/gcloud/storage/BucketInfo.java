@@ -317,6 +317,9 @@ public class BucketInfo implements Serializable {
     }
   }
 
+  /**
+   * Builder for {@code BucketInfo}.
+   */
   public abstract static class Builder {
     /**
      * Sets the bucket's name.
@@ -425,7 +428,9 @@ public class BucketInfo implements Serializable {
     private List<Acl> acl;
     private List<Acl> defaultAcl;
 
-    BuilderImpl() {}
+    BuilderImpl(String name) {
+      this.name = name;
+    }
 
     BuilderImpl(BucketInfo bucketInfo) {
       id = bucketInfo.id;
@@ -714,7 +719,7 @@ public class BucketInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj.getClass().equals(BucketInfo.class)
+    return obj != null && obj.getClass().equals(BucketInfo.class)
         && Objects.equals(toPb(), ((BucketInfo) obj).toPb());
   }
 
@@ -799,11 +804,11 @@ public class BucketInfo implements Serializable {
    * Returns a {@code BucketInfo} builder where the bucket's name is set to the provided name.
    */
   public static Builder builder(String name) {
-    return new BuilderImpl().name(name);
+    return new BuilderImpl(name);
   }
 
   static BucketInfo fromPb(com.google.api.services.storage.model.Bucket bucketPb) {
-    Builder builder = new BuilderImpl().name(bucketPb.getName());
+    Builder builder = new BuilderImpl(bucketPb.getName());
     if (bucketPb.getId() != null) {
       builder.id(bucketPb.getId());
     }

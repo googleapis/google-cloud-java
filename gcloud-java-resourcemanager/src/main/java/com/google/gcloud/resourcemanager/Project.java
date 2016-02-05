@@ -38,6 +38,9 @@ public class Project extends ProjectInfo {
   private final ResourceManagerOptions options;
   private transient ResourceManager resourceManager;
 
+  /**
+   * Builder for {@code Project}.
+   */
   public static class Builder extends ProjectInfo.Builder {
     private final ResourceManager resourceManager;
     private final ProjectInfo.BuilderImpl infoBuilder;
@@ -127,7 +130,7 @@ public class Project extends ProjectInfo {
   }
 
   /**
-   * Fetches the current project's latest information. Returns {@code null} if the job does not
+   * Fetches the project's latest information. Returns {@code null} if the project does not
    * exist.
    *
    * @return Project containing the project's updated metadata or {@code null} if not found

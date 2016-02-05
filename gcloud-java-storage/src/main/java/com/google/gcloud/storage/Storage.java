@@ -1208,7 +1208,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Create a new bucket.
    *
-   * @return a complete bucket information
+   * @return a complete bucket
    * @throws StorageException upon failure
    */
   Bucket create(BucketInfo bucketInfo, BucketTargetOption... options);
@@ -1479,7 +1479,7 @@ public interface Storage extends Service<StorageOptions> {
    * Gets the requested blobs. A batch request is used to perform this call.
    *
    * @param blobIds blobs to get
-   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it
    *     has been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
@@ -1493,7 +1493,7 @@ public interface Storage extends Service<StorageOptions> {
    * {@link #update(com.google.gcloud.storage.BlobInfo)} for a code example.
    *
    * @param blobInfos blobs to update
-   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it
    *     has been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */

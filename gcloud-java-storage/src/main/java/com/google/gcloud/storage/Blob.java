@@ -157,6 +157,9 @@ public final class Blob extends BlobInfo {
     }
   }
 
+  /**
+   * Builder for {@code Blob}.
+   */
   public static class Builder extends BlobInfo.Builder {
 
     private final Storage storage;

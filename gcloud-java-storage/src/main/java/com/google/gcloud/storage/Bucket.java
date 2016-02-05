@@ -48,6 +48,8 @@ import java.util.Objects;
  */
 public final class Bucket extends BucketInfo {
 
+  private static final long serialVersionUID = 8574601739542252586L;
+
   private final StorageOptions options;
   private transient Storage storage;
 
@@ -122,6 +124,9 @@ public final class Bucket extends BucketInfo {
     }
   }
 
+  /**
+   * Builder for {@code Bucket}.
+   */
   public static class Builder extends BucketInfo.Builder {
     private final Storage storage;
     private final BucketInfo.BuilderImpl infoBuilder;

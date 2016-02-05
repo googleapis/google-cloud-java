@@ -258,7 +258,7 @@ import java.nio.channels.WritableByteChannel;
 
 Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
-Blob blob = storage.get(storage, blobId);
+Blob blob = storage.get(blobId);
 if (blob == null) {
   BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
   storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));

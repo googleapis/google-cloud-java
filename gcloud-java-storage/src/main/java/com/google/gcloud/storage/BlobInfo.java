@@ -90,6 +90,9 @@ public class BlobInfo implements Serializable {
     }
   }
 
+  /**
+   * Builder for {@code BlobInfo}.
+   */
   public abstract static class Builder {
 
     /**
@@ -213,7 +216,9 @@ public class BlobInfo implements Serializable {
     private Long deleteTime;
     private Long updateTime;
 
-    BuilderImpl() {}
+    BuilderImpl(BlobId blobId) {
+      this.blobId = blobId;
+    }
 
     BuilderImpl(BlobInfo blobInfo) {
       blobId = blobInfo.blobId;
@@ -609,7 +614,8 @@ public class BlobInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj.getClass().equals(BlobInfo.class) && Objects.equals(toPb(), ((BlobInfo) obj).toPb());
+    return obj != null && obj.getClass().equals(BlobInfo.class)
+        && Objects.equals(toPb(), ((BlobInfo) obj).toPb());
   }
 
   StorageObject toPb() {
@@ -688,7 +694,7 @@ public class BlobInfo implements Serializable {
   }
 
   public static Builder builder(BlobId blobId) {
-    return new BuilderImpl().blobId(blobId);
+    return new BuilderImpl(blobId);
   }
 
   static BlobInfo fromPb(StorageObject storageObject) {

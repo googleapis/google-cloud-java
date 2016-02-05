@@ -87,9 +87,9 @@ public class ProjectTest {
     initializeExpectedProject(4);
     expect(resourceManager.options()).andReturn(mockOptions).times(4);
     replay(resourceManager);
-    Project.Builder builder = new Project.Builder(new Project(resourceManager, new ProjectInfo.BuilderImpl()));
+    Project.Builder builder =
+        new Project.Builder(new Project(resourceManager, new ProjectInfo.BuilderImpl(PROJECT_ID)));
     Project project = builder.name(NAME)
-        .projectId(PROJECT_ID)
         .labels(LABELS)
         .projectNumber(PROJECT_NUMBER)
         .createTimeMillis(CREATE_TIME_MILLIS)
