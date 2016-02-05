@@ -38,14 +38,12 @@ public class Project extends ProjectInfo {
   private final ResourceManagerOptions options;
   private transient ResourceManager resourceManager;
 
+  /**
+   * Builder for {@code Project}.
+   */
   public static class Builder extends ProjectInfo.Builder {
     private final ResourceManager resourceManager;
-    private ProjectInfo.BuilderImpl infoBuilder;
-
-    Builder(ResourceManager resourceManager) {
-      this.resourceManager = resourceManager;
-      this.infoBuilder = new ProjectInfo.BuilderImpl();
-    }
+    private final ProjectInfo.BuilderImpl infoBuilder;
 
     Builder(Project project) {
       this.resourceManager = project.resourceManager;
@@ -125,16 +123,6 @@ public class Project extends ProjectInfo {
   }
 
   /**
-   * Constructs a Project object that contains project information got from the server.
-   *
-   * @return Project object containing the project's metadata or {@code null} if not found
-   * @throws ResourceManagerException upon failure
-   */
-  public static Project get(ResourceManager resourceManager, String projectId) {
-    return resourceManager.get(projectId);
-  }
-
-  /**
    * Returns the {@link ResourceManager} service object associated with this Project.
    */
   public ResourceManager resourceManager() {
@@ -142,14 +130,14 @@ public class Project extends ProjectInfo {
   }
 
   /**
-   * Fetches the current project's latest information. Returns {@code null} if the job does not
+   * Fetches the project's latest information. Returns {@code null} if the project does not
    * exist.
    *
    * @return Project containing the project's updated metadata or {@code null} if not found
    * @throws ResourceManagerException upon failure
    */
   public Project reload() {
-    return Project.get(resourceManager, projectId());
+    return resourceManager.get(projectId());
   }
 
   /**
@@ -208,10 +196,6 @@ public class Project extends ProjectInfo {
    */
   public Project replace() {
     return resourceManager.replace(this);
-  }
-
-  static Builder builder(ResourceManager resourceManager, String projectId) {
-    return new Builder(resourceManager).projectId(projectId);
   }
 
   @Override
