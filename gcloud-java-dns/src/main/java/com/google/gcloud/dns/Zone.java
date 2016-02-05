@@ -66,8 +66,7 @@ public class Zone implements Serializable {
   }
 
   /**
-   * Retrieves the latest information about the zone. The method retrieves the zone by name which
-   * must always be initialized.
+   * Retrieves the latest information about the zone. The method retrieves the zone by name.
    *
    * @param options optional restriction on what fields should be fetched
    * @return zone object containing updated information or {@code null} if not not found
@@ -100,7 +99,7 @@ public class Zone implements Serializable {
 
   /**
    * Submits {@link ChangeRequest} to the service for it to applied to this zone. The method
-   * searches for zone by name which must always be initialized.
+   * searches for zone by name.
    *
    * @param options optional restriction on what fields of {@link ChangeRequest} should be returned
    * @return ChangeRequest with server-assigned ID
@@ -114,8 +113,8 @@ public class Zone implements Serializable {
 
   /**
    * Retrieves an updated information about a change request previously submitted to be applied to
-   * this zone. Returns a {@link ChangeRequest} or {@code null} if the change request was not
-   * found. Throws {@link DnsException} if the zone is not found.
+   * this zone. Returns a {@link ChangeRequest} or {@code null} if the change request was not found.
+   * Throws {@link DnsException} if the zone is not found.
    *
    * @param options optional restriction on what fields of {@link ChangeRequest} should be returned
    * @return updated ChangeRequest
@@ -129,8 +128,8 @@ public class Zone implements Serializable {
   }
 
   /**
-   * Retrieves all change requests for this zone. The method searches for zone by name which must
-   * always be initialized. Returns a page of {@link ChangeRequest}s.
+   * Retrieves all change requests for this zone. The method searches for zone by name. Returns a
+   * page of {@link ChangeRequest}s.
    *
    * @param options optional restriction on listing and fields to be returned
    * @return a page of change requests
