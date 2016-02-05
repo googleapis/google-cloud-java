@@ -78,7 +78,7 @@ public class Zone implements Serializable {
   }
 
   /**
-   * Deletes the zone. The method first deletes the zone by name which must always be initialized.
+   * Deletes the zone. The method deletes the zone by name.
    *
    * @return {@code true} is zone was found and deleted and {@code false} otherwise
    * @throws DnsException upon failure
@@ -88,8 +88,7 @@ public class Zone implements Serializable {
   }
 
   /**
-   * Lists all {@link DnsRecord}s associated with this zone. The method searches for zone by name
-   * which must always be initialized.
+   * Lists all {@link DnsRecord}s associated with this zone. The method searches for zone by name.
    *
    * @param options optional restriction on listing and fields of {@link DnsRecord}s returned
    * @return a page of DNS records
@@ -115,14 +114,13 @@ public class Zone implements Serializable {
 
   /**
    * Retrieves an updated information about a change request previously submitted to be applied to
-   * this zone. The method searches for zone by name which must always be initialized. Returns a
-   * {@link ChangeRequest} if and {@code null} if the change request was not found. Throws {@link
-   * DnsException} if the zone is not found.
+   * this zone. Returns a {@link ChangeRequest} or {@code null} if the change request was not
+   * found. Throws {@link DnsException} if the zone is not found.
    *
    * @param options optional restriction on what fields of {@link ChangeRequest} should be returned
    * @return updated ChangeRequest
    * @throws DnsException upon failure or if the zone is not found
-   * @throws NullPointerException if the change request does not have initialized id
+   * @throws NullPointerException if {@code changeRequestId} is null
    */
   public ChangeRequest getChangeRequest(String changeRequestId,
       Dns.ChangeRequestOption... options) {
@@ -132,8 +130,7 @@ public class Zone implements Serializable {
 
   /**
    * Retrieves all change requests for this zone. The method searches for zone by name which must
-   * always be initialized. Returns a page of {@link ChangeRequest}s. Throws a {@link DnsException}
-   * if the zone is not found.
+   * always be initialized. Returns a page of {@link ChangeRequest}s.
    *
    * @param options optional restriction on listing and fields to be returned
    * @return a page of change requests

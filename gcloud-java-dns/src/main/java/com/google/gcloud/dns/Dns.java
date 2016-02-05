@@ -68,7 +68,7 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a zone.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#getZone(String, ZoneOption...)}. The ID is always returned, even if not specified.
+   * {@link Dns#getZone(String, ZoneOption...)}. The name is always returned, even if not specified.
    */
   enum ZoneField {
     CREATION_TIME("creationTime"),
@@ -91,7 +91,7 @@ public interface Dns extends Service<DnsOptions> {
 
     static String selector(ZoneField... fields) {
       Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(ZONE_ID.selector());
+      fieldStrings.add(NAME.selector());
       for (ZoneField field : fields) {
         fieldStrings.add(field.selector());
       }

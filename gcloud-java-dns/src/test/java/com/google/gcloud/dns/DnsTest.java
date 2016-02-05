@@ -80,7 +80,7 @@ public class DnsTest {
     assertTrue(fields.value() instanceof String);
     assertTrue(((String) fields.value()).contains(Dns.ZoneField.CREATION_TIME.selector()));
     assertTrue(((String) fields.value()).contains(Dns.ZoneField.DESCRIPTION.selector()));
-    assertTrue(((String) fields.value()).contains(Dns.ZoneField.ZONE_ID.selector()));
+    assertTrue(((String) fields.value()).contains(Dns.ZoneField.NAME.selector()));
     // page token
     Dns.ZoneListOption option = Dns.ZoneListOption.pageToken(PAGE_TOKEN);
     assertEquals(PAGE_TOKEN, option.value());

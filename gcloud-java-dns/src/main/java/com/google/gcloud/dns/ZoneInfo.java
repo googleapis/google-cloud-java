@@ -60,12 +60,6 @@ public class ZoneInfo implements Serializable {
     private String nameServerSet;
     private List<String> nameServers = new LinkedList<>();
 
-    /**
-     * Returns an empty builder for {@code ZoneInfo}. We use it internally in {@code toPb()}.
-     */
-    private Builder() {
-    }
-
     private Builder(String name) {
       this.name = checkNotNull(name);
     }
@@ -246,7 +240,7 @@ public class ZoneInfo implements Serializable {
   }
 
   static ZoneInfo fromPb(com.google.api.services.dns.model.ManagedZone pb) {
-    Builder builder = new Builder();
+    Builder builder = new Builder(pb.getName());
     if (pb.getDescription() != null) {
       builder.description(pb.getDescription());
     }
@@ -255,9 +249,6 @@ public class ZoneInfo implements Serializable {
     }
     if (pb.getId() != null) {
       builder.id(pb.getId().toString());
-    }
-    if (pb.getName() != null) {
-      builder.name(pb.getName());
     }
     if (pb.getNameServers() != null) {
       builder.nameServers(pb.getNameServers());
