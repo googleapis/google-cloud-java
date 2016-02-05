@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.gcloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.Table;
-import com.google.api.services.bigquery.model.ViewDefinition;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -28,35 +27,36 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery View Table information. BigQuery's views are logical views, not materialized
- * views, which means that the query that defines the view is re-executed every time the view is
- * queried.
+ * Google BigQuery view table type. BigQuery's views are logical views, not materialized views,
+ * which means that the query that defines the view is re-executed every time the view is queried.
  *
  * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
  */
-public class ViewInfo extends BaseTableInfo {
+public final class ViewDefinition extends TableDefinition {
 
-  private static final long serialVersionUID = 7567772157817454901L;
+  private static final long serialVersionUID = -8789311196910794545L;
 
   private final String query;
   private final List<UserDefinedFunction> userDefinedFunctions;
 
-  public static final class Builder extends BaseTableInfo.Builder<ViewInfo, Builder> {
+  public static final class Builder extends TableDefinition.Builder<ViewDefinition, Builder> {
 
     private String query;
     private List<UserDefinedFunction> userDefinedFunctions;
 
-    private Builder() {}
-
-    private Builder(ViewInfo viewInfo) {
-      super(viewInfo);
-      this.query = viewInfo.query;
-      this.userDefinedFunctions = viewInfo.userDefinedFunctions;
+    private Builder() {
+      super(Type.VIEW);
     }
 
-    protected Builder(Table tablePb) {
+    private Builder(ViewDefinition viewDefinition) {
+      super(viewDefinition);
+      this.query = viewDefinition.query;
+      this.userDefinedFunctions = viewDefinition.userDefinedFunctions;
+    }
+
+    private Builder(Table tablePb) {
       super(tablePb);
-      ViewDefinition viewPb = tablePb.getView();
+      com.google.api.services.bigquery.model.ViewDefinition viewPb = tablePb.getView();
       if (viewPb != null) {
         this.query = viewPb.getQuery();
         if (viewPb.getUserDefinedFunctionResources() != null) {
@@ -97,15 +97,15 @@ public class ViewInfo extends BaseTableInfo {
     }
 
     /**
-     * Creates a {@code ViewInfo} object.
+     * Creates a {@code ViewDefinition} object.
      */
     @Override
-    public ViewInfo build() {
-      return new ViewInfo(this);
+    public ViewDefinition build() {
+      return new ViewDefinition(this);
     }
   }
 
-  private ViewInfo(Builder builder) {
+  private ViewDefinition(Builder builder) {
     super(builder);
     this.query = builder.query;
     this.userDefinedFunctions = builder.userDefinedFunctions;
@@ -146,18 +146,19 @@ public class ViewInfo extends BaseTableInfo {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ViewInfo && Objects.equals(toPb(), ((ViewInfo) obj).toPb());
+    return obj instanceof ViewDefinition && baseEquals((ViewDefinition) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), query, userDefinedFunctions);
+    return Objects.hash(baseHashCode(), query, userDefinedFunctions);
   }
 
   @Override
   Table toPb() {
     Table tablePb = super.toPb();
-    ViewDefinition viewDefinition = new ViewDefinition().setQuery(query);
+    com.google.api.services.bigquery.model.ViewDefinition viewDefinition =
+        new com.google.api.services.bigquery.model.ViewDefinition().setQuery(query);
     if (userDefinedFunctions != null) {
       viewDefinition.setUserDefinedFunctionResources(Lists.transform(userDefinedFunctions,
           UserDefinedFunction.TO_PB_FUNCTION));
@@ -167,79 +168,65 @@ public class ViewInfo extends BaseTableInfo {
   }
 
   /**
-   * Returns a builder for a BigQuery View Table.
+   * Returns a builder for a BigQuery view type.
    *
-   * @param tableId table id
-   * @param query the query used to generate the table
+   * @param query the query used to generate the view
    */
-  public static Builder builder(TableId tableId, String query) {
-    return new Builder().tableId(tableId).type(Type.VIEW).query(query);
+  public static Builder builder(String query) {
+    return new Builder().query(query);
   }
 
   /**
-   * Returns a builder for a BigQuery View Table.
+   * Returns a builder for a BigQuery view type.
    *
-   * @param table table id
    * @param query the query used to generate the table
    * @param functions user-defined functions that can be used by the query
    */
-  public static Builder builder(TableId table, String query, List<UserDefinedFunction> functions) {
-    return new Builder()
-        .tableId(table)
-        .type(Type.VIEW)
-        .userDefinedFunctions(functions)
-        .query(query);
+  public static Builder builder(String query, List<UserDefinedFunction> functions) {
+    return new Builder().type(Type.VIEW).userDefinedFunctions(functions).query(query);
   }
 
   /**
-   * Returns a builder for a BigQuery View Table.
+   * Returns a builder for a BigQuery view type.
    *
-   * @param table table id
    * @param query the query used to generate the table
    * @param functions user-defined functions that can be used by the query
    */
-  public static Builder builder(TableId table, String query, UserDefinedFunction... functions) {
-    return new Builder()
-        .tableId(table)
-        .type(Type.VIEW)
-        .userDefinedFunctions(functions)
-        .query(query);
+  public static Builder builder(String query, UserDefinedFunction... functions) {
+    return new Builder().type(Type.VIEW).userDefinedFunctions(functions).query(query);
   }
 
   /**
-   * Creates a BigQuery View given table identity and query.
+   * Creates a BigQuery view type given the query used to generate the table.
    *
-   * @param tableId table id
    * @param query the query used to generate the table
    */
-  public static ViewInfo of(TableId tableId, String query) {
-    return builder(tableId, query).build();
+  public static ViewDefinition of(String query) {
+    return builder(query).build();
   }
 
   /**
-   * Creates a BigQuery View given table identity, a query and some user-defined functions.
+   * Creates a BigQuery view type given a query and some user-defined functions.
    *
-   * @param table table id
    * @param query the query used to generate the table
    * @param functions user-defined functions that can be used by the query
    */
-  public static ViewInfo of(TableId table, String query, List<UserDefinedFunction> functions) {
-    return builder(table, query, functions).build();
+  public static ViewDefinition of(String query, List<UserDefinedFunction> functions) {
+    return builder(query, functions).build();
   }
 
   /**
-   * Creates a BigQuery View given table identity, a query and some user-defined functions.
+   * Creates a BigQuery view type given a query and some user-defined functions.
    *
-   * @param table table id
    * @param query the query used to generate the table
    * @param functions user-defined functions that can be used by the query
    */
-  public static ViewInfo of(TableId table, String query, UserDefinedFunction... functions) {
-    return builder(table, query, functions).build();
+  public static ViewDefinition of(String query, UserDefinedFunction... functions) {
+    return builder(query, functions).build();
   }
 
   @SuppressWarnings("unchecked")
-  static ViewInfo fromPb(Table tablePb) {
+  static ViewDefinition fromPb(Table tablePb) {
     return new Builder(tablePb).build();
   }
 }

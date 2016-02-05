@@ -81,10 +81,10 @@ import java.util.Objects;
  * @see <a href="https://cloud.google.com/appengine/docs/java/datastore/queries">Datastore
  *     queries</a>
  */
-public class StructuredQuery<V> extends Query<V> {
+public abstract class StructuredQuery<V> extends Query<V> {
 
   private static final long serialVersionUID = 546838955624019594L;
-  private static final String KEY_PROPERTY_NAME = "__key__";
+  static final String KEY_PROPERTY_NAME = "__key__";
 
   private final transient String kind;
   private final ImmutableList<Projection> projection;
@@ -610,12 +610,47 @@ public class StructuredQuery<V> extends Query<V> {
   }
 
   /**
+   * Interface for StructuredQuery builders.
+   *
+   * @param <V> the type of result the query returns.
+   */
+  public interface Builder<V> {
+    Builder<V> namespace(String namespace);
+
+    Builder<V> kind(String kind);
+
+    Builder<V> startCursor(Cursor startCursor);
+
+    Builder<V> endCursor(Cursor endCursor);
+
+    Builder<V> offset(int offset);
+
+    Builder<V> limit(Integer limit);
+
+    Builder<V> filter(Filter filter);
+
+    Builder<V> clearOrderBy();
+
+    /**
+     * Sets the query's order by clause (clearing any previously specified OrderBy settings).
+     */
+    Builder<V> orderBy(OrderBy orderBy, OrderBy... others);
+
+    /**
+     * Adds settings to the existing order by clause.
+     */
+    Builder<V> addOrderBy(OrderBy orderBy, OrderBy... others);
+
+    StructuredQuery<V> build();
+  }
+
+  /**
    * Base class for StructuredQuery builders.
    *
    * @param <V> the type of result the query returns.
    * @param <B> the query builder.
    */
-  protected static class BaseBuilder<V, B extends BaseBuilder<V, B>> {
+  abstract static class BuilderImpl<V, B extends BuilderImpl<V, B>> implements Builder<V> {
 
     private final ResultType<V> resultType;
     private String namespace;
@@ -629,12 +664,12 @@ public class StructuredQuery<V> extends Query<V> {
     private int offset;
     private Integer limit;
 
-    BaseBuilder(ResultType<V> resultType) {
+    BuilderImpl(ResultType<V> resultType) {
       this.resultType = resultType;
     }
 
-    BaseBuilder(StructuredQuery<V> query) {
-      resultType = query.type();
+    BuilderImpl(StructuredQuery<V> query) {
+      this(query.type());
       namespace = query.namespace();
       kind = query.kind;
       projection.addAll(query.projection);
@@ -652,60 +687,64 @@ public class StructuredQuery<V> extends Query<V> {
       return (B) this;
     }
 
+    @Override
     public B namespace(String namespace) {
       this.namespace = namespace;
       return self();
     }
 
+    @Override
     public B kind(String kind) {
       this.kind = kind;
       return self();
     }
 
+    @Override
     public B startCursor(Cursor startCursor) {
       this.startCursor = startCursor;
       return self();
     }
 
+    @Override
     public B endCursor(Cursor endCursor) {
       this.endCursor = endCursor;
       return self();
     }
 
+    @Override
     public B offset(int offset) {
       Preconditions.checkArgument(offset >= 0, "offset must not be negative");
       this.offset = offset;
       return self();
     }
 
+    @Override
     public B limit(Integer limit) {
       Preconditions.checkArgument(limit == null || limit > 0, "limit must be positive");
       this.limit = limit;
       return self();
     }
 
+    @Override
     public B filter(Filter filter) {
       this.filter = filter;
       return self();
     }
 
+    @Override
     public B clearOrderBy() {
       orderBy.clear();
       return self();
     }
 
-    /**
-     * Sets the query's order by clause (clearing any previously specified OrderBy settings).
-     */
+    @Override
     public B orderBy(OrderBy orderBy, OrderBy... others) {
       clearOrderBy();
       addOrderBy(orderBy, others);
       return self();
     }
 
-    /**
-     * Adds settings to the existing order by clause.
-     */
+    @Override
     public B addOrderBy(OrderBy orderBy, OrderBy... others) {
       this.orderBy.add(orderBy);
       Collections.addAll(this.orderBy, others);
@@ -776,121 +815,9 @@ public class StructuredQuery<V> extends Query<V> {
       }
       return self();
     }
-
-    public StructuredQuery<V> build() {
-      return new StructuredQuery<>(this);
-    }
   }
 
-  static final class Builder<V> extends BaseBuilder<V, Builder<V>> {
-
-    Builder(ResultType<V> resultType) {
-      super(resultType);
-    }
-
-    Builder(StructuredQuery<V> query) {
-      super(query);
-    }
-  }
-
-  /**
-   * A StructuredQuery builder for queries that return Entity results.
-   */
-  public static final class EntityQueryBuilder extends BaseBuilder<Entity, EntityQueryBuilder> {
-
-    EntityQueryBuilder() {
-      super(ResultType.ENTITY);
-    }
-
-    @Override
-    public StructuredQuery<Entity> build() {
-      return new StructuredQuery<>(this);
-    }
-  }
-
-  /**
-   * A StructuredQuery builder for queries that return Key results.
-   */
-  public static final class KeyQueryBuilder extends BaseBuilder<Key, KeyQueryBuilder> {
-
-    KeyQueryBuilder() {
-      super(ResultType.KEY);
-      projection(Projection.property(KEY_PROPERTY_NAME));
-    }
-
-    @Override
-    KeyQueryBuilder mergeFrom(DatastoreV1.Query queryPb) {
-      super.mergeFrom(queryPb);
-      projection(Projection.property(KEY_PROPERTY_NAME));
-      clearGroupBy();
-      return this;
-    }
-
-    @Override
-    public StructuredQuery<Key> build() {
-      return new StructuredQuery<>(this);
-    }
-  }
-
-  /**
-   * A StructuredQuery builder for projection queries.
-   */
-  public static final class ProjectionEntityQueryBuilder
-      extends BaseBuilder<ProjectionEntity, ProjectionEntityQueryBuilder> {
-
-    ProjectionEntityQueryBuilder() {
-      super(ResultType.PROJECTION_ENTITY);
-    }
-
-    @Override
-    public StructuredQuery<ProjectionEntity> build() {
-      return new StructuredQuery<>(this);
-    }
-
-    @Override
-    public ProjectionEntityQueryBuilder clearProjection() {
-      return super.clearProjection();
-    }
-
-    /**
-     * Sets the query's projection clause (clearing any previously specified Projection settings).
-     */
-    @Override
-    public ProjectionEntityQueryBuilder projection(Projection projection, Projection... others) {
-      return super.projection(projection, others);
-    }
-
-    /**
-     * Adds one or more projections to the existing projection clause.
-     */
-    @Override
-    public ProjectionEntityQueryBuilder addProjection(Projection projection, Projection... others) {
-      return super.addProjection(projection, others);
-    }
-
-    @Override
-    public ProjectionEntityQueryBuilder clearGroupBy() {
-      return super.clearGroupBy();
-    }
-
-    /**
-     * Sets the query's group by clause (clearing any previously specified GroupBy settings).
-     */
-    @Override
-    public ProjectionEntityQueryBuilder groupBy(String property, String... others) {
-      return super.groupBy(property, others);
-    }
-
-    /**
-     * Adds one or more properties to the existing group by clause.
-     */
-    @Override
-    public ProjectionEntityQueryBuilder addGroupBy(String property, String... others) {
-      return super.addGroupBy(property, others);
-    }
-  }
-
-  StructuredQuery(BaseBuilder<V, ?> builder) {
+  StructuredQuery(BuilderImpl<V, ?> builder) {
     super(builder.resultType, builder.namespace);
     kind = builder.kind;
     projection = ImmutableList.copyOf(builder.projection);
@@ -971,9 +898,7 @@ public class StructuredQuery<V> extends Query<V> {
     return limit;
   }
 
-  public Builder<V> toBuilder() {
-    return new Builder<>(this);
-  }
+  public abstract Builder<V> toBuilder();
 
   @Override
   void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb) {
@@ -982,8 +907,7 @@ public class StructuredQuery<V> extends Query<V> {
 
   @Override
   StructuredQuery<V> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
-    Builder<V> builder = new Builder<>(type());
-    builder.mergeFrom(toPb());
+    Builder<V> builder = toBuilder();
     builder.startCursor(new Cursor(responsePb.getEndCursor()));
     if (offset > 0 && responsePb.getSkippedResults() < offset) {
       builder.offset(offset - responsePb.getSkippedResults());
@@ -1035,15 +959,15 @@ public class StructuredQuery<V> extends Query<V> {
     return fromPb(resultType, namespace, DatastoreV1.Query.parseFrom(bytesPb));
   }
 
-  private static StructuredQuery<?> fromPb(ResultType<?> resultType, String namespace,
+  static StructuredQuery<?> fromPb(ResultType<?> resultType, String namespace,
       DatastoreV1.Query queryPb) {
-    BaseBuilder<?, ?> builder;
+    BuilderImpl<?, ?> builder;
     if (resultType.equals(ResultType.ENTITY)) {
-      builder = new EntityQueryBuilder();
+      builder = new EntityQuery.Builder();
     } else if (resultType.equals(ResultType.KEY)) {
-      builder = new KeyQueryBuilder();
+      builder = new KeyQuery.Builder();
     } else {
-      builder = new ProjectionEntityQueryBuilder();
+      builder = new ProjectionEntityQuery.Builder();
     }
     return builder.namespace(namespace).mergeFrom(queryPb).build();
   }

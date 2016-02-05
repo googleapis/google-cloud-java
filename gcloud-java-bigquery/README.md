@@ -20,16 +20,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-bigquery</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-bigquery:0.1.2'
+compile 'com.google.gcloud:gcloud-java-bigquery:0.1.3'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-bigquery" % "0.1.2"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-bigquery" % "0.1.3"
 ```
 
 Example Application
@@ -111,9 +111,10 @@ are created from a BigQuery SQL query. In this code snippet we show how to creat
 with only one string field. Add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.bigquery.BaseTableInfo;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.Schema;
+import com.google.gcloud.bigquery.StandardTableDefinition;
+import com.google.gcloud.bigquery.Table;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
 ```
@@ -126,7 +127,8 @@ Field stringField = Field.of("StringField", Field.Type.string());
 // Table schema definition
 Schema schema = Schema.of(stringField);
 // Create a table
-TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, schema));
+StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
+Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
 ```
 
 #### Loading data into a table
@@ -204,7 +206,6 @@ the code from the main method to your application's servlet class and change the
 display on your webpage.
 
 ```java
-import com.google.gcloud.bigquery.BaseTableInfo;
 import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryOptions;
 import com.google.gcloud.bigquery.DatasetInfo;
@@ -215,6 +216,8 @@ import com.google.gcloud.bigquery.InsertAllResponse;
 import com.google.gcloud.bigquery.QueryRequest;
 import com.google.gcloud.bigquery.QueryResponse;
 import com.google.gcloud.bigquery.Schema;
+import com.google.gcloud.bigquery.StandardTableDefinition;
+import com.google.gcloud.bigquery.Table;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
 
@@ -240,7 +243,8 @@ public class GcloudBigQueryExample {
     // Table schema definition
     Schema schema = Schema.of(stringField);
     // Create a table
-    TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, schema));
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
+    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
 
     // Define rows to insert
     Map<String, Object> firstRow = new HashMap<>();
@@ -267,7 +271,7 @@ public class GcloudBigQueryExample {
             .build();
     // Request query to be executed and wait for results
     QueryResponse queryResponse = bigquery.query(queryRequest);
-    while (!queryResponse.jobComplete()) {
+    while (!queryResponse.jobCompleted()) {
       Thread.sleep(1000L);
       queryResponse = bigquery.getQueryResults(queryResponse.jobId());
     }

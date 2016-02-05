@@ -39,6 +39,7 @@ import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.datastore.testing.LocalGcdHelper;
 import com.google.gcloud.spi.DatastoreRpc;
 import com.google.gcloud.spi.DatastoreRpcFactory;
+import com.google.protobuf.ByteString;
 
 import org.easymock.EasyMock;
 import org.junit.AfterClass;
@@ -496,7 +497,7 @@ public class DatastoreTest {
       }
       query = query.toBuilder().startCursor(results.cursorAfter()).build();
     }
-    assertEquals(totalCount, 5);
+    assertEquals(5, totalCount);
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
 
@@ -524,7 +525,8 @@ public class DatastoreTest {
         .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
         .clearEntityResult()
         .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(1, 2))
-        .setEndCursor(queryResultBatchPb.getEntityResultList().get(1).getCursor())
+        .setEndCursor(
+            ByteString.copyFrom(new byte[] {(byte) 0x80})) // test invalid UTF-8 string
         .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb2).build());
     QueryResultBatch queryResultBatchPb3 = QueryResultBatch.newBuilder()
@@ -544,6 +546,17 @@ public class DatastoreTest {
         .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb4).build());
     return responses;
+  }
+
+  @Test
+  public void testToUrlSafe() {
+    byte[][] invalidUtf8 =
+        new byte[][] {{(byte) 0xfe}, {(byte) 0xc1, (byte) 0xbf}, {(byte) 0xc0}, {(byte) 0x80}};
+    for (byte[] bytes : invalidUtf8) {
+      assertFalse(ByteString.copyFrom(bytes).isValidUtf8());
+      Cursor cursor = new Cursor(ByteString.copyFrom(bytes));
+      assertEquals(cursor, Cursor.fromUrlSafe(cursor.toUrlSafe()));
+    }
   }
 
   @Test

@@ -22,9 +22,6 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Maps;
-import com.google.gcloud.datastore.StructuredQuery.EntityQueryBuilder;
-import com.google.gcloud.datastore.StructuredQuery.KeyQueryBuilder;
-import com.google.gcloud.datastore.StructuredQuery.ProjectionEntityQueryBuilder;
 import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -217,21 +214,21 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   /**
    * Returns a new {@link StructuredQuery} builder for full (complete entities) queries.
    */
-  public static EntityQueryBuilder entityQueryBuilder() {
-    return new EntityQueryBuilder();
+  public static EntityQuery.Builder entityQueryBuilder() {
+    return new EntityQuery.Builder();
   }
 
   /**
    * Returns a new {@link StructuredQuery} builder for key only queries.
    */
-  public static KeyQueryBuilder keyQueryBuilder() {
-    return new KeyQueryBuilder();
+  public static KeyQuery.Builder keyQueryBuilder() {
+    return new KeyQuery.Builder();
   }
 
   /**
    * Returns a new {@link StructuredQuery} builder for projection queries.
    */
-  public static ProjectionEntityQueryBuilder projectionEntityQueryBuilder() {
-    return new ProjectionEntityQueryBuilder();
+  public static ProjectionEntityQuery.Builder projectionEntityQueryBuilder() {
+    return new ProjectionEntityQuery.Builder();
   }
 }

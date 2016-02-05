@@ -17,6 +17,7 @@
 package com.google.gcloud.examples;
 
 import com.google.common.base.Joiner;
+import com.google.gcloud.resourcemanager.Project;
 import com.google.gcloud.resourcemanager.ProjectInfo;
 import com.google.gcloud.resourcemanager.ResourceManager;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
@@ -64,7 +65,7 @@ public class ResourceManagerExample {
           labels.put(args[i], "");
         }
       }
-      ProjectInfo project =
+      Project project =
           resourceManager.create(ProjectInfo.builder(projectId).labels(labels).build());
       System.out.printf(
           "Successfully created project '%s': %s.%n", projectId, projectDetails(project));

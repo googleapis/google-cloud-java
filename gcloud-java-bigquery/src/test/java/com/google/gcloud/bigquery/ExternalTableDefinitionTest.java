@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class ExternalDataConfigurationTest {
+public class ExternalTableDefinitionTest {
 
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
@@ -47,51 +47,56 @@ public class ExternalDataConfigurationTest {
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
   private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
-  private static final ExternalDataConfiguration CONFIGURATION = ExternalDataConfiguration
-      .builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
-      .compression(COMPRESSION)
-      .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-      .maxBadRecords(MAX_BAD_RECORDS)
-      .build();
+  private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
+      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+          .compression(COMPRESSION)
+          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .maxBadRecords(MAX_BAD_RECORDS)
+          .build();
 
   @Test
   public void testToBuilder() {
-    compareConfiguration(CONFIGURATION, CONFIGURATION.toBuilder().build());
-    ExternalDataConfiguration configuration = CONFIGURATION.toBuilder().compression("NONE").build();
-    assertEquals("NONE", configuration.compression());
-    configuration = configuration.toBuilder()
+    compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION,
+        EXTERNAL_TABLE_DEFINITION.toBuilder().build());
+    ExternalTableDefinition externalTableDefinition =
+        EXTERNAL_TABLE_DEFINITION.toBuilder().compression("NONE").build();
+    assertEquals("NONE", externalTableDefinition.compression());
+    externalTableDefinition = externalTableDefinition.toBuilder()
         .compression(COMPRESSION)
         .build();
-    compareConfiguration(CONFIGURATION, configuration);
+    compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION, externalTableDefinition);
   }
 
   @Test
   public void testToBuilderIncomplete() {
-    ExternalDataConfiguration configuration =
-        ExternalDataConfiguration.of(SOURCE_URIS, TABLE_SCHEMA, FormatOptions.json());
-    assertEquals(configuration, configuration.toBuilder().build());
+    ExternalTableDefinition externalTableDefinition =
+        ExternalTableDefinition.of(SOURCE_URIS, TABLE_SCHEMA, FormatOptions.json());
+    assertEquals(externalTableDefinition, externalTableDefinition.toBuilder().build());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(COMPRESSION, CONFIGURATION.compression());
-    assertEquals(CSV_OPTIONS, CONFIGURATION.formatOptions());
-    assertEquals(IGNORE_UNKNOWN_VALUES, CONFIGURATION.ignoreUnknownValues());
-    assertEquals(MAX_BAD_RECORDS, CONFIGURATION.maxBadRecords());
-    assertEquals(TABLE_SCHEMA, CONFIGURATION.schema());
-    assertEquals(SOURCE_URIS, CONFIGURATION.sourceUris());
+    assertEquals(TableDefinition.Type.EXTERNAL, EXTERNAL_TABLE_DEFINITION.type());
+    assertEquals(COMPRESSION, EXTERNAL_TABLE_DEFINITION.compression());
+    assertEquals(CSV_OPTIONS, EXTERNAL_TABLE_DEFINITION.formatOptions());
+    assertEquals(IGNORE_UNKNOWN_VALUES, EXTERNAL_TABLE_DEFINITION.ignoreUnknownValues());
+    assertEquals(MAX_BAD_RECORDS, EXTERNAL_TABLE_DEFINITION.maxBadRecords());
+    assertEquals(TABLE_SCHEMA, EXTERNAL_TABLE_DEFINITION.schema());
+    assertEquals(SOURCE_URIS, EXTERNAL_TABLE_DEFINITION.sourceUris());
   }
 
   @Test
   public void testToAndFromPb() {
-    compareConfiguration(CONFIGURATION, ExternalDataConfiguration.fromPb(CONFIGURATION.toPb()));
-    ExternalDataConfiguration configuration =
-        ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS).build();
-    compareConfiguration(configuration, ExternalDataConfiguration.fromPb(configuration.toPb()));
+    compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION,
+        ExternalTableDefinition.fromPb(EXTERNAL_TABLE_DEFINITION.toPb()));
+    ExternalTableDefinition externalTableDefinition =
+        ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS).build();
+    compareExternalTableDefinition(externalTableDefinition,
+        ExternalTableDefinition.fromPb(externalTableDefinition.toPb()));
   }
 
-  private void compareConfiguration(ExternalDataConfiguration expected,
-      ExternalDataConfiguration value) {
+  private void compareExternalTableDefinition(ExternalTableDefinition expected,
+      ExternalTableDefinition value) {
     assertEquals(expected, value);
     assertEquals(expected.compression(), value.compression());
     assertEquals(expected.formatOptions(), value.formatOptions());
@@ -99,5 +104,6 @@ public class ExternalDataConfigurationTest {
     assertEquals(expected.maxBadRecords(), value.maxBadRecords());
     assertEquals(expected.schema(), value.schema());
     assertEquals(expected.sourceUris(), value.sourceUris());
+    assertEquals(expected.hashCode(), value.hashCode());
   }
 }

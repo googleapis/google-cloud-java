@@ -58,7 +58,7 @@ import java.util.logging.Logger;
 
 public class ITBigQueryTest {
 
-  private static final Logger log = Logger.getLogger(ITBigQueryTest.class.getName());
+  private static final Logger LOG = Logger.getLogger(ITBigQueryTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DESCRIPTION = "Test dataset";
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
@@ -152,15 +152,14 @@ public class ITBigQueryTest {
         JSON_CONTENT.getBytes(StandardCharsets.UTF_8));
     DatasetInfo info = DatasetInfo.builder(DATASET).description(DESCRIPTION).build();
     bigquery.create(info);
-    LoadConfiguration configuration = LoadConfiguration.builder(TABLE_ID, FormatOptions.json())
+    LoadJobConfiguration configuration = LoadJobConfiguration.builder(
+            TABLE_ID, "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
         .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
         .schema(TABLE_SCHEMA)
         .build();
-    LoadJobInfo job = LoadJobInfo.of(configuration, "gs://" + BUCKET + "/" + JSON_LOAD_FILE);
-    job = bigquery.create(job);
-    while (job.status().state() != JobStatus.State.DONE) {
+    Job job = bigquery.create(JobInfo.of(configuration));
+    while (!job.isDone()) {
       Thread.sleep(1000);
-      job = bigquery.getJob(job.jobId());
     }
     assertNull(job.status().error());
   }
@@ -171,15 +170,15 @@ public class ITBigQueryTest {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
     }
     if (storage != null && !RemoteGcsHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS)) {
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
+      if (LOG.isLoggable(Level.WARNING)) {
+        LOG.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
     }
   }
 
   @Test
   public void testGetDataset() {
-    DatasetInfo dataset = bigquery.getDataset(DATASET);
+    Dataset dataset = bigquery.getDataset(DATASET);
     assertEquals(bigquery.options().projectId(), dataset.datasetId().project());
     assertEquals(DATASET, dataset.datasetId().dataset());
     assertEquals(DESCRIPTION, dataset.description());
@@ -192,7 +191,7 @@ public class ITBigQueryTest {
 
   @Test
   public void testGetDatasetWithSelectedFields() {
-    DatasetInfo dataset = bigquery.getDataset(DATASET,
+    Dataset dataset = bigquery.getDataset(DATASET,
         DatasetOption.fields(DatasetField.CREATION_TIME));
     assertEquals(bigquery.options().projectId(), dataset.datasetId().project());
     assertEquals(DATASET, dataset.datasetId().dataset());
@@ -210,29 +209,29 @@ public class ITBigQueryTest {
 
   @Test
   public void testUpdateDataset() {
-    DatasetInfo dataset = bigquery.create(DatasetInfo.builder(OTHER_DATASET)
+    Dataset dataset = bigquery.create(DatasetInfo.builder(OTHER_DATASET)
         .description("Some Description")
         .build());
     assertNotNull(dataset);
     assertEquals(bigquery.options().projectId(), dataset.datasetId().project());
     assertEquals(OTHER_DATASET, dataset.datasetId().dataset());
     assertEquals("Some Description", dataset.description());
-    DatasetInfo updatedDataset =
+    Dataset updatedDataset =
         bigquery.update(dataset.toBuilder().description("Updated Description").build());
     assertEquals("Updated Description", updatedDataset.description());
-    assertTrue(bigquery.delete(OTHER_DATASET));
+    assertTrue(dataset.delete());
   }
 
   @Test
   public void testUpdateDatasetWithSelectedFields() {
-    DatasetInfo dataset = bigquery.create(DatasetInfo.builder(OTHER_DATASET)
+    Dataset dataset = bigquery.create(DatasetInfo.builder(OTHER_DATASET)
         .description("Some Description")
         .build());
     assertNotNull(dataset);
     assertEquals(bigquery.options().projectId(), dataset.datasetId().project());
     assertEquals(OTHER_DATASET, dataset.datasetId().dataset());
     assertEquals("Some Description", dataset.description());
-    DatasetInfo updatedDataset =
+    Dataset updatedDataset =
         bigquery.update(dataset.toBuilder().description("Updated Description").build(),
             DatasetOption.fields(DatasetField.DESCRIPTION));
     assertEquals("Updated Description", updatedDataset.description());
@@ -245,7 +244,7 @@ public class ITBigQueryTest {
     assertNull(updatedDataset.lastModified());
     assertNull(updatedDataset.location());
     assertNull(updatedDataset.selfLink());
-    assertTrue(bigquery.delete(OTHER_DATASET));
+    assertTrue(dataset.delete());
   }
 
   @Test
@@ -257,61 +256,63 @@ public class ITBigQueryTest {
   public void testCreateAndGetTable() {
     String tableName = "test_create_and_get_table";
     TableId tableId = TableId.of(DATASET, tableName);
-    BaseTableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, TABLE_SCHEMA));
-    assertNotNull(createdTableInfo);
-    assertEquals(DATASET, createdTableInfo.tableId().dataset());
-    assertEquals(tableName, createdTableInfo.tableId().table());
-    BaseTableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName);
-    assertNotNull(remoteTableInfo);
-    assertTrue(remoteTableInfo instanceof TableInfo);
-    assertEquals(createdTableInfo.tableId(), remoteTableInfo.tableId());
-    assertEquals(BaseTableInfo.Type.TABLE, remoteTableInfo.type());
-    assertEquals(TABLE_SCHEMA, remoteTableInfo.schema());
-    assertNotNull(remoteTableInfo.creationTime());
-    assertNotNull(remoteTableInfo.lastModifiedTime());
-    assertNotNull(remoteTableInfo.numBytes());
-    assertNotNull(remoteTableInfo.numRows());
-    assertTrue(bigquery.delete(DATASET, tableName));
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.tableId().dataset());
+    assertEquals(tableName, createdTable.tableId().table());
+    Table remoteTable = bigquery.getTable(DATASET, tableName);
+    assertNotNull(remoteTable);
+    assertTrue(remoteTable.definition() instanceof StandardTableDefinition);
+    assertEquals(createdTable.tableId(), remoteTable.tableId());
+    assertEquals(TableDefinition.Type.TABLE, remoteTable.definition().type());
+    assertEquals(TABLE_SCHEMA, remoteTable.definition().schema());
+    assertNotNull(remoteTable.creationTime());
+    assertNotNull(remoteTable.lastModifiedTime());
+    assertNotNull(remoteTable.<StandardTableDefinition>definition().numBytes());
+    assertNotNull(remoteTable.<StandardTableDefinition>definition().numRows());
+    assertTrue(remoteTable.delete());
   }
 
   @Test
   public void testCreateAndGetTableWithSelectedField() {
     String tableName = "test_create_and_get_selected_fields_table";
     TableId tableId = TableId.of(DATASET, tableName);
-    BaseTableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, TABLE_SCHEMA));
-    assertNotNull(createdTableInfo);
-    assertEquals(DATASET, createdTableInfo.tableId().dataset());
-    assertEquals(tableName, createdTableInfo.tableId().table());
-    BaseTableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName,
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.tableId().dataset());
+    assertEquals(tableName, createdTable.tableId().table());
+    Table remoteTable = bigquery.getTable(DATASET, tableName,
         TableOption.fields(TableField.CREATION_TIME));
-    assertNotNull(remoteTableInfo);
-    assertTrue(remoteTableInfo instanceof TableInfo);
-    assertEquals(createdTableInfo.tableId(), remoteTableInfo.tableId());
-    assertEquals(BaseTableInfo.Type.TABLE, remoteTableInfo.type());
-    assertNotNull(remoteTableInfo.creationTime());
-    assertNull(remoteTableInfo.schema());
-    assertNull(remoteTableInfo.lastModifiedTime());
-    assertNull(remoteTableInfo.numBytes());
-    assertNull(remoteTableInfo.numRows());
-    assertTrue(bigquery.delete(DATASET, tableName));
+    assertNotNull(remoteTable);
+    assertTrue(remoteTable.definition() instanceof StandardTableDefinition);
+    assertEquals(createdTable.tableId(), remoteTable.tableId());
+    assertEquals(TableDefinition.Type.TABLE, remoteTable.definition().type());
+    assertNotNull(remoteTable.creationTime());
+    assertNull(remoteTable.definition().schema());
+    assertNull(remoteTable.lastModifiedTime());
+    assertNull(remoteTable.<StandardTableDefinition>definition().numBytes());
+    assertNull(remoteTable.<StandardTableDefinition>definition().numRows());
+    assertTrue(remoteTable.delete());
   }
 
   @Test
   public void testCreateExternalTable() throws InterruptedException {
     String tableName = "test_create_external_table";
     TableId tableId = TableId.of(DATASET, tableName);
-    ExternalDataConfiguration externalDataConfiguration = ExternalDataConfiguration.of(
+    ExternalTableDefinition externalTableDefinition = ExternalTableDefinition.of(
         "gs://" + BUCKET + "/" + JSON_LOAD_FILE, TABLE_SCHEMA, FormatOptions.json());
-    BaseTableInfo tableInfo = ExternalTableInfo.of(tableId, externalDataConfiguration);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
-    assertNotNull(createdTableInfo);
-    assertEquals(DATASET, createdTableInfo.tableId().dataset());
-    assertEquals(tableName, createdTableInfo.tableId().table());
-    BaseTableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName);
-    assertNotNull(remoteTableInfo);
-    assertTrue(remoteTableInfo instanceof ExternalTableInfo);
-    assertEquals(createdTableInfo.tableId(), remoteTableInfo.tableId());
-    assertEquals(TABLE_SCHEMA, remoteTableInfo.schema());
+    TableInfo tableInfo = TableInfo.of(tableId, externalTableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.tableId().dataset());
+    assertEquals(tableName, createdTable.tableId().table());
+    Table remoteTable = bigquery.getTable(DATASET, tableName);
+    assertNotNull(remoteTable);
+    assertTrue(remoteTable.definition() instanceof ExternalTableDefinition);
+    assertEquals(createdTable.tableId(), remoteTable.tableId());
+    assertEquals(TABLE_SCHEMA, remoteTable.definition().schema());
     QueryRequest request = QueryRequest.builder(
         "SELECT TimestampField, StringField, IntegerField, BooleanField FROM " + DATASET + "."
             + tableName)
@@ -343,24 +344,25 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(4, rowCount);
-    assertTrue(bigquery.delete(DATASET, tableName));
+    assertTrue(remoteTable.delete());
   }
 
   @Test
   public void testCreateViewTable() throws InterruptedException {
     String tableName = "test_create_view_table";
     TableId tableId = TableId.of(DATASET, tableName);
-    BaseTableInfo tableInfo = ViewInfo.of(tableId,
-        "SELECT TimestampField, StringField, BooleanField FROM " + DATASET + "."
+    ViewDefinition viewDefinition =
+        ViewDefinition.of("SELECT TimestampField, StringField, BooleanField FROM " + DATASET + "."
             + TABLE_ID.table());
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
-    assertNotNull(createdTableInfo);
-    assertEquals(DATASET, createdTableInfo.tableId().dataset());
-    assertEquals(tableName, createdTableInfo.tableId().table());
-    BaseTableInfo remoteTableInfo = bigquery.getTable(DATASET, tableName);
-    assertNotNull(remoteTableInfo);
-    assertEquals(createdTableInfo.tableId(), remoteTableInfo.tableId());
-    assertTrue(remoteTableInfo instanceof ViewInfo);
+    TableInfo tableInfo = TableInfo.of(tableId, viewDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.tableId().dataset());
+    assertEquals(tableName, createdTable.tableId().table());
+    Table remoteTable = bigquery.getTable(DATASET, tableName);
+    assertNotNull(remoteTable);
+    assertEquals(createdTable.tableId(), remoteTable.tableId());
+    assertTrue(remoteTable.definition() instanceof ViewDefinition);
     Schema expectedSchema = Schema.builder()
         .addField(
             Field.builder("TimestampField", Field.Type.timestamp())
@@ -375,7 +377,7 @@ public class ITBigQueryTest {
                 .mode(Field.Mode.NULLABLE)
                 .build())
         .build();
-    assertEquals(expectedSchema, remoteTableInfo.schema());
+    assertEquals(expectedSchema, remoteTable.definition().schema());
     QueryRequest request = QueryRequest.builder("SELECT * FROM " + tableName)
         .defaultDataset(DatasetId.of(DATASET))
         .maxWaitTime(60000L)
@@ -400,65 +402,68 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
-    assertTrue(bigquery.delete(DATASET, tableName));
+    assertTrue(remoteTable.delete());
   }
 
   @Test
   public void testListTables() {
     String tableName = "test_list_tables";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
-    assertNotNull(createdTableInfo);
-    Page<BaseTableInfo> tables = bigquery.listTables(DATASET);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    Page<Table> tables = bigquery.listTables(DATASET);
     boolean found = false;
-    Iterator<BaseTableInfo> tableIterator = tables.values().iterator();
+    Iterator<Table> tableIterator = tables.values().iterator();
     while (tableIterator.hasNext() && !found) {
-      if (tableIterator.next().tableId().equals(createdTableInfo.tableId())) {
+      if (tableIterator.next().tableId().equals(createdTable.tableId())) {
         found = true;
       }
     }
     assertTrue(found);
-    assertTrue(bigquery.delete(DATASET, tableName));
+    assertTrue(createdTable.delete());
   }
 
   @Test
   public void testUpdateTable() {
     String tableName = "test_update_table";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
-    assertNotNull(createdTableInfo);
-    BaseTableInfo updatedTableInfo = bigquery.update(tableInfo.toBuilder()
-        .description("newDescription").build());
-    assertEquals(DATASET, updatedTableInfo.tableId().dataset());
-    assertEquals(tableName, updatedTableInfo.tableId().table());
-    assertEquals(TABLE_SCHEMA, updatedTableInfo.schema());
-    assertEquals("newDescription", updatedTableInfo.description());
-    assertTrue(bigquery.delete(DATASET, tableName));
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    Table updatedTable =
+        bigquery.update(tableInfo.toBuilder().description("newDescription").build());
+    assertEquals(DATASET, updatedTable.tableId().dataset());
+    assertEquals(tableName, updatedTable.tableId().table());
+    assertEquals(TABLE_SCHEMA, updatedTable.definition().schema());
+    assertEquals("newDescription", updatedTable.description());
+    assertTrue(updatedTable.delete());
   }
 
   @Test
   public void testUpdateTableWithSelectedFields() {
     String tableName = "test_update_with_selected_fields_table";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
-    assertNotNull(createdTableInfo);
-    BaseTableInfo updatedTableInfo = bigquery.update(tableInfo.toBuilder().description("newDescr")
-        .build(), TableOption.fields(TableField.DESCRIPTION));
-    assertTrue(updatedTableInfo instanceof TableInfo);
-    assertEquals(DATASET, updatedTableInfo.tableId().dataset());
-    assertEquals(tableName, updatedTableInfo.tableId().table());
-    assertEquals("newDescr", updatedTableInfo.description());
-    assertNull(updatedTableInfo.schema());
-    assertNull(updatedTableInfo.lastModifiedTime());
-    assertNull(updatedTableInfo.numBytes());
-    assertNull(updatedTableInfo.numRows());
-    assertTrue(bigquery.delete(DATASET, tableName));
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    Table updatedTable = bigquery.update(tableInfo.toBuilder().description("newDescr").build(),
+        TableOption.fields(TableField.DESCRIPTION));
+    assertTrue(updatedTable.definition() instanceof StandardTableDefinition);
+    assertEquals(DATASET, updatedTable.tableId().dataset());
+    assertEquals(tableName, updatedTable.tableId().table());
+    assertEquals("newDescr", updatedTable.description());
+    assertNull(updatedTable.definition().schema());
+    assertNull(updatedTable.lastModifiedTime());
+    assertNull(updatedTable.<StandardTableDefinition>definition().numBytes());
+    assertNull(updatedTable.<StandardTableDefinition>definition().numRows());
+    assertTrue(createdTable.delete());
   }
 
   @Test
   public void testUpdateNonExistingTable() {
-    TableInfo tableInfo =
-        TableInfo.of(TableId.of(DATASET, "test_update_non_existing_table"), SIMPLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, "test_update_non_existing_table"),
+        StandardTableDefinition.of(SIMPLE_SCHEMA));
     try {
       bigquery.update(tableInfo);
       fail("BigQueryException was expected");
@@ -478,7 +483,8 @@ public class ITBigQueryTest {
   @Test
   public void testInsertAll() {
     String tableName = "test_insert_all_table";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     assertNotNull(bigquery.create(tableInfo));
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
         .addRow(ImmutableMap.<String, Object>of(
@@ -509,7 +515,8 @@ public class ITBigQueryTest {
   @Test
   public void testInsertAllWithSuffix() throws InterruptedException {
     String tableName = "test_insert_all_with_suffix_table";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     assertNotNull(bigquery.create(tableInfo));
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
         .addRow(ImmutableMap.<String, Object>of(
@@ -536,20 +543,21 @@ public class ITBigQueryTest {
     assertFalse(response.hasErrors());
     assertEquals(0, response.insertErrors().size());
     String newTableName = tableName + "_suffix";
-    BaseTableInfo suffixTable = bigquery.getTable(DATASET, newTableName, TableOption.fields());
+    Table suffixTable = bigquery.getTable(DATASET, newTableName, TableOption.fields());
     // wait until the new table is created. If the table is never created the test will time-out
     while (suffixTable == null) {
       Thread.sleep(1000L);
       suffixTable = bigquery.getTable(DATASET, newTableName, TableOption.fields());
     }
     assertTrue(bigquery.delete(TableId.of(DATASET, tableName)));
-    assertTrue(bigquery.delete(TableId.of(DATASET, newTableName)));
+    assertTrue(suffixTable.delete());
   }
 
   @Test
   public void testInsertAllWithErrors() {
     String tableName = "test_insert_all_with_errors_table";
-    BaseTableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), TABLE_SCHEMA);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     assertNotNull(bigquery.create(tableInfo));
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
         .addRow(ImmutableMap.<String, Object>of(
@@ -646,14 +654,15 @@ public class ITBigQueryTest {
       rowCount++;
     }
     assertEquals(2, rowCount);
-    QueryJobInfo queryJob = bigquery.getJob(response.jobId());
-    assertNotNull(queryJob.statistics().queryPlan());
+    Job queryJob = bigquery.getJob(response.jobId());
+    JobStatistics.QueryStatistics statistics = queryJob.statistics();
+    assertNotNull(statistics.queryPlan());
   }
 
   @Test
   public void testListJobs() {
-    Page<JobInfo> jobs = bigquery.listJobs();
-    for (JobInfo job : jobs.values()) {
+    Page<Job> jobs = bigquery.listJobs();
+    for (Job job : jobs.values()) {
       assertNotNull(job.jobId());
       assertNotNull(job.statistics());
       assertNotNull(job.status());
@@ -664,8 +673,8 @@ public class ITBigQueryTest {
 
   @Test
   public void testListJobsWithSelectedFields() {
-    Page<JobInfo> jobs = bigquery.listJobs(JobListOption.fields(JobField.USER_EMAIL));
-    for (JobInfo job : jobs.values()) {
+    Page<Job> jobs = bigquery.listJobs(JobListOption.fields(JobField.USER_EMAIL));
+    for (Job job : jobs.values()) {
       assertNotNull(job.jobId());
       assertNotNull(job.status());
       assertNotNull(job.userEmail());
@@ -679,26 +688,30 @@ public class ITBigQueryTest {
     String sourceTableName = "test_create_and_get_job_source_table";
     String destinationTableName = "test_create_and_get_job_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
-    BaseTableInfo tableInfo = TableInfo.of(sourceTable, SIMPLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
-    assertNotNull(createdTableInfo);
-    assertEquals(DATASET, createdTableInfo.tableId().dataset());
-    assertEquals(sourceTableName, createdTableInfo.tableId().table());
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(sourceTable, tableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.tableId().dataset());
+    assertEquals(sourceTableName, createdTable.tableId().table());
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
-    CopyJobInfo job = CopyJobInfo.of(destinationTable, sourceTable);
-    CopyJobInfo createdJob = bigquery.create(job);
-    CopyJobInfo remoteJob = bigquery.getJob(createdJob.jobId());
+    CopyJobConfiguration copyJobConfiguration =
+        CopyJobConfiguration.of(destinationTable, sourceTable);
+    Job createdJob = bigquery.create(JobInfo.of(copyJobConfiguration));
+    Job remoteJob = bigquery.getJob(createdJob.jobId());
     assertEquals(createdJob.jobId(), remoteJob.jobId());
-    assertEquals(createdJob.sourceTables(), remoteJob.sourceTables());
-    assertEquals(createdJob.destinationTable(), remoteJob.destinationTable());
-    assertEquals(createdJob.createDisposition(), remoteJob.createDisposition());
-    assertEquals(createdJob.writeDisposition(), remoteJob.writeDisposition());
+    CopyJobConfiguration createdConfiguration = createdJob.configuration();
+    CopyJobConfiguration remoteConfiguration = remoteJob.configuration();
+    assertEquals(createdConfiguration.sourceTables(), remoteConfiguration.sourceTables());
+    assertEquals(createdConfiguration.destinationTable(), remoteConfiguration.destinationTable());
+    assertEquals(createdConfiguration.createDisposition(), remoteConfiguration.createDisposition());
+    assertEquals(createdConfiguration.writeDisposition(), remoteConfiguration.writeDisposition());
     assertNotNull(remoteJob.etag());
     assertNotNull(remoteJob.statistics());
     assertNotNull(remoteJob.status());
     assertEquals(createdJob.selfLink(), remoteJob.selfLink());
     assertEquals(createdJob.userEmail(), remoteJob.userEmail());
-    assertTrue(bigquery.delete(DATASET, sourceTableName));
+    assertTrue(createdTable.delete());
     assertTrue(bigquery.delete(DATASET, destinationTableName));
   }
 
@@ -707,35 +720,37 @@ public class ITBigQueryTest {
     String sourceTableName = "test_create_and_get_job_with_selected_fields_source_table";
     String destinationTableName = "test_create_and_get_job_with_selected_fields_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
-    BaseTableInfo tableInfo = TableInfo.of(sourceTable, SIMPLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
-    assertNotNull(createdTableInfo);
-    assertEquals(DATASET, createdTableInfo.tableId().dataset());
-    assertEquals(sourceTableName, createdTableInfo.tableId().table());
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(sourceTable, tableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.tableId().dataset());
+    assertEquals(sourceTableName, createdTable.tableId().table());
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
-    CopyJobInfo job = CopyJobInfo.of(destinationTable, sourceTable);
-    CopyJobInfo createdJob = bigquery.create(job, JobOption.fields(JobField.ETAG));
+    CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, sourceTable);
+    Job createdJob = bigquery.create(JobInfo.of(configuration), JobOption.fields(JobField.ETAG));
+    CopyJobConfiguration createdConfiguration = createdJob.configuration();
     assertNotNull(createdJob.jobId());
-    assertNotNull(createdJob.sourceTables());
-    assertNotNull(createdJob.destinationTable());
+    assertNotNull(createdConfiguration.sourceTables());
+    assertNotNull(createdConfiguration.destinationTable());
     assertNotNull(createdJob.etag());
     assertNull(createdJob.statistics());
     assertNull(createdJob.status());
     assertNull(createdJob.selfLink());
     assertNull(createdJob.userEmail());
-    CopyJobInfo remoteJob = bigquery.getJob(createdJob.jobId(),
-        JobOption.fields(JobField.ETAG));
+    Job remoteJob = bigquery.getJob(createdJob.jobId(), JobOption.fields(JobField.ETAG));
+    CopyJobConfiguration remoteConfiguration = remoteJob.configuration();
     assertEquals(createdJob.jobId(), remoteJob.jobId());
-    assertEquals(createdJob.sourceTables(), remoteJob.sourceTables());
-    assertEquals(createdJob.destinationTable(), remoteJob.destinationTable());
-    assertEquals(createdJob.createDisposition(), remoteJob.createDisposition());
-    assertEquals(createdJob.writeDisposition(), remoteJob.writeDisposition());
+    assertEquals(createdConfiguration.sourceTables(), remoteConfiguration.sourceTables());
+    assertEquals(createdConfiguration.destinationTable(), remoteConfiguration.destinationTable());
+    assertEquals(createdConfiguration.createDisposition(), remoteConfiguration.createDisposition());
+    assertEquals(createdConfiguration.writeDisposition(), remoteConfiguration.writeDisposition());
     assertNotNull(remoteJob.etag());
     assertNull(remoteJob.statistics());
     assertNull(remoteJob.status());
     assertNull(remoteJob.selfLink());
     assertNull(remoteJob.userEmail());
-    assertTrue(bigquery.delete(DATASET, sourceTableName));
+    assertTrue(createdTable.delete());
     assertTrue(bigquery.delete(DATASET, destinationTableName));
   }
 
@@ -744,26 +759,26 @@ public class ITBigQueryTest {
     String sourceTableName = "test_copy_job_source_table";
     String destinationTableName = "test_copy_job_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
-    BaseTableInfo tableInfo = TableInfo.of(sourceTable, SIMPLE_SCHEMA);
-    BaseTableInfo createdTableInfo = bigquery.create(tableInfo);
-    assertNotNull(createdTableInfo);
-    assertEquals(DATASET, createdTableInfo.tableId().dataset());
-    assertEquals(sourceTableName, createdTableInfo.tableId().table());
+    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TableInfo tableInfo = TableInfo.of(sourceTable, tableDefinition);
+    Table createdTable = bigquery.create(tableInfo);
+    assertNotNull(createdTable);
+    assertEquals(DATASET, createdTable.tableId().dataset());
+    assertEquals(sourceTableName, createdTable.tableId().table());
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
-    CopyJobInfo job = CopyJobInfo.of(destinationTable, sourceTable);
-    CopyJobInfo remoteJob = bigquery.create(job);
-    while (remoteJob.status().state() != JobStatus.State.DONE) {
+    CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, sourceTable);
+    Job remoteJob = bigquery.create(JobInfo.of(configuration));
+    while (!remoteJob.isDone()) {
       Thread.sleep(1000);
-      remoteJob = bigquery.getJob(remoteJob.jobId());
     }
     assertNull(remoteJob.status().error());
-    BaseTableInfo remoteTableInfo = bigquery.getTable(DATASET, destinationTableName);
-    assertNotNull(remoteTableInfo);
-    assertEquals(destinationTable.dataset(), remoteTableInfo.tableId().dataset());
-    assertEquals(destinationTableName, remoteTableInfo.tableId().table());
-    assertEquals(SIMPLE_SCHEMA, remoteTableInfo.schema());
-    assertTrue(bigquery.delete(DATASET, sourceTableName));
-    assertTrue(bigquery.delete(DATASET, destinationTableName));
+    Table remoteTable = bigquery.getTable(DATASET, destinationTableName);
+    assertNotNull(remoteTable);
+    assertEquals(destinationTable.dataset(), remoteTable.tableId().dataset());
+    assertEquals(destinationTableName, remoteTable.tableId().table());
+    assertEquals(TABLE_SCHEMA, remoteTable.definition().schema());
+    assertTrue(createdTable.delete());
+    assertTrue(remoteTable.delete());
   }
 
   @Test
@@ -774,14 +789,13 @@ public class ITBigQueryTest {
         .append(TABLE_ID.table())
         .toString();
     TableId destinationTable = TableId.of(DATASET, tableName);
-    QueryJobInfo job = QueryJobInfo.builder(query)
+    QueryJobConfiguration configuration = QueryJobConfiguration.builder(query)
         .defaultDataset(DatasetId.of(DATASET))
         .destinationTable(destinationTable)
         .build();
-    QueryJobInfo remoteJob = bigquery.create(job);
-    while (remoteJob.status().state() != JobStatus.State.DONE) {
+    Job remoteJob = bigquery.create(JobInfo.of(configuration));
+    while (!remoteJob.isDone()) {
       Thread.sleep(1000);
-      remoteJob = bigquery.getJob(remoteJob.jobId());
     }
     assertNull(remoteJob.status().error());
 
@@ -807,33 +821,32 @@ public class ITBigQueryTest {
     }
     assertEquals(2, rowCount);
     assertTrue(bigquery.delete(DATASET, tableName));
-    QueryJobInfo queryJob = bigquery.getJob(remoteJob.jobId());
-    assertNotNull(queryJob.statistics().queryPlan());
+    Job queryJob = bigquery.getJob(remoteJob.jobId());
+    JobStatistics.QueryStatistics statistics = queryJob.statistics();
+    assertNotNull(statistics.queryPlan());
   }
 
   @Test
   public void testExtractJob() throws InterruptedException {
     String tableName = "test_export_job_table";
     TableId destinationTable = TableId.of(DATASET, tableName);
-    LoadConfiguration configuration = LoadConfiguration.builder(destinationTable)
-        .schema(SIMPLE_SCHEMA)
-        .build();
-    LoadJobInfo remoteLoadJob =
-        bigquery.create(LoadJobInfo.of(configuration, "gs://" + BUCKET + "/" + LOAD_FILE));
-    while (remoteLoadJob.status().state() != JobStatus.State.DONE) {
+    LoadJobConfiguration configuration =
+        LoadJobConfiguration.builder(destinationTable, "gs://" + BUCKET + "/" + LOAD_FILE)
+            .schema(SIMPLE_SCHEMA)
+            .build();
+    Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
+    while (!remoteLoadJob.isDone()) {
       Thread.sleep(1000);
-      remoteLoadJob = bigquery.getJob(remoteLoadJob.jobId());
     }
     assertNull(remoteLoadJob.status().error());
 
-    ExtractJobInfo extractJob =
-        ExtractJobInfo.builder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
-          .printHeader(false)
-          .build();
-    ExtractJobInfo remoteExtractJob = bigquery.create(extractJob);
-    while (remoteExtractJob.status().state() != JobStatus.State.DONE) {
+    ExtractJobConfiguration extractConfiguration =
+        ExtractJobConfiguration.builder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
+            .printHeader(false)
+            .build();
+    Job remoteExtractJob = bigquery.create(JobInfo.of(extractConfiguration));
+    while (!remoteExtractJob.isDone()) {
       Thread.sleep(1000);
-      remoteExtractJob = bigquery.getJob(remoteExtractJob.jobId());
     }
     assertNull(remoteExtractJob.status().error());
     assertEquals(CSV_CONTENT,
@@ -846,15 +859,14 @@ public class ITBigQueryTest {
     String destinationTableName = "test_cancel_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.table();
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
-    QueryJobInfo job = QueryJobInfo.builder(query)
+    QueryJobConfiguration configuration = QueryJobConfiguration.builder(query)
         .defaultDataset(DatasetId.of(DATASET))
         .destinationTable(destinationTable)
         .build();
-    JobInfo remoteJob = bigquery.create(job);
-    assertTrue(bigquery.cancel(remoteJob.jobId()));
-    while (remoteJob.status().state() != JobStatus.State.DONE) {
+    Job remoteJob = bigquery.create(JobInfo.of(configuration));
+    assertTrue(remoteJob.cancel());
+    while (!remoteJob.isDone()) {
       Thread.sleep(1000);
-      remoteJob = bigquery.getJob(remoteJob.jobId());
     }
     assertNull(remoteJob.status().error());
   }
@@ -868,7 +880,7 @@ public class ITBigQueryTest {
   public void testInsertFromFile() throws InterruptedException, FileNotFoundException {
     String destinationTableName = "test_insert_from_file_table";
     TableId tableId = TableId.of(DATASET, destinationTableName);
-    LoadConfiguration configuration = LoadConfiguration.builder(tableId)
+    WriteChannelConfiguration configuration = WriteChannelConfiguration.builder(tableId)
         .formatOptions(FormatOptions.json())
         .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
         .schema(TABLE_SCHEMA)

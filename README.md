@@ -27,16 +27,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java:0.1.2'
+compile 'com.google.gcloud:gcloud-java:0.1.3'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.1.2"
+libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.1.3"
 ```
 
 Example Applications
@@ -125,30 +125,33 @@ Here is a code snippet showing a simple usage example from within Compute/App En
 must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 
 ```java
-import com.google.gcloud.bigquery.BaseTableInfo;
 import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryOptions;
 import com.google.gcloud.bigquery.Field;
+import com.google.gcloud.bigquery.Job;
 import com.google.gcloud.bigquery.JobStatus;
-import com.google.gcloud.bigquery.LoadJobInfo;
+import com.google.gcloud.bigquery.JobInfo;
+import com.google.gcloud.bigquery.LoadJobConfiguration;
 import com.google.gcloud.bigquery.Schema;
+import com.google.gcloud.bigquery.StandardTableDefinition;
+import com.google.gcloud.bigquery.Table;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
 
 BigQuery bigquery = BigQueryOptions.defaultInstance().service();
 TableId tableId = TableId.of("dataset", "table");
-BaseTableInfo info = bigquery.getTable(tableId);
-if (info == null) {
+Table table = bigquery.getTable(tableId);
+if (table == null) {
   System.out.println("Creating table " + tableId);
   Field integerField = Field.of("fieldName", Field.Type.integer());
-  bigquery.create(TableInfo.of(tableId, Schema.of(integerField)));
+  Schema schema = Schema.of(integerField);
+  bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
 } else {
   System.out.println("Loading data into table " + tableId);
-  LoadJobInfo loadJob = LoadJobInfo.of(tableId, "gs://bucket/path");
-  loadJob = bigquery.create(loadJob);
-  while (loadJob.status().state() != JobStatus.State.DONE) {
+  LoadJobConfiguration configuration = LoadJobConfiguration.of(tableId, "gs://bucket/path");
+  Job loadJob = bigquery.create(JobInfo.of(configuration));
+  while (!loadJob.isDone()) {
     Thread.sleep(1000L);
-    loadJob = bigquery.getJob(loadJob.jobId());
   }
   if (loadJob.status().error() != null) {
     System.out.println("Job completed with errors");
@@ -209,20 +212,22 @@ Google Cloud Resource Manager (Alpha)
 Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
 
 ```java
-import com.google.gcloud.resourcemanager.ProjectInfo;
+import com.google.gcloud.resourcemanager.Project;
 import com.google.gcloud.resourcemanager.ResourceManager;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 
 import java.util.Iterator;
 
 ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
-ProjectInfo myProject = resourceManager.get("some-project-id"); // Use an existing project's ID
-ProjectInfo newProjectInfo = resourceManager.replace(myProject.toBuilder()
-    .addLabel("launch-status", "in-development").build());
-System.out.println("Updated the labels of project " + newProjectInfo.projectId()
-    + " to be " + newProjectInfo.labels());
+Project myProject = resourceManager.get("some-project-id"); // Use an existing project's ID
+Project newProject = myProject.toBuilder()
+    .addLabel("launch-status", "in-development")
+    .build()
+    .replace();
+System.out.println("Updated the labels of project " + newProject.projectId()
+    + " to be " + newProject.labels());
 // List all the projects you have permission to view.
-Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();
+Iterator<Project> projectIterator = resourceManager.list().iterateAll();
 System.out.println("Projects I can view:");
 while (projectIterator.hasNext()) {
   System.out.println(projectIterator.next().projectId());

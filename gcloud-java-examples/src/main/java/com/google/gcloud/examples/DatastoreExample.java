@@ -25,8 +25,8 @@ import com.google.gcloud.datastore.IncompleteKey;
 import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 import com.google.gcloud.datastore.Query;
-import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.QueryResults;
+import com.google.gcloud.datastore.StructuredQuery;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.datastore.Transaction;
 
@@ -100,21 +100,31 @@ public class DatastoreExample {
         return;
       }
       System.out.printf("User '%s' has %d comment[s].%n", userKey.name(), user.getLong("count"));
-      // ORDER BY timestamp";
-      String gql = "SELECT * FROM " + COMMENT_KIND + " WHERE __key__ HAS ANCESTOR @1";
-      Query<Entity> query = Query.gqlQueryBuilder(ResultType.ENTITY, gql)
-          .namespace(NAMESPACE)
-          .addBinding(userKey)
-          .build();
-      QueryResults<Entity> results = tx.run(query);
-      // We could have added "ORDER BY timestamp" to the query to avoid the sorting bellow
-      // but that would require adding an ancestor index for timestamp
-      // see: https://cloud.google.com/datastore/docs/tools/indexconfig
+      int limit = 200;
       Map<DateTime, String> sortedComments = new TreeMap<>();
-      while (results.hasNext()) {
-        Entity result = results.next();
-        sortedComments.put(result.getDateTime("timestamp"), result.getString("content"));
+      StructuredQuery<Entity> query =
+          Query.entityQueryBuilder()
+              .namespace(NAMESPACE)
+              .kind(COMMENT_KIND)
+              .filter(PropertyFilter.hasAncestor(userKey))
+              .limit(limit)
+              .build();
+      while (true) {
+        QueryResults<Entity> results = tx.run(query);
+        int resultCount = 0;
+        while (results.hasNext()) {
+          Entity result = results.next();
+          sortedComments.put(result.getDateTime("timestamp"), result.getString("content"));
+          resultCount++;
+        }
+        if (resultCount < limit) {
+          break;
+        }
+        query = query.toBuilder().startCursor(results.cursorAfter()).build();
       }
+      // We could have added "ORDER BY timestamp" to the query to avoid sorting, but that would
+      // require adding an ancestor index for timestamp.
+      // See: https://cloud.google.com/datastore/docs/tools/indexconfig
       for (Map.Entry<DateTime, String> entry : sortedComments.entrySet()) {
         System.out.printf("\t%s: %s%n", entry.getKey(), entry.getValue());
       }

@@ -105,6 +105,10 @@ public class TableId implements Serializable {
     return toPb().toString();
   }
 
+  TableId setProjectId(String projectId) {
+    return project() != null ? this : TableId.of(projectId, dataset(), table());
+  }
+
   TableReference toPb() {
     return new TableReference().setProjectId(project).setDatasetId(dataset).setTableId(table);
   }

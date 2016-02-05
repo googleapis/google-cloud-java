@@ -81,6 +81,10 @@ public class DatasetId implements Serializable {
     return toPb().toString();
   }
 
+  DatasetId setProjectId(String projectId) {
+    return project() != null ? this : DatasetId.of(projectId, dataset());
+  }
+
   DatasetReference toPb() {
     return new DatasetReference().setProjectId(project).setDatasetId(dataset);
   }

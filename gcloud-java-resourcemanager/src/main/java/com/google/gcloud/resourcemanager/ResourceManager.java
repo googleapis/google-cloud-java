@@ -179,12 +179,12 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/create">Cloud
    * Resource Manager create</a>
-   * @return ProjectInfo object representing the new project's metadata. The returned object will
+   * @return Project object representing the new project's metadata. The returned object will
    *     include the following read-only fields supplied by the server: project number, lifecycle
    *     state, and creation time.
    * @throws ResourceManagerException upon failure
    */
-  ProjectInfo create(ProjectInfo project);
+  Project create(ProjectInfo project);
 
   /**
    * Marks the project identified by the specified project ID for deletion.
@@ -221,7 +221,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * Resource Manager get</a>
    * @throws ResourceManagerException upon failure
    */
-  ProjectInfo get(String projectId, ProjectGetOption... options);
+  Project get(String projectId, ProjectGetOption... options);
 
   /**
    * Lists the projects visible to the current user.
@@ -234,10 +234,10 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/list">Cloud
    * Resource Manager list</a>
-   * @return {@code Page<ProjectInfo>}, a page of projects
+   * @return {@code Page<Project>}, a page of projects
    * @throws ResourceManagerException upon failure
    */
-  Page<ProjectInfo> list(ProjectListOption... options);
+  Page<Project> list(ProjectListOption... options);
 
   /**
    * Replaces the attributes of the project.
@@ -247,10 +247,10 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">Cloud
    * Resource Manager update</a>
-   * @return the ProjectInfo representing the new project metadata
+   * @return the Project representing the new project metadata
    * @throws ResourceManagerException upon failure
    */
-  ProjectInfo replace(ProjectInfo newProject);
+  Project replace(ProjectInfo newProject);
 
   /**
    * Restores the project identified by the specified project ID.

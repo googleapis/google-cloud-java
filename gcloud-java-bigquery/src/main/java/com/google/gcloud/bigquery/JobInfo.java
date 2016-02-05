@@ -19,23 +19,20 @@ package com.google.gcloud.bigquery;
 import com.google.api.services.bigquery.model.Job;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.MoreObjects.ToStringHelper;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Base class for Google BigQuery Job information. Jobs are objects that manage asynchronous tasks
- * such as running queries, loading data, and exporting data. Use {@link CopyJobInfo} for a job that
- * copies an existing table. Use {@link ExtractJobInfo} for a job that exports a table to Google
- * Cloud Storage. Use {@link LoadJobInfo} for a job that loads data from Google Cloud Storage into
- * a table. Use {@link QueryJobInfo} for a job that runs a query.
+ * Google BigQuery Job information. Jobs are objects that manage asynchronous tasks such as running
+ * queries, loading data, and exporting data. Use {@link CopyJobConfiguration} for a job that
+ * copies an existing table. Use {@link ExtractJobConfiguration} for a job that exports a table to
+ * Google Cloud Storage. Use {@link LoadJobConfiguration} for a job that loads data from Google
+ * Cloud Storage into a table. Use {@link QueryJobConfiguration} for a job that runs a query.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs">Jobs</a>
- *
- * @param <S> the statistics type
  */
-public abstract class JobInfo<S extends JobStatistics> implements Serializable {
+public class JobInfo implements Serializable {
 
   static final Function<Job, JobInfo> FROM_PB_FUNCTION =
       new Function<Job, JobInfo>() {
@@ -44,7 +41,17 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
           return JobInfo.fromPb(pb);
         }
       };
-  private static final long serialVersionUID = -7086529810736715842L;
+
+  private static final long serialVersionUID = -3272941007234620265L;
+
+  private final String etag;
+  private final String id;
+  private final JobId jobId;
+  private final String selfLink;
+  private final JobStatus status;
+  private final JobStatistics statistics;
+  private final String userEmail;
+  private final JobConfiguration configuration;
 
   /**
    * Specifies whether the job is allowed to create new tables.
@@ -81,35 +88,57 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
     WRITE_EMPTY
   }
 
-  private final String etag;
-  private final String id;
-  private final JobId jobId;
-  private final String selfLink;
-  private final JobStatus status;
-  private final S statistics;
-  private final String userEmail;
-
   /**
-   * Base builder for jobs.
-   *
-   * @param <T> the job type
-   * @param <S> the job statistics type
-   * @param <B> the job builder
+   * A builder for {@code JobInfo} objects.
    */
-  public abstract static class Builder<T extends JobInfo, S extends JobStatistics,
-      B extends Builder<T, S, B>> {
+  public abstract static class Builder {
+
+    abstract Builder etag(String etag);
+
+    abstract Builder id(String id);
+
+    /**
+     * Sets the job identity.
+     */
+    public abstract Builder jobId(JobId jobId);
+
+    abstract Builder selfLink(String selfLink);
+
+    abstract Builder status(JobStatus status);
+
+    abstract Builder statistics(JobStatistics statistics);
+
+    abstract Builder userEmail(String userEmail);
+
+    /**
+     * Sets a configuration for the {@code JobInfo} object. Use {@link CopyJobConfiguration} for a
+     * job that copies an existing table. Use {@link ExtractJobConfiguration} for a job that exports
+     * a table to Google Cloud Storage. Use {@link LoadJobConfiguration} for a job that loads data
+     * from Google Cloud Storage into a table. Use {@link QueryJobConfiguration} for a job that runs
+     * a query.
+     */
+    public abstract Builder configuration(JobConfiguration configuration);
+
+    /**
+     * Creates a {@code JobInfo} object.
+     */
+    public abstract JobInfo build();
+  }
+
+  static final class BuilderImpl extends Builder {
 
     private String etag;
     private String id;
     private JobId jobId;
     private String selfLink;
     private JobStatus status;
-    private S statistics;
+    private JobStatistics statistics;
     private String userEmail;
+    private JobConfiguration configuration;
 
-    protected Builder() {}
+    BuilderImpl() {}
 
-    protected Builder(JobInfo<S> jobInfo) {
+    BuilderImpl(JobInfo jobInfo) {
       this.etag = jobInfo.etag;
       this.id = jobInfo.id;
       this.jobId = jobInfo.jobId;
@@ -117,10 +146,10 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
       this.status = jobInfo.status;
       this.statistics = jobInfo.statistics;
       this.userEmail = jobInfo.userEmail;
-
+      this.configuration = jobInfo.configuration;
     }
 
-    protected Builder(Job jobPb) {
+    BuilderImpl(Job jobPb) {
       this.etag = jobPb.getEtag();
       this.id = jobPb.getId();
       if (jobPb.getJobReference() != null) {
@@ -134,55 +163,64 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
         this.statistics = JobStatistics.fromPb(jobPb.getStatistics());
       }
       this.userEmail = jobPb.getUserEmail();
+      this.configuration = JobConfiguration.fromPb(jobPb.getConfiguration());
     }
 
-    @SuppressWarnings("unchecked")
-    protected B self() {
-      return (B) this;
-    }
-
-    B etag(String etag) {
+    @Override
+    Builder etag(String etag) {
       this.etag = etag;
-      return self();
+      return this;
     }
 
-    B id(String id) {
+    @Override
+    Builder id(String id) {
       this.id = id;
-      return self();
+      return this;
     }
 
-    /**
-     * Sets the job identity.
-     */
-    public B jobId(JobId jobId) {
+    @Override
+    public Builder jobId(JobId jobId) {
       this.jobId = jobId;
-      return self();
+      return this;
     }
 
-    B selfLink(String selfLink) {
+    @Override
+    Builder selfLink(String selfLink) {
       this.selfLink = selfLink;
-      return self();
+      return this;
     }
 
-    B status(JobStatus status) {
+    @Override
+    Builder status(JobStatus status) {
       this.status = status;
-      return self();
+      return this;
     }
 
-    B statistics(S statistics) {
+    @Override
+    Builder statistics(JobStatistics statistics) {
       this.statistics = statistics;
-      return self();
+      return this;
     }
 
-    B userEmail(String userEmail) {
+    @Override
+    Builder userEmail(String userEmail) {
       this.userEmail = userEmail;
-      return self();
+      return this;
     }
 
-    public abstract T build();
+    @Override
+    public Builder configuration(JobConfiguration configuration) {
+      this.configuration = configuration;
+      return this;
+    }
+
+    @Override
+    public JobInfo build() {
+      return new JobInfo(this);
+    }
   }
 
-  protected JobInfo(Builder<? extends JobInfo, ? extends S, ?> builder) {
+  JobInfo(BuilderImpl builder) {
     this.jobId = builder.jobId;
     this.etag = builder.etag;
     this.id = builder.id;
@@ -190,6 +228,7 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
     this.status = builder.status;
     this.statistics = builder.statistics;
     this.userEmail = builder.userEmail;
+    this.configuration = builder.configuration;
   }
 
   /**
@@ -232,8 +271,9 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
   /**
    * Returns information about the job, including starting time and ending time of the job.
    */
-  public S statistics() {
-    return statistics;
+  @SuppressWarnings("unchecked")
+  public <S extends JobStatistics> S statistics() {
+    return (S) statistics;
   }
 
   /**
@@ -244,11 +284,22 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
   }
 
   /**
-   * Returns a builder for the job.
+   * Returns the job's configuration.
    */
-  public abstract Builder toBuilder();
+  @SuppressWarnings("unchecked")
+  public <C extends JobConfiguration> C configuration() {
+    return (C) configuration;
+  }
 
-  ToStringHelper toStringHelper() {
+  /**
+   * Returns a builder for the job object.
+   */
+  public Builder toBuilder() {
+    return new BuilderImpl(this);
+  }
+
+  @Override
+  public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("job", jobId)
         .add("status", status)
@@ -256,12 +307,9 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
         .add("userEmail", userEmail)
         .add("etag", etag)
         .add("id", id)
-        .add("selfLink", selfLink);
-  }
-
-  @Override
-  public String toString() {
-    return toStringHelper().toString();
+        .add("selfLink", selfLink)
+        .add("configuration", configuration)
+        .toString();
   }
 
   @Override
@@ -271,7 +319,11 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof JobInfo && Objects.equals(toPb(), ((JobInfo) obj).toPb());
+    return obj.getClass().equals(JobInfo.class) && Objects.equals(toPb(), ((JobInfo) obj).toPb());
+  }
+
+  JobInfo setProjectId(String projectId) {
+    return toBuilder().configuration(configuration.setProjectId(projectId)).build();
   }
 
   Job toPb() {
@@ -289,22 +341,44 @@ public abstract class JobInfo<S extends JobStatistics> implements Serializable {
     if (statistics != null) {
       jobPb.setStatistics(statistics.toPb());
     }
+    jobPb.setConfiguration(configuration.toPb());
     return jobPb;
   }
 
-  @SuppressWarnings("unchecked")
-  static <T extends JobInfo> T fromPb(Job jobPb) {
-    if (jobPb.getConfiguration().getLoad() != null) {
-      return (T) LoadJobInfo.fromPb(jobPb);
-    } else if (jobPb.getConfiguration().getCopy() != null) {
-      return (T) CopyJobInfo.fromPb(jobPb);
-    } else if (jobPb.getConfiguration().getExtract() != null) {
-      return (T) ExtractJobInfo.fromPb(jobPb);
-    } else  if (jobPb.getConfiguration().getQuery() != null) {
-      return (T) QueryJobInfo.fromPb(jobPb);
-    } else {
-      // never reached
-      throw new IllegalArgumentException("Job configuration is not supported");
-    }
+  /**
+   * Returns a builder for a {@code JobInfo} object given the job configuration. Use
+   * {@link CopyJobConfiguration} for a job that copies an existing table. Use
+   * {@link ExtractJobConfiguration} for a job that exports a table to Google Cloud Storage. Use
+   * {@link LoadJobConfiguration} for a job that loads data from Google Cloud Storage into a table.
+   * Use {@link QueryJobConfiguration} for a job that runs a query.
+   */
+  public static Builder builder(JobConfiguration configuration) {
+    return new BuilderImpl().configuration(configuration);
+  }
+
+  /**
+   * Returns a {@code JobInfo} object given the job configuration. Use {@link CopyJobConfiguration}
+   * for a job that copies an existing table. Use {@link ExtractJobConfiguration} for a job that
+   * exports a table to Google Cloud Storage. Use {@link LoadJobConfiguration} for a job that loads
+   * data from Google Cloud Storage into a table. Use {@link QueryJobConfiguration} for a job that
+   * runs a query.
+   */
+  public static JobInfo of(JobConfiguration configuration) {
+    return builder(configuration).build();
+  }
+
+  /**
+   * Returns a builder for a {@code JobInfo} object given the job identity and configuration. Use
+   * {@link CopyJobConfiguration} for a job that copies an existing table. Use
+   * {@link ExtractJobConfiguration} for a job that exports a table to Google Cloud Storage. Use
+   * {@link LoadJobConfiguration} for a job that loads data from Google Cloud Storage into a table.
+   * Use {@link QueryJobConfiguration} for a job that runs a query.
+   */
+  public static JobInfo of(JobId jobId, JobConfiguration configuration) {
+    return builder(configuration).jobId(jobId).build();
+  }
+
+  static JobInfo fromPb(Job jobPb) {
+    return new BuilderImpl(jobPb).build();
   }
 }
