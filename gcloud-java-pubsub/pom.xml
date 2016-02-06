@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-pubsub</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java Pub/Sub</name>
@@ -11,7 +10,7 @@
   <parent>
     <groupId>com.google.gcloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.0.11-SNAPSHOT</version>
+    <version>0.1.4-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-pubsub</site.installationModule>
@@ -39,6 +38,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <profiles>
+    <profile>
+      <id>doclint-java8-disable</id>
+      <activation>
+        <jdk>[1.8,)</jdk>
+      </activation>
+      <properties>
+        <!-- add this to disable checking -->
+        <javadoc.opts>-Xdoclint:none</javadoc.opts>
+      </properties>
+    </profile>
+  </profiles>
   <build>
     <plugins>
       <plugin>
@@ -53,6 +64,22 @@
               <sources>
                 <source>generated/src/main/java</source>
               </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.3</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <additionalparam>${javadoc.opts}</additionalparam>
             </configuration>
           </execution>
         </executions>

@@ -54,7 +54,7 @@ public class IncompleteKey extends BaseKey {
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(DatastoreV1.Key.parseFrom(bytesPb));
   }
 

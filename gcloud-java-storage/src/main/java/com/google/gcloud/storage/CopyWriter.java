@@ -55,8 +55,8 @@ public class CopyWriter implements Restorable<CopyWriter> {
   /**
    * Returns the updated information for the written blob. Calling this method when {@code isDone()}
    * is {@code false} will block until all pending chunks are copied.
-   * <p>
-   * This method has the same effect of doing:
+   *
+   * <p>This method has the same effect of doing:
    * <pre>    {@code while (!copyWriter.isDone()) {
    *        copyWriter.copyChunk();
    *    }}
@@ -79,14 +79,14 @@ public class CopyWriter implements Restorable<CopyWriter> {
   }
 
   /**
-   * Returns {@code true} of blob rewrite finished, {@code false} otherwise.
+   * Returns {@code true} if blob copy has finished, {@code false} otherwise.
    */
   public boolean isDone() {
     return rewriteResponse.isDone;
   }
 
   /**
-   * Returns the number of bytes copied. 
+   * Returns the number of bytes copied.
    */
   public long totalBytesCopied() {
     return rewriteResponse.totalBytesRewritten;

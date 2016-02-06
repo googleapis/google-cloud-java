@@ -17,12 +17,11 @@
 /**
  * A client to Google Cloud Storage.
  *
- * <p>A simple usage example:
- * <pre>{@code
- * StorageOptions options = StorageOptions.builder().projectId("project").build();
- * Storage storage = options.service();
+ * <p>Here's a simple usage example for using gcloud-java from App/Compute Engine:
+ * <pre> {@code
+ * Storage storage = StorageOptions.defaultInstance().service();
  * BlobId blobId = BlobId.of("bucket", "blob_name");
- * Blob blob = Blob.load(storage, blobId);
+ * Blob blob = Blob.get(storage, blobId);
  * if (blob == null) {
  *   BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
  *   storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
@@ -35,6 +34,11 @@
  *   channel.close();
  * }}</pre>
  *
+ * <p>When using gcloud-java from outside of App/Compute Engine, you have to <a
+ * href="https://github.com/GoogleCloudPlatform/gcloud-java#specifying-a-project-id">specify a
+ * project ID</a> and
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java#authentication">provide
+ * credentials</a>.
  * @see <a href="https://cloud.google.com/storage/">Google Cloud Storage</a>
  */
 package com.google.gcloud.storage;

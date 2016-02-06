@@ -31,7 +31,7 @@ import java.util.Objects;
 /**
  * Base class for keys.
  */
-abstract class BaseKey extends Serializable<DatastoreV1.Key> {
+public abstract class BaseKey extends Serializable<DatastoreV1.Key> {
 
   private static final long serialVersionUID = -4671243265877410635L;
 
@@ -39,7 +39,12 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
   private final transient String namespace;
   private final transient ImmutableList<PathElement> path;
 
-  abstract static class Builder<B extends Builder<B>> {
+  /**
+   * Base class for key builders.
+   *
+   * @param <B> the key builder.
+   */
+  protected abstract static class Builder<B extends Builder<B>> {
 
     String projectId;
     String namespace;
@@ -172,7 +177,7 @@ abstract class BaseKey extends Serializable<DatastoreV1.Key> {
   }
 
   @Override
-  protected DatastoreV1.Key toPb() {
+  DatastoreV1.Key toPb() {
     DatastoreV1.Key.Builder keyPb = DatastoreV1.Key.newBuilder();
     DatastoreV1.PartitionId.Builder partitionIdPb = DatastoreV1.PartitionId.newBuilder();
     if (projectId != null) {

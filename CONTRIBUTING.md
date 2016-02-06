@@ -15,6 +15,22 @@ Using maven for build/test
 After you cloned the repository use Maven for building and running the tests.
 Maven 3.0+ is required.
 
+When downloading the source, we recommend you obtain service account credentials. 
+These credentials will allow you to run integration tests using `mvn verify` in command line. 
+Follow step 2 of the [authentication instructions](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) to generate and use JSON service account credentials.
+
+It's also important to test that changes don't break compatibility with App/Compute Engine and when running elsewhere. 
+To run tests on different platforms, try deploying the apps available on the [gcloud-java-examples](https://github.com/GoogleCloudPlatform/gcloud-java-examples) repository. 
+End-to-end tests should ensure that gcloud-java works when running on the
+
+* App Engine production environment (see the docs for [uploading your app to production App Engine](https://cloud.google.com/appengine/docs/java/tools/maven#uploading_your_app_to_production_app_engine))
+* App Engine development server (see the docs for [testing your app with the development server](https://cloud.google.com/appengine/docs/java/tools/maven#testing_your_app_with_the_development_server))
+* Compute Engine (see the [Getting Started Guide](https://cloud.google.com/compute/docs/quickstart), and be sure to [enable the appropriate APIs](https://github.com/GoogleCloudPlatform/gcloud-common/tree/master/authentication#on-google-compute-engine))
+* Your desktop (using `mvn exec:java`, for example)
+
+When changes are made to authentication and project ID-related code, authentication and project ID inference should be tested using all relevant methods detailed in the [authentication docs](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) and [project ID docs](https://github.com/GoogleCloudPlatform/gcloud-java#specifying-a-project-id).
+
+Known issue: If you have installed the Google Cloud SDK, be sure to log in (using `gcloud auth login`) before running tests. Though the Datastore tests use a local Datastore emulator that doesn't require authentication, they will not run if you have the Google Cloud SDK installed but aren't authenticated.
 
 Adding Features
 ---------------

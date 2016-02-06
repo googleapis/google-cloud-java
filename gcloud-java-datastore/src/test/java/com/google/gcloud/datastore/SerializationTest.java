@@ -143,8 +143,8 @@ public class SerializationTest {
 
     options = options.toBuilder()
         .namespace("ns1")
-        .retryParams(RetryParams.getDefaultInstance())
-        .authCredentials(AuthCredentials.noCredentials())
+        .retryParams(RetryParams.defaultInstance())
+        .authCredentials(null)
         .force(true)
         .build();
     serializedCopy = serializeAndDeserialize(options);

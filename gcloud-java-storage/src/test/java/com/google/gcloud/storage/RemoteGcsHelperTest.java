@@ -20,21 +20,18 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.Page;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import org.easymock.EasyMock;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -72,41 +69,38 @@ public class RemoteGcsHelperTest {
   private static final List<BlobInfo> BLOB_LIST = ImmutableList.of(
       BlobInfo.builder(BUCKET_NAME, "n1").build(),
       BlobInfo.builder(BUCKET_NAME, "n2").build());
-  private static final StorageException RETRYABLE_EXCEPTION = new StorageException(409, "", true);
-  private static final StorageException FATAL_EXCEPTION = new StorageException(500, "", false);
-  private static final ListResult<BlobInfo> BLOB_LIST_RESULT = new ListResult<BlobInfo>() {
+  private static final StorageException RETRYABLE_EXCEPTION = new StorageException(409, "");
+  private static final StorageException FATAL_EXCEPTION = new StorageException(500, "");
+  private static final Page<BlobInfo> BLOB_PAGE = new Page<BlobInfo>() {
 
     @Override
     public String nextPageCursor() {
-      return "listResult";
+      return "nextPageCursor";
     }
 
     @Override
-    public ListResult<BlobInfo> nextPage() {
+    public Page<BlobInfo> nextPage() {
       return null;
     }
 
     @Override
-    public Iterator<BlobInfo> iterator() {
+    public Iterable<BlobInfo> values() {
+      return BLOB_LIST;
+    }
+
+    @Override
+    public Iterator<BlobInfo> iterateAll() {
       return BLOB_LIST.iterator();
     }
   };
-  private static String keyPath = "/does/not/exist/key." + UUID.randomUUID().toString() + ".json";
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
-  @BeforeClass
-  public static void beforeClass() {
-    while (Files.exists(Paths.get(JSON_KEY))) {
-      keyPath = "/does/not/exist/key." + UUID.randomUUID().toString() + ".json";
-    }
-  }
-
   @Test
   public void testForceDelete() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_LIST_RESULT);
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
     for (BlobInfo info : BLOB_LIST) {
       EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
     }
@@ -119,7 +113,7 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteTimeout() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_LIST_RESULT).anyTimes();
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE).anyTimes();
     for (BlobInfo info : BLOB_LIST) {
       EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true).anyTimes();
     }
@@ -132,7 +126,7 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteFail() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_LIST_RESULT);
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
     for (BlobInfo info : BLOB_LIST) {
       EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
     }
@@ -147,23 +141,46 @@ public class RemoteGcsHelperTest {
   }
 
   @Test
+  public void testForceDeleteNoTimeout() {
+    Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
+    for (BlobInfo info : BLOB_LIST) {
+      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
+    }
+    EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
+    EasyMock.replay(storageMock);
+    RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME);
+    EasyMock.verify(storageMock);
+  }
+
+  @Test
+  public void testForceDeleteNoTimeoutFail() {
+    Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
+    for (BlobInfo info : BLOB_LIST) {
+      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
+    }
+    EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(FATAL_EXCEPTION);
+    EasyMock.replay(storageMock);
+    thrown.expect(StorageException.class);
+    try {
+      RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME);
+    } finally {
+      EasyMock.verify(storageMock);
+    }
+  }
+
+  @Test
   public void testCreateFromStream() {
     RemoteGcsHelper helper = RemoteGcsHelper.create(PROJECT_ID, JSON_KEY_STREAM);
     StorageOptions options = helper.options();
     assertEquals(PROJECT_ID, options.projectId());
     assertEquals(60000, options.connectTimeout());
     assertEquals(60000, options.readTimeout());
-    assertEquals(10, options.retryParams().getRetryMaxAttempts());
-    assertEquals(6, options.retryParams().getRetryMinAttempts());
-    assertEquals(30000, options.retryParams().getMaxRetryDelayMillis());
-    assertEquals(120000, options.retryParams().getTotalRetryPeriodMillis());
-    assertEquals(250, options.retryParams().getInitialRetryDelayMillis());
-  }
-
-  @Test
-  public void testCreateNoKey() {
-    thrown.expect(RemoteGcsHelper.GcsHelperException.class);
-    thrown.expectMessage(keyPath + " (No such file or directory)");
-    RemoteGcsHelper.create(PROJECT_ID, keyPath);
+    assertEquals(10, options.retryParams().retryMaxAttempts());
+    assertEquals(6, options.retryParams().retryMinAttempts());
+    assertEquals(30000, options.retryParams().maxRetryDelayMillis());
+    assertEquals(120000, options.retryParams().totalRetryPeriodMillis());
+    assertEquals(250, options.retryParams().initialRetryDelayMillis());
   }
 }

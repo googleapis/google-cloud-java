@@ -47,7 +47,8 @@ public interface StorageRpc {
     MAX_RESULTS("maxResults"),
     PAGE_TOKEN("pageToken"),
     DELIMITER("delimiter"),
-    VERSIONS("versions");
+    VERSIONS("versions"),
+    FIELDS("fields");
 
     private final String value;
 
@@ -226,8 +227,18 @@ public interface StorageRpc {
   Tuple<String, Iterable<StorageObject>> list(String bucket, Map<Option, ?> options)
       throws StorageException;
 
+  /**
+   * Returns the requested bucket or {@code null} if not found.
+   *
+   * @throws StorageException upon failure
+   */
   Bucket get(Bucket bucket, Map<Option, ?> options) throws StorageException;
 
+  /**
+   * Returns the requested storage object or {@code null} if not found.
+   *
+   * @throws StorageException upon failure
+   */
   StorageObject get(StorageObject object, Map<Option, ?> options)
       throws StorageException;
 
@@ -248,13 +259,13 @@ public interface StorageRpc {
   byte[] load(StorageObject storageObject, Map<Option, ?> options)
       throws StorageException;
 
-  byte[] read(StorageObject from, Map<Option, ?> options, long position, int bytes)
+  Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position, int bytes)
       throws StorageException;
 
   String open(StorageObject object, Map<Option, ?> options) throws StorageException;
 
-  void write(String uploadId, byte[] toWrite, int toWriteOffset, StorageObject dest,
-      long destOffset, int length, boolean last) throws StorageException;
+  void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+      boolean last) throws StorageException;
 
   RewriteResponse openRewrite(RewriteRequest rewriteRequest) throws StorageException;
 
