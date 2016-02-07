@@ -37,7 +37,7 @@ public class DnsOptions
     @Override
     public Dns create(DnsOptions options) {
       // TODO(mderka) Implement when DnsImpl is available. Created issue #595.
-      return null;
+      return new DnsImpl(options);
     }
   }
 

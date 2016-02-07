@@ -36,7 +36,7 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a project.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#getProjectInfo(ProjectOption...)}. Project ID is always returned, even if not
+   * {@link Dns#getProject(ProjectOption...)}. Project ID is always returned, even if not
    * specified.
    */
   enum ProjectField {
@@ -429,7 +429,7 @@ public interface Dns extends Service<DnsOptions> {
    * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/create">Cloud DNS Managed Zones:
    * create</a>
    */
-  ZoneInfo create(ZoneInfo zoneInfo, ZoneOption... options);
+  Zone create(ZoneInfo zoneInfo, ZoneOption... options);
 
   /**
    * Returns the zone by the specified zone name. Returns {@code null} if the zone is not found. The
@@ -485,7 +485,7 @@ public interface Dns extends Service<DnsOptions> {
    * @throws DnsException upon failure
    * @see <a href="https://cloud.google.com/dns/api/v1/projects/get">Cloud DNS Projects: get</a>
    */
-  ProjectInfo getProjectInfo(ProjectOption... fields);
+  ProjectInfo getProject(ProjectOption... fields);
 
   /**
    * Submits a change request for the specified zone. The returned object contains the following

@@ -17,6 +17,8 @@
 package com.google.gcloud.dns;
 
 import com.google.gcloud.BaseServiceException;
+import com.google.gcloud.RetryHelper.RetryHelperException;
+import com.google.gcloud.RetryHelper.RetryInterruptedException;
 
 import java.io.IOException;
 
@@ -29,6 +31,22 @@ public class DnsException extends BaseServiceException {
 
   public DnsException(IOException exception) {
     super(exception, true);
+  }
+
+  public DnsException(int code, String message) {
+    super(code, message, null, true);
+  }
+
+  /**
+   * Translate RetryHelperException to the DnsException that caused the error. This method will
+   * always throw an exception.
+   *
+   * @throws DnsException when {@code ex} was caused by a {@code DnsException}
+   * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
+   */
+  static DnsException translateAndThrow(RetryHelperException ex) {
+    BaseServiceException.translateAndPropagateIfPossible(ex);
+    throw new DnsException(UNKNOWN_CODE, ex.getMessage());
   }
 
   //TODO(mderka) Add translation and retry functionality. Created issue #593.
