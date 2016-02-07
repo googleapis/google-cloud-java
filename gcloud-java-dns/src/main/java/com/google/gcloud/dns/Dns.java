@@ -439,7 +439,7 @@ public interface Dns extends Service<DnsOptions> {
    * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/get">Cloud DNS Managed Zones:
    * get</a>
    */
-  ZoneInfo getZone(String zoneName, ZoneOption... options);
+  Zone getZone(String zoneName, ZoneOption... options);
 
   /**
    * Lists the zones inside the project.

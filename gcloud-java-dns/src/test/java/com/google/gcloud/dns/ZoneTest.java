@@ -22,23 +22,27 @@ import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.math.BigInteger;
+
 public class ZoneTest {
 
   private static final String ZONE_NAME = "dns-zone-name";
   private static final String ZONE_ID = "123";
-  private static final ZoneInfo ZONE_INFO = ZoneInfo.builder(ZONE_NAME)
+  private static final ZoneInfo ZONE_INFO = Zone.builder(ZONE_NAME)
       .id(ZONE_ID)
       .dnsName("example.com")
       .creationTimeMillis(123478946464L)
@@ -80,20 +84,19 @@ public class ZoneTest {
   @Test
   public void testConstructor() {
     replay(dns);
-    assertNotNull(zone.info());
-    assertEquals(ZONE_INFO, zone.info());
+    assertEquals(ZONE_INFO.toPb(), zone.toPb());
     assertNotNull(zone.dns());
     assertEquals(dns, zone.dns());
   }
 
   @Test
   public void testGetByName() {
-    expect(dns.getZone(ZONE_NAME)).andReturn(ZONE_INFO);
-    expect(dns.getZone(ZONE_NAME, ZONE_FIELD_OPTIONS)).andReturn(ZONE_INFO); // for options
+    expect(dns.getZone(ZONE_NAME)).andReturn(zone);
+    expect(dns.getZone(ZONE_NAME, ZONE_FIELD_OPTIONS)).andReturn(zone); // for options
     replay(dns);
     Zone retrieved = Zone.get(dns, ZONE_NAME);
     assertSame(dns, retrieved.dns());
-    assertEquals(ZONE_INFO, retrieved.info());
+    assertEquals(zone, retrieved);
     // test passing options
     Zone.get(dns, ZONE_NAME, ZONE_FIELD_OPTIONS);
     try {
@@ -188,18 +191,18 @@ public class ZoneTest {
 
   @Test
   public void reloadByNameAndFound() {
-    expect(dns.getZone(ZONE_NAME)).andReturn(zoneNoId.info());
-    expect(dns.getZone(ZONE_NAME)).andReturn(zone.info());
+    expect(dns.getZone(ZONE_NAME)).andReturn(zone);
+    expect(dns.getZone(ZONE_NAME)).andReturn(zone);
     // again for options
-    expect(dns.getZone(ZONE_NAME, ZONE_FIELD_OPTIONS)).andReturn(zoneNoId.info());
-    expect(dns.getZone(ZONE_NAME, ZONE_FIELD_OPTIONS)).andReturn(zone.info());
+    expect(dns.getZone(ZONE_NAME, ZONE_FIELD_OPTIONS)).andReturn(zoneNoId);
+    expect(dns.getZone(ZONE_NAME, ZONE_FIELD_OPTIONS)).andReturn(zone);
     replay(dns);
     Zone result = zoneNoId.reload();
-    assertSame(zoneNoId.dns(), result.dns());
-    assertEquals(zoneNoId.info(), result.info());
+    assertSame(zone.dns(), result.dns());
+    assertEquals(zone, result);
     result = zone.reload();
     assertSame(zone.dns(), result.dns());
-    assertEquals(zone.info(), result.info());
+    assertEquals(zone, result);
     zoneNoId.reload(ZONE_FIELD_OPTIONS); // check options
     zone.reload(ZONE_FIELD_OPTIONS); // check options
   }
@@ -498,5 +501,37 @@ public class ZoneTest {
     } catch (DnsException e) {
       // expected
     }
+  }
+
+  @Test
+  public void testFromPb() {
+    replay(dns);
+    assertEquals(Zone.fromPb(dns, zone.toPb()), zone);
+  }
+
+  @Test
+  public void testEqualsAndToBuilder() {
+    replay(dns);
+    assertEquals(zone, zone.toBuilder().build());
+  }
+
+  @Test
+  public void testBuilder() {
+    replay(dns);
+    assertNotEquals(zone, zone.toBuilder()
+        .id((new BigInteger(zone.id())).add(BigInteger.ONE).toString())
+        .build());
+    assertNotEquals(zone, zone.toBuilder().dnsName(zone.name() + "aaaa").build());
+    assertNotEquals(zone, zone.toBuilder().nameServerSet(zone.nameServerSet() + "aaaa").build());
+    assertNotEquals(zone, zone.toBuilder().nameServers(ImmutableList.of("nameserverpppp")).build());
+    assertNotEquals(zone, zone.toBuilder().dnsName(zone.dnsName() + "aaaa").build());
+    assertNotEquals(zone, zone.toBuilder().creationTimeMillis(zone.creationTimeMillis() + 1)
+        .build());
+    Zone.Builder builder = zone.toBuilder();
+    builder.id(ZONE_ID)
+        .dnsName("example.com")
+        .creationTimeMillis(123478946464L)
+        .build();
+    assertEquals(zone, builder.build());
   }
 }
