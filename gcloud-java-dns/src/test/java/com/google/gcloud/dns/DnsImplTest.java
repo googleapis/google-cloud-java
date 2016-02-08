@@ -136,8 +136,8 @@ public class DnsImplTest {
         .andReturn(ZONE_INFO.toPb());
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    ZoneInfo zoneInfo = dns.create(ZONE_INFO);
-    assertEquals(ZONE_INFO, zoneInfo);
+    Zone zone = dns.create(ZONE_INFO);
+    assertEquals(new Zone(dns, ZONE_INFO), zone);
   }
 
   @Test
@@ -149,7 +149,7 @@ public class DnsImplTest {
     dns = options.service(); // creates DnsImpl
     Zone zone = dns.create(ZONE_INFO, ZONE_FIELDS);
     String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.rpcOption());
-    assertEquals(ZONE_INFO, zone);
+    assertEquals(new Zone(dns, ZONE_INFO), zone);
     assertTrue(selector.contains(Dns.ZoneField.CREATION_TIME.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
   }
@@ -160,8 +160,8 @@ public class DnsImplTest {
         .andReturn(ZONE_INFO.toPb());
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    ZoneInfo zoneInfo = dns.getZone(ZONE_INFO.name());
-    assertEquals(ZONE_INFO, zoneInfo);
+    Zone zone = dns.getZone(ZONE_INFO.name());
+    assertEquals(new Zone(dns, ZONE_INFO), zone);
   }
 
   @Test
@@ -171,9 +171,9 @@ public class DnsImplTest {
         EasyMock.capture(capturedOptions))).andReturn(ZONE_INFO.toPb());
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    ZoneInfo zoneInfo = dns.getZone(ZONE_INFO.name(), ZONE_FIELDS);
+    Zone zone = dns.getZone(ZONE_INFO.name(), ZONE_FIELDS);
     String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.rpcOption());
-    assertEquals(ZONE_INFO, zoneInfo);
+    assertEquals(new Zone(dns, ZONE_INFO), zone);
     assertTrue(selector.contains(Dns.ZoneField.CREATION_TIME.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
   }
@@ -308,7 +308,7 @@ public class DnsImplTest {
     dns = options.service(); // creates DnsImpl
     Page<Zone> zonePage = dns.listZones();
     assertEquals(1, Lists.newArrayList(zonePage.values()).size());
-    assertEquals(ZONE_INFO, Lists.newArrayList(zonePage.values()).get(0));
+    assertEquals(new Zone(dns, ZONE_INFO), Lists.newArrayList(zonePage.values()).get(0));
   }
 
   @Test
@@ -320,7 +320,7 @@ public class DnsImplTest {
     dns = options.service(); // creates DnsImpl
     Page<Zone> zonePage = dns.listZones(ZONE_LIST_OPTIONS);
     assertEquals(1, Lists.newArrayList(zonePage.values()).size());
-    assertEquals(ZONE_INFO, Lists.newArrayList(zonePage.values()).get(0));
+    assertEquals(new Zone(dns, ZONE_INFO), Lists.newArrayList(zonePage.values()).get(0));
     Integer size = (Integer) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[0].rpcOption());
     assertEquals(MAX_SIZE, size);
     String selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[1].rpcOption());

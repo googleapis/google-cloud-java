@@ -27,7 +27,6 @@ import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -97,14 +96,14 @@ public class ZoneInfo implements Serializable {
     public abstract ZoneInfo build();
   }
 
-  public static class BuilderImpl extends Builder {
+  static class BuilderImpl extends Builder {
     private String name;
     private String id;
     private Long creationTimeMillis;
     private String dnsName;
     private String description;
     private String nameServerSet;
-    private List<String> nameServers = new LinkedList<>();
+    private List<String> nameServers;
 
     private BuilderImpl(String name) {
       this.name = checkNotNull(name);
@@ -120,7 +119,9 @@ public class ZoneInfo implements Serializable {
       this.dnsName = info.dnsName;
       this.description = info.description;
       this.nameServerSet = info.nameServerSet;
-      this.nameServers.addAll(info.nameServers);
+      if (info.nameServers != null) {
+        this.nameServers = ImmutableList.copyOf(info.nameServers);
+      }
     }
 
     @Override
@@ -179,7 +180,8 @@ public class ZoneInfo implements Serializable {
     this.dnsName = builder.dnsName;
     this.description = builder.description;
     this.nameServerSet = builder.nameServerSet;
-    this.nameServers = ImmutableList.copyOf(builder.nameServers);
+    this.nameServers = builder.nameServers == null
+        ? null : ImmutableList.copyOf(builder.nameServers);
   }
 
   /**
@@ -236,7 +238,7 @@ public class ZoneInfo implements Serializable {
    * The nameservers that the zone should be delegated to. This is defined by the Google DNS cloud.
    */
   public List<String> nameServers() {
-    return nameServers;
+    return nameServers == null ? ImmutableList.<String>of() : nameServers;
   }
 
   /**
@@ -255,7 +257,7 @@ public class ZoneInfo implements Serializable {
       pb.setId(new BigInteger(this.id()));
     }
     pb.setName(this.name());
-    pb.setNameServers(this.nameServers());
+    pb.setNameServers(this.nameServers); // do use real attribute value which may be null
     pb.setNameServerSet(this.nameServerSet());
     if (this.creationTimeMillis() != null) {
       pb.setCreationTime(ISODateTimeFormat.dateTime()
@@ -290,7 +292,8 @@ public class ZoneInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ZoneInfo && Objects.equals(toPb(), ((ZoneInfo) obj).toPb());
+    return obj != null && obj.getClass().equals(ZoneInfo.class)
+        && Objects.equals(toPb(), ((ZoneInfo) obj).toPb());
   }
 
   @Override

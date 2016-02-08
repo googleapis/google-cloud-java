@@ -19,6 +19,7 @@ package com.google.gcloud.dns;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.reset;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -64,16 +65,22 @@ public class ZoneTest {
       .startTimeMillis(123465L).build();
   private static final ChangeRequest CHANGE_REQUEST_NO_ID = ChangeRequest.builder().build();
   private static final DnsException EXCEPTION = createStrictMock(DnsException.class);
+  private static final DnsOptions OPTIONS = createStrictMock(DnsOptions.class);
 
   private Dns dns;
   private Zone zone;
   private Zone zoneNoId;
 
+
   @Before
   public void setUp() throws Exception {
     dns = createStrictMock(Dns.class);
+    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS);
+    replay(dns);
     zone = new Zone(dns, ZONE_INFO);
     zoneNoId = new Zone(dns, NO_ID_INFO);
+    reset(dns);
   }
 
   @After
@@ -347,13 +354,13 @@ public class ZoneTest {
         .andThrow(EXCEPTION);
     replay(dns);
     try {
-      ChangeRequest result = zoneNoId.getChangeRequest(CHANGE_REQUEST.id());
+      zoneNoId.getChangeRequest(CHANGE_REQUEST.id());
       fail("Parent container not found, should throw an exception.");
     } catch (DnsException e) {
       // expected
     }
     try {
-      ChangeRequest result = zone.getChangeRequest(CHANGE_REQUEST.id());
+      zone.getChangeRequest(CHANGE_REQUEST.id());
       fail("Parent container not found, should throw an exception.");
     } catch (DnsException e) {
       // expected
@@ -505,18 +512,31 @@ public class ZoneTest {
 
   @Test
   public void testFromPb() {
+    expect(dns.options()).andReturn(OPTIONS);
     replay(dns);
     assertEquals(Zone.fromPb(dns, zone.toPb()), zone);
   }
 
   @Test
   public void testEqualsAndToBuilder() {
+    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS);
     replay(dns);
     assertEquals(zone, zone.toBuilder().build());
+    assertEquals(zone.hashCode(), zone.toBuilder().build().hashCode());
   }
 
   @Test
   public void testBuilder() {
+    // one for each build() call because it invokes a constructor
+    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS);
     replay(dns);
     assertNotEquals(zone, zone.toBuilder()
         .id((new BigInteger(zone.id())).add(BigInteger.ONE).toString())

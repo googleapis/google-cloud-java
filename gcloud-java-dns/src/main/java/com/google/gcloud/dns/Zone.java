@@ -20,6 +20,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.gcloud.Page;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.List;
 import java.util.Objects;
 
@@ -36,7 +38,8 @@ import java.util.Objects;
  */
 public class Zone extends ZoneInfo {
 
-  private static final long serialVersionUID = 564454483894599281L;
+  private static final long serialVersionUID = -5817771337847861598L;
+  private final DnsOptions options;
   private transient Dns dns;
 
   /**
@@ -102,6 +105,7 @@ public class Zone extends ZoneInfo {
   Zone(Dns dns, ZoneInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.dns = dns;
+    this.options = dns.options();
   }
 
   @Override
@@ -115,6 +119,7 @@ public class Zone extends ZoneInfo {
   public Zone(Dns dns, ZoneInfo zoneInfo) {
     super(new BuilderImpl(zoneInfo));
     this.dns = dns;
+    this.options = dns.options();
   }
 
   /**
@@ -215,12 +220,18 @@ public class Zone extends ZoneInfo {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof Zone && Objects.equals(toPb(), ((Zone) obj).toPb());
+    return obj instanceof Zone && Objects.equals(toPb(), ((Zone) obj).toPb())
+        && Objects.equals(options, ((Zone) obj).options);
   }
 
   @Override
   public int hashCode() {
-    return super.hashCode();
+    return Objects.hash(super.hashCode(), options);
+  }
+
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+    this.dns = options.service();
   }
 
   static Zone fromPb(Dns dns, com.google.api.services.dns.model.ManagedZone zone) {
