@@ -419,7 +419,7 @@ public interface Dns extends Service<DnsOptions> {
   /**
    * Creates a new zone.
    *
-   * <p>Returns {@link ZoneInfo} object representing the new zone's information. In addition to the
+   * <p>Returns {@link Zone} object representing the new zone's information. In addition to the
    * name, dns name and description (supplied by the user within the {@code zoneInfo} parameter),
    * the returned object can include the following read-only fields supplied by the server: creation
    * time, id, and list of name servers. The returned fields can be optionally restricted by

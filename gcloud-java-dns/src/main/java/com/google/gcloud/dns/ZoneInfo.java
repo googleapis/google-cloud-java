@@ -81,7 +81,7 @@ public class ZoneInfo implements Serializable {
      * Optionally specifies the NameServerSet for this zone. A NameServerSet is a set of DNS name
      * servers that all host the same zones. Most users will not need to specify this value.
      */
-    public abstract Builder nameServerSet(String nameServerSet);
+    abstract Builder nameServerSet(String nameServerSet);
     // todo(mderka) add more to the doc when questions are answered by the service owner
 
     /**

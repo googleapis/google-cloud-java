@@ -81,20 +81,20 @@ public class DnsImplTest {
       Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS);
 
   // Listing options
-  private static final Dns.ZoneListOption[] ZONE_LIST_OPTIONS =
-      {Dns.ZoneListOption.pageSize(MAX_SIZE), Dns.ZoneListOption.pageToken(PAGE_TOKEN),
-          Dns.ZoneListOption.fields(Dns.ZoneField.DESCRIPTION)};
-  private static final Dns.ChangeRequestListOption[] CHANGE_LIST_OPTIONS =
-      {Dns.ChangeRequestListOption.pageSize(MAX_SIZE),
-          Dns.ChangeRequestListOption.pageToken(PAGE_TOKEN),
-          Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.STATUS),
-          Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING)};
-  private static final Dns.DnsRecordListOption[] DNS_RECORD_LIST_OPTIONS =
-      {Dns.DnsRecordListOption.pageSize(MAX_SIZE),
-          Dns.DnsRecordListOption.pageToken(PAGE_TOKEN),
-          Dns.DnsRecordListOption.fields(Dns.DnsRecordField.TTL),
-          Dns.DnsRecordListOption.dnsName(DNS_NAME),
-          Dns.DnsRecordListOption.type(DnsRecord.Type.AAAA)};
+  private static final Dns.ZoneListOption[] ZONE_LIST_OPTIONS = {
+      Dns.ZoneListOption.pageSize(MAX_SIZE), Dns.ZoneListOption.pageToken(PAGE_TOKEN),
+      Dns.ZoneListOption.fields(Dns.ZoneField.DESCRIPTION)};
+  private static final Dns.ChangeRequestListOption[] CHANGE_LIST_OPTIONS = {
+      Dns.ChangeRequestListOption.pageSize(MAX_SIZE),
+      Dns.ChangeRequestListOption.pageToken(PAGE_TOKEN),
+      Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.STATUS),
+      Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING)};
+  private static final Dns.DnsRecordListOption[] DNS_RECORD_LIST_OPTIONS = {
+      Dns.DnsRecordListOption.pageSize(MAX_SIZE),
+      Dns.DnsRecordListOption.pageToken(PAGE_TOKEN),
+      Dns.DnsRecordListOption.fields(Dns.DnsRecordField.TTL),
+      Dns.DnsRecordListOption.dnsName(DNS_NAME),
+      Dns.DnsRecordListOption.type(DnsRecord.Type.AAAA)};
 
   // Other
   private static final Map<DnsRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -137,7 +137,7 @@ public class DnsImplTest {
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
     Zone zone = dns.create(ZONE_INFO);
-    assertEquals(new Zone(dns, ZONE_INFO), zone);
+    assertEquals(new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO)), zone);
   }
 
   @Test
@@ -149,7 +149,7 @@ public class DnsImplTest {
     dns = options.service(); // creates DnsImpl
     Zone zone = dns.create(ZONE_INFO, ZONE_FIELDS);
     String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.rpcOption());
-    assertEquals(new Zone(dns, ZONE_INFO), zone);
+    assertEquals(new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO)), zone);
     assertTrue(selector.contains(Dns.ZoneField.CREATION_TIME.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
   }
@@ -161,7 +161,7 @@ public class DnsImplTest {
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
     Zone zone = dns.getZone(ZONE_INFO.name());
-    assertEquals(new Zone(dns, ZONE_INFO), zone);
+    assertEquals(new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO)), zone);
   }
 
   @Test
@@ -173,7 +173,7 @@ public class DnsImplTest {
     dns = options.service(); // creates DnsImpl
     Zone zone = dns.getZone(ZONE_INFO.name(), ZONE_FIELDS);
     String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.rpcOption());
-    assertEquals(new Zone(dns, ZONE_INFO), zone);
+    assertEquals(new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO)), zone);
     assertTrue(selector.contains(Dns.ZoneField.CREATION_TIME.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
   }
@@ -308,7 +308,8 @@ public class DnsImplTest {
     dns = options.service(); // creates DnsImpl
     Page<Zone> zonePage = dns.listZones();
     assertEquals(1, Lists.newArrayList(zonePage.values()).size());
-    assertEquals(new Zone(dns, ZONE_INFO), Lists.newArrayList(zonePage.values()).get(0));
+    assertEquals(new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO)),
+        Lists.newArrayList(zonePage.values()).get(0));
   }
 
   @Test
@@ -320,7 +321,8 @@ public class DnsImplTest {
     dns = options.service(); // creates DnsImpl
     Page<Zone> zonePage = dns.listZones(ZONE_LIST_OPTIONS);
     assertEquals(1, Lists.newArrayList(zonePage.values()).size());
-    assertEquals(new Zone(dns, ZONE_INFO), Lists.newArrayList(zonePage.values()).get(0));
+    assertEquals(new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO)),
+        Lists.newArrayList(zonePage.values()).get(0));
     Integer size = (Integer) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[0].rpcOption());
     assertEquals(MAX_SIZE, size);
     String selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[1].rpcOption());

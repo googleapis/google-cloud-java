@@ -78,8 +78,8 @@ public class ZoneTest {
     expect(dns.options()).andReturn(OPTIONS);
     expect(dns.options()).andReturn(OPTIONS);
     replay(dns);
-    zone = new Zone(dns, ZONE_INFO);
-    zoneNoId = new Zone(dns, NO_ID_INFO);
+    zone = new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO));
+    zoneNoId = new Zone(dns, new ZoneInfo.BuilderImpl(NO_ID_INFO));
     reset(dns);
   }
 
@@ -94,30 +94,6 @@ public class ZoneTest {
     assertEquals(ZONE_INFO.toPb(), zone.toPb());
     assertNotNull(zone.dns());
     assertEquals(dns, zone.dns());
-  }
-
-  @Test
-  public void testGetByName() {
-    expect(dns.getZone(ZONE_NAME)).andReturn(zone);
-    expect(dns.getZone(ZONE_NAME, ZONE_FIELD_OPTIONS)).andReturn(zone); // for options
-    replay(dns);
-    Zone retrieved = Zone.get(dns, ZONE_NAME);
-    assertSame(dns, retrieved.dns());
-    assertEquals(zone, retrieved);
-    // test passing options
-    Zone.get(dns, ZONE_NAME, ZONE_FIELD_OPTIONS);
-    try {
-      Zone.get(dns, null);
-      fail("Cannot get by null name.");
-    } catch (NullPointerException e) {
-      // expected
-    }
-    try {
-      Zone.get(null, "Not null");
-      fail("Cannot get anything from null service.");
-    } catch (NullPointerException e) {
-      // expected
-    }
   }
 
   @Test

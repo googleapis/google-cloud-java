@@ -114,30 +114,6 @@ public class Zone extends ZoneInfo {
   }
 
   /**
-   * Constructs a {@code Zone} object that contains the given {@code zoneInfo}.
-   */
-  public Zone(Dns dns, ZoneInfo zoneInfo) {
-    super(new BuilderImpl(zoneInfo));
-    this.dns = dns;
-    this.options = dns.options();
-  }
-
-  /**
-   * Constructs a {@code Zone} object that contains meta information received from the Google Cloud
-   * DNS service for the provided {@code zoneName}.
-   *
-   * @param zoneName name of the zone to be searched for
-   * @param options optional restriction on what fields should be returned by the service
-   * @return zone object containing metadata or {@code null} if not not found
-   * @throws DnsException upon failure
-   */
-  public static Zone get(Dns dnsService, String zoneName, Dns.ZoneOption... options) {
-    checkNotNull(zoneName);
-    checkNotNull(dnsService);
-    return dnsService.getZone(zoneName, options);
-  }
-
-  /**
    * Retrieves the latest information about the zone. The method retrieves the zone by name.
    *
    * @param options optional restriction on what fields should be fetched
@@ -236,6 +212,6 @@ public class Zone extends ZoneInfo {
 
   static Zone fromPb(Dns dns, com.google.api.services.dns.model.ManagedZone zone) {
     ZoneInfo info = ZoneInfo.fromPb(zone);
-    return new Zone(dns, info);
+    return new Zone(dns, new ZoneInfo.BuilderImpl(info));
   }
 }
