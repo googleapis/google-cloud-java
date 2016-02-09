@@ -28,8 +28,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery external table type. BigQuery's external tables are tables whose data reside
- * outside of BigQuery but can be queried as normal BigQuery tables. External tables are
+ * Google BigQuery external table definition. BigQuery's external tables are tables whose data
+ * reside outside of BigQuery but can be queried as normal BigQuery tables. External tables are
  * experimental and might be subject to change or removed.
  *
  * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data Sources
