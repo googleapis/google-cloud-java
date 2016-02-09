@@ -339,7 +339,8 @@ public class TableInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj.getClass().equals(TableInfo.class)
+    return obj != null
+        && obj.getClass().equals(TableInfo.class)
         && Objects.equals(toPb(), ((TableInfo) obj).toPb());
   }
 

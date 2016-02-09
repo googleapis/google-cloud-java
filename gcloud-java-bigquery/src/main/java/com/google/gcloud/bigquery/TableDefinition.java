@@ -25,7 +25,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Base class for a Google BigQuery table type.
+ * Base class for a Google BigQuery table definition.
  */
 public abstract class TableDefinition implements Serializable {
 
@@ -63,10 +63,10 @@ public abstract class TableDefinition implements Serializable {
   }
 
   /**
-   * Base builder for table types.
+   * Base builder for table definitions.
    *
-   * @param <T> the table type class
-   * @param <B> the table type builder
+   * @param <T> the table definition class
+   * @param <B> the table definition builder
    */
   public abstract static class Builder<T extends TableDefinition, B extends Builder<T, B>> {
 
@@ -152,8 +152,8 @@ public abstract class TableDefinition implements Serializable {
     return Objects.hash(type);
   }
 
-  final boolean baseEquals(TableDefinition jobConfiguration) {
-    return Objects.equals(toPb(), jobConfiguration.toPb());
+  final boolean baseEquals(TableDefinition tableDefinition) {
+    return Objects.equals(toPb(), tableDefinition.toPb());
   }
 
   Table toPb() {

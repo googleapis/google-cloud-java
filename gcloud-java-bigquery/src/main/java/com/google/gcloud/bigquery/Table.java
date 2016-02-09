@@ -213,7 +213,8 @@ public final class Table extends TableInfo {
    * @param options table data list options
    * @throws BigQueryException upon failure
    */
-  public Page<List<FieldValue>> list(BigQuery.TableDataListOption... options) throws BigQueryException {
+  public Page<List<FieldValue>> list(BigQuery.TableDataListOption... options)
+      throws BigQueryException {
     return bigquery.listTableData(tableId(), options);
   }
 
