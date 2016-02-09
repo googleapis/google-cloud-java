@@ -95,4 +95,14 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
   public static Builder builder() {
     return new Builder();
   }
+
+  @Override
+  public boolean equals(Object obj) {
+    return obj instanceof DnsOptions && baseEquals((DnsOptions) obj);
+  }
+
+  @Override
+  public int hashCode() {
+    return baseHashCode();
+  }
 }
