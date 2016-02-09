@@ -85,7 +85,7 @@ public class Zone extends ZoneInfo {
     }
 
     @Override
-    public Builder nameServerSet(String nameServerSet) {
+    Builder nameServerSet(String nameServerSet) {
       infoBuilder.nameServerSet(nameServerSet);
       return this;
     }

@@ -83,7 +83,8 @@ public class DnsImplTest {
   // Listing options
   private static final Dns.ZoneListOption[] ZONE_LIST_OPTIONS = {
       Dns.ZoneListOption.pageSize(MAX_SIZE), Dns.ZoneListOption.pageToken(PAGE_TOKEN),
-      Dns.ZoneListOption.fields(Dns.ZoneField.DESCRIPTION)};
+      Dns.ZoneListOption.fields(Dns.ZoneField.DESCRIPTION),
+      Dns.ZoneListOption.dnsName(DNS_NAME)};
   private static final Dns.ChangeRequestListOption[] CHANGE_LIST_OPTIONS = {
       Dns.ChangeRequestListOption.pageSize(MAX_SIZE),
       Dns.ChangeRequestListOption.pageToken(PAGE_TOKEN),
@@ -330,6 +331,8 @@ public class DnsImplTest {
     selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[2].rpcOption());
     assertTrue(selector.contains(Dns.ZoneField.DESCRIPTION.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
+    selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[3].rpcOption());
+    assertEquals(DNS_NAME, selector);
   }
 
   @Test

@@ -296,6 +296,14 @@ public interface Dns extends Service<DnsOptions> {
     }
 
     /**
+     * Restricts the list to only zone with this fully qualified domain name.
+     */
+    public static ZoneListOption dnsName(String dnsName) {
+      StringBuilder builder = new StringBuilder();
+      return new ZoneListOption(DnsRpc.Option.DNS_NAME, dnsName);
+    }
+
+    /**
      * The maximum number of zones to return per RPC.
      *
      * <p>The server can return fewer zones than requested. When there are more results than the
