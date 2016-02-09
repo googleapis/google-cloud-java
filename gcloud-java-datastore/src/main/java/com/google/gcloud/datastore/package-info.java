@@ -17,35 +17,41 @@
 /**
  * A client to the Google Cloud Datastore.
  *
- * <p>Here's a simple usage example for using gcloud-java from App/Compute Engine:
+ * <p>Here's a simple usage example for using gcloud-java from App/Compute Engine. This example
+ * shows how to get a Datastore entity and create it if it does not exist. For the complete source
+ * code see
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/GetOrCreateEntity.java">
+ * gcloud-java-examples:com.google.gcloud.examples.datastore.snippets.GetOrCreateEntity</a>.
  * <pre> {@code
  * Datastore datastore = DatastoreOptions.defaultInstance().service();
- * KeyFactory keyFactory = datastore.newKeyFactory().kind(kind);
- * Key key = keyFactory.newKey(keyName);
+ * KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
+ * Key key = keyFactory.newKey("keyName");
  * Entity entity = datastore.get(key);
  * if (entity == null) {
  *   entity = Entity.builder(key)
  *       .set("name", "John Do")
- *       .set("age", LongValue.builder(100).indexed(false).build())
- *       .set("updated", false)
+ *       .set("age", 30)
+ *       .set("access_time", DateTime.now())
  *       .build();
  *   datastore.put(entity);
- * } else {
- *   boolean updated = entity.getBoolean("updated");
- *   if (!updated) {
- *     String[] name = entity.getString("name").split(" ");
- *     entity = Entity.builder(entity)
- *         .set("name", name[0])
- *         .set("last_name", StringValue.builder(name[1]).indexed(false).build())
- *         .set("updated", true)
- *         .remove("old_property")
- *         .set("new_property", 1.1)
- *         .build();
- *     datastore.update(entity);
- *   }
- * }
- * } </pre>
- *
+ * }} </pre>
+ * <p>
+ * This second example shows how to get and update a Datastore entity if it exists. For the complete
+ * source code see
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/UpdateEntity.java">
+ * gcloud-java-examples:com.google.gcloud.examples.datastore.snippets.UpdateEntity</a>.
+ * <pre> {@code
+ * Datastore datastore = DatastoreOptions.defaultInstance().service();
+ * KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
+ * Key key = keyFactory.newKey("keyName");
+ * Entity entity = datastore.get(key);
+ * if (entity != null) {
+ *   System.out.println("Updating access_time for " + entity.getString("name"));
+ *   entity = Entity.builder(entity)
+ *       .set("access_time", DateTime.now())
+ *       .build();
+ *   datastore.update(entity);
+ * }} </pre>
  * <p>When using gcloud-java from outside of App/Compute Engine, you have to <a
  * href="https://github.com/GoogleCloudPlatform/gcloud-java#specifying-a-project-id">specify a
  * project ID</a> and

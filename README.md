@@ -123,15 +123,15 @@ Google Cloud BigQuery (Alpha)
 
 Here is a code snippet showing a simple usage example from within Compute/App Engine. Note that you
 must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+Complete source code can be found at
+[gcloud-java-examples:com.google.gcloud.examples.bigquery.snippets.CreateTableAndLoadData](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
 
 ```java
 import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQueryOptions;
 import com.google.gcloud.bigquery.Field;
+import com.google.gcloud.bigquery.FormatOptions;
 import com.google.gcloud.bigquery.Job;
-import com.google.gcloud.bigquery.JobStatus;
-import com.google.gcloud.bigquery.JobInfo;
-import com.google.gcloud.bigquery.LoadJobConfiguration;
 import com.google.gcloud.bigquery.Schema;
 import com.google.gcloud.bigquery.StandardTableDefinition;
 import com.google.gcloud.bigquery.Table;
@@ -145,19 +145,17 @@ if (table == null) {
   System.out.println("Creating table " + tableId);
   Field integerField = Field.of("fieldName", Field.Type.integer());
   Schema schema = Schema.of(integerField);
-  bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
+  table = bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
+}
+System.out.println("Loading data into table " + tableId);
+Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
+while (!loadJob.isDone()) {
+  Thread.sleep(1000L);
+}
+if (loadJob.status().error() != null) {
+  System.out.println("Job completed with errors");
 } else {
-  System.out.println("Loading data into table " + tableId);
-  LoadJobConfiguration configuration = LoadJobConfiguration.of(tableId, "gs://bucket/path");
-  Job loadJob = bigquery.create(JobInfo.of(configuration));
-  while (!loadJob.isDone()) {
-    Thread.sleep(1000L);
-  }
-  if (loadJob.status().error() != null) {
-    System.out.println("Job completed with errors");
-  } else {
-    System.out.println("Job succeeded");
-  }
+  System.out.println("Job succeeded");
 }
 ```
 
@@ -171,7 +169,11 @@ Google Cloud Datastore
 
 #### Preview
 
-Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+The first snippet shows how to get a Datastore entity and create it if it does not exist. Complete
+source code can be found at
+[gcloud-java-examples:com.google.gcloud.examples.datastore.snippets.GetOrCreateEntity](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/GetOrCreateEntity.java).
 
 ```java
 import com.google.gcloud.datastore.Datastore;
@@ -182,8 +184,8 @@ import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
 Datastore datastore = DatastoreOptions.defaultInstance().service();
-KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND);
-Key key = keyFactory.newKey(keyName);
+KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
+Key key = keyFactory.newKey("keyName");
 Entity entity = datastore.get(key);
 if (entity == null) {
   entity = Entity.builder(key)
@@ -192,7 +194,24 @@ if (entity == null) {
       .set("access_time", DateTime.now())
       .build();
   datastore.put(entity);
-} else {
+}
+```
+The second snippet shows how to update a Datastore entity if it exists. Complete source code can be
+found at
+[gcloud-java-examples:com.google.gcloud.examples.datastore.snippets.UpdateEntity](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/UpdateEntity.java).
+```java
+import com.google.gcloud.datastore.Datastore;
+import com.google.gcloud.datastore.DatastoreOptions;
+import com.google.gcloud.datastore.DateTime;
+import com.google.gcloud.datastore.Entity;
+import com.google.gcloud.datastore.Key;
+import com.google.gcloud.datastore.KeyFactory;
+
+Datastore datastore = DatastoreOptions.defaultInstance().service();
+KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
+Key key = keyFactory.newKey("keyName");
+Entity entity = datastore.get(key);
+if (entity != null) {
   System.out.println("Updating access_time for " + entity.getString("name"));
   entity = Entity.builder(entity)
       .set("access_time", DateTime.now())
@@ -210,7 +229,8 @@ Google Cloud Resource Manager (Alpha)
 #### Preview
 
 Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
-
+Complete source code can be found at
+[gcloud-java-examples:com.google.gcloud.examples.resourcemanager.snippets.UpdateAndListProjects](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
 ```java
 import com.google.gcloud.resourcemanager.Project;
 import com.google.gcloud.resourcemanager.ResourceManager;
@@ -244,13 +264,36 @@ Google Cloud Storage
 
 #### Preview
 
-Here is a code snippet showing a simple usage example from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+Here are two code snippets showing simple usage examples from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+The first snippet shows how to get a Storage blob and create it if it does not exist. Complete
+source code can be found at
+[gcloud-java-examples:com.google.gcloud.examples.storage.snippets.GetOrCreateBlob](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/GetOrCreateBlob.java).
 
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.storage.Storage;
+import com.google.gcloud.storage.StorageOptions;
+
+Storage storage = StorageOptions.defaultInstance().service();
+BlobId blobId = BlobId.of("bucket", "blob_name");
+Blob blob = storage.get(blobId);
+if (blob == null) {
+  BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+  blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
+}
+```
+The second snippet shows how to update a Storage blob if it exists. Complete source code can be
+found at
+[gcloud-java-examples:com.google.gcloud.examples.storage.snippets.UpdateBlob](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/UpdateBlob.java).
+```java
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageOptions;
@@ -261,11 +304,7 @@ import java.nio.channels.WritableByteChannel;
 Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
 Blob blob = storage.get(blobId);
-if (blob == null) {
-  BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
-  storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
-} else {
-  System.out.println("Updating content for " + blobId.name());
+if (blob != null) {
   byte[] prevContent = blob.content();
   System.out.println(new String(prevContent, UTF_8));
   WritableByteChannel channel = blob.writer();

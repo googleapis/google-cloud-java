@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.examples;
+package com.google.gcloud.examples.storage;
 
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;

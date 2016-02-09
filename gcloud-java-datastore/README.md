@@ -134,7 +134,9 @@ Cloud Datastore relies on indexing to run queries. Indexing is turned on by defa
 
 #### Complete source code
 
-Here we put together all the code shown above into one program.  This program assumes that you are running on Compute Engine or from your own desktop. To run this example on App Engine, move this code to your application's servlet class and print the query output to the webpage instead of `System.out`.
+Here we put together all the code shown above into one program. This program assumes that you are running on Compute Engine or from your own desktop. To run this example on App Engine, move this code to your application's servlet class and print the query output to the webpage instead of `System.out`.
+Complete source code can be found at
+[gcloud-java-examples:com.google.gcloud.examples.datastore.snippets.AddEntitiesAndRunQuery](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java).
 
 ```java
 import com.google.gcloud.datastore.Datastore;
@@ -147,9 +149,9 @@ import com.google.gcloud.datastore.QueryResults;
 import com.google.gcloud.datastore.StructuredQuery;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 
-public class GcloudDatastoreExample {
+public class AddEntitiesAndRunQuery {
 
-  public static void main(String[] args) {
+  public static void main(String... args) {
     // Create datastore service object.
     // By default, credentials are inferred from the runtime environment.
     Datastore datastore = DatastoreOptions.defaultInstance().service();

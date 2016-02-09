@@ -203,7 +203,9 @@ while (rowIterator.hasNext()) {
 Here we put together all the code shown above into one program. This program assumes that you are
 running on Compute Engine or from your own desktop. To run this example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
-display on your webpage.
+display on your webpage. Complete source code can be found at
+[gcloud-java-examples:com.google.gcloud.examples.bigquery.snippets.InsertDataAndQueryTable](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/InsertDataAndQueryTable.java).
+
 
 ```java
 import com.google.gcloud.bigquery.BigQuery;
@@ -217,7 +219,6 @@ import com.google.gcloud.bigquery.QueryRequest;
 import com.google.gcloud.bigquery.QueryResponse;
 import com.google.gcloud.bigquery.Schema;
 import com.google.gcloud.bigquery.StandardTableDefinition;
-import com.google.gcloud.bigquery.Table;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
 
@@ -226,9 +227,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-public class GcloudBigQueryExample {
+public class InsertDataAndQueryTable {
 
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String... args) throws InterruptedException {
 
     // Create a service instance
     BigQuery bigquery = BigQueryOptions.defaultInstance().service();
@@ -244,7 +245,7 @@ public class GcloudBigQueryExample {
     Schema schema = Schema.of(stringField);
     // Create a table
     StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
-    Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
+    bigquery.create(TableInfo.of(tableId, tableDefinition));
 
     // Define rows to insert
     Map<String, Object> firstRow = new HashMap<>();
