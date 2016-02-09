@@ -18,7 +18,7 @@ package com.google.gcloud.dns;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.services.dns.model.ResourceRecordSet;
+import com.google.api.services.dns.model.Change;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
@@ -40,21 +40,14 @@ import java.util.Objects;
  */
 public class ChangeRequest implements Serializable {
 
-  private static final Function<ResourceRecordSet, DnsRecord> FROM_PB_FUNCTION =
-      new Function<com.google.api.services.dns.model.ResourceRecordSet, DnsRecord>() {
+  static final Function<Change, ChangeRequest> FROM_PB_FUNCTION =
+      new Function<Change, ChangeRequest>() {
         @Override
-        public DnsRecord apply(com.google.api.services.dns.model.ResourceRecordSet pb) {
-          return DnsRecord.fromPb(pb);
+        public ChangeRequest apply(com.google.api.services.dns.model.Change pb) {
+          return ChangeRequest.fromPb(pb);
         }
       };
-  private static final Function<DnsRecord, ResourceRecordSet> TO_PB_FUNCTION =
-      new Function<DnsRecord, ResourceRecordSet>() {
-        @Override
-        public com.google.api.services.dns.model.ResourceRecordSet apply(DnsRecord error) {
-          return error.toPb();
-        }
-      };
-  private static final long serialVersionUID = -8703939628990291682L;
+  private static final long serialVersionUID = -9027378042756366333L;
   private final List<DnsRecord> additions;
   private final List<DnsRecord> deletions;
   private final String id;
@@ -274,9 +267,9 @@ public class ChangeRequest implements Serializable {
       pb.setStatus(status().name().toLowerCase());
     }
     // set a list of additions
-    pb.setAdditions(Lists.transform(additions(), TO_PB_FUNCTION));
+    pb.setAdditions(Lists.transform(additions(), DnsRecord.TO_PB_FUNCTION));
     // set a list of deletions
-    pb.setDeletions(Lists.transform(deletions(), TO_PB_FUNCTION));
+    pb.setDeletions(Lists.transform(deletions(), DnsRecord.TO_PB_FUNCTION));
     return pb;
   }
 
@@ -293,10 +286,10 @@ public class ChangeRequest implements Serializable {
       builder.status(ChangeRequest.Status.valueOf(pb.getStatus().toUpperCase()));
     }
     if (pb.getDeletions() != null) {
-      builder.deletions(Lists.transform(pb.getDeletions(), FROM_PB_FUNCTION));
+      builder.deletions(Lists.transform(pb.getDeletions(), DnsRecord.FROM_PB_FUNCTION));
     }
     if (pb.getAdditions() != null) {
-      builder.additions(Lists.transform(pb.getAdditions(), FROM_PB_FUNCTION));
+      builder.additions(Lists.transform(pb.getAdditions(), DnsRecord.FROM_PB_FUNCTION));
     }
     return builder.build();
   }

@@ -20,7 +20,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.gcloud.Page;
 
-import java.io.Serializable;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * A Google Cloud DNS Zone object.
@@ -33,36 +36,81 @@ import java.io.Serializable;
  * @see <a href="https://cloud.google.com/dns/zones/">Google Cloud DNS managed zone
  * documentation</a>
  */
-public class Zone implements Serializable {
+public class Zone extends ZoneInfo {
 
-  // TODO(mderka) Zone and zoneInfo to be merged. Opened issue #605.
-
-  private static final long serialVersionUID = 6847890192129375500L;
-  private final ZoneInfo zoneInfo;
-  private final Dns dns;
+  private static final long serialVersionUID = -5817771337847861598L;
+  private final DnsOptions options;
+  private transient Dns dns;
 
   /**
-   * Constructs a {@code Zone} object that contains the given {@code zoneInfo}.
+   * Builder for {@code Zone}.
    */
-  public Zone(Dns dns, ZoneInfo zoneInfo) {
-    this.zoneInfo = checkNotNull(zoneInfo);
-    this.dns = checkNotNull(dns);
+  public static class Builder extends ZoneInfo.Builder {
+    private final Dns dns;
+    private final ZoneInfo.BuilderImpl infoBuilder;
+
+    private Builder(Zone zone) {
+      this.dns = zone.dns;
+      this.infoBuilder = new ZoneInfo.BuilderImpl(zone);
+    }
+
+    @Override
+    public Builder name(String name) {
+      infoBuilder.name(name);
+      return this;
+    }
+
+    @Override
+    Builder id(String id) {
+      infoBuilder.id(id);
+      return this;
+    }
+
+    @Override
+    Builder creationTimeMillis(long creationTimeMillis) {
+      infoBuilder.creationTimeMillis(creationTimeMillis);
+      return this;
+    }
+
+    @Override
+    public Builder dnsName(String dnsName) {
+      infoBuilder.dnsName(dnsName);
+      return this;
+    }
+
+    @Override
+    public Builder description(String description) {
+      infoBuilder.description(description);
+      return this;
+    }
+
+    @Override
+    public Builder nameServerSet(String nameServerSet) {
+      infoBuilder.nameServerSet(nameServerSet);
+      return this;
+    }
+
+    @Override
+    Builder nameServers(List<String> nameServers) {
+      infoBuilder.nameServers(nameServers); // infoBuilder makes a copy
+      return this;
+    }
+
+    @Override
+    public Zone build() {
+      return new Zone(dns, infoBuilder);
+    }
   }
 
-  /**
-   * Constructs a {@code Zone} object that contains meta information received from the Google Cloud
-   * DNS service for the provided {@code zoneName}.
-   *
-   * @param zoneName name of the zone to be searched for
-   * @param options optional restriction on what fields should be returned by the service
-   * @return zone object containing metadata or {@code null} if not not found
-   * @throws DnsException upon failure
-   */
-  public static Zone get(Dns dnsService, String zoneName, Dns.ZoneOption... options) {
-    checkNotNull(zoneName);
-    checkNotNull(dnsService);
-    ZoneInfo zoneInfo = dnsService.getZone(zoneName, options);
-    return zoneInfo == null ? null : new Zone(dnsService, zoneInfo);
+  Zone(Dns dns, ZoneInfo.BuilderImpl infoBuilder) {
+    super(infoBuilder);
+    this.dns = dns;
+    this.options = dns.options();
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder(this);
   }
 
   /**
@@ -73,7 +121,7 @@ public class Zone implements Serializable {
    * @throws DnsException upon failure
    */
   public Zone reload(Dns.ZoneOption... options) {
-    return Zone.get(dns, zoneInfo.name(), options);
+    return dns.getZone(name(), options);
   }
 
   /**
@@ -83,7 +131,7 @@ public class Zone implements Serializable {
    * @throws DnsException upon failure
    */
   public boolean delete() {
-    return dns.delete(zoneInfo.name());
+    return dns.delete(name());
   }
 
   /**
@@ -94,7 +142,7 @@ public class Zone implements Serializable {
    * @throws DnsException upon failure or if the zone is not found
    */
   public Page<DnsRecord> listDnsRecords(Dns.DnsRecordListOption... options) {
-    return dns.listDnsRecords(zoneInfo.name(), options);
+    return dns.listDnsRecords(name(), options);
   }
 
   /**
@@ -108,7 +156,7 @@ public class Zone implements Serializable {
   public ChangeRequest applyChangeRequest(ChangeRequest changeRequest,
       Dns.ChangeRequestOption... options) {
     checkNotNull(changeRequest);
-    return dns.applyChangeRequest(zoneInfo.name(), changeRequest, options);
+    return dns.applyChangeRequest(name(), changeRequest, options);
   }
 
   /**
@@ -124,7 +172,7 @@ public class Zone implements Serializable {
   public ChangeRequest getChangeRequest(String changeRequestId,
       Dns.ChangeRequestOption... options) {
     checkNotNull(changeRequestId);
-    return dns.getChangeRequest(zoneInfo.name(), changeRequestId, options);
+    return dns.getChangeRequest(name(), changeRequestId, options);
   }
 
   /**
@@ -136,14 +184,7 @@ public class Zone implements Serializable {
    * @throws DnsException upon failure or if the zone is not found
    */
   public Page<ChangeRequest> listChangeRequests(Dns.ChangeRequestListOption... options) {
-    return dns.listChangeRequests(zoneInfo.name(), options);
-  }
-
-  /**
-   * Returns the {@link ZoneInfo} object containing information about this zone.
-   */
-  public ZoneInfo info() {
-    return zoneInfo;
+    return dns.listChangeRequests(name(), options);
   }
 
   /**
@@ -151,5 +192,26 @@ public class Zone implements Serializable {
    */
   public Dns dns() {
     return this.dns;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return obj instanceof Zone && Objects.equals(toPb(), ((Zone) obj).toPb())
+        && Objects.equals(options, ((Zone) obj).options);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), options);
+  }
+
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+    this.dns = options.service();
+  }
+
+  static Zone fromPb(Dns dns, com.google.api.services.dns.model.ManagedZone zone) {
+    ZoneInfo info = ZoneInfo.fromPb(zone);
+    return new Zone(dns, new ZoneInfo.BuilderImpl(info));
   }
 }

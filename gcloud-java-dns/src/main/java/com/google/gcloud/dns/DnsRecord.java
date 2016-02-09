@@ -19,6 +19,8 @@ package com.google.gcloud.dns;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.dns.model.ResourceRecordSet;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -43,7 +45,21 @@ import java.util.concurrent.TimeUnit;
  */
 public class DnsRecord implements Serializable {
 
-  private static final long serialVersionUID = 2016011914302204L;
+  static final Function<ResourceRecordSet, DnsRecord> FROM_PB_FUNCTION =
+      new Function<com.google.api.services.dns.model.ResourceRecordSet, DnsRecord>() {
+        @Override
+        public DnsRecord apply(com.google.api.services.dns.model.ResourceRecordSet pb) {
+          return DnsRecord.fromPb(pb);
+        }
+      };
+  static final Function<DnsRecord, ResourceRecordSet> TO_PB_FUNCTION =
+      new Function<DnsRecord, ResourceRecordSet>() {
+        @Override
+        public com.google.api.services.dns.model.ResourceRecordSet apply(DnsRecord error) {
+          return error.toPb();
+        }
+      };
+  private static final long serialVersionUID = 8148009870800115261L;
   private final String name;
   private final List<String> rrdatas;
   private final Integer ttl; // this is in seconds

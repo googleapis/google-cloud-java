@@ -24,8 +24,7 @@ import com.google.gcloud.spi.DnsRpcFactory;
 
 import java.util.Set;
 
-public class DnsOptions
-    extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
+public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
 
   private static final long serialVersionUID = -519128051411747771L;
   private static final String GC_DNS_RW = "https://www.googleapis.com/auth/ndev.clouddns.readwrite";
@@ -36,8 +35,7 @@ public class DnsOptions
 
     @Override
     public Dns create(DnsOptions options) {
-      // TODO(mderka) Implement when DnsImpl is available. Created issue #595.
-      return null;
+      return new DnsImpl(options);
     }
   }
 
