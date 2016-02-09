@@ -1,0 +1,1058 @@
+/*
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.datastore.snippets;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterators;
+import com.google.common.collect.Multimap;
+import com.google.gcloud.datastore.Batch;
+import com.google.gcloud.datastore.Cursor;
+import com.google.gcloud.datastore.Datastore;
+import com.google.gcloud.datastore.DatastoreException;
+import com.google.gcloud.datastore.DatastoreOptions;
+import com.google.gcloud.datastore.DateTime;
+import com.google.gcloud.datastore.Entity;
+import com.google.gcloud.datastore.EntityQuery;
+import com.google.gcloud.datastore.FullEntity;
+import com.google.gcloud.datastore.IncompleteKey;
+import com.google.gcloud.datastore.Key;
+import com.google.gcloud.datastore.KeyFactory;
+import com.google.gcloud.datastore.PathElement;
+import com.google.gcloud.datastore.ProjectionEntity;
+import com.google.gcloud.datastore.Query;
+import com.google.gcloud.datastore.Query.ResultType;
+import com.google.gcloud.datastore.QueryResults;
+import com.google.gcloud.datastore.StringValue;
+import com.google.gcloud.datastore.StructuredQuery;
+import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
+import com.google.gcloud.datastore.StructuredQuery.OrderBy;
+import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
+import com.google.gcloud.datastore.Transaction;
+import com.google.gcloud.datastore.Value;
+import com.google.gcloud.datastore.testing.LocalGcdHelper;
+
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.TimeZone;
+
+/**
+ * Contains Cloud Datastore snippets linked from the Concepts documentation.
+ *
+ * @see <a href="https://cloud.google.com/datastore/v1beta3/">Key Datastore Concepts</a>
+ */
+public class Concepts {
+
+  private static final String PROJECT_ID = LocalGcdHelper.DEFAULT_PROJECT_ID;
+  private static LocalGcdHelper gcdHelper;
+  private static final int PORT = LocalGcdHelper.findAvailablePort(LocalGcdHelper.DEFAULT_PORT);
+  private static final FullEntity<IncompleteKey> TEST_FULL_ENTITY = FullEntity.builder().build();
+
+  private Datastore datastore;
+  private KeyFactory keyFactory;
+  private Key taskKey;
+  private Entity testEntity;
+  private DateTime startDate;
+  private DateTime endDate;
+  private DateTime includedDate;
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
+  /**
+   * Starts the local Datastore emulator.
+   *
+   * @throws IOException if there are errors starting the local Datastore
+   * @throws InterruptedException if there are errors starting the local Datastore
+   */
+  @BeforeClass
+  public static void beforeClass() throws IOException, InterruptedException {
+    if (!LocalGcdHelper.isActive(PROJECT_ID, PORT)) {
+      gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT);
+    }
+  }
+
+  /**
+   * Initializes Datastore and cleans out any residual values.  Also initializes global variables
+   * used for testing.
+   */
+  @Before
+  public void setUp() {
+    datastore = DatastoreOptions.builder()
+        .projectId(PROJECT_ID)
+        .namespace("ghijklmnop") // for namespace metadata query
+        .host("http://localhost:" + PORT)
+        .build()
+        .service();
+    StructuredQuery<Key> query = Query.keyQueryBuilder().build();
+    QueryResults<Key> result = datastore.run(query);
+    datastore.delete(Iterators.toArray(result, Key.class));
+    keyFactory = datastore.newKeyFactory().kind("Task");
+    taskKey = keyFactory.newKey("some-arbitrary-key");
+    testEntity = Entity.builder(taskKey, TEST_FULL_ENTITY).build();
+    Calendar startDateCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    startDateCalendar.set(1990, 1, 1);
+    startDate = DateTime.copyFrom(startDateCalendar);
+    Calendar endDateCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    endDateCalendar.set(2000, 1, 1);
+    endDate = DateTime.copyFrom(endDateCalendar);
+    Calendar includedCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    includedCalendar.set(1999, 12, 31);
+    includedDate = DateTime.copyFrom(includedCalendar);
+  }
+
+  /**
+   * Stops the local Datastore emulator.
+   *
+   * @throws IOException if there are errors stopping the local Datastore
+   * @throws InterruptedException if there are errors stopping the local Datastore
+   */
+  @AfterClass
+  public static void afterClass() throws IOException, InterruptedException {
+    if (gcdHelper != null) {
+      gcdHelper.stop();
+    }
+  }
+
+  private void assertValidKey(Key taskKey) {
+    datastore.put(Entity.builder(taskKey, TEST_FULL_ENTITY).build());
+  }
+
+  @Test
+  public void testIncompleteKey() {
+    // [START incomplete_key]
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("Task");
+    Key taskKey = datastore.allocateId(keyFactory.newKey());
+    // [END incomplete_key]
+    assertValidKey(taskKey);
+  }
+
+  @Test
+  public void testNamedKey() {
+    // [START named_key]
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("Task");
+    Key taskKey = keyFactory.newKey("sampleTask");
+    // [END named_key]
+    assertValidKey(taskKey);
+  }
+
+  @Test
+  public void testKeyWithParent() {
+    // [START key_with_parent]
+    KeyFactory keyFactory =
+        datastore.newKeyFactory().ancestors(PathElement.of("TaskList", "default")).kind("Task");
+    Key taskKey = keyFactory.newKey("sampleTask");
+    // [END key_with_parent]
+    assertValidKey(taskKey);
+  }
+
+  @Test
+  public void testKeyWithMultilevelParent() {
+    // [START key_with_multilevel_parent]
+    KeyFactory keyFactory = datastore.newKeyFactory()
+        .ancestors(PathElement.of("User", "Alice"), PathElement.of("TaskList", "default"))
+        .kind("Task");
+    Key taskKey = keyFactory.newKey("sampleTask");
+    // [END key_with_multilevel_parent]
+    assertValidKey(taskKey);
+  }
+
+  private void assertValidEntity(Entity original) {
+    datastore.put(original);
+    assertEquals(original, datastore.get(original.key()));
+  }
+
+  @Test
+  public void testEntityWithParent() {
+    // [START entity_with_parent]
+    KeyFactory keyFactory =
+        datastore.newKeyFactory().ancestors(PathElement.of("TaskList", "default")).kind("Task");
+    Entity task = Entity.builder(keyFactory.newKey("sampleTask"))
+        .set("type", "Personal")
+        .set("done", false)
+        .set("priority", 4)
+        .set("description", "Learn Cloud Datastore")
+        .build();
+    // [END entity_with_parent]
+    assertValidEntity(task);
+  }
+
+  @Test
+  public void testProperties() {
+    // [START properties]
+    Entity task = Entity.builder(taskKey)
+        .set("type", "Personal")
+        .set("created", DateTime.now())
+        .set("done", false)
+        .set("priority", 4)
+        .set("percent_complete", 10.0)
+        .set("description", "Learn Cloud Datastore")
+        .build();
+    // [END properties]
+    assertValidEntity(task);
+  }
+
+  @Test
+  public void testArrayValue() {
+    // [START array_value]
+    Entity task = Entity.builder(taskKey)
+        .set("tags", StringValue.of("fun"), StringValue.of("programming"))
+        .set("collaborators", StringValue.of("alice"), StringValue.of("bob"))
+        .build();
+    // [END array_value]
+    assertValidEntity(task);
+  }
+
+  @Test
+  public void testBasicEntity() {
+    // [START basic_entity]
+    Entity task = Entity.builder(taskKey)
+        .set("type", "Personal")
+        .set("done", false)
+        .set("priority", 4)
+        .set("description", "Learn Cloud Datastore")
+        .build();
+    // [END basic_entity]
+    assertValidEntity(task);
+  }
+
+  @Test
+  public void testUpsert() {
+    // [START upsert]
+    Key taskKey = datastore.allocateId(keyFactory.newKey());
+    Entity task = Entity.builder(taskKey).build();
+    datastore.put(task);
+    // [END upsert]
+    assertEquals(task, datastore.get(task.key()));
+  }
+
+  @Test
+  public void testInsert() {
+    // [START insert]
+    Entity task = Entity.builder(taskKey).build();
+    Key taskKey = datastore.add(task).key();
+    // [END insert]
+    assertEquals(task, datastore.get(taskKey));
+  }
+
+  @Test
+  public void testLookup() {
+    datastore.put(testEntity);
+    // [START lookup]
+    Entity task = datastore.get(taskKey);
+    // [END lookup]
+    assertEquals(testEntity, task);
+  }
+
+  @Test
+  public void testUpdate() {
+    datastore.put(testEntity);
+    // [START update]
+    Entity task = Entity.builder(datastore.get(taskKey)).set("priority", 5).build();
+    datastore.update(task);
+    // [END update]
+    assertEquals(task, datastore.get(taskKey));
+  }
+
+  @Test
+  public void testDelete() {
+    datastore.put(testEntity);
+    // [START delete]
+    datastore.delete(taskKey);
+    // [END delete]
+    assertNull(datastore.get(taskKey));
+  }
+
+  private List<Entity> setUpBatchTests(Key taskKey1, Key taskKey2) {
+    Entity task1 = Entity.builder(taskKey1)
+        .set("type", "Personal")
+        .set("done", false)
+        .set("priority", 4)
+        .set("description", "Learn Cloud Datastore")
+        .build();
+    Entity task2 = Entity.builder(taskKey2)
+        .set("type", "Personal")
+        .set("done", false)
+        .set("priority", 5)
+        .set("description", "Integrate Cloud Datastore")
+        .build();
+    datastore.put(task1, task2);
+    return ImmutableList.of(task1, task2);
+  }
+
+  @Test
+  public void testBatchUpsert() {
+    Key taskKey1 = keyFactory.newKey(1);
+    Key taskKey2 = keyFactory.newKey(2);
+    Entity task1 = Entity.builder(taskKey1)
+        .set("type", "Personal")
+        .set("done", false)
+        .set("priority", 4)
+        .set("description", "Learn Cloud Datastore")
+        .build();
+    Entity task2 = Entity.builder(taskKey2)
+        .set("type", "Personal")
+        .set("done", false)
+        .set("priority", 5)
+        .set("description", "Integrate Cloud Datastore")
+        .build();
+    // [START batch_upsert]
+    Batch batch = datastore.newBatch();
+    batch.put(task1, task2);
+    batch.submit();
+    // [END batch_upsert]
+    assertEquals(task1, datastore.get(taskKey1));
+    assertEquals(task2, datastore.get(taskKey2));
+  }
+
+  @Test
+  public void testBatchLookup() {
+    Key taskKey1 = keyFactory.newKey(1);
+    Key taskKey2 = keyFactory.newKey(2);
+    List<Entity> expectedTasks = setUpBatchTests(taskKey1, taskKey2);
+    // [START batch_lookup]
+    Iterator<Entity> tasks = datastore.get(taskKey1, taskKey2);
+    // [END batch_lookup]
+    assertEquals(expectedTasks.get(0), tasks.next());
+    assertEquals(expectedTasks.get(1), tasks.next());
+  }
+
+  @Test
+  public void testBatchDelete() {
+    Key taskKey1 = keyFactory.newKey(1);
+    Key taskKey2 = keyFactory.newKey(2);
+    setUpBatchTests(taskKey1, taskKey2);
+    // [START batch_delete]
+    Batch batch = datastore.newBatch();
+    batch.delete(taskKey1, taskKey2);
+    batch.submit();
+    // [END batch_delete]
+    assertNull(datastore.get(taskKey1));
+    assertNull(datastore.get(taskKey2));
+  }
+
+  private void setUpQueryTests() {
+    KeyFactory keyFactory =
+        datastore.newKeyFactory().kind("Task").ancestors(PathElement.of("TaskList", "default"));
+    datastore.put(Entity.builder(keyFactory.newKey("someTask"))
+        .set("type", "Personal")
+        .set("done", false)
+        .set("completed", false)
+        .set("priority", 4)
+        .set("created", includedDate)
+        .set("percent_complete", 10.0)
+        .set("description", StringValue.builder("Learn Cloud Datastore").indexed(false).build())
+        .set("tag", ImmutableList.of(StringValue.of("fun"), StringValue.of("l"),
+            StringValue.of("programming")))
+        .build());
+  }
+
+  private <V> V assertValidQuery(Query<V> query) {
+    QueryResults<V> results = datastore.run(query);
+    V result = results.next();
+    assertFalse(results.hasNext());
+    return result;
+  }
+
+  private <V> void assertInvalidQuery(Query<V> query) {
+    thrown.expect(DatastoreException.class);
+    datastore.run(query);
+  }
+
+  @Test
+  public void testBasicQuery() {
+    setUpQueryTests();
+    // [START basic_query]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(CompositeFilter.and(
+            PropertyFilter.eq("done", false), PropertyFilter.ge("priority", 4)))
+        .orderBy(OrderBy.desc("priority"))
+        .build();
+    // [END basic_query]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testRunQuery() {
+    setUpQueryTests();
+    Query<Entity> query = Query.entityQueryBuilder().kind("Task").build();
+    // [START run_query]
+    QueryResults<Entity> tasks = datastore.run(query);
+    // [END run_query]
+    assertNotNull(tasks.next());
+    assertFalse(tasks.hasNext());
+  }
+
+  @Test
+  public void testPropertyFilter() {
+    setUpQueryTests();
+    // [START property_filter]
+    Query<Entity> query =
+        Query.entityQueryBuilder().kind("Task").filter(PropertyFilter.eq("done", false)).build();
+    // [END property_filter]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testCompositeFilter() {
+    setUpQueryTests();
+    // [START composite_filter]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(
+            CompositeFilter.and(PropertyFilter.eq("done", false), PropertyFilter.eq("priority", 4)))
+        .build();
+    // [END composite_filter]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testKeyFilter() {
+    setUpQueryTests();
+    // [START key_filter]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+            .filter(PropertyFilter.gt("__key__", keyFactory.newKey("someTask")))
+        .build();
+    // [END key_filter]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testAscendingSort() {
+    setUpQueryTests();
+    // [START ascending_sort]
+    Query<Entity> query =
+        Query.entityQueryBuilder().kind("Task").orderBy(OrderBy.asc("created")).build();
+    // [END ascending_sort]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testDescendingSort() {
+    setUpQueryTests();
+    // [START descending_sort]
+    Query<Entity> query =
+        Query.entityQueryBuilder().kind("Task").orderBy(OrderBy.desc("created")).build();
+    // [END descending_sort]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testMultiSort() {
+    setUpQueryTests();
+    // [START multi_sort]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .orderBy(OrderBy.desc("priority"), OrderBy.asc("created"))
+        .build();
+    // [END multi_sort]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testKindlessQuery() {
+    Key lastSeenKey = keyFactory.newKey("a");
+    setUpQueryTests();
+    // [START kindless_query]
+    Query<Entity> query =
+        Query.entityQueryBuilder().filter(PropertyFilter.gt("__key__", lastSeenKey)).build();
+    // [END kindless_query]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testAncestorQuery() {
+    setUpQueryTests();
+    // [START ancestor_query]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(PropertyFilter.hasAncestor(
+            datastore.newKeyFactory().kind("TaskList").newKey("default")))
+        .build();
+    // [END ancestor_query]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testProjectionQuery() {
+    setUpQueryTests();
+    // [START projection_query]
+    Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
+        .kind("Task")
+        .projection(
+            StructuredQuery.Projection.property("priority"),
+            StructuredQuery.Projection.property("percent_complete"))
+        .build();
+    // [END projection_query]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testRunProjectionQuery() {
+    setUpQueryTests();
+    Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
+        .kind("Task")
+        .projection(
+            StructuredQuery.Projection.property("priority"),
+            StructuredQuery.Projection.property("percent_complete"))
+        .build();
+    List<Long> priorities = new LinkedList<>();
+    List<Double> percentCompletes = new LinkedList<>();
+    // [START run_query_projection]
+    QueryResults<ProjectionEntity> tasks = datastore.run(query);
+    while (tasks.hasNext()) {
+      ProjectionEntity task = tasks.next();
+      priorities.add(task.getLong("priority"));
+      percentCompletes.add(task.getDouble("percent_complete"));
+    }
+    // [END run_query_projection]
+    assertEquals(ImmutableList.of(4L), priorities);
+    assertEquals(ImmutableList.of(10.0), percentCompletes);
+  }
+
+  @Test
+  public void testKeysOnlyQuery() {
+    setUpQueryTests();
+    // [START keys_only_query]
+    Query<Key> query = Query.keyQueryBuilder().kind("Task").build();
+    // [END keys_only_query]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testRunKeysOnlyQuery() {
+    setUpQueryTests();
+    Query<Key> query = Query.keyQueryBuilder().kind("Task").build();
+    // [START run_keys_only_query]
+    QueryResults<Key> taskKeys = datastore.run(query);
+    // [END run_keys_only_query]
+    assertNotNull(taskKeys.next());
+    assertFalse(taskKeys.hasNext());
+  }
+
+  @Test
+  public void testDistinctQuery() {
+    setUpQueryTests();
+    // [START distinct_query]
+    Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
+        .kind("Task")
+        .projection(StructuredQuery.Projection.property("type"),
+            StructuredQuery.Projection.property("priority"))
+        .groupBy("type", "priority")
+        .orderBy(OrderBy.asc("type"), OrderBy.asc("priority"))
+        .build();
+    // [END distinct_query]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testDistinctOnQuery() {
+    setUpQueryTests();
+    // [START distinct_on_query]
+    Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
+        .kind("Task")
+        .projection(StructuredQuery.Projection.property("type"),
+            StructuredQuery.Projection.first("priority"))
+        .groupBy("type")
+        .orderBy(OrderBy.asc("type"), OrderBy.asc("priority"))
+        .build();
+    // [END distinct_on_query]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testArrayValueInequalityRange() {
+    setUpQueryTests();
+    // [START array_value_inequality_range]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(CompositeFilter.and(
+            PropertyFilter.gt("tag", "learn"), PropertyFilter.lt("tag", "math")))
+        .build();
+    // [END array_value_inequality_range]
+    QueryResults<Entity> results = datastore.run(query);
+    assertFalse(results.hasNext());
+  }
+
+  @Test
+  public void testArrayValueEquality() {
+    setUpQueryTests();
+    // [START array_value_equality]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(CompositeFilter.and(
+            PropertyFilter.eq("tag", "fun"), PropertyFilter.eq("tag", "programming")))
+        .build();
+    // [END array_value_equality]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testInequalityRange() {
+    setUpQueryTests();
+    // [START inequality_range]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(CompositeFilter.and(
+            PropertyFilter.gt("created", startDate), PropertyFilter.lt("created", endDate)))
+        .build();
+    // [END inequality_range]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testInequalityInvalid() {
+    // [START inequality_invalid]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(CompositeFilter.and(
+            PropertyFilter.gt("created", startDate), PropertyFilter.gt("priority", 3)))
+        .build();
+    // [END inequality_invalid]
+    assertInvalidQuery(query);
+  }
+
+  @Test
+  public void testEqualAndInequalityRange() {
+    setUpQueryTests();
+    // [START equal_and_inequality_range]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(CompositeFilter.and(PropertyFilter.eq("priority", 4),
+            PropertyFilter.gt("created", startDate), PropertyFilter.lt("created", endDate)))
+        .build();
+    // [END equal_and_inequality_range]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testInequalitySort() {
+    setUpQueryTests();
+    // [START inequality_sort]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(PropertyFilter.gt("priority", 3))
+        .orderBy(OrderBy.asc("priority"), OrderBy.asc("created"))
+        .build();
+    // [END inequality_sort]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testInequalitySortInvalidNotSame() {
+    // [START inequality_sort_invalid_not_same]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(PropertyFilter.gt("priority", 3))
+        .orderBy(OrderBy.asc("created"))
+        .build();
+    // [END inequality_sort_invalid_not_same]
+    assertInvalidQuery(query);
+  }
+
+  @Test
+  public void testInequalitySortInvalidNotFirst() {
+    // [START inequality_sort_invalid_not_first]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(PropertyFilter.gt("priority", 3))
+        .orderBy(OrderBy.asc("created"), OrderBy.asc("priority"))
+        .build();
+    // [END inequality_sort_invalid_not_first]
+    assertInvalidQuery(query);
+  }
+
+  @Test
+  public void testLimit() {
+    setUpQueryTests();
+    // [START limit]
+    Query<Entity> query = Query.entityQueryBuilder().kind("Task").limit(5).build();
+    // [END limit]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testCursorPaging() {
+    setUpQueryTests();
+    datastore.put(testEntity);
+    Cursor nextPageCursor = cursorPaging(1, null);
+    assertNotNull(nextPageCursor);
+    nextPageCursor = cursorPaging(1, nextPageCursor);
+    assertNotNull(nextPageCursor);
+  }
+
+  private Cursor cursorPaging(int pageSize, Cursor pageCursor) {
+    // [START cursor_paging]
+    EntityQuery.Builder queryBuilder = Query.entityQueryBuilder().kind("Task").limit(pageSize);
+    if (pageCursor != null) {
+      queryBuilder.startCursor(pageCursor);
+    }
+    QueryResults<Entity> tasks = datastore.run(queryBuilder.build());
+    Entity task = null;
+    while (tasks.hasNext()) {
+      task = tasks.next();
+      // do something with the task
+    }
+    Cursor nextPageCursor = null;
+    if (task != null && tasks.cursorAfter() != null) {
+      nextPageCursor = tasks.cursorAfter();
+      // Call nextPageCursor.toUrlSafe() if you want an encoded cursor that can be used as part of a
+      // URL.
+    }
+    // [END cursor_paging]
+    return nextPageCursor;
+  }
+
+  @Test
+  public void testEventualConsistentQuery() {
+    setUpQueryTests();
+    // [START eventual_consistent_query]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(PropertyFilter.hasAncestor(
+            datastore.newKeyFactory().kind("TaskList").newKey("default")))
+        .build();
+    // [END eventual_consistent_query]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testUnindexedPropertyQuery() {
+    setUpQueryTests();
+    // [START unindexed_property_query]
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(PropertyFilter.eq("description", "A task description"))
+        .build();
+    // [END unindexed_property_query]
+    QueryResults<Entity> results = datastore.run(query);
+    assertFalse(results.hasNext());
+  }
+
+  @Test
+  public void testExplodingProperties() {
+    // [START exploding_properties]
+    Entity task = Entity.builder(taskKey)
+        .set("tags", StringValue.of("fun"), StringValue.of("programming"), StringValue.of("learn"))
+        .set("collaborators", StringValue.of("alice"), StringValue.of("bob"),
+            StringValue.of("charlie"))
+        .set("created", DateTime.now())
+        .build();
+    // [END exploding_properties]
+    assertValidEntity(task);
+  }
+
+  private List<Key> setUpTransferTests() {
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("People");
+    Key from = keyFactory.newKey("from");
+    Key to = keyFactory.newKey("to");
+    datastore.put(Entity.builder(from).set("balance", 100).build());
+    datastore.put(Entity.builder(to).set("balance", 0).build());
+    return ImmutableList.of(from, to);
+  }
+
+  private void assertSuccessfulTransfer(Key from, Key to) {
+    assertEquals(90, datastore.get(from).getLong("balance"));
+    assertEquals(10, datastore.get(to).getLong("balance"));
+  }
+
+  @Test
+  public void testTransactionalUpdate() {
+    List<Key> keys = setUpTransferTests();
+    transferFunds(keys.get(0), keys.get(1), 10);
+    assertSuccessfulTransfer(keys.get(0), keys.get(1));
+  }
+
+  private void transferFunds(Key fromKey, Key toKey, long amount) {
+    // [START transactional_update]
+    Transaction txn = datastore.newTransaction();
+    try {
+      Entity from = txn.get(fromKey);
+      Entity updatedFrom =
+          Entity.builder(from).set("balance", from.getLong("balance") - amount).build();
+      Entity to = txn.get(toKey);
+      Entity updatedTo = Entity.builder(to).set("balance", to.getLong("balance") + amount).build();
+      txn.put(updatedFrom, updatedTo);
+      txn.commit();
+    } finally {
+      if (txn.active()) {
+        txn.rollback();
+      }
+    }
+    // [END transactional_update]
+  }
+
+  @Test
+  public void testTransactionalRetry() {
+    List<Key> keys = setUpTransferTests();
+    Key fromKey = keys.get(0);
+    Key toKey = keys.get(1);
+    // [START transactional_retry]
+    int retries = 5;
+    while (true) {
+      try {
+        transferFunds(fromKey, toKey, 10);
+        break;
+      } catch (DatastoreException e) {
+        if (retries == 0) {
+          throw e;
+        }
+        --retries;
+      }
+    }
+    // [END transactional_retry]
+    assertSuccessfulTransfer(keys.get(0), keys.get(1));
+  }
+
+  @Test
+  public void testTransactionalGetOrCreate() {
+    // [START transactional_get_or_create]
+    Entity task;
+    Transaction txn = datastore.newTransaction();
+    try {
+      try {
+        task = txn.get(taskKey);
+      } catch (DatastoreException e) {
+        task = Entity.builder(taskKey).build();
+        txn.put(task);
+        txn.commit();
+      }
+    } finally {
+      if (txn.active()) {
+        txn.rollback();
+      }
+    }
+    // [END transactional_get_or_create]
+    assertEquals(task, datastore.get(taskKey));
+  }
+
+  @Test
+  public void testTransactionalSingleEntityGroupReadOnly() {
+    setUpQueryTests();
+    Key taskListKey = datastore.newKeyFactory().kind("TaskList").newKey("default");
+    Entity taskListEntity = Entity.builder(taskListKey).build();
+    datastore.put(taskListEntity);
+    // [START transactional_single_entity_group_read_only]
+    Entity taskList;
+    QueryResults<Entity> tasks;
+    Transaction txn = datastore.newTransaction();
+    try {
+      taskList = txn.get(taskListKey);
+      Query<Entity> query = Query.entityQueryBuilder()
+          .kind("Task")
+          .filter(PropertyFilter.hasAncestor(taskListKey))
+          .build();
+      tasks = txn.run(query);
+      txn.commit();
+    } finally {
+      if (txn.active()) {
+        txn.rollback();
+      }
+    }
+    // [END transactional_single_entity_group_read_only]
+    assertEquals(taskListEntity, taskList);
+    assertNotNull(tasks.next());
+    assertFalse(tasks.hasNext());
+  }
+
+  @Test
+  public void testNamespaceRunQuery() {
+    setUpQueryTests();
+    // [START namespace_run_query]
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("__namespace__");
+    Key startNamespace = keyFactory.newKey("g");
+    Key endNamespace = keyFactory.newKey("h");
+    Query<Key> query = Query.keyQueryBuilder()
+        .kind("__namespace__")
+        .filter(CompositeFilter.and(
+            PropertyFilter.gt("__key__", startNamespace),
+            PropertyFilter.lt("__key__", endNamespace)))
+        .build();
+    List<String> namespaces = new ArrayList<>();
+    QueryResults<Key> results = datastore.run(query);
+    while (results.hasNext()) {
+      namespaces.add(results.next().name());
+    }
+    // [END namespace_run_query]
+    assertEquals(ImmutableList.of("ghijklmnop"), namespaces);
+  }
+
+  @Test
+  public void testKindRunQuery() {
+    setUpQueryTests();
+    // [START kind_run_query]
+    Query<Key> query = Query.keyQueryBuilder().kind("__kind__").build();
+    List<String> kinds = new ArrayList<>();
+    QueryResults<Key> results = datastore.run(query);
+    while (results.hasNext()) {
+      kinds.add(results.next().name());
+    }
+    // [END kind_run_query]
+    assertEquals(ImmutableList.of("Task"), kinds);
+  }
+
+  @Test
+  public void testPropertyRunQuery() {
+    setUpQueryTests();
+    // [START property_run_query]
+    Query<Key> query = Query.keyQueryBuilder().kind("__property__").build();
+    QueryResults<Key> results = datastore.run(query);
+    Multimap<String, String> propertiesByKind = HashMultimap.create();
+    while (results.hasNext()) {
+      Key property = results.next();
+      String kind = property.ancestors().get(property.ancestors().size() - 1).name();
+      String propertyName = property.name();
+      propertiesByKind.put(kind, propertyName);
+    }
+    // [END property_run_query]
+    Multimap<String, String> expected = HashMultimap.create();
+    expected.put("Task", "type");
+    expected.put("Task", "done");
+    expected.put("Task", "completed");
+    expected.put("Task", "priority");
+    expected.put("Task", "created");
+    expected.put("Task", "percent_complete");
+    expected.put("Task", "tag");
+    assertEquals(expected, propertiesByKind);
+  }
+
+  @Test
+  public void testPropertyByKindRunQuery() {
+    setUpQueryTests();
+    // [START property_by_kind_run_query]
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("__kind__");
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("__property__")
+        .filter(PropertyFilter.hasAncestor(keyFactory.newKey("Task")))
+        .build();
+    QueryResults<Entity> results = datastore.run(query);
+    Multimap<String, String> representationsByProperty = HashMultimap.create();
+    while (results.hasNext()) {
+      Entity property = results.next();
+      String propertyName = property.key().name();
+      List<? extends Value<?>> representations = property.getList("property_representation");
+      for (Value<?> value : representations) {
+        representationsByProperty.put(propertyName, (String) value.get());
+      }
+    }
+    // [END property_by_kind_run_query]
+    Multimap<String, String> expected = HashMultimap.create();
+    expected.put("type", "STRING");
+    expected.put("done", "BOOLEAN");
+    expected.put("completed", "BOOLEAN");
+    expected.put("priority", "INT64");
+    expected.put("created", "INT64");
+    expected.put("percent_complete", "DOUBLE");
+    expected.put("tag", "STRING");
+    assertEquals(expected, representationsByProperty);
+  }
+
+  @Test
+  public void testPropertyFilteringRunQuery() {
+    setUpQueryTests();
+    // [START property_filtering_run_query]
+    KeyFactory keyFactory = datastore.newKeyFactory()
+        .kind("__property__")
+        .ancestors(PathElement.of("__kind__", "Task"));
+    Query<Key> query = Query.keyQueryBuilder()
+        .kind("__property__")
+        .filter(PropertyFilter.ge("__key__", keyFactory.newKey("priority")))
+        .build();
+    Multimap<String, String> propertiesByKind = HashMultimap.create();
+    QueryResults<Key> results = datastore.run(query);
+    while (results.hasNext()) {
+      Key property = results.next();
+      String kind = property.ancestors().get(property.ancestors().size() - 1).name();
+      String propertyName = property.name();
+      propertiesByKind.put(kind, propertyName);
+    }
+    // [END property_filtering_run_query]
+    Multimap<String, String> expected = HashMultimap.create();
+    expected.put("Task", "priority");
+    expected.put("Task", "tag");
+    expected.put("Task", "type");
+    assertEquals(expected, propertiesByKind);
+  }
+
+  @Test
+  public void testGqlRunQuery() {
+    setUpQueryTests();
+    // [START gql_run_query]
+    Query<Entity> query =
+        Query.gqlQueryBuilder(ResultType.ENTITY, "select * from Task order by created asc").build();
+    // [END gql_run_query]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testGqlNamedBindingQuery() {
+    setUpQueryTests();
+    // [START gql_named_binding_query]
+    Query<Entity> query =
+        Query.gqlQueryBuilder(
+            ResultType.ENTITY,
+            "select * from Task where completed = @completed and priority = @priority")
+        .setBinding("completed", false)
+        .setBinding("priority", 4)
+        .build();
+    // [END gql_named_binding_query]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testGqlPositionalBindingQuery() {
+    setUpQueryTests();
+    // [START gql_positional_binding_query]
+    Query<Entity> query = Query.gqlQueryBuilder(
+          ResultType.ENTITY, "select * from Task where completed = @1 and priority = @2")
+        .addBinding(false)
+        .addBinding(4)
+        .build();
+    // [END gql_positional_binding_query]
+    assertValidQuery(query);
+  }
+
+  @Test
+  public void testGqlLiteralQuery() {
+    setUpQueryTests();
+    // [START gql_literal_query]
+    Query<Entity> query = Query.gqlQueryBuilder(
+            ResultType.ENTITY, "select * from Task where completed = false and priority = 4")
+        .allowLiteral(true)
+        .build();
+    // [END gql_literal_query]
+    assertValidQuery(query);
+  }
+}
