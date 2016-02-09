@@ -27,6 +27,7 @@ public class DnsTest {
 
   private static final Integer PAGE_SIZE = 20;
   private static final String PAGE_TOKEN = "page token";
+  private static final String DNS_NAME = "www.example.com.";
 
   @Test
   public void testDnsRecordListOption() {
@@ -89,6 +90,10 @@ public class DnsTest {
     option = Dns.ZoneListOption.pageSize(PAGE_SIZE);
     assertEquals(PAGE_SIZE, option.value());
     assertEquals(DnsRpc.Option.PAGE_SIZE, option.rpcOption());
+    // dnsName filter
+    option = Dns.ZoneListOption.dnsName(DNS_NAME);
+    assertEquals(DNS_NAME, option.value());
+    assertEquals(DnsRpc.Option.DNS_NAME, option.rpcOption());
   }
 
   @Test

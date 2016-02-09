@@ -82,7 +82,7 @@ public class ZoneInfo implements Serializable {
      * servers that all host the same zones. Most users will not need to specify this value.
      */
     abstract Builder nameServerSet(String nameServerSet);
-    // todo(mderka) add more to the doc when questions are answered by the service owner
+    // this should not be included in tooling as per the service owners
 
     /**
      * Sets a list of servers that hold the information about the zone. This information is provided
@@ -155,7 +155,7 @@ public class ZoneInfo implements Serializable {
     }
 
     @Override
-    public Builder nameServerSet(String nameServerSet) {
+    Builder nameServerSet(String nameServerSet) {
       this.nameServerSet = checkNotNull(nameServerSet);
       return this;
     }
@@ -227,10 +227,10 @@ public class ZoneInfo implements Serializable {
   }
 
   /**
-   * Returns the optionally specified set of DNS name servers that all host this zone.
+   * Returns the optionally specified set of DNS name servers that all host this zone. This value is
+   * set only for specific use cases and is left empty for vast majority of users.
    */
   public String nameServerSet() {
-    // todo(mderka) update this doc after finding out more about this from the service owners
     return nameServerSet;
   }
 
