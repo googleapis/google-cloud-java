@@ -14,6 +14,12 @@
  * limitations under the License.
  */
 
+/*
+ * EDITING INSTRUCTIONS
+ * This file is referenced in READMEs and javadoc. Any change to this file should be reflected in
+ * project's READMEs and package-info.java.
+ */
+
 package com.google.gcloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
