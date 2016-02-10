@@ -20,29 +20,32 @@
  * <p>Here's a simple usage example for using gcloud-java from App/Compute Engine. This example
  * creates a project if it does not exist. For the complete source code see
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/GetOrCreateProject.java">
- * gcloud-java-examples:com.google.gcloud.examples.resourcemanager.snippets.GetOrCreateProject</a>.
+ * GetOrCreateProject.java</a>.
  * <pre> {@code
  * ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
- * String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID
- * Project myProject = resourceManager.get(myProjectId);
- * if (myProject == null) {
- *   myProject = resourceManager.create(ProjectInfo.builder(myProjectId).build());
+ * String projectId = "my-globally-unique-project-id"; // Change to a unique project ID.
+ * Project project = resourceManager.get(projectId);
+ * if (project == null) {
+ *   project = resourceManager.create(ProjectInfo.builder(projectId).build());
  * }
- * System.out.println("Got project " + myProject.projectId() + " from the server.");
+ * System.out.println("Got project " + project.projectId() + " from the server.");
  * }</pre>
  * <p>
- * This second example shows how to update a project and list all projects the user has permission
- * to view. For the complete source code see
+ * This second example shows how to update a project if it exists and list all projects the user has
+ * permission to view. For the complete source code see
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java">
- * gcloud-java-examples:com.google.gcloud.examples.resourcemanager.snippets.UpdateAndListProjects</a>.
+ * UpdateAndListProjects.java</a>.
  * <pre> {@code
  * ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
- * String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID.
- * Project myProject = resourceManager.create(ProjectInfo.builder(myProjectId).build());
- * Project newProject = myProject.toBuilder()
- *     .addLabel("launch-status", "in-development")
- *     .build()
- *     .replace();
+ * Project project = resourceManager.get("some-project-id"); // Use an existing project's ID
+ * if (project != null) {
+ *   Project newProject = project.toBuilder()
+ *       .addLabel("launch-status", "in-development")
+ *       .build()
+ *       .replace();
+ *   System.out.println("Updated the labels of project " + newProject.projectId()
+ *       + " to be " + newProject.labels());
+ * }
  * Iterator<Project> projectIterator = resourceManager.list().iterateAll();
  * System.out.println("Projects I can view:");
  * while (projectIterator.hasNext()) {

@@ -34,15 +34,17 @@ public class UpdateAndListProjects {
     ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
 
     // Get a project from the server
-    Project myProject = resourceManager.get("some-project-id"); // Use an existing project's ID
+    Project project = resourceManager.get("some-project-id"); // Use an existing project's ID
 
     // Update a project
-    Project newProject = myProject.toBuilder()
-        .addLabel("launch-status", "in-development")
-        .build()
-        .replace();
-    System.out.println("Updated the labels of project " + newProject.projectId()
-        + " to be " + newProject.labels());
+    if (project != null) {
+      Project newProject = project.toBuilder()
+          .addLabel("launch-status", "in-development")
+          .build()
+          .replace();
+      System.out.println("Updated the labels of project " + newProject.projectId()
+          + " to be " + newProject.labels());
+    }
 
     // List all the projects you have permission to view.
     Iterator<Project> projectIterator = resourceManager.list().iterateAll();

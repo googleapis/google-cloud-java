@@ -200,91 +200,12 @@ while (rowIterator.hasNext()) {
 ```
 #### Complete source code
 
-Here we put together all the code shown above into one program. This program assumes that you are
-running on Compute Engine or from your own desktop. To run this example on App Engine, simply move
+In
+[InsertDataAndQueryTable.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/InsertDataAndQueryTable.java)
+we put together all the code shown above into one program. The program assumes that you are
+running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
-display on your webpage. Complete source code can be found at
-[gcloud-java-examples:com.google.gcloud.examples.bigquery.snippets.InsertDataAndQueryTable](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/InsertDataAndQueryTable.java).
-
-
-```java
-import com.google.gcloud.bigquery.BigQuery;
-import com.google.gcloud.bigquery.BigQueryOptions;
-import com.google.gcloud.bigquery.DatasetInfo;
-import com.google.gcloud.bigquery.Field;
-import com.google.gcloud.bigquery.FieldValue;
-import com.google.gcloud.bigquery.InsertAllRequest;
-import com.google.gcloud.bigquery.InsertAllResponse;
-import com.google.gcloud.bigquery.QueryRequest;
-import com.google.gcloud.bigquery.QueryResponse;
-import com.google.gcloud.bigquery.Schema;
-import com.google.gcloud.bigquery.StandardTableDefinition;
-import com.google.gcloud.bigquery.TableId;
-import com.google.gcloud.bigquery.TableInfo;
-
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
-public class InsertDataAndQueryTable {
-
-  public static void main(String... args) throws InterruptedException {
-
-    // Create a service instance
-    BigQuery bigquery = BigQueryOptions.defaultInstance().service();
-
-    // Create a dataset
-    String datasetId = "my_dataset_id";
-    bigquery.create(DatasetInfo.builder(datasetId).build());
-
-    TableId tableId = TableId.of(datasetId, "my_table_id");
-    // Table field definition
-    Field stringField = Field.of("StringField", Field.Type.string());
-    // Table schema definition
-    Schema schema = Schema.of(stringField);
-    // Create a table
-    StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
-    bigquery.create(TableInfo.of(tableId, tableDefinition));
-
-    // Define rows to insert
-    Map<String, Object> firstRow = new HashMap<>();
-    Map<String, Object> secondRow = new HashMap<>();
-    firstRow.put("StringField", "value1");
-    secondRow.put("StringField", "value2");
-    // Create an insert request
-    InsertAllRequest insertRequest = InsertAllRequest.builder(tableId)
-        .addRow(firstRow)
-        .addRow(secondRow)
-        .build();
-    // Insert rows
-    InsertAllResponse insertResponse = bigquery.insertAll(insertRequest);
-    // Check if errors occurred
-    if (insertResponse.hasErrors()) {
-      System.out.println("Errors occurred while inserting rows");
-    }
-
-    // Create a query request
-    QueryRequest queryRequest =
-        QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
-            .maxWaitTime(60000L)
-            .maxResults(1000L)
-            .build();
-    // Request query to be executed and wait for results
-    QueryResponse queryResponse = bigquery.query(queryRequest);
-    while (!queryResponse.jobCompleted()) {
-      Thread.sleep(1000L);
-      queryResponse = bigquery.getQueryResults(queryResponse.jobId());
-    }
-    // Read rows
-    Iterator<List<FieldValue>> rowIterator = queryResponse.result().iterateAll();
-    System.out.println("Table rows:");
-    while (rowIterator.hasNext()) {
-      System.out.println(rowIterator.next());
-    }
-  }
-}
-```
+display on your webpage.
 
 Troubleshooting
 ---------------

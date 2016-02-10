@@ -134,69 +134,12 @@ Cloud Datastore relies on indexing to run queries. Indexing is turned on by defa
 
 #### Complete source code
 
-Here we put together all the code shown above into one program. This program assumes that you are running on Compute Engine or from your own desktop. To run this example on App Engine, move this code to your application's servlet class and print the query output to the webpage instead of `System.out`.
-Complete source code can be found at
-[gcloud-java-examples:com.google.gcloud.examples.datastore.snippets.AddEntitiesAndRunQuery](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java).
-
-```java
-import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreOptions;
-import com.google.gcloud.datastore.Entity;
-import com.google.gcloud.datastore.Key;
-import com.google.gcloud.datastore.KeyFactory;
-import com.google.gcloud.datastore.Query;
-import com.google.gcloud.datastore.QueryResults;
-import com.google.gcloud.datastore.StructuredQuery;
-import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
-
-public class AddEntitiesAndRunQuery {
-
-  public static void main(String... args) {
-    // Create datastore service object.
-    // By default, credentials are inferred from the runtime environment.
-    Datastore datastore = DatastoreOptions.defaultInstance().service();
-
-    // Add an entity to Datastore
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("Person");
-    Key key = keyFactory.newKey("john.doe@gmail.com");
-    Entity entity = Entity.builder(key)
-        .set("name", "John Doe")
-        .set("age", 51)
-        .set("favorite_food", "pizza")
-        .build();
-    datastore.put(entity);
-
-    // Get an entity from Datastore
-    Entity johnEntity = datastore.get(key);
-
-    // Add a couple more entities to make the query results more interesting
-    Key janeKey = keyFactory.newKey("jane.doe@gmail.com");
-    Entity janeEntity = Entity.builder(janeKey)
-        .set("name", "Jane Doe")
-        .set("age", 44)
-        .set("favorite_food", "pizza")
-        .build();
-    Key joeKey = keyFactory.newKey("joe.shmoe@gmail.com");
-    Entity joeEntity = Entity.builder(joeKey)
-        .set("name", "Joe Shmoe")
-        .set("age", 27)
-        .set("favorite_food", "sushi")
-        .build();
-    datastore.put(janeEntity, joeEntity);
-
-    // Run a query
-    Query<Entity> query = Query.entityQueryBuilder()
-        .kind("Person")
-        .filter(PropertyFilter.eq("favorite_food", "pizza"))
-        .build();
-    QueryResults<Entity> results = datastore.run(query);
-    while (results.hasNext()) {
-      Entity currentEntity = results.next();
-      System.out.println(currentEntity.getString("name") + ", you're invited to a pizza party!");
-    }
-  }
-}
-```
+In
+[AddEntitiesAndRunQuery.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
+we put together all the code shown above into one program. The program assumes that you are
+running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
+the code from the main method to your application's servlet class and change the print statements to
+display on your webpage.
 
 Troubleshooting
 ---------------

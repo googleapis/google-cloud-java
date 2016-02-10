@@ -42,17 +42,17 @@ libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.1.3"
 Example Applications
 --------------------
 
-- [`BigQueryExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality
+- [`BigQueryExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality
   - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/BigQueryExample.html).
 - [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
   - This app uses `gcloud-java` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
-- [`DatastoreExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/DatastoreExample.java) - A simple command line interface for the Cloud Datastore
+- [`DatastoreExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/DatastoreExample.java) - A simple command line interface for the Cloud Datastore
   - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html).
-- [`ResourceManagerExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
+- [`ResourceManagerExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
   - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/ResourceManagerExample.html).
 - [`SparkDemo`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/managed_vms/sparkjava) - An example of using gcloud-java-datastore from within the SparkJava and App Engine Managed VM frameworks.
   - Read about how it works on the example's [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/sparkjava#how-does-it-work).
-- [`StorageExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
+- [`StorageExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
   - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
 
 Specifying a Project ID
@@ -124,7 +124,7 @@ Google Cloud BigQuery (Alpha)
 Here is a code snippet showing a simple usage example from within Compute/App Engine. Note that you
 must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 Complete source code can be found at
-[gcloud-java-examples:com.google.gcloud.examples.bigquery.snippets.CreateTableAndLoadData](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
+[CreateTableAndLoadData.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
 
 ```java
 import com.google.gcloud.bigquery.BigQuery;
@@ -171,9 +171,8 @@ Google Cloud Datastore
 
 Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 
-The first snippet shows how to get a Datastore entity and create it if it does not exist. Complete
-source code can be found at
-[gcloud-java-examples:com.google.gcloud.examples.datastore.snippets.GetOrCreateEntity](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/GetOrCreateEntity.java).
+The first snippet shows how to create a Datastore entity. Complete source code can be found at
+[CreateEntity.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/CreateEntity.java).
 
 ```java
 import com.google.gcloud.datastore.Datastore;
@@ -186,19 +185,16 @@ import com.google.gcloud.datastore.KeyFactory;
 Datastore datastore = DatastoreOptions.defaultInstance().service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
 Key key = keyFactory.newKey("keyName");
-Entity entity = datastore.get(key);
-if (entity == null) {
-  entity = Entity.builder(key)
-      .set("name", "John Do")
-      .set("age", 30)
-      .set("access_time", DateTime.now())
-      .build();
-  datastore.put(entity);
-}
+Entity entity = Entity.builder(key)
+    .set("name", "John Do")
+    .set("age", 30)
+    .set("access_time", DateTime.now())
+    .build();
+datastore.put(entity);
 ```
 The second snippet shows how to update a Datastore entity if it exists. Complete source code can be
 found at
-[gcloud-java-examples:com.google.gcloud.examples.datastore.snippets.UpdateEntity](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/UpdateEntity.java).
+[UpdateEntity.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/UpdateEntity.java).
 ```java
 import com.google.gcloud.datastore.Datastore;
 import com.google.gcloud.datastore.DatastoreOptions;
@@ -230,7 +226,7 @@ Google Cloud Resource Manager (Alpha)
 
 Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
 Complete source code can be found at
-[gcloud-java-examples:com.google.gcloud.examples.resourcemanager.snippets.UpdateAndListProjects](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
+[UpdateAndListProjects.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
 ```java
 import com.google.gcloud.resourcemanager.Project;
 import com.google.gcloud.resourcemanager.ResourceManager;
@@ -239,14 +235,15 @@ import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 import java.util.Iterator;
 
 ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
-Project myProject = resourceManager.get("some-project-id"); // Use an existing project's ID
-Project newProject = myProject.toBuilder()
-    .addLabel("launch-status", "in-development")
-    .build()
-    .replace();
-System.out.println("Updated the labels of project " + newProject.projectId()
-    + " to be " + newProject.labels());
-// List all the projects you have permission to view.
+Project project = resourceManager.get("some-project-id"); // Use an existing project's ID
+if (project != null) {
+  Project newProject = project.toBuilder()
+      .addLabel("launch-status", "in-development")
+      .build()
+      .replace();
+  System.out.println("Updated the labels of project " + newProject.projectId()
+      + " to be " + newProject.labels());
+}
 Iterator<Project> projectIterator = resourceManager.list().iterateAll();
 System.out.println("Projects I can view:");
 while (projectIterator.hasNext()) {
@@ -266,9 +263,8 @@ Google Cloud Storage
 
 Here are two code snippets showing simple usage examples from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 
-The first snippet shows how to get a Storage blob and create it if it does not exist. Complete
-source code can be found at
-[gcloud-java-examples:com.google.gcloud.examples.storage.snippets.GetOrCreateBlob](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/GetOrCreateBlob.java).
+The first snippet shows how to create a Storage blob. Complete source code can be found at
+[CreateBlob.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/CreateBlob.java).
 
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -281,15 +277,12 @@ import com.google.gcloud.storage.StorageOptions;
 
 Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
-Blob blob = storage.get(blobId);
-if (blob == null) {
-  BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
-  blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
-}
+BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
 ```
 The second snippet shows how to update a Storage blob if it exists. Complete source code can be
 found at
-[gcloud-java-examples:com.google.gcloud.examples.storage.snippets.UpdateBlob](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/UpdateBlob.java).
+[UpdateBlob.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/UpdateBlob.java).
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
 

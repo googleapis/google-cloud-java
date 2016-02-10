@@ -25,17 +25,14 @@ import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageOptions;
 
 /**
- * A snippet for Google Cloud Storage showing how to create a blob if it does not exist.
+ * A snippet for Google Cloud Storage showing how to create a blob.
  */
-public class GetOrCreateBlob {
+public class CreateBlob {
 
   public static void main(String... args) {
     Storage storage = StorageOptions.defaultInstance().service();
     BlobId blobId = BlobId.of("bucket", "blob_name");
-    Blob blob = storage.get(blobId);
-    if (blob == null) {
-      BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
-      blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
-    }
+    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+    Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
   }
 }

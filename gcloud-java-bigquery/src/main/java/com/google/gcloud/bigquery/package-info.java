@@ -20,7 +20,7 @@
  * <p>A simple usage example showing how to create a table if it does not exist and load data into
  * it. For the complete source code see
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/CreateTableAndLoadData.java">
- * gcloud-java-examples:com.google.gcloud.examples.bigquery.snippets.CreateTableAndLoadData</a>.
+ * CreateTableAndLoadData.java</a>.
  * <pre> {@code
  * BigQuery bigquery = BigQueryOptions.defaultInstance().service();
  * TableId tableId = TableId.of("dataset", "table");

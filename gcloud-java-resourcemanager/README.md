@@ -95,8 +95,8 @@ import com.google.gcloud.resourcemanager.Project;
 Then use the following code to get the project:
 
 ```java
-String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID
-Project myProject = resourceManager.get(myProjectId);
+String projectId = "my-globally-unique-project-id"; // Change to a unique project ID
+Project project = resourceManager.get(projectId);
 ```
 
 #### Creating a project
@@ -110,12 +110,12 @@ import com.google.gcloud.resourcemanager.Project;
 import com.google.gcloud.resourcemanager.ProjectInfo;
 ```
 
-Then add the following code to create a project (be sure to change `myProjectId` to your own unique
+Then add the following code to create a project (be sure to change `projectId` to your own unique
 project ID).
 
 ```java
-String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID
-Project myProject = resourceManager.create(ProjectInfo.builder(myProjectId).build());
+String projectId = "my-globally-unique-project-id"; // Change to a unique project ID
+Project project = resourceManager.create(ProjectInfo.builder(projectId).build());
 ```
 
 Note that the return value from `create` is a `Project` that includes additional read-only
@@ -130,7 +130,7 @@ For example, to add a label to a project to denote that it's launch status is "i
 the following code:
 
 ```java
-Project newProject = myProject.toBuilder()
+Project newProject = project.toBuilder()
     .addLabel("launch-status", "in-development")
     .build()
     .replace();
@@ -163,73 +163,15 @@ while (projectIterator.hasNext()) {
 
 #### Complete source code
 
-Here we put together all the code shown above into two programs. Both programs assume that you are
+We put together all the code shown above into two programs. Both programs assume that you are
 running from your own desktop and used the Google Cloud SDK to authenticate yourself.
 
 The first program creates a project if it does not exist. Complete source code can be found at
-[gcloud-java-examples:com.google.gcloud.examples.resourcemanager.snippets.GetOrCreateProject](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/GetOrCreateProject.java).
-```java
-import com.google.gcloud.resourcemanager.Project;
-import com.google.gcloud.resourcemanager.ProjectInfo;
-import com.google.gcloud.resourcemanager.ResourceManager;
-import com.google.gcloud.resourcemanager.ResourceManagerOptions;
+[GetOrCreateProject.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/GetOrCreateProject.java).
 
-public class GetOrCreateProject {
-
-  public static void main(String... args) {
-    // Create Resource Manager service object.
-    // By default, credentials are inferred from the runtime environment.
-    ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
-
-    String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID
-    // Get a project from the server.
-    Project myProject = resourceManager.get(myProjectId);
-    if (myProject == null) {
-      // Create a project.
-      myProject = resourceManager.create(ProjectInfo.builder(myProjectId).build());
-    }
-    System.out.println("Got project " + myProject.projectId() + " from the server.");
-  }
-}
-```
-The second program updates a project and lists all projects the user has permission to view.
-Complete source code can be found at
-[gcloud-java-examples:com.google.gcloud.examples.resourcemanager.snippets.UpdateAndListProjects](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
-
-```java
-import com.google.gcloud.resourcemanager.Project;
-import com.google.gcloud.resourcemanager.ResourceManager;
-import com.google.gcloud.resourcemanager.ResourceManagerOptions;
-
-import java.util.Iterator;
-
-public class UpdateAndListProjects {
-
-  public static void main(String... args) {
-    // Create Resource Manager service object
-    // By default, credentials are inferred from the runtime environment.
-    ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
-
-    // Get a project from the server
-    Project myProject = resourceManager.get("some-project-id"); // Use an existing project's ID
-
-    // Update a project
-    Project newProject = myProject.toBuilder()
-        .addLabel("launch-status", "in-development")
-        .build()
-        .replace();
-    System.out.println("Updated the labels of project " + newProject.projectId()
-        + " to be " + newProject.labels());
-
-    // List all the projects you have permission to view
-    Iterator<Project> projectIterator = resourceManager.list().iterateAll();
-    System.out.println("Projects I can view:");
-    while (projectIterator.hasNext()) {
-      System.out.println(projectIterator.next().projectId());
-    }
-  }
-}
-```
+The second program updates a project if it exists and lists all projects the user has permission to
+view. Complete source code can be found at
+[UpdateAndListProjects.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
 
 Java Versions
 -------------

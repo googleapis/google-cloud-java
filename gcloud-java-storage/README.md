@@ -140,56 +140,12 @@ while (blobIterator.hasNext()) {
 
 #### Complete source code
 
-Here we put together all the code shown above into one program. This program assumes that you are
-running on Compute Engine or from your own desktop. To run this example on App Engine, simply move
+In
+[CreateAndListBucketsAndBlobs.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/CreateAndListBucketsAndBlobs.java)
+we put together all the code shown above into one program. The program assumes that you are
+running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
-display on your webpage. Complete source code can be found at
-[gcloud-java-examples:com.google.gcloud.examples.storage.snippets.CreateAndListBucketsAndBlobs](https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/CreateAndListBucketsAndBlobs.java).
-
-```java
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import com.google.gcloud.storage.Blob;
-import com.google.gcloud.storage.Bucket;
-import com.google.gcloud.storage.BucketInfo;
-import com.google.gcloud.storage.Storage;
-import com.google.gcloud.storage.StorageOptions;
-
-import java.util.Iterator;
-
-public class CreateAndListBucketsAndBlobs {
-
-  public static void main(String... args) {
-    // Create a service object
-    // Credentials are inferred from the environment.
-    Storage storage = StorageOptions.defaultInstance().service();
-
-    // Create a bucket
-    String bucketName = "my_unique_bucket"; // Change this to something unique
-    Bucket bucket = storage.create(BucketInfo.of(bucketName));
-
-    // Upload a blob to the newly created bucket
-    Blob blob = bucket.create("my_blob_name", "a simple blob".getBytes(UTF_8), "text/plain");
-
-    // Read the blob content from the server
-    String blobContent = new String(blob.content(), UTF_8);
-
-    // List all your buckets
-    Iterator<Bucket> bucketIterator = storage.list().iterateAll();
-    System.out.println("My buckets:");
-    while (bucketIterator.hasNext()) {
-      System.out.println(bucketIterator.next());
-    }
-
-    // List the blobs in a particular bucket
-    Iterator<Blob> blobIterator = bucket.list().iterateAll();
-    System.out.println("My blobs:");
-    while (blobIterator.hasNext()) {
-      System.out.println(blobIterator.next());
-    }
-  }
-}
-```
+display on your webpage.
 
 Troubleshooting
 ---------------

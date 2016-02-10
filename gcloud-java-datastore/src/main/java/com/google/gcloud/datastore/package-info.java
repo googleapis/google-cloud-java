@@ -18,28 +18,25 @@
  * A client to the Google Cloud Datastore.
  *
  * <p>Here's a simple usage example for using gcloud-java from App/Compute Engine. This example
- * shows how to get a Datastore entity and create it if it does not exist. For the complete source
- * code see
- * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/GetOrCreateEntity.java">
- * gcloud-java-examples:com.google.gcloud.examples.datastore.snippets.GetOrCreateEntity</a>.
+ * shows how to create a Datastore entity. For the complete source code see
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/CreateEntity.java">
+ * CreateEntity.java</a>.
  * <pre> {@code
  * Datastore datastore = DatastoreOptions.defaultInstance().service();
  * KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
  * Key key = keyFactory.newKey("keyName");
- * Entity entity = datastore.get(key);
- * if (entity == null) {
- *   entity = Entity.builder(key)
- *       .set("name", "John Do")
- *       .set("age", 30)
- *       .set("access_time", DateTime.now())
- *       .build();
- *   datastore.put(entity);
- * }} </pre>
+ * Entity entity = Entity.builder(key)
+ *     .set("name", "John Do")
+ *     .set("age", 30)
+ *     .set("access_time", DateTime.now())
+ *     .build();
+ * datastore.put(entity);
+ * } </pre>
  * <p>
  * This second example shows how to get and update a Datastore entity if it exists. For the complete
  * source code see
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/UpdateEntity.java">
- * gcloud-java-examples:com.google.gcloud.examples.datastore.snippets.UpdateEntity</a>.
+ * UpdateEntity.java</a>.
  * <pre> {@code
  * Datastore datastore = DatastoreOptions.defaultInstance().service();
  * KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");

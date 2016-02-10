@@ -18,23 +18,20 @@
  * A client to Google Cloud Storage.
  *
  * <p>Here's a simple usage example for using gcloud-java from App/Compute Engine. This example
- * shows how to create a blob if it does not exist. For the complete source
- * code see
+ * shows how to create a Storage blob. For the complete source code see
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/GetOrCreateBlob.java">
- * gcloud-java-examples:com.google.gcloud.examples.storage.snippets.GetOrCreateBlob</a>.
+ * CreateBlob.java</a>.
  * <pre> {@code
  * Storage storage = StorageOptions.defaultInstance().service();
  * BlobId blobId = BlobId.of("bucket", "blob_name");
- * Blob blob = storage.get(blobId);
- * if (blob == null) {
- *   BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
- *   blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
- * }}</pre>
+ * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+ * Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
+ * }</pre>
  * <p>
  * This second example shows how to update the blob's content if the blob exists. For the complete
  * source code see
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/UpdateBlob.java">
- * gcloud-java-examples:com.google.gcloud.examples.storage.snippets.UpdateBlob</a>.
+ * UpdateBlob.java</a>.
  * <pre> {@code
  * Storage storage = StorageOptions.defaultInstance().service();
  * BlobId blobId = BlobId.of("bucket", "blob_name");

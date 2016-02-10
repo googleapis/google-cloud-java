@@ -24,23 +24,19 @@ import com.google.gcloud.datastore.Key;
 import com.google.gcloud.datastore.KeyFactory;
 
 /**
- * A snippet for Google Cloud Datastore showing how to get an entity or create it if it does not
- * exist.
+ * A snippet for Google Cloud Datastore showing how to create an entity.
  */
-public class GetOrCreateEntity {
+public class CreateEntity {
 
   public static void main(String... args) {
     Datastore datastore = DatastoreOptions.defaultInstance().service();
     KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
     Key key = keyFactory.newKey("keyName");
-    Entity entity = datastore.get(key);
-    if (entity == null) {
-      entity = Entity.builder(key)
-          .set("name", "John Do")
-          .set("age", 30)
-          .set("access_time", DateTime.now())
-          .build();
-      datastore.put(entity);
-    }
+    Entity entity = Entity.builder(key)
+        .set("name", "John Do")
+        .set("age", 30)
+        .set("access_time", DateTime.now())
+        .build();
+    datastore.put(entity);
   }
 }

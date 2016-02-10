@@ -31,13 +31,13 @@ public class GetOrCreateProject {
     // By default, credentials are inferred from the runtime environment.
     ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
 
-    String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID.
+    String projectId = "my-globally-unique-project-id"; // Change to a unique project ID.
     // Get a project from the server.
-    Project myProject = resourceManager.get(myProjectId);
-    if (myProject == null) {
+    Project project = resourceManager.get(projectId);
+    if (project == null) {
       // Create a project.
-      myProject = resourceManager.create(ProjectInfo.builder(myProjectId).build());
+      project = resourceManager.create(ProjectInfo.builder(projectId).build());
     }
-    System.out.println("Got project " + myProject.projectId() + " from the server.");
+    System.out.println("Got project " + project.projectId() + " from the server.");
   }
 }
