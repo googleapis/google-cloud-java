@@ -26,7 +26,7 @@
  * KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
  * Key key = keyFactory.newKey("keyName");
  * Entity entity = Entity.builder(key)
- *     .set("name", "John Do")
+ *     .set("name", "John Doe")
  *     .set("age", 30)
  *     .set("access_time", DateTime.now())
  *     .build();
