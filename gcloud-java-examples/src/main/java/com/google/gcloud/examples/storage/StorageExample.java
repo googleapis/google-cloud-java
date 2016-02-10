@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.examples;
+package com.google.gcloud.examples.storage;
 
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
@@ -65,7 +65,7 @@ import java.util.concurrent.TimeUnit;
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven -
- * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
+ * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.storage.StorageExample"
  *  -Dexec.args="[<project_id>]
  *  list [<bucket>] |
  *  info [<bucket> [<file>]] |
