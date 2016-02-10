@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud.storage.it;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
@@ -32,8 +32,19 @@ import com.google.gcloud.Page;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.WriteChannel;
+import com.google.gcloud.storage.BatchRequest;
+import com.google.gcloud.storage.BatchResponse;
+import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.BlobId;
+import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.storage.Bucket;
+import com.google.gcloud.storage.BucketInfo;
+import com.google.gcloud.storage.CopyWriter;
+import com.google.gcloud.storage.HttpMethod;
+import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.BlobField;
 import com.google.gcloud.storage.Storage.BucketField;
+import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import org.junit.AfterClass;
