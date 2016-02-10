@@ -88,10 +88,9 @@ public class ITStorageTest {
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
-    if (storage != null && !RemoteGcsHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS)) {
-      if (log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
-      }
+    if (storage != null && !RemoteGcsHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS)
+        && log.isLoggable(Level.WARNING)) {
+      log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
     }
   }
 
@@ -442,7 +441,7 @@ public class ITStorageTest {
   @Test
   public void testDeleteNonExistingBlob() {
     String blobName = "test-delete-non-existing-blob";
-    assertTrue(!storage.delete(BUCKET, blobName));
+    assertFalse(storage.delete(BUCKET, blobName));
   }
 
   @Test
@@ -450,7 +449,7 @@ public class ITStorageTest {
     String blobName = "test-delete-blob-non-existing-generation";
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
-    assertTrue(!storage.delete(BlobId.of(BUCKET, blobName, -1L)));
+    assertFalse(storage.delete(BlobId.of(BUCKET, blobName, -1L)));
   }
 
   @Test
@@ -966,7 +965,7 @@ public class ITStorageTest {
     assertNotNull(storage.create(sourceBlob1));
     List<Boolean> deleteStatus = storage.delete(sourceBlob1.blobId(), sourceBlob2.blobId());
     assertTrue(deleteStatus.get(0));
-    assertTrue(!deleteStatus.get(1));
+    assertFalse(deleteStatus.get(1));
   }
 
   @Test

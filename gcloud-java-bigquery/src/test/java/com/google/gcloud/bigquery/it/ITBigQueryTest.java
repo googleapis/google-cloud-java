@@ -197,10 +197,9 @@ public class ITBigQueryTest {
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
     }
-    if (storage != null && !RemoteGcsHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS)) {
-      if (LOG.isLoggable(Level.WARNING)) {
-        LOG.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
-      }
+    if (storage != null && !RemoteGcsHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS)
+        && LOG.isLoggable(Level.WARNING)) {
+      LOG.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
     }
   }
 

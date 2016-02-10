@@ -1300,8 +1300,8 @@ public interface Storage extends Service<StorageOptions> {
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
    *
    * <p>Example usage of replacing blob's metadata:
-   * <pre>    {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
-   *    {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
+   * <pre> {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
+   * {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
    * </pre>
    *
    * @return the updated blob
@@ -1315,8 +1315,8 @@ public interface Storage extends Service<StorageOptions> {
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
    *
    * <p>Example usage of replacing blob's metadata:
-   * <pre>    {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
-   *    {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
+   * <pre> {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
+   * {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
    * </pre>
    *
    * @return the updated blob
@@ -1373,14 +1373,15 @@ public interface Storage extends Service<StorageOptions> {
    * might issue multiple RPC calls depending on blob's size.
    *
    * <p>Example usage of copy:
-   * <pre>    {@code BlobInfo blob = service.copy(copyRequest).result();}
+   * <pre> {@code BlobInfo blob = service.copy(copyRequest).result();}
    * </pre>
    * To explicitly issue chunk copy requests use {@link CopyWriter#copyChunk()} instead:
-   * <pre>     {@code CopyWriter copyWriter = service.copy(copyRequest);
-   *    while (!copyWriter.isDone()) {
-   *        copyWriter.copyChunk();
-   *    }
-   *    BlobInfo blob = copyWriter.result();
+   * <pre> {@code
+   * CopyWriter copyWriter = service.copy(copyRequest);
+   * while (!copyWriter.isDone()) {
+   *     copyWriter.copyChunk();
+   * }
+   * BlobInfo blob = copyWriter.result();
    * }
    * </pre>
    *
@@ -1462,8 +1463,8 @@ public interface Storage extends Service<StorageOptions> {
    * accessible blobs, but don't want to require users to explicitly log in.
    *
    * <p>Example usage of creating a signed URL that is valid for 2 weeks:
-   * <pre>   {@code
-   *     service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS);
+   * <pre> {@code
+   * service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS);
    * }</pre>
    *
    * @param blobInfo the blob associated with the signed URL
