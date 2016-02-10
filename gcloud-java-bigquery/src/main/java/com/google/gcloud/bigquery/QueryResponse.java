@@ -29,7 +29,7 @@ import java.util.Objects;
  * Query Request ({@link BigQuery#query(QueryRequest)}).
  *
  * <p>Example usage of a query response:
- * <pre>    {@code
+ * <pre>     {@code
  *    QueryResponse response = bigquery.query(request);
  *    while (!response.jobCompleted()) {
  *      Thread.sleep(1000);

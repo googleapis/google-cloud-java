@@ -177,7 +177,7 @@ public class InsertAllRequest implements Serializable {
      * Adds a row to be inserted with associated id.
      *
      * <p>Example usage of adding a row with associated id:
-     * <pre>    {@code
+     * <pre>   {@code
      *   InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
      *   List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
      *   Map<String, Object> recordContent = new HashMap<String, Object>();
@@ -198,7 +198,7 @@ public class InsertAllRequest implements Serializable {
      * Adds a row to be inserted without an associated id.
      *
      * <p>Example usage of adding a row without an associated id:
-     * <pre>    {@code
+     * <pre>   {@code
      *   InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
      *   List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
      *   Map<String, Object> recordContent = new HashMap<String, Object>();

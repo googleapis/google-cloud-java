@@ -35,7 +35,7 @@ import java.util.Objects;
  * {@link QueryResponse#jobCompleted()} returns {@code true}.
  *
  * <p>Example usage of a query request:
- * <pre>    {@code
+ * <pre>     {@code
  *    // Substitute "field", "table" and "dataset" with real field, table and dataset identifiers
  *    QueryRequest request = QueryRequest.builder("SELECT field FROM table")
  *      .defaultDataset(DatasetId.of("dataset"))

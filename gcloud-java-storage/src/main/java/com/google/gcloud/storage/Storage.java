@@ -1376,7 +1376,7 @@ public interface Storage extends Service<StorageOptions> {
    * <pre>    {@code BlobInfo blob = service.copy(copyRequest).result();}
    * </pre>
    * To explicitly issue chunk copy requests use {@link CopyWriter#copyChunk()} instead:
-   * <pre>    {@code CopyWriter copyWriter = service.copy(copyRequest);
+   * <pre>     {@code CopyWriter copyWriter = service.copy(copyRequest);
    *    while (!copyWriter.isDone()) {
    *        copyWriter.copyChunk();
    *    }
