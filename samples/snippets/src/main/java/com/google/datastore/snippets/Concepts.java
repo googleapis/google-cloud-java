@@ -312,8 +312,9 @@ public class Concepts {
 
   @Test
   public void testBatchUpsert() {
-    Key taskKey1 = keyFactory.newKey(1);
-    Key taskKey2 = keyFactory.newKey(2);
+    // [START batch_upsert]
+    Key taskKey1 = datastore.allocateId(keyFactory.newKey());
+    Key taskKey2 = datastore.allocateId(keyFactory.newKey());
     Entity task1 = Entity.builder(taskKey1)
         .set("type", "Personal")
         .set("done", false)
@@ -326,7 +327,6 @@ public class Concepts {
         .set("priority", 5)
         .set("description", "Integrate Cloud Datastore")
         .build();
-    // [START batch_upsert]
     Batch batch = datastore.newBatch();
     batch.put(task1, task2);
     batch.submit();
@@ -737,15 +737,9 @@ public class Concepts {
 
   @Test
   public void testEventualConsistentQuery() {
-    setUpQueryTests();
     // [START eventual_consistent_query]
-    Query<Entity> query = Query.entityQueryBuilder()
-        .kind("Task")
-        .filter(PropertyFilter.hasAncestor(
-            datastore.newKeyFactory().kind("TaskList").newKey("default")))
-        .build();
+    // Read consistency cannot be specified in gcloud-java.
     // [END eventual_consistent_query]
-    assertValidQuery(query);
   }
 
   @Test
@@ -795,8 +789,8 @@ public class Concepts {
     assertSuccessfulTransfer(keys.get(0), keys.get(1));
   }
 
-  private void transferFunds(Key fromKey, Key toKey, long amount) {
-    // [START transactional_update]
+  // [START transactional_update]
+  void transferFunds(Key fromKey, Key toKey, long amount) {
     Transaction txn = datastore.newTransaction();
     try {
       Entity from = txn.get(fromKey);
@@ -811,8 +805,8 @@ public class Concepts {
         txn.rollback();
       }
     }
-    // [END transactional_update]
   }
+  // [END transactional_update]
 
   @Test
   public void testTransactionalRetry() {
