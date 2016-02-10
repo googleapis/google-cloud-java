@@ -67,7 +67,7 @@ public class DatastoreExample {
     public void run(Transaction tx, Key userKey, String... args) {
       Entity user = tx.get(userKey);
       if (user == null) {
-        System.out.println("Nothing to delete, user does not exists.");
+        System.out.println("Nothing to delete, user does not exist.");
         return;
       }
       Query<Key> query = Query.keyQueryBuilder()

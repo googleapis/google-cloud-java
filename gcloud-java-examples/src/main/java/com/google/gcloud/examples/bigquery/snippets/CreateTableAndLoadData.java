@@ -17,7 +17,7 @@
 /*
  * EDITING INSTRUCTIONS
  * This file is referenced in READMEs and javadoc. Any change to this file should be reflected in
- * project's READMEs and package-info.java.
+ * the project's READMEs and package-info.java.
  */
 
 package com.google.gcloud.examples.bigquery.snippets;
@@ -35,7 +35,7 @@ import com.google.gcloud.bigquery.TableInfo;
 
 /**
  * A snippet for Google Cloud BigQuery showing how to get a BigQuery table or create it if it does
- * not exists. The snippet also starts a BigQuery job to load data into the table from a Cloud
+ * not exist. The snippet also starts a BigQuery job to load data into the table from a Cloud
  * Storage blob and wait until the job completes.
  */
 public class CreateTableAndLoadData {
