@@ -16,16 +16,16 @@
 
 package com.google.datastore.snippets;
 
+import static java.util.Calendar.DECEMBER;
+import static java.util.Calendar.JANUARY;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
-import com.google.common.collect.Multimap;
-import com.google.gcloud.datastore.Batch;
 import com.google.gcloud.datastore.Cursor;
 import com.google.gcloud.datastore.Datastore;
 import com.google.gcloud.datastore.DatastoreException;
@@ -46,6 +46,7 @@ import com.google.gcloud.datastore.StringValue;
 import com.google.gcloud.datastore.StructuredQuery;
 import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
+import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.datastore.Transaction;
 import com.google.gcloud.datastore.Value;
@@ -61,9 +62,14 @@ import org.junit.rules.ExpectedException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.TimeZone;
 
 /**
@@ -121,11 +127,11 @@ public class Concepts {
     taskKey = keyFactory.newKey("some-arbitrary-key");
     testEntity = Entity.builder(taskKey, TEST_FULL_ENTITY).build();
     Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-    calendar.set(1990, 1, 1);
+    calendar.set(1990, JANUARY, 1);
     startDate = DateTime.copyFrom(calendar);
-    calendar.set(2000, 1, 1);
+    calendar.set(2000, JANUARY, 1);
     endDate = DateTime.copyFrom(calendar);
-    calendar.set(1999, 12, 31);
+    calendar.set(1999, DECEMBER, 31);
     includedDate = DateTime.copyFrom(calendar);
   }
 
@@ -158,8 +164,7 @@ public class Concepts {
   @Test
   public void testNamedKey() {
     // [START named_key]
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("Task");
-    Key taskKey = keyFactory.newKey("sampleTask");
+    Key taskKey = datastore.newKeyFactory().kind("Task").newKey("sampleTask");
     // [END named_key]
     assertValidKey(taskKey);
   }
@@ -167,9 +172,10 @@ public class Concepts {
   @Test
   public void testKeyWithParent() {
     // [START key_with_parent]
-    KeyFactory keyFactory =
-        datastore.newKeyFactory().ancestors(PathElement.of("TaskList", "default")).kind("Task");
-    Key taskKey = keyFactory.newKey("sampleTask");
+    Key taskKey = datastore.newKeyFactory()
+        .ancestors(PathElement.of("TaskList", "default"))
+        .kind("Task")
+        .newKey("sampleTask");
     // [END key_with_parent]
     assertValidKey(taskKey);
   }
@@ -249,8 +255,7 @@ public class Concepts {
   @Test
   public void testUpsert() {
     // [START upsert]
-    Key taskKey = datastore.allocateId(keyFactory.newKey());
-    Entity task = Entity.builder(taskKey).build();
+    Entity task = Entity.builder(keyFactory.newKey("sampleTask")).build();
     datastore.put(task);
     // [END upsert]
     assertEquals(task, datastore.get(task.key()));
@@ -259,10 +264,9 @@ public class Concepts {
   @Test
   public void testInsert() {
     // [START insert]
-    Entity task = Entity.builder(taskKey).build();
-    Key taskKey = datastore.add(task).key();
+    Key taskKey = datastore.add(FullEntity.builder(keyFactory.newKey()).build()).key();
     // [END insert]
-    assertEquals(task, datastore.get(taskKey));
+    assertEquals(FullEntity.builder(taskKey).build(), datastore.get(taskKey));
   }
 
   @Test
@@ -325,13 +329,12 @@ public class Concepts {
         .set("priority", 5)
         .set("description", "Integrate Cloud Datastore")
         .build();
-    Batch batch = datastore.newBatch();
-    batch.addWithDeferredIdAllocation(task1, task2);
-    Batch.Response response = batch.submit();
-    List<Key> taskKeys = response.generatedKeys(); // keys listed in order of insertion
+    List<Entity> tasks = datastore.add(task1, task2);
+    Key taskKey1 = tasks.get(0).key();
+    Key taskKey2 = tasks.get(1).key();
     // [END batch_upsert]
-    assertEquals(Entity.builder(taskKeys.get(0), task1).build(), datastore.get(taskKeys.get(0)));
-    assertEquals(Entity.builder(taskKeys.get(1), task2).build(), datastore.get(taskKeys.get(1)));
+    assertEquals(Entity.builder(taskKey1, task1).build(), datastore.get(taskKey1));
+    assertEquals(Entity.builder(taskKey2, task2).build(), datastore.get(taskKey2));
   }
 
   @Test
@@ -352,18 +355,18 @@ public class Concepts {
     Key taskKey2 = keyFactory.newKey(2);
     setUpBatchTests(taskKey1, taskKey2);
     // [START batch_delete]
-    Batch batch = datastore.newBatch();
-    batch.delete(taskKey1, taskKey2);
-    batch.submit();
+    datastore.delete(taskKey1, taskKey2);
     // [END batch_delete]
     assertNull(datastore.get(taskKey1));
     assertNull(datastore.get(taskKey2));
   }
 
   private void setUpQueryTests() {
-    KeyFactory keyFactory =
-        datastore.newKeyFactory().kind("Task").ancestors(PathElement.of("TaskList", "default"));
-    datastore.put(Entity.builder(keyFactory.newKey("someTask"))
+    Key taskKey = datastore.newKeyFactory()
+        .kind("Task")
+        .ancestors(PathElement.of("TaskList", "default"))
+        .newKey("someTask");
+    datastore.put(Entity.builder(taskKey)
         .set("type", "Personal")
         .set("done", false)
         .set("completed", false)
@@ -371,8 +374,7 @@ public class Concepts {
         .set("created", includedDate)
         .set("percent_complete", 10.0)
         .set("description", StringValue.builder("Learn Cloud Datastore").indexed(false).build())
-        .set("tag", ImmutableList.of(StringValue.of("fun"), StringValue.of("l"),
-            StringValue.of("programming")))
+        .set("tag", StringValue.of("fun"), StringValue.of("l"), StringValue.of("programming"))
         .build());
   }
 
@@ -510,9 +512,7 @@ public class Concepts {
     // [START projection_query]
     Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
         .kind("Task")
-        .projection(
-            StructuredQuery.Projection.property("priority"),
-            StructuredQuery.Projection.property("percent_complete"))
+        .projection(Projection.property("priority"), Projection.property("percent_complete"))
         .build();
     // [END projection_query]
     assertValidQuery(query);
@@ -523,13 +523,11 @@ public class Concepts {
     setUpQueryTests();
     Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
         .kind("Task")
-        .projection(
-            StructuredQuery.Projection.property("priority"),
-            StructuredQuery.Projection.property("percent_complete"))
+        .projection(Projection.property("priority"), Projection.property("percent_complete"))
         .build();
+    // [START run_query_projection]
     List<Long> priorities = new LinkedList<>();
     List<Double> percentCompletes = new LinkedList<>();
-    // [START run_query_projection]
     QueryResults<ProjectionEntity> tasks = datastore.run(query);
     while (tasks.hasNext()) {
       ProjectionEntity task = tasks.next();
@@ -567,8 +565,7 @@ public class Concepts {
     // [START distinct_query]
     Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
         .kind("Task")
-        .projection(StructuredQuery.Projection.property("type"),
-            StructuredQuery.Projection.property("priority"))
+        .projection(Projection.property("type"), Projection.property("priority"))
         .groupBy("type", "priority")
         .orderBy(OrderBy.asc("type"), OrderBy.asc("priority"))
         .build();
@@ -582,8 +579,7 @@ public class Concepts {
     // [START distinct_on_query]
     Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
         .kind("Task")
-        .projection(StructuredQuery.Projection.property("type"),
-            StructuredQuery.Projection.first("priority"))
+        .projection(Projection.property("type"), Projection.first("priority"))
         .groupBy("type")
         .orderBy(OrderBy.asc("type"), OrderBy.asc("priority"))
         .build();
@@ -719,17 +715,12 @@ public class Concepts {
       queryBuilder.startCursor(pageCursor);
     }
     QueryResults<Entity> tasks = datastore.run(queryBuilder.build());
-    Entity task = null;
+    Entity task;
     while (tasks.hasNext()) {
       task = tasks.next();
       // do something with the task
     }
-    Cursor nextPageCursor = null;
-    if (task != null && tasks.cursorAfter() != null) {
-      nextPageCursor = tasks.cursorAfter();
-      // Call nextPageCursor.toUrlSafe() if you want an encoded cursor that can be used as part of a
-      // URL.
-    }
+    Cursor nextPageCursor = tasks.cursorAfter();
     // [END cursor_paging]
     return nextPageCursor;
   }
@@ -792,10 +783,11 @@ public class Concepts {
   void transferFunds(Key fromKey, Key toKey, long amount) {
     Transaction txn = datastore.newTransaction();
     try {
-      Entity from = txn.get(fromKey);
+      List<Entity> entities = txn.fetch(fromKey, toKey);
+      Entity from = entities.get(0);
       Entity updatedFrom =
           Entity.builder(from).set("balance", from.getLong("balance") - amount).build();
-      Entity to = txn.get(toKey);
+      Entity to = entities.get(1);
       Entity updatedTo = Entity.builder(to).set("balance", to.getLong("balance") + amount).build();
       txn.put(updatedFrom, updatedTo);
       txn.commit();
@@ -825,6 +817,7 @@ public class Concepts {
         --retries;
       }
     }
+    // Retry handling can also be configured and automatically applied using gcloud-java.
     // [END transactional_retry]
     assertSuccessfulTransfer(keys.get(0), keys.get(1));
   }
@@ -835,9 +828,8 @@ public class Concepts {
     Entity task;
     Transaction txn = datastore.newTransaction();
     try {
-      try {
-        task = txn.get(taskKey);
-      } catch (DatastoreException e) {
+      task = txn.get(taskKey);
+      if (task == null) {
         task = Entity.builder(taskKey).build();
         txn.put(task);
         txn.commit();
@@ -922,22 +914,22 @@ public class Concepts {
     // [START property_run_query]
     Query<Key> query = Query.keyQueryBuilder().kind("__property__").build();
     QueryResults<Key> results = datastore.run(query);
-    Multimap<String, String> propertiesByKind = HashMultimap.create();
+    Map<String, Collection<String>> propertiesByKind = new HashMap<>();
     while (results.hasNext()) {
       Key property = results.next();
       String kind = property.ancestors().get(property.ancestors().size() - 1).name();
       String propertyName = property.name();
-      propertiesByKind.put(kind, propertyName);
+      if (!propertiesByKind.containsKey(kind)) {
+        propertiesByKind.put(kind, new HashSet<String>());
+      }
+      propertiesByKind.get(kind).add(propertyName);
     }
     // [END property_run_query]
-    Multimap<String, String> expected = HashMultimap.create();
-    expected.put("Task", "type");
-    expected.put("Task", "done");
-    expected.put("Task", "completed");
-    expected.put("Task", "priority");
-    expected.put("Task", "created");
-    expected.put("Task", "percent_complete");
-    expected.put("Task", "tag");
+    Map<String, Collection<String>> expected = new HashMap<>();
+    expected.put(
+        "Task",
+        ImmutableSet.of(
+            "done", "type", "done", "completed", "priority", "created", "percent_complete", "tag"));
     assertEquals(expected, propertiesByKind);
   }
 
@@ -951,24 +943,27 @@ public class Concepts {
             .filter(PropertyFilter.hasAncestor(key))
         .build();
     QueryResults<Entity> results = datastore.run(query);
-    Multimap<String, String> representationsByProperty = HashMultimap.create();
+    Map<String, Collection<String>> representationsByProperty = new HashMap<>();
     while (results.hasNext()) {
       Entity property = results.next();
       String propertyName = property.key().name();
       List<? extends Value<?>> representations = property.getList("property_representation");
+      if (!representationsByProperty.containsKey(propertyName)) {
+        representationsByProperty.put(propertyName, new HashSet<String>());
+      }
       for (Value<?> value : representations) {
-        representationsByProperty.put(propertyName, (String) value.get());
+        representationsByProperty.get(propertyName).add((String) value.get());
       }
     }
     // [END property_by_kind_run_query]
-    Multimap<String, String> expected = HashMultimap.create();
-    expected.put("type", "STRING");
-    expected.put("done", "BOOLEAN");
-    expected.put("completed", "BOOLEAN");
-    expected.put("priority", "INT64");
-    expected.put("created", "INT64");
-    expected.put("percent_complete", "DOUBLE");
-    expected.put("tag", "STRING");
+    Map<String, Collection<String>> expected = new HashMap<>();
+    expected.put("type", Collections.singleton("STRING"));
+    expected.put("done", Collections.singleton("BOOLEAN"));
+    expected.put("completed", Collections.singleton("BOOLEAN"));
+    expected.put("priority", Collections.singleton("INT64"));
+    expected.put("created", Collections.singleton("INT64"));
+    expected.put("percent_complete", Collections.singleton("DOUBLE"));
+    expected.put("tag", Collections.singleton("STRING"));
     assertEquals(expected, representationsByProperty);
   }
 
@@ -985,19 +980,20 @@ public class Concepts {
         .kind("__property__")
             .filter(PropertyFilter.ge("__key__", key))
         .build();
-    Multimap<String, String> propertiesByKind = HashMultimap.create();
+    Map<String, Collection<String>> propertiesByKind = new HashMap<>();
     QueryResults<Key> results = datastore.run(query);
     while (results.hasNext()) {
       Key property = results.next();
       String kind = property.ancestors().get(property.ancestors().size() - 1).name();
       String propertyName = property.name();
-      propertiesByKind.put(kind, propertyName);
+      if (!propertiesByKind.containsKey(kind)) {
+        propertiesByKind.put(kind, new HashSet<String>());
+      }
+      propertiesByKind.get(kind).add(propertyName);
     }
     // [END property_filtering_run_query]
-    Multimap<String, String> expected = HashMultimap.create();
-    expected.put("Task", "priority");
-    expected.put("Task", "tag");
-    expected.put("Task", "type");
+    Map<String, Collection<String>> expected = new HashMap<>();
+    expected.put("Task", ImmutableSet.of("priority", "tag", "type"));
     assertEquals(expected, propertiesByKind);
   }
 

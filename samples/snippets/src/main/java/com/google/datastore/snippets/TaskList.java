@@ -51,7 +51,6 @@ public class TaskList {
    * Adds a task entity to the Datastore.
    *
    * @param description The task description
-   *
    * @return The {@link Key} of the entity.
    */
   Key addTask(String description) {
@@ -114,7 +113,7 @@ public class TaskList {
    * Converts a list of task entities to a list of formatted task strings.
    *
    * @param tasks An iterator over task entities
-   * @returns A list of tasks strings, one per entity
+   * @return A list of tasks strings, one per entity
    */
   static List<String> formatTasks(Iterator<Entity> tasks) {
     List<String> strings = new ArrayList<>();
@@ -152,7 +151,7 @@ public class TaskList {
         if (args.length != 2) {
           throw new IllegalArgumentException("missing description");
         }
-        // Set created to NOW() and done to false.
+        // Set created to now() and done to false.
         addTask(args[1]);
         System.out.println("task added");
         break;
@@ -163,13 +162,13 @@ public class TaskList {
           markDone(id);
           System.out.println("task marked done");
         } catch (DatastoreException e) {
-          System.out.printf("did not find a Task entity with ID %d\n", id);
+          System.out.printf("did not find a Task entity with ID %d%n", id);
         }
         break;
       case "list":
         assertArgsLength(args, 1);
         List<String> tasks = formatTasks(listTasks());
-        System.out.printf("found %d tasks:\n", tasks.size());
+        System.out.printf("found %d tasks:%n", tasks.size());
         System.out.println("task ID : description");
         System.out.println("---------------------");
         for (String taskString : tasks) {
