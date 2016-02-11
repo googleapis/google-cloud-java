@@ -110,7 +110,7 @@ public class Concepts {
   public void setUp() {
     datastore = DatastoreOptions.builder()
         .projectId(PROJECT_ID)
-        .namespace("ghijklmnop") // for namespace metadata query
+        .namespace("ghijklmnop")
         .host("http://localhost:" + PORT)
         .build()
         .service();
@@ -120,15 +120,13 @@ public class Concepts {
     keyFactory = datastore.newKeyFactory().kind("Task");
     taskKey = keyFactory.newKey("some-arbitrary-key");
     testEntity = Entity.builder(taskKey, TEST_FULL_ENTITY).build();
-    Calendar startDateCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-    startDateCalendar.set(1990, 1, 1);
-    startDate = DateTime.copyFrom(startDateCalendar);
-    Calendar endDateCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-    endDateCalendar.set(2000, 1, 1);
-    endDate = DateTime.copyFrom(endDateCalendar);
-    Calendar includedCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-    includedCalendar.set(1999, 12, 31);
-    includedDate = DateTime.copyFrom(includedCalendar);
+    Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    calendar.set(1990, 1, 1);
+    startDate = DateTime.copyFrom(calendar);
+    calendar.set(2000, 1, 1);
+    endDate = DateTime.copyFrom(calendar);
+    calendar.set(1999, 12, 31);
+    includedDate = DateTime.copyFrom(calendar);
   }
 
   /**
@@ -195,9 +193,11 @@ public class Concepts {
   @Test
   public void testEntityWithParent() {
     // [START entity_with_parent]
-    KeyFactory keyFactory =
-        datastore.newKeyFactory().ancestors(PathElement.of("TaskList", "default")).kind("Task");
-    Entity task = Entity.builder(keyFactory.newKey("sampleTask"))
+    Key taskKey = datastore.newKeyFactory()
+        .ancestors(PathElement.of("TaskList", "default"))
+        .kind("Task")
+        .newKey("sampleTask");
+    Entity task = Entity.builder(taskKey)
         .set("type", "Personal")
         .set("done", false)
         .set("priority", 4)
@@ -313,26 +313,25 @@ public class Concepts {
   @Test
   public void testBatchUpsert() {
     // [START batch_upsert]
-    Key taskKey1 = datastore.allocateId(keyFactory.newKey());
-    Key taskKey2 = datastore.allocateId(keyFactory.newKey());
-    Entity task1 = Entity.builder(taskKey1)
+    FullEntity<IncompleteKey> task1 = FullEntity.builder(keyFactory.newKey())
         .set("type", "Personal")
         .set("done", false)
         .set("priority", 4)
         .set("description", "Learn Cloud Datastore")
         .build();
-    Entity task2 = Entity.builder(taskKey2)
+    FullEntity<IncompleteKey> task2 = Entity.builder(keyFactory.newKey())
         .set("type", "Personal")
         .set("done", false)
         .set("priority", 5)
         .set("description", "Integrate Cloud Datastore")
         .build();
     Batch batch = datastore.newBatch();
-    batch.put(task1, task2);
-    batch.submit();
+    batch.addWithDeferredIdAllocation(task1, task2);
+    Batch.Response response = batch.submit();
+    List<Key> taskKeys = response.generatedKeys(); // keys listed in order of insertion
     // [END batch_upsert]
-    assertEquals(task1, datastore.get(taskKey1));
-    assertEquals(task2, datastore.get(taskKey2));
+    assertEquals(Entity.builder(taskKeys.get(0), task1).build(), datastore.get(taskKeys.get(0)));
+    assertEquals(Entity.builder(taskKeys.get(1), task2).build(), datastore.get(taskKeys.get(1)));
   }
 
   @Test
@@ -443,7 +442,7 @@ public class Concepts {
     // [START key_filter]
     Query<Entity> query = Query.entityQueryBuilder()
         .kind("Task")
-            .filter(PropertyFilter.gt("__key__", keyFactory.newKey("someTask")))
+        .filter(PropertyFilter.gt("__key__", keyFactory.newKey("someTask")))
         .build();
     // [END key_filter]
     assertValidQuery(query);
@@ -946,10 +945,10 @@ public class Concepts {
   public void testPropertyByKindRunQuery() {
     setUpQueryTests();
     // [START property_by_kind_run_query]
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("__kind__");
+    Key key = datastore.newKeyFactory().kind("__kind__").newKey("Task");
     Query<Entity> query = Query.entityQueryBuilder()
         .kind("__property__")
-        .filter(PropertyFilter.hasAncestor(keyFactory.newKey("Task")))
+            .filter(PropertyFilter.hasAncestor(key))
         .build();
     QueryResults<Entity> results = datastore.run(query);
     Multimap<String, String> representationsByProperty = HashMultimap.create();
@@ -977,12 +976,14 @@ public class Concepts {
   public void testPropertyFilteringRunQuery() {
     setUpQueryTests();
     // [START property_filtering_run_query]
-    KeyFactory keyFactory = datastore.newKeyFactory()
+    Key key =
+        datastore.newKeyFactory()
         .kind("__property__")
-        .ancestors(PathElement.of("__kind__", "Task"));
+            .ancestors(PathElement.of("__kind__", "Task"))
+            .newKey("priority");
     Query<Key> query = Query.keyQueryBuilder()
         .kind("__property__")
-        .filter(PropertyFilter.ge("__key__", keyFactory.newKey("priority")))
+            .filter(PropertyFilter.ge("__key__", key))
         .build();
     Multimap<String, String> propertiesByKind = HashMultimap.create();
     QueryResults<Key> results = datastore.run(query);
