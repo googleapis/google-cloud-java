@@ -6,6 +6,7 @@ Examples for gcloud-java (Java idiomatic client for [Google Cloud Platform][clou
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-examples.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-examples.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
