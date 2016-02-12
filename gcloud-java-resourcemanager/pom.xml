@@ -24,7 +24,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-cloudresourcemanager</artifactId>
-      <version>v1beta1-rev6-1.19.0</version>
+      <version>v1beta1-rev10-1.21.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
@@ -42,7 +42,7 @@
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <version>3.3</version>
+      <version>3.4</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
