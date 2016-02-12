@@ -140,7 +140,8 @@ final class ResourceManagerImpl
                     public Project apply(
                         com.google.api.services.cloudresourcemanager.model.Project projectPb) {
                       return new Project(
-                          serviceOptions.service(), new ProjectInfo.BuilderImpl(ProjectInfo.fromPb(projectPb)));
+                          serviceOptions.service(),
+                          new ProjectInfo.BuilderImpl(ProjectInfo.fromPb(projectPb)));
                     }
                   });
       return new PageImpl<>(

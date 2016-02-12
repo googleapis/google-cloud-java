@@ -14,14 +14,8 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.bigquery;
+package com.google.gcloud.bigquery.it;
 
-import static com.google.gcloud.bigquery.BigQuery.DatasetField;
-import static com.google.gcloud.bigquery.BigQuery.JobField;
-import static com.google.gcloud.bigquery.BigQuery.JobListOption;
-import static com.google.gcloud.bigquery.BigQuery.JobOption;
-import static com.google.gcloud.bigquery.BigQuery.TableField;
-import static com.google.gcloud.bigquery.BigQuery.TableOption;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -32,7 +26,42 @@ import static org.junit.Assert.fail;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.Page;
+import com.google.gcloud.WriteChannel;
+import com.google.gcloud.bigquery.BigQuery;
+import com.google.gcloud.bigquery.BigQuery.DatasetField;
 import com.google.gcloud.bigquery.BigQuery.DatasetOption;
+import com.google.gcloud.bigquery.BigQuery.JobField;
+import com.google.gcloud.bigquery.BigQuery.JobListOption;
+import com.google.gcloud.bigquery.BigQuery.JobOption;
+import com.google.gcloud.bigquery.BigQuery.TableField;
+import com.google.gcloud.bigquery.BigQuery.TableOption;
+import com.google.gcloud.bigquery.BigQueryError;
+import com.google.gcloud.bigquery.BigQueryException;
+import com.google.gcloud.bigquery.CopyJobConfiguration;
+import com.google.gcloud.bigquery.Dataset;
+import com.google.gcloud.bigquery.DatasetId;
+import com.google.gcloud.bigquery.DatasetInfo;
+import com.google.gcloud.bigquery.ExternalTableDefinition;
+import com.google.gcloud.bigquery.ExtractJobConfiguration;
+import com.google.gcloud.bigquery.Field;
+import com.google.gcloud.bigquery.FieldValue;
+import com.google.gcloud.bigquery.FormatOptions;
+import com.google.gcloud.bigquery.InsertAllRequest;
+import com.google.gcloud.bigquery.InsertAllResponse;
+import com.google.gcloud.bigquery.Job;
+import com.google.gcloud.bigquery.JobInfo;
+import com.google.gcloud.bigquery.LoadJobConfiguration;
+import com.google.gcloud.bigquery.QueryJobConfiguration;
+import com.google.gcloud.bigquery.QueryRequest;
+import com.google.gcloud.bigquery.QueryResponse;
+import com.google.gcloud.bigquery.Schema;
+import com.google.gcloud.bigquery.StandardTableDefinition;
+import com.google.gcloud.bigquery.Table;
+import com.google.gcloud.bigquery.TableDefinition;
+import com.google.gcloud.bigquery.TableId;
+import com.google.gcloud.bigquery.TableInfo;
+import com.google.gcloud.bigquery.ViewDefinition;
+import com.google.gcloud.bigquery.WriteChannelConfiguration;
 import com.google.gcloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.BucketInfo;
@@ -45,7 +74,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
@@ -140,7 +168,7 @@ public class ITBigQueryTest {
   public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
-  public static void beforeClass() throws IOException, InterruptedException {
+  public static void beforeClass() throws InterruptedException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
     bigquery = bigqueryHelper.options().service();
@@ -169,8 +197,9 @@ public class ITBigQueryTest {
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
     }
-    if (storage != null && !RemoteGcsHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS)) {
-      if (LOG.isLoggable(Level.WARNING)) {
+    if (storage != null) {
+      boolean wasDeleted = RemoteGcsHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS);
+      if (!wasDeleted && LOG.isLoggable(Level.WARNING)) {
         LOG.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
     }
@@ -685,7 +714,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testCreateAndGetJob() throws InterruptedException {
+  public void testCreateAndGetJob() {
     String sourceTableName = "test_create_and_get_job_source_table";
     String destinationTableName = "test_create_and_get_job_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
@@ -717,7 +746,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testCreateAndGetJobWithSelectedFields() throws InterruptedException {
+  public void testCreateAndGetJobWithSelectedFields() {
     String sourceTableName = "test_create_and_get_job_with_selected_fields_source_table";
     String destinationTableName = "test_create_and_get_job_with_selected_fields_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
@@ -874,12 +903,12 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testCancelNonExistingJob() throws InterruptedException {
+  public void testCancelNonExistingJob() {
     assertFalse(bigquery.cancel("test_cancel_non_existing_job"));
   }
 
   @Test
-  public void testInsertFromFile() throws InterruptedException, FileNotFoundException {
+  public void testInsertFromFile() throws InterruptedException {
     String destinationTableName = "test_insert_from_file_table";
     TableId tableId = TableId.of(DATASET, destinationTableName);
     WriteChannelConfiguration configuration = WriteChannelConfiguration.builder(tableId)
@@ -887,7 +916,7 @@ public class ITBigQueryTest {
         .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
         .schema(TABLE_SCHEMA)
         .build();
-    try (TableDataWriteChannel channel = bigquery.writer(configuration)) {
+    try (WriteChannel channel = bigquery.writer(configuration)) {
       channel.write(ByteBuffer.wrap(JSON_CONTENT.getBytes(StandardCharsets.UTF_8)));
     } catch (IOException e) {
       fail("IOException was not expected");

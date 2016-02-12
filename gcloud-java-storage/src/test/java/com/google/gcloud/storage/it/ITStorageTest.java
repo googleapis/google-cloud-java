@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud.storage.it;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
@@ -32,8 +32,19 @@ import com.google.gcloud.Page;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.WriteChannel;
+import com.google.gcloud.storage.BatchRequest;
+import com.google.gcloud.storage.BatchResponse;
+import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.BlobId;
+import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.storage.Bucket;
+import com.google.gcloud.storage.BucketInfo;
+import com.google.gcloud.storage.CopyWriter;
+import com.google.gcloud.storage.HttpMethod;
+import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.BlobField;
 import com.google.gcloud.storage.Storage.BucketField;
+import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import org.junit.AfterClass;
@@ -77,8 +88,9 @@ public class ITStorageTest {
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
-    if (storage != null && !RemoteGcsHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS)) {
-      if (log.isLoggable(Level.WARNING)) {
+    if (storage != null) {
+      boolean wasDeleted = RemoteGcsHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS);
+      if (!wasDeleted && log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
     }
@@ -431,7 +443,7 @@ public class ITStorageTest {
   @Test
   public void testDeleteNonExistingBlob() {
     String blobName = "test-delete-non-existing-blob";
-    assertTrue(!storage.delete(BUCKET, blobName));
+    assertFalse(storage.delete(BUCKET, blobName));
   }
 
   @Test
@@ -439,7 +451,7 @@ public class ITStorageTest {
     String blobName = "test-delete-blob-non-existing-generation";
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
     assertNotNull(storage.create(blob));
-    assertTrue(!storage.delete(BlobId.of(BUCKET, blobName, -1L)));
+    assertFalse(storage.delete(BlobId.of(BUCKET, blobName, -1L)));
   }
 
   @Test
@@ -955,7 +967,7 @@ public class ITStorageTest {
     assertNotNull(storage.create(sourceBlob1));
     List<Boolean> deleteStatus = storage.delete(sourceBlob1.blobId(), sourceBlob2.blobId());
     assertTrue(deleteStatus.get(0));
-    assertTrue(!deleteStatus.get(1));
+    assertFalse(deleteStatus.get(1));
   }
 
   @Test
