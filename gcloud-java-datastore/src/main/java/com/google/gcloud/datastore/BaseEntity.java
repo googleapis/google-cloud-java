@@ -33,6 +33,7 @@ import com.google.common.collect.Maps;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -138,8 +139,30 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
       return self();
     }
 
+    public B set(String name, String first, String second, String... others) {
+      List<StringValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (String other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
     public B set(String name, long value) {
       properties.put(name, of(value));
+      return self();
+    }
+
+    public B set(String name, long first, long second, long... others) {
+      List<LongValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (long other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
       return self();
     }
 
@@ -148,8 +171,30 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
       return self();
     }
 
+    public B set(String name, double first, double second, double... others) {
+      List<DoubleValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (double other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
     public B set(String name, boolean value) {
       properties.put(name, of(value));
+      return self();
+    }
+
+    public B set(String name, boolean first, boolean second, boolean... others) {
+      List<BooleanValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (boolean other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
       return self();
     }
 
@@ -158,8 +203,30 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
       return self();
     }
 
+    public B set(String name, DateTime first, DateTime second, DateTime... others) {
+      List<DateTimeValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (DateTime other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
     public B set(String name, Key value) {
       properties.put(name, of(value));
+      return self();
+    }
+
+    public B set(String name, Key first, Key second, Key... others) {
+      List<KeyValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (Key other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
       return self();
     }
 
@@ -168,18 +235,40 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
       return self();
     }
 
+    public B set(String name, FullEntity<?> first, FullEntity<?> second, FullEntity<?>... others) {
+      List<EntityValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (FullEntity<?> other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
     public B set(String name, List<? extends Value<?>> values) {
       properties.put(name, of(values));
       return self();
     }
 
-    public B set(String name, Value<?> value, Value<?>... other) {
-      properties.put(name, of(value, other));
+    public B set(String name, Value<?> first, Value<?> second, Value<?>... other) {
+      properties.put(name, of(first, second, other));
       return self();
     }
 
     public B set(String name, Blob value) {
       properties.put(name, of(value));
+      return self();
+    }
+
+    public B set(String name, Blob first, Blob second, Blob... others) {
+      List<BlobValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (Blob other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
       return self();
     }
 

@@ -67,6 +67,16 @@ public class BaseEntityTest {
     builder.set("list1", NullValue.of(), StringValue.of("foo"));
     builder.set("list2", ImmutableList.of(LongValue.of(10), DoubleValue.of(2)));
     builder.set("list3", Collections.singletonList(BooleanValue.of(true)));
+    builder.set(
+        "blobList", BLOB, Blob.copyFrom(new byte[] {3, 4}), Blob.copyFrom(new byte[] {5, 6}));
+    builder.set("booleanList", true, false, true);
+    builder.set("dateTimeList", DateTime.now(), DateTime.now(), DateTime.now());
+    builder.set("doubleList", 12.3, 4.56, .789);
+    builder.set("keyList", KEY, Key.builder("ds2", "k2", "n2").build(),
+        Key.builder("ds3", "k3", "n3").build());
+    builder.set("entityList", ENTITY, PARTIAL_ENTITY, ENTITY);
+    builder.set("stringList", "s1", "s2", "s3");
+    builder.set("longList", 1, 23, 456);
   }
 
   @Test
@@ -198,7 +208,9 @@ public class BaseEntityTest {
   public void testNames() throws Exception {
     Set<String> names = ImmutableSet.<String>builder()
         .add("string", "stringValue", "boolean", "double", "long", "list1", "list2", "list3")
-        .add("entity", "partialEntity", "null", "dateTime", "blob", "key")
+        .add("entity", "partialEntity", "null", "dateTime", "blob", "key", "blobList")
+        .add("booleanList", "dateTimeList", "doubleList", "keyList", "entityList", "stringList")
+        .add("longList")
         .build();
     BaseEntity<Key> entity = builder.build();
     assertEquals(names, entity.names());
