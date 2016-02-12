@@ -48,7 +48,7 @@ import java.util.Objects;
  * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and
  *      Terminology</a>
  */
-public final class BucketInfo implements Serializable {
+public class BucketInfo implements Serializable {
 
   static final Function<com.google.api.services.storage.model.Bucket, BucketInfo> FROM_PB_FUNCTION =
       new Function<com.google.api.services.storage.model.Bucket, BucketInfo>() {
@@ -317,7 +317,99 @@ public final class BucketInfo implements Serializable {
     }
   }
 
-  public static final class Builder {
+  /**
+   * Builder for {@code BucketInfo}.
+   */
+  public abstract static class Builder {
+    /**
+     * Sets the bucket's name.
+     */
+    public abstract Builder name(String name);
+
+    abstract Builder id(String id);
+
+    abstract Builder owner(Acl.Entity owner);
+
+    abstract Builder selfLink(String selfLink);
+
+    /**
+     * Sets whether versioning should be enabled for this bucket. When set to true, versioning is
+     * fully enabled.
+     */
+    public abstract Builder versioningEnabled(Boolean enable);
+
+    /**
+     * Sets the bucket's website index page. Behaves as the bucket's directory index where missing
+     * blobs are treated as potential directories.
+     */
+    public abstract Builder indexPage(String indexPage);
+
+    /**
+     * Sets the custom object to return when a requested resource is not found.
+     */
+    public abstract Builder notFoundPage(String notFoundPage);
+
+    /**
+     * Sets the bucket's lifecycle configuration as a number of delete rules.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
+     */
+    public abstract Builder deleteRules(Iterable<? extends DeleteRule> rules);
+
+    /**
+     * Sets the bucket's storage class. This defines how blobs in the bucket are stored and
+     * determines the SLA and the cost of storage. A list of supported values is available
+     * <a href="https://cloud.google.com/storage/docs/storage-classes">here</a>.
+     */
+    public abstract Builder storageClass(String storageClass);
+
+    /**
+     * Sets the bucket's location. Data for blobs in the bucket resides in physical storage within
+     * this region. A list of supported values is available
+     * <a href="https://cloud.google.com/storage/docs/bucket-locations">here</a>.
+     */
+    public abstract Builder location(String location);
+
+    abstract Builder etag(String etag);
+
+    abstract Builder createTime(Long createTime);
+
+    abstract Builder metageneration(Long metageneration);
+
+    /**
+     * Sets the bucket's Cross-Origin Resource Sharing (CORS) configuration.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
+     *     Cross-Origin Resource Sharing (CORS)</a>
+     */
+    public abstract Builder cors(Iterable<Cors> cors);
+
+    /**
+     * Sets the bucket's access control configuration.
+     *
+     * @see <a
+     * href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+     *     About Access Control Lists</a>
+     */
+    public abstract Builder acl(Iterable<Acl> acl);
+
+    /**
+     * Sets the default access control configuration to apply to bucket's blobs when no other
+     * configuration is specified.
+     *
+     * @see <a
+     * href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+     *     About Access Control Lists</a>
+     */
+    public abstract Builder defaultAcl(Iterable<Acl> acl);
+
+    /**
+     * Creates a {@code BucketInfo} object.
+     */
+    public abstract BucketInfo build();
+  }
+
+  static final class BuilderImpl extends Builder {
 
     private String id;
     private String name;
@@ -336,9 +428,11 @@ public final class BucketInfo implements Serializable {
     private List<Acl> acl;
     private List<Acl> defaultAcl;
 
-    private Builder() {}
+    BuilderImpl(String name) {
+      this.name = name;
+    }
 
-    private Builder(BucketInfo bucketInfo) {
+    BuilderImpl(BucketInfo bucketInfo) {
       id = bucketInfo.id;
       name = bucketInfo.name;
       etag = bucketInfo.etag;
@@ -357,144 +451,110 @@ public final class BucketInfo implements Serializable {
       deleteRules = bucketInfo.deleteRules;
     }
 
-    /**
-     * Sets the bucket's name.
-     */
+    @Override
     public Builder name(String name) {
       this.name = checkNotNull(name);
       return this;
     }
 
+    @Override
     Builder id(String id) {
       this.id = id;
       return this;
     }
 
+    @Override
     Builder owner(Acl.Entity owner) {
       this.owner = owner;
       return this;
     }
 
+    @Override
     Builder selfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
-    /**
-     * Sets whether versioning should be enabled for this bucket. When set to true, versioning is
-     * fully enabled.
-     */
+    @Override
     public Builder versioningEnabled(Boolean enable) {
       this.versioningEnabled = firstNonNull(enable, Data.<Boolean>nullOf(Boolean.class));
       return this;
     }
 
-    /**
-     * Sets the bucket's website index page. Behaves as the bucket's directory index where missing
-     * blobs are treated as potential directories.
-     */
+    @Override
     public Builder indexPage(String indexPage) {
       this.indexPage = indexPage;
       return this;
     }
 
-    /**
-     * Sets the custom object to return when a requested resource is not found.
-     */
+    @Override
     public Builder notFoundPage(String notFoundPage) {
       this.notFoundPage = notFoundPage;
       return this;
     }
 
-    /**
-     * Sets the bucket's lifecycle configuration as a number of delete rules.
-     *
-     * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
-     */
+    @Override
     public Builder deleteRules(Iterable<? extends DeleteRule> rules) {
       this.deleteRules = rules != null ? ImmutableList.copyOf(rules) : null;
       return this;
     }
 
-    /**
-     * Sets the bucket's storage class. This defines how blobs in the bucket are stored and
-     * determines the SLA and the cost of storage. A list of supported values is available
-     * <a href="https://cloud.google.com/storage/docs/storage-classes">here</a>.
-     */
+    @Override
     public Builder storageClass(String storageClass) {
       this.storageClass = storageClass;
       return this;
     }
 
-    /**
-     * Sets the bucket's location. Data for blobs in the bucket resides in physical storage within
-     * this region. A list of supported values is available
-     * <a href="https://cloud.google.com/storage/docs/bucket-locations">here</a>.
-     */
+    @Override
     public Builder location(String location) {
       this.location = location;
       return this;
     }
 
+    @Override
     Builder etag(String etag) {
       this.etag = etag;
       return this;
     }
 
+    @Override
     Builder createTime(Long createTime) {
       this.createTime = createTime;
       return this;
     }
 
+    @Override
     Builder metageneration(Long metageneration) {
       this.metageneration = metageneration;
       return this;
     }
 
-    /**
-     * Sets the bucket's Cross-Origin Resource Sharing (CORS) configuration.
-     *
-     * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
-     *     Cross-Origin Resource Sharing (CORS)</a>
-     */
+    @Override
     public Builder cors(Iterable<Cors> cors) {
       this.cors = cors != null ? ImmutableList.copyOf(cors) : null;
       return this;
     }
 
-    /**
-     * Sets the bucket's access control configuration.
-     *
-     * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
-     *     About Access Control Lists</a>
-     */
+    @Override
     public Builder acl(Iterable<Acl> acl) {
       this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
-    /**
-     * Sets the default access control configuration to apply to bucket's blobs when no other
-     * configuration is specified.
-     *
-     * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
-     *     About Access Control Lists</a>
-     */
+    @Override
     public Builder defaultAcl(Iterable<Acl> acl) {
       this.defaultAcl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
-    /**
-     * Creates a {@code BucketInfo} object.
-     */
+    @Override
     public BucketInfo build() {
       checkNotNull(name);
       return new BucketInfo(this);
     }
   }
 
-  private BucketInfo(Builder builder) {
+  BucketInfo(BuilderImpl builder) {
     id = builder.id;
     name = builder.name;
     etag = builder.etag;
@@ -649,7 +709,7 @@ public final class BucketInfo implements Serializable {
    * Returns a builder for the current bucket.
    */
   public Builder toBuilder() {
-    return new Builder(this);
+    return new BuilderImpl(this);
   }
 
   @Override
@@ -659,7 +719,8 @@ public final class BucketInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof BucketInfo && Objects.equals(toPb(), ((BucketInfo) obj).toPb());
+    return obj != null && obj.getClass().equals(BucketInfo.class)
+        && Objects.equals(toPb(), ((BucketInfo) obj).toPb());
   }
 
   @Override
@@ -743,11 +804,11 @@ public final class BucketInfo implements Serializable {
    * Returns a {@code BucketInfo} builder where the bucket's name is set to the provided name.
    */
   public static Builder builder(String name) {
-    return new Builder().name(name);
+    return new BuilderImpl(name);
   }
 
   static BucketInfo fromPb(com.google.api.services.storage.model.Bucket bucketPb) {
-    Builder builder = new Builder().name(bucketPb.getName());
+    Builder builder = new BuilderImpl(bucketPb.getName());
     if (bucketPb.getId() != null) {
       builder.id(bucketPb.getId());
     }

@@ -24,11 +24,11 @@ import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 
 import com.google.common.collect.ImmutableMap;
 
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Map;
@@ -54,6 +54,11 @@ public class ProjectTest {
   private Project expectedProject;
   private Project project;
 
+  @Before
+  public void setUp() {
+    resourceManager = createStrictMock(ResourceManager.class);
+  }
+
   @After
   public void tearDown() throws Exception {
     verify(resourceManager);
@@ -62,33 +67,12 @@ public class ProjectTest {
   private void initializeExpectedProject(int optionsCalls) {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
-    resourceManager = createStrictMock(ResourceManager.class);
     expectedProject =
         new Project(serviceMockReturnsOptions, new ProjectInfo.BuilderImpl(PROJECT_INFO));
   }
 
   private void initializeProject() {
     project = new Project(resourceManager, new ProjectInfo.BuilderImpl(PROJECT_INFO));
-  }
-
-  @Test
-  public void testBuilder() {
-    initializeExpectedProject(2);
-    replay(resourceManager);
-    Project builtProject = Project.builder(serviceMockReturnsOptions, PROJECT_ID)
-        .name(NAME)
-        .labels(LABELS)
-        .projectNumber(PROJECT_NUMBER)
-        .createTimeMillis(CREATE_TIME_MILLIS)
-        .state(STATE)
-        .build();
-    assertEquals(PROJECT_ID, builtProject.projectId());
-    assertEquals(NAME, builtProject.name());
-    assertEquals(LABELS, builtProject.labels());
-    assertEquals(PROJECT_NUMBER, builtProject.projectNumber());
-    assertEquals(CREATE_TIME_MILLIS, builtProject.createTimeMillis());
-    assertEquals(STATE, builtProject.state());
-    assertSame(serviceMockReturnsOptions, builtProject.resourceManager());
   }
 
   @Test
@@ -99,11 +83,33 @@ public class ProjectTest {
   }
 
   @Test
+  public void testBuilder() {
+    initializeExpectedProject(4);
+    expect(resourceManager.options()).andReturn(mockOptions).times(4);
+    replay(resourceManager);
+    Project.Builder builder =
+        new Project.Builder(new Project(resourceManager, new ProjectInfo.BuilderImpl(PROJECT_ID)));
+    Project project = builder.name(NAME)
+        .labels(LABELS)
+        .projectNumber(PROJECT_NUMBER)
+        .createTimeMillis(CREATE_TIME_MILLIS)
+        .state(STATE)
+        .build();
+    assertEquals(PROJECT_ID, project.projectId());
+    assertEquals(NAME, project.name());
+    assertEquals(LABELS, project.labels());
+    assertEquals(PROJECT_NUMBER, project.projectNumber());
+    assertEquals(CREATE_TIME_MILLIS, project.createTimeMillis());
+    assertEquals(STATE, project.state());
+    assertEquals(resourceManager.options(), project.resourceManager().options());
+  }
+
+  @Test
   public void testGet() {
     initializeExpectedProject(1);
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(expectedProject);
     replay(resourceManager);
-    Project loadedProject = Project.get(resourceManager, PROJECT_INFO.projectId());
+    Project loadedProject = resourceManager.get(PROJECT_INFO.projectId());
     assertEquals(expectedProject, loadedProject);
   }
 
@@ -126,7 +132,7 @@ public class ProjectTest {
     initializeExpectedProject(1);
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(null);
     replay(resourceManager);
-    assertNull(Project.get(resourceManager, PROJECT_INFO.projectId()));
+    assertNull(resourceManager.get(PROJECT_INFO.projectId()));
   }
 
   @Test

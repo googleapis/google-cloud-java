@@ -12,9 +12,36 @@
   </description>
   <developers>
     <developer>
+      <id>derka</id>
+      <name>Martin Derka</name>
+      <email>derka@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>ajaykannan</id>
+      <name>Ajay Kannan</name>
+      <email>ajaykannan@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
       <id>ozarov</id>
       <name>Arie Ozarov</name>
       <email>ozarov@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>mziccardi</id>
+      <name>Marco Ziccardi</name>
+      <email>mziccardi@google.com</email>
       <organization>Google</organization>
       <roles>
         <role>Developer</role>

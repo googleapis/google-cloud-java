@@ -396,7 +396,8 @@ public class DatasetInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj.getClass().equals(DatasetInfo.class)
+    return obj != null
+        && obj.getClass().equals(DatasetInfo.class)
         && Objects.equals(toPb(), ((DatasetInfo) obj).toPb());
   }
 

@@ -6,6 +6,7 @@ Java idiomatic client for [Google Cloud Storage] (https://cloud.google.com/stora
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-storage.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-storage.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/storage/package-summary.html)
@@ -35,7 +36,7 @@ libraryDependencies += "com.google.gcloud" % "gcloud-java-storage" % "0.1.3"
 Example Application
 -------------------
 
-[`StorageExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/StorageExample.java) is a simple command line interface that provides some of Cloud Storage's functionality.  Read more about using the application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
+[`StorageExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/StorageExample.java) is a simple command line interface that provides some of Cloud Storage's functionality.  Read more about using the application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
 
 Authentication
 --------------
@@ -77,15 +78,15 @@ Storage storage = StorageOptions.defaultInstance().service();
 For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) page.
 
 #### Storing data
-Stored objects are called "blobs" in `gcloud-java` and are organized into containers called "buckets".  In this code snippet, we will create a new bucket and upload a blob to that bucket.
+Stored objects are called "blobs" in `gcloud-java` and are organized into containers called "buckets".  `Blob`, a subclass of `BlobInfo`, adds a layer of service-related functionality over `BlobInfo`.  Similarly, `Bucket` adds a layer of service-related functionality over `BucketInfo`.  In this code snippet, we will create a new bucket and upload a blob to that bucket.
 
 Add the following imports at the top of your file:
 
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.gcloud.storage.BlobId;
-import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.Bucket;
 import com.google.gcloud.storage.BucketInfo;
 ```
 
@@ -96,13 +97,12 @@ Then add the following code to create a bucket and upload a simple blob.
 ```java
 // Create a bucket
 String bucketName = "my_unique_bucket"; // Change this to something unique
-BucketInfo bucketInfo = storage.create(BucketInfo.of(bucketName));
+Bucket bucket = storage.create(BucketInfo.of(bucketName));
 
 // Upload a blob to the newly created bucket
 BlobId blobId = BlobId.of(bucketName, "my_blob_name");
-BlobInfo blobInfo = storage.create(
-    BlobInfo.builder(blobId).contentType("text/plain").build(),
-    "a simple blob".getBytes(UTF_8));
+Blob blob = storage.create(
+    "my_blob_name", "a simple blob".getBytes(UTF_8), "text/plain");
 ```
 
 At this point, you will be able to see your newly created bucket and blob on the Google Developers Console.
@@ -111,7 +111,7 @@ At this point, you will be able to see your newly created bucket and blob on the
 Now that we have content uploaded to the server, we can see how to read data from the server.  Add the following line to your program to get back the blob we uploaded.
 
 ```java
-String blobContent = new String(storage.readAllBytes(blobId), UTF_8);
+String blobContent = new String(blob.content(), UTF_8);
 ```
 
 #### Listing buckets and contents of buckets
@@ -125,14 +125,14 @@ Then add the following code to list all your buckets and all the blobs inside yo
 
 ```java
 // List all your buckets
-Iterator<BucketInfo> bucketInfoIterator = storage.list().iterateAll();
+Iterator<Bucket> bucketIterator = storage.list().iterateAll();
 System.out.println("My buckets:");
-while (bucketInfoIterator.hasNext()) {
-  System.out.println(bucketInfoIterator.next());
+while (bucketIterator.hasNext()) {
+  System.out.println(bucketIterator.next());
 }
 
 // List the blobs in a particular bucket
-Iterator<BlobInfo> blobIterator = storage.list(bucketName).iterateAll();
+Iterator<Blob> blobIterator = bucket.list().iterateAll();
 System.out.println("My blobs:");
 while (blobIterator.hasNext()) {
   System.out.println(blobIterator.next());
@@ -141,55 +141,12 @@ while (blobIterator.hasNext()) {
 
 #### Complete source code
 
-Here we put together all the code shown above into one program.  This program assumes that you are running on Compute Engine or from your own desktop. To run this example on App Engine, simply move the code from the main method to your application's servlet class and change the print statements to display on your webpage.
-
-```java
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import com.google.gcloud.storage.BlobId;
-import com.google.gcloud.storage.BlobInfo;
-import com.google.gcloud.storage.BucketInfo;
-import com.google.gcloud.storage.Storage;
-import com.google.gcloud.storage.StorageOptions;
-
-import java.util.Iterator;
-
-public class GcloudStorageExample {
-
-  public static void main(String[] args) {
-    // Create a service object
-    // Credentials are inferred from the environment.
-    Storage storage = StorageOptions.defaultInstance().service();
-
-    // Create a bucket
-    String bucketName = "my_unique_bucket"; // Change this to something unique
-    BucketInfo bucketInfo = storage.create(BucketInfo.of(bucketName));
-
-    // Upload a blob to the newly created bucket
-    BlobId blobId = BlobId.of(bucketName, "my_blob_name");
-    BlobInfo blobInfo = storage.create(
-        BlobInfo.builder(blobId).contentType("text/plain").build(),
-        "a simple blob".getBytes(UTF_8));
-
-    // Retrieve a blob from the server
-    String blobContent = new String(storage.readAllBytes(blobId), UTF_8);
-
-    // List all your buckets
-    Iterator<BucketInfo> bucketInfoIterator = storage.list().iterateAll();
-    System.out.println("My buckets:");
-    while (bucketInfoIterator.hasNext()) {
-      System.out.println(bucketInfoIterator.next());
-    }
-
-    // List the blobs in a particular bucket
-    Iterator<BlobInfo> blobIterator = storage.list(bucketName).iterateAll();
-    System.out.println("My blobs:");
-    while (blobIterator.hasNext()) {
-      System.out.println(blobIterator.next());
-    }
-  }
-}
-```
+In
+[CreateAndListBucketsAndBlobs.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/CreateAndListBucketsAndBlobs.java)
+we put together all the code shown above into one program. The program assumes that you are
+running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
+the code from the main method to your application's servlet class and change the print statements to
+display on your webpage.
 
 Troubleshooting
 ---------------

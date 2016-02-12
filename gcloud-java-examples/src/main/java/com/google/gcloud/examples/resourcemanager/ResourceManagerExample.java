@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.examples;
+package com.google.gcloud.examples.resourcemanager;
 
 import com.google.common.base.Joiner;
 import com.google.gcloud.resourcemanager.Project;
@@ -36,7 +36,7 @@ import java.util.Scanner;
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven - {@code mvn exec:java
- * -Dexec.mainClass="com.google.gcloud.examples.ResourceManagerExample"
+ * -Dexec.mainClass="com.google.gcloud.examples.resourcemanager.ResourceManagerExample"
  * -Dexec.args="[list | [create | delete | get] projectId]"}</li>
  * </ol>
  */

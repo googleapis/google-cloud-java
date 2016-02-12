@@ -115,7 +115,10 @@ public class ProjectInfo implements Serializable {
     }
   }
 
-  public static abstract class Builder {
+  /**
+   * Builder for {@code ProjectInfo}.
+   */
+  public abstract static class Builder {
 
     /**
      * Set the user-assigned name of the project.
@@ -184,7 +187,9 @@ public class ProjectInfo implements Serializable {
     private Long createTimeMillis;
     private ResourceId parent;
 
-    BuilderImpl() {}
+    BuilderImpl(String projectId) {
+      this.projectId = projectId;
+    }
 
     BuilderImpl(ProjectInfo info) {
       this.name = info.name;
@@ -331,7 +336,7 @@ public class ProjectInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj.getClass().equals(ProjectInfo.class)
+    return obj != null && obj.getClass().equals(ProjectInfo.class)
         && Objects.equals(toPb(), ((ProjectInfo) obj).toPb());
   }
 
@@ -341,7 +346,7 @@ public class ProjectInfo implements Serializable {
   }
 
   public static Builder builder(String id) {
-    return new BuilderImpl().projectId(id);
+    return new BuilderImpl(id);
   }
 
   public Builder toBuilder() {
