@@ -24,6 +24,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 import com.google.gcloud.datastore.Cursor;
@@ -49,7 +50,6 @@ import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.datastore.Transaction;
-import com.google.gcloud.datastore.Value;
 import com.google.gcloud.datastore.testing.LocalGcdHelper;
 
 import org.junit.AfterClass;
@@ -715,9 +715,8 @@ public class Concepts {
       queryBuilder.startCursor(pageCursor);
     }
     QueryResults<Entity> tasks = datastore.run(queryBuilder.build());
-    Entity task;
     while (tasks.hasNext()) {
-      task = tasks.next();
+      Entity task = tasks.next();
       // do something with the task
     }
     Cursor nextPageCursor = tasks.cursorAfter();
@@ -919,17 +918,16 @@ public class Concepts {
       Key property = results.next();
       String kind = property.ancestors().get(property.ancestors().size() - 1).name();
       String propertyName = property.name();
-      if (!propertiesByKind.containsKey(kind)) {
-        propertiesByKind.put(kind, new HashSet<String>());
+      Collection<String> properties = propertiesByKind.get(kind);
+      if (properties == null) {
+        properties = new HashSet<>();
+        propertiesByKind.put(kind, properties);
       }
-      propertiesByKind.get(kind).add(propertyName);
+      properties.add(propertyName);
     }
     // [END property_run_query]
-    Map<String, Collection<String>> expected = new HashMap<>();
-    expected.put(
-        "Task",
-        ImmutableSet.of(
-            "done", "type", "done", "completed", "priority", "created", "percent_complete", "tag"));
+    Map<String, ImmutableSet<String>> expected = ImmutableMap.of("Task", ImmutableSet.of(
+        "done", "type", "done", "completed", "priority", "created", "percent_complete", "tag"));
     assertEquals(expected, propertiesByKind);
   }
 
@@ -940,30 +938,34 @@ public class Concepts {
     Key key = datastore.newKeyFactory().kind("__kind__").newKey("Task");
     Query<Entity> query = Query.entityQueryBuilder()
         .kind("__property__")
-            .filter(PropertyFilter.hasAncestor(key))
+        .filter(PropertyFilter.hasAncestor(key))
         .build();
     QueryResults<Entity> results = datastore.run(query);
     Map<String, Collection<String>> representationsByProperty = new HashMap<>();
     while (results.hasNext()) {
       Entity property = results.next();
       String propertyName = property.key().name();
-      List<? extends Value<?>> representations = property.getList("property_representation");
-      if (!representationsByProperty.containsKey(propertyName)) {
-        representationsByProperty.put(propertyName, new HashSet<String>());
+      List<StringValue> representations =
+          (List<StringValue>) property.getList("property_representation");
+      Collection<String> currentRepresentations = representationsByProperty.get(propertyName);
+      if (currentRepresentations == null) {
+        currentRepresentations = new HashSet<>();
+        representationsByProperty.put(propertyName, currentRepresentations);
       }
-      for (Value<?> value : representations) {
-        representationsByProperty.get(propertyName).add((String) value.get());
+      for (StringValue value : representations) {
+        currentRepresentations.add(value.get());
       }
     }
     // [END property_by_kind_run_query]
-    Map<String, Collection<String>> expected = new HashMap<>();
-    expected.put("type", Collections.singleton("STRING"));
-    expected.put("done", Collections.singleton("BOOLEAN"));
-    expected.put("completed", Collections.singleton("BOOLEAN"));
-    expected.put("priority", Collections.singleton("INT64"));
-    expected.put("created", Collections.singleton("INT64"));
-    expected.put("percent_complete", Collections.singleton("DOUBLE"));
-    expected.put("tag", Collections.singleton("STRING"));
+    Map<String, Collection<String>> expected = ImmutableMap.<String, Collection<String>>builder()
+        .put("type", Collections.singleton("STRING"))
+        .put("done", Collections.singleton("BOOLEAN"))
+        .put("completed", Collections.singleton("BOOLEAN"))
+        .put("priority", Collections.singleton("INT64"))
+        .put("created", Collections.singleton("INT64"))
+        .put("percent_complete", Collections.singleton("DOUBLE"))
+        .put("tag", Collections.singleton("STRING"))
+        .build();
     assertEquals(expected, representationsByProperty);
   }
 
@@ -986,14 +988,16 @@ public class Concepts {
       Key property = results.next();
       String kind = property.ancestors().get(property.ancestors().size() - 1).name();
       String propertyName = property.name();
-      if (!propertiesByKind.containsKey(kind)) {
-        propertiesByKind.put(kind, new HashSet<String>());
+      Collection<String> properties = propertiesByKind.get(kind);
+      if (properties == null) {
+        properties = new HashSet<String>();
+        propertiesByKind.put(kind, properties);
       }
-      propertiesByKind.get(kind).add(propertyName);
+      properties.add(propertyName);
     }
     // [END property_filtering_run_query]
-    Map<String, Collection<String>> expected = new HashMap<>();
-    expected.put("Task", ImmutableSet.of("priority", "tag", "type"));
+    Map<String, ImmutableSet<String>> expected =
+        ImmutableMap.of("Task", ImmutableSet.of("priority", "tag", "type"));
     assertEquals(expected, propertiesByKind);
   }
 
