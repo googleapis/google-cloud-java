@@ -1300,8 +1300,10 @@ public interface Storage extends Service<StorageOptions> {
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
    *
    * <p>Example usage of replacing blob's metadata:
-   * <pre> {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
-   * {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
+   * <pre> {@code
+   * service.update(BlobInfo.builder("bucket", "name").metadata(null).build());
+   * service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());
+   * }
    * </pre>
    *
    * @return the updated blob
@@ -1315,8 +1317,10 @@ public interface Storage extends Service<StorageOptions> {
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
    *
    * <p>Example usage of replacing blob's metadata:
-   * <pre> {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
-   * {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
+   * <pre> {@code
+   * service.update(BlobInfo.builder("bucket", "name").metadata(null).build());
+   * service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());
+   * }
    * </pre>
    *
    * @return the updated blob

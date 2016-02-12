@@ -351,8 +351,10 @@ public final class Blob extends BlobInfo {
    * </p>
    *
    * <p>Example usage of replacing blob's metadata:
-   * <pre> {@code blob.toBuilder().metadata(null).build().update();}
-   * {@code blob.toBuilder().metadata(newMetadata).build().update();}
+   * <pre> {@code
+   * blob.toBuilder().metadata(null).build().update();
+   * blob.toBuilder().metadata(newMetadata).build().update();
+   * }
    * </pre>
    *
    * @param options update options
