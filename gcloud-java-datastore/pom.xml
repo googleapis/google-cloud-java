@@ -24,7 +24,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-datastore-protobuf</artifactId>
-      <version>v1beta2-rev1-2.1.2</version>
+      <version>v1beta2-rev1-4.0.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
