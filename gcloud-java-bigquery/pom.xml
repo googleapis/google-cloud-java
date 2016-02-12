@@ -30,7 +30,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-bigquery</artifactId>
-      <version>v2-rev254-1.21.0</version>
+      <version>v2-rev261-1.21.0</version>
       <scope>compile</scope>
       <exclusions>
 	<exclusion>
@@ -48,7 +48,7 @@
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <version>3.3</version>
+      <version>3.4</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
