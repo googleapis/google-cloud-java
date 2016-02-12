@@ -437,8 +437,8 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
    * @throws ClassCastException if value is not a list of values
    */
   @SuppressWarnings("unchecked")
-  public List<? extends Value<?>> getList(String name) {
-    return ((Value<List<? extends Value<?>>>) getValue(name)).get();
+  public <T extends Value<?>> List<T> getList(String name) {
+    return (List<T>) getValue(name).get();
   }
 
   /**

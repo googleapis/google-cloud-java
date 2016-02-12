@@ -74,7 +74,7 @@ public class BaseEntityTest {
     builder.set("doubleList", 12.3, 4.56, .789);
     builder.set("keyList", KEY, Key.builder("ds2", "k2", "n2").build(),
         Key.builder("ds3", "k3", "n3").build());
-    builder.set("entityList", ENTITY, PARTIAL_ENTITY, ENTITY);
+    builder.set("entityList", ENTITY, PARTIAL_ENTITY);
     builder.set("stringList", "s1", "s2", "s3");
     builder.set("longList", 1, 23, 456);
   }
@@ -193,6 +193,17 @@ public class BaseEntityTest {
     assertEquals(Boolean.TRUE, list.get(0).get());
     entity = builder.set("list1", ListValue.of(list)).build();
     assertEquals(list, entity.getList("list1"));
+    List<Value<?>> stringList = entity.getList("stringList");
+    assertEquals(
+        ImmutableList.of(StringValue.of("s1"), StringValue.of("s2"), StringValue.of("s3")),
+        stringList);
+    List<Value<Double>> doubleList = entity.getList("doubleList");
+    assertEquals(
+        ImmutableList.of(DoubleValue.of(12.3), DoubleValue.of(4.56), DoubleValue.of(.789)),
+        doubleList);
+    List<EntityValue> entityList = entity.getList("entityList");
+    assertEquals(
+        ImmutableList.of(EntityValue.of(ENTITY), EntityValue.of(PARTIAL_ENTITY)), entityList);
   }
 
   @Test
