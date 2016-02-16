@@ -84,6 +84,25 @@ public class IncompleteKey extends BaseKey {
     return new IncompleteKey(projectId, namespace, path);
   }
 
+  /**
+   * Returns the key's parent.
+   */
+  @Override
+  public Key parent() {
+    List<PathElement> ancestors = ancestors();
+    if (!ancestors.isEmpty()) {
+      PathElement parent = ancestors.get(ancestors.size() - 1);
+      Key.Builder keyBuilder;
+      if (parent.hasName()) {
+        keyBuilder = Key.builder(projectId(), parent.kind(), parent.name());
+      } else {
+        keyBuilder = Key.builder(projectId(), parent.kind(), parent.id());
+      }
+      return keyBuilder.ancestors(ancestors.subList(0, ancestors.size() - 1)).build();
+    }
+    return null;
+  }
+
   public static Builder builder(String projectId, String kind) {
     return new Builder(projectId, kind);
   }
