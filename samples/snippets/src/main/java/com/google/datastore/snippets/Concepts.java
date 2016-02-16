@@ -973,14 +973,13 @@ public class Concepts {
   public void testPropertyFilteringRunQuery() {
     setUpQueryTests();
     // [START property_filtering_run_query]
-    Key key =
-        datastore.newKeyFactory()
+    Key key = datastore.newKeyFactory()
         .kind("__property__")
-            .ancestors(PathElement.of("__kind__", "Task"))
-            .newKey("priority");
+        .ancestors(PathElement.of("__kind__", "Task"))
+        .newKey("priority");
     Query<Key> query = Query.keyQueryBuilder()
         .kind("__property__")
-            .filter(PropertyFilter.ge("__key__", key))
+        .filter(PropertyFilter.ge("__key__", key))
         .build();
     Map<String, Collection<String>> propertiesByKind = new HashMap<>();
     QueryResults<Key> results = datastore.run(query);
