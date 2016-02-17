@@ -90,17 +90,21 @@ public class IncompleteKey extends BaseKey {
   @Override
   public Key parent() {
     List<PathElement> ancestors = ancestors();
-    if (!ancestors.isEmpty()) {
-      PathElement parent = ancestors.get(ancestors.size() - 1);
-      Key.Builder keyBuilder;
-      if (parent.hasName()) {
-        keyBuilder = Key.builder(projectId(), parent.kind(), parent.name());
-      } else {
-        keyBuilder = Key.builder(projectId(), parent.kind(), parent.id());
-      }
-      return keyBuilder.ancestors(ancestors.subList(0, ancestors.size() - 1)).build();
+    if (ancestors.isEmpty()) {
+      return null;
     }
-    return null;
+    PathElement parent = ancestors.get(ancestors.size() - 1);
+    Key.Builder keyBuilder;
+    if (parent.hasName()) {
+      keyBuilder = Key.builder(projectId(), parent.kind(), parent.name());
+    } else {
+      keyBuilder = Key.builder(projectId(), parent.kind(), parent.id());
+    }
+    String namespace = namespace();
+    if (namespace != null) {
+      keyBuilder.namespace(namespace);
+    }
+    return keyBuilder.ancestors(ancestors.subList(0, ancestors.size() - 1)).build();
   }
 
   public static Builder builder(String projectId, String kind) {

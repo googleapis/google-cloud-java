@@ -600,12 +600,11 @@ public class LocalGcdHelper {
     String action = parsedArgs.get("action");
     int port =
         (parsedArgs.get("port") == null) ? DEFAULT_PORT : Integer.parseInt(parsedArgs.get("port"));
-    double consistency =
-        parsedArgs.get("consistency") == null
-            ? DEFAULT_CONSISTENCY : Double.parseDouble(parsedArgs.get("consistency"));
     switch (action) {
       case "START":
         if (!isActive(DEFAULT_PROJECT_ID, port)) {
+          double consistency = parsedArgs.get("consistency") == null
+              ? DEFAULT_CONSISTENCY : Double.parseDouble(parsedArgs.get("consistency"));
           LocalGcdHelper helper = start(DEFAULT_PROJECT_ID, port, consistency);
           try (FileWriter writer = new FileWriter(".local_gcd_helper")) {
             writer.write(helper.gcdPath.toAbsolutePath().toString() + System.lineSeparator());

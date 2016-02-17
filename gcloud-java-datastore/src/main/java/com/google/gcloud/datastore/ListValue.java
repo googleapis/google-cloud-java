@@ -77,9 +77,8 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       return this;
     }
 
-    public Builder addValue(Value<?> first, Value<?> second, Value<?>... other) {
+    public Builder addValue(Value<?> first, Value<?>... other) {
       addValue(first);
-      addValue(second);
       for (Value<?> value : other) {
         addValue(value);
       }
@@ -122,8 +121,12 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
     this(builder().set(values));
   }
 
-  public ListValue(Value<?> first, Value<?> second, Value<?>... other) {
-    this(new Builder().addValue(first, second, other));
+  public ListValue(Value<?> first, Value<?>... other) {
+    this(new Builder().addValue(first, other));
+  }
+
+  ListValue(Value<?> first, Value<?> second, Value<?>... other) {
+    this(new Builder().addValue(first).addValue(second, other));
   }
 
   private ListValue(Builder builder) {
@@ -139,7 +142,11 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
     return new ListValue(values);
   }
 
-  public static ListValue of(Value<?> first, Value<?> second, Value<?>... other) {
+  public static ListValue of(Value<?> first, Value<?>... other) {
+    return new ListValue(first, other);
+  }
+
+  static ListValue of(Value<?> first, Value<?> second, Value<?>... other) {
     return new ListValue(first, second, other);
   }
 

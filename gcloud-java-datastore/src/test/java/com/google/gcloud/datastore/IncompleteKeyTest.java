@@ -25,14 +25,14 @@ import org.junit.Test;
 
 public class IncompleteKeyTest {
 
-private static IncompleteKey pk1, pk2;
-  private static Key parent;
+  private static IncompleteKey pk1, pk2;
+  private static Key parent1;
 
   @Before
   public void setUp() {
     pk1 = IncompleteKey.builder("ds", "kind1").build();
-    parent = Key.builder("ds", "kind2", 10).build();
-    pk2 = IncompleteKey.builder(parent, "kind3").build();
+    parent1 = Key.builder("ds", "kind2", 10).namespace("ns").build();
+    pk2 = IncompleteKey.builder(parent1, "kind3").build();
   }
 
   @Test
@@ -43,18 +43,21 @@ private static IncompleteKey pk1, pk2;
 
     assertEquals("ds", pk2.projectId());
     assertEquals("kind3", pk2.kind());
-    assertEquals(parent.path(), pk2.ancestors());
+    assertEquals(parent1.path(), pk2.ancestors());
 
     assertEquals(pk2, IncompleteKey.builder(pk2).build());
     IncompleteKey pk3 = IncompleteKey.builder(pk2).kind("kind4").build();
     assertEquals("ds", pk3.projectId());
     assertEquals("kind4", pk3.kind());
-    assertEquals(parent.path(), pk3.ancestors());
+    assertEquals(parent1.path(), pk3.ancestors());
   }
 
   @Test
   public void testParent() {
     assertNull(pk1.parent());
-    assertEquals(parent, pk2.parent());
+    assertEquals(parent1, pk2.parent());
+    Key parent2 = Key.builder("ds", "kind3", "name").namespace("ns").build();
+    IncompleteKey pk3 = IncompleteKey.builder(parent2, "kind3").build();
+    assertEquals(parent2, pk3.parent());
   }
 }
