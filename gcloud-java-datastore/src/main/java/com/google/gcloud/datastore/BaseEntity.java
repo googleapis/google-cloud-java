@@ -370,7 +370,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
      * @param others other values in the list
      */
     public B set(String name, Value<?> first, Value<?> second, Value<?>... others) {
-      properties.put(name, of(first, second, others));
+      properties.put(name, ListValue.builder().addValue(first).addValue(second, others).build());
       return self();
     }
 
