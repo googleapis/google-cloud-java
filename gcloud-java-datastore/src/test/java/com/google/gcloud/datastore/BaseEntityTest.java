@@ -67,6 +67,16 @@ public class BaseEntityTest {
     builder.set("list1", NullValue.of(), StringValue.of("foo"));
     builder.set("list2", ImmutableList.of(LongValue.of(10), DoubleValue.of(2)));
     builder.set("list3", Collections.singletonList(BooleanValue.of(true)));
+    builder.set(
+        "blobList", BLOB, Blob.copyFrom(new byte[] {3, 4}), Blob.copyFrom(new byte[] {5, 6}));
+    builder.set("booleanList", true, false, true);
+    builder.set("dateTimeList", DateTime.now(), DateTime.now(), DateTime.now());
+    builder.set("doubleList", 12.3, 4.56, .789);
+    builder.set("keyList", KEY, Key.builder("ds2", "k2", "n2").build(),
+        Key.builder("ds3", "k3", "n3").build());
+    builder.set("entityList", ENTITY, PARTIAL_ENTITY);
+    builder.set("stringList", "s1", "s2", "s3");
+    builder.set("longList", 1, 23, 456);
   }
 
   @Test
@@ -183,6 +193,17 @@ public class BaseEntityTest {
     assertEquals(Boolean.TRUE, list.get(0).get());
     entity = builder.set("list1", ListValue.of(list)).build();
     assertEquals(list, entity.getList("list1"));
+    List<Value<?>> stringList = entity.getList("stringList");
+    assertEquals(
+        ImmutableList.of(StringValue.of("s1"), StringValue.of("s2"), StringValue.of("s3")),
+        stringList);
+    List<Value<Double>> doubleList = entity.getList("doubleList");
+    assertEquals(
+        ImmutableList.of(DoubleValue.of(12.3), DoubleValue.of(4.56), DoubleValue.of(.789)),
+        doubleList);
+    List<EntityValue> entityList = entity.getList("entityList");
+    assertEquals(
+        ImmutableList.of(EntityValue.of(ENTITY), EntityValue.of(PARTIAL_ENTITY)), entityList);
   }
 
   @Test
@@ -198,7 +219,9 @@ public class BaseEntityTest {
   public void testNames() throws Exception {
     Set<String> names = ImmutableSet.<String>builder()
         .add("string", "stringValue", "boolean", "double", "long", "list1", "list2", "list3")
-        .add("entity", "partialEntity", "null", "dateTime", "blob", "key")
+        .add("entity", "partialEntity", "null", "dateTime", "blob", "key", "blobList")
+        .add("booleanList", "dateTimeList", "doubleList", "keyList", "entityList", "stringList")
+        .add("longList")
         .build();
     BaseEntity<Key> entity = builder.build();
     assertEquals(names, entity.names());
