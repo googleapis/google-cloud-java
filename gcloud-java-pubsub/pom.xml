@@ -17,9 +17,14 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>gcloud-java-gax</artifactId>
-      <version>${project.version}</version>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <version>0.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-pubsub-v1</artifactId>
+      <version>0.0.0</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>

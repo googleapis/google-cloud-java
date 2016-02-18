@@ -17,13 +17,9 @@ package com.google.gcloud.pubsub.spi;
 import com.google.gcloud.pubsub.testing.LocalPubsubHelper;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.PullResponse;
+import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.Topic;
-
-import io.gapi.gax.grpc.ServiceApiSettings;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -32,33 +28,54 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.google.api.gax.grpc.ServiceApiSettings;
+
+import io.grpc.ManagedChannel;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class PublisherApiTest {
   private static LocalPubsubHelper pubsubHelper;
   private PublisherApi publisherApi;
+  private SubscriberApi subscriberApi;
 
   @BeforeClass
-  public static void startStaticServer() {
-    pubsubHelper = new LocalPubsubHelper("in-process-1");
+  public static void startServer() throws IOException, InterruptedException {
+    pubsubHelper = new LocalPubsubHelper();
     pubsubHelper.start();
   }
 
   @AfterClass
-  public static void stopServer() {
-    pubsubHelper.shutdownNow();
+  public static void stopServer() throws IOException, InterruptedException {
+    pubsubHelper.stop();
   }
 
   @Before
   public void setUp() throws Exception {
-    pubsubHelper.reset();
-    ServiceApiSettings settings = new ServiceApiSettings();
-    settings.setChannel(pubsubHelper.createChannel());
-    publisherApi = PublisherApi.create(settings);
+    ManagedChannel channel = pubsubHelper.createChannel();
+
+    publisherApi =
+        PublisherApi.create(
+            ServiceApiSettings.<PublisherApi.MethodIdentifier>builder()
+                .provideChannelWith(channel)
+                .build());
+    subscriberApi =
+        SubscriberApi.create(
+            ServiceApiSettings.<SubscriberApi.MethodIdentifier>builder()
+                .provideChannelWith(channel)
+                .build());
   }
 
   @After
   public void tearDown() throws Exception {
     if (publisherApi != null) {
       publisherApi.close();
+    }
+    if (subscriberApi != null) {
+      subscriberApi.close();
     }
     pubsubHelper.reset();
   }
@@ -68,22 +85,25 @@ public class PublisherApiTest {
     String topicName = PublisherApi.createTopicPath("my-project", "my-topic");
     Topic result = publisherApi.createTopic(topicName);
     Assert.assertEquals(topicName, result.getName());
-    Assert.assertEquals(1, pubsubHelper.getPublisherImpl().getTopics().size());
-    Assert.assertNotNull(pubsubHelper.getPublisherImpl().getTopics().get(topicName));
   }
 
   @Test
   public void testPublish() throws Exception {
     String topicName = PublisherApi.createTopicPath("my-project", "publish-topic");
     publisherApi.createTopic(topicName);
-    PubsubMessage msg = PubsubMessage.newBuilder()
-        .setData(ByteString.copyFromUtf8("pubsub-message"))
-        .build();
+
+    String subscriberName = SubscriberApi.createSubscriptionPath("my-project", "my-subscribe");
+    PushConfig config = PushConfig.getDefaultInstance();
+    subscriberApi.createSubscription(subscriberName, topicName, config, 5);
+
+    PubsubMessage msg =
+        PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("pubsub-message")).build();
     publisherApi.publish(topicName, Collections.singletonList(msg));
-    List<PubsubMessage> publishedMessages =
-        pubsubHelper.getPublisherImpl().getTopics().get(topicName);
-    Assert.assertEquals(1, publishedMessages.size());
-    Assert.assertEquals("pubsub-message", publishedMessages.get(0).getData().toStringUtf8());
+
+    PullResponse response = subscriberApi.pull(subscriberName, true, 100);
+    Assert.assertEquals(1, response.getReceivedMessagesCount());
+    Assert.assertEquals(
+        "pubsub-message", response.getReceivedMessages(0).getMessage().getData().toStringUtf8());
   }
 
   @Test
@@ -115,9 +135,14 @@ public class PublisherApiTest {
 
   @Test
   public void testDeleteTopic() throws Exception {
+    String project = PublisherApi.createProjectPath("project.1");
     String topicName = PublisherApi.createTopicPath("my-project", "fun-topic");
     publisherApi.createTopic(topicName);
     publisherApi.deleteTopic(topicName);
-    Assert.assertEquals(0, pubsubHelper.getPublisherImpl().getTopics().size());
+    List<Topic> topics = new ArrayList<>();
+    for (Topic topic : publisherApi.listTopics(project)) {
+      topics.add(topic);
+    }
+    Assert.assertEquals(0, topics.size());
   }
 }
