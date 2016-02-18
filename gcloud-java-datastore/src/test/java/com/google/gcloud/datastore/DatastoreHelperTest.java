@@ -27,6 +27,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import com.google.gcloud.datastore.Datastore.TransactionCallable;
 
@@ -66,20 +67,40 @@ public class DatastoreHelperTest {
   }
 
   @Test
-  public void testGet() throws Exception {
+  public void testGetWithDatastore() throws Exception {
     Datastore datastore = createStrictMock(Datastore.class);
     IncompleteKey pKey1 = IncompleteKey.builder("ds", "k").build();
     Key key1 = Key.builder(pKey1, 1).build();
     Entity entity1 = Entity.builder(key1).build();
     Key key2 = Key.builder(pKey1, 2).build();
-    expect(datastore.get(new Key[]{key1}))
+    ReadOption eventualConsistency = ReadOption.eventualConsistency();
+    expect(datastore.get(Collections.singletonList(key1)))
         .andReturn(Collections.singletonList(entity1).iterator());
-    expect(datastore.get(new Key[]{key2}))
+    expect(datastore.get(Collections.singletonList(key2)))
         .andReturn(Collections.<Entity>emptyIterator());
+    expect(datastore.get(Collections.singletonList(key1), eventualConsistency))
+        .andReturn(Collections.singletonList(entity1).iterator());
     replay(datastore);
     assertEquals(entity1, DatastoreHelper.get(datastore, key1));
     assertNull(DatastoreHelper.get(datastore, key2));
+    assertEquals(entity1, DatastoreHelper.get(datastore, key1, eventualConsistency));
     verify(datastore);
+  }
+
+  @Test
+  public void testGetWithTransaction() throws Exception {
+    Transaction transaction = createStrictMock(Transaction.class);
+    IncompleteKey pKey1 = IncompleteKey.builder("ds", "k").build();
+    Key key1 = Key.builder(pKey1, 1).build();
+    Entity entity1 = Entity.builder(key1).build();
+    Key key2 = Key.builder(pKey1, 2).build();
+    expect(transaction.get(new Key[] {key1}))
+        .andReturn(Collections.singletonList(entity1).iterator());
+    expect(transaction.get(new Key[] {key2})).andReturn(Collections.<Entity>emptyIterator());
+    replay(transaction);
+    assertEquals(entity1, DatastoreHelper.get(transaction, key1));
+    assertNull(DatastoreHelper.get(transaction, key2));
+    verify(transaction);
   }
 
   @Test
@@ -88,28 +109,56 @@ public class DatastoreHelperTest {
     IncompleteKey pKey = IncompleteKey.builder("ds", "k").build();
     Key key = Key.builder(pKey, 1).build();
     Entity entity = Entity.builder(key).build();
-    expect(datastore.add(new Entity[]{entity}))
-        .andReturn(Collections.singletonList(entity));
+    expect(datastore.add(new Entity[] {entity})).andReturn(Collections.singletonList(entity));
     replay(datastore);
     assertEquals(entity, DatastoreHelper.add(datastore, entity));
     verify(datastore);
   }
 
   @Test
-  public void testFetch() throws Exception {
+  public void testFetchWithDatastore() throws Exception {
     Datastore datastore = createStrictMock(Datastore.class);
     IncompleteKey pKey1 = IncompleteKey.builder("ds", "k").build();
     Key key1 = Key.builder(pKey1, 1).build();
     Key key2 = Key.builder(pKey1, "a").build();
     Entity entity1 = Entity.builder(key1).build();
     Entity entity2 = Entity.builder(key2).build();
-    expect(datastore.get(key1, key2)).andReturn(Iterators.forArray(entity1, entity2)).once();
+    ReadOption eventualConsistency = ReadOption.eventualConsistency();
+    expect(datastore.get(ImmutableList.of(key1, key2)))
+        .andReturn(Iterators.forArray(entity1, entity2))
+        .once();
+    expect(datastore.get(ImmutableList.of(key1, key2), eventualConsistency))
+        .andReturn(Iterators.forArray(entity1, entity2))
+        .once();
     replay(datastore);
-    List<Entity> values = DatastoreHelper.fetch(datastore, key1, key2);
+    List<Entity> values = DatastoreHelper.fetch(datastore, new Key[] {key1, key2});
+    assertEquals(2, values.size());
+    assertEquals(entity1, values.get(0));
+    assertEquals(entity2, values.get(1));
+    values = DatastoreHelper.fetch(datastore, new Key[] {key1, key2}, eventualConsistency);
     assertEquals(2, values.size());
     assertEquals(entity1, values.get(0));
     assertEquals(entity2, values.get(1));
     verify(datastore);
+  }
+
+  @Test
+  public void testFetchWithTransaction() throws Exception {
+    Transaction transaction = createStrictMock(Transaction.class);
+    IncompleteKey pKey1 = IncompleteKey.builder("ds", "k").build();
+    Key key1 = Key.builder(pKey1, 1).build();
+    Key key2 = Key.builder(pKey1, "a").build();
+    Entity entity1 = Entity.builder(key1).build();
+    Entity entity2 = Entity.builder(key2).build();
+    expect(transaction.get(new Key[] {key1, key2}))
+        .andReturn(Iterators.forArray(entity1, entity2))
+        .once();
+    replay(transaction);
+    List<Entity> values = DatastoreHelper.fetch(transaction, new Key[] {key1, key2});
+    assertEquals(2, values.size());
+    assertEquals(entity1, values.get(0));
+    assertEquals(entity2, values.get(1));
+    verify(transaction);
   }
 
   @Test

@@ -25,7 +25,12 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
+import com.google.datastore.v1beta3.LookupResponse;
+import com.google.datastore.v1beta3.PartitionId;
+import com.google.datastore.v1beta3.ReadOptions.ReadConsistency;
+import com.google.datastore.v1beta3.RunQueryResponse;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
@@ -691,6 +696,37 @@ public class DatastoreTest {
   }
 
   @Test
+  public void testEventuallyConsistentQuery() {
+    DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
+    DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
+        .andReturn(rpcMock);
+    com.google.datastore.v1beta3.ReadOptions readOption =
+        com.google.datastore.v1beta3.ReadOptions.newBuilder()
+            .setReadConsistencyValue(ReadConsistency.EVENTUAL_VALUE)
+            .build();
+    com.google.datastore.v1beta3.GqlQuery query =
+        com.google.datastore.v1beta3.GqlQuery.newBuilder()
+            .setQueryString("FROM * SELECT *")
+            .build();
+    com.google.datastore.v1beta3.RunQueryRequest.Builder expectedRequest =
+        com.google.datastore.v1beta3.RunQueryRequest.newBuilder()
+            .setReadOptions(readOption)
+            .setGqlQuery(query)
+            .setPartitionId(PartitionId.newBuilder().setProjectId(PROJECT_ID).build());
+    EasyMock.expect(rpcMock.runQuery(expectedRequest.build()))
+        .andReturn(RunQueryResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    Datastore mockDatastore = options.toBuilder()
+        .retryParams(RetryParams.defaultInstance())
+        .serviceRpcFactory(rpcFactoryMock)
+        .build()
+        .service();
+    mockDatastore.run(
+        Query.gqlQueryBuilder("FROM * SELECT *").build(), ReadOption.eventualConsistency());
+  }
+
+  @Test
   public void testToUrlSafe() {
     byte[][] invalidUtf8 =
         new byte[][] {{(byte) 0xfe}, {(byte) 0xc1, (byte) 0xbf}, {(byte) 0xc0}, {(byte) 0x80}};
@@ -763,6 +799,40 @@ public class DatastoreTest {
     assertEquals(PARTIAL_ENTITY1, value6);
     assertEquals(6, entity.names().size());
     assertFalse(entity.contains("bla"));
+  }
+
+  @Test
+  public void testLookupEventualConsistency() {
+    DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
+    DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
+        .andReturn(rpcMock);
+    com.google.datastore.v1beta3.ReadOptions readOption =
+        com.google.datastore.v1beta3.ReadOptions.newBuilder()
+            .setReadConsistencyValue(ReadConsistency.EVENTUAL_VALUE)
+            .build();
+    com.google.datastore.v1beta3.Key key = com.google.datastore.v1beta3.Key.newBuilder()
+        .setPartitionId(PartitionId.newBuilder().setProjectId(PROJECT_ID).build())
+        .addPath(com.google.datastore.v1beta3.Key.PathElement.newBuilder()
+            .setKind("kind1").setName("name").build())
+        .build();
+    com.google.datastore.v1beta3.LookupRequest lookupRequest =
+        com.google.datastore.v1beta3.LookupRequest.newBuilder()
+            .setReadOptions(readOption)
+            .addKeys(key)
+            .build();
+    EasyMock.expect(rpcMock.lookup(lookupRequest))
+        .andReturn(LookupResponse.newBuilder().build())
+        .times(3);
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    Datastore mockDatastore = options.toBuilder()
+        .retryParams(RetryParams.defaultInstance())
+        .serviceRpcFactory(rpcFactoryMock)
+        .build()
+        .service();
+    mockDatastore.get(KEY1, ReadOption.eventualConsistency());
+    mockDatastore.get(ImmutableList.of(KEY1), ReadOption.eventualConsistency());
+    mockDatastore.fetch(ImmutableList.of(KEY1), ReadOption.eventualConsistency());
   }
 
   @Test
