@@ -19,6 +19,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class LocalResourceManagerHelperTest {
@@ -278,7 +279,7 @@ public class LocalResourceManagerHelperTest {
   public void testList() {
     Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model.Project>> projects =
         rpc.list(EMPTY_RPC_OPTIONS);
-    assertNull(projects.x()); // change this when #421 is resolved
+    assertNull(projects.x());
     assertFalse(projects.y().iterator().hasNext());
     rpc.create(COMPLETE_PROJECT);
     RESOURCE_MANAGER_HELPER.changeLifecycleState(
@@ -297,11 +298,30 @@ public class LocalResourceManagerHelperTest {
   }
 
   @Test
+  public void testListPaging() {
+    Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
+    rpcOptions.put(ResourceManagerRpc.Option.PAGE_SIZE, 1);
+    rpc.create(PARTIAL_PROJECT);
+    rpc.create(COMPLETE_PROJECT);
+    Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model.Project>> projects =
+        rpc.list(rpcOptions);
+    assertNotNull(projects.x());
+    Iterator<com.google.api.services.cloudresourcemanager.model.Project> iterator =
+        projects.y().iterator();
+    compareReadWriteFields(COMPLETE_PROJECT, iterator.next());
+    assertFalse(iterator.hasNext());
+    rpcOptions = new HashMap<>();
+    rpcOptions.put(ResourceManagerRpc.Option.PAGE_TOKEN, projects.x());
+    projects = rpc.list(rpcOptions);
+    iterator = projects.y().iterator();
+    compareReadWriteFields(PARTIAL_PROJECT, iterator.next());
+    assertFalse(iterator.hasNext());
+  }
+
+  @Test
   public void testListFieldOptions() {
     Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
     rpcOptions.put(ResourceManagerRpc.Option.FIELDS, "projects(projectId,name,labels)");
-    rpcOptions.put(ResourceManagerRpc.Option.PAGE_TOKEN, "somePageToken");
-    rpcOptions.put(ResourceManagerRpc.Option.PAGE_SIZE, 1);
     rpc.create(PROJECT_WITH_PARENT);
     Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model.Project>> projects =
         rpc.list(rpcOptions);
