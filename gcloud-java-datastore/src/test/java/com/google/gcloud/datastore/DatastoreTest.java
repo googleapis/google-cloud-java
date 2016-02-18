@@ -473,7 +473,7 @@ public class DatastoreTest {
         .andReturn(rpcMock);
     List<RunQueryResponse> responses = buildResponsesForQueryPaginationWithLimit();
     List<ByteString> endCursors = Lists.newArrayListWithCapacity(responses.size());
-    for (RunQueryResponse response: responses) {
+    for (RunQueryResponse response : responses) {
       EasyMock.expect(rpcMock.runQuery(EasyMock.anyObject(RunQueryRequest.class)))
           .andReturn(response);
       if (response.getBatch().getMoreResults() != QueryResultBatch.MoreResultsType.NOT_FINISHED) {
