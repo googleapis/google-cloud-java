@@ -303,7 +303,7 @@ public class LocalResourceManagerHelperTest {
     rpcOptions.put(ResourceManagerRpc.Option.PAGE_SIZE, -1);
     try {
       rpc.list(rpcOptions);
-    } catch (Exception e) {
+    } catch (ResourceManagerException e) {
       assertEquals("Page size must be greater than 0.", e.getMessage());
     }
   }
