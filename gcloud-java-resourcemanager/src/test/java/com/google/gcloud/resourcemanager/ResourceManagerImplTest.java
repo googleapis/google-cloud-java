@@ -183,7 +183,7 @@ public class ResourceManagerImplTest {
   }
 
   @Test
-  public void tsetListPaging() {
+  public void testListPaging() {
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     Page<Project> page = RESOURCE_MANAGER.list(ProjectListOption.pageSize(1));
@@ -195,6 +195,7 @@ public class ResourceManagerImplTest {
     iterator = page.values().iterator();
     compareReadWriteFields(PARTIAL_PROJECT, iterator.next());
     assertFalse(iterator.hasNext());
+    assertNull(page.nextPageCursor());
   }
 
   @Test

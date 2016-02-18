@@ -316,6 +316,7 @@ public class LocalResourceManagerHelperTest {
     iterator = projects.y().iterator();
     compareReadWriteFields(PARTIAL_PROJECT, iterator.next());
     assertFalse(iterator.hasNext());
+    assertNull(projects.x());
   }
 
   @Test

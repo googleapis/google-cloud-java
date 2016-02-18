@@ -248,7 +248,9 @@ public class LocalResourceManagerHelper {
             options.put("pageToken", argEntry[1]);
             break;
           case "pageSize":
-            options.put("pageSize", Integer.parseInt(argEntry[1]));
+            int pageSize = Integer.valueOf(argEntry[1]);
+            checkArgument(pageSize > 0, "Page size must be greater than 0.");
+            options.put("pageSize", pageSize);
             break;
         }
       }
@@ -363,10 +365,11 @@ public class LocalResourceManagerHelper {
     String pageToken = (String) options.get("pageToken");
     Integer pageSize = (Integer) options.get("pageSize");
     String nextPageToken = null;
-    for (Project p : projects.values()) {
-      if (pageToken != null && p.getProjectId().compareTo(pageToken) < 0) {
-        continue;
-      }
+    Map<String, Project> projectsToScan = projects;
+    if (pageToken != null) {
+      projectsToScan = projects.tailMap(pageToken);
+    }
+    for (Project p : projectsToScan.values()) {
       if (pageSize != null && count >= pageSize) {
         nextPageToken = p.getProjectId();
         break;
@@ -385,11 +388,13 @@ public class LocalResourceManagerHelper {
     StringBuilder responseBody = new StringBuilder();
     responseBody.append("{\"projects\": [");
     Joiner.on(",").appendTo(responseBody, projectsSerialized);
-    responseBody.append("]");
+    responseBody.append(']');
     if (nextPageToken != null) {
-      responseBody.append(", \"nextPageToken\": \"" + nextPageToken + "\"");
+      responseBody.append(", \"nextPageToken\": \"");
+      responseBody.append(nextPageToken);
+      responseBody.append('"');
     }
-    responseBody.append("}");
+    responseBody.append('}');
     return new Response(HTTP_OK, responseBody.toString());
   }
 
