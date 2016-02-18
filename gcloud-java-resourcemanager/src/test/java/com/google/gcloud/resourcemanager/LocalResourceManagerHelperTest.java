@@ -298,6 +298,17 @@ public class LocalResourceManagerHelperTest {
   }
 
   @Test
+  public void testInvalidListPaging() {
+    Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
+    rpcOptions.put(ResourceManagerRpc.Option.PAGE_SIZE, -1);
+    try {
+      rpc.list(rpcOptions);
+    } catch (Exception e) {
+      assertEquals("Page size must be greater than 0.", e.getMessage());
+    }
+  }
+
+  @Test
   public void testListPaging() {
     Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
     rpcOptions.put(ResourceManagerRpc.Option.PAGE_SIZE, 1);

@@ -228,7 +228,7 @@ public class LocalResourceManagerHelper {
     return null;
   }
 
-  private static Map<String, Object> parseListOptions(String query) {
+  private static Map<String, Object> parseListOptions(String query) throws IOException {
     Map<String, Object> options = new HashMap<>();
     if (query != null) {
       String[] args = query.split("&");
@@ -249,7 +249,9 @@ public class LocalResourceManagerHelper {
             break;
           case "pageSize":
             int pageSize = Integer.valueOf(argEntry[1]);
-            checkArgument(pageSize > 0, "Page size must be greater than 0.");
+            if (pageSize < 1) {
+              throw new IOException("Page size must be greater than 0.");
+            }
             options.put("pageSize", pageSize);
             break;
         }
