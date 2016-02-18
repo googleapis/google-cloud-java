@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
@@ -71,7 +71,7 @@ public class LocalResourceManagerHelper {
       ImmutableSet.of('-', '\'', '"', ' ', '!');
 
   private final HttpServer server;
-  private final ConcurrentHashMap<String, Project> projects = new ConcurrentHashMap<>();
+  private final ConcurrentSkipListMap<String, Project> projects = new ConcurrentSkipListMap<>();
   private final int port;
 
   private static class Response {
@@ -228,7 +228,7 @@ public class LocalResourceManagerHelper {
     return null;
   }
 
-  private static Map<String, Object> parseListOptions(String query) {
+  private static Map<String, Object> parseListOptions(String query) throws IOException {
     Map<String, Object> options = new HashMap<>();
     if (query != null) {
       String[] args = query.split("&");
@@ -245,10 +245,14 @@ public class LocalResourceManagerHelper {
             options.put("filter", argEntry[1].split(" "));
             break;
           case "pageToken":
-            // support pageToken when Cloud Resource Manager supports this (#421)
+            options.put("pageToken", argEntry[1]);
             break;
           case "pageSize":
-            // support pageSize when Cloud Resource Manager supports this (#421)
+            int pageSize = Integer.valueOf(argEntry[1]);
+            if (pageSize < 1) {
+              throw new IOException("Page size must be greater than 0.");
+            }
+            options.put("pageSize", pageSize);
             break;
         }
       }
@@ -353,16 +357,28 @@ public class LocalResourceManagerHelper {
   }
 
   Response list(Map<String, Object> options) {
-    // Use pageSize and pageToken options when Cloud Resource Manager does so (#421)
     List<String> projectsSerialized = new ArrayList<>();
     String[] filters = (String[]) options.get("filter");
     if (filters != null && !isValidFilter(filters)) {
       return Error.INVALID_ARGUMENT.response("Could not parse the filter.");
     }
     String[] fields = (String[]) options.get("fields");
-    for (Project p : projects.values()) {
+    int count = 0;
+    String pageToken = (String) options.get("pageToken");
+    Integer pageSize = (Integer) options.get("pageSize");
+    String nextPageToken = null;
+    Map<String, Project> projectsToScan = projects;
+    if (pageToken != null) {
+      projectsToScan = projects.tailMap(pageToken);
+    }
+    for (Project p : projectsToScan.values()) {
+      if (pageSize != null && count >= pageSize) {
+        nextPageToken = p.getProjectId();
+        break;
+      }
       boolean includeProject = includeProject(p, filters);
       if (includeProject) {
+        count++;
         try {
           projectsSerialized.add(jsonFactory.toString(extractFields(p, fields)));
         } catch (IOException e) {
@@ -374,7 +390,13 @@ public class LocalResourceManagerHelper {
     StringBuilder responseBody = new StringBuilder();
     responseBody.append("{\"projects\": [");
     Joiner.on(",").appendTo(responseBody, projectsSerialized);
-    responseBody.append("]}");
+    responseBody.append(']');
+    if (nextPageToken != null) {
+      responseBody.append(", \"nextPageToken\": \"");
+      responseBody.append(nextPageToken);
+      responseBody.append('"');
+    }
+    responseBody.append('}');
     return new Response(HTTP_OK, responseBody.toString());
   }
 

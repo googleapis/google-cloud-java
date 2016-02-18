@@ -42,6 +42,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.Iterator;
 import java.util.Map;
 
 public class ResourceManagerImplTest {
@@ -166,7 +167,7 @@ public class ResourceManagerImplTest {
   @Test
   public void testList() {
     Page<Project> projects = RESOURCE_MANAGER.list();
-    assertFalse(projects.values().iterator().hasNext()); // TODO: change this when #421 is resolved
+    assertFalse(projects.values().iterator().hasNext());
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     for (Project p : RESOURCE_MANAGER.list().values()) {
@@ -179,6 +180,22 @@ public class ResourceManagerImplTest {
       }
       assertSame(RESOURCE_MANAGER, p.resourceManager());
     }
+  }
+
+  @Test
+  public void testListPaging() {
+    RESOURCE_MANAGER.create(PARTIAL_PROJECT);
+    RESOURCE_MANAGER.create(COMPLETE_PROJECT);
+    Page<Project> page = RESOURCE_MANAGER.list(ProjectListOption.pageSize(1));
+    assertNotNull(page.nextPageCursor());
+    Iterator<Project> iterator = page.values().iterator();
+    compareReadWriteFields(COMPLETE_PROJECT, iterator.next());
+    assertFalse(iterator.hasNext());
+    page = page.nextPage();
+    iterator = page.values().iterator();
+    compareReadWriteFields(PARTIAL_PROJECT, iterator.next());
+    assertFalse(iterator.hasNext());
+    assertNull(page.nextPageCursor());
   }
 
   @Test
