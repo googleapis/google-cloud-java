@@ -23,8 +23,12 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.gcloud.BaseService;
+import com.google.gcloud.IamPolicy;
+import com.google.gcloud.IamPolicy.Acl;
+import com.google.gcloud.IamPolicy.Identity;
 import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.PageImpl.NextPageFetcher;
@@ -188,5 +192,95 @@ final class ResourceManagerImpl
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return ImmutableMap.copyOf(temp);
+  }
+
+  static String identityToPb(Identity identity) {
+    switch (identity.type()) {
+      case ALL_USERS:
+        return "allUsers";
+      case ALL_AUTHENTICATED_USERS:
+        return "allAuthenticatedUsers";
+      case USER:
+        return "user:" + identity.id();
+      case SERVICE_ACCOUNT:
+        return "serviceAccount:" + identity.id();
+      case GROUP:
+        return "group:" + identity.id();
+      default:
+        return "domain:" + identity.id();
+    }
+  }
+
+  static Identity identityFromPb(String identityStr) {
+    String[] info = identityStr.split(":");
+    switch (info[0]) {
+      case "allUsers":
+        return Identity.allUsers();
+      case "allAuthenticatedUsers":
+        return Identity.allAuthenticatedUsers();
+      case "user":
+        return Identity.user(info[1]);
+      case "serviceAccount":
+        return Identity.serviceAccount(info[1]);
+      case "group":
+        return Identity.group(info[1]);
+      case "domain":
+        return Identity.domain(info[1]);
+      default:
+        throw new IllegalArgumentException("Unexpected identity type: " + info[0]);
+    }
+  }
+
+  static com.google.api.services.cloudresourcemanager.model.Binding aclToPb(Acl acl) {
+    com.google.api.services.cloudresourcemanager.model.Binding bindingPb =
+        new com.google.api.services.cloudresourcemanager.model.Binding();
+    bindingPb.setMembers(Lists.transform(acl.identities(), new Function<Identity, String>() {
+      @Override
+      public String apply(Identity identity) {
+        return identityToPb(identity);
+      }
+    }));
+    bindingPb.setRole("roles/" + acl.role());
+    return bindingPb;
+  }
+
+  static Acl aclFromPb(com.google.api.services.cloudresourcemanager.model.Binding bindingPb) {
+    return Acl.of(
+        bindingPb.getRole().substring("roles/".length()),
+        Lists.transform(bindingPb.getMembers(), new Function<String, Identity>() {
+          @Override
+          public Identity apply(String memberPb) {
+            return identityFromPb(memberPb);
+          }
+        }));
+  }
+
+  static com.google.api.services.cloudresourcemanager.model.Policy policyToPb(
+      final IamPolicy policy) {
+    com.google.api.services.cloudresourcemanager.model.Policy policyPb =
+        new com.google.api.services.cloudresourcemanager.model.Policy();
+    policyPb.setBindings(Lists.transform(policy.acls(),
+        new Function<Acl, com.google.api.services.cloudresourcemanager.model.Binding>() {
+          @Override
+          public com.google.api.services.cloudresourcemanager.model.Binding apply(Acl acl) {
+            return aclToPb(acl);
+          }
+        }));
+    policyPb.setEtag(policy.etag());
+    policyPb.setVersion(policy.version());
+    return policyPb;
+  }
+
+  static IamPolicy policyFromPb(
+      com.google.api.services.cloudresourcemanager.model.Policy policyPb) {
+    IamPolicy.Builder builder = new IamPolicy.Builder();
+    builder.acls(Lists.transform(policyPb.getBindings(),
+        new Function<com.google.api.services.cloudresourcemanager.model.Binding, Acl>() {
+          @Override
+          public Acl apply(com.google.api.services.cloudresourcemanager.model.Binding binding) {
+            return aclFromPb(binding);
+          }
+        }));
+    return builder.etag(policyPb.getEtag()).version(policyPb.getVersion()).build();
   }
 }

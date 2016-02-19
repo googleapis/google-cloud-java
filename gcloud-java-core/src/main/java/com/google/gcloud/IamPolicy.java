@@ -18,9 +18,7 @@ package com.google.gcloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -176,44 +174,7 @@ public class IamPolicy implements Serializable {
         return false;
       }
       Identity other = (Identity) obj;
-      return Objects.equals(toPb(), other.toPb());
-    }
-
-    String toPb() {
-      switch (type) {
-        case ALL_USERS:
-          return "allUsers";
-        case ALL_AUTHENTICATED_USERS:
-          return "allAuthenticatedUsers";
-        case USER:
-          return "user:" + id;
-        case SERVICE_ACCOUNT:
-          return "serviceAccount:" + id;
-        case GROUP:
-          return "group:" + id;
-        default:
-          return "domain:" + id;
-      }
-    }
-
-    static Identity fromPb(String identityStr) {
-      String[] info = identityStr.split(":");
-      switch (info[0]) {
-        case "allUsers":
-          return allUsers();
-        case "allAuthenticatedUsers":
-          return allAuthenticatedUsers();
-        case "user":
-          return user(info[1]);
-        case "serviceAccount":
-          return serviceAccount(info[1]);
-        case "group":
-          return group(info[1]);
-        case "domain":
-          return domain(info[1]);
-        default:
-          throw new IllegalArgumentException("Unexpected identity type: " + info[0]);
-      }
+      return Objects.equals(id, other.id()) && Objects.equals(type, other.type());
     }
   }
 
@@ -351,31 +312,7 @@ public class IamPolicy implements Serializable {
         return false;
       }
       Acl other = (Acl) obj;
-      return Objects.equals(toPb(), other.toPb());
-    }
-
-    com.google.api.services.cloudresourcemanager.model.Binding toPb() {
-      com.google.api.services.cloudresourcemanager.model.Binding bindingPb =
-          new com.google.api.services.cloudresourcemanager.model.Binding();
-      bindingPb.setMembers(Lists.transform(identities, new Function<Identity, String>() {
-        @Override
-        public String apply(Identity identity) {
-          return identity.toPb();
-        }
-      }));
-      bindingPb.setRole("roles/" + role);
-      return bindingPb;
-    }
-
-    static Acl fromPb(com.google.api.services.cloudresourcemanager.model.Binding bindingPb) {
-      return of(
-          bindingPb.getRole().substring("roles/".length()),
-          Lists.transform(bindingPb.getMembers(), new Function<String, Identity>() {
-            @Override
-            public Identity apply(String memberPb) {
-              return Identity.fromPb(memberPb);
-            }
-          }));
+      return Objects.equals(identities, other.identities()) && Objects.equals(role, other.role());
     }
   }
 
@@ -489,7 +426,8 @@ public class IamPolicy implements Serializable {
       return false;
     }
     IamPolicy other = (IamPolicy) obj;
-    return Objects.equals(toPb(), other.toPb());
+    return Objects.equals(acls, other.acls()) && Objects.equals(etag, other.etag())
+        && Objects.equals(version, other.version());
   }
 
   public static Builder builder() {
@@ -498,33 +436,5 @@ public class IamPolicy implements Serializable {
 
   public Builder toBuilder() {
     return new Builder().acls(acls).etag(etag).version(version);
-  }
-
-  com.google.api.services.cloudresourcemanager.model.Policy toPb() {
-    com.google.api.services.cloudresourcemanager.model.Policy policyPb =
-        new com.google.api.services.cloudresourcemanager.model.Policy();
-    policyPb.setBindings(Lists.transform(
-        acls, new Function<Acl, com.google.api.services.cloudresourcemanager.model.Binding>() {
-          @Override
-          public com.google.api.services.cloudresourcemanager.model.Binding apply(Acl acl) {
-            return acl.toPb();
-          }
-        }));
-    policyPb.setEtag(etag);
-    policyPb.setVersion(version);
-    return policyPb;
-  }
-
-  static IamPolicy fromPb(com.google.api.services.cloudresourcemanager.model.Policy policyPb) {
-    Builder builder = new Builder();
-    builder.acls(Lists.transform(
-        policyPb.getBindings(),
-        new Function<com.google.api.services.cloudresourcemanager.model.Binding, Acl>() {
-          @Override
-          public Acl apply(com.google.api.services.cloudresourcemanager.model.Binding binding) {
-            return Acl.fromPb(binding);
-          }
-        }));
-    return builder.etag(policyPb.getEtag()).version(policyPb.getVersion()).build();
   }
 }
