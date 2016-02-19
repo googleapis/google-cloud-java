@@ -56,16 +56,6 @@ public class IamPolicyTest {
   }
 
   @Test
-  public void testIdentityToAndFromPb() {
-    assertEquals(ALL_USERS, Identity.fromPb(ALL_USERS.toPb()));
-    assertEquals(ALL_AUTHENTICATED_USERS, Identity.fromPb(ALL_AUTHENTICATED_USERS.toPb()));
-    assertEquals(USER, Identity.fromPb(USER.toPb()));
-    assertEquals(SERVICE_ACCOUNT, Identity.fromPb(SERVICE_ACCOUNT.toPb()));
-    assertEquals(GROUP, Identity.fromPb(GROUP.toPb()));
-    assertEquals(DOMAIN, Identity.fromPb(DOMAIN.toPb()));
-  }
-
-  @Test
   public void testAclBuilder() {
     Acl acl = Acl.builder("owner").addIdentity(USER, GROUP).build();
     assertEquals("owner", acl.role());
@@ -82,19 +72,14 @@ public class IamPolicyTest {
   public void testAclOf() {
     assertEquals("viewer", ACL1.role());
     assertEquals(ImmutableList.of(USER, SERVICE_ACCOUNT, ALL_USERS), ACL1.identities());
-    Acl aclFromIdentitiesList = Acl.of("editor", ImmutableList.of(USER, SERVICE_ACCOUNT));
-    assertEquals("editor", aclFromIdentitiesList.role());
-    assertEquals(ImmutableList.of(USER, SERVICE_ACCOUNT), aclFromIdentitiesList.identities());
+    Acl aclFromList = Acl.of("editor", ImmutableList.of(USER, SERVICE_ACCOUNT));
+    assertEquals("editor", aclFromList.role());
+    assertEquals(ImmutableList.of(USER, SERVICE_ACCOUNT), aclFromList.identities());
   }
 
   @Test
   public void testAclToBuilder() {
     assertEquals(ACL1, ACL1.toBuilder().build());
-  }
-
-  @Test
-  public void testAclToAndFromPb() {
-    assertEquals(ACL1, Acl.fromPb(ACL1.toPb()));
   }
 
   @Test
@@ -116,11 +101,5 @@ public class IamPolicyTest {
   public void testIamPolicyToBuilder() {
     assertEquals(FULL_POLICY, FULL_POLICY.toBuilder().build());
     assertEquals(SIMPLE_POLICY, SIMPLE_POLICY.toBuilder().build());
-  }
-
-  @Test
-  public void testToAndFromPb() {
-    assertEquals(FULL_POLICY, IamPolicy.fromPb(FULL_POLICY.toPb()));
-    assertEquals(SIMPLE_POLICY, IamPolicy.fromPb(SIMPLE_POLICY.toPb()));
   }
 }
