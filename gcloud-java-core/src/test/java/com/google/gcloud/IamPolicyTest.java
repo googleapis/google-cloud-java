@@ -27,14 +27,14 @@ import org.junit.Test;
 public class IamPolicyTest {
 
   private static final Identity ALL_USERS = Identity.allUsers();
-  private static final Identity ALL_AUTHENTICATED_USERS = Identity.allAuthenticatedUsers();
+  private static final Identity ALL_AUTH_USERS = Identity.allAuthenticatedUsers();
   private static final Identity USER = Identity.user("abc@gmail.com");
   private static final Identity SERVICE_ACCOUNT =
       Identity.serviceAccount("service-account@gmail.com");
   private static final Identity GROUP = Identity.group("group@gmail.com");
   private static final Identity DOMAIN = Identity.domain("google.com");
   private static final Acl ACL1 = Acl.of("viewer", USER, SERVICE_ACCOUNT, ALL_USERS);
-  private static final Acl ACL2 = Acl.of("editor", ALL_AUTHENTICATED_USERS, GROUP, DOMAIN);
+  private static final Acl ACL2 = Acl.of("editor", ALL_AUTH_USERS, GROUP, DOMAIN);
   private static final IamPolicy FULL_POLICY =
       IamPolicy.builder().addAcl(ACL1, ACL2).etag("etag").version(1).build();
   private static final IamPolicy SIMPLE_POLICY = IamPolicy.builder().addAcl(ACL1, ACL2).build();
@@ -43,8 +43,8 @@ public class IamPolicyTest {
   public void testIdentityOf() {
     assertEquals(Identity.Type.ALL_USERS, ALL_USERS.type());
     assertEquals(null, ALL_USERS.id());
-    assertEquals(Identity.Type.ALL_AUTHENTICATED_USERS, ALL_AUTHENTICATED_USERS.type());
-    assertEquals(null, ALL_AUTHENTICATED_USERS.id());
+    assertEquals(Identity.Type.ALL_AUTHENTICATED_USERS, ALL_AUTH_USERS.type());
+    assertEquals(null, ALL_AUTH_USERS.id());
     assertEquals(Identity.Type.USER, USER.type());
     assertEquals("abc@gmail.com", USER.id());
     assertEquals(Identity.Type.SERVICE_ACCOUNT, SERVICE_ACCOUNT.type());
