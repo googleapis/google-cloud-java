@@ -25,9 +25,6 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableMap;
-import com.google.gcloud.IamPolicy;
-import com.google.gcloud.IamPolicy.Acl;
-import com.google.gcloud.IamPolicy.Identity;
 import com.google.gcloud.Page;
 import com.google.gcloud.resourcemanager.ProjectInfo.ResourceId;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectField;
@@ -67,18 +64,6 @@ public class ResourceManagerImplTest {
       .parent(PARENT)
       .build();
   private static final Map<ResourceManagerRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
-  private static final Identity ALL_USERS = Identity.allUsers();
-  private static final Identity ALL_AUTH_USERS = Identity.allAuthenticatedUsers();
-  private static final Identity USER = Identity.user("abc@gmail.com");
-  private static final Identity SERVICE_ACCOUNT =
-      Identity.serviceAccount("service-account@gmail.com");
-  private static final Identity GROUP = Identity.group("group@gmail.com");
-  private static final Identity DOMAIN = Identity.domain("google.com");
-  private static final Acl ACL1 = Acl.of("viewer", USER, SERVICE_ACCOUNT, ALL_USERS);
-  private static final Acl ACL2 = Acl.of("editor", ALL_AUTH_USERS, GROUP, DOMAIN);
-  private static final IamPolicy FULL_POLICY =
-      IamPolicy.builder().addAcl(ACL1, ACL2).etag("etag").version(1).build();
-  private static final IamPolicy SIMPLE_POLICY = IamPolicy.builder().addAcl(ACL1, ACL2).build();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -284,35 +269,6 @@ public class ResourceManagerImplTest {
       assertEquals(403, e.code());
       assertTrue(e.getMessage().contains("the project was not found"));
     }
-  }
-
-  @Test
-  public void testIdentityToAndFromPb() {
-    assertEquals(ALL_USERS,
-        ResourceManagerImpl.identityFromPb(ResourceManagerImpl.identityToPb(ALL_USERS)));
-    assertEquals(ALL_AUTH_USERS,
-        ResourceManagerImpl.identityFromPb(
-            ResourceManagerImpl.identityToPb(ALL_AUTH_USERS)));
-    assertEquals(USER, ResourceManagerImpl.identityFromPb(ResourceManagerImpl.identityToPb(USER)));
-    assertEquals(SERVICE_ACCOUNT,
-        ResourceManagerImpl.identityFromPb(ResourceManagerImpl.identityToPb(SERVICE_ACCOUNT)));
-    assertEquals(GROUP,
-        ResourceManagerImpl.identityFromPb(ResourceManagerImpl.identityToPb(GROUP)));
-    assertEquals(DOMAIN,
-        ResourceManagerImpl.identityFromPb(ResourceManagerImpl.identityToPb(DOMAIN)));
-  }
-
-  @Test
-  public void testAclToAndFromPb() {
-    assertEquals(ACL1, ResourceManagerImpl.aclFromPb(ResourceManagerImpl.aclToPb(ACL1)));
-  }
-
-  @Test
-  public void testPolicyToAndFromPb() {
-    assertEquals(FULL_POLICY,
-        ResourceManagerImpl.policyFromPb(ResourceManagerImpl.policyToPb(FULL_POLICY)));
-    assertEquals(SIMPLE_POLICY,
-        ResourceManagerImpl.policyFromPb(ResourceManagerImpl.policyToPb(SIMPLE_POLICY)));
   }
 
   @Test

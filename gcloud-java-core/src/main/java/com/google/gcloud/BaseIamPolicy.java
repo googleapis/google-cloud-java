@@ -21,29 +21,28 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.collect.ImmutableList;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
- * An Identity and Access Management (IAM) policy. It is used to specify access control policies for
- * Cloud Platform resources. A Policy consists of a list of ACLs (also known as bindings in Cloud
- * IAM documentation). An ACL binds a list of identities to a role, where the identities can be user
- * accounts, Google groups, Google domains, and service accounts. A role is a named list of
- * permissions defined by IAM.
+ * Base class for Identity and Access Management (IAM) policies. IAM policies are used to specify
+ * access settings for Cloud Platform resources. A Policy consists of a list of bindings. An binding
+ * assigns a list of identities to a role, where the identities can be user accounts, Google groups,
+ * Google domains, and service accounts. A role is a named list of permissions defined by IAM.
  *
  * @see <a href="https://cloud.google.com/iam/reference/rest/v1/Policy">Policy</a>
  */
-public class IamPolicy implements Serializable {
+public abstract class BaseIamPolicy<R> implements Serializable {
 
-  static final long serialVersionUID = 1114489978726897720L;
+  private static final long serialVersionUID = 1114489978726897720L;
 
-  private final List<Acl> acls;
+  private final Map<R, List<Identity>> bindings;
   private final String etag;
   private final int version;
 
-  public static class Identity implements Serializable {
+  public static final class Identity implements Serializable {
 
     private static final long serialVersionUID = 30811617560110848L;
 
@@ -85,7 +84,7 @@ public class IamPolicy implements Serializable {
       DOMAIN
     }
 
-    Identity(Type type, String id) {
+    private Identity(Type type, String id) {
       this.type = type;
       this.id = id;
     }
@@ -179,176 +178,37 @@ public class IamPolicy implements Serializable {
   }
 
   /**
-   * An ACL binds a list of identities to a role, where the identities can be user accounts, Google
-   * groups, Google domains, and service accounts. A role is a named list of permissions defined by
-   * IAM.
-   *
-   * @see <a href="https://cloud.google.com/iam/reference/rest/v1/Policy#Binding">Binding</a>
-   */
-  public static class Acl implements Serializable {
-
-    private static final long serialVersionUID = 3954282899483745158L;
-
-    private final List<Identity> identities;
-    private final String role;
-
-    /**
-     * An ACL builder.
-     */
-    public static class Builder {
-      private final List<Identity> members = new LinkedList<>();
-      private String role;
-
-      Builder(String role) {
-        this.role = role;
-      }
-
-      /**
-       * Sets the role associated with this ACL.
-       */
-      public Builder role(String role) {
-        this.role = role;
-        return this;
-      }
-
-      /**
-       * Replaces the builder's list of identities with the given list.
-       */
-      public Builder identities(List<Identity> identities) {
-        this.members.clear();
-        this.members.addAll(identities);
-        return this;
-      }
-
-      /**
-       * Adds one or more identities to the list of identities associated with the ACL.
-       */
-      public Builder addIdentity(Identity first, Identity... others) {
-        members.add(first);
-        members.addAll(Arrays.asList(others));
-        return this;
-      }
-
-      /**
-       * Removes the specified identity from the ACL.
-       */
-      public Builder removeIdentity(Identity identity) {
-        members.remove(identity);
-        return this;
-      }
-
-      public Acl build() {
-        return new Acl(this);
-      }
-    }
-
-    Acl(Builder builder) {
-      identities = ImmutableList.copyOf(checkNotNull(builder.members));
-      role = checkNotNull(builder.role);
-    }
-
-    /**
-     * Returns the list of identities associated with this ACL.
-     */
-    public List<Identity> identities() {
-      return identities;
-    }
-
-    /**
-     * Returns the role associated with this ACL.
-     */
-    public String role() {
-      return role;
-    }
-
-    /**
-     * Returns an ACL builder for the specific role type.
-     *
-     * @param role string representing the role, without the "roles/" prefix.  An example of a valid
-     *     legacy role is "viewer". An example of a valid service-specific role is
-     *     "pubsub.publisher".
-     */
-    public static Builder builder(String role) {
-      return new Builder(role);
-    }
-
-    /**
-     * Returns an ACL for the role type and list of identities provided.
-     *
-     * @param role string representing the role, without the "roles/" prefix.  An example of a valid
-     *     legacy role is "viewer". An example of a valid service-specific role is
-     *     "pubsub.publisher".
-     * @param members list of identities associated with the role.
-     */
-    public static Acl of(String role, List<Identity> members) {
-      return new Acl(new Builder(role).identities(members));
-    }
-
-    /**
-     * Returns an ACL for the role type and identities provided.
-     *
-     * @param role string representing the role, without the "roles/" prefix.  An example of a valid
-     *     legacy role is "viewer". An example of a valid service-specific role is
-     *     "pubsub.publisher".
-     * @param first identity associated with the role.
-     * @param others any other identities associated with the role.
-     */
-    public static Acl of(String role, Identity first, Identity... others) {
-      return new Acl(new Builder(role).addIdentity(first, others));
-    }
-
-    public Builder toBuilder() {
-      return new Builder(role).identities(identities);
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(identities, role);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      if (!(obj instanceof Acl)) {
-        return false;
-      }
-      Acl other = (Acl) obj;
-      return Objects.equals(identities, other.identities()) && Objects.equals(role, other.role());
-    }
-  }
-
-  /**
    * Builder for an IAM Policy.
    */
-  public static class Builder {
+  protected abstract static class BaseBuilder<R, B extends BaseBuilder<R, B>> {
 
-    private final List<Acl> acls = new LinkedList<>();
+    private final Map<R, List<Identity>> bindings = new HashMap<>();
     private String etag;
     private int version;
 
     /**
-     * Replaces the builder's list of ACLs with the given list of ACLs.
+     * Replaces the builder's list of bindings with the given list of bindings.
      */
-    public Builder acls(List<Acl> acls) {
-      this.acls.clear();
-      this.acls.addAll(acls);
-      return this;
+    public B bindings(Map<R, List<Identity>> bindings) {
+      this.bindings.clear();
+      this.bindings.putAll(bindings);
+      return self();
     }
 
     /**
-     * Adds one or more ACLs to the policy.
+     * Adds one or more bindings to the policy.
      */
-    public Builder addAcl(Acl first, Acl... others) {
-      acls.add(first);
-      acls.addAll(Arrays.asList(others));
-      return this;
+    public B addBinding(R role, List<Identity> identities) {
+      bindings.put(role, ImmutableList.copyOf(identities));
+      return self();
     }
 
     /**
      * Removes the specified ACL.
      */
-    public Builder removeAcl(Acl acl) {
-      acls.remove(acl);
-      return this;
+    public B removeBinding(R role) {
+      bindings.remove(role);
+      return self();
     }
 
     /**
@@ -362,35 +222,40 @@ public class IamPolicy implements Serializable {
      * applied to the same version of the policy.  If no etag is provided in the call to
      * setIamPolicy, then the existing policy is overwritten blindly.
      */
-    public Builder etag(String etag) {
+    protected B etag(String etag) {
       this.etag = etag;
-      return this;
+      return self();
     }
 
     /**
-     * Sets the version of the policy. The default version is 0.
+     * Sets the version of the policy. The default version is 0, meaning roles that are in alpha
+     * (non-legacy) roles are not permitted. If the version is 1, you may use roles other than
+     * "owner", "editor", and "viewer".
      */
-    public Builder version(int version) {
+    protected B version(int version) {
       this.version = version;
-      return this;
+      return self();
     }
 
-    public IamPolicy build() {
-      return new IamPolicy(this);
+    @SuppressWarnings("unchecked")
+    private B self() {
+      return (B) this;
     }
+
+    public abstract BaseIamPolicy<R> build();
   }
 
-  IamPolicy(Builder builder) {
-    acls = ImmutableList.copyOf(builder.acls);
-    etag = builder.etag;
-    version = builder.version;
+  protected BaseIamPolicy(BaseBuilder<R, ? extends BaseBuilder<R, ?>> builder) {
+    this.bindings = builder.bindings;
+    this.etag = builder.etag;
+    this.version = builder.version;
   }
 
   /**
    * The list of ACLs specified in the policy.
    */
-  public List<Acl> acls() {
-    return acls;
+  public Map<R, List<Identity>> bindings() {
+    return bindings;
   }
 
   /**
@@ -415,26 +280,18 @@ public class IamPolicy implements Serializable {
     return version;
   }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(acls, etag, version);
+  public int baseHashCode() {
+    return Objects.hash(bindings, etag, version);
   }
 
-  @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof IamPolicy)) {
+  public boolean baseEquals(Object obj) {
+    if (!(obj instanceof BaseIamPolicy)) {
       return false;
     }
-    IamPolicy other = (IamPolicy) obj;
-    return Objects.equals(acls, other.acls()) && Objects.equals(etag, other.etag())
+    @SuppressWarnings("rawtypes")
+    BaseIamPolicy other = (BaseIamPolicy) obj;
+    return Objects.equals(bindings, other.bindings())
+        && Objects.equals(etag, other.etag())
         && Objects.equals(version, other.version());
-  }
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  public Builder toBuilder() {
-    return new Builder().acls(acls).etag(etag).version(version);
   }
 }
