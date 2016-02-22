@@ -24,6 +24,8 @@ import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.compute.Zone.MaintenanceWindow;
 
+import org.junit.Test;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -31,8 +33,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
-
-import org.junit.Test;
 
 public class SerializationTest {
 
@@ -106,6 +106,12 @@ public class SerializationTest {
       .maintenanceWindows(WINDOWS)
       .region(REGION_ID)
       .build();
+  private static final String DELETED = "2016-01-20T04:39:00.210-08:00";
+  private static final String DEPRECATED = "2016-01-20T04:37:00.210-08:00";
+  private static final String OBSOLETE = "2016-01-20T04:38:00.210-08:00";
+  private static final DeprecationStatus<MachineTypeId> DEPRECATION_STATUS =
+      new DeprecationStatus<>(DELETED, DEPRECATED, OBSOLETE, MACHINE_TYPE_ID,
+          DeprecationStatus.Status.DELETED);
   private static final LicenseId LICENSE_ID = LicenseId.of("project", "license");
   private static final Boolean CHARGES_USE_FEE = true;
   private static final String SELF_LINK = LICENSE_ID.toUrl();
@@ -132,7 +138,7 @@ public class SerializationTest {
   @Test
   public void testModelAndRequests() throws Exception {
     Serializable[] objects = {DISK_TYPE_ID, DISK_TYPE, MACHINE_TYPE_ID, MACHINE_TYPE, REGION_ID,
-        REGION, ZONE_ID, ZONE, LICENSE_ID, LICENSE};
+        REGION, ZONE_ID, ZONE, LICENSE_ID, LICENSE, DEPRECATION_STATUS};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

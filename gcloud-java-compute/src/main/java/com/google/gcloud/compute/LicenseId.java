@@ -45,7 +45,7 @@ public final class LicenseId extends ResourceId {
 
   private final String license;
 
-  LicenseId(String project, String license) {
+  private LicenseId(String project, String license) {
     super(project);
     this.license = checkNotNull(license);
   }

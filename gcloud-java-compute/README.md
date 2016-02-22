@@ -33,7 +33,7 @@ Authentication
 
 See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) section in the base directory's README.
 
-About Google Cloud BigQuery
+About Google Cloud Compute
 --------------------------
 
 [Google Cloud Compute][cloud-compute] delivers virtual machines running in Google's innovative data
@@ -65,7 +65,7 @@ Java 7 or above is required for using this client.
 Testing
 -------
 
-This library has tools to help make tests for code using Cloud BigQuery.
+This library has tools to help make tests for code using Cloud Compute.
 
 See [TESTING] to read more about testing.
 

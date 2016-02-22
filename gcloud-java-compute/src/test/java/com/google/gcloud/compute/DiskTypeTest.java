@@ -28,15 +28,22 @@ public class DiskTypeTest {
   private static final String VALID_DISK_SIZE = "10GB-10TB";
   private static final Long DEFAULT_DISK_SIZE_GB = 10L;
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
+  private static final String DELETED = "2016-01-20T04:39:00.210-08:00";
+  private static final String DEPRECATED = "2016-01-20T04:37:00.210-08:00";
+  private static final String OBSOLETE = "2016-01-20T04:38:00.210-08:00";
+  private static final DeprecationStatus.Status STATUS = DeprecationStatus.Status.DELETED;
+  private static final DeprecationStatus<DiskTypeId> DEPRECATION_STATUS =
+      new DeprecationStatus<>(DELETED, DEPRECATED, OBSOLETE, DISK_TYPE_ID, STATUS);
   private static final DiskType DISK_TYPE = DiskType.builder()
-    .id(ID)
-    .diskTypeId(DISK_TYPE_ID)
-    .creationTimestamp(CREATION_TIMESTAMP)
-    .description(DESCRIPTION)
-    .validDiskSize(VALID_DISK_SIZE)
-    .selfLink(DISK_TYPE_ID.toUrl())
-    .defaultDiskSizeGb(DEFAULT_DISK_SIZE_GB)
-    .build();
+      .id(ID)
+      .diskTypeId(DISK_TYPE_ID)
+      .creationTimestamp(CREATION_TIMESTAMP)
+      .description(DESCRIPTION)
+      .validDiskSize(VALID_DISK_SIZE)
+      .selfLink(DISK_TYPE_ID.toUrl())
+      .defaultDiskSizeGb(DEFAULT_DISK_SIZE_GB)
+      .deprecationStatus(DEPRECATION_STATUS)
+      .build();
 
   @Test
   public void testBuilder() {
@@ -47,6 +54,7 @@ public class DiskTypeTest {
     assertEquals(VALID_DISK_SIZE, DISK_TYPE.validDiskSize());
     assertEquals(DISK_TYPE_ID.toUrl(), DISK_TYPE.selfLink());
     assertEquals(DEFAULT_DISK_SIZE_GB, DISK_TYPE.defaultDiskSizeGb());
+    assertEquals(DEPRECATION_STATUS, DISK_TYPE.deprecationStatus());
   }
 
   @Test
@@ -61,6 +69,7 @@ public class DiskTypeTest {
   }
 
   private void compareDiskTypes(DiskType expected, DiskType value) {
+    assertEquals(expected, value);
     assertEquals(expected.id(), value.id());
     assertEquals(expected.diskTypeId(), value.diskTypeId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
@@ -68,6 +77,7 @@ public class DiskTypeTest {
     assertEquals(expected.validDiskSize(), value.validDiskSize());
     assertEquals(expected.selfLink(), value.selfLink());
     assertEquals(expected.defaultDiskSizeGb(), value.defaultDiskSizeGb());
+    assertEquals(expected.deprecationStatus(), value.deprecationStatus());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

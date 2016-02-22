@@ -24,8 +24,10 @@ import java.math.BigInteger;
 import java.util.Objects;
 
 /**
- * Google Compute Engine Disk type. A disk type represents the type of disk to use, such as a
+ * A Google Compute Engine disk type. A disk type represents the type of disk to use, such as
  * {@code pd-ssd} or {@code pd-standard}.
+ *
+ * @see <a href="https://cloud.google.com/compute/docs/reference/latest/diskTypes">Disk Types</a>
  */
 public final class DiskType implements Serializable {
 
@@ -53,6 +55,7 @@ public final class DiskType implements Serializable {
   private final String validDiskSize;
   private final String selfLink;
   private final Long defaultDiskSizeGb;
+  private final DeprecationStatus<DiskTypeId> deprecationStatus;
 
   static final class Builder {
 
@@ -63,6 +66,7 @@ public final class DiskType implements Serializable {
     private String validDiskSize;
     private String selfLink;
     private Long defaultDiskSizeGb;
+    private DeprecationStatus<DiskTypeId> deprecationStatus;
 
     private Builder() {}
 
@@ -101,9 +105,11 @@ public final class DiskType implements Serializable {
       return this;
     }
 
-    /**
-     * Creates a {@code DiskType} object.
-     */
+    Builder deprecationStatus(DeprecationStatus<DiskTypeId> deprecationStatus) {
+      this.deprecationStatus = deprecationStatus;
+      return this;
+    }
+
     DiskType build() {
       return new DiskType(this);
     }
@@ -117,6 +123,7 @@ public final class DiskType implements Serializable {
     this.validDiskSize = builder.validDiskSize;
     this.selfLink = builder.selfLink;
     this.defaultDiskSizeGb = builder.defaultDiskSizeGb;
+    this.deprecationStatus = builder.deprecationStatus;
   }
 
   /**
@@ -170,6 +177,15 @@ public final class DiskType implements Serializable {
     return defaultDiskSizeGb;
   }
 
+  /**
+   * Returns the deprecation status of the disk type. If {@link DeprecationStatus#status()} is
+   * either {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE}
+   * the disk type should not be used. Returns {@code null} if the disk type is not deprecated.
+   */
+  public DeprecationStatus<DiskTypeId> deprecationStatus() {
+    return deprecationStatus;
+  }
+
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
@@ -179,12 +195,13 @@ public final class DiskType implements Serializable {
         .add("validDiskSize", validDiskSize)
         .add("selfLink", selfLink)
         .add("defaultDiskSizeGb", defaultDiskSizeGb)
+        .add("deprecationStatus", deprecationStatus)
         .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(diskTypeId);
   }
 
   @Override
@@ -204,6 +221,9 @@ public final class DiskType implements Serializable {
     diskTypePb.setSelfLink(selfLink);
     diskTypePb.setDefaultDiskSizeGb(defaultDiskSizeGb);
     diskTypePb.setZone(diskTypeId.zoneId().toUrl());
+    if (deprecationStatus != null) {
+      diskTypePb.setDeprecated(deprecationStatus.toPb());
+    }
     return diskTypePb;
   }
 
@@ -213,7 +233,7 @@ public final class DiskType implements Serializable {
 
   static DiskType fromPb(com.google.api.services.compute.model.DiskType diskTypePb) {
     Builder builder = builder();
-    if (diskTypePb.getId() != null ) {
+    if (diskTypePb.getId() != null) {
       builder.id(diskTypePb.getId().longValue());
     }
     builder.creationTimestamp(diskTypePb.getCreationTimestamp());
@@ -222,6 +242,10 @@ public final class DiskType implements Serializable {
     builder.validDiskSize(diskTypePb.getValidDiskSize());
     builder.selfLink(diskTypePb.getSelfLink());
     builder.defaultDiskSizeGb(diskTypePb.getDefaultDiskSizeGb());
+    if (diskTypePb.getDeprecated() != null) {
+      builder.deprecationStatus(
+          DeprecationStatus.fromPb(diskTypePb.getDeprecated(), DiskTypeId.FROM_URL_FUNCTION));
+    }
     return builder.build();
   }
 }

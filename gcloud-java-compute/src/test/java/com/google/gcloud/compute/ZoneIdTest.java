@@ -18,6 +18,7 @@ package com.google.gcloud.compute;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 
@@ -48,6 +49,7 @@ public class ZoneIdTest {
   @Test
   public void testSetProjectId() {
     ZoneId zoneId = ZoneId.of(PROJECT, ZONE);
+    assertSame(zoneId, zoneId.setProjectId(PROJECT));
     compareZoneId(zoneId, ZoneId.of(ZONE).setProjectId(PROJECT));
   }
 

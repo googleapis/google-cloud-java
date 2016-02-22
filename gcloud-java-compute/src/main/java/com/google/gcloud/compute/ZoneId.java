@@ -45,7 +45,7 @@ public final class ZoneId extends ResourceId {
 
   private final String zone;
 
-  ZoneId(String project, String zone) {
+  private ZoneId(String project, String zone) {
     super(project);
     this.zone = checkNotNull(zone);
   }

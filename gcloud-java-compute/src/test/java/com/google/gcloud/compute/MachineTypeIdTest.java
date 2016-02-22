@@ -18,6 +18,7 @@ package com.google.gcloud.compute;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 
@@ -51,6 +52,7 @@ public class MachineTypeIdTest {
   @Test
   public void testSetProjectId() {
     MachineTypeId machineTypeId = MachineTypeId.of(PROJECT, ZONE, TYPE);
+    assertSame(machineTypeId, machineTypeId.setProjectId(PROJECT));
     compareMachineTypeId(machineTypeId, MachineTypeId.of(ZONE, TYPE).setProjectId(PROJECT));
   }
 

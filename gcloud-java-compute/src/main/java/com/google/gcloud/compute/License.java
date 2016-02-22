@@ -26,6 +26,8 @@ import java.util.Objects;
 /**
  * A Google Compute Engine License. A License represents a software license. Licenses are used to
  * track software usage in images, persistent disks, snapshots, and virtual machine instances.
+ *
+ * @see <a href="https://cloud.google.com/compute/docs/reference/latest/licenses">Licenses</a>
  */
 public final class License implements Serializable {
 
@@ -74,7 +76,7 @@ public final class License implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(licenseId, chargesUseFee, selfLink);
+    return Objects.hash(licenseId);
   }
 
   @Override
