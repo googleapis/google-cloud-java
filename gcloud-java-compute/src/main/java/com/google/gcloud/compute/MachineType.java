@@ -26,7 +26,14 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
 
-public class MachineType implements Serializable {
+/**
+ * A Google Compute Engine machine type. A machine type determine the virtualized hardware
+ * specifications of your virtual machine instances, such as the amount of memory or number of
+ * virtual CPUs.
+ *
+ * @see <a href="https://cloud.google.com/compute/docs/machine-types">Machine Types</a>
+ */
+public final class MachineType implements Serializable {
 
   static final Function<com.google.api.services.compute.model.MachineType, MachineType>
       FROM_PB_FUNCTION =
@@ -57,8 +64,9 @@ public class MachineType implements Serializable {
   private final List<Integer> scratchDisks;
   private final Integer maximumPersistentDisks;
   private final Long maximumPersistentDisksSizeGb;
+  private final DeprecationStatus<MachineTypeId> deprecationStatus;
 
-  public static final class Builder {
+  static final class Builder {
 
     private MachineTypeId machineTypeId;
     private Long id;
@@ -70,9 +78,9 @@ public class MachineType implements Serializable {
     private List<Integer> scratchDisks;
     private Integer maximumPersistentDisks;
     private Long maximumPersistentDisksSizeGb;
+    private DeprecationStatus<MachineTypeId> deprecationStatus;
 
-    Builder() {}
-
+    private Builder() {}
 
     Builder machineTypeId(MachineTypeId machineTypeId) {
       this.machineTypeId = machineTypeId;
@@ -124,12 +132,17 @@ public class MachineType implements Serializable {
       return this;
     }
 
+    Builder deprecationStatus(DeprecationStatus<MachineTypeId> deprecationStatus) {
+      this.deprecationStatus = deprecationStatus;
+      return this;
+    }
+
     MachineType build() {
       return new MachineType(this);
     }
   }
 
-  MachineType(Builder builder) {
+  private MachineType(Builder builder) {
     this.machineTypeId = builder.machineTypeId;
     this.id = builder.id;
     this.creationTimestamp = builder.creationTimestamp;
@@ -140,6 +153,7 @@ public class MachineType implements Serializable {
     this.scratchDisks = builder.scratchDisks;
     this.maximumPersistentDisks = builder.maximumPersistentDisks;
     this.maximumPersistentDisksSizeGb = builder.maximumPersistentDisksSizeGb;
+    this.deprecationStatus = builder.deprecationStatus;
   }
 
   /**
@@ -214,6 +228,16 @@ public class MachineType implements Serializable {
     return maximumPersistentDisksSizeGb;
   }
 
+  /**
+   * Returns the deprecation status of the machine type. If {@link DeprecationStatus#status()} is
+   * either {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE}
+   * the machine type should not be used. Returns {@code null} if the machine type is not
+   * deprecated.
+   */
+  public DeprecationStatus<MachineTypeId> deprecationStatus() {
+    return deprecationStatus;
+  }
+
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
@@ -227,6 +251,7 @@ public class MachineType implements Serializable {
         .add("scratchDisks", scratchDisks)
         .add("maximumPersistentDisks", maximumPersistentDisks)
         .add("maximumPersistentDisksSizeGb", maximumPersistentDisksSizeGb)
+        .add("deprecationStatus", deprecationStatus)
         .toString();
   }
 
@@ -264,6 +289,9 @@ public class MachineType implements Serializable {
     machineTypePb.setMaximumPersistentDisks(maximumPersistentDisks);
     machineTypePb.setMaximumPersistentDisksSizeGb(maximumPersistentDisksSizeGb);
     machineTypePb.setZone(machineTypeId.zoneId().zone());
+    if (deprecationStatus != null) {
+      machineTypePb.setDeprecated(deprecationStatus.toPb());
+    }
     return machineTypePb;
   }
 
@@ -293,6 +321,10 @@ public class MachineType implements Serializable {
     }
     builder.maximumPersistentDisks(machineTypePb.getMaximumPersistentDisks());
     builder.maximumPersistentDisksSizeGb(machineTypePb.getMaximumPersistentDisksSizeGb());
+    if (machineTypePb.getDeprecated() != null) {
+      builder.deprecationStatus(
+          DeprecationStatus.fromPb(machineTypePb.getDeprecated(), MachineTypeId.FROM_URL_FUNCTION));
+    }
     return builder.build();
   }
 }

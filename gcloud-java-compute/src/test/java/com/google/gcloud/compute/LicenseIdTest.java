@@ -18,6 +18,7 @@ package com.google.gcloud.compute;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 
@@ -48,6 +49,7 @@ public class LicenseIdTest {
   @Test
   public void testSetProjectId() {
     LicenseId licenseId = LicenseId.of(PROJECT, LICENSE);
+    assertSame(licenseId, licenseId.setProjectId(PROJECT));
     compareLicenseId(licenseId, LicenseId.of(LICENSE).setProjectId(PROJECT));
   }
 

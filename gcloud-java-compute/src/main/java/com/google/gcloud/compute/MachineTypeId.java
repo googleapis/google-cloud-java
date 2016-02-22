@@ -18,6 +18,7 @@ package com.google.gcloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
 import java.util.Objects;
@@ -27,11 +28,26 @@ import java.util.Objects;
  */
 public final class MachineTypeId extends ZoneResourceId {
 
+  static final Function<String, MachineTypeId> FROM_URL_FUNCTION =
+      new Function<String, MachineTypeId>() {
+        @Override
+        public MachineTypeId apply(String pb) {
+          return MachineTypeId.fromUrl(pb);
+        }
+      };
+  static final Function<MachineTypeId, String> TO_URL_FUNCTION =
+      new Function<MachineTypeId, String>() {
+        @Override
+        public String apply(MachineTypeId machineTypeId) {
+          return machineTypeId.toUrl();
+        }
+      };
+
   private static final long serialVersionUID = -5819598544478859608L;
 
   private final String machineType;
 
-  MachineTypeId(String project, String zone, String machineType) {
+  private MachineTypeId(String project, String zone, String machineType) {
     super(project, zone);
     this.machineType = checkNotNull(machineType);
   }

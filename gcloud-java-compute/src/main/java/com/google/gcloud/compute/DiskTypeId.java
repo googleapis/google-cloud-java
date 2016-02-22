@@ -18,6 +18,7 @@ package com.google.gcloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
 import java.util.Objects;
@@ -27,11 +28,24 @@ import java.util.Objects;
  */
 public final class DiskTypeId extends ZoneResourceId {
 
+  static final Function<String, DiskTypeId> FROM_URL_FUNCTION = new Function<String, DiskTypeId>() {
+    @Override
+    public DiskTypeId apply(String pb) {
+      return DiskTypeId.fromUrl(pb);
+    }
+  };
+  static final Function<DiskTypeId, String> TO_URL_FUNCTION = new Function<DiskTypeId, String>() {
+    @Override
+    public String apply(DiskTypeId diskTypeId) {
+      return diskTypeId.toUrl();
+    }
+  };
+
   private static final long serialVersionUID = 7337881474103686219L;
 
   private final String diskType;
 
-  DiskTypeId(String project, String zone, String diskType) {
+  private DiskTypeId(String project, String zone, String diskType) {
     super(project, zone);
     this.diskType = checkNotNull(diskType);
   }

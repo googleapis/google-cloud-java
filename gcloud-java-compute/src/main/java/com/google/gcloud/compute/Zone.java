@@ -28,6 +28,8 @@ import java.util.Objects;
 
 /**
  * A Google Compute Engine zone.
+ *
+ * @see <a href="https://cloud.google.com/compute/docs/zones">Region and Zones</a>
  */
 public final class Zone implements Serializable {
 
@@ -45,6 +47,7 @@ public final class Zone implements Serializable {
           return region.toPb();
         }
       };
+
   private static final long serialVersionUID = 6113636504417213010L;
 
   /**
@@ -62,7 +65,7 @@ public final class Zone implements Serializable {
    * @see <a href="https://cloud.google.com/compute/docs/robustsystems#maintenance">Maintenance
    *     Windows</a>
    */
-  public static class MaintenanceWindow implements Serializable {
+  public static final class MaintenanceWindow implements Serializable {
 
     static final Function<MaintenanceWindows, MaintenanceWindow> FROM_PB_FUNCTION =
         new Function<MaintenanceWindows, MaintenanceWindow>() {
@@ -145,14 +148,8 @@ public final class Zone implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-      if (!(obj instanceof MaintenanceWindow)) {
-        return false;
-      }
-      MaintenanceWindow other = (MaintenanceWindow) obj;
-      return Objects.equals(name, other.name)
-          && Objects.equals(description, other.description)
-          && Objects.equals(beginTime, other.beginTime)
-          && Objects.equals(endTime, other.endTime);
+      return obj instanceof MaintenanceWindow
+          && Objects.equals(toPb(), ((MaintenanceWindow) obj).toPb());
     }
 
     MaintenanceWindows toPb() {
@@ -178,7 +175,7 @@ public final class Zone implements Serializable {
   private final List<MaintenanceWindow> maintenanceWindows;
   private final RegionId region;
 
-  public static final class Builder {
+  static final class Builder {
 
     private ZoneId zoneId;
     private Long id;
@@ -189,7 +186,7 @@ public final class Zone implements Serializable {
     private List<MaintenanceWindow> maintenanceWindows;
     private RegionId region;
 
-    Builder() {}
+    private Builder() {}
 
     Builder zoneId(ZoneId zoneId) {
       this.zoneId = zoneId;
@@ -236,7 +233,7 @@ public final class Zone implements Serializable {
     }
   }
 
-  Zone(Builder builder) {
+  private Zone(Builder builder) {
     this.zoneId = builder.zoneId;
     this.id = builder.id;
     this.creationTimestamp = builder.creationTimestamp;

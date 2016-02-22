@@ -18,6 +18,7 @@ package com.google.gcloud.compute;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 
@@ -45,12 +46,14 @@ public class DiskTypeIdTest {
   @Test
   public void testToAndFromUrl() {
     DiskTypeId diskTypeId = DiskTypeId.of(PROJECT, ZONE, DISK_TYPE);
+    assertSame(diskTypeId, diskTypeId.setProjectId(PROJECT));
     compareDiskTypeId(diskTypeId, DiskTypeId.fromUrl(diskTypeId.toUrl()));
   }
 
   @Test
   public void testSetProjectId() {
     DiskTypeId diskTypeId = DiskTypeId.of(PROJECT, ZONE, DISK_TYPE);
+    assertSame(diskTypeId, diskTypeId.setProjectId(PROJECT));
     compareDiskTypeId(diskTypeId, DiskTypeId.of(ZONE, DISK_TYPE).setProjectId(PROJECT));
   }
 

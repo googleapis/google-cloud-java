@@ -31,12 +31,12 @@ public final class RegionId extends ResourceId {
 
   private final String region;
 
-  RegionId(String project, String region) {
+  private RegionId(String project, String region) {
     super(project);
     this.region = checkNotNull(region);
   }
 
-  RegionId(RegionId regionId) {
+  private RegionId(RegionId regionId) {
     super(regionId.project());
     this.region = checkNotNull(regionId.region());
   }

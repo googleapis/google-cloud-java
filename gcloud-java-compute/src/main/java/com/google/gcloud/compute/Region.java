@@ -18,6 +18,7 @@ package com.google.gcloud.compute;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
 import java.io.Serializable;
@@ -27,6 +28,8 @@ import java.util.Objects;
 
 /**
  * A Google Compute Engine region.
+ *
+ * @see <a href="https://cloud.google.com/compute/docs/zones">Region and Zones</a>
  */
 public final class Region implements Serializable {
 
@@ -58,7 +61,7 @@ public final class Region implements Serializable {
   /**
    * A quota assigned to this region.
    */
-  public static class Quota implements Serializable {
+  public static final class Quota implements Serializable {
 
     static final Function<com.google.api.services.compute.model.Quota, Quota> FROM_PB_FUNCTION =
         new Function<com.google.api.services.compute.model.Quota, Quota>() {
@@ -147,7 +150,7 @@ public final class Region implements Serializable {
   private final List<ZoneId> zones;
   private final List<Quota> quotas;
 
-  public static final class Builder {
+  static final class Builder {
 
     private RegionId regionId;
     private Long id;
@@ -158,7 +161,7 @@ public final class Region implements Serializable {
     private List<ZoneId> zones;
     private List<Quota> quotas;
 
-    Builder() {}
+    private Builder() {}
 
     Builder regionId(RegionId regionId) {
       this.regionId = regionId;
@@ -191,12 +194,12 @@ public final class Region implements Serializable {
     }
 
     Builder zones(List<ZoneId> zones) {
-      this.zones = zones;
+      this.zones = ImmutableList.copyOf(zones);
       return this;
     }
 
     Builder quotas(List<Quota> quotas) {
-      this.quotas = quotas;
+      this.quotas = ImmutableList.copyOf(quotas);
       return this;
     }
 
@@ -205,7 +208,7 @@ public final class Region implements Serializable {
     }
   }
 
-  Region(Builder builder) {
+  private Region(Builder builder) {
     this.regionId = builder.regionId;
     this.id = builder.id;
     this.creationTimestamp = builder.creationTimestamp;
