@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.gcloud;
+package com.google.gcloud.resourcemanager;
 
 import static org.junit.Assert.assertEquals;
 
-import com.google.gcloud.BaseIamPolicy.Identity;
+import com.google.common.collect.ImmutableSet;
+import com.google.gcloud.Identity;
 
 import org.junit.Test;
 
-public class BaseIamPolicyTest {
+public class PolicyTest {
 
   private static final Identity ALL_USERS = Identity.allUsers();
   private static final Identity ALL_AUTH_USERS = Identity.allAuthenticatedUsers();
@@ -31,20 +32,22 @@ public class BaseIamPolicyTest {
       Identity.serviceAccount("service-account@gmail.com");
   private static final Identity GROUP = Identity.group("group@gmail.com");
   private static final Identity DOMAIN = Identity.domain("google.com");
+  private static final Policy SIMPLE_POLICY = Policy.builder()
+      .addBinding("viewer", ImmutableSet.of(USER, SERVICE_ACCOUNT, ALL_USERS))
+      .addBinding("editor", ImmutableSet.of(ALL_AUTH_USERS, GROUP, DOMAIN))
+      .build();
+  private static final Policy FULL_POLICY =
+      new Policy.Builder(SIMPLE_POLICY.bindings(), "etag", 1).build();
 
   @Test
-  public void testIdentityOf() {
-    assertEquals(Identity.Type.ALL_USERS, ALL_USERS.type());
-    assertEquals(null, ALL_USERS.id());
-    assertEquals(Identity.Type.ALL_AUTHENTICATED_USERS, ALL_AUTH_USERS.type());
-    assertEquals(null, ALL_AUTH_USERS.id());
-    assertEquals(Identity.Type.USER, USER.type());
-    assertEquals("abc@gmail.com", USER.id());
-    assertEquals(Identity.Type.SERVICE_ACCOUNT, SERVICE_ACCOUNT.type());
-    assertEquals("service-account@gmail.com", SERVICE_ACCOUNT.id());
-    assertEquals(Identity.Type.GROUP, GROUP.type());
-    assertEquals("group@gmail.com", GROUP.id());
-    assertEquals(Identity.Type.DOMAIN, DOMAIN.type());
-    assertEquals("google.com", DOMAIN.id());
+  public void testIamPolicyToBuilder() {
+    assertEquals(FULL_POLICY, FULL_POLICY.toBuilder().build());
+    assertEquals(SIMPLE_POLICY, SIMPLE_POLICY.toBuilder().build());
+  }
+
+  @Test
+  public void testPolicyToAndFromPb() {
+    assertEquals(FULL_POLICY, Policy.fromPb(FULL_POLICY.toPb()));
+    assertEquals(SIMPLE_POLICY, Policy.fromPb(SIMPLE_POLICY.toPb()));
   }
 }
