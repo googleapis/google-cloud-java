@@ -911,12 +911,12 @@ public class Concepts {
     setUpQueryTests();
     // [START property_run_query]
     Query<Key> query = Query.keyQueryBuilder().kind("__property__").build();
-    QueryResults<Key> results = datastore.run(query);
+    QueryResults<Key> keys = datastore.run(query);
     Map<String, Collection<String>> propertiesByKind = new HashMap<>();
-    while (results.hasNext()) {
-      Key property = results.next();
-      String kind = property.parent().name();
-      String propertyName = property.name();
+    while (keys.hasNext()) {
+      Key key = keys.next();
+      String kind = key.parent().name();
+      String propertyName = key.name();
       Collection<String> properties = propertiesByKind.get(kind);
       if (properties == null) {
         properties = new HashSet<>();
@@ -942,9 +942,9 @@ public class Concepts {
     QueryResults<Entity> results = datastore.run(query);
     Map<String, Collection<String>> representationsByProperty = new HashMap<>();
     while (results.hasNext()) {
-      Entity property = results.next();
-      String propertyName = property.key().name();
-      List<StringValue> representations = property.getList("property_representation");
+      Entity result = results.next();
+      String propertyName = result.key().name();
+      List<StringValue> representations = result.getList("property_representation");
       Collection<String> currentRepresentations = representationsByProperty.get(propertyName);
       if (currentRepresentations == null) {
         currentRepresentations = new HashSet<>();
@@ -971,20 +971,20 @@ public class Concepts {
   public void testPropertyFilteringRunQuery() {
     setUpQueryTests();
     // [START property_filtering_run_query]
-    Key key = datastore.newKeyFactory()
+    Key startKey = datastore.newKeyFactory()
         .kind("__property__")
         .ancestors(PathElement.of("__kind__", "Task"))
         .newKey("priority");
     Query<Key> query = Query.keyQueryBuilder()
         .kind("__property__")
-        .filter(PropertyFilter.ge("__key__", key))
+        .filter(PropertyFilter.ge("__key__", startKey))
         .build();
     Map<String, Collection<String>> propertiesByKind = new HashMap<>();
-    QueryResults<Key> results = datastore.run(query);
-    while (results.hasNext()) {
-      Key property = results.next();
-      String kind = property.parent().name();
-      String propertyName = property.name();
+    QueryResults<Key> keys = datastore.run(query);
+    while (keys.hasNext()) {
+      Key key = keys.next();
+      String kind = key.parent().name();
+      String propertyName = key.name();
       Collection<String> properties = propertiesByKind.get(kind);
       if (properties == null) {
         properties = new HashSet<String>();
