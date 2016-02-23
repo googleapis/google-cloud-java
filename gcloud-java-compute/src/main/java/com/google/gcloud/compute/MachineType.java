@@ -55,7 +55,7 @@ public final class MachineType implements Serializable {
   private static final long serialVersionUID = -4210962597502860450L;
 
   private final MachineTypeId machineTypeId;
-  private final Long id;
+  private final BigInteger id;
   private final String creationTimestamp;
   private final String description;
   private final String selfLink;
@@ -69,7 +69,7 @@ public final class MachineType implements Serializable {
   static final class Builder {
 
     private MachineTypeId machineTypeId;
-    private Long id;
+    private BigInteger id;
     private String creationTimestamp;
     private String description;
     private String selfLink;
@@ -87,7 +87,7 @@ public final class MachineType implements Serializable {
       return this;
     }
 
-    Builder id(Long id) {
+    Builder id(BigInteger id) {
       this.id = id;
       return this;
     }
@@ -166,7 +166,7 @@ public final class MachineType implements Serializable {
   /**
    * Returns an unique identifier for the machin type; defined by the service.
    */
-  public Long id() {
+  public BigInteger id() {
     return id;
   }
 
@@ -268,9 +268,7 @@ public final class MachineType implements Serializable {
   com.google.api.services.compute.model.MachineType toPb() {
     com.google.api.services.compute.model.MachineType machineTypePb =
         new com.google.api.services.compute.model.MachineType();
-    if (id != null) {
-      machineTypePb.setId(BigInteger.valueOf(id));
-    }
+    machineTypePb.setId(id);
     machineTypePb.setCreationTimestamp(creationTimestamp);
     machineTypePb.setName(machineTypeId.machineType());
     machineTypePb.setDescription(description);
@@ -302,9 +300,7 @@ public final class MachineType implements Serializable {
   static MachineType fromPb(com.google.api.services.compute.model.MachineType machineTypePb) {
     Builder builder = builder();
     builder.machineTypeId(MachineTypeId.fromUrl(machineTypePb.getSelfLink()));
-    if (machineTypePb.getId() != null) {
-      builder.id(machineTypePb.getId().longValue());
-    }
+    builder.id(machineTypePb.getId());
     builder.creationTimestamp(machineTypePb.getCreationTimestamp());
     builder.description(machineTypePb.getDescription());
     builder.selfLink(machineTypePb.getSelfLink());

@@ -32,11 +32,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.List;
 
 public class SerializationTest {
 
-  private static final Long ID = 42L;
+  private static final BigInteger ID = BigInteger.valueOf(42L);
   private static final String CREATION_TIMESTAMP = "2016-01-20T04:39:00.210-08:00";
   private static final String DESCRIPTION = "description";
   private static final String VALID_DISK_SIZE = "10GB-10TB";
