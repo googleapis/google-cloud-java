@@ -42,13 +42,18 @@ class OptionParsersAndExtractors {
         switch (argEntry[0]) {
           case "fields":
             // List fields are in the form "managedZones(field1, field2, ...)"
+            String replaced = argEntry[1].replace("managedZones(", ",");
+            replaced = replaced.replace(")", ",");
+            // we will get empty strings, but it does not matter, they will be ignored
             options.put(
                 "fields",
-                argEntry[1].substring("managedZones(".length(), argEntry[1].length() - 1)
-                    .split(","));
+                replaced.split(","));
             break;
           case "dnsName":
             options.put("dnsName", argEntry[1]);
+            break;
+          case "nextPageToken":
+            options.put("nextPageToken", argEntry[1]);
             break;
           case "pageToken":
             options.put("pageToken", argEntry[1]);
@@ -218,13 +223,15 @@ class OptionParsersAndExtractors {
         String[] argEntry = arg.split("=");
         switch (argEntry[0]) {
           case "fields":
-            // todo we do not support fragmentation in deletions and additions
-            options.put(
-                "fields",
-                argEntry[1].substring("changes(".length(), argEntry[1].length() - 1).split(","));
+            // todo we do not support fragmentation in deletions and additions in the library
+            String replaced = argEntry[1].replace("changes(", ",").replace(")", ",");
+            options.put("fields", replaced.split(",")); // empty strings will be ignored
             break;
           case "name":
             options.put("name", argEntry[1]);
+            break;
+          case "nextPageToken":
+            options.put("nextPageToken", argEntry[1]);
             break;
           case "pageToken":
             options.put("pageToken", argEntry[1]);
@@ -255,15 +262,21 @@ class OptionParsersAndExtractors {
         String[] argEntry = arg.split("=");
         switch (argEntry[0]) {
           case "fields":
-            options.put(
-                "fields",
-                argEntry[1].substring("rrsets(".length(), argEntry[1].length() - 1).split(","));
+            String replace = argEntry[1].replace("rrsets(", ",");
+            replace = replace.replace(")", ",");
+            options.put("fields", replace.split(",")); // empty strings do not matter
             break;
           case "name":
             options.put("name", argEntry[1]);
             break;
+          case "type":
+            options.put("type", argEntry[1]);
+            break;
           case "pageToken":
             options.put("pageToken", argEntry[1]);
+            break;
+          case "nextPageToken":
+            options.put("nextPageToken", argEntry[1]);
             break;
           case "maxResults":
             // parsing to int is done while handling

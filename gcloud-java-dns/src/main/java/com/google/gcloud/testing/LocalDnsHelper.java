@@ -21,13 +21,14 @@ import static java.net.HttpURLConnection.HTTP_NO_CONTENT;
 import static java.net.HttpURLConnection.HTTP_OK;
 
 import com.google.api.client.json.JsonFactory;
-import com.google.api.client.repackaged.com.google.common.base.Joiner;
+import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.Quota;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.base.Function;
+import com.google.common.base.Joiner;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -79,7 +80,7 @@ import javax.annotation.Nullable;
  *
  * <p>While the mock attempts to simulate the service, there are some differences in the behaviour.
  * The mock will accept any project ID and never returns a notFound or another error because of
- * project ID. It assumes that all project IDs exists and that the user has all the necessary
+ * project ID. It assumes that all project IDs exist and that the user has all the necessary
  * privileges to manipulate any project. Similarly, the local simulation does not work with any
  * verification of domain name ownership. Any request for creating a managed zone will be approved.
  * The mock does not track quota and will allow the user to exceed it. The mock provides only basic
@@ -92,11 +93,10 @@ public class LocalDnsHelper {
       = new ConcurrentSkipListMap<>();
   private static final URI BASE_CONTEXT;
   private static final Logger log = Logger.getLogger(LocalDnsHelper.class.getName());
-  private static final JsonFactory jsonFactory =
-      new com.google.api.client.json.jackson.JacksonFactory();
+  private static final JsonFactory jsonFactory = new JacksonFactory();
   private static final Random ID_GENERATOR = new Random();
   private static final String VERSION = "v1";
-  private static final String CONTEXT = "/" + VERSION + "/projects";
+  private static final String CONTEXT = "/dns/" + VERSION + "/projects";
   private static final Set<String> SUPPORTED_COMPRESSION_ENCODINGS =
       ImmutableSet.of("gzip", "x-gzip");
   private static final List<String> TYPES = ImmutableList.of("A", "AAAA", "CNAME", "MX", "NAPTR",
@@ -119,15 +119,15 @@ public class LocalDnsHelper {
    * For matching URLs to operations.
    */
   private enum CallRegex {
-    CHANGE_CREATE("POST", "/[^/]+/managedZones/[^/]+/changes"),
-    CHANGE_GET("GET", "/[^/]+/managedZones/[^/]+/changes/[^/]+"),
-    CHANGE_LIST("GET", "/[^/]+/managedZones/[^/]+/changes"),
-    ZONE_CREATE("POST", "/[^/]+/managedZones"),
-    ZONE_DELETE("DELETE", "/[^/]+/managedZones/[^/]+"),
-    ZONE_GET("GET", "/[^/]+/managedZones/[^/]+"),
-    ZONE_LIST("GET", "/[^/]+/managedZones"),
-    PROJECT_GET("GET", "/[^/]+"),
-    RECORD_LIST("GET", "/[^/]+/managedZones/[^/]+/rrsets");
+    CHANGE_CREATE("POST", CONTEXT + "/[^/]+/managedZones/[^/]+/changes"),
+    CHANGE_GET("GET", CONTEXT + "/[^/]+/managedZones/[^/]+/changes/[^/]+"),
+    CHANGE_LIST("GET", CONTEXT + "/[^/]+/managedZones/[^/]+/changes"),
+    ZONE_CREATE("POST", CONTEXT + "/[^/]+/managedZones"),
+    ZONE_DELETE("DELETE", CONTEXT + "/[^/]+/managedZones/[^/]+"),
+    ZONE_GET("GET", CONTEXT + "/[^/]+/managedZones/[^/]+"),
+    ZONE_LIST("GET", CONTEXT + "/[^/]+/managedZones"),
+    PROJECT_GET("GET", CONTEXT + "/[^/]+"),
+    RECORD_LIST("GET", CONTEXT + "/[^/]+/managedZones/[^/]+/rrsets");
 
     private String method;
     private String pathRegex;
@@ -220,14 +220,14 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Associates a zone with a collection of changes and dns record. Thread safe.
+   * Associates a zone with a collection of changes and dns records. Thread safe.
    */
   static class ZoneContainer {
     private final ManagedZone zone;
     /**
      * DNS records are held in a map to allow for atomic replacement of record sets when applying
      * changes. The key for the map is always the zone name. The collection of records is immutable
-     * and must always exist, i.e., dnsRecords.get(zone.getName()) is never null.
+     * and must always exist, i.e., dnsRecords.get(zone.getName()) is never {@code null}.
      */
     private final ConcurrentSkipListMap<String, ImmutableList<RrsetWrapper>>
         dnsRecords = new ConcurrentSkipListMap<>();
@@ -377,20 +377,19 @@ public class LocalDnsHelper {
       writeResponse(exchange, Error.NOT_FOUND.response("The url does not match any API call."));
     }
 
-    // todo(mderka) Test handlers using gcloud-java-dns. Issue #665.
     private Response handleZoneDelete(HttpExchange exchange) {
       String path = BASE_CONTEXT.relativize(exchange.getRequestURI()).getPath();
       String[] tokens = path.split("/");
-      String projectId = tokens[1];
-      String zoneName = tokens[3];
+      String projectId = tokens[0];
+      String zoneName = tokens[2];
       return deleteZone(projectId, zoneName);
     }
 
     private Response handleZoneGet(HttpExchange exchange) {
       String path = BASE_CONTEXT.relativize(exchange.getRequestURI()).getPath();
       String[] tokens = path.split("/");
-      String projectId = tokens[1];
-      String zoneName = tokens[3];
+      String projectId = tokens[0];
+      String zoneName = tokens[2];
       String query = BASE_CONTEXT.relativize(exchange.getRequestURI()).getQuery();
       String[] fields = OptionParsersAndExtractors.parseGetOptions(query);
       return getZone(projectId, zoneName, fields);
@@ -399,7 +398,7 @@ public class LocalDnsHelper {
     private Response handleZoneList(HttpExchange exchange) {
       String path = BASE_CONTEXT.relativize(exchange.getRequestURI()).getPath();
       String[] tokens = path.split("/");
-      String projectId = tokens[1];
+      String projectId = tokens[0];
       String query = BASE_CONTEXT.relativize(exchange.getRequestURI()).getQuery();
       Map<String, Object> options = OptionParsersAndExtractors.parseListZonesOptions(query);
       return listZones(projectId, options);
@@ -408,7 +407,7 @@ public class LocalDnsHelper {
     private Response handleProjectGet(HttpExchange exchange) {
       String path = BASE_CONTEXT.relativize(exchange.getRequestURI()).getPath();
       String[] tokens = path.split("/");
-      String projectId = tokens[1];
+      String projectId = tokens[0];
       String query = BASE_CONTEXT.relativize(exchange.getRequestURI()).getQuery();
       String[] fields = OptionParsersAndExtractors.parseGetOptions(query);
       return getProject(projectId, fields);
@@ -420,8 +419,8 @@ public class LocalDnsHelper {
     private Response handleChangeCreate(HttpExchange exchange) throws IOException {
       String path = BASE_CONTEXT.relativize(exchange.getRequestURI()).getPath();
       String[] tokens = path.split("/");
-      String projectId = tokens[1];
-      String zoneName = tokens[3];
+      String projectId = tokens[0];
+      String zoneName = tokens[2];
       String query = BASE_CONTEXT.relativize(exchange.getRequestURI()).getQuery();
       String[] fields = OptionParsersAndExtractors.parseGetOptions(query);
       String requestBody = decodeContent(exchange.getRequestHeaders(), exchange.getRequestBody());
@@ -432,9 +431,9 @@ public class LocalDnsHelper {
     private Response handleChangeGet(HttpExchange exchange) {
       String path = BASE_CONTEXT.relativize(exchange.getRequestURI()).getPath();
       String[] tokens = path.split("/");
-      String projectId = tokens[1];
-      String zoneName = tokens[3];
-      String changeId = tokens[5];
+      String projectId = tokens[0];
+      String zoneName = tokens[2];
+      String changeId = tokens[4];
       String query = BASE_CONTEXT.relativize(exchange.getRequestURI()).getQuery();
       String[] fields = OptionParsersAndExtractors.parseGetOptions(query);
       return getChange(projectId, zoneName, changeId, fields);
@@ -443,8 +442,8 @@ public class LocalDnsHelper {
     private Response handleChangeList(HttpExchange exchange) {
       String path = BASE_CONTEXT.relativize(exchange.getRequestURI()).getPath();
       String[] tokens = path.split("/");
-      String projectId = tokens[1];
-      String zoneName = tokens[3];
+      String projectId = tokens[0];
+      String zoneName = tokens[2];
       String query = BASE_CONTEXT.relativize(exchange.getRequestURI()).getQuery();
       Map<String, Object> options = OptionParsersAndExtractors.parseListChangesOptions(query);
       return listChanges(projectId, zoneName, options);
@@ -453,8 +452,8 @@ public class LocalDnsHelper {
     private Response handleDnsRecordList(HttpExchange exchange) {
       String path = BASE_CONTEXT.relativize(exchange.getRequestURI()).getPath();
       String[] tokens = path.split("/");
-      String projectId = tokens[1];
-      String zoneName = tokens[3];
+      String projectId = tokens[0];
+      String zoneName = tokens[2];
       String query = BASE_CONTEXT.relativize(exchange.getRequestURI()).getQuery();
       Map<String, Object> options = OptionParsersAndExtractors.parseListDnsRecordsOptions(query);
       return listDnsRecords(projectId, zoneName, options);
@@ -466,7 +465,7 @@ public class LocalDnsHelper {
     private Response handleZoneCreate(HttpExchange exchange) throws IOException {
       String path = BASE_CONTEXT.relativize(exchange.getRequestURI()).getPath();
       String[] tokens = path.split("/");
-      String projectId = tokens[1];
+      String projectId = tokens[0];
       String query = BASE_CONTEXT.relativize(exchange.getRequestURI()).getQuery();
       String[] options = OptionParsersAndExtractors.parseGetOptions(query);
       String requestBody = decodeContent(exchange.getRequestHeaders(), exchange.getRequestBody());
@@ -539,7 +538,9 @@ public class LocalDnsHelper {
     try {
       exchange.getResponseHeaders().add("Connection", "close");
       exchange.sendResponseHeaders(response.code(), response.body().length());
-      outputStream.write(response.body().getBytes(StandardCharsets.UTF_8));
+      if (response.code() != 204) {
+        outputStream.write(response.body().getBytes(StandardCharsets.UTF_8));
+      }
       outputStream.close();
     } catch (IOException e) {
       log.log(Level.WARNING, "IOException encountered when sending response.", e);
@@ -569,18 +570,20 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Generates a JSON response. Tested.
+   * Generates a JSON response.
+   *
+   * @param context managedZones | projects | rrsets | changes
    */
-  static Response toListResponse(List<String> serializedObjects, String pageToken,
+  static Response toListResponse(List<String> serializedObjects, String context, String pageToken,
       boolean includePageToken) {
     // start building response
     StringBuilder responseBody = new StringBuilder();
-    responseBody.append("{\"projects\": [");
+    responseBody.append("{\"").append(context).append("\": [");
     Joiner.on(",").appendTo(responseBody, serializedObjects);
     responseBody.append("]");
     // add page token only if exists and is asked for
     if (pageToken != null && includePageToken) {
-      responseBody.append(",\"pageToken\": \"").append(pageToken).append("\"");
+      responseBody.append(",\"nextPageToken\": \"").append(pageToken).append("\"");
     }
     responseBody.append("}");
     return new Response(HTTP_OK, responseBody.toString());
@@ -627,14 +630,13 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Returns a hex string id (used for a dns record) unique withing the set of wrappers.
+   * Returns a hex string id (used for a dns record) unique within the set of wrappers.
    */
   static String getUniqueId(List<RrsetWrapper> wrappers) {
     TreeSet<String> ids = Sets.newTreeSet(Lists.transform(wrappers,
         new Function<RrsetWrapper, String>() {
-          @Nullable
           @Override
-          public String apply(@Nullable RrsetWrapper input) {
+          public String apply(RrsetWrapper input) {
             return input.id() == null ? "null" : input.id();
           }
         }));
@@ -663,7 +665,8 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Returns a project container. Never returns null because we assume that all projects exists.
+   * Returns a project container. Never returns {@code null} because we assume that all projects
+   * exists.
    */
   ProjectContainer findProject(String projectId) {
     ProjectContainer defaultProject = createProject(projectId);
@@ -672,7 +675,7 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Returns a zone container. Returns null if zone does not exist within project.
+   * Returns a zone container. Returns {@code null} if zone does not exist within project.
    */
   ZoneContainer findZone(String projectId, String zoneName) {
     ProjectContainer projectContainer = findProject(projectId); // never null
@@ -680,7 +683,7 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Returns a change found by its id. Returns null if such a change does not exist.
+   * Returns a change found by its id. Returns {@code null} if such a change does not exist.
    */
   Change findChange(String projectId, String zoneName, String changeId) {
     ZoneContainer wrapper = findZone(projectId, zoneName);
@@ -688,7 +691,7 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Returns a response to get change call.
+   * Returns a response to getChange service call.
    */
   Response getChange(String projectId, String zoneName, String changeId, String[] fields) {
     Change change = findChange(projectId, zoneName, changeId);
@@ -711,11 +714,10 @@ public class LocalDnsHelper {
           "Error when serializing change %s in managed zone %s in project %s.",
           changeId, zoneName, projectId));
     }
-    // todo(mderka) Test field options within #665.
   }
 
   /**
-   * Returns a response to get zone call.
+   * Returns a response to getZone service call.
    */
   Response getZone(String projectId, String zoneName, String[] fields) {
     ZoneContainer container = findZone(projectId, zoneName);
@@ -730,7 +732,6 @@ public class LocalDnsHelper {
       return Error.INTERNAL_ERROR.response(String.format(
           "Error when serializing managed zone %s in project %s.", zoneName, projectId));
     }
-    // todo(mderka) Test field options within #665.
   }
 
   /**
@@ -748,7 +749,6 @@ public class LocalDnsHelper {
       return Error.INTERNAL_ERROR.response(
           String.format("Error when serializing project %s.", projectId));
     }
-    // todo(mderka) Test field options within #665.
   }
 
   /**
@@ -798,6 +798,7 @@ public class LocalDnsHelper {
     ManagedZone completeZone = new ManagedZone();
     completeZone.setName(zone.getName());
     completeZone.setDnsName(zone.getDnsName());
+    completeZone.setDescription(zone.getDescription());
     completeZone.setNameServerSet(zone.getNameServerSet());
     completeZone.setCreationTime(ISODateTimeFormat.dateTime().withZoneUTC()
         .print(System.currentTimeMillis()));
@@ -823,7 +824,6 @@ public class LocalDnsHelper {
       return Error.INTERNAL_ERROR.response(
           String.format("Error when serializing managed zone %s.", result.getName()));
     }
-    // todo(mderka) Test field options within #665.
   }
 
   /**
@@ -873,7 +873,6 @@ public class LocalDnsHelper {
           String.format("Error when serializing change %s in managed zone %s in project %s.",
               result.getId(), zoneName, projectId));
     }
-    // todo(mderka) Test field options within #665.
   }
 
   /**
@@ -969,13 +968,13 @@ public class LocalDnsHelper {
       ManagedZone zone = zoneContainer.zone();
       if (listing) {
         if (dnsName == null || zone.getDnsName().equals(dnsName)) {
-          lastZoneName = zone.getName();
           if (sizeReached) {
             // we do not add this, just note that there would be more and there should be a token
             hasMorePages = true;
             break;
           } else {
             try {
+              lastZoneName = zone.getName();
               serializedZones.addLast(jsonFactory.toString(
                   OptionParsersAndExtractors.extractFields(zone, fields)));
             } catch (IOException e) {
@@ -991,9 +990,8 @@ public class LocalDnsHelper {
       sizeReached = (maxResults != null) && maxResults.equals(serializedZones.size());
     }
     boolean includePageToken =
-        hasMorePages && (fields == null || ImmutableList.copyOf(fields).contains("pageToken"));
-    return toListResponse(serializedZones, lastZoneName, includePageToken);
-    // todo(mderka) Test field and listing options within #665.
+        hasMorePages && (fields == null || ImmutableList.copyOf(fields).contains("nextPageToken"));
+    return toListResponse(serializedZones, "managedZones", lastZoneName, includePageToken);
   }
 
   /**
@@ -1025,12 +1023,12 @@ public class LocalDnsHelper {
       ResourceRecordSet record = recordWrapper.rrset();
       if (listing) {
         if (matchesCriteria(record, name, type)) {
-          lastRecordId = recordWrapper.id();
           if (sizeReached) {
             // we do not add this, just note that there would be more and there should be a token
             hasMorePages = true;
             break;
           } else {
+            lastRecordId = recordWrapper.id();
             try {
               serializedRrsets.addLast(jsonFactory.toString(
                   OptionParsersAndExtractors.extractFields(record, fields)));
@@ -1047,9 +1045,8 @@ public class LocalDnsHelper {
       sizeReached = (maxResults != null) && maxResults.equals(serializedRrsets.size());
     }
     boolean includePageToken =
-        hasMorePages && (fields == null || ImmutableList.copyOf(fields).contains("pageToken"));
-    return toListResponse(serializedRrsets, lastRecordId, includePageToken);
-    // todo(mderka) Test field and listing options within #665.
+        hasMorePages && (fields == null || ImmutableList.copyOf(fields).contains("nextPageToken"));
+    return toListResponse(serializedRrsets, "rrsets", lastRecordId, includePageToken);
   }
 
   /**
@@ -1061,6 +1058,10 @@ public class LocalDnsHelper {
       return response;
     }
     ZoneContainer zoneContainer = findZone(projectId, zoneName);
+    if (zoneContainer == null) {
+      return Error.NOT_FOUND.response(String.format(
+          "The 'parameters.managedZone' resource named '%s' does not exist", zoneName));
+    }
     // take a sorted snapshot of the current change list
     TreeMap<Integer, Change> changes = new TreeMap<>();
     for (Change c : zoneContainer.changes()) {
@@ -1088,12 +1089,12 @@ public class LocalDnsHelper {
     for (Integer key : keys) {
       Change change = changes.get(key);
       if (listing) {
-        lastChangeId = change.getId();
         if (sizeReached) {
           // we do not add this, just note that there would be more and there should be a token
           hasMorePages = true;
           break;
         } else {
+          lastChangeId = change.getId();
           try {
             serializedResults.addLast(jsonFactory.toString(
                 OptionParsersAndExtractors.extractFields(change, fields)));
@@ -1110,9 +1111,8 @@ public class LocalDnsHelper {
       sizeReached = (maxResults != null) && maxResults.equals(serializedResults.size());
     }
     boolean includePageToken =
-        hasMorePages && (fields == null || ImmutableList.copyOf(fields).contains("pageToken"));
-    return toListResponse(serializedResults, lastChangeId, includePageToken);
-    // todo(mderka) Test field and listing options within #665.
+        hasMorePages && (fields == null || ImmutableList.copyOf(fields).contains("nextPageToken"));
+    return toListResponse(serializedResults, "changes", lastChangeId, includePageToken);
   }
 
   /**
