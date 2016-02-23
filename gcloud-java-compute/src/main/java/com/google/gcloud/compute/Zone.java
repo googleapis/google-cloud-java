@@ -50,6 +50,15 @@ public final class Zone implements Serializable {
 
   private static final long serialVersionUID = 6113636504417213010L;
 
+  private final ZoneId zoneId;
+  private final BigInteger id;
+  private final String creationTimestamp;
+  private final String description;
+  private final String selfLink;
+  private final Status status;
+  private final List<MaintenanceWindow> maintenanceWindows;
+  private final RegionId region;
+
   /**
    * Status of the region.
    */
@@ -166,19 +175,10 @@ public final class Zone implements Serializable {
     }
   }
 
-  private final ZoneId zoneId;
-  private final Long id;
-  private final String creationTimestamp;
-  private final String description;
-  private final String selfLink;
-  private final Status status;
-  private final List<MaintenanceWindow> maintenanceWindows;
-  private final RegionId region;
-
   static final class Builder {
 
     private ZoneId zoneId;
-    private Long id;
+    private BigInteger id;
     private String creationTimestamp;
     private String description;
     private String selfLink;
@@ -193,7 +193,7 @@ public final class Zone implements Serializable {
       return this;
     }
 
-    Builder id(Long id) {
+    Builder id(BigInteger id) {
       this.id = id;
       return this;
     }
@@ -270,7 +270,7 @@ public final class Zone implements Serializable {
   /**
    * Returns an unique identifier for the zone; defined by the service.
    */
-  public Long id() {
+  public BigInteger id() {
     return id;
   }
 
@@ -333,7 +333,7 @@ public final class Zone implements Serializable {
   com.google.api.services.compute.model.Zone toPb() {
     com.google.api.services.compute.model.Zone zonePb =
         new com.google.api.services.compute.model.Zone();
-    zonePb.setId(BigInteger.valueOf(id));
+    zonePb.setId(id);
     zonePb.setCreationTimestamp(creationTimestamp);
     zonePb.setName(zoneId.zone());
     zonePb.setDescription(description);
@@ -356,9 +356,7 @@ public final class Zone implements Serializable {
   static Zone fromPb(com.google.api.services.compute.model.Zone zonePb) {
     Builder builder = builder();
     builder.zoneId(ZoneId.fromUrl(zonePb.getSelfLink()));
-    if (zonePb.getId() != null) {
-      builder.id(zonePb.getId().longValue());
-    }
+    builder.id(zonePb.getId());
     builder.creationTimestamp(zonePb.getCreationTimestamp());
     builder.description(zonePb.getDescription());
     builder.selfLink(zonePb.getSelfLink());

@@ -50,6 +50,15 @@ public final class Region implements Serializable {
 
   private static final long serialVersionUID = -3578710133393645135L;
 
+  private final RegionId regionId;
+  private final BigInteger id;
+  private final String creationTimestamp;
+  private final String description;
+  private final String selfLink;
+  private final Status status;
+  private final List<ZoneId> zones;
+  private final List<Quota> quotas;
+
   /**
    * Status of the region.
    */
@@ -141,19 +150,10 @@ public final class Region implements Serializable {
     }
   }
 
-  private final RegionId regionId;
-  private final Long id;
-  private final String creationTimestamp;
-  private final String description;
-  private final String selfLink;
-  private final Status status;
-  private final List<ZoneId> zones;
-  private final List<Quota> quotas;
-
   static final class Builder {
 
     private RegionId regionId;
-    private Long id;
+    private BigInteger id;
     private String creationTimestamp;
     private String description;
     private String selfLink;
@@ -168,7 +168,7 @@ public final class Region implements Serializable {
       return this;
     }
 
-    Builder id(Long id) {
+    Builder id(BigInteger id) {
       this.id = id;
       return this;
     }
@@ -223,7 +223,7 @@ public final class Region implements Serializable {
     return regionId;
   }
 
-  public Long id() {
+  public BigInteger id() {
     return id;
   }
 
@@ -278,9 +278,7 @@ public final class Region implements Serializable {
   com.google.api.services.compute.model.Region toPb() {
     com.google.api.services.compute.model.Region regionPb =
         new com.google.api.services.compute.model.Region();
-    if (id != null) {
-      regionPb.setId(BigInteger.valueOf(id));
-    }
+    regionPb.setId(id);
     regionPb.setCreationTimestamp(creationTimestamp);
     regionPb.setName(regionId.region());
     regionPb.setDescription(description);
@@ -302,9 +300,7 @@ public final class Region implements Serializable {
   static Region fromPb(com.google.api.services.compute.model.Region regionPb) {
     Builder builder = builder();
     builder.regionId(RegionId.fromUrl(regionPb.getSelfLink()));
-    if (regionPb.getId() != null) {
-      builder.id(regionPb.getId().longValue());
-    }
+    builder.id(regionPb.getId());
     builder.creationTimestamp(regionPb.getCreationTimestamp());
     builder.description(regionPb.getDescription());
     builder.selfLink(regionPb.getSelfLink());

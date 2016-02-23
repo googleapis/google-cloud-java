@@ -48,7 +48,7 @@ public final class DiskType implements Serializable {
 
   private static final long serialVersionUID = -944042261695072026L;
 
-  private final Long id;
+  private final BigInteger id;
   private final DiskTypeId diskTypeId;
   private final String creationTimestamp;
   private final String description;
@@ -59,7 +59,7 @@ public final class DiskType implements Serializable {
 
   static final class Builder {
 
-    private Long id;
+    private BigInteger id;
     private DiskTypeId diskTypeId;
     private String creationTimestamp;
     private String description;
@@ -70,7 +70,7 @@ public final class DiskType implements Serializable {
 
     private Builder() {}
 
-    Builder id(Long id) {
+    Builder id(BigInteger id) {
       this.id = id;
       return this;
     }
@@ -145,7 +145,7 @@ public final class DiskType implements Serializable {
   /**
    * Returns an unique identifier for the disk type; defined by the service.
    */
-  public Long id() {
+  public BigInteger id() {
     return id;
   }
 
@@ -212,9 +212,7 @@ public final class DiskType implements Serializable {
   com.google.api.services.compute.model.DiskType toPb() {
     com.google.api.services.compute.model.DiskType diskTypePb =
         new com.google.api.services.compute.model.DiskType();
-    if (id != null) {
-      diskTypePb.setId(BigInteger.valueOf(id));
-    }
+    diskTypePb.setId(id);
     diskTypePb.setCreationTimestamp(creationTimestamp);
     diskTypePb.setDescription(description);
     diskTypePb.setValidDiskSize(validDiskSize);
@@ -233,9 +231,7 @@ public final class DiskType implements Serializable {
 
   static DiskType fromPb(com.google.api.services.compute.model.DiskType diskTypePb) {
     Builder builder = builder();
-    if (diskTypePb.getId() != null) {
-      builder.id(diskTypePb.getId().longValue());
-    }
+    builder.id(diskTypePb.getId());
     builder.creationTimestamp(diskTypePb.getCreationTimestamp());
     builder.diskTypeId(DiskTypeId.fromUrl(diskTypePb.getSelfLink()));
     builder.description(diskTypePb.getDescription());

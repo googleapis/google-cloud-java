@@ -22,12 +22,13 @@ import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public class RegionTest {
 
   private static final RegionId REGION_ID = RegionId.of("project", "region");
-  private static final Long ID = 42L;
+  private static final BigInteger ID = BigInteger.valueOf(42L);
   private static final String CREATION_TIMESTAMP = "2016-01-20T04:39:00.210-08:00";
   private static final String DESCRIPTION = "description";
   private static final Region.Status STATUS = Region.Status.DOWN;
