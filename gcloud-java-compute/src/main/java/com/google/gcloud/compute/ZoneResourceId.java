@@ -27,6 +27,7 @@ import java.util.Objects;
  */
 public abstract class ZoneResourceId extends ResourceId {
 
+  static final String REGEX = ResourceId.REGEX + "zones/[^/]+/";
   private static final long serialVersionUID = -6249546895344926888L;
 
   private final String zone;

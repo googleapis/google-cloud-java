@@ -27,6 +27,7 @@ import java.util.Objects;
  */
 public abstract class RegionResourceId extends ResourceId {
 
+  static final String REGEX = ResourceId.REGEX + "regions/[^/]+/";
   private static final long serialVersionUID = 5569092266957249294L;
 
   private final String region;

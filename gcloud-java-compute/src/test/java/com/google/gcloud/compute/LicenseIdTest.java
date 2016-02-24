@@ -17,10 +17,14 @@
 package com.google.gcloud.compute;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class LicenseIdTest {
 
@@ -28,6 +32,9 @@ public class LicenseIdTest {
   private static final String LICENSE = "license";
   private static final String URL =
       "https://www.googleapis.com/compute/v1/projects/project/global/licenses/license";
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOf() {
@@ -51,6 +58,15 @@ public class LicenseIdTest {
     LicenseId licenseId = LicenseId.of(PROJECT, LICENSE);
     assertSame(licenseId, licenseId.setProjectId(PROJECT));
     compareLicenseId(licenseId, LicenseId.of(LICENSE).setProjectId(PROJECT));
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("notMatchingUrl is not a valid license URL");
+    licenseId = LicenseId.fromUrl("notMatchingUrl");
+  }
+
+  @Test
+  public void testMatchesUrl() {
+    assertTrue(LicenseId.matchesUrl(LicenseId.of(PROJECT, LICENSE).toUrl()));
+    assertFalse(LicenseId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareLicenseId(LicenseId expected, LicenseId value) {

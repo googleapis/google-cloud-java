@@ -43,6 +43,7 @@ public final class MachineTypeId extends ZoneResourceId {
         }
       };
 
+  static final String REGEX = ZoneResourceId.REGEX + "machineTypes/[^/]+";
   private static final long serialVersionUID = -5819598544478859608L;
 
   private final String machineType;
@@ -101,7 +102,18 @@ public final class MachineTypeId extends ZoneResourceId {
     return new MachineTypeId(project, zone, machineType);
   }
 
+  /**
+   * Returns {@code true} if the provided string matches the expected format of a machine type URL.
+   * Returns {@code false} otherwise.
+   */
+  static boolean matchesUrl(String url) {
+    return url.matches(REGEX);
+  }
+
   static MachineTypeId fromUrl(String url) {
+    if (!matchesUrl(url)) {
+      throw new IllegalArgumentException(url + " is not a valid machine type URL");
+    }
     int projectsIndex = url.indexOf("/projects/");
     int zonesIndex = url.indexOf("/zones/");
     int machineTypesIndex = url.indexOf("/machineTypes/");

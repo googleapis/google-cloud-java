@@ -17,10 +17,14 @@
 package com.google.gcloud.compute;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class MachineTypeIdTest {
 
@@ -29,6 +33,9 @@ public class MachineTypeIdTest {
   private static final String TYPE = "type";
   private static final String URL =
       "https://www.googleapis.com/compute/v1/projects/project/zones/zone/machineTypes/type";
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOf() {
@@ -47,6 +54,9 @@ public class MachineTypeIdTest {
   public void testToAndFromUrl() {
     MachineTypeId machineTypeId = MachineTypeId.of(PROJECT, ZONE, TYPE);
     compareMachineTypeId(machineTypeId, MachineTypeId.fromUrl(machineTypeId.toUrl()));
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("notMatchingUrl is not a valid machine type URL");
+    machineTypeId = MachineTypeId.fromUrl("notMatchingUrl");
   }
 
   @Test
@@ -54,6 +64,12 @@ public class MachineTypeIdTest {
     MachineTypeId machineTypeId = MachineTypeId.of(PROJECT, ZONE, TYPE);
     assertSame(machineTypeId, machineTypeId.setProjectId(PROJECT));
     compareMachineTypeId(machineTypeId, MachineTypeId.of(ZONE, TYPE).setProjectId(PROJECT));
+  }
+
+  @Test
+  public void testMatchesUrl() {
+    assertTrue(MachineTypeId.matchesUrl(MachineTypeId.of(PROJECT, ZONE, TYPE).toUrl()));
+    assertFalse(MachineTypeId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareMachineTypeId(MachineTypeId expected, MachineTypeId value) {
