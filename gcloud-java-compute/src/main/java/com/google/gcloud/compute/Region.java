@@ -58,6 +58,7 @@ public final class Region implements Serializable {
   private final Status status;
   private final List<ZoneId> zones;
   private final List<Quota> quotas;
+  private final DeprecationStatus<RegionId> deprecationStatus;
 
   /**
    * Status of the region.
@@ -160,6 +161,7 @@ public final class Region implements Serializable {
     private Status status;
     private List<ZoneId> zones;
     private List<Quota> quotas;
+    private  DeprecationStatus<RegionId> deprecationStatus;
 
     private Builder() {}
 
@@ -203,6 +205,11 @@ public final class Region implements Serializable {
       return this;
     }
 
+    Builder deprecationStatus(DeprecationStatus<RegionId> deprecationStatus) {
+      this.deprecationStatus = deprecationStatus;
+      return this;
+    }
+
     Region build() {
       return new Region(this);
     }
@@ -217,38 +224,74 @@ public final class Region implements Serializable {
     this.status = builder.status;
     this.zones = builder.zones;
     this.quotas = builder.quotas;
+    this.deprecationStatus = builder.deprecationStatus;
   }
 
+  /**
+   * Returns the region's identity.
+   */
   public RegionId regionId() {
     return regionId;
   }
 
+  /**
+   * Returns an unique identifier for the region; defined by the service.
+   */
   public BigInteger id() {
     return id;
   }
 
+  /**
+   * Returns the creation timestamp in RFC3339 text format.
+   *
+   * @see <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+   */
   public String creationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * Returns an optional textual description of the region.
+   */
   public String description() {
     return description;
   }
 
+  /**
+   * Returns a service-defined URL for the region.
+   */
   public String selfLink() {
     return selfLink;
   }
 
+  /**
+   * Returns the status of the status.
+   */
   public Status status() {
     return status;
   }
 
+  /**
+   * Returns a list of identities of zones available in this region.
+   */
   public List<ZoneId> zones() {
     return zones;
   }
 
+  /**
+   * Returns quotas assigned to this region.
+   */
   public List<Quota> quotas() {
     return quotas;
+  }
+
+  /**
+   * Returns the deprecation status of the region. If {@link DeprecationStatus#status()} is either
+   * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the
+   * region should not be used. Returns {@code null} if the region is not deprecated.
+   */
+  public DeprecationStatus<RegionId> deprecationStatus() {
+    return deprecationStatus;
   }
 
   @Override
@@ -262,6 +305,7 @@ public final class Region implements Serializable {
         .add("status", status)
         .add("zones", zones)
         .add("quotas", quotas)
+        .add("deprecationStatus", deprecationStatus)
         .toString();
   }
 
@@ -290,6 +334,9 @@ public final class Region implements Serializable {
     if (quotas != null) {
       regionPb.setQuotas(Lists.transform(quotas, Quota.TO_PB_FUNCTION));
     }
+    if (deprecationStatus != null) {
+      regionPb.setDeprecated(deprecationStatus.toPb());
+    }
     return regionPb;
   }
 
@@ -312,6 +359,10 @@ public final class Region implements Serializable {
     }
     if (regionPb.getQuotas() != null) {
       builder.quotas(Lists.transform(regionPb.getQuotas(), Quota.FROM_PB_FUNCTION));
+    }
+    if (regionPb.getDeprecated() != null) {
+      builder.deprecationStatus(
+          DeprecationStatus.fromPb(regionPb.getDeprecated(), RegionId.FROM_URL_FUNCTION));
     }
     return builder.build();
   }

@@ -39,6 +39,11 @@ public class ZoneTest {
   private static final MaintenanceWindow WINDOW2 = new MaintenanceWindow("NAME2", "DESCRIPTION2",
       "2016-01-21T04:39:00.210-08:00", "2016-01-22T04:39:00.210-08:00");
   private static final List<MaintenanceWindow> WINDOWS = ImmutableList.of(WINDOW1, WINDOW2);
+  private static final String DELETED = "2016-01-20T04:39:00.210-08:00";
+  private static final String DEPRECATED = "2016-01-20T04:37:00.210-08:00";
+  private static final String OBSOLETE = "2016-01-20T04:38:00.210-08:00";
+  private static final DeprecationStatus<ZoneId> DEPRECATION_STATUS = new DeprecationStatus<>(
+      DELETED, DEPRECATED, OBSOLETE, ZONE_ID, DeprecationStatus.Status.DELETED);
   private static final Zone ZONE = Zone.builder()
       .zoneId(ZONE_ID)
       .id(ID)
@@ -47,6 +52,7 @@ public class ZoneTest {
       .selfLink(ZONE_ID.toUrl())
       .status(STATUS)
       .maintenanceWindows(WINDOWS)
+      .deprecationStatus(DEPRECATION_STATUS)
       .region(REGION_ID)
       .build();
 
@@ -60,6 +66,7 @@ public class ZoneTest {
     assertEquals(STATUS, ZONE.status());
     assertEquals(WINDOWS, ZONE.maintenanceWindows());
     assertEquals(REGION_ID, ZONE.region());
+    assertEquals(DEPRECATION_STATUS, ZONE.deprecationStatus());
   }
 
   @Test
@@ -82,6 +89,7 @@ public class ZoneTest {
     assertEquals(expected.status(), value.status());
     assertEquals(expected.maintenanceWindows(), value.maintenanceWindows());
     assertEquals(expected.region(), value.region());
+    assertEquals(expected.deprecationStatus(), value.deprecationStatus());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

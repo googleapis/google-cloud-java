@@ -40,6 +40,11 @@ public class RegionTest {
   private static final Region.Quota QUOTA2 =
       new Region.Quota("METRIC2", 4, 3);
   private static final List<Region.Quota> QUOTAS = ImmutableList.of(QUOTA1, QUOTA2);
+  private static final String DELETED = "2016-01-20T04:39:00.210-08:00";
+  private static final String DEPRECATED = "2016-01-20T04:37:00.210-08:00";
+  private static final String OBSOLETE = "2016-01-20T04:38:00.210-08:00";
+  private static final DeprecationStatus<RegionId> DEPRECATION_STATUS = new DeprecationStatus<>(
+      DELETED, DEPRECATED, OBSOLETE, REGION_ID, DeprecationStatus.Status.DELETED);
   private static final Region REGION = Region.builder()
       .regionId(REGION_ID)
       .id(ID)
@@ -49,6 +54,7 @@ public class RegionTest {
       .status(STATUS)
       .zones(ZONES)
       .quotas(QUOTAS)
+      .deprecationStatus(DEPRECATION_STATUS)
       .build();
 
   @Test
@@ -61,6 +67,7 @@ public class RegionTest {
     assertEquals(STATUS, REGION.status());
     assertEquals(ZONES, REGION.zones());
     assertEquals(QUOTAS, REGION.quotas());
+    assertEquals(DEPRECATION_STATUS, REGION.deprecationStatus());
   }
 
   @Test
@@ -81,6 +88,7 @@ public class RegionTest {
     assertEquals(expected.status(), value.status());
     assertEquals(expected.zones(), value.zones());
     assertEquals(expected.quotas(), value.quotas());
+    assertEquals(expected.deprecationStatus(), value.deprecationStatus());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }
