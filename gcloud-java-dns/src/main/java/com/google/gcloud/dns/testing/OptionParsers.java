@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.testing;
+package com.google.gcloud.dns.testing;
 
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
@@ -27,12 +27,8 @@ import java.util.Map;
 /**
  * Utility helpers for LocalDnsHelper.
  */
-class OptionParsersAndExtractors {
+class OptionParsers {
 
-  /**
-   * Makes a map of list options. Expects query to be only query part of the url (i.e., what follows
-   * the '?').
-   */
   static Map<String, Object> parseListZonesOptions(String query) {
     Map<String, Object> options = new HashMap<>();
     if (query != null) {
@@ -41,19 +37,14 @@ class OptionParsersAndExtractors {
         String[] argEntry = arg.split("=");
         switch (argEntry[0]) {
           case "fields":
-            // List fields are in the form "managedZones(field1, field2, ...)"
+            // List fields are in the form "managedZones(field1, field2, ...),nextPageToken"
             String replaced = argEntry[1].replace("managedZones(", ",");
             replaced = replaced.replace(")", ",");
             // we will get empty strings, but it does not matter, they will be ignored
-            options.put(
-                "fields",
-                replaced.split(","));
+            options.put("fields", replaced.split(","));
             break;
           case "dnsName":
             options.put("dnsName", argEntry[1]);
-            break;
-          case "nextPageToken":
-            options.put("nextPageToken", argEntry[1]);
             break;
           case "pageToken":
             options.put("pageToken", argEntry[1]);
@@ -70,10 +61,6 @@ class OptionParsersAndExtractors {
     return options;
   }
 
-  /**
-   * Makes a map of list options. Expects query to be only query part of the url (i.e., what follows
-   * the '?'). This format is common for all of zone, change and project.
-   */
   static String[] parseGetOptions(String query) {
     if (query != null) {
       String[] args = query.split("&");
@@ -88,9 +75,6 @@ class OptionParsersAndExtractors {
     return null;
   }
 
-  /**
-   * Extracts only request fields.
-   */
   static ManagedZone extractFields(ManagedZone fullZone, String[] fields) {
     if (fields == null) {
       return fullZone;
@@ -126,9 +110,6 @@ class OptionParsersAndExtractors {
     return managedZone;
   }
 
-  /**
-   * Extracts only request fields.
-   */
   static Change extractFields(Change fullChange, String[] fields) {
     if (fields == null) {
       return fullChange;
@@ -160,9 +141,6 @@ class OptionParsersAndExtractors {
     return change;
   }
 
-  /**
-   * Extracts only request fields.
-   */
   static Project extractFields(Project fullProject, String[] fields) {
     if (fields == null) {
       return fullProject;
@@ -186,9 +164,6 @@ class OptionParsersAndExtractors {
     return project;
   }
 
-  /**
-   * Extracts only request fields.
-   */
   static ResourceRecordSet extractFields(ResourceRecordSet fullRecord, String[] fields) {
     if (fields == null) {
       return fullRecord;
@@ -226,12 +201,6 @@ class OptionParsersAndExtractors {
             // todo we do not support fragmentation in deletions and additions in the library
             String replaced = argEntry[1].replace("changes(", ",").replace(")", ",");
             options.put("fields", replaced.split(",")); // empty strings will be ignored
-            break;
-          case "name":
-            options.put("name", argEntry[1]);
-            break;
-          case "nextPageToken":
-            options.put("nextPageToken", argEntry[1]);
             break;
           case "pageToken":
             options.put("pageToken", argEntry[1]);
@@ -274,9 +243,6 @@ class OptionParsersAndExtractors {
             break;
           case "pageToken":
             options.put("pageToken", argEntry[1]);
-            break;
-          case "nextPageToken":
-            options.put("nextPageToken", argEntry[1]);
             break;
           case "maxResults":
             // parsing to int is done while handling

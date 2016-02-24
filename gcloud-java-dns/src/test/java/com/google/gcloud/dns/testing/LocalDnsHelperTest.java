@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.testing;
+package com.google.gcloud.dns.testing;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -73,9 +72,6 @@ public class LocalDnsHelperTest {
 
   @BeforeClass
   public static void before() {
-    RRSET1.setName(DNS_NAME);
-    RRSET1.setType(RRSET_TYPE);
-    RRSET1.setRrdatas(ImmutableList.of("1.1.1.1"));
     ZONE1.setName(ZONE_NAME1);
     ZONE1.setDescription("");
     ZONE1.setDnsName(DNS_NAME);
@@ -84,12 +80,15 @@ public class LocalDnsHelperTest {
     ZONE2.setDescription("");
     ZONE2.setDnsName(DNS_NAME);
     ZONE2.setNameServerSet("somenameserveset");
+    RRSET1.setName(DNS_NAME);
+    RRSET1.setType(RRSET_TYPE);
+    RRSET1.setRrdatas(ImmutableList.of("1.1.1.1"));
     RRSET2.setName(DNS_NAME);
     RRSET2.setType(RRSET_TYPE);
+    RRSET2.setRrdatas(ImmutableList.of("123.132.153.156"));
     RRSET_KEEP.setName(DNS_NAME);
     RRSET_KEEP.setType("MX");
     RRSET_KEEP.setRrdatas(ImmutableList.of("255.255.255.254"));
-    RRSET2.setRrdatas(ImmutableList.of("123.132.153.156"));
     CHANGE1.setAdditions(ImmutableList.of(RRSET1, RRSET2));
     CHANGE2.setDeletions(ImmutableList.of(RRSET2));
     CHANGE_KEEP.setAdditions(ImmutableList.of(RRSET_KEEP));
@@ -158,8 +157,8 @@ public class LocalDnsHelperTest {
     assertNotNull(zone1.changes());
     assertTrue(zone1.changes().isEmpty());
     assertNotNull(zone1.dnsRecords());
-    assertEquals(2, zone1.dnsRecords().get(ZONE_NAME1).size()); // default SOA and NS
-    LOCAL_DNS_HELPER.createZone(PROJECT_ID2, ZONE1, null); // project does not exits yet
+    assertEquals(2, zone1.dnsRecords().get().size()); // default SOA and NS
+    LOCAL_DNS_HELPER.createZone(PROJECT_ID2, ZONE1, null); // project does not exist yet
     assertEquals(ZONE1.getName(),
         LOCAL_DNS_HELPER.findZone(PROJECT_ID2, ZONE_NAME1).zone().getName());
   }
@@ -176,7 +175,6 @@ public class LocalDnsHelperTest {
     assertEquals(ZONE1.getDescription(), createdZone.getDescription());
     assertEquals(ZONE1.getDnsName(), createdZone.getDnsName());
     assertEquals(4, createdZone.getNameServers().size());
-    // get the same zone zone
     ManagedZone zone = RPC.getZone(ZONE1.getName(), EMPTY_RPC_OPTIONS);
     assertEquals(createdZone, zone);
     // check that default records were created
@@ -228,11 +226,20 @@ public class LocalDnsHelperTest {
     assertTrue(RPC.deleteZone(ZONE2.getName()));
     assertNull(RPC.getZone(ZONE1.getName(), EMPTY_RPC_OPTIONS));
     assertNull(RPC.getZone(ZONE2.getName(), EMPTY_RPC_OPTIONS));
+    RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
+    RPC.applyChangeRequest(ZONE1.getName(), CHANGE_KEEP, EMPTY_RPC_OPTIONS);
+    try {
+      assertFalse(RPC.deleteZone(ZONE1.getName()));
+    } catch (DnsException ex) {
+      // expected
+      assertEquals(400, ex.code());
+    }
+
   }
 
   @Test
   public void testCreateAndApplyChange() {
-    LocalDnsHelper localDnsThreaded = LocalDnsHelper.create(5 * 1000L); // using threads here
+    LocalDnsHelper localDnsThreaded = LocalDnsHelper.create(1 * 1000L); // using threads here
     localDnsThreaded.createZone(PROJECT_ID1, ZONE1, null);
     assertNull(localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).findChange("1"));
     LocalDnsHelper.Response response
@@ -263,7 +270,7 @@ public class LocalDnsHelperTest {
     }
     assertEquals("done", change.getStatus());
     List<LocalDnsHelper.RrsetWrapper> list =
-        localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).dnsRecords().get(ZONE_NAME1);
+        localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).dnsRecords().get();
     assertTrue(list.contains(new LocalDnsHelper.RrsetWrapper(RRSET_KEEP)));
     localDnsThreaded.stop();
   }
@@ -284,6 +291,7 @@ public class LocalDnsHelperTest {
     assertNull(RPC.getChangeRequest(ZONE1.getName(), "2", EMPTY_RPC_OPTIONS));
     try {
       Change anotherChange = RPC.applyChangeRequest(ZONE1.getName(), CHANGE1, EMPTY_RPC_OPTIONS);
+      fail();
     } catch (DnsException ex) {
       assertEquals(409, ex.code());
     }
@@ -295,10 +303,6 @@ public class LocalDnsHelperTest {
     assertNotNull(RPC.getChangeRequest(ZONE1.getName(), "2", EMPTY_RPC_OPTIONS));
     Change last = RPC.applyChangeRequest(ZONE1.getName(), CHANGE_KEEP, EMPTY_RPC_OPTIONS);
     assertEquals("done", last.getStatus());
-    // todo(mderka) replace with real call
-    List<LocalDnsHelper.RrsetWrapper> list =
-        LOCAL_DNS_HELPER.findZone(REAL_PROJECT_ID, ZONE_NAME1).dnsRecords().get(ZONE_NAME1);
-    assertTrue(list.contains(new LocalDnsHelper.RrsetWrapper(RRSET_KEEP)));
     Iterable<ResourceRecordSet> results =
         RPC.listDnsRecords(ZONE1.getName(), EMPTY_RPC_OPTIONS).results();
     boolean ok = false;
@@ -331,9 +335,6 @@ public class LocalDnsHelperTest {
 
   @Test
   public void testRandomNameServers() {
-    assertEquals(4, LocalDnsHelper.randomNameservers().size());
-    assertEquals(4, LocalDnsHelper.randomNameservers().size());
-    assertEquals(4, LocalDnsHelper.randomNameservers().size());
     assertEquals(4, LocalDnsHelper.randomNameservers().size());
   }
 
@@ -459,12 +460,6 @@ public class LocalDnsHelperTest {
     LocalDnsHelper.Response response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, ZONE1, null);
     assertEquals(200, response.code());
     assertEquals(1, LOCAL_DNS_HELPER.projects().get(PROJECT_ID1).zones().size());
-    try {
-      LOCAL_DNS_HELPER.createZone(PROJECT_ID1, null, null);
-      fail("Zone cannot be null");
-    } catch (NullPointerException ex) {
-      // expected
-    }
     // create zone twice
     response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, ZONE1, null);
     assertEquals(409, response.code());
@@ -711,7 +706,6 @@ public class LocalDnsHelperTest {
 
   @Test
   public void testListZones() {
-    // only interested in no exceptions and non-null response here
     optionsMap.put("dnsName", null);
     optionsMap.put("fields", null);
     optionsMap.put("pageToken", null);
@@ -872,22 +866,31 @@ public class LocalDnsHelperTest {
     assertNotNull(zone.getNameServerSet());
     assertNotNull(zone.getId());
     assertEquals(zone.getName(), managedZoneListResult.pageToken());
-    // paging
-    options = new HashMap<>();
+  }
+
+  @Test
+  public void testZonePaging() {
+    RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
+    RPC.create(ZONE2, EMPTY_RPC_OPTIONS);
+    ImmutableList<ManagedZone> complete = ImmutableList.copyOf(
+        RPC.listZones(EMPTY_RPC_OPTIONS).results());
+    Map<DnsRpc.Option, Object> options = new HashMap<>();
     options.put(DnsRpc.Option.PAGE_SIZE, 1);
-    managedZoneListResult = RPC.listZones(options);
+    DnsRpc.ListResult<ManagedZone> managedZoneListResult = RPC.listZones(options);
     ImmutableList<ManagedZone> page1 = ImmutableList.copyOf(managedZoneListResult.results());
     assertEquals(1, page1.size());
+    assertEquals(complete.get(0), page1.get(0));
+    assertEquals(page1.get(0).getName(), managedZoneListResult.pageToken());
     options.put(DnsRpc.Option.PAGE_TOKEN, managedZoneListResult.pageToken());
     managedZoneListResult = RPC.listZones(options);
     ImmutableList<ManagedZone> page2 = ImmutableList.copyOf(managedZoneListResult.results());
     assertEquals(1, page2.size());
-    assertNotEquals(page1.get(0), page2.get(0));
+    assertEquals(complete.get(1), page2.get(0));
+    assertNull(managedZoneListResult.pageToken());
   }
 
   @Test
   public void testListDnsRecords() {
-    // only interested in no exceptions and non-null response here
     optionsMap.put("name", null);
     optionsMap.put("fields", null);
     optionsMap.put("type", null);
@@ -981,7 +984,6 @@ public class LocalDnsHelperTest {
     results = RPC.listDnsRecords(ZONE1.getName(), options).results();
     records = ImmutableList.copyOf(results);
     assertEquals(3, records.size());
-
     // dnsName filter
     options = new HashMap<>();
     options.put(DnsRpc.Option.NAME, "aaa");
@@ -1075,13 +1077,26 @@ public class LocalDnsHelperTest {
     assertNull(record.getType());
     assertNull(record.getTtl());
     assertNotNull(resourceRecordSetListResult.pageToken());
-    // paging
+  }
+
+  @Test
+  public void testDnsRecordPaging() {
+    RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
+    List<ResourceRecordSet> complete = ImmutableList.copyOf(
+        RPC.listDnsRecords(ZONE1.getName(), EMPTY_RPC_OPTIONS).results());
+    Map<DnsRpc.Option, Object> options = new HashMap<>();
+    options.put(DnsRpc.Option.PAGE_SIZE, 1);
+    DnsRpc.ListResult<ResourceRecordSet> resourceRecordSetListResult =
+        RPC.listDnsRecords(ZONE1.getName(), options);
+    ImmutableList<ResourceRecordSet> records =
+        ImmutableList.copyOf(resourceRecordSetListResult.results());
+    assertEquals(1, records.size());
+    assertEquals(complete.get(0), records.get(0));
     options.put(DnsRpc.Option.PAGE_TOKEN, resourceRecordSetListResult.pageToken());
     resourceRecordSetListResult = RPC.listDnsRecords(ZONE1.getName(), options);
     records = ImmutableList.copyOf(resourceRecordSetListResult.results());
     assertEquals(1, records.size());
-    ResourceRecordSet nextRecord = records.get(0);
-    assertNotEquals(record, nextRecord);
+    assertEquals(complete.get(1), records.get(0));
   }
 
   @Test
@@ -1270,20 +1285,29 @@ public class LocalDnsHelperTest {
     assertNull(complex.getStartTime());
     assertNull(complex.getStatus());
     assertNotNull(changeListResult.pageToken());
-    // paging
-    options.put(DnsRpc.Option.FIELDS, "nextPageToken,changes(id)");
+  }
+
+  @Test
+  public void testChangePaging() {
+    RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
+    RPC.applyChangeRequest(ZONE1.getName(), CHANGE1, EMPTY_RPC_OPTIONS);
+    RPC.applyChangeRequest(ZONE1.getName(), CHANGE2, EMPTY_RPC_OPTIONS);
+    RPC.applyChangeRequest(ZONE1.getName(), CHANGE_KEEP, EMPTY_RPC_OPTIONS);
+    ImmutableList<Change> complete =
+        ImmutableList.copyOf(RPC.listChangeRequests(ZONE1.getName(), EMPTY_RPC_OPTIONS).results());
+    Map<DnsRpc.Option, Object> options = new HashMap<>();
     options.put(DnsRpc.Option.PAGE_SIZE, 1);
-    changeListResult = RPC.listChangeRequests(ZONE1.getName(), options);
-    changes = ImmutableList.copyOf(changeListResult.results());
+    DnsRpc.ListResult<Change> changeListResult = RPC.listChangeRequests(ZONE1.getName(), options);
+    List<Change> changes = ImmutableList.copyOf(changeListResult.results());
     assertEquals(1, changes.size());
-    final Change first = changes.get(0);
-    assertNotNull(changeListResult.pageToken());
+    assertEquals(complete.get(0), changes.get(0));
+    assertEquals(complete.get(0).getId(), changeListResult.pageToken());
     options.put(DnsRpc.Option.PAGE_TOKEN, changeListResult.pageToken());
     changeListResult = RPC.listChangeRequests(ZONE1.getName(), options);
     changes = ImmutableList.copyOf(changeListResult.results());
     assertEquals(1, changes.size());
-    Change second = changes.get(0);
-    assertNotEquals(first, second);
+    assertEquals(complete.get(1), changes.get(0));
+    assertEquals(complete.get(1).getId(), changeListResult.pageToken());
   }
 
   @Test
@@ -1501,11 +1525,10 @@ public class LocalDnsHelperTest {
     assertFalse(LocalDnsHelper.checkRrData("111.255.12", "A"));
     assertFalse(LocalDnsHelper.checkRrData("111.255.12.11.11", "A"));
     // AAAA
-    assertTrue(LocalDnsHelper.checkRrData(":::::::", "AAAA"));
-    assertTrue(LocalDnsHelper.checkRrData("1F:fa:09fd::343:aaaa:AAAA:", "AAAA"));
-    assertTrue(LocalDnsHelper.checkRrData("0000:FFFF:09fd::343:aaaa:AAAA:", "AAAA"));
+    assertTrue(LocalDnsHelper.checkRrData("1F:fa:09fd::343:aaaa:AAAA:0", "AAAA"));
+    assertTrue(LocalDnsHelper.checkRrData("0000:FFFF:09fd::343:aaaa:AAAA:0", "AAAA"));
     assertFalse(LocalDnsHelper.checkRrData("-2:::::::", "AAAA"));
-    assertTrue(LocalDnsHelper.checkRrData("0:::::::", "AAAA"));
+    assertTrue(LocalDnsHelper.checkRrData("0::0", "AAAA"));
     assertFalse(LocalDnsHelper.checkRrData("::1FFFF:::::", "AAAA"));
     assertFalse(LocalDnsHelper.checkRrData("::aqaa:::::", "AAAA"));
     assertFalse(LocalDnsHelper.checkRrData("::::::::", "AAAA")); // too long
@@ -1587,13 +1610,12 @@ public class LocalDnsHelperTest {
     ResourceRecordSet nonExistent = new ResourceRecordSet();
     nonExistent.setName(ZONE1.getDnsName());
     nonExistent.setType("AAAA");
-    nonExistent.setRrdatas(ImmutableList.of(":::::::"));
+    nonExistent.setRrdatas(ImmutableList.of("0:0:0:0:5::6"));
     Change delete = new Change();
     delete.setDeletions(ImmutableList.of(nonExistent));
     response = LocalDnsHelper.checkChange(delete, zoneContainer);
     assertEquals(404, response.code());
     assertTrue(response.body().contains("deletions[0]"));
-
   }
 
   @Test
@@ -1611,7 +1633,6 @@ public class LocalDnsHelperTest {
         LocalDnsHelper.additionsMeetDeletions(ImmutableList.of(validA), null, container);
     assertEquals(409, response.code());
     assertTrue(response.body().contains("already exists"));
-
   }
 
   @Test
@@ -1638,7 +1659,7 @@ public class LocalDnsHelperTest {
     // delete and add SOA
     Change addition = new Change();
     ImmutableList<LocalDnsHelper.RrsetWrapper> rrsetWrappers
-        = LOCAL_DNS_HELPER.findZone(PROJECT_ID1, ZONE_NAME1).dnsRecords().get(ZONE_NAME1);
+        = LOCAL_DNS_HELPER.findZone(PROJECT_ID1, ZONE_NAME1).dnsRecords().get();
     LinkedList<ResourceRecordSet> deletions = new LinkedList<>();
     LinkedList<ResourceRecordSet> additions = new LinkedList<>();
     for (LocalDnsHelper.RrsetWrapper wrapper : rrsetWrappers) {
@@ -1762,7 +1783,7 @@ public class LocalDnsHelperTest {
     ResourceRecordSet nonExistent = new ResourceRecordSet();
     nonExistent.setName(ZONE1.getDnsName());
     nonExistent.setType("AAAA");
-    nonExistent.setRrdatas(ImmutableList.of(":::::::"));
+    nonExistent.setRrdatas(ImmutableList.of("2607:f8b0:400a:801::1005"));
     Change delete = new Change();
     delete.setDeletions(ImmutableList.of(nonExistent));
     response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, delete, null);
