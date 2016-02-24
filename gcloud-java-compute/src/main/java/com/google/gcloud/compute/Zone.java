@@ -356,7 +356,9 @@ public final class Zone implements Serializable {
     zonePb.setName(zoneId.zone());
     zonePb.setDescription(description);
     zonePb.setSelfLink(selfLink);
-    zonePb.setStatus(status.name());
+    if (status != null) {
+      zonePb.setStatus(status.name());
+    }
     if (maintenanceWindows != null) {
       zonePb.setMaintenanceWindows(
           Lists.transform(maintenanceWindows, MaintenanceWindow.TO_PB_FUNCTION));

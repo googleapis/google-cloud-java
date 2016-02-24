@@ -75,7 +75,6 @@ public class MachineTypeTest {
   public void testToPbAndFromPb() {
     compareMachineTypes(MACHINE_TYPE, MachineType.fromPb(MACHINE_TYPE.toPb()));
     MachineType machineType = MachineType.builder()
-        .id(ID)
         .machineTypeId(MACHINE_TYPE_ID)
         .selfLink(MACHINE_TYPE_ID.toUrl())
         .build();

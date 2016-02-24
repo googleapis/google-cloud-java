@@ -99,14 +99,14 @@ public final class DiskTypeId extends ZoneResourceId {
   }
 
   /**
-   * Returns a disk type identity given the zone disk and disk type.
+   * Returns a disk type identity given the zone and disk type names.
    */
   public static DiskTypeId of(String zone, String diskType) {
     return of(ZoneId.of(null, zone), diskType);
   }
 
   /**
-   * Returns a disk type identity given project disk, zone disk and disk type.
+   * Returns a disk type identity given project disk, zone and disk type names.
    */
   public static DiskTypeId of(String project, String zone, String diskType) {
     return of(ZoneId.of(project, zone), diskType);

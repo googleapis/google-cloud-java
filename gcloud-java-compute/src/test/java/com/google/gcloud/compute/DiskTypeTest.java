@@ -63,7 +63,6 @@ public class DiskTypeTest {
   public void testToPbAndFromPb() {
     compareDiskTypes(DISK_TYPE, DiskType.fromPb(DISK_TYPE.toPb()));
     DiskType diskType = DiskType.builder()
-        .id(ID)
         .diskTypeId(DISK_TYPE_ID)
         .selfLink(DISK_TYPE_ID.toUrl())
         .build();

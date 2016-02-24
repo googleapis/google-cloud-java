@@ -327,7 +327,9 @@ public final class Region implements Serializable {
     regionPb.setName(regionId.region());
     regionPb.setDescription(description);
     regionPb.setSelfLink(selfLink);
-    regionPb.setStatus(status.name());
+    if (status != null) {
+      regionPb.setStatus(status.name());
+    }
     if (zones != null) {
       regionPb.setZones(Lists.transform(zones, ZoneId.TO_URL_FUNCTION));
     }
