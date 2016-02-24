@@ -77,6 +77,8 @@ public class ZoneTest {
     compareZones(ZONE, zone);
     assertEquals(ZONE_ID.project(), zone.zoneId().project());
     assertEquals(ZONE_ID.zone(), zone.zoneId().zone());
+    zone = Zone.builder().zoneId(ZONE_ID).selfLink(ZONE_ID.toUrl()).build();
+    compareZones(zone, Zone.fromPb(zone.toPb()));
   }
 
   private void compareZones(Zone expected, Zone value) {

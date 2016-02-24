@@ -76,6 +76,8 @@ public class RegionTest {
     compareRegions(REGION, region);
     assertEquals(REGION_ID.project(), region.regionId().project());
     assertEquals(REGION_ID.region(), region.regionId().region());
+    region = Region.builder().regionId(REGION_ID).selfLink(REGION_ID.toUrl()).build();
+    compareRegions(region, Region.fromPb(region.toPb()));
   }
 
   private void compareRegions(Region expected, Region value) {

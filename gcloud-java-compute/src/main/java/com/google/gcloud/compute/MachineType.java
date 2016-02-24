@@ -164,7 +164,7 @@ public final class MachineType implements Serializable {
   }
 
   /**
-   * Returns an unique identifier for the machin type; defined by the service.
+   * Returns an unique identifier for the machine type; defined by the service.
    */
   public BigInteger id() {
     return id;

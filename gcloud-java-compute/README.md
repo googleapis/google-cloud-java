@@ -10,7 +10,8 @@ Java idiomatic client for [Google Cloud Compute] (https://cloud.google.com/compu
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
-<!-- TODO(mziccard): add link to API documentatin -->
+
+<!-- TODO(mziccard): add link to API documentation -->
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
