@@ -1,68 +1,104 @@
+/*
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.google.gcloud.pubsub.testing;
 
-import com.google.gcloud.pubsub.spi.testing.LocalPublisherImpl;
-import com.google.pubsub.v1.PublisherGrpc;
+import com.google.api.gax.testing.DownloadableEmulatorRunner;
+import com.google.api.gax.testing.GCloudEmulatorRunner;
+import com.google.api.gax.testing.LocalServiceHelper;
 
 import io.grpc.ManagedChannel;
-import io.grpc.Server;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
-import io.grpc.netty.NettyServerBuilder;
-import io.netty.channel.local.LocalAddress;
-import io.netty.channel.local.LocalChannel;
-import io.netty.channel.local.LocalServerChannel;
 
 import java.io.IOException;
-import java.net.SocketAddress;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
- * A class that runs an in-memory Publisher instance for use in tests.
+ * A class that runs a Pubsub emulator instance for use in tests.
  */
 public class LocalPubsubHelper {
-  private static int FLOW_CONTROL_WINDOW = 65 * 1024;
+  private final LocalServiceHelper serviceHelper;
+  private final List<String> gcloudCommand;
+  private final URL emulatorUrl;
 
-  private final SocketAddress address;
-  private final Server server;
-  private final LocalPublisherImpl publisherImpl;
+  // Local server settings
+  private static final int DEFAULT_PORT = 8080;
+  private static final String DEFAULT_HOST = "localhost";
+
+  // GCloud emulator settings
+  private static final String GCLOUD_CMD_TEXT = "gcloud beta emulators pubsub start --host-port";
+  private static final String VERSION_PREFIX = "pubsub-emulator";
+  private static final String MIN_VERSION = "2016.01.13";
+
+  // Downloadable emulator settings
+  private static final String FILENAME = "pubsub-emulator-20160113-2.zip";
+  private static final String BIN_NAME = "pubsub-emulator/bin/cloud-pubsub-fake";
+  private static final String MD5_CHECKSUM = "20943e9defa300f2de101568459c133d";
 
   /**
    * Constructs a new LocalPubsubHelper. The method start() must
    * be called before it is used.
+   * @throws MalformedURLException
    */
-  public LocalPubsubHelper(String addressString) {
-    address = new LocalAddress(addressString);
-    publisherImpl = new LocalPublisherImpl();
-    NettyServerBuilder builder = NettyServerBuilder
-        .forAddress(address)
-        .flowControlWindow(FLOW_CONTROL_WINDOW)
-        .channelType(LocalServerChannel.class);
-    builder.addService(PublisherGrpc.bindService(publisherImpl));
-    server = builder.build();
+  public LocalPubsubHelper() throws MalformedURLException {
+    gcloudCommand = new ArrayList<>(Arrays.asList(GCLOUD_CMD_TEXT.split(" ")));
+    gcloudCommand.add(DEFAULT_HOST);
+    emulatorUrl =
+        new URL("http://storage.googleapis.com/pubsub/tools/" + FILENAME);
+    GCloudEmulatorRunner gcloudRunner =
+        new GCloudEmulatorRunner(gcloudCommand, VERSION_PREFIX, MIN_VERSION);
+    DownloadableEmulatorRunner downloadRunner =
+        new DownloadableEmulatorRunner(Arrays.asList(BIN_NAME), emulatorUrl, MD5_CHECKSUM);
+    serviceHelper =
+        new LocalServiceHelper(Arrays.asList(gcloudRunner, downloadRunner), DEFAULT_PORT);
   }
 
   /**
-   * Starts the in-memory service.
+   * Start the local pubsub emulator through gcloud, download the zip file if user does not have
+   * gcloud installed.
+   * @throws InterruptedException
+   * @throws IOException
    */
-  public void start() {
-    try {
-      server.start();
-    } catch (IOException ex) {
-      throw new RuntimeException(ex);
-    }
+  public void start() throws IOException, InterruptedException {
+    String blockUntilOutput = Integer.toString(DEFAULT_PORT);
+    serviceHelper.start(blockUntilOutput);
   }
 
   /**
-   * Resets the state of the in-memory service.
+   * Reset the internal state of the emulator.
+   * @throws InterruptedException
+   * @throws IOException
    */
-  public void reset() {
-    publisherImpl.reset();
+  public void reset() throws IOException, InterruptedException {
+    this.serviceHelper.sendPostRequest("/reset");
   }
 
   /**
-   * Returns the internal in-memory service.
+   * Quit the local emulator and related local service.
+   * @throws InterruptedException
+   * @throws IOException
    */
-  public LocalPublisherImpl getPublisherImpl() {
-    return publisherImpl;
+  public void stop() throws IOException, InterruptedException {
+    this.serviceHelper.sendPostRequest("/shutdown");
+    this.serviceHelper.stop();
   }
 
   /**
@@ -70,16 +106,8 @@ public class LocalPubsubHelper {
    */
   public ManagedChannel createChannel() {
     return NettyChannelBuilder
-        .forAddress(address)
+        .forAddress(DEFAULT_HOST, DEFAULT_PORT)
         .negotiationType(NegotiationType.PLAINTEXT)
-        .channelType(LocalChannel.class)
         .build();
-  }
-
-  /**
-   * Shuts down the in-memory service.
-   */
-  public void shutdownNow() {
-    server.shutdownNow();
   }
 }
