@@ -368,7 +368,7 @@ public class DnsImplTest {
     assertTrue(selector.contains(Dns.DnsRecordField.TTL.selector()));
     selector = (String) capturedOptions.getValue().get(DNS_RECORD_LIST_OPTIONS[3].rpcOption());
     assertEquals(DNS_RECORD_LIST_OPTIONS[3].value(), selector);
-    DnsRecord.Type type = (DnsRecord.Type) capturedOptions.getValue().get(DNS_RECORD_LIST_OPTIONS[4]
+    String type = (String) capturedOptions.getValue().get(DNS_RECORD_LIST_OPTIONS[4]
         .rpcOption());
     assertEquals(DNS_RECORD_LIST_OPTIONS[4].value(), type);
   }

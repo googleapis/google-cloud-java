@@ -162,7 +162,9 @@ public class DefaultDnsRpc implements DnsRpc {
     } catch (IOException ex) {
       DnsException serviceException = translate(ex);
       if (serviceException.code() == HTTP_NOT_FOUND) {
-        if (serviceException.location().equals("entity.parameters.changeId")) {
+        if ("entity.parameters.changeId".equals(serviceException.location())
+            || (serviceException.getMessage() != null
+            && serviceException.getMessage().contains("parameters.changeId"))) {
           // the change id was not found, but the zone exists
           return null;
         }
