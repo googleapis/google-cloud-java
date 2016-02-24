@@ -27,9 +27,9 @@ public class DeprecationStatusTest {
   private static final String DELETED = "2016-01-20T04:39:00.210-08:00";
   private static final String DEPRECATED = "2016-01-20T04:37:00.210-08:00";
   private static final String OBSOLETE = "2016-01-20T04:38:00.210-08:00";
-  private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone","diskType");
+  private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
   private static final MachineTypeId MACHINE_TYPE_ID =
-      MachineTypeId.of("project", "zone","machineType");
+      MachineTypeId.of("project", "zone", "machineType");
   private static final Status STATUS = Status.DELETED;
   private static final DeprecationStatus<DiskTypeId> DISK_TYPE_STATUS =
       new DeprecationStatus<>(DELETED, DEPRECATED, OBSOLETE, DISK_TYPE_ID, STATUS);

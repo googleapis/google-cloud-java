@@ -58,6 +58,7 @@ public final class Zone implements Serializable {
   private final Status status;
   private final List<MaintenanceWindow> maintenanceWindows;
   private final RegionId region;
+  private final DeprecationStatus<ZoneId> deprecationStatus;
 
   /**
    * Status of the region.
@@ -185,6 +186,7 @@ public final class Zone implements Serializable {
     private Status status;
     private List<MaintenanceWindow> maintenanceWindows;
     private RegionId region;
+    private DeprecationStatus<ZoneId> deprecationStatus;
 
     private Builder() {}
 
@@ -228,6 +230,11 @@ public final class Zone implements Serializable {
       return this;
     }
 
+    Builder deprecationStatus(DeprecationStatus<ZoneId> deprecationStatus) {
+      this.deprecationStatus = deprecationStatus;
+      return this;
+    }
+
     Zone build() {
       return new Zone(this);
     }
@@ -242,6 +249,7 @@ public final class Zone implements Serializable {
     this.status = builder.status;
     this.maintenanceWindows = builder.maintenanceWindows;
     this.region = builder.region;
+    this.deprecationStatus = builder.deprecationStatus;
   }
 
   /**
@@ -306,6 +314,15 @@ public final class Zone implements Serializable {
     return region;
   }
 
+  /**
+   * Returns the deprecation status of the zone. If {@link DeprecationStatus#status()} is either
+   * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the zone
+   * should not be used. Returns {@code null} if the zone is not deprecated.
+   */
+  public DeprecationStatus<ZoneId> deprecationStatus() {
+    return deprecationStatus;
+  }
+
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
@@ -317,6 +334,7 @@ public final class Zone implements Serializable {
         .add("status", status)
         .add("maintenanceWindows", maintenanceWindows)
         .add("region", region)
+        .add("deprecationStatus", deprecationStatus)
         .toString();
   }
 
@@ -346,6 +364,9 @@ public final class Zone implements Serializable {
     if (region != null) {
       zonePb.setRegion(region.toUrl());
     }
+    if (deprecationStatus != null) {
+      zonePb.setDeprecated(deprecationStatus.toPb());
+    }
     return zonePb;
   }
 
@@ -369,6 +390,10 @@ public final class Zone implements Serializable {
     }
     if (zonePb.getRegion() != null) {
       builder.region(RegionId.fromUrl(zonePb.getRegion()));
+    }
+    if (zonePb.getDeprecated() != null) {
+      builder.deprecationStatus(
+          DeprecationStatus.fromPb(zonePb.getDeprecated(), ZoneId.FROM_URL_FUNCTION));
     }
     return builder.build();
   }

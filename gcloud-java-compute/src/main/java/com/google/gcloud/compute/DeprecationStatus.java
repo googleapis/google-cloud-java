@@ -40,17 +40,19 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
    */
   public enum Status {
     /**
-     * Operations that create Google Compute Engine entity using a deprecated resource will return
+     * Operations that create a Google Compute Engine entity using a deprecated resource will return
      * successfully but with a warning indicating the deprecation and suggesting a replacement.
      */
     DEPRECATED,
+
     /**
-     * Operations that create Google Compute Engine entity using an obsolete resource will be
+     * Operations that create a Google Compute Engine entity using an obsolete resource will be
      * rejected and result in an error.
      */
     OBSOLETE,
+
     /**
-     * Operations that create Google Compute Engine entity using a deleted resource will be
+     * Operations that create a Google Compute Engine entity using a deleted resource will be
      * rejected and result in an error.
      */
     DELETED

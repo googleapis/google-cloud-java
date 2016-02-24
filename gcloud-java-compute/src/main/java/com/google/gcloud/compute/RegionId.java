@@ -18,6 +18,7 @@ package com.google.gcloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
 
 import java.util.Objects;
@@ -26,6 +27,19 @@ import java.util.Objects;
  * A Google Compute Engine region identity.
  */
 public final class RegionId extends ResourceId {
+
+  static final Function<String, RegionId> FROM_URL_FUNCTION = new Function<String, RegionId>() {
+    @Override
+    public RegionId apply(String pb) {
+      return RegionId.fromUrl(pb);
+    }
+  };
+  static final Function<RegionId, String> TO_URL_FUNCTION = new Function<RegionId, String>() {
+    @Override
+    public String apply(RegionId regionId) {
+      return regionId.toUrl();
+    }
+  };
 
   private static final long serialVersionUID = 5569092266957249294L;
 
