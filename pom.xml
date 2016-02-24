@@ -99,7 +99,6 @@
     <module>gcloud-java-core</module>
     <module>gcloud-java-datastore</module>
     <module>gcloud-java-examples</module>
-    <module>gcloud-java-gax</module>
     <module>gcloud-java-pubsub</module>
     <module>gcloud-java-resourcemanager</module>
     <module>gcloud-java-storage</module>
