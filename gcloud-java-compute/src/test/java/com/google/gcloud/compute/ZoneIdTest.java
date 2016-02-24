@@ -17,10 +17,14 @@
 package com.google.gcloud.compute;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class ZoneIdTest {
 
@@ -28,6 +32,9 @@ public class ZoneIdTest {
   private static final String ZONE = "zone";
   private static final String URL =
       "https://www.googleapis.com/compute/v1/projects/project/zones/zone";
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOf() {
@@ -51,6 +58,15 @@ public class ZoneIdTest {
     ZoneId zoneId = ZoneId.of(PROJECT, ZONE);
     assertSame(zoneId, zoneId.setProjectId(PROJECT));
     compareZoneId(zoneId, ZoneId.of(ZONE).setProjectId(PROJECT));
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("notMatchingUrl is not a valid zone URL");
+    zoneId = ZoneId.fromUrl("notMatchingUrl");
+  }
+
+  @Test
+  public void testMatchesUrl() {
+    assertTrue(ZoneId.matchesUrl(ZoneId.of(PROJECT, ZONE).toUrl()));
+    assertFalse(ZoneId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareZoneId(ZoneId expected, ZoneId value) {

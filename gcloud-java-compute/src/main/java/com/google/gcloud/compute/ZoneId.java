@@ -41,6 +41,7 @@ public final class ZoneId extends ResourceId {
     }
   };
 
+  static final String REGEX = ResourceId.REGEX + "zones/[^/]+";
   private static final long serialVersionUID = -7635391994812946733L;
 
   private final String zone;
@@ -100,9 +101,17 @@ public final class ZoneId extends ResourceId {
   }
 
   /**
-   * Returns a new zone identity given a zone URL.
+   * Returns {@code true} if the provided string matches the expected format of a zone URL.
+   * Returns {@code false} otherwise.
    */
+  static boolean matchesUrl(String url) {
+    return url.matches(REGEX);
+  }
+
   static ZoneId fromUrl(String url) {
+    if (!matchesUrl(url)) {
+      throw new IllegalArgumentException(url + " is not a valid zone URL");
+    }
     int projectsIndex = url.indexOf("/projects/");
     int zonesIndex = url.indexOf("/zones/");
     String project = url.substring(projectsIndex + 10, zonesIndex);

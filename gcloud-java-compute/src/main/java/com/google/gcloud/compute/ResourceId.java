@@ -26,6 +26,8 @@ import java.util.Objects;
  */
 public abstract class ResourceId implements Serializable {
 
+  static final String REGEX =
+      "(https?://(www|content).googleapis.com/compute/v1/)?projects/[^/]+/";
   private static final long serialVersionUID = -8028734746870421573L;
 
   private String project;

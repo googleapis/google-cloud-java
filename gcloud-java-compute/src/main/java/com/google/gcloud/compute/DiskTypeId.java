@@ -41,6 +41,7 @@ public final class DiskTypeId extends ZoneResourceId {
     }
   };
 
+  static final String REGEX = ZoneResourceId.REGEX + "diskTypes/[^/]+";
   private static final long serialVersionUID = 7337881474103686219L;
 
   private final String diskType;
@@ -112,7 +113,18 @@ public final class DiskTypeId extends ZoneResourceId {
     return of(ZoneId.of(project, zone), diskType);
   }
 
+  /**
+   * Returns {@code true} if the provided string matches the expected format of a disk type URL.
+   * Returns {@code false} otherwise.
+   */
+  static boolean matchesUrl(String url) {
+    return url.matches(REGEX);
+  }
+
   static DiskTypeId fromUrl(String url) {
+    if (!matchesUrl(url)) {
+      throw new IllegalArgumentException(url + " is not a valid disk type URL");
+    }
     int projectsIndex = url.indexOf("/projects/");
     int zonesIndex = url.indexOf("/zones/");
     int diskTypesIndex = url.indexOf("/diskTypes/");

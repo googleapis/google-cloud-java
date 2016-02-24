@@ -17,10 +17,14 @@
 package com.google.gcloud.compute;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class DiskTypeIdTest {
 
@@ -29,6 +33,9 @@ public class DiskTypeIdTest {
   private static final String DISK_TYPE = "diskType";
   private static final String URL =
       "https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType";
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOf() {
@@ -48,6 +55,9 @@ public class DiskTypeIdTest {
     DiskTypeId diskTypeId = DiskTypeId.of(PROJECT, ZONE, DISK_TYPE);
     assertSame(diskTypeId, diskTypeId.setProjectId(PROJECT));
     compareDiskTypeId(diskTypeId, DiskTypeId.fromUrl(diskTypeId.toUrl()));
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("notMatchingUrl is not a valid disk type URL");
+    diskTypeId = DiskTypeId.fromUrl("notMatchingUrl");
   }
 
   @Test
@@ -55,6 +65,12 @@ public class DiskTypeIdTest {
     DiskTypeId diskTypeId = DiskTypeId.of(PROJECT, ZONE, DISK_TYPE);
     assertSame(diskTypeId, diskTypeId.setProjectId(PROJECT));
     compareDiskTypeId(diskTypeId, DiskTypeId.of(ZONE, DISK_TYPE).setProjectId(PROJECT));
+  }
+
+  @Test
+  public void testMatchesUrl() {
+    assertTrue(DiskTypeId.matchesUrl(DiskTypeId.of(PROJECT, ZONE, DISK_TYPE).toUrl()));
+    assertFalse(DiskTypeId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareDiskTypeId(DiskTypeId expected, DiskTypeId value) {

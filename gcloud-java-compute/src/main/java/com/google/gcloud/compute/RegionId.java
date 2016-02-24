@@ -41,6 +41,7 @@ public final class RegionId extends ResourceId {
     }
   };
 
+  static final String REGEX = ResourceId.REGEX + "regions/[^/]+";
   private static final long serialVersionUID = 5569092266957249294L;
 
   private final String region;
@@ -105,9 +106,17 @@ public final class RegionId extends ResourceId {
   }
 
   /**
-   * Returns a new region identity given a region URL.
+   * Returns {@code true} if the provided string matches the expected format of a region URL.
+   * Returns {@code false} otherwise.
    */
+  static boolean matchesUrl(String url) {
+    return url.matches(REGEX);
+  }
+
   static RegionId fromUrl(String url) {
+    if (!matchesUrl(url)) {
+      throw new IllegalArgumentException(url + " is not a valid region URL");
+    }
     int projectsIndex = url.indexOf("/projects/");
     int regionsIndex = url.indexOf("/regions/");
     String project = url.substring(projectsIndex + 10, regionsIndex);

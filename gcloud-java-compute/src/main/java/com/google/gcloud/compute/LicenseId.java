@@ -41,6 +41,7 @@ public final class LicenseId extends ResourceId {
     }
   };
 
+  static final String REGEX = ResourceId.REGEX + "global/licenses/[^/]+";
   private static final long serialVersionUID = -2239484554024469651L;
 
   private final String license;
@@ -105,7 +106,18 @@ public final class LicenseId extends ResourceId {
     return new LicenseId(project, license);
   }
 
+  /**
+   * Returns {@code true} if the provided string matches the expected format of a license URL.
+   * Returns {@code false} otherwise.
+   */
+  static boolean matchesUrl(String url) {
+    return url.matches(REGEX);
+  }
+
   static LicenseId fromUrl(String url) {
+    if (!matchesUrl(url)) {
+      throw new IllegalArgumentException(url + " is not a valid license URL");
+    }
     int projectsIndex = url.indexOf("/projects/");
     int licensesIndex = url.indexOf("/global/licenses/");
     String project = url.substring(projectsIndex + 10, licensesIndex);
