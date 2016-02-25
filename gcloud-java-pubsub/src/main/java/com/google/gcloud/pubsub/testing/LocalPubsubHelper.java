@@ -61,8 +61,7 @@ public class LocalPubsubHelper {
   public LocalPubsubHelper() throws MalformedURLException {
     gcloudCommand = new ArrayList<>(Arrays.asList(GCLOUD_CMD_TEXT.split(" ")));
     gcloudCommand.add(DEFAULT_HOST);
-    emulatorUrl =
-        new URL("http://storage.googleapis.com/pubsub/tools/" + FILENAME);
+    emulatorUrl = new URL("http://storage.googleapis.com/pubsub/tools/" + FILENAME);
     GCloudEmulatorRunner gcloudRunner =
         new GCloudEmulatorRunner(gcloudCommand, VERSION_PREFIX, MIN_VERSION);
     DownloadableEmulatorRunner downloadRunner =
@@ -105,8 +104,7 @@ public class LocalPubsubHelper {
    * Creates a channel for making requests to the in-memory service.
    */
   public ManagedChannel createChannel() {
-    return NettyChannelBuilder
-        .forAddress(DEFAULT_HOST, DEFAULT_PORT)
+    return NettyChannelBuilder.forAddress(DEFAULT_HOST, DEFAULT_PORT)
         .negotiationType(NegotiationType.PLAINTEXT)
         .build();
   }
