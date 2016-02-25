@@ -37,6 +37,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -56,6 +58,9 @@ public class LocalResourceManagerHelper {
   private static final URI BASE_CONTEXT;
   private static final Set<String> SUPPORTED_COMPRESSION_ENCODINGS =
       ImmutableSet.of("gzip", "x-gzip");
+  private static final Pattern LIST_FIELDS_PATTERN =
+      Pattern.compile("(.*?)projects\\((.*?)\\)(.*?)");
+  private static final String[] NO_FIELDS = {};
 
   static {
     try {
@@ -236,10 +241,15 @@ public class LocalResourceManagerHelper {
         String[] argEntry = arg.split("=");
         switch (argEntry[0]) {
           case "fields":
-            // List fields are in the form "projects(field1, field2, ...)"
-            options.put(
-                "fields",
-                argEntry[1].substring("projects(".length(), argEntry[1].length() - 1).split(","));
+            // List fields are in the form "projects(field1, field2, ...),nextPageToken"
+            Matcher matcher = LIST_FIELDS_PATTERN.matcher(argEntry[1]);
+            if (matcher.matches()) {
+              options.put("projectFields", matcher.group(2).split(","));
+              options.put("listFields", (matcher.group(1) + matcher.group(3)).split(","));
+            } else {
+              options.put("projectFields", NO_FIELDS);
+              options.put("listFields", argEntry[1].split(","));
+            }
             break;
           case "filter":
             options.put("filter", argEntry[1].split(" "));
@@ -362,7 +372,7 @@ public class LocalResourceManagerHelper {
     if (filters != null && !isValidFilter(filters)) {
       return Error.INVALID_ARGUMENT.response("Could not parse the filter.");
     }
-    String[] fields = (String[]) options.get("fields");
+    String[] projectFields = (String[]) options.get("projectFields");
     int count = 0;
     String pageToken = (String) options.get("pageToken");
     Integer pageSize = (Integer) options.get("pageSize");
@@ -380,19 +390,28 @@ public class LocalResourceManagerHelper {
       if (includeProject) {
         count++;
         try {
-          projectsSerialized.add(jsonFactory.toString(extractFields(p, fields)));
+          projectsSerialized.add(jsonFactory.toString(extractFields(p, projectFields)));
         } catch (IOException e) {
           return Error.INTERNAL_ERROR.response(
               "Error when serializing project " + p.getProjectId());
         }
       }
     }
+    String[] listFields = (String[]) options.get("listFields");
     StringBuilder responseBody = new StringBuilder();
-    responseBody.append("{\"projects\": [");
-    Joiner.on(",").appendTo(responseBody, projectsSerialized);
-    responseBody.append(']');
-    if (nextPageToken != null) {
-      responseBody.append(", \"nextPageToken\": \"");
+    responseBody.append('{');
+    // If fields parameter is set but no project field is selected we must return no projects.
+    if (!(projectFields != null && projectFields.length == 0)) {
+      responseBody.append("\"projects\": [");
+      Joiner.on(",").appendTo(responseBody, projectsSerialized);
+      responseBody.append(']');
+    }
+    if (nextPageToken != null && (listFields == null
+        || ImmutableSet.copyOf(listFields).contains("nextPageToken"))) {
+      if (responseBody.length() > 1) {
+        responseBody.append(',');
+      }
+      responseBody.append("\"nextPageToken\": \"");
       responseBody.append(nextPageToken);
       responseBody.append('"');
     }

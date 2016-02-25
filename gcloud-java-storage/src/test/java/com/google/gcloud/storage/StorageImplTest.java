@@ -586,7 +586,8 @@ public class StorageImplTest {
     assertTrue(selector.contains("name"));
     assertTrue(selector.contains("acl"));
     assertTrue(selector.contains("location"));
-    assertEquals(24, selector.length());
+    assertTrue(selector.contains("nextPageToken"));
+    assertEquals(38, selector.length());
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
   }
@@ -606,7 +607,8 @@ public class StorageImplTest {
     String selector = (String) capturedOptions.getValue().get(BLOB_LIST_FIELDS.rpcOption());
     assertTrue(selector.contains("items"));
     assertTrue(selector.contains("name"));
-    assertEquals(11, selector.length());
+    assertTrue(selector.contains("nextPageToken"));
+    assertEquals(25, selector.length());
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
   }
@@ -678,7 +680,8 @@ public class StorageImplTest {
     assertTrue(selector.contains("name"));
     assertTrue(selector.contains("contentType"));
     assertTrue(selector.contains("md5Hash"));
-    assertEquals(38, selector.length());
+    assertTrue(selector.contains("nextPageToken"));
+    assertEquals(52, selector.length());
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
   }
@@ -706,7 +709,8 @@ public class StorageImplTest {
     assertTrue(selector.contains("items"));
     assertTrue(selector.contains("bucket"));
     assertTrue(selector.contains("name"));
-    assertEquals(18, selector.length());
+    assertTrue(selector.contains("nextPageToken"));
+    assertEquals(32, selector.length());
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
   }

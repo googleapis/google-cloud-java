@@ -214,6 +214,38 @@ public class ResourceManagerImplTest {
   }
 
   @Test
+  public void testListPagingWithFieldOptions() {
+    RESOURCE_MANAGER.create(PARTIAL_PROJECT);
+    RESOURCE_MANAGER.create(COMPLETE_PROJECT);
+    Page<Project> projects = RESOURCE_MANAGER.list(LIST_FIELDS, ProjectListOption.pageSize(1));
+    assertNotNull(projects.nextPageCursor());
+    Iterator<Project> iterator = projects.values().iterator();
+    Project returnedProject = iterator.next();
+    assertEquals(COMPLETE_PROJECT.projectId(), returnedProject.projectId());
+    assertEquals(COMPLETE_PROJECT.name(), returnedProject.name());
+    assertEquals(COMPLETE_PROJECT.labels(), returnedProject.labels());
+    assertNull(returnedProject.parent());
+    assertNull(returnedProject.projectNumber());
+    assertNull(returnedProject.state());
+    assertNull(returnedProject.createTimeMillis());
+    assertSame(RESOURCE_MANAGER, returnedProject.resourceManager());
+    assertFalse(iterator.hasNext());
+    projects = projects.nextPage();
+    iterator = projects.values().iterator();
+    returnedProject = iterator.next();
+    assertEquals(PARTIAL_PROJECT.projectId(), returnedProject.projectId());
+    assertEquals(PARTIAL_PROJECT.name(), returnedProject.name());
+    assertEquals(PARTIAL_PROJECT.labels(), returnedProject.labels());
+    assertNull(returnedProject.parent());
+    assertNull(returnedProject.projectNumber());
+    assertNull(returnedProject.state());
+    assertNull(returnedProject.createTimeMillis());
+    assertSame(RESOURCE_MANAGER, returnedProject.resourceManager());
+    assertFalse(iterator.hasNext());
+    assertNull(projects.nextPageCursor());
+  }
+
+  @Test
   public void testListFilterOptions() {
     ProjectInfo matchingProject = ProjectInfo.builder("matching-project")
         .name("MyProject")
