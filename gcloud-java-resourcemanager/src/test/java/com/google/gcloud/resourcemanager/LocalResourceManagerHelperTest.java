@@ -409,6 +409,23 @@ public class LocalResourceManagerHelperTest {
   }
 
   @Test
+  public void testListPageTokenNoFieldsOptions() {
+    Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
+    rpcOptions.put(ResourceManagerRpc.Option.PAGE_SIZE, 1);
+    rpcOptions.put(ResourceManagerRpc.Option.FIELDS, "nextPageToken");
+    rpc.create(PARTIAL_PROJECT);
+    rpc.create(COMPLETE_PROJECT);
+    Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model.Project>> projects =
+        rpc.list(rpcOptions);
+    assertNotNull(projects.x());
+    assertNull(projects.y());
+    rpcOptions.put(ResourceManagerRpc.Option.PAGE_TOKEN, projects.x());
+    projects = rpc.list(rpcOptions);
+    assertNull(projects.x());
+    assertNull(projects.y());
+  }
+
+  @Test
   public void testListFilterOptions() {
     Map<ResourceManagerRpc.Option, Object> rpcFilterOptions = new HashMap<>();
     rpcFilterOptions.put(

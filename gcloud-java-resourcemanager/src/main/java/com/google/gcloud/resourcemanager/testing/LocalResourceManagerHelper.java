@@ -60,6 +60,7 @@ public class LocalResourceManagerHelper {
       ImmutableSet.of("gzip", "x-gzip");
   private static final Pattern LIST_FIELDS_PATTERN =
       Pattern.compile("(.*?)projects\\((.*?)\\)(.*?)");
+  private static final String[] NO_FIELDS = {};
 
   static {
     try {
@@ -245,6 +246,9 @@ public class LocalResourceManagerHelper {
             if (matcher.matches()) {
               options.put("projectFields", matcher.group(2).split(","));
               options.put("listFields", (matcher.group(1) + matcher.group(3)).split(","));
+            } else {
+              options.put("projectFields", NO_FIELDS);
+              options.put("listFields", argEntry[1].split(","));
             }
             break;
           case "filter":
@@ -393,14 +397,23 @@ public class LocalResourceManagerHelper {
         }
       }
     }
-    StringBuilder responseBody = new StringBuilder();
-    responseBody.append("{\"projects\": [");
-    Joiner.on(",").appendTo(responseBody, projectsSerialized);
-    responseBody.append(']');
     String[] listFields = (String[]) options.get("listFields");
+    StringBuilder responseBody = new StringBuilder();
+    responseBody.append('{');
+    boolean commaNeeded = false;
+    // If fields parameter is set but no project field is selected we must return no projects.
+    if (!(projectFields != null && projectFields.length == 0)) {
+      responseBody.append("\"projects\": [");
+      Joiner.on(",").appendTo(responseBody, projectsSerialized);
+      responseBody.append(']');
+      commaNeeded = true;
+    }
     if (nextPageToken != null && (listFields == null
         || ImmutableSet.copyOf(listFields).contains("nextPageToken"))) {
-      responseBody.append(", \"nextPageToken\": \"");
+      if (commaNeeded) {
+        responseBody.append(',');
+      }
+      responseBody.append("\"nextPageToken\": \"");
       responseBody.append(nextPageToken);
       responseBody.append('"');
     }
