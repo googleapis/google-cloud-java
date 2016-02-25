@@ -162,7 +162,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      */
     public static ProjectListOption fields(ProjectField... fields) {
       StringBuilder builder = new StringBuilder();
-      builder.append("projects(").append(ProjectField.selector(fields)).append(")");
+      builder.append("projects(").append(ProjectField.selector(fields)).append("),nextPageToken");
       return new ProjectListOption(ResourceManagerRpc.Option.FIELDS, builder.toString());
     }
   }

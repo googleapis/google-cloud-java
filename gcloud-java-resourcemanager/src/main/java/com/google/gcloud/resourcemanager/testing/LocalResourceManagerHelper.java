@@ -236,10 +236,18 @@ public class LocalResourceManagerHelper {
         String[] argEntry = arg.split("=");
         switch (argEntry[0]) {
           case "fields":
-            // List fields are in the form "projects(field1, field2, ...)"
-            options.put(
-                "fields",
-                argEntry[1].substring("projects(".length(), argEntry[1].length() - 1).split(","));
+            // List fields are in the form "projects(field1, field2, ...),nextPageToken"
+            String option = argEntry[1];
+            int projectStart = option.indexOf("projects(");
+            int projectEnd = option.indexOf(')');
+            if (projectStart != -1 && projectEnd != -1
+                && projectEnd > projectStart + "projects(".length()) {
+              String projectFields =
+                  option.substring(projectStart + "projects(".length(),  projectEnd);
+              options.put("projectFields", projectFields.split(","));
+              option = option.replace(option.substring(projectStart, projectEnd), "");
+            }
+            options.put("listFields", option.split(","));
             break;
           case "filter":
             options.put("filter", argEntry[1].split(" "));
@@ -362,7 +370,7 @@ public class LocalResourceManagerHelper {
     if (filters != null && !isValidFilter(filters)) {
       return Error.INVALID_ARGUMENT.response("Could not parse the filter.");
     }
-    String[] fields = (String[]) options.get("fields");
+    String[] projectFields = (String[]) options.get("projectFields");
     int count = 0;
     String pageToken = (String) options.get("pageToken");
     Integer pageSize = (Integer) options.get("pageSize");
@@ -380,7 +388,7 @@ public class LocalResourceManagerHelper {
       if (includeProject) {
         count++;
         try {
-          projectsSerialized.add(jsonFactory.toString(extractFields(p, fields)));
+          projectsSerialized.add(jsonFactory.toString(extractFields(p, projectFields)));
         } catch (IOException e) {
           return Error.INTERNAL_ERROR.response(
               "Error when serializing project " + p.getProjectId());
@@ -391,7 +399,9 @@ public class LocalResourceManagerHelper {
     responseBody.append("{\"projects\": [");
     Joiner.on(",").appendTo(responseBody, projectsSerialized);
     responseBody.append(']');
-    if (nextPageToken != null) {
+    String[] listFields = (String[]) options.get("listFields");
+    if (nextPageToken != null && (listFields == null
+        || ImmutableSet.copyOf(listFields).contains("nextPageToken"))) {
       responseBody.append(", \"nextPageToken\": \"");
       responseBody.append(nextPageToken);
       responseBody.append('"');

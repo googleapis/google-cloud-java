@@ -333,7 +333,8 @@ public class LocalResourceManagerHelperTest {
   @Test
   public void testListFieldOptions() {
     Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
-    rpcOptions.put(ResourceManagerRpc.Option.FIELDS, "projects(projectId,name,labels)");
+    rpcOptions.put(ResourceManagerRpc.Option.FIELDS,
+        "projects(projectId,name,labels),nextPageToken");
     rpc.create(PROJECT_WITH_PARENT);
     Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model.Project>> projects =
         rpc.list(rpcOptions);
@@ -347,6 +348,64 @@ public class LocalResourceManagerHelperTest {
     assertNull(returnedProject.getProjectNumber());
     assertNull(returnedProject.getLifecycleState());
     assertNull(returnedProject.getCreateTime());
+  }
+
+  @Test
+  public void testListPageTokenFieldOptions() {
+    Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
+    rpcOptions.put(ResourceManagerRpc.Option.PAGE_SIZE, 1);
+    rpcOptions.put(ResourceManagerRpc.Option.FIELDS, "nextPageToken,projects(projectId,name)");
+    rpc.create(PARTIAL_PROJECT);
+    rpc.create(COMPLETE_PROJECT);
+    Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model.Project>> projects =
+        rpc.list(rpcOptions);
+    assertNotNull(projects.x());
+    Iterator<com.google.api.services.cloudresourcemanager.model.Project> iterator =
+        projects.y().iterator();
+    com.google.api.services.cloudresourcemanager.model.Project returnedProject = iterator.next();
+    assertEquals(COMPLETE_PROJECT.getProjectId(), returnedProject.getProjectId());
+    assertEquals(COMPLETE_PROJECT.getName(), returnedProject.getName());
+    assertNull(returnedProject.getLabels());
+    assertNull(returnedProject.getParent());
+    assertNull(returnedProject.getProjectNumber());
+    assertNull(returnedProject.getLifecycleState());
+    assertNull(returnedProject.getCreateTime());
+    assertFalse(iterator.hasNext());
+    rpcOptions.put(ResourceManagerRpc.Option.PAGE_TOKEN, projects.x());
+    projects = rpc.list(rpcOptions);
+    iterator = projects.y().iterator();
+    returnedProject = iterator.next();
+    assertEquals(PARTIAL_PROJECT.getProjectId(), returnedProject.getProjectId());
+    assertEquals(PARTIAL_PROJECT.getName(), returnedProject.getName());
+    assertNull(returnedProject.getLabels());
+    assertNull(returnedProject.getParent());
+    assertNull(returnedProject.getProjectNumber());
+    assertNull(returnedProject.getLifecycleState());
+    assertNull(returnedProject.getCreateTime());
+    assertNull(projects.x());
+  }
+
+  @Test
+  public void testListNoPageTokenFieldOptions() {
+    Map<ResourceManagerRpc.Option, Object> rpcOptions = new HashMap<>();
+    rpcOptions.put(ResourceManagerRpc.Option.PAGE_SIZE, 1);
+    rpcOptions.put(ResourceManagerRpc.Option.FIELDS, "projects(projectId,name)");
+    rpc.create(PARTIAL_PROJECT);
+    rpc.create(COMPLETE_PROJECT);
+    Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model.Project>> projects =
+        rpc.list(rpcOptions);
+    assertNull(projects.x());
+    Iterator<com.google.api.services.cloudresourcemanager.model.Project> iterator =
+        projects.y().iterator();
+    com.google.api.services.cloudresourcemanager.model.Project returnedProject = iterator.next();
+    assertEquals(COMPLETE_PROJECT.getProjectId(), returnedProject.getProjectId());
+    assertEquals(COMPLETE_PROJECT.getName(), returnedProject.getName());
+    assertNull(returnedProject.getLabels());
+    assertNull(returnedProject.getParent());
+    assertNull(returnedProject.getProjectNumber());
+    assertNull(returnedProject.getLifecycleState());
+    assertNull(returnedProject.getCreateTime());
+    assertFalse(iterator.hasNext());
   }
 
   @Test

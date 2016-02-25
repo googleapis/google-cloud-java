@@ -655,7 +655,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BucketListOption fields(BucketField... fields) {
       StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(BucketField.selector(fields)).append(")");
+      builder.append("items(").append(BucketField.selector(fields)).append("),nextPageToken");
       return new BucketListOption(StorageRpc.Option.FIELDS, builder.toString());
     }
   }
@@ -708,7 +708,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobListOption fields(BlobField... fields) {
       StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(BlobField.selector(fields)).append(")");
+      builder.append("items(").append(BlobField.selector(fields)).append("),nextPageToken");
       return new BlobListOption(StorageRpc.Option.FIELDS, builder.toString());
     }
   }
