@@ -37,6 +37,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -56,6 +58,8 @@ public class LocalResourceManagerHelper {
   private static final URI BASE_CONTEXT;
   private static final Set<String> SUPPORTED_COMPRESSION_ENCODINGS =
       ImmutableSet.of("gzip", "x-gzip");
+  private static final Pattern LIST_FIELDS_PATTERN =
+      Pattern.compile("(.*?)projects\\((.*?)\\)(.*?)");
 
   static {
     try {
@@ -237,17 +241,11 @@ public class LocalResourceManagerHelper {
         switch (argEntry[0]) {
           case "fields":
             // List fields are in the form "projects(field1, field2, ...),nextPageToken"
-            String option = argEntry[1];
-            int projectStart = option.indexOf("projects(");
-            int projectEnd = option.indexOf(')');
-            if (projectStart != -1 && projectEnd != -1
-                && projectEnd > projectStart + "projects(".length()) {
-              String projectFields =
-                  option.substring(projectStart + "projects(".length(),  projectEnd);
-              options.put("projectFields", projectFields.split(","));
-              option = option.replace(option.substring(projectStart, projectEnd), "");
+            Matcher matcher = LIST_FIELDS_PATTERN.matcher(argEntry[1]);
+            if (matcher.matches()) {
+              options.put("projectFields", matcher.group(2).split(","));
+              options.put("listFields", (matcher.group(1) + matcher.group(3)).split(","));
             }
-            options.put("listFields", option.split(","));
             break;
           case "filter":
             options.put("filter", argEntry[1].split(" "));
