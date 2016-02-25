@@ -58,6 +58,9 @@ public abstract class IamPolicy<R> implements Serializable {
     private String etag;
     private Integer version;
 
+    /**
+     * Constructor for IAM Policy builder.
+     */
     protected Builder() {}
 
     /**
@@ -73,6 +76,8 @@ public abstract class IamPolicy<R> implements Serializable {
 
     /**
      * Adds a binding to the policy.
+     *
+     * @throws IllegalArgumentException if the policy already contains a binding with the same role
      */
     public final B addBinding(R role, Set<Identity> identities) {
       checkArgument(!bindings.containsKey(role),
@@ -83,6 +88,8 @@ public abstract class IamPolicy<R> implements Serializable {
 
     /**
      * Adds a binding to the policy.
+     *
+     * @throws IllegalArgumentException if the policy already contains a binding with the same role
      */
     public final B addBinding(R role, Identity first, Identity... others) {
       checkArgument(!bindings.containsKey(role),
@@ -104,8 +111,12 @@ public abstract class IamPolicy<R> implements Serializable {
 
     /**
      * Adds one or more identities to an existing binding.
+     *
+     * @throws IllegalArgumentException if the policy doesn't contain a binding with the specified
+     *     role
      */
     public final B addIdentity(R role, Identity first, Identity... others) {
+      checkArgument(bindings.containsKey(role), "The policy doesn't contain the specified role.");
       Set<Identity> identities = bindings.get(role);
       identities.add(first);
       identities.addAll(Arrays.asList(others));
@@ -114,8 +125,12 @@ public abstract class IamPolicy<R> implements Serializable {
 
     /**
      * Removes one or more identities from an existing binding.
+     *
+     * @throws IllegalArgumentException if the policy doesn't contain a binding with the specified
+     *     role
      */
     public final B removeIdentity(R role, Identity first, Identity... others) {
+      checkArgument(bindings.containsKey(role), "The policy doesn't contain the specified role.");
       bindings.get(role).remove(first);
       bindings.get(role).removeAll(Arrays.asList(others));
       return self();
