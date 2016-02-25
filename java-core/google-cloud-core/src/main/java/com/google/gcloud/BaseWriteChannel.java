@@ -21,6 +21,7 @@ import com.google.common.base.MoreObjects;
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.ByteBuffer;
+import java.nio.channels.ClosedChannelException;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -114,9 +115,9 @@ public abstract class BaseWriteChannel<
     }
   }
 
-  private void validateOpen() throws IOException {
+  private void validateOpen() throws ClosedChannelException {
     if (!isOpen) {
-      throw new IOException("stream is closed");
+      throw new ClosedChannelException();
     }
   }
 
