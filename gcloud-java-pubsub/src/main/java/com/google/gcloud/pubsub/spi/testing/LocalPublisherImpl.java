@@ -74,7 +74,8 @@ public class LocalPublisherImpl implements Publisher {
   }
 
   @Override
-  public void listTopics(ListTopicsRequest request, StreamObserver<ListTopicsResponse> responseObserver) {
+  public void listTopics(
+      ListTopicsRequest request, StreamObserver<ListTopicsResponse> responseObserver) {
     List<Topic> responseTopics = new ArrayList<>();
     for (String topicName : topics.keySet()) {
       String projectOfTopic = PublisherApi.extractProjectFromTopicPath(topicName);
@@ -84,11 +85,14 @@ public class LocalPublisherImpl implements Publisher {
         responseTopics.add(topicObj);
       }
     }
-    Collections.sort(responseTopics, new Comparator<Topic>() {
-      @Override public int compare(Topic o1, Topic o2) {
-        return o1.getName().compareTo(o2.getName());
-      }
-    });
+    Collections.sort(
+        responseTopics,
+        new Comparator<Topic>() {
+          @Override
+          public int compare(Topic o1, Topic o2) {
+            return o1.getName().compareTo(o2.getName());
+          }
+        });
     ListTopicsResponse.Builder response = ListTopicsResponse.newBuilder();
     response.setNextPageToken("");
     response.addAllTopics(responseTopics);
@@ -97,7 +101,8 @@ public class LocalPublisherImpl implements Publisher {
   }
 
   @Override
-  public void listTopicSubscriptions(ListTopicSubscriptionsRequest request,
+  public void listTopicSubscriptions(
+      ListTopicSubscriptionsRequest request,
       StreamObserver<ListTopicSubscriptionsResponse> responseObserver) {
     responseObserver.onNext(ListTopicSubscriptionsResponse.getDefaultInstance());
     responseObserver.onCompleted();

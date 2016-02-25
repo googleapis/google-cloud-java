@@ -447,7 +447,7 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
+   * Adds one or more messages to the topic. Generates `NOT_FOUND` if the topic
    * does not exist. The message payload must not be empty; it must contain
    *  either a non-empty data field, or at least one attribute.
    *
@@ -466,7 +466,7 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
+   * Adds one or more messages to the topic. Generates `NOT_FOUND` if the topic
    * does not exist. The message payload must not be empty; it must contain
    *  either a non-empty data field, or at least one attribute.
    *
@@ -481,7 +481,7 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
+   * Adds one or more messages to the topic. Generates `NOT_FOUND` if the topic
    * does not exist. The message payload must not be empty; it must contain
    *  either a non-empty data field, or at least one attribute.
    *
@@ -659,7 +659,7 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
-   * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic
+   * Deletes the topic with the given name. Generates `NOT_FOUND` if the topic
    * does not exist. After a topic is deleted, a new topic may be created with
    * the same name; this is an entirely new topic with none of the old
    * configuration or subscriptions. Existing subscriptions to this topic are
@@ -678,7 +678,7 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
-   * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic
+   * Deletes the topic with the given name. Generates `NOT_FOUND` if the topic
    * does not exist. After a topic is deleted, a new topic may be created with
    * the same name; this is an entirely new topic with none of the old
    * configuration or subscriptions. Existing subscriptions to this topic are
@@ -695,7 +695,7 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
-   * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic
+   * Deletes the topic with the given name. Generates `NOT_FOUND` if the topic
    * does not exist. After a topic is deleted, a new topic may be created with
    * the same name; this is an entirely new topic with none of the old
    * configuration or subscriptions. Existing subscriptions to this topic are
