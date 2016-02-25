@@ -400,17 +400,15 @@ public class LocalResourceManagerHelper {
     String[] listFields = (String[]) options.get("listFields");
     StringBuilder responseBody = new StringBuilder();
     responseBody.append('{');
-    boolean commaNeeded = false;
     // If fields parameter is set but no project field is selected we must return no projects.
     if (!(projectFields != null && projectFields.length == 0)) {
       responseBody.append("\"projects\": [");
       Joiner.on(",").appendTo(responseBody, projectsSerialized);
       responseBody.append(']');
-      commaNeeded = true;
     }
     if (nextPageToken != null && (listFields == null
         || ImmutableSet.copyOf(listFields).contains("nextPageToken"))) {
-      if (commaNeeded) {
+      if (responseBody.length() > 1) {
         responseBody.append(',');
       }
       responseBody.append("\"nextPageToken\": \"");
