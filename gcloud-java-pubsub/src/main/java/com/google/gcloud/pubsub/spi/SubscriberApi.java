@@ -675,7 +675,7 @@ public class SubscriberApi implements AutoCloseable {
    * @param subscription The name of the subscription.
    * @param ackIds List of acknowledgment IDs.
    * @param ackDeadlineSeconds The new ack deadline with respect to the time this request was sent to
-   * the Pub/Sub system. Must be >= 0. For example, if the value is 10, the new
+   * the Pub/Sub system. Must be &gt;= 0. For example, if the value is 10, the new
    * ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
    * was made. Specifying zero may immediately make the message available for
    * another pull request.
