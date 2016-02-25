@@ -18,7 +18,6 @@ package com.google.gcloud;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -48,48 +47,44 @@ public class IdentityTest {
   public void testUser() {
     assertEquals(Identity.Type.USER, USER.type());
     assertEquals("abc@gmail.com", USER.id());
-    try {
-      Identity.user(null);
-      fail("Should have thrown exception due to null email address.");
-    } catch (NullPointerException e) {
-      // expected
-    }
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testUserNullEmail() {
+    Identity.user(null);
   }
 
   @Test
   public void testServiceAccount() {
     assertEquals(Identity.Type.SERVICE_ACCOUNT, SERVICE_ACCOUNT.type());
     assertEquals("service-account@gmail.com", SERVICE_ACCOUNT.id());
-    try {
-      Identity.serviceAccount(null);
-      fail("Should have thrown exception due to null email address.");
-    } catch (NullPointerException e) {
-      // expected
-    }
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testServiceAccountNullEmail() {
+    Identity.serviceAccount(null);
   }
 
   @Test
   public void testGroup() {
     assertEquals(Identity.Type.GROUP, GROUP.type());
     assertEquals("group@gmail.com", GROUP.id());
-    try {
-      Identity.group(null);
-      fail("Should have thrown exception due to null email address.");
-    } catch (NullPointerException e) {
-      // expected
-    }
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testGroupNullEmail() {
+    Identity.group(null);
   }
 
   @Test
   public void testDomain() {
     assertEquals(Identity.Type.DOMAIN, DOMAIN.type());
     assertEquals("google.com", DOMAIN.id());
-    try {
-      Identity.domain(null);
-      fail("Should have thrown exception due to null domain.");
-    } catch (NullPointerException e) {
-      // expected
-    }
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void testDomainNullId() {
+    Identity.domain(null);
   }
 
   @Test
