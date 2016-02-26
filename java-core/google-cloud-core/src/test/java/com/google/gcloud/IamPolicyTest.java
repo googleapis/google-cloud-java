@@ -18,6 +18,7 @@ package com.google.gcloud;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -71,7 +72,8 @@ public class IamPolicyTest {
       super(builder);
     }
 
-    Builder toBuilder() {
+    @Override
+    public Builder toBuilder() {
       return new Builder(bindings(), etag(), version());
     }
 
@@ -93,38 +95,38 @@ public class IamPolicyTest {
     assertEquals(1, policy.version().intValue());
     policy = SIMPLE_POLICY.toBuilder().removeBinding("editor").build();
     assertEquals(ImmutableMap.of("viewer", BINDINGS.get("viewer")), policy.bindings());
-    assertEquals(null, policy.etag());
-    assertEquals(null, policy.version());
+    assertNull(policy.etag());
+    assertNull(policy.version());
     policy = policy.toBuilder()
         .removeIdentity("viewer", USER, ALL_USERS)
         .addIdentity("viewer", DOMAIN, GROUP)
         .build();
     assertEquals(ImmutableMap.of("viewer", ImmutableSet.of(SERVICE_ACCOUNT, DOMAIN, GROUP)),
         policy.bindings());
-    assertEquals(null, policy.etag());
-    assertEquals(null, policy.version());
+    assertNull(policy.etag());
+    assertNull(policy.version());
     policy = PolicyImpl.builder().addBinding("owner", USER, SERVICE_ACCOUNT).build();
     assertEquals(
         ImmutableMap.of("owner", ImmutableSet.of(USER, SERVICE_ACCOUNT)), policy.bindings());
-    assertEquals(null, policy.etag());
-    assertEquals(null, policy.version());
+    assertNull(policy.etag());
+    assertNull(policy.version());
     try {
       SIMPLE_POLICY.toBuilder().addBinding("viewer", USER);
       fail("Should have failed due to duplicate role.");
     } catch (IllegalArgumentException e) {
-      assertEquals("The policy already contains a binding with the role viewer", e.getMessage());
+      assertEquals("The policy already contains a binding with the role viewer.", e.getMessage());
     }
     try {
       SIMPLE_POLICY.toBuilder().addBinding("editor", ImmutableSet.of(USER));
       fail("Should have failed due to duplicate role.");
     } catch (IllegalArgumentException e) {
-      assertEquals("The policy already contains a binding with the role editor", e.getMessage());
+      assertEquals("The policy already contains a binding with the role editor.", e.getMessage());
     }
   }
 
   @Test
   public void testEqualsHashCode() {
-    assertNotEquals(FULL_POLICY, null);
+    assertNotNull(FULL_POLICY);
     PolicyImpl emptyPolicy = PolicyImpl.builder().build();
     AnotherPolicyImpl anotherPolicy = new AnotherPolicyImpl.Builder().build();
     assertNotEquals(emptyPolicy, anotherPolicy);
@@ -151,7 +153,7 @@ public class IamPolicyTest {
   @Test
   public void testVersion() {
     assertNull(SIMPLE_POLICY.version());
-    assertEquals(null, SIMPLE_POLICY.version());
+    assertEquals(1, FULL_POLICY.version().intValue());
   }
 
   static class AnotherPolicyImpl extends IamPolicy<String> {
@@ -168,6 +170,11 @@ public class IamPolicyTest {
 
     AnotherPolicyImpl(Builder builder) {
       super(builder);
+    }
+
+    @Override
+    public Builder toBuilder() {
+      return new Builder();
     }
   }
 }

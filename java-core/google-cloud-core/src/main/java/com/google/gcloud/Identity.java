@@ -18,11 +18,26 @@ package com.google.gcloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.CaseFormat;
+
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * An identity in an {@link IamPolicy}.
+ * An identity in an {@link IamPolicy}. The following types of identities are permitted in IAM
+ * policies:
+ * <ul>
+ * <li>Google account
+ * <li>Service account
+ * <li>Google group
+ * <li>Google Apps domain
+ * </ul>
+ *
+ * <p>There are also two special identities that represent all users and all Google-authenticated
+ * accounts.
+ *
+ * @see <a href="https://cloud.google.com/iam/docs/overview#concepts_related_to_identity">Concepts
+ *     related to identity</a>
  */
 public final class Identity implements Serializable {
 
@@ -82,7 +97,8 @@ public final class Identity implements Serializable {
    *   <li>email address (for identities of type {@code USER}, {@code SERVICE_ACCOUNT}, and
    *       {@code GROUP})
    *   <li>domain (for identities of type {@code DOMAIN})
-   *   <li>null (for identities of type {@code ALL_USERS} and {@code ALL_AUTHENTICATED_USERS})
+   *   <li>{@code null} (for identities of type {@code ALL_USERS} and
+   *       {@code ALL_AUTHENTICATED_USERS})
    * </ul>
    */
   public String id() {
@@ -178,7 +194,7 @@ public final class Identity implements Serializable {
       case DOMAIN:
         return "domain:" + id;
       default:
-        throw new IllegalArgumentException("Unexpected identity type: " + type);
+        throw new IllegalStateException("Unexpected identity type: " + type);
     }
   }
 
@@ -188,21 +204,22 @@ public final class Identity implements Serializable {
    */
   public static Identity valueOf(String identityStr) {
     String[] info = identityStr.split(":");
-    switch (info[0]) {
-      case "allUsers":
+    Type type = Type.valueOf(CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_UNDERSCORE, info[0]));
+    switch (type) {
+      case ALL_USERS:
         return Identity.allUsers();
-      case "allAuthenticatedUsers":
+      case ALL_AUTHENTICATED_USERS:
         return Identity.allAuthenticatedUsers();
-      case "user":
+      case USER:
         return Identity.user(info[1]);
-      case "serviceAccount":
+      case SERVICE_ACCOUNT:
         return Identity.serviceAccount(info[1]);
-      case "group":
+      case GROUP:
         return Identity.group(info[1]);
-      case "domain":
+      case DOMAIN:
         return Identity.domain(info[1]);
       default:
-        throw new IllegalArgumentException("Unexpected identity type: " + info[0]);
+        throw new IllegalStateException("Unexpected identity type " + type);
     }
   }
 }
