@@ -33,8 +33,8 @@ public class PolicyTest {
   private static final Identity GROUP = Identity.group("group@gmail.com");
   private static final Identity DOMAIN = Identity.domain("google.com");
   private static final Policy SIMPLE_POLICY = Policy.builder()
-      .addBinding("viewer", ImmutableSet.of(USER, SERVICE_ACCOUNT, ALL_USERS))
-      .addBinding("editor", ImmutableSet.of(ALL_AUTH_USERS, GROUP, DOMAIN))
+      .addBinding(Policy.Role.VIEWER, ImmutableSet.of(USER, SERVICE_ACCOUNT, ALL_USERS))
+      .addBinding(Policy.Role.EDITOR, ImmutableSet.of(ALL_AUTH_USERS, GROUP, DOMAIN))
       .build();
   private static final Policy FULL_POLICY =
       new Policy.Builder(SIMPLE_POLICY.bindings(), "etag", 1).build();

@@ -23,8 +23,11 @@ import com.google.common.collect.ImmutableSet;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -65,8 +68,14 @@ public abstract class IamPolicy<R> implements Serializable {
 
     /**
      * Replaces the builder's map of bindings with the given map of bindings.
+     *
+     * @throws IllegalArgumentException if the provided map is null or contain any null values
      */
     public final B bindings(Map<R, Set<Identity>> bindings) {
+      checkArgument(bindings != null, "The provided map of bindings cannot be null.");
+      for (Map.Entry<R, Set<Identity>> binding : bindings.entrySet()) {
+        verifyBinding(binding.getKey(), binding.getValue());
+      }
       this.bindings.clear();
       for (Map.Entry<R, Set<Identity>> binding : bindings.entrySet()) {
         this.bindings.put(binding.getKey(), new HashSet<Identity>(binding.getValue()));
@@ -78,10 +87,12 @@ public abstract class IamPolicy<R> implements Serializable {
      * Adds a binding to the policy.
      *
      * @throws IllegalArgumentException if the policy already contains a binding with the same role
+     *     or if the role or any identities are null
      */
     public final B addBinding(R role, Set<Identity> identities) {
+      verifyBinding(role, identities);
       checkArgument(!bindings.containsKey(role),
-          "The policy already contains a binding with the role " + role.toString());
+          "The policy already contains a binding with the role " + role.toString() + ".");
       bindings.put(role, new HashSet<Identity>(identities));
       return self();
     }
@@ -90,15 +101,23 @@ public abstract class IamPolicy<R> implements Serializable {
      * Adds a binding to the policy.
      *
      * @throws IllegalArgumentException if the policy already contains a binding with the same role
+     *     or if the role or any identities are null
      */
     public final B addBinding(R role, Identity first, Identity... others) {
-      checkArgument(!bindings.containsKey(role),
-          "The policy already contains a binding with the role " + role.toString());
       HashSet<Identity> identities = new HashSet<>();
       identities.add(first);
       identities.addAll(Arrays.asList(others));
-      bindings.put(role, identities);
-      return self();
+      return addBinding(role, identities);
+    }
+
+    private void verifyBinding(R role, Collection<Identity> identities) {
+      checkArgument(role != null, "The role cannot be null.");
+      verifyIdentities(identities);
+    }
+
+    private void verifyIdentities(Collection<Identity> identities) {
+      checkArgument(identities != null, "A role cannot be assigned to a null set of identities.");
+      checkArgument(!identities.contains(null), "Null identities are not permitted.");
     }
 
     /**
@@ -113,13 +132,16 @@ public abstract class IamPolicy<R> implements Serializable {
      * Adds one or more identities to an existing binding.
      *
      * @throws IllegalArgumentException if the policy doesn't contain a binding with the specified
-     *     role
+     *     role or any identities are null
      */
     public final B addIdentity(R role, Identity first, Identity... others) {
-      checkArgument(bindings.containsKey(role), "The policy doesn't contain the specified role.");
-      Set<Identity> identities = bindings.get(role);
-      identities.add(first);
-      identities.addAll(Arrays.asList(others));
+      checkArgument(bindings.containsKey(role),
+          "The policy doesn't contain the role " + role.toString() + ".");
+      List<Identity> toAdd = new LinkedList<>();
+      toAdd.add(first);
+      toAdd.addAll(Arrays.asList(others));
+      verifyIdentities(toAdd);
+      bindings.get(role).addAll(toAdd);
       return self();
     }
 
@@ -130,7 +152,8 @@ public abstract class IamPolicy<R> implements Serializable {
      *     role
      */
     public final B removeIdentity(R role, Identity first, Identity... others) {
-      checkArgument(bindings.containsKey(role), "The policy doesn't contain the specified role.");
+      checkArgument(bindings.containsKey(role),
+          "The policy doesn't contain the role " + role.toString() + ".");
       bindings.get(role).remove(first);
       bindings.get(role).removeAll(Arrays.asList(others));
       return self();
@@ -178,6 +201,11 @@ public abstract class IamPolicy<R> implements Serializable {
     this.etag = builder.etag;
     this.version = builder.version;
   }
+
+  /**
+   * Returns a builder containing the properties of this IAM Policy.
+   */
+  public abstract Builder<R, ? extends Builder<R, ?>> toBuilder();
 
   /**
    * The map of bindings that comprises the policy.

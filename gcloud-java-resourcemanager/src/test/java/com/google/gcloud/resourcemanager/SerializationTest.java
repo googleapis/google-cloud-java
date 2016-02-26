@@ -56,7 +56,7 @@ private static final ResourceManager RESOURCE_MANAGER =
   private static final ResourceManager.ProjectListOption PROJECT_LIST_OPTION =
       ResourceManager.ProjectListOption.filter("name:*");
   private static final Policy POLICY = Policy.builder()
-      .addBinding("viewer", ImmutableSet.of(Identity.user("abc@gmail.com")))
+      .addBinding(Policy.Role.VIEWER, ImmutableSet.of(Identity.user("abc@gmail.com")))
       .build();
 
   @Test
