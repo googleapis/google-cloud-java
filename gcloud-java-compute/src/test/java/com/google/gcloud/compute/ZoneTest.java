@@ -30,18 +30,20 @@ public class ZoneTest {
 
   private static final ZoneId ZONE_ID = ZoneId.of("project", "zone");
   private static final RegionId REGION_ID = RegionId.of("project", "region");
-  private static final BigInteger ID = BigInteger.valueOf(42L);
-  private static final String CREATION_TIMESTAMP = "2016-01-20T04:39:00.210-08:00";
+  private static final String ID = "42";
+  private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final Zone.Status STATUS = Zone.Status.DOWN;
+  private static final Long BEGIN_TIME = 1453293420000L;
+  private static final Long END_TIME = 1453293480000L;
   private static final MaintenanceWindow WINDOW1 = new MaintenanceWindow("NAME1", "DESCRIPTION1",
-      "2016-01-20T04:39:00.210-08:00", "2016-01-21T04:39:00.210-08:00");
+      BEGIN_TIME, END_TIME);
   private static final MaintenanceWindow WINDOW2 = new MaintenanceWindow("NAME2", "DESCRIPTION2",
-      "2016-01-21T04:39:00.210-08:00", "2016-01-22T04:39:00.210-08:00");
+      BEGIN_TIME, END_TIME);
   private static final List<MaintenanceWindow> WINDOWS = ImmutableList.of(WINDOW1, WINDOW2);
-  private static final String DELETED = "2016-01-20T04:39:00.210-08:00";
-  private static final String DEPRECATED = "2016-01-20T04:37:00.210-08:00";
-  private static final String OBSOLETE = "2016-01-20T04:38:00.210-08:00";
+  private static final Long DELETED = 1453293540000L;
+  private static final Long DEPRECATED = 1453293420000L;
+  private static final Long OBSOLETE = 1453293480000L;
   private static final DeprecationStatus<ZoneId> DEPRECATION_STATUS = new DeprecationStatus<>(
       DELETED, DEPRECATED, OBSOLETE, ZONE_ID, DeprecationStatus.Status.DELETED);
   private static final Zone ZONE = Zone.builder()
@@ -49,7 +51,6 @@ public class ZoneTest {
       .id(ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
-      .selfLink(ZONE_ID.toUrl())
       .status(STATUS)
       .maintenanceWindows(WINDOWS)
       .deprecationStatus(DEPRECATION_STATUS)
@@ -62,7 +63,6 @@ public class ZoneTest {
     assertEquals(ID, ZONE.id());
     assertEquals(CREATION_TIMESTAMP, ZONE.creationTimestamp());
     assertEquals(DESCRIPTION, ZONE.description());
-    assertEquals(ZONE_ID.toUrl(), ZONE.selfLink());
     assertEquals(STATUS, ZONE.status());
     assertEquals(WINDOWS, ZONE.maintenanceWindows());
     assertEquals(REGION_ID, ZONE.region());
@@ -72,12 +72,12 @@ public class ZoneTest {
   @Test
   public void testToAndFromPb() {
     com.google.api.services.compute.model.Zone zonePb = ZONE.toPb();
-    assertEquals(REGION_ID.toUrl(), zonePb.getRegion());
+    assertEquals(REGION_ID.selfLink(), zonePb.getRegion());
     Zone zone = Zone.fromPb(zonePb);
     compareZones(ZONE, zone);
     assertEquals(ZONE_ID.project(), zone.zoneId().project());
     assertEquals(ZONE_ID.zone(), zone.zoneId().zone());
-    zone = Zone.builder().zoneId(ZONE_ID).selfLink(ZONE_ID.toUrl()).build();
+    zone = Zone.builder().zoneId(ZONE_ID).build();
     compareZones(zone, Zone.fromPb(zone.toPb()));
   }
 
@@ -87,7 +87,6 @@ public class ZoneTest {
     assertEquals(expected.id(), value.id());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());
-    assertEquals(expected.selfLink(), value.selfLink());
     assertEquals(expected.status(), value.status());
     assertEquals(expected.maintenanceWindows(), value.maintenanceWindows());
     assertEquals(expected.region(), value.region());

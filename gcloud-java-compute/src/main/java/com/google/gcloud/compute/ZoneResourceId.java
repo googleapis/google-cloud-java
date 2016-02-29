@@ -27,7 +27,7 @@ import java.util.Objects;
  */
 public abstract class ZoneResourceId extends ResourceId {
 
-  static final String REGEX = ResourceId.REGEX + "zones/[^/]+/";
+  static final String REGEX = ResourceId.REGEX + "zones/([^/]+)/";
   private static final long serialVersionUID = -6249546895344926888L;
 
   private final String zone;
@@ -57,8 +57,8 @@ public abstract class ZoneResourceId extends ResourceId {
   }
 
   @Override
-  public String toUrl() {
-    return super.toUrl() + "/zones/" + zone;
+  public String selfLink() {
+    return super.selfLink() + "/zones/" + zone;
   }
 
   @Override
@@ -67,14 +67,14 @@ public abstract class ZoneResourceId extends ResourceId {
   }
 
   @Override
-  public int hashCode() {
-    return Objects.hash(baseHashCode(), zone);
+  final int baseHashCode() {
+    return Objects.hash(super.baseHashCode(), zone);
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj != null
-        && obj.getClass().equals(ZoneResourceId.class)
-        && baseEquals((RegionResourceId) obj);
+  final boolean baseEquals(ResourceId resourceId) {
+    return resourceId instanceof ZoneResourceId
+        && super.baseEquals(resourceId)
+        && Objects.equals(zone, ((ZoneResourceId) resourceId).zone);
   }
 }

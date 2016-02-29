@@ -43,7 +43,7 @@ public class MachineTypeIdTest {
     assertEquals(PROJECT, machineTypeId.project());
     assertEquals(ZONE, machineTypeId.zone());
     assertEquals(TYPE, machineTypeId.machineType());
-    assertEquals(URL, machineTypeId.toUrl());
+    assertEquals(URL, machineTypeId.selfLink());
     machineTypeId = MachineTypeId.of(ZONE, TYPE);
     assertNull(machineTypeId.project());
     assertEquals(ZONE, machineTypeId.zone());
@@ -53,10 +53,10 @@ public class MachineTypeIdTest {
   @Test
   public void testToAndFromUrl() {
     MachineTypeId machineTypeId = MachineTypeId.of(PROJECT, ZONE, TYPE);
-    compareMachineTypeId(machineTypeId, MachineTypeId.fromUrl(machineTypeId.toUrl()));
+    compareMachineTypeId(machineTypeId, MachineTypeId.fromUrl(machineTypeId.selfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid machine type URL");
-    machineTypeId = MachineTypeId.fromUrl("notMatchingUrl");
+    MachineTypeId.fromUrl("notMatchingUrl");
   }
 
   @Test
@@ -68,7 +68,7 @@ public class MachineTypeIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(MachineTypeId.matchesUrl(MachineTypeId.of(PROJECT, ZONE, TYPE).toUrl()));
+    assertTrue(MachineTypeId.matchesUrl(MachineTypeId.of(PROJECT, ZONE, TYPE).selfLink()));
     assertFalse(MachineTypeId.matchesUrl("notMatchingUrl"));
   }
 
@@ -77,7 +77,7 @@ public class MachineTypeIdTest {
     assertEquals(expected.project(), expected.project());
     assertEquals(expected.zone(), expected.zone());
     assertEquals(expected.machineType(), expected.machineType());
-    assertEquals(expected.toUrl(), expected.toUrl());
+    assertEquals(expected.selfLink(), expected.selfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

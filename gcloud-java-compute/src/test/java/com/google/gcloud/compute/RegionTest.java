@@ -28,8 +28,8 @@ import java.util.List;
 public class RegionTest {
 
   private static final RegionId REGION_ID = RegionId.of("project", "region");
-  private static final BigInteger ID = BigInteger.valueOf(42L);
-  private static final String CREATION_TIMESTAMP = "2016-01-20T04:39:00.210-08:00";
+  private static final String ID = "42";
+  private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final Region.Status STATUS = Region.Status.DOWN;
   private static final ZoneId ZONE_ID1 = ZoneId.of("project", "zone1");
@@ -40,9 +40,9 @@ public class RegionTest {
   private static final Region.Quota QUOTA2 =
       new Region.Quota("METRIC2", 4, 3);
   private static final List<Region.Quota> QUOTAS = ImmutableList.of(QUOTA1, QUOTA2);
-  private static final String DELETED = "2016-01-20T04:39:00.210-08:00";
-  private static final String DEPRECATED = "2016-01-20T04:37:00.210-08:00";
-  private static final String OBSOLETE = "2016-01-20T04:38:00.210-08:00";
+  private static final Long DELETED = 1453293540000L;
+  private static final Long DEPRECATED = 1453293420000L;
+  private static final Long OBSOLETE = 1453293480000L;
   private static final DeprecationStatus<RegionId> DEPRECATION_STATUS = new DeprecationStatus<>(
       DELETED, DEPRECATED, OBSOLETE, REGION_ID, DeprecationStatus.Status.DELETED);
   private static final Region REGION = Region.builder()
@@ -50,7 +50,6 @@ public class RegionTest {
       .id(ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
-      .selfLink(REGION_ID.toUrl())
       .status(STATUS)
       .zones(ZONES)
       .quotas(QUOTAS)
@@ -63,7 +62,6 @@ public class RegionTest {
     assertEquals(ID, REGION.id());
     assertEquals(CREATION_TIMESTAMP, REGION.creationTimestamp());
     assertEquals(DESCRIPTION, REGION.description());
-    assertEquals(REGION_ID.toUrl(), REGION.selfLink());
     assertEquals(STATUS, REGION.status());
     assertEquals(ZONES, REGION.zones());
     assertEquals(QUOTAS, REGION.quotas());
@@ -76,7 +74,7 @@ public class RegionTest {
     compareRegions(REGION, region);
     assertEquals(REGION_ID.project(), region.regionId().project());
     assertEquals(REGION_ID.region(), region.regionId().region());
-    region = Region.builder().regionId(REGION_ID).selfLink(REGION_ID.toUrl()).build();
+    region = Region.builder().regionId(REGION_ID).build();
     compareRegions(region, Region.fromPb(region.toPb()));
   }
 
@@ -86,7 +84,6 @@ public class RegionTest {
     assertEquals(expected.id(), value.id());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());
-    assertEquals(expected.selfLink(), value.selfLink());
     assertEquals(expected.status(), value.status());
     assertEquals(expected.zones(), value.zones());
     assertEquals(expected.quotas(), value.quotas());

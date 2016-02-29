@@ -16,6 +16,7 @@
 
 package com.google.gcloud.compute;
 
+import com.google.api.client.util.DateTime;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
@@ -24,14 +25,16 @@ import java.util.Objects;
 
 /**
  * The deprecation status associated to a Google Compute Engine resource.
+ *
+ * @param <T> The Google Compute Engine resource to which the deprecation status refers to.
  */
 public final class DeprecationStatus<T extends ResourceId> implements Serializable {
 
   private static final long serialVersionUID = -2695077634793679794L;
 
-  private final String deleted;
-  private final String deprecated;
-  private final String obsolete;
+  private final Long deleted;
+  private final Long deprecated;
+  private final Long obsolete;
   private final T replacement;
   private final Status status;
 
@@ -58,8 +61,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
     DELETED
   }
 
-  DeprecationStatus(String deleted, String deprecated, String obsolete, T replacement,
-      Status status) {
+  DeprecationStatus(Long deleted, Long deprecated, Long obsolete, T replacement, Status status) {
     this.deleted = deleted;
     this.deprecated = deprecated;
     this.obsolete = obsolete;
@@ -68,32 +70,26 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
   }
 
   /**
-   * Returns an optional RFC3339 timestamp on or after which the deprecation state of this resource
-   * will be changed to {@link Status#DELETED}.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+   * Returns the timestamp on or after which the deprecation state of this resource will be changed
+   * to {@link Status#DELETED}. In milliseconds since epoch.
    */
-  public String deleted() {
+  public Long deleted() {
     return deleted;
   }
 
   /**
-   * Returns an optional RFC3339 timestamp on or after which the deprecation state of this resource
-   * will be changed to {@link Status#DEPRECATED}.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+   * Returns the timestamp on or after which the deprecation state of this resource will be changed
+   * to {@link Status#DEPRECATED}. In milliseconds since epoch.
    */
-  public String deprecated() {
+  public Long deprecated() {
     return deprecated;
   }
 
   /**
-   * Returns an optional RFC3339 timestamp on or after which the deprecation state of this resource
-   * will be changed to {@link Status#OBSOLETE}.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+   * Returns the timestamp on or after which the deprecation state of this resource will be changed
+   * to {@link Status#OBSOLETE}. In milliseconds since epoch.
    */
-  public String obsolete() {
+  public Long obsolete() {
     return obsolete;
   }
 
@@ -137,11 +133,17 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
   com.google.api.services.compute.model.DeprecationStatus toPb() {
     com.google.api.services.compute.model.DeprecationStatus deprecationStatusPb =
         new com.google.api.services.compute.model.DeprecationStatus();
-    deprecationStatusPb.setDeleted(deleted);
-    deprecationStatusPb.setDeprecated(deprecated);
-    deprecationStatusPb.setObsolete(obsolete);
+    if (deleted != null) {
+      deprecationStatusPb.setDeleted(new DateTime(deleted).toStringRfc3339());
+    }
+    if (deprecated != null) {
+      deprecationStatusPb.setDeprecated(new DateTime(deprecated).toStringRfc3339());
+    }
+    if (obsolete != null) {
+      deprecationStatusPb.setObsolete(new DateTime(obsolete).toStringRfc3339());
+    }
     if (replacement != null) {
-      deprecationStatusPb.setReplacement(replacement.toUrl());
+      deprecationStatusPb.setReplacement(replacement.selfLink());
     }
     if (status() != null) {
       deprecationStatusPb.setState(status.name());
@@ -152,10 +154,13 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
   static <T extends ResourceId> DeprecationStatus<T> fromPb(
       com.google.api.services.compute.model.DeprecationStatus deprecationStatusPb,
       Function<String, T> fromUrl) {
-    return new DeprecationStatus<T>(
-        deprecationStatusPb.getDeleted(),
-        deprecationStatusPb.getDeprecated(),
-        deprecationStatusPb.getObsolete(),
+    return new DeprecationStatus<>(
+        deprecationStatusPb.getDeleted() != null
+            ? DateTime.parseRfc3339(deprecationStatusPb.getDeleted()).getValue() : null,
+        deprecationStatusPb.getDeprecated() != null
+            ? DateTime.parseRfc3339(deprecationStatusPb.getDeprecated()).getValue() : null,
+        deprecationStatusPb.getObsolete() != null
+            ? DateTime.parseRfc3339(deprecationStatusPb.getObsolete()).getValue() : null,
         deprecationStatusPb.getReplacement() != null
             ? fromUrl.apply(deprecationStatusPb.getReplacement()) : null,
         deprecationStatusPb.getState() != null

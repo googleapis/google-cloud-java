@@ -16,6 +16,7 @@
 
 package com.google.gcloud.compute;
 
+import com.google.api.client.util.DateTime;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
@@ -48,34 +49,32 @@ public final class DiskType implements Serializable {
 
   private static final long serialVersionUID = -944042261695072026L;
 
-  private final BigInteger id;
+  private final String id;
   private final DiskTypeId diskTypeId;
-  private final String creationTimestamp;
+  private final Long creationTimestamp;
   private final String description;
   private final String validDiskSize;
-  private final String selfLink;
   private final Long defaultDiskSizeGb;
   private final DeprecationStatus<DiskTypeId> deprecationStatus;
 
   static final class Builder {
 
-    private BigInteger id;
+    private String id;
     private DiskTypeId diskTypeId;
-    private String creationTimestamp;
+    private Long creationTimestamp;
     private String description;
     private String validDiskSize;
-    private String selfLink;
     private Long defaultDiskSizeGb;
     private DeprecationStatus<DiskTypeId> deprecationStatus;
 
     private Builder() {}
 
-    Builder id(BigInteger id) {
+    Builder id(String id) {
       this.id = id;
       return this;
     }
 
-    Builder creationTimestamp(String creationTimestamp) {
+    Builder creationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
@@ -92,11 +91,6 @@ public final class DiskType implements Serializable {
 
     Builder validDiskSize(String validDiskSize) {
       this.validDiskSize = validDiskSize;
-      return this;
-    }
-
-    Builder selfLink(String selfLink) {
-      this.selfLink = selfLink;
       return this;
     }
 
@@ -121,17 +115,14 @@ public final class DiskType implements Serializable {
     this.diskTypeId = builder.diskTypeId;
     this.description = builder.description;
     this.validDiskSize = builder.validDiskSize;
-    this.selfLink = builder.selfLink;
     this.defaultDiskSizeGb = builder.defaultDiskSizeGb;
     this.deprecationStatus = builder.deprecationStatus;
   }
 
   /**
-   * Returns the creation timestamp in RFC3339 text format.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+   * Returns the creation timestamp in milliseconds since epoch.
    */
-  public String creationTimestamp() {
+  public Long creationTimestamp() {
     return creationTimestamp;
   }
 
@@ -145,7 +136,7 @@ public final class DiskType implements Serializable {
   /**
    * Returns an unique identifier for the disk type; defined by the service.
    */
-  public BigInteger id() {
+  public String id() {
     return id;
   }
 
@@ -161,13 +152,6 @@ public final class DiskType implements Serializable {
    */
   public String validDiskSize() {
     return validDiskSize;
-  }
-
-  /**
-   * Returns a service-defined URL for the disk type.
-   */
-  public String selfLink() {
-    return selfLink;
   }
 
   /**
@@ -193,7 +177,6 @@ public final class DiskType implements Serializable {
         .add("creationTimestamp", creationTimestamp)
         .add("description", description)
         .add("validDiskSize", validDiskSize)
-        .add("selfLink", selfLink)
         .add("defaultDiskSizeGb", defaultDiskSizeGb)
         .add("deprecationStatus", deprecationStatus)
         .toString();
@@ -212,13 +195,17 @@ public final class DiskType implements Serializable {
   com.google.api.services.compute.model.DiskType toPb() {
     com.google.api.services.compute.model.DiskType diskTypePb =
         new com.google.api.services.compute.model.DiskType();
-    diskTypePb.setId(id);
-    diskTypePb.setCreationTimestamp(creationTimestamp);
+    if (id != null) {
+      diskTypePb.setId(new BigInteger(id));
+    }
+    if (creationTimestamp != null) {
+      diskTypePb.setCreationTimestamp(new DateTime(creationTimestamp).toStringRfc3339());
+    }
     diskTypePb.setDescription(description);
     diskTypePb.setValidDiskSize(validDiskSize);
-    diskTypePb.setSelfLink(selfLink);
+    diskTypePb.setSelfLink(diskTypeId.selfLink());
     diskTypePb.setDefaultDiskSizeGb(defaultDiskSizeGb);
-    diskTypePb.setZone(diskTypeId.zoneId().toUrl());
+    diskTypePb.setZone(diskTypeId.zoneId().selfLink());
     if (deprecationStatus != null) {
       diskTypePb.setDeprecated(deprecationStatus.toPb());
     }
@@ -231,12 +218,16 @@ public final class DiskType implements Serializable {
 
   static DiskType fromPb(com.google.api.services.compute.model.DiskType diskTypePb) {
     Builder builder = builder();
-    builder.id(diskTypePb.getId());
-    builder.creationTimestamp(diskTypePb.getCreationTimestamp());
+    if (diskTypePb.getId() != null) {
+      builder.id(diskTypePb.getId().toString());
+    }
+    if (diskTypePb.getCreationTimestamp() != null) {
+      builder.creationTimestamp(
+          DateTime.parseRfc3339(diskTypePb.getCreationTimestamp()).getValue());
+    }
     builder.diskTypeId(DiskTypeId.fromUrl(diskTypePb.getSelfLink()));
     builder.description(diskTypePb.getDescription());
     builder.validDiskSize(diskTypePb.getValidDiskSize());
-    builder.selfLink(diskTypePb.getSelfLink());
     builder.defaultDiskSizeGb(diskTypePb.getDefaultDiskSizeGb());
     if (diskTypePb.getDeprecated() != null) {
       builder.deprecationStatus(

@@ -26,25 +26,20 @@ import java.util.Objects;
  */
 public abstract class ResourceId implements Serializable {
 
-  static final String REGEX =
-      "(https?://(www|content).googleapis.com/compute/v1/)?projects/[^/]+/";
+  static final String REGEX = ".*?projects/([^/]+)/";
+  private static final String BASE_URL = "https://www.googleapis.com/compute/v1/projects/";
   private static final long serialVersionUID = -8028734746870421573L;
 
-  private String project;
+  private final String project;
 
   ResourceId(String project) {
     this.project = project;
   }
 
   /**
-   * Base URL for a resource URL.
-   */
-  private static final String BASE_URL = "https://www.googleapis.com/compute/v1/projects/";
-
-  /**
    * Returns a fully qualified URL to the entity.
    */
-  public String toUrl() {
+  public String selfLink() {
     return BASE_URL + project;
   }
 
@@ -64,12 +59,12 @@ public abstract class ResourceId implements Serializable {
     return toStringHelper().toString();
   }
 
-  final int baseHashCode() {
+  int baseHashCode() {
     return Objects.hash(project);
   }
 
-  final boolean baseEquals(ResourceId resourceId) {
-    return Objects.equals(toUrl(), resourceId.toUrl());
+  boolean baseEquals(ResourceId resourceId) {
+    return Objects.equals(project, resourceId.project);
   }
 
   abstract ResourceId setProjectId(String projectId);

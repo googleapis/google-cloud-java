@@ -16,6 +16,7 @@
 
 package com.google.gcloud.compute;
 
+import com.google.api.client.util.DateTime;
 import com.google.api.services.compute.model.MachineType.ScratchDisks;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -55,13 +56,12 @@ public final class MachineType implements Serializable {
   private static final long serialVersionUID = -4210962597502860450L;
 
   private final MachineTypeId machineTypeId;
-  private final BigInteger id;
-  private final String creationTimestamp;
+  private final String id;
+  private final Long creationTimestamp;
   private final String description;
-  private final String selfLink;
-  private final Integer guestCpus;
+  private final Integer cpus;
   private final Integer memoryMb;
-  private final List<Integer> scratchDisks;
+  private final List<Integer> scratchDisksSizeGb;
   private final Integer maximumPersistentDisks;
   private final Long maximumPersistentDisksSizeGb;
   private final DeprecationStatus<MachineTypeId> deprecationStatus;
@@ -69,13 +69,12 @@ public final class MachineType implements Serializable {
   static final class Builder {
 
     private MachineTypeId machineTypeId;
-    private BigInteger id;
-    private String creationTimestamp;
+    private String id;
+    private Long creationTimestamp;
     private String description;
-    private String selfLink;
-    private Integer guestCpus;
+    private Integer cpus;
     private Integer memoryMb;
-    private List<Integer> scratchDisks;
+    private List<Integer> scratchDisksSizeGb;
     private Integer maximumPersistentDisks;
     private Long maximumPersistentDisksSizeGb;
     private DeprecationStatus<MachineTypeId> deprecationStatus;
@@ -87,12 +86,12 @@ public final class MachineType implements Serializable {
       return this;
     }
 
-    Builder id(BigInteger id) {
+    Builder id(String id) {
       this.id = id;
       return this;
     }
 
-    Builder creationTimestamp(String creationTimestamp) {
+    Builder creationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
@@ -102,13 +101,8 @@ public final class MachineType implements Serializable {
       return this;
     }
 
-    Builder selfLink(String selfLink) {
-      this.selfLink = selfLink;
-      return this;
-    }
-
-    Builder guestCpus(Integer guestCpus) {
-      this.guestCpus = guestCpus;
+    Builder cpus(Integer cpus) {
+      this.cpus = cpus;
       return this;
     }
 
@@ -117,8 +111,8 @@ public final class MachineType implements Serializable {
       return this;
     }
 
-    Builder scratchDisks(List<Integer> scratchDisks) {
-      this.scratchDisks = scratchDisks;
+    Builder scratchDisksSizeGb(List<Integer> scratchDisksSizeGb) {
+      this.scratchDisksSizeGb = scratchDisksSizeGb;
       return this;
     }
 
@@ -147,10 +141,9 @@ public final class MachineType implements Serializable {
     this.id = builder.id;
     this.creationTimestamp = builder.creationTimestamp;
     this.description = builder.description;
-    this.selfLink = builder.selfLink;
-    this.guestCpus = builder.guestCpus;
+    this.cpus = builder.cpus;
     this.memoryMb = builder.memoryMb;
-    this.scratchDisks = builder.scratchDisks;
+    this.scratchDisksSizeGb = builder.scratchDisksSizeGb;
     this.maximumPersistentDisks = builder.maximumPersistentDisks;
     this.maximumPersistentDisksSizeGb = builder.maximumPersistentDisksSizeGb;
     this.deprecationStatus = builder.deprecationStatus;
@@ -166,16 +159,14 @@ public final class MachineType implements Serializable {
   /**
    * Returns an unique identifier for the machine type; defined by the service.
    */
-  public BigInteger id() {
+  public String id() {
     return id;
   }
 
   /**
-   * Returns the creation timestamp in RFC3339 text format.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+   * Returns the creation timestamp in milliseconds since epoch.
    */
-  public String creationTimestamp() {
+  public Long creationTimestamp() {
     return creationTimestamp;
   }
 
@@ -187,17 +178,10 @@ public final class MachineType implements Serializable {
   }
 
   /**
-   * Returns a service-defined URL for the machine type.
-   */
-  public String selfLink() {
-    return selfLink;
-  }
-
-  /**
    * Returns the number of virtual CPUs that are available to the instance.
    */
-  public Integer guestCpus() {
-    return guestCpus;
+  public Integer cpus() {
+    return cpus;
   }
 
   /**
@@ -210,8 +194,8 @@ public final class MachineType implements Serializable {
   /**
    * Returns the size of all extended scratch disks assigned to the instance, defined in GB.
    */
-  public List<Integer> scratchDisks() {
-    return scratchDisks;
+  public List<Integer> scratchDisksSizeGb() {
+    return scratchDisksSizeGb;
   }
 
   /**
@@ -245,10 +229,9 @@ public final class MachineType implements Serializable {
         .add("id", id)
         .add("creationTimestamp", creationTimestamp)
         .add("description", description)
-        .add("selfLink", selfLink)
-        .add("guestCpus", guestCpus)
+        .add("cpus", cpus)
         .add("memoryMb", memoryMb)
-        .add("scratchDisks", scratchDisks)
+        .add("scratchDisksSizeGb", scratchDisksSizeGb)
         .add("maximumPersistentDisks", maximumPersistentDisks)
         .add("maximumPersistentDisksSizeGb", maximumPersistentDisksSizeGb)
         .add("deprecationStatus", deprecationStatus)
@@ -268,15 +251,19 @@ public final class MachineType implements Serializable {
   com.google.api.services.compute.model.MachineType toPb() {
     com.google.api.services.compute.model.MachineType machineTypePb =
         new com.google.api.services.compute.model.MachineType();
-    machineTypePb.setId(id);
-    machineTypePb.setCreationTimestamp(creationTimestamp);
+    if (id != null) {
+      machineTypePb.setId(new BigInteger(id));
+    }
+    if (creationTimestamp != null) {
+      machineTypePb.setCreationTimestamp(new DateTime(creationTimestamp).toStringRfc3339());
+    }
     machineTypePb.setName(machineTypeId.machineType());
     machineTypePb.setDescription(description);
-    machineTypePb.setSelfLink(selfLink);
-    machineTypePb.setGuestCpus(guestCpus);
+    machineTypePb.setSelfLink(machineTypeId.selfLink());
+    machineTypePb.setGuestCpus(cpus);
     machineTypePb.setMemoryMb(memoryMb);
-    if (scratchDisks != null) {
-      machineTypePb.setScratchDisks(Lists.transform(scratchDisks,
+    if (scratchDisksSizeGb != null) {
+      machineTypePb.setScratchDisks(Lists.transform(scratchDisksSizeGb,
           new Function<Integer, ScratchDisks>() {
             @Override
             public ScratchDisks apply(Integer diskSize) {
@@ -300,14 +287,18 @@ public final class MachineType implements Serializable {
   static MachineType fromPb(com.google.api.services.compute.model.MachineType machineTypePb) {
     Builder builder = builder();
     builder.machineTypeId(MachineTypeId.fromUrl(machineTypePb.getSelfLink()));
-    builder.id(machineTypePb.getId());
-    builder.creationTimestamp(machineTypePb.getCreationTimestamp());
+    if (machineTypePb.getId() != null) {
+      builder.id(machineTypePb.getId().toString());
+    }
+    if (machineTypePb.getCreationTimestamp() != null) {
+      builder.creationTimestamp(
+          DateTime.parseRfc3339(machineTypePb.getCreationTimestamp()).getValue());
+    }
     builder.description(machineTypePb.getDescription());
-    builder.selfLink(machineTypePb.getSelfLink());
-    builder.guestCpus(machineTypePb.getGuestCpus());
+    builder.cpus(machineTypePb.getGuestCpus());
     builder.memoryMb(machineTypePb.getMemoryMb());
     if (machineTypePb.getScratchDisks() != null) {
-      builder.scratchDisks(
+      builder.scratchDisksSizeGb(
           Lists.transform(machineTypePb.getScratchDisks(), new Function<ScratchDisks, Integer>() {
             @Override
             public Integer apply(ScratchDisks scratchDiskPb) {

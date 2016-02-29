@@ -24,9 +24,9 @@ import org.junit.Test;
 
 public class DeprecationStatusTest {
 
-  private static final String DELETED = "2016-01-20T04:39:00.210-08:00";
-  private static final String DEPRECATED = "2016-01-20T04:37:00.210-08:00";
-  private static final String OBSOLETE = "2016-01-20T04:38:00.210-08:00";
+  private static final Long DELETED = 1453293540000L;
+  private static final Long DEPRECATED = 1453293420000L;
+  private static final Long OBSOLETE = 1453293480000L;
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
   private static final MachineTypeId MACHINE_TYPE_ID =
       MachineTypeId.of("project", "zone", "machineType");

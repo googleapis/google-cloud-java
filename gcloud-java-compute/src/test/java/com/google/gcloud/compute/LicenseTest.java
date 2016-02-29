@@ -24,14 +24,12 @@ public class LicenseTest {
 
   private static final LicenseId LICENSE_ID = LicenseId.of("project", "license");
   private static final Boolean CHARGES_USE_FEE = true;
-  private static final String SELF_LINK = LICENSE_ID.toUrl();
-  private static final License LICENSE = new License(LICENSE_ID, CHARGES_USE_FEE, SELF_LINK);
+  private static final License LICENSE = new License(LICENSE_ID, CHARGES_USE_FEE);
 
   @Test
   public void testBuilder() {
     assertEquals(LICENSE_ID, LICENSE.licenseId());
     assertEquals(CHARGES_USE_FEE, LICENSE.chargesUseFee());
-    assertEquals(LICENSE_ID.toUrl(), LICENSE.selfLink());
   }
 
   @Test
@@ -46,7 +44,6 @@ public class LicenseTest {
     assertEquals(expected, value);
     assertEquals(expected.licenseId(), value.licenseId());
     assertEquals(expected.chargesUseFee(), value.chargesUseFee());
-    assertEquals(expected.selfLink(), value.selfLink());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }
