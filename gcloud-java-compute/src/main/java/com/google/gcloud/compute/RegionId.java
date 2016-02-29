@@ -22,6 +22,8 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A Google Compute Engine region identity.
@@ -37,11 +39,12 @@ public final class RegionId extends ResourceId {
   static final Function<RegionId, String> TO_URL_FUNCTION = new Function<RegionId, String>() {
     @Override
     public String apply(RegionId regionId) {
-      return regionId.toUrl();
+      return regionId.selfLink();
     }
   };
 
-  static final String REGEX = ResourceId.REGEX + "regions/[^/]+";
+  private static final String REGEX = ResourceId.REGEX + "regions/([^/]+)";
+  private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = 5569092266957249294L;
 
   private final String region;
@@ -64,8 +67,8 @@ public final class RegionId extends ResourceId {
   }
 
   @Override
-  public String toUrl() {
-    return super.toUrl() + "/regions/" + region;
+  public String selfLink() {
+    return super.selfLink() + "/regions/" + region;
   }
 
   @Override
@@ -80,7 +83,9 @@ public final class RegionId extends ResourceId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof RegionId && baseEquals((RegionId) obj);
+    return obj instanceof RegionId
+        && baseEquals((RegionId) obj)
+        && Objects.equals(region, ((RegionId) obj).region);
   }
 
   @Override
@@ -110,17 +115,14 @@ public final class RegionId extends ResourceId {
    * Returns {@code false} otherwise.
    */
   static boolean matchesUrl(String url) {
-    return url.matches(REGEX);
+    return PATTERN.matcher(url).matches();
   }
 
   static RegionId fromUrl(String url) {
-    if (!matchesUrl(url)) {
+    Matcher matcher = PATTERN.matcher(url);
+    if (!matcher.matches()) {
       throw new IllegalArgumentException(url + " is not a valid region URL");
     }
-    int projectsIndex = url.indexOf("/projects/");
-    int regionsIndex = url.indexOf("/regions/");
-    String project = url.substring(projectsIndex + 10, regionsIndex);
-    String region = url.substring(regionsIndex + 9, url.length());
-    return RegionId.of(project, region);
+    return RegionId.of(matcher.group(1), matcher.group(2));
   }
 }

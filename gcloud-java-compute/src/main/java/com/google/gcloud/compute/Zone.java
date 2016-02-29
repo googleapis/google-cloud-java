@@ -16,6 +16,7 @@
 
 package com.google.gcloud.compute;
 
+import com.google.api.client.util.DateTime;
 import com.google.api.services.compute.model.Zone.MaintenanceWindows;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -51,10 +52,9 @@ public final class Zone implements Serializable {
   private static final long serialVersionUID = 6113636504417213010L;
 
   private final ZoneId zoneId;
-  private final BigInteger id;
-  private final String creationTimestamp;
+  private final String id;
+  private final Long creationTimestamp;
   private final String description;
-  private final String selfLink;
   private final Status status;
   private final List<MaintenanceWindow> maintenanceWindows;
   private final RegionId region;
@@ -96,13 +96,13 @@ public final class Zone implements Serializable {
 
     private final String name;
     private final String description;
-    private final String beginTime;
-    private final String endTime;
+    private final Long beginTime;
+    private final Long endTime;
 
     /**
      * Returns a zone maintenance window object.
      */
-    MaintenanceWindow(String name, String description, String beginTime, String endTime) {
+    MaintenanceWindow(String name, String description, Long beginTime, Long endTime) {
       this.name = name;
       this.description = description;
       this.beginTime = beginTime;
@@ -110,7 +110,7 @@ public final class Zone implements Serializable {
     }
 
     /**
-     * Returns the disk of the maintanance window.
+     * Returns the name of the maintenance window.
      */
     public String name() {
       return name;
@@ -124,20 +124,16 @@ public final class Zone implements Serializable {
     }
 
     /**
-     * Returns the starting time of the maintenance window in RFC3339 text format.
-     *
-     * @see <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+     * Returns the starting time of the maintenance window in milliseconds since epoch.
      */
-    public String beginTime() {
+    public Long beginTime() {
       return beginTime;
     }
 
     /**
-     * Returns the ending time of the maintenance window in RFC3339 text format.
-     *
-     * @see <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+     * Returns the ending time of the maintenance window in milliseconds since epoch.
      */
-    public String endTime() {
+    public Long endTime() {
       return endTime;
     }
 
@@ -166,23 +162,26 @@ public final class Zone implements Serializable {
       return new MaintenanceWindows()
           .setName(name)
           .setDescription(description)
-          .setBeginTime(beginTime)
-          .setEndTime(endTime);
+          .setBeginTime(beginTime != null ? new DateTime(beginTime).toStringRfc3339() : null)
+          .setEndTime(endTime != null ? new DateTime(endTime).toStringRfc3339() : null);
     }
 
     static MaintenanceWindow fromPb(MaintenanceWindows windowPb) {
       return new MaintenanceWindow(windowPb.getName(), windowPb.getDescription(),
-          windowPb.getBeginTime(), windowPb.getEndTime());
+          windowPb.getBeginTime() != null
+              ? DateTime.parseRfc3339(windowPb.getBeginTime()).getValue() : null,
+          windowPb.getEndTime() != null
+              ? DateTime.parseRfc3339(windowPb.getEndTime()).getValue() : null);
     }
   }
 
   static final class Builder {
 
     private ZoneId zoneId;
-    private BigInteger id;
-    private String creationTimestamp;
+    private String id;
+    private Long creationTimestamp;
     private String description;
-    private String selfLink;
+
     private Status status;
     private List<MaintenanceWindow> maintenanceWindows;
     private RegionId region;
@@ -195,23 +194,18 @@ public final class Zone implements Serializable {
       return this;
     }
 
-    Builder id(BigInteger id) {
+    Builder id(String id) {
       this.id = id;
       return this;
     }
 
-    Builder creationTimestamp(String creationTimestamp) {
+    Builder creationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
     Builder description(String description) {
       this.description = description;
-      return this;
-    }
-
-    Builder selfLink(String selfLink) {
-      this.selfLink = selfLink;
       return this;
     }
 
@@ -245,7 +239,6 @@ public final class Zone implements Serializable {
     this.id = builder.id;
     this.creationTimestamp = builder.creationTimestamp;
     this.description = builder.description;
-    this.selfLink = builder.selfLink;
     this.status = builder.status;
     this.maintenanceWindows = builder.maintenanceWindows;
     this.region = builder.region;
@@ -260,11 +253,9 @@ public final class Zone implements Serializable {
   }
 
   /**
-   * Returns the creation timestamp in RFC3339 text format.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+   * Returns the creation timestamp in milliseconds since epoch.
    */
-  public String creationTimestamp() {
+  public Long creationTimestamp() {
     return creationTimestamp;
   }
 
@@ -278,15 +269,8 @@ public final class Zone implements Serializable {
   /**
    * Returns an unique identifier for the zone; defined by the service.
    */
-  public BigInteger id() {
+  public String id() {
     return id;
-  }
-
-  /**
-   * Returns a service-defined URL for the zone.
-   */
-  public String selfLink() {
-    return selfLink;
   }
 
   /**
@@ -330,7 +314,6 @@ public final class Zone implements Serializable {
         .add("id", id)
         .add("creationTimestamp", creationTimestamp)
         .add("description", description)
-        .add("selfLink", selfLink)
         .add("status", status)
         .add("maintenanceWindows", maintenanceWindows)
         .add("region", region)
@@ -351,11 +334,15 @@ public final class Zone implements Serializable {
   com.google.api.services.compute.model.Zone toPb() {
     com.google.api.services.compute.model.Zone zonePb =
         new com.google.api.services.compute.model.Zone();
-    zonePb.setId(id);
-    zonePb.setCreationTimestamp(creationTimestamp);
+    if (id != null) {
+      zonePb.setId(new BigInteger(id));
+    }
+    if (creationTimestamp != null) {
+      zonePb.setCreationTimestamp(new DateTime(creationTimestamp).toStringRfc3339());
+    }
     zonePb.setName(zoneId.zone());
     zonePb.setDescription(description);
-    zonePb.setSelfLink(selfLink);
+    zonePb.setSelfLink(zoneId.selfLink());
     if (status != null) {
       zonePb.setStatus(status.name());
     }
@@ -364,7 +351,7 @@ public final class Zone implements Serializable {
           Lists.transform(maintenanceWindows, MaintenanceWindow.TO_PB_FUNCTION));
     }
     if (region != null) {
-      zonePb.setRegion(region.toUrl());
+      zonePb.setRegion(region.selfLink());
     }
     if (deprecationStatus != null) {
       zonePb.setDeprecated(deprecationStatus.toPb());
@@ -379,10 +366,13 @@ public final class Zone implements Serializable {
   static Zone fromPb(com.google.api.services.compute.model.Zone zonePb) {
     Builder builder = builder();
     builder.zoneId(ZoneId.fromUrl(zonePb.getSelfLink()));
-    builder.id(zonePb.getId());
-    builder.creationTimestamp(zonePb.getCreationTimestamp());
+    if (zonePb.getId() != null) {
+      builder.id(zonePb.getId().toString());
+    }
+    if (zonePb.getCreationTimestamp() != null) {
+      builder.creationTimestamp(DateTime.parseRfc3339(zonePb.getCreationTimestamp()).getValue());
+    }
     builder.description(zonePb.getDescription());
-    builder.selfLink(zonePb.getSelfLink());
     if (zonePb.getStatus() != null) {
       builder.status(Status.valueOf(zonePb.getStatus()));
     }

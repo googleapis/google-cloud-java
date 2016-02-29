@@ -41,7 +41,7 @@ public class ZoneIdTest {
     ZoneId zoneId = ZoneId.of(PROJECT, ZONE);
     assertEquals(PROJECT, zoneId.project());
     assertEquals(ZONE, zoneId.zone());
-    assertEquals(URL, zoneId.toUrl());
+    assertEquals(URL, zoneId.selfLink());
     zoneId = ZoneId.of(ZONE);
     assertNull(zoneId.project());
     assertEquals(ZONE, zoneId.zone());
@@ -50,7 +50,7 @@ public class ZoneIdTest {
   @Test
   public void testToAndFromUrl() {
     ZoneId zoneId = ZoneId.of(PROJECT, ZONE);
-    compareZoneId(zoneId, ZoneId.fromUrl(zoneId.toUrl()));
+    compareZoneId(zoneId, ZoneId.fromUrl(zoneId.selfLink()));
   }
 
   @Test
@@ -60,12 +60,12 @@ public class ZoneIdTest {
     compareZoneId(zoneId, ZoneId.of(ZONE).setProjectId(PROJECT));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid zone URL");
-    zoneId = ZoneId.fromUrl("notMatchingUrl");
+    ZoneId.fromUrl("notMatchingUrl");
   }
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(ZoneId.matchesUrl(ZoneId.of(PROJECT, ZONE).toUrl()));
+    assertTrue(ZoneId.matchesUrl(ZoneId.of(PROJECT, ZONE).selfLink()));
     assertFalse(ZoneId.matchesUrl("notMatchingUrl"));
   }
 
@@ -73,7 +73,7 @@ public class ZoneIdTest {
     assertEquals(expected, value);
     assertEquals(expected.project(), expected.project());
     assertEquals(expected.zone(), expected.zone());
-    assertEquals(expected.toUrl(), expected.toUrl());
+    assertEquals(expected.selfLink(), expected.selfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

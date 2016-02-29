@@ -27,7 +27,7 @@ import java.util.Objects;
  */
 public abstract class RegionResourceId extends ResourceId {
 
-  static final String REGEX = ResourceId.REGEX + "regions/[^/]+/";
+  static final String REGEX = ResourceId.REGEX + "regions/([^/]+)/";
   private static final long serialVersionUID = 5569092266957249294L;
 
   private final String region;
@@ -57,8 +57,8 @@ public abstract class RegionResourceId extends ResourceId {
   }
 
   @Override
-  public String toUrl() {
-    return super.toUrl() + "/regions/" + region;
+  public String selfLink() {
+    return super.selfLink() + "/regions/" + region;
   }
 
   @Override
@@ -67,14 +67,14 @@ public abstract class RegionResourceId extends ResourceId {
   }
 
   @Override
-  public int hashCode() {
-    return Objects.hash(baseHashCode(), region);
+  final int baseHashCode() {
+    return Objects.hash(super.baseHashCode(), region);
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj != null
-        && obj.getClass().equals(RegionResourceId.class)
-        && baseEquals((RegionResourceId) obj);
+  final boolean baseEquals(ResourceId resourceId) {
+    return resourceId instanceof RegionResourceId
+        && super.baseEquals(resourceId)
+        && Objects.equals(region, ((RegionResourceId) resourceId).region);
   }
 }

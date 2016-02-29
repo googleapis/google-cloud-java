@@ -41,7 +41,7 @@ public class RegionIdTest {
     RegionId regionId = RegionId.of(PROJECT, REGION);
     assertEquals(PROJECT, regionId.project());
     assertEquals(REGION, regionId.region());
-    assertEquals(URL, regionId.toUrl());
+    assertEquals(URL, regionId.selfLink());
     regionId = RegionId.of(REGION);
     assertNull(regionId.project());
     assertEquals(REGION, regionId.region());
@@ -50,7 +50,7 @@ public class RegionIdTest {
   @Test
   public void testToAndFromUrl() {
     RegionId regionId = RegionId.of(PROJECT, REGION);
-    compareRegionId(regionId, RegionId.fromUrl(regionId.toUrl()));
+    compareRegionId(regionId, RegionId.fromUrl(regionId.selfLink()));
   }
 
   @Test
@@ -60,12 +60,12 @@ public class RegionIdTest {
     compareRegionId(regionId, RegionId.of(REGION).setProjectId(PROJECT));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid region URL");
-    regionId = RegionId.fromUrl("notMatchingUrl");
+    RegionId.fromUrl("notMatchingUrl");
   }
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(RegionId.matchesUrl(RegionId.of(PROJECT, REGION).toUrl()));
+    assertTrue(RegionId.matchesUrl(RegionId.of(PROJECT, REGION).selfLink()));
     assertFalse(RegionId.matchesUrl("notMatchingUrl"));
   }
 
@@ -73,7 +73,7 @@ public class RegionIdTest {
     assertEquals(expected, value);
     assertEquals(expected.project(), expected.project());
     assertEquals(expected.region(), expected.region());
-    assertEquals(expected.toUrl(), expected.toUrl());
+    assertEquals(expected.selfLink(), expected.selfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

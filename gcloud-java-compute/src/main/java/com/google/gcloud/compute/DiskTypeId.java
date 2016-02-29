@@ -22,6 +22,8 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Identity for a Google Compute Engine disk type.
@@ -37,11 +39,12 @@ public final class DiskTypeId extends ZoneResourceId {
   static final Function<DiskTypeId, String> TO_URL_FUNCTION = new Function<DiskTypeId, String>() {
     @Override
     public String apply(DiskTypeId diskTypeId) {
-      return diskTypeId.toUrl();
+      return diskTypeId.selfLink();
     }
   };
 
-  static final String REGEX = ZoneResourceId.REGEX + "diskTypes/[^/]+";
+  private static final String REGEX = ZoneResourceId.REGEX + "diskTypes/([^/]+)";
+  private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = 7337881474103686219L;
 
   private final String diskType;
@@ -52,21 +55,15 @@ public final class DiskTypeId extends ZoneResourceId {
   }
 
   /**
-   * Returns the name of the disk type resource. The name must be 1-63 characters long, and comply
-   * with RFC1035. Specifically, the name must be 1-63 characters long and match the regular
-   * expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a
-   * lowercase letter, and all following characters must be a dash, lowercase letter, or digit,
-   * except the last character, which cannot be a dash.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
+   * Returns the name of the disk type.
    */
   public String diskType() {
     return diskType;
   }
 
   @Override
-  public String toUrl() {
-    return super.toUrl() + "/diskTypes/" + diskType;
+  public String selfLink() {
+    return super.selfLink() + "/diskTypes/" + diskType;
   }
 
   @Override
@@ -76,12 +73,14 @@ public final class DiskTypeId extends ZoneResourceId {
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), diskType);
+    return Objects.hash(super.baseHashCode(), diskType);
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof DiskTypeId && baseEquals((DiskTypeId) obj);
+    return obj instanceof DiskTypeId
+        && baseEquals((DiskTypeId) obj)
+        && Objects.equals(diskType, ((DiskTypeId) obj).diskType);
   }
 
   @Override
@@ -118,19 +117,14 @@ public final class DiskTypeId extends ZoneResourceId {
    * Returns {@code false} otherwise.
    */
   static boolean matchesUrl(String url) {
-    return url.matches(REGEX);
+    return PATTERN.matcher(url).matches();
   }
 
   static DiskTypeId fromUrl(String url) {
-    if (!matchesUrl(url)) {
+    Matcher matcher = PATTERN.matcher(url);
+    if (!matcher.matches()) {
       throw new IllegalArgumentException(url + " is not a valid disk type URL");
     }
-    int projectsIndex = url.indexOf("/projects/");
-    int zonesIndex = url.indexOf("/zones/");
-    int diskTypesIndex = url.indexOf("/diskTypes/");
-    String project = url.substring(projectsIndex + 10, zonesIndex);
-    String zone = url.substring(zonesIndex + 7, diskTypesIndex);
-    String diskType = url.substring(diskTypesIndex + 11, url.length());
-    return DiskTypeId.of(project, zone, diskType);
+    return DiskTypeId.of(matcher.group(1), matcher.group(2), matcher.group(3));
   }
 }

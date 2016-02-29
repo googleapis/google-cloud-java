@@ -22,6 +22,8 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A Google Compute Engine zone identity.
@@ -37,11 +39,12 @@ public final class ZoneId extends ResourceId {
   static final Function<ZoneId, String> TO_URL_FUNCTION = new Function<ZoneId, String>() {
     @Override
     public String apply(ZoneId zoneId) {
-      return zoneId.toUrl();
+      return zoneId.selfLink();
     }
   };
 
-  static final String REGEX = ResourceId.REGEX + "zones/[^/]+";
+  private static final String REGEX = ResourceId.REGEX + "zones/([^/]+)";
+  private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = -7635391994812946733L;
 
   private final String zone;
@@ -59,8 +62,8 @@ public final class ZoneId extends ResourceId {
   }
 
   @Override
-  public String toUrl() {
-    return super.toUrl() + "/zones/" + zone;
+  public String selfLink() {
+    return super.selfLink() + "/zones/" + zone;
   }
 
   @Override
@@ -75,7 +78,9 @@ public final class ZoneId extends ResourceId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ZoneId && baseEquals((ZoneId) obj);
+    return obj instanceof ZoneId
+        && baseEquals((ZoneId) obj)
+        && Objects.equals(zone, ((ZoneId) obj).zone);
   }
 
   @Override
@@ -109,13 +114,10 @@ public final class ZoneId extends ResourceId {
   }
 
   static ZoneId fromUrl(String url) {
-    if (!matchesUrl(url)) {
+    Matcher matcher = PATTERN.matcher(url);
+    if (!matcher.matches()) {
       throw new IllegalArgumentException(url + " is not a valid zone URL");
     }
-    int projectsIndex = url.indexOf("/projects/");
-    int zonesIndex = url.indexOf("/zones/");
-    String project = url.substring(projectsIndex + 10, zonesIndex);
-    String zone = url.substring(zonesIndex + 7, url.length());
-    return ZoneId.of(project, zone);
+    return ZoneId.of(matcher.group(1), matcher.group(2));
   }
 }

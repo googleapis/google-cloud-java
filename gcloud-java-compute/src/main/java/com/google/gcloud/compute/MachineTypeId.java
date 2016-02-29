@@ -22,6 +22,8 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Identity for a Google Compute Engine machine type.
@@ -39,11 +41,12 @@ public final class MachineTypeId extends ZoneResourceId {
       new Function<MachineTypeId, String>() {
         @Override
         public String apply(MachineTypeId machineTypeId) {
-          return machineTypeId.toUrl();
+          return machineTypeId.selfLink();
         }
       };
 
-  static final String REGEX = ZoneResourceId.REGEX + "machineTypes/[^/]+";
+  private static final String REGEX = ZoneResourceId.REGEX + "machineTypes/([^/]+)";
+  private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = -5819598544478859608L;
 
   private final String machineType;
@@ -61,8 +64,8 @@ public final class MachineTypeId extends ZoneResourceId {
   }
 
   @Override
-  public String toUrl() {
-    return super.toUrl() + "/machineTypes/" + machineType;
+  public String selfLink() {
+    return super.selfLink() + "/machineTypes/" + machineType;
   }
 
   @Override
@@ -72,12 +75,14 @@ public final class MachineTypeId extends ZoneResourceId {
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), machineType);
+    return Objects.hash(baseHashCode(), machineType);
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof MachineTypeId && baseEquals((MachineTypeId) obj);
+    return obj instanceof MachineTypeId
+        && baseEquals((MachineTypeId) obj)
+        && Objects.equals(machineType, ((MachineTypeId) obj).machineType);
   }
 
   @Override
@@ -107,19 +112,14 @@ public final class MachineTypeId extends ZoneResourceId {
    * Returns {@code false} otherwise.
    */
   static boolean matchesUrl(String url) {
-    return url.matches(REGEX);
+    return PATTERN.matcher(url).matches();
   }
 
   static MachineTypeId fromUrl(String url) {
-    if (!matchesUrl(url)) {
+    Matcher matcher = PATTERN.matcher(url);
+    if (!matcher.matches()) {
       throw new IllegalArgumentException(url + " is not a valid machine type URL");
     }
-    int projectsIndex = url.indexOf("/projects/");
-    int zonesIndex = url.indexOf("/zones/");
-    int machineTypesIndex = url.indexOf("/machineTypes/");
-    String project = url.substring(projectsIndex + 10, zonesIndex);
-    String zone = url.substring(zonesIndex + 7, machineTypesIndex);
-    String machineType = url.substring(machineTypesIndex + 14, url.length());
-    return MachineTypeId.of(project, zone, machineType);
+    return MachineTypeId.of(matcher.group(1), matcher.group(2), matcher.group(3));
   }
 }

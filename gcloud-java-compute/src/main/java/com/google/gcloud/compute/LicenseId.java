@@ -22,6 +22,8 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Identity for a Google Compute Engine license.
@@ -37,11 +39,12 @@ public final class LicenseId extends ResourceId {
   static final Function<LicenseId, String> TO_URL_FUNCTION = new Function<LicenseId, String>() {
     @Override
     public String apply(LicenseId licenseId) {
-      return licenseId.toUrl();
+      return licenseId.selfLink();
     }
   };
 
-  static final String REGEX = ResourceId.REGEX + "global/licenses/[^/]+";
+  private static final String REGEX = ResourceId.REGEX + "global/licenses/([^/]+)";
+  private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = -2239484554024469651L;
 
   private final String license;
@@ -52,21 +55,15 @@ public final class LicenseId extends ResourceId {
   }
 
   /**
-   * Returns the name of the license. The name must be 1-63 characters long, and comply with
-   * RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression
-   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
-   * and all following characters must be a dash, lowercase letter, or digit, except the last
-   * character, which cannot be a dash.
-   *
-   * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
+   * Returns the name of the license.
    */
   public String license() {
     return license;
   }
 
   @Override
-  public String toUrl() {
-    return super.toUrl() + "/global/licenses/" + license;
+  public String selfLink() {
+    return super.selfLink() + "/global/licenses/" + license;
   }
 
   @Override
@@ -81,7 +78,9 @@ public final class LicenseId extends ResourceId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof LicenseId && baseEquals((LicenseId) obj);
+    return obj instanceof LicenseId
+        && baseEquals((LicenseId) obj)
+        && Objects.equals(license, ((LicenseId) obj).license);
   }
 
   @Override
@@ -111,17 +110,14 @@ public final class LicenseId extends ResourceId {
    * Returns {@code false} otherwise.
    */
   static boolean matchesUrl(String url) {
-    return url.matches(REGEX);
+    return PATTERN.matcher(url).matches();
   }
 
   static LicenseId fromUrl(String url) {
-    if (!matchesUrl(url)) {
+    Matcher matcher = PATTERN.matcher(url);
+    if (!matcher.matches()) {
       throw new IllegalArgumentException(url + " is not a valid license URL");
     }
-    int projectsIndex = url.indexOf("/projects/");
-    int licensesIndex = url.indexOf("/global/licenses/");
-    String project = url.substring(projectsIndex + 10, licensesIndex);
-    String license = url.substring(licensesIndex + 17, url.length());
-    return LicenseId.of(project, license);
+    return LicenseId.of(matcher.group(1), matcher.group(2));
   }
 }

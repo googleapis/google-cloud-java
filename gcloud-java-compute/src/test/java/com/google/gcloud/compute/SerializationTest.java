@@ -32,13 +32,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.List;
 
 public class SerializationTest {
 
-  private static final BigInteger ID = BigInteger.valueOf(42L);
-  private static final String CREATION_TIMESTAMP = "2016-01-20T04:39:00.210-08:00";
+  private static final String ID = "42";
+  private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final String VALID_DISK_SIZE = "10GB-10TB";
   private static final Long DEFAULT_DISK_SIZE_GB = 10L;
@@ -49,7 +48,6 @@ public class SerializationTest {
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .validDiskSize(VALID_DISK_SIZE)
-      .selfLink(DISK_TYPE_ID.toUrl())
       .defaultDiskSizeGb(DEFAULT_DISK_SIZE_GB)
       .build();
   private static final MachineTypeId MACHINE_TYPE_ID = MachineTypeId.of("project", "zone", "type");
@@ -63,10 +61,9 @@ public class SerializationTest {
       .machineTypeId(MACHINE_TYPE_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
-      .selfLink(MACHINE_TYPE_ID.toUrl())
-      .guestCpus(GUEST_CPUS)
+      .cpus(GUEST_CPUS)
       .memoryMb(MEMORY_MB)
-      .scratchDisks(SCRATCH_DISKS)
+      .scratchDisksSizeGb(SCRATCH_DISKS)
       .maximumPersistentDisks(MAXIMUM_PERSISTENT_DISKS)
       .maximumPersistentDisksSizeGb(MAXIMUM_PERSISTENT_DISKS_SIZE_GB)
       .build();
@@ -85,38 +82,37 @@ public class SerializationTest {
       .id(ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
-      .selfLink(REGION_ID.toUrl())
       .status(REGION_STATUS)
       .zones(ZONES)
       .quotas(QUOTAS)
       .build();
   private static final ZoneId ZONE_ID = ZoneId.of("project", "zone");
   private static final Zone.Status ZONE_STATUS = Zone.Status.DOWN;
+  private static final Long BEGIN_TIME = 1453293420000L;
+  private static final Long END_TIME = 1453293480000L;
   private static final MaintenanceWindow WINDOW1 = new MaintenanceWindow("NAME1", "DESCRIPTION1",
-      "2016-01-20T04:39:00.210-08:00", "2016-01-21T04:39:00.210-08:00");
+      BEGIN_TIME, END_TIME);
   private static final MaintenanceWindow WINDOW2 = new MaintenanceWindow("NAME2", "DESCRIPTION2",
-      "2016-01-21T04:39:00.210-08:00", "2016-01-22T04:39:00.210-08:00");
+      BEGIN_TIME, END_TIME);
   private static final List<MaintenanceWindow> WINDOWS = ImmutableList.of(WINDOW1, WINDOW2);
   private static final Zone ZONE = Zone.builder()
       .zoneId(ZONE_ID)
       .id(ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
-      .selfLink(ZONE_ID.toUrl())
       .status(ZONE_STATUS)
       .maintenanceWindows(WINDOWS)
       .region(REGION_ID)
       .build();
-  private static final String DELETED = "2016-01-20T04:39:00.210-08:00";
-  private static final String DEPRECATED = "2016-01-20T04:37:00.210-08:00";
-  private static final String OBSOLETE = "2016-01-20T04:38:00.210-08:00";
+  private static final Long DELETED = 1453293540000L;
+  private static final Long DEPRECATED = 1453293420000L;
+  private static final Long OBSOLETE = 1453293480000L;
   private static final DeprecationStatus<MachineTypeId> DEPRECATION_STATUS =
       new DeprecationStatus<>(DELETED, DEPRECATED, OBSOLETE, MACHINE_TYPE_ID,
           DeprecationStatus.Status.DELETED);
   private static final LicenseId LICENSE_ID = LicenseId.of("project", "license");
   private static final Boolean CHARGES_USE_FEE = true;
-  private static final String SELF_LINK = LICENSE_ID.toUrl();
-  private static final License LICENSE = new License(LICENSE_ID, CHARGES_USE_FEE, SELF_LINK);
+  private static final License LICENSE = new License(LICENSE_ID, CHARGES_USE_FEE);
 
   @Test
   public void testServiceOptions() throws Exception {

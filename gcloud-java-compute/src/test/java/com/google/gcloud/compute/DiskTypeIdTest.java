@@ -43,7 +43,7 @@ public class DiskTypeIdTest {
     assertEquals(PROJECT, diskTypeId.project());
     assertEquals(ZONE, diskTypeId.zone());
     assertEquals(DISK_TYPE, diskTypeId.diskType());
-    assertEquals(URL, diskTypeId.toUrl());
+    assertEquals(URL, diskTypeId.selfLink());
     diskTypeId = DiskTypeId.of(ZONE, DISK_TYPE);
     assertNull(diskTypeId.project());
     assertEquals(ZONE, diskTypeId.zone());
@@ -54,10 +54,10 @@ public class DiskTypeIdTest {
   public void testToAndFromUrl() {
     DiskTypeId diskTypeId = DiskTypeId.of(PROJECT, ZONE, DISK_TYPE);
     assertSame(diskTypeId, diskTypeId.setProjectId(PROJECT));
-    compareDiskTypeId(diskTypeId, DiskTypeId.fromUrl(diskTypeId.toUrl()));
+    compareDiskTypeId(diskTypeId, DiskTypeId.fromUrl(diskTypeId.selfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid disk type URL");
-    diskTypeId = DiskTypeId.fromUrl("notMatchingUrl");
+    DiskTypeId.fromUrl("notMatchingUrl");
   }
 
   @Test
@@ -69,7 +69,7 @@ public class DiskTypeIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(DiskTypeId.matchesUrl(DiskTypeId.of(PROJECT, ZONE, DISK_TYPE).toUrl()));
+    assertTrue(DiskTypeId.matchesUrl(DiskTypeId.of(PROJECT, ZONE, DISK_TYPE).selfLink()));
     assertFalse(DiskTypeId.matchesUrl("notMatchingUrl"));
   }
 
@@ -78,7 +78,7 @@ public class DiskTypeIdTest {
     assertEquals(expected.project(), expected.project());
     assertEquals(expected.zone(), expected.zone());
     assertEquals(expected.diskType(), expected.diskType());
-    assertEquals(expected.toUrl(), expected.toUrl());
+    assertEquals(expected.selfLink(), expected.selfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

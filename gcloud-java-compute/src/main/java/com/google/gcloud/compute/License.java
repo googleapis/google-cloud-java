@@ -35,12 +35,10 @@ public final class License implements Serializable {
 
   private final LicenseId licenseId;
   private final Boolean chargesUseFee;
-  private final String selfLink;
 
-  License(LicenseId licenseId, Boolean chargesUseFee, String selfLink) {
+  License(LicenseId licenseId, Boolean chargesUseFee) {
     this.licenseId = checkNotNull(licenseId);
     this.chargesUseFee = chargesUseFee;
-    this.selfLink = selfLink;
   }
 
   /**
@@ -58,19 +56,11 @@ public final class License implements Serializable {
     return chargesUseFee;
   }
 
-  /**
-   * Returns a service-defined URL for the license.
-   */
-  public String selfLink() {
-    return selfLink;
-  }
-
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("licenseId", licenseId)
         .add("chargesUseFee", chargesUseFee)
-        .add("selfLink", selfLink)
         .toString();
   }
 
@@ -89,12 +79,11 @@ public final class License implements Serializable {
         new com.google.api.services.compute.model.License();
     licensePb.setName(licenseId.license());
     licensePb.setChargesUseFee(chargesUseFee);
-    licensePb.setSelfLink(selfLink);
+    licensePb.setSelfLink(licenseId.selfLink());
     return licensePb;
   }
 
   static License fromPb(com.google.api.services.compute.model.License licensePb) {
-    return new License(LicenseId.fromUrl(licensePb.getSelfLink()), licensePb.getChargesUseFee(),
-        licensePb.getSelfLink());
+    return new License(LicenseId.fromUrl(licensePb.getSelfLink()), licensePb.getChargesUseFee());
   }
 }
