@@ -36,7 +36,7 @@ libraryDependencies += "com.google.gcloud" % "gcloud-java-datastore" % "0.1.4"
 
 Example Application
 --------------------
-[`DatastoreExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html).
+[`DatastoreExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/datastore/DatastoreExample.html).
 
 Authentication
 --------------

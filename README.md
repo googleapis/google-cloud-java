@@ -45,17 +45,17 @@ Example Applications
 --------------------
 
 - [`BigQueryExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/BigQueryExample.html).
+  - Read more about using this application on the [`BigQueryExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/bigquery/BigQueryExample.html).
 - [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
   - This app uses `gcloud-java` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
 - [`DatastoreExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/DatastoreExample.java) - A simple command line interface for the Cloud Datastore
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html).
+  - Read more about using this application on the [`DatastoreExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/datastore/DatastoreExample.html).
 - [`ResourceManagerExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/ResourceManagerExample.html).
+  - Read more about using this application on the [`ResourceManagerExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/resourcemanager/ResourceManagerExample.html).
 - [`SparkDemo`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/managed_vms/sparkjava) - An example of using gcloud-java-datastore from within the SparkJava and App Engine Managed VM frameworks.
   - Read about how it works on the example's [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/sparkjava#how-does-it-work).
 - [`StorageExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
+  - Read more about using this application on the [`StorageExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/storage/StorageExample.html).
 
 Specifying a Project ID
 -----------------------
