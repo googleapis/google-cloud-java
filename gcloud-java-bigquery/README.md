@@ -37,7 +37,7 @@ libraryDependencies += "com.google.gcloud" % "gcloud-java-bigquery" % "0.1.4"
 Example Application
 -------------------
 - [`BigQueryExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
-Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/bigquery/BigQueryExample.html).
+Read more about using this application on the [`BigQueryExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/bigquery/BigQueryExample.html).
 
 Authentication
 --------------

@@ -37,7 +37,7 @@ libraryDependencies += "com.google.gcloud" % "gcloud-java-storage" % "0.1.4"
 Example Application
 -------------------
 
-[`StorageExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/StorageExample.java) is a simple command line interface that provides some of Cloud Storage's functionality.  Read more about using the application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/storage/StorageExample.html).
+[`StorageExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/StorageExample.java) is a simple command line interface that provides some of Cloud Storage's functionality.  Read more about using the application on the [`StorageExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/storage/StorageExample.html).
 
 Authentication
 --------------
