@@ -27,10 +27,10 @@
       <version>v1-rev62-1.21.0</version>
       <scope>compile</scope>
       <exclusions>
-	<exclusion>
-	  <groupId>com.google.guava</groupId>
-	  <artifactId>guava-jdk5</artifactId>
-	</exclusion>
+        <exclusion>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava-jdk5</artifactId>
+        </exclusion>
         <exclusion>
           <groupId>com.google.api-client</groupId>
           <artifactId>google-api-client</artifactId>
