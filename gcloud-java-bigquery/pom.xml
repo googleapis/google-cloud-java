@@ -33,10 +33,10 @@
       <version>v2-rev270-1.21.0</version>
       <scope>compile</scope>
       <exclusions>
-	<exclusion>
-	  <groupId>com.google.guava</groupId>
-	  <artifactId>guava-jdk5</artifactId>
-	</exclusion>
+        <exclusion>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava-jdk5</artifactId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
