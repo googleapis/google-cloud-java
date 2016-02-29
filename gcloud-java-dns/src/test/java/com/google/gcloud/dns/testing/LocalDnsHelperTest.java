@@ -27,8 +27,10 @@ import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
+import com.google.common.collect.ImmutableCollection;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Lists;
 import com.google.gcloud.dns.DnsException;
 import com.google.gcloud.spi.DefaultDnsRpc;
@@ -40,6 +42,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -321,29 +324,29 @@ public class LocalDnsHelperTest {
 
   @Test
   public void testCreateAndApplyChangeWithThreads() {
-    LocalDnsHelper localDnsThreaded = LocalDnsHelper.create(1000L); // using threads here
-    localDnsThreaded.createZone(PROJECT_ID1, ZONE1, null);
+    LocalDnsHelper localDnsThreaded = LocalDnsHelper.create(50L); // using threads here
+    localDnsThreaded.createZone(PROJECT_ID1, ZONE1);
     assertNull(localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).findChange("1"));
     LocalDnsHelper.Response response =
-        localDnsThreaded.createChange(PROJECT_ID1, ZONE_NAME1, CHANGE1, null); // add
+        localDnsThreaded.createChange(PROJECT_ID1, ZONE_NAME1, CHANGE1); // add
     assertEquals(200, response.code());
     assertNotNull(localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).findChange("1"));
     assertNull(localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).findChange("2"));
-    localDnsThreaded.createChange(PROJECT_ID1, ZONE_NAME1, CHANGE1, null); // add
-    response = localDnsThreaded.createChange(PROJECT_ID1, ZONE_NAME1, CHANGE1, null); // add
+    localDnsThreaded.createChange(PROJECT_ID1, ZONE_NAME1, CHANGE1); // add
+    response = localDnsThreaded.createChange(PROJECT_ID1, ZONE_NAME1, CHANGE1); // add
     assertEquals(200, response.code());
     assertNotNull(localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).findChange("1"));
     assertNotNull(localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).findChange("2"));
-    localDnsThreaded.createChange(PROJECT_ID1, ZONE_NAME1, CHANGE2, null); // delete
+    localDnsThreaded.createChange(PROJECT_ID1, ZONE_NAME1, CHANGE2); // delete
     assertNotNull(localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).findChange("1"));
     assertNotNull(localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).findChange("2"));
     assertNotNull(localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).findChange("3"));
-    localDnsThreaded.createChange(PROJECT_ID1, ZONE_NAME1, CHANGE_KEEP, null); // id is "4"
+    localDnsThreaded.createChange(PROJECT_ID1, ZONE_NAME1, CHANGE_KEEP);
     // check execution
     Change change = localDnsThreaded.findChange(PROJECT_ID1, ZONE_NAME1, "4");
     for (int i = 0; i < 10 && !change.getStatus().equals("done"); i++) {
       // change has not been finished yet; wait at most 20 seconds
-      // it takes 5 seconds for the thread to kick in in the first place
+      // it takes 5O ms for the thread to kick in in the first place
       try {
         Thread.sleep(2 * 1000);
       } catch (InterruptedException e) {
@@ -351,9 +354,9 @@ public class LocalDnsHelperTest {
       }
     }
     assertEquals("done", change.getStatus());
-    List<LocalDnsHelper.RrsetWrapper> list =
+    ImmutableSortedMap<String, ResourceRecordSet> list =
         localDnsThreaded.findZone(PROJECT_ID1, ZONE_NAME1).dnsRecords().get();
-    assertTrue(list.contains(new LocalDnsHelper.RrsetWrapper(RRSET_KEEP)));
+    assertTrue(list.containsValue(RRSET_KEEP));
     localDnsThreaded.stop();
   }
 
@@ -423,7 +426,6 @@ public class LocalDnsHelperTest {
     assertNull(project.getNumber());
     assertNotNull(project.getQuota());
   }
-
 
   @Test
   public void testCreateChange() {
@@ -663,7 +665,6 @@ public class LocalDnsHelperTest {
     assertEquals(zone.getName(), managedZoneListResult.pageToken());
   }
 
-
   @Test
   public void testListDnsRecords() {
     // no zone exists
@@ -802,8 +803,6 @@ public class LocalDnsHelperTest {
     assertNull(record.getTtl());
     assertNotNull(resourceRecordSetListResult.pageToken());
   }
-
-
 
   @Test
   public void testListChanges() {
@@ -1021,45 +1020,45 @@ public class LocalDnsHelperTest {
     // no name
     ManagedZone copy = copyZone(minimalZone);
     copy.setName(null);
-    LocalDnsHelper.Response response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy, null);
+    LocalDnsHelper.Response response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy);
     assertEquals(400, response.code());
     assertTrue(response.body().contains("entity.managedZone.name"));
     // no description
     copy = copyZone(minimalZone);
     copy.setDescription(null);
-    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy, null);
+    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy);
     assertEquals(400, response.code());
     assertTrue(response.body().contains("entity.managedZone.description"));
     // no dns name
     copy = copyZone(minimalZone);
     copy.setDnsName(null);
-    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy, null);
+    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy);
     assertEquals(400, response.code());
     assertTrue(response.body().contains("entity.managedZone.dnsName"));
     // zone name is a number
     copy = copyZone(minimalZone);
     copy.setName("123456");
-    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy, null);
+    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy);
     assertEquals(400, response.code());
     assertTrue(response.body().contains("entity.managedZone.name"));
     assertTrue(response.body().contains("Invalid"));
     // dns name does not end with period
     copy = copyZone(minimalZone);
     copy.setDnsName("aaaaaa.com");
-    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy, null);
+    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy);
     assertEquals(400, response.code());
     assertTrue(response.body().contains("entity.managedZone.dnsName"));
     assertTrue(response.body().contains("Invalid"));
     // dns name is reserved
     copy = copyZone(minimalZone);
     copy.setDnsName("com.");
-    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy, null);
+    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy);
     assertEquals(400, response.code());
     assertTrue(response.body().contains("not available to be created."));
     // empty description should pass
     copy = copyZone(minimalZone);
     copy.setDescription("");
-    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy, null);
+    response = LOCAL_DNS_HELPER.createZone(PROJECT_ID1, copy);
     assertEquals(200, response.code());
   }
 
@@ -1143,8 +1142,8 @@ public class LocalDnsHelperTest {
     valid.setTtl(500);
     Change validChange = new Change();
     validChange.setAdditions(ImmutableList.of(valid));
-    LOCAL_DNS_HELPER.createZone(PROJECT_ID1, ZONE1, null);
-    LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, validChange, null);
+    LOCAL_DNS_HELPER.createZone(PROJECT_ID1, ZONE1);
+    LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, validChange);
     // delete with field mismatch
     LocalDnsHelper.ZoneContainer zone = LOCAL_DNS_HELPER.findZone(PROJECT_ID1, ZONE_NAME1);
     valid.setTtl(valid.getTtl() + 20);
@@ -1271,8 +1270,8 @@ public class LocalDnsHelperTest {
     validA.setRrdatas(ImmutableList.of("0.255.1.5"));
     Change validChange = new Change();
     validChange.setAdditions(ImmutableList.of(validA));
-    LOCAL_DNS_HELPER.createZone(PROJECT_ID1, ZONE1, null);
-    LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, validChange, null);
+    LOCAL_DNS_HELPER.createZone(PROJECT_ID1, ZONE1);
+    LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, validChange);
     LocalDnsHelper.ZoneContainer container = LOCAL_DNS_HELPER.findZone(PROJECT_ID1, ZONE_NAME1);
     LocalDnsHelper.Response response =
         LocalDnsHelper.additionsMeetDeletions(ImmutableList.of(validA), null, container);
@@ -1288,27 +1287,27 @@ public class LocalDnsHelperTest {
     validA.setRrdatas(ImmutableList.of("0.255.1.5"));
     Change validChange = new Change();
     validChange.setAdditions(ImmutableList.of(validA));
-    LOCAL_DNS_HELPER.createZone(PROJECT_ID1, ZONE1, null);
-    LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, validChange, null);
+    LOCAL_DNS_HELPER.createZone(PROJECT_ID1, ZONE1);
+
+    LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, validChange);
     LocalDnsHelper.Response response =
-        LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, validChange, null);
+        LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, validChange);
     assertEquals(409, response.code());
     assertTrue(response.body().contains("already exists"));
     // delete with field mismatch
     Change delete = new Change();
     validA.setTtl(20); // mismatch
     delete.setDeletions(ImmutableList.of(validA));
-    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, delete, null);
+    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, delete);
     assertEquals(412, response.code());
     assertTrue(response.body().contains("entity.change.deletions[0]"));
     // delete and add SOA
     Change addition = new Change();
-    ImmutableList<LocalDnsHelper.RrsetWrapper> rrsetWrappers
-        = LOCAL_DNS_HELPER.findZone(PROJECT_ID1, ZONE_NAME1).dnsRecords().get();
+    ImmutableCollection<ResourceRecordSet> dnsRecords =
+        LOCAL_DNS_HELPER.findZone(PROJECT_ID1, ZONE_NAME1).dnsRecords().get().values();
     LinkedList<ResourceRecordSet> deletions = new LinkedList<>();
     LinkedList<ResourceRecordSet> additions = new LinkedList<>();
-    for (LocalDnsHelper.RrsetWrapper wrapper : rrsetWrappers) {
-      ResourceRecordSet rrset = wrapper.rrset();
+    for (ResourceRecordSet rrset  : dnsRecords) {
       if (rrset.getType().equals("SOA")) {
         deletions.add(rrset);
         ResourceRecordSet copy = copyRrset(rrset);
@@ -1319,12 +1318,12 @@ public class LocalDnsHelperTest {
     }
     delete.setDeletions(deletions);
     addition.setAdditions(additions);
-    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, delete, null);
+    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, delete);
     assertEquals(400, response.code());
     assertTrue(response.body().contains(
         "zone must contain exactly one resource record set of type 'SOA' at the apex"));
     assertTrue(response.body().contains("deletions[0]"));
-    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, addition, null);
+    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, addition);
     assertEquals(400, response.code());
     assertTrue(response.body().contains(
         "zone must contain exactly one resource record set of type 'SOA' at the apex"));
@@ -1332,8 +1331,7 @@ public class LocalDnsHelperTest {
     // delete NS
     deletions = new LinkedList<>();
     additions = new LinkedList<>();
-    for (LocalDnsHelper.RrsetWrapper wrapper : rrsetWrappers) {
-      ResourceRecordSet rrset = wrapper.rrset();
+    for (ResourceRecordSet rrset : dnsRecords) {
       if (rrset.getType().equals("NS")) {
         deletions.add(rrset);
         ResourceRecordSet copy = copyRrset(rrset);
@@ -1344,18 +1342,18 @@ public class LocalDnsHelperTest {
     }
     delete.setDeletions(deletions);
     addition.setAdditions(additions);
-    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, delete, null);
+    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, delete);
     assertEquals(400, response.code());
     assertTrue(response.body().contains(
         "zone must contain exactly one resource record set of type 'NS' at the apex"));
-    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, addition, null);
+    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, addition);
     assertEquals(400, response.code());
     assertTrue(response.body().contains(
         "zone must contain exactly one resource record set of type 'NS' at the apex"));
     assertTrue(response.body().contains("additions[0]"));
     // change (delete + add)
     addition.setDeletions(deletions);
-    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, addition, null);
+    response = LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, addition);
     assertEquals(200, response.code());
   }
 
@@ -1370,7 +1368,7 @@ public class LocalDnsHelperTest {
 
   @Test
   public void testGetUniqueId() {
-    assertNotNull(LocalDnsHelper.getUniqueId(Lists.<LocalDnsHelper.RrsetWrapper>newLinkedList()));
+    assertNotNull(LocalDnsHelper.getUniqueId(new HashSet<String>()));
   }
 
   @Test

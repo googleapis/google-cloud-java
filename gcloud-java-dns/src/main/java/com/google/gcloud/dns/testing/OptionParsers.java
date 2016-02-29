@@ -72,11 +72,11 @@ class OptionParsers {
         }
       }
     }
-    return null;
+    return new String[0];
   }
 
   static ManagedZone extractFields(ManagedZone fullZone, String[] fields) {
-    if (fields == null) {
+    if (fields == null || fields.length == 0) {
       return fullZone;
     }
     ManagedZone managedZone = new ManagedZone();
@@ -111,18 +111,16 @@ class OptionParsers {
   }
 
   static Change extractFields(Change fullChange, String[] fields) {
-    if (fields == null) {
+    if (fields == null || fields.length == 0) {
       return fullChange;
     }
     Change change = new Change();
     for (String field : fields) {
       switch (field) {
         case "additions":
-          // todo the fragmentation is ignored here as our api does not support it
           change.setAdditions(fullChange.getAdditions());
           break;
         case "deletions":
-          // todo the fragmentation is ignored here as our api does not support it
           change.setDeletions(fullChange.getDeletions());
           break;
         case "id":
@@ -142,7 +140,7 @@ class OptionParsers {
   }
 
   static Project extractFields(Project fullProject, String[] fields) {
-    if (fields == null) {
+    if (fields == null || fields.length == 0) {
       return fullProject;
     }
     Project project = new Project();
