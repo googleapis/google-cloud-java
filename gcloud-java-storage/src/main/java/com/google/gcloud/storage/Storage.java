@@ -701,6 +701,16 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * If set to {@code true}, lists all versions of a blob.
+     * The default is {@code false}.
+     *
+     * @see <a href ="https://cloud.google.com/storage/docs/object-versioning">Object Versioning</a>
+     */
+    public static BlobListOption versions(boolean versions) {
+      return new BlobListOption(StorageRpc.Option.VERSIONS, versions);
+    }
+
+    /**
      * Returns an option to specify the blob's fields to be returned by the RPC call. If this option
      * is not provided all blob's fields are returned. {@code BlobListOption.fields}) can be used to
      * specify only the fields of interest. Blob name and bucket are always returned, even if not
