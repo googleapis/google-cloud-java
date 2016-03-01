@@ -200,11 +200,14 @@ public class StorageImplTest {
       Storage.BlobListOption.prefix("prefix");
   private static final Storage.BlobListOption BLOB_LIST_FIELDS =
       Storage.BlobListOption.fields(Storage.BlobField.CONTENT_TYPE, Storage.BlobField.MD5HASH);
+  private static final Storage.BlobListOption BLOB_LIST_VERSIONS =
+      Storage.BlobListOption.versions(false);
   private static final Storage.BlobListOption BLOB_LIST_EMPTY_FIELDS =
       Storage.BlobListOption.fields();
   private static final Map<StorageRpc.Option, ?> BLOB_LIST_OPTIONS = ImmutableMap.of(
       StorageRpc.Option.MAX_RESULTS, BLOB_LIST_MAX_RESULT.value(),
-      StorageRpc.Option.PREFIX, BLOB_LIST_PREFIX.value());
+      StorageRpc.Option.PREFIX, BLOB_LIST_PREFIX.value(),
+      StorageRpc.Option.VERSIONS, BLOB_LIST_VERSIONS.value());
 
   private static final String PRIVATE_KEY_STRING = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoG"
           + "BAL2xolH1zrISQ8+GzOV29BNjjzq4/HIP8Psd1+cZb81vDklSF+95wB250MSE0BDc81pvIMwj5OmIfLg1NY6uB"
@@ -650,7 +653,8 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
-    Page<Blob> page = storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX);
+    Page<Blob> page =
+        storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_VERSIONS);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
   }
