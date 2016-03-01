@@ -668,7 +668,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     Boolean value = (Boolean) temp.remove(DELIMITER);
-    if (Boolean.TRUE.equals(value)) {
+    if (Boolean.FALSE.equals(value)) {
       temp.put(DELIMITER, options().pathDelimiter());
     }
     if (useAsSource) {

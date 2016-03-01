@@ -107,7 +107,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
   }
 
   /**
-   * Returns the storage service's path delimiter.
+   * Returns the storage service's path delimiter. If not set, {@code "/"} is used.
    */
   public String pathDelimiter() {
     return pathDelimiter;

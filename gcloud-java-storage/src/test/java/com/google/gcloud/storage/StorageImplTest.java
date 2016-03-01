@@ -241,7 +241,7 @@ public class StorageImplTest {
   private StorageRpc storageRpcMock;
   private Storage storage;
 
-  private Blob expectedBlob1, expectedBlob2, expectedBlob3;
+  private Blob expectedBlob1, expectedBlob2;
   private Bucket expectedBucket1, expectedBucket2;
 
   @Rule
@@ -286,7 +286,6 @@ public class StorageImplTest {
   private void initializeServiceDependentObjects() {
     expectedBlob1 = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO1));
     expectedBlob2 = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO2));
-    expectedBlob3 = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO3));
     expectedBucket1 = new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO1));
     expectedBucket2 = new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO2));
   }
@@ -657,6 +656,67 @@ public class StorageImplTest {
         storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_VERSIONS);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
+  }
+
+  @Test
+  public void testListBlobsWithDelimiter() {
+    String cursor = "cursor";
+    Map<StorageRpc.Option, ?> options = ImmutableMap.of(StorageRpc.Option.DELIMITER, "/");
+    ImmutableList<BlobInfo> blobInfoList = ImmutableList.of(BLOB_INFO1, BLOB_INFO2);
+    Tuple<String, Iterable<com.google.api.services.storage.model.StorageObject>> result =
+        Tuple.of(cursor, Iterables.transform(blobInfoList, BlobInfo.INFO_TO_PB_FUNCTION));
+    EasyMock.expect(storageRpcMock.list(BUCKET_NAME1, options)).andReturn(result);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
+    Page<Blob> page = storage.list(BUCKET_NAME1, Storage.BlobListOption.recursive(false));
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
+  }
+
+
+  @Test
+  public void testListBlobsWithNoDelimiter() {
+    String cursor = "cursor";
+    ImmutableList<BlobInfo> blobInfoList = ImmutableList.of(BLOB_INFO1, BLOB_INFO2);
+    Tuple<String, Iterable<com.google.api.services.storage.model.StorageObject>> result =
+        Tuple.of(cursor, Iterables.transform(blobInfoList, BlobInfo.INFO_TO_PB_FUNCTION));
+    EasyMock.expect(storageRpcMock.list(BUCKET_NAME1, EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
+    Page<Blob> page = storage.list(BUCKET_NAME1, Storage.BlobListOption.recursive(true));
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
+  }
+
+  @Test
+  public void testListBlobsWithCustomDelimiter() {
+    StorageRpcFactory factoryMock = EasyMock.createMock(StorageRpcFactory.class);
+    StorageRpc rpcMock = EasyMock.createMock(StorageRpc.class);
+    EasyMock.expect(factoryMock.create(EasyMock.anyObject(StorageOptions.class)))
+        .andReturn(rpcMock);
+    EasyMock.replay(factoryMock);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Storage storage = StorageOptions.builder()
+        .projectId("projectId")
+        .pathDelimiter("-")
+        .clock(TIME_SOURCE)
+        .serviceRpcFactory(factoryMock)
+        .retryParams(RetryParams.noRetries())
+        .build()
+        .service();
+    Map<StorageRpc.Option, ?> options = ImmutableMap.of(StorageRpc.Option.DELIMITER, "-");
+    EasyMock.expect(rpcMock.list(BUCKET_NAME1, options))
+        .andReturn(Tuple.<String, Iterable<com.google.api.services.storage.model.StorageObject>>of(
+            null, null));
+    EasyMock.replay(rpcMock);
+    Page<Blob> page = storage.list(BUCKET_NAME1, Storage.BlobListOption.recursive(false));
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(ImmutableList.of().toArray(), Iterables.toArray(page.values(), Blob.class));
+    EasyMock.verify(factoryMock, rpcMock);
   }
 
   @Test
