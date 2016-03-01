@@ -20,11 +20,14 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
+import com.google.datastore.v1beta3.ReadOptions.ReadConsistency;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.datastore.ReadOption.EventualConsistency;
 import com.google.gcloud.spi.DatastoreRpc;
 import com.google.protobuf.ByteString;
 
@@ -68,6 +71,11 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   public <T> QueryResults<T> run(Query<T> query) {
     return run(null, query);
+  }
+
+  @Override
+  public <T> QueryResults<T> run(Query<T> query, ReadOption... options) {
+    return run(toReadOptionsPb(options), query);
   }
 
   <T> QueryResults<T> run(com.google.datastore.v1beta3.ReadOptions readOptionsPb, Query<T> query) {
@@ -186,13 +194,39 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   @Override
+  public Entity get(Key key, ReadOption... options) {
+    return DatastoreHelper.get(this, key, options);
+  }
+
+  @Override
   public Iterator<Entity> get(Key... keys) {
     return get(null, keys);
   }
 
   @Override
+  public Iterator<Entity> get(Iterable<Key> keys, ReadOption... options) {
+    return get(toReadOptionsPb(options), Iterables.toArray(keys, Key.class));
+  }
+
+  private static com.google.datastore.v1beta3.ReadOptions toReadOptionsPb(ReadOption... options) {
+    com.google.datastore.v1beta3.ReadOptions readOptionsPb = null;
+    if (options != null
+        && ReadOption.asImmutableMap(options).containsKey(EventualConsistency.class)) {
+      readOptionsPb = com.google.datastore.v1beta3.ReadOptions.newBuilder()
+          .setReadConsistency(ReadConsistency.EVENTUAL)
+          .build();
+    }
+    return readOptionsPb;
+  }
+
+  @Override
   public List<Entity> fetch(Key... keys) {
     return DatastoreHelper.fetch(this, keys);
+  }
+
+  @Override
+  public List<Entity> fetch(Iterable<Key> keys, ReadOption... options) {
+    return DatastoreHelper.fetch(this, Iterables.toArray(keys, Key.class), options);
   }
 
   Iterator<Entity> get(com.google.datastore.v1beta3.ReadOptions readOptionsPb, final Key... keys) {
