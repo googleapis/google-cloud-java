@@ -16,11 +16,13 @@
 
 package com.google.gcloud.compute;
 
-import com.google.api.client.util.DateTime;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -50,6 +52,7 @@ public final class Region implements Serializable {
       };
 
   private static final long serialVersionUID = -3578710133393645135L;
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
   private final RegionId regionId;
   private final String id;
@@ -319,7 +322,7 @@ public final class Region implements Serializable {
       regionPb.setId(new BigInteger(id));
     }
     if (creationTimestamp != null) {
-      regionPb.setCreationTimestamp(new DateTime(creationTimestamp).toStringRfc3339());
+      regionPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
     regionPb.setName(regionId.region());
     regionPb.setDescription(description);
@@ -350,7 +353,7 @@ public final class Region implements Serializable {
       builder.id(regionPb.getId().toString());
     }
     if (regionPb.getCreationTimestamp() != null) {
-      builder.creationTimestamp(DateTime.parseRfc3339(regionPb.getCreationTimestamp()).getValue());
+      builder.creationTimestamp(TIMESTAMP_FORMATTER.parseMillis(regionPb.getCreationTimestamp()));
     }
     builder.description(regionPb.getDescription());
     if (regionPb.getStatus() != null) {

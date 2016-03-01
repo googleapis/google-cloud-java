@@ -16,11 +16,13 @@
 
 package com.google.gcloud.compute;
 
-import com.google.api.client.util.DateTime;
 import com.google.api.services.compute.model.Zone.MaintenanceWindows;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
+
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -50,6 +52,7 @@ public final class Zone implements Serializable {
       };
 
   private static final long serialVersionUID = 6113636504417213010L;
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
   private final ZoneId zoneId;
   private final String id;
@@ -162,16 +165,16 @@ public final class Zone implements Serializable {
       return new MaintenanceWindows()
           .setName(name)
           .setDescription(description)
-          .setBeginTime(beginTime != null ? new DateTime(beginTime).toStringRfc3339() : null)
-          .setEndTime(endTime != null ? new DateTime(endTime).toStringRfc3339() : null);
+          .setBeginTime(beginTime != null ? TIMESTAMP_FORMATTER.print(beginTime) : null)
+          .setEndTime(endTime != null ? TIMESTAMP_FORMATTER.print(endTime) : null);
     }
 
     static MaintenanceWindow fromPb(MaintenanceWindows windowPb) {
       return new MaintenanceWindow(windowPb.getName(), windowPb.getDescription(),
           windowPb.getBeginTime() != null
-              ? DateTime.parseRfc3339(windowPb.getBeginTime()).getValue() : null,
+              ? TIMESTAMP_FORMATTER.parseMillis(windowPb.getBeginTime()) : null,
           windowPb.getEndTime() != null
-              ? DateTime.parseRfc3339(windowPb.getEndTime()).getValue() : null);
+              ? TIMESTAMP_FORMATTER.parseMillis(windowPb.getEndTime()) : null);
     }
   }
 
@@ -338,7 +341,7 @@ public final class Zone implements Serializable {
       zonePb.setId(new BigInteger(id));
     }
     if (creationTimestamp != null) {
-      zonePb.setCreationTimestamp(new DateTime(creationTimestamp).toStringRfc3339());
+      zonePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
     zonePb.setName(zoneId.zone());
     zonePb.setDescription(description);
@@ -370,7 +373,7 @@ public final class Zone implements Serializable {
       builder.id(zonePb.getId().toString());
     }
     if (zonePb.getCreationTimestamp() != null) {
-      builder.creationTimestamp(DateTime.parseRfc3339(zonePb.getCreationTimestamp()).getValue());
+      builder.creationTimestamp(TIMESTAMP_FORMATTER.parseMillis(zonePb.getCreationTimestamp()));
     }
     builder.description(zonePb.getDescription());
     if (zonePb.getStatus() != null) {

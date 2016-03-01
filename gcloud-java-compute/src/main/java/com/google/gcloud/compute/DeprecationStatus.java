@@ -16,9 +16,11 @@
 
 package com.google.gcloud.compute;
 
-import com.google.api.client.util.DateTime;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -31,6 +33,7 @@ import java.util.Objects;
 public final class DeprecationStatus<T extends ResourceId> implements Serializable {
 
   private static final long serialVersionUID = -2695077634793679794L;
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
   private final Long deleted;
   private final Long deprecated;
@@ -134,13 +137,13 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
     com.google.api.services.compute.model.DeprecationStatus deprecationStatusPb =
         new com.google.api.services.compute.model.DeprecationStatus();
     if (deleted != null) {
-      deprecationStatusPb.setDeleted(new DateTime(deleted).toStringRfc3339());
+      deprecationStatusPb.setDeleted(TIMESTAMP_FORMATTER.print(deleted));
     }
     if (deprecated != null) {
-      deprecationStatusPb.setDeprecated(new DateTime(deprecated).toStringRfc3339());
+      deprecationStatusPb.setDeprecated(TIMESTAMP_FORMATTER.print(deprecated));
     }
     if (obsolete != null) {
-      deprecationStatusPb.setObsolete(new DateTime(obsolete).toStringRfc3339());
+      deprecationStatusPb.setObsolete(TIMESTAMP_FORMATTER.print(obsolete));
     }
     if (replacement != null) {
       deprecationStatusPb.setReplacement(replacement.selfLink());
@@ -156,11 +159,11 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
       Function<String, T> fromUrl) {
     return new DeprecationStatus<>(
         deprecationStatusPb.getDeleted() != null
-            ? DateTime.parseRfc3339(deprecationStatusPb.getDeleted()).getValue() : null,
+            ? TIMESTAMP_FORMATTER.parseMillis(deprecationStatusPb.getDeleted()) : null,
         deprecationStatusPb.getDeprecated() != null
-            ? DateTime.parseRfc3339(deprecationStatusPb.getDeprecated()).getValue() : null,
+            ? TIMESTAMP_FORMATTER.parseMillis(deprecationStatusPb.getDeprecated()) : null,
         deprecationStatusPb.getObsolete() != null
-            ? DateTime.parseRfc3339(deprecationStatusPb.getObsolete()).getValue() : null,
+            ? TIMESTAMP_FORMATTER.parseMillis(deprecationStatusPb.getObsolete()) : null,
         deprecationStatusPb.getReplacement() != null
             ? fromUrl.apply(deprecationStatusPb.getReplacement()) : null,
         deprecationStatusPb.getState() != null

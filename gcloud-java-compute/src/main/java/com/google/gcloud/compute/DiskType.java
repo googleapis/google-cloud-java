@@ -16,9 +16,11 @@
 
 package com.google.gcloud.compute;
 
-import com.google.api.client.util.DateTime;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -48,6 +50,7 @@ public final class DiskType implements Serializable {
       };
 
   private static final long serialVersionUID = -944042261695072026L;
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
   private final String id;
   private final DiskTypeId diskTypeId;
@@ -199,7 +202,7 @@ public final class DiskType implements Serializable {
       diskTypePb.setId(new BigInteger(id));
     }
     if (creationTimestamp != null) {
-      diskTypePb.setCreationTimestamp(new DateTime(creationTimestamp).toStringRfc3339());
+      diskTypePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
     diskTypePb.setDescription(description);
     diskTypePb.setValidDiskSize(validDiskSize);
@@ -222,8 +225,7 @@ public final class DiskType implements Serializable {
       builder.id(diskTypePb.getId().toString());
     }
     if (diskTypePb.getCreationTimestamp() != null) {
-      builder.creationTimestamp(
-          DateTime.parseRfc3339(diskTypePb.getCreationTimestamp()).getValue());
+      builder.creationTimestamp(TIMESTAMP_FORMATTER.parseMillis(diskTypePb.getCreationTimestamp()));
     }
     builder.diskTypeId(DiskTypeId.fromUrl(diskTypePb.getSelfLink()));
     builder.description(diskTypePb.getDescription());
