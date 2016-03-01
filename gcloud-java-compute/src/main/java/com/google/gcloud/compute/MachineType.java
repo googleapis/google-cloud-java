@@ -16,11 +16,13 @@
 
 package com.google.gcloud.compute;
 
-import com.google.api.client.util.DateTime;
 import com.google.api.services.compute.model.MachineType.ScratchDisks;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
+
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -52,6 +54,7 @@ public final class MachineType implements Serializable {
           return type.toPb();
         }
       };
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
   private static final long serialVersionUID = -4210962597502860450L;
 
@@ -255,7 +258,7 @@ public final class MachineType implements Serializable {
       machineTypePb.setId(new BigInteger(id));
     }
     if (creationTimestamp != null) {
-      machineTypePb.setCreationTimestamp(new DateTime(creationTimestamp).toStringRfc3339());
+      machineTypePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
     machineTypePb.setName(machineTypeId.machineType());
     machineTypePb.setDescription(description);
@@ -292,7 +295,7 @@ public final class MachineType implements Serializable {
     }
     if (machineTypePb.getCreationTimestamp() != null) {
       builder.creationTimestamp(
-          DateTime.parseRfc3339(machineTypePb.getCreationTimestamp()).getValue());
+          TIMESTAMP_FORMATTER.parseMillis(machineTypePb.getCreationTimestamp()));
     }
     builder.description(machineTypePb.getDescription());
     builder.cpus(machineTypePb.getGuestCpus());
