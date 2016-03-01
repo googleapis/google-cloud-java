@@ -701,8 +701,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * If set to {@code true}, lists all versions of a blob.
-     * The default is {@code false}.
+     * If set to {@code true}, lists all versions of a blob. The default is {@code false}.
      *
      * @see <a href ="https://cloud.google.com/storage/docs/object-versioning">Object Versioning</a>
      */
