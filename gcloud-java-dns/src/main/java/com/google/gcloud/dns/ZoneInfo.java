@@ -185,10 +185,10 @@ public class ZoneInfo implements Serializable {
   }
 
   /**
-   * Returns a builder for {@code ZoneInfo} with an assigned {@code name}.
+   * Returns a ZoneInfo object with assigned {@code name}, {@code dnsName} and {@code description}.
    */
-  public static Builder builder(String name) {
-    return new BuilderImpl(name);
+  public static ZoneInfo of(String name, String dnsName, String description) {
+    return new BuilderImpl(name).dnsName(dnsName).description(description).build();
   }
 
   /**

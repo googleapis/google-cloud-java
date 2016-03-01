@@ -44,6 +44,7 @@ public class DnsImplTest {
   // Dns entities
   private static final String ZONE_NAME = "some zone name";
   private static final String DNS_NAME = "example.com.";
+  private static final String DESCRIPTION = "desc";
   private static final String CHANGE_ID = "some change id";
   private static final DnsRecord DNS_RECORD1 = DnsRecord.builder("Something", DnsRecord.Type.AAAA)
       .build();
@@ -51,7 +52,7 @@ public class DnsImplTest {
       .build();
   private static final Integer MAX_SIZE = 20;
   private static final String PAGE_TOKEN = "some token";
-  private static final ZoneInfo ZONE_INFO = ZoneInfo.builder(ZONE_NAME).build();
+  private static final ZoneInfo ZONE_INFO = ZoneInfo.of(ZONE_NAME, DNS_NAME, DESCRIPTION);
   private static final ProjectInfo PROJECT_INFO = ProjectInfo.builder().build();
   private static final ChangeRequest CHANGE_REQUEST_PARTIAL = ChangeRequest.builder()
       .add(DNS_RECORD1)

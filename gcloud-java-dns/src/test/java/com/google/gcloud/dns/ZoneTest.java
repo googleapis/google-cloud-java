@@ -43,13 +43,13 @@ public class ZoneTest {
 
   private static final String ZONE_NAME = "dns-zone-name";
   private static final String ZONE_ID = "123";
-  private static final ZoneInfo ZONE_INFO = Zone.builder(ZONE_NAME)
+  private static final ZoneInfo ZONE_INFO = Zone.of(ZONE_NAME, "example.com", "description")
+      .toBuilder()
       .id(ZONE_ID)
-      .dnsName("example.com")
       .creationTimeMillis(123478946464L)
       .build();
-  private static final ZoneInfo NO_ID_INFO = ZoneInfo.builder(ZONE_NAME)
-      .dnsName("another-example.com")
+  private static final ZoneInfo NO_ID_INFO =
+      ZoneInfo.of(ZONE_NAME, "another-example.com", "description").toBuilder()
       .creationTimeMillis(893123464L)
       .build();
   private static final Dns.ZoneOption ZONE_FIELD_OPTIONS =
@@ -70,7 +70,6 @@ public class ZoneTest {
   private Dns dns;
   private Zone zone;
   private Zone zoneNoId;
-
 
   @Before
   public void setUp() throws Exception {
