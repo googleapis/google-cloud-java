@@ -76,11 +76,11 @@ public class LocalDnsHelperTest {
     ZONE1.setName(ZONE_NAME1);
     ZONE1.setDescription("");
     ZONE1.setDnsName(DNS_NAME);
-    ZONE1.setNameServerSet("somenameserveset");
+    ZONE1.setNameServerSet("somenameserverset");
     ZONE2.setName(ZONE_NAME2);
     ZONE2.setDescription("");
     ZONE2.setDnsName(DNS_NAME);
-    ZONE2.setNameServerSet("somenameserveset");
+    ZONE2.setNameServerSet("somenameserverset");
     RRSET1.setName(DNS_NAME);
     RRSET1.setType(RRSET_TYPE);
     RRSET1.setRrdatas(ImmutableList.of("1.1.1.1"));
@@ -119,9 +119,9 @@ public class LocalDnsHelperTest {
   public void testCreateZone() {
     ManagedZone created = RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     // check that default records were created
-    DnsRpc.ListResult<ResourceRecordSet> resourceRecordSetListResult
+    DnsRpc.ListResult<ResourceRecordSet> listResult
         = RPC.listDnsRecords(ZONE1.getName(), EMPTY_RPC_OPTIONS);
-    assertEquals(2, Lists.newLinkedList(resourceRecordSetListResult.results()).size());
+    assertEquals(2, Lists.newLinkedList(listResult.results()).size());
     assertEquals(created, LOCAL_DNS_HELPER.findZone(REAL_PROJECT_ID, ZONE1.getName()).zone());
     ManagedZone zone = RPC.getZone(ZONE_NAME1, EMPTY_RPC_OPTIONS);
     assertEquals(created, zone);
@@ -315,10 +315,12 @@ public class LocalDnsHelperTest {
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE_KEEP, EMPTY_RPC_OPTIONS);
     try {
-      assertFalse(RPC.deleteZone(ZONE1.getName()));
+      RPC.deleteZone(ZONE1.getName());
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("not empty"));
     }
   }
 
@@ -345,10 +347,10 @@ public class LocalDnsHelperTest {
     // check execution
     Change change = localDnsThreaded.findChange(PROJECT_ID1, ZONE_NAME1, "4");
     for (int i = 0; i < 10 && !change.getStatus().equals("done"); i++) {
-      // change has not been finished yet; wait at most 20 seconds
+      // change has not been finished yet; wait at most 5 seconds
       // it takes 5O ms for the thread to kick in in the first place
       try {
-        Thread.sleep(2 * 1000);
+        Thread.sleep(500);
       } catch (InterruptedException e) {
         fail("Test was interrupted");
       }
@@ -365,7 +367,7 @@ public class LocalDnsHelperTest {
     // not using threads
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     assertNull(RPC.getChangeRequest(ZONE1.getName(), "1", EMPTY_RPC_OPTIONS));
-    //add
+    // add
     Change createdChange = RPC.applyChangeRequest(ZONE1.getName(), CHANGE1, EMPTY_RPC_OPTIONS);
     assertEquals(createdChange.getAdditions(), CHANGE1.getAdditions());
     assertEquals(createdChange.getDeletions(), CHANGE1.getDeletions());
@@ -492,9 +494,11 @@ public class LocalDnsHelperTest {
     // non-existent zone
     try {
       RPC.getChangeRequest(ZONE_NAME2, "1", EMPTY_RPC_OPTIONS);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(404, ex.code());
+      assertTrue(ex.getMessage().contains("managedZone"));
     }
     // field options
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE_KEEP, EMPTY_RPC_OPTIONS);
@@ -558,17 +562,21 @@ public class LocalDnsHelperTest {
     options.put(DnsRpc.Option.PAGE_SIZE, 0);
     try {
       RPC.listZones(options);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     options = new HashMap<>();
     options.put(DnsRpc.Option.PAGE_SIZE, -1);
     try {
       RPC.listZones(options);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     // ok size
     options = new HashMap<>();
@@ -581,9 +589,11 @@ public class LocalDnsHelperTest {
     options.put(DnsRpc.Option.DNS_NAME, "aaa");
     try {
       RPC.listZones(options);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("parameters.dnsName"));
     }
     // ok name
     options = new HashMap<>();
@@ -639,9 +649,9 @@ public class LocalDnsHelperTest {
     assertNull(zone.getNameServerSet());
     assertNull(zone.getId());
     options.put(DnsRpc.Option.FIELDS, "managedZones(nameServerSet)");
-    DnsRpc.ListResult<ManagedZone> managedZoneListResult = RPC.listZones(options);
-    zone = managedZoneListResult.results().iterator().next();
-    assertNull(managedZoneListResult.pageToken());
+    DnsRpc.ListResult<ManagedZone> listResult = RPC.listZones(options);
+    zone = listResult.results().iterator().next();
+    assertNull(listResult.pageToken());
     assertNull(zone.getCreationTime());
     assertNull(zone.getName());
     assertNull(zone.getDnsName());
@@ -653,8 +663,8 @@ public class LocalDnsHelperTest {
     options.put(DnsRpc.Option.FIELDS,
         "managedZones(nameServerSet,description,id,name),nextPageToken");
     options.put(DnsRpc.Option.PAGE_SIZE, 1);
-    managedZoneListResult = RPC.listZones(options);
-    zone = managedZoneListResult.results().iterator().next();
+    listResult = RPC.listZones(options);
+    zone = listResult.results().iterator().next();
     assertNull(zone.getCreationTime());
     assertNotNull(zone.getName());
     assertNull(zone.getDnsName());
@@ -662,7 +672,7 @@ public class LocalDnsHelperTest {
     assertNull(zone.getNameServers());
     assertNotNull(zone.getNameServerSet());
     assertNotNull(zone.getId());
-    assertEquals(zone.getName(), managedZoneListResult.pageToken());
+    assertEquals(zone.getName(), listResult.pageToken());
   }
 
   @Test
@@ -670,9 +680,11 @@ public class LocalDnsHelperTest {
     // no zone exists
     try {
       RPC.listDnsRecords(ZONE_NAME1, EMPTY_RPC_OPTIONS);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(404, ex.code());
+      assertTrue(ex.getMessage().contains("managedZone"));
     }
     // zone exists but has no records
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
@@ -690,16 +702,20 @@ public class LocalDnsHelperTest {
     options.put(DnsRpc.Option.PAGE_SIZE, 0);
     try {
       RPC.listDnsRecords(ZONE1.getName(), options);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     options.put(DnsRpc.Option.PAGE_SIZE, -1);
     try {
       RPC.listDnsRecords(ZONE1.getName(), options);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     options.put(DnsRpc.Option.PAGE_SIZE, 1);
     results = RPC.listDnsRecords(ZONE1.getName(), options).results();
@@ -714,9 +730,11 @@ public class LocalDnsHelperTest {
     options.put(DnsRpc.Option.NAME, "aaa");
     try {
       RPC.listDnsRecords(ZONE1.getName(), options);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("parameters.name"));
     }
     options.put(DnsRpc.Option.NAME, "aaa.");
     results = RPC.listDnsRecords(ZONE1.getName(), options).results();
@@ -726,17 +744,21 @@ public class LocalDnsHelperTest {
     options.put(DnsRpc.Option.DNS_TYPE, "A");
     try {
       RPC.listDnsRecords(ZONE1.getName(), options);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("parameters.name"));
     }
     options.put(DnsRpc.Option.NAME, "aaa.");
     options.put(DnsRpc.Option.DNS_TYPE, "a");
     try {
       RPC.listDnsRecords(ZONE1.getName(), options);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("parameters.type"));
     }
     options.put(DnsRpc.Option.NAME, DNS_NAME);
     options.put(DnsRpc.Option.DNS_TYPE, "SOA");
@@ -809,9 +831,11 @@ public class LocalDnsHelperTest {
     // no such zone exists
     try {
       RPC.listChangeRequests(ZONE_NAME1, EMPTY_RPC_OPTIONS);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(404, ex.code());
+      assertTrue(ex.getMessage().contains("managedZone"));
     }
     // zone exists but has no changes
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
@@ -830,24 +854,25 @@ public class LocalDnsHelperTest {
     options.put(DnsRpc.Option.PAGE_SIZE, 0);
     try {
       RPC.listChangeRequests(ZONE1.getName(), options);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     options.put(DnsRpc.Option.PAGE_SIZE, -1);
     try {
       RPC.listChangeRequests(ZONE1.getName(), options);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     options.put(DnsRpc.Option.PAGE_SIZE, 15);
-    try {
-      RPC.listChangeRequests(ZONE1.getName(), options);
-    } catch (DnsException ex) {
-      // expected
-      assertEquals(400, ex.code());
-    }
+    results = RPC.listChangeRequests(ZONE1.getName(), options).results();
+    changes = ImmutableList.copyOf(results);
+    assertEquals(3, changes.size());
     options = new HashMap<>();
     options.put(DnsRpc.Option.SORTING_ORDER, "descending");
     results = RPC.listChangeRequests(ZONE1.getName(), options).results();
@@ -862,9 +887,11 @@ public class LocalDnsHelperTest {
     options.put(DnsRpc.Option.SORTING_ORDER, "something else");
     try {
       RPC.listChangeRequests(ZONE1.getName(), options);
+      fail();
     } catch (DnsException ex) {
       // expected
       assertEquals(400, ex.code());
+      assertTrue(ex.getMessage().contains("parameters.sortOrder"));
     }
     // field options
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX, EMPTY_RPC_OPTIONS);
@@ -941,15 +968,15 @@ public class LocalDnsHelperTest {
         RPC.listDnsRecords(ZONE1.getName(), EMPTY_RPC_OPTIONS).results());
     Map<DnsRpc.Option, Object> options = new HashMap<>();
     options.put(DnsRpc.Option.PAGE_SIZE, 1);
-    DnsRpc.ListResult<ResourceRecordSet> resourceRecordSetListResult =
+    DnsRpc.ListResult<ResourceRecordSet> listResult =
         RPC.listDnsRecords(ZONE1.getName(), options);
     ImmutableList<ResourceRecordSet> records =
-        ImmutableList.copyOf(resourceRecordSetListResult.results());
+        ImmutableList.copyOf(listResult.results());
     assertEquals(1, records.size());
     assertEquals(complete.get(0), records.get(0));
-    options.put(DnsRpc.Option.PAGE_TOKEN, resourceRecordSetListResult.pageToken());
-    resourceRecordSetListResult = RPC.listDnsRecords(ZONE1.getName(), options);
-    records = ImmutableList.copyOf(resourceRecordSetListResult.results());
+    options.put(DnsRpc.Option.PAGE_TOKEN, listResult.pageToken());
+    listResult = RPC.listDnsRecords(ZONE1.getName(), options);
+    records = ImmutableList.copyOf(listResult.results());
     assertEquals(1, records.size());
     assertEquals(complete.get(1), records.get(0));
   }
@@ -1132,7 +1159,6 @@ public class LocalDnsHelperTest {
     assertTrue(response.body().contains("parameters.sortOrder"));
   }
 
-  // help
   @Test
   public void testCheckRrset() {
     ResourceRecordSet valid = new ResourceRecordSet();
@@ -1274,7 +1300,7 @@ public class LocalDnsHelperTest {
     LOCAL_DNS_HELPER.createChange(PROJECT_ID1, ZONE_NAME1, validChange);
     LocalDnsHelper.ZoneContainer container = LOCAL_DNS_HELPER.findZone(PROJECT_ID1, ZONE_NAME1);
     LocalDnsHelper.Response response =
-        LocalDnsHelper.additionsMeetDeletions(ImmutableList.of(validA), null, container);
+        LocalDnsHelper.checkAdditionsDeletions(ImmutableList.of(validA), null, container);
     assertEquals(409, response.code());
     assertTrue(response.body().contains("already exists"));
   }
@@ -1307,7 +1333,7 @@ public class LocalDnsHelperTest {
         LOCAL_DNS_HELPER.findZone(PROJECT_ID1, ZONE_NAME1).dnsRecords().get().values();
     LinkedList<ResourceRecordSet> deletions = new LinkedList<>();
     LinkedList<ResourceRecordSet> additions = new LinkedList<>();
-    for (ResourceRecordSet rrset  : dnsRecords) {
+    for (ResourceRecordSet rrset : dnsRecords) {
       if (rrset.getType().equals("SOA")) {
         deletions.add(rrset);
         ResourceRecordSet copy = copyRrset(rrset);

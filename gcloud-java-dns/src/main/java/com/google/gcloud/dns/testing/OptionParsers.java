@@ -75,7 +75,7 @@ class OptionParsers {
     return new String[0];
   }
 
-  static ManagedZone extractFields(ManagedZone fullZone, String[] fields) {
+  static ManagedZone extractFields(ManagedZone fullZone, String... fields) {
     if (fields == null || fields.length == 0) {
       return fullZone;
     }
@@ -110,7 +110,7 @@ class OptionParsers {
     return managedZone;
   }
 
-  static Change extractFields(Change fullChange, String[] fields) {
+  static Change extractFields(Change fullChange, String... fields) {
     if (fields == null || fields.length == 0) {
       return fullChange;
     }
@@ -139,7 +139,7 @@ class OptionParsers {
     return change;
   }
 
-  static Project extractFields(Project fullProject, String[] fields) {
+  static Project extractFields(Project fullProject, String... fields) {
     if (fields == null || fields.length == 0) {
       return fullProject;
     }
@@ -162,7 +162,7 @@ class OptionParsers {
     return project;
   }
 
-  static ResourceRecordSet extractFields(ResourceRecordSet fullRecord, String[] fields) {
+  static ResourceRecordSet extractFields(ResourceRecordSet fullRecord, String... fields) {
     if (fields == null) {
       return fullRecord;
     }
