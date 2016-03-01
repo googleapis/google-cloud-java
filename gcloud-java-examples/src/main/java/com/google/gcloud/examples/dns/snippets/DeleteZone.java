@@ -41,7 +41,7 @@ public class DeleteZone {
     Dns dns = DnsOptions.defaultInstance().service();
 
     // Change this to a zone name that exists within your project and that you want to delete.
-    String zoneName = "some-sample-zone";
+    String zoneName = "my-unique-zone";
 
     // Get iterator for the existing records which have to be deleted before deleting the zone
     Iterator<DnsRecord> recordIterator = dns.listDnsRecords(zoneName).iterateAll();
