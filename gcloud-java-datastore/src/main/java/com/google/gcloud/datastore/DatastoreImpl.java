@@ -210,16 +210,11 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   private static com.google.datastore.v1beta3.ReadOptions toReadOptionsPb(ReadOption... options) {
     com.google.datastore.v1beta3.ReadOptions readOptionsPb = null;
-    if (options != null) {
-      Map<Class<? extends ReadOption>, ReadOption> optionsMap = ReadOption.asImmutableMap(options);
-      EventualConsistency eventualConsistency =
-          (EventualConsistency) optionsMap.get(EventualConsistency.class);
-      if (eventualConsistency != null) {
-        readOptionsPb =
-            com.google.datastore.v1beta3.ReadOptions.newBuilder()
-                .setReadConsistency(ReadConsistency.EVENTUAL)
-                .build();
-      }
+    if (options != null
+        && ReadOption.asImmutableMap(options).containsKey(EventualConsistency.class)) {
+      readOptionsPb = com.google.datastore.v1beta3.ReadOptions.newBuilder()
+          .setReadConsistency(ReadConsistency.EVENTUAL)
+          .build();
     }
     return readOptionsPb;
   }

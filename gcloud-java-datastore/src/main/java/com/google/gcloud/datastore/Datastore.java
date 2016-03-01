@@ -114,11 +114,11 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   Entity get(Key key, ReadOption... options);
 
   /**
-   * Returns an {@link Entity} for each given {@link Key} that exists in the Datastore.
-   * The order of the result is unspecified.
-   * Results are loaded lazily, so it is possible to get a {@code DatastoreException}
-   * from the returned {@code Iterator}'s {@link Iterator#hasNext hasNext} or
-   * {@link Iterator#next next} methods. {@link ReadOption}s can be specified if desired.
+   * Returns an {@link Entity} for each given {@link Key} that exists in the Datastore. The order of
+   * the result is unspecified. Results are loaded lazily, so it is possible to get a
+   * {@code DatastoreException} from the returned {@code Iterator}'s
+   * {@link Iterator#hasNext hasNext} or {@link Iterator#next next} methods. {@link ReadOption}s can
+   * be specified if desired.
    *
    * @throws DatastoreException upon failure
    * @see #get(Key)
@@ -126,16 +126,15 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   Iterator<Entity> get(Iterable<Key> keys, ReadOption... options);
 
   /**
-   * Returns a list with a value for each given key (ordered by input).
-   * {@code null} values are returned for nonexistent keys.
-   * When possible prefer using {@link #get(Key...)} to avoid eagerly loading the results.
-   * {@link ReadOption}s can be specified if desired.
+   * Returns a list with a value for each given key (ordered by input). {@code null} values are
+   * returned for nonexistent keys. When possible prefer using {@link #get(Key...)} to avoid eagerly
+   * loading the results. {@link ReadOption}s can be specified if desired.
    */
   List<Entity> fetch(Iterable<Key> keys, ReadOption... options);
 
   /**
-   * Submits a {@link Query} and returns its result.
-   * {@link ReadOption}s can be specified if desired.
+   * Submits a {@link Query} and returns its result. {@link ReadOption}s can be specified if
+   * desired.
    *
    * @throws DatastoreException upon failure
    */

@@ -47,7 +47,7 @@ public abstract class ReadOption implements Serializable {
     }
   }
 
-  ReadOption() {}
+  private ReadOption() {}
 
   /**
    * Returns a {@code ReadOption} that specifies eventual consistency.

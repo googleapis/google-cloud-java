@@ -56,22 +56,19 @@ class DatastoreHelper {
   }
 
   /**
-   * Returns a list with a value for each given key (ordered by input).
-   * {@code null} values are returned for nonexistent keys.
+   * Returns a list with a value for each given key (ordered by input). {@code null} values are
+   * returned for nonexistent keys.
    */
   static List<Entity> fetch(Transaction reader, Key... keys) {
-    Iterator<Entity> entities = reader.get(keys);
-    return compileEntities(keys, entities);
+    return compileEntities(keys, reader.get(keys));
   }
 
   /**
-   * Returns a list with a value for each given key (ordered by input).
-   * {@code null} values are returned for nonexistent keys.
+   * Returns a list with a value for each given key (ordered by input). {@code null} values are
+   * returned for nonexistent keys.
    */
   static List<Entity> fetch(Datastore reader, Key[] keys, ReadOption... options) {
-    Iterator<Entity> entities;
-    entities = reader.get(Arrays.asList(keys), options);
-    return compileEntities(keys, entities);
+    return compileEntities(keys, reader.get(Arrays.asList(keys), options));
   }
 
   private static List<Entity> compileEntities(Key[] keys, Iterator<Entity> entities) {

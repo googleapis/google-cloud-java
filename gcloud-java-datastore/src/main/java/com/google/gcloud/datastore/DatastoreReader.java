@@ -32,11 +32,10 @@ public interface DatastoreReader {
   Entity get(Key key);
 
   /**
-   * Returns an {@link Entity} for each given {@link Key} that exists in the Datastore.
-   * The order of the result is unspecified.
-   * Results are loaded lazily, so it is possible to get a {@code DatastoreException}
-   * from the returned {@code Iterator}'s {@link Iterator#hasNext hasNext} or
-   * {@link Iterator#next next} methods.
+   * Returns an {@link Entity} for each given {@link Key} that exists in the Datastore. The order of
+   * the result is unspecified. Results are loaded lazily, so it is possible to get a
+   * {@code DatastoreException} from the returned {@code Iterator}'s
+   * {@link Iterator#hasNext hasNext} or {@link Iterator#next next} methods.
    *
    * @throws DatastoreException upon failure
    * @see #get(Key)
@@ -44,9 +43,9 @@ public interface DatastoreReader {
   Iterator<Entity> get(Key... key);
 
   /**
-   * Returns a list with a value for each given key (ordered by input).
-   * {@code null} values are returned for nonexistent keys.
-   * When possible prefer using {@link #get(Key...)} to avoid eagerly loading the results.
+   * Returns a list with a value for each given key (ordered by input). {@code null} values are
+   * returned for nonexistent keys. When possible prefer using {@link #get(Key...)} to avoid eagerly
+   * loading the results.
    */
   List<Entity> fetch(Key... keys);
 
