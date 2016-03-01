@@ -26,6 +26,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.resourcemanager.ProjectInfo.ResourceId;
 
 import org.junit.After;
 import org.junit.Before;
@@ -84,12 +85,12 @@ public class ProjectTest {
 
   @Test
   public void testBuilder() {
-    initializeExpectedProject(4);
-    expect(resourceManager.options()).andReturn(mockOptions).times(4);
+    expect(resourceManager.options()).andReturn(mockOptions).times(7);
     replay(resourceManager);
     Project.Builder builder =
-        new Project.Builder(new Project(resourceManager, new ProjectInfo.BuilderImpl(PROJECT_ID)));
-    Project project = builder.name(NAME)
+        new Project.Builder(new Project(resourceManager, new ProjectInfo.BuilderImpl("wrong-id")));
+    Project project = builder.projectId(PROJECT_ID)
+        .name(NAME)
         .labels(LABELS)
         .projectNumber(PROJECT_NUMBER)
         .createTimeMillis(CREATE_TIME_MILLIS)
@@ -102,6 +103,23 @@ public class ProjectTest {
     assertEquals(CREATE_TIME_MILLIS, project.createTimeMillis());
     assertEquals(STATE, project.state());
     assertEquals(resourceManager.options(), project.resourceManager().options());
+    assertNull(project.parent());
+    ResourceId parent = new ResourceId("id", "type");
+    project = project.toBuilder()
+        .clearLabels()
+        .addLabel("k3", "v3")
+        .addLabel("k4", "v4")
+        .removeLabel("k4")
+        .parent(parent)
+        .build();
+    assertEquals(PROJECT_ID, project.projectId());
+    assertEquals(NAME, project.name());
+    assertEquals(ImmutableMap.of("k3", "v3"), project.labels());
+    assertEquals(PROJECT_NUMBER, project.projectNumber());
+    assertEquals(CREATE_TIME_MILLIS, project.createTimeMillis());
+    assertEquals(STATE, project.state());
+    assertEquals(resourceManager.options(), project.resourceManager().options());
+    assertEquals(parent, project.parent());
   }
 
   @Test

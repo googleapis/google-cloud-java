@@ -16,9 +16,11 @@
 
 package com.google.gcloud.resourcemanager.spi;
 
+import com.google.api.services.cloudresourcemanager.model.Policy;
 import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.gcloud.resourcemanager.ResourceManagerException;
 
+import java.util.List;
 import java.util.Map;
 
 public interface ResourceManagerRpc {
@@ -120,6 +122,28 @@ public interface ResourceManagerRpc {
    * @throws ResourceManagerException upon failure
    */
   Project replace(Project project);
+
+  /**
+   * Returns the IAM policy associated with a project.
+   *
+   * @throws ResourceManagerException upon failure
+   */
+  Policy getPolicy(String projectId);
+
+  /**
+   * Replaces the IAM policy associated with the given project.
+   *
+   * @throws ResourceManagerException upon failure
+   */
+  Policy replacePolicy(String projectId, Policy newPolicy);
+
+  /**
+   * Tests whether the caller has the given permissions. Returns a list of booleans corresponding to
+   * whether or not the user has the permission in the same position of input list.
+   *
+   * @throws ResourceManagerException upon failure
+   */
+  List<Boolean> testPermissions(String projectId, List<String> permissions);
 
   // TODO(ajaykannan): implement "Organization" functionality when available (issue #319)
 }
