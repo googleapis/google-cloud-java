@@ -28,23 +28,14 @@ import static org.junit.Assert.fail;
 import com.google.api.client.util.Lists;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.Page;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.storage.BatchRequest;
-import com.google.gcloud.storage.BatchResponse;
-import com.google.gcloud.storage.Blob;
-import com.google.gcloud.storage.BlobId;
-import com.google.gcloud.storage.BlobInfo;
-import com.google.gcloud.storage.Bucket;
-import com.google.gcloud.storage.BucketInfo;
-import com.google.gcloud.storage.CopyWriter;
-import com.google.gcloud.storage.HttpMethod;
-import com.google.gcloud.storage.Storage;
+import com.google.gcloud.storage.*;
 import com.google.gcloud.storage.Storage.BlobField;
 import com.google.gcloud.storage.Storage.BucketField;
-import com.google.gcloud.storage.StorageException;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import org.junit.AfterClass;
@@ -63,6 +54,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -302,8 +294,7 @@ public class ITStorageTest {
     Blob remoteBlob2 = storage.create(blob2);
     assertNotNull(remoteBlob1);
     assertNotNull(remoteBlob2);
-    Page<Blob> page =
-        storage.list(BUCKET,
+    Page<Blob> page = storage.list(BUCKET,
         Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
         Storage.BlobListOption.fields(BlobField.METADATA));
     int index = 0;
@@ -331,8 +322,7 @@ public class ITStorageTest {
     Blob remoteBlob2 = storage.create(blob2);
     assertNotNull(remoteBlob1);
     assertNotNull(remoteBlob2);
-    Page<Blob> page = storage.list(
-        BUCKET,
+    Page<Blob> page = storage.list(BUCKET,
         Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
         Storage.BlobListOption.fields());
     int index = 0;
@@ -343,6 +333,41 @@ public class ITStorageTest {
     }
     assertTrue(remoteBlob1.delete());
     assertTrue(remoteBlob2.delete());
+  }
+
+  @Test
+  public void testListBlobsVersioned() throws ExecutionException, InterruptedException {
+    String bucketName = RemoteGcsHelper.generateBucketName();
+    Bucket bucket = storage.create(BucketInfo.builder(bucketName).versioningEnabled(true).build());
+    try {
+      String[] blobNames = {"test-list-blobs-versioned-blob1", "test-list-blobs-versioned-blob2"};
+      BlobInfo blob1 = BlobInfo.builder(bucket, blobNames[0])
+          .contentType(CONTENT_TYPE)
+          .build();
+      BlobInfo blob2 = BlobInfo.builder(bucket, blobNames[1])
+          .contentType(CONTENT_TYPE)
+          .build();
+      Blob remoteBlob1 = storage.create(blob1);
+      Blob remoteBlob2 = storage.create(blob2);
+      Blob remoteBlob3 = storage.create(blob2);
+      assertNotNull(remoteBlob1);
+      assertNotNull(remoteBlob2);
+      assertNotNull(remoteBlob3);
+      Page<Blob> page = storage.list(bucketName,
+          Storage.BlobListOption.prefix("test-list-blobs-versioned-blob"),
+          Storage.BlobListOption.versions(true));
+      Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
+      for (Blob remoteBlob : page.values()) {
+        assertEquals(bucketName, remoteBlob.bucket());
+        assertTrue(blobSet.contains(remoteBlob.name()));
+        assertNotNull(remoteBlob.generation());
+      }
+      assertTrue(remoteBlob1.delete());
+      assertTrue(remoteBlob2.delete());
+      assertTrue(remoteBlob3.delete());
+    } finally {
+      RemoteGcsHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+    }
   }
 
   @Test
