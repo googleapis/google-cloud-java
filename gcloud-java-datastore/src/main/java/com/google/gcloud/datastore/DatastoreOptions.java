@@ -35,8 +35,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
 
   private static final long serialVersionUID = 5056049000758143852L;
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
-  private static final String USERINFO_SCOPE = "https://www.googleapis.com/auth/userinfo.email";
-  private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE, USERINFO_SCOPE);
+  private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE);
 
   private final String namespace;
   private final boolean normalizeDataset;
