@@ -30,7 +30,8 @@ public abstract class ReadOption implements Serializable {
   private static final long serialVersionUID = -4406964829189800528L;
 
   /**
-   * Specifies eventual consistency for reads from Datastore.
+   * Specifies eventual consistency for reads from Datastore. Lookups and ancestor queries using
+   * this option permit Datastore to return stale results.
    */
   public static final class EventualConsistency extends ReadOption {
 
@@ -50,7 +51,8 @@ public abstract class ReadOption implements Serializable {
   private ReadOption() {}
 
   /**
-   * Returns a {@code ReadOption} that specifies eventual consistency.
+   * Returns a {@code ReadOption} that specifies eventual consistency, allowing Datastore to return
+   * stale results from gets, fetches, and ancestor queries.
    */
   public static EventualConsistency eventualConsistency() {
     return new EventualConsistency(true);
