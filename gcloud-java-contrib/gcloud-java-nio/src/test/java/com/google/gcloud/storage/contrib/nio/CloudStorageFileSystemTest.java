@@ -5,8 +5,9 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
+import com.google.gcloud.storage.testing.LocalGcsHelper;
 
-import org.junit.Rule;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -31,8 +32,11 @@ public class CloudStorageFileSystemTest {
       + "The Heart-ache, and the thousand Natural shocks\n"
       + "That Flesh is heir to? 'Tis a consummation\n";
 
-  @Rule
-  public final AppEngineRule appEngineRule = new AppEngineRule();
+
+  @Before
+  public void before() {
+    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
+  }
 
   @Test
   public void testGetPath() throws Exception {

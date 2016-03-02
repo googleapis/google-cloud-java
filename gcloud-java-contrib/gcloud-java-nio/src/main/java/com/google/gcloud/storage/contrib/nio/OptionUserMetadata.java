@@ -10,5 +10,6 @@ abstract class OptionUserMetadata implements CloudStorageOption.OpenCopy {
   }
 
   abstract String key();
+
   abstract String value();
 }

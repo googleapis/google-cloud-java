@@ -2,10 +2,10 @@ package com.google.gcloud.storage.contrib.nio;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.appengine.tools.cloudstorage.GcsFileMetadata;
-import com.google.appengine.tools.cloudstorage.GcsFilename;
-import com.google.appengine.tools.cloudstorage.GcsInputChannel;
-import com.google.appengine.tools.cloudstorage.GcsService;
+import com.google.gcloud.ReadChannel;
+import com.google.gcloud.storage.BlobId;
+import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.storage.Storage;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -13,8 +13,8 @@ import java.nio.channels.ClosedChannelException;
 import java.nio.channels.NonWritableChannelException;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.NoSuchFileException;
-
 import javax.annotation.concurrent.ThreadSafe;
+
 
 /**
  * Cloud Storage read channel.
@@ -25,27 +25,26 @@ import javax.annotation.concurrent.ThreadSafe;
 final class CloudStorageReadChannel implements SeekableByteChannel {
 
   static CloudStorageReadChannel create(
-      GcsService gcsService, GcsFilename file, long position) throws IOException {
+      Storage gcsStorage, BlobId file, long position) throws IOException {
     // XXX: Reading size and opening file should be atomic.
-    long size = fetchSize(gcsService, file);
-    return new CloudStorageReadChannel(gcsService, file, position, size,
-        gcsService.openReadChannel(file, position));
+    long size = fetchSize(gcsStorage, file);
+    ReadChannel channel = gcsStorage.reader(file);
+    if (position > 0) {
+      channel.seek((int) position);
+    }
+    return new CloudStorageReadChannel(position, size, channel);
   }
 
-  private final GcsService gcsService;
-  private final GcsFilename file;
+  private final ReadChannel channel;
   private long position;
   private long size;
-  private GcsInputChannel channel;
 
-  private CloudStorageReadChannel(
-      GcsService gcsService, GcsFilename file, long position, long size, GcsInputChannel channel) {
-    this.gcsService = gcsService;
-    this.file = file;
+  private CloudStorageReadChannel(long position, long size, ReadChannel channel) {
     this.position = position;
     this.size = size;
     this.channel = channel;
   }
+
 
   @Override
   public boolean isOpen() {
@@ -101,10 +100,8 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
       if (newPosition == position) {
         return this;
       }
+      channel.seek((int) newPosition);
       position = newPosition;
-      size = fetchSize(gcsService, file);
-      channel.close();
-      channel = gcsService.openReadChannel(file, position);
       return this;
     }
   }
@@ -125,13 +122,12 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     }
   }
 
-  private static long fetchSize(GcsService gcsService, GcsFilename file) throws IOException,
-      NoSuchFileException {
-    GcsFileMetadata metadata = gcsService.getMetadata(file);
-    if (metadata == null) {
+  private static long fetchSize(Storage gcsStorage, BlobId file) throws IOException {
+    BlobInfo blobInfo = gcsStorage.get(file);
+    if (blobInfo == null) {
       throw new NoSuchFileException(
-          String.format("gs://%s/%s", file.getBucketName(), file.getObjectName()));
+          String.format("gs://%s/%s", file.bucket(), file.name()));
     }
-    return metadata.getLength();
+    return blobInfo.size();
   }
 }

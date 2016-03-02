@@ -2,7 +2,6 @@ package com.google.gcloud.storage.contrib.nio;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
@@ -11,11 +10,10 @@ import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 
-import com.google.appengine.tools.cloudstorage.GcsFileMetadata;
-import com.google.appengine.tools.cloudstorage.GcsFileOptions;
-import com.google.appengine.tools.cloudstorage.GcsFilename;
-import com.google.appengine.tools.cloudstorage.GcsInputChannel;
-import com.google.appengine.tools.cloudstorage.GcsService;
+import com.google.gcloud.ReadChannel;
+import com.google.gcloud.storage.BlobId;
+import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.storage.Storage;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -35,21 +33,22 @@ public class CloudStorageReadChannelTest {
   @Rule
   public final ExpectedException thrown = ExpectedException.none();
 
-  private final GcsService gcsService = mock(GcsService.class);
-  private final GcsInputChannel gcsChannel = mock(GcsInputChannel.class);
-  private final GcsFilename file = new GcsFilename("enya", "rocks");
-  private final GcsFileOptions options = GcsFileOptions.getDefaultInstance();
-  private final GcsFileMetadata metadata = new GcsFileMetadata(file, options, null, 42, null);
   private CloudStorageReadChannel chan;
 
+  private final Storage gcsStorage = mock(Storage.class);
+  private final BlobId file = BlobId.of("enya", "rocks");
+  private final BlobInfo metadata = BlobInfo.builder(file).size(42L).build();
+  private final ReadChannel gcsChannel = mock(ReadChannel.class);
+
+  /** Set up the mocks. **/
   @Before
   public void before() throws Exception {
-    when(gcsService.getMetadata(eq(file))).thenReturn(metadata);
-    when(gcsService.openReadChannel(eq(file), anyInt())).thenReturn(gcsChannel);
+    when(gcsStorage.get(file)).thenReturn(metadata);
+    when(gcsStorage.reader(eq(file))).thenReturn(gcsChannel);
     when(gcsChannel.isOpen()).thenReturn(true);
-    chan = CloudStorageReadChannel.create(gcsService, file, 0);
-    verify(gcsService).getMetadata(eq(file));
-    verify(gcsService).openReadChannel(eq(file), eq(0L));
+    chan = CloudStorageReadChannel.create(gcsStorage, file, 0);
+    verify(gcsStorage).get(eq(file));
+    verify(gcsStorage).reader(eq(file));
   }
 
   @Test
@@ -61,7 +60,7 @@ public class CloudStorageReadChannelTest {
     assertThat(chan.position()).isEqualTo(1L);
     verify(gcsChannel).read(any(ByteBuffer.class));
     verify(gcsChannel, times(3)).isOpen();
-    verifyNoMoreInteractions(gcsService, gcsChannel);
+    verifyNoMoreInteractions(gcsStorage, gcsChannel);
   }
 
   @Test
@@ -91,7 +90,7 @@ public class CloudStorageReadChannelTest {
     assertThat(chan.isOpen()).isFalse();
     verify(gcsChannel, times(2)).isOpen();
     verify(gcsChannel).close();
-    verifyNoMoreInteractions(gcsService, gcsChannel);
+    verifyNoMoreInteractions(gcsStorage, gcsChannel);
   }
 
   @Test
@@ -99,7 +98,7 @@ public class CloudStorageReadChannelTest {
     assertThat(chan.size()).isEqualTo(42L);
     verify(gcsChannel).isOpen();
     verifyZeroInteractions(gcsChannel);
-    verifyNoMoreInteractions(gcsService);
+    verifyNoMoreInteractions(gcsStorage);
   }
 
   @Test
@@ -137,10 +136,9 @@ public class CloudStorageReadChannelTest {
     chan.position(1L);
     assertThat(chan.position()).isEqualTo(1L);
     assertThat(chan.size()).isEqualTo(42L);
-    verify(gcsChannel).close();
+    verify(gcsChannel).seek(1);
     verify(gcsChannel, times(5)).isOpen();
-    verify(gcsService, times(2)).getMetadata(eq(file));
-    verify(gcsService).openReadChannel(eq(file), eq(1L));
-    verifyNoMoreInteractions(gcsService, gcsChannel);
+    verifyNoMoreInteractions(gcsStorage, gcsChannel);
   }
+
 }

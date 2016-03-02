@@ -1,6 +1,5 @@
 package com.google.gcloud.storage.contrib.nio;
 
-import static com.google.appengine.tools.cloudstorage.GcsServiceFactory.createGcsService;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.gcloud.storage.contrib.nio.CloudStorageOptions.withAcl;
 import static com.google.gcloud.storage.contrib.nio.CloudStorageOptions.withCacheControl;
@@ -11,11 +10,11 @@ import static com.google.gcloud.storage.contrib.nio.CloudStorageOptions.withUser
 import static com.google.gcloud.storage.contrib.nio.CloudStorageOptions.withoutCaching;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.appengine.tools.cloudstorage.GcsFileMetadata;
-import com.google.appengine.tools.cloudstorage.GcsFilename;
 import com.google.common.testing.NullPointerTester;
+import com.google.gcloud.storage.Acl;
+import com.google.gcloud.storage.testing.LocalGcsHelper;
 
-import org.junit.Rule;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -29,15 +28,18 @@ import java.nio.file.Paths;
 @RunWith(JUnit4.class)
 public class CloudStorageOptionsTest {
 
-  @Rule
-  public final AppEngineRule appEngineRule = new AppEngineRule();
+  @Before
+  public void before() {
+    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
+  }
 
   @Test
   public void testWithoutCaching() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withoutCaching());
-    assertThat(getMetadata("bucket", "path").getOptions().getCacheControl()).isEqualTo("no-cache");
+    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
+        .isEqualTo("no-cache");
   }
 
   @Test
@@ -45,16 +47,18 @@ public class CloudStorageOptionsTest {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withCacheControl("potato"));
-    assertThat(getMetadata("bucket", "path").getOptions().getCacheControl()).isEqualTo("potato");
+    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
+        .isEqualTo("potato");
   }
 
   @Test
   public void testWithAcl() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/path"));
+    Acl acl = Acl.of(new Acl.User("king@example.com"), Acl.Role.OWNER);
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
-        withAcl("mine empire of dirt"));
-    assertThat(getMetadata("bucket", "path").getOptions().getAcl())
-        .isEqualTo("mine empire of dirt");
+        withAcl(acl));
+    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).acl().get())
+        .contains(acl);
   }
 
   @Test
@@ -62,7 +66,8 @@ public class CloudStorageOptionsTest {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withContentDisposition("bubbly fun"));
-    assertThat(getMetadata("bucket", "path").getOptions().getContentDisposition())
+    assertThat(
+        Files.readAttributes(path, CloudStorageFileAttributes.class).contentDisposition().get())
         .isEqualTo("bubbly fun");
   }
 
@@ -71,7 +76,8 @@ public class CloudStorageOptionsTest {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withContentEncoding("gzip"));
-    assertThat(getMetadata("bucket", "path").getOptions().getContentEncoding()).isEqualTo("gzip");
+    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).contentEncoding().get())
+        .isEqualTo("gzip");
   }
 
   @Test
@@ -80,9 +86,14 @@ public class CloudStorageOptionsTest {
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withUserMetadata("nolo", "contendere"),
         withUserMetadata("eternal", "sadness"));
-    GcsFileMetadata metadata = getMetadata("bucket", "path");
-    assertThat(metadata.getOptions().getUserMetadata().get("nolo")).isEqualTo("contendere");
-    assertThat(metadata.getOptions().getUserMetadata().get("eternal")).isEqualTo("sadness");
+    assertThat(
+            Files.readAttributes(path, CloudStorageFileAttributes.class)
+                .userMetadata().get("nolo"))
+        .isEqualTo("contendere");
+    assertThat(
+            Files.readAttributes(path, CloudStorageFileAttributes.class)
+                .userMetadata().get("eternal"))
+        .isEqualTo("sadness");
   }
 
   @Test
@@ -90,11 +101,8 @@ public class CloudStorageOptionsTest {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withMimeType("text/plain"));
-    assertThat(getMetadata("bucket", "path").getOptions().getMimeType()).isEqualTo("text/plain");
-  }
-
-  private static GcsFileMetadata getMetadata(String bucket, String objectName) throws Exception {
-    return createGcsService().getMetadata(new GcsFilename(bucket, objectName));
+    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).mimeType().get())
+        .isEqualTo("text/plain");
   }
 
   @Test

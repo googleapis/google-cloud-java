@@ -6,6 +6,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
+import com.google.gcloud.storage.testing.LocalGcsHelper;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -30,13 +31,11 @@ public class CloudStorageFileAttributeViewTest {
   @Rule
   public final ExpectedException thrown = ExpectedException.none();
 
-  @Rule
-  public final AppEngineRule appEngineRule = new AppEngineRule();
-
   private Path path;
 
   @Before
-  public void before() throws Exception {
+  public void before() {
+    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
     path = Paths.get(URI.create("gs://red/water"));
   }
 

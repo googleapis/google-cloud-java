@@ -228,7 +228,10 @@ public final class BlobInfo implements Serializable {
       return this;
     }
 
-    Builder size(Long size) {
+    /**
+     * Sets the blob's size in bytes.
+     */
+    public Builder size(Long size) {
       this.size = size;
       return this;
     }
