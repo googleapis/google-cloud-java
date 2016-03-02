@@ -68,7 +68,8 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a zone.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#getZone(String, ZoneOption...)}. The name is always returned, even if not specified.
+   * {@link Dns#getZone(String, ZoneOption...)}. The name is always returned, even if not
+   * specified.
    */
   enum ZoneField {
     CREATION_TIME("creationTime"),
@@ -103,8 +104,8 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a DNS record.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#listDnsRecords(String, DnsRecordListOption...)}. The name is always returned even if
-   * not selected.
+   * {@link Dns#listDnsRecords(String, DnsRecordListOption...)}. The name and type are always
+   * returned even if not selected.
    */
   enum DnsRecordField {
     DNS_RECORDS("rrdatas"),
@@ -125,6 +126,7 @@ public interface Dns extends Service<DnsOptions> {
     static String selector(DnsRecordField... fields) {
       Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
       fieldStrings.add(NAME.selector());
+      fieldStrings.add(TYPE.selector());
       for (DnsRecordField field : fields) {
         fieldStrings.add(field.selector());
       }
@@ -198,7 +200,7 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static DnsRecordListOption fields(DnsRecordField... fields) {
       StringBuilder builder = new StringBuilder();
-      builder.append("rrsets(").append(DnsRecordField.selector(fields)).append(')');
+      builder.append("nextPageToken,rrsets(").append(DnsRecordField.selector(fields)).append(')');
       return new DnsRecordListOption(DnsRpc.Option.FIELDS, builder.toString());
     }
 
@@ -234,7 +236,7 @@ public interface Dns extends Service<DnsOptions> {
      * Dns.DnsRecordListOption#dnsName(String)} must also be present.
      */
     public static DnsRecordListOption type(DnsRecord.Type type) {
-      return new DnsRecordListOption(DnsRpc.Option.DNS_TYPE, type);
+      return new DnsRecordListOption(DnsRpc.Option.DNS_TYPE, type.name());
     }
   }
 
@@ -281,7 +283,7 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static ZoneListOption fields(ZoneField... fields) {
       StringBuilder builder = new StringBuilder();
-      builder.append("managedZones(").append(ZoneField.selector(fields)).append(')');
+      builder.append("nextPageToken,managedZones(").append(ZoneField.selector(fields)).append(')');
       return new ZoneListOption(DnsRpc.Option.FIELDS, builder.toString());
     }
 
@@ -388,7 +390,8 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static ChangeRequestListOption fields(ChangeRequestField... fields) {
       StringBuilder builder = new StringBuilder();
-      builder.append("changes(").append(ChangeRequestField.selector(fields)).append(')');
+      builder.append("nextPageToken,changes(").append(ChangeRequestField.selector(fields))
+          .append(')');
       return new ChangeRequestListOption(DnsRpc.Option.FIELDS, builder.toString());
     }
 

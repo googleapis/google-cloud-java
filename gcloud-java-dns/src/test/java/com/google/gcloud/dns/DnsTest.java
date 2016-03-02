@@ -47,7 +47,7 @@ public class DnsTest {
     // record type
     DnsRecord.Type recordType = DnsRecord.Type.AAAA;
     dnsRecordListOption = Dns.DnsRecordListOption.type(recordType);
-    assertEquals(recordType, dnsRecordListOption.value());
+    assertEquals(recordType.name(), dnsRecordListOption.value());
     assertEquals(DnsRpc.Option.DNS_TYPE, dnsRecordListOption.rpcOption());
     // fields
     dnsRecordListOption = Dns.DnsRecordListOption.fields(Dns.DnsRecordField.NAME,
