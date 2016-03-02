@@ -1,6 +1,6 @@
 package com.google.gcloud.storage.contrib.nio;
 
-import com.google.appengine.tools.cloudstorage.GcsOutputChannel;
+import com.google.gcloud.WriteChannel;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -20,11 +20,11 @@ import javax.annotation.concurrent.ThreadSafe;
 @ThreadSafe
 final class CloudStorageWriteChannel implements SeekableByteChannel {
 
-  private GcsOutputChannel channel;
+  private final WriteChannel channel;
   private long position;
   private long size;
 
-  CloudStorageWriteChannel(GcsOutputChannel channel) {
+  CloudStorageWriteChannel(WriteChannel channel) {
     this.channel = channel;
   }
 
@@ -83,8 +83,8 @@ final class CloudStorageWriteChannel implements SeekableByteChannel {
 
   @Override
   public SeekableByteChannel truncate(long newSize) throws IOException {
-    // TODO(b/18997913): Emulate this functionality by closing and rewriting old file up to newSize.
-    //                   Or maybe just swap out GcsService for the Apiary client.
+    // TODO: Emulate this functionality by closing and rewriting old file up to newSize.
+    //       Or maybe just swap out GcsStorage for the API client.
     throw new UnsupportedOperationException();
   }
 

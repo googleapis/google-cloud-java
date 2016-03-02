@@ -4,14 +4,19 @@ import static com.google.gcloud.storage.contrib.nio.CloudStorageFileSystem.FILE_
 
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.storage.Acl;
 
 import java.nio.file.attribute.FileTime;
+import java.util.List;
 
 /** Metadata for a cloud storage pseudo-directory. */
 final class CloudStoragePseudoDirectoryAttributes implements CloudStorageFileAttributes {
 
-  static final CloudStoragePseudoDirectoryAttributes SINGLETON_INSTANCE =
-      new CloudStoragePseudoDirectoryAttributes();
+  private final String id;
+
+  CloudStoragePseudoDirectoryAttributes(CloudStoragePath path) {
+    this.id = path.toUri().toString();
+  }
 
   @Override
   public boolean isDirectory() {
@@ -35,7 +40,7 @@ final class CloudStoragePseudoDirectoryAttributes implements CloudStorageFileAtt
 
   @Override
   public Object fileKey() {
-    return null;
+    return id;
   }
 
   @Override
@@ -69,7 +74,7 @@ final class CloudStoragePseudoDirectoryAttributes implements CloudStorageFileAtt
   }
 
   @Override
-  public Optional<String> acl() {
+  public Optional<List<Acl>> acl() {
     return Optional.absent();
   }
 
@@ -92,6 +97,4 @@ final class CloudStoragePseudoDirectoryAttributes implements CloudStorageFileAtt
   public ImmutableMap<String, String> userMetadata() {
     return ImmutableMap.of();
   }
-
-  private CloudStoragePseudoDirectoryAttributes() {}
 }

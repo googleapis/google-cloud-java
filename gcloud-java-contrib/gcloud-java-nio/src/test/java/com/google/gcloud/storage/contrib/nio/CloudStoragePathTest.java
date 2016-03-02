@@ -6,7 +6,9 @@ import static com.google.gcloud.storage.contrib.nio.CloudStorageFileSystem.forBu
 import com.google.common.collect.Iterables;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
+import com.google.gcloud.storage.testing.LocalGcsHelper;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -27,8 +29,10 @@ public class CloudStoragePathTest {
   @Rule
   public final ExpectedException thrown = ExpectedException.none();
 
-  @Rule
-  public final AppEngineRule appEngineRule = new AppEngineRule();
+  @Before
+  public void before() {
+    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
+  }
 
   @Test
   public void testCreate_neverRemoveExtraSlashes() {
@@ -50,21 +54,21 @@ public class CloudStoragePathTest {
   public void testGetGcsFilename_empty_notAllowed() {
     try (CloudStorageFileSystem fs = forBucket("doodle")) {
       thrown.expect(IllegalArgumentException.class);
-      fs.getPath("").getGcsFilename();
+      fs.getPath("").getBlobId();
     }
   }
 
   @Test
   public void testGetGcsFilename_stripsPrefixSlash() {
     try (CloudStorageFileSystem fs = forBucket("doodle")) {
-      assertThat(fs.getPath("/hi").getGcsFilename().getObjectName()).isEqualTo("hi");
+      assertThat(fs.getPath("/hi").getBlobId().name()).isEqualTo("hi");
     }
   }
 
   @Test
   public void testGetGcsFilename_overrideStripPrefixSlash_doesntStripPrefixSlash() {
     try (CloudStorageFileSystem fs = forBucket("doodle", stripPrefixSlash(false))) {
-      assertThat(fs.getPath("/hi").getGcsFilename().getObjectName()).isEqualTo("/hi");
+      assertThat(fs.getPath("/hi").getBlobId().name()).isEqualTo("/hi");
     }
   }
 
@@ -72,14 +76,14 @@ public class CloudStoragePathTest {
   public void testGetGcsFilename_extraSlashes_throwsIae() {
     try (CloudStorageFileSystem fs = forBucket("doodle")) {
       thrown.expect(IllegalArgumentException.class);
-      fs.getPath("a//b").getGcsFilename();
+      fs.getPath("a//b").getBlobId().name();
     }
   }
 
   @Test
   public void testGetGcsFilename_overridepermitEmptyPathComponents() {
     try (CloudStorageFileSystem fs = forBucket("doodle", permitEmptyPathComponents(true))) {
-      assertThat(fs.getPath("a//b").getGcsFilename().getObjectName()).isEqualTo("a//b");
+      assertThat(fs.getPath("a//b").getBlobId().name()).isEqualTo("a//b");
     }
   }
 
@@ -87,7 +91,7 @@ public class CloudStoragePathTest {
   public void testGetGcsFilename_freaksOutOnExtraSlashesAndDotDirs() {
     try (CloudStorageFileSystem fs = forBucket("doodle")) {
       thrown.expect(IllegalArgumentException.class);
-      fs.getPath("a//b/..").getGcsFilename();
+      fs.getPath("a//b/..").getBlobId().name();
     }
   }
 
@@ -212,7 +216,8 @@ public class CloudStoragePathTest {
   @Test
   public void testToRealPath_overridePermitEmptyPathComponents_extraSlashes_slashesRemain() {
     try (CloudStorageFileSystem fs = forBucket("doodle", permitEmptyPathComponents(true))) {
-      assertThat(fs.getPath("/life///b/./good/").toRealPath().toString()).isEqualTo("life///b/./good/");
+      assertThat(fs.getPath("/life///b/./good/").toRealPath().toString())
+          .isEqualTo("life///b/./good/");
     }
   }
 
@@ -396,19 +401,21 @@ public class CloudStoragePathTest {
     }
   }
 
-  /** @see "http://stackoverflow.com/a/10068306" */
+  /** @see "http://stackoverflow.com/a/10068306".
+   */
   @Test
   public void testResolve_willWorkWithRecursiveCopy() throws Exception {
     try (FileSystem fsSource = FileSystems.getFileSystem(URI.create("gs://hello"));
         FileSystem fsTarget = FileSystems.getFileSystem(URI.create("gs://cat"))) {
       Path targetPath = fsTarget.getPath("/some/folder/");
-      Path relativeSourcePath = fsSource.getPath("file.txt");
-      assertThat((Object) targetPath.resolve(relativeSourcePath))
+      Path relSrcPath = fsSource.getPath("file.txt");
+      assertThat((Object) targetPath.resolve(relSrcPath))
           .isEqualTo(fsTarget.getPath("/some/folder/file.txt"));
     }
   }
 
-  /** @see "http://stackoverflow.com/a/10068306" */
+  /** @see "http://stackoverflow.com/a/10068306".
+   */
   @Test
   public void testRelativize_willWorkWithRecursiveCopy() throws Exception {
     try (FileSystem fsSource = FileSystems.getFileSystem(URI.create("gs://hello"));

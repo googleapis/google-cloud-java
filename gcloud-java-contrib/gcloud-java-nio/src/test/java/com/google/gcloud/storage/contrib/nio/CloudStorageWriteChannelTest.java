@@ -10,7 +10,7 @@ import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 
-import com.google.appengine.tools.cloudstorage.GcsOutputChannel;
+import com.google.gcloud.WriteChannel;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -30,11 +30,11 @@ public class CloudStorageWriteChannelTest {
   @Rule
   public final ExpectedException thrown = ExpectedException.none();
 
-  private final GcsOutputChannel gcsChannel = mock(GcsOutputChannel.class);
+  private final WriteChannel gcsChannel = mock(WriteChannel.class);
   private CloudStorageWriteChannel chan = new CloudStorageWriteChannel(gcsChannel);
 
   @Before
-  public void before() throws Exception {
+  public void before() {
     when(gcsChannel.isOpen()).thenReturn(true);
   }
 

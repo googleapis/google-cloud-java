@@ -6,11 +6,13 @@ import com.google.auto.value.AutoValue;
 
 import java.util.Map;
 
-/** Configuration class for {@link CloudStorageFileSystem#forBucket} */
+/** CloudStorageConfiguration is the configuration class for
+ * {@link CloudStorageFileSystem#forBucket}. */
 @AutoValue
 public abstract class CloudStorageConfiguration {
 
-  /** Returns the path of the current working directory. Defaults to the root directory. */
+  /** Returns the path of the current working directory. Defaults to the root directory.
+   */
   public abstract String workingDirectory();
 
   /**
@@ -46,7 +48,8 @@ public abstract class CloudStorageConfiguration {
     return new Builder();
   }
 
-  /** Builder for {@link CloudStorageConfiguration}. */
+  /** Builder for {@link CloudStorageConfiguration}.
+   */
   public static final class Builder {
 
     private String workingDirectory = UnixPath.ROOT;
@@ -87,7 +90,8 @@ public abstract class CloudStorageConfiguration {
       return this;
     }
 
-    /** Configures if paths with a trailing slash should be treated as fake directories. */
+    /** Configures if paths with a trailing slash should be treated as fake directories.
+     */
     public Builder usePseudoDirectories(boolean value) {
       usePseudoDirectories = value;
       return this;
@@ -103,7 +107,9 @@ public abstract class CloudStorageConfiguration {
       return this;
     }
 
-    /** Creates a new instance, but does not destroy the builder. */
+
+    /** Creates a new instance, but does not destroy the builder.
+     */
     public CloudStorageConfiguration build() {
       return new AutoValue_CloudStorageConfiguration(
           workingDirectory,

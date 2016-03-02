@@ -11,9 +11,10 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
+import com.google.gcloud.storage.Acl;
+import com.google.gcloud.storage.testing.LocalGcsHelper;
 
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -29,14 +30,14 @@ public class CloudStorageFileAttributesTest {
 
   private static final byte[] HAPPY = "(✿◕ ‿◕ )ノ".getBytes(UTF_8);
 
-  @Rule
-  public final AppEngineRule appEngineRule = new AppEngineRule();
 
   private Path path;
   private Path dir;
 
+  /** empty test storage and make sure we use it instead of the real GCS. Create a few paths. **/
   @Before
-  public void before() throws Exception {
+  public void before()  {
+    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
     path = Paths.get(URI.create("gs://bucket/randompath"));
     dir = Paths.get(URI.create("gs://bucket/randompath/"));
   }
@@ -57,9 +58,10 @@ public class CloudStorageFileAttributesTest {
 
   @Test
   public void testAcl() throws Exception {
-    Files.write(path, HAPPY, withAcl("potato"));
+    Acl acl = Acl.of(new Acl.User("serf@example.com"), Acl.Role.READER);
+    Files.write(path, HAPPY, withAcl(acl));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).acl().get())
-        .isEqualTo("potato");
+        .contains(acl);
   }
 
   @Test
@@ -127,6 +129,25 @@ public class CloudStorageFileAttributesTest {
     CloudStorageFileAttributes b1 = Files.readAttributes(path, CloudStorageFileAttributes.class);
     CloudStorageFileAttributes b2 = Files.readAttributes(path, CloudStorageFileAttributes.class);
     new EqualsTester().addEqualityGroup(a1, a2).addEqualityGroup(b1, b2).testEquals();
+  }
+
+  @Test
+  public void testFilekey() throws Exception {
+    Files.write(path, HAPPY, withMimeType("text/plain"));
+    Path path2 = Paths.get(URI.create("gs://bucket/anotherrandompath"));
+    Files.write(path2, HAPPY, withMimeType("text/plain"));
+
+    // diff files cannot have same filekey
+    CloudStorageFileAttributes a1 = Files.readAttributes(path, CloudStorageFileAttributes.class);
+    CloudStorageFileAttributes a2 = Files.readAttributes(path2, CloudStorageFileAttributes.class);
+    assertThat(a1.fileKey()).isNotEqualTo(a2.fileKey());
+
+    // same for directories
+    CloudStorageFileAttributes b1 = Files.readAttributes(dir, CloudStorageFileAttributes.class);
+    CloudStorageFileAttributes b2 = Files.readAttributes(
+        Paths.get(URI.create("gs://bucket/jacket/")), CloudStorageFileAttributes.class);
+    assertThat(a1.fileKey()).isNotEqualTo(b1.fileKey());
+    assertThat(b1.fileKey()).isNotEqualTo(b2.fileKey());
   }
 
   @Test

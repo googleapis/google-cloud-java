@@ -6,8 +6,8 @@ import static com.google.gcloud.storage.contrib.nio.CloudStorageFileSystem.URI_S
 import static com.google.gcloud.storage.contrib.nio.CloudStorageUtil.checkNotNullArray;
 import static com.google.gcloud.storage.contrib.nio.CloudStorageUtil.checkPath;
 
-import com.google.appengine.tools.cloudstorage.GcsFilename;
 import com.google.common.collect.UnmodifiableIterator;
+import com.google.gcloud.storage.BlobId;
 
 import java.io.File;
 import java.net.URI;
@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 /**
- * Google Cloud Storage {@link Path}
+ * Google Cloud Storage {@link Path}.
  *
  * @see UnixPath
  */
@@ -51,14 +51,16 @@ public final class CloudStoragePath implements Path {
         fileSystem, UnixPath.getPath(fileSystem.config().permitEmptyPathComponents(), path, more));
   }
 
-  /** Returns the Cloud Storage bucket name being served by this file system. */
+  /** Returns the Cloud Storage bucket name being served by this file system.
+   */
   public String bucket() {
     return fileSystem.bucket();
   }
 
-  /** Returns path converted to a {@link GcsFilename} so I/O can be performed. */
-  GcsFilename getGcsFilename() {
-    return new GcsFilename(bucket(), toRealPath().path.toString());
+  /** Returns path converted to a {@link BlobId} so I/O can be performed.
+   */
+  BlobId getBlobId() {
+    return BlobId.of(bucket(), toRealPath().path.toString());
   }
 
   boolean seemsLikeADirectory() {
@@ -128,8 +130,6 @@ public final class CloudStoragePath implements Path {
 
   /**
    * Returns path without extra slashes or {@code .} and {@code ..} and preserves trailing slash.
-   *
-   * @see java.nio.file.Path#normalize()
    */
   @Override
   public CloudStoragePath normalize() {
@@ -222,24 +222,25 @@ public final class CloudStoragePath implements Path {
     return path.endsWith(getUnixPath(other));
   }
 
-  /** @throws UnsupportedOperationException */
+  /** Always @throws UnsupportedOperationException.
+   */
   @Override
   public WatchKey register(WatchService watcher, Kind<?>[] events, Modifier... modifiers) {
-    // TODO(b/18998105): Implement me.
+    // TODO: Implement me.
     throw new UnsupportedOperationException();
   }
 
-  /** @throws UnsupportedOperationException */
+  /** Always @throws UnsupportedOperationException.
+   */
   @Override
   public WatchKey register(WatchService watcher, Kind<?>... events) {
-    // TODO(b/18998105): Implement me.
+    // TODO: Implement me.
     throw new UnsupportedOperationException();
   }
 
   /**
    * This operation is not supported, since GCS files aren't backed by the local file system.
-   *
-   * @throws UnsupportedOperationException
+   * Always @throws UnsupportedOperationException.
    */
   @Override
   public File toFile() {

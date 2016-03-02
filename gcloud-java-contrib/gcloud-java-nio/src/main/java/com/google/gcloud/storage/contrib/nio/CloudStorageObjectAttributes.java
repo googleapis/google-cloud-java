@@ -3,38 +3,44 @@ package com.google.gcloud.storage.contrib.nio;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.gcloud.storage.contrib.nio.CloudStorageFileSystem.FILE_TIME_UNKNOWN;
 
-import com.google.appengine.tools.cloudstorage.GcsFileMetadata;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.storage.Acl;
+import com.google.gcloud.storage.BlobInfo;
 
 import java.nio.file.attribute.FileTime;
+import java.util.List;
 import java.util.Objects;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
-/** Metadata for a Google Cloud Storage object. */
+/**
+ * Metadata for a Google Cloud Storage object.
+ */
 @Immutable
 final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
 
-  private final GcsFileMetadata metadata;
+  @Nonnull
+  private final BlobInfo info;
 
-  CloudStorageObjectAttributes(GcsFileMetadata metadata) {
-    this.metadata = checkNotNull(metadata);
+  CloudStorageObjectAttributes(BlobInfo info) {
+    this.info = checkNotNull(info);
   }
 
   @Override
   public long size() {
-    return metadata.getLength();
+    return info.size();
   }
 
   @Override
   public FileTime creationTime() {
-    if (metadata.getLastModified() == null) {
+    if (info.updateTime() == null) {
       return FILE_TIME_UNKNOWN;
     }
-    return FileTime.fromMillis(metadata.getLastModified().getTime());
+    return FileTime.fromMillis(info.updateTime());
   }
 
   @Override
@@ -42,16 +48,20 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
     return creationTime();
   }
 
-  /** Returns the HTTP etag hash for this object. */
+  /**
+   * Returns the HTTP etag hash for this object.
+   */
   @Override
   public Optional<String> etag() {
-    return Optional.fromNullable(metadata.getEtag());
+    return Optional.fromNullable(info.etag());
   }
 
-  /** Returns the mime type (e.g. text/plain) if it was set for this object. */
+  /**
+   * Returns the mime type (e.g. text/plain) if it was set for this object.
+   */
   @Override
   public Optional<String> mimeType() {
-    return Optional.fromNullable(metadata.getOptions().getMimeType());
+    return Optional.fromNullable(info.contentType());
   }
 
   /**
@@ -60,8 +70,8 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
    * @see "https://developers.google.com/storage/docs/reference-headers#acl"
    */
   @Override
-  public Optional<String> acl() {
-    return Optional.fromNullable(metadata.getOptions().getAcl());
+  public Optional<List<Acl>> acl() {
+    return Optional.fromNullable(info.acl());
   }
 
   /**
@@ -71,7 +81,7 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
    */
   @Override
   public Optional<String> cacheControl() {
-    return Optional.fromNullable(metadata.getOptions().getCacheControl());
+    return Optional.fromNullable(info.cacheControl());
   }
 
   /**
@@ -81,7 +91,7 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
    */
   @Override
   public Optional<String> contentEncoding() {
-    return Optional.fromNullable(metadata.getOptions().getContentEncoding());
+    return Optional.fromNullable(info.contentEncoding());
   }
 
   /**
@@ -91,7 +101,7 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
    */
   @Override
   public Optional<String> contentDisposition() {
-    return Optional.fromNullable(metadata.getOptions().getContentDisposition());
+    return Optional.fromNullable(info.contentDisposition());
   }
 
   /**
@@ -101,7 +111,10 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
    */
   @Override
   public ImmutableMap<String, String> userMetadata() {
-    return ImmutableMap.copyOf(metadata.getOptions().getUserMetadata());
+    if (null == info.metadata()) {
+      return ImmutableMap.of();
+    }
+    return ImmutableMap.copyOf(info.metadata());
   }
 
   @Override
@@ -131,25 +144,25 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
 
   @Override
   public Object fileKey() {
-    return metadata.getFilename();
+    return info.id();
   }
 
   @Override
   public boolean equals(@Nullable Object other) {
     return this == other
         || other instanceof CloudStorageObjectAttributes
-        && Objects.equals(metadata, ((CloudStorageObjectAttributes) other).metadata);
+        && Objects.equals(info, ((CloudStorageObjectAttributes) other).info);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metadata);
+    return info.hashCode();
   }
 
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("metadata", metadata)
+        .add("info", info)
         .toString();
   }
 }
