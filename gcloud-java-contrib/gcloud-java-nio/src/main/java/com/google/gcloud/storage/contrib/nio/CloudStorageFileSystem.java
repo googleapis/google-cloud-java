@@ -89,17 +89,20 @@ public final class CloudStorageFileSystem extends FileSystem {
     return provider;
   }
 
-  /** Returns the Cloud Storage bucket name being served by this file system. */
+  /** Returns the Cloud Storage bucket name being served by this file system.
+    */
   public String bucket() {
     return bucket;
   }
 
-  /** Returns the configuration object for this filesystem instance. */
+  /** Returns the configuration object for this filesystem instance.
+    */
   public CloudStorageConfiguration config() {
     return config;
   }
 
-  /** Converts a cloud storage object name to a {@link Path} object. */
+  /** Converts a cloud storage object name to a {@link Path} object.
+    */
   @Override
   public CloudStoragePath getPath(String first, String... more) {
     checkArgument(!first.startsWith(URI_SCHEME + ":"),
@@ -107,23 +110,27 @@ public final class CloudStorageFileSystem extends FileSystem {
     return CloudStoragePath.getPath(this, first, more);
   }
 
-  /** Does nothing. */
+  /** Does nothing.
+    */
   @Override
   public void close() {}
 
-  /** Returns {@code true} */
+  /** Returns {@code true}.
+    */
   @Override
   public boolean isOpen() {
     return true;
   }
 
-  /** Returns {@code false} */
+  /** Returns {@code false}.
+    */
   @Override
   public boolean isReadOnly() {
     return false;
   }
 
-  /** Returns {@value UnixPath#SEPARATOR} */
+  /** Returns {@value UnixPath#SEPARATOR}.
+   */
   @Override
   public String getSeparator() {
     return "" + UnixPath.SEPARATOR;
@@ -144,24 +151,26 @@ public final class CloudStorageFileSystem extends FileSystem {
     return SUPPORTED_VIEWS;
   }
 
-  /** @throws UnsupportedOperationException */
+  /** Always throws {@link UnsupportedOperationException}. */
   @Override
   public PathMatcher getPathMatcher(String syntaxAndPattern) {
-    // TODO(b/18997520): Implement me.
+    // TODO: Implement me.
     throw new UnsupportedOperationException();
   }
 
-  /** @throws UnsupportedOperationException */
+  /** Always throws {@link UnsupportedOperationException}.
+    */
   @Override
   public UserPrincipalLookupService getUserPrincipalLookupService() {
-    // TODO(b/18997520): Implement me.
+    // TODO: Implement me.
     throw new UnsupportedOperationException();
   }
 
-  /** @throws UnsupportedOperationException */
+  /** Always throws {@link UnsupportedOperationException}.
+   */
   @Override
   public WatchService newWatchService() throws IOException {
-    // TODO(b/18997520): Implement me.
+    // TODO: Implement me.
     throw new UnsupportedOperationException();
   }
 

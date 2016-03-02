@@ -2,8 +2,9 @@ package com.google.gcloud.storage.contrib.nio;
 
 import static com.google.common.base.Verify.verifyNotNull;
 
-import com.google.appengine.tools.cloudstorage.GcsFileMetadata;
 import com.google.common.base.MoreObjects;
+import com.google.gcloud.storage.BlobInfo;
+import com.google.gcloud.storage.Storage;
 
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
@@ -14,19 +15,22 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
-/** Metadata view for a Google Cloud Storage object. */
+/** Metadata view for a Google Cloud Storage object.
+ */
 @Immutable
 public final class CloudStorageFileAttributeView implements BasicFileAttributeView {
 
-  private final CloudStorageFileSystemProvider provider;
+  //private final CloudStorageFileSystemProvider provider;
+  private final Storage storage;
   private final CloudStoragePath path;
 
-  CloudStorageFileAttributeView(CloudStorageFileSystemProvider provider, CloudStoragePath path) {
-    this.provider = verifyNotNull(provider);
+  CloudStorageFileAttributeView(Storage storage, CloudStoragePath path) {
+    this.storage = verifyNotNull(storage);
     this.path = verifyNotNull(path);
   }
 
-  /** Returns {@value CloudStorageFileSystem#GCS_VIEW} */
+  /** Returns {@value CloudStorageFileSystem#GCS_VIEW}.
+   */
   @Override
   public String name() {
     return CloudStorageFileSystem.GCS_VIEW;
@@ -36,19 +40,18 @@ public final class CloudStorageFileAttributeView implements BasicFileAttributeVi
   public CloudStorageFileAttributes readAttributes() throws IOException {
     if (path.seemsLikeADirectory()
         && path.getFileSystem().config().usePseudoDirectories()) {
-      return CloudStoragePseudoDirectoryAttributes.SINGLETON_INSTANCE;
+      return new CloudStoragePseudoDirectoryAttributes(path);
     }
-    GcsFileMetadata metadata = provider.getGcsService().getMetadata(path.getGcsFilename());
-    if (metadata == null) {
+    BlobInfo blobInfo = storage.get(path.getBlobId());
+    if (blobInfo == null) {
       throw new NoSuchFileException(path.toUri().toString());
     }
-    return new CloudStorageObjectAttributes(metadata);
+
+    return new CloudStorageObjectAttributes(blobInfo);
   }
 
   /**
    * This feature is not supported, since Cloud Storage objects are immutable.
-   *
-   * @throws UnsupportedOperationException
    */
   @Override
   public void setTimes(FileTime lastModifiedTime, FileTime lastAccessTime, FileTime createTime) {
@@ -59,19 +62,19 @@ public final class CloudStorageFileAttributeView implements BasicFileAttributeVi
   public boolean equals(@Nullable Object other) {
     return this == other
         || other instanceof CloudStorageFileAttributeView
-        && Objects.equals(provider, ((CloudStorageFileAttributeView) other).provider)
+        && Objects.equals(storage, ((CloudStorageFileAttributeView) other).storage)
         && Objects.equals(path, ((CloudStorageFileAttributeView) other).path);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(provider, path);
+    return Objects.hash(storage, path);
   }
 
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("provider", provider)
+        .add("storage", storage)
         .add("path", path)
         .toString();
   }

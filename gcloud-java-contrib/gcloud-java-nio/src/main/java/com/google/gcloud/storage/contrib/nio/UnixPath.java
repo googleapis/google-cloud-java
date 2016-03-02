@@ -403,7 +403,7 @@ final class UnixPath implements CharSequence {
     return isAbsolute() ? this : currentWorkingDirectory.resolve(this);
   }
 
-  /** Returns {@code toAbsolutePath(ROOT_PATH)} */
+  /** Returns {@code toAbsolutePath(ROOT_PATH)}. */
   public UnixPath toAbsolutePath() {
     return toAbsolutePath(ROOT_PATH);
   }

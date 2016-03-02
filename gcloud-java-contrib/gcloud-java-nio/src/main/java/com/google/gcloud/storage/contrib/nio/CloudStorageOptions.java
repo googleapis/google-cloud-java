@@ -1,5 +1,7 @@
 package com.google.gcloud.storage.contrib.nio;
 
+import com.google.gcloud.storage.Acl;
+
 /** Helper class for specifying options when opening and copying Cloud Storage files. */
 public final class CloudStorageOptions {
 
@@ -45,7 +47,7 @@ public final class CloudStorageOptions {
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#acl"
    */
-  public static CloudStorageOption.OpenCopy withAcl(String acl) {
+  public static CloudStorageOption.OpenCopy withAcl(Acl acl) {
     return OptionAcl.create(acl);
   }
 

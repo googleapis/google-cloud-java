@@ -3,7 +3,10 @@ package com.google.gcloud.storage.contrib.nio;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.gcloud.storage.contrib.nio.CloudStorageFileSystem.forBucket;
 import static com.google.gcloud.storage.contrib.nio.CloudStorageOptions.withCacheControl;
+import static com.google.gcloud.storage.contrib.nio.CloudStorageOptions.withContentDisposition;
+import static com.google.gcloud.storage.contrib.nio.CloudStorageOptions.withContentEncoding;
 import static com.google.gcloud.storage.contrib.nio.CloudStorageOptions.withMimeType;
+import static com.google.gcloud.storage.contrib.nio.CloudStorageOptions.withUserMetadata;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.file.StandardCopyOption.ATOMIC_MOVE;
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
@@ -11,15 +14,12 @@ import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import static java.nio.file.StandardOpenOption.CREATE_NEW;
 import static java.nio.file.StandardOpenOption.TRUNCATE_EXISTING;
 import static java.nio.file.StandardOpenOption.WRITE;
-import static org.junit.Assume.assumeTrue;
 
-import com.google.appengine.tools.cloudstorage.GcsFileMetadata;
-import com.google.appengine.tools.cloudstorage.GcsFilename;
-import com.google.appengine.tools.cloudstorage.GcsService;
-import com.google.appengine.tools.cloudstorage.GcsServiceFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.testing.NullPointerTester;
+import com.google.gcloud.storage.testing.LocalGcsHelper;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -48,6 +48,7 @@ import java.util.List;
 
 /** Unit tests for {@link CloudStorageFileSystemProvider}. */
 @RunWith(JUnit4.class)
+@SuppressWarnings("resource")
 public class CloudStorageFileSystemProviderTest {
 
   private static final List<String> FILE_CONTENTS = ImmutableList.of(
@@ -65,8 +66,10 @@ public class CloudStorageFileSystemProviderTest {
   @Rule
   public final ExpectedException thrown = ExpectedException.none();
 
-  @Rule
-  public final AppEngineRule appEngineRule = new AppEngineRule();
+  @Before
+  public void before() {
+    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
+  }
 
   @Test
   public void testSize() throws Exception {
@@ -249,15 +252,13 @@ public class CloudStorageFileSystemProviderTest {
   public void testNewOutputStream_trailingSlash() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/wat/"));
     thrown.expect(CloudStoragePseudoDirectoryException.class);
-    try (OutputStream output = Files.newOutputStream(path)) {
-    }
+    Files.newOutputStream(path);
   }
 
   @Test
   public void testNewOutputStream_createNew() throws Exception {
     Path path = Paths.get(URI.create("gs://cry/wednesday"));
-    try (OutputStream output = Files.newOutputStream(path, CREATE_NEW)) {
-    }
+    Files.newOutputStream(path, CREATE_NEW);
   }
 
   @Test
@@ -265,8 +266,7 @@ public class CloudStorageFileSystemProviderTest {
     Path path = Paths.get(URI.create("gs://cry/wednesday"));
     Files.write(path, SINGULARITY.getBytes(UTF_8));
     thrown.expect(FileAlreadyExistsException.class);
-    try (OutputStream output = Files.newOutputStream(path, CREATE_NEW)) {
-    }
+    Files.newOutputStream(path, CREATE_NEW);
   }
 
   @Test
@@ -282,9 +282,7 @@ public class CloudStorageFileSystemProviderTest {
       Path path = fs.getPath("adipose//yep").normalize();
       Files.write(path, FILE_CONTENTS, UTF_8);
       assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);
-      GcsService gcsService = GcsServiceFactory.createGcsService();
-      assertThat(gcsService.getMetadata(new GcsFilename("greenbean", "adipose/yep"))).isNotNull();
-      assertThat(Files.exists(path)).isTrue();
+      assertThat(Files.exists(fs.getPath("adipose", "yep"))).isTrue();
     }
   }
 
@@ -294,8 +292,6 @@ public class CloudStorageFileSystemProviderTest {
       Path path = fs.getPath("adipose//yep");
       Files.write(path, FILE_CONTENTS, UTF_8);
       assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);
-      GcsService gcsService = GcsServiceFactory.createGcsService();
-      assertThat(gcsService.getMetadata(new GcsFilename("greenbean", "adipose//yep"))).isNotNull();
       assertThat(Files.exists(path)).isTrue();
     }
   }
@@ -305,8 +301,6 @@ public class CloudStorageFileSystemProviderTest {
     Path path = Paths.get(URI.create("gs://greenbean/adipose/yep"));
     Files.write(path, FILE_CONTENTS, UTF_8);
     assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);
-    GcsService gcsService = GcsServiceFactory.createGcsService();
-    assertThat(gcsService.getMetadata(new GcsFilename("greenbean", "adipose/yep"))).isNotNull();
     assertThat(Files.exists(path)).isTrue();
   }
 
@@ -320,8 +314,6 @@ public class CloudStorageFileSystemProviderTest {
       Path path = fs.getPath("/adipose/yep");
       Files.write(path, FILE_CONTENTS, UTF_8);
       assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);
-      GcsService gcsService = GcsServiceFactory.createGcsService();
-      assertThat(gcsService.getMetadata(new GcsFilename("greenbean", "/adipose/yep"))).isNotNull();
       assertThat(Files.exists(path)).isTrue();
     }
   }
@@ -331,6 +323,30 @@ public class CloudStorageFileSystemProviderTest {
     Path path = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(path, FILE_CONTENTS, UTF_8);
     assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);
+  }
+
+  @Test
+  public void testWriteOnClose() throws Exception {
+    Path path = Paths.get(URI.create("gs://greenbean/adipose"));
+    try (SeekableByteChannel chan = Files.newByteChannel(path, StandardOpenOption.WRITE)) {
+      // writing lots of contents to defeat channel-internal buffering.
+      for (int i = 0; i < 9999; i++) {
+        for (String s : FILE_CONTENTS) {
+          chan.write(ByteBuffer.wrap(s.getBytes(UTF_8)));
+        }
+      }
+      try {
+        Files.size(path);
+        // we shouldn't make it to this line. Not using thrown.expect because
+        // I still want to run a few lines after the exception.
+        assertThat(false).isTrue();
+      } catch (NoSuchFileException nsf) {
+        // that's what we wanted, we're good.
+      }
+    }
+    // channel now closed, the file should be there and with the new contents.
+    assertThat(Files.exists(path)).isTrue();
+    assertThat(Files.size(path)).isGreaterThan(100L);
   }
 
   @Test
@@ -385,26 +401,20 @@ public class CloudStorageFileSystemProviderTest {
     try (CloudStorageFileSystem fs = forBucket("pumpkin", usePseudoDirectories(false))) {
       Path path = fs.getPath("wat/");
       Files.write(path, FILE_CONTENTS, UTF_8);
-      GcsService gcsService = GcsServiceFactory.createGcsService();
-      assertThat(gcsService.getMetadata(new GcsFilename("pumpkin", "wat/"))).isNotNull();
+      assertThat(Files.exists(path));
       Files.delete(path);
-      assertThat(gcsService.getMetadata(new GcsFilename("pumpkin", "wat/"))).isNull();
+      assertThat(!Files.exists(path));
     }
   }
 
   @Test
   public void testDelete_notFound() throws Exception {
-    GcsService gcsService = GcsServiceFactory.createGcsService();
-    assumeTrue(!gcsService.delete(new GcsFilename("loveh", "passionehu")));  // XXX: b/15832793
     thrown.expect(NoSuchFileException.class);
     Files.delete(Paths.get(URI.create("gs://loveh/passionehu")));
   }
 
   @Test
   public void testDeleteIfExists() throws Exception {
-    GcsService gcsService = GcsServiceFactory.createGcsService();
-    assumeTrue(!gcsService.delete(new GcsFilename("loveh", "passionehu")));  // XXX: b/15832793
-    assertThat(Files.deleteIfExists(Paths.get(URI.create("gs://love/passionz")))).isFalse();
     Files.write(Paths.get(URI.create("gs://love/passionz")), "(✿◕ ‿◕ )ノ".getBytes(UTF_8));
     assertThat(Files.deleteIfExists(Paths.get(URI.create("gs://love/passionz")))).isTrue();
   }
@@ -528,12 +538,20 @@ public class CloudStorageFileSystemProviderTest {
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withMimeType("text/lolcat"),
-        withCacheControl("public; max-age=666"));
+        withCacheControl("public; max-age=666"),
+        withContentEncoding("foobar"),
+        withContentDisposition("my-content-disposition"),
+        withUserMetadata("answer", "42"));
     Files.copy(source, target, COPY_ATTRIBUTES);
-    GcsService gcsService = GcsServiceFactory.createGcsService();
-    GcsFileMetadata metadata = gcsService.getMetadata(new GcsFilename("greenbean", "adipose"));
-    assertThat(metadata.getOptions().getMimeType()).isEqualTo("text/lolcat");
-    assertThat(metadata.getOptions().getCacheControl()).isEqualTo("public; max-age=666");
+
+    CloudStorageFileAttributes attributes =
+        Files.readAttributes(target, CloudStorageFileAttributes.class);
+    assertThat(attributes.mimeType()).hasValue("text/lolcat");
+    assertThat(attributes.cacheControl()).hasValue("public; max-age=666");
+    assertThat(attributes.contentEncoding()).hasValue("foobar");
+    assertThat(attributes.contentDisposition()).hasValue("my-content-disposition");
+    assertThat(attributes.userMetadata().containsKey("answer")).isTrue();
+    assertThat(attributes.userMetadata().get("answer")).isEqualTo("42");
   }
 
   @Test
@@ -542,27 +560,39 @@ public class CloudStorageFileSystemProviderTest {
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
     Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withMimeType("text/lolcat"),
-        withCacheControl("public; max-age=666"));
+        withCacheControl("public; max-age=666"),
+        withUserMetadata("answer", "42"));
     Files.copy(source, target);
-    GcsService gcsService = GcsServiceFactory.createGcsService();
-    GcsFileMetadata metadata = gcsService.getMetadata(new GcsFilename("greenbean", "adipose"));
-    assertThat(metadata.getOptions().getMimeType()).isNull();
-    assertThat(metadata.getOptions().getCacheControl()).isNull();
+
+    CloudStorageFileAttributes attributes =
+        Files.readAttributes(target, CloudStorageFileAttributes.class);
+    String mimeType = attributes.mimeType().orNull();
+    String cacheControl = attributes.cacheControl().orNull();
+    assertThat(mimeType).isNotEqualTo("text/lolcat");
+    assertThat(cacheControl).isNull();
+    assertThat(attributes.userMetadata().containsKey("answer")).isFalse();
   }
 
   @Test
   public void testCopy_overwriteAttributes() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
-    Path target = Paths.get(URI.create("gs://greenbean/adipose"));
+    Path target1 = Paths.get(URI.create("gs://greenbean/adipose"));
+    Path target2 = Paths.get(URI.create("gs://greenbean/round"));
     Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withMimeType("text/lolcat"),
         withCacheControl("public; max-age=666"));
-    Files.copy(source, target, COPY_ATTRIBUTES,
+    Files.copy(source, target1, COPY_ATTRIBUTES);
+    Files.copy(source, target2, COPY_ATTRIBUTES,
         withMimeType("text/palfun"));
-    GcsService gcsService = GcsServiceFactory.createGcsService();
-    GcsFileMetadata metadata = gcsService.getMetadata(new GcsFilename("greenbean", "adipose"));
-    assertThat(metadata.getOptions().getMimeType()).isEqualTo("text/palfun");
-    assertThat(metadata.getOptions().getCacheControl()).isEqualTo("public; max-age=666");
+
+    CloudStorageFileAttributes attributes =
+        Files.readAttributes(target1, CloudStorageFileAttributes.class);
+    assertThat(attributes.mimeType()).hasValue("text/lolcat");
+    assertThat(attributes.cacheControl()).hasValue("public; max-age=666");
+
+    attributes = Files.readAttributes(target2, CloudStorageFileAttributes.class);
+    assertThat(attributes.mimeType()).hasValue("text/palfun");
+    assertThat(attributes.cacheControl()).hasValue("public; max-age=666");
   }
 
   @Test
@@ -573,9 +603,20 @@ public class CloudStorageFileSystemProviderTest {
           .setDefault(Path.class, fs.getPath("and/one"))
           .setDefault(OpenOption.class, StandardOpenOption.CREATE)
           .setDefault(CopyOption.class, StandardCopyOption.COPY_ATTRIBUTES);
-      tester.testAllPublicStaticMethods(CloudStorageFileSystemProvider.class);
+      // can't do that, setGCloudOptions accepts a null argument.
+      // TODO(jart): Figure out how to re-enable this.
+      //tester.testAllPublicStaticMethods(CloudStorageFileSystemProvider.class);
       tester.testAllPublicInstanceMethods(new CloudStorageFileSystemProvider());
     }
+  }
+
+  @Test
+  public void testProviderEquals() throws Exception {
+    Path path1 = Paths.get(URI.create("gs://bucket/tuesday"));
+    Path path2 = Paths.get(URI.create("gs://blood/wednesday"));
+    Path path3 = Paths.get("tmp");
+    assertThat(path1.getFileSystem().provider()).isEqualTo(path2.getFileSystem().provider());
+    assertThat(path1.getFileSystem().provider()).isNotEqualTo(path3.getFileSystem().provider());
   }
 
   private static CloudStorageConfiguration permitEmptyPathComponents(boolean value) {

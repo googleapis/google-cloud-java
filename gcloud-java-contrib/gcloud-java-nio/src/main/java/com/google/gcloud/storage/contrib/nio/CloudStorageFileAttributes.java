@@ -2,8 +2,10 @@ package com.google.gcloud.storage.contrib.nio;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.storage.Acl;
 
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.List;
 
 /** Interface for attributes on a cloud storage file or pseudo-directory. */
 public interface CloudStorageFileAttributes extends BasicFileAttributes {
@@ -27,7 +29,7 @@ public interface CloudStorageFileAttributes extends BasicFileAttributes {
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#acl"
    */
-  Optional<String> acl();
+  Optional<List<Acl>> acl();
 
   /**
    * Returns the {@code Cache-Control} HTTP header value, if set on this object.
