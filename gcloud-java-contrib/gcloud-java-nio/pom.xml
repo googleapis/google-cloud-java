@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-nio</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java NIO</name>
@@ -9,9 +8,9 @@
     FileSystemProvider for Java NIO to access GCS transparently.
   </description>
   <parent>
-    <groupId>com.google.gcloud</groupId>
+    <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-contrib</artifactId>
-    <version>0.1.4-SNAPSHOT</version>
+    <version>0.2.5-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>nio</site.installationModule>
@@ -50,11 +49,6 @@
       <scope>provided</scope> <!-- to leave out of the all-deps jar -->
     </dependency>
     <dependency>
-      <groupId>com.google.appengine.tools</groupId>
-      <artifactId>appengine-gcs-client</artifactId>
-      <version>0.5</version>
-    </dependency>
-    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
@@ -76,24 +70,6 @@
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
       <version>1.9.5</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.appengine</groupId>
-      <artifactId>appengine-testing</artifactId>
-      <version>1.9.30</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.appengine</groupId>
-      <artifactId>appengine-api-stubs</artifactId>
-      <version>1.9.30</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.appengine</groupId>
-      <artifactId>appengine-local-endpoints</artifactId>
-      <version>1.9.30</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
