@@ -207,8 +207,8 @@ public final class Bucket extends BucketInfo {
 
     /**
      * Returns an option for blob's metageneration match. If this option is used the request will
-     * fail if metageneration does not match the provided value. Either this option or
-     * {@link #metagenerationNotMatch(long)} can be provided at the same time.
+     * fail if metageneration does not match the provided value. This option can not be provided
+     * together with {@link #metagenerationNotMatch(long)}.
      */
     public static BlobTargetOption metagenerationMatch(long metageneration) {
       return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_MATCH, metageneration);
@@ -216,8 +216,8 @@ public final class Bucket extends BucketInfo {
 
     /**
      * Returns an option for blob's metageneration mismatch. If this option is used the request will
-     * fail if metageneration matches the provided value. Either this option or
-     * {@link #metagenerationMatch(long)} can be provided at the same time.
+     * fail if metageneration matches the provided value. This option can not be provided together
+     * with {@link #metagenerationMatch(long)}.
      */
     public static BlobTargetOption metagenerationNotMatch(long metageneration) {
       return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
@@ -353,8 +353,8 @@ public final class Bucket extends BucketInfo {
 
     /**
      * Returns an option for blob's metageneration match. If this option is used the request will
-     * fail if metageneration does not match the provided value. Either this option or
-     * {@link #metagenerationNotMatch(long)} can be provided at the same time.
+     * fail if metageneration does not match the provided value. This option can not be provided
+     * together with {@link #metagenerationNotMatch(long)}.
      */
     public static BlobWriteOption metagenerationMatch(long metageneration) {
       return new BlobWriteOption(Storage.BlobWriteOption.Option.IF_METAGENERATION_MATCH,
@@ -363,8 +363,8 @@ public final class Bucket extends BucketInfo {
 
     /**
      * Returns an option for blob's metageneration mismatch. If this option is used the request will
-     * fail if metageneration matches the provided value. Either this option or
-     * {@link #metagenerationMatch(long)} can be provided at the same time.
+     * fail if metageneration matches the provided value. This option can not be provided together
+     * with {@link #metagenerationMatch(long)}.
      */
     public static BlobWriteOption metagenerationNotMatch(long metageneration) {
       return new BlobWriteOption(Storage.BlobWriteOption.Option.IF_METAGENERATION_NOT_MATCH,
