@@ -163,7 +163,7 @@ class OptionParsers {
   }
 
   static ResourceRecordSet extractFields(ResourceRecordSet fullRecord, String... fields) {
-    if (fields == null) {
+    if (fields == null || fields.length == 0) {
       return fullRecord;
     }
     ResourceRecordSet record = new ResourceRecordSet();
@@ -196,7 +196,6 @@ class OptionParsers {
         String[] argEntry = arg.split("=");
         switch (argEntry[0]) {
           case "fields":
-            // todo we do not support fragmentation in deletions and additions in the library
             String replaced = argEntry[1].replace("changes(", ",").replace(")", ",");
             options.put("fields", replaced.split(",")); // empty strings will be ignored
             break;
