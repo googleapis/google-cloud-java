@@ -52,11 +52,10 @@ public class ITDnsTest {
 
   public static final String PREFIX = "gcldjvit-";
   public static final Dns DNS = DnsOptions.builder().build().service();
-  public static final String PROJECT_ID = DNS.options().projectId();
   public static final String ZONE_NAME1 = (PREFIX + UUID.randomUUID()).substring(0, 32);
   public static final String ZONE_NAME_EMPTY_DESCRIPTION =
-      ("gcldjvit-" + UUID.randomUUID()).substring(0, 32);
-  public static final String ZONE_NAME_TOO_LONG = (PREFIX + UUID.randomUUID());
+      (PREFIX + UUID.randomUUID()).substring(0, 32);
+  public static final String ZONE_NAME_TOO_LONG = PREFIX + UUID.randomUUID();
   public static final String ZONE_DESCRIPTION1 = "first zone";
   public static final String ZONE_DNS_NAME1 = ZONE_NAME1 + ".com.";
   public static final String ZONE_DNS_EMPTY_DESCRIPTION = ZONE_NAME_EMPTY_DESCRIPTION + ".com.";
@@ -727,6 +726,7 @@ public class ITDnsTest {
       ChangeRequest created = zone.applyChangeRequest(CHANGE_ADD_ZONE1);
       ChangeRequest retrieved = DNS.getChangeRequest(zone.name(), created.id());
       assertEqChangesIgnoreStatus(created, retrieved);
+      waitUntilComplete(zone.name(), created.id());
       zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
       // with options
       created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
@@ -734,30 +734,35 @@ public class ITDnsTest {
       retrieved = DNS.getChangeRequest(zone.name(), created.id(),
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ID));
       assertEqChangesIgnoreStatus(created, retrieved);
+      waitUntilComplete(zone.name(), created.id());
       zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
       created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
       retrieved = DNS.getChangeRequest(zone.name(), created.id(),
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
       assertEqChangesIgnoreStatus(created, retrieved);
+      waitUntilComplete(zone.name(), created.id());
       zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
       created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME));
       retrieved = DNS.getChangeRequest(zone.name(), created.id(),
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME));
       assertEqChangesIgnoreStatus(created, retrieved);
+      waitUntilComplete(zone.name(), created.id());
       zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
       created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ADDITIONS));
       retrieved = DNS.getChangeRequest(zone.name(), created.id(),
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ADDITIONS));
       assertEqChangesIgnoreStatus(created, retrieved);
+      waitUntilComplete(zone.name(), created.id());
       // finishes with delete otherwise we cannot delete the zone
       created = zone.applyChangeRequest(CHANGE_DELETE_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.DELETIONS));
       retrieved = DNS.getChangeRequest(zone.name(), created.id(),
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.DELETIONS));
       assertEqChangesIgnoreStatus(created, retrieved);
+      waitUntilComplete(zone.name(), created.id());
     } finally {
       clear();
     }
