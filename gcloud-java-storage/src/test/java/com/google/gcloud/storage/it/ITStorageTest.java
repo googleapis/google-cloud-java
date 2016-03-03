@@ -101,13 +101,12 @@ public class ITStorageTest {
 
   @Test(timeout = 5000)
   public void testListBuckets() throws InterruptedException {
-    Iterator<Bucket> bucketIterator =
-        storage.list(Storage.BucketListOption.prefix(BUCKET),
-        Storage.BucketListOption.fields()).values().iterator();
+    Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+        Storage.BucketListOption.fields()).iterateAll();
     while (!bucketIterator.hasNext()) {
       Thread.sleep(500);
       bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-          Storage.BucketListOption.fields()).values().iterator();
+          Storage.BucketListOption.fields()).iterateAll();
     }
     while (bucketIterator.hasNext()) {
       Bucket remoteBucket = bucketIterator.next();
@@ -310,14 +309,16 @@ public class ITStorageTest {
         Storage.BlobListOption.fields(BlobField.METADATA));
     // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
     // test fails if timeout is reached.
-    while (Iterators.size(page.values().iterator()) != 2) {
+    while (Iterators.size(page.iterateAll()) != 2) {
       Thread.sleep(500);
       page = storage.list(BUCKET,
           Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
           Storage.BlobListOption.fields(BlobField.METADATA));
     }
     Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
-    for (Blob remoteBlob : page.values()) {
+    Iterator<Blob> iterator = page.iterateAll();
+    while (iterator.hasNext()) {
+      Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.bucket());
       assertTrue(blobSet.contains(remoteBlob.name()));
       assertEquals(metadata, remoteBlob.metadata());
@@ -346,14 +347,16 @@ public class ITStorageTest {
         Storage.BlobListOption.fields());
     // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
     // test fails if timeout is reached.
-    while (Iterators.size(page.values().iterator()) != 2) {
+    while (Iterators.size(page.iterateAll()) != 2) {
       Thread.sleep(500);
       page = storage.list(BUCKET,
           Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
           Storage.BlobListOption.fields());
     }
     Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
-    for (Blob remoteBlob : page.values()) {
+    Iterator<Blob> iterator = page.iterateAll();
+    while (iterator.hasNext()) {
+      Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.bucket());
       assertTrue(blobSet.contains(remoteBlob.name()));
       assertNull(remoteBlob.contentType());
@@ -362,7 +365,7 @@ public class ITStorageTest {
     assertTrue(remoteBlob2.delete());
   }
 
-  @Test(timeout = 10000)
+  @Test(timeout = 15000)
   public void testListBlobsVersioned() throws ExecutionException, InterruptedException {
     String bucketName = RemoteGcsHelper.generateBucketName();
     Bucket bucket = storage.create(BucketInfo.builder(bucketName).versioningEnabled(true).build());
@@ -385,14 +388,16 @@ public class ITStorageTest {
           Storage.BlobListOption.versions(true));
       // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
       // test fails if timeout is reached.
-      while (Iterators.size(page.values().iterator()) != 3) {
+      while (Iterators.size(page.iterateAll()) != 3) {
         Thread.sleep(500);
         page = storage.list(bucketName,
             Storage.BlobListOption.prefix("test-list-blobs-versioned-blob"),
             Storage.BlobListOption.versions(true));
       }
       Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
-      for (Blob remoteBlob : page.values()) {
+      Iterator<Blob> iterator = page.iterateAll();
+      while (iterator.hasNext()) {
+        Blob remoteBlob = iterator.next();
         assertEquals(bucketName, remoteBlob.bucket());
         assertTrue(blobSet.contains(remoteBlob.name()));
         assertNotNull(remoteBlob.generation());
