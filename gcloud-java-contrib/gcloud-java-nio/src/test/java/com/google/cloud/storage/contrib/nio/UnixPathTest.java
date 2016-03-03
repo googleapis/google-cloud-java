@@ -12,12 +12,13 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Unit tests for {@link UnixPath}. */
+/**
+ * Unit tests for {@link UnixPath}.
+ */
 @RunWith(JUnit4.class)
 public class UnixPathTest {
 
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none();
+  @Rule public final ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testNormalize() {
@@ -90,8 +91,7 @@ public class UnixPathTest {
     assertThat(UnixPath.getPath(false, "hello")).isEqualTo(p("hello"));
     assertThat(UnixPath.getPath(false, "hello", "cat")).isEqualTo(p("hello/cat"));
     assertThat(UnixPath.getPath(false, "/hello", "cat")).isEqualTo(p("/hello/cat"));
-    assertThat(UnixPath.getPath(false, "/hello", "cat", "inc."))
-        .isEqualTo(p("/hello/cat/inc."));
+    assertThat(UnixPath.getPath(false, "/hello", "cat", "inc.")).isEqualTo(p("/hello/cat/inc."));
     assertThat(UnixPath.getPath(false, "hello/", "/hi/there")).isEqualTo(p("/hi/there"));
   }
 
@@ -111,12 +111,10 @@ public class UnixPathTest {
   public void testRelativize() {
     assertThat(p("/foo/bar/hop/dog").relativize(p("/foo/mop/top")))
         .isEqualTo(p("../../../mop/top"));
-    assertThat(p("/foo/bar/dog").relativize(p("/foo/mop/top")))
-        .isEqualTo(p("../../mop/top"));
+    assertThat(p("/foo/bar/dog").relativize(p("/foo/mop/top"))).isEqualTo(p("../../mop/top"));
     assertThat(p("/foo/bar/hop/dog").relativize(p("/foo/mop/top/../../mog")))
         .isEqualTo(p("../../../mop/top/../../mog"));
-    assertThat(p("/foo/bar/hop/dog").relativize(p("/foo/../mog")))
-        .isEqualTo(p("../../../../mog"));
+    assertThat(p("/foo/bar/hop/dog").relativize(p("/foo/../mog"))).isEqualTo(p("../../../../mog"));
     assertThat(p("").relativize(p("foo/mop/top/"))).isEqualTo(p("foo/mop/top/"));
   }
 

@@ -1,5 +1,6 @@
 package com.google.cloud.storage.contrib.nio;
 
+import static com.google.cloud.storage.contrib.nio.CloudStorageFileSystem.forBucket;
 import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withCacheControl;
 import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withContentDisposition;
 import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withContentEncoding;
@@ -45,25 +46,36 @@ import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
 
-/** Unit tests for {@link CloudStorageFileSystemProvider}. */
+/**
+ * Unit tests for {@link CloudStorageFileSystemProvider}.
+ */
 @RunWith(JUnit4.class)
-@SuppressWarnings("resource")
 public class CloudStorageFileSystemProviderTest {
 
-  private static final List<String> FILE_CONTENTS = ImmutableList.of(
-      "To be, or not to be, that is the question—",
-      "Whether 'tis Nobler in the mind to suffer",
-      "The Slings and Arrows of outrageous Fortune,",
-      "Or to take Arms against a Sea of troubles,",
-      "And by opposing, end them? To die, to sleep—",
-      "No more; and by a sleep, to say we end",
-      "The Heart-ache, and the thousand Natural shocks",
-      "That Flesh is heir to? 'Tis a consummation");
+  private static final List<String> FILE_CONTENTS =
+      ImmutableList.of(
+          "Fanatics have their dreams, wherewith they weave",
+          "A paradise for a sect; the savage too",
+          "From forth the loftiest fashion of his sleep",
+          "Guesses at Heaven; pity these have not",
+          "Trac'd upon vellum or wild Indian leaf",
+          "The shadows of melodious utterance.",
+          "But bare of laurel they live, dream, and die;",
+          "For Poesy alone can tell her dreams,",
+          "With the fine spell of words alone can save",
+          "Imagination from the sable charm",
+          "And dumb enchantment. Who alive can say,",
+          "'Thou art no Poet may'st not tell thy dreams?'",
+          "Since every man whose soul is not a clod",
+          "Hath visions, and would speak, if he had loved",
+          "And been well nurtured in his mother tongue.",
+          "Whether the dream now purpos'd to rehearse",
+          "Be poet's or fanatic's will be known",
+          "When this warm scribe my hand is in the grave.");
 
   private static final String SINGULARITY = "A string";
 
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none();
+  @Rule public final ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void before() {
@@ -84,7 +96,7 @@ public class CloudStorageFileSystemProviderTest {
 
   @Test
   public void testSize_trailingSlash_disablePseudoDirectories() throws Exception {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", usePseudoDirectories(false))) {
+    try (CloudStorageFileSystem fs = forBucket("doodle", usePseudoDirectories(false))) {
       Path path = fs.getPath("wat/");
       byte[] rapture = SINGULARITY.getBytes(UTF_8);
       Files.write(path, rapture);
@@ -277,7 +289,7 @@ public class CloudStorageFileSystemProviderTest {
 
   @Test
   public void testWrite_objectNameWithExtraSlashes_canBeNormalized() throws Exception {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("greenbean", permitEmptyPathComponents(false))) {
+    try (CloudStorageFileSystem fs = forBucket("greenbean", permitEmptyPathComponents(false))) {
       Path path = fs.getPath("adipose//yep").normalize();
       Files.write(path, FILE_CONTENTS, UTF_8);
       assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);
@@ -287,7 +299,7 @@ public class CloudStorageFileSystemProviderTest {
 
   @Test
   public void testWrite_objectNameWithExtraSlashes_permitEmptyPathComponents() throws Exception {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("greenbean", permitEmptyPathComponents(true))) {
+    try (CloudStorageFileSystem fs = forBucket("greenbean", permitEmptyPathComponents(true))) {
       Path path = fs.getPath("adipose//yep");
       Files.write(path, FILE_CONTENTS, UTF_8);
       assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);
@@ -306,10 +318,8 @@ public class CloudStorageFileSystemProviderTest {
   @Test
   public void testWrite_absoluteObjectName_disableStrip_slashGetsPreserved() throws Exception {
     try (CloudStorageFileSystem fs =
-        CloudStorageFileSystem.forBucket("greenbean",
-            CloudStorageConfiguration.builder()
-                .stripPrefixSlash(false)
-                .build())) {
+            forBucket(
+                "greenbean", CloudStorageConfiguration.builder().stripPrefixSlash(false).build())) {
       Path path = fs.getPath("/adipose/yep");
       Files.write(path, FILE_CONTENTS, UTF_8);
       assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);
@@ -370,7 +380,7 @@ public class CloudStorageFileSystemProviderTest {
 
   @Test
   public void testExists_trailingSlash_disablePseudoDirectories() throws Exception {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("military", usePseudoDirectories(false))) {
+    try (CloudStorageFileSystem fs = forBucket("military", usePseudoDirectories(false))) {
       assertThat(Files.exists(fs.getPath("fashion/"))).isFalse();
     }
   }
@@ -397,7 +407,7 @@ public class CloudStorageFileSystemProviderTest {
 
   @Test
   public void testDelete_trailingSlash_disablePseudoDirectories() throws Exception {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("pumpkin", usePseudoDirectories(false))) {
+    try (CloudStorageFileSystem fs = forBucket("pumpkin", usePseudoDirectories(false))) {
       Path path = fs.getPath("wat/");
       Files.write(path, FILE_CONTENTS, UTF_8);
       assertThat(Files.exists(path));
@@ -526,7 +536,7 @@ public class CloudStorageFileSystemProviderTest {
 
   @Test
   public void testIsDirectory_trailingSlash_pseudoDirectoriesDisabled_false() throws Exception {
-    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", usePseudoDirectories(false))) {
+    try (CloudStorageFileSystem fs = forBucket("doodle", usePseudoDirectories(false))) {
       assertThat(Files.isDirectory(fs.getPath("fundir/"))).isFalse();
     }
   }
@@ -535,7 +545,9 @@ public class CloudStorageFileSystemProviderTest {
   public void testCopy_withCopyAttributes_preservesAttributes() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
-    Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
+    Files.write(
+        source,
+        "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withMimeType("text/lolcat"),
         withCacheControl("public; max-age=666"),
         withContentEncoding("foobar"),
@@ -557,7 +569,9 @@ public class CloudStorageFileSystemProviderTest {
   public void testCopy_withoutOptions_doesntPreservesAttributes() throws Exception {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target = Paths.get(URI.create("gs://greenbean/adipose"));
-    Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
+    Files.write(
+        source,
+        "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withMimeType("text/lolcat"),
         withCacheControl("public; max-age=666"),
         withUserMetadata("answer", "42"));
@@ -577,12 +591,13 @@ public class CloudStorageFileSystemProviderTest {
     Path source = Paths.get(URI.create("gs://military/fashion.show"));
     Path target1 = Paths.get(URI.create("gs://greenbean/adipose"));
     Path target2 = Paths.get(URI.create("gs://greenbean/round"));
-    Files.write(source, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
+    Files.write(
+        source,
+        "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withMimeType("text/lolcat"),
         withCacheControl("public; max-age=666"));
     Files.copy(source, target1, COPY_ATTRIBUTES);
-    Files.copy(source, target2, COPY_ATTRIBUTES,
-        withMimeType("text/palfun"));
+    Files.copy(source, target2, COPY_ATTRIBUTES, withMimeType("text/palfun"));
 
     CloudStorageFileAttributes attributes =
         Files.readAttributes(target1, CloudStorageFileAttributes.class);
@@ -597,14 +612,15 @@ public class CloudStorageFileSystemProviderTest {
   @Test
   public void testNullness() throws Exception {
     try (FileSystem fs = FileSystems.getFileSystem(URI.create("gs://blood"))) {
-      NullPointerTester tester = new NullPointerTester()
-          .setDefault(URI.class, URI.create("gs://blood"))
-          .setDefault(Path.class, fs.getPath("and/one"))
-          .setDefault(OpenOption.class, StandardOpenOption.CREATE)
-          .setDefault(CopyOption.class, StandardCopyOption.COPY_ATTRIBUTES);
+      NullPointerTester tester =
+          new NullPointerTester()
+              .setDefault(URI.class, URI.create("gs://blood"))
+              .setDefault(Path.class, fs.getPath("and/one"))
+              .setDefault(OpenOption.class, StandardOpenOption.CREATE)
+              .setDefault(CopyOption.class, StandardCopyOption.COPY_ATTRIBUTES);
       // can't do that, setGCloudOptions accepts a null argument.
       // TODO(jart): Figure out how to re-enable this.
-      //tester.testAllPublicStaticMethods(CloudStorageFileSystemProvider.class);
+      // tester.testAllPublicStaticMethods(CloudStorageFileSystemProvider.class);
       tester.testAllPublicInstanceMethods(new CloudStorageFileSystemProvider());
     }
   }
@@ -619,14 +635,10 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   private static CloudStorageConfiguration permitEmptyPathComponents(boolean value) {
-    return CloudStorageConfiguration.builder()
-        .permitEmptyPathComponents(value)
-        .build();
+    return CloudStorageConfiguration.builder().permitEmptyPathComponents(value).build();
   }
 
   private static CloudStorageConfiguration usePseudoDirectories(boolean value) {
-    return CloudStorageConfiguration.builder()
-        .usePseudoDirectories(value)
-        .build();
+    return CloudStorageConfiguration.builder().usePseudoDirectories(value).build();
   }
 }

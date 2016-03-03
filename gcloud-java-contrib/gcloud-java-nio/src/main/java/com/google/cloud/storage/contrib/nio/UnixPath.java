@@ -28,7 +28,7 @@ import javax.annotation.concurrent.Immutable;
  * preserve trailing backslashes, in order to ensure the path will continue to be recognized as a
  * directory.
  *
- * <p><b>NOTE:</b> This code might not play nice with
+ * <p><b>Note:</b> This code might not play nice with
  * <a href="http://docs.oracle.com/javase/tutorial/i18n/text/supplementaryChars.html">Supplementary
  * Characters as Surrogates</a>.
  */
@@ -57,7 +57,9 @@ final class UnixPath implements CharSequence {
     this.permitEmptyComponents = permitEmptyComponents;
   }
 
-  /** Returns new UnixPath of {@code first}. */
+  /**
+   * Returns new UnixPath of {@code first}.
+   */
   public static UnixPath getPath(boolean permitEmptyComponents, String path) {
     if (path.isEmpty()) {
       return EMPTY_PATH;
@@ -99,7 +101,9 @@ final class UnixPath implements CharSequence {
     return new UnixPath(permitEmptyComponents, builder.toString());
   }
 
-  /** Returns {@code true} consists only of {@code separator}. */
+  /**
+   * Returns {@code true} consists only of {@code separator}.
+   */
   public boolean isRoot() {
     return isRootInternal(path);
   }
@@ -108,7 +112,9 @@ final class UnixPath implements CharSequence {
     return path.length() == 1 && path.charAt(0) == SEPARATOR;
   }
 
-  /** Returns {@code true} if path starts with {@code separator}. */
+  /**
+   * Returns {@code true} if path starts with {@code separator}.
+   */
   public boolean isAbsolute() {
     return isAbsoluteInternal(path);
   }
@@ -117,7 +123,9 @@ final class UnixPath implements CharSequence {
     return !path.isEmpty() && path.charAt(0) == SEPARATOR;
   }
 
-  /** Returns {@code true} if path ends with {@code separator}. */
+  /**
+   * Returns {@code true} if path ends with {@code separator}.
+   */
   public boolean hasTrailingSeparator() {
     return hasTrailingSeparatorInternal(path);
   }
@@ -126,7 +134,9 @@ final class UnixPath implements CharSequence {
     return path.length() != 0 && path.charAt(path.length() - 1) == SEPARATOR;
   }
 
-  /** Returns {@code true} if path ends with a trailing slash, or would after normalization. */
+  /**
+   * Returns {@code true} if path ends with a trailing slash, or would after normalization.
+   */
   public boolean seemsLikeADirectory() {
     int length = path.length();
     return path.isEmpty()
@@ -150,7 +160,8 @@ final class UnixPath implements CharSequence {
       List<String> parts = getParts();
       String last = parts.get(parts.size() - 1);
       return parts.size() == 1 && path.equals(last)
-          ? this : new UnixPath(permitEmptyComponents, last);
+          ? this
+          : new UnixPath(permitEmptyComponents, last);
     }
   }
 
@@ -164,9 +175,10 @@ final class UnixPath implements CharSequence {
     if (path.isEmpty() || isRoot()) {
       return null;
     }
-    int index = hasTrailingSeparator()
-        ? path.lastIndexOf(SEPARATOR, path.length() - 2)
-        : path.lastIndexOf(SEPARATOR);
+    int index =
+        hasTrailingSeparator()
+            ? path.lastIndexOf(SEPARATOR, path.length() - 2)
+            : path.lastIndexOf(SEPARATOR);
     if (index == -1) {
       return isAbsolute() ? ROOT_PATH : null;
     } else {
@@ -397,28 +409,38 @@ final class UnixPath implements CharSequence {
     return ORDERING.compare(getParts(), other.getParts());
   }
 
-  /** Converts relative path to an absolute path. */
+  /**
+   * Converts relative path to an absolute path.
+   */
   public UnixPath toAbsolutePath(UnixPath currentWorkingDirectory) {
     checkArgument(currentWorkingDirectory.isAbsolute());
     return isAbsolute() ? this : currentWorkingDirectory.resolve(this);
   }
 
-  /** Returns {@code toAbsolutePath(ROOT_PATH)}. */
+  /**
+   * Returns {@code toAbsolutePath(ROOT_PATH)}.
+   */
   public UnixPath toAbsolutePath() {
     return toAbsolutePath(ROOT_PATH);
   }
 
-  /** Removes beginning separator from path, if an absolute path. */
+  /**
+   * Removes beginning separator from path, if an absolute path.
+   */
   public UnixPath removeBeginningSeparator() {
     return isAbsolute() ? new UnixPath(permitEmptyComponents, path.substring(1)) : this;
   }
 
-  /** Adds trailing separator to path, if it isn't present. */
+  /**
+   * Adds trailing separator to path, if it isn't present.
+   */
   public UnixPath addTrailingSeparator() {
     return hasTrailingSeparator() ? this : new UnixPath(permitEmptyComponents, path + SEPARATOR);
   }
 
-  /** Removes trailing separator from path, unless it's root. */
+  /**
+   * Removes trailing separator from path, unless it's root.
+   */
   public UnixPath removeTrailingSeparator() {
     if (!isRoot() && hasTrailingSeparator()) {
       return new UnixPath(permitEmptyComponents, path.substring(0, path.length() - 1));
@@ -427,21 +449,23 @@ final class UnixPath implements CharSequence {
     }
   }
 
-  /** Splits path into components, excluding separators and empty strings. */
+  /**
+   * Splits path into components, excluding separators and empty strings.
+   */
   public Iterator<String> split() {
     return getParts().iterator();
   }
 
-  /** Splits path into components in reverse, excluding separators and empty strings. */
+  /**
+   * Splits path into components in reverse, excluding separators and empty strings.
+   */
   public Iterator<String> splitReverse() {
     return Lists.reverse(getParts()).iterator();
   }
 
   @Override
   public boolean equals(@Nullable Object other) {
-    return this == other
-        || other instanceof UnixPath
-        && path.equals(((UnixPath) other).path);
+    return this == other || other instanceof UnixPath && path.equals(((UnixPath) other).path);
   }
 
   @Override
@@ -449,7 +473,9 @@ final class UnixPath implements CharSequence {
     return path.hashCode();
   }
 
-  /** Returns path as a string. */
+  /**
+   * Returns path as a string.
+   */
   @Override
   public String toString() {
     return path;
@@ -470,23 +496,28 @@ final class UnixPath implements CharSequence {
     return path.subSequence(start, end);
   }
 
-  /** Returns {@code true} if this path is an empty string. */
+  /**
+   * Returns {@code true} if this path is an empty string.
+   */
   public boolean isEmpty() {
     return path.isEmpty();
   }
 
-  /** Returns list of path components, excluding slashes. */
+  /**
+   * Returns list of path components, excluding slashes.
+   */
   private List<String> getParts() {
     List<String> result = lazyStringParts;
     return result != null
-        ? result : (lazyStringParts = path.isEmpty() || isRoot()
-            ? Collections.<String>emptyList() : createParts());
+        ? result
+        : (lazyStringParts =
+            path.isEmpty() || isRoot() ? Collections.<String>emptyList() : createParts());
   }
 
   private List<String> createParts() {
     if (permitEmptyComponents) {
-      return SPLITTER_PERMIT_EMPTY_COMPONENTS
-          .splitToList(path.charAt(0) == SEPARATOR ? path.substring(1) : path);
+      return SPLITTER_PERMIT_EMPTY_COMPONENTS.splitToList(
+          path.charAt(0) == SEPARATOR ? path.substring(1) : path);
     } else {
       return SPLITTER.splitToList(path);
     }

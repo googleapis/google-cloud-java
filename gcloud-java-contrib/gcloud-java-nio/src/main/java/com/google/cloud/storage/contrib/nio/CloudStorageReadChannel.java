@@ -14,6 +14,7 @@ import java.nio.channels.NonWritableChannelException;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.NoSuchFileException;
 
+import javax.annotation.CheckReturnValue;
 import javax.annotation.concurrent.ThreadSafe;
 
 /**
@@ -24,8 +25,10 @@ import javax.annotation.concurrent.ThreadSafe;
 @ThreadSafe
 final class CloudStorageReadChannel implements SeekableByteChannel {
 
-  static CloudStorageReadChannel create(
-      Storage gcsStorage, BlobId file, long position) throws IOException {
+  @CheckReturnValue
+  @SuppressWarnings("resource")
+  static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position)
+      throws IOException {
     // XXX: Reading size and opening file should be atomic.
     long size = fetchSize(gcsStorage, file);
     ReadChannel channel = gcsStorage.reader(file);
@@ -44,7 +47,6 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     this.size = size;
     this.channel = channel;
   }
-
 
   @Override
   public boolean isOpen() {
@@ -125,8 +127,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   private static long fetchSize(Storage gcsStorage, BlobId file) throws IOException {
     BlobInfo blobInfo = gcsStorage.get(file);
     if (blobInfo == null) {
-      throw new NoSuchFileException(
-          String.format("gs://%s/%s", file.bucket(), file.name()));
+      throw new NoSuchFileException(String.format("gs://%s/%s", file.bucket(), file.name()));
     }
     return blobInfo.size();
   }

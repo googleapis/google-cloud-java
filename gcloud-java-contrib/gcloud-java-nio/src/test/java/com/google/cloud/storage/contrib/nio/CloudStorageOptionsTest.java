@@ -24,7 +24,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-/** Unit tests for {@link CloudStorageOptions}. */
+/**
+ * Unit tests for {@link CloudStorageOptions}.
+ */
 @RunWith(JUnit4.class)
 public class CloudStorageOptionsTest {
 
@@ -36,8 +38,7 @@ public class CloudStorageOptionsTest {
   @Test
   public void testWithoutCaching() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
-        withoutCaching());
+    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withoutCaching());
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
         .isEqualTo("no-cache");
   }
@@ -45,8 +46,7 @@ public class CloudStorageOptionsTest {
   @Test
   public void testCacheControl() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
-        withCacheControl("potato"));
+    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withCacheControl("potato"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
         .isEqualTo("potato");
   }
@@ -55,8 +55,7 @@ public class CloudStorageOptionsTest {
   public void testWithAcl() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Acl acl = Acl.of(new Acl.User("king@example.com"), Acl.Role.OWNER);
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
-        withAcl(acl));
+    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withAcl(acl));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).acl().get())
         .contains(acl);
   }
@@ -64,18 +63,16 @@ public class CloudStorageOptionsTest {
   @Test
   public void testWithContentDisposition() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
-        withContentDisposition("bubbly fun"));
+    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withContentDisposition("bubbly fun"));
     assertThat(
-        Files.readAttributes(path, CloudStorageFileAttributes.class).contentDisposition().get())
+            Files.readAttributes(path, CloudStorageFileAttributes.class).contentDisposition().get())
         .isEqualTo("bubbly fun");
   }
 
   @Test
   public void testWithContentEncoding() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
-        withContentEncoding("gzip"));
+    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withContentEncoding("gzip"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).contentEncoding().get())
         .isEqualTo("gzip");
   }
@@ -83,24 +80,25 @@ public class CloudStorageOptionsTest {
   @Test
   public void testWithUserMetadata() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
+    Files.write(
+        path,
+        "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
         withUserMetadata("nolo", "contendere"),
         withUserMetadata("eternal", "sadness"));
     assertThat(
-            Files.readAttributes(path, CloudStorageFileAttributes.class)
-                .userMetadata().get("nolo"))
+            Files.readAttributes(path, CloudStorageFileAttributes.class).userMetadata().get("nolo"))
         .isEqualTo("contendere");
     assertThat(
             Files.readAttributes(path, CloudStorageFileAttributes.class)
-                .userMetadata().get("eternal"))
+                .userMetadata()
+                .get("eternal"))
         .isEqualTo("sadness");
   }
 
   @Test
   public void testWithMimeType_string() throws Exception {
     Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
-        withMimeType("text/plain"));
+    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withMimeType("text/plain"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).mimeType().get())
         .isEqualTo("text/plain");
   }

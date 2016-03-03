@@ -67,7 +67,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   // used only when we create a new instance of CloudStorageFileSystemProvider.
   private static StorageOptions storageOptions;
 
-  /** Those options are only used by the CloudStorageFileSystemProvider ctor. */
+  /**
+   * Sets options that are only used by the constructor.
+   */
   @VisibleForTesting
   public static void setGCloudOptions(StorageOptions newStorageOptions) {
     storageOptions = newStorageOptions;
@@ -96,25 +98,35 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     return CloudStorageFileSystem.URI_SCHEME;
   }
 
-  /** Returns cloud storage file system, provided a URI with no path, e.g. {@code gs://bucket} */
+  /**
+   * Returns cloud storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
+   */
   @Override
   public CloudStorageFileSystem getFileSystem(URI uri) {
     return newFileSystem(uri, Collections.<String, Object>emptyMap());
   }
 
-  /** Returns cloud storage file system, provided a URI with no path, e.g. {@code gs://bucket} */
+  /**
+   * Returns cloud storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
+   */
   @Override
   public CloudStorageFileSystem newFileSystem(URI uri, Map<String, ?> env) {
-    checkArgument(uri.getScheme().equalsIgnoreCase(CloudStorageFileSystem.URI_SCHEME),
-        "Cloud Storage URIs must have '%s' scheme: %s", CloudStorageFileSystem.URI_SCHEME, uri);
-    checkArgument(!isNullOrEmpty(uri.getHost()),
-        "%s:// URIs must have a host: %s", CloudStorageFileSystem.URI_SCHEME, uri);
-    checkArgument(uri.getPort() == -1
-        && isNullOrEmpty(uri.getPath())
-        && isNullOrEmpty(uri.getQuery())
-        && isNullOrEmpty(uri.getFragment())
-        && isNullOrEmpty(uri.getUserInfo()),
-        "GCS FileSystem URIs mustn't have: port, userinfo, path, query, or fragment: %s", uri);
+    checkArgument(
+        uri.getScheme().equalsIgnoreCase(CloudStorageFileSystem.URI_SCHEME),
+        "Cloud Storage URIs must have '%s' scheme: %s",
+        CloudStorageFileSystem.URI_SCHEME,
+        uri);
+    checkArgument(
+        !isNullOrEmpty(uri.getHost()), "%s:// URIs must have a host: %s",
+        CloudStorageFileSystem.URI_SCHEME, uri);
+    checkArgument(
+        uri.getPort() == -1
+            && isNullOrEmpty(uri.getPath())
+            && isNullOrEmpty(uri.getQuery())
+            && isNullOrEmpty(uri.getFragment())
+            && isNullOrEmpty(uri.getUserInfo()),
+        "GCS FileSystem URIs mustn't have: port, userinfo, path, query, or fragment: %s",
+        uri);
     checkBucket(uri.getHost());
     return new CloudStorageFileSystem(this, uri.getHost(), CloudStorageConfiguration.fromMap(env));
   }
@@ -137,8 +149,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
   }
 
-  private SeekableByteChannel newReadChannel(
-      Path path, Set<? extends OpenOption> options) throws IOException {
+  private SeekableByteChannel newReadChannel(Path path, Set<? extends OpenOption> options)
+      throws IOException {
     for (OpenOption option : options) {
       if (option instanceof StandardOpenOption) {
         switch ((StandardOpenOption) option) {
@@ -171,8 +183,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     return CloudStorageReadChannel.create(storage, cloudPath.getBlobId(), 0);
   }
 
-  private SeekableByteChannel newWriteChannel(
-      Path path, Set<? extends OpenOption> options) throws IOException {
+  private SeekableByteChannel newWriteChannel(Path path, Set<? extends OpenOption> options)
+      throws IOException {
 
     CloudStoragePath cloudPath = checkPath(path);
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
@@ -182,7 +194,6 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     BlobInfo.Builder infoBuilder = BlobInfo.builder(file);
     List<Storage.BlobWriteOption> writeOptions = new ArrayList<>();
     List<Acl> acls = new ArrayList<>();
-
 
     HashMap<String, String> metas = new HashMap<>();
     for (OpenOption option : options) {
@@ -238,8 +249,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
 
     try {
-      return new CloudStorageWriteChannel(storage.writer(infoBuilder.build(),
-          writeOptions.toArray(new Storage.BlobWriteOption[0])));
+      return new CloudStorageWriteChannel(
+          storage.writer(
+              infoBuilder.build(), writeOptions.toArray(new Storage.BlobWriteOption[0])));
     } catch (StorageException oops) {
       throw asIOException(oops);
     }
@@ -279,7 +291,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   public void move(Path source, Path target, CopyOption... options) throws IOException {
     for (CopyOption option : options) {
       if (option == StandardCopyOption.ATOMIC_MOVE) {
-        throw new AtomicMoveNotSupportedException(source.toString(), target.toString(),
+        throw new AtomicMoveNotSupportedException(
+            source.toString(),
+            target.toString(),
             "Google Cloud Storage does not support atomic move operations.");
       }
     }
@@ -326,8 +340,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           tgtInfoBuilder.contentEncoding(((OptionContentEncoding) option).contentEncoding());
           setContentEncoding = true;
         } else if (option instanceof OptionContentDisposition) {
-          tgtInfoBuilder.contentDisposition(((OptionContentDisposition) option)
-              .contentDisposition());
+          tgtInfoBuilder.contentDisposition(
+              ((OptionContentDisposition) option).contentDisposition());
           setContentDisposition = true;
         } else {
           throw new UnsupportedOperationException(option.toString());
@@ -339,9 +353,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
     CloudStoragePath fromPath = checkPath(source);
 
-    blockSize = blockSize != -1 ? blockSize
-        : Ints.max(fromPath.getFileSystem().config().blockSize(),
-              toPath.getFileSystem().config().blockSize());
+    blockSize =
+        blockSize != -1
+            ? blockSize
+            : Ints.max(
+                fromPath.getFileSystem().config().blockSize(),
+                toPath.getFileSystem().config().blockSize());
     // TODO: actually use blockSize
 
     if (fromPath.seemsLikeADirectory() && toPath.seemsLikeADirectory()) {
@@ -350,8 +367,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         // NOOP: This would normally create an empty directory.
         return;
       } else {
-        checkArgument(!fromPath.getFileSystem().config().usePseudoDirectories()
-            && !toPath.getFileSystem().config().usePseudoDirectories(),
+        checkArgument(
+            !fromPath.getFileSystem().config().usePseudoDirectories()
+                && !toPath.getFileSystem().config().usePseudoDirectories(),
             "File systems associated with paths don't agree on pseudo-directories.");
       }
     }
@@ -363,8 +381,6 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
 
     try {
-
-
       if (wantCopyAttributes) {
         BlobInfo blobInfo = storage.get(fromPath.getBlobId());
         if (null == blobInfo) {
@@ -387,8 +403,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       }
 
       BlobInfo tgtInfo = tgtInfoBuilder.build();
-      Storage.CopyRequest.Builder copyReqBuilder = Storage.CopyRequest.builder()
-          .source(fromPath.getBlobId());
+      Storage.CopyRequest.Builder copyReqBuilder =
+          Storage.CopyRequest.builder().source(fromPath.getBlobId());
       if (wantReplaceExisting) {
         copyReqBuilder = copyReqBuilder.target(tgtInfo);
       } else {
@@ -401,13 +417,13 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
   }
 
-
   @Override
   public boolean isSameFile(Path path, Path path2) {
     return checkPath(path).equals(checkPath(path2));
   }
 
-  /** Returns {@code false}.
+  /**
+   * Always returns {@code false}, because GCS doesn't support hidden files.
    */
   @Override
   public boolean isHidden(Path path) {
@@ -486,7 +502,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     return result;
   }
 
-  /** Does nothing since GCS uses fake directories.
+  /**
+   * Does nothing since GCS uses fake directories.
    */
   @Override
   public void createDirectory(Path dir, FileAttribute<?>... attrs) {
@@ -494,7 +511,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     checkNotNullArray(attrs);
   }
 
-  /** Always @throws UnsupportedOperationException.
+  /**
+   * Throws {@link UnsupportedOperationException} because this feature hasn't been implemented yet.
    */
   @Override
   public DirectoryStream<Path> newDirectoryStream(Path dir, Filter<? super Path> filter) {
@@ -503,8 +521,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * This feature is not supported, since Cloud Storage objects are immutable.
-   * Always @throws UnsupportedOperationException.
+   * Throws {@link UnsupportedOperationException} because Cloud Storage objects are immutable.
    */
   @Override
   public void setAttribute(Path path, String attribute, Object value, LinkOption... options) {
@@ -512,8 +529,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * This feature is not supported.
-   * Always @throws UnsupportedOperationException.
+   * Throws {@link UnsupportedOperationException} because this feature hasn't been implemented yet.
    */
   @Override
   public FileStore getFileStore(Path path) {
@@ -524,7 +540,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   public boolean equals(@Nullable Object other) {
     return this == other
         || other instanceof CloudStorageFileSystemProvider
-        &&  Objects.equals(storage, ((CloudStorageFileSystemProvider) other).storage);
+            && Objects.equals(storage, ((CloudStorageFileSystemProvider) other).storage);
   }
 
   @Override
@@ -534,12 +550,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("storage", storage)
-        .toString();
+    return MoreObjects.toStringHelper(this).add("storage", storage).toString();
   }
-
-
 
   private IOException asIOException(StorageException oops) {
     if (oops.code() == 404) {
@@ -561,5 +573,4 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
     return new IOException(oops.getMessage(), oops);
   }
-
 }

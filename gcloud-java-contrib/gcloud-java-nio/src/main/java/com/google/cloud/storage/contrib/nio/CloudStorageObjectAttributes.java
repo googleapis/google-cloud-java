@@ -22,8 +22,7 @@ import javax.annotation.concurrent.Immutable;
 @Immutable
 final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
 
-  @Nonnull
-  private final BlobInfo info;
+  @Nonnull private final BlobInfo info;
 
   CloudStorageObjectAttributes(BlobInfo info) {
     this.info = checkNotNull(info);
@@ -150,7 +149,7 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
   public boolean equals(@Nullable Object other) {
     return this == other
         || other instanceof CloudStorageObjectAttributes
-        && Objects.equals(info, ((CloudStorageObjectAttributes) other).info);
+            && Objects.equals(info, ((CloudStorageObjectAttributes) other).info);
   }
 
   @Override
@@ -160,8 +159,6 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("info", info)
-        .toString();
+    return MoreObjects.toStringHelper(this).add("info", info).toString();
   }
 }

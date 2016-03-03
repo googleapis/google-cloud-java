@@ -6,12 +6,14 @@ import com.google.auto.value.AutoValue;
 
 import java.util.Map;
 
-/** CloudStorageConfiguration is the configuration class for
- * {@link CloudStorageFileSystem#forBucket}. */
+/**
+ * Configuration for a {@link CloudStorageFileSystem} instance.
+ */
 @AutoValue
 public abstract class CloudStorageConfiguration {
 
-  /** Returns the path of the current working directory. Defaults to the root directory.
+  /**
+   * Returns path of the current working directory. This defaults to the root directory.
    */
   public abstract String workingDirectory();
 
@@ -106,7 +108,6 @@ public abstract class CloudStorageConfiguration {
       blockSize = value;
       return this;
     }
-
 
     /** Creates a new instance, but does not destroy the builder.
      */

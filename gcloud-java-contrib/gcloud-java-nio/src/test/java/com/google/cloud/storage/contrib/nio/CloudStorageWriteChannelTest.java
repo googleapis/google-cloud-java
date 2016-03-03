@@ -23,12 +23,13 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.NonReadableChannelException;
 
-/** Unit tests for {@link CloudStorageWriteChannel}. */
+/**
+ * Unit tests for {@link CloudStorageWriteChannel}.
+ */
 @RunWith(JUnit4.class)
 public class CloudStorageWriteChannelTest {
 
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none();
+  @Rule public final ExpectedException thrown = ExpectedException.none();
 
   private final WriteChannel gcsChannel = mock(WriteChannel.class);
   private CloudStorageWriteChannel chan = new CloudStorageWriteChannel(gcsChannel);

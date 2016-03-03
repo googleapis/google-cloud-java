@@ -18,20 +18,21 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-/** Unit tests for {@link CloudStorageFileSystem}. */
+/**
+ * Unit tests for {@link CloudStorageFileSystem}.
+ */
 @RunWith(JUnit4.class)
 public class CloudStorageFileSystemTest {
 
-  private static final String ALONE = ""
-      + "To be, or not to be, that is the question—\n"
-      + "Whether 'tis Nobler in the mind to suffer\n"
-      + "The Slings and Arrows of outrageous Fortune,\n"
-      + "Or to take Arms against a Sea of troubles,\n"
-      + "And by opposing, end them? To die, to sleep—\n"
-      + "No more; and by a sleep, to say we end\n"
-      + "The Heart-ache, and the thousand Natural shocks\n"
-      + "That Flesh is heir to? 'Tis a consummation\n";
-
+  private static final String ALONE =
+      "To be, or not to be, that is the question—\n"
+          + "Whether 'tis Nobler in the mind to suffer\n"
+          + "The Slings and Arrows of outrageous Fortune,\n"
+          + "Or to take Arms against a Sea of troubles,\n"
+          + "And by opposing, end them? To die, to sleep—\n"
+          + "No more; and by a sleep, to say we end\n"
+          + "The Heart-ache, and the thousand Natural shocks\n"
+          + "That Flesh is heir to? 'Tis a consummation\n";
 
   @Before
   public void before() {
@@ -106,8 +107,9 @@ public class CloudStorageFileSystemTest {
   @Test
   public void testNullness() throws Exception {
     try (FileSystem fs = FileSystems.getFileSystem(URI.create("gs://bucket"))) {
-      NullPointerTester tester = new NullPointerTester()
-          .setDefault(CloudStorageConfiguration.class, CloudStorageConfiguration.DEFAULT);
+      NullPointerTester tester =
+          new NullPointerTester()
+              .setDefault(CloudStorageConfiguration.class, CloudStorageConfiguration.DEFAULT);
       tester.testAllPublicStaticMethods(CloudStorageFileSystem.class);
       tester.testAllPublicInstanceMethods(fs);
     }
