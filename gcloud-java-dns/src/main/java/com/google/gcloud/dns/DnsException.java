@@ -16,25 +16,40 @@
 
 package com.google.gcloud.dns;
 
+import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.BaseServiceException;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.RetryHelper.RetryInterruptedException;
 
 import java.io.IOException;
+import java.util.Set;
 
 /**
  * DNS service exception.
  */
 public class DnsException extends BaseServiceException {
 
+  // see: https://cloud.google.com/dns/troubleshooting
+  private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
+      new Error(429, null),
+      new Error(500, null),
+      new Error(502, null),
+      new Error(503, null),
+      new Error(null, "userRateLimitExceeded"),
+      new Error(null, "rateLimitExceeded"));
   private static final long serialVersionUID = 490302380416260252L;
 
   public DnsException(IOException exception) {
     super(exception, true);
   }
 
-  public DnsException(int code, String message) {
+  private DnsException(int code, String message) {
     super(code, message, null, true);
+  }
+
+  @Override
+  protected Set<Error> retryableErrors() {
+    return RETRYABLE_ERRORS;
   }
 
   /**
@@ -48,6 +63,4 @@ public class DnsException extends BaseServiceException {
     BaseServiceException.translateAndPropagateIfPossible(ex);
     throw new DnsException(UNKNOWN_CODE, ex.getMessage());
   }
-
-  //TODO(mderka) Add translation and retry functionality. Created issue #593.
 }
