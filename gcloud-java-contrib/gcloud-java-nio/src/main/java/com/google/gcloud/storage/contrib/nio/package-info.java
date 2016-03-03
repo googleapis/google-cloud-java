@@ -18,7 +18,7 @@
  *     static String bucket = System.getProperty(...);
  *     static FileSystem fs = FileSystems.getFileSystem(URI.create("gs://" + bucket));
  *     void bar() {
- *       byte[] data = "hello kitty".getBytes(StandardCharsets.UTF_8);
+ *       byte[] data = "hello world".getBytes(StandardCharsets.UTF_8);
  *       Path path = fs.getPath("/object");
  *       Files.write(path, data);
  *       data = Files.readBytes(path);
@@ -73,7 +73,7 @@
  * Google Auto, you can instantiate this file system directly as follows:<pre>   {@code
  *
  *   CloudStorageFileSystem fs = CloudStorageFileSystemProvider.forBucket("bucket");
- *   byte[] data = "hello kitty".getBytes(StandardCharsets.UTF_8);
+ *   byte[] data = "hello world".getBytes(StandardCharsets.UTF_8);
  *   Path path = fs.getPath("/object");
  *   Files.write(path, data);
  *   data = Files.readBytes(path);}</pre>
