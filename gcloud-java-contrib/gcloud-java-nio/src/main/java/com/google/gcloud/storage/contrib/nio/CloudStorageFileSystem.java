@@ -57,8 +57,8 @@ public final class CloudStorageFileSystem extends FileSystem {
    * @see #forBucket(String)
    */
   public static CloudStorageFileSystem forBucket(String bucket, CloudStorageConfiguration config) {
-    checkArgument(!bucket.startsWith(URI_SCHEME + ":"),
-        "Bucket name must not have schema: %s", bucket);
+    checkArgument(
+        !bucket.startsWith(URI_SCHEME + ":"), "Bucket name must not have schema: %s", bucket);
     return new CloudStorageFileSystem(
         new CloudStorageFileSystemProvider(), bucket, checkNotNull(config));
   }
@@ -75,9 +75,7 @@ public final class CloudStorageFileSystem extends FileSystem {
   private final CloudStorageConfiguration config;
 
   CloudStorageFileSystem(
-      CloudStorageFileSystemProvider provider,
-      String bucket,
-      CloudStorageConfiguration config) {
+      CloudStorageFileSystemProvider provider, String bucket, CloudStorageConfiguration config) {
     checkArgument(!bucket.isEmpty(), "bucket");
     this.provider = provider;
     this.bucket = bucket;
@@ -89,47 +87,56 @@ public final class CloudStorageFileSystem extends FileSystem {
     return provider;
   }
 
-  /** Returns the Cloud Storage bucket name being served by this file system.
-    */
+  /**
+   * Returns the Cloud Storage bucket name being served by this file system.
+   */
   public String bucket() {
     return bucket;
   }
 
-  /** Returns the configuration object for this filesystem instance.
-    */
+  /**
+   * Returns the configuration object for this filesystem instance.
+   */
   public CloudStorageConfiguration config() {
     return config;
   }
 
-  /** Converts a cloud storage object name to a {@link Path} object.
-    */
+  /**
+   * Converts a cloud storage object name to a {@link Path} object.
+   */
   @Override
   public CloudStoragePath getPath(String first, String... more) {
-    checkArgument(!first.startsWith(URI_SCHEME + ":"),
-        "GCS FileSystem.getPath() must not have schema and bucket name: %s", first);
+    checkArgument(
+        !first.startsWith(URI_SCHEME + ":"),
+        "GCS FileSystem.getPath() must not have schema and bucket name: %s",
+        first);
     return CloudStoragePath.getPath(this, first, more);
   }
 
-  /** Does nothing.
-    */
+  /**
+   * Does nothing.
+   */
   @Override
   public void close() {}
 
-  /** Returns {@code true}.
-    */
+  /**
+   * Returns {@code true}.
+   */
   @Override
   public boolean isOpen() {
     return true;
   }
 
-  /** Returns {@code false}.
-    */
+  /**
+   * Returns {@code false}.
+   */
   @Override
   public boolean isReadOnly() {
     return false;
   }
 
-  /** Returns {@value UnixPath#SEPARATOR}.
+  /**
+   * Returns {@value UnixPath#SEPARATOR}.
    */
   @Override
   public String getSeparator() {
@@ -151,22 +158,26 @@ public final class CloudStorageFileSystem extends FileSystem {
     return SUPPORTED_VIEWS;
   }
 
-  /** Always throws {@link UnsupportedOperationException}. */
+  /**
+   * Throws {@link UnsupportedOperationException} because this feature hasn't been implemented yet.
+   */
   @Override
   public PathMatcher getPathMatcher(String syntaxAndPattern) {
     // TODO: Implement me.
     throw new UnsupportedOperationException();
   }
 
-  /** Always throws {@link UnsupportedOperationException}.
-    */
+  /**
+   * Throws {@link UnsupportedOperationException} because this feature hasn't been implemented yet.
+   */
   @Override
   public UserPrincipalLookupService getUserPrincipalLookupService() {
     // TODO: Implement me.
     throw new UnsupportedOperationException();
   }
 
-  /** Always throws {@link UnsupportedOperationException}.
+  /**
+   * Throws {@link UnsupportedOperationException} because this feature hasn't been implemented yet.
    */
   @Override
   public WatchService newWatchService() throws IOException {
@@ -178,8 +189,8 @@ public final class CloudStorageFileSystem extends FileSystem {
   public boolean equals(@Nullable Object other) {
     return this == other
         || other instanceof CloudStorageFileSystem
-        && Objects.equals(config, ((CloudStorageFileSystem) other).config)
-        && Objects.equals(bucket, ((CloudStorageFileSystem) other).bucket);
+            && Objects.equals(config, ((CloudStorageFileSystem) other).config)
+            && Objects.equals(bucket, ((CloudStorageFileSystem) other).bucket);
   }
 
   @Override

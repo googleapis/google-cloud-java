@@ -22,14 +22,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.FileTime;
 
-/** Unit tests for {@link CloudStorageFileAttributeView}. */
+/**
+ * Unit tests for {@link CloudStorageFileAttributeView}.
+ */
 @RunWith(JUnit4.class)
 public class CloudStorageFileAttributeViewTest {
 
   private static final byte[] HAPPY = "(✿◕ ‿◕ )ノ".getBytes(UTF_8);
 
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none();
+  @Rule public final ExpectedException thrown = ExpectedException.none();
 
   private Path path;
 
@@ -77,15 +78,12 @@ public class CloudStorageFileAttributeViewTest {
     new EqualsTester()
         .addEqualityGroup(
             Files.getFileAttributeView(
-                Paths.get(URI.create("gs://red/rum")),
-                CloudStorageFileAttributeView.class),
+                Paths.get(URI.create("gs://red/rum")), CloudStorageFileAttributeView.class),
             Files.getFileAttributeView(
-                Paths.get(URI.create("gs://red/rum")),
-                CloudStorageFileAttributeView.class))
+                Paths.get(URI.create("gs://red/rum")), CloudStorageFileAttributeView.class))
         .addEqualityGroup(
             Files.getFileAttributeView(
-                Paths.get(URI.create("gs://red/lol/dog")),
-                CloudStorageFileAttributeView.class))
+                Paths.get(URI.create("gs://red/lol/dog")), CloudStorageFileAttributeView.class))
         .testEquals();
   }
 

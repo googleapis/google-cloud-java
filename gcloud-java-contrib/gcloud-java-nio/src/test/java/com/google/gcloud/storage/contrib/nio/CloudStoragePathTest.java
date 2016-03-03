@@ -22,12 +22,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.ProviderMismatchException;
 
-/** Unit tests for {@link CloudStoragePath}. */
+/**
+ * Unit tests for {@link CloudStoragePath}.
+ */
 @RunWith(JUnit4.class)
 public class CloudStoragePathTest {
 
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none();
+  @Rule public final ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void before() {
@@ -292,9 +293,9 @@ public class CloudStoragePathTest {
   @Test
   public void testRelativize() {
     try (CloudStorageFileSystem fs = forBucket("doodle")) {
-      assertThat(fs.getPath("/foo/bar/lol/cat")
-          .relativize(fs.getPath("/foo/a/b/../../c")).toString())
-              .isEqualTo("../../../a/b/../../c");
+      assertThat(
+              fs.getPath("/foo/bar/lol/cat").relativize(fs.getPath("/foo/a/b/../../c")).toString())
+          .isEqualTo("../../../a/b/../../c");
     }
   }
 
@@ -307,7 +308,7 @@ public class CloudStoragePathTest {
   }
 
   @Test
-  @SuppressWarnings("ReturnValueIgnored")   // testing that an Exception is thrown
+  @SuppressWarnings("ReturnValueIgnored") // testing that an Exception is thrown
   public void testRelativize_providerMismatch2() {
     try (CloudStorageFileSystem fs = forBucket("doodle")) {
       thrown.expect(ProviderMismatchException.class);
@@ -466,28 +467,21 @@ public class CloudStoragePathTest {
   @Test
   public void testNullness() {
     try (CloudStorageFileSystem fs = forBucket("doodle")) {
-      NullPointerTester tester = new NullPointerTester()
-          .setDefault(Path.class, fs.getPath("sup"));
+      NullPointerTester tester = new NullPointerTester().setDefault(Path.class, fs.getPath("sup"));
       tester.testAllPublicStaticMethods(CloudStoragePath.class);
       tester.testAllPublicInstanceMethods(fs.getPath("sup"));
     }
   }
 
   private static CloudStorageConfiguration stripPrefixSlash(boolean value) {
-    return CloudStorageConfiguration.builder()
-        .stripPrefixSlash(value)
-        .build();
+    return CloudStorageConfiguration.builder().stripPrefixSlash(value).build();
   }
 
   private static CloudStorageConfiguration permitEmptyPathComponents(boolean value) {
-    return CloudStorageConfiguration.builder()
-        .permitEmptyPathComponents(value)
-        .build();
+    return CloudStorageConfiguration.builder().permitEmptyPathComponents(value).build();
   }
 
   private static CloudStorageConfiguration workingDirectory(String value) {
-    return CloudStorageConfiguration.builder()
-        .workingDirectory(value)
-        .build();
+    return CloudStorageConfiguration.builder().workingDirectory(value).build();
   }
 }
