@@ -16,26 +16,30 @@
 
 package com.google.gcloud.storage;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.gcloud.storage.Bucket.BucketSourceOption.toGetOptions;
 import static com.google.gcloud.storage.Bucket.BucketSourceOption.toSourceOptions;
 
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import com.google.gcloud.Page;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobGetOption;
-import com.google.gcloud.storage.Storage.BlobTargetOption;
-import com.google.gcloud.storage.Storage.BlobWriteOption;
 import com.google.gcloud.storage.Storage.BucketTargetOption;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A Google cloud storage bucket.
@@ -64,7 +68,7 @@ public final class Bucket extends BucketInfo {
       super(rpcOption, null);
     }
 
-    private Storage.BucketSourceOption toSourceOptions(BucketInfo bucketInfo) {
+    private Storage.BucketSourceOption toSourceOption(BucketInfo bucketInfo) {
       switch (rpcOption()) {
         case IF_METAGENERATION_MATCH:
           return Storage.BucketSourceOption.metagenerationMatch(bucketInfo.metageneration());
@@ -108,7 +112,7 @@ public final class Bucket extends BucketInfo {
           new Storage.BucketSourceOption[options.length];
       int index = 0;
       for (BucketSourceOption option : options) {
-        convertedOptions[index++] = option.toSourceOptions(bucketInfo);
+        convertedOptions[index++] = option.toSourceOption(bucketInfo);
       }
       return convertedOptions;
     }
@@ -121,6 +125,287 @@ public final class Bucket extends BucketInfo {
         convertedOptions[index++] = option.toGetOption(bucketInfo);
       }
       return convertedOptions;
+    }
+  }
+
+  /**
+   * Class for specifying blob target options when {@code Bucket} methods are used.
+   */
+  public static class BlobTargetOption extends Option {
+
+    private static final Function<BlobTargetOption, StorageRpc.Option> TO_ENUM =
+        new Function<BlobTargetOption, StorageRpc.Option>() {
+          @Override
+          public StorageRpc.Option apply(BlobTargetOption blobTargetOption) {
+            return blobTargetOption.rpcOption();
+          }
+        };
+    private static final long serialVersionUID = 8345296337342509425L;
+
+    private BlobTargetOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
+    private StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption> toTargetOption(BlobInfo blobInfo) {
+      BlobId blobId = blobInfo.blobId();
+      switch (rpcOption()) {
+        case PREDEFINED_ACL:
+          return StorageRpc.Tuple.of(blobInfo,
+              Storage.BlobTargetOption.predefinedAcl((Storage.PredefinedAcl) value()));
+        case IF_GENERATION_MATCH:
+          blobId = BlobId.of(blobId.bucket(), blobId.name(), (Long) value());
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().blobId(blobId).build(),
+              Storage.BlobTargetOption.generationMatch());
+        case IF_GENERATION_NOT_MATCH:
+          blobId = BlobId.of(blobId.bucket(), blobId.name(), (Long) value());
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().blobId(blobId).build(),
+              Storage.BlobTargetOption.generationNotMatch());
+        case IF_METAGENERATION_MATCH:
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().metageneration((Long) value()).build(),
+              Storage.BlobTargetOption.metagenerationMatch());
+        case IF_METAGENERATION_NOT_MATCH:
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().metageneration((Long) value()).build(),
+              Storage.BlobTargetOption.metagenerationNotMatch());
+        default:
+          throw new AssertionError("Unexpected enum value");
+      }
+    }
+
+    /**
+     * Returns an option for specifying blob's predefined ACL configuration.
+     */
+    public static BlobTargetOption predefinedAcl(Storage.PredefinedAcl acl) {
+      return new BlobTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl);
+    }
+
+    /**
+     * Returns an option that causes an operation to succeed only if the target blob does not exist.
+     * This option can not be provided together with {@link #generationMatch(long)} or
+     * {@link #generationNotMatch(long)}.
+     */
+    public static BlobTargetOption doesNotExist() {
+      return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_MATCH, 0L);
+    }
+
+    /**
+     * Returns an option for blob's data generation match. If this option is used the request will
+     * fail if generation does not match the provided value. This option can not be provided
+     * together with {@link #generationNotMatch(long)} or {@link #doesNotExist()}.
+     */
+    public static BlobTargetOption generationMatch(long generation) {
+      return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_MATCH, generation);
+    }
+
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if blob's generation matches the provided value. This option can not be provided
+     * together with {@link #generationMatch(long)} or {@link #doesNotExist()}.
+     */
+    public static BlobTargetOption generationNotMatch(long generation) {
+      return new BlobTargetOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, generation);
+    }
+
+    /**
+     * Returns an option for blob's metageneration match. If this option is used the request will
+     * fail if metageneration does not match the provided value. This option can not be provided
+     * together with {@link #metagenerationNotMatch(long)}.
+     */
+    public static BlobTargetOption metagenerationMatch(long metageneration) {
+      return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option for blob's metageneration mismatch. If this option is used the request will
+     * fail if metageneration matches the provided value. This option can not be provided together
+     * with {@link #metagenerationMatch(long)}.
+     */
+    public static BlobTargetOption metagenerationNotMatch(long metageneration) {
+      return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+
+    static StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption[]> toTargetOptions(
+        BlobInfo info, BlobTargetOption... options) {
+      Set<StorageRpc.Option> optionSet =
+          Sets.immutableEnumSet(Lists.transform(Arrays.asList(options), TO_ENUM));
+      checkArgument(!(optionSet.contains(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH)
+          && optionSet.contains(StorageRpc.Option.IF_METAGENERATION_MATCH)),
+          "metagenerationMatch and metagenerationNotMatch options can not be both provided");
+      checkArgument(!(optionSet.contains(StorageRpc.Option.IF_GENERATION_NOT_MATCH)
+          && optionSet.contains(StorageRpc.Option.IF_GENERATION_MATCH)),
+          "Only one option of generationMatch, doesNotExist or generationNotMatch can be provided");
+      Storage.BlobTargetOption[] convertedOptions = new Storage.BlobTargetOption[options.length];
+      BlobInfo targetInfo = info;
+      int index = 0;
+      for (BlobTargetOption option : options) {
+        StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption> target =
+            option.toTargetOption(targetInfo);
+        targetInfo = target.x();
+        convertedOptions[index++] = target.y();
+      }
+      return StorageRpc.Tuple.of(targetInfo, convertedOptions);
+    }
+  }
+
+  /**
+   * Class for specifying blob write options when {@code Bucket} methods are used.
+   */
+  public static class BlobWriteOption implements Serializable {
+
+    private static final Function<BlobWriteOption, Storage.BlobWriteOption.Option> TO_ENUM =
+        new Function<BlobWriteOption, Storage.BlobWriteOption.Option>() {
+          @Override
+          public Storage.BlobWriteOption.Option apply(BlobWriteOption blobWriteOption) {
+            return blobWriteOption.option;
+          }
+        };
+    private static final long serialVersionUID = 4722190734541993114L;
+
+    private final Storage.BlobWriteOption.Option option;
+    private final Object value;
+
+    private StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption> toWriteOption(BlobInfo blobInfo) {
+      BlobId blobId = blobInfo.blobId();
+      switch (option) {
+        case PREDEFINED_ACL:
+          return StorageRpc.Tuple.of(blobInfo,
+              Storage.BlobWriteOption.predefinedAcl((Storage.PredefinedAcl) value));
+        case IF_GENERATION_MATCH:
+          blobId = BlobId.of(blobId.bucket(), blobId.name(), (Long) value);
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().blobId(blobId).build(),
+              Storage.BlobWriteOption.generationMatch());
+        case IF_GENERATION_NOT_MATCH:
+          blobId = BlobId.of(blobId.bucket(), blobId.name(), (Long) value);
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().blobId(blobId).build(),
+              Storage.BlobWriteOption.generationNotMatch());
+        case IF_METAGENERATION_MATCH:
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().metageneration((Long) value).build(),
+              Storage.BlobWriteOption.metagenerationMatch());
+        case IF_METAGENERATION_NOT_MATCH:
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().metageneration((Long) value).build(),
+              Storage.BlobWriteOption.metagenerationNotMatch());
+        case IF_MD5_MATCH:
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().md5((String) value).build(),
+              Storage.BlobWriteOption.md5Match());
+        case IF_CRC32C_MATCH:
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().crc32c((String) value).build(),
+              Storage.BlobWriteOption.crc32cMatch());
+        default:
+          throw new AssertionError("Unexpected enum value");
+      }
+    }
+
+    private BlobWriteOption(Storage.BlobWriteOption.Option option, Object value) {
+      this.option = option;
+      this.value = value;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(option, value);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == null) {
+        return false;
+      }
+      if (!(obj instanceof BlobWriteOption)) {
+        return false;
+      }
+      final BlobWriteOption other = (BlobWriteOption) obj;
+      return this.option == other.option && Objects.equals(this.value, other.value);
+    }
+
+    /**
+     * Returns an option for specifying blob's predefined ACL configuration.
+     */
+    public static BlobWriteOption predefinedAcl(Storage.PredefinedAcl acl) {
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.PREDEFINED_ACL, acl);
+    }
+
+    /**
+     * Returns an option that causes an operation to succeed only if the target blob does not exist.
+     * This option can not be provided together with {@link #generationMatch(long)} or
+     * {@link #generationNotMatch(long)}.
+     */
+    public static BlobWriteOption doesNotExist() {
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.IF_GENERATION_MATCH, 0L);
+    }
+
+    /**
+     * Returns an option for blob's data generation match. If this option is used the request will
+     * fail if generation does not match the provided value. This option can not be provided
+     * together with {@link #generationNotMatch(long)} or {@link #doesNotExist()}.
+     */
+    public static BlobWriteOption generationMatch(long generation) {
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.IF_GENERATION_MATCH, generation);
+    }
+
+    /**
+     * Returns an option for blob's data generation mismatch. If this option is used the request
+     * will fail if generation matches the provided value. This option can not be provided
+     * together with {@link #generationMatch(long)} or {@link #doesNotExist()}.
+     */
+    public static BlobWriteOption generationNotMatch(long generation) {
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.IF_GENERATION_NOT_MATCH,
+          generation);
+    }
+
+    /**
+     * Returns an option for blob's metageneration match. If this option is used the request will
+     * fail if metageneration does not match the provided value. This option can not be provided
+     * together with {@link #metagenerationNotMatch(long)}.
+     */
+    public static BlobWriteOption metagenerationMatch(long metageneration) {
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.IF_METAGENERATION_MATCH,
+          metageneration);
+    }
+
+    /**
+     * Returns an option for blob's metageneration mismatch. If this option is used the request will
+     * fail if metageneration matches the provided value. This option can not be provided together
+     * with {@link #metagenerationMatch(long)}.
+     */
+    public static BlobWriteOption metagenerationNotMatch(long metageneration) {
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.IF_METAGENERATION_NOT_MATCH,
+          metageneration);
+    }
+
+    /**
+     * Returns an option for blob's data MD5 hash match. If this option is used the request will
+     * fail if blobs' data MD5 hash does not match the provided value.
+     */
+    public static BlobWriteOption md5Match(String md5) {
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.IF_MD5_MATCH, md5);
+    }
+
+    /**
+     * Returns an option for blob's data CRC32C checksum match. If this option is used the request
+     * will fail if blobs' data CRC32C checksum does not match the provided value.
+     */
+    public static BlobWriteOption crc32cMatch(String crc32c) {
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.IF_CRC32C_MATCH, crc32c);
+    }
+
+    static StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption[]> toWriteOptions(
+        BlobInfo info, BlobWriteOption... options) {
+      Set<Storage.BlobWriteOption.Option> optionSet =
+          Sets.immutableEnumSet(Lists.transform(Arrays.asList(options), TO_ENUM));
+      checkArgument(!(optionSet.contains(Storage.BlobWriteOption.Option.IF_METAGENERATION_NOT_MATCH)
+          && optionSet.contains(Storage.BlobWriteOption.Option.IF_METAGENERATION_MATCH)),
+          "metagenerationMatch and metagenerationNotMatch options can not be both provided");
+      checkArgument(!(optionSet.contains(Storage.BlobWriteOption.Option.IF_GENERATION_NOT_MATCH)
+          && optionSet.contains(Storage.BlobWriteOption.Option.IF_GENERATION_MATCH)),
+          "Only one option of generationMatch, doesNotExist or generationNotMatch can be provided");
+      Storage.BlobWriteOption[] convertedOptions = new Storage.BlobWriteOption[options.length];
+      BlobInfo writeInfo = info;
+      int index = 0;
+      for (BlobWriteOption option : options) {
+        StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption> write = option.toWriteOption(writeInfo);
+        writeInfo = write.x();
+        convertedOptions[index++] = write.y();
+      }
+      return StorageRpc.Tuple.of(writeInfo, convertedOptions);
     }
   }
 
@@ -357,7 +642,9 @@ public final class Bucket extends BucketInfo {
   public Blob create(String blob, byte[] content, String contentType, BlobTargetOption... options) {
     BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob))
         .contentType(MoreObjects.firstNonNull(contentType, Storage.DEFAULT_CONTENT_TYPE)).build();
-    return storage.create(blobInfo, content, options);
+    StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption[]> target =
+        BlobTargetOption.toTargetOptions(blobInfo, options);
+    return storage.create(target.x(), content, target.y());
   }
 
   /**
@@ -377,7 +664,9 @@ public final class Bucket extends BucketInfo {
       BlobWriteOption... options) {
     BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob))
         .contentType(MoreObjects.firstNonNull(contentType, Storage.DEFAULT_CONTENT_TYPE)).build();
-    return storage.create(blobInfo, content, options);
+    StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption[]> write =
+        BlobWriteOption.toWriteOptions(blobInfo, options);
+    return storage.create(write.x(), content, write.y());
   }
 
   /**
