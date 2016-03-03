@@ -6,6 +6,8 @@ Java idiomatic client for [Google Cloud Datastore] (https://cloud.google.com/dat
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-datastore.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-datastore.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html)
@@ -20,21 +22,21 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-datastore</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.4</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-datastore:0.1.2'
+compile 'com.google.gcloud:gcloud-java-datastore:0.1.4'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-datastore" % "0.1.2"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-datastore" % "0.1.4"
 ```
 
 Example Application
 --------------------
-[`DatastoreExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html).
+[`DatastoreExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/datastore/DatastoreExample.html).
 
 Authentication
 --------------
@@ -134,67 +136,12 @@ Cloud Datastore relies on indexing to run queries. Indexing is turned on by defa
 
 #### Complete source code
 
-Here we put together all the code shown above into one program.  This program assumes that you are running on Compute Engine or from your own desktop. To run this example on App Engine, move this code to your application's servlet class and print the query output to the webpage instead of `System.out`.
-
-```java
-import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreOptions;
-import com.google.gcloud.datastore.Entity;
-import com.google.gcloud.datastore.Key;
-import com.google.gcloud.datastore.KeyFactory;
-import com.google.gcloud.datastore.Query;
-import com.google.gcloud.datastore.QueryResults;
-import com.google.gcloud.datastore.StructuredQuery;
-import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
-
-public class GcloudDatastoreExample {
-
-  public static void main(String[] args) {
-    // Create datastore service object.
-    // By default, credentials are inferred from the runtime environment.
-    Datastore datastore = DatastoreOptions.defaultInstance().service();
-
-    // Add an entity to Datastore
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("Person");
-    Key key = keyFactory.newKey("john.doe@gmail.com");
-    Entity entity = Entity.builder(key)
-        .set("name", "John Doe")
-        .set("age", 51)
-        .set("favorite_food", "pizza")
-        .build();
-    datastore.put(entity);
-
-    // Get an entity from Datastore
-    Entity johnEntity = datastore.get(key);
-
-    // Add a couple more entities to make the query results more interesting
-    Key janeKey = keyFactory.newKey("jane.doe@gmail.com");
-    Entity janeEntity = Entity.builder(janeKey)
-        .set("name", "Jane Doe")
-        .set("age", 44)
-        .set("favorite_food", "pizza")
-        .build();
-    Key joeKey = keyFactory.newKey("joe.shmoe@gmail.com");
-    Entity joeEntity = Entity.builder(joeKey)
-        .set("name", "Joe Shmoe")
-        .set("age", 27)
-        .set("favorite_food", "sushi")
-        .build();
-    datastore.put(janeEntity, joeEntity);
-
-    // Run a query
-    Query<Entity> query = Query.entityQueryBuilder()
-        .kind("Person")
-        .filter(PropertyFilter.eq("favorite_food", "pizza"))
-        .build();
-    QueryResults<Entity> results = datastore.run(query);
-    while (results.hasNext()) {
-      Entity currentEntity = results.next();
-      System.out.println(currentEntity.getString("name") + ", you're invited to a pizza party!");
-    }
-  }
-}
-```
+In
+[AddEntitiesAndRunQuery.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
+we put together all the code shown above into one program. The program assumes that you are
+running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
+the code from the main method to your application's servlet class and change the print statements to
+display on your webpage.
 
 Troubleshooting
 ---------------

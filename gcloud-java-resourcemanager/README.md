@@ -6,6 +6,8 @@ Java idiomatic client for [Google Cloud Resource Manager] (https://cloud.google.
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-resourcemanager.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-resourcemanager.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/resourcemanager/package-summary.html)
@@ -20,21 +22,21 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-resourcemanager</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.4</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-resourcemanager:0.1.2'
+compile 'com.google.gcloud:gcloud-java-resourcemanager:0.1.4'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-resourcemanager" % "0.1.2"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-resourcemanager" % "0.1.4"
 ```
 
 Example Application
 --------------------
-[`ResourceManagerExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/ResourceManagerExample.html).
+[`ResourceManagerExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`ResourceManagerExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/resourcemanager/ResourceManagerExample.html).
 
 Authentication
 --------------
@@ -70,7 +72,12 @@ You will need to set up the local development environment by [installing the Goo
 You'll need to obtain the `gcloud-java-resourcemanager` library.  See the [Quickstart](#quickstart) section to add `gcloud-java-resourcemanager` as a dependency in your code.
 
 #### Creating an authorized service object
-To make authenticated requests to Google Cloud Resource Manager, you must create a service object with Google Cloud SDK credentials. You can then make API calls by calling methods on the Resource Manager service object. The simplest way to authenticate is to use [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials). These credentials are automatically inferred from your environment, so you only need the following code to create your service object:
+To make authenticated requests to Google Cloud Resource Manager, you must create a service object
+with Google Cloud SDK credentials. You can then make API calls by calling methods on the Resource
+Manager service object. The simplest way to authenticate is to use
+[Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
+These credentials are automatically inferred from your environment, so you only need the following
+code to create your service object:
 
 ```java
 import com.google.gcloud.resourcemanager.ResourceManager;
@@ -79,43 +86,68 @@ import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
 ```
 
-#### Creating a project
-All you need to create a project is a globally unique project ID.  You can also optionally attach a non-unique name and labels to your project. Read more about naming guidelines for project IDs, names, and labels [here](https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects). To create a project, add the following import at the top of your file:
+#### Getting a specific project
+You can load a project if you know it's project ID and have read permissions to the project.
+To get a project, add the following import at the top of your file:
 
 ```java
+import com.google.gcloud.resourcemanager.Project;
+```
+
+Then use the following code to get the project:
+
+```java
+String projectId = "my-globally-unique-project-id"; // Change to a unique project ID
+Project project = resourceManager.get(projectId);
+```
+
+#### Creating a project
+All you need to create a project is a globally unique project ID. You can also optionally attach a
+non-unique name and labels to your project. Read more about naming guidelines for project IDs,
+names, and labels [here](https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects).
+To create a project, add the following imports at the top of your file:
+
+```java
+import com.google.gcloud.resourcemanager.Project;
 import com.google.gcloud.resourcemanager.ProjectInfo;
 ```
 
-Then add the following code to create a project (be sure to change `myProjectId` to your own unique project ID).
+Then add the following code to create a project (be sure to change `projectId` to your own unique
+project ID).
 
 ```java
-String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID.
-ProjectInfo myProject = resourceManager.create(ProjectInfo.builder(myProjectId).build());
+String projectId = "my-globally-unique-project-id"; // Change to a unique project ID
+Project project = resourceManager.create(ProjectInfo.builder(projectId).build());
 ```
 
-Note that the return value from `create` is a `ProjectInfo` that includes additional read-only information, like creation time, project number, and lifecycle state. Read more about these fields on the [Projects page](https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects).
-
-#### Getting a specific project
-You can load a project if you know it's project ID and have read permissions to the project. For example, to get the project we just created we can do the following:
-
-```java
-ProjectInfo projectFromServer = resourceManager.get(myProjectId);
-```
+Note that the return value from `create` is a `Project` that includes additional read-only
+information, like creation time, project number, and lifecycle state. Read more about these fields
+on the [Projects page](https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects).
+`Project`, a subclass of `ProjectInfo`, adds a layer of service-related functionality over
+`ProjectInfo`.
 
 #### Editing a project
-To edit a project, create a new `ProjectInfo` object and pass it in to the `ResourceManager.replace` method.
-
-For example, to add a label for the newly created project to denote that it's launch status is "in development", add the following code:
+To edit a project, create a new `ProjectInfo` object and pass it in to the `Project.replace` method.
+For example, to add a label to a project to denote that it's launch status is "in development", add
+the following code:
 
 ```java
-ProjectInfo newProjectInfo = resourceManager.replace(projectFromServer.toBuilder()
-    .addLabel("launch-status", "in-development").build());
+Project newProject = project.toBuilder()
+    .addLabel("launch-status", "in-development")
+    .build()
+    .replace();
 ```
 
-Note that the values of the project you pass in to `replace` overwrite the server's values for non-read-only fields, namely `projectName` and `labels`. For example, if you create a project with `projectName` "some-project-name" and subsequently call replace using a `ProjectInfo` object that didn't set the `projectName`, then the server will unset the project's name. The server ignores any attempted changes to the read-only fields `projectNumber`, `lifecycleState`, and `createTime`. The `projectId` cannot change.
+Note that the values of the project you pass in to `replace` overwrite the server's values for
+non-read-only fields, namely `projectName` and `labels`. For example, if you create a project with
+`projectName` "some-project-name" and subsequently call replace using a `ProjectInfo` object that
+didn't set the `projectName`, then the server will unset the project's name. The server ignores any
+attempted changes to the read-only fields `projectNumber`, `lifecycleState`, and `createTime`.
+The `projectId` cannot change.
 
 #### Listing all projects
-Suppose that we want a list of all projects for which we have read permissions. Add the following import:
+Suppose that we want a list of all projects for which we have read permissions. Add the following
+import:
 
 ```java
 import java.util.Iterator;
@@ -124,7 +156,7 @@ import java.util.Iterator;
 Then add the following code to print a list of projects you can view:
 
 ```java
-Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();
+Iterator<Project> projectIterator = resourceManager.list().iterateAll();
 System.out.println("Projects I can view:");
 while (projectIterator.hasNext()) {
   System.out.println(projectIterator.next().projectId());
@@ -133,45 +165,15 @@ while (projectIterator.hasNext()) {
 
 #### Complete source code
 
-Here we put together all the code shown above into one program.  This program assumes that you are running from your own desktop and used the Google Cloud SDK to authenticate yourself.
+We put together all the code shown above into two programs. Both programs assume that you are
+running from your own desktop and used the Google Cloud SDK to authenticate yourself.
 
-```java
-import com.google.gcloud.resourcemanager.ProjectInfo;
-import com.google.gcloud.resourcemanager.ResourceManager;
-import com.google.gcloud.resourcemanager.ResourceManagerOptions;
+The first program creates a project if it does not exist. Complete source code can be found at
+[GetOrCreateProject.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/GetOrCreateProject.java).
 
-import java.util.Iterator;
-
-public class GcloudJavaResourceManagerExample {
-
-  public static void main(String[] args) {
-    // Create Resource Manager service object.
-    // By default, credentials are inferred from the runtime environment.
-    ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
-
-    // Create a project.
-    String myProjectId = "my-globally-unique-project-id"; // Change to a unique project ID.
-    ProjectInfo myProject = resourceManager.create(ProjectInfo.builder(myProjectId).build());
-
-    // Get a project from the server.
-    ProjectInfo projectFromServer = resourceManager.get(myProjectId);
-    System.out.println("Got project " + projectFromServer.projectId() + " from the server.");
-
-    // Update a project
-    ProjectInfo newProjectInfo = resourceManager.replace(myProject.toBuilder()
-        .addLabel("launch-status", "in-development").build());
-    System.out.println("Updated the labels of project " + newProjectInfo.projectId()
-        + " to be " + newProjectInfo.labels());
-
-    // List all the projects you have permission to view.
-    Iterator<ProjectInfo> projectIterator = resourceManager.list().iterateAll();
-    System.out.println("Projects I can view:");
-    while (projectIterator.hasNext()) {
-      System.out.println(projectIterator.next().projectId());
-    }
-  }
-}
-```
+The second program updates a project if it exists and lists all projects the user has permission to
+view. Complete source code can be found at
+[UpdateAndListProjects.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
 
 Java Versions
 -------------

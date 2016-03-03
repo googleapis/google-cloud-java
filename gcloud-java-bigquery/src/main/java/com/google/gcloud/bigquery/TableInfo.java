@@ -16,225 +16,375 @@
 
 package com.google.gcloud.bigquery;
 
-import com.google.api.services.bigquery.model.Streamingbuffer;
+import static com.google.common.base.MoreObjects.firstNonNull;
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import com.google.api.client.util.Data;
 import com.google.api.services.bigquery.model.Table;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.MoreObjects.ToStringHelper;
 
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Objects;
 
 /**
- * A Google BigQuery Table information. A BigQuery table is a standard, two-dimensional table with
- * individual records organized in rows, and a data type assigned to each column (also called a
- * field). Individual fields within a record may contain nested and repeated children fields. Every
- * table is described by a schema that describes field names, types, and other information.
+ * Google BigQuery table information. Use {@link StandardTableDefinition} to create simple BigQuery
+ * table. Use {@link ViewDefinition} to create a BigQuery view. Use {@link ExternalTableDefinition}
+ * to create a BigQuery a table backed by external data.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
  */
-public class TableInfo extends BaseTableInfo {
+public class TableInfo implements Serializable {
 
-  private static final long serialVersionUID = -5910575573063546949L;
+  static final Function<Table, TableInfo> FROM_PB_FUNCTION =
+      new Function<Table, TableInfo>() {
+        @Override
+        public TableInfo apply(Table pb) {
+          return TableInfo.fromPb(pb);
+        }
+      };
+  static final Function<TableInfo, Table> TO_PB_FUNCTION =
+      new Function<TableInfo, Table>() {
+        @Override
+        public Table apply(TableInfo tableInfo) {
+          return tableInfo.toPb();
+        }
+      };
 
-  private final String location;
-  private final StreamingBuffer streamingBuffer;
+  private static final long serialVersionUID = -7679032506430816205L;
+
+  private final String etag;
+  private final String id;
+  private final String selfLink;
+  private final TableId tableId;
+  private final String friendlyName;
+  private final String description;
+  private final Long creationTime;
+  private final Long expirationTime;
+  private final Long lastModifiedTime;
+  private final TableDefinition definition;
 
   /**
-   * Google BigQuery Table's Streaming Buffer information. This class contains information on a
-   * table's streaming buffer as the estimated size in number of rows/bytes.
+   * A builder for {@code TableInfo} objects.
    */
-  public static class StreamingBuffer implements Serializable {
+  public abstract static class Builder {
 
-    private static final long serialVersionUID = -6713971364725267597L;
-    private final long estimatedRows;
-    private final long estimatedBytes;
-    private final long oldestEntryTime;
-
-    StreamingBuffer(long estimatedRows, long estimatedBytes, long oldestEntryTime) {
-      this.estimatedRows = estimatedRows;
-      this.estimatedBytes = estimatedBytes;
-      this.oldestEntryTime = oldestEntryTime;
-    }
+    abstract Builder creationTime(Long creationTime);
 
     /**
-     * Returns a lower-bound estimate of the number of rows currently in the streaming buffer.
+     * Sets a user-friendly description for the table.
      */
-    public long estimatedRows() {
-      return estimatedRows;
-    }
+    public abstract Builder description(String description);
+
+    abstract Builder etag(String etag);
 
     /**
-     * Returns a lower-bound estimate of the number of bytes currently in the streaming buffer.
+     * Sets the time when this table expires, in milliseconds since the epoch. If not present, the
+     * table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.
      */
-    public long estimatedBytes() {
-      return estimatedBytes;
-    }
+    public abstract Builder expirationTime(Long expirationTime);
 
     /**
-     * Returns the timestamp of the oldest entry in the streaming buffer, in milliseconds since
-     * epoch.
+     * Sets a user-friendly name for the table.
      */
-    public long oldestEntryTime() {
-      return oldestEntryTime;
-    }
+    public abstract Builder friendlyName(String friendlyName);
 
-    @Override
-    public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("estimatedRows", estimatedRows)
-          .add("estimatedBytes", estimatedBytes)
-          .add("oldestEntryTime", oldestEntryTime)
-          .toString();
-    }
+    abstract Builder id(String id);
 
-    @Override
-    public int hashCode() {
-      return Objects.hash(estimatedRows, estimatedBytes, oldestEntryTime);
-    }
+    abstract Builder lastModifiedTime(Long lastModifiedTime);
 
-    @Override
-    public boolean equals(Object obj) {
-      return obj instanceof StreamingBuffer
-          && Objects.equals(toPb(), ((StreamingBuffer) obj).toPb());
-    }
+    abstract Builder selfLink(String selfLink);
 
-    Streamingbuffer toPb() {
-      return new Streamingbuffer()
-          .setEstimatedBytes(BigInteger.valueOf(estimatedBytes))
-          .setEstimatedRows(BigInteger.valueOf(estimatedRows))
-          .setOldestEntryTime(BigInteger.valueOf(oldestEntryTime));
-    }
+    /**
+     * Sets the table identity.
+     */
+    public abstract Builder tableId(TableId tableId);
 
-    static StreamingBuffer fromPb(Streamingbuffer streamingBufferPb) {
-      return new StreamingBuffer(streamingBufferPb.getEstimatedRows().longValue(),
-          streamingBufferPb.getEstimatedBytes().longValue(),
-          streamingBufferPb.getOldestEntryTime().longValue());
-    }
-  }
-
-  public static final class Builder extends BaseTableInfo.Builder<TableInfo, Builder> {
-
-    private String location;
-    private StreamingBuffer streamingBuffer;
-
-    private Builder() {}
-
-    private Builder(TableInfo tableInfo) {
-      super(tableInfo);
-      this.location = tableInfo.location;
-      this.streamingBuffer = tableInfo.streamingBuffer;
-    }
-
-    protected Builder(Table tablePb) {
-      super(tablePb);
-      this.location = tablePb.getLocation();
-      if (tablePb.getStreamingBuffer() != null) {
-        this.streamingBuffer = StreamingBuffer.fromPb(tablePb.getStreamingBuffer());
-      }
-    }
-
-    Builder location(String location) {
-      this.location = location;
-      return self();
-    }
-
-    Builder streamingBuffer(StreamingBuffer streamingBuffer) {
-      this.streamingBuffer = streamingBuffer;
-      return self();
-    }
+    /**
+     * Sets the table definition. Use {@link StandardTableDefinition} to create simple BigQuery
+     * table. Use {@link ViewDefinition} to create a BigQuery view. Use
+     * {@link ExternalTableDefinition} to create a BigQuery a table backed by external data.
+     */
+    public abstract Builder definition(TableDefinition definition);
 
     /**
      * Creates a {@code TableInfo} object.
      */
+    public abstract TableInfo build();
+  }
+
+  static class BuilderImpl extends Builder {
+
+    private String etag;
+    private String id;
+    private String selfLink;
+    private TableId tableId;
+    private String friendlyName;
+    private String description;
+    private Long creationTime;
+    private Long expirationTime;
+    private Long lastModifiedTime;
+    private TableDefinition definition;
+
+    BuilderImpl() {}
+
+    BuilderImpl(TableInfo tableInfo) {
+      this.etag = tableInfo.etag;
+      this.id = tableInfo.id;
+      this.selfLink = tableInfo.selfLink;
+      this.tableId = tableInfo.tableId;
+      this.friendlyName = tableInfo.friendlyName;
+      this.description = tableInfo.description;
+      this.creationTime = tableInfo.creationTime;
+      this.expirationTime = tableInfo.expirationTime;
+      this.lastModifiedTime = tableInfo.lastModifiedTime;
+      this.definition = tableInfo.definition;
+    }
+
+    BuilderImpl(Table tablePb) {
+      this.tableId = TableId.fromPb(tablePb.getTableReference());
+      if (tablePb.getLastModifiedTime() != null) {
+        this.lastModifiedTime(tablePb.getLastModifiedTime().longValue());
+      }
+      this.description = tablePb.getDescription();
+      this.expirationTime = tablePb.getExpirationTime();
+      this.friendlyName = tablePb.getFriendlyName();
+      this.creationTime = tablePb.getCreationTime();
+      this.etag = tablePb.getEtag();
+      this.id = tablePb.getId();
+      this.selfLink = tablePb.getSelfLink();
+      this.definition = TableDefinition.fromPb(tablePb);
+    }
+
+    @Override
+    Builder creationTime(Long creationTime) {
+      this.creationTime = creationTime;
+      return this;
+    }
+
+    @Override
+    public Builder description(String description) {
+      this.description = firstNonNull(description, Data.<String>nullOf(String.class));
+      return this;
+    }
+
+    @Override
+    Builder etag(String etag) {
+      this.etag = etag;
+      return this;
+    }
+
+    @Override
+    public Builder expirationTime(Long expirationTime) {
+      this.expirationTime = firstNonNull(expirationTime, Data.<Long>nullOf(Long.class));
+      return this;
+    }
+
+    @Override
+    public Builder friendlyName(String friendlyName) {
+      this.friendlyName = firstNonNull(friendlyName, Data.<String>nullOf(String.class));
+      return this;
+    }
+
+    @Override
+    Builder id(String id) {
+      this.id = id;
+      return this;
+    }
+
+    @Override
+    Builder lastModifiedTime(Long lastModifiedTime) {
+      this.lastModifiedTime = lastModifiedTime;
+      return this;
+    }
+
+    @Override
+    Builder selfLink(String selfLink) {
+      this.selfLink = selfLink;
+      return this;
+    }
+
+    @Override
+    public Builder tableId(TableId tableId) {
+      this.tableId = checkNotNull(tableId);
+      return this;
+    }
+
+    @Override
+    public Builder definition(TableDefinition definition) {
+      this.definition = checkNotNull(definition);
+      return this;
+    }
+
     @Override
     public TableInfo build() {
       return new TableInfo(this);
     }
   }
 
-  private TableInfo(Builder builder) {
-    super(builder);
-    this.location = builder.location;
-    this.streamingBuffer = builder.streamingBuffer;
+  TableInfo(BuilderImpl builder) {
+    this.tableId = checkNotNull(builder.tableId);
+    this.etag = builder.etag;
+    this.id = builder.id;
+    this.selfLink = builder.selfLink;
+    this.friendlyName = builder.friendlyName;
+    this.description = builder.description;
+    this.creationTime = builder.creationTime;
+    this.expirationTime = builder.expirationTime;
+    this.lastModifiedTime = builder.lastModifiedTime;
+    this.definition = builder.definition;
   }
 
   /**
-   * Returns the geographic location where the table should reside. This value is inherited from the
-   * dataset.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
-   *     Dataset Location</a>
+   * Returns the hash of the table resource.
    */
-  public String location() {
-    return location;
+  public String etag() {
+    return etag;
   }
 
   /**
-   * Returns information on the table's streaming buffer if any exists. Returns {@code null} if no
-   * streaming buffer exists.
+   * Returns an opaque id for the table.
    */
-  public StreamingBuffer streamingBuffer() {
-    return streamingBuffer;
+  public String id() {
+    return id;
   }
 
   /**
-   * Returns a builder for a BigQuery Table.
-   *
-   * @param tableId table id
-   * @param schema the schema of the table
+   * Returns an URL that can be used to access the resource again. The returned URL can be used for
+   * get or update requests.
    */
-  public static Builder builder(TableId tableId, Schema schema) {
-    return new Builder().tableId(tableId).type(Type.TABLE).schema(schema);
+  public String selfLink() {
+    return selfLink;
   }
 
   /**
-   * Creates BigQuery table given its type.
-   *
-   * @param tableId table id
-   * @param schema the schema of the table
+   * Returns the table identity.
    */
-  public static TableInfo of(TableId tableId, Schema schema) {
-    return builder(tableId, schema).build();
+  public TableId tableId() {
+    return tableId;
   }
 
   /**
-   * Returns a builder for the {@code TableInfo} object.
+   * Returns a user-friendly name for the table.
    */
-  @Override
+  public String friendlyName() {
+    return Data.isNull(friendlyName) ? null : friendlyName;
+  }
+
+  /**
+   * Returns a user-friendly description for the table.
+   */
+  public String description() {
+    return Data.isNull(description) ? null : description;
+  }
+
+  /**
+   * Returns the time when this table was created, in milliseconds since the epoch.
+   */
+  public Long creationTime() {
+    return creationTime;
+  }
+
+  /**
+   * Returns the time when this table expires, in milliseconds since the epoch. If not present, the
+   * table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.
+   */
+  public Long expirationTime() {
+    return Data.isNull(expirationTime) ? null : expirationTime;
+  }
+
+  /**
+   * Returns the time when this table was last modified, in milliseconds since the epoch.
+   */
+  public Long lastModifiedTime() {
+    return lastModifiedTime;
+  }
+
+  /**
+   * Returns the table definition.
+   */
+  @SuppressWarnings("unchecked")
+  public <T extends TableDefinition> T definition() {
+    return (T) definition;
+  }
+
+  /**
+   * Returns a builder for the table object.
+   */
   public Builder toBuilder() {
-    return new Builder(this);
+    return new BuilderImpl(this);
   }
 
   @Override
-  ToStringHelper toStringHelper() {
-    return super.toStringHelper()
-        .add("location", location)
-        .add("streamingBuffer", streamingBuffer);
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    return obj instanceof TableInfo && Objects.equals(toPb(), ((TableInfo) obj).toPb());
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("tableId", tableId)
+        .add("etag", etag)
+        .add("id", id)
+        .add("selfLink", selfLink)
+        .add("friendlyName", friendlyName)
+        .add("description", description)
+        .add("expirationTime", expirationTime)
+        .add("creationTime", creationTime)
+        .add("lastModifiedTime", lastModifiedTime)
+        .add("definition", definition)
+        .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), location, streamingBuffer);
+    return Objects.hash(tableId);
   }
 
   @Override
+  public boolean equals(Object obj) {
+    return obj != null
+        && obj.getClass().equals(TableInfo.class)
+        && Objects.equals(toPb(), ((TableInfo) obj).toPb());
+  }
+
+  /**
+   * Returns a builder for a {@code TableInfo} object given table identity and definition. Use
+   * {@link StandardTableDefinition} to create simple BigQuery table. Use {@link ViewDefinition} to
+   * create a BigQuery view. Use {@link ExternalTableDefinition} to create a BigQuery a table backed
+   * by external data.
+   */
+  public static Builder builder(TableId tableId, TableDefinition definition) {
+    return new BuilderImpl().tableId(tableId).definition(definition);
+  }
+
+  /**
+   * Returns a {@code TableInfo} object given table identity and definition. Use
+   * {@link StandardTableDefinition} to create simple BigQuery table. Use {@link ViewDefinition} to
+   * create a BigQuery view. Use {@link ExternalTableDefinition} to create a BigQuery a table backed
+   * by external data.
+   */
+  public static TableInfo of(TableId tableId, TableDefinition definition) {
+    return builder(tableId, definition).build();
+  }
+
+  TableInfo setProjectId(String projectId) {
+    return toBuilder().tableId(tableId().setProjectId(projectId)).build();
+  }
+
   Table toPb() {
-    Table tablePb = super.toPb();
-    tablePb.setLocation(location);
-    if (streamingBuffer != null) {
-      tablePb.setStreamingBuffer(streamingBuffer.toPb());
+    Table tablePb = definition.toPb();
+    tablePb.setTableReference(tableId.toPb());
+    if (lastModifiedTime != null) {
+      tablePb.setLastModifiedTime(BigInteger.valueOf(lastModifiedTime));
     }
+    tablePb.setCreationTime(creationTime);
+    tablePb.setDescription(description);
+    tablePb.setEtag(etag);
+    tablePb.setExpirationTime(expirationTime);
+    tablePb.setFriendlyName(friendlyName);
+    tablePb.setId(id);
+    tablePb.setSelfLink(selfLink);
     return tablePb;
   }
 
-  @SuppressWarnings("unchecked")
   static TableInfo fromPb(Table tablePb) {
-    return new Builder(tablePb).build();
+    return new BuilderImpl(tablePb).build();
   }
 }

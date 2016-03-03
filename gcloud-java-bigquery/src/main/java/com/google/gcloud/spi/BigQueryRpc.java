@@ -19,7 +19,7 @@ package com.google.gcloud.spi;
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.Job;
-import com.google.api.services.bigquery.model.JobConfigurationLoad;
+import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.QueryResponse;
 import com.google.api.services.bigquery.model.Table;
@@ -193,7 +193,7 @@ public interface BigQueryRpc {
    * @param configuration load configuration
    * @throws BigQueryException upon failure
    */
-  String open(JobConfigurationLoad configuration) throws BigQueryException;
+  String open(JobConfiguration configuration) throws BigQueryException;
 
   /**
    * Uploads the provided data to the resumable upload session at the specified position.

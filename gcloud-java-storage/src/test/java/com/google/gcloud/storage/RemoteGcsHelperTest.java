@@ -21,9 +21,11 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
+import com.google.gcloud.storage.Storage.BlobListOption;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import org.easymock.EasyMock;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -66,43 +68,60 @@ public class RemoteGcsHelperTest {
       + "  \"type\": \"service_account\"\n"
       + "}";
   private static final InputStream JSON_KEY_STREAM = new ByteArrayInputStream(JSON_KEY.getBytes());
-  private static final List<BlobInfo> BLOB_LIST = ImmutableList.of(
-      BlobInfo.builder(BUCKET_NAME, "n1").build(),
-      BlobInfo.builder(BUCKET_NAME, "n2").build());
   private static final StorageException RETRYABLE_EXCEPTION = new StorageException(409, "");
   private static final StorageException FATAL_EXCEPTION = new StorageException(500, "");
-  private static final Page<BlobInfo> BLOB_PAGE = new Page<BlobInfo>() {
 
-    @Override
-    public String nextPageCursor() {
-      return "nextPageCursor";
-    }
-
-    @Override
-    public Page<BlobInfo> nextPage() {
-      return null;
-    }
-
-    @Override
-    public Iterable<BlobInfo> values() {
-      return BLOB_LIST;
-    }
-
-    @Override
-    public Iterator<BlobInfo> iterateAll() {
-      return BLOB_LIST.iterator();
-    }
-  };
+  private static Storage serviceMockReturnsOptions;
+  private List<Blob> blobList;
+  private Page<Blob> blobPage;
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
+  @Before
+  public void setUp() {
+    serviceMockReturnsOptions = EasyMock.createMock(Storage.class);
+    EasyMock.expect(serviceMockReturnsOptions.options())
+        .andReturn(EasyMock.createMock(StorageOptions.class))
+        .times(2);
+    EasyMock.replay(serviceMockReturnsOptions);
+    blobList = ImmutableList.of(
+        new Blob(
+            serviceMockReturnsOptions,
+            new BlobInfo.BuilderImpl(BlobInfo.builder(BUCKET_NAME, "n1").build())),
+        new Blob(
+            serviceMockReturnsOptions,
+            new BlobInfo.BuilderImpl(BlobInfo.builder(BUCKET_NAME, "n2").build())));
+    blobPage = new Page<Blob>() {
+      @Override
+      public String nextPageCursor() {
+        return "nextPageCursor";
+      }
+
+      @Override
+      public Page<Blob> nextPage() {
+        return null;
+      }
+
+      @Override
+      public Iterable<Blob> values() {
+        return blobList;
+      }
+
+      @Override
+      public Iterator<Blob> iterateAll() {
+        return blobList.iterator();
+      }
+    };
+  }
+
   @Test
   public void testForceDelete() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
-    for (BlobInfo info : BLOB_LIST) {
-      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
+    EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
+        .andReturn(blobPage);
+    for (BlobInfo info : blobList) {
+      EasyMock.expect(storageMock.delete(info.blobId())).andReturn(true);
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
     EasyMock.replay(storageMock);
@@ -113,9 +132,9 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteTimeout() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE).anyTimes();
-    for (BlobInfo info : BLOB_LIST) {
-      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true).anyTimes();
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(blobPage).anyTimes();
+    for (BlobInfo info : blobList) {
+      EasyMock.expect(storageMock.delete(info.blobId())).andReturn(true).anyTimes();
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(RETRYABLE_EXCEPTION).anyTimes();
     EasyMock.replay(storageMock);
@@ -126,9 +145,10 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteFail() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
-    for (BlobInfo info : BLOB_LIST) {
-      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
+    EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
+        .andReturn(blobPage);
+    for (BlobInfo info : blobList) {
+      EasyMock.expect(storageMock.delete(info.blobId())).andReturn(true);
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(FATAL_EXCEPTION);
     EasyMock.replay(storageMock);
@@ -143,9 +163,10 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteNoTimeout() {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
-    for (BlobInfo info : BLOB_LIST) {
-      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
+    EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
+        .andReturn(blobPage);
+    for (BlobInfo info : blobList) {
+      EasyMock.expect(storageMock.delete(info.blobId())).andReturn(true);
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
     EasyMock.replay(storageMock);
@@ -156,9 +177,10 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteNoTimeoutFail() {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_PAGE);
-    for (BlobInfo info : BLOB_LIST) {
-      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
+    EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
+        .andReturn(blobPage);
+    for (BlobInfo info : blobList) {
+      EasyMock.expect(storageMock.delete(info.blobId())).andReturn(true);
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(FATAL_EXCEPTION);
     EasyMock.replay(storageMock);

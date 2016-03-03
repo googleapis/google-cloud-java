@@ -655,7 +655,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BucketListOption fields(BucketField... fields) {
       StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(BucketField.selector(fields)).append(")");
+      builder.append("items(").append(BucketField.selector(fields)).append("),nextPageToken");
       return new BucketListOption(StorageRpc.Option.FIELDS, builder.toString());
     }
   }
@@ -701,6 +701,15 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * If set to {@code true}, lists all versions of a blob. The default is {@code false}.
+     *
+     * @see <a href ="https://cloud.google.com/storage/docs/object-versioning">Object Versioning</a>
+     */
+    public static BlobListOption versions(boolean versions) {
+      return new BlobListOption(StorageRpc.Option.VERSIONS, versions);
+    }
+
+    /**
      * Returns an option to specify the blob's fields to be returned by the RPC call. If this option
      * is not provided all blob's fields are returned. {@code BlobListOption.fields}) can be used to
      * specify only the fields of interest. Blob name and bucket are always returned, even if not
@@ -708,7 +717,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobListOption fields(BlobField... fields) {
       StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(BlobField.selector(fields)).append(")");
+      builder.append("items(").append(BlobField.selector(fields)).append("),nextPageToken");
       return new BlobListOption(StorageRpc.Option.FIELDS, builder.toString());
     }
   }
@@ -1208,82 +1217,83 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Create a new bucket.
    *
-   * @return a complete bucket information
+   * @return a complete bucket
    * @throws StorageException upon failure
    */
-  BucketInfo create(BucketInfo bucketInfo, BucketTargetOption... options);
+  Bucket create(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
    * Create a new blob with no content.
    *
-   * @return a complete blob information
+   * @return a [@code Blob} with complete information
    * @throws StorageException upon failure
    */
-  BlobInfo create(BlobInfo blobInfo, BlobTargetOption... options);
+  Blob create(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
    * Create a new blob. Direct upload is used to upload {@code content}. For large content,
    * {@link #writer} is recommended as it uses resumable upload. MD5 and CRC32C hashes of
    * {@code content} are computed and used for validating transferred data.
    *
-   * @return a complete blob information
+   * @return a [@code Blob} with complete information
    * @throws StorageException upon failure
    * @see <a href="https://cloud.google.com/storage/docs/hashes-etags">Hashes and ETags</a>
    */
-  BlobInfo create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options);
+  Blob create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options);
 
   /**
    * Create a new blob. Direct upload is used to upload {@code content}. For large content,
    * {@link #writer} is recommended as it uses resumable upload. By default any md5 and crc32c
    * values in the given {@code blobInfo} are ignored unless requested via the
-   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
+   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options. The given
+   * input stream is closed upon success.
    *
-   * @return a complete blob information
+   * @return a [@code Blob} with complete information
    * @throws StorageException upon failure
    */
-  BlobInfo create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options);
+  Blob create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options);
 
   /**
    * Return the requested bucket or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  BucketInfo get(String bucket, BucketGetOption... options);
+  Bucket get(String bucket, BucketGetOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  BlobInfo get(String bucket, String blob, BlobGetOption... options);
+  Blob get(String bucket, String blob, BlobGetOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  BlobInfo get(BlobId blob, BlobGetOption... options);
+  Blob get(BlobId blob, BlobGetOption... options);
 
   /**
    * Return the requested blob or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  BlobInfo get(BlobId blob);
+  Blob get(BlobId blob);
 
   /**
    * List the project's buckets.
    *
    * @throws StorageException upon failure
    */
-  Page<BucketInfo> list(BucketListOption... options);
+  Page<Bucket> list(BucketListOption... options);
 
   /**
    * List the bucket's blobs.
    *
    * @throws StorageException upon failure
    */
-  Page<BlobInfo> list(String bucket, BlobListOption... options);
+  Page<Blob> list(String bucket, BlobListOption... options);
 
   /**
    * Update bucket information.
@@ -1291,7 +1301,7 @@ public interface Storage extends Service<StorageOptions> {
    * @return the updated bucket
    * @throws StorageException upon failure
    */
-  BucketInfo update(BucketInfo bucketInfo, BucketTargetOption... options);
+  Bucket update(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
    * Update blob information. Original metadata are merged with metadata in the provided
@@ -1299,14 +1309,16 @@ public interface Storage extends Service<StorageOptions> {
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
    *
    * <p>Example usage of replacing blob's metadata:
-   * <pre>    {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
-   *    {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
+   * <pre> {@code
+   * service.update(BlobInfo.builder("bucket", "name").metadata(null).build());
+   * service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());
+   * }
    * </pre>
    *
    * @return the updated blob
    * @throws StorageException upon failure
    */
-  BlobInfo update(BlobInfo blobInfo, BlobTargetOption... options);
+  Blob update(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
    * Update blob information. Original metadata are merged with metadata in the provided
@@ -1314,14 +1326,16 @@ public interface Storage extends Service<StorageOptions> {
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
    *
    * <p>Example usage of replacing blob's metadata:
-   * <pre>    {@code service.update(BlobInfo.builder("bucket", "name").metadata(null).build());}
-   *    {@code service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());}
+   * <pre> {@code
+   * service.update(BlobInfo.builder("bucket", "name").metadata(null).build());
+   * service.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());
+   * }
    * </pre>
    *
    * @return the updated blob
    * @throws StorageException upon failure
    */
-  BlobInfo update(BlobInfo blobInfo);
+  Blob update(BlobInfo blobInfo);
 
   /**
    * Delete the requested bucket.
@@ -1361,7 +1375,7 @@ public interface Storage extends Service<StorageOptions> {
    * @return the composed blob
    * @throws StorageException upon failure
    */
-  BlobInfo compose(ComposeRequest composeRequest);
+  Blob compose(ComposeRequest composeRequest);
 
   /**
    * Sends a copy request. Returns a {@link CopyWriter} object for the provided
@@ -1372,14 +1386,15 @@ public interface Storage extends Service<StorageOptions> {
    * might issue multiple RPC calls depending on blob's size.
    *
    * <p>Example usage of copy:
-   * <pre>    {@code BlobInfo blob = service.copy(copyRequest).result();}
+   * <pre> {@code BlobInfo blob = service.copy(copyRequest).result();}
    * </pre>
    * To explicitly issue chunk copy requests use {@link CopyWriter#copyChunk()} instead:
-   * <pre>    {@code CopyWriter copyWriter = service.copy(copyRequest);
-   *    while (!copyWriter.isDone()) {
-   *        copyWriter.copyChunk();
-   *    }
-   *    BlobInfo blob = copyWriter.result();
+   * <pre> {@code
+   * CopyWriter copyWriter = service.copy(copyRequest);
+   * while (!copyWriter.isDone()) {
+   *     copyWriter.copyChunk();
+   * }
+   * BlobInfo blob = copyWriter.result();
    * }
    * </pre>
    *
@@ -1461,12 +1476,12 @@ public interface Storage extends Service<StorageOptions> {
    * accessible blobs, but don't want to require users to explicitly log in.
    *
    * <p>Example usage of creating a signed URL that is valid for 2 weeks:
-   * <pre>   {@code
-   *     service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS);
+   * <pre> {@code
+   * service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS);
    * }</pre>
    *
    * @param blobInfo the blob associated with the signed URL
-   * @param duration time until the signed URL expires, expressed in {@code unit}. The finer
+   * @param duration time until the signed URL expires, expressed in {@code unit}. The finest
    *     granularity supported is 1 second, finer granularities will be truncated
    * @param unit time unit of the {@code duration} parameter
    * @param options optional URL signing options
@@ -1478,11 +1493,11 @@ public interface Storage extends Service<StorageOptions> {
    * Gets the requested blobs. A batch request is used to perform this call.
    *
    * @param blobIds blobs to get
-   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it
    *     has been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
-  List<BlobInfo> get(BlobId... blobIds);
+  List<Blob> get(BlobId... blobIds);
 
   /**
    * Updates the requested blobs. A batch request is used to perform this call. Original metadata
@@ -1492,11 +1507,11 @@ public interface Storage extends Service<StorageOptions> {
    * {@link #update(com.google.gcloud.storage.BlobInfo)} for a code example.
    *
    * @param blobInfos blobs to update
-   * @return an immutable list of {@code BlobInfo} objects. If a blob does not exist or access to it
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it
    *     has been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
-  List<BlobInfo> update(BlobInfo... blobInfos);
+  List<Blob> update(BlobInfo... blobInfos);
 
   /**
    * Deletes the requested blobs. A batch request is used to perform this call.

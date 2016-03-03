@@ -61,7 +61,7 @@ public class JobStatistics implements Serializable {
     /**
      * Returns the number of files per destination URI or URI pattern specified in the extract job.
      * These values will be in the same order as the URIs specified by
-     * {@link ExtractJobInfo#destinationUris()}.
+     * {@link ExtractJobConfiguration#destinationUris()}.
      */
     public List<Long> destinationUriFileCounts() {
       return destinationUriFileCounts;
