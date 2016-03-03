@@ -26,21 +26,21 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.NonWritableChannelException;
 
-/** Unit tests for {@link CloudStorageReadChannel}. */
+/**
+ * Unit tests for {@link CloudStorageReadChannel}.
+ */
 @RunWith(JUnit4.class)
 public class CloudStorageReadChannelTest {
 
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none();
+  @Rule public final ExpectedException thrown = ExpectedException.none();
 
   private CloudStorageReadChannel chan;
 
   private final Storage gcsStorage = mock(Storage.class);
-  private final BlobId file = BlobId.of("enya", "rocks");
+  private final BlobId file = BlobId.of("blob", "attack");
   private final BlobInfo metadata = BlobInfo.builder(file).size(42L).build();
   private final ReadChannel gcsChannel = mock(ReadChannel.class);
 
-  /** Set up the mocks. **/
   @Before
   public void before() throws Exception {
     when(gcsStorage.get(file)).thenReturn(metadata);
@@ -140,5 +140,4 @@ public class CloudStorageReadChannelTest {
     verify(gcsChannel, times(5)).isOpen();
     verifyNoMoreInteractions(gcsStorage, gcsChannel);
   }
-
 }

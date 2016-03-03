@@ -15,17 +15,22 @@ final class CloudStorageUtil {
 
   static void checkBucket(String bucket) {
     // TODO: The true check is actually more complicated. Consider implementing it.
-    checkArgument(BUCKET_PATTERN.matcher(bucket).matches(), ""
-        + "Invalid bucket name: '" + bucket + "'. "
-        + "GCS bucket names must contain only lowercase letters, numbers, dashes (-), "
-        + "underscores (_), and dots (.). Bucket names must start and end with a number or letter. "
-        + "See https://developers.google.com/storage/docs/bucketnaming for more details.");
+    checkArgument(
+        BUCKET_PATTERN.matcher(bucket).matches(),
+        "Invalid bucket name: '"
+            + bucket
+            + "'. "
+            + "GCS bucket names must contain only lowercase letters, numbers, dashes (-), "
+            + "underscores (_), and dots (.). Bucket names must start and end with a number or a "
+            + "letter. See the following page for more details: "
+            + "https://developers.google.com/storage/docs/bucketnaming");
   }
 
   static CloudStoragePath checkPath(Path path) {
     if (!(checkNotNull(path) instanceof CloudStoragePath)) {
-      throw new ProviderMismatchException(String.format(
-          "Not a cloud storage path: %s (%s)", path, path.getClass().getSimpleName()));
+      throw new ProviderMismatchException(
+          String.format(
+              "Not a cloud storage path: %s (%s)", path, path.getClass().getSimpleName()));
     }
     return (CloudStoragePath) path;
   }
@@ -45,7 +50,9 @@ final class CloudStorageUtil {
     }
   }
 
-  /** Makes NullPointerTester happy. */
+  /**
+   * Makes {@code NullPointerTester} happy.
+   */
   @SafeVarargs
   static <T> void checkNotNullArray(T... values) {
     for (T value : values) {

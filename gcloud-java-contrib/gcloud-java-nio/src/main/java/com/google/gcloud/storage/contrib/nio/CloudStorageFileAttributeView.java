@@ -1,6 +1,6 @@
 package com.google.gcloud.storage.contrib.nio;
 
-import static com.google.common.base.Verify.verifyNotNull;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 import com.google.gcloud.storage.BlobInfo;
@@ -15,21 +15,22 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
-/** Metadata view for a Google Cloud Storage object.
+/**
+ * Metadata view for a Google Cloud Storage object.
  */
 @Immutable
 public final class CloudStorageFileAttributeView implements BasicFileAttributeView {
 
-  //private final CloudStorageFileSystemProvider provider;
   private final Storage storage;
   private final CloudStoragePath path;
 
   CloudStorageFileAttributeView(Storage storage, CloudStoragePath path) {
-    this.storage = verifyNotNull(storage);
-    this.path = verifyNotNull(path);
+    this.storage = checkNotNull(storage);
+    this.path = checkNotNull(path);
   }
 
-  /** Returns {@value CloudStorageFileSystem#GCS_VIEW}.
+  /**
+   * Returns {@value CloudStorageFileSystem#GCS_VIEW}.
    */
   @Override
   public String name() {
@@ -38,8 +39,7 @@ public final class CloudStorageFileAttributeView implements BasicFileAttributeVi
 
   @Override
   public CloudStorageFileAttributes readAttributes() throws IOException {
-    if (path.seemsLikeADirectory()
-        && path.getFileSystem().config().usePseudoDirectories()) {
+    if (path.seemsLikeADirectory() && path.getFileSystem().config().usePseudoDirectories()) {
       return new CloudStoragePseudoDirectoryAttributes(path);
     }
     BlobInfo blobInfo = storage.get(path.getBlobId());
@@ -62,8 +62,8 @@ public final class CloudStorageFileAttributeView implements BasicFileAttributeVi
   public boolean equals(@Nullable Object other) {
     return this == other
         || other instanceof CloudStorageFileAttributeView
-        && Objects.equals(storage, ((CloudStorageFileAttributeView) other).storage)
-        && Objects.equals(path, ((CloudStorageFileAttributeView) other).path);
+            && Objects.equals(storage, ((CloudStorageFileAttributeView) other).storage)
+            && Objects.equals(path, ((CloudStorageFileAttributeView) other).path);
   }
 
   @Override
@@ -73,9 +73,6 @@ public final class CloudStorageFileAttributeView implements BasicFileAttributeVi
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("storage", storage)
-        .add("path", path)
-        .toString();
+    return MoreObjects.toStringHelper(this).add("storage", storage).add("path", path).toString();
   }
 }

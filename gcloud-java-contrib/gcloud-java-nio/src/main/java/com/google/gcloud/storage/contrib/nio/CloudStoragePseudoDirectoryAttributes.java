@@ -9,7 +9,9 @@ import com.google.gcloud.storage.Acl;
 import java.nio.file.attribute.FileTime;
 import java.util.List;
 
-/** Metadata for a cloud storage pseudo-directory. */
+/**
+ * Metadata for a cloud storage pseudo-directory.
+ */
 final class CloudStoragePseudoDirectoryAttributes implements CloudStorageFileAttributes {
 
   private final String id;
@@ -45,7 +47,7 @@ final class CloudStoragePseudoDirectoryAttributes implements CloudStorageFileAtt
 
   @Override
   public long size() {
-    return 1;  // Allow I/O to happen before we fail.
+    return 1; // Allow I/O to happen before we fail.
   }
 
   @Override

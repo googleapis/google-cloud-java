@@ -24,19 +24,20 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-/** Unit tests for {@link CloudStorageFileAttributes}. */
+/**
+ * Unit tests for {@link CloudStorageFileAttributes}.
+ */
 @RunWith(JUnit4.class)
 public class CloudStorageFileAttributesTest {
 
   private static final byte[] HAPPY = "(✿◕ ‿◕ )ノ".getBytes(UTF_8);
-
 
   private Path path;
   private Path dir;
 
   /** empty test storage and make sure we use it instead of the real GCS. Create a few paths. **/
   @Before
-  public void before()  {
+  public void before() {
     CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
     path = Paths.get(URI.create("gs://bucket/randompath"));
     dir = Paths.get(URI.create("gs://bucket/randompath/"));
@@ -68,8 +69,8 @@ public class CloudStorageFileAttributesTest {
   public void testContentDisposition() throws Exception {
     Files.write(path, HAPPY, withContentDisposition("crash call"));
     assertThat(
-        Files.readAttributes(path, CloudStorageFileAttributes.class).contentDisposition().get())
-            .isEqualTo("crash call");
+            Files.readAttributes(path, CloudStorageFileAttributes.class).contentDisposition().get())
+        .isEqualTo("crash call");
   }
 
   @Test
@@ -83,8 +84,10 @@ public class CloudStorageFileAttributesTest {
   public void testUserMetadata() throws Exception {
     Files.write(path, HAPPY, withUserMetadata("green", "bean"));
     assertThat(
-        Files.readAttributes(path, CloudStorageFileAttributes.class).userMetadata().get("green"))
-            .isEqualTo("bean");
+            Files.readAttributes(path, CloudStorageFileAttributes.class)
+                .userMetadata()
+                .get("green"))
+        .isEqualTo("bean");
   }
 
   @Test
@@ -144,8 +147,9 @@ public class CloudStorageFileAttributesTest {
 
     // same for directories
     CloudStorageFileAttributes b1 = Files.readAttributes(dir, CloudStorageFileAttributes.class);
-    CloudStorageFileAttributes b2 = Files.readAttributes(
-        Paths.get(URI.create("gs://bucket/jacket/")), CloudStorageFileAttributes.class);
+    CloudStorageFileAttributes b2 =
+        Files.readAttributes(
+            Paths.get(URI.create("gs://bucket/jacket/")), CloudStorageFileAttributes.class);
     assertThat(a1.fileKey()).isNotEqualTo(b1.fileKey());
     assertThat(b1.fileKey()).isNotEqualTo(b2.fileKey());
   }

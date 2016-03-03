@@ -45,19 +45,20 @@ public final class CloudStoragePath implements Path {
     this.path = path;
   }
 
-  static CloudStoragePath getPath(
-      CloudStorageFileSystem fileSystem, String path, String... more) {
+  static CloudStoragePath getPath(CloudStorageFileSystem fileSystem, String path, String... more) {
     return new CloudStoragePath(
         fileSystem, UnixPath.getPath(fileSystem.config().permitEmptyPathComponents(), path, more));
   }
 
-  /** Returns the Cloud Storage bucket name being served by this file system.
+  /**
+   * Returns the Cloud Storage bucket name being served by this file system.
    */
   public String bucket() {
     return fileSystem.bucket();
   }
 
-  /** Returns path converted to a {@link BlobId} so I/O can be performed.
+  /**
+   * Returns path converted to a {@link BlobId} so I/O can be performed.
    */
   BlobId getBlobId() {
     return BlobId.of(bucket(), toRealPath().path.toString());
@@ -88,8 +89,8 @@ public final class CloudStoragePath implements Path {
   }
 
   /**
-   * Changes relative path to absolute, using
-   * {@link CloudStorageConfiguration#workingDirectory() workingDirectory} as the current dir.
+   * Changes relative path to be absolute, using
+   * {@link CloudStorageConfiguration#workingDirectory() workingDirectory} as current dir.
    */
   @Override
   public CloudStoragePath toAbsolutePath() {
@@ -116,15 +117,16 @@ public final class CloudStoragePath implements Path {
   private UnixPath toRealPathInternal(boolean errorCheck) {
     UnixPath objectName = path.toAbsolutePath(getWorkingDirectory());
     if (errorCheck && !fileSystem.config().permitEmptyPathComponents()) {
-      checkArgument(!EXTRA_SLASHES_OR_DOT_DIRS_PATTERN.matcher(objectName).find(),
+      checkArgument(
+          !EXTRA_SLASHES_OR_DOT_DIRS_PATTERN.matcher(objectName).find(),
           "I/O not allowed on dot-dirs or extra slashes when !permitEmptyPathComponents: %s",
           objectName);
     }
     if (fileSystem.config().stripPrefixSlash()) {
       objectName = objectName.removeBeginningSeparator();
     }
-    checkArgument(!errorCheck || !objectName.isEmpty(),
-        "I/O not allowed on empty GCS object names.");
+    checkArgument(
+        !errorCheck || !objectName.isEmpty(), "I/O not allowed on empty GCS object names.");
     return objectName;
   }
 
@@ -222,7 +224,8 @@ public final class CloudStoragePath implements Path {
     return path.endsWith(getUnixPath(other));
   }
 
-  /** Always @throws UnsupportedOperationException.
+  /**
+   * Throws {@link UnsupportedOperationException} because this feature hasn't been implemented yet.
    */
   @Override
   public WatchKey register(WatchService watcher, Kind<?>[] events, Modifier... modifiers) {
@@ -230,7 +233,8 @@ public final class CloudStoragePath implements Path {
     throw new UnsupportedOperationException();
   }
 
-  /** Always @throws UnsupportedOperationException.
+  /**
+   * Throws {@link UnsupportedOperationException} because this feature hasn't been implemented yet.
    */
   @Override
   public WatchKey register(WatchService watcher, Kind<?>... events) {
@@ -239,8 +243,8 @@ public final class CloudStoragePath implements Path {
   }
 
   /**
-   * This operation is not supported, since GCS files aren't backed by the local file system.
-   * Always @throws UnsupportedOperationException.
+   * Throws {@link UnsupportedOperationException} because GCS files are not backed by the local file
+   * system.
    */
   @Override
   public File toFile() {
@@ -273,9 +277,9 @@ public final class CloudStoragePath implements Path {
   public boolean equals(@Nullable Object other) {
     return this == other
         || other instanceof CloudStoragePath
-        && Objects.equals(bucket(), ((CloudStoragePath) other).bucket())
-        && Objects.equals(toRealPathInternal(false),
-            ((CloudStoragePath) other).toRealPathInternal(false));
+            && Objects.equals(bucket(), ((CloudStoragePath) other).bucket())
+            && Objects.equals(
+                toRealPathInternal(false), ((CloudStoragePath) other).toRealPathInternal(false));
   }
 
   @Override
@@ -299,7 +303,7 @@ public final class CloudStoragePath implements Path {
 
   @Nullable
   private CloudStoragePath newPath(@Nullable UnixPath newPath) {
-    if (newPath == path) {  // Nonuse of equals is intentional.
+    if (newPath == path) { // Nonuse of equals is intentional.
       return this;
     } else if (newPath != null) {
       return new CloudStoragePath(fileSystem, newPath);
@@ -316,7 +320,9 @@ public final class CloudStoragePath implements Path {
     return getUnixPath(fileSystem.config().workingDirectory());
   }
 
-  /** Transform iterator providing a slight performance boost over {@code FluentIterable}. */
+  /**
+   * Transform iterator providing a slight performance boost over {@code FluentIterable}.
+   */
   private final class PathIterator extends UnmodifiableIterator<Path> {
     private final Iterator<String> delegate = path.split();
 
