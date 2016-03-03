@@ -16,14 +16,14 @@
 
 package com.google.gcloud.resourcemanager;
 
+import static org.easymock.EasyMock.anyObject;
+import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -48,13 +48,15 @@ public class ProjectTest {
       .state(STATE)
       .build();
 
+  private ResourceManager serviceMockReturnsOptions = createStrictMock(ResourceManager.class);
+  private ResourceManagerOptions mockOptions = createMock(ResourceManagerOptions.class);
   private ResourceManager resourceManager;
+  private Project expectedProject;
   private Project project;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     resourceManager = createStrictMock(ResourceManager.class);
-    project = new Project(resourceManager, PROJECT_INFO);
   }
 
   @After
@@ -62,75 +64,142 @@ public class ProjectTest {
     verify(resourceManager);
   }
 
+  private void initializeExpectedProject(int optionsCalls) {
+    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    replay(serviceMockReturnsOptions);
+    expectedProject =
+        new Project(serviceMockReturnsOptions, new ProjectInfo.BuilderImpl(PROJECT_INFO));
+  }
+
+  private void initializeProject() {
+    project = new Project(resourceManager, new ProjectInfo.BuilderImpl(PROJECT_INFO));
+  }
+
   @Test
-  public void testLoad() {
-    expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(PROJECT_INFO);
+  public void testToBuilder() {
+    initializeExpectedProject(4);
     replay(resourceManager);
-    Project loadedProject = Project.get(resourceManager, PROJECT_INFO.projectId());
-    assertEquals(PROJECT_INFO, loadedProject.info());
+    compareProjects(expectedProject, expectedProject.toBuilder().build());
+  }
+
+  @Test
+  public void testBuilder() {
+    initializeExpectedProject(4);
+    expect(resourceManager.options()).andReturn(mockOptions).times(4);
+    replay(resourceManager);
+    Project.Builder builder =
+        new Project.Builder(new Project(resourceManager, new ProjectInfo.BuilderImpl(PROJECT_ID)));
+    Project project = builder.name(NAME)
+        .labels(LABELS)
+        .projectNumber(PROJECT_NUMBER)
+        .createTimeMillis(CREATE_TIME_MILLIS)
+        .state(STATE)
+        .build();
+    assertEquals(PROJECT_ID, project.projectId());
+    assertEquals(NAME, project.name());
+    assertEquals(LABELS, project.labels());
+    assertEquals(PROJECT_NUMBER, project.projectNumber());
+    assertEquals(CREATE_TIME_MILLIS, project.createTimeMillis());
+    assertEquals(STATE, project.state());
+    assertEquals(resourceManager.options(), project.resourceManager().options());
+  }
+
+  @Test
+  public void testGet() {
+    initializeExpectedProject(1);
+    expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(expectedProject);
+    replay(resourceManager);
+    Project loadedProject = resourceManager.get(PROJECT_INFO.projectId());
+    assertEquals(expectedProject, loadedProject);
   }
 
   @Test
   public void testReload() {
+    initializeExpectedProject(2);
     ProjectInfo newInfo = PROJECT_INFO.toBuilder().addLabel("k3", "v3").build();
-    expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(newInfo);
+    Project expectedProject =
+        new Project(serviceMockReturnsOptions, new ProjectInfo.BuilderImpl(newInfo));
+    expect(resourceManager.options()).andReturn(mockOptions);
+    expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(expectedProject);
     replay(resourceManager);
+    initializeProject();
     Project newProject = project.reload();
-    assertSame(resourceManager, newProject.resourceManager());
-    assertEquals(newInfo, newProject.info());
+    assertEquals(expectedProject, newProject);
   }
 
   @Test
   public void testLoadNull() {
+    initializeExpectedProject(1);
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(null);
     replay(resourceManager);
-    assertNull(Project.get(resourceManager, PROJECT_INFO.projectId()));
+    assertNull(resourceManager.get(PROJECT_INFO.projectId()));
   }
 
   @Test
-  public void testReloadDeletedProject() {
-    expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(PROJECT_INFO);
+  public void testReloadNull() {
+    initializeExpectedProject(1);
+    expect(resourceManager.options()).andReturn(mockOptions);
     expect(resourceManager.get(PROJECT_INFO.projectId())).andReturn(null);
     replay(resourceManager);
-    Project loadedProject = Project.get(resourceManager, PROJECT_INFO.projectId());
-    assertNotNull(loadedProject);
-    Project reloadedProject = loadedProject.reload();
+    Project reloadedProject =
+        new Project(resourceManager, new ProjectInfo.BuilderImpl(PROJECT_INFO)).reload();
     assertNull(reloadedProject);
   }
 
   @Test
-  public void testInfo() {
-    replay(resourceManager);
-    assertEquals(PROJECT_INFO, project.info());
-  }
-
-  @Test
   public void testResourceManager() {
+    initializeExpectedProject(1);
     replay(resourceManager);
-    assertEquals(resourceManager, project.resourceManager());
+    assertEquals(serviceMockReturnsOptions, expectedProject.resourceManager());
   }
 
   @Test
   public void testDelete() {
+    initializeExpectedProject(1);
+    expect(resourceManager.options()).andReturn(mockOptions);
     resourceManager.delete(PROJECT_INFO.projectId());
     replay(resourceManager);
+    initializeProject();
     project.delete();
   }
 
   @Test
   public void testUndelete() {
+    initializeExpectedProject(1);
+    expect(resourceManager.options()).andReturn(mockOptions);
     resourceManager.undelete(PROJECT_INFO.projectId());
     replay(resourceManager);
+    initializeProject();
     project.undelete();
   }
 
   @Test
   public void testReplace() {
-    ProjectInfo newInfo = PROJECT_INFO.toBuilder().addLabel("k3", "v3").build();
-    expect(resourceManager.replace(newInfo)).andReturn(newInfo);
+    initializeExpectedProject(2);
+    Project expectedReplacedProject = expectedProject.toBuilder().addLabel("k3", "v3").build();
+    expect(resourceManager.options()).andReturn(mockOptions).times(2);
+    expect(resourceManager.replace(anyObject(Project.class))).andReturn(expectedReplacedProject);
     replay(resourceManager);
-    Project newProject = project.replace(newInfo);
-    assertSame(resourceManager, newProject.resourceManager());
-    assertEquals(newInfo, newProject.info());
+    initializeProject();
+    Project newProject =
+        new Project(resourceManager, new ProjectInfo.BuilderImpl(expectedReplacedProject));
+    Project actualReplacedProject = newProject.replace();
+    compareProjectInfos(expectedReplacedProject, actualReplacedProject);
+  }
+
+  private void compareProjects(Project expected, Project value) {
+    assertEquals(expected, value);
+    compareProjectInfos(expected, value);
+    assertEquals(expected.resourceManager().options(), value.resourceManager().options());
+  }
+
+  private void compareProjectInfos(ProjectInfo expected, ProjectInfo value) {
+    assertEquals(expected.projectId(), value.projectId());
+    assertEquals(expected.name(), value.name());
+    assertEquals(expected.labels(), value.labels());
+    assertEquals(expected.projectNumber(), value.projectNumber());
+    assertEquals(expected.createTimeMillis(), value.createTimeMillis());
+    assertEquals(expected.state(), value.state());
+    assertEquals(expected.parent(), value.parent());
   }
 }

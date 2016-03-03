@@ -17,28 +17,29 @@
 /**
  * A client to Google Cloud BigQuery.
  *
- * <p>A simple usage example:
+ * <p>A simple usage example showing how to create a table if it does not exist and load data into
+ * it. For the complete source code see
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/CreateTableAndLoadData.java">
+ * CreateTableAndLoadData.java</a>.
  * <pre> {@code
  * BigQuery bigquery = BigQueryOptions.defaultInstance().service();
  * TableId tableId = TableId.of("dataset", "table");
- * BaseTableInfo info = bigquery.getTable(tableId);
- * if (info == null) {
+ * Table table = bigquery.getTable(tableId);
+ * if (table == null) {
  *   System.out.println("Creating table " + tableId);
  *   Field integerField = Field.of("fieldName", Field.Type.integer());
- *   bigquery.create(TableInfo.of(tableId, Schema.of(integerField)));
+ *   Schema schema = Schema.of(integerField);
+ *   table = bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
+ * }
+ * System.out.println("Loading data into table " + tableId);
+ * Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
+ * while (!loadJob.isDone()) {
+ *   Thread.sleep(1000L);
+ * }
+ * if (loadJob.status().error() != null) {
+ *   System.out.println("Job completed with errors");
  * } else {
- *   System.out.println("Loading data into table " + tableId);
- *   LoadJobInfo loadJob = LoadJobInfo.of(tableId, "gs://bucket/path");
- *   loadJob = bigquery.create(loadJob);
- *   while (loadJob.status().state() != JobStatus.State.DONE) {
- *     Thread.sleep(1000L);
- *     loadJob = bigquery.getJob(loadJob.jobId());
- *   }
- *   if (loadJob.status().error() != null) {
- *     System.out.println("Job completed with errors");
- *   } else {
- *     System.out.println("Job succeeded");
- *   }
+ *   System.out.println("Job succeeded");
  * }}</pre>
  *
  * @see <a href="https://cloud.google.com/bigquery/">Google Cloud BigQuery</a>

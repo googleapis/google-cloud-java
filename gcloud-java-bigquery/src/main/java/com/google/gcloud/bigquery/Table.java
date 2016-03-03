@@ -16,12 +16,13 @@
 
 package com.google.gcloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.List;
 import java.util.Objects;
 
@@ -30,62 +31,106 @@ import java.util.Objects;
  *
  * <p>Objects of this class are immutable. Operations that modify the table like {@link #update}
  * return a new object. To get a {@code Table} object with the most recent information use
- * {@link #reload}.
+ * {@link #reload}. {@code Table} adds a layer of service-related functionality over
+ * {@link TableInfo}.
  * </p>
  */
-public final class Table {
+public final class Table extends TableInfo {
 
-  private final BigQuery bigquery;
-  private final BaseTableInfo info;
+  private static final long serialVersionUID = 5744556727066570096L;
+
+  private final BigQueryOptions options;
+  private transient BigQuery bigquery;
 
   /**
-   * Constructs a {@code Table} object for the provided {@code TableInfo}. The BigQuery service
-   * is used to issue requests.
-   *
-   * @param bigquery the BigQuery service used for issuing requests
-   * @param info table's info
+   * A builder for {@code Table} objects.
    */
-  public Table(BigQuery bigquery, BaseTableInfo info) {
+  public static class Builder extends TableInfo.Builder {
+
+    private final BigQuery bigquery;
+    private final TableInfo.BuilderImpl infoBuilder;
+
+    Builder(BigQuery bigquery, TableId tableId, TableDefinition defintion) {
+      this.bigquery = bigquery;
+      this.infoBuilder = new TableInfo.BuilderImpl();
+      this.infoBuilder.tableId(tableId).definition(defintion);
+    }
+
+    Builder(Table table) {
+      this.bigquery = table.bigquery;
+      this.infoBuilder = new TableInfo.BuilderImpl(table);
+    }
+
+    @Override
+    Builder creationTime(Long creationTime) {
+      infoBuilder.creationTime(creationTime);
+      return this;
+    }
+
+    @Override
+    public Builder description(String description) {
+      infoBuilder.description(description);
+      return this;
+    }
+
+    @Override
+    Builder etag(String etag) {
+      infoBuilder.etag(etag);
+      return this;
+    }
+
+    @Override
+    public Builder expirationTime(Long expirationTime) {
+      infoBuilder.expirationTime(expirationTime);
+      return this;
+    }
+
+    @Override
+    public Builder friendlyName(String friendlyName) {
+      infoBuilder.friendlyName(friendlyName);
+      return this;
+    }
+
+    @Override
+    Builder id(String id) {
+      infoBuilder.id(id);
+      return this;
+    }
+
+    @Override
+    Builder lastModifiedTime(Long lastModifiedTime) {
+      infoBuilder.lastModifiedTime(lastModifiedTime);
+      return this;
+    }
+
+    @Override
+    Builder selfLink(String selfLink) {
+      infoBuilder.selfLink(selfLink);
+      return this;
+    }
+
+    @Override
+    public Builder tableId(TableId tableId) {
+      infoBuilder.tableId(tableId);
+      return this;
+    }
+
+    @Override
+    public Builder definition(TableDefinition definition) {
+      infoBuilder.definition(definition);
+      return this;
+    }
+
+    @Override
+    public Table build() {
+      return new Table(bigquery, infoBuilder);
+    }
+  }
+
+  Table(BigQuery bigquery, TableInfo.BuilderImpl infoBuilder) {
+    super(infoBuilder);
     this.bigquery = checkNotNull(bigquery);
-    this.info = checkNotNull(info);
-  }
-
-  /**
-   * Creates a {@code Table} object for the provided dataset and table's user-defined ids. Performs
-   * an RPC call to get the latest table information.
-   *
-   * @param bigquery the BigQuery service used for issuing requests
-   * @param dataset the dataset's user-defined id
-   * @param table the table's user-defined id
-   * @param options table options
-   * @return the {@code Table} object or {@code null} if not found
-   * @throws BigQueryException upon failure
-   */
-  public static Table get(BigQuery bigquery, String dataset, String table,
-      BigQuery.TableOption... options) {
-    return get(bigquery, TableId.of(dataset, table), options);
-  }
-
-  /**
-   * Creates a {@code Table} object for the provided table identity. Performs an RPC call to get the
-   * latest table information.
-   *
-   * @param bigquery the BigQuery service used for issuing requests
-   * @param table the table's identity
-   * @param options table options
-   * @return the {@code Table} object or {@code null} if not found
-   * @throws BigQueryException upon failure
-   */
-  public static Table get(BigQuery bigquery, TableId table, BigQuery.TableOption... options) {
-    BaseTableInfo info = bigquery.getTable(table, options);
-    return info != null ? new Table(bigquery, info) : null;
-  }
-
-  /**
-   * Returns the table's information.
-   */
-  public BaseTableInfo info() {
-    return info;
+    this.options = bigquery.options();
   }
 
   /**
@@ -95,7 +140,7 @@ public final class Table {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
-    return bigquery.getTable(info.tableId(), BigQuery.TableOption.fields()) != null;
+    return bigquery.getTable(tableId(), BigQuery.TableOption.fields()) != null;
   }
 
   /**
@@ -106,25 +151,19 @@ public final class Table {
    * @throws BigQueryException upon failure
    */
   public Table reload(BigQuery.TableOption... options) {
-    return Table.get(bigquery, info.tableId(), options);
+    return bigquery.getTable(tableId(), options);
   }
 
   /**
-   * Updates the table's information. Dataset's and table's user-defined ids cannot be changed. A
-   * new {@code Table} object is returned.
+   * Updates the table's information with this table's information. Dataset's and table's
+   * user-defined ids cannot be changed. A new {@code Table} object is returned.
    *
-   * @param tableInfo new table's information. Dataset's and table's user-defined ids must match the
-   *     ones of the current table
    * @param options dataset options
    * @return a {@code Table} object with updated information
    * @throws BigQueryException upon failure
    */
-  public Table update(BaseTableInfo tableInfo, BigQuery.TableOption... options) {
-    checkArgument(Objects.equals(tableInfo.tableId().dataset(),
-        info.tableId().dataset()), "Dataset's user-defined ids must match");
-    checkArgument(Objects.equals(tableInfo.tableId().table(),
-        info.tableId().table()), "Table's user-defined ids must match");
-    return new Table(bigquery, bigquery.update(tableInfo, options));
+  public Table update(BigQuery.TableOption... options) {
+    return bigquery.update(this, options);
   }
 
   /**
@@ -134,7 +173,7 @@ public final class Table {
    * @throws BigQueryException upon failure
    */
   public boolean delete() {
-    return bigquery.delete(info.tableId());
+    return bigquery.delete(tableId());
   }
 
   /**
@@ -143,8 +182,9 @@ public final class Table {
    * @param rows rows to be inserted
    * @throws BigQueryException upon failure
    */
-  InsertAllResponse insert(Iterable<InsertAllRequest.RowToInsert> rows) throws BigQueryException {
-    return bigquery.insertAll(InsertAllRequest.of(info.tableId(), rows));
+  public InsertAllResponse insert(Iterable<InsertAllRequest.RowToInsert> rows)
+      throws BigQueryException {
+    return bigquery.insertAll(InsertAllRequest.of(tableId(), rows));
   }
 
   /**
@@ -158,9 +198,9 @@ public final class Table {
    *     to be invalid
    * @throws BigQueryException upon failure
    */
-  InsertAllResponse insert(Iterable<InsertAllRequest.RowToInsert> rows, boolean skipInvalidRows,
-      boolean ignoreUnknownValues) throws BigQueryException {
-    InsertAllRequest request = InsertAllRequest.builder(info.tableId(), rows)
+  public InsertAllResponse insert(Iterable<InsertAllRequest.RowToInsert> rows,
+      boolean skipInvalidRows, boolean ignoreUnknownValues) throws BigQueryException {
+    InsertAllRequest request = InsertAllRequest.builder(tableId(), rows)
         .skipInvalidRows(skipInvalidRows)
         .ignoreUnknownValues(ignoreUnknownValues)
         .build();
@@ -173,8 +213,9 @@ public final class Table {
    * @param options table data list options
    * @throws BigQueryException upon failure
    */
-  Page<List<FieldValue>> list(BigQuery.TableDataListOption... options) throws BigQueryException {
-    return bigquery.listTableData(info.tableId(), options);
+  public Page<List<FieldValue>> list(BigQuery.TableDataListOption... options)
+      throws BigQueryException {
+    return bigquery.listTableData(tableId(), options);
   }
 
   /**
@@ -186,7 +227,7 @@ public final class Table {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  Job copy(String destinationDataset, String destinationTable, BigQuery.JobOption... options)
+  public Job copy(String destinationDataset, String destinationTable, BigQuery.JobOption... options)
       throws BigQueryException {
     return copy(TableId.of(destinationDataset, destinationTable), options);
   }
@@ -199,9 +240,10 @@ public final class Table {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  Job copy(TableId destinationTable, BigQuery.JobOption... options) throws BigQueryException {
-    JobInfo job = bigquery.create(CopyJobInfo.of(destinationTable, info.tableId()), options);
-    return new Job(bigquery, job);
+  public Job copy(TableId destinationTable, BigQuery.JobOption... options)
+      throws BigQueryException {
+    CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, tableId());
+    return bigquery.create(JobInfo.of(configuration), options);
   }
 
   /**
@@ -214,7 +256,7 @@ public final class Table {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  Job extract(String format, String destinationUri, BigQuery.JobOption... options)
+  public Job extract(String format, String destinationUri, BigQuery.JobOption... options)
       throws BigQueryException {
     return extract(format, ImmutableList.of(destinationUri), options);
   }
@@ -229,10 +271,11 @@ public final class Table {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  Job extract(String format, List<String> destinationUris, BigQuery.JobOption... options)
+  public Job extract(String format, List<String> destinationUris, BigQuery.JobOption... options)
       throws BigQueryException {
-    return new Job(bigquery,
-        bigquery.create(ExtractJobInfo.of(info.tableId(), format, destinationUris), options));
+    ExtractJobConfiguration extractConfiguration =
+        ExtractJobConfiguration.of(tableId(), destinationUris, format);
+    return bigquery.create(JobInfo.of(extractConfiguration), options);
   }
 
   /**
@@ -245,7 +288,7 @@ public final class Table {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  Job load(FormatOptions format, String sourceUri, BigQuery.JobOption... options)
+  public Job load(FormatOptions format, String sourceUri, BigQuery.JobOption... options)
       throws BigQueryException {
     return load(format, ImmutableList.of(sourceUri), options);
   }
@@ -260,10 +303,10 @@ public final class Table {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  Job load(FormatOptions format, List<String> sourceUris, BigQuery.JobOption... options)
+  public Job load(FormatOptions format, List<String> sourceUris, BigQuery.JobOption... options)
       throws BigQueryException {
-    LoadConfiguration configuration = LoadConfiguration.of(info.tableId(), format);
-    return new Job(bigquery, bigquery.create(LoadJobInfo.of(configuration, sourceUris), options));
+    LoadJobConfiguration loadConfig = LoadJobConfiguration.of(tableId(), sourceUris, format);
+    return bigquery.create(JobInfo.of(loadConfig), options);
   }
 
   /**
@@ -271,5 +314,31 @@ public final class Table {
    */
   public BigQuery bigquery() {
     return bigquery;
+  }
+
+  @Override
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return obj instanceof Table
+        && Objects.equals(toPb(), ((Table) obj).toPb())
+        && Objects.equals(options, ((Table) obj).options);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), options);
+  }
+
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+    this.bigquery = options.service();
+  }
+
+  static Table fromPb(BigQuery bigquery, com.google.api.services.bigquery.model.Table tablePb) {
+    return new Table(bigquery, new TableInfo.BuilderImpl(tablePb));
   }
 }

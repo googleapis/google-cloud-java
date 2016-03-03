@@ -29,6 +29,7 @@ import com.google.gcloud.spi.StorageRpc.Tuple;
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.ByteBuffer;
+import java.nio.channels.ClosedChannelException;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
@@ -55,7 +56,7 @@ class BlobReadChannel implements ReadChannel {
   private byte[] buffer;
 
   BlobReadChannel(StorageOptions serviceOptions, BlobId blob,
-                  Map<StorageRpc.Option, ?> requestOptions) {
+      Map<StorageRpc.Option, ?> requestOptions) {
     this.serviceOptions = serviceOptions;
     this.blob = blob;
     this.requestOptions = requestOptions;
@@ -91,9 +92,9 @@ class BlobReadChannel implements ReadChannel {
     }
   }
 
-  private void validateOpen() throws IOException {
+  private void validateOpen() throws ClosedChannelException {
     if (!isOpen) {
-      throw new IOException("stream is closed");
+      throw new ClosedChannelException();
     }
   }
 

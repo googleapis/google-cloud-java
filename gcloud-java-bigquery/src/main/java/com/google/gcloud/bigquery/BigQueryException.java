@@ -16,8 +16,6 @@
 
 package com.google.gcloud.bigquery;
 
-import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.BaseServiceException;
 import com.google.gcloud.RetryHelper.RetryHelperException;

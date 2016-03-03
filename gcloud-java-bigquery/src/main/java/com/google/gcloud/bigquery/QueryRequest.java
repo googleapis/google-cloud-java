@@ -35,26 +35,26 @@ import java.util.Objects;
  * {@link QueryResponse#jobCompleted()} returns {@code true}.
  *
  * <p>Example usage of a query request:
- * <pre>    {@code
- *    // Substitute "field", "table" and "dataset" with real field, table and dataset identifiers
- *    QueryRequest request = QueryRequest.builder("SELECT field FROM table")
- *      .defaultDataset(DatasetId.of("dataset"))
- *      .maxWaitTime(60000L)
- *      .maxResults(1000L)
- *      .build();
- *    QueryResponse response = bigquery.query(request);
- *    while (!response.jobCompleted()) {
- *      Thread.sleep(1000);
- *      response = bigquery.getQueryResults(response.jobId());
- *    }
- *    List<BigQueryError> executionErrors = response.executionErrors();
- *    // look for errors in executionErrors
- *    QueryResult result = response.result();
- *    Iterator<List<FieldValue>> rowIterator = result.iterateAll();
- *    while(rowIterator.hasNext()) {
- *      List<FieldValue> row = rowIterator.next();
- *      // do something with row
- *    }
+ * <pre> {@code
+ * // Substitute "field", "table" and "dataset" with real field, table and dataset identifiers
+ * QueryRequest request = QueryRequest.builder("SELECT field FROM table")
+ *     .defaultDataset(DatasetId.of("dataset"))
+ *     .maxWaitTime(60000L)
+ *     .maxResults(1000L)
+ *     .build();
+ * QueryResponse response = bigquery.query(request);
+ * while (!response.jobCompleted()) {
+ *   Thread.sleep(1000);
+ *   response = bigquery.getQueryResults(response.jobId());
+ * }
+ * List<BigQueryError> executionErrors = response.executionErrors();
+ * // look for errors in executionErrors
+ * QueryResult result = response.result();
+ * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
+ * while(rowIterator.hasNext()) {
+ *   List<FieldValue> row = rowIterator.next();
+ *   // do something with row
+ * }
  * }</pre>
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/query">Query</a>
@@ -120,8 +120,8 @@ public class QueryRequest implements Serializable {
      * Sets how long to wait for the query to complete, in milliseconds, before the request times
      * out and returns. Note that this is only a timeout for the request, not the query. If the
      * query takes longer to run than the timeout value, the call returns without any results and
-     * with the {@link QueryResponse#jobCompleted()} set to {@code false}. If not set, a wait time of
-     * 10000 milliseconds (10 seconds) is used.
+     * with the {@link QueryResponse#jobCompleted()} set to {@code false}. If not set, a wait time
+     * of 10000 milliseconds (10 seconds) is used.
      */
     public Builder maxWaitTime(Long maxWaitTime) {
       this.maxWaitTime = maxWaitTime;
@@ -251,6 +251,14 @@ public class QueryRequest implements Serializable {
   @Override
   public boolean equals(Object obj) {
     return obj instanceof QueryRequest && Objects.equals(toPb(), ((QueryRequest) obj).toPb());
+  }
+
+  QueryRequest setProjectId(String projectId) {
+    Builder builder = toBuilder();
+    if (defaultDataset() != null) {
+      builder.defaultDataset(defaultDataset().setProjectId(projectId));
+    }
+    return builder.build();
   }
 
   com.google.api.services.bigquery.model.QueryRequest toPb() {
