@@ -161,8 +161,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public DiskType getDiskType(final DiskTypeId diskTypeId, DiskTypeOption... options)
-      throws ComputeException {
+  public DiskType getDiskType(final DiskTypeId diskTypeId, DiskTypeOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.DiskType answer =
@@ -179,14 +178,12 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public DiskType getDiskType(String zone, String diskType, DiskTypeOption... options)
-      throws ComputeException {
+  public DiskType getDiskType(String zone, String diskType, DiskTypeOption... options) {
     return getDiskType(DiskTypeId.of(zone, diskType), options);
   }
 
   @Override
-  public Page<DiskType> listDiskTypes(String zone, DiskTypeListOption... options)
-      throws ComputeException {
+  public Page<DiskType> listDiskTypes(String zone, DiskTypeListOption... options) {
     return listDiskTypes(zone, options(), optionMap(options));
   }
 
@@ -220,7 +217,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Page<DiskType> listDiskTypes(DiskTypeListOption... options) throws ComputeException {
+  public Page<DiskType> listDiskTypes(DiskTypeAggregatedListOption... options) {
     return listDiskTypes(options(), optionMap(options));
   }
 
@@ -252,15 +249,14 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public MachineType getMachineType(final MachineTypeId machineTypeId, MachineTypeOption... options)
-      throws ComputeException {
+  public MachineType getMachineType(final MachineTypeId machineType, MachineTypeOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.MachineType answer =
           runWithRetries(new Callable<com.google.api.services.compute.model.MachineType>() {
             @Override
             public com.google.api.services.compute.model.MachineType call() {
-              return computeRpc.getMachineType(machineTypeId.zone(), machineTypeId.machineType(),
+              return computeRpc.getMachineType(machineType.zone(), machineType.machineType(),
                   optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
@@ -271,14 +267,12 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public MachineType getMachineType(String zone, String machineType, MachineTypeOption... options)
-      throws ComputeException {
+  public MachineType getMachineType(String zone, String machineType, MachineTypeOption... options) {
     return getMachineType(MachineTypeId.of(zone, machineType), options);
   }
 
   @Override
-  public Page<MachineType> listMachineTypes(String zone, MachineTypeListOption... options)
-      throws ComputeException {
+  public Page<MachineType> listMachineTypes(String zone, MachineTypeListOption... options) {
     return listMachineTypes(zone, options(), optionMap(options));
   }
 
@@ -313,8 +307,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Page<MachineType> listMachineTypes(MachineTypeListOption... options)
-      throws ComputeException {
+  public Page<MachineType> listMachineTypes(MachineTypeAggregatedListOption... options) {
     return listMachineTypes(options(), optionMap(options));
   }
 
@@ -348,7 +341,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Region getRegion(final String region, RegionOption... options) throws ComputeException {
+  public Region getRegion(final String region, RegionOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Region answer =
@@ -365,7 +358,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Page<Region> listRegions(RegionListOption... options) throws ComputeException {
+  public Page<Region> listRegions(RegionListOption... options) {
     return listRegions(options(), optionMap(options));
   }
 
@@ -399,7 +392,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Zone getZone(final String zone, ZoneOption... options) throws ComputeException {
+  public Zone getZone(final String zone, ZoneOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Zone answer =
@@ -416,7 +409,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Page<Zone> listZones(ZoneListOption... options) throws ComputeException {
+  public Page<Zone> listZones(ZoneListOption... options) {
     return listZones(options(), optionMap(options));
   }
 
@@ -449,14 +442,12 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public License getLicense(String license, LicenseOption... options)
-      throws ComputeException {
+  public License getLicense(String license, LicenseOption... options) {
     return getLicense(LicenseId.of(license), options);
   }
 
   @Override
-  public License getLicense(LicenseId license, LicenseOption... options)
-      throws ComputeException {
+  public License getLicense(LicenseId license, LicenseOption... options) {
     final LicenseId completeId = license.setProjectId(options().projectId());
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {

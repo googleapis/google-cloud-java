@@ -16,12 +16,17 @@
 
 package com.google.gcloud.compute;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.common.base.Joiner;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.Sets;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.spi.ComputeRpc;
 
+import java.io.Serializable;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -45,7 +50,8 @@ public interface Compute extends Service<ComputeOptions> {
     NAME("name"),
     SELF_LINK("selfLink"),
     VALID_DISK_SIZE("validDiskSize"),
-    ZONE("zone");
+    ZONE("zone"),
+    DEPRECATED("deprecated");
 
     private final String selector;
 
@@ -76,7 +82,7 @@ public interface Compute extends Service<ComputeOptions> {
   enum MachineTypeField {
     CREATION_TIMESTAMP("creationTimestamp"),
     DESCRIPTION("description"),
-    GUEST_CPUS("cpus"),
+    GUEST_CPUS("guestCpus"),
     ID("id"),
     IMAGE_SPACE_GB("imageSpaceGb"),
     MAXIMUM_PERSISTENT_DISKS("maximumPersistentDisks"),
@@ -84,9 +90,9 @@ public interface Compute extends Service<ComputeOptions> {
     MEMORY_MB("memoryMb"),
     NAME("name"),
     SCRATCH_DISKS("scratchDisks"),
-    DISK_GB("diskGb"),
     SELF_LINK("selfLink"),
-    ZONE("zone");
+    ZONE("zone"),
+    DEPRECATED("deprecated");
 
     private final String selector;
 
@@ -122,7 +128,8 @@ public interface Compute extends Service<ComputeOptions> {
     QUOTAS("quotas"),
     SELF_LINK("selfLink"),
     STATUS("status"),
-    ZONES("zones");
+    ZONES("zones"),
+    DEPRECATED("deprecated");
 
     private final String selector;
 
@@ -158,7 +165,8 @@ public interface Compute extends Service<ComputeOptions> {
     NAME("name"),
     REGION("region"),
     SELF_LINK("selfLink"),
-    STATUS("status");
+    STATUS("status"),
+    DEPRECATED("deprecated");
 
     private final String selector;
 
@@ -212,6 +220,223 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Base class for list filters.
+   */
+  abstract class ListFilter implements Serializable {
+
+    private static final long serialVersionUID = -238638392811165127L;
+
+    private final String field;
+    private final ComparisonOperator operator;
+    private final Object value;
+
+    enum ComparisonOperator {
+      /**
+       * Defines an equality filter.
+       */
+      EQ,
+
+      /**
+       * Defines an inequality filter.
+       */
+      NE
+    }
+
+    ListFilter(String field, ComparisonOperator operator, Object value) {
+      this.field = field;
+      this.operator = operator;
+      this.value = value;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(field, operator, value);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      return obj instanceof ListFilter && toPb().equals(((ListFilter) obj).toPb());
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this)
+          .add("field", field)
+          .add("operator", operator)
+          .add("value", value)
+          .toString();
+    }
+
+    String toPb() {
+      return field + ' ' + operator.name().toLowerCase() + ' ' + value.toString();
+    }
+  }
+
+  /**
+   * Class for filtering disk type lists.
+   */
+  class DiskTypeFilter extends ListFilter {
+
+    private static final long serialVersionUID = 4847837203592234453L;
+
+    DiskTypeFilter(DiskTypeField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equality filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2">RE2</a>
+     */
+    public static DiskTypeFilter equals(DiskTypeField field, String value) {
+      return new DiskTypeFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns an equality filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2">RE2</a>
+     */
+    public static DiskTypeFilter notEquals(DiskTypeField field, String value) {
+      return new DiskTypeFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+
+    /**
+     * Returns an equality filter for the given field and long value.
+     */
+    public static DiskTypeFilter equals(DiskTypeField field, long value) {
+      return new DiskTypeFilter(checkNotNull(field), ComparisonOperator.EQ, value);
+    }
+
+    /**
+     * Returns an inequality filter for the given field and long value.
+     */
+    public static DiskTypeFilter notEquals(DiskTypeField field, long value) {
+      return new DiskTypeFilter(checkNotNull(field), ComparisonOperator.NE, value);
+    }
+  }
+
+  /**
+   * Class for filtering machine type lists.
+   */
+  class MachineTypeFilter extends ListFilter {
+
+    private static final long serialVersionUID = 7346062041571853235L;
+
+    MachineTypeFilter(MachineTypeField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equality filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2">RE2</a>
+     */
+    public static MachineTypeFilter equals(MachineTypeField field, String value) {
+      return new MachineTypeFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns an equality filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2">RE2</a>
+     */
+    public static MachineTypeFilter notEquals(MachineTypeField field, String value) {
+      return new MachineTypeFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+
+    /**
+     * Returns an equality filter for the given field and long value.
+     */
+    public static MachineTypeFilter equals(MachineTypeField field, long value) {
+      return new MachineTypeFilter(checkNotNull(field), ComparisonOperator.EQ, value);
+    }
+
+    /**
+     * Returns an inequality filter for the given field and long value.
+     */
+    public static MachineTypeFilter notEquals(MachineTypeField field, long value) {
+      return new MachineTypeFilter(checkNotNull(field), ComparisonOperator.NE, value);
+    }
+  }
+
+  /**
+   * Class for filtering region lists.
+   */
+  class RegionFilter extends ListFilter {
+
+    private static final long serialVersionUID = 4464892812442567172L;
+
+    RegionFilter(RegionField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equality filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2">RE2</a>
+     */
+    public static RegionFilter equals(RegionField field, String value) {
+      return new RegionFilter(checkNotNull(field), ComparisonOperator.EQ, value);
+    }
+
+    /**
+     * Returns an equality filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2">RE2</a>
+     */
+    public static RegionFilter notEquals(RegionField field, String value) {
+      return new RegionFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+  }
+
+  /**
+   * Class for filtering zone lists.
+   */
+  class ZoneFilter extends ListFilter {
+
+    private static final long serialVersionUID = -3927428278548808737L;
+
+    ZoneFilter(ZoneField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equality filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2">RE2</a>
+     */
+    public static ZoneFilter equals(ZoneField field, String value) {
+      return new ZoneFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns an equality filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2">RE2</a>
+     */
+    public static ZoneFilter notEquals(ZoneField field, String value) {
+      return new ZoneFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+  }
+
+  /**
    * Class for specifying disk type get options.
    */
   class DiskTypeOption extends Option {
@@ -245,6 +470,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
+     * Returns an option to specify a filter to the disk types being listed.
+     */
+    public static DiskTypeListOption filter(DiskTypeFilter filter) {
+      return new DiskTypeListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
      * Returns an option to specify the maximum number of disk types to be returned.
      */
     public static DiskTypeListOption maxResults(long maxResults) {
@@ -268,6 +500,39 @@ public interface Compute extends Service<ComputeOptions> {
       StringBuilder builder = new StringBuilder();
       builder.append("items(").append(DiskTypeField.selector(fields)).append("),nextPageToken");
       return new DiskTypeListOption(ComputeRpc.Option.FIELDS, builder.toString());
+    }
+  }
+
+  /**
+   * Class for specifying disk type aggregated list options.
+   */
+  class DiskTypeAggregatedListOption extends Option {
+
+    private static final long serialVersionUID = 7611137483018305170L;
+
+    private DiskTypeAggregatedListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter to the disk types being listed.
+     */
+    public static DiskTypeAggregatedListOption filter(DiskTypeFilter filter) {
+      return new DiskTypeAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of disk types to be returned.
+     */
+    public static DiskTypeAggregatedListOption maxResults(long maxResults) {
+      return new DiskTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, maxResults);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing disk types.
+     */
+    public static DiskTypeAggregatedListOption startPageToken(String pageToken) {
+      return new DiskTypeAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
 
@@ -305,6 +570,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
+     * Returns an option to specify a filter to the machine types being listed.
+     */
+    public static MachineTypeListOption filter(MachineTypeFilter filter) {
+      return new MachineTypeListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
      * Returns an option to specify the maximum number of machine types to be returned.
      */
     public static MachineTypeListOption maxResults(long maxResults) {
@@ -328,6 +600,39 @@ public interface Compute extends Service<ComputeOptions> {
       StringBuilder builder = new StringBuilder();
       builder.append("items(").append(MachineTypeField.selector(fields)).append("),nextPageToken");
       return new MachineTypeListOption(ComputeRpc.Option.FIELDS, builder.toString());
+    }
+  }
+
+  /**
+   * Class for specifying machine type aggregated list options.
+   */
+  class MachineTypeAggregatedListOption extends Option {
+
+    private static final long serialVersionUID = 8492257475500296057L;
+
+    private MachineTypeAggregatedListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter to the machine types being listed.
+     */
+    public static MachineTypeAggregatedListOption filter(MachineTypeFilter filter) {
+      return new MachineTypeAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of machine types to be returned.
+     */
+    public static MachineTypeAggregatedListOption maxResults(long maxResults) {
+      return new MachineTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, maxResults);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing machine types.
+     */
+    public static MachineTypeAggregatedListOption startPageToken(String pageToken) {
+      return new MachineTypeAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
 
@@ -362,6 +667,13 @@ public interface Compute extends Service<ComputeOptions> {
 
     private RegionListOption(ComputeRpc.Option option, Object value) {
       super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter to the regions being listed.
+     */
+    public static RegionListOption filter(RegionFilter filter) {
+      return new RegionListOption(ComputeRpc.Option.FILTER, filter.toPb());
     }
 
     /**
@@ -425,6 +737,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
+     * Returns an option to specify a filter to the zones being listed.
+     */
+    public static ZoneListOption filter(ZoneFilter filter) {
+      return new ZoneListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
      * Returns an option to specify the maximum number of zones to be returned.
      */
     public static ZoneListOption maxResults(long maxResults) {
@@ -478,100 +797,96 @@ public interface Compute extends Service<ComputeOptions> {
    *
    * @throws ComputeException upon failure
    */
-  DiskType getDiskType(DiskTypeId diskTypeId, DiskTypeOption... options) throws ComputeException;
+  DiskType getDiskType(DiskTypeId diskTypeId, DiskTypeOption... options);
 
   /**
    * Returns the requested disk type or {@code null} if not found.
    *
    * @throws ComputeException upon failure
    */
-  DiskType getDiskType(String zone, String diskType, DiskTypeOption... options)
-      throws ComputeException;
+  DiskType getDiskType(String zone, String diskType, DiskTypeOption... options);
 
   /**
-   * Lists the disk types in the provided zone available to the current project.
+   * Lists the disk types in the provided zone.
    *
    * @throws ComputeException upon failure
    */
-  Page<DiskType> listDiskTypes(String zone, DiskTypeListOption... options) throws ComputeException;
+  Page<DiskType> listDiskTypes(String zone, DiskTypeListOption... options);
 
   /**
-   * Lists all disk types available to the current project.
+   * Lists all disk types.
    *
    * @throws ComputeException upon failure
    */
-  Page<DiskType> listDiskTypes(DiskTypeListOption... options) throws ComputeException;
-
-  /**
-   * Returns the requested machine type or {@code null} if not found.
-   *
-   * @throws ComputeException upon failure
-   */
-  MachineType getMachineType(MachineTypeId machineTypeId, MachineTypeOption... options)
-      throws ComputeException;
+  Page<DiskType> listDiskTypes(DiskTypeAggregatedListOption... options);
 
   /**
    * Returns the requested machine type or {@code null} if not found.
    *
    * @throws ComputeException upon failure
    */
-  MachineType getMachineType(String zone, String machineType, MachineTypeOption... options)
-      throws ComputeException;
+  MachineType getMachineType(MachineTypeId machineTypeId, MachineTypeOption... options);
 
   /**
-   * Lists the machine types in the provided zone available to the current project.
+   * Returns the requested machine type or {@code null} if not found.
    *
    * @throws ComputeException upon failure
    */
-  Page<MachineType> listMachineTypes(String zone, MachineTypeListOption... options)
-      throws ComputeException;
+  MachineType getMachineType(String zone, String machineType, MachineTypeOption... options);
 
   /**
-   * Lists all machine types available to the current project.
+   * Lists the machine types in the provided zone.
    *
    * @throws ComputeException upon failure
    */
-  Page<MachineType> listMachineTypes(MachineTypeListOption... options) throws ComputeException;
+  Page<MachineType> listMachineTypes(String zone, MachineTypeListOption... options);
+
+  /**
+   * Lists all machine types.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<MachineType> listMachineTypes(MachineTypeAggregatedListOption... options);
 
   /**
    * Returns the requested region or {@code null} if not found.
    *
    * @throws ComputeException upon failure
    */
-  Region getRegion(String region, RegionOption... options) throws ComputeException;
+  Region getRegion(String region, RegionOption... options);
 
   /**
-   * Lists the regions available to the current project.
+   * Lists the regions.
    *
    * @throws ComputeException upon failure
    */
-  Page<Region> listRegions(RegionListOption... options) throws ComputeException;
+  Page<Region> listRegions(RegionListOption... options);
 
   /**
    * Returns the requested zone or {@code null} if not found.
    *
    * @throws ComputeException upon failure
    */
-  Zone getZone(String zone, ZoneOption... options) throws ComputeException;
+  Zone getZone(String zone, ZoneOption... options);
 
   /**
-   * Lists the zones available to the current project.
+   * Lists the zones.
    *
    * @throws ComputeException upon failure
    */
-  Page<Zone> listZones(ZoneListOption... options) throws ComputeException;
-
-  /**
-   * Returns the requested license or {@code null} if not found.
-   *
-   * @throws ComputeException upon failure
-   */
-  License getLicense(String license, LicenseOption... options) throws ComputeException;
+  Page<Zone> listZones(ZoneListOption... options);
 
   /**
    * Returns the requested license or {@code null} if not found.
    *
    * @throws ComputeException upon failure
    */
-  License getLicense(LicenseId license, LicenseOption... options) throws ComputeException;
+  License getLicense(String license, LicenseOption... options);
+
+  /**
+   * Returns the requested license or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  License getLicense(LicenseId license, LicenseOption... options);
 }

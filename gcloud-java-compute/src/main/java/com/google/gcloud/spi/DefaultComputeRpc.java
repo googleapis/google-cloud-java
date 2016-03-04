@@ -66,25 +66,19 @@ public class DefaultComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public DiskType getDiskType(String zone, String diskType, Map<Option, ?> options)
-      throws ComputeException {
+  public DiskType getDiskType(String zone, String diskType, Map<Option, ?> options) {
     try {
       return compute.diskTypes()
           .get(this.options.projectId(), zone, diskType)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      ComputeException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
-        return null;
-      }
-      throw serviceException;
+      return nullForNotFound(ex);
     }
   }
 
   @Override
-  public Tuple<String, Iterable<DiskType>> listDiskTypes(String zone, Map<Option, ?> options)
-      throws ComputeException {
+  public Tuple<String, Iterable<DiskType>> listDiskTypes(String zone, Map<Option, ?> options) {
     try {
       DiskTypeList diskTypesList = compute.diskTypes()
           .list(this.options.projectId(), zone)
@@ -101,21 +95,20 @@ public class DefaultComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<DiskType>> listDiskTypes(Map<Option, ?> options)
-      throws ComputeException {
+  public Tuple<String, Iterable<DiskType>> listDiskTypes(Map<Option, ?> options) {
     try {
       DiskTypeAggregatedList aggregatedList = compute.diskTypes()
           .aggregatedList(this.options.projectId())
           .setFilter(FILTER.getString(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
-          .setFields(FIELDS.getString(options))
+          // todo(mziccard): uncomment or remove once #711 is closed
+          // .setFields(FIELDS.getString(options))
           .execute();
       ImmutableList.Builder<DiskType> builder = ImmutableList.builder();
       Map<String, DiskTypesScopedList> scopedList = aggregatedList.getItems();
       if (scopedList != null) {
-        for (String key : scopedList.keySet()) {
-          DiskTypesScopedList diskTypesScopedList = scopedList.get(key);
+        for (DiskTypesScopedList diskTypesScopedList : scopedList.values()) {
           if (diskTypesScopedList.getDiskTypes() != null) {
             builder.addAll(diskTypesScopedList.getDiskTypes());
           }
@@ -129,25 +122,20 @@ public class DefaultComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public MachineType getMachineType(String zone, String machineType, Map<Option, ?> options)
-      throws ComputeException {
+  public MachineType getMachineType(String zone, String machineType, Map<Option, ?> options) {
     try {
       return compute.machineTypes()
           .get(this.options.projectId(), zone, machineType)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      ComputeException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
-        return null;
-      }
-      throw serviceException;
+      return nullForNotFound(ex);
     }
   }
 
   @Override
-  public Tuple<String, Iterable<MachineType>> listMachineTypes(String zone, Map<Option, ?> options)
-      throws ComputeException {
+  public Tuple<String, Iterable<MachineType>> listMachineTypes(String zone,
+      Map<Option, ?> options) {
     try {
       MachineTypeList machineTypesList = compute.machineTypes()
           .list(this.options.projectId(), zone)
@@ -164,21 +152,20 @@ public class DefaultComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<MachineType>> listMachineTypes(Map<Option, ?> options)
-      throws ComputeException {
+  public Tuple<String, Iterable<MachineType>> listMachineTypes(Map<Option, ?> options) {
     try {
       MachineTypeAggregatedList aggregatedList = compute.machineTypes()
           .aggregatedList(this.options.projectId())
           .setFilter(FILTER.getString(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
-          .setFields(FIELDS.getString(options))
+          // todo(mziccard): uncomment or remove once #711 is closed
+          // .setFields(FIELDS.getString(options))
           .execute();
       ImmutableList.Builder<MachineType> builder = ImmutableList.builder();
       Map<String, MachineTypesScopedList> scopedList = aggregatedList.getItems();
       if (scopedList != null) {
-        for (String key : scopedList.keySet()) {
-          MachineTypesScopedList machineTypesScopedList = scopedList.get(key);
+        for (MachineTypesScopedList machineTypesScopedList : scopedList.values()) {
           if (machineTypesScopedList.getMachineTypes() != null) {
             builder.addAll(machineTypesScopedList.getMachineTypes());
           }
@@ -192,24 +179,19 @@ public class DefaultComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Region getRegion(String region, Map<Option, ?> options) throws ComputeException {
+  public Region getRegion(String region, Map<Option, ?> options) {
     try {
       return compute.regions()
           .get(this.options.projectId(), region)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      ComputeException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
-        return null;
-      }
-      throw serviceException;
+      return nullForNotFound(ex);
     }
   }
 
   @Override
-  public Tuple<String, Iterable<Region>> listRegions(Map<Option, ?> options)
-      throws ComputeException {
+  public Tuple<String, Iterable<Region>> listRegions(Map<Option, ?> options) {
     try {
       RegionList regionsList = compute.regions()
           .list(this.options.projectId())
@@ -226,23 +208,19 @@ public class DefaultComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Zone getZone(String zone, Map<Option, ?> options) throws ComputeException {
+  public Zone getZone(String zone, Map<Option, ?> options) {
     try {
       return compute.zones()
           .get(this.options.projectId(), zone)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      ComputeException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
-        return null;
-      }
-      throw serviceException;
+      return nullForNotFound(ex);
     }
   }
 
   @Override
-  public Tuple<String, Iterable<Zone>> listZones(Map<Option, ?> options) throws ComputeException {
+  public Tuple<String, Iterable<Zone>> listZones(Map<Option, ?> options) {
     try {
       ZoneList zonesList = compute.zones()
           .list(this.options.projectId())
@@ -259,19 +237,28 @@ public class DefaultComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public License getLicense(String project, String license, Map<Option, ?> options)
-      throws ComputeException {
+  public License getLicense(String project, String license, Map<Option, ?> options) {
     try {
       return compute.licenses()
           .get(project, license)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      ComputeException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
-        return null;
-      }
-      throw serviceException;
+      return nullForNotFound(ex);
     }
+  }
+
+  /**
+   * This method returns {@code null} if the error code of {@code exception} was 404, re-throws the
+   * exception otherwise.
+   *
+   * @throws ComputeException if the error code of {@code exception} was not 404.
+   */
+  private static <T> T nullForNotFound(IOException exception) {
+    ComputeException serviceException = translate(exception);
+    if (serviceException.code() == HTTP_NOT_FOUND) {
+      return (T) null;
+    }
+    throw serviceException;
   }
 }
