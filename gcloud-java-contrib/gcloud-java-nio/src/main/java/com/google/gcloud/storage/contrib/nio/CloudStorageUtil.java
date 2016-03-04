@@ -30,7 +30,7 @@ final class CloudStorageUtil {
     if (!(checkNotNull(path) instanceof CloudStoragePath)) {
       throw new ProviderMismatchException(
           String.format(
-              "Not a cloud storage path: %s (%s)", path, path.getClass().getSimpleName()));
+              "Not a Cloud Storage path: %s (%s)", path, path.getClass().getSimpleName()));
     }
     return (CloudStoragePath) path;
   }

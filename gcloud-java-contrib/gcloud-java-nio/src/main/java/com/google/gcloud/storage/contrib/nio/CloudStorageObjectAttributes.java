@@ -14,11 +14,10 @@ import java.util.List;
 import java.util.Objects;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 /**
- * Metadata for a Google Cloud Storage object.
+ * Metadata for a Google Cloud Storage file.
  */
 @Immutable
 final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
@@ -47,67 +46,36 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
     return creationTime();
   }
 
-  /**
-   * Returns the HTTP etag hash for this object.
-   */
   @Override
   public Optional<String> etag() {
     return Optional.fromNullable(info.etag());
   }
 
-  /**
-   * Returns the mime type (e.g. text/plain) if it was set for this object.
-   */
   @Override
   public Optional<String> mimeType() {
     return Optional.fromNullable(info.contentType());
   }
 
-  /**
-   * Returns the ACL value on this Cloud Storage object.
-   *
-   * @see "https://developers.google.com/storage/docs/reference-headers#acl"
-   */
   @Override
   public Optional<List<Acl>> acl() {
     return Optional.fromNullable(info.acl());
   }
 
-  /**
-   * Returns the {@code Cache-Control} HTTP header value, if set on this object.
-   *
-   * @see "https://developers.google.com/storage/docs/reference-headers#cachecontrol"
-   */
   @Override
   public Optional<String> cacheControl() {
     return Optional.fromNullable(info.cacheControl());
   }
 
-  /**
-   * Returns the {@code Content-Encoding} HTTP header value, if set on this object.
-   *
-   * @see "https://developers.google.com/storage/docs/reference-headers#contentencoding"
-   */
   @Override
   public Optional<String> contentEncoding() {
     return Optional.fromNullable(info.contentEncoding());
   }
 
-  /**
-   * Returns the {@code Content-Disposition} HTTP header value, if set on this object.
-   *
-   * @see "https://developers.google.com/storage/docs/reference-headers#contentdisposition"
-   */
   @Override
   public Optional<String> contentDisposition() {
     return Optional.fromNullable(info.contentDisposition());
   }
 
-  /**
-   * Returns user-specified metadata associated with this object.
-   *
-   * @see "https://developers.google.com/storage/docs/reference-headers#contentdisposition"
-   */
   @Override
   public ImmutableMap<String, String> userMetadata() {
     if (null == info.metadata()) {
@@ -147,7 +115,7 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
   }
 
   @Override
-  public boolean equals(@Nullable Object other) {
+  public boolean equals(Object other) {
     return this == other
         || other instanceof CloudStorageObjectAttributes
             && Objects.equals(info, ((CloudStorageObjectAttributes) other).info);
