@@ -50,68 +50,75 @@ public class ITDnsTest {
 
   // todo(mderka) Implement test for creating invalid change when DnsException is finished. #673
 
-  public static final String PREFIX = "gcldjvit-";
-  public static final Dns DNS = DnsOptions.builder().build().service();
-  public static final String ZONE_NAME1 = (PREFIX + UUID.randomUUID()).substring(0, 32);
-  public static final String ZONE_NAME_EMPTY_DESCRIPTION =
+  private static final String PREFIX = "gcldjvit-";
+  private static final Dns DNS = DnsOptions.builder().build().service();
+  private static final String ZONE_NAME1 = (PREFIX + UUID.randomUUID()).substring(0, 32);
+  private static final String ZONE_NAME_EMPTY_DESCRIPTION =
       (PREFIX + UUID.randomUUID()).substring(0, 32);
-  public static final String ZONE_NAME_TOO_LONG = PREFIX + UUID.randomUUID();
-  public static final String ZONE_DESCRIPTION1 = "first zone";
-  public static final String ZONE_DNS_NAME1 = ZONE_NAME1 + ".com.";
-  public static final String ZONE_DNS_EMPTY_DESCRIPTION = ZONE_NAME_EMPTY_DESCRIPTION + ".com.";
-  public static final String ZONE_DNS_NAME_NO_PERIOD = ZONE_NAME1 + ".com";
-  public static final ZoneInfo ZONE1 = ZoneInfo.builder(ZONE_NAME1)
+  private static final String ZONE_NAME_TOO_LONG = PREFIX + UUID.randomUUID();
+  private static final String ZONE_DESCRIPTION1 = "first zone";
+  private static final String ZONE_DNS_NAME1 = ZONE_NAME1 + ".com.";
+  private static final String ZONE_DNS_EMPTY_DESCRIPTION = ZONE_NAME_EMPTY_DESCRIPTION + ".com.";
+  private static final String ZONE_DNS_NAME_NO_PERIOD = ZONE_NAME1 + ".com";
+  private static final ZoneInfo ZONE1 = ZoneInfo.builder(ZONE_NAME1)
       .description(ZONE_DESCRIPTION1)
       .dnsName(ZONE_DNS_EMPTY_DESCRIPTION)
       .build();
-  public static final ZoneInfo ZONE_EMPTY_DESCRIPTION =
+  private static final ZoneInfo ZONE_EMPTY_DESCRIPTION =
       ZoneInfo.builder(ZONE_NAME_EMPTY_DESCRIPTION)
           .description(ZONE_DESCRIPTION1)
           .dnsName(ZONE_DNS_NAME1)
           .build();
-  public static final ZoneInfo ZONE_NAME_ERROR = ZoneInfo.builder(ZONE_NAME_TOO_LONG)
+  private static final ZoneInfo ZONE_NAME_ERROR = ZoneInfo.builder(ZONE_NAME_TOO_LONG)
       .description(ZONE_DESCRIPTION1)
       .dnsName(ZONE_DNS_NAME1)
       .build();
-  public static final ZoneInfo ZONE_MISSING_DESCRIPTION = ZoneInfo.builder(ZONE_NAME1)
+  private static final ZoneInfo ZONE_MISSING_DESCRIPTION = ZoneInfo.builder(ZONE_NAME1)
       .dnsName(ZONE_DNS_NAME1)
       .build();
-  public static final ZoneInfo ZONE_MISSING_DNS_NAME = ZoneInfo.builder(ZONE_NAME1)
+  private static final ZoneInfo ZONE_MISSING_DNS_NAME = ZoneInfo.builder(ZONE_NAME1)
       .description(ZONE_DESCRIPTION1)
       .build();
-  public static final ZoneInfo ZONE_DNS_NO_PERIOD = ZoneInfo.builder(ZONE_NAME1)
+  private static final ZoneInfo ZONE_DNS_NO_PERIOD = ZoneInfo.builder(ZONE_NAME1)
       .description(ZONE_DESCRIPTION1)
       .dnsName(ZONE_DNS_NAME_NO_PERIOD)
       .build();
-  public static final DnsRecord A_RECORD_ZONE1 =
+  private static final DnsRecord A_RECORD_ZONE1 =
       DnsRecord.builder("www." + ZONE1.dnsName(), DnsRecord.Type.A)
           .records(ImmutableList.of("123.123.55.1"))
           .ttl(25, TimeUnit.SECONDS)
           .build();
-  public static final DnsRecord AAAA_RECORD_ZONE1 =
+  private static final DnsRecord AAAA_RECORD_ZONE1 =
       DnsRecord.builder("www." + ZONE1.dnsName(), DnsRecord.Type.AAAA)
           .records(ImmutableList.of("ed:ed:12:aa:36:3:3:105"))
           .ttl(25, TimeUnit.SECONDS)
           .build();
-  public static final ChangeRequest CHANGE_ADD_ZONE1 = ChangeRequest.builder()
+  private static final ChangeRequest CHANGE_ADD_ZONE1 = ChangeRequest.builder()
       .add(A_RECORD_ZONE1)
       .add(AAAA_RECORD_ZONE1)
       .build();
-  public static final ChangeRequest CHANGE_DELETE_ZONE1 = ChangeRequest.builder()
+  private static final ChangeRequest CHANGE_DELETE_ZONE1 = ChangeRequest.builder()
       .delete(A_RECORD_ZONE1)
       .delete(AAAA_RECORD_ZONE1)
       .build();
+  private static final List<String> ZONE_NAMES = ImmutableList.of(ZONE_NAME1,
+      ZONE_NAME_EMPTY_DESCRIPTION);
 
-  public static void clear() {
-    Page<Zone> zones = DNS.listZones();
-    Iterator<Zone> zoneIterator = zones.iterateAll();
-    while (zoneIterator.hasNext()) {
-      Zone zone = zoneIterator.next();
-      List<DnsRecord> toDelete = new LinkedList<>();
-      if (zone.name().startsWith(PREFIX)) {
-        Iterator<DnsRecord> dnsRecordIterator = zone.listDnsRecords().iterateAll();
-        while (dnsRecordIterator.hasNext()) {
-          DnsRecord record = dnsRecordIterator.next();
+  private static void clear() {
+    for (String zoneName : ZONE_NAMES) {
+      Zone zone = DNS.getZone(zoneName);
+      if (zone != null) {
+        /* We wait for all changes to complete before retrieving a list of DNS records to be
+        deleted. Waiting is necessary as changes potentially might create more records between
+        when the list has been retrieved and executing the subsequent delete operation. */
+        Iterator<ChangeRequest> iterator = zone.listChangeRequests().iterateAll();
+        while (iterator.hasNext()) {
+          waitForChangeToComplete(zoneName, iterator.next().id());
+        }
+        Iterator<DnsRecord> recordIterator = zone.listDnsRecords().iterateAll();
+        List<DnsRecord> toDelete = new LinkedList<>();
+        while (recordIterator.hasNext()) {
+          DnsRecord record = recordIterator.next();
           if (!ImmutableList.of(DnsRecord.Type.NS, DnsRecord.Type.SOA).contains(record.type())) {
             toDelete.add(record);
           }
@@ -119,7 +126,7 @@ public class ITDnsTest {
         if (!toDelete.isEmpty()) {
           ChangeRequest deletion =
               zone.applyChangeRequest(ChangeRequest.builder().deletions(toDelete).build());
-          waitUntilComplete(zone.name(), deletion.id());
+          waitForChangeToComplete(zone.name(), deletion.id());
         }
         zone.delete();
       }
@@ -130,7 +137,7 @@ public class ITDnsTest {
     List<Zone> result = new LinkedList<>();
     while (iterator.hasNext()) {
       Zone zone = iterator.next();
-      if (zone.name().startsWith(PREFIX)) {
+      if (ZONE_NAMES.contains(zone.name())) {
         result.add(zone);
       }
     }
@@ -154,7 +161,7 @@ public class ITDnsTest {
     assertEquals(expected.startTimeMillis(), actual.startTimeMillis());
   }
 
-  private static void waitUntilComplete(String zoneName, String changeId) {
+  private static void waitForChangeToComplete(String zoneName, String changeId) {
     while (true) {
       ChangeRequest changeRequest = DNS.getChangeRequest(zoneName, changeId,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
@@ -553,9 +560,9 @@ public class ITDnsTest {
       assertTrue(ImmutableList.of(ChangeRequest.Status.PENDING, ChangeRequest.Status.DONE)
           .contains(created.status()));
       assertEqChangesIgnoreStatus(created, DNS.getChangeRequest(ZONE1.name(), "1"));
-      waitUntilComplete(ZONE1.name(), "1");
+      waitForChangeToComplete(ZONE1.name(), "1");
       DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
-      waitUntilComplete(ZONE1.name(), "2");
+      waitForChangeToComplete(ZONE1.name(), "2");
       // with options
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ID));
@@ -564,9 +571,9 @@ public class ITDnsTest {
       assertTrue(created.deletions().isEmpty());
       assertEquals("3", created.id());
       assertNull(created.status());
-      waitUntilComplete(ZONE1.name(), "3");
+      waitForChangeToComplete(ZONE1.name(), "3");
       DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
-      waitUntilComplete(ZONE1.name(), "4");
+      waitForChangeToComplete(ZONE1.name(), "4");
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
       assertTrue(created.additions().isEmpty());
@@ -574,9 +581,9 @@ public class ITDnsTest {
       assertTrue(created.deletions().isEmpty());
       assertEquals("5", created.id());
       assertNotNull(created.status());
-      waitUntilComplete(ZONE1.name(), "5");
+      waitForChangeToComplete(ZONE1.name(), "5");
       DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
-      waitUntilComplete(ZONE1.name(), "6");
+      waitForChangeToComplete(ZONE1.name(), "6");
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME));
       assertTrue(created.additions().isEmpty());
@@ -584,9 +591,9 @@ public class ITDnsTest {
       assertTrue(created.deletions().isEmpty());
       assertEquals("7", created.id());
       assertNull(created.status());
-      waitUntilComplete(ZONE1.name(), "7");
+      waitForChangeToComplete(ZONE1.name(), "7");
       DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
-      waitUntilComplete(ZONE1.name(), "8");
+      waitForChangeToComplete(ZONE1.name(), "8");
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ADDITIONS));
       assertEquals(CHANGE_ADD_ZONE1.additions(), created.additions());
@@ -595,16 +602,16 @@ public class ITDnsTest {
       assertEquals("9", created.id());
       assertNull(created.status());
       // finishes with delete otherwise we cannot delete the zone
-      waitUntilComplete(ZONE1.name(), "9");
+      waitForChangeToComplete(ZONE1.name(), "9");
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.DELETIONS));
-      waitUntilComplete(ZONE1.name(), "10");
+      waitForChangeToComplete(ZONE1.name(), "10");
       assertEquals(CHANGE_DELETE_ZONE1.deletions(), created.deletions());
       assertNull(created.startTimeMillis());
       assertTrue(created.additions().isEmpty());
       assertEquals("10", created.id());
       assertNull(created.status());
-      waitUntilComplete(ZONE1.name(), "10");
+      waitForChangeToComplete(ZONE1.name(), "10");
     } finally {
       clear();
     }
@@ -629,13 +636,13 @@ public class ITDnsTest {
       assertEquals(1, changes.size()); // default change creating SOA and NS
       // zone has changes
       ChangeRequest change = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1);
-      waitUntilComplete(ZONE1.name(), change.id());
+      waitForChangeToComplete(ZONE1.name(), change.id());
       change = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
-      waitUntilComplete(ZONE1.name(), change.id());
+      waitForChangeToComplete(ZONE1.name(), change.id());
       change = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1);
-      waitUntilComplete(ZONE1.name(), change.id());
+      waitForChangeToComplete(ZONE1.name(), change.id());
       change = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
-      waitUntilComplete(ZONE1.name(), change.id());
+      waitForChangeToComplete(ZONE1.name(), change.id());
       changes = ImmutableList.copyOf(DNS.listChangeRequests(ZONE1.name()).iterateAll());
       assertEquals(5, changes.size());
       // error in options
@@ -726,7 +733,7 @@ public class ITDnsTest {
       ChangeRequest created = zone.applyChangeRequest(CHANGE_ADD_ZONE1);
       ChangeRequest retrieved = DNS.getChangeRequest(zone.name(), created.id());
       assertEqChangesIgnoreStatus(created, retrieved);
-      waitUntilComplete(zone.name(), created.id());
+      waitForChangeToComplete(zone.name(), created.id());
       zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
       // with options
       created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
@@ -734,35 +741,35 @@ public class ITDnsTest {
       retrieved = DNS.getChangeRequest(zone.name(), created.id(),
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ID));
       assertEqChangesIgnoreStatus(created, retrieved);
-      waitUntilComplete(zone.name(), created.id());
+      waitForChangeToComplete(zone.name(), created.id());
       zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
       created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
       retrieved = DNS.getChangeRequest(zone.name(), created.id(),
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
       assertEqChangesIgnoreStatus(created, retrieved);
-      waitUntilComplete(zone.name(), created.id());
+      waitForChangeToComplete(zone.name(), created.id());
       zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
       created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME));
       retrieved = DNS.getChangeRequest(zone.name(), created.id(),
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME));
       assertEqChangesIgnoreStatus(created, retrieved);
-      waitUntilComplete(zone.name(), created.id());
+      waitForChangeToComplete(zone.name(), created.id());
       zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
       created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ADDITIONS));
       retrieved = DNS.getChangeRequest(zone.name(), created.id(),
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ADDITIONS));
       assertEqChangesIgnoreStatus(created, retrieved);
-      waitUntilComplete(zone.name(), created.id());
+      waitForChangeToComplete(zone.name(), created.id());
       // finishes with delete otherwise we cannot delete the zone
       created = zone.applyChangeRequest(CHANGE_DELETE_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.DELETIONS));
       retrieved = DNS.getChangeRequest(zone.name(), created.id(),
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.DELETIONS));
       assertEqChangesIgnoreStatus(created, retrieved);
-      waitUntilComplete(zone.name(), created.id());
+      waitForChangeToComplete(zone.name(), created.id());
     } finally {
       clear();
     }
@@ -854,7 +861,7 @@ public class ITDnsTest {
       assertEquals(1, ImmutableList.copyOf(dnsRecordPage.values().iterator()).size());
       // test name filter
       ChangeRequest change = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1);
-      waitUntilComplete(ZONE1.name(), change.id());
+      waitForChangeToComplete(ZONE1.name(), change.id());
       dnsRecordIterator = DNS.listDnsRecords(ZONE1.name(),
           Dns.DnsRecordListOption.dnsName(A_RECORD_ZONE1.name())).iterateAll();
       counter = 0;
@@ -866,7 +873,7 @@ public class ITDnsTest {
       }
       assertEquals(2, counter);
       // test type filter
-      waitUntilComplete(ZONE1.name(), change.id());
+      waitForChangeToComplete(ZONE1.name(), change.id());
       dnsRecordIterator = DNS.listDnsRecords(ZONE1.name(),
           Dns.DnsRecordListOption.dnsName(A_RECORD_ZONE1.name()),
           Dns.DnsRecordListOption.type(A_RECORD_ZONE1.type()))
@@ -905,7 +912,7 @@ public class ITDnsTest {
         assertEquals(400, ex.code());
         // todo(mderka) test retry functionality when available
       }
-      waitUntilComplete(ZONE1.name(), change.id());
+      waitForChangeToComplete(ZONE1.name(), change.id());
     } finally {
       clear();
     }
