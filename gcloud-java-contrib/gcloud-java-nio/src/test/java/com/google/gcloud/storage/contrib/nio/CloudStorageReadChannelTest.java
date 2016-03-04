@@ -22,6 +22,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.NonWritableChannelException;
@@ -42,7 +43,7 @@ public class CloudStorageReadChannelTest {
   private final ReadChannel gcsChannel = mock(ReadChannel.class);
 
   @Before
-  public void before() throws Exception {
+  public void before() throws IOException {
     when(gcsStorage.get(file)).thenReturn(metadata);
     when(gcsStorage.reader(eq(file))).thenReturn(gcsChannel);
     when(gcsChannel.isOpen()).thenReturn(true);
@@ -52,7 +53,7 @@ public class CloudStorageReadChannelTest {
   }
 
   @Test
-  public void testRead() throws Exception {
+  public void testRead() throws IOException {
     ByteBuffer buffer = ByteBuffer.allocate(1);
     when(gcsChannel.read(eq(buffer))).thenReturn(1);
     assertThat(chan.position()).isEqualTo(0L);
@@ -64,26 +65,26 @@ public class CloudStorageReadChannelTest {
   }
 
   @Test
-  public void testRead_whenClosed_throwsCce() throws Exception {
+  public void testRead_whenClosed_throwsCce() throws IOException {
     when(gcsChannel.isOpen()).thenReturn(false);
     thrown.expect(ClosedChannelException.class);
     chan.read(ByteBuffer.allocate(1));
   }
 
   @Test
-  public void testWrite_throwsNonWritableChannelException() throws Exception {
+  public void testWrite_throwsNonWritableChannelException() throws IOException {
     thrown.expect(NonWritableChannelException.class);
     chan.write(ByteBuffer.allocate(1));
   }
 
   @Test
-  public void testTruncate_throwsNonWritableChannelException() throws Exception {
+  public void testTruncate_throwsNonWritableChannelException() throws IOException {
     thrown.expect(NonWritableChannelException.class);
     chan.truncate(0);
   }
 
   @Test
-  public void testIsOpen() throws Exception {
+  public void testIsOpen() throws IOException {
     when(gcsChannel.isOpen()).thenReturn(true).thenReturn(false);
     assertThat(chan.isOpen()).isTrue();
     chan.close();
@@ -94,7 +95,7 @@ public class CloudStorageReadChannelTest {
   }
 
   @Test
-  public void testSize() throws Exception {
+  public void testSize() throws IOException {
     assertThat(chan.size()).isEqualTo(42L);
     verify(gcsChannel).isOpen();
     verifyZeroInteractions(gcsChannel);
@@ -102,35 +103,35 @@ public class CloudStorageReadChannelTest {
   }
 
   @Test
-  public void testSize_whenClosed_throwsCce() throws Exception {
+  public void testSize_whenClosed_throwsCce() throws IOException {
     when(gcsChannel.isOpen()).thenReturn(false);
     thrown.expect(ClosedChannelException.class);
     chan.size();
   }
 
   @Test
-  public void testPosition_whenClosed_throwsCce() throws Exception {
+  public void testPosition_whenClosed_throwsCce() throws IOException {
     when(gcsChannel.isOpen()).thenReturn(false);
     thrown.expect(ClosedChannelException.class);
     chan.position();
   }
 
   @Test
-  public void testSetPosition_whenClosed_throwsCce() throws Exception {
+  public void testSetPosition_whenClosed_throwsCce() throws IOException {
     when(gcsChannel.isOpen()).thenReturn(false);
     thrown.expect(ClosedChannelException.class);
     chan.position(0);
   }
 
   @Test
-  public void testClose_calledMultipleTimes_doesntThrowAnError() throws Exception {
+  public void testClose_calledMultipleTimes_doesntThrowAnError() throws IOException {
     chan.close();
     chan.close();
     chan.close();
   }
 
   @Test
-  public void testSetPosition() throws Exception {
+  public void testSetPosition() throws IOException {
     assertThat(chan.position()).isEqualTo(0L);
     assertThat(chan.size()).isEqualTo(42L);
     chan.position(1L);

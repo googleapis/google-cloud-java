@@ -18,11 +18,10 @@ import java.nio.file.attribute.UserPrincipalLookupService;
 import java.util.Objects;
 import java.util.Set;
 
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 /**
- * Google Cloud Storage {@link FileSystem}
+ * Google Cloud Storage {@link FileSystem} implementation.
  *
  * @see <a href="https://developers.google.com/storage/docs/concepts-techniques#concepts">
  *        Concepts and Terminology</a>
@@ -33,7 +32,7 @@ import javax.annotation.concurrent.Immutable;
 public final class CloudStorageFileSystem extends FileSystem {
 
   /**
-   * Returns Google Cloud Storage {@link FileSystem} object for a given bucket name.
+   * Returns Google Cloud Storage {@link FileSystem} object for {@code bucket}.
    *
    * <p><b>NOTE:</b> You may prefer to use Java's standard API instead:<pre>   {@code
    *
@@ -52,7 +51,7 @@ public final class CloudStorageFileSystem extends FileSystem {
   }
 
   /**
-   * Creates a new filesystem for a particular bucket, with customizable settings.
+   * Creates new file system instance for {@code bucket}, with customizable settings.
    *
    * @see #forBucket(String)
    */
@@ -88,21 +87,21 @@ public final class CloudStorageFileSystem extends FileSystem {
   }
 
   /**
-   * Returns the Cloud Storage bucket name being served by this file system.
+   * Returns Cloud Storage bucket name being served by this file system.
    */
   public String bucket() {
     return bucket;
   }
 
   /**
-   * Returns the configuration object for this filesystem instance.
+   * Returns configuration object for this file system instance.
    */
   public CloudStorageConfiguration config() {
     return config;
   }
 
   /**
-   * Converts a cloud storage object name to a {@link Path} object.
+   * Converts Cloud Storage object name to a {@link Path} object.
    */
   @Override
   public CloudStoragePath getPath(String first, String... more) {
@@ -186,7 +185,7 @@ public final class CloudStorageFileSystem extends FileSystem {
   }
 
   @Override
-  public boolean equals(@Nullable Object other) {
+  public boolean equals(Object other) {
     return this == other
         || other instanceof CloudStorageFileSystem
             && Objects.equals(config, ((CloudStorageFileSystem) other).config)

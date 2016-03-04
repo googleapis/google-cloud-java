@@ -360,7 +360,7 @@ public class UnixPathTest {
   }
 
   @Test
-  public void testEquals_equalsTester() throws Exception {
+  public void testEquals_equalsTester() {
     new EqualsTester()
         .addEqualityGroup(p("/lol"), p("/lol"))
         .addEqualityGroup(p("/lol//"), p("/lol//"))
@@ -369,8 +369,9 @@ public class UnixPathTest {
   }
 
   @Test
-  public void testNullness() {
+  public void testNullness() throws Exception {
     NullPointerTester tester = new NullPointerTester();
+    tester.ignore(UnixPath.class.getMethod("equals", Object.class));
     tester.testAllPublicStaticMethods(UnixPath.class);
     tester.testAllPublicInstanceMethods(p("solo"));
   }

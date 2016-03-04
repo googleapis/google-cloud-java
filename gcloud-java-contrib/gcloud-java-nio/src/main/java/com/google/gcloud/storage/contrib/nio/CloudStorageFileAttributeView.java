@@ -12,7 +12,6 @@ import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.FileTime;
 import java.util.Objects;
 
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 /**
@@ -59,7 +58,7 @@ public final class CloudStorageFileAttributeView implements BasicFileAttributeVi
   }
 
   @Override
-  public boolean equals(@Nullable Object other) {
+  public boolean equals(Object other) {
     return this == other
         || other instanceof CloudStorageFileAttributeView
             && Objects.equals(storage, ((CloudStorageFileAttributeView) other).storage)

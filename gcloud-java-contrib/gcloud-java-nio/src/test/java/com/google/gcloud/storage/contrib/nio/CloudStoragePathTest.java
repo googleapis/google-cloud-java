@@ -15,11 +15,11 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.io.IOException;
 import java.net.URI;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.nio.file.ProviderMismatchException;
 
 /**
@@ -269,7 +269,6 @@ public class CloudStoragePathTest {
   }
 
   @Test
-  @SuppressWarnings("null")
   public void testGetParent_preserveTrailingSlash() {
     try (CloudStorageFileSystem fs = forBucket("doodle")) {
       assertThat(fs.getPath("a/b/c").getParent().toString()).isEqualTo("a/b/");
@@ -282,7 +281,6 @@ public class CloudStoragePathTest {
   }
 
   @Test
-  @SuppressWarnings("null")
   public void testGetRoot() {
     try (CloudStorageFileSystem fs = forBucket("doodle")) {
       assertThat(fs.getPath("/hello").getRoot().toString()).isEqualTo("/");
@@ -301,18 +299,18 @@ public class CloudStoragePathTest {
 
   @Test
   public void testRelativize_providerMismatch() {
-    try (CloudStorageFileSystem fs = forBucket("doodle")) {
+    try (CloudStorageFileSystem gcs = forBucket("doodle")) {
       thrown.expect(ProviderMismatchException.class);
-      fs.getPath("/etc").relativize(Paths.get("/dog"));
+      gcs.getPath("/etc").relativize(FileSystems.getDefault().getPath("/dog"));
     }
   }
 
   @Test
   @SuppressWarnings("ReturnValueIgnored") // testing that an Exception is thrown
   public void testRelativize_providerMismatch2() {
-    try (CloudStorageFileSystem fs = forBucket("doodle")) {
+    try (CloudStorageFileSystem gcs = forBucket("doodle")) {
       thrown.expect(ProviderMismatchException.class);
-      Paths.get("/dog").relativize(fs.getPath("/etc"));
+      gcs.getPath("/dog").relativize(FileSystems.getDefault().getPath("/etc"));
     }
   }
 
@@ -326,9 +324,9 @@ public class CloudStoragePathTest {
 
   @Test
   public void testResolve_providerMismatch() {
-    try (CloudStorageFileSystem fs = forBucket("doodle")) {
+    try (CloudStorageFileSystem gcs = forBucket("doodle")) {
       thrown.expect(ProviderMismatchException.class);
-      fs.getPath("etc").resolve(Paths.get("/dog"));
+      gcs.getPath("etc").resolve(FileSystems.getDefault().getPath("/dog"));
     }
   }
 
@@ -356,7 +354,6 @@ public class CloudStoragePathTest {
   }
 
   @Test
-  @SuppressWarnings("null")
   public void testGetFileName() {
     try (CloudStorageFileSystem fs = forBucket("doodle")) {
       assertThat(fs.getPath("/hi/there").getFileName().toString()).isEqualTo("there");
@@ -402,10 +399,9 @@ public class CloudStoragePathTest {
     }
   }
 
-  /** @see "http://stackoverflow.com/a/10068306".
-   */
   @Test
-  public void testResolve_willWorkWithRecursiveCopy() throws Exception {
+  public void testResolve_willWorkWithRecursiveCopy() throws IOException {
+    // See: http://stackoverflow.com/a/10068306
     try (FileSystem fsSource = FileSystems.getFileSystem(URI.create("gs://hello"));
         FileSystem fsTarget = FileSystems.getFileSystem(URI.create("gs://cat"))) {
       Path targetPath = fsTarget.getPath("/some/folder/");
@@ -415,10 +411,9 @@ public class CloudStoragePathTest {
     }
   }
 
-  /** @see "http://stackoverflow.com/a/10068306".
-   */
   @Test
-  public void testRelativize_willWorkWithRecursiveCopy() throws Exception {
+  public void testRelativize_willWorkWithRecursiveCopy() throws IOException {
+    // See: http://stackoverflow.com/a/10068306
     try (FileSystem fsSource = FileSystems.getFileSystem(URI.create("gs://hello"));
         FileSystem fsTarget = FileSystems.getFileSystem(URI.create("gs://cat"))) {
       Path targetPath = fsTarget.getPath("/some/folder/");
@@ -465,9 +460,11 @@ public class CloudStoragePathTest {
   }
 
   @Test
-  public void testNullness() {
+  public void testNullness() throws NoSuchMethodException, SecurityException {
     try (CloudStorageFileSystem fs = forBucket("doodle")) {
-      NullPointerTester tester = new NullPointerTester().setDefault(Path.class, fs.getPath("sup"));
+      NullPointerTester tester = new NullPointerTester();
+      tester.ignore(CloudStoragePath.class.getMethod("equals", Object.class));
+      tester.setDefault(Path.class, fs.getPath("sup"));
       tester.testAllPublicStaticMethods(CloudStoragePath.class);
       tester.testAllPublicInstanceMethods(fs.getPath("sup"));
     }

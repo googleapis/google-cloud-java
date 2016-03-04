@@ -10,7 +10,7 @@ import java.nio.file.attribute.FileTime;
 import java.util.List;
 
 /**
- * Metadata for a cloud storage pseudo-directory.
+ * Metadata for a Cloud Storage pseudo-directory.
  */
 final class CloudStoragePseudoDirectoryAttributes implements CloudStorageFileAttributes {
 
