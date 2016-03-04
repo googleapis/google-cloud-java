@@ -168,7 +168,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   }
 
   /**
-   * Create a new project.
+   * Creates a new project.
    *
    * <p>Initially, the project resource is owned by its creator exclusively. The creator can later
    * grant permission to others to read or update the project. Several APIs are activated

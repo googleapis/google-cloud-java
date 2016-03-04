@@ -75,17 +75,51 @@ public interface ResourceManagerRpc {
     }
   }
 
-  Project create(Project project) throws ResourceManagerException;
+  /**
+   * Creates a new project.
+   *
+   * @throws ResourceManagerException upon failure
+   */
+  Project create(Project project);
 
-  void delete(String projectId) throws ResourceManagerException;
+  /**
+   * Marks the project identified by the specified project ID for deletion.
+   *
+   * @throws ResourceManagerException upon failure
+   */
+  void delete(String projectId);
 
-  Project get(String projectId, Map<Option, ?> options) throws ResourceManagerException;
+  /**
+   * Retrieves the project identified by the specified project ID. Returns {@code null} if the
+   * project is not found or if the user doesn't have read permissions for the project.
+   *
+   * @throws ResourceManagerException upon failure
+   */
+  Project get(String projectId, Map<Option, ?> options);
 
-  Tuple<String, Iterable<Project>> list(Map<Option, ?> options) throws ResourceManagerException;
+  /**
+   * Lists the projects visible to the current user.
+   *
+   * @throws ResourceManagerException upon failure
+   */
+  Tuple<String, Iterable<Project>> list(Map<Option, ?> options);
 
-  void undelete(String projectId) throws ResourceManagerException;
+  /**
+   * Restores the project identified by the specified project ID. Undelete will only succeed if the
+   * project has a lifecycle state of {@code DELETE_REQUESTED} state. The caller must have modify
+   * permissions for this project.
+   *
+   * @throws ResourceManagerException upon failure
+   */
+  void undelete(String projectId);
 
-  Project replace(Project project) throws ResourceManagerException;
+  /**
+   * Replaces the attributes of the project. The caller must have modify permissions for this
+   * project.
+   *
+   * @throws ResourceManagerException upon failure
+   */
+  Project replace(Project project);
 
   // TODO(ajaykannan): implement "Organization" functionality when available (issue #319)
 }
