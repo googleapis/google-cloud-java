@@ -90,6 +90,7 @@ import java.util.zip.GZIPInputStream;
  * validation of the DNS data for records of type A and AAAA. It does not validate any other record
  * types.
  */
+@SuppressWarnings("restriction")
 public class LocalDnsHelper {
 
   private final ConcurrentSkipListMap<String, ProjectContainer> projects
@@ -106,6 +107,7 @@ public class LocalDnsHelper {
   private static final TreeSet<String> FORBIDDEN = Sets.newTreeSet(
       ImmutableList.of("google.com.", "com.", "example.com.", "net.", "org."));
   private static final Pattern ZONE_NAME_RE = Pattern.compile("[a-z][a-z0-9-]*");
+  private final String projectId;
 
   static {
     try {
@@ -357,9 +359,10 @@ public class LocalDnsHelper {
     }
   }
 
-  private LocalDnsHelper(long delay) {
+  private LocalDnsHelper(String projectId, long delay) {
     this.delayChange = delay;
     try {
+      this.projectId = projectId;
       server = HttpServer.create(new InetSocketAddress(0), 0);
       port = server.getAddress().getPort();
       server.createContext(CONTEXT, new RequestHandler());
@@ -383,8 +386,8 @@ public class LocalDnsHelper {
    *
    * @param delay delay for processing changes in ms or 0 for synchronous processing
    */
-  public static LocalDnsHelper create(Long delay) {
-    return new LocalDnsHelper(delay);
+  public static LocalDnsHelper create(String projectId, Long delay) {
+    return new LocalDnsHelper(projectId, delay);
   }
 
   /**
@@ -392,7 +395,7 @@ public class LocalDnsHelper {
    */
   public DnsOptions options() {
     try {
-      return DnsOptions.builder().host("http://localhost:" + port).build();
+      return DnsOptions.builder().projectId(projectId).host("http://localhost:" + port).build();
     } catch (Exception e) {
       e.printStackTrace();
       return null;

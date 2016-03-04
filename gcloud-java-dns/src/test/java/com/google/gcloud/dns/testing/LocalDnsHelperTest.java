@@ -64,7 +64,8 @@ public class LocalDnsHelperTest {
   private static final Change CHANGE2 = new Change();
   private static final Change CHANGE_KEEP = new Change();
   private static final Change CHANGE_COMPLEX = new Change();
-  private static final LocalDnsHelper LOCAL_DNS_HELPER = LocalDnsHelper.create(0L); // synchronous
+  private static final LocalDnsHelper LOCAL_DNS_HELPER =
+      LocalDnsHelper.create("someprojectid", 0L); // synchronous
   private static final Map<DnsRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
   private static final DnsRpc RPC = new DefaultDnsRpc(LOCAL_DNS_HELPER.options());
   private static final String REAL_PROJECT_ID = LOCAL_DNS_HELPER.options().projectId();
@@ -396,7 +397,7 @@ public class LocalDnsHelperTest {
 
   @Test
   public void testCreateAndApplyChangeWithThreads() {
-    LocalDnsHelper localDnsThreaded = LocalDnsHelper.create(50L);
+    LocalDnsHelper localDnsThreaded = LocalDnsHelper.create("someprojectid", 50L);
     localDnsThreaded.start();
     DnsRpc rpc = new DefaultDnsRpc(localDnsThreaded.options());
     executeCreateAndApplyChangeTest(rpc);
