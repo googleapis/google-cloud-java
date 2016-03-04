@@ -21,21 +21,19 @@ import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.Topic;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import com.google.api.gax.grpc.ServiceApiSettings;
-
 import io.grpc.ManagedChannel;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class PublisherApiTest {
   private static LocalPubsubHelper pubsubHelper;
@@ -57,16 +55,13 @@ public class PublisherApiTest {
   public void setUp() throws Exception {
     ManagedChannel channel = pubsubHelper.createChannel();
 
-    publisherApi =
-        PublisherApi.create(
-            ServiceApiSettings.<PublisherApi.MethodIdentifier>builder()
-                .provideChannelWith(channel)
-                .build());
-    subscriberApi =
-        SubscriberApi.create(
-            ServiceApiSettings.<SubscriberApi.MethodIdentifier>builder()
-                .provideChannelWith(channel)
-                .build());
+    PublisherSettings publisherSettings = PublisherApi.newSettings();
+    publisherSettings.provideChannelWith(channel);
+    publisherApi = PublisherApi.create(publisherSettings);
+
+    SubscriberSettings subscriberSettings = SubscriberApi.newSettings();
+    subscriberSettings.provideChannelWith(channel);
+    subscriberApi = SubscriberApi.create(subscriberSettings);
   }
 
   @After
