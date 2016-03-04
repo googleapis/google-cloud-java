@@ -90,81 +90,75 @@ public interface ComputeRpc {
    *
    * @throws ComputeException upon failure
    */
-  DiskType getDiskType(String zone, String diskType, Map<Option, ?> options)
-      throws ComputeException;
+  DiskType getDiskType(String zone, String diskType, Map<Option, ?> options);
 
   /**
-   * Lists the disk types in the provided zone available to the current project.
+   * Lists the disk types in the provided zone.
    *
    * @throws ComputeException upon failure
    */
-  Tuple<String, Iterable<DiskType>> listDiskTypes(String zone, Map<Option, ?> options)
-      throws ComputeException;
+  Tuple<String, Iterable<DiskType>> listDiskTypes(String zone, Map<Option, ?> options);
 
   /**
-   * Lists all disk types available to the current project.
+   * Lists all disk types.
    *
    * @throws ComputeException upon failure
    */
-  Tuple<String, Iterable<DiskType>> listDiskTypes(Map<Option, ?> options) throws ComputeException;
+  Tuple<String, Iterable<DiskType>> listDiskTypes(Map<Option, ?> options);
 
   /**
    * Returns the requested machine type or {@code null} if not found.
    *
    * @throws ComputeException upon failure
    */
-  MachineType getMachineType(String zone, String diskType, Map<Option, ?> options)
-      throws ComputeException;
+  MachineType getMachineType(String zone, String diskType, Map<Option, ?> options);
 
   /**
-   * Lists the machine types in the provided zone available to the current project.
+   * Lists the machine types in the provided zone.
    *
    * @throws ComputeException upon failure
    */
-  Tuple<String, Iterable<MachineType>> listMachineTypes(String zone, Map<Option, ?> options)
-      throws ComputeException;
+  Tuple<String, Iterable<MachineType>> listMachineTypes(String zone, Map<Option, ?> options);
 
   /**
-   * Lists all machine types available to the current project.
+   * Lists all machine types.
    *
    * @throws ComputeException upon failure
    */
-  Tuple<String, Iterable<MachineType>> listMachineTypes(Map<Option, ?> options)
-      throws ComputeException;
+  Tuple<String, Iterable<MachineType>> listMachineTypes(Map<Option, ?> options);
 
   /**
    * Returns the requested region or {@code null} if not found.
    *
    * @throws ComputeException upon failure
    */
-  Region getRegion(String region, Map<Option, ?> options) throws ComputeException;
+  Region getRegion(String region, Map<Option, ?> options);
 
   /**
-   * Lists the regions available to the current project.
+   * Lists the regions.
    *
    * @throws ComputeException upon failure
    */
-  Tuple<String, Iterable<Region>> listRegions(Map<Option, ?> options) throws ComputeException;
+  Tuple<String, Iterable<Region>> listRegions(Map<Option, ?> options);
 
   /**
    * Returns the requested zone or {@code null} if not found.
    *
    * @throws ComputeException upon failure
    */
-  Zone getZone(String zone, Map<Option, ?> options) throws ComputeException;
+  Zone getZone(String zone, Map<Option, ?> options);
 
   /**
-   * Lists the zones available to the current project.
+   * Lists the zones.
    *
    * @throws ComputeException upon failure
    */
-  Tuple<String, Iterable<Zone>> listZones(Map<Option, ?> options) throws ComputeException;
+  Tuple<String, Iterable<Zone>> listZones(Map<Option, ?> options);
 
   /**
    * Returns the requested license or {@code null} if not found.
    *
    * @throws ComputeException upon failure
    */
-  License getLicense(String project, String license, Map<Option, ?> options)
-      throws ComputeException;
+  License getLicense(String project, String license, Map<Option, ?> options);
 }

@@ -17,8 +17,11 @@
 package com.google.gcloud.compute.it;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import com.google.gcloud.Page;
 import com.google.gcloud.compute.Compute;
@@ -87,6 +90,7 @@ public class ITComputeTest {
   public void testListDiskTypes() {
     Page<DiskType> diskPage = compute.listDiskTypes(ZONE);
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
+    assertTrue(diskTypeIterator.hasNext());
     while(diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
       // todo(mziccard): uncomment or remove once #695 is closed
@@ -105,6 +109,7 @@ public class ITComputeTest {
     Page<DiskType> diskPage = compute.listDiskTypes(ZONE,
         Compute.DiskTypeListOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
+    assertTrue(diskTypeIterator.hasNext());
     while(diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
       assertNull(diskType.id());
@@ -118,9 +123,29 @@ public class ITComputeTest {
   }
 
   @Test
+  public void testListDiskTypesWithFilter() {
+    Page<DiskType> diskPage = compute.listDiskTypes(ZONE, Compute.DiskTypeListOption.filter(
+        Compute.DiskTypeFilter.equals(Compute.DiskTypeField.DEFAULT_DISK_SIZE_GB, 375)));
+    Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
+    assertTrue(diskTypeIterator.hasNext());
+    while(diskTypeIterator.hasNext()) {
+      DiskType diskType = diskTypeIterator.next();
+      // todo(mziccard): uncomment or remove once #695 is closed
+      // assertNotNull(diskType.id());
+      assertNotNull(diskType.diskTypeId());
+      assertEquals(ZONE, diskType.diskTypeId().zone());
+      assertNotNull(diskType.creationTimestamp());
+      assertNotNull(diskType.description());
+      assertNotNull(diskType.validDiskSize());
+      assertEquals(375, (long) diskType.defaultDiskSizeGb());
+    }
+  }
+
+  @Test
   public void testAggregatedListDiskTypes() {
     Page<DiskType> diskPage = compute.listDiskTypes();
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
+    assertTrue(diskTypeIterator.hasNext());
     while(diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
       // todo(mziccard): uncomment or remove once #695 is closed
@@ -134,19 +159,20 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testAggregatedListDiskTypesWithSelectedFields() {
-    Page<DiskType> diskPage = compute.listDiskTypes(
-        Compute.DiskTypeListOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
+  public void testAggregatedListDiskTypesWithFilter() {
+    Page<DiskType> diskPage = compute.listDiskTypes(Compute.DiskTypeAggregatedListOption.filter(
+        Compute.DiskTypeFilter.notEquals(Compute.DiskTypeField.DEFAULT_DISK_SIZE_GB, 375)));
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
+    assertTrue(diskTypeIterator.hasNext());
     while(diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
-      assertNull(diskType.id());
+      // todo(mziccard): uncomment or remove once #695 is closed
+      // assertNotNull(diskType.id());
       assertNotNull(diskType.diskTypeId());
-      assertEquals(ZONE, diskType.diskTypeId().zone());
       assertNotNull(diskType.creationTimestamp());
-      assertNull(diskType.description());
-      assertNull(diskType.validDiskSize());
-      assertNull(diskType.defaultDiskSizeGb());
+      assertNotNull(diskType.description());
+      assertNotNull(diskType.validDiskSize());
+      assertNotEquals(375, (long) diskType.defaultDiskSizeGb());
     }
   }
 
@@ -183,6 +209,7 @@ public class ITComputeTest {
   public void testListMachineTypes() {
     Page<MachineType> machinePage = compute.listMachineTypes(ZONE);
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
+    assertTrue(machineTypeIterator.hasNext());
     while(machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
@@ -202,6 +229,7 @@ public class ITComputeTest {
     Page<MachineType> machinePage = compute.listMachineTypes(ZONE,
         Compute.MachineTypeListOption.fields(Compute.MachineTypeField.CREATION_TIMESTAMP));
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
+    assertTrue(machineTypeIterator.hasNext());
     while(machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
@@ -217,9 +245,32 @@ public class ITComputeTest {
   }
 
   @Test
+  public void testListMachineTypesWithFilter() {
+    Page<MachineType> machinePage = compute.listMachineTypes(ZONE,
+        Compute.MachineTypeListOption.filter(
+            Compute.MachineTypeFilter.equals(Compute.MachineTypeField.GUEST_CPUS, 2)));
+    Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
+    assertTrue(machineTypeIterator.hasNext());
+    while(machineTypeIterator.hasNext()) {
+      MachineType machineType = machineTypeIterator.next();
+      assertNotNull(machineType.machineTypeId());
+      assertEquals(ZONE, machineType.machineTypeId().zone());
+      assertNotNull(machineType.id());
+      assertNotNull(machineType.creationTimestamp());
+      assertNotNull(machineType.description());
+      assertNotNull(machineType.cpus());
+      assertEquals(2, (long) machineType.cpus());
+      assertNotNull(machineType.memoryMb());
+      assertNotNull(machineType.maximumPersistentDisks());
+      assertNotNull(machineType.maximumPersistentDisksSizeGb());
+    }
+  }
+
+  @Test
   public void testAggregatedListMachineTypes() {
     Page<MachineType> machinePage = compute.listMachineTypes();
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
+    assertTrue(machineTypeIterator.hasNext());
     while(machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
@@ -234,20 +285,23 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testAggregatedListMachineTypesWithSelectedFields() {
-    Page<MachineType> machinePage = compute.listMachineTypes(
-        Compute.MachineTypeListOption.fields(Compute.MachineTypeField.CREATION_TIMESTAMP));
+  public void testAggregatedListMachineTypesWithFilter() {
+    Page<MachineType> machinePage =
+        compute.listMachineTypes(Compute.MachineTypeAggregatedListOption.filter(
+            Compute.MachineTypeFilter.notEquals(Compute.MachineTypeField.GUEST_CPUS, 2)));
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
+    assertTrue(machineTypeIterator.hasNext());
     while(machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
-      assertNull(machineType.id());
+      assertNotNull(machineType.id());
       assertNotNull(machineType.creationTimestamp());
-      assertNull(machineType.description());
-      assertNull(machineType.cpus());
-      assertNull(machineType.memoryMb());
-      assertNull(machineType.maximumPersistentDisks());
-      assertNull(machineType.maximumPersistentDisksSizeGb());
+      assertNotNull(machineType.description());
+      assertNotNull(machineType.cpus());
+      assertNotEquals(2, (long) machineType.cpus());
+      assertNotNull(machineType.memoryMb());
+      assertNotNull(machineType.maximumPersistentDisks());
+      assertNotNull(machineType.maximumPersistentDisksSizeGb());
     }
   }
 
@@ -323,6 +377,15 @@ public class ITComputeTest {
   }
 
   @Test
+  public void testListRegionsWithFilter() {
+    Page<Region> regionPage = compute.listRegions(Compute.RegionListOption.filter(
+        Compute.RegionFilter.equals(Compute.RegionField.NAME, REGION)));
+    Iterator<Region> regionIterator = regionPage.iterateAll();
+    assertEquals(REGION, regionIterator.next().regionId().region());
+    assertFalse(regionIterator.hasNext());
+  }
+
+  @Test
   public void testGetZone() {
     Zone zone = compute.getZone(ZONE);
     assertEquals(ZONE, zone.zoneId().zone());
@@ -374,5 +437,14 @@ public class ITComputeTest {
       assertNull(zone.status());
       assertNull(zone.region());
     }
+  }
+
+  @Test
+  public void testListZonesWithFilter() {
+    Page<Zone> zonePage = compute.listZones(
+        Compute.ZoneListOption.filter(Compute.ZoneFilter.equals(Compute.ZoneField.NAME, ZONE)));
+    Iterator<Zone> zoneIterator = zonePage.iterateAll();
+    assertEquals(ZONE, zoneIterator.next().zoneId().zone());
+    assertFalse(zoneIterator.hasNext());
   }
 }
