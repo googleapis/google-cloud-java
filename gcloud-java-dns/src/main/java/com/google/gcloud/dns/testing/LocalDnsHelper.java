@@ -391,7 +391,12 @@ public class LocalDnsHelper {
    * Returns a {@link DnsOptions} instance that sets the host to use the mock server.
    */
   public DnsOptions options() {
-    return DnsOptions.builder().host("http://localhost:" + port).build();
+    try {
+      return DnsOptions.builder().host("http://localhost:" + port).build();
+    } catch (Exception e) {
+      e.printStackTrace();
+      return null;
+    }
   }
 
   /**
