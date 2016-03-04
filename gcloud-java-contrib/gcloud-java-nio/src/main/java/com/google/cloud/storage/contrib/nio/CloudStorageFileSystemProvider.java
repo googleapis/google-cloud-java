@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.ThreadSafe;
 
 /**
- * Google Cloud Storage {@link FileSystemProvider}.
+ * Google Cloud Storage {@link FileSystemProvider} implementation.
  */
 @ThreadSafe
 @AutoService(FileSystemProvider.class)
@@ -99,7 +99,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Returns cloud storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
+   * Returns Cloud Storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
    */
   @Override
   public CloudStorageFileSystem getFileSystem(URI uri) {
@@ -107,7 +107,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Returns cloud storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
+   * Returns Cloud Storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
    */
   @Override
   public CloudStorageFileSystem newFileSystem(URI uri, Map<String, ?> env) {
@@ -537,7 +537,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   @Override
-  public boolean equals(@Nullable Object other) {
+  public boolean equals(Object other) {
     return this == other
         || other instanceof CloudStorageFileSystemProvider
             && Objects.equals(storage, ((CloudStorageFileSystemProvider) other).storage);

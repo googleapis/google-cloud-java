@@ -273,7 +273,7 @@ public final class CloudStoragePath implements Path {
   }
 
   @Override
-  public boolean equals(@Nullable Object other) {
+  public boolean equals(Object other) {
     return this == other
         || other instanceof CloudStoragePath
             && Objects.equals(bucket(), ((CloudStoragePath) other).bucket())

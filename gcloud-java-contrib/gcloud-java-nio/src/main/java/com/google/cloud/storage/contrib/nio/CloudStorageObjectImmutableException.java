@@ -1,7 +1,7 @@
 package com.google.cloud.storage.contrib.nio;
 
 /**
- * Exception thrown to indicate we don't support a mutation of a cloud storage object.
+ * Exception reminding user that Cloud Storage objects can't be mutated.
  */
 public final class CloudStorageObjectImmutableException extends UnsupportedOperationException {
 

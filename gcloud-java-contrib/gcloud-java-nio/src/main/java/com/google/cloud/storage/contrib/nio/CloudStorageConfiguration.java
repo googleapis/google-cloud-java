@@ -7,13 +7,13 @@ import com.google.auto.value.AutoValue;
 import java.util.Map;
 
 /**
- * Configuration for a {@link CloudStorageFileSystem} instance.
+ * Configuration for {@link CloudStorageFileSystem} instances.
  */
 @AutoValue
 public abstract class CloudStorageConfiguration {
 
   /**
-   * Returns path of the current working directory. This defaults to the root directory.
+   * Returns path of current working directory. This defaults to the root directory.
    */
   public abstract String workingDirectory();
 
@@ -31,10 +31,14 @@ public abstract class CloudStorageConfiguration {
    */
   public abstract boolean stripPrefixSlash();
 
-  /** Return {@code true} if paths with a trailing slash should be treated as fake directories. */
+  /**
+   * Returns {@code true} if paths with a trailing slash should be treated as fake directories.
+   */
   public abstract boolean usePseudoDirectories();
 
-  /** Returns the block size (in bytes) used when talking to the GCS HTTP server. */
+  /**
+   * Returns block size (in bytes) used when talking to the GCS HTTP server.
+   */
   public abstract int blockSize();
 
   /**
@@ -50,7 +54,8 @@ public abstract class CloudStorageConfiguration {
     return new Builder();
   }
 
-  /** Builder for {@link CloudStorageConfiguration}.
+  /**
+   * Builder for {@link CloudStorageConfiguration}.
    */
   public static final class Builder {
 
@@ -61,8 +66,8 @@ public abstract class CloudStorageConfiguration {
     private int blockSize = CloudStorageFileSystem.BLOCK_SIZE_DEFAULT;
 
     /**
-     * Changes the current working directory for a new filesystem. This cannot be changed once it's
-     * been set. You'll need to simply create another filesystem object.
+     * Changes current working directory for new filesystem. This cannot be changed once it's
+     * been set. You'll need to create another {@link CloudStorageFileSystem} object.
      *
      * @throws IllegalArgumentException if {@code path} is not absolute.
      */
@@ -92,7 +97,8 @@ public abstract class CloudStorageConfiguration {
       return this;
     }
 
-    /** Configures if paths with a trailing slash should be treated as fake directories.
+    /**
+     * Configures if paths with a trailing slash should be treated as fake directories.
      */
     public Builder usePseudoDirectories(boolean value) {
       usePseudoDirectories = value;
@@ -109,7 +115,8 @@ public abstract class CloudStorageConfiguration {
       return this;
     }
 
-    /** Creates a new instance, but does not destroy the builder.
+    /**
+     * Creates new instance without destroying builder.
      */
     public CloudStorageConfiguration build() {
       return new AutoValue_CloudStorageConfiguration(

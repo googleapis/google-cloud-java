@@ -19,6 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -35,7 +36,6 @@ public class CloudStorageFileAttributesTest {
   private Path path;
   private Path dir;
 
-  /** empty test storage and make sure we use it instead of the real GCS. Create a few paths. **/
   @Before
   public void before() {
     CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
@@ -44,21 +44,21 @@ public class CloudStorageFileAttributesTest {
   }
 
   @Test
-  public void testCacheControl() throws Exception {
+  public void testCacheControl() throws IOException {
     Files.write(path, HAPPY, withCacheControl("potato"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
         .isEqualTo("potato");
   }
 
   @Test
-  public void testMimeType() throws Exception {
+  public void testMimeType() throws IOException {
     Files.write(path, HAPPY, withMimeType("text/potato"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).mimeType().get())
         .isEqualTo("text/potato");
   }
 
   @Test
-  public void testAcl() throws Exception {
+  public void testAcl() throws IOException {
     Acl acl = Acl.of(new Acl.User("serf@example.com"), Acl.Role.READER);
     Files.write(path, HAPPY, withAcl(acl));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).acl().get())
@@ -66,7 +66,7 @@ public class CloudStorageFileAttributesTest {
   }
 
   @Test
-  public void testContentDisposition() throws Exception {
+  public void testContentDisposition() throws IOException {
     Files.write(path, HAPPY, withContentDisposition("crash call"));
     assertThat(
             Files.readAttributes(path, CloudStorageFileAttributes.class).contentDisposition().get())
@@ -74,14 +74,14 @@ public class CloudStorageFileAttributesTest {
   }
 
   @Test
-  public void testContentEncoding() throws Exception {
+  public void testContentEncoding() throws IOException {
     Files.write(path, HAPPY, withContentEncoding("my content encoding"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).contentEncoding().get())
         .isEqualTo("my content encoding");
   }
 
   @Test
-  public void testUserMetadata() throws Exception {
+  public void testUserMetadata() throws IOException {
     Files.write(path, HAPPY, withUserMetadata("green", "bean"));
     assertThat(
             Files.readAttributes(path, CloudStorageFileAttributes.class)
@@ -91,7 +91,7 @@ public class CloudStorageFileAttributesTest {
   }
 
   @Test
-  public void testIsDirectory() throws Exception {
+  public void testIsDirectory() throws IOException {
     Files.write(path, HAPPY);
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).isDirectory())
         .isFalse();
@@ -99,7 +99,7 @@ public class CloudStorageFileAttributesTest {
   }
 
   @Test
-  public void testIsRegularFile() throws Exception {
+  public void testIsRegularFile() throws IOException {
     Files.write(path, HAPPY);
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).isRegularFile())
         .isTrue();
@@ -108,14 +108,14 @@ public class CloudStorageFileAttributesTest {
   }
 
   @Test
-  public void testIsOther() throws Exception {
+  public void testIsOther() throws IOException {
     Files.write(path, HAPPY);
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).isOther()).isFalse();
     assertThat(Files.readAttributes(dir, CloudStorageFileAttributes.class).isOther()).isFalse();
   }
 
   @Test
-  public void testIsSymbolicLink() throws Exception {
+  public void testIsSymbolicLink() throws IOException {
     Files.write(path, HAPPY);
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).isSymbolicLink())
         .isFalse();
@@ -124,7 +124,7 @@ public class CloudStorageFileAttributesTest {
   }
 
   @Test
-  public void testEquals_equalsTester() throws Exception {
+  public void testEquals_equalsTester() throws IOException {
     Files.write(path, HAPPY, withMimeType("text/plain"));
     CloudStorageFileAttributes a1 = Files.readAttributes(path, CloudStorageFileAttributes.class);
     CloudStorageFileAttributes a2 = Files.readAttributes(path, CloudStorageFileAttributes.class);
@@ -135,7 +135,7 @@ public class CloudStorageFileAttributesTest {
   }
 
   @Test
-  public void testFilekey() throws Exception {
+  public void testFilekey() throws IOException {
     Files.write(path, HAPPY, withMimeType("text/plain"));
     Path path2 = Paths.get(URI.create("gs://bucket/anotherrandompath"));
     Files.write(path2, HAPPY, withMimeType("text/plain"));
@@ -155,13 +155,14 @@ public class CloudStorageFileAttributesTest {
   }
 
   @Test
-  public void testNullness() throws Exception {
+  public void testNullness() throws IOException, NoSuchMethodException, SecurityException {
     Files.write(path, HAPPY);
     CloudStorageFileAttributes pathAttributes =
         Files.readAttributes(path, CloudStorageFileAttributes.class);
     CloudStorageFileAttributes dirAttributes =
         Files.readAttributes(dir, CloudStorageFileAttributes.class);
     NullPointerTester tester = new NullPointerTester();
+    tester.ignore(CloudStorageObjectAttributes.class.getMethod("equals", Object.class));
     tester.testAllPublicInstanceMethods(pathAttributes);
     tester.testAllPublicInstanceMethods(dirAttributes);
   }

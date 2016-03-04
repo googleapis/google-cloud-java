@@ -19,6 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -36,7 +37,7 @@ public class CloudStorageOptionsTest {
   }
 
   @Test
-  public void testWithoutCaching() throws Exception {
+  public void testWithoutCaching() throws IOException {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withoutCaching());
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
@@ -44,7 +45,7 @@ public class CloudStorageOptionsTest {
   }
 
   @Test
-  public void testCacheControl() throws Exception {
+  public void testCacheControl() throws IOException {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withCacheControl("potato"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
@@ -52,7 +53,7 @@ public class CloudStorageOptionsTest {
   }
 
   @Test
-  public void testWithAcl() throws Exception {
+  public void testWithAcl() throws IOException {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Acl acl = Acl.of(new Acl.User("king@example.com"), Acl.Role.OWNER);
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withAcl(acl));
@@ -61,7 +62,7 @@ public class CloudStorageOptionsTest {
   }
 
   @Test
-  public void testWithContentDisposition() throws Exception {
+  public void testWithContentDisposition() throws IOException {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withContentDisposition("bubbly fun"));
     assertThat(
@@ -70,7 +71,7 @@ public class CloudStorageOptionsTest {
   }
 
   @Test
-  public void testWithContentEncoding() throws Exception {
+  public void testWithContentEncoding() throws IOException {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withContentEncoding("gzip"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).contentEncoding().get())
@@ -78,7 +79,7 @@ public class CloudStorageOptionsTest {
   }
 
   @Test
-  public void testWithUserMetadata() throws Exception {
+  public void testWithUserMetadata() throws IOException {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Files.write(
         path,
@@ -96,7 +97,7 @@ public class CloudStorageOptionsTest {
   }
 
   @Test
-  public void testWithMimeType_string() throws Exception {
+  public void testWithMimeType_string() throws IOException {
     Path path = Paths.get(URI.create("gs://bucket/path"));
     Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withMimeType("text/plain"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).mimeType().get())
@@ -104,7 +105,7 @@ public class CloudStorageOptionsTest {
   }
 
   @Test
-  public void testNullness() throws Exception {
+  public void testNullness() {
     NullPointerTester tester = new NullPointerTester();
     tester.testAllPublicStaticMethods(CloudStorageOptions.class);
   }

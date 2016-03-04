@@ -58,7 +58,7 @@ final class UnixPath implements CharSequence {
   }
 
   /**
-   * Returns new UnixPath of {@code first}.
+   * Returns new path of {@code first}.
    */
   public static UnixPath getPath(boolean permitEmptyComponents, String path) {
     if (path.isEmpty()) {
@@ -71,7 +71,7 @@ final class UnixPath implements CharSequence {
   }
 
   /**
-   * Returns new UnixPath of {@code first} with {@code more} components resolved against it.
+   * Returns new path of {@code first} with {@code more} components resolved against it.
    *
    * @see #resolve(UnixPath)
    * @see java.nio.file.FileSystem#getPath(String, String...)
@@ -464,7 +464,7 @@ final class UnixPath implements CharSequence {
   }
 
   @Override
-  public boolean equals(@Nullable Object other) {
+  public boolean equals(Object other) {
     return this == other || other instanceof UnixPath && path.equals(((UnixPath) other).path);
   }
 

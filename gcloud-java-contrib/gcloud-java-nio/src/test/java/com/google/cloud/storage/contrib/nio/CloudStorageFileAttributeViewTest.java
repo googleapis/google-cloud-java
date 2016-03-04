@@ -3,9 +3,9 @@ package com.google.cloud.storage.contrib.nio;
 import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.cloud.storage.testing.LocalGcsHelper;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-import com.google.cloud.storage.testing.LocalGcsHelper;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -14,6 +14,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
@@ -40,7 +41,7 @@ public class CloudStorageFileAttributeViewTest {
   }
 
   @Test
-  public void testReadAttributes() throws Exception {
+  public void testReadAttributes() throws IOException {
     Files.write(path, HAPPY, CloudStorageOptions.withCacheControl("potato"));
     CloudStorageFileAttributeView lazyAttributes =
         Files.getFileAttributeView(path, CloudStorageFileAttributeView.class);
@@ -48,7 +49,7 @@ public class CloudStorageFileAttributeViewTest {
   }
 
   @Test
-  public void testReadAttributes_notFound_throwsNoSuchFileException() throws Exception {
+  public void testReadAttributes_notFound_throwsNoSuchFileException() throws IOException {
     CloudStorageFileAttributeView lazyAttributes =
         Files.getFileAttributeView(path, CloudStorageFileAttributeView.class);
     thrown.expect(NoSuchFileException.class);
@@ -56,7 +57,7 @@ public class CloudStorageFileAttributeViewTest {
   }
 
   @Test
-  public void testReadAttributes_pseudoDirectory() throws Exception {
+  public void testReadAttributes_pseudoDirectory() throws IOException {
     Path dir = Paths.get(URI.create("gs://red/rum/"));
     CloudStorageFileAttributeView lazyAttributes =
         Files.getFileAttributeView(dir, CloudStorageFileAttributeView.class);
@@ -65,7 +66,7 @@ public class CloudStorageFileAttributeViewTest {
   }
 
   @Test
-  public void testName() throws Exception {
+  public void testName() throws IOException {
     Files.write(path, HAPPY, CloudStorageOptions.withCacheControl("potato"));
     CloudStorageFileAttributeView lazyAttributes =
         Files.getFileAttributeView(path, CloudStorageFileAttributeView.class);
@@ -73,7 +74,7 @@ public class CloudStorageFileAttributeViewTest {
   }
 
   @Test
-  public void testEquals_equalsTester() throws Exception {
+  public void testEquals_equalsTester() {
     new EqualsTester()
         .addEqualityGroup(
             Files.getFileAttributeView(
@@ -87,8 +88,9 @@ public class CloudStorageFileAttributeViewTest {
   }
 
   @Test
-  public void testNullness() throws Exception {
+  public void testNullness() throws NoSuchMethodException, SecurityException {
     new NullPointerTester()
+        .ignore(CloudStorageFileAttributeView.class.getMethod("equals", Object.class))
         .setDefault(FileTime.class, FileTime.fromMillis(0))
         .testAllPublicInstanceMethods(
             Files.getFileAttributeView(path, CloudStorageFileAttributeView.class));
