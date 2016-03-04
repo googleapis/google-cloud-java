@@ -153,7 +153,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Dataset create(DatasetInfo dataset, DatasetOption... options) throws BigQueryException {
+  public Dataset create(DatasetInfo dataset, DatasetOption... options) {
     final com.google.api.services.bigquery.model.Dataset datasetPb =
         dataset.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
@@ -171,7 +171,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Table create(TableInfo table, TableOption... options) throws BigQueryException {
+  public Table create(TableInfo table, TableOption... options) {
     final com.google.api.services.bigquery.model.Table tablePb =
         table.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
@@ -189,7 +189,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Job create(JobInfo job, JobOption... options) throws BigQueryException {
+  public Job create(JobInfo job, JobOption... options) {
     final com.google.api.services.bigquery.model.Job jobPb =
         job.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
@@ -207,13 +207,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Dataset getDataset(String datasetId, DatasetOption... options) throws BigQueryException {
+  public Dataset getDataset(String datasetId, DatasetOption... options) {
     return getDataset(DatasetId.of(datasetId), options);
   }
 
   @Override
-  public Dataset getDataset(final DatasetId datasetId, DatasetOption... options)
-      throws BigQueryException {
+  public Dataset getDataset(final DatasetId datasetId, DatasetOption... options) {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.bigquery.model.Dataset answer =
@@ -230,7 +229,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Page<Dataset> listDatasets(DatasetListOption... options) throws BigQueryException {
+  public Page<Dataset> listDatasets(DatasetListOption... options) {
     return listDatasets(options(), optionMap(options));
   }
 
@@ -261,13 +260,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public boolean delete(String datasetId, DatasetDeleteOption... options) throws BigQueryException {
+  public boolean delete(String datasetId, DatasetDeleteOption... options) {
     return delete(DatasetId.of(datasetId), options);
   }
 
   @Override
-  public boolean delete(final DatasetId datasetId, DatasetDeleteOption... options)
-      throws BigQueryException {
+  public boolean delete(final DatasetId datasetId, DatasetDeleteOption... options) {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return runWithRetries(new Callable<Boolean>() {
@@ -282,12 +280,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public boolean delete(String datasetId, String tableId) throws BigQueryException {
+  public boolean delete(String datasetId, String tableId) {
     return delete(TableId.of(datasetId, tableId));
   }
 
   @Override
-  public boolean delete(final TableId tableId) throws BigQueryException {
+  public boolean delete(final TableId tableId) {
     try {
       return runWithRetries(new Callable<Boolean>() {
         @Override
@@ -301,7 +299,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Dataset update(DatasetInfo dataset, DatasetOption... options) throws BigQueryException {
+  public Dataset update(DatasetInfo dataset, DatasetOption... options) {
     final com.google.api.services.bigquery.model.Dataset datasetPb =
         dataset.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
@@ -319,7 +317,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Table update(TableInfo table, TableOption... options) throws BigQueryException {
+  public Table update(TableInfo table, TableOption... options) {
     final com.google.api.services.bigquery.model.Table tablePb =
         table.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
@@ -337,13 +335,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Table getTable(final String datasetId, final String tableId, TableOption... options)
-      throws BigQueryException {
+  public Table getTable(final String datasetId, final String tableId, TableOption... options) {
     return getTable(TableId.of(datasetId, tableId), options);
   }
 
   @Override
-  public Table getTable(final TableId tableId, TableOption... options) throws BigQueryException {
+  public Table getTable(final TableId tableId, TableOption... options) {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.bigquery.model.Table answer =
@@ -360,14 +357,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Page<Table> listTables(String datasetId, TableListOption... options)
-      throws BigQueryException {
+  public Page<Table> listTables(String datasetId, TableListOption... options) {
     return listTables(datasetId, options(), optionMap(options));
   }
 
   @Override
-  public Page<Table> listTables(DatasetId datasetId, TableListOption... options)
-      throws BigQueryException {
+  public Page<Table> listTables(DatasetId datasetId, TableListOption... options) {
     return listTables(datasetId.dataset(), options(), optionMap(options));
   }
 
@@ -399,7 +394,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public InsertAllResponse insertAll(InsertAllRequest request) throws BigQueryException {
+  public InsertAllResponse insertAll(InsertAllRequest request) {
     final TableId tableId = request.table();
     final TableDataInsertAllRequest requestPb = new TableDataInsertAllRequest();
     requestPb.setIgnoreUnknownValues(request.ignoreUnknownValues());
@@ -418,13 +413,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public Page<List<FieldValue>> listTableData(String datasetId, String tableId,
-      TableDataListOption... options) throws BigQueryException {
+      TableDataListOption... options) {
     return listTableData(TableId.of(datasetId, tableId), options(), optionMap(options));
   }
 
   @Override
-  public Page<List<FieldValue>> listTableData(TableId tableId, TableDataListOption... options)
-      throws BigQueryException {
+  public Page<List<FieldValue>> listTableData(TableId tableId, TableDataListOption... options) {
     return listTableData(tableId, options(), optionMap(options));
   }
 
@@ -459,12 +453,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Job getJob(String jobId, JobOption... options) throws BigQueryException {
+  public Job getJob(String jobId, JobOption... options) {
     return getJob(JobId.of(jobId), options);
   }
 
   @Override
-  public Job getJob(final JobId jobId, JobOption... options) throws BigQueryException {
+  public Job getJob(final JobId jobId, JobOption... options) {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.bigquery.model.Job answer =
@@ -481,7 +475,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Page<Job> listJobs(JobListOption... options) throws BigQueryException {
+  public Page<Job> listJobs(JobListOption... options) {
     return listJobs(options(), optionMap(options));
   }
 
@@ -508,12 +502,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public boolean cancel(String jobId) throws BigQueryException {
+  public boolean cancel(String jobId) {
     return cancel(JobId.of(jobId));
   }
 
   @Override
-  public boolean cancel(final JobId jobId) throws BigQueryException {
+  public boolean cancel(final JobId jobId) {
     try {
       return runWithRetries(new Callable<Boolean>() {
         @Override
@@ -527,7 +521,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public QueryResponse query(final QueryRequest request) throws BigQueryException {
+  public QueryResponse query(final QueryRequest request) {
     try {
       com.google.api.services.bigquery.model.QueryResponse results =
           runWithRetries(new Callable<com.google.api.services.bigquery.model.QueryResponse>() {
@@ -566,8 +560,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public QueryResponse getQueryResults(JobId job, QueryResultsOption... options)
-      throws BigQueryException {
+  public QueryResponse getQueryResults(JobId job, QueryResultsOption... options) {
     Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     return getQueryResults(job, options(), optionsMap);
   }

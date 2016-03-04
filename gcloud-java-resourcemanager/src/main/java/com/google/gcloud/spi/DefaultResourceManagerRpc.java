@@ -38,7 +38,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   }
 
   @Override
-  public Project create(Project project) throws ResourceManagerException {
+  public Project create(Project project) {
     try {
       return resourceManager.projects().create(project).execute();
     } catch (IOException ex) {
@@ -47,7 +47,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   }
 
   @Override
-  public void delete(String projectId) throws ResourceManagerException {
+  public void delete(String projectId) {
     try {
       resourceManager.projects().delete(projectId).execute();
     } catch (IOException ex) {
@@ -56,7 +56,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   }
 
   @Override
-  public Project get(String projectId, Map<Option, ?> options) throws ResourceManagerException {
+  public Project get(String projectId, Map<Option, ?> options) {
     try {
       return resourceManager.projects()
           .get(projectId)
@@ -74,8 +74,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<Project>> list(Map<Option, ?> options)
-      throws ResourceManagerException {
+  public Tuple<String, Iterable<Project>> list(Map<Option, ?> options) {
     try {
       ListProjectsResponse response = resourceManager.projects()
           .list()
@@ -92,7 +91,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   }
 
   @Override
-  public void undelete(String projectId) throws ResourceManagerException {
+  public void undelete(String projectId) {
     try {
       resourceManager.projects().undelete(projectId).execute();
     } catch (IOException ex) {
@@ -101,7 +100,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   }
 
   @Override
-  public Project replace(Project project) throws ResourceManagerException {
+  public Project replace(Project project) {
     try {
       return resourceManager.projects().update(project.getProjectId(), project).execute();
     } catch (IOException ex) {

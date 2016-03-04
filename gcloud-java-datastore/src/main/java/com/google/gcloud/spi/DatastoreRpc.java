@@ -35,16 +35,46 @@ import com.google.gcloud.datastore.DatastoreException;
  */
 public interface DatastoreRpc {
 
-  AllocateIdsResponse allocateIds(AllocateIdsRequest request) throws DatastoreException;
+  /**
+   * Sends an allocate IDs request.
+   *
+   * @throws DatastoreException upon failure
+   */
+  AllocateIdsResponse allocateIds(AllocateIdsRequest request);
 
+  /**
+   * Sends a begin transaction request.
+   *
+   * @throws DatastoreException upon failure
+   */
   BeginTransactionResponse beginTransaction(BeginTransactionRequest request)
       throws DatastoreException;
 
-  CommitResponse commit(CommitRequest request) throws DatastoreException;
+  /**
+   * Sends a commit request.
+   *
+   * @throws DatastoreException upon failure
+   */
+  CommitResponse commit(CommitRequest request);
 
-  LookupResponse lookup(LookupRequest request) throws DatastoreException;
+  /**
+   * Sends a lookup request.
+   *
+   * @throws DatastoreException upon failure
+   */
+  LookupResponse lookup(LookupRequest request);
 
-  RollbackResponse rollback(RollbackRequest request) throws DatastoreException;
+  /**
+   * Sends a rollback request.
+   *
+   * @throws DatastoreException upon failure
+   */
+  RollbackResponse rollback(RollbackRequest request);
 
-  RunQueryResponse runQuery(RunQueryRequest request) throws DatastoreException;
+  /**
+   * Sends a request to run a query.
+   *
+   * @throws DatastoreException upon failure
+   */
+  RunQueryResponse runQuery(RunQueryRequest request);
 }

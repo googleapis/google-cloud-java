@@ -111,8 +111,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   }
 
   @Override
-  public AllocateIdsResponse allocateIds(AllocateIdsRequest request)
-      throws DatastoreException {
+  public AllocateIdsResponse allocateIds(AllocateIdsRequest request) {
     try {
       return client.allocateIds(request);
     } catch (com.google.api.services.datastore.client.DatastoreException ex) {
@@ -121,8 +120,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   }
 
   @Override
-  public BeginTransactionResponse beginTransaction(BeginTransactionRequest request)
-      throws DatastoreException {
+  public BeginTransactionResponse beginTransaction(BeginTransactionRequest request) {
     try {
       return client.beginTransaction(request);
     } catch (com.google.api.services.datastore.client.DatastoreException ex) {
@@ -131,7 +129,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   }
 
   @Override
-  public CommitResponse commit(CommitRequest request) throws DatastoreException {
+  public CommitResponse commit(CommitRequest request) {
     try {
       return client.commit(request);
     } catch (com.google.api.services.datastore.client.DatastoreException ex) {
@@ -140,7 +138,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   }
 
   @Override
-  public LookupResponse lookup(LookupRequest request) throws DatastoreException {
+  public LookupResponse lookup(LookupRequest request) {
     try {
       return client.lookup(request);
     } catch (com.google.api.services.datastore.client.DatastoreException ex) {
@@ -149,7 +147,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   }
 
   @Override
-  public RollbackResponse rollback(RollbackRequest request) throws DatastoreException {
+  public RollbackResponse rollback(RollbackRequest request) {
     try {
       return client.rollback(request);
     } catch (com.google.api.services.datastore.client.DatastoreException ex) {
@@ -158,7 +156,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   }
 
   @Override
-  public RunQueryResponse runQuery(RunQueryRequest request) throws DatastoreException {
+  public RunQueryResponse runQuery(RunQueryRequest request) {
     try {
       return client.runQuery(request);
     } catch (com.google.api.services.datastore.client.DatastoreException ex) {

@@ -99,7 +99,7 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Bucket create(Bucket bucket, Map<Option, ?> options) throws StorageException {
+  public Bucket create(Bucket bucket, Map<Option, ?> options) {
     try {
       return storage.buckets()
           .insert(this.options.projectId(), bucket)
@@ -114,7 +114,7 @@ public class DefaultStorageRpc implements StorageRpc {
 
   @Override
   public StorageObject create(StorageObject storageObject, final InputStream content,
-      Map<Option, ?> options) throws StorageException {
+      Map<Option, ?> options) {
     try {
       Storage.Objects.Insert insert = storage.objects()
           .insert(storageObject.getBucket(), storageObject,
@@ -296,7 +296,7 @@ public class DefaultStorageRpc implements StorageRpc {
 
   @Override
   public StorageObject compose(Iterable<StorageObject> sources, StorageObject target,
-      Map<Option, ?> targetOptions) throws StorageException {
+      Map<Option, ?> targetOptions) {
     ComposeRequest request = new ComposeRequest();
     if (target.getContentType() == null) {
       target.setContentType("application/octet-stream");
@@ -327,8 +327,7 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public byte[] load(StorageObject from, Map<Option, ?> options)
-      throws StorageException {
+  public byte[] load(StorageObject from, Map<Option, ?> options) {
     try {
       Storage.Objects.Get getRequest = storage.objects()
           .get(from.getBucket(), from.getName())
@@ -347,7 +346,7 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BatchResponse batch(BatchRequest request) throws StorageException {
+  public BatchResponse batch(BatchRequest request) {
     List<List<Tuple<StorageObject, Map<Option, ?>>>> partitionedToDelete =
         Lists.partition(request.toDelete, MAX_BATCH_DELETES);
     Iterator<List<Tuple<StorageObject, Map<Option, ?>>>> iterator = partitionedToDelete.iterator();
@@ -437,7 +436,7 @@ public class DefaultStorageRpc implements StorageRpc {
 
   @Override
   public Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position,
-      int bytes) throws StorageException {
+      int bytes) {
     try {
       Get req = storage.objects()
           .get(from.getBucket(), from.getName())
@@ -460,7 +459,7 @@ public class DefaultStorageRpc implements StorageRpc {
 
   @Override
   public void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
-      boolean last) throws StorageException {
+      boolean last) {
     try {
       GenericUrl url = new GenericUrl(uploadId);
       HttpRequest httpRequest = storage.getRequestFactory().buildPutRequest(url,
@@ -501,8 +500,7 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public String open(StorageObject object, Map<Option, ?> options)
-      throws StorageException {
+  public String open(StorageObject object, Map<Option, ?> options) {
     try {
       Insert req = storage.objects().insert(object.getBucket(), object);
       GenericUrl url = req.buildHttpRequest().getUrl();
@@ -538,16 +536,16 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public RewriteResponse openRewrite(RewriteRequest rewriteRequest) throws StorageException {
+  public RewriteResponse openRewrite(RewriteRequest rewriteRequest) {
     return rewrite(rewriteRequest, null);
   }
 
   @Override
-  public RewriteResponse continueRewrite(RewriteResponse previousResponse) throws StorageException {
+  public RewriteResponse continueRewrite(RewriteResponse previousResponse) {
     return rewrite(previousResponse.rewriteRequest, previousResponse.rewriteToken);
   }
 
-  private RewriteResponse rewrite(RewriteRequest req, String token) throws StorageException {
+  private RewriteResponse rewrite(RewriteRequest req, String token) {
     try {
       Long maxBytesRewrittenPerCall = req.megabytesRewrittenPerCall != null
           ? req.megabytesRewrittenPerCall * MEGABYTE : null;

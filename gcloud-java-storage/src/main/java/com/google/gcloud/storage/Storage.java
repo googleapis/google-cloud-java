@@ -1215,7 +1215,7 @@ public interface Storage extends Service<StorageOptions> {
   }
 
   /**
-   * Create a new bucket.
+   * Creates a new bucket.
    *
    * @return a complete bucket
    * @throws StorageException upon failure
@@ -1223,7 +1223,7 @@ public interface Storage extends Service<StorageOptions> {
   Bucket create(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
-   * Create a new blob with no content.
+   * Creates a new blob with no content.
    *
    * @return a [@code Blob} with complete information
    * @throws StorageException upon failure
@@ -1231,7 +1231,7 @@ public interface Storage extends Service<StorageOptions> {
   Blob create(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
-   * Create a new blob. Direct upload is used to upload {@code content}. For large content,
+   * Creates a new blob. Direct upload is used to upload {@code content}. For large content,
    * {@link #writer} is recommended as it uses resumable upload. MD5 and CRC32C hashes of
    * {@code content} are computed and used for validating transferred data.
    *
@@ -1242,7 +1242,7 @@ public interface Storage extends Service<StorageOptions> {
   Blob create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options);
 
   /**
-   * Create a new blob. Direct upload is used to upload {@code content}. For large content,
+   * Creates a new blob. Direct upload is used to upload {@code content}. For large content,
    * {@link #writer} is recommended as it uses resumable upload. By default any md5 and crc32c
    * values in the given {@code blobInfo} are ignored unless requested via the
    * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options. The given
@@ -1254,49 +1254,49 @@ public interface Storage extends Service<StorageOptions> {
   Blob create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options);
 
   /**
-   * Return the requested bucket or {@code null} if not found.
+   * Returns the requested bucket or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
   Bucket get(String bucket, BucketGetOption... options);
 
   /**
-   * Return the requested blob or {@code null} if not found.
+   * Returns the requested blob or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
   Blob get(String bucket, String blob, BlobGetOption... options);
 
   /**
-   * Return the requested blob or {@code null} if not found.
+   * Returns the requested blob or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
   Blob get(BlobId blob, BlobGetOption... options);
 
   /**
-   * Return the requested blob or {@code null} if not found.
+   * Returns the requested blob or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
   Blob get(BlobId blob);
 
   /**
-   * List the project's buckets.
+   * Lists the project's buckets.
    *
    * @throws StorageException upon failure
    */
   Page<Bucket> list(BucketListOption... options);
 
   /**
-   * List the bucket's blobs.
+   * Lists the bucket's blobs.
    *
    * @throws StorageException upon failure
    */
   Page<Blob> list(String bucket, BlobListOption... options);
 
   /**
-   * Update bucket information.
+   * Updates bucket information.
    *
    * @return the updated bucket
    * @throws StorageException upon failure
@@ -1304,7 +1304,7 @@ public interface Storage extends Service<StorageOptions> {
   Bucket update(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
-   * Update blob information. Original metadata are merged with metadata in the provided
+   * Updates blob information. Original metadata are merged with metadata in the provided
    * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
    *
@@ -1321,7 +1321,7 @@ public interface Storage extends Service<StorageOptions> {
   Blob update(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
-   * Update blob information. Original metadata are merged with metadata in the provided
+   * Updates blob information. Original metadata are merged with metadata in the provided
    * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
    *
@@ -1338,7 +1338,7 @@ public interface Storage extends Service<StorageOptions> {
   Blob update(BlobInfo blobInfo);
 
   /**
-   * Delete the requested bucket.
+   * Deletes the requested bucket.
    *
    * @return {@code true} if bucket was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -1346,7 +1346,7 @@ public interface Storage extends Service<StorageOptions> {
   boolean delete(String bucket, BucketSourceOption... options);
 
   /**
-   * Delete the requested blob.
+   * Deletes the requested blob.
    *
    * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -1354,7 +1354,7 @@ public interface Storage extends Service<StorageOptions> {
   boolean delete(String bucket, String blob, BlobSourceOption... options);
 
   /**
-   * Delete the requested blob.
+   * Deletes the requested blob.
    *
    * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -1362,7 +1362,7 @@ public interface Storage extends Service<StorageOptions> {
   boolean delete(BlobId blob, BlobSourceOption... options);
 
   /**
-   * Delete the requested blob.
+   * Deletes the requested blob.
    *
    * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -1370,7 +1370,7 @@ public interface Storage extends Service<StorageOptions> {
   boolean delete(BlobId blob);
 
   /**
-   * Send a compose request.
+   * Sends a compose request.
    *
    * @return the composed blob
    * @throws StorageException upon failure
@@ -1422,7 +1422,7 @@ public interface Storage extends Service<StorageOptions> {
   byte[] readAllBytes(BlobId blob, BlobSourceOption... options);
 
   /**
-   * Send a batch request.
+   * Sends a batch request.
    *
    * @return the batch response
    * @throws StorageException upon failure
@@ -1430,7 +1430,7 @@ public interface Storage extends Service<StorageOptions> {
   BatchResponse submit(BatchRequest batchRequest);
 
   /**
-   * Return a channel for reading the blob's content. The blob's latest generation is read. If the
+   * Returns a channel for reading the blob's content. The blob's latest generation is read. If the
    * blob changes while reading (i.e. {@link BlobInfo#etag()} changes), subsequent calls to
    * {@code blobReadChannel.read(ByteBuffer)} may throw {@link StorageException}.
    *
@@ -1443,7 +1443,7 @@ public interface Storage extends Service<StorageOptions> {
   ReadChannel reader(String bucket, String blob, BlobSourceOption... options);
 
   /**
-   * Return a channel for reading the blob's content. If {@code blob.generation()} is set
+   * Returns a channel for reading the blob's content. If {@code blob.generation()} is set
    * data corresponding to that generation is read. If {@code blob.generation()} is {@code null}
    * the blob's latest generation is read. If the blob changes while reading (i.e.
    * {@link BlobInfo#etag()} changes), subsequent calls to {@code blobReadChannel.read(ByteBuffer)}
@@ -1459,7 +1459,7 @@ public interface Storage extends Service<StorageOptions> {
   ReadChannel reader(BlobId blob, BlobSourceOption... options);
 
   /**
-   * Create a blob and return a channel for writing its content. By default any md5 and crc32c
+   * Creates a blob and return a channel for writing its content. By default any md5 and crc32c
    * values in the given {@code blobInfo} are ignored unless requested via the
    * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
    *
