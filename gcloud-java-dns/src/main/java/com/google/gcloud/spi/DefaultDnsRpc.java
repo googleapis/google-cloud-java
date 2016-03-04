@@ -33,8 +33,8 @@ import java.util.Map;
 public class DefaultDnsRpc implements DnsRpc {
 
   private static final String SORT_BY = "changeSequence";
-  private final Dns dns;
-  private final DnsOptions options;
+  private Dns dns;
+  private DnsOptions options;
 
   private static DnsException translate(IOException exception) {
     return new DnsException(exception);
@@ -44,13 +44,18 @@ public class DefaultDnsRpc implements DnsRpc {
    * Constructs an instance of this rpc client with provided {@link DnsOptions}.
    */
   public DefaultDnsRpc(DnsOptions options) {
-    HttpTransport transport = options.httpTransportFactory().create();
-    HttpRequestInitializer initializer = options.httpRequestInitializer();
-    this.dns = new Dns.Builder(transport, new JacksonFactory(), initializer)
-        .setRootUrl(options.host())
-        .setApplicationName(options.applicationName())
-        .build();
-    this.options = options;
+    try {
+      HttpTransport transport = options.httpTransportFactory().create();
+      HttpRequestInitializer initializer = options.httpRequestInitializer();
+      this.dns =
+          new Dns.Builder(transport, new JacksonFactory(), initializer)
+              .setRootUrl(options.host())
+              .setApplicationName(options.applicationName())
+              .build();
+      this.options = options;
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   @Override
