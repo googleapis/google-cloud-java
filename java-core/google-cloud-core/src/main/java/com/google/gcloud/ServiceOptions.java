@@ -523,9 +523,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * options.
    */
   public HttpRequestInitializer httpRequestInitializer() {
-    final HttpRequestInitializer delegate = authCredentials() != null
-        ? new HttpCredentialsAdapter(authCredentials().credentials().createScoped(scopes()))
-        : null;
+    final HttpRequestInitializer delegate =
+        authCredentials() != null && authCredentials.credentials() != null
+            ? new HttpCredentialsAdapter(authCredentials().credentials().createScoped(scopes()))
+            : null;
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {

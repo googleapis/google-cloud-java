@@ -243,6 +243,33 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
   }
 
+  public static class NoAuthCredentials extends AuthCredentials {
+
+    private static final AuthCredentials INSTANCE = new NoAuthCredentials();
+    private static final NoAuthCredentialsState STATE = new NoAuthCredentialsState();
+
+    private static class NoAuthCredentialsState
+        implements RestorableState<AuthCredentials>, Serializable {
+
+      private static final long serialVersionUID = -4022100563954640465L;
+
+      @Override
+      public AuthCredentials restore() {
+        return INSTANCE;
+      }
+    }
+
+    @Override
+    public GoogleCredentials credentials() {
+      return null;
+    }
+
+    @Override
+    public RestorableState<AuthCredentials> capture() {
+      return STATE;
+    }
+  }
+
   public abstract GoogleCredentials credentials();
 
   public static AuthCredentials createForAppEngine() {
@@ -279,6 +306,13 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
    */
   public static ServiceAccountAuthCredentials createFor(String account, PrivateKey privateKey) {
     return new ServiceAccountAuthCredentials(account, privateKey);
+  }
+
+  /**
+   * Creates a placeholder denoting that no credentials should be used.
+   */
+  public static AuthCredentials noAuth() {
+    return NoAuthCredentials.INSTANCE;
   }
 
   /**
