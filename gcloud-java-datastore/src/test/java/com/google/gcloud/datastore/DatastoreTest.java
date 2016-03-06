@@ -32,6 +32,7 @@ import com.google.api.services.datastore.DatastoreV1.RunQueryRequest;
 import com.google.api.services.datastore.DatastoreV1.RunQueryResponse;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
+import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
@@ -128,6 +129,7 @@ public class DatastoreTest {
     options = DatastoreOptions.builder()
         .projectId(PROJECT_ID)
         .host("http://localhost:" + PORT)
+        .authCredentials(AuthCredentials.noAuth())
         .retryParams(RetryParams.noRetries())
         .build();
     datastore = options.service();
