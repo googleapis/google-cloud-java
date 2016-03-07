@@ -12,6 +12,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.ByteStreams;
+import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 
 import com.sun.net.httpserver.Headers;
@@ -550,17 +551,21 @@ public class LocalResourceManagerHelper {
   }
 
   /**
-   * Creates a LocalResourceManagerHelper object that listens to requests on the local machine.
+   * Creates a {@code LocalResourceManagerHelper} object that listens to requests on the local
+   * machine.
    */
   public static LocalResourceManagerHelper create() {
     return new LocalResourceManagerHelper();
   }
 
   /**
-   * Returns a ResourceManagerOptions instance that sets the host to use the mock server.
+   * Returns a {@link ResourceManagerOptions} instance that sets the host to use the mock server.
    */
   public ResourceManagerOptions options() {
-    return ResourceManagerOptions.builder().host("http://localhost:" + port).build();
+    return ResourceManagerOptions.builder()
+        .host("http://localhost:" + port)
+        .authCredentials(AuthCredentials.noAuth())
+        .build();
   }
 
   /**

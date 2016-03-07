@@ -132,6 +132,12 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
   }
 
+  /**
+   * Represents service account credentials.
+   *
+   * @see <a href="https://cloud.google.com/docs/authentication#user_accounts_and_service_accounts">
+   *     User accounts and service accounts</a>
+   */
   public static class ServiceAccountAuthCredentials extends AuthCredentials {
 
     private final String account;
@@ -195,6 +201,14 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
   }
 
+  /**
+   * Represents Application Default Credentials, which are credentials that are inferred from the
+   * runtime environment.
+   *
+   * @see <a
+   *     href="https://developers.google.com/identity/protocols/application-default-credentials">
+   *     Google Application Default Credentials</a>
+   */
   public static class ApplicationDefaultAuthCredentials extends AuthCredentials {
 
     private GoogleCredentials googleCredentials;
@@ -243,6 +257,38 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
   }
 
+  /**
+   * A placeholder for credentials to signify that requests sent to the server should not be
+   * authenticated. This is typically useful when using the local service emulators, such as
+   * {@code LocalGcdHelper} and {@code LocalResourceManagerHelper}.
+   */
+  public static class NoAuthCredentials extends AuthCredentials {
+
+    private static final AuthCredentials INSTANCE = new NoAuthCredentials();
+    private static final NoAuthCredentialsState STATE = new NoAuthCredentialsState();
+
+    private static class NoAuthCredentialsState
+        implements RestorableState<AuthCredentials>, Serializable {
+
+      private static final long serialVersionUID = -4022100563954640465L;
+
+      @Override
+      public AuthCredentials restore() {
+        return INSTANCE;
+      }
+    }
+
+    @Override
+    public GoogleCredentials credentials() {
+      return null;
+    }
+
+    @Override
+    public RestorableState<AuthCredentials> capture() {
+      return STATE;
+    }
+  }
+
   public abstract GoogleCredentials credentials();
 
   public static AuthCredentials createForAppEngine() {
@@ -279,6 +325,15 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
    */
   public static ServiceAccountAuthCredentials createFor(String account, PrivateKey privateKey) {
     return new ServiceAccountAuthCredentials(account, privateKey);
+  }
+
+  /**
+   * Creates a placeholder denoting that no credentials should be used. This is typically useful
+   * when using the local service emulators, such as {@code LocalGcdHelper} and
+   * {@code LocalResourceManagerHelper}.
+   */
+  public static AuthCredentials noAuth() {
+    return NoAuthCredentials.INSTANCE;
   }
 
   /**
