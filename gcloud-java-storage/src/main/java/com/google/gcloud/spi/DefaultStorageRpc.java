@@ -461,12 +461,20 @@ public class DefaultStorageRpc implements StorageRpc {
   public void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
       boolean last) {
     try {
+      if (length == 0 && !last) {
+        return;
+      }
       GenericUrl url = new GenericUrl(uploadId);
       HttpRequest httpRequest = storage.getRequestFactory().buildPutRequest(url,
           new ByteArrayContent(null, toWrite, toWriteOffset, length));
       long limit = destOffset + length;
       StringBuilder range = new StringBuilder("bytes ");
-      range.append(destOffset).append('-').append(limit - 1).append('/');
+      if (length == 0) {
+        range.append('*');
+      } else {
+        range.append(destOffset).append('-').append(limit - 1);
+      }
+      range.append('/');
       if (last) {
         range.append(limit);
       } else {

@@ -824,6 +824,29 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testReadAndWriteChannelsWithDifferentFileSize() throws IOException {
+    String blobNamePrefix = "test-read-and-write-channels-blob-";
+    int[] blobSizes = {0, 700, 1024 * 256, 2 * 1024 * 1024, 4 * 1024 * 1024, 4 * 1024 * 1024 + 1};
+    Random rnd = new Random();
+    for (int blobSize : blobSizes) {
+      String blobName = blobNamePrefix + blobSize;
+      BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
+      byte[] bytes = new byte[blobSize];
+      rnd.nextBytes(bytes);
+      try (WriteChannel writer = storage.writer(blob)) {
+        writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
+      }
+      ByteBuffer readBytes;
+      try (ReadChannel reader = storage.reader(blob.blobId())) {
+        readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
+        reader.read(readBytes);
+      }
+      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes.array());
+      assertTrue(storage.delete(BUCKET, blobName));
+    }
+  }
+
+  @Test
   public void testReadAndWriteCaptureChannels() throws IOException {
     String blobName = "test-read-and-write-capture-channels-blob";
     BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
