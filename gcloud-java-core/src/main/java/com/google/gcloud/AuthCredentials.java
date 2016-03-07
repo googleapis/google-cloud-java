@@ -258,9 +258,9 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
   }
 
   /**
-   * Represents that requests sent to the server should not be authenticated. This is typically
-   * useful when using the local service emulators, such as {@code LocalGcdHelper} and
-   * {@code LocalResourceManagerHelper}.
+   * A placeholder for credentials to signify that requests sent to the server should not be
+   * authenticated. This is typically useful when using the local service emulators, such as
+   * {@code LocalGcdHelper} and {@code LocalResourceManagerHelper}.
    */
   public static class NoAuthCredentials extends AuthCredentials {
 
