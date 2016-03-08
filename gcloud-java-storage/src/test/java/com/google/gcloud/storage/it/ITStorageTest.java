@@ -54,6 +54,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -821,6 +822,33 @@ public class ITStorageTest {
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes.array());
     assertEquals(BLOB_STRING_CONTENT, new String(readStringBytes.array(), UTF_8));
     assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testReadAndWriteChannelsWithDifferentFileSize() throws IOException {
+    String blobNamePrefix = "test-read-and-write-channels-blob-";
+    int[] blobSizes = {0, 700, 1024 * 256, 2 * 1024 * 1024, 4 * 1024 * 1024, 4 * 1024 * 1024 + 1};
+    Random rnd = new Random();
+    for (int blobSize : blobSizes) {
+      String blobName = blobNamePrefix + blobSize;
+      BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
+      byte[] bytes = new byte[blobSize];
+      rnd.nextBytes(bytes);
+      try (WriteChannel writer = storage.writer(blob)) {
+        writer.write(ByteBuffer.wrap(bytes));
+      }
+      ByteArrayOutputStream output = new ByteArrayOutputStream();
+      try (ReadChannel reader = storage.reader(blob.blobId())) {
+        ByteBuffer buffer = ByteBuffer.allocate(64 * 1024);
+        while (reader.read(buffer) > 0) {
+          buffer.flip();
+          output.write(buffer.array(), 0, buffer.limit());
+          buffer.clear();
+        }
+      }
+      assertArrayEquals(bytes, output.toByteArray());
+      assertTrue(storage.delete(BUCKET, blobName));
+    }
   }
 
   @Test

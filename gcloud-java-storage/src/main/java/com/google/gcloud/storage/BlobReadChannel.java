@@ -127,7 +127,7 @@ class BlobReadChannel implements ReadChannel {
             return storageRpc.read(storageObject, requestOptions, position, toRead);
           }
         }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER);
-        if (lastEtag != null && !Objects.equals(result.x(), lastEtag)) {
+        if (result.y().length > 0 && lastEtag != null && !Objects.equals(result.x(), lastEtag)) {
           StringBuilder messageBuilder = new StringBuilder();
           messageBuilder.append("Blob ").append(blob).append(" was updated while reading");
           throw new StorageException(0, messageBuilder.toString());
