@@ -695,6 +695,10 @@ public interface Storage extends Service<StorageOptions> {
 
     /**
      * Returns an option to specify whether blob listing should include subdirectories or not.
+     * {@link StorageOptions#pathDelimiter()} is used as a path delimiter. If set to {@code true}
+     * also blobs in subdirectories are listed. If set to {@code false} and used in combination
+     * with {@link #prefix(String)} only blobs in a directory can be listed. If not set also blobs
+     * in subdirectories are listed.
      */
     public static BlobListOption recursive(boolean recursive) {
       return new BlobListOption(StorageRpc.Option.DELIMITER, recursive);
