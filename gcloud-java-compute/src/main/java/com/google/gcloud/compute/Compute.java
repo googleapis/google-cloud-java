@@ -220,6 +220,61 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Fields of a Compute Engine Operation resource.
+   *
+   * @see <a
+   *     href="https://cloud.google.com/compute/docs/reference/latest/globalOperations#resource">
+   *     GlobalOperation Resource</a>
+   * @see <a
+   *     href="https://cloud.google.com/compute/docs/reference/latest/regionOperations#resource">
+   *     RegionOperation Resource</a>
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/zoneOperations#resource">
+   *     ZoneOperation Resource</a>
+   */
+  enum OperationField {
+    CLIENT_OPERATION_ID("clientOperationId"),
+    CREATION_TIMESTAMP("creationTimestamp"),
+    DESCRIPTION("description"),
+    END_TIME("endTime"),
+    ERROR("error"),
+    HTTP_ERROR_MESSAGE("httpErrorMessage"),
+    HTTP_ERROR_STATUS_CODE("httpErrorStatusCode"),
+    ID("id"),
+    INSERT_TIME("insertTime"),
+    NAME("name"),
+    OPERATION_TYPE("operationType"),
+    PROGRESS("progress"),
+    SELF_LINK("selfLink"),
+    START_TIME("startTime"),
+    STATUS("status"),
+    STATUS_MESSAGE("statusMessage"),
+    REGION("region"),
+    TARGET_ID("targetId"),
+    TARGET_LINK("targetLink"),
+    USER("user"),
+    WARNINGS("warnings");
+
+    private final String selector;
+
+    OperationField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(OperationField... fields) {
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
+      fieldStrings.add(SELF_LINK.selector());
+      for (OperationField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  /**
    * Base class for list filters.
    */
   abstract class ListFilter implements Serializable {
@@ -433,6 +488,68 @@ public interface Compute extends Service<ComputeOptions> {
      */
     public static ZoneFilter notEquals(ZoneField field, String value) {
       return new ZoneFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+  }
+
+  /**
+   * Class for filtering operation lists.
+   */
+  class OperationFilter extends ListFilter {
+
+    private static final long serialVersionUID = -3202249202748346427L;
+
+    OperationFilter(OperationField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equality filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2">RE2</a>
+     */
+    public static OperationFilter equals(OperationField field, String value) {
+      return new OperationFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns an equality filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2">RE2</a>
+     */
+    public static OperationFilter notEquals(OperationField field, String value) {
+      return new OperationFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+
+    /**
+     * Returns an equality filter for the given field and long value.
+     */
+    public static OperationFilter equals(OperationField field, long value) {
+      return new OperationFilter(checkNotNull(field), ComparisonOperator.EQ, value);
+    }
+
+    /**
+     * Returns an inequality filter for the given field and long value.
+     */
+    public static OperationFilter notEquals(OperationField field, long value) {
+      return new OperationFilter(checkNotNull(field), ComparisonOperator.NE, value);
+    }
+
+    /**
+     * Returns an equality filter for the given field and integer value.
+     */
+    public static OperationFilter equals(OperationField field, int value) {
+      return new OperationFilter(checkNotNull(field), ComparisonOperator.EQ, value);
+    }
+
+    /**
+     * Returns an inequality filter for the given field and integer value.
+     */
+    public static OperationFilter notEquals(OperationField field, int value) {
+      return new OperationFilter(checkNotNull(field), ComparisonOperator.NE, value);
     }
   }
 
@@ -793,6 +910,73 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Class for specifying operation get options.
+   */
+  class OperationOption extends Option {
+
+    private static final long serialVersionUID = -4572636917684779912L;
+
+    private OperationOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the operation's fields to be returned by the RPC call. If this
+     * option is not provided all operation's fields are returned. {@code OperationOption.fields}
+     * can be used to specify only the fields of interest. {@link Operation#operationId()} is
+     * always returned, even if not specified.
+     */
+    public static OperationOption fields(OperationField... fields) {
+      return new OperationOption(ComputeRpc.Option.FIELDS, OperationField.selector(fields));
+    }
+  }
+
+  /**
+   * Class for specifying operation list options.
+   */
+  class OperationListOption extends Option {
+
+    private static final long serialVersionUID = -1509532420587265823L;
+
+    private OperationListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter to the operations being listed.
+     */
+    public static OperationListOption filter(OperationFilter filter) {
+      return new OperationListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of operations to be returned.
+     */
+    public static OperationListOption maxResults(long maxResults) {
+      return new OperationListOption(ComputeRpc.Option.MAX_RESULTS, maxResults);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing operations.
+     */
+    public static OperationListOption startPageToken(String pageToken) {
+      return new OperationListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * Returns an option to specify the operation's fields to be returned by the RPC call. If this
+     * option is not provided all operation's fields are returned.
+     * {@code OperationListOption.fields} can be used to specify only the fields of interest.
+     * {@link Operation#operationId()} is always returned, even if not specified.
+     */
+    public static OperationListOption fields(OperationField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(OperationField.selector(fields)).append("),nextPageToken");
+      return new OperationListOption(ComputeRpc.Option.FIELDS, builder.toString());
+    }
+  }
+
+  /**
    * Returns the requested disk type or {@code null} if not found.
    *
    * @throws ComputeException upon failure
@@ -889,4 +1073,40 @@ public interface Compute extends Service<ComputeOptions> {
    * @throws ComputeException upon failure
    */
   License getLicense(LicenseId license, LicenseOption... options);
+
+  /**
+   * Returns the requested operation or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Operation get(OperationId operationId, OperationOption... options);
+
+  /**
+   * Lists the global operations.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Operation> listGlobalOperations(OperationListOption... options);
+
+  /**
+   * Lists the operations in the provided region.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Operation> listRegionOperations(String region, OperationListOption... options);
+
+  /**
+   * Lists the operations in the provided zone.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Operation> listZoneOperations(String zone, OperationListOption... options);
+
+  /**
+   * Deletes the requested operation.
+   *
+   * @return {@code true} if operation was deleted, {@code false} if it was not found
+   * @throws ComputeException upon failure
+   */
+  boolean delete(OperationId operation);
 }

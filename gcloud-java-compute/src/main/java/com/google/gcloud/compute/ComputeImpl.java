@@ -35,6 +35,25 @@ import java.util.concurrent.Callable;
 
 final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
 
+  private static class GlobalOperationPageFetcher implements NextPageFetcher<Operation> {
+
+    private static final long serialVersionUID = -2488912172182315364L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+
+    GlobalOperationPageFetcher(ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+    }
+
+    @Override
+    public Page<Operation> nextPage() {
+      return listGlobalOperations(serviceOptions, requestOptions);
+    }
+  }
+
   private static class DiskTypePageFetcher implements NextPageFetcher<DiskType> {
 
     private static final long serialVersionUID = -5253916264932522976L;
@@ -150,6 +169,48 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     @Override
     public Page<Zone> nextPage() {
       return listZones(serviceOptions, requestOptions);
+    }
+  }
+
+  private static class RegionOperationPageFetcher implements NextPageFetcher<Operation> {
+
+    private static final long serialVersionUID = 4111705358926164078L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+    private final String region;
+
+    RegionOperationPageFetcher(String region, ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+      this.region = region;
+    }
+
+    @Override
+    public Page<Operation> nextPage() {
+      return listRegionOperations(region, serviceOptions, requestOptions);
+    }
+  }
+
+  private static class ZoneOperationPageFetcher implements NextPageFetcher<Operation> {
+
+    private static final long serialVersionUID = 4111705358926164078L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+    private final String zone;
+
+    ZoneOperationPageFetcher(String zone, ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+      this.zone = zone;
+    }
+
+    @Override
+    public Page<Operation> nextPage() {
+      return listZoneOperations(zone, serviceOptions, requestOptions);
     }
   }
 
@@ -459,6 +520,159 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : License.fromPb(answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation get(final OperationId operationId, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              if (operationId instanceof RegionOperationId) {
+                RegionOperationId regionOperationId = (RegionOperationId) operationId;
+                return computeRpc.getRegionOperation(regionOperationId.region(),
+                    regionOperationId.operation(), optionsMap);
+              } else if (operationId instanceof ZoneOperationId) {
+                ZoneOperationId zoneOperationId = (ZoneOperationId) operationId;
+                return computeRpc.getZoneOperation(zoneOperationId.zone(),
+                    zoneOperationId.operation(), optionsMap);
+              } else {
+                return computeRpc.getGlobalOperation(operationId.operation(), optionsMap);
+              }
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<Operation> listGlobalOperations(OperationListOption... options) {
+    return listGlobalOperations(options(), optionMap(options));
+  }
+
+  private static Page<Operation> listGlobalOperations(final ComputeOptions serviceOptions,
+      final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Operation>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Operation>> call() {
+              return serviceOptions.rpc().listGlobalOperations(optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Operation> operations = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
+              : result.y(),
+          new Function<com.google.api.services.compute.model.Operation, Operation>() {
+            @Override
+            public Operation apply(com.google.api.services.compute.model.Operation operation) {
+              return Operation.fromPb(serviceOptions.service(), operation);
+            }
+          });
+      return new PageImpl<>(new GlobalOperationPageFetcher(serviceOptions, cursor, optionsMap),
+          cursor, operations);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<Operation> listRegionOperations(String region, OperationListOption... options) {
+    return listRegionOperations(region, options(), optionMap(options));
+  }
+
+  private static Page<Operation> listRegionOperations(final String region,
+      final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Operation>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Operation>> call() {
+              return serviceOptions.rpc().listRegionOperations(region, optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Operation> operations = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
+              : result.y(),
+          new Function<com.google.api.services.compute.model.Operation, Operation>() {
+            @Override
+            public Operation apply(com.google.api.services.compute.model.Operation operation) {
+              return Operation.fromPb(serviceOptions.service(), operation);
+            }
+          });
+      return new PageImpl<>(new RegionOperationPageFetcher(region, serviceOptions, cursor,
+          optionsMap), cursor, operations);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<Operation> listZoneOperations(String zone, OperationListOption... options) {
+    return listZoneOperations(zone, options(), optionMap(options));
+  }
+
+  private static Page<Operation> listZoneOperations(final String zone,
+      final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Operation>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Operation>> call() {
+              return serviceOptions.rpc().listZoneOperations(zone, optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Operation> operations = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
+              : result.y(),
+          new Function<com.google.api.services.compute.model.Operation, Operation>() {
+            @Override
+            public Operation apply(com.google.api.services.compute.model.Operation operation) {
+              return Operation.fromPb(serviceOptions.service(), operation);
+            }
+          });
+      return new PageImpl<>(new ZoneOperationPageFetcher(zone, serviceOptions, cursor, optionsMap),
+          cursor, operations);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public boolean delete(final OperationId operation) {
+    try {
+      return runWithRetries(new Callable<Boolean>() {
+        @Override
+        public Boolean call() {
+          if (operation instanceof RegionOperationId) {
+            RegionOperationId regionOperationId = (RegionOperationId) operation;
+            return computeRpc.deleteRegionOperation(regionOperationId.region(),
+                regionOperationId.operation());
+          } else if (operation instanceof ZoneOperationId) {
+            ZoneOperationId zoneOperationId = (ZoneOperationId) operation;
+            return computeRpc.deleteZoneOperation(zoneOperationId.zone(),
+                zoneOperationId.operation());
+          } else {
+            return computeRpc.deleteGlobalOperation(operation.operation());
+          }
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
     }
