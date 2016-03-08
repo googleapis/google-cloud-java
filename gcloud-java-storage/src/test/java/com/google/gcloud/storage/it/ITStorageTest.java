@@ -54,6 +54,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -834,14 +835,18 @@ public class ITStorageTest {
       byte[] bytes = new byte[blobSize];
       rnd.nextBytes(bytes);
       try (WriteChannel writer = storage.writer(blob)) {
-        writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
+        writer.write(ByteBuffer.wrap(bytes));
       }
-      ByteBuffer readBytes;
+      ByteArrayOutputStream output = new ByteArrayOutputStream();
       try (ReadChannel reader = storage.reader(blob.blobId())) {
-        readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
-        reader.read(readBytes);
+        ByteBuffer buffer = ByteBuffer.allocate(64 * 1024);
+        while (reader.read(buffer) > 0) {
+          buffer.flip();
+          output.write(buffer.array(), 0, buffer.limit());
+          buffer.clear();
+        }
       }
-      assertArrayEquals(BLOB_BYTE_CONTENT, readBytes.array());
+      assertArrayEquals(bytes, output.toByteArray());
       assertTrue(storage.delete(BUCKET, blobName));
     }
   }

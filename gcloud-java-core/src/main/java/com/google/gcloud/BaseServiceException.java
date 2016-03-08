@@ -97,13 +97,17 @@ public class BaseServiceException extends RuntimeException {
     String debugInfo = null;
     if (exception instanceof GoogleJsonResponseException) {
       GoogleJsonError jsonError = ((GoogleJsonResponseException) exception).getDetails();
-      Error error = error(jsonError);
-      code = error.code;
-      reason = error.reason;
-      if (reason != null) {
-        GoogleJsonError.ErrorInfo errorInfo = jsonError.getErrors().get(0);
-        location = errorInfo.getLocation();
-        debugInfo = (String) errorInfo.get("debugInfo");
+      if (jsonError != null) {
+        Error error = error(jsonError);
+        code = error.code;
+        reason = error.reason;
+        if (reason != null) {
+          GoogleJsonError.ErrorInfo errorInfo = jsonError.getErrors().get(0);
+          location = errorInfo.getLocation();
+          debugInfo = (String) errorInfo.get("debugInfo");
+        }
+      } else {
+        code = ((GoogleJsonResponseException) exception).getStatusCode();
       }
     }
     this.code = code;
@@ -207,7 +211,10 @@ public class BaseServiceException extends RuntimeException {
 
   protected static String message(IOException exception) {
     if (exception instanceof GoogleJsonResponseException) {
-      return ((GoogleJsonResponseException) exception).getDetails().getMessage();
+      GoogleJsonError details = ((GoogleJsonResponseException) exception).getDetails();
+      if (details != null) {
+        return details.getMessage();
+      }
     }
     return exception.getMessage();
   }

@@ -31,6 +31,7 @@ import static com.google.gcloud.spi.StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_
 import static com.google.gcloud.spi.StorageRpc.Option.PREFIX;
 import static com.google.gcloud.spi.StorageRpc.Option.VERSIONS;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
+import static javax.servlet.http.HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE;
 
 import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
 import com.google.api.client.googleapis.json.GoogleJsonError;
@@ -453,7 +454,11 @@ public class DefaultStorageRpc implements StorageRpc {
       String etag = req.getLastResponseHeaders().getETag();
       return Tuple.of(etag, output.toByteArray());
     } catch (IOException ex) {
-      throw translate(ex);
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
+        return Tuple.of(null, new byte[0]);
+      }
+      throw serviceException;
     }
   }
 
