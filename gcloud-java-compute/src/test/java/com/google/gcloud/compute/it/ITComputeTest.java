@@ -29,8 +29,11 @@ import com.google.gcloud.compute.DiskType;
 import com.google.gcloud.compute.License;
 import com.google.gcloud.compute.LicenseId;
 import com.google.gcloud.compute.MachineType;
+import com.google.gcloud.compute.Operation;
 import com.google.gcloud.compute.Region;
+import com.google.gcloud.compute.RegionOperationId;
 import com.google.gcloud.compute.Zone;
+import com.google.gcloud.compute.ZoneOperationId;
 import com.google.gcloud.compute.testing.RemoteComputeHelper;
 
 import org.junit.BeforeClass;
@@ -62,7 +65,6 @@ public class ITComputeTest {
   @Test
   public void testGetDiskType() {
     DiskType diskType = compute.getDiskType(ZONE, DISK_TYPE);
-    // todo(mziccard): uncomment or remove once #695 is closed
     // assertNotNull(diskType.id());
     assertEquals(ZONE, diskType.diskTypeId().zone());
     assertEquals(DISK_TYPE, diskType.diskTypeId().diskType());
@@ -76,7 +78,6 @@ public class ITComputeTest {
   public void testGetDiskTypeWithSelectedFields() {
     DiskType diskType = compute.getDiskType(ZONE, DISK_TYPE,
         Compute.DiskTypeOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
-    // todo(mziccard): uncomment or remove once #695 is closed
     // assertNotNull(diskType.id());
     assertEquals(ZONE, diskType.diskTypeId().zone());
     assertEquals(DISK_TYPE, diskType.diskTypeId().diskType());
@@ -93,7 +94,6 @@ public class ITComputeTest {
     assertTrue(diskTypeIterator.hasNext());
     while(diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
-      // todo(mziccard): uncomment or remove once #695 is closed
       // assertNotNull(diskType.id());
       assertNotNull(diskType.diskTypeId());
       assertEquals(ZONE, diskType.diskTypeId().zone());
@@ -148,7 +148,6 @@ public class ITComputeTest {
     assertTrue(diskTypeIterator.hasNext());
     while(diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
-      // todo(mziccard): uncomment or remove once #695 is closed
       // assertNotNull(diskType.id());
       assertNotNull(diskType.diskTypeId());
       assertNotNull(diskType.creationTimestamp());
@@ -446,5 +445,191 @@ public class ITComputeTest {
     Iterator<Zone> zoneIterator = zonePage.iterateAll();
     assertEquals(ZONE, zoneIterator.next().zoneId().zone());
     assertFalse(zoneIterator.hasNext());
+  }
+
+  @Test
+  public void testListGlobalOperations() {
+    Page<Operation> operationPage = compute.listGlobalOperations();
+    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    while(operationIterator.hasNext()) {
+      Operation operation = operationIterator.next();
+      assertNotNull(operation.id());
+      assertNotNull(operation.operationId());
+      // todo(mziccard): uncomment or remove once #727 is closed
+      // assertNotNull(operation.creationTimestamp());
+      assertNotNull(operation.operationType());
+      assertNotNull(operation.status());
+      assertNotNull(operation.user());
+    }
+  }
+
+  @Test
+  public void testListGlobalOperationsWithSelectedFields() {
+    Page<Operation> operationPage =
+        compute.listGlobalOperations(Compute.OperationListOption.fields(Compute.OperationField.ID));
+    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    while(operationIterator.hasNext()) {
+      Operation operation = operationIterator.next();
+      assertNotNull(operation.id());
+      assertNotNull(operation.operationId());
+      assertNull(operation.operationType());
+      assertNull(operation.targetLink());
+      assertNull(operation.targetId());
+      assertNull(operation.creationTimestamp());
+      assertNull(operation.operationType());
+      assertNull(operation.status());
+      assertNull(operation.statusMessage());
+      assertNull(operation.user());
+      assertNull(operation.progress());
+      assertNull(operation.description());
+      assertNull(operation.insertTime());
+      assertNull(operation.startTime());
+      assertNull(operation.endTime());
+      assertNull(operation.warnings());
+      assertNull(operation.httpErrorMessage());
+    }
+  }
+
+  @Test
+  public void testListGlobalOperationsWithFilter() {
+    Page<Operation> operationPage = compute.listGlobalOperations(Compute.OperationListOption.filter(
+        Compute.OperationFilter.equals(Compute.OperationField.STATUS, "DONE")));
+    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    while(operationIterator.hasNext()) {
+      Operation operation = operationIterator.next();
+      assertNotNull(operation.id());
+      assertNotNull(operation.operationId());
+      // todo(mziccard): uncomment or remove once #727 is closed
+      // assertNotNull(operation.creationTimestamp());
+      assertNotNull(operation.operationType());
+      assertEquals(Operation.Status.DONE, operation.status());
+      assertNotNull(operation.user());
+    }
+  }
+
+  @Test
+  public void testListRegionOperations() {
+    Page<Operation> operationPage = compute.listRegionOperations(REGION);
+    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    while(operationIterator.hasNext()) {
+      Operation operation = operationIterator.next();
+      assertNotNull(operation.id());
+      assertNotNull(operation.operationId());
+      assertEquals(REGION, operation.<RegionOperationId>operationId().region());
+      // assertNotNull(operation.creationTimestamp());
+      assertNotNull(operation.operationType());
+      assertNotNull(operation.status());
+      assertNotNull(operation.user());
+    }
+  }
+
+  @Test
+  public void testListRegionOperationsWithSelectedFields() {
+    Page<Operation> operationPage = compute.listRegionOperations(REGION,
+        Compute.OperationListOption.fields(Compute.OperationField.ID));
+    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    while(operationIterator.hasNext()) {
+      Operation operation = operationIterator.next();
+      assertNotNull(operation.id());
+      assertNotNull(operation.operationId());
+      assertEquals(REGION, operation.<RegionOperationId>operationId().region());
+      assertNull(operation.operationType());
+      assertNull(operation.targetLink());
+      assertNull(operation.targetId());
+      assertNull(operation.creationTimestamp());
+      assertNull(operation.operationType());
+      assertNull(operation.status());
+      assertNull(operation.statusMessage());
+      assertNull(operation.user());
+      assertNull(operation.progress());
+      assertNull(operation.description());
+      assertNull(operation.insertTime());
+      assertNull(operation.startTime());
+      assertNull(operation.endTime());
+      assertNull(operation.warnings());
+      assertNull(operation.httpErrorMessage());
+    }
+  }
+
+  @Test
+  public void testListRegionOperationsWithFilter() {
+    Page<Operation> operationPage = compute.listRegionOperations(REGION,
+        Compute.OperationListOption.filter(Compute.OperationFilter.equals(
+            Compute.OperationField.STATUS, "DONE")));
+    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    while(operationIterator.hasNext()) {
+      Operation operation = operationIterator.next();
+      assertNotNull(operation.id());
+      assertNotNull(operation.operationId());
+      assertEquals(REGION, operation.<RegionOperationId>operationId().region());
+      // todo(mziccard): uncomment or remove once #727 is closed
+      // assertNotNull(operation.creationTimestamp());
+      assertNotNull(operation.operationType());
+      assertEquals(Operation.Status.DONE, operation.status());
+      assertNotNull(operation.user());
+    }
+  }
+
+  @Test
+  public void testListZoneOperations() {
+    Page<Operation> operationPage = compute.listZoneOperations(ZONE);
+    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    while(operationIterator.hasNext()) {
+      Operation operation = operationIterator.next();
+      assertNotNull(operation.id());
+      assertNotNull(operation.operationId());
+      assertEquals(ZONE, operation.<ZoneOperationId>operationId().zone());
+      // assertNotNull(operation.creationTimestamp());
+      assertNotNull(operation.operationType());
+      assertNotNull(operation.status());
+      assertNotNull(operation.user());
+    }
+  }
+
+  @Test
+  public void testListZoneOperationsWithSelectedFields() {
+    Page<Operation> operationPage = compute.listZoneOperations(ZONE,
+        Compute.OperationListOption.fields(Compute.OperationField.ID));
+    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    while(operationIterator.hasNext()) {
+      Operation operation = operationIterator.next();
+      assertNotNull(operation.id());
+      assertNotNull(operation.operationId());
+      assertEquals(ZONE, operation.<ZoneOperationId>operationId().zone());
+      assertNull(operation.operationType());
+      assertNull(operation.targetLink());
+      assertNull(operation.targetId());
+      assertNull(operation.creationTimestamp());
+      assertNull(operation.operationType());
+      assertNull(operation.status());
+      assertNull(operation.statusMessage());
+      assertNull(operation.user());
+      assertNull(operation.progress());
+      assertNull(operation.description());
+      assertNull(operation.insertTime());
+      assertNull(operation.startTime());
+      assertNull(operation.endTime());
+      assertNull(operation.warnings());
+      assertNull(operation.httpErrorMessage());
+    }
+  }
+
+  @Test
+  public void testListZoneOperationsWithFilter() {
+    Page<Operation> operationPage = compute.listZoneOperations(ZONE,
+        Compute.OperationListOption.filter(Compute.OperationFilter.equals(
+            Compute.OperationField.STATUS, "DONE")));
+    Iterator<Operation> operationIterator = operationPage.iterateAll();
+    while(operationIterator.hasNext()) {
+      Operation operation = operationIterator.next();
+      assertNotNull(operation.id());
+      assertNotNull(operation.operationId());
+      assertEquals(ZONE, operation.<ZoneOperationId>operationId().zone());
+      // todo(mziccard): uncomment or remove once #727 is closed
+      // assertNotNull(operation.creationTimestamp());
+      assertNotNull(operation.operationType());
+      assertEquals(Operation.Status.DONE, operation.status());
+      assertNotNull(operation.user());
+    }
   }
 }

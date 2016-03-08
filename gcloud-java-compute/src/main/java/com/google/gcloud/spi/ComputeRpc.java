@@ -19,6 +19,7 @@ package com.google.gcloud.spi;
 import com.google.api.services.compute.model.DiskType;
 import com.google.api.services.compute.model.License;
 import com.google.api.services.compute.model.MachineType;
+import com.google.api.services.compute.model.Operation;
 import com.google.api.services.compute.model.Region;
 import com.google.api.services.compute.model.Zone;
 import com.google.gcloud.compute.ComputeException;
@@ -161,4 +162,70 @@ public interface ComputeRpc {
    * @throws ComputeException upon failure
    */
   License getLicense(String project, String license, Map<Option, ?> options);
+
+  /**
+   * Returns the requested global operation or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Operation getGlobalOperation(String operation, Map<Option, ?> options);
+
+  /**
+   * Lists the global operations in the current project.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Operation>> listGlobalOperations(Map<Option, ?> options);
+
+  /**
+   * Deletes the requested global operation.
+   *
+   * @return {@code true} if operation was deleted, {@code false} if it was not found
+   * @throws ComputeException upon failure
+   */
+  boolean deleteGlobalOperation(String operation);
+
+  /**
+   * Returns the requested region operation or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Operation getRegionOperation(String region, String operation, Map<Option, ?> options);
+
+  /**
+   * Lists the region operations for the current project and region.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Operation>> listRegionOperations(String region, Map<Option, ?> options);
+
+  /**
+   * Deletes the requested region operation.
+   *
+   * @return {@code true} if operation was deleted, {@code false} if it was not found
+   * @throws ComputeException upon failure
+   */
+  boolean deleteRegionOperation(String region, String operation);
+
+  /**
+   * Returns the requested zone operation or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Operation getZoneOperation(String zone, String operation, Map<Option, ?> options);
+
+  /**
+   * Lists the zone operations for the current project and zone.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Operation>> listZoneOperations(String zone, Map<Option, ?> options);
+
+  /**
+   * Deletes the requested zone operation.
+   *
+   * @return {@code true} if operation was deleted, {@code false} if it was not found
+   * @throws ComputeException upon failure
+   */
+  boolean deleteZoneOperation(String zone, String operation);
 }
