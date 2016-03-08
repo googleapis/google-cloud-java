@@ -90,7 +90,6 @@ public class SerializationTest {
         .projectId("p2")
         .retryParams(RetryParams.defaultInstance())
         .authCredentials(null)
-        .pathDelimiter(":")
         .build();
     serializedCopy = serializeAndDeserialize(options);
     assertEquals(options, serializedCopy);

@@ -57,8 +57,10 @@ import com.google.api.services.storage.model.ComposeRequest;
 import com.google.api.services.storage.model.ComposeRequest.SourceObjects.ObjectPreconditions;
 import com.google.api.services.storage.model.Objects;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.gcloud.storage.StorageException;
@@ -67,6 +69,7 @@ import com.google.gcloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -151,7 +154,7 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<StorageObject>> list(String bucket, Map<Option, ?> options) {
+  public Tuple<String, Iterable<StorageObject>> list(final String bucket, Map<Option, ?> options) {
     try {
       Objects objects = storage.objects()
           .list(bucket)
@@ -163,8 +166,20 @@ public class DefaultStorageRpc implements StorageRpc {
           .setPageToken(PAGE_TOKEN.getString(options))
           .setFields(FIELDS.getString(options))
           .execute();
-      return Tuple.<String, Iterable<StorageObject>>of(
-          objects.getNextPageToken(), objects.getItems());
+      Iterable<StorageObject> storageObjects = Iterables.concat(
+          objects.getItems() != null ? objects.getItems() : ImmutableList.<StorageObject>of(),
+          objects.getPrefixes() != null
+              ? Lists.transform(objects.getPrefixes(), new Function<String, StorageObject>() {
+                @Override
+                public StorageObject apply(String prefix) {
+                  return new StorageObject()
+                      .set("isDirectory", true)
+                      .setBucket(bucket)
+                      .setName(prefix)
+                      .setSize(BigInteger.ZERO);
+                }
+              }) : ImmutableList.<StorageObject>of());
+      return Tuple.of(objects.getNextPageToken(), storageObjects);
     } catch (IOException ex) {
       throw translate(ex);
     }

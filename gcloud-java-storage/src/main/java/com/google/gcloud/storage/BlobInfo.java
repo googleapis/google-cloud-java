@@ -78,6 +78,7 @@ public class BlobInfo implements Serializable {
   private final String contentDisposition;
   private final String contentLanguage;
   private final Integer componentCount;
+  private final boolean isDirectory;
 
   /**
    * This class is meant for internal use only. Users are discouraged from using this class.
@@ -187,6 +188,8 @@ public class BlobInfo implements Serializable {
 
     abstract Builder updateTime(Long updateTime);
 
+    abstract Builder isDirectory(boolean isDirectory);
+
     /**
      * Creates a {@code BlobInfo} object.
      */
@@ -215,6 +218,7 @@ public class BlobInfo implements Serializable {
     private Long metageneration;
     private Long deleteTime;
     private Long updateTime;
+    private Boolean isDirectory;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -241,6 +245,7 @@ public class BlobInfo implements Serializable {
       metageneration = blobInfo.metageneration;
       deleteTime = blobInfo.deleteTime;
       updateTime = blobInfo.updateTime;
+      isDirectory = blobInfo.isDirectory;
     }
 
     @Override
@@ -365,6 +370,12 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
+    Builder isDirectory(boolean isDirectory) {
+      this.isDirectory = isDirectory;
+      return this;
+    }
+
+    @Override
     public BlobInfo build() {
       checkNotNull(blobId);
       return new BlobInfo(this);
@@ -392,6 +403,7 @@ public class BlobInfo implements Serializable {
     metageneration = builder.metageneration;
     deleteTime = builder.deleteTime;
     updateTime = builder.updateTime;
+    isDirectory = firstNonNull(builder.isDirectory, Boolean.FALSE);
   }
 
   /**
@@ -589,6 +601,18 @@ public class BlobInfo implements Serializable {
   }
 
   /**
+   * Returns {@code true} if the current blob represents a directory. This can only happen if the
+   * blob is returned by {@link Storage#list(String, Storage.BlobListOption...)} when the
+   * {@link Storage.BlobListOption#currentDirectory()} option is used. If {@code true} only
+   * {@link #blobId()} and {@link #size()} are set for the current blob: {@link BlobId#name()} ends
+   * with the '/' character, {@link BlobId#generation()} returns {@code null} and {@link #size()} is
+   * {@code 0}.
+   */
+  public boolean isDirectory() {
+    return isDirectory;
+  }
+
+  /**
    * Returns a builder for the current blob.
    */
   public Builder toBuilder() {
@@ -760,6 +784,9 @@ public class BlobInfo implements Serializable {
           return Acl.fromPb(objectAccessControl);
         }
       }));
+    }
+    if (storageObject.get("isDirectory") != null) {
+      builder.isDirectory(Boolean.TRUE);
     }
     return builder.build();
   }

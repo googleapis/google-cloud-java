@@ -95,6 +95,10 @@ public class BlobTest {
       .updateTime(UPDATE_TIME)
       .build();
   private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").metageneration(42L).build();
+  private static final BlobInfo DIRECTORY_INFO = BlobInfo.builder("b", "n/")
+      .size(0L)
+      .isDirectory(true)
+      .build();
 
   private Storage storage;
   private Blob blob;
@@ -305,18 +309,20 @@ public class BlobTest {
 
   @Test
   public void testToBuilder() {
-    expect(storage.options()).andReturn(mockOptions).times(4);
+    expect(storage.options()).andReturn(mockOptions).times(6);
     replay(storage);
     Blob fullBlob = new Blob(storage, new BlobInfo.BuilderImpl(FULL_BLOB_INFO));
     assertEquals(fullBlob, fullBlob.toBuilder().build());
     Blob simpleBlob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO));
     assertEquals(simpleBlob, simpleBlob.toBuilder().build());
+    Blob directory = new Blob(storage, new BlobInfo.BuilderImpl(DIRECTORY_INFO));
+    assertEquals(directory, directory.toBuilder().build());
   }
 
   @Test
   public void testBuilder() {
     initializeExpectedBlob(4);
-    expect(storage.options()).andReturn(mockOptions).times(2);
+    expect(storage.options()).andReturn(mockOptions).times(4);
     replay(storage);
     Blob.Builder builder = new Blob.Builder(new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO)));
     Blob blob = builder.acl(ACL)
@@ -360,5 +366,33 @@ public class BlobTest {
     assertEquals(SELF_LINK, blob.selfLink());
     assertEquals(SIZE, blob.size());
     assertEquals(UPDATE_TIME, blob.updateTime());
+    assertFalse(blob.isDirectory());
+    builder = new Blob.Builder(new Blob(storage, new BlobInfo.BuilderImpl(DIRECTORY_INFO)));
+    blob = builder.blobId(BlobId.of("b", "n/"))
+        .isDirectory(true)
+        .size(0L)
+        .build();
+    assertEquals("b", blob.bucket());
+    assertEquals("n/", blob.name());
+    assertNull(blob.acl());
+    assertNull(blob.componentCount());
+    assertNull(blob.contentType());
+    assertNull(blob.cacheControl());
+    assertNull(blob.contentDisposition());
+    assertNull(blob.contentEncoding());
+    assertNull(blob.contentLanguage());
+    assertNull(blob.crc32c());
+    assertNull(blob.deleteTime());
+    assertNull(blob.etag());
+    assertNull(blob.id());
+    assertNull(blob.md5());
+    assertNull(blob.mediaLink());
+    assertNull(blob.metadata());
+    assertNull(blob.metageneration());
+    assertNull(blob.owner());
+    assertNull(blob.selfLink());
+    assertEquals(0L, (long) blob.size());
+    assertNull(blob.updateTime());
+    assertTrue(blob.isDirectory());
   }
 }

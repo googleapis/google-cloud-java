@@ -291,6 +291,12 @@ public final class Blob extends BlobInfo {
     }
 
     @Override
+    Builder isDirectory(boolean isDirectory) {
+      infoBuilder.isDirectory(isDirectory);
+      return this;
+    }
+
+    @Override
     public Blob build() {
       return new Blob(storage, infoBuilder);
     }

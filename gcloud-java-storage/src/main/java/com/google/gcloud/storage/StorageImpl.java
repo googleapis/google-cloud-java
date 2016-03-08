@@ -76,6 +76,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   private static final byte[] EMPTY_BYTE_ARRAY = {};
   private static final String EMPTY_BYTE_ARRAY_MD5 = "1B2M2Y8AsgTpgAmY7PhCfg==";
   private static final String EMPTY_BYTE_ARRAY_CRC32C = "AAAAAA==";
+  private static final String PATH_DELIMITER = "/";
 
   private static final Function<Tuple<Storage, Boolean>, Boolean> DELETE_FUNCTION =
       new Function<Tuple<Storage, Boolean>, Boolean>() {
@@ -669,7 +670,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
     Boolean value = (Boolean) temp.remove(DELIMITER);
     if (Boolean.TRUE.equals(value)) {
-      temp.put(DELIMITER, options().pathDelimiter());
+      temp.put(DELIMITER, PATH_DELIMITER);
     }
     if (useAsSource) {
       addToOptionMap(IF_GENERATION_MATCH, IF_SOURCE_GENERATION_MATCH, generation, temp);
