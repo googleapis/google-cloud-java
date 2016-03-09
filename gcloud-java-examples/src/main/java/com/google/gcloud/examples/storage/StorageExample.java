@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.examples;
+package com.google.gcloud.examples.storage;
 
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
@@ -25,7 +25,6 @@ import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.Bucket;
-import com.google.gcloud.storage.BucketInfo;
 import com.google.gcloud.storage.CopyWriter;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.ComposeRequest;
@@ -66,7 +65,7 @@ import java.util.concurrent.TimeUnit;
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven -
- * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.StorageExample"
+ * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.storage.StorageExample"
  *  -Dexec.args="[<project_id>]
  *  list [<bucket>] |
  *  info [<bucket> [<file>]] |
@@ -133,27 +132,27 @@ public class StorageExample {
       if (blobIds.length == 1) {
         if (blobIds[0].name().isEmpty()) {
           // get Bucket
-          Bucket bucket = Bucket.get(storage, blobIds[0].bucket());
+          Bucket bucket = storage.get(blobIds[0].bucket());
           if (bucket == null) {
             System.out.println("No such bucket");
             return;
           }
-          System.out.println("Bucket info: " + bucket.info());
+          System.out.println("Bucket info: " + bucket);
         } else {
           // get Blob
-          Blob blob = Blob.get(storage, blobIds[0]);
+          Blob blob = storage.get(blobIds[0]);
           if (blob == null) {
             System.out.println("No such object");
             return;
           }
-          System.out.println("Blob info: " + blob.info());
+          System.out.println("Blob info: " + blob);
         }
       } else {
         // use batch to get multiple blobs.
-        List<Blob> blobs = Blob.get(storage, Arrays.asList(blobIds));
+        List<Blob> blobs = storage.get(blobIds);
         for (Blob blob : blobs) {
           if (blob != null) {
-            System.out.println(blob.info());
+            System.out.println(blob);
           }
         }
       }
@@ -184,7 +183,7 @@ public class StorageExample {
     @Override
     public void run(Storage storage, BlobId... blobIds) {
       // use batch operation
-      List<Boolean> deleteResults = Blob.delete(storage, blobIds);
+      List<Boolean> deleteResults = storage.delete(blobIds);
       int index = 0;
       for (Boolean deleted : deleteResults) {
         if (deleted) {
@@ -218,20 +217,20 @@ public class StorageExample {
     public void run(Storage storage, String bucketName) {
       if (bucketName == null) {
         // list buckets
-        Iterator<BucketInfo> bucketInfoIterator = storage.list().iterateAll();
-        while (bucketInfoIterator.hasNext()) {
-          System.out.println(bucketInfoIterator.next());
+        Iterator<Bucket> bucketIterator = storage.list().iterateAll();
+        while (bucketIterator.hasNext()) {
+          System.out.println(bucketIterator.next());
         }
       } else {
         // list a bucket's blobs
-        Bucket bucket = Bucket.get(storage, bucketName);
+        Bucket bucket = storage.get(bucketName);
         if (bucket == null) {
           System.out.println("No such bucket");
           return;
         }
         Iterator<Blob> blobIterator = bucket.list().iterateAll();
         while (blobIterator.hasNext()) {
-          System.out.println(blobIterator.next().info());
+          System.out.println(blobIterator.next());
         }
       }
     }
@@ -257,8 +256,7 @@ public class StorageExample {
       if (Files.size(uploadFrom) > 1_000_000) {
         // When content is not available or large (1MB or more) it is recommended
         // to write it in chunks via the blob's channel writer.
-        Blob blob = new Blob(storage, blobInfo);
-        try (WriteChannel writer = blob.writer()) {
+        try (WriteChannel writer = storage.writer(blobInfo)) {
           byte[] buffer = new byte[1024];
           try (InputStream input = Files.newInputStream(uploadFrom)) {
             int limit;
@@ -311,7 +309,7 @@ public class StorageExample {
     }
 
     private void run(Storage storage, BlobId blobId, Path downloadTo) throws IOException {
-      Blob blob = Blob.get(storage, blobId);
+      Blob blob = storage.get(blobId);
       if (blob == null) {
         System.out.println("No such object");
         return;
@@ -320,7 +318,7 @@ public class StorageExample {
       if (downloadTo != null) {
         writeTo = new PrintStream(new FileOutputStream(downloadTo.toFile()));
       }
-      if (blob.info().size() < 1_000_000) {
+      if (blob.size() < 1_000_000) {
         // Blob is small read all its content in one request
         byte[] content = blob.content();
         writeTo.write(content);
@@ -438,13 +436,13 @@ public class StorageExample {
     }
 
     private void run(Storage storage, BlobId blobId, Map<String, String> metadata) {
-      Blob blob = Blob.get(storage, blobId);
+      Blob blob = storage.get(blobId);
       if (blob == null) {
         System.out.println("No such object");
         return;
       }
-      Blob updateBlob = blob.update(blob.info().toBuilder().metadata(metadata).build());
-      System.out.println("Updated " + updateBlob.info());
+      Blob updateBlob = blob.toBuilder().metadata(metadata).build().update();
+      System.out.println("Updated " + updateBlob);
     }
 
     @Override
@@ -488,9 +486,8 @@ public class StorageExample {
       run(storage, tuple.x(), tuple.y());
     }
 
-    private void run(Storage storage, ServiceAccountAuthCredentials cred, BlobInfo blobInfo)
-        throws IOException {
-      Blob blob = new Blob(storage, blobInfo);
+    private void run(Storage storage, ServiceAccountAuthCredentials cred, BlobInfo blobInfo) {
+      Blob blob = storage.get(blobInfo.blobId());
       System.out.println("Signed URL: "
           + blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.serviceAccount(cred)));
     }

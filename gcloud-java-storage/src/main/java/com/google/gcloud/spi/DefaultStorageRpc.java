@@ -14,6 +14,7 @@
 
 package com.google.gcloud.spi;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.gcloud.spi.StorageRpc.Option.DELIMITER;
 import static com.google.gcloud.spi.StorageRpc.Option.FIELDS;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_GENERATION_MATCH;
@@ -31,6 +32,7 @@ import static com.google.gcloud.spi.StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_
 import static com.google.gcloud.spi.StorageRpc.Option.PREFIX;
 import static com.google.gcloud.spi.StorageRpc.Option.VERSIONS;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
+import static javax.servlet.http.HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE;
 
 import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
 import com.google.api.client.googleapis.json.GoogleJsonError;
@@ -56,8 +58,9 @@ import com.google.api.services.storage.model.ComposeRequest;
 import com.google.api.services.storage.model.ComposeRequest.SourceObjects.ObjectPreconditions;
 import com.google.api.services.storage.model.Objects;
 import com.google.api.services.storage.model.StorageObject;
-import com.google.common.base.MoreObjects;
+import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.gcloud.storage.StorageException;
@@ -66,6 +69,7 @@ import com.google.gcloud.storage.StorageOptions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -99,7 +103,7 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Bucket create(Bucket bucket, Map<Option, ?> options) throws StorageException {
+  public Bucket create(Bucket bucket, Map<Option, ?> options) {
     try {
       return storage.buckets()
           .insert(this.options.projectId(), bucket)
@@ -114,7 +118,7 @@ public class DefaultStorageRpc implements StorageRpc {
 
   @Override
   public StorageObject create(StorageObject storageObject, final InputStream content,
-      Map<Option, ?> options) throws StorageException {
+      Map<Option, ?> options) {
     try {
       Storage.Objects.Insert insert = storage.objects()
           .insert(storageObject.getBucket(), storageObject,
@@ -150,7 +154,7 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<StorageObject>> list(String bucket, Map<Option, ?> options) {
+  public Tuple<String, Iterable<StorageObject>> list(final String bucket, Map<Option, ?> options) {
     try {
       Objects objects = storage.objects()
           .list(bucket)
@@ -162,11 +166,28 @@ public class DefaultStorageRpc implements StorageRpc {
           .setPageToken(PAGE_TOKEN.getString(options))
           .setFields(FIELDS.getString(options))
           .execute();
-      return Tuple.<String, Iterable<StorageObject>>of(
-          objects.getNextPageToken(), objects.getItems());
+      Iterable<StorageObject> storageObjects = Iterables.concat(
+          firstNonNull(objects.getItems(), ImmutableList.<StorageObject>of()),
+          objects.getPrefixes() != null
+              ? Lists.transform(objects.getPrefixes(), objectFromPrefix(bucket))
+              : ImmutableList.<StorageObject>of());
+      return Tuple.of(objects.getNextPageToken(), storageObjects);
     } catch (IOException ex) {
       throw translate(ex);
     }
+  }
+
+  private static Function<String, StorageObject> objectFromPrefix(final String bucket) {
+    return new Function<String, StorageObject>() {
+      @Override
+      public StorageObject apply(String prefix) {
+        return new StorageObject()
+            .set("isDirectory", true)
+            .setBucket(bucket)
+            .setName(prefix)
+            .setSize(BigInteger.ZERO);
+      }
+    };
   }
 
   @Override
@@ -296,7 +317,7 @@ public class DefaultStorageRpc implements StorageRpc {
 
   @Override
   public StorageObject compose(Iterable<StorageObject> sources, StorageObject target,
-      Map<Option, ?> targetOptions) throws StorageException {
+      Map<Option, ?> targetOptions) {
     ComposeRequest request = new ComposeRequest();
     if (target.getContentType() == null) {
       target.setContentType("application/octet-stream");
@@ -327,8 +348,7 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public byte[] load(StorageObject from, Map<Option, ?> options)
-      throws StorageException {
+  public byte[] load(StorageObject from, Map<Option, ?> options) {
     try {
       Storage.Objects.Get getRequest = storage.objects()
           .get(from.getBucket(), from.getName())
@@ -347,7 +367,7 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BatchResponse batch(BatchRequest request) throws StorageException {
+  public BatchResponse batch(BatchRequest request) {
     List<List<Tuple<StorageObject, Map<Option, ?>>>> partitionedToDelete =
         Lists.partition(request.toDelete, MAX_BATCH_DELETES);
     Iterator<List<Tuple<StorageObject, Map<Option, ?>>>> iterator = partitionedToDelete.iterator();
@@ -437,7 +457,7 @@ public class DefaultStorageRpc implements StorageRpc {
 
   @Override
   public Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position,
-      int bytes) throws StorageException {
+      int bytes) {
     try {
       Get req = storage.objects()
           .get(from.getBucket(), from.getName())
@@ -454,20 +474,32 @@ public class DefaultStorageRpc implements StorageRpc {
       String etag = req.getLastResponseHeaders().getETag();
       return Tuple.of(etag, output.toByteArray());
     } catch (IOException ex) {
-      throw translate(ex);
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
+        return Tuple.of(null, new byte[0]);
+      }
+      throw serviceException;
     }
   }
 
   @Override
   public void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
-      boolean last) throws StorageException {
+      boolean last) {
     try {
+      if (length == 0 && !last) {
+        return;
+      }
       GenericUrl url = new GenericUrl(uploadId);
       HttpRequest httpRequest = storage.getRequestFactory().buildPutRequest(url,
           new ByteArrayContent(null, toWrite, toWriteOffset, length));
       long limit = destOffset + length;
       StringBuilder range = new StringBuilder("bytes ");
-      range.append(destOffset).append('-').append(limit - 1).append('/');
+      if (length == 0) {
+        range.append('*');
+      } else {
+        range.append(destOffset).append('-').append(limit - 1);
+      }
+      range.append('/');
       if (last) {
         range.append(limit);
       } else {
@@ -501,8 +533,7 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public String open(StorageObject object, Map<Option, ?> options)
-      throws StorageException {
+  public String open(StorageObject object, Map<Option, ?> options) {
     try {
       Insert req = storage.objects().insert(object.getBucket(), object);
       GenericUrl url = req.buildHttpRequest().getUrl();
@@ -523,7 +554,7 @@ public class DefaultStorageRpc implements StorageRpc {
       HttpRequest httpRequest =
           requestFactory.buildPostRequest(url, new JsonHttpContent(jsonFactory, object));
       httpRequest.getHeaders().set("X-Upload-Content-Type",
-          MoreObjects.firstNonNull(object.getContentType(), "application/octet-stream"));
+          firstNonNull(object.getContentType(), "application/octet-stream"));
       HttpResponse response = httpRequest.execute();
       if (response.getStatusCode() != 200) {
         GoogleJsonError error = new GoogleJsonError();
@@ -538,16 +569,16 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public RewriteResponse openRewrite(RewriteRequest rewriteRequest) throws StorageException {
+  public RewriteResponse openRewrite(RewriteRequest rewriteRequest) {
     return rewrite(rewriteRequest, null);
   }
 
   @Override
-  public RewriteResponse continueRewrite(RewriteResponse previousResponse) throws StorageException {
+  public RewriteResponse continueRewrite(RewriteResponse previousResponse) {
     return rewrite(previousResponse.rewriteRequest, previousResponse.rewriteToken);
   }
 
-  private RewriteResponse rewrite(RewriteRequest req, String token) throws StorageException {
+  private RewriteResponse rewrite(RewriteRequest req, String token) {
     try {
       Long maxBytesRewrittenPerCall = req.megabytesRewrittenPerCall != null
           ? req.megabytesRewrittenPerCall * MEGABYTE : null;

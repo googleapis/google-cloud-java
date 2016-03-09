@@ -27,8 +27,9 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery view table type. BigQuery's views are logical views, not materialized views,
- * which means that the query that defines the view is re-executed every time the view is queried.
+ * Google BigQuery view table definition. BigQuery's views are logical views, not materialized
+ * views, which means that the query that defines the view is re-executed every time the view is
+ * queried.
  *
  * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
  */
@@ -168,7 +169,7 @@ public final class ViewDefinition extends TableDefinition {
   }
 
   /**
-   * Returns a builder for a BigQuery view type.
+   * Returns a builder for a BigQuery view definition.
    *
    * @param query the query used to generate the view
    */
@@ -177,7 +178,7 @@ public final class ViewDefinition extends TableDefinition {
   }
 
   /**
-   * Returns a builder for a BigQuery view type.
+   * Returns a builder for a BigQuery view definition.
    *
    * @param query the query used to generate the table
    * @param functions user-defined functions that can be used by the query
@@ -187,7 +188,7 @@ public final class ViewDefinition extends TableDefinition {
   }
 
   /**
-   * Returns a builder for a BigQuery view type.
+   * Returns a builder for a BigQuery view definition.
    *
    * @param query the query used to generate the table
    * @param functions user-defined functions that can be used by the query
@@ -197,7 +198,7 @@ public final class ViewDefinition extends TableDefinition {
   }
 
   /**
-   * Creates a BigQuery view type given the query used to generate the table.
+   * Creates a BigQuery view definition given the query used to generate the table.
    *
    * @param query the query used to generate the table
    */
@@ -206,7 +207,7 @@ public final class ViewDefinition extends TableDefinition {
   }
 
   /**
-   * Creates a BigQuery view type given a query and some user-defined functions.
+   * Creates a BigQuery view definition given a query and some user-defined functions.
    *
    * @param query the query used to generate the table
    * @param functions user-defined functions that can be used by the query
@@ -216,7 +217,7 @@ public final class ViewDefinition extends TableDefinition {
   }
 
   /**
-   * Creates a BigQuery view type given a query and some user-defined functions.
+   * Creates a BigQuery view definition given a query and some user-defined functions.
    *
    * @param query the query used to generate the table
    * @param functions user-defined functions that can be used by the query

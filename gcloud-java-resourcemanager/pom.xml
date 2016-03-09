@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-resourcemanager</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java resource manager</name>
@@ -11,7 +10,7 @@
   <parent>
     <groupId>com.google.gcloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.1.4-SNAPSHOT</version>
+    <version>0.1.6-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-resourcemanager</site.installationModule>
@@ -25,7 +24,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-cloudresourcemanager</artifactId>
-      <version>v1beta1-rev6-1.19.0</version>
+      <version>v1beta1-rev10-1.21.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
@@ -43,7 +42,7 @@
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <version>3.3</version>
+      <version>3.4</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

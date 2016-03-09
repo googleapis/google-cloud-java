@@ -20,6 +20,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import com.google.gcloud.Identity;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.RetryParams;
 
@@ -53,6 +55,9 @@ private static final ResourceManager RESOURCE_MANAGER =
       ResourceManager.ProjectGetOption.fields(ResourceManager.ProjectField.NAME);
   private static final ResourceManager.ProjectListOption PROJECT_LIST_OPTION =
       ResourceManager.ProjectListOption.filter("name:*");
+  private static final Policy POLICY = Policy.builder()
+      .addBinding(Policy.Role.VIEWER, ImmutableSet.of(Identity.user("abc@gmail.com")))
+      .build();
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -70,7 +75,7 @@ private static final ResourceManager RESOURCE_MANAGER =
   @Test
   public void testModelAndRequests() throws Exception {
     Serializable[] objects = {PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PROJECT, PAGE_RESULT,
-        PROJECT_GET_OPTION, PROJECT_LIST_OPTION};
+        PROJECT_GET_OPTION, PROJECT_LIST_OPTION, POLICY};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

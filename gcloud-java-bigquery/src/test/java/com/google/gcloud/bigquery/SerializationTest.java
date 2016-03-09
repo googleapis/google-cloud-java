@@ -224,6 +224,12 @@ public class SerializationTest {
       .jobCompleted(true)
       .result(QUERY_RESULT)
       .build();
+  private static final BigQuery BIGQUERY =
+      BigQueryOptions.builder().projectId("p1").build().service();
+  private static final Dataset DATASET =
+      new Dataset(BIGQUERY, new DatasetInfo.BuilderImpl(DATASET_INFO));
+  private static final Table TABLE = new Table(BIGQUERY, new TableInfo.BuilderImpl(TABLE_INFO));
+  private static final Job JOB = new Job(BIGQUERY, new JobInfo.BuilderImpl(JOB_INFO));
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -256,7 +262,7 @@ public class SerializationTest {
         BigQuery.DatasetOption.fields(), BigQuery.DatasetDeleteOption.deleteContents(),
         BigQuery.DatasetListOption.all(), BigQuery.TableOption.fields(),
         BigQuery.TableListOption.maxResults(42L), BigQuery.JobOption.fields(),
-        BigQuery.JobListOption.allUsers()};
+        BigQuery.JobListOption.allUsers(), DATASET, TABLE, JOB};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

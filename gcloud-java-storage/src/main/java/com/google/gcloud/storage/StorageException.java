@@ -33,7 +33,7 @@ import java.util.Set;
  */
 public class StorageException extends BaseServiceException {
 
-  // see: https://cloud.google.com/storage/docs/concepts-techniques#practices
+  // see: https://cloud.google.com/storage/docs/resumable-uploads-xml#practices
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
       new Error(504, null),
       new Error(503, null),

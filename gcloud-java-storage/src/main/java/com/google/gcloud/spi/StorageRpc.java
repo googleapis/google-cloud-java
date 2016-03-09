@@ -217,57 +217,134 @@ public interface StorageRpc {
     }
   }
 
-  Bucket create(Bucket bucket, Map<Option, ?> options) throws StorageException;
+  /**
+   * Creates a new bucket.
+   *
+   * @throws StorageException upon failure
+   */
+  Bucket create(Bucket bucket, Map<Option, ?> options);
 
-  StorageObject create(StorageObject object, InputStream content, Map<Option, ?> options)
-      throws StorageException;
+  /**
+   * Creates a new storage object.
+   *
+   * @throws StorageException upon failure
+   */
+  StorageObject create(StorageObject object, InputStream content, Map<Option, ?> options);
 
-  Tuple<String, Iterable<Bucket>> list(Map<Option, ?> options) throws StorageException;
+  /**
+   * Lists the project's buckets.
+   *
+   * @throws StorageException upon failure
+   */
+  Tuple<String, Iterable<Bucket>> list(Map<Option, ?> options);
 
-  Tuple<String, Iterable<StorageObject>> list(String bucket, Map<Option, ?> options)
-      throws StorageException;
+  /**
+   * Lists the bucket's blobs.
+   *
+   * @throws StorageException upon failure
+   */
+  Tuple<String, Iterable<StorageObject>> list(String bucket, Map<Option, ?> options);
 
   /**
    * Returns the requested bucket or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  Bucket get(Bucket bucket, Map<Option, ?> options) throws StorageException;
+  Bucket get(Bucket bucket, Map<Option, ?> options);
 
   /**
    * Returns the requested storage object or {@code null} if not found.
    *
    * @throws StorageException upon failure
    */
-  StorageObject get(StorageObject object, Map<Option, ?> options)
-      throws StorageException;
+  StorageObject get(StorageObject object, Map<Option, ?> options);
 
-  Bucket patch(Bucket bucket, Map<Option, ?> options) throws StorageException;
+  /**
+   * Updates bucket information.
+   *
+   * @throws StorageException upon failure
+   */
+  Bucket patch(Bucket bucket, Map<Option, ?> options);
 
-  StorageObject patch(StorageObject storageObject, Map<Option, ?> options)
-      throws StorageException;
+  /**
+   * Updates the storage object's information. Original metadata are merged with metadata in the
+   * provided {@code storageObject}.
+   *
+   * @throws StorageException upon failure
+   */
+  StorageObject patch(StorageObject storageObject, Map<Option, ?> options);
 
-  boolean delete(Bucket bucket, Map<Option, ?> options) throws StorageException;
+  /**
+   * Deletes the requested bucket.
+   *
+   * @return {@code true} if the bucket was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  boolean delete(Bucket bucket, Map<Option, ?> options);
 
-  boolean delete(StorageObject object, Map<Option, ?> options) throws StorageException;
+  /**
+   * Deletes the requested storage object.
+   *
+   * @return {@code true} if the storage object was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  boolean delete(StorageObject object, Map<Option, ?> options);
 
-  BatchResponse batch(BatchRequest request) throws StorageException;
+  /**
+   * Sends a batch request.
+   *
+   * @throws StorageException upon failure
+   */
+  BatchResponse batch(BatchRequest request);
 
+  /**
+   * Sends a compose request.
+   *
+   * @throws StorageException upon failure
+   */
   StorageObject compose(Iterable<StorageObject> sources, StorageObject target,
-      Map<Option, ?> targetOptions) throws StorageException;
+      Map<Option, ?> targetOptions);
 
-  byte[] load(StorageObject storageObject, Map<Option, ?> options)
-      throws StorageException;
+  /**
+   * Reads all the bytes from a storage object.
+   *
+   * @throws StorageException upon failure
+   */
+  byte[] load(StorageObject storageObject, Map<Option, ?> options);
 
-  Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position, int bytes)
-      throws StorageException;
+  /**
+   * Reads the given amount of bytes from a storage object at the given position.
+   *
+   * @throws StorageException upon failure
+   */
+  Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position, int bytes);
 
-  String open(StorageObject object, Map<Option, ?> options) throws StorageException;
+  /**
+   * Opens a resumable upload channel for a given storage object.
+   *
+   * @throws StorageException upon failure
+   */
+  String open(StorageObject object, Map<Option, ?> options);
 
+  /**
+   * Writes the provided bytes to a storage object at the provided location.
+   *
+   * @throws StorageException upon failure
+   */
   void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
-      boolean last) throws StorageException;
+      boolean last);
 
-  RewriteResponse openRewrite(RewriteRequest rewriteRequest) throws StorageException;
+  /**
+   * Sends a rewrite request to open a rewrite channel.
+   *
+   * @throws StorageException upon failure
+   */
+  RewriteResponse openRewrite(RewriteRequest rewriteRequest);
 
-  RewriteResponse continueRewrite(RewriteResponse previousResponse) throws StorageException;
+  /**
+   * Continues rewriting on an already open rewrite channel.
+   *
+   * @throws StorageException upon failure
+   */
+  RewriteResponse continueRewrite(RewriteResponse previousResponse);
 }

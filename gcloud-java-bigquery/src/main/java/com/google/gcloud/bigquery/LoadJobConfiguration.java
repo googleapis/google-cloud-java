@@ -282,6 +282,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return toBuilder().destinationTable(destinationTable().setProjectId(projectId)).build();
   }
 
+  @Override
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
     JobConfigurationLoad loadConfigurationPb = new JobConfigurationLoad();
     loadConfigurationPb.setDestinationTable(destinationTable.toPb());

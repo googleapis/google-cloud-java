@@ -225,6 +225,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     return toBuilder().sourceTable(sourceTable().setProjectId(projectId)).build();
   }
 
+  @Override
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
     JobConfigurationExtract extractConfigurationPb = new JobConfigurationExtract();
     extractConfigurationPb.setDestinationUris(destinationUris);

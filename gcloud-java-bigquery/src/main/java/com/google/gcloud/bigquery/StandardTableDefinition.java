@@ -26,10 +26,11 @@ import java.math.BigInteger;
 import java.util.Objects;
 
 /**
- * A Google BigQuery default table type. This type is used for standard, two-dimensional tables with
- * individual records organized in rows, and a data type assigned to each column (also called a
- * field). Individual fields within a record may contain nested and repeated children fields. Every
- * table is described by a schema that describes field names, types, and other information.
+ * A Google BigQuery default table definition. This definition is used for standard, two-dimensional
+ * tables with individual records organized in rows, and a data type assigned to each column (also
+ * called a field). Individual fields within a record may contain nested and repeated children
+ * fields. Every table is described by a schema that describes field names, types, and other
+ * information.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
  */
@@ -218,14 +219,14 @@ public class StandardTableDefinition extends TableDefinition {
   }
 
   /**
-   * Returns a builder for a BigQuery default table type.
+   * Returns a builder for a BigQuery standard table definition.
    */
   public static Builder builder() {
     return new Builder();
   }
 
   /**
-   * Creates a BigQuery default table type given its schema.
+   * Creates a BigQuery standard table definition given its schema.
    *
    * @param schema the schema of the table
    */

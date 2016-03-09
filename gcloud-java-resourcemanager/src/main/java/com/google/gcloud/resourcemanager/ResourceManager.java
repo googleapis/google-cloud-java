@@ -147,8 +147,6 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      *
      * <p>The server can return fewer projects than requested. When there are more results than the
      * page size, the server will return a page token that can be used to fetch other results.
-     * Note: pagination is not yet supported; the server currently ignores this field and returns
-     * all results.
      */
     public static ProjectListOption pageSize(int pageSize) {
       return new ProjectListOption(ResourceManagerRpc.Option.PAGE_SIZE, pageSize);
@@ -164,13 +162,13 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      */
     public static ProjectListOption fields(ProjectField... fields) {
       StringBuilder builder = new StringBuilder();
-      builder.append("projects(").append(ProjectField.selector(fields)).append(")");
+      builder.append("projects(").append(ProjectField.selector(fields)).append("),nextPageToken");
       return new ProjectListOption(ResourceManagerRpc.Option.FIELDS, builder.toString());
     }
   }
 
   /**
-   * Create a new project.
+   * Creates a new project.
    *
    * <p>Initially, the project resource is owned by its creator exclusively. The creator can later
    * grant permission to others to read or update the project. Several APIs are activated
@@ -228,8 +226,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    *
    * <p>This method returns projects in an unspecified order. New projects do not necessarily appear
    * at the end of the list. Use {@link ProjectListOption} to filter this list, set page size, and
-   * set page tokens. Note that pagination is currently not implemented by the Cloud Resource
-   * Manager API.
+   * set page tokens.
    *
    * @see <a
    * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/list">Cloud

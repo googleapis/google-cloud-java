@@ -17,6 +17,7 @@
 package com.google.gcloud.datastore.testing;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
+import static com.google.common.base.Preconditions.checkArgument;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.base.Strings;
@@ -85,6 +86,7 @@ public class LocalGcdHelper {
   private static final String GCLOUD = "gcloud";
   private static final Path INSTALLED_GCD_PATH;
   private static final String GCD_VERSION_PREFIX = "gcd-emulator ";
+  private static final double DEFAULT_CONSISTENCY = 0.9;
 
   static {
     INSTALLED_GCD_PATH = installedGcdPath();
@@ -398,9 +400,15 @@ public class LocalGcdHelper {
    * All content is written to a temporary directory that will be deleted when
    * {@link #stop()} is called or when the program terminates) to make sure that no left-over
    * data from prior runs is used.
+   *
+   * @param consistency the fraction of job application attempts that will succeed, with 0.0
+   *     resulting in no attempts succeeding, and 1.0 resulting in all attempts succeeding. Defaults
+   *     to 0.9. Note that setting this to 1.0 may mask incorrect assumptions about the consistency
+   *     of non-ancestor queries; non-ancestor queries are eventually consistent.
    */
-  public void start() throws IOException, InterruptedException {
+  public void start(double consistency) throws IOException, InterruptedException {
     // send a quick request in case we have a hanging process from a previous run
+    checkArgument(consistency >= 0.0 && consistency <= 1.0, "Consistency must be between 0 and 1");
     sendQuitRequest(port);
     // Each run is associated with its own folder that is deleted once test completes.
     gcdPath = Files.createTempDirectory("gcd");
@@ -415,7 +423,7 @@ public class LocalGcdHelper {
     } else {
       gcdExecutablePath = INSTALLED_GCD_PATH;
     }
-    startGcd(gcdExecutablePath);
+    startGcd(gcdExecutablePath, consistency);
   }
 
   private void downloadGcd() throws IOException {
@@ -453,7 +461,8 @@ public class LocalGcdHelper {
     }
   }
 
-  private void startGcd(Path executablePath) throws IOException, InterruptedException {
+  private void startGcd(Path executablePath, double consistency)
+      throws IOException, InterruptedException {
     // cleanup any possible data for the same project
     File datasetFolder = new File(gcdPath.toFile(), projectId);
     deleteRecurse(datasetFolder.toPath());
@@ -486,7 +495,8 @@ public class LocalGcdHelper {
     startProcess =
         CommandWrapper.create()
             .command(gcdAbsolutePath.toString(), "start", "--testing", "--allow_remote_shutdown",
-                "--port=" + Integer.toString(port), projectId)
+                "--port=" + Integer.toString(port), "--consistency=" + Double.toString(consistency),
+                projectId)
             .directory(gcdPath)
             .start();
     processReader = ProcessStreamReader.start(startProcess.getInputStream());
@@ -526,6 +536,7 @@ public class LocalGcdHelper {
 
   public static boolean sendQuitRequest(int port) {
     StringBuilder result = new StringBuilder();
+    String shutdownMsg = "Shutting down local server";
     try {
       URL url = new URL("http", "localhost", port, "/_ah/admin/quit");
       HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -537,13 +548,13 @@ public class LocalGcdHelper {
       out.flush();
       InputStream in = con.getInputStream();
       int currByte = 0;
-      while ((currByte = in.read()) != -1) {
+      while ((currByte = in.read()) != -1 && result.length() < shutdownMsg.length()) {
         result.append(((char) currByte));
       }
     } catch (IOException ignore) {
       // ignore
     }
-    return result.toString().startsWith("Shutting down local server");
+    return result.toString().startsWith(shutdownMsg);
   }
 
   public void stop() throws IOException, InterruptedException {
@@ -578,10 +589,10 @@ public class LocalGcdHelper {
     });
   }
 
-  public static LocalGcdHelper start(String projectId, int port)
+  public static LocalGcdHelper start(String projectId, int port, double consistency)
       throws IOException, InterruptedException {
     LocalGcdHelper helper = new LocalGcdHelper(projectId, port);
-    helper.start();
+    helper.start(consistency);
     return helper;
   }
 
@@ -593,7 +604,9 @@ public class LocalGcdHelper {
     switch (action) {
       case "START":
         if (!isActive(DEFAULT_PROJECT_ID, port)) {
-          LocalGcdHelper helper = start(DEFAULT_PROJECT_ID, port);
+          double consistency = parsedArgs.get("consistency") == null
+              ? DEFAULT_CONSISTENCY : Double.parseDouble(parsedArgs.get("consistency"));
+          LocalGcdHelper helper = start(DEFAULT_PROJECT_ID, port, consistency);
           try (FileWriter writer = new FileWriter(".local_gcd_helper")) {
             writer.write(helper.gcdPath.toAbsolutePath().toString() + System.lineSeparator());
             writer.write(Integer.toString(port));
