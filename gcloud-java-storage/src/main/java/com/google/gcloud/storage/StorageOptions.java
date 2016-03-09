@@ -106,11 +106,7 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof StorageOptions)) {
-      return false;
-    }
-    StorageOptions other = (StorageOptions) obj;
-    return baseEquals(other);
+    return obj instanceof StorageOptions && baseEquals((StorageOptions) obj);
   }
 
   public static Builder builder() {

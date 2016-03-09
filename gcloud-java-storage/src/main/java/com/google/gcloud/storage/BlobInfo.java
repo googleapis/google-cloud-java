@@ -603,7 +603,7 @@ public class BlobInfo implements Serializable {
   /**
    * Returns {@code true} if the current blob represents a directory. This can only happen if the
    * blob is returned by {@link Storage#list(String, Storage.BlobListOption...)} when the
-   * {@link Storage.BlobListOption#currentDirectory()} option is used. If {@code true} only
+   * {@link Storage.BlobListOption#currentDirectory()} option is used. When this is the case only
    * {@link #blobId()} and {@link #size()} are set for the current blob: {@link BlobId#name()} ends
    * with the '/' character, {@link BlobId#generation()} returns {@code null} and {@link #size()} is
    * {@code 0}.
@@ -785,7 +785,7 @@ public class BlobInfo implements Serializable {
         }
       }));
     }
-    if (storageObject.get("isDirectory") != null) {
+    if (storageObject.containsKey("isDirectory")) {
       builder.isDirectory(Boolean.TRUE);
     }
     return builder.build();

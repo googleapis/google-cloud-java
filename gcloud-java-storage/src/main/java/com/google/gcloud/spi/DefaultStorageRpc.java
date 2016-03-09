@@ -14,6 +14,7 @@
 
 package com.google.gcloud.spi;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.gcloud.spi.StorageRpc.Option.DELIMITER;
 import static com.google.gcloud.spi.StorageRpc.Option.FIELDS;
 import static com.google.gcloud.spi.StorageRpc.Option.IF_GENERATION_MATCH;
@@ -58,7 +59,6 @@ import com.google.api.services.storage.model.ComposeRequest.SourceObjects.Object
 import com.google.api.services.storage.model.Objects;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -167,22 +167,27 @@ public class DefaultStorageRpc implements StorageRpc {
           .setFields(FIELDS.getString(options))
           .execute();
       Iterable<StorageObject> storageObjects = Iterables.concat(
-          objects.getItems() != null ? objects.getItems() : ImmutableList.<StorageObject>of(),
+          firstNonNull(objects.getItems(), ImmutableList.<StorageObject>of()),
           objects.getPrefixes() != null
-              ? Lists.transform(objects.getPrefixes(), new Function<String, StorageObject>() {
-                @Override
-                public StorageObject apply(String prefix) {
-                  return new StorageObject()
-                      .set("isDirectory", true)
-                      .setBucket(bucket)
-                      .setName(prefix)
-                      .setSize(BigInteger.ZERO);
-                }
-              }) : ImmutableList.<StorageObject>of());
+              ? Lists.transform(objects.getPrefixes(), objectFromPrefix(bucket))
+              : ImmutableList.<StorageObject>of());
       return Tuple.of(objects.getNextPageToken(), storageObjects);
     } catch (IOException ex) {
       throw translate(ex);
     }
+  }
+
+  private static Function<String, StorageObject> objectFromPrefix(final String bucket) {
+    return new Function<String, StorageObject>() {
+      @Override
+      public StorageObject apply(String prefix) {
+        return new StorageObject()
+            .set("isDirectory", true)
+            .setBucket(bucket)
+            .setName(prefix)
+            .setSize(BigInteger.ZERO);
+      }
+    };
   }
 
   @Override
@@ -549,7 +554,7 @@ public class DefaultStorageRpc implements StorageRpc {
       HttpRequest httpRequest =
           requestFactory.buildPostRequest(url, new JsonHttpContent(jsonFactory, object));
       httpRequest.getHeaders().set("X-Upload-Content-Type",
-          MoreObjects.firstNonNull(object.getContentType(), "application/octet-stream"));
+          firstNonNull(object.getContentType(), "application/octet-stream"));
       HttpResponse response = httpRequest.execute();
       if (response.getStatusCode() != 200) {
         GoogleJsonError error = new GoogleJsonError();
