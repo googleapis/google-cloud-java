@@ -411,6 +411,52 @@ public class ITStorageTest {
     }
   }
 
+  @Test(timeout = 5000)
+  public void testListBlobsCurrentDirectory() throws InterruptedException {
+    String directoryName = "test-list-blobs-current-directory/";
+    String subdirectoryName = "subdirectory/";
+    String[] blobNames = {directoryName + subdirectoryName + "blob1",
+        directoryName + "blob2"};
+    BlobInfo blob1 = BlobInfo.builder(BUCKET, blobNames[0])
+        .contentType(CONTENT_TYPE)
+        .build();
+    BlobInfo blob2 = BlobInfo.builder(BUCKET, blobNames[1])
+        .contentType(CONTENT_TYPE)
+        .build();
+    Blob remoteBlob1 = storage.create(blob1, BLOB_BYTE_CONTENT);
+    Blob remoteBlob2 = storage.create(blob2, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob1);
+    assertNotNull(remoteBlob2);
+    Page<Blob> page = storage.list(BUCKET,
+        Storage.BlobListOption.prefix("test-list-blobs-current-directory/"),
+        Storage.BlobListOption.currentDirectory());
+    // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
+    // test fails if timeout is reached.
+    while (Iterators.size(page.iterateAll()) != 2) {
+      Thread.sleep(500);
+      page = storage.list(BUCKET,
+          Storage.BlobListOption.prefix("test-list-blobs-current-directory/"),
+          Storage.BlobListOption.currentDirectory());
+    }
+    Iterator<Blob> iterator = page.iterateAll();
+    while (iterator.hasNext()) {
+      Blob remoteBlob = iterator.next();
+      assertEquals(BUCKET, remoteBlob.bucket());
+      if (remoteBlob.name().equals(blobNames[1])) {
+        assertEquals(CONTENT_TYPE, remoteBlob.contentType());
+        assertEquals(BLOB_BYTE_CONTENT.length, (long) remoteBlob.size());
+        assertFalse(remoteBlob.isDirectory());
+      } else if (remoteBlob.name().equals(directoryName + subdirectoryName)) {
+        assertEquals(0L, (long) remoteBlob.size());
+        assertTrue(remoteBlob.isDirectory());
+      } else {
+        fail("Unexpected blob with name " + remoteBlob.name());
+      }
+    }
+    assertTrue(remoteBlob1.delete());
+    assertTrue(remoteBlob2.delete());
+  }
+
   @Test
   public void testUpdateBlob() {
     String blobName = "test-update-blob";

@@ -694,10 +694,17 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option to specify whether blob listing should include subdirectories or not.
+     * If specified, results are returned in a directory-like mode. Blobs whose names, after a
+     * possible {@link #prefix(String)}, do not contain the '/' delimiter are returned as is. Blobs
+     * whose names, after a possible {@link #prefix(String)}, contain the '/' delimiter, will have
+     * their name truncated after the delimiter and will be returned as {@link Blob} objects where
+     * only {@link Blob#blobId()}, {@link Blob#size()} and {@link Blob#isDirectory()} are set. For
+     * such directory blobs, ({@link BlobId#generation()} returns {@code null}), {@link Blob#size()}
+     * returns {@code 0} while {@link Blob#isDirectory()} returns {@code true}. Duplicate directory
+     * blobs are omitted.
      */
-    public static BlobListOption recursive(boolean recursive) {
-      return new BlobListOption(StorageRpc.Option.DELIMITER, recursive);
+    public static BlobListOption currentDirectory() {
+      return new BlobListOption(StorageRpc.Option.DELIMITER, true);
     }
 
     /**
@@ -1289,7 +1296,8 @@ public interface Storage extends Service<StorageOptions> {
   Page<Bucket> list(BucketListOption... options);
 
   /**
-   * Lists the bucket's blobs.
+   * Lists the bucket's blobs. If the {@link BlobListOption#currentDirectory()} option is provided,
+   * results are returned in a directory-like mode.
    *
    * @throws StorageException upon failure
    */

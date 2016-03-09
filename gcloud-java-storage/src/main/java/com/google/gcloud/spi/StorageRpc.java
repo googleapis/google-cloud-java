@@ -344,7 +344,7 @@ public interface StorageRpc {
   /**
    * Continues rewriting on an already open rewrite channel.
    *
-   * @throws StorageException
+   * @throws StorageException upon failure
    */
   RewriteResponse continueRewrite(RewriteResponse previousResponse);
 }
