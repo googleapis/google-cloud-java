@@ -57,7 +57,7 @@ import java.util.List;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE - see instructions at the top of the file for editing.
 /**
- * The service that an application uses to manipulate topics, and to send
+ * Service Description: The service that an application uses to manipulate topics, and to send
  * messages to a topic.
  *
  * <!-- manual edit -->
@@ -66,28 +66,92 @@ import java.util.List;
 @javax.annotation.Generated("by GAPIC")
 public class PublisherApi implements AutoCloseable {
 
-  // =========
-  // Constants
-  // =========
+  public static class ResourceNames {
+    private ResourceNames() {}
 
-  /**
-   * A PathTemplate representing the fully-qualified path to represent
-   * a project resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.create("projects/{project}");
-  /**
-   * A PathTemplate representing the fully-qualified path to represent
-   * a topic resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  private static final PathTemplate TOPIC_PATH_TEMPLATE =
-      PathTemplate.create("projects/{project}/topics/{topic}");
+    // =======================
+    // ResourceNames Constants
+    // =======================
+
+    /**
+     * A PathTemplate representing the fully-qualified path to represent
+     * a project resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    private static final PathTemplate PROJECT_PATH_TEMPLATE =
+        PathTemplate.create("projects/{project}");
+
+    /**
+     * A PathTemplate representing the fully-qualified path to represent
+     * a topic resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    private static final PathTemplate TOPIC_PATH_TEMPLATE =
+        PathTemplate.create("projects/{project}/topics/{topic}");
+
+    // ==============================
+    // Resource Name Helper Functions
+    // ==============================
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a project resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    public static final String formatProjectPath(String project) {
+      return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a topic resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    public static final String formatTopicPath(String project, String topic) {
+      return TOPIC_PATH_TEMPLATE.instantiate("project", project, "topic", topic);
+    }
+
+    /**
+     * Parses the project from the given fully-qualified path which
+     * represents a project resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    public static final String parseProjectFromProjectPath(String projectPath) {
+      return PROJECT_PATH_TEMPLATE.parse(projectPath).get("project");
+    }
+
+    /**
+     * Parses the project from the given fully-qualified path which
+     * represents a topic resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    public static final String parseProjectFromTopicPath(String topicPath) {
+      return TOPIC_PATH_TEMPLATE.parse(topicPath).get("project");
+    }
+
+    /**
+     * Parses the topic from the given fully-qualified path which
+     * represents a topic resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    public static final String parseTopicFromTopicPath(String topicPath) {
+      return TOPIC_PATH_TEMPLATE.parse(topicPath).get("topic");
+    }
+  }
 
   // ========
   // Members
@@ -174,65 +238,6 @@ public class PublisherApi implements AutoCloseable {
         });
   }
 
-  // ==============================
-  // Resource Name Helper Functions
-  // ==============================
-
-  /**
-   * Creates a string containing the fully-qualified path to represent
-   * a project resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static final String createProjectPath(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /**
-   * Creates a string containing the fully-qualified path to represent
-   * a topic resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static final String createTopicPath(String project, String topic) {
-    return TOPIC_PATH_TEMPLATE.instantiate("project", project, "topic", topic);
-  }
-
-  /**
-   * Extracts the project from the given fully-qualified path which
-   * represents a project resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static final String extractProjectFromProjectPath(String projectPath) {
-    return PROJECT_PATH_TEMPLATE.parse(projectPath).get("project");
-  }
-
-  /**
-   * Extracts the project from the given fully-qualified path which
-   * represents a topic resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static final String extractProjectFromTopicPath(String topicPath) {
-    return TOPIC_PATH_TEMPLATE.parse(topicPath).get("project");
-  }
-
-  /**
-   * Extracts the topic from the given fully-qualified path which
-   * represents a topic resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static final String extractTopicFromTopicPath(String topicPath) {
-    return TOPIC_PATH_TEMPLATE.parse(topicPath).get("topic");
-  }
-
   // =============
   // Service Calls
   // =============
@@ -268,7 +273,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * @param request The request object containing all of the parameters for the API call.
    */
-  public Topic createTopic(Topic request) {
+  private Topic createTopic(Topic request) {
     return createTopicCallable().call(request);
   }
 
@@ -358,7 +363,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * @param request The request object containing all of the parameters for the API call.
    */
-  public Topic getTopic(GetTopicRequest request) {
+  private Topic getTopic(GetTopicRequest request) {
     return getTopicCallable().call(request);
   }
 
@@ -508,7 +513,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * @param request The request object containing all of the parameters for the API call.
    */
-  public void deleteTopic(DeleteTopicRequest request) {
+  private void deleteTopic(DeleteTopicRequest request) {
     deleteTopicCallable().call(request);
   }
 
@@ -539,13 +544,10 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    */
   @Override
-  public void close() {
-    // Manually-added shutdown code
-
-    // Auto-generated shutdown code
-    channel.shutdown();
-
-    // Manually-added shutdown code
+  public void close() throws Exception {
+    for (AutoCloseable closeable : closeables) {
+      closeable.close();
+    }
   }
 
   // ========
