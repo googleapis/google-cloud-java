@@ -171,7 +171,7 @@ public interface ComputeRpc {
   Operation getGlobalOperation(String operation, Map<Option, ?> options);
 
   /**
-   * Lists the global operations in the current project.
+   * Lists the global operations.
    *
    * @throws ComputeException upon failure
    */
@@ -193,7 +193,7 @@ public interface ComputeRpc {
   Operation getRegionOperation(String region, String operation, Map<Option, ?> options);
 
   /**
-   * Lists the region operations for the current project and region.
+   * Lists the region operations for the provided region.
    *
    * @throws ComputeException upon failure
    */
@@ -215,7 +215,7 @@ public interface ComputeRpc {
   Operation getZoneOperation(String zone, String operation, Map<Option, ?> options);
 
   /**
-   * Lists the zone operations for the current project and zone.
+   * Lists the zone operations for the provided zone.
    *
    * @throws ComputeException upon failure
    */

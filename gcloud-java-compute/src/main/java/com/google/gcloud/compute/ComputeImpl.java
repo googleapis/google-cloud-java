@@ -195,7 +195,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
 
   private static class ZoneOperationPageFetcher implements NextPageFetcher<Operation> {
 
-    private static final long serialVersionUID = 4111705358926164078L;
+    private static final long serialVersionUID = -9012504536518197793L;
     private final Map<ComputeRpc.Option, ?> requestOptions;
     private final ComputeOptions serviceOptions;
     private final String zone;

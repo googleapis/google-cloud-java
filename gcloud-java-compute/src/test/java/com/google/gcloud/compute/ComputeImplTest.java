@@ -31,6 +31,27 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.Page;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.compute.Compute.DiskTypeAggregatedListOption;
+import com.google.gcloud.compute.Compute.DiskTypeFilter;
+import com.google.gcloud.compute.Compute.DiskTypeListOption;
+import com.google.gcloud.compute.Compute.DiskTypeOption;
+import com.google.gcloud.compute.Compute.LicenseOption;
+import com.google.gcloud.compute.Compute.MachineTypeAggregatedListOption;
+import com.google.gcloud.compute.Compute.MachineTypeFilter;
+import com.google.gcloud.compute.Compute.MachineTypeListOption;
+import com.google.gcloud.compute.Compute.MachineTypeOption;
+import com.google.gcloud.compute.Compute.OperationFilter;
+import com.google.gcloud.compute.Compute.OperationListOption;
+import com.google.gcloud.compute.Compute.OperationOption;
+import com.google.gcloud.compute.Compute.RegionFilter;
+import com.google.gcloud.compute.Compute.RegionListOption;
+import com.google.gcloud.compute.Compute.RegionOption;
+import com.google.gcloud.compute.Compute.ZoneFilter;
+import com.google.gcloud.compute.Compute.ZoneListOption;
+import com.google.gcloud.compute.Compute.ZoneOption;
+import com.google.gcloud.compute.Operation.OperationError;
+import com.google.gcloud.compute.Operation.OperationWarning;
+import com.google.gcloud.compute.Operation.Status;
 import com.google.gcloud.compute.Zone.MaintenanceWindow;
 import com.google.gcloud.spi.ComputeRpc;
 import com.google.gcloud.spi.ComputeRpc.Tuple;
@@ -119,28 +140,28 @@ public class ComputeImplTest {
   private static final LicenseId LICENSE_ID = LicenseId.of("project", "license");
   private static final Boolean CHARGES_USE_FEE = true;
   private static final License LICENSE = new License(LICENSE_ID, CHARGES_USE_FEE);
-  private static final Operation.OperationError OPERATION_ERROR1 =
-      new Operation.OperationError("code1", "location1", "message1");
-  private static final Operation.OperationError OPERATION_ERROR2 =
-      new Operation.OperationError("code2", "location2", "message2");
-  private static final Operation.OperationWarning OPERATION_WARNING1 =
-      new Operation.OperationWarning("code1", "message1", ImmutableMap.of("k1", "v1"));
-  private static final Operation.OperationWarning OPERATION_WARNING2 =
-      new Operation.OperationWarning("code2", "location2", ImmutableMap.of("k2", "v2"));
+  private static final OperationError OPERATION_ERROR1 =
+      new OperationError("code1", "location1", "message1");
+  private static final OperationError OPERATION_ERROR2 =
+      new OperationError("code2", "location2", "message2");
+  private static final OperationWarning OPERATION_WARNING1 =
+      new OperationWarning("code1", "message1", ImmutableMap.of("k1", "v1"));
+  private static final OperationWarning OPERATION_WARNING2 =
+      new OperationWarning("code2", "location2", ImmutableMap.of("k2", "v2"));
   private static final String CLIENT_OPERATION_ID = "clientOperationId";
   private static final String OPERATION_TYPE = "delete";
   private static final String TARGET_LINK = "targetLink";
   private static final String TARGET_ID = "42";
-  private static final Operation.Status STATUS = Operation.Status.DONE;
+  private static final Status STATUS = Status.DONE;
   private static final String STATUS_MESSAGE = "statusMessage";
   private static final String USER = "user";
   private static final Integer PROGRESS = 100;
   private static final Long INSERT_TIME = 1453293540000L;
   private static final Long START_TIME = 1453293420000L;
   private static final Long END_TIME = 1453293480000L;
-  private static final List<Operation.OperationError> ERRORS =
+  private static final List<OperationError> ERRORS =
       ImmutableList.of(OPERATION_ERROR1, OPERATION_ERROR2);
-  private static final List<Operation.OperationWarning> WARNINGS =
+  private static final List<OperationWarning> WARNINGS =
       ImmutableList.of(OPERATION_WARNING1, OPERATION_WARNING2);
   private static final Integer HTTP_ERROR_STATUS_CODE = 404;
   private static final String HTTP_ERROR_MESSAGE = "NOT FOUND";
@@ -155,113 +176,109 @@ public class ComputeImplTest {
   private static final Map<ComputeRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
 
   // DiskType options
-  private static final Compute.DiskTypeOption DISK_TYPE_OPTION_FIELDS =
-      Compute.DiskTypeOption.fields(Compute.DiskTypeField.ID, Compute.DiskTypeField.DESCRIPTION);
+  private static final DiskTypeOption DISK_TYPE_OPTION_FIELDS =
+      DiskTypeOption.fields(Compute.DiskTypeField.ID, Compute.DiskTypeField.DESCRIPTION);
 
   // DiskType list options
-  private static final Compute.DiskTypeFilter DISK_TYPE_FILTER =
-      Compute.DiskTypeFilter.equals(Compute.DiskTypeField.DESCRIPTION, "someDescription");
-  private static final Compute.DiskTypeListOption DISK_TYPE_LIST_PAGE_TOKEN =
-      Compute.DiskTypeListOption.startPageToken("cursor");
-  private static final Compute.DiskTypeListOption DISK_TYPE_LIST_MAX_RESULTS =
-      Compute.DiskTypeListOption.maxResults(42L);
-  private static final Compute.DiskTypeListOption DISK_TYPE_LIST_FILTER =
-      Compute.DiskTypeListOption.filter(DISK_TYPE_FILTER);
+  private static final DiskTypeFilter DISK_TYPE_FILTER =
+      DiskTypeFilter.equals(Compute.DiskTypeField.DESCRIPTION, "someDescription");
+  private static final DiskTypeListOption DISK_TYPE_LIST_PAGE_TOKEN =
+      DiskTypeListOption.startPageToken("cursor");
+  private static final DiskTypeListOption DISK_TYPE_LIST_MAX_RESULTS =
+      DiskTypeListOption.maxResults(42L);
+  private static final DiskTypeListOption DISK_TYPE_LIST_FILTER =
+      DiskTypeListOption.filter(DISK_TYPE_FILTER);
   private static final Map<ComputeRpc.Option, ?> DISK_TYPE_LIST_OPTIONS = ImmutableMap.of(
       ComputeRpc.Option.PAGE_TOKEN, "cursor",
       ComputeRpc.Option.MAX_RESULTS, 42L,
       ComputeRpc.Option.FILTER, "description eq someDescription");
 
   // DiskType aggregated list options
-  private static final Compute.DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
-      Compute.DiskTypeAggregatedListOption.startPageToken("cursor");
-  private static final Compute.DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_MAX_RESULTS =
-      Compute.DiskTypeAggregatedListOption.maxResults(42L);
-  private static final Compute.DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_FILTER =
-      Compute.DiskTypeAggregatedListOption.filter(DISK_TYPE_FILTER);
+  private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
+      DiskTypeAggregatedListOption.startPageToken("cursor");
+  private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_MAX_RESULTS =
+      DiskTypeAggregatedListOption.maxResults(42L);
+  private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_FILTER =
+      DiskTypeAggregatedListOption.filter(DISK_TYPE_FILTER);
 
   // MachineType options
-  private static final Compute.MachineTypeOption MACHINE_TYPE_OPTION_FIELDS =
-      Compute.MachineTypeOption.fields(Compute.MachineTypeField.ID,
+  private static final MachineTypeOption MACHINE_TYPE_OPTION_FIELDS =
+      MachineTypeOption.fields(Compute.MachineTypeField.ID,
           Compute.MachineTypeField.DESCRIPTION);
 
   // MachineType list options
-  private static final Compute.MachineTypeFilter MACHINE_TYPE_FILTER =
-      Compute.MachineTypeFilter.notEquals(Compute.MachineTypeField.MAXIMUM_PERSISTENT_DISKS, 42L);
-  private static final Compute.MachineTypeListOption MACHINE_TYPE_LIST_PAGE_TOKEN =
-      Compute.MachineTypeListOption.startPageToken("cursor");
-  private static final Compute.MachineTypeListOption MACHINE_TYPE_LIST_MAX_RESULTS =
-      Compute.MachineTypeListOption.maxResults(42L);
-  private static final Compute.MachineTypeListOption MACHINE_TYPE_LIST_FILTER =
-      Compute.MachineTypeListOption.filter(MACHINE_TYPE_FILTER);
+  private static final MachineTypeFilter MACHINE_TYPE_FILTER =
+      MachineTypeFilter.notEquals(Compute.MachineTypeField.MAXIMUM_PERSISTENT_DISKS, 42L);
+  private static final MachineTypeListOption MACHINE_TYPE_LIST_PAGE_TOKEN =
+      MachineTypeListOption.startPageToken("cursor");
+  private static final MachineTypeListOption MACHINE_TYPE_LIST_MAX_RESULTS =
+      MachineTypeListOption.maxResults(42L);
+  private static final MachineTypeListOption MACHINE_TYPE_LIST_FILTER =
+      MachineTypeListOption.filter(MACHINE_TYPE_FILTER);
   private static final Map<ComputeRpc.Option, ?> MACHINE_TYPE_LIST_OPTIONS = ImmutableMap.of(
       ComputeRpc.Option.PAGE_TOKEN, "cursor",
       ComputeRpc.Option.MAX_RESULTS, 42L,
       ComputeRpc.Option.FILTER, "maximumPersistentDisks ne 42");
 
   // MachineType aggregated list options
-  private static final Compute.MachineTypeAggregatedListOption
-      MACHINE_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
-      Compute.MachineTypeAggregatedListOption.startPageToken("cursor");
-  private static final Compute.MachineTypeAggregatedListOption
-      MACHINE_TYPE_AGGREGATED_LIST_MAX_RESULTS =
-      Compute.MachineTypeAggregatedListOption.maxResults(42L);
-  private static final Compute.MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_FILTER =
-      Compute.MachineTypeAggregatedListOption.filter(MACHINE_TYPE_FILTER);
+  private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
+      MachineTypeAggregatedListOption.startPageToken("cursor");
+  private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_MAX_RESULTS =
+      MachineTypeAggregatedListOption.maxResults(42L);
+  private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_FILTER =
+      MachineTypeAggregatedListOption.filter(MACHINE_TYPE_FILTER);
 
   // Region options
-  private static final Compute.RegionOption REGION_OPTION_FIELDS =
-      Compute.RegionOption.fields(Compute.RegionField.ID, Compute.RegionField.DESCRIPTION);
+  private static final RegionOption REGION_OPTION_FIELDS =
+      RegionOption.fields(Compute.RegionField.ID, Compute.RegionField.DESCRIPTION);
 
   // Region list options
-  private static final Compute.RegionFilter REGION_FILTER =
-      Compute.RegionFilter.equals(Compute.RegionField.ID, "someId");
-  private static final Compute.RegionListOption REGION_LIST_PAGE_TOKEN =
-      Compute.RegionListOption.startPageToken("cursor");
-  private static final Compute.RegionListOption REGION_LIST_MAX_RESULTS =
-      Compute.RegionListOption.maxResults(42L);
-  private static final Compute.RegionListOption REGION_LIST_FILTER =
-      Compute.RegionListOption.filter(REGION_FILTER);
+  private static final RegionFilter REGION_FILTER =
+      RegionFilter.equals(Compute.RegionField.ID, "someId");
+  private static final RegionListOption REGION_LIST_PAGE_TOKEN =
+      RegionListOption.startPageToken("cursor");
+  private static final RegionListOption REGION_LIST_MAX_RESULTS =
+      RegionListOption.maxResults(42L);
+  private static final RegionListOption REGION_LIST_FILTER =
+      RegionListOption.filter(REGION_FILTER);
   private static final Map<ComputeRpc.Option, ?> REGION_LIST_OPTIONS = ImmutableMap.of(
       ComputeRpc.Option.PAGE_TOKEN, "cursor",
       ComputeRpc.Option.MAX_RESULTS, 42L,
       ComputeRpc.Option.FILTER, "id eq someId");
 
   // Zone options
-  private static final Compute.ZoneOption ZONE_OPTION_FIELDS =
-      Compute.ZoneOption.fields(Compute.ZoneField.ID, Compute.ZoneField.DESCRIPTION);
+  private static final ZoneOption ZONE_OPTION_FIELDS =
+      ZoneOption.fields(Compute.ZoneField.ID, Compute.ZoneField.DESCRIPTION);
 
   // Zone list options
-  private static final Compute.ZoneFilter ZONE_FILTER =
-      Compute.ZoneFilter.notEquals(Compute.ZoneField.NAME, "someName");
-  private static final Compute.ZoneListOption ZONE_LIST_PAGE_TOKEN =
-      Compute.ZoneListOption.startPageToken("cursor");
-  private static final Compute.ZoneListOption ZONE_LIST_MAX_RESULTS =
-      Compute.ZoneListOption.maxResults(42L);
-  private static final Compute.ZoneListOption ZONE_LIST_FILTER =
-      Compute.ZoneListOption.filter(ZONE_FILTER);
+  private static final ZoneFilter ZONE_FILTER =
+      ZoneFilter.notEquals(Compute.ZoneField.NAME, "someName");
+  private static final ZoneListOption ZONE_LIST_PAGE_TOKEN =
+      ZoneListOption.startPageToken("cursor");
+  private static final ZoneListOption ZONE_LIST_MAX_RESULTS = ZoneListOption.maxResults(42L);
+  private static final ZoneListOption ZONE_LIST_FILTER = ZoneListOption.filter(ZONE_FILTER);
   private static final Map<ComputeRpc.Option, ?> ZONE_LIST_OPTIONS = ImmutableMap.of(
       ComputeRpc.Option.PAGE_TOKEN, "cursor",
       ComputeRpc.Option.MAX_RESULTS, 42L,
       ComputeRpc.Option.FILTER, "name ne someName");
 
   // License options
-  private static final Compute.LicenseOption LICENSE_OPTION_FIELDS =
-      Compute.LicenseOption.fields(Compute.LicenseField.CHARGES_USE_FEE);
+  private static final LicenseOption LICENSE_OPTION_FIELDS =
+      LicenseOption.fields(Compute.LicenseField.CHARGES_USE_FEE);
 
   // Operation options
-  private static final Compute.OperationOption OPERATION_OPTION_FIELDS =
-      Compute.OperationOption.fields(Compute.OperationField.ID, Compute.OperationField.DESCRIPTION);
+  private static final OperationOption OPERATION_OPTION_FIELDS =
+      OperationOption.fields(Compute.OperationField.ID, Compute.OperationField.DESCRIPTION);
 
   // Operation list options
-  private static final Compute.OperationFilter OPERATION_FILTER =
-      Compute.OperationFilter.notEquals(Compute.OperationField.PROGRESS, 0);
-  private static final Compute.OperationListOption OPERATION_LIST_PAGE_TOKEN =
-      Compute.OperationListOption.startPageToken("cursor");
-  private static final Compute.OperationListOption OPERATION_LIST_MAX_RESULTS =
-      Compute.OperationListOption.maxResults(42L);
-  private static final Compute.OperationListOption OPERATION_LIST_FILTER =
-      Compute.OperationListOption.filter(OPERATION_FILTER);
+  private static final OperationFilter OPERATION_FILTER =
+      OperationFilter.notEquals(Compute.OperationField.PROGRESS, 0);
+  private static final OperationListOption OPERATION_LIST_PAGE_TOKEN =
+      OperationListOption.startPageToken("cursor");
+  private static final OperationListOption OPERATION_LIST_MAX_RESULTS =
+      OperationListOption.maxResults(42L);
+  private static final OperationListOption OPERATION_LIST_FILTER =
+      OperationListOption.filter(OPERATION_FILTER);
   private static final Map<ComputeRpc.Option, ?> OPERATION_LIST_OPTIONS = ImmutableMap.of(
       ComputeRpc.Option.PAGE_TOKEN, "cursor",
       ComputeRpc.Option.MAX_RESULTS, 42L,

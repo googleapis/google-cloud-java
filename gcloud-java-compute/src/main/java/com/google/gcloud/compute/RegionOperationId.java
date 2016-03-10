@@ -62,7 +62,9 @@ public final class RegionOperationId extends RegionResourceId implements Operati
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof RegionOperationId && baseEquals((RegionOperationId) obj);
+    return obj instanceof RegionOperationId
+        && baseEquals((RegionOperationId) obj)
+        && Objects.equals(operation, ((RegionOperationId) obj).operation);
   }
 
   @Override

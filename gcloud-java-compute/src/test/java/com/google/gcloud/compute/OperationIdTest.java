@@ -60,6 +60,10 @@ public class OperationIdTest {
     assertNull(zoneOperationId.project());
     assertEquals(ZONE, zoneOperationId.zone());
     assertEquals(NAME, zoneOperationId.operation());
+    zoneOperationId = ZoneOperationId.of(ZoneId.of(PROJECT, ZONE), NAME);
+    assertEquals(PROJECT, zoneOperationId.project());
+    assertEquals(ZONE, zoneOperationId.zone());
+    assertEquals(NAME, zoneOperationId.operation());
     RegionOperationId regionOperationId = RegionOperationId.of(PROJECT, REGION, NAME);
     assertEquals(PROJECT, regionOperationId.project());
     assertEquals(REGION, regionOperationId.region());
@@ -69,26 +73,38 @@ public class OperationIdTest {
     assertNull(regionOperationId.project());
     assertEquals(REGION, regionOperationId.region());
     assertEquals(NAME, regionOperationId.operation());
+    regionOperationId = RegionOperationId.of(RegionId.of(PROJECT, REGION), NAME);
+    assertEquals(PROJECT, regionOperationId.project());
+    assertEquals(REGION, regionOperationId.region());
+    assertEquals(NAME, regionOperationId.operation());
   }
 
   @Test
-  public void testToAndFromUrl() {
+  public void testToAndFromUrlGlobal() {
     GlobalOperationId operationId = GlobalOperationId.of(PROJECT, NAME);
     compareOperationId(operationId, GlobalOperationId.fromUrl(operationId.selfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid global operation URL");
     GlobalOperationId.fromUrl("notMatchingUrl");
-    ZoneOperationId zoneOperationId = ZoneOperationId.of(PROJECT, ZONE, NAME);
-    compareZoneOperationId(zoneOperationId, ZoneOperationId.fromUrl(zoneOperationId.selfLink()));
-    thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("notMatchingUrl is not a valid zone operation URL");
-    ZoneOperationId.fromUrl("notMatchingUrl");
+  }
+
+  @Test
+  public void testToAndFromUrlRegion() {
     RegionOperationId regionOperationId = RegionOperationId.of(PROJECT, REGION, NAME);
     compareRegionOperationId(regionOperationId,
         RegionOperationId.fromUrl(regionOperationId.selfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid region operation URL");
     RegionOperationId.fromUrl("notMatchingUrl");
+  }
+
+  @Test
+  public void testToAndFromUrlZone() {
+    ZoneOperationId zoneOperationId = ZoneOperationId.of(PROJECT, ZONE, NAME);
+    compareZoneOperationId(zoneOperationId, ZoneOperationId.fromUrl(zoneOperationId.selfLink()));
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("notMatchingUrl is not a valid zone operation URL");
+    ZoneOperationId.fromUrl("notMatchingUrl");
   }
 
   @Test
@@ -109,7 +125,8 @@ public class OperationIdTest {
   public void testMatchesUrl() {
     assertTrue(GlobalOperationId.matchesUrl(GlobalOperationId.of(PROJECT, NAME).selfLink()));
     assertFalse(GlobalOperationId.matchesUrl("notMatchingUrl"));
-    assertTrue(RegionOperationId.matchesUrl(RegionOperationId.of(PROJECT, REGION, NAME).selfLink()));
+    assertTrue(
+        RegionOperationId.matchesUrl(RegionOperationId.of(PROJECT, REGION, NAME).selfLink()));
     assertFalse(RegionOperationId.matchesUrl("notMatchingUrl"));
     assertTrue(ZoneOperationId.matchesUrl(ZoneOperationId.of(PROJECT, REGION, NAME).selfLink()));
     assertFalse(ZoneOperationId.matchesUrl("notMatchingUrl"));
