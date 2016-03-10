@@ -389,6 +389,20 @@
                 <show>protected</show>
                 <nohelp>true</nohelp>
                 <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
+                <groups>
+                  <group>
+                    <title>Main packages</title>
+                    <packages>com.google.gcloud*</packages>
+                  </group>
+                  <group>
+                    <title>SPI packages</title>
+                    <packages>com.google.gcloud.spi</packages>
+                  </group>
+                  <group>
+                    <title>Example packages</title>
+                    <packages>com.google.gcloud.examples*</packages>
+                  </group>
+                </groups>
               </configuration>
             </plugin>
             <plugin>
