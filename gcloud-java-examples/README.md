@@ -74,18 +74,17 @@ To run examples from your command line:
   * Here's an example run of `DnsExample`.
 
     Note that you have to enable the Google Cloud DNS API on the [Google Developers Console][developers-console] before running the following commands.
-    Note that the example creates and deletes dns records of type A only. Operations with other record types are not implemented in the example.
+    You will need to replace the domain name `elaborateexample.com` with your own domain name with verified ownership.
+    Also, note that the example creates and deletes DNS records of type A only. Operations with other record types are not implemented in the example.
     ```
-    $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DnsExample" -Dexec.args="create some-sample-zone elaborateexample.com. description"
-    $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DnsExample" -Dexec.args="get some-sample-zone"
-    $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DnsExample" -Dexec.args="list"
-    $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DnsExample" -Dexec.args="list some-sample-zone records"
-    $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DnsExample" -Dexec.args="add-record some-sample-zone www.elaborateexample.com. 12.13.14.15 69"
-    $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DnsExample" -Dexec.args="get some-sample-zone"
-    $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DnsExample" -Dexec.args="delete-record some-sample-zone www.elaborateexample.com. 12.13.14.15 69"
-    $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DnsExample" -Dexec.args="list some-sample-zone changes ascending"
-    $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DnsExample" -Dexec.args="delete some-sample-zone"
-    $mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.DnsExample" -Dexec.args="quota"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="create some-sample-zone elaborateexample.com. description"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="list"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="list some-sample-zone records"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="add-record some-sample-zone www.elaborateexample.com. 12.13.14.15 69"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="get some-sample-zone"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="delete-record some-sample-zone www.elaborateexample.com. 12.13.14.15 69"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="list some-sample-zone changes ascending"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="delete some-sample-zone"
     ```
 
   * Here's an example run of `ResourceManagerExample`.
