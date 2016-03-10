@@ -37,10 +37,10 @@ import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.WriteChannel;
+import com.google.gcloud.storage.Storage.CopyRequest;
 import com.google.gcloud.storage.spi.StorageRpc;
 import com.google.gcloud.storage.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.spi.StorageRpcFactory;
-import com.google.gcloud.storage.Storage.CopyRequest;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;

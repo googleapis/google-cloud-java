@@ -14,11 +14,14 @@
 
 package com.google.gcloud.bigquery.spi;
 
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.ALL_DATASETS;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.ALL_USERS;
 import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.DELETE_CONTENTS;
 import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.FIELDS;
 import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.MAX_RESULTS;
 import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.PAGE_TOKEN;
 import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.START_INDEX;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.STATE_FILTER;
 import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.TIMEOUT;
 import static java.net.HttpURLConnection.HTTP_CREATED;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
@@ -110,8 +113,9 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
     try {
       DatasetList datasetsList = bigquery.datasets()
           .list(this.options.projectId())
-          .setAll(Option.ALL_DATASETS.getBoolean(options))
+          .setAll(ALL_DATASETS.getBoolean(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
           .setPageToken(PAGE_TOKEN.getString(options))
           .execute();
       Iterable<DatasetList.Datasets> datasets = datasetsList.getDatasets();
@@ -322,9 +326,9 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
     try {
       JobList jobsList = bigquery.jobs()
           .list(this.options.projectId())
-          .setAllUsers(Option.ALL_USERS.getBoolean(options))
-          .setFields(Option.FIELDS.getString(options))
-          .setStateFilter(Option.STATE_FILTER.<List<String>>get(options))
+          .setAllUsers(ALL_USERS.getBoolean(options))
+          .setFields(FIELDS.getString(options))
+          .setStateFilter(STATE_FILTER.<List<String>>get(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
           .setProjection(DEFAULT_PROJECTION)

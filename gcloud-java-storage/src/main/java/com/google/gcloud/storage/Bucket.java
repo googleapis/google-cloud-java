@@ -26,9 +26,9 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.gcloud.Page;
-import com.google.gcloud.storage.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobGetOption;
 import com.google.gcloud.storage.Storage.BucketTargetOption;
+import com.google.gcloud.storage.spi.StorageRpc;
 
 import java.io.IOException;
 import java.io.InputStream;

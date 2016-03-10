@@ -38,9 +38,9 @@ import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
-import com.google.gcloud.datastore.testing.LocalGcdHelper;
 import com.google.gcloud.datastore.spi.DatastoreRpc;
 import com.google.gcloud.datastore.spi.DatastoreRpcFactory;
+import com.google.gcloud.datastore.testing.LocalGcdHelper;
 import com.google.protobuf.ByteString;
 
 import org.easymock.EasyMock;

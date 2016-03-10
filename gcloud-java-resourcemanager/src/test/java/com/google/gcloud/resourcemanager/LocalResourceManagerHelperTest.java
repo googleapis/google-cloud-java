@@ -8,10 +8,10 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableMap;
-import com.google.gcloud.resourcemanager.testing.LocalResourceManagerHelper;
 import com.google.gcloud.resourcemanager.spi.DefaultResourceManagerRpc;
 import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc;
 import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc.Tuple;
+import com.google.gcloud.resourcemanager.testing.LocalResourceManagerHelper;
 
 import org.junit.AfterClass;
 import org.junit.Before;
