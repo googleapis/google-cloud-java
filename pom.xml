@@ -395,6 +395,10 @@
                     <packages>com.google.gcloud*</packages>
                   </group>
                   <group>
+                    <title>Test helpers packages</title>
+                    <packages>com.google.gcloud.bigquery.testing:com.google.gcloud.datastore.testing:com.google.gcloud.resourcemanager.testing:com.google.gcloud.storage.testing</packages>
+                  </group>
+                  <group>
                     <title>SPI packages</title>
                     <packages>com.google.gcloud.spi</packages>
                   </group>
