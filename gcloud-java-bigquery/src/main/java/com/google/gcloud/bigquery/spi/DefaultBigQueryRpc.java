@@ -12,14 +12,14 @@
  * the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.bigquery.spi;
 
-import static com.google.gcloud.spi.BigQueryRpc.Option.DELETE_CONTENTS;
-import static com.google.gcloud.spi.BigQueryRpc.Option.FIELDS;
-import static com.google.gcloud.spi.BigQueryRpc.Option.MAX_RESULTS;
-import static com.google.gcloud.spi.BigQueryRpc.Option.PAGE_TOKEN;
-import static com.google.gcloud.spi.BigQueryRpc.Option.START_INDEX;
-import static com.google.gcloud.spi.BigQueryRpc.Option.TIMEOUT;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.DELETE_CONTENTS;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.FIELDS;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.MAX_RESULTS;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.PAGE_TOKEN;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.START_INDEX;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.TIMEOUT;
 import static java.net.HttpURLConnection.HTTP_CREATED;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static java.net.HttpURLConnection.HTTP_OK;

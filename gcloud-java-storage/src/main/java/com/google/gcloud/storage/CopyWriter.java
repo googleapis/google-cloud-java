@@ -22,9 +22,9 @@ import com.google.common.base.MoreObjects;
 import com.google.gcloud.Restorable;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryHelper;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpc.RewriteRequest;
-import com.google.gcloud.spi.StorageRpc.RewriteResponse;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc.RewriteRequest;
+import com.google.gcloud.storage.spi.StorageRpc.RewriteResponse;
 
 import java.io.Serializable;
 import java.util.Map;

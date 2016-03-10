@@ -1,9 +1,5 @@
-package com.google.gcloud.spi;
+package com.google.gcloud.resourcemanager.spi;
 
-import static com.google.gcloud.spi.ResourceManagerRpc.Option.FIELDS;
-import static com.google.gcloud.spi.ResourceManagerRpc.Option.FILTER;
-import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_SIZE;
-import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_TOKEN;
 import static java.net.HttpURLConnection.HTTP_FORBIDDEN;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
@@ -60,7 +56,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
     try {
       return resourceManager.projects()
           .get(projectId)
-          .setFields(FIELDS.getString(options))
+          .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
       ResourceManagerException translated = translate(ex);
@@ -78,10 +74,10 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
     try {
       ListProjectsResponse response = resourceManager.projects()
           .list()
-          .setFields(FIELDS.getString(options))
-          .setFilter(FILTER.getString(options))
-          .setPageSize(PAGE_SIZE.getInt(options))
-          .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(Option.FIELDS.getString(options))
+          .setFilter(Option.FILTER.getString(options))
+          .setPageSize(Option.PAGE_SIZE.getInt(options))
+          .setPageToken(Option.PAGE_TOKEN.getString(options))
           .execute();
       return Tuple.<String, Iterable<Project>>of(
           response.getNextPageToken(), response.getProjects());

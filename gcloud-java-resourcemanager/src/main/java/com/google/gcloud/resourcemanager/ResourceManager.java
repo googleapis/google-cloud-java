@@ -20,7 +20,7 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.Sets;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
-import com.google.gcloud.spi.ResourceManagerRpc;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc;
 
 import java.util.Set;
 

@@ -20,7 +20,7 @@ import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.spi.StorageRpc.Tuple;
+import com.google.gcloud.storage.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;

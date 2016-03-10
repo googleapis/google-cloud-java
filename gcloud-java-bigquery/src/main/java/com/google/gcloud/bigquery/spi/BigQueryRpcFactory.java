@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.bigquery.spi;
 
 import com.google.gcloud.bigquery.BigQueryOptions;
+import com.google.gcloud.spi.ServiceRpcFactory;
 
 /**
  * An interface for BigQuery RPC factory.
