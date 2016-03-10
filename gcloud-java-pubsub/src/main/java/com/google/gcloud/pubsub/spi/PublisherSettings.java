@@ -87,7 +87,7 @@ public class PublisherSettings extends ApiCallSettings {
   /**
    * The default scopes of the service.
    */
-  public static ImmutableList<String> DEFAULT_SERVICE_SCOPES =
+  public static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/pubsub")
           .add("https://www.googleapis.com/auth/cloud-platform")

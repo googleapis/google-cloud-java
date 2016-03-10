@@ -77,17 +77,17 @@ public class PublisherApiTest {
 
   @Test
   public void testCreateTopic() throws Exception {
-    String topicName = PublisherApi.createTopicPath("my-project", "my-topic");
+    String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "my-topic");
     Topic result = publisherApi.createTopic(topicName);
     Assert.assertEquals(topicName, result.getName());
   }
 
   @Test
   public void testPublish() throws Exception {
-    String topicName = PublisherApi.createTopicPath("my-project", "publish-topic");
+    String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "publish-topic");
     publisherApi.createTopic(topicName);
 
-    String subscriberName = SubscriberApi.createSubscriptionPath("my-project", "my-subscribe");
+    String subscriberName = SubscriberApi.ResourceNames.formatSubscriptionPath("my-project", "my-subscribe");
     PushConfig config = PushConfig.getDefaultInstance();
     subscriberApi.createSubscription(subscriberName, topicName, config, 5);
 
@@ -103,7 +103,7 @@ public class PublisherApiTest {
 
   @Test
   public void testGetTopic() throws Exception {
-    String topicName = PublisherApi.createTopicPath("my-project", "fun-topic");
+    String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "fun-topic");
     publisherApi.createTopic(topicName);
     Topic result = publisherApi.getTopic(topicName);
     Assert.assertNotNull(result);
@@ -112,10 +112,10 @@ public class PublisherApiTest {
 
   @Test
   public void testListTopics() throws Exception {
-    String project1 = PublisherApi.createProjectPath("project.1");
-    String topicName1 = PublisherApi.createTopicPath("project.1", "topic.1");
-    String topicName2 = PublisherApi.createTopicPath("project.1", "topic.2");
-    String topicName3 = PublisherApi.createTopicPath("project.2", "topic.3");
+    String project1 = PublisherApi.ResourceNames.formatProjectPath("project.1");
+    String topicName1 = PublisherApi.ResourceNames.formatTopicPath("project.1", "topic.1");
+    String topicName2 = PublisherApi.ResourceNames.formatTopicPath("project.1", "topic.2");
+    String topicName3 = PublisherApi.ResourceNames.formatTopicPath("project.2", "topic.3");
     publisherApi.createTopic(topicName1);
     publisherApi.createTopic(topicName2);
     publisherApi.createTopic(topicName3);
@@ -130,8 +130,8 @@ public class PublisherApiTest {
 
   @Test
   public void testDeleteTopic() throws Exception {
-    String project = PublisherApi.createProjectPath("project.1");
-    String topicName = PublisherApi.createTopicPath("my-project", "fun-topic");
+    String project = PublisherApi.ResourceNames.formatProjectPath("project.1");
+    String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "fun-topic");
     publisherApi.createTopic(topicName);
     publisherApi.deleteTopic(topicName);
     List<Topic> topics = new ArrayList<>();
