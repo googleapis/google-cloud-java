@@ -58,7 +58,7 @@ import java.util.List;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE - see instructions at the top of the file for editing.
 /**
- * The service that an application uses to manipulate subscriptions and to
+ * Service Description: The service that an application uses to manipulate subscriptions and to
  * consume messages from a subscription via the `Pull` method.
  *
  * <!-- manual edit -->
@@ -67,28 +67,93 @@ import java.util.List;
 @javax.annotation.Generated("by GAPIC")
 public class SubscriberApi implements AutoCloseable {
 
-  // =========
-  // Constants
-  // =========
+  public static class ResourceNames {
+    private ResourceNames() {}
 
-  /**
-   * A PathTemplate representing the fully-qualified path to represent
-   * a project resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.create("projects/{project}");
-  /**
-   * A PathTemplate representing the fully-qualified path to represent
-   * a subscription resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  private static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
-      PathTemplate.create("projects/{project}/subscriptions/{subscription}");
+    // =======================
+    // ResourceNames Constants
+    // =======================
+
+    /**
+     * A PathTemplate representing the fully-qualified path to represent
+     * a project resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    private static final PathTemplate PROJECT_PATH_TEMPLATE =
+        PathTemplate.create("projects/{project}");
+
+    /**
+     * A PathTemplate representing the fully-qualified path to represent
+     * a subscription resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    private static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
+        PathTemplate.create("projects/{project}/subscriptions/{subscription}");
+
+    // ==============================
+    // Resource Name Helper Functions
+    // ==============================
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a project resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    public static final String formatProjectPath(String project) {
+      return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent
+     * a subscription resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    public static final String formatSubscriptionPath(String project, String subscription) {
+      return SUBSCRIPTION_PATH_TEMPLATE.instantiate(
+          "project", project, "subscription", subscription);
+    }
+
+    /**
+     * Parses the project from the given fully-qualified path which
+     * represents a project resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    public static final String parseProjectFromProjectPath(String projectPath) {
+      return PROJECT_PATH_TEMPLATE.parse(projectPath).get("project");
+    }
+
+    /**
+     * Parses the project from the given fully-qualified path which
+     * represents a subscription resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    public static final String parseProjectFromSubscriptionPath(String subscriptionPath) {
+      return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionPath).get("project");
+    }
+
+    /**
+     * Parses the subscription from the given fully-qualified path which
+     * represents a subscription resource.
+     *
+     * <!-- manual edit -->
+     * <!-- end manual edit -->
+     */
+    public static final String parseSubscriptionFromSubscriptionPath(String subscriptionPath) {
+      return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionPath).get("subscription");
+    }
+  }
 
   // ========
   // Members
@@ -175,65 +240,6 @@ public class SubscriberApi implements AutoCloseable {
             channel.shutdown();
           }
         });
-  }
-
-  // ==============================
-  // Resource Name Helper Functions
-  // ==============================
-
-  /**
-   * Creates a string containing the fully-qualified path to represent
-   * a project resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static final String createProjectPath(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /**
-   * Creates a string containing the fully-qualified path to represent
-   * a subscription resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static final String createSubscriptionPath(String project, String subscription) {
-    return SUBSCRIPTION_PATH_TEMPLATE.instantiate("project", project, "subscription", subscription);
-  }
-
-  /**
-   * Extracts the project from the given fully-qualified path which
-   * represents a project resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static final String extractProjectFromProjectPath(String projectPath) {
-    return PROJECT_PATH_TEMPLATE.parse(projectPath).get("project");
-  }
-
-  /**
-   * Extracts the project from the given fully-qualified path which
-   * represents a subscription resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static final String extractProjectFromSubscriptionPath(String subscriptionPath) {
-    return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionPath).get("project");
-  }
-
-  /**
-   * Extracts the subscription from the given fully-qualified path which
-   * represents a subscription resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static final String extractSubscriptionFromSubscriptionPath(String subscriptionPath) {
-    return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionPath).get("subscription");
   }
 
   // =============
@@ -363,7 +369,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * @param request The request object containing all of the parameters for the API call.
    */
-  public Subscription getSubscription(GetSubscriptionRequest request) {
+  private Subscription getSubscription(GetSubscriptionRequest request) {
     return getSubscriptionCallable().call(request);
   }
 
@@ -480,7 +486,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * @param request The request object containing all of the parameters for the API call.
    */
-  public void deleteSubscription(DeleteSubscriptionRequest request) {
+  private void deleteSubscription(DeleteSubscriptionRequest request) {
     deleteSubscriptionCallable().call(request);
   }
 
@@ -761,13 +767,10 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    */
   @Override
-  public void close() {
-    // Manually-added shutdown code
-
-    // Auto-generated shutdown code
-    channel.shutdown();
-
-    // Manually-added shutdown code
+  public void close() throws Exception {
+    for (AutoCloseable closeable : closeables) {
+      closeable.close();
+    }
   }
 
   // ========
