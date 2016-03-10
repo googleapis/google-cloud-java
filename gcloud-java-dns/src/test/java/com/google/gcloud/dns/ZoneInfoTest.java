@@ -49,15 +49,15 @@ public class ZoneInfoTest {
       .build();
 
   @Test
-  public void testDefaultBuilders() {
-    ZoneInfo zone = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION);
-    assertTrue(zone.nameServers().isEmpty());
-    assertEquals(NAME, zone.name());
-    assertNull(zone.id());
-    assertNull(zone.creationTimeMillis());
-    assertNull(zone.nameServerSet());
-    assertEquals(DESCRIPTION, zone.description());
-    assertEquals(DNS_NAME, zone.dnsName());
+  public void testOf() {
+    ZoneInfo partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION);
+    assertTrue(partial.nameServers().isEmpty());
+    assertEquals(NAME, partial.name());
+    assertNull(partial.id());
+    assertNull(partial.creationTimeMillis());
+    assertNull(partial.nameServerSet());
+    assertEquals(DESCRIPTION, partial.description());
+    assertEquals(DNS_NAME, partial.dnsName());
   }
 
   @Test
