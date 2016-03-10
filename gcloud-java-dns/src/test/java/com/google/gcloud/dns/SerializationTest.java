@@ -35,16 +35,15 @@ import java.util.concurrent.TimeUnit;
 
 public class SerializationTest {
 
-  private static final ZoneInfo FULL_ZONE_INFO = Zone.builder("some zone name")
+  private static final ZoneInfo FULL_ZONE_INFO = Zone.of("some zone name", "www.example.com",
+      "some descriptions").toBuilder()
       .creationTimeMillis(132L)
-      .description("some descriptions")
-      .dnsName("www.example.com")
       .id("123333")
       .nameServers(ImmutableList.of("server 1", "server 2"))
       .nameServerSet("specificationstring")
       .build();
-  private static final ZoneInfo PARTIAL_ZONE_INFO = Zone.builder("some zone name")
-      .build();
+  private static final ZoneInfo PARTIAL_ZONE_INFO = Zone.of("some zone name", "www.example.com",
+      "some descriptions").toBuilder().build();
   private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder().id("13").build();
   private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.builder()
       .id("342")
@@ -86,7 +85,6 @@ public class SerializationTest {
       .id("some id")
       .startTimeMillis(132L)
       .build();
-
 
   @Test
   public void testModelAndRequests() throws Exception {

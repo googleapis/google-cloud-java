@@ -60,29 +60,14 @@ public class ITDnsTest {
   private static final String ZONE_DNS_NAME1 = ZONE_NAME1 + ".com.";
   private static final String ZONE_DNS_EMPTY_DESCRIPTION = ZONE_NAME_EMPTY_DESCRIPTION + ".com.";
   private static final String ZONE_DNS_NAME_NO_PERIOD = ZONE_NAME1 + ".com";
-  private static final ZoneInfo ZONE1 = ZoneInfo.builder(ZONE_NAME1)
-      .description(ZONE_DESCRIPTION1)
-      .dnsName(ZONE_DNS_EMPTY_DESCRIPTION)
-      .build();
+  private static final ZoneInfo ZONE1 =
+      ZoneInfo.of(ZONE_NAME1, ZONE_DNS_EMPTY_DESCRIPTION, ZONE_DESCRIPTION1);
   private static final ZoneInfo ZONE_EMPTY_DESCRIPTION =
-      ZoneInfo.builder(ZONE_NAME_EMPTY_DESCRIPTION)
-          .description(ZONE_DESCRIPTION1)
-          .dnsName(ZONE_DNS_NAME1)
-          .build();
-  private static final ZoneInfo ZONE_NAME_ERROR = ZoneInfo.builder(ZONE_NAME_TOO_LONG)
-      .description(ZONE_DESCRIPTION1)
-      .dnsName(ZONE_DNS_NAME1)
-      .build();
-  private static final ZoneInfo ZONE_MISSING_DESCRIPTION = ZoneInfo.builder(ZONE_NAME1)
-      .dnsName(ZONE_DNS_NAME1)
-      .build();
-  private static final ZoneInfo ZONE_MISSING_DNS_NAME = ZoneInfo.builder(ZONE_NAME1)
-      .description(ZONE_DESCRIPTION1)
-      .build();
-  private static final ZoneInfo ZONE_DNS_NO_PERIOD = ZoneInfo.builder(ZONE_NAME1)
-      .description(ZONE_DESCRIPTION1)
-      .dnsName(ZONE_DNS_NAME_NO_PERIOD)
-      .build();
+      ZoneInfo.of(ZONE_NAME_EMPTY_DESCRIPTION, ZONE_DNS_NAME1, ZONE_DESCRIPTION1);
+  private static final ZoneInfo ZONE_NAME_ERROR =
+      ZoneInfo.of(ZONE_NAME_TOO_LONG, ZONE_DNS_NAME1, ZONE_DESCRIPTION1);
+  private static final ZoneInfo ZONE_DNS_NO_PERIOD =
+      ZoneInfo.of(ZONE_NAME1, ZONE_DNS_NAME_NO_PERIOD, ZONE_DESCRIPTION1);
   private static final DnsRecord A_RECORD_ZONE1 =
       DnsRecord.builder("www." + ZONE1.dnsName(), DnsRecord.Type.A)
           .records(ImmutableList.of("123.123.55.1"))
@@ -212,20 +197,6 @@ public class ITDnsTest {
   public void testCreateZoneWithErrors() {
     try {
       try {
-        DNS.create(ZONE_MISSING_DNS_NAME);
-        fail("Zone is missing DNS name. The service returns an error.");
-      } catch (DnsException ex) {
-        // expected
-        // todo(mderka) test non-retryable when implemented within #593
-      }
-      try {
-        DNS.create(ZONE_MISSING_DESCRIPTION);
-        fail("Zone is missing description name. The service returns an error.");
-      } catch (DnsException ex) {
-        // expected
-        // todo(mderka) test non-retryable when implemented within #593
-      }
-      try {
         DNS.create(ZONE_NAME_ERROR);
         fail("Zone name is missing a period. The service returns an error.");
       } catch (DnsException ex) {
@@ -240,8 +211,6 @@ public class ITDnsTest {
         // todo(mderka) test non-retryable when implemented within #593
       }
     } finally {
-      DNS.delete(ZONE_MISSING_DNS_NAME.name());
-      DNS.delete(ZONE_MISSING_DESCRIPTION.name());
       DNS.delete(ZONE_NAME_ERROR.name());
       DNS.delete(ZONE_DNS_NO_PERIOD.name());
     }
