@@ -96,6 +96,14 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
     return new Builder();
   }
 
+  /**
+   * Creates a default instance of {@code DnsOptions} with the project ID and credentials inferred
+   * from the environment.
+   */
+  public static DnsOptions defaultInstance() {
+    return builder().build();
+  }
+
   @Override
   public boolean equals(Object obj) {
     return obj instanceof DnsOptions && baseEquals((DnsOptions) obj);

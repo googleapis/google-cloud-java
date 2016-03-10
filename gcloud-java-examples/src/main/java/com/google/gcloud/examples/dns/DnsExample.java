@@ -38,8 +38,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * An example of using Google Cloud DNS.
  *
- * <p>This example creates, deletes, gets, and lists zones, and creates and deletes DNS records of
- * type A.
+ * <p>This example creates, deletes, gets, and lists zones. It also creates and deletes DNS records
+ * of type A, and lists DNS records.
  *
  * <p>Steps needed for running the example:
  * <ol>
@@ -57,14 +57,16 @@ import java.util.concurrent.TimeUnit;
  * quota}</li>
  * </ol>
  *
- * <p>The first parameter is an optional {@code project_id} (logged-in project will be used if not
- * supplied). Second parameter is a DNS operation (list, delete, create,...). The remaining
- * arguments are specific to the operation. See each action's run method for the specific
- * interaction.
+ * <p>The first parameter is an optional {@code project_id}. The project specified in the Google
+ * Cloud SDK configuration (see {@code gcloud config list}) will be used if the project ID is not
+ * supplied. The second parameter is a DNS operation (list, delete, create, ...). The remaining
+ * arguments are specific to the operation. See each action's {@code run} method for the specific
+ * arguments.
  */
 public class DnsExample {
 
   private static final Map<String, DnsAction> ACTIONS = new HashMap<>();
+  private static final DateFormat FORMATTER = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 
   private interface DnsAction {
     void run(Dns dns, String... args);
@@ -77,7 +79,7 @@ public class DnsExample {
   private static class CreateZoneAction implements DnsAction {
 
     /**
-     * Creates a zone with the provided name, dns name and description (in this order).
+     * Creates a zone with the provided name, DNS name and description (in this order).
      */
     @Override
     public void run(Dns dns, String... args) {
@@ -111,14 +113,8 @@ public class DnsExample {
       Iterator<Zone> zoneIterator = dns.listZones().iterateAll();
       if (zoneIterator.hasNext()) {
         System.out.println("The project contains the following zones:");
-        DateFormat formatter = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
         while (zoneIterator.hasNext()) {
-          Zone zone = zoneIterator.next();
-          System.out.printf("%nName: %s%n", zone.name());
-          System.out.printf("ID: %s%n", zone.id());
-          System.out.printf("Description: %s%n", zone.description());
-          System.out.printf("Created: %s%n", formatter.format(new Date(zone.creationTimeMillis())));
-          System.out.printf("Name servers: %s%n", Joiner.on(", ").join(zone.nameServers()));
+          printZone(zoneIterator.next());
         }
       } else {
         System.out.println("Project contains no zones.");
@@ -148,12 +144,7 @@ public class DnsExample {
       if (zone == null) {
         System.out.printf("No zone with name '%s' exists.%n", zoneName);
       } else {
-        System.out.printf("Name: %s%n", zone.name());
-        System.out.printf("ID: %s%n", zone.id());
-        System.out.printf("Description: %s%n", zone.description());
-        DateFormat formatter = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
-        System.out.printf("Created: %s%n", formatter.format(new Date(zone.creationTimeMillis())));
-        System.out.printf("Name servers: %s%n", Joiner.on(", ").join(zone.nameServers()));
+        printZone(zone);
       }
     }
 
@@ -210,7 +201,7 @@ public class DnsExample {
       String ip = args[2];
       int ttl = 0;
       if (args.length > 3) {
-        ttl = Integer.valueOf(args[3]);
+        ttl = Integer.parseInt(args[3]);
       }
       DnsRecord record = DnsRecord.builder(recordName, DnsRecord.Type.A)
           .records(ImmutableList.of(ip))
@@ -220,18 +211,10 @@ public class DnsExample {
           .delete(record)
           .build();
       changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
-      System.out.printf("The request for deleting A record %s for zone %s was successfully " +
-          "submitted and assigned ID %s.%n", recordName, zoneName, changeRequest.id());
+      System.out.printf("The request for deleting A record %s for zone %s was successfully "
+          + "submitted and assigned ID %s.%n", recordName, zoneName, changeRequest.id());
       System.out.print("Waiting for deletion to happen...");
-      while (changeRequest.status().equals(ChangeRequest.Status.PENDING)) {
-        System.out.print(".");
-        try {
-          Thread.sleep(500);
-        } catch (InterruptedException e) {
-          System.err.println("Thread was interrupted while waiting.");
-        }
-        changeRequest = dns.getChangeRequest(zoneName, changeRequest.id());
-      }
+      waitForChangeToFinish(dns, zoneName, changeRequest);
       System.out.printf("%nThe deletion has been completed.%n");
     }
 
@@ -244,7 +227,7 @@ public class DnsExample {
     public boolean check(String... args) {
       if (args.length == 4) {
         // to check that it can be parsed
-        Integer.valueOf(args[3]);
+        Integer.parseInt(args[3]);
         return true;
       } else {
         return args.length == 3;
@@ -265,28 +248,18 @@ public class DnsExample {
       String ip = args[2];
       int ttl = 0;
       if (args.length > 3) {
-        ttl = Integer.valueOf(args[3]);
+        ttl = Integer.parseInt(args[3]);
       }
       DnsRecord record = DnsRecord.builder(recordName, DnsRecord.Type.A)
           .records(ImmutableList.of(ip))
           .ttl(ttl, TimeUnit.SECONDS)
           .build();
-      ChangeRequest changeRequest = ChangeRequest.builder()
-          .add(record)
-          .build();
+      ChangeRequest changeRequest = ChangeRequest.builder().add(record).build();
       changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
-      System.out.printf("The request for adding A record %s for zone %s was successfully " +
-          "submitted and assigned ID %s.%n", recordName, zoneName, changeRequest.id());
-      System.out.print("Waiting for deletion to happen...");
-      while (changeRequest.status().equals(ChangeRequest.Status.PENDING)) {
-        System.out.print(".");
-        try {
-          Thread.sleep(500);
-        } catch (InterruptedException e) {
-          System.err.println("Thread was interrupted while waiting.");
-        }
-        changeRequest = dns.getChangeRequest(zoneName, changeRequest.id());
-      }
+      System.out.printf("The request for adding A record %s for zone %s was successfully "
+          + "submitted and assigned ID %s.%n", recordName, zoneName, changeRequest.id());
+      System.out.print("Waiting for addition to happen...");
+      waitForChangeToFinish(dns, zoneName, changeRequest);
       System.out.printf("The addition has been completed.%n");
     }
 
@@ -299,7 +272,7 @@ public class DnsExample {
     public boolean check(String... args) {
       if (args.length == 4) {
         // to check that it can be parsed
-        Integer.valueOf(args[3]);
+        Integer.parseInt(args[3]);
         return true;
       } else {
         return args.length == 3;
@@ -342,8 +315,8 @@ public class DnsExample {
   private static class ListChangesAction implements DnsAction {
 
     /**
-     * Lists all the changes for a given zone. Optionally, an order, "descending" or "ascending" can
-     * be specified using the last parameter.
+     * Lists all the changes for a given zone. Optionally, an order ("descending" or "ascending")
+     * can be specified using the last parameter.
      */
     @Override
     public void run(Dns dns, String... args) {
@@ -358,12 +331,11 @@ public class DnsExample {
       }
       if (iterator.hasNext()) {
         System.out.printf("Change requests for zone %s:%n", zoneName);
-        DateFormat formatter = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
         while (iterator.hasNext()) {
           ChangeRequest change = iterator.next();
           System.out.printf("%nID: %s%n", change.id());
           System.out.printf("Status: %s%n", change.status());
-          System.out.printf("Started: %s%n", formatter.format(change.startTimeMillis()));
+          System.out.printf("Started: %s%n", FORMATTER.format(change.startTimeMillis()));
           System.out.printf("Deletions: %s%n", Joiner.on(", ").join(change.deletions()));
           System.out.printf("Additions: %s%n", Joiner.on(", ").join(change.additions()));
         }
@@ -408,7 +380,7 @@ public class DnsExample {
 
     @Override
     public boolean check(String... args) {
-      if (args.length == 0) {
+      if (args.length == 0 || args.length == 1) {
         return true;
       }
       if ("records".equals(args[1])) {
@@ -464,6 +436,29 @@ public class DnsExample {
     ACTIONS.put("quota", new GetProjectAction());
   }
 
+  private static void printZone(Zone zone) {
+    System.out.printf("%nName: %s%n", zone.name());
+    System.out.printf("ID: %s%n", zone.id());
+    System.out.printf("Description: %s%n", zone.description());
+    System.out.printf("Created: %s%n", FORMATTER.format(new Date(zone.creationTimeMillis())));
+    System.out.printf("Name servers: %s%n", Joiner.on(", ").join(zone.nameServers()));
+  }
+
+  private static ChangeRequest waitForChangeToFinish(Dns dns, String zoneName,
+      ChangeRequest request) {
+    ChangeRequest current = request;
+    while (current.status().equals(ChangeRequest.Status.PENDING)) {
+      System.out.print(".");
+      try {
+        Thread.sleep(500);
+      } catch (InterruptedException e) {
+        System.err.println("Thread was interrupted while waiting.");
+      }
+      current = dns.getChangeRequest(zoneName, current.id());
+    }
+    return current;
+  }
+
   private static void printUsage() {
     StringBuilder actionAndParams = new StringBuilder();
     for (Map.Entry<String, DnsAction> entry : ACTIONS.entrySet()) {
@@ -510,12 +505,13 @@ public class DnsExample {
       return;
     } catch (Exception ex) {
       System.out.println("Failed to parse request.");
+      System.out.println("Expected: " + action.params());
       ex.printStackTrace();
       return;
     }
     if (valid) {
       DnsOptions.Builder optionsBuilder = DnsOptions.builder();
-      if(projectId != null) {
+      if (projectId != null) {
         optionsBuilder.projectId(projectId);
       }
       Dns dns = optionsBuilder.build().service();
