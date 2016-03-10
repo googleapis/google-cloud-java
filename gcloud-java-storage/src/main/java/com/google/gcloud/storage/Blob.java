@@ -170,6 +170,11 @@ public final class Blob extends BlobInfo {
       this.infoBuilder = new BlobInfo.BuilderImpl(blob);
     }
 
+    public Builder(Storage storage, BlobId blobId) {
+      this.storage = storage;
+      this.infoBuilder = new BlobInfo.BuilderImpl(blobId);
+    }
+
     @Override
     public Builder blobId(BlobId blobId) {
       infoBuilder.blobId(blobId);
@@ -231,7 +236,7 @@ public final class Blob extends BlobInfo {
     }
 
     @Override
-    Builder size(Long size) {
+    public Builder size(Long size) {
       infoBuilder.size(size);
       return this;
     }

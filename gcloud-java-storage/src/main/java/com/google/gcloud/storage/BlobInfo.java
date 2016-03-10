@@ -151,7 +151,7 @@ public class BlobInfo implements Serializable {
 
     abstract Builder owner(Acl.Entity owner);
 
-    abstract Builder size(Long size);
+    public abstract Builder size(Long size);
 
     abstract Builder etag(String etag);
 
@@ -309,7 +309,7 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    Builder size(Long size) {
+    public Builder size(Long size) {
       this.size = size;
       return this;
     }

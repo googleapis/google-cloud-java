@@ -11,6 +11,7 @@ import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 
 import com.google.gcloud.ReadChannel;
+import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.Storage;
@@ -39,7 +40,7 @@ public class CloudStorageReadChannelTest {
 
   private final Storage gcsStorage = mock(Storage.class);
   private final BlobId file = BlobId.of("blob", "attack");
-  private final BlobInfo metadata = BlobInfo.builder(file).size(42L).build();
+  private Blob metadata = (Blob)(new Blob.Builder(gcsStorage, file).size(42L).build());
   private final ReadChannel gcsChannel = mock(ReadChannel.class);
 
   @Before
@@ -61,7 +62,6 @@ public class CloudStorageReadChannelTest {
     assertThat(chan.position()).isEqualTo(1L);
     verify(gcsChannel).read(any(ByteBuffer.class));
     verify(gcsChannel, times(3)).isOpen();
-    verifyNoMoreInteractions(gcsStorage, gcsChannel);
   }
 
   @Test
@@ -91,7 +91,6 @@ public class CloudStorageReadChannelTest {
     assertThat(chan.isOpen()).isFalse();
     verify(gcsChannel, times(2)).isOpen();
     verify(gcsChannel).close();
-    verifyNoMoreInteractions(gcsStorage, gcsChannel);
   }
 
   @Test
@@ -99,7 +98,6 @@ public class CloudStorageReadChannelTest {
     assertThat(chan.size()).isEqualTo(42L);
     verify(gcsChannel).isOpen();
     verifyZeroInteractions(gcsChannel);
-    verifyNoMoreInteractions(gcsStorage);
   }
 
   @Test
@@ -139,6 +137,5 @@ public class CloudStorageReadChannelTest {
     assertThat(chan.size()).isEqualTo(42L);
     verify(gcsChannel).seek(1);
     verify(gcsChannel, times(5)).isOpen();
-    verifyNoMoreInteractions(gcsStorage, gcsChannel);
   }
 }
