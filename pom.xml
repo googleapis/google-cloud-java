@@ -391,7 +391,7 @@
                 <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
                 <groups>
                   <group>
-                    <title>Main packages</title>
+                    <title>API packages</title>
                     <packages>com.google.gcloud*</packages>
                   </group>
                   <group>
@@ -399,12 +399,12 @@
                     <packages>com.google.gcloud.bigquery.testing:com.google.gcloud.datastore.testing:com.google.gcloud.resourcemanager.testing:com.google.gcloud.storage.testing</packages>
                   </group>
                   <group>
-                    <title>SPI packages</title>
-                    <packages>com.google.gcloud.spi</packages>
-                  </group>
-                  <group>
                     <title>Example packages</title>
                     <packages>com.google.gcloud.examples*</packages>
+                  </group>
+                  <group>
+                    <title>SPI packages</title>
+                    <packages>com.google.gcloud.spi:com.google.gcloud.bigquery.spi:com.google.gcloud.datastore.spi:com.google.gcloud.resourcemanager.spi:com.google.gcloud.storage.spi</packages>
                   </group>
                 </groups>
               </configuration>
