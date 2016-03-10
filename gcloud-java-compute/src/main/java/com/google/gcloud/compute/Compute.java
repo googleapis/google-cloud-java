@@ -244,15 +244,16 @@ public interface Compute extends Service<ComputeOptions> {
     NAME("name"),
     OPERATION_TYPE("operationType"),
     PROGRESS("progress"),
+    REGION("region"),
     SELF_LINK("selfLink"),
     START_TIME("startTime"),
     STATUS("status"),
     STATUS_MESSAGE("statusMessage"),
-    REGION("region"),
     TARGET_ID("targetId"),
     TARGET_LINK("targetLink"),
     USER("user"),
-    WARNINGS("warnings");
+    WARNINGS("warnings"),
+    ZONE("zone");
 
     private final String selector;
 
@@ -292,7 +293,7 @@ public interface Compute extends Service<ComputeOptions> {
       EQ,
 
       /**
-       * Defines an inequality filter.
+       * Defines a not-equals filter.
        */
       NE
     }
@@ -350,7 +351,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns a not-equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
@@ -368,7 +369,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an inequality filter for the given field and long value.
+     * Returns a not-equals filter for the given field and long value.
      */
     public static DiskTypeFilter notEquals(DiskTypeField field, long value) {
       return new DiskTypeFilter(checkNotNull(field), ComparisonOperator.NE, value);
@@ -398,7 +399,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns a not-equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
@@ -416,7 +417,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an inequality filter for the given field and long value.
+     * Returns a not-equals filter for the given field and long value.
      */
     public static MachineTypeFilter notEquals(MachineTypeField field, long value) {
       return new MachineTypeFilter(checkNotNull(field), ComparisonOperator.NE, value);
@@ -446,7 +447,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns a not-equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
@@ -480,7 +481,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns a not-equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
@@ -514,7 +515,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns a not-equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
@@ -532,7 +533,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an inequality filter for the given field and long value.
+     * Returns a not-equals filter for the given field and long value.
      */
     public static OperationFilter notEquals(OperationField field, long value) {
       return new OperationFilter(checkNotNull(field), ComparisonOperator.NE, value);
@@ -546,7 +547,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an inequality filter for the given field and integer value.
+     * Returns a not-equals filter for the given field and integer value.
      */
     public static OperationFilter notEquals(OperationField field, int value) {
       return new OperationFilter(checkNotNull(field), ComparisonOperator.NE, value);
@@ -566,8 +567,8 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the disk type's fields to be returned by the RPC call. If this
-     * option is not provided all disk type's fields are returned. {@code DiskTypeOption.fields} can
-     * be used to specify only the fields of interest. {@link DiskType#diskTypeId()} is always
+     * option is not provided, all disk type's fields are returned. {@code DiskTypeOption.fields}
+     * can be used to specify only the fields of interest. {@link DiskType#diskTypeId()} is always
      * returned, even if not specified.
      */
     public static DiskTypeOption fields(DiskTypeField... fields) {
@@ -587,7 +588,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the disk types being listed.
+     * Returns an option to specify a filter on the disk types being listed.
      */
     public static DiskTypeListOption filter(DiskTypeFilter filter) {
       return new DiskTypeListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -609,9 +610,9 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the disk type's fields to be returned by the RPC call. If this
-     * option is not provided all disk type's fields are returned. {@code DiskTypeListOption.fields}
-     * can be used to specify only the fields of interest. {@link DiskType#diskTypeId()} is always
-     * returned, even if not specified.
+     * option is not provided, all disk type's fields are returned.
+     * {@code DiskTypeListOption.fields} can be used to specify only the fields of interest.
+     * {@link DiskType#diskTypeId()} is always returned, even if not specified.
      */
     public static DiskTypeListOption fields(DiskTypeField... fields) {
       StringBuilder builder = new StringBuilder();
@@ -632,7 +633,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the disk types being listed.
+     * Returns an option to specify a filter on the disk types being listed.
      */
     public static DiskTypeAggregatedListOption filter(DiskTypeFilter filter) {
       return new DiskTypeAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -666,7 +667,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the machine type's fields to be returned by the RPC call. If
-     * this option is not provided all machine type's fields are returned.
+     * this option is not provided, all machine type's fields are returned.
      * {@code MachineTypeOption.fields} can be used to specify only the fields of interest.
      * {@link MachineType#machineTypeId()} is always returned, even if not specified.
      */
@@ -687,7 +688,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the machine types being listed.
+     * Returns an option to specify a filter on the machine types being listed.
      */
     public static MachineTypeListOption filter(MachineTypeFilter filter) {
       return new MachineTypeListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -709,7 +710,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the machine type's fields to be returned by the RPC call. If
-     * this option is not provided all machine type's fields are returned.
+     * this option is not provided, all machine type's fields are returned.
      * {@code MachineTypeListOption.fields} can be used to specify only the fields of interest.
      * {@link MachineType#machineTypeId()} is always returned, even if not specified.
      */
@@ -732,7 +733,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the machine types being listed.
+     * Returns an option to specify a filter on the machine types being listed.
      */
     public static MachineTypeAggregatedListOption filter(MachineTypeFilter filter) {
       return new MachineTypeAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -766,7 +767,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the region's fields to be returned by the RPC call. If this
-     * option is not provided all region's fields are returned. {@code RegionOption.fields} can be
+     * option is not provided, all region's fields are returned. {@code RegionOption.fields} can be
      * used to specify only the fields of interest. {@link Region#regionId()} is always
      * returned, even if not specified.
      */
@@ -787,7 +788,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the regions being listed.
+     * Returns an option to specify a filter on the regions being listed.
      */
     public static RegionListOption filter(RegionFilter filter) {
       return new RegionListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -809,7 +810,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the region's fields to be returned by the RPC call. If this
-     * option is not provided all region's fields are returned. {@code RegionListOption.fields} can
+     * option is not provided, all region's fields are returned. {@code RegionListOption.fields} can
      * be used to specify only the fields of interest. {@link Region#regionId()} is always
      * returned, even if not specified.
      */
@@ -833,7 +834,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the zone's fields to be returned by the RPC call. If this option
-     * is not provided all zone's fields are returned. {@code ZoneOption.fields} can be used to
+     * is not provided, all zone's fields are returned. {@code ZoneOption.fields} can be used to
      * specify only the fields of interest. {@link Zone#zoneId()} is always returned, even if
      * not specified.
      */
@@ -854,7 +855,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the zones being listed.
+     * Returns an option to specify a filter on the zones being listed.
      */
     public static ZoneListOption filter(ZoneFilter filter) {
       return new ZoneListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -876,7 +877,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the zone's fields to be returned by the RPC call. If this option
-     * is not provided all zone's fields are returned. {@code ZoneListOption.fields} can be used to
+     * is not provided, all zone's fields are returned. {@code ZoneListOption.fields} can be used to
      * specify only the fields of interest. {@link Zone#zoneId()} is always returned, even if
      * not specified.
      */
@@ -900,9 +901,9 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the license's fields to be returned by the RPC call. If this
-     * option is not provided all license's fields are returned. {@code LicenseOption.fields} can be
-     * used to specify only the fields of interest. {@link License#licenseId()} is always returned,
-     * even if not specified.
+     * option is not provided, all license's fields are returned. {@code LicenseOption.fields} can
+     * be used to specify only the fields of interest. {@link License#licenseId()} is always
+     * returned, even if not specified.
      */
     public static LicenseOption fields(LicenseField... fields) {
       return new LicenseOption(ComputeRpc.Option.FIELDS, LicenseField.selector(fields));
@@ -922,7 +923,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the operation's fields to be returned by the RPC call. If this
-     * option is not provided all operation's fields are returned. {@code OperationOption.fields}
+     * option is not provided, all operation's fields are returned. {@code OperationOption.fields}
      * can be used to specify only the fields of interest. {@link Operation#operationId()} is
      * always returned, even if not specified.
      */
@@ -943,7 +944,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the operations being listed.
+     * Returns an option to specify a filter on the operations being listed.
      */
     public static OperationListOption filter(OperationFilter filter) {
       return new OperationListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -965,7 +966,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the operation's fields to be returned by the RPC call. If this
-     * option is not provided all operation's fields are returned.
+     * option is not provided, all operation's fields are returned.
      * {@code OperationListOption.fields} can be used to specify only the fields of interest.
      * {@link Operation#operationId()} is always returned, even if not specified.
      */

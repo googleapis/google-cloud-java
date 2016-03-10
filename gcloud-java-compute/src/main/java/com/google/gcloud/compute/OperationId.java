@@ -32,7 +32,7 @@ public interface OperationId {
   String operation();
 
   /**
-   * Returns a fully qualified URL to the entity.
+   * Returns a fully qualified URL to the operation.
    */
   String selfLink();
 }

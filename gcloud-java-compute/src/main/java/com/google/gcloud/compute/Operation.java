@@ -38,10 +38,10 @@ import java.util.Objects;
 
 /**
  * Google Compute Engine operations. Operation identity can be obtained via {@link #operationId()}.
- * For global operations {@link #operationId()} returns an {@link GlobalOperationId}, for region
- * operations {@link #operationId()} returns a {@link RegionOperationId}, for zone operations
- * {@link #operationId()} returns a {@link ZoneOperationId}. To get an {@code Operation} object with
- * the most recent information use {@link #reload(Compute.OperationOption...)}.
+ * {@link #operationId()} returns {@link GlobalOperationId} for global operations,
+ * {@link RegionOperationId} for region operations, and {@link ZoneOperationId} for zone operations.
+ * To get an {@code Operation} object with the most recent information use
+ * {@link #reload(Compute.OperationOption...)}.
  */
 public final class Operation implements Serializable {
 
@@ -71,7 +71,7 @@ public final class Operation implements Serializable {
   private final String description;
 
   /**
-   * Types of operations.
+   * Status of an operation.
    */
   public enum Status {
     PENDING,
@@ -286,9 +286,6 @@ public final class Operation implements Serializable {
     }
   }
 
-  /**
-   * Builder for Compute Engine operations.
-   */
   static final class Builder {
 
     private Compute compute;
@@ -310,7 +307,6 @@ public final class Operation implements Serializable {
     private List<OperationWarning> warnings;
     private Integer httpErrorStatusCode;
     private String httpErrorMessage;
-
     private String description;
 
     Builder(Compute compute) {
@@ -460,10 +456,7 @@ public final class Operation implements Serializable {
       return this;
     }
 
-    /**
-     * Creates an object.
-     */
-    public Operation build() {
+    Operation build() {
       return new Operation(this);
     }
   }
@@ -515,8 +508,8 @@ public final class Operation implements Serializable {
 
   /**
    * Returns the operation's identity. This method returns an {@link GlobalOperationId} for global
-   * operations, returns a {@link RegionOperationId} for region operations and returns a
-   * {@link ZoneOperationId} for zone operations.
+   * operations, a {@link RegionOperationId} for region operations and a {@link ZoneOperationId} for
+   * zone operations.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
@@ -658,7 +651,7 @@ public final class Operation implements Serializable {
   /**
    * Checks if this operation has completed its execution, either failing or succeeding. If the
    * operation does not exist this method returns {@code false}. To correctly wait for operation's
-   * completion check that the operation exists first, using {@link #exists()}:
+   * completion, check that the operation exists first using {@link #exists()}:
    * <pre> {@code
    * if (operation.exists()) {
    *   while(!operation.isDone()) {

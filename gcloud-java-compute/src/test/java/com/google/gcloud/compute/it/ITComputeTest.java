@@ -65,6 +65,7 @@ public class ITComputeTest {
   @Test
   public void testGetDiskType() {
     DiskType diskType = compute.getDiskType(ZONE, DISK_TYPE);
+    // todo(mziccard): uncomment or remove once #695 is closed
     // assertNotNull(diskType.id());
     assertEquals(ZONE, diskType.diskTypeId().zone());
     assertEquals(DISK_TYPE, diskType.diskTypeId().diskType());
@@ -78,6 +79,7 @@ public class ITComputeTest {
   public void testGetDiskTypeWithSelectedFields() {
     DiskType diskType = compute.getDiskType(ZONE, DISK_TYPE,
         Compute.DiskTypeOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
+    // todo(mziccard): uncomment or remove once #695 is closed
     // assertNotNull(diskType.id());
     assertEquals(ZONE, diskType.diskTypeId().zone());
     assertEquals(DISK_TYPE, diskType.diskTypeId().diskType());
@@ -92,8 +94,9 @@ public class ITComputeTest {
     Page<DiskType> diskPage = compute.listDiskTypes(ZONE);
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
     assertTrue(diskTypeIterator.hasNext());
-    while(diskTypeIterator.hasNext()) {
+    while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
+      // todo(mziccard): uncomment or remove once #695 is closed
       // assertNotNull(diskType.id());
       assertNotNull(diskType.diskTypeId());
       assertEquals(ZONE, diskType.diskTypeId().zone());
@@ -110,7 +113,7 @@ public class ITComputeTest {
         Compute.DiskTypeListOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
     assertTrue(diskTypeIterator.hasNext());
-    while(diskTypeIterator.hasNext()) {
+    while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
       assertNull(diskType.id());
       assertNotNull(diskType.diskTypeId());
@@ -128,7 +131,7 @@ public class ITComputeTest {
         Compute.DiskTypeFilter.equals(Compute.DiskTypeField.DEFAULT_DISK_SIZE_GB, 375)));
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
     assertTrue(diskTypeIterator.hasNext());
-    while(diskTypeIterator.hasNext()) {
+    while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
       // todo(mziccard): uncomment or remove once #695 is closed
       // assertNotNull(diskType.id());
@@ -146,7 +149,7 @@ public class ITComputeTest {
     Page<DiskType> diskPage = compute.listDiskTypes();
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
     assertTrue(diskTypeIterator.hasNext());
-    while(diskTypeIterator.hasNext()) {
+    while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
       // assertNotNull(diskType.id());
       assertNotNull(diskType.diskTypeId());
@@ -163,7 +166,7 @@ public class ITComputeTest {
         Compute.DiskTypeFilter.notEquals(Compute.DiskTypeField.DEFAULT_DISK_SIZE_GB, 375)));
     Iterator<DiskType> diskTypeIterator = diskPage.iterateAll();
     assertTrue(diskTypeIterator.hasNext());
-    while(diskTypeIterator.hasNext()) {
+    while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
       // todo(mziccard): uncomment or remove once #695 is closed
       // assertNotNull(diskType.id());
@@ -209,7 +212,7 @@ public class ITComputeTest {
     Page<MachineType> machinePage = compute.listMachineTypes(ZONE);
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
     assertTrue(machineTypeIterator.hasNext());
-    while(machineTypeIterator.hasNext()) {
+    while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
       assertEquals(ZONE, machineType.machineTypeId().zone());
@@ -229,7 +232,7 @@ public class ITComputeTest {
         Compute.MachineTypeListOption.fields(Compute.MachineTypeField.CREATION_TIMESTAMP));
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
     assertTrue(machineTypeIterator.hasNext());
-    while(machineTypeIterator.hasNext()) {
+    while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
       assertEquals(ZONE, machineType.machineTypeId().zone());
@@ -250,7 +253,7 @@ public class ITComputeTest {
             Compute.MachineTypeFilter.equals(Compute.MachineTypeField.GUEST_CPUS, 2)));
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
     assertTrue(machineTypeIterator.hasNext());
-    while(machineTypeIterator.hasNext()) {
+    while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
       assertEquals(ZONE, machineType.machineTypeId().zone());
@@ -270,7 +273,7 @@ public class ITComputeTest {
     Page<MachineType> machinePage = compute.listMachineTypes();
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
     assertTrue(machineTypeIterator.hasNext());
-    while(machineTypeIterator.hasNext()) {
+    while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
       assertNotNull(machineType.id());
@@ -290,7 +293,7 @@ public class ITComputeTest {
             Compute.MachineTypeFilter.notEquals(Compute.MachineTypeField.GUEST_CPUS, 2)));
     Iterator<MachineType> machineTypeIterator = machinePage.iterateAll();
     assertTrue(machineTypeIterator.hasNext());
-    while(machineTypeIterator.hasNext()) {
+    while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
       assertNotNull(machineType.id());
@@ -346,7 +349,7 @@ public class ITComputeTest {
   public void testListRegions() {
     Page<Region> regionPage = compute.listRegions();
     Iterator<Region> regionIterator = regionPage.iterateAll();
-    while(regionIterator.hasNext()) {
+    while (regionIterator.hasNext()) {
       Region region = regionIterator.next();
       assertNotNull(region.regionId());
       assertNotNull(region.description());
@@ -363,7 +366,7 @@ public class ITComputeTest {
     Page<Region> regionPage =
         compute.listRegions(Compute.RegionListOption.fields(Compute.RegionField.ID));
     Iterator<Region> regionIterator = regionPage.iterateAll();
-    while(regionIterator.hasNext()) {
+    while (regionIterator.hasNext()) {
       Region region = regionIterator.next();
       assertNotNull(region.regionId());
       assertNull(region.description());
@@ -411,7 +414,7 @@ public class ITComputeTest {
   public void testListZones() {
     Page<Zone> zonePage = compute.listZones();
     Iterator<Zone> zoneIterator = zonePage.iterateAll();
-    while(zoneIterator.hasNext()) {
+    while (zoneIterator.hasNext()) {
       Zone zone = zoneIterator.next();
       assertNotNull(zone.zoneId());
       assertNotNull(zone.id());
@@ -427,7 +430,7 @@ public class ITComputeTest {
     Page<Zone> zonePage = compute.listZones(
         Compute.ZoneListOption.fields(Compute.ZoneField.CREATION_TIMESTAMP));
     Iterator<Zone> zoneIterator = zonePage.iterateAll();
-    while(zoneIterator.hasNext()) {
+    while (zoneIterator.hasNext()) {
       Zone zone = zoneIterator.next();
       assertNotNull(zone.zoneId());
       assertNull(zone.id());
@@ -451,7 +454,7 @@ public class ITComputeTest {
   public void testListGlobalOperations() {
     Page<Operation> operationPage = compute.listGlobalOperations();
     Iterator<Operation> operationIterator = operationPage.iterateAll();
-    while(operationIterator.hasNext()) {
+    while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.id());
       assertNotNull(operation.operationId());
@@ -468,7 +471,7 @@ public class ITComputeTest {
     Page<Operation> operationPage =
         compute.listGlobalOperations(Compute.OperationListOption.fields(Compute.OperationField.ID));
     Iterator<Operation> operationIterator = operationPage.iterateAll();
-    while(operationIterator.hasNext()) {
+    while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.id());
       assertNotNull(operation.operationId());
@@ -495,7 +498,7 @@ public class ITComputeTest {
     Page<Operation> operationPage = compute.listGlobalOperations(Compute.OperationListOption.filter(
         Compute.OperationFilter.equals(Compute.OperationField.STATUS, "DONE")));
     Iterator<Operation> operationIterator = operationPage.iterateAll();
-    while(operationIterator.hasNext()) {
+    while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.id());
       assertNotNull(operation.operationId());
@@ -511,11 +514,12 @@ public class ITComputeTest {
   public void testListRegionOperations() {
     Page<Operation> operationPage = compute.listRegionOperations(REGION);
     Iterator<Operation> operationIterator = operationPage.iterateAll();
-    while(operationIterator.hasNext()) {
+    while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.id());
       assertNotNull(operation.operationId());
       assertEquals(REGION, operation.<RegionOperationId>operationId().region());
+      // todo(mziccard): uncomment or remove once #727 is closed
       // assertNotNull(operation.creationTimestamp());
       assertNotNull(operation.operationType());
       assertNotNull(operation.status());
@@ -528,7 +532,7 @@ public class ITComputeTest {
     Page<Operation> operationPage = compute.listRegionOperations(REGION,
         Compute.OperationListOption.fields(Compute.OperationField.ID));
     Iterator<Operation> operationIterator = operationPage.iterateAll();
-    while(operationIterator.hasNext()) {
+    while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.id());
       assertNotNull(operation.operationId());
@@ -557,7 +561,7 @@ public class ITComputeTest {
         Compute.OperationListOption.filter(Compute.OperationFilter.equals(
             Compute.OperationField.STATUS, "DONE")));
     Iterator<Operation> operationIterator = operationPage.iterateAll();
-    while(operationIterator.hasNext()) {
+    while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.id());
       assertNotNull(operation.operationId());
@@ -574,11 +578,12 @@ public class ITComputeTest {
   public void testListZoneOperations() {
     Page<Operation> operationPage = compute.listZoneOperations(ZONE);
     Iterator<Operation> operationIterator = operationPage.iterateAll();
-    while(operationIterator.hasNext()) {
+    while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.id());
       assertNotNull(operation.operationId());
       assertEquals(ZONE, operation.<ZoneOperationId>operationId().zone());
+      // todo(mziccard): uncomment or remove once #727 is closed
       // assertNotNull(operation.creationTimestamp());
       assertNotNull(operation.operationType());
       assertNotNull(operation.status());
@@ -591,7 +596,7 @@ public class ITComputeTest {
     Page<Operation> operationPage = compute.listZoneOperations(ZONE,
         Compute.OperationListOption.fields(Compute.OperationField.ID));
     Iterator<Operation> operationIterator = operationPage.iterateAll();
-    while(operationIterator.hasNext()) {
+    while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.id());
       assertNotNull(operation.operationId());
@@ -620,7 +625,7 @@ public class ITComputeTest {
         Compute.OperationListOption.filter(Compute.OperationFilter.equals(
             Compute.OperationField.STATUS, "DONE")));
     Iterator<Operation> operationIterator = operationPage.iterateAll();
-    while(operationIterator.hasNext()) {
+    while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
       assertNotNull(operation.id());
       assertNotNull(operation.operationId());
