@@ -19,7 +19,7 @@ package com.google.gcloud.resourcemanager;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-import com.google.gcloud.spi.ResourceManagerRpc;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc;
 
 import java.io.Serializable;
 import java.util.Objects;

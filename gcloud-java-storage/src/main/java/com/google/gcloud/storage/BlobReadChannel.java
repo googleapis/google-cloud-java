@@ -23,8 +23,8 @@ import com.google.common.base.MoreObjects;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryHelper;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpc.Tuple;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc.Tuple;
 
 import java.io.IOException;
 import java.io.Serializable;

@@ -24,12 +24,12 @@ import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.Function;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpc.Tuple;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 import com.google.gcloud.storage.Storage.BlobWriteOption;
 import com.google.gcloud.storage.Storage.CopyRequest;
 import com.google.gcloud.storage.Storage.SignUrlOption;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc.Tuple;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -49,7 +49,7 @@ import java.util.concurrent.TimeUnit;
  * {@link BlobInfo}.
  * </p>
  */
-public final class Blob extends BlobInfo {
+public class Blob extends BlobInfo {
 
   private static final long serialVersionUID = -6806832496717441434L;
 
@@ -482,13 +482,13 @@ public final class Blob extends BlobInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public final boolean equals(Object obj) {
     return obj instanceof Blob && Objects.equals(toPb(), ((Blob) obj).toPb())
         && Objects.equals(options, ((Blob) obj).options);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options);
   }
 

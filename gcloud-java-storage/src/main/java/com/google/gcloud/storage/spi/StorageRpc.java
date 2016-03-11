@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.storage.spi;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 

@@ -30,9 +30,9 @@ import com.google.gcloud.resourcemanager.ProjectInfo.ResourceId;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectField;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectGetOption;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectListOption;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import com.google.gcloud.resourcemanager.testing.LocalResourceManagerHelper;
-import com.google.gcloud.spi.ResourceManagerRpc;
-import com.google.gcloud.spi.ResourceManagerRpcFactory;
 
 import org.easymock.EasyMock;
 import org.junit.AfterClass;

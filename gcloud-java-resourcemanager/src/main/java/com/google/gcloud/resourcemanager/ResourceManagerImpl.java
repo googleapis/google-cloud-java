@@ -29,8 +29,8 @@ import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.PageImpl.NextPageFetcher;
 import com.google.gcloud.RetryHelper.RetryHelperException;
-import com.google.gcloud.spi.ResourceManagerRpc;
-import com.google.gcloud.spi.ResourceManagerRpc.Tuple;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc.Tuple;
 
 import java.util.Map;
 import java.util.concurrent.Callable;
