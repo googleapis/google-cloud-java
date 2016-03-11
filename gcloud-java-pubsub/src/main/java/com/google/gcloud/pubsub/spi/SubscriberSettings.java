@@ -58,7 +58,6 @@ import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.Subscription;
-
 import io.grpc.Status;
 
 // Manually-added imports: add custom (non-generated) imports after this point.
@@ -148,7 +147,8 @@ public class SubscriberSettings extends ServiceApiSettings {
     private final ImmutableList<? extends ApiCallSettings> allMethods;
 
     public MethodBuilders() {
-      createSubscriptionMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_CREATE_SUBSCRIPTION);
+      createSubscriptionMethod =
+          new ApiCallableBuilder<>(SubscriberGrpc.METHOD_CREATE_SUBSCRIPTION);
       createSubscriptionMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
       createSubscriptionMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -162,7 +162,8 @@ public class SubscriberSettings extends ServiceApiSettings {
       listSubscriptionsMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
       listSubscriptionsMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      deleteSubscriptionMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_DELETE_SUBSCRIPTION);
+      deleteSubscriptionMethod =
+          new ApiCallableBuilder<>(SubscriberGrpc.METHOD_DELETE_SUBSCRIPTION);
       deleteSubscriptionMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
       deleteSubscriptionMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 

@@ -133,16 +133,16 @@ public class PublisherSettings extends ServiceApiSettings {
   }
 
   private static class MethodBuilders {
-    public final ApiCallableBuilder<Topic, Topic> createTopicMethod;
-    public final ApiCallableBuilder<PublishRequest, PublishResponse> publishMethod;
-    public final ApiCallableBuilder<GetTopicRequest, Topic> getTopicMethod;
-    public final PageStreamingApiCallableBuilder<ListTopicsRequest, ListTopicsResponse, Topic>
+    private final ApiCallableBuilder<Topic, Topic> createTopicMethod;
+    private final ApiCallableBuilder<PublishRequest, PublishResponse> publishMethod;
+    private final ApiCallableBuilder<GetTopicRequest, Topic> getTopicMethod;
+    private final PageStreamingApiCallableBuilder<ListTopicsRequest, ListTopicsResponse, Topic>
         listTopicsMethod;
-    public final PageStreamingApiCallableBuilder<
+    private final PageStreamingApiCallableBuilder<
             ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
         listTopicSubscriptionsMethod;
-    public final ApiCallableBuilder<DeleteTopicRequest, Empty> deleteTopicMethod;
-    public final ImmutableList<? extends ApiCallSettings> allMethods;
+    private final ApiCallableBuilder<DeleteTopicRequest, Empty> deleteTopicMethod;
+    private final ImmutableList<? extends ApiCallSettings> allMethods;
 
     public MethodBuilders() {
       createTopicMethod = new ApiCallableBuilder<>(PublisherGrpc.METHOD_CREATE_TOPIC);
@@ -165,9 +165,10 @@ public class PublisherSettings extends ServiceApiSettings {
 
       listTopicSubscriptionsMethod =
           new PageStreamingApiCallableBuilder<>(
-              PublisherGrpc.METHOD_LIST_TOPIC_SUBSCRIPTIONS, LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC);
-      listTopicsMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      listTopicsMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
+              PublisherGrpc.METHOD_LIST_TOPIC_SUBSCRIPTIONS,
+              LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC);
+      listTopicSubscriptionsMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
+      listTopicSubscriptionsMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
       deleteTopicMethod = new ApiCallableBuilder<>(PublisherGrpc.METHOD_DELETE_TOPIC);
       deleteTopicMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
