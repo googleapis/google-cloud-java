@@ -1,9 +1,9 @@
-package com.google.gcloud.spi;
+package com.google.gcloud.resourcemanager.spi;
 
-import static com.google.gcloud.spi.ResourceManagerRpc.Option.FIELDS;
-import static com.google.gcloud.spi.ResourceManagerRpc.Option.FILTER;
-import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_SIZE;
-import static com.google.gcloud.spi.ResourceManagerRpc.Option.PAGE_TOKEN;
+import static com.google.gcloud.resourcemanager.spi.ResourceManagerRpc.Option.FIELDS;
+import static com.google.gcloud.resourcemanager.spi.ResourceManagerRpc.Option.FILTER;
+import static com.google.gcloud.resourcemanager.spi.ResourceManagerRpc.Option.PAGE_SIZE;
+import static com.google.gcloud.resourcemanager.spi.ResourceManagerRpc.Option.PAGE_TOKEN;
 import static java.net.HttpURLConnection.HTTP_FORBIDDEN;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 

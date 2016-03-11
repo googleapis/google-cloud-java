@@ -43,7 +43,7 @@ import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
 import com.google.gcloud.bigquery.ViewDefinition;
 import com.google.gcloud.bigquery.WriteChannelConfiguration;
-import com.google.gcloud.spi.BigQueryRpc.Tuple;
+import com.google.gcloud.bigquery.spi.BigQueryRpc.Tuple;
 
 import java.nio.channels.FileChannel;
 import java.nio.file.Paths;

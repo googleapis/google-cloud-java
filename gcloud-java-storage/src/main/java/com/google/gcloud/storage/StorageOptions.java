@@ -18,9 +18,9 @@ package com.google.gcloud.storage;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.spi.DefaultStorageRpc;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpcFactory;
+import com.google.gcloud.storage.spi.DefaultStorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpcFactory;
 
 import java.util.Set;
 

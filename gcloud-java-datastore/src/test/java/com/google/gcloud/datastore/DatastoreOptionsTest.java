@@ -22,9 +22,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.gcloud.datastore.spi.DatastoreRpc;
+import com.google.gcloud.datastore.spi.DatastoreRpcFactory;
 import com.google.gcloud.datastore.testing.LocalGcdHelper;
-import com.google.gcloud.spi.DatastoreRpc;
-import com.google.gcloud.spi.DatastoreRpcFactory;
 
 import org.easymock.EasyMock;
 import org.junit.Before;
