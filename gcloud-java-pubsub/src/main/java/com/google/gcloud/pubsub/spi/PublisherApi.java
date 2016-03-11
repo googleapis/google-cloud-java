@@ -213,12 +213,6 @@ public class PublisherApi implements AutoCloseable {
   protected PublisherApi(PublisherSettings settings) throws IOException {
     this.channel = settings.getChannel();
 
-    for (ApiCallSettings method : settings.allMethods()) {
-      if (method.getExecutor() == null) {
-        method.setExecutor(settings.getExecutor());
-      }
-    }
-
     this.createTopicCallable = settings.createTopicMethod().build(settings);
     this.publishCallable = settings.publishMethod().build(settings);
     this.getTopicCallable = settings.getTopicMethod().build(settings);
