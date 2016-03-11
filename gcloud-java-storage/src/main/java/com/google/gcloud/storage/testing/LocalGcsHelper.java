@@ -17,7 +17,7 @@
 package com.google.gcloud.storage.testing;
 
 import com.google.gcloud.spi.ServiceRpcFactory;
-import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc;
 import com.google.gcloud.storage.StorageOptions;
 
 /**
