@@ -14,6 +14,9 @@
 
 package com.google.gcloud.pubsub.spi;
 
+import com.google.api.gax.core.BackoffParams;
+import com.google.api.gax.core.RetryParams;
+import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.gcloud.pubsub.testing.LocalPubsubHelper;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
@@ -55,11 +58,30 @@ public class PublisherApiTest {
   public void setUp() throws Exception {
     ManagedChannel channel = pubsubHelper.createChannel();
 
+    RetryParams retryParams =
+        RetryParams.newBuilder()
+            .setRetryBackoff(
+                BackoffParams.newBuilder()
+                    .setInitialDelayMillis(1000L)
+                    .setDelayMultiplier(1.2)
+                    .setMaxDelayMillis(10000L)
+                    .build())
+            .setTimeoutBackoff(
+                BackoffParams.newBuilder()
+                    .setInitialDelayMillis(3000L)
+                    .setDelayMultiplier(1.3)
+                    .setMaxDelayMillis(30000L)
+                    .build())
+            .setTotalTimeout(30000L)
+            .build();
+
     PublisherSettings publisherSettings = PublisherApi.newSettings();
+    publisherSettings.setRetryParamsOnAllMethods(retryParams);
     publisherSettings.provideChannelWith(channel);
     publisherApi = PublisherApi.create(publisherSettings);
 
     SubscriberSettings subscriberSettings = SubscriberApi.newSettings();
+    subscriberSettings.setRetryParamsOnAllMethods(retryParams);
     subscriberSettings.provideChannelWith(channel);
     subscriberApi = SubscriberApi.create(subscriberSettings);
   }
