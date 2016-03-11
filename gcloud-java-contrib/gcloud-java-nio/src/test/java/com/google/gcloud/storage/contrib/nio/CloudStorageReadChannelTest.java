@@ -40,11 +40,12 @@ public class CloudStorageReadChannelTest {
 
   private final Storage gcsStorage = mock(Storage.class);
   private final BlobId file = BlobId.of("blob", "attack");
-  private Blob metadata = (Blob)(new Blob.Builder(gcsStorage, file).size(42L).build());
+  private Blob metadata = mock(Blob.class);
   private final ReadChannel gcsChannel = mock(ReadChannel.class);
 
   @Before
   public void before() throws IOException {
+    when(metadata.size()).thenReturn(42L);
     when(gcsStorage.get(file)).thenReturn(metadata);
     when(gcsStorage.reader(eq(file))).thenReturn(gcsChannel);
     when(gcsChannel.isOpen()).thenReturn(true);
