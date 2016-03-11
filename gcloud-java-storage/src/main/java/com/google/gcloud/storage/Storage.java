@@ -24,6 +24,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.Page;
 import com.google.gcloud.ReadChannel;
@@ -1476,16 +1477,28 @@ public interface Storage extends Service<StorageOptions> {
   WriteChannel writer(BlobInfo blobInfo, BlobWriteOption... options);
 
   /**
-   * Generates a signed URL for a blob.
-   * If you have a blob that you want to allow access to for a fixed
-   * amount of time, you can use this method to generate a URL that
-   * is only valid within a certain time period.
-   * This is particularly useful if you don't want publicly
-   * accessible blobs, but don't want to require users to explicitly log in.
+   * Generates a signed URL for a blob. If you have a blob that you want to allow access to for a
+   * fixed amount of time, you can use this method to generate a URL that is only valid within a
+   * certain time period. This is particularly useful if you don't want publicly accessible blobs,
+   * but don't want to require users to explicitly log in. Signing a URL requires a service account
+   * and its associated key. If a {@link ServiceAccountAuthCredentials} was passed to
+   * {@link StorageOptions.Builder#authCredentials(AuthCredentials)} or the default credentials are
+   * being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
+   * {@code signUrl} will use that service account and associated key to sign the URL. If this
+   * is not the case, a service account with associated key can be passed to {@code signUrl} using
+   * the {@code SignUrlOption.serviceAccount()} option.
    *
    * <p>Example usage of creating a signed URL that is valid for 2 weeks:
    * <pre> {@code
    * service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS);
+   * }</pre>
+   *
+   * <p>Example usage of creating a signed URL passing the {@code SignUrlOption.serviceAccount()}
+   *     option:
+   * <pre> {@code
+   * service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS,
+   *     SignUrlOption.serviceAccount(
+   *         AuthCredentials.createForJson(new FileInputStream("/path/to/key.json"))));
    * }</pre>
    *
    * @param blobInfo the blob associated with the signed URL
@@ -1493,6 +1506,14 @@ public interface Storage extends Service<StorageOptions> {
    *     granularity supported is 1 second, finer granularities will be truncated
    * @param unit time unit of the {@code duration} parameter
    * @param options optional URL signing options
+   * @throws IllegalArgumentException if {@code SignUrlOption.serviceAccount()} was not used and no
+   *     service account was provided to {@link StorageOptions}
+   * @throws IllegalArgumentException if the key associated to the provided service account is
+   *     invalid
+   * @throws IllegalArgumentException if {@code SignUrlOption.withMd5()} option is used and
+   *     {@code blobInfo.md5()} is {@code null}
+   * @throws IllegalArgumentException if {@code SignUrlOption.withContentType()} option is used and
+   *     {@code blobInfo.contentType()} is {@code null}
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
    */
   URL signUrl(BlobInfo blobInfo, long duration, TimeUnit unit, SignUrlOption... options);
