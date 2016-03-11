@@ -40,6 +40,7 @@ import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiCallable.ApiCallableBuilder;
 import com.google.api.gax.grpc.ApiCallable.PageStreamingApiCallableBuilder;
 import com.google.api.gax.grpc.PageDescriptor;
+import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -63,7 +64,7 @@ import io.grpc.Status;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS - see instructions at the top of the file for editing.
 @javax.annotation.Generated("by GAPIC")
-public class SubscriberSettings extends ApiCallSettings {
+public class SubscriberSettings extends ServiceApiSettings {
 
   // =========
   // Constants
@@ -132,17 +133,72 @@ public class SubscriberSettings extends ApiCallSettings {
     RETRY_PARAM_DEFINITIONS = definitions.build();
   }
 
-  private final ApiCallableBuilder<Subscription, Subscription> createSubscriptionMethod;
-  private final ApiCallableBuilder<GetSubscriptionRequest, Subscription> getSubscriptionMethod;
-  private final PageStreamingApiCallableBuilder<
-          ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
-      listSubscriptionsMethod;
-  private final ApiCallableBuilder<DeleteSubscriptionRequest, Empty> deleteSubscriptionMethod;
-  private final ApiCallableBuilder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineMethod;
-  private final ApiCallableBuilder<AcknowledgeRequest, Empty> acknowledgeMethod;
-  private final ApiCallableBuilder<PullRequest, PullResponse> pullMethod;
-  private final ApiCallableBuilder<ModifyPushConfigRequest, Empty> modifyPushConfigMethod;
-  private final ImmutableList<? extends ApiCallSettings> allMethods;
+  private static class MethodBuilders {
+    private final ApiCallableBuilder<Subscription, Subscription> createSubscriptionMethod;
+    private final ApiCallableBuilder<GetSubscriptionRequest, Subscription> getSubscriptionMethod;
+    private final PageStreamingApiCallableBuilder<
+            ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+        listSubscriptionsMethod;
+    private final ApiCallableBuilder<DeleteSubscriptionRequest, Empty> deleteSubscriptionMethod;
+    private final ApiCallableBuilder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineMethod;
+    private final ApiCallableBuilder<AcknowledgeRequest, Empty> acknowledgeMethod;
+    private final ApiCallableBuilder<PullRequest, PullResponse> pullMethod;
+    private final ApiCallableBuilder<ModifyPushConfigRequest, Empty> modifyPushConfigMethod;
+    private final ImmutableList<? extends ApiCallSettings> allMethods;
+
+    public MethodBuilders() {
+      createSubscriptionMethod =
+          new ApiCallableBuilder<>(SubscriberGrpc.METHOD_CREATE_SUBSCRIPTION);
+      createSubscriptionMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
+      createSubscriptionMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      getSubscriptionMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_GET_SUBSCRIPTION);
+      getSubscriptionMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
+      getSubscriptionMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      listSubscriptionsMethod =
+          new PageStreamingApiCallableBuilder<>(
+              SubscriberGrpc.METHOD_LIST_SUBSCRIPTIONS, LIST_SUBSCRIPTIONS_PAGE_STR_DESC);
+      listSubscriptionsMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
+      listSubscriptionsMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      deleteSubscriptionMethod =
+          new ApiCallableBuilder<>(SubscriberGrpc.METHOD_DELETE_SUBSCRIPTION);
+      deleteSubscriptionMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
+      deleteSubscriptionMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      modifyAckDeadlineMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_MODIFY_ACK_DEADLINE);
+      modifyAckDeadlineMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
+      modifyAckDeadlineMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      acknowledgeMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_ACKNOWLEDGE);
+      acknowledgeMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
+      acknowledgeMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      pullMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_PULL);
+      pullMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
+      pullMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      modifyPushConfigMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_MODIFY_PUSH_CONFIG);
+      modifyPushConfigMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
+      modifyPushConfigMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      allMethods =
+          ImmutableList.<ApiCallSettings>builder()
+              .add(
+                  createSubscriptionMethod,
+                  getSubscriptionMethod,
+                  listSubscriptionsMethod,
+                  deleteSubscriptionMethod,
+                  modifyAckDeadlineMethod,
+                  acknowledgeMethod,
+                  pullMethod,
+                  modifyPushConfigMethod)
+              .build();
+    }
+  }
+
+  private final MethodBuilders methods;
 
   // ===============
   // Factory Methods
@@ -155,7 +211,7 @@ public class SubscriberSettings extends ApiCallSettings {
    * <!-- end manual edit -->
    */
   public static SubscriberSettings create() {
-    SubscriberSettings settings = new SubscriberSettings();
+    SubscriberSettings settings = new SubscriberSettings(new MethodBuilders());
     settings.provideChannelWith(
         ConnectionSettings.builder()
             .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
@@ -172,53 +228,9 @@ public class SubscriberSettings extends ApiCallSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  protected SubscriberSettings() {
-    createSubscriptionMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_CREATE_SUBSCRIPTION);
-    createSubscriptionMethod.setRetryDefaults(
-        RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"), RETRY_PARAM_DEFINITIONS.get("default"));
-
-    getSubscriptionMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_GET_SUBSCRIPTION);
-    getSubscriptionMethod.setRetryDefaults(
-        RETRYABLE_CODE_DEFINITIONS.get("idempotent"), RETRY_PARAM_DEFINITIONS.get("default"));
-
-    listSubscriptionsMethod =
-        new PageStreamingApiCallableBuilder<>(
-            SubscriberGrpc.METHOD_LIST_SUBSCRIPTIONS, LIST_SUBSCRIPTIONS_PAGE_STR_DESC);
-    listSubscriptionsMethod.setRetryDefaults(
-        RETRYABLE_CODE_DEFINITIONS.get("idempotent"), RETRY_PARAM_DEFINITIONS.get("default"));
-
-    deleteSubscriptionMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_DELETE_SUBSCRIPTION);
-    deleteSubscriptionMethod.setRetryDefaults(
-        RETRYABLE_CODE_DEFINITIONS.get("idempotent"), RETRY_PARAM_DEFINITIONS.get("default"));
-
-    modifyAckDeadlineMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_MODIFY_ACK_DEADLINE);
-    modifyAckDeadlineMethod.setRetryDefaults(
-        RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"), RETRY_PARAM_DEFINITIONS.get("default"));
-
-    acknowledgeMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_ACKNOWLEDGE);
-    acknowledgeMethod.setRetryDefaults(
-        RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"), RETRY_PARAM_DEFINITIONS.get("default"));
-
-    pullMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_PULL);
-    pullMethod.setRetryDefaults(
-        RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"), RETRY_PARAM_DEFINITIONS.get("default"));
-
-    modifyPushConfigMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_MODIFY_PUSH_CONFIG);
-    modifyPushConfigMethod.setRetryDefaults(
-        RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"), RETRY_PARAM_DEFINITIONS.get("default"));
-
-    allMethods =
-        ImmutableList.<ApiCallSettings>builder()
-            .add(
-                createSubscriptionMethod,
-                getSubscriptionMethod,
-                listSubscriptionsMethod,
-                deleteSubscriptionMethod,
-                modifyAckDeadlineMethod,
-                acknowledgeMethod,
-                pullMethod,
-                modifyPushConfigMethod)
-            .build();
+  protected SubscriberSettings(MethodBuilders methods) {
+    super(methods.allMethods);
+    this.methods = methods;
   }
 
   /**
@@ -228,7 +240,7 @@ public class SubscriberSettings extends ApiCallSettings {
    * <!-- end manual edit -->
    */
   public ApiCallableBuilder<Subscription, Subscription> createSubscriptionMethod() {
-    return createSubscriptionMethod;
+    return methods.createSubscriptionMethod;
   }
 
   /**
@@ -238,7 +250,7 @@ public class SubscriberSettings extends ApiCallSettings {
    * <!-- end manual edit -->
    */
   public ApiCallableBuilder<GetSubscriptionRequest, Subscription> getSubscriptionMethod() {
-    return getSubscriptionMethod;
+    return methods.getSubscriptionMethod;
   }
 
   /**
@@ -250,7 +262,7 @@ public class SubscriberSettings extends ApiCallSettings {
   public PageStreamingApiCallableBuilder<
           ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
       listSubscriptionsMethod() {
-    return listSubscriptionsMethod;
+    return methods.listSubscriptionsMethod;
   }
 
   /**
@@ -260,7 +272,7 @@ public class SubscriberSettings extends ApiCallSettings {
    * <!-- end manual edit -->
    */
   public ApiCallableBuilder<DeleteSubscriptionRequest, Empty> deleteSubscriptionMethod() {
-    return deleteSubscriptionMethod;
+    return methods.deleteSubscriptionMethod;
   }
 
   /**
@@ -270,7 +282,7 @@ public class SubscriberSettings extends ApiCallSettings {
    * <!-- end manual edit -->
    */
   public ApiCallableBuilder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineMethod() {
-    return modifyAckDeadlineMethod;
+    return methods.modifyAckDeadlineMethod;
   }
 
   /**
@@ -280,7 +292,7 @@ public class SubscriberSettings extends ApiCallSettings {
    * <!-- end manual edit -->
    */
   public ApiCallableBuilder<AcknowledgeRequest, Empty> acknowledgeMethod() {
-    return acknowledgeMethod;
+    return methods.acknowledgeMethod;
   }
 
   /**
@@ -290,7 +302,7 @@ public class SubscriberSettings extends ApiCallSettings {
    * <!-- end manual edit -->
    */
   public ApiCallableBuilder<PullRequest, PullResponse> pullMethod() {
-    return pullMethod;
+    return methods.pullMethod;
   }
 
   /**
@@ -300,11 +312,7 @@ public class SubscriberSettings extends ApiCallSettings {
    * <!-- end manual edit -->
    */
   public ApiCallableBuilder<ModifyPushConfigRequest, Empty> modifyPushConfigMethod() {
-    return modifyPushConfigMethod;
-  }
-
-  public ImmutableList<? extends ApiCallSettings> allMethods() {
-    return allMethods;
+    return methods.modifyPushConfigMethod;
   }
 
   private static PageDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
