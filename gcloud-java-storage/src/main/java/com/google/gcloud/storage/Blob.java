@@ -49,7 +49,7 @@ import java.util.concurrent.TimeUnit;
  * {@link BlobInfo}.
  * </p>
  */
-public final class Blob extends BlobInfo {
+public class Blob extends BlobInfo {
 
   private static final long serialVersionUID = -6806832496717441434L;
 
@@ -482,13 +482,13 @@ public final class Blob extends BlobInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public final boolean equals(Object obj) {
     return obj instanceof Blob && Objects.equals(toPb(), ((Blob) obj).toPb())
         && Objects.equals(options, ((Blob) obj).options);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options);
   }
 
