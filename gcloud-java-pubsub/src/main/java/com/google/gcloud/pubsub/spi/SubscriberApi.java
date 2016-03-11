@@ -216,12 +216,6 @@ public class SubscriberApi implements AutoCloseable {
   protected SubscriberApi(SubscriberSettings settings) throws IOException {
     this.channel = settings.getChannel();
 
-    for (ApiCallSettings method : settings.allMethods()) {
-      if (method.getExecutor() == null) {
-        method.setExecutor(settings.getExecutor());
-      }
-    }
-
     this.createSubscriptionCallable = settings.createSubscriptionMethod().build(settings);
     this.getSubscriptionCallable = settings.getSubscriptionMethod().build(settings);
     this.listSubscriptionsCallable = settings.listSubscriptionsMethod().build(settings);
