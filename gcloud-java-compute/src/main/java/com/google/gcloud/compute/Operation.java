@@ -40,7 +40,7 @@ import java.util.Objects;
  * Google Compute Engine operations. Operation identity can be obtained via {@link #operationId()}.
  * {@link #operationId()} returns {@link GlobalOperationId} for global operations,
  * {@link RegionOperationId} for region operations, and {@link ZoneOperationId} for zone operations.
- * To get an {@code Operation} object with the most recent information use
+ * To get an {@code Operation} object with the most recent information, use
  * {@link #reload(Compute.OperationOption...)}.
  */
 public final class Operation implements Serializable {
