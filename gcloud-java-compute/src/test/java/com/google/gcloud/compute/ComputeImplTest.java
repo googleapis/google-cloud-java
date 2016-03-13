@@ -16,6 +16,9 @@
 
 package com.google.gcloud.compute;
 
+import static com.google.gcloud.spi.ComputeRpc.Option.FILTER;
+import static com.google.gcloud.spi.ComputeRpc.Option.MAX_RESULTS;
+import static com.google.gcloud.spi.ComputeRpc.Option.PAGE_TOKEN;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.eq;
 import static org.junit.Assert.assertArrayEquals;
@@ -185,19 +188,19 @@ public class ComputeImplTest {
   private static final DiskTypeListOption DISK_TYPE_LIST_PAGE_TOKEN =
       DiskTypeListOption.startPageToken("cursor");
   private static final DiskTypeListOption DISK_TYPE_LIST_MAX_RESULTS =
-      DiskTypeListOption.maxResults(42L);
+      DiskTypeListOption.pageSize(42L);
   private static final DiskTypeListOption DISK_TYPE_LIST_FILTER =
       DiskTypeListOption.filter(DISK_TYPE_FILTER);
   private static final Map<ComputeRpc.Option, ?> DISK_TYPE_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "description eq someDescription");
+      PAGE_TOKEN, "cursor",
+      MAX_RESULTS, 42L,
+      FILTER, "description eq someDescription");
 
   // DiskType aggregated list options
   private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
       DiskTypeAggregatedListOption.startPageToken("cursor");
   private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_MAX_RESULTS =
-      DiskTypeAggregatedListOption.maxResults(42L);
+      DiskTypeAggregatedListOption.pageSize(42L);
   private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_FILTER =
       DiskTypeAggregatedListOption.filter(DISK_TYPE_FILTER);
 
@@ -212,19 +215,19 @@ public class ComputeImplTest {
   private static final MachineTypeListOption MACHINE_TYPE_LIST_PAGE_TOKEN =
       MachineTypeListOption.startPageToken("cursor");
   private static final MachineTypeListOption MACHINE_TYPE_LIST_MAX_RESULTS =
-      MachineTypeListOption.maxResults(42L);
+      MachineTypeListOption.pageSize(42L);
   private static final MachineTypeListOption MACHINE_TYPE_LIST_FILTER =
       MachineTypeListOption.filter(MACHINE_TYPE_FILTER);
   private static final Map<ComputeRpc.Option, ?> MACHINE_TYPE_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "maximumPersistentDisks ne 42");
+      PAGE_TOKEN, "cursor",
+      MAX_RESULTS, 42L,
+      FILTER, "maximumPersistentDisks ne 42");
 
   // MachineType aggregated list options
   private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
       MachineTypeAggregatedListOption.startPageToken("cursor");
   private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_MAX_RESULTS =
-      MachineTypeAggregatedListOption.maxResults(42L);
+      MachineTypeAggregatedListOption.pageSize(42L);
   private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_FILTER =
       MachineTypeAggregatedListOption.filter(MACHINE_TYPE_FILTER);
 
@@ -238,13 +241,13 @@ public class ComputeImplTest {
   private static final RegionListOption REGION_LIST_PAGE_TOKEN =
       RegionListOption.startPageToken("cursor");
   private static final RegionListOption REGION_LIST_MAX_RESULTS =
-      RegionListOption.maxResults(42L);
+      RegionListOption.pageSize(42L);
   private static final RegionListOption REGION_LIST_FILTER =
       RegionListOption.filter(REGION_FILTER);
   private static final Map<ComputeRpc.Option, ?> REGION_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "id eq someId");
+      PAGE_TOKEN, "cursor",
+      MAX_RESULTS, 42L,
+      FILTER, "id eq someId");
 
   // Zone options
   private static final ZoneOption ZONE_OPTION_FIELDS =
@@ -255,12 +258,12 @@ public class ComputeImplTest {
       ZoneFilter.notEquals(Compute.ZoneField.NAME, "someName");
   private static final ZoneListOption ZONE_LIST_PAGE_TOKEN =
       ZoneListOption.startPageToken("cursor");
-  private static final ZoneListOption ZONE_LIST_MAX_RESULTS = ZoneListOption.maxResults(42L);
+  private static final ZoneListOption ZONE_LIST_MAX_RESULTS = ZoneListOption.pageSize(42L);
   private static final ZoneListOption ZONE_LIST_FILTER = ZoneListOption.filter(ZONE_FILTER);
   private static final Map<ComputeRpc.Option, ?> ZONE_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "name ne someName");
+      PAGE_TOKEN, "cursor",
+      MAX_RESULTS, 42L,
+      FILTER, "name ne someName");
 
   // License options
   private static final LicenseOption LICENSE_OPTION_FIELDS =
@@ -276,13 +279,13 @@ public class ComputeImplTest {
   private static final OperationListOption OPERATION_LIST_PAGE_TOKEN =
       OperationListOption.startPageToken("cursor");
   private static final OperationListOption OPERATION_LIST_MAX_RESULTS =
-      OperationListOption.maxResults(42L);
+      OperationListOption.pageSize(42L);
   private static final OperationListOption OPERATION_LIST_FILTER =
       OperationListOption.filter(OPERATION_FILTER);
   private static final Map<ComputeRpc.Option, ?> OPERATION_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "progress ne 0");
+      PAGE_TOKEN, "cursor",
+      MAX_RESULTS, 42L,
+      FILTER, "progress ne 0");
 
   private ComputeOptions options;
   private ComputeRpcFactory rpcFactoryMock;
@@ -443,6 +446,31 @@ public class ComputeImplTest {
   }
 
   @Test
+  public void testListDiskTypesNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<DiskType> diskTypeList = ImmutableList.of(DISK_TYPE, DISK_TYPE);
+    Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> result =
+        Tuple.of(cursor, Iterables.transform(diskTypeList, DiskType.TO_PB_FUNCTION));
+    ImmutableList<DiskType> nextDiskTypeList = ImmutableList.of(DISK_TYPE);
+    Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextDiskTypeList, DiskType.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listDiskTypes(DISK_TYPE_ID.zone(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.expect(computeRpcMock.listDiskTypes(DISK_TYPE_ID.zone(), nextOptions))
+        .andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_ID.zone());
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.values(), DiskType.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextDiskTypeList.toArray(), Iterables.toArray(page.values(), DiskType.class));
+  }
+
+  @Test
   public void testListEmptyDiskTypes() {
     ImmutableList<com.google.api.services.compute.model.DiskType> diskTypes = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> result =
@@ -484,6 +512,29 @@ public class ComputeImplTest {
     Page<DiskType> page = compute.listDiskTypes();
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.values(), DiskType.class));
+  }
+
+  @Test
+  public void testAggregatedListDiskTypesNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<DiskType> diskTypeList = ImmutableList.of(DISK_TYPE, DISK_TYPE);
+    Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> result =
+        Tuple.of(cursor, Iterables.transform(diskTypeList, DiskType.TO_PB_FUNCTION));
+    ImmutableList<DiskType> nextDiskTypeList = ImmutableList.of(DISK_TYPE);
+    Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextDiskTypeList, DiskType.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listDiskTypes(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listDiskTypes(nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<DiskType> page = compute.listDiskTypes();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.values(), DiskType.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextDiskTypeList.toArray(), Iterables.toArray(page.values(), DiskType.class));
   }
 
   @Test
@@ -574,6 +625,33 @@ public class ComputeImplTest {
   }
 
   @Test
+  public void testListMachineTypesNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<MachineType> machineTypeList = ImmutableList.of(MACHINE_TYPE, MACHINE_TYPE);
+    Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
+        Tuple.of(cursor, Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
+    ImmutableList<MachineType> nextMachineTypeList = ImmutableList.of(MACHINE_TYPE);
+    Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextMachineTypeList, MachineType.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listMachineTypes(MACHINE_TYPE_ID.zone(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.expect(computeRpcMock.listMachineTypes(MACHINE_TYPE_ID.zone(), nextOptions))
+        .andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_ID.zone());
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(machineTypeList.toArray(),
+        Iterables.toArray(page.values(), MachineType.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextMachineTypeList.toArray(),
+        Iterables.toArray(page.values(), MachineType.class));
+  }
+
+  @Test
   public void testListEmptyMachineTypes() {
     ImmutableList<com.google.api.services.compute.model.MachineType> machineTypes =
         ImmutableList.of();
@@ -620,6 +698,31 @@ public class ComputeImplTest {
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(machineTypeList.toArray(), Iterables.toArray(page.values(),
         MachineType.class));
+  }
+
+  @Test
+  public void testAggregatedListMachineTypesNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<MachineType> machineTypeList = ImmutableList.of(MACHINE_TYPE, MACHINE_TYPE);
+    Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
+        Tuple.of(cursor, Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
+    ImmutableList<MachineType> nextMachineTypeList = ImmutableList.of(MACHINE_TYPE);
+    Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextMachineTypeList, MachineType.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listMachineTypes(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listMachineTypes(nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<MachineType> page = compute.listMachineTypes();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(machineTypeList.toArray(),
+        Iterables.toArray(page.values(), MachineType.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextMachineTypeList.toArray(),
+        Iterables.toArray(page.values(), MachineType.class));
   }
 
   @Test
@@ -695,6 +798,29 @@ public class ComputeImplTest {
   }
 
   @Test
+  public void testListRegionsNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Region> regionList = ImmutableList.of(REGION, REGION);
+    ImmutableList<Region> nextRegionList = ImmutableList.of(REGION);
+    Tuple<String, Iterable<com.google.api.services.compute.model.Region>> result =
+        Tuple.of(cursor, Iterables.transform(regionList, Region.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Region>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextRegionList, Region.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listRegions(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listRegions(nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Region> page = compute.listRegions();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(regionList.toArray(), Iterables.toArray(page.values(), Region.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextRegionList.toArray(), Iterables.toArray(page.values(), Region.class));
+  }
+
+  @Test
   public void testListEmptyRegions() {
     ImmutableList<com.google.api.services.compute.model.Region> regions = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Region>> result =
@@ -761,6 +887,29 @@ public class ComputeImplTest {
     Page<Zone> page = compute.listZones();
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(zoneList.toArray(), Iterables.toArray(page.values(), Zone.class));
+  }
+
+  @Test
+  public void testListZonesNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Zone> zoneList = ImmutableList.of(ZONE, ZONE);
+    ImmutableList<Zone> nextZoneList = ImmutableList.of(ZONE);
+    Tuple<String, Iterable<com.google.api.services.compute.model.Zone>> result =
+        Tuple.of(cursor, Iterables.transform(zoneList, Zone.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Zone>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextZoneList, Zone.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listZones(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listZones(nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Zone> page = compute.listZones();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(zoneList.toArray(), Iterables.toArray(page.values(), Zone.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextZoneList.toArray(), Iterables.toArray(page.values(), Zone.class));
   }
 
   @Test
@@ -897,6 +1046,42 @@ public class ComputeImplTest {
   }
 
   @Test
+  public void testListGlobalOperationsNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Operation> operationList = ImmutableList.of(globalOperation, globalOperation);
+    ImmutableList<Operation> nextOperationList = ImmutableList.of(globalOperation);
+    Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
+        Tuple.of(cursor, Iterables.transform(operationList,
+            new Function<Operation, com.google.api.services.compute.model.Operation>() {
+              @Override
+              public com.google.api.services.compute.model.Operation apply(Operation operation) {
+                return operation.toPb();
+              }
+            }));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextOperationList,
+            new Function<Operation, com.google.api.services.compute.model.Operation>() {
+              @Override
+              public com.google.api.services.compute.model.Operation apply(Operation operation) {
+                return operation.toPb();
+              }
+            }));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listGlobalOperations(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listGlobalOperations(nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Operation> page = compute.listGlobalOperations();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(operationList.toArray(), Iterables.toArray(page.values(), Operation.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextOperationList.toArray(),
+        Iterables.toArray(page.values(), Operation.class));
+  }
+
+  @Test
   public void testListEmptyGlobalOperations() {
     ImmutableList<com.google.api.services.compute.model.Operation> operations = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
@@ -997,6 +1182,44 @@ public class ComputeImplTest {
     Page<Operation> page = compute.listRegionOperations(REGION_OPERATION_ID.region());
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(operationList.toArray(), Iterables.toArray(page.values(), Operation.class));
+  }
+
+  @Test
+  public void testListRegionOperationsNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Operation> operationList = ImmutableList.of(regionOperation, regionOperation);
+    ImmutableList<Operation> nextOperationList = ImmutableList.of(regionOperation);
+    Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
+        Tuple.of(cursor, Iterables.transform(operationList,
+            new Function<Operation, com.google.api.services.compute.model.Operation>() {
+              @Override
+              public com.google.api.services.compute.model.Operation apply(Operation operation) {
+                return operation.toPb();
+              }
+            }));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextOperationList,
+            new Function<Operation, com.google.api.services.compute.model.Operation>() {
+              @Override
+              public com.google.api.services.compute.model.Operation apply(Operation operation) {
+                return operation.toPb();
+              }
+            }));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listRegionOperations(REGION_OPERATION_ID.region(),
+        EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listRegionOperations(REGION_OPERATION_ID.region(),
+        nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Operation> page = compute.listRegionOperations(REGION_OPERATION_ID.region());
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(operationList.toArray(), Iterables.toArray(page.values(), Operation.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextOperationList.toArray(),
+        Iterables.toArray(page.values(), Operation.class));
   }
 
   @Test
@@ -1104,6 +1327,44 @@ public class ComputeImplTest {
     Page<Operation> page = compute.listZoneOperations(ZONE_OPERATION_ID.zone());
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(operationList.toArray(), Iterables.toArray(page.values(), Operation.class));
+  }
+
+  @Test
+  public void testListZoneOperationsNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Operation> operationList = ImmutableList.of(zoneOperation, zoneOperation);
+    ImmutableList<Operation> nextOperationList = ImmutableList.of(zoneOperation);
+    Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
+        Tuple.of(cursor, Iterables.transform(operationList,
+            new Function<Operation, com.google.api.services.compute.model.Operation>() {
+              @Override
+              public com.google.api.services.compute.model.Operation apply(Operation operation) {
+                return operation.toPb();
+              }
+            }));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextOperationList,
+            new Function<Operation, com.google.api.services.compute.model.Operation>() {
+              @Override
+              public com.google.api.services.compute.model.Operation apply(Operation operation) {
+                return operation.toPb();
+              }
+            }));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listZoneOperations(ZONE_OPERATION_ID.zone(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.expect(computeRpcMock.listZoneOperations(ZONE_OPERATION_ID.zone(), nextOptions))
+        .andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Operation> page = compute.listZoneOperations(ZONE_OPERATION_ID.zone());
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(operationList.toArray(), Iterables.toArray(page.values(), Operation.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextOperationList.toArray(),
+        Iterables.toArray(page.values(), Operation.class));
   }
 
   @Test

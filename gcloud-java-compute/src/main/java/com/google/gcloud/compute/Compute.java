@@ -597,8 +597,8 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the maximum number of disk types to be returned.
      */
-    public static DiskTypeListOption maxResults(long maxResults) {
-      return new DiskTypeListOption(ComputeRpc.Option.MAX_RESULTS, maxResults);
+    public static DiskTypeListOption pageSize(long pageSize) {
+      return new DiskTypeListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
@@ -642,8 +642,8 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the maximum number of disk types to be returned.
      */
-    public static DiskTypeAggregatedListOption maxResults(long maxResults) {
-      return new DiskTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, maxResults);
+    public static DiskTypeAggregatedListOption pageSize(long pageSize) {
+      return new DiskTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
@@ -697,8 +697,8 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the maximum number of machine types to be returned.
      */
-    public static MachineTypeListOption maxResults(long maxResults) {
-      return new MachineTypeListOption(ComputeRpc.Option.MAX_RESULTS, maxResults);
+    public static MachineTypeListOption pageSize(long pageSize) {
+      return new MachineTypeListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
@@ -742,8 +742,8 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the maximum number of machine types to be returned.
      */
-    public static MachineTypeAggregatedListOption maxResults(long maxResults) {
-      return new MachineTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, maxResults);
+    public static MachineTypeAggregatedListOption pageSize(long pageSize) {
+      return new MachineTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
@@ -797,8 +797,8 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the maximum number of regions to be returned.
      */
-    public static RegionListOption maxResults(long maxResults) {
-      return new RegionListOption(ComputeRpc.Option.MAX_RESULTS, maxResults);
+    public static RegionListOption pageSize(long pageSize) {
+      return new RegionListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
@@ -864,8 +864,8 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the maximum number of zones to be returned.
      */
-    public static ZoneListOption maxResults(long maxResults) {
-      return new ZoneListOption(ComputeRpc.Option.MAX_RESULTS, maxResults);
+    public static ZoneListOption pageSize(long pageSize) {
+      return new ZoneListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
@@ -953,8 +953,8 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the maximum number of operations to be returned.
      */
-    public static OperationListOption maxResults(long maxResults) {
-      return new OperationListOption(ComputeRpc.Option.MAX_RESULTS, maxResults);
+    public static OperationListOption pageSize(long pageSize) {
+      return new OperationListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
