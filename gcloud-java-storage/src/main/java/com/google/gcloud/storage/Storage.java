@@ -1481,12 +1481,16 @@ public interface Storage extends Service<StorageOptions> {
    * fixed amount of time, you can use this method to generate a URL that is only valid within a
    * certain time period. This is particularly useful if you don't want publicly accessible blobs,
    * but don't want to require users to explicitly log in. Signing a URL requires a service account
-   * and its associated key. If a {@link ServiceAccountAuthCredentials} was passed to
+   * and its associated private key. If a {@link ServiceAccountAuthCredentials} was passed to
    * {@link StorageOptions.Builder#authCredentials(AuthCredentials)} or the default credentials are
    * being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
-   * {@code signUrl} will use that service account and associated key to sign the URL. If this
-   * is not the case, a service account with associated key can be passed to {@code signUrl} using
-   * the {@code SignUrlOption.serviceAccount()} option.
+   * {@code signUrl} will use that service account and associated key to sign the URL. If the
+   * credentials passed to {@link StorageOptions} do not expose a private key (this is the case for
+   * App Engine credentials, Compute Engine credentials and Google Cloud SDK credentials) then
+   * {@code signUrl} will throw an {@link IllegalArgumentException} unless a service account with
+   * associated key is passed using the {@code SignUrlOption.serviceAccount()} option. The service
+   * account and private key passed with {@code SignUrlOption.serviceAccount()} have priority over
+   * any credentials set with {@link StorageOptions.Builder#authCredentials(AuthCredentials)}.
    *
    * <p>Example usage of creating a signed URL that is valid for 2 weeks:
    * <pre> {@code
