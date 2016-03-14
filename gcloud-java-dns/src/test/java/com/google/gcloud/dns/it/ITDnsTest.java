@@ -48,8 +48,6 @@ import java.util.concurrent.TimeUnit;
 
 public class ITDnsTest {
 
-  // todo(mderka) Implement test for creating invalid change when DnsException is finished. #673
-
   private static final String PREFIX = "gcldjvit-";
   private static final Dns DNS = DnsOptions.builder().build().service();
   private static final String ZONE_NAME1 = (PREFIX + UUID.randomUUID()).substring(0, 32);
@@ -201,14 +199,14 @@ public class ITDnsTest {
         fail("Zone name is missing a period. The service returns an error.");
       } catch (DnsException ex) {
         // expected
-        // todo(mderka) test non-retryable when implemented within #593
+        assertFalse(ex.retryable());
       }
       try {
         DNS.create(ZONE_DNS_NO_PERIOD);
         fail("Zone name is missing a period. The service returns an error.");
       } catch (DnsException ex) {
         // expected
-        // todo(mderka) test non-retryable when implemented within #593
+        assertFalse(ex.retryable());
       }
     } finally {
       DNS.delete(ZONE_NAME_ERROR.name());
@@ -393,7 +391,7 @@ public class ITDnsTest {
       } catch (DnsException ex) {
         // expected
         assertEquals(400, ex.code());
-        // todo(mderka) test not-retryable
+        assertFalse(ex.retryable());
       }
       try {
         DNS.listZones(Dns.ZoneListOption.pageSize(-1));
@@ -401,7 +399,7 @@ public class ITDnsTest {
       } catch (DnsException ex) {
         // expected
         assertEquals(400, ex.code());
-        // todo(mderka) test not-retryable
+        assertFalse(ex.retryable());
       }
       // ok size
       zones = filter(DNS.listZones(Dns.ZoneListOption.pageSize(1000)).iterateAll());
@@ -413,7 +411,7 @@ public class ITDnsTest {
       } catch (DnsException ex) {
         // expected
         assertEquals(400, ex.code());
-        // todo(mderka) test not-retryable
+        assertFalse(ex.retryable());
       }
       // ok name
       zones = filter(DNS.listZones(Dns.ZoneListOption.dnsName(ZONE1.dnsName())).iterateAll());
@@ -587,6 +585,74 @@ public class ITDnsTest {
   }
 
   @Test
+  public void testInvalidChangeRequest() {
+    Zone zone = DNS.create(ZONE1);
+    DnsRecord validA = DnsRecord.builder("subdomain." + zone.dnsName(), DnsRecord.Type.A)
+        .records(ImmutableList.of("0.255.1.5"))
+        .build();
+    try {
+      ChangeRequest validChange = ChangeRequest.builder().add(validA).build();
+      zone.applyChangeRequest(validChange);
+      try {
+        zone.applyChangeRequest(validChange);
+        fail("Created a record which already exists.");
+      } catch (DnsException ex) {
+        // expected
+        assertFalse(ex.retryable());
+        assertEquals(409, ex.code());
+      }
+      // delete with field mismatch
+      DnsRecord mismatch = validA.toBuilder().ttl(20, TimeUnit.SECONDS).build();
+      ChangeRequest deletion = ChangeRequest.builder().delete(mismatch).build();
+      try {
+        zone.applyChangeRequest(deletion);
+        fail("Deleted a record without a complete match.");
+      } catch (DnsException ex) {
+        // expected
+        assertEquals(412, ex.code());
+        assertFalse(ex.retryable());
+      }
+      // delete and add SOA
+      Iterator<DnsRecord> recordIterator = zone.listDnsRecords().iterateAll();
+      LinkedList<DnsRecord> deletions = new LinkedList<>();
+      LinkedList<DnsRecord> additions = new LinkedList<>();
+      while (recordIterator.hasNext()) {
+        DnsRecord record = recordIterator.next();
+        if (record.type() == DnsRecord.Type.SOA) {
+          deletions.add(record);
+          // the subdomain is necessary to get 400 instead of 412
+          DnsRecord copy = record.toBuilder().name("x." + record.name()).build();
+          additions.add(copy);
+          break;
+        }
+      }
+      deletion = deletion.toBuilder().deletions(deletions).build();
+      ChangeRequest addition = ChangeRequest.builder().additions(additions).build();
+      try {
+        zone.applyChangeRequest(deletion);
+        fail("Deleted SOA.");
+      } catch (DnsException ex) {
+        // expected
+        assertFalse(ex.retryable());
+        assertEquals(400, ex.code());
+      }
+      try {
+        zone.applyChangeRequest(addition);
+        fail("Added second SOA.");
+      } catch (DnsException ex) {
+        // expected
+        assertFalse(ex.retryable());
+        assertEquals(400, ex.code());
+      }
+    } finally {
+      ChangeRequest deletion = ChangeRequest.builder().delete(validA).build();
+      ChangeRequest request = zone.applyChangeRequest(deletion);
+      waitForChangeToComplete(zone.name(), request.id());
+      zone.delete();
+    }
+  }
+
+  @Test
   public void testListChanges() {
     try {
       // no such zone exists
@@ -596,7 +662,7 @@ public class ITDnsTest {
       } catch (DnsException ex) {
         // expected
         assertEquals(404, ex.code());
-        // todo(mderka) test retry functionality
+        assertFalse(ex.retryable());
       }
       // zone exists but has no changes
       DNS.create(ZONE1);
@@ -621,7 +687,7 @@ public class ITDnsTest {
       } catch (DnsException ex) {
         // expected
         assertEquals(400, ex.code());
-        // todo(mderka) test retry functionality
+        assertFalse(ex.retryable());
       }
       try {
         DNS.listChangeRequests(ZONE1.name(), Dns.ChangeRequestListOption.pageSize(-1));
@@ -629,7 +695,7 @@ public class ITDnsTest {
       } catch (DnsException ex) {
         // expected
         assertEquals(400, ex.code());
-        // todo(mderka) test retry functionality
+        assertFalse(ex.retryable());
       }
       // sorting order
       ImmutableList<ChangeRequest> ascending = ImmutableList.copyOf(DNS.listChangeRequests(
@@ -863,7 +929,7 @@ public class ITDnsTest {
       } catch (DnsException ex) {
         // expected
         assertEquals(400, ex.code());
-        // todo(mderka) test retry functionality when available
+        assertFalse(ex.retryable());
       }
       try {
         DNS.listDnsRecords(ZONE1.name(), Dns.DnsRecordListOption.pageSize(0));
@@ -871,7 +937,7 @@ public class ITDnsTest {
       } catch (DnsException ex) {
         // expected
         assertEquals(400, ex.code());
-        // todo(mderka) test retry functionality when available
+        assertFalse(ex.retryable());
       }
       try {
         DNS.listDnsRecords(ZONE1.name(), Dns.DnsRecordListOption.pageSize(-1));
@@ -879,7 +945,7 @@ public class ITDnsTest {
       } catch (DnsException ex) {
         // expected
         assertEquals(400, ex.code());
-        // todo(mderka) test retry functionality when available
+        assertFalse(ex.retryable());
       }
       waitForChangeToComplete(ZONE1.name(), change.id());
     } finally {
