@@ -207,7 +207,7 @@ public class SerializationTest {
       .useQueryCache(true)
       .defaultDataset(DATASET_ID)
       .dryRun(false)
-      .maxResults(42L)
+      .pageSize(42L)
       .maxWaitTime(10L)
       .build();
   private static final QueryResult QUERY_RESULT = QueryResult.builder()
@@ -261,7 +261,7 @@ public class SerializationTest {
         INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE,
         BigQuery.DatasetOption.fields(), BigQuery.DatasetDeleteOption.deleteContents(),
         BigQuery.DatasetListOption.all(), BigQuery.TableOption.fields(),
-        BigQuery.TableListOption.maxResults(42L), BigQuery.JobOption.fields(),
+        BigQuery.TableListOption.pageSize(42L), BigQuery.JobOption.fields(),
         BigQuery.JobListOption.allUsers(), DATASET, TABLE, JOB};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);

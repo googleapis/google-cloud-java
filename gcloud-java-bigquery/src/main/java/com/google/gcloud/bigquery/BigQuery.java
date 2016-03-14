@@ -171,10 +171,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of datasets to be returned.
+     * Returns an option to specify the maximum number of datasets returned per page.
      */
-    public static DatasetListOption maxResults(long maxResults) {
-      return new DatasetListOption(BigQueryRpc.Option.MAX_RESULTS, maxResults);
+    public static DatasetListOption pageSize(long pageSize) {
+      return new DatasetListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
@@ -246,11 +246,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of tables to be returned.
+     * Returns an option to specify the maximum number of tables returned per page.
      */
-    public static TableListOption maxResults(long maxResults) {
-      checkArgument(maxResults >= 0);
-      return new TableListOption(BigQueryRpc.Option.MAX_RESULTS, maxResults);
+    public static TableListOption pageSize(long pageSize) {
+      checkArgument(pageSize >= 0);
+      return new TableListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
@@ -295,11 +295,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of rows to be returned.
+     * Returns an option to specify the maximum number of rows returned per page.
      */
-    public static TableDataListOption maxResults(long maxResults) {
-      checkArgument(maxResults >= 0);
-      return new TableDataListOption(BigQueryRpc.Option.MAX_RESULTS, maxResults);
+    public static TableDataListOption pageSize(long pageSize) {
+      checkArgument(pageSize >= 0);
+      return new TableDataListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
@@ -352,11 +352,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of jobs to be returned.
+     * Returns an option to specify the maximum number of jobs returned per page.
      */
-    public static JobListOption maxResults(long maxResults) {
-      checkArgument(maxResults >= 0);
-      return new JobListOption(BigQueryRpc.Option.MAX_RESULTS, maxResults);
+    public static JobListOption pageSize(long pageSize) {
+      checkArgument(pageSize >= 0);
+      return new JobListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
@@ -418,11 +418,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of rows to be returned.
+     * Returns an option to specify the maximum number of rows returned per page.
      */
-    public static QueryResultsOption maxResults(long maxResults) {
-      checkArgument(maxResults >= 0);
-      return new QueryResultsOption(BigQueryRpc.Option.MAX_RESULTS, maxResults);
+    public static QueryResultsOption pageSize(long pageSize) {
+      checkArgument(pageSize >= 0);
+      return new QueryResultsOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**

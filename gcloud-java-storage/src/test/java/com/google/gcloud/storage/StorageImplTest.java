@@ -181,8 +181,8 @@ public class StorageImplTest {
       StorageRpc.Option.IF_SOURCE_GENERATION_MATCH, BLOB_SOURCE_GENERATION.value());
 
   // Bucket list options
-  private static final Storage.BucketListOption BUCKET_LIST_MAX_RESULT =
-      Storage.BucketListOption.maxResults(42L);
+  private static final Storage.BucketListOption BUCKET_LIST_PAGE_SIZE =
+      Storage.BucketListOption.pageSize(42L);
   private static final Storage.BucketListOption BUCKET_LIST_PREFIX =
       Storage.BucketListOption.prefix("prefix");
   private static final Storage.BucketListOption BUCKET_LIST_FIELDS =
@@ -190,12 +190,12 @@ public class StorageImplTest {
   private static final Storage.BucketListOption BUCKET_LIST_EMPTY_FIELDS =
       Storage.BucketListOption.fields();
   private static final Map<StorageRpc.Option, ?> BUCKET_LIST_OPTIONS = ImmutableMap.of(
-      StorageRpc.Option.MAX_RESULTS, BUCKET_LIST_MAX_RESULT.value(),
+      StorageRpc.Option.MAX_RESULTS, BUCKET_LIST_PAGE_SIZE.value(),
       StorageRpc.Option.PREFIX, BUCKET_LIST_PREFIX.value());
 
   // Blob list options
-  private static final Storage.BlobListOption BLOB_LIST_MAX_RESULT =
-      Storage.BlobListOption.maxResults(42L);
+  private static final Storage.BlobListOption BLOB_LIST_PAGE_SIZE =
+      Storage.BlobListOption.pageSize(42L);
   private static final Storage.BlobListOption BLOB_LIST_PREFIX =
       Storage.BlobListOption.prefix("prefix");
   private static final Storage.BlobListOption BLOB_LIST_FIELDS =
@@ -205,7 +205,7 @@ public class StorageImplTest {
   private static final Storage.BlobListOption BLOB_LIST_EMPTY_FIELDS =
       Storage.BlobListOption.fields();
   private static final Map<StorageRpc.Option, ?> BLOB_LIST_OPTIONS = ImmutableMap.of(
-      StorageRpc.Option.MAX_RESULTS, BLOB_LIST_MAX_RESULT.value(),
+      StorageRpc.Option.MAX_RESULTS, BLOB_LIST_PAGE_SIZE.value(),
       StorageRpc.Option.PREFIX, BLOB_LIST_PREFIX.value(),
       StorageRpc.Option.VERSIONS, BLOB_LIST_VERSIONS.value());
 
@@ -567,7 +567,7 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     ImmutableList<Bucket> bucketList = ImmutableList.of(expectedBucket1, expectedBucket2);
-    Page<Bucket> page = storage.list(BUCKET_LIST_MAX_RESULT, BUCKET_LIST_PREFIX);
+    Page<Bucket> page = storage.list(BUCKET_LIST_PAGE_SIZE, BUCKET_LIST_PREFIX);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
   }
@@ -654,7 +654,7 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page =
-        storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_VERSIONS);
+        storage.list(BUCKET_NAME1, BLOB_LIST_PAGE_SIZE, BLOB_LIST_PREFIX, BLOB_LIST_VERSIONS);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
   }
@@ -673,9 +673,9 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page =
-        storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_FIELDS);
-    assertEquals(BLOB_LIST_MAX_RESULT.value(),
-        capturedOptions.getValue().get(BLOB_LIST_MAX_RESULT.rpcOption()));
+        storage.list(BUCKET_NAME1, BLOB_LIST_PAGE_SIZE, BLOB_LIST_PREFIX, BLOB_LIST_FIELDS);
+    assertEquals(BLOB_LIST_PAGE_SIZE.value(),
+        capturedOptions.getValue().get(BLOB_LIST_PAGE_SIZE.rpcOption()));
     assertEquals(BLOB_LIST_PREFIX.value(),
         capturedOptions.getValue().get(BLOB_LIST_PREFIX.rpcOption()));
     String selector = (String) capturedOptions.getValue().get(BLOB_LIST_FIELDS.rpcOption());
@@ -704,9 +704,9 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page =
-        storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_EMPTY_FIELDS);
-    assertEquals(BLOB_LIST_MAX_RESULT.value(),
-        capturedOptions.getValue().get(BLOB_LIST_MAX_RESULT.rpcOption()));
+        storage.list(BUCKET_NAME1, BLOB_LIST_PAGE_SIZE, BLOB_LIST_PREFIX, BLOB_LIST_EMPTY_FIELDS);
+    assertEquals(BLOB_LIST_PAGE_SIZE.value(),
+        capturedOptions.getValue().get(BLOB_LIST_PAGE_SIZE.rpcOption()));
     assertEquals(BLOB_LIST_PREFIX.value(),
         capturedOptions.getValue().get(BLOB_LIST_PREFIX.rpcOption()));
     String selector = (String) capturedOptions.getValue().get(BLOB_LIST_EMPTY_FIELDS.rpcOption());

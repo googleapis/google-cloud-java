@@ -185,7 +185,7 @@ Then add the following code to run the query and wait for the result:
 QueryRequest queryRequest =
     QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
         .maxWaitTime(60000L)
-        .maxResults(1000L)
+        .pageSize(1000L)
         .build();
 // Request query to be executed and wait for results
 QueryResponse queryResponse = bigquery.query(queryRequest);
