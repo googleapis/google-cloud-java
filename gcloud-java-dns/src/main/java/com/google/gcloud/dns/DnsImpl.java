@@ -33,7 +33,7 @@ import com.google.gcloud.BaseService;
 import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.RetryHelper;
-import com.google.gcloud.spi.DnsRpc;
+import com.google.gcloud.dns.spi.DnsRpc;
 
 import java.util.Map;
 import java.util.concurrent.Callable;

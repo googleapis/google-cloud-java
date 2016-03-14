@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.dns.spi;
 
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;

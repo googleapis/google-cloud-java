@@ -28,8 +28,8 @@ import com.google.common.collect.Lists;
 import com.google.gcloud.Page;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.spi.DnsRpc;
-import com.google.gcloud.spi.DnsRpcFactory;
+import com.google.gcloud.dns.spi.DnsRpc;
+import com.google.gcloud.dns.spi.DnsRpcFactory;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;

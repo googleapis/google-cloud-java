@@ -18,9 +18,9 @@ package com.google.gcloud.dns;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.spi.DefaultDnsRpc;
-import com.google.gcloud.spi.DnsRpc;
-import com.google.gcloud.spi.DnsRpcFactory;
+import com.google.gcloud.dns.spi.DefaultDnsRpc;
+import com.google.gcloud.dns.spi.DnsRpc;
+import com.google.gcloud.dns.spi.DnsRpcFactory;
 
 import java.util.Set;
 

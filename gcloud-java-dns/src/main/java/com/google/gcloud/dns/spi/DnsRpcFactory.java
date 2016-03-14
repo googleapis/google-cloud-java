@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.dns.spi;
 
 import com.google.gcloud.dns.DnsOptions;
+import com.google.gcloud.spi.ServiceRpcFactory;
 
 /**
  * An interface for DnsRpc factory. Implementation will be loaded via {@link
