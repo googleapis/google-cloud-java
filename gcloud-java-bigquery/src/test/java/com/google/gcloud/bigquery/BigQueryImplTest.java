@@ -148,12 +148,12 @@ public class BigQueryImplTest {
   private static final TableRow TABLE_ROW =
       new TableRow().setF(ImmutableList.of(BOOLEAN_FIELD, INTEGER_FIELD));
   private static final QueryRequest QUERY_REQUEST = QueryRequest.builder("SQL")
-      .maxResults(42L)
+      .pageSize(42L)
       .useQueryCache(false)
       .defaultDataset(DatasetId.of(DATASET))
       .build();
   private static final QueryRequest QUERY_REQUEST_WITH_PROJECT = QueryRequest.builder("SQL")
-      .maxResults(42L)
+      .pageSize(42L)
       .useQueryCache(false)
       .defaultDataset(DatasetId.of(PROJECT, DATASET))
       .build();
@@ -170,8 +170,8 @@ public class BigQueryImplTest {
       BigQuery.DatasetListOption.all();
   private static final BigQuery.DatasetListOption DATASET_LIST_PAGE_TOKEN =
       BigQuery.DatasetListOption.startPageToken("cursor");
-  private static final BigQuery.DatasetListOption DATASET_LIST_MAX_RESULTS =
-      BigQuery.DatasetListOption.maxResults(42L);
+  private static final BigQuery.DatasetListOption DATASET_LIST_PAGE_SIZE =
+      BigQuery.DatasetListOption.pageSize(42L);
   private static final Map<BigQueryRpc.Option, ?> DATASET_LIST_OPTIONS = ImmutableMap.of(
       BigQueryRpc.Option.ALL_DATASETS, true,
       BigQueryRpc.Option.PAGE_TOKEN, "cursor",
@@ -188,8 +188,8 @@ public class BigQueryImplTest {
       BigQuery.TableOption.fields(BigQuery.TableField.SCHEMA, BigQuery.TableField.ETAG);
 
   // Table list options
-  private static final BigQuery.TableListOption TABLE_LIST_MAX_RESULTS =
-      BigQuery.TableListOption.maxResults(42L);
+  private static final BigQuery.TableListOption TABLE_LIST_PAGE_SIZE =
+      BigQuery.TableListOption.pageSize(42L);
   private static final BigQuery.TableListOption TABLE_LIST_PAGE_TOKEN =
       BigQuery.TableListOption.startPageToken("cursor");
   private static final Map<BigQueryRpc.Option, ?> TABLE_LIST_OPTIONS = ImmutableMap.of(
@@ -197,8 +197,8 @@ public class BigQueryImplTest {
       BigQueryRpc.Option.PAGE_TOKEN, "cursor");
 
   // TableData list options
-  private static final BigQuery.TableDataListOption TABLE_DATA_LIST_MAX_RESULTS =
-      BigQuery.TableDataListOption.maxResults(42L);
+  private static final BigQuery.TableDataListOption TABLE_DATA_LIST_PAGE_SIZE =
+      BigQuery.TableDataListOption.pageSize(42L);
   private static final BigQuery.TableDataListOption TABLE_DATA_LIST_PAGE_TOKEN =
       BigQuery.TableDataListOption.startPageToken("cursor");
   private static final BigQuery.TableDataListOption TABLE_DATA_LIST_START_INDEX =
@@ -221,8 +221,8 @@ public class BigQueryImplTest {
       BigQuery.JobListOption.stateFilter(JobStatus.State.DONE, JobStatus.State.PENDING);
   private static final BigQuery.JobListOption JOB_LIST_PAGE_TOKEN =
       BigQuery.JobListOption.startPageToken("cursor");
-  private static final BigQuery.JobListOption JOB_LIST_MAX_RESULTS =
-      BigQuery.JobListOption.maxResults(42L);
+  private static final BigQuery.JobListOption JOB_LIST_PAGE_SIZE =
+      BigQuery.JobListOption.pageSize(42L);
   private static final Map<BigQueryRpc.Option, ?> JOB_LIST_OPTIONS = ImmutableMap.of(
       BigQueryRpc.Option.ALL_USERS, true,
       BigQueryRpc.Option.STATE_FILTER, ImmutableList.of("done", "pending"),
@@ -236,8 +236,8 @@ public class BigQueryImplTest {
       BigQuery.QueryResultsOption.startIndex(1024L);
   private static final BigQuery.QueryResultsOption QUERY_RESULTS_OPTION_PAGE_TOKEN =
       BigQuery.QueryResultsOption.startPageToken("cursor");
-  private static final BigQuery.QueryResultsOption QUERY_RESULTS_OPTION_MAX_RESULTS =
-      BigQuery.QueryResultsOption.maxResults(0L);
+  private static final BigQuery.QueryResultsOption QUERY_RESULTS_OPTION_PAGE_SIZE =
+      BigQuery.QueryResultsOption.pageSize(0L);
   private static final Map<BigQueryRpc.Option, ?> QUERY_RESULTS_OPTIONS = ImmutableMap.of(
       BigQueryRpc.Option.TIMEOUT, 42L,
       BigQueryRpc.Option.START_INDEX, 1024L,
@@ -388,7 +388,7 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.listDatasets(DATASET_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     Page<Dataset> page = bigquery.listDatasets(DATASET_LIST_ALL, DATASET_LIST_PAGE_TOKEN,
-        DATASET_LIST_MAX_RESULTS);
+        DATASET_LIST_PAGE_SIZE);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(datasetList.toArray(), Iterables.toArray(page.values(), DatasetInfo.class));
   }
@@ -560,7 +560,7 @@ public class BigQueryImplTest {
         Tuple.of(cursor, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
     EasyMock.expect(bigqueryRpcMock.listTables(DATASET, TABLE_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
-    Page<Table> page = bigquery.listTables(DATASET, TABLE_LIST_MAX_RESULTS, TABLE_LIST_PAGE_TOKEN);
+    Page<Table> page = bigquery.listTables(DATASET, TABLE_LIST_PAGE_SIZE, TABLE_LIST_PAGE_TOKEN);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(tableList.toArray(), Iterables.toArray(page.values(), Table.class));
   }
@@ -733,7 +733,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     Page<List<FieldValue>> page = bigquery.listTableData(DATASET, TABLE,
-        TABLE_DATA_LIST_MAX_RESULTS, TABLE_DATA_LIST_PAGE_TOKEN, TABLE_DATA_LIST_START_INDEX);
+        TABLE_DATA_LIST_PAGE_SIZE, TABLE_DATA_LIST_PAGE_TOKEN, TABLE_DATA_LIST_START_INDEX);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(tableData.toArray(), Iterables.toArray(page.values(), List.class));
   }
@@ -859,7 +859,7 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.listJobs(JOB_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(bigqueryRpcMock);
     Page<Job> page = bigquery.listJobs(JOB_LIST_ALL_USERS, JOB_LIST_STATE_FILTER,
-        JOB_LIST_PAGE_TOKEN, JOB_LIST_MAX_RESULTS);
+        JOB_LIST_PAGE_TOKEN, JOB_LIST_PAGE_SIZE);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(jobList.toArray(), Iterables.toArray(page.values(), Job.class));
   }
@@ -1012,7 +1012,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     QueryResponse response = bigquery.getQueryResults(queryJob, QUERY_RESULTS_OPTION_TIME,
-        QUERY_RESULTS_OPTION_INDEX, QUERY_RESULTS_OPTION_MAX_RESULTS,
+        QUERY_RESULTS_OPTION_INDEX, QUERY_RESULTS_OPTION_PAGE_SIZE,
         QUERY_RESULTS_OPTION_PAGE_TOKEN);
     assertEquals(queryJob, response.jobId());
     assertEquals(true, response.jobCompleted());

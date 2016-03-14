@@ -626,10 +626,10 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of buckets to be returned.
+     * Returns an option to specify the maximum number of buckets returned per page.
      */
-    public static BucketListOption maxResults(long maxResults) {
-      return new BucketListOption(StorageRpc.Option.MAX_RESULTS, maxResults);
+    public static BucketListOption pageSize(long pageSize) {
+      return new BucketListOption(StorageRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**
@@ -672,10 +672,10 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of blobs to be returned.
+     * Returns an option to specify the maximum number of blobs returned per page.
      */
-    public static BlobListOption maxResults(long maxResults) {
-      return new BlobListOption(StorageRpc.Option.MAX_RESULTS, maxResults);
+    public static BlobListOption pageSize(long pageSize) {
+      return new BlobListOption(StorageRpc.Option.MAX_RESULTS, pageSize);
     }
 
     /**

@@ -286,11 +286,11 @@ public class TableTest {
     initializeExpectedTable(1);
     expect(bigquery.options()).andReturn(mockOptions);
     PageImpl<List<FieldValue>> tableDataPage = new PageImpl<>(null, "c", ROWS);
-    expect(bigquery.listTableData(TABLE_ID1, BigQuery.TableDataListOption.maxResults(10L)))
+    expect(bigquery.listTableData(TABLE_ID1, BigQuery.TableDataListOption.pageSize(10L)))
         .andReturn(tableDataPage);
     replay(bigquery);
     initializeTable();
-    Page<List<FieldValue>> dataPage = table.list(BigQuery.TableDataListOption.maxResults(10L));
+    Page<List<FieldValue>> dataPage = table.list(BigQuery.TableDataListOption.pageSize(10L));
     Iterator<List<FieldValue>> tableDataIterator = tableDataPage.values().iterator();
     Iterator<List<FieldValue>> dataIterator = dataPage.values().iterator();
     assertTrue(Iterators.elementsEqual(tableDataIterator, dataIterator));

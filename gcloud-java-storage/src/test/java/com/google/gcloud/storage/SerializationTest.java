@@ -64,7 +64,7 @@ public class SerializationTest {
   private static final PageImpl<Blob> PAGE_RESULT =
       new PageImpl<>(null, "c", Collections.singletonList(BLOB));
   private static final Storage.BlobListOption BLOB_LIST_OPTIONS =
-      Storage.BlobListOption.maxResults(100);
+      Storage.BlobListOption.pageSize(100);
   private static final Storage.BlobSourceOption BLOB_SOURCE_OPTIONS =
       Storage.BlobSourceOption.generationMatch(1);
   private static final Storage.BlobTargetOption BLOB_TARGET_OPTIONS =
