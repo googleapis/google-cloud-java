@@ -680,7 +680,15 @@ public class LocalDnsHelper {
     completeZone.setId(BigInteger.valueOf(Math.abs(ID_GENERATOR.nextLong() % Long.MAX_VALUE)));
     completeZone.setNameServers(randomNameservers());
     ZoneContainer zoneContainer = new ZoneContainer(completeZone);
-    zoneContainer.dnsRecords().set(defaultRecords(completeZone));
+    ImmutableSortedMap<String, ResourceRecordSet> defaultsRecords = defaultRecords(completeZone);
+    zoneContainer.dnsRecords().set(defaultsRecords);
+    Change change = new Change();
+    change.setAdditions(ImmutableList.copyOf(defaultsRecords.values()));
+    change.setStatus("done");
+    change.setId("0");
+    change.setStartTime(ISODateTimeFormat.dateTime().withZoneUTC()
+        .print(System.currentTimeMillis()));
+    zoneContainer.changes().add(change);
     ProjectContainer projectContainer = findProject(projectId);
     ZoneContainer oldValue = projectContainer.zones().putIfAbsent(
         completeZone.getName(), zoneContainer);
@@ -718,8 +726,9 @@ public class LocalDnsHelper {
       completeChange.setDeletions(ImmutableList.copyOf(change.getDeletions()));
     }
     /* We need to set ID for the change. We are working in concurrent environment. We know that the
-    element fell on an index between 0 and maxId, so we will reset all IDs in this range (all of
-    them are valid for the respective objects). */
+    element fell on an index between 1 and maxId (index 0 is the default change which creates SOA
+    and NS), so we will reset all IDs between 0 and maxId (all of them are valid for the respective
+    objects). */
     ConcurrentLinkedQueue<Change> changeSequence = zoneContainer.changes();
     changeSequence.add(completeChange);
     int maxId = changeSequence.size();
@@ -728,7 +737,7 @@ public class LocalDnsHelper {
       if (index == maxId) {
         break;
       }
-      c.setId(String.valueOf(++index));
+      c.setId(String.valueOf(index++));
     }
     completeChange.setStatus("pending");
     completeChange.setStartTime(ISODateTimeFormat.dateTime().withZoneUTC()
