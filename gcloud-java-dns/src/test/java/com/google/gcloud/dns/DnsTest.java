@@ -19,7 +19,7 @@ package com.google.gcloud.dns;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.google.gcloud.spi.DnsRpc;
+import com.google.gcloud.dns.spi.DnsRpc;
 
 import org.junit.Test;
 

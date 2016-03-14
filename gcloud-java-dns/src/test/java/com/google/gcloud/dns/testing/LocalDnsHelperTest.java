@@ -32,8 +32,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.gcloud.dns.DnsException;
-import com.google.gcloud.spi.DefaultDnsRpc;
-import com.google.gcloud.spi.DnsRpc;
+import com.google.gcloud.dns.spi.DefaultDnsRpc;
+import com.google.gcloud.dns.spi.DnsRpc;
 
 import org.junit.AfterClass;
 import org.junit.Before;

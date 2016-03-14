@@ -19,7 +19,7 @@ package com.google.gcloud.dns;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-import com.google.gcloud.spi.DnsRpc;
+import com.google.gcloud.dns.spi.DnsRpc;
 
 import java.io.Serializable;
 import java.util.Objects;

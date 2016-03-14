@@ -1,13 +1,13 @@
-package com.google.gcloud.spi;
+package com.google.gcloud.dns.spi;
 
-import static com.google.gcloud.spi.DnsRpc.ListResult.of;
-import static com.google.gcloud.spi.DnsRpc.Option.DNS_NAME;
-import static com.google.gcloud.spi.DnsRpc.Option.DNS_TYPE;
-import static com.google.gcloud.spi.DnsRpc.Option.FIELDS;
-import static com.google.gcloud.spi.DnsRpc.Option.NAME;
-import static com.google.gcloud.spi.DnsRpc.Option.PAGE_SIZE;
-import static com.google.gcloud.spi.DnsRpc.Option.PAGE_TOKEN;
-import static com.google.gcloud.spi.DnsRpc.Option.SORTING_ORDER;
+import static com.google.gcloud.dns.spi.DnsRpc.ListResult.of;
+import static com.google.gcloud.dns.spi.DnsRpc.Option.DNS_NAME;
+import static com.google.gcloud.dns.spi.DnsRpc.Option.DNS_TYPE;
+import static com.google.gcloud.dns.spi.DnsRpc.Option.FIELDS;
+import static com.google.gcloud.dns.spi.DnsRpc.Option.NAME;
+import static com.google.gcloud.dns.spi.DnsRpc.Option.PAGE_SIZE;
+import static com.google.gcloud.dns.spi.DnsRpc.Option.PAGE_TOKEN;
+import static com.google.gcloud.dns.spi.DnsRpc.Option.SORTING_ORDER;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.http.HttpRequestInitializer;
@@ -188,7 +188,7 @@ public class DefaultDnsRpc implements DnsRpc {
         request = request.setSortBy(SORT_BY).setSortOrder(SORTING_ORDER.getString(options));
       }
       ChangesListResponse response = request.execute();
-      return ListResult.of(response.getNextPageToken(), response.getChanges());
+      return of(response.getNextPageToken(), response.getChanges());
     } catch (IOException ex) {
       throw translate(ex);
     }
