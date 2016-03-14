@@ -850,14 +850,14 @@ public class LocalDnsHelperTest {
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     Iterable<Change> results = RPC.listChangeRequests(ZONE1.getName(), EMPTY_RPC_OPTIONS).results();
     ImmutableList<Change> changes = ImmutableList.copyOf(results);
-    assertEquals(0, changes.size());
+    assertEquals(1, changes.size());
     // zone has changes
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE1, EMPTY_RPC_OPTIONS);
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE2, EMPTY_RPC_OPTIONS);
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE_KEEP, EMPTY_RPC_OPTIONS);
     results = RPC.listChangeRequests(ZONE1.getName(), EMPTY_RPC_OPTIONS).results();
     changes = ImmutableList.copyOf(results);
-    assertEquals(3, changes.size());
+    assertEquals(4, changes.size());
     // error in options
     Map<DnsRpc.Option, Object> options = new HashMap<>();
     options.put(DnsRpc.Option.PAGE_SIZE, 0);
@@ -881,14 +881,14 @@ public class LocalDnsHelperTest {
     options.put(DnsRpc.Option.PAGE_SIZE, 15);
     results = RPC.listChangeRequests(ZONE1.getName(), options).results();
     changes = ImmutableList.copyOf(results);
-    assertEquals(3, changes.size());
+    assertEquals(4, changes.size());
     options = new HashMap<>();
     options.put(DnsRpc.Option.SORTING_ORDER, "descending");
     results = RPC.listChangeRequests(ZONE1.getName(), options).results();
     ImmutableList<Change> descending = ImmutableList.copyOf(results);
     results = RPC.listChangeRequests(ZONE1.getName(), EMPTY_RPC_OPTIONS).results();
     ImmutableList<Change> ascending = ImmutableList.copyOf(results);
-    int size = 3;
+    int size = 4;
     assertEquals(size, descending.size());
     for (int i = 0; i < size; i++) {
       assertEquals(descending.get(i), ascending.get(size - i - 1));
