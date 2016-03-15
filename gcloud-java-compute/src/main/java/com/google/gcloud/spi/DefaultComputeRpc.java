@@ -378,7 +378,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   private static <T> T nullForNotFound(IOException exception) {
     ComputeException serviceException = translate(exception);
     if (serviceException.code() == HTTP_NOT_FOUND) {
-      return (T) null;
+      return null;
     }
     throw serviceException;
   }

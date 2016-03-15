@@ -288,7 +288,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     enum ComparisonOperator {
       /**
-       * Defines an equality filter.
+       * Defines an equals filter.
        */
       EQ,
 
@@ -340,11 +340,11 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns an equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
-     * @see <a href="https://github.com/google/re2">RE2</a>
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
     public static DiskTypeFilter equals(DiskTypeField field, String value) {
       return new DiskTypeFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
@@ -355,14 +355,14 @@ public interface Compute extends Service<ComputeOptions> {
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
-     * @see <a href="https://github.com/google/re2">RE2</a>
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
     public static DiskTypeFilter notEquals(DiskTypeField field, String value) {
       return new DiskTypeFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
     }
 
     /**
-     * Returns an equality filter for the given field and long value.
+     * Returns an equals filter for the given field and long value.
      */
     public static DiskTypeFilter equals(DiskTypeField field, long value) {
       return new DiskTypeFilter(checkNotNull(field), ComparisonOperator.EQ, value);
@@ -388,11 +388,11 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns an equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
-     * @see <a href="https://github.com/google/re2">RE2</a>
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
     public static MachineTypeFilter equals(MachineTypeField field, String value) {
       return new MachineTypeFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
@@ -403,14 +403,14 @@ public interface Compute extends Service<ComputeOptions> {
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
-     * @see <a href="https://github.com/google/re2">RE2</a>
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
     public static MachineTypeFilter notEquals(MachineTypeField field, String value) {
       return new MachineTypeFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
     }
 
     /**
-     * Returns an equality filter for the given field and long value.
+     * Returns an equals filter for the given field and long value.
      */
     public static MachineTypeFilter equals(MachineTypeField field, long value) {
       return new MachineTypeFilter(checkNotNull(field), ComparisonOperator.EQ, value);
@@ -436,11 +436,11 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns an equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
-     * @see <a href="https://github.com/google/re2">RE2</a>
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
     public static RegionFilter equals(RegionField field, String value) {
       return new RegionFilter(checkNotNull(field), ComparisonOperator.EQ, value);
@@ -451,7 +451,7 @@ public interface Compute extends Service<ComputeOptions> {
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
-     * @see <a href="https://github.com/google/re2">RE2</a>
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
     public static RegionFilter notEquals(RegionField field, String value) {
       return new RegionFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
@@ -470,11 +470,11 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns an equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
-     * @see <a href="https://github.com/google/re2">RE2</a>
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
     public static ZoneFilter equals(ZoneField field, String value) {
       return new ZoneFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
@@ -485,7 +485,7 @@ public interface Compute extends Service<ComputeOptions> {
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
-     * @see <a href="https://github.com/google/re2">RE2</a>
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
     public static ZoneFilter notEquals(ZoneField field, String value) {
       return new ZoneFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
@@ -504,11 +504,11 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns an equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
-     * @see <a href="https://github.com/google/re2">RE2</a>
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
     public static OperationFilter equals(OperationField field, String value) {
       return new OperationFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
@@ -519,14 +519,14 @@ public interface Compute extends Service<ComputeOptions> {
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
-     * @see <a href="https://github.com/google/re2">RE2</a>
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
     public static OperationFilter notEquals(OperationField field, String value) {
       return new OperationFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
     }
 
     /**
-     * Returns an equality filter for the given field and long value.
+     * Returns an equals filter for the given field and long value.
      */
     public static OperationFilter equals(OperationField field, long value) {
       return new OperationFilter(checkNotNull(field), ComparisonOperator.EQ, value);
@@ -536,20 +536,6 @@ public interface Compute extends Service<ComputeOptions> {
      * Returns a not-equals filter for the given field and long value.
      */
     public static OperationFilter notEquals(OperationField field, long value) {
-      return new OperationFilter(checkNotNull(field), ComparisonOperator.NE, value);
-    }
-
-    /**
-     * Returns an equality filter for the given field and integer value.
-     */
-    public static OperationFilter equals(OperationField field, int value) {
-      return new OperationFilter(checkNotNull(field), ComparisonOperator.EQ, value);
-    }
-
-    /**
-     * Returns a not-equals filter for the given field and integer value.
-     */
-    public static OperationFilter notEquals(OperationField field, int value) {
       return new OperationFilter(checkNotNull(field), ComparisonOperator.NE, value);
     }
   }
@@ -595,7 +581,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of disk types to be returned.
+     * Returns an option to specify the maximum number of disk types returned per page.
      */
     public static DiskTypeListOption pageSize(long pageSize) {
       return new DiskTypeListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -640,7 +626,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of disk types to be returned.
+     * Returns an option to specify the maximum number of disk types returned per page.
      */
     public static DiskTypeAggregatedListOption pageSize(long pageSize) {
       return new DiskTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -695,7 +681,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of machine types to be returned.
+     * Returns an option to specify the maximum number of machine types returned per page.
      */
     public static MachineTypeListOption pageSize(long pageSize) {
       return new MachineTypeListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -740,7 +726,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of machine types to be returned.
+     * Returns an option to specify the maximum number of machine types returned per page.
      */
     public static MachineTypeAggregatedListOption pageSize(long pageSize) {
       return new MachineTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -795,7 +781,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of regions to be returned.
+     * Returns an option to specify the maximum number of regions returned per page.
      */
     public static RegionListOption pageSize(long pageSize) {
       return new RegionListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -862,7 +848,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of zones to be returned.
+     * Returns an option to specify the maximum number of zones returned per page.
      */
     public static ZoneListOption pageSize(long pageSize) {
       return new ZoneListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -951,7 +937,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of operations to be returned.
+     * Returns an option to specify the maximum number of operations returned per page.
      */
     public static OperationListOption pageSize(long pageSize) {
       return new OperationListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1090,14 +1076,16 @@ public interface Compute extends Service<ComputeOptions> {
   Page<Operation> listGlobalOperations(OperationListOption... options);
 
   /**
-   * Lists the operations in the provided region.
+   * Lists the operations for the provided region. These are operations that create/modify/delete
+   * resources that live in a region (e.g. subnetworks).
    *
    * @throws ComputeException upon failure
    */
   Page<Operation> listRegionOperations(String region, OperationListOption... options);
 
   /**
-   * Lists the operations in the provided zone.
+   * Lists the operations for the provided zone. These are operations that create/modify/delete
+   * resources that live in a zone (e.g. instances).
    *
    * @throws ComputeException upon failure
    */

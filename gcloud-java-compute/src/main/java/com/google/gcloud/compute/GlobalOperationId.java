@@ -41,6 +41,11 @@ public class GlobalOperationId extends ResourceId implements OperationId {
   }
 
   @Override
+  public Type type() {
+    return Type.GLOBAL;
+  }
+
+  @Override
   public String operation() {
     return operation;
   }
