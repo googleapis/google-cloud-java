@@ -57,7 +57,7 @@ public class ITComputeTest {
   public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
-  public static void beforeClass() throws InterruptedException {
+  public static void beforeClass() {
     RemoteComputeHelper computeHelper = RemoteComputeHelper.create();
     compute = computeHelper.options().service();
   }

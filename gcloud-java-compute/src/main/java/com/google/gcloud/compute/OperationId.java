@@ -22,6 +22,32 @@ package com.google.gcloud.compute;
 public interface OperationId {
 
   /**
+   * Possible types for a Google Compute Engine operation identity.
+   */
+  enum Type {
+    /**
+     * Global operations are those operations that deal with global resources, such as global
+     * addresses or snapshots.
+     */
+    GLOBAL,
+    /**
+     * Region operations are those operations that deal with resources that live in a region, such
+     * as subnetworks.
+     */
+    REGION,
+    /**
+     * Zone operations are those operations that deal with resources that live in a zone, such as
+     * disks and instances.
+     */
+    ZONE
+  }
+
+  /**
+   * Returns the type of this operation identity.
+   */
+  Type type();
+
+  /**
    * Returns the name of the project.
    */
   String project();

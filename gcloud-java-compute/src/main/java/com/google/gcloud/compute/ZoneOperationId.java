@@ -41,6 +41,11 @@ public final class ZoneOperationId extends ZoneResourceId implements OperationId
   }
 
   @Override
+  public Type type() {
+    return Type.ZONE;
+  }
+
+  @Override
   public String operation() {
     return operation;
   }

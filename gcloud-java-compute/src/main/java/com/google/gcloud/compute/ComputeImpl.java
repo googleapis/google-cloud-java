@@ -533,16 +533,17 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              if (operationId instanceof RegionOperationId) {
-                RegionOperationId regionOperationId = (RegionOperationId) operationId;
-                return computeRpc.getRegionOperation(regionOperationId.region(),
-                    regionOperationId.operation(), optionsMap);
-              } else if (operationId instanceof ZoneOperationId) {
-                ZoneOperationId zoneOperationId = (ZoneOperationId) operationId;
-                return computeRpc.getZoneOperation(zoneOperationId.zone(),
-                    zoneOperationId.operation(), optionsMap);
-              } else {
-                return computeRpc.getGlobalOperation(operationId.operation(), optionsMap);
+              switch (operationId.type()) {
+                case REGION:
+                  RegionOperationId regionOperationId = (RegionOperationId) operationId;
+                  return computeRpc.getRegionOperation(regionOperationId.region(),
+                      regionOperationId.operation(), optionsMap);
+                case ZONE:
+                  ZoneOperationId zoneOperationId = (ZoneOperationId) operationId;
+                  return computeRpc.getZoneOperation(zoneOperationId.zone(),
+                      zoneOperationId.operation(), optionsMap);
+                default:
+                  return computeRpc.getGlobalOperation(operationId.operation(), optionsMap);
               }
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
@@ -660,16 +661,17 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       return runWithRetries(new Callable<Boolean>() {
         @Override
         public Boolean call() {
-          if (operation instanceof RegionOperationId) {
-            RegionOperationId regionOperationId = (RegionOperationId) operation;
-            return computeRpc.deleteRegionOperation(regionOperationId.region(),
-                regionOperationId.operation());
-          } else if (operation instanceof ZoneOperationId) {
-            ZoneOperationId zoneOperationId = (ZoneOperationId) operation;
-            return computeRpc.deleteZoneOperation(zoneOperationId.zone(),
-                zoneOperationId.operation());
-          } else {
-            return computeRpc.deleteGlobalOperation(operation.operation());
+          switch (operation.type()) {
+            case REGION:
+              RegionOperationId regionOperationId = (RegionOperationId) operation;
+              return computeRpc.deleteRegionOperation(regionOperationId.region(),
+                  regionOperationId.operation());
+            case ZONE:
+              ZoneOperationId zoneOperationId = (ZoneOperationId) operation;
+              return computeRpc.deleteZoneOperation(zoneOperationId.zone(),
+                  zoneOperationId.operation());
+            default:
+              return computeRpc.deleteGlobalOperation(operation.operation());
           }
         }
       }, options().retryParams(), EXCEPTION_HANDLER);

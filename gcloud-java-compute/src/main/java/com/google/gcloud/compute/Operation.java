@@ -17,6 +17,8 @@
 package com.google.gcloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.gcloud.compute.OperationId.Type.REGION;
+import static com.google.gcloud.compute.OperationId.Type.ZONE;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -43,7 +45,7 @@ import java.util.Objects;
  * To get an {@code Operation} object with the most recent information, use
  * {@link #reload(Compute.OperationOption...)}.
  */
-public final class Operation implements Serializable {
+public class Operation implements Serializable {
 
   private static final long serialVersionUID = -8979001444590023899L;
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
@@ -124,7 +126,7 @@ public final class Operation implements Serializable {
     }
 
     /**
-     * Returns the field in the request which caused the error. Might be {@code null}.
+     * Returns the field in the request which caused the error. This value is optional.
      */
     public String location() {
       return location;
@@ -213,7 +215,8 @@ public final class Operation implements Serializable {
     }
 
     /**
-     * Returns a warning identifier for this warning.
+     * Returns a warning identifier for this warning. For example, {@code NO_RESULTS_ON_PAGE} if
+     * there are no results in the response.
      */
     public String code() {
       return code;
@@ -227,7 +230,12 @@ public final class Operation implements Serializable {
     }
 
     /**
-     * Returns metadata about this warning.
+     * Returns metadata about this warning. Each key provides more detail on the warning being
+     * returned. For example, for warnings where there are no results in a list request for a
+     * particular zone, this key might be {@code scope} and the key's value might be the zone name.
+     * Other examples might be a key indicating a deprecated resource, and a suggested replacement,
+     * or a warning about invalid network settings (for example, if an instance attempts to perform
+     * IP forwarding but is not enabled for IP forwarding).
      */
     public Map<String, String> metadata() {
       return metadata;
@@ -587,13 +595,15 @@ public final class Operation implements Serializable {
 
   /**
    * Returns the time that this operation was started by the service. In milliseconds since epoch.
+   * This value will be {@code null} if the operation has not started yet.
    */
   public Long startTime() {
     return startTime;
   }
 
   /**
-   * Returns the time that this operation was completed. In milliseconds since epoch.
+   * Returns the time that this operation was completed. In milliseconds since epoch. This value
+   * will be {@code null} if the operation has not finished yet.
    */
   public Long endTime() {
     return endTime;
@@ -717,12 +727,12 @@ public final class Operation implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(id);
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public final boolean equals(Object obj) {
     return obj instanceof Operation
         && Objects.equals(toPb(), ((Operation) obj).toPb())
         && Objects.equals(options, ((Operation) obj).options);
@@ -739,11 +749,13 @@ public final class Operation implements Serializable {
     }
     operationPb.setName(operationId.operation());
     operationPb.setClientOperationId(clientOperationId);
-    if (operationId instanceof RegionOperationId) {
-      operationPb.setRegion(this.<RegionOperationId>operationId().regionId().selfLink());
-    }
-    if (operationId instanceof ZoneOperationId) {
-      operationPb.setZone(this.<ZoneOperationId>operationId().zoneId().selfLink());
+    switch (operationId.type()) {
+      case REGION:
+        operationPb.setRegion(this.<RegionOperationId>operationId().regionId().selfLink());
+        break;
+      case ZONE:
+        operationPb.setZone(this.<ZoneOperationId>operationId().zoneId().selfLink());
+        break;
     }
     if (operationType != null) {
       operationPb.setOperationType(operationType);

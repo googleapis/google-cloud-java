@@ -41,6 +41,11 @@ public final class RegionOperationId extends RegionResourceId implements Operati
   }
 
   @Override
+  public Type type() {
+    return Type.REGION;
+  }
+
+  @Override
   public String operation() {
     return operation;
   }
