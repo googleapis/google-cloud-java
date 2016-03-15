@@ -34,7 +34,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/compute/docs/zones">Region and Zones</a>
  */
-public final class Region implements Serializable {
+public class Region implements Serializable {
 
   static final Function<com.google.api.services.compute.model.Region, Region> FROM_PB_FUNCTION =
       new Function<com.google.api.services.compute.model.Region, Region>() {
@@ -306,12 +306,12 @@ public final class Region implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(regionId);
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public final boolean equals(Object obj) {
     return obj instanceof Region && Objects.equals(toPb(), ((Region) obj).toPb());
   }
 

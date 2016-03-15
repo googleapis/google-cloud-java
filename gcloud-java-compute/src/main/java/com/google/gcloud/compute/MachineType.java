@@ -36,7 +36,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/compute/docs/machine-types">Machine Types</a>
  */
-public final class MachineType implements Serializable {
+public class MachineType implements Serializable {
 
   static final Function<com.google.api.services.compute.model.MachineType, MachineType>
       FROM_PB_FUNCTION =
@@ -242,12 +242,12 @@ public final class MachineType implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(machineTypeId);
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public final boolean equals(Object obj) {
     return obj instanceof MachineType && Objects.equals(toPb(), ((MachineType) obj).toPb());
   }
 
