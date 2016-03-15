@@ -1480,10 +1480,10 @@ public interface Storage extends Service<StorageOptions> {
    * Generates a signed URL for a blob. If you have a blob that you want to allow access to for a
    * fixed amount of time, you can use this method to generate a URL that is only valid within a
    * certain time period. This is particularly useful if you don't want publicly accessible blobs,
-   * but don't want to require users to explicitly log in. Signing a URL requires a service account
-   * and its associated private key. If a {@link ServiceAccountAuthCredentials} was passed to
-   * {@link StorageOptions.Builder#authCredentials(AuthCredentials)} or the default credentials are
-   * being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
+   * but also don't want to require users to explicitly log in. Signing a URL requires a service
+   * account and its associated private key. If a {@link ServiceAccountAuthCredentials} was passed
+   * to {@link StorageOptions.Builder#authCredentials(AuthCredentials)} or the default credentials
+   * are being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
    * {@code signUrl} will use that service account and associated key to sign the URL. If the
    * credentials passed to {@link StorageOptions} do not expose a private key (this is the case for
    * App Engine credentials, Compute Engine credentials and Google Cloud SDK credentials) then
@@ -1492,13 +1492,14 @@ public interface Storage extends Service<StorageOptions> {
    * account and private key passed with {@code SignUrlOption.serviceAccount()} have priority over
    * any credentials set with {@link StorageOptions.Builder#authCredentials(AuthCredentials)}.
    *
-   * <p>Example usage of creating a signed URL that is valid for 2 weeks:
+   * <p>Example usage of creating a signed URL that is valid for 2 weeks, using the default
+   *     credentials for signing the URL:
    * <pre> {@code
    * service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS);
    * }</pre>
    *
    * <p>Example usage of creating a signed URL passing the {@code SignUrlOption.serviceAccount()}
-   *     option:
+   *     option, that will be used for signing the URL:
    * <pre> {@code
    * service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS,
    *     SignUrlOption.serviceAccount(
