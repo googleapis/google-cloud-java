@@ -32,7 +32,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/compute/docs/reference/latest/diskTypes">Disk Types</a>
  */
-public final class DiskType implements Serializable {
+public class DiskType implements Serializable {
 
   static final Function<com.google.api.services.compute.model.DiskType, DiskType> FROM_PB_FUNCTION =
       new Function<com.google.api.services.compute.model.DiskType, DiskType>() {
@@ -186,12 +186,12 @@ public final class DiskType implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(diskTypeId);
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public final boolean equals(Object obj) {
     return obj instanceof DiskType && Objects.equals(toPb(), ((DiskType) obj).toPb());
   }
 
