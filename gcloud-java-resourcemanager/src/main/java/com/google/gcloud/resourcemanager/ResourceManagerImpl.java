@@ -23,6 +23,7 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.Page;
@@ -32,6 +33,7 @@ import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc;
 import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc.Tuple;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
@@ -55,8 +57,8 @@ final class ResourceManagerImpl
               return resourceManagerRpc.create(project.toPb());
             }
           }, options().retryParams(), EXCEPTION_HANDLER));
-    } catch (RetryHelperException e) {
-      throw ResourceManagerException.translateAndThrow(e);
+    } catch (RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
     }
   }
 
@@ -70,8 +72,8 @@ final class ResourceManagerImpl
           return null;
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
-    } catch (RetryHelperException e) {
-      throw ResourceManagerException.translateAndThrow(e);
+    } catch (RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
     }
   }
 
@@ -87,8 +89,8 @@ final class ResourceManagerImpl
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : Project.fromPb(this, answer);
-    } catch (RetryHelperException e) {
-      throw ResourceManagerException.translateAndThrow(e);
+    } catch (RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
     }
   }
 
@@ -146,8 +148,8 @@ final class ResourceManagerImpl
                   });
       return new PageImpl<>(
           new ProjectPageFetcher(serviceOptions, cursor, optionsMap), cursor, projects);
-    } catch (RetryHelperException e) {
-      throw ResourceManagerException.translateAndThrow(e);
+    } catch (RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
     }
   }
 
@@ -161,8 +163,8 @@ final class ResourceManagerImpl
               return resourceManagerRpc.replace(newProject.toPb());
             }
           }, options().retryParams(), EXCEPTION_HANDLER));
-    } catch (RetryHelperException e) {
-      throw ResourceManagerException.translateAndThrow(e);
+    } catch (RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
     }
   }
 
@@ -176,9 +178,67 @@ final class ResourceManagerImpl
           return null;
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
-    } catch (RetryHelperException e) {
-      throw ResourceManagerException.translateAndThrow(e);
+    } catch (RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
     }
+  }
+
+  @Override
+  public Policy getPolicy(final String projectId) {
+    try {
+      com.google.api.services.cloudresourcemanager.model.Policy answer =
+          runWithRetries(
+              new Callable<com.google.api.services.cloudresourcemanager.model.Policy>() {
+                @Override
+                public com.google.api.services.cloudresourcemanager.model.Policy call() {
+                  return resourceManagerRpc.getPolicy(projectId);
+                }
+              }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Policy.fromPb(answer);
+    } catch (RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
+    }
+  }
+
+  @Override
+  public Policy replacePolicy(final String projectId, final Policy newPolicy) {
+    try {
+      return Policy.fromPb(runWithRetries(
+          new Callable<com.google.api.services.cloudresourcemanager.model.Policy>() {
+            @Override
+            public com.google.api.services.cloudresourcemanager.model.Policy call() {
+              return resourceManagerRpc.replacePolicy(projectId, newPolicy.toPb());
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER));
+    } catch (RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
+    }
+  }
+
+  @Override
+  public List<Boolean> testPermissions(final String projectId, final List<Permission> permissions) {
+    try {
+      return runWithRetries(
+          new Callable<List<Boolean>>() {
+            @Override
+            public List<Boolean> call() {
+              return resourceManagerRpc.testPermissions(projectId,
+                  Lists.transform(permissions, new Function<Permission, String>() {
+                      @Override
+                      public String apply(Permission permission) {
+                        return permission.value();
+                      }
+                  }));
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+    } catch (RetryHelperException ex) {
+      throw ResourceManagerException.translateAndThrow(ex);
+    }
+  }
+
+  @Override
+  public List<Boolean> testPermissions(String projectId, Permission first, Permission... others) {
+    return testPermissions(projectId, Lists.asList(first, others));
   }
 
   private Map<ResourceManagerRpc.Option, ?> optionMap(Option... options) {

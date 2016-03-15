@@ -44,7 +44,7 @@ public final class Identity implements Serializable {
   private static final long serialVersionUID = -8181841964597657446L;
 
   private final Type type;
-  private final String id;
+  private final String value;
 
   /**
    * The types of IAM identities.
@@ -82,9 +82,9 @@ public final class Identity implements Serializable {
     DOMAIN
   }
 
-  private Identity(Type type, String id) {
+  private Identity(Type type, String value) {
     this.type = type;
-    this.id = id;
+    this.value = value;
   }
 
   public Type type() {
@@ -92,7 +92,7 @@ public final class Identity implements Serializable {
   }
 
   /**
-   * Returns the string identifier for this identity. The id corresponds to:
+   * Returns the string identifier for this identity. The value corresponds to:
    * <ul>
    *   <li>email address (for identities of type {@code USER}, {@code SERVICE_ACCOUNT}, and
    *       {@code GROUP})
@@ -101,8 +101,8 @@ public final class Identity implements Serializable {
    *       {@code ALL_AUTHENTICATED_USERS})
    * </ul>
    */
-  public String id() {
-    return id;
+  public String value() {
+    return value;
   }
 
   /**
@@ -163,7 +163,7 @@ public final class Identity implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type);
+    return Objects.hash(value, type);
   }
 
   @Override
@@ -172,7 +172,7 @@ public final class Identity implements Serializable {
       return false;
     }
     Identity other = (Identity) obj;
-    return Objects.equals(id, other.id()) && Objects.equals(type, other.type());
+    return Objects.equals(value, other.value()) && Objects.equals(type, other.type());
   }
 
   /**
@@ -186,13 +186,13 @@ public final class Identity implements Serializable {
       case ALL_AUTHENTICATED_USERS:
         return "allAuthenticatedUsers";
       case USER:
-        return "user:" + id;
+        return "user:" + value;
       case SERVICE_ACCOUNT:
-        return "serviceAccount:" + id;
+        return "serviceAccount:" + value;
       case GROUP:
-        return "group:" + id;
+        return "group:" + value;
       case DOMAIN:
-        return "domain:" + id;
+        return "domain:" + value;
       default:
         throw new IllegalStateException("Unexpected identity type: " + type);
     }

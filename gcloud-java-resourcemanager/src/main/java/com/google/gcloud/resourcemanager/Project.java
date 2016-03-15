@@ -157,10 +157,10 @@ public class Project extends ProjectInfo {
    * completes, the project is not retrievable by the {@link ResourceManager#get} and
    * {@link ResourceManager#list} methods. The caller must have modify permissions for this project.
    *
-   * @see <a
-   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/delete">Cloud
-   * Resource Manager delete</a>
    * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/delete">Cloud
+   *     Resource Manager delete</a>
    */
   public void delete() {
     resourceManager.delete(projectId());
@@ -174,10 +174,10 @@ public class Project extends ProjectInfo {
    * state of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
    * caller must have modify permissions for this project.
    *
-   * @see <a
-   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">Cloud
-   * Resource Manager undelete</a>
    * @throws ResourceManagerException upon failure (including when the project can't be restored)
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">Cloud
+   *     Resource Manager undelete</a>
    */
   public void undelete() {
     resourceManager.undelete(projectId());
@@ -188,11 +188,11 @@ public class Project extends ProjectInfo {
    *
    * <p>The caller must have modify permissions for this project.
    *
-   * @see <a
-   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">Cloud
-   * Resource Manager update</a>
    * @return the Project representing the new project metadata
    * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">Cloud
+   *     Resource Manager update</a>
    */
   public Project replace() {
     return resourceManager.replace(this);
