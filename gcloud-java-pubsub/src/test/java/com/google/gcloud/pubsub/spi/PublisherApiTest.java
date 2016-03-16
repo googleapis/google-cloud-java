@@ -75,12 +75,12 @@ public class PublisherApiTest {
             .setTotalTimeout(30000L)
             .build();
 
-    PublisherSettings publisherSettings = PublisherApi.newSettings();
+    PublisherSettings publisherSettings = PublisherSettings.create();
     publisherSettings.setRetryParamsOnAllMethods(retryParams);
     publisherSettings.provideChannelWith(channel);
     publisherApi = PublisherApi.create(publisherSettings);
 
-    SubscriberSettings subscriberSettings = SubscriberApi.newSettings();
+    SubscriberSettings subscriberSettings = SubscriberSettings.create();
     subscriberSettings.setRetryParamsOnAllMethods(retryParams);
     subscriberSettings.provideChannelWith(channel);
     subscriberApi = SubscriberApi.create(subscriberSettings);

@@ -182,7 +182,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    */
   public static PublisherApi create() throws IOException {
-    return create(newSettings());
+    return create(PublisherSettings.create());
   }
 
   /**

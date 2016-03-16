@@ -185,7 +185,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    */
   public static SubscriberApi create() throws IOException {
-    return create(newSettings());
+    return create(SubscriberSettings.create());
   }
 
   /**
