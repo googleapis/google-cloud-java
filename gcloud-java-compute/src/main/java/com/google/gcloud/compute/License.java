@@ -29,7 +29,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/compute/docs/reference/latest/licenses">Licenses</a>
  */
-public final class License implements Serializable {
+public class License implements Serializable {
 
   private static final long serialVersionUID = 6907923910319640363L;
 
@@ -65,12 +65,12 @@ public final class License implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(licenseId);
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public final boolean equals(Object obj) {
     return obj instanceof License && Objects.equals(toPb(), ((License) obj).toPb());
   }
 

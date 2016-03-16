@@ -36,6 +36,7 @@ import java.util.List;
 
 public class SerializationTest {
 
+  private static final Compute COMPUTE = ComputeOptions.builder().projectId("p").build().service();
   private static final String ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
@@ -113,7 +114,50 @@ public class SerializationTest {
   private static final LicenseId LICENSE_ID = LicenseId.of("project", "license");
   private static final Boolean CHARGES_USE_FEE = true;
   private static final License LICENSE = new License(LICENSE_ID, CHARGES_USE_FEE);
-
+  private static final GlobalOperationId GLOBAL_OPERATION_ID =
+      GlobalOperationId.of("project", "op");
+  private static final ZoneOperationId ZONE_OPERATION_ID =
+      ZoneOperationId.of("project", "zone", "op");
+  private static final RegionOperationId REGION_OPERATION_ID =
+      RegionOperationId.of("project", "region", "op");
+  private static final Operation GLOBAL_OPERATION =
+      new Operation.Builder(COMPUTE).operationId(GLOBAL_OPERATION_ID).build();
+  private static final Operation ZONE_OPERATION =
+      new Operation.Builder(COMPUTE).operationId(ZONE_OPERATION_ID).build();
+  private static final Operation REGION_OPERATION =
+      new Operation.Builder(COMPUTE).operationId(REGION_OPERATION_ID).build();
+  private static final Compute.DiskTypeOption DISK_TYPE_OPTION =
+      Compute.DiskTypeOption.fields();
+  private static final Compute.DiskTypeFilter DISK_TYPE_FILTER =
+      Compute.DiskTypeFilter.equals(Compute.DiskTypeField.SELF_LINK, "selfLink");
+  private static final Compute.DiskTypeListOption DISK_TYPE_LIST_OPTION =
+      Compute.DiskTypeListOption.filter(DISK_TYPE_FILTER);
+  private static final Compute.DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_OPTION =
+      Compute.DiskTypeAggregatedListOption.filter(DISK_TYPE_FILTER);
+  private static final Compute.MachineTypeOption MACHINE_TYPE_OPTION =
+      Compute.MachineTypeOption.fields();
+  private static final Compute.MachineTypeFilter MACHINE_TYPE_FILTER =
+      Compute.MachineTypeFilter.equals(Compute.MachineTypeField.SELF_LINK, "selfLink");
+  private static final Compute.MachineTypeListOption MACHINE_TYPE_LIST_OPTION =
+      Compute.MachineTypeListOption.filter(MACHINE_TYPE_FILTER);
+  private static final Compute.MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_OPTION =
+      Compute.MachineTypeAggregatedListOption.filter(MACHINE_TYPE_FILTER);
+  private static final Compute.RegionOption REGION_OPTION = Compute.RegionOption.fields();
+  private static final Compute.RegionFilter REGION_FILTER =
+      Compute.RegionFilter.equals(Compute.RegionField.SELF_LINK, "selfLink");
+  private static final Compute.RegionListOption REGION_LIST_OPTION =
+      Compute.RegionListOption.filter(REGION_FILTER);
+  private static final Compute.ZoneOption ZONE_OPTION = Compute.ZoneOption.fields();
+  private static final Compute.ZoneFilter ZONE_FILTER =
+      Compute.ZoneFilter.equals(Compute.ZoneField.SELF_LINK, "selfLink");
+  private static final Compute.ZoneListOption ZONE_LIST_OPTION =
+      Compute.ZoneListOption.filter(ZONE_FILTER);
+  private static final Compute.LicenseOption LICENSE_OPTION = Compute.LicenseOption.fields();
+  private static final Compute.OperationOption OPERATION_OPTION = Compute.OperationOption.fields();
+  private static final Compute.OperationFilter OPERATION_FILTER =
+      Compute.OperationFilter.equals(Compute.OperationField.SELF_LINK, "selfLink");
+  private static final Compute.OperationListOption OPERATION_LIST_OPTION =
+      Compute.OperationListOption.filter(OPERATION_FILTER);
   @Test
   public void testServiceOptions() throws Exception {
     ComputeOptions options = ComputeOptions.builder()
@@ -135,7 +179,13 @@ public class SerializationTest {
   @Test
   public void testModelAndRequests() throws Exception {
     Serializable[] objects = {DISK_TYPE_ID, DISK_TYPE, MACHINE_TYPE_ID, MACHINE_TYPE, REGION_ID,
-        REGION, ZONE_ID, ZONE, LICENSE_ID, LICENSE, DEPRECATION_STATUS};
+        REGION, ZONE_ID, ZONE, LICENSE_ID, LICENSE, DEPRECATION_STATUS, GLOBAL_OPERATION_ID,
+        REGION_OPERATION_ID, ZONE_OPERATION_ID, GLOBAL_OPERATION, REGION_OPERATION, ZONE_OPERATION,
+        DISK_TYPE_OPTION, DISK_TYPE_FILTER, DISK_TYPE_LIST_OPTION, DISK_TYPE_AGGREGATED_LIST_OPTION,
+        MACHINE_TYPE_OPTION, MACHINE_TYPE_FILTER, MACHINE_TYPE_LIST_OPTION,
+        MACHINE_TYPE_AGGREGATED_LIST_OPTION, REGION_OPTION, REGION_FILTER, REGION_LIST_OPTION,
+        ZONE_OPTION, ZONE_FILTER, ZONE_LIST_OPTION, LICENSE_OPTION, OPERATION_OPTION,
+        OPERATION_FILTER, OPERATION_LIST_OPTION};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

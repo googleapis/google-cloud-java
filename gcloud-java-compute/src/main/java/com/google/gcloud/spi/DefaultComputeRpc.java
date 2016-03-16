@@ -35,6 +35,8 @@ import com.google.api.services.compute.model.MachineType;
 import com.google.api.services.compute.model.MachineTypeAggregatedList;
 import com.google.api.services.compute.model.MachineTypeList;
 import com.google.api.services.compute.model.MachineTypesScopedList;
+import com.google.api.services.compute.model.Operation;
+import com.google.api.services.compute.model.OperationList;
 import com.google.api.services.compute.model.Region;
 import com.google.api.services.compute.model.RegionList;
 import com.google.api.services.compute.model.Zone;
@@ -248,16 +250,135 @@ public class DefaultComputeRpc implements ComputeRpc {
     }
   }
 
+  @Override
+  public Operation getGlobalOperation(String operation, Map<Option, ?> options) {
+    try {
+      return compute.globalOperations()
+          .get(this.options.projectId(), operation)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Operation>> listGlobalOperations(Map<Option, ?> options) {
+    try {
+      OperationList operationsList = compute.globalOperations()
+          .list(this.options.projectId())
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
+          .execute();
+      Iterable<Operation> operations = operationsList.getItems();
+      return Tuple.of(operationsList.getNextPageToken(), operations);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public boolean deleteGlobalOperation(String operation) {
+    try {
+      compute.globalOperations().delete(this.options.projectId(), operation).execute();
+      return true;
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation getRegionOperation(String region, String operation, Map<Option, ?> options) {
+    try {
+      return compute.regionOperations()
+          .get(this.options.projectId(), region, operation)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Operation>> listRegionOperations(String region,
+      Map<Option, ?> options) {
+    try {
+      OperationList operationsList = compute.regionOperations()
+          .list(this.options.projectId(), region)
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
+          .execute();
+      Iterable<Operation> operations = operationsList.getItems();
+      return Tuple.of(operationsList.getNextPageToken(), operations);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public boolean deleteRegionOperation(String region, String operation) {
+    try {
+      compute.regionOperations().delete(this.options.projectId(), region, operation).execute();
+      return true;
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation getZoneOperation(String zone, String operation, Map<Option, ?> options) {
+    try {
+      return compute.zoneOperations()
+          .get(this.options.projectId(), zone, operation)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Operation>> listZoneOperations(String zone,
+      Map<Option, ?> options) {
+    try {
+      OperationList operationsList = compute.zoneOperations()
+          .list(this.options.projectId(), zone)
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
+          .execute();
+      Iterable<Operation> operations = operationsList.getItems();
+      return Tuple.of(operationsList.getNextPageToken(), operations);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public boolean deleteZoneOperation(String zone, String operation) {
+    try {
+      compute.zoneOperations().delete(this.options.projectId(), zone, operation).execute();
+      return true;
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
   /**
    * This method returns {@code null} if the error code of {@code exception} was 404, re-throws the
    * exception otherwise.
    *
-   * @throws ComputeException if the error code of {@code exception} was not 404.
+   * @throws ComputeException if the error code of {@code exception} was not 404
    */
   private static <T> T nullForNotFound(IOException exception) {
     ComputeException serviceException = translate(exception);
     if (serviceException.code() == HTTP_NOT_FOUND) {
-      return (T) null;
+      return null;
     }
     throw serviceException;
   }
