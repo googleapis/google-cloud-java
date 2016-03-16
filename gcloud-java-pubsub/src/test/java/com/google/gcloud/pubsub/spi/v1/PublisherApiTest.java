@@ -12,11 +12,10 @@
  * the License.
  */
 
-package com.google.gcloud.pubsub.spi;
+package com.google.gcloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.BackoffParams;
 import com.google.api.gax.core.RetryParams;
-import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.gcloud.pubsub.testing.LocalPubsubHelper;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
