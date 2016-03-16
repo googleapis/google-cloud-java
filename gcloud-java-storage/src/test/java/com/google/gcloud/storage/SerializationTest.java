@@ -17,10 +17,10 @@
 package com.google.gcloud.storage;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.BaseSerializationTest;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RestorableState;
@@ -31,16 +31,12 @@ import com.google.gcloud.storage.spi.StorageRpc;
 
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Map;
 
-public class SerializationTest {
+public class SerializationTest extends BaseSerializationTest {
 
   private static final Storage STORAGE = StorageOptions.builder().projectId("p").build().service();
   private static final Acl.Domain ACL_DOMAIN = new Acl.Domain("domain");
@@ -77,37 +73,21 @@ public class SerializationTest {
       Storage.BucketTargetOption.metagenerationNotMatch();
   private static final Map<StorageRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
 
-  @Test
-  public void testServiceOptions() throws Exception {
+  @Override
+  public Serializable[] serializableObjects() {
     StorageOptions options = StorageOptions.builder()
         .projectId("p1")
         .authCredentials(AuthCredentials.createForAppEngine())
         .build();
-    StorageOptions serializedCopy = serializeAndDeserialize(options);
-    assertEquals(options, serializedCopy);
-
-    options = options.toBuilder()
+    StorageOptions otherOptions = options.toBuilder()
         .projectId("p2")
         .retryParams(RetryParams.defaultInstance())
         .authCredentials(null)
         .build();
-    serializedCopy = serializeAndDeserialize(options);
-    assertEquals(options, serializedCopy);
-  }
-
-  @Test
-  public void testModelAndRequests() throws Exception {
-    Serializable[] objects = {ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, ACL,
+    return new Serializable[]{ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, ACL,
         BLOB_INFO, BLOB, BUCKET_INFO, BUCKET, ORIGIN, CORS, BATCH_REQUEST, BATCH_RESPONSE,
         PAGE_RESULT, BLOB_LIST_OPTIONS, BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS,
-        BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS, BUCKET_TARGET_OPTIONS};
-    for (Serializable obj : objects) {
-      Object copy = serializeAndDeserialize(obj);
-      assertEquals(obj, obj);
-      assertEquals(obj, copy);
-      assertNotSame(obj, copy);
-      assertEquals(copy, copy);
-    }
+        BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS, BUCKET_TARGET_OPTIONS, options, otherOptions};
   }
 
   @Test
@@ -141,18 +121,5 @@ public class SerializationTest {
     assertEquals(state, deserializedState);
     assertEquals(state.hashCode(), deserializedState.hashCode());
     assertEquals(state.toString(), deserializedState.toString());
-  }
-
-  @SuppressWarnings("unchecked")
-  private <T> T serializeAndDeserialize(T obj)
-      throws IOException, ClassNotFoundException {
-    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-    try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
-      output.writeObject(obj);
-    }
-    try (ObjectInputStream input =
-        new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
-      return (T) input.readObject();
-    }
   }
 }
