@@ -692,7 +692,8 @@ public class Operation implements Serializable {
   }
 
   /**
-   * Deletes this operation.
+   * Deletes this operation. Delete is only possible for operations that have completed their
+   * execution. Any attempt to delete a running operation will fail.
    *
    * @return {@code true} if operation was deleted, {@code false} if it was not found
    * @throws ComputeException upon failure
