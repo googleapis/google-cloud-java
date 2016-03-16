@@ -176,13 +176,6 @@ public class PublisherApi implements AutoCloseable {
   // ===============
 
   /**
-   * Constructs an instance of PublisherSettings with default settings.
-   */
-  public static PublisherSettings newSettings() {
-    return PublisherSettings.create();
-  }
-
-  /**
    * Constructs an instance of PublisherApi with default settings.
    *
    * <!-- manual edit -->
