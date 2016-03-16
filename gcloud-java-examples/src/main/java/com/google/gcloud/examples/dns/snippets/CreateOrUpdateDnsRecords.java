@@ -32,9 +32,9 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
 /**
- * A snippet for Google Cloud DNS showing how to create a DNS records.
+ * A snippet for Google Cloud DNS showing how to create and update a DNS record.
  */
-public class CreateAndListDnsRecords {
+public class CreateOrUpdateDnsRecords {
 
   public static void main(String... args) {
     // Create a service object.
@@ -42,7 +42,7 @@ public class CreateAndListDnsRecords {
     Dns dns = DnsOptions.defaultInstance().service();
 
     // Change this to a zone name that exists within your project
-    String zoneName = "some-sample-zone";
+    String zoneName = "my-unique-zone";
 
     // Get zone from the service
     Zone zone = dns.getZone(zoneName);
@@ -68,6 +68,7 @@ public class CreateAndListDnsRecords {
     }
 
     // Build and apply the change request to our zone
-    zone.applyChangeRequest(changeBuilder.build());
+    ChangeRequest changeRequest = changeBuilder.build();
+    zone.applyChangeRequest(changeRequest);
   }
 }

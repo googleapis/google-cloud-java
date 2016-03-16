@@ -49,7 +49,7 @@ import java.util.concurrent.TimeUnit;
 public class ITDnsTest {
 
   private static final String PREFIX = "gcldjvit-";
-  private static final Dns DNS = DnsOptions.builder().build().service();
+  private static final Dns DNS = DnsOptions.defaultInstance().service();
   private static final String ZONE_NAME1 = (PREFIX + UUID.randomUUID()).substring(0, 32);
   private static final String ZONE_NAME_EMPTY_DESCRIPTION =
       (PREFIX + UUID.randomUUID()).substring(0, 32);

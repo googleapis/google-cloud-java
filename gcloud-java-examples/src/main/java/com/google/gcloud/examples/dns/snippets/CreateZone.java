@@ -27,14 +27,11 @@ import com.google.gcloud.dns.DnsOptions;
 import com.google.gcloud.dns.Zone;
 import com.google.gcloud.dns.ZoneInfo;
 
-import java.util.Iterator;
-
 /**
- * A snippet for Google Cloud DNS showing how to create a zone and list all zones in the project.
- * You will need to change the {@code domainName} to a domain name, the ownership of which you
- * should verify with Google.
+ * A snippet for Google Cloud DNS showing how to create a zone. You will need to change the {@code
+ * domainName} to a domain name, the ownership of which you should verify with Google.
  */
-public class CreateAndListZones {
+public class CreateZone {
 
   public static void main(String... args) {
     // Create a service object
@@ -42,21 +39,13 @@ public class CreateAndListZones {
     Dns dns = DnsOptions.defaultInstance().service();
 
     // Create a zone metadata object
-    String zoneName = "my_unique_zone"; // Change this zone name which is unique within your project
+    String zoneName = "my-unique-zone"; // Change this zone name which is unique within your project
     String domainName = "someexampledomain.com."; // Change this to a domain which you own
     String description = "This is a gcloud-java-dns sample zone.";
     ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
 
     // Create zone in Google Cloud DNS
-    Zone createdZone = dns.create(zoneInfo);
-    System.out.printf("Zone was created and assigned ID %s.%n", createdZone.id());
-
-    // Now list all the zones within this project
-    Iterator<Zone> zoneIterator = dns.listZones().iterateAll();
-    int counter = 1;
-    while (zoneIterator.hasNext()) {
-      System.out.printf("#%d.: %s%n%n", counter, zoneIterator.next().toString());
-      counter++;
-    }
+    Zone zone = dns.create(zoneInfo);
+    System.out.printf("Zone was created and assigned ID %s.%n", zone.id());
   }
 }
