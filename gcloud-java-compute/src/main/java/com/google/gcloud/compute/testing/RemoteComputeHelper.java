@@ -22,6 +22,7 @@ import com.google.gcloud.compute.ComputeOptions;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -49,6 +50,14 @@ public class RemoteComputeHelper {
    */
   public ComputeOptions options() {
     return options;
+  }
+
+  /**
+   * Returns a base name for testing resources generated using a random UUID. This base name can be
+   * prepended to resource names to prevent name clashes.
+   */
+  public static String baseResourceName() {
+    return "test-" + UUID.randomUUID().toString().replace("-", "").substring(0, 24) + "-";
   }
 
   /**

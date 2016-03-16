@@ -16,11 +16,18 @@
 
 package com.google.gcloud.spi;
 
+import com.google.api.services.compute.model.Address;
+import com.google.api.services.compute.model.DeprecationStatus;
+import com.google.api.services.compute.model.Disk;
 import com.google.api.services.compute.model.DiskType;
+import com.google.api.services.compute.model.Image;
 import com.google.api.services.compute.model.License;
 import com.google.api.services.compute.model.MachineType;
+import com.google.api.services.compute.model.Network;
 import com.google.api.services.compute.model.Operation;
 import com.google.api.services.compute.model.Region;
+import com.google.api.services.compute.model.Snapshot;
+import com.google.api.services.compute.model.Subnetwork;
 import com.google.api.services.compute.model.Zone;
 import com.google.gcloud.compute.ComputeException;
 
@@ -228,4 +235,73 @@ public interface ComputeRpc {
    * @throws ComputeException upon failure
    */
   boolean deleteZoneOperation(String zone, String operation);
+
+  /**
+   * Returns the requested global address or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Address getGlobalAddress(String address, Map<Option, ?> options);
+
+  /**
+   * Creates a new global address.
+   *
+   * @return a global operation for global address' creation
+   * @throws ComputeException upon failure
+   */
+  Operation createGlobalAddress(Address address, Map<Option, ?> options);
+
+  /**
+   * Lists the global addresses.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Address>> listGlobalAddresses(Map<Option, ?> options);
+
+  /**
+   * Deletes the requested global address.
+   *
+   * @return a global operation if request was issued correctly, {@code null} if the address was not
+   *     found
+   * @throws ComputeException upon failure
+   */
+  Operation deleteGlobalAddress(String address, Map<Option, ?> options);
+
+  /**
+   * Returns the requested region address or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Address getRegionAddress(String region, String address, Map<Option, ?> options);
+
+  /**
+   * Creates a new region address.
+   *
+   * @return a region operation for region address' creation
+   * @throws ComputeException upon failure
+   */
+  Operation createRegionAddress(String region, Address address, Map<Option, ?> options);
+
+  /**
+   * Lists the regions addresses for the provided region.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Address>> listRegionAddresses(String region, Map<Option, ?> options);
+
+  /**
+   * Lists all addressest.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Address>> listAddresses(Map<Option, ?> options);
+
+  /**
+   * Deletes the requested region address.
+   *
+   * @return a region operation if request was issued correctly, {@code null} if the address was not
+   *     found
+   * @throws ComputeException upon failure
+   */
+  Operation deleteRegionAddress(String region, String address, Map<Option, ?> options);
 }
