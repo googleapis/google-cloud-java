@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,6 +174,12 @@ public class ComputeImplTest {
       ZoneOperationId.of("project", "zone", "op");
   private static final RegionOperationId REGION_OPERATION_ID =
       RegionOperationId.of("project", "region", "op");
+  private static final RegionAddressId REGION_ADDRESS_ID =
+      RegionAddressId.of("project", "region", "address");
+  private static final GlobalAddressId GLOBAL_ADDRESS_ID =
+      GlobalAddressId.of("project", "address");
+  private static final AddressInfo REGION_ADDRESS = AddressInfo.builder(REGION_ADDRESS_ID).build();
+  private static final AddressInfo GLOBAL_ADDRESS = AddressInfo.builder(GLOBAL_ADDRESS_ID).build();
 
   // Empty ComputeRpc options
   private static final Map<ComputeRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -187,7 +193,7 @@ public class ComputeImplTest {
       DiskTypeFilter.equals(Compute.DiskTypeField.DESCRIPTION, "someDescription");
   private static final DiskTypeListOption DISK_TYPE_LIST_PAGE_TOKEN =
       DiskTypeListOption.startPageToken("cursor");
-  private static final DiskTypeListOption DISK_TYPE_LIST_MAX_RESULTS =
+  private static final DiskTypeListOption DISK_TYPE_LIST_PAGE_SIZE =
       DiskTypeListOption.pageSize(42L);
   private static final DiskTypeListOption DISK_TYPE_LIST_FILTER =
       DiskTypeListOption.filter(DISK_TYPE_FILTER);
@@ -199,7 +205,7 @@ public class ComputeImplTest {
   // DiskType aggregated list options
   private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
       DiskTypeAggregatedListOption.startPageToken("cursor");
-  private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_MAX_RESULTS =
+  private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_PAGE_SIZE =
       DiskTypeAggregatedListOption.pageSize(42L);
   private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_FILTER =
       DiskTypeAggregatedListOption.filter(DISK_TYPE_FILTER);
@@ -214,7 +220,7 @@ public class ComputeImplTest {
       MachineTypeFilter.notEquals(Compute.MachineTypeField.MAXIMUM_PERSISTENT_DISKS, 42L);
   private static final MachineTypeListOption MACHINE_TYPE_LIST_PAGE_TOKEN =
       MachineTypeListOption.startPageToken("cursor");
-  private static final MachineTypeListOption MACHINE_TYPE_LIST_MAX_RESULTS =
+  private static final MachineTypeListOption MACHINE_TYPE_LIST_PAGE_SIZE =
       MachineTypeListOption.pageSize(42L);
   private static final MachineTypeListOption MACHINE_TYPE_LIST_FILTER =
       MachineTypeListOption.filter(MACHINE_TYPE_FILTER);
@@ -226,7 +232,7 @@ public class ComputeImplTest {
   // MachineType aggregated list options
   private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
       MachineTypeAggregatedListOption.startPageToken("cursor");
-  private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_MAX_RESULTS =
+  private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_PAGE_SIZE =
       MachineTypeAggregatedListOption.pageSize(42L);
   private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_FILTER =
       MachineTypeAggregatedListOption.filter(MACHINE_TYPE_FILTER);
@@ -240,7 +246,7 @@ public class ComputeImplTest {
       RegionFilter.equals(Compute.RegionField.ID, "someId");
   private static final RegionListOption REGION_LIST_PAGE_TOKEN =
       RegionListOption.startPageToken("cursor");
-  private static final RegionListOption REGION_LIST_MAX_RESULTS =
+  private static final RegionListOption REGION_LIST_PAGE_SIZE =
       RegionListOption.pageSize(42L);
   private static final RegionListOption REGION_LIST_FILTER =
       RegionListOption.filter(REGION_FILTER);
@@ -258,7 +264,7 @@ public class ComputeImplTest {
       ZoneFilter.notEquals(Compute.ZoneField.NAME, "someName");
   private static final ZoneListOption ZONE_LIST_PAGE_TOKEN =
       ZoneListOption.startPageToken("cursor");
-  private static final ZoneListOption ZONE_LIST_MAX_RESULTS = ZoneListOption.pageSize(42L);
+  private static final ZoneListOption ZONE_LIST_PAGE_SIZE = ZoneListOption.pageSize(42L);
   private static final ZoneListOption ZONE_LIST_FILTER = ZoneListOption.filter(ZONE_FILTER);
   private static final Map<ComputeRpc.Option, ?> ZONE_LIST_OPTIONS = ImmutableMap.of(
       PAGE_TOKEN, "cursor",
@@ -278,7 +284,7 @@ public class ComputeImplTest {
       OperationFilter.notEquals(Compute.OperationField.PROGRESS, 0);
   private static final OperationListOption OPERATION_LIST_PAGE_TOKEN =
       OperationListOption.startPageToken("cursor");
-  private static final OperationListOption OPERATION_LIST_MAX_RESULTS =
+  private static final OperationListOption OPERATION_LIST_PAGE_SIZE =
       OperationListOption.pageSize(42L);
   private static final OperationListOption OPERATION_LIST_FILTER =
       OperationListOption.filter(OPERATION_FILTER);
@@ -286,6 +292,32 @@ public class ComputeImplTest {
       PAGE_TOKEN, "cursor",
       MAX_RESULTS, 42L,
       FILTER, "progress ne 0");
+
+  // Address options
+  private static final Compute.AddressOption ADDRESS_OPTION_FIELDS =
+      Compute.AddressOption.fields(Compute.AddressField.ID, Compute.AddressField.DESCRIPTION);
+
+  // Address list options
+  private static final Compute.AddressFilter ADDRESS_FILTER =
+      Compute.AddressFilter.notEquals(Compute.AddressField.REGION, "someRegion");
+  private static final Compute.AddressListOption ADDRESS_LIST_PAGE_TOKEN =
+      Compute.AddressListOption.startPageToken("cursor");
+  private static final Compute.AddressListOption ADDRESS_LIST_PAGE_SIZE =
+      Compute.AddressListOption.pageSize(42L);
+  private static final Compute.AddressListOption ADDRESS_LIST_FILTER =
+      Compute.AddressListOption.filter(ADDRESS_FILTER);
+  private static final Map<ComputeRpc.Option, ?> ADDRESS_LIST_OPTIONS = ImmutableMap.of(
+      PAGE_TOKEN, "cursor",
+      MAX_RESULTS, 42L,
+      FILTER, "region ne someRegion");
+
+  // Address aggregated list options
+  private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_PAGE_TOKEN =
+      Compute.AddressAggregatedListOption.startPageToken("cursor");
+  private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_PAGE_SIZE =
+      Compute.AddressAggregatedListOption.pageSize(42L);
+  private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_FILTER =
+      Compute.AddressAggregatedListOption.filter(ADDRESS_FILTER);
 
   private ComputeOptions options;
   private ComputeRpcFactory rpcFactoryMock;
@@ -494,7 +526,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listDiskTypes(DISK_TYPE_ID.zone(), DISK_TYPE_LIST_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_ID.zone(), DISK_TYPE_LIST_MAX_RESULTS,
+    Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_ID.zone(), DISK_TYPE_LIST_PAGE_SIZE,
         DISK_TYPE_LIST_PAGE_TOKEN, DISK_TYPE_LIST_FILTER);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.values(), DiskType.class));
@@ -559,7 +591,7 @@ public class ComputeImplTest {
         Tuple.of(cursor, Iterables.transform(diskTypeList, DiskType.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listDiskTypes(DISK_TYPE_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_AGGREGATED_LIST_MAX_RESULTS,
+    Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_AGGREGATED_LIST_PAGE_SIZE,
             DISK_TYPE_AGGREGATED_LIST_PAGE_TOKEN, DISK_TYPE_AGGREGATED_LIST_FILTER);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.values(), DiskType.class));
@@ -679,7 +711,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_ID.zone(),
-        MACHINE_TYPE_LIST_MAX_RESULTS, MACHINE_TYPE_LIST_PAGE_TOKEN, MACHINE_TYPE_LIST_FILTER);
+        MACHINE_TYPE_LIST_PAGE_SIZE, MACHINE_TYPE_LIST_PAGE_TOKEN, MACHINE_TYPE_LIST_FILTER);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(machineTypeList.toArray(),
         Iterables.toArray(page.values(), MachineType.class));
@@ -750,7 +782,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listMachineTypes(MACHINE_TYPE_LIST_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_AGGREGATED_LIST_MAX_RESULTS,
+    Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_AGGREGATED_LIST_PAGE_SIZE,
         MACHINE_TYPE_AGGREGATED_LIST_PAGE_TOKEN, MACHINE_TYPE_AGGREGATED_LIST_FILTER);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(machineTypeList.toArray(),
@@ -843,7 +875,7 @@ public class ComputeImplTest {
         Tuple.of(cursor, Iterables.transform(regionList, Region.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listRegions(REGION_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Region> page = compute.listRegions(REGION_LIST_MAX_RESULTS, REGION_LIST_PAGE_TOKEN,
+    Page<Region> page = compute.listRegions(REGION_LIST_PAGE_SIZE, REGION_LIST_PAGE_TOKEN,
         REGION_LIST_FILTER);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(regionList.toArray(), Iterables.toArray(page.values(), Region.class));
@@ -935,7 +967,7 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listZones(ZONE_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Zone> page =
-        compute.listZones(ZONE_LIST_MAX_RESULTS, ZONE_LIST_PAGE_TOKEN, ZONE_LIST_FILTER);
+        compute.listZones(ZONE_LIST_PAGE_SIZE, ZONE_LIST_PAGE_TOKEN, ZONE_LIST_FILTER);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(zoneList.toArray(), Iterables.toArray(page.values(), Zone.class));
   }
@@ -1110,7 +1142,7 @@ public class ComputeImplTest {
             }));
     EasyMock.expect(computeRpcMock.listGlobalOperations(OPERATION_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Operation> page = compute.listGlobalOperations(OPERATION_LIST_MAX_RESULTS,
+    Page<Operation> page = compute.listGlobalOperations(OPERATION_LIST_PAGE_SIZE,
         OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(operationList.toArray(), Iterables.toArray(page.values(), Operation.class));
@@ -1256,7 +1288,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listRegionOperations(REGION_OPERATION_ID.region(),
-        OPERATION_LIST_MAX_RESULTS, OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
+        OPERATION_LIST_PAGE_SIZE, OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(operationList.toArray(), Iterables.toArray(page.values(), Operation.class));
   }
@@ -1401,7 +1433,7 @@ public class ComputeImplTest {
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listZoneOperations(ZONE_OPERATION_ID.zone(),
-        OPERATION_LIST_MAX_RESULTS, OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
+        OPERATION_LIST_PAGE_SIZE, OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(operationList.toArray(), Iterables.toArray(page.values(), Operation.class));
   }
@@ -1422,6 +1454,445 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     assertFalse(compute.delete(ZONE_OPERATION_ID));
+  }
+
+  @Test
+  public void testGetGlobalAddress() {
+    EasyMock.expect(
+        computeRpcMock.getGlobalAddress(GLOBAL_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS))
+        .andReturn(GLOBAL_ADDRESS.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Address address = compute.get(GLOBAL_ADDRESS_ID);
+    assertEquals(new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)), address);
+  }
+
+  @Test
+  public void testGetGlobalAddressWithSelectedFields() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.getGlobalAddress(
+        eq(GLOBAL_ADDRESS_ID.address()), capture(capturedOptions)))
+        .andReturn(GLOBAL_ADDRESS.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Address address = compute.get(GLOBAL_ADDRESS_ID, ADDRESS_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(ADDRESS_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)), address);
+  }
+
+  @Test
+  public void testGetRegionAddress() {
+    EasyMock.expect(computeRpcMock.getRegionAddress(REGION_ADDRESS_ID.region(),
+        REGION_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS)).andReturn(REGION_ADDRESS.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Address address = compute.get(REGION_ADDRESS_ID);
+    assertEquals(new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)), address);
+  }
+
+  @Test
+  public void testGetRegionAddressWithSelectedFields() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.getRegionAddress(eq(REGION_ADDRESS_ID.region()),
+        eq(REGION_ADDRESS_ID.address()), capture(capturedOptions)))
+        .andReturn(REGION_ADDRESS.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Address address = compute.get(REGION_ADDRESS_ID, ADDRESS_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(ADDRESS_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)), address);
+  }
+
+  @Test
+  public void testDeleteGlobalAddress_Operation() {
+    EasyMock
+        .expect(computeRpcMock.deleteGlobalAddress(GLOBAL_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertEquals(globalOperation, compute.delete(GLOBAL_ADDRESS_ID));
+  }
+
+  @Test
+  public void testDeleteGlobalAddressWithSelectedFields_Operation() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.deleteGlobalAddress(eq(GLOBAL_ADDRESS_ID.address()),
+        capture(capturedOptions))).andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.delete(GLOBAL_ADDRESS_ID, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testDeleteGlobalAddress_Null() {
+    EasyMock
+        .expect(computeRpcMock.deleteGlobalAddress(GLOBAL_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.delete(GLOBAL_ADDRESS_ID));
+  }
+
+  @Test
+  public void testDeleteRegionAddress_Operation() {
+    EasyMock.expect(computeRpcMock.deleteRegionAddress(REGION_ADDRESS_ID.region(),
+        REGION_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS)).andReturn(regionOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertEquals(regionOperation, compute.delete(REGION_ADDRESS_ID));
+  }
+
+  @Test
+  public void testDeleteRegionAddressWithSelectedFields_Operation() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.deleteRegionAddress(eq(REGION_ADDRESS_ID.region()),
+        eq(REGION_ADDRESS_ID.address()), capture(capturedOptions)))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.delete(REGION_ADDRESS_ID, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testDeleteRegionAddress_Null() {
+    EasyMock.expect(computeRpcMock.deleteRegionAddress(REGION_ADDRESS_ID.region(),
+        REGION_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.delete(REGION_ADDRESS_ID));
+  }
+
+  @Test
+  public void testListGlobalAddresses() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Address> addressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)),
+        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listGlobalAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Address> page = compute.listGlobalAddresses();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(addressList.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testListGlobalAddressesNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Address> addressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)),
+        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
+    ImmutableList<Address> nextAddressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.of(cursor, Iterables.transform(addressList,
+            new Function<Address, com.google.api.services.compute.model.Address>() {
+              @Override
+              public com.google.api.services.compute.model.Address apply(Address address) {
+                return address.toPb();
+              }
+            }));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextAddressList,
+            new Function<Address, com.google.api.services.compute.model.Address>() {
+              @Override
+              public com.google.api.services.compute.model.Address apply(Address address) {
+                return address.toPb();
+              }
+            }));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listGlobalAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listGlobalAddresses(nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Address> page = compute.listGlobalAddresses();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(addressList.toArray(), Iterables.toArray(page.values(), Address.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextAddressList.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testListEmptyGlobalAddresses() {
+    ImmutableList<com.google.api.services.compute.model.Address> addresses = ImmutableList.of();
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Address>>of(null, addresses);
+    EasyMock.expect(computeRpcMock.listGlobalAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Page<Address> page = compute.listGlobalAddresses();
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(addresses.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testListGlobalAddressesWithOptions() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Address> addressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)),
+        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listGlobalAddresses(ADDRESS_LIST_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Address> page = compute.listGlobalAddresses(ADDRESS_LIST_PAGE_SIZE,
+        ADDRESS_LIST_PAGE_TOKEN, ADDRESS_LIST_FILTER);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(addressList.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testListRegionAddresses() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Address> addressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.of(cursor, Iterables.transform(addressList,
+            new Function<Address, com.google.api.services.compute.model.Address>() {
+              @Override
+              public com.google.api.services.compute.model.Address apply(Address address) {
+                return address.toPb();
+              }
+            }));
+    EasyMock.expect(
+        computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.region(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Address> page = compute.listRegionAddresses(REGION_ADDRESS_ID.region());
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(addressList.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testListRegionAddressesNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Address> addressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    ImmutableList<Address> nextAddressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.of(cursor, Iterables.transform(addressList,
+            new Function<Address, com.google.api.services.compute.model.Address>() {
+              @Override
+              public com.google.api.services.compute.model.Address apply(Address address) {
+                return address.toPb();
+              }
+            }));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextAddressList,
+            new Function<Address, com.google.api.services.compute.model.Address>() {
+              @Override
+              public com.google.api.services.compute.model.Address apply(Address address) {
+                return address.toPb();
+              }
+            }));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(
+        computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.region(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.expect(
+        computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.region(), nextOptions))
+        .andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Address> page = compute.listRegionAddresses(REGION_ADDRESS_ID.region());
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(addressList.toArray(), Iterables.toArray(page.values(), Address.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextAddressList.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testListEmptyRegionAddresses() {
+    ImmutableList<com.google.api.services.compute.model.Address> addresses = ImmutableList.of();
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Address>>of(null, addresses);
+    EasyMock.expect(
+        computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.region(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Page<Address> page = compute.listRegionAddresses(REGION_ADDRESS_ID.region());
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(addresses.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testListRegionAddressesWithOptions() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Address> addressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
+    EasyMock.expect(
+        computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.region(), ADDRESS_LIST_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Address> page = compute.listRegionAddresses(REGION_ADDRESS_ID.region(),
+        ADDRESS_LIST_PAGE_SIZE, ADDRESS_LIST_PAGE_TOKEN, ADDRESS_LIST_FILTER);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(addressList.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testAggregatedListAddresses() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Address> addressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Address> page = compute.listAddresses();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(addressList.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testAggregatedListAddressesNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Address> addressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    ImmutableList<Address> nextAddressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextAddressList, AddressInfo.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listAddresses(nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Address> page = compute.listAddresses();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(addressList.toArray(), Iterables.toArray(page.values(), Address.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextAddressList.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testAggregatedListEmptyAddresses() {
+    ImmutableList<com.google.api.services.compute.model.Address> addresses = ImmutableList.of();
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Address>>of(null, addresses);
+    EasyMock.expect(computeRpcMock.listAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Page<Address> page = compute.listAddresses();
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(addresses.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testAggregatedListAddressesWithOptions() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Address> addressList = ImmutableList.of(
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+        Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listAddresses(ADDRESS_LIST_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Address> page = compute.listAddresses(ADDRESS_AGGREGATED_LIST_PAGE_SIZE,
+        ADDRESS_AGGREGATED_LIST_PAGE_TOKEN, ADDRESS_AGGREGATED_LIST_FILTER);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(addressList.toArray(), Iterables.toArray(page.values(), Address.class));
+  }
+
+  @Test
+  public void testCreateGlobalAddress() {
+    EasyMock.expect(computeRpcMock.createGlobalAddress(GLOBAL_ADDRESS.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    AddressId incompleteId = GlobalAddressId.of("address");
+    Operation operation =
+        compute.create(GLOBAL_ADDRESS.toBuilder().addressId(incompleteId).build());
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testCreateGlobalAddressWithOptions() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(
+        computeRpcMock.createGlobalAddress(eq(GLOBAL_ADDRESS.toPb()), capture(capturedOptions)))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.create(GLOBAL_ADDRESS, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testCreateRegionAddress() {
+    EasyMock.expect(computeRpcMock.createRegionAddress(REGION_ADDRESS_ID.region(),
+        REGION_ADDRESS.toPb(), EMPTY_RPC_OPTIONS)).andReturn(regionOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    AddressId incompleteId = RegionAddressId.of("region", "address");
+    Operation operation =
+        compute.create(REGION_ADDRESS.toBuilder().addressId(incompleteId).build());
+    assertEquals(regionOperation, operation);
+  }
+
+  @Test
+  public void testCreateRegionAddressWithOptions() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.createRegionAddress(eq(REGION_ADDRESS_ID.region()),
+        eq(REGION_ADDRESS.toPb()), capture(capturedOptions))).andReturn(regionOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.create(REGION_ADDRESS, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(regionOperation, operation);
   }
 
   @Test
