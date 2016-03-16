@@ -179,13 +179,6 @@ public class SubscriberApi implements AutoCloseable {
   // ===============
 
   /**
-   * Constructs an instance of SubscriberSettings with default settings.
-   */
-  public static SubscriberSettings newSettings() {
-    return SubscriberSettings.create();
-  }
-
-  /**
    * Constructs an instance of SubscriberApi with default settings.
    *
    * <!-- manual edit -->
