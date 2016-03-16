@@ -178,6 +178,11 @@ public class Policy extends IamPolicy<Policy.Role> {
     return new Builder(bindings(), etag(), version());
   }
 
+  @Override
+  public String toString() {
+    return toPb().toString();
+  }
+
   com.google.api.services.cloudresourcemanager.model.Policy toPb() {
     com.google.api.services.cloudresourcemanager.model.Policy policyPb =
         new com.google.api.services.cloudresourcemanager.model.Policy();

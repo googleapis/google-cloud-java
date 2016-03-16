@@ -18,8 +18,11 @@ package com.google.gcloud.resourcemanager;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.gcloud.resourcemanager.ResourceManager.Permission;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -196,6 +199,71 @@ public class Project extends ProjectInfo {
    */
   public Project replace() {
     return resourceManager.replace(this);
+  }
+
+  /**
+   * Returns the IAM access control policy for the specified project. Returns {@code null} if the
+   * resource does not exist or if you do not have adequate permission to view the project or get
+   * the policy.
+   *
+   * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/getIamPolicy">
+   *     Resource Manager getIamPolicy</a>
+   */
+  public Policy getPolicy() {
+    return resourceManager.getPolicy(projectId());
+  }
+
+  /**
+   * Sets the IAM access control policy for the specified project. Replaces any existing policy.
+   * It is recommended that you use the read-modify-write pattern. See code samples and important
+   * details of replacing policies in the documentation for {@link ResourceManager#replacePolicy}.
+   *
+   * @throws ResourceManagerException upon failure
+   * @see ResourceManager#replacePolicy
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/setIamPolicy">
+   *     Resource Manager setIamPolicy</a>
+   */
+  public Policy replacePolicy(Policy newPolicy) {
+    return resourceManager.replacePolicy(projectId(), newPolicy);
+  }
+
+  /**
+   * Returns the permissions that a caller has on this project. You typically don't call this method
+   * if you're using Google Cloud Platform directly to manage permissions. This method is intended
+   * for integration with your proprietary software, such as a customized graphical user interface.
+   * For example, the Cloud Platform Console tests IAM permissions internally to determine which UI
+   * should be available to the logged-in user.
+   *
+   * @return A list of booleans representing whether the caller has the permissions specified (in
+   *     the order of the given permissions)
+   * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/testIamPermissions">
+   *     Resource Manager testIamPermissions</a>
+   */
+  List<Boolean> testPermissions(List<Permission> permissions) {
+    return resourceManager.testPermissions(projectId(), permissions);
+  }
+
+  /**
+   * Returns the permissions that a caller has on this project. You typically don't call this method
+   * if you're using Google Cloud Platform directly to manage permissions. This method is intended
+   * for integration with your proprietary software, such as a customized graphical user interface.
+   * For example, the Cloud Platform Console tests IAM permissions internally to determine which UI
+   * should be available to the logged-in user.
+   *
+   * @return A list of booleans representing whether the caller has the permissions specified (in
+   *     the order of the given permissions)
+   * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/testIamPermissions">
+   *     Resource Manager testIamPermissions</a>
+   */
+  List<Boolean> testPermissions(Permission first, Permission... others) {
+    return resourceManager.testPermissions(projectId(), first, others);
   }
 
   @Override

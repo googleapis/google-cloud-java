@@ -25,13 +25,19 @@ import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import com.google.gcloud.Identity;
+import com.google.gcloud.resourcemanager.Policy.Role;
 import com.google.gcloud.resourcemanager.ProjectInfo.ResourceId;
+import com.google.gcloud.resourcemanager.ResourceManager.Permission;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
 import java.util.Map;
 
 public class ProjectTest {
@@ -47,6 +53,13 @@ public class ProjectTest {
       .projectNumber(PROJECT_NUMBER)
       .createTimeMillis(CREATE_TIME_MILLIS)
       .state(STATE)
+      .build();
+  private static final Identity USER = Identity.user("abc@gmail.com");
+  private static final Identity SERVICE_ACCOUNT =
+      Identity.serviceAccount("service-account@gmail.com");
+  private static final Policy POLICY = Policy.builder()
+      .addBinding(Role.owner(), ImmutableSet.of(USER))
+      .addBinding(Role.editor(), ImmutableSet.of(SERVICE_ACCOUNT))
       .build();
 
   private ResourceManager serviceMockReturnsOptions = createStrictMock(ResourceManager.class);
@@ -203,6 +216,39 @@ public class ProjectTest {
         new Project(resourceManager, new ProjectInfo.BuilderImpl(expectedReplacedProject));
     Project actualReplacedProject = newProject.replace();
     compareProjectInfos(expectedReplacedProject, actualReplacedProject);
+  }
+
+  @Test
+  public void testGetPolicy() {
+    expect(resourceManager.options()).andReturn(mockOptions).times(1);
+    expect(resourceManager.getPolicy(PROJECT_ID)).andReturn(POLICY);
+    replay(resourceManager);
+    initializeProject();
+    assertEquals(POLICY, project.getPolicy());
+  }
+
+  @Test
+  public void testReplacePolicy() {
+    expect(resourceManager.options()).andReturn(mockOptions).times(1);
+    expect(resourceManager.replacePolicy(PROJECT_ID, POLICY)).andReturn(POLICY);
+    replay(resourceManager);
+    initializeProject();
+    assertEquals(POLICY, project.replacePolicy(POLICY));
+  }
+
+  @Test
+  public void testTestPermissions() {
+    List<Boolean> response = ImmutableList.of(true, true);
+    expect(resourceManager.options()).andReturn(mockOptions).times(1);
+    expect(resourceManager.testPermissions(PROJECT_ID, Permission.GET, Permission.DELETE))
+        .andReturn(response);
+    expect(resourceManager.testPermissions(
+        PROJECT_ID, ImmutableList.of(Permission.GET, Permission.DELETE))).andReturn(response);
+    replay(resourceManager);
+    initializeProject();
+    assertEquals(response, project.testPermissions(Permission.GET, Permission.DELETE));
+    assertEquals(
+        response, project.testPermissions(ImmutableList.of(Permission.GET, Permission.DELETE)));
   }
 
   private void compareProjects(Project expected, Project value) {
