@@ -542,8 +542,10 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
                   ZoneOperationId zoneOperationId = (ZoneOperationId) operationId;
                   return computeRpc.getZoneOperation(zoneOperationId.zone(),
                       zoneOperationId.operation(), optionsMap);
-                default:
+                case GLOBAL:
                   return computeRpc.getGlobalOperation(operationId.operation(), optionsMap);
+                default:
+                  throw new IllegalArgumentException("Unexpected operation identity type");
               }
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
@@ -670,8 +672,10 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               ZoneOperationId zoneOperationId = (ZoneOperationId) operation;
               return computeRpc.deleteZoneOperation(zoneOperationId.zone(),
                   zoneOperationId.operation());
-            default:
+            case GLOBAL:
               return computeRpc.deleteGlobalOperation(operation.operation());
+            default:
+              throw new IllegalArgumentException("Unexpected operation identity type");
           }
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
