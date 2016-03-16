@@ -1,12 +1,12 @@
-/**
+/*
  * Copyright (c) 2015 Google Inc.
- * <p/>
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * <p/>
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -14,10 +14,14 @@
  * the License.
  */
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.api.services.monitoring.v3.Monitoring;
 import com.google.api.services.monitoring.v3.model.Point;
+import com.google.common.collect.ImmutableList;
+
 import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.Assert;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -49,8 +53,6 @@ public class CreateCustomMetricTest {
 
   /**
    * Creates the monitoring service client.
-   *
-   * @throws Exception
    */
   @Before
   public void setUp() throws Exception {
@@ -62,8 +64,6 @@ public class CreateCustomMetricTest {
 
   /**
    * Tests that the value written for a custom metric can be read back correctly.
-   *
-   * @throws Exception
    */
   @Test
   public void testValueRead() throws Exception {
@@ -75,17 +75,14 @@ public class CreateCustomMetricTest {
     underTest.writeCustomMetricTimeseriesValue();
     // give time for write to register
     Thread.sleep(2000);
-    List<Point> response = underTest.readTimeseriesValue()
-        .getTimeSeries().get(0).getPoints();
+    List<Point> response =
+        underTest.readTimeseriesValue().getTimeSeries().get(0).getPoints();
 
-    boolean found = false;
+    ImmutableList.Builder<Long> timeSeries = ImmutableList.builder();
     for (Point p : response) {
-      System.out.println("found a response " + p.getValue().getInt64Value());
-      if (p.getValue().getInt64Value() == 0) {
-        found = true;
-      }
+      timeSeries.add(p.getValue().getInt64Value());
     }
-    Assert.assertTrue(found);
+    assertThat(timeSeries.build()).contains(0L);
   }
 
 }
