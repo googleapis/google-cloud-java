@@ -31,7 +31,7 @@
  * Happy editing!
  */
 
-package com.google.gcloud.pubsub.spi;
+package com.google.gcloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.BackoffParams;
 import com.google.api.gax.core.ConnectionSettings;

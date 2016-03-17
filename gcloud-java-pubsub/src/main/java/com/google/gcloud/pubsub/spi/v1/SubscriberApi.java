@@ -31,7 +31,7 @@
  * Happy editing!
  */
 
-package com.google.gcloud.pubsub.spi;
+package com.google.gcloud.pubsub.spi.v1;
 
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiCallable;
