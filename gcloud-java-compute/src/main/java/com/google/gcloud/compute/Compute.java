@@ -862,7 +862,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of disk types to be returned.
+     * Returns an option to specify the maximum number of disk types returned per page.
      */
     public static DiskTypeListOption pageSize(long pageSize) {
       return new DiskTypeListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -907,7 +907,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of disk types to be returned.
+     * Returns an option to specify the maximum number of disk types returned per page.
      */
     public static DiskTypeAggregatedListOption pageSize(long pageSize) {
       return new DiskTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -955,7 +955,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter on the machine types being listed.
+     * Returns an option to specify a filter to the machine types being listed.
      */
     public static MachineTypeListOption filter(MachineTypeFilter filter) {
       return new MachineTypeListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -1000,7 +1000,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter on the machine types being listed.
+     * Returns an option to specify a filter to the machine types being listed.
      */
     public static MachineTypeAggregatedListOption filter(MachineTypeFilter filter) {
       return new MachineTypeAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -1055,7 +1055,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter on the regions being listed.
+     * Returns an option to specify a filter to the regions being listed.
      */
     public static RegionListOption filter(RegionFilter filter) {
       return new RegionListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -1122,7 +1122,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter on the zones being listed.
+     * Returns an option to specify a filter to the zones being listed.
      */
     public static ZoneListOption filter(ZoneFilter filter) {
       return new ZoneListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -1211,7 +1211,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter on the operations being listed.
+     * Returns an option to specify a filter to the operations being listed.
      */
     public static OperationListOption filter(OperationFilter filter) {
       return new OperationListOption(ComputeRpc.Option.FILTER, filter.toPb());
