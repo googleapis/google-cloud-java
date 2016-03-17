@@ -276,6 +276,16 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
       public AuthCredentials restore() {
         return INSTANCE;
       }
+
+      @Override
+      public int hashCode() {
+        return getClass().getName().hashCode();
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        return obj instanceof NoAuthCredentialsState;
+      }
     }
 
     @Override

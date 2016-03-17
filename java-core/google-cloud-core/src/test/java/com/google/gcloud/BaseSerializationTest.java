@@ -34,6 +34,9 @@ import java.io.Serializable;
  */
 public abstract class BaseSerializationTest {
 
+  /**
+   * Returns all objects for which correct serialization must be tested.
+   */
   public abstract Serializable[] serializableObjects();
 
   @Test
@@ -50,8 +53,7 @@ public abstract class BaseSerializationTest {
   }
 
   @SuppressWarnings("unchecked")
-  public <T> T serializeAndDeserialize(T obj)
-      throws IOException, ClassNotFoundException {
+  public <T> T serializeAndDeserialize(T obj) throws IOException, ClassNotFoundException {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
     try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
       output.writeObject(obj);
@@ -60,5 +62,18 @@ public abstract class BaseSerializationTest {
         new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
       return (T) input.readObject();
     }
+  }
+
+  /**
+   * Checks whether the state of a restorable object can correctly be captured, serialized and
+   * restored.
+   */
+  public void assertRestorable(Restorable<?> restorable) throws IOException,
+      ClassNotFoundException {
+    RestorableState<?> state = restorable.capture();
+    RestorableState<?> deserializedState = serializeAndDeserialize(state);
+    assertEquals(state, deserializedState);
+    assertEquals(state.hashCode(), deserializedState.hashCode());
+    assertEquals(state.toString(), deserializedState.toString());
   }
 }
