@@ -18,8 +18,6 @@ package com.google.gcloud;
 
 import com.google.common.collect.ImmutableList;
 
-import org.junit.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.Serializable;
@@ -59,17 +57,18 @@ public class SerializationTest extends BaseSerializationTest {
       + "}";
 
   @Override
-  public Serializable[] serializableObjects() {
+  protected Serializable[] serializableObjects() {
     return new Serializable[]{EXCEPTION_HANDLER, IDENTITY, PAGE, RETRY_PARAMS};
   }
 
-  @Test
-  public void testAuthCredentialState() throws IOException, ClassNotFoundException {
-    AuthCredentials credentials = AuthCredentials.createForAppEngine();
-    assertRestorable(credentials);
-    credentials = AuthCredentials.noAuth();
-    assertRestorable(credentials);
-    credentials = AuthCredentials.createForJson(new ByteArrayInputStream(JSON_KEY.getBytes()));
-    assertRestorable(credentials);
+  @Override
+  protected Restorable<?>[] restorableObjects() {
+    try {
+      return new Restorable<?>[]{AuthCredentials.createForAppEngine(), AuthCredentials.noAuth(),
+          AuthCredentials.createForJson(new ByteArrayInputStream(JSON_KEY.getBytes()))};
+    } catch (IOException ex) {
+      // never reached
+      throw new RuntimeException(ex);
+    }
   }
 }

@@ -21,6 +21,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.BaseSerializationTest;
 import com.google.gcloud.Identity;
 import com.google.gcloud.PageImpl;
+import com.google.gcloud.Restorable;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -50,12 +51,17 @@ private static final ResourceManager RESOURCE_MANAGER =
       .build();
 
   @Override
-  public Serializable[] serializableObjects() {
+  protected Serializable[] serializableObjects() {
     ResourceManagerOptions options = ResourceManagerOptions.builder().build();
     ResourceManagerOptions otherOptions = options.toBuilder()
         .projectId("some-unnecessary-project-ID")
         .build();
     return new Serializable[]{PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PROJECT, PAGE_RESULT,
         PROJECT_GET_OPTION, PROJECT_LIST_OPTION, POLICY, options, otherOptions};
+  }
+
+  @Override
+  protected Restorable<?>[] restorableObjects() {
+    return null;
   }
 }

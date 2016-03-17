@@ -21,6 +21,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.BaseSerializationTest;
+import com.google.gcloud.Restorable;
 import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
@@ -103,7 +104,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final ProjectionEntity PROJECTION_ENTITY = ProjectionEntity.fromPb(ENTITY1.toPb());
 
   @Override
-  public java.io.Serializable[] serializableObjects() {
+  protected java.io.Serializable[] serializableObjects() {
     DatastoreOptions options = DatastoreOptions.builder()
         .authCredentials(AuthCredentials.createForAppEngine())
         .normalizeDataset(false)
@@ -119,5 +120,10 @@ public class SerializationTest extends BaseSerializationTest {
         GQL2, QUERY1, QUERY2, QUERY3, NULL_VALUE, KEY_VALUE, STRING_VALUE, EMBEDDED_ENTITY_VALUE1,
         EMBEDDED_ENTITY_VALUE2, EMBEDDED_ENTITY_VALUE3, LIST_VALUE, LONG_VALUE, DOUBLE_VALUE,
         BOOLEAN_VALUE, DATE_AND_TIME_VALUE, BLOB_VALUE, RAW_VALUE, options, otherOptions};
+  }
+
+  @Override
+  protected Restorable<?>[] restorableObjects() {
+    return null;
   }
 }

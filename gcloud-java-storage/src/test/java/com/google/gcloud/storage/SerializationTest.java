@@ -21,12 +21,10 @@ import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.BaseSerializationTest;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.ReadChannel;
+import com.google.gcloud.Restorable;
 import com.google.gcloud.storage.Acl.Project.ProjectRole;
 import com.google.gcloud.storage.spi.StorageRpc;
 
-import org.junit.Test;
-
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Map;
@@ -69,7 +67,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final Map<StorageRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
 
   @Override
-  public Serializable[] serializableObjects() {
+  protected Serializable[] serializableObjects() {
     StorageOptions options = StorageOptions.builder()
         .projectId("p1")
         .authCredentials(AuthCredentials.createForAppEngine())
@@ -84,21 +82,15 @@ public class SerializationTest extends BaseSerializationTest {
         BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS, BUCKET_TARGET_OPTIONS, options, otherOptions};
   }
 
-  @Test
-  public void testReadChannelState() throws IOException, ClassNotFoundException {
+  @Override
+  protected Restorable<?>[] restorableObjects() {
     StorageOptions options = StorageOptions.builder().projectId("p2").build();
     ReadChannel reader =
         new BlobReadChannel(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
-    assertRestorable(reader);
-  }
-
-  @Test
-  public void testWriteChannelState() throws IOException, ClassNotFoundException {
-    StorageOptions options = StorageOptions.builder().projectId("p2").build();
     // avoid closing when you don't want partial writes to GCS upon failure
     @SuppressWarnings("resource")
     BlobWriteChannel writer =
         new BlobWriteChannel(options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");
-    assertRestorable(writer);
+    return new Restorable<?>[]{reader, writer};
   }
 }

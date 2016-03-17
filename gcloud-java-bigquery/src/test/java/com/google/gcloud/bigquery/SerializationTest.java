@@ -20,11 +20,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.BaseSerializationTest;
+import com.google.gcloud.Restorable;
 import com.google.gcloud.bigquery.StandardTableDefinition.StreamingBuffer;
 
-import org.junit.Test;
-
-import java.io.IOException;
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -223,7 +221,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final Job JOB = new Job(BIGQUERY, new JobInfo.BuilderImpl(JOB_INFO));
 
   @Override
-  public Serializable[] serializableObjects() {
+  protected Serializable[] serializableObjects() {
     BigQueryOptions options = BigQueryOptions.builder()
         .projectId("p1")
         .authCredentials(AuthCredentials.createForAppEngine())
@@ -246,13 +244,13 @@ public class SerializationTest extends BaseSerializationTest {
         BigQuery.JobListOption.allUsers(), DATASET, TABLE, JOB, options, otherOptions};
   }
 
-  @Test
-  public void testWriteChannelState() throws IOException, ClassNotFoundException {
+  @Override
+  protected Restorable<?>[] restorableObjects() {
     BigQueryOptions options = BigQueryOptions.builder().projectId("p2").build();
     // avoid closing when you don't want partial writes upon failure
     @SuppressWarnings("resource")
     TableDataWriteChannel writer =
         new TableDataWriteChannel(options, LOAD_CONFIGURATION, "upload-id");
-    assertRestorable(writer);
+    return new Restorable<?>[]{writer};
   }
 }
