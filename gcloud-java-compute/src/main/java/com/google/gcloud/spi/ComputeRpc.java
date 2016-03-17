@@ -270,7 +270,7 @@ public interface ComputeRpc {
   /**
    * Returns the requested region address or {@code null} if not found.
    *
-   * @throws ComputeException upon failure
+   * @throws ComputeException upon failure or if region is not found
    */
   Address getRegionAddress(String region, String address, Map<Option, ?> options);
 
@@ -278,19 +278,19 @@ public interface ComputeRpc {
    * Creates a new region address.
    *
    * @return a region operation for region address' creation
-   * @throws ComputeException upon failure
+   * @throws ComputeException upon failure or if region is not found
    */
   Operation createRegionAddress(String region, Address address, Map<Option, ?> options);
 
   /**
    * Lists the regions addresses for the provided region.
    *
-   * @throws ComputeException upon failure
+   * @throws ComputeException upon failure or if region is not found
    */
   Tuple<String, Iterable<Address>> listRegionAddresses(String region, Map<Option, ?> options);
 
   /**
-   * Lists all addressest.
+   * Lists all addresses.
    *
    * @throws ComputeException upon failure
    */
@@ -301,7 +301,7 @@ public interface ComputeRpc {
    *
    * @return a region operation if request was issued correctly, {@code null} if the address was not
    *     found
-   * @throws ComputeException upon failure
+   * @throws ComputeException upon failure or if region is not found
    */
   Operation deleteRegionAddress(String region, String address, Map<Option, ?> options);
 }

@@ -141,8 +141,8 @@ public class Address extends AddressInfo {
   /**
    * Deletes this address.
    *
-   * @return an operation object if delete request was successfully sent, {@code null} if the
-   *     address was not found
+   * @return an {@code Operation} object if delete request was successfully sent, {@code null} if
+   *     the address was not found
    * @throws ComputeException upon failure
    */
   public Operation delete(Compute.OperationOption... options) throws ComputeException {

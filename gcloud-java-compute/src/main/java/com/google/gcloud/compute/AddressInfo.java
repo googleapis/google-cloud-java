@@ -90,8 +90,12 @@ public class AddressInfo implements Serializable {
   }
 
   /**
-   * Base class for a Google Compute Engine address usage information. {@link InstanceUsage} is for
-   * addresses assigned to a Google Compute Engine instance.
+   * Base class for a Google Compute Engine address's usage information. Implementations of this
+   * class represent different possible usages of a Compute Engine address. {@link InstanceUsage}
+   * contains information for region addresses assigned to a Google Compute Engine instance.
+   * {@link RegionForwardingUsage} contains information for region addresses assigned to one or more
+   * region forwarding rule. {@link GlobalForwardingUsage} contains information for global addresses
+   * assigned to one or more global forwarding rule.
    */
   public abstract static class Usage implements Serializable {
 
@@ -430,7 +434,7 @@ public class AddressInfo implements Serializable {
   }
 
   /**
-   * Returns an unique identifier for the address; defined by the service.
+   * Returns the unique identifier for the address; defined by the service.
    */
   public String id() {
     return id;
@@ -529,21 +533,21 @@ public class AddressInfo implements Serializable {
   }
 
   /**
-   * Returns a builder for the AddressInfo object given it's identity.
+   * Returns a builder for the {@code AddressInfo} object given it's identity.
    */
   public static BuilderImpl builder(AddressId addressId) {
     return new BuilderImpl().addressId(addressId);
   }
 
   /**
-   * Returns an AddressInfo object for the provided identity.
+   * Returns an {@code AddressInfo} object for the provided identity.
    */
   public static AddressInfo of(AddressId addressId) {
     return builder(addressId).build();
   }
 
   /**
-   * Returns an AddressInfo object for the provided name. Such an object corresponds to a global
+   * Returns an {@code AddressInfo} object for the provided name. The object corresponds to a global
    * address.
    */
   public static AddressInfo of(String name) {
@@ -551,7 +555,7 @@ public class AddressInfo implements Serializable {
   }
 
   /**
-   * Returns an AddressInfo object for the provided region identity and name. Such an object
+   * Returns an {@code AddressInfo} object for the provided region identity and name. The object
    * corresponds to a region address.
    */
   public static AddressInfo of(RegionId regionId, String name) {
@@ -559,7 +563,7 @@ public class AddressInfo implements Serializable {
   }
 
   /**
-   * Returns an AddressInfo object for the provided region and address names. Such an object
+   * Returns an {@code AddressInfo} object for the provided region and address names. The object
    * corresponds to a region address.
    */
   public static AddressInfo of(String region, String name) {
