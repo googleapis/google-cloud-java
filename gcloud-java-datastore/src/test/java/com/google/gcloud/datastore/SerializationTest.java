@@ -21,7 +21,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.BaseSerializationTest;
-import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
@@ -112,7 +111,6 @@ public class SerializationTest extends BaseSerializationTest {
         .build();
     DatastoreOptions otherOptions = options.toBuilder()
         .namespace("ns1")
-        .retryParams(RetryParams.defaultInstance())
         .authCredentials(null)
         .force(true)
         .build();

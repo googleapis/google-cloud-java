@@ -18,10 +18,9 @@ package com.google.gcloud.resourcemanager;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-import com.google.gcloud.Identity;
 import com.google.gcloud.BaseSerializationTest;
+import com.google.gcloud.Identity;
 import com.google.gcloud.PageImpl;
-import com.google.gcloud.RetryParams;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -55,7 +54,6 @@ private static final ResourceManager RESOURCE_MANAGER =
     ResourceManagerOptions options = ResourceManagerOptions.builder().build();
     ResourceManagerOptions otherOptions = options.toBuilder()
         .projectId("some-unnecessary-project-ID")
-        .retryParams(RetryParams.defaultInstance())
         .build();
     return new Serializable[]{PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PROJECT, PAGE_RESULT,
         PROJECT_GET_OPTION, PROJECT_LIST_OPTION, POLICY, options, otherOptions};

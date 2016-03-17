@@ -16,16 +16,11 @@
 
 package com.google.gcloud.storage;
 
-import static org.junit.Assert.assertEquals;
-
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.BaseSerializationTest;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.ReadChannel;
-import com.google.gcloud.RestorableState;
-import com.google.gcloud.RetryParams;
-import com.google.gcloud.WriteChannel;
 import com.google.gcloud.storage.Acl.Project.ProjectRole;
 import com.google.gcloud.storage.spi.StorageRpc;
 
@@ -81,7 +76,6 @@ public class SerializationTest extends BaseSerializationTest {
         .build();
     StorageOptions otherOptions = options.toBuilder()
         .projectId("p2")
-        .retryParams(RetryParams.defaultInstance())
         .authCredentials(null)
         .build();
     return new Serializable[]{ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, ACL,
@@ -92,34 +86,19 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Test
   public void testReadChannelState() throws IOException, ClassNotFoundException {
-    StorageOptions options = StorageOptions.builder()
-        .projectId("p2")
-        .retryParams(RetryParams.defaultInstance())
-        .build();
+    StorageOptions options = StorageOptions.builder().projectId("p2").build();
     ReadChannel reader =
         new BlobReadChannel(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
-    RestorableState<ReadChannel> state = reader.capture();
-    RestorableState<ReadChannel> deserializedState = serializeAndDeserialize(state);
-    assertEquals(state, deserializedState);
-    assertEquals(state.hashCode(), deserializedState.hashCode());
-    assertEquals(state.toString(), deserializedState.toString());
-    reader.close();
+    assertRestorable(reader);
   }
 
   @Test
   public void testWriteChannelState() throws IOException, ClassNotFoundException {
-    StorageOptions options = StorageOptions.builder()
-        .projectId("p2")
-        .retryParams(RetryParams.defaultInstance())
-        .build();
+    StorageOptions options = StorageOptions.builder().projectId("p2").build();
     // avoid closing when you don't want partial writes to GCS upon failure
     @SuppressWarnings("resource")
     BlobWriteChannel writer =
         new BlobWriteChannel(options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");
-    RestorableState<WriteChannel> state = writer.capture();
-    RestorableState<WriteChannel> deserializedState = serializeAndDeserialize(state);
-    assertEquals(state, deserializedState);
-    assertEquals(state.hashCode(), deserializedState.hashCode());
-    assertEquals(state.toString(), deserializedState.toString());
+    assertRestorable(writer);
   }
 }

@@ -16,15 +16,10 @@
 
 package com.google.gcloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.BaseSerializationTest;
-import com.google.gcloud.RestorableState;
-import com.google.gcloud.RetryParams;
-import com.google.gcloud.WriteChannel;
 import com.google.gcloud.bigquery.StandardTableDefinition.StreamingBuffer;
 
 import org.junit.Test;
@@ -235,7 +230,6 @@ public class SerializationTest extends BaseSerializationTest {
         .build();
     BigQueryOptions otherOptions = options.toBuilder()
         .projectId("p2")
-        .retryParams(RetryParams.defaultInstance())
         .authCredentials(null)
         .build();
     return new Serializable[]{DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
@@ -254,18 +248,11 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Test
   public void testWriteChannelState() throws IOException, ClassNotFoundException {
-    BigQueryOptions options = BigQueryOptions.builder()
-        .projectId("p2")
-        .retryParams(RetryParams.defaultInstance())
-        .build();
+    BigQueryOptions options = BigQueryOptions.builder().projectId("p2").build();
     // avoid closing when you don't want partial writes upon failure
     @SuppressWarnings("resource")
     TableDataWriteChannel writer =
         new TableDataWriteChannel(options, LOAD_CONFIGURATION, "upload-id");
-    RestorableState<WriteChannel> state = writer.capture();
-    RestorableState<WriteChannel> deserializedState = serializeAndDeserialize(state);
-    assertEquals(state, deserializedState);
-    assertEquals(state.hashCode(), deserializedState.hashCode());
-    assertEquals(state.toString(), deserializedState.toString());
+    assertRestorable(writer);
   }
 }
