@@ -16,6 +16,7 @@
 
 package com.google.gcloud;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
@@ -30,18 +31,26 @@ import java.io.Serializable;
 
 /**
  * Base class for serialization tests. To use this class in your tests override the
- * {@code serializableObjects()} method to return all objects that must be serializable.
+ * {@code serializableObjects()} method to return all objects that must be serializable. Also
+ * override {@code restorableObjects()} method to return all restorable objects whose state must be
+ * tested for proper serialization. Both methods can return {@code null} if no such object needs to
+ * be tested.
  */
 public abstract class BaseSerializationTest {
 
   /**
    * Returns all objects for which correct serialization must be tested.
    */
-  public abstract Serializable[] serializableObjects();
+  protected abstract Serializable[] serializableObjects();
+
+  /**
+   * Returns all restorable objects whose state must be tested for proper serialization.
+   */
+  protected abstract Restorable<?>[] restorableObjects();
 
   @Test
   public void testSerializableObjects() throws Exception {
-    for (Serializable obj : serializableObjects()) {
+    for (Serializable obj : firstNonNull(serializableObjects(), new Serializable[0])) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
       assertEquals(obj, copy);
@@ -49,6 +58,17 @@ public abstract class BaseSerializationTest {
       assertEquals(obj.toString(), copy.toString());
       assertNotSame(obj, copy);
       assertEquals(copy, copy);
+    }
+  }
+
+  @Test
+  public void testRestorableObjects() throws Exception {
+    for (Restorable restorable : firstNonNull(restorableObjects(), new Restorable[0])) {
+      RestorableState<?> state = restorable.capture();
+      RestorableState<?> deserializedState = serializeAndDeserialize(state);
+      assertEquals(state, deserializedState);
+      assertEquals(state.hashCode(), deserializedState.hashCode());
+      assertEquals(state.toString(), deserializedState.toString());
     }
   }
 
@@ -62,18 +82,5 @@ public abstract class BaseSerializationTest {
         new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
       return (T) input.readObject();
     }
-  }
-
-  /**
-   * Checks whether the state of a restorable object can correctly be captured, serialized and
-   * restored.
-   */
-  public void assertRestorable(Restorable<?> restorable) throws IOException,
-      ClassNotFoundException {
-    RestorableState<?> state = restorable.capture();
-    RestorableState<?> deserializedState = serializeAndDeserialize(state);
-    assertEquals(state, deserializedState);
-    assertEquals(state.hashCode(), deserializedState.hashCode());
-    assertEquals(state.toString(), deserializedState.toString());
   }
 }

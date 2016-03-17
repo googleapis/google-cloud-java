@@ -278,7 +278,6 @@ public final class ExceptionHandler implements Serializable {
         && Objects.equals(retriableExceptions, other.retriableExceptions)
         && Objects.equals(nonRetriableExceptions, other.nonRetriableExceptions)
         && Objects.equals(retryInfo, other.retryInfo);
-
   }
 
   /**
