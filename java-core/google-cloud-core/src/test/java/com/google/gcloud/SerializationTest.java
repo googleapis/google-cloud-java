@@ -65,9 +65,7 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Test
   public void testAuthCredentialState() throws IOException, ClassNotFoundException {
-    AuthCredentials credentials = AuthCredentials.createApplicationDefaults();
-    assertRestorable(credentials);
-    credentials = AuthCredentials.createForAppEngine();
+    AuthCredentials credentials = AuthCredentials.createForAppEngine();
     assertRestorable(credentials);
     credentials = AuthCredentials.noAuth();
     assertRestorable(credentials);
