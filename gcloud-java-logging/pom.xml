@@ -11,16 +11,31 @@
   <parent>
     <groupId>com.google.gcloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.0.11-SNAPSHOT</version>
+    <version>0.1.4</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-logging</site.installationModule>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>gcloud-java-gax</artifactId>
-      <version>${project.version}</version>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <version>0.0.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-core-proto</artifactId>
+      <version>0.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-logging-type</artifactId>
+      <version>0.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-logging-v2</artifactId>
+      <version>0.0.1</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
