@@ -319,9 +319,6 @@ public class DefaultStorageRpc implements StorageRpc {
   public StorageObject compose(Iterable<StorageObject> sources, StorageObject target,
       Map<Option, ?> targetOptions) {
     ComposeRequest request = new ComposeRequest();
-    if (target.getContentType() == null) {
-      target.setContentType("application/octet-stream");
-    }
     request.setDestination(target);
     List<ComposeRequest.SourceObjects> sourceObjects = new ArrayList<>();
     for (StorageObject source : sources) {
