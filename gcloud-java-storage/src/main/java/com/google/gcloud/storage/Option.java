@@ -19,13 +19,13 @@ package com.google.gcloud.storage;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Base class for Storage operation option
+ * Base class for Storage operation option.
  */
 class Option implements Serializable {
 

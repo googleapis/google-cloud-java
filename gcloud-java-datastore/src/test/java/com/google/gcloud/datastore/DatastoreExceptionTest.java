@@ -16,39 +16,81 @@
 
 package com.google.gcloud.datastore;
 
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.gcloud.datastore.DatastoreException.Code;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
+import com.google.gcloud.BaseServiceException;
+import com.google.gcloud.RetryHelper;
 
 import org.junit.Test;
+
+import java.io.IOException;
+import java.net.SocketTimeoutException;
 
 public class DatastoreExceptionTest {
 
   @Test
-  public void testCode() throws Exception {
-    for (Reason reason : Reason.values()) {
-      Code code = Code.valueOf(reason.name());
-      assertEquals(reason.retryable(), code.retryable());
-      assertEquals(reason.description(), code.description());
-      assertEquals(reason.httpStatus(), code.httpStatus());
-    }
+  public void testDatastoreException() throws Exception {
+    DatastoreException exception = new DatastoreException(409, "message", "ABORTED");
+    assertEquals(409, exception.code());
+    assertEquals("ABORTED", exception.reason());
+    assertEquals("message", exception.getMessage());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
 
-    DatastoreException exception = new DatastoreException(Code.ABORTED, "bla");
-    assertEquals(Code.ABORTED, exception.code());
+    exception = new DatastoreException(403, "message", "DEADLINE_EXCEEDED");
+    assertEquals(403, exception.code());
+    assertEquals("DEADLINE_EXCEEDED", exception.reason());
+    assertEquals("message", exception.getMessage());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+
+    exception = new DatastoreException(503, "message", "UNAVAILABLE");
+    assertEquals(503, exception.code());
+    assertEquals("UNAVAILABLE", exception.reason());
+    assertEquals("message", exception.getMessage());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+
+    exception = new DatastoreException(500, "message", "INTERNAL");
+    assertEquals(500, exception.code());
+    assertEquals("INTERNAL", exception.reason());
+    assertEquals("message", exception.getMessage());
+    assertFalse(exception.retryable());
+    assertTrue(exception.idempotent());
+
+    IOException cause = new SocketTimeoutException();
+    exception = new DatastoreException(cause);
+    assertNull(exception.reason());
+    assertNull(exception.getMessage());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+
   }
 
   @Test
   public void testTranslateAndThrow() throws Exception {
-    for (Reason reason : Reason.values()) {
-      try {
-        DatastoreException.translateAndThrow(new DatastoreRpcException(reason));
-        fail("Exception expected");
-      } catch (DatastoreException ex) {
-        assertEquals(reason.name(), ex.code().name());
-      }
+    DatastoreException cause = new DatastoreException(503, "message", "UNAVAILABLE");
+    RetryHelper.RetryHelperException exceptionMock =
+        createMock(RetryHelper.RetryHelperException.class);
+    expect(exceptionMock.getCause()).andReturn(cause).times(2);
+    replay(exceptionMock);
+    try {
+      DatastoreException.translateAndThrow(exceptionMock);
+    } catch (BaseServiceException ex) {
+      assertEquals(503, ex.code());
+      assertEquals("message", ex.getMessage());
+      assertTrue(ex.retryable());
+      assertTrue(ex.idempotent());
+    } finally {
+      verify(exceptionMock);
     }
   }
 
@@ -58,7 +100,7 @@ public class DatastoreExceptionTest {
       DatastoreException.throwInvalidRequest("message %s %d", "a", 1);
       fail("Exception expected");
     } catch (DatastoreException ex) {
-      assertEquals(Code.FAILED_PRECONDITION, ex.code());
+      assertEquals("FAILED_PRECONDITION", ex.reason());
       assertEquals("message a 1", ex.getMessage());
     }
   }

@@ -22,9 +22,9 @@ import com.google.common.base.MoreObjects;
 import com.google.gcloud.Restorable;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryHelper;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpc.RewriteRequest;
-import com.google.gcloud.spi.StorageRpc.RewriteResponse;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc.RewriteRequest;
+import com.google.gcloud.storage.spi.StorageRpc.RewriteResponse;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -55,11 +55,12 @@ public class CopyWriter implements Restorable<CopyWriter> {
   /**
    * Returns the updated information for the written blob. Calling this method when {@code isDone()}
    * is {@code false} will block until all pending chunks are copied.
-   * <p>
-   * This method has the same effect of doing:
-   * <pre>    {@code while (!copyWriter.isDone()) {
-   *        copyWriter.copyChunk();
-   *    }}
+   *
+   * <p>This method has the same effect of doing:
+   * <pre> {@code
+   * while (!copyWriter.isDone()) {
+   *    copyWriter.copyChunk();
+   * }}
    * </pre>
    *
    * @throws StorageException upon failure
@@ -79,14 +80,14 @@ public class CopyWriter implements Restorable<CopyWriter> {
   }
 
   /**
-   * Returns {@code true} of blob rewrite finished, {@code false} otherwise.
+   * Returns {@code true} if blob copy has finished, {@code false} otherwise.
    */
   public boolean isDone() {
     return rewriteResponse.isDone;
   }
 
   /**
-   * Returns the number of bytes copied. 
+   * Returns the number of bytes copied.
    */
   public long totalBytesCopied() {
     return rewriteResponse.totalBytesRewritten;

@@ -22,22 +22,35 @@ import static org.junit.Assert.assertNotEquals;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.storage.BatchResponse.Result;
 
+import org.easymock.EasyMock;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
 
 public class BatchResponseTest {
 
-  private static final BlobInfo BLOB_INFO_1 = BlobInfo.builder("b", "o1").build();
-  private static final BlobInfo BLOB_INFO_2 = BlobInfo.builder("b", "o2").build();
-  private static final BlobInfo BLOB_INFO_3 = BlobInfo.builder("b", "o3").build();
+  private Storage mockStorage;
+  private Blob blob1;
+  private Blob blob2;
+  private Blob blob3;
+
+  @Before
+  public void setUp() {
+    mockStorage = EasyMock.createMock(Storage.class);
+    EasyMock.expect(mockStorage.options()).andReturn(null).times(3);
+    EasyMock.replay(mockStorage);
+    blob1 = new Blob(mockStorage, new BlobInfo.BuilderImpl(BlobInfo.builder("b", "o1").build()));
+    blob2 = new Blob(mockStorage, new BlobInfo.BuilderImpl(BlobInfo.builder("b", "o2").build()));
+    blob3 = new Blob(mockStorage, new BlobInfo.BuilderImpl(BlobInfo.builder("b", "o3").build()));
+  }
 
   @Test
   public void testBatchResponse() {
     List<Result<Boolean>> deletes = ImmutableList.of(Result.of(true), Result.of(false));
-    List<Result<BlobInfo>> updates =
-        ImmutableList.of(Result.of(BLOB_INFO_1), Result.of(BLOB_INFO_2));
-    List<Result<BlobInfo>> gets = ImmutableList.of(Result.of(BLOB_INFO_2), Result.of(BLOB_INFO_3));
+    List<Result<Blob>> updates =
+        ImmutableList.of(Result.of(blob1), Result.of(blob2));
+    List<Result<Blob>> gets = ImmutableList.of(Result.of(blob2), Result.of(blob3));
     BatchResponse response = new BatchResponse(deletes, updates, gets);
     assertEquals(deletes, response.deletes());
     assertEquals(updates, response.updates());
@@ -47,14 +60,13 @@ public class BatchResponseTest {
   @Test
   public void testEquals() {
     List<Result<Boolean>> deletes = ImmutableList.of(Result.of(true), Result.of(false));
-    List<Result<BlobInfo>> updates =
-        ImmutableList.of(Result.of(BLOB_INFO_1), Result.of(BLOB_INFO_2));
-    List<Result<BlobInfo>> gets = ImmutableList.of(Result.of(BLOB_INFO_2), Result.of(BLOB_INFO_3));
+    List<Result<Blob>> updates =
+        ImmutableList.of(Result.of(blob1), Result.of(blob2));
+    List<Result<Blob>> gets = ImmutableList.of(Result.of(blob2), Result.of(blob3));
     List<Result<Boolean>> otherDeletes = ImmutableList.of(Result.of(false), Result.of(true));
-    List<Result<BlobInfo>> otherUpdates =
-        ImmutableList.of(Result.of(BLOB_INFO_2), Result.of(BLOB_INFO_3));
-    List<Result<BlobInfo>> otherGets =
-        ImmutableList.of(Result.of(BLOB_INFO_1), Result.of(BLOB_INFO_2));
+    List<Result<Blob>> otherUpdates = ImmutableList.of(Result.of(blob2), Result.of(blob3));
+    List<Result<Blob>> otherGets =
+        ImmutableList.of(Result.of(blob1), Result.of(blob2));
     BatchResponse response = new BatchResponse(deletes, updates, gets);
     BatchResponse responseEquals = new BatchResponse(deletes, updates, gets);
     BatchResponse responseNotEquals1 = new BatchResponse(otherDeletes, updates, gets);

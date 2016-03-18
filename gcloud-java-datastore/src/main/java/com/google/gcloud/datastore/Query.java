@@ -22,9 +22,6 @@ import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Maps;
-import com.google.gcloud.datastore.StructuredQuery.EntityQueryBuilder;
-import com.google.gcloud.datastore.StructuredQuery.KeyQueryBuilder;
-import com.google.gcloud.datastore.StructuredQuery.ProjectionEntityQueryBuilder;
 import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -34,6 +31,10 @@ import java.util.Map;
 /**
  * A Google Cloud Datastore query.
  * For usage examples see {@link GqlQuery} and {@link StructuredQuery}.
+ *
+ * Note that queries require proper indexing. See
+ * <a href="https://cloud.google.com/datastore/docs/tools/indexconfig">
+ * Cloud Datastore Index Configuration</a> for help configuring indexes.
  *
  * @param <V> the type of the values returned by this query.
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/queries">Datastore Queries</a>
@@ -61,7 +62,8 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
       private static final long serialVersionUID = 1602329532153860907L;
 
-      @Override protected Object convert(DatastoreV1.Entity entityPb) {
+      @Override
+      Object convert(DatastoreV1.Entity entityPb) {
         if (entityPb.getPropertyCount() == 0) {
           if (!entityPb.hasKey()) {
             return null;
@@ -77,7 +79,8 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
       private static final long serialVersionUID = 7712959777507168274L;
 
-      @Override protected Entity convert(DatastoreV1.Entity entityPb) {
+      @Override
+      Entity convert(DatastoreV1.Entity entityPb) {
         return Entity.fromPb(entityPb);
       }
     };
@@ -87,7 +90,8 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
       private static final long serialVersionUID = -8514289244104446252L;
 
-      @Override protected Key convert(DatastoreV1.Entity entityPb) {
+      @Override
+      Key convert(DatastoreV1.Entity entityPb) {
         return Key.fromPb(entityPb.getKey());
       }
     };
@@ -98,7 +102,8 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
 
           private static final long serialVersionUID = -7591409419690650246L;
 
-          @Override protected ProjectionEntity convert(DatastoreV1.Entity entityPb) {
+          @Override
+          ProjectionEntity convert(DatastoreV1.Entity entityPb) {
             return ProjectionEntity.fromPb(entityPb);
           }
     };
@@ -147,7 +152,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       return resultClass.isAssignableFrom(otherResultType.resultClass);
     }
 
-    protected abstract V convert(DatastoreV1.Entity entityPb);
+    abstract V convert(DatastoreV1.Entity entityPb);
 
     static ResultType<?> fromPb(DatastoreV1.EntityResult.ResultType typePb) {
       return MoreObjects.firstNonNull(PB_TO_INSTANCE.get(typePb), UNKNOWN);
@@ -177,16 +182,16 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(resultType, namespace, bytesPb);
   }
 
-  protected abstract Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
+  abstract Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException;
 
-  protected abstract void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb);
+  abstract void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb);
 
-  protected abstract Query<V> nextQuery(DatastoreV1.QueryResultBatch responsePb);
+  abstract Query<V> nextQuery(DatastoreV1.QueryResultBatch responsePb);
 
   /**
    * Returns a new {@link GqlQuery} builder.
@@ -209,21 +214,21 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   /**
    * Returns a new {@link StructuredQuery} builder for full (complete entities) queries.
    */
-  public static EntityQueryBuilder entityQueryBuilder() {
-    return new EntityQueryBuilder();
+  public static EntityQuery.Builder entityQueryBuilder() {
+    return new EntityQuery.Builder();
   }
 
   /**
    * Returns a new {@link StructuredQuery} builder for key only queries.
    */
-  public static KeyQueryBuilder keyQueryBuilder() {
-    return new KeyQueryBuilder();
+  public static KeyQuery.Builder keyQueryBuilder() {
+    return new KeyQuery.Builder();
   }
 
   /**
    * Returns a new {@link StructuredQuery} builder for projection queries.
    */
-  public static ProjectionEntityQueryBuilder projectionEntityQueryBuilder() {
-    return new ProjectionEntityQueryBuilder();
+  public static ProjectionEntityQuery.Builder projectionEntityQueryBuilder() {
+    return new ProjectionEntityQuery.Builder();
   }
 }

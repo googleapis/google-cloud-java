@@ -27,17 +27,21 @@ import static org.junit.Assert.fail;
 
 import com.google.api.services.datastore.DatastoreV1;
 import com.google.api.services.datastore.DatastoreV1.EntityResult;
+import com.google.api.services.datastore.DatastoreV1.QueryResultBatch;
+import com.google.api.services.datastore.DatastoreV1.RunQueryRequest;
+import com.google.api.services.datastore.DatastoreV1.RunQueryResponse;
 import com.google.common.collect.Iterators;
+import com.google.common.collect.Lists;
+import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
+import com.google.gcloud.datastore.spi.DatastoreRpc;
+import com.google.gcloud.datastore.spi.DatastoreRpcFactory;
 import com.google.gcloud.datastore.testing.LocalGcdHelper;
-import com.google.gcloud.spi.DatastoreRpc;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException.Reason;
-import com.google.gcloud.spi.DatastoreRpcFactory;
+import com.google.protobuf.ByteString;
 
 import org.easymock.EasyMock;
 import org.junit.AfterClass;
@@ -87,8 +91,8 @@ public class DatastoreTest {
       FullEntity.builder(INCOMPLETE_KEY2).set("str", STR_VALUE).set("bool", BOOL_VALUE)
           .set("list", LIST_VALUE1).build();
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY2 =
-      FullEntity.builder(PARTIAL_ENTITY1).remove("str").set("bool", true).
-          set("list", LIST_VALUE1.get()).build();
+      FullEntity.builder(PARTIAL_ENTITY1).remove("str").set("bool", true)
+          .set("list", LIST_VALUE1.get()).build();
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY3 =
       FullEntity.builder(PARTIAL_ENTITY1).key(IncompleteKey.builder(PROJECT_ID, KIND3).build())
           .build();
@@ -116,15 +120,17 @@ public class DatastoreTest {
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
     if (!LocalGcdHelper.isActive(PROJECT_ID, PORT)) {
-      gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT);
+      gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT, 1.0);
     }
   }
 
   @Before
-  public void setUp() throws IOException, InterruptedException {
+  public void setUp() {
     options = DatastoreOptions.builder()
         .projectId(PROJECT_ID)
         .host("http://localhost:" + PORT)
+        .authCredentials(AuthCredentials.noAuth())
+        .retryParams(RetryParams.noRetries())
         .build();
     datastore = options.service();
     StructuredQuery<Key> query = Query.keyQueryBuilder().build();
@@ -197,7 +203,7 @@ public class DatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals(DatastoreException.Code.ABORTED, expected.code());
+      assertEquals("ABORTED", expected.reason());
     }
   }
 
@@ -225,7 +231,7 @@ public class DatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals(DatastoreException.Code.ABORTED, expected.code());
+      assertEquals("ABORTED", expected.reason());
     }
   }
 
@@ -462,6 +468,110 @@ public class DatastoreTest {
   }
 
   @Test
+  public void testQueryPaginationWithLimit() throws DatastoreException {
+    DatastoreRpcFactory rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
+    DatastoreRpc rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
+    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
+        .andReturn(rpcMock);
+    List<RunQueryResponse> responses = buildResponsesForQueryPaginationWithLimit();
+    List<ByteString> endCursors = Lists.newArrayListWithCapacity(responses.size());
+    for (RunQueryResponse response : responses) {
+      EasyMock.expect(rpcMock.runQuery(EasyMock.anyObject(RunQueryRequest.class)))
+          .andReturn(response);
+      if (response.getBatch().getMoreResults() != QueryResultBatch.MoreResultsType.NOT_FINISHED) {
+        endCursors.add(response.getBatch().getEndCursor());
+      }
+    }
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+    Datastore mockDatastore = options.toBuilder()
+        .retryParams(RetryParams.defaultInstance())
+        .serviceRpcFactory(rpcFactoryMock)
+        .build()
+        .service();
+    int limit = 2;
+    int totalCount = 0;
+    Iterator<ByteString> cursorIter = endCursors.iterator();
+    StructuredQuery<Entity> query = Query.entityQueryBuilder().limit(limit).build();
+    while (true) {
+      QueryResults<Entity> results = mockDatastore.run(query);
+      int resultCount = 0;
+      while (results.hasNext()) {
+        results.next();
+        resultCount++;
+        totalCount++;
+      }
+      assertTrue(cursorIter.hasNext());
+      Cursor expectedEndCursor = Cursor.copyFrom(cursorIter.next().toByteArray());
+      assertEquals(expectedEndCursor, results.cursorAfter());
+      if (resultCount < limit) {
+        break;
+      }
+      query = query.toBuilder().startCursor(results.cursorAfter()).build();
+    }
+    assertEquals(5, totalCount);
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+  }
+
+  private List<RunQueryResponse> buildResponsesForQueryPaginationWithLimit() {
+    Entity entity4 = Entity.builder(KEY4).set("value", StringValue.of("value")).build();
+    Entity entity5 = Entity.builder(KEY5).set("value", "value").build();
+    datastore.add(ENTITY3, entity4, entity5);
+    DatastoreRpc datastoreRpc = datastore.options().rpc();
+    List<RunQueryResponse> responses = new ArrayList<>();
+    Query<Entity> query = Query.entityQueryBuilder().build();
+    RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
+    query.populatePb(requestPb);
+    QueryResultBatch queryResultBatchPb = RunQueryResponse.newBuilder()
+        .mergeFrom(datastoreRpc.runQuery(requestPb.build()))
+        .getBatch();
+    QueryResultBatch queryResultBatchPb1 = QueryResultBatch.newBuilder()
+        .mergeFrom(queryResultBatchPb)
+        .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED)
+        .clearEntityResult()
+        .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(0, 1))
+        .setEndCursor(ByteString.copyFromUtf8("a"))
+        .build();
+    responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb1).build());
+    QueryResultBatch queryResultBatchPb2 = QueryResultBatch.newBuilder()
+        .mergeFrom(queryResultBatchPb)
+        .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
+        .clearEntityResult()
+        .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(1, 2))
+        .setEndCursor(
+            ByteString.copyFrom(new byte[] {(byte) 0x80})) // test invalid UTF-8 string
+        .build();
+    responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb2).build());
+    QueryResultBatch queryResultBatchPb3 = QueryResultBatch.newBuilder()
+        .mergeFrom(queryResultBatchPb)
+        .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
+        .clearEntityResult()
+        .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(2, 4))
+        .setEndCursor(ByteString.copyFromUtf8("b"))
+        .build();
+    responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb3).build());
+    QueryResultBatch queryResultBatchPb4 = QueryResultBatch.newBuilder()
+        .mergeFrom(queryResultBatchPb)
+        .setMoreResults(QueryResultBatch.MoreResultsType.NO_MORE_RESULTS)
+        .clearEntityResult()
+        .addAllEntityResult(queryResultBatchPb.getEntityResultList().subList(4, 5))
+        .setEndCursor(ByteString.copyFromUtf8("c"))
+        .build();
+    responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb4).build());
+    return responses;
+  }
+
+  @Test
+  public void testToUrlSafe() {
+    byte[][] invalidUtf8 =
+        new byte[][] {{(byte) 0xfe}, {(byte) 0xc1, (byte) 0xbf}, {(byte) 0xc0}, {(byte) 0x80}};
+    for (byte[] bytes : invalidUtf8) {
+      assertFalse(ByteString.copyFrom(bytes).isValidUtf8());
+      Cursor cursor = new Cursor(ByteString.copyFrom(bytes));
+      assertEquals(cursor, Cursor.fromUrlSafe(cursor.toUrlSafe()));
+    }
+  }
+
+  @Test
   public void testAllocateId() {
     KeyFactory keyFactory = datastore.newKeyFactory().kind(KIND1);
     IncompleteKey pk1 = keyFactory.newKey();
@@ -552,7 +662,7 @@ public class DatastoreTest {
     assertFalse(result.hasNext());
   }
 
-  public void testGetArrayDeferredResults() throws DatastoreRpcException {
+  public void testGetArrayDeferredResults() throws DatastoreException {
     Set<Key> requestedKeys = new HashSet<>();
     requestedKeys.add(KEY1);
     requestedKeys.add(KEY2);
@@ -567,7 +677,7 @@ public class DatastoreTest {
     assertEquals(requestedKeys, keysOfFoundEntities);
   }
 
-  public void testFetchArrayDeferredResults() throws DatastoreRpcException {
+  public void testFetchArrayDeferredResults() throws DatastoreException {
     List<Entity> foundEntities =
         createDatastoreForDeferredLookup().fetch(KEY1, KEY2, KEY3, KEY4, KEY5);
     assertEquals(foundEntities.get(0).key(), KEY1);
@@ -578,7 +688,7 @@ public class DatastoreTest {
     assertEquals(foundEntities.size(), 5);
   }
 
-  private Datastore createDatastoreForDeferredLookup() throws DatastoreRpcException {
+  private Datastore createDatastoreForDeferredLookup() throws DatastoreException {
     List<DatastoreV1.Key> keysPb = new ArrayList<>();
     keysPb.add(KEY1.toPb());
     keysPb.add(KEY2.toPb());
@@ -625,7 +735,7 @@ public class DatastoreTest {
     EasyMock.replay(rpcFactoryMock, rpcMock);
     DatastoreOptions options =
         this.options.toBuilder()
-            .retryParams(RetryParams.getDefaultInstance())
+            .retryParams(RetryParams.defaultInstance())
             .serviceRpcFactory(rpcFactoryMock)
             .build();
     return options.service();
@@ -734,11 +844,11 @@ public class DatastoreTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(rpcMock);
     EasyMock.expect(rpcMock.lookup(requestPb))
-        .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.UNAVAILABLE))
+        .andThrow(new DatastoreException(503, "UNAVAILABLE", "UNAVAILABLE", null))
         .andReturn(responsePb);
     EasyMock.replay(rpcFactoryMock, rpcMock);
     DatastoreOptions options = this.options.toBuilder()
-        .retryParams(RetryParams.getDefaultInstance())
+        .retryParams(RetryParams.defaultInstance())
         .serviceRpcFactory(rpcFactoryMock)
         .build();
     Datastore datastore = options.service();
@@ -756,7 +866,8 @@ public class DatastoreTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(rpcMock);
     EasyMock.expect(rpcMock.lookup(requestPb))
-        .andThrow(new DatastoreRpc.DatastoreRpcException(Reason.PERMISSION_DENIED))
+        .andThrow(
+            new DatastoreException(DatastoreException.UNKNOWN_CODE, "denied", "PERMISSION_DENIED"))
         .times(1);
     EasyMock.replay(rpcFactoryMock, rpcMock);
     RetryParams retryParams = RetryParams.builder().retryMinAttempts(2).build();
@@ -766,7 +877,7 @@ public class DatastoreTest {
         .build();
     Datastore datastore = options.service();
     thrown.expect(DatastoreException.class);
-    thrown.expectMessage(Reason.PERMISSION_DENIED.description());
+    thrown.expectMessage("denied");
     datastore.get(KEY1);
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
@@ -784,7 +895,7 @@ public class DatastoreTest {
         .andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(rpcFactoryMock, rpcMock);
     DatastoreOptions options = this.options.toBuilder()
-        .retryParams(RetryParams.getDefaultInstance())
+        .retryParams(RetryParams.defaultInstance())
         .serviceRpcFactory(rpcFactoryMock)
         .build();
     Datastore datastore = options.service();

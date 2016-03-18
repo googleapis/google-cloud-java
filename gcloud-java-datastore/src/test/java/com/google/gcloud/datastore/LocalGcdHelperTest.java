@@ -49,7 +49,7 @@ public class LocalGcdHelperTest {
 
   @Test
   public void testSendQuitRequest() throws IOException, InterruptedException {
-    LocalGcdHelper gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT);
+    LocalGcdHelper gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT, 0.75);
     assertTrue(LocalGcdHelper.sendQuitRequest(PORT));
     long timeoutMillis = 30000;
     long startTime = System.currentTimeMillis();
@@ -64,7 +64,7 @@ public class LocalGcdHelperTest {
 
   @Test
   public void testStartStop() throws IOException, InterruptedException {
-    LocalGcdHelper gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT);
+    LocalGcdHelper gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT, 0.75);
     assertFalse(LocalGcdHelper.isActive("wrong-project-id", PORT));
     assertTrue(LocalGcdHelper.isActive(PROJECT_ID, PORT));
     gcdHelper.stop();
