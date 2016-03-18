@@ -962,7 +962,8 @@ public interface Storage extends Service<StorageOptions> {
 
     private final BlobId source;
     private final List<BlobSourceOption> sourceOptions;
-    private final BlobInfo target;
+    private final BlobId targetId;
+    private final BlobInfo targetInfo;
     private final List<BlobTargetOption> targetOptions;
     private final Long megabytesCopiedPerChunk;
 
@@ -971,7 +972,8 @@ public interface Storage extends Service<StorageOptions> {
       private final Set<BlobSourceOption> sourceOptions = new LinkedHashSet<>();
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
       private BlobId source;
-      private BlobInfo target;
+      private BlobId targetId;
+      private BlobInfo targetInfo;
       private Long megabytesCopiedPerChunk;
 
       /**
@@ -1019,39 +1021,37 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
-      public Builder target(BlobId target) {
-        this.target = BlobInfo.builder(target).build();
+      public Builder target(BlobId targetId) {
+        this.targetId = targetId;
         return this;
       }
 
       /**
        * Sets the copy target and target options. {@code target} parameter is used to override
-       * source blob information (e.g. {@code contentType}, {@code contentLanguage}). {@code
-       * target.contentType} is a required field.
+       * source blob information (e.g. {@code contentType}, {@code contentLanguage}). Target blob
+       * information is set exactly to {@code target}, no information is inherited from the source
+       * blob. If not set, target blob information is inherited from the source blob.
        *
        * @return the builder
-       * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
        */
-      public Builder target(BlobInfo target, BlobTargetOption... options)
-          throws IllegalArgumentException {
-        checkContentType(target);
-        this.target = target;
+      public Builder target(BlobInfo targetInfo, BlobTargetOption... options) {
+        this.targetId = targetInfo.blobId();
+        this.targetInfo = targetInfo;
         Collections.addAll(targetOptions, options);
         return this;
       }
 
       /**
        * Sets the copy target and target options. {@code target} parameter is used to override
-       * source blob information (e.g. {@code contentType}, {@code contentLanguage}). {@code
-       * target.contentType} is a required field.
+       * source blob information (e.g. {@code contentType}, {@code contentLanguage}). Target blob
+       * information is set exactly to {@code target}, no information is inherited from the source
+       * blob. If not set, target blob information is inherited from the source blob.
        *
        * @return the builder
-       * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
        */
-      public Builder target(BlobInfo target, Iterable<BlobTargetOption> options)
-          throws IllegalArgumentException {
-        checkContentType(target);
-        this.target = target;
+      public Builder target(BlobInfo targetInfo, Iterable<BlobTargetOption> options) {
+        this.targetId = targetInfo.blobId();
+        this.targetInfo = targetInfo;
         Iterables.addAll(targetOptions, options);
         return this;
       }
@@ -1072,8 +1072,6 @@ public interface Storage extends Service<StorageOptions> {
        * Creates a {@code CopyRequest} object.
        */
       public CopyRequest build() {
-        checkNotNull(source);
-        checkNotNull(target);
         return new CopyRequest(this);
       }
     }
@@ -1081,7 +1079,8 @@ public interface Storage extends Service<StorageOptions> {
     private CopyRequest(Builder builder) {
       source = checkNotNull(builder.source);
       sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
-      target = checkNotNull(builder.target);
+      targetId = checkNotNull(builder.targetId);
+      targetInfo = builder.targetInfo;
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
       megabytesCopiedPerChunk = builder.megabytesCopiedPerChunk;
     }
@@ -1101,10 +1100,20 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns the {@link BlobInfo} for the target blob.
+     * Returns the {@link BlobId} for the target blob.
      */
-    public BlobInfo target() {
-      return target;
+    public BlobId targetId() {
+      return targetId;
+    }
+
+    /**
+     * Returns the {@link BlobInfo} for the target blob. If set, this value is used to replace
+     * source blob information (e.g. {@code contentType}, {@code contentLanguage}). Target blob
+     * information is set exactly to this value, no information is inherited from the source blob.
+     * If not set, target blob information is inherited from the source blob.
+     */
+    public BlobInfo targetInfo() {
+      return targetInfo;
     }
 
     /**
@@ -1125,34 +1134,27 @@ public interface Storage extends Service<StorageOptions> {
 
     /**
      * Creates a copy request. {@code target} parameter is used to override source blob information
-     * (e.g. {@code contentType}, {@code contentLanguage}). {@code target.contentType} is a required
-     * field.
+     * (e.g. {@code contentType}, {@code contentLanguage}).
      *
      * @param sourceBucket name of the bucket containing the source blob
      * @param sourceBlob name of the source blob
      * @param target a {@code BlobInfo} object for the target blob
      * @return a copy request
-     * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
      */
-    public static CopyRequest of(String sourceBucket, String sourceBlob, BlobInfo target)
-        throws IllegalArgumentException {
-      checkContentType(target);
+    public static CopyRequest of(String sourceBucket, String sourceBlob, BlobInfo target) {
       return builder().source(sourceBucket, sourceBlob).target(target).build();
     }
 
     /**
-     * Creates a copy request. {@code target} parameter is used to override source blob information
-     * (e.g. {@code contentType}, {@code contentLanguage}). {@code target.contentType} is a required
-     * field.
+     * Creates a copy request. {@code target} parameter is used to replace source blob information
+     * (e.g. {@code contentType}, {@code contentLanguage}). Target blob information is set exactly
+     * to {@code target}, no information is inherited from the source blob.
      *
      * @param sourceBlobId a {@code BlobId} object for the source blob
      * @param target a {@code BlobInfo} object for the target blob
      * @return a copy request
-     * @throws IllegalArgumentException if {@code target.contentType} is {@code null}
      */
-    public static CopyRequest of(BlobId sourceBlobId, BlobInfo target)
-        throws IllegalArgumentException {
-      checkContentType(target);
+    public static CopyRequest of(BlobId sourceBlobId, BlobInfo target) {
       return builder().source(sourceBlobId).target(target).build();
     }
 
@@ -1213,10 +1215,6 @@ public interface Storage extends Service<StorageOptions> {
 
     public static Builder builder() {
       return new Builder();
-    }
-
-    private static void checkContentType(BlobInfo blobInfo) throws IllegalArgumentException {
-      checkArgument(blobInfo.contentType() != null, "Blob content type can not be null");
     }
   }
 

@@ -18,6 +18,7 @@ package com.google.gcloud.storage;
 
 import static com.google.gcloud.storage.Storage.PredefinedAcl.PUBLIC_READ;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.storage.Storage.BlobSourceOption;
@@ -52,7 +53,8 @@ public class CopyRequestTest {
     assertEquals(SOURCE_BLOB_ID, copyRequest1.source());
     assertEquals(1, copyRequest1.sourceOptions().size());
     assertEquals(BlobSourceOption.generationMatch(1), copyRequest1.sourceOptions().get(0));
-    assertEquals(TARGET_BLOB_INFO, copyRequest1.target());
+    assertEquals(TARGET_BLOB_INFO.blobId(), copyRequest1.targetId());
+    assertEquals(TARGET_BLOB_INFO, copyRequest1.targetInfo());
     assertEquals(1, copyRequest1.targetOptions().size());
     assertEquals(BlobTargetOption.predefinedAcl(PUBLIC_READ), copyRequest1.targetOptions().get(0));
 
@@ -61,14 +63,16 @@ public class CopyRequestTest {
         .target(TARGET_BLOB_ID)
         .build();
     assertEquals(SOURCE_BLOB_ID, copyRequest2.source());
-    assertEquals(BlobInfo.builder(TARGET_BLOB_ID).build(), copyRequest2.target());
+    assertEquals(TARGET_BLOB_ID, copyRequest2.targetId());
+    assertNull(copyRequest2.targetInfo());
 
     Storage.CopyRequest copyRequest3 = Storage.CopyRequest.builder()
         .source(SOURCE_BLOB_ID)
         .target(TARGET_BLOB_INFO, ImmutableList.of(BlobTargetOption.predefinedAcl(PUBLIC_READ)))
         .build();
     assertEquals(SOURCE_BLOB_ID, copyRequest3.source());
-    assertEquals(TARGET_BLOB_INFO, copyRequest3.target());
+    assertEquals(TARGET_BLOB_INFO.blobId(), copyRequest3.targetId());
+    assertEquals(TARGET_BLOB_INFO, copyRequest3.targetInfo());
     assertEquals(ImmutableList.of(BlobTargetOption.predefinedAcl(PUBLIC_READ)),
         copyRequest3.targetOptions());
   }
@@ -77,53 +81,34 @@ public class CopyRequestTest {
   public void testCopyRequestOf() {
     Storage.CopyRequest copyRequest1 = Storage.CopyRequest.of(SOURCE_BLOB_ID, TARGET_BLOB_INFO);
     assertEquals(SOURCE_BLOB_ID, copyRequest1.source());
-    assertEquals(TARGET_BLOB_INFO, copyRequest1.target());
+    assertEquals(TARGET_BLOB_INFO.blobId(), copyRequest1.targetId());
+    assertEquals(TARGET_BLOB_INFO, copyRequest1.targetInfo());
 
     Storage.CopyRequest copyRequest2 = Storage.CopyRequest.of(SOURCE_BLOB_ID, TARGET_BLOB_NAME);
     assertEquals(SOURCE_BLOB_ID, copyRequest2.source());
-    assertEquals(BlobInfo.builder(SOURCE_BUCKET_NAME, TARGET_BLOB_NAME).build(),
-        copyRequest2.target());
+    assertEquals(BlobId.of(SOURCE_BUCKET_NAME, TARGET_BLOB_NAME), copyRequest2.targetId());
+    assertNull(copyRequest2.targetInfo());
 
     Storage.CopyRequest copyRequest3 =
         Storage.CopyRequest.of(SOURCE_BUCKET_NAME, SOURCE_BLOB_NAME, TARGET_BLOB_INFO);
     assertEquals(SOURCE_BLOB_ID, copyRequest3.source());
-    assertEquals(TARGET_BLOB_INFO, copyRequest3.target());
+    assertEquals(TARGET_BLOB_INFO.blobId(), copyRequest3.targetId());
+    assertEquals(TARGET_BLOB_INFO, copyRequest3.targetInfo());
 
     Storage.CopyRequest copyRequest4 =
         Storage.CopyRequest.of(SOURCE_BUCKET_NAME, SOURCE_BLOB_NAME, TARGET_BLOB_NAME);
     assertEquals(SOURCE_BLOB_ID, copyRequest4.source());
-    assertEquals(BlobInfo.builder(SOURCE_BUCKET_NAME, TARGET_BLOB_NAME).build(),
-        copyRequest4.target());
+    assertEquals(BlobId.of(SOURCE_BUCKET_NAME, TARGET_BLOB_NAME), copyRequest4.targetId());
+    assertNull(copyRequest4.targetInfo());
 
     Storage.CopyRequest copyRequest5 = Storage.CopyRequest.of(SOURCE_BLOB_ID, TARGET_BLOB_ID);
     assertEquals(SOURCE_BLOB_ID, copyRequest5.source());
-    assertEquals(BlobInfo.builder(TARGET_BLOB_ID).build(), copyRequest5.target());
+    assertEquals(TARGET_BLOB_ID, copyRequest5.targetId());
+    assertNull(copyRequest5.targetInfo());
 
     Storage.CopyRequest copyRequest6 =
         Storage.CopyRequest.of(SOURCE_BUCKET_NAME, SOURCE_BLOB_NAME, TARGET_BLOB_ID);
     assertEquals(SOURCE_BLOB_ID, copyRequest6.source());
-    assertEquals(BlobInfo.builder(TARGET_BLOB_ID).build(), copyRequest6.target());
-  }
-
-  @Test
-  public void testCopyRequestFail() {
-    thrown.expect(IllegalArgumentException.class);
-    Storage.CopyRequest.builder()
-        .source(SOURCE_BLOB_ID)
-        .target(BlobInfo.builder(TARGET_BLOB_ID).build())
-        .build();
-  }
-
-  @Test
-  public void testCopyRequestOfBlobInfoFail() {
-    thrown.expect(IllegalArgumentException.class);
-    Storage.CopyRequest.of(SOURCE_BLOB_ID, BlobInfo.builder(TARGET_BLOB_ID).build());
-  }
-
-  @Test
-  public void testCopyRequestOfStringFail() {
-    thrown.expect(IllegalArgumentException.class);
-    Storage.CopyRequest.of(
-        SOURCE_BUCKET_NAME, SOURCE_BLOB_NAME, BlobInfo.builder(TARGET_BLOB_ID).build());
-  }
+    assertEquals(TARGET_BLOB_ID, copyRequest6.targetId());
+    assertNull(copyRequest6.targetInfo());  }
 }

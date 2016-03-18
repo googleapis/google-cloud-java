@@ -138,16 +138,20 @@ public interface StorageRpc {
 
     public final StorageObject source;
     public final Map<StorageRpc.Option, ?> sourceOptions;
-    public final StorageObject target;
+    public final String targetBucket;
+    public final String targetName;
+    public final StorageObject targetObject;
     public final Map<StorageRpc.Option, ?> targetOptions;
     public final Long megabytesRewrittenPerCall;
 
     public RewriteRequest(StorageObject source, Map<StorageRpc.Option, ?> sourceOptions,
-        StorageObject target, Map<StorageRpc.Option, ?> targetOptions,
-        Long megabytesRewrittenPerCall) {
+        String targetBucket, String targetName, StorageObject targetObject,
+        Map<StorageRpc.Option, ?> targetOptions, Long megabytesRewrittenPerCall) {
       this.source = source;
       this.sourceOptions = sourceOptions;
-      this.target = target;
+      this.targetBucket = targetBucket;
+      this.targetName = targetName;
+      this.targetObject = targetObject;
       this.targetOptions = targetOptions;
       this.megabytesRewrittenPerCall = megabytesRewrittenPerCall;
     }
@@ -163,14 +167,17 @@ public interface StorageRpc {
       final RewriteRequest other = (RewriteRequest) obj;
       return Objects.equals(this.source, other.source)
           && Objects.equals(this.sourceOptions, other.sourceOptions)
-          && Objects.equals(this.target, other.target)
+          && Objects.equals(this.targetBucket, other.targetBucket)
+          && Objects.equals(this.targetName, other.targetName)
+          && Objects.equals(this.targetObject, other.targetObject)
           && Objects.equals(this.targetOptions, other.targetOptions)
           && Objects.equals(this.megabytesRewrittenPerCall, other.megabytesRewrittenPerCall);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(source, sourceOptions, target, targetOptions, megabytesRewrittenPerCall);
+      return Objects.hash(source, sourceOptions, targetBucket, targetName, targetObject,
+          targetOptions, megabytesRewrittenPerCall);
     }
   }
 
