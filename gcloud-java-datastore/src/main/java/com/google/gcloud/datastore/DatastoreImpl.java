@@ -23,13 +23,10 @@ import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Sets;
 import com.google.gcloud.BaseService;
-import com.google.gcloud.ExceptionHandler;
-import com.google.gcloud.ExceptionHandler.Interceptor;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.DatastoreRpc;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
 import com.google.protobuf.ByteString;
 
 import java.util.Arrays;
@@ -42,32 +39,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
 
-
-final class DatastoreImpl extends BaseService<DatastoreOptions>
-    implements Datastore {
-
-  private static final Interceptor EXCEPTION_HANDLER_INTERCEPTOR =
-      new Interceptor() {
-
-        private static final long serialVersionUID = 6911242958397733203L;
-
-        @Override
-        public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-          return Interceptor.RetryResult.CONTINUE_EVALUATION;
-        }
-
-        @Override
-        public RetryResult beforeEval(Exception exception) {
-          if (exception instanceof DatastoreRpcException) {
-            boolean retryable = ((DatastoreRpcException) exception).retryable();
-            return retryable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
-          }
-          return Interceptor.RetryResult.CONTINUE_EVALUATION;
-        }
-      };
-  private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
-      .abortOn(RuntimeException.class, DatastoreRpcException.class)
-      .interceptor(EXCEPTION_HANDLER_INTERCEPTOR).build();
+final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datastore {
 
   private final DatastoreRpc datastoreRpc;
   private final RetryParams retryParams;
@@ -105,7 +77,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   DatastoreV1.RunQueryResponse runQuery(final DatastoreV1.RunQueryRequest requestPb) {
     try {
       return RetryHelper.runWithRetries(new Callable<DatastoreV1.RunQueryResponse>() {
-        @Override public DatastoreV1.RunQueryResponse call() throws DatastoreRpcException {
+        @Override public DatastoreV1.RunQueryResponse call() throws DatastoreException {
           return datastoreRpc.runQuery(requestPb);
         }
       }, retryParams, EXCEPTION_HANDLER);
@@ -139,7 +111,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   DatastoreV1.AllocateIdsResponse allocateIds(final DatastoreV1.AllocateIdsRequest requestPb) {
     try {
       return RetryHelper.runWithRetries(new Callable<DatastoreV1.AllocateIdsResponse>() {
-        @Override public DatastoreV1.AllocateIdsResponse call() throws DatastoreRpcException {
+        @Override public DatastoreV1.AllocateIdsResponse call() throws DatastoreException {
           return datastoreRpc.allocateIds(requestPb);
         }
       }, retryParams, EXCEPTION_HANDLER);
@@ -176,7 +148,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
       if (completeEntity != null) {
         if (completeEntities.put(completeEntity.key(), completeEntity) != null) {
           throw DatastoreException.throwInvalidRequest(
-              "Duplicate entity with the key %s", entity.key());
+            "Duplicate entity with the key %s", entity.key());
         }
         mutationPb.addInsert(completeEntity.toPb());
       } else {
@@ -263,7 +235,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   DatastoreV1.LookupResponse lookup(final DatastoreV1.LookupRequest requestPb) {
     try {
       return RetryHelper.runWithRetries(new Callable<DatastoreV1.LookupResponse>() {
-        @Override public DatastoreV1.LookupResponse call() throws DatastoreRpcException {
+        @Override public DatastoreV1.LookupResponse call() throws DatastoreException {
           return datastoreRpc.lookup(requestPb);
         }
       }, retryParams, EXCEPTION_HANDLER);
@@ -334,7 +306,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   DatastoreV1.CommitResponse commit(final DatastoreV1.CommitRequest requestPb) {
     try {
       return RetryHelper.runWithRetries(new Callable<DatastoreV1.CommitResponse>() {
-        @Override public DatastoreV1.CommitResponse call() throws DatastoreRpcException {
+        @Override public DatastoreV1.CommitResponse call() throws DatastoreException {
           return datastoreRpc.commit(requestPb);
         }
       }, retryParams, EXCEPTION_HANDLER);
@@ -352,7 +324,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
     try {
       return RetryHelper.runWithRetries(new Callable<DatastoreV1.BeginTransactionResponse>() {
         @Override
-        public DatastoreV1.BeginTransactionResponse call() throws DatastoreRpcException {
+        public DatastoreV1.BeginTransactionResponse call() throws DatastoreException {
           return datastoreRpc.beginTransaction(requestPb);
         }
       }, retryParams, EXCEPTION_HANDLER);
@@ -370,7 +342,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions>
   void rollback(final DatastoreV1.RollbackRequest requestPb) {
     try {
       RetryHelper.runWithRetries(new Callable<Void>() {
-        @Override public Void call() throws DatastoreRpcException {
+        @Override public Void call() throws DatastoreException {
           datastoreRpc.rollback(requestPb);
           return null;
         }

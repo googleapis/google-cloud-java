@@ -25,7 +25,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Base class for Storage operation option
+ * Base class for Storage operation option.
  */
 class Option implements Serializable {
 

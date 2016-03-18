@@ -25,7 +25,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.spi.DatastoreRpc;
-import com.google.gcloud.spi.DatastoreRpc.DatastoreRpcException;
 import com.google.gcloud.spi.DatastoreRpcFactory;
 import com.google.gcloud.spi.DefaultDatastoreRpc;
 
@@ -126,20 +125,16 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
         .addPathElement(DatastoreV1.Key.PathElement.newBuilder().setKind("__foo__").setName("bar"))
         .build();
     requestPb.addKey(key);
-    try {
-      LookupResponse responsePb = rpc().lookup(requestPb.build());
-      if (responsePb.getDeferredCount() > 0) {
-        key = responsePb.getDeferred(0);
-      } else {
-        Iterator<EntityResult> combinedIter =
-            Iterables.concat(responsePb.getMissingList(), responsePb.getFoundList()).iterator();
-        key = combinedIter.next().getEntity().getKey();
-      }
-      builder.projectId(key.getPartitionId().getDatasetId());
-      return new DatastoreOptions(builder);
-    } catch (DatastoreRpcException e) {
-      throw DatastoreException.translateAndThrow(e);
+    LookupResponse responsePb = rpc().lookup(requestPb.build());
+    if (responsePb.getDeferredCount() > 0) {
+      key = responsePb.getDeferred(0);
+    } else {
+      Iterator<EntityResult> combinedIter =
+          Iterables.concat(responsePb.getMissingList(), responsePb.getFoundList()).iterator();
+      key = combinedIter.next().getEntity().getKey();
     }
+    builder.projectId(key.getPartitionId().getDatasetId());
+    return new DatastoreOptions(builder);
   }
 
   @Override
@@ -157,11 +152,13 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
     return projectId != null ? projectId : super.defaultProject();
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   protected DatastoreFactory defaultServiceFactory() {
     return DefaultDatastoreFactory.INSTANCE;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   protected DatastoreRpcFactory defaultRpcFactory() {
     return DefaultDatastoreRpcFactory.INSTANCE;
@@ -169,6 +166,13 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
 
   public String namespace() {
     return namespace;
+  }
+
+  /**
+   * Returns a default {@code DatastoreOptions} instance.
+   */
+  public static DatastoreOptions defaultInstance() {
+    return builder().build();
   }
 
   private static String defaultNamespace() {
@@ -192,6 +196,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
     return SCOPES;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public Builder toBuilder() {
     return new Builder(this);

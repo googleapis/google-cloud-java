@@ -82,8 +82,8 @@ public class AclTest {
 
 
   @Test
-  public void testAcl() {
-    Acl acl = new Acl(User.ofAllUsers(), Role.READER);
+  public void testOf() {
+    Acl acl = Acl.of(User.ofAllUsers(), Role.READER);
     assertEquals(User.ofAllUsers(), acl.entity());
     assertEquals(Role.READER, acl.role());
     ObjectAccessControl objectPb = acl.toObjectPb();
