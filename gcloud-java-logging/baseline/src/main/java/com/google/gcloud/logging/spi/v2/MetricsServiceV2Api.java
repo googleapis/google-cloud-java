@@ -43,9 +43,7 @@ import com.google.logging.v2.ListLogMetricsResponse;
 import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
-
 import io.grpc.ManagedChannel;
-
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
