@@ -33,7 +33,6 @@
 
 package com.google.gcloud.pubsub.spi.v1;
 
-import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.protobuf.Empty;
