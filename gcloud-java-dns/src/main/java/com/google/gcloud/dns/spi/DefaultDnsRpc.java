@@ -10,6 +10,9 @@ import static com.google.gcloud.dns.spi.DnsRpc.Option.PAGE_TOKEN;
 import static com.google.gcloud.dns.spi.DnsRpc.Option.SORTING_ORDER;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
+import com.google.api.client.googleapis.batch.BatchRequest;
+import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
+import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
@@ -21,6 +24,7 @@ import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
+import com.google.gcloud.dns.DnsBatch;
 import com.google.gcloud.dns.DnsException;
 import com.google.gcloud.dns.DnsOptions;
 
@@ -40,6 +44,10 @@ public class DefaultDnsRpc implements DnsRpc {
     return new DnsException(exception);
   }
 
+  private static DnsException translate(GoogleJsonError exception) {
+    return new DnsException(exception);
+  }
+
   /**
    * Constructs an instance of this rpc client with provided {@link DnsOptions}.
    */
@@ -51,6 +59,26 @@ public class DefaultDnsRpc implements DnsRpc {
         .setApplicationName(options.applicationName())
         .build();
     this.options = options;
+  }
+
+  @Override
+  public BatchRequest enqueueListZones(BatchRequest batch, final DnsBatch.Request request,
+      JsonBatchCallback batchCallback, Map<Option, ?> options) {
+    BatchRequest batchQueue = batch == null ? dns.batch() : batch;
+    try {
+      listZonesRequest(options).queue(batchQueue, batchCallback);
+      return batchQueue;
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  private Dns.ManagedZones.List listZonesRequest(Map<Option, ?> options) throws IOException {
+    return dns.managedZones().list(this.options.projectId())
+        .setFields(FIELDS.getString(options))
+        .setMaxResults(PAGE_SIZE.getInt(options))
+        .setDnsName(DNS_NAME.getString(options))
+        .setPageToken(PAGE_TOKEN.getString(options));
   }
 
   @Override
@@ -85,12 +113,7 @@ public class DefaultDnsRpc implements DnsRpc {
   public ListResult<ManagedZone> listZones(Map<Option, ?> options) throws DnsException {
     // fields, page token, page size
     try {
-      ManagedZonesListResponse zoneList = dns.managedZones().list(this.options.projectId())
-          .setFields(FIELDS.getString(options))
-          .setMaxResults(PAGE_SIZE.getInt(options))
-          .setDnsName(DNS_NAME.getString(options))
-          .setPageToken(PAGE_TOKEN.getString(options))
-          .execute();
+      ManagedZonesListResponse zoneList = listZonesRequest(options).execute();
       return of(zoneList.getNextPageToken(), zoneList.getManagedZones());
     } catch (IOException ex) {
       throw translate(ex);

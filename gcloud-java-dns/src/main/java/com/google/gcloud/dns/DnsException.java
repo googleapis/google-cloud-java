@@ -16,6 +16,7 @@
 
 package com.google.gcloud.dns;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.BaseServiceException;
 import com.google.gcloud.RetryHelper.RetryHelperException;
@@ -41,6 +42,10 @@ public class DnsException extends BaseServiceException {
 
   public DnsException(IOException exception) {
     super(exception, true);
+  }
+
+  public DnsException(GoogleJsonError error) {
+    super(error, true);
   }
 
   private DnsException(int code, String message) {

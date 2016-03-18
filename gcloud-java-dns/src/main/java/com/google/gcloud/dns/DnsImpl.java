@@ -21,8 +21,13 @@ import static com.google.gcloud.RetryHelper.RetryHelperException;
 import static com.google.gcloud.RetryHelper.runWithRetries;
 import static com.google.gcloud.dns.ChangeRequest.fromPb;
 
+import com.google.api.client.googleapis.batch.BatchRequest;
+import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.http.HttpHeaders;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
+import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
@@ -35,6 +40,7 @@ import com.google.gcloud.PageImpl;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.dns.spi.DnsRpc;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
@@ -309,11 +315,86 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     }
   }
 
+  @Override
+  public void submitBatch(DnsBatch toSubmit) {
+    try {
+      BatchRequest batchRequest = prepareBatch(toSubmit);
+      batchRequest.execute();
+    } catch (IOException ex) {
+      throw new DnsException(ex);
+    }
+  }
+
+  /**
+   * Since {@code BatchRequest} is a final class, it cannot be mocked with easy mock and the call of
+   * {@code execute()} cannot be tested. Thus, most of the functionality of {@link
+   * #submitBatch(DnsBatch)} is extracted to this method which does not make the call so it does not
+   * communicate with the service.
+   */
+  BatchRequest prepareBatch(DnsBatch toSubmit) throws IOException {
+    BatchRequest batch = null;
+    for (Map.Entry<DnsBatch.Request, DnsBatch.Callback> entry : toSubmit.requests().entrySet()) {
+      DnsBatch.Request request = entry.getKey();
+      DnsBatch.Callback callback = entry.getValue();
+      switch (request.operation()) {
+        case LIST_ZONES:
+          JsonBatchCallback rpcCallback = listZonesCallback(callback, request);
+          batch =
+              dnsRpc.enqueueListZones(batch, request, rpcCallback, optionMap(request.options()));
+          break;
+        default:
+          // todo(mderka) implement the rest of the operations
+          throw new UnsupportedOperationException("Not implemented yet");
+      }
+    }
+    return batch;
+  }
+
+  @Override
+  public DnsBatch batch() {
+    return new DnsBatch(this);
+  }
+
+  private JsonBatchCallback listZonesCallback(final DnsBatch.Callback callback,
+      final DnsBatch.Request request) {
+    return new JsonBatchCallback<ManagedZonesListResponse>() {
+      @Override
+      public void onFailure(GoogleJsonError error, HttpHeaders httpHeaders) {
+        if (callback != null) {
+          callback.error(new DnsException(error), request);
+        }
+      }
+
+      @Override
+      public void onSuccess(ManagedZonesListResponse zoneList, HttpHeaders httpHeaders) {
+        if (callback != null) {
+          DnsRpc.ListResult<ManagedZone> listResult =
+              DnsRpc.ListResult.of(zoneList.getNextPageToken(), zoneList.getManagedZones());
+          String cursor = listResult.pageToken();
+          Iterable<Zone> zones = listResult.results() == null ? ImmutableList.<Zone>of()
+              : Iterables.transform(listResult.results(), new Function<ManagedZone, Zone>() {
+                @Override
+                public Zone apply(ManagedZone managedZone) {
+                  return new Zone(options().service(),
+                      new ZoneInfo.BuilderImpl(ZoneInfo.fromPb(managedZone)));
+                }
+              }
+          );
+          Page<Zone> page = new PageImpl<>(
+              new ZonePageFetcher(options(), cursor, optionMap(request.options())), cursor, zones);
+          callback.success(page, request);
+        }
+      }
+    };
+  }
+
   private Map<DnsRpc.Option, ?> optionMap(AbstractOption... options) {
     Map<DnsRpc.Option, Object> temp = Maps.newEnumMap(DnsRpc.Option.class);
-    for (AbstractOption option : options) {
-      Object prev = temp.put(option.rpcOption(), option.value());
-      checkArgument(prev == null, "Duplicate option %s", option);
+    if (options != null) {
+      for (AbstractOption option : options) {
+        Object prev = temp.put(option.rpcOption(), option.value());
+        checkArgument(prev == null, "Duplicate option %s", option);
+      }
     }
     return ImmutableMap.copyOf(temp);
   }

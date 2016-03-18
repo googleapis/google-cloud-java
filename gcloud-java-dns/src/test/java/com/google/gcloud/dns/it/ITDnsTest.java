@@ -23,10 +23,12 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.client.util.Lists;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
 import com.google.gcloud.dns.ChangeRequest;
 import com.google.gcloud.dns.Dns;
+import com.google.gcloud.dns.DnsBatch;
 import com.google.gcloud.dns.DnsException;
 import com.google.gcloud.dns.DnsOptions;
 import com.google.gcloud.dns.DnsRecord;
@@ -34,12 +36,14 @@ import com.google.gcloud.dns.ProjectInfo;
 import com.google.gcloud.dns.Zone;
 import com.google.gcloud.dns.ZoneInfo;
 
+import org.easymock.EasyMock;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -950,6 +954,64 @@ public class ITDnsTest {
       waitForChangeToComplete(ZONE1.name(), change.id());
     } finally {
       clear();
+    }
+  }
+
+  @Test
+  public void testListZoneBatch() {
+    DNS.create(ZONE1);
+    DNS.create(ZONE_EMPTY_DESCRIPTION);
+    // the mock is used to check that the callbacks were not skipped
+    final RuntimeException callbackCalled = EasyMock.createStrictMock(RuntimeException.class);
+    EasyMock.expect(callbackCalled.initCause(null)).andReturn(callbackCalled);
+    EasyMock.expect(callbackCalled.initCause(null)).andReturn(callbackCalled);
+    EasyMock.expect(callbackCalled.initCause(null)).andReturn(callbackCalled);
+    EasyMock.replay(callbackCalled);
+    DnsBatch.Callback<Page<Zone>> callback = new DnsBatch.Callback<Page<Zone>>() {
+      @Override
+      public void success(Page<Zone> output, DnsBatch.Request request) {
+        List<Zone> zones = Lists.newArrayList(DNS.listZones().iterateAll());
+        Iterator<Zone> outputIterator = output.iterateAll();
+        while (outputIterator.hasNext()) {
+          Zone current = outputIterator.next();
+          assertTrue(zones.contains(current));
+        }
+        callbackCalled.initCause(null); // to indicated a call
+      }
+
+      @Override
+      public void error(DnsException ex, DnsBatch.Request request) {
+        throw ex;
+      }
+    };
+    try {
+      DNS.batch().listZones(callback).submit();
+      // with multiple calls including options
+      final Dns.ZoneListOption options =
+          Dns.ZoneListOption.fields(Dns.ZoneField.NAME, Dns.ZoneField.ZONE_ID);
+      DNS.batch().listZones(callback).listZones(
+          new DnsBatch.Callback<Page<Zone>>() {
+            @Override
+            public void success(Page<Zone> output, DnsBatch.Request request) {
+              ArrayList<Zone> zones = Lists.newArrayList(DNS.listZones(options).iterateAll());
+              Iterator<Zone> outputIterator = output.iterateAll();
+              while (outputIterator.hasNext()) {
+                Zone current = outputIterator.next();
+                assertTrue(zones.contains(current));
+              }
+              callbackCalled.initCause(null); // to indicated a call
+            }
+
+            @Override
+            public void error(DnsException ex, DnsBatch.Request request) {
+              throw ex;
+            }
+          }, options
+      ).submit();
+      EasyMock.verify(callbackCalled);
+    } finally {
+      DNS.delete(ZONE1.name());
+      DNS.delete(ZONE_EMPTY_DESCRIPTION.name());
     }
   }
 }
