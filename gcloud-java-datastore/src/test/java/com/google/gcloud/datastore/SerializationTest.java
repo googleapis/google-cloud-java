@@ -17,28 +17,17 @@
 package com.google.gcloud.datastore;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
 
 import com.google.api.services.datastore.DatastoreV1;
-import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.Multimap;
 import com.google.gcloud.AuthCredentials;
-import com.google.gcloud.RetryParams;
+import com.google.gcloud.BaseSerializationTest;
+import com.google.gcloud.Restorable;
 import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 
-import org.junit.Test;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-
-public class SerializationTest {
+public class SerializationTest extends BaseSerializationTest {
 
   private static final IncompleteKey INCOMPLETE_KEY1 =
       IncompleteKey.builder("ds", "k").ancestors(PathElement.of("p", 1)).build();
@@ -113,83 +102,31 @@ public class SerializationTest {
       .addValue(new NullValue())
       .build();
   private static final ProjectionEntity PROJECTION_ENTITY = ProjectionEntity.fromPb(ENTITY1.toPb());
+  private static final DatastoreException DATASTORE_EXCEPTION =
+      new DatastoreException(42, "message", "reason");
 
-  @SuppressWarnings("rawtypes")
-  private static final Multimap<ValueType, Value> TYPE_TO_VALUES =
-      ImmutableMultimap.<ValueType, Value>builder()
-      .put(ValueType.NULL, NULL_VALUE)
-      .put(ValueType.KEY, KEY_VALUE)
-      .put(ValueType.STRING, STRING_VALUE)
-      .putAll(ValueType.ENTITY, EMBEDDED_ENTITY_VALUE1, EMBEDDED_ENTITY_VALUE2,
-          EMBEDDED_ENTITY_VALUE3)
-      .put(ValueType.LIST, LIST_VALUE)
-      .put(ValueType.LONG, LONG_VALUE)
-      .put(ValueType.DOUBLE, DOUBLE_VALUE)
-      .put(ValueType.BOOLEAN, BOOLEAN_VALUE)
-      .put(ValueType.DATE_TIME, DATE_AND_TIME_VALUE)
-      .put(ValueType.BLOB, BLOB_VALUE)
-      .put(ValueType.RAW_VALUE, RAW_VALUE)
-      .build();
-
-  @Test
-  public void testServiceOptions() throws Exception {
+  @Override
+  protected java.io.Serializable[] serializableObjects() {
     DatastoreOptions options = DatastoreOptions.builder()
         .authCredentials(AuthCredentials.createForAppEngine())
         .normalizeDataset(false)
         .projectId("ds1")
         .build();
-    DatastoreOptions serializedCopy = serializeAndDeserialize(options);
-    assertEquals(options, serializedCopy);
-
-    options = options.toBuilder()
+    DatastoreOptions otherOptions = options.toBuilder()
         .namespace("ns1")
-        .retryParams(RetryParams.defaultInstance())
         .authCredentials(null)
         .force(true)
         .build();
-    serializedCopy = serializeAndDeserialize(options);
-    assertEquals(options, serializedCopy);
+    return new java.io.Serializable[]{KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1,
+        ENTITY2, ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, CURSOR1, GQL1,
+        GQL2, QUERY1, QUERY2, QUERY3, NULL_VALUE, KEY_VALUE, STRING_VALUE, EMBEDDED_ENTITY_VALUE1,
+        EMBEDDED_ENTITY_VALUE2, EMBEDDED_ENTITY_VALUE3, LIST_VALUE, LONG_VALUE, DOUBLE_VALUE,
+        BOOLEAN_VALUE, DATE_AND_TIME_VALUE, BLOB_VALUE, RAW_VALUE, DATASTORE_EXCEPTION, options,
+        otherOptions};
   }
 
-  @Test
-  public void testValues() throws Exception {
-    for (ValueType valueType : ValueType.values()) {
-      for (Value<?> value : TYPE_TO_VALUES.get(valueType)) {
-        Value<?> copy = serializeAndDeserialize(value);
-        assertEquals(value, value);
-        assertEquals(value, copy);
-        assertNotSame(value, copy);
-        assertEquals(copy, copy);
-        assertEquals(value.get(), copy.get());
-      }
-    }
-  }
-
-  @Test
-  public void testTypes() throws Exception {
-    Serializable<?>[] types = { KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1, ENTITY2,
-        ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, CURSOR1, GQL1, GQL2,
-        QUERY1, QUERY2, QUERY3};
-    for (Serializable<?> obj : types) {
-      Object copy = serializeAndDeserialize(obj);
-      assertEquals(obj, obj);
-      assertEquals(obj, copy);
-      assertNotSame(obj, copy);
-      assertEquals(copy, copy);
-    }
-  }
-
-  private <T extends java.io.Serializable> T serializeAndDeserialize(T obj)
-      throws IOException, ClassNotFoundException {
-    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-    try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
-      output.writeObject(obj);
-    }
-    try (ObjectInputStream input =
-        new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
-      @SuppressWarnings("unchecked")
-      T result = (T) input.readObject();
-      return result;
-    }
+  @Override
+  protected Restorable<?>[] restorableObjects() {
+    return null;
   }
 }
