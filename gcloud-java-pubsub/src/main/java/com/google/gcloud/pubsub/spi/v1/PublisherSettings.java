@@ -38,8 +38,11 @@ import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetryParams;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiCallable.ApiCallableBuilder;
+import com.google.api.gax.grpc.ApiCallable.BundlableApiCallableBuilder;
 import com.google.api.gax.grpc.ApiCallable.PageStreamingApiCallableBuilder;
-import com.google.api.gax.grpc.PageDescriptor;
+import com.google.api.gax.grpc.BundlingDescriptor;
+import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.RequestIssuer;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -56,8 +59,12 @@ import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
+import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.Topic;
 import io.grpc.Status;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 // Manually-added imports: add custom (non-generated) imports after this point.
 
@@ -134,7 +141,7 @@ public class PublisherSettings extends ServiceApiSettings {
 
   private static class MethodBuilders {
     private final ApiCallableBuilder<Topic, Topic> createTopicMethod;
-    private final ApiCallableBuilder<PublishRequest, PublishResponse> publishMethod;
+    private final BundlableApiCallableBuilder<PublishRequest, PublishResponse> publishMethod;
     private final ApiCallableBuilder<GetTopicRequest, Topic> getTopicMethod;
     private final PageStreamingApiCallableBuilder<ListTopicsRequest, ListTopicsResponse, Topic>
         listTopicsMethod;
@@ -149,7 +156,8 @@ public class PublisherSettings extends ServiceApiSettings {
       createTopicMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
       createTopicMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      publishMethod = new ApiCallableBuilder<>(PublisherGrpc.METHOD_PUBLISH);
+      publishMethod =
+          new BundlableApiCallableBuilder<>(PublisherGrpc.METHOD_PUBLISH, PUBLISH_BUNDLING_DESC);
       publishMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
       publishMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -223,7 +231,7 @@ public class PublisherSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the ApiCallableBuilder for the API method createTopic.
+   * Returns the builder for the API method createTopic.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -233,17 +241,17 @@ public class PublisherSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the ApiCallableBuilder for the API method publish.
+   * Returns the builder for the API method publish.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallableBuilder<PublishRequest, PublishResponse> publishMethod() {
+  public BundlableApiCallableBuilder<PublishRequest, PublishResponse> publishMethod() {
     return methods.publishMethod;
   }
 
   /**
-   * Returns the ApiCallableBuilder for the API method getTopic.
+   * Returns the builder for the API method getTopic.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -253,7 +261,7 @@ public class PublisherSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the PageStreamingApiCallableBuilder for the API method listTopics.
+   * Returns the builder for the API method listTopics.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -264,7 +272,7 @@ public class PublisherSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the PageStreamingApiCallableBuilder for the API method listTopicSubscriptions.
+   * Returns the builder for the API method listTopicSubscriptions.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -276,7 +284,7 @@ public class PublisherSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the ApiCallableBuilder for the API method deleteTopic.
+   * Returns the builder for the API method deleteTopic.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -285,9 +293,9 @@ public class PublisherSettings extends ServiceApiSettings {
     return methods.deleteTopicMethod;
   }
 
-  private static PageDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>
+  private static PageStreamingDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>
       LIST_TOPICS_PAGE_STR_DESC =
-          new PageDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>() {
+          new PageStreamingDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>() {
             @Override
             public Object emptyToken() {
               return "";
@@ -309,10 +317,10 @@ public class PublisherSettings extends ServiceApiSettings {
             }
           };
 
-  private static PageDescriptor<
+  private static PageStreamingDescriptor<
           ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
       LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC =
-          new PageDescriptor<
+          new PageStreamingDescriptor<
               ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>() {
             @Override
             public Object emptyToken() {
@@ -337,4 +345,66 @@ public class PublisherSettings extends ServiceApiSettings {
               return payload.getSubscriptionsList();
             }
           };
+
+  private static BundlingDescriptor<PublishRequest, PublishResponse> PUBLISH_BUNDLING_DESC =
+      new BundlingDescriptor<PublishRequest, PublishResponse>() {
+        @Override
+        public String getBundlePartitionKey(PublishRequest request) {
+          return request.getTopic();
+        }
+
+        @Override
+        public PublishRequest mergeRequests(Collection<PublishRequest> requests) {
+          PublishRequest firstRequest = requests.iterator().next();
+
+          List<PubsubMessage> elements = new ArrayList<>();
+          for (PublishRequest request : requests) {
+            elements.addAll(request.getMessagesList());
+          }
+
+          PublishRequest bundleRequest =
+              PublishRequest.newBuilder()
+                  .setTopic(firstRequest.getTopic())
+                  .addAllMessages(elements)
+                  .build();
+          return bundleRequest;
+        }
+
+        @Override
+        public void splitResponse(
+            PublishResponse bundleResponse,
+            Collection<? extends RequestIssuer<PublishRequest, PublishResponse>> bundle) {
+          int bundleMessageIndex = 0;
+          for (RequestIssuer<PublishRequest, PublishResponse> responder : bundle) {
+            List<String> subresponseElements = new ArrayList<>();
+            int subresponseCount = responder.getRequest().getMessagesCount();
+            for (int i = 0; i < subresponseCount; i++) {
+              subresponseElements.add(bundleResponse.getMessageIds(bundleMessageIndex));
+              bundleMessageIndex += 1;
+            }
+            PublishResponse response =
+                PublishResponse.newBuilder().addAllMessageIds(subresponseElements).build();
+            responder.setResponse(response);
+          }
+        }
+
+        @Override
+        public void splitException(
+            Throwable throwable,
+            Collection<? extends RequestIssuer<PublishRequest, PublishResponse>> bundle) {
+          for (RequestIssuer<PublishRequest, PublishResponse> responder : bundle) {
+            responder.setException(throwable);
+          }
+        }
+
+        @Override
+        public long countElements(PublishRequest request) {
+          return request.getMessagesCount();
+        }
+
+        @Override
+        public long countBytes(PublishRequest request) {
+          return request.getSerializedSize();
+        }
+      };
 }
