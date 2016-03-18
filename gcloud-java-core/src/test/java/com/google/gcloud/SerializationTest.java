@@ -24,11 +24,34 @@ import java.io.Serializable;
 
 public class SerializationTest extends BaseSerializationTest {
 
+  private static class SomeIamPolicy extends IamPolicy<String> {
+
+    private static final long serialVersionUID = 271243551016958285L;
+
+    private static class Builder extends IamPolicy.Builder<String, Builder> {
+
+      @Override
+      public SomeIamPolicy build() {
+        return new SomeIamPolicy(this);
+      }
+    }
+
+    protected SomeIamPolicy(Builder builder) {
+      super(builder);
+    }
+
+    @Override
+    public Builder toBuilder() {
+      return new Builder();
+    }
+  }
+
   private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.defaultInstance();
   private static final Identity IDENTITY = Identity.allAuthenticatedUsers();
   private static final PageImpl<String> PAGE =
       new PageImpl<>(null, "cursor", ImmutableList.of("string1", "string2"));
   private static final RetryParams RETRY_PARAMS = RetryParams.defaultInstance();
+  private static final SomeIamPolicy SOME_IAM_POLICY = new SomeIamPolicy.Builder().build();
   private static final String JSON_KEY = "{\n"
       + "  \"private_key_id\": \"somekeyid\",\n"
       + "  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggS"
@@ -58,7 +81,7 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    return new Serializable[]{EXCEPTION_HANDLER, IDENTITY, PAGE, RETRY_PARAMS};
+    return new Serializable[]{EXCEPTION_HANDLER, IDENTITY, PAGE, RETRY_PARAMS, SOME_IAM_POLICY};
   }
 
   @Override
