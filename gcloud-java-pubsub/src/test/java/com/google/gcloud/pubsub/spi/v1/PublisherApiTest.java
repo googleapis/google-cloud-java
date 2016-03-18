@@ -16,6 +16,7 @@ package com.google.gcloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.BackoffParams;
 import com.google.api.gax.core.RetryParams;
+import com.google.api.gax.grpc.BundlingSettings;
 import com.google.gcloud.pubsub.testing.LocalPubsubHelper;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
@@ -30,6 +31,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.joda.time.Duration;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -40,6 +42,7 @@ import org.junit.Test;
 public class PublisherApiTest {
   private static LocalPubsubHelper pubsubHelper;
   private PublisherApi publisherApi;
+  private PublisherApi bundledPublisherApi;
   private SubscriberApi subscriberApi;
 
   @BeforeClass
@@ -79,6 +82,18 @@ public class PublisherApiTest {
     publisherSettings.provideChannelWith(channel);
     publisherApi = PublisherApi.create(publisherSettings);
 
+    BundlingSettings bundlingSettings =
+        BundlingSettings.newBuilder()
+            .setElementCountThreshold(10)
+            .setDelayThreshold(Duration.standardSeconds(30))
+            .build();
+
+    PublisherSettings bundledPublisherSettings = PublisherSettings.create();
+    bundledPublisherSettings.setRetryParamsOnAllMethods(retryParams);
+    bundledPublisherSettings.provideChannelWith(channel);
+    bundledPublisherSettings.publishMethod().setBundlingSettings(bundlingSettings);
+    bundledPublisherApi = PublisherApi.create(bundledPublisherSettings);
+
     SubscriberSettings subscriberSettings = SubscriberSettings.create();
     subscriberSettings.setRetryParamsOnAllMethods(retryParams);
     subscriberSettings.provideChannelWith(channel);
@@ -92,6 +107,9 @@ public class PublisherApiTest {
     }
     if (subscriberApi != null) {
       subscriberApi.close();
+    }
+    if (bundledPublisherApi != null) {
+      bundledPublisherApi.close();
     }
     pubsubHelper.reset();
   }
@@ -115,6 +133,26 @@ public class PublisherApiTest {
     PubsubMessage msg =
         PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("pubsub-message")).build();
     publisherApi.publish(topicName, Collections.singletonList(msg));
+
+    PullResponse response = subscriberApi.pull(subscriberName, true, 100);
+    Assert.assertEquals(1, response.getReceivedMessagesCount());
+    Assert.assertEquals(
+        "pubsub-message", response.getReceivedMessages(0).getMessage().getData().toStringUtf8());
+  }
+
+  @Test
+  public void testBundledPublish() throws Exception {
+    String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "publish-topic");
+    bundledPublisherApi.createTopic(topicName);
+
+    String subscriberName = SubscriberApi.ResourceNames.formatSubscriptionPath("my-project", "my-subscribe");
+    PushConfig config = PushConfig.getDefaultInstance();
+    subscriberApi.createSubscription(subscriberName, topicName, config, 5);
+
+    PubsubMessage msg =
+        PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("pubsub-message")).build();
+    // This is a synchronous publish and should trigger the default blockingCallCountThreshold of 1
+    bundledPublisherApi.publish(topicName, Collections.singletonList(msg));
 
     PullResponse response = subscriberApi.pull(subscriberName, true, 100);
     Assert.assertEquals(1, response.getReceivedMessagesCount());

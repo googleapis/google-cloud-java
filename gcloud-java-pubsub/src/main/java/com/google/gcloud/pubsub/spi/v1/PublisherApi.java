@@ -33,8 +33,9 @@
 
 package com.google.gcloud.pubsub.spi.v1;
 
-import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiCallable;
+import com.google.api.gax.grpc.ApiCallable.BundlableApiCallableInfo;
+import com.google.api.gax.grpc.BundlerFactory;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
@@ -207,7 +208,14 @@ public class PublisherApi implements AutoCloseable {
     this.channel = settings.getChannel();
 
     this.createTopicCallable = settings.createTopicMethod().build(settings);
-    this.publishCallable = settings.publishMethod().build(settings);
+    BundlableApiCallableInfo<PublishRequest, PublishResponse> bundlablePublish =
+        settings.publishMethod().buildBundlable(settings);
+    this.publishCallable = bundlablePublish.getApiCallable();
+    BundlerFactory<PublishRequest, PublishResponse> publishBundlerFactory =
+        bundlablePublish.getBundlerFactory();
+    if (publishBundlerFactory != null) {
+      this.closeables.add(publishBundlerFactory);
+    }
     this.getTopicCallable = settings.getTopicMethod().build(settings);
     this.listTopicsCallable = settings.listTopicsMethod().build(settings);
     this.listTopicsIterableCallable = settings.listTopicsMethod().buildPageStreaming(settings);
