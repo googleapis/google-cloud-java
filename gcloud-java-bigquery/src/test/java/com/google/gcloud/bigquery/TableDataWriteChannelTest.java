@@ -32,8 +32,8 @@ import static org.junit.Assert.fail;
 
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.spi.BigQueryRpc;
-import com.google.gcloud.spi.BigQueryRpcFactory;
+import com.google.gcloud.bigquery.spi.BigQueryRpc;
+import com.google.gcloud.bigquery.spi.BigQueryRpcFactory;
 
 import org.easymock.Capture;
 import org.easymock.CaptureType;

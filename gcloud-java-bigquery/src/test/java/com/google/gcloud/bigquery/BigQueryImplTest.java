@@ -40,9 +40,9 @@ import com.google.gcloud.Page;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.WriteChannel;
 import com.google.gcloud.bigquery.InsertAllRequest.RowToInsert;
-import com.google.gcloud.spi.BigQueryRpc;
-import com.google.gcloud.spi.BigQueryRpc.Tuple;
-import com.google.gcloud.spi.BigQueryRpcFactory;
+import com.google.gcloud.bigquery.spi.BigQueryRpc;
+import com.google.gcloud.bigquery.spi.BigQueryRpc.Tuple;
+import com.google.gcloud.bigquery.spi.BigQueryRpcFactory;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;

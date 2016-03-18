@@ -29,8 +29,8 @@ import com.google.gcloud.Page;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.Service;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpc.Tuple;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc.Tuple;
 
 import java.io.InputStream;
 import java.io.Serializable;

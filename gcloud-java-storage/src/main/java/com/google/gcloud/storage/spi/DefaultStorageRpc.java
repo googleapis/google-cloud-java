@@ -12,25 +12,25 @@
  * the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.storage.spi;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
-import static com.google.gcloud.spi.StorageRpc.Option.DELIMITER;
-import static com.google.gcloud.spi.StorageRpc.Option.FIELDS;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_GENERATION_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_METAGENERATION_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_METAGENERATION_NOT_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.MAX_RESULTS;
-import static com.google.gcloud.spi.StorageRpc.Option.PAGE_TOKEN;
-import static com.google.gcloud.spi.StorageRpc.Option.PREDEFINED_ACL;
-import static com.google.gcloud.spi.StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL;
-import static com.google.gcloud.spi.StorageRpc.Option.PREFIX;
-import static com.google.gcloud.spi.StorageRpc.Option.VERSIONS;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.DELIMITER;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.FIELDS;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_GENERATION_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_METAGENERATION_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_METAGENERATION_NOT_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.MAX_RESULTS;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.PAGE_TOKEN;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.PREDEFINED_ACL;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.PREFIX;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.VERSIONS;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static javax.servlet.http.HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE;
 
