@@ -32,6 +32,16 @@ import java.util.Set;
  */
 public class BaseServiceException extends RuntimeException {
 
+  private static final long serialVersionUID = 759921776378760835L;
+  public static final int UNKNOWN_CODE = 0;
+
+  private final int code;
+  private final boolean retryable;
+  private final String reason;
+  private final boolean idempotent;
+  private final String location;
+  private final String debugInfo;
+
   protected static final class Error implements Serializable {
 
     private static final long serialVersionUID = -4019600198652965721L;
@@ -78,16 +88,6 @@ public class BaseServiceException extends RuntimeException {
       return Objects.hash(code, reason);
     }
   }
-
-  private static final long serialVersionUID = 759921776378760835L;
-  public static final int UNKNOWN_CODE = 0;
-
-  private final int code;
-  private final boolean retryable;
-  private final String reason;
-  private final boolean idempotent;
-  private final String location;
-  private final String debugInfo;
 
   public BaseServiceException(IOException exception, boolean idempotent) {
     super(message(exception), exception);
@@ -196,6 +196,31 @@ public class BaseServiceException extends RuntimeException {
 
   protected String debugInfo() {
     return debugInfo;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof BaseServiceException)) {
+      return false;
+    }
+    BaseServiceException other = (BaseServiceException) obj;
+    return Objects.equals(getCause(), other.getCause())
+        && Objects.equals(getMessage(), other.getMessage())
+        && code == other.code
+        && retryable == other.retryable
+        && Objects.equals(reason, other.reason)
+        && idempotent == other.idempotent
+        && Objects.equals(location, other.location)
+        && Objects.equals(debugInfo, other.debugInfo);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getCause(), getMessage(), code, retryable, reason, idempotent, location,
+        debugInfo);
   }
 
   protected static String reason(GoogleJsonError error) {
