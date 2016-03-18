@@ -22,8 +22,9 @@ import java.util.Iterator;
  * The result of a Google Cloud Datastore query submission.
  * When the result is not typed it is possible to cast it to its appropriate type according to
  * the {@link #resultClass} value.
- * Results are loaded lazily; therefore it is possible to get a {@code DatastoreException}
- * upon {@link Iterator#hasNext hasNext} or {@link Iterator#next next} calls.
+ * Results are loaded lazily in batches, where batch size is set by Cloud Datastore. As a result, it
+ * is possible to get a {@code DatastoreException} upon {@link Iterator#hasNext hasNext} or
+ * {@link Iterator#next next} calls.
  *
  * @param <V> the type of the results value.
  */
@@ -35,8 +36,8 @@ public interface QueryResults<V> extends Iterator<V> {
   Class<?> resultClass();
 
   /**
-   * Returns the Cursor for point after the value returned in the last {@link #next} call.
-   * Not currently implemented (depends on v1beta3).
+   * Returns the Cursor for the point after the value returned in the last {@link #next} call.
+   * Currently, {@code cursorAfter} returns null in all cases but the last result.
    */
   Cursor cursorAfter();
 }

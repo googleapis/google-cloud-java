@@ -47,22 +47,16 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and
  *      Terminology</a>
  */
-public final class BlobInfo implements Serializable {
+public class BlobInfo implements Serializable {
 
-  static final Function<StorageObject, BlobInfo> FROM_PB_FUNCTION =
-      new Function<StorageObject, BlobInfo>() {
-        @Override
-        public BlobInfo apply(StorageObject pb) {
-          return BlobInfo.fromPb(pb);
-        }
-      };
-  static final Function<BlobInfo, StorageObject> TO_PB_FUNCTION =
+  static final Function<BlobInfo, StorageObject> INFO_TO_PB_FUNCTION =
       new Function<BlobInfo, StorageObject>() {
         @Override
         public StorageObject apply(BlobInfo blobInfo) {
           return blobInfo.toPb();
         }
       };
+
   private static final long serialVersionUID = 2228487739943277159L;
   private final BlobId blobId;
   private final String id;
@@ -76,7 +70,6 @@ public final class BlobInfo implements Serializable {
   private final String crc32c;
   private final String mediaLink;
   private final Map<String, String> metadata;
-  private final Long generation;
   private final Long metageneration;
   private final Long deleteTime;
   private final Long updateTime;
@@ -97,7 +90,110 @@ public final class BlobInfo implements Serializable {
     }
   }
 
-  public static final class Builder {
+  /**
+   * Builder for {@code BlobInfo}.
+   */
+  public abstract static class Builder {
+
+    /**
+     * Sets the blob identity.
+     */
+    public abstract Builder blobId(BlobId blobId);
+
+    abstract Builder id(String id);
+
+    /**
+     * Sets the blob's data content type.
+     *
+     * @see <a href="https://tools.ietf.org/html/rfc2616#section-14.17">Content-Type</a>
+     */
+    public abstract Builder contentType(String contentType);
+
+    /**
+     * Sets the blob's data content disposition.
+     *
+     * @see <a href="https://tools.ietf.org/html/rfc6266">Content-Disposition</a>
+     */
+    public abstract Builder contentDisposition(String contentDisposition);
+
+    /**
+     * Sets the blob's data content language.
+     *
+     * @see <a href="http://tools.ietf.org/html/bcp47">Content-Language</a>
+     */
+    public abstract Builder contentLanguage(String contentLanguage);
+
+    /**
+     * Sets the blob's data content encoding.
+     *
+     * @see <a href="https://tools.ietf.org/html/rfc7231#section-3.1.2.2">Content-Encoding</a>
+     */
+    public abstract Builder contentEncoding(String contentEncoding);
+
+    abstract Builder componentCount(Integer componentCount);
+
+    /**
+     * Sets the blob's data cache control.
+     *
+     * @see <a href="https://tools.ietf.org/html/rfc7234#section-5.2">Cache-Control</a>
+     */
+    public abstract Builder cacheControl(String cacheControl);
+
+    /**
+     * Sets the blob's access control configuration.
+     *
+     * @see <a
+     * href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+     *     About Access Control Lists</a>
+     */
+    public abstract Builder acl(List<Acl> acl);
+
+    abstract Builder owner(Acl.Entity owner);
+
+    abstract Builder size(Long size);
+
+    abstract Builder etag(String etag);
+
+    abstract Builder selfLink(String selfLink);
+
+    /**
+     * Sets the MD5 hash of blob's data. MD5 value must be encoded in base64.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
+     *     Hashes and ETags: Best Practices</a>
+     */
+    public abstract Builder md5(String md5);
+
+    /**
+     * Sets the CRC32C checksum of blob's data as described in
+     * <a href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
+     * base64 in big-endian order.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
+     *     Hashes and ETags: Best Practices</a>
+     */
+    public abstract Builder crc32c(String crc32c);
+
+    abstract Builder mediaLink(String mediaLink);
+
+    /**
+     * Sets the blob's user provided metadata.
+     */
+    public abstract Builder metadata(Map<String, String> metadata);
+
+    abstract Builder metageneration(Long metageneration);
+
+    abstract Builder deleteTime(Long deleteTime);
+
+    abstract Builder updateTime(Long updateTime);
+
+    /**
+     * Creates a {@code BlobInfo} object.
+     */
+    public abstract BlobInfo build();
+  }
+
+  static final class BuilderImpl extends Builder {
 
     private BlobId blobId;
     private String id;
@@ -107,7 +203,7 @@ public final class BlobInfo implements Serializable {
     private String contentLanguage;
     private Integer componentCount;
     private String cacheControl;
-    private ImmutableList<Acl> acl;
+    private List<Acl> acl;
     private Acl.Entity owner;
     private Long size;
     private String etag;
@@ -116,126 +212,166 @@ public final class BlobInfo implements Serializable {
     private String crc32c;
     private String mediaLink;
     private Map<String, String> metadata;
-    private Long generation;
     private Long metageneration;
     private Long deleteTime;
     private Long updateTime;
 
-    private Builder() {}
+    BuilderImpl(BlobId blobId) {
+      this.blobId = blobId;
+    }
 
+    BuilderImpl(BlobInfo blobInfo) {
+      blobId = blobInfo.blobId;
+      id = blobInfo.id;
+      cacheControl = blobInfo.cacheControl;
+      contentEncoding = blobInfo.contentEncoding;
+      contentType = blobInfo.contentType;
+      contentDisposition = blobInfo.contentDisposition;
+      contentLanguage = blobInfo.contentLanguage;
+      componentCount = blobInfo.componentCount;
+      acl = blobInfo.acl;
+      owner = blobInfo.owner;
+      size = blobInfo.size;
+      etag = blobInfo.etag;
+      selfLink = blobInfo.selfLink;
+      md5 = blobInfo.md5;
+      crc32c = blobInfo.crc32c;
+      mediaLink = blobInfo.mediaLink;
+      metadata = blobInfo.metadata;
+      metageneration = blobInfo.metageneration;
+      deleteTime = blobInfo.deleteTime;
+      updateTime = blobInfo.updateTime;
+    }
+
+    @Override
     public Builder blobId(BlobId blobId) {
       this.blobId = checkNotNull(blobId);
       return this;
     }
 
+    @Override
     Builder id(String id) {
       this.id = id;
       return this;
     }
 
+    @Override
     public Builder contentType(String contentType) {
       this.contentType = firstNonNull(contentType, Data.<String>nullOf(String.class));
       return this;
     }
 
+    @Override
     public Builder contentDisposition(String contentDisposition) {
       this.contentDisposition = firstNonNull(contentDisposition, Data.<String>nullOf(String.class));
       return this;
     }
 
+    @Override
     public Builder contentLanguage(String contentLanguage) {
       this.contentLanguage = firstNonNull(contentLanguage, Data.<String>nullOf(String.class));
       return this;
     }
 
+    @Override
     public Builder contentEncoding(String contentEncoding) {
       this.contentEncoding = firstNonNull(contentEncoding, Data.<String>nullOf(String.class));
       return this;
     }
 
+    @Override
     Builder componentCount(Integer componentCount) {
       this.componentCount = componentCount;
       return this;
     }
 
+    @Override
     public Builder cacheControl(String cacheControl) {
       this.cacheControl = firstNonNull(cacheControl, Data.<String>nullOf(String.class));
       return this;
     }
 
+    @Override
     public Builder acl(List<Acl> acl) {
       this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
+    @Override
     Builder owner(Acl.Entity owner) {
       this.owner = owner;
       return this;
     }
 
+    @Override
     Builder size(Long size) {
       this.size = size;
       return this;
     }
 
+    @Override
     Builder etag(String etag) {
       this.etag = etag;
       return this;
     }
 
+    @Override
     Builder selfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    @Override
     public Builder md5(String md5) {
       this.md5 = firstNonNull(md5, Data.<String>nullOf(String.class));
       return this;
     }
 
+    @Override
     public Builder crc32c(String crc32c) {
       this.crc32c = firstNonNull(crc32c, Data.<String>nullOf(String.class));
       return this;
     }
 
+    @Override
     Builder mediaLink(String mediaLink) {
       this.mediaLink = mediaLink;
       return this;
     }
 
+    @Override
     public Builder metadata(Map<String, String> metadata) {
       this.metadata = metadata != null
-          ? new HashMap(metadata) : Data.<Map>nullOf(ImmutableEmptyMap.class);
+          ? new HashMap<>(metadata) : Data.<Map<String, String>>nullOf(ImmutableEmptyMap.class);
       return this;
     }
 
-    Builder generation(Long generation) {
-      this.generation = generation;
-      return this;
-    }
-
+    @Override
     Builder metageneration(Long metageneration) {
       this.metageneration = metageneration;
       return this;
     }
 
+    @Override
     Builder deleteTime(Long deleteTime) {
       this.deleteTime = deleteTime;
       return this;
     }
 
+    @Override
     Builder updateTime(Long updateTime) {
       this.updateTime = updateTime;
       return this;
     }
 
+    @Override
     public BlobInfo build() {
       checkNotNull(blobId);
       return new BlobInfo(this);
     }
   }
 
-  private BlobInfo(Builder builder) {
+  BlobInfo(BuilderImpl builder) {
     blobId = builder.blobId;
     id = builder.id;
     cacheControl = builder.cacheControl;
@@ -253,127 +389,210 @@ public final class BlobInfo implements Serializable {
     crc32c = builder.crc32c;
     mediaLink = builder.mediaLink;
     metadata = builder.metadata;
-    generation = builder.generation;
     metageneration = builder.metageneration;
     deleteTime = builder.deleteTime;
     updateTime = builder.updateTime;
   }
 
+  /**
+   * Returns the blob's identity.
+   */
   public BlobId blobId() {
     return blobId;
   }
 
+  /**
+   * Returns the name of the containing bucket.
+   */
   public String bucket() {
     return blobId().bucket();
   }
 
+  /**
+   * Returns the blob's id.
+   */
   public String id() {
     return id;
   }
 
+  /**
+   * Returns the blob's name.
+   */
   public String name() {
     return blobId().name();
   }
 
+  /**
+   * Returns the blob's data cache control.
+   *
+   * @see <a href="https://tools.ietf.org/html/rfc7234#section-5.2">Cache-Control</a>
+   */
   public String cacheControl() {
     return Data.isNull(cacheControl) ? null : cacheControl;
   }
 
+  /**
+   * Returns the blob's access control configuration.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+   *     About Access Control Lists</a>
+   */
   public List<Acl> acl() {
     return acl;
   }
 
+  /**
+   * Returns the blob's owner. This will always be the uploader of the blob.
+   */
   public Acl.Entity owner() {
     return owner;
   }
 
+  /**
+   * Returns the content length of the data in bytes.
+   *
+   * @see <a href="https://tools.ietf.org/html/rfc2616#section-14.13">Content-Length</a>
+   */
   public Long size() {
     return size;
   }
 
+  /**
+   * Returns the blob's data content type.
+   *
+   * @see <a href="https://tools.ietf.org/html/rfc2616#section-14.17">Content-Type</a>
+   */
   public String contentType() {
     return Data.isNull(contentType) ? null : contentType;
   }
 
+  /**
+   * Returns the blob's data content encoding.
+   *
+   * @see <a href="https://tools.ietf.org/html/rfc7231#section-3.1.2.2">Content-Encoding</a>
+   */
   public String contentEncoding() {
     return Data.isNull(contentEncoding) ? null : contentEncoding;
   }
 
+  /**
+   * Returns the blob's data content disposition.
+   *
+   * @see <a href="https://tools.ietf.org/html/rfc6266">Content-Disposition</a>
+   */
   public String contentDisposition() {
     return Data.isNull(contentDisposition) ? null : contentDisposition;
   }
 
+  /**
+   * Returns the blob's data content language.
+   *
+   * @see <a href="http://tools.ietf.org/html/bcp47">Content-Language</a>
+   */
   public String contentLanguage() {
     return Data.isNull(contentLanguage) ? null : contentLanguage;
   }
 
+  /**
+   * Returns the number of components that make up this blob. Components are accumulated through
+   * the {@link Storage#compose(Storage.ComposeRequest)} operation and are limited to a count of
+   * 1024, counting 1 for each non-composite component blob and componentCount for each composite
+   * component blob. This value is set only for composite blobs.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/composite-objects#_Count">Component Count
+   *     Property</a>
+   */
   public Integer componentCount() {
     return componentCount;
   }
 
+  /**
+   * Returns HTTP 1.1 Entity tag for the blob.
+   *
+   * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
+   */
   public String etag() {
     return etag;
   }
 
+  /**
+   * Returns the URI of this blob as a string.
+   */
   public String selfLink() {
     return selfLink;
   }
 
+  /**
+   * Returns the MD5 hash of blob's data encoded in base64.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
+   *     Hashes and ETags: Best Practices</a>
+   */
   public String md5() {
     return Data.isNull(md5) ? null : md5;
   }
 
+  /**
+   * Returns the CRC32C checksum of blob's data as described in
+   * <a href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
+   * base64 in big-endian order.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">
+   *     Hashes and ETags: Best Practices</a>
+   */
   public String crc32c() {
     return Data.isNull(crc32c) ? null : crc32c;
   }
 
+  /**
+   * Returns the blob's media download link.
+   */
   public String mediaLink() {
     return mediaLink;
   }
 
+  /**
+   * Returns blob's user provided metadata.
+   */
   public Map<String, String> metadata() {
     return metadata == null || Data.isNull(metadata) ? null : Collections.unmodifiableMap(metadata);
   }
 
+  /**
+   * Returns blob's data generation. Used for blob versioning.
+   */
   public Long generation() {
-    return generation;
+    return blobId().generation();
   }
 
+  /**
+   * Returns blob's metageneration. Used for preconditions and for detecting changes in metadata.
+   * A metageneration number is only meaningful in the context of a particular generation of a
+   * particular blob.
+   */
   public Long metageneration() {
     return metageneration;
   }
 
+  /**
+   * Returns the deletion time of the blob.
+   */
   public Long deleteTime() {
     return deleteTime;
   }
 
+  /**
+   * Returns the last modification time of the blob's metadata.
+   */
   public Long updateTime() {
     return updateTime;
   }
 
+  /**
+   * Returns a builder for the current blob.
+   */
   public Builder toBuilder() {
-    return new Builder()
-        .blobId(blobId)
-        .id(id)
-        .generation(generation)
-        .cacheControl(cacheControl)
-        .contentEncoding(contentEncoding)
-        .contentType(contentType)
-        .contentDisposition(contentDisposition)
-        .contentLanguage(contentLanguage)
-        .componentCount(componentCount)
-        .crc32c(crc32c)
-        .md5(md5)
-        .deleteTime(deleteTime)
-        .updateTime(updateTime)
-        .mediaLink(mediaLink)
-        .metadata(metadata)
-        .metageneration(metageneration)
-        .acl(acl)
-        .owner(owner)
-        .size(size)
-        .etag(etag)
-        .selfLink(selfLink);
+    return new BuilderImpl(this);
   }
 
   @Override
@@ -381,6 +600,7 @@ public final class BlobInfo implements Serializable {
     return MoreObjects.toStringHelper(this)
         .add("bucket", bucket())
         .add("name", name())
+        .add("generation", generation())
         .add("size", size())
         .add("content-type", contentType())
         .add("metadata", metadata())
@@ -394,7 +614,8 @@ public final class BlobInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof BlobInfo && Objects.equals(toPb(), ((BlobInfo) obj).toPb());
+    return obj != null && obj.getClass().equals(BlobInfo.class)
+        && Objects.equals(toPb(), ((BlobInfo) obj).toPb());
   }
 
   StorageObject toPb() {
@@ -422,8 +643,9 @@ public final class BlobInfo implements Serializable {
     Map<String, String> pbMetadata = metadata;
     if (metadata != null && !Data.isNull(metadata)) {
       pbMetadata = Maps.newHashMapWithExpectedSize(metadata.size());
-      for (String key : metadata.keySet()) {
-        pbMetadata.put(key, firstNonNull(metadata.get(key), Data.<String>nullOf(String.class)));
+      for (Map.Entry<String, String> entry : metadata.entrySet()) {
+        pbMetadata.put(entry.getKey(),
+            firstNonNull(entry.getValue(), Data.<String>nullOf(String.class)));
       }
     }
     storageObject.setMetadata(pbMetadata);
@@ -431,7 +653,6 @@ public final class BlobInfo implements Serializable {
     storageObject.setContentEncoding(contentEncoding);
     storageObject.setCrc32c(crc32c);
     storageObject.setContentType(contentType);
-    storageObject.setGeneration(generation);
     storageObject.setMd5Hash(md5);
     storageObject.setMediaLink(mediaLink);
     storageObject.setMetageneration(metageneration);
@@ -444,16 +665,36 @@ public final class BlobInfo implements Serializable {
     return storageObject;
   }
 
+  /**
+   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
+   */
   public static Builder builder(BucketInfo bucketInfo, String name) {
     return builder(bucketInfo.name(), name);
   }
 
+  /**
+   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
+   */
   public static Builder builder(String bucket, String name) {
-    return new Builder().blobId(BlobId.of(bucket, name));
+    return builder(BlobId.of(bucket, name));
+  }
+
+  /**
+   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
+   */
+  public static Builder builder(BucketInfo bucketInfo, String name, Long generation) {
+    return builder(bucketInfo.name(), name, generation);
+  }
+
+  /**
+   * Returns a {@code BlobInfo} builder where blob identity is set using the provided values.
+   */
+  public static Builder builder(String bucket, String name, Long generation) {
+    return builder(BlobId.of(bucket, name, generation));
   }
 
   public static Builder builder(BlobId blobId) {
-    return new Builder().blobId(blobId);
+    return new BuilderImpl(blobId);
   }
 
   static BlobInfo fromPb(StorageObject storageObject) {
@@ -469,9 +710,6 @@ public final class BlobInfo implements Serializable {
     }
     if (storageObject.getContentType() != null) {
       builder.contentType(storageObject.getContentType());
-    }
-    if (storageObject.getGeneration() != null) {
-      builder.generation(storageObject.getGeneration());
     }
     if (storageObject.getMd5Hash() != null) {
       builder.md5(storageObject.getMd5Hash());
