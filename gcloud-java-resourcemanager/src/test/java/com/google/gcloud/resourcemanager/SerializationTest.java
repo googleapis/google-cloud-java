@@ -49,6 +49,8 @@ private static final ResourceManager RESOURCE_MANAGER =
   private static final Policy POLICY = Policy.builder()
       .addBinding(Policy.Role.viewer(), ImmutableSet.of(Identity.user("abc@gmail.com")))
       .build();
+  private static final ResourceManagerException RESOURCE_MANAGER_EXCEPTION =
+      new ResourceManagerException(42, "message");
 
   @Override
   protected Serializable[] serializableObjects() {
@@ -57,7 +59,8 @@ private static final ResourceManager RESOURCE_MANAGER =
         .projectId("some-unnecessary-project-ID")
         .build();
     return new Serializable[]{PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PROJECT, PAGE_RESULT,
-        PROJECT_GET_OPTION, PROJECT_LIST_OPTION, POLICY, options, otherOptions};
+        PROJECT_GET_OPTION, PROJECT_LIST_OPTION, POLICY, RESOURCE_MANAGER_EXCEPTION, options,
+        otherOptions};
   }
 
   @Override

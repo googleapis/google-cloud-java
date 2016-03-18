@@ -219,6 +219,8 @@ public class SerializationTest extends BaseSerializationTest {
       new Dataset(BIGQUERY, new DatasetInfo.BuilderImpl(DATASET_INFO));
   private static final Table TABLE = new Table(BIGQUERY, new TableInfo.BuilderImpl(TABLE_INFO));
   private static final Job JOB = new Job(BIGQUERY, new JobInfo.BuilderImpl(JOB_INFO));
+  private static final BigQueryException BIG_QUERY_EXCEPTION =
+      new BigQueryException(42, "message", BIGQUERY_ERROR);
 
   @Override
   protected Serializable[] serializableObjects() {
@@ -237,7 +239,7 @@ public class SerializationTest extends BaseSerializationTest {
         LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR, JOB_STATUS, JOB_ID,
         COPY_JOB_CONFIGURATION, EXTRACT_JOB_CONFIGURATION, LOAD_CONFIGURATION,
         LOAD_JOB_CONFIGURATION, QUERY_JOB_CONFIGURATION, JOB_INFO, INSERT_ALL_REQUEST,
-        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE,
+        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE, BIG_QUERY_EXCEPTION,
         BigQuery.DatasetOption.fields(), BigQuery.DatasetDeleteOption.deleteContents(),
         BigQuery.DatasetListOption.all(), BigQuery.TableOption.fields(),
         BigQuery.TableListOption.pageSize(42L), BigQuery.JobOption.fields(),

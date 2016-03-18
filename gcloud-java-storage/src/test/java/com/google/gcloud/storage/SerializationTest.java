@@ -52,6 +52,7 @@ public class SerializationTest extends BaseSerializationTest {
       Collections.<BatchResponse.Result<Blob>>emptyList());
   private static final PageImpl<Blob> PAGE_RESULT =
       new PageImpl<>(null, "c", Collections.singletonList(BLOB));
+  private static final StorageException STORAGE_EXCEPTION = new StorageException(42, "message");
   private static final Storage.BlobListOption BLOB_LIST_OPTIONS =
       Storage.BlobListOption.pageSize(100);
   private static final Storage.BlobSourceOption BLOB_SOURCE_OPTIONS =
@@ -79,7 +80,8 @@ public class SerializationTest extends BaseSerializationTest {
     return new Serializable[]{ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, ACL,
         BLOB_INFO, BLOB, BUCKET_INFO, BUCKET, ORIGIN, CORS, BATCH_REQUEST, BATCH_RESPONSE,
         PAGE_RESULT, BLOB_LIST_OPTIONS, BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS,
-        BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS, BUCKET_TARGET_OPTIONS, options, otherOptions};
+        BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS, BUCKET_TARGET_OPTIONS, STORAGE_EXCEPTION,
+        options, otherOptions};
   }
 
   @Override

@@ -102,6 +102,8 @@ public class SerializationTest extends BaseSerializationTest {
       .addValue(new NullValue())
       .build();
   private static final ProjectionEntity PROJECTION_ENTITY = ProjectionEntity.fromPb(ENTITY1.toPb());
+  private static final DatastoreException DATASTORE_EXCEPTION =
+      new DatastoreException(42, "message", "reason");
 
   @Override
   protected java.io.Serializable[] serializableObjects() {
@@ -119,7 +121,8 @@ public class SerializationTest extends BaseSerializationTest {
         ENTITY2, ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, CURSOR1, GQL1,
         GQL2, QUERY1, QUERY2, QUERY3, NULL_VALUE, KEY_VALUE, STRING_VALUE, EMBEDDED_ENTITY_VALUE1,
         EMBEDDED_ENTITY_VALUE2, EMBEDDED_ENTITY_VALUE3, LIST_VALUE, LONG_VALUE, DOUBLE_VALUE,
-        BOOLEAN_VALUE, DATE_AND_TIME_VALUE, BLOB_VALUE, RAW_VALUE, options, otherOptions};
+        BOOLEAN_VALUE, DATE_AND_TIME_VALUE, BLOB_VALUE, RAW_VALUE, DATASTORE_EXCEPTION, options,
+        otherOptions};
   }
 
   @Override
