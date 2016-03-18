@@ -43,27 +43,27 @@ import java.util.TreeMap;
  * <h3>A usage example:</h3>
  *
  * <p>When the type of the results is known the preferred usage would be:
- * <pre>{@code
- *   Query<Entity> query =
- *       Query.gqlQueryBuilder(Query.ResultType.ENTITY, "select * from kind").build();
- *   QueryResults<Entity> results = datastore.run(query);
- *   while (results.hasNext()) {
- *     Entity entity = results.next();
- *     ...
- *   }
+ * <pre> {@code
+ * Query<Entity> query =
+ *     Query.gqlQueryBuilder(Query.ResultType.ENTITY, "select * from kind").build();
+ * QueryResults<Entity> results = datastore.run(query);
+ * while (results.hasNext()) {
+ *   Entity entity = results.next();
+ *   ...
+ * }
  * } </pre>
  *
  * <p>When the type of the results is unknown you can use this approach:
- * <pre>{@code
- *   Query<?> query = Query.gqlQueryBuilder("select __key__ from kind").build();
- *   QueryResults<?> results = datastore.run(query);
- *   if (Key.class.isAssignableFrom(results.resultClass())) {
- *     QueryResults<Key> keys = (QueryResults<Key>) results;
- *     while (keys.hasNext()) {
- *       Key key = keys.next();
- *       ...
- *     }
+ * <pre> {@code
+ * Query<?> query = Query.gqlQueryBuilder("select __key__ from kind").build();
+ * QueryResults<?> results = datastore.run(query);
+ * if (Key.class.isAssignableFrom(results.resultClass())) {
+ *   QueryResults<Key> keys = (QueryResults<Key>) results;
+ *   while (keys.hasNext()) {
+ *     Key key = keys.next();
+ *     ...
  *   }
+ * }
  * } </pre>
  *
  * @param <V> the type of the result values this query will produce
@@ -126,7 +126,7 @@ public final class GqlQuery<V> extends Query<V> {
     }
 
     @Override
-    protected DatastoreV1.GqlQueryArg toPb() {
+    DatastoreV1.GqlQueryArg toPb() {
       DatastoreV1.GqlQueryArg.Builder argPb = DatastoreV1.GqlQueryArg.newBuilder();
       if (name != null) {
         argPb.setName(name);
@@ -141,7 +141,7 @@ public final class GqlQuery<V> extends Query<V> {
     }
 
     @Override
-    protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+    Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
       return fromPb(DatastoreV1.GqlQueryArg.parseFrom(bytesPb));
     }
 
@@ -370,7 +370,7 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   @Override
-  protected DatastoreV1.GqlQuery toPb() {
+  DatastoreV1.GqlQuery toPb() {
     DatastoreV1.GqlQuery.Builder queryPb = DatastoreV1.GqlQuery.newBuilder();
     queryPb.setQueryString(queryString);
     queryPb.setAllowLiteral(allowLiteral);
@@ -384,18 +384,18 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   @Override
-  protected void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb) {
+  void populatePb(DatastoreV1.RunQueryRequest.Builder requestPb) {
     requestPb.setGqlQuery(toPb());
   }
 
   @Override
-  protected GqlQuery<V> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
+  GqlQuery<V> nextQuery(DatastoreV1.QueryResultBatch responsePb) {
     // See issue #17
     throw new UnsupportedOperationException("paging for this query is not implemented yet");
   }
 
   @Override
-  protected Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
+  Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException {
     return fromPb(resultType, namespace, DatastoreV1.GqlQuery.parseFrom(bytesPb));
   }

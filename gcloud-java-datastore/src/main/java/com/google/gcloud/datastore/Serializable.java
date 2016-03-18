@@ -46,7 +46,7 @@ abstract class Serializable<M extends GeneratedMessage> implements java.io.Seria
     bytesPb = (byte[]) input.readObject();
   }
 
-  protected Object readResolve() throws ObjectStreamException {
+  Object readResolve() throws ObjectStreamException {
     try {
       return fromPb(bytesPb);
     } catch (InvalidProtocolBufferException ex) {
@@ -58,7 +58,7 @@ abstract class Serializable<M extends GeneratedMessage> implements java.io.Seria
     }
   }
 
-  protected abstract M toPb();
+  abstract M toPb();
 
-  protected abstract Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException;
+  abstract Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException;
 }

@@ -22,15 +22,13 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.gcloud.datastore.spi.DatastoreRpc;
+import com.google.gcloud.datastore.spi.DatastoreRpcFactory;
 import com.google.gcloud.datastore.testing.LocalGcdHelper;
-import com.google.gcloud.spi.DatastoreRpc;
-import com.google.gcloud.spi.DatastoreRpcFactory;
 
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.IOException;
 
 public class DatastoreOptionsTest {
 
@@ -41,7 +39,7 @@ public class DatastoreOptionsTest {
   private DatastoreOptions.Builder options;
 
   @Before
-  public void setUp() throws IOException, InterruptedException {
+  public void setUp() {
     datastoreRpcFactory = EasyMock.createMock(DatastoreRpcFactory.class);
     datastoreRpc = EasyMock.createMock(DatastoreRpc.class);
     options = DatastoreOptions.builder()

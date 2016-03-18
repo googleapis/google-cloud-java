@@ -54,7 +54,7 @@ public class IncompleteKey extends BaseKey {
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return fromPb(DatastoreV1.Key.parseFrom(bytesPb));
   }
 
@@ -82,6 +82,29 @@ public class IncompleteKey extends BaseKey {
       return new Key(projectId, namespace, path);
     }
     return new IncompleteKey(projectId, namespace, path);
+  }
+
+  /**
+   * Returns the key's parent.
+   */
+  @Override
+  public Key parent() {
+    List<PathElement> ancestors = ancestors();
+    if (ancestors.isEmpty()) {
+      return null;
+    }
+    PathElement parent = ancestors.get(ancestors.size() - 1);
+    Key.Builder keyBuilder;
+    if (parent.hasName()) {
+      keyBuilder = Key.builder(projectId(), parent.kind(), parent.name());
+    } else {
+      keyBuilder = Key.builder(projectId(), parent.kind(), parent.id());
+    }
+    String namespace = namespace();
+    if (namespace != null) {
+      keyBuilder.namespace(namespace);
+    }
+    return keyBuilder.ancestors(ancestors.subList(0, ancestors.size() - 1)).build();
   }
 
   public static Builder builder(String projectId, String kind) {

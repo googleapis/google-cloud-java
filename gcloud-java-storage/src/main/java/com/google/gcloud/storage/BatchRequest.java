@@ -18,6 +18,7 @@ package com.google.gcloud.storage;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
+import com.google.gcloud.storage.Storage.BlobGetOption;
 import com.google.gcloud.storage.Storage.BlobSourceOption;
 import com.google.gcloud.storage.Storage.BlobTargetOption;
 
@@ -35,13 +36,13 @@ public final class BatchRequest implements Serializable {
 
   private final Map<BlobId, Iterable<BlobSourceOption>> toDelete;
   private final Map<BlobInfo, Iterable<BlobTargetOption>> toUpdate;
-  private final Map<BlobId, Iterable<BlobSourceOption>> toGet;
+  private final Map<BlobId, Iterable<BlobGetOption>> toGet;
 
   public static class Builder {
 
     private Map<BlobId, Iterable<BlobSourceOption>> toDelete = new LinkedHashMap<>();
     private Map<BlobInfo, Iterable<BlobTargetOption>> toUpdate = new LinkedHashMap<>();
-    private Map<BlobId, Iterable<BlobSourceOption>> toGet = new LinkedHashMap<>();
+    private Map<BlobId, Iterable<BlobGetOption>> toGet = new LinkedHashMap<>();
 
     private Builder() {}
 
@@ -72,7 +73,7 @@ public final class BatchRequest implements Serializable {
     /**
      * Retrieve metadata for the given blob.
      */
-    public Builder get(String bucket, String blob, BlobSourceOption... options) {
+    public Builder get(String bucket, String blob, BlobGetOption... options) {
       toGet.put(BlobId.of(bucket, blob), Lists.newArrayList(options));
       return this;
     }
@@ -80,7 +81,7 @@ public final class BatchRequest implements Serializable {
     /**
      * Retrieve metadata for the given blob.
      */
-    public Builder get(BlobId blob, BlobSourceOption... options) {
+    public Builder get(BlobId blob, BlobGetOption... options) {
       toGet.put(blob, Lists.newArrayList(options));
       return this;
     }
@@ -120,7 +121,7 @@ public final class BatchRequest implements Serializable {
     return toUpdate;
   }
 
-  public Map<BlobId, Iterable<BlobSourceOption>> toGet() {
+  public Map<BlobId, Iterable<BlobGetOption>> toGet() {
     return toGet;
   }
 
