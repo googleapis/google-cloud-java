@@ -90,7 +90,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
     }
 
     @SuppressWarnings("unchecked")
-    protected B fill(DatastoreV1.Entity entityPb) {
+    B fill(DatastoreV1.Entity entityPb) {
       Map<String, Value<?>> copiedProperties = Maps.newHashMap();
       for (DatastoreV1.Property property : entityPb.getPropertyList()) {
         copiedProperties.put(property.getName(), Value.fromPb(property.getValue()));
@@ -243,7 +243,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the {@link Value} for the given property {@code name}.
    *
-   * @throws DatastoreException if not such property.
+   * @throws DatastoreException if not such property
    */
   public <V extends Value<?>> V getValue(String name) {
     @SuppressWarnings("unchecked")
@@ -257,7 +257,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns true if property is an instance of NullValue.
    *
-   * @throws DatastoreException if not such property.
+   * @throws DatastoreException if not such property
    */
   public boolean isNull(String name) {
     return getValue(name) instanceof NullValue;
@@ -267,8 +267,8 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a string.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a string.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a string
    */
   @SuppressWarnings("unchecked")
   public String getString(String name) {
@@ -278,8 +278,8 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as long.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a long.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a long
    */
   @SuppressWarnings("unchecked")
   public long getLong(String name) {
@@ -289,8 +289,8 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a double.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a double.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a double
    */
   @SuppressWarnings("unchecked")
   public double getDouble(String name) {
@@ -300,8 +300,8 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a boolean.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a boolean.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a boolean
    */
   @SuppressWarnings("unchecked")
   public boolean getBoolean(String name) {
@@ -311,8 +311,8 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a DateTime.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a DateTime.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a DateTime
    */
   @SuppressWarnings("unchecked")
   public DateTime getDateTime(String name) {
@@ -322,8 +322,8 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a Key.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a Key.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a Key
    */
   @SuppressWarnings("unchecked")
   public Key getKey(String name) {
@@ -333,8 +333,8 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as an entity.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not an entity.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not an entity
    */
   @SuppressWarnings("unchecked")
   public <K extends IncompleteKey> FullEntity<K> getEntity(String name) {
@@ -344,8 +344,8 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a list of values.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a list of values.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a list of values
    */
   @SuppressWarnings("unchecked")
   public List<? extends Value<?>> getList(String name) {
@@ -355,8 +355,8 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   /**
    * Returns the property value as a blob.
    *
-   * @throws DatastoreException if not such property.
-   * @throws ClassCastException if value is not a blob.
+   * @throws DatastoreException if not such property
+   * @throws ClassCastException if value is not a blob
    */
   @SuppressWarnings("unchecked")
   public Blob getBlob(String name) {
@@ -375,7 +375,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     Builder<?, ?> builder = emptyBuilder();
     builder.fill(DatastoreV1.Entity.parseFrom(bytesPb));
     return builder.build();
@@ -384,7 +384,7 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   protected abstract Builder<?, ?> emptyBuilder();
 
   @Override
-  protected final DatastoreV1.Entity toPb() {
+  final DatastoreV1.Entity toPb() {
     DatastoreV1.Entity.Builder entityPb = DatastoreV1.Entity.newBuilder();
     for (Map.Entry<String, Value<?>> entry : properties.entrySet()) {
       DatastoreV1.Property.Builder propertyPb = DatastoreV1.Property.newBuilder();

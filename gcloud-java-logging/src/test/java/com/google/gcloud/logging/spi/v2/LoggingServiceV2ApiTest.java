@@ -16,15 +16,8 @@ package com.google.gcloud.logging.spi.v2;
 
 import com.google.api.MonitoredResource;
 import com.google.common.collect.Iterables;
-import com.google.gcloud.logging.testing.LocalLoggingHelper;
+import com.google.gcloud.logging.spi.v2.testing.LocalLoggingHelper;
 import com.google.logging.v2.LogEntry;
-
-import io.gapi.gax.grpc.ServiceApiSettings;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -32,6 +25,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class LoggingServiceV2ApiTest {
   private static LocalLoggingHelper loggingHelper;
@@ -51,19 +49,19 @@ public class LoggingServiceV2ApiTest {
   @Before
   public void setUp() throws IOException {
     loggingHelper.reset();
-    ServiceApiSettings settings = new ServiceApiSettings();
-    settings.setChannel(loggingHelper.createChannel());
+    LoggingServiceV2Settings settings = LoggingServiceV2Settings.create();
+    settings.provideChannelWith(loggingHelper.createChannel());
     loggingApi = LoggingServiceV2Api.create(settings);
   }
 
   @After
-  public void tearDown() {
+  public void tearDown() throws Exception {
     loggingApi.close();
   }
 
   @Test
   public void testWriteLog() {
-    String logName = LoggingServiceV2Api.createLogNamePath("my-project", "my-log");
+    String logName = LoggingServiceV2Api.ResourceNames.formatLogPath("my-project", "my-log");
     MonitoredResource resource = MonitoredResource.newBuilder().build();
     List<LogEntry> entries = new ArrayList<>();
     entries.add(LogEntry.newBuilder().setLogName(logName).setTextPayload("foobar").build());
@@ -72,7 +70,7 @@ public class LoggingServiceV2ApiTest {
 
   @Test
   public void testListLog() {
-    String logName = LoggingServiceV2Api.createLogNamePath("my-project", "my-log");
+    String logName = LoggingServiceV2Api.ResourceNames.formatLogPath("my-project", "my-log");
     MonitoredResource resource = MonitoredResource.newBuilder().build();
     List<LogEntry> entries = new ArrayList<>();
     entries.add(LogEntry.newBuilder().setLogName(logName).setTextPayload("foobar").build());
@@ -92,7 +90,7 @@ public class LoggingServiceV2ApiTest {
 
   @Test
   public void testDeleteLog() {
-    String logName = LoggingServiceV2Api.createLogNamePath("my-project", "my-log");
+    String logName = LoggingServiceV2Api.ResourceNames.formatLogPath("my-project", "my-log");
     MonitoredResource resource = MonitoredResource.newBuilder().build();
     List<LogEntry> entries = new ArrayList<>();
     entries.add(LogEntry.newBuilder().setLogName(logName).setTextPayload("foobar").build());

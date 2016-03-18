@@ -21,11 +21,12 @@ import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.RestorableState;
+import com.google.gcloud.RetryParams;
 import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.spi.StorageRpc.RewriteRequest;
 import com.google.gcloud.spi.StorageRpc.RewriteResponse;
@@ -33,10 +34,9 @@ import com.google.gcloud.spi.StorageRpcFactory;
 
 import org.easymock.EasyMock;
 import org.junit.After;
-import org.junit.Test;
 import org.junit.Before;
+import org.junit.Test;
 
-import java.io.IOException;
 import java.util.Map;
 
 public class CopyWriterTest {
@@ -64,7 +64,7 @@ public class CopyWriterTest {
   private CopyWriter copyWriter;
 
   @Before
-  public void setUp() throws IOException, InterruptedException {
+  public void setUp() {
     rpcFactoryMock = createMock(StorageRpcFactory.class);
     storageRpcMock = createMock(StorageRpc.class);
     expect(rpcFactoryMock.create(anyObject(StorageOptions.class)))
@@ -73,6 +73,7 @@ public class CopyWriterTest {
     options = StorageOptions.builder()
         .projectId("projectid")
         .serviceRpcFactory(rpcFactoryMock)
+        .retryParams(RetryParams.noRetries())
         .build();
   }
 
@@ -105,7 +106,7 @@ public class CopyWriterTest {
   }
 
   @Test
-  public void testSaveAndRestore() throws IOException {
+  public void testSaveAndRestore() {
     EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE);
     EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
     EasyMock.replay(storageRpcMock);

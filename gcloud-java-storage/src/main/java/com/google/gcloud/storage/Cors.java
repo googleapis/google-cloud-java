@@ -33,6 +33,9 @@ import java.util.Objects;
 
 /**
  * Cross-Origin Resource Sharing (CORS) configuration for a bucket.
+ *
+ * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
+ *     Cross-Origin Resource Sharing (CORS)</a>
  */
 public final class Cors implements Serializable {
 
@@ -57,6 +60,9 @@ public final class Cors implements Serializable {
   private final ImmutableList<Origin> origins;
   private final ImmutableList<String> responseHeaders;
 
+  /**
+   * Class for a CORS origin.
+   */
   public static final class Origin implements Serializable {
 
     private static final long serialVersionUID = -4447958124895577993L;
@@ -69,10 +75,16 @@ public final class Cors implements Serializable {
       this.value = checkNotNull(value);
     }
 
+    /**
+     * Returns an {@code Origin} object for all possible origins.
+     */
     public static Origin any() {
       return ANY;
     }
 
+    /**
+     * Returns an {@code Origin} object for the given scheme, host and port.
+     */
     public static Origin of(String scheme, String host, int port) {
       try {
         return of(new URI(scheme, null, host, port, null, null, null).toString());
@@ -81,6 +93,9 @@ public final class Cors implements Serializable {
       }
     }
 
+    /**
+     * Creates an {@code Origin} object for the provided value.
+     */
     public static Origin of(String value) {
       if (ANY_URI.equals(value)) {
         return any();
@@ -111,6 +126,9 @@ public final class Cors implements Serializable {
     }
   }
 
+  /**
+   * CORS configuration builder.
+   */
   public static final class Builder {
 
     private Integer maxAgeSeconds;
@@ -120,26 +138,42 @@ public final class Cors implements Serializable {
 
     private Builder() {}
 
+    /**
+     * Sets the max time in seconds in which a client can issue requests before sending a new
+     * preflight request.
+     */
     public Builder maxAgeSeconds(Integer maxAgeSeconds) {
       this.maxAgeSeconds = maxAgeSeconds;
       return this;
     }
 
+    /**
+     * Sets the HTTP methods supported by this CORS configuration.
+     */
     public Builder methods(Iterable<HttpMethod> methods) {
       this.methods = methods != null ? ImmutableList.copyOf(methods) : null;
       return this;
     }
 
+    /**
+     * Sets the origins for this CORS configuration.
+     */
     public Builder origins(Iterable<Origin> origins) {
       this.origins = origins != null ? ImmutableList.copyOf(origins) : null;
       return this;
     }
 
+    /**
+     * Sets the response headers supported by this CORS configuration.
+     */
     public Builder responseHeaders(Iterable<String> headers) {
       this.responseHeaders = headers != null ? ImmutableList.copyOf(headers) : null;
       return this;
     }
 
+    /**
+     * Creates a CORS configuration.
+     */
     public Cors build() {
       return new Cors(this);
     }
@@ -152,22 +186,38 @@ public final class Cors implements Serializable {
     this.responseHeaders = builder.responseHeaders;
   }
 
+  /**
+   * Returns the max time in seconds in which a client can issue requests before sending a new
+   * preflight request.
+   */
   public Integer maxAgeSeconds() {
     return maxAgeSeconds;
   }
 
+  /**
+   * Returns the HTTP methods supported by this CORS configuration.
+   */
   public List<HttpMethod> methods() {
     return methods;
   }
 
+  /**
+   * Returns the origins in this CORS configuration.
+   */
   public List<Origin> origins() {
     return origins;
   }
 
+  /**
+   * Returns the response headers supported by this CORS configuration.
+   */
   public List<String> responseHeaders() {
     return responseHeaders;
   }
 
+  /**
+   * Returns a builder for this CORS configuration.
+   */
   public Builder toBuilder() {
     return builder()
         .maxAgeSeconds(maxAgeSeconds)
@@ -193,6 +243,9 @@ public final class Cors implements Serializable {
         && Objects.equals(responseHeaders, other.responseHeaders);
   }
 
+  /**
+   * Returns a CORS configuration builder.
+   */
   public static Builder builder() {
     return new Builder();
   }

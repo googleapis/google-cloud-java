@@ -98,12 +98,12 @@ public final class DateTime extends Serializable<DatastoreV1.Value>
   }
 
   @Override
-  protected Value toPb() {
+  Value toPb() {
     return DatastoreV1.Value.newBuilder().setIntegerValue(timestampMicroseconds).build();
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return new DateTime(DatastoreV1.Value.parseFrom(bytesPb).getIntegerValue());
   }
 }

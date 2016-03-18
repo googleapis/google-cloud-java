@@ -20,21 +20,19 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.Page;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import org.easymock.EasyMock;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -69,45 +67,58 @@ public class RemoteGcsHelperTest {
       + "  \"type\": \"service_account\"\n"
       + "}";
   private static final InputStream JSON_KEY_STREAM = new ByteArrayInputStream(JSON_KEY.getBytes());
-  private static final List<BlobInfo> BLOB_LIST = ImmutableList.of(
-      BlobInfo.builder(BUCKET_NAME, "n1").build(),
-      BlobInfo.builder(BUCKET_NAME, "n2").build());
-  private static final StorageException RETRYABLE_EXCEPTION = new StorageException(409, "", true);
-  private static final StorageException FATAL_EXCEPTION = new StorageException(500, "", false);
-  private static final ListResult<BlobInfo> BLOB_LIST_RESULT = new ListResult<BlobInfo>() {
+  private static final StorageException RETRYABLE_EXCEPTION = new StorageException(409, "");
+  private static final StorageException FATAL_EXCEPTION = new StorageException(500, "");
 
-    @Override
-    public String nextPageCursor() {
-      return "listResult";
-    }
-
-    @Override
-    public ListResult<BlobInfo> nextPage() {
-      return null;
-    }
-
-    @Override
-    public Iterator<BlobInfo> iterator() {
-      return BLOB_LIST.iterator();
-    }
-  };
-  private static String keyPath = "/does/not/exist/key." + UUID.randomUUID().toString() + ".json";
+  private static Storage serviceMockReturnsOptions;
+  private List<Blob> blobList;
+  private Page<Blob> blobPage;
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
-  @BeforeClass
-  public static void beforeClass() {
-    while (Files.exists(Paths.get(JSON_KEY))) {
-      keyPath = "/does/not/exist/key." + UUID.randomUUID().toString() + ".json";
-    }
+  @Before
+  public void setUp() {
+    serviceMockReturnsOptions = EasyMock.createMock(Storage.class);
+    EasyMock.expect(serviceMockReturnsOptions.options())
+        .andReturn(EasyMock.createMock(StorageOptions.class))
+        .times(2);
+    EasyMock.replay(serviceMockReturnsOptions);
+    blobList = ImmutableList.of(
+        new Blob(
+            serviceMockReturnsOptions,
+            new BlobInfo.BuilderImpl(BlobInfo.builder(BUCKET_NAME, "n1").build())),
+        new Blob(
+            serviceMockReturnsOptions,
+            new BlobInfo.BuilderImpl(BlobInfo.builder(BUCKET_NAME, "n2").build())));
+    blobPage = new Page<Blob>() {
+      @Override
+      public String nextPageCursor() {
+        return "nextPageCursor";
+      }
+
+      @Override
+      public Page<Blob> nextPage() {
+        return null;
+      }
+
+      @Override
+      public Iterable<Blob> values() {
+        return blobList;
+      }
+
+      @Override
+      public Iterator<Blob> iterateAll() {
+        return blobList.iterator();
+      }
+    };
   }
 
   @Test
   public void testForceDelete() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_LIST_RESULT);
-    for (BlobInfo info : BLOB_LIST) {
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(blobPage);
+    for (BlobInfo info : blobList) {
       EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
@@ -119,8 +130,8 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteTimeout() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_LIST_RESULT).anyTimes();
-    for (BlobInfo info : BLOB_LIST) {
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(blobPage).anyTimes();
+    for (BlobInfo info : blobList) {
       EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true).anyTimes();
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(RETRYABLE_EXCEPTION).anyTimes();
@@ -132,8 +143,8 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteFail() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(BLOB_LIST_RESULT);
-    for (BlobInfo info : BLOB_LIST) {
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(blobPage);
+    for (BlobInfo info : blobList) {
       EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(FATAL_EXCEPTION);
@@ -147,23 +158,46 @@ public class RemoteGcsHelperTest {
   }
 
   @Test
+  public void testForceDeleteNoTimeout() {
+    Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(blobPage);
+    for (BlobInfo info : blobList) {
+      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
+    }
+    EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
+    EasyMock.replay(storageMock);
+    RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME);
+    EasyMock.verify(storageMock);
+  }
+
+  @Test
+  public void testForceDeleteNoTimeoutFail() {
+    Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(blobPage);
+    for (BlobInfo info : blobList) {
+      EasyMock.expect(storageMock.delete(BUCKET_NAME, info.name())).andReturn(true);
+    }
+    EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(FATAL_EXCEPTION);
+    EasyMock.replay(storageMock);
+    thrown.expect(StorageException.class);
+    try {
+      RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME);
+    } finally {
+      EasyMock.verify(storageMock);
+    }
+  }
+
+  @Test
   public void testCreateFromStream() {
     RemoteGcsHelper helper = RemoteGcsHelper.create(PROJECT_ID, JSON_KEY_STREAM);
     StorageOptions options = helper.options();
     assertEquals(PROJECT_ID, options.projectId());
     assertEquals(60000, options.connectTimeout());
     assertEquals(60000, options.readTimeout());
-    assertEquals(10, options.retryParams().getRetryMaxAttempts());
-    assertEquals(6, options.retryParams().getRetryMinAttempts());
-    assertEquals(30000, options.retryParams().getMaxRetryDelayMillis());
-    assertEquals(120000, options.retryParams().getTotalRetryPeriodMillis());
-    assertEquals(250, options.retryParams().getInitialRetryDelayMillis());
-  }
-
-  @Test
-  public void testCreateNoKey() {
-    thrown.expect(RemoteGcsHelper.GcsHelperException.class);
-    thrown.expectMessage(keyPath + " (No such file or directory)");
-    RemoteGcsHelper.create(PROJECT_ID, keyPath);
+    assertEquals(10, options.retryParams().retryMaxAttempts());
+    assertEquals(6, options.retryParams().retryMinAttempts());
+    assertEquals(30000, options.retryParams().maxRetryDelayMillis());
+    assertEquals(120000, options.retryParams().totalRetryPeriodMillis());
+    assertEquals(250, options.retryParams().initialRetryDelayMillis());
   }
 }

@@ -109,7 +109,7 @@ public final class Blob extends Serializable<DatastoreV1.Value> {
    *
    * @throws java.nio.ReadOnlyBufferException if the target is read-only
    * @throws java.nio.BufferOverflowException if the target's remaining() space is not large
-   *        enough to hold the data.
+   *        enough to hold the data
    */
   public void copyTo(ByteBuffer target) {
     byteString.copyTo(target);
@@ -147,12 +147,12 @@ public final class Blob extends Serializable<DatastoreV1.Value> {
   }
 
   @Override
-  protected Value toPb() {
+  Value toPb() {
     return DatastoreV1.Value.newBuilder().setBlobValue(byteString).build();
   }
 
   @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
+  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     return new Blob(DatastoreV1.Value.parseFrom(bytesPb).getBlobValue());
   }
 }
