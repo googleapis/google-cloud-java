@@ -122,8 +122,8 @@
 		  <p><code>gcloud</code> is configured to access Google Cloud Platform
 		    services and authorize (OAuth 2.0) automatically on your behalf.
 		    Add the <code>gcloud</code> dependency to your project and get a private key to be
-		    up and ready to go. Better yet, if you are running on a Google
-		    Compute Engine instance, the private key is automatically detected.
+		    up and ready to go. Better yet, if you are running on Google
+		    App Engine or Compute Engine, the private key is automatically detected.
                 </div>
 
                 <div class="quote-box--supplementary">
@@ -143,8 +143,7 @@ import com.google.gcloud.datastore.KeyFactory;
 
 // Authentication is automatic inside Google Compute Engine
 // and Google App Engine.
-DatastoreOptions options = DatastoreOptions.builder().build();
-Datastore datastore = options.service();
+Datastore datastore = DatastoreOptions.defaultInstance().service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind(<span class="hljs-string">KIND</span>);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
@@ -172,6 +171,20 @@ Entity entity = datastore.get(key);
                 </div>
                 </div><!-- end of .container -->
             </section><!-- end of .featuring -->
+
+            <section class="block examples">
+                <div class="container clearfix">
+                    <h3 class="block-title">Examples</h3>
+
+                    <ul>
+                        <li>
+                          <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/sparkjava"><code>SparkJava demo</code></a> - Uses gcloud-java with App Engine Managed VMs, Datastore, and SparkJava.
+                        </li>
+                        <li>
+                          <a href="https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf"><code>Bookshelf</code></a> - An App Engine app that manages a virtual bookshelf using gcloud-java libraries for Datastore and Storage.
+                    </ul>
+                </div>
+            </section>
 
             <section class="block faq">
                 <div class="container">

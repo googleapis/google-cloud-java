@@ -10,9 +10,6 @@ before_install:
 install: mvn install -DskipTests=true -Dgpg.skip=true
 script: 
 - utilities/verify.sh
-branches:
-  only:
-  - master
 after_success:
 - utilities/after_success.sh
 env:
