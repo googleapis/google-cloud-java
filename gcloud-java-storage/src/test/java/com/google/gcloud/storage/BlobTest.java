@@ -222,6 +222,7 @@ public class BlobTest {
   @Test
   public void testCopyToBucket() throws Exception {
     initializeExpectedBlob(2);
+    BlobInfo target = BlobInfo.builder(BlobId.of("bt", "n")).build();
     CopyWriter copyWriter = createMock(CopyWriter.class);
     Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
     expect(storage.options()).andReturn(mockOptions);
@@ -231,8 +232,8 @@ public class BlobTest {
     CopyWriter returnedCopyWriter = blob.copyTo("bt");
     assertEquals(copyWriter, returnedCopyWriter);
     assertEquals(capturedCopyRequest.getValue().source(), blob.blobId());
-    assertEquals(capturedCopyRequest.getValue().targetId(), BlobId.of("bt", "n"));
-    assertNull(capturedCopyRequest.getValue().targetInfo());
+    assertEquals(capturedCopyRequest.getValue().target(), target);
+    assertFalse(capturedCopyRequest.getValue().overrideInfo());
     assertTrue(capturedCopyRequest.getValue().sourceOptions().isEmpty());
     assertTrue(capturedCopyRequest.getValue().targetOptions().isEmpty());
   }
@@ -240,6 +241,7 @@ public class BlobTest {
   @Test
   public void testCopyTo() throws Exception {
     initializeExpectedBlob(2);
+    BlobInfo target = BlobInfo.builder(BlobId.of("bt", "nt")).build();
     CopyWriter copyWriter = createMock(CopyWriter.class);
     Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
     expect(storage.options()).andReturn(mockOptions);
@@ -249,8 +251,8 @@ public class BlobTest {
     CopyWriter returnedCopyWriter = blob.copyTo("bt", "nt");
     assertEquals(copyWriter, returnedCopyWriter);
     assertEquals(capturedCopyRequest.getValue().source(), blob.blobId());
-    assertEquals(capturedCopyRequest.getValue().targetId(), BlobId.of("bt", "nt"));
-    assertNull(capturedCopyRequest.getValue().targetInfo());
+    assertEquals(capturedCopyRequest.getValue().target(), target);
+    assertFalse(capturedCopyRequest.getValue().overrideInfo());
     assertTrue(capturedCopyRequest.getValue().sourceOptions().isEmpty());
     assertTrue(capturedCopyRequest.getValue().targetOptions().isEmpty());
   }
@@ -258,6 +260,7 @@ public class BlobTest {
   @Test
   public void testCopyToBlobId() throws Exception {
     initializeExpectedBlob(2);
+    BlobInfo target = BlobInfo.builder(BlobId.of("bt", "nt")).build();
     BlobId targetId = BlobId.of("bt", "nt");
     CopyWriter copyWriter = createMock(CopyWriter.class);
     Capture<CopyRequest> capturedCopyRequest = Capture.newInstance();
@@ -268,8 +271,8 @@ public class BlobTest {
     CopyWriter returnedCopyWriter = blob.copyTo(targetId);
     assertEquals(copyWriter, returnedCopyWriter);
     assertEquals(capturedCopyRequest.getValue().source(), blob.blobId());
-    assertEquals(capturedCopyRequest.getValue().targetId(), targetId);
-    assertNull(capturedCopyRequest.getValue().targetInfo());
+    assertEquals(capturedCopyRequest.getValue().target(), target);
+    assertFalse(capturedCopyRequest.getValue().overrideInfo());
     assertTrue(capturedCopyRequest.getValue().sourceOptions().isEmpty());
     assertTrue(capturedCopyRequest.getValue().targetOptions().isEmpty());
   }

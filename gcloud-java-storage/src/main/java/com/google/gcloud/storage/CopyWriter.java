@@ -120,11 +120,9 @@ public class CopyWriter implements Restorable<CopyWriter> {
         serviceOptions,
         BlobId.fromPb(rewriteResponse.rewriteRequest.source),
         rewriteResponse.rewriteRequest.sourceOptions,
-        BlobId.of(rewriteResponse.rewriteRequest.targetBucket,
-            rewriteResponse.rewriteRequest.targetName),
+        rewriteResponse.rewriteRequest.overrideInfo,
+        BlobInfo.fromPb(rewriteResponse.rewriteRequest.target),
         rewriteResponse.rewriteRequest.targetOptions)
-        .targetInfo(rewriteResponse.rewriteRequest.targetObject != null
-            ? BlobInfo.fromPb(rewriteResponse.rewriteRequest.targetObject) : null)
         .result(rewriteResponse.result != null ? BlobInfo.fromPb(rewriteResponse.result) : null)
         .blobSize(blobSize())
         .isDone(isDone())
@@ -141,8 +139,8 @@ public class CopyWriter implements Restorable<CopyWriter> {
     private final StorageOptions serviceOptions;
     private final BlobId source;
     private final Map<StorageRpc.Option, ?> sourceOptions;
-    private final BlobId targetId;
-    private final BlobInfo targetInfo;
+    private final boolean overrideInfo;
+    private final BlobInfo target;
     private final Map<StorageRpc.Option, ?> targetOptions;
     private final BlobInfo result;
     private final long blobSize;
@@ -155,8 +153,8 @@ public class CopyWriter implements Restorable<CopyWriter> {
       this.serviceOptions = builder.serviceOptions;
       this.source = builder.source;
       this.sourceOptions = builder.sourceOptions;
-      this.targetId = builder.targetId;
-      this.targetInfo = builder.targetInfo;
+      this.overrideInfo = builder.overrideInfo;
+      this.target = builder.target;
       this.targetOptions = builder.targetOptions;
       this.result = builder.result;
       this.blobSize = builder.blobSize;
@@ -171,9 +169,9 @@ public class CopyWriter implements Restorable<CopyWriter> {
       private final StorageOptions serviceOptions;
       private final BlobId source;
       private final Map<StorageRpc.Option, ?> sourceOptions;
-      private final BlobId targetId;
+      private final boolean overrideInfo;
+      private BlobInfo target;
       private final Map<StorageRpc.Option, ?> targetOptions;
-      private BlobInfo targetInfo;
       private BlobInfo result;
       private long blobSize;
       private boolean isDone;
@@ -182,18 +180,14 @@ public class CopyWriter implements Restorable<CopyWriter> {
       private Long megabytesCopiedPerChunk;
 
       private Builder(StorageOptions options, BlobId source,
-          Map<StorageRpc.Option, ?> sourceOptions,
-          BlobId targetId, Map<StorageRpc.Option, ?> targetOptions) {
+          Map<StorageRpc.Option, ?> sourceOptions, boolean overrideInfo, BlobInfo target,
+          Map<StorageRpc.Option, ?> targetOptions) {
         this.serviceOptions = options;
         this.source = source;
         this.sourceOptions = sourceOptions;
-        this.targetId = targetId;
+        this.overrideInfo = overrideInfo;
+        this.target = target;
         this.targetOptions = targetOptions;
-      }
-
-      Builder targetInfo(BlobInfo targetInfo) {
-        this.targetInfo = targetInfo;
-        return this;
       }
 
       Builder result(BlobInfo result) {
@@ -232,16 +226,15 @@ public class CopyWriter implements Restorable<CopyWriter> {
     }
 
     static Builder builder(StorageOptions options, BlobId source,
-        Map<StorageRpc.Option, ?> sourceOptions, BlobId targetId,
+        Map<StorageRpc.Option, ?> sourceOptions, boolean overrideInfo, BlobInfo target,
         Map<StorageRpc.Option, ?> targetOptions) {
-      return new Builder(options, source, sourceOptions, targetId, targetOptions);
+      return new Builder(options, source, sourceOptions, overrideInfo, target, targetOptions);
     }
 
     @Override
     public CopyWriter restore() {
       RewriteRequest rewriteRequest = new RewriteRequest(source.toPb(), sourceOptions,
-          targetId.bucket(), targetId.name(), targetInfo != null ? targetInfo.toPb() : null,
-          targetOptions, megabytesCopiedPerChunk);
+          overrideInfo, target.toPb(), targetOptions, megabytesCopiedPerChunk);
       RewriteResponse rewriteResponse = new RewriteResponse(rewriteRequest,
           result != null ? result.toPb() : null, blobSize, isDone, rewriteToken,
           totalBytesCopied);
@@ -250,7 +243,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
 
     @Override
     public int hashCode() {
-      return Objects.hash(serviceOptions, source, sourceOptions, targetId, targetInfo,
+      return Objects.hash(serviceOptions, source, sourceOptions, overrideInfo, target,
           targetOptions, result, blobSize, isDone, megabytesCopiedPerChunk, rewriteToken,
           totalBytesCopied);
     }
@@ -267,8 +260,8 @@ public class CopyWriter implements Restorable<CopyWriter> {
       return Objects.equals(this.serviceOptions, other.serviceOptions)
           && Objects.equals(this.source, other.source)
           && Objects.equals(this.sourceOptions, other.sourceOptions)
-          && Objects.equals(this.targetId, other.targetId)
-          && Objects.equals(this.targetInfo, other.targetInfo)
+          && Objects.equals(this.overrideInfo, other.overrideInfo)
+          && Objects.equals(this.target, other.target)
           && Objects.equals(this.targetOptions, other.targetOptions)
           && Objects.equals(this.result, other.result)
           && Objects.equals(this.rewriteToken, other.rewriteToken)
@@ -282,8 +275,8 @@ public class CopyWriter implements Restorable<CopyWriter> {
     public String toString() {
       return MoreObjects.toStringHelper(this)
           .add("source", source)
-          .add("targetId", targetId)
-          .add("targetInfo", targetInfo)
+          .add("overrideInfo", overrideInfo)
+          .add("target", target)
           .add("result", result)
           .add("blobSize", blobSize)
           .add("isDone", isDone)

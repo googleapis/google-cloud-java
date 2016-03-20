@@ -962,8 +962,8 @@ public interface Storage extends Service<StorageOptions> {
 
     private final BlobId source;
     private final List<BlobSourceOption> sourceOptions;
-    private final BlobId targetId;
-    private final BlobInfo targetInfo;
+    private final boolean overrideInfo;
+    private final BlobInfo target;
     private final List<BlobTargetOption> targetOptions;
     private final Long megabytesCopiedPerChunk;
 
@@ -972,8 +972,8 @@ public interface Storage extends Service<StorageOptions> {
       private final Set<BlobSourceOption> sourceOptions = new LinkedHashSet<>();
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
       private BlobId source;
-      private BlobId targetId;
-      private BlobInfo targetInfo;
+      private boolean overrideInfo;
+      private BlobInfo target;
       private Long megabytesCopiedPerChunk;
 
       /**
@@ -1022,7 +1022,8 @@ public interface Storage extends Service<StorageOptions> {
        * @return the builder
        */
       public Builder target(BlobId targetId) {
-        this.targetId = targetId;
+        this.overrideInfo = false;
+        this.target = BlobInfo.builder(targetId).build();
         return this;
       }
 
@@ -1030,13 +1031,13 @@ public interface Storage extends Service<StorageOptions> {
        * Sets the copy target and target options. {@code target} parameter is used to override
        * source blob information (e.g. {@code contentType}, {@code contentLanguage}). Target blob
        * information is set exactly to {@code target}, no information is inherited from the source
-       * blob. If not set, target blob information is inherited from the source blob.
+       * blob.
        *
        * @return the builder
        */
-      public Builder target(BlobInfo targetInfo, BlobTargetOption... options) {
-        this.targetId = targetInfo.blobId();
-        this.targetInfo = targetInfo;
+      public Builder target(BlobInfo target, BlobTargetOption... options) {
+        this.overrideInfo = true;
+        this.target = checkNotNull(target);
         Collections.addAll(targetOptions, options);
         return this;
       }
@@ -1045,13 +1046,13 @@ public interface Storage extends Service<StorageOptions> {
        * Sets the copy target and target options. {@code target} parameter is used to override
        * source blob information (e.g. {@code contentType}, {@code contentLanguage}). Target blob
        * information is set exactly to {@code target}, no information is inherited from the source
-       * blob. If not set, target blob information is inherited from the source blob.
+       * blob.
        *
        * @return the builder
        */
-      public Builder target(BlobInfo targetInfo, Iterable<BlobTargetOption> options) {
-        this.targetId = targetInfo.blobId();
-        this.targetInfo = targetInfo;
+      public Builder target(BlobInfo target, Iterable<BlobTargetOption> options) {
+        this.overrideInfo = true;
+        this.target = checkNotNull(target);
         Iterables.addAll(targetOptions, options);
         return this;
       }
@@ -1079,8 +1080,8 @@ public interface Storage extends Service<StorageOptions> {
     private CopyRequest(Builder builder) {
       source = checkNotNull(builder.source);
       sourceOptions = ImmutableList.copyOf(builder.sourceOptions);
-      targetId = checkNotNull(builder.targetId);
-      targetInfo = builder.targetInfo;
+      overrideInfo = builder.overrideInfo;
+      target = checkNotNull(builder.target);
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
       megabytesCopiedPerChunk = builder.megabytesCopiedPerChunk;
     }
@@ -1100,20 +1101,21 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns the {@link BlobId} for the target blob.
+     * Returns the {@link BlobInfo} for the target blob.
      */
-    public BlobId targetId() {
-      return targetId;
+    public BlobInfo target() {
+      return target;
     }
 
     /**
-     * Returns the {@link BlobInfo} for the target blob. If set, this value is used to replace
-     * source blob information (e.g. {@code contentType}, {@code contentLanguage}). Target blob
-     * information is set exactly to this value, no information is inherited from the source blob.
-     * If not set, target blob information is inherited from the source blob.
+     * Returns whether to override the target blob information with {@link #target()}.
+     * If {@code true}, the value of {@link #target()} is used to replace source blob information
+     * (e.g. {@code contentType}, {@code contentLanguage}). Target blob information is set exactly
+     * to this value, no information is inherited from the source blob. If {@code false}, target
+     * blob information is inherited from the source blob.
      */
-    public BlobInfo targetInfo() {
-      return targetInfo;
+    public boolean overrideInfo() {
+      return overrideInfo;
     }
 
     /**

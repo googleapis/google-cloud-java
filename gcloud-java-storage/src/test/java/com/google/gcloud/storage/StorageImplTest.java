@@ -866,8 +866,7 @@ public class StorageImplTest {
   public void testCopy() {
     CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2.blobId());
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        EMPTY_RPC_OPTIONS, BLOB_INFO2.blobId().bucket(), BLOB_INFO2.blobId().name(), null,
-        EMPTY_RPC_OPTIONS, null);
+        EMPTY_RPC_OPTIONS, false, BLOB_INFO2.toPb(), EMPTY_RPC_OPTIONS, null);
     StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
         false, "token", 21L);
     EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
@@ -887,8 +886,7 @@ public class StorageImplTest {
         .target(BLOB_INFO1, BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
         .build();
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        BLOB_SOURCE_OPTIONS_COPY, BLOB_INFO1.blobId().bucket(), BLOB_INFO1.blobId().name(),
-        request.targetInfo().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
+        BLOB_SOURCE_OPTIONS_COPY, true, request.target().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
     StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
         false, "token", 21L);
     EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
@@ -908,8 +906,7 @@ public class StorageImplTest {
         .target(BLOB_INFO1, BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
         .build();
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        BLOB_SOURCE_OPTIONS_COPY, BLOB_INFO1.blobId().bucket(), BLOB_INFO1.blobId().name(),
-        request.targetInfo().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
+        BLOB_SOURCE_OPTIONS_COPY, true, request.target().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
     StorageRpc.RewriteResponse rpcResponse =
         new StorageRpc.RewriteResponse(rpcRequest, null, 42L, false, "token", 21L);
     EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
@@ -925,8 +922,7 @@ public class StorageImplTest {
   public void testCopyMultipleRequests() {
     CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2.blobId());
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        EMPTY_RPC_OPTIONS, BLOB_INFO2.blobId().bucket(), BLOB_INFO2.blobId().name(), null,
-        EMPTY_RPC_OPTIONS, null);
+        EMPTY_RPC_OPTIONS, false, BLOB_INFO2.toPb(), EMPTY_RPC_OPTIONS, null);
     StorageRpc.RewriteResponse rpcResponse1 = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
         false, "token", 21L);
     StorageRpc.RewriteResponse rpcResponse2 = new StorageRpc.RewriteResponse(rpcRequest,

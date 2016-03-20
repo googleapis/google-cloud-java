@@ -52,11 +52,11 @@ public class CopyWriterTest {
       BlobInfo.builder(DESTINATION_BUCKET_NAME, DESTINATION_BLOB_NAME).contentType("type").build();
   private static final Map<StorageRpc.Option, ?> EMPTY_OPTIONS = ImmutableMap.of();
   private static final RewriteRequest REQUEST_WITH_OBJECT =
-      new StorageRpc.RewriteRequest(BLOB_ID.toPb(), EMPTY_OPTIONS, DESTINATION_BUCKET_NAME,
-          DESTINATION_BLOB_NAME, BLOB_INFO.toPb(), EMPTY_OPTIONS, null);
+      new StorageRpc.RewriteRequest(BLOB_ID.toPb(), EMPTY_OPTIONS, true, BLOB_INFO.toPb(),
+          EMPTY_OPTIONS, null);
   private static final RewriteRequest REQUEST_WITHOUT_OBJECT =
-      new StorageRpc.RewriteRequest(BLOB_ID.toPb(), EMPTY_OPTIONS, DESTINATION_BUCKET_NAME,
-          DESTINATION_BLOB_NAME, null, EMPTY_OPTIONS, null);
+      new StorageRpc.RewriteRequest(BLOB_ID.toPb(), EMPTY_OPTIONS, false, BLOB_INFO.toPb(),
+          EMPTY_OPTIONS, null);
   private static final RewriteResponse RESPONSE_WITH_OBJECT = new RewriteResponse(
       REQUEST_WITH_OBJECT, null, 42L, false, "token", 21L);
   private static final RewriteResponse RESPONSE_WITHOUT_OBJECT = new RewriteResponse(
