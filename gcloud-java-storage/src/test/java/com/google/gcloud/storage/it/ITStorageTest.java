@@ -599,6 +599,37 @@ public class ITStorageTest {
     assertNotNull(remoteTargetBlob);
     assertEquals(targetBlob.name(), remoteTargetBlob.name());
     assertEquals(targetBlob.bucket(), remoteTargetBlob.bucket());
+    assertNull(remoteTargetBlob.contentType());
+    byte[] readBytes = storage.readAllBytes(BUCKET, targetBlobName);
+    byte[] composedBytes = Arrays.copyOf(BLOB_BYTE_CONTENT, BLOB_BYTE_CONTENT.length * 2);
+    System.arraycopy(BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length,
+        BLOB_BYTE_CONTENT.length);
+    assertArrayEquals(composedBytes, readBytes);
+    assertTrue(remoteSourceBlob1.delete());
+    assertTrue(remoteSourceBlob2.delete());
+    assertTrue(remoteTargetBlob.delete());
+  }
+
+  @Test
+  public void testComposeBlobWithContentType() {
+    String sourceBlobName1 = "test-compose-blob-with-content-type-source-1";
+    String sourceBlobName2 = "test-compose-blob-with-content-type-source-2";
+    BlobInfo sourceBlob1 = BlobInfo.builder(BUCKET, sourceBlobName1).build();
+    BlobInfo sourceBlob2 = BlobInfo.builder(BUCKET, sourceBlobName2).build();
+    Blob remoteSourceBlob1 = storage.create(sourceBlob1, BLOB_BYTE_CONTENT);
+    Blob remoteSourceBlob2 = storage.create(sourceBlob2, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteSourceBlob1);
+    assertNotNull(remoteSourceBlob2);
+    String targetBlobName = "test-compose-blob-with-content-type-target";
+    BlobInfo targetBlob =
+        BlobInfo.builder(BUCKET, targetBlobName).contentType(CONTENT_TYPE).build();
+    Storage.ComposeRequest req =
+        Storage.ComposeRequest.of(ImmutableList.of(sourceBlobName1, sourceBlobName2), targetBlob);
+    Blob remoteTargetBlob = storage.compose(req);
+    assertNotNull(remoteTargetBlob);
+    assertEquals(targetBlob.name(), remoteTargetBlob.name());
+    assertEquals(targetBlob.bucket(), remoteTargetBlob.bucket());
+    assertEquals(CONTENT_TYPE, remoteTargetBlob.contentType());
     byte[] readBytes = storage.readAllBytes(BUCKET, targetBlobName);
     byte[] composedBytes = Arrays.copyOf(BLOB_BYTE_CONTENT, BLOB_BYTE_CONTENT.length * 2);
     System.arraycopy(BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length,
@@ -676,6 +707,26 @@ public class ITStorageTest {
     assertEquals(BUCKET, copyWriter.result().bucket());
     assertEquals(targetBlobName, copyWriter.result().name());
     assertEquals(CONTENT_TYPE, copyWriter.result().contentType());
+    assertEquals(metadata, copyWriter.result().metadata());
+    assertTrue(copyWriter.isDone());
+    assertTrue(remoteSourceBlob.delete());
+    assertTrue(storage.delete(BUCKET, targetBlobName));
+  }
+
+  @Test
+  public void testCopyBlobNoContentType() {
+    String sourceBlobName = "test-copy-blob-no-content-type-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    Blob remoteSourceBlob = storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT);
+    assertNotNull(remoteSourceBlob);
+    String targetBlobName = "test-copy-blob-no-content-type-target";
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName).metadata(metadata).build();
+    Storage.CopyRequest req = Storage.CopyRequest.of(source, target);
+    CopyWriter copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.result().bucket());
+    assertEquals(targetBlobName, copyWriter.result().name());
+    assertNull(copyWriter.result().contentType());
     assertEquals(metadata, copyWriter.result().metadata());
     assertTrue(copyWriter.isDone());
     assertTrue(remoteSourceBlob.delete());

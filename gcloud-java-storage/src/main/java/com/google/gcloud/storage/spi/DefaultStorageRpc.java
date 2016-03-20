@@ -319,9 +319,6 @@ public class DefaultStorageRpc implements StorageRpc {
   public StorageObject compose(Iterable<StorageObject> sources, StorageObject target,
       Map<Option, ?> targetOptions) {
     ComposeRequest request = new ComposeRequest();
-    if (target.getContentType() == null) {
-      target.setContentType("application/octet-stream");
-    }
     request.setDestination(target);
     List<ComposeRequest.SourceObjects> sourceObjects = new ArrayList<>();
     for (StorageObject source : sources) {
@@ -584,7 +581,7 @@ public class DefaultStorageRpc implements StorageRpc {
           ? req.megabytesRewrittenPerCall * MEGABYTE : null;
       com.google.api.services.storage.model.RewriteResponse rewriteResponse = storage.objects()
           .rewrite(req.source.getBucket(), req.source.getName(), req.target.getBucket(),
-              req.target.getName(), req.target.getContentType() != null ? req.target : null)
+              req.target.getName(), req.overrideInfo ? req.target : null)
           .setSourceGeneration(req.source.getGeneration())
           .setRewriteToken(token)
           .setMaxBytesRewrittenPerCall(maxBytesRewrittenPerCall)

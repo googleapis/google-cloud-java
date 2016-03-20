@@ -48,20 +48,29 @@ public class CopyWriterTest {
   private static final BlobId BLOB_ID = BlobId.of(SOURCE_BUCKET_NAME, SOURCE_BLOB_NAME);
   private static final BlobInfo BLOB_INFO =
       BlobInfo.builder(DESTINATION_BUCKET_NAME, DESTINATION_BLOB_NAME).build();
-  private static final BlobInfo RESULT =
+  private static final BlobInfo RESULT_INFO =
       BlobInfo.builder(DESTINATION_BUCKET_NAME, DESTINATION_BLOB_NAME).contentType("type").build();
   private static final Map<StorageRpc.Option, ?> EMPTY_OPTIONS = ImmutableMap.of();
-  private static final RewriteRequest REQUEST = new StorageRpc.RewriteRequest(BLOB_ID.toPb(),
-      EMPTY_OPTIONS, BLOB_INFO.toPb(), EMPTY_OPTIONS, null);
-  private static final RewriteResponse RESPONSE = new StorageRpc.RewriteResponse(REQUEST,
-      null, 42L, false, "token", 21L);
-  private static final RewriteResponse RESPONSE_DONE = new StorageRpc.RewriteResponse(REQUEST,
-      RESULT.toPb(), 42L, true, "token", 42L);
+  private static final RewriteRequest REQUEST_WITH_OBJECT =
+      new StorageRpc.RewriteRequest(BLOB_ID.toPb(), EMPTY_OPTIONS, true, BLOB_INFO.toPb(),
+          EMPTY_OPTIONS, null);
+  private static final RewriteRequest REQUEST_WITHOUT_OBJECT =
+      new StorageRpc.RewriteRequest(BLOB_ID.toPb(), EMPTY_OPTIONS, false, BLOB_INFO.toPb(),
+          EMPTY_OPTIONS, null);
+  private static final RewriteResponse RESPONSE_WITH_OBJECT = new RewriteResponse(
+      REQUEST_WITH_OBJECT, null, 42L, false, "token", 21L);
+  private static final RewriteResponse RESPONSE_WITHOUT_OBJECT = new RewriteResponse(
+      REQUEST_WITHOUT_OBJECT, null, 42L, false, "token", 21L);
+  private static final RewriteResponse RESPONSE_WITH_OBJECT_DONE =
+      new RewriteResponse(REQUEST_WITH_OBJECT, RESULT_INFO.toPb(), 42L, true, "token", 42L);
+  private static final RewriteResponse RESPONSE_WITHOUT_OBJECT_DONE =
+      new RewriteResponse(REQUEST_WITHOUT_OBJECT, RESULT_INFO.toPb(), 42L, true, "token", 42L);
 
   private StorageOptions options;
   private StorageRpcFactory rpcFactoryMock;
   private StorageRpc storageRpcMock;
   private CopyWriter copyWriter;
+  private Blob result;
 
   @Before
   public void setUp() {
@@ -75,6 +84,7 @@ public class CopyWriterTest {
         .serviceRpcFactory(rpcFactoryMock)
         .retryParams(RetryParams.noRetries())
         .build();
+    result = new Blob(options.service(), new BlobInfo.BuilderImpl(RESULT_INFO));
   }
 
   @After
@@ -83,41 +93,111 @@ public class CopyWriterTest {
   }
 
   @Test
-  public void testRewrite() {
-    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
+  public void testRewriteWithObject() {
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
+        .andReturn(RESPONSE_WITH_OBJECT_DONE);
     EasyMock.replay(storageRpcMock);
-    copyWriter = new CopyWriter(options, RESPONSE);
-    assertEquals(RESULT, copyWriter.result());
+    copyWriter = new CopyWriter(options, RESPONSE_WITH_OBJECT);
+    assertEquals(result, copyWriter.result());
     assertTrue(copyWriter.isDone());
     assertEquals(42L, copyWriter.totalBytesCopied());
     assertEquals(42L, copyWriter.blobSize());
   }
 
   @Test
-  public void testRewriteMultipleRequests() {
-    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE);
-    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
+  public void testRewriteWithoutObject() {
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITHOUT_OBJECT))
+        .andReturn(RESPONSE_WITHOUT_OBJECT_DONE);
     EasyMock.replay(storageRpcMock);
-    copyWriter = new CopyWriter(options, RESPONSE);
-    assertEquals(RESULT, copyWriter.result());
+    copyWriter = new CopyWriter(options, RESPONSE_WITHOUT_OBJECT);
+    assertEquals(result, copyWriter.result());
     assertTrue(copyWriter.isDone());
     assertEquals(42L, copyWriter.totalBytesCopied());
     assertEquals(42L, copyWriter.blobSize());
   }
 
   @Test
-  public void testSaveAndRestore() {
-    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE);
-    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE)).andReturn(RESPONSE_DONE);
+  public void testRewriteWithObjectMultipleRequests() {
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
+        .andReturn(RESPONSE_WITH_OBJECT);
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
+        .andReturn(RESPONSE_WITH_OBJECT_DONE);
     EasyMock.replay(storageRpcMock);
-    copyWriter = new CopyWriter(options, RESPONSE);
+    copyWriter = new CopyWriter(options, RESPONSE_WITH_OBJECT);
+    assertEquals(result, copyWriter.result());
+    assertTrue(copyWriter.isDone());
+    assertEquals(42L, copyWriter.totalBytesCopied());
+    assertEquals(42L, copyWriter.blobSize());
+  }
+
+  @Test
+  public void testRewriteWithoutObjectMultipleRequests() {
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITHOUT_OBJECT))
+        .andReturn(RESPONSE_WITHOUT_OBJECT);
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITHOUT_OBJECT))
+        .andReturn(RESPONSE_WITHOUT_OBJECT_DONE);
+    EasyMock.replay(storageRpcMock);
+    copyWriter = new CopyWriter(options, RESPONSE_WITHOUT_OBJECT);
+    assertEquals(result, copyWriter.result());
+    assertTrue(copyWriter.isDone());
+    assertEquals(42L, copyWriter.totalBytesCopied());
+    assertEquals(42L, copyWriter.blobSize());
+  }
+
+  @Test
+  public void testSaveAndRestoreWithObject() {
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
+        .andReturn(RESPONSE_WITH_OBJECT);
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
+        .andReturn(RESPONSE_WITH_OBJECT_DONE);
+    EasyMock.replay(storageRpcMock);
+    copyWriter = new CopyWriter(options, RESPONSE_WITH_OBJECT);
     copyWriter.copyChunk();
     assertTrue(!copyWriter.isDone());
     assertEquals(21L, copyWriter.totalBytesCopied());
     assertEquals(42L, copyWriter.blobSize());
     RestorableState<CopyWriter> rewriterState = copyWriter.capture();
     CopyWriter restoredRewriter = rewriterState.restore();
-    assertEquals(RESULT, restoredRewriter.result());
+    assertEquals(result, restoredRewriter.result());
+    assertTrue(restoredRewriter.isDone());
+    assertEquals(42L, restoredRewriter.totalBytesCopied());
+    assertEquals(42L, restoredRewriter.blobSize());
+  }
+
+  @Test
+  public void testSaveAndRestoreWithoutObject() {
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITHOUT_OBJECT))
+        .andReturn(RESPONSE_WITHOUT_OBJECT);
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITHOUT_OBJECT))
+        .andReturn(RESPONSE_WITHOUT_OBJECT_DONE);
+    EasyMock.replay(storageRpcMock);
+    copyWriter = new CopyWriter(options, RESPONSE_WITHOUT_OBJECT);
+    copyWriter.copyChunk();
+    assertTrue(!copyWriter.isDone());
+    assertEquals(21L, copyWriter.totalBytesCopied());
+    assertEquals(42L, copyWriter.blobSize());
+    RestorableState<CopyWriter> rewriterState = copyWriter.capture();
+    CopyWriter restoredRewriter = rewriterState.restore();
+    assertEquals(result, restoredRewriter.result());
+    assertTrue(restoredRewriter.isDone());
+    assertEquals(42L, restoredRewriter.totalBytesCopied());
+    assertEquals(42L, restoredRewriter.blobSize());
+  }
+
+  @Test
+  public void testSaveAndRestoreWithResult() {
+    EasyMock.expect(storageRpcMock.continueRewrite(RESPONSE_WITH_OBJECT))
+        .andReturn(RESPONSE_WITH_OBJECT_DONE);
+    EasyMock.replay(storageRpcMock);
+    copyWriter = new CopyWriter(options, RESPONSE_WITH_OBJECT);
+    copyWriter.copyChunk();
+    assertEquals(result, copyWriter.result());
+    assertTrue(copyWriter.isDone());
+    assertEquals(42L, copyWriter.totalBytesCopied());
+    assertEquals(42L, copyWriter.blobSize());
+    RestorableState<CopyWriter> rewriterState = copyWriter.capture();
+    CopyWriter restoredRewriter = rewriterState.restore();
+    assertEquals(result, restoredRewriter.result());
     assertTrue(restoredRewriter.isDone());
     assertEquals(42L, restoredRewriter.totalBytesCopied());
     assertEquals(42L, restoredRewriter.blobSize());

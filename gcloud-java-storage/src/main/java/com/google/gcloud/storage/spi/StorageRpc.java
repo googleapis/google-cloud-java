@@ -138,15 +138,17 @@ public interface StorageRpc {
 
     public final StorageObject source;
     public final Map<StorageRpc.Option, ?> sourceOptions;
+    public final boolean overrideInfo;
     public final StorageObject target;
     public final Map<StorageRpc.Option, ?> targetOptions;
     public final Long megabytesRewrittenPerCall;
 
     public RewriteRequest(StorageObject source, Map<StorageRpc.Option, ?> sourceOptions,
-        StorageObject target, Map<StorageRpc.Option, ?> targetOptions,
+        boolean overrideInfo, StorageObject target, Map<StorageRpc.Option, ?> targetOptions,
         Long megabytesRewrittenPerCall) {
       this.source = source;
       this.sourceOptions = sourceOptions;
+      this.overrideInfo = overrideInfo;
       this.target = target;
       this.targetOptions = targetOptions;
       this.megabytesRewrittenPerCall = megabytesRewrittenPerCall;
@@ -163,6 +165,7 @@ public interface StorageRpc {
       final RewriteRequest other = (RewriteRequest) obj;
       return Objects.equals(this.source, other.source)
           && Objects.equals(this.sourceOptions, other.sourceOptions)
+          && Objects.equals(this.overrideInfo, other.overrideInfo)
           && Objects.equals(this.target, other.target)
           && Objects.equals(this.targetOptions, other.targetOptions)
           && Objects.equals(this.megabytesRewrittenPerCall, other.megabytesRewrittenPerCall);
@@ -170,7 +173,8 @@ public interface StorageRpc {
 
     @Override
     public int hashCode() {
-      return Objects.hash(source, sourceOptions, target, targetOptions, megabytesRewrittenPerCall);
+      return Objects.hash(source, sourceOptions, overrideInfo, target, targetOptions,
+          megabytesRewrittenPerCall);
     }
   }
 

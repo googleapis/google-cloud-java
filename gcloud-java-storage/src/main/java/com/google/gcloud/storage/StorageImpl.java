@@ -413,15 +413,16 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     final StorageObject source = copyRequest.source().toPb();
     final Map<StorageRpc.Option, ?> sourceOptions =
         optionMap(copyRequest.source().generation(), null, copyRequest.sourceOptions(), true);
-    final StorageObject target = copyRequest.target().toPb();
+    final StorageObject targetObject = copyRequest.target().toPb();
     final Map<StorageRpc.Option, ?> targetOptions = optionMap(copyRequest.target().generation(),
         copyRequest.target().metageneration(), copyRequest.targetOptions());
     try {
       RewriteResponse rewriteResponse = runWithRetries(new Callable<RewriteResponse>() {
         @Override
         public RewriteResponse call() {
-          return storageRpc.openRewrite(new StorageRpc.RewriteRequest(source, sourceOptions, target,
-              targetOptions, copyRequest.megabytesCopiedPerChunk()));
+          return storageRpc.openRewrite(new StorageRpc.RewriteRequest(source, sourceOptions,
+              copyRequest.overrideInfo(), targetObject, targetOptions,
+              copyRequest.megabytesCopiedPerChunk()));
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
       return new CopyWriter(options(), rewriteResponse);
