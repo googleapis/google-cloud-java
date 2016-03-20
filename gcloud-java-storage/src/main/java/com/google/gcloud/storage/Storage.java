@@ -1386,9 +1386,10 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Sends a copy request. This method copies both blob's data and information. To override source
-   * blob's information set the copy target via
-   * {@link CopyRequest.Builder#target(BlobInfo, BlobTargetOption...)} or
-   * {@link CopyRequest.Builder#target(BlobInfo, Iterable)}.
+   * blob's information supply a {@code BlobInfo} to the
+   * {@code CopyRequest} using either
+   * {@link Storage.CopyRequest.Builder#target(BlobInfo, Storage.BlobTargetOption...)} or
+   * {@link Storage.CopyRequest.Builder#target(BlobInfo, Iterable)}.
    *
    * <p>This method returns a {@link CopyWriter} object for the provided {@code CopyRequest}. If
    * source and destination objects share the same location and storage class the source blob is
