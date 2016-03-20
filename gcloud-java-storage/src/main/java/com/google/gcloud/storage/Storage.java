@@ -1385,12 +1385,17 @@ public interface Storage extends Service<StorageOptions> {
   Blob compose(ComposeRequest composeRequest);
 
   /**
-   * Sends a copy request. Returns a {@link CopyWriter} object for the provided
-   * {@code CopyRequest}. If source and destination objects share the same location and storage
-   * class the source blob is copied with one request and {@link CopyWriter#result()} immediately
-   * returns, regardless of the {@link CopyRequest#megabytesCopiedPerChunk} parameter.
-   * If source and destination have different location or storage class {@link CopyWriter#result()}
-   * might issue multiple RPC calls depending on blob's size.
+   * Sends a copy request. This method copies both blob's data and information. To override source
+   * blob's information set the copy target via
+   * {@link CopyRequest.Builder#target(BlobInfo, BlobTargetOption...)} or
+   * {@link CopyRequest.Builder#target(BlobInfo, Iterable)}.
+   *
+   * <p>This method returns a {@link CopyWriter} object for the provided {@code CopyRequest}. If
+   * source and destination objects share the same location and storage class the source blob is
+   * copied with one request and {@link CopyWriter#result()} immediately returns, regardless of the
+   * {@link CopyRequest#megabytesCopiedPerChunk} parameter. If source and destination have different
+   * location or storage class {@link CopyWriter#result()} might issue multiple RPC calls depending
+   * on blob's size.
    *
    * <p>Example usage of copy:
    * <pre> {@code BlobInfo blob = service.copy(copyRequest).result();}

@@ -32,7 +32,13 @@ import java.util.Objects;
 import java.util.concurrent.Callable;
 
 /**
- * Google Storage blob copy writer. This class holds the result of a copy request. If source and
+ * Google Storage blob copy writer. A {@code CopyWriter} object allows to copy both blob's data and
+ * information. To override source blob's information call {@link Storage#copy(Storage.CopyRequest)}
+ * with a {@code CopyRequest} object where the copy target is set via
+ * {@link Storage.CopyRequest.Builder#target(BlobInfo, Storage.BlobTargetOption...)} or
+ * {@link Storage.CopyRequest.Builder#target(BlobInfo, Iterable)}.
+ *
+ * <p>This class holds the result of a copy request. If source and
  * destination blobs share the same location and storage class the copy is completed in one RPC call
  * otherwise one or more {@link #copyChunk} calls are necessary to complete the copy. In addition,
  * {@link CopyWriter#result()} can be used to automatically complete the copy and return information
