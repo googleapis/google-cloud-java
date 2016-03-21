@@ -16,28 +16,20 @@
 
 package com.google.gcloud.compute;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
-import com.google.common.base.MoreObjects.ToStringHelper;
-
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * Identity for a Google Compute Engine global address.
  */
-public final class GlobalAddressId extends ResourceId implements AddressId {
+public final class GlobalAddressId extends AddressId {
 
   private static final String REGEX = ResourceId.REGEX + "global/addresses/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = -2950815290049218593L;
 
-  private final String address;
-
   private GlobalAddressId(String project, String address) {
-    super(project);
-    this.address = checkNotNull(address);
+    super(project, address);
   }
 
   @Override
@@ -46,30 +38,18 @@ public final class GlobalAddressId extends ResourceId implements AddressId {
   }
 
   @Override
-  public String address() {
-    return address;
-  }
-
-  @Override
   public String selfLink() {
-    return super.selfLink() + "/global/addresses/" + address;
-  }
-
-  @Override
-  public ToStringHelper toStringHelper() {
-    return super.toStringHelper().add("address", address);
+    return super.selfLink() + "/global/addresses/" + address();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), address);
+    return baseHashCode();
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof GlobalAddressId
-        && baseEquals((GlobalAddressId) obj)
-        && Objects.equals(address, ((GlobalAddressId) obj).address);
+    return obj instanceof GlobalAddressId && baseEquals((GlobalAddressId) obj);
   }
 
   @Override
@@ -77,15 +57,15 @@ public final class GlobalAddressId extends ResourceId implements AddressId {
     if (project() != null) {
       return this;
     }
-    return GlobalAddressId.of(projectId, address);
+    return GlobalAddressId.of(projectId, address());
   }
 
   /**
    * Returns an address identity given the address name. The address name must be 1-63 characters
-   * long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match
-   * the regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must
-   * be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit,
-   * except the last character, which cannot be a dash.
+   * long and comply with RFC1035. Specifically, the name must match the regular expression
+   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
+   * and all following characters must be a dash, lowercase letter, or digit, except the last
+   * character, which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
@@ -95,10 +75,10 @@ public final class GlobalAddressId extends ResourceId implements AddressId {
 
   /**
    * Returns an address identity given project and address names. The address name must be 1-63
-   * characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long
-   * and match the regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first
-   * character must be a lowercase letter, and all following characters must be a dash, lowercase
-   * letter, or digit, except the last character, which cannot be a dash.
+   * characters long and comply with RFC1035. Specifically, the name must match the regular
+   * expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a
+   * lowercase letter, and all following characters must be a dash, lowercase letter, or digit,
+   * except the last character, which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */

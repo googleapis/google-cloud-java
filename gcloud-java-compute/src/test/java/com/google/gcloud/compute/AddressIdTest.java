@@ -65,16 +65,20 @@ public class AddressIdTest {
   }
 
   @Test
-  public void testToAndFromUrl() {
+  public void testToAndFromUrlGlobal() {
     GlobalAddressId addressId = GlobalAddressId.of(PROJECT, NAME);
     compareAddressId(addressId, GlobalAddressId.fromUrl(addressId.selfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid global address URL");
     GlobalAddressId.fromUrl("notMatchingUrl");
+  }
+
+  @Test
+  public void testToAndFromUrlRegion() {
     RegionAddressId regionAddressId = RegionAddressId.of(PROJECT, REGION, NAME);
     compareRegionAddressId(regionAddressId, RegionAddressId.fromUrl(regionAddressId.selfLink()));
     thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("notMatchingUrl is not a valid global address URL");
+    thrown.expectMessage("notMatchingUrl is not a valid region address URL");
     RegionAddressId.fromUrl("notMatchingUrl");
   }
 
@@ -84,6 +88,7 @@ public class AddressIdTest {
     assertSame(addressId, addressId.setProjectId(PROJECT));
     compareAddressId(addressId, GlobalAddressId.of(NAME).setProjectId(PROJECT));
     RegionAddressId regionAddressId = RegionAddressId.of(PROJECT, REGION, NAME);
+    assertSame(regionAddressId, regionAddressId.setProjectId(PROJECT));
     compareRegionAddressId(regionAddressId, RegionAddressId.of(REGION, NAME).setProjectId(PROJECT));
   }
 

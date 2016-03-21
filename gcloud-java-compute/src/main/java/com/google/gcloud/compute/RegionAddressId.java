@@ -27,17 +27,17 @@ import java.util.regex.Pattern;
 /**
  * Identity for a Google Compute Engine region address.
  */
-public final class RegionAddressId extends RegionResourceId implements AddressId {
+public final class RegionAddressId extends AddressId {
 
-  private static final String REGEX = RegionResourceId.REGEX + "addresses/([^/]+)";
+  private static final String REGEX = ResourceId.REGEX + "regions/([^/]+)/addresses/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = 8170980880371085238L;
 
-  private final String address;
+  private final String region;
 
   private RegionAddressId(String project, String region, String address) {
-    super(project, region);
-    this.address = checkNotNull(address);
+    super(project, address);
+    this.region = checkNotNull(region);
   }
 
   @Override
@@ -45,31 +45,40 @@ public final class RegionAddressId extends RegionResourceId implements AddressId
     return Type.REGION;
   }
 
-  @Override
-  public String address() {
-    return address;
+  /**
+   * Returns the name of the region this address belongs to.
+   */
+  public String region() {
+    return region;
+  }
+
+  /**
+   * Returns the identity of the region this address belongs to.
+   */
+  public RegionId regionId() {
+    return RegionId.of(project(), region);
   }
 
   @Override
   public String selfLink() {
-    return super.selfLink() + "/addresses/" + address;
+    return super.selfLink() + "/regions/" + region + "/addresses/" + address();
   }
 
   @Override
   MoreObjects.ToStringHelper toStringHelper() {
-    return super.toStringHelper().add("address", address);
+    return super.toStringHelper().add("region", region);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), address);
+    return Objects.hash(baseHashCode(), region);
   }
 
   @Override
   public boolean equals(Object obj) {
     return obj instanceof RegionAddressId
         && baseEquals((RegionAddressId) obj)
-        && Objects.equals(address, ((RegionAddressId) obj).address);
+        && Objects.equals(region, ((RegionAddressId) obj).region);
   }
 
   @Override
@@ -77,7 +86,7 @@ public final class RegionAddressId extends RegionResourceId implements AddressId
     if (project() != null) {
       return this;
     }
-    return RegionAddressId.of(projectId, region(), address);
+    return RegionAddressId.of(projectId, region, address());
   }
 
   /**
@@ -95,10 +104,10 @@ public final class RegionAddressId extends RegionResourceId implements AddressId
 
   /**
    * Returns a region address identity given the region and address names. The address name must be
-   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
-   * long and match the regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first
-   * character must be a lowercase letter, and all following characters must be a dash, lowercase
-   * letter, or digit, except the last character, which cannot be a dash.
+   * 1-63 characters long and comply with RFC1035. Specifically, the name must match the regular
+   * expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a
+   * lowercase letter, and all following characters must be a dash, lowercase letter, or digit,
+   * except the last character, which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
@@ -108,10 +117,10 @@ public final class RegionAddressId extends RegionResourceId implements AddressId
 
   /**
    * Returns a region address identity given project, region and address names. The address name
-   * must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63
-   * characters long and match the regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means
-   * the first character must be a lowercase letter, and all following characters must be a dash,
-   * lowercase letter, or digit, except the last character, which cannot be a dash.
+   * must be 1-63 characters long and comply with RFC1035. Specifically, the name must match the
+   * regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a
+   * lowercase letter, and all following characters must be a dash, lowercase letter, or digit,
+   * except the last character, which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */

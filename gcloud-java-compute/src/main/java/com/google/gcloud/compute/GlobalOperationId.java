@@ -16,28 +16,20 @@
 
 package com.google.gcloud.compute;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
-import com.google.common.base.MoreObjects;
-
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * Identity for a Google Compute Engine global operation.
  */
-public class GlobalOperationId extends ResourceId implements OperationId {
+public final class GlobalOperationId extends OperationId {
 
   private static final String REGEX = ResourceId.REGEX + "global/operations/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = 3945756772641577962L;
 
-  private final String operation;
-
   private GlobalOperationId(String project, String operation) {
-    super(project);
-    this.operation = checkNotNull(operation);
+    super(project, operation);
   }
 
   @Override
@@ -46,30 +38,18 @@ public class GlobalOperationId extends ResourceId implements OperationId {
   }
 
   @Override
-  public String operation() {
-    return operation;
-  }
-
-  @Override
   public String selfLink() {
-    return super.selfLink() + "/global/operations/" + operation;
-  }
-
-  @Override
-  MoreObjects.ToStringHelper toStringHelper() {
-    return super.toStringHelper().add("operation", operation);
+    return super.selfLink() + "/global/operations/" + operation();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), operation);
+    return baseHashCode();
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof GlobalOperationId
-        && baseEquals((GlobalOperationId) obj)
-        && Objects.equals(operation, ((GlobalOperationId) obj).operation);
+    return obj instanceof GlobalOperationId && baseEquals((GlobalOperationId) obj);
   }
 
   @Override
@@ -77,7 +57,7 @@ public class GlobalOperationId extends ResourceId implements OperationId {
     if (project() != null) {
       return this;
     }
-    return GlobalOperationId.of(projectId, operation);
+    return GlobalOperationId.of(projectId, operation());
   }
 
   /**

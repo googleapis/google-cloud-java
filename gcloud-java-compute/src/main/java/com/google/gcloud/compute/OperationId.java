@@ -16,10 +16,25 @@
 
 package com.google.gcloud.compute;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import com.google.common.base.MoreObjects;
+
+import java.util.Objects;
+
 /**
- * Interface for Google Compute Engine operation identities.
+ * Base class for Google Compute Engine operation identities.
  */
-public interface OperationId {
+public abstract class OperationId extends ResourceId {
+
+  private static final long serialVersionUID = -5502909279744388604L;
+
+  private final String operation;
+
+  OperationId(String project, String operation) {
+    super(project);
+    this.operation = checkNotNull(operation);
+  }
 
   /**
    * Possible types for a Google Compute Engine operation identity.
@@ -30,11 +45,13 @@ public interface OperationId {
      * addresses or snapshots.
      */
     GLOBAL,
+
     /**
      * Region operations are those operations that deal with resources that live in a region, such
      * as subnetworks.
      */
     REGION,
+
     /**
      * Zone operations are those operations that deal with resources that live in a zone, such as
      * disks and instances.
@@ -45,20 +62,32 @@ public interface OperationId {
   /**
    * Returns the type of this operation identity.
    */
-  Type type();
-
-  /**
-   * Returns the name of the project.
-   */
-  String project();
+  public abstract Type type();
 
   /**
    * Returns the name of the operation resource.
    */
-  String operation();
+  public String operation() {
+    return operation;
+  }
 
-  /**
-   * Returns a fully qualified URL to the operation.
-   */
-  String selfLink();
+  @Override
+  MoreObjects.ToStringHelper toStringHelper() {
+    return super.toStringHelper().add("operation", operation);
+  }
+
+  @Override
+  final int baseHashCode() {
+    return Objects.hash(super.baseHashCode(), operation);
+  }
+
+  @Override
+  final boolean baseEquals(ResourceId resourceId) {
+    return resourceId instanceof OperationId
+        && super.baseEquals(resourceId)
+        && Objects.equals(operation, ((OperationId) resourceId).operation);
+  }
+
+  @Override
+  abstract OperationId setProjectId(String projectId);
 }

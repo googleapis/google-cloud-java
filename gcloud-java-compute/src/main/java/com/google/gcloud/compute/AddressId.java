@@ -16,10 +16,20 @@
 
 package com.google.gcloud.compute;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import com.google.common.base.MoreObjects;
+
+import java.util.Objects;
+
 /**
- * Interface for Google Compute Engine address identities.
+ * Base class for Google Compute Engine address identities.
  */
-public interface AddressId {
+public abstract class AddressId extends ResourceId {
+
+  private static final long serialVersionUID = 147328216049936438L;
+
+  private final String address;
 
   /**
    * Possible types for a Google Compute Engine address identity.
@@ -29,35 +39,53 @@ public interface AddressId {
      * Global static external IP addresses can be assigned to global forwarding rules.
      */
     GLOBAL,
+
     /**
      * Region static external IP addresses can be assigned to instances and region forwarding rules.
      */
     REGION
   }
 
+  AddressId(String project, String address) {
+    super(project);
+    this.address = checkNotNull(address);
+  }
+
   /**
    * Returns the type of this address identity.
    */
-  Type type();
+  public abstract Type type();
 
   /**
-   * Returns the name of the project.
-   */
-  String project();
-
-  /**
-   * Returns the name of the address resource. The name must be 1-63 characters long, and comply
-   * with RFC1035. Specifically, the name must be 1-63 characters long and match the regular
-   * expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a
-   * lowercase letter, and all following characters must be a dash, lowercase letter, or digit,
-   * except the last character, which cannot be a dash.
+   * Returns the name of the address resource. The name must be 1-63 characters long and comply with
+   * RFC1035. Specifically, the name must match the regular expression
+   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
+   * and all following characters must be a dash, lowercase letter, or digit, except the last
+   * character, which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
-  String address();
+  public String address() {
+    return address;
+  }
 
-  /**
-   * Returns a fully qualified URL to the entity.
-   */
-  String selfLink();
+  @Override
+  MoreObjects.ToStringHelper toStringHelper() {
+    return super.toStringHelper().add("address", address);
+  }
+
+  @Override
+  final int baseHashCode() {
+    return Objects.hash(super.baseHashCode(), address);
+  }
+
+  @Override
+  final boolean baseEquals(ResourceId resourceId) {
+    return resourceId instanceof AddressId
+        && super.baseEquals(resourceId)
+        && Objects.equals(address, ((AddressId) resourceId).address);
+  }
+
+  @Override
+  abstract AddressId setProjectId(String projectId);
 }
