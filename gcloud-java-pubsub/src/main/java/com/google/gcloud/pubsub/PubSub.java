@@ -96,8 +96,8 @@ public interface PubSub extends Service<PubSubOptions> {
 
   // Ack options:
   // 1) replace return value to ReceivedMessage (Message + functional ack)
-  // 2) rename Message to MessageInfo and make Message functional with ack
-  // 3) like (2) but with no auto-renew, so provide a function for renew
+  // 2) like (1) but with no auto-renew, so provide a function for renew
+  // 3) rename Message to MessageInfo and make Message functional with ack
   // 4) return a "special" list (extends List) but has a way to "ackSoFar"
   // 5) instead of List use callback and auto-acknowledge per callback (and auto-renew)
   // ** Auto renew means, using a separate thread.
