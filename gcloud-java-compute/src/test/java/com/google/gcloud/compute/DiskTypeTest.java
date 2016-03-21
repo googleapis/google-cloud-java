@@ -20,8 +20,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import java.math.BigInteger;
-
 public class DiskTypeTest {
 
   private static final String ID = "42";
