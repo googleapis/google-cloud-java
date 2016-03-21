@@ -29,6 +29,7 @@ import com.google.common.collect.ImmutableSet;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -94,7 +95,7 @@ public class IamPolicyTest {
     assertEquals(editorBinding, policy.bindings());
     assertEquals("etag", policy.etag());
     assertEquals(1, policy.version().intValue());
-    policy = SIMPLE_POLICY.toBuilder().removeBinding("editor").build();
+    policy = SIMPLE_POLICY.toBuilder().removeRole("editor").build();
     assertEquals(ImmutableMap.of("viewer", BINDINGS.get("viewer")), policy.bindings());
     assertNull(policy.etag());
     assertNull(policy.version());
@@ -109,6 +110,8 @@ public class IamPolicyTest {
     policy = PolicyImpl.builder()
         .removeIdentity("viewer", USER)
         .addIdentity("owner", USER, SERVICE_ACCOUNT)
+        .addIdentity("editor", GROUP)
+        .removeIdentity("editor", GROUP)
         .build();
     assertEquals(
         ImmutableMap.of("owner", ImmutableSet.of(USER, SERVICE_ACCOUNT)), policy.bindings());
@@ -121,19 +124,25 @@ public class IamPolicyTest {
     try {
       PolicyImpl.builder().addIdentity(null, USER);
       fail("Null role should cause exception.");
-    } catch (IllegalArgumentException ex) {
+    } catch (NullPointerException ex) {
       assertEquals("The role cannot be null.", ex.getMessage());
     }
     try {
       PolicyImpl.builder().addIdentity("viewer", null, USER);
       fail("Null identity should cause exception.");
-    } catch (IllegalArgumentException ex) {
+    } catch (NullPointerException ex) {
+      assertEquals("Null identities are not permitted.", ex.getMessage());
+    }
+    try {
+      PolicyImpl.builder().addIdentity("viewer", USER, (Identity[]) null);
+      fail("Null identity should cause exception.");
+    } catch (NullPointerException ex) {
       assertEquals("Null identities are not permitted.", ex.getMessage());
     }
     try {
       PolicyImpl.builder().bindings(null);
       fail("Null bindings map should cause exception.");
-    } catch (IllegalArgumentException ex) {
+    } catch (NullPointerException ex) {
       assertEquals("The provided map of bindings cannot be null.", ex.getMessage());
     }
     try {
@@ -141,8 +150,18 @@ public class IamPolicyTest {
       bindings.put("viewer", null);
       PolicyImpl.builder().bindings(bindings);
       fail("Null set of identities should cause exception.");
-    } catch (IllegalArgumentException ex) {
+    } catch (NullPointerException ex) {
       assertEquals("A role cannot be assigned to a null set of identities.", ex.getMessage());
+    }
+    try {
+      Map<String, Set<Identity>> bindings = new HashMap<>();
+      Set<Identity> identities = new HashSet<>();
+      identities.add(null);
+      bindings.put("viewer", identities);
+      PolicyImpl.builder().bindings(bindings);
+      fail("Null identity should cause exception.");
+    } catch (IllegalArgumentException ex) {
+      assertEquals("Null identities are not permitted.", ex.getMessage());
     }
   }
 
