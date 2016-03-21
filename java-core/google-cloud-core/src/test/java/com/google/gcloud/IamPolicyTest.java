@@ -28,6 +28,8 @@ import com.google.common.collect.ImmutableSet;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -46,8 +48,8 @@ public class IamPolicyTest {
       "editor",
       ImmutableSet.of(ALL_AUTH_USERS, GROUP, DOMAIN));
   private static final PolicyImpl SIMPLE_POLICY = PolicyImpl.builder()
-      .addBinding("viewer", ImmutableSet.of(USER, SERVICE_ACCOUNT, ALL_USERS))
-      .addBinding("editor", ImmutableSet.of(ALL_AUTH_USERS, GROUP, DOMAIN))
+      .addIdentity("viewer", USER, SERVICE_ACCOUNT, ALL_USERS)
+      .addIdentity("editor", ALL_AUTH_USERS, GROUP, DOMAIN)
       .build();
   private static final PolicyImpl FULL_POLICY =
       new PolicyImpl.Builder(SIMPLE_POLICY.bindings(), "etag", 1).build();
@@ -93,7 +95,7 @@ public class IamPolicyTest {
     assertEquals(editorBinding, policy.bindings());
     assertEquals("etag", policy.etag());
     assertEquals(1, policy.version().intValue());
-    policy = SIMPLE_POLICY.toBuilder().removeBinding("editor").build();
+    policy = SIMPLE_POLICY.toBuilder().removeRole("editor").build();
     assertEquals(ImmutableMap.of("viewer", BINDINGS.get("viewer")), policy.bindings());
     assertNull(policy.etag());
     assertNull(policy.version());
@@ -105,22 +107,61 @@ public class IamPolicyTest {
         policy.bindings());
     assertNull(policy.etag());
     assertNull(policy.version());
-    policy = PolicyImpl.builder().addBinding("owner", USER, SERVICE_ACCOUNT).build();
+    policy = PolicyImpl.builder()
+        .removeIdentity("viewer", USER)
+        .addIdentity("owner", USER, SERVICE_ACCOUNT)
+        .addIdentity("editor", GROUP)
+        .removeIdentity("editor", GROUP)
+        .build();
     assertEquals(
         ImmutableMap.of("owner", ImmutableSet.of(USER, SERVICE_ACCOUNT)), policy.bindings());
     assertNull(policy.etag());
     assertNull(policy.version());
+  }
+
+  @Test
+  public void testIllegalPolicies() {
     try {
-      SIMPLE_POLICY.toBuilder().addBinding("viewer", USER);
-      fail("Should have failed due to duplicate role.");
-    } catch (IllegalArgumentException e) {
-      assertEquals("The policy already contains a binding with the role viewer.", e.getMessage());
+      PolicyImpl.builder().addIdentity(null, USER);
+      fail("Null role should cause exception.");
+    } catch (NullPointerException ex) {
+      assertEquals("The role cannot be null.", ex.getMessage());
     }
     try {
-      SIMPLE_POLICY.toBuilder().addBinding("editor", ImmutableSet.of(USER));
-      fail("Should have failed due to duplicate role.");
-    } catch (IllegalArgumentException e) {
-      assertEquals("The policy already contains a binding with the role editor.", e.getMessage());
+      PolicyImpl.builder().addIdentity("viewer", null, USER);
+      fail("Null identity should cause exception.");
+    } catch (NullPointerException ex) {
+      assertEquals("Null identities are not permitted.", ex.getMessage());
+    }
+    try {
+      PolicyImpl.builder().addIdentity("viewer", USER, (Identity[]) null);
+      fail("Null identity should cause exception.");
+    } catch (NullPointerException ex) {
+      assertEquals("Null identities are not permitted.", ex.getMessage());
+    }
+    try {
+      PolicyImpl.builder().bindings(null);
+      fail("Null bindings map should cause exception.");
+    } catch (NullPointerException ex) {
+      assertEquals("The provided map of bindings cannot be null.", ex.getMessage());
+    }
+    try {
+      Map<String, Set<Identity>> bindings = new HashMap<>();
+      bindings.put("viewer", null);
+      PolicyImpl.builder().bindings(bindings);
+      fail("Null set of identities should cause exception.");
+    } catch (NullPointerException ex) {
+      assertEquals("A role cannot be assigned to a null set of identities.", ex.getMessage());
+    }
+    try {
+      Map<String, Set<Identity>> bindings = new HashMap<>();
+      Set<Identity> identities = new HashSet<>();
+      identities.add(null);
+      bindings.put("viewer", identities);
+      PolicyImpl.builder().bindings(bindings);
+      fail("Null identity should cause exception.");
+    } catch (IllegalArgumentException ex) {
+      assertEquals("Null identities are not permitted.", ex.getMessage());
     }
   }
 
