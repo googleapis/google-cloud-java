@@ -23,7 +23,6 @@ import com.google.gcloud.compute.Zone.MaintenanceWindow;
 
 import org.junit.Test;
 
-import java.math.BigInteger;
 import java.util.List;
 
 public class ZoneTest {

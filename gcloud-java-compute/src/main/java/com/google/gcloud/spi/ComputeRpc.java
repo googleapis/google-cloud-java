@@ -17,17 +17,11 @@
 package com.google.gcloud.spi;
 
 import com.google.api.services.compute.model.Address;
-import com.google.api.services.compute.model.DeprecationStatus;
-import com.google.api.services.compute.model.Disk;
 import com.google.api.services.compute.model.DiskType;
-import com.google.api.services.compute.model.Image;
 import com.google.api.services.compute.model.License;
 import com.google.api.services.compute.model.MachineType;
-import com.google.api.services.compute.model.Network;
 import com.google.api.services.compute.model.Operation;
 import com.google.api.services.compute.model.Region;
-import com.google.api.services.compute.model.Snapshot;
-import com.google.api.services.compute.model.Subnetwork;
 import com.google.api.services.compute.model.Zone;
 import com.google.gcloud.compute.ComputeException;
 

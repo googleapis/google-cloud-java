@@ -22,7 +22,6 @@ import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 
-import java.math.BigInteger;
 import java.util.List;
 
 public class RegionTest {
