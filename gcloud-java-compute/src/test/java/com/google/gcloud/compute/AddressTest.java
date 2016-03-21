@@ -32,7 +32,6 @@ import com.google.common.collect.ImmutableList;
 import org.junit.After;
 import org.junit.Test;
 
-import java.math.BigInteger;
 import java.util.List;
 
 public class AddressTest {
@@ -114,7 +113,7 @@ public class AddressTest {
 
   @Test
   public void testBuilder() {
-    initializeExpectedAddress(5);
+    initializeExpectedAddress(6);
     assertEquals(ADDRESS, instanceAddress.address());
     assertEquals(CREATION_TIMESTAMP, instanceAddress.creationTimestamp());
     assertEquals(DESCRIPTION, instanceAddress.description());
@@ -150,6 +149,17 @@ public class AddressTest {
     assertNull(address.usage());
     address = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID).build();
     assertEquals(REGION_ADDRESS_ID, address.addressId());
+    assertSame(serviceMockReturnsOptions, address.compute());
+    assertNull(address.address());
+    assertNull(address.creationTimestamp());
+    assertNull(address.description());
+    assertNull(address.id());
+    assertNull(address.status());
+    assertNull(address.usage());
+    address = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
+        .addressId(GLOBAL_ADDRESS_ID)
+        .build();
+    assertEquals(GLOBAL_ADDRESS_ID, address.addressId());
     assertSame(serviceMockReturnsOptions, address.compute());
     assertNull(address.address());
     assertNull(address.creationTimestamp());

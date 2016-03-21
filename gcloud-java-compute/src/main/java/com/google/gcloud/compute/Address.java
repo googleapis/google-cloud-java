@@ -24,13 +24,12 @@ import java.util.Objects;
 
 /**
  * A Google Compute Engine address. With Compute Engine you can create static external IP addresses
- * that are assigned to your project and persists until you explicitly release them. A region
- * address can be assigned to a Compute Engine instance or to a regional forwarding rule. Compute
- * Engine also allows to create global addresses that are used for global forwarding rules. Both
- * global addresses and global forwarding rules can only be used for HTTP load balancing.
- * {@code Address} adds a layer of service-related functionality over {@link AddressInfo}. Objects
- * of this class are immutable. To get an {@code Address} object with the most recent information
- * use {@link #reload}.
+ * that are assigned to your project and persist until you explicitly release them. A region address
+ * can be assigned to a Compute Engine instance or to a regional forwarding rule. Compute Engine
+ * also allows you to create global addresses that are used for global forwarding rules. Both global
+ * addresses and global forwarding rules can only be used for HTTP load balancing. {@code Address}
+ * adds a layer of service-related functionality over {@link AddressInfo}. Objects of this class are
+ * immutable. To get an {@code Address} object with the most recent information use {@link #reload}.
  *
  * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#reservedaddress">
  *     Static external IP addresses</a>
@@ -87,7 +86,7 @@ public class Address extends AddressInfo {
     }
 
     @Override
-    Builder addressId(AddressId addressId) {
+    public Builder addressId(AddressId addressId) {
       infoBuilder.addressId(addressId);
       return this;
     }
@@ -122,19 +121,19 @@ public class Address extends AddressInfo {
    * @return {@code true} if this address exists, {@code false} otherwise
    * @throws ComputeException upon failure
    */
-  public boolean exists() throws ComputeException  {
+  public boolean exists() {
     return reload(Compute.AddressOption.fields()) != null;
   }
 
   /**
-   * Fetches current address' latest information. Returns {@code null} if the address does not
+   * Fetches the current address' latest information. Returns {@code null} if the address does not
    * exist.
    *
    * @param options address options
    * @return an {@code Address} object with latest information or {@code null} if not found
    * @throws ComputeException upon failure
    */
-  public Address reload(Compute.AddressOption... options) throws ComputeException {
+  public Address reload(Compute.AddressOption... options) {
     return compute.get(addressId(), options);
   }
 
@@ -145,7 +144,7 @@ public class Address extends AddressInfo {
    *     the address was not found
    * @throws ComputeException upon failure
    */
-  public Operation delete(Compute.OperationOption... options) throws ComputeException {
+  public Operation delete(Compute.OperationOption... options) {
     return compute.delete(addressId(), options);
   }
 
