@@ -34,11 +34,11 @@ import java.util.Objects;
 
 /**
  * A Google Compute Engine address. With Compute Engine you can create static external IP addresses
- * that are assigned to your project and persists until you explicitly release them. A region
- * address can be assigned to a Compute Engine instance or to a regional forwarding rule. To create
- * a region address use a {@link RegionAddressId} identity. Compute Engine also allows to create
- * global addresses that are used for global forwarding rules. Both global addresses and global
- * forwarding rules can only be used for HTTP load balancing. To create a global address use a
+ * that are assigned to your project and persist until you explicitly release them. A region address
+ * can be assigned to a Compute Engine instance or to a regional forwarding rule. To create a region
+ * address, use a {@link RegionAddressId} identity. Compute Engine also allows you to create global
+ * addresses that are used for global forwarding rules. Both global addresses and global forwarding
+ * rules can only be used for HTTP load balancing. To create a global address, use a
  * {@link GlobalAddressId} identity.
  *
  * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#reservedaddress">
@@ -94,8 +94,8 @@ public class AddressInfo implements Serializable {
    * class represent different possible usages of a Compute Engine address. {@link InstanceUsage}
    * contains information for region addresses assigned to a Google Compute Engine instance.
    * {@link RegionForwardingUsage} contains information for region addresses assigned to one or more
-   * region forwarding rule. {@link GlobalForwardingUsage} contains information for global addresses
-   * assigned to one or more global forwarding rule.
+   * region forwarding rules. {@link GlobalForwardingUsage} contains information for global
+   * addresses assigned to one or more global forwarding rules.
    */
   public abstract static class Usage implements Serializable {
 
@@ -106,7 +106,7 @@ public class AddressInfo implements Serializable {
     /**
      * Returns the identities of resources currently using this address.
      */
-    public abstract List<ResourceId> users();
+    public abstract List<? extends ResourceId> users();
 
     final boolean baseEquals(Usage usage) {
       return Objects.equals(toPb(), usage.toPb());
@@ -128,8 +128,10 @@ public class AddressInfo implements Serializable {
         return (T) InstanceUsage.fromPb(addressPb);
       } else if (RegionForwardingRuleId.matchesUrl(url)) {
         return (T) RegionForwardingUsage.fromPb(addressPb);
-      } else {
+      } else if (GlobalForwardingRuleId.matchesUrl(url)) {
         return (T) GlobalForwardingUsage.fromPb(addressPb);
+      } else {
+        throw new IllegalArgumentException("Unexpected resource URL for address user");
       }
     }
   }
@@ -156,8 +158,8 @@ public class AddressInfo implements Serializable {
     }
 
     @Override
-    public List<ResourceId> users() {
-      return ImmutableList.<ResourceId>of(instance);
+    public List<InstanceId> users() {
+      return ImmutableList.of(instance);
     }
 
     @Override
@@ -203,9 +205,8 @@ public class AddressInfo implements Serializable {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
-    public List<ResourceId> users() {
-      return (List<ResourceId>) (List) forwardingRules;
+    public List<RegionForwardingRuleId> users() {
+      return forwardingRules;
     }
 
     @Override
@@ -252,9 +253,8 @@ public class AddressInfo implements Serializable {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
-    public List<ResourceId> users() {
-      return (List<ResourceId>) (List) forwardingRules;
+    public List<GlobalForwardingRuleId> users() {
+      return forwardingRules;
     }
 
     @Override
@@ -298,7 +298,7 @@ public class AddressInfo implements Serializable {
 
     abstract Builder id(String id);
 
-    abstract Builder addressId(AddressId addressId);
+    public abstract Builder addressId(AddressId addressId);
 
     abstract Builder status(Status status);
 
@@ -379,7 +379,7 @@ public class AddressInfo implements Serializable {
     }
 
     @Override
-    BuilderImpl addressId(AddressId addressId) {
+    public BuilderImpl addressId(AddressId addressId) {
       this.addressId = checkNotNull(addressId);
       return this;
     }
@@ -457,11 +457,11 @@ public class AddressInfo implements Serializable {
   }
 
   /**
-   * Returns the usage information of the address. Returns a {@link InstanceUsage} object for region
-   * addresses that are assigned to VM instances. Returns a {@link RegionForwardingUsage} object for
-   * region addresses assigned to region forwarding rules. Returns a {@link GlobalForwardingUsage}
-   * object for global addresses assigned to global forwarding rules. Returns {@code null} if the
-   * address is not in use.
+   * Returns the usage information of the address. Returns an {@link InstanceUsage} object for
+   * region addresses that are assigned to VM instances. Returns a {@link RegionForwardingUsage}
+   * object for region addresses assigned to region forwarding rules. Returns a
+   * {@link GlobalForwardingUsage} object for global addresses assigned to global forwarding rules.
+   * Returns {@code null} if the address is not in use.
    */
   @SuppressWarnings("unchecked")
   public <T extends Usage> T usage() {
@@ -501,14 +501,10 @@ public class AddressInfo implements Serializable {
   }
 
   AddressInfo setProjectId(String projectId) {
-    Builder builder = toBuilder();
-    AddressId addressIdWithProject;
-    if (addressId instanceof RegionAddressId) {
-      addressIdWithProject = this.<RegionAddressId>addressId().setProjectId(projectId);
-    } else {
-      addressIdWithProject = this.<GlobalAddressId>addressId().setProjectId(projectId);
+    if (addressId().project() != null) {
+      return this;
     }
-    return builder.addressId(addressIdWithProject).build();
+    return toBuilder().addressId(addressId.setProjectId(projectId)).build();
   }
 
   Address toPb() {
