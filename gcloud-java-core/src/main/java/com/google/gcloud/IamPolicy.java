@@ -83,39 +83,8 @@ public abstract class IamPolicy<R> implements Serializable {
       return self();
     }
 
-    /**
-     * Adds a binding to the policy.
-     *
-     * @throws IllegalArgumentException if the policy already contains a binding with the same role
-     *     or if the role or any identities are null
-     */
-    public final B addBinding(R role, Set<Identity> identities) {
-      verifyBinding(role, identities);
-      checkArgument(!bindings.containsKey(role),
-          "The policy already contains a binding with the role " + role.toString() + ".");
-      bindings.put(role, new HashSet<Identity>(identities));
-      return self();
-    }
-
-    /**
-     * Adds a binding to the policy.
-     *
-     * @throws IllegalArgumentException if the policy already contains a binding with the same role
-     *     or if the role or any identities are null
-     */
-    public final B addBinding(R role, Identity first, Identity... others) {
-      HashSet<Identity> identities = new HashSet<>();
-      identities.add(first);
-      identities.addAll(Arrays.asList(others));
-      return addBinding(role, identities);
-    }
-
     private void verifyBinding(R role, Collection<Identity> identities) {
       checkArgument(role != null, "The role cannot be null.");
-      verifyIdentities(identities);
-    }
-
-    private void verifyIdentities(Collection<Identity> identities) {
       checkArgument(identities != null, "A role cannot be assigned to a null set of identities.");
       checkArgument(!identities.contains(null), "Null identities are not permitted.");
     }
@@ -129,33 +98,33 @@ public abstract class IamPolicy<R> implements Serializable {
     }
 
     /**
-     * Adds one or more identities to an existing binding.
-     *
-     * @throws IllegalArgumentException if the policy doesn't contain a binding with the specified
-     *     role or any identities are null
+     * Adds one or more identities to the policy under the role specified. Creates a new role
+     * binding if the binding corresponding to the given role did not previously exist.
      */
     public final B addIdentity(R role, Identity first, Identity... others) {
-      checkArgument(bindings.containsKey(role),
-          "The policy doesn't contain the role " + role.toString() + ".");
       List<Identity> toAdd = new LinkedList<>();
       toAdd.add(first);
       toAdd.addAll(Arrays.asList(others));
-      verifyIdentities(toAdd);
-      bindings.get(role).addAll(toAdd);
+      verifyBinding(role, toAdd);
+      Set<Identity> identities = bindings.get(role);
+      if (identities == null) {
+        identities = new HashSet<Identity>();
+        bindings.put(role, identities);
+      }
+      identities.addAll(toAdd);
       return self();
     }
 
     /**
-     * Removes one or more identities from an existing binding.
-     *
-     * @throws IllegalArgumentException if the policy doesn't contain a binding with the specified
-     *     role
+     * Removes one or more identities from an existing binding. Does nothing if the binding
+     * associated with the provided role doesn't exist.
      */
     public final B removeIdentity(R role, Identity first, Identity... others) {
-      checkArgument(bindings.containsKey(role),
-          "The policy doesn't contain the role " + role.toString() + ".");
-      bindings.get(role).remove(first);
-      bindings.get(role).removeAll(Arrays.asList(others));
+      Set<Identity> identities = bindings.get(role);
+      if (identities != null) {
+        identities.remove(first);
+        identities.removeAll(Arrays.asList(others));
+      }
       return self();
     }
 

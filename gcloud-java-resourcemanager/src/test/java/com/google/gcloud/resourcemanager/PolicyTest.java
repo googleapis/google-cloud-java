@@ -37,10 +37,10 @@ public class PolicyTest {
   private static final Identity GROUP = Identity.group("group@gmail.com");
   private static final Identity DOMAIN = Identity.domain("google.com");
   private static final Policy SIMPLE_POLICY = Policy.builder()
-      .addBinding(Role.owner(), ImmutableSet.of(USER))
-      .addBinding(Role.viewer(), ImmutableSet.of(ALL_USERS))
-      .addBinding(Role.editor(), ImmutableSet.of(ALL_AUTH_USERS, DOMAIN))
-      .addBinding(Role.rawRole("some-role"), ImmutableSet.of(SERVICE_ACCOUNT, GROUP))
+      .addIdentity(Role.owner(), USER)
+      .addIdentity(Role.viewer(), ALL_USERS)
+      .addIdentity(Role.editor(), ALL_AUTH_USERS, DOMAIN)
+      .addIdentity(Role.rawRole("some-role"), SERVICE_ACCOUNT, GROUP)
       .build();
   private static final Policy FULL_POLICY =
       new Policy.Builder(SIMPLE_POLICY.bindings(), "etag", 1).build();
@@ -68,10 +68,10 @@ public class PolicyTest {
   @Test
   public void testEquals() {
     Policy copy = Policy.builder()
-        .addBinding(Role.owner(), ImmutableSet.of(USER))
-        .addBinding(Role.viewer(), ImmutableSet.of(ALL_USERS))
-        .addBinding(Role.editor(), ImmutableSet.of(ALL_AUTH_USERS, DOMAIN))
-        .addBinding(Role.rawRole("some-role"), ImmutableSet.of(SERVICE_ACCOUNT, GROUP))
+        .addIdentity(Role.owner(), USER)
+        .addIdentity(Role.viewer(), ALL_USERS)
+        .addIdentity(Role.editor(), ALL_AUTH_USERS, DOMAIN)
+        .addIdentity(Role.rawRole("some-role"), SERVICE_ACCOUNT, GROUP)
         .build();
     assertEquals(SIMPLE_POLICY, copy);
     assertNotEquals(SIMPLE_POLICY, FULL_POLICY);

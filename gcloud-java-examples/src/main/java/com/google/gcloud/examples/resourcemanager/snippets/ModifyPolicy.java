@@ -49,11 +49,7 @@ public class ModifyPolicy {
     // Add a viewer
     Policy.Builder modifiedPolicy = policy.toBuilder();
     Identity newViewer = Identity.user("<insert user's email address here>");
-    if (policy.bindings().containsKey(Role.viewer())) {
-      modifiedPolicy.addIdentity(Role.viewer(), newViewer);
-    } else {
-      modifiedPolicy.addBinding(Role.viewer(), newViewer);
-    }
+    modifiedPolicy.addIdentity(Role.viewer(), newViewer);
 
     // Write policy
     Policy updatedPolicy = project.replacePolicy(modifiedPolicy.build());

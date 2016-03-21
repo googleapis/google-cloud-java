@@ -202,10 +202,10 @@ public class Project extends ProjectInfo {
   }
 
   /**
-   * Returns the IAM access control policy for the specified project. Returns {@code null} if the
-   * resource does not exist or if you do not have adequate permission to view the project or get
-   * the policy.
+   * Returns the IAM access control policy for this project. Returns {@code null} if the resource
+   * does not exist or if you do not have adequate permission to view the project or get the policy.
    *
+   * @return the IAM policy for the project
    * @throws ResourceManagerException upon failure
    * @see <a href=
    *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/getIamPolicy">
@@ -216,12 +216,12 @@ public class Project extends ProjectInfo {
   }
 
   /**
-   * Sets the IAM access control policy for the specified project. Replaces any existing policy.
-   * It is recommended that you use the read-modify-write pattern. See code samples and important
-   * details of replacing policies in the documentation for {@link ResourceManager#replacePolicy}.
+   * Sets the IAM access control policy for this project. Replaces any existing policy. It is
+   * recommended that you use the read-modify-write pattern. See code samples and important details
+   * of replacing policies in the documentation for {@link ResourceManager#replacePolicy}.
    *
+   * @return the newly set IAM policy for this project
    * @throws ResourceManagerException upon failure
-   * @see ResourceManager#replacePolicy
    * @see <a href=
    *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/setIamPolicy">
    *     Resource Manager setIamPolicy</a>
@@ -237,7 +237,7 @@ public class Project extends ProjectInfo {
    * For example, the Cloud Platform Console tests IAM permissions internally to determine which UI
    * should be available to the logged-in user.
    *
-   * @return A list of booleans representing whether the caller has the permissions specified (in
+   * @return a list of booleans representing whether the caller has the permissions specified (in
    *     the order of the given permissions)
    * @throws ResourceManagerException upon failure
    * @see <a href=
@@ -255,7 +255,7 @@ public class Project extends ProjectInfo {
    * For example, the Cloud Platform Console tests IAM permissions internally to determine which UI
    * should be available to the logged-in user.
    *
-   * @return A list of booleans representing whether the caller has the permissions specified (in
+   * @return a list of booleans representing whether the caller has the permissions specified (in
    *     the order of the given permissions)
    * @throws ResourceManagerException upon failure
    * @see <a href=
