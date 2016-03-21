@@ -799,11 +799,11 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns an equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
-     * @see <a href="https://github.com/google/re2">RE2</a>
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
      */
     public static AddressFilter equals(AddressField field, String value) {
       return new AddressFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
@@ -855,7 +855,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the disk types being listed.
+     * Returns an option to specify a filter on the disk types being listed.
      */
     public static DiskTypeListOption filter(DiskTypeFilter filter) {
       return new DiskTypeListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -871,7 +871,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing disk types.
      */
-    public static DiskTypeListOption startPageToken(String pageToken) {
+    public static DiskTypeListOption pageToken(String pageToken) {
       return new DiskTypeListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -900,7 +900,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the disk types being listed.
+     * Returns an option to specify a filter on the disk types being listed.
      */
     public static DiskTypeAggregatedListOption filter(DiskTypeFilter filter) {
       return new DiskTypeAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -916,7 +916,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing disk types.
      */
-    public static DiskTypeAggregatedListOption startPageToken(String pageToken) {
+    public static DiskTypeAggregatedListOption pageToken(String pageToken) {
       return new DiskTypeAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
@@ -955,7 +955,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the machine types being listed.
+     * Returns an option to specify a filter on the machine types being listed.
      */
     public static MachineTypeListOption filter(MachineTypeFilter filter) {
       return new MachineTypeListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -971,7 +971,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing machine types.
      */
-    public static MachineTypeListOption startPageToken(String pageToken) {
+    public static MachineTypeListOption pageToken(String pageToken) {
       return new MachineTypeListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -1000,7 +1000,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the machine types being listed.
+     * Returns an option to specify a filter on the machine types being listed.
      */
     public static MachineTypeAggregatedListOption filter(MachineTypeFilter filter) {
       return new MachineTypeAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -1016,7 +1016,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing machine types.
      */
-    public static MachineTypeAggregatedListOption startPageToken(String pageToken) {
+    public static MachineTypeAggregatedListOption pageToken(String pageToken) {
       return new MachineTypeAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
@@ -1055,7 +1055,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the regions being listed.
+     * Returns an option to specify a filter on the regions being listed.
      */
     public static RegionListOption filter(RegionFilter filter) {
       return new RegionListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -1071,7 +1071,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing regions.
      */
-    public static RegionListOption startPageToken(String pageToken) {
+    public static RegionListOption pageToken(String pageToken) {
       return new RegionListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -1122,7 +1122,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the zones being listed.
+     * Returns an option to specify a filter on the zones being listed.
      */
     public static ZoneListOption filter(ZoneFilter filter) {
       return new ZoneListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -1138,7 +1138,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing zones.
      */
-    public static ZoneListOption startPageToken(String pageToken) {
+    public static ZoneListOption pageToken(String pageToken) {
       return new ZoneListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -1211,7 +1211,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the operations being listed.
+     * Returns an option to specify a filter on the operations being listed.
      */
     public static OperationListOption filter(OperationFilter filter) {
       return new OperationListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -1227,7 +1227,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing operations.
      */
-    public static OperationListOption startPageToken(String pageToken) {
+    public static OperationListOption pageToken(String pageToken) {
       return new OperationListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -1278,7 +1278,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the addresses being listed.
+     * Returns an option to specify a filter on the addresses being listed.
      */
     public static AddressListOption filter(AddressFilter filter) {
       return new AddressListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -1294,7 +1294,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing addresses.
      */
-    public static AddressListOption startPageToken(String pageToken) {
+    public static AddressListOption pageToken(String pageToken) {
       return new AddressListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -1323,7 +1323,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an option to specify a filter to the addresses being listed.
+     * Returns an option to specify a filter on the addresses being listed.
      */
     public static AddressAggregatedListOption filter(AddressFilter filter) {
       return new AddressAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
@@ -1339,7 +1339,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing addresses.
      */
-    public static AddressAggregatedListOption startPageToken(String pageToken) {
+    public static AddressAggregatedListOption pageToken(String pageToken) {
       return new AddressAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
@@ -1520,7 +1520,7 @@ public interface Compute extends Service<ComputeOptions> {
   /**
    * Deletes the requested address.
    *
-   * @return an operation if request was issued correctly, {@code null} if the address was not
+   * @return an operation if the request was issued correctly, {@code null} if the address was not
    *     found
    * @throws ComputeException upon failure
    */

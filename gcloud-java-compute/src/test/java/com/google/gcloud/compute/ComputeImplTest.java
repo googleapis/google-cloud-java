@@ -192,7 +192,7 @@ public class ComputeImplTest {
   private static final DiskTypeFilter DISK_TYPE_FILTER =
       DiskTypeFilter.equals(Compute.DiskTypeField.DESCRIPTION, "someDescription");
   private static final DiskTypeListOption DISK_TYPE_LIST_PAGE_TOKEN =
-      DiskTypeListOption.startPageToken("cursor");
+      DiskTypeListOption.pageToken("cursor");
   private static final DiskTypeListOption DISK_TYPE_LIST_PAGE_SIZE =
       DiskTypeListOption.pageSize(42L);
   private static final DiskTypeListOption DISK_TYPE_LIST_FILTER =
@@ -204,7 +204,7 @@ public class ComputeImplTest {
 
   // DiskType aggregated list options
   private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
-      DiskTypeAggregatedListOption.startPageToken("cursor");
+      DiskTypeAggregatedListOption.pageToken("cursor");
   private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_PAGE_SIZE =
       DiskTypeAggregatedListOption.pageSize(42L);
   private static final DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_FILTER =
@@ -219,7 +219,7 @@ public class ComputeImplTest {
   private static final MachineTypeFilter MACHINE_TYPE_FILTER =
       MachineTypeFilter.notEquals(Compute.MachineTypeField.MAXIMUM_PERSISTENT_DISKS, 42L);
   private static final MachineTypeListOption MACHINE_TYPE_LIST_PAGE_TOKEN =
-      MachineTypeListOption.startPageToken("cursor");
+      MachineTypeListOption.pageToken("cursor");
   private static final MachineTypeListOption MACHINE_TYPE_LIST_PAGE_SIZE =
       MachineTypeListOption.pageSize(42L);
   private static final MachineTypeListOption MACHINE_TYPE_LIST_FILTER =
@@ -231,7 +231,7 @@ public class ComputeImplTest {
 
   // MachineType aggregated list options
   private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
-      MachineTypeAggregatedListOption.startPageToken("cursor");
+      MachineTypeAggregatedListOption.pageToken("cursor");
   private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_PAGE_SIZE =
       MachineTypeAggregatedListOption.pageSize(42L);
   private static final MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_FILTER =
@@ -245,7 +245,7 @@ public class ComputeImplTest {
   private static final RegionFilter REGION_FILTER =
       RegionFilter.equals(Compute.RegionField.ID, "someId");
   private static final RegionListOption REGION_LIST_PAGE_TOKEN =
-      RegionListOption.startPageToken("cursor");
+      RegionListOption.pageToken("cursor");
   private static final RegionListOption REGION_LIST_PAGE_SIZE =
       RegionListOption.pageSize(42L);
   private static final RegionListOption REGION_LIST_FILTER =
@@ -263,7 +263,7 @@ public class ComputeImplTest {
   private static final ZoneFilter ZONE_FILTER =
       ZoneFilter.notEquals(Compute.ZoneField.NAME, "someName");
   private static final ZoneListOption ZONE_LIST_PAGE_TOKEN =
-      ZoneListOption.startPageToken("cursor");
+      ZoneListOption.pageToken("cursor");
   private static final ZoneListOption ZONE_LIST_PAGE_SIZE = ZoneListOption.pageSize(42L);
   private static final ZoneListOption ZONE_LIST_FILTER = ZoneListOption.filter(ZONE_FILTER);
   private static final Map<ComputeRpc.Option, ?> ZONE_LIST_OPTIONS = ImmutableMap.of(
@@ -283,7 +283,7 @@ public class ComputeImplTest {
   private static final OperationFilter OPERATION_FILTER =
       OperationFilter.notEquals(Compute.OperationField.PROGRESS, 0);
   private static final OperationListOption OPERATION_LIST_PAGE_TOKEN =
-      OperationListOption.startPageToken("cursor");
+      OperationListOption.pageToken("cursor");
   private static final OperationListOption OPERATION_LIST_PAGE_SIZE =
       OperationListOption.pageSize(42L);
   private static final OperationListOption OPERATION_LIST_FILTER =
@@ -301,7 +301,7 @@ public class ComputeImplTest {
   private static final Compute.AddressFilter ADDRESS_FILTER =
       Compute.AddressFilter.notEquals(Compute.AddressField.REGION, "someRegion");
   private static final Compute.AddressListOption ADDRESS_LIST_PAGE_TOKEN =
-      Compute.AddressListOption.startPageToken("cursor");
+      Compute.AddressListOption.pageToken("cursor");
   private static final Compute.AddressListOption ADDRESS_LIST_PAGE_SIZE =
       Compute.AddressListOption.pageSize(42L);
   private static final Compute.AddressListOption ADDRESS_LIST_FILTER =
@@ -313,7 +313,7 @@ public class ComputeImplTest {
 
   // Address aggregated list options
   private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_PAGE_TOKEN =
-      Compute.AddressAggregatedListOption.startPageToken("cursor");
+      Compute.AddressAggregatedListOption.pageToken("cursor");
   private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_PAGE_SIZE =
       Compute.AddressAggregatedListOption.pageSize(42L);
   private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_FILTER =
@@ -430,6 +430,16 @@ public class ComputeImplTest {
     compute = options.service();
     DiskType diskType = compute.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType());
     assertEquals(DISK_TYPE, diskType);
+  }
+
+  @Test
+  public void testGetDiskType_Null() {
+    EasyMock.expect(
+        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType()));
   }
 
   @Test
@@ -608,6 +618,17 @@ public class ComputeImplTest {
     MachineType machineType =
         compute.getMachineType(MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.machineType());
     assertEquals(MACHINE_TYPE, machineType);
+  }
+
+  @Test
+  public void testGetMachineType_Null() {
+    EasyMock.expect(
+        computeRpcMock.getMachineType(
+            MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.machineType(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.getMachineType(MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.machineType()));
   }
 
   @Test
@@ -800,6 +821,15 @@ public class ComputeImplTest {
   }
 
   @Test
+  public void testGetRegion_Null() {
+    EasyMock.expect(computeRpcMock.getRegion(REGION_ID.region(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.getRegion(REGION_ID.region()));
+  }
+
+  @Test
   public void testGetRegionWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(computeRpcMock.getRegion(eq(REGION_ID.region()), capture(capturedOptions)))
@@ -889,6 +919,14 @@ public class ComputeImplTest {
     compute = options.service();
     Zone zone = compute.getZone(ZONE_ID.zone());
     assertEquals(ZONE, zone);
+  }
+
+  @Test
+  public void testGetZone_Null() {
+    EasyMock.expect(computeRpcMock.getZone(ZONE_ID.zone(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.getZone(ZONE_ID.zone()));
   }
 
   @Test
@@ -983,6 +1021,15 @@ public class ComputeImplTest {
   }
 
   @Test
+  public void testGetLicenseFromString_Null() {
+    EasyMock.expect(computeRpcMock.getLicense(PROJECT, LICENSE_ID.license(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.getLicense(LICENSE_ID.license()));
+  }
+
+  @Test
   public void testGetLicenseFromStringWithOptions() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(
@@ -1030,14 +1077,34 @@ public class ComputeImplTest {
   }
 
   @Test
+  public void testGetLicenseFromId_Null() {
+    LicenseId licenseId = LicenseId.of("project2", "license2");
+    EasyMock.expect(
+        computeRpcMock.getLicense(licenseId.project(), licenseId.license(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.getLicense(licenseId));
+  }
+
+  @Test
   public void testGetGlobalOperation() {
     EasyMock.expect(
         computeRpcMock.getGlobalOperation(GLOBAL_OPERATION_ID.operation(), EMPTY_RPC_OPTIONS))
         .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.get(GLOBAL_OPERATION_ID);
-    assertEquals(globalOperation, operation);
+    assertEquals(globalOperation, compute.get(GLOBAL_OPERATION_ID));
+  }
+
+  @Test
+  public void testGetGlobalOperation_Null() {
+    EasyMock.expect(
+        computeRpcMock.getGlobalOperation(GLOBAL_OPERATION_ID.operation(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.get(GLOBAL_OPERATION_ID));
   }
 
   @Test
@@ -1170,6 +1237,17 @@ public class ComputeImplTest {
   public void testGetRegionOperation() {
     EasyMock.expect(computeRpcMock.getRegionOperation(REGION_OPERATION_ID.region(),
             REGION_OPERATION_ID.operation(), EMPTY_RPC_OPTIONS))
+        .andReturn(regionOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.get(REGION_OPERATION_ID);
+    assertEquals(regionOperation, operation);
+  }
+
+  @Test
+  public void testGetRegionOperation_Null() {
+    EasyMock.expect(computeRpcMock.getRegionOperation(REGION_OPERATION_ID.region(),
+        REGION_OPERATION_ID.operation(), EMPTY_RPC_OPTIONS))
         .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
@@ -1314,12 +1392,20 @@ public class ComputeImplTest {
   @Test
   public void testGetZoneOperation() {
     EasyMock.expect(computeRpcMock.getZoneOperation(ZONE_OPERATION_ID.zone(),
-        ZONE_OPERATION_ID.operation(), EMPTY_RPC_OPTIONS))
-        .andReturn(zoneOperation.toPb());
+        ZONE_OPERATION_ID.operation(), EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     Operation operation = compute.get(ZONE_OPERATION_ID);
     assertEquals(zoneOperation, operation);
+  }
+
+  @Test
+  public void testGetZoneOperation_Null() {
+    EasyMock.expect(computeRpcMock.getZoneOperation(ZONE_OPERATION_ID.zone(),
+        ZONE_OPERATION_ID.operation(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.get(ZONE_OPERATION_ID));
   }
 
   @Test
@@ -1458,13 +1544,21 @@ public class ComputeImplTest {
 
   @Test
   public void testGetGlobalAddress() {
-    EasyMock.expect(
-        computeRpcMock.getGlobalAddress(GLOBAL_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(computeRpcMock.getGlobalAddress(GLOBAL_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS))
         .andReturn(GLOBAL_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     Address address = compute.get(GLOBAL_ADDRESS_ID);
     assertEquals(new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)), address);
+  }
+
+  @Test
+  public void testGetGlobalAddress_Null() {
+    EasyMock.expect(computeRpcMock.getGlobalAddress(GLOBAL_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.get(GLOBAL_ADDRESS_ID));
   }
 
   @Test
@@ -1486,6 +1580,16 @@ public class ComputeImplTest {
 
   @Test
   public void testGetRegionAddress() {
+    EasyMock.expect(computeRpcMock.getRegionAddress(REGION_ADDRESS_ID.region(),
+        REGION_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS)).andReturn(REGION_ADDRESS.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Address address = compute.get(REGION_ADDRESS_ID);
+    assertEquals(new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)), address);
+  }
+
+  @Test
+  public void testGetRegionAddress_Null() {
     EasyMock.expect(computeRpcMock.getRegionAddress(REGION_ADDRESS_ID.region(),
         REGION_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS)).andReturn(REGION_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
