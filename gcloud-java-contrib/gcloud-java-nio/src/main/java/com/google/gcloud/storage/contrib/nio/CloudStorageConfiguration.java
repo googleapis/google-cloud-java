@@ -19,8 +19,11 @@ package com.google.gcloud.storage.contrib.nio;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.auto.value.AutoValue;
+import com.google.common.base.Strings;
 
 import java.util.Map;
+
+import javax.annotation.Nullable;
 
 /**
  * Configuration for {@link CloudStorageFileSystem} instances.
@@ -28,34 +31,14 @@ import java.util.Map;
 @AutoValue
 public abstract class CloudStorageConfiguration {
 
-  /**
-   * Returns path of current working directory. This defaults to the root directory.
-   */
-  public abstract String workingDirectory();
+  private static final CloudStorageConfiguration DEFAULT = builder().build();
 
   /**
-   * Returns {@code true} if we <i>shouldn't</i> throw an exception when encountering object names
-   * containing superfluous slashes, e.g. {@code a//b}.
+   * Returns default GCS NIO configuration.
    */
-  public abstract boolean permitEmptyPathComponents();
-
-  /**
-   * Returns {@code true} if '/' prefix on absolute object names should be removed before I/O.
-   *
-   * <p>If you disable this feature, please take into consideration that all paths created from a
-   * URI will have the leading slash.
-   */
-  public abstract boolean stripPrefixSlash();
-
-  /**
-   * Returns {@code true} if paths with a trailing slash should be treated as fake directories.
-   */
-  public abstract boolean usePseudoDirectories();
-
-  /**
-   * Returns block size (in bytes) used when talking to the GCS HTTP server.
-   */
-  public abstract int blockSize();
+  public static CloudStorageConfiguration getDefault() {
+    return DEFAULT;
+  }
 
   /**
    * Creates a new builder, initialized with the following settings:
@@ -70,22 +53,29 @@ public abstract class CloudStorageConfiguration {
     return new Builder();
   }
 
+  abstract String workingDirectory();
+  abstract boolean permitEmptyPathComponents();
+  abstract boolean stripPrefixSlash();
+  abstract boolean usePseudoDirectories();
+  abstract int blockSize();
+
   /**
    * Builder for {@link CloudStorageConfiguration}.
    */
   public static final class Builder {
 
     private String workingDirectory = UnixPath.ROOT;
-    private boolean permitEmptyPathComponents = false;
+    private boolean permitEmptyPathComponents;
     private boolean stripPrefixSlash = true;
     private boolean usePseudoDirectories = true;
     private int blockSize = CloudStorageFileSystem.BLOCK_SIZE_DEFAULT;
 
     /**
-     * Changes current working directory for new filesystem. This cannot be changed once it's
-     * been set. You'll need to create another {@link CloudStorageFileSystem} object.
+     * Changes current working directory for new filesystem. This defaults to the root directory.
+     * The working directory cannot be changed once it's been set. You'll need to create another
+     * {@link CloudStorageFileSystem} object.
      *
-     * @throws IllegalArgumentException if {@code path} is not absolute.
+     * @throws IllegalArgumentException if {@code path} is not absolute
      */
     public Builder workingDirectory(String path) {
       checkArgument(UnixPath.getPath(false, path).isAbsolute(), "not absolute: %s", path);
@@ -95,7 +85,7 @@ public abstract class CloudStorageConfiguration {
 
     /**
      * Configures whether or not we should throw an exception when encountering object names
-     * containing superfluous slashes, e.g. {@code a//b}
+     * containing superfluous slashes, e.g. {@code a//b}.
      */
     public Builder permitEmptyPathComponents(boolean value) {
       permitEmptyPathComponents = value;
@@ -146,15 +136,13 @@ public abstract class CloudStorageConfiguration {
     Builder() {}
   }
 
-  public static final CloudStorageConfiguration DEFAULT = builder().build();
-
-  static CloudStorageConfiguration fromMap(Map<String, ?> env) {
+  static CloudStorageConfiguration fromMap(@Nullable String workingDirectory, Map<String, ?> env) {
     Builder builder = builder();
+    if (!Strings.isNullOrEmpty(workingDirectory)) {
+      builder.workingDirectory(workingDirectory);
+    }
     for (Map.Entry<String, ?> entry : env.entrySet()) {
       switch (entry.getKey()) {
-        case "workingDirectory":
-          builder.workingDirectory((String) entry.getValue());
-          break;
         case "permitEmptyPathComponents":
           builder.permitEmptyPathComponents((Boolean) entry.getValue());
           break;

@@ -22,14 +22,12 @@ import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
-import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.Storage;
 
 import org.junit.Before;

@@ -33,20 +33,19 @@ import java.util.Map;
 import javax.annotation.concurrent.NotThreadSafe;
 
 /**
- * A bare-bones in-memory implementation of Storage, meant for testing.
- * See LocalGcsHelper.
- *
- * This class is NOT thread-safe.
+ * Bare-bones in-memory implementation of {@link Storage} for testing.
  */
 @NotThreadSafe
-public class FakeStorageRpc implements StorageRpc {
+public final class FakeStorageRpc implements StorageRpc {
 
   // fullname -> metadata
-  Map<String, StorageObject> stuff = new HashMap<>();
+  private final Map<String, StorageObject> stuff = new HashMap<>();
+
   // fullname -> contents
-  Map<String, byte[]> contents = new HashMap<>();
+  private final Map<String, byte[]> contents = new HashMap<>();
+
   // fullname -> future contents that will be visible on close.
-  Map<String, byte[]> futureContents = new HashMap<>();
+  private final Map<String, byte[]> futureContents = new HashMap<>();
 
   private final boolean throwIfOption;
 
@@ -55,12 +54,6 @@ public class FakeStorageRpc implements StorageRpc {
    */
   public FakeStorageRpc(boolean throwIfOption) {
     this.throwIfOption = throwIfOption;
-  }
-
-  // remove all files
-  void reset() {
-    stuff = new HashMap<>();
-    contents = new HashMap<>();
   }
 
   @Override
@@ -205,12 +198,9 @@ public class FakeStorageRpc implements StorageRpc {
     String key = fullname(object);
     boolean mustNotExist = false;
     for (Option option : options.keySet()) {
-      if (option instanceof StorageRpc.Option) {
-        // this is a bit of a hack, since we don't implement generations.
-        if ((StorageRpc.Option) option == Option.IF_GENERATION_MATCH
-            && ((Long) options.get(option)).longValue() == 0L) {
-          mustNotExist = true;
-        }
+      // this is a bit of a hack, since we don't implement generations.
+      if (option == Option.IF_GENERATION_MATCH && ((Long) options.get(option)).longValue() == 0L) {
+        mustNotExist = true;
       }
     }
     if (mustNotExist && stuff.containsKey(key)) {
@@ -254,12 +244,10 @@ public class FakeStorageRpc implements StorageRpc {
 
     boolean mustNotExist = false;
     for (Option option : rewriteRequest.targetOptions.keySet()) {
-      if (option instanceof StorageRpc.Option) {
-        // this is a bit of a hack, since we don't implement generations.
-        if ((StorageRpc.Option) option == Option.IF_GENERATION_MATCH
-            && ((Long) rewriteRequest.targetOptions.get(option)).longValue() == 0L) {
-          mustNotExist = true;
-        }
+      // this is a bit of a hack, since we don't implement generations.
+      if (option == Option.IF_GENERATION_MATCH
+          && ((Long) rewriteRequest.targetOptions.get(option)).longValue() == 0L) {
+        mustNotExist = true;
       }
     }
 

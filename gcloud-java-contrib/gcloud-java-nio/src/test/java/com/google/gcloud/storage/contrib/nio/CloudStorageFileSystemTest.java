@@ -21,20 +21,15 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-import com.google.gcloud.storage.StorageOptions;
-import com.google.gcloud.storage.testing.LocalGcsHelper;
+import com.google.gcloud.storage.testing.FakeStorageRpc;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.io.IOException;
-import java.net.URI;
 import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 
 /**
  * Unit tests for {@link CloudStorageFileSystem}.
@@ -52,14 +47,12 @@ public class CloudStorageFileSystemTest {
           + "The Heart-ache, and the thousand Natural shocks\n"
           + "That Flesh is heir to? 'Tis a consummation\n";
 
-  @Before
-  public void before() {
-    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
-  }
+  private final FakeStorageRpc storage = new FakeStorageRpc(true);
+  private final NioTestHelper helper = new NioTestHelper(storage);
 
   @Test
   public void testGetPath() throws IOException {
-    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+    try (FileSystem fs = helper.forBucket("bucket")) {
       assertThat(fs.getPath("/angel").toString()).isEqualTo("/angel");
       assertThat(fs.getPath("/angel").toUri().toString()).isEqualTo("gs://bucket/angel");
     }
@@ -67,39 +60,38 @@ public class CloudStorageFileSystemTest {
 
   @Test
   public void testWrite() throws IOException {
-    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+    try (FileSystem fs = helper.forBucket("bucket")) {
       Files.write(fs.getPath("/angel"), ALONE.getBytes(UTF_8));
+      assertThat(new String(Files.readAllBytes(fs.getPath("/angel")), UTF_8)).isEqualTo(ALONE);
     }
-    assertThat(new String(Files.readAllBytes(Paths.get(URI.create("gs://bucket/angel"))), UTF_8))
-        .isEqualTo(ALONE);
   }
 
   @Test
   public void testRead() throws IOException {
-    Files.write(Paths.get(URI.create("gs://bucket/angel")), ALONE.getBytes(UTF_8));
-    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+    try (FileSystem fs = helper.forBucket("bucket")) {
+      Files.write(fs.getPath("/angel"), ALONE.getBytes(UTF_8));
       assertThat(new String(Files.readAllBytes(fs.getPath("/angel")), UTF_8)).isEqualTo(ALONE);
     }
   }
 
   @Test
   public void testExists_false() throws IOException {
-    try (FileSystem fs = FileSystems.getFileSystem(URI.create("gs://bucket"))) {
+    try (FileSystem fs = helper.forBucket("bucket")) {
       assertThat(Files.exists(fs.getPath("/angel"))).isFalse();
     }
   }
 
   @Test
   public void testExists_true() throws IOException {
-    Files.write(Paths.get(URI.create("gs://bucket/angel")), ALONE.getBytes(UTF_8));
-    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+    try (FileSystem fs = helper.forBucket("bucket")) {
+      Files.write(fs.getPath("/angel"), ALONE.getBytes(UTF_8));
       assertThat(Files.exists(fs.getPath("/angel"))).isTrue();
     }
   }
 
   @Test
   public void testGetters() throws IOException {
-    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+    try (FileSystem fs = helper.forBucket("bucket")) {
       assertThat(fs.isOpen()).isTrue();
       assertThat(fs.isReadOnly()).isFalse();
       assertThat(fs.getRootDirectories()).containsExactly(fs.getPath("/"));
@@ -111,10 +103,10 @@ public class CloudStorageFileSystemTest {
 
   @Test
   public void testEquals() throws IOException {
-    try (FileSystem bucket1 = CloudStorageFileSystem.forBucket("bucket");
-        FileSystem bucket2 = FileSystems.getFileSystem(URI.create("gs://bucket"));
-        FileSystem doge1 = CloudStorageFileSystem.forBucket("doge");
-        FileSystem doge2 = FileSystems.getFileSystem(URI.create("gs://doge"))) {
+    try (FileSystem bucket1 = helper.forBucket("bucket");
+        FileSystem bucket2 = helper.forBucket("bucket");
+        FileSystem doge1 = helper.forBucket("doge");
+        FileSystem doge2 = helper.forBucket("doge")) {
       new EqualsTester()
           .addEqualityGroup(bucket1, bucket2)
           .addEqualityGroup(doge1, doge2)
@@ -124,12 +116,11 @@ public class CloudStorageFileSystemTest {
 
   @Test
   public void testNullness() throws IOException, NoSuchMethodException, SecurityException {
-    try (FileSystem fs = FileSystems.getFileSystem(URI.create("gs://bucket"))) {
+    try (FileSystem fs = helper.forBucket("bucket")) {
       NullPointerTester tester =
           new NullPointerTester()
               .ignore(CloudStorageFileSystem.class.getMethod("equals", Object.class))
-              .setDefault(CloudStorageConfiguration.class, CloudStorageConfiguration.DEFAULT)
-              .setDefault(StorageOptions.class, LocalGcsHelper.options());
+              .setDefault(CloudStorageConfiguration.class, CloudStorageConfiguration.getDefault());
       tester.testAllPublicStaticMethods(CloudStorageFileSystem.class);
       tester.testAllPublicInstanceMethods(fs);
     }
