@@ -614,6 +614,16 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
   }
 
+  private static Function<com.google.api.services.compute.model.Operation, Operation>
+      operationFromPb(final ComputeOptions serviceOptions) {
+    return new Function<com.google.api.services.compute.model.Operation, Operation>() {
+      @Override
+      public Operation apply(com.google.api.services.compute.model.Operation operation) {
+        return Operation.fromPb(serviceOptions.service(), operation);
+      }
+    };
+  }
+
   @Override
   public Page<Operation> listGlobalOperations(OperationListOption... options) {
     return listGlobalOperations(options(), optionMap(options));
@@ -634,13 +644,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       String cursor = result.x();
       Iterable<Operation> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
-              : result.y(),
-          new Function<com.google.api.services.compute.model.Operation, Operation>() {
-            @Override
-            public Operation apply(com.google.api.services.compute.model.Operation operation) {
-              return Operation.fromPb(serviceOptions.service(), operation);
-            }
-          });
+              : result.y(), operationFromPb(serviceOptions));
       return new PageImpl<>(new GlobalOperationPageFetcher(serviceOptions, cursor, optionsMap),
           cursor, operations);
     } catch (RetryHelper.RetryHelperException e) {
@@ -668,13 +672,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       String cursor = result.x();
       Iterable<Operation> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
-              : result.y(),
-          new Function<com.google.api.services.compute.model.Operation, Operation>() {
-            @Override
-            public Operation apply(com.google.api.services.compute.model.Operation operation) {
-              return Operation.fromPb(serviceOptions.service(), operation);
-            }
-          });
+              : result.y(), operationFromPb(serviceOptions));
       return new PageImpl<>(new RegionOperationPageFetcher(region, serviceOptions, cursor,
           optionsMap), cursor, operations);
     } catch (RetryHelper.RetryHelperException e) {
@@ -702,13 +700,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       String cursor = result.x();
       Iterable<Operation> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
-              : result.y(),
-          new Function<com.google.api.services.compute.model.Operation, Operation>() {
-            @Override
-            public Operation apply(com.google.api.services.compute.model.Operation operation) {
-              return Operation.fromPb(serviceOptions.service(), operation);
-            }
-          });
+              : result.y(), operationFromPb(serviceOptions));
       return new PageImpl<>(new ZoneOperationPageFetcher(zone, serviceOptions, cursor, optionsMap),
           cursor, operations);
     } catch (RetryHelper.RetryHelperException e) {
@@ -796,6 +788,16 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
   }
 
+  private static Function<com.google.api.services.compute.model.Address, Address> addressFromPb(
+      final ComputeOptions serviceOptions) {
+    return new Function<com.google.api.services.compute.model.Address, Address>() {
+      @Override
+      public Address apply(com.google.api.services.compute.model.Address address) {
+        return Address.fromPb(serviceOptions.service(), address);
+      }
+    };
+  }
+
   @Override
   public Page<Address> listGlobalAddresses(AddressListOption... options) {
     return listGlobalAddresses(options(), optionMap(options));
@@ -816,13 +818,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       String cursor = result.x();
       Iterable<Address> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Address>of()
-              : result.y(),
-          new Function<com.google.api.services.compute.model.Address, Address>() {
-            @Override
-            public Address apply(com.google.api.services.compute.model.Address address) {
-              return Address.fromPb(serviceOptions.service(), address);
-            }
-          });
+              : result.y(), addressFromPb(serviceOptions));
       return new PageImpl<>(new GlobalAddressPageFetcher(serviceOptions, cursor, optionsMap),
           cursor, operations);
     } catch (RetryHelper.RetryHelperException e) {
@@ -850,13 +846,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       String cursor = result.x();
       Iterable<Address> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Address>of()
-              : result.y(),
-          new Function<com.google.api.services.compute.model.Address, Address>() {
-            @Override
-            public Address apply(com.google.api.services.compute.model.Address address) {
-              return Address.fromPb(serviceOptions.service(), address);
-            }
-          });
+              : result.y(), addressFromPb(serviceOptions));
       return new PageImpl<>(new RegionAddressPageFetcher(region, serviceOptions, cursor,
           optionsMap), cursor, operations);
     } catch (RetryHelper.RetryHelperException e) {
