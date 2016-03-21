@@ -531,7 +531,7 @@ public class AddressInfo implements Serializable {
   /**
    * Returns a builder for the {@code AddressInfo} object given it's identity.
    */
-  public static BuilderImpl builder(AddressId addressId) {
+  public static Builder builder(AddressId addressId) {
     return new BuilderImpl().addressId(addressId);
   }
 
