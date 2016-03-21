@@ -17,7 +17,6 @@
 package com.google.gcloud.resourcemanager;
 
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.BaseSerializationTest;
 import com.google.gcloud.Identity;
 import com.google.gcloud.PageImpl;
@@ -46,9 +45,8 @@ private static final ResourceManager RESOURCE_MANAGER =
       ResourceManager.ProjectGetOption.fields(ResourceManager.ProjectField.NAME);
   private static final ResourceManager.ProjectListOption PROJECT_LIST_OPTION =
       ResourceManager.ProjectListOption.filter("name:*");
-  private static final Policy POLICY = Policy.builder()
-      .addBinding(Policy.Role.viewer(), ImmutableSet.of(Identity.user("abc@gmail.com")))
-      .build();
+  private static final Policy POLICY =
+      Policy.builder().addIdentity(Policy.Role.viewer(), Identity.user("abc@gmail.com")).build();
   private static final ResourceManagerException RESOURCE_MANAGER_EXCEPTION =
       new ResourceManagerException(42, "message");
 
