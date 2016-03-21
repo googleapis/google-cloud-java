@@ -16,19 +16,15 @@
 
 package com.google.gcloud.compute;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
 
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * Identity for a Google Compute Engine global forwarding rule.
  */
-public final class GlobalForwardingRuleId extends ResourceId implements ForwardingRuleId {
+public final class GlobalForwardingRuleId extends ForwardingRuleId {
 
   static final Function<String, GlobalForwardingRuleId> FROM_URL_FUNCTION =
       new Function<String, GlobalForwardingRuleId>() {
@@ -49,11 +45,8 @@ public final class GlobalForwardingRuleId extends ResourceId implements Forwardi
   private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = -2648031793037534254L;
 
-  private final String rule;
-
   private GlobalForwardingRuleId(String project, String rule) {
-    super(project);
-    this.rule = checkNotNull(rule);
+    super(project, rule);
   }
 
   @Override
@@ -62,30 +55,18 @@ public final class GlobalForwardingRuleId extends ResourceId implements Forwardi
   }
 
   @Override
-  public String rule() {
-    return rule;
-  }
-
-  @Override
   public String selfLink() {
-    return super.selfLink() + "/global/forwardingRules/" + rule;
-  }
-
-  @Override
-  MoreObjects.ToStringHelper toStringHelper() {
-    return super.toStringHelper().add("rule", rule);
+    return super.selfLink() + "/global/forwardingRules/" + rule();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), rule);
+    return baseHashCode();
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof GlobalForwardingRuleId
-        && baseEquals((GlobalForwardingRuleId) obj)
-        && Objects.equals(rule, ((GlobalForwardingRuleId) obj).rule);
+    return obj instanceof GlobalForwardingRuleId && baseEquals((GlobalForwardingRuleId) obj);
   }
 
   @Override
@@ -93,15 +74,15 @@ public final class GlobalForwardingRuleId extends ResourceId implements Forwardi
     if (project() != null) {
       return this;
     }
-    return GlobalForwardingRuleId.of(projectId, rule);
+    return GlobalForwardingRuleId.of(projectId, rule());
   }
 
   /**
    * Returns a forwarding rule identity given the rule name. The forwarding rule name must be 1-63
-   * characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long
-   * and match the regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first
-   * character must be a lowercase letter, and all following characters must be a dash, lowercase
-   * letter, or digit, except the last character, which cannot be a dash.
+   * characters long and comply with RFC1035. Specifically, the name must match the regular
+   * expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a
+   * lowercase letter, and all following characters must be a dash, lowercase letter, or digit,
+   * except the last character, which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
@@ -111,10 +92,10 @@ public final class GlobalForwardingRuleId extends ResourceId implements Forwardi
 
   /**
    * Returns a forwarding rule identity given the project rule names. The forwarding rule name must
-   * be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63
-   * characters long and match the regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means
-   * the first character must be a lowercase letter, and all following characters must be a dash,
-   * lowercase letter, or digit, except the last character, which cannot be a dash.
+   * be 1-63 characters long and comply with RFC1035. Specifically, the name must match the regular
+   * expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a
+   * lowercase letter, and all following characters must be a dash, lowercase letter, or digit,
+   * except the last character, which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */

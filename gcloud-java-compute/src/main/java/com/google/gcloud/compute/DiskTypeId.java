@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 /**
  * Identity for a Google Compute Engine disk type.
  */
-public final class DiskTypeId extends ZoneResourceId {
+public final class DiskTypeId extends ResourceId {
 
   static final Function<String, DiskTypeId> FROM_URL_FUNCTION = new Function<String, DiskTypeId>() {
     @Override
@@ -43,14 +43,16 @@ public final class DiskTypeId extends ZoneResourceId {
     }
   };
 
-  private static final String REGEX = ZoneResourceId.REGEX + "diskTypes/([^/]+)";
+  private static final String REGEX = ResourceId.REGEX + "zones/([^/]+)/diskTypes/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = 7337881474103686219L;
 
+  private final String zone;
   private final String diskType;
 
   private DiskTypeId(String project, String zone, String diskType) {
-    super(project, zone);
+    super(project);
+    this.zone = checkNotNull(zone);
     this.diskType = checkNotNull(diskType);
   }
 
@@ -61,25 +63,40 @@ public final class DiskTypeId extends ZoneResourceId {
     return diskType;
   }
 
+  /**
+   * Returns the name of the zone this disk type belongs to.
+   */
+  public String zone() {
+    return zone;
+  }
+
+  /**
+   * Returns the identity of the zone this disk type belongs to.
+   */
+  public ZoneId zoneId() {
+    return ZoneId.of(project(), zone);
+  }
+
   @Override
   public String selfLink() {
-    return super.selfLink() + "/diskTypes/" + diskType;
+    return super.selfLink() + "/zones/" + zone + "/diskTypes/" + diskType;
   }
 
   @Override
   MoreObjects.ToStringHelper toStringHelper() {
-    return super.toStringHelper().add("diskType", diskType);
+    return super.toStringHelper().add("zone", zone).add("diskType", diskType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.baseHashCode(), diskType);
+    return Objects.hash(super.baseHashCode(), zone, diskType);
   }
 
   @Override
   public boolean equals(Object obj) {
     return obj instanceof DiskTypeId
         && baseEquals((DiskTypeId) obj)
+        && Objects.equals(zone, ((DiskTypeId) obj).zone)
         && Objects.equals(diskType, ((DiskTypeId) obj).diskType);
   }
 
@@ -88,7 +105,7 @@ public final class DiskTypeId extends ZoneResourceId {
     if (project() != null) {
       return this;
     }
-    return DiskTypeId.of(projectId, zone(), diskType);
+    return DiskTypeId.of(projectId, zone, diskType);
   }
 
   /**

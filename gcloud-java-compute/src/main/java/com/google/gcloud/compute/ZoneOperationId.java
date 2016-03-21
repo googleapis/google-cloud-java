@@ -27,17 +27,17 @@ import java.util.regex.Pattern;
 /**
  * Identity for a Google Compute Engine zone operation.
  */
-public final class ZoneOperationId extends ZoneResourceId implements OperationId  {
+public final class ZoneOperationId extends OperationId  {
 
-  private static final String REGEX = ZoneResourceId.REGEX + "operations/([^/]+)";
+  private static final String REGEX = ResourceId.REGEX + "zones/([^/]+)/operations/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = 4910670262094017392L;
 
-  private final String operation;
+  private final String zone;
 
   private ZoneOperationId(String project, String zone, String operation) {
-    super(project, zone);
-    this.operation = checkNotNull(operation);
+    super(project, operation);
+    this.zone = checkNotNull(zone);
   }
 
   @Override
@@ -45,31 +45,40 @@ public final class ZoneOperationId extends ZoneResourceId implements OperationId
     return Type.ZONE;
   }
 
-  @Override
-  public String operation() {
-    return operation;
+  /**
+   * Returns the name of the zone this operation belongs to.
+   */
+  public String zone() {
+    return zone;
+  }
+
+  /**
+   * Returns the identity of the zone this address belongs to.
+   */
+  public ZoneId zoneId() {
+    return ZoneId.of(project(), zone);
   }
 
   @Override
   public String selfLink() {
-    return super.selfLink() + "/operations/" + operation;
+    return super.selfLink() + "/zones/" + zone + "/operations/" + operation();
   }
 
   @Override
   MoreObjects.ToStringHelper toStringHelper() {
-    return MoreObjects.toStringHelper(this).add("operation", operation);
+    return MoreObjects.toStringHelper(this).add("zone", zone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), operation);
+    return Objects.hash(baseHashCode(), zone);
   }
 
   @Override
   public boolean equals(Object obj) {
     return obj instanceof ZoneOperationId
         && baseEquals((ZoneOperationId) obj)
-        && Objects.equals(operation, ((ZoneOperationId) obj).operation);
+        && Objects.equals(zone, ((ZoneOperationId) obj).zone);
   }
 
   @Override
@@ -77,7 +86,7 @@ public final class ZoneOperationId extends ZoneResourceId implements OperationId
     if (project() != null) {
       return this;
     }
-    return ZoneOperationId.of(projectId, zone(), operation);
+    return ZoneOperationId.of(projectId, zone, operation());
   }
 
   /**

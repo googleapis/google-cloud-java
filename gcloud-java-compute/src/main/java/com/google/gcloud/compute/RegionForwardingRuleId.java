@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 /**
  * Identity for a Google Compute Engine region's forwarding rule.
  */
-public final class RegionForwardingRuleId extends RegionResourceId implements ForwardingRuleId {
+public final class RegionForwardingRuleId extends ForwardingRuleId {
 
   static final Function<String, RegionForwardingRuleId> FROM_URL_FUNCTION =
       new Function<String, RegionForwardingRuleId>() {
@@ -45,15 +45,15 @@ public final class RegionForwardingRuleId extends RegionResourceId implements Fo
         }
       };
 
-  private static final String REGEX = RegionResourceId.REGEX + "forwardingRules/([^/]+)";
+  private static final String REGEX = ResourceId.REGEX + "regions/([^/]+)/forwardingRules/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = 7885327931402904667L;
 
-  private final String rule;
+  private final String region;
 
   private RegionForwardingRuleId(String project, String region, String rule) {
-    super(project, region);
-    this.rule = checkNotNull(rule);
+    super(project, rule);
+    this.region = checkNotNull(region);
   }
 
   @Override
@@ -61,31 +61,40 @@ public final class RegionForwardingRuleId extends RegionResourceId implements Fo
     return Type.REGION;
   }
 
-  @Override
-  public String rule() {
-    return rule;
+  /**
+   * Returns the name of the region this forwarding rule belongs to.
+   */
+  public String region() {
+    return region;
+  }
+
+  /**
+   * Returns the identity of the region this forwarding rule belongs to.
+   */
+  public RegionId regionId() {
+    return RegionId.of(project(), region);
   }
 
   @Override
   public String selfLink() {
-    return super.selfLink() + "/forwardingRules/" + rule;
+    return super.selfLink() + "/regions/" + region + "/forwardingRules/" + rule();
   }
 
   @Override
   MoreObjects.ToStringHelper toStringHelper() {
-    return MoreObjects.toStringHelper(this).add("rule", rule);
+    return MoreObjects.toStringHelper(this).add("region", region);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), rule);
+    return Objects.hash(baseHashCode(), region);
   }
 
   @Override
   public boolean equals(Object obj) {
     return obj instanceof RegionForwardingRuleId
         && baseEquals((RegionForwardingRuleId) obj)
-        && Objects.equals(rule, ((RegionForwardingRuleId) obj).rule);
+        && Objects.equals(region, ((RegionForwardingRuleId) obj).region);
   }
 
   @Override
@@ -93,47 +102,46 @@ public final class RegionForwardingRuleId extends RegionResourceId implements Fo
     if (project() != null) {
       return this;
     }
-    return RegionForwardingRuleId.of(projectId, region(), rule);
+    return RegionForwardingRuleId.of(projectId, region, rule());
   }
 
   /**
    * Returns a region forwarding rule identity given the region identity and the rule name. The
-   * forwarding rule name must be 1-63 characters long, and comply with RFC1035. Specifically, the
-   * name must be 1-63 characters long and match the regular expression
-   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
-   * and all following characters must be a dash, lowercase letter, or digit, except the last
-   * character, which cannot be a dash.
+   * forwarding rule name must be 1-63 characters long and comply with RFC1035. Specifically, the
+   * name must match the regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
-  public static RegionForwardingRuleId of(RegionId regionId, String operation) {
-    return new RegionForwardingRuleId(regionId.project(), regionId.region(), operation);
+  public static RegionForwardingRuleId of(RegionId regionId, String rule) {
+    return new RegionForwardingRuleId(regionId.project(), regionId.region(), rule);
   }
 
   /**
    * Returns a region forwarding rule identity given the region and rule names. The forwarding rule
-   * name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63
-   * characters long and match the regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means
-   * the first character must be a lowercase letter, and all following characters must be a dash,
-   * lowercase letter, or digit, except the last character, which cannot be a dash.
+   * name must be 1-63 characters long and comply with RFC1035. Specifically, the name must match
+   * the regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must
+   * be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit,
+   * except the last character, which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
-  public static RegionForwardingRuleId of(String region, String operation) {
-    return new RegionForwardingRuleId(null, region, operation);
+  public static RegionForwardingRuleId of(String region, String rule) {
+    return new RegionForwardingRuleId(null, region, rule);
   }
 
   /**
    * Returns a region forwarding rule identity given project, region and rule names. The forwarding
-   * rule name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be
-   * 1-63 characters long and match the regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which
-   * means the first character must be a lowercase letter, and all following characters must be a
-   * dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * rule name must be 1-63 characters long and comply with RFC1035. Specifically, the name must
+   * match the regular expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character
+   * must be a lowercase letter, and all following characters must be a dash, lowercase letter, or
+   * digit, except the last character, which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
-  public static RegionForwardingRuleId of(String project, String region, String operation) {
-    return new RegionForwardingRuleId(project, region, operation);
+  public static RegionForwardingRuleId of(String project, String region, String rule) {
+    return new RegionForwardingRuleId(project, region, rule);
   }
 
   /**

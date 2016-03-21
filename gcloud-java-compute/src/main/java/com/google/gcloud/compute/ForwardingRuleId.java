@@ -16,10 +16,25 @@
 
 package com.google.gcloud.compute;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import com.google.common.base.MoreObjects;
+
+import java.util.Objects;
+
 /**
  * Interface for Google Compute Engine forwarding rule identities.
  */
-public interface ForwardingRuleId {
+public abstract class ForwardingRuleId extends ResourceId {
+
+  private static final long serialVersionUID = -4352410760458355391L;
+
+  private final String rule;
+
+  ForwardingRuleId(String project, String rule) {
+    super(project);
+    this.rule = checkNotNull(rule);
+  }
 
   /**
    * Possible types for a Google Compute Engine forwarding rule identity.
@@ -30,6 +45,7 @@ public interface ForwardingRuleId {
      * load balancing.
      */
     GLOBAL,
+
     /**
      * Region forwarding rules are used to forward traffic to the correct pool of target virtual
      * machines.
@@ -40,26 +56,38 @@ public interface ForwardingRuleId {
   /**
    * Returns the type of this forwarding rule identity.
    */
-  Type type();
+  public abstract Type type();
 
   /**
-   * Returns the name of the project.
-   */
-  String project();
-
-  /**
-   * Returns the name of the forwarding rule. The name must be 1-63 characters long, and comply with
-   * RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression
+   * Returns the name of the forwarding rule. The forwarding rule name must be 1-63 characters long
+   * and comply with RFC1035. Specifically, the name must match the regular expression
    * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
    * and all following characters must be a dash, lowercase letter, or digit, except the last
    * character, which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
-  String rule();
+  public String rule() {
+    return rule;
+  }
 
-  /**
-   * Returns a fully qualified URL to the entity.
-   */
-  String selfLink();
+  @Override
+  MoreObjects.ToStringHelper toStringHelper() {
+    return super.toStringHelper().add("rule", rule);
+  }
+
+  @Override
+  final int baseHashCode() {
+    return Objects.hash(super.baseHashCode(), rule);
+  }
+
+  @Override
+  final boolean baseEquals(ResourceId resourceId) {
+    return resourceId instanceof ForwardingRuleId
+        && super.baseEquals(resourceId)
+        && Objects.equals(rule, ((ForwardingRuleId) resourceId).rule);
+  }
+
+  @Override
+  abstract ForwardingRuleId setProjectId(String projectId);
 }
