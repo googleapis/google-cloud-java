@@ -78,9 +78,14 @@ public final class ZoneId extends ResourceId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ZoneId
-        && baseEquals((ZoneId) obj)
-        && Objects.equals(zone, ((ZoneId) obj).zone);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof ZoneId)) {
+      return false;
+    }
+    ZoneId other = (ZoneId) obj;
+    return baseEquals(other) && Objects.equals(zone, other.zone);
   }
 
   @Override

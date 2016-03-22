@@ -76,9 +76,14 @@ public final class RegionAddressId extends AddressId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof RegionAddressId
-        && baseEquals((RegionAddressId) obj)
-        && Objects.equals(region, ((RegionAddressId) obj).region);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof RegionAddressId)) {
+      return false;
+    }
+    RegionAddressId other = (RegionAddressId) obj;
+    return baseEquals(other) && Objects.equals(region, other.region);
   }
 
   @Override

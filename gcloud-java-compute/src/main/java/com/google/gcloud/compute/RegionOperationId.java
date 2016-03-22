@@ -76,9 +76,14 @@ public final class RegionOperationId extends OperationId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof RegionOperationId
-        && baseEquals((RegionOperationId) obj)
-        && Objects.equals(region, ((RegionOperationId) obj).region);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof RegionOperationId)) {
+      return false;
+    }
+    RegionOperationId other = (RegionOperationId) obj;
+    return baseEquals(other) && Objects.equals(region, other.region);
   }
 
   @Override

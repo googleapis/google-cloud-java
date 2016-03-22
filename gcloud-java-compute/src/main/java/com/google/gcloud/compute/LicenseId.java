@@ -78,9 +78,14 @@ public final class LicenseId extends ResourceId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof LicenseId
-        && baseEquals((LicenseId) obj)
-        && Objects.equals(license, ((LicenseId) obj).license);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof LicenseId)) {
+      return false;
+    }
+    LicenseId other = (LicenseId) obj;
+    return baseEquals(other) && Objects.equals(license, other.license);
   }
 
   @Override

@@ -96,10 +96,16 @@ public final class MachineTypeId extends ResourceId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof MachineTypeId
-        && baseEquals((MachineTypeId) obj)
-        && Objects.equals(zone, ((MachineTypeId) obj).zone)
-        && Objects.equals(machineType, ((MachineTypeId) obj).machineType);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof MachineTypeId)) {
+      return false;
+    }
+    MachineTypeId other = (MachineTypeId) obj;
+    return baseEquals(other)
+        && Objects.equals(zone, other.zone)
+        && Objects.equals(machineType, other.machineType);
   }
 
   @Override
