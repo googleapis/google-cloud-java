@@ -276,6 +276,253 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Fields of a Compute Engine Address resource.
+   *
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/addresses#resource">Region
+   *     Address Resource</a>
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/globalAddresses#resource">
+   *     Global Address Resource</a>
+   */
+  enum AddressField {
+    ADDRESS("address"),
+    CREATION_TIMESTAMP("creationTimestamp"),
+    DESCRIPTION("description"),
+    ID("id"),
+    NAME("name"),
+    REGION("region"),
+    SELF_LINK("selfLink"),
+    STATUS("status"),
+    USERS("users");
+
+    private final String selector;
+
+    AddressField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(AddressField... fields) {
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
+      fieldStrings.add(SELF_LINK.selector());
+      for (AddressField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  /**
+   * Fields of a Compute Engine Disk resource.
+   *
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/disks#resource">Disk
+   *     Resource</a>
+   */
+  enum DiskField {
+    CREATION_TIMESTAMP("creationTimestamp"),
+    DESCRIPTION("description"),
+    ID("id"),
+    LAST_ATTACH_TIMESTAMP("lastAttachTimestamp"),
+    LAST_DETACH_TIMESTAMP("lastDetachTimestamp"),
+    LICENSES("licenses"),
+    NAME("name"),
+    OPTIONS("options"),
+    SELF_LINK("selfLink"),
+    SIZE_GB("sizeGb"),
+    SOURCE_IMAGE("sourceImage"),
+    SOURCE_IMAGE_ID("sourceImageId"),
+    SOURCE_SNAPSHOT("sourceSnapshot"),
+    SOURCE_SNAPSHOT_ID("sourceSnapshotId"),
+    STATUS("status"),
+    TYPE("type"),
+    USERS("users"),
+    ZONE("zone");
+
+    private final String selector;
+
+    DiskField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(DiskField... fields) {
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 4);
+      fieldStrings.add(SELF_LINK.selector());
+      fieldStrings.add(TYPE.selector());
+      fieldStrings.add(SOURCE_IMAGE.selector());
+      fieldStrings.add(SOURCE_SNAPSHOT.selector());
+      for (DiskField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  /**
+   * Fields of a Compute Engine Snapshot resource.
+   *
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/snapshots#resource">
+   *     Snapshot Resource</a>
+   */
+  enum SnapshotField {
+    CREATION_TIMESTAMP("creationTimestamp"),
+    DESCRIPTION("description"),
+    DISK_SIZE_GB("diskSizeGb"),
+    ID("id"),
+    LICENSES("licenses"),
+    NAME("name"),
+    SELF_LINK("selfLink"),
+    SOURCE_DISK("sourceDisk"),
+    SOURCE_DISK_ID("sourceDiskId"),
+    STATUS("status"),
+    STORAGE_BYTES("storageBytes"),
+    STORAGE_BYTES_STATUS("storageBytesStatus");
+
+    private final String selector;
+
+    SnapshotField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(SnapshotField... fields) {
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
+      fieldStrings.add(SELF_LINK.selector());
+      for (SnapshotField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  /**
+   * Fields of a Compute Engine Image resource.
+   *
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/images#resource">Image
+   *     Resource</a>
+   */
+  enum ImageField {
+    ARCHIVE_SIZE_BYTES("archiveSizeBytes"),
+    CREATION_TIMESTAMP("creationTimestamp"),
+    DEPRECATED("deprecated"),
+    DESCRIPTION("description"),
+    DISK_SIZE_GB("diskSizeGb"),
+    ID("id"),
+    LICENSES("licenses"),
+    NAME("name"),
+    RAW_DISK("rawDisk"),
+    SELF_LINK("selfLink"),
+    SOURCE_DISK("sourceDisk"),
+    SOURCE_DISK_ID("sourceDiskId"),
+    SOURCE_TYPE("sourceType");
+
+    private final String selector;
+
+    ImageField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(ImageField... fields) {
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 3);
+      fieldStrings.add(SELF_LINK.selector());
+      fieldStrings.add(SOURCE_DISK.selector());
+      fieldStrings.add(RAW_DISK.selector());
+      for (ImageField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  /**
+   * Fields of a Compute Engine Subnetwork resource.
+   *
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/subnetworks#resource">
+   *     Subnetwork Resource</a>
+   */
+  enum SubnetworkField {
+    CREATION_TIMESTAMP("creationTimestamp"),
+    DESCRIPTION("description"),
+    GATEWAY_ADDRESS("gatewayAddress"),
+    ID("id"),
+    IP_CIDR_RANGE("ipCidrRange"),
+    NAME("name"),
+    NETWORK("network"),
+    REGION("region"),
+    SELF_LINK("selfLink");
+
+    private final String selector;
+
+    SubnetworkField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(SubnetworkField... fields) {
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
+      fieldStrings.add(SELF_LINK.selector());
+      for (SubnetworkField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  /**
+   * Fields of a Compute Engine Network resource.
+   *
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/networks#resource">
+   *     Network Resource</a>
+   */
+  enum NetworkField {
+    IPV4_RANGE("IPv4Range"),
+    AUTO_CREATE_SUBNETWORKS("autoCreateSubnetworks"),
+    CREATION_TIMESTAMP("creationTimestamp"),
+    DESCRIPTION("description"),
+    GATEWAY_IPV4("gatewayIPv4"),
+    ID("id"),
+    NAME("name"),
+    SELF_LINK("selfLink"),
+    SUBNETWORKS("subnetworks");
+
+    private final String selector;
+
+    NetworkField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(NetworkField... fields) {
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 3);
+      fieldStrings.add(SELF_LINK.selector());
+      fieldStrings.add(IPV4_RANGE.selector());
+      fieldStrings.add(AUTO_CREATE_SUBNETWORKS.selector());
+      for (NetworkField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  /**
    * Base class for list filters.
    */
   abstract class ListFilter implements Serializable {
@@ -541,6 +788,40 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Class for filtering address lists.
+   */
+  class AddressFilter extends ListFilter {
+
+    private static final long serialVersionUID = -227481644259653765L;
+
+    AddressFilter(AddressField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static AddressFilter equals(AddressField field, String value) {
+      return new AddressFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static AddressFilter notEquals(AddressField field, String value) {
+      return new AddressFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+  }
+
+  /**
    * Class for specifying disk type get options.
    */
   class DiskTypeOption extends Option {
@@ -590,7 +871,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing disk types.
      */
-    public static DiskTypeListOption startPageToken(String pageToken) {
+    public static DiskTypeListOption pageToken(String pageToken) {
       return new DiskTypeListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -635,7 +916,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing disk types.
      */
-    public static DiskTypeAggregatedListOption startPageToken(String pageToken) {
+    public static DiskTypeAggregatedListOption pageToken(String pageToken) {
       return new DiskTypeAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
@@ -690,7 +971,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing machine types.
      */
-    public static MachineTypeListOption startPageToken(String pageToken) {
+    public static MachineTypeListOption pageToken(String pageToken) {
       return new MachineTypeListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -735,7 +1016,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing machine types.
      */
-    public static MachineTypeAggregatedListOption startPageToken(String pageToken) {
+    public static MachineTypeAggregatedListOption pageToken(String pageToken) {
       return new MachineTypeAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
@@ -790,7 +1071,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing regions.
      */
-    public static RegionListOption startPageToken(String pageToken) {
+    public static RegionListOption pageToken(String pageToken) {
       return new RegionListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -857,7 +1138,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing zones.
      */
-    public static ZoneListOption startPageToken(String pageToken) {
+    public static ZoneListOption pageToken(String pageToken) {
       return new ZoneListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -946,7 +1227,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the page token from which to start listing operations.
      */
-    public static OperationListOption startPageToken(String pageToken) {
+    public static OperationListOption pageToken(String pageToken) {
       return new OperationListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -960,6 +1241,106 @@ public interface Compute extends Service<ComputeOptions> {
       StringBuilder builder = new StringBuilder();
       builder.append("items(").append(OperationField.selector(fields)).append("),nextPageToken");
       return new OperationListOption(ComputeRpc.Option.FIELDS, builder.toString());
+    }
+  }
+
+  /**
+   * Class for specifying address get options.
+   */
+  class AddressOption extends Option {
+
+    private static final long serialVersionUID = -5755491818692494389L;
+
+    private AddressOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the address' fields to be returned by the RPC call. If this
+     * option is not provided, all address' fields are returned. {@code AddressOption.fields} can be
+     * used to specify only the fields of interest. {@link Address#addressId()} is always
+     * returned, even if not specified.
+     */
+    public static AddressOption fields(AddressField... fields) {
+      return new AddressOption(ComputeRpc.Option.FIELDS, AddressField.selector(fields));
+    }
+  }
+
+  /**
+   * Class for specifying address list options.
+   */
+  class AddressListOption extends Option {
+
+    private static final long serialVersionUID = -4281322966374929346L;
+
+    private AddressListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the addresses being listed.
+     */
+    public static AddressListOption filter(AddressFilter filter) {
+      return new AddressListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of addresses returned per page.
+     */
+    public static AddressListOption pageSize(long pageSize) {
+      return new AddressListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing addresses.
+     */
+    public static AddressListOption pageToken(String pageToken) {
+      return new AddressListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * Returns an option to specify the address' fields to be returned by the RPC call. If this
+     * option is not provided, all address' fields are returned. {@code AddressListOption.fields}
+     * can be used to specify only the fields of interest. {@link Address#addressId()} is always
+     * returned, even if not specified.
+     */
+    public static AddressListOption fields(AddressField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(AddressField.selector(fields)).append("),nextPageToken");
+      return new AddressListOption(ComputeRpc.Option.FIELDS, builder.toString());
+    }
+  }
+
+  /**
+   * Class for specifying address aggregated list options.
+   */
+  class AddressAggregatedListOption extends Option {
+
+    private static final long serialVersionUID = -95538941541279561L;
+
+    private AddressAggregatedListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the addresses being listed.
+     */
+    public static AddressAggregatedListOption filter(AddressFilter filter) {
+      return new AddressAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of addresses returned per page.
+     */
+    public static AddressAggregatedListOption pageSize(long pageSize) {
+      return new AddressAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing addresses.
+     */
+    public static AddressAggregatedListOption pageToken(String pageToken) {
+      return new AddressAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
 
@@ -1099,4 +1480,49 @@ public interface Compute extends Service<ComputeOptions> {
    * @throws ComputeException upon failure
    */
   boolean delete(OperationId operation);
+
+  /**
+   * Returns the requested address or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Address get(AddressId addressId, AddressOption... options);
+
+  /**
+   * Creates a new address.
+   *
+   * @return an operation for address' creation
+   * @throws ComputeException upon failure
+   */
+  Operation create(AddressInfo address, OperationOption... options);
+
+  /**
+   * Lists the global addresses.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Address> listGlobalAddresses(AddressListOption... options);
+
+  /**
+   * Lists the region addresses for the provided region.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Address> listRegionAddresses(String region, AddressListOption... options);
+
+  /**
+   * Lists all addresses.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Address> listAddresses(AddressAggregatedListOption... options);
+
+  /**
+   * Deletes the requested address.
+   *
+   * @return an operation if the request was issued correctly, {@code null} if the address was not
+   *     found
+   * @throws ComputeException upon failure
+   */
+  Operation delete(AddressId addressId, OperationOption... options);
 }

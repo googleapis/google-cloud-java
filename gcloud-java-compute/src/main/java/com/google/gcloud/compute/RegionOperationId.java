@@ -27,17 +27,17 @@ import java.util.regex.Pattern;
 /**
  * Identity for a Google Compute Engine region's operation.
  */
-public final class RegionOperationId extends RegionResourceId implements OperationId {
+public final class RegionOperationId extends OperationId {
 
-  private static final String REGEX = RegionResourceId.REGEX + "operations/([^/]+)";
+  private static final String REGEX = ResourceId.REGEX + "regions/([^/]+)/operations/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = 5816161906501886782L;
 
-  private final String operation;
+  private final String region;
 
   private RegionOperationId(String project, String region, String operation) {
-    super(project, region);
-    this.operation = checkNotNull(operation);
+    super(project, operation);
+    this.region = checkNotNull(region);
   }
 
   @Override
@@ -45,31 +45,45 @@ public final class RegionOperationId extends RegionResourceId implements Operati
     return Type.REGION;
   }
 
-  @Override
-  public String operation() {
-    return operation;
+  /**
+   * Returns the name of the region this operation belongs to.
+   */
+  public String region() {
+    return region;
+  }
+
+  /**
+   * Returns the identity of the region this operation belongs to.
+   */
+  public RegionId regionId() {
+    return RegionId.of(project(), region);
   }
 
   @Override
   public String selfLink() {
-    return super.selfLink() + "/operations/" + operation;
+    return super.selfLink() + "/regions/" + region + "/operations/" + operation();
   }
 
   @Override
   MoreObjects.ToStringHelper toStringHelper() {
-    return MoreObjects.toStringHelper(this).add("operation", operation);
+    return MoreObjects.toStringHelper(this).add("region", region);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), operation);
+    return Objects.hash(baseHashCode(), region);
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof RegionOperationId
-        && baseEquals((RegionOperationId) obj)
-        && Objects.equals(operation, ((RegionOperationId) obj).operation);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof RegionOperationId)) {
+      return false;
+    }
+    RegionOperationId other = (RegionOperationId) obj;
+    return baseEquals(other) && Objects.equals(region, other.region);
   }
 
   @Override
@@ -77,7 +91,7 @@ public final class RegionOperationId extends RegionResourceId implements Operati
     if (project() != null) {
       return this;
     }
-    return RegionOperationId.of(projectId, region(), operation);
+    return RegionOperationId.of(projectId, region, operation());
   }
 
   /**

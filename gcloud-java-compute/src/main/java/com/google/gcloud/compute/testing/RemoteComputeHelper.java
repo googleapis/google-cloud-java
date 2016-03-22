@@ -22,6 +22,7 @@ import com.google.gcloud.compute.ComputeOptions;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,6 +53,16 @@ public class RemoteComputeHelper {
   }
 
   /**
+   * Returns a base name for testing resources generated using a random UUID. This base name can be
+   * prepended to resource names to prevent name clashes. This method always returns a 30 characters
+   * long prefix. Since Compute Engine resource names can be at most 63 characters long your suffix
+   * should be no longer than 33 characters.
+   */
+  public static String baseResourceName() {
+    return "test-" + UUID.randomUUID().toString().replace("-", "").substring(0, 24) + "-";
+  }
+
+  /**
    * Creates a {@code RemoteComputeHelper} object for the given project id and JSON key input
    * stream.
    *
@@ -60,8 +71,7 @@ public class RemoteComputeHelper {
    * @return A {@code RemoteComputeHelper} object for the provided options
    * @throws ComputeHelperException if {@code keyStream} is not a valid JSON key stream
    */
-  public static RemoteComputeHelper create(String projectId, InputStream keyStream)
-      throws ComputeHelperException {
+  public static RemoteComputeHelper create(String projectId, InputStream keyStream) {
     try {
       ComputeOptions computeOptions = ComputeOptions.builder()
           .authCredentials(AuthCredentials.createForJson(keyStream))

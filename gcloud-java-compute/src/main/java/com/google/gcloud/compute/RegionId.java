@@ -83,9 +83,14 @@ public final class RegionId extends ResourceId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof RegionId
-        && baseEquals((RegionId) obj)
-        && Objects.equals(region, ((RegionId) obj).region);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof RegionId)) {
+      return false;
+    }
+    RegionId other = (RegionId) obj;
+    return baseEquals(other) && Objects.equals(region, other.region);
   }
 
   @Override

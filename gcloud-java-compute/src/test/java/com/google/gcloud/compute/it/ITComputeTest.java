@@ -23,14 +23,20 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.Page;
+import com.google.gcloud.compute.Address;
+import com.google.gcloud.compute.AddressId;
+import com.google.gcloud.compute.AddressInfo;
 import com.google.gcloud.compute.Compute;
 import com.google.gcloud.compute.DiskType;
+import com.google.gcloud.compute.GlobalAddressId;
 import com.google.gcloud.compute.License;
 import com.google.gcloud.compute.LicenseId;
 import com.google.gcloud.compute.MachineType;
 import com.google.gcloud.compute.Operation;
 import com.google.gcloud.compute.Region;
+import com.google.gcloud.compute.RegionAddressId;
 import com.google.gcloud.compute.RegionOperationId;
 import com.google.gcloud.compute.Zone;
 import com.google.gcloud.compute.ZoneOperationId;
@@ -42,6 +48,7 @@ import org.junit.Test;
 import org.junit.rules.Timeout;
 
 import java.util.Iterator;
+import java.util.Set;
 
 public class ITComputeTest {
 
@@ -50,6 +57,7 @@ public class ITComputeTest {
   private static final String DISK_TYPE = "local-ssd";
   private static final String MACHINE_TYPE = "f1-micro";
   private static final LicenseId LICENSE_ID = LicenseId.of("ubuntu-os-cloud", "ubuntu-1404-trusty");
+  private static final String BASE_RESOURCE_NAME = RemoteComputeHelper.baseResourceName();
 
   private static Compute compute;
 
@@ -65,7 +73,6 @@ public class ITComputeTest {
   @Test
   public void testGetDiskType() {
     DiskType diskType = compute.getDiskType(ZONE, DISK_TYPE);
-    // todo(mziccard): uncomment or remove once #695 is closed
     // assertNotNull(diskType.id());
     assertEquals(ZONE, diskType.diskTypeId().zone());
     assertEquals(DISK_TYPE, diskType.diskTypeId().diskType());
@@ -79,7 +86,6 @@ public class ITComputeTest {
   public void testGetDiskTypeWithSelectedFields() {
     DiskType diskType = compute.getDiskType(ZONE, DISK_TYPE,
         Compute.DiskTypeOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
-    // todo(mziccard): uncomment or remove once #695 is closed
     // assertNotNull(diskType.id());
     assertEquals(ZONE, diskType.diskTypeId().zone());
     assertEquals(DISK_TYPE, diskType.diskTypeId().diskType());
@@ -96,7 +102,6 @@ public class ITComputeTest {
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
-      // todo(mziccard): uncomment or remove once #695 is closed
       // assertNotNull(diskType.id());
       assertNotNull(diskType.diskTypeId());
       assertEquals(ZONE, diskType.diskTypeId().zone());
@@ -309,7 +314,7 @@ public class ITComputeTest {
 
   @Test
   public void testGetLicense() {
-    License license= compute.getLicense(LICENSE_ID);
+    License license = compute.getLicense(LICENSE_ID);
     assertEquals(LICENSE_ID, license.licenseId());
     assertNotNull(license.chargesUseFee());
   }
@@ -636,5 +641,218 @@ public class ITComputeTest {
       assertEquals(Operation.Status.DONE, operation.status());
       assertNotNull(operation.user());
     }
+  }
+
+  @Test
+  public void testCreateGetAndDeleteRegionAddress() throws InterruptedException {
+    String name = BASE_RESOURCE_NAME + "create-and-get-region-address";
+    AddressId addressId = RegionAddressId.of(REGION, name);
+    AddressInfo addressInfo = AddressInfo.of(addressId);
+    Operation operation = compute.create(addressInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test get
+    Address remoteAddress = compute.get(addressId);
+    assertNotNull(remoteAddress);
+    assertTrue(remoteAddress.addressId() instanceof RegionAddressId);
+    assertEquals(REGION, remoteAddress.<RegionAddressId>addressId().region());
+    assertEquals(addressId.address(), remoteAddress.addressId().address());
+    assertNotNull(remoteAddress.address());
+    assertNotNull(remoteAddress.creationTimestamp());
+    assertNotNull(remoteAddress.id());
+    assertNotNull(remoteAddress.status());
+    // test get with selected fields
+    remoteAddress = compute.get(addressId, Compute.AddressOption.fields());
+    assertNotNull(remoteAddress);
+    assertTrue(remoteAddress.addressId() instanceof RegionAddressId);
+    assertEquals(REGION, remoteAddress.<RegionAddressId>addressId().region());
+    assertEquals(addressId.address(), remoteAddress.addressId().address());
+    assertNull(remoteAddress.address());
+    assertNull(remoteAddress.creationTimestamp());
+    assertNull(remoteAddress.id());
+    operation = remoteAddress.delete();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.get(addressId));
+  }
+
+  @Test
+  public void testListRegionAddresses() throws InterruptedException {
+    String prefix = BASE_RESOURCE_NAME + "list-region-address";
+    String[] addressNames = {prefix + "1", prefix + "2"};
+    AddressId firstAddressId = RegionAddressId.of(REGION, addressNames[0]);
+    AddressId secondAddressId = RegionAddressId.of(REGION, addressNames[1]);
+    Operation firstOperation = compute.create(AddressInfo.of(firstAddressId));
+    Operation secondOperation = compute.create(AddressInfo.of(secondAddressId));
+    while (!firstOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    while (!secondOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Set<String> addressSet = ImmutableSet.copyOf(addressNames);
+    // test list
+    Compute.AddressFilter filter =
+        Compute.AddressFilter.equals(Compute.AddressField.NAME, prefix + "\\d");
+    Page<Address> addressPage =
+        compute.listRegionAddresses(REGION, Compute.AddressListOption.filter(filter));
+    Iterator<Address> addressIterator = addressPage.iterateAll();
+    int count = 0;
+    while (addressIterator.hasNext()) {
+      Address address = addressIterator.next();
+      assertNotNull(address.addressId());
+      assertTrue(address.addressId() instanceof RegionAddressId);
+      assertEquals(REGION, address.<RegionAddressId>addressId().region());
+      assertTrue(addressSet.contains(address.addressId().address()));
+      assertNotNull(address.address());
+      assertNotNull(address.creationTimestamp());
+      assertNotNull(address.id());
+      count++;
+    }
+    assertEquals(2, count);
+    // test list with selected fields
+    count = 0;
+    addressPage = compute.listRegionAddresses(REGION, Compute.AddressListOption.filter(filter),
+        Compute.AddressListOption.fields(Compute.AddressField.ADDRESS));
+    addressIterator = addressPage.iterateAll();
+    while (addressIterator.hasNext()) {
+      Address address = addressIterator.next();
+      assertTrue(address.addressId() instanceof RegionAddressId);
+      assertEquals(REGION, address.<RegionAddressId>addressId().region());
+      assertTrue(addressSet.contains(address.addressId().address()));
+      assertNotNull(address.address());
+      assertNull(address.creationTimestamp());
+      assertNull(address.id());
+      assertNull(address.status());
+      assertNull(address.usage());
+      count++;
+    }
+    assertEquals(2, count);
+    compute.delete(firstAddressId);
+    compute.delete(secondAddressId);
+  }
+
+  @Test
+  public void testAggregatedListAddresses() throws InterruptedException {
+    String prefix = BASE_RESOURCE_NAME + "aggregated-list-address";
+    String[] addressNames = {prefix + "1", prefix + "2"};
+    AddressId firstAddressId = RegionAddressId.of(REGION, addressNames[0]);
+    AddressId secondAddressId = GlobalAddressId.of(REGION, addressNames[1]);
+    Operation firstOperation = compute.create(AddressInfo.of(firstAddressId));
+    Operation secondOperation = compute.create(AddressInfo.of(secondAddressId));
+    while (!firstOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    while (!secondOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Set<String> addressSet = ImmutableSet.copyOf(addressNames);
+    Compute.AddressFilter filter =
+        Compute.AddressFilter.equals(Compute.AddressField.NAME, prefix + "\\d");
+    Page<Address> addressPage =
+        compute.listAddresses(Compute.AddressAggregatedListOption.filter(filter));
+    Iterator<Address> addressIterator = addressPage.iterateAll();
+    int count = 0;
+    while (addressIterator.hasNext()) {
+      Address address = addressIterator.next();
+      assertNotNull(address.addressId());
+      assertTrue(addressSet.contains(address.addressId().address()));
+      assertNotNull(address.address());
+      assertNotNull(address.creationTimestamp());
+      assertNotNull(address.id());
+      count++;
+    }
+    assertEquals(2, count);
+    compute.delete(firstAddressId);
+    compute.delete(secondAddressId);
+  }
+
+  @Test
+  public void testCreateGetAndDeleteGlobalAddress() throws InterruptedException {
+    String name = BASE_RESOURCE_NAME + "create-and-get-global-address";
+    AddressId addressId = GlobalAddressId.of(name);
+    AddressInfo addressInfo = AddressInfo.of(addressId);
+    Operation operation = compute.create(addressInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test get
+    Address remoteAddress = compute.get(addressId);
+    assertNotNull(remoteAddress);
+    assertTrue(remoteAddress.addressId() instanceof GlobalAddressId);
+    assertEquals(addressId.address(), remoteAddress.addressId().address());
+    assertNotNull(remoteAddress.address());
+    assertNotNull(remoteAddress.creationTimestamp());
+    assertNotNull(remoteAddress.id());
+    assertNotNull(remoteAddress.status());
+    // test get with selected fields
+    remoteAddress = compute.get(addressId, Compute.AddressOption.fields());
+    assertNotNull(remoteAddress);
+    assertTrue(remoteAddress.addressId() instanceof GlobalAddressId);
+    assertEquals(addressId.address(), remoteAddress.addressId().address());
+    assertNull(remoteAddress.address());
+    assertNull(remoteAddress.creationTimestamp());
+    assertNull(remoteAddress.id());
+    operation = remoteAddress.delete();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.get(addressId));
+  }
+
+  @Test
+  public void testListGlobalAddresses() throws InterruptedException {
+    String prefix = BASE_RESOURCE_NAME + "list-global-address";
+    String[] addressNames = {prefix + "1", prefix + "2"};
+    AddressId firstAddressId = GlobalAddressId.of(addressNames[0]);
+    AddressId secondAddressId = GlobalAddressId.of(addressNames[1]);
+    Operation firstOperation = compute.create(AddressInfo.of(firstAddressId));
+    Operation secondOperation = compute.create(AddressInfo.of(secondAddressId));
+    while (!firstOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    while (!secondOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Set<String> addressSet = ImmutableSet.copyOf(addressNames);
+    // test list
+    Compute.AddressFilter filter =
+        Compute.AddressFilter.equals(Compute.AddressField.NAME, prefix + "\\d");
+    Page<Address> addressPage =
+        compute.listGlobalAddresses(Compute.AddressListOption.filter(filter));
+    Iterator<Address> addressIterator = addressPage.iterateAll();
+    int count = 0;
+    while (addressIterator.hasNext()) {
+      Address address = addressIterator.next();
+      assertNotNull(address.addressId());
+      assertTrue(address.addressId() instanceof GlobalAddressId);
+      assertTrue(addressSet.contains(address.addressId().address()));
+      assertNotNull(address.address());
+      assertNotNull(address.creationTimestamp());
+      assertNotNull(address.id());
+      count++;
+    }
+    assertEquals(2, count);
+    // test list with selected fields
+    count = 0;
+    addressPage = compute.listGlobalAddresses(Compute.AddressListOption.filter(filter),
+        Compute.AddressListOption.fields(Compute.AddressField.ADDRESS));
+    addressIterator = addressPage.iterateAll();
+    while (addressIterator.hasNext()) {
+      Address address = addressIterator.next();
+      assertTrue(address.addressId() instanceof GlobalAddressId);
+      assertTrue(addressSet.contains(address.addressId().address()));
+      assertNotNull(address.address());
+      assertNull(address.creationTimestamp());
+      assertNull(address.id());
+      assertNull(address.status());
+      assertNull(address.usage());
+      count++;
+    }
+    assertEquals(2, count);
+    compute.delete(firstAddressId);
+    compute.delete(secondAddressId);
   }
 }

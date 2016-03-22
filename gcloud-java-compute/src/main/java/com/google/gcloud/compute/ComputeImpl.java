@@ -214,6 +214,65 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
   }
 
+  private static class GlobalAddressPageFetcher implements NextPageFetcher<Address> {
+
+    private static final long serialVersionUID = -3832055341507574454L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+
+    GlobalAddressPageFetcher(ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+    }
+
+    @Override
+    public Page<Address> nextPage() {
+      return listGlobalAddresses(serviceOptions, requestOptions);
+    }
+  }
+
+  private static class RegionAddressPageFetcher implements NextPageFetcher<Address> {
+
+    private static final long serialVersionUID = 7080596594494397027L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+    private final String region;
+
+    RegionAddressPageFetcher(String region, ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+      this.region = region;
+    }
+
+    @Override
+    public Page<Address> nextPage() {
+      return listRegionAddresses(region, serviceOptions, requestOptions);
+    }
+  }
+
+  private static class AggregatedAddressPageFetcher implements NextPageFetcher<Address> {
+
+    private static final long serialVersionUID = -5798942282919494950L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+
+    AggregatedAddressPageFetcher(ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+    }
+
+    @Override
+    public Page<Address> nextPage() {
+      return listAddresses(serviceOptions, requestOptions);
+    }
+  }
+
   private final ComputeRpc computeRpc;
 
   ComputeImpl(ComputeOptions options) {
@@ -555,6 +614,16 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
   }
 
+  private static Function<com.google.api.services.compute.model.Operation, Operation>
+      operationFromPb(final ComputeOptions serviceOptions) {
+    return new Function<com.google.api.services.compute.model.Operation, Operation>() {
+      @Override
+      public Operation apply(com.google.api.services.compute.model.Operation operation) {
+        return Operation.fromPb(serviceOptions.service(), operation);
+      }
+    };
+  }
+
   @Override
   public Page<Operation> listGlobalOperations(OperationListOption... options) {
     return listGlobalOperations(options(), optionMap(options));
@@ -575,13 +644,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       String cursor = result.x();
       Iterable<Operation> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
-              : result.y(),
-          new Function<com.google.api.services.compute.model.Operation, Operation>() {
-            @Override
-            public Operation apply(com.google.api.services.compute.model.Operation operation) {
-              return Operation.fromPb(serviceOptions.service(), operation);
-            }
-          });
+              : result.y(), operationFromPb(serviceOptions));
       return new PageImpl<>(new GlobalOperationPageFetcher(serviceOptions, cursor, optionsMap),
           cursor, operations);
     } catch (RetryHelper.RetryHelperException e) {
@@ -609,13 +672,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       String cursor = result.x();
       Iterable<Operation> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
-              : result.y(),
-          new Function<com.google.api.services.compute.model.Operation, Operation>() {
-            @Override
-            public Operation apply(com.google.api.services.compute.model.Operation operation) {
-              return Operation.fromPb(serviceOptions.service(), operation);
-            }
-          });
+              : result.y(), operationFromPb(serviceOptions));
       return new PageImpl<>(new RegionOperationPageFetcher(region, serviceOptions, cursor,
           optionsMap), cursor, operations);
     } catch (RetryHelper.RetryHelperException e) {
@@ -643,13 +700,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       String cursor = result.x();
       Iterable<Operation> operations = Iterables.transform(
           result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Operation>of()
-              : result.y(),
-          new Function<com.google.api.services.compute.model.Operation, Operation>() {
-            @Override
-            public Operation apply(com.google.api.services.compute.model.Operation operation) {
-              return Operation.fromPb(serviceOptions.service(), operation);
-            }
-          });
+              : result.y(), operationFromPb(serviceOptions));
       return new PageImpl<>(new ZoneOperationPageFetcher(zone, serviceOptions, cursor, optionsMap),
           cursor, operations);
     } catch (RetryHelper.RetryHelperException e) {
@@ -679,6 +730,185 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           }
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Address get(final AddressId addressId, AddressOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Address answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Address>() {
+            @Override
+            public com.google.api.services.compute.model.Address call() {
+              switch (addressId.type()) {
+                case REGION:
+                  RegionAddressId regionAddressId = (RegionAddressId) addressId;
+                  return computeRpc.getRegionAddress(regionAddressId.region(),
+                      regionAddressId.address(), optionsMap);
+                case GLOBAL:
+                  return computeRpc.getGlobalAddress(addressId.address(), optionsMap);
+                default:
+                  throw new IllegalArgumentException("Unexpected address identity type");
+              }
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Address.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation create(final AddressInfo address, OperationOption... options) {
+    final com.google.api.services.compute.model.Address addressPb =
+        address.setProjectId(options().projectId()).toPb();
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      return Operation.fromPb(this,
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              switch (address.addressId().type()) {
+                case REGION:
+                  RegionAddressId regionAddressId = address.addressId();
+                  return computeRpc.createRegionAddress(regionAddressId.region(), addressPb,
+                      optionsMap);
+                case GLOBAL:
+                  return computeRpc.createGlobalAddress(addressPb, optionsMap);
+                default:
+                  throw new IllegalArgumentException("Unexpected address identity type");
+              }
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER));
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  private static Function<com.google.api.services.compute.model.Address, Address> addressFromPb(
+      final ComputeOptions serviceOptions) {
+    return new Function<com.google.api.services.compute.model.Address, Address>() {
+      @Override
+      public Address apply(com.google.api.services.compute.model.Address address) {
+        return Address.fromPb(serviceOptions.service(), address);
+      }
+    };
+  }
+
+  @Override
+  public Page<Address> listGlobalAddresses(AddressListOption... options) {
+    return listGlobalAddresses(options(), optionMap(options));
+  }
+
+  private static Page<Address> listGlobalAddresses(final ComputeOptions serviceOptions,
+      final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Address>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Address>> call() {
+              return serviceOptions.rpc().listGlobalAddresses(optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Address> operations = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Address>of()
+              : result.y(), addressFromPb(serviceOptions));
+      return new PageImpl<>(new GlobalAddressPageFetcher(serviceOptions, cursor, optionsMap),
+          cursor, operations);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<Address> listRegionAddresses(String region, AddressListOption... options) {
+    return listRegionAddresses(region, options(), optionMap(options));
+  }
+
+  private static Page<Address> listRegionAddresses(final String region,
+      final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Address>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Address>> call() {
+              return serviceOptions.rpc().listRegionAddresses(region, optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Address> operations = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Address>of()
+              : result.y(), addressFromPb(serviceOptions));
+      return new PageImpl<>(new RegionAddressPageFetcher(region, serviceOptions, cursor,
+          optionsMap), cursor, operations);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<Address> listAddresses(AddressAggregatedListOption... options) {
+    return listAddresses(options(), optionMap(options));
+  }
+
+  private static Page<Address> listAddresses(final ComputeOptions serviceOptions,
+      final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Address>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Address>> call() {
+              return serviceOptions.rpc().listAddresses(optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Address> operations = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Address>of()
+              : result.y(),
+          new Function<com.google.api.services.compute.model.Address, Address>() {
+            @Override
+            public Address apply(com.google.api.services.compute.model.Address address) {
+              return Address.fromPb(serviceOptions.service(), address);
+            }
+          });
+      return new PageImpl<>(new AggregatedAddressPageFetcher(serviceOptions, cursor,
+          optionsMap), cursor, operations);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation delete(final AddressId addressId, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              switch (addressId.type()) {
+                case REGION:
+                  RegionAddressId regionAddressId = (RegionAddressId) addressId;
+                  return computeRpc.deleteRegionAddress(regionAddressId.region(),
+                      regionAddressId.address(), optionsMap);
+                case GLOBAL:
+                  return computeRpc.deleteGlobalAddress(addressId.address(), optionsMap);
+                default:
+                  throw new IllegalArgumentException("Unexpected address identity type");
+              }
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
     }

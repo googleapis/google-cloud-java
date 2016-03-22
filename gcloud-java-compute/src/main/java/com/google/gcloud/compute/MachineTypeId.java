@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 /**
  * Identity for a Google Compute Engine machine type.
  */
-public final class MachineTypeId extends ZoneResourceId {
+public final class MachineTypeId extends ResourceId {
 
   static final Function<String, MachineTypeId> FROM_URL_FUNCTION =
       new Function<String, MachineTypeId>() {
@@ -45,14 +45,16 @@ public final class MachineTypeId extends ZoneResourceId {
         }
       };
 
-  private static final String REGEX = ZoneResourceId.REGEX + "machineTypes/([^/]+)";
+  private static final String REGEX = ResourceId.REGEX + "zones/([^/]+)/machineTypes/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
   private static final long serialVersionUID = -5819598544478859608L;
 
+  private final String zone;
   private final String machineType;
 
   private MachineTypeId(String project, String zone, String machineType) {
-    super(project, zone);
+    super(project);
+    this.zone = checkNotNull(zone);
     this.machineType = checkNotNull(machineType);
   }
 
@@ -63,26 +65,47 @@ public final class MachineTypeId extends ZoneResourceId {
     return machineType;
   }
 
+  /**
+   * Returns the name of the zone this machine type belongs to.
+   */
+  public String zone() {
+    return zone;
+  }
+
+  /**
+   * Returns the identity of the zone this machine type belongs to.
+   */
+  public ZoneId zoneId() {
+    return ZoneId.of(project(), zone);
+  }
+
   @Override
   public String selfLink() {
-    return super.selfLink() + "/machineTypes/" + machineType;
+    return super.selfLink() + "/zones/" + zone + "/machineTypes/" + machineType;
   }
 
   @Override
   MoreObjects.ToStringHelper toStringHelper() {
-    return super.toStringHelper().add("machineType", machineType);
+    return super.toStringHelper().add("zone", zone).add("machineType", machineType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), machineType);
+    return Objects.hash(baseHashCode(), zone, machineType);
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof MachineTypeId
-        && baseEquals((MachineTypeId) obj)
-        && Objects.equals(machineType, ((MachineTypeId) obj).machineType);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof MachineTypeId)) {
+      return false;
+    }
+    MachineTypeId other = (MachineTypeId) obj;
+    return baseEquals(other)
+        && Objects.equals(zone, other.zone)
+        && Objects.equals(machineType, other.machineType);
   }
 
   @Override
@@ -90,7 +113,7 @@ public final class MachineTypeId extends ZoneResourceId {
     if (project() != null) {
       return this;
     }
-    return MachineTypeId.of(projectId, zone(), machineType);
+    return MachineTypeId.of(projectId, zone, machineType);
   }
 
   /**
