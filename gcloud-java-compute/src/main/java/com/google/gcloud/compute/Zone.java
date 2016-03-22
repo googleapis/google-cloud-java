@@ -270,7 +270,7 @@ public class Zone implements Serializable {
   }
 
   /**
-   * Returns an unique identifier for the zone; defined by the service.
+   * Returns the unique identifier for the zone; defined by the service.
    */
   public String id() {
     return id;

@@ -137,7 +137,7 @@ public class DiskType implements Serializable {
   }
 
   /**
-   * Returns an unique identifier for the disk type; defined by the service.
+   * Returns the unique identifier for the disk type; defined by the service.
    */
   public String id() {
     return id;

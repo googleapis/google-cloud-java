@@ -241,7 +241,7 @@ public class Region implements Serializable {
   }
 
   /**
-   * Returns an unique identifier for the region; defined by the service.
+   * Returns the unique identifier for the region; defined by the service.
    */
   public String id() {
     return id;
