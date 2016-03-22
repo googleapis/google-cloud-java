@@ -503,4 +503,12 @@ public interface Dns extends Service<DnsOptions> {
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/list">Cloud DNS Chages: list</a>
    */
   Page<ChangeRequest> listChangeRequests(String zoneName, ChangeRequestListOption... options);
+
+  /**
+   * Initiates a new empty batch ready to be populated with service calls, which will use this
+   * {@code Dns} instance when submitted for processing to Google Cloud DNS.
+   */
+  DnsBatch batch();
+
+  void submitBatch(DnsBatch batch);
 }
