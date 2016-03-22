@@ -18,12 +18,9 @@ package com.google.gcloud.resourcemanager;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNull;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.Identity;
-import com.google.gcloud.resourcemanager.Policy.Role;
-import com.google.gcloud.resourcemanager.Policy.Role.Type;
+import com.google.gcloud.resourcemanager.Policy.ProjectRole;
 
 import org.junit.Test;
 
@@ -37,10 +34,10 @@ public class PolicyTest {
   private static final Identity GROUP = Identity.group("group@gmail.com");
   private static final Identity DOMAIN = Identity.domain("google.com");
   private static final Policy SIMPLE_POLICY = Policy.builder()
-      .addIdentity(Role.owner(), USER)
-      .addIdentity(Role.viewer(), ALL_USERS)
-      .addIdentity(Role.editor(), ALL_AUTH_USERS, DOMAIN)
-      .addIdentity(Role.rawRole("some-role"), SERVICE_ACCOUNT, GROUP)
+      .addIdentity(ProjectRole.OWNER.value(), USER)
+      .addIdentity(ProjectRole.VIEWER.value(), ALL_USERS)
+      .addIdentity(ProjectRole.EDITOR.value(), ALL_AUTH_USERS, DOMAIN)
+      .addIdentity("roles/some-role", SERVICE_ACCOUNT, GROUP)
       .build();
   private static final Policy FULL_POLICY =
       new Policy.Builder(SIMPLE_POLICY.bindings(), "etag", 1).build();
@@ -58,20 +55,12 @@ public class PolicyTest {
   }
 
   @Test
-  public void testRoleType() {
-    assertEquals(Type.OWNER, Role.owner().type());
-    assertEquals(Type.EDITOR, Role.editor().type());
-    assertEquals(Type.VIEWER, Role.viewer().type());
-    assertNull(Role.rawRole("raw-role").type());
-  }
-
-  @Test
   public void testEquals() {
     Policy copy = Policy.builder()
-        .addIdentity(Role.owner(), USER)
-        .addIdentity(Role.viewer(), ALL_USERS)
-        .addIdentity(Role.editor(), ALL_AUTH_USERS, DOMAIN)
-        .addIdentity(Role.rawRole("some-role"), SERVICE_ACCOUNT, GROUP)
+        .addIdentity(ProjectRole.OWNER.value(), USER)
+        .addIdentity(ProjectRole.VIEWER.value(), ALL_USERS)
+        .addIdentity(ProjectRole.EDITOR.value(), ALL_AUTH_USERS, DOMAIN)
+        .addIdentity("roles/some-role", SERVICE_ACCOUNT, GROUP)
         .build();
     assertEquals(SIMPLE_POLICY, copy);
     assertNotEquals(SIMPLE_POLICY, FULL_POLICY);

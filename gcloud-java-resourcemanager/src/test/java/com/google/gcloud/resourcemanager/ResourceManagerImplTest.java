@@ -29,9 +29,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.Identity;
 import com.google.gcloud.Page;
-import com.google.gcloud.resourcemanager.Policy.Role;
+import com.google.gcloud.resourcemanager.Policy.ProjectRole;
 import com.google.gcloud.resourcemanager.ProjectInfo.ResourceId;
-import com.google.gcloud.resourcemanager.ResourceManager.Permission;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectField;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectGetOption;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectListOption;
@@ -71,10 +70,12 @@ public class ResourceManagerImplTest {
       .parent(PARENT)
       .build();
   private static final Map<ResourceManagerRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
-  private static final Policy POLICY = Policy.builder()
-      .addIdentity(Role.owner(), Identity.user("me@gmail.com"))
-      .addIdentity(Role.editor(), Identity.serviceAccount("serviceaccount@gmail.com"))
-      .build();
+  private static final Policy POLICY =
+      Policy.builder()
+          .addIdentity(ProjectRole.OWNER.value(), Identity.user("me@gmail.com"))
+          .addIdentity(
+              ProjectRole.EDITOR.value(), Identity.serviceAccount("serviceaccount@gmail.com"))
+          .build();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -369,7 +370,7 @@ public class ResourceManagerImplTest {
 
   @Test
   public void testTestPermissions() {
-    List<Permission> permissions = ImmutableList.of(Permission.GET);
+    List<String> permissions = ImmutableList.of("resourcemanager.projects.get");
     try {
       RESOURCE_MANAGER.testPermissions("nonexistent-project", permissions);
       fail("Nonexistent project");
@@ -380,8 +381,6 @@ public class ResourceManagerImplTest {
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     assertEquals(ImmutableList.of(true),
         RESOURCE_MANAGER.testPermissions(PARTIAL_PROJECT.projectId(), permissions));
-    assertEquals(ImmutableList.of(true, true), RESOURCE_MANAGER.testPermissions(
-        PARTIAL_PROJECT.projectId(), Permission.DELETE, Permission.GET));
   }
 
   @Test

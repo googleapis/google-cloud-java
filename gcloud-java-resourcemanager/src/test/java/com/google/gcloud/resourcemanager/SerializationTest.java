@@ -21,6 +21,7 @@ import com.google.gcloud.BaseSerializationTest;
 import com.google.gcloud.Identity;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.Restorable;
+import com.google.gcloud.resourcemanager.Policy.ProjectRole;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -45,8 +46,9 @@ private static final ResourceManager RESOURCE_MANAGER =
       ResourceManager.ProjectGetOption.fields(ResourceManager.ProjectField.NAME);
   private static final ResourceManager.ProjectListOption PROJECT_LIST_OPTION =
       ResourceManager.ProjectListOption.filter("name:*");
-  private static final Policy POLICY =
-      Policy.builder().addIdentity(Policy.Role.viewer(), Identity.user("abc@gmail.com")).build();
+  private static final Policy POLICY = Policy.builder()
+      .addIdentity(ProjectRole.VIEWER.value(), Identity.user("abc@gmail.com"))
+      .build();
   private static final ResourceManagerException RESOURCE_MANAGER_EXCEPTION =
       new ResourceManagerException(42, "message");
 

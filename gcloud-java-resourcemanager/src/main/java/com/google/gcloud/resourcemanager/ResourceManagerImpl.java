@@ -23,7 +23,6 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.Page;
@@ -216,29 +215,18 @@ final class ResourceManagerImpl
   }
 
   @Override
-  public List<Boolean> testPermissions(final String projectId, final List<Permission> permissions) {
+  public List<Boolean> testPermissions(final String projectId, final List<String> permissions) {
     try {
       return runWithRetries(
           new Callable<List<Boolean>>() {
             @Override
             public List<Boolean> call() {
-              return resourceManagerRpc.testPermissions(projectId,
-                  Lists.transform(permissions, new Function<Permission, String>() {
-                      @Override
-                      public String apply(Permission permission) {
-                        return permission.value();
-                      }
-                  }));
+              return resourceManagerRpc.testPermissions(projectId, permissions);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
-  }
-
-  @Override
-  public List<Boolean> testPermissions(String projectId, Permission first, Permission... others) {
-    return testPermissions(projectId, Lists.asList(first, others));
   }
 
   private Map<ResourceManagerRpc.Option, ?> optionMap(Option... options) {

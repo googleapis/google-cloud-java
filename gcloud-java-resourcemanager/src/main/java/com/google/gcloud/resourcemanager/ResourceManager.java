@@ -170,38 +170,6 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
   }
 
   /**
-   * The permissions associated with a Google Cloud project. These values can be used when calling
-   * {@link #testPermissions}.
-   *
-   * @see <a href=
-   *     "https://cloud.google.com/resource-manager/docs/access-control-proj#project-level_roles">
-   *     Project-level roles</a>
-   */
-  enum Permission {
-    DELETE("delete"),
-    GET("get"),
-    GET_POLICY("getIamPolicy"),
-    REPLACE("update"),
-    REPLACE_POLICY("setIamPolicy"),
-    UNDELETE("undelete");
-
-    private static final String PREFIX = "resourcemanager.projects.";
-
-    private final String value;
-
-    Permission(String suffix) {
-      this.value = PREFIX + suffix;
-    }
-
-    /**
-     * Returns the string representation of the permission.
-     */
-    public String value() {
-      return value;
-    }
-  }
-
-  /**
    * Creates a new project.
    *
    * <p>Initially, the project resource is owned by its creator exclusively. The creator can later
@@ -358,7 +326,9 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * this method if you're using Google Cloud Platform directly to manage permissions. This method
    * is intended for integration with your proprietary software, such as a customized graphical user
    * interface. For example, the Cloud Platform Console tests IAM permissions internally to
-   * determine which UI should be available to the logged-in user.
+   * determine which UI should be available to the logged-in user. Each service that supports IAM
+   * lists the possible permissions; see the <i>Supported Cloud Platform services</i> page below for
+   * links to these lists.
    *
    * @return A list of booleans representing whether the caller has the permissions specified (in
    *     the order of the given permissions)
@@ -366,22 +336,9 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * @see <a href=
    *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/testIamPermissions">
    *     Resource Manager testIamPermissions</a>
-   */
-  List<Boolean> testPermissions(String projectId, List<Permission> permissions);
-
-  /**
-   * Returns the permissions that a caller has on the specified project. You typically don't call
-   * this method if you're using Google Cloud Platform directly to manage permissions. This method
-   * is intended for integration with your proprietary software, such as a customized graphical user
-   * interface. For example, the Cloud Platform Console tests IAM permissions internally to
-   * determine which UI should be available to the logged-in user.
-   *
-   * @return A list of booleans representing whether the caller has the permissions specified (in
-   *     the order of the given permissions)
-   * @throws ResourceManagerException upon failure
    * @see <a href=
-   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/testIamPermissions">
-   *     Resource Manager testIamPermissions</a>
+   *     "https://cloud.google.com/iam/#supported_cloud_platform_services">Supported Cloud Platform
+   *     Services</a>
    */
-  List<Boolean> testPermissions(String projectId, Permission first, Permission... others);
+  List<Boolean> testPermissions(String projectId, List<String> permissions);
 }
