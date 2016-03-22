@@ -139,6 +139,8 @@ public class PublisherSettings extends ServiceApiSettings {
     RETRY_PARAM_DEFINITIONS = definitions.build();
   }
 
+  private final MethodBuilders methods;
+
   private static class MethodBuilders {
     private final ApiCallableBuilder<Topic, Topic> createTopicMethod;
     private final BundlableApiCallableBuilder<PublishRequest, PublishResponse> publishMethod;
@@ -195,8 +197,6 @@ public class PublisherSettings extends ServiceApiSettings {
     }
   }
 
-  private final MethodBuilders methods;
-
   // ===============
   // Factory Methods
   // ===============
@@ -219,8 +219,9 @@ public class PublisherSettings extends ServiceApiSettings {
   }
 
   /**
-   * Constructs an instance of PublisherSettings with default settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of PublisherSettings with default settings. This is protected
+   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->

@@ -133,6 +133,8 @@ public class SubscriberSettings extends ServiceApiSettings {
     RETRY_PARAM_DEFINITIONS = definitions.build();
   }
 
+  private final MethodBuilders methods;
+
   private static class MethodBuilders {
     private final ApiCallableBuilder<Subscription, Subscription> createSubscriptionMethod;
     private final ApiCallableBuilder<GetSubscriptionRequest, Subscription> getSubscriptionMethod;
@@ -198,8 +200,6 @@ public class SubscriberSettings extends ServiceApiSettings {
     }
   }
 
-  private final MethodBuilders methods;
-
   // ===============
   // Factory Methods
   // ===============
@@ -222,8 +222,9 @@ public class SubscriberSettings extends ServiceApiSettings {
   }
 
   /**
-   * Constructs an instance of SubscriberSettings with default settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of SubscriberSettings with default settings. This is protected
+   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->

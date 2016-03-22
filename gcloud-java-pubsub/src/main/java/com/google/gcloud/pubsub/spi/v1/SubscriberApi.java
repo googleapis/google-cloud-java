@@ -65,9 +65,26 @@ import java.util.List;
  */
 @javax.annotation.Generated("by GAPIC")
 public class SubscriberApi implements AutoCloseable {
+  // ========
+  // Members
+  // ========
+
+  private final ManagedChannel channel;
+  private final List<AutoCloseable> closeables = new ArrayList<>();
+
+  private final ApiCallable<Subscription, Subscription> createSubscriptionCallable;
+  private final ApiCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable;
+  private final ApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable;
+  private final ApiCallable<ListSubscriptionsRequest, Iterable<Subscription>>
+      listSubscriptionsIterableCallable;
+  private final ApiCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable;
+  private final ApiCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable;
+  private final ApiCallable<AcknowledgeRequest, Empty> acknowledgeCallable;
+  private final ApiCallable<PullRequest, PullResponse> pullCallable;
+  private final ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable;
 
   public static class ResourceNames {
-    private ResourceNames() {}
 
     // =======================
     // ResourceNames Constants
@@ -92,6 +109,8 @@ public class SubscriberApi implements AutoCloseable {
      */
     private static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
         PathTemplate.create("projects/{project}/subscriptions/{subscription}");
+
+    private ResourceNames() {}
 
     // ==============================
     // Resource Name Helper Functions
@@ -154,25 +173,6 @@ public class SubscriberApi implements AutoCloseable {
     }
   }
 
-  // ========
-  // Members
-  // ========
-
-  private final ManagedChannel channel;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final ApiCallable<Subscription, Subscription> createSubscriptionCallable;
-  private final ApiCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable;
-  private final ApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
-      listSubscriptionsCallable;
-  private final ApiCallable<ListSubscriptionsRequest, Iterable<Subscription>>
-      listSubscriptionsIterableCallable;
-  private final ApiCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable;
-  private final ApiCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable;
-  private final ApiCallable<AcknowledgeRequest, Empty> acknowledgeCallable;
-  private final ApiCallable<PullRequest, PullResponse> pullCallable;
-  private final ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable;
-
   // ===============
   // Factory Methods
   // ===============
@@ -188,8 +188,9 @@ public class SubscriberApi implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of SubscriberApi, using the given settings. The channels are created based
-   * on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of SubscriberApi, using the given settings.
+   * The channels are created based on the settings passed in, or defaults for any
+   * settings that are not set.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -199,8 +200,9 @@ public class SubscriberApi implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of SubscriberApi, using the given settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of SubscriberApi, using the given settings.
+   * This is protected so that it easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
