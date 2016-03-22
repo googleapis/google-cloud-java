@@ -23,13 +23,11 @@ import com.google.common.collect.Lists;
 import com.google.gcloud.IamPolicy;
 import com.google.gcloud.Identity;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -42,120 +40,63 @@ import java.util.Set;
  *
  * @see <a href="https://cloud.google.com/iam/reference/rest/v1/Policy">Policy</a>
  */
-public class Policy extends IamPolicy<Policy.Role> {
+public class Policy extends IamPolicy<String> {
 
   private static final long serialVersionUID = -5573557282693961850L;
 
   /**
-   * Represents legacy roles in an IAM Policy.
+   * The project-level roles in an IAM policy. This enum is not an exhaustive list of all roles
+   * you can use in an IAM policy. You can also use service-specific roles (e.g.
+   * <i>roles/pubsub.editor</i>).  See the <i>Supported Cloud Platform Services</i> page for links
+   * to service-specific roles.
+   *
+   * @see <a href="https://cloud.google.com/iam/#supported_cloud_platform_services">Supported Cloud
+   * Platform Services</a>
    */
-  public static class Role implements Serializable {
+  public enum ProjectRole {
 
     /**
-     * The recognized roles in a Project's IAM policy.
+     * Permissions for read-only actions that preserve state.
      */
-    public enum Type {
+    VIEWER("roles/viewer"),
 
-      /**
-       * Permissions for read-only actions that preserve state.
-       */
-      VIEWER,
+    /**
+     * All viewer permissions and permissions for actions that modify state.
+     */
+    EDITOR("roles/editor"),
 
-      /**
-       * All viewer permissions and permissions for actions that modify state.
-       */
-      EDITOR,
+    /**
+     * All editor permissions and permissions for the following actions:
+     * <ul>
+     * <li>Manage access control for a resource.
+     * <li>Set up billing (for a project).
+     * </ul>
+     */
+    OWNER("roles/owner");
 
-      /**
-       * All editor permissions and permissions for the following actions:
-       * <ul>
-       * <li>Manage access control for a resource.
-       * <li>Set up billing (for a project).
-       * </ul>
-       */
-      OWNER
-    }
+    String value;
 
-    private static final long serialVersionUID = 2421978909244287488L;
-
-    private final String value;
-    private final Type type;
-
-    private Role(String value, Type type) {
+    private ProjectRole(String value) {
       this.value = value;
-      this.type = type;
     }
 
-    String value() {
+    /**
+     * Returns the string value associated with the role.
+     */
+    public String value() {
       return value;
-    }
-
-    /**
-     * Returns the type of role (editor, owner, or viewer).  Returns {@code null} if the role type
-     * is unrecognized.
-     */
-    public Type type() {
-      return type;
-    }
-
-    /**
-     * Returns a {@code Role} of type {@link Type#VIEWER VIEWER}.
-     */
-    public static Role viewer() {
-      return new Role("roles/viewer", Type.VIEWER);
-    }
-
-    /**
-     * Returns a {@code Role} of type {@link Type#EDITOR EDITOR}.
-     */
-    public static Role editor() {
-      return new Role("roles/editor", Type.EDITOR);
-    }
-
-    /**
-     * Returns a {@code Role} of type {@link Type#OWNER OWNER}.
-     */
-    public static Role owner() {
-      return new Role("roles/owner", Type.OWNER);
-    }
-
-    static Role rawRole(String roleStr) {
-      return new Role(roleStr, null);
-    }
-
-    static Role fromStr(String roleStr) {
-      try {
-        Type type = Type.valueOf(roleStr.split("/")[1].toUpperCase());
-        return new Role(roleStr, type);
-      } catch (Exception ex) {
-        return new Role(roleStr, null);
-      }
-    }
-
-    @Override
-    public final int hashCode() {
-      return Objects.hash(value, type);
-    }
-
-    @Override
-    public final boolean equals(Object obj) {
-      if (!(obj instanceof Role)) {
-        return false;
-      }
-      Role other = (Role) obj;
-      return Objects.equals(value, other.value()) && Objects.equals(type, other.type());
     }
   }
 
   /**
    * Builder for an IAM Policy.
    */
-  public static class Builder extends IamPolicy.Builder<Role, Builder> {
+  public static class Builder extends IamPolicy.Builder<String, Builder> {
 
     private Builder() {}
 
     @VisibleForTesting
-    Builder(Map<Role, Set<Identity>> bindings, String etag, Integer version) {
+    Builder(Map<String, Set<Identity>> bindings, String etag, Integer version) {
       bindings(bindings).etag(etag).version(version);
     }
 
@@ -188,10 +129,10 @@ public class Policy extends IamPolicy<Policy.Role> {
         new com.google.api.services.cloudresourcemanager.model.Policy();
     List<com.google.api.services.cloudresourcemanager.model.Binding> bindingPbList =
         new LinkedList<>();
-    for (Map.Entry<Role, Set<Identity>> binding : bindings().entrySet()) {
+    for (Map.Entry<String, Set<Identity>> binding : bindings().entrySet()) {
       com.google.api.services.cloudresourcemanager.model.Binding bindingPb =
           new com.google.api.services.cloudresourcemanager.model.Binding();
-      bindingPb.setRole(binding.getKey().value());
+      bindingPb.setRole(binding.getKey());
       bindingPb.setMembers(
           Lists.transform(
               new ArrayList<>(binding.getValue()),
@@ -211,11 +152,11 @@ public class Policy extends IamPolicy<Policy.Role> {
 
   static Policy fromPb(
       com.google.api.services.cloudresourcemanager.model.Policy policyPb) {
-    Map<Role, Set<Identity>> bindings = new HashMap<>();
+    Map<String, Set<Identity>> bindings = new HashMap<>();
     for (com.google.api.services.cloudresourcemanager.model.Binding bindingPb :
         policyPb.getBindings()) {
       bindings.put(
-          Role.fromStr(bindingPb.getRole()),
+          bindingPb.getRole(),
           ImmutableSet.copyOf(
               Lists.transform(
                   bindingPb.getMembers(),

@@ -24,7 +24,7 @@ package com.google.gcloud.examples.resourcemanager.snippets;
 
 import com.google.gcloud.Identity;
 import com.google.gcloud.resourcemanager.Policy;
-import com.google.gcloud.resourcemanager.Policy.Role;
+import com.google.gcloud.resourcemanager.Policy.ProjectRole;
 import com.google.gcloud.resourcemanager.Project;
 import com.google.gcloud.resourcemanager.ResourceManager;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
@@ -49,7 +49,7 @@ public class ModifyPolicy {
     // Add a viewer
     Policy.Builder modifiedPolicy = policy.toBuilder();
     Identity newViewer = Identity.user("<insert user's email address here>");
-    modifiedPolicy.addIdentity(Role.viewer(), newViewer);
+    modifiedPolicy.addIdentity(ProjectRole.VIEWER.value(), newViewer);
 
     // Write policy
     Policy updatedPolicy = project.replacePolicy(modifiedPolicy.build());

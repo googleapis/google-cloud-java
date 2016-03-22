@@ -216,19 +216,13 @@ final class ResourceManagerImpl
   }
 
   @Override
-  public List<Boolean> testPermissions(final String projectId, final List<Permission> permissions) {
+  public List<Boolean> testPermissions(final String projectId, final List<String> permissions) {
     try {
       return runWithRetries(
           new Callable<List<Boolean>>() {
             @Override
             public List<Boolean> call() {
-              return resourceManagerRpc.testPermissions(projectId,
-                  Lists.transform(permissions, new Function<Permission, String>() {
-                      @Override
-                      public String apply(Permission permission) {
-                        return permission.value();
-                      }
-                  }));
+              return resourceManagerRpc.testPermissions(projectId, permissions);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
     } catch (RetryHelperException ex) {
@@ -237,8 +231,9 @@ final class ResourceManagerImpl
   }
 
   @Override
-  public List<Boolean> testPermissions(String projectId, Permission first, Permission... others) {
-    return testPermissions(projectId, Lists.asList(first, others));
+  public List<Boolean> testPermissions(
+      String projectId, String firstPermission, String... otherPermissions) {
+    return testPermissions(projectId, Lists.asList(firstPermission, otherPermissions));
   }
 
   private Map<ResourceManagerRpc.Option, ?> optionMap(Option... options) {

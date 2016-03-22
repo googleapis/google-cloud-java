@@ -18,7 +18,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.ByteStreams;
 import com.google.gcloud.AuthCredentials;
-import com.google.gcloud.resourcemanager.ResourceManager.Permission;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 
 import com.sun.net.httpserver.Headers;
@@ -38,7 +37,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -66,7 +64,8 @@ import java.util.zip.GZIPInputStream;
  * <li>IAM policies are set to an empty policy with version 0 (only legacy roles supported) upon
  *     project creation. The actual service will not have an empty list of bindings and may also
  *     set your version to 1.
- * <li>There is no input validation for the policy provided when replacing a policy.
+ * <li>There is no input validation for the policy provided when replacing a policy or calling
+ *     testIamPermissions.
  * <li>In this mock, projects never move from the <i>DELETE_REQUESTED</i> lifecycle state to
  *     <i>DELETE_IN_PROGRESS</i> without an explicit call to the utility method
  *     {@link #changeLifecycleState}.  Similarly, a project is never completely removed without an
@@ -89,12 +88,8 @@ public class LocalResourceManagerHelper {
   private static final Pattern LIST_FIELDS_PATTERN =
       Pattern.compile("(.*?)projects\\((.*?)\\)(.*?)");
   private static final String[] NO_FIELDS = {};
-  private static final Set<String> PERMISSIONS = new HashSet<>();
 
   static {
-    for (Permission permission : Permission.values()) {
-      PERMISSIONS.add(permission.value());
-    }
     try {
       BASE_CONTEXT = new URI(CONTEXT);
     } catch (URISyntaxException e) {
@@ -634,11 +629,6 @@ public class LocalResourceManagerHelper {
   synchronized Response testPermissions(String projectId, List<String> permissions) {
     if (!projects.containsKey(projectId)) {
       return Error.PERMISSION_DENIED.response("Project " + projectId + " not found.");
-    }
-    for (String p : permissions) {
-      if (!PERMISSIONS.contains(p)) {
-        return Error.INVALID_ARGUMENT.response("Invalid permission: " + p);
-      }
     }
     try {
       return new Response(HTTP_OK,

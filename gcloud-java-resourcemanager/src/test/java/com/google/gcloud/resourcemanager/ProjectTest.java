@@ -27,11 +27,9 @@ import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.Identity;
-import com.google.gcloud.resourcemanager.Policy.Role;
+import com.google.gcloud.resourcemanager.Policy.ProjectRole;
 import com.google.gcloud.resourcemanager.ProjectInfo.ResourceId;
-import com.google.gcloud.resourcemanager.ResourceManager.Permission;
 
 import org.junit.After;
 import org.junit.Before;
@@ -58,8 +56,8 @@ public class ProjectTest {
   private static final Identity SERVICE_ACCOUNT =
       Identity.serviceAccount("service-account@gmail.com");
   private static final Policy POLICY = Policy.builder()
-      .addIdentity(Role.owner(), USER)
-      .addIdentity(Role.editor(), SERVICE_ACCOUNT)
+      .addIdentity(ProjectRole.OWNER.value(), USER)
+      .addIdentity(ProjectRole.EDITOR.value(), SERVICE_ACCOUNT)
       .build();
 
   private ResourceManager serviceMockReturnsOptions = createStrictMock(ResourceManager.class);
@@ -239,16 +237,19 @@ public class ProjectTest {
   @Test
   public void testTestPermissions() {
     List<Boolean> response = ImmutableList.of(true, true);
+    String getPermission = "resourcemanager.projects.get";
+    String deletePermission = "resourcemanager.projects.delete";
     expect(resourceManager.options()).andReturn(mockOptions).times(1);
-    expect(resourceManager.testPermissions(PROJECT_ID, Permission.GET, Permission.DELETE))
+    expect(resourceManager.testPermissions(PROJECT_ID, getPermission, deletePermission))
         .andReturn(response);
     expect(resourceManager.testPermissions(
-        PROJECT_ID, ImmutableList.of(Permission.GET, Permission.DELETE))).andReturn(response);
+            PROJECT_ID, ImmutableList.of(getPermission, deletePermission)))
+        .andReturn(response);
     replay(resourceManager);
     initializeProject();
-    assertEquals(response, project.testPermissions(Permission.GET, Permission.DELETE));
+    assertEquals(response, project.testPermissions(getPermission, deletePermission));
     assertEquals(
-        response, project.testPermissions(ImmutableList.of(Permission.GET, Permission.DELETE)));
+        response, project.testPermissions(ImmutableList.of(getPermission, deletePermission)));
   }
 
   private void compareProjects(Project expected, Project value) {

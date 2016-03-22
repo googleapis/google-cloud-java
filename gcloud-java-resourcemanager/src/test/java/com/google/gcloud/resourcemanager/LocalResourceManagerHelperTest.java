@@ -676,13 +676,6 @@ public class LocalResourceManagerHelperTest {
       assertEquals("Project nonexistent-project not found.", e.getMessage());
     }
     rpc.create(PARTIAL_PROJECT);
-    try {
-      rpc.testPermissions(PARTIAL_PROJECT.getProjectId(), ImmutableList.of("get"));
-      fail("Invalid permission.");
-    } catch (ResourceManagerException e) {
-      assertEquals(400, e.code());
-      assertEquals("Invalid permission: get", e.getMessage());
-    }
     assertEquals(ImmutableList.of(true),
         rpc.testPermissions(PARTIAL_PROJECT.getProjectId(), permissions));
   }
