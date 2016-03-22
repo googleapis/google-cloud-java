@@ -23,7 +23,6 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.Page;
@@ -228,12 +227,6 @@ final class ResourceManagerImpl
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
-  }
-
-  @Override
-  public List<Boolean> testPermissions(
-      String projectId, String firstPermission, String... otherPermissions) {
-    return testPermissions(projectId, Lists.asList(firstPermission, otherPermissions));
   }
 
   private Map<ResourceManagerRpc.Option, ?> optionMap(Option... options) {

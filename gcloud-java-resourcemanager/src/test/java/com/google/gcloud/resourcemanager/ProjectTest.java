@@ -240,14 +240,11 @@ public class ProjectTest {
     String getPermission = "resourcemanager.projects.get";
     String deletePermission = "resourcemanager.projects.delete";
     expect(resourceManager.options()).andReturn(mockOptions).times(1);
-    expect(resourceManager.testPermissions(PROJECT_ID, getPermission, deletePermission))
-        .andReturn(response);
     expect(resourceManager.testPermissions(
             PROJECT_ID, ImmutableList.of(getPermission, deletePermission)))
         .andReturn(response);
     replay(resourceManager);
     initializeProject();
-    assertEquals(response, project.testPermissions(getPermission, deletePermission));
     assertEquals(
         response, project.testPermissions(ImmutableList.of(getPermission, deletePermission)));
   }

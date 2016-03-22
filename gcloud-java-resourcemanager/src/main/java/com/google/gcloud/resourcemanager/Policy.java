@@ -47,7 +47,7 @@ public class Policy extends IamPolicy<String> {
   /**
    * The project-level roles in an IAM policy. This enum is not an exhaustive list of all roles
    * you can use in an IAM policy. You can also use service-specific roles (e.g.
-   * <i>roles/pubsub.editor</i>).  See the <i>Supported Cloud Platform Services</i> page for links
+   * "roles/pubsub.editor").  See the <i>Supported Cloud Platform Services</i> page for links
    * to service-specific roles.
    *
    * @see <a href="https://cloud.google.com/iam/#supported_cloud_platform_services">Supported Cloud
@@ -74,7 +74,7 @@ public class Policy extends IamPolicy<String> {
      */
     OWNER("roles/owner");
 
-    String value;
+    private final String value;
 
     private ProjectRole(String value) {
       this.value = value;

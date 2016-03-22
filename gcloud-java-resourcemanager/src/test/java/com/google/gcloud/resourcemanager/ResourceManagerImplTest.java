@@ -381,12 +381,6 @@ public class ResourceManagerImplTest {
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     assertEquals(ImmutableList.of(true),
         RESOURCE_MANAGER.testPermissions(PARTIAL_PROJECT.projectId(), permissions));
-    assertEquals(
-        ImmutableList.of(true, true),
-        RESOURCE_MANAGER.testPermissions(
-            PARTIAL_PROJECT.projectId(),
-            "resourcemanager.projects.delete",
-            "resourcemanager.projects.get"));
   }
 
   @Test
