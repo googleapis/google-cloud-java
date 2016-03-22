@@ -180,7 +180,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the page token from which to start listing datasets.
      */
-    public static DatasetListOption startPageToken(String pageToken) {
+    public static DatasetListOption pageToken(String pageToken) {
       return new DatasetListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -256,7 +256,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the page token from which to start listing tables.
      */
-    public static TableListOption startPageToken(String pageToken) {
+    public static TableListOption pageToken(String pageToken) {
       return new TableListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
@@ -305,7 +305,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the page token from which to start listing table data.
      */
-    public static TableDataListOption startPageToken(String pageToken) {
+    public static TableDataListOption pageToken(String pageToken) {
       return new TableDataListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -362,7 +362,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the page token from which to start listing jobs.
      */
-    public static JobListOption startPageToken(String pageToken) {
+    public static JobListOption pageToken(String pageToken) {
       return new JobListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -428,7 +428,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the page token from which to start getting query results.
      */
-    public static QueryResultsOption startPageToken(String pageToken) {
+    public static QueryResultsOption pageToken(String pageToken) {
       return new QueryResultsOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
 
