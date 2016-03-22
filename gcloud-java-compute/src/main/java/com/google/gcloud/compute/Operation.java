@@ -17,8 +17,6 @@
 package com.google.gcloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.gcloud.compute.OperationId.Type.REGION;
-import static com.google.gcloud.compute.OperationId.Type.ZONE;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
