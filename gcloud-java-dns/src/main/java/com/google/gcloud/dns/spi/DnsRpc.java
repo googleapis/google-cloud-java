@@ -23,6 +23,7 @@ import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.dns.DnsException;
 
+import java.util.List;
 import java.util.Map;
 
 public interface DnsRpc {
@@ -171,4 +172,9 @@ public interface DnsRpc {
    */
   ListResult<Change> listChangeRequests(String zoneName, Map<Option, ?> options)
       throws DnsException;
+
+  /**
+   * Submits a batch of requests for processing using a single HTTP request to Cloud DNS.
+   */
+  void submitBatch(List<RpcBatchCall> requests);
 }

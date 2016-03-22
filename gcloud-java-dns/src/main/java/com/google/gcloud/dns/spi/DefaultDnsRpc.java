@@ -1,3 +1,19 @@
+/*
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.google.gcloud.dns.spi;
 
 import static com.google.gcloud.dns.spi.DnsRpc.ListResult.of;
@@ -10,6 +26,7 @@ import static com.google.gcloud.dns.spi.DnsRpc.Option.PAGE_TOKEN;
 import static com.google.gcloud.dns.spi.DnsRpc.Option.SORTING_ORDER;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
+import com.google.api.client.googleapis.batch.BatchRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
@@ -21,10 +38,13 @@ import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.gcloud.dns.DnsBatch;
 import com.google.gcloud.dns.DnsException;
 import com.google.gcloud.dns.DnsOptions;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -192,5 +212,44 @@ public class DefaultDnsRpc implements DnsRpc {
     } catch (IOException ex) {
       throw translate(ex);
     }
+  }
+
+  @Override
+  public void submitBatch(List<RpcBatchCall> calls) {
+    try {
+      BatchRequest batchRequest = prepareBatch(calls);
+      batchRequest.execute();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  /**
+   * Since {@code BatchRequest} is a final class, it cannot be mocked with easy mock and the call of
+   * {@code execute()} cannot be tested. Thus, most of the functionality of {@link
+   * #submitBatch(List)}  is extracted to this method which does not make the call so it does not
+   * communicate with the service.
+   */
+  @VisibleForTesting
+  BatchRequest prepareBatch(List<RpcBatchCall> calls) throws IOException {
+    BatchRequest batch = dns.batch();
+    for (RpcBatchCall call : calls) {
+      DnsBatch.Request request = call.request();
+      Map<Option, ?> options = call.options();
+      switch (request.operation()) {
+        case LIST_ZONES:
+          // todo(mderka) extract this to a separate method call by this and listZones()
+          Dns.ManagedZones.List list = dns.managedZones().list(this.options.projectId())
+              .setFields(FIELDS.getString(options))
+              .setMaxResults(PAGE_SIZE.getInt(options))
+              .setDnsName(DNS_NAME.getString(options))
+              .setPageToken(PAGE_TOKEN.getString(options));
+          list.queue(batch, call.callback());
+          break;
+        default:
+          // todo(mderka) implement other operations
+      }
+    }
+    return batch;
   }
 }
