@@ -160,7 +160,7 @@ public class MachineType implements Serializable {
   }
 
   /**
-   * Returns an unique identifier for the machine type; defined by the service.
+   * Returns the unique identifier for the machine type; defined by the service.
    */
   public String id() {
     return id;
