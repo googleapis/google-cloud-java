@@ -100,10 +100,16 @@ public final class InstanceId extends ResourceId  {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof InstanceId
-        && baseEquals((InstanceId) obj)
-        && Objects.equals(zone, ((InstanceId) obj).zone)
-        && Objects.equals(instance, ((InstanceId) obj).instance);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof InstanceId)) {
+      return false;
+    }
+    InstanceId other = (InstanceId) obj;
+    return baseEquals(other)
+        && Objects.equals(zone, other.zone)
+        && Objects.equals(instance, other.instance);
   }
 
   @Override

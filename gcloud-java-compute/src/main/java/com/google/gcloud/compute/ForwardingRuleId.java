@@ -23,7 +23,7 @@ import com.google.common.base.MoreObjects;
 import java.util.Objects;
 
 /**
- * Interface for Google Compute Engine forwarding rule identities.
+ * Base class for Google Compute Engine forwarding rule identities.
  */
 public abstract class ForwardingRuleId extends ResourceId {
 

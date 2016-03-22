@@ -94,10 +94,16 @@ public final class DiskTypeId extends ResourceId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof DiskTypeId
-        && baseEquals((DiskTypeId) obj)
-        && Objects.equals(zone, ((DiskTypeId) obj).zone)
-        && Objects.equals(diskType, ((DiskTypeId) obj).diskType);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof DiskTypeId)) {
+      return false;
+    }
+    DiskTypeId other = (DiskTypeId) obj;
+    return baseEquals(other)
+        && Objects.equals(zone, other.zone)
+        && Objects.equals(diskType, other.diskType);
   }
 
   @Override

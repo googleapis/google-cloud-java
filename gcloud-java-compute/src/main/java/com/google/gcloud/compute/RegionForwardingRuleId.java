@@ -92,9 +92,14 @@ public final class RegionForwardingRuleId extends ForwardingRuleId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof RegionForwardingRuleId
-        && baseEquals((RegionForwardingRuleId) obj)
-        && Objects.equals(region, ((RegionForwardingRuleId) obj).region);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof RegionForwardingRuleId)) {
+      return false;
+    }
+    RegionForwardingRuleId other = (RegionForwardingRuleId) obj;
+    return baseEquals(other) && Objects.equals(region, other.region);
   }
 
   @Override
