@@ -634,7 +634,7 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns an option to specify the page token from which to start listing buckets.
      */
-    public static BucketListOption startPageToken(String pageToken) {
+    public static BucketListOption pageToken(String pageToken) {
       return new BucketListOption(StorageRpc.Option.PAGE_TOKEN, pageToken);
     }
 
@@ -680,7 +680,7 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns an option to specify the page token from which to start listing blobs.
      */
-    public static BlobListOption startPageToken(String pageToken) {
+    public static BlobListOption pageToken(String pageToken) {
       return new BlobListOption(StorageRpc.Option.PAGE_TOKEN, pageToken);
     }
 

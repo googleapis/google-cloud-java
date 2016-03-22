@@ -169,7 +169,7 @@ public class BigQueryImplTest {
   private static final BigQuery.DatasetListOption DATASET_LIST_ALL =
       BigQuery.DatasetListOption.all();
   private static final BigQuery.DatasetListOption DATASET_LIST_PAGE_TOKEN =
-      BigQuery.DatasetListOption.startPageToken("cursor");
+      BigQuery.DatasetListOption.pageToken("cursor");
   private static final BigQuery.DatasetListOption DATASET_LIST_PAGE_SIZE =
       BigQuery.DatasetListOption.pageSize(42L);
   private static final Map<BigQueryRpc.Option, ?> DATASET_LIST_OPTIONS = ImmutableMap.of(
@@ -191,7 +191,7 @@ public class BigQueryImplTest {
   private static final BigQuery.TableListOption TABLE_LIST_PAGE_SIZE =
       BigQuery.TableListOption.pageSize(42L);
   private static final BigQuery.TableListOption TABLE_LIST_PAGE_TOKEN =
-      BigQuery.TableListOption.startPageToken("cursor");
+      BigQuery.TableListOption.pageToken("cursor");
   private static final Map<BigQueryRpc.Option, ?> TABLE_LIST_OPTIONS = ImmutableMap.of(
       BigQueryRpc.Option.MAX_RESULTS, 42L,
       BigQueryRpc.Option.PAGE_TOKEN, "cursor");
@@ -200,7 +200,7 @@ public class BigQueryImplTest {
   private static final BigQuery.TableDataListOption TABLE_DATA_LIST_PAGE_SIZE =
       BigQuery.TableDataListOption.pageSize(42L);
   private static final BigQuery.TableDataListOption TABLE_DATA_LIST_PAGE_TOKEN =
-      BigQuery.TableDataListOption.startPageToken("cursor");
+      BigQuery.TableDataListOption.pageToken("cursor");
   private static final BigQuery.TableDataListOption TABLE_DATA_LIST_START_INDEX =
       BigQuery.TableDataListOption.startIndex(0L);
   private static final Map<BigQueryRpc.Option, ?> TABLE_DATA_LIST_OPTIONS = ImmutableMap.of(
@@ -220,7 +220,7 @@ public class BigQueryImplTest {
   private static final BigQuery.JobListOption JOB_LIST_STATE_FILTER =
       BigQuery.JobListOption.stateFilter(JobStatus.State.DONE, JobStatus.State.PENDING);
   private static final BigQuery.JobListOption JOB_LIST_PAGE_TOKEN =
-      BigQuery.JobListOption.startPageToken("cursor");
+      BigQuery.JobListOption.pageToken("cursor");
   private static final BigQuery.JobListOption JOB_LIST_PAGE_SIZE =
       BigQuery.JobListOption.pageSize(42L);
   private static final Map<BigQueryRpc.Option, ?> JOB_LIST_OPTIONS = ImmutableMap.of(
@@ -235,7 +235,7 @@ public class BigQueryImplTest {
   private static final BigQuery.QueryResultsOption QUERY_RESULTS_OPTION_INDEX =
       BigQuery.QueryResultsOption.startIndex(1024L);
   private static final BigQuery.QueryResultsOption QUERY_RESULTS_OPTION_PAGE_TOKEN =
-      BigQuery.QueryResultsOption.startPageToken("cursor");
+      BigQuery.QueryResultsOption.pageToken("cursor");
   private static final BigQuery.QueryResultsOption QUERY_RESULTS_OPTION_PAGE_SIZE =
       BigQuery.QueryResultsOption.pageSize(0L);
   private static final Map<BigQueryRpc.Option, ?> QUERY_RESULTS_OPTIONS = ImmutableMap.of(
