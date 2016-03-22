@@ -21,8 +21,13 @@ import static com.google.gcloud.RetryHelper.RetryHelperException;
 import static com.google.gcloud.RetryHelper.runWithRetries;
 import static com.google.gcloud.dns.ChangeRequest.fromPb;
 
+import com.google.api.client.googleapis.batch.BatchRequest;
+import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.http.HttpHeaders;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
+import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
@@ -35,6 +40,8 @@ import com.google.gcloud.PageImpl;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.dns.spi.DnsRpc;
 
+import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
@@ -111,6 +118,16 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     dnsRpc = options.rpc();
   }
 
+  private static Function<ManagedZone, Zone> pbToZoneFunction(final DnsOptions options) {
+    return new Function<ManagedZone, Zone>() {
+      @Override
+      public Zone apply(
+          com.google.api.services.dns.model.ManagedZone zonePb) {
+        return Zone.fromPb(options.service(), zonePb);
+      }
+    };
+  }
+
   @Override
   public Page<Zone> listZones(ZoneListOption... options) {
     return listZones(options(), optionMap(options));
@@ -118,15 +135,6 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
 
   private static Page<Zone> listZones(final DnsOptions serviceOptions,
       final Map<DnsRpc.Option, ?> optionsMap) {
-    // define transformation function
-    // this differs from the other list operations since zone is functional and requires dns service
-    Function<ManagedZone, Zone> pbToZoneFunction = new Function<ManagedZone, Zone>() {
-      @Override
-      public Zone apply(
-          com.google.api.services.dns.model.ManagedZone zonePb) {
-        return Zone.fromPb(serviceOptions.service(), zonePb);
-      }
-    };
     try {
       // get a list of managed zones
       final DnsRpc rpc = serviceOptions.rpc();
@@ -139,8 +147,8 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
           }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
       String cursor = result.pageToken();
       // transform that list into zone objects
-      Iterable<Zone> zones = result.results() == null
-          ? ImmutableList.<Zone>of() : Iterables.transform(result.results(), pbToZoneFunction);
+      Iterable<Zone> zones = result.results() == null ? ImmutableList.<Zone>of()
+          : Iterables.transform(result.results(), pbToZoneFunction(serviceOptions));
       return new PageImpl<>(new ZonePageFetcher(serviceOptions, cursor, optionsMap),
           cursor, zones);
     } catch (RetryHelperException e) {
@@ -307,6 +315,77 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
     }
+  }
+
+  @Override
+  public DnsBatch batch() {
+    return new DnsBatch(this);
+  }
+
+  @Override
+  public void submitBatch(DnsBatch batch) {
+    BatchRequest batchRequest = dnsRpc.createBatch();
+    for (final DnsBatch.Request request : batch.requests()) {
+      final Map<DnsRpc.Option, ?> optionMap = optionMap(request.options());
+      JsonBatchCallback callback;
+      switch (request.operation()) {
+        case LIST_ZONES:
+          callback = listZonesCallback(this.options(), request, optionMap);
+          batchRequest = dnsRpc.prepareListZones(batchRequest, callback, optionMap);
+          break;
+        case CREATE_ZONE:
+          callback = createZoneCallback(this.options(), request, optionMap);
+          batchRequest = dnsRpc.prepareCreateZone(request.zoneInfo().toPb(), batchRequest, callback,
+              optionMap);
+          break;
+        case DELETE_ZONE:
+          callback = createZoneCallback(this.options(), request, optionMap);
+          batchRequest = dnsRpc.prepareDeleteZone(request.zoneName(), batchRequest, callback);
+          break;
+        // todo(mderka) implement the rest
+      }
+    }
+    dnsRpc.submitBatch(batchRequest);
+  }
+
+  // todo(mderka) make methods to prepare other callbacks
+  private JsonBatchCallback listZonesCallback(final DnsOptions serviceOptions,
+      final DnsBatch.Request request, final Map<DnsRpc.Option, ?> optionMap) {
+    JsonBatchCallback callback = new JsonBatchCallback<ManagedZonesListResponse>() {
+      @Override
+      public void onSuccess(ManagedZonesListResponse response, HttpHeaders httpHeaders)
+          throws IOException {
+        DnsBatchResult result = request.result();
+        List<ManagedZone> zones = response.getManagedZones();
+        Page<Zone> zonePage = new PageImpl<>(
+            new ZonePageFetcher(options(), response.getNextPageToken(), optionMap),
+            response.getNextPageToken(), zones == null ? ImmutableList.<Zone>of()
+            : Iterables.transform(zones, pbToZoneFunction(serviceOptions)));
+        result.result(zonePage);
+        result.submit();
+      }
+
+      @Override
+      public void onFailure(GoogleJsonError googleJsonError, HttpHeaders httpHeaders)
+          throws IOException {
+        DnsBatchResult result = request.result();
+        result.error(new DnsException(googleJsonError));
+        result.submit();
+      }
+    };
+    return callback;
+  }
+
+  // todo(mderka) make methods to prepare other callbacks
+  private JsonBatchCallback createZoneCallback(final DnsOptions serviceOptions,
+      final DnsBatch.Request request, final Map<DnsRpc.Option, ?> optionMap) {
+    throw new UnsupportedOperationException("not implemented yet");
+  }
+
+  // todo(mderka) make methods to prepare other callbacks
+  private JsonBatchCallback deleteZoneCallback(final DnsOptions serviceOptions,
+      final DnsBatch.Request request, final Map<DnsRpc.Option, ?> optionMap) {
+    throw new UnsupportedOperationException("not implemented yet");
   }
 
   private Map<DnsRpc.Option, ?> optionMap(AbstractOption... options) {

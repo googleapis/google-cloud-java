@@ -1,3 +1,19 @@
+/*
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.google.gcloud.dns.spi;
 
 import static com.google.gcloud.dns.spi.DnsRpc.ListResult.of;
@@ -10,6 +26,8 @@ import static com.google.gcloud.dns.spi.DnsRpc.Option.PAGE_TOKEN;
 import static com.google.gcloud.dns.spi.DnsRpc.Option.SORTING_ORDER;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
+import com.google.api.client.googleapis.batch.BatchRequest;
+import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
@@ -85,12 +103,7 @@ public class DefaultDnsRpc implements DnsRpc {
   public ListResult<ManagedZone> listZones(Map<Option, ?> options) throws DnsException {
     // fields, page token, page size
     try {
-      ManagedZonesListResponse zoneList = dns.managedZones().list(this.options.projectId())
-          .setFields(FIELDS.getString(options))
-          .setMaxResults(PAGE_SIZE.getInt(options))
-          .setDnsName(DNS_NAME.getString(options))
-          .setPageToken(PAGE_TOKEN.getString(options))
-          .execute();
+      ManagedZonesListResponse zoneList = zoneListRequest(options).execute();
       return of(zoneList.getNextPageToken(), zoneList.getManagedZones());
     } catch (IOException ex) {
       throw translate(ex);
@@ -192,5 +205,59 @@ public class DefaultDnsRpc implements DnsRpc {
     } catch (IOException ex) {
       throw translate(ex);
     }
+  }
+
+  @Override
+  public BatchRequest createBatch() {
+    return dns.batch();
+  }
+
+  @Override
+  public BatchRequest prepareListZones(BatchRequest batch, JsonBatchCallback callback,
+      Map<DnsRpc.Option, ?> options) {
+    try {
+      zoneListRequest(options).queue(batch, callback);
+      return batch;
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public BatchRequest prepareCreateZone(ManagedZone zone, BatchRequest batch,
+      JsonBatchCallback callback, Map<Option, ?> options) {
+    // todo(mderka) implement
+    throw new UnsupportedOperationException("not implemented yet");
+  }
+
+  @Override
+  public BatchRequest prepareGetZone(String zoneName, BatchRequest batch,
+      JsonBatchCallback callback, Map<Option, ?> options) {
+    // todo(mderka) implement
+    throw new UnsupportedOperationException("not implemented yet");
+  }
+
+  @Override
+  public BatchRequest prepareDeleteZone(String zoneName, BatchRequest batch,
+      JsonBatchCallback callback) {
+    // todo(mderka) implement
+    throw new UnsupportedOperationException("not implemented yet");
+  }
+
+  @Override
+  public void submitBatch(BatchRequest batchRequest) {
+    try {
+      batchRequest.execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  private Dns.ManagedZones.List zoneListRequest(Map<DnsRpc.Option, ?> options) throws IOException {
+    return dns.managedZones().list(this.options.projectId())
+        .setFields(FIELDS.getString(options))
+        .setMaxResults(PAGE_SIZE.getInt(options))
+        .setDnsName(DNS_NAME.getString(options))
+        .setPageToken(PAGE_TOKEN.getString(options));
   }
 }

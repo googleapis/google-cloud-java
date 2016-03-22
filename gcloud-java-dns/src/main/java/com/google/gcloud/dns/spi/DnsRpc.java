@@ -16,6 +16,8 @@
 
 package com.google.gcloud.dns.spi;
 
+import com.google.api.client.googleapis.batch.BatchRequest;
+import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.Project;
@@ -23,6 +25,7 @@ import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.dns.DnsException;
 
+import java.io.IOException;
 import java.util.Map;
 
 public interface DnsRpc {
@@ -171,4 +174,51 @@ public interface DnsRpc {
    */
   ListResult<Change> listChangeRequests(String zoneName, Map<Option, ?> options)
       throws DnsException;
+
+  /**
+   * Initializes an empty batch.
+   */
+  BatchRequest createBatch();
+
+  /**
+   * Prepares a call to "list zones" and adds it to the batch with the provided {@code callback} and
+   * {@code options}.
+   *
+   * @return updated batch
+   */
+  BatchRequest prepareListZones(BatchRequest batch, JsonBatchCallback callback,
+      Map<DnsRpc.Option, ?> options);
+
+  /**
+   * Prepares a call to "create zone" and adds it to the batch with the provided {@code callback}
+   * and {@code options}.
+   *
+   * @return updated batch
+   */
+  BatchRequest prepareCreateZone(ManagedZone zone, BatchRequest batch, JsonBatchCallback callback,
+      Map<DnsRpc.Option, ?> options);
+
+  /**
+   * Prepares a call to "get zone" and adds it to the batch with the provided {@code callback} and
+   * {@code options}.
+   *
+   * @return updated batch
+   */
+  BatchRequest prepareGetZone(String zoneName, BatchRequest batch, JsonBatchCallback callback,
+      Map<DnsRpc.Option, ?> options);
+
+  /**
+   * Prepares a call to "delete zone" and adds it to the batch with the provided {@code callback}
+   * and {@code options}.
+   *
+   * @return updated batch
+   */
+  BatchRequest prepareDeleteZone(String zoneName, BatchRequest batch, JsonBatchCallback callback);
+
+  // todo(mderka) add prepare for every single opration
+
+  /**
+   * Submits a batch of requests for processing using a single HTTP request to Cloud DNS.
+   */
+  void submitBatch(BatchRequest requests);
 }
