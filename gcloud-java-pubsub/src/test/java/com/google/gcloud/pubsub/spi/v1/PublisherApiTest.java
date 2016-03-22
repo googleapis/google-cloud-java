@@ -126,7 +126,8 @@ public class PublisherApiTest {
     String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "publish-topic");
     publisherApi.createTopic(topicName);
 
-    String subscriberName = SubscriberApi.ResourceNames.formatSubscriptionPath("my-project", "my-subscribe");
+    String subscriberName =
+        SubscriberApi.ResourceNames.formatSubscriptionPath("my-project", "my-subscribe");
     PushConfig config = PushConfig.getDefaultInstance();
     subscriberApi.createSubscription(subscriberName, topicName, config, 5);
 
@@ -145,7 +146,8 @@ public class PublisherApiTest {
     String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "publish-topic");
     bundledPublisherApi.createTopic(topicName);
 
-    String subscriberName = SubscriberApi.ResourceNames.formatSubscriptionPath("my-project", "my-subscribe");
+    String subscriberName =
+        SubscriberApi.ResourceNames.formatSubscriptionPath("my-project", "my-subscribe");
     PushConfig config = PushConfig.getDefaultInstance();
     subscriberApi.createSubscription(subscriberName, topicName, config, 5);
 

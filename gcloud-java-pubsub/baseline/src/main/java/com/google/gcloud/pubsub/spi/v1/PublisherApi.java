@@ -66,9 +66,25 @@ import java.util.List;
  */
 @javax.annotation.Generated("by GAPIC")
 public class PublisherApi implements AutoCloseable {
+  // ========
+  // Members
+  // ========
+
+  private final ManagedChannel channel;
+  private final List<AutoCloseable> closeables = new ArrayList<>();
+
+  private final ApiCallable<Topic, Topic> createTopicCallable;
+  private final ApiCallable<PublishRequest, PublishResponse> publishCallable;
+  private final ApiCallable<GetTopicRequest, Topic> getTopicCallable;
+  private final ApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable;
+  private final ApiCallable<ListTopicsRequest, Iterable<Topic>> listTopicsIterableCallable;
+  private final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
+      listTopicSubscriptionsCallable;
+  private final ApiCallable<ListTopicSubscriptionsRequest, Iterable<String>>
+      listTopicSubscriptionsIterableCallable;
+  private final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
 
   public static class ResourceNames {
-    private ResourceNames() {}
 
     // =======================
     // ResourceNames Constants
@@ -93,6 +109,8 @@ public class PublisherApi implements AutoCloseable {
      */
     private static final PathTemplate TOPIC_PATH_TEMPLATE =
         PathTemplate.create("projects/{project}/topics/{topic}");
+
+    private ResourceNames() {}
 
     // ==============================
     // Resource Name Helper Functions
@@ -154,24 +172,6 @@ public class PublisherApi implements AutoCloseable {
     }
   }
 
-  // ========
-  // Members
-  // ========
-
-  private final ManagedChannel channel;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final ApiCallable<Topic, Topic> createTopicCallable;
-  private final ApiCallable<PublishRequest, PublishResponse> publishCallable;
-  private final ApiCallable<GetTopicRequest, Topic> getTopicCallable;
-  private final ApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable;
-  private final ApiCallable<ListTopicsRequest, Iterable<Topic>> listTopicsIterableCallable;
-  private final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
-      listTopicSubscriptionsCallable;
-  private final ApiCallable<ListTopicSubscriptionsRequest, Iterable<String>>
-      listTopicSubscriptionsIterableCallable;
-  private final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
-
   // ===============
   // Factory Methods
   // ===============
@@ -187,8 +187,9 @@ public class PublisherApi implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of PublisherApi, using the given settings. The channels are created based
-   * on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of PublisherApi, using the given settings.
+   * The channels are created based on the settings passed in, or defaults for any
+   * settings that are not set.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -198,8 +199,9 @@ public class PublisherApi implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of PublisherApi, using the given settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of PublisherApi, using the given settings.
+   * This is protected so that it easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
