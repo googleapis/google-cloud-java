@@ -348,7 +348,7 @@ public class ITBigQueryTest {
             + tableName)
         .defaultDataset(DatasetId.of(DATASET))
         .maxWaitTime(60000L)
-        .maxResults(1000L)
+        .pageSize(1000L)
         .build();
     QueryResponse response = bigquery.query(request);
     while (!response.jobCompleted()) {
@@ -411,7 +411,7 @@ public class ITBigQueryTest {
     QueryRequest request = QueryRequest.builder("SELECT * FROM " + tableName)
         .defaultDataset(DatasetId.of(DATASET))
         .maxWaitTime(60000L)
-        .maxResults(1000L)
+        .pageSize(1000L)
         .build();
     QueryResponse response = bigquery.query(request);
     while (!response.jobCompleted()) {
@@ -662,7 +662,7 @@ public class ITBigQueryTest {
     QueryRequest request = QueryRequest.builder(query)
         .defaultDataset(DatasetId.of(DATASET))
         .maxWaitTime(60000L)
-        .maxResults(1000L)
+        .pageSize(1000L)
         .build();
     QueryResponse response = bigquery.query(request);
     while (!response.jobCompleted()) {

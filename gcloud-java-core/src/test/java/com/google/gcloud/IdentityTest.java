@@ -34,19 +34,19 @@ public class IdentityTest {
   @Test
   public void testAllUsers() {
     assertEquals(Identity.Type.ALL_USERS, ALL_USERS.type());
-    assertNull(ALL_USERS.id());
+    assertNull(ALL_USERS.value());
   }
 
   @Test
   public void testAllAuthenticatedUsers() {
     assertEquals(Identity.Type.ALL_AUTHENTICATED_USERS, ALL_AUTH_USERS.type());
-    assertNull(ALL_AUTH_USERS.id());
+    assertNull(ALL_AUTH_USERS.value());
   }
 
   @Test
   public void testUser() {
     assertEquals(Identity.Type.USER, USER.type());
-    assertEquals("abc@gmail.com", USER.id());
+    assertEquals("abc@gmail.com", USER.value());
   }
 
   @Test(expected = NullPointerException.class)
@@ -57,7 +57,7 @@ public class IdentityTest {
   @Test
   public void testServiceAccount() {
     assertEquals(Identity.Type.SERVICE_ACCOUNT, SERVICE_ACCOUNT.type());
-    assertEquals("service-account@gmail.com", SERVICE_ACCOUNT.id());
+    assertEquals("service-account@gmail.com", SERVICE_ACCOUNT.value());
   }
 
   @Test(expected = NullPointerException.class)
@@ -68,7 +68,7 @@ public class IdentityTest {
   @Test
   public void testGroup() {
     assertEquals(Identity.Type.GROUP, GROUP.type());
-    assertEquals("group@gmail.com", GROUP.id());
+    assertEquals("group@gmail.com", GROUP.value());
   }
 
   @Test(expected = NullPointerException.class)
@@ -79,7 +79,7 @@ public class IdentityTest {
   @Test
   public void testDomain() {
     assertEquals(Identity.Type.DOMAIN, DOMAIN.type());
-    assertEquals("google.com", DOMAIN.id());
+    assertEquals("google.com", DOMAIN.value());
   }
 
   @Test(expected = NullPointerException.class)
@@ -100,6 +100,6 @@ public class IdentityTest {
   private void compareIdentities(Identity expected, Identity actual) {
     assertEquals(expected, actual);
     assertEquals(expected.type(), actual.type());
-    assertEquals(expected.id(), actual.id());
+    assertEquals(expected.value(), actual.value());
   }
 }

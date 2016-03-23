@@ -28,6 +28,7 @@ import static org.junit.Assert.fail;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.gcloud.Page;
 import com.google.gcloud.ReadChannel;
@@ -53,6 +54,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -100,13 +102,12 @@ public class ITStorageTest {
 
   @Test(timeout = 5000)
   public void testListBuckets() throws InterruptedException {
-    Iterator<Bucket> bucketIterator =
-        storage.list(Storage.BucketListOption.prefix(BUCKET),
-        Storage.BucketListOption.fields()).values().iterator();
+    Iterator<Bucket> bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
+        Storage.BucketListOption.fields()).iterateAll();
     while (!bucketIterator.hasNext()) {
       Thread.sleep(500);
       bucketIterator = storage.list(Storage.BucketListOption.prefix(BUCKET),
-          Storage.BucketListOption.fields()).values().iterator();
+          Storage.BucketListOption.fields()).iterateAll();
     }
     while (bucketIterator.hasNext()) {
       Bucket remoteBucket = bucketIterator.next();
@@ -287,8 +288,8 @@ public class ITStorageTest {
     assertTrue(remoteBlob.delete());
   }
 
-  @Test
-  public void testListBlobsSelectedFields() {
+  @Test(timeout = 5000)
+  public void testListBlobsSelectedFields() throws InterruptedException {
     String[] blobNames = {"test-list-blobs-selected-fields-blob1",
         "test-list-blobs-selected-fields-blob2"};
     ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
@@ -307,10 +308,20 @@ public class ITStorageTest {
     Page<Blob> page = storage.list(BUCKET,
         Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
         Storage.BlobListOption.fields(BlobField.METADATA));
-    int index = 0;
-    for (Blob remoteBlob : page.values()) {
+    // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
+    // test fails if timeout is reached.
+    while (Iterators.size(page.iterateAll()) != 2) {
+      Thread.sleep(500);
+      page = storage.list(BUCKET,
+          Storage.BlobListOption.prefix("test-list-blobs-selected-fields-blob"),
+          Storage.BlobListOption.fields(BlobField.METADATA));
+    }
+    Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
+    Iterator<Blob> iterator = page.iterateAll();
+    while (iterator.hasNext()) {
+      Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.bucket());
-      assertEquals(blobNames[index++], remoteBlob.name());
+      assertTrue(blobSet.contains(remoteBlob.name()));
       assertEquals(metadata, remoteBlob.metadata());
       assertNull(remoteBlob.contentType());
     }
@@ -318,8 +329,8 @@ public class ITStorageTest {
     assertTrue(remoteBlob2.delete());
   }
 
-  @Test
-  public void testListBlobsEmptySelectedFields() {
+  @Test(timeout = 5000)
+  public void testListBlobsEmptySelectedFields() throws InterruptedException {
     String[] blobNames = {"test-list-blobs-empty-selected-fields-blob1",
         "test-list-blobs-empty-selected-fields-blob2"};
     BlobInfo blob1 = BlobInfo.builder(BUCKET, blobNames[0])
@@ -335,17 +346,27 @@ public class ITStorageTest {
     Page<Blob> page = storage.list(BUCKET,
         Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
         Storage.BlobListOption.fields());
-    int index = 0;
-    for (Blob remoteBlob : page.values()) {
+    // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
+    // test fails if timeout is reached.
+    while (Iterators.size(page.iterateAll()) != 2) {
+      Thread.sleep(500);
+      page = storage.list(BUCKET,
+          Storage.BlobListOption.prefix("test-list-blobs-empty-selected-fields-blob"),
+          Storage.BlobListOption.fields());
+    }
+    Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
+    Iterator<Blob> iterator = page.iterateAll();
+    while (iterator.hasNext()) {
+      Blob remoteBlob = iterator.next();
       assertEquals(BUCKET, remoteBlob.bucket());
-      assertEquals(blobNames[index++], remoteBlob.name());
+      assertTrue(blobSet.contains(remoteBlob.name()));
       assertNull(remoteBlob.contentType());
     }
     assertTrue(remoteBlob1.delete());
     assertTrue(remoteBlob2.delete());
   }
 
-  @Test
+  @Test(timeout = 15000)
   public void testListBlobsVersioned() throws ExecutionException, InterruptedException {
     String bucketName = RemoteGcsHelper.generateBucketName();
     Bucket bucket = storage.create(BucketInfo.builder(bucketName).versioningEnabled(true).build());
@@ -366,8 +387,18 @@ public class ITStorageTest {
       Page<Blob> page = storage.list(bucketName,
           Storage.BlobListOption.prefix("test-list-blobs-versioned-blob"),
           Storage.BlobListOption.versions(true));
+      // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
+      // test fails if timeout is reached.
+      while (Iterators.size(page.iterateAll()) != 3) {
+        Thread.sleep(500);
+        page = storage.list(bucketName,
+            Storage.BlobListOption.prefix("test-list-blobs-versioned-blob"),
+            Storage.BlobListOption.versions(true));
+      }
       Set<String> blobSet = ImmutableSet.of(blobNames[0], blobNames[1]);
-      for (Blob remoteBlob : page.values()) {
+      Iterator<Blob> iterator = page.iterateAll();
+      while (iterator.hasNext()) {
+        Blob remoteBlob = iterator.next();
         assertEquals(bucketName, remoteBlob.bucket());
         assertTrue(blobSet.contains(remoteBlob.name()));
         assertNotNull(remoteBlob.generation());
@@ -378,6 +409,52 @@ public class ITStorageTest {
     } finally {
       RemoteGcsHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
     }
+  }
+
+  @Test(timeout = 5000)
+  public void testListBlobsCurrentDirectory() throws InterruptedException {
+    String directoryName = "test-list-blobs-current-directory/";
+    String subdirectoryName = "subdirectory/";
+    String[] blobNames = {directoryName + subdirectoryName + "blob1",
+        directoryName + "blob2"};
+    BlobInfo blob1 = BlobInfo.builder(BUCKET, blobNames[0])
+        .contentType(CONTENT_TYPE)
+        .build();
+    BlobInfo blob2 = BlobInfo.builder(BUCKET, blobNames[1])
+        .contentType(CONTENT_TYPE)
+        .build();
+    Blob remoteBlob1 = storage.create(blob1, BLOB_BYTE_CONTENT);
+    Blob remoteBlob2 = storage.create(blob2, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob1);
+    assertNotNull(remoteBlob2);
+    Page<Blob> page = storage.list(BUCKET,
+        Storage.BlobListOption.prefix("test-list-blobs-current-directory/"),
+        Storage.BlobListOption.currentDirectory());
+    // Listing blobs is eventually consistent, we loop until the list is of the expected size. The
+    // test fails if timeout is reached.
+    while (Iterators.size(page.iterateAll()) != 2) {
+      Thread.sleep(500);
+      page = storage.list(BUCKET,
+          Storage.BlobListOption.prefix("test-list-blobs-current-directory/"),
+          Storage.BlobListOption.currentDirectory());
+    }
+    Iterator<Blob> iterator = page.iterateAll();
+    while (iterator.hasNext()) {
+      Blob remoteBlob = iterator.next();
+      assertEquals(BUCKET, remoteBlob.bucket());
+      if (remoteBlob.name().equals(blobNames[1])) {
+        assertEquals(CONTENT_TYPE, remoteBlob.contentType());
+        assertEquals(BLOB_BYTE_CONTENT.length, (long) remoteBlob.size());
+        assertFalse(remoteBlob.isDirectory());
+      } else if (remoteBlob.name().equals(directoryName + subdirectoryName)) {
+        assertEquals(0L, (long) remoteBlob.size());
+        assertTrue(remoteBlob.isDirectory());
+      } else {
+        fail("Unexpected blob with name " + remoteBlob.name());
+      }
+    }
+    assertTrue(remoteBlob1.delete());
+    assertTrue(remoteBlob2.delete());
   }
 
   @Test
@@ -522,6 +599,37 @@ public class ITStorageTest {
     assertNotNull(remoteTargetBlob);
     assertEquals(targetBlob.name(), remoteTargetBlob.name());
     assertEquals(targetBlob.bucket(), remoteTargetBlob.bucket());
+    assertNull(remoteTargetBlob.contentType());
+    byte[] readBytes = storage.readAllBytes(BUCKET, targetBlobName);
+    byte[] composedBytes = Arrays.copyOf(BLOB_BYTE_CONTENT, BLOB_BYTE_CONTENT.length * 2);
+    System.arraycopy(BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length,
+        BLOB_BYTE_CONTENT.length);
+    assertArrayEquals(composedBytes, readBytes);
+    assertTrue(remoteSourceBlob1.delete());
+    assertTrue(remoteSourceBlob2.delete());
+    assertTrue(remoteTargetBlob.delete());
+  }
+
+  @Test
+  public void testComposeBlobWithContentType() {
+    String sourceBlobName1 = "test-compose-blob-with-content-type-source-1";
+    String sourceBlobName2 = "test-compose-blob-with-content-type-source-2";
+    BlobInfo sourceBlob1 = BlobInfo.builder(BUCKET, sourceBlobName1).build();
+    BlobInfo sourceBlob2 = BlobInfo.builder(BUCKET, sourceBlobName2).build();
+    Blob remoteSourceBlob1 = storage.create(sourceBlob1, BLOB_BYTE_CONTENT);
+    Blob remoteSourceBlob2 = storage.create(sourceBlob2, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteSourceBlob1);
+    assertNotNull(remoteSourceBlob2);
+    String targetBlobName = "test-compose-blob-with-content-type-target";
+    BlobInfo targetBlob =
+        BlobInfo.builder(BUCKET, targetBlobName).contentType(CONTENT_TYPE).build();
+    Storage.ComposeRequest req =
+        Storage.ComposeRequest.of(ImmutableList.of(sourceBlobName1, sourceBlobName2), targetBlob);
+    Blob remoteTargetBlob = storage.compose(req);
+    assertNotNull(remoteTargetBlob);
+    assertEquals(targetBlob.name(), remoteTargetBlob.name());
+    assertEquals(targetBlob.bucket(), remoteTargetBlob.bucket());
+    assertEquals(CONTENT_TYPE, remoteTargetBlob.contentType());
     byte[] readBytes = storage.readAllBytes(BUCKET, targetBlobName);
     byte[] composedBytes = Arrays.copyOf(BLOB_BYTE_CONTENT, BLOB_BYTE_CONTENT.length * 2);
     System.arraycopy(BLOB_BYTE_CONTENT, 0, composedBytes, BLOB_BYTE_CONTENT.length,
@@ -599,6 +707,26 @@ public class ITStorageTest {
     assertEquals(BUCKET, copyWriter.result().bucket());
     assertEquals(targetBlobName, copyWriter.result().name());
     assertEquals(CONTENT_TYPE, copyWriter.result().contentType());
+    assertEquals(metadata, copyWriter.result().metadata());
+    assertTrue(copyWriter.isDone());
+    assertTrue(remoteSourceBlob.delete());
+    assertTrue(storage.delete(BUCKET, targetBlobName));
+  }
+
+  @Test
+  public void testCopyBlobNoContentType() {
+    String sourceBlobName = "test-copy-blob-no-content-type-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    Blob remoteSourceBlob = storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT);
+    assertNotNull(remoteSourceBlob);
+    String targetBlobName = "test-copy-blob-no-content-type-target";
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName).metadata(metadata).build();
+    Storage.CopyRequest req = Storage.CopyRequest.of(source, target);
+    CopyWriter copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.result().bucket());
+    assertEquals(targetBlobName, copyWriter.result().name());
+    assertNull(copyWriter.result().contentType());
     assertEquals(metadata, copyWriter.result().metadata());
     assertTrue(copyWriter.isDone());
     assertTrue(remoteSourceBlob.delete());
@@ -791,6 +919,33 @@ public class ITStorageTest {
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes.array());
     assertEquals(BLOB_STRING_CONTENT, new String(readStringBytes.array(), UTF_8));
     assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testReadAndWriteChannelsWithDifferentFileSize() throws IOException {
+    String blobNamePrefix = "test-read-and-write-channels-blob-";
+    int[] blobSizes = {0, 700, 1024 * 256, 2 * 1024 * 1024, 4 * 1024 * 1024, 4 * 1024 * 1024 + 1};
+    Random rnd = new Random();
+    for (int blobSize : blobSizes) {
+      String blobName = blobNamePrefix + blobSize;
+      BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
+      byte[] bytes = new byte[blobSize];
+      rnd.nextBytes(bytes);
+      try (WriteChannel writer = storage.writer(blob)) {
+        writer.write(ByteBuffer.wrap(bytes));
+      }
+      ByteArrayOutputStream output = new ByteArrayOutputStream();
+      try (ReadChannel reader = storage.reader(blob.blobId())) {
+        ByteBuffer buffer = ByteBuffer.allocate(64 * 1024);
+        while (reader.read(buffer) > 0) {
+          buffer.flip();
+          output.write(buffer.array(), 0, buffer.limit());
+          buffer.clear();
+        }
+      }
+      assertArrayEquals(bytes, output.toByteArray());
+      assertTrue(storage.delete(BUCKET, blobName));
+    }
   }
 
   @Test

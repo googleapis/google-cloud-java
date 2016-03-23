@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-resourcemanager</artifactId>
-  <version>0.1.4</version>
+  <version>0.1.5</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-resourcemanager:0.1.4'
+compile 'com.google.gcloud:gcloud-java-resourcemanager:0.1.5'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-resourcemanager" % "0.1.4"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-resourcemanager" % "0.1.5"
 ```
 
 Example Application
@@ -163,9 +163,46 @@ while (projectIterator.hasNext()) {
 }
 ```
 
+#### Managing IAM Policies
+You can edit [Google Cloud IAM](https://cloud.google.com/iam/) (Identity and Access Management)
+policies on the project-level using this library as well. We recommend using the read-modify-write
+pattern to make policy changes.  This entails reading the project's current policy, updating it
+locally, and then sending the modified policy for writing, as shown in the snippet below. First,
+add these imports:
+
+```java
+import com.google.gcloud.Identity;
+import com.google.gcloud.resourcemanager.Policy;
+import com.google.gcloud.resourcemanager.Policy.Role;
+```
+
+Assuming you have completed the steps above to create the `ResourceManager` service object and load
+a project from the server, you just need to add the following code:
+
+```java
+// Get the project's policy
+Policy policy = project.getPolicy();
+
+// Add a viewer
+Policy.Builder modifiedPolicy = policy.toBuilder();
+Identity newViewer = Identity.user("<insert user's email address here>");
+if (policy.bindings().containsKey(Role.viewer())) {
+  modifiedPolicy.addIdentity(Role.viewer(), newViewer);
+} else {
+  modifiedPolicy.addBinding(Role.viewer(), newViewer);
+}
+
+// Write policy
+Policy updatedPolicy = project.replacePolicy(modifiedPolicy.build());
+```
+
+Note that the policy you pass in to `replacePolicy` overwrites the original policy. For example, if
+the original policy has two bindings and you call `replacePolicy` with a new policy containing only
+one binding, the two original bindings are lost.
+
 #### Complete source code
 
-We put together all the code shown above into two programs. Both programs assume that you are
+We put together all the code shown above into three programs. The programs assume that you are
 running from your own desktop and used the Google Cloud SDK to authenticate yourself.
 
 The first program creates a project if it does not exist. Complete source code can be found at
@@ -174,6 +211,10 @@ The first program creates a project if it does not exist. Complete source code c
 The second program updates a project if it exists and lists all projects the user has permission to
 view. Complete source code can be found at
 [UpdateAndListProjects.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
+
+The third program modifies the IAM policy associated with a project using the read-modify-write
+pattern.  Complete source code can be found at
+[ModifyPolicy.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/ModifyPolicy.java)
 
 Java Versions
 -------------

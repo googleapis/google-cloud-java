@@ -29,13 +29,13 @@ public class QueryRequestTest {
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final Boolean USE_QUERY_CACHE = true;
   private static final Boolean DRY_RUN = false;
-  private static final Long MAX_RESULTS = 42L;
+  private static final Long PAGE_SIZE = 42L;
   private static final Long MAX_WAIT_TIME = 42000L;
   private static final QueryRequest QUERY_REQUEST = QueryRequest.builder(QUERY)
       .useQueryCache(USE_QUERY_CACHE)
       .defaultDataset(DATASET_ID)
       .dryRun(DRY_RUN)
-      .maxResults(MAX_RESULTS)
+      .pageSize(PAGE_SIZE)
       .maxWaitTime(MAX_WAIT_TIME)
       .build();
 
@@ -65,7 +65,7 @@ public class QueryRequestTest {
     assertEquals(USE_QUERY_CACHE, QUERY_REQUEST.useQueryCache());
     assertEquals(DATASET_ID, QUERY_REQUEST.defaultDataset());
     assertEquals(DRY_RUN, QUERY_REQUEST.dryRun());
-    assertEquals(MAX_RESULTS, QUERY_REQUEST.maxResults());
+    assertEquals(PAGE_SIZE, QUERY_REQUEST.pageSize());
     assertEquals(MAX_WAIT_TIME, QUERY_REQUEST.maxWaitTime());
     thrown.expect(NullPointerException.class);
     QueryRequest.builder(null);
@@ -78,7 +78,7 @@ public class QueryRequestTest {
     assertNull(request.useQueryCache());
     assertNull(request.defaultDataset());
     assertNull(request.dryRun());
-    assertNull(request.maxResults());
+    assertNull(request.pageSize());
     assertNull(request.maxWaitTime());
     thrown.expect(NullPointerException.class);
     QueryRequest.of(null);
@@ -102,7 +102,7 @@ public class QueryRequestTest {
     assertEquals(expected.useQueryCache(), value.useQueryCache());
     assertEquals(expected.defaultDataset(), value.defaultDataset());
     assertEquals(expected.dryRun(), value.dryRun());
-    assertEquals(expected.maxResults(), value.maxResults());
+    assertEquals(expected.pageSize(), value.pageSize());
     assertEquals(expected.maxWaitTime(), value.maxWaitTime());
   }
 }
