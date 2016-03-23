@@ -35,6 +35,8 @@ import java.util.List;
  * A class that runs a Pubsub emulator instance for use in tests.
  */
 public class LocalPubsubHelper {
+
+  private final int port;
   private final LocalServiceHelper serviceHelper;
   private final List<String> gcloudCommand;
   private final URL emulatorUrl;
@@ -59,6 +61,7 @@ public class LocalPubsubHelper {
    * @throws MalformedURLException
    */
   public LocalPubsubHelper() throws MalformedURLException {
+    port = LocalServiceHelper.findAvailablePort(DEFAULT_PORT);
     gcloudCommand = new ArrayList<>(Arrays.asList(GCLOUD_CMD_TEXT.split(" ")));
     gcloudCommand.add(DEFAULT_HOST);
     emulatorUrl = new URL("http://storage.googleapis.com/pubsub/tools/" + FILENAME);
@@ -67,7 +70,7 @@ public class LocalPubsubHelper {
     DownloadableEmulatorRunner downloadRunner =
         new DownloadableEmulatorRunner(Arrays.asList(BIN_NAME), emulatorUrl, MD5_CHECKSUM);
     serviceHelper =
-        new LocalServiceHelper(Arrays.asList(gcloudRunner, downloadRunner), DEFAULT_PORT);
+        new LocalServiceHelper(Arrays.asList(gcloudRunner, downloadRunner), port);
   }
 
   /**
@@ -77,7 +80,7 @@ public class LocalPubsubHelper {
    * @throws IOException
    */
   public void start() throws IOException, InterruptedException {
-    String blockUntilOutput = Integer.toString(DEFAULT_PORT);
+    String blockUntilOutput = Integer.toString(port);
     serviceHelper.start(blockUntilOutput);
   }
 
@@ -104,7 +107,7 @@ public class LocalPubsubHelper {
    * Creates a channel for making requests to the in-memory service.
    */
   public ManagedChannel createChannel() {
-    return NettyChannelBuilder.forAddress(DEFAULT_HOST, DEFAULT_PORT)
+    return NettyChannelBuilder.forAddress(DEFAULT_HOST, port)
         .negotiationType(NegotiationType.PLAINTEXT)
         .build();
   }
