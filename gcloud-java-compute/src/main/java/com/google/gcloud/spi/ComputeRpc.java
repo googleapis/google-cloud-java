@@ -22,6 +22,7 @@ import com.google.api.services.compute.model.License;
 import com.google.api.services.compute.model.MachineType;
 import com.google.api.services.compute.model.Operation;
 import com.google.api.services.compute.model.Region;
+import com.google.api.services.compute.model.Snapshot;
 import com.google.api.services.compute.model.Zone;
 import com.google.gcloud.compute.ComputeException;
 
@@ -255,8 +256,8 @@ public interface ComputeRpc {
   /**
    * Deletes the requested global address.
    *
-   * @return a global operation if request was issued correctly, {@code null} if the address was not
-   *     found
+   * @return a global operation if the request was issued correctly, {@code null} if the address was
+   *     not found
    * @throws ComputeException upon failure
    */
   Operation deleteGlobalAddress(String address, Map<Option, ?> options);
@@ -293,9 +294,44 @@ public interface ComputeRpc {
   /**
    * Deletes the requested region address.
    *
-   * @return a region operation if request was issued correctly, {@code null} if the address was not
-   *     found
+   * @return a region operation if the request was issued correctly, {@code null} if the address was
+   *     not found
    * @throws ComputeException upon failure or if region is not found
    */
   Operation deleteRegionAddress(String region, String address, Map<Option, ?> options);
+
+  /**
+   * Creates a snapshot for the specified disk.
+   *
+   * @return a zone operation if the create request was issued correctly, {@code null} if the disk
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation createSnapshot(String zone, String disk, String snapshot, String description,
+      Map<Option, ?> options);
+
+  /**
+   * Returns the requested snapshot or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Snapshot getSnapshot(String snapshot, Map<Option, ?> options);
+
+  /**
+   * Lists all snapshots.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Snapshot>> listSnapshots(Map<Option, ?> options);
+
+  /**
+   * Deletes the requested snapshot. Keep in mind that deleting a single snapshot might not
+   * necessarily delete all the data for that snapshot. If any data for the snapshot that is marked
+   * for deletion is needed for subsequent snapshots, the data will be moved to the next snapshot.
+   *
+   * @return a global operation if the request was issued correctly, {@code null} if the snapshot
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation deleteSnapshot(String snapshot, Map<Option, ?> options);
 }

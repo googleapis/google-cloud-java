@@ -180,6 +180,9 @@ public class ComputeImplTest {
       GlobalAddressId.of("project", "address");
   private static final AddressInfo REGION_ADDRESS = AddressInfo.builder(REGION_ADDRESS_ID).build();
   private static final AddressInfo GLOBAL_ADDRESS = AddressInfo.builder(GLOBAL_ADDRESS_ID).build();
+  private static final DiskId DISK_ID = DiskId.of("project", "zone", "disk");
+  private static final SnapshotId SNAPSHOT_ID = SnapshotId.of("project", "snapshot");
+  private static final SnapshotInfo SNAPSHOT = SnapshotInfo.of(SNAPSHOT_ID, DISK_ID);
 
   // Empty ComputeRpc options
   private static final Map<ComputeRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -318,6 +321,24 @@ public class ComputeImplTest {
       Compute.AddressAggregatedListOption.pageSize(42L);
   private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_FILTER =
       Compute.AddressAggregatedListOption.filter(ADDRESS_FILTER);
+
+  // Snapshot options
+  private static final Compute.SnapshotOption SNAPSHOT_OPTION_FIELDS =
+      Compute.SnapshotOption.fields(Compute.SnapshotField.ID, Compute.SnapshotField.DESCRIPTION);
+
+  // Snapshot list options
+  private static final Compute.SnapshotFilter SNAPSHOT_FILTER =
+      Compute.SnapshotFilter.equals(Compute.SnapshotField.DISK_SIZE_GB, 500L);
+  private static final Compute.SnapshotListOption SNAPSHOT_LIST_PAGE_TOKEN =
+      Compute.SnapshotListOption.pageToken("cursor");
+  private static final Compute.SnapshotListOption SNAPSHOT_LIST_MAX_RESULTS =
+      Compute.SnapshotListOption.pageSize(42L);
+  private static final Compute.SnapshotListOption SNAPSHOT_LIST_FILTER =
+      Compute.SnapshotListOption.filter(SNAPSHOT_FILTER);
+  private static final Map<ComputeRpc.Option, ?> SNAPSHOT_LIST_OPTIONS = ImmutableMap.of(
+      PAGE_TOKEN, "cursor",
+      MAX_RESULTS, 42L,
+      FILTER, "diskSizeGb eq 500");
 
   private static final Function<Operation, com.google.api.services.compute.model.Operation>
       OPERATION_TO_PB_FUNCTION = new Function<Operation,
@@ -1904,6 +1925,148 @@ public class ComputeImplTest {
     assertTrue(selector.contains("description"));
     assertEquals(23, selector.length());
     assertEquals(regionOperation, operation);
+  }
+
+  @Test
+  public void testCreateSnapshot() {
+    EasyMock.expect(computeRpcMock.createSnapshot(DISK_ID.zone(), DISK_ID.disk(),
+        SNAPSHOT_ID.snapshot(), null, EMPTY_RPC_OPTIONS)).andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.create(SNAPSHOT);
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testCreateSnapshotWithOptions() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.createSnapshot(eq(DISK_ID.zone()), eq(DISK_ID.disk()),
+        eq(SNAPSHOT_ID.snapshot()), EasyMock.<String>isNull(), capture(capturedOptions)))
+            .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.create(SNAPSHOT, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testGetSnapshot() {
+    EasyMock.expect(computeRpcMock.getSnapshot(SNAPSHOT_ID.snapshot(), EMPTY_RPC_OPTIONS))
+        .andReturn(SNAPSHOT.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Snapshot snapshot = compute.getSnapshot(SNAPSHOT_ID.snapshot());
+    assertEquals(new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)), snapshot);
+  }
+
+  @Test
+  public void testGetSnapshot_Null() {
+    EasyMock.expect(computeRpcMock.getSnapshot(SNAPSHOT_ID.snapshot(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.getSnapshot(SNAPSHOT_ID.snapshot()));
+  }
+
+  @Test
+  public void testGetSnapshotWithSelectedFields() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.getSnapshot(eq(SNAPSHOT_ID.snapshot()),
+        capture(capturedOptions))).andReturn(SNAPSHOT.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Snapshot snapshot = compute.getSnapshot(SNAPSHOT_ID.snapshot(), SNAPSHOT_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(SNAPSHOT_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)), snapshot);
+  }
+
+  @Test
+  public void testDeleteSnapshot_Operation() {
+    EasyMock.expect(computeRpcMock.deleteSnapshot(SNAPSHOT_ID.snapshot(), EMPTY_RPC_OPTIONS))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertEquals(globalOperation, compute.deleteSnapshot(SNAPSHOT_ID));
+  }
+
+  @Test
+  public void testDeleteSnapshotWithSelectedFields_Operation() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.deleteSnapshot(eq(SNAPSHOT_ID.snapshot()),
+        capture(capturedOptions))).andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.deleteSnapshot(SNAPSHOT_ID, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testDeleteSnapshot_Null() {
+    EasyMock.expect(computeRpcMock.deleteSnapshot(SNAPSHOT_ID.snapshot(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.deleteSnapshot(SNAPSHOT_ID));
+  }
+
+  @Test
+  public void testListSnapshots() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Snapshot> snapshotList = ImmutableList.of(
+        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)),
+        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> result =
+        Tuple.of(cursor, Iterables.transform(snapshotList, SnapshotInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listSnapshots(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Snapshot> page = compute.listSnapshots();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(snapshotList.toArray(), Iterables.toArray(page.values(), Snapshot.class));
+  }
+
+  @Test
+  public void testListEmptySnapshots() {
+    compute = options.service();
+    ImmutableList<com.google.api.services.compute.model.Snapshot> snapshots = ImmutableList.of();
+    Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> result =
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Snapshot>>of(null, snapshots);
+    EasyMock.expect(computeRpcMock.listSnapshots(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Snapshot> page = compute.listSnapshots();
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(snapshots.toArray(), Iterables.toArray(page.values(), Snapshot.class));
+  }
+
+  @Test
+  public void testListSnapshotsWithOptions() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Snapshot> snapshotList = ImmutableList.of(
+        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)),
+        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> result =
+        Tuple.of(cursor, Iterables.transform(snapshotList, SnapshotInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listSnapshots(SNAPSHOT_LIST_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Snapshot> page = compute.listSnapshots(SNAPSHOT_LIST_MAX_RESULTS, SNAPSHOT_LIST_PAGE_TOKEN,
+        SNAPSHOT_LIST_FILTER);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(snapshotList.toArray(), Iterables.toArray(page.values(), Snapshot.class));
   }
 
   @Test
