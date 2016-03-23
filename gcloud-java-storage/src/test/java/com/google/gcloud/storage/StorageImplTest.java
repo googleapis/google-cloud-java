@@ -37,10 +37,10 @@ import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpc.Tuple;
-import com.google.gcloud.spi.StorageRpcFactory;
 import com.google.gcloud.storage.Storage.CopyRequest;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc.Tuple;
+import com.google.gcloud.storage.spi.StorageRpcFactory;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;
@@ -181,8 +181,8 @@ public class StorageImplTest {
       StorageRpc.Option.IF_SOURCE_GENERATION_MATCH, BLOB_SOURCE_GENERATION.value());
 
   // Bucket list options
-  private static final Storage.BucketListOption BUCKET_LIST_MAX_RESULT =
-      Storage.BucketListOption.maxResults(42L);
+  private static final Storage.BucketListOption BUCKET_LIST_PAGE_SIZE =
+      Storage.BucketListOption.pageSize(42L);
   private static final Storage.BucketListOption BUCKET_LIST_PREFIX =
       Storage.BucketListOption.prefix("prefix");
   private static final Storage.BucketListOption BUCKET_LIST_FIELDS =
@@ -190,12 +190,12 @@ public class StorageImplTest {
   private static final Storage.BucketListOption BUCKET_LIST_EMPTY_FIELDS =
       Storage.BucketListOption.fields();
   private static final Map<StorageRpc.Option, ?> BUCKET_LIST_OPTIONS = ImmutableMap.of(
-      StorageRpc.Option.MAX_RESULTS, BUCKET_LIST_MAX_RESULT.value(),
+      StorageRpc.Option.MAX_RESULTS, BUCKET_LIST_PAGE_SIZE.value(),
       StorageRpc.Option.PREFIX, BUCKET_LIST_PREFIX.value());
 
   // Blob list options
-  private static final Storage.BlobListOption BLOB_LIST_MAX_RESULT =
-      Storage.BlobListOption.maxResults(42L);
+  private static final Storage.BlobListOption BLOB_LIST_PAGE_SIZE =
+      Storage.BlobListOption.pageSize(42L);
   private static final Storage.BlobListOption BLOB_LIST_PREFIX =
       Storage.BlobListOption.prefix("prefix");
   private static final Storage.BlobListOption BLOB_LIST_FIELDS =
@@ -205,7 +205,7 @@ public class StorageImplTest {
   private static final Storage.BlobListOption BLOB_LIST_EMPTY_FIELDS =
       Storage.BlobListOption.fields();
   private static final Map<StorageRpc.Option, ?> BLOB_LIST_OPTIONS = ImmutableMap.of(
-      StorageRpc.Option.MAX_RESULTS, BLOB_LIST_MAX_RESULT.value(),
+      StorageRpc.Option.MAX_RESULTS, BLOB_LIST_PAGE_SIZE.value(),
       StorageRpc.Option.PREFIX, BLOB_LIST_PREFIX.value(),
       StorageRpc.Option.VERSIONS, BLOB_LIST_VERSIONS.value());
 
@@ -567,7 +567,7 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     ImmutableList<Bucket> bucketList = ImmutableList.of(expectedBucket1, expectedBucket2);
-    Page<Bucket> page = storage.list(BUCKET_LIST_MAX_RESULT, BUCKET_LIST_PREFIX);
+    Page<Bucket> page = storage.list(BUCKET_LIST_PAGE_SIZE, BUCKET_LIST_PREFIX);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
   }
@@ -654,7 +654,7 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page =
-        storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_VERSIONS);
+        storage.list(BUCKET_NAME1, BLOB_LIST_PAGE_SIZE, BLOB_LIST_PREFIX, BLOB_LIST_VERSIONS);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
   }
@@ -673,9 +673,9 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page =
-        storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_FIELDS);
-    assertEquals(BLOB_LIST_MAX_RESULT.value(),
-        capturedOptions.getValue().get(BLOB_LIST_MAX_RESULT.rpcOption()));
+        storage.list(BUCKET_NAME1, BLOB_LIST_PAGE_SIZE, BLOB_LIST_PREFIX, BLOB_LIST_FIELDS);
+    assertEquals(BLOB_LIST_PAGE_SIZE.value(),
+        capturedOptions.getValue().get(BLOB_LIST_PAGE_SIZE.rpcOption()));
     assertEquals(BLOB_LIST_PREFIX.value(),
         capturedOptions.getValue().get(BLOB_LIST_PREFIX.rpcOption()));
     String selector = (String) capturedOptions.getValue().get(BLOB_LIST_FIELDS.rpcOption());
@@ -704,9 +704,9 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page =
-        storage.list(BUCKET_NAME1, BLOB_LIST_MAX_RESULT, BLOB_LIST_PREFIX, BLOB_LIST_EMPTY_FIELDS);
-    assertEquals(BLOB_LIST_MAX_RESULT.value(),
-        capturedOptions.getValue().get(BLOB_LIST_MAX_RESULT.rpcOption()));
+        storage.list(BUCKET_NAME1, BLOB_LIST_PAGE_SIZE, BLOB_LIST_PREFIX, BLOB_LIST_EMPTY_FIELDS);
+    assertEquals(BLOB_LIST_PAGE_SIZE.value(),
+        capturedOptions.getValue().get(BLOB_LIST_PAGE_SIZE.rpcOption()));
     assertEquals(BLOB_LIST_PREFIX.value(),
         capturedOptions.getValue().get(BLOB_LIST_PREFIX.rpcOption()));
     String selector = (String) capturedOptions.getValue().get(BLOB_LIST_EMPTY_FIELDS.rpcOption());
@@ -715,6 +715,22 @@ public class StorageImplTest {
     assertTrue(selector.contains("name"));
     assertTrue(selector.contains("nextPageToken"));
     assertEquals(32, selector.length());
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
+  }
+
+  @Test
+  public void testListBlobsCurrentDirectory() {
+    String cursor = "cursor";
+    Map<StorageRpc.Option, ?> options = ImmutableMap.of(StorageRpc.Option.DELIMITER, "/");
+    ImmutableList<BlobInfo> blobInfoList = ImmutableList.of(BLOB_INFO1, BLOB_INFO2);
+    Tuple<String, Iterable<com.google.api.services.storage.model.StorageObject>> result =
+        Tuple.of(cursor, Iterables.transform(blobInfoList, BlobInfo.INFO_TO_PB_FUNCTION));
+    EasyMock.expect(storageRpcMock.list(BUCKET_NAME1, options)).andReturn(result);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
+    Page<Blob> page = storage.list(BUCKET_NAME1, Storage.BlobListOption.currentDirectory());
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
   }
@@ -850,7 +866,7 @@ public class StorageImplTest {
   public void testCopy() {
     CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2.blobId());
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        EMPTY_RPC_OPTIONS, request.target().toPb(), EMPTY_RPC_OPTIONS, null);
+        EMPTY_RPC_OPTIONS, false, BLOB_INFO2.toPb(), EMPTY_RPC_OPTIONS, null);
     StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
         false, "token", 21L);
     EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
@@ -870,7 +886,7 @@ public class StorageImplTest {
         .target(BLOB_INFO1, BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
         .build();
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        BLOB_SOURCE_OPTIONS_COPY, request.target().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
+        BLOB_SOURCE_OPTIONS_COPY, true, request.target().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
     StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
         false, "token", 21L);
     EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
@@ -890,7 +906,7 @@ public class StorageImplTest {
         .target(BLOB_INFO1, BLOB_TARGET_GENERATION, BLOB_TARGET_METAGENERATION)
         .build();
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        BLOB_SOURCE_OPTIONS_COPY, request.target().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
+        BLOB_SOURCE_OPTIONS_COPY, true, request.target().toPb(), BLOB_TARGET_OPTIONS_COMPOSE, null);
     StorageRpc.RewriteResponse rpcResponse =
         new StorageRpc.RewriteResponse(rpcRequest, null, 42L, false, "token", 21L);
     EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
@@ -906,7 +922,7 @@ public class StorageImplTest {
   public void testCopyMultipleRequests() {
     CopyRequest request = Storage.CopyRequest.of(BLOB_INFO1.blobId(), BLOB_INFO2.blobId());
     StorageRpc.RewriteRequest rpcRequest = new StorageRpc.RewriteRequest(request.source().toPb(),
-        EMPTY_RPC_OPTIONS, request.target().toPb(), EMPTY_RPC_OPTIONS, null);
+        EMPTY_RPC_OPTIONS, false, BLOB_INFO2.toPb(), EMPTY_RPC_OPTIONS, null);
     StorageRpc.RewriteResponse rpcResponse1 = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
         false, "token", 21L);
     StorageRpc.RewriteResponse rpcResponse2 = new StorageRpc.RewriteResponse(rpcRequest,
@@ -919,7 +935,7 @@ public class StorageImplTest {
     assertEquals(42L, writer.blobSize());
     assertEquals(21L, writer.totalBytesCopied());
     assertTrue(!writer.isDone());
-    assertEquals(BLOB_INFO1, writer.result());
+    assertEquals(expectedBlob1, writer.result());
     assertTrue(writer.isDone());
     assertEquals(42L, writer.totalBytesCopied());
     assertEquals(42L, writer.blobSize());

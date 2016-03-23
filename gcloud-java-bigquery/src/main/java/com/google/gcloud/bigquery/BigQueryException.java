@@ -22,6 +22,7 @@ import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.RetryHelper.RetryInterruptedException;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -71,6 +72,23 @@ public class BigQueryException extends BaseServiceException {
   @Override
   protected Set<Error> retryableErrors() {
     return RETRYABLE_ERRORS;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof BigQueryException)) {
+      return false;
+    }
+    BigQueryException other = (BigQueryException) obj;
+    return super.equals(other) && Objects.equals(error, other.error);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), error);
   }
 
   /**

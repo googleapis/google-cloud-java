@@ -22,13 +22,12 @@ import static com.google.gcloud.storage.Bucket.BucketSourceOption.toGetOptions;
 import static com.google.gcloud.storage.Bucket.BucketSourceOption.toSourceOptions;
 
 import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.gcloud.Page;
-import com.google.gcloud.spi.StorageRpc;
 import com.google.gcloud.storage.Storage.BlobGetOption;
 import com.google.gcloud.storage.Storage.BucketTargetOption;
+import com.google.gcloud.storage.spi.StorageRpc;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -633,15 +632,13 @@ public final class Bucket extends BucketInfo {
    *
    * @param blob a blob name
    * @param content the blob content
-   * @param contentType the blob content type. If {@code null} then
-   *     {@value com.google.gcloud.storage.Storage#DEFAULT_CONTENT_TYPE} is used.
+   * @param contentType the blob content type
    * @param options options for blob creation
    * @return a complete blob information
    * @throws StorageException upon failure
    */
   public Blob create(String blob, byte[] content, String contentType, BlobTargetOption... options) {
-    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob))
-        .contentType(MoreObjects.firstNonNull(contentType, Storage.DEFAULT_CONTENT_TYPE)).build();
+    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob)).contentType(contentType).build();
     StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption[]> target =
         BlobTargetOption.toTargetOptions(blobInfo, options);
     return storage.create(target.x(), content, target.y());
@@ -654,16 +651,51 @@ public final class Bucket extends BucketInfo {
    *
    * @param blob a blob name
    * @param content the blob content as a stream
-   * @param contentType the blob content type. If {@code null} then
-   *     {@value com.google.gcloud.storage.Storage#DEFAULT_CONTENT_TYPE} is used.
+   * @param contentType the blob content type
    * @param options options for blob creation
    * @return a complete blob information
    * @throws StorageException upon failure
    */
   public Blob create(String blob, InputStream content, String contentType,
       BlobWriteOption... options) {
-    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob))
-        .contentType(MoreObjects.firstNonNull(contentType, Storage.DEFAULT_CONTENT_TYPE)).build();
+    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob)).contentType(contentType).build();
+    StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption[]> write =
+        BlobWriteOption.toWriteOptions(blobInfo, options);
+    return storage.create(write.x(), content, write.y());
+  }
+
+  /**
+   * Creates a new blob in this bucket. Direct upload is used to upload {@code content}.
+   * For large content, {@link Blob#writer(com.google.gcloud.storage.Storage.BlobWriteOption...)}
+   * is recommended as it uses resumable upload. MD5 and CRC32C hashes of {@code content} are
+   * computed and used for validating transferred data.
+   *
+   * @param blob a blob name
+   * @param content the blob content
+   * @param options options for blob creation
+   * @return a complete blob information
+   * @throws StorageException upon failure
+   */
+  public Blob create(String blob, byte[] content, BlobTargetOption... options) {
+    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob)).build();
+    StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption[]> target =
+        BlobTargetOption.toTargetOptions(blobInfo, options);
+    return storage.create(target.x(), content, target.y());
+  }
+
+  /**
+   * Creates a new blob in this bucket. Direct upload is used to upload {@code content}.
+   * For large content, {@link Blob#writer(com.google.gcloud.storage.Storage.BlobWriteOption...)}
+   * is recommended as it uses resumable upload.
+   *
+   * @param blob a blob name
+   * @param content the blob content as a stream
+   * @param options options for blob creation
+   * @return a complete blob information
+   * @throws StorageException upon failure
+   */
+  public Blob create(String blob, InputStream content, BlobWriteOption... options) {
+    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob)).build();
     StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption[]> write =
         BlobWriteOption.toWriteOptions(blobInfo, options);
     return storage.create(write.x(), content, write.y());

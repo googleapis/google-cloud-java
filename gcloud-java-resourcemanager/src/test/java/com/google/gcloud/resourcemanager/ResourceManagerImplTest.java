@@ -18,21 +18,25 @@ package com.google.gcloud.resourcemanager;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.Identity;
 import com.google.gcloud.Page;
+import com.google.gcloud.resourcemanager.Policy.ProjectRole;
 import com.google.gcloud.resourcemanager.ProjectInfo.ResourceId;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectField;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectGetOption;
 import com.google.gcloud.resourcemanager.ResourceManager.ProjectListOption;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import com.google.gcloud.resourcemanager.testing.LocalResourceManagerHelper;
-import com.google.gcloud.spi.ResourceManagerRpc;
-import com.google.gcloud.spi.ResourceManagerRpcFactory;
 
 import org.easymock.EasyMock;
 import org.junit.AfterClass;
@@ -43,6 +47,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public class ResourceManagerImplTest {
@@ -65,6 +70,12 @@ public class ResourceManagerImplTest {
       .parent(PARENT)
       .build();
   private static final Map<ResourceManagerRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
+  private static final Policy POLICY =
+      Policy.builder()
+          .addIdentity(ProjectRole.OWNER.value(), Identity.user("me@gmail.com"))
+          .addIdentity(
+              ProjectRole.EDITOR.value(), Identity.serviceAccount("serviceaccount@gmail.com"))
+          .build();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -318,6 +329,58 @@ public class ResourceManagerImplTest {
       assertEquals(403, e.code());
       assertTrue(e.getMessage().contains("the project was not found"));
     }
+  }
+
+  @Test
+  public void testGetPolicy() {
+    assertNull(RESOURCE_MANAGER.getPolicy(COMPLETE_PROJECT.projectId()));
+    RESOURCE_MANAGER.create(COMPLETE_PROJECT);
+    RESOURCE_MANAGER.replacePolicy(COMPLETE_PROJECT.projectId(), POLICY);
+    Policy retrieved = RESOURCE_MANAGER.getPolicy(COMPLETE_PROJECT.projectId());
+    assertEquals(POLICY.bindings(), retrieved.bindings());
+    assertNotNull(retrieved.etag());
+    assertEquals(0, retrieved.version().intValue());
+  }
+
+  @Test
+  public void testReplacePolicy() {
+    try {
+      RESOURCE_MANAGER.replacePolicy("nonexistent-project", POLICY);
+      fail("Project doesn't exist.");
+    } catch (ResourceManagerException e) {
+      assertEquals(403, e.code());
+      assertTrue(e.getMessage().endsWith("project was not found."));
+    }
+    RESOURCE_MANAGER.create(PARTIAL_PROJECT);
+    Policy oldPolicy = RESOURCE_MANAGER.getPolicy(PARTIAL_PROJECT.projectId());
+    RESOURCE_MANAGER.replacePolicy(PARTIAL_PROJECT.projectId(), POLICY);
+    try {
+      RESOURCE_MANAGER.replacePolicy(PARTIAL_PROJECT.projectId(), oldPolicy);
+      fail("Policy with an invalid etag didn't cause error.");
+    } catch (ResourceManagerException e) {
+      assertEquals(409, e.code());
+      assertTrue(e.getMessage().contains("Policy etag mismatch"));
+    }
+    String originalEtag = RESOURCE_MANAGER.getPolicy(PARTIAL_PROJECT.projectId()).etag();
+    Policy newPolicy = RESOURCE_MANAGER.replacePolicy(PARTIAL_PROJECT.projectId(), POLICY);
+    assertEquals(POLICY.bindings(), newPolicy.bindings());
+    assertNotNull(newPolicy.etag());
+    assertNotEquals(originalEtag, newPolicy.etag());
+  }
+
+  @Test
+  public void testTestPermissions() {
+    List<String> permissions = ImmutableList.of("resourcemanager.projects.get");
+    try {
+      RESOURCE_MANAGER.testPermissions("nonexistent-project", permissions);
+      fail("Nonexistent project");
+    } catch (ResourceManagerException e) {
+      assertEquals(403, e.code());
+      assertEquals("Project nonexistent-project not found.", e.getMessage());
+    }
+    RESOURCE_MANAGER.create(PARTIAL_PROJECT);
+    assertEquals(ImmutableList.of(true),
+        RESOURCE_MANAGER.testPermissions(PARTIAL_PROJECT.projectId(), permissions));
   }
 
   @Test

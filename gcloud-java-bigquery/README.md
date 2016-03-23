@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-bigquery</artifactId>
-  <version>0.1.4</version>
+  <version>0.1.5</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-bigquery:0.1.4'
+compile 'com.google.gcloud:gcloud-java-bigquery:0.1.5'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-bigquery" % "0.1.4"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-bigquery" % "0.1.5"
 ```
 
 Example Application
@@ -185,7 +185,7 @@ Then add the following code to run the query and wait for the result:
 QueryRequest queryRequest =
     QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
         .maxWaitTime(60000L)
-        .maxResults(1000L)
+        .pageSize(1000L)
         .build();
 // Request query to be executed and wait for results
 QueryResponse queryResponse = bigquery.query(queryRequest);

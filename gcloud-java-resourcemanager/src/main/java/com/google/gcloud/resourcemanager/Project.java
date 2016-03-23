@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -157,10 +158,10 @@ public class Project extends ProjectInfo {
    * completes, the project is not retrievable by the {@link ResourceManager#get} and
    * {@link ResourceManager#list} methods. The caller must have modify permissions for this project.
    *
-   * @see <a
-   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/delete">Cloud
-   * Resource Manager delete</a>
    * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/delete">Cloud
+   *     Resource Manager delete</a>
    */
   public void delete() {
     resourceManager.delete(projectId());
@@ -174,10 +175,10 @@ public class Project extends ProjectInfo {
    * state of {@link ProjectInfo.State#DELETE_IN_PROGRESS}, the project cannot be restored. The
    * caller must have modify permissions for this project.
    *
-   * @see <a
-   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">Cloud
-   * Resource Manager undelete</a>
    * @throws ResourceManagerException upon failure (including when the project can't be restored)
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/undelete">Cloud
+   *     Resource Manager undelete</a>
    */
   public void undelete() {
     resourceManager.undelete(projectId());
@@ -188,14 +189,66 @@ public class Project extends ProjectInfo {
    *
    * <p>The caller must have modify permissions for this project.
    *
-   * @see <a
-   * href="https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">Cloud
-   * Resource Manager update</a>
    * @return the Project representing the new project metadata
    * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/update">Cloud
+   *     Resource Manager update</a>
    */
   public Project replace() {
     return resourceManager.replace(this);
+  }
+
+  /**
+   * Returns the IAM access control policy for this project. Returns {@code null} if the resource
+   * does not exist or if you do not have adequate permission to view the project or get the policy.
+   *
+   * @return the IAM policy for the project
+   * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/getIamPolicy">
+   *     Resource Manager getIamPolicy</a>
+   */
+  public Policy getPolicy() {
+    return resourceManager.getPolicy(projectId());
+  }
+
+  /**
+   * Sets the IAM access control policy for this project. Replaces any existing policy. It is
+   * recommended that you use the read-modify-write pattern. See code samples and important details
+   * of replacing policies in the documentation for {@link ResourceManager#replacePolicy}.
+   *
+   * @return the newly set IAM policy for this project
+   * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/setIamPolicy">
+   *     Resource Manager setIamPolicy</a>
+   */
+  public Policy replacePolicy(Policy newPolicy) {
+    return resourceManager.replacePolicy(projectId(), newPolicy);
+  }
+
+  /**
+   * Returns the permissions that a caller has on this project. You typically don't call this method
+   * if you're using Google Cloud Platform directly to manage permissions. This method is intended
+   * for integration with your proprietary software, such as a customized graphical user interface.
+   * For example, the Cloud Platform Console tests IAM permissions internally to determine which UI
+   * should be available to the logged-in user.  Each service that supports IAM lists the possible
+   * permissions; see the <i>Supported Cloud Platform services</i> page below for links to these
+   * lists.
+   *
+   * @return a list of booleans representing whether the caller has the permissions specified (in
+   *     the order of the given permissions)
+   * @throws ResourceManagerException upon failure
+   * @see <a href=
+   *     "https://cloud.google.com/resource-manager/reference/rest/v1beta1/projects/testIamPermissions">
+   *     Resource Manager testIamPermissions</a>
+   * @see <a href=
+   *     "https://cloud.google.com/iam/#supported_cloud_platform_services">Supported Cloud Platform
+   *     Services</a>
+   */
+  List<Boolean> testPermissions(List<String> permissions) {
+    return resourceManager.testPermissions(projectId(), permissions);
   }
 
   @Override

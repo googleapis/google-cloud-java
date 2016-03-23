@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.datastore.spi;
 
 import com.google.gcloud.datastore.DatastoreOptions;
+import com.google.gcloud.spi.ServiceRpcFactory;
 
 /**
  * An interface for Datastore RPC factory.

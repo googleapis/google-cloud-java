@@ -34,8 +34,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.WriteChannel;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpcFactory;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpcFactory;
 
 import org.easymock.Capture;
 import org.easymock.CaptureType;
