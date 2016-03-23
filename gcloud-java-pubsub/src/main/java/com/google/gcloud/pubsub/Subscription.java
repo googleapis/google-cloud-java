@@ -18,9 +18,13 @@ package com.google.gcloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.gcloud.pubsub.PubSub.PullOption;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.Future;
 
 /**
  * PubSub subscription.
@@ -102,9 +106,37 @@ public class Subscription extends SubscriptionInfo {
     return pubsub;
   }
 
-  // Operations to add:
-  // delete, reload, modifyPushConfig? (instead of replace), pull
+  public boolean delete() {
+    return pubsub.deleteSubscription(name());
+  }
 
+  public Future<Boolean> deleteAsync() {
+    return pubsub.deleteSubscriptionAsync(name());
+  }
+
+  public Subscription reload() {
+    return pubsub.getSubscription(name());
+  }
+
+  public Future<Subscription> reloadAsync() {
+    return pubsub.getSubscriptionAsync(name());
+  }
+
+  public void replacePushConfig(PushConfig pushConfig) {
+    pubsub.replacePushConfig(name(), pushConfig);
+  }
+
+  public Future<Void> replacePushConfigAsync(PushConfig pushConfig) {
+    return pubsub.replacePushConfigAsync(name(), pushConfig);
+  }
+
+  public List<ReceivedMessage> pull(PullOption... options) {
+    return pubsub.pull(name(), options);
+  }
+
+  public Future<List<Message>> pullAsync(PullOption... options) {
+    return pubsub.pullAsync(name(), options);
+  }
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();

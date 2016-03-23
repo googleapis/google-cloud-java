@@ -18,9 +18,15 @@ package com.google.gcloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.gcloud.AsyncPage;
+import com.google.gcloud.Page;
+import com.google.gcloud.pubsub.PubSub.ListOption;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.Future;
 
 /**
  * PubSub Topic.
@@ -41,7 +47,7 @@ public class Topic extends TopicInfo {
     }
 
     @Override
-    public TopicInfo.Builder name(String name) {
+    public Builder name(String name) {
       delegate.name(name);
       return this;
     }
@@ -84,9 +90,53 @@ public class Topic extends TopicInfo {
     return pubsub;
   }
 
-  // Operations to add:
-  // delete, reload, publish, listSubscriptions for topic,
+  public boolean delete() {
+    return pubsub.deleteTopic(name());
+  }
 
+  public Future<Boolean> deleteAsync() {
+    return pubsub.deleteTopicAsync(name());
+  }
+
+  public Topic reload() {
+    return pubsub.getTopic(name());
+  }
+
+  public Future<Topic> reloadAsync() {
+    return pubsub.getTopicAsync(name());
+  }
+
+  public String publish(Message message) {
+    return pubsub.publish(name(), message);
+  }
+
+  public Future<String> publishAsync(Message message) {
+    return pubsub.publishAsync(name(), message);
+  }
+
+  public List<String> publish(Message message, Message... messages) {
+    return pubsub.publish(name(), message, messages);
+  }
+
+  public Future<List<String>> publishAsync(Message message, Message... messages) {
+    return pubsub.publishAsync(name(), message, messages);
+  }
+
+  public List<String> publish(Iterable<Message> messages) {
+    return pubsub.publish(name(), messages);
+  }
+
+  public Future<List<String>> publishAsync(Iterable<Message> messages) {
+    return pubsub.publishAsync(name(), messages);
+  }
+
+  public Page<Subscription> listSubscriptions(ListOption... options) {
+    return pubsub.listSubscriptions(name(), options);
+  }
+
+  public Future<AsyncPage<Subscription>> listSubscriptionsAsync(ListOption... options) {
+    return pubsub.listSubscriptionsAsync(name(), options);
+  }
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();

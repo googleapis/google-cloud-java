@@ -16,11 +16,14 @@
 
 package com.google.gcloud.pubsub;
 
+import com.google.gcloud.AsyncPage;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 /**
  * An interface for Google Cloud Pub/Sub.
@@ -29,21 +32,75 @@ import java.util.concurrent.Future;
  */
 public interface PubSub extends Service<PubSubOptions> {
 
-  class ListOption {
-    // page size
-    // page token
+  final class ListOption implements Serializable {
+
+    private static final long serialVersionUID = 6517442127283383124L;
+
+    private final Option option;
+    private final Object value;
+
+    enum Option {
+      PAGE_SIZE, PAGE_TOKEN
+    }
+
+    private ListOption(Option option, Object value) {
+      this.option = option;
+      this.value = value;
+    }
+
+    Option option() {
+      return option;
+    }
+
+    Object value() {
+      return value;
+    }
+
+    public static ListOption pageSize(int pageSize) {
+      return new ListOption(Option.PAGE_SIZE, pageSize);
+    }
+
+    public static ListOption pageToken(String pageToken) {
+      return new ListOption(Option.PAGE_TOKEN, pageToken);
+    }
   }
 
-  class PullOption {
-    // bool return_immediately = 2;
-    // int32 max_messages = 3;
+  final class PullOption implements Serializable {
+
+    private static final long serialVersionUID = -5220474819637439937L;
+
+    private final Option option;
+    private final Object value;
+
+    enum Option {
+      RETURN_IMMEDIATELY, MAX_MESSAGES
+    }
+
+    private PullOption(Option option, Object value) {
+      this.option = option;
+      this.value = value;
+    }
+
+    Option option() {
+      return option;
+    }
+
+    Object value() {
+      return value;
+    }
+
+    public static PullOption returnImmediatly() {
+      return new PullOption(Option.RETURN_IMMEDIATELY, true);
+    }
+
+    public static PullOption maxMessages(int maxMessages) {
+      return new PullOption(Option.MAX_MESSAGES, maxMessages);
+    }
   }
 
-  // topics
-  //////////////////////
-  Topic createTopic(TopicInfo topic);
+  Topic create(TopicInfo topic);
 
-  Future<Topic> createTopicAsync(String topic);
+  Future<Topic> createAsync(TopicInfo topic);
 
   // null if not found
   Topic getTopic(String topic);
@@ -57,63 +114,81 @@ public interface PubSub extends Service<PubSubOptions> {
 
   Page<Topic> listTopics(ListOption... options);
 
-  // todo: consider AsyncPage that has nextPageAsync
-  Future<Page<Topic>> listTopicsAsync(ListOption... options);
+  Future<AsyncPage<Topic>> listTopicsAsync(ListOption... options);
 
   String publish(String topic, Message message);
 
   Future<String> publishAsync(String topic, Message message);
 
-  List<String> publish(String topic, Message first, Message... other);
+  List<String> publish(String topic, Message message, Message... messages);
 
-  Future<List<String>> publishAsync(String topic, Message first, Message... other);
+  Future<List<String>> publishAsync(String topic, Message message, Message... messages);
 
-  // subscriptions
-  ////////////////////////////
-  Subscription createSubscription(SubscriptionInfo subscription);
+  List<String> publish(String topic, Iterable<Message> messages);
 
-  Future<Subscription> createSubscriptionAsync(SubscriptionInfo subscription);
+  Future<List<String>> publishAsync(String topic, Iterable<Message> messages);
+
+  Subscription create(SubscriptionInfo subscription);
+
+  Future<Subscription> createAsync(SubscriptionInfo subscription);
 
   // null if not found
   Subscription getSubscription(String subscription);
 
-  Future<Subscription> getSubscriptionAsync(String topic);
+  Future<Subscription> getSubscriptionAsync(String subscription);
+
+  void replacePushConfig(String subscription, PushConfig pushConfig);
+
+  Future<Void> replacePushConfigAsync(String subscription, PushConfig pushConfig);
 
   // false if not found
   boolean deleteSubscription(String subscription);
 
   Future<Boolean> deleteSubscriptionAsync(String subscription);
 
-  Page<Subscription> listSubscription(ListOption... options);
+  Page<Subscription> listSubscriptions(ListOption... options);
 
-  // todo: consider AsyncPage that has nextPageAsync
-  Future<Page<Subscription>> listSubscriptionAsync(ListOption... options);
+  Future<AsyncPage<Subscription>> listSubscriptionsAsync(ListOption... options);
 
-  Page<Subscription> listSubscription(String topic, ListOption... options);
+  Page<Subscription> listSubscriptions(String topic, ListOption... options);
 
-  // todo: consider AsyncPage that has nextPageAsync
-  Future<Page<Subscription>> listSubscriptionAsync(String topic, ListOption... options);
+  Future<AsyncPage<Subscription>> listSubscriptionsAsync(String topic, ListOption... options);
 
-  // Ack options:
-  // 1) replace return value to ReceivedMessage (Message + functional ack)
-  // 2) like (1) but with no auto-renew, so provide a function for renew
-  // 3) rename Message to MessageInfo and make Message functional with ack
-  // 4) return a "special" list (extends List) but has a way to "ackSoFar"
-  // 5) instead of List use callback and auto-acknowledge per callback (and auto-renew)
-  // ** Auto renew means, using a separate thread.
-  List<Message> pull(String subscription, PullOption... options);
+  // Possible Ack options:
+  // 1) return a "special" iterator with "ack-iterated-messages"
+  // 2) provide a way to pull with callback(Message) - ask messages that were called successfully
+  //
+  // Also, consider auto-renewable for all messages that were pulled and not acked.
+  List<ReceivedMessage> pull(String subscription, PullOption... options);
 
   Future<List<Message>> pullAsync(String subscription, PullOption... options);
 
+  void acknowledge(String subscription, String ackId, String... ackIds);
 
-  // Note regarding Date types:
+  Future<Void> acknowledgeAsync(String subscription, String ackId, String... ackIds);
+
+  void acknowledge(String subscription, Iterable<String> ackIds);
+
+  Future<Void> acknowledgeAsync(String subscription, Iterable<String> ackIds);
+
+  void modifyAckDeadline(String subscription, int deadline, TimeUnit unit, String ackId,
+      String... ackIds);
+
+  Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
+      String ackId, String... ackIds);
+
+  void modifyAckDeadline(String subscription, int deadline, TimeUnit unit, Iterable<String> ackIds);
+
+  Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
+      Iterable<String> ackIds);
+
+  // Note regarding Data types:
   // 1) No field selection
   //  --- This is why there are no options for getters
   // 2) Never null for primitive values or collections
   //  --- should we replace default "" with null (e.g. id when not populated)?
 
   // IAM Policy operations:  getPolicy, replacePolicy, testPermissions
-  // Not sure if ready (docs is not up-to-date), is it one per topic and
-  // one per subscription?
-
+  // Not sure if ready (docs is not up-to-date)
+  // Looks like policy is per resource (topic or subscription) but not per service?
 }

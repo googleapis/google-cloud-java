@@ -16,12 +16,14 @@
 
 package com.google.gcloud.pubsub;
 
+import com.google.gcloud.AsyncPage;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.Page;
 import com.google.gcloud.pubsub.spi.PubSubRpc;
 
 import java.util.List;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
@@ -33,12 +35,12 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Topic createTopic(TopicInfo topic) {
+  public Topic create(TopicInfo topic) {
     return null;
   }
 
   @Override
-  public Future<Topic> createTopicAsync(String topic) {
+  public Future<Topic> createAsync(TopicInfo topic) {
     return null;
   }
 
@@ -68,7 +70,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Page<Topic>> listTopicsAsync(ListOption... options) {
+  public Future<AsyncPage<Topic>> listTopicsAsync(ListOption... options) {
     return null;
   }
 
@@ -83,22 +85,32 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public List<String> publish(String topic, Message first, Message... other) {
+  public List<String> publish(String topic, Message message, Message... messages) {
     return null;
   }
 
   @Override
-  public Future<List<String>> publishAsync(String topic, Message first, Message... other) {
+  public Future<List<String>> publishAsync(String topic, Message message, Message... messages) {
     return null;
   }
 
   @Override
-  public Subscription createSubscription(SubscriptionInfo subscription) {
+  public List<String> publish(String topic, Iterable<Message> messages) {
     return null;
   }
 
   @Override
-  public Future<Subscription> createSubscriptionAsync(SubscriptionInfo subscription) {
+  public Future<List<String>> publishAsync(String topic, Iterable<Message> messages) {
+    return null;
+  }
+
+  @Override
+  public Subscription create(SubscriptionInfo subscription) {
+    return null;
+  }
+
+  @Override
+  public Future<Subscription> createAsync(SubscriptionInfo subscription) {
     return null;
   }
 
@@ -108,7 +120,17 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Subscription> getSubscriptionAsync(String topic) {
+  public Future<Subscription> getSubscriptionAsync(String subscription) {
+    return null;
+  }
+
+  @Override
+  public void replacePushConfig(String subscription, PushConfig pushConfig) {
+
+  }
+
+  @Override
+  public Future<Void> replacePushConfigAsync(String subscription, PushConfig pushConfig) {
     return null;
   }
 
@@ -123,32 +145,75 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Page<Subscription> listSubscription(ListOption... options) {
+  public Page<Subscription> listSubscriptions(ListOption... options) {
     return null;
   }
 
   @Override
-  public Future<Page<Subscription>> listSubscriptionAsync(ListOption... options) {
+  public Future<AsyncPage<Subscription>> listSubscriptionsAsync(ListOption... options) {
     return null;
   }
 
   @Override
-  public Page<Subscription> listSubscription(String topic, ListOption... options) {
+  public Page<Subscription> listSubscriptions(String topic, ListOption... options) {
     return null;
   }
 
   @Override
-  public Future<Page<Subscription>> listSubscriptionAsync(String topic, ListOption... options) {
+  public Future<AsyncPage<Subscription>> listSubscriptionsAsync(String topic, ListOption... options) {
     return null;
   }
 
   @Override
-  public List<Message> pull(String subscription, PullOption... options) {
+  public List<ReceivedMessage> pull(String subscription, PullOption... options) {
     return null;
   }
 
   @Override
   public Future<List<Message>> pullAsync(String subscription, PullOption... options) {
+    return null;
+  }
+
+  @Override
+  public void acknowledge(String subscription, String ackId, String... ackIds) {
+
+  }
+
+  @Override
+  public Future<Void> acknowledgeAsync(String subscription, String ackId, String... ackIds) {
+    return null;
+  }
+
+  @Override
+  public void acknowledge(String subscription, Iterable<String> ackIds) {
+
+  }
+
+  @Override
+  public Future<Void> acknowledgeAsync(String subscription, Iterable<String> ackIds) {
+    return null;
+  }
+
+  @Override
+  public void modifyAckDeadline(String subscription, int deadline, TimeUnit unit, String ackId,
+      String... ackIds) {
+
+  }
+
+  @Override
+  public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
+      String ackId, String... ackIds) {
+    return null;
+  }
+
+  @Override
+  public void modifyAckDeadline(String subscription, int deadline, TimeUnit unit,
+      Iterable<String> ackIds) {
+
+  }
+
+  @Override
+  public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit, Iterable<String> ackIds) {
     return null;
   }
 }

@@ -30,7 +30,7 @@ import java.util.Objects;
 /**
  * Pub/Sub message.
  */
-public final class Message implements Serializable {
+public class Message implements Serializable {
 
   private static final long serialVersionUID = -1436515787233340634L;
   private static final long NANOS_PER_MILLISECOND = 1000000;
@@ -41,61 +41,85 @@ public final class Message implements Serializable {
   private final ImmutableMap<String, String> attributes;
   private final Long publishTime;
 
+  abstract static class Builder {
+
+    abstract Builder id(String id);
+
+    public abstract Builder payload(byte[] payload);
+
+    public abstract Builder addAttribute(String name, String value);
+
+    public abstract Builder removeAttribute(String name);
+
+    public abstract Builder clearAttributes();
+
+    abstract Builder publishTime(Long publishTime);
+
+    public abstract Message build();
+  }
+
   /**
    * Builder for Message.
    */
-  public static final class Builder {
+  public static final class BuilderImpl extends Builder {
 
     private String id;
     private byte[] payload;
     private Map<String, String> attributes = new HashMap<>();
     private Long publishTime;
 
-    private Builder() {}
+    private BuilderImpl() {}
 
-    private Builder(Message message) {
+    BuilderImpl(Message message) {
       id = message.id;
       payload = message.payload.toByteArray();
       attributes = new HashMap<>(message.attributes);
       publishTime = message.publishTime;
     }
 
-    Builder id(String id) {
+    @Override
+    BuilderImpl id(String id) {
       this.id = id;
       return this;
     }
 
+    @Override
     public Builder payload(byte[] payload) {
       this.payload = checkNotNull(payload);
       return this;
     }
 
+    @Override
     public Builder addAttribute(String name, String value) {
       attributes.put(name, value);
       return this;
     }
 
+    @Override
     public Builder removeAttribute(String name) {
       attributes.remove(name);
       return this;
     }
 
+    @Override
     public Builder clearAttributes() {
       attributes.clear();
       return this;
     }
 
+    @Override
     Builder publishTime(Long publishTime) {
       this.publishTime = publishTime;
       return this;
     }
 
+    @Override
     public Message build() {
       return new Message(this);
     }
   }
 
-  private Message(Builder builder) {
+  Message(BuilderImpl builder) {
     id = builder.id;
     payload = ByteString.copyFrom(checkNotNull(builder.payload));
     attributes = ImmutableMap.copyOf(builder.attributes);
@@ -179,7 +203,7 @@ public final class Message implements Serializable {
   }
 
   public Builder toBuilder() {
-    return new Builder(this);
+    return new BuilderImpl(this);
   }
 
   public static Message of(byte[] payload) {
@@ -187,6 +211,6 @@ public final class Message implements Serializable {
   }
 
   public static Builder builder() {
-    return new Builder();
+    return new BuilderImpl();
   }
 }
