@@ -249,13 +249,13 @@ ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
 Zone zone = dns.create(zoneInfo);
 ```
 
-The second snippet shows how to create records inside a zone. The complete code can be found on [CreateOrUpdateDnsRecords.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateDnsRecords.java).
+The second snippet shows how to create records inside a zone. The complete code can be found on [CreateOrUpdateRecordSets.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateRecordSets.java).
 
 ```java
 import com.google.gcloud.dns.ChangeRequest;
 import com.google.gcloud.dns.Dns;
 import com.google.gcloud.dns.DnsOptions;
-import com.google.gcloud.dns.DnsRecord;
+import com.google.gcloud.dns.RecordSet;
 import com.google.gcloud.dns.Zone;
 
 import java.util.Iterator;
@@ -265,7 +265,7 @@ Dns dns = DnsOptions.defaultInstance().service();
 String zoneName = "my-unique-zone";
 Zone zone = dns.getZone(zoneName);
 String ip = "12.13.14.15";
-DnsRecord toCreate = DnsRecord.builder("www.someexampledomain.com.", DnsRecord.Type.A)
+RecordSet toCreate = RecordSet.builder("www.someexampledomain.com.", RecordSet.Type.A)
     .ttl(24, TimeUnit.HOURS)
     .addRecord(ip)
     .build();
@@ -273,9 +273,9 @@ ChangeRequest.Builder changeBuilder = ChangeRequest.builder().add(toCreate);
 
 // Verify that the record does not exist yet.
 // If it does exist, we will overwrite it with our prepared record.
-Iterator<DnsRecord> recordIterator = zone.listDnsRecords().iterateAll();
-while (recordIterator.hasNext()) {
-  DnsRecord current = recordIterator.next();
+Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
+while (recordSetIterator.hasNext()) {
+  RecordSet current = recordSetIterator.next();
   if (toCreate.name().equals(current.name()) &&
       toCreate.type().equals(current.type())) {
     changeBuilder.delete(current);

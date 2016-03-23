@@ -42,7 +42,7 @@
  * String zoneName = "my-unique-zone";
  * Zone zone = dns.getZone(zoneName);
  * String ip = "12.13.14.15";
- * DnsRecord toCreate = DnsRecord.builder("www.someexampledomain.com.", DnsRecord.Type.A)
+ * RecordSet toCreate = RecordSet.builder("www.someexampledomain.com.", RecordSet.Type.A)
  *   .ttl(24, TimeUnit.HOURS)
  *   .addRecord(ip)
  *   .build();

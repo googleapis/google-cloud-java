@@ -50,12 +50,12 @@ public class ZoneTest {
       .build();
   private static final ZoneInfo NO_ID_INFO =
       ZoneInfo.of(ZONE_NAME, "another-example.com", "description").toBuilder()
-      .creationTimeMillis(893123464L)
-      .build();
+          .creationTimeMillis(893123464L)
+          .build();
   private static final Dns.ZoneOption ZONE_FIELD_OPTIONS =
       Dns.ZoneOption.fields(Dns.ZoneField.CREATION_TIME);
-  private static final Dns.DnsRecordListOption DNS_RECORD_OPTIONS =
-      Dns.DnsRecordListOption.dnsName("some-dns");
+  private static final Dns.RecordSetListOption DNS_RECORD_OPTIONS =
+      Dns.RecordSetListOption.dnsName("some-dns");
   private static final Dns.ChangeRequestOption CHANGE_REQUEST_FIELD_OPTIONS =
       Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME);
   private static final Dns.ChangeRequestListOption CHANGE_REQUEST_LIST_OPTIONS =
@@ -120,51 +120,51 @@ public class ZoneTest {
   @Test
   public void listDnsRecordsByNameAndFound() {
     @SuppressWarnings("unchecked")
-    Page<DnsRecord> pageMock = createStrictMock(Page.class);
+    Page<RecordSet> pageMock = createStrictMock(Page.class);
     replay(pageMock);
-    expect(dns.listDnsRecords(ZONE_NAME)).andReturn(pageMock);
-    expect(dns.listDnsRecords(ZONE_NAME)).andReturn(pageMock);
+    expect(dns.listRecordSets(ZONE_NAME)).andReturn(pageMock);
+    expect(dns.listRecordSets(ZONE_NAME)).andReturn(pageMock);
     // again for options
-    expect(dns.listDnsRecords(ZONE_NAME, DNS_RECORD_OPTIONS)).andReturn(pageMock);
-    expect(dns.listDnsRecords(ZONE_NAME, DNS_RECORD_OPTIONS)).andReturn(pageMock);
+    expect(dns.listRecordSets(ZONE_NAME, DNS_RECORD_OPTIONS)).andReturn(pageMock);
+    expect(dns.listRecordSets(ZONE_NAME, DNS_RECORD_OPTIONS)).andReturn(pageMock);
     replay(dns);
-    Page<DnsRecord> result = zone.listDnsRecords();
+    Page<RecordSet> result = zone.listRecordSets();
     assertSame(pageMock, result);
-    result = zoneNoId.listDnsRecords();
+    result = zoneNoId.listRecordSets();
     assertSame(pageMock, result);
     verify(pageMock);
-    zone.listDnsRecords(DNS_RECORD_OPTIONS); // check options
-    zoneNoId.listDnsRecords(DNS_RECORD_OPTIONS); // check options
+    zone.listRecordSets(DNS_RECORD_OPTIONS); // check options
+    zoneNoId.listRecordSets(DNS_RECORD_OPTIONS); // check options
   }
 
   @Test
   public void listDnsRecordsByNameAndNotFound() {
-    expect(dns.listDnsRecords(ZONE_NAME)).andThrow(EXCEPTION);
-    expect(dns.listDnsRecords(ZONE_NAME)).andThrow(EXCEPTION);
+    expect(dns.listRecordSets(ZONE_NAME)).andThrow(EXCEPTION);
+    expect(dns.listRecordSets(ZONE_NAME)).andThrow(EXCEPTION);
     // again for options
-    expect(dns.listDnsRecords(ZONE_NAME, DNS_RECORD_OPTIONS)).andThrow(EXCEPTION);
-    expect(dns.listDnsRecords(ZONE_NAME, DNS_RECORD_OPTIONS)).andThrow(EXCEPTION);
+    expect(dns.listRecordSets(ZONE_NAME, DNS_RECORD_OPTIONS)).andThrow(EXCEPTION);
+    expect(dns.listRecordSets(ZONE_NAME, DNS_RECORD_OPTIONS)).andThrow(EXCEPTION);
     replay(dns);
     try {
-      zoneNoId.listDnsRecords();
+      zoneNoId.listRecordSets();
       fail("Parent container not found, should throw an exception.");
     } catch (DnsException e) {
       // expected
     }
     try {
-      zone.listDnsRecords();
+      zone.listRecordSets();
       fail("Parent container not found, should throw an exception.");
     } catch (DnsException e) {
       // expected
     }
     try {
-      zoneNoId.listDnsRecords(DNS_RECORD_OPTIONS); // check options
+      zoneNoId.listRecordSets(DNS_RECORD_OPTIONS); // check options
       fail("Parent container not found, should throw an exception.");
     } catch (DnsException e) {
       // expected
     }
     try {
-      zone.listDnsRecords(DNS_RECORD_OPTIONS); // check options
+      zone.listRecordSets(DNS_RECORD_OPTIONS); // check options
       fail("Parent container not found, should throw an exception.");
     } catch (DnsException e) {
       // expected

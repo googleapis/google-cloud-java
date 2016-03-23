@@ -25,7 +25,7 @@ package com.google.gcloud.examples.dns.snippets;
 import com.google.gcloud.dns.ChangeRequest;
 import com.google.gcloud.dns.Dns;
 import com.google.gcloud.dns.DnsOptions;
-import com.google.gcloud.dns.DnsRecord;
+import com.google.gcloud.dns.RecordSet;
 
 import java.util.Iterator;
 
@@ -43,15 +43,15 @@ public class DeleteZone {
     // Change this to a zone name that exists within your project and that you want to delete.
     String zoneName = "my-unique-zone";
 
-    // Get iterator for the existing records which have to be deleted before deleting the zone
-    Iterator<DnsRecord> recordIterator = dns.listDnsRecords(zoneName).iterateAll();
+    // Get iterator for the existing record sets which have to be deleted before deleting the zone
+    Iterator<RecordSet> recordIterator = dns.listRecordSets(zoneName).iterateAll();
 
     // Make a change for deleting the records
     ChangeRequest.Builder changeBuilder = ChangeRequest.builder();
     while (recordIterator.hasNext()) {
-      DnsRecord current = recordIterator.next();
+      RecordSet current = recordIterator.next();
       // SOA and NS records cannot be deleted
-      if (!DnsRecord.Type.SOA.equals(current.type()) && !DnsRecord.Type.NS.equals(current.type())) {
+      if (!RecordSet.Type.SOA.equals(current.type()) && !RecordSet.Type.NS.equals(current.type())) {
         changeBuilder.delete(current);
       }
     }
