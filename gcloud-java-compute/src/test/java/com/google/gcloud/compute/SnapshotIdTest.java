@@ -65,8 +65,8 @@ public class SnapshotIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(GlobalOperationId.matchesUrl(GlobalOperationId.of(PROJECT, NAME).selfLink()));
-    assertFalse(GlobalOperationId.matchesUrl("notMatchingUrl"));
+    assertTrue(SnapshotId.matchesUrl(SnapshotId.of(PROJECT, NAME).selfLink()));
+    assertFalse(SnapshotId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareSnapshotId(SnapshotId expected, SnapshotId value) {
