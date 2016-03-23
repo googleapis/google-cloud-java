@@ -74,9 +74,8 @@ public class SnapshotInfo implements Serializable {
   private final StorageBytesStatus storageBytesStatus;
 
   /**
-   * The status of a Google Compute Engine snapshot. A snapshot can be used to create other
-   * resources, such as disks, only after the snapshot has been successfully created and the status
-   * is set to {@code READY}.
+   * The status of a Google Compute Engine snapshot. A snapshot can be used to create a disk only
+   * after the snapshot has been successfully created and the status is set to {@code READY}.
    */
   public enum Status {
     /**
@@ -106,7 +105,7 @@ public class SnapshotInfo implements Serializable {
   }
 
   /**
-   * An indicator whether {@link SnapshotInfo#storageBytes()} is in a stable state or it is being
+   * An indicator of whether {@link SnapshotInfo#storageBytes()} is in a stable state or it is being
    * adjusted as a result of shared storage reallocation.
    */
   public enum StorageBytesStatus {

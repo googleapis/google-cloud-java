@@ -106,8 +106,8 @@ public final class DiskId extends ResourceId {
   }
 
   /**
-   * Returns a disk identity given the zone identity and the disk name. The address name must be
-   * 1-63 characters long and comply with RFC1035. Specifically, the name must match the regular
+   * Returns a disk identity given the zone identity and the disk name. The disk name must be 1-63
+   * characters long and comply with RFC1035. Specifically, the name must match the regular
    * expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a
    * lowercase letter, and all following characters must be a dash, lowercase letter, or digit,
    * except the last character, which cannot be a dash.
@@ -119,7 +119,7 @@ public final class DiskId extends ResourceId {
   }
 
   /**
-   * Returns a disk identity given the zone and disk names. The address name must be 1-63 characters
+   * Returns a disk identity given the zone and disk names. The disk name must be 1-63 characters
    * long and comply with RFC1035. Specifically, the name must match the regular expression
    * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
    * and all following characters must be a dash, lowercase letter, or digit, except the last
@@ -132,7 +132,7 @@ public final class DiskId extends ResourceId {
   }
 
   /**
-   * Returns a disk identity given project, zone and disks names. The address name must be 1-63
+   * Returns a disk identity given project, zone and disks names. The disk name must be 1-63
    * characters long and comply with RFC1035. Specifically, the name must match the regular
    * expression {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a
    * lowercase letter, and all following characters must be a dash, lowercase letter, or digit,
