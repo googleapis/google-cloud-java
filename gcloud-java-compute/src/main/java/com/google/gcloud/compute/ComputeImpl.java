@@ -273,6 +273,25 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
   }
 
+  private static class SnapshotPageFetcher implements NextPageFetcher<Snapshot> {
+
+    private static final long serialVersionUID = 6205774609802216986L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+
+    SnapshotPageFetcher(ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+    }
+
+    @Override
+    public Page<Snapshot> nextPage() {
+      return listSnapshots(serviceOptions, requestOptions);
+    }
+  }
+
   private final ComputeRpc computeRpc;
 
   ComputeImpl(ComputeOptions options) {
@@ -881,8 +900,8 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
               return Address.fromPb(serviceOptions.service(), address);
             }
           });
-      return new PageImpl<>(new AggregatedAddressPageFetcher(serviceOptions, cursor,
-          optionsMap), cursor, operations);
+      return new PageImpl<>(new AggregatedAddressPageFetcher(serviceOptions, cursor, optionsMap),
+          cursor, operations);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
     }
@@ -912,6 +931,99 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
     }
+  }
+
+  @Override
+  public Operation create(SnapshotInfo snapshot, final OperationOption... options) {
+    final SnapshotInfo completeSnapshot = snapshot.setProjectId(options().projectId());
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.createSnapshot(completeSnapshot.sourceDisk().zone(),
+                  completeSnapshot.sourceDisk().disk(), completeSnapshot.snapshotId().snapshot(),
+                  completeSnapshot.description(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Snapshot getSnapshot(final String snapshot, SnapshotOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Snapshot answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Snapshot>() {
+            @Override
+            public com.google.api.services.compute.model.Snapshot call() {
+              return computeRpc.getSnapshot(snapshot, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Snapshot.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<Snapshot> listSnapshots(SnapshotListOption... options) {
+    return listSnapshots(options(), optionMap(options));
+  }
+
+  private static Page<Snapshot> listSnapshots(final ComputeOptions serviceOptions,
+      final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Snapshot>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Snapshot>> call() {
+              return serviceOptions.rpc().listSnapshots(optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Snapshot> snapshots = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Snapshot>of()
+              : result.y(),
+          new Function<com.google.api.services.compute.model.Snapshot, Snapshot>() {
+            @Override
+            public Snapshot apply(com.google.api.services.compute.model.Snapshot snapshot) {
+              return Snapshot.fromPb(serviceOptions.service(), snapshot);
+            }
+          });
+      return new PageImpl<>(new SnapshotPageFetcher(serviceOptions, cursor, optionsMap), cursor,
+          snapshots);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation deleteSnapshot(final SnapshotId snapshot, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.deleteSnapshot(snapshot.snapshot(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation deleteSnapshot(final String snapshot, OperationOption... options) {
+    return deleteSnapshot(SnapshotId.of(snapshot));
   }
 
   private Map<ComputeRpc.Option, ?> optionMap(Option... options) {

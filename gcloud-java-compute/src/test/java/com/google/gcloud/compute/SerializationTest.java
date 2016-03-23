@@ -150,6 +150,8 @@ public class SerializationTest {
   private static final DiskId DISK_ID = DiskId.of("project", "zone", "disk");
   private static final SnapshotId SNAPSHOT_ID = SnapshotId.of("project", "snapshot");
   private static final SnapshotInfo SNAPSHOT_INFO = SnapshotInfo.of(SNAPSHOT_ID, DISK_ID);
+  private static final Snapshot SNAPSHOT =
+      new Snapshot.Builder(COMPUTE, SNAPSHOT_ID, DISK_ID).build();
   private static final Compute.DiskTypeOption DISK_TYPE_OPTION =
       Compute.DiskTypeOption.fields();
   private static final Compute.DiskTypeFilter DISK_TYPE_FILTER =
@@ -189,6 +191,11 @@ public class SerializationTest {
       Compute.AddressListOption.filter(ADDRESS_FILTER);
   private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_OPTION =
       Compute.AddressAggregatedListOption.filter(ADDRESS_FILTER);
+  private static final Compute.SnapshotOption SNAPSHOT_OPTION = Compute.SnapshotOption.fields();
+  private static final Compute.SnapshotFilter SNAPSHOT_FILTER =
+      Compute.SnapshotFilter.equals(Compute.SnapshotField.SELF_LINK, "selfLink");
+  private static final Compute.SnapshotListOption SNAPSHOT_LIST_OPTION =
+      Compute.SnapshotListOption.filter(SNAPSHOT_FILTER);
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -215,13 +222,14 @@ public class SerializationTest {
         REGION_OPERATION_ID, ZONE_OPERATION_ID, GLOBAL_OPERATION, REGION_OPERATION, ZONE_OPERATION,
         INSTANCE_ID, REGION_FORWARDING_RULE_ID, GLOBAL_FORWARDING_RULE_ID, GLOBAL_ADDRESS_ID,
         REGION_ADDRESS_ID, INSTANCE_USAGE, GLOBAL_FORWARDING_USAGE, REGION_FORWARDING_USAGE,
-        ADDRESS_INFO, ADDRESS, DISK_ID, SNAPSHOT_ID, SNAPSHOT_INFO, DISK_TYPE_OPTION,
+        ADDRESS_INFO, ADDRESS, DISK_ID, SNAPSHOT_ID, SNAPSHOT_INFO, SNAPSHOT, DISK_TYPE_OPTION,
         DISK_TYPE_FILTER, DISK_TYPE_LIST_OPTION, DISK_TYPE_AGGREGATED_LIST_OPTION,
         MACHINE_TYPE_OPTION, MACHINE_TYPE_FILTER, MACHINE_TYPE_LIST_OPTION,
         MACHINE_TYPE_AGGREGATED_LIST_OPTION, REGION_OPTION, REGION_FILTER, REGION_LIST_OPTION,
         ZONE_OPTION, ZONE_FILTER, ZONE_LIST_OPTION, LICENSE_OPTION, OPERATION_OPTION,
         OPERATION_FILTER, OPERATION_LIST_OPTION, ADDRESS_OPTION, ADDRESS_FILTER,
-        ADDRESS_LIST_OPTION, ADDRESS_AGGREGATED_LIST_OPTION};
+        ADDRESS_LIST_OPTION, ADDRESS_AGGREGATED_LIST_OPTION, SNAPSHOT_OPTION, SNAPSHOT_FILTER,
+        SNAPSHOT_LIST_OPTION};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

@@ -822,6 +822,54 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Class for filtering snapshot lists.
+   */
+  class SnapshotFilter extends ListFilter {
+
+    private static final long serialVersionUID = 8757711630092406747L;
+
+    SnapshotFilter(SnapshotField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equality filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static SnapshotFilter equals(SnapshotField field, String value) {
+      return new SnapshotFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static SnapshotFilter notEquals(SnapshotField field, String value) {
+      return new SnapshotFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+
+    /**
+     * Returns an equality filter for the given field and long value.
+     */
+    public static SnapshotFilter equals(SnapshotField field, long value) {
+      return new SnapshotFilter(checkNotNull(field), ComparisonOperator.EQ, value);
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and long value.
+     */
+    public static SnapshotFilter notEquals(SnapshotField field, long value) {
+      return new SnapshotFilter(checkNotNull(field), ComparisonOperator.NE, value);
+    }
+  }
+
+  /**
    * Class for specifying disk type get options.
    */
   class DiskTypeOption extends Option {
@@ -1345,6 +1393,73 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Class for specifying snapshot get options.
+   */
+  class SnapshotOption extends Option {
+
+    private static final long serialVersionUID = -3505179459035500945L;
+
+    private SnapshotOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the snapshot's fields to be returned by the RPC call. If this
+     * option is not provided, all snapshot's fields are returned. {@code SnapshotOption.fields} can
+     * be used to specify only the fields of interest. {@link Snapshot#snapshotId()} is always
+     * returned, even if not specified.
+     */
+    public static SnapshotOption fields(SnapshotField... fields) {
+      return new SnapshotOption(ComputeRpc.Option.FIELDS, SnapshotField.selector(fields));
+    }
+  }
+
+  /**
+   * Class for specifying snapshot list options.
+   */
+  class SnapshotListOption extends Option {
+
+    private static final long serialVersionUID = 8278588147660831257L;
+
+    private SnapshotListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the snapshots being listed.
+     */
+    public static SnapshotListOption filter(SnapshotFilter filter) {
+      return new SnapshotListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of snapshots returned per page.
+     */
+    public static SnapshotListOption pageSize(long pageSize) {
+      return new SnapshotListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing snapshots.
+     */
+    public static SnapshotListOption pageToken(String pageToken) {
+      return new SnapshotListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * Returns an option to specify the snapshot's fields to be returned by the RPC call. If this
+     * option is not provided, all snapshot's fields are returned. {@code SnapshotListOption.fields}
+     * can be used to specify only the fields of interest. {@link Snapshot#snapshotId()} is always
+     * returned, even if not specified.
+     */
+    public static SnapshotListOption fields(SnapshotField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(SnapshotField.selector(fields)).append("),nextPageToken");
+      return new SnapshotListOption(ComputeRpc.Option.FIELDS, builder.toString());
+    }
+  }
+
+  /**
    * Returns the requested disk type or {@code null} if not found.
    *
    * @throws ComputeException upon failure
@@ -1525,4 +1640,53 @@ public interface Compute extends Service<ComputeOptions> {
    * @throws ComputeException upon failure
    */
   Operation delete(AddressId addressId, OperationOption... options);
+
+  /**
+   * Creates a new snapshot.
+   *
+   * @return a zone operation if the create request was issued correctly, {@code null} if
+   *     {@code snapshot.sourceDisk} was not found
+   * @throws ComputeException upon failure
+   */
+  Operation create(SnapshotInfo snapshot, OperationOption... options);
+
+  /**
+   * Returns the requested snapshot or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Snapshot getSnapshot(String snapshot, SnapshotOption... options);
+
+  /**
+   * Lists all snapshots.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Snapshot> listSnapshots(SnapshotListOption... options);
+
+  /**
+   * Deletes the requested snapshot. Keep in mind that deleting a single snapshot might not
+   * necessarily delete all the data for that snapshot. If any data for the snapshot that is marked
+   * for deletion is needed for subsequent snapshots, the data will be moved to the next snapshot.
+   *
+   * @return a global operation if the request was issued correctly, {@code null} if the snapshot
+   *     was not found
+   * @throws ComputeException upon failure
+   * @see <a href="https://cloud.google.com/compute/docs/disks/persistent-disks#deleting_snapshot">
+   *     Deleting a snapshot</a>
+   */
+  Operation deleteSnapshot(SnapshotId snapshot, OperationOption... options);
+
+  /**
+   * Deletes the requested snapshot. Keep in mind that deleting a single snapshot might not
+   * necessarily delete all the data for that snapshot. If any data on the snapshot that is marked
+   * for deletion is needed for subsequent snapshots, the data will be moved to the next snapshot.
+   *
+   * @return a global operation if the request was issued correctly, {@code null} if the snapshot
+   *     was not found
+   * @throws ComputeException upon failure
+   * @see <a href="https://cloud.google.com/compute/docs/disks/persistent-disks#deleting_snapshot">
+   *     Deleting a snapshot</a>
+   */
+  Operation deleteSnapshot(String snapshot, OperationOption... options);
 }
