@@ -33,8 +33,9 @@
 
 package com.google.gcloud.pubsub.spi.v1;
 
-import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiCallable;
+import com.google.api.gax.grpc.ApiCallable.BundlableApiCallableInfo;
+import com.google.api.gax.grpc.BundlerFactory;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
@@ -65,9 +66,25 @@ import java.util.List;
  */
 @javax.annotation.Generated("by GAPIC")
 public class PublisherApi implements AutoCloseable {
+  // ========
+  // Members
+  // ========
+
+  private final ManagedChannel channel;
+  private final List<AutoCloseable> closeables = new ArrayList<>();
+
+  private final ApiCallable<Topic, Topic> createTopicCallable;
+  private final ApiCallable<PublishRequest, PublishResponse> publishCallable;
+  private final ApiCallable<GetTopicRequest, Topic> getTopicCallable;
+  private final ApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable;
+  private final ApiCallable<ListTopicsRequest, Iterable<Topic>> listTopicsIterableCallable;
+  private final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
+      listTopicSubscriptionsCallable;
+  private final ApiCallable<ListTopicSubscriptionsRequest, Iterable<String>>
+      listTopicSubscriptionsIterableCallable;
+  private final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
 
   public static class ResourceNames {
-    private ResourceNames() {}
 
     // =======================
     // ResourceNames Constants
@@ -92,6 +109,8 @@ public class PublisherApi implements AutoCloseable {
      */
     private static final PathTemplate TOPIC_PATH_TEMPLATE =
         PathTemplate.create("projects/{project}/topics/{topic}");
+
+    private ResourceNames() {}
 
     // ==============================
     // Resource Name Helper Functions
@@ -153,24 +172,6 @@ public class PublisherApi implements AutoCloseable {
     }
   }
 
-  // ========
-  // Members
-  // ========
-
-  private final ManagedChannel channel;
-  private final List<AutoCloseable> closeables = new ArrayList<>();
-
-  private final ApiCallable<Topic, Topic> createTopicCallable;
-  private final ApiCallable<PublishRequest, PublishResponse> publishCallable;
-  private final ApiCallable<GetTopicRequest, Topic> getTopicCallable;
-  private final ApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable;
-  private final ApiCallable<ListTopicsRequest, Iterable<Topic>> listTopicsIterableCallable;
-  private final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
-      listTopicSubscriptionsCallable;
-  private final ApiCallable<ListTopicSubscriptionsRequest, Iterable<String>>
-      listTopicSubscriptionsIterableCallable;
-  private final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
-
   // ===============
   // Factory Methods
   // ===============
@@ -186,8 +187,9 @@ public class PublisherApi implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of PublisherApi, using the given settings. The channels are created based
-   * on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of PublisherApi, using the given settings.
+   * The channels are created based on the settings passed in, or defaults for any
+   * settings that are not set.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -197,8 +199,9 @@ public class PublisherApi implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of PublisherApi, using the given settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of PublisherApi, using the given settings.
+   * This is protected so that it easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -207,7 +210,14 @@ public class PublisherApi implements AutoCloseable {
     this.channel = settings.getChannel();
 
     this.createTopicCallable = settings.createTopicMethod().build(settings);
-    this.publishCallable = settings.publishMethod().build(settings);
+    BundlableApiCallableInfo<PublishRequest, PublishResponse> bundlablePublish =
+        settings.publishMethod().buildBundlable(settings);
+    this.publishCallable = bundlablePublish.getApiCallable();
+    BundlerFactory<PublishRequest, PublishResponse> publishBundlerFactory =
+        bundlablePublish.getBundlerFactory();
+    if (publishBundlerFactory != null) {
+      this.closeables.add(publishBundlerFactory);
+    }
     this.getTopicCallable = settings.getTopicMethod().build(settings);
     this.listTopicsCallable = settings.listTopicsMethod().build(settings);
     this.listTopicsIterableCallable = settings.listTopicsMethod().buildPageStreaming(settings);

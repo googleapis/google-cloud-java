@@ -39,7 +39,7 @@ import com.google.api.gax.core.RetryParams;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiCallable.ApiCallableBuilder;
 import com.google.api.gax.grpc.ApiCallable.PageStreamingApiCallableBuilder;
-import com.google.api.gax.grpc.PageDescriptor;
+import com.google.api.gax.grpc.PageStreamingDescriptor;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -133,6 +133,8 @@ public class SubscriberSettings extends ServiceApiSettings {
     RETRY_PARAM_DEFINITIONS = definitions.build();
   }
 
+  private final MethodBuilders methods;
+
   private static class MethodBuilders {
     private final ApiCallableBuilder<Subscription, Subscription> createSubscriptionMethod;
     private final ApiCallableBuilder<GetSubscriptionRequest, Subscription> getSubscriptionMethod;
@@ -198,8 +200,6 @@ public class SubscriberSettings extends ServiceApiSettings {
     }
   }
 
-  private final MethodBuilders methods;
-
   // ===============
   // Factory Methods
   // ===============
@@ -222,8 +222,9 @@ public class SubscriberSettings extends ServiceApiSettings {
   }
 
   /**
-   * Constructs an instance of SubscriberSettings with default settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of SubscriberSettings with default settings. This is protected
+   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -234,7 +235,7 @@ public class SubscriberSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the ApiCallableBuilder for the API method createSubscription.
+   * Returns the builder for the API method createSubscription.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -244,7 +245,7 @@ public class SubscriberSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the ApiCallableBuilder for the API method getSubscription.
+   * Returns the builder for the API method getSubscription.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -254,7 +255,7 @@ public class SubscriberSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the PageStreamingApiCallableBuilder for the API method listSubscriptions.
+   * Returns the builder for the API method listSubscriptions.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -266,7 +267,7 @@ public class SubscriberSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the ApiCallableBuilder for the API method deleteSubscription.
+   * Returns the builder for the API method deleteSubscription.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -276,7 +277,7 @@ public class SubscriberSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the ApiCallableBuilder for the API method modifyAckDeadline.
+   * Returns the builder for the API method modifyAckDeadline.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -286,7 +287,7 @@ public class SubscriberSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the ApiCallableBuilder for the API method acknowledge.
+   * Returns the builder for the API method acknowledge.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -296,7 +297,7 @@ public class SubscriberSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the ApiCallableBuilder for the API method pull.
+   * Returns the builder for the API method pull.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -306,7 +307,7 @@ public class SubscriberSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the ApiCallableBuilder for the API method modifyPushConfig.
+   * Returns the builder for the API method modifyPushConfig.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -315,9 +316,11 @@ public class SubscriberSettings extends ServiceApiSettings {
     return methods.modifyPushConfigMethod;
   }
 
-  private static PageDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+  private static PageStreamingDescriptor<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
       LIST_SUBSCRIPTIONS_PAGE_STR_DESC =
-          new PageDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>() {
+          new PageStreamingDescriptor<
+              ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>() {
             @Override
             public Object emptyToken() {
               return "";
