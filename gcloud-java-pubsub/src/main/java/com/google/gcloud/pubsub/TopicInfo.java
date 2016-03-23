@@ -46,7 +46,8 @@ public class TopicInfo implements Serializable {
 
     private String name;
 
-    BuilderImpl() {
+    BuilderImpl(String name) {
+      this.name = checkNotNull(name);
     }
 
     BuilderImpl(TopicInfo topicInfo) {
@@ -99,14 +100,18 @@ public class TopicInfo implements Serializable {
   }
 
   static TopicInfo fromPb(com.google.pubsub.v1.Topic topicPb) {
-    return builder().name(topicPb.getName()).build();
+    return builder(topicPb.getName()).build();
   }
 
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
 
-  public static Builder builder() {
-    return new BuilderImpl();
+  public static TopicInfo of(String name) {
+    return builder(name).build();
+  }
+
+  public static Builder builder(String name) {
+    return new BuilderImpl(name);
   }
 }

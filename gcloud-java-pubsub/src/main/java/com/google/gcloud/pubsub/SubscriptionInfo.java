@@ -60,8 +60,8 @@ public class SubscriptionInfo implements Serializable {
     private int ackDeadlineSeconds;
 
     private BuilderImpl(String topic, String name) {
-      this.topic = topic;
-      this.name = name;
+      this.topic = checkNotNull(topic);
+      this.name = checkNotNull(name);
     }
 
     BuilderImpl(SubscriptionInfo subscription) {
@@ -172,6 +172,10 @@ public class SubscriptionInfo implements Serializable {
 
   public static SubscriptionInfo of(String topic, String name) {
     return builder(topic, name).build();
+  }
+
+  public static SubscriptionInfo of(String topic, String name, String endpoint) {
+    return builder(topic, name).pushConfig(PushConfig.of(endpoint)).build();
   }
 
   public static Builder builder(String topic, String name) {
