@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.bigquery.spi;
 
 import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
@@ -100,7 +100,7 @@ public interface BigQueryRpc {
    *
    * @throws BigQueryException upon failure
    */
-  Dataset getDataset(String datasetId, Map<Option, ?> options) throws BigQueryException;
+  Dataset getDataset(String datasetId, Map<Option, ?> options);
 
   /**
    * Lists the project's datasets. Partial information is returned on a dataset (datasetReference,
@@ -108,13 +108,28 @@ public interface BigQueryRpc {
    *
    * @throws BigQueryException upon failure
    */
-  Tuple<String, Iterable<Dataset>> listDatasets(Map<Option, ?> options) throws BigQueryException;
+  Tuple<String, Iterable<Dataset>> listDatasets(Map<Option, ?> options);
 
-  Dataset create(Dataset dataset, Map<Option, ?> options) throws BigQueryException;
+  /**
+   * Creates a new dataset.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Dataset create(Dataset dataset, Map<Option, ?> options);
 
-  Table create(Table table, Map<Option, ?> options) throws BigQueryException;
+  /**
+   * Creates a new table.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Table create(Table table, Map<Option, ?> options);
 
-  Job create(Job job, Map<Option, ?> options) throws BigQueryException;
+  /**
+   * Creates a new job.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Job create(Job job, Map<Option, ?> options);
 
   /**
    * Delete the requested dataset.
@@ -122,18 +137,28 @@ public interface BigQueryRpc {
    * @return {@code true} if dataset was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
-  boolean deleteDataset(String datasetId, Map<Option, ?> options) throws BigQueryException;
+  boolean deleteDataset(String datasetId, Map<Option, ?> options);
 
-  Dataset patch(Dataset dataset, Map<Option, ?> options) throws BigQueryException;
+  /**
+   * Updates dataset information.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Dataset patch(Dataset dataset, Map<Option, ?> options);
 
-  Table patch(Table table, Map<Option, ?> options) throws BigQueryException;
+  /**
+   * Updates table information.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Table patch(Table table, Map<Option, ?> options);
 
   /**
    * Returns the requested table or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  Table getTable(String datasetId, String tableId, Map<Option, ?> options) throws BigQueryException;
+  Table getTable(String datasetId, String tableId, Map<Option, ?> options);
 
   /**
    * Lists the dataset's tables. Partial information is returned on a table (tableReference,
@@ -141,8 +166,7 @@ public interface BigQueryRpc {
    *
    * @throws BigQueryException upon failure
    */
-  Tuple<String, Iterable<Table>> listTables(String dataset, Map<Option, ?> options)
-      throws BigQueryException;
+  Tuple<String, Iterable<Table>> listTables(String dataset, Map<Option, ?> options);
 
   /**
    * Delete the requested table.
@@ -150,27 +174,37 @@ public interface BigQueryRpc {
    * @return {@code true} if table was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
-  boolean deleteTable(String datasetId, String tableId) throws BigQueryException;
+  boolean deleteTable(String datasetId, String tableId);
 
+  /**
+   * Sends an insert all request.
+   *
+   * @throws BigQueryException upon failure
+   */
   TableDataInsertAllResponse insertAll(String datasetId, String tableId,
-      TableDataInsertAllRequest request) throws BigQueryException;
+      TableDataInsertAllRequest request);
 
+  /**
+   * Lists the table's rows.
+   *
+   * @throws BigQueryException upon failure
+   */
   Tuple<String, Iterable<TableRow>> listTableData(String datasetId, String tableId,
-      Map<Option, ?> options) throws BigQueryException;
+      Map<Option, ?> options);
 
   /**
    * Returns the requested job or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  Job getJob(String jobId, Map<Option, ?> options) throws BigQueryException;
+  Job getJob(String jobId, Map<Option, ?> options);
 
   /**
    * Lists the project's jobs.
    *
    * @throws BigQueryException upon failure
    */
-  Tuple<String, Iterable<Job>> listJobs(Map<Option, ?> options) throws BigQueryException;
+  Tuple<String, Iterable<Job>> listJobs(Map<Option, ?> options);
 
   /**
    * Sends a job cancel request. This call will return immediately, and the client will need to poll
@@ -180,12 +214,21 @@ public interface BigQueryRpc {
    *     found
    * @throws BigQueryException upon failure
    */
-  boolean cancel(String jobId) throws BigQueryException;
+  boolean cancel(String jobId);
 
-  GetQueryResultsResponse getQueryResults(String jobId, Map<Option, ?> options)
-      throws BigQueryException;
+  /**
+   * Returns results of the query associated with the provided job.
+   *
+   * @throws BigQueryException upon failure
+   */
+  GetQueryResultsResponse getQueryResults(String jobId, Map<Option, ?> options);
 
-  QueryResponse query(QueryRequest request) throws BigQueryException;
+  /**
+   * Runs the query associated with the request.
+   *
+   * @throws BigQueryException upon failure
+   */
+  QueryResponse query(QueryRequest request);
 
   /**
    * Opens a resumable upload session to load data into a BigQuery table and returns an upload URI.
@@ -193,7 +236,7 @@ public interface BigQueryRpc {
    * @param configuration load configuration
    * @throws BigQueryException upon failure
    */
-  String open(JobConfiguration configuration) throws BigQueryException;
+  String open(JobConfiguration configuration);
 
   /**
    * Uploads the provided data to the resumable upload session at the specified position.
@@ -207,5 +250,5 @@ public interface BigQueryRpc {
    * @throws BigQueryException upon failure
    */
   void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
-      boolean last) throws BigQueryException;
+      boolean last);
 }

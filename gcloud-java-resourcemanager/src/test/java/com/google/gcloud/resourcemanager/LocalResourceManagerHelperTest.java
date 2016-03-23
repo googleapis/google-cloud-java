@@ -2,24 +2,29 @@ package com.google.gcloud.resourcemanager;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.services.cloudresourcemanager.model.Binding;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.resourcemanager.spi.DefaultResourceManagerRpc;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc.Tuple;
 import com.google.gcloud.resourcemanager.testing.LocalResourceManagerHelper;
-import com.google.gcloud.spi.DefaultResourceManagerRpc;
-import com.google.gcloud.spi.ResourceManagerRpc;
-import com.google.gcloud.spi.ResourceManagerRpc.Tuple;
 
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public class LocalResourceManagerHelperTest {
@@ -45,7 +50,12 @@ public class LocalResourceManagerHelperTest {
           .setLabels(ImmutableMap.of("k1", "v1", "k2", "v2"));
   private static final com.google.api.services.cloudresourcemanager.model.Project
       PROJECT_WITH_PARENT =
-      copyFrom(COMPLETE_PROJECT).setProjectId("project-with-parent-id").setParent(PARENT);
+          copyFrom(COMPLETE_PROJECT).setProjectId("project-with-parent-id").setParent(PARENT);
+  private static final List<Binding> BINDINGS = ImmutableList.of(
+      new Binding().setRole("roles/owner").setMembers(ImmutableList.of("user:me@gmail.com")),
+      new Binding().setRole("roles/viewer").setMembers(ImmutableList.of("group:group@gmail.com")));
+  private static final com.google.api.services.cloudresourcemanager.model.Policy POLICY =
+      new com.google.api.services.cloudresourcemanager.model.Policy().setBindings(BINDINGS);
 
   @BeforeClass
   public static void beforeClass() {
@@ -92,6 +102,13 @@ public class LocalResourceManagerHelperTest {
     assertNull(returnedProject.getParent());
     assertNotNull(returnedProject.getProjectNumber());
     assertNotNull(returnedProject.getCreateTime());
+    com.google.api.services.cloudresourcemanager.model.Policy policy =
+        rpc.getPolicy(PARTIAL_PROJECT.getProjectId());
+    assertEquals(Collections.emptyList(), policy.getBindings());
+    assertNotNull(policy.getEtag());
+    assertEquals(0, policy.getVersion().intValue());
+    rpc.replacePolicy(PARTIAL_PROJECT.getProjectId(), POLICY);
+    assertEquals(POLICY.getBindings(), rpc.getPolicy(PARTIAL_PROJECT.getProjectId()).getBindings());
     try {
       rpc.create(PARTIAL_PROJECT);
       fail("Should fail, project already exists.");
@@ -99,6 +116,8 @@ public class LocalResourceManagerHelperTest {
       assertEquals(409, e.code());
       assertTrue(e.getMessage().startsWith("A project with the same project ID")
           && e.getMessage().endsWith("already exists."));
+      assertEquals(
+          POLICY.getBindings(), rpc.getPolicy(PARTIAL_PROJECT.getProjectId()).getBindings());
     }
     returnedProject = rpc.create(PROJECT_WITH_PARENT);
     compareReadWriteFields(PROJECT_WITH_PARENT, returnedProject);
@@ -610,6 +629,58 @@ public class LocalResourceManagerHelperTest {
   }
 
   @Test
+  public void testGetPolicy() {
+    assertNull(rpc.getPolicy("nonexistent-project"));
+    rpc.create(PARTIAL_PROJECT);
+    com.google.api.services.cloudresourcemanager.model.Policy policy =
+        rpc.getPolicy(PARTIAL_PROJECT.getProjectId());
+    assertEquals(Collections.emptyList(), policy.getBindings());
+    assertNotNull(policy.getEtag());
+  }
+
+  @Test
+  public void testReplacePolicy() {
+    try {
+      rpc.replacePolicy("nonexistent-project", POLICY);
+      fail("Project doesn't exist.");
+    } catch (ResourceManagerException e) {
+      assertEquals(403, e.code());
+      assertTrue(e.getMessage().contains("project was not found"));
+    }
+    rpc.create(PARTIAL_PROJECT);
+    com.google.api.services.cloudresourcemanager.model.Policy invalidPolicy =
+        new com.google.api.services.cloudresourcemanager.model.Policy().setEtag("wrong-etag");
+    try {
+      rpc.replacePolicy(PARTIAL_PROJECT.getProjectId(), invalidPolicy);
+      fail("Invalid etag.");
+    } catch (ResourceManagerException e) {
+      assertEquals(409, e.code());
+      assertTrue(e.getMessage().startsWith("Policy etag mismatch"));
+    }
+    String originalEtag = rpc.getPolicy(PARTIAL_PROJECT.getProjectId()).getEtag();
+    com.google.api.services.cloudresourcemanager.model.Policy newPolicy =
+        rpc.replacePolicy(PARTIAL_PROJECT.getProjectId(), POLICY);
+    assertEquals(POLICY.getBindings(), newPolicy.getBindings());
+    assertNotNull(newPolicy.getEtag());
+    assertNotEquals(originalEtag, newPolicy.getEtag());
+  }
+
+  @Test
+  public void testTestPermissions() {
+    List<String> permissions = ImmutableList.of("resourcemanager.projects.get");
+    try {
+      rpc.testPermissions("nonexistent-project", permissions);
+      fail("Nonexistent project.");
+    } catch (ResourceManagerException e) {
+      assertEquals(403, e.code());
+      assertEquals("Project nonexistent-project not found.", e.getMessage());
+    }
+    rpc.create(PARTIAL_PROJECT);
+    assertEquals(ImmutableList.of(true),
+        rpc.testPermissions(PARTIAL_PROJECT.getProjectId(), permissions));
+  }
+
+  @Test
   public void testChangeLifecycleStatus() {
     assertFalse(RESOURCE_MANAGER_HELPER.changeLifecycleState(
         COMPLETE_PROJECT.getProjectId(), "DELETE_IN_PROGRESS"));
@@ -632,8 +703,10 @@ public class LocalResourceManagerHelperTest {
   public void testRemoveProject() {
     assertFalse(RESOURCE_MANAGER_HELPER.removeProject(COMPLETE_PROJECT.getProjectId()));
     rpc.create(COMPLETE_PROJECT);
+    assertNotNull(rpc.getPolicy(COMPLETE_PROJECT.getProjectId()));
     assertTrue(RESOURCE_MANAGER_HELPER.removeProject(COMPLETE_PROJECT.getProjectId()));
     assertNull(rpc.get(COMPLETE_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS));
+    assertNull(rpc.getPolicy(COMPLETE_PROJECT.getProjectId()));
   }
 
   private void compareReadWriteFields(

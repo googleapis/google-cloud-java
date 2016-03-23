@@ -12,14 +12,17 @@
  * the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.bigquery.spi;
 
-import static com.google.gcloud.spi.BigQueryRpc.Option.DELETE_CONTENTS;
-import static com.google.gcloud.spi.BigQueryRpc.Option.FIELDS;
-import static com.google.gcloud.spi.BigQueryRpc.Option.MAX_RESULTS;
-import static com.google.gcloud.spi.BigQueryRpc.Option.PAGE_TOKEN;
-import static com.google.gcloud.spi.BigQueryRpc.Option.START_INDEX;
-import static com.google.gcloud.spi.BigQueryRpc.Option.TIMEOUT;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.ALL_DATASETS;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.ALL_USERS;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.DELETE_CONTENTS;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.FIELDS;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.MAX_RESULTS;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.PAGE_TOKEN;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.START_INDEX;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.STATE_FILTER;
+import static com.google.gcloud.bigquery.spi.BigQueryRpc.Option.TIMEOUT;
 import static java.net.HttpURLConnection.HTTP_CREATED;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static java.net.HttpURLConnection.HTTP_OK;
@@ -90,7 +93,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Dataset getDataset(String datasetId, Map<Option, ?> options) throws BigQueryException {
+  public Dataset getDataset(String datasetId, Map<Option, ?> options) {
     try {
       return bigquery.datasets()
           .get(this.options.projectId(), datasetId)
@@ -106,13 +109,13 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<Dataset>> listDatasets(Map<Option, ?> options)
-      throws BigQueryException {
+  public Tuple<String, Iterable<Dataset>> listDatasets(Map<Option, ?> options) {
     try {
       DatasetList datasetsList = bigquery.datasets()
           .list(this.options.projectId())
-          .setAll(Option.ALL_DATASETS.getBoolean(options))
+          .setAll(ALL_DATASETS.getBoolean(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
           .setPageToken(PAGE_TOKEN.getString(options))
           .execute();
       Iterable<DatasetList.Datasets> datasets = datasetsList.getDatasets();
@@ -135,7 +138,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Dataset create(Dataset dataset, Map<Option, ?> options) throws BigQueryException {
+  public Dataset create(Dataset dataset, Map<Option, ?> options) {
     try {
       return bigquery.datasets().insert(this.options.projectId(), dataset)
           .setFields(FIELDS.getString(options))
@@ -146,8 +149,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Table create(Table table, Map<Option, ?> options)
-      throws BigQueryException {
+  public Table create(Table table, Map<Option, ?> options) {
     try {
       // unset the type, as it is output only
       table.setType(null);
@@ -161,7 +163,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Job create(Job job, Map<Option, ?> options) throws BigQueryException {
+  public Job create(Job job, Map<Option, ?> options) {
     try {
       return bigquery.jobs()
           .insert(this.options.projectId(), job)
@@ -173,7 +175,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public boolean deleteDataset(String datasetId, Map<Option, ?> options) throws BigQueryException {
+  public boolean deleteDataset(String datasetId, Map<Option, ?> options) {
     try {
       bigquery.datasets().delete(this.options.projectId(), datasetId)
           .setDeleteContents(DELETE_CONTENTS.getBoolean(options))
@@ -189,7 +191,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Dataset patch(Dataset dataset, Map<Option, ?> options) throws BigQueryException {
+  public Dataset patch(Dataset dataset, Map<Option, ?> options) {
     try {
       DatasetReference reference = dataset.getDatasetReference();
       return bigquery.datasets()
@@ -202,7 +204,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Table patch(Table table, Map<Option, ?> options) throws BigQueryException {
+  public Table patch(Table table, Map<Option, ?> options) {
     try {
       // unset the type, as it is output only
       table.setType(null);
@@ -217,8 +219,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Table getTable(String datasetId, String tableId, Map<Option, ?> options)
-      throws BigQueryException {
+  public Table getTable(String datasetId, String tableId, Map<Option, ?> options) {
     try {
       return bigquery.tables()
           .get(this.options.projectId(), datasetId, tableId)
@@ -234,8 +235,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<Table>> listTables(String datasetId, Map<Option, ?> options)
-      throws BigQueryException {
+  public Tuple<String, Iterable<Table>> listTables(String datasetId, Map<Option, ?> options) {
     try {
       TableList tableList = bigquery.tables()
           .list(this.options.projectId(), datasetId)
@@ -262,7 +262,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public boolean deleteTable(String datasetId, String tableId) throws BigQueryException {
+  public boolean deleteTable(String datasetId, String tableId) {
     try {
       bigquery.tables().delete(this.options.projectId(), datasetId, tableId).execute();
       return true;
@@ -277,7 +277,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
 
   @Override
   public TableDataInsertAllResponse insertAll(String datasetId, String tableId,
-      TableDataInsertAllRequest request) throws BigQueryException {
+      TableDataInsertAllRequest request) {
     try {
       return bigquery.tabledata()
           .insertAll(this.options.projectId(), datasetId, tableId, request)
@@ -289,7 +289,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
 
   @Override
   public Tuple<String, Iterable<TableRow>> listTableData(String datasetId, String tableId,
-      Map<Option, ?> options) throws BigQueryException {
+      Map<Option, ?> options) {
     try {
       TableDataList tableDataList = bigquery.tabledata()
           .list(this.options.projectId(), datasetId, tableId)
@@ -306,7 +306,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Job getJob(String jobId, Map<Option, ?> options) throws BigQueryException {
+  public Job getJob(String jobId, Map<Option, ?> options) {
     try {
       return bigquery.jobs()
           .get(this.options.projectId(), jobId)
@@ -322,13 +322,13 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<Job>> listJobs(Map<Option, ?> options) throws BigQueryException {
+  public Tuple<String, Iterable<Job>> listJobs(Map<Option, ?> options) {
     try {
       JobList jobsList = bigquery.jobs()
           .list(this.options.projectId())
-          .setAllUsers(Option.ALL_USERS.getBoolean(options))
-          .setFields(Option.FIELDS.getString(options))
-          .setStateFilter(Option.STATE_FILTER.<List<String>>get(options))
+          .setAllUsers(ALL_USERS.getBoolean(options))
+          .setFields(FIELDS.getString(options))
+          .setStateFilter(STATE_FILTER.<List<String>>get(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
           .setPageToken(PAGE_TOKEN.getString(options))
           .setProjection(DEFAULT_PROJECTION)
@@ -363,7 +363,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public boolean cancel(String jobId) throws BigQueryException {
+  public boolean cancel(String jobId) {
     try {
       bigquery.jobs().cancel(this.options.projectId(), jobId).execute();
       return true;
@@ -377,8 +377,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public GetQueryResultsResponse getQueryResults(String jobId, Map<Option, ?> options)
-      throws BigQueryException {
+  public GetQueryResultsResponse getQueryResults(String jobId, Map<Option, ?> options) {
     try {
       return bigquery.jobs().getQueryResults(this.options.projectId(), jobId)
           .setMaxResults(MAX_RESULTS.getLong(options))
@@ -397,7 +396,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public QueryResponse query(QueryRequest request) throws BigQueryException {
+  public QueryResponse query(QueryRequest request) {
     try {
       return bigquery.jobs().query(this.options.projectId(), request).execute();
     } catch (IOException ex) {
@@ -406,7 +405,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public String open(JobConfiguration configuration) throws BigQueryException {
+  public String open(JobConfiguration configuration) {
     try {
       Job loadJob = new Job().setConfiguration(configuration);
       StringBuilder builder = new StringBuilder()
@@ -429,7 +428,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
 
   @Override
   public void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
-      boolean last) throws BigQueryException {
+      boolean last) {
     try {
       GenericUrl url = new GenericUrl(uploadId);
       HttpRequest httpRequest = bigquery.getRequestFactory().buildPutRequest(url,

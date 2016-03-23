@@ -16,24 +16,17 @@
 
 package com.google.gcloud.dns;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
-
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.BaseSerializationTest;
+import com.google.gcloud.Restorable;
 import com.google.gcloud.RetryParams;
 
-import org.junit.Test;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.concurrent.TimeUnit;
 
-public class SerializationTest {
+public class SerializationTest extends BaseSerializationTest {
 
   private static final ZoneInfo FULL_ZONE_INFO = Zone.of("some zone name", "www.example.com",
       "some descriptions").toBuilder()
@@ -86,31 +79,24 @@ public class SerializationTest {
       .startTimeMillis(132L)
       .build();
 
-  @Test
-  public void testModelAndRequests() throws Exception {
-    Serializable[] objects = {FULL_ZONE_INFO, PARTIAL_ZONE_INFO, ZONE_LIST_OPTION,
+  @Override
+  protected Serializable[] serializableObjects() {
+    DnsOptions options = DnsOptions.builder()
+        .authCredentials(AuthCredentials.createForAppEngine())
+        .projectId("ds1")
+        .build();
+    DnsOptions otherOptions = options.toBuilder()
+        .authCredentials(null)
+        .build();
+    return new Serializable[]{FULL_ZONE_INFO, PARTIAL_ZONE_INFO, ZONE_LIST_OPTION,
         DNS_REOCRD_LIST_OPTION, CHANGE_REQUEST_LIST_OPTION, ZONE_OPTION, CHANGE_REQUEST_OPTION,
         PROJECT_OPTION, PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, OPTIONS, FULL_ZONE, PARTIAL_ZONE,
         OPTIONS, CHANGE_REQUEST_PARTIAL, DNS_RECORD_PARTIAL, DNS_RECORD_COMPLETE,
-        CHANGE_REQUEST_COMPLETE};
-    for (Serializable obj : objects) {
-      Object copy = serializeAndDeserialize(obj);
-      assertEquals(obj, obj);
-      assertEquals(obj, copy);
-      assertNotSame(obj, copy);
-      assertEquals(copy, copy);
-    }
+        CHANGE_REQUEST_COMPLETE, options, otherOptions};
   }
 
-  @SuppressWarnings("unchecked")
-  private <T> T serializeAndDeserialize(T obj) throws IOException, ClassNotFoundException {
-    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-    try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
-      output.writeObject(obj);
-    }
-    try (ObjectInputStream input =
-             new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
-      return (T) input.readObject();
-    }
+  @Override
+  protected Restorable<?>[] restorableObjects() {
+    return new Restorable<?>[0];
   }
 }

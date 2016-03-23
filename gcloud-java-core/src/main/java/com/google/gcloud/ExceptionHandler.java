@@ -26,6 +26,7 @@ import com.google.common.collect.Sets;
 
 import java.io.Serializable;
 import java.lang.reflect.Method;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.Callable;
 
@@ -257,6 +258,26 @@ public final class ExceptionHandler implements Serializable {
       }
     }
     return retryResult == Interceptor.RetryResult.RETRY;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(interceptors, retriableExceptions, nonRetriableExceptions, retryInfo);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof ExceptionHandler)) {
+      return false;
+    }
+    ExceptionHandler other = (ExceptionHandler) obj;
+    return Objects.equals(interceptors, other.interceptors)
+        && Objects.equals(retriableExceptions, other.retriableExceptions)
+        && Objects.equals(nonRetriableExceptions, other.nonRetriableExceptions)
+        && Objects.equals(retryInfo, other.retryInfo);
   }
 
   /**

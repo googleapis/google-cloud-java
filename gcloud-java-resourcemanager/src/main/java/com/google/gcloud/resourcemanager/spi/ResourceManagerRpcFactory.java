@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.resourcemanager.spi;
 
-import com.google.gcloud.storage.StorageOptions;
+import com.google.gcloud.resourcemanager.ResourceManagerOptions;
+import com.google.gcloud.spi.ServiceRpcFactory;
 
 /**
- * An interface for Storage RPC factory.
+ * An interface for Resource Manager RPC factory.
  * Implementation will be loaded via {@link java.util.ServiceLoader}.
  */
-public interface StorageRpcFactory extends ServiceRpcFactory<StorageRpc, StorageOptions> {
+public interface ResourceManagerRpcFactory
+    extends ServiceRpcFactory<ResourceManagerRpc, ResourceManagerOptions> {
 }
-

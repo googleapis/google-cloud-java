@@ -132,7 +132,8 @@ public class RemoteGcsHelperTest {
   @Test
   public void testForceDeleteTimeout() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
-    EasyMock.expect(storageMock.list(BUCKET_NAME)).andReturn(blobPage).anyTimes();
+    EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
+        .andReturn(blobPage).anyTimes();
     for (BlobInfo info : blobList) {
       EasyMock.expect(storageMock.delete(info.blobId())).andReturn(true).anyTimes();
     }

@@ -18,9 +18,9 @@ package com.google.gcloud.resourcemanager;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.spi.DefaultResourceManagerRpc;
-import com.google.gcloud.spi.ResourceManagerRpc;
-import com.google.gcloud.spi.ResourceManagerRpcFactory;
+import com.google.gcloud.resourcemanager.spi.DefaultResourceManagerRpc;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc;
+import com.google.gcloud.resourcemanager.spi.ResourceManagerRpcFactory;
 
 import java.util.Set;
 
