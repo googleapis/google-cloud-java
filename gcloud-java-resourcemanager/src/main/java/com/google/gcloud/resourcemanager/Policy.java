@@ -17,7 +17,6 @@
 package com.google.gcloud.resourcemanager;
 
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.CaseFormat;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
@@ -41,14 +40,20 @@ import java.util.Set;
  *
  * @see <a href="https://cloud.google.com/iam/reference/rest/v1/Policy">Policy</a>
  */
-public class Policy extends IamPolicy<Policy.Role> {
+public class Policy extends IamPolicy<String> {
 
   private static final long serialVersionUID = -5573557282693961850L;
 
   /**
-   * Represents legacy roles in an IAM Policy.
+   * The project-level roles in an IAM policy. This enum is not an exhaustive list of all roles
+   * you can use in an IAM policy. You can also use service-specific roles (e.g.
+   * "roles/pubsub.editor").  See the <i>Supported Cloud Platform Services</i> page for links
+   * to service-specific roles.
+   *
+   * @see <a href="https://cloud.google.com/iam/#supported_cloud_platform_services">Supported Cloud
+   * Platform Services</a>
    */
-  public enum Role {
+  public enum ProjectRole {
 
     /**
      * Permissions for read-only actions that preserve state.
@@ -69,31 +74,29 @@ public class Policy extends IamPolicy<Policy.Role> {
      */
     OWNER("roles/owner");
 
-    private String strValue;
+    private final String value;
 
-    private Role(String strValue) {
-      this.strValue = strValue;
+    private ProjectRole(String value) {
+      this.value = value;
     }
 
-    String strValue() {
-      return strValue;
-    }
-
-    static Role fromStr(String roleStr) {
-      return Role.valueOf(CaseFormat.LOWER_CAMEL.to(
-          CaseFormat.UPPER_UNDERSCORE, roleStr.substring("roles/".length())));
+    /**
+     * Returns the string value associated with the role.
+     */
+    public String value() {
+      return value;
     }
   }
 
   /**
    * Builder for an IAM Policy.
    */
-  public static class Builder extends IamPolicy.Builder<Role, Builder> {
+  public static class Builder extends IamPolicy.Builder<String, Builder> {
 
     private Builder() {}
 
     @VisibleForTesting
-    Builder(Map<Role, Set<Identity>> bindings, String etag, Integer version) {
+    Builder(Map<String, Set<Identity>> bindings, String etag, Integer version) {
       bindings(bindings).etag(etag).version(version);
     }
 
@@ -116,15 +119,20 @@ public class Policy extends IamPolicy<Policy.Role> {
     return new Builder(bindings(), etag(), version());
   }
 
+  @Override
+  public String toString() {
+    return toPb().toString();
+  }
+
   com.google.api.services.cloudresourcemanager.model.Policy toPb() {
     com.google.api.services.cloudresourcemanager.model.Policy policyPb =
         new com.google.api.services.cloudresourcemanager.model.Policy();
     List<com.google.api.services.cloudresourcemanager.model.Binding> bindingPbList =
         new LinkedList<>();
-    for (Map.Entry<Role, Set<Identity>> binding : bindings().entrySet()) {
+    for (Map.Entry<String, Set<Identity>> binding : bindings().entrySet()) {
       com.google.api.services.cloudresourcemanager.model.Binding bindingPb =
           new com.google.api.services.cloudresourcemanager.model.Binding();
-      bindingPb.setRole(binding.getKey().strValue());
+      bindingPb.setRole(binding.getKey());
       bindingPb.setMembers(
           Lists.transform(
               new ArrayList<>(binding.getValue()),
@@ -144,11 +152,11 @@ public class Policy extends IamPolicy<Policy.Role> {
 
   static Policy fromPb(
       com.google.api.services.cloudresourcemanager.model.Policy policyPb) {
-    Map<Role, Set<Identity>> bindings = new HashMap<>();
+    Map<String, Set<Identity>> bindings = new HashMap<>();
     for (com.google.api.services.cloudresourcemanager.model.Binding bindingPb :
         policyPb.getBindings()) {
       bindings.put(
-          Role.fromStr(bindingPb.getRole()),
+          bindingPb.getRole(),
           ImmutableSet.copyOf(
               Lists.transform(
                   bindingPb.getMembers(),

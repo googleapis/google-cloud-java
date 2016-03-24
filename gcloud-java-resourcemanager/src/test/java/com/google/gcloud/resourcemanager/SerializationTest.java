@@ -16,26 +16,17 @@
 
 package com.google.gcloud.resourcemanager;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
-
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
+import com.google.gcloud.BaseSerializationTest;
 import com.google.gcloud.Identity;
 import com.google.gcloud.PageImpl;
-import com.google.gcloud.RetryParams;
+import com.google.gcloud.Restorable;
+import com.google.gcloud.resourcemanager.Policy.ProjectRole;
 
-import org.junit.Test;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Collections;
 
-public class SerializationTest {
+public class SerializationTest extends BaseSerializationTest {
 
 private static final ResourceManager RESOURCE_MANAGER =
       ResourceManagerOptions.defaultInstance().service();
@@ -56,44 +47,24 @@ private static final ResourceManager RESOURCE_MANAGER =
   private static final ResourceManager.ProjectListOption PROJECT_LIST_OPTION =
       ResourceManager.ProjectListOption.filter("name:*");
   private static final Policy POLICY = Policy.builder()
-      .addBinding(Policy.Role.VIEWER, ImmutableSet.of(Identity.user("abc@gmail.com")))
+      .addIdentity(ProjectRole.VIEWER.value(), Identity.user("abc@gmail.com"))
       .build();
+  private static final ResourceManagerException RESOURCE_MANAGER_EXCEPTION =
+      new ResourceManagerException(42, "message");
 
-  @Test
-  public void testServiceOptions() throws Exception {
+  @Override
+  protected Serializable[] serializableObjects() {
     ResourceManagerOptions options = ResourceManagerOptions.builder().build();
-    ResourceManagerOptions serializedCopy = serializeAndDeserialize(options);
-    assertEquals(options, serializedCopy);
-    options = options.toBuilder()
+    ResourceManagerOptions otherOptions = options.toBuilder()
         .projectId("some-unnecessary-project-ID")
-        .retryParams(RetryParams.defaultInstance())
         .build();
-    serializedCopy = serializeAndDeserialize(options);
-    assertEquals(options, serializedCopy);
+    return new Serializable[]{PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PROJECT, PAGE_RESULT,
+        PROJECT_GET_OPTION, PROJECT_LIST_OPTION, POLICY, RESOURCE_MANAGER_EXCEPTION, options,
+        otherOptions};
   }
 
-  @Test
-  public void testModelAndRequests() throws Exception {
-    Serializable[] objects = {PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PROJECT, PAGE_RESULT,
-        PROJECT_GET_OPTION, PROJECT_LIST_OPTION, POLICY};
-    for (Serializable obj : objects) {
-      Object copy = serializeAndDeserialize(obj);
-      assertEquals(obj, obj);
-      assertEquals(obj, copy);
-      assertNotSame(obj, copy);
-      assertEquals(copy, copy);
-    }
-  }
-
-  @SuppressWarnings("unchecked")
-  private <T> T serializeAndDeserialize(T obj) throws IOException, ClassNotFoundException {
-    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-    try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
-      output.writeObject(obj);
-    }
-    try (ObjectInputStream input =
-        new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
-      return (T) input.readObject();
-    }
+  @Override
+  protected Restorable<?>[] restorableObjects() {
+    return null;
   }
 }

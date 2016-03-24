@@ -17,17 +17,16 @@
 package com.google.gcloud;
 
 import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 
 import java.io.Serializable;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -69,12 +68,16 @@ public abstract class IamPolicy<R> implements Serializable {
     /**
      * Replaces the builder's map of bindings with the given map of bindings.
      *
-     * @throws IllegalArgumentException if the provided map is null or contain any null values
+     * @throws NullPointerException if the given map is null or contains any null keys or values
+     * @throws IllegalArgumentException if any identities in the given map are null
      */
     public final B bindings(Map<R, Set<Identity>> bindings) {
-      checkArgument(bindings != null, "The provided map of bindings cannot be null.");
+      checkNotNull(bindings, "The provided map of bindings cannot be null.");
       for (Map.Entry<R, Set<Identity>> binding : bindings.entrySet()) {
-        verifyBinding(binding.getKey(), binding.getValue());
+        checkNotNull(binding.getKey(), "The role cannot be null.");
+        Set<Identity> identities = binding.getValue();
+        checkNotNull(identities, "A role cannot be assigned to a null set of identities.");
+        checkArgument(!identities.contains(null), "Null identities are not permitted.");
       }
       this.bindings.clear();
       for (Map.Entry<R, Set<Identity>> binding : bindings.entrySet()) {
@@ -84,78 +87,50 @@ public abstract class IamPolicy<R> implements Serializable {
     }
 
     /**
-     * Adds a binding to the policy.
-     *
-     * @throws IllegalArgumentException if the policy already contains a binding with the same role
-     *     or if the role or any identities are null
+     * Removes the role (and all identities associated with that role) from the policy.
      */
-    public final B addBinding(R role, Set<Identity> identities) {
-      verifyBinding(role, identities);
-      checkArgument(!bindings.containsKey(role),
-          "The policy already contains a binding with the role " + role.toString() + ".");
-      bindings.put(role, new HashSet<Identity>(identities));
-      return self();
-    }
-
-    /**
-     * Adds a binding to the policy.
-     *
-     * @throws IllegalArgumentException if the policy already contains a binding with the same role
-     *     or if the role or any identities are null
-     */
-    public final B addBinding(R role, Identity first, Identity... others) {
-      HashSet<Identity> identities = new HashSet<>();
-      identities.add(first);
-      identities.addAll(Arrays.asList(others));
-      return addBinding(role, identities);
-    }
-
-    private void verifyBinding(R role, Collection<Identity> identities) {
-      checkArgument(role != null, "The role cannot be null.");
-      verifyIdentities(identities);
-    }
-
-    private void verifyIdentities(Collection<Identity> identities) {
-      checkArgument(identities != null, "A role cannot be assigned to a null set of identities.");
-      checkArgument(!identities.contains(null), "Null identities are not permitted.");
-    }
-
-    /**
-     * Removes the binding associated with the specified role.
-     */
-    public final B removeBinding(R role) {
+    public final B removeRole(R role) {
       bindings.remove(role);
       return self();
     }
 
     /**
-     * Adds one or more identities to an existing binding.
+     * Adds one or more identities to the policy under the role specified.
      *
-     * @throws IllegalArgumentException if the policy doesn't contain a binding with the specified
-     *     role or any identities are null
+     * @throws NullPointerException if the role or any of the identities is null.
      */
     public final B addIdentity(R role, Identity first, Identity... others) {
-      checkArgument(bindings.containsKey(role),
-          "The policy doesn't contain the role " + role.toString() + ".");
-      List<Identity> toAdd = new LinkedList<>();
+      String nullIdentityMessage = "Null identities are not permitted.";
+      checkNotNull(first, nullIdentityMessage);
+      checkNotNull(others, nullIdentityMessage);
+      for (Identity identity : others) {
+        checkNotNull(identity, nullIdentityMessage);
+      }
+      Set<Identity> toAdd = new LinkedHashSet<>();
       toAdd.add(first);
       toAdd.addAll(Arrays.asList(others));
-      verifyIdentities(toAdd);
-      bindings.get(role).addAll(toAdd);
+      Set<Identity> identities = bindings.get(checkNotNull(role, "The role cannot be null."));
+      if (identities == null) {
+        identities = new HashSet<Identity>();
+        bindings.put(role, identities);
+      }
+      identities.addAll(toAdd);
       return self();
     }
 
     /**
-     * Removes one or more identities from an existing binding.
-     *
-     * @throws IllegalArgumentException if the policy doesn't contain a binding with the specified
-     *     role
+     * Removes one or more identities from an existing binding. Does nothing if the binding
+     * associated with the provided role doesn't exist.
      */
     public final B removeIdentity(R role, Identity first, Identity... others) {
-      checkArgument(bindings.containsKey(role),
-          "The policy doesn't contain the role " + role.toString() + ".");
-      bindings.get(role).remove(first);
-      bindings.get(role).removeAll(Arrays.asList(others));
+      Set<Identity> identities = bindings.get(role);
+      if (identities != null) {
+        identities.remove(first);
+        identities.removeAll(Arrays.asList(others));
+      }
+      if (identities != null && identities.isEmpty()) {
+        bindings.remove(role);
+      }
       return self();
     }
 

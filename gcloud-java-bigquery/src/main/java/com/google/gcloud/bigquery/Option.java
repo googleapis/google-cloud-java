@@ -19,7 +19,7 @@ package com.google.gcloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-import com.google.gcloud.spi.BigQueryRpc;
+import com.google.gcloud.bigquery.spi.BigQueryRpc;
 
 import java.io.Serializable;
 import java.util.Objects;
