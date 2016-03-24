@@ -26,6 +26,7 @@ import static org.junit.Assert.fail;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
 import com.google.gcloud.dns.ChangeRequest;
+import com.google.gcloud.dns.ChangeRequestInfo;
 import com.google.gcloud.dns.Dns;
 import com.google.gcloud.dns.DnsException;
 import com.google.gcloud.dns.DnsOptions;
@@ -76,11 +77,11 @@ public class ITDnsTest {
           .records(ImmutableList.of("ed:ed:12:aa:36:3:3:105"))
           .ttl(25, TimeUnit.SECONDS)
           .build();
-  private static final ChangeRequest CHANGE_ADD_ZONE1 = ChangeRequest.builder()
+  private static final ChangeRequestInfo CHANGE_ADD_ZONE1 = ChangeRequest.builder()
       .add(A_RECORD_ZONE1)
       .add(AAAA_RECORD_ZONE1)
       .build();
-  private static final ChangeRequest CHANGE_DELETE_ZONE1 = ChangeRequest.builder()
+  private static final ChangeRequestInfo CHANGE_DELETE_ZONE1 = ChangeRequest.builder()
       .delete(A_RECORD_ZONE1)
       .delete(AAAA_RECORD_ZONE1)
       .build();
@@ -593,7 +594,7 @@ public class ITDnsTest {
             .records(ImmutableList.of("0.255.1.5"))
             .build();
     try {
-      ChangeRequest validChange = ChangeRequest.builder().add(validA).build();
+      ChangeRequestInfo validChange = ChangeRequest.builder().add(validA).build();
       zone.applyChangeRequest(validChange);
       try {
         zone.applyChangeRequest(validChange);
@@ -605,7 +606,7 @@ public class ITDnsTest {
       }
       // delete with field mismatch
       RecordSet mismatch = validA.toBuilder().ttl(20, TimeUnit.SECONDS).build();
-      ChangeRequest deletion = ChangeRequest.builder().delete(mismatch).build();
+      ChangeRequestInfo deletion = ChangeRequest.builder().delete(mismatch).build();
       try {
         zone.applyChangeRequest(deletion);
         fail("Deleted a record set without a complete match.");
@@ -629,7 +630,7 @@ public class ITDnsTest {
         }
       }
       deletion = deletion.toBuilder().deletions(deletions).build();
-      ChangeRequest addition = ChangeRequest.builder().additions(additions).build();
+      ChangeRequestInfo addition = ChangeRequest.builder().additions(additions).build();
       try {
         zone.applyChangeRequest(deletion);
         fail("Deleted SOA.");
@@ -647,7 +648,7 @@ public class ITDnsTest {
         assertEquals(400, ex.code());
       }
     } finally {
-      ChangeRequest deletion = ChangeRequest.builder().delete(validA).build();
+      ChangeRequestInfo deletion = ChangeRequest.builder().delete(validA).build();
       ChangeRequest request = zone.applyChangeRequest(deletion);
       waitForChangeToComplete(zone.name(), request.id());
       zone.delete();

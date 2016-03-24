@@ -53,10 +53,10 @@ public class DnsImplTest {
   private static final String PAGE_TOKEN = "some token";
   private static final ZoneInfo ZONE_INFO = ZoneInfo.of(ZONE_NAME, DNS_NAME, DESCRIPTION);
   private static final ProjectInfo PROJECT_INFO = ProjectInfo.builder().build();
-  private static final ChangeRequest CHANGE_REQUEST_PARTIAL = ChangeRequest.builder()
+  private static final ChangeRequestInfo CHANGE_REQUEST_PARTIAL = ChangeRequest.builder()
       .add(DNS_RECORD1)
       .build();
-  private static final ChangeRequest CHANGE_REQUEST_COMPLETE = ChangeRequest.builder()
+  private static final ChangeRequestInfo CHANGE_REQUEST_COMPLETE = ChangeRequest.builder()
       .add(DNS_RECORD1)
       .startTimeMillis(123L)
       .status(ChangeRequest.Status.PENDING)

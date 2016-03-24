@@ -153,7 +153,7 @@ public class Zone extends ZoneInfo {
    * @return ChangeRequest with server-assigned ID
    * @throws DnsException upon failure or if the zone is not found
    */
-  public ChangeRequest applyChangeRequest(ChangeRequest changeRequest,
+  public ChangeRequest applyChangeRequest(ChangeRequestInfo changeRequest,
       Dns.ChangeRequestOption... options) {
     checkNotNull(changeRequest);
     return dns.applyChangeRequest(name(), changeRequest, options);

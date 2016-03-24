@@ -16,19 +16,11 @@
 
 package com.google.gcloud.dns;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.api.services.dns.model.Change;
 import com.google.common.base.Function;
-import com.google.common.base.MoreObjects;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
 
-import org.joda.time.DateTime;
-import org.joda.time.format.ISODateTimeFormat;
-
-import java.io.Serializable;
-import java.util.LinkedList;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.List;
 import java.util.Objects;
 
@@ -38,21 +30,12 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/changes">Google Cloud DNS documentation</a>
  */
-public class ChangeRequest implements Serializable {
+public class ChangeRequest extends ChangeRequestInfo {
 
-  static final Function<Change, ChangeRequest> FROM_PB_FUNCTION =
-      new Function<Change, ChangeRequest>() {
-        @Override
-        public ChangeRequest apply(com.google.api.services.dns.model.Change pb) {
-          return ChangeRequest.fromPb(pb);
-        }
-      };
   private static final long serialVersionUID = -9027378042756366333L;
-  private final List<RecordSet> additions;
-  private final List<RecordSet> deletions;
-  private final String id;
-  private final Long startTimeMillis;
-  private final Status status;
+  private final DnsOptions options;
+  private final String zoneName;
+  private transient Dns dns;
 
   /**
    * This enumerates the possible states of a {@code ChangeRequest}.
@@ -68,250 +51,152 @@ public class ChangeRequest implements Serializable {
   /**
    * A builder for {@code ChangeRequest}s.
    */
-  public static class Builder {
+  public static class Builder extends ChangeRequestInfo.Builder {
 
-    private List<RecordSet> additions = new LinkedList<>();
-    private List<RecordSet> deletions = new LinkedList<>();
-    private String id;
-    private Long startTimeMillis;
-    private Status status;
+    private final Dns dns;
+    private final String zoneName;
+    private final ChangeRequestInfo.BuilderImpl infoBuilder;
 
     private Builder(ChangeRequest cr) {
-      this.additions = Lists.newLinkedList(cr.additions());
-      this.deletions = Lists.newLinkedList(cr.deletions());
-      this.id = cr.id();
-      this.startTimeMillis = cr.startTimeMillis();
-      this.status = cr.status();
+      this.dns = cr.dns;
+      this.zoneName = cr.zoneName;
+      this.infoBuilder = new ChangeRequestInfo.BuilderImpl(cr);
     }
 
-    private Builder() {
-    }
-
-    /**
-     * Sets a collection of {@link RecordSet}s which are to be added to the zone upon executing this
-     * {@code ChangeRequest}.
-     */
+    @Override
     public Builder additions(List<RecordSet> additions) {
-      this.additions = Lists.newLinkedList(checkNotNull(additions));
+      infoBuilder.additions(additions);
       return this;
     }
 
-    /**
-     * Sets a collection of {@link RecordSet}s which are to be deleted from the zone upon executing
-     * this {@code ChangeRequest}.
-     */
+    @Override
     public Builder deletions(List<RecordSet> deletions) {
-      this.deletions = Lists.newLinkedList(checkNotNull(deletions));
+      infoBuilder.deletions(deletions);
       return this;
     }
 
-    /**
-     * Adds a {@link RecordSet} to be <strong>added</strong> to the zone upon executing this {@code
-     * ChangeRequest}.
-     */
+    @Override
     public Builder add(RecordSet recordSet) {
-      this.additions.add(checkNotNull(recordSet));
+      infoBuilder.add(recordSet);
       return this;
     }
 
-    /**
-     * Adds a {@link RecordSet} to be <strong>deleted</strong> to the zone upon executing this
-     * {@code ChangeRequest}.
-     */
+    @Override
     public Builder delete(RecordSet recordSet) {
-      this.deletions.add(checkNotNull(recordSet));
+      infoBuilder.delete(recordSet);
       return this;
     }
 
-    /**
-     * Clears the collection of {@link RecordSet}s which are to be added to the zone upon executing
-     * this {@code ChangeRequest}.
-     */
+    @Override
     public Builder clearAdditions() {
-      this.additions.clear();
+      infoBuilder.clearAdditions();
       return this;
     }
 
-    /**
-     * Clears the collection of {@link RecordSet}s which are to be deleted from the zone upon
-     * executing this {@code ChangeRequest}.
-     */
+    @Override
     public Builder clearDeletions() {
-      this.deletions.clear();
+      infoBuilder.clearDeletions();
       return this;
     }
 
-    /**
-     * Removes a single {@link RecordSet} from the collection of records to be
-     * <strong>added</strong> to the zone upon executing this {@code ChangeRequest}.
-     */
+    @Override
     public Builder removeAddition(RecordSet recordSet) {
-      this.additions.remove(recordSet);
+      infoBuilder.removeAddition(recordSet);
       return this;
     }
 
-    /**
-     * Removes a single {@link RecordSet} from the collection of records to be
-     * <strong>deleted</strong> from the zone upon executing this {@code ChangeRequest}.
-     */
+    @Override
     public Builder removeDeletion(RecordSet recordSet) {
-      this.deletions.remove(recordSet);
+      infoBuilder.removeDeletion(recordSet);
       return this;
     }
 
-    /**
-     * Associates a server-assigned id to this {@code ChangeRequest}.
-     */
+    @Override
     Builder id(String id) {
-      this.id = checkNotNull(id);
+      infoBuilder.id(id);
       return this;
     }
 
-    /**
-     * Sets the time when this {@code ChangeRequest} was started by a server.
-     */
+    @Override
     Builder startTimeMillis(long startTimeMillis) {
-      this.startTimeMillis = startTimeMillis;
+      infoBuilder.startTimeMillis(startTimeMillis);
       return this;
     }
 
-    /**
-     * Sets the current status of this {@code ChangeRequest}.
-     */
+    @Override
     Builder status(Status status) {
-      this.status = checkNotNull(status);
+      infoBuilder.status(status);
       return this;
     }
 
-    /**
-     * Creates a {@code ChangeRequest} instance populated by the values associated with this
-     * builder.
-     */
+    @Override
     public ChangeRequest build() {
-      return new ChangeRequest(this);
+      return new ChangeRequest(dns, zoneName, infoBuilder);
     }
   }
 
-  private ChangeRequest(Builder builder) {
-    this.additions = ImmutableList.copyOf(builder.additions);
-    this.deletions = ImmutableList.copyOf(builder.deletions);
-    this.id = builder.id;
-    this.startTimeMillis = builder.startTimeMillis;
-    this.status = builder.status;
+  ChangeRequest(Dns dns, String zoneName, ChangeRequest.BuilderImpl infoBuilder) {
+    super(infoBuilder);
+    this.zoneName = zoneName;
+    this.dns = dns;
+    this.options = dns.options();
+  }
+
+  static Function<Change, ChangeRequest> fromPbFunction(final Dns dns, final String zoneName) {
+    return new Function<Change, ChangeRequest>() {
+      @Override
+      public ChangeRequest apply(com.google.api.services.dns.model.Change pb) {
+        return ChangeRequest.fromPb(dns, zoneName, pb);
+      }
+    };
   }
 
   /**
-   * Returns an empty builder for the {@code ChangeRequest} class.
+   * Returns the name of the {@link Zone} associated with this change request.
    */
-  public static Builder builder() {
-    return new Builder();
+  public String zoneName() {
+    return this.zoneName;
   }
 
   /**
-   * Creates a builder populated with values of this {@code ChangeRequest}.
+   * Returns the {@link Dns} service object associated with this change request.
    */
+  public Dns dns() {
+    return dns;
+  }
+
+  /**
+   * Applies this change request to a zone that it is associated with.
+   */
+  public ChangeRequest applyTo(Dns.ChangeRequestOption... options) {
+    return dns.applyChangeRequest(zoneName, this, options);
+  }
+
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  /**
-   * Returns the list of {@link RecordSet}s to be added to the zone upon submitting this {@code
-   * ChangeRequest}.
-   */
-  public List<RecordSet> additions() {
-    return additions;
-  }
-
-  /**
-   * Returns the list of {@link RecordSet}s to be deleted from the zone upon submitting this {@code
-   * ChangeRequest}.
-   */
-  public List<RecordSet> deletions() {
-    return deletions;
-  }
-
-  /**
-   * Returns the id assigned to this {@code ChangeRequest} by the server.
-   */
-  public String id() {
-    return id;
-  }
-
-  /**
-   * Returns the time when this {@code ChangeRequest} was started by the server.
-   */
-  public Long startTimeMillis() {
-    return startTimeMillis;
-  }
-
-  /**
-   * Returns the status of this {@code ChangeRequest}.
-   */
-  public Status status() {
-    return status;
-  }
-
-  com.google.api.services.dns.model.Change toPb() {
-    com.google.api.services.dns.model.Change pb =
-        new com.google.api.services.dns.model.Change();
-    // set id
-    if (id() != null) {
-      pb.setId(id());
-    }
-    // set timestamp
-    if (startTimeMillis() != null) {
-      pb.setStartTime(ISODateTimeFormat.dateTime().withZoneUTC().print(startTimeMillis()));
-    }
-    // set status
-    if (status() != null) {
-      pb.setStatus(status().name().toLowerCase());
-    }
-    // set a list of additions
-    pb.setAdditions(Lists.transform(additions(), RecordSet.TO_PB_FUNCTION));
-    // set a list of deletions
-    pb.setDeletions(Lists.transform(deletions(), RecordSet.TO_PB_FUNCTION));
-    return pb;
-  }
-
-  static ChangeRequest fromPb(com.google.api.services.dns.model.Change pb) {
-    Builder builder = builder();
-    if (pb.getId() != null) {
-      builder.id(pb.getId());
-    }
-    if (pb.getStartTime() != null) {
-      builder.startTimeMillis(DateTime.parse(pb.getStartTime()).getMillis());
-    }
-    if (pb.getStatus() != null) {
-      // we are assuming that status indicated in pb is a lower case version of the enum name
-      builder.status(ChangeRequest.Status.valueOf(pb.getStatus().toUpperCase()));
-    }
-    if (pb.getDeletions() != null) {
-      builder.deletions(Lists.transform(pb.getDeletions(), RecordSet.FROM_PB_FUNCTION));
-    }
-    if (pb.getAdditions() != null) {
-      builder.additions(Lists.transform(pb.getAdditions(), RecordSet.FROM_PB_FUNCTION));
-    }
-    return builder.build();
-  }
-
   @Override
-  public boolean equals(Object other) {
-    return (other instanceof ChangeRequest) && toPb().equals(((ChangeRequest) other).toPb());
+  public boolean equals(Object obj) {
+    return obj instanceof ChangeRequest && Objects.equals(toPb(), ((ChangeRequest) obj).toPb())
+        && Objects.equals(options, ((ChangeRequest) obj).options)
+        && Objects.equals(zoneName, ((ChangeRequest) obj).zoneName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additions, deletions, id, startTimeMillis, status);
+    return Objects.hash(super.hashCode(), options, zoneName);
   }
 
-  @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("additions", additions)
-        .add("deletions", deletions)
-        .add("id", id)
-        .add("startTimeMillis", startTimeMillis)
-        .add("status", status)
-        .toString();
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+    this.dns = options.service();
+  }
+
+  static ChangeRequest fromPb(Dns dns, String zoneName,
+      com.google.api.services.dns.model.Change pb) {
+    ChangeRequestInfo info = ChangeRequestInfo.fromPb(pb);
+    return new ChangeRequest(dns, zoneName, new ChangeRequestInfo.BuilderImpl(info));
   }
 }

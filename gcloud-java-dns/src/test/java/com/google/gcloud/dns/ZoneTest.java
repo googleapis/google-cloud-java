@@ -60,25 +60,29 @@ public class ZoneTest {
       Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME);
   private static final Dns.ChangeRequestListOption CHANGE_REQUEST_LIST_OPTIONS =
       Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.START_TIME);
-  private static final ChangeRequest CHANGE_REQUEST = ChangeRequest.builder().id("someid").build();
-  private static final ChangeRequest CHANGE_REQUEST_AFTER = CHANGE_REQUEST.toBuilder()
-      .startTimeMillis(123465L).build();
-  private static final ChangeRequest CHANGE_REQUEST_NO_ID = ChangeRequest.builder().build();
+  private static final ChangeRequestInfo CHANGE_REQUEST =
+      ChangeRequest.builder().id("someid").build();
+  private static final ChangeRequestInfo CHANGE_REQUEST_NO_ID =
+      ChangeRequest.builder().build();
   private static final DnsException EXCEPTION = createStrictMock(DnsException.class);
   private static final DnsOptions OPTIONS = createStrictMock(DnsOptions.class);
 
   private Dns dns;
   private Zone zone;
   private Zone zoneNoId;
+  private ChangeRequest changeRequestAfter;
 
   @Before
   public void setUp() throws Exception {
     dns = createStrictMock(Dns.class);
     expect(dns.options()).andReturn(OPTIONS);
     expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS);
     replay(dns);
     zone = new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO));
     zoneNoId = new Zone(dns, new ZoneInfo.BuilderImpl(NO_ID_INFO));
+    changeRequestAfter = new ChangeRequest(dns, ZONE_NAME, new ChangeRequestInfo.BuilderImpl(
+        CHANGE_REQUEST.toBuilder().startTimeMillis(123465L).build()));
     reset(dns);
   }
 
@@ -208,24 +212,24 @@ public class ZoneTest {
   @Test
   public void applyChangeByNameAndFound() {
     expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST))
-        .andReturn(CHANGE_REQUEST_AFTER);
+        .andReturn(changeRequestAfter);
     expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST))
-        .andReturn(CHANGE_REQUEST_AFTER);
+        .andReturn(changeRequestAfter);
     // again for options
     expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
-        .andReturn(CHANGE_REQUEST_AFTER);
+        .andReturn(changeRequestAfter);
     expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
-        .andReturn(CHANGE_REQUEST_AFTER);
+        .andReturn(changeRequestAfter);
     replay(dns);
     ChangeRequest result = zoneNoId.applyChangeRequest(CHANGE_REQUEST);
-    assertEquals(CHANGE_REQUEST_AFTER, result);
+    assertEquals(changeRequestAfter, result);
     result = zone.applyChangeRequest(CHANGE_REQUEST);
-    assertEquals(CHANGE_REQUEST_AFTER, result);
+    assertEquals(changeRequestAfter, result);
     // check options
     result = zoneNoId.applyChangeRequest(CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS);
-    assertEquals(CHANGE_REQUEST_AFTER, result);
+    assertEquals(changeRequestAfter, result);
     result = zone.applyChangeRequest(CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS);
-    assertEquals(CHANGE_REQUEST_AFTER, result);
+    assertEquals(changeRequestAfter, result);
   }
 
   @Test
@@ -298,24 +302,24 @@ public class ZoneTest {
   @Test
   public void getChangeAndZoneFoundByName() {
     expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id()))
-        .andReturn(CHANGE_REQUEST_AFTER);
+        .andReturn(changeRequestAfter);
     expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id()))
-        .andReturn(CHANGE_REQUEST_AFTER);
+        .andReturn(changeRequestAfter);
     // again for options
     expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
-        .andReturn(CHANGE_REQUEST_AFTER);
+        .andReturn(changeRequestAfter);
     expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
-        .andReturn(CHANGE_REQUEST_AFTER);
+        .andReturn(changeRequestAfter);
     replay(dns);
     ChangeRequest result = zoneNoId.getChangeRequest(CHANGE_REQUEST.id());
-    assertEquals(CHANGE_REQUEST_AFTER, result);
+    assertEquals(changeRequestAfter, result);
     result = zone.getChangeRequest(CHANGE_REQUEST.id());
-    assertEquals(CHANGE_REQUEST_AFTER, result);
+    assertEquals(changeRequestAfter, result);
     // check options
     result = zoneNoId.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
-    assertEquals(CHANGE_REQUEST_AFTER, result);
+    assertEquals(changeRequestAfter, result);
     result = zone.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
-    assertEquals(CHANGE_REQUEST_AFTER, result);
+    assertEquals(changeRequestAfter, result);
   }
 
   @Test
