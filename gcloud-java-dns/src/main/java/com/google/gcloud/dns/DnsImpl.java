@@ -85,7 +85,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     }
   }
 
-  private static class DnsRecordPageFetcher implements PageImpl.NextPageFetcher<DnsRecord> {
+  private static class DnsRecordPageFetcher implements PageImpl.NextPageFetcher<RecordSet> {
 
     private static final long serialVersionUID = -6039369212511530846L;
     private final Map<DnsRpc.Option, ?> requestOptions;
@@ -101,8 +101,8 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     }
 
     @Override
-    public Page<DnsRecord> nextPage() {
-      return listDnsRecords(zoneName, serviceOptions, requestOptions);
+    public Page<RecordSet> nextPage() {
+      return listRecordSets(zoneName, serviceOptions, requestOptions);
     }
   }
 
@@ -178,29 +178,29 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
   }
 
   @Override
-  public Page<DnsRecord> listDnsRecords(String zoneName, DnsRecordListOption... options) {
-    return listDnsRecords(zoneName, options(), optionMap(options));
+  public Page<RecordSet> listRecordSets(String zoneName, RecordSetListOption... options) {
+    return listRecordSets(zoneName, options(), optionMap(options));
   }
 
-  private static Page<DnsRecord> listDnsRecords(final String zoneName,
+  private static Page<RecordSet> listRecordSets(final String zoneName,
       final DnsOptions serviceOptions, final Map<DnsRpc.Option, ?> optionsMap) {
     try {
-      // get a list of resource record sets
+      // get a list of record sets
       final DnsRpc rpc = serviceOptions.rpc();
       DnsRpc.ListResult<ResourceRecordSet> result = runWithRetries(
           new Callable<DnsRpc.ListResult<ResourceRecordSet>>() {
             @Override
             public DnsRpc.ListResult<ResourceRecordSet> call() {
-              return rpc.listDnsRecords(zoneName, optionsMap);
+              return rpc.listRecordSets(zoneName, optionsMap);
             }
           }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
       String cursor = result.pageToken();
-      // transform that list into dns records
-      Iterable<DnsRecord> records = result.results() == null
-          ? ImmutableList.<DnsRecord>of()
-          : Iterables.transform(result.results(), DnsRecord.FROM_PB_FUNCTION);
+      // transform that list into record sets
+      Iterable<RecordSet> recordSets = result.results() == null
+          ? ImmutableList.<RecordSet>of()
+          : Iterables.transform(result.results(), RecordSet.FROM_PB_FUNCTION);
       return new PageImpl<>(new DnsRecordPageFetcher(zoneName, serviceOptions, cursor, optionsMap),
-          cursor, records);
+          cursor, recordSets);
     } catch (RetryHelperException e) {
       throw DnsException.translateAndThrow(e);
     }

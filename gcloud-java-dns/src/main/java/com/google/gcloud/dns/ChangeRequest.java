@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * A class representing an atomic update to a collection of {@link DnsRecord}s within a {@code
+ * A class representing an atomic update to a collection of {@link RecordSet}s within a {@code
  * Zone}.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/changes">Google Cloud DNS documentation</a>
@@ -48,8 +48,8 @@ public class ChangeRequest implements Serializable {
         }
       };
   private static final long serialVersionUID = -9027378042756366333L;
-  private final List<DnsRecord> additions;
-  private final List<DnsRecord> deletions;
+  private final List<RecordSet> additions;
+  private final List<RecordSet> deletions;
   private final String id;
   private final Long startTimeMillis;
   private final Status status;
@@ -70,8 +70,8 @@ public class ChangeRequest implements Serializable {
    */
   public static class Builder {
 
-    private List<DnsRecord> additions = new LinkedList<>();
-    private List<DnsRecord> deletions = new LinkedList<>();
+    private List<RecordSet> additions = new LinkedList<>();
+    private List<RecordSet> deletions = new LinkedList<>();
     private String id;
     private Long startTimeMillis;
     private Status status;
@@ -88,43 +88,43 @@ public class ChangeRequest implements Serializable {
     }
 
     /**
-     * Sets a collection of {@link DnsRecord}s which are to be added to the zone upon executing this
+     * Sets a collection of {@link RecordSet}s which are to be added to the zone upon executing this
      * {@code ChangeRequest}.
      */
-    public Builder additions(List<DnsRecord> additions) {
+    public Builder additions(List<RecordSet> additions) {
       this.additions = Lists.newLinkedList(checkNotNull(additions));
       return this;
     }
 
     /**
-     * Sets a collection of {@link DnsRecord}s which are to be deleted from the zone upon executing
+     * Sets a collection of {@link RecordSet}s which are to be deleted from the zone upon executing
      * this {@code ChangeRequest}.
      */
-    public Builder deletions(List<DnsRecord> deletions) {
+    public Builder deletions(List<RecordSet> deletions) {
       this.deletions = Lists.newLinkedList(checkNotNull(deletions));
       return this;
     }
 
     /**
-     * Adds a {@link DnsRecord} to be <strong>added</strong> to the zone upon executing this {@code
+     * Adds a {@link RecordSet} to be <strong>added</strong> to the zone upon executing this {@code
      * ChangeRequest}.
      */
-    public Builder add(DnsRecord record) {
-      this.additions.add(checkNotNull(record));
+    public Builder add(RecordSet recordSet) {
+      this.additions.add(checkNotNull(recordSet));
       return this;
     }
 
     /**
-     * Adds a {@link DnsRecord} to be <strong>deleted</strong> to the zone upon executing this
+     * Adds a {@link RecordSet} to be <strong>deleted</strong> to the zone upon executing this
      * {@code ChangeRequest}.
      */
-    public Builder delete(DnsRecord record) {
-      this.deletions.add(checkNotNull(record));
+    public Builder delete(RecordSet recordSet) {
+      this.deletions.add(checkNotNull(recordSet));
       return this;
     }
 
     /**
-     * Clears the collection of {@link DnsRecord}s which are to be added to the zone upon executing
+     * Clears the collection of {@link RecordSet}s which are to be added to the zone upon executing
      * this {@code ChangeRequest}.
      */
     public Builder clearAdditions() {
@@ -133,7 +133,7 @@ public class ChangeRequest implements Serializable {
     }
 
     /**
-     * Clears the collection of {@link DnsRecord}s which are to be deleted from the zone upon
+     * Clears the collection of {@link RecordSet}s which are to be deleted from the zone upon
      * executing this {@code ChangeRequest}.
      */
     public Builder clearDeletions() {
@@ -142,20 +142,20 @@ public class ChangeRequest implements Serializable {
     }
 
     /**
-     * Removes a single {@link DnsRecord} from the collection of records to be
+     * Removes a single {@link RecordSet} from the collection of records to be
      * <strong>added</strong> to the zone upon executing this {@code ChangeRequest}.
      */
-    public Builder removeAddition(DnsRecord record) {
-      this.additions.remove(record);
+    public Builder removeAddition(RecordSet recordSet) {
+      this.additions.remove(recordSet);
       return this;
     }
 
     /**
-     * Removes a single {@link DnsRecord} from the collection of records to be
+     * Removes a single {@link RecordSet} from the collection of records to be
      * <strong>deleted</strong> from the zone upon executing this {@code ChangeRequest}.
      */
-    public Builder removeDeletion(DnsRecord record) {
-      this.deletions.remove(record);
+    public Builder removeDeletion(RecordSet recordSet) {
+      this.deletions.remove(recordSet);
       return this;
     }
 
@@ -215,18 +215,18 @@ public class ChangeRequest implements Serializable {
   }
 
   /**
-   * Returns the list of {@link DnsRecord}s to be added to the zone upon submitting this {@code
+   * Returns the list of {@link RecordSet}s to be added to the zone upon submitting this {@code
    * ChangeRequest}.
    */
-  public List<DnsRecord> additions() {
+  public List<RecordSet> additions() {
     return additions;
   }
 
   /**
-   * Returns the list of {@link DnsRecord}s to be deleted from the zone upon submitting this {@code
+   * Returns the list of {@link RecordSet}s to be deleted from the zone upon submitting this {@code
    * ChangeRequest}.
    */
-  public List<DnsRecord> deletions() {
+  public List<RecordSet> deletions() {
     return deletions;
   }
 
@@ -267,9 +267,9 @@ public class ChangeRequest implements Serializable {
       pb.setStatus(status().name().toLowerCase());
     }
     // set a list of additions
-    pb.setAdditions(Lists.transform(additions(), DnsRecord.TO_PB_FUNCTION));
+    pb.setAdditions(Lists.transform(additions(), RecordSet.TO_PB_FUNCTION));
     // set a list of deletions
-    pb.setDeletions(Lists.transform(deletions(), DnsRecord.TO_PB_FUNCTION));
+    pb.setDeletions(Lists.transform(deletions(), RecordSet.TO_PB_FUNCTION));
     return pb;
   }
 
@@ -286,10 +286,10 @@ public class ChangeRequest implements Serializable {
       builder.status(ChangeRequest.Status.valueOf(pb.getStatus().toUpperCase()));
     }
     if (pb.getDeletions() != null) {
-      builder.deletions(Lists.transform(pb.getDeletions(), DnsRecord.FROM_PB_FUNCTION));
+      builder.deletions(Lists.transform(pb.getDeletions(), RecordSet.FROM_PB_FUNCTION));
     }
     if (pb.getAdditions() != null) {
-      builder.additions(Lists.transform(pb.getAdditions(), DnsRecord.FROM_PB_FUNCTION));
+      builder.additions(Lists.transform(pb.getAdditions(), RecordSet.FROM_PB_FUNCTION));
     }
     return builder.build();
   }

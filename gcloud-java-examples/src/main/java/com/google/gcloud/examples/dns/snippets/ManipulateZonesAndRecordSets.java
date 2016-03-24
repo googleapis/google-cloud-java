@@ -25,7 +25,7 @@ package com.google.gcloud.examples.dns.snippets;
 import com.google.gcloud.dns.ChangeRequest;
 import com.google.gcloud.dns.Dns;
 import com.google.gcloud.dns.DnsOptions;
-import com.google.gcloud.dns.DnsRecord;
+import com.google.gcloud.dns.RecordSet;
 import com.google.gcloud.dns.Zone;
 import com.google.gcloud.dns.ZoneInfo;
 
@@ -35,9 +35,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * A complete snippet for Google Cloud DNS showing how to create and delete a zone. It also shows
- * how to create, list and delete DNS records, and how to list changes.
+ * how to create, list and delete record sets, and how to list changes.
  */
-public class ManipulateZonesAndRecords {
+public class ManipulateZonesAndRecordSets {
 
   public static void main(String... args) {
     Dns dns = DnsOptions.defaultInstance().service();
@@ -60,7 +60,7 @@ public class ManipulateZonesAndRecords {
 
     // Prepare a www.someexampledomain.com. type A record with ttl of 24 hours
     String ip = "12.13.14.15";
-    DnsRecord toCreate = DnsRecord.builder("www.someexampledomain.com.", DnsRecord.Type.A)
+    RecordSet toCreate = RecordSet.builder("www.someexampledomain.com.", RecordSet.Type.A)
         .ttl(24, TimeUnit.HOURS)
         .addRecord(ip)
         .build();
@@ -70,9 +70,9 @@ public class ManipulateZonesAndRecords {
 
     // Verify the type A record does not exist yet.
     // If it does exist, we will overwrite it with our prepared record.
-    Iterator<DnsRecord> recordIterator = zone.listDnsRecords().iterateAll();
-    while (recordIterator.hasNext()) {
-      DnsRecord current = recordIterator.next();
+    Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
+    while (recordSetIterator.hasNext()) {
+      RecordSet current = recordSetIterator.next();
       if (toCreate.name().equals(current.name()) && toCreate.type().equals(current.type())) {
         changeBuilder.delete(current);
       }
@@ -100,11 +100,11 @@ public class ManipulateZonesAndRecords {
       counter++;
     }
 
-    // List the DNS records in a particular zone
-    recordIterator = zone.listDnsRecords().iterateAll();
-    System.out.println(String.format("DNS records inside %s:", zone.name()));
-    while (recordIterator.hasNext()) {
-      System.out.println(recordIterator.next());
+    // List the record sets in a particular zone
+    recordSetIterator = zone.listRecordSets().iterateAll();
+    System.out.println(String.format("Record sets inside %s:", zone.name()));
+    while (recordSetIterator.hasNext()) {
+      System.out.println(recordSetIterator.next());
     }
 
     // List the change requests applied to a particular zone
@@ -114,12 +114,12 @@ public class ManipulateZonesAndRecords {
       System.out.println(changeIterator.next());
     }
 
-    // Make a change for deleting the records
+    // Make a change for deleting the record sets
     changeBuilder = ChangeRequest.builder();
-    while (recordIterator.hasNext()) {
-      DnsRecord current = recordIterator.next();
+    while (recordSetIterator.hasNext()) {
+      RecordSet current = recordSetIterator.next();
       // SOA and NS records cannot be deleted
-      if (!DnsRecord.Type.SOA.equals(current.type()) && !DnsRecord.Type.NS.equals(current.type())) {
+      if (!RecordSet.Type.SOA.equals(current.type()) && !RecordSet.Type.NS.equals(current.type())) {
         changeBuilder.delete(current);
       }
     }

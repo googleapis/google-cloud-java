@@ -120,13 +120,13 @@ public interface DnsRpc {
   boolean deleteZone(String zoneName) throws DnsException;
 
   /**
-   * Lists DNS records for a given zone.
+   * Lists record sets for a given zone.
    *
    * @param zoneName name of the zone to be listed
    * @param options a map of options for the service call
    * @throws DnsException upon failure or if zone was not found
    */
-  ListResult<ResourceRecordSet> listDnsRecords(String zoneName, Map<Option, ?> options)
+  ListResult<ResourceRecordSet> listRecordSets(String zoneName, Map<Option, ?> options)
       throws DnsException;
 
   /**

@@ -21,7 +21,6 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
-import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -46,10 +45,10 @@ public class DnsImplTest {
   private static final String DNS_NAME = "example.com.";
   private static final String DESCRIPTION = "desc";
   private static final String CHANGE_ID = "some change id";
-  private static final DnsRecord DNS_RECORD1 = DnsRecord.builder("Something", DnsRecord.Type.AAAA)
-      .build();
-  private static final DnsRecord DNS_RECORD2 = DnsRecord.builder("Different", DnsRecord.Type.AAAA)
-      .build();
+  private static final RecordSet DNS_RECORD1 =
+      RecordSet.builder("Something", RecordSet.Type.AAAA).build();
+  private static final RecordSet DNS_RECORD2 =
+      RecordSet.builder("Different", RecordSet.Type.AAAA).build();
   private static final Integer MAX_SIZE = 20;
   private static final String PAGE_TOKEN = "some token";
   private static final ZoneInfo ZONE_INFO = ZoneInfo.of(ZONE_NAME, DNS_NAME, DESCRIPTION);
@@ -70,7 +69,8 @@ public class DnsImplTest {
           CHANGE_REQUEST_PARTIAL.toPb()));
   private static final DnsRpc.ListResult<ManagedZone> LIST_RESULT_OF_PB_ZONES =
       DnsRpc.ListResult.of("cursor", ImmutableList.of(ZONE_INFO.toPb()));
-  private static final DnsRpc.ListResult<ResourceRecordSet> LIST_OF_PB_DNS_RECORDS =
+  private static final DnsRpc.ListResult<com.google.api.services.dns.model.ResourceRecordSet>
+      LIST_OF_PB_DNS_RECORDS =
       DnsRpc.ListResult.of("cursor", ImmutableList.of(DNS_RECORD1.toPb(), DNS_RECORD2.toPb()));
 
   // Field options
@@ -91,12 +91,12 @@ public class DnsImplTest {
       Dns.ChangeRequestListOption.pageToken(PAGE_TOKEN),
       Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.STATUS),
       Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING)};
-  private static final Dns.DnsRecordListOption[] DNS_RECORD_LIST_OPTIONS = {
-      Dns.DnsRecordListOption.pageSize(MAX_SIZE),
-      Dns.DnsRecordListOption.pageToken(PAGE_TOKEN),
-      Dns.DnsRecordListOption.fields(Dns.DnsRecordField.TTL),
-      Dns.DnsRecordListOption.dnsName(DNS_NAME),
-      Dns.DnsRecordListOption.type(DnsRecord.Type.AAAA)};
+  private static final Dns.RecordSetListOption[] DNS_RECORD_LIST_OPTIONS = {
+      Dns.RecordSetListOption.pageSize(MAX_SIZE),
+      Dns.RecordSetListOption.pageToken(PAGE_TOKEN),
+      Dns.RecordSetListOption.fields(Dns.RecordSetField.TTL),
+      Dns.RecordSetListOption.dnsName(DNS_NAME),
+      Dns.RecordSetListOption.type(RecordSet.Type.AAAA)};
 
   // Other
   private static final Map<DnsRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -338,11 +338,11 @@ public class DnsImplTest {
 
   @Test
   public void testListDnsRecords() {
-    EasyMock.expect(dnsRpcMock.listDnsRecords(ZONE_INFO.name(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(dnsRpcMock.listRecordSets(ZONE_INFO.name(), EMPTY_RPC_OPTIONS))
         .andReturn(LIST_OF_PB_DNS_RECORDS);
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    Page<DnsRecord> dnsPage = dns.listDnsRecords(ZONE_INFO.name());
+    Page<RecordSet> dnsPage = dns.listRecordSets(ZONE_INFO.name());
     assertEquals(2, Lists.newArrayList(dnsPage.values()).size());
     assertTrue(Lists.newArrayList(dnsPage.values()).contains(DNS_RECORD1));
     assertTrue(Lists.newArrayList(dnsPage.values()).contains(DNS_RECORD2));
@@ -351,11 +351,11 @@ public class DnsImplTest {
   @Test
   public void testListDnsRecordsWithOptions() {
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(dnsRpcMock.listDnsRecords(EasyMock.eq(ZONE_NAME),
+    EasyMock.expect(dnsRpcMock.listRecordSets(EasyMock.eq(ZONE_NAME),
         EasyMock.capture(capturedOptions))).andReturn(LIST_OF_PB_DNS_RECORDS);
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    Page<DnsRecord> dnsPage = dns.listDnsRecords(ZONE_NAME, DNS_RECORD_LIST_OPTIONS);
+    Page<RecordSet> dnsPage = dns.listRecordSets(ZONE_NAME, DNS_RECORD_LIST_OPTIONS);
     assertEquals(2, Lists.newArrayList(dnsPage.values()).size());
     assertTrue(Lists.newArrayList(dnsPage.values()).contains(DNS_RECORD1));
     assertTrue(Lists.newArrayList(dnsPage.values()).contains(DNS_RECORD2));
@@ -365,8 +365,8 @@ public class DnsImplTest {
         .get(DNS_RECORD_LIST_OPTIONS[1].rpcOption());
     assertEquals(PAGE_TOKEN, selector);
     selector = (String) capturedOptions.getValue().get(DNS_RECORD_LIST_OPTIONS[2].rpcOption());
-    assertTrue(selector.contains(Dns.DnsRecordField.NAME.selector()));
-    assertTrue(selector.contains(Dns.DnsRecordField.TTL.selector()));
+    assertTrue(selector.contains(Dns.RecordSetField.NAME.selector()));
+    assertTrue(selector.contains(Dns.RecordSetField.TTL.selector()));
     selector = (String) capturedOptions.getValue().get(DNS_RECORD_LIST_OPTIONS[3].rpcOption());
     assertEquals(DNS_RECORD_LIST_OPTIONS[3].value(), selector);
     String type = (String) capturedOptions.getValue().get(DNS_RECORD_LIST_OPTIONS[4]

@@ -35,16 +35,16 @@ public class ChangeRequestTest {
   private static final Long START_TIME_MILLIS = 12334567890L;
   private static final ChangeRequest.Status STATUS = ChangeRequest.Status.PENDING;
   private static final String NAME1 = "dns1";
-  private static final DnsRecord.Type TYPE1 = DnsRecord.Type.A;
+  private static final RecordSet.Type TYPE1 = RecordSet.Type.A;
   private static final String NAME2 = "dns2";
-  private static final DnsRecord.Type TYPE2 = DnsRecord.Type.AAAA;
+  private static final RecordSet.Type TYPE2 = RecordSet.Type.AAAA;
   private static final String NAME3 = "dns3";
-  private static final DnsRecord.Type TYPE3 = DnsRecord.Type.MX;
-  private static final DnsRecord RECORD1 = DnsRecord.builder(NAME1, TYPE1).build();
-  private static final DnsRecord RECORD2 = DnsRecord.builder(NAME2, TYPE2).build();
-  private static final DnsRecord RECORD3 = DnsRecord.builder(NAME3, TYPE3).build();
-  private static final List<DnsRecord> ADDITIONS = ImmutableList.of(RECORD1, RECORD2);
-  private static final List<DnsRecord> DELETIONS = ImmutableList.of(RECORD3);
+  private static final RecordSet.Type TYPE3 = RecordSet.Type.MX;
+  private static final RecordSet RECORD1 = RecordSet.builder(NAME1, TYPE1).build();
+  private static final RecordSet RECORD2 = RecordSet.builder(NAME2, TYPE2).build();
+  private static final RecordSet RECORD3 = RecordSet.builder(NAME3, TYPE3).build();
+  private static final List<RecordSet> ADDITIONS = ImmutableList.of(RECORD1, RECORD2);
+  private static final List<RecordSet> DELETIONS = ImmutableList.of(RECORD3);
   private static final ChangeRequest CHANGE = ChangeRequest.builder()
       .add(RECORD1)
       .add(RECORD2)
@@ -70,7 +70,7 @@ public class ChangeRequestTest {
     assertEquals(START_TIME_MILLIS, CHANGE.startTimeMillis());
     assertEquals(ADDITIONS, CHANGE.additions());
     assertEquals(DELETIONS, CHANGE.deletions());
-    List<DnsRecord> recordList = ImmutableList.of(RECORD1);
+    List<RecordSet> recordList = ImmutableList.of(RECORD1);
     ChangeRequest another = CHANGE.toBuilder().additions(recordList).build();
     assertEquals(recordList, another.additions());
     assertEquals(CHANGE.deletions(), another.deletions());
@@ -160,7 +160,7 @@ public class ChangeRequestTest {
   public void testAddAddition() {
     try {
       CHANGE.toBuilder().add(null);
-      fail("Should not be able to add null DnsRecord.");
+      fail("Should not be able to add null RecordSet.");
     } catch (NullPointerException e) {
       // expected
     }
@@ -172,7 +172,7 @@ public class ChangeRequestTest {
   public void testAddDeletion() {
     try {
       CHANGE.toBuilder().delete(null);
-      fail("Should not be able to delete null DnsRecord.");
+      fail("Should not be able to delete null RecordSet.");
     } catch (NullPointerException e) {
       // expected
     }

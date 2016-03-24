@@ -166,26 +166,26 @@ class OptionParsers {
     if (fields == null || fields.length == 0) {
       return fullRecord;
     }
-    ResourceRecordSet record = new ResourceRecordSet();
+    ResourceRecordSet recordSet = new ResourceRecordSet();
     for (String field : fields) {
       switch (field) {
         case "name":
-          record.setName(fullRecord.getName());
+          recordSet.setName(fullRecord.getName());
           break;
         case "rrdatas":
-          record.setRrdatas(fullRecord.getRrdatas());
+          recordSet.setRrdatas(fullRecord.getRrdatas());
           break;
         case "type":
-          record.setType(fullRecord.getType());
+          recordSet.setType(fullRecord.getType());
           break;
         case "ttl":
-          record.setTtl(fullRecord.getTtl());
+          recordSet.setTtl(fullRecord.getTtl());
           break;
         default:
           break;
       }
     }
-    return record;
+    return recordSet;
   }
 
   static Map<String, Object> parseListChangesOptions(String query) {

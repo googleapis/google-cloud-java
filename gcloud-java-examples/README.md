@@ -75,7 +75,7 @@ To run examples from your command line:
 
     Note that you have to enable the Google Cloud DNS API on the [Google Developers Console][developers-console] before running the following commands.
     You will need to replace the domain name `elaborateexample.com` with your own domain name with [verified ownership] (https://www.google.com/webmasters/verification/home).
-    Also, note that the example creates and deletes DNS records of type A only. Operations with other record types are not implemented in the example.
+    Also, note that the example creates and deletes record sets of type A only. Operations with other record types are not implemented in the example.
     ```
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="create some-sample-zone elaborateexample.com. description"
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="list"

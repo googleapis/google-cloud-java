@@ -21,8 +21,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.gcloud.dns.ChangeRequest;
 import com.google.gcloud.dns.Dns;
 import com.google.gcloud.dns.DnsOptions;
-import com.google.gcloud.dns.DnsRecord;
 import com.google.gcloud.dns.ProjectInfo;
+import com.google.gcloud.dns.RecordSet;
 import com.google.gcloud.dns.Zone;
 import com.google.gcloud.dns.ZoneInfo;
 
@@ -38,8 +38,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * An example of using Google Cloud DNS.
  *
- * <p>This example creates, deletes, gets, and lists zones. It also creates and deletes DNS records
- * of type A, and lists DNS records.
+ * <p>This example creates, deletes, gets, and lists zones. It also creates and deletes
+ * record sets of type A, and lists record sets.
  *
  * <p>Steps needed for running the example:
  * <ol>
@@ -203,12 +203,12 @@ public class DnsExample {
       if (args.length > 3) {
         ttl = Integer.parseInt(args[3]);
       }
-      DnsRecord record = DnsRecord.builder(recordName, DnsRecord.Type.A)
+      RecordSet recordSet = RecordSet.builder(recordName, RecordSet.Type.A)
           .records(ImmutableList.of(ip))
           .ttl(ttl, TimeUnit.SECONDS)
           .build();
       ChangeRequest changeRequest = ChangeRequest.builder()
-          .delete(record)
+          .delete(recordSet)
           .build();
       changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
       System.out.printf("The request for deleting A record %s for zone %s was successfully "
@@ -238,7 +238,7 @@ public class DnsExample {
   private static class AddDnsRecordAction implements DnsAction {
 
     /**
-     * Adds a DNS record of type A. The last parameter is ttl and is not required. If ttl is not
+     * Adds a record set of type A. The last parameter is ttl and is not required. If ttl is not
      * provided, a default value of 0 will be used.
      */
     @Override
@@ -250,11 +250,11 @@ public class DnsExample {
       if (args.length > 3) {
         ttl = Integer.parseInt(args[3]);
       }
-      DnsRecord record = DnsRecord.builder(recordName, DnsRecord.Type.A)
+      RecordSet recordSet = RecordSet.builder(recordName, RecordSet.Type.A)
           .records(ImmutableList.of(ip))
           .ttl(ttl, TimeUnit.SECONDS)
           .build();
-      ChangeRequest changeRequest = ChangeRequest.builder().add(record).build();
+      ChangeRequest changeRequest = ChangeRequest.builder().add(recordSet).build();
       changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
       System.out.printf("The request for adding A record %s for zone %s was successfully "
           + "submitted and assigned ID %s.%n", recordName, zoneName, changeRequest.id());
@@ -283,21 +283,21 @@ public class DnsExample {
   private static class ListDnsRecordsAction implements DnsAction {
 
     /**
-     * Lists all the DNS records in the given zone.
+     * Lists all the record sets in the given zone.
      */
     @Override
     public void run(Dns dns, String... args) {
       String zoneName = args[0];
-      Iterator<DnsRecord> iterator = dns.listDnsRecords(zoneName).iterateAll();
+      Iterator<RecordSet> iterator = dns.listRecordSets(zoneName).iterateAll();
       if (iterator.hasNext()) {
-        System.out.printf("DNS records for zone %s:%n", zoneName);
+        System.out.printf("Record sets for zone %s:%n", zoneName);
         while (iterator.hasNext()) {
-          DnsRecord record = iterator.next();
-          System.out.printf("%nRecord name: %s%nTTL: %s%nRecords: %s%n", record.name(),
-              record.ttl(), Joiner.on(", ").join(record.records()));
+          RecordSet recordSet = iterator.next();
+          System.out.printf("%nRecord name: %s%nTTL: %s%nRecords: %s%n", recordSet.name(),
+              recordSet.ttl(), Joiner.on(", ").join(recordSet.records()));
         }
       } else {
-        System.out.printf("Zone %s has no DNS records.%n", zoneName);
+        System.out.printf("Zone %s has no record sets records.%n", zoneName);
       }
     }
 
@@ -361,8 +361,8 @@ public class DnsExample {
 
     /**
      * Invokes a list action. If no parameter is provided, lists all zones. If zone name is the only
-     * parameter provided, lists both DNS records and changes. Otherwise, invokes listing changes or
-     * zones based on the parameter provided.
+     * parameter provided, lists both record sets and changes. Otherwise, invokes listing
+     * changes or zones based on the parameter provided.
      */
     @Override
     public void run(Dns dns, String... args) {
@@ -406,7 +406,7 @@ public class DnsExample {
       ProjectInfo.Quota quota = project.quota();
       System.out.printf("Project id: %s%nQuota:%n", dns.options().projectId());
       System.out.printf("\tZones: %d%n", quota.zones());
-      System.out.printf("\tDNS records per zone: %d%n", quota.rrsetsPerZone());
+      System.out.printf("\tRecord sets per zone: %d%n", quota.rrsetsPerZone());
       System.out.printf("\tRecord sets per DNS record: %d%n",
           quota.resourceRecordsPerRrset());
       System.out.printf("\tAdditions per change: %d%n", quota.rrsetAdditionsPerChange());
