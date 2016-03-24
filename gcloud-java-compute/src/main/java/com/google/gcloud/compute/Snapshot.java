@@ -18,6 +18,9 @@ package com.google.gcloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.gcloud.compute.Compute.OperationOption;
+import com.google.gcloud.compute.Compute.SnapshotOption;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
@@ -28,7 +31,7 @@ import java.util.Objects;
  * disk and create new persistent disks from that snapshot. This can be useful for backing up data,
  * recreating a persistent disk that might have been lost, or copying a persistent disk. Snapshots
  * can be applied across persistent disk types. {@code Snapshot} adds a layer of service-related
- * functionality over {@link SnapshotInfo}. Obejcts of this class are immutable, to get a
+ * functionality over {@link SnapshotInfo}. Objects of this class are immutable; to get a
  * {@code Snapshot} object with the most recent information use {@link #reload}.
  *
  * @see <a href="https://cloud.google.com/compute/docs/disks/persistent-disks#snapshots">Use
@@ -146,7 +149,7 @@ public class Snapshot extends SnapshotInfo {
    * @throws ComputeException upon failure
    */
   public boolean exists() {
-    return reload(Compute.SnapshotOption.fields()) != null;
+    return reload(SnapshotOption.fields()) != null;
   }
 
   /**
@@ -157,7 +160,7 @@ public class Snapshot extends SnapshotInfo {
    * @return a {@code Snapshot} object with latest information or {@code null} if not found
    * @throws ComputeException upon failure
    */
-  public Snapshot reload(Compute.SnapshotOption... options) {
+  public Snapshot reload(SnapshotOption... options) {
     return compute.getSnapshot(snapshotId().snapshot(), options);
   }
 
@@ -168,7 +171,7 @@ public class Snapshot extends SnapshotInfo {
    *     snapshot was not found
    * @throws ComputeException upon failure
    */
-  public Operation delete(Compute.OperationOption... options) {
+  public Operation delete(OperationOption... options) {
     return compute.deleteSnapshot(snapshotId(), options);
   }
 

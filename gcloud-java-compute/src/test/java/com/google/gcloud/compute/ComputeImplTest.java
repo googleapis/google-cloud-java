@@ -34,6 +34,10 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.Page;
 import com.google.gcloud.RetryParams;
+import com.google.gcloud.compute.Compute.AddressAggregatedListOption;
+import com.google.gcloud.compute.Compute.AddressFilter;
+import com.google.gcloud.compute.Compute.AddressListOption;
+import com.google.gcloud.compute.Compute.AddressOption;
 import com.google.gcloud.compute.Compute.DiskTypeAggregatedListOption;
 import com.google.gcloud.compute.Compute.DiskTypeFilter;
 import com.google.gcloud.compute.Compute.DiskTypeListOption;
@@ -49,6 +53,9 @@ import com.google.gcloud.compute.Compute.OperationOption;
 import com.google.gcloud.compute.Compute.RegionFilter;
 import com.google.gcloud.compute.Compute.RegionListOption;
 import com.google.gcloud.compute.Compute.RegionOption;
+import com.google.gcloud.compute.Compute.SnapshotFilter;
+import com.google.gcloud.compute.Compute.SnapshotListOption;
+import com.google.gcloud.compute.Compute.SnapshotOption;
 import com.google.gcloud.compute.Compute.ZoneFilter;
 import com.google.gcloud.compute.Compute.ZoneListOption;
 import com.google.gcloud.compute.Compute.ZoneOption;
@@ -297,44 +304,43 @@ public class ComputeImplTest {
       FILTER, "progress ne 0");
 
   // Address options
-  private static final Compute.AddressOption ADDRESS_OPTION_FIELDS =
-      Compute.AddressOption.fields(Compute.AddressField.ID, Compute.AddressField.DESCRIPTION);
+  private static final AddressOption ADDRESS_OPTION_FIELDS =
+      AddressOption.fields(Compute.AddressField.ID, Compute.AddressField.DESCRIPTION);
 
   // Address list options
-  private static final Compute.AddressFilter ADDRESS_FILTER =
-      Compute.AddressFilter.notEquals(Compute.AddressField.REGION, "someRegion");
-  private static final Compute.AddressListOption ADDRESS_LIST_PAGE_TOKEN =
-      Compute.AddressListOption.pageToken("cursor");
-  private static final Compute.AddressListOption ADDRESS_LIST_PAGE_SIZE =
-      Compute.AddressListOption.pageSize(42L);
-  private static final Compute.AddressListOption ADDRESS_LIST_FILTER =
-      Compute.AddressListOption.filter(ADDRESS_FILTER);
+  private static final AddressFilter ADDRESS_FILTER =
+      AddressFilter.notEquals(Compute.AddressField.REGION, "someRegion");
+  private static final AddressListOption ADDRESS_LIST_PAGE_TOKEN =
+      AddressListOption.pageToken("cursor");
+  private static final AddressListOption ADDRESS_LIST_PAGE_SIZE = AddressListOption.pageSize(42L);
+  private static final AddressListOption ADDRESS_LIST_FILTER =
+      AddressListOption.filter(ADDRESS_FILTER);
   private static final Map<ComputeRpc.Option, ?> ADDRESS_LIST_OPTIONS = ImmutableMap.of(
       PAGE_TOKEN, "cursor",
       MAX_RESULTS, 42L,
       FILTER, "region ne someRegion");
 
   // Address aggregated list options
-  private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_PAGE_TOKEN =
-      Compute.AddressAggregatedListOption.pageToken("cursor");
-  private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_PAGE_SIZE =
-      Compute.AddressAggregatedListOption.pageSize(42L);
-  private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_FILTER =
-      Compute.AddressAggregatedListOption.filter(ADDRESS_FILTER);
+  private static final AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_PAGE_TOKEN =
+      AddressAggregatedListOption.pageToken("cursor");
+  private static final AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_PAGE_SIZE =
+      AddressAggregatedListOption.pageSize(42L);
+  private static final AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_FILTER =
+      AddressAggregatedListOption.filter(ADDRESS_FILTER);
 
   // Snapshot options
-  private static final Compute.SnapshotOption SNAPSHOT_OPTION_FIELDS =
-      Compute.SnapshotOption.fields(Compute.SnapshotField.ID, Compute.SnapshotField.DESCRIPTION);
+  private static final SnapshotOption SNAPSHOT_OPTION_FIELDS =
+      SnapshotOption.fields(Compute.SnapshotField.ID, Compute.SnapshotField.DESCRIPTION);
 
   // Snapshot list options
-  private static final Compute.SnapshotFilter SNAPSHOT_FILTER =
-      Compute.SnapshotFilter.equals(Compute.SnapshotField.DISK_SIZE_GB, 500L);
-  private static final Compute.SnapshotListOption SNAPSHOT_LIST_PAGE_TOKEN =
-      Compute.SnapshotListOption.pageToken("cursor");
-  private static final Compute.SnapshotListOption SNAPSHOT_LIST_MAX_RESULTS =
-      Compute.SnapshotListOption.pageSize(42L);
-  private static final Compute.SnapshotListOption SNAPSHOT_LIST_FILTER =
-      Compute.SnapshotListOption.filter(SNAPSHOT_FILTER);
+  private static final SnapshotFilter SNAPSHOT_FILTER =
+      SnapshotFilter.equals(Compute.SnapshotField.DISK_SIZE_GB, 500L);
+  private static final SnapshotListOption SNAPSHOT_LIST_PAGE_TOKEN =
+      SnapshotListOption.pageToken("cursor");
+  private static final SnapshotListOption SNAPSHOT_LIST_MAX_RESULTS =
+      SnapshotListOption.pageSize(42L);
+  private static final SnapshotListOption SNAPSHOT_LIST_FILTER =
+      SnapshotListOption.filter(SNAPSHOT_FILTER);
   private static final Map<ComputeRpc.Option, ?> SNAPSHOT_LIST_OPTIONS = ImmutableMap.of(
       PAGE_TOKEN, "cursor",
       MAX_RESULTS, 42L,
@@ -1930,11 +1936,11 @@ public class ComputeImplTest {
   @Test
   public void testCreateSnapshot() {
     EasyMock.expect(computeRpcMock.createSnapshot(DISK_ID.zone(), DISK_ID.disk(),
-        SNAPSHOT_ID.snapshot(), null, EMPTY_RPC_OPTIONS)).andReturn(globalOperation.toPb());
+        SNAPSHOT_ID.snapshot(), null, EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     Operation operation = compute.create(SNAPSHOT);
-    assertEquals(globalOperation, operation);
+    assertEquals(zoneOperation, operation);
   }
 
   @Test
@@ -1942,7 +1948,7 @@ public class ComputeImplTest {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(computeRpcMock.createSnapshot(eq(DISK_ID.zone()), eq(DISK_ID.disk()),
         eq(SNAPSHOT_ID.snapshot()), EasyMock.<String>isNull(), capture(capturedOptions)))
-            .andReturn(globalOperation.toPb());
+            .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     Operation operation = compute.create(SNAPSHOT, OPERATION_OPTION_FIELDS);
@@ -1951,7 +1957,7 @@ public class ComputeImplTest {
     assertTrue(selector.contains("id"));
     assertTrue(selector.contains("description"));
     assertEquals(23, selector.length());
-    assertEquals(globalOperation, operation);
+    assertEquals(zoneOperation, operation);
   }
 
   @Test
@@ -1995,7 +2001,7 @@ public class ComputeImplTest {
         .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertEquals(globalOperation, compute.deleteSnapshot(SNAPSHOT_ID));
+    assertEquals(globalOperation, compute.deleteSnapshot(SNAPSHOT_ID.snapshot()));
   }
 
   @Test
