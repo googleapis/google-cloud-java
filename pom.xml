@@ -4,7 +4,7 @@
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.1.5-SNAPSHOT</version>
+  <version>0.1.6-SNAPSHOT</version>
   <name>GCloud Java</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
   <description>
@@ -216,6 +216,13 @@
             </manifestEntries>
           </archive>
         </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -390,6 +397,24 @@
                 <show>protected</show>
                 <nohelp>true</nohelp>
                 <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
+                <groups>
+                  <group>
+                    <title>API packages</title>
+                    <packages>com.google.gcloud*</packages>
+                  </group>
+                  <group>
+                    <title>Test helpers packages</title>
+                    <packages>com.google.gcloud.bigquery.testing:com.google.gcloud.datastore.testing:com.google.gcloud.resourcemanager.testing:com.google.gcloud.storage.testing</packages>
+                  </group>
+                  <group>
+                    <title>Example packages</title>
+                    <packages>com.google.gcloud.examples*</packages>
+                  </group>
+                  <group>
+                    <title>SPI packages</title>
+                    <packages>com.google.gcloud.spi:com.google.gcloud.bigquery.spi:com.google.gcloud.datastore.spi:com.google.gcloud.resourcemanager.spi:com.google.gcloud.storage.spi</packages>
+                  </group>
+                </groups>
               </configuration>
             </plugin>
             <plugin>

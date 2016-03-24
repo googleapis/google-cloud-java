@@ -25,8 +25,10 @@ import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
+import com.google.gcloud.dns.DnsBatchResult;
 import com.google.gcloud.dns.ChangeRequest;
 import com.google.gcloud.dns.Dns;
+import com.google.gcloud.dns.DnsBatch;
 import com.google.gcloud.dns.DnsException;
 import com.google.gcloud.dns.DnsOptions;
 import com.google.gcloud.dns.DnsRecord;
@@ -950,6 +952,26 @@ public class ITDnsTest {
       waitForChangeToComplete(ZONE1.name(), change.id());
     } finally {
       clear();
+    }
+  }
+
+  @Test
+  public void testListZoneBatch() {
+    DNS.create(ZONE1);
+    DNS.create(ZONE_EMPTY_DESCRIPTION);
+    try {
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<Page<Zone>> batchResult = batch.listZones();
+      batch.submit();
+      assertTrue(batchResult.submitted());
+      Iterator<Zone> iteratorBatch = batchResult.get().iterateAll();
+      Iterator<Zone> iteratorList = DNS.listZones().iterateAll();
+      while(iteratorBatch.hasNext()) {
+        assertEquals(iteratorList.next(), iteratorBatch.next());
+      }
+    } finally {
+      DNS.delete(ZONE1.name());
+      DNS.delete(ZONE_EMPTY_DESCRIPTION.name());
     }
   }
 }

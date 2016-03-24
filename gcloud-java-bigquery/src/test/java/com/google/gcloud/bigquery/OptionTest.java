@@ -18,7 +18,7 @@ package com.google.gcloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 
-import com.google.gcloud.spi.BigQueryRpc;
+import com.google.gcloud.bigquery.spi.BigQueryRpc;
 
 import org.junit.Test;
 

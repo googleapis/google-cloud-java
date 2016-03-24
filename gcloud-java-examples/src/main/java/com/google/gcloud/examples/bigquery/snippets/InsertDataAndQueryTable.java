@@ -84,7 +84,7 @@ public class InsertDataAndQueryTable {
     // Create a query request
     QueryRequest queryRequest = QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
         .maxWaitTime(60000L)
-        .maxResults(1000L)
+        .pageSize(1000L)
         .build();
     // Request query to be executed and wait for results
     QueryResponse queryResponse = bigquery.query(queryRequest);

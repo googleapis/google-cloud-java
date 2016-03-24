@@ -18,6 +18,8 @@ package com.google.gcloud.storage;
 
 import static com.google.gcloud.storage.Storage.PredefinedAcl.PUBLIC_READ;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.storage.Storage.BlobSourceOption;
@@ -53,6 +55,7 @@ public class CopyRequestTest {
     assertEquals(1, copyRequest1.sourceOptions().size());
     assertEquals(BlobSourceOption.generationMatch(1), copyRequest1.sourceOptions().get(0));
     assertEquals(TARGET_BLOB_INFO, copyRequest1.target());
+    assertTrue(copyRequest1.overrideInfo());
     assertEquals(1, copyRequest1.targetOptions().size());
     assertEquals(BlobTargetOption.predefinedAcl(PUBLIC_READ), copyRequest1.targetOptions().get(0));
 
@@ -62,6 +65,7 @@ public class CopyRequestTest {
         .build();
     assertEquals(SOURCE_BLOB_ID, copyRequest2.source());
     assertEquals(BlobInfo.builder(TARGET_BLOB_ID).build(), copyRequest2.target());
+    assertFalse(copyRequest2.overrideInfo());
 
     Storage.CopyRequest copyRequest3 = Storage.CopyRequest.builder()
         .source(SOURCE_BLOB_ID)
@@ -69,6 +73,7 @@ public class CopyRequestTest {
         .build();
     assertEquals(SOURCE_BLOB_ID, copyRequest3.source());
     assertEquals(TARGET_BLOB_INFO, copyRequest3.target());
+    assertTrue(copyRequest3.overrideInfo());
     assertEquals(ImmutableList.of(BlobTargetOption.predefinedAcl(PUBLIC_READ)),
         copyRequest3.targetOptions());
   }
@@ -78,52 +83,36 @@ public class CopyRequestTest {
     Storage.CopyRequest copyRequest1 = Storage.CopyRequest.of(SOURCE_BLOB_ID, TARGET_BLOB_INFO);
     assertEquals(SOURCE_BLOB_ID, copyRequest1.source());
     assertEquals(TARGET_BLOB_INFO, copyRequest1.target());
+    assertTrue(copyRequest1.overrideInfo());
 
     Storage.CopyRequest copyRequest2 = Storage.CopyRequest.of(SOURCE_BLOB_ID, TARGET_BLOB_NAME);
     assertEquals(SOURCE_BLOB_ID, copyRequest2.source());
-    assertEquals(BlobInfo.builder(SOURCE_BUCKET_NAME, TARGET_BLOB_NAME).build(),
+    assertEquals(BlobInfo.builder(BlobId.of(SOURCE_BUCKET_NAME, TARGET_BLOB_NAME)).build(),
         copyRequest2.target());
+    assertFalse(copyRequest2.overrideInfo());
 
     Storage.CopyRequest copyRequest3 =
         Storage.CopyRequest.of(SOURCE_BUCKET_NAME, SOURCE_BLOB_NAME, TARGET_BLOB_INFO);
     assertEquals(SOURCE_BLOB_ID, copyRequest3.source());
     assertEquals(TARGET_BLOB_INFO, copyRequest3.target());
+    assertTrue(copyRequest3.overrideInfo());
 
     Storage.CopyRequest copyRequest4 =
         Storage.CopyRequest.of(SOURCE_BUCKET_NAME, SOURCE_BLOB_NAME, TARGET_BLOB_NAME);
     assertEquals(SOURCE_BLOB_ID, copyRequest4.source());
-    assertEquals(BlobInfo.builder(SOURCE_BUCKET_NAME, TARGET_BLOB_NAME).build(),
+    assertEquals(BlobInfo.builder(BlobId.of(SOURCE_BUCKET_NAME, TARGET_BLOB_NAME)).build(),
         copyRequest4.target());
+    assertFalse(copyRequest4.overrideInfo());
 
     Storage.CopyRequest copyRequest5 = Storage.CopyRequest.of(SOURCE_BLOB_ID, TARGET_BLOB_ID);
     assertEquals(SOURCE_BLOB_ID, copyRequest5.source());
     assertEquals(BlobInfo.builder(TARGET_BLOB_ID).build(), copyRequest5.target());
+    assertFalse(copyRequest5.overrideInfo());
 
     Storage.CopyRequest copyRequest6 =
         Storage.CopyRequest.of(SOURCE_BUCKET_NAME, SOURCE_BLOB_NAME, TARGET_BLOB_ID);
     assertEquals(SOURCE_BLOB_ID, copyRequest6.source());
     assertEquals(BlobInfo.builder(TARGET_BLOB_ID).build(), copyRequest6.target());
-  }
-
-  @Test
-  public void testCopyRequestFail() {
-    thrown.expect(IllegalArgumentException.class);
-    Storage.CopyRequest.builder()
-        .source(SOURCE_BLOB_ID)
-        .target(BlobInfo.builder(TARGET_BLOB_ID).build())
-        .build();
-  }
-
-  @Test
-  public void testCopyRequestOfBlobInfoFail() {
-    thrown.expect(IllegalArgumentException.class);
-    Storage.CopyRequest.of(SOURCE_BLOB_ID, BlobInfo.builder(TARGET_BLOB_ID).build());
-  }
-
-  @Test
-  public void testCopyRequestOfStringFail() {
-    thrown.expect(IllegalArgumentException.class);
-    Storage.CopyRequest.of(
-        SOURCE_BUCKET_NAME, SOURCE_BLOB_NAME, BlobInfo.builder(TARGET_BLOB_ID).build());
+    assertFalse(copyRequest6.overrideInfo());
   }
 }
