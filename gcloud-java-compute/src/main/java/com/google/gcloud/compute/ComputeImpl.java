@@ -934,7 +934,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Operation create(SnapshotInfo snapshot, final OperationOption... options) {
+  public Operation create(SnapshotInfo snapshot, OperationOption... options) {
     final SnapshotInfo completeSnapshot = snapshot.setProjectId(options().projectId());
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
@@ -1005,25 +1005,26 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Operation deleteSnapshot(final SnapshotId snapshot, OperationOption... options) {
+  public Operation deleteSnapshot(SnapshotId snapshot, OperationOption... options) {
+    return deleteSnapshot(snapshot.snapshot(), options);
+
+  }
+
+  @Override
+  public Operation deleteSnapshot(final String snapshot, OperationOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Operation answer =
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.deleteSnapshot(snapshot.snapshot(), optionsMap);
+              return computeRpc.deleteSnapshot(snapshot, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : Operation.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
     }
-  }
-
-  @Override
-  public Operation deleteSnapshot(final String snapshot, OperationOption... options) {
-    return deleteSnapshot(SnapshotId.of(snapshot));
   }
 
   private Map<ComputeRpc.Option, ?> optionMap(Option... options) {

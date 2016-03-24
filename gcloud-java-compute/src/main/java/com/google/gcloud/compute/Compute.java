@@ -582,7 +582,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = 4847837203592234453L;
 
-    DiskTypeFilter(DiskTypeField field, ComparisonOperator operator, Object value) {
+    private DiskTypeFilter(DiskTypeField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -630,7 +630,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = 7346062041571853235L;
 
-    MachineTypeFilter(MachineTypeField field, ComparisonOperator operator, Object value) {
+    private MachineTypeFilter(MachineTypeField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -678,7 +678,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = 4464892812442567172L;
 
-    RegionFilter(RegionField field, ComparisonOperator operator, Object value) {
+    private RegionFilter(RegionField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -712,7 +712,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = -3927428278548808737L;
 
-    ZoneFilter(ZoneField field, ComparisonOperator operator, Object value) {
+    private ZoneFilter(ZoneField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -746,7 +746,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = -3202249202748346427L;
 
-    OperationFilter(OperationField field, ComparisonOperator operator, Object value) {
+    private OperationFilter(OperationField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -794,7 +794,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = -227481644259653765L;
 
-    AddressFilter(AddressField field, ComparisonOperator operator, Object value) {
+    private AddressFilter(AddressField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -828,12 +828,12 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = 8757711630092406747L;
 
-    SnapshotFilter(SnapshotField field, ComparisonOperator operator, Object value) {
+    private SnapshotFilter(SnapshotField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
     /**
-     * Returns an equality filter for the given field and string value. For string fields,
+     * Returns an equals filter for the given field and string value. For string fields,
      * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
      * match the entire field.
      *
@@ -855,7 +855,7 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     /**
-     * Returns an equality filter for the given field and long value.
+     * Returns an equals filter for the given field and long value.
      */
     public static SnapshotFilter equals(SnapshotField field, long value) {
       return new SnapshotFilter(checkNotNull(field), ComparisonOperator.EQ, value);
@@ -911,6 +911,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of disk types returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static DiskTypeListOption pageSize(long pageSize) {
       return new DiskTypeListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -956,6 +957,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of disk types returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static DiskTypeAggregatedListOption pageSize(long pageSize) {
       return new DiskTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1011,6 +1013,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of machine types returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static MachineTypeListOption pageSize(long pageSize) {
       return new MachineTypeListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1056,6 +1059,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of machine types returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static MachineTypeAggregatedListOption pageSize(long pageSize) {
       return new MachineTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1111,6 +1115,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of regions returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static RegionListOption pageSize(long pageSize) {
       return new RegionListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1178,6 +1183,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of zones returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static ZoneListOption pageSize(long pageSize) {
       return new ZoneListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1267,6 +1273,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of operations returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static OperationListOption pageSize(long pageSize) {
       return new OperationListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1334,6 +1341,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of addresses returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static AddressListOption pageSize(long pageSize) {
       return new AddressListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1379,6 +1387,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of addresses returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static AddressAggregatedListOption pageSize(long pageSize) {
       return new AddressAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1405,8 +1414,8 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the snapshot's fields to be returned by the RPC call. If this
-     * option is not provided, all snapshot's fields are returned. {@code SnapshotOption.fields} can
-     * be used to specify only the fields of interest. {@link Snapshot#snapshotId()} is always
+     * option is not provided, all the snapshot's fields are returned. {@code SnapshotOption.fields}
+     * can be used to specify only the fields of interest. {@link Snapshot#snapshotId()} is always
      * returned, even if not specified.
      */
     public static SnapshotOption fields(SnapshotField... fields) {
@@ -1434,6 +1443,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of snapshots returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static SnapshotListOption pageSize(long pageSize) {
       return new SnapshotListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1448,9 +1458,9 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the snapshot's fields to be returned by the RPC call. If this
-     * option is not provided, all snapshot's fields are returned. {@code SnapshotListOption.fields}
-     * can be used to specify only the fields of interest. {@link Snapshot#snapshotId()} is always
-     * returned, even if not specified.
+     * option is not provided, all the snapshot's fields are returned.
+     * {@code SnapshotListOption.fields} can be used to specify only the fields of interest.
+     * {@link Snapshot#snapshotId()} is always returned, even if not specified.
      */
     public static SnapshotListOption fields(SnapshotField... fields) {
       StringBuilder builder = new StringBuilder();

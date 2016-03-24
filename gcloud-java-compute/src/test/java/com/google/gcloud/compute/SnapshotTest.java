@@ -107,7 +107,7 @@ public class SnapshotTest {
 
   @Test
   public void testBuilder() {
-    initializeExpectedSnapshot(1);
+    initializeExpectedSnapshot(2);
     assertEquals(ID, expectedSnapshot.id());
     assertEquals(SNAPSHOT_ID, expectedSnapshot.snapshotId());
     assertEquals(CREATION_TIMESTAMP, expectedSnapshot.creationTimestamp());
@@ -120,6 +120,24 @@ public class SnapshotTest {
     assertEquals(STORAGE_BYTES, expectedSnapshot.storageBytes());
     assertEquals(STORAGE_BYTES_STATUS, expectedSnapshot.storageBytesStatus());
     assertSame(serviceMockReturnsOptions, expectedSnapshot.compute());
+    SnapshotId otherSnapshotId = SnapshotId.of("otherSnapshot");
+    DiskId otherSourceDisk = DiskId.of("zone", "otherDisk");
+    Snapshot snapshot = new Snapshot.Builder(serviceMockReturnsOptions, SNAPSHOT_ID, SOURCE_DISK)
+        .snapshotId(otherSnapshotId)
+        .sourceDisk(otherSourceDisk)
+        .build();
+    assertNull(snapshot.id());
+    assertEquals(otherSnapshotId, snapshot.snapshotId());
+    assertNull(snapshot.creationTimestamp());
+    assertNull(snapshot.description());
+    assertNull(snapshot.status());
+    assertNull(snapshot.diskSizeGb());
+    assertNull(snapshot.licenses());
+    assertEquals(otherSourceDisk, snapshot.sourceDisk());
+    assertNull(snapshot.sourceDiskId());
+    assertNull(snapshot.storageBytes());
+    assertNull(snapshot.storageBytesStatus());
+    assertSame(serviceMockReturnsOptions, snapshot.compute());
   }
 
   @Test
