@@ -49,8 +49,8 @@ public class SnapshotTest {
   private static final SnapshotInfo.StorageBytesStatus STORAGE_BYTES_STATUS =
       SnapshotInfo.StorageBytesStatus.UP_TO_DATE;
 
-  private Compute serviceMockReturnsOptions = createStrictMock(Compute.class);
-  private ComputeOptions mockOptions = createMock(ComputeOptions.class);
+  private final Compute serviceMockReturnsOptions = createStrictMock(Compute.class);
+  private final ComputeOptions mockOptions = createMock(ComputeOptions.class);
   private Compute compute;
   private Snapshot snapshot;
   private Snapshot expectedSnapshot;

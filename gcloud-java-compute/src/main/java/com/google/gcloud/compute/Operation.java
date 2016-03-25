@@ -792,8 +792,8 @@ public class Operation implements Serializable {
     return operationPb;
   }
 
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
     this.compute = options.service();
   }
 

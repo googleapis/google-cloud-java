@@ -1007,7 +1007,6 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   @Override
   public Operation deleteSnapshot(SnapshotId snapshot, OperationOption... options) {
     return deleteSnapshot(snapshot.snapshot(), options);
-
   }
 
   @Override
