@@ -46,7 +46,7 @@
  *   .ttl(24, TimeUnit.HOURS)
  *   .addRecord(ip)
  *   .build();
- * ChangeRequest changeRequest = ChangeRequest.builder().add(toCreate).build();
+ * ChangeRequestInfo changeRequest = ChangeRequestInfo.builder().add(toCreate).build();
  * zone.applyChangeRequest(changeRequest);
  * } </pre>
  *

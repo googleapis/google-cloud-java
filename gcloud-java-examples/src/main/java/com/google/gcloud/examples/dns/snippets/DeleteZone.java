@@ -22,7 +22,7 @@
 
 package com.google.gcloud.examples.dns.snippets;
 
-import com.google.gcloud.dns.ChangeRequest;
+import com.google.gcloud.dns.ChangeRequestInfo;
 import com.google.gcloud.dns.Dns;
 import com.google.gcloud.dns.DnsOptions;
 import com.google.gcloud.dns.RecordSet;
@@ -47,7 +47,7 @@ public class DeleteZone {
     Iterator<RecordSet> recordIterator = dns.listRecordSets(zoneName).iterateAll();
 
     // Make a change for deleting the records
-    ChangeRequest.Builder changeBuilder = ChangeRequest.builder();
+    ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder();
     while (recordIterator.hasNext()) {
       RecordSet current = recordIterator.next();
       // SOA and NS records cannot be deleted
@@ -57,14 +57,14 @@ public class DeleteZone {
     }
 
     // Build and apply the change request to our zone if it contains records to delete
-    ChangeRequest changeRequest = changeBuilder.build();
+    ChangeRequestInfo changeRequest = changeBuilder.build();
     if (!changeRequest.deletions().isEmpty()) {
       changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
 
       // Wait for change to finish, but save data traffic by transferring only ID and status
       Dns.ChangeRequestOption option =
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS);
-      while (ChangeRequest.Status.PENDING.equals(changeRequest.status())) {
+      while (ChangeRequestInfo.Status.PENDING.equals(changeRequest.status())) {
         System.out.println("Waiting for change to complete. Going to sleep for 500ms...");
         try {
           Thread.sleep(500);

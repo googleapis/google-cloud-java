@@ -74,7 +74,7 @@ public class SerializationTest extends BaseSerializationTest {
           .ttl(12, TimeUnit.HOURS)
           .addRecord("record")
           .build();
-  private static final ChangeRequestInfo CHANGE_REQUEST_INFO_COMPLETE = ChangeRequest.builder()
+  private static final ChangeRequestInfo CHANGE_REQUEST_INFO_COMPLETE = ChangeRequestInfo.builder()
       .add(RECORD_SET_COMPLETE)
       .delete(RECORD_SET_PARTIAL)
       .status(ChangeRequest.Status.PENDING)

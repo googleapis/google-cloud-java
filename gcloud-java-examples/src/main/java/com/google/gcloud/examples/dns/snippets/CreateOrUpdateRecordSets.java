@@ -22,7 +22,7 @@
 
 package com.google.gcloud.examples.dns.snippets;
 
-import com.google.gcloud.dns.ChangeRequest;
+import com.google.gcloud.dns.ChangeRequestInfo;
 import com.google.gcloud.dns.Dns;
 import com.google.gcloud.dns.DnsOptions;
 import com.google.gcloud.dns.RecordSet;
@@ -55,7 +55,7 @@ public class CreateOrUpdateRecordSets {
         .build();
 
     // Make a change
-    ChangeRequest.Builder changeBuilder = ChangeRequest.builder().add(toCreate);
+    ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder().add(toCreate);
 
     // Verify a www.<zone-domain>. type A record does not exist yet.
     // If it does exist, we will overwrite it with our prepared record.
@@ -68,7 +68,7 @@ public class CreateOrUpdateRecordSets {
     }
 
     // Build and apply the change request to our zone
-    ChangeRequest changeRequest = changeBuilder.build();
+    ChangeRequestInfo changeRequest = changeBuilder.build();
     zone.applyChangeRequest(changeRequest);
   }
 }

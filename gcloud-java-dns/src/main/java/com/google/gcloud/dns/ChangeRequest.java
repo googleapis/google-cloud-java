@@ -16,6 +16,8 @@
 
 package com.google.gcloud.dns;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.services.dns.model.Change;
 import com.google.common.base.Function;
 
@@ -25,28 +27,17 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * A class representing an atomic update to a collection of {@link RecordSet}s within a {@code
- * Zone}.
+ * An immutable class representing an atomic update to a collection of {@link RecordSet}s within a
+ * {@code Zone}.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/changes">Google Cloud DNS documentation</a>
  */
 public class ChangeRequest extends ChangeRequestInfo {
 
-  private static final long serialVersionUID = -9027378042756366333L;
+  private static final long serialVersionUID = 5335667200595081449L;
   private final DnsOptions options;
-  private final String zoneName;
+  private final String zone;
   private transient Dns dns;
-
-  /**
-   * This enumerates the possible states of a {@code ChangeRequest}.
-   *
-   * @see <a href="https://cloud.google.com/dns/api/v1/changes#resource">Google Cloud DNS
-   * documentation</a>
-   */
-  public enum Status {
-    PENDING,
-    DONE
-  }
 
   /**
    * A builder for {@code ChangeRequest}s.
@@ -54,12 +45,12 @@ public class ChangeRequest extends ChangeRequestInfo {
   public static class Builder extends ChangeRequestInfo.Builder {
 
     private final Dns dns;
-    private final String zoneName;
+    private final String zone;
     private final ChangeRequestInfo.BuilderImpl infoBuilder;
 
     private Builder(ChangeRequest cr) {
       this.dns = cr.dns;
-      this.zoneName = cr.zoneName;
+      this.zone = cr.zone;
       this.infoBuilder = new ChangeRequestInfo.BuilderImpl(cr);
     }
 
@@ -131,45 +122,36 @@ public class ChangeRequest extends ChangeRequestInfo {
 
     @Override
     public ChangeRequest build() {
-      return new ChangeRequest(dns, zoneName, infoBuilder);
+      return new ChangeRequest(dns, zone, infoBuilder);
     }
   }
 
-  ChangeRequest(Dns dns, String zoneName, ChangeRequest.BuilderImpl infoBuilder) {
+  ChangeRequest(Dns dns, String zone, ChangeRequest.BuilderImpl infoBuilder) {
     super(infoBuilder);
-    this.zoneName = zoneName;
-    this.dns = dns;
+    this.zone = checkNotNull(zone);
+    this.dns = checkNotNull(dns);
     this.options = dns.options();
-  }
-
-  static Function<Change, ChangeRequest> fromPbFunction(final Dns dns, final String zoneName) {
-    return new Function<Change, ChangeRequest>() {
-      @Override
-      public ChangeRequest apply(com.google.api.services.dns.model.Change pb) {
-        return ChangeRequest.fromPb(dns, zoneName, pb);
-      }
-    };
   }
 
   /**
    * Returns the name of the {@link Zone} associated with this change request.
    */
-  public String zoneName() {
-    return this.zoneName;
+  public String zone() {
+    return this.zone;
   }
 
   /**
-   * Returns the {@link Dns} service object associated with this change request.
+   * Returns the change request's {@code Dns} object used to issue requests.
    */
   public Dns dns() {
     return dns;
   }
 
   /**
-   * Applies this change request to a zone that it is associated with.
+   * Applies this change request to the associated zone.
    */
   public ChangeRequest applyTo(Dns.ChangeRequestOption... options) {
-    return dns.applyChangeRequest(zoneName, this, options);
+    return dns.applyChangeRequest(zone, this, options);
   }
 
   @Override
@@ -179,24 +161,37 @@ public class ChangeRequest extends ChangeRequestInfo {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ChangeRequest && Objects.equals(toPb(), ((ChangeRequest) obj).toPb())
-        && Objects.equals(options, ((ChangeRequest) obj).options)
-        && Objects.equals(zoneName, ((ChangeRequest) obj).zoneName);
+    if (obj == null || !obj.getClass().equals(ChangeRequest.class)) {
+      return false;
+    } else {
+      ChangeRequest other = (ChangeRequest) obj;
+      return Objects.equals(options, other.options)
+          && Objects.equals(zone, other.zone)
+          && Objects.equals(toPb(), other.toPb());
+    }
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), options, zoneName);
+    return Objects.hash(super.hashCode(), options, zone);
   }
 
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
     this.dns = options.service();
   }
 
-  static ChangeRequest fromPb(Dns dns, String zoneName,
-      com.google.api.services.dns.model.Change pb) {
+  static ChangeRequest fromPb(Dns dns, String zoneName, Change pb) {
     ChangeRequestInfo info = ChangeRequestInfo.fromPb(pb);
     return new ChangeRequest(dns, zoneName, new ChangeRequestInfo.BuilderImpl(info));
+  }
+
+  static Function<Change, ChangeRequest> fromPbFunction(final Dns dns, final String zoneName) {
+    return new Function<Change, ChangeRequest>() {
+      @Override
+      public ChangeRequest apply(com.google.api.services.dns.model.Change pb) {
+        return ChangeRequest.fromPb(dns, zoneName, pb);
+      }
+    };
   }
 }

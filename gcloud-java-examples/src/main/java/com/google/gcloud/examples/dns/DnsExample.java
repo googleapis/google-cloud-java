@@ -19,6 +19,7 @@ package com.google.gcloud.examples.dns;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.dns.ChangeRequest;
+import com.google.gcloud.dns.ChangeRequestInfo;
 import com.google.gcloud.dns.Dns;
 import com.google.gcloud.dns.DnsOptions;
 import com.google.gcloud.dns.ProjectInfo;
@@ -207,7 +208,7 @@ public class DnsExample {
           .records(ImmutableList.of(ip))
           .ttl(ttl, TimeUnit.SECONDS)
           .build();
-      ChangeRequest changeRequest = ChangeRequest.builder()
+      ChangeRequestInfo changeRequest = ChangeRequest.builder()
           .delete(recordSet)
           .build();
       changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
@@ -254,7 +255,7 @@ public class DnsExample {
           .records(ImmutableList.of(ip))
           .ttl(ttl, TimeUnit.SECONDS)
           .build();
-      ChangeRequest changeRequest = ChangeRequest.builder().add(recordSet).build();
+      ChangeRequestInfo changeRequest = ChangeRequest.builder().add(recordSet).build();
       changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
       System.out.printf("The request for adding A record %s for zone %s was successfully "
           + "submitted and assigned ID %s.%n", recordName, zoneName, changeRequest.id());
@@ -444,9 +445,9 @@ public class DnsExample {
     System.out.printf("Name servers: %s%n", Joiner.on(", ").join(zone.nameServers()));
   }
 
-  private static ChangeRequest waitForChangeToFinish(Dns dns, String zoneName,
-      ChangeRequest request) {
-    ChangeRequest current = request;
+  private static ChangeRequestInfo waitForChangeToFinish(Dns dns, String zoneName,
+      ChangeRequestInfo request) {
+    ChangeRequestInfo current = request;
     while (current.status().equals(ChangeRequest.Status.PENDING)) {
       System.out.print(".");
       try {

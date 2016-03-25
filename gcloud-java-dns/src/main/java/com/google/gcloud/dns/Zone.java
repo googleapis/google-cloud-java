@@ -146,7 +146,7 @@ public class Zone extends ZoneInfo {
   }
 
   /**
-   * Submits {@link ChangeRequest} to the service for it to applied to this zone. The method
+   * Submits {@link ChangeRequestInfo} to the service for it to applied to this zone. The method
    * searches for zone by name.
    *
    * @param options optional restriction on what fields of {@link ChangeRequest} should be returned

@@ -159,7 +159,7 @@ our zone that creates a record set of type A and points URL www.someexampledomai
 IP address 12.13.14.15. Start by adding
 
 ```java
-import com.google.gcloud.dns.ChangeRequest;
+import com.google.gcloud.dns.ChangeRequestInfo;
 import com.google.gcloud.dns.RecordSet;
 
 import java.util.concurrent.TimeUnit;
@@ -176,7 +176,7 @@ RecordSet toCreate = RecordSet.builder("www." + zone.dnsName(), RecordSet.Type.A
     .build();
 
 // Make a change
-ChangeRequest changeRequest = ChangeRequest.builder().add(toCreate).build();
+ChangeRequestInfo changeRequest = ChangeRequestInfo.builder().add(toCreate).build();
 
 // Build and apply the change request to our zone
 changeRequest = zone.applyChangeRequest(changeRequest);
@@ -198,7 +198,7 @@ and in the code
 
 ```java
 // Make a change
-ChangeRequest.Builder changeBuilder = ChangeRequest.builder().add(toCreate);
+ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder().add(toCreate);
 
 // Verify the type A record does not exist yet.
 // If it does exist, we will overwrite it with our prepared record.
@@ -211,7 +211,7 @@ while (recordSetIterator.hasNext()) {
 }
 
 // Build and apply the change request to our zone
-ChangeRequest changeRequest = changeBuilder.build();
+ChangeRequestInfo changeRequest = changeBuilder.build();
 zone.applyChangeRequest(changeRequest);
 ```
 You can find more information about changes in the [Cloud DNS documentation] (https://cloud.google.com/dns/what-is-cloud-dns#cloud_dns_api_concepts).
@@ -220,7 +220,7 @@ When the change request is applied, it is registered with the Cloud DNS service 
 can wait for its completion as follows:
 
 ```java
-while (ChangeRequest.Status.PENDING.equals(changeRequest.status())) {
+while (ChangeRequestInfo.Status.PENDING.equals(changeRequest.status())) {
   try {
     Thread.sleep(500L);
   } catch (InterruptedException e) {
@@ -262,9 +262,17 @@ while (recordSetIterator.hasNext()) {
 }
 ```
 
-You can also list the history of change requests that were applied to a zone:
+You can also list the history of change requests that were applied to a zone.
+First add:
 
 ```java
+import java.util.ChangeRequest;
+```
+
+and then:
+
+```java
+
 // List the change requests applied to a particular zone
 Iterator<ChangeRequest> changeIterator = zone.listChangeRequests().iterateAll();
 System.out.println(String.format("The history of changes in %s:", zone.name()));
@@ -280,7 +288,7 @@ First, you need to empty the zone by deleting all its records except for the def
 
 ```java
 // Make a change for deleting the record sets
-changeBuilder = ChangeRequest.builder();
+changeBuilder = ChangeRequestInfo.builder();
 while (recordIterator.hasNext()) {
   RecordSet current = recordIterator.next();
   // SOA and NS records cannot be deleted
@@ -290,14 +298,14 @@ while (recordIterator.hasNext()) {
 }
 
 // Build and apply the change request to our zone if it contains records to delete
-ChangeRequest changeRequest = changeBuilder.build();
+ChangeRequestInfo changeRequest = changeBuilder.build();
 if (!changeRequest.deletions().isEmpty()) {
   changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
 
   // Wait for change to finish, but save data traffic by transferring only ID and status
   Dns.ChangeRequestOption option =
       Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS);
-  while (ChangeRequest.Status.PENDING.equals(changeRequest.status())) {
+  while (ChangeRequestInfo.Status.PENDING.equals(changeRequest.status())) {
     System.out.println("Waiting for change to complete. Going to sleep for 500ms...");
     try {
       Thread.sleep(500);

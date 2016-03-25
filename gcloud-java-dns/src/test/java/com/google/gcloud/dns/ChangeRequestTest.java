@@ -23,6 +23,7 @@ import static org.easymock.EasyMock.reset;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
@@ -47,8 +48,7 @@ public class ChangeRequestTest {
   @Before
   public void setUp() throws Exception {
     dns = createStrictMock(Dns.class);
-    expect(dns.options()).andReturn(OPTIONS);
-    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS).times(2);
     replay(dns);
     changeRequest = new ChangeRequest(dns, ZONE_NAME, new ChangeRequestInfo.BuilderImpl(
         CHANGE_REQUEST_INFO.toBuilder()
@@ -68,28 +68,28 @@ public class ChangeRequestTest {
 
   @Test
   public void testConstructor() {
+    expect(dns.options()).andReturn(OPTIONS);
     replay(dns);
-    assertEquals(CHANGE_REQUEST_INFO.toPb(), changeRequestPartial.toPb());
+    assertEquals(new ChangeRequest(dns, ZONE_NAME,
+        new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO)), changeRequestPartial);
     assertNotNull(changeRequest.dns());
-    assertEquals(ZONE_NAME, changeRequest.zoneName());
-    assertNotNull(changeRequestPartial.dns());
-    assertEquals(ZONE_NAME, changeRequestPartial.zoneName());
+    assertEquals(ZONE_NAME, changeRequest.zone());
+    assertSame(dns, changeRequestPartial.dns());
+    assertEquals(ZONE_NAME, changeRequestPartial.zone());
   }
 
   @Test
   public void testFromPb() {
-    expect(dns.options()).andReturn(OPTIONS);
-    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS).times(2);
     replay(dns);
-    assertEquals(ChangeRequest.fromPb(dns, ZONE_NAME, changeRequest.toPb()), changeRequest);
-    assertEquals(ChangeRequest.fromPb(dns, ZONE_NAME, changeRequestPartial.toPb()),
-        changeRequestPartial);
+    assertEquals(changeRequest, ChangeRequest.fromPb(dns, ZONE_NAME, changeRequest.toPb()));
+    assertEquals(changeRequestPartial,
+        ChangeRequest.fromPb(dns, ZONE_NAME, changeRequestPartial.toPb()));
   }
 
   @Test
   public void testEqualsAndToBuilder() {
-    expect(dns.options()).andReturn(OPTIONS);
-    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS).times(2);
     replay(dns);
     ChangeRequest compare = changeRequest.toBuilder().build();
     assertEquals(changeRequest, compare);
@@ -102,15 +102,7 @@ public class ChangeRequestTest {
   @Test
   public void testBuilder() {
     // one for each build() call because it invokes a constructor
-    expect(dns.options()).andReturn(OPTIONS);
-    expect(dns.options()).andReturn(OPTIONS);
-    expect(dns.options()).andReturn(OPTIONS);
-    expect(dns.options()).andReturn(OPTIONS);
-    expect(dns.options()).andReturn(OPTIONS);
-    expect(dns.options()).andReturn(OPTIONS);
-    expect(dns.options()).andReturn(OPTIONS);
-    expect(dns.options()).andReturn(OPTIONS);
-    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.options()).andReturn(OPTIONS).times(9);
     replay(dns);
     String id = changeRequest.id() + "aaa";
     assertEquals(id, changeRequest.toBuilder().id(id).build().id());
@@ -131,7 +123,7 @@ public class ChangeRequestTest {
     modified = changeRequest.toBuilder().delete(cname).build();
     assertTrue(modified.deletions().contains(cname));
     modified = changeRequest.toBuilder().startTimeMillis(0L).build();
-    assertEquals(new Long(0), modified.startTimeMillis());
+    assertEquals(Long.valueOf(0), modified.startTimeMillis());
   }
 
   @Test
@@ -141,7 +133,8 @@ public class ChangeRequestTest {
         Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)))
         .andReturn(changeRequest);
     replay(dns);
-    changeRequest.applyTo();
-    changeRequest.applyTo(Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME));
+    assertSame(changeRequest, changeRequest.applyTo());
+    assertSame(changeRequest,
+        changeRequest.applyTo(Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)));
   }
 }

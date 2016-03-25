@@ -52,7 +52,18 @@ public class ChangeRequestInfo implements Serializable {
   private final List<RecordSet> deletions;
   private final String id;
   private final Long startTimeMillis;
-  private final ChangeRequest.Status status;
+  private final ChangeRequestInfo.Status status;
+
+  /**
+   * This enumerates the possible states of a change request.
+   *
+   * @see <a href="https://cloud.google.com/dns/api/v1/changes#resource">Google Cloud DNS
+   * documentation</a>
+   */
+  public enum Status {
+    PENDING,
+    DONE
+  }
 
   /**
    * A builder for {@code ChangeRequestInfo}.
@@ -110,7 +121,7 @@ public class ChangeRequestInfo implements Serializable {
     /**
      * Associates a server-assigned id to this {@code ChangeRequestInfo}.
      */
-    abstract  Builder id(String id);
+    abstract Builder id(String id);
 
     /**
      * Sets the time when this change request was started by a server.
@@ -134,7 +145,7 @@ public class ChangeRequestInfo implements Serializable {
     private List<RecordSet> deletions;
     private String id;
     private Long startTimeMillis;
-    private ChangeRequest.Status status;
+    private ChangeRequestInfo.Status status;
 
     BuilderImpl() {
       this.additions = new LinkedList<>();
@@ -215,7 +226,7 @@ public class ChangeRequestInfo implements Serializable {
     }
 
     @Override
-    Builder status(ChangeRequest.Status status) {
+    Builder status(ChangeRequestInfo.Status status) {
       this.status = checkNotNull(status);
       return this;
     }
@@ -274,15 +285,15 @@ public class ChangeRequestInfo implements Serializable {
   }
 
   /**
-   * Returns the status of this {@code ChangeRequest}.
+   * Returns the status of this {@code ChangeRequest}. If the change request has not been applied
+   * yet, the status is {@code PENDING}.
    */
-  public ChangeRequest.Status status() {
+  public ChangeRequestInfo.Status status() {
     return status;
   }
 
-  com.google.api.services.dns.model.Change toPb() {
-    com.google.api.services.dns.model.Change pb =
-        new com.google.api.services.dns.model.Change();
+  Change toPb() {
+    Change pb = new Change();
     // set id
     if (id() != null) {
       pb.setId(id());
@@ -302,7 +313,7 @@ public class ChangeRequestInfo implements Serializable {
     return pb;
   }
 
-  static ChangeRequestInfo fromPb(com.google.api.services.dns.model.Change pb) {
+  static ChangeRequestInfo fromPb(Change pb) {
     Builder builder = builder();
     if (pb.getId() != null) {
       builder.id(pb.getId());
@@ -325,8 +336,8 @@ public class ChangeRequestInfo implements Serializable {
 
   @Override
   public boolean equals(Object other) {
-    return (other instanceof ChangeRequestInfo)
-        && toPb().equals(((ChangeRequestInfo) other).toPb());
+    return other != null && other.getClass().equals(ChangeRequestInfo.class)
+        && other instanceof ChangeRequestInfo && toPb().equals(((ChangeRequestInfo) other).toPb());
   }
 
   @Override

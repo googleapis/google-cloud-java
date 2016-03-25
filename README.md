@@ -252,7 +252,7 @@ Zone zone = dns.create(zoneInfo);
 The second snippet shows how to create records inside a zone. The complete code can be found on [CreateOrUpdateRecordSets.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateRecordSets.java).
 
 ```java
-import com.google.gcloud.dns.ChangeRequest;
+import com.google.gcloud.dns.ChangeRequestInfo;
 import com.google.gcloud.dns.Dns;
 import com.google.gcloud.dns.DnsOptions;
 import com.google.gcloud.dns.RecordSet;
@@ -269,7 +269,7 @@ RecordSet toCreate = RecordSet.builder("www.someexampledomain.com.", RecordSet.T
     .ttl(24, TimeUnit.HOURS)
     .addRecord(ip)
     .build();
-ChangeRequest.Builder changeBuilder = ChangeRequest.builder().add(toCreate);
+ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder().add(toCreate);
 
 // Verify that the record does not exist yet.
 // If it does exist, we will overwrite it with our prepared record.
@@ -282,7 +282,7 @@ while (recordSetIterator.hasNext()) {
   }
 }
 
-ChangeRequest changeRequest = changeBuilder.build();
+ChangeRequestInfo changeRequest = changeBuilder.build();
 zone.applyChangeRequest(changeRequest);
 ```
 
