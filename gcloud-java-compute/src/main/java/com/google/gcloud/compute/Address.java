@@ -172,8 +172,8 @@ public class Address extends AddressInfo {
     return Objects.hash(super.hashCode(), options);
   }
 
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
     this.compute = options.service();
   }
 

@@ -1668,7 +1668,7 @@ public interface Compute extends Service<ComputeOptions> {
   Snapshot getSnapshot(String snapshot, SnapshotOption... options);
 
   /**
-   * Lists all snapshots.
+   * Lists snapshots.
    *
    * @throws ComputeException upon failure
    */
