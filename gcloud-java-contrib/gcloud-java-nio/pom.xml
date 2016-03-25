@@ -19,7 +19,7 @@
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>gcloud-java</artifactId>
+      <artifactId>gcloud-java-storage</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
@@ -92,26 +92,40 @@
           <compilerArgument>-Xlint:unchecked</compilerArgument>
         </configuration>
       </plugin>
-      <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.6</version>
-        <configuration>
-          <archive>
-            <addMavenDescriptor>true</addMavenDescriptor>
-            <index>true</index>
-            <manifest>
-              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-              <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-            </manifest>
-            <manifestEntries>
-              <artifactId>${project.artifactId}</artifactId>
-              <groupId>${project.groupId}</groupId>
-              <version>${project.version}</version>
-              <buildNumber>${buildNumber}</buildNumber>
-            </manifestEntries>
-          </archive>
-        </configuration>
-      </plugin>
+        <!-- shade the jar so we can demo adding the NIO jar to add functionality. -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>2.4.3</version>
+            <configuration>
+                <shadedArtifactAttached>true</shadedArtifactAttached>
+                <relocations>
+                    <relocation>
+                        <pattern>com</pattern>
+                        <shadedPattern>shaded.gcloud-nio.com</shadedPattern>
+                        <excludes>
+                            <exclude>com.google.gcloud.**</exclude>
+                        </excludes>
+                    </relocation>
+                    <relocation>
+                        <pattern>org</pattern>
+                        <shadedPattern>shaded.gcloud-nio.org</shadedPattern>
+                    </relocation>
+                    <relocation>
+                        <pattern>google</pattern>
+                        <shadedPattern>shaded.gcloud-nio.google</shadedPattern>
+                    </relocation>
+                </relocations>
+            </configuration>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
     </plugins>
   </build>
 </project>

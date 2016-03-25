@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.ImmutableSet;
+import com.google.gcloud.storage.StorageOptions;
 
 import java.io.IOException;
 import java.net.URI;
@@ -34,6 +35,7 @@ import java.nio.file.attribute.UserPrincipalLookupService;
 import java.util.Objects;
 import java.util.Set;
 
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 /**
@@ -60,7 +62,7 @@ public final class CloudStorageFileSystem extends FileSystem {
    * provides a simpler alternative.
    *
    * @see #forBucket(String, CloudStorageConfiguration)
-   * @see java.nio.file.FileSystems#getFileSystem(java.net.URI)
+   * @see java.nio.file.FileSystems#getFileSystem(URI)
    */
   public static CloudStorageFileSystem forBucket(String bucket) {
     return forBucket(bucket, CloudStorageConfiguration.DEFAULT);
@@ -72,10 +74,21 @@ public final class CloudStorageFileSystem extends FileSystem {
    * @see #forBucket(String)
    */
   public static CloudStorageFileSystem forBucket(String bucket, CloudStorageConfiguration config) {
-    checkArgument(
-        !bucket.startsWith(URI_SCHEME + ":"), "Bucket name must not have schema: %s", bucket);
-    return new CloudStorageFileSystem(
-        new CloudStorageFileSystemProvider(), bucket, checkNotNull(config));
+    return forBucket(bucket, config, null);
+  }
+
+  /**
+   * Creates a new filesystem for a particular bucket, with customizable settings and storage
+   * options.
+   *
+   * @see #forBucket(String)
+   */
+  public static CloudStorageFileSystem forBucket(String bucket, CloudStorageConfiguration config,
+        @Nullable StorageOptions storageOptions) {
+    checkArgument(!bucket.startsWith(URI_SCHEME + ":"),
+        "Bucket name must not have schema: %s", bucket);
+    return new CloudStorageFileSystem(new CloudStorageFileSystemProvider(storageOptions),
+        bucket, checkNotNull(config));
   }
 
   public static final String URI_SCHEME = "gs";

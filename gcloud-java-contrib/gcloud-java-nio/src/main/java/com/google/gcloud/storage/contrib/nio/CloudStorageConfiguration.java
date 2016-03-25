@@ -146,7 +146,7 @@ public abstract class CloudStorageConfiguration {
     Builder() {}
   }
 
-  static final CloudStorageConfiguration DEFAULT = builder().build();
+  public static final CloudStorageConfiguration DEFAULT = builder().build();
 
   static CloudStorageConfiguration fromMap(Map<String, ?> env) {
     Builder builder = builder();
