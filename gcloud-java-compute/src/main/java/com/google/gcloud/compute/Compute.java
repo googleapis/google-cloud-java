@@ -1491,7 +1491,7 @@ public interface Compute extends Service<ComputeOptions> {
   Page<DiskType> listDiskTypes(String zone, DiskTypeListOption... options);
 
   /**
-   * Lists all disk types.
+   * Lists the disk types in all zones.
    *
    * @throws ComputeException upon failure
    */
@@ -1519,7 +1519,7 @@ public interface Compute extends Service<ComputeOptions> {
   Page<MachineType> listMachineTypes(String zone, MachineTypeListOption... options);
 
   /**
-   * Lists all machine types.
+   * Lists the machine types in all zones.
    *
    * @throws ComputeException upon failure
    */
@@ -1636,7 +1636,7 @@ public interface Compute extends Service<ComputeOptions> {
   Page<Address> listRegionAddresses(String region, AddressListOption... options);
 
   /**
-   * Lists all addresses.
+   * Lists both global and region addresses.
    *
    * @throws ComputeException upon failure
    */
