@@ -5,6 +5,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
+import com.google.gcloud.storage.StorageOptions;
 import com.google.gcloud.storage.testing.LocalGcsHelper;
 
 import org.junit.Before;
@@ -111,7 +112,8 @@ public class CloudStorageFileSystemTest {
       NullPointerTester tester =
           new NullPointerTester()
               .ignore(CloudStorageFileSystem.class.getMethod("equals", Object.class))
-              .setDefault(CloudStorageConfiguration.class, CloudStorageConfiguration.DEFAULT);
+              .setDefault(CloudStorageConfiguration.class, CloudStorageConfiguration.DEFAULT)
+              .setDefault(StorageOptions.class, LocalGcsHelper.options());
       tester.testAllPublicStaticMethods(CloudStorageFileSystem.class);
       tester.testAllPublicInstanceMethods(fs);
     }

@@ -25,7 +25,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
-import com.google.gcloud.spi.BigQueryRpc;
+import com.google.gcloud.bigquery.spi.BigQueryRpc;
 
 import java.util.List;
 import java.util.Set;

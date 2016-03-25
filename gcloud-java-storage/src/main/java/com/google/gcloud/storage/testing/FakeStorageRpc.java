@@ -2,7 +2,7 @@ package com.google.gcloud.storage.testing;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.StorageObject;
-import com.google.gcloud.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageException;
 

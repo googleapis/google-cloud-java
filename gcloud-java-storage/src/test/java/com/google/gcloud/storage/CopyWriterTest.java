@@ -27,10 +27,10 @@ import static org.junit.Assert.assertTrue;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpc.RewriteRequest;
-import com.google.gcloud.spi.StorageRpc.RewriteResponse;
-import com.google.gcloud.spi.StorageRpcFactory;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc.RewriteRequest;
+import com.google.gcloud.storage.spi.StorageRpc.RewriteResponse;
+import com.google.gcloud.storage.spi.StorageRpcFactory;
 
 import org.easymock.EasyMock;
 import org.junit.After;

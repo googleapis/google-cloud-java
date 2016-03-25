@@ -66,14 +66,14 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   private final Storage storage;
 
   // used only when we create a new instance of CloudStorageFileSystemProvider.
-  private static StorageOptions storageOptions;
+  private static StorageOptions defaultStorageOptions;
 
   /**
-   * Sets options that are only used by the constructor.
+   * Sets default options that are only used by the constructor.
    */
   @VisibleForTesting
   public static void setGCloudOptions(StorageOptions newStorageOptions) {
-    storageOptions = newStorageOptions;
+    defaultStorageOptions = newStorageOptions;
   }
 
   /**
@@ -83,14 +83,19 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    * @see CloudStorageFileSystem#forBucket(String)
    */
   public CloudStorageFileSystemProvider() {
-    this(storageOptions);
+    this(defaultStorageOptions);
   }
 
-  private CloudStorageFileSystemProvider(@Nullable StorageOptions gcsStorageOptions) {
-    if (gcsStorageOptions == null) {
-      this.storage = StorageOptions.defaultInstance().service();
+  CloudStorageFileSystemProvider(@Nullable StorageOptions explicitOptions) {
+    // explicit options have priority over default options.
+    if (explicitOptions == null) {
+      if (defaultStorageOptions == null) {
+        this.storage = StorageOptions.defaultInstance().service();
+      } else {
+        this.storage = defaultStorageOptions.service();
+      }
     } else {
-      this.storage = gcsStorageOptions.service();
+      this.storage = explicitOptions.service();
     }
   }
 

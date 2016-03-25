@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.datastore.spi;
 
 import com.google.api.services.datastore.DatastoreV1.AllocateIdsRequest;
 import com.google.api.services.datastore.DatastoreV1.AllocateIdsResponse;

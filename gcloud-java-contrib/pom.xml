@@ -18,13 +18,6 @@
   <modules>
     <module>gcloud-java-nio</module>
   </modules>
-  <dependencies>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>gcloud-java</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-  </dependencies>
   <build>
     <plugins>
       <plugin>

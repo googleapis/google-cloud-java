@@ -35,7 +35,7 @@ import com.google.gcloud.PageImpl;
 import com.google.gcloud.PageImpl.NextPageFetcher;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.bigquery.InsertAllRequest.RowToInsert;
-import com.google.gcloud.spi.BigQueryRpc;
+import com.google.gcloud.bigquery.spi.BigQueryRpc;
 
 import java.util.List;
 import java.util.Map;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.resourcemanager.spi;
 
 import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.gcloud.resourcemanager.ResourceManagerException;

@@ -89,6 +89,28 @@ To run examples from your command line:
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.storage.StorageExample" -Dexec.args="download <bucket_name> test.txt"
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.storage.StorageExample" -Dexec.args="delete <bucket_name> test.txt"
     ```
+ * Here's an example run of `Stat`, illustrating the use of the gcloud-java-nio jar.
+
+     Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket with a file in it.
+     Compile the JAR with:
+    ```
+    mvn package -DskipTests -Dmaven.javadoc.skip=true  -Dmaven.source.skip=true
+    ```
+    Then run the sample with:
+    ```
+    java -cp gcloud-java-contrib/gcloud-java-nio/target/gcloud-java-nio-0.1.6-SNAPSHOT-shaded.jar:gcloud-java-examples/target/gcloud-java-examples-0.1.6-SNAPSHOT.jar com.google.gcloud.examples.nio.Stat --check
+    ```
+    Or, if you have a file in `gs://mybucket/myfile.txt`, you can run:
+    ```
+    java -cp gcloud-java-contrib/gcloud-java-nio/target/gcloud-java-nio-0.1.6-SNAPSHOT-shaded.jar:gcloud-java-examples/target/gcloud-java-examples-0.1.6-SNAPSHOT.jar com.google.gcloud.examples.nio.Stat gs://mybucket/myfile.txt
+    ```
+    The sample doesn't have anything about GCS in it. It gets that ability from the nio jar that
+    we're adding to the classpath. You can use the nio "fat shaded" jar for this purpose as it also
+    includes the dependencies for gcloud-java-nio.
+
+    If you have access to a project's source code you can also simply add gcloud-java-nio as
+    a dependency and let Maven pull in the required dependencies (this is what the nio unit tests do).
+    This approach is preferable as the fat jar approach may waste memory on multiple copies of dependencies.
 
 Troubleshooting
 ---------------

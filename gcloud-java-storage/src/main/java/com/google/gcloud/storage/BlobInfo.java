@@ -308,15 +308,8 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
-<<<<<<< HEAD
-    /**
-     * Sets the blob's size in bytes.
-     */
-    public Builder size(Long size) {
-=======
     @Override
     Builder size(Long size) {
->>>>>>> master
       this.size = size;
       return this;
     }
