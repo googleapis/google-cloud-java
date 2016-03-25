@@ -16,13 +16,17 @@
 
 package com.google.gcloud.dns.spi;
 
+import com.google.api.client.googleapis.batch.BatchRequest;
+import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.dns.DnsBatch;
 import com.google.gcloud.dns.DnsException;
 
+import java.io.IOException;
 import java.util.Map;
 
 public interface DnsRpc {
@@ -171,4 +175,8 @@ public interface DnsRpc {
    */
   ListResult<Change> listChangeRequests(String zoneName, Map<Option, ?> options)
       throws DnsException;
+
+  BatchRequest enqueueListZones(BatchRequest batch, DnsBatch.Request request,
+      JsonBatchCallback callback, Map<Option, ?> options) throws IOException;
+
 }

@@ -17,8 +17,12 @@
 package com.google.gcloud.dns;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.googleapis.batch.BatchRequest;
+import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ResourceRecordSet;
@@ -37,6 +41,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.Map;
 
 public class DnsImplTest {
@@ -372,5 +377,30 @@ public class DnsImplTest {
     String type = (String) capturedOptions.getValue().get(DNS_RECORD_LIST_OPTIONS[4]
         .rpcOption());
     assertEquals(DNS_RECORD_LIST_OPTIONS[4].value(), type);
+  }
+
+  @Test
+  public void testBatchInitialization() {
+    DnsBatch batch = options.service().batch();
+    assertNotNull(batch);
+    assertTrue(batch instanceof DnsBatch);
+    assertTrue(batch.requests().isEmpty());
+  }
+
+  @Test
+  public void testPrepareBatchListZones() throws IOException {
+    DnsBatch.Callback<Page<Zone>> callback = EasyMock.createStrictMock(DnsBatch.Callback.class);
+    DnsBatch batch = options.service().batch().listZones(callback);
+    DnsBatch.Request request = batch.requests().keySet().iterator().next();
+    Capture<JsonBatchCallback> jsonCallback = Capture.newInstance();
+    Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    Capture<BatchRequest> capturedBatch = Capture.newInstance();
+    EasyMock.expect(dnsRpcMock.enqueueListZones(EasyMock.capture(capturedBatch),
+        EasyMock.eq(request), EasyMock.capture(jsonCallback), EasyMock.capture(capturedOptions)))
+        .andReturn(null);
+    EasyMock.replay(dnsRpcMock);
+    DnsImpl dnsImpl = (DnsImpl) options.service();
+    dnsImpl.prepareBatch(batch);
+    assertNull(capturedBatch.getValue());
   }
 }

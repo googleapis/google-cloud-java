@@ -533,4 +533,19 @@ public interface Dns extends Service<DnsOptions> {
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/list">Cloud DNS Chages: list</a>
    */
   Page<ChangeRequest> listChangeRequests(String zoneName, ChangeRequestListOption... options);
+
+  /**
+   * Submits a {@code batch} for processing to the Google Cloud DNS. The operations in the batch
+   * will be called using a single HTTP request. For each successfully executed operation, its
+   * {@link DnsBatch.Callback#success(Object, DnsBatch.Request)} callback method will be invoked.
+   * For each operation which returned an error, its {@link DnsBatch.Callback#error(DnsException,
+   * DnsBatch.Request)} callback method will be invoked.
+   */
+  void submitBatch(DnsBatch batch);
+
+  /**
+   * Initiates a new empty batch ready to be populated with service calls, which will use this
+   * {@code Dns} instance when submitted for processing to Google Cloud DNS.
+   */
+  DnsBatch batch();
 }
