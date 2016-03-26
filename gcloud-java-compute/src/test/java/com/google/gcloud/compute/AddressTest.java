@@ -57,8 +57,8 @@ public class AddressTest {
   private static final AddressInfo.RegionForwardingUsage REGION_FORWARDING_USAGE =
       new AddressInfo.RegionForwardingUsage(REGION_FORWARDING_RULES);
 
-  private Compute serviceMockReturnsOptions = createStrictMock(Compute.class);
-  private ComputeOptions mockOptions = createMock(ComputeOptions.class);
+  private final Compute serviceMockReturnsOptions = createStrictMock(Compute.class);
+  private final ComputeOptions mockOptions = createMock(ComputeOptions.class);
   private Compute compute;
   private Address globalForwardingAddress;
   private Address instanceAddress;

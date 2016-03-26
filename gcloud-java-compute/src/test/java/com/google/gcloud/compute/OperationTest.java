@@ -76,8 +76,8 @@ public class OperationTest {
   private static final RegionOperationId REGION_OPERATION_ID =
       RegionOperationId.of("project", "region", "op");
 
-  private Compute serviceMockReturnsOptions = createStrictMock(Compute.class);
-  private ComputeOptions mockOptions = createMock(ComputeOptions.class);
+  private final Compute serviceMockReturnsOptions = createStrictMock(Compute.class);
+  private final ComputeOptions mockOptions = createMock(ComputeOptions.class);
   private Compute compute;
   private Operation globalOperation;
   private Operation regionOperation;

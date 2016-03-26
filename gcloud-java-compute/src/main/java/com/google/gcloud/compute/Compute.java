@@ -582,7 +582,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = 4847837203592234453L;
 
-    DiskTypeFilter(DiskTypeField field, ComparisonOperator operator, Object value) {
+    private DiskTypeFilter(DiskTypeField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -630,7 +630,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = 7346062041571853235L;
 
-    MachineTypeFilter(MachineTypeField field, ComparisonOperator operator, Object value) {
+    private MachineTypeFilter(MachineTypeField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -678,7 +678,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = 4464892812442567172L;
 
-    RegionFilter(RegionField field, ComparisonOperator operator, Object value) {
+    private RegionFilter(RegionField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -712,7 +712,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = -3927428278548808737L;
 
-    ZoneFilter(ZoneField field, ComparisonOperator operator, Object value) {
+    private ZoneFilter(ZoneField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -746,7 +746,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = -3202249202748346427L;
 
-    OperationFilter(OperationField field, ComparisonOperator operator, Object value) {
+    private OperationFilter(OperationField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -794,7 +794,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     private static final long serialVersionUID = -227481644259653765L;
 
-    AddressFilter(AddressField field, ComparisonOperator operator, Object value) {
+    private AddressFilter(AddressField field, ComparisonOperator operator, Object value) {
       super(field.selector(), operator, value);
     }
 
@@ -818,6 +818,54 @@ public interface Compute extends Service<ComputeOptions> {
      */
     public static AddressFilter notEquals(AddressField field, String value) {
       return new AddressFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+  }
+
+  /**
+   * Class for filtering snapshot lists.
+   */
+  class SnapshotFilter extends ListFilter {
+
+    private static final long serialVersionUID = 8757711630092406747L;
+
+    private SnapshotFilter(SnapshotField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static SnapshotFilter equals(SnapshotField field, String value) {
+      return new SnapshotFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static SnapshotFilter notEquals(SnapshotField field, String value) {
+      return new SnapshotFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+
+    /**
+     * Returns an equals filter for the given field and long value.
+     */
+    public static SnapshotFilter equals(SnapshotField field, long value) {
+      return new SnapshotFilter(checkNotNull(field), ComparisonOperator.EQ, value);
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and long value.
+     */
+    public static SnapshotFilter notEquals(SnapshotField field, long value) {
+      return new SnapshotFilter(checkNotNull(field), ComparisonOperator.NE, value);
     }
   }
 
@@ -863,6 +911,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of disk types returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static DiskTypeListOption pageSize(long pageSize) {
       return new DiskTypeListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -908,6 +957,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of disk types returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static DiskTypeAggregatedListOption pageSize(long pageSize) {
       return new DiskTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -963,6 +1013,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of machine types returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static MachineTypeListOption pageSize(long pageSize) {
       return new MachineTypeListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1008,6 +1059,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of machine types returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static MachineTypeAggregatedListOption pageSize(long pageSize) {
       return new MachineTypeAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1063,6 +1115,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of regions returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static RegionListOption pageSize(long pageSize) {
       return new RegionListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1130,6 +1183,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of zones returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static ZoneListOption pageSize(long pageSize) {
       return new ZoneListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1219,6 +1273,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of operations returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static OperationListOption pageSize(long pageSize) {
       return new OperationListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1286,6 +1341,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of addresses returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static AddressListOption pageSize(long pageSize) {
       return new AddressListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1331,6 +1387,7 @@ public interface Compute extends Service<ComputeOptions> {
 
     /**
      * Returns an option to specify the maximum number of addresses returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
      */
     public static AddressAggregatedListOption pageSize(long pageSize) {
       return new AddressAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
@@ -1341,6 +1398,74 @@ public interface Compute extends Service<ComputeOptions> {
      */
     public static AddressAggregatedListOption pageToken(String pageToken) {
       return new AddressAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+  }
+
+  /**
+   * Class for specifying snapshot get options.
+   */
+  class SnapshotOption extends Option {
+
+    private static final long serialVersionUID = -3505179459035500945L;
+
+    private SnapshotOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the snapshot's fields to be returned by the RPC call. If this
+     * option is not provided, all the snapshot's fields are returned. {@code SnapshotOption.fields}
+     * can be used to specify only the fields of interest. {@link Snapshot#snapshotId()} is always
+     * returned, even if not specified.
+     */
+    public static SnapshotOption fields(SnapshotField... fields) {
+      return new SnapshotOption(ComputeRpc.Option.FIELDS, SnapshotField.selector(fields));
+    }
+  }
+
+  /**
+   * Class for specifying snapshot list options.
+   */
+  class SnapshotListOption extends Option {
+
+    private static final long serialVersionUID = 8278588147660831257L;
+
+    private SnapshotListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the snapshots being listed.
+     */
+    public static SnapshotListOption filter(SnapshotFilter filter) {
+      return new SnapshotListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of snapshots returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     */
+    public static SnapshotListOption pageSize(long pageSize) {
+      return new SnapshotListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing snapshots.
+     */
+    public static SnapshotListOption pageToken(String pageToken) {
+      return new SnapshotListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * Returns an option to specify the snapshot's fields to be returned by the RPC call. If this
+     * option is not provided, all the snapshot's fields are returned.
+     * {@code SnapshotListOption.fields} can be used to specify only the fields of interest.
+     * {@link Snapshot#snapshotId()} is always returned, even if not specified.
+     */
+    public static SnapshotListOption fields(SnapshotField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(SnapshotField.selector(fields)).append("),nextPageToken");
+      return new SnapshotListOption(ComputeRpc.Option.FIELDS, builder.toString());
     }
   }
 
@@ -1366,7 +1491,7 @@ public interface Compute extends Service<ComputeOptions> {
   Page<DiskType> listDiskTypes(String zone, DiskTypeListOption... options);
 
   /**
-   * Lists all disk types.
+   * Lists the disk types in all zones.
    *
    * @throws ComputeException upon failure
    */
@@ -1394,7 +1519,7 @@ public interface Compute extends Service<ComputeOptions> {
   Page<MachineType> listMachineTypes(String zone, MachineTypeListOption... options);
 
   /**
-   * Lists all machine types.
+   * Lists the machine types in all zones.
    *
    * @throws ComputeException upon failure
    */
@@ -1511,7 +1636,7 @@ public interface Compute extends Service<ComputeOptions> {
   Page<Address> listRegionAddresses(String region, AddressListOption... options);
 
   /**
-   * Lists all addresses.
+   * Lists both global and region addresses.
    *
    * @throws ComputeException upon failure
    */
@@ -1525,4 +1650,53 @@ public interface Compute extends Service<ComputeOptions> {
    * @throws ComputeException upon failure
    */
   Operation delete(AddressId addressId, OperationOption... options);
+
+  /**
+   * Creates a new snapshot.
+   *
+   * @return a zone operation if the create request was issued correctly, {@code null} if
+   *     {@code snapshot.sourceDisk} was not found
+   * @throws ComputeException upon failure
+   */
+  Operation create(SnapshotInfo snapshot, OperationOption... options);
+
+  /**
+   * Returns the requested snapshot or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Snapshot getSnapshot(String snapshot, SnapshotOption... options);
+
+  /**
+   * Lists snapshots.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Snapshot> listSnapshots(SnapshotListOption... options);
+
+  /**
+   * Deletes the requested snapshot. Keep in mind that deleting a single snapshot might not
+   * necessarily delete all the data for that snapshot. If any data for the snapshot that is marked
+   * for deletion is needed for subsequent snapshots, the data will be moved to the next snapshot.
+   *
+   * @return a global operation if the request was issued correctly, {@code null} if the snapshot
+   *     was not found
+   * @throws ComputeException upon failure
+   * @see <a href="https://cloud.google.com/compute/docs/disks/persistent-disks#deleting_snapshot">
+   *     Deleting a snapshot</a>
+   */
+  Operation deleteSnapshot(SnapshotId snapshot, OperationOption... options);
+
+  /**
+   * Deletes the requested snapshot. Keep in mind that deleting a single snapshot might not
+   * necessarily delete all the data for that snapshot. If any data on the snapshot that is marked
+   * for deletion is needed for subsequent snapshots, the data will be moved to the next snapshot.
+   *
+   * @return a global operation if the request was issued correctly, {@code null} if the snapshot
+   *     was not found
+   * @throws ComputeException upon failure
+   * @see <a href="https://cloud.google.com/compute/docs/disks/persistent-disks#deleting_snapshot">
+   *     Deleting a snapshot</a>
+   */
+  Operation deleteSnapshot(String snapshot, OperationOption... options);
 }

@@ -43,6 +43,8 @@ import com.google.api.services.compute.model.Operation;
 import com.google.api.services.compute.model.OperationList;
 import com.google.api.services.compute.model.Region;
 import com.google.api.services.compute.model.RegionList;
+import com.google.api.services.compute.model.Snapshot;
+import com.google.api.services.compute.model.SnapshotList;
 import com.google.api.services.compute.model.Zone;
 import com.google.api.services.compute.model.ZoneList;
 import com.google.common.collect.ImmutableList;
@@ -500,6 +502,61 @@ public class DefaultComputeRpc implements ComputeRpc {
     try {
       return compute.addresses()
           .delete(this.options.projectId(), region, address)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation createSnapshot(String zone, String disk, String snapshot, String description,
+      Map<Option, ?> options) {
+    Snapshot snapshotObject = new Snapshot().setName(snapshot).setDescription(description);
+    try {
+      return compute.disks()
+          .createSnapshot(this.options.projectId(), zone, disk, snapshotObject)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Snapshot getSnapshot(String snapshot, Map<Option, ?> options) {
+    try {
+      return compute.snapshots()
+          .get(this.options.projectId(), snapshot)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Snapshot>> listSnapshots(Map<Option, ?> options) {
+    try {
+      SnapshotList snapshotList = compute.snapshots()
+          .list(this.options.projectId())
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
+          .execute();
+      Iterable<Snapshot> snapshots = snapshotList.getItems();
+      return Tuple.of(snapshotList.getNextPageToken(), snapshots);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Operation deleteSnapshot(String snapshot, Map<Option, ?> options) {
+    try {
+      return compute.snapshots()
+          .delete(this.options.projectId(), snapshot)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
