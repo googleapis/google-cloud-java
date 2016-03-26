@@ -19,7 +19,6 @@ package com.google.gcloud.dns;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.gcloud.RetryHelper.RetryHelperException;
 import static com.google.gcloud.RetryHelper.runWithRetries;
-import static com.google.gcloud.dns.ChangeRequest.fromPb;
 
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
@@ -169,7 +168,8 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       // transform that list into change request objects
       Iterable<ChangeRequest> changes = result.results() == null
           ? ImmutableList.<ChangeRequest>of()
-          : Iterables.transform(result.results(), ChangeRequest.FROM_PB_FUNCTION);
+          : Iterables.transform(result.results(),
+              ChangeRequest.fromPbFunction(serviceOptions.service(), zoneName));
       return new PageImpl<>(new ChangeRequestPageFetcher(zoneName, serviceOptions, cursor,
           optionsMap), cursor, changes);
     } catch (RetryHelperException e) {
@@ -272,8 +272,8 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
   }
 
   @Override
-  public ChangeRequest applyChangeRequest(final String zoneName, final ChangeRequest changeRequest,
-      Dns.ChangeRequestOption... options) {
+  public ChangeRequest applyChangeRequest(final String zoneName,
+      final ChangeRequestInfo changeRequest, ChangeRequestOption... options) {
     final Map<DnsRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.dns.model.Change answer =
@@ -284,7 +284,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
                   return dnsRpc.applyChangeRequest(zoneName, changeRequest.toPb(), optionsMap);
                 }
               }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : fromPb(answer); // should never be null
+      return answer == null ? null : ChangeRequest.fromPb(this, zoneName, answer); // not null
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
     }
@@ -303,7 +303,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
                   return dnsRpc.getChangeRequest(zoneName, changeRequestId, optionsMap);
                 }
               }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : fromPb(answer);
+      return answer == null ? null : ChangeRequest.fromPb(this, zoneName, answer);
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
     }

@@ -53,10 +53,10 @@ public class DnsImplTest {
   private static final String PAGE_TOKEN = "some token";
   private static final ZoneInfo ZONE_INFO = ZoneInfo.of(ZONE_NAME, DNS_NAME, DESCRIPTION);
   private static final ProjectInfo PROJECT_INFO = ProjectInfo.builder().build();
-  private static final ChangeRequest CHANGE_REQUEST_PARTIAL = ChangeRequest.builder()
+  private static final ChangeRequestInfo CHANGE_REQUEST_PARTIAL = ChangeRequestInfo.builder()
       .add(DNS_RECORD1)
       .build();
-  private static final ChangeRequest CHANGE_REQUEST_COMPLETE = ChangeRequest.builder()
+  private static final ChangeRequestInfo CHANGE_REQUEST_COMPLETE = ChangeRequestInfo.builder()
       .add(DNS_RECORD1)
       .startTimeMillis(123L)
       .status(ChangeRequest.Status.PENDING)
@@ -221,7 +221,8 @@ public class DnsImplTest {
     dns = options.service(); // creates DnsImpl
     ChangeRequest changeRequest = dns.getChangeRequest(ZONE_INFO.name(),
         CHANGE_REQUEST_COMPLETE.id());
-    assertEquals(CHANGE_REQUEST_COMPLETE, changeRequest);
+    assertEquals(new ChangeRequest(dns, ZONE_INFO.name(),
+        new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE)), changeRequest);
   }
 
   @Test
@@ -235,7 +236,8 @@ public class DnsImplTest {
     ChangeRequest changeRequest = dns.getChangeRequest(ZONE_INFO.name(),
         CHANGE_REQUEST_COMPLETE.id(), CHANGE_GET_FIELDS);
     String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.rpcOption());
-    assertEquals(CHANGE_REQUEST_COMPLETE, changeRequest);
+    assertEquals(new ChangeRequest(dns, ZONE_INFO.name(),
+        new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE)), changeRequest);
     assertTrue(selector.contains(Dns.ChangeRequestField.STATUS.selector()));
     assertTrue(selector.contains(Dns.ChangeRequestField.ID.selector()));
   }
@@ -248,7 +250,8 @@ public class DnsImplTest {
     dns = options.service(); // creates DnsImpl
     ChangeRequest changeRequest = dns.applyChangeRequest(ZONE_INFO.name(),
         CHANGE_REQUEST_PARTIAL);
-    assertEquals(CHANGE_REQUEST_COMPLETE, changeRequest);
+    assertEquals(new ChangeRequest(dns, ZONE_INFO.name(),
+        new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE)), changeRequest);
   }
 
   @Test
@@ -262,7 +265,8 @@ public class DnsImplTest {
     ChangeRequest changeRequest = dns.applyChangeRequest(ZONE_INFO.name(),
         CHANGE_REQUEST_PARTIAL, CHANGE_GET_FIELDS);
     String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.rpcOption());
-    assertEquals(CHANGE_REQUEST_COMPLETE, changeRequest);
+    assertEquals(new ChangeRequest(dns, ZONE_INFO.name(),
+        new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE)), changeRequest);
     assertTrue(selector.contains(Dns.ChangeRequestField.STATUS.selector()));
     assertTrue(selector.contains(Dns.ChangeRequestField.ID.selector()));
   }
@@ -275,8 +279,12 @@ public class DnsImplTest {
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
     Page<ChangeRequest> changeRequestPage = dns.listChangeRequests(ZONE_INFO.name());
-    assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(CHANGE_REQUEST_COMPLETE));
-    assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(CHANGE_REQUEST_PARTIAL));
+    assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(
+        new ChangeRequest(dns, ZONE_INFO.name(),
+            new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE))));
+    assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(
+        new ChangeRequest(dns, ZONE_INFO.name(),
+            new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_PARTIAL))));
     assertEquals(2, Lists.newArrayList(changeRequestPage.values()).size());
   }
 
@@ -288,8 +296,12 @@ public class DnsImplTest {
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
     Page<ChangeRequest> changeRequestPage = dns.listChangeRequests(ZONE_NAME, CHANGE_LIST_OPTIONS);
-    assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(CHANGE_REQUEST_COMPLETE));
-    assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(CHANGE_REQUEST_PARTIAL));
+    assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(
+        new ChangeRequest(dns, ZONE_INFO.name(),
+            new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE))));
+    assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(
+        new ChangeRequest(dns, ZONE_INFO.name(),
+            new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_PARTIAL))));
     assertEquals(2, Lists.newArrayList(changeRequestPage.values()).size());
     Integer size = (Integer) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[0].rpcOption());
     assertEquals(MAX_SIZE, size);

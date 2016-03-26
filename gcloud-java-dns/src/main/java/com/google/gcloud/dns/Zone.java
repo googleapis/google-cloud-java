@@ -146,14 +146,14 @@ public class Zone extends ZoneInfo {
   }
 
   /**
-   * Submits {@link ChangeRequest} to the service for it to applied to this zone. The method
+   * Submits {@link ChangeRequestInfo} to the service for it to applied to this zone. The method
    * searches for zone by name.
    *
    * @param options optional restriction on what fields of {@link ChangeRequest} should be returned
    * @return ChangeRequest with server-assigned ID
    * @throws DnsException upon failure or if the zone is not found
    */
-  public ChangeRequest applyChangeRequest(ChangeRequest changeRequest,
+  public ChangeRequest applyChangeRequest(ChangeRequestInfo changeRequest,
       Dns.ChangeRequestOption... options) {
     checkNotNull(changeRequest);
     return dns.applyChangeRequest(name(), changeRequest, options);

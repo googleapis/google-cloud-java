@@ -138,7 +138,7 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a change request.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#applyChangeRequest(String, ChangeRequest, ChangeRequestOption...)} The ID is always
+   * {@link Dns#applyChangeRequest(String, ChangeRequestInfo, ChangeRequestOption...)} The ID is always
    * returned even if not selected.
    */
   enum ChangeRequestField {
@@ -508,7 +508,7 @@ public interface Dns extends Service<DnsOptions> {
    * @throws DnsException upon failure if zone is not found
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/create">Cloud DNS Changes: create</a>
    */
-  ChangeRequest applyChangeRequest(String zoneName, ChangeRequest changeRequest,
+  ChangeRequest applyChangeRequest(String zoneName, ChangeRequestInfo changeRequest,
       ChangeRequestOption... options);
 
   /**

@@ -63,7 +63,10 @@ public class SerializationTest extends BaseSerializationTest {
   private static final Zone FULL_ZONE = new Zone(DNS, new ZoneInfo.BuilderImpl(FULL_ZONE_INFO));
   private static final Zone PARTIAL_ZONE =
       new Zone(DNS, new ZoneInfo.BuilderImpl(PARTIAL_ZONE_INFO));
-  private static final ChangeRequest CHANGE_REQUEST_PARTIAL = ChangeRequest.builder().build();
+  private static final ChangeRequestInfo CHANGE_REQUEST_INFO_PARTIAL =
+      ChangeRequest.builder().build();
+  private static final ChangeRequest CHANGE_REQUEST_PARTIAL = new ChangeRequest(DNS, "name",
+      new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO_PARTIAL));
   private static final RecordSet RECORD_SET_PARTIAL =
       RecordSet.builder("www.www.com", RecordSet.Type.AAAA).build();
   private static final RecordSet RECORD_SET_COMPLETE =
@@ -71,13 +74,15 @@ public class SerializationTest extends BaseSerializationTest {
           .ttl(12, TimeUnit.HOURS)
           .addRecord("record")
           .build();
-  private static final ChangeRequest CHANGE_REQUEST_COMPLETE = ChangeRequest.builder()
+  private static final ChangeRequestInfo CHANGE_REQUEST_INFO_COMPLETE = ChangeRequestInfo.builder()
       .add(RECORD_SET_COMPLETE)
       .delete(RECORD_SET_PARTIAL)
       .status(ChangeRequest.Status.PENDING)
       .id("some id")
       .startTimeMillis(132L)
       .build();
+  private static final ChangeRequest CHANGE_REQUEST_COMPLETE = new ChangeRequest(DNS, "name",
+      new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO_COMPLETE));
 
   @Override
   protected Serializable[] serializableObjects() {
@@ -91,8 +96,9 @@ public class SerializationTest extends BaseSerializationTest {
     return new Serializable[]{FULL_ZONE_INFO, PARTIAL_ZONE_INFO, ZONE_LIST_OPTION,
         RECORD_SET_LIST_OPTION, CHANGE_REQUEST_LIST_OPTION, ZONE_OPTION, CHANGE_REQUEST_OPTION,
         PROJECT_OPTION, PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, OPTIONS, FULL_ZONE, PARTIAL_ZONE,
-        OPTIONS, CHANGE_REQUEST_PARTIAL, RECORD_SET_PARTIAL, RECORD_SET_COMPLETE,
-        CHANGE_REQUEST_COMPLETE, options, otherOptions};
+        OPTIONS, CHANGE_REQUEST_INFO_PARTIAL, CHANGE_REQUEST_PARTIAL, RECORD_SET_PARTIAL,
+        RECORD_SET_COMPLETE, CHANGE_REQUEST_INFO_COMPLETE, CHANGE_REQUEST_COMPLETE, options,
+        otherOptions};
   }
 
   @Override
