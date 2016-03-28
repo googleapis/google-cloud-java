@@ -16,12 +16,21 @@
 
 package com.google.gcloud.pubsub;
 
+import static com.google.common.util.concurrent.Futures.lazyTransform;
+
+import com.google.common.base.Function;
+import com.google.common.base.Throwables;
+import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.gcloud.AsyncPage;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.Page;
 import com.google.gcloud.pubsub.spi.PubSubRpc;
+import com.google.protobuf.Empty;
+import com.google.pubsub.v1.DeleteTopicRequest;
+import com.google.pubsub.v1.GetTopicRequest;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
@@ -29,39 +38,55 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   private final PubSubRpc rpc;
 
-  public PubSubImpl(PubSubOptions options) {
+  PubSubImpl(PubSubOptions options) {
     super(options);
     rpc = options.rpc();
   }
 
+  private static <V> V get(Future<V> future) {
+    try {
+      return Uninterruptibles.getUninterruptibly(future);
+    } catch (ExecutionException ex) {
+      // TODO: we should propagate PubSubException
+      throw Throwables.propagate(ex.getCause());
+    }
+  }
+
   @Override
   public Topic create(TopicInfo topic) {
-    return null;
+    return get(createAsync(topic));
   }
 
   @Override
   public Future<Topic> createAsync(TopicInfo topic) {
-    return null;
+    return lazyTransform(rpc.create(topic.toPb()), Topic.fromPbFunction(this));
   }
 
   @Override
   public Topic getTopic(String topic) {
-    return null;
+    return get(getTopicAsync(topic));
   }
 
   @Override
   public Future<Topic> getTopicAsync(String topic) {
-    return null;
+    GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(topic).build();
+    return lazyTransform(rpc.get(request), Topic.fromPbFunction(this));
   }
 
   @Override
   public boolean deleteTopic(String topic) {
-    return false;
+    return get(deleteTopicAsync(topic));
   }
 
   @Override
   public Future<Boolean> deleteTopicAsync(String topic) {
-    return null;
+    DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(topic).build();
+    return lazyTransform(rpc.delete(request), new Function<Empty, Boolean>() {
+      @Override
+      public Boolean apply(Empty input) {
+        return true;
+      }
+    });
   }
 
   @Override
@@ -160,7 +185,8 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<AsyncPage<Subscription>> listSubscriptionsAsync(String topic, ListOption... options) {
+  public Future<AsyncPage<Subscription>> listSubscriptionsAsync(String topic,
+      ListOption... options) {
     return null;
   }
 
@@ -213,7 +239,8 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit, Iterable<String> ackIds) {
+  public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
+      Iterable<String> ackIds) {
     return null;
   }
 }

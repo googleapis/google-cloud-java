@@ -41,11 +41,16 @@ public class Message implements Serializable {
   private final ImmutableMap<String, String> attributes;
   private final Long publishTime;
 
-  abstract static class Builder {
+  /**
+   * Builder for Message.
+   */
+  public abstract static class Builder {
 
     abstract Builder id(String id);
 
     public abstract Builder payload(byte[] payload);
+
+    public abstract Builder attributes(Map<String, String> attributes);
 
     public abstract Builder addAttribute(String name, String value);
 
@@ -58,10 +63,7 @@ public class Message implements Serializable {
     public abstract Message build();
   }
 
-  /**
-   * Builder for Message.
-   */
-  public static final class BuilderImpl extends Builder {
+  static final class BuilderImpl extends Builder {
 
     private String id;
     private byte[] payload;
@@ -92,6 +94,12 @@ public class Message implements Serializable {
     @Override
     public Builder addAttribute(String name, String value) {
       attributes.put(name, value);
+      return this;
+    }
+
+    @Override
+    public Builder attributes(Map<String, String> attributes) {
+      this.attributes = new HashMap<>(attributes);
       return this;
     }
 
@@ -150,7 +158,7 @@ public class Message implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return Objects.equals(toPb(), ((Message)o).toPb());
+    return Objects.equals(toPb(), ((Message) o).toPb());
   }
 
   @Override
@@ -186,7 +194,7 @@ public class Message implements Serializable {
   }
 
   static Message fromPb(com.google.pubsub.v1.PubsubMessage messagePb) {
-    Builder builder = builder();
+    Builder builder = builder(messagePb.getData().toByteArray());
     if (messagePb.hasPublishTime()) {
       Timestamp ts = messagePb.getPublishTime();
       builder.publishTime(
@@ -198,7 +206,6 @@ public class Message implements Serializable {
     for (Map.Entry<String, String> entry : messagePb.getAttributes().entrySet()) {
       builder.addAttribute(entry.getKey(), entry.getValue());
     }
-    builder.payload(messagePb.getData().toByteArray());
     return builder.build();
   }
 
@@ -207,10 +214,10 @@ public class Message implements Serializable {
   }
 
   public static Message of(byte[] payload) {
-    return builder().payload(payload).build();
+    return builder(payload).build();
   }
 
-  public static Builder builder() {
-    return new BuilderImpl();
+  public static Builder builder(byte[] payload) {
+    return new BuilderImpl().payload(payload);
   }
 }

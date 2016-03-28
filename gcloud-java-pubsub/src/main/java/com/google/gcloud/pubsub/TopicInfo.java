@@ -54,11 +54,13 @@ public class TopicInfo implements Serializable {
       this.name = topicInfo.name;
     }
 
+    @Override
     public Builder name(String name) {
       this.name = checkNotNull(name);
       return this;
     }
 
+    @Override
     public TopicInfo build() {
       return new TopicInfo(this);
     }

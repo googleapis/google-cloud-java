@@ -16,5 +16,56 @@
 
 package com.google.gcloud.pubsub.spi;
 
+import com.google.protobuf.Empty;
+import com.google.pubsub.v1.AcknowledgeRequest;
+import com.google.pubsub.v1.DeleteSubscriptionRequest;
+import com.google.pubsub.v1.DeleteTopicRequest;
+import com.google.pubsub.v1.GetSubscriptionRequest;
+import com.google.pubsub.v1.GetTopicRequest;
+import com.google.pubsub.v1.ListSubscriptionsRequest;
+import com.google.pubsub.v1.ListSubscriptionsResponse;
+import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
+import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
+import com.google.pubsub.v1.ListTopicsRequest;
+import com.google.pubsub.v1.ListTopicsResponse;
+import com.google.pubsub.v1.ModifyAckDeadlineRequest;
+import com.google.pubsub.v1.ModifyPushConfigRequest;
+import com.google.pubsub.v1.PublishRequest;
+import com.google.pubsub.v1.PublishResponse;
+import com.google.pubsub.v1.PullRequest;
+import com.google.pubsub.v1.PullResponse;
+import com.google.pubsub.v1.Subscription;
+import com.google.pubsub.v1.Topic;
+
+import java.util.concurrent.Future;
+
 public interface PubSubRpc {
+
+  Future<Topic> create(Topic topic);
+
+  Future<PublishResponse> publish(PublishRequest request);
+
+  Future<Topic> get(GetTopicRequest request);
+
+  Future<ListTopicsResponse> list(ListTopicsRequest request);
+
+  Future<ListTopicSubscriptionsResponse> list(ListTopicSubscriptionsRequest request);
+
+  Future<Empty> delete(DeleteTopicRequest request);
+
+  Future<Subscription> create(Subscription subscription);
+
+  Future<Subscription> get(GetSubscriptionRequest request);
+
+  Future<ListSubscriptionsResponse> list(ListSubscriptionsRequest request);
+
+  Future<Empty> delete(DeleteSubscriptionRequest request);
+
+  Future<Empty> modify(ModifyAckDeadlineRequest request);
+
+  Future<Empty> acknowledge(AcknowledgeRequest request);
+
+  Future<PullResponse> pull(PullRequest request);
+
+  Future<Empty> modify(ModifyPushConfigRequest request);
 }

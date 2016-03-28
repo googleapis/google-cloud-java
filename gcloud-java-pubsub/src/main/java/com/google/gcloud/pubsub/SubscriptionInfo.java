@@ -71,26 +71,31 @@ public class SubscriptionInfo implements Serializable {
       ackDeadlineSeconds = subscription.ackDeadlineSeconds;
     }
 
+    @Override
     public Builder name(String name) {
       this.name = checkNotNull(name);
       return this;
     }
 
+    @Override
     public Builder topic(String topic) {
       this.topic = checkNotNull(topic);
       return this;
     }
 
+    @Override
     public Builder pushConfig(PushConfig pushConfig) {
       this.pushConfig = pushConfig;
       return this;
     }
 
+    @Override
     public Builder ackDeadLineSeconds(int ackDeadlineSeconds) {
       this.ackDeadlineSeconds = ackDeadlineSeconds;
       return this;
     }
 
+    @Override
     public SubscriptionInfo build() {
       return new SubscriptionInfo(this);
     }
@@ -127,7 +132,7 @@ public class SubscriptionInfo implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return Objects.equals(toPb(), ((SubscriptionInfo)o).toPb());
+    return Objects.equals(toPb(), ((SubscriptionInfo) o).toPb());
   }
 
   @Override
