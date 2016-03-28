@@ -14,14 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub.spi;
+package com.google.cloud.pubsub;
 
-import com.google.gcloud.pubsub.PubSubOptions;
-import com.google.gcloud.spi.ServiceRpcFactory;
+import com.google.cloud.ServiceFactory;
 
 /**
- * An interface for Pub/Sub RPC factory.
- * Implementation will be loaded via {@link java.util.ServiceLoader}.
+ * An interface for Pub/Sub factories.
  */
-public interface PubSubRpcFactory extends ServiceRpcFactory<PubSubRpc, PubSubOptions> {
-}
+public interface PubSubFactory
+    extends ServiceFactory<PubSub, PubSubOptions> {}

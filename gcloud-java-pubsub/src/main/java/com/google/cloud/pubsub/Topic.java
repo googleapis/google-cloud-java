@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub;
+package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.gcloud.AsyncPage;
-import com.google.gcloud.Page;
-import com.google.gcloud.pubsub.PubSub.ListOption;
+import com.google.cloud.AsyncPage;
+import com.google.cloud.Page;
+import com.google.cloud.pubsub.PubSub.ListOption;
+import com.google.common.base.Function;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -32,6 +33,8 @@ import java.util.concurrent.Future;
  * PubSub Topic.
  */
 public class Topic extends TopicInfo {
+
+  private static final long serialVersionUID = -2686692223763315944L;
 
   private final PubSubOptions options;
   private transient PubSub pubsub;
@@ -146,5 +149,14 @@ public class Topic extends TopicInfo {
   static Topic fromPb(PubSub storage, com.google.pubsub.v1.Topic topicPb) {
     TopicInfo topicInfo = TopicInfo.fromPb(topicPb);
     return new Topic(storage, new BuilderImpl(topicInfo));
+  }
+
+  static Function<com.google.pubsub.v1.Topic, Topic> fromPbFunction(final PubSub pubsub) {
+    return new Function<com.google.pubsub.v1.Topic, Topic>() {
+      @Override
+      public Topic apply(com.google.pubsub.v1.Topic topicPb) {
+        return fromPb(pubsub, topicPb);
+      }
+    };
   }
 }

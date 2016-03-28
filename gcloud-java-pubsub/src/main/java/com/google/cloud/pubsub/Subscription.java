@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub;
+package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.gcloud.pubsub.PubSub.PullOption;
+import com.google.cloud.pubsub.PubSub.PullOption;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -30,6 +30,8 @@ import java.util.concurrent.Future;
  * PubSub subscription.
  */
 public class Subscription extends SubscriptionInfo {
+
+  private static final long serialVersionUID = -4153366055659552230L;
 
   private final PubSubOptions options;
   private transient PubSub pubsub;
@@ -138,8 +140,8 @@ public class Subscription extends SubscriptionInfo {
     return pubsub.pullAsync(name(), options);
   }
 
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
     this.pubsub = options.service();
   }
 

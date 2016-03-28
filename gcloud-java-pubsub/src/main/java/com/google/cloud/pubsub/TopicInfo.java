@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub;
+package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -54,11 +54,13 @@ public class TopicInfo implements Serializable {
       this.name = topicInfo.name;
     }
 
+    @Override
     public Builder name(String name) {
       this.name = checkNotNull(name);
       return this;
     }
 
+    @Override
     public TopicInfo build() {
       return new TopicInfo(this);
     }

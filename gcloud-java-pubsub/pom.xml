@@ -4,6 +4,7 @@
   <artifactId>gcloud-java-pubsub</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java Pub/Sub</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-pubsub</url>
   <description>
     Java idiomatic client for Google Cloud Pub/Sub.
   </description>

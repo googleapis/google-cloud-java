@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub.spi;
+package com.google.cloud;
 
-public interface PubSubRpc {
+import java.util.concurrent.Future;
+
+public interface AsyncPage<T> extends Page<T> {
+  Future<AsyncPage<T>> nextPageAsync();
 }

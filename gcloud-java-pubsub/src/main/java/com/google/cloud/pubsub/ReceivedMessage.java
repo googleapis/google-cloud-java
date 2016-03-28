@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub;
+package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -60,6 +61,12 @@ public class ReceivedMessage extends Message {
     }
 
     @Override
+    public Builder attributes(Map<String, String> attributes) {
+      delegate.attributes(attributes);
+      return this;
+    }
+
+    @Override
     public Builder addAttribute(String name, String value) {
       delegate.addAttribute(name, value);
       return this;
@@ -67,7 +74,7 @@ public class ReceivedMessage extends Message {
 
     @Override
     public Builder removeAttribute(String name) {
-      removeAttribute(name);
+      delegate.removeAttribute(name);
       return this;
     }
 
@@ -97,6 +104,7 @@ public class ReceivedMessage extends Message {
     options = pubsub.options();
   }
 
+  @Override
   public Builder toBuilder() {
     return new Builder(subscription, ackId, pubsub, new BuilderImpl(this));
   }
@@ -153,7 +161,7 @@ public class ReceivedMessage extends Message {
 
   static ReceivedMessage fromPb(PubSub storage, String subscription,
       com.google.pubsub.v1.ReceivedMessage msgPb) {
-    Message message = Message.fromPb(msgPb.getMessage());
+    Message message = fromPb(msgPb.getMessage());
     String ackId = msgPb.getAckId();
     return new Builder(subscription, ackId, storage, new BuilderImpl(message)).build();
   }
