@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,22 @@
  */
 
 /**
- * A testing helper for Google Cloud Resource Manager.
+ * A testing helper for Google Cloud DNS.
  *
  * <p>A simple usage example:
  * Before the test:
  * <pre> {@code
- * LocalResourceManagerHelper resourceManagerHelper = LocalResourceManagerHelper.create();
- * ResourceManager resourceManager = resourceManagerHelper.options().service();
- * resourceManagerHelper.start();
+ * // Minimum delay before processing change requests (in ms). Setting the delay to 0 makes change
+ * // request processing synchronous.
+ * long delay = 0;
+ * LocalDnsHelper dnsHelper = LocalDnsHelper.create(delay);
+ * Dns dns = dnsHelper.options().service();
+ * dnsHelper.start();
  * }</pre>
  *
  * <p>After the test:
  * <pre> {@code
- * resourceManagerHelper.stop();
+ * dnsHelper.stop();
  * }</pre>
  */
-package com.google.gcloud.resourcemanager.testing;
+package com.google.gcloud.dns.testing;
