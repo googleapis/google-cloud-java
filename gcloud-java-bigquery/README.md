@@ -6,6 +6,8 @@ Java idiomatic client for [Google Cloud BigQuery] (https://cloud.google.com/bigq
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-bigquery.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/bigquery/package-summary.html)
@@ -20,22 +22,22 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-bigquery</artifactId>
-  <version>0.1.3</version>
+  <version>0.1.6</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-bigquery:0.1.3'
+compile 'com.google.gcloud:gcloud-java-bigquery:0.1.6'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-bigquery" % "0.1.3"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-bigquery" % "0.1.6"
 ```
 
 Example Application
 -------------------
-- [`BigQueryExample`](https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/src/main/java/com/google/gcloud/examples/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
-Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/BigQueryExample.html).
+- [`BigQueryExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
+Read more about using this application on the [`BigQueryExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/bigquery/BigQueryExample.html).
 
 Authentication
 --------------
@@ -111,9 +113,10 @@ are created from a BigQuery SQL query. In this code snippet we show how to creat
 with only one string field. Add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.bigquery.BaseTableInfo;
 import com.google.gcloud.bigquery.Field;
 import com.google.gcloud.bigquery.Schema;
+import com.google.gcloud.bigquery.StandardTableDefinition;
+import com.google.gcloud.bigquery.Table;
 import com.google.gcloud.bigquery.TableId;
 import com.google.gcloud.bigquery.TableInfo;
 ```
@@ -126,7 +129,8 @@ Field stringField = Field.of("StringField", Field.Type.string());
 // Table schema definition
 Schema schema = Schema.of(stringField);
 // Create a table
-TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, schema));
+StandardTableDefinition tableDefinition = StandardTableDefinition.of(schema);
+Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
 ```
 
 #### Loading data into a table
@@ -181,7 +185,7 @@ Then add the following code to run the query and wait for the result:
 QueryRequest queryRequest =
     QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
         .maxWaitTime(60000L)
-        .maxResults(1000L)
+        .pageSize(1000L)
         .build();
 // Request query to be executed and wait for results
 QueryResponse queryResponse = bigquery.query(queryRequest);
@@ -198,88 +202,12 @@ while (rowIterator.hasNext()) {
 ```
 #### Complete source code
 
-Here we put together all the code shown above into one program. This program assumes that you are
-running on Compute Engine or from your own desktop. To run this example on App Engine, simply move
+In
+[InsertDataAndQueryTable.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/InsertDataAndQueryTable.java)
+we put together all the code shown above into one program. The program assumes that you are
+running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
 display on your webpage.
-
-```java
-import com.google.gcloud.bigquery.BaseTableInfo;
-import com.google.gcloud.bigquery.BigQuery;
-import com.google.gcloud.bigquery.BigQueryOptions;
-import com.google.gcloud.bigquery.DatasetInfo;
-import com.google.gcloud.bigquery.Field;
-import com.google.gcloud.bigquery.FieldValue;
-import com.google.gcloud.bigquery.InsertAllRequest;
-import com.google.gcloud.bigquery.InsertAllResponse;
-import com.google.gcloud.bigquery.QueryRequest;
-import com.google.gcloud.bigquery.QueryResponse;
-import com.google.gcloud.bigquery.Schema;
-import com.google.gcloud.bigquery.TableId;
-import com.google.gcloud.bigquery.TableInfo;
-
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
-public class GcloudBigQueryExample {
-
-  public static void main(String[] args) throws InterruptedException {
-
-    // Create a service instance
-    BigQuery bigquery = BigQueryOptions.defaultInstance().service();
-
-    // Create a dataset
-    String datasetId = "my_dataset_id";
-    bigquery.create(DatasetInfo.builder(datasetId).build());
-
-    TableId tableId = TableId.of(datasetId, "my_table_id");
-    // Table field definition
-    Field stringField = Field.of("StringField", Field.Type.string());
-    // Table schema definition
-    Schema schema = Schema.of(stringField);
-    // Create a table
-    TableInfo createdTableInfo = bigquery.create(TableInfo.of(tableId, schema));
-
-    // Define rows to insert
-    Map<String, Object> firstRow = new HashMap<>();
-    Map<String, Object> secondRow = new HashMap<>();
-    firstRow.put("StringField", "value1");
-    secondRow.put("StringField", "value2");
-    // Create an insert request
-    InsertAllRequest insertRequest = InsertAllRequest.builder(tableId)
-        .addRow(firstRow)
-        .addRow(secondRow)
-        .build();
-    // Insert rows
-    InsertAllResponse insertResponse = bigquery.insertAll(insertRequest);
-    // Check if errors occurred
-    if (insertResponse.hasErrors()) {
-      System.out.println("Errors occurred while inserting rows");
-    }
-
-    // Create a query request
-    QueryRequest queryRequest =
-        QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
-            .maxWaitTime(60000L)
-            .maxResults(1000L)
-            .build();
-    // Request query to be executed and wait for results
-    QueryResponse queryResponse = bigquery.query(queryRequest);
-    while (!queryResponse.jobComplete()) {
-      Thread.sleep(1000L);
-      queryResponse = bigquery.getQueryResults(queryResponse.jobId());
-    }
-    // Read rows
-    Iterator<List<FieldValue>> rowIterator = queryResponse.result().iterateAll();
-    System.out.println("Table rows:");
-    while (rowIterator.hasNext()) {
-      System.out.println(rowIterator.next());
-    }
-  }
-}
-```
 
 Troubleshooting
 ---------------

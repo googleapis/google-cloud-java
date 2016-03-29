@@ -22,9 +22,9 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.spi.DatastoreRpc;
-import com.google.gcloud.spi.DatastoreRpcFactory;
-import com.google.gcloud.spi.DefaultDatastoreRpc;
+import com.google.gcloud.datastore.spi.DatastoreRpc;
+import com.google.gcloud.datastore.spi.DatastoreRpcFactory;
+import com.google.gcloud.datastore.spi.DefaultDatastoreRpc;
 
 import java.lang.reflect.Method;
 import java.util.Iterator;

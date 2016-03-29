@@ -65,6 +65,7 @@ public class RemoteBigQueryHelperTest {
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
+
   @Test
   public void testForceDelete() throws InterruptedException, ExecutionException {
     BigQuery bigqueryMock = EasyMock.createMock(BigQuery.class);

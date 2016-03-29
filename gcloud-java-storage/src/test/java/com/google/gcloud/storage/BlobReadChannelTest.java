@@ -30,8 +30,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RestorableState;
 import com.google.gcloud.RetryParams;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpcFactory;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpcFactory;
 
 import org.junit.After;
 import org.junit.Before;
@@ -39,6 +39,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.channels.ClosedChannelException;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Random;
@@ -156,15 +157,15 @@ public class BlobReadChannelTest {
   }
 
   @Test
-  public void testReadClosed() {
+  public void testReadClosed() throws IOException {
     replay(storageRpcMock);
     reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     reader.close();
     try {
       ByteBuffer readBuffer = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);
       reader.read(readBuffer);
-      fail("Expected BlobReadChannel read to throw IOException");
-    } catch (IOException ex) {
+      fail("Expected BlobReadChannel read to throw ClosedChannelException");
+    } catch (ClosedChannelException ex) {
       // expected
     }
   }

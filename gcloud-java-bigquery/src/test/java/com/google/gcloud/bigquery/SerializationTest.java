@@ -16,30 +16,19 @@
 
 package com.google.gcloud.bigquery;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
-import com.google.gcloud.RestorableState;
-import com.google.gcloud.RetryParams;
-import com.google.gcloud.WriteChannel;
-import com.google.gcloud.bigquery.TableInfo.StreamingBuffer;
+import com.google.gcloud.BaseSerializationTest;
+import com.google.gcloud.Restorable;
+import com.google.gcloud.bigquery.StandardTableDefinition.StreamingBuffer;
 
-import org.junit.Test;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 
-public class SerializationTest {
+public class SerializationTest extends BaseSerializationTest {
 
   private static final Acl DOMAIN_ACCESS =
       Acl.of(new Acl.Domain("domain"), Acl.Role.WRITER);
@@ -99,8 +88,8 @@ public class SerializationTest {
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
-  private static final ExternalDataConfiguration EXTERNAL_DATA_CONFIGURATION =
-      ExternalDataConfiguration.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+  private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
+      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .ignoreUnknownValues(true)
           .maxBadRecords(42)
           .build();
@@ -108,24 +97,26 @@ public class SerializationTest {
       new UserDefinedFunction.InlineFunction("inline");
   private static final UserDefinedFunction URI_FUNCTION =
       new UserDefinedFunction.UriFunction("URI");
-  private static final BaseTableInfo TABLE_INFO =
-      TableInfo.builder(TABLE_ID, TABLE_SCHEMA)
-          .creationTime(CREATION_TIME)
-          .description(DESCRIPTION)
-          .etag(ETAG)
-          .id(ID)
-          .location(LOCATION)
-          .streamingBuffer(STREAMING_BUFFER)
-          .build();
-  private static final ViewInfo VIEW_INFO =
-      ViewInfo.builder(TABLE_ID, "QUERY")
-          .creationTime(CREATION_TIME)
-          .description(DESCRIPTION)
-          .etag(ETAG)
-          .id(ID)
-          .build();
-  private static final ExternalTableInfo EXTERNAL_TABLE_INFO =
-      ExternalTableInfo.builder(TABLE_ID, EXTERNAL_DATA_CONFIGURATION)
+  private static final TableDefinition TABLE_DEFINITION = StandardTableDefinition.builder()
+      .schema(TABLE_SCHEMA)
+      .location(LOCATION)
+      .streamingBuffer(STREAMING_BUFFER)
+      .build();
+  private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, TABLE_DEFINITION)
+      .creationTime(CREATION_TIME)
+      .description(DESCRIPTION)
+      .etag(ETAG)
+      .id(ID)
+      .build();
+  private static final TableDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
+  private static final TableInfo VIEW_INFO = TableInfo.builder(TABLE_ID, VIEW_DEFINITION)
+      .creationTime(CREATION_TIME)
+      .description(DESCRIPTION)
+      .etag(ETAG)
+      .id(ID)
+      .build();
+  private static final TableInfo EXTERNAL_TABLE_INFO =
+      TableInfo.builder(TABLE_ID, EXTERNAL_TABLE_DEFINITION)
           .creationTime(CREATION_TIME)
           .description(DESCRIPTION)
           .etag(ETAG)
@@ -205,7 +196,7 @@ public class SerializationTest {
       .useQueryCache(true)
       .defaultDataset(DATASET_ID)
       .dryRun(false)
-      .maxResults(42L)
+      .pageSize(42L)
       .maxWaitTime(10L)
       .build();
   private static final QueryResult QUERY_RESULT = QueryResult.builder()
@@ -222,74 +213,46 @@ public class SerializationTest {
       .jobCompleted(true)
       .result(QUERY_RESULT)
       .build();
+  private static final BigQuery BIGQUERY =
+      BigQueryOptions.builder().projectId("p1").build().service();
+  private static final Dataset DATASET =
+      new Dataset(BIGQUERY, new DatasetInfo.BuilderImpl(DATASET_INFO));
+  private static final Table TABLE = new Table(BIGQUERY, new TableInfo.BuilderImpl(TABLE_INFO));
+  private static final Job JOB = new Job(BIGQUERY, new JobInfo.BuilderImpl(JOB_INFO));
+  private static final BigQueryException BIG_QUERY_EXCEPTION =
+      new BigQueryException(42, "message", BIGQUERY_ERROR);
 
-  @Test
-  public void testServiceOptions() throws Exception {
+  @Override
+  protected Serializable[] serializableObjects() {
     BigQueryOptions options = BigQueryOptions.builder()
         .projectId("p1")
         .authCredentials(AuthCredentials.createForAppEngine())
         .build();
-    BigQueryOptions serializedCopy = serializeAndDeserialize(options);
-    assertEquals(options, serializedCopy);
-
-    options = options.toBuilder()
+    BigQueryOptions otherOptions = options.toBuilder()
         .projectId("p2")
-        .retryParams(RetryParams.defaultInstance())
         .authCredentials(null)
         .build();
-    serializedCopy = serializeAndDeserialize(options);
-    assertEquals(options, serializedCopy);
-  }
-
-  @Test
-  public void testModelAndRequests() throws Exception {
-    Serializable[] objects = {DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
-        DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, EXTERNAL_DATA_CONFIGURATION,
-        TABLE_SCHEMA, TABLE_INFO, VIEW_INFO, EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION,
-        JOB_STATISTICS, EXTRACT_STATISTICS, LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR,
-        JOB_STATUS, JOB_ID, COPY_JOB_CONFIGURATION, EXTRACT_JOB_CONFIGURATION, LOAD_CONFIGURATION,
+    return new Serializable[]{DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
+        DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, TABLE_DEFINITION,
+        EXTERNAL_TABLE_DEFINITION, VIEW_DEFINITION, TABLE_SCHEMA, TABLE_INFO, VIEW_INFO,
+        EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION, JOB_STATISTICS, EXTRACT_STATISTICS,
+        LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR, JOB_STATUS, JOB_ID,
+        COPY_JOB_CONFIGURATION, EXTRACT_JOB_CONFIGURATION, LOAD_CONFIGURATION,
         LOAD_JOB_CONFIGURATION, QUERY_JOB_CONFIGURATION, JOB_INFO, INSERT_ALL_REQUEST,
-        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE,
+        INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE, BIG_QUERY_EXCEPTION,
         BigQuery.DatasetOption.fields(), BigQuery.DatasetDeleteOption.deleteContents(),
         BigQuery.DatasetListOption.all(), BigQuery.TableOption.fields(),
-        BigQuery.TableListOption.maxResults(42L), BigQuery.JobOption.fields(),
-        BigQuery.JobListOption.allUsers()};
-    for (Serializable obj : objects) {
-      Object copy = serializeAndDeserialize(obj);
-      assertEquals(obj, obj);
-      assertEquals(obj, copy);
-      assertNotSame(obj, copy);
-      assertEquals(copy, copy);
-    }
+        BigQuery.TableListOption.pageSize(42L), BigQuery.JobOption.fields(),
+        BigQuery.JobListOption.allUsers(), DATASET, TABLE, JOB, options, otherOptions};
   }
 
-  @Test
-  public void testWriteChannelState() throws IOException, ClassNotFoundException {
-    BigQueryOptions options = BigQueryOptions.builder()
-        .projectId("p2")
-        .retryParams(RetryParams.defaultInstance())
-        .build();
+  @Override
+  protected Restorable<?>[] restorableObjects() {
+    BigQueryOptions options = BigQueryOptions.builder().projectId("p2").build();
     // avoid closing when you don't want partial writes upon failure
     @SuppressWarnings("resource")
     TableDataWriteChannel writer =
         new TableDataWriteChannel(options, LOAD_CONFIGURATION, "upload-id");
-    RestorableState<WriteChannel> state = writer.capture();
-    RestorableState<WriteChannel> deserializedState = serializeAndDeserialize(state);
-    assertEquals(state, deserializedState);
-    assertEquals(state.hashCode(), deserializedState.hashCode());
-    assertEquals(state.toString(), deserializedState.toString());
-  }
-
-  @SuppressWarnings("unchecked")
-  private <T> T serializeAndDeserialize(T obj)
-      throws IOException, ClassNotFoundException {
-    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-    try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
-      output.writeObject(obj);
-    }
-    try (ObjectInputStream input =
-        new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
-      return (T) input.readObject();
-    }
+    return new Restorable<?>[]{writer};
   }
 }

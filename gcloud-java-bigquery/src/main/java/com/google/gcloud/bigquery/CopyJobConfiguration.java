@@ -204,6 +204,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return builder.build();
   }
 
+  @Override
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
     JobConfigurationTableCopy configurationPb = new JobConfigurationTableCopy();
     configurationPb.setDestinationTable(destinationTable.toPb());

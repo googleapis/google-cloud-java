@@ -54,7 +54,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
 
         @Override
         protected void setValue(ListValue from, com.google.datastore.v1beta3.Value.Builder to) {
-          List<com.google.datastore.v1beta3.Value> propertiesPb = 
+          List<com.google.datastore.v1beta3.Value> propertiesPb =
               new ArrayList<com.google.datastore.v1beta3.Value>();
           for (Value<?> property : from.get()) {
             propertiesPb.add(property.toPb());
@@ -73,17 +73,16 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       super(ValueType.LIST);
     }
 
-    public Builder addValue(Value<?> value) {
+    private void addValueHelper(Value<?> value) {
       // see datastore.proto definition for list_value
       Preconditions.checkArgument(value.type() != ValueType.LIST, "Cannot contain another list");
       listBuilder.add(value);
-      return this;
     }
 
     public Builder addValue(Value<?> first, Value<?>... other) {
-      addValue(first);
+      addValueHelper(first);
       for (Value<?> value : other) {
-        addValue(value);
+        addValueHelper(value);
       }
       return this;
     }
