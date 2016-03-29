@@ -66,10 +66,6 @@ import java.util.List;
  */
 @javax.annotation.Generated("by GAPIC")
 public class PublisherApi implements AutoCloseable {
-  // ========
-  // Members
-  // ========
-
   private final ManagedChannel channel;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
@@ -84,97 +80,80 @@ public class PublisherApi implements AutoCloseable {
       listTopicSubscriptionsIterableCallable;
   private final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
 
-  public static class ResourceNames {
+  /**
+   * A PathTemplate representing the fully-qualified path to represent
+   * a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project}");
 
-    // =======================
-    // ResourceNames Constants
-    // =======================
+  /**
+   * A PathTemplate representing the fully-qualified path to represent
+   * a topic resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  private static final PathTemplate TOPIC_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project}/topics/{topic}");
 
-    /**
-     * A PathTemplate representing the fully-qualified path to represent
-     * a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    private static final PathTemplate PROJECT_PATH_TEMPLATE =
-        PathTemplate.create("projects/{project}");
-
-    /**
-     * A PathTemplate representing the fully-qualified path to represent
-     * a topic resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    private static final PathTemplate TOPIC_PATH_TEMPLATE =
-        PathTemplate.create("projects/{project}/topics/{topic}");
-
-    private ResourceNames() {}
-
-    // ==============================
-    // Resource Name Helper Functions
-    // ==============================
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String formatProjectPath(String project) {
-      return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a topic resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String formatTopicPath(String project, String topic) {
-      return TOPIC_PATH_TEMPLATE.instantiate("project", project, "topic", topic);
-    }
-
-    /**
-     * Parses the project from the given fully-qualified path which
-     * represents a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseProjectFromProjectPath(String projectPath) {
-      return PROJECT_PATH_TEMPLATE.parse(projectPath).get("project");
-    }
-
-    /**
-     * Parses the project from the given fully-qualified path which
-     * represents a topic resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseProjectFromTopicPath(String topicPath) {
-      return TOPIC_PATH_TEMPLATE.parse(topicPath).get("project");
-    }
-
-    /**
-     * Parses the topic from the given fully-qualified path which
-     * represents a topic resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseTopicFromTopicPath(String topicPath) {
-      return TOPIC_PATH_TEMPLATE.parse(topicPath).get("topic");
-    }
+  /**
+   * Formats a string containing the fully-qualified path to represent
+   * a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String formatProjectName(String project) {
+    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
   }
 
-  // ===============
-  // Factory Methods
-  // ===============
+  /**
+   * Formats a string containing the fully-qualified path to represent
+   * a topic resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String formatTopicName(String project, String topic) {
+    return TOPIC_PATH_TEMPLATE.instantiate("project", project, "topic", topic);
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which
+   * represents a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseProjectFromProjectName(String projectName) {
+    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which
+   * represents a topic resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseProjectFromTopicName(String topicName) {
+    return TOPIC_PATH_TEMPLATE.parse(topicName).get("project");
+  }
+
+  /**
+   * Parses the topic from the given fully-qualified path which
+   * represents a topic resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseTopicFromTopicName(String topicName) {
+    return TOPIC_PATH_TEMPLATE.parse(topicName).get("topic");
+  }
 
   /**
    * Constructs an instance of PublisherApi with default settings.
@@ -182,7 +161,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static PublisherApi create() throws IOException {
+  public static final PublisherApi create() throws IOException {
     return create(PublisherSettings.create());
   }
 
@@ -194,7 +173,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static PublisherApi create(PublisherSettings settings) throws IOException {
+  public static final PublisherApi create(PublisherSettings settings) throws IOException {
     return new PublisherApi(settings);
   }
 
@@ -226,18 +205,16 @@ public class PublisherApi implements AutoCloseable {
         settings.listTopicSubscriptionsMethod().buildPageStreaming(settings);
     this.deleteTopicCallable = settings.deleteTopicMethod().build(settings);
 
-    closeables.add(
-        new Closeable() {
-          @Override
-          public void close() throws IOException {
-            channel.shutdown();
-          }
-        });
+    if (settings.shouldAutoCloseChannel()) {
+      closeables.add(
+          new Closeable() {
+            @Override
+            public void close() throws IOException {
+              channel.shutdown();
+            }
+          });
+    }
   }
-
-  // =============
-  // Service Calls
-  // =============
 
   // ----- createTopic -----
 
@@ -255,7 +232,7 @@ public class PublisherApi implements AutoCloseable {
    * signs (`%`). It must be between 3 and 255 characters in length, and it
    * must not start with `"goog"`.
    */
-  public Topic createTopic(String name) {
+  public final Topic createTopic(String name) {
     Topic request = Topic.newBuilder().setName(name).build();
 
     return createTopic(request);
@@ -281,7 +258,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<Topic, Topic> createTopicCallable() {
+  public final ApiCallable<Topic, Topic> createTopicCallable() {
     return createTopicCallable;
   }
 
@@ -299,7 +276,7 @@ public class PublisherApi implements AutoCloseable {
    * @param topic The messages in the request will be published on this topic.
    * @param messages The messages to publish.
    */
-  public PublishResponse publish(String topic, List<PubsubMessage> messages) {
+  public final PublishResponse publish(String topic, List<PubsubMessage> messages) {
     PublishRequest request =
         PublishRequest.newBuilder().setTopic(topic).addAllMessages(messages).build();
 
@@ -330,7 +307,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<PublishRequest, PublishResponse> publishCallable() {
+  public final ApiCallable<PublishRequest, PublishResponse> publishCallable() {
     return publishCallable;
   }
 
@@ -345,7 +322,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * @param topic The name of the topic to get.
    */
-  public Topic getTopic(String topic) {
+  public final Topic getTopic(String topic) {
     GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(topic).build();
 
     return getTopic(request);
@@ -371,7 +348,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<GetTopicRequest, Topic> getTopicCallable() {
+  public final ApiCallable<GetTopicRequest, Topic> getTopicCallable() {
     return getTopicCallable;
   }
 
@@ -384,7 +361,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public Iterable<Topic> listTopics(String project) {
+  public final Iterable<Topic> listTopics(String project) {
     ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(project).build();
     return listTopics(request);
   }
@@ -398,7 +375,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * @param request The request object containing all of the parameters for the API call.
    */
-  public Iterable<Topic> listTopics(ListTopicsRequest request) {
+  public final Iterable<Topic> listTopics(ListTopicsRequest request) {
     return listTopicsIterableCallable().call(request);
   }
 
@@ -409,7 +386,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<ListTopicsRequest, Iterable<Topic>> listTopicsIterableCallable() {
+  public final ApiCallable<ListTopicsRequest, Iterable<Topic>> listTopicsIterableCallable() {
     return listTopicsIterableCallable;
   }
 
@@ -420,7 +397,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable() {
+  public final ApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable() {
     return listTopicsCallable;
   }
 
@@ -433,7 +410,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public Iterable<String> listTopicSubscriptions(String topic) {
+  public final Iterable<String> listTopicSubscriptions(String topic) {
     ListTopicSubscriptionsRequest request =
         ListTopicSubscriptionsRequest.newBuilder().setTopic(topic).build();
     return listTopicSubscriptions(request);
@@ -448,7 +425,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * @param request The request object containing all of the parameters for the API call.
    */
-  public Iterable<String> listTopicSubscriptions(ListTopicSubscriptionsRequest request) {
+  public final Iterable<String> listTopicSubscriptions(ListTopicSubscriptionsRequest request) {
     return listTopicSubscriptionsIterableCallable().call(request);
   }
 
@@ -459,7 +436,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<ListTopicSubscriptionsRequest, Iterable<String>>
+  public final ApiCallable<ListTopicSubscriptionsRequest, Iterable<String>>
       listTopicSubscriptionsIterableCallable() {
     return listTopicSubscriptionsIterableCallable;
   }
@@ -471,7 +448,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
+  public final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
       listTopicSubscriptionsCallable() {
     return listTopicSubscriptionsCallable;
   }
@@ -491,7 +468,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * @param topic Name of the topic to delete.
    */
-  public void deleteTopic(String topic) {
+  public final void deleteTopic(String topic) {
     DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(topic).build();
 
     deleteTopic(request);
@@ -525,13 +502,9 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
+  public final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
     return deleteTopicCallable;
   }
-
-  // ========
-  // Cleanup
-  // ========
 
   /**
    * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
@@ -541,7 +514,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    */
   @Override
-  public void close() throws Exception {
+  public final void close() throws Exception {
     for (AutoCloseable closeable : closeables) {
       closeable.close();
     }
