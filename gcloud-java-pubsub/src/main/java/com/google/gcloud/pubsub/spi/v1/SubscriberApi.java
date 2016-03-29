@@ -65,10 +65,6 @@ import java.util.List;
  */
 @javax.annotation.Generated("by GAPIC")
 public class SubscriberApi implements AutoCloseable {
-  // ========
-  // Members
-  // ========
-
   private final ManagedChannel channel;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
@@ -84,98 +80,80 @@ public class SubscriberApi implements AutoCloseable {
   private final ApiCallable<PullRequest, PullResponse> pullCallable;
   private final ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable;
 
-  public static class ResourceNames {
+  /**
+   * A PathTemplate representing the fully-qualified path to represent
+   * a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project}");
 
-    // =======================
-    // ResourceNames Constants
-    // =======================
+  /**
+   * A PathTemplate representing the fully-qualified path to represent
+   * a subscription resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  private static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project}/subscriptions/{subscription}");
 
-    /**
-     * A PathTemplate representing the fully-qualified path to represent
-     * a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    private static final PathTemplate PROJECT_PATH_TEMPLATE =
-        PathTemplate.create("projects/{project}");
-
-    /**
-     * A PathTemplate representing the fully-qualified path to represent
-     * a subscription resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    private static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
-        PathTemplate.create("projects/{project}/subscriptions/{subscription}");
-
-    private ResourceNames() {}
-
-    // ==============================
-    // Resource Name Helper Functions
-    // ==============================
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String formatProjectPath(String project) {
-      return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a subscription resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String formatSubscriptionPath(String project, String subscription) {
-      return SUBSCRIPTION_PATH_TEMPLATE.instantiate(
-          "project", project, "subscription", subscription);
-    }
-
-    /**
-     * Parses the project from the given fully-qualified path which
-     * represents a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseProjectFromProjectPath(String projectPath) {
-      return PROJECT_PATH_TEMPLATE.parse(projectPath).get("project");
-    }
-
-    /**
-     * Parses the project from the given fully-qualified path which
-     * represents a subscription resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseProjectFromSubscriptionPath(String subscriptionPath) {
-      return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionPath).get("project");
-    }
-
-    /**
-     * Parses the subscription from the given fully-qualified path which
-     * represents a subscription resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseSubscriptionFromSubscriptionPath(String subscriptionPath) {
-      return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionPath).get("subscription");
-    }
+  /**
+   * Formats a string containing the fully-qualified path to represent
+   * a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String formatProjectName(String project) {
+    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
   }
 
-  // ===============
-  // Factory Methods
-  // ===============
+  /**
+   * Formats a string containing the fully-qualified path to represent
+   * a subscription resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String formatSubscriptionName(String project, String subscription) {
+    return SUBSCRIPTION_PATH_TEMPLATE.instantiate("project", project, "subscription", subscription);
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which
+   * represents a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseProjectFromProjectName(String projectName) {
+    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which
+   * represents a subscription resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseProjectFromSubscriptionName(String subscriptionName) {
+    return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionName).get("project");
+  }
+
+  /**
+   * Parses the subscription from the given fully-qualified path which
+   * represents a subscription resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseSubscriptionFromSubscriptionName(String subscriptionName) {
+    return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionName).get("subscription");
+  }
 
   /**
    * Constructs an instance of SubscriberApi with default settings.
@@ -183,7 +161,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static SubscriberApi create() throws IOException {
+  public static final SubscriberApi create() throws IOException {
     return create(SubscriberSettings.create());
   }
 
@@ -195,7 +173,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static SubscriberApi create(SubscriberSettings settings) throws IOException {
+  public static final SubscriberApi create(SubscriberSettings settings) throws IOException {
     return new SubscriberApi(settings);
   }
 
@@ -221,18 +199,16 @@ public class SubscriberApi implements AutoCloseable {
     this.pullCallable = settings.pullMethod().build(settings);
     this.modifyPushConfigCallable = settings.modifyPushConfigMethod().build(settings);
 
-    closeables.add(
-        new Closeable() {
-          @Override
-          public void close() throws IOException {
-            channel.shutdown();
-          }
-        });
+    if (settings.shouldAutoCloseChannel()) {
+      closeables.add(
+          new Closeable() {
+            @Override
+            public void close() throws IOException {
+              channel.shutdown();
+            }
+          });
+    }
   }
-
-  // =============
-  // Service Calls
-  // =============
 
   // ----- createSubscription -----
 
@@ -277,7 +253,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * If this parameter is not set, the default value of 10 seconds is used.
    */
-  public Subscription createSubscription(
+  public final Subscription createSubscription(
       String name, String topic, PushConfig pushConfig, int ackDeadlineSeconds) {
     Subscription request =
         Subscription.newBuilder()
@@ -320,7 +296,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<Subscription, Subscription> createSubscriptionCallable() {
+  public final ApiCallable<Subscription, Subscription> createSubscriptionCallable() {
     return createSubscriptionCallable;
   }
 
@@ -338,7 +314,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * @param subscription The name of the subscription to get.
    */
-  public Subscription getSubscription(String subscription) {
+  public final Subscription getSubscription(String subscription) {
     GetSubscriptionRequest request =
         GetSubscriptionRequest.newBuilder().setSubscription(subscription).build();
 
@@ -371,7 +347,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
+  public final ApiCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
     return getSubscriptionCallable;
   }
 
@@ -387,7 +363,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public Iterable<Subscription> listSubscriptions(String project) {
+  public final Iterable<Subscription> listSubscriptions(String project) {
     ListSubscriptionsRequest request =
         ListSubscriptionsRequest.newBuilder().setProject(project).build();
     return listSubscriptions(request);
@@ -405,7 +381,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * @param request The request object containing all of the parameters for the API call.
    */
-  public Iterable<Subscription> listSubscriptions(ListSubscriptionsRequest request) {
+  public final Iterable<Subscription> listSubscriptions(ListSubscriptionsRequest request) {
     return listSubscriptionsIterableCallable().call(request);
   }
 
@@ -419,7 +395,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<ListSubscriptionsRequest, Iterable<Subscription>>
+  public final ApiCallable<ListSubscriptionsRequest, Iterable<Subscription>>
       listSubscriptionsIterableCallable() {
     return listSubscriptionsIterableCallable;
   }
@@ -434,7 +410,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+  public final ApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
       listSubscriptionsCallable() {
     return listSubscriptionsCallable;
   }
@@ -454,7 +430,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * @param subscription The subscription to delete.
    */
-  public void deleteSubscription(String subscription) {
+  public final void deleteSubscription(String subscription) {
     DeleteSubscriptionRequest request =
         DeleteSubscriptionRequest.newBuilder().setSubscription(subscription).build();
 
@@ -489,7 +465,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
+  public final ApiCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
     return deleteSubscriptionCallable;
   }
 
@@ -513,7 +489,8 @@ public class SubscriberApi implements AutoCloseable {
    * was made. Specifying zero may immediately make the message available for
    * another pull request.
    */
-  public void modifyAckDeadline(String subscription, List<String> ackIds, int ackDeadlineSeconds) {
+  public final void modifyAckDeadline(
+      String subscription, List<String> ackIds, int ackDeadlineSeconds) {
     ModifyAckDeadlineRequest request =
         ModifyAckDeadlineRequest.newBuilder()
             .setSubscription(subscription)
@@ -550,7 +527,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {
+  public final ApiCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {
     return modifyAckDeadlineCallable;
   }
 
@@ -573,7 +550,7 @@ public class SubscriberApi implements AutoCloseable {
    * @param ackIds The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    */
-  public void acknowledge(String subscription, List<String> ackIds) {
+  public final void acknowledge(String subscription, List<String> ackIds) {
     AcknowledgeRequest request =
         AcknowledgeRequest.newBuilder().setSubscription(subscription).addAllAckIds(ackIds).build();
 
@@ -612,7 +589,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<AcknowledgeRequest, Empty> acknowledgeCallable() {
+  public final ApiCallable<AcknowledgeRequest, Empty> acknowledgeCallable() {
     return acknowledgeCallable;
   }
 
@@ -636,7 +613,7 @@ public class SubscriberApi implements AutoCloseable {
    * @param maxMessages The maximum number of messages returned for this request. The Pub/Sub
    * system may return fewer than the number specified.
    */
-  public PullResponse pull(String subscription, boolean returnImmediately, int maxMessages) {
+  public final PullResponse pull(String subscription, boolean returnImmediately, int maxMessages) {
     PullRequest request =
         PullRequest.newBuilder()
             .setSubscription(subscription)
@@ -673,7 +650,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<PullRequest, PullResponse> pullCallable() {
+  public final ApiCallable<PullRequest, PullResponse> pullCallable() {
     return pullCallable;
   }
 
@@ -699,7 +676,7 @@ public class SubscriberApi implements AutoCloseable {
    * messages to be pulled and acknowledged - effectively pausing
    * the subscription if `Pull` is not called.
    */
-  public void modifyPushConfig(String subscription, PushConfig pushConfig) {
+  public final void modifyPushConfig(String subscription, PushConfig pushConfig) {
     ModifyPushConfigRequest request =
         ModifyPushConfigRequest.newBuilder()
             .setSubscription(subscription)
@@ -739,13 +716,9 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable() {
+  public final ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable() {
     return modifyPushConfigCallable;
   }
-
-  // ========
-  // Cleanup
-  // ========
 
   /**
    * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
@@ -755,7 +728,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    */
   @Override
-  public void close() throws Exception {
+  public final void close() throws Exception {
     for (AutoCloseable closeable : closeables) {
       closeable.close();
     }
