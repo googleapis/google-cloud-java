@@ -21,14 +21,14 @@ package com.google.gcloud;
  *
  * <p>
  * A typical capture usage:
- * <pre>  {@code
+ * <pre> {@code
  * X restorableObj; // X instanceof Restorable<X>
  * RestorableState<X> state = restorableObj.capture();
  * .. persist state
  * }</pre>
  *
  * A typical restore usage:
- * <pre>  {@code
+ * <pre> {@code
  * RestorableState<X> state = ... // read from persistence
  * X restorableObj = state.restore();
  * ...

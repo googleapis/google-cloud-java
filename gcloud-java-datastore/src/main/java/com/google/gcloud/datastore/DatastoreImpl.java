@@ -26,7 +26,7 @@ import com.google.gcloud.BaseService;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.RetryHelper.RetryHelperException;
 import com.google.gcloud.RetryParams;
-import com.google.gcloud.spi.DatastoreRpc;
+import com.google.gcloud.datastore.spi.DatastoreRpc;
 import com.google.protobuf.ByteString;
 
 import java.util.Arrays;

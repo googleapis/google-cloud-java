@@ -24,14 +24,14 @@ import java.util.List;
  * to the Datastore upon {@link #submit}.
  * A usage example:
  * <pre> {@code
- *   Entity entity1 = datastore.get(key1);
- *   Batch batch = datastore.newBatch();
- *   Entity entity2 = Entity.builder(key2).set("name", "John").build();
- *   entity1 = Entity.builder(entity1).clear().setNull("bla").build();
- *   Entity entity3 = Entity.builder(key3).set("title", "title").build();
- *   batch.update(entity1);
- *   batch.add(entity2, entity3);
- *   batch.submit();
+ * Entity entity1 = datastore.get(key1);
+ * Batch batch = datastore.newBatch();
+ * Entity entity2 = Entity.builder(key2).set("name", "John").build();
+ * entity1 = Entity.builder(entity1).clear().setNull("bla").build();
+ * Entity entity3 = Entity.builder(key3).set("title", "title").build();
+ * batch.update(entity1);
+ * batch.add(entity2, entity3);
+ * batch.submit();
  * } </pre>
  */
 public interface Batch extends DatastoreBatchWriter {

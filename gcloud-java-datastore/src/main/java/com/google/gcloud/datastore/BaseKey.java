@@ -157,6 +157,8 @@ public abstract class BaseKey extends Serializable<DatastoreV1.Key> {
     return leaf().kind();
   }
 
+  abstract BaseKey parent();
+
   @Override
   public int hashCode() {
     return Objects.hash(projectId(), namespace(), path());

@@ -70,17 +70,16 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       super(ValueType.LIST);
     }
 
-    public Builder addValue(Value<?> value) {
+    private void addValueHelper(Value<?> value) {
       // see datastore_v1.proto definition for list_value
       Preconditions.checkArgument(value.type() != ValueType.LIST, "Cannot contain another list");
       listBuilder.add(value);
-      return this;
     }
 
     public Builder addValue(Value<?> first, Value<?>... other) {
-      addValue(first);
+      addValueHelper(first);
       for (Value<?> value : other) {
-        addValue(value);
+        addValueHelper(value);
       }
       return this;
     }
