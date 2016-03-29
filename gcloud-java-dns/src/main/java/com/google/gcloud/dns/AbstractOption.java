@@ -18,11 +18,16 @@ package com.google.gcloud.dns;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.Joiner;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.Sets;
+import com.google.gcloud.FieldSelector;
 import com.google.gcloud.dns.spi.DnsRpc;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A base class for options.
@@ -66,5 +71,21 @@ abstract class AbstractOption implements Serializable {
         .add("value", value)
         .add("rpcOption", rpcOption)
         .toString();
+  }
+
+  static String selector(List<FieldSelector> required, FieldSelector... others) {
+    Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(required.size() + others.length);
+    for (FieldSelector field : required) {
+      fieldStrings.add(field.selector());
+    }
+    for (FieldSelector field : others) {
+      fieldStrings.add(field.selector());
+    }
+    return Joiner.on(',').join(fieldStrings);
+  }
+
+  static StringBuilder selector(StringBuilder partialSelector, List<FieldSelector> required,
+      FieldSelector... others) {
+    return partialSelector.append(selector(required, others));
   }
 }

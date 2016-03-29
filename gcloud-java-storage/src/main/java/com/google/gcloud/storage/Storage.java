@@ -19,13 +19,12 @@ package com.google.gcloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
+import com.google.gcloud.FieldSelector;
 import com.google.gcloud.Page;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.Service;
@@ -38,7 +37,6 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -74,7 +72,7 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
-  enum BucketField {
+  enum BucketField implements FieldSelector {
     ID("id"),
     SELF_LINK("selfLink"),
     NAME("name"),
@@ -90,27 +88,21 @@ public interface Storage extends Service<StorageOptions> {
     STORAGE_CLASS("storageClass"),
     ETAG("etag");
 
+    static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.<FieldSelector>of(NAME);
+
     private final String selector;
 
     BucketField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
     }
-
-    static String selector(BucketField... fields) {
-      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(NAME.selector());
-      for (BucketField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
-    }
   }
 
-  enum BlobField {
+  enum BlobField implements FieldSelector {
     ACL("acl"),
     BUCKET("bucket"),
     CACHE_CONTROL("cacheControl"),
@@ -136,24 +128,18 @@ public interface Storage extends Service<StorageOptions> {
     TIME_DELETED("timeDeleted"),
     UPDATED("updated");
 
+    static final List<FieldSelector> REQUIRED_FIELDS =
+        ImmutableList.<FieldSelector>of(BUCKET, NAME);
+
     private final String selector;
 
     BlobField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(BlobField... fields) {
-      HashSet<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
-      fieldStrings.add(BUCKET.selector());
-      fieldStrings.add(NAME.selector());
-      for (BlobField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -269,7 +255,8 @@ public interface Storage extends Service<StorageOptions> {
      * specified.
      */
     public static BucketGetOption fields(BucketField... fields) {
-      return new BucketGetOption(StorageRpc.Option.FIELDS, BucketField.selector(fields));
+      return new BucketGetOption(StorageRpc.Option.FIELDS,
+          selector(BucketField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -609,7 +596,8 @@ public interface Storage extends Service<StorageOptions> {
      * specified.
      */
     public static BlobGetOption fields(BlobField... fields) {
-      return new BlobGetOption(StorageRpc.Option.FIELDS, BlobField.selector(fields));
+      return new BlobGetOption(StorageRpc.Option.FIELDS,
+          selector(BlobField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -653,8 +641,9 @@ public interface Storage extends Service<StorageOptions> {
      * specified.
      */
     public static BucketListOption fields(BucketField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(BucketField.selector(fields)).append("),nextPageToken");
+      StringBuilder builder =
+          selector(new StringBuilder().append("items("), BucketField.REQUIRED_FIELDS, fields)
+              .append("),nextPageToken");
       return new BucketListOption(StorageRpc.Option.FIELDS, builder.toString());
     }
   }
@@ -722,8 +711,9 @@ public interface Storage extends Service<StorageOptions> {
      * specified.
      */
     public static BlobListOption fields(BlobField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(BlobField.selector(fields)).append("),nextPageToken");
+      StringBuilder builder =
+          selector(new StringBuilder().append("items("), BlobField.REQUIRED_FIELDS, fields)
+              .append("),nextPageToken");
       return new BlobListOption(StorageRpc.Option.FIELDS, builder.toString());
     }
   }

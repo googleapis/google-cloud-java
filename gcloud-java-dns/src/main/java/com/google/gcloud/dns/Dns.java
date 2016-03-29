@@ -16,14 +16,14 @@
 
 package com.google.gcloud.dns;
 
-import com.google.common.base.Joiner;
-import com.google.common.collect.Sets;
+import com.google.common.collect.ImmutableList;
+import com.google.gcloud.FieldSelector;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.dns.spi.DnsRpc;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 /**
  * An interface for the Google Cloud DNS service.
@@ -39,10 +39,12 @@ public interface Dns extends Service<DnsOptions> {
    * {@link Dns#getProject(ProjectOption...)}. Project ID is always returned, even if not
    * specified.
    */
-  enum ProjectField {
+  enum ProjectField implements FieldSelector {
     PROJECT_ID("id"),
     PROJECT_NUMBER("number"),
     QUOTA("quota");
+
+    static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.<FieldSelector>of(PROJECT_ID);
 
     private final String selector;
 
@@ -50,17 +52,9 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    String selector() {
+    @Override
+    public String selector() {
       return selector;
-    }
-
-    static String selector(ProjectField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(PROJECT_ID.selector());
-      for (ProjectField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -71,7 +65,7 @@ public interface Dns extends Service<DnsOptions> {
    * {@link Dns#getZone(String, ZoneOption...)}. The name is always returned, even if not
    * specified.
    */
-  enum ZoneField {
+  enum ZoneField implements FieldSelector {
     CREATION_TIME("creationTime"),
     DESCRIPTION("description"),
     DNS_NAME("dnsName"),
@@ -80,23 +74,17 @@ public interface Dns extends Service<DnsOptions> {
     NAME_SERVER_SET("nameServerSet"),
     NAME_SERVERS("nameServers");
 
+    static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.<FieldSelector>of(NAME);
+
     private final String selector;
 
     ZoneField(String selector) {
       this.selector = selector;
     }
 
-    String selector() {
+    @Override
+    public String selector() {
       return selector;
-    }
-
-    static String selector(ZoneField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(NAME.selector());
-      for (ZoneField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -107,11 +95,13 @@ public interface Dns extends Service<DnsOptions> {
    * {@link Dns#listRecordSets(String, RecordSetListOption...)}. The name and type are always
    * returned even if not selected.
    */
-  enum RecordSetField {
+  enum RecordSetField implements FieldSelector {
     DNS_RECORDS("rrdatas"),
     NAME("name"),
     TTL("ttl"),
     TYPE("type");
+
+    static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.<FieldSelector>of(NAME, TYPE);
 
     private final String selector;
 
@@ -119,18 +109,9 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    String selector() {
+    @Override
+    public String selector() {
       return selector;
-    }
-
-    static String selector(RecordSetField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(NAME.selector());
-      fieldStrings.add(TYPE.selector());
-      for (RecordSetField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -141,12 +122,14 @@ public interface Dns extends Service<DnsOptions> {
    * {@link Dns#applyChangeRequest(String, ChangeRequestInfo, ChangeRequestOption...)} The ID is always
    * returned even if not selected.
    */
-  enum ChangeRequestField {
+  enum ChangeRequestField implements FieldSelector {
     ID("id"),
     START_TIME("startTime"),
     STATUS("status"),
     ADDITIONS("additions"),
     DELETIONS("deletions");
+
+    static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.<FieldSelector>of(ID);
 
     private final String selector;
 
@@ -154,17 +137,9 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    String selector() {
+    @Override
+    public String selector() {
       return selector;
-    }
-
-    static String selector(ChangeRequestField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(ID.selector());
-      for (ChangeRequestField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -199,9 +174,8 @@ public interface Dns extends Service<DnsOptions> {
      * of fields that can be used.
      */
     public static RecordSetListOption fields(RecordSetField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("nextPageToken,rrsets(").append(RecordSetField.selector(fields))
-          .append(')');
+      StringBuilder builder = selector(new StringBuilder().append("nextPageToken,rrsets("),
+          RecordSetField.REQUIRED_FIELDS, fields).append(')');
       return new RecordSetListOption(DnsRpc.Option.FIELDS, builder.toString());
     }
 
@@ -260,7 +234,7 @@ public interface Dns extends Service<DnsOptions> {
      * specified. {@link ZoneField} provides a list of fields that can be used.
      */
     public static ZoneOption fields(ZoneField... fields) {
-      return new ZoneOption(DnsRpc.Option.FIELDS, ZoneField.selector(fields));
+      return new ZoneOption(DnsRpc.Option.FIELDS, selector(ZoneField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -283,8 +257,8 @@ public interface Dns extends Service<DnsOptions> {
      * specified. {@link ZoneField} provides a list of fields that can be used.
      */
     public static ZoneListOption fields(ZoneField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("nextPageToken,managedZones(").append(ZoneField.selector(fields)).append(')');
+      StringBuilder builder = selector(new StringBuilder().append("nextPageToken,managedZones("),
+          ZoneField.REQUIRED_FIELDS, fields).append(')');
       return new ZoneListOption(DnsRpc.Option.FIELDS, builder.toString());
     }
 
@@ -302,7 +276,6 @@ public interface Dns extends Service<DnsOptions> {
      * Restricts the list to only zone with this fully qualified domain name.
      */
     public static ZoneListOption dnsName(String dnsName) {
-      StringBuilder builder = new StringBuilder();
       return new ZoneListOption(DnsRpc.Option.DNS_NAME, dnsName);
     }
 
@@ -337,7 +310,8 @@ public interface Dns extends Service<DnsOptions> {
      * can be used.
      */
     public static ProjectOption fields(ProjectField... fields) {
-      return new ProjectOption(DnsRpc.Option.FIELDS, ProjectField.selector(fields));
+      return new ProjectOption(DnsRpc.Option.FIELDS,
+          selector(ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -362,10 +336,8 @@ public interface Dns extends Service<DnsOptions> {
      * a list of fields that can be used.
      */
     public static ChangeRequestOption fields(ChangeRequestField... fields) {
-      return new ChangeRequestOption(
-          DnsRpc.Option.FIELDS,
-          ChangeRequestField.selector(fields)
-      );
+      return new ChangeRequestOption(DnsRpc.Option.FIELDS,
+          selector(ChangeRequestField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -390,9 +362,8 @@ public interface Dns extends Service<DnsOptions> {
      * a list of fields that can be used.
      */
     public static ChangeRequestListOption fields(ChangeRequestField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("nextPageToken,changes(").append(ChangeRequestField.selector(fields))
-          .append(')');
+      StringBuilder builder = selector(new StringBuilder().append("nextPageToken,changes("),
+          ChangeRequestField.REQUIRED_FIELDS, fields).append(')');
       return new ChangeRequestListOption(DnsRpc.Option.FIELDS, builder.toString());
     }
 
