@@ -32,6 +32,7 @@ import org.junit.rules.ExpectedException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.ByteBuffer;
+import java.nio.channels.ClosedChannelException;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -102,8 +103,7 @@ public class BaseWriteChannelTest {
   @Test
   public void testValidateOpen() throws IOException {
     channel.close();
-    thrown.expect(IOException.class);
-    thrown.expectMessage("stream is closed");
+    thrown.expect(ClosedChannelException.class);
     channel.write(ByteBuffer.allocate(42));
   }
 
