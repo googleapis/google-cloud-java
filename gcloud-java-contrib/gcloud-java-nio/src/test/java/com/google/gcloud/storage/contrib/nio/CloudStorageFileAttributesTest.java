@@ -87,8 +87,9 @@ public class CloudStorageFileAttributesTest {
       Path path = fs.getPath("/water");
       Files.write(path, HAPPY, withContentDisposition("crash call"));
       assertThat(
-              Files.readAttributes(
-                  path, CloudStorageFileAttributes.class).contentDisposition().get())
+              Files.readAttributes(path, CloudStorageFileAttributes.class)
+                  .contentDisposition()
+                  .get())
           .isEqualTo("crash call");
     }
   }

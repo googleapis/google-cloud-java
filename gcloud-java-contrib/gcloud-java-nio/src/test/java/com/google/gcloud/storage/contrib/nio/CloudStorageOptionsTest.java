@@ -85,7 +85,9 @@ public class CloudStorageOptionsTest {
       Path path = fs.getPath("/path");
       Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withContentDisposition("bubbly fun"));
       assertThat(
-              Files.readAttributes(path, CloudStorageFileAttributes.class).contentDisposition().get())
+              Files.readAttributes(path, CloudStorageFileAttributes.class)
+                  .contentDisposition()
+                  .get())
           .isEqualTo("bubbly fun");
     }
   }
@@ -95,7 +97,8 @@ public class CloudStorageOptionsTest {
     try (FileSystem fs = helper.forBucket("bucket")) {
       Path path = fs.getPath("/path");
       Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withContentEncoding("gzip"));
-      assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).contentEncoding().get())
+      assertThat(
+              Files.readAttributes(path, CloudStorageFileAttributes.class).contentEncoding().get())
           .isEqualTo("gzip");
     }
   }
@@ -110,7 +113,9 @@ public class CloudStorageOptionsTest {
           withUserMetadata("nolo", "contendere"),
           withUserMetadata("eternal", "sadness"));
       assertThat(
-              Files.readAttributes(path, CloudStorageFileAttributes.class).userMetadata().get("nolo"))
+              Files.readAttributes(path, CloudStorageFileAttributes.class)
+                  .userMetadata()
+                  .get("nolo"))
           .isEqualTo("contendere");
       assertThat(
               Files.readAttributes(path, CloudStorageFileAttributes.class)

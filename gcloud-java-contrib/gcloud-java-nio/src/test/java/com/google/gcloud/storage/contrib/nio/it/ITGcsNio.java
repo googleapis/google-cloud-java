@@ -39,32 +39,29 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /**
- * Integration test for gcloud-nio. This test actually talks to GCS (you need an account).
- * Tests both reading and writing.
+ * Integration test for gcloud-nio.
  *
- * You *must* set the GOOGLE_APPLICATION_CREDENTIALS environment variable
- * for this test to work. It must contain the name of a local file that contains
- * your Service Account JSON Key.
+ * <p>This test actually talks to GCS (you need an account) and tests both reading and writing. You
+ * *must* set the {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable for this test to work.
+ * It must contain the name of a local file that contains your Service Account JSON Key.
  *
- * The instructions for how to get the Service Account JSON Key are
- * at https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
+ * <p>The instructions for how to get the Service Account JSON Key are
+ * <a href="https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts">here</a>.
  *
- * The short version is this: go to cloud.google.com/console,
- * select your project, search for "API manager", click "Credentials",
- * click "create credentials/service account key", new service account,
- * JSON. The contents of the file that's sent to your browsers is your
- * "Service Account JSON Key".
- *
+ * <p>The short version is this: go to <a href="https://cloud.google.com/console">Cloud Console</a>,
+ * select your project, search for "API manager", click "Credentials", click "create
+ * credentials/service account key", new service account, JSON. The contents of the file that's sent
+ * to your browsers is your "Service Account JSON Key".
  */
 @RunWith(JUnit4.class)
 public class ITGcsNio {
 
-  private static final List<String> FILE_CONTENTS = ImmutableList.of(
-      "Tous les êtres humains naissent libres et égaux en dignité et en droits.",
-      "Ils sont doués de raison et de conscience et doivent agir ",
-      "les uns envers les autres dans un esprit de fraternité.");
+  private static final List<String> FILE_CONTENTS =
+      ImmutableList.of(
+          "Tous les êtres humains naissent libres et égaux en dignité et en droits.",
+          "Ils sont doués de raison et de conscience et doivent agir ",
+          "les uns envers les autres dans un esprit de fraternité.");
 
   private static final Logger log = Logger.getLogger(ITGcsNio.class.getName());
   private static final String BUCKET = RemoteGcsHelper.generateBucketName();
@@ -94,9 +91,10 @@ public class ITGcsNio {
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
-    if (storage != null && !RemoteGcsHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS) &&
-      log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
+    if (storage != null
+        && !RemoteGcsHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS)
+        && log.isLoggable(Level.WARNING)) {
+      log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
     }
   }
 
@@ -335,7 +333,6 @@ public class ITGcsNio {
     return "-" + rnd.nextInt(99999);
   }
 
-
   private CloudStorageFileSystem getTestBucket() throws IOException {
     // in typical usage we use the single-argument version of forBucket
     // and rely on the user being logged into their project with the
@@ -348,5 +345,4 @@ public class ITGcsNio {
     return CloudStorageFileSystem.forBucket(
         BUCKET, CloudStorageConfiguration.DEFAULT, storageOptions);
   }
-
 }

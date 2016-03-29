@@ -24,7 +24,7 @@ final class NioTestHelper {
   }
 
   CloudStorageFileSystem forBucket(String bucket) {
-    return forBucket(bucket, CloudStorageConfiguration.getDefault());
+    return forBucket(bucket, CloudStorageConfiguration.defaultInstance());
   }
 
   CloudStorageFileSystem forBucket(String bucket, CloudStorageConfiguration config) {
@@ -35,12 +35,12 @@ final class NioTestHelper {
     return StorageOptions.builder()
         .projectId("dummy-project-for-testing")
         .serviceRpcFactory(
-          new ServiceRpcFactory<StorageRpc, StorageOptions>() {
-            @Override
-            public StorageRpc create(StorageOptions options) {
-              return storageRpc;
-            }
-          })
+            new ServiceRpcFactory<StorageRpc, StorageOptions>() {
+              @Override
+              public StorageRpc create(StorageOptions options) {
+                return storageRpc;
+              }
+            })
         .build()
         .service();
   }

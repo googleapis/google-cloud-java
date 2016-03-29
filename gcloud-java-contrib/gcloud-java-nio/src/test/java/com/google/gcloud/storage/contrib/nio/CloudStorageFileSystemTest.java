@@ -120,7 +120,8 @@ public class CloudStorageFileSystemTest {
       NullPointerTester tester =
           new NullPointerTester()
               .ignore(CloudStorageFileSystem.class.getMethod("equals", Object.class))
-              .setDefault(CloudStorageConfiguration.class, CloudStorageConfiguration.getDefault());
+              .setDefault(
+                  CloudStorageConfiguration.class, CloudStorageConfiguration.defaultInstance());
       tester.testAllPublicStaticMethods(CloudStorageFileSystem.class);
       tester.testAllPublicInstanceMethods(fs);
     }

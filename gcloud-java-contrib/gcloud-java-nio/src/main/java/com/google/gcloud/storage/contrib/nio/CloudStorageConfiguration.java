@@ -36,7 +36,7 @@ public abstract class CloudStorageConfiguration {
   /**
    * Returns default GCS NIO configuration.
    */
-  public static CloudStorageConfiguration getDefault() {
+  public static CloudStorageConfiguration defaultInstance() {
     return DEFAULT;
   }
 
@@ -54,9 +54,13 @@ public abstract class CloudStorageConfiguration {
   }
 
   abstract String workingDirectory();
+
   abstract boolean permitEmptyPathComponents();
+
   abstract boolean stripPrefixSlash();
+
   abstract boolean usePseudoDirectories();
+
   abstract int blockSize();
 
   /**

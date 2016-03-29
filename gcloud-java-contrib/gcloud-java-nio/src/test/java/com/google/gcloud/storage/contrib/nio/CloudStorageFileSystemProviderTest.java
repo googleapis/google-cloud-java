@@ -376,8 +376,8 @@ public class CloudStorageFileSystemProviderTest {
   @Test
   public void testWrite_absoluteObjectName_disableStrip_slashGetsPreserved() throws IOException {
     try (CloudStorageFileSystem fs =
-            helper.forBucket(
-                "greenbean", CloudStorageConfiguration.builder().stripPrefixSlash(false).build())) {
+        helper.forBucket(
+            "greenbean", CloudStorageConfiguration.builder().stripPrefixSlash(false).build())) {
       Path path = fs.getPath("/adipose/yep");
       Files.write(path, FILE_CONTENTS, UTF_8);
       assertThat(Files.readAllLines(path, UTF_8)).isEqualTo(FILE_CONTENTS);

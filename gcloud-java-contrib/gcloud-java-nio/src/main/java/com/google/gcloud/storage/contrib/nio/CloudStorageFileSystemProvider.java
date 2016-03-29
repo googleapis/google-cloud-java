@@ -113,11 +113,11 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    * Returns Cloud Storage file system, provided a URI with no path.
    *
    * <p><b>Note:</b> This method should be invoked indirectly via the SPI by calling
-   * {@link java.nio.file.FileSystems#newFileSystem(URI, Map) FileSystems.newFileSystem()}. However
-   * we recommend that you don't use the SPI if possible; the recommended approach is to write a
-   * dependency injection module that calls the statically-linked type-safe version of this method,
-   * which is: {@link CloudStorageFileSystem#forBucket(String, CloudStorageConfiguration)}. Please
-   * see that method for further documentation on creating GCS file systems.
+   * {@link java.nio.file.FileSystems#newFileSystem(URI, Map) FileSystems.newFileSystem()}; however,
+   * we recommend that you don't use the API if possible. The recommended approach is to write a
+   * dependency injection module that calls the statically-linked, type-safe version of this method:
+   * {@link CloudStorageFileSystem#forBucket(String, CloudStorageConfiguration)}. Please see that
+   * method for further documentation on creating GCS file systems.
    *
    * @param uri bucket and current working directory, e.g. {@code gs://bucket}
    * @param env map of configuration options, whose keys correspond to the method names of
@@ -498,9 +498,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public Map<String, Object> readAttributes(Path path, String attributes, LinkOption... options) {
-    // Java 7 NIO defines at least eleven string attributes we'd want to support
-    // (eg. BasicFileAttributeView and PosixFileAttributeView), so rather than a partial
-    // implementation we rely on the other overload for now.
+    // TODO(#811): Java 7 NIO defines at least eleven string attributes we'd want to support (eg.
+    //             BasicFileAttributeView and PosixFileAttributeView), so rather than a partial
+    //             implementation we rely on the other overload for now.
     throw new UnsupportedOperationException();
   }
 
@@ -532,7 +532,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    */
   @Override
   public DirectoryStream<Path> newDirectoryStream(Path dir, Filter<? super Path> filter) {
-    // TODO: Implement me.
+    // TODO(#813): Implement me.
     throw new UnsupportedOperationException();
   }
 
@@ -541,6 +541,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    */
   @Override
   public void setAttribute(Path path, String attribute, Object value, LinkOption... options) {
+    // TODO(#811): Implement me.
     throw new CloudStorageObjectImmutableException();
   }
 
@@ -572,7 +573,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   private IOException asIOException(StorageException oops) {
     // RPC API can only throw StorageException, but CloudStorageFileSystemProvider
     // can only throw IOException. Square peg, round hole.
-    // TODO: research if other codes should be translated similarly.
+    // TODO(#810): Research if other codes should be translated similarly.
     if (oops.code() == 404) {
       return new NoSuchFileException(oops.reason());
     }

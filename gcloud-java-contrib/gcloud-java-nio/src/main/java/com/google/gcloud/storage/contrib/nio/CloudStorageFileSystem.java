@@ -38,6 +38,7 @@ import java.nio.file.attribute.UserPrincipalLookupService;
 import java.nio.file.spi.FileSystemProvider;
 import java.util.Objects;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.concurrent.ThreadSafe;
@@ -53,13 +54,15 @@ import javax.annotation.concurrent.ThreadSafe;
 @ThreadSafe
 public final class CloudStorageFileSystem extends FileSystem {
 
+  private static final Logger logger = Logger.getLogger(CloudStorageFileSystem.class.getName());
+
   /**
    * Invokes {@link #forBucket(String, CloudStorageConfiguration)} with
-   * {@link CloudStorageConfiguration#getDefault()}.
+   * {@link CloudStorageConfiguration#defaultInstance()}.
    */
   @CheckReturnValue
   public static CloudStorageFileSystem forBucket(String bucket) {
-    return forBucket(bucket, CloudStorageConfiguration.getDefault());
+    return forBucket(bucket, CloudStorageConfiguration.defaultInstance());
   }
 
   /**
@@ -82,16 +85,26 @@ public final class CloudStorageFileSystem extends FileSystem {
     checkNotNull(config);
     checkArgument(
         !bucket.startsWith(URI_SCHEME + ":"), "Bucket name must not have schema: %s", bucket);
-    return new CloudStorageFileSystem(
-        // XXX: This is a kludge to get the provider instance from the SPI. This is necessary since
-        //      the behavior of NIO changes quite a bit if the provider instances aren't the same.
-        (CloudStorageFileSystemProvider)
-            Iterables.getOnlyElement(
-                Iterables.filter(
-                    FileSystemProvider.installedProviders(),
-                    Predicates.instanceOf(CloudStorageFileSystemProvider.class))),
-        config,
-        bucket);
+    return new CloudStorageFileSystem(getProvider(), config, bucket);
+  }
+
+  private static CloudStorageFileSystemProvider getProvider() {
+    // XXX: This is a kludge to get the provider instance from the SPI. This is necessary since
+    //      the behavior of NIO changes quite a bit if the provider instances aren't the same.
+    //      If the provider can not be found via the SPI, then we fall back to instantiating it
+    //      ourselves. This should safeguard against situations where the weird provider file
+    //      doesn't find its way into the jar.
+    FileSystemProvider provider =
+        Iterables.getOnlyElement(
+            Iterables.filter(
+                FileSystemProvider.installedProviders(),
+                Predicates.instanceOf(CloudStorageFileSystemProvider.class)),
+            null);
+    if (provider != null) {
+      return (CloudStorageFileSystemProvider) provider;
+    }
+    logger.warning("Could not find CloudStorageFileSystemProvider via the SPI");
+    return new CloudStorageFileSystemProvider();
   }
 
   public static final String URI_SCHEME = "gs";
@@ -154,10 +167,7 @@ public final class CloudStorageFileSystem extends FileSystem {
    */
   @Override
   public void close() throws IOException {
-    // TODO(jean-philippe-martin,jart): Synchronously close all active channels associated with this
-    //                                  FileSystem instance on close, per NIO documentation. But we
-    //                                  probably shouldn't bother unless a legitimate reason can be
-    //                                  found to implement this behavior.
+    // TODO(#809): Synchronously close all channels associated with this FileSystem instance.
   }
 
   /**
@@ -207,7 +217,7 @@ public final class CloudStorageFileSystem extends FileSystem {
    */
   @Override
   public PathMatcher getPathMatcher(String syntaxAndPattern) {
-    // TODO: Implement me.
+    // TODO(#813): Implement me.
     throw new UnsupportedOperationException();
   }
 
