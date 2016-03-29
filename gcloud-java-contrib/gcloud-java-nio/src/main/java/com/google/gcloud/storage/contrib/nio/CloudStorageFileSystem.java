@@ -103,7 +103,7 @@ public final class CloudStorageFileSystem extends FileSystem {
     if (provider != null) {
       return (CloudStorageFileSystemProvider) provider;
     }
-    logger.warning("Could not find CloudStorageFileSystemProvider via the SPI");
+    logger.warning("Could not find CloudStorageFileSystemProvider via SPI");
     return new CloudStorageFileSystemProvider();
   }
 
