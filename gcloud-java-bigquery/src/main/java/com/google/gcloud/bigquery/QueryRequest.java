@@ -35,26 +35,26 @@ import java.util.Objects;
  * {@link QueryResponse#jobCompleted()} returns {@code true}.
  *
  * <p>Example usage of a query request:
- * <pre>    {@code
- *    // Substitute "field", "table" and "dataset" with real field, table and dataset identifiers
- *    QueryRequest request = QueryRequest.builder("SELECT field FROM table")
- *      .defaultDataset(DatasetId.of("dataset"))
- *      .maxWaitTime(60000L)
- *      .maxResults(1000L)
- *      .build();
- *    QueryResponse response = bigquery.query(request);
- *    while (!response.jobCompleted()) {
- *      Thread.sleep(1000);
- *      response = bigquery.getQueryResults(response.jobId());
- *    }
- *    List<BigQueryError> executionErrors = response.executionErrors();
- *    // look for errors in executionErrors
- *    QueryResult result = response.result();
- *    Iterator<List<FieldValue>> rowIterator = result.iterateAll();
- *    while(rowIterator.hasNext()) {
- *      List<FieldValue> row = rowIterator.next();
- *      // do something with row
- *    }
+ * <pre> {@code
+ * // Substitute "field", "table" and "dataset" with real field, table and dataset identifiers
+ * QueryRequest request = QueryRequest.builder("SELECT field FROM table")
+ *     .defaultDataset(DatasetId.of("dataset"))
+ *     .maxWaitTime(60000L)
+ *     .pageSize(1000L)
+ *     .build();
+ * QueryResponse response = bigquery.query(request);
+ * while (!response.jobCompleted()) {
+ *   Thread.sleep(1000);
+ *   response = bigquery.getQueryResults(response.jobId());
+ * }
+ * List<BigQueryError> executionErrors = response.executionErrors();
+ * // look for errors in executionErrors
+ * QueryResult result = response.result();
+ * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
+ * while(rowIterator.hasNext()) {
+ *   List<FieldValue> row = rowIterator.next();
+ *   // do something with row
+ * }
  * }</pre>
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/query">Query</a>
@@ -65,7 +65,7 @@ public class QueryRequest implements Serializable {
   private static final long serialVersionUID = -8727328332415880852L;
 
   private final String query;
-  private final Long maxResults;
+  private final Long pageSize;
   private final DatasetId defaultDataset;
   private final Long maxWaitTime;
   private final Boolean dryRun;
@@ -74,7 +74,7 @@ public class QueryRequest implements Serializable {
   public static final class Builder {
 
     private String query;
-    private Long maxResults;
+    private Long pageSize;
     private DatasetId defaultDataset;
     private Long maxWaitTime;
     private Boolean dryRun;
@@ -96,8 +96,8 @@ public class QueryRequest implements Serializable {
      * query result set is large. In addition to this limit, responses are also limited to 10 MB.
      * By default, there is no maximum row count, and only the byte limit applies.
      */
-    public Builder maxResults(Long maxResults) {
-      this.maxResults = maxResults;
+    public Builder pageSize(Long pageSize) {
+      this.pageSize = pageSize;
       return this;
     }
 
@@ -157,7 +157,7 @@ public class QueryRequest implements Serializable {
 
   private QueryRequest(Builder builder) {
     query = builder.query;
-    maxResults = builder.maxResults;
+    pageSize = builder.pageSize;
     defaultDataset = builder.defaultDataset;
     maxWaitTime = builder.maxWaitTime;
     dryRun = builder.dryRun;
@@ -174,8 +174,8 @@ public class QueryRequest implements Serializable {
   /**
    * Returns the maximum number of rows of data to return per page of results.
    */
-  public Long maxResults() {
-    return maxResults;
+  public Long pageSize() {
+    return pageSize;
   }
 
   /**
@@ -224,7 +224,7 @@ public class QueryRequest implements Serializable {
   public Builder toBuilder() {
     return new Builder()
         .query(query)
-        .maxResults(maxResults)
+        .pageSize(pageSize)
         .defaultDataset(defaultDataset)
         .maxWaitTime(maxWaitTime)
         .dryRun(dryRun)
@@ -235,7 +235,7 @@ public class QueryRequest implements Serializable {
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("query", query)
-        .add("maxResults", maxResults)
+        .add("pageSize", pageSize)
         .add("defaultDataset", defaultDataset)
         .add("maxWaitTime", maxWaitTime)
         .add("dryRun", dryRun)
@@ -245,7 +245,7 @@ public class QueryRequest implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, maxResults, defaultDataset, maxWaitTime, dryRun, useQueryCache);
+    return Objects.hash(query, pageSize, defaultDataset, maxWaitTime, dryRun, useQueryCache);
   }
 
   @Override
@@ -264,8 +264,8 @@ public class QueryRequest implements Serializable {
   com.google.api.services.bigquery.model.QueryRequest toPb() {
     com.google.api.services.bigquery.model.QueryRequest queryRequestPb =
         new com.google.api.services.bigquery.model.QueryRequest().setQuery(query);
-    if (maxResults != null) {
-      queryRequestPb.setMaxResults(maxResults);
+    if (pageSize != null) {
+      queryRequestPb.setMaxResults(pageSize);
     }
     if (defaultDataset != null) {
       queryRequestPb.setDefaultDataset(defaultDataset.toPb());
@@ -299,7 +299,7 @@ public class QueryRequest implements Serializable {
   static QueryRequest fromPb(com.google.api.services.bigquery.model.QueryRequest queryRequestPb) {
     Builder builder = builder(queryRequestPb.getQuery());
     if (queryRequestPb.getMaxResults() != null) {
-      builder.maxResults(queryRequestPb.getMaxResults());
+      builder.pageSize(queryRequestPb.getMaxResults());
     }
     if (queryRequestPb.getDefaultDataset() != null) {
       builder.defaultDataset(DatasetId.fromPb(queryRequestPb.getDefaultDataset()));

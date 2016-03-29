@@ -7,6 +7,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs)
@@ -15,6 +16,7 @@ This client supports the following Google Cloud Platform services:
 
 -  [Google Cloud BigQuery] (#google-cloud-bigquery-alpha) (Alpha)
 -  [Google Cloud Datastore] (#google-cloud-datastore)
+-  [Google Cloud DNS] (#google-cloud-dns-alpha) (Alpha)
 -  [Google Cloud Resource Manager] (#google-cloud-resource-manager-alpha) (Alpha)
 -  [Google Cloud Storage] (#google-cloud-storage)
 
@@ -28,33 +30,35 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.1.3</version>
+  <version>0.1.5</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java:0.1.3'
+compile 'com.google.gcloud:gcloud-java:0.1.5'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.1.3"
+libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.1.5"
 ```
 
 Example Applications
 --------------------
 
 - [`BigQueryExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/BigQueryExample.html).
+  - Read more about using this application on the [`BigQueryExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/bigquery/BigQueryExample.html).
 - [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
   - This app uses `gcloud-java` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
-- [`DatastoreExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/DatastoreExample.java) - A simple command line interface for the Cloud Datastore
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/DatastoreExample.html).
+- [`DatastoreExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/DatastoreExample.java) - A simple command line interface for Cloud Datastore
+  - Read more about using this application on the [`DatastoreExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/datastore/DatastoreExample.html).
+- [`DnsExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/DnsExample.java) - A simple command line interface for Cloud DNS
+  - Read more about using this application on the [`DnsExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/dns/DnsExample.html).
 - [`ResourceManagerExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/ResourceManagerExample.html).
+  - Read more about using this application on the [`ResourceManagerExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/resourcemanager/ResourceManagerExample.html).
 - [`SparkDemo`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/managed_vms/sparkjava) - An example of using gcloud-java-datastore from within the SparkJava and App Engine Managed VM frameworks.
   - Read about how it works on the example's [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/sparkjava#how-does-it-work).
 - [`StorageExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/StorageExample.html).
+  - Read more about using this application on the [`StorageExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/storage/StorageExample.html).
 
 Specifying a Project ID
 -----------------------
@@ -217,6 +221,71 @@ if (entity != null) {
 }
 ```
 
+Google Cloud DNS (Alpha)
+----------------------
+- [API Documentation][dns-api]
+- [Official Documentation][cloud-dns-docs]
+
+*Follow the [activation instructions][cloud-dns-activation] to use the Google Cloud DNS API with your project.*
+
+#### Preview
+
+Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+The first snippet shows how to create a zone resource. Complete source code can be found on
+[CreateZone.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateZone.java).
+
+```java
+import com.google.gcloud.dns.Dns;
+import com.google.gcloud.dns.DnsOptions;
+import com.google.gcloud.dns.Zone;
+import com.google.gcloud.dns.ZoneInfo;
+
+Dns dns = DnsOptions.defaultInstance().service();
+String zoneName = "my-unique-zone";
+String domainName = "someexampledomain.com.";
+String description = "This is a gcloud-java-dns sample zone.";
+ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
+Zone zone = dns.create(zoneInfo);
+```
+
+The second snippet shows how to create records inside a zone. The complete code can be found on [CreateOrUpdateRecordSets.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateRecordSets.java).
+
+```java
+import com.google.gcloud.dns.ChangeRequestInfo;
+import com.google.gcloud.dns.Dns;
+import com.google.gcloud.dns.DnsOptions;
+import com.google.gcloud.dns.RecordSet;
+import com.google.gcloud.dns.Zone;
+
+import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
+
+Dns dns = DnsOptions.defaultInstance().service();
+String zoneName = "my-unique-zone";
+Zone zone = dns.getZone(zoneName);
+String ip = "12.13.14.15";
+RecordSet toCreate = RecordSet.builder("www.someexampledomain.com.", RecordSet.Type.A)
+    .ttl(24, TimeUnit.HOURS)
+    .addRecord(ip)
+    .build();
+ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder().add(toCreate);
+
+// Verify that the record does not exist yet.
+// If it does exist, we will overwrite it with our prepared record.
+Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
+while (recordSetIterator.hasNext()) {
+  RecordSet current = recordSetIterator.next();
+  if (toCreate.name().equals(current.name()) &&
+      toCreate.type().equals(current.type())) {
+    changeBuilder.delete(current);
+  }
+}
+
+ChangeRequestInfo changeRequest = changeBuilder.build();
+zone.applyChangeRequest(changeRequest);
+```
+
 Google Cloud Resource Manager (Alpha)
 ----------------------
 
@@ -357,6 +426,10 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-datastore-docs]: https://cloud.google.com/datastore/docs
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
 [datastore-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html
+
+[dns-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/dns/package-summary.html
+[cloud-dns-docs]: https://cloud.google.com/dns/docs
+[cloud-dns-activation]: https://console.cloud.google.com/start/api?id=dns
 
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs

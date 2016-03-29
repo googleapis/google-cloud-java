@@ -260,11 +260,11 @@ public class DatasetTest {
         new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO3)));
     PageImpl<Table> expectedPage = new PageImpl<>(null, "c", tableResults);
     expect(bigquery.options()).andReturn(mockOptions);
-    expect(bigquery.listTables(DATASET_INFO.datasetId(), BigQuery.TableListOption.maxResults(10L)))
+    expect(bigquery.listTables(DATASET_INFO.datasetId(), BigQuery.TableListOption.pageSize(10L)))
         .andReturn(expectedPage);
     replay(bigquery);
     initializeDataset();
-    Page<Table> tablePage = dataset.list(BigQuery.TableListOption.maxResults(10L));
+    Page<Table> tablePage = dataset.list(BigQuery.TableListOption.pageSize(10L));
     assertArrayEquals(tableResults.toArray(), Iterables.toArray(tablePage.values(), Table.class));
     assertEquals(expectedPage.nextPageCursor(), tablePage.nextPageCursor());
   }

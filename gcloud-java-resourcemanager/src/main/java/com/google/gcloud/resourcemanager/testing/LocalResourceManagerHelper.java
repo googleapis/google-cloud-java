@@ -5,13 +5,19 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static java.net.HttpURLConnection.HTTP_OK;
 
 import com.google.api.client.json.JsonFactory;
+import com.google.api.services.cloudresourcemanager.model.Binding;
+import com.google.api.services.cloudresourcemanager.model.Policy;
 import com.google.api.services.cloudresourcemanager.model.Project;
+import com.google.api.services.cloudresourcemanager.model.SetIamPolicyRequest;
+import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsRequest;
+import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsResponse;
 import com.google.common.base.Joiner;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.ByteStreams;
+import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.resourcemanager.ResourceManagerOptions;
 
 import com.sun.net.httpserver.Headers;
@@ -29,21 +35,44 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 
 /**
  * Utility to create a local Resource Manager mock for testing.
  *
  * <p>The mock runs in a separate thread, listening for HTTP requests on the local machine at an
- * ephemeral port.
+ * ephemeral port. While this mock attempts to simulate the Cloud Resource Manager, there are some
+ * divergences in behavior. The following is a non-exhaustive list of some of those behavioral
+ * differences:
+ *
+ * <ul>
+ * <li>This mock assumes you have adequate permissions for any action. Related to this,
+ *     <i>testIamPermissions</i> always indicates that the caller has all permissions listed in the
+ *     request.
+ * <li>IAM policies are set to an empty policy with version 0 (only legacy roles supported) upon
+ *     project creation. The actual service will not have an empty list of bindings and may also
+ *     set your version to 1.
+ * <li>There is no input validation for the policy provided when replacing a policy or calling
+ *     testIamPermissions.
+ * <li>In this mock, projects never move from the <i>DELETE_REQUESTED</i> lifecycle state to
+ *     <i>DELETE_IN_PROGRESS</i> without an explicit call to the utility method
+ *     {@link #changeLifecycleState}.  Similarly, a project is never completely removed without an
+ *     explicit call to the utility method {@link #removeProject}.
+ * <li>The messages in the error responses given by this mock do not necessarily match the messages
+ *     given by the actual service.
+ * </ul>
  */
 @SuppressWarnings("restriction")
 public class LocalResourceManagerHelper {
@@ -56,6 +85,9 @@ public class LocalResourceManagerHelper {
   private static final URI BASE_CONTEXT;
   private static final Set<String> SUPPORTED_COMPRESSION_ENCODINGS =
       ImmutableSet.of("gzip", "x-gzip");
+  private static final Pattern LIST_FIELDS_PATTERN =
+      Pattern.compile("(.*?)projects\\((.*?)\\)(.*?)");
+  private static final String[] NO_FIELDS = {};
 
   static {
     try {
@@ -71,7 +103,8 @@ public class LocalResourceManagerHelper {
       ImmutableSet.of('-', '\'', '"', ' ', '!');
 
   private final HttpServer server;
-  private final ConcurrentHashMap<String, Project> projects = new ConcurrentHashMap<>();
+  private final ConcurrentSkipListMap<String, Project> projects = new ConcurrentSkipListMap<>();
+  private final Map<String, Policy> policies = new HashMap<>();
   private final int port;
 
   private static class Response {
@@ -93,6 +126,7 @@ public class LocalResourceManagerHelper {
   }
 
   private enum Error {
+    ABORTED(409, "global", "aborted", "ABORTED"),
     ALREADY_EXISTS(409, "global", "alreadyExists", "ALREADY_EXISTS"),
     PERMISSION_DENIED(403, "global", "forbidden", "PERMISSION_DENIED"),
     FAILED_PRECONDITION(400, "global", "failedPrecondition", "FAILED_PRECONDITION"),
@@ -144,13 +178,7 @@ public class LocalResourceManagerHelper {
       try {
         switch (requestMethod) {
           case "POST":
-            if (path.endsWith(":undelete")) {
-              response = undelete(projectIdFromUri(path));
-            } else {
-              String requestBody =
-                  decodeContent(exchange.getRequestHeaders(), exchange.getRequestBody());
-              response = create(jsonFactory.fromString(requestBody, Project.class));
-            }
+            response = handlePost(exchange, path);
             break;
           case "DELETE":
             response = delete(projectIdFromUri(path));
@@ -178,6 +206,30 @@ public class LocalResourceManagerHelper {
         response = Error.BAD_REQUEST.response(e.getMessage());
       }
       writeResponse(exchange, response);
+    }
+  }
+
+  private Response handlePost(HttpExchange exchange, String path) throws IOException {
+    String requestBody = decodeContent(exchange.getRequestHeaders(), exchange.getRequestBody());
+    if (!path.contains(":")) {
+      return create(jsonFactory.fromString(requestBody, Project.class));
+    } else {
+      switch (path.split(":", 2)[1]) {
+        case "undelete":
+          return undelete(projectIdFromUri(path));
+        case "getIamPolicy":
+          return getPolicy(projectIdFromUri(path));
+        case "setIamPolicy":
+          return replacePolicy(projectIdFromUri(path),
+              jsonFactory.fromString(requestBody, SetIamPolicyRequest.class).getPolicy());
+        case "testIamPermissions":
+          return testPermissions(projectIdFromUri(path),
+              jsonFactory.fromString(requestBody, TestIamPermissionsRequest.class)
+                  .getPermissions());
+        default:
+          return Error.BAD_REQUEST.response(
+              "The server could not understand the following request URI: POST " + path);
+      }
     }
   }
 
@@ -228,7 +280,7 @@ public class LocalResourceManagerHelper {
     return null;
   }
 
-  private static Map<String, Object> parseListOptions(String query) {
+  private static Map<String, Object> parseListOptions(String query) throws IOException {
     Map<String, Object> options = new HashMap<>();
     if (query != null) {
       String[] args = query.split("&");
@@ -236,19 +288,28 @@ public class LocalResourceManagerHelper {
         String[] argEntry = arg.split("=");
         switch (argEntry[0]) {
           case "fields":
-            // List fields are in the form "projects(field1, field2, ...)"
-            options.put(
-                "fields",
-                argEntry[1].substring("projects(".length(), argEntry[1].length() - 1).split(","));
+            // List fields are in the form "projects(field1, field2, ...),nextPageToken"
+            Matcher matcher = LIST_FIELDS_PATTERN.matcher(argEntry[1]);
+            if (matcher.matches()) {
+              options.put("projectFields", matcher.group(2).split(","));
+              options.put("listFields", (matcher.group(1) + matcher.group(3)).split(","));
+            } else {
+              options.put("projectFields", NO_FIELDS);
+              options.put("listFields", argEntry[1].split(","));
+            }
             break;
           case "filter":
             options.put("filter", argEntry[1].split(" "));
             break;
           case "pageToken":
-            // support pageToken when Cloud Resource Manager supports this (#421)
+            options.put("pageToken", argEntry[1]);
             break;
           case "pageSize":
-            // support pageSize when Cloud Resource Manager supports this (#421)
+            int pageSize = Integer.parseInt(argEntry[1]);
+            if (pageSize < 1) {
+              throw new IOException("Page size must be greater than 0.");
+            }
+            options.put("pageSize", pageSize);
             break;
         }
       }
@@ -302,7 +363,7 @@ public class LocalResourceManagerHelper {
     return value.length() >= minLength && value.length() <= maxLength;
   }
 
-  Response create(Project project) {
+  synchronized Response create(Project project) {
     String customErrorMessage = checkForProjectErrors(project);
     if (customErrorMessage != null) {
       return Error.INVALID_ARGUMENT.response(customErrorMessage);
@@ -314,6 +375,11 @@ public class LocalResourceManagerHelper {
         return Error.ALREADY_EXISTS.response(
             "A project with the same project ID (" + project.getProjectId() + ") already exists.");
       }
+      Policy emptyPolicy = new Policy()
+          .setBindings(Collections.<Binding>emptyList())
+          .setEtag(UUID.randomUUID().toString())
+          .setVersion(0);
+      policies.put(project.getProjectId(), emptyPolicy);
       try {
         String createdProjectStr = jsonFactory.toString(project);
         return new Response(HTTP_OK, createdProjectStr);
@@ -353,28 +419,55 @@ public class LocalResourceManagerHelper {
   }
 
   Response list(Map<String, Object> options) {
-    // Use pageSize and pageToken options when Cloud Resource Manager does so (#421)
     List<String> projectsSerialized = new ArrayList<>();
     String[] filters = (String[]) options.get("filter");
     if (filters != null && !isValidFilter(filters)) {
       return Error.INVALID_ARGUMENT.response("Could not parse the filter.");
     }
-    String[] fields = (String[]) options.get("fields");
-    for (Project p : projects.values()) {
+    String[] projectFields = (String[]) options.get("projectFields");
+    int count = 0;
+    String pageToken = (String) options.get("pageToken");
+    Integer pageSize = (Integer) options.get("pageSize");
+    String nextPageToken = null;
+    Map<String, Project> projectsToScan = projects;
+    if (pageToken != null) {
+      projectsToScan = projects.tailMap(pageToken);
+    }
+    for (Project p : projectsToScan.values()) {
+      if (pageSize != null && count >= pageSize) {
+        nextPageToken = p.getProjectId();
+        break;
+      }
       boolean includeProject = includeProject(p, filters);
       if (includeProject) {
+        count++;
         try {
-          projectsSerialized.add(jsonFactory.toString(extractFields(p, fields)));
+          projectsSerialized.add(jsonFactory.toString(extractFields(p, projectFields)));
         } catch (IOException e) {
           return Error.INTERNAL_ERROR.response(
               "Error when serializing project " + p.getProjectId());
         }
       }
     }
+    String[] listFields = (String[]) options.get("listFields");
     StringBuilder responseBody = new StringBuilder();
-    responseBody.append("{\"projects\": [");
-    Joiner.on(",").appendTo(responseBody, projectsSerialized);
-    responseBody.append("]}");
+    responseBody.append('{');
+    // If fields parameter is set but no project field is selected we must return no projects.
+    if (!(projectFields != null && projectFields.length == 0)) {
+      responseBody.append("\"projects\": [");
+      Joiner.on(",").appendTo(responseBody, projectsSerialized);
+      responseBody.append(']');
+    }
+    if (nextPageToken != null && (listFields == null
+        || ImmutableSet.copyOf(listFields).contains("nextPageToken"))) {
+      if (responseBody.length() > 1) {
+        responseBody.append(',');
+      }
+      responseBody.append("\"nextPageToken\": \"");
+      responseBody.append(nextPageToken);
+      responseBody.append('"');
+    }
+    responseBody.append('}');
     return new Response(HTTP_OK, responseBody.toString());
   }
 
@@ -498,6 +591,53 @@ public class LocalResourceManagerHelper {
     return response;
   }
 
+  synchronized Response getPolicy(String projectId) {
+    Policy policy = policies.get(projectId);
+    if (policy == null) {
+      return Error.PERMISSION_DENIED.response("Project " + projectId + " not found.");
+    }
+    try {
+      return new Response(HTTP_OK, jsonFactory.toString(policy));
+    } catch (IOException e) {
+      return Error.INTERNAL_ERROR.response(
+          "Error when serializing the IAM policy for " + projectId);
+    }
+  }
+
+  synchronized Response replacePolicy(String projectId, Policy policy) {
+    Policy originalPolicy = policies.get(projectId);
+    if (originalPolicy == null) {
+      return Error.PERMISSION_DENIED.response("Error when replacing the policy for " + projectId
+          + " because the project was not found.");
+    }
+    String etag = policy.getEtag();
+    if (etag != null && !originalPolicy.getEtag().equals(etag)) {
+      return Error.ABORTED.response("Policy etag mismatch when replacing the policy for project "
+          + projectId + ", please retry the read.");
+    }
+    policy.setEtag(UUID.randomUUID().toString());
+    policy.setVersion(originalPolicy.getVersion());
+    policies.put(projectId, policy);
+    try {
+      return new Response(HTTP_OK, jsonFactory.toString(policy));
+    } catch (IOException e) {
+      return Error.INTERNAL_ERROR.response(
+          "Error when serializing the policy for project " + projectId);
+    }
+  }
+
+  synchronized Response testPermissions(String projectId, List<String> permissions) {
+    if (!projects.containsKey(projectId)) {
+      return Error.PERMISSION_DENIED.response("Project " + projectId + " not found.");
+    }
+    try {
+      return new Response(HTTP_OK,
+          jsonFactory.toString(new TestIamPermissionsResponse().setPermissions(permissions)));
+    } catch (IOException e) {
+      return Error.INTERNAL_ERROR.response("Error when serializing permissions " + permissions);
+    }
+  }
+
   private LocalResourceManagerHelper() {
     try {
       server = HttpServer.create(new InetSocketAddress(0), 0);
@@ -509,17 +649,21 @@ public class LocalResourceManagerHelper {
   }
 
   /**
-   * Creates a LocalResourceManagerHelper object that listens to requests on the local machine.
+   * Creates a {@code LocalResourceManagerHelper} object that listens to requests on the local
+   * machine.
    */
   public static LocalResourceManagerHelper create() {
     return new LocalResourceManagerHelper();
   }
 
   /**
-   * Returns a ResourceManagerOptions instance that sets the host to use the mock server.
+   * Returns a {@link ResourceManagerOptions} instance that sets the host to use the mock server.
    */
   public ResourceManagerOptions options() {
-    return ResourceManagerOptions.builder().host("http://localhost:" + port).build();
+    return ResourceManagerOptions.builder()
+        .host("http://localhost:" + port)
+        .authCredentials(AuthCredentials.noAuth())
+        .build();
   }
 
   /**
@@ -565,6 +709,7 @@ public class LocalResourceManagerHelper {
   public synchronized boolean removeProject(String projectId) {
     // Because this method is synchronized, any code that relies on non-atomic read/write operations
     // should not fail if that code is also synchronized.
-    return projects.remove(checkNotNull(projectId)) != null;
+    policies.remove(checkNotNull(projectId));
+    return projects.remove(projectId) != null;
   }
 }
