@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.api.services.datastore.client;
-
+package com.google.datastore.v1beta3.client;
 
 /**
  * Factory for {@link LocalDevelopmentDatastore}.
- *
  */
 public class LocalDevelopmentDatastoreFactory extends DatastoreFactory {
 
@@ -41,7 +39,7 @@ public class LocalDevelopmentDatastoreFactory extends DatastoreFactory {
   public LocalDevelopmentDatastore create(DatastoreOptions options,
       LocalDevelopmentDatastoreOptions localDevelopmentOptions) {
     RemoteRpc rpc = newRemoteRpc(options);
-    return new LocalDevelopmentDatastore(rpc, options.getHost(),
+    return new LocalDevelopmentDatastore(rpc, options.getLocalHost(),
         localDevelopmentOptions);
   }
 }

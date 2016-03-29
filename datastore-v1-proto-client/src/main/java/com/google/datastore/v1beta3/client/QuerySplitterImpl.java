@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,23 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.api.services.datastore.client;
+package com.google.datastore.v1beta3.client;
 
-import static com.google.api.services.datastore.client.DatastoreHelper.makeFilter;
+import static com.google.datastore.v1beta3.client.DatastoreHelper.makeAndFilter;
 
-import com.google.api.services.datastore.DatastoreV1.EntityResult;
-import com.google.api.services.datastore.DatastoreV1.Filter;
-import com.google.api.services.datastore.DatastoreV1.Key;
-import com.google.api.services.datastore.DatastoreV1.PartitionId;
-import com.google.api.services.datastore.DatastoreV1.PropertyExpression;
-import com.google.api.services.datastore.DatastoreV1.PropertyFilter;
-import com.google.api.services.datastore.DatastoreV1.PropertyFilter.Operator;
-import com.google.api.services.datastore.DatastoreV1.PropertyOrder.Direction;
-import com.google.api.services.datastore.DatastoreV1.PropertyReference;
-import com.google.api.services.datastore.DatastoreV1.Query;
-import com.google.api.services.datastore.DatastoreV1.QueryResultBatch;
-import com.google.api.services.datastore.DatastoreV1.QueryResultBatch.MoreResultsType;
-import com.google.api.services.datastore.DatastoreV1.RunQueryRequest;
+import com.google.datastore.v1beta3.EntityResult;
+import com.google.datastore.v1beta3.Filter;
+import com.google.datastore.v1beta3.Key;
+import com.google.datastore.v1beta3.PartitionId;
+import com.google.datastore.v1beta3.Projection;
+import com.google.datastore.v1beta3.PropertyFilter;
+import com.google.datastore.v1beta3.PropertyFilter.Operator;
+import com.google.datastore.v1beta3.PropertyOrder.Direction;
+import com.google.datastore.v1beta3.PropertyReference;
+import com.google.datastore.v1beta3.Query;
+import com.google.datastore.v1beta3.QueryResultBatch;
+import com.google.datastore.v1beta3.QueryResultBatch.MoreResultsType;
+import com.google.datastore.v1beta3.RunQueryRequest;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -41,8 +41,7 @@ import java.util.List;
  *
  * <p>This implementation of the QuerySplitter uses the __scatter__ property to gather
  * random split points for a query.
- *
- **/
+ */
 final class QuerySplitterImpl implements QuerySplitter {
 
   /** The number of keys to sample for each split. **/
@@ -58,16 +57,10 @@ final class QuerySplitterImpl implements QuerySplitter {
   }
 
   @Override
-  @Deprecated
-  public List<Query> getSplits(Query query, int numSplits, Datastore datastore)
-      throws DatastoreException, IllegalArgumentException {
-    return getSplits(query, PartitionId.newBuilder().build(), numSplits, datastore);
-  }
-
-  @Override
   public List<Query> getSplits(
       Query query, PartitionId partition, int numSplits, Datastore datastore)
       throws DatastoreException, IllegalArgumentException {
+
     validateQuery(query);
     validateSplitSize(numSplits);
 
@@ -100,14 +93,20 @@ final class QuerySplitterImpl implements QuerySplitter {
    * inefficient sharding.
    */
   private void validateFilter(Filter filter) throws IllegalArgumentException {
-    if (filter.hasCompositeFilter()) {
-      for (Filter subFilter : filter.getCompositeFilter().getFilterList()) {
-        validateFilter(subFilter);
-      }
-    } else if (filter.hasPropertyFilter()) {
-      if (UNSUPPORTED_OPERATORS.contains(filter.getPropertyFilter().getOperator())) {
-        throw new IllegalArgumentException("Query cannot have any inequality filters.");
-      }
+    switch (filter.getFilterTypeCase()) {
+      case COMPOSITE_FILTER:
+        for (Filter subFilter : filter.getCompositeFilter().getFiltersList()) {
+          validateFilter(subFilter);
+        }
+        break;
+      case PROPERTY_FILTER:
+        if (UNSUPPORTED_OPERATORS.contains(filter.getPropertyFilter().getOp())) {
+          throw new IllegalArgumentException("Query cannot have any inequality filters.");
+        }
+        break;
+      default:
+        throw new IllegalArgumentException(
+            "Unsupported filter type: " + filter.getFilterTypeCase());
     }
   }
 
@@ -156,7 +155,7 @@ final class QuerySplitterImpl implements QuerySplitter {
           DatastoreHelper.makeValue(nextKey)).build();
       keyFilters.add(upperBound);
     }
-    return Query.newBuilder(query).setFilter(makeFilter(keyFilters)).build();
+    return Query.newBuilder(query).setFilter(makeAndFilter(keyFilters)).build();
   }
 
   /**
@@ -187,11 +186,12 @@ final class QuerySplitterImpl implements QuerySplitter {
               .setQuery(scatterPointQuery)
               .build();
       batch = datastore.runQuery(scatterRequest).getBatch();
-      for (EntityResult result : batch.getEntityResultList()) {
+      for (EntityResult result : batch.getEntityResultsList()) {
         keySplits.add(result.getEntity().getKey());
       }
       scatterPointQuery.setStartCursor(batch.getEndCursor());
-      scatterPointQuery.setLimit(scatterPointQuery.getLimit() - batch.getEntityResultCount());
+      scatterPointQuery.getLimitBuilder().setValue(
+          scatterPointQuery.getLimit().getValue() - batch.getEntityResultsCount());
     } while (batch.getMoreResults() == MoreResultsType.NOT_FINISHED);
     Collections.sort(keySplits, DatastoreHelper.getKeyComparator());
     return keySplits;
@@ -204,7 +204,7 @@ final class QuerySplitterImpl implements QuerySplitter {
    * @param numSplits the number of splits to create.
    */
   private Query.Builder createScatterQuery(Query query, int numSplits) {
-    // TODO(user): We can potentially support better splits with equality filters in our query
+    // TODO(pcostello): We can potentially support better splits with equality filters in our query
     // if there exists a composite index on property, __scatter__, __key__. Until an API for
     // metadata exists, this isn't possible. Note that ancestor and inequality queries fall into
     // the same category.
@@ -217,8 +217,8 @@ final class QuerySplitterImpl implements QuerySplitter {
     // If we represent each split as a region before a scatter entity, there is an extra region
     // following the last scatter point. Thus, we do not need the scatter entities for the last
     // region.
-    scatterPointQuery.setLimit((numSplits - 1) * KEYS_PER_SPLIT);
-    scatterPointQuery.addProjection(PropertyExpression.newBuilder().setProperty(
+    scatterPointQuery.getLimitBuilder().setValue((numSplits - 1) * KEYS_PER_SPLIT);
+    scatterPointQuery.addProjection(Projection.newBuilder().setProperty(
         PropertyReference.newBuilder().setName("__key__")));
     return scatterPointQuery;
   }

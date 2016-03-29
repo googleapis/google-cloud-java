@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,27 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.api.services.datastore.client;
+package com.google.datastore.v1beta3.client;
 
-import com.google.api.client.http.HttpStatusCodes;
-import com.google.api.services.datastore.DatastoreV1.AllocateIdsRequest;
-import com.google.api.services.datastore.DatastoreV1.AllocateIdsResponse;
-import com.google.api.services.datastore.DatastoreV1.BeginTransactionRequest;
-import com.google.api.services.datastore.DatastoreV1.BeginTransactionResponse;
-import com.google.api.services.datastore.DatastoreV1.CommitRequest;
-import com.google.api.services.datastore.DatastoreV1.CommitResponse;
-import com.google.api.services.datastore.DatastoreV1.LookupRequest;
-import com.google.api.services.datastore.DatastoreV1.LookupResponse;
-import com.google.api.services.datastore.DatastoreV1.RollbackRequest;
-import com.google.api.services.datastore.DatastoreV1.RollbackResponse;
-import com.google.api.services.datastore.DatastoreV1.RunQueryRequest;
-import com.google.api.services.datastore.DatastoreV1.RunQueryResponse;
+import com.google.datastore.v1beta3.AllocateIdsRequest;
+import com.google.datastore.v1beta3.AllocateIdsResponse;
+import com.google.datastore.v1beta3.BeginTransactionRequest;
+import com.google.datastore.v1beta3.BeginTransactionResponse;
+import com.google.datastore.v1beta3.CommitRequest;
+import com.google.datastore.v1beta3.CommitResponse;
+import com.google.datastore.v1beta3.LookupRequest;
+import com.google.datastore.v1beta3.LookupResponse;
+import com.google.datastore.v1beta3.RollbackRequest;
+import com.google.datastore.v1beta3.RollbackResponse;
+import com.google.datastore.v1beta3.RunQueryRequest;
+import com.google.datastore.v1beta3.RunQueryResponse;
+import com.google.rpc.Code;
 
 import java.io.IOException;
 
 /**
- * Provides access to the Datastore.
- *
+ * Provides access to Cloud Datastore.
  */
 public class Datastore {
 
@@ -59,8 +58,8 @@ public class Datastore {
   }
 
   private DatastoreException invalidResponseException(String method, IOException exception) {
-    return RemoteRpc.makeException(remoteRpc.getUrl(), method,
-        HttpStatusCodes.STATUS_CODE_SERVICE_UNAVAILABLE, "Invalid response", exception);
+    return RemoteRpc.makeException(remoteRpc.getUrl(), method, Code.UNAVAILABLE,
+        "Invalid response", exception);
   }
 
   public AllocateIdsResponse allocateIds(AllocateIdsRequest request) throws DatastoreException {

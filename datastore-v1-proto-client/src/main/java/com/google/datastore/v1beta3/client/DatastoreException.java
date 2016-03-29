@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,20 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.api.services.datastore.client;
+package com.google.datastore.v1beta3.client;
+
+import com.google.rpc.Code;
 
 /**
  * Indicates an error in a {@link Datastore} call.
- *
  */
 public class DatastoreException extends Exception {
   private final String methodName;
-  private final int code;
+  private final Code code;
+
+  public DatastoreException(String methodName, Code code, String message, Throwable cause) {
+    super(message, cause);
+    this.methodName = methodName;
+    this.code = code;
+  }
 
   /**
-   * @return the HTTP response code
+   * @return the canonical error code
    */
-  public int getCode() {
+  public Code getCode() {
     return code;
   }
 
@@ -36,10 +43,9 @@ public class DatastoreException extends Exception {
   public String getMethodName() {
     return methodName;
   }
-
-  public DatastoreException(String methodName, int code, String message, Throwable cause) {
-    super(message, cause);
-    this.methodName = methodName;
-    this.code = code;
+  
+  @Override
+  public String toString() {
+    return String.format("%s, code=%s", super.toString(), code);
   }
 }

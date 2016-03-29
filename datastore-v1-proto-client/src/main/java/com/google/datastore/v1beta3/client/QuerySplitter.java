@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2015 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.api.services.datastore.client;
+package com.google.datastore.v1beta3.client;
 
-import com.google.api.services.datastore.DatastoreV1.PartitionId;
-import com.google.api.services.datastore.DatastoreV1.Query;
+import com.google.datastore.v1beta3.PartitionId;
+import com.google.datastore.v1beta3.Query;
 
 import java.util.List;
 
 /**
  * Provides the ability to split a query into multiple shards.
- *
  */
 public interface QuerySplitter {
 
@@ -35,26 +34,7 @@ public interface QuerySplitter {
    * number of results for the query is too small.
    *
    * @param query the query to split.
-   * @param numSplits the desired number of splits.
-   * @param datastore the datastore to run on.
-   * @throws DatastoreException if there was a datastore error while generating query splits.
-   * @throws IllegalArgumentException if the given query or numSplits was invalid.
-   * @deprecated Use {@link getSplits(Query, PartitionId, int, Datastore)} instead, which provides
-   *     the ability to supply a namespace.
-   */
-  @Deprecated
-  List<Query> getSplits(Query query, int numSplits, Datastore datastore) throws DatastoreException;
-
-  /**
-   * Returns a list of sharded {@link Query}s for the given query.
-   *
-   * <p>This will create up to the desired number of splits, however it may return less splits if
-   * the desired number of splits is unavailable. This will happen if the number of split points
-   * provided by the underlying Datastore is less than the desired number, which will occur if the
-   * number of results for the query is too small.
-   *
-   * @param query the query to split.
-   * @param partition the partition to run in.
+   * @param partition the partition the query is running in.
    * @param numSplits the desired number of splits.
    * @param datastore the datastore to run on.
    * @throws DatastoreException if there was a datastore error while generating query splits.
