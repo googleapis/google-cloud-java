@@ -37,10 +37,12 @@ import com.google.api.gax.core.BackoffParams;
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetryParams;
 import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.ApiCallable.ApiCallableBuilder;
-import com.google.api.gax.grpc.ApiCallable.BundlableApiCallableBuilder;
-import com.google.api.gax.grpc.ApiCallable.PageStreamingApiCallableBuilder;
+import com.google.api.gax.grpc.ApiCallable;
+import com.google.api.gax.grpc.ApiCallable.Builder;
+import com.google.api.gax.grpc.ApiCallable.BundlableBuilder;
+import com.google.api.gax.grpc.ApiCallable.PageStreamingBuilder;
 import com.google.api.gax.grpc.BundlingDescriptor;
+import com.google.api.gax.grpc.BundlingSettings;
 import com.google.api.gax.grpc.PageStreamingDescriptor;
 import com.google.api.gax.grpc.RequestIssuer;
 import com.google.api.gax.grpc.ServiceApiSettings;
@@ -65,16 +67,13 @@ import io.grpc.Status;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import org.joda.time.Duration;
 
 // Manually-added imports: add custom (non-generated) imports after this point.
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS - see instructions at the top of the file for editing.
 @javax.annotation.Generated("by GAPIC")
 public class PublisherSettings extends ServiceApiSettings {
-
-  // =========
-  // Constants
-  // =========
 
   /**
    * The default address of the service.
@@ -123,17 +122,17 @@ public class PublisherSettings extends ServiceApiSettings {
         RetryParams.newBuilder()
             .setRetryBackoff(
                 BackoffParams.newBuilder()
-                    .setInitialDelayMillis(100L)
+                    .setInitialDelay(Duration.millis(100L))
                     .setDelayMultiplier(1.2)
-                    .setMaxDelayMillis(1000L)
+                    .setMaxDelay(Duration.millis(1000L))
                     .build())
             .setTimeoutBackoff(
                 BackoffParams.newBuilder()
-                    .setInitialDelayMillis(300L)
-                    .setDelayMultiplier(1.3)
-                    .setMaxDelayMillis(3000L)
+                    .setInitialDelay(Duration.millis(2000L))
+                    .setDelayMultiplier(1.5)
+                    .setMaxDelay(Duration.millis(30000L))
                     .build())
-            .setTotalTimeout(30000L)
+            .setTotalTimeout(Duration.millis(45000L))
             .build();
     definitions.put("default", params);
     RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -142,45 +141,54 @@ public class PublisherSettings extends ServiceApiSettings {
   private final MethodBuilders methods;
 
   private static class MethodBuilders {
-    private final ApiCallableBuilder<Topic, Topic> createTopicMethod;
-    private final BundlableApiCallableBuilder<PublishRequest, PublishResponse> publishMethod;
-    private final ApiCallableBuilder<GetTopicRequest, Topic> getTopicMethod;
-    private final PageStreamingApiCallableBuilder<ListTopicsRequest, ListTopicsResponse, Topic>
+    private final ApiCallable.Builder<Topic, Topic> createTopicMethod;
+    private final ApiCallable.BundlableBuilder<PublishRequest, PublishResponse> publishMethod;
+    private final ApiCallable.Builder<GetTopicRequest, Topic> getTopicMethod;
+    private final ApiCallable.PageStreamingBuilder<ListTopicsRequest, ListTopicsResponse, Topic>
         listTopicsMethod;
-    private final PageStreamingApiCallableBuilder<
+    private final ApiCallable.PageStreamingBuilder<
             ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
         listTopicSubscriptionsMethod;
-    private final ApiCallableBuilder<DeleteTopicRequest, Empty> deleteTopicMethod;
+    private final ApiCallable.Builder<DeleteTopicRequest, Empty> deleteTopicMethod;
     private final ImmutableList<? extends ApiCallSettings> allMethods;
 
     public MethodBuilders() {
-      createTopicMethod = new ApiCallableBuilder<>(PublisherGrpc.METHOD_CREATE_TOPIC);
+      createTopicMethod = new Builder<>(PublisherGrpc.METHOD_CREATE_TOPIC);
       createTopicMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
       createTopicMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      BundlingSettings publishBundlingSettings =
+          BundlingSettings.newBuilder()
+              .setElementCountThreshold(800)
+              .setElementCountLimit(1000)
+              .setRequestByteThreshold(8388608)
+              .setRequestByteLimit(10485760)
+              .setDelayThreshold(Duration.millis(100))
+              .setBlockingCallCountThreshold(1)
+              .build();
       publishMethod =
-          new BundlableApiCallableBuilder<>(PublisherGrpc.METHOD_PUBLISH, PUBLISH_BUNDLING_DESC);
+          new BundlableBuilder<>(
+              PublisherGrpc.METHOD_PUBLISH, PUBLISH_BUNDLING_DESC, publishBundlingSettings);
       publishMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
       publishMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      getTopicMethod = new ApiCallableBuilder<>(PublisherGrpc.METHOD_GET_TOPIC);
+      getTopicMethod = new Builder<>(PublisherGrpc.METHOD_GET_TOPIC);
       getTopicMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
       getTopicMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
       listTopicsMethod =
-          new PageStreamingApiCallableBuilder<>(
-              PublisherGrpc.METHOD_LIST_TOPICS, LIST_TOPICS_PAGE_STR_DESC);
+          new PageStreamingBuilder<>(PublisherGrpc.METHOD_LIST_TOPICS, LIST_TOPICS_PAGE_STR_DESC);
       listTopicsMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
       listTopicsMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
       listTopicSubscriptionsMethod =
-          new PageStreamingApiCallableBuilder<>(
+          new PageStreamingBuilder<>(
               PublisherGrpc.METHOD_LIST_TOPIC_SUBSCRIPTIONS,
               LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC);
       listTopicSubscriptionsMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
       listTopicSubscriptionsMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      deleteTopicMethod = new ApiCallableBuilder<>(PublisherGrpc.METHOD_DELETE_TOPIC);
+      deleteTopicMethod = new Builder<>(PublisherGrpc.METHOD_DELETE_TOPIC);
       deleteTopicMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
       deleteTopicMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -196,10 +204,6 @@ public class PublisherSettings extends ServiceApiSettings {
               .build();
     }
   }
-
-  // ===============
-  // Factory Methods
-  // ===============
 
   /**
    * Constructs an instance of PublisherSettings with default settings.
@@ -237,7 +241,7 @@ public class PublisherSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallableBuilder<Topic, Topic> createTopicMethod() {
+  public final ApiCallable.Builder<Topic, Topic> createTopicMethod() {
     return methods.createTopicMethod;
   }
 
@@ -247,7 +251,7 @@ public class PublisherSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public BundlableApiCallableBuilder<PublishRequest, PublishResponse> publishMethod() {
+  public final ApiCallable.BundlableBuilder<PublishRequest, PublishResponse> publishMethod() {
     return methods.publishMethod;
   }
 
@@ -257,7 +261,7 @@ public class PublisherSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallableBuilder<GetTopicRequest, Topic> getTopicMethod() {
+  public final ApiCallable.Builder<GetTopicRequest, Topic> getTopicMethod() {
     return methods.getTopicMethod;
   }
 
@@ -267,7 +271,7 @@ public class PublisherSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public PageStreamingApiCallableBuilder<ListTopicsRequest, ListTopicsResponse, Topic>
+  public final ApiCallable.PageStreamingBuilder<ListTopicsRequest, ListTopicsResponse, Topic>
       listTopicsMethod() {
     return methods.listTopicsMethod;
   }
@@ -278,7 +282,7 @@ public class PublisherSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public PageStreamingApiCallableBuilder<
+  public final ApiCallable.PageStreamingBuilder<
           ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
       listTopicSubscriptionsMethod() {
     return methods.listTopicSubscriptionsMethod;
@@ -290,7 +294,7 @@ public class PublisherSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallableBuilder<DeleteTopicRequest, Empty> deleteTopicMethod() {
+  public final ApiCallable.Builder<DeleteTopicRequest, Empty> deleteTopicMethod() {
     return methods.deleteTopicMethod;
   }
 
