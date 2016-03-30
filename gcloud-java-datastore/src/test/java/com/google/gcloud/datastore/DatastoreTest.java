@@ -37,7 +37,6 @@ import com.google.datastore.v1beta3.ReadOptions;
 import com.google.datastore.v1beta3.ReadOptions.ReadConsistency;
 import com.google.datastore.v1beta3.RunQueryRequest;
 import com.google.datastore.v1beta3.RunQueryResponse;
-import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
@@ -139,12 +138,7 @@ public class DatastoreTest {
 
   @Before
   public void setUp() {
-    options = DatastoreOptions.builder()
-        .projectId(PROJECT_ID)
-        .host("localhost:" + PORT)
-        .authCredentials(AuthCredentials.noAuth())
-        .retryParams(RetryParams.noRetries())
-        .build();
+    options = gcdHelper.options().toBuilder().retryParams(RetryParams.noRetries()).build();
     datastore = options.service();
     rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
     rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);

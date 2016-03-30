@@ -20,12 +20,8 @@
  * <p>A simple usage example:
  * <p>Before the test:
  * <pre> {@code
- * LocalGcdHelper gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT_NUMBER);
- * DatastoreOptions options = DatastoreOptions.builder()
- *     .projectId(PROJECT_ID)
- *     .host("localhost:8080")
- *     .build();
- * Datastore localDatastore = options.service();
+ * LocalGcdHelper gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT_NUMBER, CONSISTENCY);
+ * Datastore localDatastore = gcdHelper.options().service();
  * } </pre>
  *
  * <p>After the test:

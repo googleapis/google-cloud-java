@@ -21,6 +21,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.base.Strings;
+import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.datastore.DatastoreOptions;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -394,6 +396,18 @@ public class LocalGcdHelper {
   }
 
   /**
+   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator
+   * on localhost.
+   */
+  public DatastoreOptions options() {
+    return DatastoreOptions.builder()
+        .projectId(projectId)
+        .host("http://localhost:" + Integer.toString(port))
+        .authCredentials(AuthCredentials.noAuth())
+        .build();
+  }
+
+  /**
    * Starts the local datastore for the specific project.
    *
    * This will unzip the gcd tool, create the project and start it.
@@ -639,10 +653,13 @@ public class LocalGcdHelper {
     for (String arg : args) {
       if (arg.startsWith("--port=")) {
         parsedArgs.put("port", arg.substring("--port=".length()));
+      } else if (arg.startsWith("--consistency=")) {
+        parsedArgs.put("consistency", arg.substring("--consistency=".length()));
       } else if (arg.equals("START") || arg.equals("STOP")) {
         parsedArgs.put("action", arg);
       } else {
-        throw new RuntimeException("Only accepts START, STOP, and --port=<port #> as arguments");
+        throw new RuntimeException("Only accepts START, STOP, --port=<port #> and "
+            + "--consistency=<double in range [0,1]> as arguments.");
       }
     }
     if (parsedArgs.get("action") == null) {

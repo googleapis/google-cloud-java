@@ -14,22 +14,22 @@ This library provides tools to help write tests for code that uses the following
 You can test against a temporary local datastore by following these steps:
 
 1. Start the local datastore emulator using `LocalGcdHelper`.  This can be done in two ways:
-  - Run `LocalGcdHelper.java`'s `main` method with arguments `START` and (optionally) `--port=<port number>`.  This will create a temporary folder on your computer and bind `localhost:<port number>` for communication with the local datastore.  The port number is an optional argument.  If no port number is specified, port 8080 will be used.
-  - Call `LocalGcdHelper.start(<project ID>, <port number>)` before running your tests.  Save the `LocalGcdHelper` object returned so that you can stop the emulator later.
+  - Run `LocalGcdHelper.java`'s `main` method with `START` provided as an argument, followed by optional arguments `--port=<port number>` and `--consistency=<float between 0 and 1, inclusive>`.  This will create a temporary folder on your computer and bind `localhost:<port number>` for communication with the local datastore.  If no port number is specified, port 8080 will be used.  The consistency setting controls the fraction of Datastore writes that are immediately visible in global queries.
+  - Use the `LocalGcdHelper.start(String projectId, int port, double consistency)` method before running your tests. For example, you can use the following code to start the local Datastore on any available port with the consistency set to 0.9:
+    ```java
+    int port = LocalGcdHelper.findAvailablePort(LocalGcdHelper.DEFAULT_PORT);
+    LocalGcdHelper helper = LocalGcdHelper.start("my-project-id", port, 0.9);
+    ```
 
-2. In your program, create and use a datastore whose host is set host to `localhost:<port number>`.  For example, 
+2. In your program, create and use a `Datastore` object with the options given by the `LocalGcdHelper` instance.  For example:
   ```java
-  DatastoreOptions options = DatastoreOptions.builder()
-      .projectId(PROJECT_ID)
-      .host("http://localhost:8080")
-      .build();
-  Datastore localDatastore = options.service();
+  Datastore localDatastore = helper.options().service()
   ```
 3. Run your tests.
 
 4. Stop the local datastore emulator.
   - If you ran `LocalGcdHelper.java`'s `main` function to start the emulator, run `LocalGcdHelper.java`'s `main` method with arguments `STOP` and (optionally) `--port=<port number>`.  If the port is not supplied, the program will attempt to close the last port started.
-  - If you ran `LocalGcdHelper.start()` to start the emulator, call the `stop()` method on the `LocalGcdHelper` object returned by `LocalGcdHelper.start()`.
+  - If you ran the `LocalGcdHelper.start` method to start the emulator, call the `stop()` method on the `LocalGcdHelper` object returned by `LocalGcdHelper.start`.
 
 #### On a remote machine
 
@@ -39,6 +39,7 @@ You can test against a remote datastore emulator as well.  To do this, set the `
   DatastoreOptions options = DatastoreOptions.builder()
       .projectId(PROJECT_ID)
       .host("http://<hostname of machine>:<port>")
+      .authCredentials(AuthCredentials.noAuth())
       .build();
   Datastore localDatastore = options.service();
   ```
