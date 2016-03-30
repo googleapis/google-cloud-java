@@ -593,9 +593,11 @@ public class ITDnsTest {
         RecordSet.builder("subdomain." + zone.dnsName(), RecordSet.Type.A)
             .records(ImmutableList.of("0.255.1.5"))
             .build();
+    boolean recordAdded = false;
     try {
       ChangeRequestInfo validChange = ChangeRequest.builder().add(validA).build();
       zone.applyChangeRequest(validChange);
+      recordAdded = true;
       try {
         zone.applyChangeRequest(validChange);
         fail("Created a record set which already exists.");
@@ -648,9 +650,11 @@ public class ITDnsTest {
         assertEquals(400, ex.code());
       }
     } finally {
-      ChangeRequestInfo deletion = ChangeRequest.builder().delete(validA).build();
-      ChangeRequest request = zone.applyChangeRequest(deletion);
-      waitForChangeToComplete(zone.name(), request.id());
+      if (recordAdded) {
+        ChangeRequestInfo deletion = ChangeRequest.builder().delete(validA).build();
+        ChangeRequest request = zone.applyChangeRequest(deletion);
+        waitForChangeToComplete(zone.name(), request.id());
+      }
       zone.delete();
     }
   }
