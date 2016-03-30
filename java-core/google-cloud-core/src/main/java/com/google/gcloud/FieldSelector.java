@@ -41,9 +41,9 @@ public interface FieldSelector {
    * A helper class used to build composite selectors given a number of fields. This class is not
    * supposed to be used directly by users.
    */
-  class SelectorHelper {
+  class Helper {
 
-    private SelectorHelper() {}
+    private Helper() {}
 
     private static final Function<FieldSelector, String> FIELD_TO_STRING_FUNCTION =
         new Function<FieldSelector, String>() {
@@ -53,7 +53,7 @@ public interface FieldSelector {
           }
         };
 
-    private static String selector(List<FieldSelector> required, FieldSelector[] others,
+    private static String selector(List<? extends FieldSelector> required, FieldSelector[] others,
       String... extraResourceFields) {
       Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(required.size() + others.length);
       fieldStrings.addAll(Lists.transform(required, FIELD_TO_STRING_FUNCTION));
@@ -67,7 +67,7 @@ public interface FieldSelector {
      * method can be used for field selection in API calls that return a single resource. This
      * method is not supposed to be used directly by users.
      */
-    public static String selector(List<FieldSelector> required, FieldSelector... others) {
+    public static String selector(List<? extends FieldSelector> required, FieldSelector... others) {
       return selector(required, others, new String[]{});
     }
 
@@ -76,7 +76,7 @@ public interface FieldSelector {
      * selector returned by this method can be used for field selection in API calls that return a
      * list of resources. This method is not supposed to be used directly by users.
      */
-    public static String selector(String containerName, List<FieldSelector> required,
+    public static String listSelector(String containerName, List<? extends FieldSelector> required,
         FieldSelector... others) {
       return "nextPageToken," + containerName + '(' + selector(required, others) + ')';
     }
@@ -87,7 +87,7 @@ public interface FieldSelector {
      * string selector returned by this method can be used for field selection in API calls that
      * return a list of resources. This method is not supposed to be used directly by users.
      */
-    public static String selector(String containerName, List<FieldSelector> required,
+    public static String listSelector(String containerName, List<? extends FieldSelector> required,
         FieldSelector[] others, String... extraResourceFields) {
       return "nextPageToken," + containerName + '('
           + selector(required, others, extraResourceFields) + ')';
