@@ -153,7 +153,7 @@ class RemoteRpc {
           e);
     }
 
-    Code code = Code.forNumber(rpcStatus.getCode());
+    Code code = Code.valueOf(rpcStatus.getCode());
     if (code == null) {
       return makeException(url, methodName, Code.INTERNAL,
           String.format(
