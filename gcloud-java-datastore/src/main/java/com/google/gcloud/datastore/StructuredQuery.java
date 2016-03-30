@@ -45,36 +45,36 @@ import java.util.Objects;
  * <h3>A usage example:</h3>
  *
  * <p>A simple query that returns all entities for a specific kind
- * <pre>{@code
- *   Query<Entity> query = Query.entityQueryBuilder().kind(kind).build();
- *   QueryResults<Entity> results = datastore.run(query);
- *   while (results.hasNext()) {
- *     Entity entity = results.next();
- *     ...
- *   }
- * } </pre>
+ * <pre> {@code
+ * Query<Entity> query = Query.entityQueryBuilder().kind(kind).build();
+ * QueryResults<Entity> results = datastore.run(query);
+ * while (results.hasNext()) {
+ *   Entity entity = results.next();
+ *   ...
+ * }
+ * }</pre>
  *
  * <p>A simple key-only query of all entities for a specific kind
- * <pre>{@code
- *   Query<Key> keyOnlyQuery =  Query.keyQueryBuilder().kind(KIND1).build();
- *   QueryResults<Key> results = datastore.run(keyOnlyQuery);
- *   ...
- * } </pre>
+ * <pre> {@code
+ * Query<Key> keyOnlyQuery =  Query.keyQueryBuilder().kind(KIND1).build();
+ * QueryResults<Key> results = datastore.run(keyOnlyQuery);
+ * ...
+ * }</pre>
  *
  * <p>A less trivial example of a projection query that returns the first 10 results
  * of "age" and "name" properties (sorted and grouped by "age") with an age greater than 18
- * <pre>{@code
- *   Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
- *       .kind(kind)
- *       .projection(Projection.property("age"), Projection.first("name"))
- *       .filter(PropertyFilter.gt("age", 18))
- *       .distinctOn("age")
- *       .orderBy(OrderBy.asc("age"))
- *       .limit(10)
- *       .build();
- *   QueryResults<ProjectionEntity> results = datastore.run(query);
- *   ...
- * } </pre>
+ * <pre> {@code
+ * Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
+ *     .kind(kind)
+ *     .projection(Projection.property("age"), Projection.first("name"))
+ *     .filter(PropertyFilter.gt("age", 18))
+ *     .groupBy("age")
+ *     .orderBy(OrderBy.asc("age"))
+ *     .limit(10)
+ *     .build();
+ * QueryResults<ProjectionEntity> results = datastore.run(query);
+ * ...
+ * }</pre>
  *
  * @param <V> the type of the result values this query will produce
  * @see <a href="https://cloud.google.com/appengine/docs/java/datastore/queries">Datastore
@@ -734,7 +734,8 @@ public abstract class StructuredQuery<V> extends Query<V> {
            : queryPb.getProjectionList()) {
         addProjection(projectionPb.getProperty().getName());
       }
-      for (com.google.datastore.v1beta3.PropertyReference distinctOnPb : queryPb.getDistinctOnList()) {
+      for (com.google.datastore.v1beta3.PropertyReference distinctOnPb :
+          queryPb.getDistinctOnList()) {
         addDistinctOn(distinctOnPb.getName());
       }
       return self();

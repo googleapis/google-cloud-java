@@ -47,15 +47,16 @@ public class WriteChannelConfigurationTest {
       .description("FieldDescription")
       .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
-  private static final WriteChannelConfiguration LOAD_CONFIGURATION = WriteChannelConfiguration.builder(TABLE_ID)
-      .createDisposition(CREATE_DISPOSITION)
-      .writeDisposition(WRITE_DISPOSITION)
-      .formatOptions(CSV_OPTIONS)
-      .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-      .maxBadRecords(MAX_BAD_RECORDS)
-      .projectionFields(PROJECTION_FIELDS)
-      .schema(TABLE_SCHEMA)
-      .build();
+  private static final WriteChannelConfiguration LOAD_CONFIGURATION =
+      WriteChannelConfiguration.builder(TABLE_ID)
+          .createDisposition(CREATE_DISPOSITION)
+          .writeDisposition(WRITE_DISPOSITION)
+          .formatOptions(CSV_OPTIONS)
+          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .maxBadRecords(MAX_BAD_RECORDS)
+          .projectionFields(PROJECTION_FIELDS)
+          .schema(TABLE_SCHEMA)
+          .build();
 
   @Test
   public void testToBuilder() {
@@ -106,7 +107,8 @@ public class WriteChannelConfigurationTest {
     compareLoadConfiguration(configuration, WriteChannelConfiguration.fromPb(configuration.toPb()));
   }
 
-  private void compareLoadConfiguration(WriteChannelConfiguration expected, WriteChannelConfiguration value) {
+  private void compareLoadConfiguration(WriteChannelConfiguration expected,
+      WriteChannelConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());

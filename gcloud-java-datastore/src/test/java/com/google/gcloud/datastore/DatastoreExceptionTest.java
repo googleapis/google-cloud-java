@@ -78,7 +78,8 @@ public class DatastoreExceptionTest {
   @Test
   public void testTranslateAndThrow() throws Exception {
     DatastoreException cause = new DatastoreException(14, "message", "UNAVAILABLE");
-    RetryHelper.RetryHelperException exceptionMock = createMock(RetryHelper.RetryHelperException.class);
+    RetryHelper.RetryHelperException exceptionMock =
+        createMock(RetryHelper.RetryHelperException.class);
     expect(exceptionMock.getCause()).andReturn(cause).times(2);
     replay(exceptionMock);
     try {

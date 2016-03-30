@@ -33,6 +33,7 @@ import com.google.common.collect.Maps;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -130,66 +131,316 @@ public abstract class BaseEntity<K extends IncompleteKey>
       return self();
     }
 
+    /**
+     * Sets a property.
+     *
+     * @param name name of the property
+     * @param value value associated with the property
+     */
     public B set(String name, Value<?> value) {
       properties.put(name, value);
       return self();
     }
 
+    /**
+     * Sets a property of type {@link StringValue}.
+     *
+     * @param name name of the property
+     * @param value value associated with the property
+     */
     public B set(String name, String value) {
       properties.put(name, of(value));
       return self();
     }
 
+    /**
+     * Sets a list property containing elements of type {@link StringValue}.
+     *
+     * @param name name of the property
+     * @param first the first string in the list
+     * @param second the second string in the list
+     * @param others other strings in the list
+     */
+    public B set(String name, String first, String second, String... others) {
+      List<StringValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (String other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
+    /**
+     * Sets a property of type {@link LongValue}.
+     *
+     * @param name name of the property
+     * @param value value associated with the property
+     */
     public B set(String name, long value) {
       properties.put(name, of(value));
       return self();
     }
 
+    /**
+     * Sets a list property containing elements of type {@link LongValue}.
+     *
+     * @param name name of the property
+     * @param first the first long in the list
+     * @param second the second long in the list
+     * @param others other longs in the list
+     */
+    public B set(String name, long first, long second, long... others) {
+      List<LongValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (long other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
+    /**
+     * Sets a property of type {@link DoubleValue}.
+     *
+     * @param name name of the property
+     * @param value value associated with the property
+     */
     public B set(String name, double value) {
       properties.put(name, of(value));
       return self();
     }
 
+    /**
+     * Sets a list property containing elements of type {@link DoubleValue}.
+     *
+     * @param name name of the property
+     * @param first the first double in the list
+     * @param second the second double in the list
+     * @param others other doubles in the list
+     */
+    public B set(String name, double first, double second, double... others) {
+      List<DoubleValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (double other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
+    /**
+     * Sets a property of type {@link BooleanValue}.
+     *
+     * @param name name of the property
+     * @param value value associated with the property
+     */
     public B set(String name, boolean value) {
       properties.put(name, of(value));
       return self();
     }
 
+    /**
+     * Sets a list property containing elements of type {@link BooleanValue}.
+     *
+     * @param name name of the property
+     * @param first the first boolean in the list
+     * @param second the second boolean in the list
+     * @param others other booleans in the list
+     */
+    public B set(String name, boolean first, boolean second, boolean... others) {
+      List<BooleanValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (boolean other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
+    /**
+     * Sets a property of type {@link DateTimeValue}.
+     *
+     * @param name name of the property
+     * @param value value associated with the property
+     */
     public B set(String name, DateTime value) {
       properties.put(name, of(value));
       return self();
     }
 
+    /**
+     * Sets a list property containing elements of type {@link DateTimeValue}.
+     *
+     * @param name name of the property
+     * @param first the first {@link DateTime} in the list
+     * @param second the second {@link DateTime} in the list
+     * @param others other {@link DateTime}s in the list
+     */
+    public B set(String name, DateTime first, DateTime second, DateTime... others) {
+      List<DateTimeValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (DateTime other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
+    /**
+     * Sets a property of type {@link LatLng}.
+     *
+     * @param name name of the property
+     * @param value value associated with the property
+     */
     public B set(String name, LatLng value) {
       properties.put(name, of(value));
       return self();
     }
 
+    /**
+     * Sets a list property containing elements of type {@link LatLng}.
+     *
+     * @param name name of the property
+     * @param first the first {@link LatLng} in the list
+     * @param second the second {@link LatLng} in the list
+     * @param others other {@link LatLng}s in the list
+     */
+    public B set(String name, LatLng first, LatLng second, LatLng... others) {
+      List<LatLngValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (LatLng other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
+    /**
+     * Sets a property of type {@link KeyValue}.
+     *
+     * @param name name of the property
+     * @param value value associated with the property
+     */
     public B set(String name, Key value) {
       properties.put(name, of(value));
       return self();
     }
 
+    /**
+     * Sets a list property containing elements of type {@link KeyValue}.
+     *
+     * @param name name of the property
+     * @param first the first {@link Key} in the list
+     * @param second the second {@link Key} in the list
+     * @param others other {@link Key}s in the list
+     */
+    public B set(String name, Key first, Key second, Key... others) {
+      List<KeyValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (Key other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
+    /**
+     * Sets a property of type {@link EntityValue}.
+     *
+     * @param name name of the property
+     * @param value value associated with the property
+     */
     public B set(String name, FullEntity<?> value) {
       properties.put(name, of(value));
       return self();
     }
 
+    /**
+     * Sets a list property containing elements of type {@link EntityValue}.
+     *
+     * @param name name of the property
+     * @param first the first {@link FullEntity} in the list
+     * @param second the second {@link FullEntity} in the list
+     * @param others other entities in the list
+     */
+    public B set(String name, FullEntity<?> first, FullEntity<?> second, FullEntity<?>... others) {
+      List<EntityValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (FullEntity<?> other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
+    /**
+     * Sets a property of type {@link ListValue}.
+     *
+     * @param name name of the property
+     * @param values list of values associated with the property
+     */
     public B set(String name, List<? extends Value<?>> values) {
       properties.put(name, of(values));
       return self();
     }
 
-    public B set(String name, Value<?> value, Value<?>... other) {
-      properties.put(name, of(value, other));
+    /**
+     * Sets a property of type {@link ListValue}.
+     *
+     * @param name name of the property
+     * @param first the first value in the list
+     * @param second the second value in the list
+     * @param others other values in the list
+     */
+    public B set(String name, Value<?> first, Value<?> second, Value<?>... others) {
+      properties.put(name, ListValue.builder().addValue(first).addValue(second, others).build());
       return self();
     }
 
+    /**
+     * Sets a property of type {@link BlobValue}.
+     *
+     * @param name name of the property
+     * @param value value associated with the property
+     */
     public B set(String name, Blob value) {
       properties.put(name, of(value));
       return self();
     }
 
+    /**
+     * Sets a list property containing elements of type {@link BlobValue}.
+     *
+     * @param name name of the property
+     * @param first the first {@link Blob} in the list
+     * @param second the second {@link Blob} in the list
+     * @param others other {@link Blob}s in the list
+     */
+    public B set(String name, Blob first, Blob second, Blob... others) {
+      List<BlobValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (Blob other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
+    /**
+     * Sets a property of type {@code NullValue}.
+     *
+     * @param name name of the property
+     */
     public B setNull(String name) {
       properties.put(name, of());
       return self();
@@ -366,8 +617,8 @@ public abstract class BaseEntity<K extends IncompleteKey>
    * @throws ClassCastException if value is not a list of values
    */
   @SuppressWarnings("unchecked")
-  public List<? extends Value<?>> getList(String name) {
-    return ((Value<List<? extends Value<?>>>) getValue(name)).get();
+  public <T extends Value<?>> List<T> getList(String name) {
+    return (List<T>) getValue(name).get();
   }
 
   /**

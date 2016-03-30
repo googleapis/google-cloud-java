@@ -53,6 +53,7 @@ class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, WriteChann
     }
   }
 
+  @Override
   protected StateImpl.Builder stateBuilder() {
     return StateImpl.builder(options(), entity(), uploadId());
   }

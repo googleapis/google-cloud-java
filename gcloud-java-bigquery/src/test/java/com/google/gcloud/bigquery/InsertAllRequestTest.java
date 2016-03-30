@@ -43,7 +43,8 @@ public class InsertAllRequestTest {
           InsertAllRequest.RowToInsert.of("id2", CONTENT2));
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final Schema TABLE_SCHEMA = Schema.of();
-  private static final BaseTableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_SCHEMA);
+  private static final TableDefinition TABLE_DEFINITION = StandardTableDefinition.of(TABLE_SCHEMA);
+  private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
   private static final boolean SKIP_INVALID_ROWS = true;
   private static final boolean IGNORE_UNKNOWN_VALUES = false;
   private static final String TEMPLATE_SUFFIX = "templateSuffix";

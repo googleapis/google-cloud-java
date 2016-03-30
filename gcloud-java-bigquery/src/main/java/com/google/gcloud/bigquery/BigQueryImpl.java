@@ -19,10 +19,7 @@ package com.google.gcloud.bigquery;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.gcloud.RetryHelper.runWithRetries;
 
-import com.google.api.services.bigquery.model.Dataset;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
-import com.google.api.services.bigquery.model.Job;
-import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
 import com.google.api.services.bigquery.model.TableRow;
@@ -38,7 +35,7 @@ import com.google.gcloud.PageImpl;
 import com.google.gcloud.PageImpl.NextPageFetcher;
 import com.google.gcloud.RetryHelper;
 import com.google.gcloud.bigquery.InsertAllRequest.RowToInsert;
-import com.google.gcloud.spi.BigQueryRpc;
+import com.google.gcloud.bigquery.spi.BigQueryRpc;
 
 import java.util.List;
 import java.util.Map;
@@ -46,7 +43,7 @@ import java.util.concurrent.Callable;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
 
-  private static class DatasetPageFetcher implements NextPageFetcher<DatasetInfo> {
+  private static class DatasetPageFetcher implements NextPageFetcher<Dataset> {
 
     private static final long serialVersionUID = -3057564042439021278L;
     private final Map<BigQueryRpc.Option, ?> requestOptions;
@@ -60,12 +57,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     @Override
-    public Page<DatasetInfo> nextPage() {
+    public Page<Dataset> nextPage() {
       return listDatasets(serviceOptions, requestOptions);
     }
   }
 
-  private static class TablePageFetcher implements NextPageFetcher<BaseTableInfo> {
+  private static class TablePageFetcher implements NextPageFetcher<Table> {
 
     private static final long serialVersionUID = 8611248840504201187L;
     private final Map<BigQueryRpc.Option, ?> requestOptions;
@@ -81,12 +78,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     @Override
-    public Page<BaseTableInfo> nextPage() {
+    public Page<Table> nextPage() {
       return listTables(dataset, serviceOptions, requestOptions);
     }
   }
 
-  private static class JobPageFetcher implements NextPageFetcher<JobInfo> {
+  private static class JobPageFetcher implements NextPageFetcher<Job> {
 
     private static final long serialVersionUID = 8536533282558245472L;
     private final Map<BigQueryRpc.Option, ?> requestOptions;
@@ -100,7 +97,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     @Override
-    public Page<JobInfo> nextPage() {
+    public Page<Job> nextPage() {
       return listJobs(serviceOptions, requestOptions);
     }
   }
@@ -156,109 +153,119 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public DatasetInfo create(DatasetInfo dataset, DatasetOption... options)
-      throws BigQueryException {
-    final Dataset datasetPb = dataset.setProjectId(options().projectId()).toPb();
+  public Dataset create(DatasetInfo dataset, DatasetOption... options) {
+    final com.google.api.services.bigquery.model.Dataset datasetPb =
+        dataset.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      return DatasetInfo.fromPb(runWithRetries(new Callable<Dataset>() {
-        @Override
-        public Dataset call() {
-          return bigQueryRpc.create(datasetPb, optionsMap);
-        }
-      }, options().retryParams(), EXCEPTION_HANDLER));
+      return Dataset.fromPb(this,
+          runWithRetries(new Callable<com.google.api.services.bigquery.model.Dataset>() {
+            @Override
+            public com.google.api.services.bigquery.model.Dataset call() {
+              return bigQueryRpc.create(datasetPb, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
   @Override
-  public <T extends BaseTableInfo> T create(T table, TableOption... options)
-      throws BigQueryException {
-    final Table tablePb = table.setProjectId(options().projectId()).toPb();
+  public Table create(TableInfo table, TableOption... options) {
+    final com.google.api.services.bigquery.model.Table tablePb =
+        table.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      return BaseTableInfo.fromPb(runWithRetries(new Callable<Table>() {
-        @Override
-        public Table call() {
-          return bigQueryRpc.create(tablePb, optionsMap);
-        }
-      }, options().retryParams(), EXCEPTION_HANDLER));
+      return Table.fromPb(this,
+          runWithRetries(new Callable<com.google.api.services.bigquery.model.Table>() {
+            @Override
+            public com.google.api.services.bigquery.model.Table call() {
+              return bigQueryRpc.create(tablePb, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
   @Override
-  public JobInfo create(JobInfo job, JobOption... options) throws BigQueryException {
-    final Job jobPb = job.setProjectId(options().projectId()).toPb();
+  public Job create(JobInfo job, JobOption... options) {
+    final com.google.api.services.bigquery.model.Job jobPb =
+        job.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      return JobInfo.fromPb(runWithRetries(new Callable<Job>() {
-        @Override
-        public Job call() {
-          return bigQueryRpc.create(jobPb, optionsMap);
-        }
-      }, options().retryParams(), EXCEPTION_HANDLER));
+      return Job.fromPb(this,
+          runWithRetries(new Callable<com.google.api.services.bigquery.model.Job>() {
+            @Override
+            public com.google.api.services.bigquery.model.Job call() {
+              return bigQueryRpc.create(jobPb, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
   @Override
-  public DatasetInfo getDataset(String datasetId, DatasetOption... options)
-      throws BigQueryException {
+  public Dataset getDataset(String datasetId, DatasetOption... options) {
     return getDataset(DatasetId.of(datasetId), options);
   }
 
   @Override
-  public DatasetInfo getDataset(final DatasetId datasetId, DatasetOption... options)
-      throws BigQueryException {
+  public Dataset getDataset(final DatasetId datasetId, DatasetOption... options) {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      Dataset answer = runWithRetries(new Callable<Dataset>() {
-        @Override
-        public Dataset call() {
-          return bigQueryRpc.getDataset(datasetId.dataset(), optionsMap);
-        }
-      }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : DatasetInfo.fromPb(answer);
+      com.google.api.services.bigquery.model.Dataset answer =
+          runWithRetries(new Callable<com.google.api.services.bigquery.model.Dataset>() {
+            @Override
+            public com.google.api.services.bigquery.model.Dataset call() {
+              return bigQueryRpc.getDataset(datasetId.dataset(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Dataset.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
   @Override
-  public Page<DatasetInfo> listDatasets(DatasetListOption... options) throws BigQueryException {
+  public Page<Dataset> listDatasets(DatasetListOption... options) {
     return listDatasets(options(), optionMap(options));
   }
 
-  private static Page<DatasetInfo> listDatasets(final BigQueryOptions serviceOptions,
+  private static Page<Dataset> listDatasets(final BigQueryOptions serviceOptions,
       final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
-      BigQueryRpc.Tuple<String, Iterable<Dataset>> result =
-          runWithRetries(new Callable<BigQueryRpc.Tuple<String, Iterable<Dataset>>>() {
-            @Override
-            public BigQueryRpc.Tuple<String, Iterable<Dataset>> call() {
-              return serviceOptions.rpc().listDatasets(optionsMap);
-            }
-          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Dataset>> result =
+          runWithRetries(new Callable<BigQueryRpc.Tuple<String,
+              Iterable<com.google.api.services.bigquery.model.Dataset>>>() {
+                @Override
+                public BigQueryRpc.Tuple<String,
+                    Iterable<com.google.api.services.bigquery.model.Dataset>> call() {
+                  return serviceOptions.rpc().listDatasets(optionsMap);
+                }
+              }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
       String cursor = result.x();
       return new PageImpl<>(new DatasetPageFetcher(serviceOptions, cursor, optionsMap), cursor,
-          Iterables.transform(result.y(), DatasetInfo.FROM_PB_FUNCTION));
+          Iterables.transform(result.y(),
+              new Function<com.google.api.services.bigquery.model.Dataset, Dataset>() {
+                @Override
+                public Dataset apply(com.google.api.services.bigquery.model.Dataset dataset) {
+                  return Dataset.fromPb(serviceOptions.service(), dataset);
+                }
+              }));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
   @Override
-  public boolean delete(String datasetId, DatasetDeleteOption... options) throws BigQueryException {
+  public boolean delete(String datasetId, DatasetDeleteOption... options) {
     return delete(DatasetId.of(datasetId), options);
   }
 
   @Override
-  public boolean delete(final DatasetId datasetId, DatasetDeleteOption... options)
-      throws BigQueryException {
+  public boolean delete(final DatasetId datasetId, DatasetDeleteOption... options) {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return runWithRetries(new Callable<Boolean>() {
@@ -273,12 +280,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public boolean delete(String datasetId, String tableId) throws BigQueryException {
+  public boolean delete(String datasetId, String tableId) {
     return delete(TableId.of(datasetId, tableId));
   }
 
   @Override
-  public boolean delete(final TableId tableId) throws BigQueryException {
+  public boolean delete(final TableId tableId) {
     try {
       return runWithRetries(new Callable<Boolean>() {
         @Override
@@ -292,87 +299,93 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public DatasetInfo update(DatasetInfo dataset, DatasetOption... options)
-      throws BigQueryException {
-    final Dataset datasetPb = dataset.setProjectId(options().projectId()).toPb();
+  public Dataset update(DatasetInfo dataset, DatasetOption... options) {
+    final com.google.api.services.bigquery.model.Dataset datasetPb =
+        dataset.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      return DatasetInfo.fromPb(runWithRetries(new Callable<Dataset>() {
-        @Override
-        public Dataset call() {
-          return bigQueryRpc.patch(datasetPb, optionsMap);
-        }
-      }, options().retryParams(), EXCEPTION_HANDLER));
+      return Dataset.fromPb(this,
+          runWithRetries(new Callable<com.google.api.services.bigquery.model.Dataset>() {
+            @Override
+            public com.google.api.services.bigquery.model.Dataset call() {
+              return bigQueryRpc.patch(datasetPb, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
   @Override
-  public <T extends BaseTableInfo> T update(T table, TableOption... options)
-      throws BigQueryException {
-    final Table tablePb = table.setProjectId(options().projectId()).toPb();
+  public Table update(TableInfo table, TableOption... options) {
+    final com.google.api.services.bigquery.model.Table tablePb =
+        table.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      return BaseTableInfo.fromPb(runWithRetries(new Callable<Table>() {
-        @Override
-        public Table call() {
-          return bigQueryRpc.patch(tablePb, optionsMap);
-        }
-      }, options().retryParams(), EXCEPTION_HANDLER));
+      return Table.fromPb(this,
+          runWithRetries(new Callable<com.google.api.services.bigquery.model.Table>() {
+            @Override
+            public com.google.api.services.bigquery.model.Table call() {
+              return bigQueryRpc.patch(tablePb, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
   @Override
-  public <T extends BaseTableInfo> T getTable(final String datasetId, final String tableId,
-      TableOption... options) throws BigQueryException {
+  public Table getTable(final String datasetId, final String tableId, TableOption... options) {
     return getTable(TableId.of(datasetId, tableId), options);
   }
 
   @Override
-  public <T extends BaseTableInfo> T getTable(final TableId tableId, TableOption... options)
-      throws BigQueryException {
+  public Table getTable(final TableId tableId, TableOption... options) {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      Table answer = runWithRetries(new Callable<Table>() {
-        @Override
-        public Table call() {
-          return bigQueryRpc.getTable(tableId.dataset(), tableId.table(), optionsMap);
-        }
-      }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : BaseTableInfo.<T>fromPb(answer);
+      com.google.api.services.bigquery.model.Table answer =
+          runWithRetries(new Callable<com.google.api.services.bigquery.model.Table>() {
+            @Override
+            public com.google.api.services.bigquery.model.Table call() {
+              return bigQueryRpc.getTable(tableId.dataset(), tableId.table(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Table.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
   @Override
-  public Page<BaseTableInfo> listTables(String datasetId, TableListOption... options)
-      throws BigQueryException {
+  public Page<Table> listTables(String datasetId, TableListOption... options) {
     return listTables(datasetId, options(), optionMap(options));
   }
 
   @Override
-  public Page<BaseTableInfo> listTables(DatasetId datasetId, TableListOption... options)
-      throws BigQueryException {
+  public Page<Table> listTables(DatasetId datasetId, TableListOption... options) {
     return listTables(datasetId.dataset(), options(), optionMap(options));
   }
 
-  private static Page<BaseTableInfo> listTables(final String datasetId, final BigQueryOptions
+  private static Page<Table> listTables(final String datasetId, final BigQueryOptions
       serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
-      BigQueryRpc.Tuple<String, Iterable<Table>> result =
-          runWithRetries(new Callable<BigQueryRpc.Tuple<String, Iterable<Table>>>() {
+      BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>> result =
+          runWithRetries(new Callable<BigQueryRpc.Tuple<String,
+              Iterable<com.google.api.services.bigquery.model.Table>>>() {
             @Override
-            public BigQueryRpc.Tuple<String, Iterable<Table>> call() {
-              return serviceOptions.rpc().listTables(datasetId, optionsMap);
-            }
+            public BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>>
+                call() {
+                  return serviceOptions.rpc().listTables(datasetId, optionsMap);
+                }
           }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
       String cursor = result.x();
-      Iterable<BaseTableInfo> tables = Iterables.transform(result.y(),
-          BaseTableInfo.FROM_PB_FUNCTION);
+      Iterable<Table> tables = Iterables.transform(result.y(),
+          new Function<com.google.api.services.bigquery.model.Table, Table>() {
+            @Override
+            public Table apply(com.google.api.services.bigquery.model.Table table) {
+              return Table.fromPb(serviceOptions.service(), table);
+            }
+          });
       return new PageImpl<>(new TablePageFetcher(datasetId, serviceOptions, cursor, optionsMap),
           cursor, tables);
     } catch (RetryHelper.RetryHelperException e) {
@@ -381,7 +394,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public InsertAllResponse insertAll(InsertAllRequest request) throws BigQueryException {
+  public InsertAllResponse insertAll(InsertAllRequest request) {
     final TableId tableId = request.table();
     final TableDataInsertAllRequest requestPb = new TableDataInsertAllRequest();
     requestPb.setIgnoreUnknownValues(request.ignoreUnknownValues());
@@ -400,13 +413,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public Page<List<FieldValue>> listTableData(String datasetId, String tableId,
-      TableDataListOption... options) throws BigQueryException {
+      TableDataListOption... options) {
     return listTableData(TableId.of(datasetId, tableId), options(), optionMap(options));
   }
 
   @Override
-  public Page<List<FieldValue>> listTableData(TableId tableId, TableDataListOption... options)
-      throws BigQueryException {
+  public Page<List<FieldValue>> listTableData(TableId tableId, TableDataListOption... options) {
     return listTableData(tableId, options(), optionMap(options));
   }
 
@@ -441,53 +453,61 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public JobInfo getJob(String jobId, JobOption... options) throws BigQueryException {
+  public Job getJob(String jobId, JobOption... options) {
     return getJob(JobId.of(jobId), options);
   }
 
   @Override
-  public JobInfo getJob(final JobId jobId, JobOption... options)
-      throws BigQueryException {
+  public Job getJob(final JobId jobId, JobOption... options) {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      Job answer = runWithRetries(new Callable<Job>() {
-        @Override
-        public Job call() {
-          return bigQueryRpc.getJob(jobId.job(), optionsMap);
-        }
-      }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : JobInfo.fromPb(answer);
+      com.google.api.services.bigquery.model.Job answer =
+          runWithRetries(new Callable<com.google.api.services.bigquery.model.Job>() {
+            @Override
+            public com.google.api.services.bigquery.model.Job call() {
+              return bigQueryRpc.getJob(jobId.job(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Job.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
   }
 
   @Override
-  public Page<JobInfo> listJobs(JobListOption... options) throws BigQueryException {
+  public Page<Job> listJobs(JobListOption... options) {
     return listJobs(options(), optionMap(options));
   }
 
-  private static Page<JobInfo> listJobs(final BigQueryOptions serviceOptions,
+  private static Page<Job> listJobs(final BigQueryOptions serviceOptions,
       final Map<BigQueryRpc.Option, ?> optionsMap) {
-    BigQueryRpc.Tuple<String, Iterable<Job>> result =
-        runWithRetries(new Callable<BigQueryRpc.Tuple<String, Iterable<Job>>>() {
+    BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Job>> result =
+        runWithRetries(new Callable<BigQueryRpc.Tuple<String,
+            Iterable<com.google.api.services.bigquery.model.Job>>>() {
           @Override
-          public BigQueryRpc.Tuple<String, Iterable<Job>> call() {
+          public BigQueryRpc.Tuple<String, Iterable<com.google.api.services.bigquery.model.Job>>
+              call() {
             return serviceOptions.rpc().listJobs(optionsMap);
           }
         }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
     String cursor = result.x();
-    Iterable<JobInfo> jobs = Iterables.transform(result.y(), JobInfo.FROM_PB_FUNCTION);
+    Iterable<Job> jobs = Iterables.transform(result.y(),
+        new Function<com.google.api.services.bigquery.model.Job, Job>() {
+          @Override
+          public Job apply(com.google.api.services.bigquery.model.Job job) {
+            return Job.fromPb(serviceOptions.service(), job);
+          }
+        });
     return new PageImpl<>(new JobPageFetcher(serviceOptions, cursor, optionsMap), cursor, jobs);
   }
 
   @Override
-  public boolean cancel(String jobId) throws BigQueryException {
+  public boolean cancel(String jobId) {
     return cancel(JobId.of(jobId));
   }
 
   @Override
-  public boolean cancel(final JobId jobId) throws BigQueryException {
+  public boolean cancel(final JobId jobId) {
     try {
       return runWithRetries(new Callable<Boolean>() {
         @Override
@@ -501,7 +521,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public QueryResponse query(final QueryRequest request) throws BigQueryException {
+  public QueryResponse query(final QueryRequest request) {
     try {
       com.google.api.services.bigquery.model.QueryResponse results =
           runWithRetries(new Callable<com.google.api.services.bigquery.model.QueryResponse>() {
@@ -540,8 +560,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public QueryResponse getQueryResults(JobId job, QueryResultsOption... options)
-      throws BigQueryException {
+  public QueryResponse getQueryResults(JobId job, QueryResultsOption... options) {
     Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     return getQueryResults(job, options(), optionsMap);
   }
@@ -595,6 +614,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .results(transformTableData(rowsPb));
   }
 
+  @Override
   public TableDataWriteChannel writer(WriteChannelConfiguration writeChannelConfiguration) {
     return new TableDataWriteChannel(options(),
         writeChannelConfiguration.setProjectId(options().projectId()));
