@@ -43,7 +43,7 @@ import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.datastore.spi.DatastoreRpc;
 import com.google.gcloud.datastore.spi.DatastoreRpcFactory;
-import com.google.gcloud.datastore.testing.LocalGcdHelper;
+import com.google.gcloud.datastore.testing.LocalDatastoreHelper;
 import com.google.protobuf.ByteString;
 
 import org.easymock.EasyMock;
@@ -67,7 +67,7 @@ import java.util.Set;
 @RunWith(JUnit4.class)
 public class DatastoreTest {
 
-  private static final String PROJECT_ID = LocalGcdHelper.DEFAULT_PROJECT_ID;
+  private static final String PROJECT_ID = "projectid1";
   private static final String KIND1 = "kind1";
   private static final String KIND2 = "kind2";
   private static final String KIND3 = "kind3";
@@ -123,17 +123,14 @@ public class DatastoreTest {
   private DatastoreRpcFactory rpcFactoryMock;
   private DatastoreRpc rpcMock;
 
-  private static LocalGcdHelper gcdHelper;
-  private static final int PORT = LocalGcdHelper.findAvailablePort(LocalGcdHelper.DEFAULT_PORT);
+  private static LocalDatastoreHelper gcdHelper;
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
-    if (!LocalGcdHelper.isActive(PROJECT_ID, PORT)) {
-      gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT, 1.0);
-    }
+    gcdHelper = LocalDatastoreHelper.start(PROJECT_ID, 1.0);
   }
 
   @Before

@@ -20,13 +20,13 @@
  * <p>A simple usage example:
  * <p>Before the test:
  * <pre> {@code
- * LocalGcdHelper gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT_NUMBER, CONSISTENCY);
- * Datastore localDatastore = gcdHelper.options().service();
+ * LocalDatastoreHelper helper = LocalDatastoreHelper.start();
+ * Datastore localDatastore = helper.options().service();
  * } </pre>
  *
  * <p>After the test:
  * <pre> {@code
- * gcdHelper.stop();
+ * helper.stop();
  * } </pre>
  *
  * @see <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-datastore">

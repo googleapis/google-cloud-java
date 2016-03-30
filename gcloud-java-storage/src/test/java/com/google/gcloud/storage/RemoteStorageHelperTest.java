@@ -22,7 +22,7 @@ import static org.junit.Assert.assertTrue;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
 import com.google.gcloud.storage.Storage.BlobListOption;
-import com.google.gcloud.storage.testing.RemoteGcsHelper;
+import com.google.gcloud.storage.testing.RemoteStorageHelper;
 
 import org.easymock.EasyMock;
 import org.junit.Before;
@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-public class RemoteGcsHelperTest {
+public class RemoteStorageHelperTest {
 
   private static final String BUCKET_NAME = "bucket-name";
   private static final String PROJECT_ID = "project-id";
@@ -125,7 +125,7 @@ public class RemoteGcsHelperTest {
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
     EasyMock.replay(storageMock);
-    assertTrue(RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME, 5, TimeUnit.SECONDS));
+    assertTrue(RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME, 5, TimeUnit.SECONDS));
     EasyMock.verify(storageMock);
   }
 
@@ -139,7 +139,7 @@ public class RemoteGcsHelperTest {
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(RETRYABLE_EXCEPTION).anyTimes();
     EasyMock.replay(storageMock);
-    assertTrue(!RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME, 50, TimeUnit.MICROSECONDS));
+    assertTrue(!RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME, 50, TimeUnit.MICROSECONDS));
     EasyMock.verify(storageMock);
   }
 
@@ -155,7 +155,7 @@ public class RemoteGcsHelperTest {
     EasyMock.replay(storageMock);
     thrown.expect(ExecutionException.class);
     try {
-      RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME, 5, TimeUnit.SECONDS);
+      RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME, 5, TimeUnit.SECONDS);
     } finally {
       EasyMock.verify(storageMock);
     }
@@ -171,7 +171,7 @@ public class RemoteGcsHelperTest {
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
     EasyMock.replay(storageMock);
-    RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME);
+    RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME);
     EasyMock.verify(storageMock);
   }
 
@@ -187,7 +187,7 @@ public class RemoteGcsHelperTest {
     EasyMock.replay(storageMock);
     thrown.expect(StorageException.class);
     try {
-      RemoteGcsHelper.forceDelete(storageMock, BUCKET_NAME);
+      RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME);
     } finally {
       EasyMock.verify(storageMock);
     }
@@ -195,7 +195,7 @@ public class RemoteGcsHelperTest {
 
   @Test
   public void testCreateFromStream() {
-    RemoteGcsHelper helper = RemoteGcsHelper.create(PROJECT_ID, JSON_KEY_STREAM);
+    RemoteStorageHelper helper = RemoteStorageHelper.create(PROJECT_ID, JSON_KEY_STREAM);
     StorageOptions options = helper.options();
     assertEquals(PROJECT_ID, options.projectId());
     assertEquals(60000, options.connectTimeout());

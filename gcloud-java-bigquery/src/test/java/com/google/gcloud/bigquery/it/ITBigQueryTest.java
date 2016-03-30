@@ -67,7 +67,7 @@ import com.google.gcloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.BucketInfo;
 import com.google.gcloud.storage.Storage;
-import com.google.gcloud.storage.testing.RemoteGcsHelper;
+import com.google.gcloud.storage.testing.RemoteStorageHelper;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -135,7 +135,7 @@ public class ITBigQueryTest {
   private static final String LOAD_FILE = "load.csv";
   private static final String JSON_LOAD_FILE = "load.json";
   private static final String EXTRACT_FILE = "extract.csv";
-  private static final String BUCKET = RemoteGcsHelper.generateBucketName();
+  private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final TableId TABLE_ID = TableId.of(DATASET, "testing_table");
   private static final String CSV_CONTENT = "StringValue1\nStringValue2\n";
   private static final String JSON_CONTENT = "{"
@@ -172,7 +172,7 @@ public class ITBigQueryTest {
   @BeforeClass
   public static void beforeClass() throws InterruptedException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
-    RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
+    RemoteStorageHelper gcsHelper = RemoteStorageHelper.create();
     bigquery = bigqueryHelper.options().service();
     storage = gcsHelper.options().service();
     storage.create(BucketInfo.of(BUCKET));
@@ -200,7 +200,7 @@ public class ITBigQueryTest {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
     }
     if (storage != null) {
-      boolean wasDeleted = RemoteGcsHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS);
+      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 10, TimeUnit.SECONDS);
       if (!wasDeleted && LOG.isLoggable(Level.WARNING)) {
         LOG.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }

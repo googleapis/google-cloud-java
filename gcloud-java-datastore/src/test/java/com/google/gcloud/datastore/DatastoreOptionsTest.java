@@ -22,7 +22,6 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.gcloud.datastore.spi.DatastoreRpc;
 import com.google.gcloud.datastore.spi.DatastoreRpcFactory;
-import com.google.gcloud.datastore.testing.LocalGcdHelper;
 
 import org.easymock.EasyMock;
 import org.junit.Before;
@@ -30,8 +29,8 @@ import org.junit.Test;
 
 public class DatastoreOptionsTest {
 
-  private static final String PROJECT_ID = "project_id";
-  private static final int PORT = LocalGcdHelper.findAvailablePort(LocalGcdHelper.DEFAULT_PORT);
+  private static final String PROJECT_ID = "project-id";
+  private static final int PORT = 8080;
   private DatastoreRpcFactory datastoreRpcFactory;
   private DatastoreRpc datastoreRpc;
   private DatastoreOptions.Builder options;
