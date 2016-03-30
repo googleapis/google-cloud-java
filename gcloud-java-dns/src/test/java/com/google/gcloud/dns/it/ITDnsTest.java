@@ -650,10 +650,11 @@ public class ITDnsTest {
         assertEquals(400, ex.code());
       }
     } finally {
-      assertTrue(recordAdded);
-      ChangeRequestInfo deletion = ChangeRequest.builder().delete(validA).build();
-      ChangeRequest request = zone.applyChangeRequest(deletion);
-      waitForChangeToComplete(zone.name(), request.id());
+      if (recordAdded) {
+        ChangeRequestInfo deletion = ChangeRequest.builder().delete(validA).build();
+        ChangeRequest request = zone.applyChangeRequest(deletion);
+        waitForChangeToComplete(zone.name(), request.id());
+      }
       zone.delete();
     }
   }
