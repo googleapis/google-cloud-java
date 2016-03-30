@@ -1,17 +1,17 @@
-/**
- * Copyright (c) 2015 Google Inc.
- * <p/>
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- * <p/>
+/*
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
+ *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 import com.google.api.services.monitoring.v3.Monitoring;
@@ -40,12 +40,12 @@ import java.util.Random;
 import java.util.TimeZone;
 
 
-
-
 /**
- * Class to demonstrate creating a custom metric with Cloud Monitoring. This class provides a few
- * functions that create a custom GAUGE metric, writes a timeseries value to it, then reads that
- * metric's value back within the last 5 minutes to see the value written.
+ * Class to demonstrate creating a custom metric with Cloud Monitoring.
+ * <p/>
+ * <p>This class provides a few functions that create a custom GAUGE metric, writes a timeseries
+ * value to it, then reads that metric's value back within the last 5 minutes to see the value
+ * written.
  */
 public class CreateCustomMetric {
 
@@ -111,7 +111,8 @@ public class CreateCustomMetric {
   /**
    * Constructs an instance of the class using the default metric name, and takes in a random
    * number generaotr (used for test purposes).
-   * Package-private to be accessible to tests.
+   * <p/>
+   * <p>Package-private to be accessible to tests.
    */
   CreateCustomMetric(Monitoring monitoringService, String projectResource,
                      String metricName, int bound) {
@@ -162,7 +163,8 @@ public class CreateCustomMetric {
   /**
    * This method creates a custom metric with arbitrary names, description,
    * and units.
-   * Package-private to be accessible to tests.
+   * <p/>
+   * <p>Package-private to be accessible to tests.
    */
   MetricDescriptor createCustomMetric() throws IOException {
     MetricDescriptor metricDescriptor = new MetricDescriptor();
@@ -196,8 +198,10 @@ public class CreateCustomMetric {
   }
 
   /**
-   * Retrieve the custom metric created by createCustomMetric. It can sometimes take a few moments
-   * before a new custom metric is ready to have TimeSeries written to it, so this method is used
+   * Retrieve the custom metric created by createCustomMetric.
+   * <p/>
+   * <p>It can sometimes take a few moments before a new custom metric is ready to have
+   * TimeSeries written to it, so this method is used
    * to check when it is ready.
    */
   public MetricDescriptor getCustomMetric() throws IOException {
@@ -218,8 +222,8 @@ public class CreateCustomMetric {
   }
 
   /**
-   * Writes a timeseries value for the custom metric created. The value written
-   * is a random integer value for demonstration purposes. It's a GAUGE metric,
+   * Writes a timeseries value for the custom metric created.
+   * <p>The value written is a random integer value for demonstration purposes. It's a GAUGE metric,
    * which means its a measure of a value at a point in time, and thus the start
    * window and end window times are the same.
    *
@@ -268,17 +272,17 @@ public class CreateCustomMetric {
    * last 5 minutes.
    *
    * @return The TimeSeries response object reflecting the Timeseries of the custom metrics
-   *         for the last 5 minutes.
+   *     for the last 5 minutes.
    * @throws IOException On network error.
    */
   ListTimeSeriesResponse readTimeseriesValue() throws IOException {
     ListTimeSeriesResponse response =
         monitoringService.projects().timeSeries().list(projectResource)
-        .setFilter("metric.type=\"" + metricType + "\"")
-        .setPageSize(3)
-        .setIntervalStartTime(getStartTime())
-        .setIntervalEndTime(getNow())
-        .execute();
+            .setFilter("metric.type=\"" + metricType + "\"")
+            .setPageSize(3)
+            .setIntervalStartTime(getStartTime())
+            .setIntervalEndTime(getNow())
+            .execute();
     return response;
   }
 
@@ -302,8 +306,8 @@ public class CreateCustomMetric {
     // Create an authorized API client
     Monitoring monitoringService = ListResources.authenticate();
 
-    CreateCustomMetric metricWriter = new CreateCustomMetric(
-        monitoringService, projectResource);
+    CreateCustomMetric metricWriter =
+        new CreateCustomMetric(monitoringService, projectResource);
 
     MetricDescriptor metricDescriptor = metricWriter.createCustomMetric();
 

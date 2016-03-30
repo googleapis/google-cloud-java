@@ -1,17 +1,17 @@
 /*
- * Copyright (c) 2015 Google Inc.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 import static com.google.common.truth.Truth.assertThat;
@@ -21,30 +21,20 @@ import com.google.api.services.monitoring.v3.model.Point;
 import com.google.common.collect.ImmutableList;
 
 import org.apache.commons.lang3.RandomStringUtils;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.Random;
+
 
 /**
- * Integration tests for the basic Cloud Monitoring v3 examples. Running
- * these tests requires that GOOGLE_APPLICATION_CREDENTIALS points to a
+ * Integration tests for the basic Cloud Monitoring v3 examples.
+ *
+ * <p>Running these tests requires that GOOGLE_APPLICATION_CREDENTIALS points to a
  * valid JSON Service Account downloaded from a project with the Cloud
  * Monitoring API enabled.
  */
 public class CreateCustomMetricTest {
-
-  /**
-   * Overrides the Random number generator so our tests get a predictable result.
-   */
-  private static class MockRandom extends Random {
-
-    public int nextInt(int bound) {
-      return 4;
-    }
-  }
 
   /**
    * Google Cloud Monitoring client to integration test.
