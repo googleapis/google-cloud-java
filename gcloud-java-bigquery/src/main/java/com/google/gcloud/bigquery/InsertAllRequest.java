@@ -52,15 +52,15 @@ public class InsertAllRequest implements Serializable {
    * id used by BigQuery to detect duplicate insertion requests on a best-effort basis.
    *
    * <p>Example usage of creating a row to insert:
-   * <pre>    {@code
-   *   List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
-   *   Map<String, Object> recordContent = new HashMap<String, Object>();
-   *   recordContent.put("subfieldName1", "value");
-   *   recordContent.put("subfieldName2", repeatedFieldValue);
-   *   Map<String, Object> rowContent = new HashMap<String, Object>();
-   *   rowContent.put("fieldName1", true);
-   *   rowContent.put("fieldName2", recordContent);
-   *   RowToInsert row = new RowToInsert("rowId", rowContent);
+   * <pre> {@code
+   * List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
+   * Map<String, Object> recordContent = new HashMap<String, Object>();
+   * recordContent.put("subfieldName1", "value");
+   * recordContent.put("subfieldName2", repeatedFieldValue);
+   * Map<String, Object> rowContent = new HashMap<String, Object>();
+   * rowContent.put("fieldName1", true);
+   * rowContent.put("fieldName2", recordContent);
+   * RowToInsert row = new RowToInsert("rowId", rowContent);
    * }</pre>
    *
    * @see <a href ="https://cloud.google.com/bigquery/streaming-data-into-bigquery#dataconsistency">
@@ -177,16 +177,16 @@ public class InsertAllRequest implements Serializable {
      * Adds a row to be inserted with associated id.
      *
      * <p>Example usage of adding a row with associated id:
-     * <pre>    {@code
-     *   InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
-     *   List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
-     *   Map<String, Object> recordContent = new HashMap<String, Object>();
-     *   recordContent.put("subfieldName1", "value");
-     *   recordContent.put("subfieldName2", repeatedFieldValue);
-     *   Map<String, Object> rowContent = new HashMap<String, Object>();
-     *   rowContent.put("fieldName1", true);
-     *   rowContent.put("fieldName2", recordContent);
-     *   builder.addRow("rowId", rowContent);
+     * <pre> {@code
+     * InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
+     * List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
+     * Map<String, Object> recordContent = new HashMap<String, Object>();
+     * recordContent.put("subfieldName1", "value");
+     * recordContent.put("subfieldName2", repeatedFieldValue);
+     * Map<String, Object> rowContent = new HashMap<String, Object>();
+     * rowContent.put("fieldName1", true);
+     * rowContent.put("fieldName2", recordContent);
+     * builder.addRow("rowId", rowContent);
      * }</pre>
      */
     public Builder addRow(String id, Map<String, Object> content) {
@@ -198,16 +198,16 @@ public class InsertAllRequest implements Serializable {
      * Adds a row to be inserted without an associated id.
      *
      * <p>Example usage of adding a row without an associated id:
-     * <pre>    {@code
-     *   InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
-     *   List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
-     *   Map<String, Object> recordContent = new HashMap<String, Object>();
-     *   recordContent.put("subfieldName1", "value");
-     *   recordContent.put("subfieldName2", repeatedFieldValue);
-     *   Map<String, Object> rowContent = new HashMap<String, Object>();
-     *   rowContent.put("fieldName1", true);
-     *   rowContent.put("fieldName2", recordContent);
-     *   builder.addRow(rowContent);
+     * <pre> {@code
+     * InsertAllRequest.Builder builder = InsertAllRequest.builder(tableId);
+     * List<Long> repeatedFieldValue = Arrays.asList(1L, 2L);
+     * Map<String, Object> recordContent = new HashMap<String, Object>();
+     * recordContent.put("subfieldName1", "value");
+     * recordContent.put("subfieldName2", repeatedFieldValue);
+     * Map<String, Object> rowContent = new HashMap<String, Object>();
+     * rowContent.put("fieldName1", true);
+     * rowContent.put("fieldName2", recordContent);
+     * builder.addRow(rowContent);
      * }</pre>
      */
     public Builder addRow(Map<String, Object> content) {

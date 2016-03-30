@@ -37,8 +37,9 @@ import com.google.api.gax.core.BackoffParams;
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetryParams;
 import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.ApiCallable.ApiCallableBuilder;
-import com.google.api.gax.grpc.ApiCallable.PageStreamingApiCallableBuilder;
+import com.google.api.gax.grpc.ApiCallable;
+import com.google.api.gax.grpc.ApiCallable.Builder;
+import com.google.api.gax.grpc.ApiCallable.PageStreamingBuilder;
 import com.google.api.gax.grpc.PageStreamingDescriptor;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.common.collect.ImmutableList;
@@ -59,16 +60,13 @@ import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.Subscription;
 import io.grpc.Status;
+import org.joda.time.Duration;
 
 // Manually-added imports: add custom (non-generated) imports after this point.
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS - see instructions at the top of the file for editing.
 @javax.annotation.Generated("by GAPIC")
 public class SubscriberSettings extends ServiceApiSettings {
-
-  // =========
-  // Constants
-  // =========
 
   /**
    * The default address of the service.
@@ -117,17 +115,17 @@ public class SubscriberSettings extends ServiceApiSettings {
         RetryParams.newBuilder()
             .setRetryBackoff(
                 BackoffParams.newBuilder()
-                    .setInitialDelayMillis(100L)
+                    .setInitialDelay(Duration.millis(100L))
                     .setDelayMultiplier(1.2)
-                    .setMaxDelayMillis(1000L)
+                    .setMaxDelay(Duration.millis(1000L))
                     .build())
             .setTimeoutBackoff(
                 BackoffParams.newBuilder()
-                    .setInitialDelayMillis(300L)
-                    .setDelayMultiplier(1.3)
-                    .setMaxDelayMillis(3000L)
+                    .setInitialDelay(Duration.millis(2000L))
+                    .setDelayMultiplier(1.5)
+                    .setMaxDelay(Duration.millis(30000L))
                     .build())
-            .setTotalTimeout(30000L)
+            .setTotalTimeout(Duration.millis(45000L))
             .build();
     definitions.put("default", params);
     RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -136,52 +134,50 @@ public class SubscriberSettings extends ServiceApiSettings {
   private final MethodBuilders methods;
 
   private static class MethodBuilders {
-    private final ApiCallableBuilder<Subscription, Subscription> createSubscriptionMethod;
-    private final ApiCallableBuilder<GetSubscriptionRequest, Subscription> getSubscriptionMethod;
-    private final PageStreamingApiCallableBuilder<
+    private final ApiCallable.Builder<Subscription, Subscription> createSubscriptionMethod;
+    private final ApiCallable.Builder<GetSubscriptionRequest, Subscription> getSubscriptionMethod;
+    private final ApiCallable.PageStreamingBuilder<
             ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
         listSubscriptionsMethod;
-    private final ApiCallableBuilder<DeleteSubscriptionRequest, Empty> deleteSubscriptionMethod;
-    private final ApiCallableBuilder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineMethod;
-    private final ApiCallableBuilder<AcknowledgeRequest, Empty> acknowledgeMethod;
-    private final ApiCallableBuilder<PullRequest, PullResponse> pullMethod;
-    private final ApiCallableBuilder<ModifyPushConfigRequest, Empty> modifyPushConfigMethod;
+    private final ApiCallable.Builder<DeleteSubscriptionRequest, Empty> deleteSubscriptionMethod;
+    private final ApiCallable.Builder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineMethod;
+    private final ApiCallable.Builder<AcknowledgeRequest, Empty> acknowledgeMethod;
+    private final ApiCallable.Builder<PullRequest, PullResponse> pullMethod;
+    private final ApiCallable.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigMethod;
     private final ImmutableList<? extends ApiCallSettings> allMethods;
 
     public MethodBuilders() {
-      createSubscriptionMethod =
-          new ApiCallableBuilder<>(SubscriberGrpc.METHOD_CREATE_SUBSCRIPTION);
+      createSubscriptionMethod = new Builder<>(SubscriberGrpc.METHOD_CREATE_SUBSCRIPTION);
       createSubscriptionMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
       createSubscriptionMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      getSubscriptionMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_GET_SUBSCRIPTION);
+      getSubscriptionMethod = new Builder<>(SubscriberGrpc.METHOD_GET_SUBSCRIPTION);
       getSubscriptionMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
       getSubscriptionMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
       listSubscriptionsMethod =
-          new PageStreamingApiCallableBuilder<>(
+          new PageStreamingBuilder<>(
               SubscriberGrpc.METHOD_LIST_SUBSCRIPTIONS, LIST_SUBSCRIPTIONS_PAGE_STR_DESC);
       listSubscriptionsMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
       listSubscriptionsMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      deleteSubscriptionMethod =
-          new ApiCallableBuilder<>(SubscriberGrpc.METHOD_DELETE_SUBSCRIPTION);
+      deleteSubscriptionMethod = new Builder<>(SubscriberGrpc.METHOD_DELETE_SUBSCRIPTION);
       deleteSubscriptionMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
       deleteSubscriptionMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      modifyAckDeadlineMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_MODIFY_ACK_DEADLINE);
+      modifyAckDeadlineMethod = new Builder<>(SubscriberGrpc.METHOD_MODIFY_ACK_DEADLINE);
       modifyAckDeadlineMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
       modifyAckDeadlineMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      acknowledgeMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_ACKNOWLEDGE);
+      acknowledgeMethod = new Builder<>(SubscriberGrpc.METHOD_ACKNOWLEDGE);
       acknowledgeMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
       acknowledgeMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      pullMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_PULL);
+      pullMethod = new Builder<>(SubscriberGrpc.METHOD_PULL);
       pullMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
       pullMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      modifyPushConfigMethod = new ApiCallableBuilder<>(SubscriberGrpc.METHOD_MODIFY_PUSH_CONFIG);
+      modifyPushConfigMethod = new Builder<>(SubscriberGrpc.METHOD_MODIFY_PUSH_CONFIG);
       modifyPushConfigMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
       modifyPushConfigMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -199,10 +195,6 @@ public class SubscriberSettings extends ServiceApiSettings {
               .build();
     }
   }
-
-  // ===============
-  // Factory Methods
-  // ===============
 
   /**
    * Constructs an instance of SubscriberSettings with default settings.
@@ -240,7 +232,7 @@ public class SubscriberSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallableBuilder<Subscription, Subscription> createSubscriptionMethod() {
+  public final ApiCallable.Builder<Subscription, Subscription> createSubscriptionMethod() {
     return methods.createSubscriptionMethod;
   }
 
@@ -250,7 +242,7 @@ public class SubscriberSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallableBuilder<GetSubscriptionRequest, Subscription> getSubscriptionMethod() {
+  public final ApiCallable.Builder<GetSubscriptionRequest, Subscription> getSubscriptionMethod() {
     return methods.getSubscriptionMethod;
   }
 
@@ -260,7 +252,7 @@ public class SubscriberSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public PageStreamingApiCallableBuilder<
+  public final ApiCallable.PageStreamingBuilder<
           ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
       listSubscriptionsMethod() {
     return methods.listSubscriptionsMethod;
@@ -272,7 +264,7 @@ public class SubscriberSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallableBuilder<DeleteSubscriptionRequest, Empty> deleteSubscriptionMethod() {
+  public final ApiCallable.Builder<DeleteSubscriptionRequest, Empty> deleteSubscriptionMethod() {
     return methods.deleteSubscriptionMethod;
   }
 
@@ -282,7 +274,7 @@ public class SubscriberSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallableBuilder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineMethod() {
+  public final ApiCallable.Builder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineMethod() {
     return methods.modifyAckDeadlineMethod;
   }
 
@@ -292,7 +284,7 @@ public class SubscriberSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallableBuilder<AcknowledgeRequest, Empty> acknowledgeMethod() {
+  public final ApiCallable.Builder<AcknowledgeRequest, Empty> acknowledgeMethod() {
     return methods.acknowledgeMethod;
   }
 
@@ -302,7 +294,7 @@ public class SubscriberSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallableBuilder<PullRequest, PullResponse> pullMethod() {
+  public final ApiCallable.Builder<PullRequest, PullResponse> pullMethod() {
     return methods.pullMethod;
   }
 
@@ -312,7 +304,7 @@ public class SubscriberSettings extends ServiceApiSettings {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public ApiCallableBuilder<ModifyPushConfigRequest, Empty> modifyPushConfigMethod() {
+  public final ApiCallable.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigMethod() {
     return methods.modifyPushConfigMethod;
   }
 

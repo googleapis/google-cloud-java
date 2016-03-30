@@ -42,7 +42,9 @@ import com.google.gcloud.storage.BucketInfo.DeleteRule;
 import org.easymock.Capture;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -98,6 +100,9 @@ public class BucketTest {
   private Bucket bucket;
   private Bucket expectedBucket;
   private Iterable<Blob> blobResults;
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -288,17 +293,83 @@ public class BucketTest {
   }
 
   @Test
-  public void testCreateNullContentType() throws Exception {
+  public void testCreateNoContentType() throws Exception {
     initializeExpectedBucket(5);
-    BlobInfo info = BlobInfo.builder("b", "n").contentType(Storage.DEFAULT_CONTENT_TYPE).build();
+    BlobInfo info = BlobInfo.builder("b", "n").build();
     Blob expectedBlob = new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(info));
     byte[] content = {0xD, 0xE, 0xA, 0xD};
     expect(storage.options()).andReturn(mockOptions);
     expect(storage.create(info, content)).andReturn(expectedBlob);
     replay(storage);
     initializeBucket();
-    Blob blob = bucket.create("n", content, null);
+    Blob blob = bucket.create("n", content);
     assertEquals(expectedBlob, blob);
+  }
+
+  @Test
+  public void testCreateWithOptions() throws Exception {
+    initializeExpectedBucket(5);
+    BlobInfo info = BlobInfo.builder(BlobId.of("b", "n", 42L))
+        .contentType(CONTENT_TYPE)
+        .metageneration(24L)
+        .build();
+    Blob expectedBlob = new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(info));
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    Storage.PredefinedAcl acl = Storage.PredefinedAcl.ALL_AUTHENTICATED_USERS;
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.create(info, content, Storage.BlobTargetOption.generationMatch(),
+        Storage.BlobTargetOption.metagenerationMatch(),
+        Storage.BlobTargetOption.predefinedAcl(acl))).andReturn(expectedBlob);
+    replay(storage);
+    initializeBucket();
+    Blob blob = bucket.create("n", content, CONTENT_TYPE,
+        Bucket.BlobTargetOption.generationMatch(42L),
+        Bucket.BlobTargetOption.metagenerationMatch(24L),
+        Bucket.BlobTargetOption.predefinedAcl(acl));
+    assertEquals(expectedBlob, blob);
+  }
+
+  @Test
+  public void testCreateNotExists() throws Exception {
+    initializeExpectedBucket(5);
+    BlobInfo info = BlobInfo.builder(BlobId.of("b", "n", 0L)).contentType(CONTENT_TYPE).build();
+    Blob expectedBlob = new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(info));
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.create(info, content, Storage.BlobTargetOption.generationMatch()))
+        .andReturn(expectedBlob);
+    replay(storage);
+    initializeBucket();
+    Blob blob = bucket.create("n", content, CONTENT_TYPE, Bucket.BlobTargetOption.doesNotExist());
+    assertEquals(expectedBlob, blob);
+  }
+
+  @Test
+  public void testCreateWithWrongGenerationOptions() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    replay(storage);
+    initializeBucket();
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage(
+        "Only one option of generationMatch, doesNotExist or generationNotMatch can be provided");
+    bucket.create("n", content, CONTENT_TYPE, Bucket.BlobTargetOption.generationMatch(42L),
+        Bucket.BlobTargetOption.generationNotMatch(24L));
+  }
+
+  @Test
+  public void testCreateWithWrongMetagenerationOptions() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    replay(storage);
+    initializeBucket();
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage(
+        "metagenerationMatch and metagenerationNotMatch options can not be both provided");
+    bucket.create("n", content, CONTENT_TYPE, Bucket.BlobTargetOption.metagenerationMatch(42L),
+        Bucket.BlobTargetOption.metagenerationNotMatch(24L));
   }
 
   @Test
@@ -317,9 +388,9 @@ public class BucketTest {
   }
 
   @Test
-  public void testCreateFromStreamNullContentType() throws Exception {
+  public void testCreateFromStreamNoContentType() throws Exception {
     initializeExpectedBucket(5);
-    BlobInfo info = BlobInfo.builder("b", "n").contentType(Storage.DEFAULT_CONTENT_TYPE).build();
+    BlobInfo info = BlobInfo.builder("b", "n").build();
     Blob expectedBlob = new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(info));
     byte[] content = {0xD, 0xE, 0xA, 0xD};
     InputStream streamContent = new ByteArrayInputStream(content);
@@ -327,8 +398,82 @@ public class BucketTest {
     expect(storage.create(info, streamContent)).andReturn(expectedBlob);
     replay(storage);
     initializeBucket();
-    Blob blob = bucket.create("n", streamContent, null);
+    Blob blob = bucket.create("n", streamContent);
     assertEquals(expectedBlob, blob);
+  }
+
+  @Test
+  public void testCreateFromStreamWithOptions() throws Exception {
+    initializeExpectedBucket(5);
+    BlobInfo info = BlobInfo.builder(BlobId.of("b", "n", 42L))
+        .contentType(CONTENT_TYPE)
+        .metageneration(24L)
+        .crc32c("crc")
+        .md5("md5")
+        .build();
+    Blob expectedBlob = new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(info));
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    Storage.PredefinedAcl acl = Storage.PredefinedAcl.ALL_AUTHENTICATED_USERS;
+    InputStream streamContent = new ByteArrayInputStream(content);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.create(info, streamContent, Storage.BlobWriteOption.generationMatch(),
+        Storage.BlobWriteOption.metagenerationMatch(), Storage.BlobWriteOption.predefinedAcl(acl),
+        Storage.BlobWriteOption.crc32cMatch(), Storage.BlobWriteOption.md5Match()))
+        .andReturn(expectedBlob);
+    replay(storage);
+    initializeBucket();
+    Blob blob = bucket.create("n", streamContent, CONTENT_TYPE,
+        Bucket.BlobWriteOption.generationMatch(42L),
+        Bucket.BlobWriteOption.metagenerationMatch(24L), Bucket.BlobWriteOption.predefinedAcl(acl),
+        Bucket.BlobWriteOption.crc32cMatch("crc"), Bucket.BlobWriteOption.md5Match("md5"));
+    assertEquals(expectedBlob, blob);
+  }
+
+  @Test
+  public void testCreateFromStreamNotExists() throws Exception {
+    initializeExpectedBucket(5);
+    BlobInfo info = BlobInfo.builder(BlobId.of("b", "n", 0L)).contentType(CONTENT_TYPE).build();
+    Blob expectedBlob = new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(info));
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    InputStream streamContent = new ByteArrayInputStream(content);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.create(info, streamContent, Storage.BlobWriteOption.generationMatch()))
+        .andReturn(expectedBlob);
+    replay(storage);
+    initializeBucket();
+    Blob blob =
+        bucket.create("n", streamContent, CONTENT_TYPE, Bucket.BlobWriteOption.doesNotExist());
+    assertEquals(expectedBlob, blob);
+  }
+
+  @Test
+  public void testCreateFromStreamWithWrongGenerationOptions() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    replay(storage);
+    initializeBucket();
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    InputStream streamContent = new ByteArrayInputStream(content);
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage(
+        "Only one option of generationMatch, doesNotExist or generationNotMatch can be provided");
+    bucket.create("n", streamContent, CONTENT_TYPE, Bucket.BlobWriteOption.generationMatch(42L),
+        Bucket.BlobWriteOption.generationNotMatch(24L));
+  }
+
+  @Test
+  public void testCreateFromStreamWithWrongMetagenerationOptions() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    replay(storage);
+    initializeBucket();
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    InputStream streamContent = new ByteArrayInputStream(content);
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage(
+        "metagenerationMatch and metagenerationNotMatch options can not be both provided");
+    bucket.create("n", streamContent, CONTENT_TYPE, Bucket.BlobWriteOption.metagenerationMatch(42L),
+        Bucket.BlobWriteOption.metagenerationNotMatch(24L));
   }
 
   @Test

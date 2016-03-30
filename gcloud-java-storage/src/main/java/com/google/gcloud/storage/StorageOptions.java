@@ -16,14 +16,12 @@
 
 package com.google.gcloud.storage;
 
-import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.spi.DefaultStorageRpc;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpcFactory;
+import com.google.gcloud.storage.spi.DefaultStorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpcFactory;
 
-import java.util.Objects;
 import java.util.Set;
 
 public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageOptions> {
@@ -31,9 +29,6 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
   private static final long serialVersionUID = -7804860602287801084L;
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
-  private static final String DEFAULT_PATH_DELIMITER = "/";
-
-  private final String pathDelimiter;
 
   public static class DefaultStorageFactory implements StorageFactory {
 
@@ -58,24 +53,10 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
   public static class Builder extends
       ServiceOptions.Builder<Storage, StorageRpc, StorageOptions, Builder> {
 
-    private String pathDelimiter;
-
     private Builder() {}
 
     private Builder(StorageOptions options) {
       super(options);
-      pathDelimiter = options.pathDelimiter;
-    }
-
-    /**
-     * Sets the path delimiter for the storage service.
-     *
-     * @param pathDelimiter the path delimiter to set
-     * @return the builder
-     */
-    public Builder pathDelimiter(String pathDelimiter) {
-      this.pathDelimiter = pathDelimiter;
-      return this;
     }
 
     @Override
@@ -86,7 +67,6 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
 
   private StorageOptions(Builder builder) {
     super(StorageFactory.class, StorageRpcFactory.class, builder);
-    pathDelimiter = MoreObjects.firstNonNull(builder.pathDelimiter, DEFAULT_PATH_DELIMITER);
   }
 
   @SuppressWarnings("unchecked")
@@ -107,13 +87,6 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
   }
 
   /**
-   * Returns the storage service's path delimiter.
-   */
-  public String pathDelimiter() {
-    return pathDelimiter;
-  }
-
-  /**
    * Returns a default {@code StorageOptions} instance.
    */
   public static StorageOptions defaultInstance() {
@@ -128,16 +101,12 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
 
   @Override
   public int hashCode() {
-    return baseHashCode() ^ Objects.hash(pathDelimiter);
+    return baseHashCode();
   }
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof StorageOptions)) {
-      return false;
-    }
-    StorageOptions other = (StorageOptions) obj;
-    return baseEquals(other) && Objects.equals(pathDelimiter, other.pathDelimiter);
+    return obj instanceof StorageOptions && baseEquals((StorageOptions) obj);
   }
 
   public static Builder builder() {

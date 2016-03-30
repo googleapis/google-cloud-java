@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.gcloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.1.4-SNAPSHOT</version>
+    <version>0.1.6-SNAPSHOT</version>
   </parent>
   <dependencies>
     <dependency>
@@ -26,6 +26,11 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>gcloud-java-datastore</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-dns</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>

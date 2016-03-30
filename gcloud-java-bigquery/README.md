@@ -7,6 +7,7 @@ Java idiomatic client for [Google Cloud BigQuery] (https://cloud.google.com/bigq
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
 [![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-bigquery.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
 -  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/bigquery/package-summary.html)
@@ -21,22 +22,22 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-bigquery</artifactId>
-  <version>0.1.3</version>
+  <version>0.1.5</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-bigquery:0.1.3'
+compile 'com.google.gcloud:gcloud-java-bigquery:0.1.5'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-bigquery" % "0.1.3"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-bigquery" % "0.1.5"
 ```
 
 Example Application
 -------------------
 - [`BigQueryExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
-Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/BigQueryExample.html).
+Read more about using this application on the [`BigQueryExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/bigquery/BigQueryExample.html).
 
 Authentication
 --------------
@@ -184,7 +185,7 @@ Then add the following code to run the query and wait for the result:
 QueryRequest queryRequest =
     QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
         .maxWaitTime(60000L)
-        .maxResults(1000L)
+        .pageSize(1000L)
         .build();
 // Request query to be executed and wait for results
 QueryResponse queryResponse = bigquery.query(queryRequest);

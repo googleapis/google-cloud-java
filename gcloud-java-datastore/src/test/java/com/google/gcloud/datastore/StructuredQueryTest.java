@@ -40,7 +40,8 @@ public class StructuredQueryTest {
   private static final Cursor END_CURSOR = Cursor.copyFrom(new byte[] {10});
   private static final int OFFSET = 42;
   private static final Integer LIMIT = 43;
-  private static final Filter FILTER = CompositeFilter.and(PropertyFilter.gt("p1", 10), PropertyFilter.eq("a", "v"));
+  private static final Filter FILTER =
+      CompositeFilter.and(PropertyFilter.gt("p1", 10), PropertyFilter.eq("a", "v"));
   private static final OrderBy ORDER_BY_1 = OrderBy.asc("p2");
   private static final OrderBy ORDER_BY_2 = OrderBy.desc("p3");
   private static final List<OrderBy> ORDER_BY = ImmutableList.of(ORDER_BY_1, ORDER_BY_2);

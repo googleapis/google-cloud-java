@@ -16,8 +16,8 @@
 
 package com.google.gcloud.storage;
 
-import static com.google.api.client.repackaged.com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.MoreObjects.firstNonNull;
+import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.Lists.transform;
 
 import com.google.api.client.json.jackson2.JacksonFactory;

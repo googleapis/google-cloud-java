@@ -14,8 +14,6 @@
 
 package com.google.gcloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.BackoffParams;
-import com.google.api.gax.core.RetryParams;
 import com.google.api.gax.grpc.BundlingSettings;
 import com.google.gcloud.pubsub.testing.LocalPubsubHelper;
 import com.google.protobuf.ByteString;
@@ -24,13 +22,6 @@ import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.Topic;
 
-import io.grpc.ManagedChannel;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import org.joda.time.Duration;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -38,6 +29,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import io.grpc.ManagedChannel;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class PublisherApiTest {
   private static LocalPubsubHelper pubsubHelper;
@@ -60,26 +58,8 @@ public class PublisherApiTest {
   public void setUp() throws Exception {
     ManagedChannel channel = pubsubHelper.createChannel();
 
-    RetryParams retryParams =
-        RetryParams.newBuilder()
-            .setRetryBackoff(
-                BackoffParams.newBuilder()
-                    .setInitialDelayMillis(1000L)
-                    .setDelayMultiplier(1.2)
-                    .setMaxDelayMillis(10000L)
-                    .build())
-            .setTimeoutBackoff(
-                BackoffParams.newBuilder()
-                    .setInitialDelayMillis(3000L)
-                    .setDelayMultiplier(1.3)
-                    .setMaxDelayMillis(30000L)
-                    .build())
-            .setTotalTimeout(30000L)
-            .build();
-
     PublisherSettings publisherSettings = PublisherSettings.create();
-    publisherSettings.setRetryParamsOnAllMethods(retryParams);
-    publisherSettings.provideChannelWith(channel);
+    publisherSettings.provideChannelWith(channel, true);
     publisherApi = PublisherApi.create(publisherSettings);
 
     BundlingSettings bundlingSettings =
@@ -89,14 +69,12 @@ public class PublisherApiTest {
             .build();
 
     PublisherSettings bundledPublisherSettings = PublisherSettings.create();
-    bundledPublisherSettings.setRetryParamsOnAllMethods(retryParams);
-    bundledPublisherSettings.provideChannelWith(channel);
+    bundledPublisherSettings.provideChannelWith(channel, true);
     bundledPublisherSettings.publishMethod().setBundlingSettings(bundlingSettings);
     bundledPublisherApi = PublisherApi.create(bundledPublisherSettings);
 
     SubscriberSettings subscriberSettings = SubscriberSettings.create();
-    subscriberSettings.setRetryParamsOnAllMethods(retryParams);
-    subscriberSettings.provideChannelWith(channel);
+    subscriberSettings.provideChannelWith(channel, true);
     subscriberApi = SubscriberApi.create(subscriberSettings);
   }
 
@@ -116,18 +94,18 @@ public class PublisherApiTest {
 
   @Test
   public void testCreateTopic() throws Exception {
-    String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "my-topic");
+    String topicName = PublisherApi.formatTopicName("my-project", "my-topic");
     Topic result = publisherApi.createTopic(topicName);
     Assert.assertEquals(topicName, result.getName());
   }
 
   @Test
   public void testPublish() throws Exception {
-    String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "publish-topic");
+    String topicName = PublisherApi.formatTopicName("my-project", "publish-topic");
     publisherApi.createTopic(topicName);
 
     String subscriberName =
-        SubscriberApi.ResourceNames.formatSubscriptionPath("my-project", "my-subscribe");
+        SubscriberApi.formatSubscriptionName("my-project", "my-subscribe");
     PushConfig config = PushConfig.getDefaultInstance();
     subscriberApi.createSubscription(subscriberName, topicName, config, 5);
 
@@ -143,11 +121,11 @@ public class PublisherApiTest {
 
   @Test
   public void testBundledPublish() throws Exception {
-    String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "publish-topic");
+    String topicName = PublisherApi.formatTopicName("my-project", "publish-topic");
     bundledPublisherApi.createTopic(topicName);
 
     String subscriberName =
-        SubscriberApi.ResourceNames.formatSubscriptionPath("my-project", "my-subscribe");
+        SubscriberApi.formatSubscriptionName("my-project", "my-subscribe");
     PushConfig config = PushConfig.getDefaultInstance();
     subscriberApi.createSubscription(subscriberName, topicName, config, 5);
 
@@ -164,7 +142,7 @@ public class PublisherApiTest {
 
   @Test
   public void testGetTopic() throws Exception {
-    String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "fun-topic");
+    String topicName = PublisherApi.formatTopicName("my-project", "fun-topic");
     publisherApi.createTopic(topicName);
     Topic result = publisherApi.getTopic(topicName);
     Assert.assertNotNull(result);
@@ -173,10 +151,10 @@ public class PublisherApiTest {
 
   @Test
   public void testListTopics() throws Exception {
-    String project1 = PublisherApi.ResourceNames.formatProjectPath("project.1");
-    String topicName1 = PublisherApi.ResourceNames.formatTopicPath("project.1", "topic.1");
-    String topicName2 = PublisherApi.ResourceNames.formatTopicPath("project.1", "topic.2");
-    String topicName3 = PublisherApi.ResourceNames.formatTopicPath("project.2", "topic.3");
+    String project1 = PublisherApi.formatProjectName("project.1");
+    String topicName1 = PublisherApi.formatTopicName("project.1", "topic.1");
+    String topicName2 = PublisherApi.formatTopicName("project.1", "topic.2");
+    String topicName3 = PublisherApi.formatTopicName("project.2", "topic.3");
     publisherApi.createTopic(topicName1);
     publisherApi.createTopic(topicName2);
     publisherApi.createTopic(topicName3);
@@ -191,8 +169,8 @@ public class PublisherApiTest {
 
   @Test
   public void testDeleteTopic() throws Exception {
-    String project = PublisherApi.ResourceNames.formatProjectPath("project.1");
-    String topicName = PublisherApi.ResourceNames.formatTopicPath("my-project", "fun-topic");
+    String project = PublisherApi.formatProjectName("project.1");
+    String topicName = PublisherApi.formatTopicName("my-project", "fun-topic");
     publisherApi.createTopic(topicName);
     publisherApi.deleteTopic(topicName);
     List<Topic> topics = new ArrayList<>();

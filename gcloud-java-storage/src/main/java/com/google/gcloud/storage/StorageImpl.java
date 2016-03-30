@@ -19,15 +19,15 @@ package com.google.gcloud.storage;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.gcloud.RetryHelper.runWithRetries;
-import static com.google.gcloud.spi.StorageRpc.Option.DELIMITER;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_GENERATION_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_METAGENERATION_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_METAGENERATION_NOT_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
-import static com.google.gcloud.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.DELIMITER;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_GENERATION_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_GENERATION_NOT_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_METAGENERATION_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_METAGENERATION_NOT_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_SOURCE_GENERATION_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
+import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.services.storage.model.StorageObject;
@@ -48,9 +48,9 @@ import com.google.gcloud.PageImpl;
 import com.google.gcloud.PageImpl.NextPageFetcher;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RetryHelper.RetryHelperException;
-import com.google.gcloud.spi.StorageRpc;
-import com.google.gcloud.spi.StorageRpc.RewriteResponse;
-import com.google.gcloud.spi.StorageRpc.Tuple;
+import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.storage.spi.StorageRpc.RewriteResponse;
+import com.google.gcloud.storage.spi.StorageRpc.Tuple;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -76,6 +76,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   private static final byte[] EMPTY_BYTE_ARRAY = {};
   private static final String EMPTY_BYTE_ARRAY_MD5 = "1B2M2Y8AsgTpgAmY7PhCfg==";
   private static final String EMPTY_BYTE_ARRAY_CRC32C = "AAAAAA==";
+  private static final String PATH_DELIMITER = "/";
 
   private static final Function<Tuple<Storage, Boolean>, Boolean> DELETE_FUNCTION =
       new Function<Tuple<Storage, Boolean>, Boolean>() {
@@ -412,15 +413,16 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     final StorageObject source = copyRequest.source().toPb();
     final Map<StorageRpc.Option, ?> sourceOptions =
         optionMap(copyRequest.source().generation(), null, copyRequest.sourceOptions(), true);
-    final StorageObject target = copyRequest.target().toPb();
+    final StorageObject targetObject = copyRequest.target().toPb();
     final Map<StorageRpc.Option, ?> targetOptions = optionMap(copyRequest.target().generation(),
         copyRequest.target().metageneration(), copyRequest.targetOptions());
     try {
       RewriteResponse rewriteResponse = runWithRetries(new Callable<RewriteResponse>() {
         @Override
         public RewriteResponse call() {
-          return storageRpc.openRewrite(new StorageRpc.RewriteRequest(source, sourceOptions, target,
-              targetOptions, copyRequest.megabytesCopiedPerChunk()));
+          return storageRpc.openRewrite(new StorageRpc.RewriteRequest(source, sourceOptions,
+              copyRequest.overrideInfo(), targetObject, targetOptions,
+              copyRequest.megabytesCopiedPerChunk()));
         }
       }, options().retryParams(), EXCEPTION_HANDLER);
       return new CopyWriter(options(), rewriteResponse);
@@ -669,7 +671,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
     Boolean value = (Boolean) temp.remove(DELIMITER);
     if (Boolean.TRUE.equals(value)) {
-      temp.put(DELIMITER, options().pathDelimiter());
+      temp.put(DELIMITER, PATH_DELIMITER);
     }
     if (useAsSource) {
       addToOptionMap(IF_GENERATION_MATCH, IF_SOURCE_GENERATION_MATCH, generation, temp);

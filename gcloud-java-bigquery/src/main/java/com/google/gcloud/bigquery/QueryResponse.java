@@ -29,20 +29,20 @@ import java.util.Objects;
  * Query Request ({@link BigQuery#query(QueryRequest)}).
  *
  * <p>Example usage of a query response:
- * <pre>    {@code
- *    QueryResponse response = bigquery.query(request);
- *    while (!response.jobCompleted()) {
- *      Thread.sleep(1000);
- *      response = bigquery.getQueryResults(response.jobId());
- *    }
- *    List<BigQueryError> executionErrors = response.executionErrors();
- *    // look for errors in executionErrors
- *    QueryResult result = response.result();
- *    Iterator<List<FieldValue>> rowIterator = result.iterateAll();
- *    while(rowIterator.hasNext()) {
- *      List<FieldValue> row = rowIterator.next();
- *      // do something with row
- *    }
+ * <pre> {@code
+ * QueryResponse response = bigquery.query(request);
+ * while (!response.jobCompleted()) {
+ *   Thread.sleep(1000);
+ *   response = bigquery.getQueryResults(response.jobId());
+ * }
+ * List<BigQueryError> executionErrors = response.executionErrors();
+ * // look for errors in executionErrors
+ * QueryResult result = response.result();
+ * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
+ * while(rowIterator.hasNext()) {
+ *   List<FieldValue> row = rowIterator.next();
+ *   // do something with row
+ * }
  * }</pre>
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/getQueryResults">Get Query
