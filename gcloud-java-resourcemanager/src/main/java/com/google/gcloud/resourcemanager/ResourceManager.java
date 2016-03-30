@@ -18,7 +18,7 @@ package com.google.gcloud.resourcemanager;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.FieldSelector;
-import com.google.gcloud.FieldSelector.SelectorHelper;
+import com.google.gcloud.FieldSelector.Helper;
 import com.google.gcloud.IamPolicy;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
@@ -50,7 +50,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     STATE("lifecycleState"),
     CREATE_TIME("createTime");
 
-    static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.<FieldSelector>of(PROJECT_ID);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(PROJECT_ID);
 
     private final String selector;
 
@@ -85,7 +85,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      */
     public static ProjectGetOption fields(ProjectField... fields) {
       return new ProjectGetOption(ResourceManagerRpc.Option.FIELDS,
-          SelectorHelper.selector(ProjectField.REQUIRED_FIELDS, fields));
+          Helper.selector(ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -159,7 +159,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      */
     public static ProjectListOption fields(ProjectField... fields) {
       return new ProjectListOption(ResourceManagerRpc.Option.FIELDS,
-          SelectorHelper.selector("projects", ProjectField.REQUIRED_FIELDS, fields));
+          Helper.listSelector("projects", ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 

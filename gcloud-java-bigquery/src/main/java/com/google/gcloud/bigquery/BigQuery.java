@@ -22,7 +22,7 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.gcloud.FieldSelector;
-import com.google.gcloud.FieldSelector.SelectorHelper;
+import com.google.gcloud.FieldSelector.Helper;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.bigquery.spi.BigQueryRpc;
@@ -55,8 +55,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
     LOCATION("location"),
     SELF_LINK("selfLink");
 
-    static final List<FieldSelector> REQUIRED_FIELDS =
-        ImmutableList.<FieldSelector>of(DATASET_REFERENCE);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS =
+        ImmutableList.of(DATASET_REFERENCE);
 
     private final String selector;
 
@@ -95,8 +95,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
     TYPE("type"),
     VIEW("view");
 
-    static final List<FieldSelector> REQUIRED_FIELDS =
-        ImmutableList.<FieldSelector>of(TABLE_REFERENCE, TYPE);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS =
+        ImmutableList.of(TABLE_REFERENCE, TYPE);
 
     private final String selector;
 
@@ -126,8 +126,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
     STATUS("status"),
     USER_EMAIL("user_email");
 
-    static final List<FieldSelector> REQUIRED_FIELDS =
-        ImmutableList.<FieldSelector>of(JOB_REFERENCE, CONFIGURATION);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS =
+        ImmutableList.of(JOB_REFERENCE, CONFIGURATION);
 
     private final String selector;
 
@@ -193,7 +193,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      */
     public static DatasetOption fields(DatasetField... fields) {
       return new DatasetOption(BigQueryRpc.Option.FIELDS,
-          SelectorHelper.selector(DatasetField.REQUIRED_FIELDS, fields));
+          Helper.selector(DatasetField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -263,7 +263,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      */
     public static TableOption fields(TableField... fields) {
       return new TableOption(BigQueryRpc.Option.FIELDS,
-          SelectorHelper.selector(TableField.REQUIRED_FIELDS, fields));
+          Helper.selector(TableField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -361,8 +361,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      */
     public static JobListOption fields(JobField... fields) {
       return new JobListOption(BigQueryRpc.Option.FIELDS,
-          SelectorHelper.selector("jobs", JobField.REQUIRED_FIELDS, fields, "state",
-              "errorResult"));
+          Helper.listSelector("jobs", JobField.REQUIRED_FIELDS, fields, "state", "errorResult"));
     }
   }
 
@@ -386,7 +385,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      */
     public static JobOption fields(JobField... fields) {
       return new JobOption(BigQueryRpc.Option.FIELDS,
-          SelectorHelper.selector(JobField.REQUIRED_FIELDS, fields));
+          Helper.selector(JobField.REQUIRED_FIELDS, fields));
     }
   }
 

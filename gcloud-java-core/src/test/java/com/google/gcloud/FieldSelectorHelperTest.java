@@ -20,13 +20,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-import com.google.gcloud.FieldSelector.SelectorHelper;
+import com.google.gcloud.FieldSelector.Helper;
 
 import org.junit.Test;
 
 import java.util.List;
 
-public class SelectorHelperTest {
+public class FieldSelectorHelperTest {
 
   private static final FieldSelector FIELD1 = new FieldSelector() {
     @Override
@@ -51,7 +51,7 @@ public class SelectorHelperTest {
 
   @Test
   public void testSelector() {
-    String selector = SelectorHelper.selector(REQUIRED_FIELDS, FIELD3);
+    String selector = Helper.selector(REQUIRED_FIELDS, FIELD3);
     assertTrue(selector.contains("field1"));
     assertTrue(selector.contains("field2"));
     assertTrue(selector.contains("field3"));
@@ -60,12 +60,25 @@ public class SelectorHelperTest {
 
   @Test
   public void testListSelector() {
-    String selector = SelectorHelper.selector(CONTAINER, REQUIRED_FIELDS, FIELD3);
+    String selector = Helper.listSelector(CONTAINER, REQUIRED_FIELDS, FIELD3);
     assertTrue(selector.startsWith("nextPageToken,container("));
     assertTrue(selector.contains("field1"));
     assertTrue(selector.contains("field2"));
     assertTrue(selector.contains("field3"));
     assertTrue(selector.endsWith(")"));
     assertEquals(45, selector.length());
+  }
+
+  @Test
+  public void testListSelectorWithExtraFields() {
+    String selector = Helper.listSelector(CONTAINER, REQUIRED_FIELDS,
+        new FieldSelector[]{FIELD3}, "field4");
+    assertTrue(selector.startsWith("nextPageToken,container("));
+    assertTrue(selector.contains("field1"));
+    assertTrue(selector.contains("field2"));
+    assertTrue(selector.contains("field3"));
+    assertTrue(selector.contains("field4"));
+    assertTrue(selector.endsWith(")"));
+    assertEquals(52, selector.length());
   }
 }

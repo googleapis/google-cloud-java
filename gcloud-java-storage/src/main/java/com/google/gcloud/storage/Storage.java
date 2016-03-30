@@ -25,7 +25,7 @@ import com.google.common.collect.Lists;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.FieldSelector;
-import com.google.gcloud.FieldSelector.SelectorHelper;
+import com.google.gcloud.FieldSelector.Helper;
 import com.google.gcloud.Page;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.Service;
@@ -89,7 +89,7 @@ public interface Storage extends Service<StorageOptions> {
     STORAGE_CLASS("storageClass"),
     ETAG("etag");
 
-    static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.<FieldSelector>of(NAME);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 
     private final String selector;
 
@@ -129,8 +129,7 @@ public interface Storage extends Service<StorageOptions> {
     TIME_DELETED("timeDeleted"),
     UPDATED("updated");
 
-    static final List<FieldSelector> REQUIRED_FIELDS =
-        ImmutableList.<FieldSelector>of(BUCKET, NAME);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(BUCKET, NAME);
 
     private final String selector;
 
@@ -257,7 +256,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BucketGetOption fields(BucketField... fields) {
       return new BucketGetOption(StorageRpc.Option.FIELDS,
-          SelectorHelper.selector(BucketField.REQUIRED_FIELDS, fields));
+          Helper.selector(BucketField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -598,7 +597,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobGetOption fields(BlobField... fields) {
       return new BlobGetOption(StorageRpc.Option.FIELDS,
-          SelectorHelper.selector(BlobField.REQUIRED_FIELDS, fields));
+          Helper.selector(BlobField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -643,7 +642,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BucketListOption fields(BucketField... fields) {
       return new BucketListOption(StorageRpc.Option.FIELDS,
-          SelectorHelper.selector("items", BucketField.REQUIRED_FIELDS, fields));
+          Helper.listSelector("items", BucketField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -711,7 +710,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobListOption fields(BlobField... fields) {
       return new BlobListOption(StorageRpc.Option.FIELDS,
-          SelectorHelper.selector("items", BlobField.REQUIRED_FIELDS, fields));
+          Helper.listSelector("items", BlobField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1529,7 +1528,7 @@ public interface Storage extends Service<StorageOptions> {
    * are merged with metadata in the provided {@code BlobInfo} objects. To replace metadata instead
    * you first have to unset them. Unsetting metadata can be done by setting the provided
    * {@code BlobInfo} objects metadata to {@code null}. See
-   * {@link #update(com.google.gcloud.storage.BlobInfo)} for a code example.
+   * {@link #update(BlobInfo)} for a code example.
    *
    * @param blobInfos blobs to update
    * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it

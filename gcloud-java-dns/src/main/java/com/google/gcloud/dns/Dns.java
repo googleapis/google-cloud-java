@@ -18,7 +18,7 @@ package com.google.gcloud.dns;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.FieldSelector;
-import com.google.gcloud.FieldSelector.SelectorHelper;
+import com.google.gcloud.FieldSelector.Helper;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.dns.spi.DnsRpc;
@@ -45,7 +45,7 @@ public interface Dns extends Service<DnsOptions> {
     PROJECT_NUMBER("number"),
     QUOTA("quota");
 
-    static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.<FieldSelector>of(PROJECT_ID);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(PROJECT_ID);
 
     private final String selector;
 
@@ -75,7 +75,7 @@ public interface Dns extends Service<DnsOptions> {
     NAME_SERVER_SET("nameServerSet"),
     NAME_SERVERS("nameServers");
 
-    static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.<FieldSelector>of(NAME);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 
     private final String selector;
 
@@ -102,7 +102,7 @@ public interface Dns extends Service<DnsOptions> {
     TTL("ttl"),
     TYPE("type");
 
-    static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.<FieldSelector>of(NAME, TYPE);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME, TYPE);
 
     private final String selector;
 
@@ -120,8 +120,8 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a change request.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#applyChangeRequest(String, ChangeRequestInfo, ChangeRequestOption...)} The ID is always
-   * returned even if not selected.
+   * {@link Dns#applyChangeRequest(String, ChangeRequestInfo, ChangeRequestOption...)} The ID is
+   * always returned even if not selected.
    */
   enum ChangeRequestField implements FieldSelector {
     ID("id"),
@@ -130,7 +130,7 @@ public interface Dns extends Service<DnsOptions> {
     ADDITIONS("additions"),
     DELETIONS("deletions");
 
-    static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.<FieldSelector>of(ID);
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(ID);
 
     private final String selector;
 
@@ -158,7 +158,7 @@ public interface Dns extends Service<DnsOptions> {
   /**
    * Class for specifying record set listing options.
    */
-  class RecordSetListOption extends Option implements Serializable {
+  class RecordSetListOption extends Option {
 
     private static final long serialVersionUID = 1009627025381096098L;
 
@@ -176,7 +176,7 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static RecordSetListOption fields(RecordSetField... fields) {
       return new RecordSetListOption(DnsRpc.Option.FIELDS,
-          SelectorHelper.selector("rrsets", RecordSetField.REQUIRED_FIELDS, fields));
+          Helper.listSelector("rrsets", RecordSetField.REQUIRED_FIELDS, fields));
     }
 
     /**
@@ -218,7 +218,7 @@ public interface Dns extends Service<DnsOptions> {
   /**
    * Class for specifying zone field options.
    */
-  class ZoneOption extends Option implements Serializable {
+  class ZoneOption extends Option {
 
     private static final long serialVersionUID = -8065564464895945037L;
 
@@ -235,14 +235,14 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static ZoneOption fields(ZoneField... fields) {
       return new ZoneOption(DnsRpc.Option.FIELDS,
-          SelectorHelper.selector(ZoneField.REQUIRED_FIELDS, fields));
+          Helper.selector(ZoneField.REQUIRED_FIELDS, fields));
     }
   }
 
   /**
    * Class for specifying zone listing options.
    */
-  class ZoneListOption extends Option implements Serializable {
+  class ZoneListOption extends Option {
 
     private static final long serialVersionUID = -2830645032124504717L;
 
@@ -259,7 +259,7 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static ZoneListOption fields(ZoneField... fields) {
       return new ZoneListOption(DnsRpc.Option.FIELDS,
-          SelectorHelper.selector("managedZones", ZoneField.REQUIRED_FIELDS, fields));
+          Helper.listSelector("managedZones", ZoneField.REQUIRED_FIELDS, fields));
     }
 
     /**
@@ -293,7 +293,7 @@ public interface Dns extends Service<DnsOptions> {
   /**
    * Class for specifying project options.
    */
-  class ProjectOption extends Option implements Serializable {
+  class ProjectOption extends Option {
 
     private static final long serialVersionUID = 6817937338218847748L;
 
@@ -311,14 +311,14 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static ProjectOption fields(ProjectField... fields) {
       return new ProjectOption(DnsRpc.Option.FIELDS,
-          SelectorHelper.selector(ProjectField.REQUIRED_FIELDS, fields));
+          Helper.selector(ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 
   /**
    * Class for specifying change request field options.
    */
-  class ChangeRequestOption extends Option implements Serializable {
+  class ChangeRequestOption extends Option {
 
     private static final long serialVersionUID = 1067273695061077782L;
 
@@ -337,14 +337,14 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static ChangeRequestOption fields(ChangeRequestField... fields) {
       return new ChangeRequestOption(DnsRpc.Option.FIELDS,
-          SelectorHelper.selector(ChangeRequestField.REQUIRED_FIELDS, fields));
+          Helper.selector(ChangeRequestField.REQUIRED_FIELDS, fields));
     }
   }
 
   /**
    * Class for specifying change request listing options.
    */
-  class ChangeRequestListOption extends Option implements Serializable {
+  class ChangeRequestListOption extends Option {
 
     private static final long serialVersionUID = -900209143895376089L;
 
@@ -363,7 +363,7 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static ChangeRequestListOption fields(ChangeRequestField... fields) {
       return new ChangeRequestListOption(DnsRpc.Option.FIELDS,
-          SelectorHelper.selector("changes", ChangeRequestField.REQUIRED_FIELDS, fields));
+          Helper.listSelector("changes", ChangeRequestField.REQUIRED_FIELDS, fields));
     }
 
     /**
