@@ -18,6 +18,7 @@ package com.google.gcloud.dns;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.FieldSelector;
+import com.google.gcloud.FieldSelector.SelectorHelper;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.dns.spi.DnsRpc;
@@ -157,7 +158,7 @@ public interface Dns extends Service<DnsOptions> {
   /**
    * Class for specifying record set listing options.
    */
-  class RecordSetListOption extends AbstractOption implements Serializable {
+  class RecordSetListOption extends Option implements Serializable {
 
     private static final long serialVersionUID = 1009627025381096098L;
 
@@ -174,9 +175,8 @@ public interface Dns extends Service<DnsOptions> {
      * of fields that can be used.
      */
     public static RecordSetListOption fields(RecordSetField... fields) {
-      StringBuilder builder = selector(new StringBuilder().append("nextPageToken,rrsets("),
-          RecordSetField.REQUIRED_FIELDS, fields).append(')');
-      return new RecordSetListOption(DnsRpc.Option.FIELDS, builder.toString());
+      return new RecordSetListOption(DnsRpc.Option.FIELDS,
+          SelectorHelper.selector("rrsets", RecordSetField.REQUIRED_FIELDS, fields));
     }
 
     /**
@@ -218,7 +218,7 @@ public interface Dns extends Service<DnsOptions> {
   /**
    * Class for specifying zone field options.
    */
-  class ZoneOption extends AbstractOption implements Serializable {
+  class ZoneOption extends Option implements Serializable {
 
     private static final long serialVersionUID = -8065564464895945037L;
 
@@ -234,14 +234,15 @@ public interface Dns extends Service<DnsOptions> {
      * specified. {@link ZoneField} provides a list of fields that can be used.
      */
     public static ZoneOption fields(ZoneField... fields) {
-      return new ZoneOption(DnsRpc.Option.FIELDS, selector(ZoneField.REQUIRED_FIELDS, fields));
+      return new ZoneOption(DnsRpc.Option.FIELDS,
+          SelectorHelper.selector(ZoneField.REQUIRED_FIELDS, fields));
     }
   }
 
   /**
    * Class for specifying zone listing options.
    */
-  class ZoneListOption extends AbstractOption implements Serializable {
+  class ZoneListOption extends Option implements Serializable {
 
     private static final long serialVersionUID = -2830645032124504717L;
 
@@ -257,9 +258,8 @@ public interface Dns extends Service<DnsOptions> {
      * specified. {@link ZoneField} provides a list of fields that can be used.
      */
     public static ZoneListOption fields(ZoneField... fields) {
-      StringBuilder builder = selector(new StringBuilder().append("nextPageToken,managedZones("),
-          ZoneField.REQUIRED_FIELDS, fields).append(')');
-      return new ZoneListOption(DnsRpc.Option.FIELDS, builder.toString());
+      return new ZoneListOption(DnsRpc.Option.FIELDS,
+          SelectorHelper.selector("managedZones", ZoneField.REQUIRED_FIELDS, fields));
     }
 
     /**
@@ -293,7 +293,7 @@ public interface Dns extends Service<DnsOptions> {
   /**
    * Class for specifying project options.
    */
-  class ProjectOption extends AbstractOption implements Serializable {
+  class ProjectOption extends Option implements Serializable {
 
     private static final long serialVersionUID = 6817937338218847748L;
 
@@ -311,14 +311,14 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static ProjectOption fields(ProjectField... fields) {
       return new ProjectOption(DnsRpc.Option.FIELDS,
-          selector(ProjectField.REQUIRED_FIELDS, fields));
+          SelectorHelper.selector(ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 
   /**
    * Class for specifying change request field options.
    */
-  class ChangeRequestOption extends AbstractOption implements Serializable {
+  class ChangeRequestOption extends Option implements Serializable {
 
     private static final long serialVersionUID = 1067273695061077782L;
 
@@ -337,14 +337,14 @@ public interface Dns extends Service<DnsOptions> {
      */
     public static ChangeRequestOption fields(ChangeRequestField... fields) {
       return new ChangeRequestOption(DnsRpc.Option.FIELDS,
-          selector(ChangeRequestField.REQUIRED_FIELDS, fields));
+          SelectorHelper.selector(ChangeRequestField.REQUIRED_FIELDS, fields));
     }
   }
 
   /**
    * Class for specifying change request listing options.
    */
-  class ChangeRequestListOption extends AbstractOption implements Serializable {
+  class ChangeRequestListOption extends Option implements Serializable {
 
     private static final long serialVersionUID = -900209143895376089L;
 
@@ -362,9 +362,8 @@ public interface Dns extends Service<DnsOptions> {
      * a list of fields that can be used.
      */
     public static ChangeRequestListOption fields(ChangeRequestField... fields) {
-      StringBuilder builder = selector(new StringBuilder().append("nextPageToken,changes("),
-          ChangeRequestField.REQUIRED_FIELDS, fields).append(')');
-      return new ChangeRequestListOption(DnsRpc.Option.FIELDS, builder.toString());
+      return new ChangeRequestListOption(DnsRpc.Option.FIELDS,
+          SelectorHelper.selector("changes", ChangeRequestField.REQUIRED_FIELDS, fields));
     }
 
     /**

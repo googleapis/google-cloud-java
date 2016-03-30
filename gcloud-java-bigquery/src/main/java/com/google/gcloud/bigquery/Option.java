@@ -18,21 +18,16 @@ package com.google.gcloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.base.Joiner;
 import com.google.common.base.MoreObjects;
-import com.google.common.collect.Sets;
-import com.google.gcloud.FieldSelector;
 import com.google.gcloud.bigquery.spi.BigQueryRpc;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * Base class for BigQuery operation option.
  */
-class Option implements Serializable {
+abstract class Option implements Serializable {
 
   private static final long serialVersionUID = -6647817677804099207L;
 
@@ -72,21 +67,5 @@ class Option implements Serializable {
         .add("name", rpcOption.value())
         .add("value", value)
         .toString();
-  }
-
-  static String selector(List<FieldSelector> required, FieldSelector... others) {
-    Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(required.size() + others.length);
-    for (FieldSelector field : required) {
-      fieldStrings.add(field.selector());
-    }
-    for (FieldSelector field : others) {
-      fieldStrings.add(field.selector());
-    }
-    return Joiner.on(',').join(fieldStrings);
-  }
-
-  static StringBuilder selector(StringBuilder partialSelector, List<FieldSelector> required,
-      FieldSelector... others) {
-    return partialSelector.append(selector(required, others));
   }
 }

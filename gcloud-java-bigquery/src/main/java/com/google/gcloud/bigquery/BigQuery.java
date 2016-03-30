@@ -22,6 +22,7 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.gcloud.FieldSelector;
+import com.google.gcloud.FieldSelector.SelectorHelper;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.bigquery.spi.BigQueryRpc;
@@ -192,7 +193,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      */
     public static DatasetOption fields(DatasetField... fields) {
       return new DatasetOption(BigQueryRpc.Option.FIELDS,
-          selector(DatasetField.REQUIRED_FIELDS, fields));
+          SelectorHelper.selector(DatasetField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -262,7 +263,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      */
     public static TableOption fields(TableField... fields) {
       return new TableOption(BigQueryRpc.Option.FIELDS,
-          selector(TableField.REQUIRED_FIELDS, fields));
+          SelectorHelper.selector(TableField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -359,10 +360,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * listing jobs.
      */
     public static JobListOption fields(JobField... fields) {
-      StringBuilder builder =
-          selector(new StringBuilder().append("etag,jobs("), JobField.REQUIRED_FIELDS, fields)
-              .append(",state,errorResult),nextPageToken");
-      return new JobListOption(BigQueryRpc.Option.FIELDS, builder.toString());
+      return new JobListOption(BigQueryRpc.Option.FIELDS,
+          SelectorHelper.selector("jobs", JobField.REQUIRED_FIELDS, fields, "state",
+              "errorResult"));
     }
   }
 
@@ -386,7 +386,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
      */
     public static JobOption fields(JobField... fields) {
       return new JobOption(BigQueryRpc.Option.FIELDS,
-          Option.selector(JobField.REQUIRED_FIELDS, fields));
+          SelectorHelper.selector(JobField.REQUIRED_FIELDS, fields));
     }
   }
 

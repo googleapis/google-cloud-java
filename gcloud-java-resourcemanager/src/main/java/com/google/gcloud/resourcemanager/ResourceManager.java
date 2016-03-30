@@ -18,6 +18,7 @@ package com.google.gcloud.resourcemanager;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.FieldSelector;
+import com.google.gcloud.FieldSelector.SelectorHelper;
 import com.google.gcloud.IamPolicy;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
@@ -84,7 +85,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      */
     public static ProjectGetOption fields(ProjectField... fields) {
       return new ProjectGetOption(ResourceManagerRpc.Option.FIELDS,
-          selector(ProjectField.REQUIRED_FIELDS, fields));
+          SelectorHelper.selector(ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -157,10 +158,8 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      * that can be used.
      */
     public static ProjectListOption fields(ProjectField... fields) {
-      StringBuilder builder =
-          selector(new StringBuilder().append("projects("), ProjectField.REQUIRED_FIELDS, fields)
-              .append("),nextPageToken");
-      return new ProjectListOption(ResourceManagerRpc.Option.FIELDS, builder.toString());
+      return new ProjectListOption(ResourceManagerRpc.Option.FIELDS,
+          SelectorHelper.selector("projects", ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 

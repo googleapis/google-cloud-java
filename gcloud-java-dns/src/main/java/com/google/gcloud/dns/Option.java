@@ -18,27 +18,22 @@ package com.google.gcloud.dns;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.base.Joiner;
 import com.google.common.base.MoreObjects;
-import com.google.common.collect.Sets;
-import com.google.gcloud.FieldSelector;
 import com.google.gcloud.dns.spi.DnsRpc;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * A base class for options.
  */
-abstract class AbstractOption implements Serializable {
+abstract class Option implements Serializable {
 
   private static final long serialVersionUID = -5912727967831484228L;
   private final Object value;
   private final DnsRpc.Option rpcOption;
 
-  AbstractOption(DnsRpc.Option rpcOption, Object value) {
+  Option(DnsRpc.Option rpcOption, Object value) {
     this.rpcOption = checkNotNull(rpcOption);
     this.value = value;
   }
@@ -53,10 +48,10 @@ abstract class AbstractOption implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof AbstractOption)) {
+    if (!(obj instanceof Option)) {
       return false;
     }
-    AbstractOption other = (AbstractOption) obj;
+    Option other = (Option) obj;
     return Objects.equals(value, other.value) && Objects.equals(rpcOption, other.rpcOption);
   }
 
@@ -71,21 +66,5 @@ abstract class AbstractOption implements Serializable {
         .add("value", value)
         .add("rpcOption", rpcOption)
         .toString();
-  }
-
-  static String selector(List<FieldSelector> required, FieldSelector... others) {
-    Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(required.size() + others.length);
-    for (FieldSelector field : required) {
-      fieldStrings.add(field.selector());
-    }
-    for (FieldSelector field : others) {
-      fieldStrings.add(field.selector());
-    }
-    return Joiner.on(',').join(fieldStrings);
-  }
-
-  static StringBuilder selector(StringBuilder partialSelector, List<FieldSelector> required,
-      FieldSelector... others) {
-    return partialSelector.append(selector(required, others));
   }
 }
