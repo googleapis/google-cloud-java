@@ -12,16 +12,6 @@
     <artifactId>gcloud-java-pom</artifactId>
     <version>0.1.7-SNAPSHOT</version>
   </parent>
-  <repositories>
-    <repository>
-      <id>sonatype-snapshots</id>
-      <name>sonatype-snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
   <properties>
     <site.installationModule>gcloud-java-datastore</site.installationModule>
   </properties>
@@ -34,12 +24,12 @@
     <dependency>
       <groupId>com.google.cloud.datastore</groupId>
       <artifactId>datastore-v1beta3-protos</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>1.0.0-beta</version>
     </dependency>
     <dependency>
       <groupId>com.google.cloud.datastore</groupId>
       <artifactId>datastore-v1beta3-proto-client</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>1.0.0-beta</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
