@@ -35,12 +35,8 @@ public class MachineTypeTest {
   private static final List<Integer> SCRATCH_DISKS = ImmutableList.of(3);
   private static final Integer MAXIMUM_PERSISTENT_DISKS = 4;
   private static final Long MAXIMUM_PERSISTENT_DISKS_SIZE_GB = 5L;
-  private static final Long DELETED = 1453293540000L;
-  private static final Long DEPRECATED = 1453293420000L;
-  private static final Long OBSOLETE = 1453293480000L;
-  private static final DeprecationStatus.Status STATUS = DeprecationStatus.Status.DELETED;
   private static final DeprecationStatus<MachineTypeId> DEPRECATION_STATUS =
-      new DeprecationStatus<>(DELETED, DEPRECATED, OBSOLETE, MACHINE_TYPE_ID, STATUS);
+      DeprecationStatus.of(DeprecationStatus.Status.DELETED, MACHINE_TYPE_ID);
   private static final MachineType MACHINE_TYPE = MachineType.builder()
       .id(ID)
       .machineTypeId(MACHINE_TYPE_ID)
