@@ -40,11 +40,8 @@ public class ZoneTest {
   private static final MaintenanceWindow WINDOW2 = new MaintenanceWindow("NAME2", "DESCRIPTION2",
       BEGIN_TIME, END_TIME);
   private static final List<MaintenanceWindow> WINDOWS = ImmutableList.of(WINDOW1, WINDOW2);
-  private static final Long DELETED = 1453293540000L;
-  private static final Long DEPRECATED = 1453293420000L;
-  private static final Long OBSOLETE = 1453293480000L;
-  private static final DeprecationStatus<ZoneId> DEPRECATION_STATUS = new DeprecationStatus<>(
-      DELETED, DEPRECATED, OBSOLETE, ZONE_ID, DeprecationStatus.Status.DELETED);
+  private static final DeprecationStatus<ZoneId> DEPRECATION_STATUS =
+      DeprecationStatus.of(DeprecationStatus.Status.DELETED, ZONE_ID);
   private static final Zone ZONE = Zone.builder()
       .zoneId(ZONE_ID)
       .id(ID)

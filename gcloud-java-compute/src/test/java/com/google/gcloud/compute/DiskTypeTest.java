@@ -28,12 +28,8 @@ public class DiskTypeTest {
   private static final String VALID_DISK_SIZE = "10GB-10TB";
   private static final Long DEFAULT_DISK_SIZE_GB = 10L;
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
-  private static final Long DELETED = 1453293540000L;
-  private static final Long DEPRECATED = 1453293420000L;
-  private static final Long OBSOLETE = 1453293480000L;
-  private static final DeprecationStatus.Status STATUS = DeprecationStatus.Status.DELETED;
   private static final DeprecationStatus<DiskTypeId> DEPRECATION_STATUS =
-      new DeprecationStatus<>(DELETED, DEPRECATED, OBSOLETE, DISK_TYPE_ID, STATUS);
+      DeprecationStatus.of(DeprecationStatus.Status.DELETED, DISK_TYPE_ID);
   private static final DiskType DISK_TYPE = DiskType.builder()
       .id(ID)
       .diskTypeId(DISK_TYPE_ID)

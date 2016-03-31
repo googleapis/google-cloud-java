@@ -39,11 +39,8 @@ public class RegionTest {
   private static final Region.Quota QUOTA2 =
       new Region.Quota("METRIC2", 4, 3);
   private static final List<Region.Quota> QUOTAS = ImmutableList.of(QUOTA1, QUOTA2);
-  private static final Long DELETED = 1453293540000L;
-  private static final Long DEPRECATED = 1453293420000L;
-  private static final Long OBSOLETE = 1453293480000L;
-  private static final DeprecationStatus<RegionId> DEPRECATION_STATUS = new DeprecationStatus<>(
-      DELETED, DEPRECATED, OBSOLETE, REGION_ID, DeprecationStatus.Status.DELETED);
+  private static final DeprecationStatus<RegionId> DEPRECATION_STATUS =
+      DeprecationStatus.of(DeprecationStatus.Status.DELETED, REGION_ID);
   private static final Region REGION = Region.builder()
       .regionId(REGION_ID)
       .id(ID)

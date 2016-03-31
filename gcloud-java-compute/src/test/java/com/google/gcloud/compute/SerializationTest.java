@@ -105,12 +105,8 @@ public class SerializationTest {
       .maintenanceWindows(WINDOWS)
       .region(REGION_ID)
       .build();
-  private static final Long DELETED = 1453293540000L;
-  private static final Long DEPRECATED = 1453293420000L;
-  private static final Long OBSOLETE = 1453293480000L;
   private static final DeprecationStatus<MachineTypeId> DEPRECATION_STATUS =
-      new DeprecationStatus<>(DELETED, DEPRECATED, OBSOLETE, MACHINE_TYPE_ID,
-          DeprecationStatus.Status.DELETED);
+      DeprecationStatus.of(DeprecationStatus.Status.DELETED, MACHINE_TYPE_ID);
   private static final LicenseId LICENSE_ID = LicenseId.of("project", "license");
   private static final Boolean CHARGES_USE_FEE = true;
   private static final License LICENSE = new License(LICENSE_ID, CHARGES_USE_FEE);
@@ -152,6 +148,12 @@ public class SerializationTest {
   private static final SnapshotInfo SNAPSHOT_INFO = SnapshotInfo.of(SNAPSHOT_ID, DISK_ID);
   private static final Snapshot SNAPSHOT =
       new Snapshot.Builder(COMPUTE, SNAPSHOT_ID, DISK_ID).build();
+  private static final ImageId IMAGE_ID = ImageId.of("project", "image");
+  private static final DiskImageConfiguration DISK_IMAGE_CONFIGURATION =
+      DiskImageConfiguration.of(DISK_ID);
+  private static final StorageImageConfiguration RAW_IMAGE_CONFIGURATION =
+      StorageImageConfiguration.of("gs:/bucket/file");
+  private static final ImageInfo IMAGE_INFO = ImageInfo.of(IMAGE_ID, DISK_IMAGE_CONFIGURATION);
   private static final Compute.DiskTypeOption DISK_TYPE_OPTION =
       Compute.DiskTypeOption.fields();
   private static final Compute.DiskTypeFilter DISK_TYPE_FILTER =
@@ -222,7 +224,8 @@ public class SerializationTest {
         REGION_OPERATION_ID, ZONE_OPERATION_ID, GLOBAL_OPERATION, REGION_OPERATION, ZONE_OPERATION,
         INSTANCE_ID, REGION_FORWARDING_RULE_ID, GLOBAL_FORWARDING_RULE_ID, GLOBAL_ADDRESS_ID,
         REGION_ADDRESS_ID, INSTANCE_USAGE, GLOBAL_FORWARDING_USAGE, REGION_FORWARDING_USAGE,
-        ADDRESS_INFO, ADDRESS, DISK_ID, SNAPSHOT_ID, SNAPSHOT_INFO, SNAPSHOT, DISK_TYPE_OPTION,
+        ADDRESS_INFO, ADDRESS, DISK_ID, SNAPSHOT_ID, SNAPSHOT_INFO, SNAPSHOT, IMAGE_ID,
+        DISK_IMAGE_CONFIGURATION, RAW_IMAGE_CONFIGURATION, IMAGE_INFO, DISK_TYPE_OPTION,
         DISK_TYPE_FILTER, DISK_TYPE_LIST_OPTION, DISK_TYPE_AGGREGATED_LIST_OPTION,
         MACHINE_TYPE_OPTION, MACHINE_TYPE_FILTER, MACHINE_TYPE_LIST_OPTION,
         MACHINE_TYPE_AGGREGATED_LIST_OPTION, REGION_OPTION, REGION_FILTER, REGION_LIST_OPTION,
