@@ -886,12 +886,14 @@ public class BigQueryImplTest {
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(jobList.toArray(), Iterables.toArray(page.values(), Job.class));
     String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.rpcOption());
-    assertTrue(selector.contains("etag,jobs("));
+    assertTrue(selector.contains("nextPageToken,jobs("));
     assertTrue(selector.contains("configuration"));
     assertTrue(selector.contains("jobReference"));
     assertTrue(selector.contains("statistics"));
-    assertTrue(selector.contains("state,errorResult),nextPageToken"));
-    assertEquals(80, selector.length());
+    assertTrue(selector.contains("state"));
+    assertTrue(selector.contains("errorResult"));
+    assertTrue(selector.contains(")"));
+    assertEquals(75, selector.length());
   }
 
   @Test

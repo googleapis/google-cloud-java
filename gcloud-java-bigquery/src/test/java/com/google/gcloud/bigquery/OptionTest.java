@@ -17,22 +17,49 @@
 package com.google.gcloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 
 import com.google.gcloud.bigquery.spi.BigQueryRpc;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class OptionTest {
 
+  private static final BigQueryRpc.Option RPC_OPTION = BigQueryRpc.Option.PAGE_TOKEN;
+  private static final BigQueryRpc.Option ANOTHER_RPC_OPTION = BigQueryRpc.Option.FIELDS;
+  private static final String VALUE = "some value";
+  private static final String OTHER_VALUE = "another value";
+  private static final Option OPTION = new Option(RPC_OPTION, VALUE) {};
+  private static final Option OPTION_EQUALS = new Option(RPC_OPTION, VALUE) {};
+  private static final Option OPTION_NOT_EQUALS1 = new Option(RPC_OPTION, OTHER_VALUE) {};
+  private static final Option OPTION_NOT_EQUALS2 = new Option(ANOTHER_RPC_OPTION, VALUE) {};
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
   @Test
-  public void testOption() {
-    Option option = new Option(BigQueryRpc.Option.PAGE_TOKEN, "token");
-    assertEquals(BigQueryRpc.Option.PAGE_TOKEN, option.rpcOption());
-    assertEquals("token", option.value());
+  public void testEquals() {
+    assertEquals(OPTION, OPTION_EQUALS);
+    assertNotEquals(OPTION, OPTION_NOT_EQUALS1);
+    assertNotEquals(OPTION, OPTION_NOT_EQUALS2);
   }
 
-  @Test(expected = NullPointerException.class)
-  public void testNullRpcOption() {
-    new Option(null, "token");
+  @Test
+  public void testHashCode() {
+    assertEquals(OPTION.hashCode(), OPTION_EQUALS.hashCode());
+  }
+
+  @Test
+  public void testConstructor() {
+    assertEquals(RPC_OPTION, OPTION.rpcOption());
+    assertEquals(VALUE, OPTION.value());
+    Option option = new Option(RPC_OPTION, null) {};
+    assertEquals(RPC_OPTION, option.rpcOption());
+    assertNull(option.value());
+    thrown.expect(NullPointerException.class);
+    new Option(null, VALUE) {};
   }
 }

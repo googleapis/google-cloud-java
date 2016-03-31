@@ -27,13 +27,13 @@ import java.util.Objects;
 /**
  * A base class for options.
  */
-abstract class AbstractOption implements Serializable {
+abstract class Option implements Serializable {
 
   private static final long serialVersionUID = -5912727967831484228L;
   private final Object value;
   private final DnsRpc.Option rpcOption;
 
-  AbstractOption(DnsRpc.Option rpcOption, Object value) {
+  Option(DnsRpc.Option rpcOption, Object value) {
     this.rpcOption = checkNotNull(rpcOption);
     this.value = value;
   }
@@ -48,10 +48,10 @@ abstract class AbstractOption implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof AbstractOption)) {
+    if (!(obj instanceof Option)) {
       return false;
     }
-    AbstractOption other = (AbstractOption) obj;
+    Option other = (Option) obj;
     return Objects.equals(value, other.value) && Objects.equals(rpcOption, other.rpcOption);
   }
 

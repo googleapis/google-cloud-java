@@ -27,7 +27,7 @@ import java.util.Objects;
 /**
  * Base class for BigQuery operation option.
  */
-class Option implements Serializable {
+abstract class Option implements Serializable {
 
   private static final long serialVersionUID = -6647817677804099207L;
 
@@ -53,8 +53,7 @@ class Option implements Serializable {
       return false;
     }
     Option other = (Option) obj;
-    return Objects.equals(rpcOption, other.rpcOption)
-        && Objects.equals(value, other.value);
+    return Objects.equals(rpcOption, other.rpcOption) && Objects.equals(value, other.value);
   }
 
   @Override

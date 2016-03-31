@@ -27,7 +27,7 @@ import java.util.Objects;
 /**
  * Base class for Storage operation option.
  */
-class Option implements Serializable {
+abstract class Option implements Serializable {
 
   private static final long serialVersionUID = -73199088766477208L;
 

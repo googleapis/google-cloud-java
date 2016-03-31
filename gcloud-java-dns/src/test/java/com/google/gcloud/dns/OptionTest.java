@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud.dns;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 
-import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.gcloud.dns.spi.DnsRpc;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -28,8 +28,8 @@ import org.junit.rules.ExpectedException;
 
 public class OptionTest {
 
-  private static final StorageRpc.Option RPC_OPTION = StorageRpc.Option.DELIMITER;
-  private static final StorageRpc.Option ANOTHER_RPC_OPTION = StorageRpc.Option.FIELDS;
+  private static final DnsRpc.Option RPC_OPTION = DnsRpc.Option.DNS_TYPE;
+  private static final DnsRpc.Option ANOTHER_RPC_OPTION = DnsRpc.Option.DNS_NAME;
   private static final String VALUE = "some value";
   private static final String OTHER_VALUE = "another value";
   private static final Option OPTION = new Option(RPC_OPTION, VALUE) {};
