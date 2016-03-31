@@ -18,9 +18,11 @@ package com.google.gcloud.storage.testing;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.StorageObject;
-import com.google.gcloud.storage.spi.StorageRpc;
+import com.google.common.collect.Maps;
+import com.google.common.io.ByteStreams;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageException;
+import com.google.gcloud.storage.spi.StorageRpc;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,6 +40,8 @@ import javax.annotation.concurrent.NotThreadSafe;
 @NotThreadSafe
 public final class FakeStorageRpc implements StorageRpc {
 
+  // TODO(#829): Generation support.
+
   // fullname -> metadata
   private final Map<String, StorageObject> stuff = new HashMap<>();
 
@@ -50,7 +54,7 @@ public final class FakeStorageRpc implements StorageRpc {
   private final boolean throwIfOption;
 
   /**
-   * @param throwIfOption if true, we throw when given any option.
+   * @param throwIfOption if true, we throw when given any option
    */
   public FakeStorageRpc(boolean throwIfOption) {
     this.throwIfOption = throwIfOption;
@@ -68,7 +72,7 @@ public final class FakeStorageRpc implements StorageRpc {
     String key = fullname(object);
     stuff.put(key, object);
     try {
-      contents.put(key, com.google.common.io.ByteStreams.toByteArray(content));
+      contents.put(key, ByteStreams.toByteArray(content));
     } catch (IOException e) {
       throw new StorageException(e);
     }
@@ -104,8 +108,9 @@ public final class FakeStorageRpc implements StorageRpc {
   public StorageObject get(StorageObject object, Map<Option, ?> options) throws StorageException {
     // we allow the "ID" option because we need to, but then we give a whole answer anyways
     // because the caller won't mind the extra fields.
-    if (throwIfOption && !options.isEmpty() && options.size()>1
-        && options.keySet().toArray()[0] != Storage.BlobGetOption.fields(Storage.BlobField.ID)) {
+    if (throwIfOption && !options.isEmpty() && options.size() > 1
+        && options.keySet().toArray()[0]
+            .equals(Storage.BlobGetOption.fields(Storage.BlobField.ID))) {
       throw new UnsupportedOperationException();
     }
 
@@ -196,14 +201,7 @@ public final class FakeStorageRpc implements StorageRpc {
   @Override
   public String open(StorageObject object, Map<Option, ?> options) throws StorageException {
     String key = fullname(object);
-    boolean mustNotExist = false;
-    for (Option option : options.keySet()) {
-      // this is a bit of a hack, since we don't implement generations.
-      if (option == Option.IF_GENERATION_MATCH && ((Long) options.get(option)).longValue() == 0L) {
-        mustNotExist = true;
-      }
-    }
-    if (mustNotExist && stuff.containsKey(key)) {
+    if (wantsObjectToNotExist(options) && stuff.containsKey(key)) {
       throw new StorageException(new FileAlreadyExistsException(key));
     }
     stuff.put(key, object);
@@ -242,17 +240,8 @@ public final class FakeStorageRpc implements StorageRpc {
       throw new StorageException(404, "File not found: " + sourceKey);
     }
 
-    boolean mustNotExist = false;
-    for (Option option : rewriteRequest.targetOptions.keySet()) {
-      // this is a bit of a hack, since we don't implement generations.
-      if (option == Option.IF_GENERATION_MATCH
-          && ((Long) rewriteRequest.targetOptions.get(option)).longValue() == 0L) {
-        mustNotExist = true;
-      }
-    }
-
     String destKey = fullname(rewriteRequest.target);
-    if (mustNotExist && contents.containsKey(destKey)) {
+    if (wantsObjectToNotExist(rewriteRequest.targetOptions) && contents.containsKey(destKey)) {
       throw new StorageException(new FileAlreadyExistsException(destKey));
     }
 
@@ -277,5 +266,17 @@ public final class FakeStorageRpc implements StorageRpc {
     if (throwIfOption && !options.isEmpty()) {
       throw new UnsupportedOperationException();
     }
+  }
+
+  /**
+   * Returns {@code true} if {@code options} request that object being created must not exist.
+   *
+   * <p>Quoth <a href="https://cloud.google.com/storage/docs/object-versioning">Object Versioning
+   * Docs</a>: If you set the {@code x-goog-if-generation-match} header to {@code 0} when uploading
+   * an object, Google Cloud Storage only performs the specified request if the object does not
+   * currently exist.
+   */
+  private static boolean wantsObjectToNotExist(Map<Option, ?> options) {
+    return options.entrySet().contains(Maps.immutableEntry(Option.IF_GENERATION_MATCH, 0L));
   }
 }

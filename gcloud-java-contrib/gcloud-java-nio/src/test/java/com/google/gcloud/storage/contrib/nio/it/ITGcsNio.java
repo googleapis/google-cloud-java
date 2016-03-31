@@ -67,8 +67,8 @@ public class ITGcsNio {
 
   private static final String SML_FILE = "tmp-test-small-file.txt";
   private static final int SML_SIZE = 100;
-  private static final String BIG_FILE = "tmp-test-big-file.txt";  // it's big, relatively speaking.
-  private static final int BIG_SIZE = 2 * 1024 * 1024 - 50;  // arbitrary size that's not too round.
+  private static final String BIG_FILE = "tmp-test-big-file.txt"; // it's big, relatively speaking.
+  private static final int BIG_SIZE = 2 * 1024 * 1024 - 50; // arbitrary size that's not too round.
   private static final String PREFIX = "tmp-test-file";
 
   private static final Logger logger = Logger.getLogger(ITGcsNio.class.getName());

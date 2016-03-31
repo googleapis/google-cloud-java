@@ -73,12 +73,11 @@ public final class CloudStorageFileSystem extends FileSystem {
    * with this object. Therefore calling {@link #close()} on the returned value is optional.
    *
    * <p><b>Note:</b> It is also possible to instantiate this class via Java's Service Provider
-   * Interface (SPI), e.g. {@code FileSystems.getFileSystem(URI.create("gs://bucket"))}. We
-   * discourage you from using the SPI if possible, for the reasons documented in
+   * Interface, e.g. {@code FileSystems.getFileSystem(URI.create("gs://bucket"))}. We discourage you
+   * from using that if possible, for the reasons documented in
    * {@link CloudStorageFileSystemProvider#newFileSystem(URI, java.util.Map)}
    *
-   * @see #forBucket(String, CloudStorageConfiguration)
-   * @see java.nio.file.FileSystems#getFileSystem(java.net.URI)
+   * @see java.nio.file.FileSystems#getFileSystem(URI)
    */
   @CheckReturnValue
   public static CloudStorageFileSystem forBucket(String bucket, CloudStorageConfiguration config) {
@@ -89,11 +88,9 @@ public final class CloudStorageFileSystem extends FileSystem {
   }
 
   private static CloudStorageFileSystemProvider getProvider() {
-    // XXX: This is a kludge to get the provider instance from the SPI. This is necessary since
-    //      the behavior of NIO changes quite a bit if the provider instances aren't the same.
-    //      If the provider can not be found via the SPI, then we fall back to instantiating it
-    //      ourselves. This should safeguard against situations where the weird provider file
-    //      doesn't find its way into the jar.
+    // We want to get the provider instance from the service loader if possible. This is important
+    // because the behavior of NIO (as implemented in classes like java.nio.files.Files) changes
+    // quite a bit if the provider instances aren't identical.
     FileSystemProvider provider =
         Iterables.getOnlyElement(
             Iterables.filter(
@@ -103,6 +100,11 @@ public final class CloudStorageFileSystem extends FileSystem {
     if (provider != null) {
       return (CloudStorageFileSystemProvider) provider;
     }
+    // If the provider can not be found via the service loader, then we fall back to instantiating
+    // it ourselves. This should safeguard against needless user frustration in situations where the
+    // weird provider file created by @AutoService doesn't find its way into the jar. However this
+    // could lead to unexpected changes in behavior under the rare circumstance that the user
+    // instantiates multiple instances and uses them together on operations like copy.
     logger.warning("Could not find CloudStorageFileSystemProvider via SPI");
     return new CloudStorageFileSystemProvider();
   }

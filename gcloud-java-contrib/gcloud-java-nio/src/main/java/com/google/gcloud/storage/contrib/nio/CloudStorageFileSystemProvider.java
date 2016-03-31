@@ -73,6 +73,10 @@ import javax.inject.Singleton;
 
 /**
  * Google Cloud Storage {@link FileSystemProvider} implementation.
+ *
+ * <p><b>Note:</b> This class should not be used directly ever. This class is instantiated by the
+ * service loader and called through a standardized API, e.g. {@link java.nio.file.Files}. However
+ * the javadocs in this class serve as useful documentation for the behavior of the GCS NIO library.
  */
 @Singleton
 @ThreadSafe
@@ -112,7 +116,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   /**
    * Returns Cloud Storage file system, provided a URI with no path.
    *
-   * <p><b>Note:</b> This method should be invoked indirectly via the SPI by calling
+   * <p><b>Note:</b> This method should be invoked indirectly via the service provider by calling
    * {@link java.nio.file.FileSystems#newFileSystem(URI, Map) FileSystems.newFileSystem()}; however,
    * we recommend that you don't use the API if possible. The recommended approach is to write a
    * dependency injection module that calls the statically-linked, type-safe version of this method:
