@@ -172,9 +172,9 @@ public class ITBigQueryTest {
   @BeforeClass
   public static void beforeClass() throws InterruptedException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
-    RemoteStorageHelper gcsHelper = RemoteStorageHelper.create();
+    RemoteStorageHelper storageHelper = RemoteStorageHelper.create();
     bigquery = bigqueryHelper.options().service();
-    storage = gcsHelper.options().service();
+    storage = storageHelper.options().service();
     storage.create(BucketInfo.of(BUCKET));
     storage.create(BlobInfo.builder(BUCKET, LOAD_FILE).contentType("text/plain").build(),
         CSV_CONTENT.getBytes(StandardCharsets.UTF_8));

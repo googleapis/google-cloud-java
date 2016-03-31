@@ -123,19 +123,19 @@ public class DatastoreTest {
   private DatastoreRpcFactory rpcFactoryMock;
   private DatastoreRpc rpcMock;
 
-  private static LocalDatastoreHelper gcdHelper;
+  private static LocalDatastoreHelper helper = LocalDatastoreHelper.create(PROJECT_ID, 1.0);
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
-    gcdHelper = LocalDatastoreHelper.start(PROJECT_ID, 1.0);
+    helper.start();
   }
 
   @Before
   public void setUp() {
-    options = gcdHelper.options().toBuilder().retryParams(RetryParams.noRetries()).build();
+    options = helper.options().toBuilder().retryParams(RetryParams.noRetries()).build();
     datastore = options.service();
     rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
     rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
@@ -153,8 +153,8 @@ public class DatastoreTest {
 
   @AfterClass
   public static void afterClass() throws IOException, InterruptedException {
-    if (gcdHelper != null) {
-      gcdHelper.stop();
+    if (helper != null) {
+      helper.stop();
     }
   }
 

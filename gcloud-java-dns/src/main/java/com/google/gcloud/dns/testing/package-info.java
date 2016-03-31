@@ -24,8 +24,8 @@
  * // request processing synchronous.
  * long delay = 0;
  * LocalDnsHelper dnsHelper = LocalDnsHelper.create(delay);
- * Dns dns = dnsHelper.options().service();
  * dnsHelper.start();
+ * Dns dns = dnsHelper.options().service();
  * }</pre>
  *
  * <p>After the test:

@@ -555,7 +555,7 @@ public class LocalDatastoreHelper {
 
   /**
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator
-   * on localhost.
+   * on localhost. This should only be called after calling {@link #start}.
    */
   public DatastoreOptions options() {
     return DatastoreOptions.builder()
@@ -587,36 +587,38 @@ public class LocalDatastoreHelper {
   }
 
   /**
-   * Starts the local Datastore for the specific project.
-   *
-   * This will unzip the gcd tool, create the project and start it. All content is written to a
-   * temporary directory that will be deleted when {@link #stop()} is called (or when the program
-   * terminates) to make sure that no left-over data from prior runs is used.
+   * Creates a local Datastore helper with the specified settings for project ID and consistency.
    *
    * @param consistency the fraction of Datastore writes that are immediately visible to global
-   *     queries, with 0.0 resulting in no attempts succeeding, and 1.0 resulting in all attempts succeeding. Note
-   *     that setting this to 1.0 may mask incorrect assumptions about the consistency of
-   *     non-ancestor queries; non-ancestor queries are eventually consistent.
+   *     queries, with 0.0 meaning no writes are immediately visible and 1.0 meaning all writes
+   *     are immediately visible. Note that setting this to 1.0 may mask incorrect assumptions
+   *     about the consistency of non-ancestor queries; non-ancestor queries are eventually
+   *     consistent.
    */
-  public static LocalDatastoreHelper start(String projectId, double consistency)
-      throws IOException, InterruptedException {
+  public static LocalDatastoreHelper create(String projectId, double consistency) {
     LocalDatastoreHelper helper = new LocalDatastoreHelper(projectId, consistency);
-    helper.findAndStartGcd();
     return helper;
   }
 
   /**
-   * Starts the local Datastore using defaults for project ID and consistency setting of 0.9.
-   *
-   * This will unzip the gcd tool, create the project and start it. All content is written to a
-   * temporary directory that will be deleted when {@link #stop()} is called (or when the program
-   * terminates) to make sure that no left-over data from prior runs is used.
+   * Creates a local Datastore helper with a placeholder project ID and the default consistency
+   * setting of 0.9. Consistency refers to the fraction of Datastore writes that are immediately
+   * visible to global queries, with 0.0 meaning no writes are immediately visible and 1.0 meaning
+   * all writes are immediately visible.
    */
-  public static LocalDatastoreHelper start() throws IOException, InterruptedException {
-    return start(DEFAULT_PROJECT_ID, DEFAULT_CONSISTENCY);
+  public static LocalDatastoreHelper create() {
+    return create(DEFAULT_PROJECT_ID, DEFAULT_CONSISTENCY);
   }
 
-  private void findAndStartGcd() throws IOException, InterruptedException {
+  /**
+   * Starts the local Datastore emulator. Leftover data from previous uses of the emulator will be
+   * removed.
+   *
+   * @throws InterruptedException if emulator-related tasks are interrupted
+   * @throws IOException if there are socket exceptions or issues creating/deleting the temporary
+   * data folder
+   */
+  public void start() throws IOException, InterruptedException {
     // send a quick request in case we have a hanging process from a previous run
     checkArgument(consistency >= 0.0 && consistency <= 1.0, "Consistency must be between 0 and 1");
     sendQuitRequest(port);

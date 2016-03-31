@@ -36,24 +36,22 @@ public class LocalDatastoreHelperTest {
   private static final double TOLERANCE = 0.00001;
 
   @Test
-  public void testStart() throws IOException, InterruptedException {
-    LocalDatastoreHelper helper = LocalDatastoreHelper.start(PROJECT_ID, 0.75);
+  public void testCreate() {
+    LocalDatastoreHelper helper = LocalDatastoreHelper.create(PROJECT_ID, 0.75);
     assertTrue(Math.abs(0.75 - helper.consistency()) < TOLERANCE);
     assertEquals(PROJECT_ID, helper.projectId());
-    helper.stop();
-    helper = LocalDatastoreHelper.start();
+    helper = LocalDatastoreHelper.create();
     assertTrue(Math.abs(0.9 - helper.consistency()) < TOLERANCE);
     assertEquals(LocalDatastoreHelper.DEFAULT_PROJECT_ID, helper.projectId());
-    helper.stop();
   }
 
   @Test
   public void testOptions() throws IOException, InterruptedException {
-    LocalDatastoreHelper helper = LocalDatastoreHelper.start();
+    LocalDatastoreHelper helper = LocalDatastoreHelper.create();
+    helper.start();
     DatastoreOptions options = helper.options();
     assertEquals(LocalDatastoreHelper.DEFAULT_PROJECT_ID, options.projectId());
     assertEquals("http://localhost:" + helper.port(), options.host());
     assertSame(AuthCredentials.noAuth(), options.authCredentials());
-    helper.stop();
   }
 }

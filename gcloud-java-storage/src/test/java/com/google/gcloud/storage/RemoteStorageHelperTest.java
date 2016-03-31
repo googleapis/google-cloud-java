@@ -17,6 +17,7 @@
 package com.google.gcloud.storage;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
@@ -139,7 +140,8 @@ public class RemoteStorageHelperTest {
     }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(RETRYABLE_EXCEPTION).anyTimes();
     EasyMock.replay(storageMock);
-    assertTrue(!RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME, 50, TimeUnit.MICROSECONDS));
+    assertFalse(
+        RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME, 50, TimeUnit.MICROSECONDS));
     EasyMock.verify(storageMock);
   }
 

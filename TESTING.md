@@ -13,18 +13,22 @@ This library provides tools to help write tests for code that uses the following
 
 You can test against a temporary local Datastore by following these steps:
 
-1. Start the local Datastore emulator before running your tests using `LocalDatastoreHelper`'s `start` method. This will create a temporary folder on your computer and bind a port for communication with the local datastore. There are two optional arguments for `start`: project ID and consistency. The consistency setting controls the fraction of Datastore writes that are immediately visible in global queries.
+1. Start the local Datastore emulator before running your tests using `LocalDatastoreHelper`'s `create` and `start` methods. This will create a temporary folder on your computer and bind a port for communication with the local Datastore. There are two optional arguments for `create`: project ID and consistency. The consistency setting controls the fraction of Datastore writes that are immediately visible in global queries.
   ```java
-  // Use defaults for project ID and consistency
-  LocalDatastoreHelper helper = LocalDatastoreHelper.start();
+  // Use a placeholder project ID and the default consistency setting of 0.9
+  LocalDatastoreHelper helper = LocalDatastoreHelper.create();
   // or explicitly provide them
-  helper = LocalDatastoreHelper.start("my-project-id", 0.6);
+  helper = LocalDatastoreHelper.create("my-project-id", 0.6);
+  
+  helper.start(); // Starts the local Datastore emulator in a separate process
   ```
 
-2. In your program, create and use a `Datastore` object with the options given by the `LocalDatastoreHelper` instance.  For example:
+2. Create and use a `Datastore` object with the options given by the `LocalDatastoreHelper` instance.  For example:
   ```java
   Datastore localDatastore = helper.options().service();
   ```
+  
+  Note that you must call `start` before `options()`; otherwise, you will see an `IOException` regarding a refused connection.
   
 3. Run your tests.
 
@@ -38,14 +42,19 @@ You can test against a temporary local Datastore by following these steps:
 You can test against a remote Datastore emulator as well.  To do this, set the `DatastoreOptions` project endpoint to the hostname of the remote machine, like the example below.
 
   ```java
-  DatastoreOptions options = LocalDatastoreHelper.options()
-      .toBuilder()
+  DatastoreOptions options = DatastoreOptions.builder()
+      .projectId("my-project-id") // must match project ID specified on remote machine
       .host("http://<hostname of machine>:<port>")
+      .authCredentials(AuthCredentials.noAuth())
       .build();
   Datastore localDatastore = options.service();
   ```
 
-Note that the remote Datastore emulator must be running before your tests are run.
+Note that the remote Datastore emulator must be running before running the code above. We recommend that you start the emulator on the remote machine using the [Google Cloud SDK](https://cloud.google.com/sdk/gcloud/reference/beta/emulators/datastore/) from command line, as shown below:
+
+```
+gcloud beta emulators datastore start
+```
 
 ### Testing code that uses Storage
 

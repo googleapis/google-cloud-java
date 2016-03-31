@@ -182,16 +182,14 @@ public class DatastoreExample {
 
   public static void main(String... args) {
     String projectId = args.length > 0 ? args[0] : null;
-    // If you want to access a local Datastore running via the gcd sdk, do
+    // If you want to access a local Datastore running via the Google Cloud SDK, do
     //   DatastoreOptions options = DatastoreOptions.builder()
     //       .projectId(projectId)
     //       .namespace(NAMESPACE)
-    //       .host("http://localhost:8080")
+    //       .host("http://localhost:8080") // change 8080 to the port that the emulator listens to
     //       .build();
-    DatastoreOptions options = DatastoreOptions.builder()
-        .projectId(projectId)
-        .namespace(NAMESPACE)
-        .build();
+    DatastoreOptions options =
+        DatastoreOptions.builder().projectId(projectId).namespace(NAMESPACE).build();
     String name = args.length > 1 ? args[1] : System.getProperty("user.name");
     Datastore datastore = options.service();
     KeyFactory keyFactory = datastore.newKeyFactory().kind(USER_KIND);

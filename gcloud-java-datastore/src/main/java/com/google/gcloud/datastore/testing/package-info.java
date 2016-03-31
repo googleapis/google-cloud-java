@@ -20,7 +20,8 @@
  * <p>A simple usage example:
  * <p>Before the test:
  * <pre> {@code
- * LocalDatastoreHelper helper = LocalDatastoreHelper.start();
+ * LocalDatastoreHelper helper = LocalDatastoreHelper.create();
+ * helper.start();
  * Datastore localDatastore = helper.options().service();
  * } </pre>
  *

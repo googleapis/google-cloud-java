@@ -85,8 +85,8 @@ public class ITStorageTest {
 
   @BeforeClass
   public static void beforeClass() {
-    RemoteStorageHelper gcsHelper = RemoteStorageHelper.create();
-    storage = gcsHelper.options().service();
+    RemoteStorageHelper helper = RemoteStorageHelper.create();
+    storage = helper.options().service();
     storage.create(BucketInfo.of(BUCKET));
   }
 
