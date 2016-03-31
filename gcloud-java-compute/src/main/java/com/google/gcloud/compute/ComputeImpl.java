@@ -292,6 +292,27 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
   }
 
+  private static class ImagePageFetcher implements NextPageFetcher<Image> {
+
+    private static final long serialVersionUID = 6403679803137922023L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+    private final String project;
+
+    ImagePageFetcher(String project, ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+      this.project = project;
+    }
+
+    @Override
+    public Page<Image> nextPage() {
+      return listImages(project, serviceOptions, requestOptions);
+    }
+  }
+
   private final ComputeRpc computeRpc;
 
   ComputeImpl(ComputeOptions options) {
@@ -1018,6 +1039,117 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             @Override
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.deleteSnapshot(snapshot, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation create(ImageInfo image, OperationOption... options) {
+    final ImageInfo completeImage = image.setProjectId(options().projectId());
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.createImage(completeImage.toPb(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Image get(ImageId imageId, ImageOption... options) {
+    final ImageId completeImageId = imageId.setProjectId(options().projectId());
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Image answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Image>() {
+            @Override
+            public com.google.api.services.compute.model.Image call() {
+              return computeRpc.getImage(completeImageId.project(), completeImageId.image(),
+                  optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Image.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<Image> listImages(String project, ImageListOption... options) {
+    return listImages(project, options(), optionMap(options));
+  }
+
+  @Override
+  public Page<Image> listImages(ImageListOption... options) {
+    return listImages(options().projectId(), options(), optionMap(options));
+  }
+
+  private static Page<Image> listImages(final String project, final ComputeOptions serviceOptions,
+      final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Image>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Image>> call() {
+              return serviceOptions.rpc().listImages(project, optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Image> images = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Image>of()
+              : result.y(),
+          new Function<com.google.api.services.compute.model.Image, Image>() {
+            @Override
+            public Image apply(com.google.api.services.compute.model.Image image) {
+              return Image.fromPb(serviceOptions.service(), image);
+            }
+          });
+      return new PageImpl<>(new ImagePageFetcher(project, serviceOptions, cursor, optionsMap),
+          cursor, images);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation delete(final ImageId image, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.deleteImage(image.image(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation deprecate(final ImageId image,
+      final DeprecationStatus<ImageId> deprecationStatus, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.deprecateImage(image.image(), deprecationStatus.toPb(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : Operation.fromPb(this, answer);

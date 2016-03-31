@@ -42,6 +42,10 @@ import com.google.gcloud.compute.Compute.DiskTypeAggregatedListOption;
 import com.google.gcloud.compute.Compute.DiskTypeFilter;
 import com.google.gcloud.compute.Compute.DiskTypeListOption;
 import com.google.gcloud.compute.Compute.DiskTypeOption;
+import com.google.gcloud.compute.Compute.ImageField;
+import com.google.gcloud.compute.Compute.ImageFilter;
+import com.google.gcloud.compute.Compute.ImageListOption;
+import com.google.gcloud.compute.Compute.ImageOption;
 import com.google.gcloud.compute.Compute.LicenseOption;
 import com.google.gcloud.compute.Compute.MachineTypeAggregatedListOption;
 import com.google.gcloud.compute.Compute.MachineTypeFilter;
@@ -190,6 +194,10 @@ public class ComputeImplTest {
   private static final DiskId DISK_ID = DiskId.of("project", "zone", "disk");
   private static final SnapshotId SNAPSHOT_ID = SnapshotId.of("project", "snapshot");
   private static final SnapshotInfo SNAPSHOT = SnapshotInfo.of(SNAPSHOT_ID, DISK_ID);
+  private static final ImageId IMAGE_ID = ImageId.of("project", "snapshot");
+  private static final ImageInfo IMAGE = ImageInfo.of(IMAGE_ID, DiskImageConfiguration.of(DISK_ID));
+  private static final DeprecationStatus<ImageId> DEPRECATION_STATUS =
+      DeprecationStatus.builder(DeprecationStatus.Status.DEPRECATED, IMAGE_ID).build();
 
   // Empty ComputeRpc options
   private static final Map<ComputeRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -337,7 +345,7 @@ public class ComputeImplTest {
       SnapshotFilter.equals(Compute.SnapshotField.DISK_SIZE_GB, 500L);
   private static final SnapshotListOption SNAPSHOT_LIST_PAGE_TOKEN =
       SnapshotListOption.pageToken("cursor");
-  private static final SnapshotListOption SNAPSHOT_LIST_MAX_RESULTS =
+  private static final SnapshotListOption SNAPSHOT_LIST_PAGE_SIZE =
       SnapshotListOption.pageSize(42L);
   private static final SnapshotListOption SNAPSHOT_LIST_FILTER =
       SnapshotListOption.filter(SNAPSHOT_FILTER);
@@ -345,6 +353,21 @@ public class ComputeImplTest {
       PAGE_TOKEN, "cursor",
       MAX_RESULTS, 42L,
       FILTER, "diskSizeGb eq 500");
+
+  // Image options
+  private static final ImageOption IMAGE_OPTION_FIELDS =
+      ImageOption.fields(ImageField.ID, ImageField.DESCRIPTION);
+
+  // Image list options
+  private static final ImageFilter IMAGE_FILTER =
+      ImageFilter.notEquals(ImageField.DISK_SIZE_GB, 500L);
+  private static final ImageListOption IMAGE_LIST_PAGE_TOKEN = ImageListOption.pageToken("cursor");
+  private static final ImageListOption IMAGE_LIST_PAGE_SIZE = ImageListOption.pageSize(42L);
+  private static final ImageListOption IMAGE_LIST_FILTER = ImageListOption.filter(IMAGE_FILTER);
+  private static final Map<ComputeRpc.Option, ?> IMAGE_LIST_OPTIONS = ImmutableMap.of(
+      PAGE_TOKEN, "cursor",
+      MAX_RESULTS, 42L,
+      FILTER, "diskSizeGb ne 500");
 
   private static final Function<Operation, com.google.api.services.compute.model.Operation>
       OPERATION_TO_PB_FUNCTION = new Function<Operation,
@@ -2046,6 +2069,32 @@ public class ComputeImplTest {
   }
 
   @Test
+  public void testListSnapshotsNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Snapshot> snapshotList = ImmutableList.of(
+        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)),
+        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
+    ImmutableList<Snapshot> nextSnapshotList = ImmutableList.of(
+        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> result =
+        Tuple.of(cursor, Iterables.transform(snapshotList, SnapshotInfo.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextSnapshotList, SnapshotInfo.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listSnapshots(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listSnapshots(nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Snapshot> page = compute.listSnapshots();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(snapshotList.toArray(), Iterables.toArray(page.values(), Snapshot.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextSnapshotList.toArray(), Iterables.toArray(page.values(), Snapshot.class));
+  }
+
+  @Test
   public void testListEmptySnapshots() {
     compute = options.service();
     ImmutableList<com.google.api.services.compute.model.Snapshot> snapshots = ImmutableList.of();
@@ -2069,10 +2118,261 @@ public class ComputeImplTest {
         Tuple.of(cursor, Iterables.transform(snapshotList, SnapshotInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listSnapshots(SNAPSHOT_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Snapshot> page = compute.listSnapshots(SNAPSHOT_LIST_MAX_RESULTS, SNAPSHOT_LIST_PAGE_TOKEN,
+    Page<Snapshot> page = compute.listSnapshots(SNAPSHOT_LIST_PAGE_SIZE, SNAPSHOT_LIST_PAGE_TOKEN,
         SNAPSHOT_LIST_FILTER);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(snapshotList.toArray(), Iterables.toArray(page.values(), Snapshot.class));
+  }
+
+  @Test
+  public void testCreateImage() {
+    EasyMock.expect(computeRpcMock.createImage(IMAGE.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.create(IMAGE);
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testCreateImageWithOptions() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.createImage(eq(IMAGE.toPb()), capture(capturedOptions)))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.create(IMAGE, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testGetImage() {
+    EasyMock.expect(
+        computeRpcMock.getImage(IMAGE_ID.project(), IMAGE_ID.image(), EMPTY_RPC_OPTIONS))
+            .andReturn(IMAGE.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Image image = compute.get(IMAGE_ID);
+    assertEquals(new Image(compute, new ImageInfo.BuilderImpl(IMAGE)), image);
+  }
+
+  @Test
+  public void testGetImage_Null() {
+    EasyMock.expect(
+        computeRpcMock.getImage(IMAGE_ID.project(), IMAGE_ID.image(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.get(IMAGE_ID));
+  }
+
+  @Test
+  public void testGetImageWithSelectedFields() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.getImage(eq(IMAGE_ID.project()), eq(IMAGE_ID.image()),
+        capture(capturedOptions))).andReturn(IMAGE.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Image image = compute.get(IMAGE_ID, IMAGE_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(IMAGE_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("sourceDisk"));
+    assertTrue(selector.contains("rawDisk"));
+    assertTrue(selector.contains("description"));
+    assertEquals(42, selector.length());
+    assertEquals(new Image(compute, new ImageInfo.BuilderImpl(IMAGE)), image);
+  }
+
+  @Test
+  public void testDeleteImage_Operation() {
+    EasyMock.expect(computeRpcMock.deleteImage(IMAGE_ID.image(), EMPTY_RPC_OPTIONS))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertEquals(globalOperation, compute.delete(IMAGE_ID));
+  }
+
+  @Test
+  public void testDeleteImageWithSelectedFields_Operation() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.deleteImage(eq(IMAGE_ID.image()), capture(capturedOptions)))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.delete(IMAGE_ID, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testDeleteImage_Null() {
+    EasyMock.expect(computeRpcMock.deleteImage(IMAGE_ID.image(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.delete(IMAGE_ID));
+  }
+
+  @Test
+  public void testDeprecateImage_Operation() {
+    EasyMock.expect(computeRpcMock.deprecateImage(IMAGE_ID.image(),
+        DEPRECATION_STATUS.toPb(), EMPTY_RPC_OPTIONS)).andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertEquals(globalOperation, compute.deprecate(IMAGE_ID, DEPRECATION_STATUS));
+  }
+
+  @Test
+  public void testDeprecateImageWithSelectedFields_Operation() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.deprecateImage(eq(IMAGE_ID.image()),
+        eq(DEPRECATION_STATUS.toPb()), capture(capturedOptions))).andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.deprecate(IMAGE_ID, DEPRECATION_STATUS, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testDeprecateImage_Null() {
+    EasyMock.expect(computeRpcMock.deprecateImage(IMAGE_ID.image(), DEPRECATION_STATUS.toPb(),
+        EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.deprecate(IMAGE_ID, DEPRECATION_STATUS));
+  }
+
+  @Test
+  public void testListImages() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Image> imageList = ImmutableList.of(
+        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
+        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
+        Tuple.of(cursor, Iterables.transform(imageList, ImageInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listImages(PROJECT, EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Image> page = compute.listImages();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(imageList.toArray(), Iterables.toArray(page.values(), Image.class));
+  }
+
+  @Test
+  public void testListImagesNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Image> imageList = ImmutableList.of(
+        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
+        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    ImmutableList<Image> nextImageList = ImmutableList.of(
+        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
+        Tuple.of(cursor, Iterables.transform(imageList, ImageInfo.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Image>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextImageList, ImageInfo.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listImages(PROJECT, EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listImages(PROJECT, nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Image> page = compute.listImages();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(imageList.toArray(), Iterables.toArray(page.values(), Image.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextImageList.toArray(), Iterables.toArray(page.values(), Image.class));
+  }
+
+  @Test
+  public void testListImagesForProject() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Image> imageList = ImmutableList.of(
+        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
+        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
+        Tuple.of(cursor, Iterables.transform(imageList, ImageInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listImages("otherProject", EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Image> page = compute.listImages("otherProject");
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(imageList.toArray(), Iterables.toArray(page.values(), Image.class));
+  }
+
+  @Test
+  public void testListEmptyImages() {
+    compute = options.service();
+    ImmutableList<com.google.api.services.compute.model.Image> images = ImmutableList.of();
+    Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Image>>of(null, images);
+    EasyMock.expect(computeRpcMock.listImages(PROJECT, EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Image> page = compute.listImages();
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(images.toArray(), Iterables.toArray(page.values(), Image.class));
+  }
+
+  @Test
+  public void testListEmptyImagesForProject() {
+    compute = options.service();
+    ImmutableList<com.google.api.services.compute.model.Image> images = ImmutableList.of();
+    Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Image>>of(null, images);
+    EasyMock.expect(computeRpcMock.listImages("otherProject", EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Image> page = compute.listImages("otherProject");
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(images.toArray(), Iterables.toArray(page.values(), Image.class));
+  }
+
+  @Test
+  public void testListImagesWithOptions() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Image> imageList = ImmutableList.of(
+        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
+        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
+        Tuple.of(cursor, Iterables.transform(imageList, ImageInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listImages(PROJECT, IMAGE_LIST_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Image> page = compute.listImages(IMAGE_LIST_PAGE_SIZE, IMAGE_LIST_PAGE_TOKEN,
+        IMAGE_LIST_FILTER);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(imageList.toArray(), Iterables.toArray(page.values(), Image.class));
+  }
+
+  @Test
+  public void testListImagesForProjectWithOptions() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Image> imageList = ImmutableList.of(
+        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
+        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
+        Tuple.of(cursor, Iterables.transform(imageList, ImageInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listImages("other", IMAGE_LIST_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Image> page = compute.listImages("other", IMAGE_LIST_PAGE_SIZE, IMAGE_LIST_PAGE_TOKEN,
+        IMAGE_LIST_FILTER);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(imageList.toArray(), Iterables.toArray(page.values(), Image.class));
   }
 
   @Test

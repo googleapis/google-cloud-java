@@ -30,10 +30,13 @@ import com.google.api.services.compute.model.Address;
 import com.google.api.services.compute.model.AddressAggregatedList;
 import com.google.api.services.compute.model.AddressList;
 import com.google.api.services.compute.model.AddressesScopedList;
+import com.google.api.services.compute.model.DeprecationStatus;
 import com.google.api.services.compute.model.DiskType;
 import com.google.api.services.compute.model.DiskTypeAggregatedList;
 import com.google.api.services.compute.model.DiskTypeList;
 import com.google.api.services.compute.model.DiskTypesScopedList;
+import com.google.api.services.compute.model.Image;
+import com.google.api.services.compute.model.ImageList;
 import com.google.api.services.compute.model.License;
 import com.google.api.services.compute.model.MachineType;
 import com.google.api.services.compute.model.MachineTypeAggregatedList;
@@ -557,6 +560,72 @@ public class DefaultComputeRpc implements ComputeRpc {
     try {
       return compute.snapshots()
           .delete(this.options.projectId(), snapshot)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation createImage(Image image, Map<Option, ?> options) {
+    try {
+      return compute.images()
+          .insert(this.options.projectId(), image)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Image getImage(String project, String image, Map<Option, ?> options) {
+    try {
+      return compute.images()
+          .get(project, image)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Image>> listImages(String project, Map<Option, ?> options) {
+    try {
+      ImageList imageList = compute.images()
+          .list(project)
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
+          .execute();
+      Iterable<Image> images = imageList.getItems();
+      return Tuple.of(imageList.getNextPageToken(), images);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Operation deleteImage(String image, Map<Option, ?> options) {
+    try {
+      return compute.images()
+          .delete(this.options.projectId(), image)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation deprecateImage(String image, DeprecationStatus deprecationStatus,
+      Map<Option, ?> options) {
+    try {
+      return compute.images()
+          .deprecate(this.options.projectId(), image, deprecationStatus)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
