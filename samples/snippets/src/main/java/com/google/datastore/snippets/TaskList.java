@@ -56,7 +56,7 @@ public class TaskList {
   Key addTask(String description) {
     Key key = datastore.allocateId(keyFactory.newKey());
     Entity task = Entity.builder(key)
-        .set("description", StringValue.builder(description).indexed(false).build())
+        .set("description", StringValue.builder(description).excludeFromIndexes(true).build())
         .set("created", DateTime.now())
         .set("done", false)
         .build();

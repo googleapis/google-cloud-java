@@ -43,11 +43,11 @@ import com.google.gcloud.datastore.ProjectionEntity;
 import com.google.gcloud.datastore.Query;
 import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.QueryResults;
+import com.google.gcloud.datastore.ReadOption;
 import com.google.gcloud.datastore.StringValue;
 import com.google.gcloud.datastore.StructuredQuery;
 import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
-import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.datastore.Transaction;
 import com.google.gcloud.datastore.testing.LocalGcdHelper;
@@ -373,7 +373,8 @@ public class Concepts {
         .set("priority", 4)
         .set("created", includedDate)
         .set("percent_complete", 10.0)
-        .set("description", StringValue.builder("Learn Cloud Datastore").indexed(false).build())
+        .set("description",
+            StringValue.builder("Learn Cloud Datastore").excludeFromIndexes(true).build())
         .set("tag", "fun", "l", "programming")
         .build());
   }
@@ -512,7 +513,7 @@ public class Concepts {
     // [START projection_query]
     Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
         .kind("Task")
-        .projection(Projection.property("priority"), Projection.property("percent_complete"))
+        .projection("priority", "percent_complete")
         .build();
     // [END projection_query]
     assertValidQuery(query);
@@ -523,7 +524,7 @@ public class Concepts {
     setUpQueryTests();
     Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
         .kind("Task")
-        .projection(Projection.property("priority"), Projection.property("percent_complete"))
+        .projection("priority", "percent_complete")
         .build();
     // [START run_query_projection]
     List<Long> priorities = new LinkedList<>();
@@ -565,8 +566,8 @@ public class Concepts {
     // [START distinct_query]
     Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
         .kind("Task")
-        .projection(Projection.property("type"), Projection.property("priority"))
-        .groupBy("type", "priority")
+        .projection("type", "priority")
+        .distinctOn("type", "priority")
         .orderBy(OrderBy.asc("type"), OrderBy.asc("priority"))
         .build();
     // [END distinct_query]
@@ -579,8 +580,8 @@ public class Concepts {
     // [START distinct_on_query]
     Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
         .kind("Task")
-        .projection(Projection.property("type"), Projection.first("priority"))
-        .groupBy("type")
+        .projection("type", "priority")
+        .distinctOn("type")
         .orderBy(OrderBy.asc("type"), OrderBy.asc("priority"))
         .build();
     // [END distinct_on_query]
@@ -726,9 +727,16 @@ public class Concepts {
 
   @Test
   public void testEventualConsistentQuery() {
+    setUpQueryTests();
     // [START eventual_consistent_query]
-    // Read consistency cannot be specified in gcloud-java.
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Task")
+        .filter(PropertyFilter.hasAncestor(
+            datastore.newKeyFactory().kind("TaskList").newKey("default")))
+        .build();
+    datastore.run(query, ReadOption.eventualConsistency());
     // [END eventual_consistent_query]
+    assertValidQuery(query);
   }
 
   @Test
