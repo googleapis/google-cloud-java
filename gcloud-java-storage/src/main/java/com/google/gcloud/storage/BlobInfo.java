@@ -57,9 +57,9 @@ public class BlobInfo implements Serializable {
         }
       };
 
-  private static final long serialVersionUID = 2228487739943277159L;
+  private static final long serialVersionUID = -5625857076205028976L;
   private final BlobId blobId;
-  private final String id;
+  private final String generatedId;
   private final String selfLink;
   private final String cacheControl;
   private final List<Acl> acl;
@@ -101,7 +101,7 @@ public class BlobInfo implements Serializable {
      */
     public abstract Builder blobId(BlobId blobId);
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     /**
      * Sets the blob's data content type.
@@ -199,7 +199,7 @@ public class BlobInfo implements Serializable {
   static final class BuilderImpl extends Builder {
 
     private BlobId blobId;
-    private String id;
+    private String generatedId;
     private String contentType;
     private String contentEncoding;
     private String contentDisposition;
@@ -226,7 +226,7 @@ public class BlobInfo implements Serializable {
 
     BuilderImpl(BlobInfo blobInfo) {
       blobId = blobInfo.blobId;
-      id = blobInfo.id;
+      generatedId = blobInfo.generatedId;
       cacheControl = blobInfo.cacheControl;
       contentEncoding = blobInfo.contentEncoding;
       contentType = blobInfo.contentType;
@@ -255,8 +255,8 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -384,7 +384,7 @@ public class BlobInfo implements Serializable {
 
   BlobInfo(BuilderImpl builder) {
     blobId = builder.blobId;
-    id = builder.id;
+    generatedId = builder.generatedId;
     cacheControl = builder.cacheControl;
     contentEncoding = builder.contentEncoding;
     contentType = builder.contentType;
@@ -421,10 +421,10 @@ public class BlobInfo implements Serializable {
   }
 
   /**
-   * Returns the blob's id.
+   * Returns the service-generated for the blob.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -684,7 +684,7 @@ public class BlobInfo implements Serializable {
     storageObject.setComponentCount(componentCount);
     storageObject.setContentLanguage(contentLanguage);
     storageObject.setEtag(etag);
-    storageObject.setId(id);
+    storageObject.setId(generatedId);
     storageObject.setSelfLink(selfLink);
     return storageObject;
   }
@@ -757,7 +757,7 @@ public class BlobInfo implements Serializable {
       builder.etag(storageObject.getEtag());
     }
     if (storageObject.getId() != null) {
-      builder.id(storageObject.getId());
+      builder.generatedId(storageObject.getId());
     }
     if (storageObject.getSelfLink() != null) {
       builder.selfLink(storageObject.getSelfLink());

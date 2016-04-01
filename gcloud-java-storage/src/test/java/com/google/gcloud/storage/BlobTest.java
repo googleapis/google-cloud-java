@@ -64,7 +64,7 @@ public class BlobTest {
   private static final Long DELETE_TIME = System.currentTimeMillis();
   private static final String ETAG = "0xFF00";
   private static final Long GENERATION = 1L;
-  private static final String ID = "B/N:1";
+  private static final String GENERATED_ID = "B/N:1";
   private static final String MD5 = "0xFF00";
   private static final String MEDIA_LINK = "http://media/b/n";
   private static final Map<String, String> METADATA = ImmutableMap.of("n1", "v1", "n2", "v2");
@@ -84,7 +84,7 @@ public class BlobTest {
       .crc32c(CRC32)
       .deleteTime(DELETE_TIME)
       .etag(ETAG)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .md5(MD5)
       .mediaLink(MEDIA_LINK)
       .metadata(METADATA)
@@ -338,7 +338,7 @@ public class BlobTest {
         .crc32c(CRC32)
         .deleteTime(DELETE_TIME)
         .etag(ETAG)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .md5(MD5)
         .mediaLink(MEDIA_LINK)
         .metadata(METADATA)
@@ -360,7 +360,7 @@ public class BlobTest {
     assertEquals(CRC32, blob.crc32c());
     assertEquals(DELETE_TIME, blob.deleteTime());
     assertEquals(ETAG, blob.etag());
-    assertEquals(ID, blob.id());
+    assertEquals(GENERATED_ID, blob.generatedId());
     assertEquals(MD5, blob.md5());
     assertEquals(MEDIA_LINK, blob.mediaLink());
     assertEquals(METADATA, blob.metadata());
@@ -387,7 +387,7 @@ public class BlobTest {
     assertNull(blob.crc32c());
     assertNull(blob.deleteTime());
     assertNull(blob.etag());
-    assertNull(blob.id());
+    assertNull(blob.generatedId());
     assertNull(blob.md5());
     assertNull(blob.mediaLink());
     assertNull(blob.metadata());

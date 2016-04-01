@@ -122,7 +122,7 @@ public class ITStorageTest {
     Bucket remoteBucket = storage.get(BUCKET, Storage.BucketGetOption.fields(BucketField.ID));
     assertEquals(BUCKET, remoteBucket.name());
     assertNull(remoteBucket.createTime());
-    assertNotNull(remoteBucket.id());
+    assertNotNull(remoteBucket.generatedId());
   }
 
   @Test
@@ -256,7 +256,7 @@ public class ITStorageTest {
     assertEquals(blob.bucket(), remoteBlob.bucket());
     assertEquals(blob.name(), remoteBlob.name());
     assertEquals(ImmutableMap.of("k", "v"), remoteBlob.metadata());
-    assertNotNull(remoteBlob.id());
+    assertNotNull(remoteBlob.generatedId());
     assertNotNull(remoteBlob.selfLink());
     assertTrue(remoteBlob.delete());
   }
