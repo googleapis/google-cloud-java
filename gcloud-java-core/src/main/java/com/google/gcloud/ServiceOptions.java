@@ -27,6 +27,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.common.collect.Iterables;
+import com.google.common.io.Files;
 import com.google.gcloud.spi.ServiceRpcFactory;
 
 import java.io.BufferedReader;
@@ -42,6 +43,7 @@ import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Objects;
@@ -381,6 +383,18 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return projectId != null ? projectId : googleCloudProjectId();
   }
 
+  private static String activeGoogleCloudConfig(File configDir) {
+    String activeGoogleCloudConfig = null;
+    try {
+      activeGoogleCloudConfig =
+          Files.readFirstLine(new File(configDir, "active_config"), Charset.defaultCharset());
+    } catch (IOException ex) {
+      // ignore
+    }
+    // if reading active_config failed or the file is empty we try default
+    return firstNonNull(activeGoogleCloudConfig, "default");
+  }
+
   protected static String googleCloudProjectId() {
     File configDir;
     if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
@@ -390,9 +404,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     } else {
       configDir = new File(System.getProperty("user.home"), ".config/gcloud");
     }
+    String activeConfig = activeGoogleCloudConfig(configDir);
     FileReader fileReader = null;
     try {
-      fileReader = new FileReader(new File(configDir, "configurations/config_default"));
+      fileReader = new FileReader(new File(configDir, "configurations/config_" + activeConfig));
     } catch (FileNotFoundException newConfigFileNotFoundEx) {
       try {
         fileReader = new FileReader(new File(configDir, "properties"));
