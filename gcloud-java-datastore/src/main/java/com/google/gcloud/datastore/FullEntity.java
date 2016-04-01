@@ -16,8 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.api.services.datastore.DatastoreV1;
-
 /**
  * A full entity is a {@link BaseEntity} that holds all the properties associated with a
  * Datastore entity (as opposed to {@link ProjectionEntity}).
@@ -71,7 +69,7 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
   }
 
 
-  static FullEntity<?> fromPb(DatastoreV1.Entity entityPb) {
+  static FullEntity<?> fromPb(com.google.datastore.v1beta3.Entity entityPb) {
     return new Builder<>().fill(entityPb).build();
   }
 }

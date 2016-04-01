@@ -54,6 +54,7 @@
  * project ID</a> and
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java#authentication">provide
  * credentials</a>.
+ *
  * @see <a href="https://cloud.google.com/datastore/">Google Cloud Datastore</a>
  */
 package com.google.gcloud.datastore;

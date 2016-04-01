@@ -20,6 +20,8 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.Maps;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -33,13 +35,16 @@ class DatastoreHelper {
   private DatastoreHelper() {
   }
 
-
   static Key allocateId(Datastore service, IncompleteKey key) {
     return service.allocateId(new IncompleteKey[]{key}).get(0);
   }
 
-  static Entity get(DatastoreReader reader, Key key) {
-    return Iterators.getNext(reader.get(new Key[]{key}), null);
+  static Entity get(Transaction reader, Key key) {
+    return Iterators.getNext(reader.get(new Key[] {key}), null);
+  }
+
+  static Entity get(Datastore reader, Key key, ReadOption... options) {
+    return Iterators.getNext(reader.get(Collections.singletonList(key), options), null);
   }
 
   static Entity add(DatastoreWriter writer, FullEntity<?> entity) {
@@ -51,11 +56,22 @@ class DatastoreHelper {
   }
 
   /**
-   * Returns a list with a value for each given key (ordered by input).
-   * A {@code null} would be returned for non-existing keys.
+   * Returns a list with a value for each given key (ordered by input). {@code null} values are
+   * returned for nonexistent keys.
    */
-  static List<Entity> fetch(DatastoreReader reader, Key... keys) {
-    Iterator<Entity> entities = reader.get(keys);
+  static List<Entity> fetch(Transaction reader, Key... keys) {
+    return compileEntities(keys, reader.get(keys));
+  }
+
+  /**
+   * Returns a list with a value for each given key (ordered by input). {@code null} values are
+   * returned for nonexistent keys.
+   */
+  static List<Entity> fetch(Datastore reader, Key[] keys, ReadOption... options) {
+    return compileEntities(keys, reader.get(Arrays.asList(keys), options));
+  }
+
+  private static List<Entity> compileEntities(Key[] keys, Iterator<Entity> entities) {
     Map<Key, Entity> map = Maps.newHashMapWithExpectedSize(keys.length);
     while (entities.hasNext()) {
       Entity entity = entities.next();
@@ -63,15 +79,14 @@ class DatastoreHelper {
     }
     List<Entity> list = new ArrayList<>(keys.length);
     for (Key key : keys) {
-      // this will include nulls for non-existing keys
+      // this will include nulls for nonexistent keys
       list.add(map.get(key));
     }
     return list;
   }
 
-  static <T> T runInTransaction(Datastore datastore,
-      Datastore.TransactionCallable<T> callable, TransactionOption... options) {
-    Transaction transaction = datastore.newTransaction(options);
+  static <T> T runInTransaction(Datastore datastore, Datastore.TransactionCallable<T> callable) {
+    Transaction transaction = datastore.newTransaction();
     try {
       T value = callable.run(transaction);
       transaction.commit();

@@ -25,7 +25,6 @@ import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.gcloud.datastore.StructuredQuery.Filter;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
-import com.google.gcloud.datastore.StructuredQuery.Projection;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 
 import org.junit.Test;
@@ -45,12 +44,12 @@ public class StructuredQueryTest {
   private static final OrderBy ORDER_BY_1 = OrderBy.asc("p2");
   private static final OrderBy ORDER_BY_2 = OrderBy.desc("p3");
   private static final List<OrderBy> ORDER_BY = ImmutableList.of(ORDER_BY_1, ORDER_BY_2);
-  private static final Projection PROJECTION1 = Projection.property("p4");
-  private static final Projection PROJECTION2 = Projection.property("p5");
-  private static final List<Projection> PROJECTION = ImmutableList.of(PROJECTION1, PROJECTION2);
-  private static final String GROUP_BY1 = "p6";
-  private static final String GROUP_BY2 = "p7";
-  private static final List<String> GROUP_BY = ImmutableList.of(GROUP_BY1, GROUP_BY2);
+  private static final String PROJECTION1 = "p4";
+  private static final String PROJECTION2 = "p5";
+  private static final List<String> PROJECTION = ImmutableList.of(PROJECTION1, PROJECTION2);
+  private static final String DISTINCT_ON1 = "p6";
+  private static final String DISTINCT_ON2 = "p7";
+  private static final List<String> DISTINCT_ON = ImmutableList.of(DISTINCT_ON1, DISTINCT_ON2);
   private static final EntityQuery ENTITY_QUERY = Query.entityQueryBuilder()
       .namespace(NAMESPACE)
       .kind(KIND)
@@ -82,30 +81,28 @@ public class StructuredQueryTest {
           .filter(FILTER)
           .orderBy(ORDER_BY_1, ORDER_BY_2)
           .projection(PROJECTION1, PROJECTION2)
-          .groupBy(GROUP_BY1, GROUP_BY2)
+          .distinctOn(DISTINCT_ON1, DISTINCT_ON2)
           .build();
 
   @Test
   public void testEntityQueryBuilder() {
     compareBaseBuilderFields(ENTITY_QUERY);
     assertTrue(ENTITY_QUERY.projection().isEmpty());
-    assertTrue(ENTITY_QUERY.groupBy().isEmpty());
+    assertTrue(ENTITY_QUERY.distinctOn().isEmpty());
   }
 
   @Test
   public void testKeyQueryBuilder() {
     compareBaseBuilderFields(KEY_QUERY);
-    assertEquals(
-        ImmutableList.of(Projection.property(StructuredQuery.KEY_PROPERTY_NAME)),
-        KEY_QUERY.projection());
-    assertTrue(KEY_QUERY.groupBy().isEmpty());
+    assertEquals(ImmutableList.of(StructuredQuery.KEY_PROPERTY_NAME), KEY_QUERY.projection());
+    assertTrue(KEY_QUERY.distinctOn().isEmpty());
   }
 
   @Test
   public void testProjectionEntityQueryBuilder() {
     compareBaseBuilderFields(PROJECTION_QUERY);
     assertEquals(PROJECTION, PROJECTION_QUERY.projection());
-    assertEquals(GROUP_BY, PROJECTION_QUERY.groupBy());
+    assertEquals(DISTINCT_ON, PROJECTION_QUERY.distinctOn());
   }
 
   private void compareBaseBuilderFields(StructuredQuery<?> query) {
@@ -138,7 +135,7 @@ public class StructuredQueryTest {
     assertEquals(expected.filter(), actual.filter());
     assertEquals(expected.orderBy(), actual.orderBy());
     assertEquals(expected.projection(), actual.projection());
-    assertEquals(expected.groupBy(), actual.groupBy());
+    assertEquals(expected.distinctOn(), actual.distinctOn());
   }
 
   @Test

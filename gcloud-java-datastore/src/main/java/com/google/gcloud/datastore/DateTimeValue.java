@@ -16,9 +16,7 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.api.services.datastore.DatastoreV1.Value.TIMESTAMP_MICROSECONDS_VALUE_FIELD_NUMBER;
-
-import com.google.api.services.datastore.DatastoreV1;
+import static com.google.datastore.v1beta3.Value.TIMESTAMP_VALUE_FIELD_NUMBER;
 
 public final class DateTimeValue extends Value<DateTime> {
 
@@ -31,7 +29,7 @@ public final class DateTimeValue extends Value<DateTime> {
 
         @Override
         public int getProtoFieldId() {
-          return TIMESTAMP_MICROSECONDS_VALUE_FIELD_NUMBER;
+          return TIMESTAMP_VALUE_FIELD_NUMBER;
         }
 
         @Override
@@ -40,13 +38,14 @@ public final class DateTimeValue extends Value<DateTime> {
         }
 
         @Override
-        protected DateTime getValue(DatastoreV1.Value from) {
-          return new DateTime(from.getTimestampMicrosecondsValue());
+        protected DateTime getValue(com.google.datastore.v1beta3.Value from) {
+          return new DateTime(DateTime.timestampPbToMicroseconds(from.getTimestampValue()));
         }
 
         @Override
-        protected void setValue(DateTimeValue from, DatastoreV1.Value.Builder to) {
-          to.setTimestampMicrosecondsValue(from.get().timestampMicroseconds());
+        protected void setValue(DateTimeValue from, com.google.datastore.v1beta3.Value.Builder to) {
+          to.setTimestampValue(DateTime.microsecondsToTimestampPb(from.get()
+              .timestampMicroseconds()));
         }
       };
 

@@ -16,8 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.api.services.datastore.DatastoreV1;
-
 /**
  * An implementation of a Google Cloud Datastore entity query that can be constructed by providing
  * all the specific query elements.
@@ -43,10 +41,10 @@ public final class EntityQuery extends StructuredQuery<Entity> {
     }
 
     @Override
-    Builder mergeFrom(DatastoreV1.Query queryPb) {
+    Builder mergeFrom(com.google.datastore.v1beta3.Query queryPb) {
       super.mergeFrom(queryPb);
       clearProjection();
-      clearGroupBy();
+      clearDistinctOn();
       return this;
     }
 

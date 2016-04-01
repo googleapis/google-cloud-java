@@ -16,7 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.api.services.datastore.DatastoreV1;
 import com.google.protobuf.ByteString;
 
 /**
@@ -56,7 +55,7 @@ public final class ProjectionEntity extends BaseEntity<Key> {
   @Override
   public DateTime getDateTime(String name) {
     Value<?> value = getValue(name);
-    if (value.hasMeaning() && value.meaning() == 18 && value instanceof LongValue) {
+    if (value.meaning() == 18 && value instanceof LongValue) {
       return new DateTime(getLong(name));
     }
     return ((Value<DateTime>) value).get();
@@ -66,13 +65,13 @@ public final class ProjectionEntity extends BaseEntity<Key> {
   @Override
   public Blob getBlob(String name) {
     Value<?> value = getValue(name);
-    if (value.hasMeaning() && value.meaning() == 18 && value instanceof StringValue) {
+    if (value.meaning() == 18 && value instanceof StringValue) {
       return new Blob(ByteString.copyFromUtf8(getString(name)));
     }
     return ((Value<Blob>) value).get();
   }
 
-  static ProjectionEntity fromPb(DatastoreV1.Entity entityPb) {
+  static ProjectionEntity fromPb(com.google.datastore.v1beta3.Entity entityPb) {
     return new Builder().fill(entityPb).build();
   }
 

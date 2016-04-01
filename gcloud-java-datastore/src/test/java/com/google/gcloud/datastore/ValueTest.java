@@ -18,7 +18,6 @@ package com.google.gcloud.datastore;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
@@ -42,21 +41,24 @@ public class ValueTest {
   private static final NullValue NULL_VALUE = NullValue.of();
   private static final StringValue STRING_VALUE = StringValue.of("hello");
   private static final RawValue RAW_VALUE = RawValue.of(STRING_VALUE.toPb());
+  private static final LatLngValue LAT_LNG_VALUE =
+      LatLngValue.of(new LatLng(37.422035, -122.084124));
   private static final ImmutableMap<ValueType, Object[]> TYPES =
       ImmutableMap.<ValueType, Object[]>builder()
-      .put(ValueType.NULL, new Object[] {NullValue.class, NULL_VALUE.get()})
-      .put(ValueType.KEY, new Object[] {KeyValue.class, KEY})
-      .put(ValueType.BLOB, new Object[] {BlobValue.class, BLOB})
-      .put(ValueType.BOOLEAN, new Object[] {BooleanValue.class, Boolean.TRUE})
-      .put(ValueType.DATE_TIME, new Object[] {DateTimeValue.class, DATE_TIME})
-      .put(ValueType.DOUBLE, new Object[] {DoubleValue.class, 1.25D})
-      .put(ValueType.ENTITY, new Object[] {EntityValue.class, ENTITY})
-      .put(ValueType.LIST,
-          new Object[] {ListValue.class, ImmutableList.of(NULL_VALUE, STRING_VALUE, RAW_VALUE)})
-      .put(ValueType.LONG, new Object[] {LongValue.class, 123L})
-      .put(ValueType.RAW_VALUE, new Object[] {RawValue.class, RAW_VALUE.get()})
-      .put(ValueType.STRING, new Object[] {StringValue.class, STRING_VALUE.get()})
-      .build();
+          .put(ValueType.NULL, new Object[] {NullValue.class, NULL_VALUE.get()})
+          .put(ValueType.KEY, new Object[] {KeyValue.class, KEY})
+          .put(ValueType.BLOB, new Object[] {BlobValue.class, BLOB})
+          .put(ValueType.BOOLEAN, new Object[] {BooleanValue.class, Boolean.TRUE})
+          .put(ValueType.DATE_TIME, new Object[] {DateTimeValue.class, DATE_TIME})
+          .put(ValueType.DOUBLE, new Object[] {DoubleValue.class, 1.25D})
+          .put(ValueType.ENTITY, new Object[] {EntityValue.class, ENTITY})
+          .put(ValueType.LIST, new Object[] {
+              ListValue.class, ImmutableList.of(NULL_VALUE, STRING_VALUE, RAW_VALUE)})
+          .put(ValueType.LONG, new Object[] {LongValue.class, 123L})
+          .put(ValueType.RAW_VALUE, new Object[] {RawValue.class, RAW_VALUE.get()})
+          .put(ValueType.LAT_LNG, new Object[] {LatLngValue.class, LAT_LNG_VALUE.get()})
+          .put(ValueType.STRING, new Object[] {StringValue.class, STRING_VALUE.get()})
+          .build();
 
   private ImmutableMap<ValueType, Value<?>> typeToValue;
 
@@ -119,67 +121,21 @@ public class ValueTest {
   }
 
   @Test
-  public void testHasIndexed() throws Exception {
+  public void testExcludeFromIndexes() throws Exception {
     for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
-      ValueType valueType = entry.getKey();
-      Boolean indexed = entry.getValue().hasIndexed();
-      switch (valueType) {
-        case ENTITY:
-          assertTrue(indexed);
-          break;
-        default:
-          assertFalse(indexed);
-          break;
-      }
+      assertFalse(entry.getValue().excludeFromIndexes());
     }
-
     TestBuilder builder = new TestBuilder();
-    assertFalse(builder.build().hasIndexed());
-    assertTrue(builder.indexed(false).build().hasIndexed());
-    assertTrue(builder.indexed(true).build().hasIndexed());
-  }
-
-  @Test
-  public void testIndexed() throws Exception {
-    for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
-      ValueType valueType = entry.getKey();
-      Boolean indexed = entry.getValue().indexed();
-      switch (valueType) {
-        case ENTITY:
-          assertFalse(indexed);
-          break;
-        default:
-          assertNull(indexed);
-          break;
-      }
-    }
-
-    TestBuilder builder = new TestBuilder();
-    assertNull(builder.build().indexed());
-    assertFalse(builder.indexed(false).build().indexed());
-    assertTrue(builder.indexed(true).build().indexed());
-  }
-
-  @SuppressWarnings("deprecation")
-  @Test
-  public void testHasMeaning() throws Exception {
-    for (Value<?> value : typeToValue.values()) {
-      assertFalse(value.hasMeaning());
-    }
-
-    TestBuilder builder = new TestBuilder();
-    assertTrue(builder.meaning(10).build().hasMeaning());
+    assertFalse(builder.build().excludeFromIndexes());
+    assertTrue(builder.excludeFromIndexes(true).build().excludeFromIndexes());
+    assertFalse(builder.excludeFromIndexes(false).build().excludeFromIndexes());
   }
 
   @SuppressWarnings("deprecation")
   @Test
   public void testMeaning() throws Exception {
-    for (Value<?> value : typeToValue.values()) {
-      assertNull(value.meaning());
-    }
-
     TestBuilder builder = new TestBuilder();
-    assertEquals(Integer.valueOf(10), builder.meaning(10).build().meaning());
+    assertEquals(10, builder.meaning(10).build().meaning());
   }
 
   @Test
@@ -201,12 +157,11 @@ public class ValueTest {
     Set<String> content = Collections.singleton("bla");
     @SuppressWarnings("rawtypes")
     ValueBuilder builder = new TestBuilder();
-    builder.meaning(1).set(content).indexed(true);
+    builder.meaning(1).set(content).excludeFromIndexes(true);
     Value<?> value = builder.build();
     builder = value.toBuilder();
-    assertEquals(Integer.valueOf(1), value.meaning());
-    assertTrue(value.hasIndexed());
-    assertTrue(value.indexed());
+    assertEquals(1, value.meaning());
+    assertTrue(value.excludeFromIndexes());
     assertEquals(ValueType.LIST, value.type());
     assertEquals(content, value.get());
     assertEquals(value, builder.build());

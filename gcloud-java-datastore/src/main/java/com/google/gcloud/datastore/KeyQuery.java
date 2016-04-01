@@ -16,8 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.api.services.datastore.DatastoreV1;
-
 /**
  * An implementation of a Google Cloud Datastore key-only query that can be constructed by providing
  * all the specific query elements.
@@ -40,14 +38,14 @@ public final class KeyQuery extends StructuredQuery<Key> {
 
     Builder() {
       super(ResultType.KEY);
-      projection(Projection.property(KEY_PROPERTY_NAME));
+      projection(KEY_PROPERTY_NAME);
     }
 
     @Override
-    Builder mergeFrom(DatastoreV1.Query queryPb) {
+    Builder mergeFrom(com.google.datastore.v1beta3.Query queryPb) {
       super.mergeFrom(queryPb);
-      projection(Projection.property(KEY_PROPERTY_NAME));
-      clearGroupBy();
+      projection(KEY_PROPERTY_NAME);
+      clearDistinctOn();
       return this;
     }
 

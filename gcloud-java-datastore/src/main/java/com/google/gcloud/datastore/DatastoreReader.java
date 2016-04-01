@@ -25,18 +25,17 @@ import java.util.List;
 public interface DatastoreReader {
 
   /**
-   * Returns an {@link Entity} for the given {@link Key} or {@code null} if does not exists.
+   * Returns an {@link Entity} for the given {@link Key} or {@code null} if it doesn't exist.
    *
    * @throws DatastoreException upon failure
    */
   Entity get(Key key);
 
   /**
-   * Returns an {@link Entity} for each given {@link Key} that exists in the Datastore.
-   * The order of the result is unspecified.
-   * Results are loaded lazily therefore it is possible to get a {@code DatastoreException}
-   * from the returned {@code Iterator}'s {@link Iterator#hasNext hasNext} or
-   * {@link Iterator#next next} methods.
+   * Returns an {@link Entity} for each given {@link Key} that exists in the Datastore. The order of
+   * the result is unspecified. Results are loaded lazily, so it is possible to get a
+   * {@code DatastoreException} from the returned {@code Iterator}'s
+   * {@link Iterator#hasNext hasNext} or {@link Iterator#next next} methods.
    *
    * @throws DatastoreException upon failure
    * @see #get(Key)
@@ -44,14 +43,14 @@ public interface DatastoreReader {
   Iterator<Entity> get(Key... key);
 
   /**
-   * Returns a list with a value for each given key (ordered by input).
-   * A {@code null} would be returned for non-existing keys.
-   * When possible prefer using {@link #get(Key...)} which does not eagerly loads the results.
+   * Returns a list with a value for each given key (ordered by input). {@code null} values are
+   * returned for nonexistent keys. When possible prefer using {@link #get(Key...)} to avoid eagerly
+   * loading the results.
    */
   List<Entity> fetch(Key... keys);
 
   /**
-   * Submit a {@link Query} and returns its result.
+   * Submits a {@link Query} and returns its result.
    *
    * @throws DatastoreException upon failure
    */

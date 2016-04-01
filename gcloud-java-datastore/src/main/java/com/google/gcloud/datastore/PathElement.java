@@ -19,7 +19,6 @@ package com.google.gcloud.datastore;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Strings;
 import com.google.protobuf.InvalidProtocolBufferException;
 
@@ -28,7 +27,7 @@ import java.util.Objects;
 /**
  * Represents a single element in a key's path.
  */
-public final class PathElement extends Serializable<DatastoreV1.Key.PathElement> {
+public final class PathElement extends Serializable<com.google.datastore.v1beta3.Key.PathElement> {
 
   private static final long serialVersionUID = -7968078857690784595L;
 
@@ -86,8 +85,9 @@ public final class PathElement extends Serializable<DatastoreV1.Key.PathElement>
   }
 
   @Override
-  DatastoreV1.Key.PathElement toPb() {
-    DatastoreV1.Key.PathElement.Builder pathElementPb = DatastoreV1.Key.PathElement.newBuilder();
+  com.google.datastore.v1beta3.Key.PathElement toPb() {
+    com.google.datastore.v1beta3.Key.PathElement.Builder pathElementPb =
+        com.google.datastore.v1beta3.Key.PathElement.newBuilder();
     pathElementPb.setKind(kind);
     if (id != null) {
       pathElementPb.setId(id);
@@ -99,18 +99,19 @@ public final class PathElement extends Serializable<DatastoreV1.Key.PathElement>
 
   @Override
   Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(DatastoreV1.Key.PathElement.parseFrom(bytesPb));
+    return fromPb(com.google.datastore.v1beta3.Key.PathElement.parseFrom(bytesPb));
   }
 
-  static PathElement fromPb(DatastoreV1.Key.PathElement pathElementPb) {
+  static PathElement fromPb(com.google.datastore.v1beta3.Key.PathElement pathElementPb) {
     String kind = pathElementPb.getKind();
-    if (pathElementPb.hasId()) {
-      return of(kind, pathElementPb.getId());
+    switch (pathElementPb.getIdTypeCase()) {
+      case ID:
+        return of(kind, pathElementPb.getId());
+      case NAME:
+        return of(kind, pathElementPb.getName());
+      default:
+        return of(kind);
     }
-    if (pathElementPb.hasName()) {
-      return of(kind, pathElementPb.getName());
-    }
-    return of(kind);
   }
 
   static PathElement of(String kind) {
