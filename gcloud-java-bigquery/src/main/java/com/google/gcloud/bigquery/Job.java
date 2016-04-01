@@ -63,8 +63,8 @@ public final class Job extends JobInfo {
     }
 
     @Override
-    Builder id(String id) {
-      infoBuilder.id(id);
+    Builder generatedId(String generatedId) {
+      infoBuilder.generatedId(generatedId);
       return this;
     }
 

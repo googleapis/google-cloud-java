@@ -471,9 +471,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Dataset getDataset(DatasetId datasetId, DatasetOption... options);
 
   /**
-   * Lists the project's datasets. This method returns partial information on each dataset
-   * ({@link Dataset#datasetId()}, {@link Dataset#friendlyName()} and {@link Dataset#id()}). To get
-   * complete information use either {@link #getDataset(String, DatasetOption...)} or
+   * Lists the project's datasets. This method returns partial information on each dataset:
+   * ({@link Dataset#datasetId()}, {@link Dataset#friendlyName()} and
+   * {@link Dataset#generatedId()}). To get complete information use either
+   * {@link #getDataset(String, DatasetOption...)} or
    * {@link #getDataset(DatasetId, DatasetOption...)}.
    *
    * @throws BigQueryException upon failure
@@ -541,9 +542,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Table getTable(TableId tableId, TableOption... options);
 
   /**
-   * Lists the tables in the dataset. This method returns partial information on each table
-   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#id()} and type, which
-   * is part of {@link Table#definition()}). To get complete information use either
+   * Lists the tables in the dataset. This method returns partial information on each table:
+   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#generatedId()} and type,
+   * which is part of {@link Table#definition()}). To get complete information use either
    * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *
@@ -552,9 +553,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Page<Table> listTables(String datasetId, TableListOption... options);
 
   /**
-   * Lists the tables in the dataset. This method returns partial information on each table
-   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#id()} and type, which
-   * is part of {@link Table#definition()}). To get complete information use either
+   * Lists the tables in the dataset. This method returns partial information on each table:
+   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#generatedId()} and type,
+   * which is part of {@link Table#definition()}). To get complete information use either
    * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *

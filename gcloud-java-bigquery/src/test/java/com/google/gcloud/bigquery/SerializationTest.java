@@ -44,7 +44,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final String DESCRIPTION = "Description";
   private static final String ETAG = "0xFF00";
   private static final String FRIENDLY_NAME = "friendlyDataset";
-  private static final String ID = "P/D:1";
+  private static final String GENERATED_ID = "P/D:1";
   private static final Long LAST_MODIFIED = CREATION_TIME + 50;
   private static final String LOCATION = "";
   private static final String SELF_LINK = "http://bigquery/p/d";
@@ -56,7 +56,7 @@ public class SerializationTest extends BaseSerializationTest {
       .description(DESCRIPTION)
       .etag(ETAG)
       .friendlyName(FRIENDLY_NAME)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .lastModified(LAST_MODIFIED)
       .location(LOCATION)
       .selfLink(SELF_LINK)
@@ -106,21 +106,21 @@ public class SerializationTest extends BaseSerializationTest {
       .creationTime(CREATION_TIME)
       .description(DESCRIPTION)
       .etag(ETAG)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .build();
   private static final TableDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
   private static final TableInfo VIEW_INFO = TableInfo.builder(TABLE_ID, VIEW_DEFINITION)
       .creationTime(CREATION_TIME)
       .description(DESCRIPTION)
       .etag(ETAG)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .build();
   private static final TableInfo EXTERNAL_TABLE_INFO =
       TableInfo.builder(TABLE_ID, EXTERNAL_TABLE_DEFINITION)
           .creationTime(CREATION_TIME)
           .description(DESCRIPTION)
           .etag(ETAG)
-          .id(ID)
+          .generatedId(GENERATED_ID)
           .build();
   private static final JobStatistics JOB_STATISTICS = JobStatistics.builder()
       .creationTime(1L)

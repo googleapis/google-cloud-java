@@ -52,10 +52,10 @@ public class TableInfo implements Serializable {
         }
       };
 
-  private static final long serialVersionUID = -7679032506430816205L;
+  private static final long serialVersionUID = 609769795097719407L;
 
   private final String etag;
-  private final String id;
+  private final String generatedId;
   private final String selfLink;
   private final TableId tableId;
   private final String friendlyName;
@@ -90,7 +90,7 @@ public class TableInfo implements Serializable {
      */
     public abstract Builder friendlyName(String friendlyName);
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     abstract Builder lastModifiedTime(Long lastModifiedTime);
 
@@ -117,7 +117,7 @@ public class TableInfo implements Serializable {
   static class BuilderImpl extends Builder {
 
     private String etag;
-    private String id;
+    private String generatedId;
     private String selfLink;
     private TableId tableId;
     private String friendlyName;
@@ -131,7 +131,7 @@ public class TableInfo implements Serializable {
 
     BuilderImpl(TableInfo tableInfo) {
       this.etag = tableInfo.etag;
-      this.id = tableInfo.id;
+      this.generatedId = tableInfo.generatedId;
       this.selfLink = tableInfo.selfLink;
       this.tableId = tableInfo.tableId;
       this.friendlyName = tableInfo.friendlyName;
@@ -152,7 +152,7 @@ public class TableInfo implements Serializable {
       this.friendlyName = tablePb.getFriendlyName();
       this.creationTime = tablePb.getCreationTime();
       this.etag = tablePb.getEtag();
-      this.id = tablePb.getId();
+      this.generatedId = tablePb.getId();
       this.selfLink = tablePb.getSelfLink();
       this.definition = TableDefinition.fromPb(tablePb);
     }
@@ -188,8 +188,8 @@ public class TableInfo implements Serializable {
     }
 
     @Override
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -226,7 +226,7 @@ public class TableInfo implements Serializable {
   TableInfo(BuilderImpl builder) {
     this.tableId = checkNotNull(builder.tableId);
     this.etag = builder.etag;
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.selfLink = builder.selfLink;
     this.friendlyName = builder.friendlyName;
     this.description = builder.description;
@@ -244,10 +244,10 @@ public class TableInfo implements Serializable {
   }
 
   /**
-   * Returns an opaque id for the table.
+   * Returns the service-generated id for the table.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -321,7 +321,7 @@ public class TableInfo implements Serializable {
     return MoreObjects.toStringHelper(this)
         .add("tableId", tableId)
         .add("etag", etag)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("selfLink", selfLink)
         .add("friendlyName", friendlyName)
         .add("description", description)
@@ -379,7 +379,7 @@ public class TableInfo implements Serializable {
     tablePb.setEtag(etag);
     tablePb.setExpirationTime(expirationTime);
     tablePb.setFriendlyName(friendlyName);
-    tablePb.setId(id);
+    tablePb.setId(generatedId);
     tablePb.setSelfLink(selfLink);
     return tablePb;
   }

@@ -37,7 +37,7 @@ import java.util.Map;
 public class JobInfoTest {
 
   private static final String ETAG = "etag";
-  private static final String ID = "id";
+  private static final String GENERATED_ID = "id";
   private static final String SELF_LINK = "selfLink";
   private static final String EMAIL = "email";
   private static final JobId JOB_ID = JobId.of("job");
@@ -163,7 +163,7 @@ public class JobInfoTest {
       .statistics(COPY_JOB_STATISTICS)
       .jobId(JOB_ID)
       .etag(ETAG)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .selfLink(SELF_LINK)
       .userEmail(EMAIL)
       .status(JOB_STATUS)
@@ -173,7 +173,7 @@ public class JobInfoTest {
       .statistics(EXTRACT_JOB_STATISTICS)
       .jobId(JOB_ID)
       .etag(ETAG)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .selfLink(SELF_LINK)
       .userEmail(EMAIL)
       .status(JOB_STATUS)
@@ -183,7 +183,7 @@ public class JobInfoTest {
       .statistics(LOAD_JOB_STATISTICS)
       .jobId(JOB_ID)
       .etag(ETAG)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .selfLink(SELF_LINK)
       .userEmail(EMAIL)
       .status(JOB_STATUS)
@@ -193,7 +193,7 @@ public class JobInfoTest {
       .statistics(QUERY_JOB_STATISTICS)
       .jobId(JOB_ID)
       .etag(ETAG)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .selfLink(SELF_LINK)
       .userEmail(EMAIL)
       .status(JOB_STATUS)
@@ -266,7 +266,7 @@ public class JobInfoTest {
   @Test
   public void testBuilder() {
     assertEquals(ETAG, COPY_JOB.etag());
-    assertEquals(ID, COPY_JOB.id());
+    assertEquals(GENERATED_ID, COPY_JOB.generatedId());
     assertEquals(SELF_LINK, COPY_JOB.selfLink());
     assertEquals(EMAIL, COPY_JOB.userEmail());
     assertEquals(JOB_ID, COPY_JOB.jobId());
@@ -275,7 +275,7 @@ public class JobInfoTest {
     assertEquals(COPY_JOB_STATISTICS, COPY_JOB.statistics());
 
     assertEquals(ETAG, EXTRACT_JOB.etag());
-    assertEquals(ID, EXTRACT_JOB.id());
+    assertEquals(GENERATED_ID, EXTRACT_JOB.generatedId());
     assertEquals(SELF_LINK, EXTRACT_JOB.selfLink());
     assertEquals(EMAIL, EXTRACT_JOB.userEmail());
     assertEquals(JOB_ID, EXTRACT_JOB.jobId());
@@ -284,7 +284,7 @@ public class JobInfoTest {
     assertEquals(EXTRACT_JOB_STATISTICS, EXTRACT_JOB.statistics());
 
     assertEquals(ETAG, LOAD_JOB.etag());
-    assertEquals(ID, LOAD_JOB.id());
+    assertEquals(GENERATED_ID, LOAD_JOB.generatedId());
     assertEquals(SELF_LINK, LOAD_JOB.selfLink());
     assertEquals(EMAIL, LOAD_JOB.userEmail());
     assertEquals(JOB_ID, LOAD_JOB.jobId());
@@ -293,7 +293,7 @@ public class JobInfoTest {
     assertEquals(LOAD_JOB_STATISTICS, LOAD_JOB.statistics());
 
     assertEquals(ETAG, QUERY_JOB.etag());
-    assertEquals(ID, QUERY_JOB.id());
+    assertEquals(GENERATED_ID, QUERY_JOB.generatedId());
     assertEquals(SELF_LINK, QUERY_JOB.selfLink());
     assertEquals(EMAIL, QUERY_JOB.userEmail());
     assertEquals(JOB_ID, QUERY_JOB.jobId());
@@ -359,7 +359,7 @@ public class JobInfoTest {
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
     assertEquals(expected.etag(), value.etag());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.jobId(), value.jobId());
     assertEquals(expected.selfLink(), value.selfLink());
     assertEquals(expected.status(), value.status());

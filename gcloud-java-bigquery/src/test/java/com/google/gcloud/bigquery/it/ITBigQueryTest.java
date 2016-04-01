@@ -214,7 +214,7 @@ public class ITBigQueryTest {
     assertEquals(DESCRIPTION, dataset.description());
     assertNotNull(dataset.acl());
     assertNotNull(dataset.etag());
-    assertNotNull(dataset.id());
+    assertNotNull(dataset.generatedId());
     assertNotNull(dataset.lastModified());
     assertNotNull(dataset.selfLink());
   }
@@ -231,7 +231,7 @@ public class ITBigQueryTest {
     assertNull(dataset.acl());
     assertNull(dataset.etag());
     assertNull(dataset.friendlyName());
-    assertNull(dataset.id());
+    assertNull(dataset.generatedId());
     assertNull(dataset.lastModified());
     assertNull(dataset.location());
     assertNull(dataset.selfLink());
@@ -270,7 +270,7 @@ public class ITBigQueryTest {
     assertNull(updatedDataset.acl());
     assertNull(updatedDataset.etag());
     assertNull(updatedDataset.friendlyName());
-    assertNull(updatedDataset.id());
+    assertNull(updatedDataset.generatedId());
     assertNull(updatedDataset.lastModified());
     assertNull(updatedDataset.location());
     assertNull(updatedDataset.selfLink());
@@ -697,7 +697,7 @@ public class ITBigQueryTest {
       assertNotNull(job.statistics());
       assertNotNull(job.status());
       assertNotNull(job.userEmail());
-      assertNotNull(job.id());
+      assertNotNull(job.generatedId());
     }
   }
 
@@ -709,7 +709,7 @@ public class ITBigQueryTest {
       assertNotNull(job.status());
       assertNotNull(job.userEmail());
       assertNull(job.statistics());
-      assertNull(job.id());
+      assertNull(job.generatedId());
     }
   }
 
