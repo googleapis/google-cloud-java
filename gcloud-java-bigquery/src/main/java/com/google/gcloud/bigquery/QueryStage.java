@@ -137,7 +137,7 @@ public class QueryStage implements Serializable {
 
   private final double computeRatioAvg;
   private final double computeRatioMax;
-  private final long id;
+  private final long generatedId;
   private final String name;
   private final double readRatioAvg;
   private final double readRatioMax;
@@ -153,7 +153,7 @@ public class QueryStage implements Serializable {
 
     private double computeRatioAvg;
     private double computeRatioMax;
-    private long id;
+    private long generatedId;
     private String name;
     private double readRatioAvg;
     private double readRatioMax;
@@ -177,8 +177,8 @@ public class QueryStage implements Serializable {
       return this;
     }
 
-    Builder id(long id) {
-      this.id = id;
+    Builder generatedId(long generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -240,7 +240,7 @@ public class QueryStage implements Serializable {
   QueryStage(Builder builder) {
     computeRatioAvg = builder.computeRatioAvg;
     computeRatioMax = builder.computeRatioMax;
-    id = builder.id;
+    generatedId = builder.generatedId;
     name = builder.name;
     readRatioAvg = builder.readRatioAvg;
     readRatioMax = builder.readRatioMax;
@@ -270,10 +270,10 @@ public class QueryStage implements Serializable {
   }
 
   /**
-   * Returns a unique ID for the stage within its plan.
+   * Returns a unique, server-generated ID for the stage within its plan.
    */
-  public long id() {
-    return id;
+  public long generatedId() {
+    return generatedId;
   }
 
   /**
@@ -357,7 +357,7 @@ public class QueryStage implements Serializable {
     return MoreObjects.toStringHelper(this)
         .add("computeRatioAvg", computeRatioAvg)
         .add("computeRatioMax", computeRatioMax)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("name", name)
         .add("readRatioAvg", readRatioAvg)
         .add("readRatioMax", readRatioMax)
@@ -373,7 +373,7 @@ public class QueryStage implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(computeRatioAvg, computeRatioMax, id, name, readRatioAvg, readRatioMax,
+    return Objects.hash(computeRatioAvg, computeRatioMax, generatedId, name, readRatioAvg, readRatioMax,
         recordsRead, recordsWritten, steps, waitRatioAvg, waitRatioMax, writeRatioAvg);
   }
 
@@ -383,7 +383,7 @@ public class QueryStage implements Serializable {
       return false;
     }
     QueryStage other = (QueryStage) obj;
-    return id == other.id
+    return generatedId == other.generatedId
         && computeRatioAvg == other.computeRatioAvg
         && computeRatioMax == other.computeRatioMax
         && readRatioAvg == other.readRatioAvg
@@ -406,7 +406,7 @@ public class QueryStage implements Serializable {
     ExplainQueryStage stagePb = new ExplainQueryStage()
         .setComputeRatioAvg(computeRatioAvg)
         .setComputeRatioMax(computeRatioMax)
-        .setId(id)
+        .setId(generatedId)
         .setName(name)
         .setReadRatioAvg(readRatioAvg)
         .setReadRatioMax(readRatioMax)
@@ -426,7 +426,7 @@ public class QueryStage implements Serializable {
     Builder builder = new QueryStage.Builder();
     builder.computeRatioAvg(stagePb.getComputeRatioAvg());
     builder.computeRatioMax(stagePb.getComputeRatioMax());
-    builder.id(stagePb.getId());
+    builder.generatedId(stagePb.getId());
     builder.name(stagePb.getName());
     builder.readRatioAvg(stagePb.getReadRatioAvg());
     builder.readRatioMax(stagePb.getReadRatioMax());
