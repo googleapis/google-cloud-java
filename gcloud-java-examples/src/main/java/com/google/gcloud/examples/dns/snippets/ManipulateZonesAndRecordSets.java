@@ -51,7 +51,7 @@ public class ManipulateZonesAndRecordSets {
 
     // Create zone in Google Cloud DNS
     Zone zone = dns.create(zoneInfo);
-    System.out.printf("Zone was created and assigned ID %s.%n", zone.id());
+    System.out.printf("Zone was created and assigned ID %s.%n", zone.generatedId());
 
     // Print assigned name servers
     List<String> nameServers = zone.nameServers();
@@ -89,7 +89,7 @@ public class ManipulateZonesAndRecordSets {
       } catch (InterruptedException e) {
         System.err.println("The thread was interrupted while waiting...");
       }
-      changeRequest = dns.getChangeRequest(zone.name(), changeRequest.id());
+      changeRequest = dns.getChangeRequest(zone.name(), changeRequest.generatedId());
     }
     System.out.println("The change request has been applied.");
 
@@ -143,7 +143,7 @@ public class ManipulateZonesAndRecordSets {
         }
 
         // Update the change, but fetch only change ID and status
-        changeRequest = dns.getChangeRequest(zoneName, changeRequest.id(), option);
+        changeRequest = dns.getChangeRequest(zoneName, changeRequest.generatedId(), option);
       }
     }
 

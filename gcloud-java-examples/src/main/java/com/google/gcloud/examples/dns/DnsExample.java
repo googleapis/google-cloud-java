@@ -90,7 +90,7 @@ public class DnsExample {
       ZoneInfo zoneInfo = ZoneInfo.of(zoneName, dnsName, description);
       Zone zone = dns.create(zoneInfo);
       System.out.printf("Successfully created zone with name %s which was assigned ID %s.%n",
-          zone.name(), zone.id());
+          zone.name(), zone.generatedId());
     }
 
     @Override
@@ -213,7 +213,7 @@ public class DnsExample {
           .build();
       changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
       System.out.printf("The request for deleting A record %s for zone %s was successfully "
-          + "submitted and assigned ID %s.%n", recordName, zoneName, changeRequest.id());
+          + "submitted and assigned ID %s.%n", recordName, zoneName, changeRequest.generatedId());
       System.out.print("Waiting for deletion to happen...");
       waitForChangeToFinish(dns, zoneName, changeRequest);
       System.out.printf("%nThe deletion has been completed.%n");
@@ -258,7 +258,7 @@ public class DnsExample {
       ChangeRequestInfo changeRequest = ChangeRequest.builder().add(recordSet).build();
       changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
       System.out.printf("The request for adding A record %s for zone %s was successfully "
-          + "submitted and assigned ID %s.%n", recordName, zoneName, changeRequest.id());
+          + "submitted and assigned ID %s.%n", recordName, zoneName, changeRequest.generatedId());
       System.out.print("Waiting for addition to happen...");
       waitForChangeToFinish(dns, zoneName, changeRequest);
       System.out.printf("The addition has been completed.%n");
@@ -334,7 +334,7 @@ public class DnsExample {
         System.out.printf("Change requests for zone %s:%n", zoneName);
         while (iterator.hasNext()) {
           ChangeRequest change = iterator.next();
-          System.out.printf("%nID: %s%n", change.id());
+          System.out.printf("%nID: %s%n", change.generatedId());
           System.out.printf("Status: %s%n", change.status());
           System.out.printf("Started: %s%n", FORMATTER.format(change.startTimeMillis()));
           System.out.printf("Deletions: %s%n", Joiner.on(", ").join(change.deletions()));
@@ -439,7 +439,7 @@ public class DnsExample {
 
   private static void printZone(Zone zone) {
     System.out.printf("%nName: %s%n", zone.name());
-    System.out.printf("ID: %s%n", zone.id());
+    System.out.printf("ID: %s%n", zone.generatedId());
     System.out.printf("Description: %s%n", zone.description());
     System.out.printf("Created: %s%n", FORMATTER.format(new Date(zone.creationTimeMillis())));
     System.out.printf("Name servers: %s%n", Joiner.on(", ").join(zone.nameServers()));
@@ -455,7 +455,7 @@ public class DnsExample {
       } catch (InterruptedException e) {
         System.err.println("Thread was interrupted while waiting.");
       }
-      current = dns.getChangeRequest(zoneName, current.id());
+      current = dns.getChangeRequest(zoneName, current.generatedId());
     }
     return current;
   }

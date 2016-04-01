@@ -46,6 +46,6 @@ public class CreateZone {
 
     // Create zone in Google Cloud DNS
     Zone zone = dns.create(zoneInfo);
-    System.out.printf("Zone was created and assigned ID %s.%n", zone.id());
+    System.out.printf("Zone was created and assigned ID %s.%n", zone.generatedId());
   }
 }

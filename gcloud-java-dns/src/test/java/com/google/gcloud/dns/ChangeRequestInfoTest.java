@@ -31,7 +31,7 @@ import java.util.List;
 
 public class ChangeRequestInfoTest {
 
-  private static final String ID = "cr-id-1";
+  private static final String GENERATED_ID = "cr-id-1";
   private static final Long START_TIME_MILLIS = 12334567890L;
   private static final ChangeRequest.Status STATUS = ChangeRequest.Status.PENDING;
   private static final String NAME1 = "dns1";
@@ -51,7 +51,7 @@ public class ChangeRequestInfoTest {
       .delete(RECORD3)
       .startTimeMillis(START_TIME_MILLIS)
       .status(STATUS)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .build();
 
   @Test
@@ -65,7 +65,7 @@ public class ChangeRequestInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, CHANGE.id());
+    assertEquals(GENERATED_ID, CHANGE.generatedId());
     assertEquals(STATUS, CHANGE.status());
     assertEquals(START_TIME_MILLIS, CHANGE.startTimeMillis());
     assertEquals(ADDITIONS, CHANGE.additions());
@@ -85,7 +85,7 @@ public class ChangeRequestInfoTest {
     assertEquals(CHANGE, clone);
     clone = ChangeRequest.fromPb(CHANGE.toPb());
     assertEquals(CHANGE, clone);
-    clone = CHANGE.toBuilder().id("some-other-id").build();
+    clone = CHANGE.toBuilder().generatedId("some-other-id").build();
     assertNotEquals(CHANGE, clone);
     clone = CHANGE.toBuilder().startTimeMillis(CHANGE.startTimeMillis() + 1).build();
     assertNotEquals(CHANGE, clone);
@@ -112,7 +112,7 @@ public class ChangeRequestInfoTest {
     assertEquals(CHANGE, ChangeRequest.fromPb(CHANGE.toPb()));
     ChangeRequestInfo partial = ChangeRequest.builder().build();
     assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().id(ID).build();
+    partial = ChangeRequest.builder().generatedId(GENERATED_ID).build();
     assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
     partial = ChangeRequest.builder().add(RECORD1).build();
     assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
@@ -133,7 +133,7 @@ public class ChangeRequestInfoTest {
     assertEquals(CHANGE, CHANGE.toBuilder().build());
     ChangeRequestInfo partial = ChangeRequest.builder().build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().id(ID).build();
+    partial = ChangeRequest.builder().generatedId(GENERATED_ID).build();
     assertEquals(partial, partial.toBuilder().build());
     partial = ChangeRequest.builder().add(RECORD1).build();
     assertEquals(partial, partial.toBuilder().build());
