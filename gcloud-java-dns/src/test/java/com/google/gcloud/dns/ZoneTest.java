@@ -45,7 +45,7 @@ public class ZoneTest {
   private static final String ZONE_ID = "123";
   private static final ZoneInfo ZONE_INFO = Zone.of(ZONE_NAME, "example.com", "description")
       .toBuilder()
-      .id(ZONE_ID)
+      .generatedId(ZONE_ID)
       .creationTimeMillis(123478946464L)
       .build();
   private static final ZoneInfo NO_ID_INFO =
@@ -61,7 +61,7 @@ public class ZoneTest {
   private static final Dns.ChangeRequestListOption CHANGE_REQUEST_LIST_OPTIONS =
       Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.START_TIME);
   private static final ChangeRequestInfo CHANGE_REQUEST =
-      ChangeRequestInfo.builder().id("someid").build();
+      ChangeRequestInfo.builder().generatedId("someid").build();
   private static final ChangeRequestInfo CHANGE_REQUEST_NO_ID =
       ChangeRequestInfo.builder().build();
   private static final DnsException EXCEPTION = createStrictMock(DnsException.class);
@@ -287,51 +287,52 @@ public class ZoneTest {
 
   @Test
   public void getChangeAndZoneFoundByName() {
-    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id()))
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.generatedId()))
         .andReturn(changeRequestAfter).times(2);
     // again for options
-    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
-        .andReturn(changeRequestAfter).times(2);
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.generatedId(),
+        CHANGE_REQUEST_FIELD_OPTIONS)).andReturn(changeRequestAfter).times(2);
     replay(dns);
-    ChangeRequest result = zoneNoId.getChangeRequest(CHANGE_REQUEST.id());
+    ChangeRequest result = zoneNoId.getChangeRequest(CHANGE_REQUEST.generatedId());
     assertEquals(changeRequestAfter, result);
-    result = zone.getChangeRequest(CHANGE_REQUEST.id());
+    result = zone.getChangeRequest(CHANGE_REQUEST.generatedId());
     assertEquals(changeRequestAfter, result);
     // check options
-    result = zoneNoId.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
+    result = zoneNoId.getChangeRequest(CHANGE_REQUEST.generatedId(), CHANGE_REQUEST_FIELD_OPTIONS);
     assertEquals(changeRequestAfter, result);
-    result = zone.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
+    result = zone.getChangeRequest(CHANGE_REQUEST.generatedId(), CHANGE_REQUEST_FIELD_OPTIONS);
     assertEquals(changeRequestAfter, result);
   }
 
   @Test
   public void getChangeAndZoneNotFoundByName() {
-    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id())).andThrow(EXCEPTION).times(2);
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.generatedId())).andThrow(EXCEPTION)
+        .times(2);
     // again for options
-    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
-        .andThrow(EXCEPTION).times(2);
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.generatedId(),
+        CHANGE_REQUEST_FIELD_OPTIONS)).andThrow(EXCEPTION).times(2);
     replay(dns);
     try {
-      zoneNoId.getChangeRequest(CHANGE_REQUEST.id());
+      zoneNoId.getChangeRequest(CHANGE_REQUEST.generatedId());
       fail("Parent container not found, should throw an exception.");
     } catch (DnsException e) {
       // expected
     }
     try {
-      zone.getChangeRequest(CHANGE_REQUEST.id());
+      zone.getChangeRequest(CHANGE_REQUEST.generatedId());
       fail("Parent container not found, should throw an exception.");
     } catch (DnsException e) {
       // expected
     }
     // check options
     try {
-      zoneNoId.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
+      zoneNoId.getChangeRequest(CHANGE_REQUEST.generatedId(), CHANGE_REQUEST_FIELD_OPTIONS);
       fail("Parent container not found, should throw an exception.");
     } catch (DnsException e) {
       // expected
     }
     try {
-      zone.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS);
+      zone.getChangeRequest(CHANGE_REQUEST.generatedId(), CHANGE_REQUEST_FIELD_OPTIONS);
       fail("Parent container not found, should throw an exception.");
     } catch (DnsException e) {
       // expected
@@ -340,15 +341,16 @@ public class ZoneTest {
 
   @Test
   public void getChangedWhichDoesNotExistZoneFound() {
-    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id())).andReturn(null).times(2);
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.generatedId())).andReturn(null).times(2);
     // again for options
-    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS))
-        .andReturn(null).times(2);
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.generatedId(),
+        CHANGE_REQUEST_FIELD_OPTIONS)).andReturn(null).times(2);
     replay(dns);
-    assertNull(zoneNoId.getChangeRequest(CHANGE_REQUEST.id()));
-    assertNull(zone.getChangeRequest(CHANGE_REQUEST.id()));
-    assertNull(zoneNoId.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS));
-    assertNull(zone.getChangeRequest(CHANGE_REQUEST.id(), CHANGE_REQUEST_FIELD_OPTIONS));
+    assertNull(zoneNoId.getChangeRequest(CHANGE_REQUEST.generatedId()));
+    assertNull(zone.getChangeRequest(CHANGE_REQUEST.generatedId()));
+    assertNull(
+        zoneNoId.getChangeRequest(CHANGE_REQUEST.generatedId(),CHANGE_REQUEST_FIELD_OPTIONS));
+    assertNull(zone.getChangeRequest(CHANGE_REQUEST.generatedId(), CHANGE_REQUEST_FIELD_OPTIONS));
   }
 
   @Test
@@ -384,25 +386,25 @@ public class ZoneTest {
   public void getChangeRequestWithNoId() {
     replay(dns); // no calls expected
     try {
-      zone.getChangeRequest(CHANGE_REQUEST_NO_ID.id());
+      zone.getChangeRequest(CHANGE_REQUEST_NO_ID.generatedId());
       fail("Cannot get ChangeRequest by null id.");
     } catch (NullPointerException e) {
       // expected
     }
     try {
-      zone.getChangeRequest(CHANGE_REQUEST_NO_ID.id(), CHANGE_REQUEST_FIELD_OPTIONS);
+      zone.getChangeRequest(CHANGE_REQUEST_NO_ID.generatedId(), CHANGE_REQUEST_FIELD_OPTIONS);
       fail("Cannot get ChangeRequest by null id.");
     } catch (NullPointerException e) {
       // expected
     }
     try {
-      zoneNoId.getChangeRequest(CHANGE_REQUEST_NO_ID.id());
+      zoneNoId.getChangeRequest(CHANGE_REQUEST_NO_ID.generatedId());
       fail("Cannot get ChangeRequest by null id.");
     } catch (NullPointerException e) {
       // expected
     }
     try {
-      zoneNoId.getChangeRequest(CHANGE_REQUEST_NO_ID.id(), CHANGE_REQUEST_FIELD_OPTIONS);
+      zoneNoId.getChangeRequest(CHANGE_REQUEST_NO_ID.generatedId(), CHANGE_REQUEST_FIELD_OPTIONS);
       fail("Cannot get ChangeRequest by null id.");
     } catch (NullPointerException e) {
       // expected
@@ -482,7 +484,7 @@ public class ZoneTest {
     expect(dns.options()).andReturn(OPTIONS).times(8);
     replay(dns);
     assertNotEquals(zone, zone.toBuilder()
-        .id((new BigInteger(zone.id())).add(BigInteger.ONE).toString())
+        .generatedId(new BigInteger(zone.generatedId()).add(BigInteger.ONE).toString())
         .build());
     assertNotEquals(zone, zone.toBuilder().dnsName(zone.name() + "aaaa").build());
     assertNotEquals(zone, zone.toBuilder().nameServerSet(zone.nameServerSet() + "aaaa").build());
@@ -491,7 +493,7 @@ public class ZoneTest {
     assertNotEquals(zone, zone.toBuilder().creationTimeMillis(zone.creationTimeMillis() + 1)
         .build());
     Zone.Builder builder = zone.toBuilder();
-    builder.id(ZONE_ID)
+    builder.generatedId(ZONE_ID)
         .dnsName("example.com")
         .creationTimeMillis(123478946464L)
         .build();

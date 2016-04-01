@@ -61,8 +61,8 @@ public class Zone extends ZoneInfo {
     }
 
     @Override
-    Builder id(String id) {
-      infoBuilder.id(id);
+    Builder generatedId(String generatedId) {
+      infoBuilder.generatedId(generatedId);
       return this;
     }
 

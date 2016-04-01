@@ -44,7 +44,7 @@ import java.util.List;
 public class TableTest {
 
   private static final String ETAG = "etag";
-  private static final String ID = "project:dataset:table1";
+  private static final String GENERATED_ID = "project:dataset:table1";
   private static final String SELF_LINK = "selfLink";
   private static final String FRIENDLY_NAME = "friendlyName";
   private static final String DESCRIPTION = "description";
@@ -115,7 +115,7 @@ public class TableTest {
         .etag(ETAG)
         .expirationTime(EXPIRATION_TIME)
         .friendlyName(FRIENDLY_NAME)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .lastModifiedTime(LAST_MODIFIED_TIME)
         .selfLink(SELF_LINK)
         .build();
@@ -125,7 +125,7 @@ public class TableTest {
     assertEquals(ETAG, builtTable.etag());
     assertEquals(EXPIRATION_TIME, builtTable.expirationTime());
     assertEquals(FRIENDLY_NAME, builtTable.friendlyName());
-    assertEquals(ID, builtTable.id());
+    assertEquals(GENERATED_ID, builtTable.generatedId());
     assertEquals(LAST_MODIFIED_TIME, builtTable.lastModifiedTime());
     assertEquals(TABLE_DEFINITION, builtTable.definition());
     assertEquals(SELF_LINK, builtTable.selfLink());
@@ -398,7 +398,7 @@ public class TableTest {
     assertEquals(expected.etag(), value.etag());
     assertEquals(expected.expirationTime(), value.expirationTime());
     assertEquals(expected.friendlyName(), value.friendlyName());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.lastModifiedTime(), value.lastModifiedTime());
     assertEquals(expected.selfLink(), value.selfLink());
     assertEquals(expected.definition(), value.definition());

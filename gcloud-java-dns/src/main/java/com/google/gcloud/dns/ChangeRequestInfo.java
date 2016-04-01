@@ -47,10 +47,10 @@ public class ChangeRequestInfo implements Serializable {
           return ChangeRequestInfo.fromPb(pb);
         }
       };
-  private static final long serialVersionUID = -9027378042756366333L;
+  private static final long serialVersionUID = -6029143477639439169L;
   private final List<RecordSet> additions;
   private final List<RecordSet> deletions;
-  private final String id;
+  private final String generatedId;
   private final Long startTimeMillis;
   private final ChangeRequestInfo.Status status;
 
@@ -119,9 +119,9 @@ public class ChangeRequestInfo implements Serializable {
     public abstract Builder removeDeletion(RecordSet recordSet);
 
     /**
-     * Associates a server-assigned id to this {@code ChangeRequestInfo}.
+     * Associates a service-generated id to this {@code ChangeRequestInfo}.
      */
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     /**
      * Sets the time when this change request was started by a server.
@@ -143,7 +143,7 @@ public class ChangeRequestInfo implements Serializable {
   static class BuilderImpl extends Builder {
     private List<RecordSet> additions;
     private List<RecordSet> deletions;
-    private String id;
+    private String generatedId;
     private Long startTimeMillis;
     private ChangeRequestInfo.Status status;
 
@@ -155,7 +155,7 @@ public class ChangeRequestInfo implements Serializable {
     BuilderImpl(ChangeRequestInfo info) {
       this.additions = Lists.newLinkedList(info.additions());
       this.deletions = Lists.newLinkedList(info.deletions());
-      this.id = info.id();
+      this.generatedId = info.generatedId;
       this.startTimeMillis = info.startTimeMillis;
       this.status = info.status;
     }
@@ -214,8 +214,8 @@ public class ChangeRequestInfo implements Serializable {
     }
 
     @Override
-    Builder id(String id) {
-      this.id = checkNotNull(id);
+    Builder generatedId(String generatedId) {
+      this.generatedId = checkNotNull(generatedId);
       return this;
     }
 
@@ -235,7 +235,7 @@ public class ChangeRequestInfo implements Serializable {
   ChangeRequestInfo(BuilderImpl builder) {
     this.additions = ImmutableList.copyOf(builder.additions);
     this.deletions = ImmutableList.copyOf(builder.deletions);
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.startTimeMillis = builder.startTimeMillis;
     this.status = builder.status;
   }
@@ -271,22 +271,22 @@ public class ChangeRequestInfo implements Serializable {
   }
 
   /**
-   * Returns the id assigned to this {@code ChangeRequest} by the server.
+   * Returns the service-generated id for this change request.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
-   * Returns the time when this {@code ChangeRequest} was started by the server.
+   * Returns the time when this change request was started by the server.
    */
   public Long startTimeMillis() {
     return startTimeMillis;
   }
 
   /**
-   * Returns the status of this {@code ChangeRequest}. If the change request has not been applied
-   * yet, the status is {@code PENDING}.
+   * Returns the status of this change request. If the change request has not been applied yet, the
+   * status is {@code PENDING}.
    */
   public ChangeRequestInfo.Status status() {
     return status;
@@ -295,8 +295,8 @@ public class ChangeRequestInfo implements Serializable {
   Change toPb() {
     Change pb = new Change();
     // set id
-    if (id() != null) {
-      pb.setId(id());
+    if (generatedId() != null) {
+      pb.setId(generatedId());
     }
     // set timestamp
     if (startTimeMillis() != null) {
@@ -316,7 +316,7 @@ public class ChangeRequestInfo implements Serializable {
   static ChangeRequestInfo fromPb(Change pb) {
     Builder builder = builder();
     if (pb.getId() != null) {
-      builder.id(pb.getId());
+      builder.generatedId(pb.getId());
     }
     if (pb.getStartTime() != null) {
       builder.startTimeMillis(DateTime.parse(pb.getStartTime()).getMillis());
@@ -342,7 +342,7 @@ public class ChangeRequestInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(additions, deletions, id, startTimeMillis, status);
+    return Objects.hash(additions, deletions, generatedId, startTimeMillis, status);
   }
 
   @Override
@@ -350,7 +350,7 @@ public class ChangeRequestInfo implements Serializable {
     return MoreObjects.toStringHelper(this)
         .add("additions", additions)
         .add("deletions", deletions)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("startTimeMillis", startTimeMillis)
         .add("status", status)
         .toString();

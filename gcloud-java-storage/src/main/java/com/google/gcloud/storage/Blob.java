@@ -178,8 +178,8 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    Builder id(String id) {
-      infoBuilder.id(id);
+    Builder generatedId(String generatedId) {
+      infoBuilder.generatedId(generatedId);
       return this;
     }
 

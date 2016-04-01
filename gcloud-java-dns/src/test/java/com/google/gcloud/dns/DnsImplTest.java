@@ -60,7 +60,7 @@ public class DnsImplTest {
       .add(DNS_RECORD1)
       .startTimeMillis(123L)
       .status(ChangeRequest.Status.PENDING)
-      .id(CHANGE_ID)
+      .generatedId(CHANGE_ID)
       .build();
 
   // Result lists
@@ -215,12 +215,13 @@ public class DnsImplTest {
 
   @Test
   public void testGetChangeRequest() {
-    EasyMock.expect(dnsRpcMock.getChangeRequest(ZONE_INFO.name(), CHANGE_REQUEST_COMPLETE.id(),
-        EMPTY_RPC_OPTIONS)).andReturn(CHANGE_REQUEST_COMPLETE.toPb());
+    EasyMock.expect(dnsRpcMock.getChangeRequest(ZONE_INFO.name(),
+        CHANGE_REQUEST_COMPLETE.generatedId(), EMPTY_RPC_OPTIONS))
+        .andReturn(CHANGE_REQUEST_COMPLETE.toPb());
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
     ChangeRequest changeRequest = dns.getChangeRequest(ZONE_INFO.name(),
-        CHANGE_REQUEST_COMPLETE.id());
+        CHANGE_REQUEST_COMPLETE.generatedId());
     assertEquals(new ChangeRequest(dns, ZONE_INFO.name(),
         new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE)), changeRequest);
   }
@@ -229,12 +230,12 @@ public class DnsImplTest {
   public void testGetChangeRequestWithOptions() {
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.getChangeRequest(EasyMock.eq(ZONE_INFO.name()),
-        EasyMock.eq(CHANGE_REQUEST_COMPLETE.id()), EasyMock.capture(capturedOptions)))
+        EasyMock.eq(CHANGE_REQUEST_COMPLETE.generatedId()), EasyMock.capture(capturedOptions)))
         .andReturn(CHANGE_REQUEST_COMPLETE.toPb());
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
     ChangeRequest changeRequest = dns.getChangeRequest(ZONE_INFO.name(),
-        CHANGE_REQUEST_COMPLETE.id(), CHANGE_GET_FIELDS);
+        CHANGE_REQUEST_COMPLETE.generatedId(), CHANGE_GET_FIELDS);
     String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.rpcOption());
     assertEquals(new ChangeRequest(dns, ZONE_INFO.name(),
         new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE)), changeRequest);

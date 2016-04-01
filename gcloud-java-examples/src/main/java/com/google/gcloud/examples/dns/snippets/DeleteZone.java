@@ -73,7 +73,7 @@ public class DeleteZone {
               + "processed.");
         }
         // Update the change, but fetch only change ID and status
-        changeRequest = dns.getChangeRequest(zoneName, changeRequest.id(), option);
+        changeRequest = dns.getChangeRequest(zoneName, changeRequest.generatedId(), option);
       }
     }
 

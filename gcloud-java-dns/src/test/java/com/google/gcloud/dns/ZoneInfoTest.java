@@ -32,7 +32,7 @@ import java.util.List;
 public class ZoneInfoTest {
 
   private static final String NAME = "mz-example.com";
-  private static final String ID = "123456";
+  private static final String GENERATED_ID = "123456";
   private static final Long CREATION_TIME_MILLIS = 1123468321321L;
   private static final String DNS_NAME = "example.com.";
   private static final String DESCRIPTION = "description for the zone";
@@ -43,7 +43,7 @@ public class ZoneInfoTest {
   private static final List<String> NAME_SERVERS = ImmutableList.of(NS1, NS2, NS3);
   private static final ZoneInfo INFO = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder()
       .creationTimeMillis(CREATION_TIME_MILLIS)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .nameServerSet(NAME_SERVER_SET)
       .nameServers(NAME_SERVERS)
       .build();
@@ -53,7 +53,7 @@ public class ZoneInfoTest {
     ZoneInfo partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION);
     assertTrue(partial.nameServers().isEmpty());
     assertEquals(NAME, partial.name());
-    assertNull(partial.id());
+    assertNull(partial.generatedId());
     assertNull(partial.creationTimeMillis());
     assertNull(partial.nameServerSet());
     assertEquals(DESCRIPTION, partial.description());
@@ -67,7 +67,7 @@ public class ZoneInfoTest {
     assertEquals(NS2, INFO.nameServers().get(1));
     assertEquals(NS3, INFO.nameServers().get(2));
     assertEquals(NAME, INFO.name());
-    assertEquals(ID, INFO.id());
+    assertEquals(GENERATED_ID, INFO.generatedId());
     assertEquals(CREATION_TIME_MILLIS, INFO.creationTimeMillis());
     assertEquals(NAME_SERVER_SET, INFO.nameServerSet());
     assertEquals(DESCRIPTION, INFO.description());
@@ -91,7 +91,7 @@ public class ZoneInfoTest {
     assertNotEquals(INFO, clone);
     clone = INFO.toBuilder().dnsName(differentName).build();
     assertNotEquals(INFO, clone);
-    clone = INFO.toBuilder().id(INFO.id() + "1111").build();
+    clone = INFO.toBuilder().generatedId(INFO.generatedId() + "1111").build();
     assertNotEquals(INFO, clone);
     clone = INFO.toBuilder().nameServerSet(INFO.nameServerSet() + "salt").build();
     assertNotEquals(INFO, clone);
@@ -109,7 +109,9 @@ public class ZoneInfoTest {
     assertEquals(INFO, INFO.toBuilder().build());
     ZoneInfo partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION);
     assertEquals(partial, partial.toBuilder().build());
-    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder().id(ID).build();
+    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder()
+        .generatedId(GENERATED_ID)
+        .build();
     assertEquals(partial, partial.toBuilder().build());
     partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder()
         .creationTimeMillis(CREATION_TIME_MILLIS).build();
@@ -128,7 +130,9 @@ public class ZoneInfoTest {
     assertEquals(INFO, ZoneInfo.fromPb(INFO.toPb()));
     ZoneInfo partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION);
     assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
-    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder().id(ID).build();
+    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder()
+        .generatedId(GENERATED_ID)
+        .build();
     assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
     partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder()
         .creationTimeMillis(CREATION_TIME_MILLIS).build();

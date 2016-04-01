@@ -44,7 +44,7 @@ public class BucketInfoTest {
       Acl.of(User.ofAllAuthenticatedUsers(), Role.READER),
       Acl.of(new Project(VIEWERS, "p1"), Role.WRITER));
   private static final String ETAG = "0xFF00";
-  private static final String ID = "B/N:1";
+  private static final String GENERATED_ID = "B/N:1";
   private static final Long META_GENERATION = 10L;
   private static final User OWNER = new User("user@gmail.com");
   private static final String SELF_LINK = "http://storage/b/n";
@@ -62,7 +62,7 @@ public class BucketInfoTest {
   private static final BucketInfo BUCKET_INFO = BucketInfo.builder("b")
       .acl(ACL)
       .etag(ETAG)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .metageneration(META_GENERATION)
       .owner(OWNER)
       .selfLink(SELF_LINK)
@@ -80,10 +80,10 @@ public class BucketInfoTest {
   @Test
   public void testToBuilder() {
     compareBuckets(BUCKET_INFO, BUCKET_INFO.toBuilder().build());
-    BucketInfo bucketInfo = BUCKET_INFO.toBuilder().name("B").id("id").build();
+    BucketInfo bucketInfo = BUCKET_INFO.toBuilder().name("B").generatedId("id").build();
     assertEquals("B", bucketInfo.name());
-    assertEquals("id", bucketInfo.id());
-    bucketInfo = bucketInfo.toBuilder().name("b").id(ID).build();
+    assertEquals("id", bucketInfo.generatedId());
+    bucketInfo = bucketInfo.toBuilder().name("b").generatedId(GENERATED_ID).build();
     compareBuckets(BUCKET_INFO, bucketInfo);
   }
 
@@ -104,7 +104,7 @@ public class BucketInfoTest {
     assertEquals("b", BUCKET_INFO.name());
     assertEquals(ACL, BUCKET_INFO.acl());
     assertEquals(ETAG, BUCKET_INFO.etag());
-    assertEquals(ID, BUCKET_INFO.id());
+    assertEquals(GENERATED_ID, BUCKET_INFO.generatedId());
     assertEquals(META_GENERATION, BUCKET_INFO.metageneration());
     assertEquals(OWNER, BUCKET_INFO.owner());
     assertEquals(SELF_LINK, BUCKET_INFO.selfLink());
@@ -131,7 +131,7 @@ public class BucketInfoTest {
     assertEquals(expected.name(), value.name());
     assertEquals(expected.acl(), value.acl());
     assertEquals(expected.etag(), value.etag());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.metageneration(), value.metageneration());
     assertEquals(expected.owner(), value.owner());
     assertEquals(expected.selfLink(), value.selfLink());

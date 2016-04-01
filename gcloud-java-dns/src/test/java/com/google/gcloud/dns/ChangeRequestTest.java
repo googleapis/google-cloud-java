@@ -53,7 +53,7 @@ public class ChangeRequestTest {
     changeRequest = new ChangeRequest(dns, ZONE_NAME, new ChangeRequestInfo.BuilderImpl(
         CHANGE_REQUEST_INFO.toBuilder()
             .startTimeMillis(132L)
-            .id("12")
+            .generatedId("12")
             .status(ChangeRequest.Status.DONE)
             .build()));
     changeRequestPartial = new ChangeRequest(dns, ZONE_NAME,
@@ -104,8 +104,8 @@ public class ChangeRequestTest {
     // one for each build() call because it invokes a constructor
     expect(dns.options()).andReturn(OPTIONS).times(9);
     replay(dns);
-    String id = changeRequest.id() + "aaa";
-    assertEquals(id, changeRequest.toBuilder().id(id).build().id());
+    String id = changeRequest.generatedId() + "aaa";
+    assertEquals(id, changeRequest.toBuilder().generatedId(id).build().generatedId());
     ChangeRequest modified =
         changeRequest.toBuilder().status(ChangeRequest.Status.PENDING).build();
     assertEquals(ChangeRequest.Status.PENDING, modified.status());

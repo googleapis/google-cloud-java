@@ -38,7 +38,7 @@ public class DatasetInfoTest {
   private static final String DESCRIPTION = "description";
   private static final String ETAG = "0xFF00";
   private static final String FRIENDLY_NAME = "friendlyDataset";
-  private static final String ID = "P/D:1";
+  private static final String GENERATED_ID = "P/D:1";
   private static final Long LAST_MODIFIED = CREATION_TIME + 50;
   private static final String LOCATION = "";
   private static final String SELF_LINK = "http://bigquery/p/d";
@@ -51,7 +51,7 @@ public class DatasetInfoTest {
       .description(DESCRIPTION)
       .etag(ETAG)
       .friendlyName(FRIENDLY_NAME)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .lastModified(LAST_MODIFIED)
       .location(LOCATION)
       .selfLink(SELF_LINK)
@@ -90,7 +90,7 @@ public class DatasetInfoTest {
     assertEquals(DESCRIPTION, DATASET_INFO.description());
     assertEquals(ETAG, DATASET_INFO.etag());
     assertEquals(FRIENDLY_NAME, DATASET_INFO.friendlyName());
-    assertEquals(ID, DATASET_INFO.id());
+    assertEquals(GENERATED_ID, DATASET_INFO.generatedId());
     assertEquals(LAST_MODIFIED, DATASET_INFO.lastModified());
     assertEquals(LOCATION, DATASET_INFO.location());
     assertEquals(SELF_LINK, DATASET_INFO.selfLink());
@@ -101,7 +101,7 @@ public class DatasetInfoTest {
     assertEquals(DESCRIPTION, DATASET_INFO_COMPLETE.description());
     assertEquals(ETAG, DATASET_INFO_COMPLETE.etag());
     assertEquals(FRIENDLY_NAME, DATASET_INFO_COMPLETE.friendlyName());
-    assertEquals(ID, DATASET_INFO_COMPLETE.id());
+    assertEquals(GENERATED_ID, DATASET_INFO_COMPLETE.generatedId());
     assertEquals(LAST_MODIFIED, DATASET_INFO_COMPLETE.lastModified());
     assertEquals(LOCATION, DATASET_INFO_COMPLETE.location());
     assertEquals(SELF_LINK, DATASET_INFO_COMPLETE.selfLink());
@@ -125,7 +125,7 @@ public class DatasetInfoTest {
     assertEquals(expected.description(), value.description());
     assertEquals(expected.etag(), value.etag());
     assertEquals(expected.friendlyName(), value.friendlyName());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.location(), value.location());
     assertEquals(expected.selfLink(), value.selfLink());
     assertEquals(expected.acl(), value.acl());

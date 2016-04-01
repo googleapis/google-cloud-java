@@ -59,7 +59,7 @@ public class BucketTest {
   private static final List<Acl> ACL = ImmutableList.of(
       Acl.of(User.ofAllAuthenticatedUsers(), READER), Acl.of(new Project(VIEWERS, "p1"), WRITER));
   private static final String ETAG = "0xFF00";
-  private static final String ID = "B/N:1";
+  private static final String GENERATED_ID = "B/N:1";
   private static final Long META_GENERATION = 10L;
   private static final User OWNER = new User("user@gmail.com");
   private static final String SELF_LINK = "http://storage/b/n";
@@ -77,7 +77,7 @@ public class BucketTest {
   private static final BucketInfo FULL_BUCKET_INFO = BucketInfo.builder("b")
       .acl(ACL)
       .etag(ETAG)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .metageneration(META_GENERATION)
       .owner(OWNER)
       .selfLink(SELF_LINK)
@@ -495,7 +495,7 @@ public class BucketTest {
         new Bucket.Builder(new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO)));
     Bucket bucket = builder.acl(ACL)
         .etag(ETAG)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .metageneration(META_GENERATION)
         .owner(OWNER)
         .selfLink(SELF_LINK)
@@ -512,7 +512,7 @@ public class BucketTest {
     assertEquals("b", bucket.name());
     assertEquals(ACL, bucket.acl());
     assertEquals(ETAG, bucket.etag());
-    assertEquals(ID, bucket.id());
+    assertEquals(GENERATED_ID, bucket.generatedId());
     assertEquals(META_GENERATION, bucket.metageneration());
     assertEquals(OWNER, bucket.owner());
     assertEquals(SELF_LINK, bucket.selfLink());

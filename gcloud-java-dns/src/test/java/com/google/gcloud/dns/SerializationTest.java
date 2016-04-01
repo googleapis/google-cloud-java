@@ -31,7 +31,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final ZoneInfo FULL_ZONE_INFO = Zone.of("some zone name", "www.example.com",
       "some descriptions").toBuilder()
       .creationTimeMillis(132L)
-      .id("123333")
+      .generatedId("123333")
       .nameServers(ImmutableList.of("server 1", "server 2"))
       .nameServerSet("specificationstring")
       .build();
@@ -78,7 +78,7 @@ public class SerializationTest extends BaseSerializationTest {
       .add(RECORD_SET_COMPLETE)
       .delete(RECORD_SET_PARTIAL)
       .status(ChangeRequest.Status.PENDING)
-      .id("some id")
+      .generatedId("some id")
       .startTimeMillis(132L)
       .build();
   private static final ChangeRequest CHANGE_REQUEST_COMPLETE = new ChangeRequest(DNS, "name",
