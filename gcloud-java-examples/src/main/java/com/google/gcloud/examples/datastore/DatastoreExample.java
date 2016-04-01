@@ -44,7 +44,7 @@ import java.util.TreeMap;
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven - {@code mvn exec:java
- * -Dexec.mainClass="com.google.gcloud.examples.datastore.DatastoreExample"
+ * -Dexec.mainClass="com.google.gcloud.example.datastore.DatastoreExample"
  * -Dexec.args="[projectId] [user] [delete|display|add comment]"}</li>
  * </ol>
  */

@@ -30,7 +30,7 @@ import java.util.Map;
 
 /**
  * A Google Cloud Datastore query.
- * For usage examples see {@link GqlQuery} and {@link StructuredQuery}.
+ * For usage example see {@link GqlQuery} and {@link StructuredQuery}.
  *
  * Note that queries require proper indexing. See
  * <a href="https://cloud.google.com/datastore/docs/tools/indexconfig">

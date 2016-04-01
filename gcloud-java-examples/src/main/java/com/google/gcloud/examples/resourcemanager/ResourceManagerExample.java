@@ -36,7 +36,7 @@ import java.util.Scanner;
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code mvn compile}</li>
  * <li>run using maven - {@code mvn exec:java
- * -Dexec.mainClass="com.google.gcloud.examples.resourcemanager.ResourceManagerExample"
+ * -Dexec.mainClass="com.google.gcloud.example.resourcemanager.ResourceManagerExample"
  * -Dexec.args="[list | [create | delete | get] projectId]"}</li>
  * </ol>
  */
