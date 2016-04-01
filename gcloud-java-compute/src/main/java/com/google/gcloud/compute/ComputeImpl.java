@@ -1124,14 +1124,15 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Operation delete(final ImageId image, OperationOption... options) {
+  public Operation delete(ImageId image, OperationOption... options) {
+    final ImageId completeId = image.setProjectId(options().projectId());
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Operation answer =
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.deleteImage(image.image(), optionsMap);
+              return computeRpc.deleteImage(completeId.project(), completeId.image(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -1141,15 +1142,17 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Operation deprecate(final ImageId image,
+  public Operation deprecate(ImageId image,
       final DeprecationStatus<ImageId> deprecationStatus, OperationOption... options) {
+    final ImageId completeId = image.setProjectId(options().projectId());
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Operation answer =
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.deprecateImage(image.image(), deprecationStatus.toPb(), optionsMap);
+              return computeRpc.deprecateImage(completeId.project(), completeId.image(),
+                  deprecationStatus.toPb(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : Operation.fromPb(this, answer);

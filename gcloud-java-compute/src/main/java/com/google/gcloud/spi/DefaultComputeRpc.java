@@ -609,10 +609,10 @@ public class DefaultComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation deleteImage(String image, Map<Option, ?> options) {
+  public Operation deleteImage(String project, String image, Map<Option, ?> options) {
     try {
       return compute.images()
-          .delete(this.options.projectId(), image)
+          .delete(project, image)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -621,11 +621,11 @@ public class DefaultComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation deprecateImage(String image, DeprecationStatus deprecationStatus,
+  public Operation deprecateImage(String project, String image, DeprecationStatus deprecationStatus,
       Map<Option, ?> options) {
     try {
       return compute.images()
-          .deprecate(this.options.projectId(), image, deprecationStatus)
+          .deprecate(project, image, deprecationStatus)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {

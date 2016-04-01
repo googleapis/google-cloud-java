@@ -1832,9 +1832,14 @@ public interface Compute extends Service<ComputeOptions> {
   Image get(ImageId imageId, ImageOption... options);
 
   /**
-   * Lists images in the provided project that are available to the current user.
+   * Lists images in the provided project that are available to the current user. This method can be
+   * used to list publicly-available images by providing the respective image project. Examples of
+   * image projects are: {@code centos-cloud}, {@code coreos-cloud}, {@code debian-cloud},
+   * {@code opensuse-cloud}, {@code rhel-cloud}, {@code suse-cloud}, {@code ubuntu-os-cloud} and
+   * {@code windows-cloud}. Attempting to delete or deprecate a publicly-available image will fail.
    *
    * @throws ComputeException upon failure
+   * @see <a href="https://cloud.google.com/compute/docs/operating-systems/">Operating Systems</a>
    */
   Page<Image> listImages(String project, ImageListOption... options);
 
@@ -1850,7 +1855,7 @@ public interface Compute extends Service<ComputeOptions> {
    *
    * @return a global operation if the delete request was issued correctly, {@code null} if the
    *     image was not found
-   * @throws ComputeException upon failure
+   * @throws ComputeException upon failure or if {@code image} is a publicly-available image
    */
   Operation delete(ImageId image, OperationOption... options);
 
@@ -1859,7 +1864,7 @@ public interface Compute extends Service<ComputeOptions> {
    *
    * @return a global operation if the deprecation request was issued correctly, {@code null} if the
    *     image was not found
-   * @throws ComputeException upon failure
+   * @throws ComputeException upon failure or if {@code image} is a publicly-available image
    */
   Operation deprecate(ImageId image, DeprecationStatus<ImageId> deprecationStatus,
       OperationOption... options);

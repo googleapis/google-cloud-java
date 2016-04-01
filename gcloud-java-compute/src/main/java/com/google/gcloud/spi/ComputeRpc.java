@@ -366,7 +366,7 @@ public interface ComputeRpc {
    *     image was not found
    * @throws ComputeException upon failure
    */
-  Operation deleteImage(String image, Map<Option, ?> options);
+  Operation deleteImage(String project, String image, Map<Option, ?> options);
 
   /**
    * Deprecates the requested image.
@@ -375,6 +375,6 @@ public interface ComputeRpc {
    *     image was not found
    * @throws ComputeException upon failure
    */
-  Operation deprecateImage(String image, DeprecationStatus deprecationStatus,
+  Operation deprecateImage(String project, String image, DeprecationStatus deprecationStatus,
       Map<Option, ?> options);
 }

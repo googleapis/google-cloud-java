@@ -28,6 +28,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.compute.DeprecationStatus.Status;
 import com.google.gcloud.compute.ImageConfiguration.SourceType;
 
 import org.junit.Test;
@@ -64,7 +65,7 @@ public class ImageTest {
           .sourceType(SOURCE_TYPE)
           .build();
   private static final DeprecationStatus<ImageId> DEPRECATION_STATUS =
-      DeprecationStatus.of(DeprecationStatus.Status.DELETED, IMAGE_ID);
+      DeprecationStatus.of(Status.DELETED, IMAGE_ID);
 
   private final Compute serviceMockReturnsOptions = createStrictMock(Compute.class);
   private final ComputeOptions mockOptions = createMock(ComputeOptions.class);
@@ -261,6 +262,31 @@ public class ImageTest {
     Image updateImage = image.reload(Compute.ImageOption.fields());
     compareImage(storageImage, updateImage);
     verify(compute);
+  }
+
+  @Test
+  public void testDeprecateImage() {
+    initializeExpectedImage(3);
+    expect(compute.options()).andReturn(mockOptions);
+    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
+        .operationId(GlobalOperationId.of("project", "op"))
+        .build();
+    DeprecationStatus<ImageId> status = DeprecationStatus.of(Status.DEPRECATED, IMAGE_ID);
+    expect(compute.deprecate(IMAGE_ID, status)).andReturn(operation);
+    replay(compute);
+    initializeImage();
+    assertSame(operation, image.deprecate(status));
+  }
+
+  @Test
+  public void testDeprecateNull() {
+    initializeExpectedImage(2);
+    expect(compute.options()).andReturn(mockOptions);
+    DeprecationStatus<ImageId> status = DeprecationStatus.of(Status.DEPRECATED, IMAGE_ID);
+    expect(compute.deprecate(IMAGE_ID, status)).andReturn(null);
+    replay(compute);
+    initializeImage();
+    assertNull(image.deprecate(status));
   }
 
   public void compareImage(Image expected, Image value) {

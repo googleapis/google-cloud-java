@@ -156,7 +156,7 @@ public class Image extends ImageInfo {
    *
    * @return a global operation if the delete request was successfully sent, {@code null} if the
    *     image was not found
-   * @throws ComputeException upon failure
+   * @throws ComputeException upon failure or if this image is a publicly-available image
    */
   public Operation delete(OperationOption... options) {
     return compute.delete(imageId(), options);
@@ -167,7 +167,7 @@ public class Image extends ImageInfo {
    *
    * @return a global operation if the deprecation request was successfully sent, {@code null} if
    *     the image was not found
-   * @throws ComputeException upon failure
+   * @throws ComputeException upon failure or if this image is a publicly-available image
    */
   public Operation deprecate(DeprecationStatus<ImageId> deprecationStatus,
       OperationOption... options) {

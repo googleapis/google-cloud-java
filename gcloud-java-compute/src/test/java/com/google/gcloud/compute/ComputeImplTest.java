@@ -194,7 +194,7 @@ public class ComputeImplTest {
   private static final DiskId DISK_ID = DiskId.of("project", "zone", "disk");
   private static final SnapshotId SNAPSHOT_ID = SnapshotId.of("project", "snapshot");
   private static final SnapshotInfo SNAPSHOT = SnapshotInfo.of(SNAPSHOT_ID, DISK_ID);
-  private static final ImageId IMAGE_ID = ImageId.of("project", "snapshot");
+  private static final ImageId IMAGE_ID = ImageId.of("project", "image");
   private static final ImageInfo IMAGE = ImageInfo.of(IMAGE_ID, DiskImageConfiguration.of(DISK_ID));
   private static final DeprecationStatus<ImageId> DEPRECATION_STATUS =
       DeprecationStatus.builder(DeprecationStatus.Status.DEPRECATED, IMAGE_ID).build();
@@ -2191,8 +2191,8 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteImage_Operation() {
-    EasyMock.expect(computeRpcMock.deleteImage(IMAGE_ID.image(), EMPTY_RPC_OPTIONS))
-        .andReturn(globalOperation.toPb());
+    EasyMock.expect(computeRpcMock.deleteImage(IMAGE_ID.project(), IMAGE_ID.image(),
+        EMPTY_RPC_OPTIONS)).andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     assertEquals(globalOperation, compute.delete(IMAGE_ID));
@@ -2201,11 +2201,11 @@ public class ComputeImplTest {
   @Test
   public void testDeleteImageWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deleteImage(eq(IMAGE_ID.image()), capture(capturedOptions)))
-        .andReturn(globalOperation.toPb());
+    EasyMock.expect(computeRpcMock.deleteImage(eq(PROJECT), eq(IMAGE_ID.image()),
+        capture(capturedOptions))).andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.delete(IMAGE_ID, OPERATION_OPTION_FIELDS);
+    Operation operation = compute.delete(ImageId.of("image"), OPERATION_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -2216,8 +2216,8 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteImage_Null() {
-    EasyMock.expect(computeRpcMock.deleteImage(IMAGE_ID.image(), EMPTY_RPC_OPTIONS))
-        .andReturn(null);
+    EasyMock.expect(computeRpcMock.deleteImage(IMAGE_ID.project(), IMAGE_ID.image(),
+        EMPTY_RPC_OPTIONS)).andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     assertNull(compute.delete(IMAGE_ID));
@@ -2225,7 +2225,7 @@ public class ComputeImplTest {
 
   @Test
   public void testDeprecateImage_Operation() {
-    EasyMock.expect(computeRpcMock.deprecateImage(IMAGE_ID.image(),
+    EasyMock.expect(computeRpcMock.deprecateImage(IMAGE_ID.project(), IMAGE_ID.image(),
         DEPRECATION_STATUS.toPb(), EMPTY_RPC_OPTIONS)).andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
@@ -2235,11 +2235,12 @@ public class ComputeImplTest {
   @Test
   public void testDeprecateImageWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deprecateImage(eq(IMAGE_ID.image()),
+    EasyMock.expect(computeRpcMock.deprecateImage(eq(PROJECT), eq(IMAGE_ID.image()),
         eq(DEPRECATION_STATUS.toPb()), capture(capturedOptions))).andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.deprecate(IMAGE_ID, DEPRECATION_STATUS, OPERATION_OPTION_FIELDS);
+    Operation operation =
+        compute.deprecate(ImageId.of("image"), DEPRECATION_STATUS, OPERATION_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -2250,8 +2251,8 @@ public class ComputeImplTest {
 
   @Test
   public void testDeprecateImage_Null() {
-    EasyMock.expect(computeRpcMock.deprecateImage(IMAGE_ID.image(), DEPRECATION_STATUS.toPb(),
-        EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(computeRpcMock.deprecateImage(IMAGE_ID.project(), IMAGE_ID.image(),
+        DEPRECATION_STATUS.toPb(), EMPTY_RPC_OPTIONS)).andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     assertNull(compute.deprecate(IMAGE_ID, DEPRECATION_STATUS));
