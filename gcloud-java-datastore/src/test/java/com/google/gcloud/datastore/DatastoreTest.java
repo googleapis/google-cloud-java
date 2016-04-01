@@ -67,7 +67,11 @@ import java.util.Set;
 @RunWith(JUnit4.class)
 public class DatastoreTest {
 
-  private static final String PROJECT_ID = "projectid1";
+  private static LocalDatastoreHelper helper = LocalDatastoreHelper.create(1.0);
+  private static final DatastoreOptions options =
+      helper.options().toBuilder().retryParams(RetryParams.noRetries()).build();
+  private static final Datastore datastore = options.service();
+  private static final String PROJECT_ID = options.projectId();
   private static final String KIND1 = "kind1";
   private static final String KIND2 = "kind2";
   private static final String KIND3 = "kind3";
@@ -117,13 +121,9 @@ public class DatastoreTest {
   private static final Entity ENTITY3 = Entity.builder(ENTITY1).key(KEY3).remove("str")
       .set("null", NULL_VALUE).set("partial1", PARTIAL_ENTITY2).set("partial2", ENTITY2).build();
 
-  private DatastoreOptions options;
   private DatastoreOptions rpcMockOptions;
-  private Datastore datastore;
   private DatastoreRpcFactory rpcFactoryMock;
   private DatastoreRpc rpcMock;
-
-  private static LocalDatastoreHelper helper = LocalDatastoreHelper.create(PROJECT_ID, 1.0);
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -135,8 +135,6 @@ public class DatastoreTest {
 
   @Before
   public void setUp() {
-    options = helper.options().toBuilder().retryParams(RetryParams.noRetries()).build();
-    datastore = options.service();
     rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
     rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
     rpcMockOptions = options

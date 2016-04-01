@@ -34,6 +34,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
   private static final long serialVersionUID = 5056049000758143852L;
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE);
+  private static final String TEST_INDICATOR = "gcloud-java test project";
 
   private final String namespace;
 

@@ -53,6 +53,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -64,7 +65,6 @@ import java.util.zip.ZipInputStream;
  */
 public class LocalDatastoreHelper {
   private static final Logger log = Logger.getLogger(LocalDatastoreHelper.class.getName());
-  public static final String DEFAULT_PROJECT_ID = "projectid1";
   private static final String GCD_VERSION = "v1beta3";
   private static final String GCD_BUILD = "1.0.0";
   private static final double DEFAULT_CONSISTENCY = 0.9;
@@ -75,6 +75,8 @@ public class LocalDatastoreHelper {
   private static final String GCLOUD = "gcloud";
   private static final Path INSTALLED_GCD_PATH;
   private static final String GCD_VERSION_PREFIX = "gcd-emulator ";
+  private static final String PROJECT_ID_PREFIX = "test-id-";
+  private static final String TEST_INDICATOR = "gcloud-java test project";
 
   private final String projectId;
   private Path gcdPath;
@@ -518,6 +520,7 @@ public class LocalDatastoreHelper {
     if (gcdPath != null) {
       deleteRecurse(gcdPath);
     }
+    System.clearProperty(projectId());
   }
 
   private static void deleteRecurse(Path path) throws IOException {
@@ -539,8 +542,8 @@ public class LocalDatastoreHelper {
     });
   }
 
-  private LocalDatastoreHelper(String projectId, double consistency) {
-    this.projectId = projectId;
+  private LocalDatastoreHelper(double consistency) {
+    projectId = PROJECT_ID_PREFIX + UUID.randomUUID().toString();
     this.consistency = consistency;
     this.port = findAvailablePort();
   }
@@ -554,8 +557,8 @@ public class LocalDatastoreHelper {
   }
 
   /**
-   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator
-   * on localhost. This should only be called after calling {@link #start}.
+   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
+   * localhost.
    */
   public DatastoreOptions options() {
     return DatastoreOptions.builder()
@@ -595,8 +598,9 @@ public class LocalDatastoreHelper {
    *     about the consistency of non-ancestor queries; non-ancestor queries are eventually
    *     consistent.
    */
-  public static LocalDatastoreHelper create(String projectId, double consistency) {
-    LocalDatastoreHelper helper = new LocalDatastoreHelper(projectId, consistency);
+  public static LocalDatastoreHelper create(double consistency) {
+    LocalDatastoreHelper helper = new LocalDatastoreHelper(consistency);
+    System.setProperty(helper.projectId(), TEST_INDICATOR);
     return helper;
   }
 
@@ -607,7 +611,7 @@ public class LocalDatastoreHelper {
    * all writes are immediately visible.
    */
   public static LocalDatastoreHelper create() {
-    return create(DEFAULT_PROJECT_ID, DEFAULT_CONSISTENCY);
+    return create(DEFAULT_CONSISTENCY);
   }
 
   /**
