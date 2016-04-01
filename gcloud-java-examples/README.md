@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-examples</artifactId>
-  <version>0.1.6</version>
+  <version>0.1.7</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-examples:0.1.6'
+compile 'com.google.gcloud:gcloud-java-examples:0.1.7'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-examples" % "0.1.6"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-examples" % "0.1.7"
 ```
 
 To run examples from your command line:
