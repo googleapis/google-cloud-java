@@ -16,7 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -55,25 +54,21 @@ public class IncompleteKey extends BaseKey {
 
   @Override
   Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(DatastoreV1.Key.parseFrom(bytesPb));
+    return fromPb(com.google.datastore.v1beta3.Key.parseFrom(bytesPb));
   }
 
-  static IncompleteKey fromPb(DatastoreV1.Key keyPb) {
-    String projectId = null;
-    String namespace = null;
+  static IncompleteKey fromPb(com.google.datastore.v1beta3.Key keyPb) {
+    String projectId = "";
+    String namespace = "";
     if (keyPb.hasPartitionId()) {
-      DatastoreV1.PartitionId partitionIdPb = keyPb.getPartitionId();
-      if (partitionIdPb.hasDatasetId()) {
-        projectId = partitionIdPb.getDatasetId();
-      }
-      if (partitionIdPb.hasNamespace()) {
-        namespace = partitionIdPb.getNamespace();
-      }
+      com.google.datastore.v1beta3.PartitionId partitionIdPb = keyPb.getPartitionId();
+      projectId = partitionIdPb.getProjectId();
+      namespace = partitionIdPb.getNamespaceId();
     }
-    List<DatastoreV1.Key.PathElement> pathElementsPb = keyPb.getPathElementList();
+    List<com.google.datastore.v1beta3.Key.PathElement> pathElementsPb = keyPb.getPathList();
     Preconditions.checkArgument(!pathElementsPb.isEmpty(), "Path must not be empty");
     ImmutableList.Builder<PathElement> pathBuilder = ImmutableList.builder();
-    for (DatastoreV1.Key.PathElement pathElementPb : pathElementsPb) {
+    for (com.google.datastore.v1beta3.Key.PathElement pathElementPb : pathElementsPb) {
       pathBuilder.add(PathElement.fromPb(pathElementPb));
     }
     ImmutableList<PathElement> path = pathBuilder.build();

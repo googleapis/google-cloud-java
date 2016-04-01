@@ -42,24 +42,17 @@ public class ListValueTest {
   public void testOf() throws Exception {
     ListValue value = ListValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
-    assertFalse(value.hasIndexed());
-    assertFalse(value.hasMeaning());
-  }
-
-  @Test(expected = DatastoreException.class)
-  public void testIndexedCannotBeSpecified() {
-    ListValue.builder().indexed(false);
+    assertFalse(value.excludeFromIndexes());
   }
 
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     ListValue.Builder builder = ListValue.builder().set(CONTENT);
-    ListValue value = builder.meaning(1).build();
+    ListValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());
-    assertTrue(value.hasMeaning());
-    assertEquals(Integer.valueOf(1), value.meaning());
-    assertFalse(value.hasIndexed());
+    assertEquals(1, value.meaning());
+    assertTrue(value.excludeFromIndexes());
 
     builder = ListValue.builder();
     for (Value<?> v : CONTENT) {

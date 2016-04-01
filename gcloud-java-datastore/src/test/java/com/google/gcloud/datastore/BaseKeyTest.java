@@ -17,7 +17,6 @@
 package com.google.gcloud.datastore;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
@@ -83,7 +82,8 @@ public class BaseKeyTest {
   public void testNamespace() throws Exception {
     Builder builder = new Builder("ds", "k");
     BaseKey key = builder.build();
-    assertNull(key.namespace());
+    assertTrue(key.namespace() != null);
+    assertTrue(key.namespace().isEmpty());
     key = builder.namespace("ns").build();
     assertEquals("ns", key.namespace());
   }

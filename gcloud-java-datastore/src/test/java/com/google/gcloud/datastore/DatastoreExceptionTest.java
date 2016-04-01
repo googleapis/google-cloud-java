@@ -38,29 +38,29 @@ public class DatastoreExceptionTest {
 
   @Test
   public void testDatastoreException() throws Exception {
-    DatastoreException exception = new DatastoreException(409, "message", "ABORTED");
-    assertEquals(409, exception.code());
+    DatastoreException exception = new DatastoreException(10, "message", "ABORTED");
+    assertEquals(10, exception.code());
     assertEquals("ABORTED", exception.reason());
     assertEquals("message", exception.getMessage());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
 
-    exception = new DatastoreException(403, "message", "DEADLINE_EXCEEDED");
-    assertEquals(403, exception.code());
+    exception = new DatastoreException(4, "message", "DEADLINE_EXCEEDED");
+    assertEquals(4, exception.code());
     assertEquals("DEADLINE_EXCEEDED", exception.reason());
     assertEquals("message", exception.getMessage());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
 
-    exception = new DatastoreException(503, "message", "UNAVAILABLE");
-    assertEquals(503, exception.code());
+    exception = new DatastoreException(14, "message", "UNAVAILABLE");
+    assertEquals(14, exception.code());
     assertEquals("UNAVAILABLE", exception.reason());
     assertEquals("message", exception.getMessage());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
 
-    exception = new DatastoreException(500, "message", "INTERNAL");
-    assertEquals(500, exception.code());
+    exception = new DatastoreException(2, "message", "INTERNAL");
+    assertEquals(2, exception.code());
     assertEquals("INTERNAL", exception.reason());
     assertEquals("message", exception.getMessage());
     assertFalse(exception.retryable());
@@ -77,7 +77,7 @@ public class DatastoreExceptionTest {
 
   @Test
   public void testTranslateAndThrow() throws Exception {
-    DatastoreException cause = new DatastoreException(503, "message", "UNAVAILABLE");
+    DatastoreException cause = new DatastoreException(14, "message", "UNAVAILABLE");
     RetryHelper.RetryHelperException exceptionMock =
         createMock(RetryHelper.RetryHelperException.class);
     expect(exceptionMock.getCause()).andReturn(cause).times(2);
@@ -85,7 +85,7 @@ public class DatastoreExceptionTest {
     try {
       DatastoreException.translateAndThrow(exceptionMock);
     } catch (BaseServiceException ex) {
-      assertEquals(503, ex.code());
+      assertEquals(14, ex.code());
       assertEquals("message", ex.getMessage());
       assertTrue(ex.retryable());
       assertTrue(ex.idempotent());

@@ -35,19 +35,16 @@ public class BooleanValueTest {
   public void testOf() throws Exception {
     BooleanValue value = BooleanValue.of(false);
     assertFalse(value.get());
-    assertFalse(value.hasIndexed());
-    assertFalse(value.hasMeaning());
+    assertFalse(value.excludeFromIndexes());
   }
 
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     BooleanValue.Builder builder = BooleanValue.builder(true);
-    BooleanValue value = builder.meaning(1).indexed(true).build();
+    BooleanValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertTrue(value.get());
-    assertTrue(value.hasMeaning());
-    assertEquals(Integer.valueOf(1), value.meaning());
-    assertTrue(value.hasIndexed());
-    assertTrue(value.indexed());
+    assertEquals(1, value.meaning());
+    assertTrue(value.excludeFromIndexes());
   }
 }

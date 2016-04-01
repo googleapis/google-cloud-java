@@ -20,7 +20,6 @@ import static com.google.gcloud.datastore.Validator.validateDatabase;
 import static com.google.gcloud.datastore.Validator.validateKind;
 import static com.google.gcloud.datastore.Validator.validateNamespace;
 
-import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 
@@ -31,7 +30,7 @@ import java.util.Objects;
 /**
  * Base class for keys.
  */
-public abstract class BaseKey extends Serializable<DatastoreV1.Key> {
+public abstract class BaseKey extends Serializable<com.google.datastore.v1beta3.Key> {
 
   private static final long serialVersionUID = -4671243265877410635L;
 
@@ -46,8 +45,8 @@ public abstract class BaseKey extends Serializable<DatastoreV1.Key> {
    */
   protected abstract static class Builder<B extends Builder<B>> {
 
-    String projectId;
-    String namespace;
+    String projectId = "";
+    String namespace = "";
     String kind;
     final List<PathElement> ancestors;
 
@@ -179,20 +178,15 @@ public abstract class BaseKey extends Serializable<DatastoreV1.Key> {
   }
 
   @Override
-  DatastoreV1.Key toPb() {
-    DatastoreV1.Key.Builder keyPb = DatastoreV1.Key.newBuilder();
-    DatastoreV1.PartitionId.Builder partitionIdPb = DatastoreV1.PartitionId.newBuilder();
-    if (projectId != null) {
-      partitionIdPb.setDatasetId(projectId);
-    }
-    if (namespace != null) {
-      partitionIdPb.setNamespace(namespace);
-    }
-    if (partitionIdPb.hasDatasetId() || partitionIdPb.hasNamespace()) {
-      keyPb.setPartitionId(partitionIdPb.build());
-    }
+  com.google.datastore.v1beta3.Key toPb() {
+    com.google.datastore.v1beta3.Key.Builder keyPb = com.google.datastore.v1beta3.Key.newBuilder();
+    com.google.datastore.v1beta3.PartitionId.Builder partitionIdPb =
+        com.google.datastore.v1beta3.PartitionId.newBuilder();
+    partitionIdPb.setProjectId(projectId);
+    partitionIdPb.setNamespaceId(namespace);
+    keyPb.setPartitionId(partitionIdPb.build());
     for (PathElement pathEntry : path) {
-      keyPb.addPathElement(pathEntry.toPb());
+      keyPb.addPath(pathEntry.toPb());
     }
     return keyPb.build();
   }

@@ -20,13 +20,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.services.datastore.DatastoreV1;
-
 import org.junit.Test;
 
 public class RawValueTest {
 
-  private static final DatastoreV1.Value CONTENT = StringValue.of("hello").toPb();
+  private static final com.google.datastore.v1beta3.Value CONTENT = StringValue.of("hello").toPb();
 
   @Test
   public void testToBuilder() throws Exception {
@@ -34,24 +32,20 @@ public class RawValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
-  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     RawValue value = RawValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
-    assertFalse(value.hasIndexed());
-    assertFalse(value.hasMeaning());
+    assertFalse(value.excludeFromIndexes());
   }
 
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
     RawValue.Builder builder = RawValue.builder(CONTENT);
-    RawValue value = builder.meaning(1).indexed(false).build();
+    RawValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());
-    assertTrue(value.hasMeaning());
-    assertEquals(Integer.valueOf(1), value.meaning());
-    assertTrue(value.hasIndexed());
-    assertFalse(value.indexed());
+    assertEquals(1, value.meaning());
+    assertTrue(value.excludeFromIndexes());
   }
 }

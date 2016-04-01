@@ -18,8 +18,6 @@ package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.services.datastore.DatastoreV1;
-import com.google.api.services.datastore.DatastoreV1.Value;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.io.BaseEncoding;
@@ -30,7 +28,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
  * A Google Cloud Datastore cursor.
  * The cursor can be used to as a starting point or an ending point for a {@link Query}
  */
-public final class Cursor extends Serializable<DatastoreV1.Value> {
+public final class Cursor extends Serializable<com.google.datastore.v1beta3.Value> {
 
   private static final long serialVersionUID = -1423744878777486541L;
 
@@ -87,16 +85,16 @@ public final class Cursor extends Serializable<DatastoreV1.Value> {
   }
 
   @Override
-  Value toPb() {
-    return DatastoreV1.Value.newBuilder().setBlobValue(byteString).build();
+  com.google.datastore.v1beta3.Value toPb() {
+    return com.google.datastore.v1beta3.Value.newBuilder().setBlobValue(byteString).build();
   }
 
   @Override
   Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(DatastoreV1.Value.parseFrom(bytesPb));
+    return fromPb(com.google.datastore.v1beta3.Value.parseFrom(bytesPb));
   }
 
-  static Cursor fromPb(DatastoreV1.Value valuePb) {
+  static Cursor fromPb(com.google.datastore.v1beta3.Value valuePb) {
     return new Cursor(valuePb.getBlobValue());
   }
 }

@@ -77,11 +77,11 @@ public class LocalGcdHelper {
 
   public static final String DEFAULT_PROJECT_ID = "projectid1";
   public static final int DEFAULT_PORT = 8080;
-  private static final String GCD_VERSION = "v1beta2";
-  private static final String GCD_BUILD = "rev1-2.1.2b";
+  private static final String GCD_VERSION = "v1beta3";
+  private static final String GCD_BUILD = "1.0.0";
   private static final String GCD_BASENAME = "gcd-" + GCD_VERSION + "-" + GCD_BUILD;
   private static final String GCD_FILENAME = GCD_BASENAME + ".zip";
-  private static final String MD5_CHECKSUM = "d84384cdfa8658e1204f4f8be51300e8";
+  private static final String MD5_CHECKSUM = "72156cc993835c57f72789519b85249b";
   private static final URL GCD_URL;
   private static final String GCLOUD = "gcloud";
   private static final Path INSTALLED_GCD_PATH;
@@ -419,7 +419,7 @@ public class LocalGcdHelper {
     // If cloud is available we use it, otherwise we download and start gcd
     if (INSTALLED_GCD_PATH == null) {
       downloadGcd();
-      gcdExecutablePath = gcdPath.resolve(GCD_BASENAME);
+      gcdExecutablePath = gcdPath.resolve("gcd");
     } else {
       gcdExecutablePath = INSTALLED_GCD_PATH;
     }
@@ -654,7 +654,7 @@ public class LocalGcdHelper {
   public static boolean isActive(String projectId, int port) {
     try {
       StringBuilder urlBuilder = new StringBuilder("http://localhost:").append(port);
-      urlBuilder.append("/datastore/v1beta2/datasets/").append(projectId).append("/lookup");
+      urlBuilder.append("/datastore/v1beta3/projects/").append(projectId).append(":lookup");
       URL url = new URL(urlBuilder.toString());
       try (BufferedReader reader =
           new BufferedReader(new InputStreamReader(url.openStream(), UTF_8))) {

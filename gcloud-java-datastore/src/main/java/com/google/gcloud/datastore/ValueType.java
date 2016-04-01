@@ -78,8 +78,12 @@ public enum ValueType {
   /**
    * Represents a raw/unparsed value.
    */
-  RAW_VALUE(RawValue.MARSHALLER);
+  RAW_VALUE(RawValue.MARSHALLER),
 
+  /**
+   * Represents a {@link LatLng} value
+   */
+  LAT_LNG(LatLngValue.MARSHALLER);
 
   private static final ImmutableMap<Integer, ValueType> DESCRIPTOR_TO_TYPE_MAP;
 

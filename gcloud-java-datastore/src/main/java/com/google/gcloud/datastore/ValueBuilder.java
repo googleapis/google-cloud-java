@@ -29,14 +29,14 @@ public interface ValueBuilder<V, P extends Value<V>, B extends ValueBuilder<V, P
 
   B mergeFrom(P other);
 
-  Boolean getIndexed();
+  boolean getExcludeFromIndexes();
 
-  B indexed(boolean indexed);
+  B excludeFromIndexes(boolean excludeFromIndexes);
 
-  Integer getMeaning();
+  int getMeaning();
 
   @Deprecated
-  B meaning(Integer meaning);
+  B meaning(int meaning);
 
   V get();
 

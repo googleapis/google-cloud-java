@@ -18,11 +18,9 @@ package com.google.gcloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.services.datastore.DatastoreV1;
-import com.google.protobuf.Descriptors.FieldDescriptor;
+import com.google.datastore.v1beta3.Value.ValueTypeCase;
 import com.google.protobuf.InvalidProtocolBufferException;
 
-import java.util.Map.Entry;
 import java.util.Objects;
 
 /**
@@ -33,14 +31,14 @@ import java.util.Objects;
  *
  * @param <V> the type of the content for this value
  */
-public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
+public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3.Value> {
 
   private static final long serialVersionUID = -1899638277588872742L;
 
 
   private final transient ValueType valueType;
-  private final transient Boolean indexed;
-  private final transient Integer meaning;
+  private final transient boolean excludeFromIndexes;
+  private final transient int meaning;
   private final transient V value;
 
   interface BuilderFactory<V, P extends Value<V>, B extends ValueBuilder<V, P, B>>
@@ -55,34 +53,27 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 
     @SuppressWarnings("deprecation")
     @Override
-    public final B fromProto(DatastoreV1.Value proto) {
+    public final B fromProto(com.google.datastore.v1beta3.Value proto) {
       B builder = newBuilder(getValue(proto));
-      if (proto.hasIndexed()) {
-        builder.indexed(proto.getIndexed());
-      }
-      if (proto.hasMeaning()) {
-        builder.meaning(proto.getMeaning());
-      }
+      builder.excludeFromIndexes(proto.getExcludeFromIndexes());
+      builder.meaning(proto.getMeaning());
       return builder;
     }
 
     @SuppressWarnings("deprecation")
     @Override
-    public final DatastoreV1.Value toProto(P value) {
-      DatastoreV1.Value.Builder builder = DatastoreV1.Value.newBuilder();
-      if (value.hasIndexed()) {
-        builder.setIndexed(value.indexed());
-      }
-      if (value.hasMeaning()) {
-        builder.setMeaning(value.meaning());
-      }
+    public final com.google.datastore.v1beta3.Value toProto(P value) {
+      com.google.datastore.v1beta3.Value.Builder builder =
+          com.google.datastore.v1beta3.Value.newBuilder();
+      builder.setExcludeFromIndexes(value.excludeFromIndexes());
+      builder.setMeaning(value.meaning());
       setValue(value, builder);
       return builder.build();
     }
 
-    protected abstract V getValue(DatastoreV1.Value from);
+    protected abstract V getValue(com.google.datastore.v1beta3.Value from);
 
-    protected abstract void setValue(P from, DatastoreV1.Value.Builder to);
+    protected abstract void setValue(P from, com.google.datastore.v1beta3.Value.Builder to);
   }
 
   @SuppressWarnings("deprecation")
@@ -90,8 +81,8 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
       implements ValueBuilder<V, P, B> {
 
     private final ValueType valueType;
-    private Boolean indexed;
-    private Integer meaning;
+    private boolean excludeFromIndexes;
+    private int meaning;
     private V value;
 
     BaseBuilder(ValueType valueType) {
@@ -105,30 +96,30 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 
     @Override
     public B mergeFrom(P other) {
-      indexed = other.indexed();
+      excludeFromIndexes = other.excludeFromIndexes();
       meaning = other.meaning();
       set(other.get());
       return self();
     }
 
     @Override
-    public Boolean getIndexed() {
-      return indexed;
+    public boolean getExcludeFromIndexes() {
+      return excludeFromIndexes;
     }
 
     @Override
-    public B indexed(boolean indexed) {
-      this.indexed = indexed;
+    public B excludeFromIndexes(boolean excludeFromIndexes) {
+      this.excludeFromIndexes = excludeFromIndexes;
       return self();
     }
 
     @Override
-    public Integer getMeaning() {
+    public int getMeaning() {
       return meaning;
     }
 
     @Override
-    public B meaning(Integer meaning) {
+    public B meaning(int meaning) {
       this.meaning = meaning;
       return self();
     }
@@ -155,7 +146,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 
   <P extends Value<V>, B extends BaseBuilder<V, P, B>> Value(ValueBuilder<V, P, B> builder) {
     valueType = builder.getValueType();
-    indexed = builder.getIndexed();
+    excludeFromIndexes = builder.getExcludeFromIndexes();
     meaning = builder.getMeaning();
     value = builder.get();
   }
@@ -164,21 +155,12 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     return valueType;
   }
 
-  public final boolean hasIndexed() {
-    return indexed != null;
-  }
-
-  public final Boolean indexed() {
-    return indexed;
+  public final boolean excludeFromIndexes() {
+    return excludeFromIndexes;
   }
 
   @Deprecated
-  public final boolean hasMeaning() {
-    return meaning != null;
-  }
-
-  @Deprecated
-  public final Integer meaning() {
+  final int meaning() {
     return meaning;
   }
 
@@ -190,7 +172,7 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(valueType, indexed, meaning, value);
+    return Objects.hash(valueType, excludeFromIndexes, meaning, value);
   }
 
   @Override
@@ -204,34 +186,26 @@ public abstract class Value<V> extends Serializable<DatastoreV1.Value> {
     }
     Value<V> other = (Value<V>) obj;
     return Objects.equals(valueType, other.valueType)
-        && Objects.equals(indexed, other.indexed)
+        && Objects.equals(excludeFromIndexes, other.excludeFromIndexes)
         && Objects.equals(meaning, other.meaning)
         && Objects.equals(value, other.value);
   }
 
   @Override
   @SuppressWarnings("unchecked")
-  DatastoreV1.Value toPb() {
+  com.google.datastore.v1beta3.Value toPb() {
     return type().getMarshaller().toProto(this);
   }
 
-  static Value<?> fromPb(DatastoreV1.Value proto) {
-    for (Entry<FieldDescriptor, Object> entry : proto.getAllFields().entrySet()) {
-      FieldDescriptor descriptor = entry.getKey();
-      if (descriptor.getName().endsWith("_value")) {
-        ValueType valueType = ValueType.getByDescriptorId(descriptor.getNumber());
-        if (valueType == null) {
-          // unsupported type
-          return RawValue.MARSHALLER.fromProto(proto).build();
-        }
-        return valueType.getMarshaller().fromProto(proto).build();
-      }
-    }
-    return NullValue.MARSHALLER.fromProto(proto).build();
+  static Value<?> fromPb(com.google.datastore.v1beta3.Value proto) {
+    ValueTypeCase descriptorId = proto.getValueTypeCase();
+    ValueType valueType = ValueType.getByDescriptorId(descriptorId.getNumber());
+    return valueType == null ? RawValue.MARSHALLER.fromProto(proto).build()
+        : valueType.getMarshaller().fromProto(proto).build();
   }
 
   @Override
   Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(DatastoreV1.Value.parseFrom(bytesPb));
+    return fromPb(com.google.datastore.v1beta3.Value.parseFrom(bytesPb));
   }
 }

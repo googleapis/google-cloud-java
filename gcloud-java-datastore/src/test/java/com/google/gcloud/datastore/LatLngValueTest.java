@@ -18,32 +18,34 @@ package com.google.gcloud.datastore;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class NullValueTest {
+public class LatLngValueTest {
+
+private static final LatLng CONTENT = new LatLng(37.4, -122.1);
 
   @Test
   public void testToBuilder() throws Exception {
-    NullValue value = NullValue.of();
+    LatLngValue value = LatLngValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
+  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
-    NullValue value = NullValue.of();
-    assertNull(value.get());
+    LatLngValue value = LatLngValue.of(CONTENT);
+    assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
   }
 
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
-    NullValue.Builder builder = NullValue.builder();
-    NullValue value = builder.meaning(1).excludeFromIndexes(true).build();
-    assertNull(value.get());
+    LatLngValue.Builder builder = LatLngValue.builder(CONTENT);
+    LatLngValue value = builder.meaning(1).excludeFromIndexes(true).build();
+    assertEquals(CONTENT, value.get());
     assertEquals(1, value.meaning());
     assertTrue(value.excludeFromIndexes());
   }
