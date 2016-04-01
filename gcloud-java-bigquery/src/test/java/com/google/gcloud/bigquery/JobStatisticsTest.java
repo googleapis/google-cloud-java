@@ -71,7 +71,7 @@ public class JobStatisticsTest {
   private static final QueryStage QUERY_STAGE = QueryStage.builder()
       .computeRatioAvg(1.1)
       .computeRatioMax(2.2)
-      .id(42L)
+      .generatedId(42L)
       .name("stage")
       .readRatioAvg(3.3)
       .readRatioMax(4.4)

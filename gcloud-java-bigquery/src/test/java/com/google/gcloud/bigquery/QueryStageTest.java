@@ -48,7 +48,7 @@ public class QueryStageTest {
   private static final QueryStage QUERY_STAGE = QueryStage.builder()
       .computeRatioAvg(COMPUTE_RATIO_AVG)
       .computeRatioMax(COMPUTE_RATIO_MAX)
-      .id(ID)
+      .generatedId(ID)
       .name(NAME)
       .readRatioAvg(READ_RATIO_AVG)
       .readRatioMax(READ_RATIO_MAX)
@@ -73,7 +73,7 @@ public class QueryStageTest {
   public void testBuilder() {
     assertEquals(COMPUTE_RATIO_AVG, QUERY_STAGE.computeRatioAvg(), 0);
     assertEquals(COMPUTE_RATIO_MAX, QUERY_STAGE.computeRatioMax(), 0);
-    assertEquals(ID, QUERY_STAGE.id());
+    assertEquals(ID, QUERY_STAGE.generatedId());
     assertEquals(NAME, QUERY_STAGE.name());
     assertEquals(READ_RATIO_AVG, QUERY_STAGE.readRatioAvg(), 0);
     assertEquals(READ_RATIO_MAX, QUERY_STAGE.readRatioMax(), 0);
@@ -108,7 +108,7 @@ public class QueryStageTest {
     assertEquals(expected, value);
     assertEquals(expected.computeRatioAvg(), value.computeRatioAvg(), 0);
     assertEquals(expected.computeRatioMax(), value.computeRatioMax(), 0);
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.name(), value.name());
     assertEquals(expected.readRatioAvg(), value.readRatioAvg(), 0);
     assertEquals(expected.readRatioMax(), value.readRatioMax(), 0);
