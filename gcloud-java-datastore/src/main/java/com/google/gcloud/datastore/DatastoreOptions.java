@@ -130,7 +130,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
     String host = System.getProperty(
         com.google.datastore.v1beta3.client.DatastoreHelper.LOCAL_HOST_ENV_VAR,
         System.getenv(com.google.datastore.v1beta3.client.DatastoreHelper.LOCAL_HOST_ENV_VAR));
-    return host != null ? host : super.defaultHost();
+    return host != null ? host : com.google.datastore.v1beta3.client.DatastoreFactory.DEFAULT_HOST;
   }
 
   @Override
