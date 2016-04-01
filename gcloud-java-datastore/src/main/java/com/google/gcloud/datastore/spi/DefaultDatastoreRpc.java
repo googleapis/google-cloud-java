@@ -54,8 +54,9 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
       if (fullURL.charAt(fullURL.length() - 1) != '/') {
         fullURL = fullURL + '/';
       }
-      fullURL = fullURL + "datastore/"
-          + com.google.datastore.v1beta3.client.DatastoreFactory.VERSION + "/projects/"
+      fullURL = fullURL
+          + com.google.datastore.v1beta3.client.DatastoreFactory.VERSION
+          + "/projects/"
           + options.projectId();
       clientBuilder = clientBuilder.projectId(null).projectEndpoint(fullURL);
     }
