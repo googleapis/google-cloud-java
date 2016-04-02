@@ -870,6 +870,54 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Class for filtering image lists.
+   */
+  class ImageFilter extends ListFilter {
+
+    private static final long serialVersionUID = -3601427417234098397L;
+
+    private ImageFilter(ImageField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static ImageFilter equals(ImageField field, String value) {
+      return new ImageFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static ImageFilter notEquals(ImageField field, String value) {
+      return new ImageFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+
+    /**
+     * Returns an equals filter for the given field and long value.
+     */
+    public static ImageFilter equals(ImageField field, long value) {
+      return new ImageFilter(checkNotNull(field), ComparisonOperator.EQ, value);
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and long value.
+     */
+    public static ImageFilter notEquals(ImageField field, long value) {
+      return new ImageFilter(checkNotNull(field), ComparisonOperator.NE, value);
+    }
+  }
+
+  /**
    * Class for specifying disk type get options.
    */
   class DiskTypeOption extends Option {
@@ -1470,6 +1518,74 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Class for specifying image get options.
+   */
+  class ImageOption extends Option {
+
+    private static final long serialVersionUID = -7622190783089299272L;
+
+    private ImageOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the image's fields to be returned by the RPC call. If this
+     * option is not provided, all image's fields are returned. {@code ImageOption.fields} can be
+     * used to specify only the fields of interest. {@link Image#imageId()} and
+     * {@link Image#configuration()} are always returned, even if not specified.
+     */
+    public static ImageOption fields(ImageField... fields) {
+      return new ImageOption(ComputeRpc.Option.FIELDS, ImageField.selector(fields));
+    }
+  }
+
+  /**
+   * Class for specifying image list options.
+   */
+  class ImageListOption extends Option {
+
+    private static final long serialVersionUID = -4927977224287915654L;
+
+    private ImageListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the images being listed.
+     */
+    public static ImageListOption filter(ImageFilter filter) {
+      return new ImageListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of images returned per page. {@code pageSize}
+     * must be between 0 and 500 (inclusive). If not specified 500 is used.
+     */
+    public static ImageListOption pageSize(long pageSize) {
+      return new ImageListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing images.
+     */
+    public static ImageListOption pageToken(String pageToken) {
+      return new ImageListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * Returns an option to specify the image's fields to be returned by the RPC call. If this
+     * option is not provided, all image's fields are returned. {@code ImageListOption.fields} can
+     * be used to specify only the fields of interest. {@link Image#imageId()} and
+     * {@link Image#configuration()} are always returned, even if not specified.
+     */
+    public static ImageListOption fields(ImageField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(ImageField.selector(fields)).append("),nextPageToken");
+      return new ImageListOption(ComputeRpc.Option.FIELDS, builder.toString());
+    }
+  }
+
+  /**
    * Returns the requested disk type or {@code null} if not found.
    *
    * @throws ComputeException upon failure
@@ -1699,4 +1815,57 @@ public interface Compute extends Service<ComputeOptions> {
    *     Deleting a snapshot</a>
    */
   Operation deleteSnapshot(String snapshot, OperationOption... options);
+
+  /**
+   * Creates a new image.
+   *
+   * @return a global operation for image's creation
+   * @throws ComputeException upon failure
+   */
+  Operation create(ImageInfo image, OperationOption... options);
+
+  /**
+   * Returns the requested image or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Image get(ImageId imageId, ImageOption... options);
+
+  /**
+   * Lists images in the provided project that are available to the current user. This method can be
+   * used to list publicly-available images by providing the respective image project. Examples of
+   * image projects are: {@code centos-cloud}, {@code coreos-cloud}, {@code debian-cloud},
+   * {@code opensuse-cloud}, {@code rhel-cloud}, {@code suse-cloud}, {@code ubuntu-os-cloud} and
+   * {@code windows-cloud}. Attempting to delete or deprecate a publicly-available image will fail.
+   *
+   * @throws ComputeException upon failure
+   * @see <a href="https://cloud.google.com/compute/docs/operating-systems/">Operating Systems</a>
+   */
+  Page<Image> listImages(String project, ImageListOption... options);
+
+  /**
+   * Lists images in the current project.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Image> listImages(ImageListOption... options);
+
+  /**
+   * Deletes the requested image.
+   *
+   * @return a global operation if the delete request was issued correctly, {@code null} if the
+   *     image was not found
+   * @throws ComputeException upon failure or if {@code image} is a publicly-available image
+   */
+  Operation delete(ImageId image, OperationOption... options);
+
+  /**
+   * Deprecates the requested image.
+   *
+   * @return a global operation if the deprecation request was issued correctly, {@code null} if the
+   *     image was not found
+   * @throws ComputeException upon failure or if {@code image} is a publicly-available image
+   */
+  Operation deprecate(ImageId image, DeprecationStatus<ImageId> deprecationStatus,
+      OperationOption... options);
 }

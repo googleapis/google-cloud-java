@@ -17,7 +17,9 @@
 package com.google.gcloud.spi;
 
 import com.google.api.services.compute.model.Address;
+import com.google.api.services.compute.model.DeprecationStatus;
 import com.google.api.services.compute.model.DiskType;
+import com.google.api.services.compute.model.Image;
 import com.google.api.services.compute.model.License;
 import com.google.api.services.compute.model.MachineType;
 import com.google.api.services.compute.model.Operation;
@@ -103,7 +105,7 @@ public interface ComputeRpc {
   Tuple<String, Iterable<DiskType>> listDiskTypes(String zone, Map<Option, ?> options);
 
   /**
-   * Lists all disk types.
+   * Lists disk types.
    *
    * @throws ComputeException upon failure
    */
@@ -124,7 +126,7 @@ public interface ComputeRpc {
   Tuple<String, Iterable<MachineType>> listMachineTypes(String zone, Map<Option, ?> options);
 
   /**
-   * Lists all machine types.
+   * Lists machine types.
    *
    * @throws ComputeException upon failure
    */
@@ -318,7 +320,7 @@ public interface ComputeRpc {
   Snapshot getSnapshot(String snapshot, Map<Option, ?> options);
 
   /**
-   * Lists all snapshots.
+   * Lists snapshots.
    *
    * @throws ComputeException upon failure
    */
@@ -334,4 +336,45 @@ public interface ComputeRpc {
    * @throws ComputeException upon failure
    */
   Operation deleteSnapshot(String snapshot, Map<Option, ?> options);
+
+  /**
+   * Creates a new image.
+   *
+   * @return a global operation for image's creation
+   * @throws ComputeException upon failure
+   */
+  Operation createImage(Image image, Map<Option, ?> options);
+
+  /**
+   * Returns the requested image or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Image getImage(String project, String image, Map<Option, ?> options);
+
+  /**
+   * Lists images in the provided project that are available to the current user.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Image>> listImages(String project, Map<Option, ?> options);
+
+  /**
+   * Deletes the requested image.
+   *
+   * @return a global operation if the delete request was issued correctly, {@code null} if the
+   *     image was not found
+   * @throws ComputeException upon failure
+   */
+  Operation deleteImage(String project, String image, Map<Option, ?> options);
+
+  /**
+   * Deprecates the requested image.
+   *
+   * @return a global operation if the deprecation request was issued correctly, {@code null} if the
+   *     image was not found
+   * @throws ComputeException upon failure
+   */
+  Operation deprecateImage(String project, String image, DeprecationStatus deprecationStatus,
+      Map<Option, ?> options);
 }
