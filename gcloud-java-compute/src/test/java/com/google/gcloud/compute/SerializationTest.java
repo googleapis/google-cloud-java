@@ -151,9 +151,11 @@ public class SerializationTest {
   private static final ImageId IMAGE_ID = ImageId.of("project", "image");
   private static final DiskImageConfiguration DISK_IMAGE_CONFIGURATION =
       DiskImageConfiguration.of(DISK_ID);
-  private static final StorageImageConfiguration RAW_IMAGE_CONFIGURATION =
+  private static final StorageImageConfiguration STORAGE_IMAGE_CONFIGURATION =
       StorageImageConfiguration.of("gs:/bucket/file");
   private static final ImageInfo IMAGE_INFO = ImageInfo.of(IMAGE_ID, DISK_IMAGE_CONFIGURATION);
+  private static final Image IMAGE =
+      new Image.Builder(COMPUTE, IMAGE_ID, DISK_IMAGE_CONFIGURATION).build();
   private static final Compute.DiskTypeOption DISK_TYPE_OPTION =
       Compute.DiskTypeOption.fields();
   private static final Compute.DiskTypeFilter DISK_TYPE_FILTER =
@@ -198,6 +200,11 @@ public class SerializationTest {
       Compute.SnapshotFilter.equals(Compute.SnapshotField.SELF_LINK, "selfLink");
   private static final Compute.SnapshotListOption SNAPSHOT_LIST_OPTION =
       Compute.SnapshotListOption.filter(SNAPSHOT_FILTER);
+  private static final Compute.ImageOption IMAGE_OPTION = Compute.ImageOption.fields();
+  private static final Compute.ImageFilter IMAGE_FILTER =
+      Compute.ImageFilter.equals(Compute.ImageField.SELF_LINK, "selfLink");
+  private static final Compute.ImageListOption IMAGE_LIST_OPTION =
+      Compute.ImageListOption.filter(IMAGE_FILTER);
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -225,14 +232,14 @@ public class SerializationTest {
         INSTANCE_ID, REGION_FORWARDING_RULE_ID, GLOBAL_FORWARDING_RULE_ID, GLOBAL_ADDRESS_ID,
         REGION_ADDRESS_ID, INSTANCE_USAGE, GLOBAL_FORWARDING_USAGE, REGION_FORWARDING_USAGE,
         ADDRESS_INFO, ADDRESS, DISK_ID, SNAPSHOT_ID, SNAPSHOT_INFO, SNAPSHOT, IMAGE_ID,
-        DISK_IMAGE_CONFIGURATION, RAW_IMAGE_CONFIGURATION, IMAGE_INFO, DISK_TYPE_OPTION,
+        DISK_IMAGE_CONFIGURATION, STORAGE_IMAGE_CONFIGURATION, IMAGE_INFO, IMAGE, DISK_TYPE_OPTION,
         DISK_TYPE_FILTER, DISK_TYPE_LIST_OPTION, DISK_TYPE_AGGREGATED_LIST_OPTION,
         MACHINE_TYPE_OPTION, MACHINE_TYPE_FILTER, MACHINE_TYPE_LIST_OPTION,
         MACHINE_TYPE_AGGREGATED_LIST_OPTION, REGION_OPTION, REGION_FILTER, REGION_LIST_OPTION,
         ZONE_OPTION, ZONE_FILTER, ZONE_LIST_OPTION, LICENSE_OPTION, OPERATION_OPTION,
         OPERATION_FILTER, OPERATION_LIST_OPTION, ADDRESS_OPTION, ADDRESS_FILTER,
         ADDRESS_LIST_OPTION, ADDRESS_AGGREGATED_LIST_OPTION, SNAPSHOT_OPTION, SNAPSHOT_FILTER,
-        SNAPSHOT_LIST_OPTION};
+        SNAPSHOT_LIST_OPTION, IMAGE_OPTION, IMAGE_FILTER, IMAGE_LIST_OPTION};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);
