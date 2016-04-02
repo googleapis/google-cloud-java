@@ -17,7 +17,6 @@
 package com.google.datastore.snippets;
 
 import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreException;
 import com.google.gcloud.datastore.DatastoreOptions;
 import com.google.gcloud.datastore.DateTime;
 import com.google.gcloud.datastore.Entity;
@@ -51,7 +50,8 @@ public class TaskList {
    * Adds a task entity to the Datastore.
    *
    * @param description The task description
-   * @return The {@link Key} of the entity.
+   * @return The {@link Key} of the entity
+   * @throws DatastoreException if the Datastore put fails
    */
   Key addTask(String description) {
     Key key = datastore.allocateId(keyFactory.newKey());
@@ -70,14 +70,18 @@ public class TaskList {
    * Marks a task entity as done.
    *
    * @param id The ID of the task entity as given by {@link Key#id()}
-   * @throws DatastoreException if the task does not exist
+   * @return true if the task was found, false if not
+   * @throws DatastoreException if the transaction commit fails
    */
-  void markDone(long id) {
+  boolean markDone(long id) {
     Transaction transaction = datastore.newTransaction();
     try {
       Entity task = transaction.get(keyFactory.newKey(id));
-      transaction.put(Entity.builder(task).set("done", true).build());
+      if (task != null) {
+        transaction.put(Entity.builder(task).set("done", true).build());
+      }
       transaction.commit();
+      return task != null;
     } finally {
       if (transaction.active()) {
         transaction.rollback();
@@ -89,6 +93,8 @@ public class TaskList {
   // [START retrieve_entities]
   /**
    * Returns a list of all task entities in ascending order of creation time.
+   *
+   * @throws DatastoreException if the query fails
    */
   Iterator<Entity> listTasks() {
     Query<Entity> query =
@@ -102,6 +108,7 @@ public class TaskList {
    * Deletes a task entity.
    *
    * @param id The ID of the task entity as given by {@link Key#id()}
+   * @throws DatastoreException if the delete fails
    */
   void deleteTask(long id) {
     datastore.delete(keyFactory.newKey(id));
@@ -158,10 +165,9 @@ public class TaskList {
       case "done":
         assertArgsLength(args, 2);
         long id = Long.parseLong(args[1]);
-        try {
-          markDone(id);
+        if (markDone(id)) {
           System.out.println("task marked done");
-        } catch (DatastoreException e) {
+        } else {
           System.out.printf("did not find a Task entity with ID %d%n", id);
         }
         break;
@@ -178,7 +184,7 @@ public class TaskList {
       case "delete":
         assertArgsLength(args, 2);
         deleteTask(Long.parseLong(args[1]));
-        System.out.println("task deleted");
+        System.out.println("task deleted (if it existed)");
         break;
       default:
         throw new IllegalArgumentException("unrecognized command: " + command);
