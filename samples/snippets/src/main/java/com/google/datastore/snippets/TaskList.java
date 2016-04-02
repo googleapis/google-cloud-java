@@ -51,7 +51,7 @@ public class TaskList {
    *
    * @param description The task description
    * @return The {@link Key} of the entity
-   * @throws DatastoreException if the Datastore put fails
+   * @throws DatastoreException if the ID allocation or put fails
    */
   Key addTask(String description) {
     Key key = datastore.allocateId(keyFactory.newKey());
@@ -71,7 +71,7 @@ public class TaskList {
    *
    * @param id The ID of the task entity as given by {@link Key#id()}
    * @return true if the task was found, false if not
-   * @throws DatastoreException if the transaction commit fails
+   * @throws DatastoreException if the transaction fails
    */
   boolean markDone(long id) {
     Transaction transaction = datastore.newTransaction();
