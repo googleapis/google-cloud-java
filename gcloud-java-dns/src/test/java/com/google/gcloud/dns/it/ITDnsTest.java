@@ -147,12 +147,13 @@ public class ITDnsTest {
   }
 
   private static void waitForChangeToComplete(String zoneName, String changeId) {
-    while (true) {
-      ChangeRequest changeRequest = DNS.getChangeRequest(zoneName, changeId,
-          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
-      if (ChangeRequest.Status.DONE.equals(changeRequest.status())) {
-        return;
-      }
+    ChangeRequest changeRequest = DNS.getChangeRequest(zoneName, changeId,
+        Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
+    waitForChangeToComplete(changeRequest);
+  }
+
+  private static void waitForChangeToComplete(ChangeRequest changeRequest) {
+    while (!changeRequest.isDone()) {
       try {
         Thread.sleep(500);
       } catch (InterruptedException e) {
@@ -529,9 +530,9 @@ public class ITDnsTest {
       assertTrue(ImmutableList.of(ChangeRequest.Status.PENDING, ChangeRequest.Status.DONE)
           .contains(created.status()));
       assertEqChangesIgnoreStatus(created, DNS.getChangeRequest(ZONE1.name(), "1"));
-      waitForChangeToComplete(ZONE1.name(), "1");
-      DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
-      waitForChangeToComplete(ZONE1.name(), "2");
+      waitForChangeToComplete(created);
+      created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
+      waitForChangeToComplete(created);
       // with options
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ID));
@@ -540,9 +541,9 @@ public class ITDnsTest {
       assertTrue(created.deletions().isEmpty());
       assertEquals("3", created.generatedId());
       assertNull(created.status());
-      waitForChangeToComplete(ZONE1.name(), "3");
-      DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
-      waitForChangeToComplete(ZONE1.name(), "4");
+      waitForChangeToComplete(created);
+      created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
+      waitForChangeToComplete(created);
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
       assertTrue(created.additions().isEmpty());
@@ -550,9 +551,9 @@ public class ITDnsTest {
       assertTrue(created.deletions().isEmpty());
       assertEquals("5", created.generatedId());
       assertNotNull(created.status());
-      waitForChangeToComplete(ZONE1.name(), "5");
-      DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
-      waitForChangeToComplete(ZONE1.name(), "6");
+      waitForChangeToComplete(created);
+      created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
+      waitForChangeToComplete(created);
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME));
       assertTrue(created.additions().isEmpty());
@@ -560,9 +561,9 @@ public class ITDnsTest {
       assertTrue(created.deletions().isEmpty());
       assertEquals("7", created.generatedId());
       assertNull(created.status());
-      waitForChangeToComplete(ZONE1.name(), "7");
-      DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
-      waitForChangeToComplete(ZONE1.name(), "8");
+      waitForChangeToComplete(created);
+      created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
+      waitForChangeToComplete(created);
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ADDITIONS));
       assertEquals(CHANGE_ADD_ZONE1.additions(), created.additions());
@@ -571,16 +572,16 @@ public class ITDnsTest {
       assertEquals("9", created.generatedId());
       assertNull(created.status());
       // finishes with delete otherwise we cannot delete the zone
-      waitForChangeToComplete(ZONE1.name(), "9");
+      waitForChangeToComplete(created);
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1,
           Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.DELETIONS));
-      waitForChangeToComplete(ZONE1.name(), "10");
+      waitForChangeToComplete(created);
       assertEquals(CHANGE_DELETE_ZONE1.deletions(), created.deletions());
       assertNull(created.startTimeMillis());
       assertTrue(created.additions().isEmpty());
       assertEquals("10", created.generatedId());
       assertNull(created.status());
-      waitForChangeToComplete(ZONE1.name(), "10");
+      waitForChangeToComplete(created);
     } finally {
       clear();
     }

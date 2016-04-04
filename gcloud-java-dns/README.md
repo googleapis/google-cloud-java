@@ -212,7 +212,7 @@ while (recordSetIterator.hasNext()) {
 
 // Build and apply the change request to our zone
 ChangeRequestInfo changeRequest = changeBuilder.build();
-zone.applyChangeRequest(changeRequest);
+ChangeRequest pendingRequest = zone.applyChangeRequest(changeRequest);
 ```
 You can find more information about changes in the [Cloud DNS documentation] (https://cloud.google.com/dns/what-is-cloud-dns#cloud_dns_api_concepts).
 
@@ -220,13 +220,12 @@ When the change request is applied, it is registered with the Cloud DNS service 
 can wait for its completion as follows:
 
 ```java
-while (ChangeRequestInfo.Status.PENDING.equals(changeRequest.status())) {
+while (!pendingRequest.isDone()) {
   try {
     Thread.sleep(500L);
   } catch (InterruptedException e) {
     System.err.println("The thread was interrupted while waiting...");
   }
-  changeRequest = dns.getChangeRequest(zone.name(), changeRequest.generatedId());
 }
 System.out.println("The change request has been applied.");
 ```
@@ -300,12 +299,10 @@ while (recordIterator.hasNext()) {
 // Build and apply the change request to our zone if it contains records to delete
 ChangeRequestInfo changeRequest = changeBuilder.build();
 if (!changeRequest.deletions().isEmpty()) {
-  changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
+  ChangeRequest pendingRequest = dns.applyChangeRequest(zoneName, changeRequest);
 
-  // Wait for change to finish, but save data traffic by transferring only ID and status
-  Dns.ChangeRequestOption option =
-      Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS);
-  while (ChangeRequestInfo.Status.PENDING.equals(changeRequest.status())) {
+  // Wait for the change request to complete
+  while (!pendingRequest.isDone()) {
     System.out.println("Waiting for change to complete. Going to sleep for 500ms...");
     try {
       Thread.sleep(500);
@@ -313,9 +310,6 @@ if (!changeRequest.deletions().isEmpty()) {
       System.err.println("The thread was interrupted while waiting for change request to be "
           + "processed.");
     }
-
-    // Update the change, but fetch only change ID and status
-    changeRequest = dns.getChangeRequest(zoneName, changeRequest.generatedId(), option);
   }
 }
 
