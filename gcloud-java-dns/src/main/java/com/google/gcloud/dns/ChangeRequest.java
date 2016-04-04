@@ -148,10 +148,34 @@ public class ChangeRequest extends ChangeRequestInfo {
   }
 
   /**
-   * Applies this change request to the associated zone.
+   * Applies this change request to the zone identified by {@code zoneName}.
    */
-  public ChangeRequest applyTo(Dns.ChangeRequestOption... options) {
-    return dns.applyChangeRequest(zone, this, options);
+  public ChangeRequest applyTo(String zoneName, Dns.ChangeRequestOption... options) {
+    return dns.applyChangeRequest(zoneName, this, options);
+  }
+
+  /**
+   * Retrieves the up-to-date information about the change request from Google Cloud DNS. Parameter
+   * {@code options} can be used to restrict the fields to be updated in the same way as in {@link
+   * Dns#getChangeRequest(String, String, Dns.ChangeRequestOption...)}. If {@code options} are
+   * provided, any field other than generatedId which is not included in the {@code options} will be
+   * {@code null} regardless whether they are initialized or not in {@code this} instance.
+   */
+  public ChangeRequest reload(Dns.ChangeRequestOption... options) {
+    return dns.getChangeRequest(zone, this.generatedId(), options);
+  }
+
+  /**
+   * Returns {@code true} if the change request has been completed. The function makes an API call
+   * to Google Cloud DNS in order request the status update.
+   */
+  public boolean isDone() {
+    if (status() == Status.DONE) {
+      return true;
+    } else {
+      ChangeRequest updated = reload(Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
+      return updated.status() == Status.DONE;
+    }
   }
 
   @Override

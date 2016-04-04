@@ -147,12 +147,9 @@ public class ITDnsTest {
   }
 
   private static void waitForChangeToComplete(String zoneName, String changeId) {
-    while (true) {
-      ChangeRequest changeRequest = DNS.getChangeRequest(zoneName, changeId,
-          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
-      if (ChangeRequest.Status.DONE.equals(changeRequest.status())) {
-        return;
-      }
+    ChangeRequest changeRequest = DNS.getChangeRequest(zoneName, changeId,
+        Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
+    while (!changeRequest.isDone()) {
       try {
         Thread.sleep(500);
       } catch (InterruptedException e) {

@@ -43,18 +43,25 @@ public class ChangeRequestTest {
 
   private Dns dns;
   private ChangeRequest changeRequest;
+  private ChangeRequest changeRequestPending;
   private ChangeRequest changeRequestPartial;
 
   @Before
   public void setUp() throws Exception {
     dns = createStrictMock(Dns.class);
-    expect(dns.options()).andReturn(OPTIONS).times(2);
+    expect(dns.options()).andReturn(OPTIONS).times(3);
     replay(dns);
     changeRequest = new ChangeRequest(dns, ZONE_NAME, new ChangeRequestInfo.BuilderImpl(
         CHANGE_REQUEST_INFO.toBuilder()
             .startTimeMillis(132L)
             .generatedId("12")
             .status(ChangeRequest.Status.DONE)
+            .build()));
+    changeRequestPending = new ChangeRequest(dns, ZONE_NAME, new ChangeRequestInfo.BuilderImpl(
+        CHANGE_REQUEST_INFO.toBuilder()
+            .startTimeMillis(132L)
+            .generatedId("12")
+            .status(ChangeRequest.Status.PENDING)
             .build()));
     changeRequestPartial = new ChangeRequest(dns, ZONE_NAME,
         new ChangeRequest.BuilderImpl(CHANGE_REQUEST_INFO));
@@ -133,8 +140,34 @@ public class ChangeRequestTest {
         Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)))
         .andReturn(changeRequest);
     replay(dns);
-    assertSame(changeRequest, changeRequest.applyTo());
-    assertSame(changeRequest,
-        changeRequest.applyTo(Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)));
+    assertSame(changeRequest, changeRequest.applyTo(ZONE_NAME));
+    assertSame(changeRequest, changeRequest.applyTo(ZONE_NAME,
+        Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)));
+  }
+
+  @Test
+  public void testReload() {
+    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.generatedId())).andReturn(changeRequest);
+    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.generatedId(),
+        Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)))
+        .andReturn(changeRequest);
+    replay(dns);
+    assertSame(changeRequest, changeRequest.reload());
+    assertSame(changeRequest, changeRequest.reload(
+        Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)));
+  }
+
+  @Test
+  public void testIsDone() {
+    replay(dns);
+    assertTrue(changeRequest.isDone());
+    verify(dns);
+    reset(dns);
+    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.generatedId(),
+        Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS)))
+        .andReturn(changeRequest);
+    replay(dns);
+    assertTrue(changeRequestPending.isDone());
+    verify(dns);
   }
 }
