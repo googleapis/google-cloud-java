@@ -383,10 +383,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   protected String defaultProject() {
     String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
     if (projectId == null) {
-      projectId = serviceAccountProjectId();
+      projectId = appEngineProjectId();
     }
     if (projectId == null) {
-      projectId = appEngineProjectId();
+      projectId = serviceAccountProjectId();
     }
     return projectId != null ? projectId : googleCloudProjectId();
   }
