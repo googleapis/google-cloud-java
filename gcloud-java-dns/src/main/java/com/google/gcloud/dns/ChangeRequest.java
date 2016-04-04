@@ -172,10 +172,9 @@ public class ChangeRequest extends ChangeRequestInfo {
   }
 
   /**
-   * Returns {@code true} if the change request has been completed. The function makes an API call
-   * to Google Cloud DNS in order to request the status update only if the status of the change
-   * request is {@link Status#PENDING}. If the status is already {@link Status#DONE}, the method
-   * returns {@code true} without an API call.
+   * Returns {@code true} if the change request has been completed. If the status is not {@link
+   * Status#DONE} already, the method makes an API call to Google Cloud DNS to update the change
+   * request first.
    *
    * @throws DnsException upon failure of the API call or if the associated zone was not found
    */
