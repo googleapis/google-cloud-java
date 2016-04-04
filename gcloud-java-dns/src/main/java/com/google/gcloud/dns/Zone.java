@@ -205,8 +205,8 @@ public class Zone extends ZoneInfo {
     return Objects.hash(super.hashCode(), options);
   }
 
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
+  private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+    stream.defaultReadObject();
     this.dns = options.service();
   }
 

@@ -67,7 +67,6 @@ import java.util.concurrent.TimeUnit;
 public class DnsExample {
 
   private static final Map<String, DnsAction> ACTIONS = new HashMap<>();
-  private static final DateFormat FORMATTER = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 
   private interface DnsAction {
     void run(Dns dns, String... args);
@@ -332,11 +331,12 @@ public class DnsExample {
       }
       if (iterator.hasNext()) {
         System.out.printf("Change requests for zone %s:%n", zoneName);
+        DateFormat formatter = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
         while (iterator.hasNext()) {
           ChangeRequest change = iterator.next();
           System.out.printf("%nID: %s%n", change.generatedId());
           System.out.printf("Status: %s%n", change.status());
-          System.out.printf("Started: %s%n", FORMATTER.format(change.startTimeMillis()));
+          System.out.printf("Started: %s%n", formatter.format(change.startTimeMillis()));
           System.out.printf("Deletions: %s%n", Joiner.on(", ").join(change.deletions()));
           System.out.printf("Additions: %s%n", Joiner.on(", ").join(change.additions()));
         }
@@ -441,7 +441,8 @@ public class DnsExample {
     System.out.printf("%nName: %s%n", zone.name());
     System.out.printf("ID: %s%n", zone.generatedId());
     System.out.printf("Description: %s%n", zone.description());
-    System.out.printf("Created: %s%n", FORMATTER.format(new Date(zone.creationTimeMillis())));
+    DateFormat formatter = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+    System.out.printf("Created: %s%n", formatter.format(new Date(zone.creationTimeMillis())));
     System.out.printf("Name servers: %s%n", Joiner.on(", ").join(zone.nameServers()));
   }
 

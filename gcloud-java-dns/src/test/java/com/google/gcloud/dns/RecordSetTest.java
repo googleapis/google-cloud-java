@@ -16,7 +16,6 @@
 
 package com.google.gcloud.dns;
 
-import static com.google.gcloud.dns.RecordSet.builder;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
@@ -33,13 +32,13 @@ public class RecordSetTest {
   private static final TimeUnit UNIT = TimeUnit.HOURS;
   private static final Integer UNIT_TTL = 1;
   private static final RecordSet.Type TYPE = RecordSet.Type.AAAA;
-  private static final RecordSet recordSet = builder(NAME, TYPE)
+  private static final RecordSet recordSet = RecordSet.builder(NAME, TYPE)
       .ttl(UNIT_TTL, UNIT)
       .build();
 
   @Test
   public void testDefaultDnsRecord() {
-    RecordSet recordSet = builder(NAME, TYPE).build();
+    RecordSet recordSet = RecordSet.builder(NAME, TYPE).build();
     assertEquals(0, recordSet.records().size());
     assertEquals(TYPE, recordSet.type());
     assertEquals(NAME, recordSet.name());
@@ -66,15 +65,15 @@ public class RecordSetTest {
   @Test
   public void testValidTtl() {
     try {
-      builder(NAME, TYPE).ttl(-1, TimeUnit.SECONDS);
+      RecordSet.builder(NAME, TYPE).ttl(-1, TimeUnit.SECONDS);
       fail("A negative value is not acceptable for ttl.");
     } catch (IllegalArgumentException e) {
       // expected
     }
-    builder(NAME, TYPE).ttl(0, TimeUnit.SECONDS);
-    builder(NAME, TYPE).ttl(Integer.MAX_VALUE, TimeUnit.SECONDS);
+    RecordSet.builder(NAME, TYPE).ttl(0, TimeUnit.SECONDS);
+    RecordSet.builder(NAME, TYPE).ttl(Integer.MAX_VALUE, TimeUnit.SECONDS);
     try {
-      builder(NAME, TYPE).ttl(Integer.MAX_VALUE, TimeUnit.HOURS);
+      RecordSet.builder(NAME, TYPE).ttl(Integer.MAX_VALUE, TimeUnit.HOURS);
       fail("This value is too large for int.");
     } catch (IllegalArgumentException e) {
       // expected
@@ -108,22 +107,22 @@ public class RecordSetTest {
   @Test
   public void testToAndFromPb() {
     assertEquals(recordSet, RecordSet.fromPb(recordSet.toPb()));
-    RecordSet partial = builder(NAME, TYPE).build();
+    RecordSet partial = RecordSet.builder(NAME, TYPE).build();
     assertEquals(partial, RecordSet.fromPb(partial.toPb()));
-    partial = builder(NAME, TYPE).addRecord("test").build();
+    partial = RecordSet.builder(NAME, TYPE).addRecord("test").build();
     assertEquals(partial, RecordSet.fromPb(partial.toPb()));
-    partial = builder(NAME, TYPE).ttl(15, TimeUnit.SECONDS).build();
+    partial = RecordSet.builder(NAME, TYPE).ttl(15, TimeUnit.SECONDS).build();
     assertEquals(partial, RecordSet.fromPb(partial.toPb()));
   }
 
   @Test
   public void testToBuilder() {
     assertEquals(recordSet, recordSet.toBuilder().build());
-    RecordSet partial = builder(NAME, TYPE).build();
+    RecordSet partial = RecordSet.builder(NAME, TYPE).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = builder(NAME, TYPE).addRecord("test").build();
+    partial = RecordSet.builder(NAME, TYPE).addRecord("test").build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = builder(NAME, TYPE).ttl(15, TimeUnit.SECONDS).build();
+    partial = RecordSet.builder(NAME, TYPE).ttl(15, TimeUnit.SECONDS).build();
     assertEquals(partial, partial.toBuilder().build());
   }
 

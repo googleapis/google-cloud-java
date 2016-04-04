@@ -221,7 +221,7 @@ public class ChangeRequest extends ChangeRequestInfo {
   static Function<Change, ChangeRequest> fromPbFunction(final Dns dns, final String zoneName) {
     return new Function<Change, ChangeRequest>() {
       @Override
-      public ChangeRequest apply(com.google.api.services.dns.model.Change pb) {
+      public ChangeRequest apply(Change pb) {
         return ChangeRequest.fromPb(dns, zoneName, pb);
       }
     };

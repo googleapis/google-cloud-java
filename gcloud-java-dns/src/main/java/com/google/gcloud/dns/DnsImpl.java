@@ -17,7 +17,6 @@
 package com.google.gcloud.dns;
 
 import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.gcloud.RetryHelper.RetryHelperException;
 import static com.google.gcloud.RetryHelper.runWithRetries;
 
 import com.google.api.services.dns.model.Change;
@@ -121,8 +120,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     // this differs from the other list operations since zone is functional and requires dns service
     Function<ManagedZone, Zone> pbToZoneFunction = new Function<ManagedZone, Zone>() {
       @Override
-      public Zone apply(
-          com.google.api.services.dns.model.ManagedZone zonePb) {
+      public Zone apply(ManagedZone zonePb) {
         return Zone.fromPb(serviceOptions.service(), zonePb);
       }
     };
@@ -142,7 +140,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
           ? ImmutableList.<Zone>of() : Iterables.transform(result.results(), pbToZoneFunction);
       return new PageImpl<>(new ZonePageFetcher(serviceOptions, cursor, optionsMap),
           cursor, zones);
-    } catch (RetryHelperException e) {
+    } catch (RetryHelper.RetryHelperException e) {
       throw DnsException.translateAndThrow(e);
     }
   }
@@ -169,10 +167,10 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       Iterable<ChangeRequest> changes = result.results() == null
           ? ImmutableList.<ChangeRequest>of()
           : Iterables.transform(result.results(),
-              ChangeRequest.fromPbFunction(serviceOptions.service(), zoneName));
+          ChangeRequest.fromPbFunction(serviceOptions.service(), zoneName));
       return new PageImpl<>(new ChangeRequestPageFetcher(zoneName, serviceOptions, cursor,
           optionsMap), cursor, changes);
-    } catch (RetryHelperException e) {
+    } catch (RetryHelper.RetryHelperException e) {
       throw DnsException.translateAndThrow(e);
     }
   }
@@ -201,7 +199,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
           : Iterables.transform(result.results(), RecordSet.FROM_PB_FUNCTION);
       return new PageImpl<>(new DnsRecordPageFetcher(zoneName, serviceOptions, cursor, optionsMap),
           cursor, recordSets);
-    } catch (RetryHelperException e) {
+    } catch (RetryHelper.RetryHelperException e) {
       throw DnsException.translateAndThrow(e);
     }
   }
@@ -210,10 +208,10 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
   public Zone create(final ZoneInfo zoneInfo, Dns.ZoneOption... options) {
     final Map<DnsRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      com.google.api.services.dns.model.ManagedZone answer = runWithRetries(
-          new Callable<com.google.api.services.dns.model.ManagedZone>() {
+      ManagedZone answer = runWithRetries(
+          new Callable<ManagedZone>() {
             @Override
-            public com.google.api.services.dns.model.ManagedZone call() {
+            public ManagedZone call() {
               return dnsRpc.create(zoneInfo.toPb(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
@@ -227,10 +225,10 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
   public Zone getZone(final String zoneName, Dns.ZoneOption... options) {
     final Map<DnsRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      com.google.api.services.dns.model.ManagedZone answer = runWithRetries(
-          new Callable<com.google.api.services.dns.model.ManagedZone>() {
+      ManagedZone answer = runWithRetries(
+          new Callable<ManagedZone>() {
             @Override
-            public com.google.api.services.dns.model.ManagedZone call() {
+            public ManagedZone call() {
               return dnsRpc.getZone(zoneName, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
@@ -276,14 +274,13 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       final ChangeRequestInfo changeRequest, ChangeRequestOption... options) {
     final Map<DnsRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      com.google.api.services.dns.model.Change answer =
-          runWithRetries(
-              new Callable<com.google.api.services.dns.model.Change>() {
-                @Override
-                public com.google.api.services.dns.model.Change call() {
-                  return dnsRpc.applyChangeRequest(zoneName, changeRequest.toPb(), optionsMap);
-                }
-              }, options().retryParams(), EXCEPTION_HANDLER);
+      Change answer = runWithRetries(
+          new Callable<Change>() {
+            @Override
+            public Change call() {
+              return dnsRpc.applyChangeRequest(zoneName, changeRequest.toPb(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : ChangeRequest.fromPb(this, zoneName, answer); // not null
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
@@ -295,14 +292,13 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       Dns.ChangeRequestOption... options) {
     final Map<DnsRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      com.google.api.services.dns.model.Change answer =
-          runWithRetries(
-              new Callable<com.google.api.services.dns.model.Change>() {
-                @Override
-                public com.google.api.services.dns.model.Change call() {
-                  return dnsRpc.getChangeRequest(zoneName, changeRequestId, optionsMap);
-                }
-              }, options().retryParams(), EXCEPTION_HANDLER);
+      Change answer = runWithRetries(
+          new Callable<Change>() {
+            @Override
+            public Change call() {
+              return dnsRpc.getChangeRequest(zoneName, changeRequestId, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : ChangeRequest.fromPb(this, zoneName, answer);
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);

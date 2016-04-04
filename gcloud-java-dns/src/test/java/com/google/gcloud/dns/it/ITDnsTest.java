@@ -87,6 +87,9 @@ public class ITDnsTest {
       .build();
   private static final List<String> ZONE_NAMES = ImmutableList.of(ZONE_NAME1,
       ZONE_NAME_EMPTY_DESCRIPTION);
+  
+  @Rule
+  public Timeout globalTimeout = Timeout.seconds(300);
 
   private static void clear() {
     for (String zoneName : ZONE_NAMES) {
@@ -161,9 +164,6 @@ public class ITDnsTest {
       }
     }
   }
-
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
 
   @Test
   public void testCreateValidZone() {
@@ -472,7 +472,7 @@ public class ITDnsTest {
       assertNull(zone.dnsName());
       assertNull(zone.description());
       assertNull(zone.nameServerSet());
-      assertTrue(!zone.nameServers().isEmpty());
+      assertFalse(zone.nameServers().isEmpty());
       assertNull(zone.generatedId());
       assertFalse(zoneIterator.hasNext());
       zoneIterator = DNS.listZones(Dns.ZoneListOption.dnsName(ZONE1.dnsName()),

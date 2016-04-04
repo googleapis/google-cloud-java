@@ -23,7 +23,6 @@ import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.dns.spi.DnsRpc;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
