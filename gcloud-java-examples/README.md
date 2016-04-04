@@ -24,7 +24,7 @@ If you are using Maven, add this to your pom.xml file
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile example
+compile 'com.google.gcloud:gcloud-java-examples:0.1.5'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
@@ -90,10 +90,11 @@ To run examples from your command line:
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.storage.StorageExample" -Dexec.args="delete <bucket_name> test.txt"
     ```
 
- * Here's an example run of `Stat`, illustrating the use of the gcloud-java-nio jar.
+ * Here's an example run of `Stat`, illustrating the use of gcloud-java-nio.
 
     Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket with a file in it.
-    Run the sample with:
+
+    Run the sample with (from the gcloud-java-examples folder):
     ```
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.nio.Stat" -Dexec.args="--check"
 

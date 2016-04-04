@@ -116,7 +116,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      * <p>You can specify multiple filters by adding a space between each filter. Multiple filters
      * are composed using "and".
      *
-     * <p>Some example of filters:
+     * <p>Some examples of filters:
      * <ul>
      * <li> name:*  The project has a name.
      * <li> name:Howl   The project's name is Howl or howl.
