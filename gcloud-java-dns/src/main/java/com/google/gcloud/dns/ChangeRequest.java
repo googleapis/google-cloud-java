@@ -162,7 +162,8 @@ public class ChangeRequest extends ChangeRequestInfo {
    * {@code options} will be {@code null} regardless of whether they are initialized or not in
    * {@code this} instance.
    *
-   * @return an object containing the updated information
+   * @return an object with the updated information or {@code null} if it does not exist
+   * @throws DnsException upon failure of the API call or if the associated zone was not found
    */
   public ChangeRequest reload(Dns.ChangeRequestOption... options) {
     return dns.getChangeRequest(zone, generatedId(), options);
@@ -170,17 +171,18 @@ public class ChangeRequest extends ChangeRequestInfo {
 
   /**
    * Returns {@code true} if the change request has been completed. The function makes an API call
-   * to Google Cloud DNS in order request the status update only if the status of the change request
-   * is {@link Status#PENDING}. If the status is already {@link Status#DONE}, the method returns
-   * {@code true} without an API call.
+   * to Google Cloud DNS in order to request the status update only if the status of the change
+   * request is {@link Status#PENDING}. If the status is already {@link Status#DONE}, the method
+   * returns {@code true} without an API call.
+   *
+   * @throws DnsException upon failure of the API call or if the associated zone was not found
    */
   public boolean isDone() {
     if (status() == Status.DONE) {
       return true;
     }
     ChangeRequest updated = reload(Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
-    return updated.status() == Status.DONE;
-
+    return updated == null || updated.status() == Status.DONE;
   }
 
   @Override

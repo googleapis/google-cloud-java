@@ -300,12 +300,10 @@ while (recordIterator.hasNext()) {
 // Build and apply the change request to our zone if it contains records to delete
 ChangeRequestInfo changeRequest = changeBuilder.build();
 if (!changeRequest.deletions().isEmpty()) {
-  changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
+  ChangeRequest pendingRequest = dns.applyChangeRequest(zoneName, changeRequest);
 
-  // Wait for change to finish, but save data traffic by transferring only ID and status
-  Dns.ChangeRequestOption option =
-      Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS);
-  while (ChangeRequestInfo.Status.PENDING.equals(changeRequest.status())) {
+  // Wait for the change request to complete
+  while (!pendingRequest.isDone()) {
     System.out.println("Waiting for change to complete. Going to sleep for 500ms...");
     try {
       Thread.sleep(500);
@@ -313,9 +311,6 @@ if (!changeRequest.deletions().isEmpty()) {
       System.err.println("The thread was interrupted while waiting for change request to be "
           + "processed.");
     }
-
-    // Update the change, but fetch only change ID and status
-    changeRequest = dns.getChangeRequest(zoneName, changeRequest.generatedId(), option);
   }
 }
 
