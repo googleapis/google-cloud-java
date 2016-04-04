@@ -505,10 +505,7 @@ public interface Dns extends Service<DnsOptions> {
   Page<ChangeRequest> listChangeRequests(String zoneName, ChangeRequestListOption... options);
 
   /**
-   * Initiates a new empty batch ready to be populated with service calls, which will use this
-   * {@code Dns} instance when submitted for processing to Google Cloud DNS.
+   * Initiates a new empty batch ready to be populated with service calls.
    */
   DnsBatch batch();
-
-  void submitBatch(DnsBatch batch);
 }

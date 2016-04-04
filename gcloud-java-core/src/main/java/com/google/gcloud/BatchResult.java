@@ -17,13 +17,13 @@
 package com.google.gcloud;
 
 /**
- * The class that holds a single result of a batch call.
+ * this class holds a single result of a batch call.
  */
-public interface BatchResult<T, E extends Throwable> {
+public interface BatchResult<T, E extends BaseServiceException> {
 
   /**
    * Returns {@code true} if the batch has been submitted and the result is available, and {@code
-   * false} otherwise
+   * false} otherwise.
    */
   boolean submitted();
 
@@ -34,4 +34,24 @@ public interface BatchResult<T, E extends Throwable> {
    * @throws E if an error occured when processing this request
    */
   T get() throws E;
+
+  /**
+   * Registers a callback for the batch operation.
+   */
+  void notify(Callback<T,E> callback);
+
+  /**
+   * An interface for the batch callbacks.
+   */
+  interface Callback<T,E> {
+    /**
+     * The method to be called when the batched operation succeeds.
+     */
+    void success(T result);
+
+    /**
+     * The method to be called when the batched operation fails.
+     */
+    void error(E exception);
+  }
 }

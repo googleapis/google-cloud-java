@@ -30,15 +30,19 @@ public class DnsBatchResult<T> implements BatchResult<T, DnsException> {
     return result;
   }
 
-  void result(T result) {
-    this.result = result;
+  @Override
+  public void notify(Callback<T, DnsException> callback) {
+    // todo(mderka) implement
+    throw new UnsupportedOperationException("Not implemented yet");
   }
 
   void error(DnsException error) {
     this.error = error;
+    this.submitted = true;
   }
 
-  void submit() {
+  void success(T result) {
+    this.result = result;
     this.submitted = true;
   }
 }

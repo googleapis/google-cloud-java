@@ -25,7 +25,6 @@ import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.collect.ImmutableList;
 import com.google.cloud.dns.DnsException;
 
-import java.io.IOException;
 import java.util.Map;
 
 public interface DnsRpc {
@@ -184,7 +183,7 @@ public interface DnsRpc {
    * Prepares a call to "list zones" and adds it to the batch with the provided {@code callback} and
    * {@code options}.
    *
-   * @return updated batch
+   * @return the updated batch
    */
   BatchRequest prepareListZones(BatchRequest batch, JsonBatchCallback callback,
       Map<DnsRpc.Option, ?> options);
@@ -193,7 +192,7 @@ public interface DnsRpc {
    * Prepares a call to "create zone" and adds it to the batch with the provided {@code callback}
    * and {@code options}.
    *
-   * @return updated batch
+   * @return the updated batch
    */
   BatchRequest prepareCreateZone(ManagedZone zone, BatchRequest batch, JsonBatchCallback callback,
       Map<DnsRpc.Option, ?> options);
@@ -202,7 +201,7 @@ public interface DnsRpc {
    * Prepares a call to "get zone" and adds it to the batch with the provided {@code callback} and
    * {@code options}.
    *
-   * @return updated batch
+   * @return the updated batch
    */
   BatchRequest prepareGetZone(String zoneName, BatchRequest batch, JsonBatchCallback callback,
       Map<DnsRpc.Option, ?> options);
@@ -211,7 +210,7 @@ public interface DnsRpc {
    * Prepares a call to "delete zone" and adds it to the batch with the provided {@code callback}
    * and {@code options}.
    *
-   * @return updated batch
+   * @return the updated batch
    */
   BatchRequest prepareDeleteZone(String zoneName, BatchRequest batch, JsonBatchCallback callback);
 

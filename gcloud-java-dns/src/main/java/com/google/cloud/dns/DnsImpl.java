@@ -19,17 +19,10 @@ package com.google.cloud.dns;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.cloud.RetryHelper.runWithRetries;
 
-import com.google.api.client.googleapis.batch.BatchRequest;
-import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
-import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.client.http.HttpHeaders;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
-<<<<<<< 2d2532fe332eb090479ef9ede002215549da668a
 import com.google.api.services.dns.model.Project;
-=======
 import com.google.api.services.dns.model.ManagedZonesListResponse;
->>>>>>> Added third concept of DNS batch.
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
@@ -42,8 +35,6 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.dns.spi.DnsRpc;
 
-import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
@@ -54,7 +45,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
 
   private final DnsRpc dnsRpc;
 
-  private static class ZonePageFetcher implements PageImpl.NextPageFetcher<Zone> {
+  static class ZonePageFetcher implements PageImpl.NextPageFetcher<Zone> {
 
     private static final long serialVersionUID = 2158209410430566961L;
     private final Map<DnsRpc.Option, ?> requestOptions;
@@ -120,7 +111,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     dnsRpc = options.rpc();
   }
 
-  private static Function<ManagedZone, Zone> pbToZoneFunction(final DnsOptions options) {
+  static Function<ManagedZone, Zone> pbToZoneFunction(final DnsOptions options) {
     return new Function<ManagedZone, Zone>() {
       @Override
       public Zone apply(
@@ -328,73 +319,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
 
   @Override
   public DnsBatch batch() {
-    return new DnsBatch(this);
-  }
-
-  @Override
-  public void submitBatch(DnsBatch batch) {
-    BatchRequest batchRequest = dnsRpc.createBatch();
-    for (final DnsBatch.Request request : batch.requests()) {
-      final Map<DnsRpc.Option, ?> optionMap = optionMap(request.options());
-      JsonBatchCallback callback;
-      switch (request.operation()) {
-        case LIST_ZONES:
-          callback = listZonesCallback(this.options(), request, optionMap);
-          batchRequest = dnsRpc.prepareListZones(batchRequest, callback, optionMap);
-          break;
-        case CREATE_ZONE:
-          callback = createZoneCallback(this.options(), request, optionMap);
-          batchRequest = dnsRpc.prepareCreateZone(request.zoneInfo().toPb(), batchRequest, callback,
-              optionMap);
-          break;
-        case DELETE_ZONE:
-          callback = createZoneCallback(this.options(), request, optionMap);
-          batchRequest = dnsRpc.prepareDeleteZone(request.zoneName(), batchRequest, callback);
-          break;
-        // todo(mderka) implement the rest
-      }
-    }
-    dnsRpc.submitBatch(batchRequest);
-  }
-
-  // todo(mderka) make methods to prepare other callbacks
-  private JsonBatchCallback listZonesCallback(final DnsOptions serviceOptions,
-      final DnsBatch.Request request, final Map<DnsRpc.Option, ?> optionMap) {
-    JsonBatchCallback callback = new JsonBatchCallback<ManagedZonesListResponse>() {
-      @Override
-      public void onSuccess(ManagedZonesListResponse response, HttpHeaders httpHeaders)
-          throws IOException {
-        DnsBatchResult result = request.result();
-        List<ManagedZone> zones = response.getManagedZones();
-        Page<Zone> zonePage = new PageImpl<>(
-            new ZonePageFetcher(options(), response.getNextPageToken(), optionMap),
-            response.getNextPageToken(), zones == null ? ImmutableList.<Zone>of()
-            : Iterables.transform(zones, pbToZoneFunction(serviceOptions)));
-        result.result(zonePage);
-        result.submit();
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError, HttpHeaders httpHeaders)
-          throws IOException {
-        DnsBatchResult result = request.result();
-        result.error(new DnsException(googleJsonError));
-        result.submit();
-      }
-    };
-    return callback;
-  }
-
-  // todo(mderka) make methods to prepare other callbacks
-  private JsonBatchCallback createZoneCallback(final DnsOptions serviceOptions,
-      final DnsBatch.Request request, final Map<DnsRpc.Option, ?> optionMap) {
-    throw new UnsupportedOperationException("not implemented yet");
-  }
-
-  // todo(mderka) make methods to prepare other callbacks
-  private JsonBatchCallback deleteZoneCallback(final DnsOptions serviceOptions,
-      final DnsBatch.Request request, final Map<DnsRpc.Option, ?> optionMap) {
-    throw new UnsupportedOperationException("not implemented yet");
+    return new DnsBatch(this.options());
   }
 
   private Map<DnsRpc.Option, ?> optionMap(Option... options) {
