@@ -156,26 +156,31 @@ public class ChangeRequest extends ChangeRequestInfo {
 
   /**
    * Retrieves the up-to-date information about the change request from Google Cloud DNS. Parameter
-   * {@code options} can be used to restrict the fields to be updated in the same way as in {@link
-   * Dns#getChangeRequest(String, String, Dns.ChangeRequestOption...)}. If {@code options} are
-   * provided, any field other than generatedId which is not included in the {@code options} will be
-   * {@code null} regardless whether they are initialized or not in {@code this} instance.
+   * {@code options} can be used to restrict the fields to be included in the updated object the
+   * same way as in {@link Dns#getChangeRequest(String, String, Dns.ChangeRequestOption...)}. If
+   * {@code options} are provided, any field other than generatedId which is not included in the
+   * {@code options} will be {@code null} regardless of whether they are initialized or not in
+   * {@code this} instance.
+   *
+   * @return an object containing the updated information
    */
   public ChangeRequest reload(Dns.ChangeRequestOption... options) {
-    return dns.getChangeRequest(zone, this.generatedId(), options);
+    return dns.getChangeRequest(zone, generatedId(), options);
   }
 
   /**
    * Returns {@code true} if the change request has been completed. The function makes an API call
-   * to Google Cloud DNS in order request the status update.
+   * to Google Cloud DNS in order request the status update only if the status of the change request
+   * is {@link Status#PENDING}. If the status is already {@link Status#DONE}, the method returns
+   * {@code true} without an API call.
    */
   public boolean isDone() {
     if (status() == Status.DONE) {
       return true;
-    } else {
-      ChangeRequest updated = reload(Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
-      return updated.status() == Status.DONE;
     }
+    ChangeRequest updated = reload(Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
+    return updated.status() == Status.DONE;
+
   }
 
   @Override
