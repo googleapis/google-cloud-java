@@ -475,7 +475,7 @@ public interface Dns extends Service<DnsOptions> {
    * servers. The fields to be returned can be selected by {@link ChangeRequestOption}s.
    *
    * @return the new {@link ChangeRequest}
-   * @throws DnsException upon failure if zone is not found
+   * @throws DnsException upon failure or if zone is not found
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/create">Cloud DNS Changes: create</a>
    */
   ChangeRequest applyChangeRequest(String zoneName, ChangeRequestInfo changeRequest,

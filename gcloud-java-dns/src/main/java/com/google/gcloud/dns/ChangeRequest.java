@@ -149,6 +149,8 @@ public class ChangeRequest extends ChangeRequestInfo {
 
   /**
    * Applies this change request to the zone identified by {@code zoneName}.
+   *
+   * @throws DnsException upon failure or if zone is not found
    */
   public ChangeRequest applyTo(String zoneName, Dns.ChangeRequestOption... options) {
     return dns.applyChangeRequest(zoneName, this, options);
