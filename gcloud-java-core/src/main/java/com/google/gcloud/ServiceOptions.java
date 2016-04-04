@@ -30,8 +30,13 @@ import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
 import com.google.gcloud.spi.ServiceRpcFactory;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -378,7 +383,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   protected String defaultProject() {
     String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
     if (projectId == null) {
-      projectId = getAppEngineProjectId();
+      projectId = appEngineProjectId();
+    }
+    if (projectId == null) {
+      projectId = serviceAccountProjectId();
     }
     return projectId != null ? projectId : googleCloudProjectId();
   }
@@ -461,7 +469,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).contains("windows");
   }
 
-  protected static String getAppEngineProjectId() {
+  protected static String appEngineProjectId() {
     try {
       Class<?> factoryClass =
           Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
@@ -477,6 +485,20 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       // return null if can't determine
       return null;
     }
+  }
+
+  protected static String serviceAccountProjectId() {
+    String project = null;
+    String credentialsPath = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
+    if(credentialsPath != null) {
+      try (InputStream credentialsStream = new FileInputStream(credentialsPath)) {
+        JSONObject json = new JSONObject(new JSONTokener(credentialsStream));
+        project = json.getString("project_id");
+      } catch (IOException | JSONException ex) {
+        // ignore
+      }
+    }
+    return project;
   }
 
   @SuppressWarnings("unchecked")
