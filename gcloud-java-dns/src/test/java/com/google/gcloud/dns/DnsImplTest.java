@@ -21,6 +21,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
+import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -69,8 +70,7 @@ public class DnsImplTest {
           CHANGE_REQUEST_PARTIAL.toPb()));
   private static final DnsRpc.ListResult<ManagedZone> LIST_RESULT_OF_PB_ZONES =
       DnsRpc.ListResult.of("cursor", ImmutableList.of(ZONE_INFO.toPb()));
-  private static final DnsRpc.ListResult<com.google.api.services.dns.model.ResourceRecordSet>
-      LIST_OF_PB_DNS_RECORDS =
+  private static final DnsRpc.ListResult<ResourceRecordSet> LIST_OF_PB_DNS_RECORDS =
       DnsRpc.ListResult.of("cursor", ImmutableList.of(DNS_RECORD1.toPb(), DNS_RECORD2.toPb()));
 
   // Field options

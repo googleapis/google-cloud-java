@@ -18,6 +18,7 @@ package com.google.gcloud.dns;
 
 import static com.google.api.client.repackaged.com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.dns.model.Project;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
@@ -143,14 +144,13 @@ public class ProjectInfo implements Serializable {
     }
 
     static Quota fromPb(com.google.api.services.dns.model.Quota pb) {
-      Quota quota = new Quota(pb.getManagedZones(),
+      return new Quota(pb.getManagedZones(),
           pb.getResourceRecordsPerRrset(),
           pb.getRrsetAdditionsPerChange(),
           pb.getRrsetDeletionsPerChange(),
           pb.getRrsetsPerManagedZone(),
           pb.getTotalRrdataSizePerChange()
       );
-      return quota;
     }
 
     @Override
@@ -243,8 +243,8 @@ public class ProjectInfo implements Serializable {
     return id;
   }
 
-  com.google.api.services.dns.model.Project toPb() {
-    com.google.api.services.dns.model.Project pb = new com.google.api.services.dns.model.Project();
+  Project toPb() {
+    Project pb = new Project();
     pb.setId(id);
     pb.setNumber(number);
     if (this.quota != null) {
@@ -253,7 +253,7 @@ public class ProjectInfo implements Serializable {
     return pb;
   }
 
-  static ProjectInfo fromPb(com.google.api.services.dns.model.Project pb) {
+  static ProjectInfo fromPb(Project pb) {
     Builder builder = builder();
     if (pb.getId() != null) {
       builder.id(pb.getId());

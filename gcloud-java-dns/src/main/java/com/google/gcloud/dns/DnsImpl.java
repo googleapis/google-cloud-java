@@ -21,6 +21,7 @@ import static com.google.gcloud.RetryHelper.runWithRetries;
 
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
+import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
@@ -256,10 +257,10 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
   public ProjectInfo getProject(Dns.ProjectOption... fields) {
     final Map<DnsRpc.Option, ?> optionsMap = optionMap(fields);
     try {
-      com.google.api.services.dns.model.Project answer = runWithRetries(
-          new Callable<com.google.api.services.dns.model.Project>() {
+      Project answer = runWithRetries(
+          new Callable<Project>() {
             @Override
-            public com.google.api.services.dns.model.Project call() {
+            public Project call() {
               return dnsRpc.getProject(optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);

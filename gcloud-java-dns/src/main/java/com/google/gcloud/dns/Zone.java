@@ -18,6 +18,7 @@ package com.google.gcloud.dns;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.dns.model.ManagedZone;
 import com.google.gcloud.Page;
 
 import java.io.IOException;
@@ -210,7 +211,7 @@ public class Zone extends ZoneInfo {
     this.dns = options.service();
   }
 
-  static Zone fromPb(Dns dns, com.google.api.services.dns.model.ManagedZone zone) {
+  static Zone fromPb(Dns dns, ManagedZone zone) {
     ZoneInfo info = ZoneInfo.fromPb(zone);
     return new Zone(dns, new ZoneInfo.BuilderImpl(info));
   }
