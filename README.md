@@ -83,9 +83,10 @@ Most `gcloud-java` libraries require a project ID.  There are multiple ways to s
 
 1. Project ID supplied when building the service options
 2. Project ID specified by the environment variable `GCLOUD_PROJECT`
-3. App Engine project ID
-4. Google Cloud SDK project ID
-5. Compute Engine project ID
+3. Project ID specified in the JSON credentials file pointed by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
+4. App Engine project ID
+5. Google Cloud SDK project ID
+6. Compute Engine project ID
 
 Authentication
 --------------
