@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.gcloud</groupId>
-  <artifactId>gcloud-java-nio-example</artifactId>
+  <artifactId>gcloud-java-nio-examples</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java NIO example</name>
   <description>
-    Demonstrates how to use the gcloud-java-nio jar to add GCS functionality after the fact.
+    Demonstrates how to use the gcloud-java-nio jar to add GCS functionality to legacy code.
   </description>
   <parent>
     <groupId>com.google.gcloud</groupId>
