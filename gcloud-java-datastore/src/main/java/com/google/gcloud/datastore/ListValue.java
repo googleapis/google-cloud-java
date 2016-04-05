@@ -108,7 +108,6 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
 
     @Override
     public ListValue build() {
-      Preconditions.checkState(!get().isEmpty(), "value list could not be empty");
       return new ListValue(this);
     }
   }

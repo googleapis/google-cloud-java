@@ -33,6 +33,7 @@ public interface ValueBuilder<V, P extends Value<V>, B extends ValueBuilder<V, P
 
   B excludeFromIndexes(boolean excludeFromIndexes);
 
+  @Deprecated
   int getMeaning();
 
   @Deprecated
