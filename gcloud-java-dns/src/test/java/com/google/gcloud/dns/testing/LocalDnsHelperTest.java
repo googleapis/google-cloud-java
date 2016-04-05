@@ -119,13 +119,6 @@ public class LocalDnsHelperTest {
     }
   }
 
-  private static void assertEqChangesIgnoreStatus(Change expected, Change actual) {
-    assertEquals(expected.getAdditions(), actual.getAdditions());
-    assertEquals(expected.getDeletions(), actual.getDeletions());
-    assertEquals(expected.getId(), actual.getId());
-    assertEquals(expected.getStartTime(), actual.getStartTime());
-  }
-
   @Test
   public void testCreateZone() {
     ManagedZone created = RPC.create(ZONE1, EMPTY_RPC_OPTIONS);

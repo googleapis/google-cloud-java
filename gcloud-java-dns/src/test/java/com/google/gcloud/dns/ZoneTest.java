@@ -349,7 +349,7 @@ public class ZoneTest {
     assertNull(zoneNoId.getChangeRequest(CHANGE_REQUEST.generatedId()));
     assertNull(zone.getChangeRequest(CHANGE_REQUEST.generatedId()));
     assertNull(
-        zoneNoId.getChangeRequest(CHANGE_REQUEST.generatedId(),CHANGE_REQUEST_FIELD_OPTIONS));
+        zoneNoId.getChangeRequest(CHANGE_REQUEST.generatedId(), CHANGE_REQUEST_FIELD_OPTIONS));
     assertNull(zone.getChangeRequest(CHANGE_REQUEST.generatedId(), CHANGE_REQUEST_FIELD_OPTIONS));
   }
 

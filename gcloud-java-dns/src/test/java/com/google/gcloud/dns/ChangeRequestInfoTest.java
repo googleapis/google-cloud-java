@@ -23,6 +23,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.services.dns.model.Change;
 import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
@@ -209,7 +210,7 @@ public class ChangeRequestInfoTest {
   @Test
   public void testDateParsing() {
     String startTime = "2016-01-26T18:33:43.512Z"; // obtained from service
-    com.google.api.services.dns.model.Change change = CHANGE.toPb().setStartTime(startTime);
+    Change change = CHANGE.toPb().setStartTime(startTime);
     ChangeRequestInfo converted = ChangeRequest.fromPb(change);
     assertNotNull(converted.startTimeMillis());
     assertEquals(change, converted.toPb());

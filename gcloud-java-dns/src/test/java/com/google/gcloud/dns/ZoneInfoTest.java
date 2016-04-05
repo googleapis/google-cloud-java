@@ -21,6 +21,7 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.services.dns.model.ManagedZone;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
@@ -155,10 +156,10 @@ public class ZoneInfoTest {
 
   @Test
   public void testDateParsing() {
-    com.google.api.services.dns.model.ManagedZone pb = INFO.toPb();
+    ManagedZone pb = INFO.toPb();
     pb.setCreationTime("2016-01-19T18:00:12.854Z"); // a real value obtained from Google Cloud DNS
     ZoneInfo mz = ZoneInfo.fromPb(pb); // parses the string timestamp to millis
-    com.google.api.services.dns.model.ManagedZone pbClone = mz.toPb(); // converts it back to string
+    ManagedZone pbClone = mz.toPb(); // converts it back to string
     assertEquals(pb, pbClone);
     assertEquals(pb.getCreationTime(), pbClone.getCreationTime());
   }

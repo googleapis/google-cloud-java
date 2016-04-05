@@ -18,6 +18,7 @@ package com.google.gcloud.dns;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.dns.model.ManagedZone;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -248,9 +249,9 @@ public class ZoneInfo implements Serializable {
     return new BuilderImpl(this);
   }
 
-  com.google.api.services.dns.model.ManagedZone toPb() {
-    com.google.api.services.dns.model.ManagedZone pb =
-        new com.google.api.services.dns.model.ManagedZone();
+  ManagedZone toPb() {
+    ManagedZone pb =
+        new ManagedZone();
     pb.setDescription(this.description());
     pb.setDnsName(this.dnsName());
     if (this.generatedId() != null) {
@@ -267,7 +268,7 @@ public class ZoneInfo implements Serializable {
     return pb;
   }
 
-  static ZoneInfo fromPb(com.google.api.services.dns.model.ManagedZone pb) {
+  static ZoneInfo fromPb(ManagedZone pb) {
     Builder builder = new BuilderImpl(pb.getName());
     if (pb.getDescription() != null) {
       builder.description(pb.getDescription());

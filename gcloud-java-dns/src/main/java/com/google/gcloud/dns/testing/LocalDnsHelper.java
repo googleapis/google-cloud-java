@@ -122,7 +122,7 @@ public class LocalDnsHelper {
     }
   }
 
-  private long delayChange;
+  private final long delayChange;
   private final HttpServer server;
   private final int port;
 
@@ -140,8 +140,8 @@ public class LocalDnsHelper {
     PROJECT_GET("GET", CONTEXT + "/[^/]+"),
     RECORD_LIST("GET", CONTEXT + "/[^/]+/managedZones/[^/]+/rrsets");
 
-    private String method;
-    private String pathRegex;
+    private final String method;
+    private final String pathRegex;
 
     CallRegex(String method, String pathRegex) {
       this.pathRegex = pathRegex;
@@ -382,7 +382,7 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Creates new {@link LocalDnsHelper} instance that listens to requests on the local machine. This
+   * Creates new {@code LocalDnsHelper} instance that listens to requests on the local machine. This
    * instance processes changes in separate thread. The parameter determines how long a thread
    * should wait before processing a change. If it is set to 0, the threading is turned off and the
    * mock will behave synchronously.

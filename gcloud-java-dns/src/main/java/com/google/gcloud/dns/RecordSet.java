@@ -285,9 +285,8 @@ public class RecordSet implements Serializable {
     return obj instanceof RecordSet && Objects.equals(this.toPb(), ((RecordSet) obj).toPb());
   }
 
-  com.google.api.services.dns.model.ResourceRecordSet toPb() {
-    com.google.api.services.dns.model.ResourceRecordSet pb =
-        new com.google.api.services.dns.model.ResourceRecordSet();
+  ResourceRecordSet toPb() {
+    ResourceRecordSet pb = new ResourceRecordSet();
     pb.setName(this.name());
     pb.setRrdatas(this.records());
     pb.setTtl(this.ttl());
@@ -295,7 +294,7 @@ public class RecordSet implements Serializable {
     return pb;
   }
 
-  static RecordSet fromPb(com.google.api.services.dns.model.ResourceRecordSet pb) {
+  static RecordSet fromPb(ResourceRecordSet pb) {
     Builder builder = builder(pb.getName(), Type.valueOf(pb.getType()));
     if (pb.getRrdatas() != null) {
       builder.records(pb.getRrdatas());

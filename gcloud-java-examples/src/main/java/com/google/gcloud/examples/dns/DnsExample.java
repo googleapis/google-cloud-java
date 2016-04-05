@@ -27,10 +27,10 @@ import com.google.gcloud.dns.RecordSet;
 import com.google.gcloud.dns.Zone;
 import com.google.gcloud.dns.ZoneInfo;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 import java.util.Arrays;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -67,7 +67,8 @@ import java.util.concurrent.TimeUnit;
 public class DnsExample {
 
   private static final Map<String, DnsAction> ACTIONS = new HashMap<>();
-  private static final DateFormat FORMATTER = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+  private static final DateTimeFormatter FORMATTER =
+      DateTimeFormat.forPattern("YYYY-MM-dd HH:mm:ss");
 
   private interface DnsAction {
     void run(Dns dns, String... args);
@@ -336,7 +337,7 @@ public class DnsExample {
           ChangeRequest change = iterator.next();
           System.out.printf("%nID: %s%n", change.generatedId());
           System.out.printf("Status: %s%n", change.status());
-          System.out.printf("Started: %s%n", FORMATTER.format(change.startTimeMillis()));
+          System.out.printf("Started: %s%n", FORMATTER.print(change.startTimeMillis()));
           System.out.printf("Deletions: %s%n", Joiner.on(", ").join(change.deletions()));
           System.out.printf("Additions: %s%n", Joiner.on(", ").join(change.additions()));
         }
@@ -441,7 +442,7 @@ public class DnsExample {
     System.out.printf("%nName: %s%n", zone.name());
     System.out.printf("ID: %s%n", zone.generatedId());
     System.out.printf("Description: %s%n", zone.description());
-    System.out.printf("Created: %s%n", FORMATTER.format(new Date(zone.creationTimeMillis())));
+    System.out.printf("Created: %s%n", FORMATTER.print(zone.creationTimeMillis()));
     System.out.printf("Name servers: %s%n", Joiner.on(", ").join(zone.nameServers()));
   }
 

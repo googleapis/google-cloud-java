@@ -29,6 +29,9 @@ import java.util.Map;
  */
 class OptionParsers {
 
+  private OptionParsers() {
+  }
+
   static Map<String, Object> parseListZonesOptions(String query) {
     Map<String, Object> options = new HashMap<>();
     if (query != null) {
