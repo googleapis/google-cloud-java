@@ -37,9 +37,9 @@ To run examples from your command line:
 
 2. Set your current project using `gcloud config set project PROJECT_ID`. This step is not necessary for `ResourceManagerExample`.
 
-3. Compile using Maven (`mvn compile` in command line from your base project directory)
+3. Compile using Maven: `cd gcloud-java-examples` in command line from your base project directory and then `mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true  -Dmaven.source.skip=true`.
 
-4. Run an example using Maven from command line.
+4. Run an example from the command line using the Maven-generated scripts.
 
   * Here's an example run of `BigQueryExample`.
 
@@ -55,11 +55,11 @@ To run examples from your command line:
     ```
     Then you are ready to run the following example:
     ```
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.bigquery.BigQueryExample" -Dexec.args="create dataset new_dataset_id"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.bigquery.BigQueryExample" -Dexec.args="create table new_dataset_id new_table_id field_name:string"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.bigquery.BigQueryExample" -Dexec.args="list tables new_dataset_id"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.bigquery.BigQueryExample" -Dexec.args="load new_dataset_id new_table_id CSV gs://my_bucket/my_csv_file"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.bigquery.BigQueryExample" -Dexec.args="query 'select * from new_dataset_id.new_table_id'"
+    target/appassembler/bin/BigQueryExample create dataset new_dataset_id
+    target/appassembler/bin/BigQueryExample create table new_dataset_id new_table_id field_name:string
+    target/appassembler/bin/BigQueryExample list tables new_dataset_id
+    target/appassembler/bin/BigQueryExample load new_dataset_id new_table_id CSV gs://my_bucket/my_csv_file
+    target/appassembler/bin/BigQueryExample query 'select * from new_dataset_id.new_table_id'
     ```
 
   * Here's an example run of `ComputeExample`.
@@ -78,10 +78,9 @@ To run examples from your command line:
 
     Be sure to change the placeholder project ID "your-project-id" with your own project ID. Also note that you have to enable the Google Cloud Datastore API on the [Google Developers Console][developers-console] before running the following commands.
     ```
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name add my\ comment"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name display"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name delete"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name set myname@mydomain.com 1234"
+    target/appassembler/bin/DatastoreExample your-project-id my_name add my\ comment
+    target/appassembler/bin/DatastoreExample your-project-id my_name display
+    target/appassembler/bin/DatastoreExample your-project-id my_name delete
     ```
 
   * Here's an example run of `DnsExample`.
@@ -114,20 +113,37 @@ To run examples from your command line:
 
     Be sure to change the placeholder project ID "your-project-id" with your own globally unique project ID.
     ```
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.resourcemanager.ResourceManagerExample" -Dexec.args="create your-project-id"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.resourcemanager.ResourceManagerExample" -Dexec.args="list"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.resourcemanager.ResourceManagerExample" -Dexec.args="get your-project-id"
+    target/appassembler/bin/ResourceManagerExample create your-project-id
+    target/appassembler/bin/ResourceManagerExample list
+    target/appassembler/bin/ResourceManagerExample get your-project-id
     ```
 
   * Here's an example run of `StorageExample`.
 
     Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Storage" and "Google Cloud Storage JSON API" are enabled and that you have a bucket.  Also ensure that you have a test file (`test.txt` is chosen here) to upload to Cloud Storage stored locally on your machine.
     ```
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.storage.StorageExample" -Dexec.args="upload /path/to/test.txt <bucket_name>"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.storage.StorageExample" -Dexec.args="list <bucket_name>"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.storage.StorageExample" -Dexec.args="download <bucket_name> test.txt"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.storage.StorageExample" -Dexec.args="delete <bucket_name> test.txt"
+    target/appassembler/bin/StorageExample upload /path/to/test.txt <bucket_name>
+    target/appassembler/bin/StorageExample list <bucket_name>
+    target/appassembler/bin/StorageExample download <bucket_name> test.txt
+    target/appassembler/bin/StorageExample delete <bucket_name> test.txt
     ```
+
+ * Here's an example run of `Stat`, illustrating the use of gcloud-java-nio.
+
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket with a file in it.
+
+    Run the sample with (from the gcloud-java-examples folder):
+    ```
+    target/appassembler/bin/Stat --check
+
+    ```
+    Or, if you have a file in `gs://mybucket/myfile.txt`, you can run:
+    ```
+    target/appassembler/bin/Stat gs://mybucket/myfile.txt
+    ```
+
+    The sample doesn't have anything special about GCS in it, it just opens files via the NIO API.
+    It lists gcloud-java-nio as a dependency, and that enables it to interpret `gs://` paths.
 
 Troubleshooting
 ---------------

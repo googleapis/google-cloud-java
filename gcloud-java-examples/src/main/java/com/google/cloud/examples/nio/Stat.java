@@ -20,6 +20,9 @@ import java.nio.file.spi.FileSystemProvider;
  * be logged in (using e.g. the gcloud auth command).
  *
  * <p>See the README for a command line to run this example.
+ *
+ * <p>In short, this version (in gcloud-java-examples) is in a package that lists gcloud-java-nio
+ * as a dependency, so it will work directly without having to do any special work.
  */
 public class Stat {
 
@@ -77,8 +80,8 @@ public class Stat {
          "",
          "This tool normally knows nothing of Google Cloud Storage. If you pass it --check",
          "or a GCS file name (e.g. gs://mybucket/myfile), it will show an error.",
-         "However, by just adding the gcloud-nio jar in your classpath, this tool is made",
-         "aware of gs:// paths and can access files on the cloud.",
+         "However, by just adding the gcloud-nio jar as a dependency and recompiling, this tool is",
+         "made aware of gs:// paths and can access files on the cloud.",
          "",
          "The gcloud NIO filesystem provider can similarly enable existing Java 7 programs",
          "to read and write cloud files, even if they have no special built-in cloud support."
@@ -97,7 +100,7 @@ public class Stat {
 
   private static void checkGcs() {
     FileSystem fs = FileSystems.getFileSystem(URI.create("gs://domain-registry-alpha"));
-    System.out.println("We seem to be able to instantiate a gs:// filesystem.");
+    System.out.println("Success! We can instantiate a gs:// filesystem.");
     System.out.println("isOpen: " + fs.isOpen());
     System.out.println("isReadOnly: " + fs.isReadOnly());
   }

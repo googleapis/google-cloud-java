@@ -18,6 +18,7 @@
   </properties>
   <modules>
     <module>gcloud-java-nio</module>
+    <module>gcloud-java-nio-examples</module>
   </modules>
   <dependencies>
     <dependency>

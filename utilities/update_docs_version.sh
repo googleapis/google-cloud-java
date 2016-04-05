@@ -21,6 +21,9 @@ if [ "${RELEASED_VERSION##*-}" != "SNAPSHOT" ]; then
             readmes="$readmes ${item}/README.md"
         fi
     done
+    NEW_VERSION=${RELEASED_VERSION%.*}.$((${RELEASED_VERSION##*.}+1))-SNAPSHOT
+    echo "Changing version to $NEW_VERSION in gcloud-java-nio-example README"
+    sed -ri "s/gcloud-java-nio-examples-[0-9]+\.[0-9]+\.[0-9]+-SNAPSHOT/gcloud-java-nio-examples-$NEW_VERSION/g" gcloud-java-contrib/gcloud-java-nio-examples/README.md
     git add $readmes
     git config --global user.name "travis-ci"
     git config --global user.email "travis@travis-ci.org"

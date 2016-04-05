@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>gcloud-java-nio</artifactId>
+  <artifactId>gcloud-java-nio-examples</artifactId>
   <packaging>jar</packaging>
-  <name>GCloud Java NIO</name>
+  <name>GCloud Java NIO example</name>
   <description>
-    FileSystemProvider for Java NIO to access GCS transparently.
+    Demonstrates how to use the gcloud-java-nio jar to add GCS functionality to legacy code.
   </description>
   <parent>
-    <groupId>com.google.cloud</groupId>
+    <groupId>com.google.gcloud</groupId>
     <artifactId>gcloud-java-contrib</artifactId>
-    <version>0.2.5-SNAPSHOT</version>
+    <version>0.1.6-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>nio</site.installationModule>
@@ -18,7 +18,7 @@
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>gcloud-java</artifactId>
+      <artifactId>gcloud-java-storage</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
@@ -71,6 +71,11 @@
       <artifactId>mockito-core</artifactId>
       <version>1.9.5</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <version>2.5.4</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -80,50 +85,6 @@
         <configuration>
           <skip>false</skip>
         </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-          <encoding>UTF-8</encoding>
-          <compilerArgument>-Xlint:unchecked</compilerArgument>
-        </configuration>
-      </plugin>
-      <!-- shade the jar so we can demo adding the NIO jar to add functionality. -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>2.4.3</version>
-        <configuration>
-          <shadedArtifactAttached>true</shadedArtifactAttached>
-          <relocations>
-            <relocation>
-              <pattern>com</pattern>
-              <shadedPattern>shaded.gcloud-nio.com</shadedPattern>
-              <excludes>
-                <exclude>com.google.gcloud.**</exclude>
-              </excludes>
-            </relocation>
-            <relocation>
-              <pattern>org</pattern>
-              <shadedPattern>shaded.gcloud-nio.org</shadedPattern>
-            </relocation>
-            <relocation>
-              <pattern>google</pattern>
-              <shadedPattern>shaded.gcloud-nio.google</shadedPattern>
-            </relocation>
-          </relocations>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
