@@ -18,9 +18,10 @@ if [ "${RELEASED_VERSION##*-}" != "SNAPSHOT" ]; then
         sed -ri "s/\"[0-9]+\.[0-9]+\.[0-9]+\"/\"${RELEASED_VERSION}\"/g" ${item}/README.md
     done
 
-    echo "Changing version to $((RELEASED_VERSION + 1))-SNAPSHOT in gcloud-java-nio-example README"
-    sed -ri "s/gcloud-java-nio-examples-[0-9]+\.[0-9]+\.[0-9]+-SNAPSHOT'/gcloud-java-nio-examples-$((RELEASED_VERSION + 1))-SNAPSHOT'/g" gcloud-java-contrib/gcloud-java-nio-examples/README.md
-    
+    NEW_VERSION=${RELEASED_VERSION%.*}.$((${RELEASED_VERSION##*.}+1))-SNAPSHOT
+    echo "Changing version to $NEW_VERSION in gcloud-java-nio-example README"
+    sed -ri "s/gcloud-java-nio-examples-[0-9]+\.[0-9]+\.[0-9]+-SNAPSHOT/gcloud-java-nio-examples-$NEW_VERSION/g" gcloud-java-contrib/gcloud-java-nio-examples/README.md
+
     git add README.md */README.md
     git config --global user.name "travis-ci"
     git config --global user.email "travis@travis-ci.org"
