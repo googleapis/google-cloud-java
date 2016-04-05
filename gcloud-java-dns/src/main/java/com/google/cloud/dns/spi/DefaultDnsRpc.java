@@ -27,6 +27,8 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.googleapis.batch.BatchRequest;
 import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
@@ -73,22 +75,24 @@ public class DefaultDnsRpc implements DnsRpc {
   @Override
   public ManagedZone create(ManagedZone zone, Map<Option, ?> options) throws DnsException {
     try {
-      return dns.managedZones()
-          .create(this.options.projectId(), zone)
-          .setFields(FIELDS.getString(options))
-          .execute();
+      return createZoneRequest(zone, options).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
+  }
+
+  private Dns.ManagedZones.Create createZoneRequest(ManagedZone zone, Map<Option, ?> options)
+      throws IOException {
+    return dns.managedZones()
+        .create(this.options.projectId(), zone)
+        .setFields(FIELDS.getString(options));
   }
 
   @Override
   public ManagedZone getZone(String zoneName, Map<Option, ?> options) throws DnsException {
     // just fields option
     try {
-      return dns.managedZones().get(this.options.projectId(), zoneName)
-          .setFields(FIELDS.getString(options))
-          .execute();
+      return getZoneRequest(zoneName, options).execute();
     } catch (IOException ex) {
       DnsException serviceException = translate(ex);
       if (serviceException.code() == HTTP_NOT_FOUND) {
@@ -96,6 +100,13 @@ public class DefaultDnsRpc implements DnsRpc {
       }
       throw serviceException;
     }
+  }
+
+  private Dns.ManagedZones.Get getZoneRequest(String zoneName, Map<Option, ?> options)
+      throws IOException {
+    return dns.managedZones()
+        .get(this.options.projectId(), zoneName)
+        .setFields(FIELDS.getString(options));
   }
 
   @Override
@@ -109,10 +120,18 @@ public class DefaultDnsRpc implements DnsRpc {
     }
   }
 
+  private Dns.ManagedZones.List zoneListRequest(Map<DnsRpc.Option, ?> options) throws IOException {
+    return dns.managedZones().list(this.options.projectId())
+        .setFields(FIELDS.getString(options))
+        .setMaxResults(PAGE_SIZE.getInt(options))
+        .setDnsName(DNS_NAME.getString(options))
+        .setPageToken(PAGE_TOKEN.getString(options));
+  }
+
   @Override
   public boolean deleteZone(String zoneName) throws DnsException {
     try {
-      dns.managedZones().delete(this.options.projectId(), zoneName).execute();
+      deleteZoneRequest(zoneName).execute();
       return true;
     } catch (IOException ex) {
       DnsException serviceException = translate(ex);
@@ -123,54 +142,69 @@ public class DefaultDnsRpc implements DnsRpc {
     }
   }
 
+  private Dns.ManagedZones.Delete deleteZoneRequest(String zoneName) throws IOException {
+    return dns.managedZones().delete(this.options.projectId(), zoneName);
+  }
+
   @Override
   public ListResult<ResourceRecordSet> listRecordSets(String zoneName, Map<Option, ?> options)
       throws DnsException {
-    // options are fields, page token, dns name, type
+
     try {
-      ResourceRecordSetsListResponse response = dns.resourceRecordSets()
-          .list(this.options.projectId(), zoneName)
-          .setFields(FIELDS.getString(options))
-          .setPageToken(PAGE_TOKEN.getString(options))
-          .setMaxResults(PAGE_SIZE.getInt(options))
-          .setName(NAME.getString(options))
-          .setType(DNS_TYPE.getString(options))
-          .execute();
+      ResourceRecordSetsListResponse response = listDnsRecordsRequest(zoneName, options).execute();
       return of(response.getNextPageToken(), response.getRrsets());
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
+  private Dns.ResourceRecordSets.List listDnsRecordsRequest(String zoneName, Map<Option, ?> options)
+      throws IOException {
+    // options are fields, page token, dns name, type
+    return dns.resourceRecordSets()
+        .list(this.options.projectId(), zoneName)
+        .setFields(FIELDS.getString(options))
+        .setPageToken(PAGE_TOKEN.getString(options))
+        .setMaxResults(PAGE_SIZE.getInt(options))
+        .setName(NAME.getString(options))
+        .setType(DNS_TYPE.getString(options));
+  }
+
   @Override
   public Project getProject(Map<Option, ?> options) throws DnsException {
     try {
-      return dns.projects().get(this.options.projectId())
-          .setFields(FIELDS.getString(options)).execute();
+      return getProjectRequest(options).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
+  }
+
+  private Dns.Projects.Get getProjectRequest(Map<Option, ?> options) throws IOException {
+    return dns.projects().get(this.options.projectId()).setFields(FIELDS.getString(options));
   }
 
   @Override
   public Change applyChangeRequest(String zoneName, Change changeRequest, Map<Option, ?> options)
       throws DnsException {
     try {
-      return dns.changes().create(this.options.projectId(), zoneName, changeRequest)
-          .setFields(FIELDS.getString(options))
-          .execute();
+      return applyChangeRequestRequest(zoneName, changeRequest, options).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
+  }
+
+  private Dns.Changes.Create applyChangeRequestRequest(String zoneName, Change changeRequest,
+      Map<Option, ?> options) throws IOException {
+    return dns.changes()
+        .create(this.options.projectId(), zoneName, changeRequest)
+        .setFields(FIELDS.getString(options));
   }
 
   @Override
   public Change getChangeRequest(String zoneName, String changeRequestId, Map<Option, ?> options)
       throws DnsException {
     try {
-      return dns.changes().get(this.options.projectId(), zoneName, changeRequestId)
-          .setFields(FIELDS.getString(options))
-          .execute();
+      return getChangeRequestRequest(zoneName, changeRequestId, options).execute();
     } catch (IOException ex) {
       DnsException serviceException = translate(ex);
       if (serviceException.code() == HTTP_NOT_FOUND) {
@@ -186,24 +220,38 @@ public class DefaultDnsRpc implements DnsRpc {
     }
   }
 
+  // todo(mderka) rename
+  private Dns.Changes.Get getChangeRequestRequest(String zoneName, String changeRequestId,
+      Map<Option, ?> options) throws IOException {
+    return dns.changes()
+        .get(this.options.projectId(), zoneName, changeRequestId)
+        .setFields(FIELDS.getString(options));
+  }
+
   @Override
   public ListResult<Change> listChangeRequests(String zoneName, Map<Option, ?> options)
       throws DnsException {
-    // options are fields, page token, page size, sort order
     try {
-      Dns.Changes.List request = dns.changes().list(this.options.projectId(), zoneName)
-          .setFields(FIELDS.getString(options))
-          .setMaxResults(PAGE_SIZE.getInt(options))
-          .setPageToken(PAGE_TOKEN.getString(options));
-      if (SORTING_ORDER.getString(options) != null) {
-        // todo check and change if more sorting options are implemented, issue #604
-        request = request.setSortBy(SORT_BY).setSortOrder(SORTING_ORDER.getString(options));
-      }
-      ChangesListResponse response = request.execute();
+      ChangesListResponse response = listChangeRequestsRequest(zoneName, options).execute();
       return of(response.getNextPageToken(), response.getChanges());
     } catch (IOException ex) {
       throw translate(ex);
     }
+  }
+
+  // todo(mderka) rename
+  private Dns.Changes.List listChangeRequestsRequest(String zoneName, Map<Option, ?> options)
+      throws IOException {
+    // options are fields, page token, page size, sort order
+    Dns.Changes.List request = dns.changes().list(this.options.projectId(), zoneName)
+        .setFields(FIELDS.getString(options))
+        .setMaxResults(PAGE_SIZE.getInt(options))
+        .setPageToken(PAGE_TOKEN.getString(options));
+    if (SORTING_ORDER.getString(options) != null) {
+      // todo check and change if more sorting options are implemented, issue #604
+      request = request.setSortBy(SORT_BY).setSortOrder(SORTING_ORDER.getString(options));
+    }
+    return request;
   }
 
   @Override
@@ -212,51 +260,87 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   @Override
-  public BatchRequest prepareListZones(BatchRequest batch, JsonBatchCallback callback,
-      Map<DnsRpc.Option, ?> options) {
+  public BatchRequest addToBatchListZones(Object batch,
+      DnsRpc.Callback<ManagedZonesListResponse> callback, Map<DnsRpc.Option, ?> options) {
+    BatchRequest casted = (BatchRequest) batch;
     try {
-      zoneListRequest(options).queue(batch, callback);
-      return batch;
+      zoneListRequest(options).queue(casted, jsonCallback(callback));
+      return casted;
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
   @Override
-  public BatchRequest prepareCreateZone(ManagedZone zone, BatchRequest batch,
-      JsonBatchCallback callback, Map<Option, ?> options) {
-    // todo(mderka) implement
-    throw new UnsupportedOperationException("not implemented yet");
-  }
-
-  @Override
-  public BatchRequest prepareGetZone(String zoneName, BatchRequest batch,
-      JsonBatchCallback callback, Map<Option, ?> options) {
-    // todo(mderka) implement
-    throw new UnsupportedOperationException("not implemented yet");
-  }
-
-  @Override
-  public BatchRequest prepareDeleteZone(String zoneName, BatchRequest batch,
-      JsonBatchCallback callback) {
-    // todo(mderka) implement
-    throw new UnsupportedOperationException("not implemented yet");
-  }
-
-  @Override
-  public void submitBatch(BatchRequest batchRequest) {
+  public BatchRequest addToBatchCreateZone(ManagedZone zone, Object batch,
+      DnsRpc.Callback<ManagedZone> callback, Map<Option, ?> options) {
+    BatchRequest casted = (BatchRequest) batch;
     try {
-      batchRequest.execute();
+      createZoneRequest(zone, options).queue(casted, jsonCallback(callback));
+      return casted;
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
-  private Dns.ManagedZones.List zoneListRequest(Map<DnsRpc.Option, ?> options) throws IOException {
-    return dns.managedZones().list(this.options.projectId())
-        .setFields(FIELDS.getString(options))
-        .setMaxResults(PAGE_SIZE.getInt(options))
-        .setDnsName(DNS_NAME.getString(options))
-        .setPageToken(PAGE_TOKEN.getString(options));
+  @Override
+  public BatchRequest addToBatchGetZone(String zoneName, Object batch,
+      DnsRpc.Callback<ManagedZone> callback, Map<Option, ?> options) {
+    BatchRequest casted = (BatchRequest) batch;
+    try {
+      getZoneRequest(zoneName, options).queue(casted, jsonCallback(callback));
+      return casted;
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public BatchRequest addToBatchDeleteZone(String zoneName, Object batch,
+      DnsRpc.Callback<Void> callback) {
+    BatchRequest casted = (BatchRequest) batch;
+    try {
+      deleteZoneRequest(zoneName).queue(casted, jsonCallback(callback));
+      return casted;
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public BatchRequest addToBatchGetProject(Object batch, DnsRpc.Callback<Project> callback,
+      Map<Option, ?> options) {
+    BatchRequest casted = (BatchRequest) batch;
+    try {
+      getProjectRequest(options).queue(casted, jsonCallback(callback));
+      return casted;
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  private static <T> JsonBatchCallback<T> jsonCallback(final DnsRpc.Callback<T> callback) {
+    JsonBatchCallback<T> jsonCallback = new JsonBatchCallback<T>() {
+      @Override
+      public void onSuccess(T response, HttpHeaders httpHeaders) throws IOException {
+        callback.onSuccess(response);
+      }
+
+      @Override
+      public void onFailure(GoogleJsonError googleJsonError, HttpHeaders httpHeaders)
+          throws IOException {
+        callback.onFailure(googleJsonError);
+      }
+    };
+    return jsonCallback;
+  }
+
+  @Override
+  public void submitBatch(Object batchRequest) {
+    try {
+      ((BatchRequest) batchRequest).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
   }
 }

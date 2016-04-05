@@ -17,12 +17,12 @@
 package com.google.gcloud;
 
 /**
- * this class holds a single result of a batch call.
+ * This class holds a single result of a batch call.
  */
 public interface BatchResult<T, E extends BaseServiceException> {
 
   /**
-   * Returns {@code true} if the batch has been submitted and the result is available, and {@code
+   * Returns {@code true} if the batch has been submitted and the result is available; {@code
    * false} otherwise.
    */
   boolean submitted();
@@ -31,7 +31,7 @@ public interface BatchResult<T, E extends BaseServiceException> {
    * Returns result of this call.
    *
    * @throws IllegalArgumentException if the batch has not been submitted yet
-   * @throws E if an error occured when processing this request
+   * @throws E if an error occurred when processing this request
    */
   T get() throws E;
 

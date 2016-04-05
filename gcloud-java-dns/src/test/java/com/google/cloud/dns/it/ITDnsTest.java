@@ -982,4 +982,6 @@ public class ITDnsTest {
       DNS.delete(ZONE_EMPTY_DESCRIPTION.name());
     }
   }
+
+  // todo(mderka) implement tests for other batch calls
 }

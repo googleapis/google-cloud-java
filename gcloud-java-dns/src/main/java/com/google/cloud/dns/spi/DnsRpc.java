@@ -16,10 +16,10 @@
 
 package com.google.cloud.dns.spi;
 
-import com.google.api.client.googleapis.batch.BatchRequest;
-import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
+import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
+import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.collect.ImmutableList;
@@ -83,6 +83,22 @@ public interface DnsRpc {
     public String pageToken() {
       return pageToken;
     }
+  }
+
+  /**
+   * An interface for batch callbacks.
+   */
+  interface Callback<T> {
+
+    /**
+     * This method will be called upon success of the batch operation.
+     */
+    void onSuccess(T response);
+
+    /**
+     * This method will be called upon failure of the batch operation.
+     */
+    void onFailure(GoogleJsonError googleJsonError);
   }
 
   /**
@@ -177,7 +193,7 @@ public interface DnsRpc {
   /**
    * Initializes an empty batch.
    */
-  BatchRequest createBatch();
+  Object createBatch();
 
   /**
    * Prepares a call to "list zones" and adds it to the batch with the provided {@code callback} and
@@ -185,8 +201,8 @@ public interface DnsRpc {
    *
    * @return the updated batch
    */
-  BatchRequest prepareListZones(BatchRequest batch, JsonBatchCallback callback,
-      Map<DnsRpc.Option, ?> options);
+  Object addToBatchListZones(Object batch,
+      Callback<ManagedZonesListResponse> callback, Map<DnsRpc.Option, ?> options);
 
   /**
    * Prepares a call to "create zone" and adds it to the batch with the provided {@code callback}
@@ -194,8 +210,8 @@ public interface DnsRpc {
    *
    * @return the updated batch
    */
-  BatchRequest prepareCreateZone(ManagedZone zone, BatchRequest batch, JsonBatchCallback callback,
-      Map<DnsRpc.Option, ?> options);
+  Object addToBatchCreateZone(ManagedZone zone, Object batch,
+      Callback<ManagedZone> callback, Map<DnsRpc.Option, ?> options);
 
   /**
    * Prepares a call to "get zone" and adds it to the batch with the provided {@code callback} and
@@ -203,7 +219,7 @@ public interface DnsRpc {
    *
    * @return the updated batch
    */
-  BatchRequest prepareGetZone(String zoneName, BatchRequest batch, JsonBatchCallback callback,
+  Object addToBatchGetZone(String zoneName, Object batch, Callback<ManagedZone> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
@@ -212,12 +228,19 @@ public interface DnsRpc {
    *
    * @return the updated batch
    */
-  BatchRequest prepareDeleteZone(String zoneName, BatchRequest batch, JsonBatchCallback callback);
+  Object addToBatchDeleteZone(String zoneName, Object batch, Callback<Void> callback);
 
-  // todo(mderka) add prepare for every single opration
+  /**
+   * Prepares a call to "get project" and adds it to the batch with the provided {@code callback}
+   * and {@code options}.
+   *
+   * @return the updated batch
+   */
+  Object addToBatchGetProject(Object batch, Callback<Project> callback,
+      Map<DnsRpc.Option, ?> options);
 
   /**
    * Submits a batch of requests for processing using a single HTTP request to Cloud DNS.
    */
-  void submitBatch(BatchRequest requests);
+  void submitBatch(Object batch);
 }
