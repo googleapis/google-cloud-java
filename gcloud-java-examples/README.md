@@ -98,7 +98,7 @@ To run examples from your command line:
 
   * Here's an example run of `StorageExample`.
 
-    Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket.  Also ensure that you have a test file (`test.txt` is chosen here) to upload to Cloud Storage stored locally on your machine.
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Storage" and "Google Cloud Storage JSON API" are enabled and that you have a bucket.  Also ensure that you have a test file (`test.txt` is chosen here) to upload to Cloud Storage stored locally on your machine.
     ```
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.storage.StorageExample" -Dexec.args="upload /path/to/test.txt <bucket_name>"
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.storage.StorageExample" -Dexec.args="list <bucket_name>"
