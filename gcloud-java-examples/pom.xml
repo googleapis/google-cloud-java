@@ -21,17 +21,16 @@
       <artifactId>gcloud-java</artifactId>
       <version>${project.version}</version>
     </dependency>
-      <dependency>
-          <groupId>${project.groupId}</groupId>
-          <artifactId>gcloud-java-nio</artifactId>
-          <version>${project.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.5.4</version>
-      </dependency>
-
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-nio</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <version>2.5.4</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -45,35 +44,36 @@
         <!-- make a script so we can run stuff directly by calling
              mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true  -Dmaven.source.skip=true
              from the gcloud-java-examples folder. The script is written to target/appassembler/bin/. -->
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>appassembler-maven-plugin</artifactId>
-            <configuration>
-                <programs>
-                    <program>
-                        <mainClass>com.google.gcloud.examples.bigquery.BigQueryExample</mainClass>
-                        <name>BigQueryExample</name>
-                    </program>
-                    <program>
-                        <mainClass>com.google.gcloud.examples.datastore.DatastoreExample</mainClass>
-                        <name>DatastoreExample</name>
-                    </program>
-                    <program>
-                        <mainClass>com.google.gcloud.examples.nio.Stat</mainClass>
-                        <name>Stat</name>
-                    </program>
-                    <program>
-                        <mainClass>com.google.gcloud.examples.resourcemanager.ResourceManagerExample</mainClass>
-                        <name>ResourceManagerExample</name>
-                    </program>
-                    <program>
-                        <mainClass>com.google.gcloud.examples.storage.StorageExample</mainClass>
-                        <name>StorageExample</name>
-                    </program>
-
-                </programs>
-            </configuration>
-        </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>appassembler-maven-plugin</artifactId>
+        <configuration>
+          <programs>
+            <program>
+              <mainClass>com.google.gcloud.examples.bigquery.BigQueryExample</mainClass>
+              <name>BigQueryExample</name>
+            </program>
+            <program>
+              <mainClass>com.google.gcloud.examples.datastore.DatastoreExample</mainClass>
+              <name>DatastoreExample</name>
+            </program>
+            <program>
+              <mainClass>com.google.gcloud.examples.nio.Stat</mainClass>
+              <name>Stat</name>
+            </program>
+            <program>
+              <mainClass>
+                com.google.gcloud.examples.resourcemanager.ResourceManagerExample
+              </mainClass>
+              <name>ResourceManagerExample</name>
+            </program>
+            <program>
+              <mainClass>com.google.gcloud.examples.storage.StorageExample</mainClass>
+              <name>StorageExample</name>
+            </program>
+          </programs>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
