@@ -172,7 +172,7 @@ public class JobTest {
     expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(null);
     replay(bigquery);
     initializeJob();
-    assertFalse(job.isDone());
+    assertTrue(job.isDone());
   }
 
   @Test
