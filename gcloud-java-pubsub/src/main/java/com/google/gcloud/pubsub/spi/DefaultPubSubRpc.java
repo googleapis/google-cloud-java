@@ -45,6 +45,8 @@ import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.Topic;
 
+import org.joda.time.Duration;
+
 import java.io.IOException;
 import java.util.concurrent.Future;
 
@@ -69,14 +71,20 @@ public class DefaultPubSubRpc implements PubSubRpc {
   }
 
   private static RetryParams retryParams(PubSubOptions options) {
-    // TODO: verify retryParams mappings
+    // TODO: figure out how to specify timeout these settings
+    // retryParams.retryMaxAttempts(), retryParams.retryMinAttempts()
     com.google.gcloud.RetryParams retryParams = options.retryParams();
     return RetryParams.newBuilder()
-        .setTotalTimeout(retryParams.totalRetryPeriodMillis())
+        .setTotalTimeout(Duration.millis(retryParams.totalRetryPeriodMillis()))
+        .setTimeoutBackoff(BackoffParams.newBuilder()
+            .setInitialDelay(Duration.millis(options.connectTimeout()))
+            .setDelayMultiplier(1.5)
+            .setMaxDelay(Duration.millis(options.connectTimeout() + options.readTimeout()))
+            .build())
         .setRetryBackoff(BackoffParams.newBuilder()
-            .setInitialDelayMillis(retryParams.initialRetryDelayMillis())
+            .setInitialDelay(Duration.millis(retryParams.initialRetryDelayMillis()))
             .setDelayMultiplier(retryParams.retryDelayBackoffFactor())
-            .setMaxDelayMillis(retryParams.maxRetryDelayMillis())
+            .setMaxDelay(Duration.millis(retryParams.maxRetryDelayMillis()))
             .build())
         .build();
   }
