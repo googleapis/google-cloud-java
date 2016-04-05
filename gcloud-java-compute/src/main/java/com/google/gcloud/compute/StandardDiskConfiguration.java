@@ -21,8 +21,8 @@ import com.google.api.services.compute.model.Disk;
 import java.util.Objects;
 
 /**
- * A Google Compute Engine standard persistent disk configuration. Allows to create a disk given its
- * type and size.
+ * A Google Compute Engine standard persistent disk configuration. This class allows users to create
+ * a disk given its type and size.
  *
  * @see <a href="https://cloud.google.com/compute/docs/disks/">Block Storage</a>
  */
@@ -40,8 +40,8 @@ public class StandardDiskConfiguration extends DiskConfiguration {
       super(Type.STANDARD);
     }
 
-    private Builder(StandardDiskConfiguration diskInfo) {
-      super(Type.STANDARD, diskInfo);
+    private Builder(StandardDiskConfiguration configuration) {
+      super(Type.STANDARD, configuration);
     }
 
     private Builder(Disk diskPb) {
@@ -57,7 +57,7 @@ public class StandardDiskConfiguration extends DiskConfiguration {
     }
   }
 
-  private StandardDiskConfiguration(StandardDiskConfiguration.Builder builder) {
+  private StandardDiskConfiguration(Builder builder) {
     super(builder);
   }
 

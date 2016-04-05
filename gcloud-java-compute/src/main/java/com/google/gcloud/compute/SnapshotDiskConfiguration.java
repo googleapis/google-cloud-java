@@ -25,7 +25,7 @@ import java.util.Objects;
 
 /**
  * A Google Compute Engine disk configuration to create a disk from a Google Compute Engine
- * snaoshot.
+ * snapshot.
  *
  * @see <a href="https://cloud.google.com/compute/docs/disks/">Block Storage</a>
  */
@@ -49,10 +49,10 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
       super(Type.SNAPSHOT);
     }
 
-    private Builder(SnapshotDiskConfiguration snapshotDiskInfo) {
-      super(Type.SNAPSHOT, snapshotDiskInfo);
-      this.sourceSnapshot = snapshotDiskInfo.sourceSnapshot;
-      this.sourceSnapshotId = snapshotDiskInfo.sourceSnapshotId;
+    private Builder(SnapshotDiskConfiguration configuration) {
+      super(Type.SNAPSHOT, configuration);
+      this.sourceSnapshot = configuration.sourceSnapshot;
+      this.sourceSnapshotId = configuration.sourceSnapshotId;
     }
 
     private Builder(Disk diskPb) {
@@ -147,7 +147,7 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
   /**
    * Returns a builder for a {@code SnapshotDiskConfiguration} object given the snapshot identity.
    */
-  static Builder builder(SnapshotId sourceSnapshot) {
+  public static Builder builder(SnapshotId sourceSnapshot) {
     return new Builder().sourceSnapshot(sourceSnapshot);
   }
 

@@ -40,7 +40,7 @@ public class SnapshotDiskConfigurationTest {
   @Test
   public void testToBuilder() {
     compareSnapshotDiskConfiguration(DISK_CONFIGURATION, DISK_CONFIGURATION.toBuilder().build());
-    SnapshotId newSnapshot = SnapshotId.of("newProjet", "newSnapshot");
+    SnapshotId newSnapshot = SnapshotId.of("newProject", "newSnapshot");
     SnapshotDiskConfiguration diskConfiguration = DISK_CONFIGURATION.toBuilder()
         .sizeGb(24L)
         .sourceSnapshot(newSnapshot)

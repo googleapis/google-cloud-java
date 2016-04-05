@@ -71,6 +71,8 @@ public class DiskInfoTest {
       .description(DESCRIPTION)
       .licenses(LICENSES)
       .attachedInstances(ATTACHED_INSTANCES)
+      .lastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
+      .lastDetachTimestamp(LAST_DETACH_TIMESTAMP)
       .build();
   private static final DiskInfo SNAPSHOT_DISK_INFO =
       DiskInfo.builder(DISK_ID, SNAPSHOT_DISK_CONFIGURATION)
@@ -119,26 +121,35 @@ public class DiskInfoTest {
   @Test
   public void testBuilder() {
     assertEquals(ID, DISK_INFO.id());
+    assertEquals(DISK_ID, DISK_INFO.diskId());
     assertEquals(DISK_CONFIGURATION, DISK_INFO.configuration());
     assertEquals(CREATION_TIMESTAMP, DISK_INFO.creationTimestamp());
     assertEquals(CREATION_STATUS, DISK_INFO.creationStatus());
     assertEquals(DESCRIPTION, DISK_INFO.description());
     assertEquals(LICENSES, DISK_INFO.licenses());
     assertEquals(ATTACHED_INSTANCES, DISK_INFO.attachedInstances());
+    assertEquals(LAST_ATTACH_TIMESTAMP, DISK_INFO.lastAttachTimestamp());
+    assertEquals(LAST_DETACH_TIMESTAMP, DISK_INFO.lastDetachTimestamp());
     assertEquals(ID, IMAGE_DISK_INFO.id());
+    assertEquals(DISK_ID, IMAGE_DISK_INFO.diskId());
     assertEquals(IMAGE_DISK_CONFIGURATION, IMAGE_DISK_INFO.configuration());
     assertEquals(CREATION_TIMESTAMP, IMAGE_DISK_INFO.creationTimestamp());
     assertEquals(CREATION_STATUS, IMAGE_DISK_INFO.creationStatus());
     assertEquals(DESCRIPTION, IMAGE_DISK_INFO.description());
     assertEquals(LICENSES, IMAGE_DISK_INFO.licenses());
     assertEquals(ATTACHED_INSTANCES, IMAGE_DISK_INFO.attachedInstances());
+    assertEquals(LAST_ATTACH_TIMESTAMP, IMAGE_DISK_INFO.lastAttachTimestamp());
+    assertEquals(LAST_DETACH_TIMESTAMP, IMAGE_DISK_INFO.lastDetachTimestamp());
     assertEquals(ID, SNAPSHOT_DISK_INFO.id());
+    assertEquals(DISK_ID, SNAPSHOT_DISK_INFO.diskId());
     assertEquals(SNAPSHOT_DISK_CONFIGURATION, SNAPSHOT_DISK_INFO.configuration());
     assertEquals(CREATION_TIMESTAMP, SNAPSHOT_DISK_INFO.creationTimestamp());
     assertEquals(CREATION_STATUS, SNAPSHOT_DISK_INFO.creationStatus());
     assertEquals(DESCRIPTION, SNAPSHOT_DISK_INFO.description());
     assertEquals(LICENSES, SNAPSHOT_DISK_INFO.licenses());
     assertEquals(ATTACHED_INSTANCES, SNAPSHOT_DISK_INFO.attachedInstances());
+    assertEquals(LAST_ATTACH_TIMESTAMP, SNAPSHOT_DISK_INFO.lastAttachTimestamp());
+    assertEquals(LAST_DETACH_TIMESTAMP, SNAPSHOT_DISK_INFO.lastDetachTimestamp());
   }
 
   @Test
@@ -152,6 +163,8 @@ public class DiskInfoTest {
     assertNull(diskInfo.description());
     assertNull(diskInfo.licenses());
     assertNull(diskInfo.attachedInstances());
+    assertNull(diskInfo.lastAttachTimestamp());
+    assertNull(diskInfo.lastDetachTimestamp());
     diskInfo = DiskInfo.of(DISK_ID, IMAGE_DISK_CONFIGURATION);
     assertNull(diskInfo.id());
     assertEquals(DISK_ID, diskInfo.diskId());
@@ -161,6 +174,8 @@ public class DiskInfoTest {
     assertNull(diskInfo.description());
     assertNull(diskInfo.licenses());
     assertNull(diskInfo.attachedInstances());
+    assertNull(diskInfo.lastAttachTimestamp());
+    assertNull(diskInfo.lastDetachTimestamp());
     diskInfo = DiskInfo.of(DISK_ID, SNAPSHOT_DISK_CONFIGURATION);
     assertNull(diskInfo.id());
     assertEquals(DISK_ID, diskInfo.diskId());
@@ -170,6 +185,8 @@ public class DiskInfoTest {
     assertNull(diskInfo.description());
     assertNull(diskInfo.licenses());
     assertNull(diskInfo.attachedInstances());
+    assertNull(diskInfo.lastAttachTimestamp());
+    assertNull(diskInfo.lastDetachTimestamp());
   }
 
   @Test
@@ -238,11 +255,14 @@ public class DiskInfoTest {
     assertEquals(expected, value);
     assertEquals(expected.configuration(), value.configuration());
     assertEquals(expected.id(), value.id());
+    assertEquals(expected.diskId(), value.diskId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.creationStatus(), value.creationStatus());
     assertEquals(expected.description(), value.description());
     assertEquals(expected.licenses(), value.licenses());
     assertEquals(expected.attachedInstances(), value.attachedInstances());
+    assertEquals(expected.lastAttachTimestamp(), value.lastAttachTimestamp());
+    assertEquals(expected.lastDetachTimestamp(), value.lastDetachTimestamp());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

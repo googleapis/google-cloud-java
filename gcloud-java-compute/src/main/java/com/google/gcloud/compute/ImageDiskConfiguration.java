@@ -48,10 +48,10 @@ public class ImageDiskConfiguration extends DiskConfiguration {
       super(Type.IMAGE);
     }
 
-    private Builder(ImageDiskConfiguration imageDiskConfiguration) {
-      super(Type.IMAGE, imageDiskConfiguration);
-      this.sourceImage = imageDiskConfiguration.sourceImage;
-      this.sourceImageId = imageDiskConfiguration.sourceImageId;
+    private Builder(ImageDiskConfiguration configuration) {
+      super(Type.IMAGE, configuration);
+      this.sourceImage = configuration.sourceImage;
+      this.sourceImageId = configuration.sourceImageId;
     }
 
     private Builder(Disk diskPb) {

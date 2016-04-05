@@ -24,11 +24,11 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Base class for Google Compute Engine disk configuration. A disk can be used as primary storage
+ * Base class for Google Compute Engine disk configurations. A disk can be used as primary storage
  * for your virtual machine instances. Use {@link StandardDiskConfiguration} to create a standard
- * disk given disk type and size. Use {@link ImageDiskConfiguration} to create a disk from a Compute
- * Engine disk image. Use {@link SnapshotDiskConfiguration} to create a disk from a Compute Engine
- * disk snapshot.
+ * disk given a disk type and size. Use {@link ImageDiskConfiguration} to create a disk from a
+ * Compute Engine disk image. Use {@link SnapshotDiskConfiguration} to create a disk from a Compute
+ * Engine disk snapshot.
  *
  * @see <a href="https://cloud.google.com/compute/docs/disks/">Block Storage</a>
  */
@@ -109,7 +109,7 @@ public abstract class DiskConfiguration implements Serializable {
     }
 
     /**
-     * Sets the identity of the disk diskType.
+     * Sets the identity of the disk type.
      */
     public B diskType(DiskTypeId diskType) {
       this.diskType = diskType;

@@ -320,7 +320,7 @@ public class DiskInfo implements Serializable {
   }
 
   /**
-   * Returns all instances' identities this disk is attached to.
+   * Returns all the identities of the instances this disk is attached to.
    */
   public List<InstanceId> attachedInstances() {
     return attachedInstances;
@@ -380,7 +380,7 @@ public class DiskInfo implements Serializable {
    * Returns a builder for a {@code DiskInfo} object given its identity and configuration. Use
    * {@link StandardDiskConfiguration} to create a simple disk given its type and size. Use
    * {@link SnapshotDiskConfiguration} to create a disk from a snapshot. Use
-   * {@link ImageDiskConfiguration} to create a disk form a disk image.
+   * {@link ImageDiskConfiguration} to create a disk from a disk image.
    */
   public static Builder builder(DiskId diskId, DiskConfiguration configuration) {
     return new BuilderImpl().diskId(diskId).configuration(configuration);
@@ -390,7 +390,7 @@ public class DiskInfo implements Serializable {
    * Returns a {@code DiskInfo} object given its identity and configuration. Use
    * {@link StandardDiskConfiguration} to create a simple disk given its type and size. Use
    * {@link SnapshotDiskConfiguration} to create a disk from a snapshot. Use
-   * {@link ImageDiskConfiguration} to create a disk form a disk image.
+   * {@link ImageDiskConfiguration} to create a disk from a disk image.
    */
   public static DiskInfo of(DiskId diskId, DiskConfiguration configuration) {
     return builder(diskId, configuration).build();

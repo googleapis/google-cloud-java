@@ -36,7 +36,7 @@ public class StandardDiskConfigurationTest {
 
   @Test
   public void testToBuilder() {
-    compareDefaultDiskConfiguration(DISK_CONFIGURATION, DISK_CONFIGURATION.toBuilder().build());
+    compareStandardDiskConfiguration(DISK_CONFIGURATION, DISK_CONFIGURATION.toBuilder().build());
     StandardDiskConfiguration diskConfiguration = DISK_CONFIGURATION.toBuilder()
         .sizeGb(24L)
         .build();
@@ -44,13 +44,13 @@ public class StandardDiskConfigurationTest {
     diskConfiguration = diskConfiguration.toBuilder()
         .sizeGb(SIZE)
         .build();
-    compareDefaultDiskConfiguration(DISK_CONFIGURATION, diskConfiguration);
+    compareStandardDiskConfiguration(DISK_CONFIGURATION, diskConfiguration);
   }
 
   @Test
   public void testToBuilderIncomplete() {
     StandardDiskConfiguration diskConfiguration = StandardDiskConfiguration.of(DISK_TYPE);
-    compareDefaultDiskConfiguration(diskConfiguration, diskConfiguration.toBuilder().build());
+    compareStandardDiskConfiguration(diskConfiguration, diskConfiguration.toBuilder().build());
   }
 
   @Test
@@ -64,7 +64,7 @@ public class StandardDiskConfigurationTest {
   public void testToAndFromPb() {
     assertTrue(DiskConfiguration.fromPb(DISK_CONFIGURATION.toPb())
         instanceof StandardDiskConfiguration);
-    compareDefaultDiskConfiguration(DISK_CONFIGURATION,
+    compareStandardDiskConfiguration(DISK_CONFIGURATION,
         DiskConfiguration.<StandardDiskConfiguration>fromPb(DISK_CONFIGURATION.toPb()));
   }
 
@@ -89,10 +89,10 @@ public class StandardDiskConfigurationTest {
     StandardDiskConfiguration configuration = DISK_CONFIGURATION.toBuilder()
         .diskType(DiskTypeId.of(DISK_TYPE.zone(), DISK_TYPE.diskType()))
         .build();
-    compareDefaultDiskConfiguration(DISK_CONFIGURATION, configuration.setProjectId("project"));
+    compareStandardDiskConfiguration(DISK_CONFIGURATION, configuration.setProjectId("project"));
   }
 
-  private void compareDefaultDiskConfiguration(StandardDiskConfiguration expected,
+  private void compareStandardDiskConfiguration(StandardDiskConfiguration expected,
       StandardDiskConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.diskType(), value.diskType());

@@ -40,7 +40,7 @@ public class ImageDiskConfigurationTest {
   @Test
   public void testToBuilder() {
     compareImageDiskConfiguration(DISK_CONFIGURATION, DISK_CONFIGURATION.toBuilder().build());
-    ImageId newImageId = ImageId.of("newProjet", "newImage");
+    ImageId newImageId = ImageId.of("newProject", "newImage");
     ImageDiskConfiguration diskConfiguration = DISK_CONFIGURATION.toBuilder()
         .sizeGb(24L)
         .sourceImage(newImageId)
