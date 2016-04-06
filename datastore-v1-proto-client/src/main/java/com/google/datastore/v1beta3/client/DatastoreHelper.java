@@ -359,6 +359,15 @@ public final class DatastoreHelper {
   }
 
   /**
+   * Makes an ancestor filter.
+   */
+  public static Filter.Builder makeAncestorFilter(Key ancestor) {
+    return makeFilter(
+        DatastoreHelper.KEY_PROPERTY_NAME, PropertyFilter.Operator.HAS_ANCESTOR,
+        makeValue(ancestor));
+  }
+
+  /**
    * Make a filter on a property for use in a query.
    */
   public static Filter.Builder makeFilter(String property, PropertyFilter.Operator operator,
