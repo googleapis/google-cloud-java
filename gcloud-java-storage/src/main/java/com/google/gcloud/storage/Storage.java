@@ -23,12 +23,15 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.AuthCredentials.AppEngineAuthCredentials;
 import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.FieldSelector;
 import com.google.gcloud.FieldSelector.Helper;
 import com.google.gcloud.Page;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.Service;
+import com.google.gcloud.ServiceAccountSigner;
+import com.google.gcloud.ServiceAccountSigner.SigningException;
 import com.google.gcloud.WriteChannel;
 import com.google.gcloud.storage.spi.StorageRpc;
 import com.google.gcloud.storage.spi.StorageRpc.Tuple;
@@ -765,14 +768,14 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Service account credentials which are used for signing the URL.
-     * If not provided an attempt will be made to get it from the environment.
+     * Provides a service account signer to sign the URL. If not provided an attempt will be made to
+     * get it from the environment.
      *
      * @see <a href="https://cloud.google.com/storage/docs/authentication#service_accounts">Service
      *     account</a>
      */
-    public static SignUrlOption serviceAccount(ServiceAccountAuthCredentials credentials) {
-      return new SignUrlOption(Option.SERVICE_ACCOUNT_CRED, credentials);
+    public static SignUrlOption signWith(ServiceAccountSigner signer) {
+      return new SignUrlOption(Option.SERVICE_ACCOUNT_CRED, signer);
     }
   }
 
@@ -1470,29 +1473,36 @@ public interface Storage extends Service<StorageOptions> {
    * Generates a signed URL for a blob. If you have a blob that you want to allow access to for a
    * fixed amount of time, you can use this method to generate a URL that is only valid within a
    * certain time period. This is particularly useful if you don't want publicly accessible blobs,
-   * but also don't want to require users to explicitly log in. Signing a URL requires a service
-   * account and its associated private key. If a {@link ServiceAccountAuthCredentials} was passed
-   * to {@link StorageOptions.Builder#authCredentials(AuthCredentials)} or the default credentials
-   * are being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
-   * {@code signUrl} will use that service account and associated key to sign the URL. If the
-   * credentials passed to {@link StorageOptions} do not expose a private key (this is the case for
-   * App Engine credentials, Compute Engine credentials and Google Cloud SDK credentials) then
-   * {@code signUrl} will throw an {@link IllegalArgumentException} unless a service account with
-   * associated key is passed using the {@code SignUrlOption.serviceAccount()} option. The service
-   * account and private key passed with {@code SignUrlOption.serviceAccount()} have priority over
-   * any credentials set with {@link StorageOptions.Builder#authCredentials(AuthCredentials)}.
+   * but also don't want to require users to explicitly log in. Signing a URL requires
+   * a service account signer. If a {@link ServiceAccountAuthCredentials} or an
+   * {@link AppEngineAuthCredentials} was passed to
+   * {@link StorageOptions.Builder#authCredentials(AuthCredentials)} or the default credentials are
+   * being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
+   * {@code signUrl} will use that credentials to sign the URL. If the credentials passed to
+   * {@link StorageOptions} do not implement {@link ServiceAccountSigner} (this is the case for
+   * Compute Engine credentials and Google Cloud SDK credentials) then {@code signUrl} will throw an
+   * {@link IllegalStateException} unless an implementation of {@link ServiceAccountSigner} is
+   * passed using the {@link SignUrlOption#signWith(ServiceAccountSigner)} option.
+   *
+   * <p>A service account signer is looked for in the following order:
+   * <ol>
+   *   <li>The signer passed with the option {@link SignUrlOption#signWith(ServiceAccountSigner)}
+   *   <li>The credentials passed to {@link StorageOptions.Builder#authCredentials(AuthCredentials)}
+   *   <li>The default credentials, if no credentials were passed to {@link StorageOptions}
+   * </ol>
    *
    * <p>Example usage of creating a signed URL that is valid for 2 weeks, using the default
-   *     credentials for signing the URL:
+   * credentials for signing the URL:
    * <pre> {@code
    * service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS);
    * }</pre>
    *
-   * <p>Example usage of creating a signed URL passing the {@code SignUrlOption.serviceAccount()}
-   *     option, that will be used for signing the URL:
+   * <p>Example usage of creating a signed URL passing the
+   * {@link SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used for signing the
+   * URL:
    * <pre> {@code
    * service.signUrl(BlobInfo.builder("bucket", "name").build(), 14, TimeUnit.DAYS,
-   *     SignUrlOption.serviceAccount(
+   *     SignUrlOption.signWith(
    *         AuthCredentials.createForJson(new FileInputStream("/path/to/key.json"))));
    * }</pre>
    *
@@ -1501,14 +1511,14 @@ public interface Storage extends Service<StorageOptions> {
    *     granularity supported is 1 second, finer granularities will be truncated
    * @param unit time unit of the {@code duration} parameter
    * @param options optional URL signing options
-   * @throws IllegalArgumentException if {@code SignUrlOption.serviceAccount()} was not used and no
-   *     service account was provided to {@link StorageOptions}
-   * @throws IllegalArgumentException if the key associated to the provided service account is
-   *     invalid
+   * @throws IllegalStateException if {@link SignUrlOption#signWith(ServiceAccountSigner)} was not
+   *     used and no implementation of {@link ServiceAccountSigner} was provided to
+   *     {@link StorageOptions}
    * @throws IllegalArgumentException if {@code SignUrlOption.withMd5()} option is used and
    *     {@code blobInfo.md5()} is {@code null}
    * @throws IllegalArgumentException if {@code SignUrlOption.withContentType()} option is used and
    *     {@code blobInfo.contentType()} is {@code null}
+   * @throws SigningException if the attempt to sign the URL failed
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed-URLs</a>
    */
   URL signUrl(BlobInfo blobInfo, long duration, TimeUnit unit, SignUrlOption... options);
