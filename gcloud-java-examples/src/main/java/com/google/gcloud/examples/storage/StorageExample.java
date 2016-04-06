@@ -489,7 +489,7 @@ public class StorageExample {
     private void run(Storage storage, ServiceAccountAuthCredentials cred, BlobInfo blobInfo) {
       Blob blob = storage.get(blobInfo.blobId());
       System.out.println("Signed URL: "
-          + blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.serviceAccount(cred)));
+          + blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.signWith(cred)));
     }
 
     @Override

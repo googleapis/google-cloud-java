@@ -17,6 +17,7 @@
 package com.google.gcloud;
 
 import com.google.common.collect.ImmutableList;
+import com.google.gcloud.ServiceAccountSigner.SigningException;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -24,34 +25,14 @@ import java.io.Serializable;
 
 public class SerializationTest extends BaseSerializationTest {
 
-  private static class SomeIamPolicy extends IamPolicy<String> {
-
-    private static final long serialVersionUID = 271243551016958285L;
-
-    private static class Builder extends IamPolicy.Builder<String, Builder> {
-
-      @Override
-      public SomeIamPolicy build() {
-        return new SomeIamPolicy(this);
-      }
-    }
-
-    protected SomeIamPolicy(Builder builder) {
-      super(builder);
-    }
-
-    @Override
-    public Builder toBuilder() {
-      return new Builder();
-    }
-  }
-
   private static final BaseServiceException BASE_SERVICE_EXCEPTION =
       new BaseServiceException(42, "message", "reason", true);
   private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.defaultInstance();
   private static final Identity IDENTITY = Identity.allAuthenticatedUsers();
   private static final PageImpl<String> PAGE =
       new PageImpl<>(null, "cursor", ImmutableList.of("string1", "string2"));
+  private static final SigningException SIGNING_EXCEPTION =
+      new SigningException("message", BASE_SERVICE_EXCEPTION);
   private static final RetryParams RETRY_PARAMS = RetryParams.defaultInstance();
   private static final SomeIamPolicy SOME_IAM_POLICY = new SomeIamPolicy.Builder().build();
   private static final String JSON_KEY = "{\n"
@@ -81,10 +62,32 @@ public class SerializationTest extends BaseSerializationTest {
       + "  \"type\": \"service_account\"\n"
       + "}";
 
+  private static class SomeIamPolicy extends IamPolicy<String> {
+
+    private static final long serialVersionUID = 271243551016958285L;
+
+    private static class Builder extends IamPolicy.Builder<String, Builder> {
+
+      @Override
+      public SomeIamPolicy build() {
+        return new SomeIamPolicy(this);
+      }
+    }
+
+    protected SomeIamPolicy(Builder builder) {
+      super(builder);
+    }
+
+    @Override
+    public Builder toBuilder() {
+      return new Builder();
+    }
+  }
+
   @Override
   protected Serializable[] serializableObjects() {
     return new Serializable[]{BASE_SERVICE_EXCEPTION, EXCEPTION_HANDLER, IDENTITY, PAGE,
-        RETRY_PARAMS, SOME_IAM_POLICY};
+        RETRY_PARAMS, SOME_IAM_POLICY, SIGNING_EXCEPTION};
   }
 
   @Override

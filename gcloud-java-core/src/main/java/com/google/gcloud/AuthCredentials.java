@@ -25,8 +25,13 @@ import com.google.auth.oauth2.ServiceAccountCredentials;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.security.Signature;
+import java.security.SignatureException;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -35,16 +40,26 @@ import java.util.Objects;
  */
 public abstract class AuthCredentials implements Restorable<AuthCredentials> {
 
-  private static class AppEngineAuthCredentials extends AuthCredentials {
+  /**
+   * Represents built-in credentials when running in Google App Engine.
+   */
+  public static class AppEngineAuthCredentials extends AuthCredentials
+      implements ServiceAccountSigner {
 
     private static final AuthCredentials INSTANCE = new AppEngineAuthCredentials();
     private static final AppEngineAuthCredentialsState STATE = new AppEngineAuthCredentialsState();
 
-    private static class AppEngineCredentials extends GoogleCredentials {
+    private AppEngineCredentials credentials;
+
+    private static class AppEngineCredentials extends GoogleCredentials
+        implements ServiceAccountSigner {
 
       private final Object appIdentityService;
+      private final String account;
       private final Method getAccessToken;
       private final Method getAccessTokenResult;
+      private final Method signForApp;
+      private final Method getSignature;
       private final Collection<String> scopes;
 
       AppEngineCredentials() {
@@ -59,6 +74,12 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
               "com.google.appengine.api.appidentity.AppIdentityService$GetAccessTokenResult");
           this.getAccessTokenResult = serviceClass.getMethod("getAccessToken", Iterable.class);
           this.getAccessToken = tokenResultClass.getMethod("getAccessToken");
+          this.account = (String) serviceClass.getMethod("getServiceAccountName")
+              .invoke(appIdentityService);
+          this.signForApp = serviceClass.getMethod("signForApp", byte[].class);
+          Class<?> signingResultClass = Class.forName(
+              "com.google.appengine.api.appidentity.AppIdentityService$SigningResult");
+          this.getSignature = signingResultClass.getMethod("getSignature");
           this.scopes = null;
         } catch (Exception e) {
           throw new RuntimeException("Could not create AppEngineCredentials.", e);
@@ -69,11 +90,14 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
         this.appIdentityService = unscoped.appIdentityService;
         this.getAccessToken = unscoped.getAccessToken;
         this.getAccessTokenResult = unscoped.getAccessTokenResult;
+        this.account = unscoped.account;
+        this.signForApp = unscoped.signForApp;
+        this.getSignature = unscoped.getSignature;
         this.scopes = scopes;
       }
 
       /**
-       * Refresh the access token by getting it from the App Identity service
+       * Refresh the access token by getting it from the App Identity service.
        */
       @Override
       public AccessToken refreshAccessToken() throws IOException {
@@ -97,6 +121,21 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
       @Override
       public GoogleCredentials createScoped(Collection<String> scopes) {
         return new AppEngineCredentials(scopes, this);
+      }
+
+      @Override
+      public String account() {
+        return account;
+      }
+
+      @Override
+      public byte[] sign(byte[] toSign) {
+        try {
+          Object signingResult = signForApp.invoke(appIdentityService, (Object) toSign);
+          return (byte[]) getSignature.invoke(signingResult);
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+          throw new SigningException("Failed to sign the provided bytes", ex);
+        }
       }
     }
 
@@ -122,13 +161,26 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
 
     @Override
-    public GoogleCredentials credentials() {
-      return new AppEngineCredentials();
+    public AppEngineCredentials credentials() {
+      if (credentials == null) {
+        credentials = new AppEngineCredentials();
+      }
+      return credentials;
     }
 
     @Override
     public RestorableState<AuthCredentials> capture() {
       return STATE;
+    }
+
+    @Override
+    public String account() {
+      return credentials().account();
+    }
+
+    @Override
+    public byte[] sign(byte[] toSign) {
+      return credentials().sign(toSign);
     }
   }
 
@@ -138,8 +190,10 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
    * @see <a href="https://cloud.google.com/docs/authentication#user_accounts_and_service_accounts">
    *     User accounts and service accounts</a>
    */
-  public static class ServiceAccountAuthCredentials extends AuthCredentials {
+  public static class ServiceAccountAuthCredentials extends AuthCredentials
+      implements ServiceAccountSigner {
 
+    private final ServiceAccountCredentials credentials;
     private final String account;
     private final PrivateKey privateKey;
 
@@ -178,21 +232,42 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
 
     ServiceAccountAuthCredentials(String account, PrivateKey privateKey) {
-      this.account = checkNotNull(account);
-      this.privateKey = checkNotNull(privateKey);
+      this(new ServiceAccountCredentials(null, account, privateKey, null, null));
+    }
+
+    ServiceAccountAuthCredentials(ServiceAccountCredentials credentials) {
+      this.credentials = checkNotNull(credentials);
+      this.account = checkNotNull(credentials.getClientEmail());
+      this.privateKey = checkNotNull(credentials.getPrivateKey());
     }
 
     @Override
     public ServiceAccountCredentials credentials() {
-      return new ServiceAccountCredentials(null, account, privateKey, null, null);
+      return credentials;
     }
 
+    @Override
     public String account() {
       return account;
     }
 
+    /**
+     * Returns the private key associated with the service account credentials.
+     */
     public PrivateKey privateKey() {
       return privateKey;
+    }
+
+    @Override
+    public byte[] sign(byte[] toSign) {
+      try {
+        Signature signer = Signature.getInstance("SHA256withRSA");
+        signer.initSign(privateKey());
+        signer.update(toSign);
+        return signer.sign();
+      } catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException ex) {
+        throw new SigningException("Failed to sign the provided bytes", ex);
+      }
     }
 
     @Override
@@ -240,6 +315,10 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
       public boolean equals(Object obj) {
         return obj instanceof ApplicationDefaultAuthCredentialsState;
       }
+    }
+
+    ApplicationDefaultAuthCredentials(GoogleCredentials credentials) {
+      googleCredentials = credentials;
     }
 
     ApplicationDefaultAuthCredentials() throws IOException {
@@ -320,7 +399,12 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
    * @throws IOException if the credentials cannot be created in the current environment
    */
   public static AuthCredentials createApplicationDefaults() throws IOException {
-    return new ApplicationDefaultAuthCredentials();
+    GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
+    if (credentials instanceof ServiceAccountCredentials) {
+      ServiceAccountCredentials serviceAccountCredentials = (ServiceAccountCredentials) credentials;
+      return new ServiceAccountAuthCredentials(serviceAccountCredentials);
+    }
+    return new ApplicationDefaultAuthCredentials(credentials);
   }
 
   /**

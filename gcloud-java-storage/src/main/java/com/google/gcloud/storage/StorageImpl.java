@@ -18,6 +18,7 @@ package com.google.gcloud.storage;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkState;
 import static com.google.gcloud.RetryHelper.runWithRetries;
 import static com.google.gcloud.storage.spi.StorageRpc.Option.DELIMITER;
 import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_GENERATION_MATCH;
@@ -31,7 +32,6 @@ import static com.google.gcloud.storage.spi.StorageRpc.Option.IF_SOURCE_METAGENE
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.services.storage.model.StorageObject;
-import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -41,13 +41,13 @@ import com.google.common.collect.Maps;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
-import com.google.gcloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.gcloud.BaseService;
 import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.PageImpl.NextPageFetcher;
 import com.google.gcloud.ReadChannel;
 import com.google.gcloud.RetryHelper.RetryHelperException;
+import com.google.gcloud.ServiceAccountSigner;
 import com.google.gcloud.storage.spi.StorageRpc;
 import com.google.gcloud.storage.spi.StorageRpc.RewriteResponse;
 import com.google.gcloud.storage.spi.StorageRpc.Tuple;
@@ -59,10 +59,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.Signature;
-import java.security.SignatureException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumMap;
@@ -538,15 +534,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     for (SignUrlOption option : options) {
       optionMap.put(option.option(), option.value());
     }
-    ServiceAccountAuthCredentials authCred =
-        (ServiceAccountAuthCredentials) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
-    ServiceAccountCredentials cred = authCred != null ? authCred.credentials() : null;
-    if (authCred == null) {
-      checkArgument(
-          this.options().authCredentials() != null
-          && this.options().authCredentials().credentials() instanceof ServiceAccountCredentials,
+    ServiceAccountSigner authCredentials =
+        (ServiceAccountSigner) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
+    if (authCredentials == null) {
+      checkState(this.options().authCredentials() instanceof ServiceAccountSigner,
           "Signing key was not provided and could not be derived");
-      cred = (ServiceAccountCredentials) this.options().authCredentials().credentials();
+      authCredentials = (ServiceAccountSigner) this.options().authCredentials();
     }
     // construct signature - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
     StringBuilder stBuilder = new StringBuilder();
@@ -583,20 +576,16 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     path.append(blobInfo.name());
     stBuilder.append(path);
     try {
-      Signature signer = Signature.getInstance("SHA256withRSA");
-      signer.initSign(cred.getPrivateKey());
-      signer.update(stBuilder.toString().getBytes(UTF_8));
+      byte[] signatureBytes = authCredentials.sign(stBuilder.toString().getBytes(UTF_8));
       stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
       String signature =
-          URLEncoder.encode(BaseEncoding.base64().encode(signer.sign()), UTF_8.name());
-      stBuilder.append("?GoogleAccessId=").append(cred.getClientEmail());
+          URLEncoder.encode(BaseEncoding.base64().encode(signatureBytes), UTF_8.name());
+      stBuilder.append("?GoogleAccessId=").append(authCredentials.account());
       stBuilder.append("&Expires=").append(expiration);
       stBuilder.append("&Signature=").append(signature);
       return new URL(stBuilder.toString());
-    } catch (MalformedURLException | NoSuchAlgorithmException | UnsupportedEncodingException e) {
-      throw new IllegalStateException(e);
-    } catch (SignatureException | InvalidKeyException e) {
-      throw new IllegalArgumentException("Invalid service account private key");
+    } catch (MalformedURLException | UnsupportedEncodingException ex) {
+      throw new IllegalStateException(ex);
     }
   }
 
