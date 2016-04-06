@@ -23,9 +23,10 @@
 package com.google.gcloud.examples.dns.snippets;
 
 import com.google.gcloud.dns.ChangeRequest;
+import com.google.gcloud.dns.ChangeRequestInfo;
 import com.google.gcloud.dns.Dns;
 import com.google.gcloud.dns.DnsOptions;
-import com.google.gcloud.dns.DnsRecord;
+import com.google.gcloud.dns.RecordSet;
 
 import java.util.Iterator;
 
@@ -43,28 +44,26 @@ public class DeleteZone {
     // Change this to a zone name that exists within your project and that you want to delete.
     String zoneName = "my-unique-zone";
 
-    // Get iterator for the existing records which have to be deleted before deleting the zone
-    Iterator<DnsRecord> recordIterator = dns.listDnsRecords(zoneName).iterateAll();
+    // Get iterator for the existing record sets which have to be deleted before deleting the zone
+    Iterator<RecordSet> recordIterator = dns.listRecordSets(zoneName).iterateAll();
 
     // Make a change for deleting the records
-    ChangeRequest.Builder changeBuilder = ChangeRequest.builder();
+    ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder();
     while (recordIterator.hasNext()) {
-      DnsRecord current = recordIterator.next();
+      RecordSet current = recordIterator.next();
       // SOA and NS records cannot be deleted
-      if (!DnsRecord.Type.SOA.equals(current.type()) && !DnsRecord.Type.NS.equals(current.type())) {
+      if (!RecordSet.Type.SOA.equals(current.type()) && !RecordSet.Type.NS.equals(current.type())) {
         changeBuilder.delete(current);
       }
     }
 
     // Build and apply the change request to our zone if it contains records to delete
-    ChangeRequest changeRequest = changeBuilder.build();
+    ChangeRequestInfo changeRequest = changeBuilder.build();
     if (!changeRequest.deletions().isEmpty()) {
-      changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
+      ChangeRequest pendingRequest = dns.applyChangeRequest(zoneName, changeRequest);
 
-      // Wait for change to finish, but save data traffic by transferring only ID and status
-      Dns.ChangeRequestOption option =
-          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS);
-      while (ChangeRequest.Status.PENDING.equals(changeRequest.status())) {
+      // Wait for the change request to complete
+      while (!pendingRequest.isDone()) {
         System.out.println("Waiting for change to complete. Going to sleep for 500ms...");
         try {
           Thread.sleep(500);
@@ -72,8 +71,6 @@ public class DeleteZone {
           System.err.println("The thread was interrupted while waiting for change request to be "
               + "processed.");
         }
-        // Update the change, but fetch only change ID and status
-        changeRequest = dns.getChangeRequest(zoneName, changeRequest.id(), option);
       }
     }
 

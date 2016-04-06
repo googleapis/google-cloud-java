@@ -27,10 +27,16 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.common.collect.Iterables;
+import com.google.common.io.Files;
 import com.google.gcloud.spi.ServiceRpcFactory;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -42,6 +48,7 @@ import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Objects;
@@ -376,9 +383,24 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   protected String defaultProject() {
     String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
     if (projectId == null) {
-      projectId = getAppEngineProjectId();
+      projectId = appEngineProjectId();
+    }
+    if (projectId == null) {
+      projectId = serviceAccountProjectId();
     }
     return projectId != null ? projectId : googleCloudProjectId();
+  }
+
+  private static String activeGoogleCloudConfig(File configDir) {
+    String activeGoogleCloudConfig = null;
+    try {
+      activeGoogleCloudConfig =
+          Files.readFirstLine(new File(configDir, "active_config"), Charset.defaultCharset());
+    } catch (IOException ex) {
+      // ignore
+    }
+    // if reading active_config failed or the file is empty we try default
+    return firstNonNull(activeGoogleCloudConfig, "default");
   }
 
   protected static String googleCloudProjectId() {
@@ -390,9 +412,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     } else {
       configDir = new File(System.getProperty("user.home"), ".config/gcloud");
     }
+    String activeConfig = activeGoogleCloudConfig(configDir);
     FileReader fileReader = null;
     try {
-      fileReader = new FileReader(new File(configDir, "configurations/config_default"));
+      fileReader = new FileReader(new File(configDir, "configurations/config_" + activeConfig));
     } catch (FileNotFoundException newConfigFileNotFoundEx) {
       try {
         fileReader = new FileReader(new File(configDir, "properties"));
@@ -446,7 +469,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).contains("windows");
   }
 
-  protected static String getAppEngineProjectId() {
+  protected static String appEngineProjectId() {
     try {
       Class<?> factoryClass =
           Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
@@ -462,6 +485,20 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       // return null if can't determine
       return null;
     }
+  }
+
+  protected static String serviceAccountProjectId() {
+    String project = null;
+    String credentialsPath = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
+    if(credentialsPath != null) {
+      try (InputStream credentialsStream = new FileInputStream(credentialsPath)) {
+        JSONObject json = new JSONObject(new JSONTokener(credentialsStream));
+        project = json.getString("project_id");
+      } catch (IOException | JSONException ex) {
+        // ignore
+      }
+    }
+    return project;
   }
 
   @SuppressWarnings("unchecked")

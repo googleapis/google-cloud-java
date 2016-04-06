@@ -55,8 +55,7 @@ public class DatasetInfo implements Serializable {
           return datasetInfo.toPb();
         }
       };
-
-  private static final long serialVersionUID = -6615133444520365839L;
+  private static final long serialVersionUID = 8469473744160758489L;
 
   private final DatasetId datasetId;
   private final List<Acl> acl;
@@ -65,7 +64,7 @@ public class DatasetInfo implements Serializable {
   private final String description;
   private final String etag;
   private final String friendlyName;
-  private final String id;
+  private final String generatedId;
   private final Long lastModified;
   private final String location;
   private final String selfLink;
@@ -114,7 +113,7 @@ public class DatasetInfo implements Serializable {
      */
     public abstract Builder friendlyName(String friendlyName);
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     abstract Builder lastModified(Long lastModified);
 
@@ -144,7 +143,7 @@ public class DatasetInfo implements Serializable {
     private String description;
     private String etag;
     private String friendlyName;
-    private String id;
+    private String generatedId;
     private Long lastModified;
     private String location;
     private String selfLink;
@@ -159,7 +158,7 @@ public class DatasetInfo implements Serializable {
       this.description = datasetInfo.description;
       this.etag = datasetInfo.etag;
       this.friendlyName = datasetInfo.friendlyName;
-      this.id = datasetInfo.id;
+      this.generatedId = datasetInfo.generatedId;
       this.lastModified = datasetInfo.lastModified;
       this.location = datasetInfo.location;
       this.selfLink = datasetInfo.selfLink;
@@ -182,7 +181,7 @@ public class DatasetInfo implements Serializable {
       this.description = datasetPb.getDescription();
       this.etag = datasetPb.getEtag();
       this.friendlyName = datasetPb.getFriendlyName();
-      this.id = datasetPb.getId();
+      this.generatedId = datasetPb.getId();
       this.lastModified = datasetPb.getLastModifiedTime();
       this.location = datasetPb.getLocation();
       this.selfLink = datasetPb.getSelfLink();
@@ -232,8 +231,8 @@ public class DatasetInfo implements Serializable {
     }
 
     @Override
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -269,7 +268,7 @@ public class DatasetInfo implements Serializable {
     description = builder.description;
     etag = builder.etag;
     friendlyName = builder.friendlyName;
-    id = builder.id;
+    generatedId = builder.generatedId;
     lastModified = builder.lastModified;
     location = builder.location;
     selfLink = builder.selfLink;
@@ -333,10 +332,10 @@ public class DatasetInfo implements Serializable {
   }
 
   /**
-   * Returns an opaque id for the dataset.
+   * Returns the service-generated id for the dataset.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -381,7 +380,7 @@ public class DatasetInfo implements Serializable {
         .add("description", description)
         .add("etag", etag)
         .add("friendlyName", friendlyName)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("lastModified", lastModified)
         .add("location", location)
         .add("selfLink", selfLink)
@@ -431,7 +430,7 @@ public class DatasetInfo implements Serializable {
     datasetPb.setDescription(description);
     datasetPb.setEtag(etag);
     datasetPb.setFriendlyName(friendlyName);
-    datasetPb.setId(id);
+    datasetPb.setId(generatedId);
     datasetPb.setLastModifiedTime(lastModified);
     datasetPb.setLocation(location);
     datasetPb.setSelfLink(selfLink);

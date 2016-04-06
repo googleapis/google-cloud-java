@@ -90,8 +90,8 @@ import java.util.zip.GZIPInputStream;
  * privileges to manipulate any project. Similarly, the local simulation does not require
  * verification of domain name ownership. Any request for creating a managed zone will be approved.
  * The mock does not track quota and will allow the user to exceed it. The mock provides only basic
- * validation of the DNS data for records of type A and AAAA. It does not validate any other record
- * types.
+ * validation of the DNS data for record sets of type A and AAAA. It does not validate any other
+ * record set types.
  */
 public class LocalDnsHelper {
 
@@ -122,7 +122,7 @@ public class LocalDnsHelper {
     }
   }
 
-  private long delayChange;
+  private final long delayChange;
   private final HttpServer server;
   private final int port;
 
@@ -140,8 +140,8 @@ public class LocalDnsHelper {
     PROJECT_GET("GET", CONTEXT + "/[^/]+"),
     RECORD_LIST("GET", CONTEXT + "/[^/]+/managedZones/[^/]+/rrsets");
 
-    private String method;
-    private String pathRegex;
+    private final String method;
+    private final String pathRegex;
 
     CallRegex(String method, String pathRegex) {
       this.pathRegex = pathRegex;
@@ -382,7 +382,7 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Creates new {@link LocalDnsHelper} instance that listens to requests on the local machine. This
+   * Creates new {@code LocalDnsHelper} instance that listens to requests on the local machine. This
    * instance processes changes in separate thread. The parameter determines how long a thread
    * should wait before processing a change. If it is set to 0, the threading is turned off and the
    * mock will behave synchronously.
@@ -470,7 +470,7 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Prepares DNS records that are created by default for each zone.
+   * Prepares record sets that are created by default for each zone.
    */
   private static ImmutableSortedMap<String, ResourceRecordSet> defaultRecords(ManagedZone zone) {
     ResourceRecordSet soa = new ResourceRecordSet();
@@ -508,7 +508,7 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Returns a hex string id (used for a dns record) unique within the set of ids.
+   * Returns a hex string id (used for a record set) unique within the set of ids.
    */
   @VisibleForTesting
   static String getUniqueId(Set<String> ids) {
@@ -521,14 +521,14 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Tests if a DNS record matches name and type (if provided). Used for filtering.
+   * Tests if a record set matches name and type (if provided). Used for filtering.
    */
   @VisibleForTesting
-  static boolean matchesCriteria(ResourceRecordSet record, String name, String type) {
-    if (type != null && !record.getType().equals(type)) {
+  static boolean matchesCriteria(ResourceRecordSet recordSet, String name, String type) {
+    if (type != null && !recordSet.getType().equals(type)) {
       return false;
     }
-    return name == null || record.getName().equals(name);
+    return name == null || recordSet.getName().equals(name);
   }
 
   /**
@@ -871,7 +871,7 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Lists DNS records for a zone. Next page token is the ID of the last record listed.
+   * Lists record sets for a zone. Next page token is the ID of the last record listed.
    */
   @VisibleForTesting
   Response listDnsRecords(String projectId, String zoneName, String query) {
@@ -898,18 +898,18 @@ public class LocalDnsHelper {
     boolean hasMorePages = false;
     LinkedList<String> serializedRrsets = new LinkedList<>();
     String lastRecordId = null;
-    for (String recordId : fragment.keySet()) {
-      ResourceRecordSet record = fragment.get(recordId);
-      if (matchesCriteria(record, name, type)) {
+    for (String recordSetId : fragment.keySet()) {
+      ResourceRecordSet recordSet = fragment.get(recordSetId);
+      if (matchesCriteria(recordSet, name, type)) {
         if (sizeReached) {
           // we do not add this, just note that there would be more and there should be a token
           hasMorePages = true;
           break;
         } else {
-          lastRecordId = recordId;
+          lastRecordId = recordSetId;
           try {
             serializedRrsets.addLast(jsonFactory.toString(
-                OptionParsers.extractFields(record, fields)));
+                OptionParsers.extractFields(recordSet, fields)));
           } catch (IOException e) {
             return Error.INTERNAL_ERROR.response(String.format(
                 "Error when serializing resource record set in managed zone %s in project %s",
@@ -1128,8 +1128,8 @@ public class LocalDnsHelper {
   }
 
   /**
-   * Checks against duplicate additions (for each record to be added that already exists, we must
-   * have a matching deletion. Furthermore, check that mandatory SOA and NS records stay.
+   * Checks against duplicate additions (for each record set to be added that already exists, we
+   * must have a matching deletion. Furthermore, check that mandatory SOA and NS records stay.
    */
   static Response checkAdditionsDeletions(List<ResourceRecordSet> additions,
       List<ResourceRecordSet> deletions, ZoneContainer zone) {
@@ -1139,7 +1139,7 @@ public class LocalDnsHelper {
         for (ResourceRecordSet wrappedRrset : zone.dnsRecords().get().values()) {
           if (rrset.getName().equals(wrappedRrset.getName())
               && rrset.getType().equals(wrappedRrset.getType())
-              // such a record exist and we must have a deletion
+              // such a record set exists and we must have a deletion
               && (deletions == null || !deletions.contains(wrappedRrset))) {
             return Error.ALREADY_EXISTS.response(String.format(
                 "The 'entity.change.additions[%s]' resource named '%s (%s)' already exists.",
@@ -1181,10 +1181,10 @@ public class LocalDnsHelper {
   /**
    * Helper for searching rrsets in a collection.
    */
-  private static ResourceRecordSet findByNameAndType(Iterable<ResourceRecordSet> records,
+  private static ResourceRecordSet findByNameAndType(Iterable<ResourceRecordSet> recordSets,
       String name, String type) {
-    if (records != null) {
-      for (ResourceRecordSet rrset : records) {
+    if (recordSets != null) {
+      for (ResourceRecordSet rrset : recordSets) {
         if ((name == null || name.equals(rrset.getName()))
             && (type == null || type.equals(rrset.getType()))) {
           return rrset;
@@ -1195,7 +1195,7 @@ public class LocalDnsHelper {
   }
 
   /**
-   * We only provide the most basic validation for A and AAAA records.
+   * We only provide the most basic validation for A and AAAA record sets.
    */
   static boolean checkRrData(String data, String type) {
     switch (type) {
@@ -1233,7 +1233,7 @@ public class LocalDnsHelper {
       return Error.INVALID.response(String.format(
           "Invalid value for 'parameters.dnsName': '%s'", dnsName));
     }
-    // for listing dns records, name must be fully qualified
+    // for listing record sets, name must be fully qualified
     String name = (String) options.get("name");
     if (name != null && !name.endsWith(".")) {
       return Error.INVALID.response(String.format(

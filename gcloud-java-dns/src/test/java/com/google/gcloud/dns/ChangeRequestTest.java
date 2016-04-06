@@ -16,203 +16,158 @@
 
 package com.google.gcloud.dns;
 
+import static org.easymock.EasyMock.createStrictMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.reset;
+import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import com.google.common.collect.ImmutableList;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
-
-import java.util.List;
 
 public class ChangeRequestTest {
 
-  private static final String ID = "cr-id-1";
-  private static final Long START_TIME_MILLIS = 12334567890L;
-  private static final ChangeRequest.Status STATUS = ChangeRequest.Status.PENDING;
-  private static final String NAME1 = "dns1";
-  private static final DnsRecord.Type TYPE1 = DnsRecord.Type.A;
-  private static final String NAME2 = "dns2";
-  private static final DnsRecord.Type TYPE2 = DnsRecord.Type.AAAA;
-  private static final String NAME3 = "dns3";
-  private static final DnsRecord.Type TYPE3 = DnsRecord.Type.MX;
-  private static final DnsRecord RECORD1 = DnsRecord.builder(NAME1, TYPE1).build();
-  private static final DnsRecord RECORD2 = DnsRecord.builder(NAME2, TYPE2).build();
-  private static final DnsRecord RECORD3 = DnsRecord.builder(NAME3, TYPE3).build();
-  private static final List<DnsRecord> ADDITIONS = ImmutableList.of(RECORD1, RECORD2);
-  private static final List<DnsRecord> DELETIONS = ImmutableList.of(RECORD3);
-  private static final ChangeRequest CHANGE = ChangeRequest.builder()
-      .add(RECORD1)
-      .add(RECORD2)
-      .delete(RECORD3)
-      .startTimeMillis(START_TIME_MILLIS)
-      .status(STATUS)
-      .id(ID)
+  private static final String ZONE_NAME = "dns-zone-name";
+  private static final ChangeRequestInfo CHANGE_REQUEST_INFO = ChangeRequest.builder()
+      .add(RecordSet.builder("name", RecordSet.Type.A).build())
+      .delete(RecordSet.builder("othername", RecordSet.Type.AAAA).build())
       .build();
+  private static final DnsOptions OPTIONS = createStrictMock(DnsOptions.class);
+
+  private Dns dns;
+  private ChangeRequest changeRequest;
+  private ChangeRequest changeRequestPending;
+  private ChangeRequest changeRequestPartial;
+
+  @Before
+  public void setUp() throws Exception {
+    dns = createStrictMock(Dns.class);
+    expect(dns.options()).andReturn(OPTIONS).times(3);
+    replay(dns);
+    changeRequest = new ChangeRequest(dns, ZONE_NAME, new ChangeRequestInfo.BuilderImpl(
+        CHANGE_REQUEST_INFO.toBuilder()
+            .startTimeMillis(132L)
+            .generatedId("12")
+            .status(ChangeRequest.Status.DONE)
+            .build()));
+    changeRequestPending = new ChangeRequest(dns, ZONE_NAME, new ChangeRequestInfo.BuilderImpl(
+        CHANGE_REQUEST_INFO.toBuilder()
+            .startTimeMillis(132L)
+            .generatedId("12")
+            .status(ChangeRequest.Status.PENDING)
+            .build()));
+    changeRequestPartial = new ChangeRequest(dns, ZONE_NAME,
+        new ChangeRequest.BuilderImpl(CHANGE_REQUEST_INFO));
+    reset(dns);
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    verify(dns);
+  }
 
   @Test
-  public void testEmptyBuilder() {
-    ChangeRequest cr = ChangeRequest.builder().build();
-    assertNotNull(cr.deletions());
-    assertTrue(cr.deletions().isEmpty());
-    assertNotNull(cr.additions());
-    assertTrue(cr.additions().isEmpty());
+  public void testConstructor() {
+    expect(dns.options()).andReturn(OPTIONS);
+    replay(dns);
+    assertEquals(new ChangeRequest(dns, ZONE_NAME,
+        new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO)), changeRequestPartial);
+    assertNotNull(changeRequest.dns());
+    assertEquals(ZONE_NAME, changeRequest.zone());
+    assertSame(dns, changeRequestPartial.dns());
+    assertEquals(ZONE_NAME, changeRequestPartial.zone());
+  }
+
+  @Test
+  public void testFromPb() {
+    expect(dns.options()).andReturn(OPTIONS).times(2);
+    replay(dns);
+    assertEquals(changeRequest, ChangeRequest.fromPb(dns, ZONE_NAME, changeRequest.toPb()));
+    assertEquals(changeRequestPartial,
+        ChangeRequest.fromPb(dns, ZONE_NAME, changeRequestPartial.toPb()));
+  }
+
+  @Test
+  public void testEqualsAndToBuilder() {
+    expect(dns.options()).andReturn(OPTIONS).times(2);
+    replay(dns);
+    ChangeRequest compare = changeRequest.toBuilder().build();
+    assertEquals(changeRequest, compare);
+    assertEquals(changeRequest.hashCode(), compare.hashCode());
+    compare = changeRequestPartial.toBuilder().build();
+    assertEquals(changeRequestPartial, compare);
+    assertEquals(changeRequestPartial.hashCode(), compare.hashCode());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, CHANGE.id());
-    assertEquals(STATUS, CHANGE.status());
-    assertEquals(START_TIME_MILLIS, CHANGE.startTimeMillis());
-    assertEquals(ADDITIONS, CHANGE.additions());
-    assertEquals(DELETIONS, CHANGE.deletions());
-    List<DnsRecord> recordList = ImmutableList.of(RECORD1);
-    ChangeRequest another = CHANGE.toBuilder().additions(recordList).build();
-    assertEquals(recordList, another.additions());
-    assertEquals(CHANGE.deletions(), another.deletions());
-    another = CHANGE.toBuilder().deletions(recordList).build();
-    assertEquals(recordList, another.deletions());
-    assertEquals(CHANGE.additions(), another.additions());
+    // one for each build() call because it invokes a constructor
+    expect(dns.options()).andReturn(OPTIONS).times(9);
+    replay(dns);
+    String id = changeRequest.generatedId() + "aaa";
+    assertEquals(id, changeRequest.toBuilder().generatedId(id).build().generatedId());
+    ChangeRequest modified =
+        changeRequest.toBuilder().status(ChangeRequest.Status.PENDING).build();
+    assertEquals(ChangeRequest.Status.PENDING, modified.status());
+    modified = changeRequest.toBuilder().clearDeletions().build();
+    assertTrue(modified.deletions().isEmpty());
+    modified = changeRequest.toBuilder().clearAdditions().build();
+    assertTrue(modified.additions().isEmpty());
+    modified = changeRequest.toBuilder().additions(ImmutableList.<RecordSet>of()).build();
+    assertTrue(modified.additions().isEmpty());
+    modified = changeRequest.toBuilder().deletions(ImmutableList.<RecordSet>of()).build();
+    assertTrue(modified.deletions().isEmpty());
+    RecordSet cname = RecordSet.builder("last", RecordSet.Type.CNAME).build();
+    modified = changeRequest.toBuilder().add(cname).build();
+    assertTrue(modified.additions().contains(cname));
+    modified = changeRequest.toBuilder().delete(cname).build();
+    assertTrue(modified.deletions().contains(cname));
+    modified = changeRequest.toBuilder().startTimeMillis(0L).build();
+    assertEquals(Long.valueOf(0), modified.startTimeMillis());
   }
 
   @Test
-  public void testEqualsAndNotEquals() {
-    ChangeRequest clone = CHANGE.toBuilder().build();
-    assertEquals(CHANGE, clone);
-    clone = ChangeRequest.fromPb(CHANGE.toPb());
-    assertEquals(CHANGE, clone);
-    clone = CHANGE.toBuilder().id("some-other-id").build();
-    assertNotEquals(CHANGE, clone);
-    clone = CHANGE.toBuilder().startTimeMillis(CHANGE.startTimeMillis() + 1).build();
-    assertNotEquals(CHANGE, clone);
-    clone = CHANGE.toBuilder().add(RECORD3).build();
-    assertNotEquals(CHANGE, clone);
-    clone = CHANGE.toBuilder().delete(RECORD1).build();
-    assertNotEquals(CHANGE, clone);
-    ChangeRequest empty = ChangeRequest.builder().build();
-    assertNotEquals(CHANGE, empty);
-    assertEquals(empty, ChangeRequest.builder().build());
+  public void testApplyTo() {
+    expect(dns.applyChangeRequest(ZONE_NAME, changeRequest)).andReturn(changeRequest);
+    expect(dns.applyChangeRequest(ZONE_NAME, changeRequest,
+        Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)))
+        .andReturn(changeRequest);
+    replay(dns);
+    assertSame(changeRequest, changeRequest.applyTo(ZONE_NAME));
+    assertSame(changeRequest, changeRequest.applyTo(ZONE_NAME,
+        Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)));
   }
 
   @Test
-  public void testSameHashCodeOnEquals() {
-    ChangeRequest clone = CHANGE.toBuilder().build();
-    assertEquals(CHANGE, clone);
-    assertEquals(CHANGE.hashCode(), clone.hashCode());
-    ChangeRequest empty = ChangeRequest.builder().build();
-    assertEquals(empty.hashCode(), ChangeRequest.builder().build().hashCode());
+  public void testReload() {
+    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.generatedId())).andReturn(changeRequest);
+    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.generatedId(),
+        Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)))
+        .andReturn(changeRequest);
+    replay(dns);
+    assertSame(changeRequest, changeRequest.reload());
+    assertSame(changeRequest, changeRequest.reload(
+        Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)));
   }
 
   @Test
-  public void testToAndFromPb() {
-    assertEquals(CHANGE, ChangeRequest.fromPb(CHANGE.toPb()));
-    ChangeRequest partial = ChangeRequest.builder().build();
-    assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().id(ID).build();
-    assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().add(RECORD1).build();
-    assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().delete(RECORD1).build();
-    assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().additions(ADDITIONS).build();
-    assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().deletions(DELETIONS).build();
-    assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().startTimeMillis(START_TIME_MILLIS).build();
-    assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().status(STATUS).build();
-    assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-  }
-
-  @Test
-  public void testToBuilder() {
-    assertEquals(CHANGE, CHANGE.toBuilder().build());
-    ChangeRequest partial = ChangeRequest.builder().build();
-    assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().id(ID).build();
-    assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().add(RECORD1).build();
-    assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().delete(RECORD1).build();
-    assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().additions(ADDITIONS).build();
-    assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().deletions(DELETIONS).build();
-    assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().startTimeMillis(START_TIME_MILLIS).build();
-    assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().status(STATUS).build();
-    assertEquals(partial, partial.toBuilder().build());
-  }
-
-  @Test
-  public void testClearAdditions() {
-    ChangeRequest clone = CHANGE.toBuilder().clearAdditions().build();
-    assertTrue(clone.additions().isEmpty());
-    assertFalse(clone.deletions().isEmpty());
-  }
-
-  @Test
-  public void testAddAddition() {
-    try {
-      CHANGE.toBuilder().add(null);
-      fail("Should not be able to add null DnsRecord.");
-    } catch (NullPointerException e) {
-      // expected
-    }
-    ChangeRequest clone = CHANGE.toBuilder().add(RECORD1).build();
-    assertEquals(CHANGE.additions().size() + 1, clone.additions().size());
-  }
-
-  @Test
-  public void testAddDeletion() {
-    try {
-      CHANGE.toBuilder().delete(null);
-      fail("Should not be able to delete null DnsRecord.");
-    } catch (NullPointerException e) {
-      // expected
-    }
-    ChangeRequest clone = CHANGE.toBuilder().delete(RECORD1).build();
-    assertEquals(CHANGE.deletions().size() + 1, clone.deletions().size());
-  }
-
-  @Test
-  public void testClearDeletions() {
-    ChangeRequest clone = CHANGE.toBuilder().clearDeletions().build();
-    assertTrue(clone.deletions().isEmpty());
-    assertFalse(clone.additions().isEmpty());
-  }
-
-  @Test
-  public void testRemoveAddition() {
-    ChangeRequest clone = CHANGE.toBuilder().removeAddition(RECORD1).build();
-    assertTrue(clone.additions().contains(RECORD2));
-    assertFalse(clone.additions().contains(RECORD1));
-    assertTrue(clone.deletions().contains(RECORD3));
-    clone = CHANGE.toBuilder().removeAddition(RECORD2).removeAddition(RECORD1).build();
-    assertFalse(clone.additions().contains(RECORD2));
-    assertFalse(clone.additions().contains(RECORD1));
-    assertTrue(clone.additions().isEmpty());
-    assertTrue(clone.deletions().contains(RECORD3));
-  }
-
-  @Test
-  public void testRemoveDeletion() {
-    ChangeRequest clone = CHANGE.toBuilder().removeDeletion(RECORD3).build();
-    assertTrue(clone.deletions().isEmpty());
-  }
-
-  @Test
-  public void testDateParsing() {
-    String startTime = "2016-01-26T18:33:43.512Z"; // obtained from service
-    com.google.api.services.dns.model.Change change = CHANGE.toPb().setStartTime(startTime);
-    ChangeRequest converted = ChangeRequest.fromPb(change);
-    assertNotNull(converted.startTimeMillis());
-    assertEquals(change, converted.toPb());
-    assertEquals(change.getStartTime(), converted.toPb().getStartTime());
+  public void testIsDone() {
+    replay(dns);
+    assertTrue(changeRequest.isDone());
+    verify(dns);
+    reset(dns);
+    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.generatedId(),
+        Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS)))
+        .andReturn(changeRequest);
+    replay(dns);
+    assertTrue(changeRequestPending.isDone());
+    verify(dns);
   }
 }

@@ -18,6 +18,7 @@ package com.google.gcloud.dns;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.dns.model.ManagedZone;
 import com.google.gcloud.Page;
 
 import java.io.IOException;
@@ -28,10 +29,10 @@ import java.util.Objects;
 /**
  * A Google Cloud DNS Zone object.
  *
- * <p>A zone is the container for all of your DNS records that share the same DNS name prefix, for
+ * <p>A zone is the container for all of your record sets that share the same DNS name prefix, for
  * example, example.com. Zones are automatically assigned a set of name servers when they are
  * created to handle responding to DNS queries for that zone. A zone has quotas for the number of
- * resource records that it can include.
+ * record sets that it can include.
  *
  * @see <a href="https://cloud.google.com/dns/zones/">Google Cloud DNS managed zone
  * documentation</a>
@@ -61,8 +62,8 @@ public class Zone extends ZoneInfo {
     }
 
     @Override
-    Builder id(String id) {
-      infoBuilder.id(id);
+    Builder generatedId(String generatedId) {
+      infoBuilder.generatedId(generatedId);
       return this;
     }
 
@@ -135,25 +136,25 @@ public class Zone extends ZoneInfo {
   }
 
   /**
-   * Lists all {@link DnsRecord}s associated with this zone. The method searches for zone by name.
+   * Lists all {@link RecordSet}s associated with this zone. The method searches for zone by name.
    *
-   * @param options optional restriction on listing and fields of {@link DnsRecord}s returned
-   * @return a page of DNS records
+   * @param options optional restriction on listing and fields of {@link RecordSet}s returned
+   * @return a page of record sets
    * @throws DnsException upon failure or if the zone is not found
    */
-  public Page<DnsRecord> listDnsRecords(Dns.DnsRecordListOption... options) {
-    return dns.listDnsRecords(name(), options);
+  public Page<RecordSet> listRecordSets(Dns.RecordSetListOption... options) {
+    return dns.listRecordSets(name(), options);
   }
 
   /**
-   * Submits {@link ChangeRequest} to the service for it to applied to this zone. The method
+   * Submits {@link ChangeRequestInfo} to the service for it to applied to this zone. The method
    * searches for zone by name.
    *
    * @param options optional restriction on what fields of {@link ChangeRequest} should be returned
    * @return ChangeRequest with server-assigned ID
    * @throws DnsException upon failure or if the zone is not found
    */
-  public ChangeRequest applyChangeRequest(ChangeRequest changeRequest,
+  public ChangeRequest applyChangeRequest(ChangeRequestInfo changeRequest,
       Dns.ChangeRequestOption... options) {
     checkNotNull(changeRequest);
     return dns.applyChangeRequest(name(), changeRequest, options);
@@ -205,12 +206,12 @@ public class Zone extends ZoneInfo {
     return Objects.hash(super.hashCode(), options);
   }
 
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
+  private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+    stream.defaultReadObject();
     this.dns = options.service();
   }
 
-  static Zone fromPb(Dns dns, com.google.api.services.dns.model.ManagedZone zone) {
+  static Zone fromPb(Dns dns, ManagedZone zone) {
     ZoneInfo info = ZoneInfo.fromPb(zone);
     return new Zone(dns, new ZoneInfo.BuilderImpl(info));
   }

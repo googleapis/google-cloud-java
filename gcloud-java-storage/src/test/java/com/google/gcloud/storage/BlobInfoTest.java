@@ -51,7 +51,7 @@ public class BlobInfoTest {
   private static final Long DELETE_TIME = System.currentTimeMillis();
   private static final String ETAG = "0xFF00";
   private static final Long GENERATION = 1L;
-  private static final String ID = "B/N:1";
+  private static final String GENERATED_ID = "B/N:1";
   private static final String MD5 = "0xFF00";
   private static final String MEDIA_LINK = "http://media/b/n";
   private static final Map<String, String> METADATA = ImmutableMap.of("n1", "v1", "n2", "v2");
@@ -71,7 +71,7 @@ public class BlobInfoTest {
       .crc32c(CRC32)
       .deleteTime(DELETE_TIME)
       .etag(ETAG)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .md5(MD5)
       .mediaLink(MEDIA_LINK)
       .metadata(METADATA)
@@ -118,7 +118,7 @@ public class BlobInfoTest {
     assertEquals(DELETE_TIME, BLOB_INFO.deleteTime());
     assertEquals(ETAG, BLOB_INFO.etag());
     assertEquals(GENERATION, BLOB_INFO.generation());
-    assertEquals(ID, BLOB_INFO.id());
+    assertEquals(GENERATED_ID, BLOB_INFO.generatedId());
     assertEquals(MD5, BLOB_INFO.md5());
     assertEquals(MEDIA_LINK, BLOB_INFO.mediaLink());
     assertEquals(METADATA, BLOB_INFO.metadata());
@@ -141,7 +141,7 @@ public class BlobInfoTest {
     assertNull(DIRECTORY_INFO.deleteTime());
     assertNull(DIRECTORY_INFO.etag());
     assertNull(DIRECTORY_INFO.generation());
-    assertNull(DIRECTORY_INFO.id());
+    assertNull(DIRECTORY_INFO.generatedId());
     assertNull(DIRECTORY_INFO.md5());
     assertNull(DIRECTORY_INFO.mediaLink());
     assertNull(DIRECTORY_INFO.metadata());
@@ -168,7 +168,7 @@ public class BlobInfoTest {
     assertEquals(expected.deleteTime(), value.deleteTime());
     assertEquals(expected.etag(), value.etag());
     assertEquals(expected.generation(), value.generation());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.md5(), value.md5());
     assertEquals(expected.mediaLink(), value.mediaLink());
     assertEquals(expected.metadata(), value.metadata());
@@ -203,7 +203,7 @@ public class BlobInfoTest {
     assertNull(blobInfo.deleteTime());
     assertNull(blobInfo.etag());
     assertNull(blobInfo.generation());
-    assertNull(blobInfo.id());
+    assertNull(blobInfo.generatedId());
     assertNull(blobInfo.md5());
     assertNull(blobInfo.mediaLink());
     assertNull(blobInfo.metadata());

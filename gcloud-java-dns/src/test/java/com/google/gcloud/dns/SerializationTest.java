@@ -31,7 +31,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final ZoneInfo FULL_ZONE_INFO = Zone.of("some zone name", "www.example.com",
       "some descriptions").toBuilder()
       .creationTimeMillis(132L)
-      .id("123333")
+      .generatedId("123333")
       .nameServers(ImmutableList.of("server 1", "server 2"))
       .nameServerSet("specificationstring")
       .build();
@@ -45,8 +45,8 @@ public class SerializationTest extends BaseSerializationTest {
       .build();
   private static final Dns.ZoneListOption ZONE_LIST_OPTION =
       Dns.ZoneListOption.dnsName("www.example.com.");
-  private static final Dns.DnsRecordListOption DNS_REOCRD_LIST_OPTION =
-      Dns.DnsRecordListOption.fields(Dns.DnsRecordField.TTL);
+  private static final Dns.RecordSetListOption RECORD_SET_LIST_OPTION =
+      Dns.RecordSetListOption.fields(Dns.RecordSetField.TTL);
   private static final Dns.ChangeRequestListOption CHANGE_REQUEST_LIST_OPTION =
       Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.STATUS);
   private static final Dns.ZoneOption ZONE_OPTION =
@@ -63,21 +63,26 @@ public class SerializationTest extends BaseSerializationTest {
   private static final Zone FULL_ZONE = new Zone(DNS, new ZoneInfo.BuilderImpl(FULL_ZONE_INFO));
   private static final Zone PARTIAL_ZONE =
       new Zone(DNS, new ZoneInfo.BuilderImpl(PARTIAL_ZONE_INFO));
-  private static final ChangeRequest CHANGE_REQUEST_PARTIAL = ChangeRequest.builder().build();
-  private static final DnsRecord DNS_RECORD_PARTIAL =
-      DnsRecord.builder("www.www.com", DnsRecord.Type.AAAA).build();
-  private static final DnsRecord DNS_RECORD_COMPLETE =
-      DnsRecord.builder("www.sadfa.com", DnsRecord.Type.A)
+  private static final ChangeRequestInfo CHANGE_REQUEST_INFO_PARTIAL =
+      ChangeRequest.builder().build();
+  private static final ChangeRequest CHANGE_REQUEST_PARTIAL = new ChangeRequest(DNS, "name",
+      new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO_PARTIAL));
+  private static final RecordSet RECORD_SET_PARTIAL =
+      RecordSet.builder("www.www.com", RecordSet.Type.AAAA).build();
+  private static final RecordSet RECORD_SET_COMPLETE =
+      RecordSet.builder("www.sadfa.com", RecordSet.Type.A)
           .ttl(12, TimeUnit.HOURS)
           .addRecord("record")
           .build();
-  private static final ChangeRequest CHANGE_REQUEST_COMPLETE = ChangeRequest.builder()
-      .add(DNS_RECORD_COMPLETE)
-      .delete(DNS_RECORD_PARTIAL)
+  private static final ChangeRequestInfo CHANGE_REQUEST_INFO_COMPLETE = ChangeRequestInfo.builder()
+      .add(RECORD_SET_COMPLETE)
+      .delete(RECORD_SET_PARTIAL)
       .status(ChangeRequest.Status.PENDING)
-      .id("some id")
+      .generatedId("some id")
       .startTimeMillis(132L)
       .build();
+  private static final ChangeRequest CHANGE_REQUEST_COMPLETE = new ChangeRequest(DNS, "name",
+      new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO_COMPLETE));
 
   @Override
   protected Serializable[] serializableObjects() {
@@ -89,10 +94,11 @@ public class SerializationTest extends BaseSerializationTest {
         .authCredentials(null)
         .build();
     return new Serializable[]{FULL_ZONE_INFO, PARTIAL_ZONE_INFO, ZONE_LIST_OPTION,
-        DNS_REOCRD_LIST_OPTION, CHANGE_REQUEST_LIST_OPTION, ZONE_OPTION, CHANGE_REQUEST_OPTION,
+        RECORD_SET_LIST_OPTION, CHANGE_REQUEST_LIST_OPTION, ZONE_OPTION, CHANGE_REQUEST_OPTION,
         PROJECT_OPTION, PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, OPTIONS, FULL_ZONE, PARTIAL_ZONE,
-        OPTIONS, CHANGE_REQUEST_PARTIAL, DNS_RECORD_PARTIAL, DNS_RECORD_COMPLETE,
-        CHANGE_REQUEST_COMPLETE, options, otherOptions};
+        OPTIONS, CHANGE_REQUEST_INFO_PARTIAL, CHANGE_REQUEST_PARTIAL, RECORD_SET_PARTIAL,
+        RECORD_SET_COMPLETE, CHANGE_REQUEST_INFO_COMPLETE, CHANGE_REQUEST_COMPLETE, options,
+        otherOptions};
   }
 
   @Override

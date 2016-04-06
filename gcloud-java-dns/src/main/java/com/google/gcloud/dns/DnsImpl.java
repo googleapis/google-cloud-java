@@ -17,12 +17,11 @@
 package com.google.gcloud.dns;
 
 import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.gcloud.RetryHelper.RetryHelperException;
 import static com.google.gcloud.RetryHelper.runWithRetries;
-import static com.google.gcloud.dns.ChangeRequest.fromPb;
 
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
+import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
@@ -85,7 +84,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     }
   }
 
-  private static class DnsRecordPageFetcher implements PageImpl.NextPageFetcher<DnsRecord> {
+  private static class DnsRecordPageFetcher implements PageImpl.NextPageFetcher<RecordSet> {
 
     private static final long serialVersionUID = -6039369212511530846L;
     private final Map<DnsRpc.Option, ?> requestOptions;
@@ -101,8 +100,8 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     }
 
     @Override
-    public Page<DnsRecord> nextPage() {
-      return listDnsRecords(zoneName, serviceOptions, requestOptions);
+    public Page<RecordSet> nextPage() {
+      return listRecordSets(zoneName, serviceOptions, requestOptions);
     }
   }
 
@@ -122,8 +121,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     // this differs from the other list operations since zone is functional and requires dns service
     Function<ManagedZone, Zone> pbToZoneFunction = new Function<ManagedZone, Zone>() {
       @Override
-      public Zone apply(
-          com.google.api.services.dns.model.ManagedZone zonePb) {
+      public Zone apply(ManagedZone zonePb) {
         return Zone.fromPb(serviceOptions.service(), zonePb);
       }
     };
@@ -143,7 +141,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
           ? ImmutableList.<Zone>of() : Iterables.transform(result.results(), pbToZoneFunction);
       return new PageImpl<>(new ZonePageFetcher(serviceOptions, cursor, optionsMap),
           cursor, zones);
-    } catch (RetryHelperException e) {
+    } catch (RetryHelper.RetryHelperException e) {
       throw DnsException.translateAndThrow(e);
     }
   }
@@ -169,39 +167,40 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       // transform that list into change request objects
       Iterable<ChangeRequest> changes = result.results() == null
           ? ImmutableList.<ChangeRequest>of()
-          : Iterables.transform(result.results(), ChangeRequest.FROM_PB_FUNCTION);
+          : Iterables.transform(result.results(),
+          ChangeRequest.fromPbFunction(serviceOptions.service(), zoneName));
       return new PageImpl<>(new ChangeRequestPageFetcher(zoneName, serviceOptions, cursor,
           optionsMap), cursor, changes);
-    } catch (RetryHelperException e) {
+    } catch (RetryHelper.RetryHelperException e) {
       throw DnsException.translateAndThrow(e);
     }
   }
 
   @Override
-  public Page<DnsRecord> listDnsRecords(String zoneName, DnsRecordListOption... options) {
-    return listDnsRecords(zoneName, options(), optionMap(options));
+  public Page<RecordSet> listRecordSets(String zoneName, RecordSetListOption... options) {
+    return listRecordSets(zoneName, options(), optionMap(options));
   }
 
-  private static Page<DnsRecord> listDnsRecords(final String zoneName,
+  private static Page<RecordSet> listRecordSets(final String zoneName,
       final DnsOptions serviceOptions, final Map<DnsRpc.Option, ?> optionsMap) {
     try {
-      // get a list of resource record sets
+      // get a list of record sets
       final DnsRpc rpc = serviceOptions.rpc();
       DnsRpc.ListResult<ResourceRecordSet> result = runWithRetries(
           new Callable<DnsRpc.ListResult<ResourceRecordSet>>() {
             @Override
             public DnsRpc.ListResult<ResourceRecordSet> call() {
-              return rpc.listDnsRecords(zoneName, optionsMap);
+              return rpc.listRecordSets(zoneName, optionsMap);
             }
           }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
       String cursor = result.pageToken();
-      // transform that list into dns records
-      Iterable<DnsRecord> records = result.results() == null
-          ? ImmutableList.<DnsRecord>of()
-          : Iterables.transform(result.results(), DnsRecord.FROM_PB_FUNCTION);
+      // transform that list into record sets
+      Iterable<RecordSet> recordSets = result.results() == null
+          ? ImmutableList.<RecordSet>of()
+          : Iterables.transform(result.results(), RecordSet.FROM_PB_FUNCTION);
       return new PageImpl<>(new DnsRecordPageFetcher(zoneName, serviceOptions, cursor, optionsMap),
-          cursor, records);
-    } catch (RetryHelperException e) {
+          cursor, recordSets);
+    } catch (RetryHelper.RetryHelperException e) {
       throw DnsException.translateAndThrow(e);
     }
   }
@@ -210,10 +209,10 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
   public Zone create(final ZoneInfo zoneInfo, Dns.ZoneOption... options) {
     final Map<DnsRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      com.google.api.services.dns.model.ManagedZone answer = runWithRetries(
-          new Callable<com.google.api.services.dns.model.ManagedZone>() {
+      ManagedZone answer = runWithRetries(
+          new Callable<ManagedZone>() {
             @Override
-            public com.google.api.services.dns.model.ManagedZone call() {
+            public ManagedZone call() {
               return dnsRpc.create(zoneInfo.toPb(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
@@ -227,10 +226,10 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
   public Zone getZone(final String zoneName, Dns.ZoneOption... options) {
     final Map<DnsRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      com.google.api.services.dns.model.ManagedZone answer = runWithRetries(
-          new Callable<com.google.api.services.dns.model.ManagedZone>() {
+      ManagedZone answer = runWithRetries(
+          new Callable<ManagedZone>() {
             @Override
-            public com.google.api.services.dns.model.ManagedZone call() {
+            public ManagedZone call() {
               return dnsRpc.getZone(zoneName, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
@@ -258,10 +257,10 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
   public ProjectInfo getProject(Dns.ProjectOption... fields) {
     final Map<DnsRpc.Option, ?> optionsMap = optionMap(fields);
     try {
-      com.google.api.services.dns.model.Project answer = runWithRetries(
-          new Callable<com.google.api.services.dns.model.Project>() {
+      Project answer = runWithRetries(
+          new Callable<Project>() {
             @Override
-            public com.google.api.services.dns.model.Project call() {
+            public Project call() {
               return dnsRpc.getProject(optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
@@ -272,19 +271,18 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
   }
 
   @Override
-  public ChangeRequest applyChangeRequest(final String zoneName, final ChangeRequest changeRequest,
-      Dns.ChangeRequestOption... options) {
+  public ChangeRequest applyChangeRequest(final String zoneName,
+      final ChangeRequestInfo changeRequest, ChangeRequestOption... options) {
     final Map<DnsRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      com.google.api.services.dns.model.Change answer =
-          runWithRetries(
-              new Callable<com.google.api.services.dns.model.Change>() {
-                @Override
-                public com.google.api.services.dns.model.Change call() {
-                  return dnsRpc.applyChangeRequest(zoneName, changeRequest.toPb(), optionsMap);
-                }
-              }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : fromPb(answer); // should never be null
+      Change answer = runWithRetries(
+          new Callable<Change>() {
+            @Override
+            public Change call() {
+              return dnsRpc.applyChangeRequest(zoneName, changeRequest.toPb(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : ChangeRequest.fromPb(this, zoneName, answer); // not null
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
     }
@@ -295,23 +293,22 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       Dns.ChangeRequestOption... options) {
     final Map<DnsRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      com.google.api.services.dns.model.Change answer =
-          runWithRetries(
-              new Callable<com.google.api.services.dns.model.Change>() {
-                @Override
-                public com.google.api.services.dns.model.Change call() {
-                  return dnsRpc.getChangeRequest(zoneName, changeRequestId, optionsMap);
-                }
-              }, options().retryParams(), EXCEPTION_HANDLER);
-      return answer == null ? null : fromPb(answer);
+      Change answer = runWithRetries(
+          new Callable<Change>() {
+            @Override
+            public Change call() {
+              return dnsRpc.getChangeRequest(zoneName, changeRequestId, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : ChangeRequest.fromPb(this, zoneName, answer);
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
     }
   }
 
-  private Map<DnsRpc.Option, ?> optionMap(AbstractOption... options) {
+  private Map<DnsRpc.Option, ?> optionMap(Option... options) {
     Map<DnsRpc.Option, Object> temp = Maps.newEnumMap(DnsRpc.Option.class);
-    for (AbstractOption option : options) {
+    for (Option option : options) {
       Object prev = temp.put(option.rpcOption(), option.value());
       checkArgument(prev == null, "Duplicate option %s", option);
     }

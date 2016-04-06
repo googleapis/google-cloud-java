@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-storage</artifactId>
-  <version>0.1.5</version>
+  <version>0.1.7</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-storage:0.1.5'
+compile 'com.google.gcloud:gcloud-java-storage:0.1.7'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-storage" % "0.1.5"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-storage" % "0.1.7"
 ```
 
 Example Application
@@ -61,7 +61,7 @@ with the Cloud Storage using this Client Library.
 Getting Started
 ---------------
 #### Prerequisites
-For this tutorial, you will need a [Google Developers Console](https://console.developers.google.com/) project with the Storage JSON API enabled. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to use Google Cloud Storage. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+For this tutorial, you will need a [Google Developers Console](https://console.developers.google.com/) project with "Google Cloud Storage" and "Google Cloud Storage JSON API" enabled via the console's API Manager. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to use Google Cloud Storage. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
 You'll need to obtain the `gcloud-java-storage` library.  See the [Quickstart](#quickstart) section to add `gcloud-java-storage` as a dependency in your code.

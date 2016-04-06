@@ -18,6 +18,7 @@ package com.google.gcloud.dns;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.dns.model.ManagedZone;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -38,9 +39,9 @@ import java.util.Objects;
  */
 public class ZoneInfo implements Serializable {
 
-  private static final long serialVersionUID = 201601191647L;
+  private static final long serialVersionUID = -5313169712036079818L;
   private final String name;
-  private final String id;
+  private final String generatedId;
   private final Long creationTimeMillis;
   private final String dnsName;
   private final String description;
@@ -57,9 +58,9 @@ public class ZoneInfo implements Serializable {
     public abstract Builder name(String name);
 
     /**
-     * Sets an id for the zone which is assigned to the zone by the server.
+     * Sets service-generated id for the zone.
      */
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     /**
      * Sets the time when this zone was created.
@@ -98,7 +99,7 @@ public class ZoneInfo implements Serializable {
 
   static class BuilderImpl extends Builder {
     private String name;
-    private String id;
+    private String generatedId;
     private Long creationTimeMillis;
     private String dnsName;
     private String description;
@@ -114,7 +115,7 @@ public class ZoneInfo implements Serializable {
      */
     BuilderImpl(ZoneInfo info) {
       this.name = info.name;
-      this.id = info.id;
+      this.generatedId = info.generatedId;
       this.creationTimeMillis = info.creationTimeMillis;
       this.dnsName = info.dnsName;
       this.description = info.description;
@@ -131,8 +132,8 @@ public class ZoneInfo implements Serializable {
     }
 
     @Override
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -175,7 +176,7 @@ public class ZoneInfo implements Serializable {
 
   ZoneInfo(BuilderImpl builder) {
     this.name = builder.name;
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.creationTimeMillis = builder.creationTimeMillis;
     this.dnsName = builder.dnsName;
     this.description = builder.description;
@@ -199,10 +200,10 @@ public class ZoneInfo implements Serializable {
   }
 
   /**
-   * Returns the read-only zone id assigned by the server.
+   * Returns the service-generated id for this zone.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -248,13 +249,13 @@ public class ZoneInfo implements Serializable {
     return new BuilderImpl(this);
   }
 
-  com.google.api.services.dns.model.ManagedZone toPb() {
-    com.google.api.services.dns.model.ManagedZone pb =
-        new com.google.api.services.dns.model.ManagedZone();
+  ManagedZone toPb() {
+    ManagedZone pb =
+        new ManagedZone();
     pb.setDescription(this.description());
     pb.setDnsName(this.dnsName());
-    if (this.id() != null) {
-      pb.setId(new BigInteger(this.id()));
+    if (this.generatedId() != null) {
+      pb.setId(new BigInteger(this.generatedId()));
     }
     pb.setName(this.name());
     pb.setNameServers(this.nameServers); // do use real attribute value which may be null
@@ -267,7 +268,7 @@ public class ZoneInfo implements Serializable {
     return pb;
   }
 
-  static ZoneInfo fromPb(com.google.api.services.dns.model.ManagedZone pb) {
+  static ZoneInfo fromPb(ManagedZone pb) {
     Builder builder = new BuilderImpl(pb.getName());
     if (pb.getDescription() != null) {
       builder.description(pb.getDescription());
@@ -276,7 +277,7 @@ public class ZoneInfo implements Serializable {
       builder.dnsName(pb.getDnsName());
     }
     if (pb.getId() != null) {
-      builder.id(pb.getId().toString());
+      builder.generatedId(pb.getId().toString());
     }
     if (pb.getNameServers() != null) {
       builder.nameServers(pb.getNameServers());
@@ -298,15 +299,15 @@ public class ZoneInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, id, creationTimeMillis, dnsName,
-        description, nameServerSet, nameServers);
+    return Objects.hash(name, generatedId, creationTimeMillis, dnsName, description, nameServerSet,
+        nameServers);
   }
 
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("name", name())
-        .add("id", id())
+        .add("generatedId", generatedId())
         .add("description", description())
         .add("dnsName", dnsName())
         .add("nameServerSet", nameServerSet())

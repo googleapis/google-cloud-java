@@ -30,36 +30,36 @@ public class DnsTest {
   private static final String DNS_NAME = "www.example.com.";
 
   @Test
-  public void testDnsRecordListOption() {
+  public void testRecordSetListOption() {
     // dns name
     String dnsName = "some name";
-    Dns.DnsRecordListOption dnsRecordListOption = Dns.DnsRecordListOption.dnsName(dnsName);
-    assertEquals(dnsName, dnsRecordListOption.value());
-    assertEquals(DnsRpc.Option.NAME, dnsRecordListOption.rpcOption());
+    Dns.RecordSetListOption recordSetListOption = Dns.RecordSetListOption.dnsName(dnsName);
+    assertEquals(dnsName, recordSetListOption.value());
+    assertEquals(DnsRpc.Option.NAME, recordSetListOption.rpcOption());
     // page token
-    dnsRecordListOption = Dns.DnsRecordListOption.pageToken(PAGE_TOKEN);
-    assertEquals(PAGE_TOKEN, dnsRecordListOption.value());
-    assertEquals(DnsRpc.Option.PAGE_TOKEN, dnsRecordListOption.rpcOption());
+    recordSetListOption = Dns.RecordSetListOption.pageToken(PAGE_TOKEN);
+    assertEquals(PAGE_TOKEN, recordSetListOption.value());
+    assertEquals(DnsRpc.Option.PAGE_TOKEN, recordSetListOption.rpcOption());
     // page size
-    dnsRecordListOption = Dns.DnsRecordListOption.pageSize(PAGE_SIZE);
-    assertEquals(PAGE_SIZE, dnsRecordListOption.value());
-    assertEquals(DnsRpc.Option.PAGE_SIZE, dnsRecordListOption.rpcOption());
+    recordSetListOption = Dns.RecordSetListOption.pageSize(PAGE_SIZE);
+    assertEquals(PAGE_SIZE, recordSetListOption.value());
+    assertEquals(DnsRpc.Option.PAGE_SIZE, recordSetListOption.rpcOption());
     // record type
-    DnsRecord.Type recordType = DnsRecord.Type.AAAA;
-    dnsRecordListOption = Dns.DnsRecordListOption.type(recordType);
-    assertEquals(recordType.name(), dnsRecordListOption.value());
-    assertEquals(DnsRpc.Option.DNS_TYPE, dnsRecordListOption.rpcOption());
+    RecordSet.Type recordType = RecordSet.Type.AAAA;
+    recordSetListOption = Dns.RecordSetListOption.type(recordType);
+    assertEquals(recordType.name(), recordSetListOption.value());
+    assertEquals(DnsRpc.Option.DNS_TYPE, recordSetListOption.rpcOption());
     // fields
-    dnsRecordListOption = Dns.DnsRecordListOption.fields(Dns.DnsRecordField.NAME,
-        Dns.DnsRecordField.TTL);
-    assertEquals(DnsRpc.Option.FIELDS, dnsRecordListOption.rpcOption());
-    assertTrue(dnsRecordListOption.value() instanceof String);
-    assertTrue(((String) dnsRecordListOption.value()).contains(
-        Dns.DnsRecordField.NAME.selector()));
-    assertTrue(((String) dnsRecordListOption.value()).contains(
-        Dns.DnsRecordField.TTL.selector()));
-    assertTrue(((String) dnsRecordListOption.value()).contains(
-        Dns.DnsRecordField.NAME.selector()));
+    recordSetListOption = Dns.RecordSetListOption.fields(Dns.RecordSetField.NAME,
+        Dns.RecordSetField.TTL);
+    assertEquals(DnsRpc.Option.FIELDS, recordSetListOption.rpcOption());
+    assertTrue(recordSetListOption.value() instanceof String);
+    assertTrue(((String) recordSetListOption.value()).contains(
+        Dns.RecordSetField.NAME.selector()));
+    assertTrue(((String) recordSetListOption.value()).contains(
+        Dns.RecordSetField.TTL.selector()));
+    assertTrue(((String) recordSetListOption.value()).contains(
+        Dns.RecordSetField.NAME.selector()));
   }
 
   @Test

@@ -28,7 +28,7 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
   private final String ns;
 
   public KeyFactory(String projectId) {
-    this(projectId, null);
+    this(projectId, "");
   }
 
   public KeyFactory(String projectId, String namespace) {

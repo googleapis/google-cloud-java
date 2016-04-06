@@ -16,9 +16,7 @@
 
 package com.google.gcloud.datastore;
 
-import static com.google.api.services.datastore.DatastoreV1.Value.INTEGER_VALUE_FIELD_NUMBER;
-
-import com.google.api.services.datastore.DatastoreV1;
+import static com.google.datastore.v1beta3.Value.INTEGER_VALUE_FIELD_NUMBER;
 
 public final class LongValue extends Value<Long> {
 
@@ -40,12 +38,12 @@ public final class LongValue extends Value<Long> {
         }
 
         @Override
-        protected Long getValue(DatastoreV1.Value from) {
+        protected Long getValue(com.google.datastore.v1beta3.Value from) {
           return from.getIntegerValue();
         }
 
         @Override
-        protected void setValue(LongValue from, DatastoreV1.Value.Builder to) {
+        protected void setValue(LongValue from, com.google.datastore.v1beta3.Value.Builder to) {
           to.setIntegerValue(from.get());
         }
       };

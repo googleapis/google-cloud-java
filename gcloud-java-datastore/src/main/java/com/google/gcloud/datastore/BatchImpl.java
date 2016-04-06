@@ -16,63 +16,53 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.api.services.datastore.DatastoreV1;
-import com.google.common.base.Function;
-import com.google.common.collect.Lists;
-import com.google.gcloud.datastore.BatchOption.ForceWrites;
-
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 
 class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
 
   private final DatastoreImpl datastore;
-  private final boolean force;
 
   static class ResponseImpl implements Batch.Response {
 
-    private final DatastoreV1.CommitResponse response;
+    private final com.google.datastore.v1beta3.CommitResponse response;
+    private final int numAutoAllocatedIds;
 
-    ResponseImpl(DatastoreV1.CommitResponse response) {
+    ResponseImpl(com.google.datastore.v1beta3.CommitResponse response, int numAutoAllocatedIds) {
       this.response = response;
+      this.numAutoAllocatedIds = numAutoAllocatedIds;
     }
 
     @Override
     public List<Key> generatedKeys() {
-      return Lists.transform(response.getMutationResult().getInsertAutoIdKeyList(),
-          new Function<DatastoreV1.Key, Key>() {
-            @Override public Key apply(DatastoreV1.Key keyPb) {
-              return Key.fromPb(keyPb);
-            }
-          });
+      Iterator<com.google.datastore.v1beta3.MutationResult> results = 
+          response.getMutationResultsList().iterator();
+      List<Key> generated = new ArrayList<>(numAutoAllocatedIds);
+      for (int i = 0; i < numAutoAllocatedIds; i++) {
+        generated.add(Key.fromPb(results.next().getKey()));
+      }
+      return generated;
     }
   }
 
-  BatchImpl(DatastoreImpl datastore, BatchOption... options) {
+  BatchImpl(DatastoreImpl datastore) {
     super("batch");
     this.datastore = datastore;
-    Map<Class<? extends BatchOption>, BatchOption> optionsMap = BatchOption.asImmutableMap(options);
-    if (optionsMap.containsKey(ForceWrites.class)) {
-      force = ((ForceWrites) optionsMap.get(ForceWrites.class)).force();
-    } else {
-      force = datastore.options().force();
-    }
   }
 
   @Override
   public Batch.Response submit() {
     validateActive();
-    DatastoreV1.Mutation.Builder mutationPb = toMutationPb();
-    if (force) {
-      mutationPb.setForce(force);
-    }
-    DatastoreV1.CommitRequest.Builder requestPb = DatastoreV1.CommitRequest.newBuilder();
-    requestPb.setMode(DatastoreV1.CommitRequest.Mode.NON_TRANSACTIONAL);
-    requestPb.setMutation(mutationPb);
-    DatastoreV1.CommitResponse responsePb = datastore.commit(requestPb.build());
+    List<com.google.datastore.v1beta3.Mutation> mutationsPb = toMutationPbList();
+    com.google.datastore.v1beta3.CommitRequest.Builder requestPb = 
+        com.google.datastore.v1beta3.CommitRequest.newBuilder();
+    requestPb.setMode(com.google.datastore.v1beta3.CommitRequest.Mode.NON_TRANSACTIONAL);
+    requestPb.addAllMutations(mutationsPb);
+    com.google.datastore.v1beta3.CommitResponse responsePb = datastore.commit(requestPb.build());
     deactivate();
-    return new ResponseImpl(responsePb);
+    return new ResponseImpl(responsePb, toAddAutoId().size());
   }
 
   @Override

@@ -16,7 +16,6 @@
 
 package com.google.gcloud.dns;
 
-import static com.google.gcloud.dns.DnsRecord.builder;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
@@ -26,35 +25,35 @@ import org.junit.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class DnsRecordTest {
+public class RecordSetTest {
 
   private static final String NAME = "example.com.";
   private static final Integer TTL = 3600;
   private static final TimeUnit UNIT = TimeUnit.HOURS;
   private static final Integer UNIT_TTL = 1;
-  private static final DnsRecord.Type TYPE = DnsRecord.Type.AAAA;
-  private static final DnsRecord record = builder(NAME, TYPE)
+  private static final RecordSet.Type TYPE = RecordSet.Type.AAAA;
+  private static final RecordSet recordSet = RecordSet.builder(NAME, TYPE)
       .ttl(UNIT_TTL, UNIT)
       .build();
 
   @Test
   public void testDefaultDnsRecord() {
-    DnsRecord record = builder(NAME, TYPE).build();
-    assertEquals(0, record.records().size());
-    assertEquals(TYPE, record.type());
-    assertEquals(NAME, record.name());
+    RecordSet recordSet = RecordSet.builder(NAME, TYPE).build();
+    assertEquals(0, recordSet.records().size());
+    assertEquals(TYPE, recordSet.type());
+    assertEquals(NAME, recordSet.name());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(NAME, record.name());
-    assertEquals(TTL, record.ttl());
-    assertEquals(TYPE, record.type());
-    assertEquals(0, record.records().size());
+    assertEquals(NAME, recordSet.name());
+    assertEquals(TTL, recordSet.ttl());
+    assertEquals(TYPE, recordSet.type());
+    assertEquals(0, recordSet.records().size());
     // verify that one can add records to the record set
-    String testingRecord = "Testing record";
-    String anotherTestingRecord = "Another record 123";
-    DnsRecord anotherRecord = record.toBuilder()
+    String testingRecord = "Testing recordSet";
+    String anotherTestingRecord = "Another recordSet 123";
+    RecordSet anotherRecord = recordSet.toBuilder()
         .addRecord(testingRecord)
         .addRecord(anotherTestingRecord)
         .build();
@@ -66,71 +65,72 @@ public class DnsRecordTest {
   @Test
   public void testValidTtl() {
     try {
-      builder(NAME, TYPE).ttl(-1, TimeUnit.SECONDS);
+      RecordSet.builder(NAME, TYPE).ttl(-1, TimeUnit.SECONDS);
       fail("A negative value is not acceptable for ttl.");
     } catch (IllegalArgumentException e) {
       // expected
     }
-    builder(NAME, TYPE).ttl(0, TimeUnit.SECONDS);
-    builder(NAME, TYPE).ttl(Integer.MAX_VALUE, TimeUnit.SECONDS);
+    RecordSet.builder(NAME, TYPE).ttl(0, TimeUnit.SECONDS);
+    RecordSet.builder(NAME, TYPE).ttl(Integer.MAX_VALUE, TimeUnit.SECONDS);
     try {
-      builder(NAME, TYPE).ttl(Integer.MAX_VALUE, TimeUnit.HOURS);
+      RecordSet.builder(NAME, TYPE).ttl(Integer.MAX_VALUE, TimeUnit.HOURS);
       fail("This value is too large for int.");
     } catch (IllegalArgumentException e) {
       // expected
     }
-    DnsRecord record = DnsRecord.builder(NAME, TYPE).ttl(UNIT_TTL, UNIT).build();
+    RecordSet record = RecordSet.builder(NAME, TYPE).ttl(UNIT_TTL, UNIT).build();
     assertEquals(TTL, record.ttl());
   }
 
   @Test
   public void testEqualsAndNotEquals() {
-    DnsRecord clone = record.toBuilder().build();
-    assertEquals(record, clone);
-    clone = record.toBuilder().addRecord("another record").build();
-    assertNotEquals(record, clone);
+    RecordSet clone = recordSet.toBuilder().build();
+    assertEquals(recordSet, clone);
+    clone = recordSet.toBuilder().addRecord("another recordSet").build();
+    assertNotEquals(recordSet, clone);
     String differentName = "totally different name";
-    clone = record.toBuilder().name(differentName).build();
-    assertNotEquals(record, clone);
-    clone = record.toBuilder().ttl(record.ttl() + 1, TimeUnit.SECONDS).build();
-    assertNotEquals(record, clone);
-    clone = record.toBuilder().type(DnsRecord.Type.TXT).build();
-    assertNotEquals(record, clone);
+    clone = recordSet.toBuilder().name(differentName).build();
+    assertNotEquals(recordSet, clone);
+    clone = recordSet.toBuilder().ttl(recordSet.ttl() + 1, TimeUnit.SECONDS).build();
+    assertNotEquals(recordSet, clone);
+    clone = recordSet.toBuilder().type(RecordSet.Type.TXT).build();
+    assertNotEquals(recordSet, clone);
   }
 
   @Test
   public void testSameHashCodeOnEquals() {
-    int hash = record.hashCode();
-    DnsRecord clone = record.toBuilder().build();
+    int hash = recordSet.hashCode();
+    RecordSet clone = recordSet.toBuilder().build();
     assertEquals(clone.hashCode(), hash);
   }
 
   @Test
   public void testToAndFromPb() {
-    assertEquals(record, DnsRecord.fromPb(record.toPb()));
-    DnsRecord partial = builder(NAME, TYPE).build();
-    assertEquals(partial, DnsRecord.fromPb(partial.toPb()));
-    partial = builder(NAME, TYPE).addRecord("test").build();
-    assertEquals(partial, DnsRecord.fromPb(partial.toPb()));
-    partial = builder(NAME, TYPE).ttl(15, TimeUnit.SECONDS).build();
-    assertEquals(partial, DnsRecord.fromPb(partial.toPb()));
+    assertEquals(recordSet, RecordSet.fromPb(recordSet.toPb()));
+    RecordSet partial = RecordSet.builder(NAME, TYPE).build();
+    assertEquals(partial, RecordSet.fromPb(partial.toPb()));
+    partial = RecordSet.builder(NAME, TYPE).addRecord("test").build();
+    assertEquals(partial, RecordSet.fromPb(partial.toPb()));
+    partial = RecordSet.builder(NAME, TYPE).ttl(15, TimeUnit.SECONDS).build();
+    assertEquals(partial, RecordSet.fromPb(partial.toPb()));
   }
 
   @Test
   public void testToBuilder() {
-    assertEquals(record, record.toBuilder().build());
-    DnsRecord partial = builder(NAME, TYPE).build();
+    assertEquals(recordSet, recordSet.toBuilder().build());
+    RecordSet partial = RecordSet.builder(NAME, TYPE).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = builder(NAME, TYPE).addRecord("test").build();
+    partial = RecordSet.builder(NAME, TYPE).addRecord("test").build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = builder(NAME, TYPE).ttl(15, TimeUnit.SECONDS).build();
+    partial = RecordSet.builder(NAME, TYPE).ttl(15, TimeUnit.SECONDS).build();
     assertEquals(partial, partial.toBuilder().build());
   }
 
   @Test
   public void clearRecordSet() {
     // make sure that we are starting not empty
-    DnsRecord clone = record.toBuilder().addRecord("record").addRecord("another").build();
+    RecordSet clone =
+        recordSet.toBuilder().addRecord("record").addRecord("another").build();
     assertNotEquals(0, clone.records().size());
     clone = clone.toBuilder().clearRecords().build();
     assertEquals(0, clone.records().size());
@@ -141,7 +141,7 @@ public class DnsRecordTest {
   public void removeFromRecordSet() {
     String recordString = "record";
     // make sure that we are starting not empty
-    DnsRecord clone = record.toBuilder().addRecord(recordString).build();
+    RecordSet clone = recordSet.toBuilder().addRecord(recordString).build();
     assertNotEquals(0, clone.records().size());
     clone = clone.toBuilder().removeRecord(recordString).build();
     assertEquals(0, clone.records().size());

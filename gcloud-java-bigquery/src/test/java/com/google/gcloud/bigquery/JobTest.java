@@ -36,7 +36,7 @@ public class JobTest {
   private static final TableId TABLE_ID1 = TableId.of("dataset", "table1");
   private static final TableId TABLE_ID2 = TableId.of("dataset", "table2");
   private static final String ETAG = "etag";
-  private static final String ID = "id";
+  private static final String GENERATED_ID = "id";
   private static final String SELF_LINK = "selfLink";
   private static final String EMAIL = "email";
   private static final JobStatus JOB_STATUS = new JobStatus(JobStatus.State.DONE);
@@ -52,7 +52,7 @@ public class JobTest {
       .statistics(COPY_JOB_STATISTICS)
       .jobId(JOB_ID)
       .etag(ETAG)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .selfLink(SELF_LINK)
       .userEmail(EMAIL)
       .status(JOB_STATUS)
@@ -89,13 +89,13 @@ public class JobTest {
         .statistics(COPY_JOB_STATISTICS)
         .jobId(JOB_ID)
         .etag(ETAG)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .selfLink(SELF_LINK)
         .userEmail(EMAIL)
         .status(JOB_STATUS)
         .build();
     assertEquals(ETAG, builtJob.etag());
-    assertEquals(ID, builtJob.id());
+    assertEquals(GENERATED_ID, builtJob.generatedId());
     assertEquals(SELF_LINK, builtJob.selfLink());
     assertEquals(EMAIL, builtJob.userEmail());
     assertEquals(JOB_ID, builtJob.jobId());
@@ -172,7 +172,7 @@ public class JobTest {
     expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(null);
     replay(bigquery);
     initializeJob();
-    assertFalse(job.isDone());
+    assertTrue(job.isDone());
   }
 
   @Test
@@ -247,7 +247,7 @@ public class JobTest {
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
     assertEquals(expected.etag(), value.etag());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.jobId(), value.jobId());
     assertEquals(expected.selfLink(), value.selfLink());
     assertEquals(expected.status(), value.status());

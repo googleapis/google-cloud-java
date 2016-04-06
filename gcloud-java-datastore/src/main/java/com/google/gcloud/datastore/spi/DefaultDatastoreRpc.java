@@ -16,28 +16,20 @@
 
 package com.google.gcloud.datastore.spi;
 
-import com.google.api.services.datastore.DatastoreV1.AllocateIdsRequest;
-import com.google.api.services.datastore.DatastoreV1.AllocateIdsResponse;
-import com.google.api.services.datastore.DatastoreV1.BeginTransactionRequest;
-import com.google.api.services.datastore.DatastoreV1.BeginTransactionResponse;
-import com.google.api.services.datastore.DatastoreV1.CommitRequest;
-import com.google.api.services.datastore.DatastoreV1.CommitResponse;
-import com.google.api.services.datastore.DatastoreV1.LookupRequest;
-import com.google.api.services.datastore.DatastoreV1.LookupResponse;
-import com.google.api.services.datastore.DatastoreV1.RollbackRequest;
-import com.google.api.services.datastore.DatastoreV1.RollbackResponse;
-import com.google.api.services.datastore.DatastoreV1.RunQueryRequest;
-import com.google.api.services.datastore.DatastoreV1.RunQueryResponse;
-import com.google.api.services.datastore.client.Datastore;
-import com.google.api.services.datastore.client.DatastoreFactory;
-import com.google.api.services.datastore.client.DatastoreOptions.Builder;
-import com.google.common.base.Preconditions;
+import com.google.datastore.v1beta3.AllocateIdsRequest;
+import com.google.datastore.v1beta3.AllocateIdsResponse;
+import com.google.datastore.v1beta3.BeginTransactionRequest;
+import com.google.datastore.v1beta3.BeginTransactionResponse;
+import com.google.datastore.v1beta3.CommitRequest;
+import com.google.datastore.v1beta3.CommitResponse;
+import com.google.datastore.v1beta3.LookupRequest;
+import com.google.datastore.v1beta3.LookupResponse;
+import com.google.datastore.v1beta3.RollbackRequest;
+import com.google.datastore.v1beta3.RollbackResponse;
+import com.google.datastore.v1beta3.RunQueryRequest;
+import com.google.datastore.v1beta3.RunQueryResponse;
 import com.google.gcloud.datastore.DatastoreException;
 import com.google.gcloud.datastore.DatastoreOptions;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -45,35 +37,37 @@ import java.net.URL;
 
 public class DefaultDatastoreRpc implements DatastoreRpc {
 
-  private final Datastore client;
+  private final com.google.datastore.v1beta3.client.Datastore client;
 
   public DefaultDatastoreRpc(DatastoreOptions options) {
-    String normalizedHost = normalizeHost(options.host());
-    client = DatastoreFactory.get().create(
-        new Builder()
-            .dataset(options.projectId())
-            .host(normalizedHost)
-            .initializer(options.httpRequestInitializer())
-            .build());
-  }
-
-  private static String normalizeHost(String host) {
-    host = host.toLowerCase();
-    if (includesScheme(host)) {
-      Preconditions.checkArgument(!(host.startsWith("https://") && isLocalHost(host)),
-          "\"https\" is not supported for localhost.  Use \"http\" instead.");
-      return host;
+    com.google.datastore.v1beta3.client.DatastoreOptions.Builder clientBuilder =
+        new com.google.datastore.v1beta3.client.DatastoreOptions.Builder()
+            .projectId(options.projectId())
+            .initializer(options.httpRequestInitializer());
+    String normalizedHost = options.host() != null ? options.host().toLowerCase() : "";
+    if (isLocalHost(normalizedHost)) {
+      clientBuilder = clientBuilder.localHost(removeScheme(normalizedHost));
+    } else if (!removeScheme(com.google.datastore.v1beta3.client.DatastoreFactory.DEFAULT_HOST)
+                    .equals(removeScheme(normalizedHost))
+        && !normalizedHost.isEmpty()) {
+      String fullURL = normalizedHost;
+      if (fullURL.charAt(fullURL.length() - 1) != '/') {
+        fullURL = fullURL + '/';
+      }
+      fullURL = fullURL
+          + com.google.datastore.v1beta3.client.DatastoreFactory.VERSION
+          + "/projects/"
+          + options.projectId();
+      clientBuilder = clientBuilder.projectId(null).projectEndpoint(fullURL);
     }
-    return "http://" + host;
+    client = com.google.datastore.v1beta3.client.DatastoreFactory.get()
+        .create(clientBuilder.build());
   }
 
   private static boolean isLocalHost(String host) {
-    if (host != null) {
+    if (!host.isEmpty()) {
       try {
-        String normalizedHost = host;
-        if (!includesScheme(normalizedHost)) {
-          normalizedHost = "http://" + normalizedHost;
-        }
+        String normalizedHost = "http://" + removeScheme(host);
         InetAddress hostAddr = InetAddress.getByName(new URL(normalizedHost).getHost());
         return hostAddr.isAnyLocalAddress() || hostAddr.isLoopbackAddress();
       } catch (Exception e) {
@@ -83,38 +77,38 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     return false;
   }
 
-  private static boolean includesScheme(String url) {
-    return url.startsWith("http://") || url.startsWith("https://");
+  private static String removeScheme(String url) {
+    if (url != null) {
+      if (url.startsWith("https://")) {
+        return url.substring("https://".length());
+      } else if (url.startsWith("http://")) {
+        return url.substring("http://".length());
+      }
+    }
+    return url;
   }
 
   private static DatastoreException translate(
-      com.google.api.services.datastore.client.DatastoreException exception) {
-    String message = exception.getMessage();
-    int code = exception.getCode();
+      com.google.datastore.v1beta3.client.DatastoreException exception) {
     String reason = "";
-    if (message != null) {
-      try {
-        JSONObject json = new JSONObject(new JSONTokener(message));
-        JSONObject error = json.getJSONObject("error").getJSONArray("errors").getJSONObject(0);
-        reason = error.getString("reason");
-        message = error.getString("message");
-      } catch (JSONException ignore) {
-        // ignore - will be converted to unknown
-      }
+    if (exception.getCode() != null) {
+      reason = exception.getCode().name();
     }
-    if (reason == null) {
+    if (reason.isEmpty()) {
       if (exception.getCause() instanceof IOException) {
         return new DatastoreException((IOException) exception.getCause());
       }
     }
-    return new DatastoreException(code, message, reason, exception);
+    return new DatastoreException(
+        exception.getCode().ordinal(), exception.getMessage(), reason, exception);
   }
 
   @Override
   public AllocateIdsResponse allocateIds(AllocateIdsRequest request) {
     try {
       return client.allocateIds(request);
-    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
+
       throw translate(ex);
     }
   }
@@ -123,7 +117,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   public BeginTransactionResponse beginTransaction(BeginTransactionRequest request) {
     try {
       return client.beginTransaction(request);
-    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
@@ -132,7 +126,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   public CommitResponse commit(CommitRequest request) {
     try {
       return client.commit(request);
-    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
@@ -141,7 +135,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   public LookupResponse lookup(LookupRequest request) {
     try {
       return client.lookup(request);
-    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
@@ -150,7 +144,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   public RollbackResponse rollback(RollbackRequest request) {
     try {
       return client.rollback(request);
-    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
@@ -159,7 +153,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   public RunQueryResponse runQuery(RunQueryRequest request) {
     try {
       return client.runQuery(request);
-    } catch (com.google.api.services.datastore.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
       throw translate(ex);
     }
   }

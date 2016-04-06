@@ -22,11 +22,12 @@
  * <pre> {@code
  * LocalResourceManagerHelper resourceManagerHelper = LocalResourceManagerHelper.create();
  * ResourceManager resourceManager = resourceManagerHelper.options().service();
- * } </pre>
+ * resourceManagerHelper.start();
+ * }</pre>
  *
  * <p>After the test:
  * <pre> {@code
  * resourceManagerHelper.stop();
- * } </pre>
+ * }</pre>
  */
 package com.google.gcloud.resourcemanager.testing;

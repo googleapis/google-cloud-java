@@ -119,19 +119,12 @@ public class LocalDnsHelperTest {
     }
   }
 
-  private static void assertEqChangesIgnoreStatus(Change expected, Change actual) {
-    assertEquals(expected.getAdditions(), actual.getAdditions());
-    assertEquals(expected.getDeletions(), actual.getDeletions());
-    assertEquals(expected.getId(), actual.getId());
-    assertEquals(expected.getStartTime(), actual.getStartTime());
-  }
-
   @Test
   public void testCreateZone() {
     ManagedZone created = RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     // check that default records were created
     DnsRpc.ListResult<ResourceRecordSet> listResult
-        = RPC.listDnsRecords(ZONE1.getName(), EMPTY_RPC_OPTIONS);
+        = RPC.listRecordSets(ZONE1.getName(), EMPTY_RPC_OPTIONS);
     ImmutableList<String> defaultTypes = ImmutableList.of("SOA", "NS");
     Iterator<ResourceRecordSet> iterator = listResult.results().iterator();
     assertTrue(defaultTypes.contains(iterator.next().getType()));
@@ -395,7 +388,7 @@ public class LocalDnsHelperTest {
     rpc.applyChangeRequest(ZONE1.getName(), CHANGE_KEEP, EMPTY_RPC_OPTIONS);
     waitForChangeToComplete(rpc, ZONE1.getName(), "3");
     Iterable<ResourceRecordSet> results =
-        rpc.listDnsRecords(ZONE1.getName(), EMPTY_RPC_OPTIONS).results();
+        rpc.listRecordSets(ZONE1.getName(), EMPTY_RPC_OPTIONS).results();
     List<String> defaults = ImmutableList.of("SOA", "NS");
     boolean rrsetKeep = false;
     boolean rrset1 = false;
@@ -692,7 +685,7 @@ public class LocalDnsHelperTest {
   public void testListDnsRecords() {
     // no zone exists
     try {
-      RPC.listDnsRecords(ZONE_NAME1, EMPTY_RPC_OPTIONS);
+      RPC.listRecordSets(ZONE_NAME1, EMPTY_RPC_OPTIONS);
       fail();
     } catch (DnsException ex) {
       // expected
@@ -702,19 +695,19 @@ public class LocalDnsHelperTest {
     // zone exists but has no records
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     Iterable<ResourceRecordSet> results =
-        RPC.listDnsRecords(ZONE_NAME1, EMPTY_RPC_OPTIONS).results();
+        RPC.listRecordSets(ZONE_NAME1, EMPTY_RPC_OPTIONS).results();
     ImmutableList<ResourceRecordSet> records = ImmutableList.copyOf(results);
     assertEquals(2, records.size()); // contains default NS and SOA
     // zone has records
     RPC.applyChangeRequest(ZONE_NAME1, CHANGE_KEEP, EMPTY_RPC_OPTIONS);
-    results = RPC.listDnsRecords(ZONE_NAME1, EMPTY_RPC_OPTIONS).results();
+    results = RPC.listRecordSets(ZONE_NAME1, EMPTY_RPC_OPTIONS).results();
     records = ImmutableList.copyOf(results);
     assertEquals(3, records.size());
     // error in options
     Map<DnsRpc.Option, Object> options = new HashMap<>();
     options.put(DnsRpc.Option.PAGE_SIZE, 0);
     try {
-      RPC.listDnsRecords(ZONE1.getName(), options);
+      RPC.listRecordSets(ZONE1.getName(), options);
       fail();
     } catch (DnsException ex) {
       // expected
@@ -723,7 +716,7 @@ public class LocalDnsHelperTest {
     }
     options.put(DnsRpc.Option.PAGE_SIZE, -1);
     try {
-      RPC.listDnsRecords(ZONE1.getName(), options);
+      RPC.listRecordSets(ZONE1.getName(), options);
       fail();
     } catch (DnsException ex) {
       // expected
@@ -731,14 +724,14 @@ public class LocalDnsHelperTest {
       assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     options.put(DnsRpc.Option.PAGE_SIZE, 15);
-    results = RPC.listDnsRecords(ZONE1.getName(), options).results();
+    results = RPC.listRecordSets(ZONE1.getName(), options).results();
     records = ImmutableList.copyOf(results);
     assertEquals(3, records.size());
     // dnsName filter
     options = new HashMap<>();
     options.put(DnsRpc.Option.NAME, "aaa");
     try {
-      RPC.listDnsRecords(ZONE1.getName(), options);
+      RPC.listRecordSets(ZONE1.getName(), options);
       fail();
     } catch (DnsException ex) {
       // expected
@@ -746,13 +739,13 @@ public class LocalDnsHelperTest {
       assertTrue(ex.getMessage().contains("parameters.name"));
     }
     options.put(DnsRpc.Option.NAME, "aaa.");
-    results = RPC.listDnsRecords(ZONE1.getName(), options).results();
+    results = RPC.listRecordSets(ZONE1.getName(), options).results();
     records = ImmutableList.copyOf(results);
     assertEquals(0, records.size());
     options.put(DnsRpc.Option.NAME, null);
     options.put(DnsRpc.Option.DNS_TYPE, "A");
     try {
-      RPC.listDnsRecords(ZONE1.getName(), options);
+      RPC.listRecordSets(ZONE1.getName(), options);
       fail();
     } catch (DnsException ex) {
       // expected
@@ -762,7 +755,7 @@ public class LocalDnsHelperTest {
     options.put(DnsRpc.Option.NAME, "aaa.");
     options.put(DnsRpc.Option.DNS_TYPE, "a");
     try {
-      RPC.listDnsRecords(ZONE1.getName(), options);
+      RPC.listRecordSets(ZONE1.getName(), options);
       fail();
     } catch (DnsException ex) {
       // expected
@@ -771,14 +764,14 @@ public class LocalDnsHelperTest {
     }
     options.put(DnsRpc.Option.NAME, DNS_NAME);
     options.put(DnsRpc.Option.DNS_TYPE, "SOA");
-    results = RPC.listDnsRecords(ZONE1.getName(), options).results();
+    results = RPC.listRecordSets(ZONE1.getName(), options).results();
     records = ImmutableList.copyOf(results);
     assertEquals(1, records.size());
     // field options
     options = new HashMap<>();
     options.put(DnsRpc.Option.FIELDS, "rrsets(name)");
     DnsRpc.ListResult<ResourceRecordSet> listResult =
-        RPC.listDnsRecords(ZONE1.getName(), options);
+        RPC.listRecordSets(ZONE1.getName(), options);
     records = ImmutableList.copyOf(listResult.results());
     ResourceRecordSet record = records.get(0);
     assertNotNull(record.getName());
@@ -787,7 +780,7 @@ public class LocalDnsHelperTest {
     assertNull(record.getTtl());
     assertNull(listResult.pageToken());
     options.put(DnsRpc.Option.FIELDS, "rrsets(rrdatas)");
-    listResult = RPC.listDnsRecords(ZONE1.getName(), options);
+    listResult = RPC.listRecordSets(ZONE1.getName(), options);
     records = ImmutableList.copyOf(listResult.results());
     record = records.get(0);
     assertNull(record.getName());
@@ -796,7 +789,7 @@ public class LocalDnsHelperTest {
     assertNull(record.getTtl());
     assertNull(listResult.pageToken());
     options.put(DnsRpc.Option.FIELDS, "rrsets(ttl)");
-    listResult = RPC.listDnsRecords(ZONE1.getName(), options);
+    listResult = RPC.listRecordSets(ZONE1.getName(), options);
     records = ImmutableList.copyOf(listResult.results());
     record = records.get(0);
     assertNull(record.getName());
@@ -805,7 +798,7 @@ public class LocalDnsHelperTest {
     assertNotNull(record.getTtl());
     assertNull(listResult.pageToken());
     options.put(DnsRpc.Option.FIELDS, "rrsets(type)");
-    listResult = RPC.listDnsRecords(ZONE1.getName(), options);
+    listResult = RPC.listRecordSets(ZONE1.getName(), options);
     records = ImmutableList.copyOf(listResult.results());
     record = records.get(0);
     assertNull(record.getName());
@@ -814,7 +807,7 @@ public class LocalDnsHelperTest {
     assertNull(record.getTtl());
     assertNull(listResult.pageToken());
     options.put(DnsRpc.Option.FIELDS, "nextPageToken");
-    listResult = RPC.listDnsRecords(ZONE1.getName(), options);
+    listResult = RPC.listRecordSets(ZONE1.getName(), options);
     records = ImmutableList.copyOf(listResult.results());
     record = records.get(0);
     assertNull(record.getName());
@@ -824,7 +817,7 @@ public class LocalDnsHelperTest {
     assertNull(listResult.pageToken());
     options.put(DnsRpc.Option.FIELDS, "nextPageToken,rrsets(name,rrdatas)");
     options.put(DnsRpc.Option.PAGE_SIZE, 1);
-    listResult = RPC.listDnsRecords(ZONE1.getName(), options);
+    listResult = RPC.listRecordSets(ZONE1.getName(), options);
     records = ImmutableList.copyOf(listResult.results());
     assertEquals(1, records.size());
     record = records.get(0);
@@ -973,15 +966,15 @@ public class LocalDnsHelperTest {
   public void testDnsRecordPaging() {
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     List<ResourceRecordSet> complete = ImmutableList.copyOf(
-        RPC.listDnsRecords(ZONE1.getName(), EMPTY_RPC_OPTIONS).results());
+        RPC.listRecordSets(ZONE1.getName(), EMPTY_RPC_OPTIONS).results());
     Map<DnsRpc.Option, Object> options = new HashMap<>();
     options.put(DnsRpc.Option.PAGE_SIZE, 1);
-    DnsRpc.ListResult<ResourceRecordSet> listResult = RPC.listDnsRecords(ZONE1.getName(), options);
+    DnsRpc.ListResult<ResourceRecordSet> listResult = RPC.listRecordSets(ZONE1.getName(), options);
     ImmutableList<ResourceRecordSet> records = ImmutableList.copyOf(listResult.results());
     assertEquals(1, records.size());
     assertEquals(complete.get(0), records.get(0));
     options.put(DnsRpc.Option.PAGE_TOKEN, listResult.pageToken());
-    listResult = RPC.listDnsRecords(ZONE1.getName(), options);
+    listResult = RPC.listRecordSets(ZONE1.getName(), options);
     records = ImmutableList.copyOf(listResult.results());
     assertEquals(1, records.size());
     assertEquals(complete.get(1), records.get(0));

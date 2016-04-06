@@ -63,8 +63,8 @@ public final class Job extends JobInfo {
     }
 
     @Override
-    Builder id(String id) {
-      infoBuilder.id(id);
+    Builder generatedId(String generatedId) {
+      infoBuilder.generatedId(generatedId);
       return this;
     }
 
@@ -128,22 +128,19 @@ public final class Job extends JobInfo {
 
   /**
    * Checks if this job has completed its execution, either failing or succeeding. If the job does
-   * not exist this method returns {@code false}. To correctly wait for job's completion check that
-   * the job exists first, using {@link #exists()}:
+   * not exist this method returns {@code true}. You can wait for job completion with:
    * <pre> {@code
-   * if (job.exists()) {
-   *   while(!job.isDone()) {
-   *     Thread.sleep(1000L);
-   *   }
+   * while(!job.isDone()) {
+   *   Thread.sleep(1000L);
    * }}</pre>
    *
-   * @return {@code true} if this job is in {@link JobStatus.State#DONE} state, {@code false} if the
-   *     state is not {@link JobStatus.State#DONE} or the job does not exist
+   * @return {@code true} if this job is in {@link JobStatus.State#DONE} state or if it does not
+   *     exist, {@code false} if the state is not {@link JobStatus.State#DONE}
    * @throws BigQueryException upon failure
    */
   public boolean isDone() {
     Job job = bigquery.getJob(jobId(), BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
-    return job != null && job.status().state() == JobStatus.State.DONE;
+    return job == null || job.status().state() == JobStatus.State.DONE;
   }
 
   /**

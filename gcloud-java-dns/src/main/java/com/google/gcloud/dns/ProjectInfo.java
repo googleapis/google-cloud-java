@@ -18,6 +18,7 @@ package com.google.gcloud.dns;
 
 import static com.google.api.client.repackaged.com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.dns.model.Project;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
@@ -26,8 +27,8 @@ import java.util.Objects;
 
 /**
  * The class provides the Google Cloud DNS information associated with this project. A project is a
- * top level container for resources including {@code Zone}s. Projects can be created only in
- * the APIs console.
+ * top level container for resources including {@code Zone}s. Projects can be created only in the
+ * APIs console.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/projects">Google Cloud DNS documentation</a>
  */
@@ -62,11 +63,11 @@ public class ProjectInfo implements Serializable {
      * builder.
      */
     Quota(int zones,
-          int resourceRecordsPerRrset,
-          int rrsetAdditionsPerChange,
-          int rrsetDeletionsPerChange,
-          int rrsetsPerZone,
-          int totalRrdataSizePerChange) {
+        int resourceRecordsPerRrset,
+        int rrsetAdditionsPerChange,
+        int rrsetDeletionsPerChange,
+        int rrsetsPerZone,
+        int totalRrdataSizePerChange) {
       this.zones = zones;
       this.resourceRecordsPerRrset = resourceRecordsPerRrset;
       this.rrsetAdditionsPerChange = rrsetAdditionsPerChange;
@@ -83,21 +84,22 @@ public class ProjectInfo implements Serializable {
     }
 
     /**
-     * Returns the maximum allowed number of records per {@link DnsRecord}.
+     * Returns the maximum allowed number of records per {@link RecordSet}.
      */
     public int resourceRecordsPerRrset() {
       return resourceRecordsPerRrset;
     }
 
     /**
-     * Returns the maximum allowed number of {@link DnsRecord}s to add per {@link ChangeRequest}.
+     * Returns the maximum allowed number of {@link RecordSet}s to add per {@link
+     * ChangeRequest}.
      */
     public int rrsetAdditionsPerChange() {
       return rrsetAdditionsPerChange;
     }
 
     /**
-     * Returns the maximum allowed number of {@link DnsRecord}s to delete per {@link
+     * Returns the maximum allowed number of {@link RecordSet}s to delete per {@link
      * ChangeRequest}.
      */
     public int rrsetDeletionsPerChange() {
@@ -105,7 +107,7 @@ public class ProjectInfo implements Serializable {
     }
 
     /**
-     * Returns the maximum allowed number of {@link DnsRecord}s per {@link ZoneInfo} in the
+     * Returns the maximum allowed number of {@link RecordSet}s per {@link ZoneInfo} in the
      * project.
      */
     public int rrsetsPerZone() {
@@ -142,14 +144,13 @@ public class ProjectInfo implements Serializable {
     }
 
     static Quota fromPb(com.google.api.services.dns.model.Quota pb) {
-      Quota quota = new Quota(pb.getManagedZones(),
+      return new Quota(pb.getManagedZones(),
           pb.getResourceRecordsPerRrset(),
           pb.getRrsetAdditionsPerChange(),
           pb.getRrsetDeletionsPerChange(),
           pb.getRrsetsPerManagedZone(),
           pb.getTotalRrdataSizePerChange()
       );
-      return quota;
     }
 
     @Override
@@ -242,8 +243,8 @@ public class ProjectInfo implements Serializable {
     return id;
   }
 
-  com.google.api.services.dns.model.Project toPb() {
-    com.google.api.services.dns.model.Project pb = new com.google.api.services.dns.model.Project();
+  Project toPb() {
+    Project pb = new Project();
     pb.setId(id);
     pb.setNumber(number);
     if (this.quota != null) {
@@ -252,7 +253,7 @@ public class ProjectInfo implements Serializable {
     return pb;
   }
 
-  static ProjectInfo fromPb(com.google.api.services.dns.model.Project pb) {
+  static ProjectInfo fromPb(Project pb) {
     Builder builder = builder();
     if (pb.getId() != null) {
       builder.id(pb.getId());

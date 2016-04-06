@@ -30,16 +30,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.1.5</version>
+  <version>0.1.7</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java:0.1.5'
+compile 'com.google.gcloud:gcloud-java:0.1.7'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.1.5"
+libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.1.7"
 ```
 
 Example Applications
@@ -84,8 +84,9 @@ Most `gcloud-java` libraries require a project ID.  There are multiple ways to s
 1. Project ID supplied when building the service options
 2. Project ID specified by the environment variable `GCLOUD_PROJECT`
 3. App Engine project ID
-4. Google Cloud SDK project ID
-5. Compute Engine project ID
+4. Project ID specified in the JSON credentials file pointed by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
+5. Google Cloud SDK project ID
+6. Compute Engine project ID
 
 Authentication
 --------------
@@ -249,13 +250,13 @@ ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
 Zone zone = dns.create(zoneInfo);
 ```
 
-The second snippet shows how to create records inside a zone. The complete code can be found on [CreateOrUpdateDnsRecords.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateDnsRecords.java).
+The second snippet shows how to create records inside a zone. The complete code can be found on [CreateOrUpdateRecordSets.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateRecordSets.java).
 
 ```java
-import com.google.gcloud.dns.ChangeRequest;
+import com.google.gcloud.dns.ChangeRequestInfo;
 import com.google.gcloud.dns.Dns;
 import com.google.gcloud.dns.DnsOptions;
-import com.google.gcloud.dns.DnsRecord;
+import com.google.gcloud.dns.RecordSet;
 import com.google.gcloud.dns.Zone;
 
 import java.util.Iterator;
@@ -265,24 +266,24 @@ Dns dns = DnsOptions.defaultInstance().service();
 String zoneName = "my-unique-zone";
 Zone zone = dns.getZone(zoneName);
 String ip = "12.13.14.15";
-DnsRecord toCreate = DnsRecord.builder("www.someexampledomain.com.", DnsRecord.Type.A)
+RecordSet toCreate = RecordSet.builder("www.someexampledomain.com.", RecordSet.Type.A)
     .ttl(24, TimeUnit.HOURS)
     .addRecord(ip)
     .build();
-ChangeRequest.Builder changeBuilder = ChangeRequest.builder().add(toCreate);
+ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder().add(toCreate);
 
 // Verify that the record does not exist yet.
 // If it does exist, we will overwrite it with our prepared record.
-Iterator<DnsRecord> recordIterator = zone.listDnsRecords().iterateAll();
-while (recordIterator.hasNext()) {
-  DnsRecord current = recordIterator.next();
+Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
+while (recordSetIterator.hasNext()) {
+  RecordSet current = recordSetIterator.next();
   if (toCreate.name().equals(current.name()) &&
       toCreate.type().equals(current.type())) {
     changeBuilder.delete(current);
   }
 }
 
-ChangeRequest changeRequest = changeBuilder.build();
+ChangeRequestInfo changeRequest = changeBuilder.build();
 zone.applyChangeRequest(changeRequest);
 ```
 

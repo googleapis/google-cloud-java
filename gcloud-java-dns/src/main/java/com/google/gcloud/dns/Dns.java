@@ -16,14 +16,14 @@
 
 package com.google.gcloud.dns;
 
-import com.google.common.base.Joiner;
-import com.google.common.collect.Sets;
+import com.google.common.collect.ImmutableList;
+import com.google.gcloud.FieldSelector;
+import com.google.gcloud.FieldSelector.Helper;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.dns.spi.DnsRpc;
 
-import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 /**
  * An interface for the Google Cloud DNS service.
@@ -39,10 +39,12 @@ public interface Dns extends Service<DnsOptions> {
    * {@link Dns#getProject(ProjectOption...)}. Project ID is always returned, even if not
    * specified.
    */
-  enum ProjectField {
+  enum ProjectField implements FieldSelector {
     PROJECT_ID("id"),
     PROJECT_NUMBER("number"),
     QUOTA("quota");
+
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(PROJECT_ID);
 
     private final String selector;
 
@@ -50,17 +52,9 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    String selector() {
+    @Override
+    public String selector() {
       return selector;
-    }
-
-    static String selector(ProjectField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(PROJECT_ID.selector());
-      for (ProjectField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -71,7 +65,7 @@ public interface Dns extends Service<DnsOptions> {
    * {@link Dns#getZone(String, ZoneOption...)}. The name is always returned, even if not
    * specified.
    */
-  enum ZoneField {
+  enum ZoneField implements FieldSelector {
     CREATION_TIME("creationTime"),
     DESCRIPTION("description"),
     DNS_NAME("dnsName"),
@@ -80,57 +74,44 @@ public interface Dns extends Service<DnsOptions> {
     NAME_SERVER_SET("nameServerSet"),
     NAME_SERVERS("nameServers");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
+
     private final String selector;
 
     ZoneField(String selector) {
       this.selector = selector;
     }
 
-    String selector() {
+    @Override
+    public String selector() {
       return selector;
-    }
-
-    static String selector(ZoneField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(NAME.selector());
-      for (ZoneField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
   /**
-   * The fields of a DNS record.
+   * The fields of a record set.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#listDnsRecords(String, DnsRecordListOption...)}. The name and type are always
+   * {@link Dns#listRecordSets(String, RecordSetListOption...)}. The name and type are always
    * returned even if not selected.
    */
-  enum DnsRecordField {
+  enum RecordSetField implements FieldSelector {
     DNS_RECORDS("rrdatas"),
     NAME("name"),
     TTL("ttl"),
     TYPE("type");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME, TYPE);
+
     private final String selector;
 
-    DnsRecordField(String selector) {
+    RecordSetField(String selector) {
       this.selector = selector;
     }
 
-    String selector() {
+    @Override
+    public String selector() {
       return selector;
-    }
-
-    static String selector(DnsRecordField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(NAME.selector());
-      fieldStrings.add(TYPE.selector());
-      for (DnsRecordField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -138,15 +119,17 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a change request.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#applyChangeRequest(String, ChangeRequest, ChangeRequestOption...)} The ID is always
-   * returned even if not selected.
+   * {@link Dns#applyChangeRequest(String, ChangeRequestInfo, ChangeRequestOption...)} The ID is
+   * always returned even if not selected.
    */
-  enum ChangeRequestField {
+  enum ChangeRequestField implements FieldSelector {
     ID("id"),
     START_TIME("startTime"),
     STATUS("status"),
     ADDITIONS("additions"),
     DELETIONS("deletions");
+
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(ID);
 
     private final String selector;
 
@@ -154,17 +137,9 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-    String selector() {
+    @Override
+    public String selector() {
       return selector;
-    }
-
-    static String selector(ChangeRequestField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(ID.selector());
-      for (ChangeRequestField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -180,28 +155,27 @@ public interface Dns extends Service<DnsOptions> {
   }
 
   /**
-   * Class that for specifying DNS record options.
+   * Class for specifying record set listing options.
    */
-  class DnsRecordListOption extends AbstractOption implements Serializable {
+  class RecordSetListOption extends Option {
 
     private static final long serialVersionUID = 1009627025381096098L;
 
-    DnsRecordListOption(DnsRpc.Option option, Object value) {
+    RecordSetListOption(DnsRpc.Option option, Object value) {
       super(option, value);
     }
 
     /**
-     * Returns an option to specify the DNS record's fields to be returned by the RPC call.
+     * Returns an option to specify the record set's fields to be returned by the RPC call.
      *
      * <p>If this option is not provided all record fields are returned. {@code
-     * DnsRecordField.fields} can be used to specify only the fields of interest. The name of the
-     * DNS record always returned, even if not specified. {@link DnsRecordField} provides a list of
-     * fields that can be used.
+     * RecordSetField.fields} can be used to specify only the fields of interest. The name of the
+     * record set in always returned, even if not specified. {@link RecordSetField} provides a list
+     * of fields that can be used.
      */
-    public static DnsRecordListOption fields(DnsRecordField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("nextPageToken,rrsets(").append(DnsRecordField.selector(fields)).append(')');
-      return new DnsRecordListOption(DnsRpc.Option.FIELDS, builder.toString());
+    public static RecordSetListOption fields(RecordSetField... fields) {
+      return new RecordSetListOption(DnsRpc.Option.FIELDS,
+          Helper.listSelector("rrsets", RecordSetField.REQUIRED_FIELDS, fields));
     }
 
     /**
@@ -210,40 +184,40 @@ public interface Dns extends Service<DnsOptions> {
      * <p>The page token (returned from a previous call to list) indicates from where listing should
      * continue.
      */
-    public static DnsRecordListOption pageToken(String pageToken) {
-      return new DnsRecordListOption(DnsRpc.Option.PAGE_TOKEN, pageToken);
+    public static RecordSetListOption pageToken(String pageToken) {
+      return new RecordSetListOption(DnsRpc.Option.PAGE_TOKEN, pageToken);
     }
 
     /**
-     * The maximum number of DNS records to return per RPC.
+     * The maximum number of record sets to return per RPC.
      *
-     * <p>The server can return fewer records than requested. When there are more results than the
-     * page size, the server will return a page token that can be used to fetch other results.
+     * <p>The server can return fewer record sets than requested. When there are more results than
+     * the page size, the server will return a page token that can be used to fetch other results.
      */
-    public static DnsRecordListOption pageSize(int pageSize) {
-      return new DnsRecordListOption(DnsRpc.Option.PAGE_SIZE, pageSize);
+    public static RecordSetListOption pageSize(int pageSize) {
+      return new RecordSetListOption(DnsRpc.Option.PAGE_SIZE, pageSize);
     }
 
     /**
-     * Restricts the list to only DNS records with this fully qualified domain name.
+     * Restricts the list to only record sets with this fully qualified domain name.
      */
-    public static DnsRecordListOption dnsName(String dnsName) {
-      return new DnsRecordListOption(DnsRpc.Option.NAME, dnsName);
+    public static RecordSetListOption dnsName(String dnsName) {
+      return new RecordSetListOption(DnsRpc.Option.NAME, dnsName);
     }
 
     /**
-     * Restricts the list to return only records of this type. If present, {@link
-     * Dns.DnsRecordListOption#dnsName(String)} must also be present.
+     * Restricts the list to return only record sets of this type. If present, {@link
+     * RecordSetListOption#dnsName(String)} must also be present.
      */
-    public static DnsRecordListOption type(DnsRecord.Type type) {
-      return new DnsRecordListOption(DnsRpc.Option.DNS_TYPE, type.name());
+    public static RecordSetListOption type(RecordSet.Type type) {
+      return new RecordSetListOption(DnsRpc.Option.DNS_TYPE, type.name());
     }
   }
 
   /**
    * Class for specifying zone field options.
    */
-  class ZoneOption extends AbstractOption implements Serializable {
+  class ZoneOption extends Option {
 
     private static final long serialVersionUID = -8065564464895945037L;
 
@@ -259,14 +233,15 @@ public interface Dns extends Service<DnsOptions> {
      * specified. {@link ZoneField} provides a list of fields that can be used.
      */
     public static ZoneOption fields(ZoneField... fields) {
-      return new ZoneOption(DnsRpc.Option.FIELDS, ZoneField.selector(fields));
+      return new ZoneOption(DnsRpc.Option.FIELDS,
+          Helper.selector(ZoneField.REQUIRED_FIELDS, fields));
     }
   }
 
   /**
    * Class for specifying zone listing options.
    */
-  class ZoneListOption extends AbstractOption implements Serializable {
+  class ZoneListOption extends Option {
 
     private static final long serialVersionUID = -2830645032124504717L;
 
@@ -282,9 +257,8 @@ public interface Dns extends Service<DnsOptions> {
      * specified. {@link ZoneField} provides a list of fields that can be used.
      */
     public static ZoneListOption fields(ZoneField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("nextPageToken,managedZones(").append(ZoneField.selector(fields)).append(')');
-      return new ZoneListOption(DnsRpc.Option.FIELDS, builder.toString());
+      return new ZoneListOption(DnsRpc.Option.FIELDS,
+          Helper.listSelector("managedZones", ZoneField.REQUIRED_FIELDS, fields));
     }
 
     /**
@@ -301,7 +275,6 @@ public interface Dns extends Service<DnsOptions> {
      * Restricts the list to only zone with this fully qualified domain name.
      */
     public static ZoneListOption dnsName(String dnsName) {
-      StringBuilder builder = new StringBuilder();
       return new ZoneListOption(DnsRpc.Option.DNS_NAME, dnsName);
     }
 
@@ -319,7 +292,7 @@ public interface Dns extends Service<DnsOptions> {
   /**
    * Class for specifying project options.
    */
-  class ProjectOption extends AbstractOption implements Serializable {
+  class ProjectOption extends Option {
 
     private static final long serialVersionUID = 6817937338218847748L;
 
@@ -336,14 +309,15 @@ public interface Dns extends Service<DnsOptions> {
      * can be used.
      */
     public static ProjectOption fields(ProjectField... fields) {
-      return new ProjectOption(DnsRpc.Option.FIELDS, ProjectField.selector(fields));
+      return new ProjectOption(DnsRpc.Option.FIELDS,
+          Helper.selector(ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 
   /**
    * Class for specifying change request field options.
    */
-  class ChangeRequestOption extends AbstractOption implements Serializable {
+  class ChangeRequestOption extends Option {
 
     private static final long serialVersionUID = 1067273695061077782L;
 
@@ -361,17 +335,15 @@ public interface Dns extends Service<DnsOptions> {
      * a list of fields that can be used.
      */
     public static ChangeRequestOption fields(ChangeRequestField... fields) {
-      return new ChangeRequestOption(
-          DnsRpc.Option.FIELDS,
-          ChangeRequestField.selector(fields)
-      );
+      return new ChangeRequestOption(DnsRpc.Option.FIELDS,
+          Helper.selector(ChangeRequestField.REQUIRED_FIELDS, fields));
     }
   }
 
   /**
    * Class for specifying change request listing options.
    */
-  class ChangeRequestListOption extends AbstractOption implements Serializable {
+  class ChangeRequestListOption extends Option {
 
     private static final long serialVersionUID = -900209143895376089L;
 
@@ -389,10 +361,8 @@ public interface Dns extends Service<DnsOptions> {
      * a list of fields that can be used.
      */
     public static ChangeRequestListOption fields(ChangeRequestField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("nextPageToken,changes(").append(ChangeRequestField.selector(fields))
-          .append(')');
-      return new ChangeRequestListOption(DnsRpc.Option.FIELDS, builder.toString());
+      return new ChangeRequestListOption(DnsRpc.Option.FIELDS,
+          Helper.listSelector("changes", ChangeRequestField.REQUIRED_FIELDS, fields));
     }
 
     /**
@@ -478,16 +448,16 @@ public interface Dns extends Service<DnsOptions> {
   boolean delete(String zoneName); // delete does not admit any options
 
   /**
-   * Lists the DNS records in the zone identified by name.
+   * Lists the record sets in the zone identified by name.
    *
    * <p>The fields to be returned, page size and page tokens can be specified using {@link
-   * DnsRecordListOption}s.
+   * RecordSetListOption}s.
    *
    * @throws DnsException upon failure or if the zone cannot be found
    * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets/list">Cloud DNS
    * ResourceRecordSets: list</a>
    */
-  Page<DnsRecord> listDnsRecords(String zoneName, DnsRecordListOption... options);
+  Page<RecordSet> listRecordSets(String zoneName, RecordSetListOption... options);
 
   /**
    * Retrieves the information about the current project. The returned fields can be optionally
@@ -504,10 +474,10 @@ public interface Dns extends Service<DnsOptions> {
    * servers. The fields to be returned can be selected by {@link ChangeRequestOption}s.
    *
    * @return the new {@link ChangeRequest}
-   * @throws DnsException upon failure if zone is not found
+   * @throws DnsException upon failure or if zone is not found
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/create">Cloud DNS Changes: create</a>
    */
-  ChangeRequest applyChangeRequest(String zoneName, ChangeRequest changeRequest,
+  ChangeRequest applyChangeRequest(String zoneName, ChangeRequestInfo changeRequest,
       ChangeRequestOption... options);
 
   /**

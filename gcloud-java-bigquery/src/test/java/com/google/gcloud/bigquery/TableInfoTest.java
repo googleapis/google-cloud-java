@@ -27,7 +27,7 @@ import java.util.List;
 public class TableInfoTest {
 
   private static final String ETAG = "etag";
-  private static final String ID = "project:dataset:table";
+  private static final String GENERATED_ID = "project:dataset:table";
   private static final String SELF_LINK = "selfLink";
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final String FRIENDLY_NAME = "friendlyName";
@@ -89,7 +89,7 @@ public class TableInfoTest {
       .etag(ETAG)
       .expirationTime(EXPIRATION_TIME)
       .friendlyName(FRIENDLY_NAME)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .lastModifiedTime(LAST_MODIFIED_TIME)
       .selfLink(SELF_LINK)
       .build();
@@ -99,7 +99,7 @@ public class TableInfoTest {
       .etag(ETAG)
       .expirationTime(EXPIRATION_TIME)
       .friendlyName(FRIENDLY_NAME)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .lastModifiedTime(LAST_MODIFIED_TIME)
       .selfLink(SELF_LINK)
       .build();
@@ -110,7 +110,7 @@ public class TableInfoTest {
           .etag(ETAG)
           .expirationTime(EXPIRATION_TIME)
           .friendlyName(FRIENDLY_NAME)
-          .id(ID)
+          .generatedId(GENERATED_ID)
           .lastModifiedTime(LAST_MODIFIED_TIME)
           .selfLink(SELF_LINK)
           .build();
@@ -148,7 +148,7 @@ public class TableInfoTest {
     assertEquals(ETAG, TABLE_INFO.etag());
     assertEquals(EXPIRATION_TIME, TABLE_INFO.expirationTime());
     assertEquals(FRIENDLY_NAME, TABLE_INFO.friendlyName());
-    assertEquals(ID, TABLE_INFO.id());
+    assertEquals(GENERATED_ID, TABLE_INFO.generatedId());
     assertEquals(LAST_MODIFIED_TIME, TABLE_INFO.lastModifiedTime());
     assertEquals(TABLE_DEFINITION, TABLE_INFO.definition());
     assertEquals(SELF_LINK, TABLE_INFO.selfLink());
@@ -159,7 +159,7 @@ public class TableInfoTest {
     assertEquals(ETAG, VIEW_INFO.etag());
     assertEquals(EXPIRATION_TIME, VIEW_INFO.expirationTime());
     assertEquals(FRIENDLY_NAME, VIEW_INFO.friendlyName());
-    assertEquals(ID, VIEW_INFO.id());
+    assertEquals(GENERATED_ID, VIEW_INFO.generatedId());
     assertEquals(LAST_MODIFIED_TIME, VIEW_INFO.lastModifiedTime());
     assertEquals(VIEW_TYPE, VIEW_INFO.definition());
     assertEquals(SELF_LINK, VIEW_INFO.selfLink());
@@ -169,7 +169,7 @@ public class TableInfoTest {
     assertEquals(ETAG, EXTERNAL_TABLE_INFO.etag());
     assertEquals(EXPIRATION_TIME, EXTERNAL_TABLE_INFO.expirationTime());
     assertEquals(FRIENDLY_NAME, EXTERNAL_TABLE_INFO.friendlyName());
-    assertEquals(ID, EXTERNAL_TABLE_INFO.id());
+    assertEquals(GENERATED_ID, EXTERNAL_TABLE_INFO.generatedId());
     assertEquals(LAST_MODIFIED_TIME, EXTERNAL_TABLE_INFO.lastModifiedTime());
     assertEquals(EXTERNAL_TABLE_DEFINITION, EXTERNAL_TABLE_INFO.definition());
     assertEquals(SELF_LINK, EXTERNAL_TABLE_INFO.selfLink());
@@ -198,7 +198,7 @@ public class TableInfoTest {
     assertEquals(expected.etag(), value.etag());
     assertEquals(expected.expirationTime(), value.expirationTime());
     assertEquals(expected.friendlyName(), value.friendlyName());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.lastModifiedTime(), value.lastModifiedTime());
     assertEquals(expected.selfLink(), value.selfLink());
     assertEquals(expected.definition(), value.definition());

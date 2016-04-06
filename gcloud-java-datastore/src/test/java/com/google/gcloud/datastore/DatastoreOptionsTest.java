@@ -17,8 +17,6 @@
 package com.google.gcloud.datastore;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
@@ -65,14 +63,8 @@ public class DatastoreOptionsTest {
 
   @Test
   public void testNamespace() throws Exception {
-    assertNull(options.build().namespace());
+    assertTrue(options.build().namespace().isEmpty());
     assertEquals("ns1", options.namespace("ns1").build().namespace());
-  }
-
-  @Test
-  public void testForce() throws Exception {
-    assertFalse(options.build().force());
-    assertTrue(options.force(true).build().force());
   }
 
   @Test
@@ -82,12 +74,11 @@ public class DatastoreOptionsTest {
 
   @Test
   public void testToBuilder() throws Exception {
-    DatastoreOptions original = options.namespace("ns1").force(true).build();
+    DatastoreOptions original = options.namespace("ns1").build();
     DatastoreOptions copy = original.toBuilder().build();
     assertEquals(original.projectId(), copy.projectId());
     assertEquals(original.namespace(), copy.namespace());
     assertEquals(original.host(), copy.host());
-    assertEquals(original.force(), copy.force());
     assertEquals(original.retryParams(), copy.retryParams());
     assertEquals(original.authCredentials(), copy.authCredentials());
   }

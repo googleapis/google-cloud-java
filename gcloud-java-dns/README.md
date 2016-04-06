@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-dns</artifactId>
-  <version>0.1.5</version>
+  <version>0.1.7</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-dns:0.1.5'
+compile 'com.google.gcloud:gcloud-java-dns:0.1.7'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-dns" % "0.1.5"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-dns" % "0.1.7"
 ```
 
 Example Application
@@ -92,7 +92,7 @@ Dns dns = DnsOptions.defaultInstance().service();
 For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) page.
 
 #### Managing Zones
-DNS records in `gcloud-java-dns` are managed inside containers called "zones". `ZoneInfo` is a class
+Record sets in `gcloud-java-dns` are managed inside containers called "zones". `ZoneInfo` is a class
 which encapsulates metadata that describe a zone in Google Cloud DNS. `Zone`, a subclass of `ZoneInfo`, adds service-related
 functionality over `ZoneInfo`.
 
@@ -100,7 +100,7 @@ functionality over `ZoneInfo`.
 exists within your project, you'll get a helpful error message telling you to choose another name. In the code below,
 replace "my-unique-zone" with a unique zone name. See more about naming rules [here](https://cloud.google.com/dns/api/v1/managedZones#name).*
 
-In this code snippet, we create a new zone to manage DNS records for domain `someexampledomain.com.`
+In this code snippet, we create a new zone to manage record sets for domain `someexampledomain.com.`
 
 *Important: The service may require that you verify ownership of the domain for which you are creating a zone.
 Hence, we recommend that you do so beforehand. You can verify ownership of
@@ -125,11 +125,11 @@ ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
 
 // Create zone in Google Cloud DNS
 Zone zone = dns.create(zoneInfo);
-System.out.printf("Zone was created and assigned ID %s.%n", zone.id());
+System.out.printf("Zone was created and assigned ID %s.%n", zone.generatedId());
 ```
 
-You now have an empty zone hosted in Google Cloud DNS which is ready to be populated with DNS
-records for domain name `someexampledomain.com.` Upon creating the zone, the cloud service
+You now have an empty zone hosted in Google Cloud DNS which is ready to be populated with
+record sets for domain name `someexampledomain.com.` Upon creating the zone, the cloud service
 assigned a set of DNS servers to host records for this zone and
 created the required SOA and NS records for the domain. The following snippet prints the list of servers
 assigned to the zone created above. First, import
@@ -152,15 +152,15 @@ You can now instruct your domain registrar to [update your domain name servers] 
 As soon as this happens and the change propagates through cached values in DNS resolvers,
 all the DNS queries will be directed to and answered by the Google Cloud DNS service.
 
-#### Creating DNS Records
-Now that we have a zone, we can add some DNS records. The DNS records held within zones are
+#### Creating Record Sets
+Now that we have a zone, we can add some record sets. The record sets held within zones are
 modified by "change requests". In this example, we create and apply a change request to
-our zone that creates a DNS record of type A and points URL www.someexampledomain.com to
+our zone that creates a record set of type A and points URL www.someexampledomain.com to
 IP address 12.13.14.15. Start by adding
 
 ```java
-import com.google.gcloud.dns.ChangeRequest;
-import com.google.gcloud.dns.DnsRecord;
+import com.google.gcloud.dns.ChangeRequestInfo;
+import com.google.gcloud.dns.RecordSet;
 
 import java.util.concurrent.TimeUnit;
 ```
@@ -168,26 +168,26 @@ import java.util.concurrent.TimeUnit;
 and proceed with:
 
 ```java
-// Prepare a www.someexampledomain.com. type A record with ttl of 24 hours
+// Prepare a www.someexampledomain.com. type A record set with ttl of 24 hours
 String ip = "12.13.14.15";
-DnsRecord toCreate = DnsRecord.builder("www.someexampledomain.com.", DnsRecord.Type.A)
+RecordSet toCreate = RecordSet.builder("www." + zone.dnsName(), RecordSet.Type.A)
     .ttl(24, TimeUnit.HOURS)
     .addRecord(ip)
     .build();
 
 // Make a change
-ChangeRequest changeRequest = ChangeRequest.builder().add(toCreate).build();
+ChangeRequestInfo changeRequest = ChangeRequestInfo.builder().add(toCreate).build();
 
 // Build and apply the change request to our zone
 changeRequest = zone.applyChangeRequest(changeRequest);
 ```
 
-The `addRecord` method of `DnsRecord.Builder` accepts records in the form of
-strings. The format of the strings depends on the type of the DNS record to be added.
-More information on the supported DNS record types and record formats can be found [here](https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types).
+The `addRecord` method of `RecordSet.Builder` accepts records in the form of
+strings. The format of the strings depends on the type of the record sets to be added.
+More information on the supported record set types and record formats can be found [here](https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types).
 
-If you already have a DNS record, Cloud DNS will return an error upon an attempt to create a duplicate of it.
-You can modify the code above to create a DNS record or update it if it already exists by making the
+If you already have a record set, Cloud DNS will return an error upon an attempt to create a duplicate of it.
+You can modify the code above to create a record set or update it if it already exists by making the
 following adjustment in your imports
 
 ```java
@@ -198,21 +198,21 @@ and in the code
 
 ```java
 // Make a change
-ChangeRequest.Builder changeBuilder = ChangeRequest.builder().add(toCreate);
+ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder().add(toCreate);
 
 // Verify the type A record does not exist yet.
 // If it does exist, we will overwrite it with our prepared record.
-Iterator<DnsRecord> recordIterator = zone.listDnsRecords().iterateAll();
-while (recordIterator.hasNext()) {
-  DnsRecord current = recordIterator.next();
+Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
+while (recordSetIterator.hasNext()) {
+  RecordSet current = recordSetIterator.next();
   if (toCreate.name().equals(current.name()) && toCreate.type().equals(current.type())) {
     changeBuilder.delete(current);
   }
 }
 
 // Build and apply the change request to our zone
-ChangeRequest changeRequest = changeBuilder.build();
-zone.applyChangeRequest(changeRequest);
+ChangeRequestInfo changeRequest = changeBuilder.build();
+ChangeRequest pendingRequest = zone.applyChangeRequest(changeRequest);
 ```
 You can find more information about changes in the [Cloud DNS documentation] (https://cloud.google.com/dns/what-is-cloud-dns#cloud_dns_api_concepts).
 
@@ -220,13 +220,12 @@ When the change request is applied, it is registered with the Cloud DNS service 
 can wait for its completion as follows:
 
 ```java
-while (ChangeRequest.Status.PENDING.equals(changeRequest.status())) {
+while (!pendingRequest.isDone()) {
   try {
     Thread.sleep(500L);
   } catch (InterruptedException e) {
     System.err.println("The thread was interrupted while waiting...");
   }
-  changeRequest = dns.getChangeRequest(zone.name(), changeRequest.id());
 }
 System.out.println("The change request has been applied.");
 ```
@@ -235,15 +234,15 @@ Change requests are applied atomically to all the assigned DNS servers at once. 
 happens, it may still take a while for the change to be registered by the DNS cache resolvers.
 See more on this topic [here](https://cloud.google.com/dns/monitoring).
 
-#### Listing Zones and DNS Records
-Suppose that you have added more zones and DNS records, and now you want to list them.
+#### Listing Zones and Record Sets
+Suppose that you have added more zones and record sets, and now you want to list them.
 First, import the following (unless you have done so in the previous section):
 
 ```java
 import java.util.Iterator;
 ```
 
-Then add the following code to list all your zones and DNS records.
+Then add the following code to list all your zones and record sets.
 
 ```java
 // List all your zones
@@ -254,17 +253,25 @@ while (zoneIterator.hasNext()) {
   counter++;
 }
 
-// List the DNS records in a particular zone
-Iterator<DnsRecord> recordIterator = zone.listDnsRecords().iterateAll();
-System.out.println(String.format("DNS records inside %s:", zone.name()));
-while (recordIterator.hasNext()) {
-  System.out.println(recordIterator.next());
+// List the record sets in a particular zone
+recordSetIterator = zone.listRecordSets().iterateAll();
+System.out.println(String.format("Record sets inside %s:", zone.name()));
+while (recordSetIterator.hasNext()) {
+  System.out.println(recordSetIterator.next());
 }
 ```
 
-You can also list the history of change requests that were applied to a zone:
+You can also list the history of change requests that were applied to a zone.
+First add:
 
 ```java
+import java.util.ChangeRequest;
+```
+
+and then:
+
+```java
+
 // List the change requests applied to a particular zone
 Iterator<ChangeRequest> changeIterator = zone.listChangeRequests().iterateAll();
 System.out.println(String.format("The history of changes in %s:", zone.name()));
@@ -276,28 +283,26 @@ while (changeIterator.hasNext()) {
 #### Deleting Zones
 
 If you no longer want to host a zone in Cloud DNS, you can delete it.
-First, you need to empty the zone by deleting all its records except for the default SOA and NS records.
+First, you need to empty the zone by deleting all its records except for the default SOA and NS record sets.
 
 ```java
-// Make a change for deleting the records
-ChangeRequest.Builder changeBuilder = ChangeRequest.builder();
+// Make a change for deleting the record sets
+changeBuilder = ChangeRequestInfo.builder();
 while (recordIterator.hasNext()) {
-  DnsRecord current = recordIterator.next();
+  RecordSet current = recordIterator.next();
   // SOA and NS records cannot be deleted
-  if (!DnsRecord.Type.SOA.equals(current.type()) && !DnsRecord.Type.NS.equals(current.type())) {
+  if (!RecordSet.Type.SOA.equals(current.type()) && !RecordSet.Type.NS.equals(current.type())) {
     changeBuilder.delete(current);
   }
 }
 
 // Build and apply the change request to our zone if it contains records to delete
-ChangeRequest changeRequest = changeBuilder.build();
+ChangeRequestInfo changeRequest = changeBuilder.build();
 if (!changeRequest.deletions().isEmpty()) {
-  changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
+  ChangeRequest pendingRequest = dns.applyChangeRequest(zoneName, changeRequest);
 
-  // Wait for change to finish, but save data traffic by transferring only ID and status
-  Dns.ChangeRequestOption option =
-      Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS);
-  while (ChangeRequest.Status.PENDING.equals(changeRequest.status())) {
+  // Wait for the change request to complete
+  while (!pendingRequest.isDone()) {
     System.out.println("Waiting for change to complete. Going to sleep for 500ms...");
     try {
       Thread.sleep(500);
@@ -305,9 +310,6 @@ if (!changeRequest.deletions().isEmpty()) {
       System.err.println("The thread was interrupted while waiting for change request to be "
           + "processed.");
     }
-
-    // Update the change, but fetch only change ID and status
-    changeRequest = dns.getChangeRequest(zoneName, changeRequest.id(), option);
   }
 }
 
@@ -324,11 +326,11 @@ if (result) {
 
 We composed some of the aforementioned snippets into complete executable code samples. In
 [CreateZones.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateZone.java)
-we create a zone. In [CreateOrUpdateDnsRecords.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateDnsRecords.java)
-we create a type A record for a zone, or update an existing type A record to a new IP address. We
+we create a zone. In [CreateOrUpdateRecordSets.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateRecordSets.java)
+we create a type A record set for a zone, or update an existing type A record set to a new IP address. We
 demonstrate how to delete a zone in [DeleteZone.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/DeleteZone.java).
-Finally, in [ManipulateZonesAndRecords.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/ManipulateZonesAndRecords.java)
-we assemble all the code snippets together and create zone, create or update a DNS record, list zones, list DNS records, list changes, and
+Finally, in [ManipulateZonesAndRecordSets.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/ManipulateZonesAndRecordSets.java)
+we assemble all the code snippets together and create zone, create or update a record set, list zones, list record sets, list changes, and
 delete a zone. The applications assume that they are running on Compute Engine or from your own desktop. To run any of these examples on App
 Engine, simply move the code from the main method to your application's servlet class and change the
 print statements to display on your webpage.

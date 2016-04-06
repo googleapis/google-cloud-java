@@ -71,6 +71,7 @@ import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -214,7 +215,7 @@ public class ITBigQueryTest {
     assertEquals(DESCRIPTION, dataset.description());
     assertNotNull(dataset.acl());
     assertNotNull(dataset.etag());
-    assertNotNull(dataset.id());
+    assertNotNull(dataset.generatedId());
     assertNotNull(dataset.lastModified());
     assertNotNull(dataset.selfLink());
   }
@@ -231,7 +232,7 @@ public class ITBigQueryTest {
     assertNull(dataset.acl());
     assertNull(dataset.etag());
     assertNull(dataset.friendlyName());
-    assertNull(dataset.id());
+    assertNull(dataset.generatedId());
     assertNull(dataset.lastModified());
     assertNull(dataset.location());
     assertNull(dataset.selfLink());
@@ -270,7 +271,7 @@ public class ITBigQueryTest {
     assertNull(updatedDataset.acl());
     assertNull(updatedDataset.etag());
     assertNull(updatedDataset.friendlyName());
-    assertNull(updatedDataset.id());
+    assertNull(updatedDataset.generatedId());
     assertNull(updatedDataset.lastModified());
     assertNull(updatedDataset.location());
     assertNull(updatedDataset.selfLink());
@@ -623,6 +624,7 @@ public class ITBigQueryTest {
     assertTrue(bigquery.delete(TableId.of(DATASET, tableName)));
   }
 
+  @Ignore("Flaky test; see issue #836")
   @Test
   public void testListAllTableData() {
     Page<List<FieldValue>> rows = bigquery.listTableData(TABLE_ID);
@@ -697,7 +699,7 @@ public class ITBigQueryTest {
       assertNotNull(job.statistics());
       assertNotNull(job.status());
       assertNotNull(job.userEmail());
-      assertNotNull(job.id());
+      assertNotNull(job.generatedId());
     }
   }
 
@@ -709,7 +711,7 @@ public class ITBigQueryTest {
       assertNotNull(job.status());
       assertNotNull(job.userEmail());
       assertNull(job.statistics());
-      assertNull(job.id());
+      assertNull(job.generatedId());
     }
   }
 
@@ -906,6 +908,7 @@ public class ITBigQueryTest {
     assertFalse(bigquery.cancel("test_cancel_non_existing_job"));
   }
 
+  @Ignore("Flaky test; see #836")
   @Test
   public void testInsertFromFile() throws InterruptedException {
     String destinationTableName = "test_insert_from_file_table";

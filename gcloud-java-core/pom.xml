@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.gcloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.1.6-SNAPSHOT</version>
+    <version>0.1.8-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-core</site.installationModule>

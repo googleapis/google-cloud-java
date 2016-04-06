@@ -16,15 +16,15 @@
 
 package com.google.gcloud.resourcemanager;
 
-import com.google.common.base.Joiner;
-import com.google.common.collect.Sets;
+import com.google.common.collect.ImmutableList;
+import com.google.gcloud.FieldSelector;
+import com.google.gcloud.FieldSelector.Helper;
 import com.google.gcloud.IamPolicy;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * An interface for Google Cloud Resource Manager.
@@ -42,7 +42,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * {@link ResourceManager#get} or {@link ResourceManager#list}. Project ID is always returned,
    * even if not specified.
    */
-  enum ProjectField {
+  enum ProjectField implements FieldSelector {
     PROJECT_ID("projectId"),
     NAME("name"),
     LABELS("labels"),
@@ -50,23 +50,17 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     STATE("lifecycleState"),
     CREATE_TIME("createTime");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(PROJECT_ID);
+
     private final String selector;
 
     ProjectField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(ProjectField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(PROJECT_ID.selector());
-      for (ProjectField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -90,7 +84,8 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      * that can be used.
      */
     public static ProjectGetOption fields(ProjectField... fields) {
-      return new ProjectGetOption(ResourceManagerRpc.Option.FIELDS, ProjectField.selector(fields));
+      return new ProjectGetOption(ResourceManagerRpc.Option.FIELDS,
+          Helper.selector(ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -163,9 +158,8 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
      * that can be used.
      */
     public static ProjectListOption fields(ProjectField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("projects(").append(ProjectField.selector(fields)).append("),nextPageToken");
-      return new ProjectListOption(ResourceManagerRpc.Option.FIELDS, builder.toString());
+      return new ProjectListOption(ResourceManagerRpc.Option.FIELDS,
+          Helper.listSelector("projects", ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 

@@ -16,11 +16,11 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -88,9 +88,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     for (FullEntity<?> entity : entities) {
       IncompleteKey key = entity.key();
       Preconditions.checkArgument(key != null, "Entity must have a key");
-      if (key instanceof Key) {
-        addInternal((FullEntity<Key>) entity);
-      } else {
+      if (!(key instanceof Key)) {
         incompleteKeys.add(key);
       }
     }
@@ -104,6 +102,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     List<Entity> answer = Lists.newArrayListWithExpectedSize(entities.length);
     for (FullEntity<?> entity : entities) {
       if (entity.key() instanceof Key) {
+        addInternal((FullEntity<Key>) entity);
         answer.add(Entity.convert((FullEntity<Key>) entity));
       } else {
         Entity entityWithAllocatedId = Entity.builder(allocated.next(), entity).build();
@@ -199,24 +198,30 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     return DatastoreException.throwInvalidRequest(String.format(msg, params));
   }
 
-  DatastoreV1.Mutation.Builder toMutationPb() {
-    DatastoreV1.Mutation.Builder mutationPb = DatastoreV1.Mutation.newBuilder();
+  protected List<com.google.datastore.v1beta3.Mutation> toMutationPbList() {
+    List<com.google.datastore.v1beta3.Mutation> mutationsPb = 
+        new ArrayList<>();
     for (FullEntity<IncompleteKey> entity : toAddAutoId()) {
-      mutationPb.addInsertAutoId(entity.toPb());
+      mutationsPb.add(
+          com.google.datastore.v1beta3.Mutation.newBuilder().setInsert(entity.toPb()).build());
     }
     for (FullEntity<Key> entity : toAdd().values()) {
-      mutationPb.addInsert(entity.toPb());
+      mutationsPb.add(
+          com.google.datastore.v1beta3.Mutation.newBuilder().setInsert(entity.toPb()).build());
     }
     for (FullEntity<Key> entity : toUpdate().values()) {
-      mutationPb.addUpdate(entity.toPb());
+      mutationsPb.add(
+          com.google.datastore.v1beta3.Mutation.newBuilder().setUpdate(entity.toPb()).build());
     }
     for (FullEntity<Key> entity : toPut().values()) {
-      mutationPb.addUpsert(entity.toPb());
+      mutationsPb.add(
+          com.google.datastore.v1beta3.Mutation.newBuilder().setUpsert(entity.toPb()).build());
     }
     for (Key key : toDelete()) {
-      mutationPb.addDelete(key.toPb());
+      mutationsPb.add(
+          com.google.datastore.v1beta3.Mutation.newBuilder().setDelete(key.toPb()).build());
     }
-    return mutationPb;
+    return mutationsPb;
   }
 
   protected abstract Datastore datastore();

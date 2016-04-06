@@ -4,7 +4,7 @@
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.1.6-SNAPSHOT</version>
+  <version>0.1.8-SNAPSHOT</version>
   <name>GCloud Java</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
   <description>
@@ -404,7 +404,7 @@
                   </group>
                   <group>
                     <title>Test helpers packages</title>
-                    <packages>com.google.gcloud.bigquery.testing:com.google.gcloud.datastore.testing:com.google.gcloud.resourcemanager.testing:com.google.gcloud.storage.testing</packages>
+                    <packages>com.google.gcloud.bigquery.testing:com.google.gcloud.datastore.testing:com.google.gcloud.dns.testing:com.google.gcloud.resourcemanager.testing:com.google.gcloud.storage.testing</packages>
                   </group>
                   <group>
                     <title>Example packages</title>
@@ -412,7 +412,7 @@
                   </group>
                   <group>
                     <title>SPI packages</title>
-                    <packages>com.google.gcloud.spi:com.google.gcloud.bigquery.spi:com.google.gcloud.datastore.spi:com.google.gcloud.resourcemanager.spi:com.google.gcloud.storage.spi</packages>
+                    <packages>com.google.gcloud.spi:com.google.gcloud.bigquery.spi:com.google.gcloud.datastore.spi:com.google.gcloud.dns.spi:com.google.gcloud.resourcemanager.spi:com.google.gcloud.storage.spi</packages>
                   </group>
                 </groups>
               </configuration>

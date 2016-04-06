@@ -19,16 +19,15 @@ package com.google.gcloud.bigquery;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.common.base.Function;
-import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
+import com.google.gcloud.FieldSelector;
+import com.google.gcloud.FieldSelector.Helper;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
 import com.google.gcloud.bigquery.spi.BigQueryRpc;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * An interface for Google Cloud BigQuery.
@@ -43,7 +42,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#resource">Dataset
    *     Resource</a>
    */
-  enum DatasetField {
+  enum DatasetField implements FieldSelector {
     ACCESS("access"),
     CREATION_TIME("creationTime"),
     DATASET_REFERENCE("datasetReference"),
@@ -56,23 +55,18 @@ public interface BigQuery extends Service<BigQueryOptions> {
     LOCATION("location"),
     SELF_LINK("selfLink");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS =
+        ImmutableList.of(DATASET_REFERENCE);
+
     private final String selector;
 
     DatasetField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(DatasetField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(DATASET_REFERENCE.selector());
-      for (DatasetField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -82,7 +76,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#resource">Table
    *     Resource</a>
    */
-  enum TableField {
+  enum TableField implements FieldSelector {
     CREATION_TIME("creationTime"),
     DESCRIPTION("description"),
     ETAG("etag"),
@@ -101,24 +95,18 @@ public interface BigQuery extends Service<BigQueryOptions> {
     TYPE("type"),
     VIEW("view");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS =
+        ImmutableList.of(TABLE_REFERENCE, TYPE);
+
     private final String selector;
 
     TableField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(TableField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
-      fieldStrings.add(TABLE_REFERENCE.selector());
-      fieldStrings.add(TYPE.selector());
-      for (TableField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -128,7 +116,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#resource">Job Resource
    *     </a>
    */
-  enum JobField {
+  enum JobField implements FieldSelector {
     CONFIGURATION("configuration"),
     ETAG("etag"),
     ID("id"),
@@ -138,24 +126,18 @@ public interface BigQuery extends Service<BigQueryOptions> {
     STATUS("status"),
     USER_EMAIL("user_email");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS =
+        ImmutableList.of(JOB_REFERENCE, CONFIGURATION);
+
     private final String selector;
 
     JobField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(JobField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 2);
-      fieldStrings.add(JOB_REFERENCE.selector());
-      fieldStrings.add(CONFIGURATION.selector());
-      for (JobField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -210,7 +192,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * returned, even if not specified.
      */
     public static DatasetOption fields(DatasetField... fields) {
-      return new DatasetOption(BigQueryRpc.Option.FIELDS, DatasetField.selector(fields));
+      return new DatasetOption(BigQueryRpc.Option.FIELDS,
+          Helper.selector(DatasetField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -279,7 +262,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * of {@link Table#definition()}) are always returned, even if not specified.
      */
     public static TableOption fields(TableField... fields) {
-      return new TableOption(BigQueryRpc.Option.FIELDS, TableField.selector(fields));
+      return new TableOption(BigQueryRpc.Option.FIELDS,
+          Helper.selector(TableField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -376,10 +360,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * listing jobs.
      */
     public static JobListOption fields(JobField... fields) {
-      String selector = JobField.selector(fields);
-      StringBuilder builder = new StringBuilder();
-      builder.append("etag,jobs(").append(selector).append(",state,errorResult),nextPageToken");
-      return new JobListOption(BigQueryRpc.Option.FIELDS, builder.toString());
+      return new JobListOption(BigQueryRpc.Option.FIELDS,
+          Helper.listSelector("jobs", JobField.REQUIRED_FIELDS, fields, "state", "errorResult"));
     }
   }
 
@@ -402,7 +384,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * returned, even if not specified.
      */
     public static JobOption fields(JobField... fields) {
-      return new JobOption(BigQueryRpc.Option.FIELDS, JobField.selector(fields));
+      return new JobOption(BigQueryRpc.Option.FIELDS,
+          Helper.selector(JobField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -488,9 +471,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Dataset getDataset(DatasetId datasetId, DatasetOption... options);
 
   /**
-   * Lists the project's datasets. This method returns partial information on each dataset
-   * ({@link Dataset#datasetId()}, {@link Dataset#friendlyName()} and {@link Dataset#id()}). To get
-   * complete information use either {@link #getDataset(String, DatasetOption...)} or
+   * Lists the project's datasets. This method returns partial information on each dataset:
+   * ({@link Dataset#datasetId()}, {@link Dataset#friendlyName()} and
+   * {@link Dataset#generatedId()}). To get complete information use either
+   * {@link #getDataset(String, DatasetOption...)} or
    * {@link #getDataset(DatasetId, DatasetOption...)}.
    *
    * @throws BigQueryException upon failure
@@ -558,9 +542,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Table getTable(TableId tableId, TableOption... options);
 
   /**
-   * Lists the tables in the dataset. This method returns partial information on each table
-   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#id()} and type, which
-   * is part of {@link Table#definition()}). To get complete information use either
+   * Lists the tables in the dataset. This method returns partial information on each table:
+   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#generatedId()} and type,
+   * which is part of {@link Table#definition()}). To get complete information use either
    * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *
@@ -569,9 +553,9 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Page<Table> listTables(String datasetId, TableListOption... options);
 
   /**
-   * Lists the tables in the dataset. This method returns partial information on each table
-   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#id()} and type, which
-   * is part of {@link Table#definition()}). To get complete information use either
+   * Lists the tables in the dataset. This method returns partial information on each table:
+   * ({@link Table#tableId()}, {@link Table#friendlyName()}, {@link Table#generatedId()} and type,
+   * which is part of {@link Table#definition()}). To get complete information use either
    * {@link #getTable(TableId, TableOption...)} or
    * {@link #getTable(String, String, TableOption...)}.
    *

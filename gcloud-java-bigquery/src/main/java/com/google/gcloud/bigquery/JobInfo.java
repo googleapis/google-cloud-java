@@ -42,10 +42,10 @@ public class JobInfo implements Serializable {
         }
       };
 
-  private static final long serialVersionUID = -3272941007234620265L;
+  private static final long serialVersionUID = 2740548743267670124L;
 
   private final String etag;
-  private final String id;
+  private final String generatedId;
   private final JobId jobId;
   private final String selfLink;
   private final JobStatus status;
@@ -95,7 +95,7 @@ public class JobInfo implements Serializable {
 
     abstract Builder etag(String etag);
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     /**
      * Sets the job identity.
@@ -128,7 +128,7 @@ public class JobInfo implements Serializable {
   static final class BuilderImpl extends Builder {
 
     private String etag;
-    private String id;
+    private String generatedId;
     private JobId jobId;
     private String selfLink;
     private JobStatus status;
@@ -140,7 +140,7 @@ public class JobInfo implements Serializable {
 
     BuilderImpl(JobInfo jobInfo) {
       this.etag = jobInfo.etag;
-      this.id = jobInfo.id;
+      this.generatedId = jobInfo.generatedId;
       this.jobId = jobInfo.jobId;
       this.selfLink = jobInfo.selfLink;
       this.status = jobInfo.status;
@@ -151,7 +151,7 @@ public class JobInfo implements Serializable {
 
     BuilderImpl(Job jobPb) {
       this.etag = jobPb.getEtag();
-      this.id = jobPb.getId();
+      this.generatedId = jobPb.getId();
       if (jobPb.getJobReference() != null) {
         this.jobId = JobId.fromPb(jobPb.getJobReference());
       }
@@ -173,8 +173,8 @@ public class JobInfo implements Serializable {
     }
 
     @Override
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -223,7 +223,7 @@ public class JobInfo implements Serializable {
   JobInfo(BuilderImpl builder) {
     this.jobId = builder.jobId;
     this.etag = builder.etag;
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.selfLink = builder.selfLink;
     this.status = builder.status;
     this.statistics = builder.statistics;
@@ -239,10 +239,10 @@ public class JobInfo implements Serializable {
   }
 
   /**
-   * Returns an opaque id for the job.
+   * Returns the service-generated id for the job.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -306,7 +306,7 @@ public class JobInfo implements Serializable {
         .add("statistics", statistics)
         .add("userEmail", userEmail)
         .add("etag", etag)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("selfLink", selfLink)
         .add("configuration", configuration)
         .toString();
@@ -331,7 +331,7 @@ public class JobInfo implements Serializable {
   Job toPb() {
     Job jobPb = new Job();
     jobPb.setEtag(etag);
-    jobPb.setId(id);
+    jobPb.setId(generatedId);
     jobPb.setSelfLink(selfLink);
     jobPb.setUserEmail(userEmail);
     if (jobId != null) {

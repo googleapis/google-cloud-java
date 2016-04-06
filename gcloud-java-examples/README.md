@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-examples</artifactId>
-  <version>0.1.5</version>
+  <version>0.1.7</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-examples:0.1.5'
+compile 'com.google.gcloud:gcloud-java-examples:0.1.7'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-examples" % "0.1.5"
+libraryDependencies += "com.google.gcloud" % "gcloud-java-examples" % "0.1.7"
 ```
 
 To run examples from your command line:
@@ -75,7 +75,7 @@ To run examples from your command line:
 
     Note that you have to enable the Google Cloud DNS API on the [Google Developers Console][developers-console] before running the following commands.
     You will need to replace the domain name `elaborateexample.com` with your own domain name with [verified ownership] (https://www.google.com/webmasters/verification/home).
-    Also, note that the example creates and deletes DNS records of type A only. Operations with other record types are not implemented in the example.
+    Also, note that the example creates and deletes record sets of type A only. Operations with other record types are not implemented in the example.
     ```
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="create some-sample-zone elaborateexample.com. description"
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.dns.DnsExample" -Dexec.args="list"
@@ -98,7 +98,7 @@ To run examples from your command line:
 
   * Here's an example run of `StorageExample`.
 
-    Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket.  Also ensure that you have a test file (`test.txt` is chosen here) to upload to Cloud Storage stored locally on your machine.
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Storage" and "Google Cloud Storage JSON API" are enabled and that you have a bucket.  Also ensure that you have a test file (`test.txt` is chosen here) to upload to Cloud Storage stored locally on your machine.
     ```
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.storage.StorageExample" -Dexec.args="upload /path/to/test.txt <bucket_name>"
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.storage.StorageExample" -Dexec.args="list <bucket_name>"

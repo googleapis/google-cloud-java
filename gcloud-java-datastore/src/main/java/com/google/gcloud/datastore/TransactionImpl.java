@@ -16,56 +16,45 @@
 
 package com.google.gcloud.datastore;
 
-import com.google.api.services.datastore.DatastoreV1;
-import com.google.common.base.Function;
-import com.google.common.collect.Lists;
-import com.google.gcloud.datastore.TransactionOption.ForceWrites;
-import com.google.gcloud.datastore.TransactionOption.IsolationLevel;
 import com.google.protobuf.ByteString;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 final class TransactionImpl extends BaseDatastoreBatchWriter implements Transaction {
 
   private final DatastoreImpl datastore;
   private final ByteString transaction;
-  private final boolean force;
   private boolean rolledback;
 
   static class ResponseImpl implements Transaction.Response {
 
-    private final DatastoreV1.CommitResponse response;
+    private final com.google.datastore.v1beta3.CommitResponse response;
+    private final int numAutoAllocatedIds;
 
-    ResponseImpl(DatastoreV1.CommitResponse response) {
+    ResponseImpl(com.google.datastore.v1beta3.CommitResponse response, int numAutoAllocatedIds) {
       this.response = response;
+      this.numAutoAllocatedIds = numAutoAllocatedIds;
     }
 
     @Override
     public List<Key> generatedKeys() {
-      return Lists.transform(response.getMutationResult().getInsertAutoIdKeyList(),
-          new Function<DatastoreV1.Key, Key>() {
-            @Override public Key apply(DatastoreV1.Key keyPb) {
-              return Key.fromPb(keyPb);
-            }
-          });
+      Iterator<com.google.datastore.v1beta3.MutationResult> results =
+          response.getMutationResultsList().iterator();
+      List<Key> generated = new ArrayList<>(numAutoAllocatedIds);
+      for (int i = 0; i < numAutoAllocatedIds; i++) {
+        generated.add(Key.fromPb(results.next().getKey()));
+      }
+      return generated;
     }
   }
 
-  TransactionImpl(DatastoreImpl datastore, TransactionOption... options) {
+  TransactionImpl(DatastoreImpl datastore) {
     super("transaction");
     this.datastore = datastore;
-    DatastoreV1.BeginTransactionRequest.Builder requestPb =
-        DatastoreV1.BeginTransactionRequest.newBuilder();
-    Map<Class<? extends TransactionOption>, TransactionOption> optionsMap =
-        TransactionOption.asImmutableMap(options);
-    IsolationLevel isolationLevel = (IsolationLevel) optionsMap.get(IsolationLevel.class);
-    if (isolationLevel != null) {
-      requestPb.setIsolationLevel(isolationLevel.level().toPb());
-    }
-    ForceWrites forceWrites = (ForceWrites) optionsMap.get(TransactionOption.ForceWrites.class);
-    force = forceWrites != null && forceWrites.force();
+    com.google.datastore.v1beta3.BeginTransactionRequest.Builder requestPb =
+        com.google.datastore.v1beta3.BeginTransactionRequest.newBuilder();
     transaction = datastore.requestTransactionId(requestPb);
   }
 
@@ -77,7 +66,8 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   @Override
   public Iterator<Entity> get(Key... keys) {
     validateActive();
-    DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
+    com.google.datastore.v1beta3.ReadOptions.Builder readOptionsPb =
+        com.google.datastore.v1beta3.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);
     return datastore.get(readOptionsPb.build(), keys);
   }
@@ -91,7 +81,8 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   @Override
   public <T> QueryResults<T> run(Query<T> query) {
     validateActive();
-    DatastoreV1.ReadOptions.Builder readOptionsPb = DatastoreV1.ReadOptions.newBuilder();
+    com.google.datastore.v1beta3.ReadOptions.Builder readOptionsPb =
+        com.google.datastore.v1beta3.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);
     return datastore.run(readOptionsPb.build(), query);
   }
@@ -99,17 +90,15 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   @Override
   public Transaction.Response commit() {
     validateActive();
-    DatastoreV1.Mutation.Builder mutationPb = toMutationPb();
-    if (force) {
-      mutationPb.setForce(force);
-    }
-    DatastoreV1.CommitRequest.Builder requestPb = DatastoreV1.CommitRequest.newBuilder();
-    requestPb.setMode(DatastoreV1.CommitRequest.Mode.TRANSACTIONAL);
+    List<com.google.datastore.v1beta3.Mutation> mutationsPb = toMutationPbList();
+    com.google.datastore.v1beta3.CommitRequest.Builder requestPb =
+        com.google.datastore.v1beta3.CommitRequest.newBuilder();
+    requestPb.setMode(com.google.datastore.v1beta3.CommitRequest.Mode.TRANSACTIONAL);
     requestPb.setTransaction(transaction);
-    requestPb.setMutation(mutationPb);
-    DatastoreV1.CommitResponse responsePb = datastore.commit(requestPb.build());
+    requestPb.addAllMutations(mutationsPb);
+    com.google.datastore.v1beta3.CommitResponse responsePb = datastore.commit(requestPb.build());
     deactivate();
-    return new ResponseImpl(responsePb);
+    return new ResponseImpl(responsePb, toAddAutoId().size());
   }
 
   @Override

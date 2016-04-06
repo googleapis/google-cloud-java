@@ -51,7 +51,7 @@ public class DatasetTest {
   private static final String DESCRIPTION = "description";
   private static final String ETAG = "0xFF00";
   private static final String FRIENDLY_NAME = "friendlyDataset";
-  private static final String ID = "P/D:1";
+  private static final String GENERATED_ID = "P/D:1";
   private static final Long LAST_MODIFIED = CREATION_TIME + 50;
   private static final String LOCATION = "";
   private static final String SELF_LINK = "http://bigquery/p/d";
@@ -102,7 +102,7 @@ public class DatasetTest {
         .description(DESCRIPTION)
         .etag(ETAG)
         .friendlyName(FRIENDLY_NAME)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .lastModified(LAST_MODIFIED)
         .location(LOCATION)
         .selfLink(SELF_LINK)
@@ -114,7 +114,7 @@ public class DatasetTest {
     assertEquals(DESCRIPTION, builtDataset.description());
     assertEquals(ETAG, builtDataset.etag());
     assertEquals(FRIENDLY_NAME, builtDataset.friendlyName());
-    assertEquals(ID, builtDataset.id());
+    assertEquals(GENERATED_ID, builtDataset.generatedId());
     assertEquals(LAST_MODIFIED, builtDataset.lastModified());
     assertEquals(LOCATION, builtDataset.location());
     assertEquals(SELF_LINK, builtDataset.selfLink());
@@ -362,7 +362,7 @@ public class DatasetTest {
     assertEquals(expected.description(), value.description());
     assertEquals(expected.etag(), value.etag());
     assertEquals(expected.friendlyName(), value.friendlyName());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.location(), value.location());
     assertEquals(expected.selfLink(), value.selfLink());
     assertEquals(expected.acl(), value.acl());

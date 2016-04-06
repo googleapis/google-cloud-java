@@ -64,8 +64,8 @@ public class BucketInfo implements Serializable {
           return bucketInfo.toPb();
         }
       };
-  private static final long serialVersionUID = -3946094202176916586L;
-  private final String id;
+  private static final long serialVersionUID = -4712013629621638459L;
+  private final String generatedId;
   private final String name;
   private final Acl.Entity owner;
   private final String selfLink;
@@ -326,7 +326,7 @@ public class BucketInfo implements Serializable {
      */
     public abstract Builder name(String name);
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     abstract Builder owner(Acl.Entity owner);
 
@@ -411,7 +411,7 @@ public class BucketInfo implements Serializable {
 
   static final class BuilderImpl extends Builder {
 
-    private String id;
+    private String generatedId;
     private String name;
     private Acl.Entity owner;
     private String selfLink;
@@ -433,7 +433,7 @@ public class BucketInfo implements Serializable {
     }
 
     BuilderImpl(BucketInfo bucketInfo) {
-      id = bucketInfo.id;
+      generatedId = bucketInfo.generatedId;
       name = bucketInfo.name;
       etag = bucketInfo.etag;
       createTime = bucketInfo.createTime;
@@ -458,8 +458,8 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -555,7 +555,7 @@ public class BucketInfo implements Serializable {
   }
 
   BucketInfo(BuilderImpl builder) {
-    id = builder.id;
+    generatedId = builder.generatedId;
     name = builder.name;
     etag = builder.etag;
     createTime = builder.createTime;
@@ -574,10 +574,10 @@ public class BucketInfo implements Serializable {
   }
 
   /**
-   * Returns the bucket's id.
+   * Returns the service-generated id for the bucket.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -733,7 +733,7 @@ public class BucketInfo implements Serializable {
   com.google.api.services.storage.model.Bucket toPb() {
     com.google.api.services.storage.model.Bucket bucketPb =
         new com.google.api.services.storage.model.Bucket();
-    bucketPb.setId(id);
+    bucketPb.setId(generatedId);
     bucketPb.setName(name);
     bucketPb.setEtag(etag);
     if (createTime != null) {
@@ -810,7 +810,7 @@ public class BucketInfo implements Serializable {
   static BucketInfo fromPb(com.google.api.services.storage.model.Bucket bucketPb) {
     Builder builder = new BuilderImpl(bucketPb.getName());
     if (bucketPb.getId() != null) {
-      builder.id(bucketPb.getId());
+      builder.generatedId(bucketPb.getId());
     }
     if (bucketPb.getEtag() != null) {
       builder.etag(bucketPb.getEtag());

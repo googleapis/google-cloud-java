@@ -112,7 +112,7 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   @Override
-  public ListResult<ResourceRecordSet> listDnsRecords(String zoneName, Map<Option, ?> options)
+  public ListResult<ResourceRecordSet> listRecordSets(String zoneName, Map<Option, ?> options)
       throws DnsException {
     // options are fields, page token, dns name, type
     try {

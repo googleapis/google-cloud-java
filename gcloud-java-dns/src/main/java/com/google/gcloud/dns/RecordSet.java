@@ -35,28 +35,28 @@ import java.util.concurrent.TimeUnit;
 /**
  * A class that represents a Google Cloud DNS record set.
  *
- * <p>A {@code DnsRecord} is the unit of data that will be returned by the DNS servers upon a DNS
- * request for a specific domain. The {@code DnsRecord} holds the current state of the DNS records
+ * <p>A {@code RecordSet} is the unit of data that will be returned by the DNS servers upon a DNS
+ * request for a specific domain. The {@code RecordSet} holds the current state of the DNS records
  * that make up a zone. You can read the records but you cannot modify them directly. Rather, you
- * edit the records in a zone by creating a ChangeRequest.
+ * edit the records in a zone by creating a {@link ChangeRequest}.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets">Google Cloud DNS
  * documentation</a>
  */
-public class DnsRecord implements Serializable {
+public class RecordSet implements Serializable {
 
-  static final Function<ResourceRecordSet, DnsRecord> FROM_PB_FUNCTION =
-      new Function<com.google.api.services.dns.model.ResourceRecordSet, DnsRecord>() {
+  static final Function<ResourceRecordSet, RecordSet> FROM_PB_FUNCTION =
+      new Function<ResourceRecordSet, RecordSet>() {
         @Override
-        public DnsRecord apply(com.google.api.services.dns.model.ResourceRecordSet pb) {
-          return DnsRecord.fromPb(pb);
+        public RecordSet apply(ResourceRecordSet pb) {
+          return RecordSet.fromPb(pb);
         }
       };
-  static final Function<DnsRecord, ResourceRecordSet> TO_PB_FUNCTION =
-      new Function<DnsRecord, ResourceRecordSet>() {
+  static final Function<RecordSet, ResourceRecordSet> TO_PB_FUNCTION =
+      new Function<RecordSet, ResourceRecordSet>() {
         @Override
-        public com.google.api.services.dns.model.ResourceRecordSet apply(DnsRecord error) {
-          return error.toPb();
+        public ResourceRecordSet apply(RecordSet recordSet) {
+          return recordSet.toPb();
         }
       };
   private static final long serialVersionUID = 8148009870800115261L;
@@ -124,7 +124,7 @@ public class DnsRecord implements Serializable {
   }
 
   /**
-   * A builder of {@link DnsRecord}.
+   * A builder for {@link RecordSet}.
    */
   public static class Builder {
 
@@ -140,9 +140,9 @@ public class DnsRecord implements Serializable {
 
     /**
      * Creates a builder and pre-populates attributes with the values from the provided {@code
-     * DnsRecord} instance.
+     * RecordSet} instance.
      */
-    private Builder(DnsRecord record) {
+    private Builder(RecordSet record) {
       this.name = record.name;
       this.ttl = record.ttl;
       this.type = record.type;
@@ -186,7 +186,7 @@ public class DnsRecord implements Serializable {
     }
 
     /**
-     * Sets name for this DNS record set. For example, www.example.com.
+     * Sets the name for this record set. For example, www.example.com.
      */
     public Builder name(String name) {
       this.name = checkNotNull(name);
@@ -198,7 +198,7 @@ public class DnsRecord implements Serializable {
      * The maximum duration must be equivalent to at most {@link Integer#MAX_VALUE} seconds.
      *
      * @param duration A non-negative number of time units
-     * @param unit     The unit of the ttl parameter
+     * @param unit The unit of the ttl parameter
      */
     public Builder ttl(int duration, TimeUnit unit) {
       checkArgument(duration >= 0,
@@ -219,14 +219,14 @@ public class DnsRecord implements Serializable {
     }
 
     /**
-     * Builds the DNS record.
+     * Builds the record set.
      */
-    public DnsRecord build() {
-      return new DnsRecord(this);
+    public RecordSet build() {
+      return new RecordSet(this);
     }
   }
 
-  private DnsRecord(Builder builder) {
+  private RecordSet(Builder builder) {
     this.name = builder.name;
     this.rrdatas = ImmutableList.copyOf(builder.rrdatas);
     this.ttl = builder.ttl;
@@ -241,35 +241,35 @@ public class DnsRecord implements Serializable {
   }
 
   /**
-   * Creates a {@code DnsRecord} builder for the given {@code name} and {@code type}.
+   * Creates a {@code RecordSet} builder for the given {@code name} and {@code type}.
    */
   public static Builder builder(String name, Type type) {
     return new Builder(name, type);
   }
 
   /**
-   * Returns the user-assigned name of this DNS record.
+   * Returns the user-assigned name of this record set.
    */
   public String name() {
     return name;
   }
 
   /**
-   * Returns a list of DNS record stored in this record set.
+   * Returns a list of records stored in this record set.
    */
   public List<String> records() {
     return rrdatas;
   }
 
   /**
-   * Returns the number of seconds that this DnsResource can be cached by resolvers.
+   * Returns the number of seconds that this record set can be cached by resolvers.
    */
   public Integer ttl() {
     return ttl;
   }
 
   /**
-   * Returns the type of this DNS record.
+   * Returns the type of this record set.
    */
   public Type type() {
     return type;
@@ -282,12 +282,11 @@ public class DnsRecord implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return (obj instanceof DnsRecord) && Objects.equals(this.toPb(), ((DnsRecord) obj).toPb());
+    return obj instanceof RecordSet && Objects.equals(this.toPb(), ((RecordSet) obj).toPb());
   }
 
-  com.google.api.services.dns.model.ResourceRecordSet toPb() {
-    com.google.api.services.dns.model.ResourceRecordSet pb =
-        new com.google.api.services.dns.model.ResourceRecordSet();
+  ResourceRecordSet toPb() {
+    ResourceRecordSet pb = new ResourceRecordSet();
     pb.setName(this.name());
     pb.setRrdatas(this.records());
     pb.setTtl(this.ttl());
@@ -295,7 +294,7 @@ public class DnsRecord implements Serializable {
     return pb;
   }
 
-  static DnsRecord fromPb(com.google.api.services.dns.model.ResourceRecordSet pb) {
+  static RecordSet fromPb(ResourceRecordSet pb) {
     Builder builder = builder(pb.getName(), Type.valueOf(pb.getType()));
     if (pb.getRrdatas() != null) {
       builder.records(pb.getRrdatas());

@@ -54,7 +54,7 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
      * Sets the query's projection clause (clearing any previously specified Projection settings).
      */
     @Override
-    public Builder projection(Projection projection, Projection... others) {
+    public Builder projection(String projection, String... others) {
       super.projection(projection, others);
       return this;
     }
@@ -63,7 +63,7 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
      * Adds one or more projections to the existing projection clause.
      */
     @Override
-    public Builder addProjection(Projection projection, Projection... others) {
+    public Builder addProjection(String projection, String... others) {
       super.addProjection(projection, others);
       return this;
     }
@@ -72,8 +72,8 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
      * Clears the group by clause.
      */
     @Override
-    public Builder clearGroupBy() {
-      super.clearGroupBy();
+    public Builder clearDistinctOn() {
+      super.clearDistinctOn();
       return this;
     }
 
@@ -81,8 +81,8 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
      * Sets the query's group by clause (clearing any previously specified GroupBy settings).
      */
     @Override
-    public Builder groupBy(String property, String... others) {
-      super.groupBy(property, others);
+    public Builder distinctOn(String property, String... others) {
+      super.distinctOn(property, others);
       return this;
     }
 
@@ -90,8 +90,8 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
      * Adds one or more properties to the existing group by clause.
      */
     @Override
-    public Builder addGroupBy(String property, String... others) {
-      super.addGroupBy(property, others);
+    public Builder addDistinctOn(String property, String... others) {
+      super.addDistinctOn(property, others);
       return this;
     }
 

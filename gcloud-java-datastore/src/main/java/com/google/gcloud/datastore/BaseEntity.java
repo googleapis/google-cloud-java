@@ -22,12 +22,12 @@ import static com.google.gcloud.datastore.DateTimeValue.of;
 import static com.google.gcloud.datastore.DoubleValue.of;
 import static com.google.gcloud.datastore.EntityValue.of;
 import static com.google.gcloud.datastore.KeyValue.of;
+import static com.google.gcloud.datastore.LatLngValue.of;
 import static com.google.gcloud.datastore.ListValue.of;
 import static com.google.gcloud.datastore.LongValue.of;
 import static com.google.gcloud.datastore.NullValue.of;
 import static com.google.gcloud.datastore.StringValue.of;
 
-import com.google.api.services.datastore.DatastoreV1;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Maps;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -49,7 +49,8 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
  *     Entities, Properties, and Keys</a>
  */
-public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<DatastoreV1.Entity> {
+public abstract class BaseEntity<K extends IncompleteKey>
+    extends Serializable<com.google.datastore.v1beta3.Entity> {
 
   private static final long serialVersionUID = 8175618724683792766L;
 
@@ -91,10 +92,11 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
     }
 
     @SuppressWarnings("unchecked")
-    B fill(DatastoreV1.Entity entityPb) {
+    B fill(com.google.datastore.v1beta3.Entity entityPb) {
       Map<String, Value<?>> copiedProperties = Maps.newHashMap();
-      for (DatastoreV1.Property property : entityPb.getPropertyList()) {
-        copiedProperties.put(property.getName(), Value.fromPb(property.getValue()));
+      for (Map.Entry<String, com.google.datastore.v1beta3.Value> entry :
+        entityPb.getProperties().entrySet()) {
+        copiedProperties.put(entry.getKey(), Value.fromPb(entry.getValue()));
       }
       properties(copiedProperties);
       if (entityPb.hasKey()) {
@@ -284,6 +286,36 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
       values.add(of(first));
       values.add(of(second));
       for (DateTime other : others) {
+        values.add(of(other));
+      }
+      properties.put(name, of(values));
+      return self();
+    }
+
+    /**
+     * Sets a property of type {@link LatLng}.
+     *
+     * @param name name of the property
+     * @param value value associated with the property
+     */
+    public B set(String name, LatLng value) {
+      properties.put(name, of(value));
+      return self();
+    }
+
+    /**
+     * Sets a list property containing elements of type {@link LatLng}.
+     *
+     * @param name name of the property
+     * @param first the first {@link LatLng} in the list
+     * @param second the second {@link LatLng} in the list
+     * @param others other {@link LatLng}s in the list
+     */
+    public B set(String name, LatLng first, LatLng second, LatLng... others) {
+      List<LatLngValue> values = new LinkedList<>();
+      values.add(of(first));
+      values.add(of(second));
+      for (LatLng other : others) {
         values.add(of(other));
       }
       properties.put(name, of(values));
@@ -546,6 +578,17 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   }
 
   /**
+   * Returns the property value as a LatLng.
+   *
+   * @throws DatastoreException if not such property.
+   * @throws ClassCastException if value is not a LatLng.
+   */
+  @SuppressWarnings("unchecked")
+  public LatLng getLatLng(String name) {
+    return ((Value<LatLng>) getValue(name)).get();
+  }
+
+  /**
    * Returns the property value as a Key.
    *
    * @throws DatastoreException if not such property
@@ -603,20 +646,19 @@ public abstract class BaseEntity<K extends IncompleteKey> extends Serializable<D
   @Override
   Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     Builder<?, ?> builder = emptyBuilder();
-    builder.fill(DatastoreV1.Entity.parseFrom(bytesPb));
+    builder.fill(com.google.datastore.v1beta3.Entity.parseFrom(bytesPb));
     return builder.build();
   }
 
   protected abstract Builder<?, ?> emptyBuilder();
 
   @Override
-  final DatastoreV1.Entity toPb() {
-    DatastoreV1.Entity.Builder entityPb = DatastoreV1.Entity.newBuilder();
+  final com.google.datastore.v1beta3.Entity toPb() {
+    com.google.datastore.v1beta3.Entity.Builder entityPb =
+        com.google.datastore.v1beta3.Entity.newBuilder();
+    Map<String, com.google.datastore.v1beta3.Value> propertiesPb = entityPb.getMutableProperties();
     for (Map.Entry<String, Value<?>> entry : properties.entrySet()) {
-      DatastoreV1.Property.Builder propertyPb = DatastoreV1.Property.newBuilder();
-      propertyPb.setName(entry.getKey());
-      propertyPb.setValue(entry.getValue().toPb());
-      entityPb.addProperty(propertyPb.build());
+      propertiesPb.put(entry.getKey(), entry.getValue().toPb());
     }
     if (key != null) {
       entityPb.setKey(key.toPb());
