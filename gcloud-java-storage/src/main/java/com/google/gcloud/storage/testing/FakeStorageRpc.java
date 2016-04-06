@@ -109,7 +109,7 @@ public final class FakeStorageRpc implements StorageRpc {
     // we allow the "ID" option because we need to, but then we give a whole answer anyways
     // because the caller won't mind the extra fields.
     if (throwIfOption && !options.isEmpty() && options.size() > 1
-        && options.keySet().toArray()[0]
+        && !options.keySet().toArray()[0]
             .equals(Storage.BlobGetOption.fields(Storage.BlobField.ID))) {
       throw new UnsupportedOperationException();
     }

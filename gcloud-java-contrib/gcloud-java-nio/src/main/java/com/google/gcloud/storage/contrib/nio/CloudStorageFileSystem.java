@@ -105,7 +105,7 @@ public final class CloudStorageFileSystem extends FileSystem {
     // weird provider file created by @AutoService doesn't find its way into the jar. However this
     // could lead to unexpected changes in behavior under the rare circumstance that the user
     // instantiates multiple instances and uses them together on operations like copy.
-    logger.warning("Could not find CloudStorageFileSystemProvider via SPI");
+    logger.warning("Could not find CloudStorageFileSystemProvider via service loader");
     return new CloudStorageFileSystemProvider();
   }
 

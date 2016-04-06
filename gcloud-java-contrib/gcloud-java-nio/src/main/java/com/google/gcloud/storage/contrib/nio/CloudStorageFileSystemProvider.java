@@ -74,7 +74,7 @@ import javax.inject.Singleton;
 /**
  * Google Cloud Storage {@link FileSystemProvider} implementation.
  *
- * <p><b>Note:</b> This class should not be used directly ever. This class is instantiated by the
+ * <p><b>Note:</b> This class should never be used directly. This class is instantiated by the
  * service loader and called through a standardized API, e.g. {@link java.nio.file.Files}. However
  * the javadocs in this class serve as useful documentation for the behavior of the GCS NIO library.
  */
@@ -93,7 +93,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   /**
    * Constructs a new instance with the default options.
    *
-   * <p><b>Note:</b> This should <i>only</i> be called by the Java SPI. Please use
+   * <p><b>Note:</b> This should <i>only</i> be called by the Java service loader. Please use
    * {@link CloudStorageFileSystem#forBucket(String, CloudStorageConfiguration)} instead.
    */
   public CloudStorageFileSystemProvider() {
