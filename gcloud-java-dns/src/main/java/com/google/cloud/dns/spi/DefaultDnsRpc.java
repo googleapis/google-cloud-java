@@ -55,6 +55,89 @@ public class DefaultDnsRpc implements DnsRpc {
   private final Dns dns;
   private final DnsOptions options;
 
+  private class DefaultRpcBatch implements RpcBatch {
+
+    BatchRequest batch;
+
+    private DefaultRpcBatch(BatchRequest batch) {
+      this.batch = batch;
+    }
+
+    @Override
+    public void addToBatchListZones(DnsRpc.Callback<ManagedZonesListResponse> callback,
+        Map<DnsRpc.Option, ?> options) {
+      try {
+        zoneListCall(options).queue(batch, toJsonCallback(callback));
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    @Override
+    public void addToBatchCreateZone(ManagedZone zone, DnsRpc.Callback<ManagedZone> callback,
+        Map<Option, ?> options) {
+      try {
+        createZoneCall(zone, options).queue(batch, toJsonCallback(callback));
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    @Override
+    public void addToBatchGetZone(String zoneName, DnsRpc.Callback<ManagedZone> callback,
+        Map<Option, ?> options) {
+      try {
+        getZoneCall(zoneName, options).queue(batch, toJsonCallback(callback));
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    @Override
+    public void addToBatchDeleteZone(String zoneName, DnsRpc.Callback<Void> callback) {
+      try {
+        deleteZoneCall(zoneName).queue(batch, toJsonCallback(callback));
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    @Override
+    public void addToBatchGetProject(DnsRpc.Callback<Project> callback,
+        Map<Option, ?> options) {
+      try {
+        getProjectCall(options).queue(batch, toJsonCallback(callback));
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    private <T> JsonBatchCallback<T> toJsonCallback(final DnsRpc.Callback<T> callback) {
+      JsonBatchCallback<T> jsonCallback = new JsonBatchCallback<T>() {
+        @Override
+        public void onSuccess(T response, HttpHeaders httpHeaders) throws IOException {
+          callback.onSuccess(response);
+        }
+
+        @Override
+        public void onFailure(GoogleJsonError googleJsonError, HttpHeaders httpHeaders)
+            throws IOException {
+          callback.onFailure(googleJsonError);
+        }
+      };
+      return jsonCallback;
+    }
+
+    @Override
+    public void submitBatch() {
+      try {
+        batch.execute();
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+  }
+
   private static DnsException translate(IOException exception) {
     return new DnsException(exception);
   }
@@ -75,13 +158,13 @@ public class DefaultDnsRpc implements DnsRpc {
   @Override
   public ManagedZone create(ManagedZone zone, Map<Option, ?> options) throws DnsException {
     try {
-      return createZoneRequest(zone, options).execute();
+      return createZoneCall(zone, options).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
-  private Dns.ManagedZones.Create createZoneRequest(ManagedZone zone, Map<Option, ?> options)
+  private Dns.ManagedZones.Create createZoneCall(ManagedZone zone, Map<Option, ?> options)
       throws IOException {
     return dns.managedZones()
         .create(this.options.projectId(), zone)
@@ -92,7 +175,7 @@ public class DefaultDnsRpc implements DnsRpc {
   public ManagedZone getZone(String zoneName, Map<Option, ?> options) throws DnsException {
     // just fields option
     try {
-      return getZoneRequest(zoneName, options).execute();
+      return getZoneCall(zoneName, options).execute();
     } catch (IOException ex) {
       DnsException serviceException = translate(ex);
       if (serviceException.code() == HTTP_NOT_FOUND) {
@@ -102,7 +185,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
   }
 
-  private Dns.ManagedZones.Get getZoneRequest(String zoneName, Map<Option, ?> options)
+  private Dns.ManagedZones.Get getZoneCall(String zoneName, Map<Option, ?> options)
       throws IOException {
     return dns.managedZones()
         .get(this.options.projectId(), zoneName)
@@ -113,14 +196,14 @@ public class DefaultDnsRpc implements DnsRpc {
   public ListResult<ManagedZone> listZones(Map<Option, ?> options) throws DnsException {
     // fields, page token, page size
     try {
-      ManagedZonesListResponse zoneList = zoneListRequest(options).execute();
+      ManagedZonesListResponse zoneList = zoneListCall(options).execute();
       return of(zoneList.getNextPageToken(), zoneList.getManagedZones());
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
-  private Dns.ManagedZones.List zoneListRequest(Map<DnsRpc.Option, ?> options) throws IOException {
+  private Dns.ManagedZones.List zoneListCall(Map<DnsRpc.Option, ?> options) throws IOException {
     return dns.managedZones().list(this.options.projectId())
         .setFields(FIELDS.getString(options))
         .setMaxResults(PAGE_SIZE.getInt(options))
@@ -131,7 +214,7 @@ public class DefaultDnsRpc implements DnsRpc {
   @Override
   public boolean deleteZone(String zoneName) throws DnsException {
     try {
-      deleteZoneRequest(zoneName).execute();
+      deleteZoneCall(zoneName).execute();
       return true;
     } catch (IOException ex) {
       DnsException serviceException = translate(ex);
@@ -142,7 +225,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
   }
 
-  private Dns.ManagedZones.Delete deleteZoneRequest(String zoneName) throws IOException {
+  private Dns.ManagedZones.Delete deleteZoneCall(String zoneName) throws IOException {
     return dns.managedZones().delete(this.options.projectId(), zoneName);
   }
 
@@ -151,14 +234,14 @@ public class DefaultDnsRpc implements DnsRpc {
       throws DnsException {
 
     try {
-      ResourceRecordSetsListResponse response = listDnsRecordsRequest(zoneName, options).execute();
+      ResourceRecordSetsListResponse response = listDnsRecordsCall(zoneName, options).execute();
       return of(response.getNextPageToken(), response.getRrsets());
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
-  private Dns.ResourceRecordSets.List listDnsRecordsRequest(String zoneName, Map<Option, ?> options)
+  private Dns.ResourceRecordSets.List listDnsRecordsCall(String zoneName, Map<Option, ?> options)
       throws IOException {
     // options are fields, page token, dns name, type
     return dns.resourceRecordSets()
@@ -173,13 +256,13 @@ public class DefaultDnsRpc implements DnsRpc {
   @Override
   public Project getProject(Map<Option, ?> options) throws DnsException {
     try {
-      return getProjectRequest(options).execute();
+      return getProjectCall(options).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
-  private Dns.Projects.Get getProjectRequest(Map<Option, ?> options) throws IOException {
+  private Dns.Projects.Get getProjectCall(Map<Option, ?> options) throws IOException {
     return dns.projects().get(this.options.projectId()).setFields(FIELDS.getString(options));
   }
 
@@ -187,13 +270,13 @@ public class DefaultDnsRpc implements DnsRpc {
   public Change applyChangeRequest(String zoneName, Change changeRequest, Map<Option, ?> options)
       throws DnsException {
     try {
-      return applyChangeRequestRequest(zoneName, changeRequest, options).execute();
+      return applyChangeRequestCall(zoneName, changeRequest, options).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
-  private Dns.Changes.Create applyChangeRequestRequest(String zoneName, Change changeRequest,
+  private Dns.Changes.Create applyChangeRequestCall(String zoneName, Change changeRequest,
       Map<Option, ?> options) throws IOException {
     return dns.changes()
         .create(this.options.projectId(), zoneName, changeRequest)
@@ -204,7 +287,7 @@ public class DefaultDnsRpc implements DnsRpc {
   public Change getChangeRequest(String zoneName, String changeRequestId, Map<Option, ?> options)
       throws DnsException {
     try {
-      return getChangeRequestRequest(zoneName, changeRequestId, options).execute();
+      return getChangeRequestCall(zoneName, changeRequestId, options).execute();
     } catch (IOException ex) {
       DnsException serviceException = translate(ex);
       if (serviceException.code() == HTTP_NOT_FOUND) {
@@ -220,8 +303,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
   }
 
-  // todo(mderka) rename
-  private Dns.Changes.Get getChangeRequestRequest(String zoneName, String changeRequestId,
+  private Dns.Changes.Get getChangeRequestCall(String zoneName, String changeRequestId,
       Map<Option, ?> options) throws IOException {
     return dns.changes()
         .get(this.options.projectId(), zoneName, changeRequestId)
@@ -232,15 +314,14 @@ public class DefaultDnsRpc implements DnsRpc {
   public ListResult<Change> listChangeRequests(String zoneName, Map<Option, ?> options)
       throws DnsException {
     try {
-      ChangesListResponse response = listChangeRequestsRequest(zoneName, options).execute();
+      ChangesListResponse response = listChangeRequestsCall(zoneName, options).execute();
       return of(response.getNextPageToken(), response.getChanges());
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
-  // todo(mderka) rename
-  private Dns.Changes.List listChangeRequestsRequest(String zoneName, Map<Option, ?> options)
+  private Dns.Changes.List listChangeRequestsCall(String zoneName, Map<Option, ?> options)
       throws IOException {
     // options are fields, page token, page size, sort order
     Dns.Changes.List request = dns.changes().list(this.options.projectId(), zoneName)
@@ -255,92 +336,46 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   @Override
-  public BatchRequest createBatch() {
-    return dns.batch();
+  public RpcBatch createBatch() {
+    return new DefaultRpcBatch(dns.batch());
   }
 
   @Override
-  public BatchRequest addToBatchListZones(Object batch,
+  public RpcBatch addToBatchListZones(RpcBatch batch,
       DnsRpc.Callback<ManagedZonesListResponse> callback, Map<DnsRpc.Option, ?> options) {
-    BatchRequest casted = (BatchRequest) batch;
-    try {
-      zoneListRequest(options).queue(casted, toJsonCallback(callback));
-      return casted;
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
+    batch.addToBatchListZones(callback, options);
+    return batch;
   }
 
   @Override
-  public BatchRequest addToBatchCreateZone(ManagedZone zone, Object batch,
-      DnsRpc.Callback<ManagedZone> callback, Map<Option, ?> options) {
-    BatchRequest casted = (BatchRequest) batch;
-    try {
-      createZoneRequest(zone, options).queue(casted, toJsonCallback(callback));
-      return casted;
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
+  public RpcBatch addToBatchCreateZone(ManagedZone zone, RpcBatch batch,
+      Callback<ManagedZone> callback, Map<Option, ?> options) {
+    batch.addToBatchCreateZone(zone, callback, options);
+    return batch;
   }
 
   @Override
-  public BatchRequest addToBatchGetZone(String zoneName, Object batch,
-      DnsRpc.Callback<ManagedZone> callback, Map<Option, ?> options) {
-    BatchRequest casted = (BatchRequest) batch;
-    try {
-      getZoneRequest(zoneName, options).queue(casted, toJsonCallback(callback));
-      return casted;
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
-  }
-
-  @Override
-  public BatchRequest addToBatchDeleteZone(String zoneName, Object batch,
-      DnsRpc.Callback<Void> callback) {
-    BatchRequest casted = (BatchRequest) batch;
-    try {
-      deleteZoneRequest(zoneName).queue(casted, toJsonCallback(callback));
-      return casted;
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
-  }
-
-  @Override
-  public BatchRequest addToBatchGetProject(Object batch, DnsRpc.Callback<Project> callback,
+  public RpcBatch addToBatchGetZone(String zoneName, RpcBatch batch, Callback<ManagedZone> callback,
       Map<Option, ?> options) {
-    BatchRequest casted = (BatchRequest) batch;
-    try {
-      getProjectRequest(options).queue(casted, toJsonCallback(callback));
-      return casted;
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
-  }
-
-  private static <T> JsonBatchCallback<T> toJsonCallback(final DnsRpc.Callback<T> callback) {
-    JsonBatchCallback<T> jsonCallback = new JsonBatchCallback<T>() {
-      @Override
-      public void onSuccess(T response, HttpHeaders httpHeaders) throws IOException {
-        callback.onSuccess(response);
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError, HttpHeaders httpHeaders)
-          throws IOException {
-        callback.onFailure(googleJsonError);
-      }
-    };
-    return jsonCallback;
+    batch.addToBatchGetZone(zoneName, callback, options);
+    return batch;
   }
 
   @Override
-  public void submitBatch(Object batchRequest) {
-    try {
-      ((BatchRequest) batchRequest).execute();
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
+  public RpcBatch addToBatchDeleteZone(String zoneName, RpcBatch batch, Callback<Void> callback) {
+    batch.addToBatchDeleteZone(zoneName, callback);
+    return batch;
+  }
+
+  @Override
+  public RpcBatch addToBatchGetProject(RpcBatch batch, Callback<Project> callback,
+      Map<Option, ?> options) {
+    batch.addToBatchGetProject(callback, options);
+    return batch;
+  }
+
+  @Override
+  public void submitBatch(RpcBatch batch) {
+    batch.submitBatch();
   }
 }

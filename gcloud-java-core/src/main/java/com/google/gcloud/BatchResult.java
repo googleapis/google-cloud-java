@@ -16,8 +16,11 @@
 
 package com.google.gcloud;
 
+import static com.google.common.base.Preconditions.checkState;
+
 /**
- * This class holds a single result of a batch call.
+ * This class holds a single result of a batch call. {@code T} is the type of the result and
+ * {@code E} is the type of the service-dependent exception thrown when processing error occurs.
  */
 public abstract class BatchResult<T, E extends BaseServiceException> {
 
@@ -40,9 +43,7 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
    * @throws E if an error occurred when processing this request
    */
   public T get() throws E {
-    if (!submitted()) {
-      throw new IllegalStateException("Batch has not been submitted yet");
-    }
+    checkState(submitted(), "Batch has not been submitted yet");
     if (error != null) {
       throw error;
     }

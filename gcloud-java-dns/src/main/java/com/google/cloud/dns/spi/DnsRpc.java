@@ -193,7 +193,7 @@ public interface DnsRpc {
   /**
    * Initializes an empty batch.
    */
-  Object createBatch();
+  RpcBatch createBatch();
 
   /**
    * Prepares a call to "list zones" and adds it to the batch with the provided {@code callback} and
@@ -201,7 +201,7 @@ public interface DnsRpc {
    *
    * @return the updated batch
    */
-  Object addToBatchListZones(Object batch,
+  RpcBatch addToBatchListZones(RpcBatch batch,
       Callback<ManagedZonesListResponse> callback, Map<DnsRpc.Option, ?> options);
 
   /**
@@ -210,7 +210,7 @@ public interface DnsRpc {
    *
    * @return the updated batch
    */
-  Object addToBatchCreateZone(ManagedZone zone, Object batch,
+  RpcBatch addToBatchCreateZone(ManagedZone zone, RpcBatch batch,
       Callback<ManagedZone> callback, Map<DnsRpc.Option, ?> options);
 
   /**
@@ -219,7 +219,7 @@ public interface DnsRpc {
    *
    * @return the updated batch
    */
-  Object addToBatchGetZone(String zoneName, Object batch, Callback<ManagedZone> callback,
+  RpcBatch addToBatchGetZone(String zoneName, RpcBatch batch, Callback<ManagedZone> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
@@ -228,7 +228,7 @@ public interface DnsRpc {
    *
    * @return the updated batch
    */
-  Object addToBatchDeleteZone(String zoneName, Object batch, Callback<Void> callback);
+  RpcBatch addToBatchDeleteZone(String zoneName, RpcBatch batch, Callback<Void> callback);
 
   /**
    * Prepares a call to "get project" and adds it to the batch with the provided {@code callback}
@@ -236,11 +236,11 @@ public interface DnsRpc {
    *
    * @return the updated batch
    */
-  Object addToBatchGetProject(Object batch, Callback<Project> callback,
+  RpcBatch addToBatchGetProject(RpcBatch batch, Callback<Project> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
    * Submits a batch of requests for processing using a single HTTP request to Cloud DNS.
    */
-  void submitBatch(Object batch);
+  void submitBatch(RpcBatch batch);
 }

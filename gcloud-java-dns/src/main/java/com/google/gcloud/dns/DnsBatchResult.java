@@ -27,12 +27,12 @@ public class DnsBatchResult<T> extends BatchResult<T, DnsException> {
   }
 
   @Override
-  public void error(DnsException error) {
+  protected void error(DnsException error) {
     super.error(error);
   }
 
   @Override
-  public void success(T result) {
+  protected void success(T result) {
     super.success(result);
   }
 }

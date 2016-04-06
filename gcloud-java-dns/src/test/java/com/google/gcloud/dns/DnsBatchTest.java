@@ -27,6 +27,7 @@ import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
 import com.google.gcloud.Page;
 import com.google.gcloud.dns.spi.DnsRpc;
+import com.google.gcloud.dns.spi.RpcBatch;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;
@@ -58,7 +59,7 @@ public class DnsBatchTest {
 
   private DnsOptions optionsMock;
   private DnsRpc dnsRpcMock;
-  private Object batchMock;
+  private RpcBatch batchMock;
   private DnsBatch dnsBatch;
   private Dns dns = EasyMock.createStrictMock(Dns.class);
 
@@ -66,7 +67,7 @@ public class DnsBatchTest {
   public void setUp() {
     optionsMock = EasyMock.createMock(DnsOptions.class);
     dnsRpcMock = EasyMock.createMock(DnsRpc.class);
-    batchMock = EasyMock.createMock(Object.class);
+    batchMock = EasyMock.createMock(RpcBatch.class);
     EasyMock.expect(optionsMock.rpc()).andReturn(dnsRpcMock);
     EasyMock.expect(dnsRpcMock.createBatch()).andReturn(batchMock);
     EasyMock.replay(optionsMock);
@@ -95,7 +96,7 @@ public class DnsBatchTest {
     Capture<DnsRpc.Callback<ManagedZonesListResponse>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.addToBatchListZones(EasyMock.eq(batchMock),
-        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(dnsBatch);
+        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(batchMock);
     EasyMock.replay(dnsRpcMock);
     DnsBatchResult<Page<Zone>> batchResult = dnsBatch.listZones();
     assertEquals(0, capturedOptions.getValue().size());
@@ -121,7 +122,7 @@ public class DnsBatchTest {
     Capture<DnsRpc.Callback<ManagedZonesListResponse>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.addToBatchListZones(EasyMock.eq(batchMock),
-        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(dnsBatch);
+        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(batchMock);
     EasyMock.replay(dnsRpcMock);
     dnsBatch.listZones(ZONE_LIST_OPTIONS);
     assertNotNull(callback.getValue());
@@ -145,7 +146,7 @@ public class DnsBatchTest {
     Capture<ManagedZone> capturedZone = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.addToBatchCreateZone(EasyMock.capture(capturedZone),
         EasyMock.eq(batchMock), EasyMock.capture(callback), EasyMock.capture(capturedOptions)))
-        .andReturn(dnsBatch);
+        .andReturn(batchMock);
     EasyMock.replay(dnsRpcMock);
     DnsBatchResult<Zone> batchResult = dnsBatch.createZone(ZONE_INFO);
     assertEquals(0, capturedOptions.getValue().size());
@@ -178,7 +179,7 @@ public class DnsBatchTest {
     Capture<ManagedZone> capturedZone = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.addToBatchCreateZone(EasyMock.capture(capturedZone),
         EasyMock.eq(batchMock), EasyMock.capture(callback), EasyMock.capture(capturedOptions)))
-        .andReturn(dnsBatch);
+        .andReturn(batchMock);
     EasyMock.replay(dnsRpcMock);
     DnsBatchResult<Zone> batchResult = dnsBatch.createZone(ZONE_INFO, ZONE_FIELDS);
     assertEquals(ZONE_INFO.toPb(), capturedZone.getValue());
@@ -197,7 +198,7 @@ public class DnsBatchTest {
     Capture<DnsRpc.Callback<ManagedZone>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.addToBatchGetZone(EasyMock.eq(ZONE_NAME), EasyMock.eq(batchMock),
-        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(dnsBatch);
+        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(batchMock);
     EasyMock.replay(dnsRpcMock);
     DnsBatchResult<Zone> batchResult = dnsBatch.getZone(ZONE_NAME);
     assertEquals(0, capturedOptions.getValue().size());
@@ -225,7 +226,7 @@ public class DnsBatchTest {
     Capture<DnsRpc.Callback<ManagedZone>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.addToBatchGetZone(EasyMock.eq(ZONE_NAME), EasyMock.eq(batchMock),
-        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(dnsBatch);
+        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(batchMock);
     EasyMock.replay(dnsRpcMock);
     DnsBatchResult<Zone> batchResult = dnsBatch.getZone(ZONE_NAME, ZONE_FIELDS);
     assertNotNull(callback.getValue());
@@ -244,7 +245,7 @@ public class DnsBatchTest {
     EasyMock.reset(dnsRpcMock);
     Capture<DnsRpc.Callback<Void>> callback = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.addToBatchDeleteZone(EasyMock.eq(ZONE_NAME), EasyMock.eq(batchMock),
-        EasyMock.capture(callback))).andReturn(dnsBatch);
+        EasyMock.capture(callback))).andReturn(batchMock);
     EasyMock.replay(dnsRpcMock);
     DnsBatchResult<Boolean> batchResult = dnsBatch.deleteZone(ZONE_NAME);
     assertNotNull(callback.getValue());
@@ -269,7 +270,7 @@ public class DnsBatchTest {
     EasyMock.reset(dnsRpcMock);
     Capture<DnsRpc.Callback<Void>> callback = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.addToBatchDeleteZone(EasyMock.eq(ZONE_NAME), EasyMock.eq(batchMock),
-        EasyMock.capture(callback))).andReturn(dnsBatch);
+        EasyMock.capture(callback))).andReturn(batchMock);
     EasyMock.replay(dnsRpcMock);
     DnsBatchResult<Boolean> batchResult = dnsBatch.deleteZone(ZONE_NAME);
     assertNotNull(callback.getValue());
@@ -285,7 +286,7 @@ public class DnsBatchTest {
     Capture<DnsRpc.Callback<Project>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.addToBatchGetProject(EasyMock.eq(batchMock),
-        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(dnsBatch);
+        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(batchMock);
     EasyMock.replay(dnsRpcMock);
     DnsBatchResult<ProjectInfo> batchResult = dnsBatch.getProject();
     assertEquals(0, capturedOptions.getValue().size());
@@ -312,7 +313,7 @@ public class DnsBatchTest {
     Capture<DnsRpc.Callback<Project>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.addToBatchGetProject(EasyMock.eq(batchMock),
-        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(dnsBatch);
+        EasyMock.capture(callback), EasyMock.capture(capturedOptions))).andReturn(batchMock);
     EasyMock.replay(dnsRpcMock);
     DnsBatchResult<ProjectInfo> batchResult = dnsBatch.getProject(PROJECT_FIELDS);
     assertNotNull(callback.getValue());
