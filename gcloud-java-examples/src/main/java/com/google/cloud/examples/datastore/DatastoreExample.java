@@ -43,15 +43,11 @@ import java.util.TreeMap;
  *
  * <p>Steps needed for running the example:<ol>
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code mvn compile}</li>
- * <li>run using maven -
- * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample"
- *  -Dexec.args="<project_id> <user>
- *  delete |
- *  display |
- *  add <comment> |
- *  set <email> <phone>}</pre>
+ * <li>compile using maven - {@code cd gcloud-java-examples;
+ * mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true}
  * </li>
+ * <li>run - {@code target/appassembler/bin/DatastoreExample
+ * [projectId] [user] [delete|display|add comment|set <email> <phone>]}</li>
  * </ol>
  *
  * <p>If no action is provided {@code display} is executed.

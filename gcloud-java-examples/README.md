@@ -33,7 +33,7 @@ libraryDependencies += "com.google.cloud" % "gcloud-java-examples" % "0.2.4"
 
 To run examples from your command line:
 
-1. Login using gcloud SDK (`gcloud auth login` in command line)
+1. Log in using gcloud SDK (`gcloud auth login` in command line)
 
 2. Set your current project using `gcloud config set project PROJECT_ID`. This step is not necessary for `ResourceManagerExample`.
 

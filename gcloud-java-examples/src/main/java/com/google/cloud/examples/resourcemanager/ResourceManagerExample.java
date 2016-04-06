@@ -32,12 +32,13 @@ import java.util.Scanner;
  *
  * <p>This example creates, deletes, gets, and lists projects.
  *
- * <p> Steps needed for running the example:<ol>
- * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code mvn compile}</li>
- * <li>run using maven - {@code mvn exec:java
- * -Dexec.mainClass="com.google.cloud.examples.resourcemanager.ResourceManagerExample"
- * -Dexec.args="[list | [create | delete | get] projectId]"}</li>
+ * <p>Steps needed for running the example:<ol>
+ * <li>log in using gcloud SDK - {@code gcloud auth login}.</li>
+ * <li>compile using maven - {@code cd gcloud-java-examples;
+ * mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true}
+ * </li>
+ * <li>run - {@code target/appassembler/bin/ResourceManagerExample
+ * [list | [create | delete | get] projectId]}</li>
  * </ol>
  */
 public class ResourceManagerExample {
