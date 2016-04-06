@@ -17,7 +17,6 @@
 package com.google.gcloud.storage;
 
 import com.google.common.collect.ImmutableSet;
-import com.google.gcloud.RetryParams;
 import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.storage.spi.DefaultStorageRpc;
 import com.google.gcloud.storage.spi.StorageRpc;
@@ -92,19 +91,6 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
    */
   public static StorageOptions defaultInstance() {
     return builder().build();
-  }
-
-  @Override
-  protected RetryParams defaultRetryParams() {
-    // See https://cloud.google.com/storage/sla for backoff requirements
-    return RetryParams.builder()
-        .retryMinAttempts(RetryParams.DEFAULT_RETRY_MIN_ATTEMPTS)
-        .retryMaxAttempts(RetryParams.DEFAULT_RETRY_MAX_ATTEMPTS)
-        .initialRetryDelayMillis(1000L)
-        .maxRetryDelayMillis(32000L)
-        .retryDelayBackoffFactor(2.0)
-        .totalRetryPeriodMillis(80000L)
-        .build();
   }
 
   @SuppressWarnings("unchecked")

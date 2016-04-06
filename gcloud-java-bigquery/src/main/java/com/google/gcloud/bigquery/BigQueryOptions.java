@@ -17,7 +17,6 @@
 package com.google.gcloud.bigquery;
 
 import com.google.common.collect.ImmutableSet;
-import com.google.gcloud.RetryParams;
 import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.bigquery.spi.BigQueryRpc;
 import com.google.gcloud.bigquery.spi.BigQueryRpcFactory;
@@ -107,19 +106,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
 
   public static BigQueryOptions defaultInstance() {
     return builder().build();
-  }
-
-  @Override
-  protected RetryParams defaultRetryParams() {
-    // See https://cloud.google.com/bigquery/sla for backoff requirements
-    return RetryParams.builder()
-        .retryMinAttempts(RetryParams.DEFAULT_RETRY_MIN_ATTEMPTS)
-        .retryMaxAttempts(RetryParams.DEFAULT_RETRY_MAX_ATTEMPTS)
-        .initialRetryDelayMillis(1000L)
-        .maxRetryDelayMillis(32000L)
-        .retryDelayBackoffFactor(2.0)
-        .totalRetryPeriodMillis(80000L)
-        .build();
   }
 
   public static Builder builder() {
