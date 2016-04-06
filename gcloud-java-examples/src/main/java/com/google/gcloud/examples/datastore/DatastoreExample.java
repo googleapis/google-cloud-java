@@ -42,8 +42,11 @@ import java.util.TreeMap;
  *
  * <p>Steps needed for running the example:<ol>
  * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code cd gcloud-java-examples; mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true}</li>
- * <li>run - {@code target/appassembler/bin/DatastoreExample your-project-id my_name [projectId] [user] [delete|display|add comment]}</li>
+ * <li>compile using maven - {@code cd gcloud-java-examples;
+ * mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true}
+ * </li>
+ * <li>run - {@code target/appassembler/bin/DatastoreExample
+ * [projectId] [user] [delete|display|add comment]}</li>
  * </ol>
  */
 public class DatastoreExample {

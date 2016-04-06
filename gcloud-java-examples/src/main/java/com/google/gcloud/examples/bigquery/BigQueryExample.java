@@ -61,8 +61,10 @@ import java.util.Map;
  * <p>Steps needed for running the example:
  * <ol>
  * <li>log in using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code cd gcloud-java-examples; mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true}</li>
- * <li>run  -
+ * <li>compile using maven - {@code cd gcloud-java-examples;
+ * mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true}
+ * </li>
+ * <li>run -
  * <pre>{@code target/appassembler/bin/BigQueryExample [<project_id>]
  *  list datasets |
  *  list tables <dataset> |
