@@ -62,11 +62,10 @@ import java.util.concurrent.TimeUnit;
  *
  * <p>Steps needed for running the example:
  * <ol>
- * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code mvn compile}</li>
- * <li>run using maven -
- * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.storage.StorageExample"
- *  -Dexec.args="[<project_id>]
+ * <li>log in using gcloud SDK - {@code gcloud auth login}.</li>
+ * <li>compile using maven - {@code cd gcloud-java-examples; mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true}</li>
+ * <li>run -
+ * <pre>{@code target/appassembler/bin/StorageExample [<project_id>]
  *  list [<bucket>] |
  *  info [<bucket> [<file>]] |
  *  download <bucket> <path> [local_file] |
