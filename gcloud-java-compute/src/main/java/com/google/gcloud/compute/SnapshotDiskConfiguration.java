@@ -50,7 +50,7 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
     }
 
     private Builder(SnapshotDiskConfiguration configuration) {
-      super(Type.SNAPSHOT, configuration);
+      super(configuration);
       this.sourceSnapshot = configuration.sourceSnapshot;
       this.sourceSnapshotId = configuration.sourceSnapshotId;
     }

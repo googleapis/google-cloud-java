@@ -41,7 +41,7 @@ public class StandardDiskConfiguration extends DiskConfiguration {
     }
 
     private Builder(StandardDiskConfiguration configuration) {
-      super(Type.STANDARD, configuration);
+      super(configuration);
     }
 
     private Builder(Disk diskPb) {

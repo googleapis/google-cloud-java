@@ -76,8 +76,8 @@ public abstract class DiskConfiguration implements Serializable {
       this.type = type;
     }
 
-    Builder(Type type, DiskConfiguration diskConfiguration) {
-      this.type = type;
+    Builder(DiskConfiguration diskConfiguration) {
+      this.type = diskConfiguration.type;
       this.sizeGb = diskConfiguration.sizeGb;
       this.diskType = diskConfiguration.diskType;
     }

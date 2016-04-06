@@ -48,7 +48,7 @@ public class DiskImageConfiguration extends ImageConfiguration {
     }
 
     private Builder(DiskImageConfiguration imageConfiguration) {
-      super(Type.DISK, imageConfiguration);
+      super(imageConfiguration);
       this.sourceDisk = imageConfiguration.sourceDisk;
       this.sourceDiskId = imageConfiguration.sourceDiskId;
     }
