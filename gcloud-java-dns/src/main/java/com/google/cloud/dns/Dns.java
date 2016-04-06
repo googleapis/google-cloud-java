@@ -505,7 +505,7 @@ public interface Dns extends Service<DnsOptions> {
   Page<ChangeRequest> listChangeRequests(String zoneName, ChangeRequestListOption... options);
 
   /**
-   * Initiates a new empty batch ready to be populated with service calls.
+   * Creates a new empty batch for grouping multiple service calls in one underlying RPC call.
    */
   DnsBatch batch();
 }

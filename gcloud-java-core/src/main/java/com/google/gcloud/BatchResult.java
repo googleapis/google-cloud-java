@@ -19,31 +19,64 @@ package com.google.gcloud;
 /**
  * This class holds a single result of a batch call.
  */
-public interface BatchResult<T, E extends BaseServiceException> {
+public abstract class BatchResult<T, E extends BaseServiceException> {
+
+  private T result;
+  private boolean submitted = false;
+  private E error;
 
   /**
-   * Returns {@code true} if the batch has been submitted and the result is available; {@code
-   * false} otherwise.
+   * Returns {@code true} if the batch has been submitted and the result is available; {@code false}
+   * otherwise.
    */
-  boolean submitted();
+  public boolean submitted() {
+    return submitted;
+  }
 
   /**
    * Returns result of this call.
    *
-   * @throws IllegalArgumentException if the batch has not been submitted yet
+   * @throws IllegalStateException if the batch has not been submitted yet
    * @throws E if an error occurred when processing this request
    */
-  T get() throws E;
+  public T get() throws E {
+    if (!submitted()) {
+      throw new IllegalStateException("Batch has not been submitted yet");
+    }
+    if (error != null) {
+      throw error;
+    }
+    return result;
+  }
 
   /**
    * Registers a callback for the batch operation.
    */
-  void notify(Callback<T,E> callback);
+  public void notify(Callback<T, E> callback) {
+    // todo(mderka) implement
+    throw new UnsupportedOperationException("Not implemented yet");
+  }
+
+  /**
+   * Sets an error and makes this submitted.
+   */
+  protected void error(E error) {
+    this.error = error;
+    this.submitted = true;
+  }
+
+  /**
+   * Sets a result and makes this submitted.
+   */
+  protected void success(T result) {
+    this.result = result;
+    this.submitted = true;
+  }
 
   /**
    * An interface for the batch callbacks.
    */
-  interface Callback<T,E> {
+  public interface Callback<T, E> {
     /**
      * The method to be called when the batched operation succeeds.
      */

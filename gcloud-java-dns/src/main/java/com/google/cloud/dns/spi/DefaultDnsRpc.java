@@ -264,7 +264,7 @@ public class DefaultDnsRpc implements DnsRpc {
       DnsRpc.Callback<ManagedZonesListResponse> callback, Map<DnsRpc.Option, ?> options) {
     BatchRequest casted = (BatchRequest) batch;
     try {
-      zoneListRequest(options).queue(casted, jsonCallback(callback));
+      zoneListRequest(options).queue(casted, toJsonCallback(callback));
       return casted;
     } catch (IOException ex) {
       throw translate(ex);
@@ -276,7 +276,7 @@ public class DefaultDnsRpc implements DnsRpc {
       DnsRpc.Callback<ManagedZone> callback, Map<Option, ?> options) {
     BatchRequest casted = (BatchRequest) batch;
     try {
-      createZoneRequest(zone, options).queue(casted, jsonCallback(callback));
+      createZoneRequest(zone, options).queue(casted, toJsonCallback(callback));
       return casted;
     } catch (IOException ex) {
       throw translate(ex);
@@ -288,7 +288,7 @@ public class DefaultDnsRpc implements DnsRpc {
       DnsRpc.Callback<ManagedZone> callback, Map<Option, ?> options) {
     BatchRequest casted = (BatchRequest) batch;
     try {
-      getZoneRequest(zoneName, options).queue(casted, jsonCallback(callback));
+      getZoneRequest(zoneName, options).queue(casted, toJsonCallback(callback));
       return casted;
     } catch (IOException ex) {
       throw translate(ex);
@@ -300,7 +300,7 @@ public class DefaultDnsRpc implements DnsRpc {
       DnsRpc.Callback<Void> callback) {
     BatchRequest casted = (BatchRequest) batch;
     try {
-      deleteZoneRequest(zoneName).queue(casted, jsonCallback(callback));
+      deleteZoneRequest(zoneName).queue(casted, toJsonCallback(callback));
       return casted;
     } catch (IOException ex) {
       throw translate(ex);
@@ -312,14 +312,14 @@ public class DefaultDnsRpc implements DnsRpc {
       Map<Option, ?> options) {
     BatchRequest casted = (BatchRequest) batch;
     try {
-      getProjectRequest(options).queue(casted, jsonCallback(callback));
+      getProjectRequest(options).queue(casted, toJsonCallback(callback));
       return casted;
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
-  private static <T> JsonBatchCallback<T> jsonCallback(final DnsRpc.Callback<T> callback) {
+  private static <T> JsonBatchCallback<T> toJsonCallback(final DnsRpc.Callback<T> callback) {
     JsonBatchCallback<T> jsonCallback = new JsonBatchCallback<T>() {
       @Override
       public void onSuccess(T response, HttpHeaders httpHeaders) throws IOException {
