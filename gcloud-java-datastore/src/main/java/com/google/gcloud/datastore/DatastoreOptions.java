@@ -21,6 +21,7 @@ import static com.google.gcloud.datastore.Validator.validateNamespace;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
+import com.google.gcloud.RetryParams;
 import com.google.gcloud.ServiceOptions;
 import com.google.gcloud.datastore.spi.DatastoreRpc;
 import com.google.gcloud.datastore.spi.DatastoreRpcFactory;
@@ -158,6 +159,19 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
 
   public String namespace() {
     return namespace;
+  }
+
+  @Override
+  protected RetryParams defaultRetryParams() {
+    // See https://cloud.google.com/datastore/sla for backoff requirements
+    return RetryParams.builder()
+        .retryMinAttempts(RetryParams.DEFAULT_RETRY_MIN_ATTEMPTS)
+        .retryMaxAttempts(RetryParams.DEFAULT_RETRY_MAX_ATTEMPTS)
+        .initialRetryDelayMillis(1000L)
+        .maxRetryDelayMillis(32000L)
+        .retryDelayBackoffFactor(2.0)
+        .totalRetryPeriodMillis(80000L)
+        .build();
   }
 
   /**
