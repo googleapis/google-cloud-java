@@ -30,8 +30,6 @@ public interface RpcBatch {
   /**
    * Adds a call to "list zones" to the batch with the provided {@code callback} and {@code
    * options}.
-   *
-   * @return the updated batch
    */
   void addToBatchListZones(DnsRpc.Callback<ManagedZonesListResponse> callback,
       Map<DnsRpc.Option, ?> options);
@@ -39,16 +37,12 @@ public interface RpcBatch {
   /**
    * Adds a call to "create zone" to the batch with the provided {@code callback} and {@code
    * options}.
-   *
-   * @return the updated batch
    */
   void addToBatchCreateZone(ManagedZone zone, DnsRpc.Callback<ManagedZone> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "get zone" to the batch with the provided {@code callback} and {@code options}.
-   *
-   * @return the updated batch
    */
   void addToBatchGetZone(String zoneName, DnsRpc.Callback<ManagedZone> callback,
       Map<DnsRpc.Option, ?> options);
@@ -56,8 +50,6 @@ public interface RpcBatch {
   /**
    * Adds a call to "delete zone" to the batch with the provided {@code callback} and {@code
    * options}.
-   *
-   * @return the updated batch
    */
   void addToBatchGetProject(DnsRpc.Callback<Project> callback,
       Map<DnsRpc.Option, ?> options);

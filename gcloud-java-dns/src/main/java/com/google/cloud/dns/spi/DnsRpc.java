@@ -191,7 +191,7 @@ public interface DnsRpc {
       throws DnsException;
 
   /**
-   * Initializes an empty batch.
+   * Creates an empty batch.
    */
   RpcBatch createBatch();
 
