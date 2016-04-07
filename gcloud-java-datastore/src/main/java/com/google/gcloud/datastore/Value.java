@@ -35,7 +35,6 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
 
   private static final long serialVersionUID = -1899638277588872742L;
 
-
   private final transient ValueType valueType;
   private final transient boolean excludeFromIndexes;
   private final transient int meaning;
@@ -76,7 +75,6 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
     protected abstract void setValue(P from, com.google.datastore.v1beta3.Value.Builder to);
   }
 
-  @SuppressWarnings("deprecation")
   abstract static class BaseBuilder<V, P extends Value<V>, B extends BaseBuilder<V, P, B>>
       implements ValueBuilder<V, P, B> {
 
@@ -113,11 +111,13 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
       return self();
     }
 
+    @Deprecated
     @Override
     public int getMeaning() {
       return meaning;
     }
 
+    @Deprecated
     @Override
     public B meaning(int meaning) {
       this.meaning = meaning;
@@ -144,6 +144,7 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
     public abstract P build();
   }
 
+  @SuppressWarnings("deprecation")
   <P extends Value<V>, B extends BaseBuilder<V, P, B>> Value(ValueBuilder<V, P, B> builder) {
     valueType = builder.getValueType();
     excludeFromIndexes = builder.getExcludeFromIndexes();

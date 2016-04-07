@@ -24,6 +24,7 @@ import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 
+import java.util.Collections;
 import java.util.List;
 
 public class ListValueTest {
@@ -37,11 +38,13 @@ public class ListValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
-  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     ListValue value = ListValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
+    assertFalse(value.excludeFromIndexes());
+    value = ListValue.of(Collections.<Value<?>>emptyList());
+    assertEquals(Collections.<Value<?>>emptyList(), value.get());
     assertFalse(value.excludeFromIndexes());
   }
 
@@ -59,5 +62,8 @@ public class ListValueTest {
       builder.addValue(v);
     }
     assertEquals(CONTENT, builder.build().get());
+
+    builder = builder.set(Collections.<Value<?>>emptyList());
+    assertEquals(Collections.<Value<?>>emptyList(), builder.build().get());
   }
 }
