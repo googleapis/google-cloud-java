@@ -70,9 +70,6 @@ public class DatastoreFactory {
    */
   public HttpRequestFactory makeClient(DatastoreOptions options) {
     Credential credential = options.getCredential();
-    if (credential == null) {
-      logger.info("Not using any credentials");
-    }
     HttpTransport transport = options.getTransport();
     if (transport == null) {
       transport = credential == null ? new NetHttpTransport() : credential.getTransport();
