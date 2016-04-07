@@ -38,6 +38,11 @@ import com.google.gcloud.compute.Compute.AddressAggregatedListOption;
 import com.google.gcloud.compute.Compute.AddressFilter;
 import com.google.gcloud.compute.Compute.AddressListOption;
 import com.google.gcloud.compute.Compute.AddressOption;
+import com.google.gcloud.compute.Compute.DiskAggregatedListOption;
+import com.google.gcloud.compute.Compute.DiskField;
+import com.google.gcloud.compute.Compute.DiskFilter;
+import com.google.gcloud.compute.Compute.DiskListOption;
+import com.google.gcloud.compute.Compute.DiskOption;
 import com.google.gcloud.compute.Compute.DiskTypeAggregatedListOption;
 import com.google.gcloud.compute.Compute.DiskTypeFilter;
 import com.google.gcloud.compute.Compute.DiskTypeListOption;
@@ -198,6 +203,8 @@ public class ComputeImplTest {
   private static final ImageInfo IMAGE = ImageInfo.of(IMAGE_ID, DiskImageConfiguration.of(DISK_ID));
   private static final DeprecationStatus<ImageId> DEPRECATION_STATUS =
       DeprecationStatus.builder(DeprecationStatus.Status.DEPRECATED, IMAGE_ID).build();
+  private static final DiskInfo DISK =
+      DiskInfo.of(DISK_ID, StandardDiskConfiguration.of(DISK_TYPE_ID));
 
   // Empty ComputeRpc options
   private static final Map<ComputeRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -368,6 +375,28 @@ public class ComputeImplTest {
       PAGE_TOKEN, "cursor",
       MAX_RESULTS, 42L,
       FILTER, "diskSizeGb ne 500");
+
+  // Disk options
+  private static final DiskOption DISK_OPTION_FIELDS =
+      DiskOption.fields(DiskField.ID, DiskField.DESCRIPTION);
+
+  // Disk list options
+  private static final DiskFilter DISK_FILTER = DiskFilter.notEquals(DiskField.SIZE_GB, 500L);
+  private static final DiskListOption DISK_LIST_PAGE_TOKEN = DiskListOption.pageToken("cursor");
+  private static final DiskListOption DISK_LIST_PAGE_SIZE = DiskListOption.pageSize(42L);
+  private static final DiskListOption DISK_LIST_FILTER = DiskListOption.filter(DISK_FILTER);
+  private static final Map<ComputeRpc.Option, ?> DISK_LIST_OPTIONS = ImmutableMap.of(
+      PAGE_TOKEN, "cursor",
+      MAX_RESULTS, 42L,
+      FILTER, "sizeGb ne 500");
+
+  // Disk aggregated list options
+  private static final DiskAggregatedListOption DISK_AGGREGATED_LIST_PAGE_TOKEN =
+      DiskAggregatedListOption.pageToken("cursor");
+  private static final DiskAggregatedListOption DISK_AGGREGATED_LIST_PAGE_SIZE =
+      DiskAggregatedListOption.pageSize(42L);
+  private static final DiskAggregatedListOption DISK_AGGREGATED_LIST_FILTER =
+      DiskAggregatedListOption.filter(DISK_FILTER);
 
   private static final Function<Operation, com.google.api.services.compute.model.Operation>
       OPERATION_TO_PB_FUNCTION = new Function<Operation,
@@ -2374,6 +2403,257 @@ public class ComputeImplTest {
         IMAGE_LIST_FILTER);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(imageList.toArray(), Iterables.toArray(page.values(), Image.class));
+  }
+
+  @Test
+  public void testGetDisk() {
+    EasyMock.expect(computeRpcMock.getDisk(DISK_ID.zone(), DISK_ID.disk(), EMPTY_RPC_OPTIONS))
+        .andReturn(DISK.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Disk disk = compute.get(DISK_ID);
+    assertEquals(new Disk(compute, new DiskInfo.BuilderImpl(DISK)), disk);
+  }
+
+  @Test
+  public void testGetDisk_Null() {
+    EasyMock.expect(computeRpcMock.getDisk(DISK_ID.zone(), DISK_ID.disk(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.get(DISK_ID));
+  }
+
+  @Test
+  public void testGetDiskWithSelectedFields() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.getDisk(eq(DISK_ID.zone()), eq(DISK_ID.disk()),
+        capture(capturedOptions))).andReturn(DISK.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Disk disk = compute.get(DISK_ID, DISK_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(DISK_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("type"));
+    assertTrue(selector.contains("sourceImage"));
+    assertTrue(selector.contains("sourceSnapshot"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(55, selector.length());
+    assertEquals(new Disk(compute, new DiskInfo.BuilderImpl(DISK)), disk);
+  }
+
+  @Test
+  public void testDeleteDisk_Operation() {
+    EasyMock.expect(computeRpcMock.deleteDisk(DISK_ID.zone(), DISK_ID.disk(), EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertEquals(zoneOperation, compute.delete(DISK_ID));
+  }
+
+  @Test
+  public void testDeleteDiskWithSelectedFields_Operation() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.deleteDisk(eq(DISK_ID.zone()), eq(DISK_ID.disk()),
+        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.delete(DISK_ID, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(zoneOperation, operation);
+  }
+
+  @Test
+  public void testDeleteDisk_Null() {
+    EasyMock.expect(computeRpcMock.deleteDisk(DISK_ID.zone(), DISK_ID.disk(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.delete(DISK_ID));
+  }
+
+  @Test
+  public void testListDisks() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Disk> diskList = ImmutableList.of(
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+        Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listDisks(DISK_ID.zone(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Disk> page = compute.listDisks(DISK_ID.zone());
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(diskList.toArray(), Iterables.toArray(page.values(), Disk.class));
+  }
+
+  @Test
+  public void testListDisksNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Disk> diskList = ImmutableList.of(
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    ImmutableList<Disk> nextDiskList = ImmutableList.of(
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+        Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextDiskList, DiskInfo.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listDisks(DISK_ID.zone(), EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listDisks(DISK_ID.zone(), nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Disk> page = compute.listDisks(DISK_ID.zone());
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(diskList.toArray(), Iterables.toArray(page.values(), Disk.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextDiskList.toArray(), Iterables.toArray(page.values(), Disk.class));
+  }
+
+  @Test
+  public void testListEmptyDisks() {
+    compute = options.service();
+    ImmutableList<com.google.api.services.compute.model.Disk> disks = ImmutableList.of();
+    Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Disk>>of(null, disks);
+    EasyMock.expect(computeRpcMock.listDisks(DISK_ID.zone(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Disk> page = compute.listDisks(DISK_ID.zone());
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(disks.toArray(), Iterables.toArray(page.values(), Disk.class));
+  }
+
+  @Test
+  public void testListDisksWithOptions() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Disk> diskList = ImmutableList.of(
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+        Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listDisks(DISK_ID.zone(), DISK_LIST_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Disk> page = compute.listDisks(DISK_ID.zone(), DISK_LIST_PAGE_SIZE, DISK_LIST_PAGE_TOKEN,
+        DISK_LIST_FILTER);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(diskList.toArray(), Iterables.toArray(page.values(), Disk.class));
+  }
+
+  @Test
+  public void testAggregatedListDisks() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Disk> diskList = ImmutableList.of(
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+        Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listDisks(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Disk> page = compute.listDisks();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(diskList.toArray(), Iterables.toArray(page.values(), Disk.class));
+  }
+
+  @Test
+  public void testAggregatedListDisksNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Disk> diskList = ImmutableList.of(
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    ImmutableList<Disk> nextDiskList = ImmutableList.of(
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+        Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextDiskList, DiskInfo.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listDisks(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listDisks(nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Disk> page = compute.listDisks();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(diskList.toArray(), Iterables.toArray(page.values(), Disk.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextDiskList.toArray(), Iterables.toArray(page.values(), Disk.class));
+  }
+
+  @Test
+  public void testAggregatedListEmptyDisks() {
+    compute = options.service();
+    ImmutableList<com.google.api.services.compute.model.Disk> diskList = ImmutableList.of();
+    Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Disk>>of(null, diskList);
+    EasyMock.expect(computeRpcMock.listDisks(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Disk> page = compute.listDisks();
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(diskList.toArray(), Iterables.toArray(page.values(), Disk.class));
+  }
+
+  @Test
+  public void testAggregatedListDisksWithOptions() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Disk> diskList = ImmutableList.of(
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+        Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listDisks(DISK_LIST_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Disk> page = compute.listDisks(DISK_AGGREGATED_LIST_PAGE_SIZE,
+        DISK_AGGREGATED_LIST_PAGE_TOKEN, DISK_AGGREGATED_LIST_FILTER);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(diskList.toArray(), Iterables.toArray(page.values(), Disk.class));
+  }
+
+  @Test
+  public void testCreateDisk() {
+    EasyMock.expect(computeRpcMock.createDisk(DISK_ID.zone(), DISK.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    DiskId diskId = DiskId.of("zone", "disk");
+    DiskTypeId diskTypeId = DiskTypeId.of("zone", "diskType");
+    DiskInfo disk = DISK.toBuilder()
+        .diskId(diskId)
+        .configuration(StandardDiskConfiguration.of(diskTypeId))
+        .build();
+    Operation operation = compute.create(disk);
+    assertEquals(zoneOperation, operation);
+  }
+
+  @Test
+  public void testCreateDiskWithOptions() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.createDisk(eq(DISK_ID.zone()), eq(DISK.toPb()),
+        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.create(DISK, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(zoneOperation, operation);
   }
 
   @Test

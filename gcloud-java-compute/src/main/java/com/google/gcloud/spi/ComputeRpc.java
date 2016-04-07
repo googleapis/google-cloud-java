@@ -18,6 +18,7 @@ package com.google.gcloud.spi;
 
 import com.google.api.services.compute.model.Address;
 import com.google.api.services.compute.model.DeprecationStatus;
+import com.google.api.services.compute.model.Disk;
 import com.google.api.services.compute.model.DiskType;
 import com.google.api.services.compute.model.Image;
 import com.google.api.services.compute.model.License;
@@ -377,4 +378,42 @@ public interface ComputeRpc {
    */
   Operation deprecateImage(String project, String image, DeprecationStatus deprecationStatus,
       Map<Option, ?> options);
+
+  /**
+   * Returns the requested disk or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Disk getDisk(String zone, String disk, Map<Option, ?> options);
+
+  /**
+   * Creates a new disk.
+   *
+   * @return a zone operation for disk's creation
+   * @throws ComputeException upon failure
+   */
+  Operation createDisk(String zone, Disk disk, Map<Option, ?> options);
+
+  /**
+   * Lists the disks for the provided zone.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Disk>> listDisks(String zone, Map<Option, ?> options);
+
+  /**
+   * Lists disks for all zones.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Disk>> listDisks(Map<Option, ?> options);
+
+  /**
+   * Deletes the requested disk.
+   *
+   * @return a zone operation if the request was issued correctly, {@code null} if the disk was not
+   *     found
+   * @throws ComputeException upon failure
+   */
+  Operation deleteDisk(String zone, String disk, Map<Option, ?> options);
 }

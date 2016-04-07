@@ -29,8 +29,20 @@ import com.google.gcloud.compute.Address;
 import com.google.gcloud.compute.AddressId;
 import com.google.gcloud.compute.AddressInfo;
 import com.google.gcloud.compute.Compute;
+import com.google.gcloud.compute.DeprecationStatus;
+import com.google.gcloud.compute.Disk;
+import com.google.gcloud.compute.DiskConfiguration;
+import com.google.gcloud.compute.DiskId;
+import com.google.gcloud.compute.DiskImageConfiguration;
+import com.google.gcloud.compute.DiskInfo;
 import com.google.gcloud.compute.DiskType;
+import com.google.gcloud.compute.DiskTypeId;
 import com.google.gcloud.compute.GlobalAddressId;
+import com.google.gcloud.compute.Image;
+import com.google.gcloud.compute.ImageConfiguration;
+import com.google.gcloud.compute.ImageDiskConfiguration;
+import com.google.gcloud.compute.ImageId;
+import com.google.gcloud.compute.ImageInfo;
 import com.google.gcloud.compute.License;
 import com.google.gcloud.compute.LicenseId;
 import com.google.gcloud.compute.MachineType;
@@ -38,6 +50,12 @@ import com.google.gcloud.compute.Operation;
 import com.google.gcloud.compute.Region;
 import com.google.gcloud.compute.RegionAddressId;
 import com.google.gcloud.compute.RegionOperationId;
+import com.google.gcloud.compute.Snapshot;
+import com.google.gcloud.compute.SnapshotDiskConfiguration;
+import com.google.gcloud.compute.SnapshotId;
+import com.google.gcloud.compute.SnapshotInfo;
+import com.google.gcloud.compute.StandardDiskConfiguration;
+import com.google.gcloud.compute.StorageImageConfiguration;
 import com.google.gcloud.compute.Zone;
 import com.google.gcloud.compute.ZoneOperationId;
 import com.google.gcloud.compute.testing.RemoteComputeHelper;
@@ -58,6 +76,8 @@ public class ITComputeTest {
   private static final String MACHINE_TYPE = "f1-micro";
   private static final LicenseId LICENSE_ID = LicenseId.of("ubuntu-os-cloud", "ubuntu-1404-trusty");
   private static final String BASE_RESOURCE_NAME = RemoteComputeHelper.baseResourceName();
+  private static final ImageId IMAGE_ID = ImageId.of("debian-cloud", "debian-8-jessie-v20160219");
+  private static final String IMAGE_PROJECT = "debian-cloud";
 
   private static Compute compute;
 
@@ -854,5 +874,465 @@ public class ITComputeTest {
     assertEquals(2, count);
     compute.delete(firstAddressId);
     compute.delete(secondAddressId);
+  }
+
+  @Test
+  public void testCreateGetAndDeleteStandardDisk() throws InterruptedException {
+    String name = BASE_RESOURCE_NAME + "create-and-get-standard-disk";
+    DiskId diskId = DiskId.of(ZONE, name);
+    DiskInfo diskInfo =
+        DiskInfo.of(diskId, StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L));
+    Operation operation = compute.create(diskInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test get
+    Disk remoteDisk = compute.get(diskId);
+    assertNotNull(remoteDisk);
+    assertEquals(ZONE, remoteDisk.diskId().zone());
+    assertEquals(diskId.disk(), remoteDisk.diskId().disk());
+    assertNotNull(remoteDisk.creationTimestamp());
+    assertNotNull(remoteDisk.id());
+    assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
+    assertEquals(100L, (long) remoteDisk.configuration().sizeGb());
+    assertEquals("pd-ssd", remoteDisk.configuration().diskType().diskType());
+    assertNull(remoteDisk.lastAttachTimestamp());
+    assertNull(remoteDisk.lastDetachTimestamp());
+    // test get with selected fields
+    remoteDisk = compute.get(diskId, Compute.DiskOption.fields());
+    assertNotNull(remoteDisk);
+    assertEquals(ZONE, remoteDisk.diskId().zone());
+    assertEquals(diskId.disk(), remoteDisk.diskId().disk());
+    assertNull(remoteDisk.creationTimestamp());
+    assertNull(remoteDisk.id());
+    assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
+    assertNull(remoteDisk.configuration().sizeGb());
+    assertEquals("pd-ssd", remoteDisk.configuration().diskType().diskType());
+    assertEquals(DiskConfiguration.Type.STANDARD, remoteDisk.configuration().type());
+    assertNull(remoteDisk.lastAttachTimestamp());
+    assertNull(remoteDisk.lastDetachTimestamp());
+    operation = remoteDisk.delete();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.get(diskId));
+  }
+
+  @Test
+  public void testCreateGetAndDeleteImageDisk() throws InterruptedException {
+    String name = BASE_RESOURCE_NAME + "create-and-get-image-disk";
+    DiskId diskId = DiskId.of(ZONE, name);
+    DiskInfo diskInfo = DiskInfo.of(diskId, ImageDiskConfiguration.of(IMAGE_ID));
+    Operation operation = compute.create(diskInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test get
+    Disk remoteDisk = compute.get(diskId);
+    assertNotNull(remoteDisk);
+    assertEquals(ZONE, remoteDisk.diskId().zone());
+    assertEquals(diskId.disk(), remoteDisk.diskId().disk());
+    assertEquals(DiskInfo.CreationStatus.READY, remoteDisk.creationStatus());
+    assertNotNull(remoteDisk.creationTimestamp());
+    assertNotNull(remoteDisk.id());
+    assertTrue(remoteDisk.configuration() instanceof ImageDiskConfiguration);
+    assertEquals(IMAGE_ID, remoteDisk.<ImageDiskConfiguration>configuration().sourceImage());
+    assertNotNull(remoteDisk.<ImageDiskConfiguration>configuration().sourceImageId());
+    assertEquals(DiskConfiguration.Type.IMAGE, remoteDisk.configuration().type());
+    assertNotNull(remoteDisk.configuration().sizeGb());
+    assertEquals("pd-standard", remoteDisk.configuration().diskType().diskType());
+    assertNull(remoteDisk.lastAttachTimestamp());
+    assertNull(remoteDisk.lastDetachTimestamp());
+    // test get with selected fields
+    remoteDisk = compute.get(diskId, Compute.DiskOption.fields());
+    assertNotNull(remoteDisk);
+    assertEquals(ZONE, remoteDisk.diskId().zone());
+    assertEquals(diskId.disk(), remoteDisk.diskId().disk());
+    assertNull(remoteDisk.creationTimestamp());
+    assertNull(remoteDisk.id());
+    assertTrue(remoteDisk.configuration() instanceof ImageDiskConfiguration);
+    assertEquals(IMAGE_ID, remoteDisk.<ImageDiskConfiguration>configuration().sourceImage());
+    assertNull(remoteDisk.<ImageDiskConfiguration>configuration().sourceImageId());
+    assertEquals(DiskConfiguration.Type.IMAGE, remoteDisk.configuration().type());
+    assertNull(remoteDisk.configuration().sizeGb());
+    assertEquals("pd-standard", remoteDisk.configuration().diskType().diskType());
+    assertNull(remoteDisk.lastAttachTimestamp());
+    assertNull(remoteDisk.lastDetachTimestamp());
+    operation = remoteDisk.delete();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.get(diskId));
+  }
+
+  @Test
+  public void testCreateGetAndDeleteSnapshotAndSnapshotDisk() throws InterruptedException {
+    String diskName = BASE_RESOURCE_NAME + "create-and-get-snapshot-disk1";
+    String snapshotDiskName = BASE_RESOURCE_NAME + "create-and-get-snapshot-disk2";
+    DiskId diskId = DiskId.of(ZONE, diskName);
+    DiskId snapshotDiskId = DiskId.of(ZONE, snapshotDiskName);
+    String snapshotName = BASE_RESOURCE_NAME + "create-and-get-snapshot";
+    DiskInfo diskInfo =
+        DiskInfo.of(diskId, StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L));
+    Operation operation = compute.create(diskInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Disk remoteDisk = compute.get(diskId);
+    operation = remoteDisk.createSnapshot(snapshotName);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test get snapshot with selected fields
+    Snapshot snapshot = compute.getSnapshot(snapshotName,
+        Compute.SnapshotOption.fields(Compute.SnapshotField.CREATION_TIMESTAMP));
+    assertNull(snapshot.id());
+    assertNotNull(snapshot.snapshotId());
+    assertNotNull(snapshot.creationTimestamp());
+    assertNull(snapshot.description());
+    assertNull(snapshot.status());
+    assertNull(snapshot.diskSizeGb());
+    assertNull(snapshot.licenses());
+    assertNull(snapshot.sourceDisk());
+    assertNull(snapshot.sourceDiskId());
+    assertNull(snapshot.storageBytes());
+    assertNull(snapshot.storageBytesStatus());
+    SnapshotInfo.of(SnapshotId.of(snapshotName), snapshotDiskId);
+    // test get snapshot
+    snapshot = compute.getSnapshot(snapshotName);
+    assertNotNull(snapshot.id());
+    assertNotNull(snapshot.snapshotId());
+    assertNotNull(snapshot.creationTimestamp());
+    assertNotNull(snapshot.status());
+    assertEquals(100L, (long) snapshot.diskSizeGb());
+    assertEquals(diskName, snapshot.sourceDisk().disk());
+    assertNotNull(snapshot.sourceDiskId());
+    assertNotNull(snapshot.storageBytes());
+    assertNotNull(snapshot.storageBytesStatus());
+    remoteDisk.delete();
+    diskInfo =
+        DiskInfo.of(snapshotDiskId, SnapshotDiskConfiguration.of(SnapshotId.of(snapshotName)));
+    operation = compute.create(diskInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test get disk
+    remoteDisk = compute.get(snapshotDiskId);
+    assertNotNull(remoteDisk);
+    assertEquals(ZONE, remoteDisk.diskId().zone());
+    assertEquals(snapshotDiskId.disk(), remoteDisk.diskId().disk());
+    assertEquals(DiskInfo.CreationStatus.READY, remoteDisk.creationStatus());
+    assertNotNull(remoteDisk.creationTimestamp());
+    assertNotNull(remoteDisk.id());
+    assertTrue(remoteDisk.configuration() instanceof SnapshotDiskConfiguration);
+    assertEquals(DiskConfiguration.Type.SNAPSHOT, remoteDisk.configuration().type());
+    assertEquals(snapshotName,
+        remoteDisk.<SnapshotDiskConfiguration>configuration().sourceSnapshot().snapshot());
+    assertEquals(100L, (long) remoteDisk.configuration().sizeGb());
+    assertEquals("pd-standard", remoteDisk.configuration().diskType().diskType());
+    assertNotNull(remoteDisk.<SnapshotDiskConfiguration>configuration().sourceSnapshotId());
+    assertNull(remoteDisk.lastAttachTimestamp());
+    assertNull(remoteDisk.lastDetachTimestamp());
+    // test get disk with selected fields
+    remoteDisk = compute.get(snapshotDiskId, Compute.DiskOption.fields());
+    assertNotNull(remoteDisk);
+    assertEquals(ZONE, remoteDisk.diskId().zone());
+    assertEquals(snapshotDiskId.disk(), remoteDisk.diskId().disk());
+    assertNull(remoteDisk.creationStatus());
+    assertNull(remoteDisk.creationTimestamp());
+    assertNull(remoteDisk.id());
+    assertTrue(remoteDisk.configuration() instanceof SnapshotDiskConfiguration);
+    assertEquals(DiskConfiguration.Type.SNAPSHOT, remoteDisk.configuration().type());
+    assertEquals(snapshotName,
+        remoteDisk.<SnapshotDiskConfiguration>configuration().sourceSnapshot().snapshot());
+    assertNull(remoteDisk.configuration().sizeGb());
+    assertEquals("pd-standard", remoteDisk.configuration().diskType().diskType());
+    assertNull(remoteDisk.<SnapshotDiskConfiguration>configuration().sourceSnapshotId());
+    assertNull(remoteDisk.lastAttachTimestamp());
+    assertNull(remoteDisk.lastDetachTimestamp());
+    operation = remoteDisk.delete();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.get(snapshotDiskId));
+    operation = snapshot.delete();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.getSnapshot(snapshotName));
+  }
+
+  @Test
+  public void testListDisksAndSnapshots() throws InterruptedException {
+    String prefix = BASE_RESOURCE_NAME + "list-disks-and-snapshots-disk";
+    String[] diskNames = {prefix + "1", prefix + "2"};
+    DiskId firstDiskId = DiskId.of(ZONE, diskNames[0]);
+    DiskId secondDiskId = DiskId.of(ZONE, diskNames[1]);
+    DiskConfiguration configuration =
+        StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L);
+    Operation firstOperation = compute.create(DiskInfo.of(firstDiskId, configuration));
+    Operation secondOperation = compute.create(DiskInfo.of(secondDiskId, configuration));
+    while (!firstOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    while (!secondOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Set<String> diskSet = ImmutableSet.copyOf(diskNames);
+    // test list disks
+    Compute.DiskFilter diskFilter =
+        Compute.DiskFilter.equals(Compute.DiskField.NAME, prefix + "\\d");
+    Page<Disk> diskPage = compute.listDisks(ZONE, Compute.DiskListOption.filter(diskFilter));
+    Iterator<Disk> diskIterator = diskPage.iterateAll();
+    int count = 0;
+    while (diskIterator.hasNext()) {
+      Disk remoteDisk = diskIterator.next();
+      assertEquals(ZONE, remoteDisk.diskId().zone());
+      assertTrue(diskSet.contains(remoteDisk.diskId().disk()));
+      assertEquals(DiskInfo.CreationStatus.READY, remoteDisk.creationStatus());
+      assertNotNull(remoteDisk.creationTimestamp());
+      assertNotNull(remoteDisk.id());
+      assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
+      assertEquals(100L, (long) remoteDisk.configuration().sizeGb());
+      assertEquals("pd-ssd", remoteDisk.configuration().diskType().diskType());
+      assertEquals(DiskConfiguration.Type.STANDARD, remoteDisk.configuration().type());
+      assertNull(remoteDisk.lastAttachTimestamp());
+      assertNull(remoteDisk.lastDetachTimestamp());
+      count++;
+    }
+    assertEquals(2, count);
+    // test list disks with selected fields
+    count = 0;
+    diskPage = compute.listDisks(ZONE, Compute.DiskListOption.filter(diskFilter),
+        Compute.DiskListOption.fields(Compute.DiskField.STATUS));
+    diskIterator = diskPage.iterateAll();
+    while (diskIterator.hasNext()) {
+      Disk remoteDisk = diskIterator.next();
+      assertEquals(ZONE, remoteDisk.diskId().zone());
+      assertTrue(diskSet.contains(remoteDisk.diskId().disk()));
+      assertEquals(DiskInfo.CreationStatus.READY, remoteDisk.creationStatus());
+      assertNull(remoteDisk.creationTimestamp());
+      assertNull(remoteDisk.id());
+      assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
+      assertNull(remoteDisk.configuration().sizeGb());
+      assertEquals("pd-ssd", remoteDisk.configuration().diskType().diskType());
+      assertEquals(DiskConfiguration.Type.STANDARD, remoteDisk.configuration().type());
+      assertNull(remoteDisk.lastAttachTimestamp());
+      assertNull(remoteDisk.lastDetachTimestamp());
+      count++;
+    }
+    assertEquals(2, count);
+    // test snapshots
+    SnapshotId firstSnapshotId = SnapshotId.of(diskNames[0]);
+    SnapshotId secondSnapshotId = SnapshotId.of(diskNames[1]);
+    firstOperation = compute.create(SnapshotInfo.of(firstSnapshotId, firstDiskId));
+    secondOperation = compute.create(SnapshotInfo.of(secondSnapshotId, secondDiskId));
+    while (!firstOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    while (!secondOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test list snapshots
+    Compute.SnapshotFilter snapshotFilter =
+        Compute.SnapshotFilter.equals(Compute.SnapshotField.NAME, prefix + "\\d");
+    Page<Snapshot> snapshotPage =
+        compute.listSnapshots(Compute.SnapshotListOption.filter(snapshotFilter));
+    Iterator<Snapshot> snapshotIterator = snapshotPage.iterateAll();
+    count = 0;
+    while (snapshotIterator.hasNext()) {
+      Snapshot remoteSnapshot = snapshotIterator.next();
+      assertNotNull(remoteSnapshot.id());
+      assertTrue(diskSet.contains(remoteSnapshot.snapshotId().snapshot()));
+      assertNotNull(remoteSnapshot.creationTimestamp());
+      assertNotNull(remoteSnapshot.status());
+      assertEquals(100L, (long) remoteSnapshot.diskSizeGb());
+      assertTrue(diskSet.contains(remoteSnapshot.sourceDisk().disk()));
+      assertNotNull(remoteSnapshot.sourceDiskId());
+      assertNotNull(remoteSnapshot.storageBytes());
+      assertNotNull(remoteSnapshot.storageBytesStatus());
+      count++;
+    }
+    assertEquals(2, count);
+    // test list snapshots with selected fields
+    snapshotPage = compute.listSnapshots(Compute.SnapshotListOption.filter(snapshotFilter),
+        Compute.SnapshotListOption.fields(Compute.SnapshotField.CREATION_TIMESTAMP));
+    snapshotIterator = snapshotPage.iterateAll();
+    count = 0;
+    while (snapshotIterator.hasNext()) {
+      Snapshot remoteSnapshot = snapshotIterator.next();
+      assertNull(remoteSnapshot.id());
+      assertTrue(diskSet.contains(remoteSnapshot.snapshotId().snapshot()));
+      assertNotNull(remoteSnapshot.creationTimestamp());
+      assertNull(remoteSnapshot.status());
+      assertNull(remoteSnapshot.diskSizeGb());
+      assertNull(remoteSnapshot.sourceDisk());
+      assertNull(remoteSnapshot.sourceDiskId());
+      assertNull(remoteSnapshot.storageBytes());
+      assertNull(remoteSnapshot.storageBytesStatus());
+      count++;
+    }
+    assertEquals(2, count);
+    compute.delete(firstDiskId);
+    compute.delete(secondDiskId);
+    compute.deleteSnapshot(firstSnapshotId);
+    compute.deleteSnapshot(secondSnapshotId);
+  }
+
+  @Test
+  public void testAggregatedListDisks() throws InterruptedException {
+    String prefix = BASE_RESOURCE_NAME + "list-aggregated-disk";
+    String[] diskZones = {"us-central1-a", "us-east1-c"};
+    String[] diskNames = {prefix + "1", prefix + "2"};
+    DiskId firstDiskId = DiskId.of(diskZones[0], diskNames[0]);
+    DiskId secondDiskId = DiskId.of(diskZones[1], diskNames[1]);
+    DiskConfiguration configuration =
+        StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L);
+    Operation firstOperation = compute.create(DiskInfo.of(firstDiskId, configuration));
+    Operation secondOperation = compute.create(DiskInfo.of(secondDiskId, configuration));
+    while (!firstOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    while (!secondOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Set<String> zoneSet = ImmutableSet.copyOf(diskZones);
+    Set<String> diskSet = ImmutableSet.copyOf(diskNames);
+    Compute.DiskFilter diskFilter =
+        Compute.DiskFilter.equals(Compute.DiskField.NAME, prefix + "\\d");
+    Page<Disk> diskPage = compute.listDisks(Compute.DiskAggregatedListOption.filter(diskFilter));
+    Iterator<Disk> diskIterator = diskPage.iterateAll();
+    int count = 0;
+    while (diskIterator.hasNext()) {
+      Disk remoteDisk = diskIterator.next();
+      assertTrue(zoneSet.contains(remoteDisk.diskId().zone()));
+      assertTrue(diskSet.contains(remoteDisk.diskId().disk()));
+      assertEquals(DiskInfo.CreationStatus.READY, remoteDisk.creationStatus());
+      assertNotNull(remoteDisk.creationTimestamp());
+      assertNotNull(remoteDisk.id());
+      assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
+      assertEquals(100L, (long) remoteDisk.configuration().sizeGb());
+      assertEquals("pd-ssd", remoteDisk.configuration().diskType().diskType());
+      assertEquals(DiskConfiguration.Type.STANDARD, remoteDisk.configuration().type());
+      count++;
+    }
+    assertEquals(2, count);
+    compute.delete(firstDiskId);
+    compute.delete(secondDiskId);
+  }
+
+  @Test
+  public void testCreateGetAndDeprecateImage() throws InterruptedException {
+    String diskName = BASE_RESOURCE_NAME + "create-and-get-image-disk";
+    String imageName = BASE_RESOURCE_NAME + "create-and-get-image";
+    DiskId diskId = DiskId.of(ZONE, diskName);
+    ImageId imageId = ImageId.of(imageName);
+    DiskInfo diskInfo =
+        DiskInfo.of(diskId, StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L));
+    Operation operation = compute.create(diskInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Disk remoteDisk = compute.get(diskId);
+    ImageInfo imageInfo = ImageInfo.of(imageId, DiskImageConfiguration.of(diskId));
+    operation = compute.create(imageInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test get image with selected fields
+    Image image = compute.get(imageId,
+        Compute.ImageOption.fields(Compute.ImageField.CREATION_TIMESTAMP));
+    assertNull(image.id());
+    assertNotNull(image.imageId());
+    assertNotNull(image.creationTimestamp());
+    assertNull(image.description());
+    assertNotNull(image.configuration());
+    assertEquals(ImageConfiguration.Type.DISK, image.configuration().type());
+    assertTrue(image.configuration() instanceof DiskImageConfiguration);
+    assertEquals(diskName, image.<DiskImageConfiguration>configuration().sourceDisk().disk());
+    assertNull(image.status());
+    assertNull(image.diskSizeGb());
+    assertNull(image.licenses());
+    assertNull(image.deprecationStatus());
+    // test get image
+    image = compute.get(imageId);
+    assertNotNull(image.id());
+    assertNotNull(image.imageId());
+    assertNotNull(image.creationTimestamp());
+    assertNotNull(image.configuration());
+    assertEquals(ImageConfiguration.Type.DISK, image.configuration().type());
+    assertTrue(image.configuration() instanceof DiskImageConfiguration);
+    assertEquals(diskName, image.<DiskImageConfiguration>configuration().sourceDisk().disk());
+    assertEquals(100L, (long) image.diskSizeGb());
+    assertNotNull(image.status());
+    assertNull(image.deprecationStatus());
+    // test deprecate image
+    DeprecationStatus<ImageId> deprecationStatus =
+        DeprecationStatus.builder(DeprecationStatus.Status.DEPRECATED, imageId)
+            .deprecated(System.currentTimeMillis())
+            .build();
+    operation = image.deprecate(deprecationStatus);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    image = compute.get(imageId);
+    assertEquals(deprecationStatus, image.deprecationStatus());
+    remoteDisk.delete();
+    operation = image.delete();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.get(imageId));
+  }
+
+  @Test
+  public void testListImages() {
+    Page<Image> imagePage = compute.listImages(IMAGE_PROJECT);
+    Iterator<Image> imageIterator = imagePage.iterateAll();
+    while (imageIterator.hasNext()) {
+      Image image = imageIterator.next();
+      assertNotNull(image.id());
+      assertNotNull(image.imageId());
+      assertNotNull(image.creationTimestamp());
+      assertNotNull(image.configuration());
+      assertNotNull(image.status());
+      assertNotNull(image.diskSizeGb());
+    }
+  }
+
+  @Test
+  public void testListImagesWithSelectedFields() {
+    Page<Image> imagePage =
+        compute.listImages(IMAGE_PROJECT, Compute.ImageListOption.fields(Compute.ImageField.ID));
+    Iterator<Image> imageIterator = imagePage.iterateAll();
+    while (imageIterator.hasNext()) {
+      Image image = imageIterator.next();
+      assertNotNull(image.id());
+      assertNotNull(image.imageId());
+      assertNull(image.creationTimestamp());
+      assertNotNull(image.configuration());
+      assertNull(image.status());
+      assertNull(image.diskSizeGb());
+      assertNull(image.licenses());
+      assertNull(image.deprecationStatus());
+    }
+  }
+
+  @Test
+  public void testListImagesWithFilter() {
+    Page<Image> imagePage = compute.listImages(IMAGE_PROJECT, Compute.ImageListOption.filter(
+        Compute.ImageFilter.equals(Compute.ImageField.ARCHIVE_SIZE_BYTES, 365056004L)));
+    Iterator<Image> imageIterator = imagePage.iterateAll();
+    while (imageIterator.hasNext()) {
+      Image image = imageIterator.next();
+      assertNotNull(image.id());
+      assertNotNull(image.imageId());
+      assertNotNull(image.creationTimestamp());
+      assertNotNull(image.configuration());
+      assertNotNull(image.status());
+      assertNotNull(image.diskSizeGb());
+      assertEquals(365056004L,
+          (long) image.<StorageImageConfiguration>configuration().archiveSizeBytes());
+    }
   }
 }

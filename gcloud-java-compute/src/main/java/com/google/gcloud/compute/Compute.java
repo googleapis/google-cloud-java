@@ -918,6 +918,54 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Class for filtering disk lists.
+   */
+  class DiskFilter extends ListFilter {
+
+    private static final long serialVersionUID = 5856790665396877913L;
+
+    private DiskFilter(DiskField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static DiskFilter equals(DiskField field, String value) {
+      return new DiskFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static DiskFilter notEquals(DiskField field, String value) {
+      return new DiskFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+
+    /**
+     * Returns an equals filter for the given field and long value.
+     */
+    public static DiskFilter equals(DiskField field, long value) {
+      return new DiskFilter(checkNotNull(field), ComparisonOperator.EQ, value);
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and long value.
+     */
+    public static DiskFilter notEquals(DiskField field, long value) {
+      return new DiskFilter(checkNotNull(field), ComparisonOperator.NE, value);
+    }
+  }
+
+  /**
    * Class for specifying disk type get options.
    */
   class DiskTypeOption extends Option {
@@ -1586,6 +1634,110 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Class for specifying disk get options.
+   */
+  class DiskOption extends Option {
+
+    private static final long serialVersionUID = -4354796876226661667L;
+
+    private DiskOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the disk's fields to be returned by the RPC call. If this option
+     * is not provided, all disk's fields are returned. {@code DiskOption.fields} can be used to
+     * specify only the fields of interest. {@link Disk#diskId()},
+     * {@link DiskConfiguration#diskType()} and {@link SnapshotDiskConfiguration#sourceSnapshot()}
+     * or {@link ImageDiskConfiguration#sourceImage()} are always returned, even if not specified.
+     */
+    public static DiskOption fields(DiskField... fields) {
+      return new DiskOption(ComputeRpc.Option.FIELDS, DiskField.selector(fields));
+    }
+  }
+
+  /**
+   * Class for specifying disk list options.
+   */
+  class DiskListOption extends Option {
+
+    private static final long serialVersionUID = -5148497888688645905L;
+
+    private DiskListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the disks being listed.
+     */
+    public static DiskListOption filter(DiskFilter filter) {
+      return new DiskListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of disks returned per page. {@code pageSize}
+     * must be between 0 and 500 (inclusive). If not specified 500 is used.
+     */
+    public static DiskListOption pageSize(long pageSize) {
+      return new DiskListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing disks.
+     */
+    public static DiskListOption pageToken(String pageToken) {
+      return new DiskListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * Returns an option to specify the disk's fields to be returned by the RPC call. If this option
+     * is not provided, all disk's fields are returned. {@code DiskListOption.fields} can be used to
+     * specify only the fields of interest. {@link Disk#diskId()},
+     * {@link DiskConfiguration#diskType()} and {@link SnapshotDiskConfiguration#sourceSnapshot()}
+     * or {@link ImageDiskConfiguration#sourceImage()} are always returned, even if not specified.
+     */
+    public static DiskListOption fields(DiskField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(DiskField.selector(fields)).append("),nextPageToken");
+      return new DiskListOption(ComputeRpc.Option.FIELDS, builder.toString());
+    }
+  }
+
+  /**
+   * Class for specifying disk aggregated list options.
+   */
+  class DiskAggregatedListOption extends Option {
+
+    private static final long serialVersionUID = 1163784797870242766L;
+
+    private DiskAggregatedListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the disks being listed.
+     */
+    public static DiskAggregatedListOption filter(DiskFilter filter) {
+      return new DiskAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of disks returned per page. {@code pageSize}
+     * must be between 0 and 500 (inclusive). If not specified 500 is used.
+     */
+    public static DiskAggregatedListOption pageSize(long pageSize) {
+      return new DiskAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing disks.
+     */
+    public static DiskAggregatedListOption pageToken(String pageToken) {
+      return new DiskAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+  }
+
+  /**
    * Returns the requested disk type or {@code null} if not found.
    *
    * @throws ComputeException upon failure
@@ -1868,4 +2020,42 @@ public interface Compute extends Service<ComputeOptions> {
    */
   Operation deprecate(ImageId image, DeprecationStatus<ImageId> deprecationStatus,
       OperationOption... options);
+
+  /**
+   * Returns the requested disk or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Disk get(DiskId diskId, DiskOption... options);
+
+  /**
+   * Creates a new disk.
+   *
+   * @return a zone operation for disk's creation
+   * @throws ComputeException upon failure
+   */
+  Operation create(DiskInfo disk, OperationOption... options);
+
+  /**
+   * Lists disks for the provided zone.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Disk> listDisks(String zone, DiskListOption... options);
+
+  /**
+   * Lists disks for all zones.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Disk> listDisks(DiskAggregatedListOption... options);
+
+  /**
+   * Deletes the requested disk.
+   *
+   * @return a zone operation if the request was issued correctly, {@code null} if the disk was not
+   *     found
+   * @throws ComputeException upon failure
+   */
+  Operation delete(DiskId disk, OperationOption... options);
 }
