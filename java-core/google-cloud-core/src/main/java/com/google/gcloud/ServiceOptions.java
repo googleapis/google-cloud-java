@@ -333,7 +333,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     authCredentials =
         builder.authCredentials != null ? builder.authCredentials : defaultAuthCredentials();
     authCredentialsState = authCredentials != null ? authCredentials.capture() : null;
-    retryParams = firstNonNull(builder.retryParams, RetryParams.defaultInstance());
+    retryParams = firstNonNull(builder.retryParams, defaultRetryParams());
     serviceFactory = firstNonNull(builder.serviceFactory,
         getFromServiceLoader(serviceFactoryClass, defaultServiceFactory()));
     serviceFactoryClassName = serviceFactory.getClass().getName();
@@ -653,6 +653,15 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   protected abstract Set<String> scopes();
 
   public abstract <B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> B toBuilder();
+
+  /**
+   * Some services may have different backoff requirements listed in their SLAs. Be sure to override
+   * this method in options subclasses when the service's backoff requirement differs from the
+   * default parameters listed in {@link RetryParams}.
+   */
+  protected RetryParams defaultRetryParams() {
+    return RetryParams.defaultInstance();
+  }
 
   private static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
