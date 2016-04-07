@@ -26,7 +26,7 @@ As mentioned before, there is an optional version argument.  By default, the scr
 
 6. Create and merge in another PR to reflect the updated project version.  For an example of what this PR should look like, see [#227](https://github.com/GoogleCloudPlatform/gcloud-java/pull/227).
 
-7. Be sure to update App Engine documentation and [java-docs-samples](https://github.com/GoogleCloudPlatform/java-docs-samples) code as necessary.  See directions [here](https://docs.google.com/a/google.com/document/d/1SS3xNn2v0qW7EadGUPBUAPIQAH5VY6WSFmT17ZjjUVE/edit?usp=sharing).
+7. Be sure to update Google Cloud Platform docs, [java-docs-samples](https://github.com/GoogleCloudPlatform/java-docs-samples) code/docs, and [getting-started-java](https://github.com/GoogleCloudPlatform/getting-started-java) code/docs.  See directions [here](https://docs.google.com/a/google.com/document/d/1SS3xNn2v0qW7EadGUPBUAPIQAH5VY6WSFmT17ZjjUVE/).
 
 ### To push a snapshot version
 
