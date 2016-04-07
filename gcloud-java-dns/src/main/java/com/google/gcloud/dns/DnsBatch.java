@@ -217,7 +217,7 @@ public class DnsBatch {
 
   private RpcBatch.Callback<ManagedZonesListResponse> createListZonesCallback(
       final DnsBatchResult result, final Map<DnsRpc.Option, ?> optionMap) {
-    RpcBatch.Callback callback = new RpcBatch.Callback<ManagedZonesListResponse>() {
+    return new RpcBatch.Callback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse response) {
         List<ManagedZone> zones = response.getManagedZones();
@@ -233,11 +233,10 @@ public class DnsBatch {
         result.error(new DnsException(googleJsonError));
       }
     };
-    return callback;
   }
 
   private RpcBatch.Callback<Void> createDeleteZoneCallback(final DnsBatchResult result) {
-    RpcBatch.Callback callback = new RpcBatch.Callback<Void>() {
+    return new RpcBatch.Callback<Void>() {
       @Override
       public void onSuccess(Void response) {
         result.success(true);
@@ -253,7 +252,6 @@ public class DnsBatch {
         }
       }
     };
-    return callback;
   }
 
   /**
@@ -261,7 +259,7 @@ public class DnsBatch {
    */
   private RpcBatch.Callback<ManagedZone> createZoneCallback(final DnsOptions serviceOptions,
       final DnsBatchResult result) {
-    RpcBatch.Callback callback = new RpcBatch.Callback<ManagedZone>() {
+    return new RpcBatch.Callback<ManagedZone>() {
       @Override
       public void onSuccess(ManagedZone response) {
         result.success(response == null ? null : Zone.fromPb(serviceOptions.service(), response));
@@ -272,11 +270,10 @@ public class DnsBatch {
         result.error(new DnsException(googleJsonError));
       }
     };
-    return callback;
   }
 
   private RpcBatch.Callback<Project> createProjectCallback(final DnsBatchResult result) {
-    RpcBatch.Callback callback = new RpcBatch.Callback<Project>() {
+    return new RpcBatch.Callback<Project>() {
       @Override
       public void onSuccess(Project response) {
         result.success(response == null ? null : ProjectInfo.fromPb(response));
@@ -287,13 +284,12 @@ public class DnsBatch {
         result.error(new DnsException(googleJsonError));
       }
     };
-    return callback;
   }
 
   private RpcBatch.Callback<ResourceRecordSetsListResponse> createListRecordSetsCallback(
       final String zoneName, final DnsBatchResult<Page<RecordSet>> result,
       final Map<DnsRpc.Option, ?> optionMap) {
-    RpcBatch.Callback callback = new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
+    return new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
       @Override
       public void onSuccess(ResourceRecordSetsListResponse response) {
         List<ResourceRecordSet> recordSets = response.getRrsets();
@@ -310,12 +306,11 @@ public class DnsBatch {
         result.error(new DnsException(googleJsonError));
       }
     };
-    return callback;
   }
 
   private RpcBatch.Callback<ChangesListResponse> createListChangeRequestsCallback(
       final String zoneName, final DnsBatchResult result, final Map<DnsRpc.Option, ?> optionMap) {
-    RpcBatch.Callback callback = new RpcBatch.Callback<ChangesListResponse>() {
+    return new RpcBatch.Callback<ChangesListResponse>() {
       @Override
       public void onSuccess(ChangesListResponse response) {
         List<Change> changes = response.getChanges();
@@ -333,7 +328,6 @@ public class DnsBatch {
         result.error(new DnsException(googleJsonError));
       }
     };
-    return callback;
   }
 
   /**
@@ -341,7 +335,7 @@ public class DnsBatch {
    */
   private RpcBatch.Callback<Change> createChangeRequestCallback(final String zoneName,
       final DnsBatchResult result) {
-    RpcBatch.Callback callback = new RpcBatch.Callback<Change>() {
+    return new RpcBatch.Callback<Change>() {
       @Override
       public void onSuccess(Change response) {
         result.success(response == null ? null : ChangeRequest.fromPb(options.service(),
@@ -353,6 +347,5 @@ public class DnsBatch {
         result.error(new DnsException(googleJsonError));
       }
     };
-    return callback;
   }
 }

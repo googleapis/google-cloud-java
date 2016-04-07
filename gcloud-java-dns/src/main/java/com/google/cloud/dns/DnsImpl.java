@@ -129,12 +129,6 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       final Map<DnsRpc.Option, ?> optionsMap) {
     // define transformation function
     // this differs from the other list operations since zone is functional and requires dns service
-    Function<ManagedZone, Zone> pbToZoneFunction = new Function<ManagedZone, Zone>() {
-      @Override
-      public Zone apply(ManagedZone zonePb) {
-        return Zone.fromPb(serviceOptions.service(), zonePb);
-      }
-    };
     try {
       // get a list of managed zones
       final DnsRpc rpc = serviceOptions.rpc();

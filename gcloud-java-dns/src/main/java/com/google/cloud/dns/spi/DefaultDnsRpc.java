@@ -154,7 +154,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     private <T> JsonBatchCallback<T> toJsonCallback(final RpcBatch.Callback<T> callback) {
-      JsonBatchCallback<T> jsonCallback = new JsonBatchCallback<T>() {
+      return new JsonBatchCallback<T>() {
         @Override
         public void onSuccess(T response, HttpHeaders httpHeaders) throws IOException {
           callback.onSuccess(response);
@@ -166,7 +166,6 @@ public class DefaultDnsRpc implements DnsRpc {
           callback.onFailure(googleJsonError);
         }
       };
-      return jsonCallback;
     }
 
     @Override

@@ -23,7 +23,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.Page;
 import com.google.cloud.dns.ChangeRequest;
 import com.google.cloud.dns.ChangeRequestInfo;
@@ -87,7 +86,7 @@ public class ITDnsTest {
       .build();
   private static final List<String> ZONE_NAMES = ImmutableList.of(ZONE_NAME1,
       ZONE_NAME_EMPTY_DESCRIPTION);
-  
+
   @Rule
   public Timeout globalTimeout = Timeout.seconds(300);
 
@@ -974,7 +973,7 @@ public class ITDnsTest {
       assertTrue(batchResult.submitted());
       Iterator<Zone> iteratorBatch = batchResult.get().iterateAll();
       Iterator<Zone> iteratorList = DNS.listZones().iterateAll();
-      while(iteratorBatch.hasNext()) {
+      while (iteratorBatch.hasNext()) {
         assertEquals(iteratorList.next(), iteratorBatch.next());
       }
     } finally {
@@ -983,5 +982,5 @@ public class ITDnsTest {
     }
   }
 
-  // todo(mderka) implement tests for other batch calls
+  // todo(mderka) implement tests for other batch calls, issue #874
 }

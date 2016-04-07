@@ -28,39 +28,39 @@ import java.io.IOException;
 
 public class DnsBatchResultTest {
 
-  private DnsBatchResult<Boolean> RESULT;
+  private DnsBatchResult<Boolean> result;
 
   @Before
   public void setUp() {
-    RESULT = new DnsBatchResult<>();
+    result = new DnsBatchResult<>();
   }
 
   @Test
   public void testSuccess() {
-    assertFalse(RESULT.submitted());
+    assertFalse(result.submitted());
     try {
-      RESULT.get();
+      result.get();
       fail("This was not submitted yet.");
     } catch (IllegalStateException ex) {
       // expected
     }
-    RESULT.success(true);
-    assertTrue(RESULT.get());
+    result.success(true);
+    assertTrue(result.get());
   }
 
   @Test
   public void testError() {
-    assertFalse(RESULT.submitted());
+    assertFalse(result.submitted());
     try {
-      RESULT.get();
+      result.get();
       fail("This was not submitted yet.");
     } catch (IllegalStateException ex) {
       // expected
     }
     DnsException ex = new DnsException(new IOException("some error"));
-    RESULT.error(ex);
+    result.error(ex);
     try {
-      RESULT.get();
+      result.get();
       fail("This is a failed operation and should have thrown a DnsException.");
     } catch (DnsException real) {
       assertSame(ex, real);

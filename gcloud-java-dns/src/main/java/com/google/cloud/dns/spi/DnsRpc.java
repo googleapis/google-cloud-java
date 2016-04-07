@@ -16,10 +16,8 @@
 
 package com.google.cloud.dns.spi;
 
-import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
-import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.common.collect.ImmutableList;
