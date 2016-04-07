@@ -30,6 +30,7 @@ import com.google.datastore.v1beta3.RunQueryResponse;
 import com.google.rpc.Code;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Provides access to Cloud Datastore.
@@ -63,8 +64,8 @@ public class Datastore {
   }
 
   public AllocateIdsResponse allocateIds(AllocateIdsRequest request) throws DatastoreException {
-    try {
-      return AllocateIdsResponse.parseFrom(remoteRpc.call("allocateIds", request));
+    try (InputStream is = remoteRpc.call("allocateIds", request)) {
+      return AllocateIdsResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("allocateIds", exception);
     }
@@ -72,40 +73,40 @@ public class Datastore {
 
   public BeginTransactionResponse beginTransaction(BeginTransactionRequest request)
       throws DatastoreException {
-    try {
-      return BeginTransactionResponse.parseFrom(remoteRpc.call("beginTransaction", request));
+    try (InputStream is = remoteRpc.call("beginTransaction", request)) {
+      return BeginTransactionResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("beginTransaction", exception);
     }
   }
 
   public CommitResponse commit(CommitRequest request) throws DatastoreException {
-    try {
-      return CommitResponse.parseFrom(remoteRpc.call("commit", request));
+    try (InputStream is = remoteRpc.call("commit", request)) {
+      return CommitResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("commit", exception);
     }
   }
 
   public LookupResponse lookup(LookupRequest request) throws DatastoreException {
-    try {
-      return LookupResponse.parseFrom(remoteRpc.call("lookup", request));
+    try (InputStream is = remoteRpc.call("lookup", request)) {
+      return LookupResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("lookup", exception);
     }
   }
 
   public RollbackResponse rollback(RollbackRequest request) throws DatastoreException {
-    try {
-      return RollbackResponse.parseFrom(remoteRpc.call("rollback", request));
+    try (InputStream is = remoteRpc.call("rollback", request)) {
+      return RollbackResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("rollback", exception);
     }
   }
 
   public RunQueryResponse runQuery(RunQueryRequest request) throws DatastoreException {
-    try {
-      return RunQueryResponse.parseFrom(remoteRpc.call("runQuery", request));
+    try (InputStream is = remoteRpc.call("runQuery", request)) {
+      return RunQueryResponse.parseFrom(is);
     } catch (IOException exception) {
       throw invalidResponseException("runQuery", exception);
     }
