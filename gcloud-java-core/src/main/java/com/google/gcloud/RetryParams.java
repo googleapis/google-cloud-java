@@ -48,12 +48,16 @@ public final class RetryParams implements Serializable {
 
   private static final long serialVersionUID = -8492751576749007700L;
 
+  /**
+   * Note that App Engine Standard Environment front-end modules have a 60 second deadline for HTTP
+   * requests. For that reason, we set the default total retry period to less than 60 seconds.
+   */
+  public static final long DEFAULT_TOTAL_RETRY_PERIOD_MILLIS = 50_000L;
   public static final int DEFAULT_RETRY_MIN_ATTEMPTS = 3;
   public static final int DEFAULT_RETRY_MAX_ATTEMPTS = 6;
-  public static final long DEFAULT_INITIAL_RETRY_DELAY_MILLIS = 250L;
-  public static final long DEFAULT_MAX_RETRY_DELAY_MILLIS = 10_000L;
+  public static final long DEFAULT_INITIAL_RETRY_DELAY_MILLIS = 1000L;
+  public static final long DEFAULT_MAX_RETRY_DELAY_MILLIS = 32_000L;
   public static final double DEFAULT_RETRY_DELAY_BACKOFF_FACTOR = 2.0;
-  public static final long DEFAULT_TOTAL_RETRY_PERIOD_MILLIS = 50_000L;
 
   private final int retryMinAttempts;
   private final int retryMaxAttempts;
@@ -62,6 +66,9 @@ public final class RetryParams implements Serializable {
   private final double retryDelayBackoffFactor;
   private final long totalRetryPeriodMillis;
 
+  // Some services may have different backoff requirements listed in their SLAs. Be sure to override
+  // ServiceOptions.defaultRetryParams() in options subclasses when the service's backoff
+  // requirement differs from the default parameters used here.
   private static final RetryParams DEFAULT_INSTANCE = new RetryParams(new Builder());
   private static final RetryParams NO_RETRIES =
       builder().retryMaxAttempts(1).retryMinAttempts(1).build();
@@ -156,7 +163,9 @@ public final class RetryParams implements Serializable {
     }
 
     /**
-     * Sets totalRetryPeriodMillis.
+     * Sets totalRetryPeriodMillis. Note that App Engine Standard Environment front-end modules have
+     * a 60 second deadline for HTTP requests. For that reason, you should set the total retry
+     * period to under 60 seconds if you are using it on an App Engine front-end module.
      *
      * @param totalRetryPeriodMillis the totalRetryPeriodMillis to set
      * @return the Builder for chaining
@@ -294,5 +303,9 @@ public final class RetryParams implements Serializable {
 
   public static Builder builder() {
     return new Builder();
+  }
+
+  public Builder toBuilder() {
+    return new Builder(this);
   }
 }
