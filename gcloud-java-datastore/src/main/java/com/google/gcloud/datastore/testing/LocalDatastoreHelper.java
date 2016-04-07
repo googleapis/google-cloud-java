@@ -75,8 +75,9 @@ public class LocalDatastoreHelper {
   private static final String GCLOUD = "gcloud";
   private static final Path INSTALLED_GCD_PATH;
   private static final String GCD_VERSION_PREFIX = "gcd-emulator ";
+  private static final String SYSTEM_PROPERTY_PREFIX =
+      "com.google.gcloud.datastore.DatastoreOptions.skipNormalization.";
   private static final String PROJECT_ID_PREFIX = "test-id-";
-  private static final String TEST_INDICATOR = "gcloud-java test project";
 
   private final String projectId;
   private Path gcdPath;
@@ -520,7 +521,7 @@ public class LocalDatastoreHelper {
     if (gcdPath != null) {
       deleteRecurse(gcdPath);
     }
-    System.clearProperty(projectId());
+    System.clearProperty(SYSTEM_PROPERTY_PREFIX + projectId());
   }
 
   private static void deleteRecurse(Path path) throws IOException {
@@ -600,7 +601,7 @@ public class LocalDatastoreHelper {
    */
   public static LocalDatastoreHelper create(double consistency) {
     LocalDatastoreHelper helper = new LocalDatastoreHelper(consistency);
-    System.setProperty(helper.projectId(), TEST_INDICATOR);
+    System.setProperty(SYSTEM_PROPERTY_PREFIX + helper.projectId(), "true");
     return helper;
   }
 
