@@ -86,22 +86,6 @@ public interface DnsRpc {
   }
 
   /**
-   * An interface for batch callbacks.
-   */
-  interface Callback<T> {
-
-    /**
-     * This method will be called upon success of the batch operation.
-     */
-    void onSuccess(T response);
-
-    /**
-     * This method will be called upon failure of the batch operation.
-     */
-    void onFailure(GoogleJsonError googleJsonError);
-  }
-
-  /**
    * Creates a new zone.
    *
    * @param zone a zone to be created

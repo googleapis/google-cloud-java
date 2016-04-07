@@ -16,9 +16,13 @@
 
 package com.google.gcloud.dns.spi;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.services.dns.model.Change;
+import com.google.api.services.dns.model.ChangesListResponse;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
+import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
 
 import java.util.Map;
 
@@ -28,37 +32,79 @@ import java.util.Map;
 public interface RpcBatch {
 
   /**
+   * An interface for batch callbacks.
+   */
+  interface Callback<T> {
+
+    /**
+     * This method will be called upon success of the batch operation.
+     */
+    void onSuccess(T response);
+
+    /**
+     * This method will be called upon failure of the batch operation.
+     */
+    void onFailure(GoogleJsonError googleJsonError);
+  }
+
+  /**
    * Adds a call to "list zones" to the batch with the provided {@code callback} and {@code
    * options}.
    */
-  void addListZones(DnsRpc.Callback<ManagedZonesListResponse> callback,
-      Map<DnsRpc.Option, ?> options);
+  void addListZones(Callback<ManagedZonesListResponse> callback, Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "create zone" to the batch with the provided {@code callback} and {@code
    * options}.
    */
-  void addCreateZone(ManagedZone zone, DnsRpc.Callback<ManagedZone> callback,
+  void addCreateZone(ManagedZone zone, Callback<ManagedZone> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "get zone" to the batch with the provided {@code callback} and {@code options}.
    */
-  void addGetZone(String zoneName, DnsRpc.Callback<ManagedZone> callback,
-      Map<DnsRpc.Option, ?> options);
+  void addGetZone(String zoneName, Callback<ManagedZone> callback, Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "delete zone" to the batch with the provided {@code callback} and {@code
    * options}.
    */
-  void addGetProject(DnsRpc.Callback<Project> callback,
-      Map<DnsRpc.Option, ?> options);
+  void addGetProject(Callback<Project> callback, Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "get project" to the batch with the provided {@code callback} and {@code
    * options}.
    */
-  void addDeleteZone(String zoneName, DnsRpc.Callback<Void> callback);
+  void addDeleteZone(String zoneName, Callback<Void> callback);
+
+  /**
+   * Adds a call to "list record sets" to the batch with the provided {@code callback} and {@code
+   * options}.
+   */
+  void addListRecordSets(String zoneName, Callback<ResourceRecordSetsListResponse> callback,
+      Map<DnsRpc.Option, ?> options);
+
+  /**
+   * Adds a call to "list change requests" to the batch with the provided {@code callback} and
+   * {@code options}.
+   */
+  void addListChangeRequests(String zoneName, Callback<ChangesListResponse> callback,
+      Map<DnsRpc.Option, ?> options);
+
+  /**
+   * Adds a call to "get change request" to the batch with the provided {@code callback} and
+   * {@code options}.
+   */
+  void addGetChangeRequest(String zoneName, String changeRequestId, Callback<Change> callback,
+      Map<DnsRpc.Option, ?> options);
+
+  /**
+   * Adds a call to "apply change request" to the batch with the provided {@code callback} and
+   * {@code options}.
+   */
+  void addApplyChangeRequest(String zoneName, Change change, Callback<Change> callback,
+      Map<DnsRpc.Option, ?> options);
+
 
   /**
    * Submits a batch of requests for processing using a single HTTP request to Cloud DNS.

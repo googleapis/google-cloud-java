@@ -64,7 +64,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     @Override
-    public void addListZones(DnsRpc.Callback<ManagedZonesListResponse> callback,
+    public void addListZones(RpcBatch.Callback<ManagedZonesListResponse> callback,
         Map<DnsRpc.Option, ?> options) {
       try {
         zoneListCall(options).queue(batch, toJsonCallback(callback));
@@ -74,7 +74,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     @Override
-    public void addCreateZone(ManagedZone zone, DnsRpc.Callback<ManagedZone> callback,
+    public void addCreateZone(ManagedZone zone, RpcBatch.Callback<ManagedZone> callback,
         Map<Option, ?> options) {
       try {
         createZoneCall(zone, options).queue(batch, toJsonCallback(callback));
@@ -84,7 +84,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     @Override
-    public void addGetZone(String zoneName, DnsRpc.Callback<ManagedZone> callback,
+    public void addGetZone(String zoneName, RpcBatch.Callback<ManagedZone> callback,
         Map<Option, ?> options) {
       try {
         getZoneCall(zoneName, options).queue(batch, toJsonCallback(callback));
@@ -94,7 +94,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     @Override
-    public void addDeleteZone(String zoneName, DnsRpc.Callback<Void> callback) {
+    public void addDeleteZone(String zoneName, RpcBatch.Callback<Void> callback) {
       try {
         deleteZoneCall(zoneName).queue(batch, toJsonCallback(callback));
       } catch (IOException ex) {
@@ -103,7 +103,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     @Override
-    public void addGetProject(DnsRpc.Callback<Project> callback,
+    public void addGetProject(RpcBatch.Callback<Project> callback,
         Map<Option, ?> options) {
       try {
         getProjectCall(options).queue(batch, toJsonCallback(callback));
@@ -112,7 +112,48 @@ public class DefaultDnsRpc implements DnsRpc {
       }
     }
 
-    private <T> JsonBatchCallback<T> toJsonCallback(final DnsRpc.Callback<T> callback) {
+    @Override
+    public void addListRecordSets(String zoneName,
+        RpcBatch.Callback<ResourceRecordSetsListResponse> callback, Map<DnsRpc.Option, ?> options) {
+      try {
+        listRecordSetsCall(zoneName, options).queue(batch, toJsonCallback(callback));
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    @Override
+    public void addListChangeRequests(String zoneName,
+        RpcBatch.Callback<ChangesListResponse> callback, Map<DnsRpc.Option, ?> options) {
+      try {
+        listChangeRequestsCall(zoneName, options).queue(batch, toJsonCallback(callback));
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    @Override
+    public void addGetChangeRequest(String zoneName, String changeRequestId,
+        RpcBatch.Callback<Change> callback, Map<DnsRpc.Option, ?> options) {
+      try {
+        getChangeRequestCall(zoneName, changeRequestId, options).queue(batch,
+            toJsonCallback(callback));
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    @Override
+    public void addApplyChangeRequest(String zoneName, Change change,
+        RpcBatch.Callback<Change> callback, Map<DnsRpc.Option, ?> options) {
+      try {
+        applyChangeRequestCall(zoneName, change, options).queue(batch, toJsonCallback(callback));
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    private <T> JsonBatchCallback<T> toJsonCallback(final RpcBatch.Callback<T> callback) {
       JsonBatchCallback<T> jsonCallback = new JsonBatchCallback<T>() {
         @Override
         public void onSuccess(T response, HttpHeaders httpHeaders) throws IOException {
@@ -234,14 +275,14 @@ public class DefaultDnsRpc implements DnsRpc {
       throws DnsException {
 
     try {
-      ResourceRecordSetsListResponse response = listDnsRecordsCall(zoneName, options).execute();
+      ResourceRecordSetsListResponse response = listRecordSetsCall(zoneName, options).execute();
       return of(response.getNextPageToken(), response.getRrsets());
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
-  private Dns.ResourceRecordSets.List listDnsRecordsCall(String zoneName, Map<Option, ?> options)
+  private Dns.ResourceRecordSets.List listRecordSetsCall(String zoneName, Map<Option, ?> options)
       throws IOException {
     // options are fields, page token, dns name, type
     return dns.resourceRecordSets()
