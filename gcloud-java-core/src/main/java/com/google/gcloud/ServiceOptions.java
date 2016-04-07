@@ -100,8 +100,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   /**
    * A base interface for all {@link HttpTransport} factories.
    *
-   * Implementation must provide a public no-arg constructor. Loading of a factory implementation is
-   * done via {@link java.util.ServiceLoader}.
+   * <p>Implementation must provide a public no-arg constructor. Loading of a factory implementation
+   * is done via {@link java.util.ServiceLoader}.
    */
   public interface HttpTransportFactory {
     HttpTransport create();
@@ -129,7 +129,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * A class providing access to the current time in milliseconds. This class is mainly used for
    * testing and will be replaced by Java8's {@code java.time.Clock}.
    *
-   * Implementations should implement {@code Serializable} wherever possible and must document
+   * <p>Implementations should implement {@code Serializable} wherever possible and must document
    * whether or not they do support serialization.
    */
   public abstract static class Clock {
@@ -490,7 +490,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   protected static String serviceAccountProjectId() {
     String project = null;
     String credentialsPath = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
-    if(credentialsPath != null) {
+    if (credentialsPath != null) {
       try (InputStream credentialsStream = new FileInputStream(credentialsPath)) {
         JSONObject json = new JSONObject(new JSONTokener(credentialsStream));
         project = json.getString("project_id");
@@ -518,9 +518,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns the project id.
-   *
-   * Return value can be null (for services that don't require a project id).
+   * Returns the project id. Return value can be null (for services that don't require a project
+   * id).
    */
   public String projectId() {
     return projectId;

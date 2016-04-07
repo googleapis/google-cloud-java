@@ -21,8 +21,7 @@ import java.util.Iterator;
 /**
  * Interface for Google Cloud paginated results.
  *
- * <p>
- * Use {@code Page} to iterate through all values (also in next pages):
+ * <p>Use {@code Page} to iterate through all values (also in next pages):
  * <pre> {@code
  * Page<T> page = ...; // get a Page<T> instance
  * Iterator<T> iterator = page.iterateAll();
@@ -30,8 +29,8 @@ import java.util.Iterator;
  *   T value = iterator.next();
  *   // do something with value
  * }}</pre>
- * <p>
- * Or handle pagination explicitly:
+ *
+ * <p>Or handle pagination explicitly:
  * <pre> {@code
  * Page<T> page = ...; // get a Page<T> instance
  * while (page != null) {
