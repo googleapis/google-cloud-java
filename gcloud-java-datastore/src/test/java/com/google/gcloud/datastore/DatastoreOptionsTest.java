@@ -41,7 +41,6 @@ public class DatastoreOptionsTest {
     datastoreRpcFactory = EasyMock.createMock(DatastoreRpcFactory.class);
     datastoreRpc = EasyMock.createMock(DatastoreRpc.class);
     options = DatastoreOptions.builder()
-        .normalizeDataset(false)
         .serviceRpcFactory(datastoreRpcFactory)
         .projectId(PROJECT_ID)
         .host("http://localhost:" + PORT);
