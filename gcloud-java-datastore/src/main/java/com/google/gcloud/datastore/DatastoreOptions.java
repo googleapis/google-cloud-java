@@ -150,7 +150,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
 
   @Override
   public int hashCode() {
-    return baseHashCode() ^ Objects.hash(namespace);
+    return Objects.hash(baseHashCode(), namespace);
   }
 
   @Override
