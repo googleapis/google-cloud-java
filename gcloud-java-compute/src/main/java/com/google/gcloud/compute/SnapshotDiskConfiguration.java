@@ -45,8 +45,9 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
     private SnapshotId sourceSnapshot;
     private String sourceSnapshotId;
 
-    private Builder() {
+    private Builder(SnapshotId sourceSnapshot) {
       super(Type.SNAPSHOT);
+      this.sourceSnapshot = checkNotNull(sourceSnapshot);
     }
 
     private Builder(SnapshotDiskConfiguration configuration) {
@@ -59,6 +60,21 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
       super(Type.SNAPSHOT, diskPb);
       this.sourceSnapshot = SnapshotId.fromUrl(diskPb.getSourceSnapshot());
       this.sourceSnapshotId = diskPb.getSourceSnapshotId();
+    }
+
+    /**
+     * Sets the size of the persistent disk, in GB. If not set the disk will have the size of the
+     * snapshot. This value can be larger than the snapshot's size. If the provided size is smaller
+     * than the snapshot's size then disk creation will fail.
+     *
+     * @see <a href=
+     *     "https://cloud.google.com/compute/docs/disks/persistent-disks#restoresnapshotlargersize">
+     *     Restoring a snapshot to a larger size</a>
+     */
+    @Override
+    public Builder sizeGb(Long sizeGb) {
+      super.sizeGb(sizeGb);
+      return this;
     }
 
     /**
@@ -85,7 +101,7 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
 
   private SnapshotDiskConfiguration(Builder builder) {
     super(builder);
-    this.sourceSnapshot = checkNotNull(builder.sourceSnapshot);
+    this.sourceSnapshot = builder.sourceSnapshot;
     this.sourceSnapshotId = builder.sourceSnapshotId;
   }
 
@@ -148,7 +164,7 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
    * Returns a builder for a {@code SnapshotDiskConfiguration} object given the snapshot identity.
    */
   public static Builder builder(SnapshotId sourceSnapshot) {
-    return new Builder().sourceSnapshot(sourceSnapshot);
+    return new Builder(sourceSnapshot);
   }
 
   /**

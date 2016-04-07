@@ -147,7 +147,10 @@ public class DiskInfo implements Serializable {
     private Long lastAttachTimestamp;
     private Long lastDetachTimestamp;
 
-    BuilderImpl() {}
+    BuilderImpl(DiskId diskId, DiskConfiguration configuration) {
+      this.diskId = checkNotNull(diskId);
+      this.configuration = checkNotNull(configuration);
+    }
 
     BuilderImpl(DiskInfo diskInfo) {
       this.id = diskInfo.id;
@@ -258,10 +261,10 @@ public class DiskInfo implements Serializable {
 
   DiskInfo(BuilderImpl builder) {
     this.id = builder.id;
-    this.configuration = checkNotNull(builder.configuration);
+    this.configuration = builder.configuration;
     this.creationTimestamp = builder.creationTimestamp;
     this.creationStatus = builder.creationStatus;
-    this.diskId = checkNotNull(builder.diskId);
+    this.diskId = builder.diskId;
     this.description = builder.description;
     this.licenses = builder.licenses;
     this.attachedInstances = builder.attachedInstances;
@@ -383,7 +386,7 @@ public class DiskInfo implements Serializable {
    * {@link ImageDiskConfiguration} to create a disk from a disk image.
    */
   public static Builder builder(DiskId diskId, DiskConfiguration configuration) {
-    return new BuilderImpl().diskId(diskId).configuration(configuration);
+    return new BuilderImpl(diskId, configuration);
   }
 
   /**

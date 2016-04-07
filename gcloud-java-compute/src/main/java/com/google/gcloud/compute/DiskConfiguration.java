@@ -109,7 +109,7 @@ public abstract class DiskConfiguration implements Serializable {
     }
 
     /**
-     * Sets the identity of the disk type.
+     * Sets the identity of the disk type. If not set {@code pd-standard} will be used.
      */
     public B diskType(DiskTypeId diskType) {
       this.diskType = diskType;

@@ -44,8 +44,9 @@ public class ImageDiskConfiguration extends DiskConfiguration {
     private ImageId sourceImage;
     private String sourceImageId;
 
-    private Builder() {
+    private Builder(ImageId sourceImage) {
       super(Type.IMAGE);
+      this.sourceImage = checkNotNull(sourceImage);
     }
 
     private Builder(ImageDiskConfiguration configuration) {
@@ -58,6 +59,17 @@ public class ImageDiskConfiguration extends DiskConfiguration {
       super(Type.IMAGE, diskPb);
       this.sourceImage = ImageId.fromUrl(diskPb.getSourceImage());
       this.sourceImageId = diskPb.getSourceImageId();
+    }
+
+    /**
+     * Sets the size of the persistent disk, in GB. If not set the disk will have the size of the
+     * image. This value can be larger than the image's size. If the provided size is smaller than
+     * the image's size then disk creation will fail.
+     */
+    @Override
+    public Builder sizeGb(Long sizeGb) {
+      super.sizeGb(sizeGb);
+      return this;
     }
 
     /**
@@ -84,7 +96,7 @@ public class ImageDiskConfiguration extends DiskConfiguration {
 
   private ImageDiskConfiguration(Builder builder) {
     super(builder);
-    this.sourceImage = checkNotNull(builder.sourceImage);
+    this.sourceImage = builder.sourceImage;
     this.sourceImageId = builder.sourceImageId;
   }
 
@@ -145,7 +157,7 @@ public class ImageDiskConfiguration extends DiskConfiguration {
    * Returns a builder for an {@code ImageDiskConfiguration} object given the image identity.
    */
   public static Builder builder(ImageId imageId) {
-    return new Builder().sourceImage(imageId);
+    return new Builder(imageId);
   }
 
   /**

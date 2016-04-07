@@ -49,6 +49,15 @@ public class StandardDiskConfiguration extends DiskConfiguration {
     }
 
     /**
+     * Sets the size of the persistent disk, in GB. If not set, 500GB is used.
+     */
+    @Override
+    public Builder sizeGb(Long sizeGb) {
+      super.sizeGb(sizeGb);
+      return this;
+    }
+
+    /**
      * Creates a {@code StandardDiskConfiguration} object.
      */
     @Override
