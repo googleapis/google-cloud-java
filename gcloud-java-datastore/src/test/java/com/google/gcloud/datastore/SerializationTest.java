@@ -110,7 +110,6 @@ public class SerializationTest extends BaseSerializationTest {
   protected java.io.Serializable[] serializableObjects() {
     DatastoreOptions options = DatastoreOptions.builder()
         .authCredentials(AuthCredentials.createForAppEngine())
-        .normalizeDataset(false)
         .projectId("ds1")
         .build();
     DatastoreOptions otherOptions = options.toBuilder()
