@@ -99,9 +99,6 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
     String projectId = System.getProperty(
         com.google.datastore.v1beta3.client.DatastoreHelper.PROJECT_ID_ENV_VAR,
         System.getenv(com.google.datastore.v1beta3.client.DatastoreHelper.PROJECT_ID_ENV_VAR));
-    if (projectId == null) {
-      projectId = appEngineProjectId();
-    }
     return projectId != null ? projectId : super.defaultProject();
   }
 
