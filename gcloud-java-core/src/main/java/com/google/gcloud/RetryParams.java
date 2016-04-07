@@ -165,7 +165,7 @@ public final class RetryParams implements Serializable {
     /**
      * Sets totalRetryPeriodMillis. Note that App Engine Standard Environment front-end modules have
      * a 60 second deadline for HTTP requests. For that reason, you should set the total retry
-     * period to under 60 seconds if you are using the App Engine front-end module.
+     * period to under 60 seconds if you are using it on an App Engine front-end module.
      *
      * @param totalRetryPeriodMillis the totalRetryPeriodMillis to set
      * @return the Builder for chaining

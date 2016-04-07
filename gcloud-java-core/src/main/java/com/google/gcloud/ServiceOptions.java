@@ -655,6 +655,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
   public abstract <B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> B toBuilder();
 
+  /**
+   * Some services may have different backoff requirements listed in their SLAs. Be sure to override
+   * this method in options subclasses when the service's backoff requirement differs from the
+   * default parameters listed in {@link RetryParams}.
+   */
   protected RetryParams defaultRetryParams() {
     return RetryParams.defaultInstance();
   }
