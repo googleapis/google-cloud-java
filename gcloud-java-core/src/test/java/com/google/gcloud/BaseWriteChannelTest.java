@@ -82,7 +82,7 @@ public class BaseWriteChannelTest {
   }
 
   @Test
-  public void testConstructor() throws IOException {
+  public void testConstructor() {
     assertEquals(null, channel.options());
     assertEquals(ENTITY, channel.entity());
     assertEquals(0, channel.position());
@@ -108,7 +108,7 @@ public class BaseWriteChannelTest {
   }
 
   @Test
-  public void testChunkSize() throws IOException {
+  public void testChunkSize() {
     channel.chunkSize(42);
     assertEquals(MIN_CHUNK_SIZE, channel.chunkSize());
     channel.chunkSize(2 * MIN_CHUNK_SIZE);
