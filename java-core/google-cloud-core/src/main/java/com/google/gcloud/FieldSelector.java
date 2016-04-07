@@ -54,7 +54,7 @@ public interface FieldSelector {
         };
 
     private static String selector(List<? extends FieldSelector> required, FieldSelector[] others,
-      String... extraResourceFields) {
+        String... extraResourceFields) {
       Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(required.size() + others.length);
       fieldStrings.addAll(Lists.transform(required, FIELD_TO_STRING_FUNCTION));
       fieldStrings.addAll(Lists.transform(Arrays.asList(others), FIELD_TO_STRING_FUNCTION));
