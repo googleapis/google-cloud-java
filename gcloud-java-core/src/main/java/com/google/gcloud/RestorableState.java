@@ -20,7 +20,7 @@ package com.google.gcloud;
  * A common interface for restorable states. Implementations of {@code RestorableState} are capable
  * of saving the state of an object to restore it for later use.
  *
- * Implementations of this class must implement {@link java.io.Serializable} to ensure that the
+ * <p>Implementations of this class must implement {@link java.io.Serializable} to ensure that the
  * state of a the object can be correctly serialized.
  *
  * @param <T> the restored object's type
