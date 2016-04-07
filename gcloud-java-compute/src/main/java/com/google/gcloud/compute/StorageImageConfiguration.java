@@ -58,7 +58,7 @@ public class StorageImageConfiguration extends ImageConfiguration {
     }
 
     private Builder(StorageImageConfiguration imageConfiguration) {
-      super(Type.STORAGE, imageConfiguration);
+      super(imageConfiguration);
       this.containerType = imageConfiguration.containerType;
       this.sha1 = imageConfiguration.sha1;
       this.source = imageConfiguration.source;
