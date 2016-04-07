@@ -64,7 +64,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     @Override
-    public void addToBatchListZones(DnsRpc.Callback<ManagedZonesListResponse> callback,
+    public void addListZones(DnsRpc.Callback<ManagedZonesListResponse> callback,
         Map<DnsRpc.Option, ?> options) {
       try {
         zoneListCall(options).queue(batch, toJsonCallback(callback));
@@ -74,7 +74,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     @Override
-    public void addToBatchCreateZone(ManagedZone zone, DnsRpc.Callback<ManagedZone> callback,
+    public void addCreateZone(ManagedZone zone, DnsRpc.Callback<ManagedZone> callback,
         Map<Option, ?> options) {
       try {
         createZoneCall(zone, options).queue(batch, toJsonCallback(callback));
@@ -84,7 +84,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     @Override
-    public void addToBatchGetZone(String zoneName, DnsRpc.Callback<ManagedZone> callback,
+    public void addGetZone(String zoneName, DnsRpc.Callback<ManagedZone> callback,
         Map<Option, ?> options) {
       try {
         getZoneCall(zoneName, options).queue(batch, toJsonCallback(callback));
@@ -94,7 +94,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     @Override
-    public void addToBatchDeleteZone(String zoneName, DnsRpc.Callback<Void> callback) {
+    public void addDeleteZone(String zoneName, DnsRpc.Callback<Void> callback) {
       try {
         deleteZoneCall(zoneName).queue(batch, toJsonCallback(callback));
       } catch (IOException ex) {
@@ -103,7 +103,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     @Override
-    public void addToBatchGetProject(DnsRpc.Callback<Project> callback,
+    public void addGetProject(DnsRpc.Callback<Project> callback,
         Map<Option, ?> options) {
       try {
         getProjectCall(options).queue(batch, toJsonCallback(callback));
@@ -129,7 +129,7 @@ public class DefaultDnsRpc implements DnsRpc {
     }
 
     @Override
-    public void submitBatch() {
+    public void submit() {
       try {
         batch.execute();
       } catch (IOException ex) {
@@ -338,44 +338,5 @@ public class DefaultDnsRpc implements DnsRpc {
   @Override
   public RpcBatch createBatch() {
     return new DefaultRpcBatch(dns.batch());
-  }
-
-  @Override
-  public RpcBatch addToBatchListZones(RpcBatch batch,
-      DnsRpc.Callback<ManagedZonesListResponse> callback, Map<DnsRpc.Option, ?> options) {
-    batch.addToBatchListZones(callback, options);
-    return batch;
-  }
-
-  @Override
-  public RpcBatch addToBatchCreateZone(ManagedZone zone, RpcBatch batch,
-      Callback<ManagedZone> callback, Map<Option, ?> options) {
-    batch.addToBatchCreateZone(zone, callback, options);
-    return batch;
-  }
-
-  @Override
-  public RpcBatch addToBatchGetZone(String zoneName, RpcBatch batch, Callback<ManagedZone> callback,
-      Map<Option, ?> options) {
-    batch.addToBatchGetZone(zoneName, callback, options);
-    return batch;
-  }
-
-  @Override
-  public RpcBatch addToBatchDeleteZone(String zoneName, RpcBatch batch, Callback<Void> callback) {
-    batch.addToBatchDeleteZone(zoneName, callback);
-    return batch;
-  }
-
-  @Override
-  public RpcBatch addToBatchGetProject(RpcBatch batch, Callback<Project> callback,
-      Map<Option, ?> options) {
-    batch.addToBatchGetProject(callback, options);
-    return batch;
-  }
-
-  @Override
-  public void submitBatch(RpcBatch batch) {
-    batch.submitBatch();
   }
 }

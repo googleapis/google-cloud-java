@@ -31,38 +31,38 @@ public interface RpcBatch {
    * Adds a call to "list zones" to the batch with the provided {@code callback} and {@code
    * options}.
    */
-  void addToBatchListZones(DnsRpc.Callback<ManagedZonesListResponse> callback,
+  void addListZones(DnsRpc.Callback<ManagedZonesListResponse> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "create zone" to the batch with the provided {@code callback} and {@code
    * options}.
    */
-  void addToBatchCreateZone(ManagedZone zone, DnsRpc.Callback<ManagedZone> callback,
+  void addCreateZone(ManagedZone zone, DnsRpc.Callback<ManagedZone> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "get zone" to the batch with the provided {@code callback} and {@code options}.
    */
-  void addToBatchGetZone(String zoneName, DnsRpc.Callback<ManagedZone> callback,
+  void addGetZone(String zoneName, DnsRpc.Callback<ManagedZone> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "delete zone" to the batch with the provided {@code callback} and {@code
    * options}.
    */
-  void addToBatchGetProject(DnsRpc.Callback<Project> callback,
+  void addGetProject(DnsRpc.Callback<Project> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "get project" to the batch with the provided {@code callback} and {@code
    * options}.
    */
-  void addToBatchDeleteZone(String zoneName, DnsRpc.Callback<Void> callback);
+  void addDeleteZone(String zoneName, DnsRpc.Callback<Void> callback);
 
   /**
    * Submits a batch of requests for processing using a single HTTP request to Cloud DNS.
    */
-  void submitBatch();
+  void submit();
 }
 

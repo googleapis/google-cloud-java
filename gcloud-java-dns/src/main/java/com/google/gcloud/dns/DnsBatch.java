@@ -73,7 +73,7 @@ public class DnsBatch {
     DnsBatchResult<Page<Zone>> result = new DnsBatchResult<>();
     final Map<DnsRpc.Option, ?> optionMap = optionMap(options);
     DnsRpc.Callback<ManagedZonesListResponse> callback = createListZonesCallback(result, optionMap);
-    this.batch = dnsRpc.addToBatchListZones(this.batch, callback, optionMap);
+    batch.addListZones(callback, optionMap);
     return result;
   }
 
@@ -88,7 +88,7 @@ public class DnsBatch {
     DnsBatchResult<Zone> result = new DnsBatchResult<>();
     DnsRpc.Callback<ManagedZone> callback = createZoneCallback(this.options, result);
     Map<DnsRpc.Option, ?> optionMap = optionMap(options);
-    this.batch = dnsRpc.addToBatchCreateZone(zone.toPb(), this.batch, callback, optionMap);
+    batch.addCreateZone(zone.toPb(), callback, optionMap);
     return result;
   }
 
@@ -101,13 +101,13 @@ public class DnsBatch {
   public DnsBatchResult<Boolean> deleteZone(String zoneName) {
     DnsBatchResult<Boolean> result = new DnsBatchResult<>();
     DnsRpc.Callback<Void> callback = createDeleteZoneCallback(result);
-    this.batch = dnsRpc.addToBatchDeleteZone(zoneName, this.batch, callback);
+    batch.addDeleteZone(zoneName, callback);
     return result;
   }
 
   /**
-   * Adds a request representing the "get zone" operation to this batch. The {@code options} can
-   * be used to restrict the fields returned in the same way as for {@link Dns#getZone(String,
+   * Adds a request representing the "get zone" operation to this batch. The {@code options} can be
+   * used to restrict the fields returned in the same way as for {@link Dns#getZone(String,
    * Dns.ZoneOption...)}. The returned {@link DnsBatchResult} will return the requested {@link Zone}
    * upon calling {@link DnsBatchResult#get()} on successful completion, {@code null} if no such
    * zone exists, or it will throw a {@link DnsException} if the operation failed.
@@ -116,7 +116,7 @@ public class DnsBatch {
     DnsBatchResult<Zone> result = new DnsBatchResult<>();
     DnsRpc.Callback<ManagedZone> callback = createZoneCallback(this.options, result);
     Map<DnsRpc.Option, ?> optionMap = optionMap(options);
-    this.batch = dnsRpc.addToBatchGetZone(zoneName, this.batch, callback, optionMap);
+    batch.addGetZone(zoneName, callback, optionMap);
     return result;
   }
 
@@ -131,7 +131,7 @@ public class DnsBatch {
     DnsBatchResult<ProjectInfo> result = new DnsBatchResult<>();
     DnsRpc.Callback<Project> callback = createProjectCallback(result);
     Map<DnsRpc.Option, ?> optionMap = optionMap(options);
-    this.batch = dnsRpc.addToBatchGetProject(this.batch, callback, optionMap);
+    batch.addGetProject(callback, optionMap);
     return result;
   }
 
@@ -141,7 +141,7 @@ public class DnsBatch {
    * Submits this batch for processing using a single HTTP request.
    */
   public void submit() {
-    dnsRpc.submitBatch(batch);
+    batch.submit();
   }
 
   private Map<DnsRpc.Option, ?> optionMap(AbstractOption... options) {
