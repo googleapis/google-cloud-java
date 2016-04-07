@@ -66,11 +66,11 @@ import java.util.zip.ZipInputStream;
 public class LocalDatastoreHelper {
   private static final Logger log = Logger.getLogger(LocalDatastoreHelper.class.getName());
   private static final String GCD_VERSION = "v1beta3";
-  private static final String GCD_BUILD = "1.0.0";
+  private static final String GCD_BUILD = "1.0.1";
   private static final double DEFAULT_CONSISTENCY = 0.9;
   private static final String GCD_BASENAME = "gcd-" + GCD_VERSION + "-" + GCD_BUILD;
   private static final String GCD_FILENAME = GCD_BASENAME + ".zip";
-  private static final String MD5_CHECKSUM = "72156cc993835c57f72789519b85249b";
+  private static final String MD5_CHECKSUM = "df876ba8f054d69acff30ec9540ec386";
   private static final URL GCD_URL;
   private static final String GCLOUD = "gcloud";
   private static final Path INSTALLED_GCD_PATH;
@@ -563,7 +563,6 @@ public class LocalDatastoreHelper {
         .projectId(projectId)
         .host("localhost:" + Integer.toString(port))
         .authCredentials(AuthCredentials.noAuth())
-        .normalizeDataset(false)
         .build();
   }
 
