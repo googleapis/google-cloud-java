@@ -73,8 +73,8 @@ public abstract class ImageConfiguration implements Serializable {
       this.type = type;
     }
 
-    Builder(Type type, ImageConfiguration imageConfiguration) {
-      this.type = type;
+    Builder(ImageConfiguration imageConfiguration) {
+      this.type = imageConfiguration.type;
       this.sourceType = imageConfiguration.sourceType;
       this.archiveSizeBytes = imageConfiguration.archiveSizeBytes;
     }
