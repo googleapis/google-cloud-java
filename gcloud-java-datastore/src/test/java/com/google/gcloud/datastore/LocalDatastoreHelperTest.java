@@ -32,19 +32,15 @@ public class LocalDatastoreHelperTest {
 
   private static final double TOLERANCE = 0.00001;
   private static final String PROJECT_ID_PREFIX = "test-id-";
-  private static final String TEST_PREFIX =
-      "com.google.gcloud.datastore.DatastoreOptions.skipNormalization.";
 
   @Test
   public void testCreate() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75);
     assertTrue(Math.abs(0.75 - helper.consistency()) < TOLERANCE);
     assertTrue(helper.projectId().startsWith(PROJECT_ID_PREFIX));
-    assertTrue(Boolean.getBoolean(TEST_PREFIX + helper.projectId()));
     helper = LocalDatastoreHelper.create();
     assertTrue(Math.abs(0.9 - helper.consistency()) < TOLERANCE);
     assertTrue(helper.projectId().startsWith(PROJECT_ID_PREFIX));
-    assertTrue(Boolean.getBoolean(TEST_PREFIX + helper.projectId()));
   }
 
   @Test

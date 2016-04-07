@@ -44,6 +44,7 @@ You can test against a remote Datastore emulator as well.  To do this, set the `
       .projectId("my-project-id") // must match project ID specified on remote machine
       .host("http://<hostname of machine>:<port>")
       .authCredentials(AuthCredentials.noAuth())
+      .normalizeDataset(false)
       .build();
   Datastore localDatastore = options.service();
   ```
