@@ -635,7 +635,7 @@ public class LocalDatastoreHelper {
     // If cloud is available we use it, otherwise we download and start gcd
     if (INSTALLED_GCD_PATH == null) {
       downloadGcd();
-      gcdExecutablePath = gcdPath.resolve(GCD_BASENAME);
+      gcdExecutablePath = gcdPath.resolve("gcd");
     } else {
       gcdExecutablePath = INSTALLED_GCD_PATH;
     }
