@@ -30,6 +30,7 @@ import com.google.gcloud.RetryHelper.RetriesExhaustedException;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.net.SocketTimeoutException;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
@@ -194,11 +195,37 @@ public class RetryHelperTest {
           }
           throw new RuntimeException();
         }
-      }), params, handler, stopwatch);
+      }), params, handler, stopwatch, true);
       fail();
     } catch (RetriesExhaustedException expected) {
       // verify timesCalled
       assertEquals(sleepOnAttempt, timesCalled.get());
+    }
+  }
+
+  @Test
+  public void testNoRetriesOnSocketTimeout() {
+    final FakeTicker ticker = new FakeTicker();
+    Stopwatch stopwatch = Stopwatch.createUnstarted(ticker);
+    RetryParams params = RetryParams.builder().initialRetryDelayMillis(0)
+        .totalRetryPeriodMillis(999)
+        .retryMinAttempts(5)
+        .retryMaxAttempts(10)
+        .build();
+    ExceptionHandler handler = ExceptionHandler.builder().retryOn(RuntimeException.class).build();
+    final AtomicInteger timesCalled = new AtomicInteger(0);
+    try {
+      RetryHelper.runWithRetries(callable(new Runnable() {
+        @Override public void run() {
+          timesCalled.incrementAndGet();
+          throw new RetryHelper.RetryHelperException(
+              new SocketTimeoutException("Simulated socket timeout"));
+        }
+      }), params, handler, stopwatch, false);
+      fail();
+    } catch (RetryHelper.RetryHelperException expected) {
+      // verify timesCalled
+      assertEquals(1, timesCalled.get());
     }
   }
 
