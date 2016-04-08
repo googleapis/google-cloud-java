@@ -213,6 +213,7 @@ public class PublisherApi implements AutoCloseable {
    * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
    * signs (`%`). It must be between 3 and 255 characters in length, and it
    * must not start with `"goog"`.
+   * @throws ApiException if the remote call fails
    */
   public final Topic createTopic(String name) {
     Topic request = Topic.newBuilder().setName(name).build();
@@ -228,6 +229,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   private Topic createTopic(Topic request) {
     return createTopicCallable().call(request);
@@ -239,6 +241,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<Topic, Topic> createTopicCallable() {
     return createTopicCallable;
@@ -257,6 +260,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * @param topic The messages in the request will be published on this topic.
    * @param messages The messages to publish.
+   * @throws ApiException if the remote call fails
    */
   public final PublishResponse publish(String topic, List<PubsubMessage> messages) {
     PublishRequest request =
@@ -275,6 +279,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public PublishResponse publish(PublishRequest request) {
     return publishCallable().call(request);
@@ -288,6 +293,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<PublishRequest, PublishResponse> publishCallable() {
     return publishCallable;
@@ -303,6 +309,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param topic The name of the topic to get.
+   * @throws ApiException if the remote call fails
    */
   public final Topic getTopic(String topic) {
     GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(topic).build();
@@ -318,6 +325,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   private Topic getTopic(GetTopicRequest request) {
     return getTopicCallable().call(request);
@@ -329,6 +337,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<GetTopicRequest, Topic> getTopicCallable() {
     return getTopicCallable;
@@ -344,6 +353,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param project The name of the cloud project that topics belong to.
+   * @throws ApiException if the remote call fails
    */
   public final Iterable<Topic> listTopics(String project) {
     ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(project).build();
@@ -358,6 +368,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public final Iterable<Topic> listTopics(ListTopicsRequest request) {
     return listTopicsIterableCallable().call(request);
@@ -369,6 +380,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<ListTopicsRequest, Iterable<Topic>> listTopicsIterableCallable() {
     return listTopicsIterableCallable;
@@ -380,6 +392,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable() {
     return listTopicsCallable;
@@ -395,6 +408,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param topic The name of the topic that subscriptions are attached to.
+   * @throws ApiException if the remote call fails
    */
   public final Iterable<String> listTopicSubscriptions(String topic) {
     ListTopicSubscriptionsRequest request =
@@ -410,6 +424,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public final Iterable<String> listTopicSubscriptions(ListTopicSubscriptionsRequest request) {
     return listTopicSubscriptionsIterableCallable().call(request);
@@ -421,6 +436,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<ListTopicSubscriptionsRequest, Iterable<String>>
       listTopicSubscriptionsIterableCallable() {
@@ -433,6 +449,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
       listTopicSubscriptionsCallable() {
@@ -453,6 +470,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param topic Name of the topic to delete.
+   * @throws ApiException if the remote call fails
    */
   public final void deleteTopic(String topic) {
     DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(topic).build();
@@ -472,6 +490,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   private void deleteTopic(DeleteTopicRequest request) {
     deleteTopicCallable().call(request);
@@ -487,6 +506,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
     return deleteTopicCallable;

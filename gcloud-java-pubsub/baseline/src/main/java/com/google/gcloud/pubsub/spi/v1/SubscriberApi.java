@@ -243,6 +243,7 @@ public class SubscriberApi implements AutoCloseable {
    * system will eventually redeliver the message.
    *
    * If this parameter is not set, the default value of 10 seconds is used.
+   * @throws ApiException if the remote call fails
    */
   public final Subscription createSubscription(
       String name, String topic, PushConfig pushConfig, int ackDeadlineSeconds) {
@@ -270,6 +271,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public Subscription createSubscription(Subscription request) {
     return createSubscriptionCallable().call(request);
@@ -286,6 +288,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<Subscription, Subscription> createSubscriptionCallable() {
     return createSubscriptionCallable;
@@ -304,6 +307,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param subscription The name of the subscription to get.
+   * @throws ApiException if the remote call fails
    */
   public final Subscription getSubscription(String subscription) {
     GetSubscriptionRequest request =
@@ -323,6 +327,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   private Subscription getSubscription(GetSubscriptionRequest request) {
     return getSubscriptionCallable().call(request);
@@ -337,6 +342,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
     return getSubscriptionCallable;
@@ -355,6 +361,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param project The name of the cloud project that subscriptions belong to.
+   * @throws ApiException if the remote call fails
    */
   public final Iterable<Subscription> listSubscriptions(String project) {
     ListSubscriptionsRequest request =
@@ -373,6 +380,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public final Iterable<Subscription> listSubscriptions(ListSubscriptionsRequest request) {
     return listSubscriptionsIterableCallable().call(request);
@@ -387,6 +395,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<ListSubscriptionsRequest, Iterable<Subscription>>
       listSubscriptionsIterableCallable() {
@@ -402,6 +411,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
       listSubscriptionsCallable() {
@@ -422,6 +432,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param subscription The subscription to delete.
+   * @throws ApiException if the remote call fails
    */
   public final void deleteSubscription(String subscription) {
     DeleteSubscriptionRequest request =
@@ -442,6 +453,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   private void deleteSubscription(DeleteSubscriptionRequest request) {
     deleteSubscriptionCallable().call(request);
@@ -457,6 +469,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
     return deleteSubscriptionCallable;
@@ -477,10 +490,11 @@ public class SubscriberApi implements AutoCloseable {
    * @param subscription The name of the subscription.
    * @param ackIds List of acknowledgment IDs.
    * @param ackDeadlineSeconds The new ack deadline with respect to the time this request was sent to
-   * the Pub/Sub system. Must be >= 0. For example, if the value is 10, the new
+   * the Pub/Sub system. Must be &gt;= 0. For example, if the value is 10, the new
    * ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
    * was made. Specifying zero may immediately make the message available for
    * another pull request.
+   * @throws ApiException if the remote call fails
    */
   public final void modifyAckDeadline(
       String subscription, List<String> ackIds, int ackDeadlineSeconds) {
@@ -505,6 +519,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public void modifyAckDeadline(ModifyAckDeadlineRequest request) {
     modifyAckDeadlineCallable().call(request);
@@ -519,6 +534,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {
     return modifyAckDeadlineCallable;
@@ -542,6 +558,7 @@ public class SubscriberApi implements AutoCloseable {
    * @param subscription The subscription whose message is being acknowledged.
    * @param ackIds The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
+   * @throws ApiException if the remote call fails
    */
   public final void acknowledge(String subscription, List<String> ackIds) {
     AcknowledgeRequest request =
@@ -564,6 +581,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public void acknowledge(AcknowledgeRequest request) {
     acknowledgeCallable().call(request);
@@ -581,6 +599,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<AcknowledgeRequest, Empty> acknowledgeCallable() {
     return acknowledgeCallable;
@@ -605,6 +624,7 @@ public class SubscriberApi implements AutoCloseable {
    * than returning no messages.
    * @param maxMessages The maximum number of messages returned for this request. The Pub/Sub
    * system may return fewer than the number specified.
+   * @throws ApiException if the remote call fails
    */
   public final PullResponse pull(String subscription, boolean returnImmediately, int maxMessages) {
     PullRequest request =
@@ -628,6 +648,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public PullResponse pull(PullRequest request) {
     return pullCallable().call(request);
@@ -642,6 +663,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<PullRequest, PullResponse> pullCallable() {
     return pullCallable;
@@ -668,6 +690,7 @@ public class SubscriberApi implements AutoCloseable {
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
    * the subscription if `Pull` is not called.
+   * @throws ApiException if the remote call fails
    */
   public final void modifyPushConfig(String subscription, PushConfig pushConfig) {
     ModifyPushConfigRequest request =
@@ -692,6 +715,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public void modifyPushConfig(ModifyPushConfigRequest request) {
     modifyPushConfigCallable().call(request);
@@ -708,6 +732,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable() {
     return modifyPushConfigCallable;
