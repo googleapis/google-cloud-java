@@ -21,8 +21,8 @@
  * Before the test:
  * <pre> {@code
  * LocalResourceManagerHelper resourceManagerHelper = LocalResourceManagerHelper.create();
- * ResourceManager resourceManager = resourceManagerHelper.options().service();
  * resourceManagerHelper.start();
+ * ResourceManager resourceManager = resourceManagerHelper.options().service();
  * }</pre>
  *
  * <p>After the test:

@@ -18,9 +18,11 @@ package com.google.gcloud.datastore.testing;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.base.Strings;
+import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.RetryParams;
+import com.google.gcloud.datastore.DatastoreOptions;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -28,8 +30,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -52,10 +52,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -65,8 +64,19 @@ import java.util.zip.ZipInputStream;
 /**
  * Utility to start and stop local Google Cloud Datastore process.
  */
-public class LocalGcdHelper {
-  private static final Logger log = Logger.getLogger(LocalGcdHelper.class.getName());
+public class LocalDatastoreHelper {
+  private static final Logger log = Logger.getLogger(LocalDatastoreHelper.class.getName());
+  private static final String GCD_VERSION = "v1beta3";
+  private static final String GCD_BUILD = "1.0.1";
+  private static final double DEFAULT_CONSISTENCY = 0.9;
+  private static final String GCD_BASENAME = "gcd-" + GCD_VERSION + "-" + GCD_BUILD;
+  private static final String GCD_FILENAME = GCD_BASENAME + ".zip";
+  private static final String MD5_CHECKSUM = "df876ba8f054d69acff30ec9540ec386";
+  private static final URL GCD_URL;
+  private static final String GCLOUD = "gcloud";
+  private static final Path INSTALLED_GCD_PATH;
+  private static final String GCD_VERSION_PREFIX = "gcd-emulator ";
+  private static final String PROJECT_ID_PREFIX = "test-project-";
 
   private final String projectId;
   private Path gcdPath;
@@ -74,19 +84,7 @@ public class LocalGcdHelper {
   private ProcessStreamReader processReader;
   private ProcessErrorStreamReader processErrorReader;
   private final int port;
-
-  public static final String DEFAULT_PROJECT_ID = "projectid1";
-  public static final int DEFAULT_PORT = 8080;
-  private static final String GCD_VERSION = "v1beta3";
-  private static final String GCD_BUILD = "1.0.0";
-  private static final String GCD_BASENAME = "gcd-" + GCD_VERSION + "-" + GCD_BUILD;
-  private static final String GCD_FILENAME = GCD_BASENAME + ".zip";
-  private static final String MD5_CHECKSUM = "72156cc993835c57f72789519b85249b";
-  private static final URL GCD_URL;
-  private static final String GCLOUD = "gcloud";
-  private static final Path INSTALLED_GCD_PATH;
-  private static final String GCD_VERSION_PREFIX = "gcd-emulator ";
-  private static final double DEFAULT_CONSISTENCY = 0.9;
+  private final double consistency;
 
   static {
     INSTALLED_GCD_PATH = installedGcdPath();
@@ -98,14 +96,6 @@ public class LocalGcdHelper {
       } catch (MalformedURLException e) {
         throw new RuntimeException(e);
       }
-    }
-  }
-
-  public static int findAvailablePort(int defaultPort) {
-    try (ServerSocket tempSocket = new ServerSocket(0)) {
-      return tempSocket.getLocalPort();
-    } catch (IOException e) {
-      return defaultPort;
     }
   }
 
@@ -388,44 +378,6 @@ public class LocalGcdHelper {
     }
   }
 
-  public LocalGcdHelper(String projectId, int port) {
-    this.projectId = projectId;
-    this.port = port;
-  }
-
-  /**
-   * Starts the local datastore for the specific project.
-   *
-   * This will unzip the gcd tool, create the project and start it.
-   * All content is written to a temporary directory that will be deleted when
-   * {@link #stop()} is called or when the program terminates) to make sure that no left-over
-   * data from prior runs is used.
-   *
-   * @param consistency the fraction of job application attempts that will succeed, with 0.0
-   *     resulting in no attempts succeeding, and 1.0 resulting in all attempts succeeding. Defaults
-   *     to 0.9. Note that setting this to 1.0 may mask incorrect assumptions about the consistency
-   *     of non-ancestor queries; non-ancestor queries are eventually consistent.
-   */
-  public void start(double consistency) throws IOException, InterruptedException {
-    // send a quick request in case we have a hanging process from a previous run
-    checkArgument(consistency >= 0.0 && consistency <= 1.0, "Consistency must be between 0 and 1");
-    sendQuitRequest(port);
-    // Each run is associated with its own folder that is deleted once test completes.
-    gcdPath = Files.createTempDirectory("gcd");
-    File gcdFolder = gcdPath.toFile();
-    gcdFolder.deleteOnExit();
-
-    Path gcdExecutablePath;
-    // If cloud is available we use it, otherwise we download and start gcd
-    if (INSTALLED_GCD_PATH == null) {
-      downloadGcd();
-      gcdExecutablePath = gcdPath.resolve("gcd");
-    } else {
-      gcdExecutablePath = INSTALLED_GCD_PATH;
-    }
-    startGcd(gcdExecutablePath, consistency);
-  }
-
   private void downloadGcd() throws IOException {
     // check if we already have a local copy of the gcd utility and download it if not.
     File gcdZipFile = new File(System.getProperty("java.io.tmpdir"), GCD_FILENAME);
@@ -589,80 +541,96 @@ public class LocalGcdHelper {
     });
   }
 
-  public static LocalGcdHelper start(String projectId, int port, double consistency)
-      throws IOException, InterruptedException {
-    LocalGcdHelper helper = new LocalGcdHelper(projectId, port);
-    helper.start(consistency);
+  private LocalDatastoreHelper(double consistency) {
+    checkArgument(consistency >= 0.0 && consistency <= 1.0, "Consistency must be between 0 and 1");
+    projectId = PROJECT_ID_PREFIX + UUID.randomUUID().toString();
+    this.consistency = consistency;
+    this.port = findAvailablePort();
+  }
+
+  private static int findAvailablePort() {
+    try (ServerSocket tempSocket = new ServerSocket(0)) {
+      return tempSocket.getLocalPort();
+    } catch (IOException e) {
+      return -1;
+    }
+  }
+
+  /**
+   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
+   * localhost.
+   */
+  public DatastoreOptions options() {
+    return DatastoreOptions.builder()
+        .projectId(projectId)
+        .host("localhost:" + Integer.toString(port))
+        .authCredentials(AuthCredentials.noAuth())
+        .retryParams(RetryParams.noRetries())
+        .build();
+  }
+
+  /**
+   * Returns the project ID associated with this local Datastore emulator.
+   */
+  public String projectId() {
+    return projectId;
+  }
+
+  /**
+   * Returns the consistency setting for the local Datastore emulator.
+   */
+  public double consistency() {
+    return consistency;
+  }
+
+  /**
+   * Creates a local Datastore helper with the specified settings for project ID and consistency.
+   *
+   * @param consistency the fraction of Datastore writes that are immediately visible to global
+   *     queries, with 0.0 meaning no writes are immediately visible and 1.0 meaning all writes
+   *     are immediately visible. Note that setting this to 1.0 may mask incorrect assumptions
+   *     about the consistency of non-ancestor queries; non-ancestor queries are eventually
+   *     consistent.
+   */
+  public static LocalDatastoreHelper create(double consistency) {
+    LocalDatastoreHelper helper = new LocalDatastoreHelper(consistency);
     return helper;
   }
 
-  public static void main(String... args) throws IOException, InterruptedException {
-    Map<String, String> parsedArgs = parseArgs(args);
-    String action = parsedArgs.get("action");
-    int port =
-        (parsedArgs.get("port") == null) ? DEFAULT_PORT : Integer.parseInt(parsedArgs.get("port"));
-    switch (action) {
-      case "START":
-        if (!isActive(DEFAULT_PROJECT_ID, port)) {
-          double consistency = parsedArgs.get("consistency") == null
-              ? DEFAULT_CONSISTENCY : Double.parseDouble(parsedArgs.get("consistency"));
-          LocalGcdHelper helper = start(DEFAULT_PROJECT_ID, port, consistency);
-          try (FileWriter writer = new FileWriter(".local_gcd_helper")) {
-            writer.write(helper.gcdPath.toAbsolutePath().toString() + System.lineSeparator());
-            writer.write(Integer.toString(port));
-          }
-        }
-        return;
-      case "STOP":
-        File file = new File(".local_gcd_helper");
-        String path = null;
-        boolean fileExists = file.exists();
-        if (fileExists) {
-          try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            path = reader.readLine();
-            port = Integer.parseInt(reader.readLine());
-          }
-        }
-        sendQuitRequest(port);
-        if (fileExists) {
-          deleteRecurse(Paths.get(path));
-          file.delete();
-        }
-        return;
-      default:
-        break;
-    }
+  /**
+   * Creates a local Datastore helper with a placeholder project ID and the default consistency
+   * setting of 0.9. Consistency refers to the fraction of Datastore writes that are immediately
+   * visible to global queries, with 0.0 meaning no writes are immediately visible and 1.0 meaning
+   * all writes are immediately visible.
+   */
+  public static LocalDatastoreHelper create() {
+    return create(DEFAULT_CONSISTENCY);
   }
 
-  private static Map<String, String> parseArgs(String[] args) {
-    Map<String, String> parsedArgs = new HashMap<String, String>();
-    for (String arg : args) {
-      if (arg.startsWith("--port=")) {
-        parsedArgs.put("port", arg.substring("--port=".length()));
-      } else if (arg.equals("START") || arg.equals("STOP")) {
-        parsedArgs.put("action", arg);
-      } else {
-        throw new RuntimeException("Only accepts START, STOP, and --port=<port #> as arguments");
-      }
-    }
-    if (parsedArgs.get("action") == null) {
-      throw new RuntimeException("EXPECTING START | STOP");
-    }
-    return parsedArgs;
-  }
+  /**
+   * Starts the local Datastore emulator. Leftover data from previous uses of the emulator will be
+   * removed.
+   *
+   * @throws InterruptedException if emulator-related tasks are interrupted
+   * @throws IOException if there are socket exceptions or issues creating/deleting the temporary
+   * data folder
+   */
+  public void start() throws IOException, InterruptedException {
+    // send a quick request in case we have a hanging process from a previous run
+    sendQuitRequest(port);
+    // Each run is associated with its own folder that is deleted once test completes.
+    gcdPath = Files.createTempDirectory("gcd");
+    File gcdFolder = gcdPath.toFile();
+    gcdFolder.deleteOnExit();
 
-  public static boolean isActive(String projectId, int port) {
-    try {
-      StringBuilder urlBuilder = new StringBuilder("http://localhost:").append(port);
-      urlBuilder.append("/datastore/v1beta3/projects/").append(projectId).append(":lookup");
-      URL url = new URL(urlBuilder.toString());
-      try (BufferedReader reader =
-          new BufferedReader(new InputStreamReader(url.openStream(), UTF_8))) {
-        return "Valid RPC".equals(reader.readLine());
-      }
-    } catch (IOException ignore) {
-      // assume not active
-      return false;
+    Path gcdExecutablePath;
+    // If cloud is available we use it, otherwise we download and start gcd
+    if (INSTALLED_GCD_PATH == null) {
+      downloadGcd();
+      gcdExecutablePath = gcdPath.resolve("gcd");
+    } else {
+      gcdExecutablePath = INSTALLED_GCD_PATH;
     }
+    startGcd(gcdExecutablePath, consistency);
   }
 }

@@ -47,7 +47,7 @@ import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.BlobField;
 import com.google.gcloud.storage.Storage.BucketField;
 import com.google.gcloud.storage.StorageException;
-import com.google.gcloud.storage.testing.RemoteGcsHelper;
+import com.google.gcloud.storage.testing.RemoteStorageHelper;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -77,7 +77,7 @@ public class ITStorageTest {
   private static Storage storage;
 
   private static final Logger log = Logger.getLogger(ITStorageTest.class.getName());
-  private static final String BUCKET = RemoteGcsHelper.generateBucketName();
+  private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final String CONTENT_TYPE = "text/plain";
   private static final byte[] BLOB_BYTE_CONTENT = {0xD, 0xE, 0xA, 0xD};
   private static final String BLOB_STRING_CONTENT = "Hello Google Cloud Storage!";
@@ -85,15 +85,15 @@ public class ITStorageTest {
 
   @BeforeClass
   public static void beforeClass() {
-    RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
-    storage = gcsHelper.options().service();
+    RemoteStorageHelper helper = RemoteStorageHelper.create();
+    storage = helper.options().service();
     storage.create(BucketInfo.of(BUCKET));
   }
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
     if (storage != null) {
-      boolean wasDeleted = RemoteGcsHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS);
+      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS);
       if (!wasDeleted && log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
@@ -368,7 +368,7 @@ public class ITStorageTest {
 
   @Test(timeout = 15000)
   public void testListBlobsVersioned() throws ExecutionException, InterruptedException {
-    String bucketName = RemoteGcsHelper.generateBucketName();
+    String bucketName = RemoteStorageHelper.generateBucketName();
     Bucket bucket = storage.create(BucketInfo.builder(bucketName).versioningEnabled(true).build());
     try {
       String[] blobNames = {"test-list-blobs-versioned-blob1", "test-list-blobs-versioned-blob2"};
@@ -407,7 +407,7 @@ public class ITStorageTest {
       assertTrue(remoteBlob2.delete());
       assertTrue(remoteBlob3.delete());
     } finally {
-      RemoteGcsHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
+      RemoteStorageHelper.forceDelete(storage, bucketName, 5, TimeUnit.SECONDS);
     }
   }
 

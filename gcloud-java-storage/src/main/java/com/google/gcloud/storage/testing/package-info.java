@@ -21,15 +21,15 @@
  *
  * <p>Before the test:
  * <pre> {@code
- * RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
- * Storage storage = gcsHelper.options().service();
- * String bucket = RemoteGcsHelper.generateBucketName();
+ * RemoteStorageHelper helper = RemoteStorageHelper.create();
+ * Storage storage = helper.options().service();
+ * String bucket = RemoteStorageHelper.generateBucketName();
  * storage.create(BucketInfo.of(bucket));
  * } </pre>
  *
  * <p>After the test:
  * <pre> {@code
- * RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
+ * RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
  * } </pre>
  *
  * @see <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-storage">

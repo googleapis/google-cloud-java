@@ -37,14 +37,13 @@ import com.google.datastore.v1beta3.ReadOptions;
 import com.google.datastore.v1beta3.ReadOptions.ReadConsistency;
 import com.google.datastore.v1beta3.RunQueryRequest;
 import com.google.datastore.v1beta3.RunQueryResponse;
-import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.Query.ResultType;
 import com.google.gcloud.datastore.StructuredQuery.OrderBy;
 import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gcloud.datastore.spi.DatastoreRpc;
 import com.google.gcloud.datastore.spi.DatastoreRpcFactory;
-import com.google.gcloud.datastore.testing.LocalGcdHelper;
+import com.google.gcloud.datastore.testing.LocalDatastoreHelper;
 import com.google.protobuf.ByteString;
 
 import org.easymock.EasyMock;
@@ -68,7 +67,10 @@ import java.util.Set;
 @RunWith(JUnit4.class)
 public class DatastoreTest {
 
-  private static final String PROJECT_ID = LocalGcdHelper.DEFAULT_PROJECT_ID;
+  private static LocalDatastoreHelper helper = LocalDatastoreHelper.create(1.0);
+  private static final DatastoreOptions options = helper.options();
+  private static final Datastore datastore = options.service();
+  private static final String PROJECT_ID = options.projectId();
   private static final String KIND1 = "kind1";
   private static final String KIND2 = "kind2";
   private static final String KIND3 = "kind3";
@@ -118,34 +120,20 @@ public class DatastoreTest {
   private static final Entity ENTITY3 = Entity.builder(ENTITY1).key(KEY3).remove("str")
       .set("null", NULL_VALUE).set("partial1", PARTIAL_ENTITY2).set("partial2", ENTITY2).build();
 
-  private DatastoreOptions options;
   private DatastoreOptions rpcMockOptions;
-  private Datastore datastore;
   private DatastoreRpcFactory rpcFactoryMock;
   private DatastoreRpc rpcMock;
-
-  private static LocalGcdHelper gcdHelper;
-  private static final int PORT = LocalGcdHelper.findAvailablePort(LocalGcdHelper.DEFAULT_PORT);
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
-    if (!LocalGcdHelper.isActive(PROJECT_ID, PORT)) {
-      gcdHelper = LocalGcdHelper.start(PROJECT_ID, PORT, 1.0);
-    }
+    helper.start();
   }
 
   @Before
   public void setUp() {
-    options = DatastoreOptions.builder()
-        .projectId(PROJECT_ID)
-        .host("localhost:" + PORT)
-        .authCredentials(AuthCredentials.noAuth())
-        .retryParams(RetryParams.noRetries())
-        .build();
-    datastore = options.service();
     rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
     rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
     rpcMockOptions = options
@@ -162,9 +150,7 @@ public class DatastoreTest {
 
   @AfterClass
   public static void afterClass() throws IOException, InterruptedException {
-    if (gcdHelper != null) {
-      gcdHelper.stop();
-    }
+    helper.stop();
   }
 
   @Test

@@ -47,13 +47,13 @@ import java.util.logging.Logger;
  * {@link StorageOptions#connectTimeout()} and {@link StorageOptions#readTimeout()} are both set
  * to {@code 60000}.
  */
-public class RemoteGcsHelper {
+public class RemoteStorageHelper {
 
-  private static final Logger log = Logger.getLogger(RemoteGcsHelper.class.getName());
+  private static final Logger log = Logger.getLogger(RemoteStorageHelper.class.getName());
   private static final String BUCKET_NAME_PREFIX = "gcloud-test-bucket-temp-";
   private final StorageOptions options;
 
-  private RemoteGcsHelper(StorageOptions options) {
+  private RemoteStorageHelper(StorageOptions options) {
     this.options = options;
   }
 
@@ -111,16 +111,17 @@ public class RemoteGcsHelper {
   }
 
   /**
-   * Creates a {@code RemoteGcsHelper} object for the given project id and JSON key input stream.
+   * Creates a {@code RemoteStorageHelper} object for the given project id and JSON key input
+   * stream.
    *
    * @param projectId id of the project to be used for running the tests
    * @param keyStream input stream for a JSON key
-   * @return A {@code RemoteGcsHelper} object for the provided options
-   * @throws com.google.gcloud.storage.testing.RemoteGcsHelper.GcsHelperException if
+   * @return A {@code RemoteStorageHelper} object for the provided options
+   * @throws com.google.gcloud.storage.testing.RemoteStorageHelper.StorageHelperException if
    *     {@code keyStream} is not a valid JSON key stream
    */
-  public static RemoteGcsHelper create(String projectId, InputStream keyStream)
-      throws GcsHelperException {
+  public static RemoteStorageHelper create(String projectId, InputStream keyStream)
+      throws StorageHelperException {
     try {
       StorageOptions storageOptions = StorageOptions.builder()
           .authCredentials(AuthCredentials.createForJson(keyStream))
@@ -129,26 +130,26 @@ public class RemoteGcsHelper {
           .connectTimeout(60000)
           .readTimeout(60000)
           .build();
-      return new RemoteGcsHelper(storageOptions);
+      return new RemoteStorageHelper(storageOptions);
     } catch (IOException ex) {
       if (log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, ex.getMessage());
       }
-      throw GcsHelperException.translate(ex);
+      throw StorageHelperException.translate(ex);
     }
   }
 
   /**
-   * Creates a {@code RemoteGcsHelper} object using default project id and authentication
+   * Creates a {@code RemoteStorageHelper} object using default project id and authentication
    * credentials.
    */
-  public static RemoteGcsHelper create() throws GcsHelperException {
+  public static RemoteStorageHelper create() throws StorageHelperException {
     StorageOptions storageOptions = StorageOptions.builder()
         .retryParams(retryParams())
         .connectTimeout(60000)
         .readTimeout(60000)
         .build();
-    return new RemoteGcsHelper(storageOptions);
+    return new RemoteStorageHelper(storageOptions);
   }
 
   private static RetryParams retryParams() {
@@ -196,20 +197,20 @@ public class RemoteGcsHelper {
     }
   }
 
-  public static class GcsHelperException extends RuntimeException {
+  public static class StorageHelperException extends RuntimeException {
 
     private static final long serialVersionUID = -7756074894502258736L;
 
-    public GcsHelperException(String message) {
+    public StorageHelperException(String message) {
       super(message);
     }
 
-    public GcsHelperException(String message, Throwable cause) {
+    public StorageHelperException(String message, Throwable cause) {
       super(message, cause);
     }
 
-    public static GcsHelperException translate(Exception ex) {
-      return new GcsHelperException(ex.getMessage(), ex);
+    public static StorageHelperException translate(Exception ex) {
+      return new StorageHelperException(ex.getMessage(), ex);
     }
   }
 }
