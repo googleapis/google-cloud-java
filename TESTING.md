@@ -48,7 +48,7 @@ You can test against a remote Datastore emulator as well.  To do this, set the `
   Datastore localDatastore = options.service();
   ```
 
-Note that the remote Datastore emulator must be running before running the code above. We recommend that you start the emulator on the remote machine using the [Google Cloud SDK](https://cloud.google.com/sdk/gcloud/reference/beta/emulators/datastore/) from command line, as shown below:
+We recommend that you start the emulator on the remote machine using the [Google Cloud SDK](https://cloud.google.com/sdk/gcloud/reference/beta/emulators/datastore/) from command line, as shown below:
 
 ```
 gcloud beta emulators datastore start --host-port <hostname of machine>:<port>
