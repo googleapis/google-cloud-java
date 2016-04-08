@@ -33,9 +33,15 @@ public interface ValueBuilder<V, P extends Value<V>, B extends ValueBuilder<V, P
 
   B excludeFromIndexes(boolean excludeFromIndexes);
 
+  /**
+   * Deprecated. This library preserves the field for backwards compatibility.
+   */
   @Deprecated
   int getMeaning();
 
+  /**
+   * Deprecated. This library preserves the field for backwards compatibility.
+   */
   @Deprecated
   B meaning(int meaning);
 
