@@ -68,8 +68,7 @@ import java.util.Set;
 public class DatastoreTest {
 
   private static LocalDatastoreHelper helper = LocalDatastoreHelper.create(1.0);
-  private static final DatastoreOptions options =
-      helper.options().toBuilder().retryParams(RetryParams.noRetries()).build();
+  private static final DatastoreOptions options = helper.options();
   private static final Datastore datastore = options.service();
   private static final String PROJECT_ID = options.projectId();
   private static final String KIND1 = "kind1";
@@ -151,9 +150,7 @@ public class DatastoreTest {
 
   @AfterClass
   public static void afterClass() throws IOException, InterruptedException {
-    if (helper != null) {
-      helper.stop();
-    }
+    helper.stop();
   }
 
   @Test

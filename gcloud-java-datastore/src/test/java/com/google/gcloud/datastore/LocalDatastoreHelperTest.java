@@ -16,7 +16,6 @@
 
 package com.google.gcloud.datastore;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
@@ -31,7 +30,7 @@ import org.junit.runners.JUnit4;
 public class LocalDatastoreHelperTest {
 
   private static final double TOLERANCE = 0.00001;
-  private static final String PROJECT_ID_PREFIX = "test-id-";
+  private static final String PROJECT_ID_PREFIX = "test-project-";
 
   @Test
   public void testCreate() {
@@ -48,7 +47,7 @@ public class LocalDatastoreHelperTest {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
     DatastoreOptions options = helper.options();
     assertTrue(options.projectId().startsWith(PROJECT_ID_PREFIX));
-    assertEquals("localhost:" + helper.port(), options.host());
+    assertTrue(options.host().startsWith("localhost:"));
     assertSame(AuthCredentials.noAuth(), options.authCredentials());
   }
 }

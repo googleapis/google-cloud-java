@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.common.base.Strings;
 import com.google.gcloud.AuthCredentials;
+import com.google.gcloud.RetryParams;
 import com.google.gcloud.datastore.DatastoreOptions;
 
 import java.io.BufferedInputStream;
@@ -75,7 +76,7 @@ public class LocalDatastoreHelper {
   private static final String GCLOUD = "gcloud";
   private static final Path INSTALLED_GCD_PATH;
   private static final String GCD_VERSION_PREFIX = "gcd-emulator ";
-  private static final String PROJECT_ID_PREFIX = "test-id-";
+  private static final String PROJECT_ID_PREFIX = "test-project-";
 
   private final String projectId;
   private Path gcdPath;
@@ -541,6 +542,7 @@ public class LocalDatastoreHelper {
   }
 
   private LocalDatastoreHelper(double consistency) {
+    checkArgument(consistency >= 0.0 && consistency <= 1.0, "Consistency must be between 0 and 1");
     projectId = PROJECT_ID_PREFIX + UUID.randomUUID().toString();
     this.consistency = consistency;
     this.port = findAvailablePort();
@@ -563,6 +565,7 @@ public class LocalDatastoreHelper {
         .projectId(projectId)
         .host("localhost:" + Integer.toString(port))
         .authCredentials(AuthCredentials.noAuth())
+        .retryParams(RetryParams.noRetries())
         .build();
   }
 
@@ -571,13 +574,6 @@ public class LocalDatastoreHelper {
    */
   public String projectId() {
     return projectId;
-  }
-
-  /**
-   * Returns the port on localhost to which the local Datastore listens for requests.
-   */
-  public int port() {
-    return port;
   }
 
   /**
@@ -621,7 +617,6 @@ public class LocalDatastoreHelper {
    */
   public void start() throws IOException, InterruptedException {
     // send a quick request in case we have a hanging process from a previous run
-    checkArgument(consistency >= 0.0 && consistency <= 1.0, "Consistency must be between 0 and 1");
     sendQuitRequest(port);
     // Each run is associated with its own folder that is deleted once test completes.
     gcdPath = Files.createTempDirectory("gcd");
