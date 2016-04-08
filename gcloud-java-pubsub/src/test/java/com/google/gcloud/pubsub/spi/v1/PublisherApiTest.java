@@ -58,23 +58,29 @@ public class PublisherApiTest {
   public void setUp() throws Exception {
     ManagedChannel channel = pubsubHelper.createChannel();
 
-    PublisherSettings publisherSettings = PublisherSettings.create();
-    publisherSettings.provideChannelWith(channel, true);
+    PublisherSettings publisherSettings =
+        PublisherSettings.newBuilder()
+            .provideChannelWith(channel, true)
+            .build();
     publisherApi = PublisherApi.create(publisherSettings);
 
-    BundlingSettings bundlingSettings =
+    BundlingSettings.Builder bundlingSettings =
         BundlingSettings.newBuilder()
             .setElementCountThreshold(10)
-            .setDelayThreshold(Duration.standardSeconds(30))
-            .build();
+            .setDelayThreshold(Duration.standardSeconds(30));
 
-    PublisherSettings bundledPublisherSettings = PublisherSettings.create();
-    bundledPublisherSettings.provideChannelWith(channel, true);
-    bundledPublisherSettings.publishMethod().setBundlingSettings(bundlingSettings);
+    PublisherSettings.Builder bundledPublisherSettingsBuilder = PublisherSettings.newBuilder();
+    bundledPublisherSettingsBuilder
+        .provideChannelWith(channel, true)
+        .publishSettings()
+        .setBundlingSettingsBuilder(bundlingSettings);
+
+    PublisherSettings bundledPublisherSettings = bundledPublisherSettingsBuilder.build();
     bundledPublisherApi = PublisherApi.create(bundledPublisherSettings);
 
-    SubscriberSettings subscriberSettings = SubscriberSettings.create();
-    subscriberSettings.provideChannelWith(channel, true);
+    SubscriberSettings subscriberSettings = SubscriberSettings.newBuilder()
+        .provideChannelWith(channel, true)
+        .build();
     subscriberApi = SubscriberApi.create(subscriberSettings);
   }
 

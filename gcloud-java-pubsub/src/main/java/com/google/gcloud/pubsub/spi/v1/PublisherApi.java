@@ -34,8 +34,6 @@
 package com.google.gcloud.pubsub.spi.v1;
 
 import com.google.api.gax.grpc.ApiCallable;
-import com.google.api.gax.grpc.ApiCallable.BundlableApiCallableInfo;
-import com.google.api.gax.grpc.BundlerFactory;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
@@ -80,23 +78,9 @@ public class PublisherApi implements AutoCloseable {
       listTopicSubscriptionsIterableCallable;
   private final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
 
-  /**
-   * A PathTemplate representing the fully-qualified path to represent
-   * a project resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.create("projects/{project}");
 
-  /**
-   * A PathTemplate representing the fully-qualified path to represent
-   * a topic resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
   private static final PathTemplate TOPIC_PATH_TEMPLATE =
       PathTemplate.create("projects/{project}/topics/{topic}");
 
@@ -161,8 +145,8 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static final PublisherApi create() throws IOException {
-    return create(PublisherSettings.create());
+  public static final PublisherApi defaultInstance() throws IOException {
+    return create(PublisherSettings.defaultInstance());
   }
 
   /**
@@ -188,22 +172,20 @@ public class PublisherApi implements AutoCloseable {
   protected PublisherApi(PublisherSettings settings) throws IOException {
     this.channel = settings.getChannel();
 
-    this.createTopicCallable = settings.createTopicMethod().build(settings);
-    BundlableApiCallableInfo<PublishRequest, PublishResponse> bundlablePublish =
-        settings.publishMethod().buildBundlable(settings);
-    this.publishCallable = bundlablePublish.getApiCallable();
-    BundlerFactory<PublishRequest, PublishResponse> publishBundlerFactory =
-        bundlablePublish.getBundlerFactory();
-    if (publishBundlerFactory != null) {
-      this.closeables.add(publishBundlerFactory);
+    this.createTopicCallable = ApiCallable.create(settings.createTopicSettings(), settings);
+    this.publishCallable = ApiCallable.create(settings.publishSettings(), settings);
+    if (settings.publishSettings().getBundlerFactory() != null) {
+      closeables.add(settings.publishSettings().getBundlerFactory());
     }
-    this.getTopicCallable = settings.getTopicMethod().build(settings);
-    this.listTopicsCallable = settings.listTopicsMethod().build(settings);
-    this.listTopicsIterableCallable = settings.listTopicsMethod().buildPageStreaming(settings);
-    this.listTopicSubscriptionsCallable = settings.listTopicSubscriptionsMethod().build(settings);
+    this.getTopicCallable = ApiCallable.create(settings.getTopicSettings(), settings);
+    this.listTopicsCallable = ApiCallable.create(settings.listTopicsSettings(), settings);
+    this.listTopicsIterableCallable =
+        ApiCallable.createIterable(settings.listTopicsSettings(), settings);
+    this.listTopicSubscriptionsCallable =
+        ApiCallable.create(settings.listTopicSubscriptionsSettings(), settings);
     this.listTopicSubscriptionsIterableCallable =
-        settings.listTopicSubscriptionsMethod().buildPageStreaming(settings);
-    this.deleteTopicCallable = settings.deleteTopicMethod().build(settings);
+        ApiCallable.createIterable(settings.listTopicSubscriptionsSettings(), settings);
+    this.deleteTopicCallable = ApiCallable.create(settings.deleteTopicSettings(), settings);
 
     if (settings.shouldAutoCloseChannel()) {
       closeables.add(
@@ -360,6 +342,8 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   *
+   * @param project The name of the cloud project that topics belong to.
    */
   public final Iterable<Topic> listTopics(String project) {
     ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(project).build();
@@ -409,6 +393,8 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   *
+   * @param topic The name of the topic that subscriptions are attached to.
    */
   public final Iterable<String> listTopicSubscriptions(String topic) {
     ListTopicSubscriptionsRequest request =

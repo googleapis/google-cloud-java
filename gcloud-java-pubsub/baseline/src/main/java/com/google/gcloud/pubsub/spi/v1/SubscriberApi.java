@@ -80,23 +80,9 @@ public class SubscriberApi implements AutoCloseable {
   private final ApiCallable<PullRequest, PullResponse> pullCallable;
   private final ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable;
 
-  /**
-   * A PathTemplate representing the fully-qualified path to represent
-   * a project resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.create("projects/{project}");
 
-  /**
-   * A PathTemplate representing the fully-qualified path to represent
-   * a subscription resource.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
   private static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
       PathTemplate.create("projects/{project}/subscriptions/{subscription}");
 
@@ -161,8 +147,8 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static final SubscriberApi create() throws IOException {
-    return create(SubscriberSettings.create());
+  public static final SubscriberApi defaultInstance() throws IOException {
+    return create(SubscriberSettings.defaultInstance());
   }
 
   /**
@@ -188,16 +174,21 @@ public class SubscriberApi implements AutoCloseable {
   protected SubscriberApi(SubscriberSettings settings) throws IOException {
     this.channel = settings.getChannel();
 
-    this.createSubscriptionCallable = settings.createSubscriptionMethod().build(settings);
-    this.getSubscriptionCallable = settings.getSubscriptionMethod().build(settings);
-    this.listSubscriptionsCallable = settings.listSubscriptionsMethod().build(settings);
+    this.createSubscriptionCallable =
+        ApiCallable.create(settings.createSubscriptionSettings(), settings);
+    this.getSubscriptionCallable = ApiCallable.create(settings.getSubscriptionSettings(), settings);
+    this.listSubscriptionsCallable =
+        ApiCallable.create(settings.listSubscriptionsSettings(), settings);
     this.listSubscriptionsIterableCallable =
-        settings.listSubscriptionsMethod().buildPageStreaming(settings);
-    this.deleteSubscriptionCallable = settings.deleteSubscriptionMethod().build(settings);
-    this.modifyAckDeadlineCallable = settings.modifyAckDeadlineMethod().build(settings);
-    this.acknowledgeCallable = settings.acknowledgeMethod().build(settings);
-    this.pullCallable = settings.pullMethod().build(settings);
-    this.modifyPushConfigCallable = settings.modifyPushConfigMethod().build(settings);
+        ApiCallable.createIterable(settings.listSubscriptionsSettings(), settings);
+    this.deleteSubscriptionCallable =
+        ApiCallable.create(settings.deleteSubscriptionSettings(), settings);
+    this.modifyAckDeadlineCallable =
+        ApiCallable.create(settings.modifyAckDeadlineSettings(), settings);
+    this.acknowledgeCallable = ApiCallable.create(settings.acknowledgeSettings(), settings);
+    this.pullCallable = ApiCallable.create(settings.pullSettings(), settings);
+    this.modifyPushConfigCallable =
+        ApiCallable.create(settings.modifyPushConfigSettings(), settings);
 
     if (settings.shouldAutoCloseChannel()) {
       closeables.add(
@@ -362,6 +353,8 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   *
+   * @param project The name of the cloud project that subscriptions belong to.
    */
   public final Iterable<Subscription> listSubscriptions(String project) {
     ListSubscriptionsRequest request =
