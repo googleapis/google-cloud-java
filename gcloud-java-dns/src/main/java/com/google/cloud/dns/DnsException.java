@@ -39,8 +39,8 @@ public class DnsException extends BaseServiceException {
       new Error(null, "rateLimitExceeded"));
   private static final long serialVersionUID = 490302380416260252L;
 
-  public DnsException(IOException exception) {
-    super(exception, true);
+  public DnsException(IOException exception, boolean idempotent) {
+    super(exception, idempotent);
   }
 
   private DnsException(int code, String message) {

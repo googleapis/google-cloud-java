@@ -36,8 +36,8 @@ public class DefaultDnsRpc implements DnsRpc {
   private final Dns dns;
   private final DnsOptions options;
 
-  private static DnsException translate(IOException exception) {
-    return new DnsException(exception);
+  private static DnsException translate(IOException exception, boolean idempotent) {
+    return new DnsException(exception, idempotent);
   }
 
   /**
@@ -61,7 +61,7 @@ public class DefaultDnsRpc implements DnsRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      throw translate(ex);
+      throw translate(ex, false);
     }
   }
 
@@ -73,7 +73,7 @@ public class DefaultDnsRpc implements DnsRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      DnsException serviceException = translate(ex);
+      DnsException serviceException = translate(ex, true);
       if (serviceException.code() == HTTP_NOT_FOUND) {
         return null;
       }
@@ -93,7 +93,7 @@ public class DefaultDnsRpc implements DnsRpc {
           .execute();
       return of(zoneList.getNextPageToken(), zoneList.getManagedZones());
     } catch (IOException ex) {
-      throw translate(ex);
+      throw translate(ex, true);
     }
   }
 
@@ -103,7 +103,7 @@ public class DefaultDnsRpc implements DnsRpc {
       dns.managedZones().delete(this.options.projectId(), zoneName).execute();
       return true;
     } catch (IOException ex) {
-      DnsException serviceException = translate(ex);
+      DnsException serviceException = translate(ex, false);
       if (serviceException.code() == HTTP_NOT_FOUND) {
         return false;
       }
@@ -126,7 +126,7 @@ public class DefaultDnsRpc implements DnsRpc {
           .execute();
       return of(response.getNextPageToken(), response.getRrsets());
     } catch (IOException ex) {
-      throw translate(ex);
+      throw translate(ex, true);
     }
   }
 
@@ -136,7 +136,7 @@ public class DefaultDnsRpc implements DnsRpc {
       return dns.projects().get(this.options.projectId())
           .setFields(FIELDS.getString(options)).execute();
     } catch (IOException ex) {
-      throw translate(ex);
+      throw translate(ex, true);
     }
   }
 
@@ -148,7 +148,7 @@ public class DefaultDnsRpc implements DnsRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      throw translate(ex);
+      throw translate(ex, false);
     }
   }
 
@@ -160,7 +160,7 @@ public class DefaultDnsRpc implements DnsRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      DnsException serviceException = translate(ex);
+      DnsException serviceException = translate(ex, true);
       if (serviceException.code() == HTTP_NOT_FOUND) {
         if ("entity.parameters.changeId".equals(serviceException.location())
             || (serviceException.getMessage() != null
@@ -190,7 +190,7 @@ public class DefaultDnsRpc implements DnsRpc {
       ChangesListResponse response = request.execute();
       return of(response.getNextPageToken(), response.getChanges());
     } catch (IOException ex) {
-      throw translate(ex);
+      throw translate(ex, true);
     }
   }
 }
