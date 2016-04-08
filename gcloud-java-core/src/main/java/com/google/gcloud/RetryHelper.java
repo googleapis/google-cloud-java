@@ -29,6 +29,7 @@ import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.base.Stopwatch;
 
 import java.io.InterruptedIOException;
+import java.net.SocketTimeoutException;
 import java.nio.channels.ClosedByInterruptException;
 import java.util.concurrent.Callable;
 import java.util.logging.Level;
@@ -44,13 +45,13 @@ import java.util.logging.Logger;
 public class RetryHelper<V> {
 
   private static final Logger log = Logger.getLogger(RetryHelper.class.getName());
+  private final static  boolean DEFAULT_RETRY_ON_TIMEOUTS = true;
 
   private final Stopwatch stopwatch;
   private final Callable<V> callable;
   private final RetryParams params;
   private final ExceptionHandler exceptionHandler;
   private int attemptNumber;
-
 
   private static final ThreadLocal<Context> context = new ThreadLocal<>();
 
@@ -172,7 +173,7 @@ public class RetryHelper<V> {
     return toStringHelper.toString();
   }
 
-  private V doRetry() throws RetryHelperException {
+  private V doRetry(boolean retryOnTimeout) throws RetryHelperException {
     stopwatch.start();
     while (true) {
       attemptNumber++;
@@ -189,7 +190,8 @@ public class RetryHelper<V> {
         }
         exception = e;
       } catch (Exception e) {
-        if (!exceptionHandler.shouldRetry(e)) {
+        if (!exceptionHandler.shouldRetry(e)
+            || !retryOnTimeout && e.getCause() instanceof SocketTimeoutException) {
           throw new NonRetriableException(e);
         }
         exception = e;
@@ -229,22 +231,30 @@ public class RetryHelper<V> {
 
   public static <V> V runWithRetries(Callable<V> callable) throws RetryHelperException {
     return runWithRetries(callable, RetryParams.defaultInstance(),
-        ExceptionHandler.defaultInstance());
+        ExceptionHandler.defaultInstance(), DEFAULT_RETRY_ON_TIMEOUTS);
   }
 
   public static <V> V runWithRetries(Callable<V> callable, RetryParams params,
       ExceptionHandler exceptionHandler) throws RetryHelperException {
-    return runWithRetries(callable, params, exceptionHandler, Stopwatch.createUnstarted());
+    return runWithRetries(callable, params, exceptionHandler, Stopwatch.createUnstarted(),
+        DEFAULT_RETRY_ON_TIMEOUTS);
+  }
+
+  public static <V> V runWithRetries(Callable<V> callable, RetryParams params,
+      ExceptionHandler exceptionHandler, boolean retryOnTimeout) throws RetryHelperException {
+    return runWithRetries(callable, params, exceptionHandler, Stopwatch.createUnstarted(),
+        retryOnTimeout);
   }
 
   @VisibleForTesting
   static <V> V runWithRetries(Callable<V> callable, RetryParams params,
-      ExceptionHandler exceptionHandler, Stopwatch stopwatch) throws RetryHelperException {
+      ExceptionHandler exceptionHandler, Stopwatch stopwatch, boolean retryOnTimeout)
+      throws RetryHelperException {
     RetryHelper<V> retryHelper = new RetryHelper<>(callable, params, exceptionHandler, stopwatch);
     Context previousContext = getContext();
     setContext(new Context(retryHelper));
     try {
-      return retryHelper.doRetry();
+      return retryHelper.doRetry(retryOnTimeout);
     } finally {
       setContext(previousContext);
     }

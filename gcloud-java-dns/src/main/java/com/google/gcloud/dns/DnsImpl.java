@@ -215,7 +215,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public ManagedZone call() {
               return dnsRpc.create(zoneInfo.toPb(), optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER);
+          }, options().retryParams(), EXCEPTION_HANDLER, false);
       return answer == null ? null : Zone.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
@@ -247,7 +247,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
         public Boolean call() {
           return dnsRpc.deleteZone(zoneName);
         }
-      }, options().retryParams(), EXCEPTION_HANDLER);
+      }, options().retryParams(), EXCEPTION_HANDLER, false);
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
     }
@@ -281,7 +281,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
             public Change call() {
               return dnsRpc.applyChangeRequest(zoneName, changeRequest.toPb(), optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER);
+          }, options().retryParams(), EXCEPTION_HANDLER, false);
       return answer == null ? null : ChangeRequest.fromPb(this, zoneName, answer); // not null
     } catch (RetryHelper.RetryHelperException ex) {
       throw DnsException.translateAndThrow(ex);
