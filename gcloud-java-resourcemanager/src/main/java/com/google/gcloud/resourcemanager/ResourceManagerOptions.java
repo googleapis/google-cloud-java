@@ -112,6 +112,7 @@ public class ResourceManagerOptions
     return baseHashCode();
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public Builder toBuilder() {
     return new Builder(this);

@@ -85,6 +85,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
     return SCOPES;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public Builder toBuilder() {
     return new Builder(this);

@@ -69,13 +69,11 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
     super(DnsFactory.class, DnsRpcFactory.class, builder);
   }
 
-  @SuppressWarnings("unchecked")
   @Override
   protected DnsFactory defaultServiceFactory() {
     return DefaultDnsFactory.INSTANCE;
   }
 
-  @SuppressWarnings("unchecked")
   @Override
   protected DnsRpcFactory defaultRpcFactory() {
     return DefaultDnsRpcFactory.INSTANCE;
