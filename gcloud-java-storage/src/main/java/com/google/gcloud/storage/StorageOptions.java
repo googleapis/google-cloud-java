@@ -69,13 +69,11 @@ public class StorageOptions extends ServiceOptions<Storage, StorageRpc, StorageO
     super(StorageFactory.class, StorageRpcFactory.class, builder);
   }
 
-  @SuppressWarnings("unchecked")
   @Override
   protected StorageFactory defaultServiceFactory() {
     return DefaultStorageFactory.INSTANCE;
   }
 
-  @SuppressWarnings("unchecked")
   @Override
   protected StorageRpcFactory defaultRpcFactory() {
     return DefaultStorageRpcFactory.INSTANCE;

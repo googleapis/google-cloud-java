@@ -646,9 +646,9 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  protected abstract <T extends ServiceFactory<ServiceT, OptionsT>> T defaultServiceFactory();
+  protected abstract ServiceFactory<ServiceT, OptionsT> defaultServiceFactory();
 
-  protected abstract <T extends ServiceRpcFactory<ServiceRpcT, OptionsT>> T defaultRpcFactory();
+  protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> defaultRpcFactory();
 
   protected abstract Set<String> scopes();
 
