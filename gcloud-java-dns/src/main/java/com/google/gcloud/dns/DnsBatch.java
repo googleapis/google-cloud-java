@@ -180,7 +180,7 @@ public class DnsBatch {
    * returned {@link DnsBatchResult} will return the requested {@link ChangeRequest} upon calling
    * {@link DnsBatchResult#get()} on successful completion, {@code null} if the change request does
    * not exist, or it will throw a {@link DnsException} if the operation failed or the zone does not
-   * exists.
+   * exist.
    */
   public DnsBatchResult<ChangeRequest> getChangeRequest(String zoneName, String changeRequestId,
       Dns.ChangeRequestOption... options) {
@@ -197,7 +197,7 @@ public class DnsBatch {
    * in the same way as for {@link Dns#applyChangeRequest(String, ChangeRequestInfo,
    * Dns.ChangeRequestOption...)}. The returned {@link DnsBatchResult} will return the requested
    * {@link ChangeRequest} upon calling {@link DnsBatchResult#get()} on successful completion, or it
-   * will throw a {@link DnsException} if the operation failed or the zone does not exists.
+   * will throw a {@link DnsException} if the operation failed or the zone does not exist.
    */
   public DnsBatchResult<ChangeRequest> applyChangeRequest(String zoneName,
       ChangeRequestInfo changeRequest, Dns.ChangeRequestOption... options) {

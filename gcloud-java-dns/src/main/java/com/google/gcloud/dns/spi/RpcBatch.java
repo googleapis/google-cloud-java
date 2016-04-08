@@ -62,49 +62,52 @@ public interface RpcBatch {
 
   /**
    * Adds a call to "get zone" to the batch with the provided {@code callback} and {@code options}.
+   * The zone to be retrieved is identified by {@code zoneName}.
    */
   void addGetZone(String zoneName, Callback<ManagedZone> callback, Map<DnsRpc.Option, ?> options);
 
   /**
-   * Adds a call to "delete zone" to the batch with the provided {@code callback} and {@code
+   * Adds a call to "get project" to the batch with the provided {@code callback} and {@code
    * options}.
    */
   void addGetProject(Callback<Project> callback, Map<DnsRpc.Option, ?> options);
 
   /**
-   * Adds a call to "get project" to the batch with the provided {@code callback} and {@code
+   * Adds a call to "delete zone" to the batch with the provided {@code callback} and {@code
    * options}.
    */
   void addDeleteZone(String zoneName, Callback<Void> callback);
 
   /**
    * Adds a call to "list record sets" to the batch with the provided {@code callback} and {@code
-   * options}.
+   * options}. The zone whose record sets are to be listed is identified by {@code zoneName}.
    */
   void addListRecordSets(String zoneName, Callback<ResourceRecordSetsListResponse> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "list change requests" to the batch with the provided {@code callback} and
-   * {@code options}.
+   * {@code options}. The zone whose change requests are to be listed is identified by {@code
+   * zoneName}.
    */
   void addListChangeRequests(String zoneName, Callback<ChangesListResponse> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
-   * Adds a call to "get change request" to the batch with the provided {@code callback} and
-   * {@code options}.
+   * Adds a call to "get change request" to the batch with the provided {@code callback} and {@code
+   * options}. The change request to be retrieved is identified by {@code changeRequestId} and the
+   * zone to be searched by {@code zoneName}.
    */
   void addGetChangeRequest(String zoneName, String changeRequestId, Callback<Change> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "apply change request" to the batch with the provided {@code callback} and
-   * {@code options}.
+   * {@code options}. The zone to which the change request should be applied is identified by {@code
+   * zoneName}.
    */
   void addApplyChangeRequest(String zoneName, Change change, Callback<Change> callback,
       Map<DnsRpc.Option, ?> options);
-
 
   /**
    * Submits a batch of requests for processing using a single HTTP request to Cloud DNS.

@@ -27,7 +27,9 @@ import com.google.api.services.dns.model.ChangesListResponse;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
+import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
+import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
 import com.google.gcloud.dns.spi.DnsRpc;
 import com.google.gcloud.dns.spi.RpcBatch;
@@ -39,6 +41,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public class DnsBatchTest {
@@ -65,14 +69,14 @@ public class DnsBatchTest {
       Dns.RecordSetListOption.fields(Dns.RecordSetField.TTL),
       Dns.RecordSetListOption.dnsName(DNS_NAME),
       Dns.RecordSetListOption.type(RecordSet.Type.AAAA)};
-  private static final RecordSet DNS_RECORD1 =
+  private static final RecordSet RECORD_SET =
       RecordSet.builder("Something", RecordSet.Type.AAAA).build();
   private static final ChangeRequestInfo CHANGE_REQUEST_PARTIAL = ChangeRequestInfo.builder()
-      .add(DNS_RECORD1)
+      .add(RECORD_SET)
       .build();
   private static final String CHANGE_ID = "some change id";
   private static final ChangeRequestInfo CHANGE_REQUEST_COMPLETE = ChangeRequestInfo.builder()
-      .add(DNS_RECORD1)
+      .add(RECORD_SET)
       .startTimeMillis(123L)
       .status(ChangeRequest.Status.PENDING)
       .generatedId(CHANGE_ID)
@@ -84,6 +88,12 @@ public class DnsBatchTest {
       Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING)};
   private static final Dns.ChangeRequestOption CHANGE_GET_FIELDS =
       Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS);
+  private static final List<ResourceRecordSet> RECORD_SET_LIST = ImmutableList.of(
+      RECORD_SET.toPb(), RECORD_SET.toPb(), RECORD_SET.toPb(), RECORD_SET.toPb());
+  private static final List<Change> CHANGE_LIST = ImmutableList.of(CHANGE_REQUEST_COMPLETE.toPb(),
+      CHANGE_REQUEST_COMPLETE.toPb(), CHANGE_REQUEST_COMPLETE.toPb());
+  private static final List<ManagedZone> ZONE_LIST = ImmutableList.of(ZONE_INFO.toPb(),
+      ZONE_INFO.toPb());
 
   private DnsOptions optionsMock;
   private DnsRpc dnsRpcMock;
@@ -101,6 +111,7 @@ public class DnsBatchTest {
     EasyMock.replay(optionsMock);
     EasyMock.replay(dnsRpcMock);
     EasyMock.replay(batchMock);
+    EasyMock.replay(dns);
     dnsBatch = new DnsBatch(optionsMock);
   }
 
@@ -109,6 +120,7 @@ public class DnsBatchTest {
     EasyMock.verify(batchMock);
     EasyMock.verify(dnsRpcMock);
     EasyMock.verify(optionsMock);
+    EasyMock.verify(dns);
   }
 
   @Test
@@ -150,7 +162,7 @@ public class DnsBatchTest {
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     batchMock.addListZones(EasyMock.capture(callback), EasyMock.capture(capturedOptions));
     EasyMock.replay(batchMock);
-    dnsBatch.listZones(ZONE_LIST_OPTIONS);
+    DnsBatchResult<Page<Zone>> batchResult = dnsBatch.listZones(ZONE_LIST_OPTIONS);
     assertNotNull(callback.getValue());
     Integer size = (Integer) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[0].rpcOption());
     assertEquals(MAX_SIZE, size);
@@ -161,7 +173,30 @@ public class DnsBatchTest {
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
     selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[3].rpcOption());
     assertEquals(DNS_NAME, selector);
-    // cannot test callback success without ManagedZonesListResponse which is final
+    // check the callback and result
+    // check the callback
+    ManagedZonesListResponse response = new ManagedZonesListResponse()
+        .setManagedZones(ZONE_LIST)
+        .setNextPageToken(PAGE_TOKEN);
+    RpcBatch.Callback<ManagedZonesListResponse> capturedCallback = callback.getValue();
+    EasyMock.verify(optionsMock);
+    EasyMock.reset(optionsMock);
+    EasyMock.expect(optionsMock.service()).andReturn(dns).times(ZONE_LIST.size());
+    EasyMock.replay(optionsMock);
+    capturedCallback.onSuccess(response);
+    Page<Zone> page = batchResult.get();
+    assertEquals(PAGE_TOKEN, page.nextPageCursor());
+    Iterator<Zone> iterator = page.values().iterator();
+    int resultSize = 0;
+    EasyMock.verify(dns);
+    EasyMock.reset(dns);
+    EasyMock.expect(dns.options()).andReturn(optionsMock).times(ZONE_LIST.size());
+    EasyMock.replay(dns);
+    while (iterator.hasNext()) {
+      assertEquals(ZONE_INFO.toPb(), iterator.next().toPb());
+      resultSize++;
+    }
+    assertEquals(ZONE_LIST.size(), resultSize);
   }
 
   @Test
@@ -195,6 +230,10 @@ public class DnsBatchTest {
 
   @Test
   public void testCreateZoneWithOptions() {
+    EasyMock.verify(dns);
+    EasyMock.reset(dns);
+    EasyMock.expect(dns.options()).andReturn(optionsMock);
+    EasyMock.replay(dns);
     EasyMock.reset(batchMock);
     EasyMock.reset(optionsMock);
     EasyMock.expect(optionsMock.service()).andReturn(dns);
@@ -245,6 +284,10 @@ public class DnsBatchTest {
 
   @Test
   public void testGetZoneWithOptions() {
+    EasyMock.verify(dns);
+    EasyMock.reset(dns);
+    EasyMock.expect(dns.options()).andReturn(optionsMock);
+    EasyMock.replay(dns);
     EasyMock.reset(batchMock);
     EasyMock.reset(optionsMock);
     Capture<RpcBatch.Callback<ManagedZone>> callback = Capture.newInstance();
@@ -379,7 +422,8 @@ public class DnsBatchTest {
     batchMock.addListRecordSets(EasyMock.eq(ZONE_NAME), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
     EasyMock.replay(batchMock);
-    dnsBatch.listRecordSets(ZONE_NAME, RECORD_SET_LIST_OPTIONS);
+    DnsBatchResult<Page<RecordSet>> batchResult =
+        dnsBatch.listRecordSets(ZONE_NAME, RECORD_SET_LIST_OPTIONS);
     assertNotNull(callback.getValue());
     Integer size = (Integer) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[0].rpcOption());
     assertEquals(MAX_SIZE, size);
@@ -394,7 +438,20 @@ public class DnsBatchTest {
     String type = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[4]
         .rpcOption());
     assertEquals(RECORD_SET_LIST_OPTIONS[4].value(), type);
-    // cannot test callback success without ResourceRecordSetsListResponse which is final
+    RpcBatch.Callback<ResourceRecordSetsListResponse> capturedCallback = callback.getValue();
+    ResourceRecordSetsListResponse response = new ResourceRecordSetsListResponse()
+        .setRrsets(RECORD_SET_LIST)
+        .setNextPageToken(PAGE_TOKEN);
+    capturedCallback.onSuccess(response);
+    Page<RecordSet> page = batchResult.get();
+    assertEquals(PAGE_TOKEN, page.nextPageCursor());
+    Iterator<RecordSet> iterator = page.values().iterator();
+    int resultSize = 0;
+    while (iterator.hasNext()) {
+      assertEquals(RECORD_SET, iterator.next());
+      resultSize++;
+    }
+    assertEquals(RECORD_SET_LIST.size(), resultSize);
   }
 
   @Test
@@ -431,7 +488,8 @@ public class DnsBatchTest {
     batchMock.addListChangeRequests(EasyMock.eq(ZONE_NAME), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
     EasyMock.replay(batchMock);
-    dnsBatch.listChangeRequests(ZONE_NAME, CHANGE_LIST_OPTIONS);
+    DnsBatchResult<Page<ChangeRequest>> batchResult =
+        dnsBatch.listChangeRequests(ZONE_NAME, CHANGE_LIST_OPTIONS);
     assertNotNull(callback.getValue());
     Integer size = (Integer) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[0].rpcOption());
     assertEquals(MAX_SIZE, size);
@@ -442,7 +500,29 @@ public class DnsBatchTest {
     assertTrue(selector.contains(Dns.ChangeRequestField.ID.selector()));
     selector = (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[3].rpcOption());
     assertTrue(selector.contains(Dns.SortingOrder.ASCENDING.selector()));
-    // cannot test callback success without ChangesListResponse which is final
+    // check the callback
+    ChangesListResponse response = new ChangesListResponse()
+        .setChanges(CHANGE_LIST)
+        .setNextPageToken(PAGE_TOKEN);
+    RpcBatch.Callback<ChangesListResponse> capturedCallback = callback.getValue();
+    EasyMock.verify(optionsMock);
+    EasyMock.reset(optionsMock);
+    EasyMock.expect(optionsMock.service()).andReturn(dns);
+    EasyMock.replay(optionsMock);
+    capturedCallback.onSuccess(response);
+    Page<ChangeRequest> page = batchResult.get();
+    assertEquals(PAGE_TOKEN, page.nextPageCursor());
+    Iterator<ChangeRequest> iterator = page.values().iterator();
+    int resultSize = 0;
+    EasyMock.verify(dns);
+    EasyMock.reset(dns);
+    EasyMock.expect(dns.options()).andReturn(optionsMock).times(CHANGE_LIST.size());
+    EasyMock.replay(dns);
+    while (iterator.hasNext()) {
+      assertEquals(CHANGE_REQUEST_COMPLETE.toPb(), iterator.next().toPb());
+      resultSize++;
+    }
+    assertEquals(CHANGE_LIST.size(), resultSize);
   }
 
   @Test
@@ -476,6 +556,10 @@ public class DnsBatchTest {
 
   @Test
   public void testGetChangeRequestWithOptions() {
+    EasyMock.verify(dns);
+    EasyMock.reset(dns);
+    EasyMock.expect(dns.options()).andReturn(optionsMock);
+    EasyMock.replay(dns);
     EasyMock.reset(batchMock);
     EasyMock.reset(optionsMock);
     Capture<RpcBatch.Callback<Change>> callback = Capture.newInstance();
@@ -528,6 +612,10 @@ public class DnsBatchTest {
 
   @Test
   public void testApplyChangeRequestWithOptions() {
+    EasyMock.verify(dns);
+    EasyMock.reset(dns);
+    EasyMock.expect(dns.options()).andReturn(optionsMock);
+    EasyMock.replay(dns);
     EasyMock.reset(batchMock);
     EasyMock.reset(optionsMock);
     Capture<RpcBatch.Callback<Change>> callback = Capture.newInstance();

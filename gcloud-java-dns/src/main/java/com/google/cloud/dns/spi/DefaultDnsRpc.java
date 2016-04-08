@@ -57,7 +57,7 @@ public class DefaultDnsRpc implements DnsRpc {
 
   private class DefaultRpcBatch implements RpcBatch {
 
-    BatchRequest batch;
+    private BatchRequest batch;
 
     private DefaultRpcBatch(BatchRequest batch) {
       this.batch = batch;
@@ -153,21 +153,6 @@ public class DefaultDnsRpc implements DnsRpc {
       }
     }
 
-    private <T> JsonBatchCallback<T> toJsonCallback(final RpcBatch.Callback<T> callback) {
-      return new JsonBatchCallback<T>() {
-        @Override
-        public void onSuccess(T response, HttpHeaders httpHeaders) throws IOException {
-          callback.onSuccess(response);
-        }
-
-        @Override
-        public void onFailure(GoogleJsonError googleJsonError, HttpHeaders httpHeaders)
-            throws IOException {
-          callback.onFailure(googleJsonError);
-        }
-      };
-    }
-
     @Override
     public void submit() {
       try {
@@ -176,6 +161,21 @@ public class DefaultDnsRpc implements DnsRpc {
         throw translate(ex);
       }
     }
+  }
+
+  private static <T> JsonBatchCallback<T> toJsonCallback(final RpcBatch.Callback<T> callback) {
+    return new JsonBatchCallback<T>() {
+      @Override
+      public void onSuccess(T response, HttpHeaders httpHeaders) throws IOException {
+        callback.onSuccess(response);
+      }
+
+      @Override
+      public void onFailure(GoogleJsonError googleJsonError, HttpHeaders httpHeaders)
+          throws IOException {
+        callback.onFailure(googleJsonError);
+      }
+    };
   }
 
   private static DnsException translate(IOException exception) {
