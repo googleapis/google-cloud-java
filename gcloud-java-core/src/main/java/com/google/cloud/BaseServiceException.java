@@ -48,10 +48,16 @@ public class BaseServiceException extends RuntimeException {
 
     private final Integer code;
     private final String reason;
+    private final boolean rejected;
 
     public Error(Integer code, String reason) {
+      this(code, reason, false);
+    }
+
+    public Error(Integer code, String reason, boolean rejected) {
       this.code = code;
       this.reason = reason;
+      this.rejected = rejected;
     }
 
     /**
@@ -62,16 +68,25 @@ public class BaseServiceException extends RuntimeException {
     }
 
     /**
+     * Returns true if the error indicates that the API call was certainly not accepted by the
+     * server.
+     */
+    public boolean rejected() {
+      return rejected;
+    }
+
+    /**
      * Returns the reason that caused the exception.
      */
     public String reason() {
       return reason;
     }
 
-    boolean isRetryable(Set<Error> retryableErrors) {
+    boolean isRetryable(boolean idempotent, Set<Error> retryableErrors) {
       for (Error retryableError : retryableErrors) {
-        if ((retryableError.code() == null || retryableError.code().equals(this.code()))
-            && (retryableError.reason() == null || retryableError.reason().equals(this.reason()))) {
+        boolean match = (retryableError.code() == null || retryableError.code().equals(this.code()))
+            && (retryableError.reason() == null || retryableError.reason().equals(this.reason()));
+        if (match && idempotent || match && retryableError.rejected()) {
           return true;
         }
       }
@@ -111,7 +126,7 @@ public class BaseServiceException extends RuntimeException {
       }
     }
     this.code = code;
-    this.retryable = idempotent && isRetryable(exception);
+    this.retryable = isRetryable(idempotent, exception);
     this.reason = reason;
     this.idempotent = idempotent;
     this.location = location;
@@ -123,7 +138,7 @@ public class BaseServiceException extends RuntimeException {
     this.code = error.getCode();
     this.reason = reason(error);
     this.idempotent = idempotent;
-    this.retryable = idempotent && isRetryable(error);
+    this.retryable = isRetryable(idempotent, error);
     this.location = null;
     this.debugInfo = null;
   }
@@ -138,7 +153,7 @@ public class BaseServiceException extends RuntimeException {
     this.code = code;
     this.reason = reason;
     this.idempotent = idempotent;
-    this.retryable = idempotent && new Error(code, reason).isRetryable(retryableErrors());
+    this.retryable =  new Error(code, reason).isRetryable(idempotent, retryableErrors());
     this.location = null;
     this.debugInfo = null;
   }
@@ -147,15 +162,15 @@ public class BaseServiceException extends RuntimeException {
     return Collections.emptySet();
   }
 
-  protected boolean isRetryable(GoogleJsonError error) {
-    return error != null && error(error).isRetryable(retryableErrors());
+  protected boolean isRetryable(boolean idempotent, GoogleJsonError error) {
+    return error != null && error(error).isRetryable(idempotent, retryableErrors());
   }
 
-  protected boolean isRetryable(IOException exception) {
+  protected boolean isRetryable(boolean idempotent, IOException exception) {
     if (exception instanceof GoogleJsonResponseException) {
-      return isRetryable(((GoogleJsonResponseException) exception).getDetails());
+      return isRetryable(idempotent, (((GoogleJsonResponseException) exception).getDetails()));
     }
-    return exception instanceof SocketTimeoutException;
+    return idempotent && exception instanceof SocketTimeoutException;
   }
 
   /**
@@ -187,8 +202,8 @@ public class BaseServiceException extends RuntimeException {
   }
 
   /**
-   * Returns the service location where the error causing the exception occurred. Returns
-   * {@code null} if not set.
+   * Returns the service location where the error causing the exception occurred. Returns {@code
+   * null} if not set.
    */
   public String location() {
     return location;
@@ -224,7 +239,7 @@ public class BaseServiceException extends RuntimeException {
   }
 
   protected static String reason(GoogleJsonError error) {
-    if (error.getErrors() != null  && !error.getErrors().isEmpty()) {
+    if (error.getErrors() != null && !error.getErrors().isEmpty()) {
       return error.getErrors().get(0).getReason();
     }
     return null;
